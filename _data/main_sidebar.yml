@@ -50,9 +50,9 @@ folders:
             ref: oidc_subsublevel1
 
 
-- title: Oppslagstjenesten
+- title: Kontaktregisteret
   folderitems:
-  - title: Kontakt- og reservasjonsregisteret
+  - title: Om Kontakt- og reservasjonsregisteret
     jurl: /kkr_index.html
 
 - title: Digital postkasse
