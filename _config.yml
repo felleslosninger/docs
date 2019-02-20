@@ -211,3 +211,5 @@ uistring:
     feedback_link_name: Tilbakemeldinger # name of Feedback link
     feedback_subject_line: Tilbakemelding vedr. teknisk dokumentasjon # Auto-filled Subject link of email
     github_edit_button_text: Endre/rediger innhold # text for github button
+
+theme: jekyll-theme-cayman
