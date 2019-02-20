@@ -1,0 +1,22 @@
+## Topnav single links
+ ## if you want to list an external url, use url instead of url. the theme will apply a different link base.
+
+
+navbar_dropdowns:
+- title: Topnav dropdowns
+  folders:
+
+  - title: Fellesløsninger
+    folderitems:
+    - title: eFormidling
+      url: /eform_index.html
+    - title: ID-porten
+      url: /idporten_index.html
+    - title: Kontaktregisteret
+      url: /kkr_index.html
+    - title: Digital postkasse
+      url: /digipost_index.html
+    - title: eInnsyn
+      url: /einnsyn_index.html
+    - title: eSignering
+      url: /esign_index.html
