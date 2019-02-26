@@ -3,6 +3,7 @@ title: Selvhjelp og nyttig informasjon
 description: Selvhjelp og nyttig informasjon som øking av loggnivå, loggrullering, trafikkflyt mm.
 summary: "Selvhjelp og nyttig informasjon om eFormidling"
 permalink: eform_selvhjelp.html
+product: eFormidling
 ---
 
 ### Eformidling på 2 minutter - dette må du vite

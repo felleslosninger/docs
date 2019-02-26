@@ -186,6 +186,21 @@ footer {
   margin-top: 50px;
 }
 
+/*summary*/
+.summary {
+    font-size:120%;
+    color: #808080;
+    margin:20px 0px 20px 0px;
+    border-left: 5px solid #976396;
+    padding-left: 10px;
+
+}
+
+.summary:before {
+    content: "Oppsummering: ";
+    font-weight: bold;
+}
+
 /* syntax highlighting */
 .highlight .c { color: #586E75 } /* Comment */
 .highlight .err { color: #93A1A1 } /* Error */
