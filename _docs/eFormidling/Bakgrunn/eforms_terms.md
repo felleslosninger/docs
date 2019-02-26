@@ -1,14 +1,16 @@
 ---
 title: Begrep
 description: Begrep og forkortelser brukt i eFormidling
-summary: "Begrep og forkorteser brukt i eFormidling"
+summary: "Begrep og forkortelser brukt i eFormidling"
 permalink: eform_terms.html
 product: eFormidling
+ 
 ---
 
-Begrep og forkortelser brukt i eFormidling
+* TOC
+{:toc}
 
-### Tjenester
+## Tjenester
 
 | Tjeneste | Forklaring |
 | :--- | :--- |
@@ -29,7 +31,7 @@ Begrep og forkortelser brukt i eFormidling
 ---
 
 
-#### Standarder
+## Standarder
 
 | Standard | Forklaring |
 | :--- | :--- |

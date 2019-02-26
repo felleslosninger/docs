@@ -39,7 +39,8 @@ folders:
     - title: OpenID Connect i ID-porten
       subfolderitems:
 
-      -
+      - title: OpenID Connect
+        jurl: /oidc_index.html
 
         subsubfolders:
         - title: Kom i gang

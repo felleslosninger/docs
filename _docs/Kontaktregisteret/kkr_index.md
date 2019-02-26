@@ -1,7 +1,6 @@
 ---
 title: Kontakt- og reservasjonsregisteret fra Difi
 description: something something från Kontakt- og reservasjonsregisteret
-summary: "Kontakt- og reservasjonsregisteret"
 permalink: kkr_index.html
 produkt: Kontaktregisteret
 ---
