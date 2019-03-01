@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-
+// 4. displaySearchResult
 (function() {
   function displaySearchResults(results, store) {
     var searchResults = document.getElementById('search-results');
@@ -22,7 +22,7 @@ layout: null
       searchResults.innerHTML = '<span style="color: red"><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></span><p><br/>{{site.uistring.no_search_results_found}}</p>';
     }
   }
-
+  // 1. läser get parameter
   function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split('&');
@@ -35,7 +35,7 @@ layout: null
       }
     }
   }
-
+  // 2. kontrollerar om det är en searchTerm, (searchTerm = värdet av query)
   var searchTerm = getQueryVariable('query');
 
   if (searchTerm) {
@@ -50,7 +50,7 @@ layout: null
       this.field('tags');
       this.field('content');
     });
-
+    // loopar igenom json datan och lagger till på index
     for (var key in window.store) { // Add the data to lunr
       idx.add({
         'id': key,
@@ -59,7 +59,7 @@ layout: null
         'content': window.store[key].content,
         'product': window.store[key].product
       });
-
+      // 3. söker på index och presenterar i displaySearchResults
       var results = idx.search(searchTerm); // Get lunr to perform a search
       displaySearchResults(results, window.store); // We'll write this in the next section
     }
