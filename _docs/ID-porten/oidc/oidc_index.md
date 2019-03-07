@@ -4,7 +4,7 @@ description: OpenID Connect i ID-porten
 summary: "Ta kontakt med oss på idporten@difi.no for å komme i gang!"
 permalink: oidc_index.html
 sidebar: main_sidebar
-product: ID-portem
+product: ID-porten
 
 ---
 * TOC

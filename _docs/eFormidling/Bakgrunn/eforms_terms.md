@@ -4,7 +4,7 @@ description: Begrep og forkortelser brukt i eFormidling
 summary: "Begrep og forkortelser brukt i eFormidling"
 permalink: eform_terms.html
 product: eFormidling
- 
+
 ---
 
 * TOC
