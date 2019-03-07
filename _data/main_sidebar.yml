@@ -75,31 +75,31 @@ folders:
   
   folderitems:
   
-  - title: om ELMA
+  - title: about ELMA
     jurl: /eform_index.html
     subfolders:
 
-    - title: Bakgrunn
+    - title: Docs
       jurl: /eform_index.html
       subfolderitems:
 
       - title: ELMA user manual
-        jurl: /eform_messagetypes.html
+        jurl: /elma.html
 
       - title: ICD 0192 and new profiles
-        jurl: /eform_environment.html
+        jurl: /icd0192andNewProfiles.html
 
       - title: Upgrade to new 3.0 profiles
-        jurl: /eform_terms.html
+        jurl: /upgradeTo0192Profiles.html
 
       - title: Webservice
-        jurl: /eform_messagetypes.html
+        jurl: /webservice.html
 
       - title: WSDL
-        jurl: /eform_environment.html
+        jurl: /elma_wsdl.html
 
       - title: Status
-        jurl: /eform_terms.html
+        jurl: /elma_status.html
         
 ###########################
 
