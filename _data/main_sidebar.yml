@@ -71,6 +71,21 @@ folders:
   - title: Om eSignering
     jurl: /esign_index.html
 
+- title: ELMA
+
+  folderitems:
+
+  - title: ELMA
+    jurl: /eform_index.html
+    subfolders:
+
+    - title: Bakgrunn
+      jurl: /eform_index.html
+      subfolderitems:
+
+    - title: Selvhjelp
+      jurl: /eform_index.html
+      subfolderitems:
 
 ###########################
 
