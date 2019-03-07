@@ -72,10 +72,10 @@ folders:
     jurl: /esign_index.html
 
 - title: ELMA
-
+  
   folderitems:
-
-  - title: ELMA
+  
+  - title: om ELMA
     jurl: /eform_index.html
     subfolders:
 
@@ -83,10 +83,24 @@ folders:
       jurl: /eform_index.html
       subfolderitems:
 
-    - title: Selvhjelp
-      jurl: /eform_index.html
-      subfolderitems:
+      - title: ELMA user manual
+        jurl: /eform_messagetypes.html
 
+      - title: ICD 0192 and new profiles
+        jurl: /eform_environment.html
+
+      - title: Upgrade to new 3.0 profiles
+        jurl: /eform_terms.html
+
+      - title: Webservice
+        jurl: /eform_messagetypes.html
+
+      - title: WSDL
+        jurl: /eform_environment.html
+
+      - title: Status
+        jurl: /eform_terms.html
+        
 ###########################
 
 related_resources_title: Andre nyttige lenker
