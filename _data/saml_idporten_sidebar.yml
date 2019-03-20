@@ -36,16 +36,6 @@ folders:
       - title: Integrasjonsguide OpenID Connect
         jurl: /oidc_guide_idporten.html
 
-       
-
-
-- title: Kontaktregisteret
-  folderitems:
-  - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /kkr_index.html
-
-
-        
 ###########################
 
 related_resources_title: Andre nyttige lenker
