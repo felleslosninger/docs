@@ -6,6 +6,15 @@ description: Mer om metadata og SAML
 isHome: false
 ---
 
+---
+title: Mer om metadata og SAML
+description: Mer om metadata og SAML
+summary: "Mer om metadata og SAML"
+permalink: saml_metadata.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
+---
+
 ### Metadata validator og ID-porten sine metadatafiler
 
 * [Denne validatoren anbefales for å sjekke metadata etter feil](https://test-vefa.difi.no/validator/)
