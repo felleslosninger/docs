@@ -27,7 +27,7 @@ folders:
     jurl: /saml_hurtigguide.html
     
   - title: Verifikasjonstester SAML og OpenID Connect
-    jurl: /saml_teknisk_integrasjon.html    
+    jurl: /saml_verifikasjonstester.html    
 
     subfolders:
     - title: OpenID Connect i ID-porten
