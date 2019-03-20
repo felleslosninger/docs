@@ -4,20 +4,6 @@ folders:
 - title: Integrasjonsveiledning OIDC
   folderitems:
 
-  - title: oidc(pdf)
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage
-      output: pdf
-      type: frontmatter
-
-
   - title: Kom i gang
     output: web, pdf
     folderitems:
