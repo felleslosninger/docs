@@ -4,14 +4,6 @@ folders:
 - title: Integrasjonsveiledning OIDC
   folderitems:
 
-  - title: Om eFormidling
-    jurl: /eform_index.html
-    subfolders:
-
-    - title: Bakgrunn
-      subfolderitems:
-
-
   - title: Kom i gang
     jurl: /oidc_index.html
     subfolders:
