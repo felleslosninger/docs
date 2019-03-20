@@ -1,7 +1,7 @@
 ---
-title: Hurtigguide: Teknisk integrasjon
-description: Hurtigguide: Teknisk integrasjon
-summary: "Hurtigguide: Teknisk integrasjon"
+title: Hurtigguide - Teknisk integrasjon
+description: Hurtigguide - Teknisk integrasjon
+summary: "Hurtigguide Teknisk integrasjon"
 permalink: saml_hurtigguide.html
 sidebar: saml_idporten_sidebar
 product: ID-porten
