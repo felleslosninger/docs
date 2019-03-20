@@ -36,7 +36,7 @@ folders:
     jurl: /idporten_index.html
     
   - title: OpenID Connect i ID-porten
-    jurl: /oidc_guide_idporten.html
+    jurl: /oidc_index.html
 
   - title: SAML 2.0 i ID-porten
     jurl: /saml_tilgang.html
