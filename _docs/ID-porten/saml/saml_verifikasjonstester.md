@@ -6,6 +6,15 @@ description: Verifikasjonstestar
 isHome: false
 ---
 
+---
+title: Verifikasjonstestar ID-porten  - SAML og OpenID Connect
+description: Verifikasjonstestar
+summary: "Verifikasjonstestar"
+permalink: saml_verifikasjonstester.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
+---
+
 ### Om testane
 
 Dette dokumentet viser kva testar som skal gjennomførast i samband med ein integrasjon med ID-porten for tenesteleverandørar med krav om sikkerheitsnivå 3 og 4. 
