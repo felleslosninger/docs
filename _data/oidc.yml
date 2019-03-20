@@ -23,7 +23,7 @@ folders:
     folderitems:
 
       - title: Hvordan komme igang?
-        url: /index.html
+        url: /oidc_index.html
         output: web,pdf
 
       - title: Integrasjonsguide ID-porten
