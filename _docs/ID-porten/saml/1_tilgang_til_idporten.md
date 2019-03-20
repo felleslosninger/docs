@@ -1,10 +1,10 @@
 ---
 title: Hvordan få tilgang til ID-porten
-pageid: tilgang_til_idporten
-layout: default
-description: Integrasjonsguide for ID-porten
-isHome: true
-hiddenInToc: false
+description: Hvordan få tilgang til ID-porten
+summary: "Ta kontakt med oss på idporten@difi.no for å komme i gang!"
+permalink: saml_tilgang.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
 ---
 
 ### Hvordan få tilgang til ID-porten
@@ -17,7 +17,7 @@ Det er rutinene for å etablere en ny integrasjon mot ID-porten.
 
 Dette er svært individuelt hvor lang prosessen er fra første dialog med ny tjenesteeier til ny tjeneste er i produksjon.
 
-![](/idporten-integrasjonsguide/assets/images/rutine_for_tilgang.bmp "Rutine for tilgang")
+![](/images/idporten/saml/rutine_for_tilgang.bmp "Rutine for tilgang")
 
 
 #### **Den første kontakten**
