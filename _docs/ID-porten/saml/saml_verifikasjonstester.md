@@ -1,13 +1,5 @@
 ---
 title: Verifikasjonstestar ID-porten  - SAML og OpenID Connect
-pageid: Verifikasjonstestar
-layout: default
-description: Verifikasjonstestar
-isHome: false
----
-
----
-title: Verifikasjonstestar ID-porten  - SAML og OpenID Connect
 description: Verifikasjonstestar
 summary: "Verifikasjonstestar"
 permalink: saml_verifikasjonstester.html
