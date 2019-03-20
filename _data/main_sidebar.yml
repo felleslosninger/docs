@@ -34,22 +34,12 @@ folders:
 
   - title: Om ID-porten
     jurl: /idporten_index.html
+    
+  - title: OpenID Connect i ID-porten
+    jurl: /oidc_guide_idporten.html
 
-    subfolders:
-    - title: OpenID Connect i ID-porten
-      subfolderitems:
-
-      - title: OpenID Connect
-        jurl: /oidc_index.html
-
-        subsubfolders:
-        - title: Kom i gang
-
-          subsubfolderitems:
-          - title: Integrasjonsguide
-            jurl: /oidc_guide_idporten.html
-            ref: oidc_subsublevel1
-
+  - title: SAML 2.0 i ID-porten
+    jurl: /saml_tilgang.html
 
 - title: Kontaktregisteret
   folderitems:
