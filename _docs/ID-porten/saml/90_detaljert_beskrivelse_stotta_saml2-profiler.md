@@ -1,9 +1,10 @@
 ---
 title: Detaljert beskrivelse av støttede SAML2-profiler
-pageid: Detaljert_beskrivelse_av_stottede_saml2-profiler
-layout: default
 description: Detaljert beskrivelse av støttede SAML2-profiler
-isHome: false
+summary: "Detaljert beskrivelse av støttede SAML2-profiler"
+permalink: saml_stottede_profiler.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
 ---
 
 SAML2-profilene som her presenteres er med utgangspunkt i [eGov versjon 1.5.](http://www.projectliberty.org/liberty/content/download/4711/32210/file/L iberty_Alliance_eGov_Profile_1.5_Final.pdf)
