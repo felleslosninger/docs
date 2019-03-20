@@ -1,10 +1,12 @@
 ---
-title: hurtigguide: Teknisk integrasjon
-pageid: hurtigguide_teknisk_integrasjon
-layout: default
-description: hurtigguide: Teknisk integrasjon
-isHome: false
+title: Hurtigguide: Teknisk integrasjon
+description: Hurtigguide: Teknisk integrasjon
+summary: "Hurtigguide: Teknisk integrasjon"
+permalink: saml_hurtigguide.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
 ---
+
 ## HURTIGGUIDE: Teknisk Integrasjon
 
 ### Typisk saksgang for en integrasjon
