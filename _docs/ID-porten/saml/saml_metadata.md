@@ -1,13 +1,5 @@
 ---
 title: Mer om metadata og SAML
-pageid: mer_om_metadata_og_saml
-layout: default
-description: Mer om metadata og SAML
-isHome: false
----
-
----
-title: Mer om metadata og SAML
 description: Mer om metadata og SAML
 summary: "Mer om metadata og SAML"
 permalink: saml_metadata.html
