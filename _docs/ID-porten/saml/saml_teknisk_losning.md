@@ -81,4 +81,3 @@ For HTTP Redirect bindingen må alle meldinger basert på SAML2-protokollen kode
 * Verifikasjon 1: 146.192.252.124
 * Verifikasjon 2: 146.192.252.156
 
-[Videre lesing: Sikkerhet](https://difi.github.io/idporten-integrasjonsguide//5_sikkerhet.html)
