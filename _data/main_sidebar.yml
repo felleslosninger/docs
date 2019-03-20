@@ -66,11 +66,11 @@ folders:
   folderitems:
   
   - title: about ELMA
-    jurl: /eform_index.html
+    jurl: /elma_index.html
     subfolders:
 
     - title: Docs
-      jurl: /eform_index.html
+      jurl: /elma_index.html
       subfolderitems:
 
       - title: ELMA user manual
