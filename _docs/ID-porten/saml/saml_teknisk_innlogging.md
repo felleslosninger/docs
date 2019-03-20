@@ -170,4 +170,4 @@ Følgende attributter legges ved i assertion:
 
 Assertion vil alltid inneholde informasjon om sikkerhetsnivå benyttet under autentisering. Til dette benyttes AuthnContextClassRef på samme måte som i autentiseringsforespørselen. Se [tabell knyttet til autentiseringsforespørsel](https://difi.github.io/idporten-integrasjonsguide//3_teknisk_innlogging.html#requestedauthncontext) for spesifisering av gyldige klasser støttet i ID-porten og deres tilhørende autentiseringsnivå. 
 
-[Videre lesing: Detaljert beskrivelse av teknisk løsning](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html)
+
