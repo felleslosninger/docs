@@ -6,6 +6,8 @@ folders:
 
   - title: Kom i gang
     jurl: /oidc_index.html
+    subfolders:
+    
     subfolderitems:
 
       - title: Hvordan komme igang?
