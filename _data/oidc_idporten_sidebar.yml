@@ -1,10 +1,8 @@
 sidebarTitle: ID-porten OIDC
 
 folders:
- title: OIDC i ID-porten
-  product: OIDC i ID-porten
-  version:
-  folders:
+- title: Integrasjonsveiledning OIDC
+  folderitems:
 
   - title: oidc(pdf)
     output: pdf
