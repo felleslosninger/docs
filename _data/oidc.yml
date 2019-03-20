@@ -9,37 +9,27 @@ folders:
     subfolders:
 
       - title: Hvordan komme igang?
-        url: /oidc_index.html
-        output: web,pdf
-
+        jurl: /oidc_index.html
+       
       - title: Integrasjonsguide ID-porten
-        url: /oidc_guide_idporten.html
-        output: web,pdf
-
-#      - title: Hurtigguide for autorisasjonsflyt
-#        url: /oidc_hurtigguide_autorisasjonsflyt.html
-#        output: web,pdf
+        jurl: /oidc_guide_idporten.html
 
       - title: Integrasjonsguide Maskinporten
-        url: /oidc_guide_maskinporten.html
-        output: web,pdf
+        jurl: /oidc_guide_maskinporten.html
 
       - title: Ofte stilte spørsmål
-        url: /oidc_guide_faq.html
-        output: web,pdf
+        jurl: /oidc_guide_faq.html
 
       - title: Getting started
-        url: /oidc_guide_english.html
-        output: web,pdf
+        jurl: /oidc_guide_english.html
 
   - title: Eksempler
     output: web, pdf
-    folderitems:
+    subfolders:
 
       - title: SPA in React
         url: /oidc_sample_react.html
-        output: web,pdf
-
+       
 
   - title: Funksjonalitet
     output: web, pdf
