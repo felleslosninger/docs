@@ -6,7 +6,7 @@ folders:
 
   - title: Kom i gang
     jurl: /oidc_index.html
-    subfolders:
+    subfolderitems:
 
       - title: Hvordan komme igang?
         jurl: /oidc_index.html
@@ -25,7 +25,7 @@ folders:
 
   - title: Eksempler
     output: web, pdf
-    subfolders:
+    subfolderitems:
 
       - title: SPA in React
         url: /oidc_sample_react.html
