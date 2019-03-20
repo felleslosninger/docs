@@ -1,9 +1,10 @@
 ---
 title: Detaljert beskrivelse av teknisk løsning
-pageid: detaljert_beskrivelse_teknisk
-layout: default
 description: Detaljert beskrivelse av teknisk løsning
-isHome: false
+summary: "Detaljert beskrivelse av teknisk løsning"
+permalink: saml_teknisk_losning.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
 ---
 
 ### Logging
