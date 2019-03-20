@@ -1,11 +1,10 @@
 ---
-title: Funksjonell beskrivelse                                       
-pageid: funksjonelt
-layout: default
+title: Funksjonell beskrivelse
 description: Funksjonell beskrivelse - Oversikt over de funksjoner som ID-porten tilbyr som tjenesteleverandør
-isHome: false
-resource: true
-category: vStaging
+summary: "Funksjonell beskrivelse - Oversikt over de funksjoner som ID-porten tilbyr som tjenesteleverandør"
+permalink: saml_funksjonell.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
 ---
 
 ## Introduksjon
