@@ -6,28 +6,28 @@ folders:
     jurl: /saml_tilgang.html
     
   - title: Funksjonell beskrivelse
-    jurl: /oidc_guide_idporten.html
+    jurl: /saml_funksjonell.html
 
   - title: Teknisk - Innlogging
-    jurl: /saml_tilgang.html
+    jurl: /saml_teknisk_innlogging.html
     
   - title: Detaljert beskrivelse av teknisk løsning
-    jurl: /oidc_guide_idporten.html
+    jurl: /saml_teknisk_losning.html
     
   - title: Sikkerhet
-    jurl: /oidc_guide_idporten.html    
+    jurl: /saml_sikkerhet.html    
     
   - title: Detaljert beskrivelse av støttede SAML 2.0 profiler
-    jurl: /oidc_guide_idporten.html
+    jurl: /saml_stottede_profiler.html
     
   - title: Mer om metadata og SAML
-    jurl: /oidc_guide_idporten.html
+    jurl: /saml_metadata.html
     
   - title: Hurtigguide - Teknisk Integrasjon
-    jurl: /oidc_guide_idporten.html
+    jurl: /saml_hurtigguide.html
     
   - title: Verifikasjonstester SAML og OpenID Connect
-    jurl: /oidc_guide_idporten.html    
+    jurl: /saml_teknisk_integrasjon.html    
 
     subfolders:
     - title: OpenID Connect i ID-porten
