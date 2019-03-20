@@ -1,9 +1,10 @@
 ---
-title: Teknisk:Innlogging
-pageid: teknisk_innlogging
-layout: default
+title: Teknisk - innlogging
 description: teknisk innlogging for ID-porten
-isHome: false
+summary: "teknisk innlogging for ID-porten"
+permalink: saml_teknisk_innlogging.html
+sidebar: saml_idporten_sidebar
+product: ID-porten
 ---
 
 ## Introduksjon
