@@ -1,0 +1,173 @@
+sidebarTitle: ID-porten OIDC
+
+folders:
+ title: OIDC i ID-porten
+  product: OIDC i ID-porten
+  version:
+  folders:
+
+  - title: oidc(pdf)
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+
+  - title: Kom i gang
+    output: web, pdf
+    folderitems:
+
+      - title: Hvordan komme igang?
+        url: /index.html
+        output: web,pdf
+
+      - title: Integrasjonsguide ID-porten
+        url: /oidc_guide_idporten.html
+        output: web,pdf
+
+#      - title: Hurtigguide for autorisasjonsflyt
+#        url: /oidc_hurtigguide_autorisasjonsflyt.html
+#        output: web,pdf
+
+      - title: Integrasjonsguide Maskinporten
+        url: /oidc_guide_maskinporten.html
+        output: web,pdf
+
+      - title: Ofte stilte spørsmål
+        url: /oidc_guide_faq.html
+        output: web,pdf
+
+      - title: Getting started
+        url: /oidc_guide_english.html
+        output: web,pdf
+
+  - title: Eksempler
+    output: web, pdf
+    folderitems:
+
+      - title: SPA in React
+        url: /oidc_sample_react.html
+        output: web,pdf
+
+
+  - title: Funksjonalitet
+    output: web, pdf
+    folderitems:
+
+      - title: Metadata
+        url: /oidc_func_wellknown.html
+        output: web, pdf
+
+      - title: Klientregistrering
+        url: /oidc_func_clientreg.html
+        output: web, pdf
+
+
+      - title: Single sign-on og -logout
+        url: /oidc_func_sso.html
+        output: web, pdf
+
+#     - title: Klientautentisering
+#       url: /oidc_func_clientauth.html
+#       output: web, pdf
+
+
+      - title: PKCE
+        url: /oidc_func_pkce.html
+        output: web, pdf
+
+      - title: OnBehalfOf
+        url: /oidc_func_onbehalfof.html
+        output: web, pdf
+
+      - title: Pseudonymisert innlogging
+        url: /oidc_func_nopid.html
+        output: web, pdf
+
+      - title: Javascript-applikasjoner
+        url: /oidc_auth_spa.html
+        output: web, pdf
+
+      - title: eIDAS
+        url: /oidc_func_eidas.html
+        output: web, pdf
+
+      - title: Administrasjon av OICD-integrasjoner
+        url: /oidc_api_admin.html
+        output: web, pdf
+
+      - title: Administrasjon av Maskinporten
+        url: /oidc_api_admin_maskinporten.html
+        output: web, pdf
+
+
+  - title: Arkitektur
+    output: web, pdf
+    folderitems:
+
+      - title: Arkitektur
+        url: /oidc_arch.html
+        output: web,pdf
+
+      - title: Autentisering med code-flow
+        url: /oidc_auth_codeflow.html
+        output: web, pdf
+
+
+      - title: Autentisering til mobil-app'er
+        url: /oidc_auth_app.html
+        output: web, pdf
+
+      - title: API-autorisasjon innlogget bruker
+        url: /oidc_auth_oauth2.html
+        output: web, pdf
+
+      - title: Server-til-server API-autorisasjon
+        url: /oidc_auth_server-to-server-oauth2.html
+        output: web, pdf
+
+
+  - title: Oauth2-beskytta API'er fra Difi
+    url: /oidc_api.html
+    output: web, pdf
+    folderitems:
+
+      - title: Kontakt- og Reservasjonsregisteret
+        url: /oidc_api_krr.html
+        output: web, pdf
+
+      - title: Kontakt- og Reservasjonsregisteret (innlogget bruker)
+        url: /oidc_api_krr_user.html
+        output: web, pdf
+
+      - title: Innbyggers innloggingsnivå
+        url: /oidc_api_authlevel.html
+        output: web, pdf
+
+      - title: Innbyggers innloggingshistorikk
+        url: /oidc_api_logghistorikk.html
+        output: web, pdf
+
+      - title: Innbyggers autorisasjoner
+        url: /oidc_api_autorisasjoner.html
+        output: web, pdf
+
+#      - title: Introduksjon
+#        url: /index.html
+#        output: web,pdf
+
+
+  - title: Vedlegg
+    output: web, pdf
+    folderitems:
+
+      - title: Om disse sidene
+        url: /oidc_about.html
+        output: web, pdf
