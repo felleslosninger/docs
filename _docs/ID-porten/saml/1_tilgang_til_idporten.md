@@ -113,4 +113,3 @@ Logoen må oppfylle følgende krav:
 | | | 
 
 
-[Videre lesing: Funksjonell beskrivelse](https://difi.github.io/idporten-integrasjonsguide//2_funksjonelt.html)
