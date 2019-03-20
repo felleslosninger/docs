@@ -19,10 +19,10 @@ ID-porten støtter bade HTTP-POST og HTTP-ARTIFACT som transportbinding for resp
 Med HTTP Artifact skjer utvekslingen av IDP-ens (ID-portens) bekreftelse på gyldig innlogging i en bak-kanal, direkte mellom IDP-en og tjenesteeier (SP). Med HTTP POST utveksles bekreftelsen via nettleser, mao. via framkanal. LINK TIL VEDLEGG 7 for mer om metadataoppbyggingen
 
 #### **Web Browser SSO-profil med HTTP Redirect (request) og artifact resolution over SOAP binding (reply)**
-![](/idporten-integrasjonsguide/assets/images/web_sso_soap.bmp "web sso over SOAP")
+![](/dokumentasjonsprosjektet/images/idporten/saml/web_sso_soap.bmp "web sso over SOAP")
 
 #### **Web Browser SSO-profil med HTTP Redirect (request) og POST binding**
-![](/idporten-integrasjonsguide/assets/images/web_sso_post.bmp "web sso over POST")
+![](/dokumentasjonsprosjektet/images/idporten/saml/web_sso_post.bmp "web sso over POST")
 
 Forklaring: 
 * Tjenesteleverandør bruker privat nøkkel til signering av AuthnRequest. ID-porten verifiserer signeringen ved hjelp av tjenesteleverandørs tilhørende sertifikat.
@@ -33,7 +33,7 @@ Ved POST-binding hentes assertion via nettleser, med andre ord via frontkanal. (
 
 #### **Single Logout**
 
-![](/idporten-integrasjonsguide/assets/images/slo.bmp "Single logout")
+![](/dokumentasjonsprosjektet/images/idporten/saml/slo.bmp "Single logout")
 
 Forklaring:
 1. Tjenesteleverandør sender LogoutRequest til ID-porten via frontkanal (HTTP redirect via User agent). Denne skal være signert med SPs private signeringsnøkkel.
@@ -111,7 +111,7 @@ Sertifikat med følgende bruksområde er testet og fungerer i ID-porten:
 Virksomhetssertifikat fra Buypass utstedes parvis med et nøkkelpar/sertifikat som en bruker for autentisering og kryptering(Autentiseringssertifikatet), og et nøkkelpar/sertifikat for signering (signeringssertifikatet).
 Ved bestilling av virksomhetssertifikat fra Buypass blir det derfor levert to p12-filer:
 
-![](/idporten-integrasjonsguide/assets/images/buypass_censored.bmp "Buypass sertifikat")
+![](/dokumentasjonsprosjektet/images/idporten/saml/buypass_censored.bmp "Buypass sertifikat")
 
 #### **Commfides**
 
@@ -125,7 +125,7 @@ Virksomhetssertifikat fra Commfides blir utstedt med tre nøkkelpar.
 Et nøkkelpar/sertifikat som benyttes for autentisering (autentiseringssertifikat), et nøkkelpar/sertifikat for kryptering (krypteringssertifikat) og et siste nøkkelpar/sertifikat for signering (signeringssertifikatet).
 
 Ved bestilling av virksomhetssertifikat fra Commfides blir det derfor levert tre filer:
-![](/idporten-integrasjonsguide/assets/images/commfides_censored.bmp "Commfides sertifikat")
+![](/dokumentasjonsprosjektet/images/idporten/saml/commfides_censored.bmp "Commfides sertifikat")
 
 | Commfides sertifikat | Bruksområdet | 
 | --- | --- |
@@ -150,6 +150,5 @@ En tjenesteleverandør bør analysere disse problemstillingene nøye, og utarbei
 
 Både [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor) og sertifikatutsteders policy kan gi krav som må etterleves. Krav til slike prosedyrer for håndtering av nøkler stilles også til IdP-delen av løsningen, som i dette tilfellet er ID-porten. 
 
-[Videre lesing: Detaljert beskrivelse av støttede SAML2-profiler](https://difi.github.io/idporten-integrasjonsguide//90_detaljert_beskrivelse_stotta_saml2-profiler.html)
 
 
