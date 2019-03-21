@@ -20,7 +20,7 @@ folders:
         jurl: /oidc_guide_maskinporten.html
 
       - title: Ofte stilte spørsmål
-        jurl: /oidc_faq.html
+        jurl: /oidc_guide_faq.html
         
       - title: Getting started
         jurl: /oidc_guide_english.html
