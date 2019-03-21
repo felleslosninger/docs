@@ -3,10 +3,8 @@ title: Autentisering til mobil-app'er
 description: Bruk av Idporten sin OpenID Connect provider til autentisering til mobil-app'er
 summary: "Ved innlogging til en mobil-app, er det anbefalt å bruke PKCE sammen med autorisasjonskode-flyten"
 permalink: oidc_auth_app.html
-
-layout: page
 sidebar: oidc
-isHome: true
+product: ID-porten
 ---
 
 ## Overordna beskrivelse av bruksområdet
