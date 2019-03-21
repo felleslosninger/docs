@@ -3,9 +3,8 @@ title: Autentisering med bruk av autorisasjonskode-flyten
 description: Bruk av Idporten sin OpenID Connect provider til autentisering med autorisasjonskode-flyten
 summary: "Autorisasjonskode-flyten er den vanlige flyten som blir brukt i OpenID Connect, og er anbefalt flyt for dei fleste tjenester."
 permalink: oidc_auth_codeflow.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ID-porten sin OpenID Connect provider tilbyr funksjonalitet for autentisering av sluttbrukere basert på autorisasjonskode-flyten, slik den er spesifisert i OpenID Connect Core 1.0 spesifikasjonen
