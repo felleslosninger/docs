@@ -31,6 +31,8 @@
 
                       {% endif %}
 
+                      <link rel="stylesheet" type="text/css" href="/assets/css/mermaid.css">
+                      <script type="text/javascript" src="/assets/js/mermaid.min.js"></script>
 
                     <h1>{{page.title}}</h1>
 
@@ -41,7 +43,7 @@
                 {% if page.summary %}
                  <div class="summary">{{page.summary}}</div>
                 {% endif %}
-                
+
                     {{content}}
                   {% if site.github_button_location_page_bottom == true %}
                   {% include github_button.html %}

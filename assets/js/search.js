@@ -1,9 +1,10 @@
----
-layout: null
----
+//
+
+var markInstance = new Mark(document.getElementById('search-results'));
 
 (function() {
   function displaySearchResults(results, store) {
+
     var searchResults = document.getElementById('search-results');
 
     if (results.length) { // Are there any results?
@@ -13,10 +14,11 @@ layout: null
         for (var i = 0; i < results.length && i < 10; i++) {  // Iterate over the results
         var item = store[results[i].ref];
         appendString += '<a href="' + item.url + '"><h4>' + item.title + '</h4></a>';
-        appendString += '<p>' + item.content.substring(0, 150) + '... <span class="productSubtitle">[' + item.product + ']</span></p>';
+        appendString += '<p>' + item.content.substring(0, 300) + '... <span class="productSubtitle">[' + item.product + ']</span></p>';
+
       }
 
-      searchResults.innerHTML = appendString;
+      searchResults.innerHTML = appendString, performMark();
     } else {
       // this is a hack for the inability to submit different language strings here
       searchResults.innerHTML = '<span style="color: red"><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></span><p><br/>{{site.uistring.no_search_results_found}}</p>';
@@ -36,10 +38,19 @@ layout: null
     }
   }
 
+  // Read the keyword
   var searchTerm = getQueryVariable('query');
+
+  function performMark() {
+          markInstance.mark(searchTerm);
+      }
+
+
 
   if (searchTerm) {
     document.getElementById('search-box').setAttribute("value", searchTerm);
+
+    //document.getElementById('search-box').setAttribute("value", searchTerm);
 
     // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
@@ -49,6 +60,7 @@ layout: null
       this.field('product');
       this.field('tags');
       this.field('content');
+
     });
 
     for (var key in window.store) { // Add the data to lunr
@@ -59,9 +71,15 @@ layout: null
         'content': window.store[key].content,
         'product': window.store[key].product
       });
+      // Listen to input and option changes
+
 
       var results = idx.search(searchTerm); // Get lunr to perform a search
-      displaySearchResults(results, window.store); // We'll write this in the next section
+      displaySearchResults(results, window.store, searchTerm); // We'll write this in the next section
+
     }
   }
-})();
+keywordInput.addEventListener("input", performMark);
+}
+
+)();
