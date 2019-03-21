@@ -3,9 +3,8 @@ title: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsreg
 description: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsregisteret
 summary: "Kontaktinformasjon fra Kontakt- og Reservasjonsregisteret tilhørende  innlogget bruker er tilgjengelig på et eget Oauth2-beskyttet REST-API."
 permalink: oidc_api_krr_user.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Introduksjon
