@@ -54,3 +54,24 @@ folders:
 
       - title: Selvhjelp til eFormidling
         jurl: /eform_selvhjelp.html
+  
+    - title: SAML i ID-porten
+      subfolderitems:
+
+      - title: Integrasjonsguide Id-porten SAML
+        jurl: /saml_tilgang.html
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/dokumentasjonsprosjektet
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.difi.no/felleslosninger
+
+- title: Difi
+  jurl: https://www.difi.no
