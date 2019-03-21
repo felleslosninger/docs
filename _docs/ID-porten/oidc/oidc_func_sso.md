@@ -3,9 +3,8 @@ title: SSO og SLO
 description: SSO og SLO
 summary: "Single Signon (SSO) og Single Logout er støttet ved bruk av OIDC."
 permalink: oidc_func_sso.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Om funksjonaliteten
