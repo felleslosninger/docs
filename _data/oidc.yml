@@ -4,7 +4,7 @@ folders:
   folderitems:
 
   - title: Kom i gang
-    jurl: /oidc_index.html
+#    jurl: /oidc_index.html
     subfolders:
 
     - title: Hvordan komme i gang
