@@ -3,9 +3,8 @@ title: Om disse sidene
 description: Om disse sidene
 summary: "Litt meta-info om disse sidene"
 permalink: oidc_about.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Om sidene
