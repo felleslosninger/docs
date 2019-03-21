@@ -3,9 +3,8 @@ title: Summary in english
 description: Summary in english
 summary: "ID-porten offer authentication services from Norwegian citizens towards service providers in the Norwegin public sector.  Most services should use the authorization code flow as standardized by OpenID Connect for integration towards ID-porten. "
 permalink: oidc_guide_english.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 This english summary is intentionally kept very brief.  We advice english speaking companies to study the [OpenID Connect specification](https://openid.net/specs/openid-connect-core-1_0.html) for details. ID-porten implements a subset of this specification, conforming more-or-less to a *basic* OpenID Provider.
