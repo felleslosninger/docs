@@ -25,7 +25,7 @@ folders:
   
   subfolders:
   - title: Eksempler
-       subfolderitems:
+    subfolderitems:
 
       - title: SPA in React
         url: /oidc_sample_react.html
