@@ -4,9 +4,10 @@ folders:
 - title: Integrasjonsveiledning OIDC
   folderitems:
 
+  subfolders:
   - title: Kom i gang1
-    jurl: /oidc_index.html
-
+    subfolderitems:
+    
       - title: Hvordan komme igang?
         jurl: /oidc_index.html
        
