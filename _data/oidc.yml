@@ -6,9 +6,6 @@ folders:
 
   - title: Kom i gang1
     jurl: /oidc_index.html
-    subfolders:
-    
-    subfolderitems:
 
       - title: Hvordan komme igang?
         jurl: /oidc_index.html
@@ -26,32 +23,22 @@ folders:
         jurl: /oidc_guide_english.html
 
   - title: Eksempler
-    output: web, pdf
-    subfolderitems:
+       subfolderitems:
 
       - title: SPA in React
         url: /oidc_sample_react.html
        
 
   - title: Funksjonalitet
-    output: web, pdf
     folderitems:
 
       - title: Metadata
         url: /oidc_func_wellknown.html
-        output: web, pdf
 
       - title: Klientregistrering
         url: /oidc_func_clientreg.html
-        output: web, pdf
 
 
       - title: Single sign-on og -logout
         url: /oidc_func_sso.html
-        output: web, pdf
-
-#     - title: Klientautentisering
-#       url: /oidc_func_clientauth.html
-#       output: web, pdf
-
 
