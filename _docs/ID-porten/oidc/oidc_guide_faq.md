@@ -4,9 +4,8 @@ description: Ofte stilte spørsmål
 summary: "Her finner du ofte stilte spørsmål"
 permalink: oidc_guide_faq.html
 toc: false
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Generelle spørsmål
