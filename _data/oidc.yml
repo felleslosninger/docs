@@ -25,7 +25,31 @@ folders:
       - title: Getting started
         jurl: /oidc_guide_english.html
 
-    - title: Selvhjelp
+    - title: Eksempler
+      subfolderitems:
+
+      - title: Selvhjelp til eFormidling
+        jurl: /eform_selvhjelp.html
+
+    - title: Funksjonalitet
+      subfolderitems:
+
+      - title: Selvhjelp til eFormidling
+        jurl: /eform_selvhjelp.html
+
+    - title: Arkitektur
+      subfolderitems:
+
+      - title: Selvhjelp til eFormidling
+        jurl: /eform_selvhjelp.html
+
+    - title: Oauth2-beskytta API'er fra Difi
+      subfolderitems:
+
+      - title: Selvhjelp til eFormidling
+        jurl: /eform_selvhjelp.html
+
+    - title: Vedlegg
       subfolderitems:
 
       - title: Selvhjelp til eFormidling
