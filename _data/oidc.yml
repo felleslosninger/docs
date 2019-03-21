@@ -69,20 +69,44 @@ folders:
     - title: Arkitektur
       subfolderitems:
 
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
+      - title: Arkitektur
+        jurl: /oidc_arch.html  
+
+      - title: Autentisering med code-flow
+        jurl: /oidc_auth_codeflow.html
+      
+      - title: Autentisering til mobil-app'er
+        jurl: /oidc_auth_app.html
+      
+      - title: API-autorisasjon innlogget bruker
+        jurl: /oidc_auth_oauth2.html  
+      
+      - title: Server-til-server API-autorisasjon
+        jurl: /oidc_auth_server-to-server-oauth2.html
 
     - title: Oauth2-beskytta API'er fra Difi
       subfolderitems:
 
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
+      - title: Kontakt- og Reservasjonsregisteret
+        jurl: /oidc_api_krr.html
+      
+      - title: Kontakt- og Reservasjonsregisteret (innlogget bruker)
+        jurl: /oidc_api_krr_user.html  
 
+      - title: Innbyggers innloggingsnivå
+        jurl: /oidc_api_authlevel.html
+      
+      - title: Innbyggers innloggingshistorikk
+        jurl: /oidc_api_logghistorikk.html
+      
+      - title: Innbyggers autorisasjoner
+        jurl: /oidc_api_autorisasjoner.html 
+      
     - title: Vedlegg
       subfolderitems:
 
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
+      - title: Om disse sidene
+        jurl: /oidc_about.html
   
     - title: SAML i ID-porten
       subfolderitems:
