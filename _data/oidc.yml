@@ -30,15 +30,42 @@ folders:
     - title: Eksempler
       subfolderitems:
 
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
-
+      - title: SPA in React
+        jurl: /oidc_sample_react.html
+       
     - title: Funksjonalitet
       subfolderitems:
 
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
+      - title: Metadata
+        jurl: /oidc_func_wellknown.html
+      
+      - title: Klientregistrering
+        jurl: /oidc_func_clientreg.html
+      
+      - title: Single sign-on og -logout
+        jurl: /oidc_func_sso.html
 
+      - title: PKCE
+        jurl: /oidc_func_pkce.html
+      
+      - title: OnBehalfOf
+        jurl: /oidc_func_onbehalfof.html
+      
+      - title: Pseudonymisert innlogging
+        jurl: /oidc_func_nopid.html  
+
+      - title: Javascript-applikasjoner
+        jurl: /oidc_auth_spa.html
+      
+      - title: eIDAS
+        jurl: /oidc_func_eidas.html
+      
+      - title: Administrasjon av OICD-integrasjoner
+        jurl: /oidc_api_admin.html   
+      
+      - title: Administrasjon av Maskinporten
+        jurl: /oidc_api_admin_maskinporten.html
+    
     - title: Arkitektur
       subfolderitems:
 
