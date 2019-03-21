@@ -3,9 +3,8 @@ title: Registrering av OIDC klienter
 description: Registrering av OIDC klienter
 summary: "ID-porten støtter flere typer klienter. Klienter må forhåndsregisteres, og korrekt registering av klient er viktig at sikkerheten skal være ivaretatt."
 permalink: oidc_func_clientreg.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Typer klienter
