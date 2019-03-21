@@ -3,9 +3,8 @@ title: PKCE
 description: ID-portens funksjonalitet for PKCE - Proof Key  for Code Exchange
 summary: "PKCE er en standard som beskytter mot stjeling av autorisasjonkoden, typisk ved bruk av mobil-app'er."
 permalink: oidc_func_pkce.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Om funksjonaliteten
