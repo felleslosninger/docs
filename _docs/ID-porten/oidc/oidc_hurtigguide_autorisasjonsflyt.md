@@ -3,9 +3,8 @@ title: Hurtigguide for autorisasjonsflyt i OIDC
 description: Hurtigguide for autorisasjonsflyt i OIDC
 summary: "Denne hurtiguiden beskriver hvordan en tar i bruk OpenID Connect (OIDC) og autorisasjonskodeflyt i ID-porten."
 permalink: oidc_hurtigguide_autorisasjonsflyt.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Akseptere bruksvilkår
