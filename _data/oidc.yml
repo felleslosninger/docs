@@ -23,23 +23,3 @@ folders:
       - title: Getting started
         jurl: /oidc_guide_english.html
   
-  subfolders:
-  - title: Eksempler
-    subfolderitems:
-
-      - title: SPA in React
-        url: /oidc_sample_react.html
-       
-  subfolders:
-  - title: Funksjonalitet
-    subfolderitems:
-
-      - title: Metadata
-        url: /oidc_func_wellknown.html
-
-      - title: Klientregistrering
-        url: /oidc_func_clientreg.html
-
-      - title: Single sign-on og -logout
-        url: /oidc_func_sso.html
-
