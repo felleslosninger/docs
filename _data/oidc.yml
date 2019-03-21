@@ -3,13 +3,16 @@ folders:
 
   folderitems:
 
-#  - title: Kom i gang
-#    jurl: /oidc_index.html
+  - title: Om OIDC
+    jurl: /idporten_index.html
     subfolders:
 
     - title: Hvordan komme i gang
       subfolderitems:
 
+      - title: Kom i gang
+        jurl: /oidc_index.html
+        
       - title: Integrasjonsguide ID-porten
         jurl: /oidc_guide_idporten.html
 
