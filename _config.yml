@@ -206,6 +206,7 @@ uistring:
     tableofcontents: Innhold # text that appears before in-page table of contents
     expandall: Utvid # appears as text in sidebar to expand all levels
     collapseall: Kollaps # appears as text in sidebar to collapse all levels
+    home_btn: Hjem # sends the user to the frontpage
     search_placeholder_text: Søk ... # appears as placeholder in search field
     no_search_results_found: Vi fant ingen sider som passet til søket ditt. Prøv igjen med andre søkeord?
     feedback_link_name: Tilbakemeldinger # name of Feedback link
