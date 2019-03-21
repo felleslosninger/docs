@@ -1,24 +1,26 @@
 folders:
-- title: Integrasjonsveiledning OIDC
+- title: eFormidling
+
   folderitems:
 
-  subfolders:
-  - title: Kom i gang2
-    jurl: /oidc_index.html
-    subfolderitems:
-    
-    - title: Hvordan komme igang?
-      jurl: /oidc_index.html
-       
-    - title: Integrasjonsguide ID-porten
-      jurl: /oidc_guide_idporten.html
+  - title: Om eFormidling
+    jurl: /eform_index.html
+    subfolders:
 
-    - title: Integrasjonsguide Maskinporten
-      jurl: /oidc_guide_maskinporten.html
+    - title: Bakgrunn
+      subfolderitems:
 
-    - title: Ofte stilte spørsmål
-      jurl: /oidc_guide_faq.html
+      - title: Meldingstyper og flyt
+        jurl: /eform_messagetypes.html
 
-    - title: Getting started
-      jurl: /oidc_guide_english.html
-  
+      - title: Miljø
+        jurl: /eform_environment.html
+
+      - title: Begreper
+        jurl: /eform_terms.html
+
+    - title: Selvhjelp
+      subfolderitems:
+
+      - title: Selvhjelp til eFormidling
+        jurl: /eform_selvhjelp.html
