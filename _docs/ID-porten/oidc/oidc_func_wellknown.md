@@ -3,9 +3,8 @@ title: well-known
 description: ID-portens well-known endepunkt
 summary: "Metadata om ID-porten er tilgjengelig på vårt .well-known-endepunkt"
 permalink: oidc_func_wellknown.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 
