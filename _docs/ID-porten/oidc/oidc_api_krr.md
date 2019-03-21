@@ -3,9 +3,8 @@ title: OAuth2 beskytta REST-API for Kontakt- og Reservasjonsregisteret
 description: OAuth2 beskytta REST-API for Kontakt- og Reservasjonsregisteret
 summary: "Funksjonaliteten i Kontakt- og Reservasjonsregisteret sin webservice *Oppslagstjenesten* er nå også tilgjengelig over et Oauth2-beskyttet REST-API."
 permalink: oidc_api_krr.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 ## Introduksjon
