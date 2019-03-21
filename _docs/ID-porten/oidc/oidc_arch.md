@@ -3,10 +3,8 @@ title: OIDC arkitektur
 description: Arkitekturen til ID-portens OIDC Provider
 summary: "OIDC Provideren til ID-porten er realisert som en frittstående applikasjon 'foran' ID-porten"
 permalink: oidc_arch.html
-
-layout: page
 sidebar: oidc
-isHome: true
+product: ID-porten
 ---
 
 ## Autentiseringstjenester i ID-porten
