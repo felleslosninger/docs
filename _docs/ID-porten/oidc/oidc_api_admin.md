@@ -3,9 +3,8 @@ title: OAuth2 beskytta REST-API for administrasjon av OIDC-integrasjoner
 description: API som gir tjenesteleverandørar mulighet til å administrere sine OIDC-integrasjoner.
 summary: "Oauth2-beskyttet REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere sine OIDC/Oauth2-integrasjoner i ID-porten."
 permalink: oidc_api_admin.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 
