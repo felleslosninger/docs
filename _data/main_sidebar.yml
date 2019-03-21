@@ -10,24 +10,14 @@ folders:
   - title: Om eFormidling
     jurl: /eform_index.html
     subfolders:
+    
+  - title: Installasjonsveiledning 
+    jurl: /idporten_index.html
+    
+  - title: Mer om eformidling
+    jurl: /eform_intro.html  
+    #denne skal være introduksjonsida som per i dag er index.html
 
-    - title: Bakgrunn
-      subfolderitems:
-
-      - title: Meldingstyper og flyt
-        jurl: /eform_messagetypes.html
-
-      - title: Miljø
-        jurl: /eform_environment.html
-
-      - title: Begreper
-        jurl: /eform_terms.html
-
-    - title: Selvhjelp
-      subfolderitems:
-
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
 
 - title: ID-porten
   folderitems:
