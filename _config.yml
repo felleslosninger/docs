@@ -1,5 +1,7 @@
 
 ############# SITE PROPERTIES #############
+name: Dokumentasjon av fellesløsninger
+url: https://difi.github.io/dokumentasjonsprosjektet
 
 # localhost port (can be anything)
 port: 4000
