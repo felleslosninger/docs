@@ -301,7 +301,18 @@ footer {
     padding: 10px;
   font-size: 20px;
   width: 40px;
-  background: #3B5998;
+  background: #3b5998;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa-rss {
+  padding: 10px;
+  font-size: 20px;
+  width: 40px;
+  background: #f26522;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -312,7 +323,7 @@ footer {
     padding: 10px;
   font-size: 20px;
   width: 40px;
-  background: #55ACEE;
+  background: #00aced;
   color: white;
   text-align: center;
   text-decoration: none;
