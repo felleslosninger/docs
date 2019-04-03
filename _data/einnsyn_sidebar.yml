@@ -1,0 +1,44 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: einnsyn-klient
+  product: einnsyn-klient
+  version:
+  folders:
+  
+
+  - title: Grunnleggende installasjonsguide
+    output: web, pdf
+    folderitems:
+
+      - title: Introduksjon
+        url: /index.html
+        output: web,pdf
+        
+      - title: Steg1; Forutsetning for installasjon og verktøy
+        url: /install_forutsetninger_verktoy.html
+        output: web,pdf
+
+      - title: Steg2; Konfigurasjon av einnsyn-klient.xml
+        url: /install_konfigurasjon.html
+        output: web,pdf
+        
+      - title: Steg3; Installere einnsyn-klient som Windows service
+        url: /install_tjeneste.html
+        output: web,pdf
+        
+      - title: Oppdatere einnsyn-klient
+        url: /oppdatere_tjeneste.html
+        output: web,pdf
+        
+  - title: Avansert - ekstra innstillinger
+    output: web, pdf
+    folderitems:
+    
+      - title: Flere einnsyn-klienter på samme server
+        url: /flere_klienter.html
+        output: web, pdf
+        
+      - title: Innsynskrav og e-postoppsett
+        url: /innsynskrav.html
+        output: web,pdf
