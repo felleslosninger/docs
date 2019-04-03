@@ -54,6 +54,9 @@ folders:
   folderitems:
   - title: Om eInnsyn
     jurl: /einnsyn_index.html
+    
+  - title: eInnsyns-klient
+    jurl: /einnsyn_index.html
 
 - title: eSignering
   folderitems:
