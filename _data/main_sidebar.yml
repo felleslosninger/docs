@@ -55,8 +55,8 @@ folders:
   - title: Om eInnsyn
     jurl: /einnsyn_index.html
     
-  - title: eInnsyns-klient
-    jurl: /einnsyn_index.html
+  - title: Installere eInnsyns-klient
+    jurl: /install_forutsetninger_verktoy.html
 
 - title: eSignering
   folderitems:
