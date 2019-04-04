@@ -5,7 +5,7 @@ sidebartitle: einnsyn-klient
 folders:
 - title: eInnsyn
 
-folderitems:
+  folderitems:
 
   - title: Grunnleggende installasjonsguide
     jurl: einnsyn_index.html
