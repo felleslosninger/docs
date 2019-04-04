@@ -2,7 +2,7 @@
 title: Installasjonsguide for einnsyn-klienten
 description: Dokumentasjon for einnsyn-klient
 summary: "Dokumentasjon for einnsyn-klient"
-permalink: index.html
+permalink: einnsyn_index.html
 sidebar: einnsyn_sidebar
 isHome: true
 ---
