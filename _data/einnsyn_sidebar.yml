@@ -5,10 +5,10 @@ sidebarTitle: einnsyn-klient
 folders:
 - title: eInnsyn
 
-  folderitems:
+  subfolders:
 
   - title: Grunnleggende installasjonsguide
-    subfolders:
+    folderitems:
 
       - title: Introduksjon
         url: /einnsyn_index.html
@@ -27,7 +27,7 @@ folders:
         
         
   - title: Avansert - ekstra innstillinger
-    subfolders:
+    folderitems:
     
       - title: Flere einnsyn-klienter på samme server
         url: /flere_klienter.html
