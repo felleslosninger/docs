@@ -8,11 +8,11 @@ folders:
   folderitems:
 
   - title: Grunnleggende installasjonsguide
-    jurl: /install_forutsetninger_verktoy.html
+    jurl: einnsyn_index.html
     subfolders::
 
       - title: Introduksjon
-        url: /index.html
+        url: /einnsyn_index.html
         output: web,pdf
         
       - title: Steg1; Forutsetning for installasjon og verktøy
