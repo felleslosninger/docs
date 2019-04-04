@@ -4,7 +4,7 @@ description: Dokumentasjon for einnsyn-klient
 summary: "Dokumentasjon for einnsyn-klient"
 permalink: einnsyn_index.html
 sidebar: einnsyn_sidebar
-isHome: true
+
 ---
 
 ## [Nyeste versjon av einnsyn-klienten finner du her](https://github.com/difi/einnsyn-klient/releases/)
