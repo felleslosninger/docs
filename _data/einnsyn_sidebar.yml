@@ -5,33 +5,34 @@ sidebarTitle: einnsyn-klient
 folders:
 - title: eInnsyn
 
-  subfolders:
+  folderitems:
+  
+  - title: Introduksjon
+    jurl: /einnsyn_index.html
+    subfolders:
 
-  - title: Grunnleggende installasjonsguide
-    folderitems:
-
-      - title: Introduksjon
-        url: /einnsyn_index.html
+    - title: Grunnleggende installasjonsguide
+      subfolderitems:
         
       - title: Steg1; Forutsetning for installasjon og verktøy
-        url: /install_forutsetninger_verktoy.html
+        jurl: /install_forutsetninger_verktoy.html
        
       - title: Steg2; Konfigurasjon av einnsyn-klient.xml
-        url: /install_konfigurasjon.html
+        jurl: /install_konfigurasjon.html
         
       - title: Steg3; Installere einnsyn-klient som Windows service
-        url: /install_tjeneste.html
+        jurl: /install_tjeneste.html
         
       - title: Oppdatere einnsyn-klient
-        url: /oppdatere_tjeneste.html
+        jurl: /oppdatere_tjeneste.html
         
         
   - title: Avansert - ekstra innstillinger
-    folderitems:
+    subfolderitems:
     
       - title: Flere einnsyn-klienter på samme server
-        url: /flere_klienter.html
+        jurl: /flere_klienter.html
         
       - title: Innsynskrav og e-postoppsett
-        url: /innsynskrav.html
+        jurl: /innsynskrav.html
         
