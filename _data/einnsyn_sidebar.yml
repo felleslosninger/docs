@@ -2,14 +2,14 @@
 
 sidebartitle: einnsyn-klient
 
-entries:
-- title: einnsyn-klient
-  product: einnsyn-klient
-  folders:
+folders:
+- title: eInnsyn
+
+folderitems:
 
   - title: Grunnleggende installasjonsguide
     jurl: einnsyn_index.html
-    folderitems:
+    subfolders:
 
       - title: Introduksjon
         url: /einnsyn_index.html
@@ -33,7 +33,7 @@ entries:
         
   - title: Avansert - ekstra innstillinger
     output: web, pdf
-    folderitems:
+    subfolders:
     
       - title: Flere einnsyn-klienter på samme server
         url: /flere_klienter.html
