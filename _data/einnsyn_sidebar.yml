@@ -2,11 +2,6 @@
 
 sidebarTitle: eInnsyns-klient
 
-folders:
-- title: Installasjonsveiledning eInnsyn-klient
-  
-  folderitems:
-
   - title: Grunnleggende installasjonsguide
     jurl: einnsyn_index.html
     subfolders::
