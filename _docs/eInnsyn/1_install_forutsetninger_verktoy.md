@@ -3,9 +3,7 @@ title: Forutsetninger for installasjon og verktøy
 description: Forutsetninger og verktøy
 summary: "Her finner du informasjon om program som må lastes ned og installeres for å bruke einnsyn-klienten"
 permalink: install_forutsetninger_verktoy.html
-
-layout: page
-sidebar: main_sidebar
+sidebar: eInnsyn_sidebar
 ---
 
 ## Dette må du ha på plass før du installerer
