@@ -3,7 +3,6 @@ title: eFormidling fra Difi
 description: Difis løsning for meldingsutveksling i offentlig forvalting
 summary: "Difis løsning for meldingsutveksling i offentlig forvalting"
 permalink: eformidling_index.html
-layout: page
 sidebar: main_sidebar
 ---
 
