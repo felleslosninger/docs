@@ -11,7 +11,7 @@ For å få tilgang til testmiljø må bestilling skje på samme måte som en ell
 
 I testmiljø må det brukes test virksomhetssertifikat og mottaker må enten være en test virksomhet eller annen virksomhet som også er aktiv i testmiljøet. 
 
-Informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [https://difi.github.io/eformidling/ip_run.html](https://difi.github.io/eformidling/ip_run.html)
+Informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [https://difi.github.io/felleslosninger/eformidling_ip_run.html](https://difi.github.io/felleslosninger/eformidling_ip_run.html)
 
 ### Digital post til virksomheter(DPV)
 
