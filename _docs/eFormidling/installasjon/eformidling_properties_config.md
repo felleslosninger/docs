@@ -97,6 +97,6 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 
 ### Hvordan opprette brukere for DPO/DPF/DPV?
 
-[Denne delen er flyttet](https://difi.github.io/felleslosninger/create_users.html)
+[Denne delen er flyttet](https://difi.github.io/felleslosninger/eformidling_create_users.html)
 
 --- 
