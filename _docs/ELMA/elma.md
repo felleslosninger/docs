@@ -6,6 +6,8 @@ permalink: elma.html
 folder: veiledning
 ---
 
+RSS test 
+
 ### Terminology
 Here are some terms which will be used throughout this page.
 
