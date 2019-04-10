@@ -6,10 +6,6 @@ permalink: eformidling_releasenotes.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
-## Installasjonsveiledning flyttet til ny URL
-29.01.18
-
-Installasjonsveiledningen er flyttet til et nytt repository [https://difi.github.io/eformidling](https://difi.github.io/eformidling). Det er satt opp redirect fra gamler URL'er. På den nye siden finner du enda mer teknisk informasjon om eformidling, meldingstyper, NextMove, meldingsflyt, mm.
 
 ## 1.7.94
 25.01.19
