@@ -1,0 +1,52 @@
+sidebarTitle: eFormidling
+
+folders:
+- title: Installasjon av integrasjonspunktet
+
+  folderitems:
+      - title: Last ned integrasjonspunktet
+        jurl: /eformidling_download_ip.html
+
+
+      - title: Forutsetninger for installasjon
+        jurl: /eformidling_forutsetninger.html
+
+      - title: Virksomhetssertifikat
+        jurl: /eformidling_virksomhetssertifikat.html
+
+      - title: Konfigurasjon av properties
+        jurl: /eformidling_properties_config.html
+
+      - title: Oppstart av integrasjonspunktet
+        jurl: /eformidling_ip_run.html
+
+      - title: Opprette brukere i eFormidling
+        jurl: /eformidling_create_users.html
+
+      - title: Oppgradere til ny versjon
+        jurl: /eformidling_ip_upgrade.html
+
+
+         
+    - title: Selvhjelp og nyttig informasjon
+      subfolderitems:
+
+     - title: Nyttig informasjon
+       url: /eformidling_selvhjelp.html
+       
+     - title: Typiske feil
+       url: /eformidling_selfhelp_typical_errors.html
+
+     - title: Trafikkflyt, kvitteringer og status
+       url: /eformidling_selfhelp_traffic_flow.html
+              
+     - title: Testmiljø eFormidling
+       url: /eformidling_testing_env.html
+               
+     - title: Endringslogg
+       url: /eformidling_releasenotes.html
+             
+     - title: Sak-arkiv
+       url: /eformidling_veiledning_sakark.html
+                        
+

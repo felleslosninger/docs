@@ -1,0 +1,28 @@
+sidebarTitle: eFormidling
+
+folders:
+- title: Teknisk informasjon
+
+  folderitems:
+
+    - title: Grensesnitt
+      subfolderitems: 
+
+      - title: Grensesnitt
+        jurl: /eformidling_api.html
+
+     
+
+    - title: NextMove
+      subfolderitems:
+
+#      - title: Arkivmeldingen
+#        jurl: /eformidling_arkivmeldingen.html
+#
+#      - title: Meldingsflyt
+#        jurl: /eformidling_meldingsflyt.html
+#
+#      - title: Forretningsmeldingen
+#        jurl: /eformidling_forretningsmelding.html
+
+
