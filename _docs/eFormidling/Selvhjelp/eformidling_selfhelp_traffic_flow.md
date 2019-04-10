@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 
 ### Digital post til offentlige virksomheter (DPO)
-![](https://github.com/difi/eformidling/blob/gh-pages/resources/flyt_dpo.jpg?raw=true)
+![](/felleslosninger/images/eformidling/flyt_dpo.jpg)
 
 Utgående/innkommende: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Denne meldingen blir lastet opp til Altinn's meldingsformidler og sendt videre til mottaker sitt integrasjonspunkt og mottas i sak-arkivsystemet. Appreceipt blir levert til avsender når mottakende integrasjonspunkt laster ned meldingen.
 
@@ -40,7 +40,7 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
 
 
 ### Digital post KS FIKS SvarInn/SvarUt (DPF)
-![](https://github.com/difi/eformidling/blob/gh-pages/resources/flyt_dpf.jpg?raw=true)
+![](/felleslosninger/images/eformidling/flyt_dpf.jpg)
 
 Utgående: Melding blir initiert i sak-arkivsystemet og sendt til avsenders integrasjonspunkt. Meldinga blir sendt til KS FIKS sin meldingsformidler SvarInn, for så å bli ekspedert til mottaker sin SvarInn innboks. Appreceipt blir levert til avsender når SvarInn mottar forsendelsen. Tjenesten har leveringsgaranti, ref bruksvilkår hos KS.
 
@@ -86,7 +86,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 ---
 
 ### Digital post til virksomheter (DPV)
-![](https://github.com/difi/eformidling/blob/gh-pages/resources/flyt_dpv.jpg?raw=true)
+![](/felleslosninger/images/eformidling/flyt_dpv.jpg)
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Meldinga vil så bli levert til Altinn sin DPV tjeneste. Appreceipt blir levert til avsender etter at Integrasjonspunktet får "ok" på forsendelserequesten mot Altinn. Leveringskvittering blir levert tilbake til avsender. Meldingen kan hentes i virksomhetens innboks i Altinn. Personen som henter meldinga må ha riktige rettigheter i Altinn for å kunne lese den (feks. sak-arkiv rolle)
 
@@ -113,7 +113,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 
 
 ### Digital post til innbygger (DPI)
-![](https://github.com/difi/eformidling/blob/gh-pages/resources/flyt_dpi.jpg?raw=true)
+![](/felleslosninger/images/eformidling/flyt_dpi.jpg)
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldingsformidler. Der vil det bli formidlet til innbygger sin digitale postkasse, eBoks eller Digipost. Om innbygger ikke har en digital postkasse vil brevet bli sendt til innboksen i Altinn. Om avsender ønsker det kan det bli sendt til print i stedet for til Altinn. 
 
@@ -157,7 +157,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 ### eInnsyn (DPE)
 
-![](https://github.com/difi/eformidling/blob/gh-pages/resources/flyt_dpe.png?raw=true)
+![](/felleslosninger/images/eformidling/flyt_dpe.png)
 
 1. Arkivar henter trigger eksport av oep saker
 2. Laster opp oep fil til filområde arkivar og eInnsynsklient har tilgang til
