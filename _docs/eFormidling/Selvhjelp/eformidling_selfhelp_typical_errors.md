@@ -20,7 +20,7 @@ Kontakt Difi på <a href="mailto:idporten@difi.no">idporten@difi.no</a> og be om
 ## DPO 
 DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter har et integrasjonspunkt og DPO aktivert for å motta/sende.
 
-Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](https://difi.github.io/eformidling/create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
+Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
 
 ### ErrorId 0. UserId 0
 ```
@@ -130,16 +130,16 @@ Her er må det djupare feilsøking til for å finne feilen. Kontakt Difi og oppg
 Her kan det også være fleire grunner til dette, blant annet:
 
 
-- Virksomheta har ikkje lasta opp virksomhetssertifikatet til mottakersystem i KS Svarut og dermed ikkje fullført konfigurasjonen. [Sjå veiledning](https://difi.github.io/eformidling/create_users.html#konfigurering-av-svarinn-mottakersystem)
+- Virksomheta har ikkje lasta opp virksomhetssertifikatet til mottakersystem i KS Svarut og dermed ikkje fullført konfigurasjonen. [Sjå veiledning](https://difi.github.io/felleslosninger/eformidling_create_users.html#konfigurering-av-svarinn-mottakersystem)
 - Virksomheta har ikkje registrert eget organisasjonsnummer inne på mottakersystem i KS Svarut
-- Om avsender sitt organisasjonsnumemr ikkje er med i metadata i meldinga så vil ikkje mottaker få meldinga rett til sak-arkivsystemet. Vi har ein workaround på dette som involverer å bruke eit dummy-orgnr. vha propertyen ```difi.move.fiks.inn.fallbackSenderOrgNr=``` [Les meir her](https://difi.github.io/eformidling/properties_config.html#dpf)
+- Om avsender sitt organisasjonsnumemr ikkje er med i metadata i meldinga så vil ikkje mottaker få meldinga rett til sak-arkivsystemet. Vi har ein workaround på dette som involverer å bruke eit dummy-orgnr. vha propertyen ```difi.move.fiks.inn.fallbackSenderOrgNr=``` [Les meir her](https://difi.github.io/felleslosninger/eformidling_properties_config.html#dpf)
 - SvarUt-brukere(kommuner/fylkeskommuner) med SvarUt versjon 4 eller eldre kan ikkje sende med orgnr i metadata. 
 - Ikkje alle SvarUt-brukere(kommuner/fylkeskommuner) sender med orgnr, sjølv om dei kan sende det teknisk sett. Kan være feks manglande oppsett i KS SvarUt hos avsender.
 
 ### Invalid location size
 
 Dette er ikke en error, men en warning. Denne kan forekomme når receipts.mv.db databasen inneholder data fra tidligere versjoner av integrasjonspunktet. Altså at det er oppgradert utan å tømme denne. Dette er inga krise, men vil vises i loggen. Kan fjernes ved å 
-[gjøre følgende](https://difi.github.io/eformidling/selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
+[gjøre følgende](https://difi.github.io/felleslosninger/eformidling_selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
 
 ```
 2018-11-29 09:46:45.933  WARN 3932 --- [main] o.a.a.store.kahadb.MessageDatabase       : Cannot recover message audit
