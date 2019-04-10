@@ -17,7 +17,7 @@ Kort fortalt gjør eFormidling det mulig å kommunisere med virksomheter (etterh
 
 ## Slik fungerer eFormidling
 
-{% include image.html file="illustrasjon_eformidling_hvit.png"  alt="eFormidling skisse over flyt" caption="eFormidling flyt" %}
+{% include image.html file="/eformidling/illustrasjon_eformidling_hvit.png"  alt="eFormidling skisse over flyt" caption="eFormidling flyt" %}
 
 Illustrasjonen over viser hvordan en melding i eFormidling blir forflyttet fra sak/arkivsystemet eller et annet fagsystem i din virksomhet, gjennom integrasjonspunktet, via en meldingsformidler, og gjort tilgjengelig for mottaker. Mottakeren vil få meldingen enten gjennom sitt sak/arkivsystem eller i virksomheten sin meldingsboks i Altinn. På sikt vil du også kunne sende til innbyggers digitale postkasse, Digipost eller eBoks.
 
