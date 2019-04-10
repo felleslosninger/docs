@@ -9,14 +9,14 @@ sidebar: eformidling_install_sidebar
 
 ### Eformidling på 2 minutter - dette må du vite
 
-- DPV = Digital post til virksomheter. Eget brukernamn/passord. Brukernamn/passord opprettes av Altinn og passord mottas på SMS. [Mer](https://difi.github.io/eformidling/create_users.html#opprette-dpv-bruker)
-- DPF = . Brukernamn/passord for både svarut og svarinn (ulike). Begge settene med brukernamn/passord genereres/hentes på [https://svarut.ks.no/](https://svarut.ks.no/). [Veiledning finner du her](https://difi.github.io/eformidling/create_users.html#opprette-dpf-brukere-svarinn-og-svarut)
+- DPV = Digital post til virksomheter. Eget brukernamn/passord. Brukernamn/passord opprettes av Altinn og passord mottas på SMS. [Mer](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpv-bruker)
+- DPF = . Brukernamn/passord for både svarut og svarinn (ulike). Begge settene med brukernamn/passord genereres/hentes på [https://svarut.ks.no/](https://svarut.ks.no/). [Veiledning finner du her](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpf-brukere-svarinn-og-svarut)
 - DPO = Digital post til offentlige virksomheter. Eget brukernamn/passord. [Opprettes selv](https://difi.github.io/eformidling/create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste) 
-- Virksomheten må ha et [virksomhetssertifikat](https://difi.github.io/eformidling/virksomhetssertifikat.html). Offentlig nøkkel sendes til Difi. 
+- Virksomheten må ha et [virksomhetssertifikat](https://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html). Offentlig nøkkel sendes til Difi. 
 - Integrasjonspunktet både sender og mottar meldinger.
 - "Started IntegrasjonspunktApplication ..." blir logget i ```\integrasjonspunkt\integrasjonspunkt-logs\application.log``` like etter fullført oppstart.
 - Bruksvilkår/avtale må være på plass for å bruke eFormidling. Se lenke under.
-- [Mer om eFormidling og hvordan det fungerer](https://difi.github.io/eformidling/index.html)
+- [Mer om eFormidling og hvordan det fungerer](https://difi.github.io/felleslosninger/eformidling_index.html)
 - Standard tid før en melding som feiler blir lagt på DLQ er ca 21t.
 
 For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
