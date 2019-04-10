@@ -8,15 +8,15 @@ folders:
   folderitems:
 
   - title: Om eFormidling
-    jurl: /eform_index.html
+    jurl: /eformidling_index.html
     subfolders:
     
   - title: Installasjonsveiledning 
-    jurl: /idporten_index.html
+    jurl: /eformidling_download.html
     
-  - title: Mer om eformidling
-    jurl: /eform_intro.html  
-    #denne skal være introduksjonsida som per i dag er index.html
+  - title: Teknisk informasjon
+    jurl: /m.html  
+    #Må endre jurl på teknisk info
 
 
 - title: ID-porten
