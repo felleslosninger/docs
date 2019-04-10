@@ -5,24 +5,27 @@ folders:
 
   folderitems:
 
-    - title: Grensesnitt
-      subfolderitems: 
-
+    - title: Hvordan komme i gang
+      subfolderitems:
+        
       - title: Grensesnitt
-        jurl: /eformidling_api.html
+        subfolderitems: 
+
+        - title: Grensesnitt
+          jurl: /eformidling_api.html
 
      
 
-    - title: NextMove
-      subfolderitems:
+      - title: NextMove
+        subfolderitems:
 
-#      - title: Arkivmeldingen
-#        jurl: /eformidling_arkivmeldingen.html
+#        - title: Arkivmeldingen
+#          jurl: /eformidling_arkivmeldingen.html
 #
-#      - title: Meldingsflyt
-#        jurl: /eformidling_meldingsflyt.html
+#        - title: Meldingsflyt
+#          jurl: /eformidling_meldingsflyt.html
 #
-#      - title: Forretningsmeldingen
-#        jurl: /eformidling_forretningsmelding.html
+#        - title: Forretningsmeldingen
+#          jurl: /eformidling_forretningsmelding.html
 
 
