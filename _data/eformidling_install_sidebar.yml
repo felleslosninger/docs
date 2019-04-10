@@ -4,9 +4,6 @@ folders:
 - title: Installasjon av integrasjonspunktet
 
   folderitems:
-  
-    - title: Installasjon
-      subfolderitems:
       
       - title: Last ned integrasjonspunktet
         jurl: /eformidling_download_ip.html
@@ -29,8 +26,10 @@ folders:
       - title: Oppgradere til ny versjon
         jurl: /eformidling_ip_upgrade.html
 
-    - title: Selvhjelp og nyttig informasjon
-      subfolderitems:
+folders:
+- title: Selvhjelp og nyttig informasjon
+
+  folderitems:
 
       - title: Nyttig informasjon
         jurl: /eformidling_selvhjelp.html
