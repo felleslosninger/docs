@@ -14,10 +14,10 @@ For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følg
 
 ## Dette gjør du før installasjon av Integrasjonspunktet
 
-+ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](https://difi.github.io/eformidling/selfhelp.html#justere-tilgjengelig-minne)
++ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](https://difi.github.io/felleslosninger/eformidling_selfhelp.html#justere-tilgjengelig-minne)
 + Nødvendige brannmuråpninger
 + Java 8 med JCE installert (JDK)
-+ Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/virksomhetssertifikat.html)
++ Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
 + Tips: Installer integrasjonspunktet og eInnsynsklient på samme server.
 
 ### Tidssynkronisering
@@ -105,7 +105,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive logmel
 
 **Hvordan?**
 
-[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](http://difi.github.io/felleslosninger/virksomhetssertifikat.html)
+[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](http://www.buypass.no/bedrift/produkter-og-tjenester/buypass-virksomhetssertifikat)
