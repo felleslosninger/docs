@@ -51,15 +51,15 @@ Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
 
 <button data-toggle="collapse" data-target="#demo1">Trykk her</button>
 <div id="demo1" class="collapse">
-  {% include custom/properties/jks_generell.html %} 
+  {% include eformidling/properties/jks_generell.html %} 
 </div>
 
 ### eFormidling - Digital post til innbyggere
 
 <button data-toggle="collapse" data-target="#demo3">Trykk her</button>
 <div id="demo3" class="collapse">
-  {% include custom/properties/jks_generell.html %} 
-  {% include custom/properties/dpi.html %}
+  {% include eformidling/properties/jks_generell.html %} 
+  {% include eformidling/properties/dpi.html %}
 </div>
 
 ### eFormidling - Digital Post til virksomheter
@@ -75,9 +75,9 @@ Når en virksomhet sender digital post til virksomheter kan virksomheten sende b
 
 Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle ut desse. Se etter DPV/DPO/DPF i tabellen under og legg inn innstillinger som kreves for denne tjenesten. Se under tabellen for unntak.
 
-  {% include custom/properties/jks_generell.html %} 
+  {% include eformidling/properties/jks_generell.html %} 
   
-  {% include custom/properties/dpv.html %}
+  {% include eformidling/properties/dpv.html %}
   
 ### Regel:
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
@@ -97,6 +97,6 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 
 ### Hvordan opprette brukere for DPO/DPF/DPV?
 
-[Denne delen er flyttet](https://difi.github.io/eformidling/create_users.html)
+[Denne delen er flyttet](https://difi.github.io/felleslosninger/create_users.html)
 
 --- 
