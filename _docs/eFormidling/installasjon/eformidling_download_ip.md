@@ -12,7 +12,7 @@ sidebar: eformidling_install_sidebar
 
 ### Endringslogg
 
-[Endringslogg finner du her](https://difi.github.io/eformidling/releasenotes.html#oppdatering-av-innholdet-i-veiledningen)
+[Endringslogg finner du her](https://difi.github.io/felleslosninger/releasenotes.html#oppdatering-av-innholdet-i-veiledningen)
 
 ## Komme igang
 
