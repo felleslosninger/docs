@@ -154,7 +154,7 @@ disqus_shortname:
 ############# GOOGLE ANALYTICS #############
 
 # include Google Analytics?
-show_google_analytics: false
+show_google_analytics: true
 
 # Google Analytics tracking code number (not the whole code snippet -- just UA-123456 or so)
 # To adjust the google analytics code snippet, see the _includes/google_analytics.html code in the gem
