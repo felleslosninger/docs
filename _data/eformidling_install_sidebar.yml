@@ -4,6 +4,10 @@ folders:
 - title: Installasjon av integrasjonspunktet
 
   folderitems:
+  
+    - title: Installasjon
+      subfolderitems:
+      
       - title: Last ned integrasjonspunktet
         jurl: /eformidling_download_ip.html
 
@@ -25,27 +29,25 @@ folders:
       - title: Oppgradere til ny versjon
         jurl: /eformidling_ip_upgrade.html
 
-
-         
     - title: Selvhjelp og nyttig informasjon
       subfolderitems:
 
-     - title: Nyttig informasjon
-       url: /eformidling_selvhjelp.html
+      - title: Nyttig informasjon
+        jurl: /eformidling_selvhjelp.html
        
-     - title: Typiske feil
-       url: /eformidling_selfhelp_typical_errors.html
+      - title: Typiske feil
+        jurl: /eformidling_selfhelp_typical_errors.html
 
-     - title: Trafikkflyt, kvitteringer og status
-       url: /eformidling_selfhelp_traffic_flow.html
+      - title: Trafikkflyt, kvitteringer og status
+        jurl: /eformidling_selfhelp_traffic_flow.html
               
-     - title: Testmiljø eFormidling
-       url: /eformidling_testing_env.html
+      - title: Testmiljø eFormidling
+        jurl: /eformidling_testing_env.html
                
-     - title: Endringslogg
-       url: /eformidling_releasenotes.html
+      - title: Endringslogg
+        jurl: /eformidling_releasenotes.html
              
-     - title: Sak-arkiv
-       url: /eformidling_veiledning_sakark.html
-                        
+      - title: Sak-arkiv
+        jurl: /eformidling_veiledning_sakark.html
+
 
