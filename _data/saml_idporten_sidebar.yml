@@ -31,12 +31,12 @@ folders:
   - title: Verifikasjonstester SAML og OpenID Connect
     jurl: /saml_verifikasjonstester.html    
 
-    subfolders:
-    - title: OpenID Connect i ID-porten
-      subfolderitems:
 
-      - title: Integrasjonsguide OpenID Connect
-        jurl: /oidc_index.html
+- title: OpenID Connect i ID-porten
+  folderitems:
+
+  - title: Integrasjonsguide OpenID Connec
+    jurl: /oidc_index.html
 
 ###########################
 
