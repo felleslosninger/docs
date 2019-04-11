@@ -5,7 +5,7 @@ folders:
   folderitems:
 
   - title: ELMA user manual
-    jurl: /elma_elma.html
+    jurl: /elma_user_manual.html
 
   - title: ICD 0192 and new profiles
     jurl: /elma_icd0192andNewProfiles.html
@@ -17,7 +17,7 @@ folders:
     jurl: /elma_webservice.html
 
   - title: WSDL
-    jurl: /elma_elma_wsdl.html
+    jurl: /elma_wsdl.html
 
   - title: Status & releasenotes
-    jurl: /elma_elma_status.html
+    jurl: /elma_status.html
