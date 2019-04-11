@@ -5,7 +5,7 @@ folders:
   folderitems:
 
   - title: ELMA user manual
-    jurl: /elma_elma.html
+    jurl: /elma_user_manual.html
 
   - title: ICD 0192 and new profiles
     jurl: /elma_icd0192andNewProfiles.html
