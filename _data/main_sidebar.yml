@@ -44,6 +44,9 @@ folders:
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /kkr_index.html
+    
+  - title: Oppslagstjenesten
+    jurl: /krr_oppslagstjenesten.html
 
 - title: Digital postkasse
   folderitems:
