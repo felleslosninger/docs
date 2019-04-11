@@ -10,16 +10,16 @@ product: ID-porten
 ## HURTIGGUIDE: Teknisk Integrasjon
 
 ### Typisk saksgang for en integrasjon
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/saksgang.bmp "saksgangs for en integrasjon")
+![](/felleslosninger/images/idporten/saml/hurtigguide/saksgang.bmp "saksgangs for en integrasjon")
 
 ### Hva må utveksles?
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/nyutveksling.PNG "hva må utveksles")
+![](/felleslosninger/images/idporten/saml/hurtigguide/nyutveksling.PNG "hva må utveksles")
 
 ### ID-porten støtter ikke alt i SAML2-standarden
 
 Metadata definerer hva som er tillatt 
 
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/nystotte.PNG "ID-porten støtter ikke salt i SAML2-standarden")
+![](/felleslosninger/images/idporten/saml/hurtigguide/nystotte.PNG "ID-porten støtter ikke salt i SAML2-standarden")
 
 ### Typisk metadata-fil
 
@@ -61,7 +61,7 @@ Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hu
 	- Single sign-on
 	- Single logout
 
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/slo_test.bmp "single log-out test")
+![](/felleslosninger/images/idporten/saml/hurtigguide/slo_test.bmp "single log-out test")
 
 ### Test-klient
 
@@ -69,7 +69,7 @@ Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hu
 
 Kan brukes i verifikasjonstesten som «annen tjenesteier» ifbm single sign-on
 
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/testsp.bmp "ID-porten test-klient")
+![](/felleslosninger/images/idporten/saml/hurtigguide/testsp.bmp "ID-porten test-klient")
 
 Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 
@@ -119,7 +119,7 @@ Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 
 ### ID-porten single logout
 
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/idp_slo.bmp "ID-porten single logout")
+![](/felleslosninger/images/idporten/saml/hurtigguide/idp_slo.bmp "ID-porten single logout")
 
 1. Bruker ber om utlogging
 2. Tjenesteeier sender LogoutRequest til ID-porten via frontkanal 
@@ -138,5 +138,5 @@ Hvis én tjenesteeier bryter kjeden, vil brukeren fremdeles være innlogget i ID
 * Maks høgde på logo er 90px. og bredde bør ikkje være meir enn 135px.
 * Bakgrunnsfargen på idporten sidene er #f3f4f4, så tjenesteeigarane bør enten ha denne fargen som bakgrunn på sin logo eller ha bakgrunnen transparent. 
 
-![](/dokumentasjonsprosjektet/images/idporten/saml/hurtigguide/eid_selektor.bmp "eid selektor")
+![](/felleslosninger/images/idporten/saml/hurtigguide/eid_selektor.bmp "eid selektor")
 
