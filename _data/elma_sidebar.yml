@@ -17,7 +17,7 @@ folders:
     jurl: /elma_webservice.html
 
   - title: WSDL
-    jurl: /elma_elma_wsdl.html
+    jurl: /elma_wsdl.html
 
   - title: Status & releasenotes
-    jurl: /elma_elma_status.html
+    jurl: /elma_status.html
