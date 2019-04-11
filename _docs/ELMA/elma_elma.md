@@ -60,11 +60,11 @@ See the next two sections for further instructions
 ### EndpointURL
 To add an endpointURL you need to already have uploaded a certificate. Choose a transport profile, your certificate and a URL.
 
-![](/felleslosninger/images/elma/new_endpoint_url_0.png)
+![](/felleslosninger/images/elma/new_endpoint_url_0.PNG)
 
 After you've added the endpointURL it shows up in endpoint.
 
-![](/felleslosninger/images/elma/new_endpoint_url_1.png)
+![](/felleslosninger/images/elma/new_endpoint_url_1.PNG)
 
 To edit or delete an endpoint url you click the edit or delete button next to the endpointURL. 
 
