@@ -1,16 +1,10 @@
 sidebarTitle: ID-porten OIDC
 
+
 folders:
-- title: Integrasjonsveledning OIDC
+- title: Hvordan komme i gang
 
   folderitems:
-
-  - title: Om ID-porten
-    jurl: /idporten_index.html
-    subfolders:
-
-    - title: Hvordan komme i gang
-      subfolderitems:
 
       - title: Kom i gang
         jurl: /oidc_index.html
@@ -27,14 +21,14 @@ folders:
       - title: Getting started
         jurl: /oidc_guide_english.html
 
-    - title: Eksempler
-      subfolderitems:
+- title: Eksempler
+  folderitems:
 
-      - title: SPA in React
-        jurl: /oidc_sample_react.html
+    - title: SPA in React
+      jurl: /oidc_sample_react.html
        
-    - title: Funksjonalitet
-      subfolderitems:
+- title: Funksjonalitet
+  folderitems:
 
       - title: Metadata
         jurl: /oidc_func_wellknown.html
@@ -66,8 +60,8 @@ folders:
       - title: Administrasjon av Maskinporten
         jurl: /oidc_api_admin_maskinporten.html
     
-    - title: Arkitektur
-      subfolderitems:
+- title: Arkitektur
+  folderitems:
 
       - title: Arkitektur
         jurl: /oidc_arch.html  
@@ -84,8 +78,8 @@ folders:
       - title: Server-til-server API-autorisasjon
         jurl: /oidc_auth_server-to-server-oauth2.html
 
-    - title: Oauth2-beskytta API'er fra Difi
-      subfolderitems:
+- title: Oauth2-beskytta API'er fra Difi
+  folderitems:
 
       - title: Kontakt- og Reservasjonsregisteret
         jurl: /oidc_api_krr.html
@@ -102,14 +96,14 @@ folders:
       - title: Innbyggers autorisasjoner
         jurl: /oidc_api_autorisasjoner.html 
       
-    - title: Vedlegg
-      subfolderitems:
+- title: Vedlegg
+  folderitems:
 
       - title: Om disse sidene
         jurl: /oidc_about.html
   
-    - title: SAML i ID-porten
-      subfolderitems:
+- title: SAML i ID-porten
+  folderitems:
 
       - title: Integrasjonsguide Id-porten SAML
         jurl: /saml_tilgang.html
