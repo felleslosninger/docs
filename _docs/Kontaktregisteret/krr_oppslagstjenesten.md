@@ -2,7 +2,7 @@
 title: Oppslagstjenesten
 description: 
 summary: ""
-permalink: krr_oppslagstjenesten.md
+permalink: krr_oppslagstjenesten.html
 sidebar: main_sidebar
 product: KRR
 ---
