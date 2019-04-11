@@ -72,29 +72,10 @@ folders:
   
   - title: about ELMA
     jurl: /elma_index.html
-    subfolders:
+    
+  - title: Docs
+    jurl: /elma_manual.html
 
-    - title: Docs
-      jurl: /elma_index.html
-      subfolderitems:
-
-      - title: ELMA user manual
-        jurl: /elma.html
-
-      - title: ICD 0192 and new profiles
-        jurl: /icd0192andNewProfiles.html
-
-      - title: Upgrade to new 3.0 profiles
-        jurl: /upgradeTo0192Profiles.html
-
-      - title: Webservice
-        jurl: /webservice.html
-
-      - title: WSDL
-        jurl: /elma_wsdl.html
-
-      - title: Status
-        jurl: /elma_status.html
         
 ###########################
 
