@@ -170,7 +170,7 @@ breadcrumb_display: false
 breadcrumb_home_display: true
 
 # Url for Home path to point to
-breadcrumb_home_url: https://github.com/difi/dokumentasjonsprosjektet
+breadcrumb_home_url: https://github.com/difi/felleslosninger
 
 ##########  MARKDOWN PROCESS AND FILTER ##########
 # leave these settings as is unless you want to use something other than kramdown Markdown
