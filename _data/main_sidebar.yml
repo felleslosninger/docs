@@ -62,7 +62,7 @@ folders:
     jurl: /einnsyn_index.html
     
   - title: eInnsyns-klient
-    jurl: /install_forutsetninger_verktoy.html
+    jurl: /einnsyn_forutsetninger.html
 
 - title: eSignering
   folderitems:
