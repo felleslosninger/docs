@@ -1,7 +1,10 @@
 ---
-identifier: logging
 title: Logging
-layout: default
+description: 
+summary: ""
+permalink: krr_logging.html
+sidebar: krr_dotnet
+product: KRR
 ---
 
 ### Generelt
