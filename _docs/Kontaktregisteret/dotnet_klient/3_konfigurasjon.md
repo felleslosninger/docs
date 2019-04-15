@@ -1,7 +1,10 @@
 ---
-identifier: konfigurasjon
 title: Konfigurasjon
-layout: default
+description: 
+summary: ""
+permalink: konfigurasjon.html
+sidebar: krr_dotnet
+product: KRR
 ---
 
 OppslagstjenesteKonfigurasjon initieres med hvilket miljø man ønsker å kjøre mot, FunksjoneltTestmiljø eller Produksjonsmiljø, samt tilhørende sertifikat til gitt miljø. 
