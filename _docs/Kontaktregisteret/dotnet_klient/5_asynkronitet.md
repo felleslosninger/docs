@@ -1,7 +1,10 @@
 ---
-identifier: async_sync
-title: Async/Sync
-layout: default
+title: Async/sync
+description: 
+summary: ""
+permalink: krr_async.html
+sidebar: krr_dotnet
+product: KRR
 ---
 
 Alle operasjonene/metodene i Oppslagstjenesten har både synkrone og asynkrone metoder. Velg det som passer din applikasjon. Klienten initialiserer på samme måte og det er kun gitt metode som styrer hvorvidt den er asynkron eller ikke.
