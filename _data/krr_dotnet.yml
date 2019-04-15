@@ -8,16 +8,16 @@ folders:
     jurl: /krr_eksempler_paa_kall.html
     
   - title: Hvordan komme i gang
-    jurl: /saml_funksjonell.html
+    jurl: /krr_hvordan_komme_i_gang.html
 
   - title: Konfigurasjon
-    jurl: /saml_teknisk_innlogging.html
+    jurl: /krr_konfigurasjon.html
     
   - title: Sertifikater
-    jurl: /saml_teknisk_losning.html
+    jurl: /krr_sertifikater.html
     
   - title: Asynkronitet
-    jurl: /saml_sikkerhet.html    
+    jurl: /krr_async.html    
     
   - title: Logging
     jurl: /saml_stottede_profiler.html
