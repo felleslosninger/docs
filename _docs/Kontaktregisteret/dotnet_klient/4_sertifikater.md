@@ -1,7 +1,10 @@
 ---
-identifier: installeresertifikater
 title: Installere sertifikater
-layout: default
+description: 
+summary: ""
+permalink: krr_sertifikater.html
+sidebar: krr_dotnet
+product: KRR
 ---
 
 For å kunne bruke dette biblioteket så trenger du et sertifikat for å kunne autentisere deg mot Oppslagstjenesten. Dette bør installeres på maskinen som skal bruke klientbiblioteket. Grunnen til at vi ønsker å installere det er for å ikke ha passord i klartekst i koden.
