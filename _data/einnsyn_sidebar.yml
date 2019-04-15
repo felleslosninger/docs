@@ -4,27 +4,26 @@ folders:
 - title: eInnsyn
   folderitems:
         
-  - title: Steg 1 - Forutsetning for installasjon og verktøy
+  - title: Forutsetning for installasjon og verktøy
     jurl: /einnsyn_forutsetninger.html
        
-  - title: Steg 2 - Konfigurasjon av einnsyn-klient.xml
+  - title: Konfigurasjon av einnsyn-klient.xml
     jurl: /einnsyn_konfigurasjon.html
         
-  - title: Steg 3 - Installere einnsyn-klient som Windows service
+  - title: Installere einnsyn-klient som Windows service
     jurl: /einnsyn_install_tjeneste.html
         
   - title: Oppdatere einnsyn-klient
     jurl: /einnsyn_oppdatere_tjeneste.html
-        
-        
-  - title: Avansert - ekstra innstillinger
-    folderitems:
+                
+- title: Avansert - ekstra innstillinger
+  folderitems:
     
-    - title: Flere einnsyn-klienter på samme server
-      jurl: /einnsyn_flere_klienter.html
+  - title: Flere einnsyn-klienter på samme server
+    jurl: /einnsyn_flere_klienter.html
         
-    - title: Innsynskrav og e-postoppsett
-      jurl: /einnsyn_innsynskrav.html
+  - title: Innsynskrav og e-postoppsett
+    jurl: /einnsyn_innsynskrav.html
               
 ###########################
 
