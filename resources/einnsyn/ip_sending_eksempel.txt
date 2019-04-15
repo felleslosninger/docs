@@ -1,0 +1,2 @@
+2017-12-11 11:01:19.538  INFO 14932 --- [ qtp10823740-24] n.d.m.nextmove.MessageOutController      : Created new conversation resource [id=b32ef599-4a2f-41ab-b641-ca29d0d63715, serviceIdentifier=DPE_DATA]
+2017-12-11 11:01:20.211  INFO 14932 --- [ qtp10823740-31] AUDIT                                    : Message [id=b32ef599-4a2f-41ab-b641-ca29d0d63715, serviceIdentifier=DPE_DATA] sent to service bus
