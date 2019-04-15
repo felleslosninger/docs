@@ -17,7 +17,7 @@ Det er rutinene for å etablere en ny integrasjon mot ID-porten.
 
 Dette er svært individuelt hvor lang prosessen er fra første dialog med ny tjenesteeier til ny tjeneste er i produksjon.
 
-![](/dokumentasjonsprosjektet/images/idporten/saml/rutine_for_tilgang.bmp?raw=true "Rutine for tilgang")
+![](/felleslosninger/images/idporten/saml/rutine_for_tilgang.bmp?raw=true "Rutine for tilgang")
 
 
 #### **Den første kontakten**

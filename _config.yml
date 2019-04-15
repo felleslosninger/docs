@@ -1,7 +1,7 @@
 
 ############# SITE PROPERTIES #############
 name: Dokumentasjon av fellesløsninger
-url: https://difi.github.io/dokumentasjonsprosjektet
+url: https://difi.github.io/felleslosninger
 
 # localhost port (can be anything)
 port: 4000
@@ -71,7 +71,7 @@ github_button_location_below_title: false
 github_button_location_page_bottom: false
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
-github_editme_path: https://github.com/difi/dokumentasjonsprosjektet/blob/gh-pages
+github_editme_path: https://github.com/difi/felleslosninger/blob/gh-pages
 
 
 ############# EXCLUDE LIST #############
@@ -170,7 +170,7 @@ breadcrumb_display: false
 breadcrumb_home_display: true
 
 # Url for Home path to point to
-breadcrumb_home_url: https://github.com/difi/dokumentasjonsprosjektet
+breadcrumb_home_url: https://github.com/difi/felleslosninger
 
 ##########  MARKDOWN PROCESS AND FILTER ##########
 # leave these settings as is unless you want to use something other than kramdown Markdown

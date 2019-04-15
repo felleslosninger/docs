@@ -30,11 +30,11 @@ column1_links:
 column2_title: Hvordan bidra?
 column2_links:
   -
-    target: https://difi.github.io/dokumentasjonsprosjektet/CONTRIBUTING.html
+    target: https://difi.github.io/felleslosninger/CONTRIBUTING.html
     text: Gjøre endringer direkte
   -
-    target: https://github.com/difi/dokumentasjonsprosjektet/issues
+    target: https://github.com/difi/felleslosninger/issues
     text: Opprette issue på GitHub
   -
-    target: https://difi.github.io/dokumentasjonsprosjektet/NOTICE.html
+    target: https://difi.github.io/felleslosninger/NOTICE.html
     text: Teknologi brukt på disse sidene

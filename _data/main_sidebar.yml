@@ -44,6 +44,12 @@ folders:
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /kkr_index.html
+    
+  - title: Oppslagstjenesten
+    jurl: /krr_oppslagstjenesten.html
+    
+  - title: Dotnet-klient
+    jurl: /krr_eksempel_paa_kall.html
 
 - title: Digital postkasse
   folderitems:
@@ -72,29 +78,10 @@ folders:
   
   - title: about ELMA
     jurl: /elma_index.html
-    subfolders:
+    
+  - title: Documentation
+    jurl: /elma_user_manual.html
 
-    - title: Docs
-      jurl: /elma_index.html
-      subfolderitems:
-
-      - title: ELMA user manual
-        jurl: /elma.html
-
-      - title: ICD 0192 and new profiles
-        jurl: /icd0192andNewProfiles.html
-
-      - title: Upgrade to new 3.0 profiles
-        jurl: /upgradeTo0192Profiles.html
-
-      - title: Webservice
-        jurl: /webservice.html
-
-      - title: WSDL
-        jurl: /elma_wsdl.html
-
-      - title: Status
-        jurl: /elma_status.html
         
 ###########################
 
@@ -103,7 +90,7 @@ related_resources_title: Andre nyttige lenker
 related_resources_list:
 
 - title: Github
-  jurl: https://github.com/difi/dokumentasjonsprosjektet
+  jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger

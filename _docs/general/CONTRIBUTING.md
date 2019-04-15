@@ -13,7 +13,7 @@ Under finner du inforomasjon om hvordan du kan bidra.
 
 Vi benytter GitHub issue tracker for å rapportere feil eller ønsker om ny funksjonalitet.
 
-Før du legger inn en sak, er det fint om du sjekker raskt gjennom de saker som [allerede er rapportert](https://github.com/difi/dokumentasjonsprosjektet/issues),for å sikre at ikke noen andre allerede har rapportert det samme.
+Før du legger inn en sak, er det fint om du sjekker raskt gjennom de saker som [allerede er rapportert](https://github.com/difi/felleslosninger/issues),for å sikre at ikke noen andre allerede har rapportert det samme.
 
 ## Rask redigering av eksisterende dokumenter
 

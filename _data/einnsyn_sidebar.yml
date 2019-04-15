@@ -1,42 +1,33 @@
-# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
-
-sidebarTitle: einnsyn-klient
+sidebarTitle: eInnsyn-klient
 
 folders:
 - title: eInnsyn
-
   folderitems:
   
-  - title: Introduksjon
-    jurl: /einnsyn_index.html
-    subfolders:
-
-    - title: Grunnleggende installasjonsguide
-      subfolderitems:
+  - title: Grunnleggende installasjonsguide
         
-      - title: Steg1; Forutsetning for installasjon og verktøy
-        jurl: /install_forutsetninger_verktoy.html
+  - title: Steg1 - Forutsetning for installasjon og verktøy
+    jurl: /einnsyn_install_forutsetninger_verktoy.html
        
-      - title: Steg2; Konfigurasjon av einnsyn-klient.xml
-        jurl: /install_konfigurasjon.html
+  - title: Steg2 - Konfigurasjon av einnsyn-klient.xml
+    jurl: /einnsyn_install_konfigurasjon.html
         
-      - title: Steg3; Installere einnsyn-klient som Windows service
-        jurl: /install_tjeneste.html
+  - title: Steg3 - Installere einnsyn-klient som Windows service
+    jurl: /einnsyn_install_tjeneste.html
         
-      - title: Oppdatere einnsyn-klient
-        jurl: /oppdatere_tjeneste.html
+  - title: Oppdatere einnsyn-klient
+    jurl: /einnsyn_oppdatere_tjeneste.html
         
         
   - title: Avansert - ekstra innstillinger
-    subfolderitems:
+    folderitems:
     
-      - title: Flere einnsyn-klienter på samme server
-        jurl: /flere_klienter.html
+    - title: Flere einnsyn-klienter på samme server
+      jurl: /einnsyn_flere_klienter.html
         
-      - title: Innsynskrav og e-postoppsett
-        jurl: /innsynskrav.html
-        
-        
+    - title: Innsynskrav og e-postoppsett
+      jurl: /einnsyn_innsynskrav.html
+              
 ###########################
 
 related_resources_title: Andre nyttige lenker
