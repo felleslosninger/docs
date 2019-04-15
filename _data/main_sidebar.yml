@@ -47,6 +47,9 @@ folders:
     
   - title: Oppslagstjenesten
     jurl: /krr_oppslagstjenesten.html
+    
+  - title: Dotnet-klient
+    jurl: /krr_eksempler_paa_kall.html
 
 - title: Digital postkasse
   folderitems:
