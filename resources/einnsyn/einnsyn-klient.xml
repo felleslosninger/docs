@@ -1,0 +1,14 @@
+<service>
+	<id>einnsyn-klient</id>
+	<name>einnsyn-klient</name>
+	<description>Klient for parsing og sending av journaldata</description>
+	<workingdirectory>Katalog der applikasjonen vert pakka ut</workingdirectory>
+	<env name="client" value="sender-1.0.jar" />
+	<env name="integrasjonspunktUrl" value="Url til integrasjonspunkt. Med protokoll" />
+	<env name="inputDirectory" value="Katalog du vil lytte på" />
+	<env name="orgnummer" value="Organisasjonsnummeret ditt" />
+	<env name="logdir" value="logs" />
+	<executable>javaw</executable>
+	<arguments>-jar -Dapplication.moveUrl=%integrasjonspunktUrl% -Dapplication.inputDirectory=%inputDirectory% -Dapplication.orgnummer=%orgnummer% -Dapplication.receiverId=974720760 -Dapplication.logdirectory=%logdir% %client%</arguments>
+</service>
+	
