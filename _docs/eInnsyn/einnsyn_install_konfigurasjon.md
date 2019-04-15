@@ -2,7 +2,7 @@
 title: Konfigurasjon av einnsyn-klient
 description: Konfigurasjon av einnsyn-klient
 summary: "Konfigurasjon av einnsyn-klient ++"
-permalink: install_konfigurasjon.html
+permalink: einnsyn_konfigurasjon.html
 sidebar: einnsyn_sidebar
 ---
 
@@ -90,3 +90,5 @@ Her er et eksempel på en ferdig konfigurert einnsyn-klient.xml-fil inkludert lo
 	<executable>javaw</executable>
 </service>
 ```	
+
+ 
