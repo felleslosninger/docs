@@ -1,7 +1,10 @@
 ---
-identifier: eksempelforsending
 title: Eksempel på kall
-layout: default
+description: 
+summary: ""
+permalink: krr_eksempel_paa_kall.html
+sidebar: krr_dotnet
+product: KRR
 ---
 
 Det er bare tre kall du kan gjøre mot oppslagstjenesten; 
