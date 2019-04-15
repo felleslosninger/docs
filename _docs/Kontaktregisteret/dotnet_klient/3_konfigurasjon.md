@@ -2,7 +2,7 @@
 title: Konfigurasjon
 description: 
 summary: ""
-permalink: konfigurasjon.html
+permalink: krr_konfigurasjon.html
 sidebar: krr_dotnet
 product: KRR
 ---
