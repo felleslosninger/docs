@@ -7,10 +7,10 @@ folders:
   - title: Grunnleggende installasjonsguide
         
   - title: Steg1 - Forutsetning for installasjon og verktøy
-    jurl: /einnsyn_install_forutsetninger_verktoy.html
+    jurl: /einnsyn_forutsetninger.html
        
   - title: Steg2 - Konfigurasjon av einnsyn-klient.xml
-    jurl: /einnsyn_install_konfigurasjon.html
+    jurl: /einnsyn_konfigurasjon.html
         
   - title: Steg3 - Installere einnsyn-klient som Windows service
     jurl: /einnsyn_install_tjeneste.html
