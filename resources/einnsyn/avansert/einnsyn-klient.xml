@@ -1,0 +1,20 @@
+<service>
+	<id>einnsyn-klient</id>
+	<name>einnsyn-klient</name>
+	<description>Klient for parsing og sending av journaldata</description>
+	<env name="USE_IP" value="true"/>
+	<env name="RECEIVER_ORGNUMMER" value="991825827" />
+	<argument>-jar</argument>
+	<argument>-Dapplication.moveUrl=</argument>
+	<argument>-Dapplication.inputDirectory=</argument>
+	<argument>-Dapplication.orgnummer=</argument>
+  <argument>-Dserver.port=</argument>
+	<argument>-Dspring.mail.host=</argument>
+	<argument>-Dspring.mail.port</argument>
+	<argument>-Dspring.mail.username=</argument>
+	<argument>-Dspring.mail.password=</argument>
+	<argument>sender-2018-04-13.jar</argument>
+	<logpath>%BASE%/logs</logpath>
+	<executable>javaw</executable>
+</service>
+	
