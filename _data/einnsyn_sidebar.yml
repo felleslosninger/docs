@@ -3,16 +3,14 @@ sidebarTitle: eInnsyn-klient
 folders:
 - title: eInnsyn
   folderitems:
-  
-  - title: Grunnleggende installasjonsguide
         
-  - title: Steg1 - Forutsetning for installasjon og verktøy
+  - title: Steg 1 - Forutsetning for installasjon og verktøy
     jurl: /einnsyn_forutsetninger.html
        
-  - title: Steg2 - Konfigurasjon av einnsyn-klient.xml
+  - title: Steg 2 - Konfigurasjon av einnsyn-klient.xml
     jurl: /einnsyn_konfigurasjon.html
         
-  - title: Steg3 - Installere einnsyn-klient som Windows service
+  - title: Steg 3 - Installere einnsyn-klient som Windows service
     jurl: /einnsyn_install_tjeneste.html
         
   - title: Oppdatere einnsyn-klient
