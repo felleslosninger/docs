@@ -12,7 +12,7 @@ Når en sluttbruker bestiller innsynskrav til en virksomhet så skal dette motta
 
 Når en sluttbruker bestiller et innsynskrav så vil Difi sin einnsyn-klient generere en bestilling og sende denne til Difi sitt integrasjonspunkt. Dette integrasjonspunktet vil dermed kryptere, signere og pakke meldingen for så å sende denne via Azure Servicebus til mottaker sitt integrasjonspunkt. Her vil det bli dekryptert og sendt videre til mottakers einnsyn-klienten. Denne vil kontakte en intern SMTP-server og be den sende bestillingen. Det vil så gå en e-post fra denne e-postserveren, men med avsender e-postadresse "admin@oep.no". Denne e-posten går til den adressen som er angitt på einnsyn.no under ``` virksomhet -> "..." -> endre -> e-post ```. Deretter må filen importeres inn i sakarkivsystemet. 
 
-![nettverksoppsett einnsyn-klient](../resources/nettverksoppsett.png)
+![nettverksoppsett einnsyn-klient](/felleslosninger/images/einnsyn/nettverksoppsett.png)
 
 I tillegg er det også lagt inn støtte for at e-posten som mottas har avsenderadressen til bestiller. Dette kan føre til at e-posten blir stopper i spamfilter, så det kan være lurt å sjekke der om en ikke mottar e-posten. 
 
@@ -20,9 +20,9 @@ I tillegg er det også lagt inn støtte for at e-posten som mottas har avsendera
 
 Se forklaring under bildet.
 
-![meldingsflyt einnsyn](../resources/meldingsflyt.bmp)
+![meldingsflyt einnsyn]/felleslosninger/images/einnsyn/meldingsflyt.bmp)
 
-[Trykk her for større bilde](../resources/meldingsflyt.bmp)
+[Trykk her for større bilde](/felleslosninger/images/einnsyn/meldingsflyt.bmp)
 
 1. Arkivar henter trigger eksport av oep saker
 2. Laster opp oep fil til filområde arkivar og eInnsynsklient har tilgang til
