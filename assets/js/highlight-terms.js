@@ -36,7 +36,7 @@
 
         var firstMark = document.querySelector("mark");
 		if (firstMark) {
-			firstMark.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+			firstMark.scrollIntoView(alignTo=false);
 			window.preventAutofocusScroll = true;
 		}
 	}
