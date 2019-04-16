@@ -55,6 +55,9 @@ folders:
   folderitems:
   - title: Om digital postkasse
     jurl: /digipost_index.html
+    
+  - title: Dokumentasjon
+    jurl: /digipost_dokumentasjon.html
 
 - title: eInnsyn
   folderitems:
