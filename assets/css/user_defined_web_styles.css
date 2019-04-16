@@ -1,11 +1,18 @@
 
+
+// highlighted search terms after navigating from search result
+.h {
+	background-color: #f7e064;
+}
+
+
 p, ol, ul,li {
   font-size: 1.8rem;
   line-height: 2.6rem;
 }
 mark {
   padding: 0;
-  background-color:yellow;
+  background-color:#f7e064;
 }
 
 /* glossary */

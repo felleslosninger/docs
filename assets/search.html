@@ -27,7 +27,7 @@ sidebar: main_sidebar
             {% unless doc.search == false %}
 
       "{{ doc.url | slugify }}": {
-        "title": "{{ doc.product | xml_escape }} - {{ doc.title | xml_escape }}",
+        "title": "{{ doc.title | xml_escape }}",
         "tags": "{{ doc.tags | xml_escape }}",
         "content": {{ doc.content | strip_html | strip_newlines | jsonify }},
         "url": "{{ doc.url | remove: '/' | xml_escape }}",
