@@ -29,6 +29,7 @@
 
 	if (term) {
 		var contentEl = document.querySelector(".main"),
+
 			mark = new Mark(contentEl);
 
 
@@ -36,7 +37,7 @@
 
         var firstMark = document.querySelector("mark");
 		if (firstMark) {
-			firstMark.scrollIntoView(alignTo=false);
+			firstMark.scrollIntoView({behavior: "auto", block: "center", inline: "nearest"});
 			window.preventAutofocusScroll = true;
 		}
 	}
