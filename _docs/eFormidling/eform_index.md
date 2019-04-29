@@ -1,5 +1,5 @@
 ---
-title: eFormidling fra Difi
+title: eFormidling
 description: Difis løsning for meldingsutveksling i offentlig forvalting
 summary: "Difis løsning for meldingsutveksling i offentlig forvalting"
 permalink: eformidling_index.html
