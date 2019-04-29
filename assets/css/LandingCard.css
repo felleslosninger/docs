@@ -14,7 +14,7 @@
 
     
   }
-  .card-text
+  .card-text, .card-text:hover
   {
     color: white;
     text-decoration: none!important; 
