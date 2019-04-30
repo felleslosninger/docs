@@ -16,5 +16,6 @@
     "DPI" : "Digital post til inbygger - meldinger sendt til innbyggers digitale postkasse",
     "DPV" : "Digital post til virksomhet - Meldinger til en virksomhets postboks i Altinn",
     "DPF" : "Digital post til fiks meldingsformidler - Meldinger til kommuner og andre virksomheter som bruker FIKS meldingsformidler",
-    "PKI" : "Public key infrastructure - Rammeverk for utstedelse, administrasjon og bruk av digitale sertifikater over datanettverk"
+    "PKI" : "Public key infrastructure - Rammeverk for utstedelse, administrasjon og bruk av digitale sertifikater over datanettverk",
+    "Test" : "Tester ordlistefunksjonalitet"
 }
