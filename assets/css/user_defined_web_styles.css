@@ -6,6 +6,7 @@
 }
 
 
+
 p, ol, ul,li {
   font-size: 1.8rem;
   line-height: 2.6rem;
@@ -15,13 +16,6 @@ mark {
   background-color:#f7e064;
 }
 
-/* glossary */
-
-.dt, dt {
-  font-size: 20px;
-  color: black;
-  font: bold;
-}
 
 /* headings */
 
@@ -43,6 +37,20 @@ h1, h2, h3, h4 {
 
 .h4, h4 {
   font-size: 20px;
+}
+
+/* Ordliste*/
+li.ordliste {
+
+  list-style: none;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+}
+
+.fa-book {
+  font-size: 25px;
+  width: 40px;
+  text-align: center;
 }
 
 /*sidebar*/
