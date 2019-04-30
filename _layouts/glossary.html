@@ -2,7 +2,7 @@
 <div class="container">
 
   <link rel="stylesheet" href="/assets/css/syntax.css"/>
-  <link rel="stylesheet" href="/assets/css/listnav.css">
+  <!-- <link rel="stylesheet" href="/assets/css/listnav.css"> -->
 
         <div class="row row-offcanvas row-offcanvas-left">
 
@@ -20,14 +20,13 @@
 
               <div class="subtitle"></div>
 
-
               <div id="glossary-nav"></div>
               <div class="subtitle"></div>
                 <dl id="glossary">
 
                     {% assign gs = site.data.glossary | sort %}
                         {% for kv in gs %}
-                        <li class="ordliste"><b>{{ kv[0] }}</b> <br> {{ kv[1] }} </li>
+                        <li class="ordliste glossary"><b>{{ kv[0] }}</b> <br> {{ kv[1] }} </li>
                         {% endfor %}
 			</dl>
             </div>
@@ -40,7 +39,7 @@
 
     {% include google_analytics.html %}
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <script src="assets/js/jquery-listnav.min.js"></script>
     <script>
     $(function(){
