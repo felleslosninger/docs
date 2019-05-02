@@ -54,7 +54,7 @@ link_type: jurl
 show_feedback: true
 
 # email address feedback gets sent to
-feedback_email: someemail@gmail.com
+feedback_email: idporten@difi.no
 
 # note: to customize the auto-completed body text, overwrite it by adding _includes/feedback.html in your own theme.
 
@@ -72,6 +72,15 @@ github_button_location_page_bottom: false
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
 github_editme_path: https://github.com/difi/felleslosninger/blob/gh-pages
+
+
+############# Glossary info #############
+
+# inserts glossary link in top nav bar (recommended)
+glossary: true
+
+# link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
+glossary_path: https://difi.github.io/felleslosninger/ordliste.html
 
 
 ############# EXCLUDE LIST #############
@@ -214,5 +223,6 @@ uistring:
     feedback_link_name: Tilbakemeldinger # name of Feedback link
     feedback_subject_line: Tilbakemelding vedr. teknisk dokumentasjon # Auto-filled Subject link of email
     github_edit_button_text: Endre/rediger innhold # text for github button
+    glossary_text: Ordliste # text for glossary link
 
 # theme: jekyll-theme-cayman
