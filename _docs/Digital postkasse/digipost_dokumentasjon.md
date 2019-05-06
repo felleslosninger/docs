@@ -21,4 +21,5 @@ Følg [stegvis veiledning på samarbeidsportalen](https://samarbeid.difi.no/fell
 
 [Integrasjonsguide](https://begrep.difi.no/SikkerDigitalPost/) (Ekstern side foreløpig. Blir lagt inn her snart) 
 
-[Funksjonell dokumentasjon, priser, tilleggstjenester og beskrivelse av tjenesten](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere)
+
+Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere)
