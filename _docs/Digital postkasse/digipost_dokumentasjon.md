@@ -1,6 +1,6 @@
 ---
 title: Digital postkasse
-description: Digital postkasse til innbyggere
+description: DPI - Digital postkasse til innbyggere
 summary: "Teknisk dokumentasjon av digital post til innbyggere"
 permalink: digipost_dokumentasjon.html
 product: Digital postkasse
@@ -15,9 +15,8 @@ Se [bruksvilkår i samarbeidsportalen](https://samarbeid.difi.no/bruksvilkar/bru
 Følg [stegvis veiledning på samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/ta-i-bruk-digital-postkasse)
 
 ### Dokumentasjon
-[Dokumentasjon av klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/) (Ekstern side foreløpig. Blir lagt inn her snart)
-
-[Dokumentasjon av klientbibliotek Java](http://difi.github.io/sikker-digital-post-klient-java/v5/) (Ekstern side foreløpig. Blir lagt inn her snart)
+[Dokumentasjon av klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/) 
+[Dokumentasjon av klientbibliotek Java](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
 
 [Integrasjonsguide](https://begrep.difi.no/SikkerDigitalPost/) (Ekstern side foreløpig. Blir lagt inn her snart) 
 
