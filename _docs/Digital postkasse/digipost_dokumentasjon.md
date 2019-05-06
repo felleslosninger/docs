@@ -1,7 +1,7 @@
 ---
 title: Digital postkasse
-description: DPI - Digital postkasse til innbyggere
-summary: "Teknisk dokumentasjon av digital post til innbyggere"
+description: Digital postkasse til innbyggere
+summary: "Klienter og integrasjonsguide"
 permalink: digipost_dokumentasjon.html
 product: Digital postkasse
 ---
