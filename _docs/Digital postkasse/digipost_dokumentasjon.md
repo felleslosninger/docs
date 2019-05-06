@@ -8,6 +8,13 @@ product: Digital postkasse
 
 Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere)
 
+#### Teknisk
+[Dokumentasjon av klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
+
+[Dokumentasjon av klientbibliotek Java](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
+
+[Integrasjonsguide](https://begrep.difi.no/SikkerDigitalPost/) (Ekstern side foreløpig. Blir lagt inn her snart) 
+
 #### Hvem kan bruke digital post til innbyggere?
 Offentlige virksomheter som har godtatt Difis bruksvilkår kan ta i bruk denne tjenesten i produksjonsmiljø. Man kan gjerne teste løsningen i testmiljø før man godtar bruksvilkårene.
 
@@ -16,12 +23,6 @@ Se [bruksvilkår i samarbeidsportalen](https://samarbeid.difi.no/bruksvilkar/bru
 #### Rutine for tilgang
 Følg [stegvis veiledning på samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/ta-i-bruk-digital-postkasse)
 
-#### Teknisk
-[Dokumentasjon av klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
-
-[Dokumentasjon av klientbibliotek Java](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
-
-[Integrasjonsguide](https://begrep.difi.no/SikkerDigitalPost/) (Ekstern side foreløpig. Blir lagt inn her snart) 
 
 
 
