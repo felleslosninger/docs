@@ -56,6 +56,7 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | Logging - TCP utgående | 	79.170.81.228:8400  | 2001:67c:2d68:d1f1::56:1 | Alle |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
 | eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
+| eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:5671 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 | meldingsformidler.digipost.no | 146.192.168.126:443 | -  | DPI |
 | meldingsformidler.digipost.no | 146.192.168.80:443 | -  | DPI |
