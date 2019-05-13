@@ -2,4 +2,4 @@
 
 Publisering av dokumentasjon gjøres fra gh-pages branchen.
 
-Du finner den formatterte versjon av dokumentasjonen her: https://difi.github.io/felleslosninger/
+Du finner den formaterte versjon av dokumentasjonen her: https://difi.github.io/felleslosninger/
