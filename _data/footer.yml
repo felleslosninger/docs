@@ -1,32 +1,6 @@
 about_title: Om disse sidene
 about_description: >
 
-
-column1_title: Fellesløsninger kildekode
-column1_links:
-  -
-    target: https://github.com/difi/move-integrasjonspunkt/
-    text: eFormidling
-  -
-    target: http://someurl2.com
-    text: ID-porten
-  -
-    target: https://github.com/difi/oppslagstjeneste-klient-dotnet
-    text: Oppslagstjenesten, klient .Net
-
-  -
-    target: https://github.com/difi/kontaktregister-statistikk-klient
-    text: Statistikk klient, KKR
-  -
-    target: https://github.com/difi/sikker-digital-post-klient-java
-    text: Sikker digital post klient java
-  -
-    target: https://github.com/difi/sikker-digital-post-klient-dotnet
-    text: Sikker digital post klient .Net
-  -
-    target: https://github.com/difi/einnsyn-klient
-    text: eInnsyn
-
 column2_title: Hvordan bidra?
 column2_links:
   -
