@@ -6,7 +6,7 @@ navbar_dropdowns:
 - title: Topnav dropdowns
   folders:
 
-  - title: Fellesløsninger
+  - title: Navigasjon
     folderitems:
     - title: eFormidling
       url: /eform_index.html
