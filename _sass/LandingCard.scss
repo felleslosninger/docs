@@ -8,7 +8,9 @@
     height: 50px;
     transition: 0.4s;
     position: relative;
-    width: 350px;
+    width: 100%;
+    min-width: 50px;
+    max-width: 350px;
     cursor:pointer;
     margin: 5px; padding: 15px 16px; margin-bottom: 10px;
 
