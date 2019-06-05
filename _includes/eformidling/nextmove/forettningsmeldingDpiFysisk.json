@@ -1,0 +1,31 @@
+{      
+    "print" : {
+        "mottaker":{
+            "navn": "Hentes fra capabilitylookup",
+            "adresselinje1": "Hentes fra capabilitylookup",
+            "adresselinje2": "Hentes fra capabilitylookup",
+            "adresselinje3": "Hentes fra capabilitylookup",
+            "adresselinje4": "Hentes fra capabilitylookup",
+            "postnummer": "Hentes fra capabilitylookup",
+            "poststed": "Hentes fra capabilitylookup",                
+            "landkode": "Hentes fra capabilitylookup",
+            "land": "Hentes fra capabilitylookup"
+        },         
+        "utskriftsfarge" : "SORT_HVIT",
+        "posttype": "B",
+        "retur":{
+            "mottaker":{
+                "navn": "Hentes fra capabilitylookup",
+                "adresselinje1": "Hentes fra capabilitylookup",
+                "adresselinje2": "Hentes fra capabilitylookup",
+                "adresselinje3": "Hentes fra capabilitylookup",
+                "adresselinje4": "Hentes fra capabilitylookup",
+                "postnummer": "Hentes fra capabilitylookup",
+                "poststed": "Hentes fra capabilitylookup",                
+                "landkode": "Hentes fra capabilitylookup",
+                "land": "Hentes fra capabilitylookup"
+            },
+            "returhaandtering": "DIREKTE_RETUR"
+        } 
+    }  
+}

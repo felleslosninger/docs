@@ -4,29 +4,24 @@ folders:
 - title: Teknisk informasjon
 
   folderitems:
+      
+      - title: Om NextMove
+        jurl: /eformidling_nm_about.html
 
-    - title: Hvordan komme i gang
-      subfolderitems:
-        
-      - title: Grensesnitt
-        subfolderitems: 
+      - title: Arkivmeldingen
+        jurl: /eformidling_nm_arkivmeldingen.html
 
-        - title: Grensesnitt
-          jurl: /eformidling_api.html
+      - title: Meldingsflyt
+        jurl: /eformidling_nm_meldingsflyt.html
 
-     
+      - title: Meldingen
+        jurl: /eformidling_nm_message.html
 
-      - title: NextMove
-        subfolderitems:
+      - title: Sikkerhet
+        jurl: /eformidling_nm_sikkerhet.html
 
-#        - title: Arkivmeldingen
-#          jurl: /eformidling_arkivmeldingen.html
-#
-#        - title: Meldingsflyt
-#          jurl: /eformidling_meldingsflyt.html
-#
-#        - title: Forretningsmeldingen
-#          jurl: /eformidling_forretningsmelding.html
+      - title: Grensesnitt / Swagger
+        jurl: /eformidling_nm_swagger.html
 
 
 ###########################
