@@ -130,30 +130,6 @@ Sending
 |LEVERT|Melding lastet ned fra mottakers kø|
 |LEST|Mottaker har lest medlingen / sendt applikasjonskvittering|
 
-Avvik
-
-|Verdi|Beskrivelse|
-|-----|-----------|
-|TTL_EXPIRED|
-
-Mottak
-
-
-
-
-*DPO / DPE*
-
-*DPF*
-
-For meldinger som sendes til FIKS platformen med svar ut gjelder følgende mapping
-
-|Verdi|Beskrivelse|
-|-----|-----------|
-
-https://ks-no.github.io/svarut/integrasjon/forsendelsesservicev10/#status
-
-*DPI*
-
 
 ## WebHooks (Under utvikling)
 
