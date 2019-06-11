@@ -12,7 +12,7 @@
             "land": "Hentes fra capabilitylookup"
         },         
         "utskriftsfarge" : "SORT_HVIT",
-        "posttype": "B",
+        "posttype": "B_OEKONOMI",
         "retur":{
             "mottaker":{
                 "navn": "Hentes fra capabilitylookup",
