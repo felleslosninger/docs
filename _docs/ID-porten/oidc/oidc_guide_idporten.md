@@ -211,7 +211,7 @@ Klienten må generere og signere ein jwt med følgende elementer for å forespø
 
 | Parameter  | Verdi |
 | --- | --- |
-| x5c | Inneholde klientens virksomhetssertifikat som er brukt for signering av JWT'en |
+| x5c | Inneholde klientens virksomhetssertifikat som er brukt for signering av JWT'en. Må være angitt som en array.  |
 | alg | RS256 - Vi støtter kun RSA-SHA256 som signeringsalgoritme |
 
 &nbsp;
