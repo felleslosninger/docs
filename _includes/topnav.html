@@ -133,7 +133,7 @@
                     {% endfor %}
 
                           <!-- drop-down nav items appear here -->
-
+                <!--
                     {% for entry in topnav.navbar_dropdowns %}
                     {% for folder in entry.folders %}
                     <li class="dropdown">
@@ -152,6 +152,8 @@
                     </li>
 
                     {% endfor %}{% endfor %}
+                -->
+
                     {% if site.show_feedback == true %}
                     {% include feedback.html %}
                     {% endif %}
@@ -163,7 +165,6 @@
                     {% if site.glossary == true %}
                     <li>{% include glossary.html %}</li>
                     {% endif %}
-
 
                     <li>
 
@@ -182,6 +183,7 @@
 
 
                     </li>
+
                 </ul>
 
             </div>
