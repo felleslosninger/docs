@@ -1,6 +1,6 @@
 {      
     "print" : {
-        "primaerDokumentNavn": "",
+        "hoveddokument": "",
         "mottaker":{
             "navn": "Hentes fra capabilitylookup",
             "adresselinje1": "Hentes fra capabilitylookup",
