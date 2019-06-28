@@ -44,7 +44,10 @@ folders:
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /kkr_index.html
-    
+
+- title: Oppslagstjenesten
+    jurl: /oppslagstjenesten_rest.html
+
   - title: Oppslagstjenesten
     jurl: /krr_oppslagstjenesten.html
     
