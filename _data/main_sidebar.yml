@@ -50,9 +50,6 @@ folders:
 
   - title: Oppslagstjenesten SOAP
     jurl: /oppslagstjenesten_soap.html
-    
-  - title: Dotnet-klient
-    jurl: /krr_eksempel_paa_kall.html
 
 - title: Digital postkasse
   folderitems:
