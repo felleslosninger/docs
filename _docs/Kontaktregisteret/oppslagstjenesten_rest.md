@@ -1,7 +1,6 @@
 ---
 title: Oppslagstjenesten REST
 description: OAuth2 beskytta REST-API for Kontakt- og Reservasjonsregisteret
-summary: "Funksjonaliteten i Kontakt- og Reservasjonsregisteret sin webservice *Oppslagstjenesten* er nå også tilgjengelig over et Oauth2-beskyttet REST-API."
 permalink: oppslagstjenesten_rest.html
 sidebar: main_sidebar
 product: KRR
@@ -9,7 +8,7 @@ product: KRR
 
 ## Introduksjon
 
-Kontaktregisteret sin oppslagstjeneste tilbyr i dag eit SOAP-basert grensesnitt beskytta med WS-Security. Som del av lanseringen av OpenID Connect i ID-porten  tilbyr Difi nå også et alternativt REST-basert grensesnitt som gjør det enklere å implementere nye integrasjoner mot registeret.
+Kontaktregisteret sin oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API. Dette gjør det enkelt å implementere integrasjoner mot registeret.
 
 ## Bruk av Oauth2
 
