@@ -1,8 +1,8 @@
 ---
-title: Oppslagstjenesten
-description: 
+title: Oppslagstjenesten SOAP
+description: SOAP-grensesnittet avvikles! Bruk REST-grensesnittet ved nye integrasjoner mot KRR
 summary: ""
-permalink: krr_oppslagstjenesten.html
+permalink: oppslagstjenesten_soap.html
 sidebar: main_sidebar
 product: KRR
 ---
