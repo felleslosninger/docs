@@ -10,8 +10,8 @@ Oppslagstjenesten er en webservice som gir offentlig forvaltning tilgang til gj√
 
 Registeret inneholder informasjon om:
 
-    innbyggere har reservert seg mot digital kommunikasjon mot det offentlige eller ikke
-    foretrukket e-postadresse, mobilnummer og sikker digital postkasse
+   * innbyggere har reservert seg mot digital kommunikasjon mot det offentlige eller ikke
+   * foretrukket e-postadresse, mobilnummer og sikker digital postkasse
 
 Registrering og oppdatering av informasjonen ligger til de ulike registrene og er ikke en del av oppslagstjenesten.
 
