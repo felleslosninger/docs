@@ -43,7 +43,7 @@ folders:
 - title: Kontaktregisteret
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /kkr_index.html
+    jurl: /krr_index.html
 
   - title: Oppslagstjenesten REST
     jurl: /oppslagstjenesten_rest.html
