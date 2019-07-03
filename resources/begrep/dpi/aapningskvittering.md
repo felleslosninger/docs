@@ -16,4 +16,7 @@ sidebar:
 
 ### Xml eksempel
 
-```<aapningskvittering>TRUE</aapningskvittering>```
+```
+<aapningskvittering>TRUE</aapningskvittering>
+```
+
