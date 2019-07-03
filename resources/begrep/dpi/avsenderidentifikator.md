@@ -13,7 +13,7 @@ sidebar:
 | Kommentar | Brukt for å identifisere en ansvarlig enhet innen for en virksomhet. I Sikker digital posttjenteste tildeles avsenderidentifikator ved tilkobling til tjenesten. Maks 100 tegn. | 
 
 
-* Maks antall tegn: 100.
+* Maks antall tegn: 100777.
 
 ### Xml eksempel
 
