@@ -43,13 +43,13 @@ folders:
 - title: Kontaktregisteret
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /kkr_index.html
-    
-  - title: Oppslagstjenesten
-    jurl: /krr_oppslagstjenesten.html
-    
-  - title: Dotnet-klient
-    jurl: /krr_eksempel_paa_kall.html
+    jurl: /krr_index.html
+
+  - title: Oppslagstjenesten REST
+    jurl: /oppslagstjenesten_rest.html
+
+  - title: Oppslagstjenesten SOAP
+    jurl: /oppslagstjenesten_soap.html
 
 - title: Digital postkasse
   folderitems:

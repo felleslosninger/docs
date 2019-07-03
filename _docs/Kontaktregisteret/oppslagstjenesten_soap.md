@@ -1,8 +1,8 @@
 ---
-title: Oppslagstjenesten
-description: 
-summary: ""
-permalink: krr_oppslagstjenesten.html
+title: Oppslagstjenesten SOAP
+description: SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-grensesnittet for å sette opp nye integrasjoner mot KRR
+summary: "OBS! SOAP-grensesnittet er på vei ut og brukes ikke for nye integrasjoner! Bruk REST-grensesnittet for å sette opp nye integrasjoner mot KRR"
+permalink: oppslagstjenesten_soap.html
 sidebar: main_sidebar
 product: KRR
 ---
