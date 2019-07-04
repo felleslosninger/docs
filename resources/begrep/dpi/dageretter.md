@@ -13,7 +13,6 @@ sidebar:
 | Kommentar | Et tall som angir antall dager etter en bestemt virkningsdato eller opprettingsdato. | 
 
 
-* Maks antall tegn: 100.
 
 ### Xml eksempel
 
