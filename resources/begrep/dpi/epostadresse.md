@@ -14,10 +14,10 @@ sidebar:
 
 Følgende format regler gjelder for epostadresse
 
-*epostadresse er maks 50 tegn lang.
-*Formatreglene for epostadresse er styrt av flere RFC fra IETF, blant annet: RFC2822.
-  *Trolig best/enklest dokumentert på wikipedia
-*Digital kontaktregister bruker pr. dags. dato Apache Commons Validator sin e-postadresse validator for å realisere formatreglene for epostadresse.
+* epostadresse er maks 50 tegn lang.
+* Formatreglene for epostadresse er styrt av flere RFC fra IETF, blant annet: RFC2822.
+  * Trolig best/enklest dokumentert på wikipedia
+* Digital kontaktregister bruker pr. dags. dato Apache Commons Validator sin e-postadresse validator for å realisere formatreglene for epostadresse.
 
 ### Xml eksempel
 
