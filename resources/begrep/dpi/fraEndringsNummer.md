@@ -1,6 +1,6 @@
 ---
 title: fraEndringsNummer
-permalink: fraEndringsNummer.html
+permalink: fraendringsnummer.html
 sidebar:
 ---
 
