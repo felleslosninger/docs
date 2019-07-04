@@ -23,6 +23,7 @@ Tittelen har et språk attributt som beskriver teksten. Språk attributtet kan b
 | Identifikator | lang |
 | Kardinalitet | 1..1 |
 | Datatype | spraak |
+
 ### Xml eksempel
 
 ```
