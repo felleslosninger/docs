@@ -1,5 +1,5 @@
 ---
-title: Informasjonsbehov
+title: informasjonsbehov
 permalink: informasjonsbehov.html
 sidebar:
 ---
