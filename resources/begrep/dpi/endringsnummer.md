@@ -14,6 +14,8 @@ sidebar:
 
 ### Xml eksempel
 
+Eksempler på bruk av endringsNummer fra tjenesten HentEndringerForespoersel:
+
 ```
 <ns:HentEndringerForespoersel fraEndringsNummer="1001">
 ```
