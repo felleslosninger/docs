@@ -1,6 +1,6 @@
 ---
 title: endringsNummer
-permalink: endringsNummer.html
+permalink: endringsnummer.html
 sidebar:
 ---
 
