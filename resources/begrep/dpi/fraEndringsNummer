@@ -15,5 +15,6 @@ sidebar:
 ### Xml eksempel
 
 ```
-<ns:HentEndringerForespoersel fraEndringsNummer="1001">
+<ns:HentEndringerForespoersel fraEndringsNummer="1001">    
 ```
+
