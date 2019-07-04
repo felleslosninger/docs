@@ -1,6 +1,6 @@
 ---
 title: dagerEtter
-permalink: dagerEtter.html
+permalink: dageretter.html
 sidebar:
 ---
 
