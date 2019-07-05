@@ -13,6 +13,7 @@ sidebar:
 | Kommentar | Korrespondansetype forekommer en gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. Identifikasjon i NOARK 5: M087. | 
 
 Attributer
+
 Obligatoriske verdier:
 
 * “Avsender”
