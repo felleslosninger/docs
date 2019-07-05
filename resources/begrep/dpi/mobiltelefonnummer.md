@@ -12,7 +12,7 @@ sidebar:
 | Kilde | DIFI |
 | Kommentar | Et mobiltelefonnummer lagret i Digital kontaktregister har følgende format: | 
 
-* En tekststreng på formatet
+* En tekststreng på formatet:
 
 ```
 "^\\+?[- _0-9]+$"
