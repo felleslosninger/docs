@@ -1,11 +1,16 @@
 ---
 title: Hvordan få tilgang til ID-porten
 description: Hvordan få tilgang til ID-porten
-summary: "Ta kontakt med oss på idporten@difi.no for å komme i gang!"
+summary:
 permalink: saml_tilgang.html
 sidebar: saml_idporten_sidebar
 product: ID-porten
 ---
+
+```
+OBS! Ved nye integrasjoner mot id-porten ber vi om at det benyttes [OpenID Connect (OIDC)] (https://difi.github.io/felleslosninger/oidc_index.html) i stedet for SAML. SAML vil på sikt fases ut.
+```
+
 
 ### Hvordan få tilgang til ID-porten
 
