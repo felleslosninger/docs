@@ -8,7 +8,8 @@ product: KRR
 ---
 
 ```
-OBS! SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-grensesnittet for å sette opp nye integrasjoner mot KRR
+OBS! SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-grensesnittet for å 
+sette opp nye integrasjoner mot KRR
 ```
 
 Gå til [Oppslagstjenesten REST](https://difi.github.io/felleslosninger/oppslagstjenesten_rest.html) 
