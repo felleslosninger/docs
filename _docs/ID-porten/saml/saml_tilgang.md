@@ -8,7 +8,8 @@ product: ID-porten
 ---
 
 ```
-OBS! Ved nye integrasjoner mot id-porten ber vi om at det benyttes OpenID Connect. SAML vil på sikt fases ut.
+OBS! Ved nye integrasjoner mot id-porten ber vi om at det benyttes OpenID Connect. SAML vil på sikt 
+fases ut.
 ```
 
 Gå til [OpenID Connect (OIDC)](https://difi.github.io/felleslosninger/oidc_index.html) 
