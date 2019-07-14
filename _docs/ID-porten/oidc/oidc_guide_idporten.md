@@ -108,7 +108,7 @@ Følgende attributter må settes på request:
 | scope | Scope som forespørres. Kan være en liste separert med whitespace. For autentiseringer må _openid_ brukes |
 | state | Verdi som settes av klient og returneres i callback-responsen etter fullført autentisering. Bør benyttes til å implementere CSRF-beskyttelse |
 | nonce | Verdi som settes av klient og returneres som en del av ID token. Bør brukes til å binde en klient-sesjon til et gitt ID-token, og hindre replay attacks  |
-| acr\_values | Ønsket sikkerhetsnivå, kan være *Level3* eller *Level4* |
+| acr\_values | Ønsket sikkerhetsnivå, kan være *Level3* eller *Level4* **MERK:** klienten må selv validere ønsket sikkerhetsnivå basert på responsen |
 | ui\_locales | Ønsket språk brukt i Id-porten. støtter *nb*, *nn*, *en* eller *se* |
 | prompt | Brukes til å styre providerens interaksjon med sluttbrukeren. Foreløpig er dette parameteret lite relevant da piloten ikke ivaretar noen sentral brukersesjon |
 
