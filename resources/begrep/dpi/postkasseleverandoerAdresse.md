@@ -10,7 +10,7 @@ sidebar:
 | Definisjon | Adresse til en leverandør av Postkassetjeneste |
 | Datatype | string |
 | Kilde | DIFI |
-| Kommentar | Dette er en unik adresse for en leverandør, enten en Postkasseleverandør eller Utskrifts og forsendelsestjeneeste leverandør. Adressen brukt for adressering er Organisasjonsnummeret for leverandører. | 
+| Kommentar | Dette er en unik adresse for en leverandør, enten en Postkasseleverandør eller Utskrifts- og forsendelsestjenesteleverandør. Adressen brukt for adressering er Organisasjonsnummeret for leverandører. | 
 
 ### Xml eksempel
 
