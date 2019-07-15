@@ -11,7 +11,7 @@ sidebar:
 | Datatype | string |
 | Kilde | DIFI |
 | Kommentar | posttype avgjør fremsendingstiden for brevet. Hver posttype har forskjellig pris. |
-| A; B |
+| Gyldige verdier | A; B |
 
 ### informasjon om fremsendingstid:
 
