@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/posttype |
+| Identifikator | <http://begrep.difi.no/Felles/posttype> |
 | Term | posttype |
 | Definisjon | Betegnelse for postsending. |
 | Datatype | string |
