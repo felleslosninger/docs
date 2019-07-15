@@ -7,7 +7,7 @@ sidebar:
 | ---- | ---- |
 | Identifikator | http://begrep.difi.no/Felles/posttype |
 | Term | posttype |
-| Definisjon | Betegnelses for postsending. |
+| Definisjon | Betegnelse for postsending. |
 | Datatype | string |
 | Kilde | DIFI |
 | Kommentar | posttype avgjør fremsendingstiden for brevet. Hver posttype har forskjellig pris. |
