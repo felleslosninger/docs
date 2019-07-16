@@ -14,13 +14,10 @@ sidebar:
 
 ### Egenskaper
 | **Identifikator** | **Term** | **Kardinalitet** | **Kommentar** |
-| nb | Bokmål |
-| nn | Nynorsk |
-| se | Samisk |
-| en | Engelsk |
+| lang              |
 
 
-ISO-639, som definert i "referansekatalogen":<http://standard.difi.no/forvaltningsstandarder/referansekatalogen-html-versjon>
+
 
 ### Xml eksempel
 
