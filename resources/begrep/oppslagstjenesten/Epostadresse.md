@@ -5,7 +5,7 @@ permalink: Epostadresse.html
 -----
 
 {% include variables.html %}
-
+ny
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
