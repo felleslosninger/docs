@@ -20,9 +20,9 @@ I Digipost brukes IKKE ikkeSensitivTittel da denne løsningen ikke har støtte f
 Tittelen har et språk attributt som beskriver teksten. Språk attributtet kan brukes for å understøtte funksjoner som opplesing av tekst.
 
 | ---- | ---- |
-| Identifikator | lang |
-| Kardinalitet | 1..1 |
-| Datatype | spraak |
+| **Identifikator** | **Kardinalitet** | **Datatype** |
+| lang              | 1..1             | spraak       |
+
 
 ### Xml eksempel
 
