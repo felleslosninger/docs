@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/spraak |
+| Identifikator | <http://begrep.difi.no/Felles/spraak> |
 | Term | spraak |
 | Definisjon | Språkkode |
 | Datatype | string |
