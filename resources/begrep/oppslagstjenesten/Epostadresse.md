@@ -1,14 +1,13 @@
 -----
-
 title: Epostadresse  
 permalink: Epostadresse.html
 -----
 
 {% include variables.html %}
-ny
+
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
+  - Term nyny 
     {{page.title}}
   - Definisjon  
     Informasjon om en Person sitt Epostadresse registrert i kontakt og
