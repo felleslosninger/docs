@@ -4,6 +4,7 @@ layout: egenskap
 title: Epostadresse  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
+permalink: Epostadresse.html
 —-  
 {% include variables.html %}
 
