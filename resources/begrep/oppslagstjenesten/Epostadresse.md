@@ -1,13 +1,13 @@
 -----
 title: Epostadresse  
-permalink: Epostadresse.html
+permalink: epostadresse.html
 -----
 
 {% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term nyny 
+  - Termnyny 
     {{page.title}}
   - Definisjon  
     Informasjon om en Person sitt Epostadresse registrert i kontakt og
