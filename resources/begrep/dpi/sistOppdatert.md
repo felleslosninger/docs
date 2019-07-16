@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/beskrivelse |
+| Identifikator | <http://begrep.difi.no/Felles/sistOppdatert> |
 | Term | sistOppdatert |
 | Definisjon | Dato for når et objekt sist ble endret |
 | Datatype | dateTime |
