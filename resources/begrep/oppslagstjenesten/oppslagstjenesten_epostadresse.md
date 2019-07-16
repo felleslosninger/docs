@@ -17,8 +17,8 @@ sidebar:
 | --- | --- |
 | Term | Kardinalitet |
 | [epostadresse](../felles/epostadresse.md)     | 0..1 |
-| [sistOppdatert](../felles/sistoppdatert.md)   | 0..1 |
-| [sistVerifisert](../felles/sistverifisert.md) | 0..1 |
+| [sistOppdatert](../felles/sistOppdatert.md)   | 0..1 |
+| [sistVerifisert](../felles/sistVerifisert.md) | 0..1 |
  
 
 
