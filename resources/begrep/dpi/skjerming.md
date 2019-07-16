@@ -12,7 +12,7 @@ sidebar:
 | Kilde | DIFI |
 | Kommentar | Dersom Skjerming = JA vil Tittel ikke brukes i varsel til Innbygger, og Innbygger vil ikke se dokumenttittel før Innbygger er autentisert på tilstrekkelig sikkerhetsnivå. | 
 | Gyldige verdier | JA ; NEI |
-| Standard verdi | NEI |
+| Standardverdi | NEI |
 
 ### Xml eksempel
 
