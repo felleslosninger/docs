@@ -1,6 +1,7 @@
 -----
 title: Epostadresse  
 permalink: epostadresse.html
+sidebar:
 -----
 
 {% include variables.html %}
