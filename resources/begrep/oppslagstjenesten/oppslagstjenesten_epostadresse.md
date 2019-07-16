@@ -10,11 +10,7 @@ sidebar:
 | Definisjon  | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret |
 | Datatype  | complexType |
 | Kilde | DIFI |
-| Kommentar  |
-    Informasjon om en Person sitt Epostadresse registrert i kontakt og
-    reservasjonsregisteret. Epost-addressen blir validert vha.
-    biblioteket [Apache
-    Commons](http://commons.apache.org/proper/commons-validator/) |
+| Kommentar  |Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret. Epost-addressen blir validert vha. biblioteket [ApacheCommons](http://commons.apache.org/proper/commons-validator/) |
 
 #### Attributer
 
