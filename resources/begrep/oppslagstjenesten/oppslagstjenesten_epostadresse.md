@@ -4,21 +4,16 @@ permalink: oppslagstjenesten_epostadresse.html
 sidebar:
 -----
 
-  - Identifikator  
-    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Epostadresse
-  - Term nyny
-  - Definisjon  
-    Informasjon om en Person sitt Epostadresse registrert i kontakt og
-    reservasjonsregisteret
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
+| Identifikator  | http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Epostadresse |
+|Term | nyny |
+| Definisjon  | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret |
+| Datatype  | complexType |
+| Kilde | DIFI |
+| Kommentar  |
     Informasjon om en Person sitt Epostadresse registrert i kontakt og
     reservasjonsregisteret. Epost-addressen blir validert vha.
     biblioteket [Apache
-    Commons](http://commons.apache.org/proper/commons-validator/)
+    Commons](http://commons.apache.org/proper/commons-validator/) |
 
 #### Attributer
 
