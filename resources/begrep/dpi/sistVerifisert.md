@@ -5,12 +5,12 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/sistVerifisert |
+| Identifikator | <http://begrep.difi.no/Felles/sistVerifisert> |
 | Term | sistVerifisert |
 | Definisjon | Dato for når et objekt sist ble verifisert gyldig |
 | Datatype | dateTime |
 | Kilde | DIFI |
-| Kommentar | sistVerifisert blir brukt i forskjellige objektet. (Eksempel for epostadresse og mobiltelefonnummer). | 
+| Kommentar | sistVerifisert blir brukt i forskjellige objekter. (Eksempel for epostadresse og mobiltelefonnummer). | 
 
 Feltet definerer når objektet sist ble verifisert/bekreftet. F.eks for mobiltelefonnummer betyr dette at en SMS er sendt til mobilnummeret og SMSen er bekreftet mottatt av Person.
 
