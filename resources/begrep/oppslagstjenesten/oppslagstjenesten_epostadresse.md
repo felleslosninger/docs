@@ -4,8 +4,6 @@ permalink: oppslagstjenesten_epostadresse.html
 sidebar:
 -----
 
-{% include variables.html %}
-
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Termnyny 
