@@ -25,17 +25,17 @@ sidebar:
 
 #### Attributer
 
-
 | --- | --- |
-| Term                                     | Kardinalitet |
-| [epostadresse](/Felles/epostadresse)     | 0..1         |
-| [sistOppdatert](/Felles/sistOppdatert)   | 0..1         |
-| [sistVerifisert](/Felles/sistVerifisert) | 0..1         |
+| Term | Kardinalitet |
+| [epostadresse](/Felles/epostadresse)     | 0..1 |
+| [sistOppdatert](/Felles/sistOppdatert)   | 0..1 |
+| [sistVerifisert](/Felles/sistVerifisert) | 0..1 |
+| | | 
 
 
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+```
 <ns2:Epostadresse sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">01012295312_test@minid.difi.no</ns2:Epostadresse>
 ```
