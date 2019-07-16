@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema version="1.0" targetNamespace="http://begrep.difi.no/sdp/utvidelser/lenke"
+            xmlns="http://begrep.difi.no/sdp/utvidelser/lenke"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+
+    <xsd:element name="lenke" type="Lenke"/>
+
+    <xsd:complexType name="Lenke">
+        <xsd:sequence>
+            <xsd:element name="url" type="HttpLenke" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="beskrivelse" type="LenkeBeskrivelseTekst" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="knappTekst" type="LenkeKnappTekst" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="frist" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="HttpLenke">
+        <xsd:restriction base="xsd:anyURI">
+            <xsd:pattern value="https?://.+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="LenkeBeskrivelseTekst">
+        <xsd:simpleContent>
+            <xsd:extension base="LenkeBeskrivelseTekstString">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="LenkeBeskrivelseTekstString">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="70"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="LenkeKnappTekst">
+        <xsd:simpleContent>
+            <xsd:extension base="LenkeKnappTekstString">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="LenkeKnappTekstString">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Spraakkode">
+        <xsd:annotation>
+            <xsd:documentation>
+                Språkkode ihht ISO-639-1 (2 bokstaver)
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2"/>
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

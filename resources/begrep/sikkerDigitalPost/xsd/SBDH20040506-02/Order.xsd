@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.ean-ucc.org/schemas/1.3/eanucc" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ean-ucc.org/schemas/1.3/eanucc" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xsd:element name="order" type="OrderType"/>
+	<xsd:complexType name="OrderType">
+		<xsd:sequence>
+			<xsd:element name="orderIdentification" type="xsd:string"/>
+			<!-- rest of content model would go here -->
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
