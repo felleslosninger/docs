@@ -6,11 +6,11 @@ sidebar:
 
 | --- | --- |
 | Identifikator  | http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Epostadresse |
-|Term |  |
+|Term | Epostadresse |
 | Definisjon  | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret |
 | Datatype  | complexType |
 | Kilde | DIFI |
-| Kommentar  |Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret. Epost-addressen blir validert vha. biblioteket [ApacheCommons](http://commons.apache.org/proper/commons-validator/) |
+| Kommentar | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret. Epost-addressen blir validert vha. biblioteket [ApacheCommons](http://commons.apache.org/proper/commons-validator/) |
 
 #### Attributer
 
