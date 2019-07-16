@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/reservasjon |
+| Identifikator | <http://begrep.difi.no/Felles/reservasjon> |
 | Term | reservasjon |
 | Definisjon | avgitt Forbehold i henhold til eForvaltningsforskriften |
 | Datatype | string |
