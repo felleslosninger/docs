@@ -1,8 +1,8 @@
------
+---
 title: Epostadresse  
 permalink: oppslagstjenesten_epostadresse.html
 sidebar:
------
+---
 
 | Identifikator  | http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Epostadresse |
 |Term | nyny |
