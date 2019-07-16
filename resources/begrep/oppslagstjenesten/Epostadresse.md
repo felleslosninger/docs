@@ -26,7 +26,7 @@ permalink: Epostadresse.html
 #### Attributer
 
 | Term                                     | Kardinalitet |
-| ---------------------------------------- | ------------ |
+| --- | --- |
 | [epostadresse](/Felles/epostadresse)     | 0..1         |
 | [sistOppdatert](/Felles/sistOppdatert)   | 0..1         |
 | [sistVerifisert](/Felles/sistVerifisert) | 0..1         |
