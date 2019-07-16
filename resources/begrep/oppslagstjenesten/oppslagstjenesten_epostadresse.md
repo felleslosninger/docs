@@ -1,6 +1,6 @@
 -----
 title: Epostadresse  
-permalink: epostadresse.html
+permalink: oppslagstjenesten_epostadresse.html
 sidebar:
 -----
 
