@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sh:StandardBusinessDocument xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ediorder="http://www.edi-order.org/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader EDIOrderProxy.xsd">
+	<sh:StandardBusinessDocumentHeader>
+		<sh:HeaderVersion>2.2</sh:HeaderVersion>
+		<sh:Sender>
+			<sh:Identifier Authority="EAN.UCC">2203148000007</sh:Identifier>
+			<sh:ContactInformation>
+				<sh:Contact>Mary Smith</sh:Contact>
+				<sh:EmailAddress>Mary_Smith@widgets.com</sh:EmailAddress>
+				<sh:FaxNumber>+1-312-555-1214</sh:FaxNumber>
+				<sh:TelephoneNumber>+1-312-555-2125</sh:TelephoneNumber>
+				<sh:ContactTypeIdentifier>Seller</sh:ContactTypeIdentifier>
+			</sh:ContactInformation>
+		</sh:Sender>
+		<sh:Receiver>
+			<sh:Identifier Authority="EAN.UCC">6903148000007</sh:Identifier>
+			<sh:ContactInformation>
+				<sh:Contact>John Doe</sh:Contact>
+				<sh:EmailAddress>John_Doe@purchasing.XYZretailer.com</sh:EmailAddress>
+				<sh:FaxNumber>+1-212-555-1213</sh:FaxNumber>
+				<sh:TelephoneNumber>+1-212-555-2122</sh:TelephoneNumber>
+				<sh:ContactTypeIdentifier>Buyer</sh:ContactTypeIdentifier>
+			</sh:ContactInformation>
+		</sh:Receiver>
+		<sh:DocumentIdentification>
+			<sh:Standard>http://www.uc-council.org/smp/schemas/simpl-eb/OrderResponse</sh:Standard>
+			<sh:TypeVersion>Order Response V1.3</sh:TypeVersion>
+			<sh:InstanceIdentifier>100003</sh:InstanceIdentifier>
+			<sh:Type>Ordering</sh:Type>
+			<sh:MultipleType>false</sh:MultipleType>
+			<sh:CreationDateAndTime>2003-05-09T00:31:52Z</sh:CreationDateAndTime>
+		</sh:DocumentIdentification>
+		<sh:BusinessScope>
+			<sh:Scope>
+				<sh:Type>BusinessProcess</sh:Type>
+				<sh:InstanceIdentifier>Order-Sell/version2-251</sh:InstanceIdentifier>
+				<sh:Identifier>EDI-Order-Sell</sh:Identifier>
+				<sh:BusinessService>
+					<sh:BusinessServiceName>Order-Sell</sh:BusinessServiceName>
+					<sh:ServiceTransaction TypeOfServiceTransaction="RequestingServiceTransaction" IsAuthenticationRequired="true" IsNonRepudiationRequired="true" IsNonRepudiationOfReceiptRequired="true" IsIntelligibleCheckRequired="true" IsApplicationErrorResponseRequested="true" TimeToAcknowledgeReceipt="P12H" TimeToAcknowledgeAcceptance="P2D" TimeToPerform="P5D" Recurrence="3"/>
+				</sh:BusinessService>
+				<sh:CorrelationInformation>
+					<sh:RequestingDocumentCreationDateTime>2003-05-02T00:31:52Z</sh:RequestingDocumentCreationDateTime>
+					<sh:RequestingDocumentInstanceIdentifier>100002</sh:RequestingDocumentInstanceIdentifier>
+					<sh:ExpectedResponseDateTime>2003-05-10T00:31:52Z</sh:ExpectedResponseDateTime>
+				</sh:CorrelationInformation>
+			</sh:Scope>
+		</sh:BusinessScope>
+	</sh:StandardBusinessDocumentHeader>
+	<ediorder:Order>
+          UNB+UNOA:3+6907777000001:14+6903148000007:14+030608:2206+811'
+         UNH+1+ORDERS:D:96A:UN'
+      …
+    UNT+37+5'
+    UNZ+5+811'
+  </ediorder:Order>
+</sh:StandardBusinessDocument>

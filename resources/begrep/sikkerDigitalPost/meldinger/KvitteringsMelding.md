@@ -1,0 +1,47 @@
+-----
+
+layout: default  
+title: Kvitteringsmelding  
+headtitle: Begrepskatalog for Sikker digital post -  
+group: Melding
+
+id: Kvitteringsmelding
+
+next: Leveringskvittering  
+prev: Forretningsmeldinger  
+—-
+
+### {{page.title}}
+
+  - Identifikator  
+    “http://begrep.difi.no{{ page.url | remove:”.html"
+    }}":KvitteringsMelding
+  - Term  
+    {{page.title}}
+  - Definisjon  
+    En kvitteringsmelding på en [digital post
+    melding](DigitalPostMelding) fra en [Avsender](../begrep/Avsender).
+  - Kilde  
+    DIFI
+  - Kommentar  
+    Kvittering er en abstrakt [kvittering melding](index) type, se under
+    for de kvitteringer som er definert.
+
+### Attributer
+
+Alle kvitteringer uavhengig av type har følgende attributter:
+
+| Identifikator | Kardinalitet | Datatype                                                                                                                                                       |
+| ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Signature     | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
+| tidspunkt     | 1..1         | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime)                                                                                                      |
+
+### Kvitteringer
+
+Følgende konkrete kvitteringer er definert:
+
+  - [LeveringsKvittering](LeveringsKvittering)
+  - [AapningsKvittering](AapningsKvittering)
+  - [VarslingfeiletKvittering](VarslingfeiletKvittering)
+  - [MottaksKvittering](MottaksKvittering)
+  - [PostlagtKvittering](PostlagtKvittering)

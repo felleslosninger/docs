@@ -1,0 +1,58 @@
+-----
+
+layout: egenskap  
+title: Repetisjoner  
+headtitle: Begrepskatalog for Sikker digital post -  
+group: complexType
+
+name: Repetisjoner  
+prev: Begreper
+
+-----
+
+{% include variables.html %}
+
+  - Identifikator  
+    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+  - Term  
+    {{page.title}}
+  - Definisjon  
+    Gjentagelser etter et bestemt tidspunkt
+  - Datatype  
+    complexType
+  - Kjelde  
+    DIFI
+  - Kommentar  
+    Beskriver hvilke dager noe skal repeteres etter en definert dag, der
+    [dagerEtter](/Felles/dagerEtter) angir hvor mange dager etter
+    tidspunktet det skal repeteres.  
+    dagerEtter=0 betyr samme dag. dagerEtter=7 betyr den syvende dagen
+    etter en bestemt dag.
+
+<!-- end list -->
+
+  - Det kreves at alle dagerEtter er unike.
+
+For Sikker digital post er repetisjonene knyttet opp til
+[virkningsdato](/Felles/virkningsdato).  
+Det vil si at dagerEtter=0 betyr samme dag som
+[virkningsdato](/Felles/virkningsdato). dagerEtter=7 betyr den syvende
+dagen etter [virkningsdato](/Felles/virkningsdato).
+
+#### Eigenskapar
+
+| Identifikator                    | Kardinalitet | Datatype               |
+| -------------------------------- | ------------ | ---------------------- |
+| [dagerEtter](/Felles/dagerEtter) | 0..25        | xsd:nonNegativeInteger |
+
+#### Xml eksempel
+
+``` brush: xml; toolbar: false
+
+      <repetisjoner>
+        <dagerEtter>0</dagerEtter>
+        <dagerEtter>7</dagerEtter>
+      </repetisjoner>
+
+ 
+```

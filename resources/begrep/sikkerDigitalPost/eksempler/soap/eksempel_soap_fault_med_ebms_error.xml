@@ -1,0 +1,31 @@
+<S12:Envelope xmlns:S12="http://www.w3.org/2003/05/soap-envelope" xmlns:eb="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+	<S12:Header>
+		<wsse:Security S12:mustUnderstand="true">
+			<!-- Signatur på eb:Messaging header -->
+		</wsse:Security>
+		<eb:Messaging S12:mustUnderstand="true">
+			<eb:SignalMessage>
+				<eb:MessageInfo>
+					<eb:Timestamp>2014-02-10T15:21:42.821Z</eb:Timestamp>
+					<eb:MessageId>UUID-6@sender.example.com</eb:MessageId>
+					<eb:RefToMessageId>UUID-4@receiver.example.com</eb:RefToMessageId>
+				</eb:MessageInfo>
+				<!-- Det er å forvente at denne Error-en vil opppstå ofte da MPC i mange tilfeller vil være tom -->
+				<eb:Error errorCode="EBMS:xxxx" severity="error">
+					<eb:Description lang="en">....</eb:Description>
+					<eb:ErrorDetail>...</eb:ErrorDetail>
+				</eb:Error>
+			</eb:SignalMessage>
+		</eb:Messaging>
+	</S12:Header>
+	<S12:Body>
+		<Fault>
+			<Code>
+				<Value>S12:Sender</Value>
+			</Code>
+			<Reason>
+				<Text xml:lang="en">...</Text>
+			</Reason>
+		</Fault>
+	</S12:Body>
+</S12:Envelope>

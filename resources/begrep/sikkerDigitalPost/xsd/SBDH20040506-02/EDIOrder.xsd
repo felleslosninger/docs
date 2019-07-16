@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.edi-order.org/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.edi-order.org/schemas" xmlns:unece="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" schemaLocation="StandardBusinessDocumentHeader.xsd"/>
+		<xs:include schemaLocation="EDIOrder.xsd"/>
+</xs:schema>

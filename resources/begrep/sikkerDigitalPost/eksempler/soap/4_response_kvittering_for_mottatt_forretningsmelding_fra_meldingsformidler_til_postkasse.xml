@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+  <env:Header>
+    <eb:Messaging xmlns:eb="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" env:mustUnderstand="true" wsu:Id="id-ddef1b31-bea0-4973-b7db-87f9d2fbd5d8">
+      <ns6:SignalMessage xmlns:ns10="http://uri.etsi.org/2918/v1.2.1#" xmlns:ns11="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns3="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:ns4="http://www.w3.org/2003/05/soap-envelope" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#" xmlns:ns6="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/" xmlns:ns7="http://docs.oasis-open.org/ebxml-bp/ebbp-signals-2.0" xmlns:ns8="http://www.w3.org/1999/xlink" xmlns:ns9="http://begrep.difi.no/sdp/schema_v10">
+        <ns6:MessageInfo>
+          <ns6:Timestamp>2014-10-13T15:13:00.286+02:00</ns6:Timestamp>
+          <ns6:MessageId>c54dcc28-a803-4c63-a2aa-3aa0b2c7732c</ns6:MessageId>
+          <ns6:RefToMessageId>62512906-00b9-4034-84f5-a0bd0f364ef1</ns6:RefToMessageId>
+        </ns6:MessageInfo>
+        <ns6:Receipt>
+          <ns7:NonRepudiationInformation>
+            <ns7:MessagePartNRInformation>
+              <ns5:Reference URI="#soapBody">
+                <ns5:Transforms>
+                  <ns5:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                    <ec:InclusiveNamespaces xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" PrefixList=""/>
+                  </ns5:Transform>
+                </ns5:Transforms>
+                <ns5:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <ns5:DigestValue>wrjxgK7pDjLM+pRKOIkyQgu1Jqpn8FzkEqFyLyBz8qw=</ns5:DigestValue>
+              </ns5:Reference>
+            </ns7:MessagePartNRInformation>
+          </ns7:NonRepudiationInformation>
+        </ns6:Receipt>
+      </ns6:SignalMessage>
+    </eb:Messaging>
+  </env:Header>
+  <env:Body xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="id-18664332-ae03-4d43-a202-8b2c95cdc0da"/>
+</env:Envelope>

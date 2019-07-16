@@ -1,0 +1,70 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header>
+      <wsse:Security SOAP-ENV:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <xenc:EncryptedKey Id="EK-4B36F8457EDD29BFD813916745418544" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#">
+            <xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5"/>
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+               <wsse:SecurityTokenReference>
+                  <ds:X509Data>
+                     <ds:X509IssuerSerial>
+                        <ds:X509IssuerName>CN=trustedserviceowner.somedomain.no,OU=Service Owner,O=Some Company,C=NO</ds:X509IssuerName>
+                        <ds:X509SerialNumber>1348752607</ds:X509SerialNumber>
+                     </ds:X509IssuerSerial>
+                  </ds:X509Data>
+               </wsse:SecurityTokenReference>
+            </ds:KeyInfo>
+            <xenc:CipherData>
+               <xenc:CipherValue>ENaquaYfGaA86gmRW3GZqIaVmQPl4VkbPbT6z+S1N6fTLDna+Rb9Y1/xHe9+SZ2tyNB1/4vluYzNYKxt8RVL376K7J2YB04sK8SipX8qDhc30K115jh/bJD4bs5PnHgpEopd6AS+lqIoRVaSodoboVe2n8da0ON1U654vI9t9Ks=</xenc:CipherValue>
+            </xenc:CipherData>
+            <xenc:ReferenceList>
+               <xenc:DataReference URI="#ED-5"/>
+            </xenc:ReferenceList>
+         </xenc:EncryptedKey>
+         <wsu:Timestamp wsu:Id="TS-4">
+            <wsu:Created>2014-02-06T08:15:41.683Z</wsu:Created>
+            <wsu:Expires>2014-02-06T08:16:41.683Z</wsu:Expires>
+         </wsu:Timestamp>
+         <ds:Signature Id="SIG-3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+            <ds:SignedInfo>
+               <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                  <ec:InclusiveNamespaces PrefixList="SOAP-ENV" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+               </ds:CanonicalizationMethod>
+               <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+               <ds:Reference URI="#id-2">
+                  <ds:Transforms>
+                     <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <ec:InclusiveNamespaces PrefixList="" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                     </ds:Transform>
+                  </ds:Transforms>
+                  <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                  <ds:DigestValue>KNClCXkW8wpvB+wL9hXujye5C8w=</ds:DigestValue>
+               </ds:Reference>
+               <ds:Reference URI="#SC-1">
+                  <ds:Transforms>
+                     <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <ec:InclusiveNamespaces PrefixList="wsse SOAP-ENV" xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                     </ds:Transform>
+                  </ds:Transforms>
+                  <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                  <ds:DigestValue>bIV4yrA1xf7HK/NU1mYvgN0LuxY=</ds:DigestValue>
+               </ds:Reference>
+            </ds:SignedInfo>
+            <ds:SignatureValue>BDf49Dw3jIT2F3SBBSqnqtsSGgMPSbBsxJrhdYv5Dkezo5ukSpZL8xVKqW9mREYIluxHLegNsOgaDPVABDIQ/G6jLQoY9+yPTmnaOgOqLRVg1paBmDiaZz3acurGy+34wDT0yxxhAY2mYzt23xXMP8VObswBDTojSftR0WSGkTmQIhzN3wyzqyP2Ayjy2J9jcmyv1IpRM/KaXcx0ByHtX+m9deiw2VMmFLf4zeWbcbUx32DrERdfnbXDmFyrM9WNvRJjvTklNgULcdqmuzkUZ0DcOCB6b/I13zrGTopIQN8WT9dr2ovBbMONqs5mswMNpgF+m2C481XY3Ba4IJkvNA==</ds:SignatureValue>
+            <ds:KeyInfo Id="KI-4B36F8457EDD29BFD813916745416062">
+               <wsse:SecurityTokenReference wsu:Id="STR-4B36F8457EDD29BFD813916745416073">
+                  <ds:X509Data>
+                     <ds:X509IssuerSerial>
+                        <ds:X509IssuerName>CN=kontaktinfo-test.difi.no,OU=ID-porten,O=Difi,C=NO</ds:X509IssuerName>
+                        <ds:X509SerialNumber>1348752581</ds:X509SerialNumber>
+                     </ds:X509IssuerSerial>
+                  </ds:X509Data>
+               </wsse:SecurityTokenReference>
+            </ds:KeyInfo>
+         </ds:Signature>
+         <wsse11:SignatureConfirmation Value="AjPp48kTnTQ0alaV7qkiLuSK8oebewhtVE0oueycbO+Bpp+jxTHEcI9dTBT7vWhnCpfuYVpXz5SLvvUjjgJoOSZA6U0ZGPXtJ9is8Jopi5TMHI+SNI9O7T5UO6Ti32hoUaxZdbwVgJkp3peZM3rYSqnBCS8vXwLfEspdRv0wpS4=" wsu:Id="SC-1" xmlns:wsse11="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd"/>
+      </wsse:Security>
+   </SOAP-ENV:Header>
+   <SOAP-ENV:Body wsu:Id="id-2" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      PAYLOAD
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
