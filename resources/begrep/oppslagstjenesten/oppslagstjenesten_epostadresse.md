@@ -5,7 +5,7 @@ sidebar:
 -----
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Epostadresse
   - Termnyny 
     {{page.title}}
   - Definisjon  
