@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/prioritetType |
+| Identifikator | <http://begrep.difi.no/Felles/prioritetType> |
 | Term | prioritetType |
 | Definisjon | Definerer meldingens prioritering i forbindelse med meldingsutvekslingen. |
 | Datatype | string |
