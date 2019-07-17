@@ -1,11 +1,10 @@
------
-
-layout: egenskap  
+--- 
 title: Mobiltelefonnummer  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
+permalink: ot_mobiltelefonnummer.html
+sidebar:
 —-  
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -26,9 +25,9 @@ group: Oppslagstjenesten/complexType
 
 | Term                                             | Kardinalitet |
 | ------------------------------------------------ | ------------ |
-| [mobiltelefonnummer](/Felles/mobiltelefonnummer) | 0..1         |
-| [sistOppdatert](/Felles/sistOppdatert)           | 0..1         |
-| [sistVerifisert](/Felles/sistVerifisert)         | 0..1         |
+| [mobiltelefonnummer](../felles/mobiltelefonnummer.md) | 0..1         |
+| [sistOppdatert](../felles/sistOppdatert.md)           | 0..1         |
+| [sistVerifisert](../felles/sistVerifisert.md)         | 0..1         |
 
 #### Xml eksempel
 
