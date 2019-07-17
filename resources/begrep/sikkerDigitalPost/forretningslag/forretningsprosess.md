@@ -7,7 +7,7 @@ sidebar:
 
 ## Prosess for sending av digital post
 
-[Meldingen](../meldinger/) i Sikker digital post flyter mellom
+[Meldingen](../meldinger/index.md) i Sikker digital post flyter mellom
 [Aktørene](Aktorer) slik det beskrives i flyt diagrammet under.
 
 Ovordnet er meldingsflyten slik:
