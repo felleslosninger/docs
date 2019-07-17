@@ -58,6 +58,6 @@ relevante eksempler.
   - [Request\_forretningsmelding\_fra\_postkasse\_til\_meldingsformidler](soap/4_request_forretningsmelding_fra_postkasse_til_meldingsformidler.xml)
   - [Response\_kvittering\_for\_mottatt\_forretningsmelding\_fra\_meldingsformidler\_til\_postkasse](soap/4_response_kvittering_for_mottatt_forretningsmelding_fra_meldingsformidler_til_postkasse.xml)
   - [Request\_forespoersel\_om\_forretningskvittering\_fra\_postavsender\_til\_meldingsformidler](soap/5_request_forespoersel_om_forretningskvittering_fra_postavsender_til_meldingsformidler.xml)
-  - [Response\_error\_fra\_meldingsformidler\_til\_postavsender](soap/5_response_error_fra_meldingsformidler_til_postavsender.xml)
+  - [Response\_error\_fra\_meldingsformidler\_til\_postavsender](soap/6_response_error_fra_meldingsformidler_til_postavsender.xml)
   - [Response\_forretningskvittering\_fra\_meldingsformidler\_til\_postavsender](soap/5_response_forretningskvittering_fra_meldingsformidler_til_postavsender.xml)
   - [eksempel\_soap\_fault\_med\_ebms\_error](soap/eksempel_soap_fault_med_ebms_error.xml)
