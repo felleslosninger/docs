@@ -1,5 +1,6 @@
 ---
 title: KanVelgeSikkerDigitalPostkasseForespoersel  
+datatype: Metode
 permalink: ot_kanvelgesikkerdigitalpostkasseforespoersel.html
 sidebar:
 ---
