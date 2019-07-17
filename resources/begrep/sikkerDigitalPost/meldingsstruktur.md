@@ -1,6 +1,5 @@
 ---
-
-layout: default  
+  
 title: Meldingsstruktur  
 permalink: sdp_meldingsstruktur.html
 sidebar:
