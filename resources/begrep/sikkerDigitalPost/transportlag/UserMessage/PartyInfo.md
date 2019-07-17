@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
 title: PartyInfo  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: transportlag
-
-id: PartInfo
-
-next: CollabortationInfo  
-prev: MessageInfo
-
------
+permalink: sdp_partyinfo.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -31,10 +24,10 @@ prev: MessageInfo
 Består av to elementer som identifiserer avsender (eb:From) og mottaker
 (eb:To), som hver har følgende egenskaper
 
-| Identifikator | Type                                                         | Kardinalitet | Kommentar                               |
-| ------------- | ------------------------------------------------------------ | ------------ | --------------------------------------- |
-| PartyId       | [Virksomhetsidentifikator](/Felles/virksomhetsidentifikator) | 1..1         |                                         |
-| Role          | [Konstant](../../forretningslag/Aktorer)                     | 1..1         | Definerer rollen i meldingsutvesklingen |
+| Identifikator | Type | Kardinalitet | Kommentar |
+| --- | --- | --- | --- |
+| PartyId | [Virksomhetsidentifikator](/Felles/virksomhetsidentifikator) | 1..1 | |
+| Role | [Konstant](../../forretningslag/Aktorer) | 1..1 | Definerer rollen i meldingsutvesklingen |
 
 ### Kodeverdier for konstanten Role
 
