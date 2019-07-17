@@ -1,15 +1,9 @@
------
-
-layout: default  
+---
+ 
 title: Meldingsidentifikatorer  
-headtitle: Sikker digital post  
-group: transportlag
-
-id: Transportlag/Meldingsidentifikatorer
-
-next: Transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse
-
------
+permalink: sdp_meldingsidentifikatorer.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -18,8 +12,8 @@ next: Transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse
 Disse identifikatorene benyttes for å spore en melding og tilhørende
 meldinger i en samtale.
 
-| Term                                                                           | Kardinalitet | Datatype             | Beskrivelse                                                                            |
-| ------------------------------------------------------------------------------ | ------------ | -------------------- | -------------------------------------------------------------------------------------- |
-| [eb:Messaging.MessageInfo.MessageId](UserMessage/MessageInfo)                  | 1..1         | tns:non-empty-string | GUID som unikt identifiserer meldingen                                                 |
-| [eb:Messaging.MessageInfo.RefToMessageId](UserMessage/MessageInfo)             | 0..1         | tns:non-empty-string | GUID som unikt identifiserer meldingen dette er et svar på                             |
-| [eb:Messaging.CollaborationInfo.ConversationId](UserMessage/CollaborationInfo) | 0..1         | tns:non-empty-string | GUID som unikt identifiserer første melding i samtalen, kan brukes på tvers av Aktører |
+| Term | Kardinalitet | Datatype | Beskrivelse |
+| --- | --- | --- | --- |
+| [eb:Messaging.MessageInfo.MessageId](UserMessage/MessageInfo) | 1..1 | tns:non-empty-string | GUID som unikt identifiserer meldingen |
+| [eb:Messaging.MessageInfo.RefToMessageId](UserMessage/MessageInfo) | 0..1 | tns:non-empty-string | GUID som unikt identifiserer meldingen dette er et svar på |
+| [eb:Messaging.CollaborationInfo.ConversationId](UserMessage/CollaborationInfo) | 0..1 | tns:non-empty-string | GUID som unikt identifiserer første melding i samtalen, kan brukes på tvers av Aktører |
