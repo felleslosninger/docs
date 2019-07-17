@@ -1,15 +1,8 @@
------
-
-layout: default  
-title: Kvitteringsmelding  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: Melding
-
-id: Kvitteringsmelding
-
-next: Leveringskvittering  
-prev: Forretningsmeldinger  
-—-
+---
+title: Kvitteringsmelding
+permalink: sdp_kvitteringsmelding.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -31,10 +24,10 @@ prev: Forretningsmeldinger
 
 Alle kvitteringer uavhengig av type har følgende attributter:
 
-| Identifikator | Kardinalitet | Datatype                                                                                                                                                       |
-| ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Signature     | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
-| tidspunkt     | 1..1         | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime)                                                                                                      |
+| ---| --- | --- |
+| Identifikator | Kardinalitet | Datatype |
+| Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
+| tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
 
 ### Kvitteringer
 
