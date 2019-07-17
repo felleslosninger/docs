@@ -8,7 +8,7 @@ sidebar:
 ## Innledning
 
 Her beskrives det kort hvordan hver del av [Digital
-postforsendelse](meldingsstruktur) krypteres og signeres.
+postforsendelse](meldingsstruktur.md) krypteres og signeres.
 
 ### Omfang
 
@@ -20,11 +20,11 @@ krypteringsalgoritmer etc.
 ### Overordnet
 
 Deler av Digital postforsendelse er sikret ende til ende, fra
-[Avsender](StandardBusinessDocument/Melding/Avsender) til
-[Mottaker](StandardBusinessDocument/Melding/Mottaker).  
+[Avsender](StandardBusinessDocument/Melding/Avsender.md) til
+[Mottaker](StandardBusinessDocument/Melding/Mottaker.md).  
 Deler av Digital postforsendelse er sikret punkt til punkt fra [Teknisk
-Mottaker](UserMessage/PartyInfo) til
-[Meldingsformidlerleverandør](UserMessage/PartyInfo), og fra
+Mottaker](UserMessage/PartyInfo.md) til
+[Meldingsformidlerleverandør](UserMessage/PartyInfo.md), og fra
 Meldingsformidler- til Postkasseleverandør.
 
 ### Sikret ende til ende
@@ -32,14 +32,14 @@ Meldingsformidler- til Postkasseleverandør.
 Følgende deler av Digital postforsendelse er sikret ende-til-ende
 
   - [Melding](StandardBusinessDocument/Melding/)
-  - [Dokumentpakke](Dokumentpakke/ASiC)
+  - [Dokumentpakke](Dokumentpakke/ASiC.md)
 
 ### Sikret punkt til punkt
 
 Følgende deler av Digital postforsendelse er sikret punkt til punkt:
 
-  - [Webservice security timestamp](WebserviceSecurity)
-  - [Eb:messaging](ebMS30)
+  - [Webservice security timestamp](WebserviceSecurity.md)
+  - [Eb:messaging](ebMS30.md)
   - [SOAP:Body](StandardBusinessDocument/)
   - [Dokumentpakke](Dokumentpakke/)
 
@@ -64,37 +64,37 @@ signature.
 Signeringssertifikatet er lagt inn i
 [Melding](StandardBusinessDocument/Melding/), sammen med signaturen.
 
-[StandardBusinessDocument.Melding.Dokumentpakke](StandardBusinessDocument/Melding/Dokumentpakke)
+[StandardBusinessDocument.Melding.Dokumentpakke](StandardBusinessDocument/Melding/Dokumentpakke.md)
 har en kryptert engangsnøkkel,kryptert med innbyggers sertifikat.  
-[StandardBusinessDocument.Melding.Avsender](StandardBusinessDocument/Melding/Avsender)
+[StandardBusinessDocument.Melding.Avsender](StandardBusinessDocument/Melding/Avsender.md)
 skal være organisasjonsnummeret til Behandlingsansvarlig.
 
 I tillegg så er [StandardBusinessDocument](StandardBusinessDocument/)
 signert i meldingsutvekslingen punkt til punkt.
 
-### [Eb:Messaging](ebMS30)
+### [Eb:Messaging](ebMS30.md)
 
 EB:Messaging headeren er signert punkt til punkt.
 
-### [Webservice Security](WebserviceSecurity)
+### [Webservice Security](WebserviceSecurity.md)
 
   - wsse:Secuity skal inneholde et Timestamp som angir meldingens
     levetid, signert av avsender av meldingen.
   - wsse:Secuity skal inneholde en signatur.
       - Denne signaturen skal ha referanse til følgende signerte
         elementer:
-          - [Timestamp](WebserviceSecurity)
-          - [eb:Messaging](ebMS30)
+          - [Timestamp](WebserviceSecurity.md)
+          - [eb:Messaging](ebMS30.md)
           - [SOAP Body
             (StandardBusinessDocument)](StandardBusinessDocument/)
           - [Attachment (Dokumentpakke)](Dokumentpakke/)
   - Signeringssertifikatet skal være vedlagt SOAP meldingen i
-    [wsse:security](WebserviceSecurity)
+    [wsse:security](WebserviceSecurity.md)
 
 ### Signering på veien av Behandlingsansvarlig
 
 Som beskrevet over skal [Dokumentpakke](Dokumentpakke/) og
 [StandardBusinessDocument](StandardBusinessDocument/) signeres av
-[Behandlingsansvarlig](Aktorer).  
+[Behandlingsansvarlig](Aktorer.md).  
 Det er åpnet for at Databehandler kan signere på vegne av
 Behandlingsansvarlig.
