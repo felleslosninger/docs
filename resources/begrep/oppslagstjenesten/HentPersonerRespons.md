@@ -1,13 +1,7 @@
------
-
-layout: default  
+---
 title: HentPersonerRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/Metode\_respons  
-—-  
-{% include variables.html %}
+permalink: ot_hentpersonerrespons.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -15,7 +9,7 @@ group: Oppslagstjenesten/Metode\_respons
     {{page.title}}
   - Definisjon  
     Respons sendt tilbake til Virksomhet som svar på
-    [HentPersonerForespoersel](HentPersonerForespoersel)
+    [HentPersonerForespoersel](HentPersonerForespoersel.md)
   - Datatype  
     {{ page.datatype }}
   - Kilde  
@@ -31,7 +25,7 @@ group: Oppslagstjenesten/Metode\_respons
 
 | Term             | Kardinalitet |
 | ---------------- | ------------ |
-| [Person](Person) | 1..1000      |
+| [Person](Person.md) | 1..1000      |
 
 #### Xml eksempel
 
