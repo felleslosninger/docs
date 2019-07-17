@@ -1,13 +1,8 @@
------
-
-layout: default  
+--- 
 title: Webservice sikkerhet  
-headtitle: Oppslagstjenesten  
-group: WS-security
-
-id: WS-security/WebserviceSecurity
-
------
+permalink: ot_webservicesecurity.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -16,7 +11,7 @@ id: WS-security/WebserviceSecurity
 Følgende WS-Security elementer skal anvendes:
 
 | Identifikator | Kardinalitet | Datatype                                                                                                                                |
-| ------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- | --- |
 | Timestamp     | 1..1         | [wsu:Timestamp](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717167) |
 | Signature     | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148)  |
 
@@ -24,8 +19,8 @@ Forespørsel skal kun signeres på SOAP nivå, ikke krypteres.
 Signeringssertifikatet skal representeres som et BinarySecurityToken i
 meldinga
 
-| Identifikator       | Kardinalitet | Datatype                                                                                                                      |
-| ------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| Identifikator       | Kardinalitet | Datatype |
+| --- | --- | --- |
 | BinarySecurityToken | 1..1         | [wsse:BinarySecurityToken](http://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717134) |
 
 Respons frå Difi vil vere både signert og kryptert.
