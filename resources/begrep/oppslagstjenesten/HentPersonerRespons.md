@@ -1,6 +1,7 @@
 ---
 title: HentPersonerRespons  
 permalink: ot_hentpersonerrespons.html
+datatype: Metode
 ---
 
   - Identifikator  
