@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
 title: MessageInfo  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: transportlag
-
-id: MessageInfo
-
-next: PartInfo  
-prev: Transportlag/mpc
-
------
+permalink: sdp_usermessage.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -28,11 +21,11 @@ prev: Transportlag/mpc
 
 ### Egenskaper
 
-| Identifikator  | Type                  | Kardinalitet | Kommentar                                                                         |
-| -------------- | --------------------- | ------------ | --------------------------------------------------------------------------------- |
-| Timestamp      | xsd:dateTime          | 1..1         |                                                                                   |
-| MessageId      | tns:none-empty-string | 1..1         | Unik identifikator, satt av MSH. Kan med fordel benytte SBDH.InstanceIdentifier   |
-| RefToMessageId | tns:none-empty-string | 0..1         | Brukes dersom meldingen er relatert til en annen. Refererer alltid til MessageId. |
+| Identifikator | Type | Kardinalitet | Kommentar |
+| --- | --- | --- | --- |
+| Timestamp | xsd:dateTime | 1..1 | |
+| MessageId | tns:none-empty-string | 1..1 | Unik identifikator, satt av MSH. Kan med fordel benytte SBDH.InstanceIdentifier |
+| RefToMessageId | tns:none-empty-string | 0..1 | Brukes dersom meldingen er relatert til en annen. Refererer alltid til MessageId. |
 
 ### Xml eksempel
 
