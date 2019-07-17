@@ -23,10 +23,10 @@ sidebar:
 #### Egenskaper
 
 | --- | --- | --- |
-| Identifikator                                          | Kardinalitet | Datatype |                                                        
-|  ../felles/virksomhetsidentifikator       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| HER SKAL DET VÆRE LINK TIL /felles/avsenderifentifikator | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| fakturaReferanse                                       | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) \[maks 40\] |
+| Identifikator | Kardinalitet | Datatype |                                                        
+| ../felles/virksomhetsidentifikator | 1..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| HER SKAL DET VÆRE LINK TIL /felles/avsenderifentifikator | 0..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |           
+| fakturaReferanse | 0..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) \[maks 40\] |
 
 #### Xml eksempel
 
