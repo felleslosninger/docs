@@ -1,11 +1,10 @@
------
-
-layout: default  
+---
 title: OpprettOgVelgSikkerDigitalPostkasseRespons  
 headtitle: Begrepskatalog for Sikker digital post -  
 datatype: Metode  
 Service: Oppslagstjenesten  
 group: Oppslagstjenesten/PK\_Metode\_respons  
+permalink: ot_opprettogvelgsikkerdigitalpostkasserespons.html
 —-  
 {% include variables.html %}
 
@@ -23,7 +22,7 @@ group: Oppslagstjenesten/PK\_Metode\_respons
   - Kommentar  
     Webservice response som Postkasseleverandør mottar fra
     Kontaktregisteret som svar på
-    [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgPostkasseForespoersel)
+    [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgPostkasseForespoersel.md)
 
 #### Attributer
 
