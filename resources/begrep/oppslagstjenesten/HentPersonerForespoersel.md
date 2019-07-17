@@ -1,6 +1,7 @@
 ---
 title: HentPersonerForespoersel  
 permalink: ot_hentpersonerforespoersel.html
+datatype: Metode
 sidebar:
 ---
 {% include variables.html %}
