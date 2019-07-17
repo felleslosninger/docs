@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/tilknyttetRegistreringSom> |
+| Identifikator | http://begrep.difi.no/Felles/tilknyttetRegistreringSom |
 | Term | tilknyttetRegistreringSom |
 | Definisjon | Angivelse av hvilken “rolle” dokumentet har i forhold til registreringen |
 | Datatype | string |
