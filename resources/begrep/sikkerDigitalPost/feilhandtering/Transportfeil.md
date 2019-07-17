@@ -1,14 +1,8 @@
 -----
 
-layout: default  
 title: Transportfeil  
-headtitle: Sikker digital post - Transportfeil  
-group: Feilhåndtering
-
-id: Feilhåndtering/Transport
-
-next: Feilhåndtering/Forretning
-
+permalink: sdp_transportfeil.html
+sidebar:
 -----
 
 ## {{page.title}}
@@ -39,7 +33,7 @@ Nedenfor er en ikke uttømmende liste over feilsituasjoner og hvordan de
 kan håndterest.
 
 | Feiltype?            | Hva gjør Avsender?  | Hva gjør Meldingsformidler(MF)?  | Hva gjør Postkasseleverandør(PK)? | Hva gjør MF hvis PK svarer med soap fault? |
-| -------------------- | ------------------- | -------------------------------- | --------------------------------- | ------------------------------------------ |
+| --- | --- | --- | --- | --- |
 | WS-security          | Manuell håndtering  | SOAP-fault (EBMS-signal)         | SOAP-fault (EBMS-signal)          | Manuell håndtering                         |
 | EBMS-feil            | Manuell håndtering  | SOAP-fault + EBMS-signal         | SOAP-fault + EBMS-signal          | Manuell håndtering                         |
 | Skjemavalidering     | Manuell håndtering  | SOAP-fault + EBMS-signal         | SOAP-fault + EBMS-signal          | Manuell håndtering                         |
@@ -50,8 +44,8 @@ kan håndterest.
 Følgende responser kan Avsender forvente å få tilbake dersom feilen over
 oppstår.
 
-| Feiltype?                                                       | Respons                                                |
-| --------------------------------------------------------------- | ------------------------------------------------------ |
+| Feiltype?  | Respons |
+| --- | --- |
 | Kan ikke validere signaturene (manglende eller feil i signatur) | EBMS error: SignatureValidation                        |
 | Bruk av sertifikat fra uventet utsteder                         | EBMS error: SignatureValidation                        |
 | Feil signeringsalgoritmer                                       | EBMS error: PolicyNonCompliance                        |
