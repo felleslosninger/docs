@@ -1,15 +1,8 @@
------
+---
 
-layout: default  
 title: Receipt  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: transportlag
-
-id: Receipt
-
-next: Error  
-prev: PullRequest
-
+permalink: sdp_receipt.html
+sidebar:
 -----
 
   - Identifikator  
