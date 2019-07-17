@@ -1,7 +1,7 @@
 ---
 
 title: Oversikt  
-permalink: sdp_index.html
+permalink: sdp_index_innledning.html
 sidebar:
 
 children:  
