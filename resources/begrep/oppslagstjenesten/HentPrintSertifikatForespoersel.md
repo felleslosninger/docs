@@ -1,13 +1,7 @@
------
-
-layout: default  
+--- 
 title: HentPrintSertifikatForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/Metode  
-—-  
-{% include variables.html %}
+permalink: ot_hentprintsertifikatforespoersel.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -27,7 +21,7 @@ group: Oppslagstjenesten/Metode
     Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
     forespørselen og hvordan denne sendes.
 
-Responsen er en [HentPrintSertifikatRespons](HentPrintSertifikatRespons)
+Responsen er en [HentPrintSertifikatRespons](HentPrintSertifikatRespons.md)
 
 #### Attributer
 
