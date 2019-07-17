@@ -1,15 +1,9 @@
------
-
-layout: default  
+---
+ 
 title: Tilstander for Avsender  
-headtitle: Sikker digital post  
-group: forretningslag
-
-id: Forretningslag/Tilstand
-
-next: Forretningslag/Forretningsmeldingsstruktur
-
------
+permalink: sdp_avsender_tilstanddiagram.html
+sidebar:
+---
 
 ## Tilstander for Sikker digital postforsendelse hos Avsender
 
@@ -24,8 +18,8 @@ avsender](tilstander_avsender.png
 
 ### Tilstander
 
-| Tilstand          | Beskrivelse                                                                                                                                                                     | Lenker                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Tilstand  | Beskrivelse | Lenker   |
+| --- | --- | --- |
 | Start             | Avsender må klargjøre posten før sending i henhold til ekspederingsprosessen.                                                                                                   | ekspedere post                   |
 | Sendt             | Avsender har sendt meldingen vellykket til Meldingsformidler. Meldingsformidler har nå ansvar for å få levert meldingen til Postkassen.                                         |                                  |
 | Transportfeil     | Avsender får transportfeil ved sending av digital post til Meldingsformidler. Posten vil ikke blir tilgjengeliggjort og Avsender er ansvarlig for å resende posten              | ebMS/meldingsutveksling          |
@@ -37,8 +31,8 @@ avsender](tilstander_avsender.png
 
 ### Overganger
 
-| Overganger         | Beskrivelse                                                                                                                                         | Lenker                                            |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| Overganger         | Beskrivelse    | Lenker       |
+| ---| --- | ---|
 | Send melding       | Avsender sender Digital post til Meldingsformidler                                                                                                  | Transport, Prosessbeskrivelse, DigitalPostmelding |
 | Sending feilet     | Avsender får ikke en vellykket transport kvittering fra meldingsformidler                                                                           | ebMS                                              |
 | Resending          | Avsender har håndtert transportfeilen enten ved å rette feil i eget system eller igjennom dialog med Sentralforvalter                               | samarbeidsportalen                                |
