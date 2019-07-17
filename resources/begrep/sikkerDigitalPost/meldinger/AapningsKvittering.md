@@ -1,7 +1,7 @@
 ---
 
 title: AapningsKvittering  
-permalink:aapningskvittering.html
+permalink: aapningskvittering.html
 
 ---
 
