@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Meldingsformat  
-headtitle: Sikker digital post  
-group: transportlag
-
-id: Transportlag/Transportmeldingsstruktur
-
-next: Transportlag/WebserviceSecurity
-
------
+permalink: sdp_meldingsformat.html
+sidebar:
+---
 
 ## Meldingsformat
 
