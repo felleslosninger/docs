@@ -20,7 +20,7 @@ Alt sammen er pakken inn i en SOAP konvolutt slik det er beskrevet i
 tegningen under.
 
 [![Figuren viser en overordnet beskrivelse av meldingen i Sikker digital
-post](https://github.com/difi/felleslosninger/blob/gh-pages/resources/begrep/sikkerDigitalPost/innledning/meldingsstruktur_enkel.jpg?raw=true)
+post](/felleslosninger/resources/begrep/sikkerDigitalPost/innledning//meldingsstruktur_enkel.jpg)
 
 ### Standarder benyttet i grensesnittet
 
