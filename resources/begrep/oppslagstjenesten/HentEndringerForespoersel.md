@@ -20,7 +20,7 @@ permalink: oppslagstjenesten_hentendringerforespoersel.html
     Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
     forespørselen og hvordan denne sendes.
 
-Responsen er en [HentEndringerRespons](HentEndringerRespons)
+Responsen er en [HentEndringerRespons](HentEndringerRespons.md)
 
 #### Attributer
 
