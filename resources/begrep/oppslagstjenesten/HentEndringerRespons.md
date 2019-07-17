@@ -1,6 +1,7 @@
 ---
 title: HentEndringerRespons 
 permalink: ot_hentendringerrespons.html
+datatype: Metode
 sidebar:
 ---
 
