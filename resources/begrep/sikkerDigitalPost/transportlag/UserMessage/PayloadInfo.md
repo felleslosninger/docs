@@ -1,16 +1,9 @@
------
-
-layout: default  
+---
+ 
 title: PayloadInfo  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: transportlag
-
-id: PayloadInfo
-
-next: UserMessage  
-prev: CollabortationInfo
-
------
+permalink: sdk_payload.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -28,9 +21,9 @@ prev: CollabortationInfo
 
 ### Egenskaper
 
-| Identifikator | Type     | Kardinalitet | Kommentar           |
-| ------------- | -------- | ------------ | ------------------- |
-| PartInfo      | PartInfo | 1..          | Beskriver vedlegget |
+| Identifikator | Type | Kardinalitet | Kommentar |
+| --- | --- | --- | --- |
+| PartInfo | PartInfo | 1.. | Beskriver vedlegget |
 
 ### Kommentar
 
