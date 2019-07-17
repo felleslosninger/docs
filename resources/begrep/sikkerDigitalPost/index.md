@@ -25,9 +25,9 @@ grensesnittene for [Digital post til
 innbyggere](https://samarbeid.difi.no/digital-postkasse-til-innbyggere).
 
 Målgruppen for denne spesifikasjonen er
-[Avsendervirksomheter](forretningslag/Aktorer),
-[Meldingsformidler](forretningslag/Aktorer) og
-[Postkasseleverandører](forretningslag/Aktorer).
+[Avsendervirksomheter](forretningslag/Aktorer.md),
+[Meldingsformidler](forretningslag/Aktorer.md) og
+[Postkasseleverandører](forretningslag/Aktorer.md).
 
 ### Hvordan ta i bruk digital postkasse til innbyggere?
 
@@ -42,8 +42,8 @@ Dersom du nettopp har vært der og vil ha mer detaljer så sett deg først
 inn i følgende:
 
 | --- | --- |
-| [Arkitekturen](innledning/arkitektur) | Oversikt over de sentrale aktørene |
-| [Prosess for sending av digital post](forretningslag/forretningsprosess) | Beskrivelse av hvordan meldingen i digital post flyter mellom aktørene |
+| [Arkitekturen](innledning/arkitektur.md) | Oversikt over de sentrale aktørene |
+| [Prosess for sending av digital post](forretningslag/forretningsprosess.md) | Beskrivelse av hvordan meldingen i digital post flyter mellom aktørene |
 
 ### Kapiteloversikt
 
