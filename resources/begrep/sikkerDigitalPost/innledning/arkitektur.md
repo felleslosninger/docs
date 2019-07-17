@@ -1,14 +1,10 @@
------
+---
 
-layout: default  
 title: Arkitektur  
-headtitle: Sikker digital post
+permalink: sdp_arkitektur.html
+sidebar:
 
-id: Oversikt/Arkitektur
-
-next: Oversikt/Sikkerhet
-
------
+---
 
 ## Arkitektur
 
