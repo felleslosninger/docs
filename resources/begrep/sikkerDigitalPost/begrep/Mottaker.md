@@ -1,14 +1,7 @@
------
-
-layout: egenskap  
-title: Mottaker  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Mottaker  
-prev: Begreper  
-—-  
-{% include variables.html %}
+---
+title: Mottaker 
+permalink: sdp_mottaker.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
