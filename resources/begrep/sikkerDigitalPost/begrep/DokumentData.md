@@ -20,7 +20,7 @@ sidebar:
 | --- | --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype   | Beskrivelse                                                                  |
 | href          | 1..1         | xsd:string | Filnavn på data-dokumentet i dokumentpakken                                  |
-| mime          | 1..1         | xsd:string | Utvidelsens mime-type. [Tilgjengelig utvidelser](/forretningslag/Utvidelser) |
+| mime          | 1..1         | xsd:string | Utvidelsens mime-type. [Tilgjengelig utvidelser](/forretningslag/Utvidelser.md) |
 
 #### Xml eksempel
 
