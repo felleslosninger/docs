@@ -1,13 +1,12 @@
------
-
-layout: default  
+---
 title: SlettPostkasseRespons  
 headtitle: Begrepskatalog for Sikker digital post -  
 datatype: Metode  
 Service: Oppslagstjenesten  
 group: Oppslagstjenesten/PK\_Metode\_respons  
-—-  
-{% include variables.html %}
+permalink: ot_slettpostkasserespons.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -23,7 +22,7 @@ group: Oppslagstjenesten/PK\_Metode\_respons
   - Kommentar  
     Webservice response som Postkasseleverandør mottar fra
     Kontaktregisteret som svar på
-    [SlettPostkasseForespoersel](SlettPostkasseForespoersel)
+    [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md)
 
 #### Attributer
 
