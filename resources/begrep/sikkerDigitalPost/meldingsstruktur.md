@@ -1,9 +1,10 @@
------
+---
 
 layout: default  
 title: Meldingsstruktur  
-headtitle: Oppslagstjenesten for kontakt og reservasjonsregisteret  
-—-
+permalink: sdp_meldingsstruktur.html
+sidebar:
+---
 
 ## {{page.title}}
 
