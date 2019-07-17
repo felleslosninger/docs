@@ -1,11 +1,10 @@
------
-
-layout: default  
+---
 Service: Oppslagstjenesten  
 title: Oppslagstjenesten for kontakt og reservasjonsregisteret  
 headtitle: Oppslagstjenesten for kontakt og reservasjonsregisteret  
-—-  
-{% include variables.html %}
+permalink: ot_oppslagstjenesten.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -26,13 +25,13 @@ virksomhetssertifikater ihtt rammeverket for PKI i offentlig sektor for
   - [XSD metadata](xsd/oppslagstjeneste-metadata-16-02.xsd)
   - [XSD definisjon for fil
     eksport](xsd/kontaktregister-export-14-05.xsd)
-  - [Egendefinert SOAP header: paaVegneAv](paaVegneAv)
+  - [Egendefinert SOAP header: paaVegneAv](paaVegneAv.md)
   - [Web Service Security header](ws-security/WebserviceSecurity)
 
 ### Datamodell:
 
 For en oversikt over den eksterne datamodellen utlevert fra
-Oppslagstjenesten se klassedefinisjonen for [Person](Person).
+Oppslagstjenesten se klassedefinisjonen for [Person](Person.md).
 
 ### Klassedefinisjonen
 
