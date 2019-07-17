@@ -1,12 +1,11 @@
------
-
-layout: egenskap  
+---
 title: Sertifikat  
 headtitle: Begrepskatalog for Sikker digital post -  
 datatype: complexType  
 group: Oppslagstjenesten/complexType  
-—-  
-{% include variables.html %}
+permalink: ot_sertifikat.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
