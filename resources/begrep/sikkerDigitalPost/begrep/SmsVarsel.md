@@ -1,16 +1,7 @@
------
-
-layout: egenskap  
+---
 title: SmsVarsel  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: SmsVarsel  
-prev: Begreper
-
------
-
-{% include variables.html %}
+permalink: sdp_smsvarsel.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -30,10 +21,10 @@ prev: Begreper
 #### Eigenskapar
 
 | Identifikator                                    | Kardinalitet | Datatype                                              |
-| ------------------------------------------------ | ------------ | ----------------------------------------------------- |
-| [mobiltelefonnummer](/Felles/mobiltelefonnummer) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [varslingsTekst](/Felles/varslingsTekst)         | 1..1         | [varslingsTekst](/Felles/varslingsTekst)              |
-| [Repetisjoner](Repetisjoner)                     | 1..1         | [sdp:Repetisjoner](Repetisjoner)                      |
+| --- | --- | --- |
+| [mobiltelefonnummer](../../felles/mobiltelefonnummer.md) | 1..1     | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| SKAL VÆRE LINK TIL ../../felles/varslingsTekst.md        | 1..1     | SKAL VÆRE LINK TIL ../../felles/varslingsTekst        |
+| [Repetisjoner](Repetisjoner.md)                     | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                    |
 
 #### Xml eksempel
 
