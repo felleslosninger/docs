@@ -1,6 +1,6 @@
 ---
 title: Avsender  
-permalink: sikkerdigitalpost_avsender.html
+permalink: sdp_avsender.html
 sidebar:
 ---  
 
