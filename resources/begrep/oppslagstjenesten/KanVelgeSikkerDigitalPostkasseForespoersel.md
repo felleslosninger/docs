@@ -1,13 +1,8 @@
------
-
-layout: default  
+---
 title: KanVelgeSikkerDigitalPostkasseForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode  
-—-  
-{% include variables.html %}
+permalink: ot_kanvelgesikkerdigitalpostkasseforespoersel.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -32,9 +27,9 @@ group: Oppslagstjenesten/PK\_Metode
 
 | Term                                               | Kardinalitet | Datatype                                              |
 | -------------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [personidentifikator](/Felles/personidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [personidentifikator](../felles/personidentifikator.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Respons
 
 Responsen er en
-[KanVelgeSikkerDigitalPostkasseRespons](KanVelgeSikkerDigitalPostkasseRespons)
+[KanVelgeSikkerDigitalPostkasseRespons](KanVelgeSikkerDigitalPostkasseRespons.md)
