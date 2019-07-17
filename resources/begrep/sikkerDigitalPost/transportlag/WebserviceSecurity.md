@@ -1,15 +1,10 @@
------
+---
 
-layout: default  
 title: Webservice sikkerhet  
-headtitle: Sikker digital post  
-group: transportlag
+permalink: sdp_webservicesecurity.html
+sidebar:
 
-id: Transportlag/WebserviceSecurity
-
-next: Feilhåndtering
-
------
+---
 
 ## {{page.title}}
 
@@ -17,11 +12,11 @@ next: Feilhåndtering
 
 Webservice security header består av følgende elementer:
 
-| Identifikator       | Kardinalitet | Datatype                                                                                                                                |
-| ------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| BinarySecurityToken | 1..1         | [wsse:BinarySecurityToken](http://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717134)           |
-| Timestamp           | 1..1         | [wsu:Timestamp](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717167) |
-| Signature           | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148)  |
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| BinarySecurityToken | 1..1 | [wsse:BinarySecurityToken](http://docs.oasis-open.org/wss/v1.1/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717134) |
+| Timestamp | 1..1 | [wsu:Timestamp](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717167) |
+| Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148) |
 
 Meldingen er kun signert på SOAP nivå, ikke kryptert.
 
