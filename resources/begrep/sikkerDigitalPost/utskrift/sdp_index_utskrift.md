@@ -1,7 +1,7 @@
 ---
 
 tittel: Utskrift og forsendelse
-permalink: sdp_index.html
+permalink: sdp_index_utskrift.html
 sidebar:
 ---
 
