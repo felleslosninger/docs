@@ -5,8 +5,8 @@ datatype: Metode
 Service: Oppslagstjenesten  
 group: Oppslagstjenesten/PK\_Metode\_respons  
 permalink: ot_opprettogvelgsikkerdigitalpostkasserespons.html
-—-  
-{% include variables.html %}
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
