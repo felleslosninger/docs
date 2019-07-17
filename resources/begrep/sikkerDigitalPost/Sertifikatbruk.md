@@ -1,7 +1,7 @@
 ---
 
 title: Signering og kryptering av Sikker Digital Post forsendelse  
-permalink:sdp_sertifikatbruk.html
+permalink: sdp_sertifikatbruk.html
 sidebar:
 ---
 
