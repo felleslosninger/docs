@@ -1,13 +1,9 @@
 -----
 
-layout: default  
-title: Sikkerhet  
-headtitle: Sikker digital post
 
-id: Sikkerhet
-
-next: Sikkerhet/Sertifikathåndtering
-
+title: Sikkerhet
+permalink: sikkerdigitalpost_index.html
+sidebar:
 -----
 
 ## Kryptografisk beskyttelse av digital post
