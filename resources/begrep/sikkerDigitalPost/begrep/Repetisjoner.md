@@ -1,6 +1,6 @@
 --- 
 title: Repetisjoner  
-permalink: sdp_repitisjoner.md
+permalink: sdp_repitisjoner.html
 sidebar:
 ---
 
