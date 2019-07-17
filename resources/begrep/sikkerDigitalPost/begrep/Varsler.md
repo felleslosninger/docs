@@ -1,14 +1,7 @@
------
-
-layout: egenskap  
+--- 
 title: Varsler  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Varsler  
-prev: Begreper  
-—-  
-{% include variables.html %}
+permalink: sdp_varsler.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -26,21 +19,21 @@ prev: Begreper
     varslingspreferanser, det vil kunne komme som tillegg til Mottaker
     sine varslingvalg.  
     Avsender kan med instillingene her styre både
-    [EpostVarsel](EpostVarsel) og [SmsVarsel](SmsVarsel) helt uavhengig
+    [EpostVarsel](EpostVarsel.md) og [SmsVarsel](SmsVarsel.md) helt uavhengig
     av hverandre. Det vil si at Avsender kan velge å varsle i begge
     eller en av kanalene.  
     Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre
     med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til
     åpningsgrad og kostnader.  
-    Bruk av [SmsVarsel](SmsVarsel) vil medføre egne kostnader for
+    Bruk av [SmsVarsel](SmsVarsel.md) vil medføre egne kostnader for
     Avsender.
 
 #### Eigenskapar
 
 | Identifikator              | Kardinalitet | Datatype                       |
 | -------------------------- | ------------ | ------------------------------ |
-| [epostVarsel](EpostVarsel) | 0..1         | [sdp:EpostVarsel](EpostVarsel) |
-| [smsVarsel](SmsVarsel)     | 0..1         | [sdp:SmsVarsel](SmsVarsel)     |
+| [epostVarsel](EpostVarsel.md) | 0..1         | [sdp:EpostVarsel](EpostVarsel.md) |
+| [smsVarsel](SmsVarsel.md)     | 0..1         | [sdp:SmsVarsel](SmsVarsel.md)     |
 
 #### Xml eksempel - Brev som krever varsling etter eForvaltningsforskriften
 
