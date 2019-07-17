@@ -50,8 +50,8 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 
 ### Attributer
 
-| --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
 | tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
 | feiltype | 1..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
@@ -61,7 +61,7 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 
 feiltype kan ha følgende verdi:
 
-| --- | --- |
 | Kodeverdi | Beskrivelse |
+| --- | --- |
 | KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender](../begrep/Avsender) må rette opp i årsaken til feilen |
 | SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender](../begrep/Avsender) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |
