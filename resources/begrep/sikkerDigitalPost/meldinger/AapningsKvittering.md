@@ -5,8 +5,6 @@ permalink:aapningskvittering.html
 
 ---
 
-{% include variables.html %}
-
 ### {{page.title}}
 
   - Identifikator  
