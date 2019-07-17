@@ -1,14 +1,9 @@
------
-
-layout: default  
+---
+ 
 title: Eksempler  
-headtitle: Sikker digital post
-
-id: Eksempler
-
-next: Forretningslag
-
------
+permlink: sdp_index_eksempler
+sidebar:
+---
 
 ## {{page.title}}
 
