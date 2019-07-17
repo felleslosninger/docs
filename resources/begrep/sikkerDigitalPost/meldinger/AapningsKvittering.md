@@ -1,8 +1,8 @@
 ---
 
 title: AapningsKvittering  
-permalink: aapningskvittering.html
-
+permalink: sikkerdigitalpost_aapningskvittering.html
+sidebar:
 ---
 
 ### {{page.title}}
