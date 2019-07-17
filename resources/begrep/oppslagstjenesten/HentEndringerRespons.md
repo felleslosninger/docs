@@ -1,13 +1,8 @@
------
-
-layout: default  
-title: HentEndringerRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/Metode\_respons  
-—-  
-{% include variables.html %}
+---
+title: HentEndringerRespons 
+permalink: ot_hentendringerrespons.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -31,18 +26,18 @@ group: Oppslagstjenesten/Metode\_respons
 
 | Term                                                   | Kardinalitet |
 | ------------------------------------------------------ | ------------ |
-| [fraEndringsNummer](/Felles/fraEndringsNummer)         | 1..1         |
-| [tilEndringsNummer](/Felles/tilEndringsNummer)         | 1..1         |
-| [senesteEndringsNummer](/Felles/senesteEndringsNummer) | 1..1         |
-| [Person](/Oppslagstjenesten/Person)                    | 0..1000      |
+| [fraEndringsNummer](../felles/fraEndringsNummer.md)         | 1..1         |
+| [tilEndringsNummer](../felles/tilEndringsNummer.md)         | 1..1         |
+| [senesteEndringsNummer](../felles/senesteEndringsNummer.md) | 1..1         |
+| [Person](Person.md)                    | 0..1000      |
 
-  - Dersom [tilEndringsNummer](/Felles/tilEndringsNummer) og
-    [senesteEndringsNummer](/Felles/senesteEndringsNummer) er lik finnes
+  - Dersom [tilEndringsNummer](../felles/tilEndringsNummer.md) og
+    [senesteEndringsNummer](../felles/senesteEndringsNummer.md) er lik finnes
     det ikke fler endringer i registeret som ikke er utlevert.
-  - Dersom [tilEndringsNummer](/Felles/tilEndringsNummer) er ulik fra
-    [senesteEndringsNummer](/Felles/senesteEndringsNummer) så bør
+  - Dersom [tilEndringsNummer](../felles/tilEndringsNummer.md) er ulik fra
+    [senesteEndringsNummer](../felles/senesteEndringsNummer.md) så bør
     Offentlig Virksomhet sende ny
-    [HentEndringerForespoersel](HentEndringerForespoersel).
+    [HentEndringerForespoersel](HentEndringerForespoersel.md).
 
 #### Xml eksempel
 
