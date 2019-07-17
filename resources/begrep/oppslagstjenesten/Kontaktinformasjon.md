@@ -1,11 +1,9 @@
------
-
-layout: egenskap  
+--- 
 title: Kontaktinformasjon  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
+permalink: ot_kontakinformasjon.html
 —-  
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -26,8 +24,8 @@ group: Oppslagstjenesten/complexType
 
 | Term                                     | Kardinalitet |
 | ---------------------------------------- | ------------ |
-| [Mobiltelefonnummer](Mobiltelefonnummer) | 0..1         |
-| [Epostadresse](Epostadresse)             | 0..1         |
+| [Mobiltelefonnummer](Mobiltelefonnummer.md) | 0..1         |
+| [Epostadresse](Epostadresse.md)             | 0..1         |
 
 #### Xml eksempel
 
