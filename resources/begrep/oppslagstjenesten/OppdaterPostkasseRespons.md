@@ -1,13 +1,12 @@
------
-
-layout: default  
+--- 
 title: OppdaterPostkasseRespons  
 headtitle: Begrepskatalog for Sikker digital post -  
 datatype: Metode  
 Service: Oppslagstjenesten  
 group: Oppslagstjenesten/PK\_Metode\_respons  
+permalink: ot_oppdaterpostkasserespons.html
+sidebar:
 —-  
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -23,7 +22,7 @@ group: Oppslagstjenesten/PK\_Metode\_respons
   - Kommentar  
     Webservice response som Postkasseleverandør mottar fra
     Kontaktregisteret som svar på
-    [OppdaterPostkasseForespoersel](OppdaterPostkasseForespoersel)
+    [OppdaterPostkasseForespoersel](OppdaterPostkasseForespoersel.md)
 
 #### Attributer
 
