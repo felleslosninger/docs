@@ -1,15 +1,8 @@
------
-
-layout: default  
+--- 
 title: Tittel  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Tittel  
-prev: Begreper  
-—-
-
-{% include variables.html %}
+permalink: sdp_tittel.md
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -30,8 +23,8 @@ prev: Begreper
 #### Egenskaper
 
 | Identifikator | Kardinalitet | Datatype                 |
-| ------------- | ------------ | ------------------------ |
-| lang          | 1..1         | [spraak](/Felles/spraak) |
+| --- | --- | --- |
+| lang          | 1..1         | [spraak](../../felles/spraak.md) |
 
 ### Xml eksempel
 
