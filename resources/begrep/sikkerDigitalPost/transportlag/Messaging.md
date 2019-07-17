@@ -1,16 +1,10 @@
------
+---
 
 layout: default  
 title: Messaging  
-headtitle: Sikker digital post - Messaging  
-group: transportlag
+permalink: sdp_messaging.html
 
-id: Messaging
-
-next: UserMessage  
-prev: KvitteringsForespoersel
-
------
+---
 
 ## {{page.title}}
 
@@ -31,7 +25,7 @@ relatert til meldinger sendt mellom to MSH’er slik som definert av ebMS
 
 ### Attributter
 
-| Identifikator                   | Kardinalitet | Datatype         | Kommentar                                                                                                                                 |
-| ------------------------------- | ------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [UserMessage](UserMessage/)     | 0..1         | eb:UserMessage   | en forretningsmelding som skal overleveres til fagsystemet bak MSH’en som tar i mot meldingen                                             |
+| Identifikator | Kardinalitet | Datatype | Kommentar |
+| --- | --- | --- | --- |
+| [UserMessage](UserMessage/) | 0..1 | eb:UserMessage | en forretningsmelding som skal overleveres til fagsystemet bak MSH’en som tar i mot meldingen |
 | [SignalMessage](SignalMessage/) | 0..unbounded | eb:SignalMessage | Signalmelding om at det er ønske om en handling fra den andre MSH’en. En signalmelding vil typisk ikke innvolvere fagsystemet til MSH’en. |
