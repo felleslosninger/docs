@@ -1,7 +1,7 @@
 ---
 
 title: Feilhåndtering  
-permalink: sdp_index.html
+permalink: sdp_feil_index.html
 
 children:  
 \- name: Feilhåndtering/Forvaltning  
