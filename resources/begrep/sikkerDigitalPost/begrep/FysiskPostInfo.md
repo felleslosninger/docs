@@ -23,13 +23,13 @@ sidebar:
     Innbygger.  
     Når den digitale posten er dekryptert og innbygger er autentisert på
     tilstrekkelig sikkerhetsnivå så vil Tittel i
-    [Manifest-filen](../forretningslag/Dokumentpakke/Manifest) brukes.
+    [Manifest-filen](../forretningslag/Dokumentpakke/Manifest.md) brukes.
 
 ### Attributer
 
 | --- | --- | --- |
 | Identifikator                           | Kardinalitet | Datatype                                              |
-| [mottaker](FysiskPostadresse)           | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse)            |
-| [posttype](/Felles/posttype)            | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [mottaker](FysiskPostadresse.md)           | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
+| [posttype](../../felles/posttype.md)            | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | SKAL VÆRE LINK TIL /Felles/utskriftstype | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [retur](FysiskPostRetur)                | 1..1         | [sdp:FysiskPostRetur](FysiskPostRetur)                |
+| [retur](FysiskPostRetur.md)                | 1..1         | [sdp:FysiskPostRetur](FysiskPostRetur.md)                |
