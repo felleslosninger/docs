@@ -7,7 +7,7 @@ sidebar:
   - Identifikator  
     http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Avsender
   - Term  
-    {{page.title}}
+    Avsender
   - Definisjon  
     Juridisk organisasjon/entitet som er Behandlingsansvarlig for
     innholdet i den digitale posten,
@@ -24,7 +24,7 @@ sidebar:
 
 | --- | --- | --- |
 | Identifikator                                          | Kardinalitet | Datatype |                                                        
-| [organisasjon](../felles/virksomhetsidentifikator)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+|  ../felles/virksomhetsidentifikator       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
 | HER SKAL DET VÆRE LINK TIL /felles/avsenderifentifikator | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
 | fakturaReferanse                                       | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) \[maks 40\] |
 
