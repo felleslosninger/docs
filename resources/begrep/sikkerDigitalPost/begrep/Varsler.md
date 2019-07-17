@@ -1,6 +1,7 @@
 --- 
 title: Varsler  
 permalink: sdp_varsler.html
+sidebar:
 ---
 
   - Identifikator  
