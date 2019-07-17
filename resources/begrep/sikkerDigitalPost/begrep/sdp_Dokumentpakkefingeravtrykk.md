@@ -1,18 +1,11 @@
------
-
-layout: egenskap  
-title: Dokumentpakkefingeravtrykk  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Dokumentpakkefingeravtrykk  
-prev: Begreper  
-—-
-
-{% include variables.html %}
+---
+title: Dokumentpakkefingeravtrykk   
+permalink: sdp_dokumentpakkefingeravtrykk.html
+sidebar:
+---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Dokumentpakkefingeravtrykk
   - Term  
     {{page.title}}
   - Definisjon  
@@ -25,8 +18,8 @@ prev: Begreper
 
 #### Eigenskapar
 
-| Identifikator                                                        | Kardinalitet | Datatype                                                              | Beskrivelse                                                                             |
-| -------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| --- | --- | --- | --- |
+| Identifikator | Kardinalitet | Datatype | Beskrivelse |
 | [DigestMethod](http://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod) | 1..1         | [ds:SignedInfo](http://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod) | Referanse til Hash algoritmen brukt for lage hash                                       |
 | [DigestValue](http://www.w3.org/TR/xmldsig-core1/#sec-DigestValue)   | 1..1         | [ds:DigestValue](http://www.w3.org/TR/xmldsig-core1/#sec-DigestValue) | Base64 encoded Hash av den krypterte [Dokumentpakken](../forretningslag/Dokumentpakke/) |
 
