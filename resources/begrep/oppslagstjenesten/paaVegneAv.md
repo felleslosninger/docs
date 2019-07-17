@@ -1,11 +1,11 @@
------
-
-layout: egenskap  
+---
 title: paaVegneAv  
 headtitle: Begrepskatalog for Oppslagstypen -  
 group: Egenskap  
 datatype: string  
-—-
+permalink: ot_paavegneav.html
+sidebar:
+---
 
   - Identifikator  
     “http://begrep.difi.no{{ page.url | remove:”.html"
