@@ -2,7 +2,7 @@
 
 tittel: Utskrift og forsendelse
 permalink: sdp_index_utskrift.html
-sidebar:
+sidebar: 
 ---
 
 ## Utskrift og forsendelse
