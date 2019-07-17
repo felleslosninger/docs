@@ -28,8 +28,8 @@ Kvitteringen vil komme flere dager etter at en forsendelse er sendt til
 utskrift og forsendelsetjenesten, dette er overordne de steg som skal
 gjennomføres før Avsender får ReturpostKvittering
 
-| --- | --- | --- |
 | Steg | Beskrivelse | Antatt tidsbruk |
+| --- | --- | --- |
 | Utskrift | Brevet skrives ut og postlegges | 1 dag |
 | Forsendelse | Brevet forsendes til Avsender | 2 til 5 dager avhengig om det er A eller B-Post |
 | Retur til EA tjeneste | Brev som ikke kan leveres vil bruke noe tid tilbake til retur tjenesten | 1 til 2 dager |
@@ -38,7 +38,7 @@ gjennomføres før Avsender får ReturpostKvittering
 
 ### Attributer
 
-| --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
 | tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
