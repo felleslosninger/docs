@@ -2,7 +2,7 @@
 
 
 title: Sikkerhet
-permalink: sikkerdigitalpost_index.html
+permalink: sdp_index.html
 sidebar:
 ---
 
@@ -60,8 +60,7 @@ avsenders virksomhetssertifikat, varslingsinformasjon og dokumentpakken
 som er kryptert.
 
 Det vil være behov for å endre algoritmer og protokoller over tid, men i
-første versjon vil signaturen i dokumentpakken være
-http://www.w3.org/2001/04/xmldsig-more\#rsa-sha256 (PKCS \#1 v1.5) i
+første versjon vil signaturen i dokumentpakken være http://www.w3.org/2001/04/xmldsig-more\#rsa-sha256 (PKCS \#1 v1.5) i
 henhold til XAdES-standarden.
 
 For å sende digital post må en avsendervirksomhet være registrert med
