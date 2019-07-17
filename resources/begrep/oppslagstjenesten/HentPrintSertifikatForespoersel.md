@@ -1,6 +1,8 @@
 --- 
 title: HentPrintSertifikatForespoersel  
+datatype: Metode
 permalink: ot_hentprintsertifikatforespoersel.html
+sidebar:
 ---
 
   - Identifikator  
