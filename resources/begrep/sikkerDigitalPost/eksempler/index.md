@@ -31,7 +31,7 @@ relevante eksempler.
 ### Eksempler på .Net integrasjonsprosjekt
 
   - [Referanseimplementasjon for bruk av
-    oppslagstjenesten](https://github.com/difi/kontaktregisteret-klient/tree/master/kontaktinfo-dotNet-sample)
+    oppslagstjenesten](https://github.com/difi/kontaktregisteret-klient/tree/master)
       - Eksempel kode for hvordan en avsender kan integrere seg mot
         oppslagstjenesten
 
