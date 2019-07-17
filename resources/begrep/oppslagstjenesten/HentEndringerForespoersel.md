@@ -26,10 +26,10 @@ Responsen er en [HentEndringerRespons](HentEndringerRespons)
 
 | Term                                           | Kardinalitet |
 | ---------------------------------------------- | ------------ |
-| [fraEndringsNummer](../felles/fraEndringsNummer) | 1..1         |
-| [informasjonsbehov](../felles/informasjonsbehov) | 0..\*        |
+| [fraEndringsNummer](../felles/fraEndringsNummer.md) | 1..1         |
+| [informasjonsbehov](../felles/informasjonsbehov.md) | 0..\*        |
 
-#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov)
+#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov.md)
 
 | Kodeverdi         | Beskrivelse                                                                                                                 |
 | --- | --- |
