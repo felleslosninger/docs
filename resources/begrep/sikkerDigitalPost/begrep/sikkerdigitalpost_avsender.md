@@ -5,7 +5,7 @@ sidebar:
 ---  
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Avsender
   - Term  
     {{page.title}}
   - Definisjon  
@@ -24,8 +24,8 @@ sidebar:
 
 | --- | --- | --- |
 | Identifikator                                          | Kardinalitet | Datatype |                                                        
-| [organisasjon](/Felles/virksomhetsidentifikator)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [avsenderidentifikator](/Felles/avsenderidentifikator) | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [organisasjon](../felles/virksomhetsidentifikator)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [avsenderidentifikator](../felles/avsenderidentifikator) | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
 | fakturaReferanse                                       | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) \[maks 40\] |
 
 #### Xml eksempel
