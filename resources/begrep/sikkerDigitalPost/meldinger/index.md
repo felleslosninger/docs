@@ -1,10 +1,8 @@
------
+---
 
-layout: default  
 title: Forretningsmeldinger  
-headtitle: Sikker digital post
-
-id: Forretningsmeldinger
+permalink: sdk_index.html
+sidebar:
 
 children:  
 \- name: Forretningsmeldinger/Digitalpost  
@@ -16,9 +14,7 @@ children:
 \- name: Forretningsmeldinger/Feil  
 \- name: Forretningsmeldinger/FlyttetDigitalpost
 
-next: Forretningsmeldinger/Digitalpost
-
------
+---
 
 ## Forretningsmeldingene i Sikker Digital Post
 
@@ -46,16 +42,16 @@ Meldingstypen er definert i
 [DocumentIdentification](../forretningslag/StandardBusinessDocument/DocumentIdentification)
 og er en av følgende:
 
-| Type                                            | Beskrivelse                                                                                       |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| [Digitalpost](DigitalPostMelding)               | Forsendelse av digital post                                                                       |
-| [LeveringsKvittering](LeveringsKvittering)      | Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt            |
-| [ÅpningsKvittering](AapningsKvittering)         | Kvittering fra Innbygger for at digital post er åpnet                                             |
-| [Varslingfeilet](VarslingfeiletKvittering)      | Kvittering for at en spesifisert varsling ikke har blitt sendt                                    |
-| [MottaksKvittering](MottaksKvittering)          | Kvittering fra utskrift og forsendelsestjenesten om at melding er mottatt og lagt til print       |
-| [ReturpostKvittering](ReturpostKvittering)      | Kvittering fra utskrift og forsendelsestjenesten om at posten ikke har blitt levert til Mottaker. |
-| [Feil](Feil)                                    | Generell melding om at det har skjedd en feil.                                                    |
-| [FlyttetDigitalpost](FlyttetDigitalPostMelding) | For flytting av post fra en postkasse til en annen. Brukes kun i mellom postkasseleverandørene    |
+| Type | Beskrivelse |
+| --- | --- |
+| [Digitalpost](DigitalPostMelding) | Forsendelse av digital post |
+| [LeveringsKvittering](LeveringsKvittering) | Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt |
+| [ÅpningsKvittering](AapningsKvittering) | Kvittering fra Innbygger for at digital post er åpnet |
+| [Varslingfeilet](VarslingfeiletKvittering) | Kvittering for at en spesifisert varsling ikke har blitt sendt |
+| [MottaksKvittering](MottaksKvittering) | Kvittering fra utskrift og forsendelsestjenesten om at melding er mottatt og lagt til print |
+| [ReturpostKvittering](ReturpostKvittering) | Kvittering fra utskrift og forsendelsestjenesten om at posten ikke har blitt levert til Mottaker. |
+| [Feil](Feil) | Generell melding om at det har skjedd en feil. |
+| [FlyttetDigitalpost](FlyttetDigitalPostMelding) | For flytting av post fra en postkasse til en annen. Brukes kun i mellom postkasseleverandørene |
 
 ### Felles meldingsatributt
 
@@ -63,9 +59,9 @@ Alle meldingene består av et felles attributt uavhengig av
 meldingstypen.  
 Resten av attributtene er definert i de enkelte meldingstypene, se over.
 
-| Identifikator | Kardinalitet | Datatype                                                                                                                                                       |
-| ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Signature     | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
 
 ### krav til signaturen
 
