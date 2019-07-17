@@ -22,9 +22,9 @@ sidebar:
 
 | --- | --- | --- |
 | Identifikator                            | Kardinalitet | Datatype                                              |
-| [epostadresse](../felles/epostadresse)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [epostadresse](../felles/epostadresse.md)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | SKAL VÆRE LINK TIL ../felles/varslingsTekst | 1..1         | SKAL VÆRE LINK TIL ../felles/varslingsTekst           |
-| [repetisjoner](Repetisjoner)             | 1..1         | [sdp:Repetisjoner](Repetisjoner)                      |
+| [repetisjoner](Repetisjoner.md)             | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                      |
 
 #### Xml eksempel
 
