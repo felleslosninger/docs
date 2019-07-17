@@ -1,7 +1,7 @@
 ---
 
 title: FormidleFysiskPostForsendelse
-permalink:sdp_formidlefysiskpostforsendelse
+permalink: sdp_formidlefysiskpostforsendelse
 sidebar:
 ---
 
