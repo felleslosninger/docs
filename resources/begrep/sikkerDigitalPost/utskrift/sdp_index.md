@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
-title: Utskrift og forsendelse  
-headtitle: Sikker digital post
-
-group: utskrift
-
-id: utskrift
-
-next: Forretningslag/Forretningsprosess\_utskrift
-
------
+tittel: Utskrift og forsendelse
+permalink: sdp_index.html
+sidebar:
+---
 
 ## Utskrift og forsendelse
 
