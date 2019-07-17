@@ -20,7 +20,7 @@ indikere feilen.
 
 Postkassene skal gi en EBMS-feil og/eller SOAP Fault dersom det er
 transport (SOAP/EBMS) eller routing problematikk (SBDH).  
-Ellers sendes feil som egne forretningmeldinger av typen [FeilMelding](../meldinger/Feil.md). Dette sikrer at feilene i
+Ellers sendes feil som egne forretningmeldinger av typen (her skal det linkes til feilmelding i meldinger) . Dette sikrer at feilene i
 flyter tilbake til avsender i de tilfeller avsender har gjort feil.
 
 | Feiltype?  | Hva gjør Avsender?  | Hva gjør Meldingsformidler(MF)?  | Hva gjør Postkasseleverandør(PK)? | Hva gjør MF hvis PK svarer med soap fault? |
@@ -31,8 +31,8 @@ flyter tilbake til avsender i de tilfeller avsender har gjort feil.
 | Skjemavalidering                   | Manuell håndtering  | SOAP-fault + EBMS-signal         | SOAP-fault + EBMS-signal          | Manuell håndtering                         |
 | Feil i SBD-signatur                | Manuell håndtering  | SOAP-fault + EBMS-signal         | SOAP-fault + EBMS-signal          | Manuell håndtering                         |
 | Feil i SBDH                        | Manuell håndtering  | SOAP-fault + EBMS-signal         | SOAP-fault + EBMS-signal          | Manuell håndtering                         |
-| Feil i SBD                         | Manuell håndtering  | SOAP-fault + EBMS-signal         | [Feil](../meldinger/Feil.md)  | N/A                                        |
-| Feil i ASIC (signering/kryptering) | Manuell håndtering  | N/A                              | [Feil](../meldinger/Feil.md)  | N/A                                        |
+| Feil i SBD                         | Manuell håndtering  | SOAP-fault + EBMS-signal         | (Link til feilmelding)  | N/A                                        |
+| Feil i ASIC (signering/kryptering) | Manuell håndtering  | N/A                              | (Link til feilmelding)  | N/A                                        |
 | Intern feil i system               | Prøver på ny senere | SOAP-fault + EBMS-signal (Other) | SOAP-fault + EBMS-signal (Other)  | Prøver på ny senere                        |
 
 ### Feilmeldinger / kvitteringer
@@ -49,9 +49,9 @@ oppstår.
 | Feil bruk av eller feil verdier på felter i EBMS                | EBMS Error: ValueInconsistent eller ValueNotRecognized                      |
 | Feil bruk av eller feil verdier på felter i SBDH                | EBMS Error: ValueInconsistent eller ValueNotRecognized                      |
 | Feil eller manglende signatur på SBD                            | EBMS error: SignatureValidation                                             |
-| Postkasse kan ikke dekryptere dokumentpakke                     | [Feil](../meldinger/Feil.md) type:KLIENT detaljer:“Kan ikke dekryptere” |
-| Manglende eller feil signatur inni dokumentpakke                | [Feil](../meldinger/Feil.md) type:KLIENT detaljer:“Feil signatur”       |
-| Feil bruk av eller feil verdier i SBD melding                   | [Feil](../meldinger/Feil.md) type:KLIENT detaljer:“Feil i manifest”     |
-| Feil bruk av eller feil verdier på felter                       | [Feil](../meldinger/Feil.md) type:KLIENT detaljer:“Ugyldig verdi … ”    |
+| Postkasse kan ikke dekryptere dokumentpakke                     | (Link til feilmelding) type:KLIENT detaljer:“Kan ikke dekryptere” |
+| Manglende eller feil signatur inni dokumentpakke                | (Link til feilmelding) type:KLIENT detaljer:“Feil signatur”       |
+| Feil bruk av eller feil verdier i SBD melding                   | (Link til feilmelding) type:KLIENT detaljer:“Feil i manifest”     |
+| Feil bruk av eller feil verdier på felter                       | (Link til feilmelding) type:KLIENT detaljer:“Ugyldig verdi … ”    |
 | Sending av ukjente payloads som SOAP body                       | EBMS error: FeatureNotSupported                                             |
 | Intern feil                                                     | EBMS error: Other                                                           |
