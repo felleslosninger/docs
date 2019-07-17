@@ -1,17 +1,9 @@
------
+---
 
-layout: default  
 title: Error  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: SikkerDigitalPost/Melding  
-group: transportlag
-
-id: Error
-
-next: SignalMessage  
-prev: Receipt
-
------
+permalink: sdp_error.html
+sidebar:
+---
 
   - Identifikator  
     “http://begrep.difi.no{{ page.url | remove:”.html"
