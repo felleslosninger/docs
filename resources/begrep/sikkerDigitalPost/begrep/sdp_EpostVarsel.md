@@ -1,15 +1,8 @@
------
-
-layout: egenskap  
-title: EpostVarsel  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType,
-
-name: EpostVarsel  
-prev: Begreper  
-—-
-
-{% include variables.html %}
+---
+title: EpostVarsel 
+permalink: sdp_epostvarsel.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -27,10 +20,10 @@ prev: Begreper
 
 #### Eigenskapar
 
+| --- | --- | --- |
 | Identifikator                            | Kardinalitet | Datatype                                              |
-| ---------------------------------------- | ------------ | ----------------------------------------------------- |
-| [epostadresse](/Felles/epostadresse)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [varslingsTekst](/Felles/varslingsTekst) | 1..1         | [varslingsTekst](/Felles/varslingsTekst)              |
+| [epostadresse](../felles/epostadresse)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| SKAL VÆRE LINK TIL ../felles/varslingsTekst | 1..1         | SKAL VÆRE LINK TIL ../felles/varslingsTekst           |
 | [repetisjoner](Repetisjoner)             | 1..1         | [sdp:Repetisjoner](Repetisjoner)                      |
 
 #### Xml eksempel
