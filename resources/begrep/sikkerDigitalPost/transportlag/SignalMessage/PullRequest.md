@@ -1,16 +1,9 @@
------
-
-layout: default  
+---
+ 
 title: PullRequest  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: transportlag
-
-id: PullRequest
-
-next: Receipt  
-prev: SignalMessage
-
------
+permalink: sdp_pullrequest.html
+sidebar:
+---
 
   - Identifikator  
     “http://begrep.difi.no{{ page.url | remove:”.html"
@@ -30,9 +23,9 @@ Forespørsel om å få tilsendt en melding. Må angi
 [mpc](../UserMessage/mpc) attributten til å identifisere hvilken
 organisasjon en ønsker å hente meldinger for.
 
-| Identifikator | Type                      | Kardinalitet | Kommentar |
-| ------------- | ------------------------- | ------------ | --------- |
-| mpc           | [mpc](../UserMessage/mpc) | 1..1         |           |
+| Identifikator | Type | Kardinalitet | Kommentar |
+| --- | --- | ---| --- |
+| mpc | [mpc](../UserMessage/mpc) | 1..1 | |
 
 #### Xml eksempel
 
