@@ -1,6 +1,8 @@
 ---
 title: HentEndringerForespoersel  
 permalink: ot_hentendringerforespoersel.html
+datatype: Metode
+sidebar:
 ---
 
   - Identifikator  
