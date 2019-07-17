@@ -20,7 +20,7 @@ children:
 
 ## Digital postkasse til innbyggere
 
-Denne delen av [begrepskatalogen](/) inneholder spesifikasjonen av
+Denne delen av [begrepskatalogen](//) inneholder spesifikasjonen av
 grensesnittene for [Digital post til
 innbyggere](https://samarbeid.difi.no/digital-postkasse-til-innbyggere).
 
