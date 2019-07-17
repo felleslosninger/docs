@@ -2,7 +2,7 @@
 
 
 title: Sikkerhet
-permalink: sdp_index.html
+permalink: sdp_sikkerhet_index.html
 sidebar:
 ---
 
