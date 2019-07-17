@@ -1,14 +1,8 @@
------
-
-layout: egenskap  
+---
 title: Avsender  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Avsender  
-prev: Begreper  
-—-  
-{% include variables.html %}
+permalink: sikkerdigitalpost_avsender.html
+sidebar:
+---  
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -28,8 +22,8 @@ prev: Begreper
 
 #### Egenskaper
 
-| Identifikator                                          | Kardinalitet | Datatype                                                          |
-| ------------------------------------------------------ | ------------ | ----------------------------------------------------------------- |
+| --- | --- | --- |
+| Identifikator                                          | Kardinalitet | Datatype |                                                        
 | [organisasjon](/Felles/virksomhetsidentifikator)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
 | [avsenderidentifikator](/Felles/avsenderidentifikator) | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
 | fakturaReferanse                                       | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) \[maks 40\] |
