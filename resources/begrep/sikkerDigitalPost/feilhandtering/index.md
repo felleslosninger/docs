@@ -29,7 +29,7 @@ oppstår.
 
 Feil blir gruppert på følgende måte:
 
-|     |     |                                                                                                                           
+                                                                                                                        
 | --- | --- |
 | [Forvaltingsrelaterte og tekniske feil](Forvaltning) | Forvaltningsemssige feil som for eksempel manglande avtale med sentralforvalter for tilgang til løsningen, eller andre tekniske feil som gjør det umulig å behandle en melding, for eksempel ugyldig utformet XML |
 | [Transportfeil](Transportfeil)                       | Feil relatert til transportlaget, for eksempel feil i validering av signatur                                                                                                                                      |
