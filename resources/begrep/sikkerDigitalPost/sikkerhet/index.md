@@ -1,10 +1,10 @@
------
+---
 
 
 title: Sikkerhet
 permalink: sikkerdigitalpost_index.html
 sidebar:
------
+---
 
 ## Kryptografisk beskyttelse av digital post
 
