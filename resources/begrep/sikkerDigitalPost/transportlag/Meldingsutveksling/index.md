@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Meldingsutveksling  
-headtitle: Sikker digital post  
-group: transportlag
-
-id: Transportlag/Meldingsutveksling
-
-next: Transportlag/Meldingsidentifikatorer
-
------
+permalink: sdp_index_meldingsutveksling.html
+sidebar:
+---
 
 ## {{page.title}}
 
