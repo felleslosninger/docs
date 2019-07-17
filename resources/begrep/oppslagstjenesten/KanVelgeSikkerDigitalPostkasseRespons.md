@@ -1,12 +1,10 @@
------
-
-layout: default  
+--- 
 title: KanVelgeSikkerDigitalPostkasseRespons  
 headtitle: Begrepskatalog for Sikker digital post -  
 datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode\_respons  
-—-  
+permalink: ot_kanvelgesikkerdigitalpostkasserespons.html
+sidebar:
+---
 {% include variables.html %}
 
   - Identifikator  
@@ -23,7 +21,7 @@ group: Oppslagstjenesten/PK\_Metode\_respons
   - Kommentar  
     Webservice response som Postkasseleverandør mottar fra
     Kontaktregisteret som svar på
-    [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel)
+    [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
 
 #### Attributer
 
