@@ -21,5 +21,5 @@ sidebar:
 
 | Identifikator                                   | Kardinalitet | Datatype                                              |
 | ----------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [mottaker](FysiskPostadresse)                   | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse)            |
-| [postHaandtering](/Felles/returPostHaandtering) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [mottaker](FysiskPostadresse.md)                   | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
+| [postHaandtering](../../felles/returPostHaandtering.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
