@@ -1,14 +1,8 @@
------
-
-layout: egenskap  
+---
 title: FysiskpostInfo  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: FysiskpostInfo  
-prev: Begreper  
-—-  
-{% include variables.html %}
+permalink: sdp_fysiskpostinfo
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -33,9 +27,9 @@ prev: Begreper
 
 ### Attributer
 
+| --- | --- | --- |
 | Identifikator                           | Kardinalitet | Datatype                                              |
-| --------------------------------------- | ------------ | ----------------------------------------------------- |
 | [mottaker](FysiskPostadresse)           | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse)            |
 | [posttype](/Felles/posttype)            | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [utskriftsfarge](/Felles/utskriftstype) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| SKAL VÆRE LINK TIL /Felles/utskriftstype | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | [retur](FysiskPostRetur)                | 1..1         | [sdp:FysiskPostRetur](FysiskPostRetur)                |
