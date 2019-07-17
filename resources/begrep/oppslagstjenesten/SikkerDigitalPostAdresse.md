@@ -1,11 +1,10 @@
------
-
-layout: egenskap  
+---
 title: SikkerDigitalPostAdresse  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
-—-  
-{% include variables.html %}
+permalink: ot_sikkerfigitalpostadresse.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -26,8 +25,8 @@ group: Oppslagstjenesten/complexType
 
 | Term                                                               | Kardinalitet |
 | ------------------------------------------------------------------ | ------------ |
-| [postkasseadresse](/Felles/postkasseadresse)                       | 1..1         |
-| [postkasseleverandoerAdresse](/Felles/postkasseleverandoerAdresse) | 1..1         |
+| [postkasseadresse](../felles/postkasseadresse.md)                       | 1..1         |
+| [postkasseleverandoerAdresse](../felles/postkasseleverandoerAdresse.md) | 1..1         |
 
 #### Xml eksempel
 
