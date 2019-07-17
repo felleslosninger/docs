@@ -1,11 +1,8 @@
------
+---
 
-layout: default  
-title: Digital postkasse til innbyggere  
-headtitle: Digital postkasse til innbyggere
-
-id: sdp  
-next: Oversikt
+title: Digital postkasse til innbyggere 
+permalink: sdp_index.html
+sidebar:
 
 children:  
 \- name: Oversikt  
@@ -19,7 +16,7 @@ children:
 \- name: Feilhåndtering  
 \- name: Begreper
 
------
+---
 
 ## Digital postkasse til innbyggere
 
@@ -44,27 +41,25 @@ innbyggere.
 Dersom du nettopp har vært der og vil ha mer detaljer så sett deg først
 inn i følgende:
 
-|                                                                          |                                                                        |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| [Arkitekturen](innledning/arkitektur)                                    | Oversikt over de sentrale aktørene                                     |
+| --- | --- |
+| [Arkitekturen](innledning/arkitektur) | Oversikt over de sentrale aktørene |
 | [Prosess for sending av digital post](forretningslag/forretningsprosess) | Beskrivelse av hvordan meldingen i digital post flyter mellom aktørene |
 
 ### Kapiteloversikt
 
 Katalogen er bygd opp av følgende kapitler:
 
-|                                                                       |                                                                         |
-| --------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [Oversikt](innledning/)                                               | Mer om sikker digital post og generelle aspekter ved løsningen          |
-| [Forretningslag](forretningslag/)                                     | Aktører, prosesser og overordnet meldingsstruktur/format                |
-| [Dokumentpakke](forretningslag/Dokumentpakke)                         | Oppbygging av selve dokumentpakken som skal til mottaker                |
-| [Utvidelser](forretningslag/Utvidelser)                               | Utvidelser som beriker dokumenter i innbyggers postkasse                |
-| [Utskrift og forsendelse](utskrift/)                                  | Mer om utskriftstjenesten knyttet til digital post                      |
-| [Forretningsmeldinger](meldinger/)                                    | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
-| [Standard Business Document](forretningslag/StandardBusinessDocument) | Informasjon relatert til ruting og håndtering av forretningsmeldingen   |
-| [Transportlag](transportlag/)                                         | Rammeverk for overføring av meldinger                                   |
-| [Feilhåndtering](feilhandtering/)                                     | Generelt om feilhåndtering                                              |
-| [Begreper](begrep/)                                                   | Begreper benyttet i Sikker Digital Post                                 |
+| --- | --- |
+| [Oversikt](innledning/) | Mer om sikker digital post og generelle aspekter ved løsningen |
+| [Forretningslag](forretningslag/) | Aktører, prosesser og overordnet meldingsstruktur/format |
+| [Dokumentpakke](forretningslag/Dokumentpakke) | Oppbygging av selve dokumentpakken som skal til mottaker |
+| [Utvidelser](forretningslag/Utvidelser) | Utvidelser som beriker dokumenter i innbyggers postkasse |
+| [Utskrift og forsendelse](utskrift/) | Mer om utskriftstjenesten knyttet til digital post |
+| [Forretningsmeldinger](meldinger/) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
+| [Standard Business Document](forretningslag/StandardBusinessDocument) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
+| [Transportlag](transportlag/) | Rammeverk for overføring av meldinger |
+| [Feilhåndtering](feilhandtering/) | Generelt om feilhåndtering |
+| [Begreper](begrep/) | Begreper benyttet i Sikker Digital Post |
 
 Vil du ha tak i mer tekniske detaljar se gjerne her:
 
