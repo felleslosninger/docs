@@ -6,7 +6,6 @@ headtitle: Begrepskatalog for Sikker digital post -
 group: Oppslagstjenesten/complexType  
 permalink: Epostadresse.html
 —-  
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
