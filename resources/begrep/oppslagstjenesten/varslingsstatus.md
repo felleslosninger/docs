@@ -1,10 +1,10 @@
------
-
-layout: egenskap  
+---
 title: varslingsstatus  
 headtitle: Begrepskatalog for Oppslagstjenesten -  
 group: Egenskap  
 datatype: string  
+permalink: ot_varslingsstatus.html
+sidebar:
 —-
 
   - Identifikator  
@@ -25,7 +25,7 @@ datatype: string
 
 #### Kodeverk for varslingsstatus
 
-[varslingsstatus](/Oppslagstjenesten/varslingsstatus) kan ha følgende
+[varslingsstatus](varslingsstatus.md) kan ha følgende
 verdi:
 
 | Kodeverdi          | Beskrivelse                                                                                   |
