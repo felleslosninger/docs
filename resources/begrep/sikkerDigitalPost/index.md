@@ -1,7 +1,7 @@
 ---
 
 title: Digital postkasse til innbyggere 
-permalink: sdp_index.html
+permalink: sdp_innledning_index.html
 sidebar:
 
 children:  
