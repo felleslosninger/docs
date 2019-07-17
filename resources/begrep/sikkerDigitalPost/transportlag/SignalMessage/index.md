@@ -1,16 +1,9 @@
------
-
-layout: default  
+---
+ 
 title: SignalMessage  
-headtitle: Sikker digital post - SignalMessage  
-group: transportlag
-
-id: SignalMessage
-
-next: PullRequest  
-prev: UserMessage
-
------
+permalink: sdp_index_signalmessage.html
+sidebar:
+---
 
   - Identifikator  
     “http://begrep.difi.no{{ page.url | remove:”/index.html"
@@ -30,12 +23,12 @@ transportkvitteringer eller en forespørsel om å få levert en melding.
 
 ### Attributter
 
-| Identifikator                             | Kardinalitet | Datatype       | Kommentar                                                           |
-| ----------------------------------------- | ------------ | -------------- | ------------------------------------------------------------------- |
-| [MessageInfo](../UserMessage/MessageInfo) | 1..1         | eb:MessageInfo | Samme element som i UserMessage - intern identifikator og timestamp |
-| [PullRequest](PullRequest)                | 0..1         | eb:PullRequest | Forespørsel om å få levert en ventende melding                      |
-| [Receipt](Receipt)                        | 0..1         | eb:Receipt     | Standard kvittering relatert til en UserMessage                     |
-| [Error](Error)                            | 0..unbounded | eb:Error       | Standardfeilmelding relatert til en melding                         |
+| Identifikator | Kardinalitet | Datatype | Kommentar |
+| --- | --- | --- | --- |
+| [MessageInfo](../UserMessage/MessageInfo) | 1..1 | eb:MessageInfo | Samme element som i UserMessage - intern identifikator og timestamp |
+| [PullRequest](PullRequest) | 0..1 | eb:PullRequest | Forespørsel om å få levert en ventende melding |
+| [Receipt](Receipt) | 0..1 | eb:Receipt | Standard kvittering relatert til en UserMessage |
+| [Error](Error) | 0..unbounded | eb:Error | Standardfeilmelding relatert til en melding |
 
 ### Eksempel
 
