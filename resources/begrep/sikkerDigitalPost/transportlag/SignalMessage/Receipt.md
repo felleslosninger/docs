@@ -3,7 +3,7 @@
 title: Receipt  
 permalink: sdp_receipt.html
 sidebar:
------
+---
 
   - Identifikator  
     “http://begrep.difi.no{{ page.url | remove:”.html"
