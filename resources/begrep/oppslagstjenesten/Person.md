@@ -38,9 +38,9 @@ datamodellen](uml_diagram_oppslagstjenesten_ekstern.jpg
 | [personidentifikator](../felles/personidentifikator.md)                      | 1..1         |
 | [reservasjon](../felles/reservasjon.md)                                      | 0..1         |
 | [status](../felles/status.md)                                                | 0..1         |
-| [varslingsstatus](/Oppslagstjenesten/varslingsstatus.md)                 | 0..1         |
-| [Kontaktinformasjon](/Oppslagstjenesten/Kontaktinformasjon.md)             | 0..1         |
-| [SikkerDigitalPostAdresse](/Oppslagstjenesten/SikkerDigitalPostAdresse.md) | 0..1         |
+| [varslingsstatus](varslingsstatus.md)                 | 0..1         |
+| [Kontaktinformasjon](Kontaktinformasjon.md)             | 0..1         |
+| [SikkerDigitalPostAdresse](SikkerDigitalPostAdresse.md) | 0..1         |
 | [X509Sertifikat](../felles/x509Sertifikat.md)                                | 0..1         |
 
 #### Kodeverk for status
