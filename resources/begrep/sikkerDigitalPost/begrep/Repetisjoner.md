@@ -1,16 +1,8 @@
------
-
-layout: egenskap  
+--- 
 title: Repetisjoner  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Repetisjoner  
-prev: Begreper
-
------
-
-{% include variables.html %}
+permalink: sdp_repitisjoner.md
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -24,7 +16,7 @@ prev: Begreper
     DIFI
   - Kommentar  
     Beskriver hvilke dager noe skal repeteres etter en definert dag, der
-    [dagerEtter](/Felles/dagerEtter) angir hvor mange dager etter
+    [dagerEtter](../../felles/dagerEtter.md) angir hvor mange dager etter
     tidspunktet det skal repeteres.  
     dagerEtter=0 betyr samme dag. dagerEtter=7 betyr den syvende dagen
     etter en bestemt dag.
@@ -34,16 +26,16 @@ prev: Begreper
   - Det kreves at alle dagerEtter er unike.
 
 For Sikker digital post er repetisjonene knyttet opp til
-[virkningsdato](/Felles/virkningsdato).  
+SKAL VÆRE LINK TIL ../../felles/virkningsdato.  
 Det vil si at dagerEtter=0 betyr samme dag som
-[virkningsdato](/Felles/virkningsdato). dagerEtter=7 betyr den syvende
-dagen etter [virkningsdato](/Felles/virkningsdato).
+SKAL VÆRE LINK TIL ../../felles/virkningsdato. dagerEtter=7 betyr den syvende
+dagen etter SKAL VÆRE LINK TIL ../../felles/virkningsdato.
 
 #### Eigenskapar
 
 | Identifikator                    | Kardinalitet | Datatype               |
 | -------------------------------- | ------------ | ---------------------- |
-| [dagerEtter](/Felles/dagerEtter) | 0..25        | xsd:nonNegativeInteger |
+| [dagerEtter](../../felles/dagerEtter.md) | 0..25        | xsd:nonNegativeInteger |
 
 #### Xml eksempel
 
