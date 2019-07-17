@@ -1,11 +1,10 @@
------
-
-layout: egenskap  
+---
 title: Person  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
-—-  
-{% include variables.html %}
+permalink: ot_person.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -19,7 +18,7 @@ group: Oppslagstjenesten/complexType
     DIFI
   - Kommentar  
     Person er en Innbygger utlevert fra kontakt og
-    reservasjonsregisteret. [status](/Felles/status) definerer om Person
+    reservasjonsregisteret. [status](../felles/status.md) definerer om Person
     er registrert eller ikke i registreret.
 
 Merk at Person ikke er unik definert på tvers av Difi sine
@@ -36,17 +35,17 @@ datamodellen](uml_diagram_oppslagstjenesten_ekstern.jpg
 
 | Term                                                                    | Kardinalitet |
 | ----------------------------------------------------------------------- | ------------ |
-| [personidentifikator](/Felles/personidentifikator)                      | 1..1         |
-| [reservasjon](/Felles/reservasjon)                                      | 0..1         |
-| [status](/Felles/status)                                                | 0..1         |
-| [varslingsstatus](/Oppslagstjenesten/varslingsstatus)                   | 0..1         |
-| [Kontaktinformasjon](/Oppslagstjenesten/Kontaktinformasjon)             | 0..1         |
-| [SikkerDigitalPostAdresse](/Oppslagstjenesten/SikkerDigitalPostAdresse) | 0..1         |
-| [X509Sertifikat](/Felles/X509Sertifikat)                                | 0..1         |
+| [personidentifikator](../felles/personidentifikator.md)                      | 1..1         |
+| [reservasjon](../felles/reservasjon.md)                                      | 0..1         |
+| [status](../felles/status.md)                                                | 0..1         |
+| SKAL VÆR LINK TIL /Oppslagstjenesten/varslingsstatus.md                 | 0..1         |
+| [Kontaktinformasjon](/Oppslagstjenesten/Kontaktinformasjon.md)             | 0..1         |
+| [SikkerDigitalPostAdresse](/Oppslagstjenesten/SikkerDigitalPostAdresse.md) | 0..1         |
+| [X509Sertifikat](../felles/x509Sertifikat.md)                                | 0..1         |
 
 #### Kodeverk for status
 
-[status](/Felles/status) kan ha følgende verdi:
+[status](../felles/status.md) kan ha følgende verdi:
 
 | Kodeverdi        | Beskrivelse                      |
 | ---------------- | -------------------------------- |
