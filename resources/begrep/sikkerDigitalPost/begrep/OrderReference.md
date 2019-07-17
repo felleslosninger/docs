@@ -1,6 +1,7 @@
 ---
 title: OrderReference  
 permalink: sdp_orderreference.html
+sidebar:
 ---
 
   - Identifikator  
