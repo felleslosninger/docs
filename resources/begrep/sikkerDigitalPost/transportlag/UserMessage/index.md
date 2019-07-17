@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
 title: UserMessage  
-headtitle: Sikker digital post - UserMessage  
-group: transportlag
-
-id: UserMessage
-
-next: Transportlag/Transportmeldingsstruktur  
-prev: transportmeldingsstruktur
-
------
+permalink: sdp_index_usermessage.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -36,13 +29,13 @@ skal formidles, samt settinger angitt i
 
 ### Attributter
 
-| Identifikator                          | Kardinalitet | Datatype             | Kommentar                                               |
-| -------------------------------------- | ------------ | -------------------- | ------------------------------------------------------- |
-| mpc                                    | 1..1         | xs:anyURI            | Konstantverdi som angir kanal som skal benyttes         |
-| [MessageInfo](MessageInfo)             | 1..1         | eb:MessageInfo       | Intern identifikator og timestamp                       |
-| [PartyInfo](PartyInfo)                 | 1..1         | eb:PartyInfo         | Informasjon om avsender og mottaker                     |
-| [CollaborationInfo](CollaborationInfo) | 1..1         | eb:CollaborationInfo | Informasjon om avtalt samhandlingsmønster for meldingen |
-| [PayloadInfo](PayloadInfo)             | 1..1         | eb:PayloadInfo       | Informasjon om selve forretningsmeldingen               |
+| Identifikator | Kardinalitet | Datatype | Kommentar |
+| --- | --- | --- | --- |
+| mpc | 1..1 | xs:anyURI | Konstantverdi som angir kanal som skal benyttes |
+| [MessageInfo](MessageInfo) | 1..1 | eb:MessageInfo | Intern identifikator og timestamp |
+| [PartyInfo](PartyInfo) | 1..1 | eb:PartyInfo | Informasjon om avsender og mottaker |
+| [CollaborationInfo](CollaborationInfo) | 1..1 | eb:CollaborationInfo | Informasjon om avtalt samhandlingsmønster for meldingen |
+| [PayloadInfo](PayloadInfo) | 1..1 | eb:PayloadInfo | Informasjon om selve forretningsmeldingen |
 
 ### Eksempel
 
