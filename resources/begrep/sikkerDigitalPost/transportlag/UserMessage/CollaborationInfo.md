@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
 title: CollaborationInfo  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: transportlag
-
-id: CollabortationInfo
-
-next: PayloadInfo  
-prev: PartInfo
-
------
+permalink: sdp_collaborationinfo.html
+sidebar:
+---
 
 ## {{page.title}}
 
@@ -35,12 +28,12 @@ prev: PartInfo
 
 ### Egenskaper
 
-| Identifikator  | Type                  | Kardinalitet | Kommentar                                                                                      |
-| -------------- | --------------------- | ------------ | ---------------------------------------------------------------------------------------------- |
-| AgreementRef   | tns:none-empty-string | 0..1         | Skal være PMode.Agreement. Dersom den ikke er satt brukes standardverdiene fra PMode.Agreement |
-| Service        | tns:Service           | 1..1         | Verdi i PMode\[1\].BusinessInfo.Service                                                        |
-| Action         | xsd:token             | 1..1         | PMode\[1\].BusinessInfo.Action                                                                 |
-| ConversationId | xsd:token             | 1..1         | Alltid SBDH.InstanceIdentifiser til den opprinnelige DigitalForsendelse meldingen              |
+| Identifikator | Type | Kardinalitet | Kommentar |
+| --- | --- | --- | --- |
+| AgreementRef | tns:none-empty-string | 0..1 | Skal være PMode.Agreement. Dersom den ikke er satt brukes standardverdiene fra PMode.Agreement |
+| Service | tns:Service | 1..1 | Verdi i PMode\[1\].BusinessInfo.Service |
+| Action | xsd:token | 1..1 | PMode\[1\].BusinessInfo.Action |
+| ConversationId | xsd:token | 1..1 | Alltid SBDH.InstanceIdentifiser til den opprinnelige DigitalForsendelse meldingen |
 
 ### Xml eksempel
 
