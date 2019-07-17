@@ -1,12 +1,7 @@
------
-
-layout: default  
+---
 title: HentPersonerForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/Metode  
-—-  
+permalink: ot_hentpersonerforespoersel.html
+---
 {% include variables.html %}
 
   - Identifikator  
@@ -27,16 +22,16 @@ group: Oppslagstjenesten/Metode
     Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
     forespørselen og hvordan denne sendes.
 
-Responsen er en [HentPersonerRespons](HentPersonerRespons)
+Responsen er en [HentPersonerRespons](HentPersonerRespons.md)
 
 #### Attributer
 
 | Term                                               | Kardinalitet |
 | -------------------------------------------------- | ------------ |
-| [personidentifikator](/Felles/personidentifikator) | 1..1000      |
-| [informasjonsbehov](/Felles/informasjonsbehov)     | 0..\*        |
+| [personidentifikator](../felles/personidentifikator.md) | 1..1000      |
+| [informasjonsbehov](../felles/informasjonsbehov.md)     | 0..\*        |
 
-#### Kodeverk for [informasjonsbehov](/Felles/informasjonsbehov)
+#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov.md)
 
 | Kodeverdi                          | Beskrivelse                                                                                                                                                                                                                                                                |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -44,7 +39,7 @@ Responsen er en [HentPersonerRespons](HentPersonerRespons)
 | Kontaktinfo                        | Kontaktinfo gir informasjon om Person og Personers kontaktinformasjon, dvs epost-addresse og mobiltelefonnummer                                                                                                                                                            |
 | Sertifikat                         | Sertifikat gir informasjon om Person sitt sertifikat som skal brukes i forbindelse med kryptering av Sikker Digital Post                                                                                                                                                   |
 | SikkerDigitalPost                  | SikkerDigitalPost gir informasjon om Person, postkasse og postkasseleverandøren.                                                                                                                                                                                           |
-| [VarslingsStatus](varslingsstatus) | VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert. |
+| [VarslingsStatus](varslingsstatus.md) | VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert. |
 
 Dersom det ikke spesifiseres noen informasjonsbehov-element i
 forespørselen, vil standard responsverdi være Person.  
