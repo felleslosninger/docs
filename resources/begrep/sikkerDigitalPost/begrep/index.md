@@ -1,12 +1,8 @@
------
-
-layout: default  
+---
 title: Begreper  
-headtitle: Sikker digital post
-
-id: Begreper
-
------
+permalink: begrep_index.html
+sidebar:
+---
 
 ## {{page.title}}
 
