@@ -1,9 +1,9 @@
------
+---
 
-layout: default  
 title: Signering og kryptering av Sikker Digital Post forsendelse  
-headtitle: Sikker digital post  
-—-
+permalink:sdp_sertifikatbruk.html
+sidebar:
+---
 
 ## Innledning
 
