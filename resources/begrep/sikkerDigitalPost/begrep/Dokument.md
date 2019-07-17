@@ -16,7 +16,7 @@ sidebar:
     DIFI
   - Kommentar  
     Dette gir en henvisning til dokumentet i
-    [Dokumentpakken](sdp_index.html) sammen med en tittel.  
+    [Dokumentpakken](index.md) sammen med en tittel.  
     Denne tittelen vil vises til Innbygger når Dokumentpakken er
     dekryptert og Innbygger er autentisert på tilstrekkelig
     sikkerhetsnivå.
@@ -27,8 +27,8 @@ sidebar:
 | Identifikator        | Kardinalitet | Datatype                     |
 | href                 | 1..1         | xsd:string                   |
 | mime                 | 1..1         | xsd:string                   |
-| [Tittel](Tittel)     | 0..1         | [Tittel](Tittel)             |
-| [Data](DokumentData) | 0..1         | [DokumentData](DokumentData) |
+| [Tittel](Tittel.md)     | 0..1         | [Tittel](Tittel.md)             |
+| [Data](DokumentData.md) | 0..1         | [DokumentData](DokumentData.md) |
 
 #### Xml eksempel
 
