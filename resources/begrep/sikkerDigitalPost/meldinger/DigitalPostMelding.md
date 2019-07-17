@@ -1,6 +1,6 @@
 ---
 title: DigitalPostMelding  
-permalink: sdp_meldinger
+permalink: sdp_meldinger.html
 sidebar:
 ---
 
