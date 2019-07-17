@@ -37,10 +37,10 @@ Dette kan være feil som f.eks:
   - Virkningsdato er satt for langt frem i tid
 
 Generelt vil dette være alle feil med
-[Digitalpostmelding](DigitalPostMelding) og
-[Dokumentpakken](../forretningslag/Dokumentpakke).
+[Digitalpostmelding](DigitalPostMelding.md) og
+[Dokumentpakken](../forretningslag/Dokumentpakke/index.md).
 
-Feilen må utbedres og ny [Digitalpostmelding](DigitalPostMelding) må
+Feilen må utbedres og ny [Digitalpostmelding](DigitalPostMelding.md) må
 sendes.
 
 #### Håndtering av server feil
@@ -63,5 +63,5 @@ feiltype kan ha følgende verdi:
 
 | Kodeverdi | Beskrivelse |
 | --- | --- |
-| KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender](../begrep/Avsender) må rette opp i årsaken til feilen |
-| SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender](../begrep/Avsender) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |
+| KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender](../begrep/Avsender.md) må rette opp i årsaken til feilen |
+| SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender](../begrep/Avsender.md) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |
