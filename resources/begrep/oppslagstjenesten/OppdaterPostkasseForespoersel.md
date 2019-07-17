@@ -1,13 +1,11 @@
------
-
-layout: default  
+---
 title: OppdaterPostkasseForespoersel  
 headtitle: Begrepskatalog for Sikker digital post -  
 datatype: Metode  
 Service: Oppslagstjenesten  
 group: Oppslagstjenesten/PK\_Metode  
+permalink: ot_oppdaterpostkasseforespoersel.html
 —-  
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -29,11 +27,11 @@ group: Oppslagstjenesten/PK\_Metode
 
 | Term                                                              | Kardinalitet | Datatype                                                          |
 | ----------------------------------------------------------------- | ------------ | ----------------------------------------------------------------- |
-| [personidentifikator](/Felles/personidentifikator)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [postkasseleverandoerOrgNummer](/Felles/virksomhetsidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [postkasseadresse](/Felles/postkasseadresse)                      | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [X509Sertifikat](/Felles/X509Sertifikat)                          | 0..1         | [X509Certifiate](http://www.w3.org/TR/xmldsig-core/#sec-X509Data) |
+| [personidentifikator](../felles/personidentifikator.md) | 1..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)    |
+| SKAL VÆRE LINK TIL ../felles/virksomhetsidentifikator | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [postkasseadresse](../felles/postkasseadresse.md)                      | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [X509Sertifikat](../felles/X509Sertifikat.md)                          | 0..1         | [X509Certifiate](http://www.w3.org/TR/xmldsig-core/#sec-X509Data) |
 
 #### Respons
 
-Responsen er en [OppdaterPostkasseRespons](OppdaterPostkasseRespons)
+Responsen er en [OppdaterPostkasseRespons](OppdaterPostkasseRespons.md)
