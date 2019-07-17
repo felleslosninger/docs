@@ -1,21 +1,15 @@
------
+---
 
-layout: default  
 title: Feilhåndtering  
-headtitle: Sikker digital post  
-group: Feilhåndtering
-
-id: Feilhåndtering
-
-next: Feilhåndtering/Forvaltning
+permalink: sdp_index.html
 
 children:  
 \- name: Feilhåndtering/Forvaltning  
 \- name: Feilhåndtering/Transport  
 \- name: Feilhåndtering/Forretning  
 \- name: Feilhåndtering/Feilhåndteringsprosess
-
------
+sidebar:
+---
 
 ## Feilhåndtering
 
@@ -35,8 +29,8 @@ oppstår.
 
 Feil blir gruppert på følgende måte:
 
-|                                                      |                                                                                                                                                                                                                   |
-| ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     |     |                                                                                                                           
+| --- | --- |
 | [Forvaltingsrelaterte og tekniske feil](Forvaltning) | Forvaltningsemssige feil som for eksempel manglande avtale med sentralforvalter for tilgang til løsningen, eller andre tekniske feil som gjør det umulig å behandle en melding, for eksempel ugyldig utformet XML |
 | [Transportfeil](Transportfeil)                       | Feil relatert til transportlaget, for eksempel feil i validering av signatur                                                                                                                                      |
 | [Forretningsfeil](Forretningsfeil)                   | Feil relatert til forretningslaget, som manglende evne til å utføre “bestilt” funksjonaltet som for eksempel varsling                                                                                             |
