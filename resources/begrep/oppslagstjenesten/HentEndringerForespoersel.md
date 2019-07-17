@@ -1,6 +1,6 @@
 ---
 title: HentEndringerForespoersel  
-permalink: oppslagstjenesten_hentendringerforespoersel.html
+permalink: ot_hentendringerforespoersel.html
 ---
 
   - Identifikator  
