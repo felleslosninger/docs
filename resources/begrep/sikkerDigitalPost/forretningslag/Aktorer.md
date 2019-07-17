@@ -37,15 +37,15 @@ Hjelpemiddelsentral Oslo og Akershus.
 
 | Rolle    | URN     | Beskrivelse    |                                   
 | --- | --- | --- |
-| Avsender [1](#id-1)             | urn:sdp:avsender             | Offentlig virksomhet som skal sende en digital postmelding til en mottaker |
-| Behandlingsansvarlig\[2\] | urn:sdp:behandlingsansvarlig | Offentlig virksomhet som produserer informasjon/brev/post som skal fomidles. Vil i de aller fleste tilfeller være synonymt med Avsender                                                                                                                                       |
-| Databehandler\[3\]        | urn:sdp:databehandler        | Virksomhet (offentlig eller privat) som har en kontraktfestet avtale med Behandlingsansvarlig med formål å dekke hele eller deler av prosessen med å formidle en digital postmelding fra Behandlingsansvarlig til Meldingsformidler. Det kan være flere databehandlere som har ansvar for forskjellige steg i prosessen med å formidle en digital postmelding. |
+| Avsender\[1\]     | urn:sdp:avsender             | Offentlig virksomhet som skal sende en digital postmelding til en mottaker |
+| Behandlingsansvarlig\[1\] | urn:sdp:behandlingsansvarlig | Offentlig virksomhet som produserer informasjon/brev/post som skal fomidles. Vil i de aller fleste tilfeller være synonymt med Avsender                                                                                                                                       |
+| Databehandler\[1\]        | urn:sdp:databehandler        | Virksomhet (offentlig eller privat) som har en kontraktfestet avtale med Behandlingsansvarlig med formål å dekke hele eller deler av prosessen med å formidle en digital postmelding fra Behandlingsansvarlig til Meldingsformidler. Det kan være flere databehandlere som har ansvar for forskjellige steg i prosessen med å formidle en digital postmelding. |
 | Meldingsformidler         | urn:sdp:meldingsformidler    | Ansvarlig for formidling, sporing og rapportering av postforsendelser.                                                                                                                            |
-| Postkasse\[4\]            | urn:sdp:postkasse            | Ansvarlig for å tilgjengeliggjøre og oppbevare post til mottaker, samt å varsle mottaker når det er kommet ny post., eventuelt: Ansvarlig for print og forsendelse av papir post til mottaker.                                                       |
+| Postkasse\[2\]            | urn:sdp:postkasse            | Ansvarlig for å tilgjengeliggjøre og oppbevare post til mottaker, samt å varsle mottaker når det er kommet ny post., eventuelt: Ansvarlig for print og forsendelse av papir post til mottaker.                                                       |
 | Mottaker                  | urn:sdp:mottaker             | Innbyggeren som er mottaker av en digital postmelding                                                                                                                                                                                                                                                                                                          |
 
 <!-- TODO: Bør inn med figur som viser samanhengen -->
-
+<!-- TODO:Endre linkingen -->
 1.  Avsenderrollen kan være en sammensatt rolle bestående av Avsender,
     Behandlingsansvarlig og/eller en eller flere databehandlere. For å
     forenkle dokumentasjonen er denne kompleksiteten skjult bak rollen
