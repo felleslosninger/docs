@@ -1,13 +1,8 @@
------
-
-layout: default  
+---
 title: HentPrintSertifikatRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenes  
-group: Oppslagstjenesten/Metode\_respons  
-—-  
-{% include variables.html %}
+permalink: ot_hentprintsertifikatrespons.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -15,7 +10,7 @@ group: Oppslagstjenesten/Metode\_respons
     {{page.title}}
   - Definisjon  
     Respons sendt tilbake til Virksomhet som svar på
-    [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.html)
+    [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md)
   - Datatype  
     {{ page.datatype }}
   - Kilde  
@@ -24,7 +19,7 @@ group: Oppslagstjenesten/Metode\_respons
     Webservice respons som Oppslagstjenesten sender til Klient, respons
     inneholder ET Sertifikat.  
     For
-    [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.html)
+    [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md)
     leveres det ut det sertifikatet som skal brukes for å kryptere
     meldinger som skal printes til Innbygger.  
     Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
@@ -34,8 +29,8 @@ group: Oppslagstjenesten/Metode\_respons
 
 | Term                                                               | Kardinalitet |
 | ------------------------------------------------------------------ | ------------ |
-| [postkasseleverandoerAdresse](/Felles/postkasseleverandoerAdresse) | 1..1         |
-| [X509Sertifikat](/Felles/X509Sertifikat)                           | 1..1         |
+| [postkasseleverandoerAdresse](../felles/postkasseleverandoerAdresse.md) | 1..1         |
+| [X509Sertifikat](../felles/X509Sertifikat.md)                           | 1..1         |
 
 #### Xml skjema
 
