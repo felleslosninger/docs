@@ -43,8 +43,7 @@ relevante eksempler.
   - [Post åpnet kvittering](sdpKvittering-aapnetAvMottaker.xml)
   - [Leveringskvittering](sdpKvittering-levertTilPostkasse.xml)
   - [Varsel feilet melding](sdpKvittering-mottakerVarselFeilet.xml)
-  - [Melding om tilbaketrekking av
-    post](sdpKvittering-tilbaketrekking.xml)
+  - [Melding om tilbaketrekking av post](sdpKvittering-tilbaketrekking.xml)
   - [Mainfest i Dokumentpakke](sdpManifest.xml)
   - [Melding for digital postkasse](sdpMelding-digital.xml)
   - [Melding for print/fysisk brev](sdpMelding-print.xml)
