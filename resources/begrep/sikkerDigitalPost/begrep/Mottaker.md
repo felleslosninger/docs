@@ -13,9 +13,9 @@ permalink: sdp_mottaker.html
     DIFI
   - Kommentar  
     Skjema i sikker digital post støtter at Mottaker kan være en
-    [Person](Person).  
+    [Person](Person.md).  
     h4. Egenskaper
 
 | Identifikator    | Term             | Kardinalitet |
 | ---------------- | ---------------- | ------------ |
-| [Person](Person) | [Person](Person) | 0..1         |
+| [Person](Person.md) | [Person](Person.md) | 0..1         |
