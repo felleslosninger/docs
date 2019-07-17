@@ -61,7 +61,7 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 
 feiltype kan ha følgende verdi:
 
-| Kodeverdi | Beskrivelse |
 | --- | --- |
+| Kodeverdi | Beskrivelse |
 | KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender](../begrep/Avsender) må rette opp i årsaken til feilen |
 | SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender](../begrep/Avsender) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |
