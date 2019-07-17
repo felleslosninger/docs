@@ -1,6 +1,7 @@
 ---
 title: HentPrintSertifikatRespons  
 permalink: ot_hentprintsertifikatrespons.html
+datatype: Metode
 sidebar:
 ---
 
