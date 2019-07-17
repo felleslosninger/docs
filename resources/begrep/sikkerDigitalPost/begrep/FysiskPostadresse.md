@@ -15,7 +15,7 @@ sidebar:
   - Kilde  
     DIFI
   - Kommentar  
-    FysiskPostadresse er adressen til [mottakeren](Mottaker) som Post
+    FysiskPostadresse er adressen til [mottakeren](Mottaker.md) som Post
     skal sendes til.
 
 #### Attributer
