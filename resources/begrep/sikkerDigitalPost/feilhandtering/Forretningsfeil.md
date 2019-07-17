@@ -14,15 +14,15 @@ forretningsmeldinger.
 ### Manglende mottakskvittering fra Meldingsformidler
 
 Meldingsformidler vil verifisere format og innhold på
-[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
+[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 ved mottak av en
-[DigitalPostMelding](../meldinger/DigitalPostMelding).  
+[DigitalPostMelding](../meldinger/DigitalPostMelding.md).  
 Dette gjøres for å sikre at meldingen kan rutes videre til en
 postkasseleverandør og garantere for at forretningskvitteringer vil
 kunne bli returnert til Avsender.
 
 Ved feil i
-[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
+[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil meldingsformidler returnere en [SignalMessage med
 Error](../transportlag/SignalMessage/).
 
@@ -31,7 +31,7 @@ en rask, enkel og sikker feilhåndtering fra Meldingsformidler.
 Meldingsformidler returnerer ingen forretningskvitteringer, men operer
 nærmere transportlaget, dette er årsaken til at feil i
 adresseringsinformasjonen i
-[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
+[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil resultere i en [SignalMessage med
 Error](../transportlag/SignalMessage/) og ikke en egen forretningsfeil
 som Avsender må hente igjennom kvitteringsgrensesnittet.
@@ -39,7 +39,7 @@ som Avsender må hente igjennom kvitteringsgrensesnittet.
 ### Manglende Leveringskvittering
 
 Postkasseleverandør skal returnere en
-[Leveringskvittering](../meldinger/LeveringsKvittering) til Avsender.  
+[Leveringskvittering](../meldinger/LeveringsKvittering.md) til Avsender.  
 Dersom denne uteblir lengre enn forventet bør Avsender håndtere dette
 igjennom feilhåndteringsprosedyrer etablert med sentralforvalter.  
 (Feilhåndteringsprosedyrene etableres som del av bruksvilkår)
@@ -56,7 +56,7 @@ bruksvilkårene.
 ### Varslingfeilet
 
 Les mer om hvordan Avsender bør håndtere en
-[Varslingfeiletkvittering](../meldinger/VarslingfeiletKvittering).
+[Varslingfeiletkvittering](../meldinger/VarslingfeiletKvittering.md).
 
 ### Innholdsfeil i forretningsmeldingen
 
@@ -67,4 +67,4 @@ relatert til dekryptering/signeringsvalidering gjort av postkassen.
 ### Mer om forretningsfeil
 
 For mer informasjon om forretningsfeil, se [dokumentasjon av
-forretningsmeldingen Feil](../meldinger/Feil)
+forretningsmeldingen Feil](../meldinger/Feil.md)
