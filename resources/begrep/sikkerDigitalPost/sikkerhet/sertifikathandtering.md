@@ -1,14 +1,9 @@
------
+---
 
-layout: default  
 title: Sertifikathåndtering  
-headtitle: Sikker digital post
-
-id: Sikkerhet/Sertifikathåndtering
-
-next: Oversikt/XSDfiler
-
------
+permalink: sdp_sertifikathandtering.html
+sidebar:
+---
 
 ## Sertifikater
 
@@ -119,5 +114,5 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
   - Fra Commfides: [cpn enterprise sha256
     class 3.crt](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/142/17412)
 
-\_\_CA sertfikatene ligger også tilgjengelige her:
+CA sertfikatene ligger også tilgjengelige her:
 [sertifikater/](sertifikater/__)

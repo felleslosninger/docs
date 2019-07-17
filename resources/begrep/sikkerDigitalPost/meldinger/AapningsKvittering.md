@@ -1,17 +1,9 @@
------
+---
 
-layout: default  
 title: AapningsKvittering  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: Melding
-
-id: Forretningsmeldinger/Åpningskvittering
-
-next: Forretningsmeldinger/Varslingfeiletkvittering
-
------
-
-{% include variables.html %}
+permalink: sdp_aapningskvittering.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -56,8 +48,7 @@ For mer informasjon om bruk av denne funksjonaliteten kan man ta kontakt
 med Sentralforvalter.
 
 ### Attributer
-
-| Identifikator | Kardinalitet | Datatype                                                                                                                                                       |
-| ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Signature     | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
-| tidspunkt     | 1..1         | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime)                                                                                                      |
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
+| tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |

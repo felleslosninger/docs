@@ -1,15 +1,8 @@
------
-
-layout: egenskap  
+---
 title: DigitalpostInfo  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: DigitalpostInfo  
-prev: Begreper  
-—-  
-{% include variables.html %}
-
+permalink: sdp_digitalpostinfo
+sidebar:
+---
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
@@ -29,15 +22,15 @@ prev: Begreper
     Innbygger.  
     Når den digitale posten er dekryptert og innbygger er autentisert på
     tilstrekkelig sikkerhetsnivå så vil Tittel i
-    [Manifest-filen](../forretningslag/Dokumentpakke/Manifest) brukes.
+    SKAL VÆRE LINK TIL ../forretningslag/Dokumentpakke/Manifest brukes.
 
 ### Attributer
 
+| --- | --- | --- |
 | Identifikator                                    | Kardinalitet | Datatype                                                  |
-| ------------------------------------------------ | ------------ | --------------------------------------------------------- |
 | [sikkerhetsnivaa](/Felles/sikkerhetsnivaa)       | 1..1         | [xs:int](http://www.w3.org/TR/xmlschema-2/#int)           |
-| [virkningsdato](/Felles/virkningsdato)           | 0..1         | [xs:date](http://www.w3.org/TR/xmlschema-2/#date)         |
-| [virkningstidspunkt](/Felles/virkningstidspunkt) | 0..1         | [xs:datetime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
-| [aapningskvittering](/Felles/aapningskvittering) | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)     |
-| [ikkeSensitivTittel](/Felles/ikkeSensitivTittel) | 1..1         | [tekst](/Felles/tekst)                                    |
-| [varsler](Varsler)                               | 0..1         | [sdp:Varsler](Varsler)                                    |
+| Skal være link til /Felles/virkningsdato           | 0..1         | [xs:date](http://www.w3.org/TR/xmlschema-2/#date)         |
+| Skal være link til /Felles/virkningstidspunkt | 0..1         | [xs:datetime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
+| [aapningskvittering](../felles/aapningskvittering) | 0..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)     |
+| [ikkeSensitivTittel](/Felles/ikkeSensitivTittel) | 1..1         | Skal være link til /Felles/tekst                            |
+| Skal være link til Varsler                              | 0..1         | Skal være link til Varsler                           |

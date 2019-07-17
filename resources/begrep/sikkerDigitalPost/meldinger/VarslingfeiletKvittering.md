@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
 title: VarslingfeiletKvittering  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: Melding
-
-id: Forretningsmeldinger/Varslingfeiletkvittering
-
-next: Forretningsmeldinger/MottaksKvittering  
-—-
-
-{% include variables.html %}
+permalink: sdp_varslingfeiletkvittering.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -87,9 +80,9 @@ basert på en gjennomført vurdering.
 
 ### Attributer
 
-| Identifikator                            | Kardinalitet | Datatype                                                                                                                                                       |
-| ---------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Signature                                | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
-| [beskrivelse](/Felles/beskrivelse)       | 0..1         | [beskrivelse](/Felles/beskrivelse)                                                                                                                             |
-| tidspunkt                                | 1..1         | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime)                                                                                                      |
-| [varslingskanal](/Felles/varslingskanal) | 1..1         | [varslingskanal](/Felles/varslingskanal)                                                                                                                       |
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
+| [beskrivelse](/Felles/beskrivelse) | 0..1 | [beskrivelse](/Felles/beskrivelse) |
+| tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
+| [varslingskanal](/Felles/varslingskanal) | 1..1 | [varslingskanal](/Felles/varslingskanal) |

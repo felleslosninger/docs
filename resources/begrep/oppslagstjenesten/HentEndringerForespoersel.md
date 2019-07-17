@@ -1,13 +1,7 @@
------
-
-layout: default  
+---
 title: HentEndringerForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/Metode  
-—-  
-{% include variables.html %}
+permalink: oppslagstjenesten_hentendringerforespoersel.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -26,19 +20,19 @@ group: Oppslagstjenesten/Metode
     Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
     forespørselen og hvordan denne sendes.
 
-Responsen er en [HentEndringerRespons](HentEndringerRespons)
+Responsen er en [HentEndringerRespons](HentEndringerRespons.md)
 
 #### Attributer
 
 | Term                                           | Kardinalitet |
 | ---------------------------------------------- | ------------ |
-| [fraEndringsNummer](/Felles/fraEndringsNummer) | 1..1         |
-| [informasjonsbehov](/Felles/informasjonsbehov) | 0..\*        |
+| [fraEndringsNummer](../felles/fraEndringsNummer.md) | 1..1         |
+| [informasjonsbehov](../felles/informasjonsbehov.md) | 0..\*        |
 
-#### Kodeverk for [informasjonsbehov](/Felles/informasjonsbehov)
+#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov.md)
 
 | Kodeverdi         | Beskrivelse                                                                                                                 |
-| ----------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | Person            | Person gir kun informasjon om Personen finnes i registeret og reservasjonsstatus. Person er implisitt og returneres alltid. |
 | Kontaktinfo       | Kontaktinfo gir informasjon om Personers kontaktinformasjon. Kontaktinformasjon er implisitt og returneres alltid.          |
 | Sertifikat        | Sertifikat gir informasjon om Person sitt sertifikat som skal brukes i forbindelse med kryptering av Sikker Digital Post    |

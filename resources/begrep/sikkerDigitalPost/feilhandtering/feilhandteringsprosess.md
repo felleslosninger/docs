@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Feilhåndteringsprosess  
-headtitle: Sikker digital post - Feilhåndteringsprosessbeskrivelse  
-group: Feilhåndtering
-
-id: Feilhåndtering/Feilhåndteringsprosess
-
-next: Begreper
-
------
+permalink: sdp_feilhandteringsprosess.html
+sidebar:
+---
 
 ## {{page.title}}
 

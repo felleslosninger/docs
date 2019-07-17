@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Forretningsfeil  
-headtitle: Sikker digital post - Forretningsfeil  
-group: Feilhåndtering
-
-id: Feilhåndtering/Forretning
-
-next: Feilhåndtering/Feilhåndteringsprosess
-
------
+permalink: sdp_forretningsfeil.html
+sidebar:
+---
 
 ## {{page.title}}
 

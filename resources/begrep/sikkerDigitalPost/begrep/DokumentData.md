@@ -1,18 +1,11 @@
------
-
-layout: egenskap  
+---
 title: DokumentData  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: DokumentData  
-prev: Begreper  
-—-
-
-{% include variables.html %}
+permalink: sdp_dokumentdata.html
+sidebar:
+---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/DokumentData
   - Term  
     {{page.title}}
   - Definisjon  
@@ -24,8 +17,8 @@ prev: Begreper
 
 #### Eigenskapar
 
+| --- | --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype   | Beskrivelse                                                                  |
-| ------------- | ------------ | ---------- | ---------------------------------------------------------------------------- |
 | href          | 1..1         | xsd:string | Filnavn på data-dokumentet i dokumentpakken                                  |
 | mime          | 1..1         | xsd:string | Utvidelsens mime-type. [Tilgjengelig utvidelser](/forretningslag/Utvidelser) |
 

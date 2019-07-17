@@ -1,15 +1,10 @@
------
+---
 
-layout: default  
 title: Forvaltning og tekniske feil  
-headtitle: Sikker digital post  
-group: Feilhåndtering
+permalink: sdp_forvaltning.html
+sidebar:
 
-id: Feilhåndtering/Forvaltning
-
-next: Feilhåndtering/Transport
-
------
+---
 
 ## Forvaltningsmessige og tekniske feil
 
@@ -19,8 +14,8 @@ nektet kontakt med Meldingsformidler. Teknisk vil disse framstå som
 
 De mest aktuelle kodene er:
 
-|                      |                                                                                              |
-| -------------------- | -------------------------------------------------------------------------------------------- |
+
+| --- | --- |
 | HTTP 400 Bad Request | Meldingsformidler ikke i stand til å tolke meldingen. For eksempel kan ugyldig formatert XML |
 | HTTP 401 Unathorized | Ikke gyldig tilgang til tjenesten                                                            |
 

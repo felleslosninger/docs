@@ -1,14 +1,8 @@
------
-
-layout: egenskap  
+---
 title: FysiskPostRetur  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: FysiskPostRetur  
-prev: Begreper  
-—-  
-{% include variables.html %}
+permalink: sdp_fysiskpostretur
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}

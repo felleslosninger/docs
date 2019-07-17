@@ -1,14 +1,8 @@
------
-
-layout: egenskap  
-title: Person  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Person  
-prev: Begreper  
-—-  
-{% include variables.html %}
+---
+title: Person 
+permalink: sdp_person.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
@@ -30,9 +24,9 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 #### Attributer
 
 | Term                                               | Kardinalitet | Datatype                                              |
-| -------------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [personidentifikator](/Felles/personidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [postkasseadresse](/Felles/postkasseadresse)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| --- | --- | --- |
+| SKAL VÆRE LINK TIL ../felles/personidentifikator | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [postkasseadresse](../felles/postkasseadresse)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Xml eksempel
 

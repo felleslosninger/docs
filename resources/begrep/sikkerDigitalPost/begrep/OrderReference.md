@@ -1,14 +1,7 @@
------
-
-layout: egenskap  
+---
 title: OrderReference  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: OrderReference  
-prev: Begreper  
-—-  
-{% include variables.html %}
+permalink: sdp_orderreference.html
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}

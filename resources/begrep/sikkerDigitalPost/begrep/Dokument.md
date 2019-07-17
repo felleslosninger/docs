@@ -1,18 +1,11 @@
------
-
-layout: default  
+---
 title: Dokument  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: complexType
-
-name: Dokument  
-prev: Begreper  
-—-
-
-{% include variables.html %}
+permalink: sdp_dokument.html
+sidebar:
+---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Dokument
   - Term  
     {{page.title}}
   - Definisjon  
@@ -23,15 +16,15 @@ prev: Begreper
     DIFI
   - Kommentar  
     Dette gir en henvisning til dokumentet i
-    [Dokumentpakken](index.html) sammen med en tittel.  
+    [Dokumentpakken](sdp_index.html) sammen med en tittel.  
     Denne tittelen vil vises til Innbygger når Dokumentpakken er
     dekryptert og Innbygger er autentisert på tilstrekkelig
     sikkerhetsnivå.
 
 #### Eigenskapar
 
+| --- | --- | --- |
 | Identifikator        | Kardinalitet | Datatype                     |
-| -------------------- | ------------ | ---------------------------- |
 | href                 | 1..1         | xsd:string                   |
 | mime                 | 1..1         | xsd:string                   |
 | [Tittel](Tittel)     | 0..1         | [Tittel](Tittel)             |

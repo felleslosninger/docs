@@ -1,12 +1,8 @@
------
+---
 
-layout: default  
 title: Oversikt  
-headtitle: Sikker digital post
-
-id: Oversikt
-
-next: Oversikt/Arkitektur
+permalink: sdp_index.html
+sidebar:
 
 children:  
 \- name: Oversikt/Arkitektur  
@@ -15,7 +11,7 @@ children:
 \- name: Oversikt/XSDfiler  
 \- name: Eksempler
 
------
+---
 
 ## Oversikt
 

@@ -1,16 +1,9 @@
------
+---
 
-layout: default  
 title: MottaksKvittering  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: Melding
-
-id: Forretningsmeldinger/MottaksKvittering
-
-next: Forretningsmeldinger/PostlagtKvittering  
-—-
-
-{% include variables.html %}
+permalink: sdp_mottakskvittering.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -33,7 +26,7 @@ next: Forretningsmeldinger/PostlagtKvittering
 
 ### Attributer
 
-| Identifikator | Kardinalitet | Datatype                                                                                                                                                       |
-| ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Signature     | 1..1         | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
-| tidspunkt     | 1..1         | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime)                                                                                                      |
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
+| tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |

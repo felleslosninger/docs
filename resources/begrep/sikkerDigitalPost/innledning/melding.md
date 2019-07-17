@@ -1,14 +1,10 @@
------
+---
 
-layout: default  
 title: Meldingsstruktur  
-headtitle: Sikker digital post
+permalink: sdp_melding.html
+sidebar:
 
-id: Oversikt/Melding
-
-next: Oversikt/Struktur
-
------
+---
 
 ## Meldingesstruktur
 
