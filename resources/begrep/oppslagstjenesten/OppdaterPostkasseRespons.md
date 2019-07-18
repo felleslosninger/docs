@@ -6,7 +6,7 @@ Service: Oppslagstjenesten
 group: Oppslagstjenesten/PK\_Metode\_respons  
 permalink: ot_oppdaterpostkasserespons.html
 sidebar:
-—-  
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
