@@ -12,7 +12,7 @@ sidebar:
 
 Ovordnet er meldingsflyten slik:
 
-1.  Avsender [1](#Link1) sender en [Digital
+1.  Avsender[1](#Link1) sender en [Digital
     postmelding](../meldinger/DigitalPostMelding.md) via Meldingsformidler
     til Postkasse
 2.  Postkasse sender en eller fler
