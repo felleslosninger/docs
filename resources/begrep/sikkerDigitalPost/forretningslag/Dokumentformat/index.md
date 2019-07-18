@@ -1,14 +1,10 @@
------
-
-layout: default  
+---
 title: Dokumentformater  
 headtitle: Sikker digital post  
 group: forretningslag
-
-id: Forretningslag/Dokumentformater
-
-next: Forretningslag/MIME type  
-—-
+permalink: dokumentformat_index.md
+sidebar:
+---
 
 ## Innledning
 
@@ -29,5 +25,5 @@ Generelle regler for alle filer:
 
 Spesielle regler knyttet til de enkelte dokument formatene:
 
-  - [HTML dokumenter](html)
-  - [EHF dokumenter](ehf)
+  - [HTML dokumenter](html.md)
+  - [EHF dokumenter](ehf.md)
