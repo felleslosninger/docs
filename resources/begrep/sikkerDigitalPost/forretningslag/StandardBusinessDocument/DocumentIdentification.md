@@ -1,16 +1,10 @@
------
-
-layout: default  
+--- 
 title: DocumentIdentification  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
-
-id: Forretningslag/DocumentIdentification  
-next: Forretningslag/BusinessScope
-
------
-
-{% include variables.html %}
+permalink: sdp_documentidentification.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -32,7 +26,7 @@ next: Forretningslag/BusinessScope
 | InstanceIdentifier  | 1..1         | xs:string   | Unik identifikator for meldingen. Opprettet av Databehandler. Se format under.                                             |
 | Type                | 1..1         | xs:string   | Type forretningsmelding. Skal alltid være “local-name” til rot-elementet XML’en til forretningmeldingen. Se kodeverk under |
 | MultipleType        | 0..0         | xs:boolean  | brukes ikke                                                                                                                |
-| CreationDateAndTime | 1..1         | xs:dateTime | Tidspunkt for oppretting av [Standard Business Document](index)                                                            |
+| CreationDateAndTime | 1..1         | xs:dateTime | Tidspunkt for oppretting av [Standard Business Document](index.md)                                                            |
 
 ### Format InstanceIdentifier
 
