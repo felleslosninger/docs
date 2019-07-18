@@ -2,7 +2,7 @@
 
 title: Aktører og Roller  
 permalink: sdp_aktorer.html
-
+sidebar:
 ---
 
 ## Aktører
