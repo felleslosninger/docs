@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Prisen på digital post  
-headtitle: Sikker digital post - Begreper  
-group: forretningslag
-
-id: Forretningslag/ForsendelsesStørrelse
-
-next: Forretningslag/Dokumentpakke
-
------
+permalink: sdp_meldingsstorrelse.html
+sidebar:
+---
 
 ## Hva er prisen på sending av en Digital post?
 
@@ -19,7 +13,7 @@ Derfor er prisen regnet ut i fra det innhold som postkasseleverandørene
 er forpliktet til å langtidslagre.
 
 Les mer om hva som langtidslagres hos postkasseleverandørene i seksjonen
-om [Dokumentpakken](Dokumentpakke/langtidslagring).
+om [Dokumentpakken](Dokumentpakke/langtidslagring.md).
 
 Prisen på en forsendelse regnes ut i fra størrelsen på Dokumentpakkens
 innhold, før det det pakkes ned.
