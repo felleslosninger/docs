@@ -4,7 +4,7 @@ headtitle: Begrepskatalog for Sikker digital post -
 group: Oppslagstjenesten/complexType  
 permalink: ot_mobiltelefonnummer.html
 sidebar:
-—-  
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
