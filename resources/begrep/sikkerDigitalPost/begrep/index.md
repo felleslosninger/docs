@@ -16,7 +16,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Dokumentpakkefingeravtrykk](Dokumentpakkefingeravtrykk.md)
 - [FysiskPostRetur](FysiskPostRetur.md)
 - [FysiskPostadresse](FysiskPostadresse.md)
-- [FysiskpostInfo](FysiskpostInfo.md)
+- [FysiskpostInfo](FysiskPostInfo.md)
 - [Mottaker](Mottaker.md)
 - [OrderReference](OrderReference.md)
 - [Person](Person.md)
