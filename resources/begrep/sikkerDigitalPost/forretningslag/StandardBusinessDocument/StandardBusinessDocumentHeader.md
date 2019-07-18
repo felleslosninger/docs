@@ -1,17 +1,10 @@
------
-
-layout: default  
+---
 title: StandardBusinessDocumentHeader  
 headtitle: Sikker digital post - Standard Business Document  
 group: forretningslag
-
-id: Forretningslag/StandardBusinessDocumentHeader
-
-next: Forretningslag/Sender
-
------
-
-{% include variables.html %}
+permalink: sdp_standardbusinessdocumentheader.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -31,34 +24,34 @@ next: Forretningslag/Sender
 | Identifikator                                    | Kardinalitet | Datatype                                              | Kommentar                                                                                                                                                                                   |
 | ------------------------------------------------ | ------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | HeaderVersion                                    | 1..1         | xs:string                                             | “1.0”                                                                                                                                                                                       |
-| [Sender](Sender)                                 | 1..1         | [sbdh:Sender](Sender)                                 | Identifikator (organisasjonsnummer) til virksomheten som initierer (er avsender) i meldingsprosessen. Alle kvitteringer skal addresseres til denne parten som mottaker                      |
-| [Receiver](Receiver)                             | 1..1         | [sbdh:Receiver](Receiver)                             | Identifikator (organisasjonsnummer) til virksomheten som er sluttmottaker i meldingsprosessen. Ved initiell sending av melding vil dette alltid være en postboks eller utskriftsleverandør. |
-| [DocumentIdentification](DocumentIdentification) | 1..1         | [sbdh:DocumentIdentification](DocumentIdentification) | Unik identifikator for meldingen, generert av Avsender                                                                                                                                      |
-| [BusinessScope](BusinessScope)                   | 1..1         | [sbdh:BusinessScope](BusinessScope)                   | Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen                                                                                                  |
+| [Sender](Sender.md)                                 | 1..1         | [sbdh:Sender](Sender.md)                                 | Identifikator (organisasjonsnummer) til virksomheten som initierer (er avsender) i meldingsprosessen. Alle kvitteringer skal addresseres til denne parten som mottaker                      |
+| [Receiver](Receiver.md)                             | 1..1         | [sbdh:Receiver](Receiver.md)                             | Identifikator (organisasjonsnummer) til virksomheten som er sluttmottaker i meldingsprosessen. Ved initiell sending av melding vil dette alltid være en postboks eller utskriftsleverandør. |
+| [DocumentIdentification](DocumentIdentification.md) | 1..1         | [sbdh:DocumentIdentification](DocumentIdentification.md) | Unik identifikator for meldingen, generert av Avsender                                                                                                                                      |
+| [BusinessScope](BusinessScope.md)                   | 1..1         | [sbdh:BusinessScope](BusinessScope.md)                   | Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen                                                                                                  |
 
 ### Kommentar
 
 Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i
-[FormidleDigitalPostForsendelse](../../transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse)
+[FormidleDigitalPostForsendelse](../../transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse.md)
 prosessen så vil Sender være [Databehandler](../Aktorer) og Receiver
-være [Postkasse](../Aktorer).
+være [Postkasse](../Aktorer.md).
 
 Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den
 offisielle standarden (BusinessScope er obligatorisk i Sikker Digital
 Post). Konsekvesen er at man kan få en [forretningsrelatert
-feilmelding](../../feilhandtering/Forretningsfeil) selv om XML’en
+feilmelding](../../feilhandtering/Forretningsfeil.md) selv om XML’en
 validerer mot xsd.
 
 ### XML eksempel fra Databehandler til Postkasseleverandør
 
-**** En melding fra [Databehandler](../Aktorer) med orgnummer: 123456789
-til [Postkasseleverandør](../Aktorer) med orgnummer: 987654321
+**** En melding fra [Databehandler](../Aktorer.md) med orgnummer: 123456789
+til [Postkasseleverandør](../Aktorer.md) med orgnummer: 987654321
 
-**** [Databehandler](../Aktorer) har generert en unik
+**** [Databehandler](../Aktorer.md) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “35e21e33-22b3-4554-9707-5fa829ee8bc0”
 
-**** [Databehandler](../Aktorer) har generert en unik
+**** [Databehandler](../Aktorer.md) har generert en unik
 BusinessScope.InstanceIdentifier for hele konversasjonen:
 “37efbd4c-413d-4e2c-bbc5-257ef4a65a45”
 
@@ -93,15 +86,15 @@ konversasjon sammen.
 
 ### XML eksempel fra Postkasseleverandør til Databehandler
 
-**** En melding fra [Postkasseleverandør](../Aktorer) med orgnummer:
-987654321 til [Databehandler](../Aktorer) med orgnummer: 123456789
+**** En melding fra [Postkasseleverandør](../Aktorer.md) med orgnummer:
+987654321 til [Databehandler](../Aktorer.md) med orgnummer: 123456789
 
-**** [Postkasseleverandør](../Aktorer) har generert en unik
+**** [Postkasseleverandør](../Aktorer.md) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “12e57bde-ea5d-43ee-96b6-e2cf73f8311e”
 
-**** [Postkasseleverandør](../Aktorer) bruker den
-BusinessScope.InstanceIdentifier som [Databehandler](../Aktorer) har
+**** [Postkasseleverandør](../Aktorer.md) bruker den
+BusinessScope.InstanceIdentifier som [Databehandler](../Aktorer.md) har
 generert.
 
 ****\* Dette er knytningen mot den opprinnelige forsendelsen.
