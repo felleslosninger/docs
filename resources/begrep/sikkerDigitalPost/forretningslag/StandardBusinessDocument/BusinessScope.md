@@ -1,16 +1,10 @@
------
-
-layout: default  
+---
 title: BusinessScope  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
-
-id: Forretningslag/BusinessScope  
-next: Transportlag
-
------
-
-{% include variables.html %}
+permalink: sdp_businessscope.html
+sidebar:
+---
 
 ### {{page.title}}
 
