@@ -12,7 +12,7 @@ sidebar:
 ## Introduksjon
 
 Postkasseleverandørene støtter ulike verdiøkende tjeneste utover det som
-er definert i [Dokumentpakken](Dokumentpakke/). En utvidelse er knyttet
+er definert i [Dokumentpakken](../Dokumentpakke/). En utvidelse er knyttet
 til ett dokument og tilfører en beriket visning i innbyggers postkasse.
 
 For å knytte en utvidelse til et dokument må det inkluderes en fil ihht.
