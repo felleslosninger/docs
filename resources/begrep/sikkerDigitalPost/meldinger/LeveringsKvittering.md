@@ -19,18 +19,18 @@ sidebar:
     DIFI
   - Kommentar  
     Denne kvitteringen kan
-    [Behandlingsansvarlig](../forretningslag/Aktorer) oppbevare som en
+    [Behandlingsansvarlig](../forretningslag/Aktorer.md) oppbevare som en
     garanti på at posten vil bli levert til
-    [Mottaker](../begrep/Mottaker).
+    [Mottaker](../begrep/Mottaker.md).
 
 #### For Digitalpost forsendelser
 
-Kvitteringen sendes fra [Postkassleverandør](../forretningslag/Aktorer)
+Kvitteringen sendes fra [Postkassleverandør](../forretningslag/Aktorer.md)
 når postforsendelsen er validert og de garanterer for at posten vil bli
 tilgjengeliggjort.  
 Kvitteringen vil bli sendt så fort
-[Postkassleverandør](../forretningslag/Aktorer) kan garantere dette,
-det vil si at [Leveringskvitteringen](LeveringsKvittering) vil bli sendt
+[Postkassleverandør](../forretningslag/Aktorer.md) kan garantere dette,
+det vil si at [Leveringskvitteringen](LeveringsKvittering.md) vil bli sendt
 før [virkningsdato](/Felles/virkningsdato)
 
 #### For Fysiskpost forsendelser
@@ -44,10 +44,10 @@ tidspunkt for alle meldinger som postlegges samme dag.
 
 #### Arkivering av kvittering
 
-Det anbefales at [Behandlingsansvarlig](../forretningslag/Aktorer)
+Det anbefales at [Behandlingsansvarlig](../forretningslag/Aktorer.md)
 arkiverer denne kvitteringen som bevis på at
-[posten](DigitalPostMelding) er levert til
-[Mottaker](../begrep/Mottaker).
+[posten](DigitalPostMelding.md) er levert til
+[Mottaker](../begrep/Mottaker.md).
 
 ### Attributer
 
