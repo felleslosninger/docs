@@ -12,7 +12,7 @@ sidebar:
 
 Ovordnet er meldingsflyten slik:
 
-1.  Avsender\[1\] sender en [Digital
+1.  Avsender [1.](#Link1) sender en [Digital
     postmelding](../meldinger/DigitalPostMelding.md) via Meldingsformidler
     til Postkasse
 2.  Postkasse sender en eller fler
@@ -35,9 +35,10 @@ er tatt med for å vise sammenhengen)
 | [Leveringskvittering](../meldinger/LeveringsKvittering.md) | [Postkasse](Aktorer.md)         | [Meldingsformidler](Aktorer.md) | Postkassen sender en [Leveringskvittering](../meldinger/LeveringsKvittering.md) for å signalisere at postkassen har mottatt og behandlet meldingen, og postkassen tar ansvar for å levere denne til Mottaker |
 | HentKvittering                                          | [Avsender](Aktorer.md)          | [Meldingsformidler](Aktorer.md) | Avsender sender forespørsel til Meldingsformidler om å få levert ventende kvitteringer\[2\]                                                                                                               |
 
-1.  Avsender bør også ha et aktivt forhold til statusen til en melding.
+<a name="Link1"></a> 1. Avsender bør også ha et aktivt forhold til statusen til en melding.
     Meldingsflytdiagrammet kan med fordel ses i sammenheng med
     [tilstandsdiagrammet](avsender_tilstanddiagram.md) for sikker digital
     post.
+  
 
 2.  Dette kan være andre typer kvitteringer enn Leveringskvittering
