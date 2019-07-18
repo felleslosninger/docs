@@ -24,11 +24,11 @@ et variabelsett. For disse er formen %variabelnavn% benyttet.
 | PMode.Agreement | Unik identifikator for samarbeidsprotokollen | [http://begrep.difi.no/SikkerDigitalPost/1.0/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse]({{pageMinorUrl}}) |
 | PMode.MEP | Message Exchange Pattern | “http://www.oasis-open.org/committees/ebxml-msg/one-way” |
 | PMode.MEPbinding | Retning på kommunikasjon, push eller pull | “http://www.oasis-open.org/committees/ebxml-msg/push” |
-| PMode.Initiator.Party | Identifikator for den som initierar sendingen | [Sender](../../forretningslag/StandardBusinessDocument/Sender%%) |
-| PMode.Initiator.Role | Rolle for den som initierar sendinga | “”Avsender“”:../../begrep/Avsender |
+| PMode.Initiator.Party | Identifikator for den som initierar sendingen | [Sender](../../forretningslag/StandardBusinessDocument/Sender.md) |
+| PMode.Initiator.Role | Rolle for den som initierar sendinga | “”Avsender“”:../../begrep/Avsender.md |
 | PMode.Initiator.Authorization.username | \- ikke relevant - | \- ikke relevant - |
 | PMode.Initiator.Authorization.password | \- ikke relevant - | \- ikke relevant - |
-| PMode.Responder.Party | Identifikator for den som er mottaker | [Receiver](../../forretningslag/StandardBusinessDocument/Receiver%%) |
+| PMode.Responder.Party | Identifikator for den som er mottaker | [Receiver](../../forretningslag/StandardBusinessDocument/Receiver.md) |
 | PMode.Responder.Role | Rolle for den som mottar | “urn:sdp:meldingsformidler” |
 | PMode.Responder.Authorization.username | \- ikke relevant - | \- ikke relevant - |
 | PMode.Responder.Authorization.password | \- ikke relevant - | \- ikke relevant - |
@@ -84,4 +84,4 @@ Støtte ikke påkrevd i profilen.
 
 ### Eksempler
 
-  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/1\_request\_forretningsmelding\_fra\_postavsender\_til\_meldingsformidler](../../eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler)
+  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/1\_request\_forretningsmelding\_fra\_postavsender\_til\_meldingsformidler](../../eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)
