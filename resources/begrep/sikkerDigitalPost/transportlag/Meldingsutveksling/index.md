@@ -22,7 +22,7 @@ Det er opp til avsender om man vil fullintegrere MSH inn i eksisterende
 løsning, benytte seg av en standard “hyllevare” løsning med lokal
 integrasjon eller benytte seg av tredjepart som MSH.
 
-Les mer om [meldingsidentifikatorer](../MeldingsIdentifikatorer)
+Les mer om [meldingsidentifikatorer](../MeldingsIdentifikatorer.md)
 
 ### AS4 Light Client profilen
 
@@ -40,10 +40,10 @@ implementasjon skal støtte.
 Grensesnittet mellom avsender og meldingsformidler har to sett med
 P-Mode parametere:
 
-  - [FormidleDigitalPostForsendelse](FormidleDigitalPostForsendelse) -
+  - [FormidleDigitalPostForsendelse](FormidleDigitalPostForsendelse.md) -
     benyttes ved sending av en digital post forsendelse fra avsender til
     meldingsformidler
-  - [KvitteringsForespoersel](KvitteringsForespoersel) - benyttes av
+  - [KvitteringsForespoersel](KvitteringsForespoersel.md) - benyttes av
     avsender for å sjekke om det er forretningskvitteringer som kan
     hentes
 
@@ -87,7 +87,7 @@ oppfølging av en melding for å få ferdigbehandlet den.
 
 #### Intervall mellom kvitteringsforespørsler
 
-Ved [KvitteringsForespoersel](KvitteringsForespoersel) så er det
+Ved [KvitteringsForespoersel](KvitteringsForespoersel.md) så er det
 forventet at man respekterer følgende intervaller mellom hver
 forespørsel når forrige forespørsel returnerte at det er ikke er
 meldinger å hente:
