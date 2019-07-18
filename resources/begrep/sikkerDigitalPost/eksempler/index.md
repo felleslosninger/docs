@@ -1,7 +1,7 @@
 ---
  
 title: Eksempler  
-permlink: sdp_index_eksempler
+permlink: sdp_index_eksempler.html
 sidebar:
 ---
 
