@@ -61,5 +61,5 @@ resultere i et mye mer brukervennlig dokument på mobile enheter.
 ### Feilhåndtering
 
 HTML-meldinger som ikke oppfyller disse kravene blir avvist ved mottak.
-Dette vil resultere i en [Feilmelding](../../meldinger/FeilMelding)  
+Dette vil resultere i en SKAL VÆRE LINK TIL ../../meldinger/FeilMelding.md 
 Avsendervirksomheten må korrigere meldingene og sende på nytt.
