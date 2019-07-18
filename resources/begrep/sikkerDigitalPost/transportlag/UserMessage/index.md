@@ -32,10 +32,10 @@ skal formidles, samt settinger angitt i
 | Identifikator | Kardinalitet | Datatype | Kommentar |
 | --- | --- | --- | --- |
 | mpc | 1..1 | xs:anyURI | Konstantverdi som angir kanal som skal benyttes |
-| [MessageInfo](MessageInfo) | 1..1 | eb:MessageInfo | Intern identifikator og timestamp |
-| [PartyInfo](PartyInfo) | 1..1 | eb:PartyInfo | Informasjon om avsender og mottaker |
-| [CollaborationInfo](CollaborationInfo) | 1..1 | eb:CollaborationInfo | Informasjon om avtalt samhandlingsmønster for meldingen |
-| [PayloadInfo](PayloadInfo) | 1..1 | eb:PayloadInfo | Informasjon om selve forretningsmeldingen |
+| [MessageInfo](MessageInfo.md) | 1..1 | eb:MessageInfo | Intern identifikator og timestamp |
+| [PartyInfo](PartyInfo.md) | 1..1 | eb:PartyInfo | Informasjon om avsender og mottaker |
+| [CollaborationInfo](CollaborationInfo.md) | 1..1 | eb:CollaborationInfo | Informasjon om avtalt samhandlingsmønster for meldingen |
+| [PayloadInfo](PayloadInfo.md) | 1..1 | eb:PayloadInfo | Informasjon om selve forretningsmeldingen |
 
 ### Eksempel
 
