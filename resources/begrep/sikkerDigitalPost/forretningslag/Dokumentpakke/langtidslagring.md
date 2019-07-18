@@ -1,12 +1,9 @@
------
-
-layout: default  
+---
 title: Langtidslagring  
 headtitle: Sikker digital post - ASiC  
 group: forretningslag
-
-id: Forretningslag/Langtidslagring  
-next: Forretningslag/Manifest
+permalink: sdp_langtidslagring.html
+sidebar:
 
 children:  
 \- name: Forretningslag/Manifest  
@@ -14,7 +11,7 @@ children:
 \- name: Forretningslag/HTML dokument  
 \- name: Forretningslag/Sikkerhet
 
------
+---
 
 ## Langtidslagring
 
