@@ -35,4 +35,4 @@ transportkvitteringer eller en forespørsel om å få levert en melding.
   - [SOAP forespørsel om kvitteringer fra avsender til
     meldingsformidler](../../eksempler/soap/5_request_forespoersel_om_forretningskvittering_fra_postavsender_til_meldingsformidler.xml)
   - [SOAP svar fra meldingsformidler om ingen
-    kvitteringer](../../eksempler/soap/5_response_error_fra_meldingsformidler_til_postavsender.xml)
+    kvitteringer](../../eksempler/soap/6_response_error_fra_meldingsformidler_til_postavsender.xml)
