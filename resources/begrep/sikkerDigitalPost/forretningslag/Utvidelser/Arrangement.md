@@ -1,7 +1,7 @@
 ---
 
 title: Arrangement  
-permalink: sdp_Arrangement.html
+permalink: sdp_arrangement.html
 sidebar:
 ---
 
