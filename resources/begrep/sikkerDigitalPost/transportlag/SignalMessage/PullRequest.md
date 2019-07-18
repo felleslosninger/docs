@@ -25,7 +25,7 @@ organisasjon en ønsker å hente meldinger for.
 
 | Identifikator | Type | Kardinalitet | Kommentar |
 | --- | --- | ---| --- |
-| mpc | [mpc](../UserMessage/mpc) | 1..1 | |
+| mpc | [mpc](../UserMessage/mpc.md) | 1..1 | |
 
 #### Xml eksempel
 
