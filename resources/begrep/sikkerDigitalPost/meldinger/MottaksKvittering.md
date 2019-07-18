@@ -12,7 +12,7 @@ sidebar:
   - Term  
     {{page.title}}
   - Definisjon  
-    En [Kvitteringsmelding](KvitteringsMelding) til Avsender om at
+    En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at
     utskrift og forsendelsestjenesten har mottatt forsendelsen og har
     lagt den klar for utskrift.
   - Kilde  
