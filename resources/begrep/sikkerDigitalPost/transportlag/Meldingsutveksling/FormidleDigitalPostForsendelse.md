@@ -1,7 +1,7 @@
 ---
 
 title: FormidleDigitalPostForsendelse  
-permadata: sdp_formidledigitalpostforsendelse.html
+permalink: sdp_formidledigitalpostforsendelse.html
 sidebar:
 ---
 
