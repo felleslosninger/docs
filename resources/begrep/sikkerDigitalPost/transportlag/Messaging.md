@@ -9,7 +9,7 @@ permalink: sdp_messaging.html
 ## {{page.title}}
 
   - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.url}}
+    “http://begrep.difi.no{{page.url|remove:”.html"}}":{{page.url}}
   - Term  
     {{page.title}}
   - Definisjon  
