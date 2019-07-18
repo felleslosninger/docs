@@ -3,7 +3,7 @@ title: Kontaktinformasjon
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
 permalink: ot_kontakinformasjon.html
-—-  
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
