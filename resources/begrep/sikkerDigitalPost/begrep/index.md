@@ -1,4 +1,4 @@
-﻿---
+---
 title: Begreper  
 permalink: begrep_index.html
 sidebar:
