@@ -33,7 +33,7 @@ sidebar:
 
 Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i
 [FormidleDigitalPostForsendelse](../../transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse.md)
-prosessen så vil Sender være [Databehandler](../Aktorer) og Receiver
+prosessen så vil Sender være [Databehandler](../Aktorer.md) og Receiver
 være [Postkasse](../Aktorer.md).
 
 Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den
