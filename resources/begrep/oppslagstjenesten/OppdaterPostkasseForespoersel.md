@@ -5,7 +5,7 @@ datatype: Metode
 Service: Oppslagstjenesten  
 group: Oppslagstjenesten/PK\_Metode  
 permalink: ot_oppdaterpostkasseforespoersel.html
-—-  
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
