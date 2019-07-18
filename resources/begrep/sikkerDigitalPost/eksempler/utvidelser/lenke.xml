@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lenke xmlns="http://begrep.difi.no/sdp/utvidelser/lenke"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://begrep.difi.no/sdp/utvidelser/lenke ../../xsd/utvidelser/lenke.xsd">
+    <url>https://www.avsender.no/svar</url>
+    <beskrivelse lang="nb">Vennligst svar på denne viktige meldingen for videre saksbehandling.</beskrivelse>
+    <knappTekst lang="nb">Svar på den viktige meldingen</knappTekst>
+    <frist>2017-10-01T12:00:00+02:00</frist>
+</lenke>
