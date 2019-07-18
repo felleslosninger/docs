@@ -21,21 +21,21 @@ sidebar:
     under.
 
 \*For [digital post meldinger](../../meldinger/DigitalPostMelding.md) er
-[Receiver](Receiver*)
+[Receiver](Receiver.md)
 
   - [Postkasseleverandør](../Aktorer.md)
 
 \*For [digital post kvitteringer](../../meldinger/KvitteringsMelding.md) er
-[Receiver](Receiver*)
+[Receiver](Receiver.md)
 
-  - Den [Aktør](../Aktorer) som sto som [Sender](Sender.md) for [digital
+  - Den [Aktør](../Aktorer.md) som sto som [Sender](Sender.md) for [digital
     post meldingen](../../meldinger/DigitalPostMelding.md).
 
 ### Attributter
 
 | Identifikator | Kardinalitet | Datatype                                                     | Kommentar |
 | ------------- | ------------ | ------------------------------------------------------------ | --------- |
-| Identifier    | 1..1         | [virksomhetsidentifikator](/Felles/virksomhetsidentifikator.md) |           |
+| Identifier    | 1..1         | SKAL VÆRE LINK TIL /Felles/virksomhetsidentifikator.md |           |
 
 ### XML eksempel
 
