@@ -1,14 +1,9 @@
------
+---
 
-layout: default  
 title: Arrangement  
-headtitle: Sikker digital post - Arrangement  
-group: forretningslag
-
-id: Forretningslag/Utvidelser/Arrangement  
-next: utskrift
-
------
+permalink: sdp_Arrangement.html
+sidebar:
+---
 
   - Definisjon  
     Arrangement
