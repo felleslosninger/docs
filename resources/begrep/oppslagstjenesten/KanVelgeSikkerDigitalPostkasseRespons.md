@@ -5,7 +5,6 @@ datatype: Metode
 permalink: ot_kanvelgesikkerdigitalpostkasserespons.html
 sidebar:
 ---
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
