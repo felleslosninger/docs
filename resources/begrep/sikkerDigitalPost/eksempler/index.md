@@ -1,5 +1,4 @@
 ---
- 
 title: Eksempler  
 permalink: sdp_index_eksempler.html
 sidebar:
