@@ -12,7 +12,7 @@ sidebar:
   - Term  
     {{page.title}}
   - Definisjon  
-    En [Kvitteringsmelding](KvitteringsMelding) fra Utskriftstjenesten
+    En [Kvitteringsmelding](KvitteringsMelding.md) fra Utskriftstjenesten
     til Avsender om at post ikke kunne leveres til Mottaker.
   - Kilde  
     DIFI
