@@ -12,28 +12,28 @@ sidebar:
   - Term  
     {{page.title}}
   - Definisjon  
-    En [KvitteringsMelding](KvitteringsMelding) til Avsender om at
+    En [KvitteringsMelding](KvitteringsMelding.md) til Avsender om at
     Mottaker har åpnet forsendelsen i sin postkasse.
   - Kilde  
     DIFI
   - Kommentar  
     Åpningskvitteringer blir bare sendt dersom dette er bestilt av
-    [Avsender](../forretningslag/StandardBusinessDocument/Sender) i
-    [digital post meldingen](DigitalPostMelding) ved å spesifisere dette
-    i [digitalpostinfo](../begrep/DigitalPostInfo).  
-    [Mottaker](../begrep/Mottaker) må aksepteres at det sendes en
-    [ÅpningsKvittering](AapningsKvittering) til
+    [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) i
+    [digital post meldingen](DigitalPostMelding.md) ved å spesifisere dette
+    i [digitalpostinfo](../begrep/DigitalPostInfo.md).  
+    [Mottaker](../begrep/Mottaker.md) må aksepteres at det sendes en
+    [ÅpningsKvittering](AapningsKvittering.md) til
     [Avsender](../forretningslag/StandardBusinessDocument/Sender) for å
     få lest den digital posten.  
-    Mangel på [ÅpningsKvittering](AapningsKvittering) betyr at
-    [Mottaker](../begrep/Mottaker) ikke har lest dokumentet.
+    Mangel på [ÅpningsKvittering](AapningsKvittering.md) betyr at
+    [Mottaker](../begrep/Mottaker.md) ikke har lest dokumentet.
 
-Bruk av [ÅpningsKvittering](AapningsKvittering) er priset for
-[Avsender](../forretningslag/StandardBusinessDocument/Sender).
+Bruk av [ÅpningsKvittering](AapningsKvittering.md) er priset for
+[Avsender](../forretningslag/StandardBusinessDocument/Sender.md).
 
 Åpningskvittering vil være påkrevd helt frem til Innbygger har akseptert
 at kvitteringen sendes til Avsender. Det vil si at Åpningskvittering kan
-komme lang tid etter at [digital post meldingen](DigitalPostMelding)
+komme lang tid etter at [digital post meldingen](DigitalPostMelding.md)
 blir sendt.
 
 ### Anbefalt bruk
