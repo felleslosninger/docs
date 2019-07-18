@@ -1,12 +1,9 @@
------
-
-layout: default  
+---
 title: Dokumentpakke (ASiC)  
 headtitle: Sikker digital post - ASiC  
 group: forretningslag
-
-id: Forretningslag/Dokumentpakke  
-next: Forretningslag/Langtidslagring
+permalink: dokumentpakke_index.html
+sidebar:
 
 children:  
 \- name: Forretningslag/Langtidslagring  
@@ -17,12 +14,12 @@ children:
 \- name: Forretningslag/EHF dokument  
 \- name: Forretningslag/Sikkerhet
 
------
+---
 
 ## Introduksjon
 
 Dokumentpakke inngår kun i
-[DigitalPostMeldinger](../../meldinger/DigitalPostMelding).
+[DigitalPostMeldinger](../../meldinger/DigitalPostMelding.md).
 
 [Associated Signature Container
 (ASiC)](http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf)
@@ -37,7 +34,7 @@ virksomhet, og om filene har blitt endret.
 Les mer om [hvordan dokumenter som sendes i Sikker digital post er
 beskyttet](../Sikkerhet/)
 
-Sikker Digital Post har definert et eget begrep [Manifest](Manifest) som
+Sikker Digital Post har definert et eget begrep [Manifest](Manifest.md) som
 inneholder metadata relatert til hver fil.
 
 ### Innhold
@@ -45,7 +42,7 @@ inneholder metadata relatert til hver fil.
 | Fil                      | Kardinalitet | Beskrivelse                                                                                                                      |
 | ------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | hoveddokument            | 1..1         | fil - se: krav til [filnavn og dokumentformat](../Dokumentformat/)                                                               |
-| [manifest.xml](Manifest) | 1..1         | [manifest](Manifest)                                                                                                             |
+| [manifest.xml](Manifest.md) | 1..1         | [manifest](Manifest.md)                                                                                                             |
 | vedlegg                  | 0..200       | fil - se: krav til [filnavn og dokumentformat](../Dokumentformat/)                                                               |
 | META-INF/signatures.xml  | 1..1         | [XAdES](http://www.etsi.org/deliver/etsi_ts%5C101900_101999%5C101903%5C01.04.02_60%5Cts_101903v010402p.pdf) signaturer av filene |
 
