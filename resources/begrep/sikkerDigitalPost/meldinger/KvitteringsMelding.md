@@ -13,11 +13,11 @@ sidebar:
     {{page.title}}
   - Definisjon  
     En kvitteringsmelding på en [digital post
-    melding](DigitalPostMelding) fra en [Avsender](../begrep/Avsender).
+    melding](DigitalPostMelding.md) fra en [Avsender](../begrep/Avsender.md).
   - Kilde  
     DIFI
   - Kommentar  
-    Kvittering er en abstrakt [kvittering melding](index) type, se under
+    Kvittering er en abstrakt [kvittering melding](index.md) type, se under
     for de kvitteringer som er definert.
 
 ### Attributer
@@ -33,8 +33,8 @@ Alle kvitteringer uavhengig av type har følgende attributter:
 
 Følgende konkrete kvitteringer er definert:
 
-  - [LeveringsKvittering](LeveringsKvittering)
-  - [AapningsKvittering](AapningsKvittering)
-  - [VarslingfeiletKvittering](VarslingfeiletKvittering)
-  - [MottaksKvittering](MottaksKvittering)
-  - [PostlagtKvittering](PostlagtKvittering)
+  - [LeveringsKvittering](LeveringsKvittering.md)
+  - [AapningsKvittering](AapningsKvittering.md)
+  - [VarslingfeiletKvittering](VarslingfeiletKvittering.md)
+  - [MottaksKvittering](MottaksKvittering.md)
+  - [PostlagtKvittering](PostlagtKvittering.md)
