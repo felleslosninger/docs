@@ -84,4 +84,4 @@ Støtte ikke påkrevd i profilen.
 
 ### Eksempler
 
-  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/5\_request\_forespoersel\_om\_forretningskvittering\_fra\_postavsender\_til\_meldingsformidler](../../eksempler/soap/6_request_forespoersel_om_forretningskvittering_fra_postavsender_til_meldingsformidler)
+  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/5\_request\_forespoersel\_om\_forretningskvittering\_fra\_postavsender\_til\_meldingsformidler](../../eksempler/soap/6_request_forespoersel_om_forretningskvittering_fra_postavsender_til_meldingsformidler.xml)
