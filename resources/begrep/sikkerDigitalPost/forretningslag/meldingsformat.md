@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Struktur på melding  
-headtitle: Sikker digital post  
-group: forretningslag
-
-id: Forretningslag/Forretningsmeldingsstruktur
-
-next: Forretningslag/ForsendelsesStørrelse
-
------
+permalink: sdp_meldingsformat.html
+sidebar:
+---
 
 ## Overordnet struktur på forretningsmeldinger
 
@@ -33,12 +27,12 @@ integriteten for sin del av meldingen, samt håndtering av integritet i
 neste nivå i meldingen.  
 I praksis betyr dette at eier er ansvarlig for signering av sin del.
 
-| Element                    | Eier                | Identifikator               | Kontroll eierskap                                                               | Kommentar                                                                                                                                                                                                                                                                           |
-| -------------------------- | ------------------- | --------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Dokumentpakke              | [Avsender](Aktorer) | Manifest/Avsender           | Signerte bruksvilkår med Sentralforvalter                                       | Eierskapet til dokumentpakken blir bruk til å garantere integriteten til dokumentpakken over tid. Det kan tenkes at dokumentpakken blir signert av en [Databehandler](Aktorer). I så tilfelle bør dette klart framkomme av selve dokumentet, slik at Mottaker forstår sammenhengen. |
-| Forretningmelding          | [Avsender](Aktorer) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter                                                 | Vil som regel være den samme som eier av dokumentpakken.                                                                                                                                                                                                                            |
-| Standard Business Document | [Avsender](Aktorer) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter                                                 | Skal alltid være den samme som eier av Forretningsmelding                                                                                                                                                                                                                           |
-| Transportinformasjon       | [Avsender](Aktorer) | SBDH/Sender                 | Angitt som sender i Standard Business Document, registrert hos Sentralforvalter | Aktøren som er ansvarlig for kommunikasjon med Meldingsformidler. Bør være den samme som over, men kan være en [Databehandler](Aktorer)                                                                                                                                             |
+| Element    | Eier     | Identifikator    | Kontroll eierskap  | Kommentar    |
+| --- | --- | --- | --- | --- |
+| Dokumentpakke              | [Avsender](Aktorer.md) | Manifest/Avsender           | Signerte bruksvilkår med Sentralforvalter                                       | Eierskapet til dokumentpakken blir bruk til å garantere integriteten til dokumentpakken over tid. Det kan tenkes at dokumentpakken blir signert av en [Databehandler](Aktorer.md). I så tilfelle bør dette klart framkomme av selve dokumentet, slik at Mottaker forstår sammenhengen. |
+| Forretningmelding          | [Avsender](Aktorer.md) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter                                                 | Vil som regel være den samme som eier av dokumentpakken.                                                                                                                                                                                                                            |
+| Standard Business Document | [Avsender](Aktorer.md) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter                                                 | Skal alltid være den samme som eier av Forretningsmelding                                                                                                                                                                                                                           |
+| Transportinformasjon       | [Avsender](Aktorer.md) | SBDH/Sender                 | Angitt som sender i Standard Business Document, registrert hos Sentralforvalter | Aktøren som er ansvarlig for kommunikasjon med Meldingsformidler. Bør være den samme som over, men kan være en [Databehandler](Aktorer.md)                                                                                                                                             |
 
 Meldingsformidler er ansvarlig for å validere eier-integriteten i
 meldingen på vegne av Sentralforvalter. Meldinger som ikke har gyldig
@@ -58,8 +52,8 @@ Avsender (NAV) tilpasser eget fagsystem og bruker sitt eget
 virksomhetssertifikat  
 </code>
 
-| Felt                        | Verdi\[1\] | Signatur\[2\] | Validering                                                                                                                                                                                                          |
-| --------------------------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Felt     | Verdi\[1\] | Signatur\[1\] | Validering    |
+| --- | --- | --- | --- |
 | Manifest/Avsender           | NAV        | NAV           | Postboks sjekker at Dokumentpakken er signert av NAV, verdien i Manifest/Avsender er NAV og at Manifest/Avsender har samme verdi som DigitalPostMelding/Avsender                                                    |
 | DigitalPostMelding/Avsender | NAV        | \-            | Meldingsformidler sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter)                                                                                      |
 | SBDH/Sender                 | NAV        | NAV           | Meldingsformidler sjekker at signaturen stemmer med verdien i SBDH/Sender (skal være like)                                                                                                                          |
@@ -71,8 +65,8 @@ virksomhetssertifikat
 Avsender (Bunadsrådet) bruker en skytjeneste levert av Acos  
 </code>
 
-| Felt                        | Verdi\[3\]  | Signatur\[4\] | Validering                                                                                                                                                                                                          |
-| --------------------------- | ----------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Felt  | Verdi\[1\]  | Signatur\[1\] | Validering      |
+| --- | --- | --- | --- |
 | Manifest/Avsender           | Bunadsrådet | Acos          | Postboks sjekker at Dokumentpakken er signert av Acos, verdien i Manifest/Avsender er Bunadsrådet og at Manifest/Avsender har samme verdi som DigitalPostMelding/Avsender                                           |
 | DigitalPostMelding/Avsender | Bunadsrådet | \-            | Meldingsformidler sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter)                                                                                      |
 | SBDH/Sender                 | Acos        | Acos          | Meldingsformidler sjekker at signaturen stemmer med verdien i SBDH/Sender (skal være like)                                                                                                                          |
@@ -101,11 +95,4 @@ For mer informasjon se relevante deler av dokumentasjonen.
 1.  Det er brukt organisasjonsnavn i stedet for organisasjonsnummer for
     å gjøre det litt mer lesevennlig.
 
-2.  Det er brukt organisasjonsnavn i stedet for organisasjonsnummer for
-    å gjøre det litt mer lesevennlig.
 
-3.  Det er brukt organisasjonsnavn i stedet for organisasjonsnummer for
-    å gjøre det litt mer lesevennlig.
-
-4.  Det er brukt organisasjonsnavn i stedet for organisasjonsnummer for
-    å gjøre det litt mer lesevennlig.
