@@ -10,7 +10,7 @@ Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
 
 - [Avsender](Avsender.md)
-- [DigitalpostInfo](DigitalpostInfo.md)
+- [DigitalpostInfo](DigitalPostInfo.md)
 - [Dokument](Dokument.md)
 - [DokumentData](DokumentData.md)
 - [Dokumentpakkefingeravtrykk](Dokumentpakkefingeravtrykk.md)
