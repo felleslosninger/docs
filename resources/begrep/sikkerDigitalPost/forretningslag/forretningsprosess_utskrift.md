@@ -44,7 +44,7 @@ post](prosess_for_sending_av_papirpost.png
     [tilstandsdiagrammet](avsender_tilstanddiagram.md) for sikker digital
     post.
 
-2.  [Mottakskvittering](../meldinger/Mottakskvittering.md) sendes så fort
+2.  [Mottakskvittering](../meldinger/MottaksKvittering.md) sendes så fort
     utskriftstjenesten har mottatt
     [DigitalPostmelding](../meldinger/DigitalPostMelding.md) og lagt den i
     kø for utskrift. Altså kort tid etter at
@@ -56,7 +56,7 @@ post](prosess_for_sending_av_papirpost.png
     [LeveringsKvittering](../meldinger/LeveringsKvittering.md). Disse vil
     dermed komme tilbake i daglige puljer til Avsender.
 
-4.  [ReturPostkvittering](../meldinger/ReturPostkvittering.md) blir kun
+4.  [ReturPostkvittering](../meldinger/Returpostkvittering.md) blir kun
     dersom returpost håndtering er bestilt i
     [DigitalPostmelding](../meldinger/DigitalPostMelding.md). Returpost som
     er fysisk ødelagt slik at ikke posten kan identifiseres vil bli
