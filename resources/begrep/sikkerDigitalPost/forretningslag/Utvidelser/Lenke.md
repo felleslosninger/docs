@@ -1,14 +1,9 @@
------
+---
 
-layout: default  
 title: Lenke utenfor brev  
-headtitle: Sikker digital post - Lenke utenfor brev  
-group: forretningslag
-
-id: Forretningslag/Utvidelser/Lenke  
-next: Forretningslag/Utvidelser/Arrangement
-
------
+permalink: sdp_lenke.html
+sidebar:
+---
 
   - Definisjon  
     Lenke utenfor brev
@@ -25,8 +20,8 @@ next: Forretningslag/Utvidelser/Arrangement
 
 ### Attributer
 
-| Identifikator | Kardinalitet | Datatype              |
-| ------------- | ------------ | --------------------- |
+| Identifikator | Kardinalitet | Datatype   |
+| --- | --- | --- |
 | url           | 1..1         | HttpLenke             |
 | beskrivelse   | 0..1         | LenkeBeskrivelseTekst |
 | knappTekst    | 0..1         | LenkeKnappTekst       |
