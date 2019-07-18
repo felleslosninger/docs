@@ -1,11 +1,9 @@
------
-
-layout: default  
+---
 title: Standard Business Document  
 headtitle: Sikker digital post - Standard Business Document  
 group: forretningslag
-
-id: Forretningslag/StandardBusinessDocument
+permalink: standardbusinessdocument_index.html
+sidebar:
 
 children:  
 \- name: Forretningslag/StandardBusinessDocumentHeader  
@@ -13,8 +11,6 @@ children:
 \- name: Forretningslag/Receiver  
 \- name: Forretningslag/DocumentIdentification  
 \- name: Forretningslag/BusinessScope
-
-next: Forretningslag/StandardBusinessDocumentHeader
 
 -----
 
@@ -59,5 +55,5 @@ dokumentpakken
 
 | Identifikator                                                    | Kardinalitet | Datatype                    | Kommentar                                                                          |
 | ---------------------------------------------------------------- | ------------ | --------------------------- | ---------------------------------------------------------------------------------- |
-| [StandardBusinessDocumentHeader](StandardBusinessDocumentHeader) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
-| [Melding](../../meldinger/)                                      | 0..1         | [Melding](../../meldinger/) | Forretningsmelding identifisert i [DocumentIdentification](DocumentIdentification) |
+| [StandardBusinessDocumentHeader](StandardBusinessDocumentHeader.md) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
+| [Melding](../../meldinger/)                                      | 0..1         | [Melding](../../meldinger/) | Forretningsmelding identifisert i [DocumentIdentification](DocumentIdentification.md) |
