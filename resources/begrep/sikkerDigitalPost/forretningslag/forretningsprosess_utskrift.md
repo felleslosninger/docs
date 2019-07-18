@@ -56,7 +56,7 @@ post](prosess_for_sending_av_papirpost.png
     [LeveringsKvittering](../meldinger/LeveringsKvittering.md). Disse vil
     dermed komme tilbake i daglige puljer til Avsender.
 
-4.  [ReturPostkvittering](../meldinger/Returpostkvittering.md) blir kun
+4.  [ReturPostkvittering](../meldinger/ReturpostKvittering.md) blir kun
     dersom returpost håndtering er bestilt i
     [DigitalPostmelding](../meldinger/DigitalPostMelding.md). Returpost som
     er fysisk ødelagt slik at ikke posten kan identifiseres vil bli
