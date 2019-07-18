@@ -23,7 +23,7 @@ Document](../forretningslag/StandardBusinessDocument/). Denne klassen
 inneholder to klasser:
 
   - Det ene er
-    [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
+    [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
     som er felles for alle meldinger. 
   - Den andre er Meldingsklassen som enten er av typen Digitalpost, Feil
     eller Kvittering. Kvittering kan være av typen
@@ -39,19 +39,19 @@ Meldingen er en av følgende typer beskrevet i diagrammet under.
 ### Meldingstypene
 
 Meldingstypen er definert i
-[DocumentIdentification](../forretningslag/StandardBusinessDocument/DocumentIdentification)
+[DocumentIdentification](../forretningslag/StandardBusinessDocument/DocumentIdentification.md)
 og er en av følgende:
 
 | Type | Beskrivelse |
 | --- | --- |
-| [Digitalpost](DigitalPostMelding) | Forsendelse av digital post |
-| [LeveringsKvittering](LeveringsKvittering) | Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt |
-| [ÅpningsKvittering](AapningsKvittering) | Kvittering fra Innbygger for at digital post er åpnet |
-| [Varslingfeilet](VarslingfeiletKvittering) | Kvittering for at en spesifisert varsling ikke har blitt sendt |
-| [MottaksKvittering](MottaksKvittering) | Kvittering fra utskrift og forsendelsestjenesten om at melding er mottatt og lagt til print |
-| [ReturpostKvittering](ReturpostKvittering) | Kvittering fra utskrift og forsendelsestjenesten om at posten ikke har blitt levert til Mottaker. |
-| [Feil](Feil) | Generell melding om at det har skjedd en feil. |
-| [FlyttetDigitalpost](FlyttetDigitalPostMelding) | For flytting av post fra en postkasse til en annen. Brukes kun i mellom postkasseleverandørene |
+| [Digitalpost](DigitalPostMelding.md) | Forsendelse av digital post |
+| [LeveringsKvittering](LeveringsKvittering.md) | Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt |
+| [ÅpningsKvittering](AapningsKvittering.md) | Kvittering fra Innbygger for at digital post er åpnet |
+| [Varslingfeilet](VarslingfeiletKvittering.md) | Kvittering for at en spesifisert varsling ikke har blitt sendt |
+| [MottaksKvittering](MottaksKvittering.md) | Kvittering fra utskrift og forsendelsestjenesten om at melding er mottatt og lagt til print |
+| [ReturpostKvittering](ReturpostKvittering.md) | Kvittering fra utskrift og forsendelsestjenesten om at posten ikke har blitt levert til Mottaker. |
+| [Feil](Feil.md) | Generell melding om at det har skjedd en feil. |
+| [FlyttetDigitalpost](FlyttetDigitalPostMelding.md) | For flytting av post fra en postkasse til en annen. Brukes kun i mellom postkasseleverandørene |
 
 ### Felles meldingsatributt
 
@@ -76,7 +76,7 @@ Det er satt følgende krav til signaturen av forretningsmeldingene:
   - Fingeravtrykksalgoritmen i referansene skal være
     <http://www.w3.org/2001/04/xmlenc#sha256>
   - Signature skal være en signatur av Meldingen og signatur av
-    [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader).
+    [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md).
   - BØR være signert av
-    [Behandlingsansvarlig](../forretningslag/Aktorer), men KAN signeres
-    av [Databehandler](../forretningslag/Aktorer).
+    [Behandlingsansvarlig](../forretningslag/Aktorer.md), men KAN signeres
+    av [Databehandler](../forretningslag/Aktorer.md).
