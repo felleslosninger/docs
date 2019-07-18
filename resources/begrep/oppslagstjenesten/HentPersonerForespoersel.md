@@ -4,7 +4,6 @@ permalink: ot_hentpersonerforespoersel.html
 datatype: Metode
 sidebar:
 ---
-{% include variables.html %}
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
