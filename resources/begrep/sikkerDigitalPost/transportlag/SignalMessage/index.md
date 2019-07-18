@@ -25,10 +25,10 @@ transportkvitteringer eller en forespørsel om å få levert en melding.
 
 | Identifikator | Kardinalitet | Datatype | Kommentar |
 | --- | --- | --- | --- |
-| [MessageInfo](../UserMessage/MessageInfo) | 1..1 | eb:MessageInfo | Samme element som i UserMessage - intern identifikator og timestamp |
-| [PullRequest](PullRequest) | 0..1 | eb:PullRequest | Forespørsel om å få levert en ventende melding |
-| [Receipt](Receipt) | 0..1 | eb:Receipt | Standard kvittering relatert til en UserMessage |
-| [Error](Error) | 0..unbounded | eb:Error | Standardfeilmelding relatert til en melding |
+| [MessageInfo](../UserMessage/MessageInfo.md) | 1..1 | eb:MessageInfo | Samme element som i UserMessage - intern identifikator og timestamp |
+| [PullRequest](PullRequest.md) | 0..1 | eb:PullRequest | Forespørsel om å få levert en ventende melding |
+| [Receipt](Receipt.md) | 0..1 | eb:Receipt | Standard kvittering relatert til en UserMessage |
+| [Error](Error.md) | 0..unbounded | eb:Error | Standardfeilmelding relatert til en melding |
 
 ### Eksempel
 
