@@ -19,9 +19,7 @@ Meldingen som sendes i sikker digital post inneholder følgende:
 Alt sammen er pakken inn i en SOAP konvolutt slik det er beskrevet i
 tegningen under.
 
-[![Figuren viser en overordnet beskrivelse av meldingen i Sikker digital
-post](meldingsstruktur_enkel.jpg
-"Figuren viser en overordnet beskrivelse av meldingen i Sikker digital post")](meldingsstruktur_enkel.jpg)
+
 
 ### Standarder benyttet i grensesnittet
 
