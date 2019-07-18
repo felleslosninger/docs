@@ -39,6 +39,6 @@ for å tilgjengeliggjøre meldingen.
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
 | [Avsender](../begrep/Avsender) | 1..1 | [sdp:Avsender](../begrep/Avsender.md) |
 | [Mottaker](../begrep/Mottaker) | 1..1 | [sdp:Mottaker](../begrep/Mottaker.md) |
-| [Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk) | 1..1 | [sdp:Dokumentpakkefingeravtrykk (../begrep/Dokumentpakkefingeravtrykk.md) |
+| [Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk) | 1..1 | [sdp:Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md) |
 | [FysiskpostInfo](../begrep/FysiskPostInfo.md) | 0..1 | [sdp:FysiskpostInfo](../begrep/FysiskPostInfo.md) |
 | [DigitalpostInfo](../begrep/DigitalPostInfo.md) | 0..1 | [sdp:DigitalpostInfo](../begrep/DigitalPostInfo.md) |
