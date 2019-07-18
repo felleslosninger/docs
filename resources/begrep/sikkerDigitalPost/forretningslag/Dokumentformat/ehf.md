@@ -1,17 +1,10 @@
------
-
-layout: default  
+---
 title: ehf  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
-
-id: Forretningslag/EHF dokument
-
-next: Forretningslag/Sikkerhet
-
------
-
-{% include variables.html %}
+permalink: sdp_ehf.html
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
