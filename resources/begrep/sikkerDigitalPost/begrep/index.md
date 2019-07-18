@@ -1,4 +1,4 @@
----
+﻿---
 title: Begreper  
 permalink: begrep_index.html
 sidebar:
@@ -8,7 +8,7 @@ sidebar:
 
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
-
+<!---
 <ul>
 
 {% assign sortedPages = site.pages | sort: ‘title’ %}
@@ -26,3 +26,4 @@ for hver datatype. Følgende datatyper er definert:
 {% endfor %}
 
 </ul>
+-->
