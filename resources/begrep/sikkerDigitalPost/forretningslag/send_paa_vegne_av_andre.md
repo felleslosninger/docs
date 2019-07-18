@@ -1,15 +1,9 @@
------
+---
 
-layout: default  
 title: Sending av digital post på vegne av andre  
-headtitle: Digital postkasse til innbyggere  
-group: forretningslag
-
-id: Forretningslag/SendForAndre
-
-next: Forretningslag/Forretningsprosess\_kvittering
-
------
+permalink: sdp_send_paa_vegne_av_andre.html
+sidebar:
+---
 
 ## Sending av Post på vegne av andre
 
@@ -46,7 +40,7 @@ for alle de underliggende prosjektene som er postavsender.
 Både Kreftregisteret og de underliggende prosjektene er opprettet med
 kontoer hos postkasseleverandørene.  
 Kreftregisteret bruker
-[avsenderidentifikator](/Felles/avsenderidentifikator) for å skille på
+[avsenderidentifikator](../../felles/avsenderidentifikator.md) for å skille på
 hvilket prosjekt som er postavsender.
 
 [![Bruk av avsenderidentifikator](kreftregister_eksempel.png
