@@ -1,17 +1,10 @@
------
-
-layout: default  
+--- 
 title: MIME type  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
-
-id: Forretningslag/MIME type
-
-next: Forretningslag/Sikkerhet
-
------
-
-{% include variables.html %}
+permalink: sdp_mimetypes.md
+sidebar:
+---
 
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
