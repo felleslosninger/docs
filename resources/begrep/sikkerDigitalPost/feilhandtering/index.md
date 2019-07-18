@@ -2,12 +2,6 @@
 
 title: Feilhåndtering  
 permalink: sdp_feil_index.html
-
-children:  
-\- name: Feilhåndtering/Forvaltning  
-\- name: Feilhåndtering/Transport  
-\- name: Feilhåndtering/Forretning  
-\- name: Feilhåndtering/Feilhåndteringsprosess
 sidebar:
 ---
 
