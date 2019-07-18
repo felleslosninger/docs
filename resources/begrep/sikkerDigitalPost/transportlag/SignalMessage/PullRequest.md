@@ -20,7 +20,7 @@ sidebar:
 #### Egenskaper
 
 Forespørsel om å få tilsendt en melding. Må angi
-[mpc](../UserMessage/mpc) attributten til å identifisere hvilken
+[mpc](../UserMessage/mpc.md) attributten til å identifisere hvilken
 organisasjon en ønsker å hente meldinger for.
 
 | Identifikator | Type | Kardinalitet | Kommentar |
