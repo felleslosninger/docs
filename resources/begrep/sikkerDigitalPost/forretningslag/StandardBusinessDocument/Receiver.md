@@ -1,17 +1,10 @@
------
-
-layout: default  
+--- 
 title: Receiver  
 headtitle: Sikker digital post - Standard Business Document  
 group: forretningslag
-
-id: Forretningslag/Receiver
-
-next: Forretningslag/DocumentIdentification
-
------
-
-{% include variables.html %}
+permalink: sdp_receiver.html
+sidebar:
+---
 
 ### {{page.title}}
 
@@ -24,25 +17,25 @@ next: Forretningslag/DocumentIdentification
   - Kilde  
     GS1
   - Kommentar  
-    Regler for hvem som opptrer som [Receiver](Receiver) er beskrevet
+    Regler for hvem som opptrer som [Receiver](Receiver.md) er beskrevet
     under.
 
-\*For [digital post meldinger](../../meldinger/DigitalPostMelding) er
+\*For [digital post meldinger](../../meldinger/DigitalPostMelding.md) er
 [Receiver](Receiver*)
 
-  - [Postkasseleverandør](../Aktorer)
+  - [Postkasseleverandør](../Aktorer.md)
 
-\*For [digital post kvitteringer](../../meldinger/KvitteringsMelding) er
+\*For [digital post kvitteringer](../../meldinger/KvitteringsMelding.md) er
 [Receiver](Receiver*)
 
-  - Den [Aktør](../Aktorer) som sto som [Sender](Sender) for [digital
-    post meldingen](../../meldinger/DigitalPostMelding).
+  - Den [Aktør](../Aktorer) som sto som [Sender](Sender.md) for [digital
+    post meldingen](../../meldinger/DigitalPostMelding.md).
 
 ### Attributter
 
 | Identifikator | Kardinalitet | Datatype                                                     | Kommentar |
 | ------------- | ------------ | ------------------------------------------------------------ | --------- |
-| Identifier    | 1..1         | [virksomhetsidentifikator](/Felles/virksomhetsidentifikator) |           |
+| Identifier    | 1..1         | [virksomhetsidentifikator](/Felles/virksomhetsidentifikator.md) |           |
 
 ### XML eksempel
 
