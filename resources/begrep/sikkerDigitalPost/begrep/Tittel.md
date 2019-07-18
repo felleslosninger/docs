@@ -1,6 +1,6 @@
 --- 
 title: Tittel  
-permalink: sdp_tittel.md
+permalink: sdp_tittel.html
 sidebar:
 ---
 
