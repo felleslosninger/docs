@@ -2,14 +2,6 @@
  
 title: Forretninglag  
 permalink: sdp_forretningslag_index.html
-children:  
-\- name: Forretningslag/Aktører  
-\- name: Forretningslag/Forretningsprosess  
-\- name: Forretningslag/SendForAndre  
-\- name: Forretningslag/Forretningsprosess\_kvittering  
-\- name: Forretningslag/Tilstand  
-\- name: Forretningslag/Forretningsmeldingsstruktur  
-\- name: Forretningslag/ForsendelsesStørrelse
 sidebar:
 ---
 
