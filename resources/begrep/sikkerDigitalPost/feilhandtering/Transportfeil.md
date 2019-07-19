@@ -12,7 +12,7 @@ meldingsutveksling. Transportlaget benytter
 [AS 4](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/profiles/AS4-profile/v1.0/os/AS4-profile-v1.0-os.html)
 og feil i transportlaget skal følge  
 [ebMS 3.0 spesifikasjonen for
-feilhåndtering](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html\<notextile\>#6.Error)
+feilhåndtering](http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms_core-3.0-spec-os.html)
 Handling|</notextile>outline
 
 I feilsituasjoner vil tjenestene returnere en SOAP-fault. Denne vil både
