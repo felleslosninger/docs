@@ -54,7 +54,7 @@ Katalogen er bygd opp av følgende kapitler:
 | [Forretningslag](forretningslag/index.md) | Aktører, prosesser og overordnet meldingsstruktur/format |
 | [Dokumentpakke](forretningslag/Dokumentpakke/index.md) | Oppbygging av selve dokumentpakken som skal til mottaker |
 | [Utvidelser](forretningslag/Utvidelser/index.md) | Utvidelser som beriker dokumenter i innbyggers postkasse |
-| [Utskrift og forsendelse](utskrift/index.md) | Mer om utskriftstjenesten knyttet til digital post |
+| [Utskrift og forsendelse](utskrift/sdp_index_utskrift.md) | Mer om utskriftstjenesten knyttet til digital post |
 | [Forretningsmeldinger](meldinger/index.md) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
 | [Standard Business Document](forretningslag/StandardBusinessDocument/index.md) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
 | [Transportlag](transportlag/index.md) | Rammeverk for overføring av meldinger |
