@@ -7,7 +7,7 @@ sidebar:
 ---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Person>
   - Term  
     {{page.title}}
   - Definisjon  
@@ -84,7 +84,8 @@ informasjonsbehov “VarslingsStatus”.
 
 #### Xml eksempler
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <ns2:Person>
     <ns2:personidentifikator>01012295312</ns2:personidentifikator>
     <ns2:reservasjon>JA</ns2:reservasjon>
@@ -104,7 +105,8 @@ informasjonsbehov “VarslingsStatus”.
 
 Person med utgått kontaktinformasjon:
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <ns2:Person>
     <ns2:personidentifikator>01012295312</ns2:personidentifikator>
     <ns2:reservasjon>NEI</ns2:reservasjon>
