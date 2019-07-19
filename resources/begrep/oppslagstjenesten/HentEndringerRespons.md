@@ -42,7 +42,8 @@ sidebar:
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
       <ns3:HentEndringerRespons fraEndringsNummer="1001" senesteEndringsNummer="2440049" tilEndringsNummer="2000" xmlns:ns2="http://begrep.difi.no" xmlns:ns3="http://kontaktinfo.difi.no/xsd/oppslagstjeneste/14-05">
          <ns2:Person>
             <ns2:personidentifikator>01012295312</ns2:personidentifikator>
