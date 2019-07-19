@@ -115,4 +115,4 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
     class 3.crt](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/142/17412)
 
 CA sertfikatene ligger også tilgjengelige her:
-[https://github.com/difi/felleslosninger/tree/gh-pages/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater](sertifikater/)
+[sertifikater](https://github.com/difi/felleslosninger/tree/gh-pages/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater)
