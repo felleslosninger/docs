@@ -13,7 +13,7 @@ sidebar:
     {{page.title}}
   - Definisjon  
     En digital post med tilhørende
-    [Dokumentpakke](../forretningslag/Dokumentpakke/) som flyttes fra en
+    [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) som flyttes fra en
     postkasseleverandør til en annen
   - Kilde  
     DIFI
