@@ -52,7 +52,7 @@ Avsender (NAV) tilpasser eget fagsystem og bruker sitt eget
 virksomhetssertifikat  
 </code>
 
-| Felt     | Verdi\[1\] | Signatur\[1\] | Validering    |
+| Felt     | Verdi[1](#link1) | Signatur[1](#link1) | Validering    |
 | --- | --- | --- | --- |
 | Manifest/Avsender           | NAV        | NAV           | Postboks sjekker at Dokumentpakken er signert av NAV, verdien i Manifest/Avsender er NAV og at Manifest/Avsender har samme verdi som DigitalPostMelding/Avsender                                                    |
 | DigitalPostMelding/Avsender | NAV        | \-            | Meldingsformidler sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter)                                                                                      |
@@ -65,7 +65,7 @@ virksomhetssertifikat
 Avsender (Bunadsrådet) bruker en skytjeneste levert av Acos  
 </code>
 
-| Felt  | Verdi\[1\]  | Signatur\[1\] | Validering      |
+| Felt  | Verdi[1](#link1)  | Signatur[1](#link1) | Validering      |
 | --- | --- | --- | --- |
 | Manifest/Avsender           | Bunadsrådet | Acos          | Postboks sjekker at Dokumentpakken er signert av Acos, verdien i Manifest/Avsender er Bunadsrådet og at Manifest/Avsender har samme verdi som DigitalPostMelding/Avsender                                           |
 | DigitalPostMelding/Avsender | Bunadsrådet | \-            | Meldingsformidler sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter)                                                                                      |
@@ -92,6 +92,7 @@ Avsender (Bunadsrådet) bruker en skytjeneste levert av Acos
 
 For mer informasjon se relevante deler av dokumentasjonen.
 
+<a name="link1">
 1.  Det er brukt organisasjonsnavn i stedet for organisasjonsnummer for
     å gjøre det litt mer lesevennlig.
 
