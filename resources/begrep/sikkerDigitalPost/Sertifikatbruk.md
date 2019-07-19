@@ -8,7 +8,7 @@ sidebar:
 ## Innledning
 
 Her beskrives det kort hvordan hver del av [Digital
-postforsendelse](meldingsstruktur) krypteres og signeres.
+postforsendelse](meldingsstruktur.md) krypteres og signeres.
 
 ### Omfang
 
