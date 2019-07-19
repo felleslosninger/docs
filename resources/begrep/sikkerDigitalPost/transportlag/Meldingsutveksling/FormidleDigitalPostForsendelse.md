@@ -21,7 +21,7 @@ et variabelsett. For disse er formen %variabelnavn% benyttet.
 | P-Mode | Beskrivelse | Verdi |
 | --- | --- | --- |
 | PMode.ID | Unik identifikator for paramtersettet | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md)%-"FormidleDigitalPostForsendelse"-%versjon/løpenummer%) |
-| PMode.Agreement | Unik identifikator for samarbeidsprotokollen | "http://begrep.difi.no/SikkerDigitalPost/1.0/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse" |
+| PMode.Agreement | Unik identifikator for samarbeidsprotokollen | ["http://begrep.difi.no/SikkerDigitalPost/1.0/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse"]({{pageMinorUrl}}) |
 | PMode.MEP | Message Exchange Pattern | “http://www.oasis-open.org/committees/ebxml-msg/one-way” |
 | PMode.MEPbinding | Retning på kommunikasjon, push eller pull | “http://www.oasis-open.org/committees/ebxml-msg/push” |
 | PMode.Initiator.Party | Identifikator for den som initierar sendingen | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md)% |
