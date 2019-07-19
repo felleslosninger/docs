@@ -64,4 +64,4 @@ Katalogen er bygd opp av følgende kapitler:
 Vil du ha tak i mer tekniske detaljar se gjerne her:
 
   - [Xml Eksempel på meldingar](eksempler/index.md)
-  - [XML Schema Definition filer](xsd/index.md)
+  - [XML Schema Definition filer](xsd/README.md)
