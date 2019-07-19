@@ -12,7 +12,7 @@ conformance profile** som rammeverk for å overføre
 [Forretningsmeldinger](../forretningslag/meldingsformat.md).
 
 I praksis medfører dette at forretningsmeldingen blir pakket inn som en
-SOAP melding som illustrert i [eksemplene](../eksempler).
+SOAP melding som illustrert i [eksemplene](../eksempler/index.md).
 
 ### Illustrasjon
 
