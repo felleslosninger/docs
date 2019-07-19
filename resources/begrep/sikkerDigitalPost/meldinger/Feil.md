@@ -8,7 +8,7 @@ sidebar:
 ### {{page.title}}
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/Feil>
   - Term  
     {{page.title}}
   - Definisjon  
