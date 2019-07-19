@@ -22,10 +22,10 @@ sidebar:
 
 UserMessage blir brukt når innholdet i SOAP-meldingen er en
 forretningsmelding. I sikker digial post er type forretningsmelding
-definert i [meldingen](../../meldinger).  
+definert i [meldingen](../../meldinger/index.md).  
 eb:UserMessage skal bygges opp ved å tolke innholdet i meldingen som
 skal formidles, samt settinger angitt i
-[P-Modes](../Meldingsutveksling/)
+[P-Modes](../Meldingsutveksling/index.md)
 
 ### Attributter
 
