@@ -3,23 +3,12 @@
 title: Forretningsmeldinger  
 permalink: sdk_index.html
 sidebar:
-
-children:  
-\- name: Forretningsmeldinger/Digitalpost  
-\- name: Forretningsmeldinger/Leveringskvittering  
-\- name: Forretningsmeldinger/Åpningskvittering  
-\- name: Forretningsmeldinger/Varslingfeiletkvittering  
-\- name: Forretningsmeldinger/MottaksKvittering  
-\- name: Forretningsmeldinger/ReturpostKvittering  
-\- name: Forretningsmeldinger/Feil  
-\- name: Forretningsmeldinger/FlyttetDigitalpost
-
 ---
 
 ## Forretningsmeldingene i Sikker Digital Post
 
 Alle meldinger er beskrevet i [Standard Business
-Document](../forretningslag/StandardBusinessDocument/). Denne klassen
+Document](../forretningslag/StandardBusinessDocument/index.md). Denne klassen
 inneholder to klasser:
 
   - Det ene er
