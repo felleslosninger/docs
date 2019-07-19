@@ -24,7 +24,7 @@ kunne bli returnert til Avsender.
 Ved feil i
 [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil meldingsformidler returnere en [SignalMessage med
-Error](/resources/begrep/sikkerDigitalPost/transportlag/SignalMessage/index.md).
+Error](/felleslosninger/sdp_index_signalmessage.html).
 
 Denne metoden for feilhåndtering fra Meldingsformidler er valgt for å gi
 en rask, enkel og sikker feilhåndtering fra Meldingsformidler.  
