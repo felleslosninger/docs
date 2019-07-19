@@ -1,7 +1,7 @@
 ---
 
 title: Feil  
-permalink: sdk_feil.html
+permalink: sdp_feil.html
 sidebar: 
 ---
 
