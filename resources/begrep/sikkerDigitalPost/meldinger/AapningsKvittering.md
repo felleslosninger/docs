@@ -23,7 +23,7 @@ sidebar:
     i [digitalpostinfo](../begrep/DigitalPostInfo.md).  
     [Mottaker](../begrep/Mottaker.md) må aksepteres at det sendes en
     [ÅpningsKvittering](AapningsKvittering.md) til
-    [Avsender](../forretningslag/StandardBusinessDocument/Sender) for å
+    [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) for å
     få lest den digital posten.  
     Mangel på [ÅpningsKvittering](AapningsKvittering.md) betyr at
     [Mottaker](../begrep/Mottaker.md) ikke har lest dokumentet.
@@ -48,7 +48,7 @@ For mer informasjon om bruk av denne funksjonaliteten kan man ta kontakt
 med Sentralforvalter.
 
 ### Attributer
-| --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
 | tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
