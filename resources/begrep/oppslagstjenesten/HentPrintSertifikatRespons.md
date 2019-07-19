@@ -31,7 +31,7 @@ sidebar:
 | Term                                                               | Kardinalitet |
 | ------------------------------------------------------------------ | ------------ |
 | [postkasseleverandoerAdresse](../felles/postkasseleverandoerAdresse.md) | 1..1         |
-| [X509Sertifikat](../felles/X509Sertifikat.md)                           | 1..1         |
+| [X509Sertifikat](../felles/x509Sertifikat.md)                           | 1..1         |
 
 #### Xml skjema
 
