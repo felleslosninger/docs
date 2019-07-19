@@ -5,7 +5,7 @@ datatype: Metode
 ---
 
   - Identifikator  
-    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerRespons
+    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerRespons>
   - Term  
     {{page.title}}
   - Definisjon  
