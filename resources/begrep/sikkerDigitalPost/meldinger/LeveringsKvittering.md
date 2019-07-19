@@ -31,7 +31,7 @@ tilgjengeliggjort.
 Kvitteringen vil bli sendt så fort
 [Postkassleverandør](../forretningslag/Aktorer.md) kan garantere dette,
 det vil si at [Leveringskvitteringen](LeveringsKvittering.md) vil bli sendt
-før [virkningsdato](../../felles/virkningsdato.md).
+før Skal være link til /felles/virkningsdato.md.
 
 #### For Fysiskpost forsendelser
 
