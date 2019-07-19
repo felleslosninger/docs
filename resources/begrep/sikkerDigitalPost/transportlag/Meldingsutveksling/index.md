@@ -49,8 +49,8 @@ P-Mode parametere:
 
 #### Message Partition Channel (mpc)
 
-Sentralt i utvekslingsmønsteret er [Message Partition Channel
-(mpc)](../UserMessage/mpc) som blir brukt til å angi informasjon om
+Sentralt i utvekslingsmønsteret er (Link til Message Partition Channel
+skla her(../UserMessage/mpc)) som blir brukt til å angi informasjon om
 hvilken kø man formidler/sjekker informasjon i. Denne blir brukt til å
 angi prioritet på meldingen, samt støtte at en teknisk avsender har
 håndterer flere avsendere.
@@ -117,4 +117,4 @@ duplikater.
 
 Det er utarbeidet eksempler på SOAP meldinger knyttet til flyt
 diagrammet over.  
-Eksemplene finnes [her](../../eksempler/soap/).
+Eksemplene finnes (Link til eksempler her(../../eksempler/soap/)).
