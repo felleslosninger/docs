@@ -6,7 +6,7 @@ sidebar:
 ---
 
   - Identifikator  
-    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPrintSertifikatForespoersel
+    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPrintSertifikatForespoersel>
   - Term  
     {{page.title}}
   - Definisjon  
