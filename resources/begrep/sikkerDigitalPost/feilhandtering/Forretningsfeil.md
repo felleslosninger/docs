@@ -24,7 +24,7 @@ kunne bli returnert til Avsender.
 Ved feil i
 [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil meldingsformidler returnere en [SignalMessage med
-Error](../transportlag/SignalMessage/index.md).
+Error](../transportlag/SignalMessage/).
 
 Denne metoden for feilhåndtering fra Meldingsformidler er valgt for å gi
 en rask, enkel og sikker feilhåndtering fra Meldingsformidler.  
@@ -33,7 +33,7 @@ nærmere transportlaget, dette er årsaken til at feil i
 adresseringsinformasjonen i
 [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil resultere i en [SignalMessage med
-Error](../transportlag/SignalMessage/index.md) og ikke en egen forretningsfeil
+Error](../transportlag/SignalMessage/) og ikke en egen forretningsfeil
 som Avsender må hente igjennom kvitteringsgrensesnittet.
 
 ### Manglende Leveringskvittering
