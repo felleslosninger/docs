@@ -7,7 +7,7 @@ sidebar:
 ---
 
   - Identifikator  
-    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/KanVelgeSikkerDigitalPostkasseRespons
+    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/KanVelgeSikkerDigitalPostkasseRespons>
   - Term  
     {{page.title}}
   - Definisjon  
