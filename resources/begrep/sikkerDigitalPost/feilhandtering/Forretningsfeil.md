@@ -33,7 +33,7 @@ nærmere transportlaget, dette er årsaken til at feil i
 adresseringsinformasjonen i
 [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil resultere i en [SignalMessage med
-Error](../transportlag/SignalMessage/index.md) og ikke en egen forretningsfeil
+Error](/felleslosninger/sdp_index_signalmessage.html) og ikke en egen forretningsfeil
 som Avsender må hente igjennom kvitteringsgrensesnittet.
 
 ### Manglende Leveringskvittering
