@@ -6,7 +6,7 @@ sidebar:
 ---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerForespoersel
   - Term  
     {{page.title}}
   - Definisjon  
@@ -49,7 +49,8 @@ vil ignoreres.
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <ns:HentPersonerForespoersel>
  <ns:informasjonsbehov>Kontaktinfo</ns:informasjonsbehov>
  <ns:informasjonsbehov>Sertifikat</ns:informasjonsbehov>
