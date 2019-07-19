@@ -8,7 +8,7 @@ sidebar:
 ### {{page.title}}
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+   <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/LeveringsKvittering>
   - Term  
     {{page.title}}
   - Definisjon  
@@ -31,7 +31,7 @@ tilgjengeliggjort.
 Kvitteringen vil bli sendt så fort
 [Postkassleverandør](../forretningslag/Aktorer.md) kan garantere dette,
 det vil si at [Leveringskvitteringen](LeveringsKvittering.md) vil bli sendt
-før [virkningsdato](/Felles/virkningsdato)
+før [virkningsdato](/Felles/virkningsdato.md)
 
 #### For Fysiskpost forsendelser
 
