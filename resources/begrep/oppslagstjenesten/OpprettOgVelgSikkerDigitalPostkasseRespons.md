@@ -22,7 +22,7 @@ sidebar:
   - Kommentar  
     Webservice response som Postkasseleverandør mottar fra
     Kontaktregisteret som svar på
-    [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgPostkasseForespoersel.md)
+    [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md)
 
 #### Attributer
 
