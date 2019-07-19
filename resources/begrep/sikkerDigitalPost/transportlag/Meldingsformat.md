@@ -1,7 +1,7 @@
 ---
 
 title: Meldingsformat  
-permalink: sdp_meldingsformat.html
+permalink: sdp_transportlag_meldingsformat.html
 sidebar:
 ---
 
