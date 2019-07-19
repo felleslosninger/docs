@@ -20,15 +20,15 @@ et variabelsett. For disse er formen %variabelnavn% benyttet.
 
 | P-Mode | Beskrivelse | Verdi |
 | --- | --- | --- |
-| PMode.ID | Unik identifikator for paramtersettet | [Sender](../../forretningslag/StandardBusinessDocument/Sender%%-"FormidleDigitalPostForsendelse"-%versjon/løpenummer%) |
-| PMode.Agreement | Unik identifikator for samarbeidsprotokollen | [http://begrep.difi.no/SikkerDigitalPost/1.0/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse]({{pageMinorUrl}}) |
+| PMode.ID | Unik identifikator for paramtersettet | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md)%-"FormidleDigitalPostForsendelse"-%versjon/løpenummer%) |
+| PMode.Agreement | Unik identifikator for samarbeidsprotokollen | "http://begrep.difi.no/SikkerDigitalPost/1.0/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse" |
 | PMode.MEP | Message Exchange Pattern | “http://www.oasis-open.org/committees/ebxml-msg/one-way” |
 | PMode.MEPbinding | Retning på kommunikasjon, push eller pull | “http://www.oasis-open.org/committees/ebxml-msg/push” |
-| PMode.Initiator.Party | Identifikator for den som initierar sendingen | [Sender](../../forretningslag/StandardBusinessDocument/Sender.md) |
-| PMode.Initiator.Role | Rolle for den som initierar sendinga | “”Avsender“”:../../begrep/Avsender.md |
+| PMode.Initiator.Party | Identifikator for den som initierar sendingen | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md)% |
+| PMode.Initiator.Role | Rolle for den som initierar sendinga | [”Avsender“](../../begrep/Avsender.md) |
 | PMode.Initiator.Authorization.username | \- ikke relevant - | \- ikke relevant - |
 | PMode.Initiator.Authorization.password | \- ikke relevant - | \- ikke relevant - |
-| PMode.Responder.Party | Identifikator for den som er mottaker | [Receiver](../../forretningslag/StandardBusinessDocument/Receiver.md) |
+| PMode.Responder.Party | Identifikator for den som er mottaker | %[Receiver](../../forretningslag/StandardBusinessDocument/Receiver.md)% |
 | PMode.Responder.Role | Rolle for den som mottar | “urn:sdp:meldingsformidler” |
 | PMode.Responder.Authorization.username | \- ikke relevant - | \- ikke relevant - |
 | PMode.Responder.Authorization.password | \- ikke relevant - | \- ikke relevant - |
