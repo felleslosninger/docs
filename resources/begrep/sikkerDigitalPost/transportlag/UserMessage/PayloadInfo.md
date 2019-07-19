@@ -29,9 +29,9 @@ sidebar:
 
 En SDP forretningsmelding skal alltid ha en PartInfo med referanse til
 SoapBody (som inneholder selve
-[meldingen](../../forretningslag/StandardBusinessDocument), og
+[meldingen](../../forretningslag/StandardBusinessDocument/index.dm), og
 alternativt en til med referanse til [ASIC-E
-vedlegg](../../forretningslag/Dokumentpakke). For denne skal det alltid
+vedlegg](../../forretningslag/Dokumentpakke/index.md). For denne skal det alltid
 angis PartProperties for MimeType (konstant “application/cms”) og
 Content (konstant “sdp:Dokumentpakke”).
 
