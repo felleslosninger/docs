@@ -1,18 +1,8 @@
 ---
 title: Standard Business Document  
-headtitle: Sikker digital post - Standard Business Document  
-group: forretningslag
 permalink: standardbusinessdocument_index.html
 sidebar:
-
-children:  
-\- name: Forretningslag/StandardBusinessDocumentHeader  
-\- name: Forretningslag/Sender  
-\- name: Forretningslag/Receiver  
-\- name: Forretningslag/DocumentIdentification  
-\- name: Forretningslag/BusinessScope
-
------
+---
 
   - Identifikator  
     “http://begrep.difi.no{{ page.url | remove:”/index.html"
