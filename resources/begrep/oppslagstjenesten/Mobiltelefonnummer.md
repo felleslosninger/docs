@@ -7,7 +7,7 @@ sidebar:
 ---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Mobiltelefonnummer>
   - Term  
     {{page.title}}
   - Definisjon  
@@ -31,6 +31,7 @@ sidebar:
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
     <ns2:Mobiltelefonnummer sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">12121212</ns2:Mobiltelefonnummer>
 ```
