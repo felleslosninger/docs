@@ -12,7 +12,7 @@ sidebar:
   - Term  
     {{page.title}}
   - Definisjon  
-    En [Kvitteringsmelding](KvitteringsMelding) til Avsender om at
+    En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at
     varsling til Mottaker har feilet og dermed ikke har blitt utført som
     forutsatt.
   - Kilde  
@@ -28,7 +28,7 @@ sidebar:
     Varslingfeilet kvittering skal sendes seinest dagen etter at
     varslingen var bestilt.
 
-Se [Varsel](../begrep/Varsler) for mer informasjon om bruken av varsel.
+Se [Varsel](../begrep/Varsler.md) for mer informasjon om bruken av varsel.
 
 Årsaken til at postkasseleverandør ikke klarer å sende en slik melding
 kan være en av følgende:
