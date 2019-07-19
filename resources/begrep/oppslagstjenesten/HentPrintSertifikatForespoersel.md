@@ -6,7 +6,7 @@ sidebar:
 ---
 
   - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPrintSertifikatForespoersel
   - Term  
     {{page.title}}
   - Definisjon  
@@ -31,7 +31,8 @@ Ingen input attributter
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://kontaktinfo.difi.no/xsd/oppslagstjeneste/14-05">
    <soapenv:Header/>
    <soapenv:Body>
