@@ -66,7 +66,7 @@ Støtte ikke påkrevd i profilen.
 | ---| --- |
 | PMode\[1\].Security.WSSVersion | “1.1” |
 | PMode\[1\].Security.X509.Sign | Timestamp, eb:Messaging, SOAP Body, Attachment |
-| PMode\[1\].Security.X509.Signature.Certificate | [Sender](../../forretningslag/StandardBusinessDocument/Sender.md) sitt sertifikat |
+| PMode\[1\].Security.X509.Signature.Certificate | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md) sitt sertifikat% |
 | PMode\[1\].Security.X509.Signature.HashFunction | “SHA-256” |
 | PMode\[1\].Security.X509.Signature.Algorithm | “RSA-SHA256” |
 | PMode\[1\].Security.X509.Encryption.Encrypt | \- ikke relevant - |
