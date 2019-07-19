@@ -38,62 +38,30 @@ Oppslagstjenesten se klassedefinisjonen for [Person](Person.md).
 Følgende liste gir en oversikt over de klasser som er brukt i
 Oppslagstjenesten.
 
-<ul>
-
-{% assign sortedPages = site.pages | sort: ‘title’ %}
-
-{% for page in sortedPages %}  
-{% if page.group == “Oppslagstjenesten/complexType”%}
-
-<li>
-
-<a href="{{page.title}}">{{page.title}}</a>
-
-</li>
-
-{% endif %}  
-{% endfor %}
-
-</ul>
+  - [Epostadresse](Epostadresse.md)
+  - [Kontaktinformation](Kontaktinformasjon.md)
+  - [Mobiltelefonnummer](Mobiltelefonnummer.md)
+  - [Person](Person.md)
+  - [Sertifikat](Sertifikat.md)
+  - [SikkerDigitalPostAdresse](SikkerDigitalPostAdresse.md)
 
 ### Tjenester for offentlige virksomheter:
 
 Følgende forespørslser er tilgjengelig i Oppslagstjenesten for
 offentlige virksomheter
 
-<ul>
-
-{% for page in sortedPages %}  
-{% if page.group == “Oppslagstjenesten/Metode” %}
-
-<li>
-
-<a href="{{page.title}}">{{page.title}}</a>
-
-</li>
-
-{% endif %}  
-{% endfor %}
-
-</ul>
+ - [HentEndringerForespoersel](HentEndringerForespoersel.md)
+ - [HentPersonerForespoersel](HentPersonerForespoersel.md)
+ - [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md)
 
 ### Tjenester for postkasseleverandører knyttet til Digital postkasse til innbyggere:
 
 Postkasseleverandører har følgende forespørsler tilgjengelig i
 oppslagstjenesten.
 
-<ul>
-
-{% for page in sortedPages %}  
-{% if page.group == “Oppslagstjenesten/PK\_Metode” %}
-
-<li>
-
-<a href="{{page.title}}">{{page.title}}</a>
-
-</li>
-
-{% endif %}  
-{% endfor %}
-
-</ul>
+ - [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
+ - [OppdaterPostkasseForespoersel](OppdaterPostkasseForespoersel.md)
+ - [OpprettOgVelgSikkerDigitalPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md)
+ - [OpprettPostkasseForespoersel](OpprettPostkasseForespoersel.md)
+ - [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md)
+ - [VelgSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
