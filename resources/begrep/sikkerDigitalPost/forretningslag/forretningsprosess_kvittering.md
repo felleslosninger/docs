@@ -11,7 +11,7 @@ For å indikere statusendring på en melding etter at denne er blitt
 levert så skal Postkassen benytte meldinger av typen Kvitteringer.  
 Disse blir gjort tilgjengelig for Avsender via Meldingsformidler.
 Figuren viser flyten av denne type meldinger.  
-Forretningsrelaterte feilsituasjoner\[1\] benytter same flyt.
+Forretningsrelaterte feilsituasjoner[1](#link1) benytter same flyt.
 
 (Meldinger prefikset **eb:** i diagrammet tilhører transportlaget, men
 er tatt med for å vise sammenhengen)
@@ -54,7 +54,7 @@ I java klienten for sikker digital post gjøres dette slik:
 ``` brush: bash; toolbar: false
   SikkerDigitalPostKlient.hentKvitteringOgBekreftForrige(kvitteringForespoersel, forrigeKvittering)
 ```
-
+<a name="link1"></a>
 1.  Dette er feilsituasjoner som vil kreve manuell oppfølging fra
     Avsender og av en art som ikke lar seg løse automatisk. Typisk
     eksempel kan være at Mottaker har skiftet postboks, og at meldingen

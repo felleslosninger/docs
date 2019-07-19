@@ -2,10 +2,6 @@
   
 title: Utvidelser  
 permalink: sdp_utvidelser_index.html
-
-children:  
-\- name: Forretningslag/Utvidelser/Lenke  
-\- name: Forretningslag/Utvidelser/Arrangement
 sidebar:
 ---
 
