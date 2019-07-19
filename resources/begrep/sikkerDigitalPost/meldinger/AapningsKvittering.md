@@ -7,8 +7,8 @@ sidebar:
 
 ### {{page.title}}
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+  - Identifikator
+    https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/AapningsKvittering
   - Term  
     {{page.title}}
   - Definisjon  
