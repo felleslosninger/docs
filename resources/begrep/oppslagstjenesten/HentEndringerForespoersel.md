@@ -47,7 +47,8 @@ Responsen er en [HentEndringerRespons](HentEndringerRespons.md)
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <ns:HentEndringerForespoersel fraEndringsNummer="1001">     
  <ns:informasjonsbehov>Kontaktinfo</ns:informasjonsbehov>
  <ns:informasjonsbehov>Sertifikat</ns:informasjonsbehov>
