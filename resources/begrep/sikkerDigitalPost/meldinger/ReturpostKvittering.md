@@ -23,7 +23,7 @@ sidebar:
 Kvitteringen leveres når brevene er mottatt i retur av utskrift og
 forsendelsestjenesten, registrert og makulert. Dette forutsetter at
 avsender har valgt å benytte denne tjenesten i feltet
-[returPostStrategi](/Felles/returPostStrategi) i opprinnelig melding.  
+(Link til /felles/returPostStrategi.md) i opprinnelig melding.  
 Kvitteringen vil komme flere dager etter at en forsendelse er sendt til
 utskrift og forsendelsetjenesten, dette er overordne de steg som skal
 gjennomføres før Avsender får ReturpostKvittering
