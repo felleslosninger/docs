@@ -7,8 +7,7 @@ sidebar:
 ### {{page.title}}
 
   - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":KvitteringsMelding
+    <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/meldinger/KvitteringsMelding>
   - Term  
     {{page.title}}
   - Definisjon  
