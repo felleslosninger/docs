@@ -8,7 +8,7 @@ sidebar:
 ### {{page.title}}
 
   - Identifikator
-    https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/AapningsKvittering
+    [https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/AapningsKvittering]
   - Term  
     {{page.title}}
   - Definisjon  
