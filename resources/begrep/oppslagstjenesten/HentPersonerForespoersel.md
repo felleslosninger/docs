@@ -6,7 +6,7 @@ sidebar:
 ---
 
   - Identifikator  
-    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerForespoersel
+    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerForespoersel>
   - Term  
     {{page.title}}
   - Definisjon  
