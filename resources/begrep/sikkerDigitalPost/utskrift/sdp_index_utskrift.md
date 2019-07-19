@@ -17,4 +17,4 @@ har reservert seg eller ikke registrert/oppdatert sin
 kontaktinformasjon.
 
   - [Prosessbeskrivelse for sending av post til utskrift og
-    forsendelse](../../forretningslag/forretningsprosess_utskrift.md)
+    forsendelse](../forretningslag/forretningsprosess_utskrift.md)
