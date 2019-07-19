@@ -8,8 +8,8 @@ permalink: sdp_messaging.html
 
 ## {{page.title}}
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.url}}
+  - Identifikator
+    <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/transportlag/Messaging.html>
   - Term  
     {{page.title}}
   - Definisjon  
@@ -27,5 +27,5 @@ relatert til meldinger sendt mellom to MSH’er slik som definert av ebMS
 
 | Identifikator | Kardinalitet | Datatype | Kommentar |
 | --- | --- | --- | --- |
-| [UserMessage](UserMessage/) | 0..1 | eb:UserMessage | en forretningsmelding som skal overleveres til fagsystemet bak MSH’en som tar i mot meldingen |
-| [SignalMessage](SignalMessage/) | 0..unbounded | eb:SignalMessage | Signalmelding om at det er ønske om en handling fra den andre MSH’en. En signalmelding vil typisk ikke innvolvere fagsystemet til MSH’en. |
+| [UserMessage](UserMessage/index.md) | 0..1 | eb:UserMessage | en forretningsmelding som skal overleveres til fagsystemet bak MSH’en som tar i mot meldingen |
+| [SignalMessage](SignalMessage/index.md) | 0..unbounded | eb:SignalMessage | Signalmelding om at det er ønske om en handling fra den andre MSH’en. En signalmelding vil typisk ikke innvolvere fagsystemet til MSH’en. |
