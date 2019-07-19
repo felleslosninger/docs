@@ -12,7 +12,7 @@ sidebar:
     {{page.title}}
   - Definisjon  
     En digital post med tilhørende
-    [Dokumentpakke](../forretningslag/Dokumentpakke/)
+    [Dokumentpakke](../forretningslag/Dokumentpakke/index.md)
   - Kilde  
     DIFI
   - Kommentar  
