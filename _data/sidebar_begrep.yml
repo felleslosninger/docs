@@ -4,8 +4,6 @@ folders:
   jurl: /idporten_index.html    
 - title: Oppslagstjenesten
   jurl: /oidc_index.html
-- title: Felles
-  jurl: /saml_tilgang.html
 - title: Sikker digital Post6
   folderitems:
   - title: 
@@ -44,4 +42,5 @@ folders:
       - title: Prisen på digital post
         jurl: /oidc_hurtigguide.html
         
-        
+    - title: Felles
+      jurl: /saml_tilgang.html   
