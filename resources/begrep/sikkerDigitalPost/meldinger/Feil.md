@@ -2,12 +2,12 @@
 
 title: Feil  
 permalink: sdp_feil.html
-sidebar: main_sidebar.yml
+sidebar: sidebar_begrep.yml
 ---
 
 ### {{page.title}}
 
-  - Identifikator2  
+  - Identifikator
     <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/Feil>
   - Term  
     {{page.title}}
