@@ -5,7 +5,7 @@ summary: ""
 
 permalink: m.html
 product: eFormidling
-sidebar: main_sidebar
+sidebar: sidebar_begrep
 ---
 
 Teknisk informasjon Kommer snart
