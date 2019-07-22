@@ -5,23 +5,13 @@ datatype: Metode
 sidebar:
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerForespoersel>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Forespørsel sendt fra Virksomhet for å hente Personer fra kontakt og
-    reservasjonsregisteret
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice forespørsel som Klient sender til Kontaktregisteret,
-    forespørselen beskriver hvilke personer Klienten ønsker uthentet og
-    hvilken informasjon som ønskes utlevert.  
-    Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
-    forespørselen og hvordan denne sendes.
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerForespoersel> |
+| Term          | {{page.title}} |
+| Definisjon    | Forespørsel sendt fra Virksomhet for å hente Personer fra kontakt og reservasjonsregisteret |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice forespørsel som Klient sender til Kontaktregisteret, forespørselen beskriver hvilke personer Klienten ønsker uthentet og hvilken informasjon som ønskes utlevert. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om forespørselen og hvordan denne sendes. |
 
 Responsen er en [HentPersonerRespons](HentPersonerRespons.md)
 
