@@ -5,26 +5,13 @@ datatype: Metode
 sidebar:
 ---
 
-  - Identifikator  
-    http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPrintSertifikatRespons
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Respons sendt tilbake til Virksomhet som svar på
-    [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md)
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice respons som Oppslagstjenesten sender til Klient, respons
-    inneholder ET Sertifikat.  
-    For
-    [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md)
-    leveres det ut det sertifikatet som skal brukes for å kryptere
-    meldinger som skal printes til Innbygger.  
-    Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
-    responsen og hvordan denne leveres og sikres.
+|---|---|
+| Identifikator | http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPrintSertifikatRespons |
+| Term          | {{page.title}} |
+| Definisjon    | Respons sendt tilbake til Virksomhet som svar på [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md) |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice respons som Oppslagstjenesten sender til Klient, respons inneholder ET Sertifikat. For [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md) leveres det ut det sertifikatet som skal brukes for å kryptere meldinger som skal printes til Innbygger. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om responsen og hvordan denne leveres og sikres. |
 
 #### Attributer
 
