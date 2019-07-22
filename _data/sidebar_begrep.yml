@@ -102,5 +102,17 @@ folders:
       - title: BusinessScope
         jurl: /oidc_hurtigguide.html
  
+    - title: Transportlag
+      subfolderitems:
+
+      - title: Meldingsutveksling
+        jurl: /oidc_hurtigguide.html    
+      - title: Meldingsidentifikator
+        jurl: /oidc_index.html 
+      - title: Meldingsformat
+        jurl: /oidc_hurtigguide.html    
+      - title: Webservice sikkerhet
+        jurl: /oidc_index.html  
+ 
 - title: Felles
   jurl: /saml_tilgang.html   
