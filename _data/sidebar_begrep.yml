@@ -65,6 +65,8 @@ folders:
 
       - title: Lenke utenfor brev
         jurl: /oidc_hurtigguide.html
-       
+     
+    - title: Utskrift og forsendelse
+     
 - title: Felles
   jurl: /saml_tilgang.html   
