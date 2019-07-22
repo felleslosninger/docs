@@ -6,20 +6,13 @@ permalink: ot_sikkerfigitalpostadresse.html
 sidebar:
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Adresse informasjon om Person sin Sikker DigitalPostKasse
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    SikkerDigitalPostAdresse er Innbygger sin adresse til Postkassen.
-    Det inneholder nok informasjon til å adresse post til Innbygger sin
-    postkasse.
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/SikkerDigitalPostAdresse> |
+| Term          | {{page.title}} |
+| Definisjon    | Adresse informasjon om Person sin Sikker DigitalPostKasse |
+| Datatype      | complexType |
+| Kilde         | DIFI |
+| Kommentar     | SikkerDigitalPostAdresse er Innbygger sin adresse til Postkassen. Det inneholder nok informasjon til å adresse post til Innbygger sin postkasse. |
 
 #### Attributer
 
