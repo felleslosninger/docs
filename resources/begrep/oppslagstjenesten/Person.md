@@ -5,21 +5,13 @@ group: Oppslagstjenesten/complexType
 permalink: ot_person.html
 sidebar:
 ---
-
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Person>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Person slik den er definert i kontakt og reservasjonsregisteret.
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Person er en Innbygger utlevert fra kontakt og
-    reservasjonsregisteret. [status](../felles/status.md) definerer om Person
-    er registrert eller ikke i registreret.
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Person> |
+| Term | {{page.title}} |
+| Definisjon | Person slik den er definert i kontakt og reservasjonsregisteret. |
+| Datatype | complexType |
+| Kilde | DIFI |
+| Kommentar | Person er en Innbygger utlevert fra kontakt og reservasjonsregisteret. [status](../felles/status.md) definerer om Person er registrert eller ikke i registreret. |
 
 Merk at Person ikke er unik definert på tvers av Difi sine
 felleskomponenter, men at hver av felleskomponentene har en definisjon
