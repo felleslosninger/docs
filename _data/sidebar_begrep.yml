@@ -1,0 +1,30 @@
+- title: Id-porten
+  jurl: /idporten_index.html    
+- title: Oppslagstjenesten
+  jurl: /oidc_index.html
+- title: Felles
+  jurl: /saml_tilgang.html
+- title: Sikker Digital Post
+  folderitems:
+    
+  subfolders:
+  - title: Oversikt
+    subfolderitems:
+
+    - title: Arkitektur
+      jurl: /oidc_hurtigguide.html    
+    - title: Sikkerhet
+      jurl: /oidc_index.html 
+    - title: Sertifikathåndtering
+      jurl: /oidc_hurtigguide.html    
+    - title: Skjema (XSD) filer
+      jurl: /oidc_index.html  
+    - title: Eksempler
+      jurl: /oidc_hurtigguide.html  
+
+  subfolders:
+  - title: Dokumentpakke (ASiC)
+    subfolderitems:  
+    - title: Langtidslagring
+      jurl: /oidc_hurtigguide.html          
+               
