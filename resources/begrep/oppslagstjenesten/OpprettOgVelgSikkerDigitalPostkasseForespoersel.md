@@ -8,21 +8,13 @@ permalink: ot_opprettogvelgsikkerdigitalpostkasseforespoersel.html
 sidebar:
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OpprettOgVelgSikkerDigitalPostkasseForespoersel>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Forespørsel sendt fra Postkasseleverandør for å opprette og sette at
-    en postkasse aktiveres for en innbygger.
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice forespørsel som Postkasseleverandør sender til
-    Kontaktregisteret, forespørselen oppdaterer kontaktregisteret med
-    informasjon om en digital postkasse
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OpprettOgVelgSikkerDigitalPostkasseForespoersel> |
+| Term          | {{page.title}} |
+| Definisjon    | Forespørsel sendt fra Postkasseleverandør for å opprette og sette at en postkasse aktiveres for en innbygger. |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice forespørsel som Postkasseleverandør sender til Kontaktregisteret, forespørselen oppdaterer kontaktregisteret med informasjon om en digital postkasse |
 
 #### Attributer
 
