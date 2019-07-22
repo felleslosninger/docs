@@ -2,6 +2,8 @@ sidebarTitle: Begrep
 folders:
 - title: Sikker digital Post3
   folderitems:
+    - title: Test
+      jurl: /test.html
   
     subfolders:
     - title: Oversikt
