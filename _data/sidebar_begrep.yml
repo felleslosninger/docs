@@ -88,5 +88,19 @@ folders:
       - title: FlyttetDigitalpostMelding
         jurl: /oidc_hurtigguide.html
  
+    - title: Standard Business Document
+      subfolderitems:
+
+      - title: StandardBusinessDocumentHeader
+        jurl: /oidc_hurtigguide.html    
+      - title: Sender
+        jurl: /oidc_index.html 
+      - title: Receiver
+        jurl: /oidc_hurtigguide.html    
+      - title: DocumentIdentification
+        jurl: /oidc_index.html  
+      - title: BusinessScope
+        jurl: /oidc_hurtigguide.html
+ 
 - title: Felles
   jurl: /saml_tilgang.html   
