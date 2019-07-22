@@ -1,8 +1,10 @@
 sidebarTitle: Begrep
 folders:
+folderitems:
 - title: Id-porten
-  
+  jurl: /idporten_index.html    
 - title: Oppslagstjenesten
   jurl: /oidc_index.html
 - title: Felles
   jurl: /saml_tilgang.html
+- title: Sikker Digital Post
