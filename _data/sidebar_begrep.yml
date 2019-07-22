@@ -59,6 +59,12 @@ folders:
         jurl: /oidc_hurtigguide.html
       - title: Sikkerhet
         jurl: /oidc_hurtigguide.html
-        
+
+    - title: Dokumentpakke (ASiC)
+      subfolderitems:
+
+      - title: Lenke utenfor brev
+        jurl: /oidc_hurtigguide.html
+       
 - title: Felles
   jurl: /saml_tilgang.html   
