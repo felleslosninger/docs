@@ -7,20 +7,13 @@ permalink: ot_sertifikat.html
 sidebar:
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Sertifikat for Innbygger
-  - Datatype  
-    {{page.datatype}}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Sertifikatet er Innbygger sitt krypteringssertifikat brukt i Sikker
-    Digital Post.
-
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Sertifikat> |
+| Term          | {{page.title}} |
+| Definisjon    | Sertifikat for Innbygger |
+| Datatype      | {{page.datatype}} |
+| Kilde         | DIFI |
+| Kommentar     | Sertifikatet er Innbygger sitt krypteringssertifikat brukt i Sikker Digital Post. |
 #### Attributer
 
 | Term                                                               | Kardinalitet |
