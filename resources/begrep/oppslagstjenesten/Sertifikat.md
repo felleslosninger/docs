@@ -7,8 +7,8 @@ permalink: ot_sertifikat.html
 sidebar:
 ---
 
-|---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Sertifikat> |
+| --- | --- |
+| Identifikatorny | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Sertifikat> |
 | Term          | {{page.title}} |
 | Definisjon    | Sertifikat for Innbygger |
 | Datatype      | {{page.datatype}} |
