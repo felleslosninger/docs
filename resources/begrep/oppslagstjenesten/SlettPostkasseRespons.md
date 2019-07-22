@@ -8,21 +8,13 @@ permalink: ot_slettpostkasserespons.html
 sidebar:
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Respons sendt tilbake til Postkasseleverandør når en postkasse er
-    sletter fra kontaktregisteret.
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice response som Postkasseleverandør mottar fra
-    Kontaktregisteret som svar på
-    [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md)
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/SlettPostkasseRespons> |
+| Term          | {{page.title}} |
+| Definisjon    | Respons sendt tilbake til Postkasseleverandør når en postkasse er sletter fra kontaktregisteret. |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md) |
 
 #### Attributer
 
