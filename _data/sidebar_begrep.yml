@@ -4,9 +4,7 @@ folders:
   jurl: /idporten_index.html    
 - title: Oppslagstjenesten
   jurl: /oidc_index.html
-- title: Felles
-  jurl: /saml_tilgang.html
-- title: Sikker digital Post5
+- title: Sikker digital Post6
   folderitems:
   - title: 
     jurl: /test.html
@@ -24,4 +22,7 @@ folders:
       - title: Skjema (XSD) filer
         jurl: /oidc_index.html  
       - title: Eksempler
-        jurl: /oidc_hurtigguide.html    
+        jurl: /oidc_hurtigguide.html   
+        
+- title: Felles
+  jurl: /saml_tilgang.html
