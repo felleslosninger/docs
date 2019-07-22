@@ -6,20 +6,13 @@ permalink: ot_mobiltelefonnummer.html
 sidebar:
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Mobiltelefonnummer>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om en Person sitt Mobiltelefonnummer registrert i
-    kontakt og reservasjonsregisteret
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Informasjon om en Person sitt Mobiltelefonnummer registrert i
-    kontakt og reservasjonsregisteret
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Mobiltelefonnummer> |
+| Term          | {{page.title}} |
+| Definisjon    | Informasjon om en Person sitt Mobiltelefonnummer registrert i kontakt og reservasjonsregisteret |
+| Datatype      | complexType |
+| Kilde         | DIFI |
+| Kommentar     | Informasjon om en Person sitt Mobiltelefonnummer registrert i kontakt og reservasjonsregisteret |
 
 #### Attributer
 
