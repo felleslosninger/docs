@@ -6,21 +6,13 @@ permalink: ot_kanvelgesikkerdigitalpostkasserespons.html
 sidebar:
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/KanVelgeSikkerDigitalPostkasseRespons>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Respons sendt tilbake til Postkasseleverandør når
-    kontaktregisteretet er oppdatert.
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice response som Postkasseleverandør mottar fra
-    Kontaktregisteret som svar på
-    [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/KanVelgeSikkerDigitalPostkasseRespons> |
+| Term          | {{page.title}} |
+| Definisjon    | Respons sendt tilbake til Postkasseleverandør når kontaktregisteretet er oppdatert. |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md) |
 
 #### Attributer
 
