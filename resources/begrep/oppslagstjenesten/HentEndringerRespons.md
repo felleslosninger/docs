@@ -4,24 +4,13 @@ permalink: ot_hentendringerrespons.html
 datatype: Metode
 sidebar:
 ---
-
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentEndringerRespons>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Response sendt fra Oppslagstjensten for å levere ut endringer fra
-    kontakt og reservasjonsregisteret til Virksomhet
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice respons som Oppslagstjenesten sender til Klient, respons
-    beskriver de endringer som har vært i registeret.  
-    Responsen er begrenset til å returnere 1000 personer.  
-    Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
-    forespørselen og hvordan denne sendes.
+| --- | --- |
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentEndringerRespons> |
+| Term          | {{page.title}} |
+| Definisjon    | Response sendt fra Oppslagstjensten for å levere ut endringer fra kontakt og reservasjonsregisteret til Virksomhet |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice respons som Oppslagstjenesten sender til Klient, respons beskriver de endringer som har vært i registeret. Responsen er begrenset til å returnere 1000 personer. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om forespørselen og hvordan denne sendes. |
 
 #### Attributer
 
