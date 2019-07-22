@@ -2,7 +2,7 @@
 
 title: Feil  
 permalink: sdp_feil.html
-sidebar: 
+sidebar: begrep_sidebar.yml
 ---
 
 ### {{page.title}}
