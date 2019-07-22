@@ -11,10 +11,7 @@ sidebar:
 | Definisjon    | Forespørsel sendt fra Virksomhet for å hente endringer fra kontakt og reservasjonsregisteret |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
-|Kommentar      | Webservice forespørsel som Klient sender til Kontaktregisteret,
-    forespørselen beskriver hvilke endringer Klienten ønsker.  
-    Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
-    forespørselen og hvordan denne sendes. |
+| Kommentar     | Webservice forespørsel som Klient sender til Kontaktregisteret, forespørselen beskriver hvilke endringer Klienten ønsker. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om forespørselen og hvordan denne sendes. |
 
 Responsen er en [HentEndringerRespons](HentEndringerRespons.md)
 
