@@ -5,20 +5,13 @@ group: Oppslagstjenesten/complexType
 permalink: ot_kontakinformasjon.html
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Kontaktinformasjon>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Kontaktinformasjon er Adresse informasjon knyttet til en Person for
-    å kommunisere med person
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Kontaktinformasjon for en Person er epostadresse og
-    mobiltelefonnummer
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Kontaktinformasjon> |
+| Term          | {{page.title}} |
+| Definisjon    | Kontaktinformasjon er Adresse informasjon knyttet til en Person for å kommunisere med person |
+| Datatype      | complexType |
+| Kilde         | DIFI |
+| Kommentar     | Kontaktinformasjon for en Person er epostadresse og mobiltelefonnummer |
 
 #### Attributer
 
