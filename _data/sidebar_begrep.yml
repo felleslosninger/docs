@@ -41,6 +41,24 @@ folders:
         jurl: /oidc_hurtigguide.html
       - title: Prisen på digital post
         jurl: /oidc_hurtigguide.html
+   
+    - title: Dokumentpakke (ASiC)
+      subfolderitems:
+
+      - title: Langtidslagring
+        jurl: /oidc_hurtigguide.html    
+      - title: manifest
+        jurl: /oidc_index.html 
+      - title: Dokumentformater
+        jurl: /oidc_hurtigguide.html    
+      - title: MIME type
+        jurl: /oidc_index.html  
+      - title: html
+        jurl: /oidc_hurtigguide.html
+      - title: ehf
+        jurl: /oidc_hurtigguide.html
+      - title: Sikkerhet
+        jurl: /oidc_hurtigguide.html
         
 - title: Felles
   jurl: /saml_tilgang.html   
