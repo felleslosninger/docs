@@ -8,21 +8,13 @@ permalink: ot_opprettogvelgsikkerdigitalpostkasserespons.html
 sidebar:
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OpprettOgVelgSikkerDigitalPostkasseRespons>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Response sendt tilbake til Postkasseleverandør for å at en Innbygger
-    har valgt digital postkasse for offentlig bruk.
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice response som Postkasseleverandør mottar fra
-    Kontaktregisteret som svar på
-    [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md)
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OpprettOgVelgSikkerDigitalPostkasseRespons> |
+| Term          | {{page.title}} |
+| Definisjon    | Response sendt tilbake til Postkasseleverandør for å at en Innbygger har valgt digital postkasse for offentlig bruk. |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md) |
 
 #### Attributer
 
