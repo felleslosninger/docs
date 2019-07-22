@@ -7,7 +7,7 @@ sidebar: main_sidebar.yml
 
 ### {{page.title}}
 
-  - Identifikator  
+  - Identifikator2  
     <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/Feil>
   - Term  
     {{page.title}}
