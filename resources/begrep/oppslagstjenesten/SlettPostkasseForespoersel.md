@@ -8,20 +8,13 @@ permalink: ot_slettpostkasseforespoersel.html
 sidebar:
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Forespørsel sendt fra Postkasseleverandør for å slette en postkasse.
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice forespørsel som Postkasseleverandør sender til
-    Kontaktregisteret, forespørselen sletter en digital postkasse for
-    offentlig bruk i kontaktregisteret
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/SlettPostkasseForespoersel> |
+| Term          | {{page.title}} |
+| Definisjon    | Forespørsel sendt fra Postkasseleverandør for å slette en postkasse. |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice forespørsel som Postkasseleverandør sender til Kontaktregisteret, forespørselen sletter en digital postkasse for offentlig bruk i kontaktregisteret |
 
 #### Attributer
 
