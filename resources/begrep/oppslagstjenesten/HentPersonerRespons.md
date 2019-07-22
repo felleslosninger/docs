@@ -4,23 +4,13 @@ permalink: ot_hentpersonerrespons.html
 datatype: Metode
 ---
 
-  - Identifikator  
-    <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerRespons>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Respons sendt tilbake til Virksomhet som svar på
-    [HentPersonerForespoersel](HentPersonerForespoersel.md)
-  - Datatype  
-    {{ page.datatype }}
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Webservice respons som Oppslagstjenesten sender til Klient, respons
-    inneholder de Personer som Virksomhet forespurte med den registrerte
-    informasjonen som Virksomhet ba om.  
-    Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om
-    forespørselen og hvordan denne sendes.
+|---|---|
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerRespons> |
+| Term          | {{page.title}} |
+| Definisjon    | Respons sendt tilbake til Virksomhet som svar på [HentPersonerForespoersel](HentPersonerForespoersel.md) |
+| Datatype      | {{ page.datatype }} |
+| Kilde         | DIFI |
+| Kommentar     | Webservice respons som Oppslagstjenesten sender til Klient, respons inneholder de Personer som Virksomhet forespurte med den registrerte informasjonen som Virksomhet ba om. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om forespørselen og hvordan denne sendes. |
 
 #### Attributer
 
