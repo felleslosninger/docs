@@ -21,7 +21,7 @@ sidebar:
 | Term                                                              | Kardinalitet | Datatype                                              |
 | ----------------------------------------------------------------- | ------------ | ----------------------------------------------------- |
 | [personidentifikator](../felles/personidentifikator.md)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [postkasseleverandoerOrgNummer](../felles/virksomhetsidentifikator.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| SKAL VÆRE LINK TIL ../felles/virksomhetsidentifikator.md | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Respons
 
