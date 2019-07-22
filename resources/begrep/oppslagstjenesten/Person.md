@@ -5,7 +5,7 @@ group: Oppslagstjenesten/complexType
 permalink: ot_person.html
 sidebar:
 ---
-|---|---|
+| --- | --- |
 | Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Person> |
 | Term | {{page.title}} |
 | Definisjon | Person slik den er definert i kontakt og reservasjonsregisteret. |
