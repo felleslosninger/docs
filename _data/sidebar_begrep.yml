@@ -67,6 +67,26 @@ folders:
         jurl: /oidc_hurtigguide.html
      
     - title: Utskrift og forsendelse
-     
+ 
+    - title: Forretningsmeldinger
+      subfolderitems:
+
+      - title: DigitalPostMelding
+        jurl: /oidc_hurtigguide.html    
+      - title: LeveringsKvittering
+        jurl: /oidc_index.html 
+      - title: AapningsKvittering
+        jurl: /oidc_hurtigguide.html    
+      - title: VarslingfeiletKvittering
+        jurl: /oidc_index.html  
+      - title: MottaksKvittering
+        jurl: /oidc_hurtigguide.html
+      - title: ReturpostKvittering
+        jurl: /oidc_hurtigguide.html
+      - title: Feil
+        jurl: /oidc_hurtigguide.html
+      - title: FlyttetDigitalpostMelding
+        jurl: /oidc_hurtigguide.html
+ 
 - title: Felles
   jurl: /saml_tilgang.html   
