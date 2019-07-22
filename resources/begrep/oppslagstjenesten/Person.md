@@ -27,7 +27,7 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 
 #### Datamodell
 
-[![Visualisering avdatamodellen](uml_diagram_oppslagstjenesten_ekstern.jpg"Visualisering av datamodellen")](/felleslosninger/resources/begrep/oppslagstjenesten/uml_diagram_oppslagstjenesten_ekstern.jpg)
+![Visualisering avdatamodellen](/felleslosninger/resources/begrep/oppslagstjenesten/uml_diagram_oppslagstjenesten_ekstern.jpg)
 
 #### Attributer
 
