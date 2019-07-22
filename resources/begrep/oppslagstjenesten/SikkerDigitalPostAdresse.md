@@ -23,7 +23,7 @@ sidebar:
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+```
 <ns2:SikkerDigitalPostAdresse>
    <ns2:postkasseadresse>1</ns2:postkasseadresse>
    <ns2:postkasseleverandoerAdresse>012345678</ns2:postkasseleverandoerAdresse>
