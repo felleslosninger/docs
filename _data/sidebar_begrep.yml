@@ -4,6 +4,8 @@ folders:
   jurl: /idporten_index.html    
 - title: Oppslagstjenesten
   jurl: /oidc_index.html
+- title: Felles
+  jurl: /saml_tilgang.html
 - title: Sikker digital Post6
   folderitems:
   - title: 
@@ -22,7 +24,24 @@ folders:
       - title: Skjema (XSD) filer
         jurl: /oidc_index.html  
       - title: Eksempler
-        jurl: /oidc_hurtigguide.html   
+        jurl: /oidc_hurtigguide.html
+     
+     - title: Forretningslag
+       subfolderitems:
+
+      - title: Aktører og Roller
+        jurl: /oidc_hurtigguide.html    
+      - title: Sending av digital post
+        jurl: /oidc_index.html 
+      - title: Sending av digital post på vegne av andre
+        jurl: /oidc_hurtigguide.html    
+      - title: Henting av kvittering
+        jurl: /oidc_index.html  
+      - title: Tilstander for Avsender
+        jurl: /oidc_hurtigguide.html
+      - title: Struktur på melding
+        jurl: /oidc_hurtigguide.html
+      - title: Prisen på digital post
+        jurl: /oidc_hurtigguide.html
         
-- title: Felles
-  jurl: /saml_tilgang.html
+        
