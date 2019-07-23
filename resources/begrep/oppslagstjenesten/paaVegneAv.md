@@ -6,20 +6,14 @@ datatype: string
 permalink: ot_paavegneav.html
 sidebar:
 ---
-
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Identifikasjon av en organisasjon
-  - Datatype  
-    <span style="{ page.datatype ;">[}](http://www.w3.org/TR/xmlschema-2/#{{page.datatype}})</span>
-  - Kilde  
-    DIFI
-  - Kommentar  
-    paaVegneAv er et gyldig organisasjonsnummer
+|---|---|
+| Identifikator | “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.title}} |
+| Term          | {{page.title}} |
+| Definisjon    | Identifikasjon av en organisasjon |
+| Datatype      | <span style="{ page.datatype ;">[}](http://www.w3.org/TR/xmlschema |
+|               | 2/#{{page.datatype}})</span> |
+| Kilde         | DIFI |
+| Kommentar     | paaVegneAv er et gyldig organisasjonsnummer |
 
 ### Xml eksempel
 
