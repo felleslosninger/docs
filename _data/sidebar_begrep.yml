@@ -114,5 +114,17 @@ folders:
       - title: Webservice sikkerhet
         jurl: /oidc_index.html  
  
+    - title: Feilhåndtering
+      subfolderitems:
+
+      - title: Forvaltning og tekniske feil
+        jurl: /oidc_hurtigguide.html    
+      - title: Transportfeil
+        jurl: /oidc_index.html 
+      - title: Forretningsfeil
+        jurl: /oidc_hurtigguide.html    
+      - title: Feilhåndteringsprosess
+        jurl: /oidc_index.html
+ 
 - title: Felles
   jurl: /saml_tilgang.html   
