@@ -26,7 +26,7 @@ virksomhetssertifikater ihtt rammeverket for PKI i offentlig sektor for
   - [XSD definisjon for fil
     eksport](xsd/kontaktregister-export-14-05.xsd)
   - [Egendefinert SOAP header: paaVegneAv](paaVegneAv.md)
-  - [Web Service Security header](ws-security/WebserviceSecurity)
+  - [Web Service Security header](ws-security/WebserviceSecurity.md)
 
 ### Datamodell:
 
