@@ -8,11 +8,10 @@ sidebar:
 ---
 
 |---|---|
-| Identifikator | “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.title}} |
+| Identifikator | < http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/varslingsstatus> |
 | Term          | {{page.title}} |
 | Definisjon    | varslingsstatus gir en tekstlig beskrivelse av om bruker har utgått kontaktinformasjon eller ikke, ihht eForvaltningsforskriftens §32 andre ledd. |
-| Datatype      | <span style="{ page.datatype ;">[}](http://www.w3.org/TR/xmlschema |
-|               | 2/#{{page.datatype}})</span> |
+| Datatype      | [string](http://www.w3.org/TR/xmlschema) |
 | Kilde         | DIFI |
 | Kommentar     | varslingsstatus blir brukt i Person. |
 
