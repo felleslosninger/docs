@@ -62,6 +62,6 @@ oppslagstjenesten.
  - [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
  - [OppdaterPostkasseForespoersel](OppdaterPostkasseForespoersel.md)
  - [OpprettOgVelgSikkerDigitalPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md)
- - [OpprettPostkasseForespoersel](OpprettPostkasseForespoersel.md)
+ - SKAL VÆRE LINK TIL OpprettPostkasseForespoersel.md
  - [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md)
  - [VelgSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
