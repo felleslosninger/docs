@@ -7,11 +7,10 @@ permalink: ot_paavegneav.html
 sidebar:
 ---
 |---|---|
-| Identifikator | “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.title}} |
+| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/paaVegneAv> |
 | Term          | {{page.title}} |
 | Definisjon    | Identifikasjon av en organisasjon |
-| Datatype      | <span style="{ page.datatype ;">[}](http://www.w3.org/TR/xmlschema |
-|               | 2/#{{page.datatype}})</span> |
+| Datatype      | [string](http://www.w3.org/TR/xmlschema) |
 | Kilde         | DIFI |
 | Kommentar     | paaVegneAv er et gyldig organisasjonsnummer |
 
