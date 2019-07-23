@@ -5,7 +5,7 @@ group: Egenskap
 datatype: string  
 permalink: ot_varslingsstatus.html
 sidebar:
-—-
+---
 
 |---|---|
 | Identifikator | “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.title}} |
