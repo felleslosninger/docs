@@ -7,21 +7,14 @@ permalink: ot_varslingsstatus.html
 sidebar:
 —-
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    varslingsstatus gir en tekstlig beskrivelse av om bruker har utgått
-    kontaktinformasjon eller ikke, ihht eForvaltningsforskriftens §32
-    andre ledd.
-  - Datatype  
-    <span style="{ page.datatype ;">[}](http://www.w3.org/TR/xmlschema-2/#{{page.datatype}})</span>
-  - Kilde  
-    DIFI
-  - Kommentar  
-    varslingsstatus blir brukt i Person.
+|---|---|
+| Identifikator | “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.title}} |
+| Term          | {{page.title}} |
+| Definisjon    | varslingsstatus gir en tekstlig beskrivelse av om bruker har utgått kontaktinformasjon eller ikke, ihht eForvaltningsforskriftens §32 andre ledd. |
+| Datatype      | <span style="{ page.datatype ;">[}](http://www.w3.org/TR/xmlschema |
+|               | 2/#{{page.datatype}})</span> |
+| Kilde         | DIFI |
+| Kommentar     | varslingsstatus blir brukt i Person. |
 
 #### Kodeverk for varslingsstatus
 
