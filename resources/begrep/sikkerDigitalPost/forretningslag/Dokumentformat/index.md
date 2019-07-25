@@ -1,9 +1,7 @@
 ---
 title: Dokumentformater  
-headtitle: Sikker digital post  
-group: forretningslag
-permalink: dokumentformat_index.md
-sidebar:
+permalink: dokumentformat_index.html
+sidebar: sidebar_begrep
 ---
 
 ## Innledning
@@ -12,7 +10,7 @@ Sikker digital posttjeneste kan i utgangspunktet frakte en hver filtype
 fra avsender til mottaker.
 
 Det er derimot begrenset hva postkasseløsningene håndterer, se [oversikt
-over støttede MIME types](mimetypes).  
+over støttede MIME types](https://difi.github.io/felleslosninger/sdp_mimetypes.html).  
 Eksekverbare filer kan ikke sendes i Sikker digital posttjeneste.
 
 Det utføres ingen endringer i innholdet i mottatte dokumenter.  
@@ -25,5 +23,5 @@ Generelle regler for alle filer:
 
 Spesielle regler knyttet til de enkelte dokument formatene:
 
-  - [HTML dokumenter](html.md)
-  - [EHF dokumenter](ehf.md)
+  - [HTML dokumenter](sdp_html.html)
+  - [EHF dokumenter](sdp_ehf.html)
