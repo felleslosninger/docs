@@ -5,12 +5,12 @@ permalink: sdp_innledning_index.html
 sidebar: sidebar_begrep
 ---
 
-Denne delen av [begrepskatalogen](/) inneholder spesifikasjonen av
+Denne delen av begrepskatalogen inneholder spesifikasjonen av
 grensesnittene for [Digital post til
 innbyggere](https://samarbeid.difi.no/digital-postkasse-til-innbyggere).
 
 Målgruppen for denne spesifikasjonen er
-[Avsendervirksomheter](forretningslag/Aktorer.md),
+[Avsendervirksomheter](felleslosninger/Aktorer.md),
 [Meldingsformidler](forretningslag/Aktorer.md) og
 [Postkasseleverandører](forretningslag/Aktorer.md).
 
