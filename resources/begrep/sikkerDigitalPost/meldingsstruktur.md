@@ -28,4 +28,5 @@ Så [eb:Messaging](transportlag/Messaging.md) og [Webservice
 security](../oppslagstjenesten/ws-security/WebserviceSecurity.md) er signert/integritetsbeskyttet punkt til
 punkt.
 
-![](meldingsstruktur_enkel.jpg)
+
+![](../felleslosninger/meldingsstruktur_enkel.jpg)
