@@ -1,10 +1,8 @@
 ---
 title: Eksempler  
 permalink: sdp_index_eksempler.html
-sidebar:
+sidebar: sidebar_begrep
 ---
-
-## {{page.title}}
 
 På denne siden er det samlet eksempler på integrasjoner og meldinger som
 finnes tilknyttet sikker digital post.  
