@@ -5,8 +5,6 @@ permalink: sdp_meldingsstruktur.html
 sidebar:
 ---
 
-## {{page.title}}
-
 En Digitalpost forsendelse består av et hoveddokument med vedlegg.  
 Disse dokumentene er beskyttet med kryptering og signering ende til ende
 for å sikre konfidensialitet og integritet hele veien fra Avsender til
