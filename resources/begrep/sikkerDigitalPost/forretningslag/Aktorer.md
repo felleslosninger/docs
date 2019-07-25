@@ -4,6 +4,8 @@ permalink: sdp_aktorer.html
 sidebar: sidebar_begrep
 ---
 
+## Aktør
+
 Tabellen under inneholder en oversikt over hovedaktørene i prosessen med
 å utveksle Sikker Digital Post:
 
