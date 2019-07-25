@@ -16,8 +16,7 @@ Forretningsrelaterte feilsituasjoner[1](#link1) benytter same flyt.
 (Meldinger prefikset **eb:** i diagrammet tilhører transportlaget, men
 er tatt med for å vise sammenhengen)
 
-[![Prosess for henting av kvitteringer](Kvittering.png
-"Prosess for henting av kvitteringer")](Kvittering.png)
+![Prosess for henting av kvitteringer](Kvittering.png)
 
 | Prosess     | Fra      | Til     | Beskrivelse    |
 | --- | --- | --- | --- |
