@@ -5,8 +5,6 @@ sidebar: sidebar_begrep
 ---
 
 
-## Prosess for henting av kvitteringer og forretningsfeil
-
 For å indikere statusendring på en melding etter at denne er blitt
 levert så skal Postkassen benytte meldinger av typen Kvitteringer.  
 Disse blir gjort tilgjengelig for Avsender via Meldingsformidler.
