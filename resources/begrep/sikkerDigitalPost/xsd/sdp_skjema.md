@@ -1,19 +1,11 @@
------
-
-layout: default  
+---
 title: Skjema (XSD) filer  
-headtitle: Sikker digital post
-
-id: Oversikt/XSDfiler
-
-next: Eksempler
-
------
-
-## {{page.title}}
+permalink: sdp_skjema.html
+sidebar: sidebar_begrep
+---
 
 Dokumentasjon av kilder og ev. endringer i XSD-skjemaer for [Sikker
-digital post](../)
+digital post](https://difi.github.io/felleslosninger/sdp_innledning_index.html)
 
 Grunnen til at vi lagrer disse lokalt er for å sikre at verktøy ikke
 trenger å være online for å kunne jobbe med XSD-ene.  
@@ -37,7 +29,7 @@ terminalen (uten farger).
   - [sdp-manifest.xsd](sdp-manifest.xsd)
   - [sdp-melding.xsd](sdp-melding.xsd)
 
-Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](../)
+Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/felleslosninger/sdp_innledning_index.html)
 
 #### [ASiC XSD fil](asic-e/)
 
