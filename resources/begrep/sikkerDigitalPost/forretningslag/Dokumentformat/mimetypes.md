@@ -1,19 +1,14 @@
 --- 
 title: MIME type  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: forretningslag
-permalink: sdp_mimetypes.md
-sidebar:
+permalink: sdp_mimetypes.html
+sidebar: 
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    MIME type
-  - Datatype  
-    fil
+|---|---|
+| Identifikator |  |
+| Term          | {{page.title}} |
+| Definisjon    | MIME type |
+| Datatype      | fil |
 
 Følgende mimetypes er tillatt sendt i digital post til innbygger.  
 Visning av blant annet PDF, DOC, ODF og OOXML krever at brukeren har
