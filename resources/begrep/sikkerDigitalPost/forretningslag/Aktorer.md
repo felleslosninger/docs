@@ -1,11 +1,8 @@
 ---
-
 title: Aktører og Roller  
 permalink: sdp_aktorer.html
-sidebar:
+sidebar: sidebar_begrep
 ---
-
-## Aktører
 
 Tabellen under inneholder en oversikt over hovedaktørene i prosessen med
 å utveksle Sikker Digital Post:
