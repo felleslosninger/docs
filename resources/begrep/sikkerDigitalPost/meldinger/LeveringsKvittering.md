@@ -5,23 +5,12 @@ permalink: sdp_leveringskvittering.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator
-    <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/LeveringsKvittering>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar
-    for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender
-    via meldingsformideler.
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Denne kvitteringen kan
-    [Behandlingsansvarlig](../forretningslag/Aktorer.md) oppbevare som en
-    garanti på at posten vil bli levert til
-    [Mottaker](../begrep/Mottaker.md).
+|---|---|
+| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/LeveringsKvittering> |
+| Term          | {{page.title}} |
+| Definisjon    | Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler. |
+| Kilde         | DIFI |
+| Kommentar     | Denne kvitteringen kan [Behandlingsansvarlig](../forretningslag/Aktorer.md) oppbevare som en garanti på at posten vil bli levert til [Mottaker](../begrep/Mottaker.md). |
 
 #### For Digitalpost forsendelser
 
