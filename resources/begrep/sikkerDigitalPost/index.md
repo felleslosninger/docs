@@ -10,7 +10,7 @@ grensesnittene for [Digital post til
 innbyggere](https://samarbeid.difi.no/digital-postkasse-til-innbyggere).
 
 Målgruppen for denne spesifikasjonen er
-[Avsendervirksomheter](felleslosninger/Aktorer.md),
+[Avsendervirksomheter](forretningslag/Aktorer.md),
 [Meldingsformidler](forretningslag/Aktorer.md) og
 [Postkasseleverandører](forretningslag/Aktorer.md).
 
