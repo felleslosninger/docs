@@ -1,17 +1,12 @@
 ---
-Service: Oppslagstjenesten  
 title: Oppslagstjenesten for kontakt og reservasjonsregisteret  
-headtitle: Oppslagstjenesten for kontakt og reservasjonsregisteret  
 permalink: ot_oppslagstjenesten.html
 sidebar:
 ---
 
-## {{page.title}}
-
 ### Integrasjonsguide:
 
-  - Integrasjonsguide er tilgjengelig på [DIFI sin
-    samarbeidsportal](http://samarbeid.difi.no)
+  - Integrasjonsguide er tilgjengelig på [DIFI sin samarbeidsportal](http://samarbeid.difi.no)
 
 ### Tjenestespesifikasjonen:
 
