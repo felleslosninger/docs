@@ -28,19 +28,19 @@ folders:
       subfolderitems:
 
       - title: Aktører og Roller
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_aktorer.html   
       - title: Sending av digital post
-        jurl: /oidc_index.html 
+        jurl: /sdp_avsender_tilstanddiagram.html
       - title: Sending av digital post på vegne av andre
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_send_paa_vegne_av_andre.html  
       - title: Henting av kvittering
-        jurl: /oidc_index.html  
+        jurl: /sdp_forretningsprosess_kvittering.html
       - title: Tilstander for Avsender
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_avsender_tilstanddiagram2.html
       - title: Struktur på melding
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_meldingsformat.html
       - title: Prisen på digital post
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_meldingsstorrelse.html
    
     - title: Dokumentpakke (ASiC)
       subfolderitems:
