@@ -9,8 +9,7 @@ sidebar:
 | Term  | {{page.title}} |
 | Definisjon | En digital post med tilhørende [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) |
 | Kilde | DIFI |
-| Kommentar  | Digital post melding med tilhørende Dokumentpakke er postforsendelsen [Avsender](../begrep/Avsender.md) sender til
-    [Mottaker](../begrep/Mottaker.md). Denne inneholder informasjon om hvilken Avsender som er [Behandlingsansvarlig](../forretningslag/Aktorer.md), en knytning til dokumentpakken igjennom [Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md)  og informasjon om behandlingsregler som [Postkasseleverandør](../forretningslag/Aktorer.md) skal bruke for å tilgjengeliggjøre posten. |
+| Kommentar  | Digital post melding med tilhørende Dokumentpakke er postforsendelsen [Avsender](../begrep/Avsender.md) sender til [Mottaker](../begrep/Mottaker.md). Denne inneholder informasjon om hvilken Avsender som er [Behandlingsansvarlig](../forretningslag/Aktorer.md), en knytning til dokumentpakken igjennom [Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md)  og informasjon om behandlingsregler som [Postkasseleverandør](../forretningslag/Aktorer.md) skal bruke for å tilgjengeliggjøre posten. |
 
 Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering](LeveringsKvittering.md) til avsender via
 meldingsformidler. Leveringskvittering for at postkassen har tatt ansvar for å tilgjengeliggjøre meldingen.
