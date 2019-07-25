@@ -5,28 +5,12 @@ permalink: sdp_varslingfeiletkvittering.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator
-    <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/VarslingfeiletKvittering>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at
-    varsling til Mottaker har feilet og dermed ikke har blitt utført som
-    forutsatt.
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Dersom Postkasse opplever problemer med å utføre varslingen som
-    spesifisert i meldingen, skal Postkasse informere Avsender om dette
-    ved å sende VarslingfeiletKvittering.  
-    Det skal sendes en kvittering for hver forekomst av en feilsituasjon
-    i en spesifisert kanal. Meldinger som angir bruk av flere
-    varslingskanaler kan dermed medføre flere
-    VarslingfeiletKvitteringer.  
-    Varslingfeilet kvittering skal sendes seinest dagen etter at
-    varslingen var bestilt.
+|---|---|
+| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/VarslingfeiletKvittering> |
+| Term          | {{page.title}} |
+| Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt. |
+| Kilde         | DIFI |
+| Kommentar     | Dersom Postkasse opplever problemer med å utføre varslingen som spesifisert i meldingen, skal Postkasse informere Avsender om dette ved å sende VarslingfeiletKvittering. Det skal sendes en kvittering for hver forekomst av en feilsituasjon i en spesifisert kanal. Meldinger som angir bruk av flere varslingskanaler kan dermed medføre flere VarslingfeiletKvitteringer. Varslingfeilet kvittering skal sendes seinest dagen etter at varslingen var bestilt. 
 
 Se [Varsel](../begrep/Varsler.md) for mer informasjon om bruken av varsel.
 
