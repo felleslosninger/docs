@@ -5,20 +5,12 @@ permalink: sdp_returpostkvittering.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator
-    <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/ReturpostKvittering>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    En [Kvitteringsmelding](KvitteringsMelding.md) fra Utskriftstjenesten
-    til Avsender om at post ikke kunne leveres til Mottaker.
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Dette er Kvittering på at posten har kommet i retur og har blitt
-    makulert.
+|---|---|
+| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/ReturpostKvittering> |
+| Term          | {{page.title}} |
+| Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker. |
+| Kilde         | DIFI |
+| Kommentar     | Dette er Kvittering på at posten har kommet i retur og har blitt makulert. |
 
 Kvitteringen leveres når brevene er mottatt i retur av utskrift og
 forsendelsestjenesten, registrert og makulert. Dette forutsetter at
