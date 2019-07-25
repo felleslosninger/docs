@@ -5,17 +5,11 @@ permalink: sdp_feil.html
 sidebar: sidebar_begrep
 ---
 
-### {{page.title}}
-
-  - Identifikator
-    <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/Feil>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    En feilmelding fra postkasseleverandør med informasjon om en
-    forretningsfeil knyttet til en digital post forsendelse.
-  - Kilde  
-    DIFI
+|---|---|
+| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/Feil> |
+| Term          | {{page.title}} |
+| Definisjon    | En feilmelding fra postkasseleverandør med informasjon om en forretningsfeil knyttet til en digital post forsendelse. |
+| Kilde         | DIFI |
 
 ### Beskrivelse
 
