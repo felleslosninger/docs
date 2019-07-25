@@ -1,7 +1,7 @@
 ---
  
 title: Tilstander for Avsender  
-permalink: sdp_avsender_tilstanddiagram.html
+permalink: sdp_avsender_tilstanddiagram2.html
 sidebar: sidebar_begrep
 ---
 
