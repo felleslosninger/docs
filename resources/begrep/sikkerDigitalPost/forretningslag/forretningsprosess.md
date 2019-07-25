@@ -2,12 +2,12 @@
  
 title:  Sending av digital post  
 permalink: sdp_avsender_tilstanddiagram.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 ## Prosess for sending av digital post
 
-[Meldingen](../meldinger/) i Sikker digital post flyter mellom
+[Meldingen](https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/meldinger/) i Sikker digital post flyter mellom
 [Aktørene](Aktorer.md) slik det beskrives i flyt diagrammet under.
 
 Ovordnet er meldingsflyten slik:
