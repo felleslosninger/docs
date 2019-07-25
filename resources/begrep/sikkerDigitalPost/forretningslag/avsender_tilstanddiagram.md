@@ -12,9 +12,7 @@ Avsender. Målsetningen med tilstandsdiagrammet er å gi Avsendere en
 forståelse av hvilke prosesser og rutiner som bør etableres ved
 integrasjon mot Sikker digital post.
 
-[![Utkast til tilstandsdiagram for prosess hos
-avsender](tilstander_avsender.png
-"Utkast til tilstandsdiagram for prosess hos avsender")](tilstander_avsender.png)
+![Utkast til tilstandsdiagram for prosess hosavsender](tilstander_avsender.png)
 
 ### Tilstander
 
