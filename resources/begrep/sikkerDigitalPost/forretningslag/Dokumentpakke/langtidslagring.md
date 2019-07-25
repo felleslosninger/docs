@@ -1,15 +1,7 @@
 ---
 title: Langtidslagring  
-headtitle: Sikker digital post - ASiC  
-group: forretningslag
 permalink: sdp_langtidslagring.html
-sidebar:
-
-children:  
-\- name: Forretningslag/Manifest  
-\- name: Forretningslag/Dokumentformater  
-\- name: Forretningslag/HTML dokument  
-\- name: Forretningslag/Sikkerhet
+sidebar: sidebar_begrep
 
 ---
 
