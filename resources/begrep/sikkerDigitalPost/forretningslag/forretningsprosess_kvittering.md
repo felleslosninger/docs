@@ -1,7 +1,7 @@
 ---
 title: Henting av Kvittering
 permalink: sdp_forretningsprosess_kvittering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 
@@ -22,7 +22,7 @@ er tatt med for å vise sammenhengen)
 | Prosess     | Fra      | Til     | Beskrivelse    |
 | --- | --- | --- | --- |
 | Kvittering/Feilmelding      | [Postkasse](Aktorer.md) | [Meldingsformidler](Aktorer.md) | Kvitteringene som sendes er: [Leveringskvittering](../meldinger/LeveringsKvittering.md), [Åpningskvittering](../meldinger/AapningsKvittering.md) , [VarslingfeiletKvittering](../meldinger/VarslingfeiletKvittering.md) i tillegg til eventuelle (her skal det være link til meldinger/feilmelding.md men finnes ikke)             |
-| Hent Kvittering/Feilmelding | [Avsender](Aktorer)  | [Meldingsformidler](Aktorermd) | Kvittering/Feilmelding ligger tilgjengelig på en kø hos Meldingsformidler. Avsender sender en forespørsel om å hente en kvittering. Meldingsformidler vil levere neste kvittering i køen uavhengig av hvilken kvitteringstype som ligger i køen. Det er en egen kø for prioriterte meldinger. |
+| Hent Kvittering/Feilmelding | [Avsender](Aktorer.md)  | [Meldingsformidler](Aktorer.md) | Kvittering/Feilmelding ligger tilgjengelig på en kø hos Meldingsformidler. Avsender sender en forespørsel om å hente en kvittering. Meldingsformidler vil levere neste kvittering i køen uavhengig av hvilken kvitteringstype som ligger i køen. Det er en egen kø for prioriterte meldinger. |
 
 ### Henting av kvitteringer i parallel
 
