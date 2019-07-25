@@ -2,7 +2,7 @@
 
 title: Prisen på digital post  
 permalink: sdp_meldingsstorrelse.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 ## Hva er prisen på sending av en Digital post?
