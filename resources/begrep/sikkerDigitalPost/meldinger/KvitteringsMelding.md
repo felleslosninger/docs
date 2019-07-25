@@ -4,20 +4,12 @@ permalink: sdp_kvitteringsmelding.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator  
-    <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/meldinger/KvitteringsMelding>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    En kvitteringsmelding på en [digital post
-    melding](DigitalPostMelding.md) fra en [Avsender](../begrep/Avsender.md).
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Kvittering er en abstrakt [kvittering melding](index.md) type, se under
-    for de kvitteringer som er definert.
+|---|---|
+| Identifikator | <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/meldinger/KvitteringsMelding> |
+| Term          | {{page.title}} |
+| Definisjon    | En kvitteringsmelding på en [digital post melding](DigitalPostMelding.md) fra en [Avsender](../begrep/Avsender.md). |
+| Kilde         | DIFI |
+| Kommentar     | Kvittering er en abstrakt [kvittering melding](index.md) type, se under for de kvitteringer som er definert. |
 
 ### Attributer
 
