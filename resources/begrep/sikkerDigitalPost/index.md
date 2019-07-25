@@ -2,23 +2,8 @@
 
 title: Digital postkasse til innbyggere 
 permalink: sdp_innledning_index.html
-sidebar:
-
-children:  
-\- name: Oversikt  
-\- name: Forretningslag  
-\- name: Forretningslag/Dokumentpakke  
-\- name: Forretningslag/Utvidelser  
-\- name: utskrift  
-\- name: Forretningsmeldinger  
-\- name: Forretningslag/StandardBusinessDocument  
-\- name: Transportlag  
-\- name: Feilhåndtering  
-\- name: Begreper
-
+sidebar: sidebar_begrep
 ---
-
-## Digital postkasse til innbyggere
 
 Denne delen av [begrepskatalogen](/) inneholder spesifikasjonen av
 grensesnittene for [Digital post til
