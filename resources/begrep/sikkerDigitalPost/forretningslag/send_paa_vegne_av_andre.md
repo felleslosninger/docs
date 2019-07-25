@@ -40,7 +40,7 @@ for alle de underliggende prosjektene som er postavsender.
 Både Kreftregisteret og de underliggende prosjektene er opprettet med
 kontoer hos postkasseleverandørene.  
 Kreftregisteret bruker
-[avsenderidentifikator](../../felles/avsenderidentifikator.md) for å skille på
+[avsenderidentifikator](https://difi.github.io/felleslosninger/avsenderidentifikator.html) for å skille på
 hvilket prosjekt som er postavsender.
 
 [![Bruk av avsenderidentifikator](kreftregister_eksempel.png
