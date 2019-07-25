@@ -5,22 +5,12 @@ permalink: sdp_flyttetdigitalpostmelding.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator  
-    <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/FlyttetDigitalPostMelding>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    En digital post med tilhørende
-    [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) som flyttes fra en
-    postkasseleverandør til en annen
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Denne meldingstypen brukes kun imellom Postkasseleverandørene og
-    ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin
-    post over til en annen postkasseleverandør.
+|---|---|
+| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/FlyttetDigitalPostMelding> |
+| Term          | {{page.title}} |
+| Definisjon    | En digital post med tilhørende [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) som flyttes fra en postkasseleverandør til en annen |
+| Kilde         | DIFI |
+| Kommentar     | Denne meldingstypen brukes kun imellom Postkasseleverandørene og ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin post over til en annen postkasseleverandør. |
 
 Det er den opprinnelige Dokumentpakken som skal sendes til ny postkasse
 ved flytting av post. Denne pakkes inn i en FlytteDigitalpostMelding.  
