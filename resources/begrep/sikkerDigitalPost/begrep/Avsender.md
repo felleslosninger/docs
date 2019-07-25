@@ -24,7 +24,7 @@ sidebar:
 
 | --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype |                                                        
-| ../felles/virksomhetsidentifikator | 1..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [virksomhetsidentifikator](https://begrep.difi.no/Felles/virksomhetsidentifikator)| 1..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | [avsenderindentifikator](https://begrep.difi.no/Felles/avsenderidentifikator) | 0..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |           
 | fakturaReferanse | 0..1 | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) \[maks 40\] |
 
