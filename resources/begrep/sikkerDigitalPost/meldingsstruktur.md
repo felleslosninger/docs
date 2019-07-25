@@ -21,8 +21,7 @@ presentere og behandle den digitale postforsendelsen til Mottaker.
 Dette er [StandardBusinessDocument](forretningslag/StandardBusinessDocument/index.md), som er
 signert/integritetsbeskyttet fra Avsender til Postkasseleverandør.
 
-ebMS 3.0 er brukt som
-[meldingsutvekslingsrammeverk](transportlag/Meldingsutveksling/index.md) fra Avsender til
+ebMS 3.0 er brukt som [meldingsutvekslingsrammeverk](transportlag/Meldingsutveksling/index.md) fra Avsender til
 Meldingsformidler.  
 Så [eb:Messaging](transportlag/Messaging.md) og [Webservice
 security](../oppslagstjenesten/ws-security/WebserviceSecurity.md) er signert/integritetsbeskyttet punkt til
