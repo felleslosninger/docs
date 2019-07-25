@@ -2,7 +2,7 @@
 
 title: Sertifikathåndtering  
 permalink: sdp_sertifikathandtering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 ## Sertifikater
