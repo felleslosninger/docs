@@ -7,7 +7,7 @@ sidebar: sidebar_begrep
 
 Denne delen av begrepskatalogen inneholder spesifikasjonen av
 grensesnittene for [Digital post til
-innbyggere](https://samarbeid.difi.no/digital-postkasse-til-innbyggere).
+innbyggere](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere).
 
 Målgruppen for denne spesifikasjonen er
 [Avsendervirksomheter](forretningslag/Aktorer.md),
