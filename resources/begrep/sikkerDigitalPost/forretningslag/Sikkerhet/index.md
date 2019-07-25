@@ -1,7 +1,5 @@
 ---
 title: Sikkerhet  
-headtitle: Sikker digital post  
-group: forretningslag
 permalink: sikkerhet_index.html
 sidebar:
 ---
