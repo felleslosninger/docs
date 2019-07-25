@@ -5,28 +5,12 @@ permalink: sdp_aapningskvittering.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator
-    <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/AapningsKvittering>
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    En [KvitteringsMelding](KvitteringsMelding.md) til Avsender om at
-    Mottaker har åpnet forsendelsen i sin postkasse.
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Åpningskvitteringer blir bare sendt dersom dette er bestilt av
-    [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) i
-    [digital post meldingen](DigitalPostMelding.md) ved å spesifisere dette
-    i [digitalpostinfo](../begrep/DigitalPostInfo.md).  
-    [Mottaker](../begrep/Mottaker.md) må aksepteres at det sendes en
-    [ÅpningsKvittering](AapningsKvittering.md) til
-    [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) for å
-    få lest den digital posten.  
-    Mangel på [ÅpningsKvittering](AapningsKvittering.md) betyr at
-    [Mottaker](../begrep/Mottaker.md) ikke har lest dokumentet.
+|---|---|
+| Identifikator | <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/AapningsKvittering> |
+| Term          | {{page.title}} |
+| Definisjon    | En [KvitteringsMelding](KvitteringsMelding.md) til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse. |
+| Kilde         | DIFI |
+| Kommentar     | Åpningskvitteringer blir bare sendt dersom dette er bestilt av [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) i [digital post meldingen](DigitalPostMelding.md) ved å spesifisere dette i [digitalpostinfo](../begrep/DigitalPostInfo.md). [Mottaker](../begrep/Mottaker.md) må aksepteres at det sendes en [ÅpningsKvittering](AapningsKvittering.md) til [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) for å få lest den digital posten. Mangel på [ÅpningsKvittering](AapningsKvittering.md) betyr at [Mottaker](../begrep/Mottaker.md) ikke har lest dokumentet. |
 
 Bruk av [ÅpningsKvittering](AapningsKvittering.md) er priset for
 [Avsender](../forretningslag/StandardBusinessDocument/Sender.md).
