@@ -1,27 +1,18 @@
 ---
 title: manifest  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: forretningslag
-permalink: sdp_manifest.md
-sidebar:
+permalink: sdp_manifest.html
+sidebar: sidebar_begrep
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    inneholder metadata relatert til hver fil i en forsendelse.
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Manifest er en xml-fil som inneholder relevant informasjon om
-    [dokumentene](../../begrep/Dokument.md) i [dokumentpakken](index.md).  
-    Manifest xml-filen skal langtidsoppbevares sammen med dokumentene
-    for å bevare integriteten på hele [dokumentpakken](index.md) over lang
-    tid.
+|---|---|
+| Identifikator |  |
+| Term          | {{page.title}} |
+| Definisjon    | inneholder metadata relatert til hver fil i en forsendelse. |
+| Datatype      | complexType |
+| Kilde         | DIFI |
+| Kommentar     | Manifest er en xml |
+| fil           | som inneholder relevant informasjon om [dokumentene](../../begrep/Dokument.md) i [dokumentpakken](index.md). Manifest xml |
+| filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken](index.md) over lang tid. |
 
 ### Attributer
 
