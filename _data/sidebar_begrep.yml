@@ -46,19 +46,19 @@ folders:
       subfolderitems:
 
       - title: Langtidslagring
-        jurl: /oidc_hurtigguide.html    
-      - title: manifest
-        jurl: /oidc_index.html 
+        jurl: /sdp_langtidslagring.html   
+      - title: Manifest
+        jurl: /sdp_manifest.html
       - title: Dokumentformater
-        jurl: /oidc_hurtigguide.html    
+        jurl: /dokumentformat_index.html   
       - title: MIME type
-        jurl: /oidc_index.html  
+        jurl: /sdp_mimetypes.html  
       - title: html
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_html.html
       - title: ehf
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_ehf.html
       - title: Sikkerhet
-        jurl: /oidc_hurtigguide.html
+        jurl: /sikkerhet_index.html
 
     - title: Utvidelser
       subfolderitems:
