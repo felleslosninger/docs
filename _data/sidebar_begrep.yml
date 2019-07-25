@@ -4,7 +4,7 @@ folders:
   jurl: /idporten_index.html    
 - title: Oppslagstjenesten
   jurl: /ot_oppslagstjenesten.html
-- title: Sikker digital Post6
+- title: Sikker digital Post
   folderitems:
   - title: 
     jurl: /test.html
@@ -14,11 +14,11 @@ folders:
       subfolderitems:
 
       - title: Arkitektur
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_arkitektur.html   
       - title: Sikkerhet
-        jurl: /oidc_index.html 
+        jurl: /sdp_sikkerhet_index.html 
       - title: Sertifikathåndtering
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_sertifikathandtering.html   
       - title: Skjema (XSD) filer
         jurl: /oidc_index.html  
       - title: Eksempler
