@@ -1,11 +1,8 @@
 ---
-
 title: Meldingsutveksling  
 permalink: sdp_index_meldingsutveksling.html
-sidebar:
+sidebar: sidebar_begrep
 ---
-
-## {{page.title}}
 
 ## Spesifikasjon for meldingutveksling i Sikker digital Post
 
