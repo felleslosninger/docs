@@ -86,7 +86,7 @@ folders:
 
       - title: Forretningsmeldinger
         jurl: /sdk_index.html
-     - title: DigitalPostMelding
+      - title: DigitalPostMelding
         jurl: /sdp_digitalpostmeldinger.html   
       - title: LeveringsKvittering
         jurl: /sdp_leveringskvittering.html 
