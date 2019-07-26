@@ -2,7 +2,7 @@
 
 title: Transportlag  
 permalink: sdp_transportlag_index.html
-sidebar:
+sidebar: sidebar_begrep
 
 ---
 
