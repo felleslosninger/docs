@@ -38,7 +38,7 @@ feiltype kan ha følgende verdi:
 
 | Kodeverdi                       | Beskrivelse                                                                         |
 | ------------------------------- | ----------------------------------------------------------------------------------- |
-| RESERVERT                       | brukeren er reservert                                                               |
+| RESERVERT                       | Brukeren er reservert                                                               |
 | ALLEREDE\_AKTIV                 | Brukeren er allerede aktiv                                                          |
 | INGEN\_POSTBOKS\_FUNNET         | Det ble ikke funnet noe postkasse på brukeren                                       |
 | BRUKER\_IKKE\_FUNNET            | Innbyggeren ble ikke funnet                                                         |
