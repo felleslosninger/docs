@@ -14,7 +14,7 @@ til ett dokument og tilfører en beriket visning i innbyggers postkasse.
 For å knytte en utvidelse til et dokument må det inkluderes en fil ihht.
 utvidelsens XML-schema (XSD) i dokumentpakken, og det aktuelle
 [dokumentet](../../begrep/Dokument.md) refererer til
-[«data-dokumentet»](../../begrep/DokumentData.md) vha. `<data>`-elementet
+[«data-dokumentet»](https://difi.github.io/felleslosninger/sdp_dokumentdata.html) vha. `<data>`-elementet
 i [manifestet](https://difi.github.io/felleslosninger/sdp_manifest.html).
 
 Dersom innbyggers postkasseleverandør ikke støtter utvidelsen blir
