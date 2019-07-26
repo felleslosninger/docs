@@ -2,10 +2,8 @@
 
 title: Feilhåndteringsprosess  
 permalink: sdp_feilhandteringsprosess.html
-sidebar:
+sidebar: sidebar_begrep
 ---
-
-## {{page.title}}
 
 Prosessen for feilhåndtering i Sikker digital post er ikke etablert.
 Prosessen skal etableres som del av etableringsprosjektet.  
