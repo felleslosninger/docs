@@ -2,11 +2,11 @@
 
 title: VarslingfeiletKvittering  
 permalink: sdp_varslingfeiletkvittering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/VarslingfeiletKvittering> |
+| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt. |
 | Kilde         | DIFI |
