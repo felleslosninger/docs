@@ -85,7 +85,7 @@ folders:
       subfolderitems:
 
       - title: Forretningsmeldinger
-        jurl: /sdk_index.html
+        jurl: /sdp_index.html
       - title: DigitalPostMelding
         jurl: /sdp_digitalpostmeldinger.html   
       - title: LeveringsKvittering
