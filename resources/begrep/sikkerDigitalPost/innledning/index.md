@@ -2,18 +2,8 @@
 
 title: Oversikt  
 permalink: sdp_index_innledning.html
-sidebar:
-
-children:  
-\- name: Oversikt/Arkitektur  
-\- name: Sikkerhet  
-\- name: Sikkerhet/Sertifikathåndtering  
-\- name: Oversikt/XSDfiler  
-\- name: Eksempler
-
+sidebar: sidebar_begrep
 ---
-
-## Oversikt
 
 Sikker digital posttjeneste er en felles løsning for offentlige
 virksomheter for å sende brev digitalt til innbyggere.  
