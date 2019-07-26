@@ -1,7 +1,7 @@
 ---
 
 title: Forretningsmeldinger  
-permalink: sdk_index.html
+permalink: sdp_index.html
 sidebar: sidebar_begrep
 ---
 
