@@ -8,7 +8,7 @@ sidebar: sidebar_begrep
 | Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | Informasjon relatert til ruting og adressering av en melding. Forkortelse: SBDH. Avsender og mottaker definert i SBDH vil alltid reflektere de tekniske endepunktene i meldingsutvekslingen. |
-| Kilde         | [GS1](http://www.gs1.org) 
+| Kilde         | [GS1](http://www.gs1.org) |
 
 ### Attributter
 
