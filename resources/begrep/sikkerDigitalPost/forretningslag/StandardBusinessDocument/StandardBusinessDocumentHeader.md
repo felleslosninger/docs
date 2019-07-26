@@ -24,8 +24,8 @@ sidebar: sidebar_begrep
 
 Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i
 [FormidleDigitalPostForsendelse](https://difi.github.io/felleslosninger/sdp_formidledigitalpostforsendelse.html)
-prosessen så vil Sender være [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) og Receiver
-være [Postkasse](https://difi.github.io/felleslosninger/sdp_aktorer.html).
+prosessen så vil Sender være [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller) og Receiver
+være [Postkasse](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller).
 
 Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den
 offisielle standarden (BusinessScope er obligatorisk i Sikker Digital
@@ -35,14 +35,14 @@ validerer mot xsd.
 
 ### XML eksempel fra Databehandler til Postkasseleverandør
 
-**** En melding fra [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) med orgnummer: 123456789
+**** En melding fra [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#rollerl) med orgnummer: 123456789
 til [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html) med orgnummer: 987654321
 
-**** [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) har generert en unik
+**** [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “35e21e33-22b3-4554-9707-5fa829ee8bc0”
 
-**** [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) har generert en unik
+**** [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller) har generert en unik
 BusinessScope.InstanceIdentifier for hele konversasjonen:
 “37efbd4c-413d-4e2c-bbc5-257ef4a65a45”
 
