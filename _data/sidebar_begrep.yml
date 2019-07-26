@@ -65,9 +65,11 @@ folders:
 
       - title: Lenke utenfor brev
         jurl: /sdp_lenke.html
-     
+        
     - title: Utskrift og forsendelse
-      jurl: /sdp_index_utskrift.html
+           
+      - title: Utskrift
+        jurl: /sdp_index_utskrift.html
  
     - title: Forretningsmeldinger
       subfolderitems:
