@@ -5,8 +5,6 @@ permalink: sdp_forretningslag_index.html
 sidebar: sidebar_begrep
 ---
 
-## Forretningslag
-
 Forretningslaget dokumenterer den logiske flyten av meldinger i
 infrastrukturen, inkludert oversikt over aktører, roller og prosesser.  
 I tillegg er det dokumentert hvilke tilstander og overganger en Avsender
