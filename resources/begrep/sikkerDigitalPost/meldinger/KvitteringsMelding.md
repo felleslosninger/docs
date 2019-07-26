@@ -28,4 +28,4 @@ Følgende konkrete kvitteringer er definert:
   - [AapningsKvittering](AapningsKvittering.md)
   - [VarslingfeiletKvittering](VarslingfeiletKvittering.md)
   - [MottaksKvittering](MottaksKvittering.md)
-  - [PostlagtKvittering](PostlagtKvittering.md)
+
