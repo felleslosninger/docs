@@ -4,18 +4,12 @@ permalink: standardbusinessdocument_index.html
 sidebar:
 ---
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”/index.html"
-    }}":{{page.url}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Forretningsmeldingen i en forsendelse inkludert
-    adresseringsinformasjon.
-  - Forkortelse  
-    SBD
-  - Kilde  
-    [GS1](http://www.gs1.org)
+|---|---|
+| Identifikator | |
+| Term          | {{page.title}} |
+| Definisjon    | Forretningsmeldingen i en forsendelse inkludert adresseringsinformasjon. |
+| Forkortelse   | SBD |
+| Kilde         | [GS1](http://www.gs1.org) |
 
 ### Standard Business Document (SBD)
 
