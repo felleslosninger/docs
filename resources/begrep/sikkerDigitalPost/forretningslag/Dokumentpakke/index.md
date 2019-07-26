@@ -1,19 +1,7 @@
 ---
 title: Dokumentpakke (ASiC)  
-headtitle: Sikker digital post - ASiC  
-group: forretningslag
 permalink: dokumentpakke_index.html
-sidebar:
-
-children:  
-\- name: Forretningslag/Langtidslagring  
-\- name: Forretningslag/Manifest  
-\- name: Forretningslag/Dokumentformater  
-\- name: Forretningslag/MIME type  
-\- name: Forretningslag/HTML dokument  
-\- name: Forretningslag/EHF dokument  
-\- name: Forretningslag/Sikkerhet
-
+sidebar: sidebar_begrep
 ---
 
 ## Introduksjon
