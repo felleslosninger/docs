@@ -1,21 +1,14 @@
 ---
 title: BusinessScope  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: forretningslag
 permalink: sdp_businessscope.html
 sidebar:
 ---
 
-### {{page.title}}
-
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    inneholder identifikasjon om dokumentet
-  - Kilde  
-    [GS1](http://www.gs1.org/docs/gsmp/xml/sbdh/CEFACT_SBDH_TS_version1.3.pdf)
+|---|---|
+| Identifikator | |
+| Term          | {{page.title}} |
+| Definisjon    | inneholder identifikasjon om dokumentet |
+| Kilde         | [GS1](http://www.gs1.org/docs/gsmp/xml/sbdh/CEFACT_SBDH_TS_version1.3.pdf) |
 
 ### Attributer
 
