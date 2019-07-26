@@ -1,11 +1,8 @@
----
- 
+--- 
 title: Meldingsidentifikatorer  
 permalink: sdp_meldingsidentifikatorer.html
-sidebar:
+sidebar: sidebar_begrep
 ---
-
-## {{page.title}}
 
 ### Identifikatorer brukt i forsendelsen punkt til punkt.
 
