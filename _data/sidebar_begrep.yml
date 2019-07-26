@@ -67,6 +67,7 @@ folders:
         jurl: /sdp_lenke.html
         
     - title: Utskrift og forsendelse
+      subfolderitems:
            
       - title: Utskrift
         jurl: /sdp_index_utskrift.html
@@ -94,8 +95,10 @@ folders:
     - title: Standard Business Document
       subfolderitems:
 
+      - title: Standard Business Document
+        jurl: /standardbusinessdocument_index.html 
       - title: StandardBusinessDocumentHeader
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_standardbusinessdocumentheader.html   
       - title: Sender
         jurl: /oidc_index.html 
       - title: Receiver
