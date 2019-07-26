@@ -2,11 +2,11 @@
 
 title: MottaksKvittering  
 permalink: sdp_mottakskvittering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/MottaksKvittering> |
+| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift. |
 | Kilde         | DIFI |
