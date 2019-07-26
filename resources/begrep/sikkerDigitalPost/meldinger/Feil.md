@@ -6,7 +6,7 @@ sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/Feil> |
+| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En feilmelding fra postkasseleverandør med informasjon om en forretningsfeil knyttet til en digital post forsendelse. |
 | Kilde         | DIFI |
