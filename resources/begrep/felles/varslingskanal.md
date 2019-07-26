@@ -14,5 +14,10 @@ sidebar:
 | Gyldige verdier | epost ; sms |
 | Standardverdi | epost |
 
+### Xml eksempel
+
+```
+<varslingskanal>sms</varslingskanal>
+```
 
 
