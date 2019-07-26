@@ -19,7 +19,7 @@ sidebar: sidebar_begrep
 | [Receiver](Receiver.md)                             | 1..1         | [sbdh:Receiver](Receiver.md)                             | Identifikator (organisasjonsnummer) til virksomheten som er sluttmottaker i meldingsprosessen. Ved initiell sending av melding vil dette alltid være en postboks eller utskriftsleverandør. |
 | [DocumentIdentification](DocumentIdentification.md) | 1..1         | [sbdh:DocumentIdentification](DocumentIdentification.md) | Unik identifikator for meldingen, generert av Avsender                                                                                                                                      |
 | [BusinessScope](BusinessScope.md)                   | 1..1         | [sbdh:BusinessScope](BusinessScope.md)                   | Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen                                                                                                  |
-https://difi.github.io/felleslosninger/
+
 ### Kommentar
 
 Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i
