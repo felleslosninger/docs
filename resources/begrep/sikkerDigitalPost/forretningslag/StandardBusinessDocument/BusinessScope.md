@@ -32,7 +32,7 @@ Rett format på InstanceIdentifier blir håndhevet av meldingsformidler.
 
 ### Xml eksempel
 
-``` 
+``` xml
     <ns3:BusinessScope>
         <ns3:Scope>
             <ns3:Type>ConversationId</ns3:Type>
