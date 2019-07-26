@@ -120,30 +120,34 @@ folders:
         jurl: /sdp_businessscope.html
  
     - title: Transportlag
-      subfolderitems:
+      subfolderitems: 
 
+      - title: Transport av meldinger
+        jurl: /sdp_transportlag_index.html 
       - title: Meldingsutveksling
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_index_meldingsutveksling.htm   
       - title: Meldingsidentifikatorer
-        jurl: /oidc_index.html 
+        jurl: /sdp_meldingsidentifikatorer.html
       - title: Meldingsformat
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_transportlag_meldingsformat.html    
       - title: Webservice sikkerhet
-        jurl: /oidc_index.html  
+        jurl: /sdp_webservicesecurity.html
  
     - title: Feilhåndtering
       subfolderitems:
 
+      - title: Feilhåndtering
+        jurl: /sdp_feil_index.html
       - title: Forvaltning og tekniske feil
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_forvaltning.html    
       - title: Transportfeil
-        jurl: /oidc_index.html 
+        jurl: /sdp_transportfeil.html
       - title: Forretningsfeil
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_forretningsfeil.html   
       - title: Feilhåndteringsprosess
-        jurl: /oidc_index.html
+        jurl: /sdp_feilhandteringsprosess.html
  
     - title: Begreper
  
 - title: Felles
-  jurl: /saml_tilgang.html   
+  jurl: /begrep_felles_index.html   
