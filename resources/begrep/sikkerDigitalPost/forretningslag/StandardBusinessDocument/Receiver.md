@@ -27,7 +27,7 @@ sidebar: sidebar_begrep
 
 | Identifikator | Kardinalitet | Datatype                                                     | Kommentar |
 | ------------- | ------------ | ------------------------------------------------------------ | --------- |
-| Identifier    | 1..1         | SKAL VÆRE LINK TIL /Felles/virksomhetsidentifikator.md |           |
+| Identifier    | 1..1         | https://difi.github.io/felleslosninger/virksomhetsidentifikator.html |           |
 
 ### XML eksempel
 
