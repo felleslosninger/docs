@@ -2,11 +2,11 @@
 
 title: ReturpostKvittering  
 permalink: sdp_returpostkvittering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/ReturpostKvittering> |
+| Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker. |
 | Kilde         | DIFI |
