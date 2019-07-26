@@ -18,6 +18,5 @@ SOAP melding som illustrert i [eksemplene](../eksempler/index.md).
 En komplett melding slik som den blir overført mellom to punkter i
 infrastrukturen kan illustreres på følgende måte:
 
-[![Figuren viser en overordnet beskrivelse av meldingen i Sikker digital
-post](meldingsstruktur_enkel.jpg
-"Figuren viser en overordnet beskrivelse av meldingen i Sikker digital post")](meldingsstruktur_enkel.jpg)
+![Figuren viser en overordnet beskrivelse av meldingen i Sikker digital
+post](meldingsstruktur_enkel.jpg)
