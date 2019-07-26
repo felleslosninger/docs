@@ -2,7 +2,7 @@
 
 title: LeveringsKvittering  
 permalink: sdp_leveringskvittering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
@@ -14,11 +14,11 @@ sidebar:
 
 #### For Digitalpost forsendelser
 
-Kvitteringen sendes fra [Postkassleverandør](../forretningslag/Aktorer.md)
+Kvitteringen sendes fra [Postkassleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
 når postforsendelsen er validert og de garanterer for at posten vil bli
 tilgjengeliggjort.  
 Kvitteringen vil bli sendt så fort
-[Postkassleverandør](../forretningslag/Aktorer.md) kan garantere dette,
+[Postkassleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html) kan garantere dette,
 det vil si at [Leveringskvitteringen](LeveringsKvittering.md) vil bli sendt
 før (Skal være link til /felles/virkningsdato.md).
 
@@ -33,7 +33,7 @@ tidspunkt for alle meldinger som postlegges samme dag.
 
 #### Arkivering av kvittering
 
-Det anbefales at [Behandlingsansvarlig](../forretningslag/Aktorer.md)
+Det anbefales at [Behandlingsansvarlig](https://difi.github.io/felleslosninger/sdp_aktorer.html)
 arkiverer denne kvitteringen som bevis på at
 [posten](DigitalPostMelding.md) er levert til
 [Mottaker](../begrep/Mottaker.md).
