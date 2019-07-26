@@ -2,21 +2,16 @@
 
 title: Lenke utenfor brev  
 permalink: sdp_lenke.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
-  - Definisjon  
-    Lenke utenfor brev
-  - Mime-Type  
-    application/vnd.difi.dpi.lenke+xml
-  - Datatype  
-    complexType
-  - Kommentar  
-    Definerer en lenke som presenteres for innbygger i postkassen.
-    Postkasseleverandøren kan vise en standard beskrivelse og tekst på
-    knappen dersom de ikke er definert.
-  - XSD  
-    https://begrep.difi.no/SikkerDigitalPost/xsd/utvidelser/lenke.xsd
+|---|---|
+| Definisjon | Lenke utenfor brev |
+|            | Mime |
+| Type       | application/vnd.difi.dpi.lenke+xml |
+| Datatype   | complexType |
+| Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
+| XSD        | https://begrep.difi.no/SikkerDigitalPost/xsd/utvidelser/lenke.xsd |
 
 ### Attributer
 
