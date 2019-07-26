@@ -1,11 +1,11 @@
 ---
 title: Kvitteringsmelding
 permalink: sdp_kvitteringsmelding.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/meldinger/KvitteringsMelding> |
+| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En kvitteringsmelding på en [digital post melding](DigitalPostMelding.md) fra en [Avsender](../begrep/Avsender.md). |
 | Kilde         | DIFI |
