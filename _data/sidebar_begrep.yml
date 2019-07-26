@@ -13,6 +13,8 @@ folders:
     - title: Oversikt
       subfolderitems:
 
+      - title: Innledning
+        jurl: /sdp_index_innledning.html 
       - title: Arkitektur
         jurl: /sdp_arkitektur.html   
       - title: Sikkerhet
@@ -27,6 +29,8 @@ folders:
     - title: Forretningslag
       subfolderitems:
 
+      - title: Forretningslag
+        jurl: /sdp_forretningslag_index.html
       - title: Aktører og Roller
         jurl: /sdp_aktorer.html   
       - title: Sending av digital post
@@ -45,6 +49,9 @@ folders:
     - title: Dokumentpakke (ASiC)
       subfolderitems:
 
+
+      - title: Introduksjon
+        jurl: /dokumentpakke_index.html
       - title: Langtidslagring
         jurl: /sdp_langtidslagring.html   
       - title: Manifest
@@ -63,6 +70,8 @@ folders:
     - title: Utvidelser
       subfolderitems:
 
+      - title: Introduksjon
+        jurl: /sdp_utvidelser_index.html
       - title: Lenke utenfor brev
         jurl: /sdp_lenke.html
         
@@ -75,22 +84,24 @@ folders:
     - title: Forretningsmeldinger
       subfolderitems:
 
-      - title: DigitalPostMelding
-        jurl: /oidc_hurtigguide.html    
+      - title: Forretningsmeldinger
+        jurl: /sdk_index.html
+     - title: DigitalPostMelding
+        jurl: /sdp_digitalpostmeldinger.html   
       - title: LeveringsKvittering
-        jurl: /oidc_index.html 
+        jurl: /sdp_leveringskvittering.html 
       - title: AapningsKvittering
-        jurl: /oidc_hurtigguide.html    
+        jurl: /osdp_aapningskvittering.html   
       - title: VarslingfeiletKvittering
-        jurl: /oidc_index.html  
+        jurl: /sdp_varslingfeiletkvittering.html 
       - title: MottaksKvittering
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_mottakskvittering.html
       - title: ReturpostKvittering
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_returpostkvittering.html
       - title: Feil
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_feil.html
       - title: FlyttetDigitalpostMelding
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_flyttetdigitalpostmelding.html
  
     - title: Standard Business Document
       subfolderitems:
