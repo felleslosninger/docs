@@ -39,5 +39,5 @@ dokumentpakken
 
 | Identifikator                                                    | Kardinalitet | Datatype                    | Kommentar                                                                          |
 | ---------------------------------------------------------------- | ------------ | --------------------------- | ---------------------------------------------------------------------------------- |
-| [StandardBusinessDocumentHeader](StandardBusinessDocumentHeader.md) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
-| [Melding](../../meldinger/)                                      | 0..1         | [Melding](../../meldinger/) | Forretningsmelding identifisert i [DocumentIdentification](DocumentIdentification.md) |
+| [StandardBusinessDocumentHeader](https://difi.github.io/felleslosninger/sdp_standardbusinessdocumentheader.html) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
+| [Melding](../../meldinger/)                                      | 0..1         | [Melding](../../meldinger/) | Forretningsmelding identifisert i [DocumentIdentification](https://difi.github.io/felleslosninger/sdp_documentidentification.html) |
