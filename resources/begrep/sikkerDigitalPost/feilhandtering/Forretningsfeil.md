@@ -2,10 +2,9 @@
 
 title: Forretningsfeil  
 permalink: sdp_forretningsfeil.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
-## {{page.title}}
 
 Forretningsfeil er feil som medfører at aktørene i Sikker Digital Post
 ikke er i stand til å utføre en operasjon slik som spesifisert i
