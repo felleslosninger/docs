@@ -2,7 +2,7 @@
   
 title: Utvidelser  
 permalink: sdp_utvidelser_index.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 ## Introduksjon
@@ -15,7 +15,7 @@ For å knytte en utvidelse til et dokument må det inkluderes en fil ihht.
 utvidelsens XML-schema (XSD) i dokumentpakken, og det aktuelle
 [dokumentet](../../begrep/Dokument.md) refererer til
 [«data-dokumentet»](../../begrep/DokumentData.md) vha. `<data>`-elementet
-i [manifestet](../Dokumentpakke/Manifest.md).
+i [manifestet](https://difi.github.io/felleslosninger/sdp_manifest.html).
 
 Dersom innbyggers postkasseleverandør ikke støtter utvidelsen blir
 informasjonen forkastet av postkassen uten at hverken avsender eller
