@@ -4,7 +4,11 @@ permalink: begrep_felles_index.html
 sidebar: sidebar_begrep
 ---
 
-- list opp
+
+**todo** 
+
+
+- list 
 - alle
 - lenkene
 - nedover
