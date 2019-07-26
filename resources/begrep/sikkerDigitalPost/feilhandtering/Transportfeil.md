@@ -2,10 +2,8 @@
 
 title: Transportfeil  
 permalink: sdp_transportfeil.html
-sidebar:
+sidebar: sidebar_begrep
 ---
-
-## {{page.title}}
 
 Feil i transportlaget vil være feil relatert til transportprotokoll og
 meldingsutveksling. Transportlaget benytter
