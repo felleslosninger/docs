@@ -1,8 +1,7 @@
 ---
-
 title: Meldingsformat  
 permalink: sdp_transportlag_meldingsformat.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 ## Meldingsformat
