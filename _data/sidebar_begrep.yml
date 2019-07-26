@@ -96,17 +96,17 @@ folders:
       subfolderitems:
 
       - title: Standard Business Document
-        jurl: /standardbusinessdocument_index.html 
+        jurl: /standardbusinessdocument_index.html
       - title: StandardBusinessDocumentHeader
         jurl: /sdp_standardbusinessdocumentheader.html   
       - title: Sender
-        jurl: /oidc_index.html 
+        jurl: /sdp_sender.html
       - title: Receiver
-        jurl: /oidc_hurtigguide.html    
+        jurl: /sdp_receiver.html 
       - title: DocumentIdentification
-        jurl: /oidc_index.html  
+        jurl: /sdp_documentidentification.html 
       - title: BusinessScope
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_businessscope.html
  
     - title: Transportlag
       subfolderitems:
