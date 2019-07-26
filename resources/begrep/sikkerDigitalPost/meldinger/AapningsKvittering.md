@@ -2,11 +2,11 @@
 
 title: AapningsKvittering  
 permalink: sdp_aapningskvittering.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/AapningsKvittering> |
+| Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | En [KvitteringsMelding](KvitteringsMelding.md) til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse. |
 | Kilde         | DIFI |
