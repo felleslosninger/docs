@@ -61,13 +61,13 @@ folders:
         jurl: /sikkerhet_index.html
 
     - title: Utvidelser
-      jurl: /sikkerhet_index.html
       subfolderitems:
 
       - title: Lenke utenfor brev
-        jurl: /oidc_hurtigguide.html
+        jurl: /sdp_lenke.html
      
     - title: Utskrift og forsendelse
+      jurl: /sdp_index_utskrift.html
  
     - title: Forretningsmeldinger
       subfolderitems:
