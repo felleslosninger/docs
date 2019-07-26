@@ -11,4 +11,4 @@ totalleverandør for avsendervirksomhetene vedrørende post til innbyggere.  Tje
 kontaktinformasjon.
 
   - [Prosessbeskrivelse for sending av post til utskrift og
-    forsendelse](../felleslosninger/sdp_forretningsprosess_utskrift.html)
+    forsendelse](https://difi.github.io/felleslosninger/sdp_forretningsprosess_utskrift.html)
