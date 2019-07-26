@@ -15,7 +15,7 @@ sidebar:
 ### Xml eksempel
 
 ```
-<virkningsdato>2013-12-11</virkningsdato>>
+<virkningsdato>2013-12-11</virkningsdato>
 ```
 
 
