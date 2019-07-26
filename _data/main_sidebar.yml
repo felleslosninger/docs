@@ -95,6 +95,9 @@ related_resources_title: Andre nyttige lenker
 
 related_resources_list:
 
+- title: Begrep
+  jurl: https://difi.github.io/felleslosninger/sdp_index_innledning.html
+  
 - title: Github
   jurl: https://github.com/difi/felleslosninger
 
