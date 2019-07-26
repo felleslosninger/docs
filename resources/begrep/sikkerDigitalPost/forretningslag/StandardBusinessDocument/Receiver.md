@@ -1,34 +1,26 @@
 --- 
 title: Receiver  
-headtitle: Sikker digital post - Standard Business Document  
-group: forretningslag
 permalink: sdp_receiver.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
-### {{page.title}}
+|---|---|
+| Identifikator |  |
+| Term          | {{page.title}} |
+| Definisjon    | Sluttmottaker i en meldingsprosess. |
+| Kilde         | GS1 |
+| Kommentar     | Regler for hvem som opptrer som [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html) er beskrevet under. |
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Sluttmottaker i en meldingsprosess.
-  - Kilde  
-    GS1
-  - Kommentar  
-    Regler for hvem som opptrer som [Receiver](Receiver.md) er beskrevet
-    under.
 
 \*For [digital post meldinger](../../meldinger/DigitalPostMelding.md) er
-[Receiver](Receiver.md)
+[Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html)
 
-  - [Postkasseleverandør](../Aktorer.md)
+  - [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
 
 \*For [digital post kvitteringer](../../meldinger/KvitteringsMelding.md) er
-[Receiver](Receiver.md)
+[Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html)
 
-  - Den [Aktør](../Aktorer.md) som sto som [Sender](Sender.md) for [digital
+  - Den [Aktør](https://difi.github.io/felleslosninger/sdp_aktorer.html) som sto som [Sender](https://difi.github.io/felleslosninger/sdp_sender.html) for [digital
     post meldingen](../../meldinger/DigitalPostMelding.md).
 
 ### Attributter
