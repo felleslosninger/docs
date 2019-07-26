@@ -1,7 +1,7 @@
 ---
 title: virksomhetsidentifikator
 permalink: virksomhetsidentifikator.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 | ---- | ---- |
