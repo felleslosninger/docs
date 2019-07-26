@@ -2,17 +2,17 @@
 
 title: Forretningsmeldinger  
 permalink: sdk_index.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 ## Forretningsmeldingene i Sikker Digital Post
 
 Alle meldinger er beskrevet i [Standard Business
-Document](../forretningslag/StandardBusinessDocument/index.md). Denne klassen
+Document](https://difi.github.io/felleslosninger/standardbusinessdocument_index.htmll). Denne klassen
 inneholder to klasser:
 
   - Det ene er
-    [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
+    [StandardBusinessDocumentHeader](https://difi.github.io/felleslosninger/sdp_standardbusinessdocumentheader.html)
     som er felles for alle meldinger. 
   - Den andre er Meldingsklassen som enten er av typen Digitalpost, Feil
     eller Kvittering. Kvittering kan være av typen
@@ -23,12 +23,12 @@ inneholder to klasser:
 
 Meldingen er en av følgende typer beskrevet i diagrammet under.
 
-![](../forretningslag/StandardBusinessDocument/uml_diagram.jpg):../forretningslag/StandardBusinessDocument/uml\_diagram.jpg
+![](../forretningslag/StandardBusinessDocument/uml_diagram.jpg)
 
 ### Meldingstypene
 
 Meldingstypen er definert i
-[DocumentIdentification](../forretningslag/StandardBusinessDocument/DocumentIdentification.md)
+[DocumentIdentification](https://difi.github.io/felleslosninger/sdp_documentidentification.html )
 og er en av følgende:
 
 | Type | Beskrivelse |
