@@ -2,11 +2,10 @@
 
 title: Webservice sikkerhet  
 permalink: sdp_webservicesecurity.html
-sidebar:
+sidebar: sidebar_begrep
 
 ---
 
-## {{page.title}}
 
 ### Webservice security headere
 
