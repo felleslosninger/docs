@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/tilEndringsNummer |
+| Identifikator | http://begrep.difi.no/Felles/virksomhetsidentifikator |
 | Term | virksomhetsidentifikator |
 | Definisjon | Identifikasjon av en virksomhet |
 | Datatype | string |
