@@ -2,11 +2,11 @@
 
 title: FlyttetDigitalpostMelding  
 permalink: sdp_flyttetdigitalpostmelding.html
-sidebar:
+sidebar: sidebar_begrep
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/FlyttetDigitalPostMelding> |
+| Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | En digital post med tilhørende [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) som flyttes fra en postkasseleverandør til en annen |
 | Kilde         | DIFI |
