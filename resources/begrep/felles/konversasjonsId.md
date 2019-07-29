@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/konversasjonsId |
+| Identifikator |  |
 | Term | konversasjonsId |
 | Definisjon | Et nummer som identifiserer en melding og tilhørende kvitteringer unikt. |
 | Datatype | string |
