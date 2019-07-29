@@ -14,6 +14,7 @@ sidebar:
 | Kommentar     | Den informasjon som utleveres i ID |
 | porten        | sin SAML2 profil ved Autentisering dersom Avsender har behov for informasjon fra kontakt og reservasjonsregisteret |
 
+
 #### Attributer
 
 | Term                                                         | Beskrivelse                                                                     | Kardinalitet |
