@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/sistVerifisert> |
+| Identifikator |  |
 | Term | sistVerifisert |
 | Definisjon | Dato for når et objekt sist ble verifisert gyldig |
 | Datatype | dateTime |
