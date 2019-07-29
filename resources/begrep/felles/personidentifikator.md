@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/personidentifikator |
+| Identifikator |  |
 | Term | personidentifikator |
 | Definisjon | Identifikasjon av en person |
 | Datatype | string |
