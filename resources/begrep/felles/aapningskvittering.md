@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | https://begrep.difi.no/Felles/aapningskvittering |
+| Identifikator |  |
 | Term | aapningskvittering |
 | Definisjon | Definerer behovet for Åpningskvittering |
 | Datatype | string |
