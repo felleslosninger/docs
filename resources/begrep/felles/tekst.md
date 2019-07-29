@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/tekst> |
+| Identifikator |  |
 | Term | tekst |
 | Definisjon | Språksensitiv tekst-streng |
 | Datatype | string |
