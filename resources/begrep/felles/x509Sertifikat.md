@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/X509Sertifikat |
+| Identifikator |  |
 | Term | x509Sertifikat |
 | Definisjon | Et X509 Sertifikat |
 | Datatype | string |
