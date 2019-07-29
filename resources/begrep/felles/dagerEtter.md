@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/dagerEtter |
+| Identifikator |  |
 | Term | dagerEtter |
 | Definisjon | Et nummer som identifiserer en bestemt dag etter en allerede angitt dag. |
 | Datatype | nonNegativeInteger |
