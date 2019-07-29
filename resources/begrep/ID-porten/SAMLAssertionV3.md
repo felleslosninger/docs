@@ -18,7 +18,7 @@ sidebar:
 
 | Term                                                         | Beskrivelse                                                                     | Kardinalitet |
 | --- | --- | --- |
-| uid                                                          | [personidentifikator](../felles/personidentifikator)                              | 1            |
+| uid                                                          | [personidentifikator](../felles/personidentifikator.md)                              | 1            |
 | SecurityLevel                                                | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
 | Culture                                                      | [språk](../felles/spraak.md)                                                         | 1            |
 | AuthMethod                                                   | [Autentiseringsmetode](SAMLAssertionV1.md)                              | 1            |
