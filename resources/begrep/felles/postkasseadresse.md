@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/postkasseadresse |
+| Identifikator |  |
 | Term | postkasseadresse |
 | Definisjon | Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør |
 | Datatype | string |
