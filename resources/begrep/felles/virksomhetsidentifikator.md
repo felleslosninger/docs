@@ -5,7 +5,7 @@ sidebar: sidebar_begrep
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/virksomhetsidentifikator |
+| Identifikator |  |
 | Term | virksomhetsidentifikator |
 | Definisjon | Identifikasjon av en virksomhet |
 | Datatype | string |
