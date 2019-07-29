@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/senesteEndringsNummer> |
+| Identifikator |  |
 | Term | senesteEndringsNummer |
 | Definisjon | Et endringsNummer |
 | Datatype | long |
