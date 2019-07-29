@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/fraEndringsNummer |
+| Identifikator |  |
 | Term | fraEndringsNummer |
 | Definisjon | Et endringsNummer |
 | Datatype | long |
