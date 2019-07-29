@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/informasjonsbehov |
+| Identifikator |  |
 | Term | informasjonsbehov |
 | Definisjon | Beskriver det opplysningskrav som en Virksomhet har definert |
 | Datatype | string |
