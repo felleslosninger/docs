@@ -6,7 +6,7 @@ sidebar:
 ---
 
  |---|---|
-| Identifikator | (https://begrep.difi.no/ID-porten/SAMLAuthnRequest) |
+| Identifikator | <https://begrep.difi.no/ID-porten/SAMLAuthnRequest> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel om autentisering |
 | Datatype      | complexType |
