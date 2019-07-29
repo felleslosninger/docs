@@ -1,25 +1,18 @@
------
+---
 
-layout: default  
 title: SAMLAuthnRequest  
-headtitle: ID-porten  
-group: ID-porten/complexType  
-—-
+permalink: IDport_SAMLAuthnRequest.html
+sidebar:
+---
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Forespørsel om autentisering
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Den informasjon som overføres til ID-porten for å forespørre en
-    autentisering.
+ |---|---|
+| Identifikator | https://begrep.difi.no/ID-porten/SAMLAuthnRequest |
+| Term          | {{page.title}} |
+| Definisjon    | Forespørsel om autentisering |
+| Datatype      | complexType |
+| Kilde         | DIFI |
+| Kommentar     | Den informasjon som overføres til ID |
+| porten        | for å forespørre en autentisering. |
 
 I ID-Porten SAML2 profilen MÅ forespørselen signeres. Signaturen
 plasseres i Signatur forespørsel strengen beskrevet for denne bindingen,
@@ -33,10 +26,10 @@ SAMLRequest=<req>&SigAlg=<alg>&Signature=<SIGNATUR>
 h4. Attributer
 
 | Term                 | Beskrivelse                                                                                                             | Kardinalitet |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------ |
+| --- | ---| --- |
 | AuthnContextClassRef | Autentiseringsnivå spesifisert i henhold til kodeverk for [AuthnContextClassRef](#AuthnContextClassRef) beskrevet under | 0..1         |
 | ForceAuth            | Vil kreve at brukeren gjennomfører autentisering .                                                                      | 0..1         |
-| locale               | [spraak](/Felles/spraak), se under for hvilke språk som er støttet                                                      | 0..1         |
+| locale               | [spraak](../felles/spraak.md), se under for hvilke språk som er støttet                                                      | 0..1         |
 | OnBehalfOf           | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på veien av                                         | 0..1         |
 
 #### Kodeverk
@@ -45,10 +38,10 @@ h4. Attributer
 
 Kodeverk for AuthnContextClassRef er definert som under, der hver
 AuthnContextClassRef er knyttet til et spesielt
-[sikkerhetsnivaa](/Felles/sikkerhetsnivaa) slik:
+[sikkerhetsnivaa](../felles/sikkerhetsnivaa.md) slik:
 
-| AuthnContextClassRef                                              | [sikkerhetsnivaa](/Felles/sikkerhetsnivaa) |
-| ----------------------------------------------------------------- | ------------------------------------------ |
+| AuthnContextClassRef                                              | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md) |
+| --- | --- |
 | urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified                | 3                                          |
 | urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport | 3                                          |
 | urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI               | 4                                          |
@@ -62,7 +55,7 @@ RequestedAuthnContext ikke er inkludert i <AuthnRequest>.
 Følgende språk er støttet i forespørselen:
 
 | ISO 639-1 kode | Språk   |
-| -------------- | ------- |
+| --- | --- |
 | nb             | Bokmål  |
 | nn             | nynorsk |
 | se             | Samisk  |
