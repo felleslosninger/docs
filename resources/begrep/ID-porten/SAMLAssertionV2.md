@@ -1,52 +1,43 @@
------
-
-layout: default  
+---
+ 
 title: SAMLAssertionV2  
-headtitle: ID-porten  
-group: ID-porten/complexType  
-—-
+permalink: IDport_SAMLAssertionV2.html
+sidebar:
+---
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om en Person utlevert via ID-porten dersom Offentlig
-    Virksomhet har tatt i bruk første versjon av kontaktregisteret
-  - Datatype  
-    [SAML\_2.0\_Assertion](http://en.wikipedia.org/wiki/SAML_2.0#SAML_2.0_Assertions)
-  - Kilde  
-    DIFI
-  - Kommentar  
-    FORELDET PROFIL: Den informasjon som utleveres i ID-porten sin SAML2
-    profil ved Autentisering dersom Avsender er integrert mot første
-    versjon av kontaktregisteret
-
+  |---|---|
+| Identifikator | https://begrep.difi.no/ID-porten/SAMLAssertionV2 |
+| Term          | {{page.title}} |
+| Definisjon    | Informasjon om en Person utlevert via ID |
+| porten        | dersom Offentlig Virksomhet har tatt i bruk første versjon av kontaktregisteret |
+| Datatype      | [SAML\_2.0\_Assertion](http://en.wikipedia.org/wiki/SAML_2.0#SAML_2.0_Assertions) |
+| Kilde         | DIFI |
+| Kommentar     | FORELDET PROFIL: Den informasjon som utleveres i ID |
+| porten        | sin SAML2 profil ved Autentisering dersom Avsender er integrert mot første versjon av kontaktregisteret |
 #### Attributer
 
 | Term                     | Beskrivelse                                                                     | Kardinalitet |
-| ------------------------ | ------------------------------------------------------------------------------- | ------------ |
-| uid                      | [personidentifikator](/Felles/personidentifikator)                              | 1            |
-| SecurityLevel            | [sikkerhetsnivaa](/Felles/sikkerhetsnivaa)                                      | 1            |
-| Culture                  | [språk](/Felles/spraak)                                                         | 1            |
-| AuthMethod               | [Autentiseringsmetode](SAMLAssertionV1#AuthMethod)                              | 1            |
-| Email                    | [epostadresse](/Felles/epostadresse)                                            | 0..1         |
-| MobilePhone              | [mobiltelefonnummer](/Felles/mobiltelefonnummer)                                | 0..1         |
+| --- | --- | --- |
+| uid                      | [personidentifikator](../felles/personidentifikator.md)                              | 1            |
+| SecurityLevel            | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
+| Culture                  | [språk](../felles/spraak.md)                                                         | 1            |
+| AuthMethod               | [Autentiseringsmetode](SAMLAssertionV1.md)                              | 1            |
+| Email                    | [epostadresse](../felles/epostadresse.md)                                            | 0..1         |
+| MobilePhone              | [mobiltelefonnummer](../felles/mobiltelefonnummer.md)                                | 0..1         |
 | DigitalContactInfoStatus | Status                                                                          | 1            |
 | OnBehalfOf               | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på vegne av | 0..1         |
 
 #### AuthnContextClassRef
 
 Autentiseringsnivå er spesifisert i henhold til kodeverk for
-[AuthnContextClassRef](SAMLAuthnRequest#AuthnContextClassRef)
+[AuthnContextClassRef](SAMLAuthnRequest.md)
 
 #### Kodeverk
 
 ##### Status
 
 | DigitalContactInfoStatus | Beskrivelse                                                                                                 |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | SAMTYKKET\_GENERELT      | Bruker har samtykket til utlevering av Digital kontaktinformasjon til alle tjenesteeiere                    |
 | SAMTYKKET\_SPESIFIKT     | Sluttbruker har samtykket til utlevering av Digital kontaktinformasjon til tjenesteeier.                    |
 | IKKE\_SAMTYKKET          | Det er ikke registrert noe samtykke for sluttbruker                                                         |
