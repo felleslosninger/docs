@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/postkasseleverandoerNavn |
+| Identifikator |  |
 | Term | postkasseleverandoerNavn |
 | Definisjon | Navn på leverandør av Postkassetjeneste |
 | Datatype | string |
