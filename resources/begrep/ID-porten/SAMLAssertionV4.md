@@ -1,28 +1,20 @@
------
+---
 
-layout: default  
 title: SAMLAssertionV4  
-headtitle: ID-porten  
-group: ID-porten/complexType  
-—-
+permalink: IDport_SAMLAssertionV4.html
+sidebar:
+---
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    SAML profil med støtte for både norske eID og europeiske eID
-    autentisert via eIDAS-infrastrukturen
-  - Datatype  
-    [SAML\_2.0\_Assertion](http://en.wikipedia.org/wiki/SAML_2.0#SAML_2.0_Assertions)
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Denne SAML-profilen er berre tilgjengeleg for tenesteeigarar som ber
-    om det, og som utvikler støtte for innlogging av brukere med
-    europeiske eID. Siden eIDAS-spesifikasjonene per 2015 er under
-    utarbeidelse, kan det bli endringer i profilen i fremtiden.
+  |---|---|
+| Identifikator    | “http://begrep.difi.no{{ page.url | remove:”.html" }}":{{page.title}} |
+| Term             | {{page.title}} |
+| Definisjon       | SAML profil med støtte for både norske eID og europeiske eID autentisert via eIDAS |
+|                  | infrastrukturen |
+| Datatype         | [SAML\_2.0\_Assertion](http://en.wikipedia.org/wiki/SAML_2.0#SAML_2.0_Assertions) |
+| Kilde            | DIFI |
+| Kommentar        | Denne SAML |
+| profilen         | er berre tilgjengeleg for tenesteeigarar som ber om det, og som utvikler støtte for innlogging av brukere med europeiske eID. Siden eIDAS |
+| spesifikasjonene | per 2015 er under utarbeidelse, kan det bli endringer i profilen i fremtiden. |
 
 Denne profilen er utdatert. Se
 <http://difi.github.io/begrep-ID-porten/3_SAMLAssertionv5.html>
