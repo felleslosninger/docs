@@ -5,7 +5,7 @@ permalink: IDport_SAMLAssertionV1.html
 sidebar:
 ---
 |---|---|
-| Identifikator | https://begrep.difi.no/ID-porten/SAMLAssertionV1 |
+| Identifikator | (https://begrep.difi.no/ID-porten/SAMLAssertionV1) |
 | Term          | {{page.title}} |
 | Definisjon    | Informasjon om en Person utlevert via ID |
 | porten,       | standard profil. |
@@ -64,7 +64,7 @@ tjenesteeiere.
 
 #### Eksempel
 
-``` brush: xml; toolbar: false
+```xml
 
    <saml:AttributeStatement>
       <saml:Attribute Name="uid">
