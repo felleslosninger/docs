@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Oppslagstjenesten/5.0.0/paaVegneAv |
+| Identifikator |  |
 | Term | paaVegneAv |
 | Definisjon | Identifikasjon av en organisasjon |
 | Datatype | string |
