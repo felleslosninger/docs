@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/returPostHaandtering> |
+| Identifikator |  |
 | Term | returPostHaandtering |
 | Definisjon | Definerer hvordan fysisk post som ikke blir levert til mottaker skal håndteres. |
 | Datatype | string |
