@@ -18,7 +18,7 @@ I ID-Porten SAML2 profilen MÅ forespørselen signeres. Signaturen
 plasseres i Signatur forespørsel strengen beskrevet for denne bindingen,
 og ikke i selve XML meldingen. Slik:
 
-``` brush: xml; toolbar: false
+``` xml
 SAMLRequest=<req>&SigAlg=<alg>&Signature=<SIGNATUR>
 ```
 
