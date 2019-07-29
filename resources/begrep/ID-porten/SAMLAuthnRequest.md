@@ -65,7 +65,7 @@ Følgende språk er støttet i forespørselen:
 
 Eksempel forespørsel:
 
-``` brush: xml; toolbar: false
+```xml
 <samlp:RequestedAuthnContext xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" Comparison="minimum">
      <saml:AuthnContextClassRef xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
             urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
@@ -75,7 +75,7 @@ Eksempel forespørsel:
 
 Eksempel på bruk av OnBehalfOf:
 
-``` brush: xml; toolbar: false
+```xml
 <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ...>
     <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">TJENESTELEVERANDOR</saml:Issuer>
     ...
