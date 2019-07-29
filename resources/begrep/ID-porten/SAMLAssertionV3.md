@@ -4,7 +4,6 @@ title: SAMLAssertionV3
 permalink: IDport_SAMLAssertionV3.html
 sidebar:
 ---
-
 |---|---|
 | Identifikator | <https://begrep.difi.no/ID-porten/SAMLAssertionV3> |
 | Term          | {{page.title}} |
@@ -14,6 +13,7 @@ sidebar:
 | Kilde         | DIFI |
 | Kommentar     | Den informasjon som utleveres i ID |
 | porten        | sin SAML2 profil ved Autentisering dersom Avsender har behov for informasjon fra kontakt og reservasjonsregisteret |
+
 #### Attributer
 
 | Term                                                         | Beskrivelse                                                                     | Kardinalitet |
