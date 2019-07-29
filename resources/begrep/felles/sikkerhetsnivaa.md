@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/sikkerhetsnivaa> |
+| Identifikator |  |
 | Term | sikkerhetsnivaa |
 | Definisjon | Definerer hvilket autentiseringsnivå som kreves for at dokumentet skal åpnes |
 | Datatype | int |
