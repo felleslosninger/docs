@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/skjerming> |
+| Identifikator |  |
 | Term | skjerming |
 | Definisjon | Angivelse av om metadata om dokument skal skjermes |
 | Datatype | string |
