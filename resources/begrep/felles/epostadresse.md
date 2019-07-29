@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/epostadresse |
+| Identifikator |  |
 | Term | epostadresse |
 | Definisjon | Adresse til en elektronisk postkasse på Internett |
 | Datatype | string |
