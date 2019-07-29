@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/avsenderidentifikator |
+| Identifikator |  |
 | Term | avsenderidentifikator |
 | Definisjon | Identifikasjon av en ansvarlig avsenderenhet |
 | Datatype | string |
