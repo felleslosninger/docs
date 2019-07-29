@@ -48,8 +48,8 @@ Autentiseringsnivå er spesifisert i henhold til kodeverk for
 
 Ved IKKE\_REGISTRERT har ikke registeret informasjon om
 [mobiltelefonnummer](../felles/mobiltelefonnummer.md) eller
-[epostadresse](../felles/epostadresse) eller
-[postkasseleverandoerNavn](../felles/postkasseleverandoerNavn) , og vil
+[epostadresse](../felles/epostadresse.md) eller
+[postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md) , og vil
 ikke kunne levere ut disse elementene til Offentlig virksomhet.
 
 #### Eksempel
