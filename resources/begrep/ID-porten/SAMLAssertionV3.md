@@ -22,11 +22,11 @@ sidebar:
 | SecurityLevel                                                | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
 | Culture                                                      | [språk](../felles/spraak.md)                                                         | 1            |
 | AuthMethod                                                   | [Autentiseringsmetode](SAMLAssertionV1.md)                              | 1            |
-| [reservasjon](/Felles/reservasjon)                           | [reservasjon](../felles/reservasjon.md)                                              | 0..1         |
-| [epostadresse](/Felles/epostadresse)                         | [epostadresse](../felles/epostadresse.md)                                            | 0..1         |
-| [mobiltelefonnummer](/Felles/mobiltelefonnummer)             | [mobiltelefonnummer](../felles/mobiltelefonnummer.md)                                | 0..1         |
-| [postkasseleverandoerNavn](/Felles/postkasseleverandoerNavn) | [postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md)                    | 0..1         |
-| [status](/Felles/status)                                     | Kodeverk for [status](#status)                                                  | 0..1         |
+| [reservasjon](../felles/reservasjon.md)                           | [reservasjon](../felles/reservasjon.md)                                              | 0..1         |
+| [epostadresse](../felles/epostadresse.md)                         | [epostadresse](../felles/epostadresse.md)                                            | 0..1         |
+| [mobiltelefonnummer](../felles/mobiltelefonnummer.md)             | [mobiltelefonnummer](../felles/mobiltelefonnummer.md)                                | 0..1         |
+| [postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md) | [postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md)                    | 0..1         |
+| [status](../felles/status.md)                                     | Kodeverk for [status](#status)                                                  | 0..1         |
 | OnBehalfOf                                                   | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på veien av | 0..1         |
 
 #### AuthnContextClassRef
