@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/mobiltelefonnummer |
+| Identifikator |  |
 | Term | mobiltelefonnummer |
 | Definisjon | Et internasjonalt mobiltelefonnummer |
 | Datatype | string |
