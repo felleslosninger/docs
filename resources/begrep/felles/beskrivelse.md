@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/beskrivelse |
+| Identifikator |  |
 | Term | beskrivelse |
 | Definisjon | beskrivelse gir en tekstlig beskrivelse utover det som er gitt av andre datatyper som f.eks. status |
 | Datatype | string |
