@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | <http://begrep.difi.no/Felles/status> |
+| Identifikator |  |
 | Term | status |
 | Definisjon | status gir en tekstlig beskrivelse av tilstand |
 | Datatype | string |
