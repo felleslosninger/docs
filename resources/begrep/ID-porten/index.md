@@ -1,7 +1,7 @@
 ---
  
 title: ID-porten  
-permalink: IDport_index.md
+permalink: IDport_index.html
 sidebar:
 ---
 
