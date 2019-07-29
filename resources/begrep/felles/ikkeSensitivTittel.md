@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/ikkeSensitivTittel |
+| Identifikator |  |
 | Term | ikkeSensitivTittel |
 | Definisjon | En tittel for en forsendelse som ikke inneholder sensitiv informasjon |
 | Datatype | string |
