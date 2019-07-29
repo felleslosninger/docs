@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/endringsNummer |
+| Identifikator |  |
 | Term | endringsNummer |
 | Definisjon | Et nummer som identifiserer en endring i et register. |
 | Datatype | long |
