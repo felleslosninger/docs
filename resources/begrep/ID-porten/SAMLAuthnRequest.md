@@ -6,7 +6,7 @@ sidebar:
 ---
 
  |---|---|
-| Identifikator | https://begrep.difi.no/ID-porten/SAMLAuthnRequest |
+| Identifikator | [https://begrep.difi.no/ID-porten/SAMLAuthnRequest] |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel om autentisering |
 | Datatype      | complexType |
@@ -18,7 +18,7 @@ I ID-Porten SAML2 profilen MÅ forespørselen signeres. Signaturen
 plasseres i Signatur forespørsel strengen beskrevet for denne bindingen,
 og ikke i selve XML meldingen. Slik:
 
-``` xml
+```  brush: xml; toolbar: false
 SAMLRequest=<req>&SigAlg=<alg>&Signature=<SIGNATUR>
 ```
 
