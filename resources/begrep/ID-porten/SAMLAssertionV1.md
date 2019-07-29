@@ -1,8 +1,9 @@
------
+---
 
 title: SAMLAssertionV1  
 permalink: IDport_SAMLAssertionV1.html
-—-
+sidebar:
+---
 |---|---|
 | Identifikator | https://begrep.difi.no/ID-porten/SAMLAssertionV1 |
 | Term          | {{page.title}} |
@@ -17,16 +18,16 @@ permalink: IDport_SAMLAssertionV1.html
 
 | Term          | Beskrivelse                                                                     | Kardinalitet |
 | --- | --- | --- |
-| uid           | [personidentifikator](/Felles/personidentifikator)                              | 1            |
-| SecurityLevel | [sikkerhetsnivaa](/Felles/sikkerhetsnivaa)                                      | 1            |
-| Culture       | [språk](/Felles/spraak)                                                         | 1            |
+| uid           | [personidentifikator](../felles/personidentifikator.md)                              | 1            |
+| SecurityLevel | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
+| Culture       | [språk](../felles/spraak.md)                                                         | 1            |
 | AuthMethod    | [Autentiseringsmetode](#AuthMethod)                                             | 1            |
 | OnBehalfOf    | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på vegne av | 0..1         |
 
 #### AuthnContextClassRef
 
 Autentiseringsnivå er spesifisert i henhold til kodeverk for
-[AuthnContextClassRef](SAMLAuthnRequest#AuthnContextClassRef)
+[AuthnContextClassRef](SAMLAuthnRequest.md)
 
 #### Kodeverk
 
