@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/korrespondansepartnavn |
+| Identifikator |  |
 | Term | korrespondansepartnavn |
 | Definisjon | Navn på person eller organisasjon som er avsender eller mottaker av dokumentet |
 | Datatype | string |
