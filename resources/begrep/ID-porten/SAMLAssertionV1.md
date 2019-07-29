@@ -1,30 +1,22 @@
 -----
 
-layout: default  
 title: SAMLAssertionV1  
-headtitle: ID-porten  
-group: ID-porten/complexType  
+permalink: IDport_SAMLAssertionV1.html
 —-
-
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om en Person utlevert via ID-porten, standard profil.
-  - Datatype  
-    [SAML\_2.0\_Assertion](http://en.wikipedia.org/wiki/SAML_2.0#SAML_2.0_Assertions)
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Den informasjon som utleveres i ID-porten sin standard SAML2 profil
-    ved Autentisering
+|---|---|
+| Identifikator | https://begrep.difi.no/ID-porten/SAMLAssertionV1 |
+| Term          | {{page.title}} |
+| Definisjon    | Informasjon om en Person utlevert via ID |
+| porten,       | standard profil. |
+| Datatype      | [SAML\_2.0\_Assertion](http://en.wikipedia.org/wiki/SAML_2.0#SAML_2.0_Assertions) |
+| Kilde         | DIFI |
+| Kommentar     | Den informasjon som utleveres i ID |
+| porten        | sin standard SAML2 profil ved Autentisering |
 
 #### Attributer
 
 | Term          | Beskrivelse                                                                     | Kardinalitet |
-| ------------- | ------------------------------------------------------------------------------- | ------------ |
+| --- | --- | --- |
 | uid           | [personidentifikator](/Felles/personidentifikator)                              | 1            |
 | SecurityLevel | [sikkerhetsnivaa](/Felles/sikkerhetsnivaa)                                      | 1            |
 | Culture       | [språk](/Felles/spraak)                                                         | 1            |
@@ -44,7 +36,7 @@ Autentiseringmetode brukt ved innlogging. Vi gjer merksam på at
 kodeverket kan endre seg etter kvart som eIDene i ID-porten endrer seg.
 
 | AuthMetod    | Beskrivelse                                                                                                               |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | Minid-PIN    | Bruker har logget seg på med PIN koder fra PIN kode ark.                                                                  |
 | Minid-OTC    | Bruker har logget seg på med engangskode sendt på SMS                                                                     |
 | Buypass      | Bruker har logget seg på med smartkort fra Buypass                                                                        |
