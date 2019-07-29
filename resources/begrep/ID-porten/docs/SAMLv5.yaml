@@ -1,0 +1,88 @@
+swagger: '2.0'
+info:
+  title: ID-porten SAML Assertion v5
+  description: SAML-profil som støtter innlogging med utenlandsk eID gjennom eIDAS-infrastrukuren. Denne SAML-profilen er berre tilgjengeleg for tenesteeigarar som ber om det. ID-porten er basert på SAML2 Web Browswer SSO profile.
+  version: "5.0.0"
+# the domain of the service
+host: www.difi.no
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /v1
+produces:
+  - application/saml2
+  
+paths:
+
+            
+  /AuthnRequest:
+    get:
+      summary: Autentiseringsførespurnad
+      description: UENDRA frå vanlege authnrequests til ID-porten
+      parameters:
+        - name: forceAuth
+          in: query
+          description: Om vi skal tvinge ny autentisering selv om brukeren har en aktiv SSO-sesjon i ID-porten
+          type: string
+      responses:
+        302:
+          description: Redirect med artifact id
+        default: 
+          description: hoi
+              
+          
+  /ArtifactResolve:
+    get:
+      summary: Autentiserings-respons
+      description: Oppslag på bak-kanal for å laste ned informasjon om autentisert bruker
+      parameters:
+        - name: artifactid
+          in: query
+          description: artifact utlevert frå id-porten frå '#/paths/AuthnRequest'.
+          type: string
+      responses:
+        200:
+          description: Vellukka oppslag på bakkanal
+          schema:
+            $ref: '#/definitions/AttributeStatement'
+        default: 
+          description: feil
+        
+definitions:
+
+
+  AttributeStatement:
+    type: object
+    description: Attributter for den autentiserte brukeren. (/SamlResponse/Assertion/AttributeStatement/)
+    properties:
+      uid:
+        type: string
+        description: Norsk personidentifikator.  (Fødselsnummer eller D-nummer)
+      IdentityMatch:
+        type: string
+        description: Kvalitetsindikator for kobling mot norsk personidentifikator.  
+        enum: 
+        -  UNAMBIGUOS  
+        -  BEST_EFFORT 
+        -  ERROR 
+        -  SELF_DECLARED
+          
+      SecurityLevel:  
+        type: string
+        description: sikkerhetsnivå brukt ved innlogging.  [= 3,4 eller substational eller high for eIDAS.]
+      eidas-PersonIdentifier:
+        type: string
+        description: Unik identifikator levert av utenlandsk eID. 
+        example: SE/NO/fdsf43255
+      eidas-CurrentFamilyName:
+        type: string
+        description: Gjeldande etternavn for eidas-brukere
+      eidas-CurrentGivenName: 
+        type: string
+        description: Gjeldande fornavn for eidas-brukere
+      eidas-DateOfBirth: 
+        type: string
+        description: Fødselsdato for eidas-brukere.  (TODO sepsifisere datoformat)
+        
+ 
