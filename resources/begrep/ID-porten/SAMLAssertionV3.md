@@ -6,7 +6,7 @@ sidebar:
 ---
 
 |---|---|
-| Identifikator | https://begrep.difi.no/ID-porten/SAMLAssertionV3 |
+| Identifikator | <https://begrep.difi.no/ID-porten/SAMLAssertionV3> |
 | Term          | {{page.title}} |
 | Definisjon    | Utvidet informasjon om en Person utlevert via ID |
 | porten        | dersom Offentlig Virksomhet har spesifisert behov for dette |
@@ -54,7 +54,7 @@ ikke kunne levere ut disse elementene til Offentlig virksomhet.
 
 #### Eksempel
 
-``` brush: xml; toolbar: false
+```xml
 
    <saml:AttributeStatement>
       <saml:Attribute Name="uid">
