@@ -6,7 +6,7 @@ sidebar:
 ---
 
   |---|---|
-| Identifikator    | https://begrep.difi.no/ID-porten/SAMLAssertionV4 |
+| Identifikator    | <https://begrep.difi.no/ID-porten/SAMLAssertionV4> |
 | Term             | {{page.title}} |
 | Definisjon       | SAML profil med støtte for både norske eID og europeiske eID autentisert via eIDAS |
 |                  | infrastrukturen |
