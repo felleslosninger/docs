@@ -5,7 +5,7 @@ sidebar:
 ---
 
 | ---- | ---- |
-| Identifikator | http://begrep.difi.no/Felles/korrespondanseparttype |
+| Identifikator |  |
 | Term | korrespondanseparttype |
 | Definisjon | Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres manuelt |
 | Datatype | string |
