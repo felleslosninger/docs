@@ -6,7 +6,7 @@ sidebar:
 ---
 
   |---|---|
-| Identifikator | (https://begrep.difi.no/ID-porten/SAMLAssertionV2) |
+| Identifikator | <https://begrep.difi.no/ID-porten/SAMLAssertionV2> |
 | Term          | {{page.title}} |
 | Definisjon    | Informasjon om en Person utlevert via ID |
 | porten        | dersom Offentlig Virksomhet har tatt i bruk første versjon av kontaktregisteret |
