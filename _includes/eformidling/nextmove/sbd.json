@@ -25,7 +25,7 @@
                 {
                     "type": "ConversationId",
                     "instanceIdentifier": "37efbd4c-413d-4e2c-bbc5-257ef4a65a45",
-                    "identifier": "rn:no:difi:profile:arkivmelding:<område>:ver1.0",
+                    "identifier": "urn:no:difi:profile:arkivmelding:<område>:ver1.0",
                     "correlationInformation": {
                         "expectedResponseDateTime": "20xx-05-10T00:31:52Z"
                     }
