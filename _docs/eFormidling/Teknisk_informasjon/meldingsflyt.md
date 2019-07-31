@@ -35,7 +35,7 @@ sequenceDiagram
     fs->>fs: select capability  
 
     fs->>fs: Create message   
-    fs->>ip: POST api/messages/out/
+    fs->>ip: POST api/messages/out/multipart
     ip-->>fs: conversationresponse
     
     ip->>mf: Upload
