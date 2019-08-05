@@ -97,10 +97,6 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 - mapping mot dpv
 - mapping til ks
 
-**Digital post til virksomheter** 
-```json
-{% include /eformidling/nextmove/forretningsmeldingDpvDigital.json %}
-```
 
 ### Digital post til innbygger
 
@@ -133,6 +129,10 @@ vedtak = meldinger som medfører varslingsplikt
 {% include /eformidling/nextmove/forettningsmeldingDpiFysisk.json %}
 ```
 
+**Digital DPV-melding** 
+```json
+{% include /eformidling/nextmove/forretningsmeldingDpvDigital.json %}
+```
 
 ### eInnsyn
 
