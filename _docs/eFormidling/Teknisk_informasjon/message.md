@@ -36,9 +36,9 @@ Adresseinformasjon legges i Standard Business Document Header.
 ```
 
 
-## Foretningsmelding
+## Forretningsmelding
 
-Fortetningsmeldingen inneholder meldingsformidlingsspesifikk informasjon. Dette er informasjon som ikke krypters og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
+Forretningsmeldingen inneholder meldingsformidlingsspesifikk informasjon. Dette er informasjon som ikke krypters og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
 
 ## Dokumentpakke
 
@@ -97,6 +97,10 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 - mapping mot dpv
 - mapping til ks
 
+**Digital post til virksomheter** 
+```json
+{% include /eformidling/nextmove/forretningsmeldingDpvDigital.json %}
+```
 
 ### Digital post til innbygger
 
