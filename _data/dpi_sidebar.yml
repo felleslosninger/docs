@@ -38,44 +38,39 @@ folders:
       - title: sdp-melding.xsd
         jurl: /oidc_guide_faq.html       
        
-- title: Funksjonalitet
+- title: Forretningslag
   folderitems:
 
-      - title: Metadata
+      - title: Langtidslagring
         jurl: /oidc_func_wellknown.html
       
-      - title: Klientregistrering
+      - title: Manifest
         jurl: /oidc_func_clientreg.html
       
-      - title: Single sign-on og -logout
+      - title: Dokumentformater
         jurl: /oidc_func_sso.html
 
-      - title: PKCE
+      - title: MIME type
         jurl: /oidc_func_pkce.html
       
-      - title: OnBehalfOf
+      - title: HTML
         jurl: /oidc_func_onbehalfof.html
       
-      - title: Pseudonymisert innlogging
+      - title: EHF
         jurl: /oidc_func_nopid.html  
 
-      - title: Javascript-applikasjoner
+      - title: Sikkerhet
         jurl: /oidc_auth_spa.html
-      
-      - title: eIDAS
-        jurl: /oidc_func_eidas.html
-      
-      - title: Administrasjon av OICD-integrasjoner
-        jurl: /oidc_api_admin.html   
-      
-      - title: Administrasjon av Maskinporten
-        jurl: /oidc_api_admin_maskinporten.html
+
     
-- title: Arkitektur
+- title: Utskrift og forsendelse
   folderitems:
 
-      - title: Arkitektur
+      - title: Prosessbeskrivelse
         jurl: /oidc_arch.html  
+        
+- title: Forretningsmeldinger
+  folderitems:
 
       - title: Autentisering med code-flow
         jurl: /oidc_auth_codeflow.html
@@ -113,10 +108,10 @@ folders:
       - title: Om disse sidene
         jurl: /oidc_about.html
   
-- title: SAML i ID-porten
+- title: Utvidelser
   folderitems:
 
-      - title: Integrasjonsguide Id-porten SAML
+      - title: Lenke utenfor brev
         jurl: /saml_tilgang.html
 
 ###########################
