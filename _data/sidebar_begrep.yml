@@ -1,10 +1,6 @@
-sidebarTitle: Begrep
+sidebarTitle: Digital Post til Innbyggere (DPI)
 folders:
-- title: Id-porten
-  jurl: /idporten_index.html    
-- title: Oppslagstjenesten
-  jurl: /ot_oppslagstjenesten.html
-- title: Sikker digital Post
+- title: Digital post til innbyggere/Sikker digital Post
   folderitems:
   - title: 
     jurl: /test.html
