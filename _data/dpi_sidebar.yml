@@ -72,42 +72,76 @@ folders:
 - title: Forretningsmeldinger
   folderitems:
 
-      - title: Autentisering med code-flow
+      - title: DigitalPostMelding
         jurl: /oidc_auth_codeflow.html
       
-      - title: Autentisering til mobil-app'er
+      - title: LeveringsKvittering
         jurl: /oidc_auth_app.html
       
-      - title: API-autorisasjon innlogget bruker
+      - title: AapningsKvittering
         jurl: /oidc_auth_oauth2.html  
       
-      - title: Server-til-server API-autorisasjon
+      - title: MottaksKvittering
         jurl: /oidc_auth_server-to-server-oauth2.html
 
-- title: Oauth2-beskytta API'er fra Difi
+      - title: ReturpostKvittering
+        jurl: /oidc_auth_app.html
+      
+      - title: Feil
+        jurl: /oidc_auth_oauth2.html  
+      
+      - title: FlyttetDigitalPostMelding
+        jurl: /oidc_auth_server-to-server-oauth2.html
+
+- title: Standard Business Document
   folderitems:
 
-      - title: Kontakt- og Reservasjonsregisteret
+      - title: StandardBusinessDocumentHeader
         jurl: /oidc_api_krr.html
       
-      - title: Kontakt- og Reservasjonsregisteret (innlogget bruker)
+      - title: Sender
         jurl: /oidc_api_krr_user.html  
 
-      - title: Innbyggers innloggingsnivå
+      - title: Receiver
         jurl: /oidc_api_authlevel.html
       
-      - title: Innbyggers innloggingshistorikk
+      - title: DocumentIdentification
         jurl: /oidc_api_logghistorikk.html
       
-      - title: Innbyggers autorisasjoner
+      - title: BusinessScope
         jurl: /oidc_api_autorisasjoner.html 
-      
-- title: Vedlegg
+
+- title: Transportlag
   folderitems:
 
-      - title: Om disse sidene
+      - title: Meldingsutveksling
+        jurl: /oidc_api_krr.html
+      
+      - title: Meldingsidentifikator
+        jurl: /oidc_api_krr_user.html  
+
+      - title: Meldingsformat
+        jurl: /oidc_api_authlevel.html
+      
+      - title: Webservice sikkerhet
+        jurl: /oidc_api_logghistorikk.html
+      
+
+- title: Feilhåndtering
+  folderitems:
+
+      - title: Forvaltningsrelaterte og tekniske feil
         jurl: /oidc_about.html
-  
+        
+      - title: Transportfeil
+        jurl: /oidc_api_krr_user.html  
+
+      - title: Forretningsfeil
+        jurl: /oidc_api_authlevel.html
+      
+      - title: Feilhåndteringsprosess
+        jurl: /oidc_api_logghistorikk.html
+
 - title: Utvidelser
   folderitems:
 
