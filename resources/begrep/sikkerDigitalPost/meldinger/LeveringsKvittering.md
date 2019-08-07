@@ -2,7 +2,7 @@
 
 title: LeveringsKvittering  
 permalink: sdp_leveringskvittering.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
