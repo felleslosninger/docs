@@ -2,7 +2,7 @@
  
 title:  Sending av digital post  
 permalink: sdp_avsender_tilstanddiagram.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Prosess for sending av digital post
