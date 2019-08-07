@@ -32,7 +32,7 @@ Figuren under viser en detaljering av posttjenesteaktørene, og flyten av
 informasjonsobjekter mellom aktørene.
 
 ![detaljering av posttjenesteaktørene, og flyten av
-informasjonsobjekter mellom aktørene](/resources/begrep/sikkerDigitalPost/innledning/arkitekturbeskrivelse.png)
+informasjonsobjekter mellom aktørene](https://github.com/difi/felleslosninger/tree/gh-pages/images/arkitekturbeskrivelse.png)
 
 Offentlige virksomheter (avsendere) henter kontaktinformasjon til
 innbygger via oppslagstjeneste for kontaktinformasjon. Oppslagstjenesten
