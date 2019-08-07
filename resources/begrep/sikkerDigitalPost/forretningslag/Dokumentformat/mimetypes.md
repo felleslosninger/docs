@@ -1,7 +1,7 @@
 --- 
 title: MIME type  
 permalink: sdp_mimetypes.html
-sidebar: 
+sidebar: dpi_sidebar
 ---
 
 |---|---|
