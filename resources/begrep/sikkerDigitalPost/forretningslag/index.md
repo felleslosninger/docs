@@ -2,7 +2,7 @@
  
 title: Forretninglag  
 permalink: sdp_forretningslag_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 Forretningslaget dokumenterer den logiske flyten av meldinger i
