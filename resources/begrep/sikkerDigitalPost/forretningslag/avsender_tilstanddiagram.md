@@ -2,7 +2,7 @@
  
 title: Tilstander for Avsender  
 permalink: sdp_avsender_tilstanddiagram2.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Tilstander for Sikker digital postforsendelse hos Avsender
