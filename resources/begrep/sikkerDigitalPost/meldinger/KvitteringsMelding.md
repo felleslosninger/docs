@@ -1,7 +1,7 @@
 ---
 title: Kvitteringsmelding
 permalink: sdp_kvitteringsmelding.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
