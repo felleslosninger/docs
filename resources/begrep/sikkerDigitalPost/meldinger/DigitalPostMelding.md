@@ -1,7 +1,7 @@
 ---
 title: DigitalPostMelding  
 permalink: sdp_digitalpostmeldinger.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 | --- | --- |
