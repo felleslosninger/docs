@@ -1,7 +1,7 @@
 ---
 title: Dokumentformater  
 permalink: dokumentformat_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Innledning
