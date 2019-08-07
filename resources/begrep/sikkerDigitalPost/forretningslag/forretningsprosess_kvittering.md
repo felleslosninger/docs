@@ -1,7 +1,7 @@
 ---
 title: Henting av Kvittering
 permalink: sdp_forretningsprosess_kvittering.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 
