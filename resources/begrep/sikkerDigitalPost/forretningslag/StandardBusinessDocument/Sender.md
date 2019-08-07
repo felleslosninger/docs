@@ -1,7 +1,7 @@
 --- 
 title: Sender  
 permalink: sdp_sender.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
