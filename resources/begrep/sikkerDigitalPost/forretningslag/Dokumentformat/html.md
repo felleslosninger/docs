@@ -3,7 +3,7 @@ title: html
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
 permalink: sdp_html.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
