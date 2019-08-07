@@ -2,7 +2,7 @@
 
 tittel: Utskrift og forsendelse
 permalink: sdp_index_utskrift.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 En tjeneste som tilbyr en papirposttjeneste ved å skrive ut posten på
