@@ -2,7 +2,7 @@
 
 title: MottaksKvittering  
 permalink: sdp_mottakskvittering.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
