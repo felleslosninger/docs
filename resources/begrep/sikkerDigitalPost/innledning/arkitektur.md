@@ -31,7 +31,7 @@ Løsningen består av fem sentral komponenter (aktører) foruten avsendere
 Figuren under viser en detaljering av posttjenesteaktørene, og flyten av
 informasjonsobjekter mellom aktørene.
 
-[Figuren viser en detaljering av posttjenesteaktørene, og flyten av
+![detaljering av posttjenesteaktørene, og flyten av
 informasjonsobjekter mellom aktørene](arkitektur.png)
 
 Offentlige virksomheter (avsendere) henter kontaktinformasjon til
