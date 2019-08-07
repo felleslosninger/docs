@@ -2,7 +2,7 @@
 
 title: ReturpostKvittering  
 permalink: sdp_returpostkvittering.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
