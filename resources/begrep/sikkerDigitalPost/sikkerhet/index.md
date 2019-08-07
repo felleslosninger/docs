@@ -115,3 +115,5 @@ innholdet, så er den beskyttet under overføringen, fordi i tillegg til
 innholdskryptering er det også kanalkryptering i form av TLS mellom
 avsendervirksomheten og meldingsformidleren, og mellom
 meldingsformidleren og postkasseleverandøren.
+
+Her kan du lese mer om [sikkerhetsarkitekturen](Sikkerhetsarkitektur.pdf)
