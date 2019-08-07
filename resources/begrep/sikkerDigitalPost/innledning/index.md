@@ -2,7 +2,7 @@
 
 title: Oversikt  
 permalink: sdp_index_innledning.html
-sidebar: sidebar_begrep
+sidebar: sidebar_dpi
 ---
 
 Sikker digital posttjeneste er en felles løsning for offentlige
