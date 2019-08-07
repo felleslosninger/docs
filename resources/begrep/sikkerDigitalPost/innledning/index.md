@@ -18,15 +18,14 @@ Katalogen er bygd opp av følgende kapitler:
 
 | --- | --- |
 | [Oversikt](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Mer om sikker digital post og generelle aspekter ved løsningen |
-| [Forretningslag](forretningslag/index.md) | Aktører, prosesser og overordnet meldingsstruktur/format |
-| [Dokumentpakke](forretningslag/Dokumentpakke/index.md) | Oppbygging av selve dokumentpakken som skal til mottaker |
-| [Utvidelser](forretningslag/Utvidelser/index.md) | Utvidelser som beriker dokumenter i innbyggers postkasse |
-| [Utskrift og forsendelse](utskrift/sdp_index_utskrift.md) | Mer om utskriftstjenesten knyttet til digital post |
-| [Forretningsmeldinger](meldinger/index.md) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
+| [Forretningslag](https://difi.github.io/felleslosninger/sdp_forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
+| [Dokumentpakke](https://difi.github.io/felleslosninger/dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
+| [Utvidelser](https://difi.github.io/felleslosninger/sdp_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
+| [Utskrift og forsendelse](https://difi.github.io/felleslosninger/sdp_index_utskrift.html) | Mer om utskriftstjenesten knyttet til digital post |
+| [Forretningsmeldinger](https://difi.github.io/felleslosninger/sdp_index.html) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
 | [Standard Business Document](forretningslag/StandardBusinessDocument/index.md) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
-| [Transportlag](transportlag/index.md) | Rammeverk for overføring av meldinger |
+| [Transportlag](https://difi.github.io/felleslosninger/sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
 | [Feilhåndtering](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Generelt om feilhåndtering |
-| [Begreper](begrep/index.md) | Begreper benyttet i Sikker Digital Post |
 
 For mer detaljer:
 
