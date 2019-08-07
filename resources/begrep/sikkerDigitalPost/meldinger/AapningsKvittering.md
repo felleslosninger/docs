@@ -2,7 +2,7 @@
 
 title: AapningsKvittering  
 permalink: sdp_aapningskvittering.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
