@@ -1,7 +1,7 @@
 ---
 title: manifest  
 permalink: sdp_manifest.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
