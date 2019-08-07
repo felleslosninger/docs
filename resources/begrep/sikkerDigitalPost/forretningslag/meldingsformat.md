@@ -1,7 +1,7 @@
 ---
 title: Struktur på melding  
 permalink: sdp_meldingsformat.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Overordnet struktur på forretningsmeldinger
