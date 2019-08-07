@@ -15,7 +15,7 @@ When using the WS-method getProfilesOnParticipant you may get wrong profile(s) o
 2. ELMA profiles are changed. Profile X now has dependency to profile Y. If you add a Participant with Profile X, the participant will automatically get profile Y added if the participant does not already have this profile.
 3. Lookup on Participant A will show that the participant has Profile Y, even though Participant A only has Profile X because Participant A was added to ELMA before the Profile-dependency was changed.
 
-Workaround: Lookup correct information via the [https://data.norge.no/data/direktoratet-forvaltning-og-ikt/norske-mottakere-i-openpeppol](participants-dataset at hotell.difi.no).
+Workaround: Lookup correct information via the [participants-dataset at hotell.difi.no](https://data.norge.no/data/direktoratet-forvaltning-og-ikt/norske-mottakere-i-openpeppol).
 
 Added: 07.08.2019
 
