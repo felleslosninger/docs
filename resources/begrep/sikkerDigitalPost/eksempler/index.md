@@ -1,7 +1,7 @@
 ---
 title: Eksempler  
 permalink: sdp_index_eksempler.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 På denne siden er det samlet eksempler på integrasjoner og meldinger som
