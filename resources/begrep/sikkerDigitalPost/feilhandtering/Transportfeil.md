@@ -2,7 +2,7 @@
 
 title: Transportfeil  
 permalink: sdp_transportfeil.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 Feil i transportlaget vil være feil relatert til transportprotokoll og
