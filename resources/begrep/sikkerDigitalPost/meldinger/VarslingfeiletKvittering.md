@@ -2,7 +2,7 @@
 
 title: VarslingfeiletKvittering  
 permalink: sdp_varslingfeiletkvittering.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
