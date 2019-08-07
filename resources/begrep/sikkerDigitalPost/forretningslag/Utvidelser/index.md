@@ -2,7 +2,7 @@
   
 title: Utvidelser  
 permalink: sdp_utvidelser_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Introduksjon
