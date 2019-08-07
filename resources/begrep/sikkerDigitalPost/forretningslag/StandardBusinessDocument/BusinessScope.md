@@ -1,7 +1,7 @@
 ---
 title: BusinessScope  
 permalink: sdp_businessscope.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
