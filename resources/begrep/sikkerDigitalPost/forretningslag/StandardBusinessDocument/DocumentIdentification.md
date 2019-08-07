@@ -1,7 +1,7 @@
 --- 
 title: DocumentIdentification  
 permalink: sdp_documentidentification.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
