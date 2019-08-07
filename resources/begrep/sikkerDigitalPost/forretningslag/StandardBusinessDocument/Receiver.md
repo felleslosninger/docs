@@ -1,7 +1,7 @@
 --- 
 title: Receiver  
 permalink: sdp_receiver.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
