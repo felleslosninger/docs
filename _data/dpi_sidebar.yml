@@ -115,7 +115,7 @@ folders:
       - title: Transport av meldinger
         jurl: /sdp_transportlag_index.html 
       - title: Meldingsutveksling
-        jurl: /sdp_index_meldingsutveksling.htm   
+        jurl: /sdp_index_meldingsutveksling.html   
       - title: Meldingsidentifikatorer
         jurl: /sdp_meldingsidentifikatorer.html
       - title: Meldingsformat
