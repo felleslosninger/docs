@@ -1,7 +1,7 @@
 ---
 title: Forvaltning og tekniske feil  
 permalink: sdp_forvaltning.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Forvaltningsmessige og tekniske feil
