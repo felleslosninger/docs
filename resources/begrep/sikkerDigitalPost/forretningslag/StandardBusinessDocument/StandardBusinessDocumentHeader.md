@@ -1,7 +1,7 @@
 ---
 title: StandardBusinessDocumentHeader  
 permalink: sdp_standardbusinessdocumentheader.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
