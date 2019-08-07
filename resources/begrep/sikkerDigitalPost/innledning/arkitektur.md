@@ -52,8 +52,7 @@ sendes til meldingsformidler for videre transport.
 Stegene for Offentlige virksomheter for å sende (ekspedere) post er som
 følger:
 
-1.  Post (informasjon) produseres i f.eks. fag~~, sak~~ eller
-    arkivsystem.
+1.  Post (informasjon) produseres i f.eks. fagsystem eller sak- og arkivsystem.
 2.  Mottaker identifiseres med fødselsnummer eller d-nummer og mottakers
     kontaktinformasjon hentes ved bruk av Oppslagstjenesten.
     Forsendelsen adresseres og kontaktinformasjon legges til på bakgrunn
