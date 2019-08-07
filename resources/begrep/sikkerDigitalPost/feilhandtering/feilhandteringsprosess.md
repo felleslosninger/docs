@@ -2,7 +2,7 @@
 
 title: Feilhåndteringsprosess  
 permalink: sdp_feilhandteringsprosess.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 Prosessen for feilhåndtering i Sikker digital post er ikke etablert.
