@@ -2,7 +2,7 @@
 
 title: FlyttetDigitalpostMelding  
 permalink: sdp_flyttetdigitalpostmelding.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
