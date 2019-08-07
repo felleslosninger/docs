@@ -2,7 +2,7 @@
 
 title: Digital postkasse til innbyggere 
 permalink: sdp_innledning_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 Denne delen av begrepskatalogen inneholder spesifikasjonen av
