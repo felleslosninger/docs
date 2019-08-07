@@ -32,7 +32,7 @@ Figuren under viser en detaljering av posttjenesteaktørene, og flyten av
 informasjonsobjekter mellom aktørene.
 
 ![detaljering av posttjenesteaktørene, og flyten av
-informasjonsobjekter mellom aktørene](arkitektur.png)
+informasjonsobjekter mellom aktørene](../innledning/arkitektur.png)
 
 Offentlige virksomheter (avsendere) henter kontaktinformasjon til
 innbygger via oppslagstjeneste for kontaktinformasjon. Oppslagstjenesten
