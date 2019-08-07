@@ -3,7 +3,7 @@ title: ehf
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
 permalink: sdp_ehf.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
