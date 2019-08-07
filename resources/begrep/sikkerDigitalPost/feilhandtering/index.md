@@ -2,7 +2,7 @@
 
 title: Feilhåndtering  
 permalink: sdp_feil_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Feilhåndtering
