@@ -2,7 +2,7 @@
 
 title: Arkitektur  
 permalink: sdp_arkitektur.html
-sidebar:sidebar_begrep
+sidebar: dpi_sidebar
 
 ---
 
