@@ -2,7 +2,7 @@
 
 title: Forretningsfeil  
 permalink: sdp_forretningsfeil.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 
