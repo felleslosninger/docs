@@ -1,7 +1,7 @@
 ---
 title: Skjema (XSD) filer  
 permalink: sdp_skjema.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 Dokumentasjon av kilder og ev. endringer i XSD-skjemaer for [Sikker
