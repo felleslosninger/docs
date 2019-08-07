@@ -3,7 +3,7 @@
 
 title: Sikkerhet
 permalink: sdp_sikkerhet_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Kryptografisk beskyttelse av digital post
