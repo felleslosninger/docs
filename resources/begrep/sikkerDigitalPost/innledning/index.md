@@ -30,7 +30,7 @@ Katalogen er bygd opp av følgende kapitler:
 
 For mer detaljer:
 
-  - [Xml Eksempel på meldingar](eksempler/index.md)
+  - [Xml Eksempel på meldinger](eksempler/index.md)
   - [XML Schema Definition filer](xsd/README.md)
   - [Arkitekturbeskrivelse](ArkitekturbeskrivelseforSikkerdigitalposttjenestev1.0.pdf)
   - [Sikkerhetsarkitektur](Sikkerhetsarkitektur.pdf)
