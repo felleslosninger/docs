@@ -2,7 +2,7 @@
 
 title: Sending av post til utskrift og forsendelse 
 permalink: sdp_forretningsprosess_utskrift.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 
