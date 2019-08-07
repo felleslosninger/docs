@@ -2,8 +2,7 @@
 
 title: Webservice sikkerhet  
 permalink: sdp_webservicesecurity.html
-sidebar: sidebar_begrep
-
+sidebar: dpi_sidebar
 ---
 
 
