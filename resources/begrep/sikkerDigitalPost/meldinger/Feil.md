@@ -2,7 +2,7 @@
 
 title: Feil  
 permalink: sdp_feil.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
