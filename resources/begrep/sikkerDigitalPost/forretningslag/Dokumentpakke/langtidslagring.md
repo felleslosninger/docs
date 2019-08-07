@@ -1,7 +1,7 @@
 ---
 title: Langtidslagring  
 permalink: sdp_langtidslagring.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 
 ---
 
