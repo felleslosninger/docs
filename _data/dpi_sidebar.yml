@@ -1,164 +1,138 @@
-sidebarTitle: Digital postkasse til innbyggere - DPI
-
+sidebarTitle: Digital post til innbyggere
 folders:
-- title: Oversikt
-  folderitems:
 
+    - title: Oversikt
+      folderitems:
+
+      - title: Innledning
+        jurl: /sdp_index_innledning.html 
       - title: Arkitektur
-        jurl: /oidc_index.html
-        
+        jurl: /sdp_arkitektur.html   
       - title: Sikkerhet
-        jurl: /oidc_guide_idporten.html
-
+        jurl: /sdp_sikkerhet_index.html 
       - title: Sertifikathåndtering
-        jurl: /oidc_guide_maskinporten.html
-
-      - title: Eksepmpler
-        jurl: /oidc_guide_faq.html
-
-
-- title: Skjema/XSD
-  folderitems:
-
-      - title: sdp.xsd
-        jurl: /oidc_sample_react.html
-            
-      - title: sdp-feil.xsd
-        jurl: /oidc_index.html
+        jurl: /sdp_sertifikathandtering.html   
+      - title: Skjema (XSD) filer
+        jurl: /sdp_skjema.html 
+      - title: Eksempler
+        jurl: /sdp_index_eksempler.html
         
-      - title: sdp-felles.xsd
-        jurl: /oidc_guide_idporten.html
+    - title: Forretningslag
+      folderitems:
 
-      - title: sdp-kvittering.xsd
-        jurl: /oidc_guide_maskinporten.html
+      - title: Forretningslag
+        jurl: /sdp_forretningslag_index.html
+      - title: Aktører og Roller
+        jurl: /sdp_aktorer.html   
+      - title: Sending av digital post
+        jurl: /sdp_avsender_tilstanddiagram.html
+      - title: Sending av digital post på vegne av andre
+        jurl: /sdp_send_paa_vegne_av_andre.html  
+      - title: Henting av kvittering
+        jurl: /sdp_forretningsprosess_kvittering.html
+      - title: Tilstander for Avsender
+        jurl: /sdp_avsender_tilstanddiagram2.html
+      - title: Struktur på melding
+        jurl: /sdp_meldingsformat.html
+      - title: Prisen på digital post
+        jurl: /sdp_meldingsstorrelse.html
+   
+    - title: Dokumentpakke (ASiC)
+      folderitems:
 
-      - title: sdp-manifest.xsd
-        jurl: /oidc_guide_faq.html
-       
-      - title: sdp-melding.xsd
-        jurl: /oidc_guide_faq.html       
-       
-- title: Forretningslag
-  folderitems:
-
+      - title: Introduksjon
+        jurl: /dokumentpakke_index.html
       - title: Langtidslagring
-        jurl: /oidc_func_wellknown.html
-      
+        jurl: /sdp_langtidslagring.html   
       - title: Manifest
-        jurl: /oidc_func_clientreg.html
-      
+        jurl: /sdp_manifest.html
       - title: Dokumentformater
-        jurl: /oidc_func_sso.html
-
+        jurl: /dokumentformat_index.html   
       - title: MIME type
-        jurl: /oidc_func_pkce.html
-      
-      - title: HTML
-        jurl: /oidc_func_onbehalfof.html
-      
-      - title: EHF
-        jurl: /oidc_func_nopid.html  
-
+        jurl: /sdp_mimetypes.html  
+      - title: html
+        jurl: /sdp_html.html
+      - title: ehf
+        jurl: /sdp_ehf.html
       - title: Sikkerhet
-        jurl: /oidc_auth_spa.html
+        jurl: /sikkerhet_index.html
 
-    
-- title: Utskrift og forsendelse
-  folderitems:
+    - title: Utvidelser
+      folderitems:
 
-      - title: Prosessbeskrivelse
-        jurl: /oidc_arch.html  
-        
-- title: Forretningsmeldinger
-  folderitems:
-
-      - title: DigitalPostMelding
-        jurl: /oidc_auth_codeflow.html
-      
-      - title: LeveringsKvittering
-        jurl: /oidc_auth_app.html
-      
-      - title: AapningsKvittering
-        jurl: /oidc_auth_oauth2.html  
-      
-      - title: MottaksKvittering
-        jurl: /oidc_auth_server-to-server-oauth2.html
-
-      - title: ReturpostKvittering
-        jurl: /oidc_auth_app.html
-      
-      - title: Feil
-        jurl: /oidc_auth_oauth2.html  
-      
-      - title: FlyttetDigitalPostMelding
-        jurl: /oidc_auth_server-to-server-oauth2.html
-
-- title: Standard Business Document
-  folderitems:
-
-      - title: StandardBusinessDocumentHeader
-        jurl: /oidc_api_krr.html
-      
-      - title: Sender
-        jurl: /oidc_api_krr_user.html  
-
-      - title: Receiver
-        jurl: /oidc_api_authlevel.html
-      
-      - title: DocumentIdentification
-        jurl: /oidc_api_logghistorikk.html
-      
-      - title: BusinessScope
-        jurl: /oidc_api_autorisasjoner.html 
-
-- title: Transportlag
-  folderitems:
-
-      - title: Meldingsutveksling
-        jurl: /oidc_api_krr.html
-      
-      - title: Meldingsidentifikator
-        jurl: /oidc_api_krr_user.html  
-
-      - title: Meldingsformat
-        jurl: /oidc_api_authlevel.html
-      
-      - title: Webservice sikkerhet
-        jurl: /oidc_api_logghistorikk.html
-      
-
-- title: Feilhåndtering
-  folderitems:
-
-      - title: Forvaltningsrelaterte og tekniske feil
-        jurl: /oidc_about.html
-        
-      - title: Transportfeil
-        jurl: /oidc_api_krr_user.html  
-
-      - title: Forretningsfeil
-        jurl: /oidc_api_authlevel.html
-      
-      - title: Feilhåndteringsprosess
-        jurl: /oidc_api_logghistorikk.html
-
-- title: Utvidelser
-  folderitems:
-
+      - title: Introduksjon
+        jurl: /sdp_utvidelser_index.html
       - title: Lenke utenfor brev
-        jurl: /saml_tilgang.html
+        jurl: /sdp_lenke.html
+        
+    - title: Utskrift og forsendelse
+      folderitems:
+           
+      - title: Utskrift
+        jurl: /sdp_index_utskrift.html
+ 
+    - title: Forretningsmeldinger
+      folderitems:
 
-###########################
+      - title: Forretningsmeldinger
+        jurl: /sdp_index.html
+      - title: DigitalPostMelding
+        jurl: /sdp_digitalpostmeldinger.html   
+      - title: LeveringsKvittering
+        jurl: /sdp_leveringskvittering.html 
+      - title: AapningsKvittering
+        jurl: /osdp_aapningskvittering.html   
+      - title: VarslingfeiletKvittering
+        jurl: /sdp_varslingfeiletkvittering.html 
+      - title: MottaksKvittering
+        jurl: /sdp_mottakskvittering.html
+      - title: ReturpostKvittering
+        jurl: /sdp_returpostkvittering.html
+      - title: Feil
+        jurl: /sdp_feil.html
+      - title: FlyttetDigitalpostMelding
+        jurl: /sdp_flyttetdigitalpostmelding.html
+ 
+    - title: Standard Business Document
+      folderitems:
 
-related_resources_title: Andre nyttige lenker
+      - title: Standard Business Document
+        jurl: /standardbusinessdocument_index.html
+      - title: StandardBusinessDocumentHeader
+        jurl: /sdp_standardbusinessdocumentheader.html   
+      - title: Sender
+        jurl: /sdp_sender.html
+      - title: Receiver
+        jurl: /sdp_receiver.html 
+      - title: DocumentIdentification
+        jurl: /sdp_documentidentification.html 
+      - title: BusinessScope
+        jurl: /sdp_businessscope.html
+ 
+    - title: Transportlag
+      folderitems: 
 
-related_resources_list:
+      - title: Transport av meldinger
+        jurl: /sdp_transportlag_index.html 
+      - title: Meldingsutveksling
+        jurl: /sdp_index_meldingsutveksling.htm   
+      - title: Meldingsidentifikatorer
+        jurl: /sdp_meldingsidentifikatorer.html
+      - title: Meldingsformat
+        jurl: /sdp_transportlag_meldingsformat.html    
+      - title: Webservice sikkerhet
+        jurl: /sdp_webservicesecurity.html
+ 
+    - title: Feilhåndtering
+      folderitems:
 
-- title: Github
-  jurl: https://github.com/difi/felleslosninger
-
-- title: Samarbeidsportalen
-  jurl: https://samarbeid.difi.no/felleslosninger
-
-- title: Difi
-  jurl: https://www.difi.no
+      - title: Feilhåndtering
+        jurl: /sdp_feil_index.html
+      - title: Forvaltning og tekniske feil
+        jurl: /sdp_forvaltning.html    
+      - title: Transportfeil
+        jurl: /sdp_transportfeil.html
+      - title: Forretningsfeil
+        jurl: /sdp_forretningsfeil.html   
+      - title: Feilhåndteringsprosess
+        jurl: /sdp_feilhandteringsprosess.html
