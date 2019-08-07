@@ -27,10 +27,4 @@ Katalogen er bygd opp av følgende kapitler:
 | [Transportlag](https://difi.github.io/felleslosninger/sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
 | [Feilhåndtering](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Generelt om feilhåndtering |
 
-For mer detaljer:
-
-  - [Xml Eksempel på meldinger](eksempler/index.md)
-  - [XML Schema Definition filer](xsd/README.md)
-  - [Arkitekturbeskrivelse](ArkitekturbeskrivelseforSikkerdigitalposttjenestev1.0.pdf)
-  - [Sikkerhetsarkitektur](Sikkerhetsarkitektur.pdf)
 
