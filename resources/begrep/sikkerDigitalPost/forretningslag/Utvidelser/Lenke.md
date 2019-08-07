@@ -2,7 +2,7 @@
 
 title: Lenke utenfor brev  
 permalink: sdp_lenke.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
