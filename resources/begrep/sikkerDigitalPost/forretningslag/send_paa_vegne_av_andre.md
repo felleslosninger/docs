@@ -2,7 +2,7 @@
 
 title: Sending av digital post på vegne av andre  
 permalink: sdp_send_paa_vegne_av_andre.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Sending av Post på vegne av andre
