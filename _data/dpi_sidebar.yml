@@ -81,7 +81,7 @@ folders:
       - title: LeveringsKvittering
         jurl: /sdp_leveringskvittering.html 
       - title: AapningsKvittering
-        jurl: /osdp_aapningskvittering.html   
+        jurl: /sdp_aapningskvittering.html   
       - title: VarslingfeiletKvittering
         jurl: /sdp_varslingfeiletkvittering.html 
       - title: MottaksKvittering
