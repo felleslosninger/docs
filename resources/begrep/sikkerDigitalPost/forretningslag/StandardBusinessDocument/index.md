@@ -1,7 +1,7 @@
 ---
 title: Standard Business Document  
 permalink: standardbusinessdocument_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 |---|---|
