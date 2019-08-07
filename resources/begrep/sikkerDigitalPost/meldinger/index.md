@@ -2,7 +2,7 @@
 
 title: Forretningsmeldinger  
 permalink: sdp_index.html
-sidebar: sidebar_begrep
+sidebar: dpi_sidebar
 ---
 
 ## Forretningsmeldingene i Sikker Digital Post
