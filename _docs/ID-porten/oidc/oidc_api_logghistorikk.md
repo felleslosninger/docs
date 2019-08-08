@@ -17,6 +17,9 @@ Kunden mottar opplysningene for at innbyggeren kan lettere deteketere misbruk av
 
 Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester](https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester) for generelle vilkår for tilleggstjenester.
 
+## Brukergrensesnitt
+
+Innbyggere kan gå til [https://brukerprofil.idporten.no/](https://brukerprofil.idporten.no/) for å se sin innloggingshistorikk.
 
 ## REST-grensesnittet
 
@@ -31,21 +34,21 @@ Følgende Oauth2 scopes aksepteres av grensesnittet:
 
 Kunden får kun se innloggingshistorikk til tjenester tilknyttet eget organisasjonsnummer.
 
-Grensesnittet er dokumenter vha. Swagger [https://api.idporten-ver2.difi.no/innlogginger#swagger-ui.html](https://api.idporten-ver2.difi.no/innlogginger#swagger-ui.html).
+Grensesnittet er dokumenter vha. Swagger [https://api.idporten-ver2.difi.no/innlogginger/swagger-ui.html#/](https://api.idporten-ver2.difi.no/innlogginger/swagger-ui.html#/).
 
 URL til tjenesten:
 
 | Miljø | URL |
 |-|-|
-|PROD  | https://api.idporten.difi.no/innlogginger  |
-|VER1  | https://api.idporten-ver1.difi.no/innlogginger |
-|VER2  | https://api.idporten-ver2.difi.no/innlogginger  |
-|YT2   | https://api.idporten-yt2.difi.eon.no/innlogginger |
+|PROD  | https://api.idporten.difi.no/innlogginger/logg/idporten  |
+|VER1  | https://api.idporten-ver1.difi.no/innlogginger/logg/idporten |
+|VER2  | https://api.idporten-ver2.difi.no/innlogginger/logg/idporten  |
+|YT2   | https://api.idporten-yt2.difi.eon.no/innlogginger/logg/idporten |
 
 ## Eksempel
 
 ```
-GET /innlogginger?maxhits=5 HTTP/1.1
+GET /innlogginger/logg/idporten?maxhits=5 HTTP/1.1
 Authorization: Bearer U_3uI4GjxKbhc4jo54mbnozbSZdHLyw28ZQGnxsScmI=
 
 [
@@ -66,3 +69,4 @@ Authorization: Bearer U_3uI4GjxKbhc4jo54mbnozbSZdHLyw28ZQGnxsScmI=
 ]
 
 ```
+
