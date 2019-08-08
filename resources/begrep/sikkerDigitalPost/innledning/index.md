@@ -5,16 +5,12 @@ permalink: sdp_index_innledning.html
 sidebar: dpi_sidebar
 ---
 
-Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere)
-
 #### Klienter
 [Klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
 
 [Klientbibliotek Java](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
 
-#### Kapiteloversikt
-
-Katalogen er bygd opp av følgende kapitler:
+#### Veiledningen består av følgende kapitler:
 
 | --- | --- |
 | [Oversikt](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Mer om sikker digital post og generelle aspekter ved løsningen |
