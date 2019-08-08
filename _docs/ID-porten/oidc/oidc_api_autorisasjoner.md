@@ -11,7 +11,7 @@ product: ID-porten
 
 Enkelte av innbygger sine autorisasjoner i ID-porten OIDC provider er tilgjengelig på et enkelt REST-api.
 
-Typiske autorisasjoner som er tilgjengelig over APIet er såkalte langt-levende innlogginger til mobil-apper, men teknisk er det slik at ethvert Oauth2 scope kan "tagges" for å synes på lista av scope-eier, og vil da bli tilgjengelig.
+Typiske autorisasjoner som er tilgjengelig over APIet er såkalte langt-levende innlogginger til mobil-apper, men teknisk er det slik at ethvert Oauth2 scope kan "tagges" for å synes på lista av scope-eier, og vil da bli tilgjengelig.  Det gjøres ved å sette attributtet `visibility` lik PUBLIC til det aktuelle oauth2 scopet.
 
 Kunden mottar opplysningene for å vise disse til innbygger i egne løsninger, og evt. gi innbygger anledning til å revokere en autorisasjonen.  Et annet typisk bruksmønster er der innbygger tar kontakt med kundens brukerstøtte, som da trenger å fjerne en autorisasjon på vegne av innbyggeren.
 
@@ -19,6 +19,9 @@ Kunden mottar opplysningene for å vise disse til innbygger i egne løsninger, o
 
 Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester](https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester) for generelle vilkår for tilleggstjenester.
 
+## Brukergrensesnitt
+
+Innbyggere kan gå til [https://brukerprofil.idporten.no/](https://brukerprofil.idporten.no/) for å se sin aktive innlogginger og autorisasjoner.
 
 ## REST-grensesnittet
 
@@ -29,7 +32,7 @@ Følgende Oauth2 scopes aksepteres av grensesnittet:
 | scope | beskrivelse |
 | - | - |   
 | `idporten:authorizations.read`  |  Lese ut alle autorisasjoner som innlogget bruker har til mine tjenester  |
-| `idporten:authorizations.revoke`  | Som over, men fir i tillegg mulighet til å slette en autorisasjon  |
+| `idporten:authorizations.revoke`  | Som over, men får i tillegg mulighet til å slette en autorisasjon  |
 
 
 Grensesnittet er dokumentert ihht OpenAPI her: [https://api.idporten-ver2.difi.no/authorizations#swagger-ui.html](https://api.idporten-ver2.difi.no/authorizations#swagger-ui.html).
