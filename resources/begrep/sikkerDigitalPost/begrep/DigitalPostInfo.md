@@ -1,6 +1,6 @@
 ---
 title: DigitalpostInfo  
-permalink: sdp_digitalpostinfo
+permalink: sdp_digitalpostinfo.html
 sidebar:
 ---
   - Identifikator  
