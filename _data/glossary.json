@@ -10,7 +10,7 @@
     "SBD" : "<a href='http://www.gs1.org/ecom/standards/guidelines#s2'>Standard Business Document</a> - <a href='http://www.gs1.org/'>GS1</a> standard utviklet for å forenkle utveksling av dokumenter i en B2B kontekst",
     "SBDH" : "",
     "ASiC" : "<a href='http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf'>Associated Signature Container</a> - Pakkeformat som er designet for å ivareta integritet til innholdet over lang tid",
-    "OIDC" : "OpenId Connect. Mer informasjon <a href='https://difi.github.io/idporten-oidc-dokumentasjon/'>her</a>",
+    "OIDC" : "OpenId Connect. Mer informasjon <a href='https://difi.github.io/felleslosninger/oidc_index.html'>her</a>",
     "DPO" : "Digital post offentlig - meldinger mellom offentlige virksomheter som bruker integrasjonspunket",
     "DPE" : "Digital post til eInnsyn - meldinger for publisering journal og og møtedata til eInnsyn, samt innsynsbegjæringer",
     "DPI" : "Digital post til inbygger - meldinger sendt til innbyggers digitale postkasse",
