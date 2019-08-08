@@ -1,18 +1,19 @@
 ---
-title: "API for administrasjon av Maskinporten"
-description: "API som gir brukere av Maskinporten  mulighet til å administrere API-sikring."
-summary: "Oauth2-beskyttet REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere API-tilgang gjennom  Maskinporten."
+title: "API for administrasjon av APIer / scopes"
+description: "API som gir brukere av ID-porten/Maskinporten  mulighet til å administrere API-sikring"
+summary: "Oauth2-beskyttet REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere APIer og -tilgang"
 permalink: oidc_api_admin_maskinporten.html
 sidebar: oidc
 product: ID-porten
 ---
 
-
 ## Introduksjon
 
 "Maskinporten" er en egenskap ved ID-portens OIDC provider som tilbyr en enkel modell for API-sikring basert på såkalt "2-legged Oauth", se [server-to-server Oauth2](oidc_auth_server-to-server.html), inspirert av [Google sine system-kontoer](https://developers.google.com/identity/protocols/OAuth2ServiceAccount).
 
-På denne siden dokumenterer vi hvordan  API-konsumenter og API-tilbydere gir mulighet til selvbetjening av egen API-sikring.  Maskinporten sin selvbetjeningsfunksjonalitet  er i praksis en liten utvidelse av [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html).
+På denne siden dokumenterer vi hvordan  API-tilbydere gir mulighet til selvbetjening av egen API-sikring.
+
+Les gjerne [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html) først.  API-konsumenter bør se på [selvbetjenings-API for integrasjoner](oidc_api_admin.html).
 
 
 ## Om selvbetjenings-APIet
@@ -31,9 +32,6 @@ API-tilbydere må ha:
 |-|-|
 |idporten:scopes.write|Gir tilgang til å opprette/endre APIer, og gi/fjerne tilgang til konsumenter|
 
-
-API-konsumenter bruker scopes som definert i [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes)
-
 Vi krever at virksomhetene oppretter en egen administrasjons-klient som kun får lov til å utføre selvbetjening.
 
 
@@ -47,19 +45,8 @@ Merk at du må manuelt velge riktig spec' oppe i høyre hjørne.  For Maskinport
 
 ## Grunnleggende prosedyre for API-sikring
 
-En full verdikjede for API-sikring med Maskinporten består av følgende steg:
+Se [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html).
 
-1. API-tilbyder oppretter et API
-2. API-tilbyder gir tilgang til en konsument
-3. Konsument provisjonerer tilgangen ned til en aktuell oauth2-klient
-
-Tilgang er nå etablert.  Når API'et så skal brukes, gjennomføres følgende steg:
-
-4. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
-5. Konsumenten inkluderer token i kall til APIet.
-6. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
-
-I løpet av 2019 håper vi å få på plass mulighet for at Konsument kan delegere sin tilgang videre til en Leverandør, for eksempel vha. Altinn Autorisasjon.
 
 ### Beskrivelse av APIer
 
@@ -78,6 +65,25 @@ der `prefix` er en tekststreng som blir manuelt tildelt API-tilbyderen. En API-t
      - fravær av postfix bør i utgangspunktet tolkes som kun lese-tilgang
 
 
+### Synlighet
+
+Attributtet `visibilty` brukes for å angi scopets synlighet:
+
+|verdi|beskrivelse|
+|-|-|
+|PUBLIC | Scopet er synlig for alle på /scopes/all endepunkt.    |
+|PRIVATE| Scopet er ikke synlig for andre enn API-tilbyder og de konsuementer som har fått tilgang |Konsument må bli fortalt at scopet finnes    |
+|INTERAL | Inten bruk i Difi   |   
+
+Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
+
+### Inaktive entiteter
+
+For å sikre juridisk logging og statistikk, vil Difi aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
+
+Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
+
+
 
 ### 1. Opprette APIer
 
@@ -85,7 +91,8 @@ Når prefix er blitt manuelt tildelt, er følgdende operasjoner tilgjengelige:
 
 | Operasjon | inndata | beskrivelse |
 |-|-|-|
-|`GET    /scopes/all `| |Gir liste over alle scopes beskyttet av ID-porten (evt. filtrering)|
+|`GET    /scopes/all `| |Åpent endepunkt som gir liste over alle synlige scopes beskyttet av ID-porten (evt. filtrering)|
+|`GET    /scopes `| |Beskyttet endepunkt som lister alle scopes for min organisasjon, både public og private|
 |`POST   /scopes ` | prefix*, subscope*, description, token_egenskaper  | Oppretter et nytt scope (lik prefix+subscope)    |
 |`GET    /scopes?scope={scope} `  |   | Hent et scope.  |
 |`PUT    /scopes?scope={scope} `  |  description, token_egenskaper | Endrer et scope. Selve scope-navnet kan ikke endres.   |
