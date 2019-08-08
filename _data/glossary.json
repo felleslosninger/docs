@@ -18,6 +18,7 @@
     "DPF" : "Digital post til fiks meldingsformidler - Meldinger til kommuner og andre virksomheter som bruker FIKS meldingsformidler",
     "PKI" : "Public key infrastructure - Rammeverk for utstedelse, administrasjon og bruk av digitale sertifikater over datanettverk",
     "Avsender" : "Den som er ansvarlig for innholdet i en digital forsendelse. I dette tilfellet DPI. Mer informasjon <a href='https://difi.github.io/felleslosninger/sdp_avsender.html'>her</a>",
+    "DigitalPostInfo" : "Informasjon til Postkasseleverandør for å presentere og behandle en sikker digital post melding. <a href='https://difi.github.io/felleslosninger/sdp_digitalpostinfo.html'>Les mer</a>",
     "Test" : "Tester ordlistefunksjonalitet"
     
 }
