@@ -41,4 +41,5 @@ for hver datatype. Følgende datatyper er definert:
 - [VarslingsTekst](varslingsTekst.md)
 - [VirkningsDato](virkningsdato.md)
 - [VirkningsTidspunkt](virkningstidspunkt.md)
+- [VirksomhetsIdentifikator](virksomhetsidentifikator.md)
 - [x509Sertifikat](x509Sertifikat.md)
