@@ -1,5 +1,5 @@
 ---
-title: Begreper  
+title: Begreper - Digital Postkasse
 permalink: begrep_index.html
 sidebar: dpi_sidebar
 ---
