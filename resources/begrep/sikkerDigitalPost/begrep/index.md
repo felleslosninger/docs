@@ -32,6 +32,7 @@ for hver datatype. Følgende datatyper er definert:
 - [PrioritetType](prioritetType.md)
 - [Repetisjoner](Repetisjoner.md)
 - [ReturpostHaandtering](returPostHaandtering.md)
+- [SikkerhetsNivå](sikkerhetsnivaa.md)
 - [SmsVarsel](SmsVarsel.md)
 - [TilknyttetRegistreringSom](tilknyttetRegistreringSom.md)
 - [Tittel](Tittel.md)
