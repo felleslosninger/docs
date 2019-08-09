@@ -1,6 +1,6 @@
 ---
 title: virkningsdato
-permalink: virkningsdato.html
+permalink: 2virkningsdato.html
 sidebar:
 ---
 
