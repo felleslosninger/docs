@@ -1,7 +1,7 @@
 ---
 title: DigitalpostInfo  
 permalink: sdp_digitalpostinfo.html
-sidebar:
+sidebar: dpi_sidebar
 ---
   - Identifikator  
     <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
