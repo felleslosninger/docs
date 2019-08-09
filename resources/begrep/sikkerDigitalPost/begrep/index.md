@@ -29,6 +29,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Mottaker](Mottaker.md)
 - [OrderReference](OrderReference.md)
 - [Person](Person.md)
+- [Personidentifikator](personidentifikator)
 - [PrioritetType](prioritetType.md)
 - [Repetisjoner](Repetisjoner.md)
 - [ReturpostHaandtering](returPostHaandtering.md)
