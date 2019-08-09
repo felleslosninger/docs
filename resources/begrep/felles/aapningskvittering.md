@@ -1,7 +1,7 @@
 ---
 title: aapningskvittering
 permalink: aapningskvittering.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
