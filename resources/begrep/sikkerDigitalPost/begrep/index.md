@@ -10,7 +10,7 @@ Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
 
 - [Aapningskvittering](aapningskvittering.md)
-- [Avsender](avsender.md)
+- [Avsender](Avsender.md)
 - [Avsenderidentifikator](avsenderidentifikator.md)
 - [Beskrivelse](beskrivelse.md)
 - [DagerEtter](dagerEtter.md)
