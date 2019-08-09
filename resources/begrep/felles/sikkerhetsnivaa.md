@@ -1,6 +1,6 @@
 ---
 title: sikkerhetsnivaa
-permalink: sikkerhetsnivaa.html
+permalink: 2sikkerhetsnivaa.html
 sidebar:
 ---
 
