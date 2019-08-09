@@ -1,6 +1,6 @@
 ---
 title: beskrivelse
-permalink: beskrivelse.html
+permalink: 2beskrivelse.html
 sidebar: dpi_sidebar
 ---
 
