@@ -30,6 +30,5 @@ sidebar: dpi_sidebar
 | --- | --- | --- |
 | Identifikator                           | Kardinalitet | Datatype                                              |
 | [mottaker](FysiskPostadresse.md)           | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
-| [posttype](posttype.md)            | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | [utskriftstype](utskriftstype.md)        | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | [retur](FysiskPostRetur.md)                | 1..1         | [sdp:FysiskPostRetur](FysiskPostRetur.md)                |
