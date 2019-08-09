@@ -16,7 +16,7 @@ sidebar: dpi_sidebar
     DIFI
   - Kommentar  
     Beskriver hvilke dager noe skal repeteres etter en definert dag, der
-    [dagerEtter](dageretter.md) angir hvor mange dager etter
+    [dagerEtter](dagerEtter.md) angir hvor mange dager etter
     tidspunktet det skal repeteres.  
     dagerEtter=0 betyr samme dag. dagerEtter=7 betyr den syvende dagen
     etter en bestemt dag.
@@ -35,7 +35,7 @@ dagen etter SKAL VÆRE LINK TIL ../../felles/virkningsdato.
 
 | Identifikator                    | Kardinalitet | Datatype               |
 | -------------------------------- | ------------ | ---------------------- |
-| [dagerEtter](dageretter.md) | 0..25        | xsd:nonNegativeInteger |
+| [dagerEtter](dagerEtter.md) | 0..25        | xsd:nonNegativeInteger |
 
 #### Xml eksempel
 
