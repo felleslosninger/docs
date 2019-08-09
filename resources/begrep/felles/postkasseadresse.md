@@ -1,6 +1,6 @@
 ---
 title: postkasseadresse
-permalink: postkasseadresse.html
+permalink: 2postkasseadresse.html
 sidebar:
 ---
 
