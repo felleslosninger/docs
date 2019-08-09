@@ -1,7 +1,7 @@
 ---
 title: Person 
 permalink: sdp_person.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
@@ -26,13 +26,15 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 | Term                                               | Kardinalitet | Datatype                                              |
 | --- | --- | --- |
 | SKAL VÆRE LINK TIL ../felles/personidentifikator | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [postkasseadresse](../../felles/postkasseadresse.md)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [postkasseadresse](postkasseadresse.md)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <sdp:Person>
     <sdp:personidentifikator>01012295312</sdp:personidentifikator>
     <sdp:postkasseadresse>1</sdp:postkasseadresse>
 </sdp:Person>
+
 ```
