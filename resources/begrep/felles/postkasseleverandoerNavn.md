@@ -1,6 +1,6 @@
 ---
 title: postkasseleverandoerNavn
-permalink: postkasseleverandoernavn.html
+permalink: 2postkasseleverandoernavn.html
 sidebar:
 ---
 
