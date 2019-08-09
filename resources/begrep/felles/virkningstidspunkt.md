@@ -1,6 +1,6 @@
 ---
 title: virkningstidspunkt
-permalink: virkningstidspunkt.html
+permalink: 2virkningstidspunkt.html
 sidebar:
 ---
 
