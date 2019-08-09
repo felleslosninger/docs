@@ -1,7 +1,7 @@
 ---
 title: ikkeSensitivTittel
 permalink: ikkesensitivtittel.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
