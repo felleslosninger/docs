@@ -4,8 +4,6 @@ permalink: sdp_fysiskpostretur.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
     {{page.title}}
   - Definisjon  
