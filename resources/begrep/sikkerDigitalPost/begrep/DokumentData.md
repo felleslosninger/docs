@@ -23,7 +23,8 @@ sidebar: dpi_sidebar
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 
 <data href="lenke.xml" mime="application/vnd.difi.dpi.lenke+xml" />
 ```
