@@ -70,6 +70,8 @@ Felles metadata:
 | client_orgno | Ja |Klientens organisasjonsnummer.   |
 | scopes | Ja |Liste over scopes som klienten kan forespørre. For OpenID Connect er aktuelle scope *openid*.  For API-sikring, ta kontakt med oss. |
 
+Obligatoriske scopse får en automatisk og en trenger ikke angi det i requesten. Men dersom en gjør det det må scopet ligge i "tillatte scopes" i tillegg til "Obligatoriske scopes"
+
 For innloggings-klienter trengs i tilegg følgende:
 
 |attributt|Påkrevd?|beskrivelse|
