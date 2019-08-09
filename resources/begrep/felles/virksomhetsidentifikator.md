@@ -1,6 +1,6 @@
 ---
 title: virksomhetsidentifikator
-permalink: virksomhetsidentifikator.html
+permalink: 2virksomhetsidentifikator.html
 sidebar: sidebar_begrep
 ---
 
