@@ -1,6 +1,6 @@
 ---
 title: tilknyttetRegistreringSom
-permalink: tilknyttetregistreringsom.html
+permalink: 2tilknyttetregistreringsom.html
 sidebar:
 ---
 
