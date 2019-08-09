@@ -1,4 +1,4 @@
-sidebarTitle: Digital post til innbyggere
+sidebarTitle: Digital postkasse
 folders:
 
     - title: Oversikt
@@ -136,3 +136,9 @@ folders:
         jurl: /sdp_forretningsfeil.html   
       - title: Feilhåndteringsprosess
         jurl: /sdp_feilhandteringsprosess.html
+        
+    - title: Begrep
+      folderitems:
+      
+      - title: Begrepskatalog DPI
+        jurl: /begrep_index.html
