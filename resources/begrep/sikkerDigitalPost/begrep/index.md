@@ -9,7 +9,11 @@ sidebar: dpi_sidebar
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
 
-- [Avsender](Avsender.md)
+- [Aapningskvittering](aapningskvittering.md)
+- [Avsender](avsender.md)
+- [Avsenderidentifikator](avsenderidentifikator.md)
+- [Beskrivelse](beskrivelse.md)
+- [DagerEtter](dagerEtter.md)
 - [DigitalpostInfo](DigitalPostInfo.md)
 - [Dokument](Dokument.md)
 - [DokumentData](DokumentData.md)
