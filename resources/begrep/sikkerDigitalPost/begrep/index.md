@@ -9,7 +9,7 @@ sidebar: dpi_sidebar
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
 
-- [Aapningskvittering](aapningskvittering.md)
+- [Aapningskvittering](../felles/aapningskvittering.md)
 - [Avsender](avsender.md)
 - [Avsenderidentifikator](avsenderidentifikator.md)
 - [Beskrivelse](beskrivelse.md)
