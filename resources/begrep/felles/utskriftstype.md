@@ -1,6 +1,6 @@
 ---
 title: utskriftstype
-permalink: utskriftstype.html
+permalink: 2utskriftstype.html
 sidebar:
 ---
 
