@@ -1,7 +1,7 @@
 ---
 title: Dokumentpakkefingeravtrykk   
 permalink: sdp_dokumentpakkefingeravtrykk.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
@@ -10,7 +10,7 @@ sidebar:
     {{page.title}}
   - Definisjon  
     Hash av den krypterte
-    [dokumentpakken](../forretningslag/Dokumentpakke/)
+    [dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html)
   - Datatype  
     complexType
   - Kjelde  
@@ -21,11 +21,12 @@ sidebar:
 | --- | --- | --- | --- |
 | Identifikator | Kardinalitet | Datatype | Beskrivelse |
 | [DigestMethod](http://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod) | 1..1         | [ds:SignedInfo](http://www.w3.org/TR/xmldsig-core1/#sec-DigestMethod) | Referanse til Hash algoritmen brukt for lage hash                                       |
-| [DigestValue](http://www.w3.org/TR/xmldsig-core1/#sec-DigestValue)   | 1..1         | [ds:DigestValue](http://www.w3.org/TR/xmldsig-core1/#sec-DigestValue) | Base64 encoded Hash av den krypterte [Dokumentpakken](../forretningslag/Dokumentpakke/) |
+| [DigestValue](http://www.w3.org/TR/xmldsig-core1/#sec-DigestValue)   | 1..1         | [ds:DigestValue](http://www.w3.org/TR/xmldsig-core1/#sec-DigestValue) | Base64 encoded Hash av den krypterte [Dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html) |
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 
 <dokumentpakkefingeravtrykk>
             <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
