@@ -1,7 +1,7 @@
 ---
 title: FysiskPostRetur  
 permalink: sdp_fysiskpostretur
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
@@ -21,5 +21,5 @@ sidebar:
 
 | Identifikator                                   | Kardinalitet | Datatype                                              |
 | ----------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [mottaker](FysiskPostadresse.md)                   | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
-| [postHaandtering](../../felles/returPostHaandtering.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [mottaker](Mottaker.md)                   | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
+| [postHaandtering](returPostHaandtering.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
