@@ -1,6 +1,7 @@
 ---
 title: Mottaker 
 permalink: sdp_mottaker.html
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
