@@ -1,6 +1,6 @@
 ---
 title: Korrespondanseparttype
-permalink: korrespondanseparttype.html
+permalink: 2korrespondanseparttype.html
 sidebar:
 ---
 
