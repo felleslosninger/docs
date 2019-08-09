@@ -4,8 +4,6 @@ permalink: sdp_person.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
     {{page.title}}
   - Definisjon  
@@ -25,7 +23,7 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 
 | Term                                               | Kardinalitet | Datatype                                              |
 | --- | --- | --- |
-| SKAL VÆRE LINK TIL ../felles/personidentifikator | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [personidentifikator](personidentifikator.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | [postkasseadresse](postkasseadresse.md)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Xml eksempel
