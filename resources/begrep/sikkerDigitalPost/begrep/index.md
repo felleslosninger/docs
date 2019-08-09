@@ -1,7 +1,7 @@
 ---
 title: Begreper  
 permalink: begrep_index.html
-sidebar:
+sidebar: dpi_sidebar.html
 ---
 
 ## {{page.title}}
