@@ -1,7 +1,7 @@
 --- 
 title: Repetisjoner  
 permalink: sdp_repitisjoner.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
@@ -39,7 +39,8 @@ dagen etter SKAL VÆRE LINK TIL ../../felles/virkningsdato.
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 
       <repetisjoner>
         <dagerEtter>0</dagerEtter>
