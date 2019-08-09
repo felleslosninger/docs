@@ -1,6 +1,6 @@
 ---
 title: tittel
-permalink: tittel.html
+permalink: 2tittel.html
 sidebar:
 ---
 
