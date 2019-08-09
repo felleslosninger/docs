@@ -1,6 +1,6 @@
 ---
 title: dagerEtter
-permalink: dageretter.html
+permalink: 2dageretter.html
 sidebar: dpi_sidebar
 ---
 
