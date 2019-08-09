@@ -11,21 +11,22 @@ sidebar: dpi_sidebar
 | Datatype      | complexType |
 | Kilde         | DIFI |
 | Kommentar     | Manifest er en xml |
-| fil           | som inneholder relevant informasjon om [dokumentene](../../begrep/Dokument.md) i [dokumentpakken](index.md). Manifest xml |
-| filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken](index.md) over lang tid. |
+| fil           | som inneholder relevant informasjon om [dokumentene](Dokument.md) i [dokumentpakken](dokumentpakke_index.md). Manifest xml |
+| filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken](dokumentpakke_index.md) over lang tid. |
 
 ### Attributer
 
 | Identifikator                     | Kardinalitet | Datatype                              |
 | --------------------------------- | ------------ | ------------------------------------- |
-| [Mottaker](../../begrep/Mottaker.md) | 1..1         | [sdp:Mottaker](../../begrep/Mottaker.md) |
-| [Avsender](../../begrep/Avsender.md) | 1..1         | [sdp:Avsender](../../begrep/Avsender.md) |
-| hoveddokument                     | 1..1         | [sdp:Dokument](../../begrep/Dokument.md) |
-| vedlegg                           | 0..200       | [sdp:Dokument](../../begrep/Dokument.md) |
+| [Mottaker](Mottaker.md) | 1..1         | [sdp:Mottaker](Mottaker.md) |
+| [Avsender](Avsender.md) | 1..1         | [sdp:Avsender](Avsender.md) |
+| hoveddokument                     | 1..1         | [sdp:Dokument](Dokument.md) |
+| vedlegg                           | 0..200       | [sdp:Dokument](Dokument.md) |
 
 ### Eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest
   xmlns="http://begrep.difi.no/sdp/schema_v10"
@@ -58,4 +59,5 @@ sidebar: dpi_sidebar
   </vedlegg>
 
 </manifest>
+
 ```
