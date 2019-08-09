@@ -1,7 +1,7 @@
 ---
 title: FysiskpostInfo  
-permalink: sdp_fysiskpostinfo
-sidebar:
+permalink: sdp_fysiskpostinfo.html
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
@@ -30,6 +30,6 @@ sidebar:
 | --- | --- | --- |
 | Identifikator                           | Kardinalitet | Datatype                                              |
 | [mottaker](FysiskPostadresse.md)           | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
-| [posttype](../../felles/posttype.md)            | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| SKAL VÆRE LINK TIL /Felles/utskriftstype | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [posttype](posttype.md)            | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [utskriftstype](utskriftstype.md)        | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 | [retur](FysiskPostRetur.md)                | 1..1         | [sdp:FysiskPostRetur](FysiskPostRetur.md)                |
