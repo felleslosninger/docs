@@ -32,7 +32,8 @@ sidebar: dpi_sidebar
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
         <sdp:Dokument href="melding.pdf" mime="application/pdf">
             <sdp:Tittel lang="no">Vedtak om barnehageplass til Ola</sdp:Tittel>             
         </sdp:Dokument>
