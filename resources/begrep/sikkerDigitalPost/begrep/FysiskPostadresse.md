@@ -1,7 +1,7 @@
 ---
 title: FysiskPostadresse  
 permalink: sdp_fysiskpostadresse.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
