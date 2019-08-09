@@ -31,6 +31,6 @@ sidebar: dpi_sidebar
 | [sikkerhetsnivaa](../../felles/sikkerhetsnivaa.md)       | 1..1        | [xs:int](http://www.w3.org/TR/xmlschema-2/#int)           |
 | Skal være link til /Felles/virkningsdato           | 0..1         | [xs:date](http://www.w3.org/TR/xmlschema-2/#date)         |
 | Skal være link til /Felles/virkningstidspunkt | 0..1         | [xs:datetime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
-| [aapningskvittering](../../felles/aapningskvittering.md) | 0..1        | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)     |
+| [aapningskvittering](aapningskvittering.md) | 0..1        | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)     |
 | [ikkeSensitivTittel](ikkeSensitivTittel.md) | 1..1        | Skal være link til /Felles/tekst                            |
 | Skal være link til Varsler                              | 0..1         | Skal være link til Varsler                           |
