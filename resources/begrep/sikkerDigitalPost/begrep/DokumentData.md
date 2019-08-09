@@ -1,11 +1,10 @@
 ---
 title: DokumentData  
 permalink: sdp_dokumentdata.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/DokumentData
+
   - Term  
     {{page.title}}
   - Definisjon  
