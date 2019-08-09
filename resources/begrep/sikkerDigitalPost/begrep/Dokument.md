@@ -1,7 +1,7 @@
 ---
 title: Dokument  
 permalink: sdp_dokument.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
