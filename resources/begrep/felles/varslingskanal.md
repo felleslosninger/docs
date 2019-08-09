@@ -1,6 +1,6 @@
 ---
 title: varslingskanal
-permalink: varslingskanal.html
+permalink: 2varslingskanal.html
 sidebar:
 ---
 
