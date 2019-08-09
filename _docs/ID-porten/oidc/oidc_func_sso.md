@@ -43,6 +43,10 @@ Følgende attributer kan være del av requesten:
 |```post_logout_redirect_uri```| anbefalt | Må være forhåndsregistrert på klient som id_token er utstedt til |
 |```state``` | valgfri | Verdi som klient kan bestemme selv.  ID-porten vil inkludere denne tilbake i redirecten tilbake til utloggings-urlen |
 
+Ang. validering av state
+* Regex for validering: ^[\x20-\x7E]+$ 
+* Godtar dermed gyldige ascii-tegn med hex-verdi mellom 20 og 7E, ref. f.eks. http://www.asciitable.com/
+
 
 Eksempel:
 ```
