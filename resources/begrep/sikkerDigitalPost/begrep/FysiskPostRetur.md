@@ -1,6 +1,6 @@
 ---
 title: FysiskPostRetur  
-permalink: sdp_fysiskpostretur
+permalink: sdp_fysiskpostretur.html
 sidebar: dpi_sidebar
 ---
 
