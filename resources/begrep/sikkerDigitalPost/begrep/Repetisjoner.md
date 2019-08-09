@@ -16,7 +16,7 @@ sidebar: dpi_sidebar
     DIFI
   - Kommentar  
     Beskriver hvilke dager noe skal repeteres etter en definert dag, der
-    [dagerEtter](felles/dagerEtter.md) angir hvor mange dager etter
+    [dagerEtter](dagerEtter.md) angir hvor mange dager etter
     tidspunktet det skal repeteres.  
     dagerEtter=0 betyr samme dag. dagerEtter=7 betyr den syvende dagen
     etter en bestemt dag.
