@@ -16,7 +16,7 @@ sidebar: dpi_sidebar
     DIFI
   - Kommentar  
     Dette gir en henvisning til dokumentet i
-    [Dokumentpakken](dokumentpakke_index.md) sammen med en tittel.  
+    [Dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html) sammen med en tittel.  
     Denne tittelen vil vises til Innbygger når Dokumentpakken er
     dekryptert og Innbygger er autentisert på tilstrekkelig
     sikkerhetsnivå.
