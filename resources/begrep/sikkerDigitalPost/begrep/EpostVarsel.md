@@ -29,6 +29,7 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
+
 brush: xml; toolbar: false
     <epostVarsel>
       <epostadresse>01012295312_test@minid.difi.no</epostadresse>
