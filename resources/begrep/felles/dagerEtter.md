@@ -1,7 +1,7 @@
 ---
 title: dagerEtter
 permalink: dageretter.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
