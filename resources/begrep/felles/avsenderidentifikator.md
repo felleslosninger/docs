@@ -1,7 +1,7 @@
 ---
 title: avsenderidentifikator
 permalink: avsenderidentifikator.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
