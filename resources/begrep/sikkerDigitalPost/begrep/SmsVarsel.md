@@ -1,6 +1,7 @@
 ---
 title: SmsVarsel  
 permalink: sdp_smsvarsel.html
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
