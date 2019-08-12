@@ -1,7 +1,7 @@
 ---
 title: Sikkerhet  
 permalink: sikkerhet_index.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## Sikkerhet
