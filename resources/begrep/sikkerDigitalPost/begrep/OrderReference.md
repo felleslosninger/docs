@@ -1,7 +1,7 @@
 ---
 title: OrderReference  
 permalink: sdp_orderreference.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 
