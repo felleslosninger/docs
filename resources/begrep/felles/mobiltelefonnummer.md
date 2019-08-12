@@ -1,7 +1,7 @@
 ---
 title: Mobiltelefonnummer
 permalink: mobiltelefonnummer.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
