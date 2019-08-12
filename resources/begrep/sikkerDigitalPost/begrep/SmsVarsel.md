@@ -22,7 +22,7 @@ sidebar: dpi_sidebar
 | Identifikator                                    | Kardinalitet | Datatype                                              |
 | --- | --- | --- |
 | [mobiltelefonnummer](../../felles/mobiltelefonnummer.md) | 1..1     | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [Varslingstekst](../../felles/varslingsTekst.md)        | 1..1     | [Varslingstekst](../../felles/varslingsTekst.md)        |
+| [Varslingstekst](varslingstekst.html)        | 1..1     | [Varslingstekst](varslingstekst.html)        |
 | [Repetisjoner](Repetisjoner.md)                     | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                    |
 
 #### Xml eksempel
