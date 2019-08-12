@@ -7,7 +7,7 @@ sidebar: dpi_sidebar
 
 ## Prosess for sending av digital post
 
-[Meldingen](https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/meldinger/) i Sikker digital post flyter mellom
+[Meldingen](sdp_index.html) i Sikker digital post flyter mellom
 [Aktørene](Aktorer.md) slik det beskrives i flyt diagrammet under.
 
 Ovordnet er meldingsflyten slik:
