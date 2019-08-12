@@ -37,7 +37,7 @@ Katalogen er bygd opp av følgende kapitler:
 | --- | --- |
 | [Oversikt](innledning/index.md) | Mer om sikker digital post og generelle aspekter ved løsningen |
 | [Forretningslag](forretningslag/index.md) | Aktører, prosesser og overordnet meldingsstruktur/format |
-| [Dokumentpakke](forretningslag/Dokumentpakke/index.md) | Oppbygging av selve dokumentpakken som skal til mottaker |
+| [Dokumentpakke](dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
 | [Utvidelser](forretningslag/Utvidelser/index.md) | Utvidelser som beriker dokumenter i innbyggers postkasse |
 | [Utskrift og forsendelse](utskrift/sdp_index_utskrift.md) | Mer om utskriftstjenesten knyttet til digital post |
 | [Forretningsmeldinger](meldinger/index.md) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
