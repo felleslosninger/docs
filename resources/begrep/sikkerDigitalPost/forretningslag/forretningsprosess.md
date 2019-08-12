@@ -25,8 +25,7 @@ Ovordnet er meldingsflyten slik:
 (Meldinger prefikset **eb:** i diagrammet tilhører transportlaget, men
 er tatt med for å vise sammenhengen)
 
-[![Prosess for sending av digital post](DigitalpostMelding.png
-"Prosess for sending av digital post")](DigitalpostMelding.png)
+[![Prosess for sending av digital post](DigitalpostMelding.png)
 
 | Prosess      | Fra    | Til     | Beskrivelse        |
 | ---- | --- | --- | --- |
