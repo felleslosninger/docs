@@ -1,6 +1,6 @@
 ---
 title: Mottaker 
-permalink: sdp_mottaker.html
+permalink: 2sdp_mottaker.html
 sidebar: dpi_sidebar
 ---
 
