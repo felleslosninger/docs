@@ -21,14 +21,14 @@ relevante eksempler.
       - Prosjektet viser hvordan avsendere kan håndtere tråder og
         vdelikehold av status for sendte brev.
   - [Referanseimplementasjon for bruk av
-    oppslagstjenesten](https://github.com/difi/kontaktregisteret-klient)
+    oppslagstjenesten](oppslagstjenesten_rest.html)
       - Eksempel kode for hvordan en avsender kan integrere seg mot
         oppslagstjenesten
 
 ### Eksempler på .Net integrasjonsprosjekt
 
   - [Referanseimplementasjon for bruk av
-    oppslagstjenesten](https://github.com/difi/kontaktregisteret-klient/tree/master)
+    oppslagstjenesten](oppslagstjenesten_rest.html)
       - Eksempel kode for hvordan en avsender kan integrere seg mot
         oppslagstjenesten
 
