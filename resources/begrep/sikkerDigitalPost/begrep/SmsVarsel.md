@@ -24,12 +24,13 @@ sidebar: dpi_sidebar
 | Identifikator                                    | Kardinalitet | Datatype                                              |
 | --- | --- | --- |
 | [mobiltelefonnummer](../../felles/mobiltelefonnummer.md) | 1..1     | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| SKAL VÆRE LINK TIL ../../felles/varslingsTekst.md        | 1..1     | SKAL VÆRE LINK TIL ../../felles/varslingsTekst        |
+| [Varslingstekst](../../felles/varslingsTekst.md)        | 1..1     | [Varslingstekst](../../felles/varslingsTekst.md)        |
 | [Repetisjoner](Repetisjoner.md)                     | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                    |
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
     <smsVarsel>
       <mobiltelefonnummer>12121212</mobiltelefonnummer>
       <varslingsTekst lang="no">Viktig melding fra Staten</varslingsTekst>
