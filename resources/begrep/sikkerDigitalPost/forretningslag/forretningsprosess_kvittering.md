@@ -48,7 +48,8 @@ kvitteringer og effektiviserer dermed prosessen.
 
 I java klienten for sikker digital post gjøres dette slik:
 
-``` brush: bash; toolbar: false
+``` 
+brush: bash; toolbar: false
   SikkerDigitalPostKlient.hentKvitteringOgBekreftForrige(kvitteringForespoersel, forrigeKvittering)
 ```
 <a name="link1"></a>
