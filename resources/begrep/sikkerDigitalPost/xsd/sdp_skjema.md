@@ -74,7 +74,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
   - [XAdES.xsd](etsi/XAdES.xsd)
       - Original: http://uri.etsi.org/01903/v1.3.2/XAdES.xsd
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -Ls http://uri.etsi.org/01903/v1.3.2/XAdES.xsd \
         | diff -uw --strip-trailing-cr - etsi/XAdES.xsd | vim -R -
         ```
@@ -85,7 +86,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         http://begrep.difi.no/Oppslagstjenesten/xsd/oppslagstjeneste-metadata-14-05.xsd
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -Ls http://begrep.difi.no/Oppslagstjenesten/xsd/oppslagstjeneste-metadata-14-05.xsd \
         | diff -uw --strip-trailing-cr - oppslag/oppslagstjeneste-metadata-14-05.xsd | vim -R -
         ```
@@ -110,7 +112,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         <http://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/exc-c14n.xsd>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -sL http://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/exc-c14n.xsd \
         | diff -uw --strip-trailing-cr - w3/exc-c14n.xsd | vim -R -
         ```
@@ -120,7 +123,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
   - [soap-envelope.xsd](w3/soap-envelope.xsd)
       - Original: <http://www.w3.org/2003/05/soap-envelope/>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -sL http://www.w3.org/2003/05/soap-envelope/ \
         | diff -uw --strip-trailing-cr - w3/soap-envelope.xsd | vim -R -
         ```
@@ -131,7 +135,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         <http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/xenc-schema.xsd>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -sL http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/xenc-schema.xsd \
         | diff -uw --strip-trailing-cr - w3/xenc-schema.xsd | vim -R -
         ```
@@ -141,7 +146,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
   - [xlink.xsd](w3/xlink.xsd)
       - Original: <http://www.w3.org/1999/xlink.xsd>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -sL http://www.w3.org/1999/xlink.xsd \
         | diff -uw --strip-trailing-cr - w3/xlink.xsd | vim -R -
         ```
@@ -155,7 +161,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         <http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -sL http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd \
         | diff -uw --strip-trailing-cr - w3/xmldsig-core-schema.xsd | vim -R -
         ```
