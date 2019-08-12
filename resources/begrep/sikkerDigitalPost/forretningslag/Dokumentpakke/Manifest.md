@@ -11,7 +11,7 @@ sidebar: dpi_sidebar
 | Datatype      | complexType |
 | Kilde         | DIFI |
 | Kommentar     | Manifest er en xml |
-| fil           | som inneholder relevant informasjon om [dokumentene](.. /.. /Dokument.md) i [dokumentpakken](dokumentpakke_index.md). Manifest xml |
+| fil           | som inneholder relevant informasjon om [dokumentene](../../Dokument.md) i [dokumentpakken](dokumentpakke_index.md). Manifest xml |
 | filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken](dokumentpakke_index.md) over lang tid. |
 
 ### Attributer
