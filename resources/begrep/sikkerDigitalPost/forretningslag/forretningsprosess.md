@@ -13,7 +13,7 @@ sidebar: dpi_sidebar
 Ovordnet er meldingsflyten slik:
 
 1.  Avsender[1](#Link1) sender en [Digital
-    postmelding](../meldinger/DigitalPostMelding.md) via Meldingsformidler
+    postmelding](sdp_digitalpostmeldinger.html) via Meldingsformidler
     til Postkasse
 2.  Postkasse sender en eller fler
     [Kvitteringsmeldinger](../meldinger/KvitteringsMelding.md) til
@@ -30,7 +30,7 @@ er tatt med for å vise sammenhengen)
 
 | Prosess      | Fra    | Til     | Beskrivelse        |
 | ---- | --- | --- | --- |
-| [DigitalPostmelding](../meldinger/DigitalPostMelding.md)   | [Avsender](Aktorer.md)          | [Meldingsformidler](Aktorer.md) | Avsender sender alltid sine meldinger til meldingsformidler. Transportkvittering fra meldingsformidler indikerer at denne har tatt over ansvaret for videre formidling av meldingen                       |
+| [DigitalPostmelding](sdp_digitalpostmeldinger.html)   | [Avsender](Aktorer.md)          | [Meldingsformidler](Aktorer.md) | Avsender sender alltid sine meldinger til meldingsformidler. Transportkvittering fra meldingsformidler indikerer at denne har tatt over ansvaret for videre formidling av meldingen                       |
 | DigitalPostmelding                                      | [Meldingsformidler](Aktorer.md) | [Postkasse](Aktorer.md)         | Meldingsformidler mellomlagrer meldingen inntil Postkassen har returnert en transportkvittering.                                                                                                          |
 | [Leveringskvittering](../meldinger/LeveringsKvittering.md) | [Postkasse](Aktorer.md)         | [Meldingsformidler](Aktorer.md) | Postkassen sender en [Leveringskvittering](../meldinger/LeveringsKvittering.md) for å signalisere at postkassen har mottatt og behandlet meldingen, og postkassen tar ansvar for å levere denne til Mottaker |
 | HentKvittering                                          | [Avsender](Aktorer.md)          | [Meldingsformidler](Aktorer.md) | Avsender sender forespørsel til Meldingsformidler om å få levert ventende kvitteringer[2](#link2)                                                                                                               |
