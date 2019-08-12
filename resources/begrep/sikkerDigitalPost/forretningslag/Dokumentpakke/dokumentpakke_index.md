@@ -20,7 +20,7 @@ Dette medfører at man kan verifisere at filene kommer fra rett
 virksomhet, og om filene har blitt endret.
 
 Les mer om [hvordan dokumenter som sendes i Sikker digital post er
-beskyttet](../Sikkerhet/)
+beskyttet](sikkerhet_index.html)
 
 Sikker Digital Post har definert et eget begrep [Manifest](Manifest.md) som
 inneholder metadata relatert til hver fil.
