@@ -39,7 +39,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         <http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p0.zip>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -Ls http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p0.zip \
         | funzip | diff -uw --strip-trailing-cr - asic-e/ts_102918v010201.xsd | vim -R -
         ```
@@ -51,7 +52,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         <http://docs.oasis-open.org/ebxml-bp/2.0.4/ebbp-signals-2.0.4.xsd>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -Ls http://docs.oasis-open.org/ebxml-bp/2.0.4/ebbp-signals-2.0.4.xsd \
         | diff -uw --strip-trailing-cr - ebxml/ebbp-signals-2.0.xsd | vim -R -
         ```
@@ -62,7 +64,8 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
       - Original:
         <http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd>
       - Endringer:
-        ``` brush: bash; toolbar: false
+        ``` 
+        brush: bash; toolbar: false
         curl -Ls http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd \
         | diff -uw --strip-trailing-cr - ebxml/ebms-header-3_0-200704.xsd | vim -R -
         ```
