@@ -13,7 +13,7 @@ sidebar: dpi_sidebar
   - Kilde  
     DIFI
   - Kommentar  
-    Person er [mottakeren](Mottaker.md) som Digital Post skal sendes til.
+    Person er [mottakeren](sdp_mottaker.html) som Digital Post skal sendes til.
 
 Merk at Person ikke er unik definert på tvers av Difi sine
 felleskomponenter, men at hver av felleskomponentene har en definisjon
