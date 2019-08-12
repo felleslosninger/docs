@@ -24,8 +24,7 @@ virksomhetssertifikat på vegne av Helfo dersom Helfo tillatter dette.
 Både Helfo og Nav er opprettet med kontoer hos postkasseleverandørene,
 Helfo som Ansvarlig postavsender og Nav som Teknisk postavsender.
 
-[![Bruk av databehandler](helfo_eksempel.png
-"Bruk av databehandler")](helfo_eksempel.png)
+[![Bruk av databehandler](helfo_eksempel.png)
 
 ### Eksempel - Sending fra underliggende avdeling
 
@@ -43,5 +42,4 @@ Kreftregisteret bruker
 [avsenderidentifikator](https://difi.github.io/felleslosninger/avsenderidentifikator.html) for å skille på
 hvilket prosjekt som er postavsender.
 
-[![Bruk av avsenderidentifikator](kreftregister_eksempel.png
-"Bruk av avsenderidentifikator")](kreftregister_eksempel.png)
+[![Bruk av avsenderidentifikator](kreftregister_eksempel.png)
