@@ -4,8 +4,7 @@ permalink: sdp_orderreference.html
 sidebar:
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+
   - Term  
     {{page.title}}
   - Definisjon  
@@ -22,7 +21,8 @@ sidebar:
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
     <cac:OrderReference> 
         <cbc:ID>123</cbc:ID> 
     </cac:OrderReference>       
