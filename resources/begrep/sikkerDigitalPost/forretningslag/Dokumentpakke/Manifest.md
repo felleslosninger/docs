@@ -18,10 +18,10 @@ sidebar: dpi_sidebar
 
 | Identifikator                     | Kardinalitet | Datatype                              |
 | --------------------------------- | ------------ | ------------------------------------- |
-| [Mottaker](Mottaker.md) | 1..1         | [sdp:Mottaker](Mottaker.md) |
-| [Avsender](Avsender.md) | 1..1         | [sdp:Avsender](Avsender.md) |
-| hoveddokument                     | 1..1         | [sdp:Dokument](Dokument.md) |
-| vedlegg                           | 0..200       | [sdp:Dokument](Dokument.md) |
+| [Mottaker](sdp_mottaker.html) | 1..1         | [sdp:Mottaker](sdp_mottaker.html) |
+| [Avsender](sdp_avsender.html) | 1..1         | [sdp:Avsender](sdp_avsender.html) |
+| hoveddokument                     | 1..1         | [sdp:Dokument](sdp_dokument.html) |
+| vedlegg                           | 0..200       | [sdp:Dokument](sdp_dokument.html) |
 
 ### Eksempel
 
