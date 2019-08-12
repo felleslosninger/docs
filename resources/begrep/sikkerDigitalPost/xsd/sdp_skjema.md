@@ -34,7 +34,7 @@ Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/f
 #### [ASiC XSD fil](asic-e/)
 
   - Skjema for META-INF/signatures.xml i en [Dokumentpakke (ASiC-E
-    bundle)](../forretningslag/Dokumentpakke/)
+    bundle)](dokumentpakke_index.html)
   - [ts\_102918v010201.xsd](asic-e/ts_102918v010201.xsd)
       - Original:
         <http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p0.zip>
