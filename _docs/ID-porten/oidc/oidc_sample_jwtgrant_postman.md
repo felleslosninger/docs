@@ -19,7 +19,7 @@ The general process to use Postman towards an API secured with Maskinporten is:
 Download the JWT grant generator from [https://github.com/difi/jwt-grant-generator](https://github.com/difi/jwt-grant-generator).
 
 Create a keystore (JKS) holding your business certificate ("virksomhetssertifikat") keypair.  Both the certificate and private key should be included in the JKS.  The certificate should be the one use for signing (not non-repuditation).  The JKS  should look similar to the figure below in Keytool Explorer:
-![keytool screenshot](/oidc_sample_jwtgrant_postman-7b70f6e0.png).
+![keytool screenshot](/felleslosninger/images/idporten/oidc/oidc_sample_jwtgrant_postman-7b70f6e0.png).
 
 Configure the properties file with correct settings,  ie passwords to the keystore and private key,  your clientid, and the ìdentifier of Maskinporten for the [environment you're using](oidc_func_wellknown.html).
 
