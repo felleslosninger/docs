@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_technical_sidebar
 ---
 
-## [Nextmove integrasjonspunkt kan lastes ned her]() 
+## [Nextmove integrasjonspunkt versjon:*integrasjonspunkt-1.7.98-20190813.074258-1.jar* kan lastes ned her](https://beta-meldingsutveksling.difi.no/content/repositories/nextmove/no/difi/meldingsutveksling/integrasjonspunkt/1.7.98-SNAPSHOT/integrasjonspunkt-1.7.98-20190813.074258-1.jar) 
 
 ### Versjon 1.7.9*....
 
