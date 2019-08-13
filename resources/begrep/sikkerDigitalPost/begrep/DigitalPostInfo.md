@@ -29,8 +29,8 @@ sidebar: dpi_sidebar
 | --- | --- | --- |
 | Identifikator                                    | Kardinalitet | Datatype                                                  |
 | [sikkerhetsnivaa](sikkerhetsnivaa.md)       | 1..1        | [xs:int](http://www.w3.org/TR/xmlschema-2/#int)           |
-| Skal være link til /Felles/virkningsdato           | 0..1         | [xs:date](http://www.w3.org/TR/xmlschema-2/#date)         |
-| Skal være link til /Felles/virkningstidspunkt | 0..1         | [xs:datetime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
+| [Virkningsdato](virkningsdato.html)       | 0..1         | [xs:date](http://www.w3.org/TR/xmlschema-2/#date)         |
+| [Virkningstidspunkt](virkningstidspunkt.html) | 0..1         | [xs:datetime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
 | [aapningskvittering](aapningskvittering.md) | 0..1        | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)     |
-| [ikkeSensitivTittel](ikkeSensitivTittel.md) | 1..1        | Skal være link til /Felles/tekst                            |
-| Skal være link til Varsler                              | 0..1         | Skal være link til Varsler                           |
+| [ikkeSensitivTittel](ikkeSensitivTittel.md) | 1..1        | [Tekst](tekst.html)         |
+| [Varsler](sdp_varsler.html)           | 0..1         | [Varsler](sdp_varsler.html)          |
