@@ -11,6 +11,9 @@ sidebar: eformidling_technical_sidebar
 
 ### Versjon 1.7.9*....
 
+- Integrasjonspunktet bruker nå Spring Boot 2, dette kan medføre endringer i properties for mer proprietære oppsett. Det blir ingen bakoverkompatibilitet mot Spring Boot 1.
+- Text
+
 ```
 Text
 ```
