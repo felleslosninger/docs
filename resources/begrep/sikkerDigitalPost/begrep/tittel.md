@@ -1,28 +1,29 @@
----
-title: tittel
-permalink: tittel.html
+--- 
+title: Tittel  
+permalink: sdp_tittel.html
 sidebar: dpi_sidebar
 ---
 
-| ---- | ---- |
-| Identifikator | |
-| Term | tittel |
-| Definisjon | Tittel eller navn på arkivenheten |
-| Datatype | string |
-| Kilde | NOARK 5 |
-| Kommentar | Vil vises til Innbygger. Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. | 
+  - Term  
+    {{page.title}}
+  - Definisjon  
+    Beskrivende tittel for et Dokument
+  - Datatype  
+    complexType
+  - Kilde  
+    DIFI
+  - Kommentar  
+    En beskrivende tittel for dokumentet, tittelen kan inneholde
+    sensitive opplysninger da den kun vil vises til Innbygger etter
+    dekryptering og når Innbygger er autentisert på tilstrekkelig
+    sikkerhetsnivå.
 
-### Attributter
+#### Egenskaper
 
-Tittelen har et språk attributt som beskriver teksten. Språk attributtet kan brukes for å understøtte funksjoner som opplesing av tekst.
-
-| ---- | ---- |
-| **Identifikator** | **Kardinalitet** | **Datatype** |
-| lang              | 1..1             | spraak       |
-
+| Identifikator | Kardinalitet | Datatype                 |
+| --- | --- | --- |
+| lang          | 1..1         | [spraak](../../felles/spraak.md) |
 
 ### Xml eksempel
 
-```
-<tittel lang="no">Vedtaksbrev - støtte til utdanning - saksnr. 2013/1111</tittel>
-```
+    <{{page.title}} lang="no">Vedtaksbrev - støtte til utdanning - saksnr. 2013/1111</{{page.title}}>
