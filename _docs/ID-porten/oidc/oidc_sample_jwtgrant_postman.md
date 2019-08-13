@@ -3,9 +3,8 @@ title: Using Postman with Maskinporten JWT-grants
 description: Using Postman with Maskinporten JWT-grants
 summary: "This is short how-to on using Postman towards APIs secured by Maskinporten, including Difis self-service APIs.  A small standalone tool is used to generate the JWT-grant and exchange it for an access token.  This access token is then used as a bearer token in Postman."
 permalink: oidc_sample_jwtgrant_postman.html
-
-layout: page
 sidebar: oidc
+product: ID-porten
 ---
 
 Postman is a great tool, but it does not support the [JWT authorization grants per RFC 7523](https://tools.ietf.org/html/rfc7523) required by Maskinporten.
