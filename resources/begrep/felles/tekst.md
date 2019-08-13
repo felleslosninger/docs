@@ -1,7 +1,7 @@
 ---
 title: tekst
-permalink: tekst.html
-sidebar:
+permalink: 2tekst.html
+sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
