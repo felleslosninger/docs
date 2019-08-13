@@ -28,7 +28,7 @@ Configure the properties file with the scope for the API you want to access (For
 ## 2. Obtain access token
 Run the generator - it will generate a JWT,  send it to Maskinporten, and return an access token
 
-![run_generator screenshot](idporten/oidc/oidc_sample_jwtgrant_postman-8e2e42d9.png)
+![run_generator screenshot](/felleslosninger/images/idporten/oidc/oidc_sample_jwtgrant_postman-8e2e42d9.png)
 
 (note that on this platform, the padding character is escaped.)
 
@@ -42,15 +42,15 @@ More obscure errors are typical coming from using the wrong certificate, or tryi
 Open Postman and create a new Collection.  Set the Authorization type to `Bearer token` and paste in the access token returned by the generator (note that you might need to replace `\u00d3` with the equal sign  `=` on some platforms):
 
 
-![configure collection screenshot](idporten/oidc/oidc_sample_jwtgrant_postman-828e7ff6.png)
+![configure collection screenshot](/felleslosninger/images/idporten/oidc/oidc_sample_jwtgrant_postman-828e7ff6.png)
 
 
 Under the new Collection, create a new Request:
 
-![new request screenshot](idporten/oidc/oidc_sample_jwtgrant_postman-4b37ef54.png)
+![new request screenshot](/felleslosninger/images/idporten/oidc/oidc_sample_jwtgrant_postman-4b37ef54.png)
 
 Make sure the request inherits the authenication settings from the parent Collection:
 
-![request detail screenshot](idporten/oidc/oidc_sample_jwtgrant_postman-630003c4.png)
+![request detail screenshot](/felleslosninger/images/idporten/oidc/oidc_sample_jwtgrant_postman-630003c4.png)
 
 You shall now be able to use the API.
