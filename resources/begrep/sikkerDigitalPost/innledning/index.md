@@ -1,19 +1,19 @@
 ---
-
 title: Oversikt  
 permalink: sdp_index_innledning.html
 sidebar: dpi_sidebar
 ---
 
-#### Klienter
-[Klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
+Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomheter for å sende brev digitalt til innbyggere. I oversikt-avsnittet finner du en overordnet beskrivelse av den underliggende virksomhetsarkitekturen for løsningen.
 
-[Klientbibliotek Java](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
+Klient/Klientbibliotek finner du her:
 
-#### Veiledningen består av følgende kapitler:
+[.Net-klient](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
+[Java-klient](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
+
+Kort beskrivelse av de øvrige kapitlene i veiledningen:
 
 | --- | --- |
-| [Oversikt](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Mer om sikker digital post og generelle aspekter ved løsningen |
 | [Forretningslag](https://difi.github.io/felleslosninger/sdp_forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
 | [Dokumentpakke](https://difi.github.io/felleslosninger/dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
 | [Utvidelser](https://difi.github.io/felleslosninger/sdp_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
