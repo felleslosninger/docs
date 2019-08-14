@@ -15,12 +15,12 @@ Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomhete
 ### Kort beskrivelse av de øvrige kapitlene i veiledningen:
 
 | --- | --- |
-| [Forretningslag](forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
+| [Forretningslag](sdp_forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
 | [Dokumentpakke](https://difi.github.io/felleslosninger/dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
 | [Utvidelser](https://difi.github.io/felleslosninger/sdp_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
 | [Utskrift og forsendelse](https://difi.github.io/felleslosninger/sdp_index_utskrift.html) | Mer om utskriftstjenesten knyttet til digital post |
 | [Forretningsmeldinger](https://difi.github.io/felleslosninger/sdp_index.html) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
-| [Standard Business Document](forretningslag/StandardBusinessDocument/index.md) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
+| [Standard Business Document](standardbusinessdocument_index.html) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
 | [Transportlag](https://difi.github.io/felleslosninger/sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
 | [Feilhåndtering](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Generelt om feilhåndtering |
 
