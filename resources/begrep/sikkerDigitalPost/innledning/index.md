@@ -16,12 +16,12 @@ Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomhete
 
 | --- | --- |
 | [Forretningslag](sdp_forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
-| [Dokumentpakke](https://difi.github.io/felleslosninger/dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
-| [Utvidelser](https://difi.github.io/felleslosninger/sdp_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
-| [Utskrift og forsendelse](https://difi.github.io/felleslosninger/sdp_index_utskrift.html) | Mer om utskriftstjenesten knyttet til digital post |
-| [Forretningsmeldinger](https://difi.github.io/felleslosninger/sdp_index.html) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
+| [Dokumentpakke](dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
+| [Utvidelser](sdp_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
+| [Utskrift og forsendelse](sdp_index_utskrift.html) | Mer om utskriftstjenesten knyttet til digital post |
+| [Forretningsmeldinger](sdp_index.html) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
 | [Standard Business Document](standardbusinessdocument_index.html) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
-| [Transportlag](https://difi.github.io/felleslosninger/sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
-| [Feilhåndtering](https://difi.github.io/felleslosninger/sdp_feil_index.html) | Generelt om feilhåndtering |
+| [Transportlag](sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
+| [Feilhåndtering](sdp_feil_index.html) | Generelt om feilhåndtering |
 
 
