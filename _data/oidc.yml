@@ -8,7 +8,7 @@ folders:
 
       - title: Kom i gang
         jurl: /oidc_index.html
-        
+
       - title: Integrasjonsguide ID-porten
         jurl: /oidc_guide_idporten.html
 
@@ -17,7 +17,7 @@ folders:
 
       - title: Ofte stilte spørsmål
         jurl: /oidc_guide_faq.html
-        
+
       - title: Getting started
         jurl: /oidc_guide_english.html
 
@@ -26,55 +26,58 @@ folders:
 
     - title: SPA in React
       jurl: /oidc_sample_react.html
-       
+
+    - title: Using Postman towards Maskinporten
+      jurl: /oidc_sample_jwtgrant_postman.html
+              
 - title: Funksjonalitet
   folderitems:
 
       - title: Metadata
         jurl: /oidc_func_wellknown.html
-      
+
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
-      
+
       - title: Single sign-on og -logout
         jurl: /oidc_func_sso.html
 
       - title: PKCE
         jurl: /oidc_func_pkce.html
-      
+
       - title: OnBehalfOf
         jurl: /oidc_func_onbehalfof.html
-      
+
       - title: Pseudonymisert innlogging
-        jurl: /oidc_func_nopid.html  
+        jurl: /oidc_func_nopid.html
 
       - title: Javascript-applikasjoner
         jurl: /oidc_auth_spa.html
-      
+
       - title: eIDAS
         jurl: /oidc_func_eidas.html
-      
+
       - title: Administrasjon av OICD-integrasjoner
-        jurl: /oidc_api_admin.html   
-      
+        jurl: /oidc_api_admin.html
+
       - title: Administrasjon av Maskinporten
         jurl: /oidc_api_admin_maskinporten.html
-    
+
 - title: Arkitektur
   folderitems:
 
       - title: Arkitektur
-        jurl: /oidc_arch.html  
+        jurl: /oidc_arch.html
 
       - title: Autentisering med code-flow
         jurl: /oidc_auth_codeflow.html
-      
+
       - title: Autentisering til mobil-app'er
         jurl: /oidc_auth_app.html
-      
+
       - title: API-autorisasjon innlogget bruker
-        jurl: /oidc_auth_oauth2.html  
-      
+        jurl: /oidc_auth_oauth2.html
+
       - title: Server-til-server API-autorisasjon
         jurl: /oidc_auth_server-to-server-oauth2.html
 
@@ -83,25 +86,25 @@ folders:
 
       - title: Kontakt- og Reservasjonsregisteret
         jurl: /oidc_api_krr.html
-      
+
       - title: Kontakt- og Reservasjonsregisteret (innlogget bruker)
-        jurl: /oidc_api_krr_user.html  
+        jurl: /oidc_api_krr_user.html
 
       - title: Innbyggers innloggingsnivå
         jurl: /oidc_api_authlevel.html
-      
+
       - title: Innbyggers innloggingshistorikk
         jurl: /oidc_api_logghistorikk.html
-      
+
       - title: Innbyggers autorisasjoner
-        jurl: /oidc_api_autorisasjoner.html 
-      
+        jurl: /oidc_api_autorisasjoner.html
+
 - title: Vedlegg
   folderitems:
 
       - title: Om disse sidene
         jurl: /oidc_about.html
-  
+
 - title: SAML i ID-porten
   folderitems:
 

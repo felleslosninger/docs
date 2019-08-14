@@ -56,29 +56,37 @@ Ved endring og sletting tillater APIet kun operasjoner på integrasjoner der ege
 
 ## Ulike typer integrasjonar
 
-Man kan opprette to typer integrajonser over APIet:
+Man kan opprette ulike typer integrajonser over APIet.  Det er klient-autentiseringsmetode og grant-type som bestemmer hvilken integrasjon som blir opprettet. ID-porten har validering som hindrer at ulovlige kombinasjoner blir opprettet. Se [klient-registrering](oidc_func_clientreg.html) for detaljer.
 
-### 1: OIDC-integrasjon for person-autentisering
-
-Dersom minimum følgende claims er tilstede ved opprettelse/endring, vil klienten bli aktivert for person-innlogging.
-
-|claim|beskrivelse|
-|-|-|
-|client_name|Navn på klient, blir vist ved innlogging|
-|description|Beskrivelse av klienten, ikke synlig for innbyggere, men blir lagret i Difis støttesystemer|
-|client_uri|URL til klient (blir brukt på tilbake-knapp og ved feil)|
-||scopes| Må være minst `["openid"]`|
-|redirect_uris| liste med redirect-uri'er|
-
-### 2: Maskin-til-maskin-integrasjonar
-
-Registreringer som ikke oppfyller kravene i forrige avsnitt, blir opprettet som maskin-til-maskin integrasjoner.  Personinnlogging vil ikke fungere.
 
 ## Rotering av client_secret
 
 For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui.html#/oidc-client-controller/updateSecretUsingPOST)
 
 Merk: Difi vil på sikt innføre maks-levetid på client_secret.
+
+## Bruk av asymmetrisk nøkkel
+
+Man kan sende inn en [JWKS-struktur (RFC7517)](https://tools.ietf.org/html/rfc7517), dvs. en array av flere (inntil 5) JWK-representasjoner.
+
+Er modellert som egen ressurs under klient `/clients/{client_id}/jwks`
+
+Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
+
+Kun RS256 støttes som algoritme.
+
+```
+POST /clients/{client_id}/jwk
+
+{
+  [
+     jwk1,
+		 jwk2
+	]
+}
+```
+
+`kid` må være unik.   Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, må man bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
 ## REST-grensesnittet
 
