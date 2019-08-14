@@ -70,6 +70,9 @@ folders:
            
       - title: Utskriftstjenesten
         jurl: /sdp_index_utskrift.html
+        
+      - title: Prosessbeskrivelse
+        jurl: /sdp_forretningsprosess_utskrift.html
  
     - title: Forretningsmeldinger
       folderitems:
