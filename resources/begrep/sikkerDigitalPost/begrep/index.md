@@ -1,10 +1,10 @@
 ---
-title: Begrepskatalog - DPI
+title: Begrepskatalog
 permalink: begrep_index.html
 sidebar: dpi_sidebar
 ---
 
-## Begrep - Digital Postkasse til Innbyggere
+## Digital Postkasse til Innbyggere
 
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
