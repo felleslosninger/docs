@@ -1,5 +1,5 @@
 ---
-tittel: Utskrifts- og forsendelsestjenesten
+title: Utskrifts- og forsendelsestjenesten
 permalink: sdp_index_utskrift.html
 sidebar: dpi_sidebar
 ---
