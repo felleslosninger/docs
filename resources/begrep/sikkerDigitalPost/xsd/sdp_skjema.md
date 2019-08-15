@@ -29,7 +29,6 @@ terminalen (uten farger).
   - [sdp-manifest.xsd](sdp-manifest.xsd)
   - [sdp-melding.xsd](sdp-melding.xsd)
 
-Beskrivelse: [http://begrep.difi.no/SikkerDigitalPost/](https://difi.github.io/felleslosninger/sdp_innledning_index.html)
 
 #### [ASiC XSD fil](asic-e/)
 
