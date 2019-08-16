@@ -1,5 +1,5 @@
 ---
-title: Endringslogg NextMove
+title: Endringslogg NextMove 2.0 beta (Utvikling)
 description: Mange versjoner av integrasjonspunktet vil bli laget i test- og utviklingsløpet, her vil du finne informasjon om endringer samt nedlastingslenke.
 summary: ""
 permalink: eformidling_nm_changelog.html
@@ -7,13 +7,13 @@ product: eFormidling
 sidebar: eformidling_technical_sidebar
 ---
 
-## [Nextmove integrasjonspunkt versjon: *integrasjonspunkt-1.7.98-20190813.074258-1.jar* kan lastes ned her](https://beta-meldingsutveksling.difi.no/content/repositories/nextmove/no/difi/meldingsutveksling/integrasjonspunkt/1.7.98-SNAPSHOT/integrasjonspunkt-1.7.98-20190813.074258-1.jar) 
+## [Utviklingsversjon av integrasjonspunktet kan hentes under "no.difi.meldingsutveksling.integrasjonspunkt"](https://beta-meldingsutveksling.difi.no/#view-repositories;itest~browsestorage) 
 
-### Versjon 1.7.9*....
+## [Docker bilder kan hentes her "tag:development"](https://hub.docker.com/r/difi/integrasjonspunkt/tags)
 
-- Integrasjonspunktet bruker nå Spring Boot 2, dette kan medføre endringer i properties for mer proprietære oppsett. Det blir ingen bakoverkompatibilitet mot Spring Boot 1.
-- Text
+### 16.08.19
 
-```
-Text
-```
+- Integrasjonspunktet bruker nå Spring Boot 2. Det blir ingen støtte for Spring boot 1
+- Grensesnitta har gått over frå å primært bruke ConvId til å bruke messageId som henter verdien sin frå documentIdentification.instanceIdentifier i SBD. 
+- oppslag i status api'et (/api/statuses) har tidliger vært basert på generert databaseId. her brukes nå messageId, eks: /api/statuses/ff88849c-e281-4809-8555-7cd54952b917
+- ServiceRegistry i staging er oppdatert til å støtte NextMove
