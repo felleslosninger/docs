@@ -14,6 +14,6 @@ sidebar: eformidling_technical_sidebar
 ### 16.08.19
 
 - Integrasjonspunktet bruker nå Spring Boot 2. Det blir ingen støtte for Spring boot 1
-- Grensesnitta har gått over frå å primært bruke ConvId til å bruke messageId som henter verdien sin frå documentIdentification.instanceIdentifier i SBD. 
-- oppslag i status api'et (/api/statuses) har tidliger vært basert på generert databaseId. her brukes nå messageId, eks: /api/statuses/ff88849c-e281-4809-8555-7cd54952b917
+- Grensesnitta har gått over frå å primært bruke ConvId til å bruke messageId som henter verdien sin frå ```documentIdentification.instanceIdentifier``` i SBD. 
+- oppslag i status api'et (/api/statuses) har tidliger vært basert på generert databaseId. her brukes nå messageId, eks: ```/api/statuses/ff88849c-e281-4809-8555-7cd54952b917```
 - ServiceRegistry i staging er oppdatert til å støtte NextMove
