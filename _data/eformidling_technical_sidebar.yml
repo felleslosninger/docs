@@ -22,7 +22,9 @@ folders:
 
       - title: Grensesnitt / Swagger
         jurl: /eformidling_nm_swagger.html
-
+        
+      - title: Endringslogg NextMove beta
+        jurl: /eformidling_nm_changelog.html
 
 ###########################
 
