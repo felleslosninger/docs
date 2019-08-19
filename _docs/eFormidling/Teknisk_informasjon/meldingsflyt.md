@@ -43,7 +43,7 @@ sequenceDiagram
         ip->>mf: GetStatus
         mf-->>ip: status
     end
-    fs->>ip: GET api/statuses/{conversationId}
+    fs->>ip: GET api/statuses/{messageId}
     ip-->>fs: statuses
 
 </div>
@@ -69,8 +69,8 @@ sequenceDiagram
     fs->>fs: Create message      
     fs->>ip: POST api/messages/
     ip-->>fs: conversationresponse
-    fs->>ip: PUT api/messages/out/{conversationId}
-    fs->>ip: POST api/messages/out/{conversationId}
+    fs->>ip: PUT api/messages/out/{messageId}
+    fs->>ip: POST api/messages/out/{messageId}
     
     ip->>mf: Upload
     loop 
@@ -88,10 +88,10 @@ sequenceDiagram
 
 Når en skal laste ned meldinger fra integrasjonspunktet må dette initieres med en peek, som låser førte meldingen i køen. Dersom en er ute etter meldinger av en bestemt type kan dette gjøres ved å sende med filter for denne 
 Etter man har låst meldingen kan denne deretter lastes ned via endepunktet
-/messages/in/pop/{conversationId}.
+/api/messages/in/{messageId}.
 
 Etter meldingen er lastet ned kan denne slettes via å kalle DELETE mot 
-/in/messages/{conversationId} eller den kan låses opp igjen (hva med unlock batch)
+/api/messages/in/{messageId} eller den kan låses opp igjen (hva med unlock batch)
 
 
 <div class="mermaid">
@@ -108,15 +108,15 @@ sequenceDiagram
     
     fs->>ip: GET /messages/in/peek?serviceIdentifier=converationType
     ip-->>fs: messageMetaData
-    fs->>ip: GET /messages/in/pop/{conversationId}
+    fs->>ip: GET /api/messages/in/peek[?process={processName}]
     ip-->>fs: ASiC
-    fs->>ip: DELETE /in/messages/{conversationId}
+    fs->>ip: DELETE /api/messages/in/{messageId}
 
 </div>
 
 ## Status 
 
-En kan finne status på sendte meldinger med GET mot /messages/status/{conversationID}
+En kan finne status på sendte meldinger med GET mot /api/statuses/{messageId}
 Returen vil da være en liste med statuser en melding har vært gjennom.
 Statusene vil avhenge av de underliggende meldingsformidlingstjenestene.
 
