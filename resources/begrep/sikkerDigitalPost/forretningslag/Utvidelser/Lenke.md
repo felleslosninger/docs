@@ -11,7 +11,7 @@ sidebar: dpi_sidebar
 | Type       | application/vnd.difi.dpi.lenke+xml |
 | Datatype   | complexType |
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
-| XSD        | https://github.com/difi/felleslosninger/blob/gh-pages/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd |
+| XSD        | https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd |
 
 ### Attributer
 
