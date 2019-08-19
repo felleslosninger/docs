@@ -28,7 +28,10 @@ terminalen (uten farger).
   - [sdp-kvittering.xsd](sdp-kvittering.xsd)
   - [sdp-manifest.xsd](sdp-manifest.xsd)
   - [sdp-melding.xsd](sdp-melding.xsd)
-
+  
+#### Utvidelser - Sikker digital post XSD:
+  - [lenke.xsd](lenke.xsd)
+  - [arrangement.xsd](arrangement.xsd)
 
 #### [ASiC XSD fil](asic-e/)
 
