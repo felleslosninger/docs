@@ -14,7 +14,7 @@ sidebar: dpi_sidebar
   - Kommentar  
     Definerer et arrangement som presenteres for innbygger i postkassen.
   - XSD  
-    https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd
+    [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd)
 
 ### Attributer  
 Se xsd for mer informasjon om domenet.
