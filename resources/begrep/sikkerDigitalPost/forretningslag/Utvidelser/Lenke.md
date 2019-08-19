@@ -24,7 +24,8 @@ sidebar: dpi_sidebar
 
 ### Eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <lenke xmlns="http://begrep.difi.no/sdp/utvidelser/lenke"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://begrep.difi.no/sdp/utvidelser/lenke ../../xsd/utvidelser/lenke.xsd">
