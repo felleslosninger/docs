@@ -64,6 +64,8 @@ folders:
         jurl: /sdp_utvidelser_index.html
       - title: Lenke utenfor brev
         jurl: /sdp_lenke.html
+      - title: Arrangement
+        jurl: /sdp_arrangement.html
         
     - title: Utskrift og forsendelse
       folderitems:
