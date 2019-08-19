@@ -13,7 +13,7 @@ til ett dokument og tilfører en beriket visning i innbyggers postkasse.
 
 For å knytte en utvidelse til et dokument må det inkluderes en fil ihht.
 utvidelsens XML-schema (XSD) i dokumentpakken, og det aktuelle
-[dokumentet](https://difi.github.io/felleslosninger/sdp_dokument.htmld) refererer til
+[dokumentet](https://difi.github.io/felleslosninger/sdp_dokument.html) refererer til
 [«data-dokumentet»](https://difi.github.io/felleslosninger/sdp_dokumentdata.html) vha. `<data>`-elementet
 i [manifestet](https://difi.github.io/felleslosninger/sdp_manifest.html).
 
