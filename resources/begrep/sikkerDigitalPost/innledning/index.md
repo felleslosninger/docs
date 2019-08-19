@@ -24,4 +24,4 @@ Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomhete
 | [Transportlag](sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
 | [Feilhåndtering](sdp_feil_index.html) | Generelt om feilhåndtering |
 
-(Eldre releaser av dokumentasjonen kan finnes her:  [https://begrep.difi.no/SikkerDigitalPost/](https://begrep.difi.no/SikkerDigitalPost/) )
+(Eldre releaser av dokumentasjonen finnes på: [https://begrep.difi.no/SikkerDigitalPost/](https://begrep.difi.no/SikkerDigitalPost/) )
