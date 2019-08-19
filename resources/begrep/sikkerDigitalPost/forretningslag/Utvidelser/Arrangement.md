@@ -2,7 +2,7 @@
 
 title: Arrangement  
 permalink: sdp_arrangement.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Definisjon  
@@ -30,7 +30,8 @@ teksten.
 
 ### Eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <arrangement xmlns="http://begrep.difi.no/sdp/utvidelser/arrangement"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://begrep.difi.no/sdp/utvidelser/arrangement ../../xsd/utvidelser/arrangement.xsd">
