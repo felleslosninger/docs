@@ -5,16 +5,14 @@ permalink: sdp_arrangement.html
 sidebar: dpi_sidebar
 ---
 
-  - Definisjon  
-    Arrangement
-  - Mime-Type  
-    application/vnd.difi.dpi.arrangement+xml
-  - Datatype  
-    complexType
-  - Kommentar  
-    Definerer et arrangement som presenteres for innbygger i postkassen.
-  - XSD  
-    [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd)
+|---|---|
+|Definisjon | Arrangement |
+|   | Mime-Type |  
+| Type | application/vnd.difi.dpi.arrangement+xml |
+| Datatype | complexType
+| Kommentar | Definerer et arrangement som presenteres for innbygger i postkassen |
+| XSD | [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd) |
+    
 
 ### Attributer  
 Se xsd for mer informasjon om domenet.
