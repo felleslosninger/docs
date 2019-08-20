@@ -31,7 +31,8 @@ sidebar: dpi_sidebar
 
 ### XML eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
     <Receiver>
         <!-- orgnr avsender -->
         <Identifier Authority="iso6523-actorid-upis">9908:123456789</Identifier>
