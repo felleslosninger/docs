@@ -3,6 +3,7 @@
 layout: default  
 title: Messaging  
 permalink: sdp_messaging.html
+sidebar: dpi_sidebar
 
 ---
 
