@@ -41,8 +41,12 @@ Adresseinformasjon legges i Standard Business Document Header.
 
 ### Forretningsmelding
 
-Forretningsmelding kan være en av tre type meldinger: Arkivmelding, einnsyn og digitalpost. Hver forretningsmelding har en prosess som inneholder "meldingstype" og "område" som er underkategorier for adressering ```urn:no:difi:profile:<meldingstype>:<område>:ver.1.0```.
-Meldingstype forteller om det er arkivmelding, einnsyn eller digitalpost melding, mens område blir brukt til å spesifisere hvor meldingen skal bli sendt. I en DPO eller DPV forsendelse vil en bruke arkivmelding, her er det flere forskjellige områder som forteller hvor forsendelsen skal. Dette må virksomheten selv ha et forhold til, om melding av gitt type skal til spesifikk postboks i Altinn, eller om de ønsker å motta den direkte i sak-arkivsystemet.
+Forretningsmelding kan være en av åtte typer meldinger, de tre hovedmeldingstypene er : Arkivmelding, einnsyn og digitalpost. Hver forretningsmelding har en prosess som inneholder "meldingstype" og "område" som er underkategorier for adressering ```urn:no:difi:profile:<meldingstype>:<område>:ver.1.0```.
+Meldingstype forteller hvilken type melding som skal sendes, mens område blir brukt til å spesifisere hvor/hvordan mottakeren ønsker meldingen.  Virksomheten må selv ta et valg om hvilke prosesser de ønsker på hvilke kanaler. 
+
+<!---
+I en DPO eller DPV forsendelse vil en bruke arkivmelding, her er det flere forskjellige områder som forteller hvor forsendelsen skal. Dette må virksomheten selv ha et forhold til, om melding av gitt type skal til spesifikk postboks i Altinn, eller om de ønsker å motta den direkte i sak-arkivsystemet.
+-->
 
 <!---
 
@@ -60,7 +64,7 @@ Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteri
 
 ## Forretningsmelding
 
-Forretningsmeldingen inneholder meldingsformidlingsspesifikk informasjon. Dette er informasjon som ikke krypters og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
+Forretningsmeldingen inneholder meldingsformidlingsspesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
 
 ## Dokumentpakke
 
