@@ -2,7 +2,7 @@
 
 title: UserMessage  
 permalink: sdp_index_usermessage.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title}}
