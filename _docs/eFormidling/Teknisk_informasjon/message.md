@@ -35,6 +35,11 @@ Adresseinformasjon legges i Standard Business Document Header.
 {% include /eformidling/nextmove/sbd.json %}
 ```
 
+### MessageId
+Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne **"erstatter"** den gamle ConversationId for meldinger, sjå info om den nye under. 
+
+### ConversationId
+Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
 
 ## Forretningsmelding
 
