@@ -36,7 +36,7 @@ Adresseinformasjon legges i Standard Business Document Header.
 ```
 
 ### MessageId
-Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne **"erstatter"** den gamle ConversationId for meldinger, sjå info om den nye under. 
+Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne "erstatter" den gamle ConversationId for meldinger, se info under. 
 
 ### ConversationId
 Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
