@@ -91,7 +91,7 @@ Etter man har låst meldingen kan denne deretter lastes ned via endepunktet
 /api/messages/in/{messageId}.
 
 Etter meldingen er lastet ned kan denne slettes via å kalle DELETE mot 
-/api/messages/in/{messageId} eller den kan låses opp igjen (hva med unlock batch)
+/api/messages/in/pop/{messageId} eller den kan låses opp igjen (hva med unlock batch)
 
 
 <div class="mermaid">
@@ -106,9 +106,9 @@ sequenceDiagram
         mf-->>ip: messages
     end
     
-    fs->>ip: GET /messages/in/peek?serviceIdentifier=converationType
+    fs->>ip: GET GET /api/messages/in/peek[?process={processName}]
     ip-->>fs: messageMetaData
-    fs->>ip: GET /api/messages/in/peek[?process={processName}]
+    fs->>ip: GET /api/messages/in/pop/{messageId}
     ip-->>fs: ASiC
     fs->>ip: DELETE /api/messages/in/{messageId}
 
