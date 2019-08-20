@@ -12,13 +12,13 @@ Følgende informasjon er nødvendig å vite om transport infrastrukturen
 som brukes:
 
   - [Meldingsutvekslingsrammeverket som brukes og
-    generelle](Meldingsutveksling/index.md)
+    generelle](sdp_index_meldingsutveksling.html)
   - [Identifikatorer for transport av
-    meldinger](MeldingsIdentifikatorer.md) 
+    meldinger](sdp_meldingsidentifikatorer.html) 
   - [Meldingsformatet på de tekniske meldingene som
-    sendes](Meldingsformat.md)
+    sendes](sdp_transportlag_meldingsformat.html)
   - [Hvordan er meldingen sikret under transport - Webservice
-    security](WebserviceSecurity.md)
+    security](sdp_webservicesecurity.html)
 
 Mer detaljert informasjon om meldingsutvekslingrammeverket som brukes:
 
