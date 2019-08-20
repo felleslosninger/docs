@@ -41,7 +41,12 @@ Adresseinformasjon legges i Standard Business Document Header.
 
 ### Forretningsmelding
 
-```Forretningsmelding``` feltet viser til en av tre typer forretningsmeldinger med følgende meldingstyper: Arkivmelding, Einnsyn og digitalpost. Hver meldingstype har underkategorier for adressering.  Feks "urn:no:difi:profile:**arkivmelding**:*planByggOgGeodata*:ver1.0" her er meldingstypen **arkivmelding** og underkategori *planByggogGeodata* for å kunne adressere til rett mottakersystem og forsendelsesmåte. Forsendelsesmåte er aktuelt her fordi ved forsendelser via DPO/DPV så vil det bli sjekket om mottaker ønsker å motta gitt type melding i egen innboks i Altinn(DPV) eller via DPO for å oppnå utvidet adressering. Eksempler på alle meldingstyper finner du lenger nede på denne siden. 
+Forretningsmelding kan være en av tre type meldinger: Arkivmelding, einnsyn og digitalpost. Hver forretningsmelding har en prosess som inneholder "meldingstype" og "område" som er underkategorier for adressering ```urn:no:difi:profile:<meldingstype>:<område>:ver.1.0```.
+Meldingstype forteller om det er arkivmelding, einnsyn eller digitalpost melding, mens område blir brukt til å spesifisere hvor meldingen skal bli sendt. I en DPO eller DPV forsendelse vil en bruke arkivmelding, her er det flere forskjellige områder som forteller hvor forsendelsen skal. Dette må virksomheten selv ha et forhold til, om melding av gitt type skal til spesifikk postboks i Altinn, eller om de ønsker å motta den direkte i sak-arkivsystemet.
+
+#### Eksempel
+
+Virksomhet A er en offentlige virksomhet som kan sende og motta alle typer meldinger i eFormidling, men har valgt å motta arkivmeldinger med planByggOgGeodata via DPV i stedet for DPO. Dette er altså prosesser som denne ```urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0``` med meldingstypen *arkivmelding* og område *planByggogGeodata*. Virksomhet B og C kan også sende og motta alle typer meldinger.  B sender en forretningsmelding med prosess ```urn:no:difi:profile:arkivmelding:tekniskeTjenester:ver1.0``` til A og C, denne blir levert via DPO. C sender så en forretningsmelding med prosess ```urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0``` til A og B, denne blir levert via DPO til B og via DPV til A fordi A eksplisitt har valgt å motta "planByggOgGeodata" via DPV.
 
 
 ### MessageId
