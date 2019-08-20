@@ -35,8 +35,13 @@ Adresseinformasjon legges i Standard Business Document Header.
 {% include /eformidling/nextmove/sbd.json %}
 ```
 
-- ```value``` feltet krever prefix ```0192:``` før orgnummer for alle forsendelser til norske virksomheter. Prefix er ikke påkrevd på mottaker om mottaker er innbygger. 
-- 
+### Value 
+
+```Value``` feltet krever prefix ```0192:``` før orgnummer for alle forsendelser til norske virksomheter. Prefix er ikke påkrevd på mottaker om mottaker er innbygger. 
+
+### Forretningsmelding
+
+```Forretningsmelding``` feltet viser til en av tre typer forretningsmeldinger med følgende meldingstyper: Arkivmelding, Einnsyn og digitalpost. Hver meldingstype har underkategorier for adressering.  Feks "urn:no:difi:profile:**arkivmelding**:*planByggOgGeodata*:ver1.0" her er meldingstypen **arkivmelding** og underkategori *planByggogGeodata* for å kunne adressere til rett mottakersystem og forsendelsesmåte. Forsendelsesmåte er aktuelt her fordi ved forsendelser via DPO/DPV så vil det bli sjekket om mottaker ønsker å motta gitt type melding i egen innboks i Altinn(DPV) eller via DPO for å oppnå utvidet adressering. Eksempler på alle meldingstyper finner du lenger nede på denne siden. 
 
 
 ### MessageId
