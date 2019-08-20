@@ -7,9 +7,6 @@ sidebar: dpi_sidebar
 
 ## {{page.title}}
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”/index.html"
-    }}":{{page.url}}
   - Term  
     {{page.title}}
   - Definisjon  
