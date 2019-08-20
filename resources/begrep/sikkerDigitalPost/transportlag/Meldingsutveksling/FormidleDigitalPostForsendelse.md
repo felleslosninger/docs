@@ -2,7 +2,7 @@
 
 title: FormidleDigitalPostForsendelse  
 permalink: sdp_formidledigitalpostforsendelse.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title }}
@@ -84,4 +84,4 @@ Støtte ikke påkrevd i profilen.
 
 ### Eksempler
 
-  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/1\_request\_forretningsmelding\_fra\_postavsender\_til\_meldingsformidler](../../eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)
+  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/1\_request\_forretningsmelding\_fra\_postavsender\_til\_meldingsformidler](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)
