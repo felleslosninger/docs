@@ -2,7 +2,7 @@
 
 title: Error  
 permalink: sdp_error.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
