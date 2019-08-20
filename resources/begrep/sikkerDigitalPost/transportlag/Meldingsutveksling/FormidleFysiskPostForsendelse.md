@@ -84,4 +84,4 @@ Støtte ikke påkrevd i profilen.
 
 ### Eksempler
 
-  - [http://begrep.difi.no/SikkerDigitalPost/eksempler/soap/7\_request\_forretningsmelding\_fra\_postavsender\_til\_meldingsformidler\_fysisk\_post](../../eksempler/soap/7_request_forretningsmelding_fra_postavsender_til_meldingsformidler_fysisk_post.xml)
+  - [request_forretningsmelding_fra_postavsender_til_meldingsformidler_fysisk_post](../../eksempler/soap/7_request_forretningsmelding_fra_postavsender_til_meldingsformidler_fysisk_post.xml)
