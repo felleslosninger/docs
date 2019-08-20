@@ -2,7 +2,7 @@
 
 title: FormidleFysiskPostForsendelse
 permalink: sdp_formidlefysiskpostforsendelse.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title }}
