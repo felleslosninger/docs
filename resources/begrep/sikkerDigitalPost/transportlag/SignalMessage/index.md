@@ -3,7 +3,7 @@
 title: SignalMessage  
 group: transportlag
 permalink: sdp_index_signalmessage.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
