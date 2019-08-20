@@ -9,8 +9,6 @@ sidebar: dpi_sidebar
 
 ## {{page.title}}
 
-  - Identifikator
-    <https://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/transportlag/Messaging.html>
   - Term  
     {{page.title}}
   - Definisjon  
