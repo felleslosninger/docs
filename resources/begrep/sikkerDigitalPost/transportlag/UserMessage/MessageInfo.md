@@ -30,7 +30,6 @@ sidebar: dpi_sidebar
 ### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
     <eb:MessageInfo>
         <eb:Timestamp>2014-02-10T14:21:42.520Z</eb:Timestamp>
         <eb:MessageId>60a3ade5-84d1-46d7-b2cc-5f4fa15f41e5</eb:MessageId>
