@@ -41,9 +41,8 @@ Note that production certificates are not supported in test environments.
 |iat|| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
 |exp|| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
-
+| sub | Depends | Required when using client authenticaion, and must then be set equal to the client_id.  Optional for JWT grants, and should then be set to the `pid` the token should be bound to. | 
 &nbsp;
-
 
 
 ### Eksempel på JWT-grant struktur

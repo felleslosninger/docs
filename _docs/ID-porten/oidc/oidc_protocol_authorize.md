@@ -42,9 +42,6 @@ Supported request attributes:
 
 
 
-Etter at brukeren har logget inn vil det sendes en redirect url tilbake til klienten. Denne url'en vil inneholde et autorisasjonskode-parameter `code` som kan brukes til oppslag for å hente tokens.  Koden er base64-enkoda og URL-safe.
-
-
 ### Sample request
 
 ```
@@ -61,6 +58,14 @@ GET /authorize
   ui_locales=nb
 
 ```
+
+
+## Response
+
+When the user has performend a successful login, and optionally consented to any scopes requiring such consent, the browser will be redirected back to client.  The redirect will contain the authorization 'code' parameter which is then used when fetching tokens. The code is base64-encoded and URL-safe.
+
+The 'state' parametere is also included, and MUST be used by the client to detect CSRF attacks.
+
 
 ### Sample response: {#authresponse}
 

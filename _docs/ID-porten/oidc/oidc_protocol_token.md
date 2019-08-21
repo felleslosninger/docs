@@ -24,7 +24,7 @@ There are different parameters available for the request, depending on grant typ
 
 
 
-### Parameters for `code` grant
+### Parameters when using `code` grant
 
 The following request attributes are available when using the authorization code grant
 
@@ -39,7 +39,7 @@ The following request attributes are available when using the authorization code
 | client_assertion   | optional   | A JWT identifing the client  |
 
 
-### Parameters for `JWT-bearer` grant
+### Parameters when using `JWT-bearer` grant
 
 The following request attributes are available when using the authorization code grant
 
@@ -50,63 +50,30 @@ The following request attributes are available when using the authorization code
 
 There is no need to perform client authenticion when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
-
-| client_id | required | The identifier of the client  |
-| code | required  | The authorization code (*code*) received in the authorization response.  |
-| redirect_uri | required | The desired redirect uri.  Must have equal value as used in the corresponding authentication request. |
-| client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
+See [JWT grant](oidc_protocol_jwtgrant.html) for requirements for the JWT grant.
 
 
+### Parameters when using `refresh_token ` grant
 
-### Parameters for `refresh_token ` grant
-
-The following request attributes are available:
-
-
-| Attribute  | Applies for grant type | Description |
-| --- | --- | --- |
-| client_id | code, refresh_token | The identifier of the client  |
-| grant_type | all | Type of grant the client is sending, either:  `authorization_code`, `refresh_token`, `urn:ietf:params:oauth:grant-type:jwt-bearer`|
-| code | code |  authorization code (*code*) received in the authorization response.  |
-| redirect_uri | code | ønsket redirect_uri, skal være identisk med verdi brukt i autentiseringsforespørsel |
-| client_assertion_type | code |   |
+TODO
 
 
+### Client authentication
+
+ID-porten supports four client authentication methods:
+
+* client_secret_basic
+* client_secret_post
+* private_key_jwt
+* none
 
 
+#### Client authentication using client secret
+
+A previously exchanged out-of-band static secret is used for standard HTTP bacic authentication header comprised of client_id + colon + secret.
 
 
-###  
-
-
-
-
-Bruk av endepunktet varierer litt med hvilken klient-autentiseringsmetode som benyttes. Følgende autentiseringsmetoder fra [OIDC kap. 9](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) støttes:
-
-* **client_secret_basic** / **client_secret_post** - Klientautentisering basert på client_secret
-* **private_key_jwt** - Klientautentisering basert på JWT'er signert med virksomhetssertifikater
-
-
-&nbsp;
-
-samt at følgende attributter må sendes inn i requesten:
-
-| Attributt  | Verdi |
-| --- | --- |
-| client_id | Klientens ID |
-| grant_type | Valgt grant-metode, en av: <ul><li>`authorization_code`</li><li>`refresh_token`</li></ul>|
-| code | autorisasjonskode (*code*) motatt i [autentiseringsresponsen](#authresponse).   |
-| redirect_uri | ønsket redirect_uri, skal være identisk med verdi brukt i autentiseringsforespørsel |
-
-
-
-### Klientautentisering med statisk klienthemmelighet
-
-Her benyttes tidligere utlevert statisk hemmelighet(*client_secret*) til autentisering ved å legge på en standard HTTP Basic autentiserings-header (base64-enkoda sammensatt streng av client_id, kolon og client_secret).
-
-MERK:  Difi vil på sikt innføre levetid på client_secret, slik at ikke disse blir evigvarende som idag. Kunde har selv ansvaret for å få rotert sin client_secret før den utløper for å unngå avbrudd i tjenesteleveransen.
-
-##### Eksempel på forespørsel
+##### Example
 
 ```
 POST /token
@@ -120,40 +87,13 @@ grant_type=authorization_code&
 
 
 
-### Klientautentisering med JWT token
+### Client authentication using JWT token
 
-Klienten må generere et JWT token med claims som definert under `private_key_jwt`-avsnittet i  [kapittel 9 av OIDC-spesifikasjonen](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), og signere dette med et gyldig virksomhetssertifikat ihht [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
+The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
 
-Forespørselen må utvides med følgende attributter:
+The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see above.
 
-| Attributt  | Verdi |
-| --- | --- |
-| client_assertion_type | `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`|
-| client_assertion | JWT ihht. kravene under   |
-
-#### Krav til JWT for token-forespørsel
-
-Klienten må generere og signere ein jwt med følgende elementer for å forespørre tokens fra autorisasjonsserveren:
-
-
-**Header:**
-
-| Parameter  | Verdi |
-| --- | --- |
-| x5c | Inneholde klientens virksomhetssertifikat som er brukt for signering av JWT'en. Må være angitt som en array.  |
-| alg | RS256 - Vi støtter kun RSA-SHA256 som signeringsalgoritme |
-
-&nbsp;
-
-**Body:**
-
-| Parameter  | Verdi |
-| --- | --- |
-|aud| Audience - identifikator for ID-portens OIDC Provider.  Se ID-portens `well-known`-endepunkt for aktuelt miljø for å finne riktig verdi. |
-|iss| issuer - client ID som er registert hos ID-porten OIDC-provider|
-|iat| issued at - tidsstempel for når jwt'en ble generert - **MERK:** Tidsstempelet tar utgangspunkt i UTC-tid|
-|exp| expiration time - tidsstempel for når jwt'en utløper - **MERK:** Tidsstempelet tar utgangspunkt i UTC-tid **MERK:** ID-porten godtar kun maks levetid på jwt'en til 120 sekunder (exp - iat <= 120 )|
-|jti| Optional - JWT ID - unik id på jwt'en som settes av klienten. **MERK:** JWT'er kan ikke gjenbrukes. ID-porten håndterer dette ved å sammenligne en hash-verdi av jwt'en mot tidligere brukte jwt'er. Dette impliserer at dersom klienten ønsker å sende mer enn en token-request i sekundet må jti elementet benytttes.|
+The 'sub' field of the JWT must be set equal to your client_id.
 
 #### Eksempel på forespørsel:
 
@@ -166,6 +106,10 @@ grant_type=authorization_code&
    client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&
    client_assertion=< jwt >
 ```
+
+## Response
+
+TODO - skriv om ulike variantar av respons
 
 
 ### Eksempel på respons fra token-endepunktet:
