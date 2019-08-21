@@ -66,4 +66,4 @@ relatert til dekryptering/signeringsvalidering gjort av postkassen.
 ### Mer om forretningsfeil
 
 For mer informasjon om forretningsfeil, se [dokumentasjon av
-forretningsmeldingen Feil](../meldinger/Feil.md)
+forretningsmeldingen Feil](sdp_feil.html)
