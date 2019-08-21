@@ -29,7 +29,7 @@ folders:
 
     - title: Using Postman towards Maskinporten
       jurl: /oidc_sample_jwtgrant_postman.html
-              
+
 - title: Funksjonalitet
   folderitems:
 
@@ -65,6 +65,16 @@ folders:
 
 - title: Arkitektur
   folderitems:
+
+      - title: "/authorize"
+        jurl: /oidc_protocol_authorize.html
+      - title: "/token"
+        jurl: /oidc_protocol_token.html
+      - title: "/tokeninfo"
+        jurl: /oidc_protocol_tokeninfo.html
+      - title: "JWT grants"
+        jurl: /oidc_protocol_jwtgrant.html
+
 
       - title: Arkitektur
         jurl: /oidc_arch.html
