@@ -141,8 +141,7 @@ folders:
         jurl: /sdp_transportfeil.html
       - title: Forretningsfeil
         jurl: /sdp_forretningsfeil.html   
-      - title: Feilhåndteringsprosess
-        jurl: /sdp_feilhandteringsprosess.html
+
         
     - title: Begrep
       folderitems:
