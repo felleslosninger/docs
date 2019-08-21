@@ -2,7 +2,7 @@
 
 title: CollaborationInfo  
 permalink: sdp_collaborationinfo.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title}}
