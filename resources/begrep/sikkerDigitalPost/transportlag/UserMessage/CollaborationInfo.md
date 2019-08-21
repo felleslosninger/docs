@@ -37,7 +37,7 @@ sidebar: dpi_sidebar
 
 ### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
     <eb:CollaborationInfo>
         <eb:AgreementRef>http://begrep.difi.local/SikkerDigitalPost/Meldingsutveksling/FormidleDigitalPostForsendelse</eb:AgreementRef>
         <eb:Service>SDP</eb:Service>
