@@ -23,8 +23,8 @@ sidebar: dpi_sidebar
 
 <!-- end list -->
 
-  - [FormidleDigitalPostForsendelse](../../Meldingsutveksling/FormidleDigitalPostForsendelse)
-  - [KvitteringsForespoersel](../../Meldingsutveksling/KvitteringsForespoersel)
+  - [FormidleDigitalPostForsendelse](sdp_formidledigitalpostforsendelse.html)
+  - [KvitteringsForespoersel](sdp_kvitteringsforspoersel.html)
 
 ### Egenskaper
 
