@@ -178,19 +178,18 @@ The token is a JWT with the following structure:
 | --- | --- |
 | sub | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.  |
 | aud   |  The indended audience for token.  Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  ID-porten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  
-| aud | "audience" - the intended audience of the token. See client_id til klienten som er mottaker av dette tokenet |
-| client_id | client_id til klienten som er mottaker av dette tokenet. Note that client_ids should in general not be used for access control. |
-| client_orgno | Klienten sitt organisasjonsnummer |
-| consumer | Den juridiske konsumenten  sitt organisasjonsnummer, in ISO6523 notation |
-| supplier | leverandør|
-| delegation_source   |  The Oauth2 `issuer` value of the legal authority in which the consuming organization performed delegation of a given API access (ie: scope)  to the supplier organization |
-| scope | Liste over de scopes som dette access tokenet er bundet mot |
-| pid | Personidentifikator - fødselsnummer/d-nummer på den autentiserte sluttbrukeren. MERK: Dette claimet blir ikke utlevert dersom scopet no_pid er benyttet |
-| token_type | Type token. pr. nå¨støttes kun "Bearer" |
-| iss | Identifikator for provideren som har utstedt token'et. For ID-porten sitt ext-test miljø er dette *https://eid-exttest.difi.no/idporten-oidc-provider/* |
-| exp | Expire - Utløpstidspunktet for tokenet. Klienten skal ikke akseptere token'et etter dette tidspunktet |
-| iat | Tidspunkt for utstedelse av tokenet |
-| jti | jwt id - unik identifikator for det aktuelle Id tokenet |
+| client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
+| client_orgno | The organization number of the client. Present for legacy reasons, but note that using consumer/supplier claims is more unambiguous and is recommended for access control decisions by the Resource Server.  |
+| consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. |
+| supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most  wholeverandør|
+| delegation_source   |  The Oauth2 *issuer* value of the legal authority in which the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization |
+| scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
+| pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   Not included if `no_pid` scope was requested or pre-registered on the client.  Also not included for machine-type tokens.|
+| token_type | Type of token. Only `Bearer` supported. |
+| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)|
+| exp | Expire - Timestamp when this token should not be trusted any more.  |
+| iat | Timestamp when this token was issued.  |
+| jti | jwt id - unique identifer for a given token  |
 
 
 
