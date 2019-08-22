@@ -40,6 +40,7 @@ Supported request attributes:
 | code_challenge   | Recommended  | Code challenge when using PKCE. Mandatory to use for public clients |
 | code_challenge_method   | Recommended   | Algorithm for PKCE. Only `S256` supported.  |
 |login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
+|claims   | Optional  | Currently only used for [eIDAS](oidc_func_eidas.html)|
 
 
 
