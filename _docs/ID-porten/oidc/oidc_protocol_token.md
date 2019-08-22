@@ -6,6 +6,8 @@ permalink: oidc_protocol_token.html
 sidebar: oidc
 product: ID-porten
 ---
+* TOC
+{:toc}
 
 ## About
 
@@ -215,6 +217,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 
 ID-porten issues two different types of access_tokens:
 
+
 |Token type|Description|
 |-|-|
 |by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [/tokeninfo endpoint](oidc_protocol_tokeninfo.html).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transit. |
@@ -270,5 +273,3 @@ Developers integrating towards ID-porten / Maskinporten are expected to know the
 
 * **Use a certified / well recognized IAM-product or OIDC library for the integration**
 * **Keep secrets / certificates safe to avoid getting your organization  impersonated**
-
-## Validation of access_token

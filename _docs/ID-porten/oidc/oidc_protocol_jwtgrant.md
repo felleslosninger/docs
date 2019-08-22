@@ -43,6 +43,7 @@ Note that production certificates are not supported in test environments.
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
 | sub | Depends | Required when using client authenticaion, and must then be set equal to the client_id.  Optional for JWT grants, and should then be set to the `pid` the token should be bound to. |
 | resource   | optional  | The indended audience for token. If included, the value will be transparantly set as the `aud`-claim in the access token. See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |   
+
 &nbsp;
 
 

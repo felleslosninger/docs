@@ -1,7 +1,7 @@
 ---
-title: "/token endpoint"
-description: "This page summarizes the protocol options availalbe for on the /tokeninfo introspection endpoint for ID-porten OIDC Provider"
-summary: 'This page summarizes the protocol options availalbe for on the /tokeninfo introspection endpoint for ID-porten OIDC Provider'
+title: "/tokeninfo endpoint"
+description: "This page summarizes the protocol options available for on the /tokeninfo introspection endpoint for ID-porten OIDC Provider"
+summary: 'This page summarizes the protocol options available for on the /tokeninfo introspection endpoint for ID-porten OIDC Provider'
 permalink: oidc_protocol_tokeninfo.html
 sidebar: oidc
 product: ID-porten
@@ -33,7 +33,7 @@ The following JSON payload must be submitted:
 
 The most important parameter in the reponse is the `active`-claim.  If its value is *false*, the submitted token is not longer valid, and must not be used or trusted by the sending party.
 
-The remainder of the response is intentionally kept as equal to the claims available in the access_token as possible, please see the table for [self-contained access token](oidc_protocol_token.html).
+The remainder of the response is intentionally kept as equal to the claims available in the access_token as possible, please see the table for [self-contained access token](oidc_protocol_token.html#by-value--self-contained-access-token).
 
 | claim | verdi |
 | --- | --- |
