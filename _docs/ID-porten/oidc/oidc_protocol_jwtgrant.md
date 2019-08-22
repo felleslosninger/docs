@@ -38,10 +38,11 @@ Note that production certificates are not supported in test environments.
 |iss| Required |issuer - Your client ID |
 |iss_onbehalfof| Optional | Id-porten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
 |scope| Required| Whitepace-separated liste over scopes requested |
-|iat|| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
-|exp|| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
+|iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
+|exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
-| sub | Depends | Required when using client authenticaion, and must then be set equal to the client_id.  Optional for JWT grants, and should then be set to the `pid` the token should be bound to. | 
+| sub | Depends | Required when using client authenticaion, and must then be set equal to the client_id.  Optional for JWT grants, and should then be set to the `pid` the token should be bound to. |
+| resource   | optional  | The indended audience for token. If included, the value will be transparantly set as the `aud`-claim in the access token. See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |   
 &nbsp;
 
 

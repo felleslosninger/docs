@@ -32,11 +32,11 @@ The following request attributes are available when using the authorization code
 | --- | --- | --- |
 | client_id | required | The identifier of the client  |
 | grant_type | required | Type of grant the client is sending, ie. `authorization_code` |
-| code | required  | The authorization code (*code*) received in the authorization response.  |
-| redirect_uri | required | The desired redirect uri.  Must have equal value as used in the corresponding authentication request. |
+| code | required  | The authorization code received in the authorization response.  |
+| redirect_uri | required | The desired redirect uri.  Must be the same value as was used in the corresponding authentication request. |
 | code_verifier | recommended | The PKCE code verifier. Mandatory for public clients. |
 | client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
-| client_assertion   | optional   | A JWT identifing the client  |
+| client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
 
 
 ### Parameters when using `JWT-bearer` grant
@@ -68,10 +68,14 @@ ID-porten supports four client authentication methods:
 * none
 
 
-#### Client authentication using client secret
+#### Client authentication using client secret basic
 
 A previously exchanged out-of-band static secret is used for standard HTTP bacic authentication header comprised of client_id + colon + secret.
 
+
+#### Client authentication using client secret post
+
+A previously exchanged out-of-band static secret is used for authentication.  The secret is added as a claim in the JSON payload of the POST request.
 
 ##### Example
 
@@ -93,9 +97,9 @@ The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.i
 
 The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see above.
 
-The 'sub' field of the JWT must be set equal to your client_id.
+The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grant](oidc_protocol_jwtgrant.html).
 
-#### Eksempel på forespørsel:
+#### Example:
 
 ```
 POST /token
@@ -111,6 +115,14 @@ grant_type=authorization_code&
 
 TODO - skriv om ulike variantar av respons
 
+
+### id_token
+
+### access token
+
+'aud'
+
+### refresh token
 
 ### Eksempel på respons fra token-endepunktet:
 
@@ -159,6 +171,54 @@ Supported request attributes:
 
 Etter at brukeren har logget inn vil det sendes en redirect url tilbake til klienten. Denne url'en vil inneholde et autorisasjonskode-parameter `code` som kan brukes til oppslag for å hente tokens.  Koden er base64-enkoda og URL-safe.
 
+
+
+## Validation
+
+**The client MUST validate all responses from ID-porten according to the OIDC and Oauth2 standards as well as  practice recommendations from the IETF.**
+
+
+
+
+Utviklere som integrerer mot ID-porten / Maskinporten forventes å kjenne til [RFC6819: trusselmodellen for Oauth2](https://tools.ietf.org/html/rfc6819) og legge denne til grunn for sine risikovurderinger.  Difi kommer ikke til å gjenta valideringstiltak som allerede står i spec'ene , men vi vil trekke fram følgende overordna anbefalinger:
+
+1) Bruk et anerkjent IAM-produkt / bibliotek for integrasjonen.
+2) Ha en trygg håndtering av nøkler slik at disse ikke kommer på avveie
+
+
+## Validation of id-token
+
+Dette er presist beskrive i [OIDC-spesifikasjonen kap 3.1.5.3](https://openid.net/specs/openid-connect-core-1_0.html#TokenResponseValidation)
+(samt kap 3.2.2.11 for implicit-flyt og 3.3.2.12/3.3.3.7 for hybrid flyt )
+
+
+## Validation of access_token
+
+
+https://tools.ietf.org/html/rfc6749?#section-5.1
+
+1. Valider token teknisk ihht Oauth2 og evt. JWT-spec.  Viss den feiler -> forkast
+    1.  iss må være ID-porten
+    2.  signatur på self-contained access-token / introspection respons må stemme med sertifikatet publisert på ID-porten sitt .jwks-endepunkt
+    3. dersom introspection, valider at aud til deg selv
+    4. dersom self-contained access token, valider at et eventuelt aud-claim er til deg selv som api-tilbyder
+
+2. Sjekk token-type (`type`), om det er person-innlogging eller virksomhetsinnlogging
+     1. dersom *virksomhet*:
+         * finn konsument frå  `consumer_orgno`
+         * dersom du har behov for å logge hvilken levendør, finnes dette i `supplier_orgno`
+
+    2. dersom *person*:
+        1. fødseslnummer finnes i 'pid'-claimet
+            1. dersom pseudonymisert access_token finner du fødselsnummer ved å utføre introspection mot ID-porten
+
+1.
+
+
+
+
+
+## Examples
 
 ### Sample request
 
