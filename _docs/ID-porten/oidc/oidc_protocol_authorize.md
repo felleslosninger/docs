@@ -39,6 +39,7 @@ Supported request attributes:
 | prompt | Optional | Used to govern end user involvement.  Only `login` is supported by ID-porten  |
 | code_challenge   | Recommended  | Code challenge when using PKCE. Mandatory to use for public clients |
 | code_challenge_method   | Recommended   | Algorithm for PKCE. Only `S256` supported.  |
+|login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
 
 
 
@@ -64,7 +65,7 @@ GET /authorize
 
 When the user has performend a successful login, and optionally consented to any scopes requiring such consent, the browser will be redirected back to client.  The redirect will contain the authorization 'code' parameter which is then used when fetching tokens. The code is base64-encoded and URL-safe.
 
-The 'state' parametere is also included, and MUST be used by the client to detect CSRF attacks.
+The 'state' parameter is also included, and MUST be used by the client to detect CSRF attacks.
 
 
 ### Sample response: {#authresponse}

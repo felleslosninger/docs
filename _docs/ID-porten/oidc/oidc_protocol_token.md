@@ -24,7 +24,7 @@ There are different parameters available for the request, depending on grant typ
 
 
 
-### Parameters when using `code` grant
+### Request parameters when using `code` grant
 
 The following request attributes are available when using the authorization code grant
 
@@ -39,7 +39,7 @@ The following request attributes are available when using the authorization code
 | client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
 
 
-### Parameters when using `JWT-bearer` grant
+### Request parameters when using `JWT-bearer` grant
 
 The following request attributes are available when using the authorization code grant
 
@@ -53,7 +53,7 @@ There is no need to perform client authenticion when using this grant, as the cl
 See [JWT grant](oidc_protocol_jwtgrant.html) for requirements for the JWT grant.
 
 
-### Parameters when using `refresh_token ` grant
+### Request parameters when using `refresh_token ` grant
 
 TODO
 
@@ -72,13 +72,6 @@ ID-porten supports four client authentication methods:
 
 A previously exchanged out-of-band static secret is used for standard HTTP bacic authentication header comprised of client_id + colon + secret.
 
-
-#### Client authentication using client secret post
-
-A previously exchanged out-of-band static secret is used for authentication.  The secret is added as a claim in the JSON payload of the POST request.
-
-##### Example
-
 ```
 POST /token
 Content-Type: application/x-www-form-urlencoded
@@ -90,8 +83,14 @@ grant_type=authorization_code&
 ```
 
 
+#### Client authentication using client secret post
 
-### Client authentication using JWT token
+A previously exchanged out-of-band static secret is used for authentication.  The secret is added as a claim in the JSON payload of the POST request.
+
+
+
+
+#### Client authentication using JWT token
 
 The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
 
@@ -111,21 +110,25 @@ grant_type=authorization_code&
    client_assertion=< jwt >
 ```
 
+#### No client authentication
+
+Mobile apps and single-page applications are clients which cannot protect a secret/certificate and thus should be preregisteret to use no client authentication.
+
+PKCE and state-parameter will be required when using no client authentication.
+
 ## Response
 
-TODO - skriv om ulike variantar av respons
+The response is a set of tokens and associated metadata, and will depend upon what was requested.
 
+| Claim | Description|
+| - |-|
+|access_token   | An Oauth2 access token, either by reference or as a JWT depending on scopes requested and/or client registration |
+|expires_in  | Seconds this access_token is valid   |
+| id_token   | An OpenID Connect id_token. Only returned if 'openid' scope was requested.  |
+| refresh_token  | Issued to confidential clients  |
+| scope   | The list of scopes issued in the access token. Included for convenience only, and should not be trusted for access control decisions.  |
 
-### id_token
-
-### access token
-
-'aud'
-
-### refresh token
-
-### Eksempel på respons fra token-endepunktet:
-
+Example:
 ```
 {
   "access_token" : "IxC0B76vlWl3fiQhAwZUmD0hr_PPwC9hSIXRdoUslPU=",
@@ -136,6 +139,63 @@ TODO - skriv om ulike variantar av respons
   "scope" : "openid"
 }
 ```
+
+
+
+### id_token
+
+### access token
+
+'aud'
+
+ID-porten may issue two different types of access_tokens:
+
+|Type token|Description|
+|-|-|
+|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [/tokeninfo endpoint](oidc_protocol_tokeninfo.html).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transit. |
+|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens are non-revokable and should have a short lifetime |
+
+Access tokens must always be validated by the Resource Server / API before granting access.   
+
+Clients should normally just pass the access token along to the resource server without any processing of it, however if any processing is performed, clients must also perform validation.
+
+#### "By value" / self-contained access token
+
+The token is a JWT with the following structure:
+
+**Access tokenets header:**
+
+| claim | verdi |
+| --- | --- |
+| kid | "Key identifier" - unique identifier for the key and certificate used by ID-porten. The public key and the certificate must be fetched from our .well-known endpoint. |
+| alg | "algorithm" - algorithm used for signing the token. ID-porten only supports `RS256` (RSA-SHA256) |
+
+
+
+**Access token body:**
+
+| claim | value |
+| --- | --- |
+| sub | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.  |
+| aud   |  The indended audience for token.  Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  ID-porten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  
+| aud | "audience" - the intended audience of the token. See client_id til klienten som er mottaker av dette tokenet |
+| client_id | client_id til klienten som er mottaker av dette tokenet. Note that client_ids should in general not be used for access control. |
+| client_orgno | Klienten sitt organisasjonsnummer |
+| consumer | Den juridiske konsumenten  sitt organisasjonsnummer, in ISO6523 notation |
+| supplier | leverandør|
+| delegation_source   |  The Oauth2 `issuer` value of the legal authority in which the consuming organization performed delegation of a given API access (ie: scope)  to the supplier organization |
+| scope | Liste over de scopes som dette access tokenet er bundet mot |
+| pid | Personidentifikator - fødselsnummer/d-nummer på den autentiserte sluttbrukeren. MERK: Dette claimet blir ikke utlevert dersom scopet no_pid er benyttet |
+| token_type | Type token. pr. nå¨støttes kun "Bearer" |
+| iss | Identifikator for provideren som har utstedt token'et. For ID-porten sitt ext-test miljø er dette *https://eid-exttest.difi.no/idporten-oidc-provider/* |
+| exp | Expire - Utløpstidspunktet for tokenet. Klienten skal ikke akseptere token'et etter dette tidspunktet |
+| iat | Tidspunkt for utstedelse av tokenet |
+| jti | jwt id - unik identifikator for det aktuelle Id tokenet |
+
+
+
+### refresh token
+
 
 
 

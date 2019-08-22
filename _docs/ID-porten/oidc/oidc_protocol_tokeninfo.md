@@ -12,27 +12,30 @@ product: ID-porten
 The `/tokeninfo` endpoint is thoroughly documented in [RFC 7662 OAuth 2.0 Token Introspection ](https://tools.ietf.org/html/rfc7662)
 
 
+## Request
 
+The following header parameters must be used:
 
-## Bruk av tokeninfo-endepunktet
-
-ID-porten tilbyr endepunkt for validering av token basert på RFC7662  OAuth 2.0 Token Introspection
-
-Følgende header-parametere må brukes på request:
-
-| Parameter  | Verdi |
+| Parameter  | Value |
 | --- | --- |
-|Http-metode:|POST|
+|Http method:|POST|
 |Content-type:|application/x-www-form-urlencoded|
-| Authorization:|Basic http autentication | MERK: Valgfritt, men ved bruk av no_pid scope vil ikke pid claim returneres dersom foresprøselen er uautentisert |
 
-Følgende attributter må sendes inn i requesten:
+The preregistered method of client authentication (token_endpoint_auth_method) must be used also on the /tokeninfo endpoint.
 
-| Attributt  | Verdi |
+The following JSON payload must be submitted:
+
+| Claim  | Value |
 | --- | --- |
-|token|\<Tokenet som skal valideres\>|
+|token|\<The token that should be validated\>|
 
-Struktur på respons:
+## Response
+
+The most important parameter in the reponse is the `active`-claim.  If its value is *false*, the submitted token is not longer valid, and must not be used or trusted by the sending party.
+
+The remainder of the response is intentionally kept as equal to the claims available in the access_token as possible.  
+
+The response is intentionally Struktur på respons:
 
 | claim | verdi |
 | --- | --- |

@@ -36,7 +36,7 @@ The response is a JSON structure with claims:
 |-|-|
 |sub   | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.   |
 |pid   |Norwegian national id number - always present unless the 'no_pid' scope was request / pre-registered on the client  |
-|local| The language used during authentication|
+|locale| The language used during authentication|
 
 ```
 {

@@ -79,7 +79,6 @@ folders:
       - title: "Scopes"
         jurl: /oidc_protocol_scope.html
 
-
       - title: Arkitektur
         jurl: /oidc_arch.html
 
