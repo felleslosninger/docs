@@ -46,6 +46,7 @@ The following scopes triggers special treatment in ID-porten OIDC provider.  The
 ## Scopes for APIs from Difi
 
 You need to ask us for permission to be able to use these scopes:
+
 | Scope |Description|
 |-|-|
 |idporten:dcr*  | Scopes allowing for self-service of ID-porten integrations   |

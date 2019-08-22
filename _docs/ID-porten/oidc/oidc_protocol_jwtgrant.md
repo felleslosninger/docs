@@ -34,7 +34,7 @@ Note that production certificates are not supported in test environments.
 
 | Claim  |  Cardinality | Description  |
 | --- | --- |--- |
-|aud| Required | Audience - identifier for ID-portens OIDC Provider.  See the  `well-known`-endepunkt for the environment you are using to find correct value.  Typically `https://oidc.difi.no/idporten-oidc-provider` in Prodction.  |
+|aud| Required | Audience - identifier for ID-porten OIDC Provider.  See the  `well-known`-endepunkt for the environment you are using to find correct value.  Typically `https://oidc.difi.no/idporten-oidc-provider` in Prodction.  |
 |iss| Required |issuer - Your client ID |
 |iss_onbehalfof| Optional | Id-porten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
 |scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes. |
