@@ -31,7 +31,6 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
     <avsender>
         <organisasjon authority="iso6523-actorid-upis">9908:123456789</organisasjon>
         <avsenderidentifikator>12345</avsenderidentifikator>
