@@ -5,7 +5,6 @@ sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | postkasseadresse |
 | Definisjon | Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør |
 | Datatype | string |
