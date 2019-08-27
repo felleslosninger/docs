@@ -5,7 +5,6 @@ sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | personidentifikator |
 | Definisjon | Identifikasjon av en person |
 | Datatype | string |
