@@ -4,8 +4,6 @@ permalink: sdp_dokumentpakkefingeravtrykk.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Dokumentpakkefingeravtrykk
   - Term  
     {{page.title}}
   - Definisjon  
@@ -26,10 +24,9 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
-
 <dokumentpakkefingeravtrykk>
             <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
             <ds:DigestValue></ds:DigestValue>
 </dokumentpakkefingeravtrykk>
+
 ```
