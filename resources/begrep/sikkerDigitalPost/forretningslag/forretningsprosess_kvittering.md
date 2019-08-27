@@ -18,7 +18,7 @@ er tatt med for å vise sammenhengen)
 
 | Prosess     | Fra      | Til     | Beskrivelse    |
 | --- | --- | --- | --- |
-| Kvittering/Feilmelding      | [Postkasse](https://difi.github.io/felleslosninger/sdp_aktorer.html) | [Meldingsformidler](https://difi.github.io/felleslosninger/sdp_aktorer.html) | Kvitteringene som sendes er: [Leveringskvittering](https://difi.github.io/felleslosninger/sdp_leveringskvittering.html), [Åpningskvittering](https://difi.github.io/felleslosninger/sdp_aapningskvittering.html) , [VarslingfeiletKvittering](https://difi.github.io/felleslosninger/sdp_varslingfeiletkvittering.html), i tillegg finnes det en kvittering for feilmeldinger.
+| Kvittering/Feilmelding      | [Postkasse](sdp_aktorer.html) | [Meldingsformidler](https://difi.github.io/felleslosninger/sdp_aktorer.html) | Kvitteringene som sendes er: [Leveringskvittering](https://difi.github.io/felleslosninger/sdp_leveringskvittering.html), [Åpningskvittering](https://difi.github.io/felleslosninger/sdp_aapningskvittering.html) , [VarslingfeiletKvittering](https://difi.github.io/felleslosninger/sdp_varslingfeiletkvittering.html), i tillegg finnes det en kvittering for feilmeldinger.
 | Hent Kvittering/Feilmelding | [Avsender](https://difi.github.io/felleslosninger/sdp_aktorer.html)  | [Meldingsformidler](https://difi.github.io/felleslosninger/sdp_aktorer.html) | Kvittering/Feilmelding ligger tilgjengelig på en kø hos Meldingsformidler. Avsender sender en forespørsel om å hente en kvittering. Meldingsformidler vil levere neste kvittering i køen uavhengig av hvilken kvitteringstype som ligger i køen. Det er en egen kø for prioriterte meldinger. |
 
 ### Henting av kvitteringer i parallel
