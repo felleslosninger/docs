@@ -5,7 +5,6 @@ sidebar: dpi_sidebar
 ---
 
 | --- | --- |
-| Identifikator  | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/DigitalPostMelding> |
 | Term  | {{page.title}} |
 | Definisjon | En digital post med tilhørende [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) |
 | Kilde | DIFI |
