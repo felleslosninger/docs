@@ -4,8 +4,6 @@ permalink: sdp_avsender.html
 sidebar: dpi_sidebar
 ---  
 
-  - Identifikator  
-    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Avsender
   - Term  
     Avsender
   - Definisjon  
