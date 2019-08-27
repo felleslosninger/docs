@@ -4,8 +4,6 @@ permalink: sdp_dokument.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Dokument
   - Term  
     {{page.title}}
   - Definisjon  
@@ -33,7 +31,6 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
         <sdp:Dokument href="melding.pdf" mime="application/pdf">
             <sdp:Tittel lang="no">Vedtak om barnehageplass til Ola</sdp:Tittel>             
         </sdp:Dokument>
