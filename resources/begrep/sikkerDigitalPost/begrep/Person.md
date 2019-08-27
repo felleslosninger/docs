@@ -29,7 +29,6 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
 <sdp:Person>
     <sdp:personidentifikator>01012295312</sdp:personidentifikator>
     <sdp:postkasseadresse>1</sdp:postkasseadresse>
