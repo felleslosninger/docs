@@ -5,7 +5,6 @@ sidebar: dpi_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | avsenderidentifikator |
 | Definisjon | Identifikasjon av en ansvarlig avsenderenhet |
 | Datatype | string |
