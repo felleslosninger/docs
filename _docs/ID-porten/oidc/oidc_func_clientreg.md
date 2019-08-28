@@ -57,6 +57,8 @@ Difi anbefaler bruk av virksomhetssertifikat til klientautentisering,  da prosed
 
 Difi forutsetter at API-tilbyder og API-konsument håndterer sertifikat og nøkler på en måte som sikrer at ikke uvedkommende kan misbruke disse.
 
+**Merk at eksisterende secret slettes dersom man endrer metoden til noe annet enn client_secret_***
+
 ### Grant-typer
 
 Et grant representerer brukerens samtykke til å hente et access token (som i sin tur brukes til hente den beskytta ressurs tilhørende brukeren, se [Oauth2, kap 1.3](https://tools.ietf.org/html/rfc6749#section-1.3) samt [`grant_types` i DCR kap. 2](https://tools.ietf.org/html/rfc7591#section-2) )
