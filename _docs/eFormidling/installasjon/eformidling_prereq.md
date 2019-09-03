@@ -39,7 +39,7 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | beta-meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 | Alle |
 | beta-meldingsutveksling.difi.no lb2 | 79.170.81.232:443	 | 2001:67c:2d68:d1f1::1b:2 | Alle |
 | beta-meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 | Alle |
-| Logging - TCP utgående | 	79.170.81.228:8300  | 2001:67c:2d68:d1f1::56:1 | Alle |
+| stream.difi.no | 	79.170.81.228:8300  | 2001:67c:2d68:d1f1::56:1 | Alle |
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
@@ -53,7 +53,7 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 | Alle |
 | meldingsutveksling.difi.no lb2 | 79.170.81.232:443	 | 2001:67c:2d68:d1f1::1b:2 | Alle |
 | meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 | Alle |
-| Logging - TCP utgående | 	79.170.81.228:8400  | 2001:67c:2d68:d1f1::56:1 | Alle |
+| stream.difi.no | 	79.170.81.228:8400  | 2001:67c:2d68:d1f1::56:1 | Alle |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
 | eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | eInnsyn - move-dpe.servicebus.windows.net	 | 52.169.10.235:5671 | - | DPE | 
