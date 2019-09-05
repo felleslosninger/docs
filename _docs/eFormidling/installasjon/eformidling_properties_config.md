@@ -79,6 +79,8 @@ Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle
   
   {% include eformidling/properties/dpv.html %}
   
+ ---
+  
 ### Regel:
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
 
