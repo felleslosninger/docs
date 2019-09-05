@@ -5,7 +5,7 @@ summary: "Hvordan man oppgraderer fra gammelt til nytt integrasjonspunkt med Nex
 
 permalink: eformidling_nextmove_oppgradering.html
 product: eFormidling
-sidebar: 
+sidebar: eformidling_install_sidebar
 ---
 
 ## Hva må gjøres?
