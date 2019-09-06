@@ -4,17 +4,12 @@ permalink: sdp_epostvarsel.html
 sidebar: dpi_sidebar
 ---
 
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om hvordan man skal varsle sluttbruker på epost
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
-  - Kommentar  
-    Beskriver når det skal sendes epostvarsel fra postkassen etter at
-    posten er tilgjengeliggjort.
+|---|---|
+| Term | {{page.title}} |
+| Definisjon | Informasjon om hvordan man skal varsle sluttbruker på epost |
+| Datatype | complexType |
+| Kjelde | DIFI |
+| Kommentar | Beskriver når det skal sendes epostvarsel fra postkassen etter at posten er tilgjengeliggjort |
 
 #### Eigenskapar
 
