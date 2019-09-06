@@ -16,7 +16,9 @@ For å oppgradere til ny versjon må den siste versjonen av integrasjonspunkt[ve
 
 > Om du oppgraderer fra eldre versjoner kan det bli konflikt i database-filene. Løsningen for dette er å ta backup av og så slette "activemq-data" mappa og "receipt.mv.db" filen som ligg i integrasjonspunktmappen. Da vil en få en "clean" installasjon. Sørg for at dei gamle filene ikkje lenger ligger i mappa før du starter opp.
 
-### Alt 1: Reinstallere en integrasjonspunkt tjeneste
+Under har du tre alternative måter for å kjøre integrasjonspunktet. 
+
+### Alternativ 1: Reinstallere en integrasjonspunkt tjeneste
 Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Om du har integrasjonspunkt installert som en tjeneste så må du endre versjonsnummer i integrasjonspunkt-service.xml-filen og dermed reinstallere tjenesten.
 
 I integrasjonspunkt-service.xml-filen er det denne linjen som må oppdateres med korrekt(nytt) versjonsnummer: ```<argument>integrasjonspunkt-2.0.0.jar</argument>```.
@@ -36,7 +38,7 @@ Da er tjenesten reinstallert og restartet.
 
 ___
 
-### Alt 2: oppgradere integrasjonspunkt som er kjørt fra kommandovindu
+### Alternativ 2: oppgradere integrasjonspunkt som er kjørt fra kommandovindu
 
 Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Dermed må du bytte ut versjonsnummeret i din oppstartskommando. 
 
@@ -58,7 +60,7 @@ http://localhost:<port-til-integrasjonspunkt>/noarkExchange?wsdl
 
 ___ 
 
-### Alt 3: Oppgradere integrasjonspunkt som kjører via task scheduler
+### Alternativ 3: Oppgradere integrasjonspunkt som kjører via task scheduler
 
 Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Dermed må du bytte ut versjonsnummeret i din task. Under argument (optional) 
 
