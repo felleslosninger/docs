@@ -6,7 +6,6 @@ sidebar: dpi_sidebar
 ---
 
 |---|---|
-| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt. |
 | Kilde         | DIFI |
