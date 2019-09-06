@@ -4,8 +4,6 @@ permalink: sdp_varsler.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
     {{page.title}}
   - Definisjon  
@@ -38,7 +36,7 @@ sidebar: dpi_sidebar
 
 #### Xml eksempel - Brev som krever varsling etter eForvaltningsforskriften
 
-``` brush: xml; toolbar: false
+``` 
   <varsler>
     <epostVarsel>
       <epostadresse>01012295312_test@minid.difi.no</epostadresse>
@@ -53,7 +51,7 @@ sidebar: dpi_sidebar
 
 #### Xml eksempel - Avsender ønsker varsling i begge kanaler ved Levering
 
-``` brush: xml; toolbar: false
+```
   <varsler>
     <epostVarsel>
       <epostadresse>01012295312_test@minid.difi.no</epostadresse>
