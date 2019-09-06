@@ -4,28 +4,12 @@ permalink: sdp_varsler.html
 sidebar: dpi_sidebar
 ---
 
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om hvordan postkasseleverandør skal varsle Mottaker om
-    den nye posten. Overstyrer Mottaker sine egne varslingspreferanser.
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
-  - Kommentar  
-    Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne
-    varslingspreferanser, det vil kunne komme som tillegg til Mottaker
-    sine varslingvalg.  
-    Avsender kan med instillingene her styre både
-    [EpostVarsel](EpostVarsel.md) og [SmsVarsel](SmsVarsel.md) helt uavhengig
-    av hverandre. Det vil si at Avsender kan velge å varsle i begge
-    eller en av kanalene.  
-    Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre
-    med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til
-    åpningsgrad og kostnader.  
-    Bruk av [SmsVarsel](SmsVarsel.md) vil medføre egne kostnader for
-    Avsender.
+|---|---|
+| Term | {{page.title}} |
+| Definisjon | Informasjon om hvordan postkasseleverandør skal varsle Mottaker om den nye posten. Overstyrer Mottaker sine egne varslingspreferanser |
+| Datatype | complexType |
+| Kjelde | DIFI |
+| Kommentar | Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne varslingspreferanser, det vil kunne komme som tillegg til Mottaker sine varslingvalg. Avsender kan med instillingene her styre både [EpostVarsel](EpostVarsel.md) og smsVarsel](SmsVarsel.md) helt uavhengig av hverandre. Det vil si at Avsender kan velge å varsle i begge eller en av kanalene.     Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til åpningsgrad og kostnader. Bruk av [SmsVarsel](SmsVarsel.md) vil medføre egne kostnader for Avsender |
 
 #### Eigenskapar
 
