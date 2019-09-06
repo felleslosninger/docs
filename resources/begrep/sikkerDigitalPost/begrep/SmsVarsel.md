@@ -4,18 +4,12 @@ permalink: sdp_smsvarsel.html
 sidebar: dpi_sidebar
 ---
 
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om hvordan man skal varsle sluttbruker på sms
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
-  - Kommentar  
-    Beskriver når det skal sendes sms varsel fra postkassen etter at
-    posten er tilgjengeliggjort.  
-    Denne tjenesten vil medføre kostnader for Avsender.
+|---|---|
+| Term | {{page.title}} |
+| Definisjon | Informasjon om hvordan man skal varsle sluttbruker på sms |
+| Datatype | complexType |
+| Kjelde | DIFI |
+| Kommentar | Beskriver når det skal sendes sms varsel fra postkassen etter at posten er tilgjengeliggjort. Denne tjenesten vil medføre kostnader for Avsender |
 
 #### Eigenskapar
 
@@ -28,7 +22,6 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
     <smsVarsel>
       <mobiltelefonnummer>12121212</mobiltelefonnummer>
       <varslingsTekst lang="no">Viktig melding fra Staten</varslingsTekst>
@@ -37,6 +30,5 @@ brush: xml; toolbar: false
         <dagerEtter>7</dagerEtter>
       </repetisjoner>
     </smsVarsel>
-
  
 ```
