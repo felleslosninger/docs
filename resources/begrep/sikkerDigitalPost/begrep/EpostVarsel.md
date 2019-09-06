@@ -4,8 +4,6 @@ permalink: sdp_epostvarsel.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
     {{page.title}}
   - Definisjon  
@@ -23,14 +21,12 @@ sidebar: dpi_sidebar
 | --- | --- | --- |
 | Identifikator                            | Kardinalitet | Datatype                                              |
 | [epostadresse](epostadresse.md)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| SKAL VÆRE LINK TIL ../felles/varslingsTekst | 1..1         | SKAL VÆRE LINK TIL ../felles/varslingsTekst           |
+| [varslingstekst](varslingstekst.html) | 1..1         | [varslingstekst](varslingstekst.html)           |
 | [repetisjoner](Repetisjoner.md)             | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                      |
 
 #### Xml eksempel
 
 ``` 
-
-brush: xml; toolbar: false
     <epostVarsel>
       <epostadresse>01012295312_test@minid.difi.no</epostadresse>
       <varslingsTekst lang="no">Viktig melding fra Staten</varslingsTekst>
@@ -39,6 +35,5 @@ brush: xml; toolbar: false
         <dagerEtter>7</dagerEtter>
       </repetisjoner>
     </epostVarsel>
-
  
 ```
