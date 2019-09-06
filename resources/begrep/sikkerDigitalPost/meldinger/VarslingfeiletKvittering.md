@@ -69,4 +69,4 @@ basert på en gjennomført vurdering.
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
 | [beskrivelse](../../felles/beskrivelse.md) | 0..1 | [beskrivelse](../../felles/beskrivelse.md) |
 | tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
-| (Skal være link til /felles/varslingskanal.md) | 1..1 | (Skal være link til /felles/varslingskanal.md) |
+| Varslingskanal | 1..1 | [Varslingskanal](varslingskanal.html) |
