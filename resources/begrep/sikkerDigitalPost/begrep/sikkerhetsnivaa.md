@@ -1,11 +1,10 @@
 ---
 title: sikkerhetsnivaa
 permalink: sikkerhetsnivaa.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | sikkerhetsnivaa |
 | Definisjon | Definerer hvilket autentiseringsnivå som kreves for at dokumentet skal åpnes |
 | Datatype | int |
