@@ -10,7 +10,9 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere til integrasjonspunkt 2.0.0
 
-23 september er integrasjonspunkt med NextMove tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190906.141255-47.jar) Hva må gjøres? 
+23 september er integrasjonspunkt med NextMove tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190906.141255-47.jar) De som vil teste kan gjøre dette i vårt stagingmiljø, men integrasjonspunktet vil ikke fungere i produksjonsmiljøet før 23 september. 
+
+Hva må gjøres? 
 
 Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
@@ -22,6 +24,8 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 4. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190906.141255-47.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
 5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. [Se her for generell info](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html#alternativ-1-reinstallere-en-integrasjonspunkt-tjeneste)
 6. Start integrasjonspunktet. 
+
+NB: Bruker virksomheten eInnsyn? Da må dere laste ned ny eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
 
 ---
 
