@@ -4,7 +4,6 @@ permalink: sdp_digitalpostinfo.html
 sidebar: begrep_sidebar
 ---
 |---|---|
-|Identifikator|<span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}|
 |Term|{{page.title}}|
 |Definisjon|Informasjon til Postkasseleverandør for å presentere og behandle en sikker digital post melding|
 |Kilde|DIFI|
