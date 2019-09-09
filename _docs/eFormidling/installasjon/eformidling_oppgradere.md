@@ -21,6 +21,7 @@ sidebar: eformidling_install_sidebar
 5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. [Se her for generell info](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html)
 6. Start integrasjonspunktet. 
 
+---
 
 ## Oppgradere til ny versjon 
 
