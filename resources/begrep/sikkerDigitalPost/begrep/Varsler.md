@@ -1,7 +1,7 @@
 --- 
 title: Varsler  
 permalink: sdp_varsler.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 |---|---|
