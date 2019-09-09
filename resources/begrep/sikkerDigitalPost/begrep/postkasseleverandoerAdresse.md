@@ -1,11 +1,10 @@
 ---
 title: postkasseleverandoerAdresse
 permalink: postkasseleverandoeradresse.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | postkasseleverandoerAdresse |
 | Definisjon | Adresse til en leverandør av Postkassetjeneste |
 | Datatype | string |
