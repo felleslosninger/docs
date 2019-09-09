@@ -32,6 +32,7 @@ for hver datatype. Følgende datatyper er definert:
 - [IkkeSensitivTittel](ikkeSensitivTittel.md)
 - [Informasjonsbehov](informasjonsbehov.html)
 - [KanVelgeSikkerDigitalPostkasseForespoersel](ot_kanvelgesikkerdigitalpostkasseforespoersel.html)
+- [KanVelgeSikkerDigitalPostkasseRespons](ot_kanvelgesikkerdigitalpostkasserespons.html)
 - [Kontaktinformasjon](ot_kontakinformasjon.html)
 - [KonversasjonsId](konversasjonsId.md)
 - [KorrespondansePartNavn](korrespondansepartnavn.md)
