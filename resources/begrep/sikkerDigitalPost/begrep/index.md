@@ -45,6 +45,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Reservasjon](reservasjon.html)
 - [ReturpostHaandtering](returPostHaandtering.md)
 - [SenesteEndringsNummer](senesteendringsnummer.html)
+- [Sertifikat](ot_sertifikat.html)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
 - [SistOppdatert](sistoppdatert.html)
 - [SistVerifisert](sistverifisert.html)
