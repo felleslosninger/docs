@@ -46,6 +46,7 @@ for hver datatype. Følgende datatyper er definert:
 - [ReturpostHaandtering](returPostHaandtering.md)
 - [SenesteEndringsNummer](senesteendringsnummer.html)
 - [Sertifikat](ot_sertifikat.html)
+- [SikkerDigitalPostAdresse](ot_sikkerfigitalpostadresse.html)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
 - [SistOppdatert](sistoppdatert.html)
 - [SistVerifisert](sistverifisert.html)
