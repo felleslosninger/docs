@@ -1,11 +1,10 @@
 ---
 title: sistOppdatert
 permalink: sistoppdatert.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | sistOppdatert |
 | Definisjon | Dato for når et objekt sist ble endret |
 | Datatype | dateTime |
