@@ -1,7 +1,7 @@
 ---
 title: EpostVarsel 
 permalink: sdp_epostvarsel.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 |---|---|
