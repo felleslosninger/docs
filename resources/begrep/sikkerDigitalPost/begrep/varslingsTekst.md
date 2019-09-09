@@ -1,11 +1,10 @@
 ---
 title: varslingsTekst
 permalink: varslingstekst.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator | |
 | Term | varslingsTekst |
 | Definisjon | Tekst til Innbygger. Brukt til å sende påminnelser/varslinger for å sikre at Innbygger skaffer seg tilgang til et tilknyttet dokument. |
 | Datatype | string |
