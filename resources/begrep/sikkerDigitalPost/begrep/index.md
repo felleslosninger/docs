@@ -34,6 +34,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Person](Person.md)
 - [Personidentifikator](personidentifikator)
 - [Postkasseadresse](postkasseadresse.html)
+- [postkasseleverandoerAdresse](postkasseleverandoeradresse.html)
 - [PrioritetType](prioritetType.md)
 - [Repetisjoner](Repetisjoner.md)
 - [ReturpostHaandtering](returPostHaandtering.md)
