@@ -2,7 +2,7 @@
 title: HentPersonerForespoersel  
 permalink: ot_hentpersonerforespoersel.html
 datatype: Metode
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 |---|---|
