@@ -1,11 +1,10 @@
 ---
 title: status
 permalink: status.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | status |
 | Definisjon | status gir en tekstlig beskrivelse av tilstand |
 | Datatype | string |
