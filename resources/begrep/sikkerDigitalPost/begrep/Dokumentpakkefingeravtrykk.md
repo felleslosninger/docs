@@ -1,18 +1,14 @@
 ---
 title: Dokumentpakkefingeravtrykk   
 permalink: sdp_dokumentpakkefingeravtrykk.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Hash av den krypterte
-    [dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html)
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
+|---|---|
+|Term|{{page.title}}|
+|Definisjon|Hash av den krypterte [dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html)|
+|Datatype|complexType|
+|Kjelde|DIFI|
 
 #### Eigenskapar
 
