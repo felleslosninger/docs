@@ -1,11 +1,10 @@
 ---
 title: senesteEndringsNummer
 permalink: senesteendringsnummer.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | senesteEndringsNummer |
 | Definisjon | Et endringsNummer |
 | Datatype | long |
