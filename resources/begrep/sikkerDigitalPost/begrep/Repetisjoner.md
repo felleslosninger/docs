@@ -1,7 +1,7 @@
 --- 
 title: Repetisjoner  
 permalink: sdp_repitisjoner.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 |---|---|
