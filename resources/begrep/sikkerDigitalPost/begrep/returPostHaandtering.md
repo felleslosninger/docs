@@ -1,11 +1,10 @@
 ---
 title: returPostHaandtering
 permalink: returposthaandtering.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | returPostHaandtering |
 | Definisjon | Definerer hvordan fysisk post som ikke blir levert til mottaker skal håndteres. |
 | Datatype | string |
