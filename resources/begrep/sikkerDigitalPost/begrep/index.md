@@ -1,10 +1,10 @@
 ---
 title: Begrepskatalog
 permalink: begrep_index.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-## Digital Postkasse til Innbyggere
+## Felles begrepskatalog
 
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
