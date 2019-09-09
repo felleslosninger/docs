@@ -43,6 +43,7 @@ for hver datatype. Følgende datatyper er definert:
 - [ReturpostHaandtering](returPostHaandtering.md)
 - [SenesteEndringsNummer](senesteendringsnummer.html)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
+- [SistOppdatert](sistoppdatert.html)
 - [SmsVarsel](SmsVarsel.md)
 - [Spraak](spraak.html)
 - [TilknyttetRegistreringSom](tilknyttetRegistreringSom.md)
