@@ -1,12 +1,10 @@
 --- 
 title: Kontaktinformasjon  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: Oppslagstjenesten/complexType  
 permalink: ot_kontakinformasjon.html
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Kontaktinformasjon> |
 | Term          | {{page.title}} |
 | Definisjon    | Kontaktinformasjon er Adresse informasjon knyttet til en Person for å kommunisere med person |
 | Datatype      | complexType |
@@ -23,7 +21,6 @@ permalink: ot_kontakinformasjon.html
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
 <ns2:Kontaktinformasjon>
    <ns2:Mobiltelefonnummer sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">12121212</ns2:Mobiltelefonnummer>
    <ns2:Epostadresse sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">01012295312_test@minid.difi.no</ns2:Epostadresse>
