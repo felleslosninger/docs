@@ -63,6 +63,7 @@ for hver datatype. Følgende datatyper er definert:
 - [SistVerifisert](sistverifisert.html)
 - [Skjerming](skjerming.html)
 - [SlettPostkasseForespoersel](ot_slettpostkasseforespoersel.html)
+- [SlettPostkasseRespons](ot_slettpostkasserespons.html)
 - [SmsVarsel](SmsVarsel.md)
 - [Spraak](spraak.html)
 - [Status](status.html)
