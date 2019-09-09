@@ -26,6 +26,7 @@ for hver datatype. Følgende datatyper er definert:
 - [HentPersonerForespoersel](ot_hentpersonerforespoersel.html)
 - [IkkeSensitivTittel](ikkeSensitivTittel.md)
 - [Informasjonsbehov](informasjonsbehov.html)
+- [Kontaktinformasjon](ot_kontakinformasjon.html)
 - [KonversasjonsId](konversasjonsId.md)
 - [KorrespondansePartNavn](korrespondansepartnavn.md)
 - [KorrespondansePartType](korrespondanseparttype.md)
