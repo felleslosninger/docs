@@ -1,11 +1,10 @@
 ---
 title: virkningstidspunkt
 permalink: virkningstidspunkt.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | virkningstidspunkt |
 | Definisjon | Dato for når et element skal være aktivt. |
 | Datatype | dateTime |
