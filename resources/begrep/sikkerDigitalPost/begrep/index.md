@@ -28,6 +28,7 @@ for hver datatype. Følgende datatyper er definert:
 - [HentPersonerForespoersel](ot_hentpersonerforespoersel.html)
 - [HentPersonerRespons](ot_hentpersonerrespons.html)
 - [HentPrintsertifikatForespoersel](ot_hentprintsertifikatforespoersel.html)
+- [HentPrintsertifikatRespons](ot_hentprintsertifikatrespons.html)
 - [IkkeSensitivTittel](ikkeSensitivTittel.md)
 - [Informasjonsbehov](informasjonsbehov.html)
 - [Kontaktinformasjon](ot_kontakinformasjon.html)
