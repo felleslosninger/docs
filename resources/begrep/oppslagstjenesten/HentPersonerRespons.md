@@ -1,8 +1,7 @@
 ---
 title: HentPersonerRespons  
 permalink: ot_hentpersonerrespons.html
-datatype: Metode
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 |---|---|
