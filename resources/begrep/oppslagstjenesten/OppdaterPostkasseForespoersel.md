@@ -1,14 +1,10 @@
 ---
 title: OppdaterPostkasseForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode  
 permalink: ot_oppdaterpostkasseforespoersel.html
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OppdaterPostkasseForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Postkasseleverandør for å oppdatere informasjon om en postkasse i kontaktregisteret. |
 | Datatype      | {{ page.datatype }} |
