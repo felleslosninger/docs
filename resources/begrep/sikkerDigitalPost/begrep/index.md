@@ -41,6 +41,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Repetisjoner](Repetisjoner.md)
 - [Reservasjon](reservasjon.html)
 - [ReturpostHaandtering](returPostHaandtering.md)
+- [SenesteEndringsNummer](senesteendringsnummer.html)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
 - [SmsVarsel](SmsVarsel.md)
 - [Spraak](spraak.html)
