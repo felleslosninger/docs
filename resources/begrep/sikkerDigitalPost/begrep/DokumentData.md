@@ -1,18 +1,14 @@
 ---
 title: DokumentData  
 permalink: sdp_dokumentdata.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Strukturert data for beriket visning i innbyggers postkasse
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
+|---|---|
+|Term|{{page.title}}|
+|Definisjon|Strukturert data for beriket visning i innbyggers postkasse|
+|Datatype|complexType|
+|Kjelde|DIFI|
 
 #### Eigenskapar
 
@@ -24,7 +20,5 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
-
 <data href="lenke.xml" mime="application/vnd.difi.dpi.lenke+xml" />
 ```
