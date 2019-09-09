@@ -1,11 +1,10 @@
 ---
 title: tekst
 permalink: tekst.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | tekst |
 | Definisjon | Språksensitiv tekst-streng |
 | Datatype | string |
