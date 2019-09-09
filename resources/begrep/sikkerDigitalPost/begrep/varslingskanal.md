@@ -1,11 +1,10 @@
 ---
 title: varslingskanal
 permalink: varslingskanal.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | varslingskanal |
 | Definisjon | Kommunikasjonskanal for utsending av varsel og påminnelse |
 | Datatype | string |
