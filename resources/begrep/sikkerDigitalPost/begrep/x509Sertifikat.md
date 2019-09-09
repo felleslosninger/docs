@@ -1,11 +1,10 @@
 ---
 title: x509Sertifikat
 permalink: x509sertifikat.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | x509Sertifikat |
 | Definisjon | Et X509 Sertifikat |
 | Datatype | string |
