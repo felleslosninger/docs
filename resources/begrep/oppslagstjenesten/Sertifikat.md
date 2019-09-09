@@ -1,14 +1,10 @@
 ---
 title: Sertifikat  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: complexType  
-group: Oppslagstjenesten/complexType  
 permalink: ot_sertifikat.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Sertifikat> |
 | Term          | {{page.title}} |
 | Definisjon    | Sertifikat for Innbygger |
 | Datatype      | {{page.datatype}} |
