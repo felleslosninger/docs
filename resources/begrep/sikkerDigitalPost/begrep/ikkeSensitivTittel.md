@@ -1,11 +1,10 @@
 ---
 title: ikkeSensitivTittel
 permalink: ikkesensitivtittel.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | ikkeSensitivTittel |
 | Definisjon | En tittel som ikke inneholder sensitiv informasjon |
 | Datatype | string |
