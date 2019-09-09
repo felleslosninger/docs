@@ -30,6 +30,7 @@ for hver datatype. Følgende datatyper er definert:
 - [KorrespondansePartType](korrespondanseparttype.md)
 - [Mottaker](sdp_mottaker.html)
 - [OrderReference](OrderReference.md)
+- [PaaVegneAv](paavegneav.html)
 - [Person](Person.md)
 - [Personidentifikator](personidentifikator)
 - [PrioritetType](prioritetType.md)
