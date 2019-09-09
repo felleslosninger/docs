@@ -1,11 +1,10 @@
 ---
 title: konversasjonsId
 permalink: konversasjonsid.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | konversasjonsId |
 | Definisjon | Et nummer som identifiserer en melding og tilhørende kvitteringer unikt. |
 | Datatype | string |
