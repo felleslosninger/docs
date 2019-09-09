@@ -1,11 +1,10 @@
 ---
 title: tilknyttetRegistreringSom
 permalink: tilknyttetregistreringsom.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | tilknyttetRegistreringSom |
 | Definisjon | Angivelse av hvilken “rolle” dokumentet har i forhold til registreringen |
 | Datatype | string |
