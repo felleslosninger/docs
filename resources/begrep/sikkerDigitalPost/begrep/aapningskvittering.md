@@ -5,7 +5,6 @@ sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | aapningskvittering |
 | Definisjon | Definerer behovet for Åpningskvittering |
 | Datatype | string |
