@@ -62,6 +62,7 @@ for hver datatype. Følgende datatyper er definert:
 - [SistOppdatert](sistoppdatert.html)
 - [SistVerifisert](sistverifisert.html)
 - [Skjerming](skjerming.html)
+- [SlettPostkasseForespoersel](ot_slettpostkasseforespoersel.html)
 - [SmsVarsel](SmsVarsel.md)
 - [Spraak](spraak.html)
 - [Status](status.html)
