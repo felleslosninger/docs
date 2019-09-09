@@ -22,6 +22,7 @@ for hver datatype. Følgende datatyper er definert:
 - [FysiskPostRetur](FysiskPostRetur.md)
 - [FysiskPostadresse](FysiskPostadresse.md)
 - [FysiskpostInfo](FysiskPostInfo.md)
+- [HentPersonerForespoersel](ot_hentpersonerforespoersel.html)
 - [IkkeSensitivTittel](ikkeSensitivTittel.md)
 - [KonversasjonsId](konversasjonsId.md)
 - [KorrespondansePartNavn](korrespondansepartnavn.md)
