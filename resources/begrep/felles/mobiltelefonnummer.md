@@ -1,11 +1,10 @@
 ---
 title: Mobiltelefonnummer
 permalink: mobiltelefonnummer.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | mobiltelefonnummer |
 | Definisjon | Et internasjonalt mobiltelefonnummer |
 | Datatype | string |
