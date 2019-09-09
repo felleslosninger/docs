@@ -1,15 +1,10 @@
 ---
 title: OpprettOgVelgSikkerDigitalPostkasseRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode\_respons  
 permalink: ot_opprettogvelgsikkerdigitalpostkasserespons.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OpprettOgVelgSikkerDigitalPostkasseRespons> |
 | Term          | {{page.title}} |
 | Definisjon    | Response sendt tilbake til Postkasseleverandør for å at en Innbygger har valgt digital postkasse for offentlig bruk. |
 | Datatype      | {{ page.datatype }} |
