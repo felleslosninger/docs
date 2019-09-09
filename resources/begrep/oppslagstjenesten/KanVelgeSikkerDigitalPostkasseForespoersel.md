@@ -1,12 +1,10 @@
 ---
 title: KanVelgeSikkerDigitalPostkasseForespoersel  
-datatype: Metode
 permalink: ot_kanvelgesikkerdigitalpostkasseforespoersel.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/KanVelgeSikkerDigitalPostkasseForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Postkasseleverandør for å sjekke om en Innbygger kan velge postkasse for offentlig bruk. |
 | Datatype      | {{ page.datatype }} |
