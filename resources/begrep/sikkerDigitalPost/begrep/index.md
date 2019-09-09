@@ -44,6 +44,7 @@ for hver datatype. Følgende datatyper er definert:
 - [SenesteEndringsNummer](senesteendringsnummer.html)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
 - [SistOppdatert](sistoppdatert.html)
+- [SistVerifisert](sistverifisert.html)
 - [SmsVarsel](SmsVarsel.md)
 - [Spraak](spraak.html)
 - [TilknyttetRegistreringSom](tilknyttetRegistreringSom.md)
