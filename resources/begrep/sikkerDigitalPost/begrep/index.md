@@ -36,6 +36,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Postkasseadresse](postkasseadresse.html)
 - [postkasseleverandoerAdresse](postkasseleverandoeradresse.html)
 - [postkasseleverandoerNavn](postkasseleverandoernavn.html)
+- [posttype](posttype.html)
 - [PrioritetType](prioritetType.md)
 - [Repetisjoner](Repetisjoner.md)
 - [ReturpostHaandtering](returPostHaandtering.md)
