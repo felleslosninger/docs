@@ -1,11 +1,10 @@
 ---
 title: utskriftstype
 permalink: utskriftstype.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | utskriftstype |
 | Definisjon | Betegnelse for hva slags print og utskriftstype som skal velges for dette brevet. |
 | Datatype | string |
