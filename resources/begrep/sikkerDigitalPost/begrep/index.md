@@ -48,6 +48,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Skjerming](skjerming.html)
 - [SmsVarsel](SmsVarsel.md)
 - [Spraak](spraak.html)
+- [TilEndringsNummer](tilendringsnummer.html)
 - [TilknyttetRegistreringSom](tilknyttetRegistreringSom.md)
 - [Tittel](Tittel.md)
 - [Utskriftstype](utskriftstype.md)
