@@ -33,6 +33,7 @@ for hver datatype. Følgende datatyper er definert:
 - [PaaVegneAv](paavegneav.html)
 - [Person](Person.md)
 - [Personidentifikator](personidentifikator)
+- [Postkasseadresse](postkasseadresse.html)
 - [PrioritetType](prioritetType.md)
 - [Repetisjoner](Repetisjoner.md)
 - [ReturpostHaandtering](returPostHaandtering.md)
