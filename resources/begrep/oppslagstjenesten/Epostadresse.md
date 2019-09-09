@@ -1,11 +1,10 @@
 ---
 title: Epostadresse  
 permalink: ot_epostadresse.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | --- | --- |
-| Identifikator  | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Epostadresse> |
 |Term | Epostadresse |
 | Definisjon  | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret |
 | Datatype  | complexType |
