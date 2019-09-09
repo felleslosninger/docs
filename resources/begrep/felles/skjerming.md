@@ -1,11 +1,10 @@
 ---
 title: skjerming
 permalink: skjerming.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | skjerming |
 | Definisjon | Angivelse av om metadata om dokument skal skjermes |
 | Datatype | string |
