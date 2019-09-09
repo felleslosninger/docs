@@ -1,19 +1,14 @@
 ---
 title: FysiskPostRetur  
 permalink: sdp_fysiskpostretur.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon som brukes ved retur av post som av en eller annen grunn
-    ikke kan levers til mottaker.
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Informasjon som brukes ved retur av post som av en eller annen grunn
-    ikke kan levers til mottaker.
+|---|---|
+|Term|{{page.title}}|
+|Definisjon|Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.|
+|Kilde|DIFI|
+|Kommentar|Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.|
 
 ### Attributer
 
