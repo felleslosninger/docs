@@ -1,11 +1,10 @@
 ---
 title: tilEndringsNummer
 permalink: tilendringsnummer.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | tilEndringsNummer |
 | Definisjon | Et endringsNummer |
 | Datatype | long |
