@@ -1,19 +1,15 @@
 ---
 title: Person 
 permalink: sdp_person.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Person definert for Sikker digital post
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Person er [mottakeren](sdp_mottaker.html) som Digital Post skal sendes til.
+|---|---|
+|Term|{{page.title}}|
+|Definisjon|Person definert for Sikker digital post|
+|Datatype|complexType|
+|Kilde|DIFI|
+|Kommentar|Person er [mottakeren](sdp_mottaker.html) som Digital Post skal sendes til.|
 
 Merk at Person ikke er unik definert på tvers av Difi sine
 felleskomponenter, men at hver av felleskomponentene har en definisjon
