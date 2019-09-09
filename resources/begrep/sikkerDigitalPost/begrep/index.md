@@ -1,10 +1,9 @@
 ---
-title: Begrepskatalog
+title: 
 permalink: begrep_index.html
 sidebar: begrep_sidebar
 ---
-
-## Felles begrepskatalog
+### Definisjon av begreper tilknyttet fellesløsningene
 
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
