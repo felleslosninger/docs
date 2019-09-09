@@ -1,11 +1,9 @@
 --- 
 title: HentPrintSertifikatForespoersel  
-datatype: Metode
 permalink: ot_hentprintsertifikatforespoersel.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPrintSertifikatForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Virksomhet for å hente Sertifikater fra Printleverandør i Sikker Digital Post. |
 | Datatype      | {{ page.datatype }} |
@@ -21,7 +19,6 @@ Ingen input attributter
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://kontaktinfo.difi.no/xsd/oppslagstjeneste/14-05">
    <soapenv:Header/>
    <soapenv:Body>
