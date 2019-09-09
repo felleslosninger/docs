@@ -31,6 +31,7 @@ for hver datatype. Følgende datatyper er definert:
 - [HentPrintsertifikatRespons](ot_hentprintsertifikatrespons.html)
 - [IkkeSensitivTittel](ikkeSensitivTittel.md)
 - [Informasjonsbehov](informasjonsbehov.html)
+- [KanVelgeSikkerDigitalPostkasseForespoersel](ot_kanvelgesikkerdigitalpostkasseforespoersel.html)
 - [Kontaktinformasjon](ot_kontakinformasjon.html)
 - [KonversasjonsId](konversasjonsId.md)
 - [KorrespondansePartNavn](korrespondansepartnavn.md)
