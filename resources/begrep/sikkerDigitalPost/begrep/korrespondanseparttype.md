@@ -1,11 +1,10 @@
 ---
 title: Korrespondanseparttype
 permalink: korrespondanseparttype.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | korrespondanseparttype |
 | Definisjon | Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres manuelt |
 | Datatype | string |
