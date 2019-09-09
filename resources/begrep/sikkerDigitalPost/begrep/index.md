@@ -34,6 +34,7 @@ for hver datatype. Følgende datatyper er definert:
 - [ReturpostHaandtering](returPostHaandtering.md)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
 - [SmsVarsel](SmsVarsel.md)
+- [Spraak](spraak.html)
 - [TilknyttetRegistreringSom](tilknyttetRegistreringSom.md)
 - [Tittel](Tittel.md)
 - [Utskriftstype](utskriftstype.md)
