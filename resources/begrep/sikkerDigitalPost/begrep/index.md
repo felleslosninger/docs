@@ -39,6 +39,7 @@ for hver datatype. Følgende datatyper er definert:
 - [KorrespondansePartType](korrespondanseparttype.md)
 - [Mobiltelefonnummer](mobiltelefonnummer.html)
 - [Mottaker](sdp_mottaker.html)
+- [OpprettOgVelgSikkerDigitalPostkasseForespoersel](ot_opprettogvelgsikkerdigitalpostkasseforespoersel.html)
 - [OrderReference](OrderReference.md)
 - [PaaVegneAv](paavegneav.html)
 - [Person](Person.md)
