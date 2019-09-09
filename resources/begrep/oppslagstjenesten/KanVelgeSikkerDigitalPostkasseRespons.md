@@ -1,13 +1,10 @@
 --- 
 title: KanVelgeSikkerDigitalPostkasseRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
 permalink: ot_kanvelgesikkerdigitalpostkasserespons.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/KanVelgeSikkerDigitalPostkasseRespons> |
 | Term          | {{page.title}} |
 | Definisjon    | Respons sendt tilbake til Postkasseleverandør når kontaktregisteretet er oppdatert. |
 | Datatype      | {{ page.datatype }} |
