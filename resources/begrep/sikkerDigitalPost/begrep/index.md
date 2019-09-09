@@ -18,6 +18,7 @@ for hver datatype. Følgende datatyper er definert:
 - [Dokumentpakkefingeravtrykk](Dokumentpakkefingeravtrykk.md)
 - [Endringsnummer](endringsnummer.html)
 - [EpostVarsel](EpostVarsel.md)
+- [FraEndringsNummer](fraendringsnummer.html)
 - [FysiskPostRetur](FysiskPostRetur.md)
 - [FysiskPostadresse](FysiskPostadresse.md)
 - [FysiskpostInfo](FysiskPostInfo.md)
