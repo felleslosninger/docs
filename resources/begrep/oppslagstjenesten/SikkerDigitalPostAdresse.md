@@ -1,13 +1,10 @@
 ---
 title: SikkerDigitalPostAdresse  
-headtitle: Begrepskatalog for Sikker digital post -  
-group: Oppslagstjenesten/complexType  
 permalink: ot_sikkerfigitalpostadresse.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/SikkerDigitalPostAdresse> |
 | Term          | {{page.title}} |
 | Definisjon    | Adresse informasjon om Person sin Sikker DigitalPostKasse |
 | Datatype      | complexType |
