@@ -25,7 +25,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. [Se her for generell info](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html#alternativ-1-reinstallere-en-integrasjonspunkt-tjeneste)
 6. Start integrasjonspunktet. 
 
-NB: Bruker virksomheten eInnsyn? Da må dere laste ned ny eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
+**NB!** Bruker virksomheten eInnsyn? Da må dere laste ned ny eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
 
 ---
 
