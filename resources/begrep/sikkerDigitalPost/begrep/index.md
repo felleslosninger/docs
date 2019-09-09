@@ -28,6 +28,7 @@ for hver datatype. Følgende datatyper er definert:
 - [KonversasjonsId](konversasjonsId.md)
 - [KorrespondansePartNavn](korrespondansepartnavn.md)
 - [KorrespondansePartType](korrespondanseparttype.md)
+- [Mobiltelefonnummer](mobiltelefonnummer.html)
 - [Mottaker](sdp_mottaker.html)
 - [OrderReference](OrderReference.md)
 - [PaaVegneAv](paavegneav.html)
