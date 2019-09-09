@@ -1,15 +1,10 @@
 --- 
 title: OppdaterPostkasseRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode\_respons  
 permalink: ot_oppdaterpostkasserespons.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OppdaterPostkasseRespons> |
 | Term          | {{page.title}} |
 | Definisjon    | Respons sendt tilbake til Postkasseleverandør når kontaktregisteretet er oppdatert. |
 | Datatype      | {{ page.datatype }} |
