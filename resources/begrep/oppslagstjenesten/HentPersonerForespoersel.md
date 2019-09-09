@@ -2,11 +2,10 @@
 title: HentPersonerForespoersel  
 permalink: ot_hentpersonerforespoersel.html
 datatype: Metode
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Virksomhet for å hente Personer fra kontakt og reservasjonsregisteret |
 | Datatype      | {{ page.datatype }} |
@@ -40,7 +39,6 @@ vil ignoreres.
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
 <ns:HentPersonerForespoersel>
  <ns:informasjonsbehov>Kontaktinfo</ns:informasjonsbehov>
  <ns:informasjonsbehov>Sertifikat</ns:informasjonsbehov>
