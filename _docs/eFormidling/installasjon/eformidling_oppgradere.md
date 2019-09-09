@@ -1,5 +1,5 @@
 ---
-title: Oppgradere integrasjonspunktet til ny versjon
+title: Oppgradere integrasjonspunktet til ny versjon (NextMove)
 description: Hvordan man oppgraderer integrasjonspunktet til ny versjon.
 summary: "Hvordan man oppgraderer integrasjonspunktet til ny versjon."
 
@@ -11,6 +11,8 @@ sidebar: eformidling_install_sidebar
 ## Oppgradere til integrasjonspunkt 2.0.0
 
 23 september er integrasjonspunkt med NextMove tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190906.141255-47.jar) Hva må gjøres? 
+
+Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 1. Stopp integrasjonspunktet.
 2. I mappen med integrasjonspunktet: Her må du gjøre ett av stegene under:
