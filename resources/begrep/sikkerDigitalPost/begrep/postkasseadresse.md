@@ -1,7 +1,7 @@
 ---
 title: postkasseadresse
 permalink: postkasseadresse.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
