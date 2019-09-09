@@ -1,11 +1,10 @@
 ---
 title: fraEndringsNummer
 permalink: fraendringsnummer.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | fraEndringsNummer |
 | Definisjon | Et endringsNummer |
 | Datatype | long |
