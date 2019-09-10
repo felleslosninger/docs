@@ -13,9 +13,6 @@ NextMove APIet lar deg sende filer på to måter. Hvilke av de du velger avhenge
 Dersom meldingen er opp til 5 MB brukes multipart sending, der en kan sende forretningsmelding og payload i samme kall. 
 Ved meldinger større enn 5 MB må en for å oppnå god ytelse bruke metoden for store meldinger
 
-Ved behov kan en få generert prototype på en melding ved GET mot endepunktet api/prototype/{capability}. Denne vil da returnere et pre utfylt SBD bestående av SBDH og forretningsmelding
-
-
 
 ### Små meldinger
 
