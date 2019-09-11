@@ -67,6 +67,11 @@ Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form 
 http://localhost:<port-til-integrasjonspunkt>/noarkExchange?wsdl
 ```
 
+For å sjekke helse på integrasjonspunktet
+``` 
+http://localhost:<port-til-integrasjonspunkt>/manage/health
+```
+
 Merk: Om du kjører integrasjonspunktet fra kommandolinjen så må dette vinduet stå åpent. Eventuelt så kan du endre ```java -jar``` i kommandoen til ```javaw -jar```. Da vil det kjøre uten kommandovinduet, men du vil måtte lukke det ved å finner prosessen i task manager / oppgavebehandling og stoppe den der. 
 
 ## Alt 3: Kjøre via task scheduler med minste rettigheter
