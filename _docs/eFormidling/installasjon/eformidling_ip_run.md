@@ -21,7 +21,7 @@ Dokumentasjonen på programvaren du trenger ligger [på github](https://github.c
 4. Legg begge disse filene i integrasjonspunktmappa di.
 5. Endre versjonsnummeret på integrasjonspunkt-%versjonsnr%.jar til å være lik din versjon
 * For å installere tjenesten gjør du følgende:
-  - åpne kommandovindu som administrator og naviger til integrasjonspunktmappa. Kjør så følgende kommando
+  - åpne kommandovindu som administrator og naviger til integrasjonspunktmappa. Feks ```cd c:\integrasjonspunkt```. Kjør så følgende kommando
   ```
   integrasjonspunkt-service.exe install
   integrasjonspunkt-service.exe start
