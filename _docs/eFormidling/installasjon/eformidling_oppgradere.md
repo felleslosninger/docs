@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere til integrasjonspunkt 2.0.0
 
-23 september er integrasjonspunkt med NextMove tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/itest/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190910.082320-54.jar) De som vil teste kan gjøre dette i vårt stagingmiljø, men integrasjonspunktet vil ikke fungere i produksjonsmiljøet før 23 september. 
+23 september er integrasjonspunkt med NextMove tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/itest/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190911.124332-60.jar) De som vil teste kan gjøre dette i vårt stagingmiljø, men integrasjonspunktet vil ikke fungere i produksjonsmiljøet før 23 september. 
 
 Hva må gjøres? 
 
@@ -21,7 +21,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 - Slett alle gamle databasefiler. Dette vil være følgende:  ```receipt.mv.db``` og ```receipt.trace.db```. 
 - **NB!** Om du ikke har disse filene og heller bruker en egen database(feks MySQL) må du slette denne og peike integrasjonspunktet til en ny database ```spring.datasource.url=```. Legg inn også ```spring.jpa.properties.hibernate.jdbc.time_zone=Europe/Oslo``` i *integrasjonspunkt-local.properties* filen.
 3. Slett ```activemq-data``` mappa. 
-4. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/itest/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190910.082320-54.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
+4. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/itest/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190911.124332-60.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
 5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. [Se her for generell info](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html#alternativ-1-reinstallere-en-integrasjonspunkt-tjeneste)
 6. Start integrasjonspunktet. 
 
