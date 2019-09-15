@@ -102,7 +102,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive logmel
 **Å gjøre:**
 1. Anskaffe virksomhetssertifikat
 2. Legge sertifikat i Java Key Store.
-3. Sende sertifikat til Difi.
+3. Sende sertifikat til Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a>
 
 **Hvordan?**
 
