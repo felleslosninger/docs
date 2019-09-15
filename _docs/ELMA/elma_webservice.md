@@ -71,7 +71,7 @@ Will add a participant. If the participant already exists, it will be replaced.
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-
+NB: Some special characters used in the name may cause a registration to fail, e.g. "&"
 ## deleteParticipant
 
 **Example of delete-request**
