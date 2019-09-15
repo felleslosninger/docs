@@ -118,40 +118,14 @@ Access tokenets body:
 
 ## Bruk av tokeninfo-endepunktet
 
-ID-porten tilbyr endepunkt for validering av token basert på RFC7662  OAuth 2.0 Token Introspection
+ID-porten tilbyr endepunkt for validering av token basert på RFC7662  OAuth 2.0 Token Introspection.
 
-Følgende header-parametere må brukes på request:
+Bruken av dette endepunktet er [dokumentert i detalj her](oidc_protocol_tokeninfo.html).
 
-| Parameter  | Verdi |
-| --- | --- |
-|Http-metode:|POST|
-|Content-type:|application/x-www-form-urlencoded|
-| Authorization:|Basic http autentication | MERK: Valgfritt, men ved bruk av no_pid scope vil ikke pid claim returneres dersom foresprøselen er uautentisert |
-
-Følgende attributter må sendes inn i requesten:
-
-| Attributt  | Verdi |
-| --- | --- |
-|token|\<Tokenet som skal valideres\>|
-
-Struktur på respons:
-
-| claim | verdi |
-| --- | --- |
-| active | true / false |
-| token_type | Type token. pr. nå¨støttes kun "Bearer" |
-| sub | "subject identifier" - unik identifikator for den autentiserte brukeren. Verdien er her *pairwise* - dvs en klient får alltid samme verdi for samme bruker. Men ulike klienter vil få ulik verdi for samme bruker |
-| client_id | client_id til klienten som er mottaker av dette tokenet |
-| client_orgno | Klienten sitt organisasjonsnummer |
-| scope | Liste over de scopes som dette access tokenet er bundet mot |
-| pid | Personidentifikator - fødselsnummer/d-nummer på den autentiserte sluttbrukeren. MERK: Dette claimet blir ikke utlevert dersom scopet no_pid er benyttet og forespørselen mot tokeninfo er uautentisert |
-| exp | Expire - Utløpstidspunktet for tokenet. Klienten skal ikke akseptere token'et etter dette tidspunktet |
-| iat | Tidspunkt for utstedelse av tokenet |
-| expires_in | antall sekunder til tokenet utløper |
+Endepunktet vil fortelle deg om et gitt token fremdeles er gyldig (`active=true`) eller ikke.  Du vil også få utlevert de fleste metadata som hører til tokenet.
 
 
-
-Eksempel på request:
+*Eksempel på request:*
 
 ```
 POST /tokeninfo
@@ -160,7 +134,7 @@ Content-type: application/x-www-form-urlencoded
 token=fK0dhs5vQsuAUguLL2wxbXEQSE91XbOAL3foY5VR0Uk=
 ```
 
-Eksempel på en respons ved suksessfull validering av token:
+*Eksempel på en respons ved suksessfull validering av token:*
 
 ```
 {
