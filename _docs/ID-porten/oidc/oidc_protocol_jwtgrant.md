@@ -24,7 +24,7 @@ JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
 | kid |  optional | Key identifier to a previously registered certificate / asymmetric key   bound to the client.     |
 
 
-Either 'kid' or 'x5c' must be present. 'kid' can and must be used by clients having a pre-registered asymmetric key. 
+Either 'kid' or 'x5c' must be present. 'kid' can and must be used by clients having a pre-registered asymmetric key.
 
 Note that production certificates are not supported in test environments.
 
@@ -41,10 +41,15 @@ Note that production certificates are not supported in test environments.
 |iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
-| sub | Depends | Required when using client authenticaion, and must then be set equal to the client_id.  Optional for JWT grants, and should then be set to the `pid` the token should be bound to. |
 | resource   | optional  | *Currently only array supported.*  The indended audience for token. If included, the value will be transparantly set as the `aud`-claim in the access token. See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |   
 
 &nbsp;
+
+If construction a JWT for client authentication and not as a grant, the following claim must also be present:
+
+| Claim  |  Cardinality | Description  |
+| --- | --- |--- |
+| sub | Depends | Required when using client authenticaion, and must then be set equal to the client_id.  Optional for JWT grants, and should then be set to the `pid` the token should be bound to. |
 
 
 ### Eksempel på JWT-grant struktur

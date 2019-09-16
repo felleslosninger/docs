@@ -61,33 +61,10 @@ I dette scenariet ønsker en **klient** å bruke en **ressurs (API)** tilbudt av
 
 * Dersom access_tokenet er gyldig kan det forespurte ressursen returneres til klienten.
 
-## Krav til JWT for token-forespørsel{#grant}
+## 1. Generere JWT
 
-Klienten må generere og signere ein jwt med følgende elementer for å forespørre tokens fra autorisasjonsserveren:
+Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [JWT-grant](oidc_protocol_jwtgrant.html)
 
-
-**Header:**
-
-| Parameter  | Verdi |
-| --- | --- |
-| x5c | Inneholde klientens virksomhetssertifikat som er brukt for signering av JWT'en |
-| alg | RS256 - Vi støtter kun RSA-SHA256 som signeringsalgoritme |
-
-&nbsp;
-
-**Body:**
-
-| Parameter  | Verdi |
-| --- | --- |
-|aud| Audience - identifikator for ID-portens OIDC Provider.  Se ID-portens `well-known`-endepunkt for aktuelt miljø for å finne riktig verdi. |
-|iss| issuer - client ID som er registert hos ID-porten OIDC-provider|
-|iss_onbehalfof| Optional: onbehalfof - verdi for organisasjonen som klienten opptrår på vegne av (se [onbehalfof](oidc_func_onbehalfof.html))|
-|scope| Scope som klient forespør tilgang til, kan sende inn liste av scope separert med whitespace|
-|iat| issued at - tidsstempel for når jwt'en ble generert - **MERK:** Tidsstempelet tar utgangspunkt i UTC-tid|
-|exp| expiration time - tidsstempel for når jwt'en utløper - **MERK:** Tidsstempelet tar utgangspunkt i UTC-tid **MERK:** ID-porten godtar kun maks levetid på jwt'en til 120 sekunder (exp - iat <= 120 )|
-|jti| Optional: JWT ID - unik id på jwt'en som settes av klienten. **MERK:** JWT'er kan ikke gjenbrukes. ID-porten håndterer dette ved å sammenligne en hash-verdi av jwt'en mot tidligere brukte jwt'er. Dette impliserer at dersom klienten ønsker å sende mer enn en token-request i sekundet må jti elementet benytttes.|
-
-&nbsp;
 
 ### Eksempel på JWT-grant struktur
 
@@ -116,58 +93,11 @@ som dekoda blir:
 <<signaturverdi>>
 ```
 
-### Eksempel på JWT-grant struktur med onbehalfof-verdi
 
-Eksempel på jwt-grant for klient med klientID "test_rp" og bruk av onbehalfof-verdi "leikanger_kommune" :
+## 2. Send JWT til /token-endepunktet
 
-```
-{
-  "x5c": [ "MIIFETCCA/mgAwIB``````EefETzAxjqBHM=" ],
-  "alg": "RS256"
-}
-.
-{
-  "aud": "https://oidc-test1.difi.eon.no/idporten-oidc-provider/",
-  "scope": "global/kontaktinformasjon.read global/varslingsstatus.read global/navn.read global/postadresse.read global/sertifikat.read",
-  "iss": "test_rp",
-  "iss_onbehalfof": "leikanger_kommune",
-  "exp": 1520589928,
-  "iat": 1520589808,
-  "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
-}
-.
-<<signaturverdi>>
-```
+Se [detaljert dokumentasjon av /token-endepunktet](oidc_protocol_token.html).
 
-## Endepunkter
-
-ID-porten auth.server tilbyr følgende endepunkter:
-
-### Token-endepunkt
-
-Token-endepunktet benyttes for utstedelse av tokens basert på JWT-bearer grants.
-
-```
-URL: https://<miljø>/idporten-oidc-provider/token
-```
-
-Følgende header-parametere må brukes på request:
-
-| Parameter  | Verdi |
-| --- | --- |
-|Http-metode:|POST|
-|Content-type:|application/x-www-form-urlencoded|
-
-&nbsp;
-
-Følgende attributter må sendes inn i requesten:
-
-| Attributt  | Verdi |
-| --- | --- |
-|grant_type|urn:ietf:params:oauth:grant-type:jwt-bearer|
-|assertion|\<Den genererte JWT'en for token-requesten\>|
-
-&nbsp;
 
 Eksempel på forespørsel:
 
@@ -180,9 +110,10 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=<jwt>
 
 &nbsp;
 
-#### Eksempel på by-reference access token respons:
 
-Dersom klienten er konfigurert til å motta by-reference tokens, blir responsen slik:
+Dersom OIDC-provideren godtok forespørselen, får klienten et access_token tilbake, tokenet er bundet til organisasjonsnummeret til klienten.   Tokenet er enten by-reference eller self-contained, dette avhenger av hvilke scopes som be forespurt:
+
+#### Eksempel på by-reference access token respons:
 
 ```
 {
@@ -217,50 +148,14 @@ som typisk vil se slik ut etter dekoding:
 <<signaturverdi>>
 ```
 
-#### Eksempel på self-contained acces token der klient bruker OnBehalfOf
+#### Eksempel på self-contained acces token ved bruk av leverandør:
 
-Ved bruk av onBehalfof, vil man få informasjon om begge klienter i access_token:
-```
-{
-  "aud": "test_rp",
-  "client_onbehalfof_orgno": "964967725",
-  "client_onbehalfof": "leikanger_kommune",
-  "client_orgno": "991825827",
-  "scope": "global/kontaktinformasjon.read global/postadresse.read global/sertifikat.read global/varslingsstatus.read global/navn.read",
-  "iss": "https://oidc-test1.difi.eon.no/idporten-oidc-provider/",
-  "token_type": "Bearer",
-  "exp": 1520591841,
-  "iat": 1520591241,
-  "jti": "EliLSzqRatQovNiVndanlc6dXfWRNawaFkUL7tpveis="
-}
-```
-
-### Tokeninfo-endepunkt
-
-Tokeninfo-endepunktet benyttes av ressursservere for validering av gyldigheten til mottatte tokens.
-
-```
-URL: http://eid-exttest.difi.no/idporten-oidc-provider/tokeninfo
-```
-
-&nbsp;
-
-Følgende header-parametere må brukes på request:
-
-| Parameter  | Verdi |
-| --- | --- |
-|Http-metode:|POST|
-|Content-type:|application/x-www-form-urlencoded|
-
-&nbsp;
-
-Følgende attributter må sendes inn i requesten:
-
-| Attributt  | Verdi |
-| --- | --- |
-|token|\<Tokenet som skal valideres\>|
+TODO:
 
 
+### 3. Validering av token mot /tokeninfo-endepunkt
+
+Se [detaljert dokumentasjon av /tokeninfo-endepunktet](oidc_protocol_tokeninfo.html).
 #### Eksempel på request:
 
 ```

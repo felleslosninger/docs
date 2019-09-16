@@ -98,7 +98,7 @@ The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.i
 
 The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see above.
 
-The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grant](oidc_protocol_jwtgrant.html).
+The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grants](oidc_protocol_jwtgrant.html).
 
 #### Example:
 
@@ -124,8 +124,8 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 
 | Claim | Description|
 | - |-|
-|access_token   | An Oauth2 access token, either by reference or as a JWT depending on scopes requested and/or client registration |
-|expires_in  | Seconds this access_token is valid   |
+|access_token   | An Oauth2 access token, either by reference or as a JWT depending on which scopes was requested and/or client registration properties. |
+|expires_in  | Number of seconds until this access_token is no longer valid   |
 | id_token   | An OpenID Connect id_token. Only returned if 'openid' scope was requested.  |
 | refresh_token  | Issued to confidential clients  |
 | scope   | The list of scopes issued in the access token. Included for convenience only, and should not be trusted for access control decisions.  |
