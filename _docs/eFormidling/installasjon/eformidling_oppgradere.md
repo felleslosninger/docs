@@ -22,7 +22,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 - **NB!** Om du ikke har disse filene og heller bruker en egen database(feks MySQL) må du slette denne og peike integrasjonspunktet til en ny database ```spring.datasource.url=```. Legg inn også ```spring.jpa.properties.hibernate.jdbc.time_zone=Europe/Oslo``` i *integrasjonspunkt-local.properties* filen.
 3. Slett ```activemq-data``` mappa. 
 4. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190917.085028-69.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
-5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. [Se her for generell info](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html#alternativ-1-reinstallere-en-integrasjonspunkt-tjeneste)
+5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
 6. Start integrasjonspunktet. 
 
 **NB!** Bruker virksomheten eInnsyn? Da må dere laste ned ny eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
