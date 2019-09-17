@@ -33,7 +33,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 ## Oppgradere til ny versjon 
 
-> Dette gjelder kun till og med 20 sept.
+> Dette gjelder kun til 20 sept.
 
 For å oppgradere til ny versjon må den siste versjonen av integrasjonspunkt[versjonsnr].jar filen lastes ned. Denne må så legges i integrasjonspunkt-mappen og oppstartskommando/tjeneste må endres til å peke på dette versjonsnummeret.
 
