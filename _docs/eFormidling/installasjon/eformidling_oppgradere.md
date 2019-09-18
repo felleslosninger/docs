@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere til integrasjonspunkt 2.0.0
 
-23 september er integrasjonspunkt med NextMove tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190917.140200-70.jar) De som vil teste kan gjøre dette i vårt stagingmiljø, men integrasjonspunktet vil ikke fungere i produksjonsmiljøet før 23 september. 
+23. september blir integrasjonspunktet 2.0.0 (med NextMove) tilgjengelig og alle må oppgradere. [Last ned her.](https://beta-meldingsutveksling.difi.no/content/repositories/itest/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0-SNAPSHOT/integrasjonspunkt-2.0.0-20190917.140200-70.jar) De som vil teste kan gjøre dette i Difis stagingmiljø, men integrasjonspunktet 2.0.0 vil ikke fungere i produksjonsmiljøet før mandag 23. september. 
 
 Hva må gjøres? 
 
