@@ -28,9 +28,15 @@ The `subscope` is created by the owning organization itself using selfservice.  
 - subscope should contain various postfixes to differentiate between read and write access to the resource (`nav:trygdeopplysninger.write`)
      - absence of a postfix should normally only imply read access
 
-Some of these scopes are published as open data on [https://integrasjon.difi.no/scopes/all](https://integrasjon.difi.no/scopes/all)
+Some of these scopes are published as open data on
 
 For access to these scopes, you need to contact the organization owning the scope.
+
+| URL to list of scopes|Description|
+|-|-|
+| [https://integrasjon.difi.no/scopes/all](https://integrasjon.difi.no/scopes/all)  | A list of scopes protected by ID-porten in Production |
+| [https://integrasjon-ver2.difi.no/scopes/all](https://integrasjon-ver2.difi.no/scopes/all)     |  A list of scopes protected by ID-porten in VER2 environment.  |
+
 
 ## Reserved scopes
 
