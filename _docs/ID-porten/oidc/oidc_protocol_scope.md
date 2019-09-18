@@ -28,8 +28,6 @@ The `subscope` is created by the owning organization itself using selfservice.  
 - subscope should contain various postfixes to differentiate between read and write access to the resource (`nav:trygdeopplysninger.write`)
      - absence of a postfix should normally only imply read access
 
-Some of these scopes are published as open data on
-
 For access to these scopes, you need to contact the organization owning the scope.
 
 | URL to list of scopes|Description|
