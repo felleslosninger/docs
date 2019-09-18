@@ -1,7 +1,7 @@
 ---
 title: "/token endpoint"
-description: "This page summarizes the protocol options availalbe for on the /token endpoint for ID-porten OIDC Provider"
-summary: 'This page summarizes the protocol options availalbe for on the /token endpoint for ID-porten OIDC Provider'
+description: "This page summarizes the protocol options available for on the /token endpoint for ID-porten OIDC Provider"
+summary: 'This page summarizes the protocol options available for on the /token endpoint for ID-porten OIDC Provider'
 permalink: oidc_protocol_token.html
 sidebar: oidc
 product: ID-porten
