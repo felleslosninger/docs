@@ -5,6 +5,7 @@ summary: "Her finner du informasjon om hvordan oppdatere til ny versjon av einns
 permalink: einnsyn_oppdatere_tjeneste.html
 sidebar: einnsyn_sidebar
 ---
+[Last ned eInnsyn-klient](https://github.com/difi/einnsyn-klient/releases/tag/2019-09-19)
 
 Når du skal oppgradere til ny versjon av einnsyn-klienten må du endre versjonsnummeret i einnsyn-klient.xml fila. Nærmere bestemt denne linja ```<argument>sender-2.0.1.jar</argument>``` . Når du gjør endringer i denne XML-filen så må du reinstallere tjeneste.  Uansett om det er ny versjon eller noe annet som blir endret. 
 
@@ -19,4 +20,6 @@ Disse kommandoene må kjøres uten skråstrek eller bindestrek foran. Skrives n�
 
 ![Reinstallere tjeneste](/felleslosninger/images/einnsyn/reinstall_klient.png)
 
-[Nyeste versjon finner du her](https://github.com/difi/einnsyn-klient/releases/tag/2019-09-19)
+---
+
+[Her finner du informasjon om oppgradering av Integrasjonspunktet:](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html)
