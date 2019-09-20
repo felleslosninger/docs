@@ -1,12 +1,12 @@
 ---
-title: Flere einnsyn-klienter på samme integrasjonspunkt
-description: Flere einnsyn-klienter på samme integrasjonspunkt
-summary: "Her finner du informasjon om hvordan bruke flere einnsyn-klienter på samme integrasjonspunkt"
+title: Flere eInnsyn-klienter på samme integrasjonspunkt
+description: Flere eInnsyn-klienter på samme integrasjonspunkt
+summary: "Her finner du informasjon om hvordan bruke flere eInnsyn-klienter på samme integrasjonspunkt"
 permalink: einnsyn_flere_klienter.html
 sidebar: einnsyn_sidebar
 ---
 
-Når du skal bruke flere integrasjonspunkt eller einnsyn-klienter på samme server må du bruke forskjellige porter. Om du skal bruke ett integrasjonspunkt og flere einnsyn-klienter må du endre id, navn og port på einnsyn-klient tjenesten. I tillegg må hver einnsyn-klient ha sin egen inputDirectory-mappe. 
+Når du skal bruke flere integrasjonspunkt eller eInnsyn-klienter på samme server må du bruke forskjellige porter. Om du skal bruke ett integrasjonspunkt og flere einnsyn-klienter må du endre id, navn og port på einnsyn-klient tjenesten. I tillegg må hver eInnsyn-klient ha sin egen inputDirectory-mappe. 
 Alt dette endres i einnsyn-klient.xml-filen. I tillegg må du legge til et ekstra argument:
 
 * ```-Dserver.port= ```
@@ -72,3 +72,10 @@ Om du opplever problemer med at Tomcat port 7000 allerede er i bruk ved oppstart
 Sørg for at ```-Dmanagement.server.port=``` er satt til samme port som ```-Dserver.port=```.
 
 ---
+
+### Hvordan skru av mottak av innsynskrav
+En kan skru av mottak av innsynskrav på en gitt eInnsyn-klient. Vi anbefaler å skru det av på alle untatt én eInnsyn-klient: 
+
+```
+<argument>-Dapplication.retrieveInnsynskrav=false</argument>
+```
