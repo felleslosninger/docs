@@ -127,17 +127,9 @@ Sending
 |LEVERT|Melding lastet ned fra mottakers kø|
 |LEST|Mottaker har lest medlingen / sendt applikasjonskvittering|
 
-Leveranse
+Feilleveranse
 
-|Verdi|Beskrivelse|
-|-----|-----------|
-|LEVETID_UTLOPT|Melding har ikke blitt levert og må sendes på nytt|
-
-Status LEVETID_UTLOPT blir satt via et felt i SBD som heter expectedResponseDateTime. Dette har en default verdi på ca 24 timer, men kan overstyres av virksomheten vha følgende property ``` difi.move.status.messageTimeoutHours=12```. Når en forsendelse har fått statusen LEVETID_UTLOPT vil integrasjonspunktet slutte å prøve å levere meldingen. 
-- I eFormidling betyr det at sak-arkivsystemet vil kunne hente responsen LEVETID_UTLOPT fra integrasjonspunkt API'et. 
-- I eInnsyn vil det si at avsender ikke har fått en MOTTATT-status tilbake før tiden har gått ut. MOTTATT-statusen sendes fra mottaker i det meldingen er hentet ned fra servicebus. 
-
-Integrasjonspunktet har flere interne køer i applikasjonen. Før en melding blir forsøkt levert fra en av disse sjekker den om levetid er utløpt. Om levetiden er utløpt, slutter integrasjonspunktet å forsøke levere. Integrasjonspunktet sender også en statusoppdatering til avsender. Status LEVETID_UTLOPT blir satt kun når forsendelsen har feilet.
+{% include eformidling/nextmove/levetidUtlopt.txt %}
 
 ## WebHooks
 
