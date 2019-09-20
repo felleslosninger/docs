@@ -22,4 +22,4 @@ Disse kommandoene må kjøres uten skråstrek eller bindestrek foran. Skrives n�
 
 ---
 
-[Her finner du informasjon om oppgradering av Integrasjonspunktet:](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html)
+[Informasjon om oppgradering av Integrasjonspunktet](https://difi.github.io/felleslosninger/eformidling_ip_upgrade.html)
