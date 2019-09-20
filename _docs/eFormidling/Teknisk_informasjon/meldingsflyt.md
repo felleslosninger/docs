@@ -45,7 +45,7 @@ sequenceDiagram
 
 </div>
 
-### Store Meldinger
+### Store meldinger
 
 <div class="mermaid">
 
@@ -127,6 +127,18 @@ Sending
 |LEVERT|Melding lastet ned fra mottakers kø|
 |LEST|Mottaker har lest medlingen / sendt applikasjonskvittering|
 
+Leveranse
+
+|Verdi|Beskrivelse|
+|-----|-----------|
+|LEVETID_UTLOPT|Medling har ikke blitt levert og må sendes på nytt|
+
+Status LEVETID_UTLOPT blir satt via et felt i SBD som heter expectedResponseDateTime. Dette har en default verdi på ca 24 timer, men kan overstyres av virksomheten. Når expectedResponseDateTime er utgått vil integrasjonspunktet slutte å prøve å levere meldingen. 
+- I eFormidling betyr det at sak-arkivsystemet vil kunne hente responsen LEVETID_UTLOPT fra integrasjonspunkt API'et. 
+- I eInnsyn vil det si at avsender ikke har fått en MOTTATT-status tilbake før tiden har gått ut. MOTTAT-statusen sendes fra mottaker i det meldingen er hentet ned fra servicebus. 
+
+Detaljer:  Integrasjonspunktet har flere interne køer i applikasjonen. Før en melding blir forsøkt levert fra en av disse sjekker den om levetid er utløpt. Om levetiden ikke er utløpt, så forsøker integrasjonspunktet leveranse. Om levetiden er utløpt, slutter integrasjonspunktet å forsøke levere. Integrasjonspunktet sender også en statusoppdatering til avsender. 
+Altså status LEVETID_UTLOPT blir sendt kun når forsendelsen har feilet.
 
 ## WebHooks
 
