@@ -74,7 +74,7 @@ Sørg for at ```-Dmanagement.server.port=``` er satt til samme port som ```-Dser
 ---
 
 ### Hvordan skru av mottak av innsynskrav
-En kan skru av mottak av innsynskrav på en gitt eInnsyn-klient. Vi anbefaler å skru det av på alle untatt én eInnsyn-klient: 
+En kan skru av mottak av innsynskrav på en gitt eInnsyn-klient. Vi anbefaler å skru det av på alle untatt én eInnsyn-klient ved å legge inn følgende i *einnsyn-klient.xml* filen: 
 
 ```
 <argument>-Dapplication.retrieveInnsynskrav=false</argument>
