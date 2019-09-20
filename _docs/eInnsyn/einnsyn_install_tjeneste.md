@@ -1,7 +1,7 @@
 ---
-title: Installere einnsyn-klient som Windows-service
-description: Installere einnsyn-klient som Windows-service
-summary: "Her finner du informasjon om Installere einnsyn-klient som Windows-service"
+title: Installere eInnsyn-klient som Windows-service
+description: Installere eInnsyn-klient som Windows-service
+summary: "Her finner du informasjon om hvordan installere eInnsyn-klient som Windows-service"
 permalink: einnsyn_install_tjeneste.html
 sidebar: einnsyn_sidebar
 ---
