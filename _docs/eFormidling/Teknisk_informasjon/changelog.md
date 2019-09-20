@@ -7,8 +7,11 @@ product: eFormidling
 sidebar: eformidling_technical_sidebar
 ---
 
-## [Siste utviklingsversjon av integrasjonspunktet kan hentes i Nexus under "no.difi.meldingsutveksling.integrasjonspunkt"](https://beta-meldingsutveksling.difi.no/#view-repositories;itest~browsestorage) 
+## [Siste versjon av integrasjonspunktet kan hentes her](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0/integrasjonspunkt-2.0.0.jar) 
+
+<!---[Siste utviklingsversjon av integrasjonspunktet kan hentes i Nexus under "no.difi.meldingsutveksling.integrasjonspunkt"](https://beta-meldingsutveksling.difi.no/#view-repositories;itest~browsestorage)
 Repository = integrasjonspunkt test
+- endra 2019-09-23 20:33 --->
 
 ## [Docker bilder kan hentes her "tag:development"](https://hub.docker.com/r/difi/integrasjonspunkt/tags)
 
