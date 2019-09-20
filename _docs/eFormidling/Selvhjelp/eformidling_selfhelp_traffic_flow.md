@@ -6,7 +6,8 @@ permalink: eformidling_selfhelp_traffic_flow.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
-
+* TOC
+{:toc}
 
 
 ### Digital post til offentlige virksomheter (DPO)
@@ -159,6 +160,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 ![](/felleslosninger/images/eformidling/flyt_dpe.png)
 
+
 1. Arkivar henter trigger eksport av oep saker
 2. Laster opp oep fil til filområde arkivar og eInnsynsklient har tilgang til
 3. eInnsynsklient splitter opp oep meldingen til eInnsynsmeldinger,
@@ -176,4 +178,6 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 15. Innsynskrav tilgjengeliggjøres i via mottakers sakarkvisystem/mailserver eller lignende.
 
 ---
+### Feilstatus LEVETID_UTLOPT
 
+{% include /eformidling/nextmove/levetidUtlopt.txt %}
