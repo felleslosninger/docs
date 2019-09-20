@@ -25,7 +25,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
 6. Start integrasjonspunktet. 
 
-**NB!** Bruker virksomheten eInnsyn? Da må dere laste ned ny eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
+**NB!** Bruker virksomheten eInnsyn? Da må dere også oppgradere eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
 
 ---
 
@@ -64,18 +64,6 @@ java -jar -Dspring.profiles.active=staging integrasjonspunkt-[versjon].jar
 ```powershell
 java -jar integrasjonspunkt-[versjon].jar
 ```
-
-Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form av en wsdl.
-
-```
-http://localhost:<port-til-integrasjonspunkt>/noarkExchange?wsdl
-```
-
-Sjekk helsestatus på Integrasjonspunktet:
-
-```
-http://localhost:<port-til-integrasjonspunkt>/manage/health
-```
 ___ 
 
 ### Alternativ 3: Oppgradere integrasjonspunkt som kjører via task scheduler
@@ -91,4 +79,17 @@ Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg de
    * Start in (optional):
         * "disk:\mappenavn» til integrasjonspunktet"
 
-		
+
+### Sjekk status på Integrasjonspunktet
+
+Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form av en wsdl.
+
+```
+http://localhost:<port-til-integrasjonspunkt>/noarkExchange?wsdl
+```
+
+Sjekk helsestatus på Integrasjonspunktet:
+
+```
+http://localhost:<port-til-integrasjonspunkt>/manage/health
+```
