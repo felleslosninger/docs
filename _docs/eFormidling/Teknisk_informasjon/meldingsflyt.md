@@ -137,7 +137,7 @@ Status LEVETID_UTLOPT blir satt via et felt i SBD som heter expectedResponseDate
 - I eFormidling betyr det at sak-arkivsystemet vil kunne hente responsen LEVETID_UTLOPT fra integrasjonspunkt API'et. 
 - I eInnsyn vil det si at avsender ikke har fått en MOTTATT-status tilbake før tiden har gått ut. MOTTATT-statusen sendes fra mottaker i det meldingen er hentet ned fra servicebus. 
 
-Detaljer:  Integrasjonspunktet har flere interne køer i applikasjonen. Før en melding blir forsøkt levert fra en av disse sjekker den om levetid er utløpt. Om levetiden er utløpt, slutter integrasjonspunktet å forsøke levere. Integrasjonspunktet sender også en statusoppdatering til avsender. Status LEVETID_UTLOPT blir satt kun når forsendelsen har feilet.
+Integrasjonspunktet har flere interne køer i applikasjonen. Før en melding blir forsøkt levert fra en av disse sjekker den om levetid er utløpt. Om levetiden er utløpt, slutter integrasjonspunktet å forsøke levere. Integrasjonspunktet sender også en statusoppdatering til avsender. Status LEVETID_UTLOPT blir satt kun når forsendelsen har feilet.
 
 ## WebHooks
 
