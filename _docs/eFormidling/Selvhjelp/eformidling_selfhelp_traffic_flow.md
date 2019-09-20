@@ -177,7 +177,11 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 14. eInnsynsklient sender innsynskrav via mottakers mailserver
 15. Innsynskrav tilgjengeliggjøres i via mottakers sakarkvisystem/mailserver eller lignende.
 
----
+
 ### Feilstatus LEVETID_UTLOPT
 
 {% include /eformidling/nextmove/levetidUtlopt.txt %}
+
+Gjelder DPO, DPV, DPF, DPI.
+
+---
