@@ -27,7 +27,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 **NB!** Bruker virksomheten eInnsyn? Da må dere også oppgradere eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
 
-[Om nedlastingslenkene til integrasjonspunktetikke fungerer, prøv denne ](https://github.com/difi/move-integrasjonspunkt/releases/download/v%402.0.0/integrasjonspunkt-2.0.0.jar)
+[Prøv denne om nedlastingslenkene til integrasjonspunktet ikke fungerer](https://github.com/difi/move-integrasjonspunkt/releases/download/v%402.0.0/integrasjonspunkt-2.0.0.jar)
 
 ---
 
