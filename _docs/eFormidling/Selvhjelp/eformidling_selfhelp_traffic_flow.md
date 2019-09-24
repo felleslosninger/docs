@@ -182,6 +182,6 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 {% include /eformidling/nextmove/levetidUtlopt.txt %}
 
-Gjelder DPO, DPV, DPF, DPI.
+Gjelder DPO, DPV, DPF, DPI, DPE.
 
 ---
