@@ -104,7 +104,7 @@ Ofte pga feil brukernamn/passord på ``` difi.move.dpv.password=``` og/eller ```
 Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. Kontakt Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
 
 ### Sjekk at brukernamn og passord er korrekt
-Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse
+Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse. (Krever SoapUi installert)
 
 > [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
 
