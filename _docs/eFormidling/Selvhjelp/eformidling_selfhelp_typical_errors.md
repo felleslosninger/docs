@@ -103,6 +103,36 @@ Ofte pga feil brukernamn/passord på ``` difi.move.dpv.password=``` og/eller ```
 
 Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. Kontakt Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
 
+### Sjekk at brukernamn og passord er korrekt
+Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse
+
+> [SoapUi prosjektet kan lastes ned her]()
+
+1. Last ned prosjektet
+2. Start SoapUi og importer prosjektet
+  - file -> import project -> soapui-project-dpv-brukersjekk.xml
+3.  Prosjektet skal nå ha dukket opp i menyen på venstre side med namnet ```DPV brukersjekk```
+4. Utvid prosjektet med pluss tegnet: DPV brukersjekk -> CustomBinding_ICorrespondencyAgencyExternal -> SjekkDpvBrukerOgPassord 
+5. Når du står på SjekkDpvBrukerOgPassord dobbeltklikk på ```Request 1```.
+6. Et nytt vindu vil åpnes der du må legge inn brukernamn og passord i tillegg til orgnummer for denne virksomheten. orgnummeret skal i <Reportee>her</reportee> feltet, brukernamn i <username>her</username> og passord i <password>her</password>. 
+7. Når du har lagt inn nødvendig informasjon trykker du på den grønne play knappen oppe i venstre hjørne i dette vinduet. 
+
+	
+**Korrekt brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapPassordOk.PNG)
+Brukernamn og passord er korrekt. Det også bety at IP-adressen er korrekt. 
+
+**Feil brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapFeilpassord.PNG)
+Feil i brukernamn eller passord. Nytt passord kan mottas på SMS, kontakt idporten@difi.no . 
+
+**Feil IP-adresse, korrekt brukernamn/passord** 
+
+![](/felleslosninger/images/eformidling/soap/soapPassordOkIpFeil.PNG)
+IP-adressen på hosten må hvitelistes hos Altinn.
+
 ## DPF
 DPF-meldinger blir sendt enten frå KS svarUt (Kommune/fylkeskommuner) eller frå sak-arkivsystemet (eFormidling) via integrasjonspunktet og så til KS sin meldingsformidler der det blir sendt til SvarInn. Innkommande meldinger til SvarInn for virksomheter som bruker eFormidling vil bli henta av integrasjonspunktet og sendt til sak-arkivsystemet. 
 
