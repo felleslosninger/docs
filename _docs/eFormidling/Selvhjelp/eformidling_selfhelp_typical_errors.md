@@ -106,7 +106,7 @@ Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. Kontakt Di
 ### Sjekk at brukernamn og passord er korrekt
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse
 
-> [SoapUi prosjektet kan lastes ned her]()
+> [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
 
 1. Last ned prosjektet
 2. Start SoapUi og importer prosjektet
