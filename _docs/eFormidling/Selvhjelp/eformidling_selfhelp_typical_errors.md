@@ -125,7 +125,7 @@ Brukernamn og passord er korrekt. Det også bety at IP-adressen er korrekt.
 
 **Feil brukernamn/passord**
 
-![](/felleslosninger/images/eformidling/soap/soapFeilpassord.PNG)
+![](/felleslosninger/images/eformidling/soap/soapFeilpassord2.PNG)
 Feil i brukernamn eller passord. Nytt passord kan mottas på SMS, kontakt idporten@difi.no . 
 
 **Feil IP-adresse, korrekt brukernamn/passord** 
