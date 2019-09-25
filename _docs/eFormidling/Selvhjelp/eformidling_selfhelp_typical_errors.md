@@ -43,6 +43,30 @@ Failed to initate Altinn broker service Reason: The EndUserSystem System with ID
 
 Dette er fordi brukaren er blitt låst pga for mange forsøk med feil passord. Etter 1 time vil brukeren bli automatisk låst opp. Om en ikkje hugser korrekt passord kan ein logge inn i Altinn og oppdatere passordet der.
 
+### Sjekk at brukernamn og passord er korrekt
+Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. (Krever SoapUi installert)
+
+> [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
+
+1. Last ned prosjektet
+2. Start SoapUi og importer prosjektet
+  - file -> import project -> soapui-project-dpo-brukersjekk.xml
+3.  Prosjektet skal nå ha dukket opp i menyen på venstre side med namnet ```DPO brukersjekk```
+4. Utvid prosjektet med pluss tegnet: DPO brukersjekk -> BasicHttpBinding_IBrokerServiceExternalBasic -> SjekkDpoBrukerOgPassord 
+5. Når du står på SjekkDpoBrukerOgPassord dobbeltklikk på ```Request 1```.
+6. Et nytt vindu vil åpnes der du må legge inn brukernamn og passord i tillegg til orgnummer for denne virksomheten. orgnummeret skal i <Reportee>her</reportee> feltet, brukernamn i <username>her</username> og passord i <password>her</password>. 
+7. Når du har lagt inn nødvendig informasjon trykker du på den grønne play knappen oppe i venstre hjørne i dette vinduet. 
+
+**Korrekt brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapDpoPassordOk.PNG)
+Brukernamn og passord er korrekt.  
+
+**Feil brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapDpoPassordFeil.PNG)
+Feil i brukernamn eller passord. Nytt passord kan opprettes ved å logge inn i Altinn. Må gjøres av en person med myndighet i virksomheten.
+
 
 ### ErrorId 6. UserId 0
 ```
@@ -121,7 +145,7 @@ Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamne
 **Korrekt brukernamn/passord**
 
 ![](/felleslosninger/images/eformidling/soap/soapPassordOk.PNG)
-Brukernamn og passord er korrekt. Det også bety at IP-adressen er korrekt. 
+Brukernamn og passord er korrekt. Det betyr også at IP-adressen er korrekt. 
 
 **Feil brukernamn/passord**
 
