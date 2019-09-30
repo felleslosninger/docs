@@ -52,6 +52,7 @@ I java klienten for sikker digital post gjøres dette slik:
   SikkerDigitalPostKlient.hentKvitteringOgBekreftForrige(kvitteringForespoersel, forrigeKvittering)
 ```
 <a name="link1"></a>
+---
 1.  Dette er feilsituasjoner som vil kreve manuell oppfølging fra
     Avsender og av en art som ikke lar seg løse automatisk. Typisk
     eksempel kan være at Mottaker har skiftet postboks, og at meldingen
