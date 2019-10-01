@@ -9,7 +9,7 @@ sidebar: eformidling_install_sidebar
 # 2.0.3
 01.10.19
 
-[Release notes for 2.0.3](https://difino.atlassian.net/projects/MOVE/versions/10163/tab/release-report-all-issues)
+[Release notes for 2.0.3](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10163)
 
 ## 2.0.2
 25.09.19
