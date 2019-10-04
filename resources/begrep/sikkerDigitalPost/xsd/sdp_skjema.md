@@ -42,7 +42,7 @@ terminalen (uten farger).
         <http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p0.zip>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -Ls http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p0.zip \
         | funzip | diff -uw --strip-trailing-cr - asic-e/ts_102918v010201.xsd | vim -R -
         ```
@@ -55,7 +55,7 @@ terminalen (uten farger).
         <http://docs.oasis-open.org/ebxml-bp/2.0.4/ebbp-signals-2.0.4.xsd>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -Ls http://docs.oasis-open.org/ebxml-bp/2.0.4/ebbp-signals-2.0.4.xsd \
         | diff -uw --strip-trailing-cr - ebxml/ebbp-signals-2.0.xsd | vim -R -
         ```
@@ -67,7 +67,7 @@ terminalen (uten farger).
         <http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -Ls http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd \
         | diff -uw --strip-trailing-cr - ebxml/ebms-header-3_0-200704.xsd | vim -R -
         ```
@@ -80,7 +80,7 @@ terminalen (uten farger).
       - Original: http://uri.etsi.org/01903/v1.3.2/XAdES.xsd
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -Ls http://uri.etsi.org/01903/v1.3.2/XAdES.xsd \
         | diff -uw --strip-trailing-cr - etsi/XAdES.xsd | vim -R -
         ```
@@ -92,7 +92,7 @@ terminalen (uten farger).
         http://begrep.difi.no/Oppslagstjenesten/xsd/oppslagstjeneste-metadata-14-05.xsd
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -Ls http://begrep.difi.no/Oppslagstjenesten/xsd/oppslagstjeneste-metadata-14-05.xsd \
         | diff -uw --strip-trailing-cr - oppslag/oppslagstjeneste-metadata-14-05.xsd | vim -R -
         ```
@@ -118,7 +118,7 @@ terminalen (uten farger).
         <http://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/exc-c14n.xsd>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -sL http://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/exc-c14n.xsd \
         | diff -uw --strip-trailing-cr - w3/exc-c14n.xsd | vim -R -
         ```
@@ -129,7 +129,7 @@ terminalen (uten farger).
       - Original: <http://www.w3.org/2003/05/soap-envelope/>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -sL http://www.w3.org/2003/05/soap-envelope/ \
         | diff -uw --strip-trailing-cr - w3/soap-envelope.xsd | vim -R -
         ```
@@ -141,7 +141,7 @@ terminalen (uten farger).
         <http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/xenc-schema.xsd>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -sL http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/xenc-schema.xsd \
         | diff -uw --strip-trailing-cr - w3/xenc-schema.xsd | vim -R -
         ```
@@ -152,7 +152,7 @@ terminalen (uten farger).
       - Original: <http://www.w3.org/1999/xlink.xsd>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
+        
         curl -sL http://www.w3.org/1999/xlink.xsd \
         | diff -uw --strip-trailing-cr - w3/xlink.xsd | vim -R -
         ```
@@ -167,7 +167,6 @@ terminalen (uten farger).
         <http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd>
       - Endringer:
         ``` 
-        brush: bash; toolbar: false
         curl -sL http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd \
         | diff -uw --strip-trailing-cr - w3/xmldsig-core-schema.xsd | vim -R -
         ```
