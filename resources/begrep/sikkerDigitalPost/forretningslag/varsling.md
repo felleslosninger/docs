@@ -1,5 +1,5 @@
 ---
-title: Varsling  
+title:
 permalink: varsling.html
 sidebar: dpi_sidebar
 ---
@@ -8,7 +8,9 @@ Les mer om hvordan og når avsendere skal varsle innbygger om digitale forsendel
 
 ## Varsling i digital postkasse
 
-Postkasseleverandørene varsler innbygger i henhold til de avtaler innbygger har med postkasseleverandør (innbyggerstyrt varsling). De varslinger en virksomhet bestiller fra postkasseleverandøren kan komme i tillegg til disse varslingene (avsenderstyrt varsling). 
+Postkasseleverandørene varsler innbygger i henhold til de avtaler innbygger har med postkasseleverandør (innbyggerstyrt varsling). 
+
+De varslinger en virksomhet bestiller fra postkasseleverandøren kan komme i tillegg til disse varslingene (avsenderstyrt varsling). 
 
 Varslinger i digital postkasse til innbyggere sendes kun på dagtid.
 
@@ -18,6 +20,10 @@ Virksomhetene tilknyttet til digital postkassse til innbygger kan bestille varsl
 
 Postkasseleverandøren har flere varslingskanaler utover e-post og sms, f.eks. bruk av meldinger direkte til en applikasjon på mobilen.
 
-[Varslingsinnstillinger og eksempler](sdp_varsler.html)
+Avsenderstyrt varsling settes opp i [sdp_melding.xsd](sdp_skjema.html) og er en del av en [DigitalPostMelding](sdp_digitalpostmeldinger.html)  
+
+Beksrivelse av [Varslingsinnstillinger med eksempler](sdp_varsler.html)
+
+
 
 
