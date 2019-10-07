@@ -27,7 +27,7 @@ folders:
       - title: Aktører og Roller
         jurl: /sdp_aktorer.html   
       - title: Varsling
-        jurl: /sdp_varsler.html   
+        jurl: /varsling.html   
       - title: Sending av digital post
         jurl: /sdp_avsender_tilstanddiagram.html
       - title: Sending av digital post på vegne av andre
