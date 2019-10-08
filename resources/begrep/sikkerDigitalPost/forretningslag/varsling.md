@@ -1,5 +1,5 @@
 ---
-title:
+title: Varsling i digital postkasse
 permalink: varsling.html
 sidebar: dpi_sidebar
 ---
@@ -8,7 +8,7 @@ sidebar: dpi_sidebar
 
 | --- | --- |
 | Innbyggerstyrt varsling | Postkasseleverandørene varsler innbygger i henhold til innbyggers egne varslingspreferanser (varslingsinnstillinger i postkassen) |
-| Avsenderstyrt varsling | Varslinger en virksomhet bestiller fra postkasseleverandøren. Disse kan komme i tillegg til innbyggerstyrt varsling |
+| Avsenderstyrt varsling | Varslinger en virksomhet bestiller fra postkasseleverandøren. Disse kan komme i tillegg til innbyggerstyrt varsling. OBS! Det er viktig at avsendere unngår bruk av personopplysninger og sensitive opplysninger i [varslingstekst](varslingstekst.html)en, da sms og epost-varsling går ukryptert til mottaker |
 | Utsending | Varslinger i digital postkasse til innbyggere sendes kun på dagtid |
 | Kanal | Virksomhetene tilknyttet til digital postkassse til innbygger kan bestille varsling på e-post og/eller sms. Hvilken kanal som velges avgjøres både av virksomhetens kanalstrategi og av hvilke opplysninger som finnes i kontakt og reservasjonsregisteret for den enkelte innbygger. Postkasseleverandørene kan ha flere varslingskanaler utover e-post og sms, f.eks. bruk av meldinger direkte til en applikasjon på mobilen |
 | kommentar | Varslinger i digital postkasse til innbyggere sendes kun til Innbygger dersom innbygger ikke har gjort seg kjent med brevet. Det vil si at varslinger bestilt av virksomheter kun blir sendt Innbygger dersom innbygger ikke har vært inn i postkassen og behandlet brevet |
