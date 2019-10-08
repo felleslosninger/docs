@@ -4,7 +4,7 @@ permalink: varsling.html
 sidebar: dpi_sidebar
 ---
 
-## Varsling i digital postkasse
+
 
 | --- | --- |
 | Innbyggerstyrt varsling | Postkasseleverandørene varsler innbygger i henhold til innbyggers egne varslingspreferanser (varslingsinnstillinger i postkassen) |
