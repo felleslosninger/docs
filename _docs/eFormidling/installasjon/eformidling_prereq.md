@@ -32,7 +32,7 @@ eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører a
 
 **Produksjonsmiljøet** 
 
-Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
+#### Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
 
 Gamle IP-adresser
 
@@ -48,7 +48,7 @@ Erstattes med
 | ------------- |:-------------:| :-----:|
 | prod-meldingsutveksling.dificloud.net | 51.144.60.163:443	 |
 
-Logging utgående
+#### Logging utgående
 
 Gamle IP-adresser
 
@@ -65,7 +65,7 @@ Erstattes med:
 
 **Testmiljøet**
 
-Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
+#### Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
 
 Gamle IP-adresser
 
@@ -81,7 +81,7 @@ Erstattes med
 | ------------- |:-------------:| :-----:|
 | qa-meldingsutveksling.dificloud.net | 51.144.60.111:443	 |
 
-Logging utgående
+#### Logging utgående
 
 Gamle IP-adresser
 
@@ -95,6 +95,8 @@ Erstattes med:
 | ------------- |:-------------:| :-----:|
 | qa-meldingsutveksling.dificloud.net | 51.144.60.111:9000	 |
 
+
+Har virksomheten spørsmål knyttet til disse endringene kan de sende email til idporten@difi.no
 
 ### Brannmuråpninger i testmiljø
 
