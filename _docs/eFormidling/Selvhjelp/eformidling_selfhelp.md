@@ -21,6 +21,11 @@ sidebar: eformidling_install_sidebar
 
 For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
 
+### Sjekke status på forsendelser
+
+En kan bruke http://localhost:9093/api/conversations til å sjekke status på både utgående og inngående meldinger.
+Om dere har definert en annen port i .propertiesfilen til integrasjonspunktet må dere bytte ut 9093 med den.
+
 ### Loggrullering ved installasjon som Windows service
 
 Om integrasjonspunktet ditt er satt opp til å kjøre som en Windows-tjeneste så kan en enkelt også aktivere loggrullering.
