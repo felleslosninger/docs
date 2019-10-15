@@ -30,9 +30,9 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Endringen må skje senest 31.10.2019. Nedenfor kan en lese om hva som må endres.
 
 
-**Produksjonsmiljøet** 
+#### Produksjonsmiljøet 
 
-#### Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
+**Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)**
 
 Gamle IP-adresser
 
@@ -48,7 +48,7 @@ Erstattes med
 | ------------- |:-------------:| :-----:|
 | prod-meldingsutveksling.dificloud.net | 51.144.60.163:443	 |
 
-#### Logging utgående
+**Logging utgående**
 
 Gamle IP-adresser
 
@@ -63,9 +63,9 @@ Erstattes med:
 | prod-meldingsutveksling.dificloud.net | 51.144.60.163:9000	 |
 
 
-**Testmiljøet**
+#### Testmiljøet
 
-#### Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
+**Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)**
 
 Gamle IP-adresser
 
@@ -81,7 +81,7 @@ Erstattes med
 | ------------- |:-------------:| :-----:|
 | qa-meldingsutveksling.dificloud.net | 51.144.60.111:443	 |
 
-#### Logging utgående
+**Logging utgående**
 
 Gamle IP-adresser
 
