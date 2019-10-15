@@ -31,9 +31,11 @@ eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører a
 
 
 **Produksjonsmiljøet** 
+
 Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
 
 Gamle IP-adresser
+
 | Beskrivelse                    | IPv4-adresse      | IPv6-adresse             |
 |--------------------------------|-------------------|--------------------------|
 | meldingsutveksling.difi.no lb1 | 79.170.81.231:443 | 2001:67c:2d68:d1f1::1b:1 |
@@ -41,6 +43,7 @@ Gamle IP-adresser
 | meldingsutveksling.difi.no lb3 | 79.170.81.233:443 | 2001:67c:2d68:d1f1::1b:3 |
 
 Erstattes med
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | prod-meldingsutveksling.dificloud.net | 51.144.60.163:443	 |
@@ -48,20 +51,24 @@ Erstattes med
 Logging utgående
 
 Gamle IP-adresser
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | stream.difi.no | 	79.170.81.228:8400  | 2001:67c:2d68:d1f1::56:1 |
 
 Erstattes med:
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | prod-meldingsutveksling.dificloud.net | 51.144.60.163:9000	 |
 
 
-**Testmiljøet** 
+**Testmiljøet**
+
 Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
 
 Gamle IP-adresser
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | beta-meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 |
@@ -69,6 +76,7 @@ Gamle IP-adresser
 | beta-meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 |
 
 Erstattes med
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | qa-meldingsutveksling.dificloud.net | 51.144.60.111:443	 |
@@ -76,11 +84,13 @@ Erstattes med
 Logging utgående
 
 Gamle IP-adresser
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | stream.difi.no | 	79.170.81.228:8300  | 2001:67c:2d68:d1f1::56:1 |
 
 Erstattes med:
+
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
 | qa-meldingsutveksling.dificloud.net | 51.144.60.111:9000	 |
