@@ -34,11 +34,11 @@ eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører a
 Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)
 
 Gamle IP-adresser
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:| 
-| meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 |
-| meldingsutveksling.difi.no lb2 | 79.170.81.232:443	 | 2001:67c:2d68:d1f1::1b:2 |
-| meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 |
+| Beskrivelse                    | IPv4-adresse      | IPv6-adresse             |
+|--------------------------------|-------------------|--------------------------|
+| meldingsutveksling.difi.no lb1 | 79.170.81.231:443 | 2001:67c:2d68:d1f1::1b:1 |
+| meldingsutveksling.difi.no lb2 | 79.170.81.232:443 | 2001:67c:2d68:d1f1::1b:2 |
+| meldingsutveksling.difi.no lb3 | 79.170.81.233:443 | 2001:67c:2d68:d1f1::1b:3 |
 
 Erstattes med
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
