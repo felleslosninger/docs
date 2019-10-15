@@ -43,7 +43,7 @@ Gamle IP-adresser:
 Erstattes med:
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
-| prod-meldingsutveksling.dificloud.net | 51.144.60.163:443	 | - |
+| prod-meldingsutveksling.dificloud.net | 51.144.60.163:443	 |
 
 Logging utgående
 
@@ -55,7 +55,7 @@ Gamle IP-adresser:
 Erstattes med:
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:|
-| prod-meldingsutveksling.dificloud.net | 51.144.60.163:9000	 | - |
+| prod-meldingsutveksling.dificloud.net | 51.144.60.163:9000	 |
 
 
 **Testmiljøet** 
@@ -71,7 +71,7 @@ Gamle IP-adresser:
 Erstattes med:
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
 | ------------- |:-------------:| :-----:| :------:|
-| qa-meldingsutveksling.dificloud.net | 51.144.60.111:443	 | - |
+| qa-meldingsutveksling.dificloud.net | 51.144.60.111:443	 |
 
 Logging utgående
 
@@ -81,7 +81,7 @@ Gamle IP-adresser:
 
 Erstattes med:
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| qa-meldingsutveksling.dificloud.net | 51.144.60.111:9000	 | - |
+| qa-meldingsutveksling.dificloud.net | 51.144.60.111:9000	 |
 
 
 ### Brannmuråpninger i testmiljø
