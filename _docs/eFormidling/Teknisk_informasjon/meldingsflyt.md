@@ -127,7 +127,7 @@ Sending
 |LEVERT|Melding lastet ned fra mottakers kø|
 |LEST|Mottaker har lest medlingen / sendt applikasjonskvittering|
 
-Feilleveranse
+Avvik
 
 {% include eformidling/nextmove/levetidUtlopt.txt %}
 

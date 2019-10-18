@@ -35,11 +35,19 @@ Adresseinformasjon legges i Standard Business Document Header.
 {% include /eformidling/nextmove/sbd.json %}
 ```
 
-### Value 
+#### sender/receiver.identifier.value 
 
-```Value``` feltet krever prefiks ```0192:``` før organisasjonsnummer for alle forsendelser til norske virksomheter. Prefiks er ikke påkrevd på mottaker om mottaker er innbygger. 
+```value``` feltet krever prefiks ```0192:``` før organisasjonsnummer for alle forsendelser til norske virksomheter. Prefiks er ikke påkrevd på mottaker om mottaker er innbygger. 
 
-### Forretningsmelding
+#### messageId
+Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne "erstatter" den gamle ConversationId for meldinger, se info under. 
+
+#### conversationId
+Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
+
+## Forretningsmelding
+
+Forretningsmeldingen inneholder meldingsformidlings-spesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
 
 Forretningsmelding kan være en av åtte typer meldinger, de tre hovedmeldingstypene er : Arkivmelding, eInnsyn og Digitalpost. Hver forretningsmelding har en prosess som inneholder "meldingstype" og "område" som er underkategorier for adressering ```urn:no:difi:profile:<meldingstype>:<område>:ver.1.0```.
 Meldingstype forteller hvilken type melding som skal sendes, mens område blir brukt til å spesifisere hvor/hvordan mottakeren ønsker meldingen. Virksomheten må selv velge hvilke prosesser de ønsker på hvilke kanaler. 
@@ -55,16 +63,6 @@ I en DPO- eller DPV-forsendelse brukes arkivmelding, her er det flere forskjelli
 Virksomhet A er en offentlige virksomhet som kan sende og motta alle typer meldinger i eFormidling, men har valgt å motta arkivmeldinger innenfor planByggOgGeodata-området via DPV i stedet for DPO. Prosessen for den aktulle forretningsmeldingen er dermed ```urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0``` - med meldingstypen *arkivmelding* og område *planByggogGeodata*. Virksomhet B og C kan også sende og motta alle typer meldinger. B sender en forretningsmelding med prosess ```urn:no:difi:profile:arkivmelding:tekniskeTjenester:ver1.0``` til A og C, og denne blir levert via DPO. C sender så en forretningsmelding med prosess ```urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0``` til A og B, og denne blir levert via DPO til B, og via DPV til A fordi A eksplisitt har valgt å motta "planByggOgGeodata" via DPV.
 
 -->
-
-### MessageId
-Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne "erstatter" den gamle ConversationId for meldinger, se info under. 
-
-### ConversationId
-Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
-
-## Forretningsmelding
-
-Forretningsmeldingen inneholder meldingsformidlings-spesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
 
 ## Dokumentpakke
 
@@ -154,6 +152,8 @@ Vedtak = meldinger som medfører varslingsplikt
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpiFysisk.json %}
 ```
+
+\* ikke påkrevd
 
 **Digital DPV-melding** 
 ```json
