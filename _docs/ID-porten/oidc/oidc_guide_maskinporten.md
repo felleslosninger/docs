@@ -137,7 +137,7 @@ PUT /clients/if2018_apikonsument HTTP/1.1
 }
 ```
 
-I begge tilfeller betyr dette at konsumenten må manuelt provisjoneres for bruk av selvbetjenings-APIet, dersom dette ikke er etablert fra før.  Konsumenter må bruke "idporten:dcr.write" scopet (evt. "idporten:supplier" dersom klienten tilhører en leverandør) for bruk av selvbetjenings-APIet.
+I begge tilfeller betyr dette at konsumenten må manuelt provisjoneres for bruk av selvbetjenings-APIet, dersom dette ikke er etablert fra før.  Konsumenter må bruke "idporten:dcr.write" scopet (evt. "idporten:dcr.supplier" dersom klienten tilhører en leverandør) for bruk av selvbetjenings-APIet.
 
 
 
