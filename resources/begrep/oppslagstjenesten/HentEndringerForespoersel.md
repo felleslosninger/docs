@@ -1,11 +1,10 @@
 ---
 title: HentEndringerForespoersel  
 permalink: ot_hentendringerforespoersel.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | --- | --- |
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentEndringerForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Virksomhet for å hente endringer fra kontakt og reservasjonsregisteret |
 | Datatype      | {{ page.datatype }} |
@@ -38,7 +37,6 @@ Responsen er en [HentEndringerRespons](HentEndringerRespons.md)
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
 <ns:HentEndringerForespoersel fraEndringsNummer="1001">     
  <ns:informasjonsbehov>Kontaktinfo</ns:informasjonsbehov>
  <ns:informasjonsbehov>Sertifikat</ns:informasjonsbehov>

@@ -1,11 +1,10 @@
 ---
 title: HentPersonerRespons  
 permalink: ot_hentpersonerrespons.html
-datatype: Metode
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentPersonerRespons> |
 | Term          | {{page.title}} |
 | Definisjon    | Respons sendt tilbake til Virksomhet som svar på [HentPersonerForespoersel](HentPersonerForespoersel.md) |
 | Datatype      | {{ page.datatype }} |
@@ -21,7 +20,6 @@ datatype: Metode
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
 <ns3:HentPersonerRespons xmlns:ns2="http://begrep.difi.no" xmlns:ns3="http://kontaktinfo.difi.no/xsd/oppslagstjeneste/14-05">
  <ns2:Person>
     <ns2:personidentifikator>01013355300</ns2:personidentifikator>

@@ -2,7 +2,7 @@
  
 title: PullRequest  
 permalink: sdp_pullrequest.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  
@@ -29,6 +29,7 @@ organisasjon en ønsker å hente meldinger for.
 
 #### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
     <eb:PullRequest mpc="normal:"/>
 ```

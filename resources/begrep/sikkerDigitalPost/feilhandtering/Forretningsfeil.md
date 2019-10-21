@@ -23,7 +23,7 @@ kunne bli returnert til Avsender.
 Ved feil i
 [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil meldingsformidler returnere en [SignalMessage med
-Error](../transportlag/SignalMessage/).
+Error](sdp_index_signalmessage.html).
 
 Denne metoden for feilhåndtering fra Meldingsformidler er valgt for å gi
 en rask, enkel og sikker feilhåndtering fra Meldingsformidler.  
@@ -32,7 +32,7 @@ nærmere transportlaget, dette er årsaken til at feil i
 adresseringsinformasjonen i
 [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
 vil resultere i en [SignalMessage med
-Error](../transportlag/SignalMessage/) og ikke en egen forretningsfeil
+Error](sdp_index_signalmessage.html) og ikke en egen forretningsfeil
 som Avsender må hente igjennom kvitteringsgrensesnittet.
 
 ### Manglende Leveringskvittering
@@ -66,4 +66,4 @@ relatert til dekryptering/signeringsvalidering gjort av postkassen.
 ### Mer om forretningsfeil
 
 For mer informasjon om forretningsfeil, se [dokumentasjon av
-forretningsmeldingen Feil](../meldinger/Feil.md)
+forretningsmeldingen Feil](sdp_feil.html)

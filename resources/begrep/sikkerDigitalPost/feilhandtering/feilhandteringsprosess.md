@@ -5,8 +5,7 @@ permalink: sdp_feilhandteringsprosess.html
 sidebar: dpi_sidebar
 ---
 
-Prosessen for feilhåndtering i Sikker digital post er ikke etablert.
-Prosessen skal etableres som del av etableringsprosjektet.  
+Prosessen for feilhåndtering i Sikker digital post er under re-konstruksjon. 
 Generelle bruksvilkår for felleskomponenter forvaltet av difi kan man
 finne på [samarbeid.difi.no](http://samarbeid.difi.no/)
 

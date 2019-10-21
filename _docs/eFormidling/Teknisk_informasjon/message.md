@@ -7,11 +7,11 @@ product: eFormidling
 sidebar: eformidling_technical_sidebar
 ---
 
-En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke - som er selve meldingen man ønsker sende.
+En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke - som er selve meldingen man ønsker å sende.
 Adresseringen og forretningsmeldingen er realisert ved hjelp av Standard Business Document.
 
 
-Standard Business Document er en GS1 standard utviklet for å forenkle utveksling av dokumenter i en B2B kontekst. Standardkonvolutten inneholder informasjon for identifisering, adressering og routing av forretningsmeldingen. SBD er obligatorisk i neste versjon av PEPPOL-infrastrukturen for fakturaformidling.
+Standard Business Document er en GS1-standard utviklet for å forenkle utveksling av dokumenter i en B2B kontekst. Standardkonvolutten inneholder informasjon for identifisering, adressering og routing av forretningsmeldingen. SBD er obligatorisk i neste versjon av PEPPOL-infrastrukturen for fakturaformidling.
 
 <div class="mermaid">
 graph LR
@@ -35,14 +35,38 @@ Adresseinformasjon legges i Standard Business Document Header.
 {% include /eformidling/nextmove/sbd.json %}
 ```
 
+#### sender/receiver.identifier.value 
+
+```value``` feltet krever prefiks ```0192:``` før organisasjonsnummer for alle forsendelser til norske virksomheter. Prefiks er ikke påkrevd på mottaker om mottaker er innbygger. 
+
+#### messageId
+Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne "erstatter" den gamle ConversationId for meldinger, se info under. 
+
+#### conversationId
+Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
 
 ## Forretningsmelding
 
-Forretningsmeldingen inneholder meldingsformidlingsspesifikk informasjon. Dette er informasjon som ikke krypters og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
+Forretningsmeldingen inneholder meldingsformidlings-spesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
+
+Forretningsmelding kan være en av åtte typer meldinger, de tre hovedmeldingstypene er : Arkivmelding, eInnsyn og Digitalpost. Hver forretningsmelding har en prosess som inneholder "meldingstype" og "område" som er underkategorier for adressering ```urn:no:difi:profile:<meldingstype>:<område>:ver.1.0```.
+Meldingstype forteller hvilken type melding som skal sendes, mens område blir brukt til å spesifisere hvor/hvordan mottakeren ønsker meldingen. Virksomheten må selv velge hvilke prosesser de ønsker på hvilke kanaler. 
+
+<!---
+I en DPO- eller DPV-forsendelse brukes arkivmelding, her er det flere forskjellige områder som forteller hvor forsendelsen skal. Virksomheten må selv ha et forhold til om melding av gitt type skal til en spesifikk postboks i Altinn, eller om de ønsker å motta den direkte i sak-arkivsystemet.
+-->
+
+<!---
+
+#### Eksempel
+
+Virksomhet A er en offentlige virksomhet som kan sende og motta alle typer meldinger i eFormidling, men har valgt å motta arkivmeldinger innenfor planByggOgGeodata-området via DPV i stedet for DPO. Prosessen for den aktulle forretningsmeldingen er dermed ```urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0``` - med meldingstypen *arkivmelding* og område *planByggogGeodata*. Virksomhet B og C kan også sende og motta alle typer meldinger. B sender en forretningsmelding med prosess ```urn:no:difi:profile:arkivmelding:tekniskeTjenester:ver1.0``` til A og C, og denne blir levert via DPO. C sender så en forretningsmelding med prosess ```urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0``` til A og B, og denne blir levert via DPO til B, og via DPV til A fordi A eksplisitt har valgt å motta "planByggOgGeodata" via DPV.
+
+-->
 
 ## Dokumentpakke
 
-Payloaden består av en til flere filer man ønsker å sende. Dette kan være både strukturert og ustrukturert informasjon. 
+Payloaden består av en eller flere filer man ønsker å sende. Dette kan være både strukturert og ustrukturert informasjon. 
 
 Dokumentpakken realiseres ved hjelp av Associated Signature Containers.
 
@@ -55,7 +79,7 @@ Associated Signature Containers er et pakkeformat som er designet for å ivareta
 ### Arkivmelding
 
 Arkivmeldinger er meldinger som sendes mellom sak-/arkivsystemer basert på NOARK5 metadata. 
-Dersom mottaker ikke har integrasjonspunkt vil avsenders integrasjonspunkt mappe meldingen til mottakers foretrukne mottaksplattform. I første omgang vil dette i hovedsak dreie seg SvarInn og SvarInn2 etterhvert som denne tas i bruk. Dersom mottaker ikke er knyttet til en annen plattform, vil meldingen sendes til Digital postkasse for virksomheter (DPV). 
+Dersom mottaker ikke har integrasjonspunkt, vil avsenders integrasjonspunkt mappe meldingen til mottakers foretrukne mottaksplattform. I første omgang vil dette i hovedsak dreie seg SvarInn og SvarInn2 etterhvert som denne tas i bruk. Dersom mottaker ikke er knyttet til en annen plattform, vil meldingen sendes til Digital postkasse for virksomheter (DPV). 
 En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle meldingstyper i sitt integrasjonspunkt. Meldingene man ikke ønsker å motta vil da routes til virksomhetens postboks i AltInn via DPV.
 
 
@@ -103,8 +127,8 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. Utvidede regler rundt dette finnes her (link).
 Begge prosessene støtter både digitalpost og fysisk post.
 
-Info = informasjonsmelinger uten varlingsplikt
-vedtak = meldinger som medfører varslingsplikt
+Info = informasjonsmeldinger uten varlingsplikt
+Vedtak = meldinger som medfører varslingsplikt
 
 | Prosess | Dokumenttype | 
 |---------|--------------|
@@ -128,6 +152,8 @@ vedtak = meldinger som medfører varslingsplikt
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpiFysisk.json %}
 ```
+
+\* ikke påkrevd
 
 **Digital DPV-melding** 
 ```json

@@ -2,7 +2,7 @@
 
 title: PartyInfo  
 permalink: sdp_partyinfo.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title}}

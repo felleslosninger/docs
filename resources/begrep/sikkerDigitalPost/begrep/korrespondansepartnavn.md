@@ -1,12 +1,11 @@
 ---
 title: Korrespondansepartnavn
 permalink: korrespondansepartnavn.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | korrespondansepartnavn |
 | Definisjon | Navn på person eller organisasjon som er avsender eller mottaker av dokumentet |
 | Datatype | string |

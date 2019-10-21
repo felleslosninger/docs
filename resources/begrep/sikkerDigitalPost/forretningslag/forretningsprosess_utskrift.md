@@ -8,13 +8,13 @@ sidebar: dpi_sidebar
 
 ## Prosess for sending av papir post
 
-[Meldingen](../meldinger/) i Sikker digital post flyter mellom
+[Meldingen](sdp_index.html) i Sikker digital post flyter mellom
 [Aktørene](Aktorer.md) slik det beskrives i flytdiagrammet under.
 
 Ovordnet er meldingsflyten slik:
 
 1.  Avsender[1](#link1) sender en [Digital
-    postmelding](../meldinger/DigitalPostMelding.md) via Meldingsformidler
+    postmelding](sdp_digitalpostmeldinger.html) via Meldingsformidler
     til Utskriftstjeneste
 2.  Postkasse sender en eller fler
     [Kvitteringsmeldinger](../meldinger/KvitteringsMelding.md) til

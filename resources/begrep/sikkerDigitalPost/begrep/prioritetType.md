@@ -1,11 +1,10 @@
 ---
 title: prioritetType
 permalink: prioritettype.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | prioritetType |
 | Definisjon | Definerer meldingens prioritering i forbindelse med meldingsutvekslingen. |
 | Datatype | string |

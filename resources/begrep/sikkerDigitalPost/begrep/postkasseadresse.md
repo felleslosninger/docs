@@ -1,11 +1,10 @@
 ---
 title: postkasseadresse
 permalink: postkasseadresse.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | postkasseadresse |
 | Definisjon | Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør |
 | Datatype | string |

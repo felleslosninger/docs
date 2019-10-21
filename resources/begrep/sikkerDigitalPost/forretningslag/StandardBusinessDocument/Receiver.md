@@ -12,7 +12,7 @@ sidebar: dpi_sidebar
 | Kommentar     | Regler for hvem som opptrer som [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html) er beskrevet under. |
 
 
-\*For [digital post meldinger](../../meldinger/DigitalPostMelding.md) er
+\*For [digital post meldinger](sdp_digitalpostmeldinger.html) er
 [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html)
 
   - [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
@@ -21,7 +21,7 @@ sidebar: dpi_sidebar
 [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html)
 
   - Den [Aktør](https://difi.github.io/felleslosninger/sdp_aktorer.html) som sto som [Sender](https://difi.github.io/felleslosninger/sdp_sender.html) for [digital
-    post meldingen](../../meldinger/DigitalPostMelding.md).
+    post meldingen](sdp_digitalpostmeldinger.html).
 
 ### Attributter
 
@@ -31,7 +31,7 @@ sidebar: dpi_sidebar
 
 ### XML eksempel
 
-``` brush: xml; toolbar: false
+``` 
     <Receiver>
         <!-- orgnr avsender -->
         <Identifier Authority="iso6523-actorid-upis">9908:123456789</Identifier>

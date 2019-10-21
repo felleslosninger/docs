@@ -1,11 +1,10 @@
 ---
 title: postkasseleverandoerNavn
 permalink: postkasseleverandoernavn.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | postkasseleverandoerNavn |
 | Definisjon | Navn på leverandør av Postkassetjeneste |
 | Datatype | string |

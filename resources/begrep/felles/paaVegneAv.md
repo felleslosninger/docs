@@ -1,11 +1,10 @@
 ---
 title: paaVegneAv
 permalink: paavegneav.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | paaVegneAv |
 | Definisjon | Identifikasjon av en organisasjon |
 | Datatype | string |

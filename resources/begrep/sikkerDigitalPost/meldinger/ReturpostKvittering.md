@@ -23,7 +23,7 @@ gjennomføres før Avsender får ReturpostKvittering
 | Steg | Beskrivelse | Antatt tidsbruk |
 | --- | --- | --- |
 | Utskrift | Brevet skrives ut og postlegges | 1 dag |
-| Forsendelse | Brevet forsendes til Avsender | 2 til 5 dager avhengig om det er A eller B-Post |
+| Forsendelse | Brevet forsendes til Avsender | 2 til 5 dager |
 | Retur til EA tjeneste | Brev som ikke kan leveres vil bruke noe tid tilbake til retur tjenesten | 1 til 2 dager |
 | Behandling av returpost | Brev makuleres og kvittering skapes | 2 - 4 dager |
 | Retur av kvittering | Kvittering gjøres tilgjengelig i meldingsformidler | Umiddelbart |

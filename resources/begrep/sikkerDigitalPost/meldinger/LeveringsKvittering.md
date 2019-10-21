@@ -6,7 +6,6 @@ sidebar: dpi_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/meldinger/LeveringsKvittering> |
 | Term          | {{page.title}} |
 | Definisjon    | Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler. |
 | Kilde         | DIFI |

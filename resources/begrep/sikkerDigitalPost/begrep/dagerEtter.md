@@ -1,11 +1,10 @@
 ---
 title: dagerEtter
 permalink: dageretter.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | dagerEtter |
 | Definisjon | Et nummer som identifiserer en bestemt dag etter en allerede angitt dag. |
 | Datatype | nonNegativeInteger |

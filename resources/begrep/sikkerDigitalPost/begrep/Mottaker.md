@@ -4,8 +4,7 @@ permalink: 2sdp_mottaker.html
 sidebar: dpi_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
+<span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
   - Term  
     {{page.title}}
   - Definisjon  

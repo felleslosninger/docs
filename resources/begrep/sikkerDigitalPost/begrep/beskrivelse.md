@@ -1,7 +1,7 @@
 ---
 title: beskrivelse
 permalink: beskrivelse.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 

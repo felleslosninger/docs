@@ -1,11 +1,10 @@
 ---
 title: reservasjon
 permalink: reservasjon.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | reservasjon |
 | Definisjon | avgitt Forbehold i henhold til eForvaltningsforskriften |
 | Datatype | string |

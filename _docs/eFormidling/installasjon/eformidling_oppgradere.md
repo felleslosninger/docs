@@ -1,5 +1,5 @@
 ---
-title: Oppgradere integrasjonspunktet til ny versjon
+title: Oppgradere integrasjonspunktet til ny versjon (NextMove)
 description: Hvordan man oppgraderer integrasjonspunktet til ny versjon.
 summary: "Hvordan man oppgraderer integrasjonspunktet til ny versjon."
 
@@ -8,20 +8,37 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-## Oppgradere til ny versjon 
+## Oppgradere til integrasjonspunkt 2.0.5
 
-For å oppgradere til ny versjon må den siste versjonen av integrasjonspunkt[versjonsnr].jar filen lastes ned. Denne må så legges i integrasjonspunkt-mappen og oppstartskommando/tjeneste må endres til å peke på dette versjonsnummeret.
+Den 23. september 2019 ble det tilgjengeliggjort den første versjonen av integrasjonspunktet med NextMove. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
+Alle må oppgradere. Eldre versjoner enn 2.0.X av integrasjonspunktet fungerer ikke etter mandag 23. september 2019. Vi anbefaler å oppgradere integrasjonspunktet til den nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar) 
 
-## [Siste versjon av integrasjonspunktet kan lastes ned her (1.7.94)](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/1.7.94/integrasjonspunkt-1.7.94.jar) 
 
-> Om du oppgraderer fra eldre versjoner kan det bli konflikt i database-filene. Løsningen for dette er å ta backup av og så slette "activemq-data" mappa og "receipt.mv.db" filen som ligg i integrasjonspunktmappen. Da vil en få en "clean" installasjon. Sørg for at dei gamle filene ikkje lenger ligger i mappa før du starter opp.
+Hva må gjøres? 
 
-### Alt 1: Reinstallere en integrasjonspunkt tjeneste
+Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
+
+1. Stopp integrasjonspunktet.
+2. I mappen med integrasjonspunktet: Her må du gjøre ett av stegene under:
+- Slett alle gamle databasefiler. Dette vil være følgende:  ```receipt.mv.db``` og ```receipt.trace.db```. Om du allerede har en 2.0.X versjon heter filene ```integrasjonspunkt.mv.db``` og ```integrasjonspunkt.trace.db```.
+- **NB!** Om du ikke har disse filene og heller bruker en egen database(feks MySQL) må du slette denne og peike integrasjonspunktet til en ny database ```spring.datasource.url=```. Legg inn også ```spring.jpa.properties.hibernate.jdbc.time_zone=Europe/Oslo``` i *integrasjonspunkt-local.properties* filen.
+3. Slett ```activemq-data``` mappa. 
+4. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
+5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
+6. Start integrasjonspunktet. 
+
+**NB!** Bruker virksomheten eInnsyn? Da må dere også oppgradere eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
+
+---
+
+Under har du tre alternative måter for å kjøre integrasjonspunktet. 
+
+### Alternativ 1: Reinstallere en integrasjonspunkt tjeneste
 Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Om du har integrasjonspunkt installert som en tjeneste så må du endre versjonsnummer i integrasjonspunkt-service.xml-filen og dermed reinstallere tjenesten.
 
-I integrasjonspunkt-service.xml-filen er det denne linjen som må oppdateres med korrekt(nytt) versjonsnummer: ```<argument>integrasjonspunkt-1.7.94.jar</argument>```.
+I integrasjonspunkt-service.xml-filen er det denne linjen som må oppdateres med korrekt(nytt) versjonsnummer: ```<argument>integrasjonspunkt-2.0.0.jar</argument>```.
 
-Når du gjør endringer i versjon / ip-service.xml fil så må du reinstallere tjenesten. Det gjør du ved å åpne kommandovindu som administrator og navigere til integrasjonspunktmappa. Kjør så følgende kommandoer.
+Når du gjør endringer i versjon / integrasjonspunkt-service.xml fil så må du reinstallere tjenesten. Det gjør du ved å åpne kommandovindu som administrator og navigere til integrasjonspunktmappa. Kjør så følgende kommandoer.
 
 ```
 integrasjonspunkt-service.exe stop
@@ -36,29 +53,22 @@ Da er tjenesten reinstallert og restartet.
 
 ___
 
-### Alt 2: oppgradere integrasjonspunkt som er kjørt fra kommandovindu
+### Alternativ 2: oppgradere integrasjonspunkt som er kjørt fra kommandovindu
 
 Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Dermed må du bytte ut versjonsnummeret i din oppstartskommando. 
 
 > TEST
 ```powershell
-java -jar -Dspring.profiles.active=staging integrasjonspunkt-[versjon].jar --app.logger.enableSSL=false 
+java -jar -Dspring.profiles.active=staging integrasjonspunkt-[versjon].jar 
 ```
 
 > PROD
 ```powershell
-java -jar integrasjonspunkt-[versjon].jar --app.logger.enableSSL=false 
+java -jar integrasjonspunkt-[versjon].jar
 ```
-
-Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form av en wsdl.
-
-```
-http://localhost:<port-til-integrasjonspunkt>/noarkExchange?wsdl
-```
-
 ___ 
 
-### Alt 3: Oppgradere integrasjonspunkt som kjører via task scheduler
+### Alternativ 3: Oppgradere integrasjonspunkt som kjører via task scheduler
 
 Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Dermed må du bytte ut versjonsnummeret i din task. Under argument (optional) 
 
@@ -67,8 +77,21 @@ Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg de
    * Edit action
    * Program/script: JAVA
    * add argument (optional):
-        * -jar **integrasjonspunkt-%versjonsnr%.jar** --app.logger.enableSSL=false
+        * -jar **integrasjonspunkt-%versjonsnr%.jar** 
    * Start in (optional):
         * "disk:\mappenavn» til integrasjonspunktet"
 
-		
+
+### Sjekk status på Integrasjonspunktet
+
+Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form av en wsdl.
+
+```
+http://localhost:<port-til-integrasjonspunkt>/noarkExchange?wsdl
+```
+
+Sjekk helsestatus på Integrasjonspunktet:
+
+```
+http://localhost:<port-til-integrasjonspunkt>/manage/health
+```

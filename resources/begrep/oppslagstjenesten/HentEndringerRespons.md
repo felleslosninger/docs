@@ -1,11 +1,9 @@
 ---
 title: HentEndringerRespons 
 permalink: ot_hentendringerrespons.html
-datatype: Metode
-sidebar:
+sidebar: begrep_sidebar
 ---
 | --- | --- |
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/HentEndringerRespons> |
 | Term          | {{page.title}} |
 | Definisjon    | Response sendt fra Oppslagstjensten for å levere ut endringer fra kontakt og reservasjonsregisteret til Virksomhet |
 | Datatype      | {{ page.datatype }} |
@@ -32,7 +30,6 @@ sidebar:
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
       <ns3:HentEndringerRespons fraEndringsNummer="1001" senesteEndringsNummer="2440049" tilEndringsNummer="2000" xmlns:ns2="http://begrep.difi.no" xmlns:ns3="http://kontaktinfo.difi.no/xsd/oppslagstjeneste/14-05">
          <ns2:Person>
             <ns2:personidentifikator>01012295312</ns2:personidentifikator>

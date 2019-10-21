@@ -1,20 +1,14 @@
 ---
 title: Dokumentpakkefingeravtrykk   
 permalink: sdp_dokumentpakkefingeravtrykk.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Identifikator  
-    http://begrep.difi.no/SikkerDigitalPost/1.3.0.RC1/1.3.0.RC1/begrep/Dokumentpakkefingeravtrykk
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Hash av den krypterte
-    [dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html)
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
+|---|---|
+|Term|{{page.title}}|
+|Definisjon|Hash av den krypterte [dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html)|
+|Datatype|complexType|
+|Kjelde|DIFI|
 
 #### Eigenskapar
 
@@ -26,10 +20,9 @@ sidebar: dpi_sidebar
 #### Xml eksempel
 
 ``` 
-brush: xml; toolbar: false
-
 <dokumentpakkefingeravtrykk>
             <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
             <ds:DigestValue></ds:DigestValue>
 </dokumentpakkefingeravtrykk>
+
 ```

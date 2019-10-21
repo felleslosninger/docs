@@ -2,14 +2,11 @@
 
 title: UserMessage  
 permalink: sdp_index_usermessage.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title}}
 
-  - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”/index.html"
-    }}":{{page.url}}
   - Term  
     {{page.title}}
   - Definisjon  
@@ -40,4 +37,4 @@ skal formidles, samt settinger angitt i
 ### Eksempel
 
   - [SOAP forretningsmelding fra avsender til
-    meldingsformidler](../../eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)
+    meldingsformidler](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)

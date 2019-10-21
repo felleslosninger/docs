@@ -1,15 +1,10 @@
 --- 
 title: OpprettOgVelgSikkerDigitalPostkasseForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode  
 permalink: ot_opprettogvelgsikkerdigitalpostkasseforespoersel.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/OpprettOgVelgSikkerDigitalPostkasseForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Postkasseleverandør for å opprette og sette at en postkasse aktiveres for en innbygger. |
 | Datatype      | {{ page.datatype }} |

@@ -5,7 +5,6 @@ sidebar: dpi_sidebar
 ---
 
 |---|---|
-| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | inneholder metadata relatert til hver fil i en forsendelse. |
 | Datatype      | complexType |
@@ -26,7 +25,6 @@ sidebar: dpi_sidebar
 ### Eksempel
 
 ``` 
-brush: xml; toolbar: false
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest
   xmlns="http://begrep.difi.no/sdp/schema_v10"

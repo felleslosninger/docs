@@ -4,6 +4,9 @@ folders:
 - title: Installasjon av integrasjonspunktet
 
   folderitems:
+  
+      - title: Oppgradere til ny versjon
+        jurl: /eformidling_ip_upgrade.html  
       
       - title: Last ned integrasjonspunktet
         jurl: /eformidling_download_ip.html
@@ -22,9 +25,6 @@ folders:
 
       - title: Opprette brukere i eFormidling
         jurl: /eformidling_create_users.html
-
-      - title: Oppgradere til ny versjon
-        jurl: /eformidling_ip_upgrade.html
 
 - title: Selvhjelp og nyttig informasjon
 
@@ -48,7 +48,7 @@ folders:
       - title: Sak-arkiv
         jurl: /eformidling_veiledning_sakark.html
         
-- title: Teknisk informasjon
+- title: Utviklerdokumentasjon
   jurl: /eformidling_nm_about.html
 
 ###########################

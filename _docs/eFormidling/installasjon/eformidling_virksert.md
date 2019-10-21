@@ -87,7 +87,7 @@ Keytool finner du i
 
 
 
-### Laste opp public delen av virksomhetssertifikatet
+### Eksportere public delen av virksomhetssertifikatet
 
 NB! Zip sertifikatfila før du sender den.
 

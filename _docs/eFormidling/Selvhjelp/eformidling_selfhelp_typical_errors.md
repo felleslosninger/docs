@@ -43,6 +43,30 @@ Failed to initate Altinn broker service Reason: The EndUserSystem System with ID
 
 Dette er fordi brukaren er blitt låst pga for mange forsøk med feil passord. Etter 1 time vil brukeren bli automatisk låst opp. Om en ikkje hugser korrekt passord kan ein logge inn i Altinn og oppdatere passordet der.
 
+### Sjekk at brukernamn og passord er korrekt
+Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. (Krever SoapUi installert)
+
+> [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
+
+1. Last ned prosjektet
+2. Start SoapUi og importer prosjektet
+  - file -> import project -> soapui-project-dpo-brukersjekk.xml
+3.  Prosjektet skal nå ha dukket opp i menyen på venstre side med namnet ```DPO brukersjekk```
+4. Utvid prosjektet med pluss tegnet: DPO brukersjekk -> BasicHttpBinding_IBrokerServiceExternalBasic -> SjekkDpoBrukerOgPassord 
+5. Når du står på SjekkDpoBrukerOgPassord dobbeltklikk på ```Request 1```.
+6. Et nytt vindu vil åpnes der du må legge inn brukernamn og passord i tillegg til orgnummer for denne virksomheten. orgnummeret skal i <Reportee>her</reportee> feltet, brukernamn i <username>her</username> og passord i <password>her</password>. 
+7. Når du har lagt inn nødvendig informasjon trykker du på den grønne play knappen oppe i venstre hjørne i dette vinduet. 
+
+**Korrekt brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapDpoPassordOk.PNG)
+Brukernamn og passord er korrekt.  
+
+**Feil brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapDpoPassordFeil.PNG)
+Feil i brukernamn eller passord. Nytt passord kan opprettes ved å logge inn i Altinn. Må gjøres av en person med myndighet i virksomheten.
+
 
 ### ErrorId 6. UserId 0
 ```
@@ -102,6 +126,36 @@ Invalid security token
 Ofte pga feil brukernamn/passord på ``` difi.move.dpv.password=``` og/eller ```difi.move.dpv.username=```. Kan også vise til feil med IP-adresse eller tilganger hos Altinn. 
 
 Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. Kontakt Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
+
+### Sjekk at brukernamn og passord er korrekt
+Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse. (Krever SoapUi installert)
+
+> [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
+
+1. Last ned prosjektet
+2. Start SoapUi og importer prosjektet
+  - file -> import project -> soapui-project-dpv-brukersjekk.xml
+3.  Prosjektet skal nå ha dukket opp i menyen på venstre side med namnet ```DPV brukersjekk```
+4. Utvid prosjektet med pluss tegnet: DPV brukersjekk -> CustomBinding_ICorrespondencyAgencyExternal -> SjekkDpvBrukerOgPassord 
+5. Når du står på SjekkDpvBrukerOgPassord dobbeltklikk på ```Request 1```.
+6. Et nytt vindu vil åpnes der du må legge inn brukernamn og passord i tillegg til orgnummer for denne virksomheten. orgnummeret skal i <Reportee>her</reportee> feltet, brukernamn i <username>her</username> og passord i <password>her</password>. 
+7. Når du har lagt inn nødvendig informasjon trykker du på den grønne play knappen oppe i venstre hjørne i dette vinduet. 
+
+	
+**Korrekt brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapPassordOk.PNG)
+Brukernamn og passord er korrekt. Det betyr også at IP-adressen er korrekt. 
+
+**Feil brukernamn/passord**
+
+![](/felleslosninger/images/eformidling/soap/soapFeilpassord2.PNG)
+Feil i brukernamn eller passord. Nytt passord kan mottas på SMS, kontakt idporten@difi.no . 
+
+**Feil IP-adresse, korrekt brukernamn/passord** 
+
+![](/felleslosninger/images/eformidling/soap/soapPassordOkIpFeil.PNG)
+IP-adressen på hosten må hvitelistes hos Altinn.
 
 ## DPF
 DPF-meldinger blir sendt enten frå KS svarUt (Kommune/fylkeskommuner) eller frå sak-arkivsystemet (eFormidling) via integrasjonspunktet og så til KS sin meldingsformidler der det blir sendt til SvarInn. Innkommande meldinger til SvarInn for virksomheter som bruker eFormidling vil bli henta av integrasjonspunktet og sendt til sak-arkivsystemet. 

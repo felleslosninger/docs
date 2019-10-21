@@ -6,6 +6,31 @@ permalink: eformidling_releasenotes.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
+## 2.0.5
+16.10.19
+
+[Release notes for 2.0.5](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10166)
+
+## 2.0.4
+07.10.19
+
+[Release notes for 2.0.4](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10165)
+
+## 2.0.3
+01.10.19
+
+[Release notes for 2.0.3](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10163)
+
+## 2.0.2
+25.09.19
+
+[Release notes for 2.0.2](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10161)
+
+[Release notes for 2.0.1](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10162)
+
+## 2.0.0
+20.09.19
+Kommer.
 
 ## 1.7.94
 25.01.19

@@ -7,11 +7,10 @@ sidebar: dpi_sidebar
 
 |---|---|
 | Definisjon | Lenke utenfor brev |
-|            | Mime |
-| Type       | application/vnd.difi.dpi.lenke+xml |
+| Mime-Type | application/vnd.difi.dpi.lenke+xml |
 | Datatype   | complexType |
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
-| XSD        | https://github.com/difi/felleslosninger/blob/gh-pages/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd |
+| XSD        | [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd) |
 
 ### Attributer
 
@@ -24,7 +23,8 @@ sidebar: dpi_sidebar
 
 ### Eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <lenke xmlns="http://begrep.difi.no/sdp/utvidelser/lenke"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://begrep.difi.no/sdp/utvidelser/lenke ../../xsd/utvidelser/lenke.xsd">

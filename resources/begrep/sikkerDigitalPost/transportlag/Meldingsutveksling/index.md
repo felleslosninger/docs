@@ -112,6 +112,6 @@ duplikater.
 
 ### Eksempler
 
-Det er utarbeidet eksempler på SOAP meldinger knyttet til flyt
-diagrammet over.  
-Eksemplene finnes (Link til eksempler her(../../eksempler/soap/)).
+Det er utarbeidet [eksempler på SOAP meldinger](sdp_index_eksempler.html) knyttet til flyt
+diagrammet over
+

@@ -2,7 +2,7 @@
 
 title: Receipt  
 permalink: sdp_receipt.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
   - Identifikator  

@@ -1,33 +1,15 @@
 --- 
 title: Varsler  
 permalink: sdp_varsler.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Informasjon om hvordan postkasseleverandør skal varsle Mottaker om
-    den nye posten. Overstyrer Mottaker sine egne varslingspreferanser.
-  - Datatype  
-    complexType
-  - Kjelde  
-    DIFI
-  - Kommentar  
-    Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne
-    varslingspreferanser, det vil kunne komme som tillegg til Mottaker
-    sine varslingvalg.  
-    Avsender kan med instillingene her styre både
-    [EpostVarsel](EpostVarsel.md) og [SmsVarsel](SmsVarsel.md) helt uavhengig
-    av hverandre. Det vil si at Avsender kan velge å varsle i begge
-    eller en av kanalene.  
-    Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre
-    med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til
-    åpningsgrad og kostnader.  
-    Bruk av [SmsVarsel](SmsVarsel.md) vil medføre egne kostnader for
-    Avsender.
+|---|---|
+| Term | {{page.title}} |
+| Definisjon | Informasjon om hvordan postkasseleverandør skal varsle Mottaker om den nye posten. Overstyrer Mottaker sine egne varslingspreferanser |
+| Datatype | complexType |
+| Kjelde | DIFI |
+| Kommentar | Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne varslingspreferanser, det vil kunne komme som tillegg til Mottaker sine varslingvalg. Avsender kan med instillingene her styre både [EpostVarsel](EpostVarsel.md) og smsVarsel](SmsVarsel.md) helt uavhengig av hverandre. Det vil si at Avsender kan velge å varsle i begge eller en av kanalene.     Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til åpningsgrad og kostnader. Bruk av [SmsVarsel](SmsVarsel.md) vil medføre egne kostnader for Avsender |
 
 #### Eigenskapar
 
@@ -38,7 +20,7 @@ sidebar: dpi_sidebar
 
 #### Xml eksempel - Brev som krever varsling etter eForvaltningsforskriften
 
-``` brush: xml; toolbar: false
+``` 
   <varsler>
     <epostVarsel>
       <epostadresse>01012295312_test@minid.difi.no</epostadresse>
@@ -53,7 +35,7 @@ sidebar: dpi_sidebar
 
 #### Xml eksempel - Avsender ønsker varsling i begge kanaler ved Levering
 
-``` brush: xml; toolbar: false
+```
   <varsler>
     <epostVarsel>
       <epostadresse>01012295312_test@minid.difi.no</epostadresse>

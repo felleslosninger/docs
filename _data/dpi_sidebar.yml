@@ -16,6 +16,8 @@ folders:
         jurl: /sdp_skjema.html 
       - title: Eksempler
         jurl: /sdp_index_eksempler.html
+      - title: Eldre releaser av dokumentasjon
+        jurl: /sdp_eldre_releaser.html
         
     - title: Forretningslag
       folderitems:
@@ -24,6 +26,8 @@ folders:
         jurl: /sdp_forretningslag_index.html
       - title: Aktører og Roller
         jurl: /sdp_aktorer.html   
+      - title: Varsling
+        jurl: /varsling.html   
       - title: Sending av digital post
         jurl: /sdp_avsender_tilstanddiagram.html
       - title: Sending av digital post på vegne av andre
@@ -64,12 +68,17 @@ folders:
         jurl: /sdp_utvidelser_index.html
       - title: Lenke utenfor brev
         jurl: /sdp_lenke.html
+      - title: Arrangement
+        jurl: /sdp_arrangement.html
         
     - title: Utskrift og forsendelse
       folderitems:
            
-      - title: Utskrift
+      - title: Utskriftstjenesten
         jurl: /sdp_index_utskrift.html
+        
+      - title: Prosessbeskrivelse
+        jurl: /sdp_forretningsprosess_utskrift.html
  
     - title: Forretningsmeldinger
       folderitems:
@@ -134,11 +143,10 @@ folders:
         jurl: /sdp_transportfeil.html
       - title: Forretningsfeil
         jurl: /sdp_forretningsfeil.html   
-      - title: Feilhåndteringsprosess
-        jurl: /sdp_feilhandteringsprosess.html
+
         
     - title: Begrep
       folderitems:
       
-      - title: Begrepskatalog DPI
+      - title: Begrepskatalog
         jurl: /begrep_index.html

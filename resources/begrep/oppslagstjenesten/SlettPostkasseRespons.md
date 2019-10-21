@@ -1,15 +1,10 @@
 ---
 title: SlettPostkasseRespons  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode\_respons  
 permalink: ot_slettpostkasserespons.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/SlettPostkasseRespons> |
 | Term          | {{page.title}} |
 | Definisjon    | Respons sendt tilbake til Postkasseleverandør når en postkasse er sletter fra kontaktregisteret. |
 | Datatype      | {{ page.datatype }} |

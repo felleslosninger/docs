@@ -10,7 +10,7 @@ sidebar: elma_sidebar
 
 *Updated: 20.03.2019*
 
-Recommended reading: [explanation of the new ICD (0192), new Profiles and how this works in ELMA](icd0192andNewProfiles.html).
+Recommended reading: [explanation of the new ICD (0192), new Profiles and how this works in ELMA](elma_icd0192andNewProfiles.html).
 
 You can either update via ELMA-web (if you have relatively few participants) or via the Web Service.
 

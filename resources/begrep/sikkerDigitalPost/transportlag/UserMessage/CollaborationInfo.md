@@ -2,7 +2,7 @@
 
 title: CollaborationInfo  
 permalink: sdp_collaborationinfo.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
 ## {{page.title}}
@@ -23,8 +23,8 @@ sidebar:
 
 <!-- end list -->
 
-  - [FormidleDigitalPostForsendelse](../../Meldingsutveksling/FormidleDigitalPostForsendelse)
-  - [KvitteringsForespoersel](../../Meldingsutveksling/KvitteringsForespoersel)
+  - [FormidleDigitalPostForsendelse](sdp_formidledigitalpostforsendelse.html)
+  - [KvitteringsForespoersel](sdp_kvitteringsforspoersel.html)
 
 ### Egenskaper
 
@@ -37,7 +37,7 @@ sidebar:
 
 ### Xml eksempel
 
-``` brush: xml; toolbar: false
+``` 
     <eb:CollaborationInfo>
         <eb:AgreementRef>http://begrep.difi.local/SikkerDigitalPost/Meldingsutveksling/FormidleDigitalPostForsendelse</eb:AgreementRef>
         <eb:Service>SDP</eb:Service>

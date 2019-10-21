@@ -2,22 +2,18 @@
 
 title: Arrangement  
 permalink: sdp_arrangement.html
-sidebar:
+sidebar: dpi_sidebar
 ---
 
-  - Definisjon  
-    Arrangement
-  - Mime-Type  
-    application/vnd.difi.dpi.arrangement+xml
-  - Datatype  
-    complexType
-  - Kommentar  
-    Definerer et arrangement som presenteres for innbygger i postkassen.
-  - XSD  
-    https://begrep.difi.no/SikkerDigitalPost/xsd/utvidelser/arrangement.xsd
+|---|---|
+| Definisjon | Arrangement |
+| Mime-Type | application/vnd.difi.dpi.arrangement+xml |
+| Datatype | complexType |
+| Kommentar | Definerer et arrangement som presenteres for innbygger i postkassen |
+| XSD | [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd) |
+    
 
-### Attributer  
-Se xsd for mer informasjon om domenet.
+### Attributter: Se xsd for mer informasjon om domenet.
 
 Merk: I typen ‘tekst’ betyr formatering i xml-en noe. Linjeskift og
 tabulatorer vil altså bli brukt aktivt til formatering av teksten i
@@ -30,7 +26,8 @@ teksten.
 
 ### Eksempel
 
-``` brush: xml; toolbar: false
+``` 
+brush: xml; toolbar: false
 <arrangement xmlns="http://begrep.difi.no/sdp/utvidelser/arrangement"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://begrep.difi.no/sdp/utvidelser/arrangement ../../xsd/utvidelser/arrangement.xsd">

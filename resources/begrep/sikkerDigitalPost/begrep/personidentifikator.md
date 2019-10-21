@@ -1,11 +1,10 @@
 ---
 title: personidentifikator 
 permalink: personidentifikator.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | personidentifikator |
 | Definisjon | Identifikasjon av en person |
 | Datatype | string |

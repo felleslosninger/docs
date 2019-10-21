@@ -1,7 +1,7 @@
 ---
 title: virksomhetsidentifikator
 permalink: virksomhetsidentifikator.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |

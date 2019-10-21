@@ -1,11 +1,10 @@
 ---
 title: avsenderidentifikator
 permalink: avsenderidentifikator.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | avsenderidentifikator |
 | Definisjon | Identifikasjon av en ansvarlig avsenderenhet |
 | Datatype | string |

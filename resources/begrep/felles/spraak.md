@@ -1,11 +1,10 @@
 ---
 title: spraak
 permalink: spraak.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | spraak |
 | Definisjon | Språkkode |
 | Datatype | string |

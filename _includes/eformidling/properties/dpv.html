@@ -67,7 +67,7 @@
   </tr>
   <tr>
 	<td>difi.move.dpo.username</td>
-	<td>Brukernavnet du får ved opprettelse av <a href="http://difi.github.io/move-integrasjonspunkt/properties_config.html#opprette-bruker-til-altinn-formidlingstjeneste</a></td>
+	<td>Opprett bruker <a href="http://difi.github.io/move-integrasjonspunkt/properties_config.html#opprette-bruker-til-altinn-formidlingstjeneste">Her</a></td>
 	<td></td>
   </tr>
   <tr>
@@ -155,10 +155,57 @@
 	<td>difi.move.fiks.inn.fallbackSenderOrgNr=000048755</td>
 	<td>Alternativt: Workaround for hente inn meldinger fra svarInn utan orgnr i metadata</td>
 	<td>Sett et vilkårlig nummer (9 siffer). feks 000048755</td>
-   </tr>		
+   </tr>			
+ <tr>
+	<th>Kun om du skal bruke egen database</th>
+	 <th></th>
+	 <th>Legg inn følgende</th>
+  </tr>
+  <tr>
+	<td>difi.move.nextmove.useDbPersistence=true</td>
+	<td>skrur på bruk av database for persistering</td>
+	<td></td>
+  </tr>		
+  <tr>
+	<td>spring.datasource.url=jdbc:mysql://databaseserver/databasenavn?serverTimezone=UTC</td>
+	<td>Path til databasen</td>
+	<td>Om du bruker <i>?serverTimeZone=UTC</i> trenger du ikke den andre tidssone propertyen</td>
+  </tr>
+  <tr>
+	<td>spring.jpa.properties.hibernate.jdbc.time_zone=Europe/Oslo</td>
+	<td>Sørger for å bruke rett tidssone</td>
+	<td>Bruk denne eller legg det på etter datasource url. Se over.</td>
+  </tr>		
+  <tr>
+	<td>spring.datasource.username=</td>
+	<td>Bruker til databasen</td>
+	<td></td>
+  </tr>	
+  <tr>
+	<td>spring.datasource.password=</td>
+	<td>Passord til databasen</td>
+	<td></td>
+  </tr>	
+  <tr>
+	<td>spring.jpa.hibernate.ddl-auto=update</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	  <th>Diverse</th>
+	 <th></th>
+	 <th>Beskrivelse</th>
+  </tr>
+  <tr>
+	  <td>difi.move.status.messageTimeoutHours=24</td>
+	  <td>Levetiden på en forsendelse.** </td>
+	  <td></td>
+  </tr>
  </table>
  
  <p>* Autentisering mot sakarkivsystem benyttes av P360</p>
+ <p>** Dette har en default verdi på ca 24 timer, men kan overstyres av virksomheten ved hjelp av denne propertien. 
+       Når levetiden er utgått vil avsender få tilbakemelding om meldingen ikke ble levert og må sendes på nytt.</p>
 
  </body>
 </html>

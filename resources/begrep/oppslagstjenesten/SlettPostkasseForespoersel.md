@@ -1,15 +1,10 @@
 ---
 title: SlettPostkasseForespoersel  
-headtitle: Begrepskatalog for Sikker digital post -  
-datatype: Metode  
-Service: Oppslagstjenesten  
-group: Oppslagstjenesten/PK\_Metode  
 permalink: ot_slettpostkasseforespoersel.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 |---|---|
-| Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/SlettPostkasseForespoersel> |
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Postkasseleverandør for å slette en postkasse. |
 | Datatype      | {{ page.datatype }} |
@@ -21,7 +16,7 @@ sidebar:
 | Term                                                              | Kardinalitet | Datatype                                              |
 | ----------------------------------------------------------------- | ------------ | ----------------------------------------------------- |
 | [personidentifikator](../felles/personidentifikator.md)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| SKAL VÆRE LINK TIL ../felles/virksomhetsidentifikator.md | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [virksomhetssidentifikator](virksomhetsidentifikator.html) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Respons
 

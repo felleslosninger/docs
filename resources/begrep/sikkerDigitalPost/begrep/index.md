@@ -1,10 +1,8 @@
 ---
-title: Begreper - Digital Postkasse
+title: Definisjon av begrep og datatyper
 permalink: begrep_index.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
-
-## {{page.title}}
 
 Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
@@ -18,23 +16,59 @@ for hver datatype. Følgende datatyper er definert:
 - [Dokument](Dokument.md)
 - [DokumentData](DokumentData.md)
 - [Dokumentpakkefingeravtrykk](Dokumentpakkefingeravtrykk.md)
+- [Endringsnummer](endringsnummer.html)
+- [Epostadresse](ot_epostadresse.html)
 - [EpostVarsel](EpostVarsel.md)
+- [FraEndringsNummer](fraendringsnummer.html)
 - [FysiskPostRetur](FysiskPostRetur.md)
 - [FysiskPostadresse](FysiskPostadresse.md)
 - [FysiskpostInfo](FysiskPostInfo.md)
+- [HentEndringerForespoersel](ot_hentendringerforespoersel.html)
+- [HentEndringerRespons](ot_hentendringerrespons.html)
+- [HentPersonerForespoersel](ot_hentpersonerforespoersel.html)
+- [HentPersonerRespons](ot_hentpersonerrespons.html)
+- [HentPrintsertifikatForespoersel](ot_hentprintsertifikatforespoersel.html)
+- [HentPrintsertifikatRespons](ot_hentprintsertifikatrespons.html)
 - [IkkeSensitivTittel](ikkeSensitivTittel.md)
+- [Informasjonsbehov](informasjonsbehov.html)
+- [KanVelgeSikkerDigitalPostkasseForespoersel](ot_kanvelgesikkerdigitalpostkasseforespoersel.html)
+- [KanVelgeSikkerDigitalPostkasseRespons](ot_kanvelgesikkerdigitalpostkasserespons.html)
+- [Kontaktinformasjon](ot_kontakinformasjon.html)
 - [KonversasjonsId](konversasjonsId.md)
 - [KorrespondansePartNavn](korrespondansepartnavn.md)
 - [KorrespondansePartType](korrespondanseparttype.md)
-- [Mottaker](Mottaker.md)
+- [Mobiltelefonnummer](mobiltelefonnummer.html)
+- [Mottaker](sdp_mottaker.html)
+- [OppdaterPostkasseForespoersel](ot_oppdaterpostkasseforespoersel.html)
+- [OppdaterPostkasseRespons](ot_oppdaterpostkasserespons.html)
+- [OpprettOgVelgSikkerDigitalPostkasseForespoersel](ot_opprettogvelgsikkerdigitalpostkasseforespoersel.html)
+- [OpprettOgVelgSikkerDigitalPostkasseRespons](ot_opprettogvelgsikkerdigitalpostkasserespons.html)
 - [OrderReference](OrderReference.md)
+- [PaaVegneAv](paavegneav.html)
 - [Person](Person.md)
 - [Personidentifikator](personidentifikator)
+- [Postkasseadresse](postkasseadresse.html)
+- [PostkasseleverandoerAdresse](postkasseleverandoeradresse.html)
+- [PostkasseleverandoerNavn](postkasseleverandoernavn.html)
+- [Posttype](posttype.html)
 - [PrioritetType](prioritetType.md)
 - [Repetisjoner](Repetisjoner.md)
+- [Reservasjon](reservasjon.html)
 - [ReturpostHaandtering](returPostHaandtering.md)
+- [SenesteEndringsNummer](senesteendringsnummer.html)
+- [Sertifikat](ot_sertifikat.html)
+- [SikkerDigitalPostAdresse](ot_sikkerfigitalpostadresse.html)
 - [SikkerhetsNivaa](sikkerhetsnivaa.md)
+- [SistOppdatert](sistoppdatert.html)
+- [SistVerifisert](sistverifisert.html)
+- [Skjerming](skjerming.html)
+- [SlettPostkasseForespoersel](ot_slettpostkasseforespoersel.html)
+- [SlettPostkasseRespons](ot_slettpostkasserespons.html)
 - [SmsVarsel](SmsVarsel.md)
+- [Spraak](spraak.html)
+- [Status](status.html)
+- [Tekst](tekst.html)
+- [TilEndringsNummer](tilendringsnummer.html)
 - [TilknyttetRegistreringSom](tilknyttetRegistreringSom.md)
 - [Tittel](Tittel.md)
 - [Utskriftstype](utskriftstype.md)

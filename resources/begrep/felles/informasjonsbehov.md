@@ -1,11 +1,10 @@
 ---
 title: Informasjonsbehov
 permalink: informasjonsbehov.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | informasjonsbehov |
 | Definisjon | Beskriver det opplysningskrav som en Virksomhet har definert |
 | Datatype | string |

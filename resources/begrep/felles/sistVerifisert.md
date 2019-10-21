@@ -1,11 +1,10 @@
 ---
 title: sistVerifisert
 permalink: sistverifisert.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | sistVerifisert |
 | Definisjon | Dato for når et objekt sist ble verifisert gyldig |
 | Datatype | dateTime |

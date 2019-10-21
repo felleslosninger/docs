@@ -6,7 +6,8 @@ permalink: eformidling_selfhelp_traffic_flow.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
-
+* TOC
+{:toc}
 
 
 ### Digital post til offentlige virksomheter (DPO)
@@ -30,8 +31,8 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
   | OPPRETTET | Mottaker | Integrasjonspunkt laster frå meldingsformidler ned og oppretter meldingen hos seg | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
   | INNKOMMENDE_LEVERT | Mottaker | Har generert to mottakskvitteringer og disse blir sendt til avsender | 
-  | LEVERING | Avsender | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt. | 
-  | AAPNING | Avsender | Videresending til sak-arkivsystem |  
+  | MOTTATT | Avsender | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt. | 
+  | LEVERT | Avsender | Videresending til sak-arkivsystem |  
   | LEST | Avsender| Appreceipter fra mottaker av avsender. Dette er både en kvittering og meldingstype som indikerer at sak-arkivsystemet hos mottaker har fått meldingen. Leveransen er bekreftet fullført. | 
   
 ---
@@ -159,6 +160,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 ![](/felleslosninger/images/eformidling/flyt_dpe.png)
 
+
 1. Arkivar henter trigger eksport av oep saker
 2. Laster opp oep fil til filområde arkivar og eInnsynsklient har tilgang til
 3. eInnsynsklient splitter opp oep meldingen til eInnsynsmeldinger,
@@ -175,5 +177,11 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 14. eInnsynsklient sender innsynskrav via mottakers mailserver
 15. Innsynskrav tilgjengeliggjøres i via mottakers sakarkvisystem/mailserver eller lignende.
 
----
 
+### Feilstatus LEVETID_UTLOPT
+
+{% include /eformidling/nextmove/levetidUtlopt.txt %}
+
+Gjelder DPO, DPV, DPF, DPI, DPE.
+
+---

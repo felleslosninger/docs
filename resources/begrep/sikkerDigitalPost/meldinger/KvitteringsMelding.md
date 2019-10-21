@@ -5,7 +5,6 @@ sidebar: dpi_sidebar
 ---
 
 |---|---|
-| Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En kvitteringsmelding på en [digital post melding](DigitalPostMelding.md) fra en [Avsender](../begrep/Avsender.md). |
 | Kilde         | DIFI |

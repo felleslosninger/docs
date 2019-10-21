@@ -1,22 +1,15 @@
 ---
 title: FysiskPostadresse  
 permalink: sdp_fysiskpostadresse.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    FysiskPostadresse definert for Sikker digital post
-  - Datatype  
-    complexType
-  - Kilde  
-    DIFI
-  - Kommentar  
-    FysiskPostadresse er adressen til [mottakeren](Mottaker.md) som Post
-    skal sendes til.
+|---|---|
+|Term|{{page.title}}|
+|Definisjon|FysiskPostadresse definert for Sikker digital post|
+|Datatype|complexType|
+|Kilde|DIFI|
+|Kommentar|FysiskPostadresse er adressen til [mottakeren](Mottaker.md) som Post skal sendes til.|
 
 #### Attributer
 

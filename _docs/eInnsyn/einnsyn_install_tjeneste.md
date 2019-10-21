@@ -1,7 +1,7 @@
 ---
-title: Installere einnsyn-klient som Windows-service
-description: Installere einnsyn-klient som Windows-service
-summary: "Her finner du informasjon om Installere einnsyn-klient som Windows-service"
+title: Installere eInnsyn-klient som Windows-service
+description: Installere eInnsyn-klient som Windows-service
+summary: "Her finner du informasjon om hvordan installere eInnsyn-klient som Windows-service"
 permalink: einnsyn_install_tjeneste.html
 sidebar: einnsyn_sidebar
 ---
@@ -22,7 +22,7 @@ Du kan sjekke status på tjenesten ved å bruke følgande kommando i samme komma
 
 ### Verifisere at einnsyn-klient tjenesten har startet
 
-Meldinga **n.d.e.s.service.DirectoryReadingService : Starting Recursive Watcher** bør ligge i einnsyn-klient.out loggen. Denne indikerer at tjenesten har starter og lytter på inputDirectory-mappen.
+Meldinga **no.difi.einnsyn.Application - Started Application in 7.121 seconds (JVM running for 7.951)** bør ligge i einnsyn-klient.out loggen. Denne indikerer at tjenesten har starter og lytter på inputDirectory-mappen.
 
 ### Verifisere at klienten har prosessert filene
 
@@ -38,7 +38,7 @@ I loggfilen einnsyn-klient.out vil det komme meldinger som disse:
 {"@timestamp":"2017-11-30T12:22:42.828+01:00","@version":1,"message":"Upload message http://localhost:9093/out/messages/57e0477e-cec1-476c-9e49-e45734bfc736
 ```
 
-I integrasjonspunktloggen application.log skal det ligge loggmeldinger som disse:
+Ved opplasting vil det i integrasjonspunktloggen ```application.log``` vil det ligge loggmeldinger som disse:
 [Last ned som loggfil](/felleslosninger/resources/einnsyn/ip_sending_eksempel.txt)
 
 ```

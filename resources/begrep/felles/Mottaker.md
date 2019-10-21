@@ -1,22 +1,14 @@
 ---
 title: Mottaker 
 permalink: sdp_mottaker.html
-sidebar: dpi_sidebar
+sidebar: begrep_sidebar
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    Person som er mottaker av en sikker digital post
-  - Kilde  
-    DIFI
-  - Kommentar  
-    Skjema i sikker digital post støtter at Mottaker kan være en
-    [Person](Person.md).  
-    h4. Egenskaper
+|---|---|
+|Definisjon|Person som er mottaker av en sikker digital post|
+|Kilde|DIFI|
+|Kommentar|Skjema i sikker digital post støtter at Mottaker kan være en [Person](sdp_person.html).|
 
 | Identifikator    | Term             | Kardinalitet |
 | ---------------- | ---------------- | ------------ |
-| [Person](Person.md) | [Person](Person.md) | 0..1         |
+| [Person](sdp_person.html) | [Person](sdp_person.html) | 0..1         |

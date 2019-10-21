@@ -1,11 +1,10 @@
 ---
 title: endringsNummer
 permalink: endringsnummer.html
-sidebar:
+sidebar: begrep_sidebar
 ---
 
 | ---- | ---- |
-| Identifikator |  |
 | Term | endringsNummer |
 | Definisjon | Et nummer som identifiserer en endring i et register. |
 | Datatype | long |
