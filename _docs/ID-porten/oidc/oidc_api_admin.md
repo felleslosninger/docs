@@ -20,7 +20,7 @@ Utvalgte OIDC-klienter kan få tilgang til å administrere integrasjonar i ID-po
 Ta kontakt med idporten@difi.no for å få tilgang til å bruke tjenesten.
 
 
-## Bruk av Oauth2{#scopes}
+## Bruk av Oauth2 {#scopes}
 
 APIet er sikret vha. [server-til-server Oauth](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), dvs. med bruk av virksomhetssertifikat.
 
@@ -32,7 +32,7 @@ Klienten må få tildelt scopes for å få tilgang til APIet:
 |idporten:dcr.modify|Gir tilgang til å endre klientregistreringer for klienter bundet mot samme org.nr. som gitt i access_token. Gir også lesetilgang til onbehalfof-registreringer|
 |idporten:dcr.write|Gir tilgang til å opprette nye klientregistreringer for klienter bundet mot samme org.nr. som gitt i access_token. Gir også lesetilgang til onbehalfof-registreringer|
 |idporten:dcr/onbehalfof:write|Gir tilgang til å vise, opprette, endre og slette onbehalfofregistreringer tilhørende en gitt klient. Gir ikke mulighet til å endre andre parametere på selve klienten.|
-|idporten:dcr/supplier|Gir leverandører tilgang til å vise, opprette, endre og slette selvstendige OIDC-integrasjoner for andre organisasjoner. Eget org.no blir koblet til disse integrasjonene.  |
+|idporten:dcr.supplier|Gir leverandører tilgang til å vise, opprette, endre og slette selvstendige OIDC-integrasjoner for andre organisasjoner. Eget org.no blir koblet til disse integrasjonene.  |
 
 
 ## Eierskap til integrasjoner
@@ -75,18 +75,27 @@ Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST
 
 Kun RS256 støttes som algoritme.
 
+Eksempel på å legge inn en nøkkel:
 ```
-POST /clients/{client_id}/jwk
+POST /clients/{client_id}/jwks
 
 {
   [
-     jwk1,
-		 jwk2
-	]
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "jbi_min_noekkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
 }
 ```
 
-`kid` må være unik.   Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, må man bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
+`kid` må være unik innenfor alle ID-portens kunder.
+
+Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
 ## REST-grensesnittet
 
