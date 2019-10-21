@@ -33,8 +33,8 @@ eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører a
 
 **Her finner du det brannmuråpningene**
 
-- [Testmiljø]()
-- [Produksjon]()
+- [Testmiljø](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-testmiljøet)
+- [Produksjon](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-produksjon)
 
 Har virksomheten spørsmål knyttet til disse endringene kan de sende email til idporten@difi.no
 
