@@ -27,84 +27,22 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 
 ### VIKTIG - Fremtidig endring i brannmuråpninger
-eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Endringen må skje senest 31.10.2019. Nedenfor kan en lese om hva som må endres.
+eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Nedenfor kan en lese om hva som må endres. 
 
 > * NB! Gamle IP-adresser må beholdes i tillegg fram til 01.01.2020.
 
+**Her finner du det brannmuråpningene**
 
-#### Produksjonsmiljøet 
-
-**Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)**
-
-Gamle IP-adresser
-
-| Beskrivelse                    | IPv4-adresse      | IPv6-adresse             |
-|--------------------------------|-------------------|--------------------------|
-| meldingsutveksling.difi.no lb1 | 79.170.81.231:443 | 2001:67c:2d68:d1f1::1b:1 |
-| meldingsutveksling.difi.no lb2 | 79.170.81.232:443 | 2001:67c:2d68:d1f1::1b:2 |
-| meldingsutveksling.difi.no lb3 | 79.170.81.233:443 | 2001:67c:2d68:d1f1::1b:3 |
-
-Erstattes med
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| prod-meldingsutveksling.dificloud.net | 51.144.60.163:443	 |
-
-**Logging utgående**
-
-Gamle IP-adresser
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| stream.difi.no | 	79.170.81.228:8400  | 2001:67c:2d68:d1f1::56:1 |
-
-Erstattes med:
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| prod-meldingsutveksling.dificloud.net | 51.144.60.163:9000	 |
-
-
-#### Testmiljøet
-
-**Sentrale tjenester (Adresseoppslag, sentral konfigurasjon mm.)**
-
-Gamle IP-adresser
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| beta-meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 |
-| beta-meldingsutveksling.difi.no lb2 | 79.170.81.232:443	 | 2001:67c:2d68:d1f1::1b:2 |
-| beta-meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 |
-
-Erstattes med
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| qa-meldingsutveksling.dificloud.net | 51.144.60.111:443	 |
-
-**Logging utgående**
-
-Gamle IP-adresser
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| stream.difi.no | 	79.170.81.228:8300  | 2001:67c:2d68:d1f1::56:1 |
-
-Erstattes med:
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse |
-| ------------- |:-------------:| :-----:|
-| qa-meldingsutveksling.dificloud.net | 51.144.60.111:9000	 |
-
+- [Testmiljø]()
+- [Produksjon]()
 
 Har virksomheten spørsmål knyttet til disse endringene kan de sende email til idporten@difi.no
 
 ### Brannmuråpninger i testmiljø
 
-Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp noen brannmuråpninger. I akkordion lenger nede så må du åpne både generelle og spesifikke for den tjenesten du skal installere.
+Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp noen brannmuråpninger. 
 
-En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP.
+En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-adresser blir plukket opp automatisk
 
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
@@ -118,6 +56,14 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 
+#### Nye adresser testmiljøet
+
+Tidligere beta-meldingsutveksling.difi.no
+
+|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
+| ------------- |:-------------:| :-----:| :------:|
+| qa-meldingsutveksling.difi.no | 51.144.60.111:443	 | Tidligere beta-meldingsutveksling.difi.no |
+| qa-meldingsutveksling.difi.no | *kommer 22.10.19*	blir port 443 | Tidligere stream.difi.no |
 
 ### Brannmuråpninger i produksjon
 
@@ -135,6 +81,14 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | meldingsformidler.digipost.no | 146.192.168.80:443 | -  | DPI |
 | svarut.ks.no | 193.161.171.187:443 | - | DPF |
 
+#### Nye adresser produksjon
+
+|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
+| ------------- |:-------------:| :-----:| :------: | 
+| meldingsutveksling.difi.no | 51.144.60.163:443 | Tidligere beta-meldingsutveksling.difi.no |
+| meldingsutveksling.difi.no | *kommer 22.10.19*	blir port 443 | Tidligere stream.difi.no |
+
+---
 
 ### Installere Java runtime environment (JDK)
 
