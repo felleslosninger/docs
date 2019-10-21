@@ -29,6 +29,8 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 ### VIKTIG - Fremtidig endring i brannmuråpninger
 eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Endringen må skje senest 31.10.2019. Nedenfor kan en lese om hva som må endres.
 
+> * NB! Gamle IP-adresser må beholdes fram til 01.01.2020.
+
 
 #### Produksjonsmiljøet 
 
