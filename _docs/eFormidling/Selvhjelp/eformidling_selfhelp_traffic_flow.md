@@ -108,9 +108,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
  | LEVERT | Når DPV-melding er levert til Altinn sin DPV tjeneste blir en appreceipt sendt tilbake og status i sak-arkivsystem blir oppdatert | 
  | LEST | Når mottaker har åpnet og lest meldingen blir status oppdatert til lest (foreløpig ikkje implementert)| 
  
-
 ---
-
 
 
 ### Digital post til innbygger (DPI)
@@ -122,8 +120,27 @@ DPI via eFormidling bruker NextMove grensesnittet. Det betyr at avsendersystemet
 
 ### DPI statuser
 
-*Kommer*
-
+*kommer snart*
+<!--
+Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt*. 
+-->
+<!--
+  | Status | Kommentar |
+  | :--- | :--- |  
+  | OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
+  | SENDT | Forsendelse er sendt til meldingsformidler | 
+  | LEVERT | Forsendelse levert til innbyggers prefererte kanal | 
+-->
+<!--
+#### DPI feilstatus 
+Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli levert fordi noe har feilet. For eksempel kan en potensiell feil være: *Kvittering for at en spesifisert varsling ikke har blitt sendt*. 
+-->
+<!--
+  | Status | Kommentar |
+  | :--- | :--- |  
+  | FEIL |  Forsendelse har feilet, les logg for mer informasjon |
+-->
+  
 ---
 
 ### Mottakende sak-arkivsystem
