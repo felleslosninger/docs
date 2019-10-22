@@ -116,7 +116,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldingsformidler. Der vil det bli formidlet til innbygger sin digitale postkasse, eBoks eller Digipost. Om innbygger ikke har en digital postkasse vil brevet bli sendt til innboksen i Altinn. Om avsender ønsker det kan det bli sendt til print i stedet for til Altinn. 
 
-![bilde](/felleslosninger/images/eformidling/DPI_statusflyt.jpeg)
+![bilde](/felleslosninger/images/eformidling/DPI_statusflyt.jpg)
 
 DPI via eFormidling bruker NextMove grensesnittet. Det betyr at avsendersystemet ditt må støtte dette. DPI støtter også printtjenesten til Posten.
 
