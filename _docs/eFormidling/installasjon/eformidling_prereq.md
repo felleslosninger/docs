@@ -62,8 +62,8 @@ Tidligere beta-meldingsutveksling.difi.no
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
 | ------------- |:-------------:| :-----:| :------:|
-| qa-meldingsutveksling.difi.no | 51.144.60.111:443	 | Tidligere beta-meldingsutveksling.difi.no |
-| qa-meldingsutveksling.difi.no | *kommer 22.10.19*	blir port 443 | Tidligere stream.difi.no |
+| qa-meldingsutveksling.difi.no | 51.144.60.111:443	 | | Tidligere beta-meldingsutveksling.difi.no |
+| qa-meldingsutveksling.difi.no | *kommer 22.10.19*	blir port 443 | | Tidligere stream.difi.no |
 
 ### Brannmuråpninger i produksjon
 
@@ -85,8 +85,8 @@ Tidligere beta-meldingsutveksling.difi.no
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
 | ------------- |:-------------:| :-----:| :------: | 
-| meldingsutveksling.difi.no | 51.144.60.163:443 | Tidligere beta-meldingsutveksling.difi.no |
-| meldingsutveksling.difi.no | *kommer 22.10.19*	blir port 443 | Tidligere stream.difi.no |
+| meldingsutveksling.difi.no | 51.144.60.163:443 | | Tidligere beta-meldingsutveksling.difi.no |
+| meldingsutveksling.difi.no | *kommer 22.10.19*	blir port 443 | | Tidligere stream.difi.no |
 
 ---
 
