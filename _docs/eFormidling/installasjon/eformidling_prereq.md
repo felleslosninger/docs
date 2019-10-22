@@ -41,8 +41,10 @@ Har virksomheten spørsmål knyttet til disse endringene kan de sende email til 
 ### Brannmuråpninger i testmiljø
 
 Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp noen brannmuråpninger. 
-
-En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-adresser blir plukket opp automatisk
+<!--
+En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
+-->
+Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-adresser blir plukket opp automatisk
 
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
