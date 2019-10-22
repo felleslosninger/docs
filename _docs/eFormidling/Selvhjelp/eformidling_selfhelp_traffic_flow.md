@@ -129,7 +129,7 @@ Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgj
   | SENDT | Forsendelse er sendt til meldingsformidler | 
   | LEVERT | Forsendelse levert til innbyggers prefererte kanal* | 
 
-* innbyggers prefererte kanal er enten digital postkasse, innboksen i Altinn eller fysisk print. 
+** innbyggers prefererte kanal er enten digital postkasse, innboksen i Altinn eller fysisk print. 
 
 
 #### DPI feilstatus 
@@ -138,7 +138,7 @@ Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli l
 
   | Status | Kommentar |
   | :--- | :--- |  
-  | FEIL |  Forsendelse har feilet, les logg** for mer informasjon |
+  | FEIL |  Forsendelse har feilet, se logg** for mer informasjon |
   
   ** application.log finnes i integrasjonspunkt/integrasjonspunkt-logs/ mappen.
   
