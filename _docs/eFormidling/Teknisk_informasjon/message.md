@@ -117,18 +117,23 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 {% include /eformidling/nextmove/forettningsmeldingDpo.json %}
 ```
 
-- betyding av felter 
+- betydning av felter 
 - mapping mot dpv
 - mapping til ks
 
 
 ### Digital post til innbygger
 
-Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. Utvidede regler rundt dette finnes her (link).
+Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. Utvidede regler rundt dette finnes [her](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/dokumentasjon/hvordan-skal-jeg-bruke-varsling-i-digital-postkasse).
 Begge prosessene støtter både digitalpost og fysisk post.
 
-Info = informasjonsmeldinger uten varlingsplikt
-Vedtak = meldinger som medfører varslingsplikt
+- Info = informasjonsmeldinger uten varslingsplikt
+- Vedtak = meldinger som medfører varslingsplikt
+
+[Om Varslingsregelen](https://samarbeid.difi.no/felleslosninger/kontakt-og-reservasjonsregisteret#Varslingsregelen)
+
+[eForvaltningsloven](https://lovdata.no/dokument/SF/forskrift/2004-06-25-988/KAPITTEL_2#KAPITTEL_2)
+
 
 | Prosess | Dokumenttype | 
 |---------|--------------|
