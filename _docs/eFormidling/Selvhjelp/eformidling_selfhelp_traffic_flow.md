@@ -120,27 +120,27 @@ DPI via eFormidling bruker NextMove grensesnittet. Det betyr at avsendersystemet
 
 ### DPI statuser
 
-*kommer snart*
-<!--
 Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt*. 
--->
-<!--
+
+
   | Status | Kommentar |
   | :--- | :--- |  
   | OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
   | SENDT | Forsendelse er sendt til meldingsformidler | 
   | LEVERT | Forsendelse levert til innbyggers prefererte kanal* | 
-*innbyggers prefererte kanal er enten digital postkasse, innboksen i Altinn eller fysisk print. 
--->
-<!--
+
+* innbyggers prefererte kanal er enten digital postkasse, innboksen i Altinn eller fysisk print. 
+
+
 #### DPI feilstatus 
-Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli levert fordi noe har feilet. For eksempel kan en potensiell feil være: *Kvittering for at en spesifisert varsling ikke har blitt sendt*. 
--->
-<!--
+Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli levert fordi noe har feilet. Feilmelding kan for eksempel være: *Kvittering for at en spesifisert varsling ikke har blitt sendt*. 
+
+
   | Status | Kommentar |
   | :--- | :--- |  
-  | FEIL |  Forsendelse har feilet, les logg for mer informasjon |
--->
+  | FEIL |  Forsendelse har feilet, les logg** for mer informasjon |
+  
+  ** application.log finnes i integrasjonspunkt/integrasjonspunkt-logs/ mappen.
   
 ---
 
