@@ -31,7 +31,7 @@ eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører a
 
 > * NB! Gamle IP-adresser må beholdes i tillegg fram til 01.01.2020.
 
-**Her finner du det brannmuråpningene**
+**Her finner du de nye brannmuråpningene**
 
 - [Testmiljø](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-testmiljøet)
 - [Produksjon](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-produksjon)
