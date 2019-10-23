@@ -7,7 +7,9 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-Før en tar i bruk eFormidling er det viktig å sjekke både mottak og sending av forsendelsene. Dette bør gjøres sammen med en person fra arkivet. Under finner en hvordan en kan teste de forskjellige meldingstypene.
+Før en tar i bruk eFormidling er det viktig å sjekke både mottak og sending av forsendelsene. Dette bør gjøres sammen med en person fra arkivet. Test gjerne fleire forsendelser per meldingstype og varier størrelse, vedlegg osv.
+
+Under finner en hvordan en kan teste de forskjellige meldingstypene.
 
 ## DPO - Digital post til offentlig virksomhet
 Meldinger mellom offentlige virksomheter som bruker integrasjonspunktet. En liste over virksomheter som bruker DPO kan dere finne her under [Virksomheter som har tilgang til eFormidling](https://samarbeid.difi.no/felleslosninger/eformidling).
