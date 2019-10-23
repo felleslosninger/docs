@@ -27,7 +27,7 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 
 ### VIKTIG - Fremtidig endring i brannmuråpninger
-eFormidling blir flyttet til nytt driftsmiljø den 1.november. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Nedenfor kan en lese om hva som må endres. 
+eFormidling blir flyttet til nytt driftsmiljø den 11. desember. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Nedenfor kan en lese om hva som må endres. 
 
 > * NB! Gamle IP-adresser må beholdes i tillegg fram til 01.01.2020.
 
