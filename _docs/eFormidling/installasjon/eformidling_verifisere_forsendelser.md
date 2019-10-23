@@ -9,7 +9,7 @@ sidebar: eformidling_install_sidebar
 
 Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Denne guiden er ment som en rettesnor for verifisering i produksjonsmiljøet.
 
-### Hva må jeg huske på?
+## Hva må jeg huske på?
 
 - Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
 - Avtal med idporten@difi.no når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
@@ -19,24 +19,24 @@ Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sendi
 - Om noe ikke skulle fungere gi straks beskjed til idporten@difi.no så vi kan fjerne tilganger og feilsøke problemet.
 
 
-### Hvordan tester jeg?
+## Hvordan tester jeg?
 
-## DPO - Digital post til offentlig virksomhet
+### DPO - Digital post til offentlig virksomhet
 Meldinger mellom offentlige virksomheter som bruker integrasjonspunktet. En liste over virksomheter som bruker DPO kan dere finne her under [Virksomheter som har tilgang til eFormidling](https://samarbeid.difi.no/felleslosninger/eformidling).
 
 Her må en teste både sending og mottak.
 
-## DPV - Digital post til virksomheter
+### DPV - Digital post til virksomheter
 Meldinger til en virksomhets postboks hos Altinn. Kan teste med alt fra privat foretak til vanlig virksomhet.
 
 Her skal kun sending testes.
 
-## DPF - Digital post til FIKS meldingsformidler
+### DPF - Digital post til FIKS meldingsformidler
 Meldinger til kommuner og andre virksomheter som bruker FIKS meldingsformidler. Hør med din kommune om de bruker FIKS. (TODO: evt skaffe ei liste over FIKS brukarar)
 
 Her må en teste både sending (svarUt) og mottak (svarInn).
 
-## DPI - Digital post til innbygger
+### DPI - Digital post til innbygger
 Meldinger sendt til innbyggers digitale postkasse. 
 
 Her skal kun sending testes.
