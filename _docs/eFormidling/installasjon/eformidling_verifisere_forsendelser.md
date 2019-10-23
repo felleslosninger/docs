@@ -9,7 +9,7 @@ sidebar: eformidling_install_sidebar
 
 Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Denne guiden er ment som en rettesnor for verifisering i produksjonsmiljøet.
 
-Ting å huske på:
+### Hva må jeg huske på?
 
 - Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
 - Avtal med idporten@difi.no når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
@@ -19,7 +19,7 @@ Ting å huske på:
 - Om noe ikke skulle fungere gi straks beskjed til idporten@difi.no så vi kan fjerne tilganger og feilsøke problemet.
 
 
-Under finner en hvordan en kan teste de forskjellige meldingstypene.
+### Hvordan tester jeg?
 
 ## DPO - Digital post til offentlig virksomhet
 Meldinger mellom offentlige virksomheter som bruker integrasjonspunktet. En liste over virksomheter som bruker DPO kan dere finne her under [Virksomheter som har tilgang til eFormidling](https://samarbeid.difi.no/felleslosninger/eformidling).
