@@ -7,7 +7,17 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-Før en tar i bruk eFormidling er det viktig å sjekke både mottak og sending av forsendelsene. Dette bør gjøres sammen med en person fra arkivet. Test gjerne fleire forsendelser per meldingstype og varier størrelse, vedlegg osv.
+Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Denne guiden er ment som en rettesnor for verifisering i produksjonsmiljøet.
+
+Ting å huske på:
+
+- Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
+- Avtal med idporten@difi.no når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
+- Husk å teste alle meldingstyper som virksomheten skal benytte.
+- Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
+- NB! Når testing foregår kan virksomheten motta reelle forsendelser i mellomtiden. Det er viktig at virksomheten er OBS på dette så de ikke går glipp av viktige forsendelser.
+- Om noe ikke skulle fungere gi straks beskjed til idporten@difi.no så vi kan fjerne tilganger og feilsøke problemet.
+
 
 Under finner en hvordan en kan teste de forskjellige meldingstypene.
 
