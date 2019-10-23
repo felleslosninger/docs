@@ -15,9 +15,9 @@ Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sendi
 - Avtal med idporten@difi.no når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
 - Husk å teste alle meldingstyper som virksomheten skal benytte.
 - Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
-- **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i mellomtiden. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
+- **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i dette tidsrommet. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
 - Om noe ikke skulle fungere gi straks beskjed til idporten@difi.no så vi kan fjerne tilganger og feilsøke problemet.
-- Reelle må forsendelser som mottas uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
+- Reelle forsendelser som mottas uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
 
 ## Hvordan tester jeg?
 
