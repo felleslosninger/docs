@@ -1,5 +1,5 @@
 ---
-title: Oppgradere integrasjonspunktet til ny versjon (NextMove)
+title: Oppgradere integrasjonspunktet til ny versjon
 description: Hvordan man oppgraderer integrasjonspunktet til ny versjon.
 summary: "Hvordan man oppgraderer integrasjonspunktet til ny versjon."
 
@@ -8,10 +8,9 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-## Oppgradere til integrasjonspunkt 2.0.5
+## Oppgradere integrasjonspunktet
 
-Den 23. september 2019 ble det tilgjengeliggjort den første versjonen av integrasjonspunktet med NextMove. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
-Alle må oppgradere. Eldre versjoner enn 2.0.X av integrasjonspunktet fungerer ikke etter mandag 23. september 2019. Vi anbefaler å oppgradere integrasjonspunktet til den nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar) 
+Nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar) 
 
 
 Hva må gjøres? 
@@ -23,7 +22,10 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 3. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
 4. Start integrasjonspunktet. 
 
-**NB!** Bruker virksomheten eInnsyn? Da må dere også oppgradere eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
+
+
+> Den 23. september 2019 ble det tilgjengeliggjort den første versjonen av integrasjonspunktet med NextMove. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
+> Alle må oppgradere. Eldre versjoner enn 2.0.X av integrasjonspunktet fungerer ikke etter mandag 23. september 2019. Vi anbefaler å oppgradere integrasjonspunktet til den nyeste versjonen
 
 ---
 
