@@ -31,6 +31,7 @@ terminalen (uten farger).
   
 #### Utvidelser - Sikker digital post XSD:
   - [lenke.xsd](utvidelser/lenke.xsd)
+  - [bevis.xsd](utvidelser/bevis.xsd)
   - [arrangement.xsd](utvidelser/arrangement.xsd)
 
 #### [ASiC XSD fil](asic-e/)

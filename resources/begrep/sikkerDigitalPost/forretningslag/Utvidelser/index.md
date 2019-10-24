@@ -29,4 +29,5 @@ postkasseleverandørene som støtter de ulike.
 | Fil     | Mime-Type      | Digipost | e-Boks |
 | --- | --- | --- | --- |
 | [Lenke utenfor brev](https://difi.github.io/felleslosninger/sdp_lenke.html) | `application/vnd.difi.dpi.lenke+xml`       | Ja       | Ja     |
+| [Bevis](https://difi.github.io/felleslosninger/sdp_bevis.html) | `application/vnd.difi.dpi.bevis+xml`       | Ja       | Ja     |
 | [Arrangement](https://difi.github.io/felleslosninger/sdp_arrangement.html)  | `application/vnd.difi.dpi.arrangement+xml` | Ja       | Ja     |
