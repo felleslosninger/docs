@@ -7,17 +7,18 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-### Eformidling på 2 minutter - dette må du vite
+### eFormidling på 2 minutter - dette må du vite
 
-- DPV = Digital post til virksomheter. Eget brukernamn/passord. Brukernamn/passord opprettes av Altinn og passord mottas på SMS. [Mer](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpv-bruker)
-- DPF = . Brukernamn/passord for både svarut og svarinn (ulike). Begge settene med brukernamn/passord genereres/hentes på [https://svarut.ks.no/](https://svarut.ks.no/). [Veiledning finner du her](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpf-brukere-svarinn-og-svarut)
-- DPO = Digital post til offentlige virksomheter. Eget brukernamn/passord. [Opprettes selv](https://difi.github.io/eformidling/create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste) 
+- DPV = Digital post til virksomheter. Eget brukernavn/passord. Brukernamn/passord opprettes av Altinn og passord mottas på SMS. [Mer](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpv-bruker)
+- DPF = Brukernamn/passord for både svarut og svarinn (ulike). Begge settene med brukernavn/passord genereres/hentes på [https://svarut.ks.no/](https://svarut.ks.no/). [Veiledning finner du her](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpf-brukere-svarinn-og-svarut)
+- DPO = Digital post til offentlige virksomheter. Eget brukernavn/passord. [Opprettes selv](https://difi.github.io/eformidling/create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste) 
+- DPI = Digital post til innbygger. Virksomhetssertifikatet benyttes. Ingen brukernavn/passord benyttes.
 - Virksomheten må ha et [virksomhetssertifikat](https://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html). Offentlig nøkkel sendes til Difi. 
 - Integrasjonspunktet både sender og mottar meldinger.
 - "Started IntegrasjonspunktApplication ..." blir logget i ```\integrasjonspunkt\integrasjonspunkt-logs\application.log``` like etter fullført oppstart.
 - Bruksvilkår/avtale må være på plass for å bruke eFormidling. Se lenke under.
 - [Mer om eFormidling og hvordan det fungerer](https://difi.github.io/felleslosninger/eformidling_index.html)
-- Standard tid før en melding som feiler blir lagt på DLQ er ca 21t.
+- Standard tid før en melding som feiler og får en status LEVETID_UTLOPT er ca 24t. Den kan også overstyres. [Les mer her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#feilstatus-levetid_utlopt)
 
 For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
 
@@ -47,7 +48,7 @@ Ferdig konfigurert ser det feks slik ut:
             <name>einnsyn-integrasjonspunkt</name>
             <description>Klient for opplasting av journaldata og nedlasting av innsynskrav</description>
             <argument>-jar</argument>
-            <argument>integrasjonspunkt-1.7.94.jar</argument>
+            <argument>integrasjonspunkt-2.0.5.jar</argument>
             <argument>--app.logger.enableSSL=false</argument>
             <logpath>%BASE%/integrasjonspunkt-logs</logpath>
             <log mode="roll-by-size">
@@ -60,7 +61,7 @@ Ferdig konfigurert ser det feks slik ut:
 
 ### Justere tilgjengelig minne
 
-For å justere hvor mye minne integrasjonspunktet kan bruke så kan dette gjøres ved å endre oppstartkommandoen. Dette kan være veldig nyttig ved forsendelser via eFormidling (dpo,dpv,dpi,dpf) for å være sikker på at applikasjonen har nok minne til å sende større filer. 1GB minne burde holde for eInnsyn, men for eFormidling bør en gjerne sette minst 2GB, gjerne mer.  Dette sørger for at alle integrasjonspunkt kan sende og motta filstørrelser inntil 75MB. Det er viktig at alle setter minimum 2GB minne ved bruk av eFormidling.
+For å justere hvor mye minne integrasjonspunktet kan bruke så kan dette gjøres ved å endre oppstartkommandoen. Dette kan være veldig nyttig ved forsendelser via eFormidling (DPO,DPV,DPI,DPF) for å være sikker på at applikasjonen har nok minne til å sende større filer. 1GB minne burde holde for eInnsyn, men for eFormidling bør en gjerne sette minst 2GB, gjerne mer.  Dette sørger for at alle integrasjonspunkt kan sende og motta filstørrelser inntil 75MB. Det er viktig at alle setter minimum 2GB minne ved bruk av eFormidling.
 
 ```-Xmx2048m``` setter minimum minne som applikasjonen har tilgjengelig
 
@@ -79,7 +80,7 @@ Feks:
             <name>einnsyn-integrasjonspunkt</name>
             <description>Klient for opplasting av journaldata og nedlasting av innsynskrav</description>
             <argument>-jar</argument>
-            <argument>integrasjonspunkt-1.7.94.jar</argument>
+            <argument>integrasjonspunkt-2.0.5.jar</argument>
             <argument>--app.logger.enableSSL=false</argument>
             <argument>-Xmx2048m</argument>
             <logpath>%BASE%/integrasjonspunkt-logs</logpath>
