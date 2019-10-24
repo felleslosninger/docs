@@ -15,10 +15,10 @@ Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge.
 
 1. Minimumskonfigurasjon for å få starte integrasjonspunktet. 
 2. Konfigurere sak-arkivsystem til å prate med integrasjonspunktet (under DPO innstillinger i tabellen under)
-3. Konfigurere DPO innstillinger (brukernavn og passord) 
-4. Konfigurere DPV/DPF/DPI innstillinger
+3. Konfigurere DPO innstillinger (brukernavn og passord) eller DPI.
+4. Konfigurere DPV/DPF innstillinger
 
-Vi anbefaler dere å konfigurere DPO før DPV/DPF/DPI for å unngå å motta post fra svarUt til virksomhetens SvarInn innboks. Ved å konfigurere DPO først vil dere motta post i sak-arkivsystemet
+Vi anbefaler dere å konfigurere DPO før DPV/DPF for å unngå å motta post fra svarUt til virksomhetens SvarInn innboks. Ved å konfigurere DPO først vil dere motta post i sak-arkivsystemet. Om ønsket kan en også sette opp DPI først.
 
 Husk å melde fra til <a href="mailto:idporten@difi.no">idporten@difi.no</a> når dere har konfigurert slik at Difi kan åpne opp tilganger. Ellers vil du få 400 Bad request feil. 
 
@@ -46,22 +46,6 @@ c:/
 
 Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
 
-### eInnsyn 
-
-
-<button data-toggle="collapse" data-target="#demo1">Trykk her</button>
-<div id="demo1" class="collapse">
-  {% include eformidling/properties/jks_generell.html %} 
-</div>
-
-### eFormidling - Digital post til innbyggere
-
-<button data-toggle="collapse" data-target="#demo3">Trykk her</button>
-<div id="demo3" class="collapse">
-  {% include eformidling/properties/jks_generell.html %} 
-  {% include eformidling/properties/dpi.html %}
-</div>
-
 ### eFormidling - Digital Post til virksomheter
 
 Når en virksomhet sender digital post til virksomheter kan virksomheten sende både til og motta fra andre virksomheter som har et integrasjonspunkt. Sende til virksomheter som ikke har. 
@@ -80,6 +64,15 @@ Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle
   {% include eformidling/properties/dpv.html %}
   
  ---
+
+### eInnsyn 
+
+  {% include eformidling/properties/jks_generell.html %} 
+
+### eFormidling - Digital post til innbyggere
+
+  {% include eformidling/properties/jks_generell.html %} 
+  {% include eformidling/properties/dpi.html %}
   
 ### Regel:
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
