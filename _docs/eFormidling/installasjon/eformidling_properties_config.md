@@ -88,10 +88,15 @@ Av erfaring så er av og til ikke følgende properties brukt. Dette kommer an p�
 #### DPV og DPF
 Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet til integrasjonspunktet for DPV- og DPF-forsendelser så **må** DPO være aktivert. ```difi.move.feature.enableDPO=true```. Altså for å få feks  ```difi.move.noarkSystem.endpointURL``` til å fungere
 
+#### DPI
+```difi.move.feature.enableDPI=true``` Må settes til true om du skal bruke DPI. Ingen andre DPI-spesifikke properties kreves, men en har mulighet til å overstyre ved å sette de. 
+
 ---
 
 ### Hvordan opprette brukere for DPO/DPF/DPV?
 
 [Denne delen er flyttet](https://difi.github.io/felleslosninger/eformidling_create_users.html)
+
+> For DPI kreves ingen bruker, da benyttes virksomhetssertifikatet.
 
 --- 
