@@ -19,13 +19,9 @@ Hva må gjøres?
 Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 1. Stopp integrasjonspunktet.
-2. I mappen med integrasjonspunktet: Her må du gjøre ett av stegene under:
-- Slett alle gamle databasefiler. Dette vil være følgende:  ```receipt.mv.db``` og ```receipt.trace.db```. Om du allerede har en 2.0.X versjon heter filene ```integrasjonspunkt.mv.db``` og ```integrasjonspunkt.trace.db```.
-- **NB!** Om du ikke har disse filene og heller bruker en egen database(feks MySQL) må du slette denne og peike integrasjonspunktet til en ny database ```spring.datasource.url=```. Legg inn også ```spring.jpa.properties.hibernate.jdbc.time_zone=Europe/Oslo``` i *integrasjonspunkt-local.properties* filen.
-3. Slett ```activemq-data``` mappa. 
-4. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
-5. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
-6. Start integrasjonspunktet. 
+2. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
+3. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
+4. Start integrasjonspunktet. 
 
 **NB!** Bruker virksomheten eInnsyn? Da må dere også oppgradere eInnsynsklient [her](https://difi.github.io/felleslosninger/einnsyn_oppdatere_tjeneste.html)
 
