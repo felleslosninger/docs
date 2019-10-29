@@ -26,9 +26,9 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
  
   | Status | Logget av Avsender/mottaker | Kommentar |
   | :--- | :--- | :--- |  
-  | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU-melding fra sak-arkivsystem og oppretter en DPO-melding |
+  | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPO-melding |
   | SENDT| Avsender| Integrasjonspunkt har sendt forsendelsen til meldingsformidler | 
-  | OPPRETTET | Mottaker | Integrasjonspunkt laster frå meldingsformidler ned og oppretter meldingen hos seg | 
+  | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
   | INNKOMMENDE_LEVERT | Mottaker | Har generert to mottakskvitteringer og disse blir sendt til avsender | 
   | MOTTATT | Avsender | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt. | 
@@ -183,21 +183,39 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 ![](/felleslosninger/images/eformidling/flyt_dpe.png)
 
 
-1. Arkivar henter trigger eksport av oep saker
-2. Laster opp oep fil til filområde arkivar og eInnsynsklient har tilgang til
-3. eInnsynsklient splitter opp oep meldingen til eInnsynsmeldinger,
-4. Laster eInnsysnsmelding til integrasjonspunktet
-5. Integrasjonspunktet gjør oppslag for å finne mottaker (capability oppslag)
-6. Intgrasjonspunktet krypterer, signerer og pakker melding. Laster deretter opp til mottakers kø
-7. Ingegrasjonspunktet laster ned nye meldinger fra kø, pakker opp, sjekker signatur, dekrypterer melding, tilgjengeligjør for mottaker
-8. eInnsysnsapplikasjon henter meldinger fra integrasjonpunktet, tilgjengeliggjør i eInnsynssøk
-9. Person søker innsyn
-10. Innsynskrav lastes opp til integrasjonspunkt
-11. Integrasjonspunktet gjør oppslag for å finne mottaker (capability oppslag)
-12. Integrasjonspunktet krypterer, signerer og pakker melding. Laster deretter opp til mottakers kø
-13. Integrasjonspunktet laster ned nye meldinger fra kø, pakker opp, sjekker signatur, dekrypterer melding, tilgjengeliggjør for mottaker
-14. eInnsynsklient sender innsynskrav via mottakers mailserver
-15. Innsynskrav tilgjengeliggjøres i via mottakers sakarkvisystem/mailserver eller lignende.
+1. Arkivar henter trigger eksport av oep saker.
+2. Laster opp oep fil til filområde arkivar og eInnsyn-klient har tilgang til.
+3. eInnsyn-klient splitter opp oep meldingen til eInnsynsmeldinger.
+4. Laster eInnsysnsmelding til integrasjonspunktet.
+5. Integrasjonspunktet gjør oppslag i Service Registry for å finne mottaker (capability oppslag).
+6. Integrasjonspunktet krypterer, signerer og pakker melding. Laster deretter opp til mottakers kø.
+7. Integrasjonspunktet laster ned nye meldinger fra kø, pakker opp, sjekker signatur, dekrypterer melding, tilgjengeligjør for mottaker.
+8. eInnsysnsapplikasjon henter meldinger fra integrasjonpunktet, tilgjengeliggjør i eInnsynssøk.
+9. Person søker innsyn.
+10. Innsynskrav lastes opp til integrasjonspunkt.
+11. Integrasjonspunktet gjør oppslag i Service Registry for å finne mottaker (capability oppslag)
+12. Integrasjonspunktet krypterer, signerer og pakker melding og laster opp meldingen til mottakers kø.
+13. Integrasjonspunktet laster ned nye meldinger fra kø, pakker opp, sjekker signatur, dekrypterer melding, tilgjengeliggjør for mottaker.
+14. eInnsyn-kient henter meldingen fra integrasjonspunktet.
+15. eInnsyn-klient sender innsynskrav via mottakers mailserver.
+16. Innsynskrav tilgjengeliggjøres via mottakers sakarkvisystem/mailserver eller liknende.
+
+
+### DPE statuser
+ 
+ Disse er statuser som logges av integrasjonspunktet.
+ 
+  | Status | Logget av Avsender/mottaker | Kommentar |
+  | :--- | :--- | :--- |  
+  | OPPRETTET| Avsender |  Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPE-melding. |
+  | SENDT| Avsender| Integrasjonspunkt har sendt forsendelsen til meldingsformidler. | 
+  | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg. | 
+  | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
+  | MOTTATT | Avsender | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt meldingen. | 
+  | INNKOMMENDE_LEVERT | Mottaker | Har generert to mottakskvitteringer og disse blir sendt til avsender. | 
+  | LEVERT | Avsender | Meldingen er videresendt til sak-arkivsystem. |  
+  
+---
 
 
 ### Feilstatus LEVETID_UTLOPT
