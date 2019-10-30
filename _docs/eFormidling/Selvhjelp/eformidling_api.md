@@ -64,7 +64,7 @@ På linje 16 starter ```messageStatuses``` som inneholder alle statuser registre
 
 
 ### Levert forsendelse 
-![](/felleslosninger/images/eformidling/api_conv_delivered.png)
+![](/felleslosninger/images/eformidling/api_conv_delivered.PNG)
 
 Her er en utgående DPO forsendelse indikert ved ```direction``` = ```OUTGOING``` og ```serviceIdentifier``` = ```DPO```. Her ser vi at statusene har blitt oppdatert henholdsvis ```OPPRETTET``` , ```SENDT```, ```MOTTATT``` og ```LEVERT```. Legg merke til at ```OPPRETTET``` og ```SENDT``` kommer med ca 1 sekunds mellomrom, men ```MOTTATT``` og ```LEVERT``` har flere minutter imellom. Dette kan skyldes flere forskjellige ting, feks at mottaker sitt integrasjonspunkt er av, eller at sak-arkivsystem ennå ikkje har importert forsendelsen, men i dette eksempelet ble de siste to stegene [manuelt utført](LINK TIL API/MESSAGES/IN/PEEK) med minutters mellomrom. Status ```LEVERT``` indikerer at denne forsendelsen er levert til mottakers sak-arkivsystem. 
 
@@ -75,19 +75,19 @@ Forsendelser kan feile og disse vil få en av følgende statuser: ```LEVETID_UTL
 **LEVETID_UTLOPT**
 [LEVETID_UTLOPT](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#feilstatus-levetid_utlopt) er en status som indikerer at forsendelsen har brukt for lang tid, og leveransen har blitt forkastet.
 
-![](/felleslosninger/images/eformidling/api_conv_ttl.png)
+![](/felleslosninger/images/eformidling/api_conv_ttl.PNG)
 
  Legg merke til at utløpstid er satt på linje 13 i feltet ```expiry```, og dette tidspunktet kan sammenliknes med tidspunkt for opprettelse av forsendelsen, altså når integrasjonspunktet mottok forsendelsen og status ble satt til ```OPPRETTET```. Her er var forsendelsen i live i 24 timer før den fikk status ```LEVETID_UTLOPT``` på linje 30. Hvor lenge en melding skal leve kan overstyres via properties, se lenken over. 
 
 **FEIL**
 Forsendelser kan feile av flere forskjellige årsaker og en kort beskrivelse blir ofte gjengitt som del av statusmeldingen. 
 
-![](/felleslosninger/images/eformidling/api_conv_feil.png)
+![](/felleslosninger/images/eformidling/api_conv_feil.PNG)
 
 Her er en forsendelse som feilet ved utsending og fikk aldri status ```SENDT```, i stedet fekk den status ```FEIL``` med en feilmelding som indikerer at integrasjonspunktet ikke klarer å levere forsendelsen til mottaker via DPO og at den blir flyttet til en DLQ.
 
 ### Hele conversations oppslaget
-![](/felleslosninger/images/eformidling/api_conv.png)
+![](/felleslosninger/images/eformidling/api_conv.PNG)
 
 Eksempel på hvordan et oppslag kan se ut med flere conversations delt opp i hver sin blokk med informasjon og statuser.
 
@@ -100,7 +100,7 @@ Eksempel på hvordan et oppslag kan se ut med flere conversations delt opp i hve
 
 Det er mulig å slå opp én spesifikk conversation ved å bruke ```messageId``` som parameter i URL'en. Denne finner du på tredje linja i alle conversations, eventuelt ved å slå opp ```/api/conversations```.
 
-![](/felleslosninger/images/eformidling/api_conv_messageid.png)
+![](/felleslosninger/images/eformidling/api_conv_messageid.PNG)
 
 Legg merke til at ```messageId``` på linje 4 er brukt som parameter i URL'en og at en med den kan hente hele conversation for gitt messageId. Denne forsendelsen er ei opplasting til eInnsyn indikert av linje 12 og 13 ved ```direction``` = ```OUTGOING``` og ```serviceIdentifier``` = ```DPE```. Status indikerer at meldinga kun sendt, men mottaker har ikke svart enda. Det kan være fordi meldingen ikke er hentet ned fra servicebus og dermed ikke prosessert av mottakende integrasjonspunkt sentralt i eInnsyn. 
 
@@ -116,13 +116,13 @@ Dette API-kallet viser statuser og tilhørende conversationId og messageId. En k
 
 ### Hente status med messageId
 
-![](/felleslosninger/images/eformidling/api_status_messageid.png)
+![](/felleslosninger/images/eformidling/api_status_messageid.PNG)
 
 Legg merke til at dette oppslaget på en gitt messageId har statusene ```OPPRETTET```, ```INNKOMMENDE_MOTTATT``` og ```LEVETID_UTLOPT```. Alle har lik ```conversationId``` og ```convId``` som indikerer at de henger sammen i en forsendelse. Pagable viser hvor mange elementer og sider som er i dette søketreffet. 
 
 ### Hente alle statuser
 
-![](/felleslosninger/images/eformidling/api_status.png)
+![](/felleslosninger/images/eformidling/api_status.PNG)
 
 Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via dette integrasjonspunktet. Her er ikke nødvendigvis alle statuser i samme forsendelse i rekkefølge, det kan være andre som har blitt registrert før neste status kommer. Bildet viser tre statuser med  ```convId``` = ```2``` før to statuser fra en annen forsendelse med ```convId``` = ```9``` før forsendelsen med ```convId``` = ```2``` får status ```LEVERT```. 
 
