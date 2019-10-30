@@ -56,7 +56,7 @@ Det er viktig å forstå at statusene her forteller hvor langt forsendelsen er k
 > Merk: Én conversationId har én eller flere messageId'er knyttet til samme forsendelse/konversasjon. 
 
 ### Ikke ennå levert forsendelse
-![](/felleslosninger/images/eformidling/api_conv_unfinished.png)
+![](/felleslosninger/images/eformidling/api_conv_unfinished.PNG)
 
 Markert på linje 7 og 8 er ```senderIdentifier``` og ```receiverIdentifier``` som er organisasjonsnummeret til avsender og mottaker. På linje 15 er ```serviceIdentifier``` satt til DPO som betyr at denne forsendelsen gjekk via DPO. Linje 14 indikerer at ```direction``` = ```INCOMING``` som betyr at dette er en innkommende forsendelse, på utgående forsendelser vil direction være ```OUTGOING```. 
 
