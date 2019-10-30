@@ -183,22 +183,22 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 ![](/felleslosninger/images/eformidling/flyt_dpe.png)
 
 
-1. Arkivar henter trigger eksport av oep saker.
-2. Laster opp oep fil til filområde arkivar og eInnsyn-klient har tilgang til.
-3. eInnsyn-klient splitter opp oep meldingen til eInnsynsmeldinger.
-4. Laster eInnsysnsmelding til integrasjonspunktet.
+1. Arkivar trigger eksport av journalpost.
+2. eInnsyn-klient laster opp journalpost.xml fil til delt filområde der arkivar og eInnsyn-klient har tilgang til.
+3. eInnsyn-klient splitter opp journalpost.xml til eInnsyn arkivmeldinger.
+4. eInnsyn-klient sender arkivmeldingen til integrasjonspunktet.
 5. Integrasjonspunktet gjør oppslag i Service Registry for å finne mottaker (capability oppslag).
 6. Integrasjonspunktet krypterer, signerer og pakker melding. Laster deretter opp til mottakers kø.
-7. Integrasjonspunktet laster ned nye meldinger fra kø, pakker opp, sjekker signatur, dekrypterer melding, tilgjengeligjør for mottaker.
-8. eInnsysnsapplikasjon henter meldinger fra integrasjonpunktet, tilgjengeliggjør i eInnsynssøk.
+7. Integrasjonspunktet laster ned nye meldinger fra kø, pakker ut, sjekker signatur, dekrypterer melding, tilgjengeligjør for mottaker.
+8. Den sentrale eInnsyn-applikasjonen henter meldinger fra integrasjonpunktet og tilgjengeliggjør journalposten for søk på www.einnsyn.no.
 9. Person søker innsyn.
 10. Innsynskrav lastes opp til integrasjonspunkt.
 11. Integrasjonspunktet gjør oppslag i Service Registry for å finne mottaker (capability oppslag)
 12. Integrasjonspunktet krypterer, signerer og pakker melding og laster opp meldingen til mottakers kø.
-13. Integrasjonspunktet laster ned nye meldinger fra kø, pakker opp, sjekker signatur, dekrypterer melding, tilgjengeliggjør for mottaker.
-14. eInnsyn-kient henter meldingen fra integrasjonspunktet.
+13. Integrasjonspunktet laster ned nye meldinger fra kø, pakker ut, sjekker signatur, dekrypterer melding, tilgjengeliggjør for mottaker.
+14. eInnsyn-klient henter meldingen fra integrasjonspunktet.
 15. eInnsyn-klient sender innsynskrav via mottakers mailserver.
-16. Innsynskrav tilgjengeliggjøres via mottakers sakarkvisystem/mailserver eller liknende.
+16. Innsynskrav tilgjengeliggjøres via mottakers sakarkivsystem/mailserver.
 
 
 ### DPE statuser
