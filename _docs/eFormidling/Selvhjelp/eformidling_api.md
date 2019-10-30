@@ -45,6 +45,7 @@ sidebar: eformidling_install_sidebar
 ## Hente alle forsendelser
 
 > /api/conversations
+
 > Eksempel: ```localhost:9093/api/conversations```
 
 På dette endepunktet kan en se alle innkommende og utgående forsendelser via dette integrasjonspunktet. Innholdet blir vist på JSON-format og er lett tilgjengelig for maskinlesing. 
@@ -98,6 +99,7 @@ Eksempel på hvordan et oppslag kan se ut med flere conversations delt opp i hve
 ## Hente forsendelse på messageId 
 
 > /api/conversations/messageId/{messageId}
+
 > Eksempel: ```localhost:9093/api/conversations/messageId/91676206-2452-408b-994d-588466f17b81```
 
 Det er mulig å slå opp én spesifikk conversation ved å bruke ```messageId``` som parameter i URL'en. Denne finner du på tredje linja i alle conversations, eventuelt ved å slå opp ```/api/conversations```.
@@ -111,7 +113,9 @@ Både ```senderIdentifier``` og ```receiverIdentifier``` er satt til samme organ
 ## Hente statuser
 
 > /api/statuses
+
 > /api/statuses/{messageId}
+
 > Eksempel: ```localhost:9093/api/statuses``` og ```localhost:9093/api/statuses/bf7df551-c811-4822-bccb-c88885a666e8```
 
 Dette API-kallet viser statuser og tilhørende conversationId og messageId. En kan se hvilke statuser som henger sammen ved å se nummeret indikert av ```convId``` feltet. 
@@ -130,9 +134,13 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 
 ## Innkommende meldinger
 > /api/messages/in
+
 > /api/messages/in/peek
+
 > /api/messages/in/pop/{messageId}
+
 > /api/messages/in/{messageId} (DELETE-request)
+
 
 *Kommer*
 
@@ -140,7 +148,9 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 
 ## Utgående meldinger
 > /api/messages/out
+
 > /api/messages/out/{messageId}
+
 > [Se her for opprett og send](https://difi.github.io/felleslosninger/eformidling_nm_swagger.html#operation/createMessageUsingPOST)
 
 *Kommer*
