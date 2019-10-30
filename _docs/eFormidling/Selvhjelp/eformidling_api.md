@@ -70,9 +70,10 @@ Her er en utgående DPO forsendelse indikert ved ```direction``` = ```OUTGOING``
 
 ### Feilet forsendelse
 
-Forsendelser kan feile og disse vil få en av følgende statuser: ```LEVETID_UTLOPT``` ELLER ```FEIL``` .
+Forsendelser kan feile og disse vil få en av følgende statuser: ```LEVETID_UTLOPT``` ELLER ```FEIL```.
 
 **LEVETID_UTLOPT**
+
 [LEVETID_UTLOPT](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#feilstatus-levetid_utlopt) er en status som indikerer at forsendelsen har brukt for lang tid, og leveransen har blitt forkastet.
 
 ![](/felleslosninger/images/eformidling/api_conv_ttl.PNG)
@@ -80,13 +81,14 @@ Forsendelser kan feile og disse vil få en av følgende statuser: ```LEVETID_UTL
  Legg merke til at utløpstid er satt på linje 13 i feltet ```expiry```, og dette tidspunktet kan sammenliknes med tidspunkt for opprettelse av forsendelsen, altså når integrasjonspunktet mottok forsendelsen og status ble satt til ```OPPRETTET```. Her er var forsendelsen i live i 24 timer før den fikk status ```LEVETID_UTLOPT``` på linje 30. Hvor lenge en melding skal leve kan overstyres via properties, se lenken over. 
 
 **FEIL**
+
 Forsendelser kan feile av flere forskjellige årsaker og en kort beskrivelse blir ofte gjengitt som del av statusmeldingen. 
 
 ![](/felleslosninger/images/eformidling/api_conv_feil.PNG)
 
 Her er en forsendelse som feilet ved utsending og fikk aldri status ```SENDT```, i stedet fekk den status ```FEIL``` med en feilmelding som indikerer at integrasjonspunktet ikke klarer å levere forsendelsen til mottaker via DPO og at den blir flyttet til en DLQ.
 
-### Hele conversations oppslaget
+### Flere conversations
 ![](/felleslosninger/images/eformidling/api_conv.PNG)
 
 Eksempel på hvordan et oppslag kan se ut med flere conversations delt opp i hver sin blokk med informasjon og statuser.
@@ -116,7 +118,7 @@ Dette API-kallet viser statuser og tilhørende conversationId og messageId. En k
 
 ### Hente status med messageId
 
-![](/felleslosninger/images/eformidling/api_status_messageid.PNG)
+![](/felleslosninger/images/eformidling/api_status_id.PNG)
 
 Legg merke til at dette oppslaget på en gitt messageId har statusene ```OPPRETTET```, ```INNKOMMENDE_MOTTATT``` og ```LEVETID_UTLOPT```. Alle har lik ```conversationId``` og ```convId``` som indikerer at de henger sammen i en forsendelse. Pagable viser hvor mange elementer og sider som er i dette søketreffet. 
 
