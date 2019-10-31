@@ -59,6 +59,8 @@ Det er viktig å forstå at statusene her forteller hvor langt forsendelsen er k
 ### Ikke ennå levert forsendelse
 ![](/felleslosninger/images/eformidling/api_conv_unfinished.PNG)
 
+Den enkleste måten å sjekke om en forsendelse fortsatt er under sending er å se om ```finished``` er satt til false.
+
 Markert på linje 7 og 8 er ```senderIdentifier``` og ```receiverIdentifier``` som er organisasjonsnummeret til avsender og mottaker. På linje 15 er ```serviceIdentifier``` satt til DPO som betyr at denne forsendelsen gjekk via DPO. Linje 14 indikerer at ```direction``` = ```INCOMING``` som betyr at dette er en innkommende forsendelse, på utgående forsendelser vil direction være ```OUTGOING```. 
 
 På linje 16 starter ```messageStatuses``` som inneholder alle statuser registrert for denne DPO forsendelsen i kontekst av dette integrasjonspunktet(den andre parten i forsendelsen kan ha [andre statuser](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#dpo-statuser)). For denne uferdige forsendelsen er statusene ```OPPRETTET``` og ```INNKOMMENDE_MOTTATT``` registrert hos mottaker som betyr at avsender skal ha fått statuser oppdatert i sitt integrasjonspunkt.
