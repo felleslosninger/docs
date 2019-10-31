@@ -17,7 +17,7 @@ sidebar: eformidling_install_sidebar
 **Disse begrepene vil heretter bli benyttet og er relevante for å forstå innholdet på denne siden korrekt.**
 
 |    Begrep   | Forkortelse/forklaring | 
-| :-------------: |:-------------:| 
+| :---: |---| 
 | Digital post til offentlige virksomheter | [DPO](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-offentlige-virksomheter-dpo) | 
 | Digital post til virksomheter | [DPV](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-virksomheter-dpv) | 
 | Digital post til innbygger | [DPI](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-innbygger-dpi) | 
