@@ -6,6 +6,11 @@ permalink: eformidling_releasenotes.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
+## 2.0.6
+01.11.19
+
+[Release notes for 2.0.6](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10168)
+
 ## 2.0.5
 16.10.19
 
