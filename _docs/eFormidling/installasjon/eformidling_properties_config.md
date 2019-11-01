@@ -29,7 +29,7 @@ Her laster du ned [integrasjonspunkt-local.properties-filen](https://github.com/
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
 2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt_local.properties) og lagre i overnevnte mappe
-3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.5/integrasjonspunkt-2.0.5.jar)
+3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.6/integrasjonspunkt-2.0.6.jar)
 
 Når du er ferdig skal strukturen på området se slik ut:
 ```
