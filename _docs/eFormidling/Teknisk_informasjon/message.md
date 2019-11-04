@@ -11,7 +11,7 @@ En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke
 Adresseringen og forretningsmeldingen er realisert ved hjelp av Standard Business Document.
 
 
-Standard Business Document er en GS1-standard utviklet for å forenkle utveksling av dokumenter i en B2B kontekst. Standardkonvolutten inneholder informasjon for identifisering, adressering og routing av forretningsmeldingen. SBD er obligatorisk i neste versjon av PEPPOL-infrastrukturen for fakturaformidling.
+[Standard Business Document er en GS1-standard](https://www.gs1.org/standards/edi/standard-business-document-header-sbdh) utviklet for å forenkle utveksling av dokumenter i en B2B kontekst. Standardkonvolutten inneholder informasjon for identifisering, adressering og routing av forretningsmeldingen. SBD er obligatorisk i neste versjon av PEPPOL-infrastrukturen for fakturaformidling.
 
 <div class="mermaid">
 graph LR
