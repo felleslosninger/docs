@@ -13,7 +13,7 @@ Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sendi
 
 - Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
 - Avtal med idporten@difi.no når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
-- Husk å teste alle meldingstyper som virksomheten skal benytte.
+- Husk å teste alle meldingstyper som virksomheten skal benytte (DPO/DPV/DPF osv).
 - Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
 - **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i dette tidsrommet. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
 - Om noe ikke skulle fungere gi straks beskjed til idporten@difi.no så vi kan fjerne tilganger og feilsøke problemet.
@@ -23,6 +23,8 @@ Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sendi
 
 ### DPO - Digital post til offentlig virksomhet
 Meldinger mellom offentlige virksomheter som bruker integrasjonspunktet. En liste over virksomheter som bruker DPO kan dere finne her under [Virksomheter som har tilgang til eFormidling](https://samarbeid.difi.no/felleslosninger/eformidling).
+
+En kan sende en DPO melding til egen virksomhet, men anbefaler at en tar kontakt med en annen virksomhet fra listen over.
 
 Her må en teste både sending og mottak.
 
