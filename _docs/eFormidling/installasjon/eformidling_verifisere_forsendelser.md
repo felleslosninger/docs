@@ -9,7 +9,7 @@ sidebar: eformidling_install_sidebar
 
 Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Dette er det siste steget før virksomheten din kan ta i bruk eFormidling. Denne guiden er ment som en rettesnor for testing og verifisering i **produksjonsmiljøet**.
 
-Lenke til testmiljøet finner du derimot [her](https://difi.github.io/felleslosninger/eformidling_testing_env.html).
+Lenke til **testmiljøet** finner du derimot [her](https://difi.github.io/felleslosninger/eformidling_testing_env.html).
 
 ## Hva må jeg huske på?
 
