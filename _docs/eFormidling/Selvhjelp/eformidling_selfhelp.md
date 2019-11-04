@@ -65,9 +65,11 @@ For å justere hvor mye minne integrasjonspunktet kan bruke så kan dette gjøre
 
 ```-Xmx2048m``` setter minimum minne som applikasjonen har tilgjengelig
 
+**NB!** Det er viktig at minneargumentet kommer først i rekkefølgen slik som i eksemplene under!
+
 #### fra kommandolinje 
 Du må legge inn ``` -Xmx2048m``` i oppstartskommandoen for å sette feks 2048 MB. Antallet kan justeres til ønske. 
-Feks: ```java -jar integrasjonspunkt-[versjon].jar --app.logger.enableSSL=false -Xmx2048m```
+Feks: ```java -Xmx2048m -jar integrasjonspunkt-[versjon].jar --app.logger.enableSSL=false ```
 
 #### I Windows service
 For å gjøre dette på en service så må en legge inn enda et argument i integrasjonspunkt-service.xml-filen. feks slik: ```<argument>-Xmx2048m</argument>```. Sørg for at det er innen for ```<service>...</service>``` om du har satt opp integrasjonspunktet som en Windows tjeneste.
@@ -79,10 +81,10 @@ Feks:
             <id>einnsyn-integrasjonspunkt</id>
             <name>einnsyn-integrasjonspunkt</name>
             <description>Klient for opplasting av journaldata og nedlasting av innsynskrav</description>
+	    <argument>-Xmx2048m</argument>
             <argument>-jar</argument>
             <argument>integrasjonspunkt-2.0.5.jar</argument>
             <argument>--app.logger.enableSSL=false</argument>
-            <argument>-Xmx2048m</argument>
             <logpath>%BASE%/integrasjonspunkt-logs</logpath>
             <log mode="roll-by-size">
                 <sizeThreshold>10240</sizeThreshold>
