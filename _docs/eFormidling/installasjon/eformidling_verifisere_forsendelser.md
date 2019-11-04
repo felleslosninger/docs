@@ -51,8 +51,8 @@ Ved forsendelser må en høre med mottaker at meldingen er kommet frem.
 
 Ved mottak skal meldingene bli pushet fra integrasjonspunktet inn i sak/arkiv/fagsystem.
 
-Ellers kan en bruke http://localhost:9093/api/conversations til å sjekke status på både sendte og mottatte meldinger.
-Les mer her: https://difi.github.io/felleslosninger/eformidling_selfhelp.html#sjekke-status-p%C3%A5-forsendelser
+Ellers kan en bruke *http://localhost:9093/api/conversations* til å sjekke status på både sendte og mottatte meldinger.
+Les mer her: !(https://difi.github.io/felleslosninger/eformidling_selfhelp.html#sjekke-status-p%C3%A5-forsendelser)
 
 Når en har verifisert at både mottak og sending av forsendelser fungerer melder en fra til idporten@difi.no.
 
