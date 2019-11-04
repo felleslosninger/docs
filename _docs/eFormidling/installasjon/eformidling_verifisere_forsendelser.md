@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Dette er det siste steget før virksomheten din kan ta i bruk eFormidling. Denne guiden er ment som en rettesnor for testing og verifisering i produksjonsmiljøet.
+Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Dette er det siste steget før virksomheten din kan ta i bruk eFormidling. Denne guiden er ment som en rettesnor for testing og verifisering i **produksjonsmiljøet**.
 
 ## Hva må jeg huske på?
 
