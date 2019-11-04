@@ -17,7 +17,7 @@ Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sendi
 - Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
 - **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i dette tidsrommet. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
 - Om noe ikke skulle fungere gi straks beskjed til idporten@difi.no så vi kan fjerne tilganger og feilsøke problemet.
-- Reelle forsendelser som mottas uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
+- Reelle forsendelser som mottas under testperioden uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
 
 ## Hvordan tester jeg?
 
@@ -29,7 +29,9 @@ En kan sende en DPO melding til egen virksomhet, men anbefaler at en tar kontakt
 Her må en teste både sending og mottak.
 
 ### DPV - Digital post til virksomheter
-Meldinger til en virksomhets postboks hos Altinn. Kan testes med alt fra privat foretak til vanlig virksomhet.
+Meldinger til en virksomhets postboks hos Altinn. Kan testes med alt fra privat foretak til vanlig virksomhet (som ikke bruker eFormidling eller KS/FIKS).
+
+Om noen i virksomheten har et enkeltpersonsforetak så kan dette være greit å teste med.
 
 Her skal kun sending testes.
 
@@ -42,3 +44,17 @@ Her må en teste både sending (svarUt) og mottak (svarInn).
 Meldinger sendt til innbyggers digitale postkasse. 
 
 Her skal kun sending testes.
+
+## Hvordan vet jeg at forsendelsene har kommet frem?
+
+Ved forsendelser må en høre med mottaker at meldingen er kommet frem.
+
+Ved mottak skal meldingene bli pushet fra integrasjonspunktet inn i sak/arkiv/fagsystem.
+
+Ellers kan en bruke http://localhost:9093/api/conversations til å sjekke status på både sendte og mottatte meldinger.
+Les mer her: https://difi.github.io/felleslosninger/eformidling_selfhelp.html#sjekke-status-p%C3%A5-forsendelser
+
+Når en har verifisert at både mottak og sending av forsendelser fungerer melder en fra til idporten@difi.no.
+
+**NB!** Virksomhetene bør få på plass rutiner for overvåking av integrasjonspunktet, slik at eventuelle feil oppdages i tide.
+
