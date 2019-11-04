@@ -13,6 +13,8 @@ Adresseringen og forretningsmeldingen er realisert ved hjelp av Standard Busines
 
 [Standard Business Document er en GS1-standard](https://www.gs1.org/standards/edi/standard-business-document-header-sbdh) utviklet for å forenkle utveksling av dokumenter i en B2B kontekst. Standardkonvolutten inneholder informasjon for identifisering, adressering og routing av forretningsmeldingen. SBD er obligatorisk i neste versjon av PEPPOL-infrastrukturen for fakturaformidling.
 
+> [Xsd for SBD](https://www.gs1.org/standards/edi-xml-gdsn-gs1-uncefact-xml-profiles/sbdh-xml-schema-files/1)
+
 <div class="mermaid">
 graph LR
 subgraph Melding
