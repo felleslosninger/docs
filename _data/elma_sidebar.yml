@@ -18,9 +18,6 @@ folders:
 
   - title: WSDL
     jurl: /elma_wsdl.html
-    
-  - title: REST API
-    jurl: /elma_swagger.html
 
   - title: Status & releasenotes
     jurl: /elma_status.html
