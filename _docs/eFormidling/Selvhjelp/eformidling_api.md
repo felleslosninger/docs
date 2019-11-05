@@ -1,5 +1,5 @@
 ---
-title: PH - Integrasjonspunkt API 
+title: PH -  API Integrasjonspunkt
 description: Denne siden har som mål å forklare hvordan bruke API'et til å se status på forsendelser, innkommende meldinger og utgående meldinger. 
 summary: "Finn status på forsendelser, innkommende og utgående meldinger"
 permalink: eformidling_api.html
