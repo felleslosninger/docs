@@ -22,5 +22,6 @@ folders:
   - title: Status & releasenotes
     jurl: /elma_status.html
     
-  - title: TeST
-    jurl: /elma_status.html    
+  - title: REST API
+    jurl: /elma_swagger.html    
+
