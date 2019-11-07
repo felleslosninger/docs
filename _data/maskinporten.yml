@@ -9,17 +9,20 @@ folders:
       - title: Overordna
         jurl: /maskinporten_index.html
 
-      - title: Slik bruker du Maskinporten som API-tilbyder
-        jurl: /maskinporten_guide_tilbyder.html
+      - title: Maskinporten som API-tilbyder
+        jurl: /maskinporten_guide_apitilbyder.html
+
+      - title: Maskinporten som API-konsument
+        jurl: /maskinporten_guide_apikonsument.html
 
 
 - title: Arkitektur
   folderitems:
 
       - title: "JWT grants"
-        jurl: /oidc_protocol_jwtgrant.html
+        jurl: /maskinporten_protocol_jwtgrant.html
       - title: "/token"
-        jurl: /oidc_protocol_token.html
+        jurl: /maskinporten_protocol_token.html
 
 ###########################
 
