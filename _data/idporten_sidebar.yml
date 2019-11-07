@@ -2,7 +2,6 @@ sidebarTitle: ID-porten
 
 folders:
 - title: ID-porten
-
   folderitems:
 
       - title: Overordna
@@ -28,7 +27,7 @@ folders:
         jurl: /maskinporten_protocol_token.html
         
  - title: Grensesnitt
-  folderitems:
+   folderitems:
 
       - title: "SAML2"
         jurl: /maskinporten_protocol_jwtgrant.html
