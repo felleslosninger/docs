@@ -1,8 +1,8 @@
 ---
 title: API-sikring med Maskinporten
 description: API-sikring med Maskinporten
-summary: 
-permalink: oidc_guide_maskinporten.html
+summary:
+permalink: maskinporten_guide_apitilbyder.html
 sidebar: maskinporten_sidebar
 product: ID-porten
 ---
