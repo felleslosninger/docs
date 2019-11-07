@@ -17,7 +17,7 @@ folders:
       - title: Ulike brukområder
         jurl: /idporten_bruksomrader_index.html
       - title: Innlogging til webtjeneste
-        jurl: /maskinporten_protocol_jwtgrant.html
+        jurl: /idporten_bruksomrade_webtjenester.html
       - title: Innlogging til mobilapp
         jurl: /maskinporten_protocol_token.html
       - title: Innlogging til SPA
