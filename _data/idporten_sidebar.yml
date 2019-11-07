@@ -1,44 +1,37 @@
 sidebarTitle: ID-porten
-
 folders:
-- title: ID-porten
-  folderitems:
+
+    - title: ID-porten
+      folderitems:
 
       - title: Overordna
         jurl: /maskinporten_index.html
-
       - title: Maskinporten som API-tilbyder
         jurl: /maskinporten_guide_apitilbyder.html
-
       - title: Maskinporten som API-konsument
         jurl: /maskinporten_guide_apikonsument.html
 
-
-- title: Bruksområde
-  folderitems:
+    - title: Bruksområde
+      folderitems:
 
       - title: Bruke ID-porten for innlogging til webtjeneste
         jurl: /maskinporten_protocol_jwtgrant.html
-        
       - title: Bruke ID-porten for innlogging til mobilapp
         jurl: /maskinporten_protocol_token.html
-        
       - title: Bruke ID-porten for innlogging til SPA
         jurl: /maskinporten_protocol_token.html
-        
       - title: Bruke ID-porten for å styre tilgangen til dine API'er
         jurl: /maskinporten_protocol_token.html
         
- - title: Grensesnitt
-   folderitems:
+    - title: Grensesnitt
+      folderitems:
 
       - title: SAML2
         jurl: /maskinporten_protocol_jwtgrant.html
-        
       - title: OpenID Connect (OIDC)
         jurl: /maskinporten_protocol_token.html
         
-  - title: Spørsmål og svar
+
 
        
 ###########################
