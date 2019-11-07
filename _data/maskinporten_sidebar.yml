@@ -5,8 +5,8 @@ folders:
 - title: Maskinporten
   folderitems:
 
-      - title: Overordna
-        jurl: /maskinporten_index.html
+      - title: Overordnet
+        jurl: /maskinporten_overordnet.html
 
 - title: Bruksområde
   folderitems:
