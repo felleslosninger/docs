@@ -93,7 +93,7 @@ cache-control: no-cache
 }
 ```
 
-#### 1b: Opprette et API - Web-grensesnitt
+### 1b: Opprette et API - Web-grensesnitt
 
  - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
 
@@ -141,7 +141,7 @@ Respons:
     }
 ]
 ```
-#### 2b: Tilgangsstyring - Web-grensesnitt
+### 2b: Tilgangsstyring - Web-grensesnitt
 
  - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
 
