@@ -39,7 +39,7 @@ Du må så lage en tilhørende Oauth2-klient som benytter selvbetjeningsAPIet ti
 
 API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ved bruk av web-grensesnitt via Samarbeidsportalen.
 
-## 2a: Opprette et API - Selvbetjeningsklient
+#### 2a: Opprette et API - Selvbetjeningsklient
 
 Et API i Maskinporten-sammenheng er et Oauth2 `scope` . Når du skal opprette et scope, sender du scope-definisjon sammen med en beskrivelse, slik:
 
@@ -59,7 +59,7 @@ Autorization-headeren i eksempelet er et access_token som selvbetjeningsklienten
 
 Prefix må matche det du tidligere fikk tildelt i steg 1.
 
-## 2b: Opprette et API - Web-grensesnitt
+#### 2b: Opprette et API - Web-grensesnitt
 
 ### 3: Gi tilgang
 
