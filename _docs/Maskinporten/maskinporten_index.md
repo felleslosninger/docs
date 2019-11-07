@@ -1,7 +1,7 @@
 ---
 title: Maskinporten
-description: 
+description:
 permalink: maskinporten_index.html
 produkt: Maskinporten
 ---
-Maskinporten er...
+Maskinporten er...FANTASTISK
