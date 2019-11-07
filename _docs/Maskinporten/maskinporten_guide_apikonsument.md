@@ -32,7 +32,7 @@ Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal br
 
 ### 4. Opprett en integrasjon i Maskinporten
 
-Du må opprette en såkalt oauth2-klient i Maskinporten.
+Du må opprette en integrasjon (en såkalt oauth2-klient) i Maskinporten.
 
 Klienten må autentisere seg mot Maskinporten enten med virksomhetssertifikat, eller med en  asymmetrisk nøkkel som konsumenten selv lager.
 
@@ -48,18 +48,32 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
-Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn av din , så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det
-Noen scopes krever
+Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn av din , så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
 
+Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whitelisting). Det er da ikke mulig å forhåndsregistere slike scopes på klienten.
 
-```
-(eksemple på registrering med sertifikat)
-```
 Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange APIer, så vi anbefaler at konsumenter lager en ny klient ved å POSTe inn konfigurasjonen til denne:
-#### Registrere klient med sertifikat
+
+
+#### Registrering via utviklerportal
+
+Du kan logge inn på [utviklerportalen] og registrere den nye integrasjon. Merk at utviklerportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat.
+
+Alle organisasjoner som har inngått Difis bruksvilkår skal ha tilgang til utviklerportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
+
+For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
+
+
+#### Registrere klient som bruker virksomhetssertifikat
+
+For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [HER].
+
+Deretter kan du opprette Maskinporten-integrasjonen slik:
+
 ```
-POST /clients/
+POST https://integrasjon.difi.no/clients/
 {
+    "application_type": "Maskinporten",
     "client_name": "Min maskinporten-integrasjon",
     "description": "ny integrajson som er tenkt brukt til masse lure ting",
     "token_endpoint_auth_method": "private_key_jwt",
@@ -67,19 +81,37 @@ POST /clients/
         "urn:ietf:params:oauth:grant-type:jwt-bearer"
     ],
 }
-
 ```
-#### Registrere klient med egen nøkkel
+
+Maskinporten vil svare med en auto-generert client_id, for eksempel  `238259d7-f0ab-4bd5-b253-0f0159375096`
+
+#### Registrere klient som bruker egen nøkkel
+
 For å slippe å spre virksomhetssertifikatet rundt til mange systemer, kan du opprette dine egne asymmetriske nøkler knyttet til en enkelt integrasjon.
 
-Dette må gjøres i to steg: først oppretter du en klient, og så oppretter du et nøkkel-sett på denne.
+Dette må gjøres i to steg: først oppretter du en klient som i eksempelet over, for så å oppretter du et nøkkel-sett på denne:
 ```
-(eksemple på registrering med nøkkel)
+POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
+
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "min_egen_nokkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
+}
 ```
+'kid'-verdien må være unik blant alle Maskinportens kunder.  
 
 #### Registrere klient som leverandør
 
-- skrive om delegering i altinn
+En leverandør kan registere sin integrasjon på samme måte som over, med ett unntak: *leverandør har ikke mulighet til å forhåndsregistrere det aktuelle API-scopet på sin klient.  I stedet må scope og kunde oppgis run-time i token-forespørsel.*.
+
 
 ### 5: Be om token
 
@@ -101,37 +133,34 @@ sequenceDiagram
 Konsumenten sin klient forespør et access_token fra Maskinporten ved å generere en **JWT-basert tokenforespørsel** (JWT-bearer authorization grant). Dersom forespørselen er godkjent, vil Maskinporten utstede et access_token som konsumenten kan bruke i kall mot API-tilbyder.
 
 
-Følgende claims er vesentlige å ha med i grantet:
-
+Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
 
 | Claim  |  Verdi | Beskrivelse  |
 | --- | --- |--- |
 |aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljøå finner du på .well-known-endpunkt. |
 |iss| client_id |issuer - Din egen client_id.  |
-|scope| <string>| Space-separert liste over scopes som klienten forespør. Se nedenfor for forklaring |
-|iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
-|exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
-|jti|Anbefalt | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused.
-
-JWTen må inneholde scopet som konsumenten fikk tilgang til i steg 3.  De fulle kravene til JWT'en er spesifiert [her](oidc_auth_server-to-server-oauth2.html#grant).
+|scope| <string>| Space-separert liste over scopes som klienten forespør. |
+|iat| 1573132283| issued at - Tidspunkt for når JWTen ble laget. **Merk:** UTC-tid|
+|exp| 1573132383| expiration time - Tidspunkt for utløp av JWTen.  **Merk:** Max 120 sekund tillatt.  (exp - iat <= 120 )|
+|jti|Anbefalt | JWT ID - unique id for denne jwt. **Merk:** A JWT kan ikke gjenbrukes.  |
 
 
+Se gjerne [den fullstendige grensesnittspesifikasjonen for JWT-grants](maskinporten_protocol_jwtgrant.html) for utfyllende dokumentasjon.
+
+Slik kan en forspørsel se ut:
 ```
 POST /token
 Content-type: application/x-www-form-urlencoded
 
-grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=<jwt>
+  grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&
+  assertion=<jwt>
 ```
 Maskinporten vil først validere gyldigheten av JWT'en. Deretter vil virksomhetssertifikatet (brukt til signering av JWT'en) valideres og dersom klienten har tilgang til de forespurte ressursene returneres et access_token til klienten.
 
+Dersom du er leverandør må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
 
+Generelt er det sikkerhetsmessig problematisk å be om mange scopes i samme token, så vi anbefaler ett scope per token.
 
-
-Generelt er det sikkerhetsmessig problematisk å be om mange scopes i samme token.  
-I tillegg er det noen andre begrensninger i Maskinporten:
-Normal
-- dersom du er leverandør, vil
-Klienten har ikke full frihet til
 
 ### 6: Sende API-kall med token
 
