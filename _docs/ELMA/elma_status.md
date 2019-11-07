@@ -24,9 +24,9 @@ UPDATED 7/3: added links to new documentation.
 
 ### Updated documentation
 On the same day as the new version was released, we also added three new pages:
-- [About the new ICD (0192) and new Profiles](icd0192andNewProfiles.html)
-- [Updating your participants to PEPPOL Billing 3.0 Profiles](upgradeTo0192Profiles.html)
-- [Web Service](webservice.html)
+- [About the new ICD (0192) and new Profiles](elma_icd0192andNewProfiles.html)
+- [Updating your participants to PEPPOL Billing 3.0 Profiles](elma_upgradeTo0192Profiles.html)
+- [Web Service](elma_webservice.html)
 
 ### Tasks
 ```
