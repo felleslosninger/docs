@@ -43,10 +43,12 @@ folders:
 - title: Maskinporten
   folderitems:
 
+
   - title: Om Maskinporten
     jurl: /maskinporten_index.html
 
-    
+  
+
 - title: Kontaktregisteret
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
