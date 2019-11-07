@@ -4,9 +4,12 @@ folders:
     - title: ID-porten
       folderitems:
 
-      - title: Overordnet
-        jurl: /idporten_overordnet.html
-
+      - title: Overordna
+        jurl: /maskinporten_index.html
+      - title: Maskinporten som API-tilbyder
+        jurl: /maskinporten_guide_apitilbyder.html
+      - title: Maskinporten som API-konsument
+        jurl: /maskinporten_guide_apikonsument.html
 
     - title: Bruksområde
       folderitems:
@@ -30,7 +33,11 @@ folders:
       - title: OpenID Connect (OIDC)
         jurl: /maskinporten_protocol_token.html
         
+    - title: Spørsmål og svar
+      
 
+      - title: FAQ
+        jurl: /oidc_faq.html
 
        
 ###########################
