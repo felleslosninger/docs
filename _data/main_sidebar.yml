@@ -48,6 +48,15 @@ folders:
     
   - title: Overordnet
     jurl: /maskinporten_overordnet.html
+  
+  - title: Bruksområde
+    jurl: /maskinporten_bruksomrade.html
+    
+  - title: Grensesnitt
+    jurl: /maskinporten_grensesnitt.html
+    
+  - title: Spørsmål og svar
+    jurl: /maskinporten_sporsmal_og_svar.html
 
 - title: Kontaktregisteret
   folderitems:
