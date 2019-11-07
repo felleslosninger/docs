@@ -16,7 +16,6 @@ folders:
           jurl: /idporten_bruksomrade_spa.html
         - title: Tilgangsstyring til dine API'er
           jurl: /idporten_bruksomrade_tilgang_api.html
-	
         
     - title: Grensesnitt
       folderitems:
