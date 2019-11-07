@@ -1,5 +1,5 @@
 ---
-title: API-sikring med Maskinporten
+title: Slik bruker du Maskinporten som API-tilbyder
 description: API-sikring med Maskinporten
 summary:
 permalink: maskinporten_guide_apitilbyder.html
