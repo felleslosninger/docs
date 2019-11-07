@@ -23,10 +23,10 @@ folders:
   folderitems:
 
   - title: Overordnet
-    jurl: /idporten_index.html
+    jurl: /idporten_overordnet.html
 
   - title: Bruksområder
-    jurl: /oidc_index.html
+    jurl: /idporten_bruksomrader_index.html
 
   - title: Grensesnitt
     jurl: /saml_tilgang.html
