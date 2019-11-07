@@ -25,7 +25,7 @@ folders:
         jurl: /maskinporten_auth_server-to-server-oauth2.html
       - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
-      - title: token
+      - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
