@@ -38,8 +38,9 @@ graph LR
     MP[Maskinporten]
   end
 
-  client -->|opprette / endre klient med tildelte scopes |MP
   MP -->|ny / endret klientregistrering|client
+  client -->|opprette / endre klient med tildelte scopes |MP
+
 
 </div>
 
