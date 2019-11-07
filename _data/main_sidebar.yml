@@ -40,6 +40,12 @@ folders:
       - title: Hurtigguide Open Id Connect
         jurl: /oidc_index.html            
 
+- title: Maskinporten
+  folderitems:
+
+  - title: Om Maskinporten
+    jurl: maskinporten_index.html
+
 - title: Kontaktregisteret
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
