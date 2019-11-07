@@ -2,9 +2,9 @@
 title: "/tokeninfo endpoint"
 description: "This page summarizes the protocol options available for on the /tokeninfo introspection endpoint for ID-porten OIDC Provider"
 summary: 'This page summarizes the protocol options available for on the /tokeninfo introspection endpoint for ID-porten OIDC Provider'
-permalink: oidc_protocol_tokeninfo.html
-sidebar: oidc
-product: ID-porten
+permalink: maskinporten_protocol_tokeninfo.html
+sidebar: maskinporten_sidebar
+product: Maskinporten
 ---
 
 ## About
@@ -39,7 +39,6 @@ The remainder of the response is intentionally kept as equal to the claims avail
 | --- | --- |
 | active | true / false |
 
-ER DET NOKRE ANDRE FORSKJELLER ?
 
 
 Sample request:
@@ -62,6 +61,5 @@ Sample response:
     "iat": 1477989701,
     "scope": "global/kontaktinformasjon.read",
     "client_id": "test_rp",
-    "client_orgno": "991825827"
 }
 ```
