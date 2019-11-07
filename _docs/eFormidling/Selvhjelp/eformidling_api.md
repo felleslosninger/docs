@@ -35,7 +35,7 @@ sidebar: eformidling_install_sidebar
 
 ## Før du starter
 
-- Sørg for at du har tilgang til å gjøre forespørsler mot API'et må du kunne nå integrasjonspunktet enten direkte på server eller via URL. 
+- Sørg for at du har tilgang til å gjøre forespørsler mot API'et.  Du kunne nå integrasjonspunktet enten direkte på server eller via URL frå den datamaskina eller server du benytter. 
 - Du må ha en nettleser eller et API-testverktøy (feks Postman via GET request) for å spørre mot APIet.
 - Eksempel på forespørsel mot lokalt integrasjonspunkt API ```http://localhost:9093/api/conversations```. En kan også benytte servernamn eller eksponert en eksponert url. ```https://test-ip-leik-meldingsutveksling.dificloud.net/api/messages/in```
 - Om du sletter activemq-data/database- eller den er tom så vil du ikke finne data. Informasjon og statuser om forsendelser blir lagret der.
