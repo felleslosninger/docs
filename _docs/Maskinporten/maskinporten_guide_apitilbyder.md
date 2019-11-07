@@ -1,56 +1,26 @@
 ---
 title: API-sikring med Maskinporten
 description: API-sikring med Maskinporten
-summary: 'Maskinporten tilbyr offentlige etater en enkel måte å sikre sine APIer med virksomhetsautentisering og tilgangstyring.'
+summary: 
 permalink: oidc_guide_maskinporten.html
 sidebar: maskinporten_sidebar
 product: ID-porten
 ---
 
-## Introduksjon
-
-
-"Maskinporten" er en egenskap ved ID-portens OIDC provider som tilbyr en enkel modell for API-sikring basert på såkalt "2-legged Oauth", inspirert av [Google sine system-kontoer](https://developers.google.com/identity/protocols/OAuth2ServiceAccount).
-
-
-
-
-<div class="mermaid">
-graph LR
-  subgraph API-tilbyder
-    API
-  end
-  subgraph Difi
-    OIDC[OIDC Provider]
-  end
-  subgraph API-konsument
-     ny[Klient]
-  end
-  OIDC -->|2.utsteder token|ny
-  ny -->|1. forspør tilgang|OIDC
-  ny -->|3.bruker token mot|API
-</div>
-
-API-tilbydere og konsumenter kan bruke denne funksjonaliteten for å styre tilgang i de tilfellene der informasjonsverdiene APIet tilbyr er regulert av lovhjemmel, og ikke krever samtykke av brukeren.
-
-Bruk av Maskinporten krever at begge aktørene bruker ID-porten sin selvbetjeningsfunksjonalitet.
-
 ### Overordnet prosedyre for API-sikring
 
 En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 
-1. API-tilbyder blir manuelt provisjonert i Maskinporten
+1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
 2. API-tilbyder oppretter et API
 3. API-tilbyder gir tilgang til en konsument
-4. Konsument provisjonerer tilgangen ned til en aktuell oauth2-klient
+4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og provisjonerer tilgangen til denne.
 
-Provisjonering av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
 5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
 6. Konsumenten inkluderer token i kall til APIet.
 7. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
-
-Merk at både API-tilbyder og API-konsument må lage en egen selvbetjeningsapplikasjon.  
 
 ## Prosedyre for API-tilbyder
 
