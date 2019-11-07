@@ -6,8 +6,6 @@ permalink: maskinporten_protocol_token.html
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
-* TOC
-{:toc}
 
 ## About
 
