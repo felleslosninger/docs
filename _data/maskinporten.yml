@@ -20,9 +20,9 @@ folders:
   folderitems:
 
       - title: "JWT grants"
-        jurl: /oidc_protocol_jwtgrant.html
+        jurl: /maskinporten_protocol_jwtgrant.html
       - title: "/token"
-        jurl: /oidc_protocol_token.html
+        jurl: /maskinporten_protocol_token.html
 
 ###########################
 
