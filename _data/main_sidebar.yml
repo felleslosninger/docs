@@ -10,12 +10,12 @@ folders:
   - title: Om eFormidling
     jurl: /eformidling_index.html
     subfolders:
-    
-  - title: Installasjonsveiledning 
+
+  - title: Installasjonsveiledning
     jurl: /eformidling_download_ip.html
-    
+
   - title: Utviklerdokumentasjon
-    jurl: /eformidling_nm_about.html 
+    jurl: /eformidling_nm_about.html
     #Må endre jurl på teknisk info
 
 
@@ -24,22 +24,29 @@ folders:
 
   - title: Om ID-porten
     jurl: /idporten_index.html
-    
+
   - title: OpenID Connect i ID-porten
     jurl: /oidc_index.html
 
   - title: SAML 2.0 i ID-porten
     jurl: /saml_tilgang.html
-    
+
     subfolders:
     - title: Hurtigguider
       subfolderitems:
 
       - title: Hurtigguide SAML
-        jurl: /oidc_hurtigguide.html    
+        jurl: /oidc_hurtigguide.html
       - title: Hurtigguide Open Id Connect
-        jurl: /oidc_index.html            
+        jurl: /oidc_index.html
 
+- title: Maskinporten
+  folderitems:
+
+  - title: Om Maskinporten
+    jurl: /maskinporten_index.html
+
+    
 - title: Kontaktregisteret
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
@@ -47,7 +54,7 @@ folders:
 
   - title: Oppslagstjenesten REST
     jurl: /oppslagstjenesten_rest.html
-    
+
   - title: Brukerspesifikt oppslag REST
     jurl: /brukerspesifikt_oppslag_krr_rest.html
 
@@ -58,7 +65,7 @@ folders:
   folderitems:
   - title: Om digital postkasse
     jurl: /digipost_index.html
-    
+
   - title: Veiledning og klienter
     jurl: /sdp_index_innledning.html
 
@@ -66,7 +73,7 @@ folders:
   folderitems:
   - title: Om eInnsyn
     jurl: /einnsyn_index.html
-    
+
   - title: eInnsyn-klient
     jurl: /einnsyn_forutsetninger.html
 
@@ -79,16 +86,16 @@ folders:
     jurl: /esign_komigang.html
 
 - title: ELMA
-  
+
   folderitems:
-  
+
   - title: about ELMA
     jurl: /elma_index.html
-    
+
   - title: Documentation
     jurl: /elma_user_manual.html
 
-        
+
 ###########################
 
 related_resources_title: Andre nyttige lenker
@@ -97,7 +104,7 @@ related_resources_list:
 
 - title: Begrepskatalog
   jurl: begrep_index.html
-  
+
 - title: Github
   jurl: https://github.com/difi/felleslosninger
 
@@ -106,6 +113,6 @@ related_resources_list:
 
 - title: Difi
   jurl: https://www.difi.no
-  
+
 - title: Altinn Docs
   jurl: https://altinn.github.io/docs/
