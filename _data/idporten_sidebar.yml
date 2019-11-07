@@ -16,13 +16,13 @@ folders:
 
       - title: Ulike brukområder
         jurl: /idporten_bruksomrader_index.html
-      - title: Bruke ID-porten for innlogging til webtjeneste
+      - title: Innlogging til webtjeneste
         jurl: /maskinporten_protocol_jwtgrant.html
-      - title: Bruke ID-porten for innlogging til mobilapp
+      - title: Innlogging til mobilapp
         jurl: /maskinporten_protocol_token.html
-      - title: Bruke ID-porten for innlogging til SPA
+      - title: Innlogging til SPA
         jurl: /maskinporten_protocol_token.html
-      - title: Bruke ID-porten for å styre tilgangen til dine API'er
+      - title: Tilgangsstyring til dine API'er
         jurl: /maskinporten_protocol_token.html
         
     - title: Grensesnitt
