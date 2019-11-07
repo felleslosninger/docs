@@ -12,17 +12,10 @@ product: ID-porten
 
 #### Jeg skjønner meg ikke helt på dette med klienttypene?
 
-Klienten må være enten  **PUBLIC**  eller  **CONFIDENTIAL**. (Blir satt i klient-registreringen).  Om klienten ønsker å bruke  **implisitt flyt** (implicit flow)  altså respose_type  **idtoken token**  eller kombinasjoner av disse, må den være  **PUBLIC**.
+Klienten må være enten  **PUBLIC**  eller  **CONFIDENTIAL**. (Blir satt i klient-registreringen).  Om klienten ønsker å bruke  **implisitt flyt** (implicit flow) altså respose_type  **idtoken token**  eller kombinasjoner av disse, må den være  **PUBLIC**.
 Om klienten ønsker å bruke  **code flow**, altså response_type  **code**, må den være  **CONFIDENTIAL**.
 
 
-## Autorisasjonskodeflyt
-
-### spm
-
-svar
-
-***
 
 ## Sertifikat
 
@@ -35,15 +28,15 @@ https://difi.github.io/idporten-oidc-dokumentasjon/oidc_auth_codeflow.html#utste
 
 ***
 
-#### Vi har valgt klientautentisering basert på JWT’er signert med virksomhetssertifikater. Kan vi i testmiljøet bruke selvgenererete sertifiakter? Og hvordan er dette i testmiljøet?
+#### Vi har valgt klientautentisering basert på JWT’er signert med virksomhetssertifikater. Kan vi i testmiljøet bruke selvgenererete sertifikater? Og hvordan er dette i testmiljøet?
 
-Selvgenererete sertifiakter kan ikke benyttes i test og produksjon. I testmiljøet kan kun testvirksomhetssertifikatet benyttes.
+Selvgenererete sertifikater kan ikke benyttes i test og produksjon. I testmiljøet kan kun testvirksomhetssertifikat benyttes.
 
 ## Utlogging
 
 #### Gjelder Redirect tilbake til nettsted etter utlogging. Vi blir stående på utloggingsskjermen til ID-porten. Mener post_logout_redirect_uri skal være satt i logout-requesten. Hva er feil?
 
-Etter at en har trigga utlogging blir en sendt tilbake til post_logout_redirect_uri. Denne må være forhåndsregistrert i ID-porten, det er ikke nok å bare sette den i requesten. så dersom dere stopper på utloggingssida i ID-porten, så mangler post_redirect_logout_uri pi klientregistreringen.
+Etter at en har trigga utlogging blir en sendt tilbake til post_logout_redirect_uri. Denne må være forhåndsregistrert i ID-porten, det er ikke nok å bare sette den i requesten. Dersom dere stopper på utloggingssida i ID-porten mangler post_redirect_logout_uri på klientregistreringen.
 
 ***
 
