@@ -3,7 +3,7 @@ title: Slik bruker du Maskinporten som API-konsument
 description:  Maskinporten som API-konsument
 summary: 'API-konsumenter må lage en Oauth2-integrasjon mot Maskinporten og så videreføre/provisjonere en tildelt API-tilgang til denne integrasjonen.'
 permalink: maskinporten_guide_apikonsument.html
-sidebar: maskinporten
+sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
 
