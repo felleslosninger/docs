@@ -19,14 +19,14 @@ En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 3. API-tilbyder gir tilgang til en konsument
 4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og provisjonerer tilgangen til denne.
 
-Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+Provisjonering/konfigurasjon av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
 5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
 6. Konsumenten inkluderer token i kall til APIet.
 7. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
 
 
-## Prosedyre for API-tilbyder
+## Prosedyre for API-konsument
 
 
 
