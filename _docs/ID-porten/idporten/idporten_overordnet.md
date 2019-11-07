@@ -13,7 +13,9 @@ Denne siden gir en oversikt over de funksjoner som ID-porten tilbyr som tjeneste
 
 ![](/idporten-integrasjonsguide/assets/images/funksjonelt_gammal.bmp "minId_tjenester")
 
-Per i dag inneholder ID-porten kun funksjonalitet for **autentisering**
+ID-porten tilbyr følgende funksjonalitet 
+- **autentisering av sluttbrukere**
+- **API-sikring**
 
 ## Aktører
 
@@ -31,7 +33,7 @@ Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjon
 | Sertifikatutsteder | Sertifikatutsteder som oppfyller kravene for virksomhetssertifikater i henhold til [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor). | 
 | | | 
 
-## Autentiseringstjenester
+## Autentisering av sluttbruker
 
 ### Innlogging
 
