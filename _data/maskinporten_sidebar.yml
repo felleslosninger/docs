@@ -10,9 +10,9 @@ folders:
 
 - title: Bruksområde
   folderitems:
-  
+
       - title: API-tilbyder
-        jurl: /oidc_guide_maskinporten.html
+        jurl: /maskinporten_guide_apitilbyder.html
 
       - title: API-konsument
         jurl: /maskinporten_guide_apikonsument.html
