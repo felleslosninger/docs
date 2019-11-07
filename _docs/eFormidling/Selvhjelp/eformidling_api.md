@@ -17,7 +17,7 @@ sidebar: eformidling_install_sidebar
 **Disse begrepene vil heretter bli benyttet og er relevante for å forstå innholdet på denne siden korrekt.**
 
 |    Begrep   | Forkortelse/forklaring | 
-| :---: |---| 
+| :---: | :---: | 
 | Digital post til offentlige virksomheter | [DPO](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-offentlige-virksomheter-dpo) | 
 | Digital post til virksomheter | [DPV](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-virksomheter-dpv) | 
 | Digital post til innbygger | [DPI](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-innbygger-dpi) | 
@@ -61,7 +61,7 @@ Det er viktig å forstå at statusene her forteller hvor langt forsendelsen er k
 
 Den enkleste måten å sjekke om en forsendelse fortsatt er under sending er å se om ```finished``` parameter er satt til false.
 
-Markert på linje 7 og 8 er ```senderIdentifier``` og ```receiverIdentifier``` som er organisasjonsnumre????? til avsender og mottaker hendholdvis. På linje 15 er ```serviceIdentifier``` satt til DPO som betyr at denne forsendelsen gikk via DPO. Linje 14 indikerer at ```direction``` = ```INCOMING``` som betyr at dette er en innkommende forsendelse, på utgående forsendelser vil ```direction``` være ```OUTGOING```. 
+Markert på linje 7 og 8 er ```senderIdentifier``` og ```receiverIdentifier``` som er organisasjonsnummeret til avsender og mottaker hendholdvis. På linje 15 er ```serviceIdentifier``` satt til DPO som betyr at denne forsendelsen gikk via DPO. Linje 14 indikerer at ```direction``` = ```INCOMING``` som betyr at dette er en innkommende forsendelse, på utgående forsendelser vil ```direction``` være ```OUTGOING```. 
 
 På linje 16 starter ```messageStatuses``` som inneholder alle statuser registrert for denne DPO forsendelsen i kontekst av dette integrasjonspunktet (den andre parten i forsendelsen kan ha [andre statuser](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#dpo-statuser)). For denne forsendelsen er statusene ```OPPRETTET``` og ```INNKOMMENDE_MOTTATT``` registrert hos mottaker som betyr at avsender skal ha fått statuser oppdatert i sitt integrasjonspunkt. Denne forsendelsen er ikke fullført ennå.
 
