@@ -29,10 +29,7 @@ folders:
         jurl: /maskinporten_protocol_token.html
         
     - title: Spørsmål og svar
-      
-
-      - title: FAQ
-        jurl: /oidc_faq.html
+      jurl: /oidc_faq.html
 
        
 ###########################
