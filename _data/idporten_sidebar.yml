@@ -22,7 +22,7 @@ folders:
         jurl: /maskinporten_protocol_jwtgrant.html
       - title: "Bruke ID-porten for innlogging til mobilapp"
         jurl: /maskinporten_protocol_token.html
-       - title: "Bruke ID-porten for innlogging til SPA"
+      - title: "Bruke ID-porten for innlogging til SPA"
         jurl: /maskinporten_protocol_token.html
         - title: "Bruke ID-porten for å styre tilgangen til dine API'er"
         jurl: /maskinporten_protocol_token.html
