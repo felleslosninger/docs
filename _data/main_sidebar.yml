@@ -85,10 +85,8 @@ folders:
     jurl: /einnsyn_forutsetninger.html
 
 - title: eSignering
+  jurl: /esign_index.html
   folderitems:
-  - title: Om eSignering
-    jurl: /esign_index.html
-
   - title: Kom i gang med eSignering
     jurl: /esign_komigang.html
 
