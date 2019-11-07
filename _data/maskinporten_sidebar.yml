@@ -3,20 +3,22 @@ sidebarTitle: Maskinporten
 
 folders:
 - title: Maskinporten
-
   folderitems:
 
       - title: Overordna
         jurl: /maskinporten_index.html
 
-      - title: Maskinporten som API-tilbyder
+- title: Bruksområde
+  folderitems:
+  
+      - title: API-tilbyder
         jurl: /maskinporten_guide_apitilbyder.html
 
-      - title: Maskinporten som API-konsument
+      - title: API-konsument
         jurl: /maskinporten_guide_apikonsument.html
 
 
-- title: Arkitektur
+- title: Grensesnitt
   folderitems:
 
       - title: "JWT grants"
