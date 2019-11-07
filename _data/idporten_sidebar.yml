@@ -1,15 +1,12 @@
 sidebarTitle: ID-porten
 folders:
 
-    - title: ID-porten
+    - title: Overordna arkitekturbeskrivelse
+      jurl: /idporten_overordnet.html
+
+    - title: Ulike brukområder
+      jurl: /idporten_bruksomrader_index.html
       folderitems:
-
-      - title: Overordna
-        jurl: /idporten_overordnet.html
-
-      - title: Ulike brukområder
-        jurl: /idporten_bruksomrader_index.html
-        folderitems:
 
         - title: Innlogging til webtjeneste
           jurl: /idporten_bruksomrade_webtjenester.html
