@@ -23,9 +23,9 @@ folders:
         jurl: /maskinporten_protocol_token.html
       - title: "Bruke ID-porten for innlogging til SPA"
         jurl: /maskinporten_protocol_token.html
-        - title: "Bruke ID-porten for å styre tilgangen til dine API'er"
+      - title: "Bruke ID-porten for å styre tilgangen til dine API'er"
         jurl: /maskinporten_protocol_token.html
-        
+
  - title: Grensesnitt
    folderitems:
 
@@ -33,10 +33,10 @@ folders:
         jurl: /maskinporten_protocol_jwtgrant.html
       - title: "OpenID Connect (OIDC)"
         jurl: /maskinporten_protocol_token.html
-        
+
   - title: Spørsmål og svar
 
-       
+
 ###########################
 
 related_resources_title: Andre nyttige lenker
