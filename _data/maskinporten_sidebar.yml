@@ -5,14 +5,14 @@ folders:
 - title: Maskinporten
   folderitems:
 
-      - title: Overordna
-        jurl: /maskinporten_index.html
+      - title: Overordnet
+        jurl: /maskinporten_overordnet.html
 
 - title: Bruksområde
   folderitems:
   
       - title: API-tilbyder
-        jurl: /maskinporten_guide_apitilbyder.html
+        jurl: /oidc_guide_maskinporten.html
 
       - title: API-konsument
         jurl: /maskinporten_guide_apikonsument.html
@@ -21,9 +21,9 @@ folders:
 - title: Grensesnitt
   folderitems:
 
-      - title: "JWT grants"
+      - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
-      - title: "/token"
+      - title: token
         jurl: /maskinporten_protocol_token.html
 
 ###########################

@@ -22,23 +22,19 @@ folders:
 - title: ID-porten
   folderitems:
 
-  - title: Om ID-porten
-    jurl: /idporten_index.html
+  - title: Overordnet
+    jurl: /idporten_overordnet.html
 
-  - title: OpenID Connect i ID-porten
-    jurl: /oidc_index.html
+  - title: Bruksområder
+    jurl: /idporten_bruksomrader_index.html
 
-  - title: SAML 2.0 i ID-porten
+  - title: Grensesnitt
     jurl: /saml_tilgang.html
 
-    subfolders:
-    - title: Hurtigguider
-      subfolderitems:
+  - title: Spørsmål og svar
+    jurl: /idporten_faq.html
 
-      - title: Hurtigguide SAML
-        jurl: /oidc_hurtigguide.html
-      - title: Hurtigguide Open Id Connect
-        jurl: /oidc_index.html
+
 
 - title: Maskinporten
   folderitems:
