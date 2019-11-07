@@ -3,7 +3,7 @@ title: API-sikring med Maskinporten
 description: API-sikring med Maskinporten
 summary: 'Maskinporten tilbyr offentlige etater en enkel måte å sikre sine APIer med virksomhetsautentisering og tilgangstyring.'
 permalink: oidc_guide_maskinporten.html
-sidebar: oidc
+sidebar: maskinporten_sidebar
 product: ID-porten
 ---
 
