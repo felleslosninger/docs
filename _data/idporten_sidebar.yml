@@ -15,14 +15,29 @@ folders:
         jurl: /maskinporten_guide_apikonsument.html
 
 
-- title: Arkitektur
+- title: Bruksområde
   folderitems:
 
-      - title: "JWT grants"
+      - title: "Bruke ID-porten for innlogging til webtjeneste"
         jurl: /maskinporten_protocol_jwtgrant.html
-      - title: "/token"
+      - title: "Bruke ID-porten for innlogging til mobilapp"
         jurl: /maskinporten_protocol_token.html
+       - title: "Bruke ID-porten for innlogging til SPA"
+        jurl: /maskinporten_protocol_token.html
+        - title: "Bruke ID-porten for å styre tilgangen til dine API'er"
+        jurl: /maskinporten_protocol_token.html
+        
+ - title: Grensesnitt
+  folderitems:
 
+      - title: "SAML2"
+        jurl: /maskinporten_protocol_jwtgrant.html
+      - title: "OpenID Connect (OIDC)"
+        jurl: /maskinporten_protocol_token.html
+        
+  - title: Spørsmål og svar
+
+       
 ###########################
 
 related_resources_title: Andre nyttige lenker
