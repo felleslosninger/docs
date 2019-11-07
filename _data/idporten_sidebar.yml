@@ -21,9 +21,9 @@ folders:
       folderitems:
 
       - title: SAML2
-        jurl: /maskinporten_protocol_jwtgrant.html
+        jurl: /idporten_grensesnitt_saml.html
       - title: OpenID Connect (OIDC)
-        jurl: /maskinporten_protocol_token.html
+        jurl: /idporten_grensesnitt_oidc.html
         
     - title: Spørsmål og svar
       jurl: /idporten_faq.html
