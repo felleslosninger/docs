@@ -4,12 +4,9 @@ folders:
     - title: ID-porten
       folderitems:
 
-      - title: Overordna
-        jurl: /maskinporten_index.html
-      - title: Maskinporten som API-tilbyder
-        jurl: /maskinporten_guide_apitilbyder.html
-      - title: Maskinporten som API-konsument
-        jurl: /maskinporten_guide_apikonsument.html
+      - title: Overordnet
+        jurl: /idporten_overordnet.html
+
 
     - title: Bruksområde
       folderitems:
