@@ -14,6 +14,8 @@ folders:
     - title: Bruksområde
       folderitems:
 
+      - title: Ulike brukområder
+        jurl: /idporten_bruksomrader_index.html
       - title: Bruke ID-porten for innlogging til webtjeneste
         jurl: /maskinporten_protocol_jwtgrant.html
       - title: Bruke ID-porten for innlogging til mobilapp
