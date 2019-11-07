@@ -41,6 +41,9 @@ folders:
 
       - title: Trafikkflyt, kvitteringer og status
         jurl: /eformidling_selfhelp_traffic_flow.html
+        
+      - title: Sporing av forsendelser
+        jurl: /eformidling_api.html
               
       - title: Testmiljø eFormidling
         jurl: /eformidling_testing_env.html
