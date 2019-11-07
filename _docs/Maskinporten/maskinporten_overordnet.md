@@ -15,6 +15,19 @@ Maskinporten er en tjeneste som tilbyr en enkel modell for API-sikring basert p√
 <div class="mermaid">
 graph LR
   subgraph API-tilbyder
+    API[API manager]
+  end
+  subgraph Difi
+    MP[Maskinporten]
+  end
+
+  API -->|Gir tilgang til scope for API-konsument|MP
+
+</div>
+
+<div class="mermaid">
+graph LR
+  subgraph API-tilbyder
     API
   end
   subgraph Difi
