@@ -6,7 +6,11 @@ permalink: idporten_faq.html
 toc: false
 sidebar: idporten_sidebar
 product: ID-porten
+
 ---
+
+* TOC
+{:toc}
 
 ## Generelle spørsmål
 
