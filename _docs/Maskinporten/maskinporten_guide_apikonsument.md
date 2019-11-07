@@ -1,7 +1,7 @@
 ---
-title: Maskinporten API-konsument
-description: Slik bruker du Maskinporten som API-konsument
-summary: 'API-konsumenter må lage en Oauth2-integrasjon mot ID-porten og videreføre en API-tilgang til denne.'
+title: Slik bruker du Maskinporten som API-konsument
+description:  Maskinporten som API-konsument
+summary: 'API-konsumenter må lage en Oauth2-integrasjon mot Maskinporten og så videreføre/provisjonere en tildelt API-tilgang til denne integrasjonen.'
 permalink: maskinporten_guide_apikonsument.html
 sidebar: maskinporten
 product: Maskinporten
@@ -14,62 +14,23 @@ Dette dokumentet viser de stegene som en API-konsument må gjøre for å bruke M
 
 En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 
-1. API-tilbyder blir manuelt provisjonert i Maskinporten
+1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
 2. API-tilbyder oppretter et API
 3. API-tilbyder gir tilgang til en konsument
-4. Konsument provisjonerer tilgangen ned til en aktuell oauth2-klient
+4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og provisjonerer tilgangen til denne.
 
-Provisjonering av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
 5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
 6. Konsumenten inkluderer token i kall til APIet.
 7. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
 
-Merk at både API-tilbyder og API-konsument må lage en egen selvbetjeningsapplikasjon.  
 
 ## Prosedyre for API-tilbyder
 
-### 1: Manuell provisjonering
-
-Først må du bli manuelt provisjonert som API-tilbyder:  Du må bestemme:
-* et `scope-prefix` du ønsker bruke for dine APIer
-* ønsket `client_id` for din selvbetjenings-applikasjon
-* ditt `organisasjonsnummer`
-
-og sende dette til idporten (at) difi.no
-
-Du må så lage en tilhørende Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
-
-### 2: Opprette et API
-
-Et API i Maskinporten-sammenheng er et Oauth2 `scope` . Når du skal opprette et scope, sender du scope-definisjon sammen med en beskrivelse, slik:
-
-```
-POST /scopes HTTP/1.1
-Host: integrasjon-ver2.difi.no
-Content-Type: application/json
-Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
-cache-control: no-cache
-{
-	"prefix": "difi",
-	"subscope": "api3",
-	"description": "Difi sitt API nummer 3 for demo-formål"
-}
-```
-Autorization-headeren i eksempelet er et access_token som selvbetjeningsklienten din først har fått fra Maskinporten. Dette tokenet må ha "idporten:scopes.write" scope.
-
-Prefix må matche det du tidligere fikk tildelt i steg 1.
-
-### 3: Gi tilgang
-
-Som API-tilbyder trenger du ikke bry deg om hvilken klient ("bruker") hos konsumenten din som skal ha tilgang, du gir kun tilgang på organisasjonsnummer-nivå:
-
-```
-PUT /scopes/access/889640782?scope=difi:api3 HTTP/1.1
-```
-som gir organisasjonsnummer `889640782` tilgang til scopet `difi:api3`.   
-
 Du må nå gi konsumenten din beskjed om utføre steg 4.
+
+
 
 ### 6: Validere token
 
