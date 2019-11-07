@@ -24,6 +24,17 @@ Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal br
 
 ## Prosedyre for API-tilbyder
 
+### 1: Manuell provisjonering
+
+Først må du bli manuelt provisjonert som API-tilbyder:  Du må bestemme:
+* et `scope-prefix` du ønsker bruke for dine APIer
+* ønsket `client_id` for din selvbetjenings-applikasjon
+* ditt `organisasjonsnummer`
+
+Send inn skjema: <Lenke her>
+
+Du må så lage en tilhørende Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
+
 ### Beskrivelse av APIer
 
 I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Difi ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
@@ -59,7 +70,9 @@ For å sikre juridisk logging og statistikk, vil Difi aldri slette scopes og til
 
 Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
 
+### Administrasjon av API
 
+API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ved bruk av web-grensesnitt via Samarbeidsportalen.
 
 ### 1a. Opprette APIer - Oauth2-selvbetjeningsklient
 
