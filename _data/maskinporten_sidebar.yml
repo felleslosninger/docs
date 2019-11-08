@@ -11,6 +11,9 @@ folders:
 - title: Bruksområde
   folderitems:
 
+      - title: Hvilke bruksområder har maskinporten?
+        jurl: /maskinporten_bruksomrade.html
+
       - title: API-tilbyder
         jurl: /maskinporten_guide_apitilbyder.html
 
