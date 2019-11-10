@@ -8,16 +8,16 @@ sidebar: eformidling_technical_sidebar
 ---
 
 Under utarbeidelse av 2015:3 rapporten ble det identifisert at et viktig kriteria for suksess var mulighet for hurtig utbredelse uten endringer i lokale installasjoner. Dette gjorde at man i første omgang reimplementerte BEST/EDU grensesnittet som allerede var støttet i de mest brukte Sak-/Arkivløsningene. 
-Det at dette er en relativ gammel "standard" som setter en del begrensninger i forhold til dagens behov har gjør det nødvendig å komme med et nytt grensesnitt mot integrasjonspunktet, som bøter på utfordringer vi opplever med BEST/EDU
+Det at dette er en relativ gammel "standard", som setter en del begrensninger i forhold til dagens behov, har gjort det nødvendig å komme med et nytt grensesnitt mot integrasjonspunktet, som bøter på utfordringer man opplever med BEST/EDU.
 
 Hovedsakelig dreier dette seg om:
-- Behov for flere avleverende og mottakende system innenfor virksomhetene
+- Behov for flere avleverende og mottakende systemer innenfor virksomhetene
 - Behov for å kunne sende til privatpersoner
 - Behov for nye meldingstyper
 - Begrensinger på meldingsstørrelse
 - Behov for bedre statusoppdateringer
 
-NextMove er arbeidsnavnet på neste generasjons grensesnitt mot integrasjonspunktet
+NextMove er arbeidsnavnet på neste generasjons grensesnitt mot integrasjonspunktet.
 
 Adresseringen er i likhet med DPI og PEPPOL, SBDH med en fortetningsmelding.
 Hver melding blir i utgangspunktet en unik ressurs i grensesnittet, og kan i løpet av livsløpet sitt spores og endres gjennom denne ressurslenken. 
@@ -27,7 +27,7 @@ Tanken med denne løsningsarkitekturen er at man skal kunne integrere individuel
 
 
 
-_**Grensesnittet, implementasjonen og dokumentasjonen er fremdeles under utvikling så endringer må påberegnes**_
+_**Grensesnittet, implementasjonen og dokumentasjonen er fremdeles under utvikling, så endringer må påberegnes**_
 
 
 
