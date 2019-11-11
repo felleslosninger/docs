@@ -31,4 +31,31 @@ For å logge inn i Altinn sitt testmiljø bruker du denne lenken <a href="https:
 
 ### Digital post til offentlige virksomheter(DPO)
 
-Vi planlegger å sette opp en løsning som gjør det enkelt å sende DPO meldinger til og svare avsender. 
+Tabellen gjelder integrasjonspunktet til Difi Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
+
+| Nøkkel | verdi |  
+| --- | --- | 
+| Orgnr: | 987464291 | 
+| Minne: | 4gb| 
+| IP-build: | 2.0.6 | 
+| Tjeneste: | DPO | 
+| URL | https://ip-leik-meldingsutveksling.difi.no/ |
+
+Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. Dette kan benyttes ved å bruke Postman for å sende en Arkivmelding DPO eller en bestEdu melding til denne mottakeren. En kan selvsagt benytte andre API-verktøy. 
+
+> [NextMove: Last ned postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
+
+#### APIet
+
+For å sende forespørsler må en benytte API'et, informasjon om hvordan dette benyttes finner du:
+
+- [Swagger](https://difi.github.io/felleslosninger/eformidling_nm_swagger.html)
+- [Spore forsendelser](https://difi.github.io/felleslosninger/eformidling_api.html)
+
+
+#### Sak-arkiv mock
+
+Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
+
+---
+
