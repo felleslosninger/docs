@@ -35,7 +35,7 @@ Tabellen gjelder integrasjonspunktet til Difi Leikanger som er eksponert på URL
 
 | Nøkkel | verdi |  
 | --- | --- | 
-| Orgnr: | 987464291 | 
+| Organisasjonsnummer: | 987464291 | 
 | Minne: | 4GB| 
 | IP-build: | 2.0.6 | 
 | Tjeneste: | DPO | 
