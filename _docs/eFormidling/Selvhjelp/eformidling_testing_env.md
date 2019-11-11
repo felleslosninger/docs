@@ -36,7 +36,7 @@ Tabellen gjelder integrasjonspunktet til Difi Leikanger som er eksponert på URL
 | Nøkkel | verdi |  
 | --- | --- | 
 | Orgnr: | 987464291 | 
-| Minne: | 4gb| 
+| Minne: | 4GB| 
 | IP-build: | 2.0.6 | 
 | Tjeneste: | DPO | 
 | URL | https://ip-leik-meldingsutveksling.difi.no/ |
