@@ -36,25 +36,24 @@ Tabellen gjelder integrasjonspunktet til Difi Leikanger som er eksponert på URL
 | Nøkkel | verdi |  
 | --- | --- | 
 | Organisasjonsnummer: | 987464291 | 
-| Minne: | 4GB| 
-| IP-build: | 2.0.6 | 
 | Tjeneste: | DPO | 
 | URL | https://ip-leik-meldingsutveksling.difi.no/ |
 
-Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. Dette kan benyttes ved å bruke Postman for å sende en Arkivmelding DPO eller en bestEdu melding til denne mottakeren. En kan selvsagt benytte andre API-verktøy. 
+Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
 
-> [NextMove: Last ned postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
+<!--
+ [NextMove: Postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
+-->
 
 #### Sak-arkiv mock
 
 Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
 
-#### APIet
 
-For å sende forespørsler må en benytte API'et, informasjon om hvordan dette benyttes finner du:
 
-- [Swagger](https://difi.github.io/felleslosninger/eformidling_nm_swagger.html)
-- [Spore forsendelser](https://difi.github.io/felleslosninger/eformidling_api.html)
+[](/felleslosninger/eformidling/images/sakarkiv_flyt.PNG)
+
+
 
 
 ---
