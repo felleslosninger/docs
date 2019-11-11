@@ -45,6 +45,10 @@ Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å t
 
 > [NextMove: Last ned postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
 
+#### Sak-arkiv mock
+
+Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
+
 #### APIet
 
 For å sende forespørsler må en benytte API'et, informasjon om hvordan dette benyttes finner du:
@@ -52,10 +56,6 @@ For å sende forespørsler må en benytte API'et, informasjon om hvordan dette b
 - [Swagger](https://difi.github.io/felleslosninger/eformidling_nm_swagger.html)
 - [Spore forsendelser](https://difi.github.io/felleslosninger/eformidling_api.html)
 
-
-#### Sak-arkiv mock
-
-Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
 
 ---
 
