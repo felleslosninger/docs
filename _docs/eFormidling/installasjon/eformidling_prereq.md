@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-Einnsyn er en prosess der statelige virksomheter gjør metadata for korrespondanse tilgjengelig for offentligheten. Integrasjonspunktet fungerer som et bindeledd mellom eInnsynsklienten brukt av arkivarene og det sentrale eInnsynsystemet.
+Einnsyn er en prosess der statlige virksomheter gjør metadata for korrespondanse tilgjengelig for offentligheten. Integrasjonspunktet fungerer som et bindeledd mellom eInnsyn-klient brukt av arkivarene og det sentrale eInnsyn-systemet.
 
 For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følgende: 
 
@@ -16,12 +16,12 @@ For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følg
 
 + Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](https://difi.github.io/felleslosninger/eformidling_selfhelp.html#justere-tilgjengelig-minne)
 + Nødvendige brannmuråpninger
-+ Java 8 med JCE installert (JDK)
++ Java 8 X med JCE installert (JDK)
 + Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
-+ Tips: Installer integrasjonspunktet og eInnsynsklient på samme server.
++ Tips: Installer integrasjonspunktet og eInnsyn-klient på samme server.
 
 ### Tidssynkronisering
-Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspunkt i form av en Json Web Token (JWT). En JWT inneholder tidsstempel som angir hvor lenge den er gyldig. Det er derfor viktig at alle servere som kommuniserer via integrasjonspunktet har synkroniserte klokker. OIDC bruker NTP (”network time protocol”) for synkronisering, tidskilden er GPS-basert. Det er videre viktig at alle servere i CoT er justert korrekt for tidssone og sommertid. (CET / CEST i Norge). Du kan sjekke din klokke her: https://time.is/ 
+Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspunkt i form av en Json Web Token (JWT). En JWT inneholder tidsstempel som angir hvor lenge den er gyldig. Det er derfor viktig at alle servere som kommuniserer via integrasjonspunktet har synkroniserte klokker. OIDC bruker NTP (”network time protocol”) for synkronisering, tidskilden er GPS-basert. Det er videre viktig at alle servere i Circle of Trust er justert korrekt for tidssone og sommertid. (CET / CEST i Norge). Du kan sjekke din klokke [her](https://time.is/)
 
 [For mer informasjon om Network Time Protocol.](https://no.wikipedia.org/wiki/Network_Time_Protocol)
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
@@ -36,7 +36,7 @@ eFormidling blir flyttet til nytt driftsmiljø den 11. desember. Dette medfører
 - [Testmiljø](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-testmiljøet)
 - [Produksjon](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-produksjon)
 
-Har virksomheten spørsmål knyttet til disse endringene kan de sende email til idporten@difi.no
+Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:idporten@difi.no">idporten@difi.no</a>
 
 ### Brannmuråpninger i testmiljø
 
@@ -44,7 +44,7 @@ Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp
 <!--
 En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
 -->
-Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-adresser blir plukket opp automatisk
+Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-adresser blir plukket opp automatisk.
 
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
@@ -59,8 +59,6 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 
 #### Nye adresser testmiljøet
-
-Tidligere beta-meldingsutveksling.difi.no
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
 | ------------- |:-------------:| :-----:| :------:|
@@ -106,7 +104,7 @@ java -version
 Integrasjonspunktet krever minimum versjon 1.8.0
 
 ### OpenJDK Java 8 (gratis)
-For å laste ned en gratisversjon av Java finnes det mange ulike tilbydere av OpenJDK. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. Vi har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. 
+Difi har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. 
 
 Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din platform inne på lenken.
 
@@ -119,12 +117,12 @@ Dersom Java ikke er installert eller versjonen er for gammel, kan ny versjon las
 
 Bruker du ny versjon av Java, må ny JCE installeres. Last ned JCE fra [Oracles sider](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
 
-Det er ikke noen enkel måte å sjekke om Java Cryptography Extension er installert. Ofte kan det enkleste være å bare laste ned og installere JCE, men om du ønsker å sjekke, kan du gå til mappen ```$JAVA_HOME/jre/lib/security``` og sjekke om filene ```US_export_policy.jar``` og ```local_policy.jar``` har nyere dato enn øvrige filer. Hvis datoen er lik, må du installere JCE.
-Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive logmelding om manglende JCE. På nyere Java versjoner må en legge JCE-filene inn i både ```$JAVA_HOME/jre/lib/security/unlimited ``` og ```$JAVA_HOME/jre/lib/security/limited```.
+Det er ikke noen enkel måte å sjekke om Java Cryptography Extension er installert. Ofte kan det enkleste være å bare laste ned og installere JCE, men en du ønsker å sjekke, kan du gå til mappen ```$JAVA_HOME/jre/lib/security``` og sjekke om filene ```US_export_policy.jar``` og ```local_policy.jar``` har nyere dato enn øvrige filer. Hvis datoen er lik, må du installere JCE.
+Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggmelding om manglende JCE. På nyere Java versjoner må en legge JCE-filene inn i både ```$JAVA_HOME/jre/lib/security/unlimited ``` og ```$JAVA_HOME/jre/lib/security/limited```.
 
 ### Virksomhetssertifikat
 
-> * NB! Testmiljø krever **test virksomhetssertifikat**. Produksjonsertifikat vil ikke virke i test
+> * NB! Testmiljø krever **test virksomhetssertifikat**. Produksjonsertifikat vil ikke virke i testmiljø
 > * NB2! Produksjonsmiljøet krever virksomhetssertifikat for produksjon. 
 > * NB3! Bruk sertifikatet merkt som **Autentiseringssertifikatet**
 
