@@ -37,7 +37,8 @@ Tabellen gjelder integrasjonspunktet til Difi Leikanger som er eksponert på URL
 | --- | --- | 
 | Organisasjonsnummer: | 987464291 | 
 | Tjeneste: | DPO | 
-| URL | https://ip-leik-meldingsutveksling.difi.no/ |
+| URL-integrasjonspunkt | https://ip-leik-meldingsutveksling.difi.no/ |
+| URL sak-arkiv mock | https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/ |
 
 Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
 
