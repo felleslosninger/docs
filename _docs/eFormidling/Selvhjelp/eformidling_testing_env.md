@@ -52,7 +52,7 @@ Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra gr
 
 
 
-![](/felleslosninger/images/eformidling/sakarkiv_flyt.png)
+![](/felleslosninger/images/eformidling/sakarkiv_flyt.PNG)
 
 
 
