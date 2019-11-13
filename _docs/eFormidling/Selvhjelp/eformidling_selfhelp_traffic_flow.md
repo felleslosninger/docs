@@ -106,7 +106,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
  | OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPV-melding |
  | SENDT | Integrasjonspunkt har sendt forsendelsen til Altinn's DPV tjeneste | 
  | LEVERT | Når DPV-melding er levert til Altinn sin DPV tjeneste blir en appreceipt sendt tilbake og status i sak-arkivsystem blir oppdatert | 
- | LEST | Når mottaker har åpnet og lest meldingen blir status oppdatert til lest (foreløpig ikkje implementert)| 
+ | LEST | Når mottaker har åpnet og lest meldingen blir status oppdatert til lest| 
  
 ---
 
