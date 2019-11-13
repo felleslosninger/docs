@@ -99,14 +99,14 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
  
  Disse er statuser som logges av integrasjonspunktet.
  
- Alt i tabellen under er logget av avsender sitt integrasjonspunkt. Altinn støtter DPV lese-bekreftelse.
+ Alt i tabellen under er logget av avsender sitt integrasjonspunkt.
  
  | Status | Kommentar| 
  | :--- | :--- |
  | OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPV-melding |
  | SENDT | Integrasjonspunkt har sendt forsendelsen til Altinn's DPV tjeneste | 
  | LEVERT | Når DPV-melding er levert til Altinn sin DPV tjeneste blir en appreceipt sendt tilbake og status i sak-arkivsystem blir oppdatert | 
- | LEST | Når mottaker har åpnet og lest meldingen blir status oppdatert til lest| 
+ | LEST | Når mottaker har åpnet og lest meldingen i Altinn, blir status oppdatert til LEST| 
  
 ---
 
