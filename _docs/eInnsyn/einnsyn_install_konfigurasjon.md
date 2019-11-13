@@ -33,7 +33,7 @@ Det første som må gjøres er å legge inn korrekte verdier i einnsyn-klient.xm
 
 ### Disse fyller du inn
 
-Det som må gjøres her er å fylle inn følgende( ikke fjern <argument> og </argument>. Du skal fylle inn innimellom de) :
+Det som må gjøres her er å fylle inn følgende (ikke fjern ```<argument>``` og ```</argument>```. Du skal fylle inn innimellom de) :
 * ```-Dapplication.moveUrl=http://localhost:9093```
   * Denne linker einnsyn-klienten til integrasjonspunktet. Her må du ha med navnet på integrasjonspunktet og porten det kjører på. ```http://localhost:9093``` er standardnavnet.
 * ```-Dapplication.inputDirectory=sti til katalog```
