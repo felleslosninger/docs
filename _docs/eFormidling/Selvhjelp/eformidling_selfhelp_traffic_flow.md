@@ -99,7 +99,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
  
  Disse er statuser som logges av integrasjonspunktet.
  
- Alt i tabellen under er logget av avsender sitt integrasjonspunkt. Per i dag støtter ikke Altinn DPV lese-bekreftelse.
+ Alt i tabellen under er logget av avsender sitt integrasjonspunkt. Altinn støtter DPV lese-bekreftelse.
  
  | Status | Kommentar| 
  | :--- | :--- |
