@@ -43,7 +43,7 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
 ### Digital post KS FIKS SvarInn/SvarUt (DPF)
 ![](/felleslosninger/images/eformidling/flyt_dpf.jpg)
 
-Utgående: Melding blir initiert i sak-arkivsystemet og sendt til avsenders integrasjonspunkt. Meldinga blir sendt til KS FIKS sin meldingsformidler SvarInn, for så å bli ekspedert til mottaker sin SvarInn innboks. Appreceipt blir levert til avsender når SvarInn mottar forsendelsen. Tjenesten har leveringsgaranti, ref bruksvilkår hos KS.
+Utgående: Melding blir initiert i sak-arkivsystemet og sendt til avsenders integrasjonspunkt. Meldingen blir sendt til KS FIKS sin meldingsformidler SvarInn, for så å bli ekspedert til mottaker sin SvarInn innboks. Appreceipt blir levert til avsender når SvarInn mottar forsendelsen. Tjenesten har leveringsgaranti, ref bruksvilkår hos KS.
 
 Innkommende: Meldinger som blir sendt til SvarInn, enten via SvarUt eller som beskrevet over vil først blir lagt i SvarInn innboksen før integrasjonspunktet vil forsøke å laste ned meldinga for å sende den direkte til sak-arkivsystemet. 
 
@@ -63,7 +63,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
   | :--- | :--- | 
   | OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPF-melding |
   | SENDT | Integrasjonspunkt har sendt forsendelsen til meldingsformidler |
-  | KLAR_FOR_MOTTAK | Venter på at forsendelse skal bli lastet ned av mottaker |
+  | LEVERT | Forsendelsen har blitt levert til mottaker sin SvarInn innboks |
   | LEST | En forsendelse er lest når hele forsendelsesfilen er lastet ned av mottaker | 
   
   Denne tabellen viser statusmeldinger der kommune / fylkeskommune er avsender og statlig virksomhet med integrasjonspunkt er mottaker.
