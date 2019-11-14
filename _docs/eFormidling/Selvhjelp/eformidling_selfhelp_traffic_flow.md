@@ -27,13 +27,13 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
   | Status | Logget av Avsender/mottaker | Kommentar |
   | :--- | :--- | :--- |  
   | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPO-melding |
-  | SENDT| Avsender| Integrasjonspunkt har sendt forsendelsen til meldingsformidler | 
+  | SENDT| Avsender | Integrasjonspunkt har sendt forsendelsen til meldingsformidler | 
   | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
   | INNKOMMENDE_LEVERT | Mottaker | Har generert to mottakskvitteringer og disse blir sendt til avsender | 
   | MOTTATT | Avsender | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt. | 
-  | LEVERT | Avsender | Videresending til sak-arkivsystem |  
-  | LEST | Avsender| Appreceipter fra mottaker av avsender. Dette er både en kvittering og meldingstype som indikerer at sak-arkivsystemet hos mottaker har fått meldingen. Leveransen er bekreftet fullført. | 
+  | LEVERT | Avsender | Leveransen er videresendt til sak-arkivsystemet og bekreftet fullført. |  
+  | LEST | Avsender | Appreceipt blir sendt fra mottaker til avsender. Dette er både en kvittering og meldingstype som indikerer at sak-arkivsystemet hos mottaker har fått meldingen. | 
   
 ---
 
