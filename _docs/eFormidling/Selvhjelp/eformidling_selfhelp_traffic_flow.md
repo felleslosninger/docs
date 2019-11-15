@@ -63,7 +63,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
   | :--- | :--- | 
   | OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPF-melding |
   | SENDT | Integrasjonspunkt har sendt forsendelsen til meldingsformidler |
-  | LEVERT | Forsendelsen har blitt levert til mottaker sin SvarInn innboks |
+  | LEVERT | Forsendelsen er klar for mottak og kan hentes ned fra SvarInn |
   | LEST | En forsendelse er lest når hele forsendelsesfilen er lastet ned av mottaker | 
   
   Denne tabellen viser statusmeldinger der kommune / fylkeskommune er avsender og statlig virksomhet med integrasjonspunkt er mottaker.
