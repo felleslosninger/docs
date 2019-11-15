@@ -76,6 +76,7 @@ POST https://integrasjon.difi.no/clients/
     "application_type": "Maskinporten",
     "client_name": "Min maskinporten-integrasjon",
     "description": "ny integrajson som er tenkt brukt til masse lure ting",
+    "scopes": "difi:api1",
     "token_endpoint_auth_method": "private_key_jwt",
     "grant_types": [
         "urn:ietf:params:oauth:grant-type:jwt-bearer"
