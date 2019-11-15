@@ -73,15 +73,16 @@ Deretter kan du opprette Maskinporten-integrasjonen slik:
 ```
 POST https://integrasjon.difi.no/clients/
 {
-    "application_type": "Maskinporten",
-    "client_name": "Min maskinporten-integrasjon",
-    "description": "ny integrajson som er tenkt brukt til masse lure ting",
-    "scopes": "difi:api1",
+   "integration_type": "maskinporten",
+    "client_name": "oidc_difi_jb_test",
+    "description": "ny integrajson igjen.",
     "token_endpoint_auth_method": "private_key_jwt",
     "grant_types": [
         "urn:ietf:params:oauth:grant-type:jwt-bearer"
     ],
+    "scopes": [  "difitest:api3", "difitest:api4"]
 }
+
 ```
 
 Maskinporten vil svare med en auto-generert client_id, for eksempel  `238259d7-f0ab-4bd5-b253-0f0159375096`
