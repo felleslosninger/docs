@@ -213,7 +213,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
   | MOTTATT | Avsender | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt meldingen. | 
   | INNKOMMENDE_LEVERT | Mottaker | Har generert to mottakskvitteringer og disse blir sendt til avsender. | 
-  | LEVERT | Avsender | Meldingen er videresendt til sak-arkivsystem. |  
+  | LEVERT | Avsender | Forsendelsen (innsynskrav) er sendt på e-post til mottakers postmottak.  |  
   
 ---
 
