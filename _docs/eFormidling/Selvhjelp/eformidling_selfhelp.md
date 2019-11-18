@@ -48,7 +48,7 @@ Ferdig konfigurert ser det feks slik ut:
             <name>einnsyn-integrasjonspunkt</name>
             <description>Klient for opplasting av journaldata og nedlasting av innsynskrav</description>
             <argument>-jar</argument>
-            <argument>integrasjonspunkt-2.0.5.jar</argument>
+            <argument>integrasjonspunkt-2.0.7.jar</argument>
             <argument>--app.logger.enableSSL=false</argument>
             <logpath>%BASE%/integrasjonspunkt-logs</logpath>
             <log mode="roll-by-size">
@@ -83,7 +83,7 @@ Feks:
             <description>Klient for opplasting av journaldata og nedlasting av innsynskrav</description>
 	    <argument>-Xmx2048m</argument>
             <argument>-jar</argument>
-            <argument>integrasjonspunkt-2.0.6.jar</argument>
+            <argument>integrasjonspunkt-2.0.7.jar</argument>
             <argument>--app.logger.enableSSL=false</argument>
             <logpath>%BASE%/integrasjonspunkt-logs</logpath>
             <log mode="roll-by-size">
