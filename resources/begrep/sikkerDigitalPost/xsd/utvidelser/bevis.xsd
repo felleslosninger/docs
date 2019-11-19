@@ -4,7 +4,7 @@
     <xsd:element name="bevis" type="Bevis"/>
     <xsd:complexType name="Bevis">
         <xsd:sequence>
-            <xsd:element name="utsteder-visningsnavn" type="UtstederVisningsnavn" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="utsteder-visningsnavn" type="UtstederVisningsnavn" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="bakgrunnsfarge" type="HexFargeKode" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="utstedt-tidspunkt" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="gyldighetsperiode" type="Gyldighetsperiode" minOccurs="0" maxOccurs="1"/>
@@ -117,14 +117,14 @@
 
     <xsd:complexType name="Info">
         <xsd:sequence>
-            <xsd:element name="navn" type="Infonavn" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="navn" type="Infonavn" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="verdi" type="Infoverdi" minOccurs="1" maxOccurs="1"/>
         </xsd:sequence>
     </xsd:complexType>
 
     <xsd:complexType name="Tittel">
         <xsd:simpleContent>
-            <xsd:extension base="String30">
+            <xsd:extension base="String255">
                 <xsd:attribute name="lang" type="Spraakkode" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
@@ -132,7 +132,7 @@
 
     <xsd:complexType name="BevisIdNavn">
         <xsd:simpleContent>
-            <xsd:extension base="String30">
+            <xsd:extension base="String100">
                 <xsd:attribute name="lang" type="Spraakkode" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
@@ -140,7 +140,7 @@
 
     <xsd:complexType name="UtstederVisningsnavn">
         <xsd:simpleContent>
-            <xsd:extension base="String30">
+            <xsd:extension base="String100">
                 <xsd:attribute name="lang" type="Spraakkode" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
@@ -148,7 +148,7 @@
 
     <xsd:complexType name="Attributtnavn">
         <xsd:simpleContent>
-            <xsd:extension base="String30">
+            <xsd:extension base="String100">
                 <xsd:attribute name="lang" type="Spraakkode" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
@@ -164,7 +164,7 @@
 
     <xsd:complexType name="Infonavn">
         <xsd:simpleContent>
-            <xsd:extension base="String30">
+            <xsd:extension base="String100">
                 <xsd:attribute name="lang" type="Spraakkode" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
@@ -172,18 +172,11 @@
 
     <xsd:complexType name="Infoverdi">
         <xsd:simpleContent>
-            <xsd:extension base="String250">
+            <xsd:extension base="String255">
                 <xsd:attribute name="lang" type="Spraakkode" use="required"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-
-    <xsd:simpleType name="String30">
-        <xsd:restriction base="xsd:string">
-            <xsd:minLength value="1"/>
-            <xsd:maxLength value="30"/>
-        </xsd:restriction>
-    </xsd:simpleType>
 
     <xsd:simpleType name="String100">
         <xsd:restriction base="xsd:string">
@@ -192,10 +185,10 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:simpleType name="String250">
+    <xsd:simpleType name="String255">
         <xsd:restriction base="xsd:string">
             <xsd:minLength value="1"/>
-            <xsd:maxLength value="250"/>
+            <xsd:maxLength value="255"/>
         </xsd:restriction>
     </xsd:simpleType>
 
