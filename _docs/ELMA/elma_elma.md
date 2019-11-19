@@ -87,7 +87,7 @@ If you click on a participant you will see the processes connected to this parti
 
 Note that process dependencies are shown. In a special case, when viewing a 0192-participant, profiles which are dependencies that are profiles on the 9908-sibling-participant will also be shown. Those dependencies are not processes on the 0192-participant, but are still shown in ELMA web. They are not visible in a SMP-lookup. 
 
-## Swedish participants
+### Swedish participants
 Swedish participants are added by specifying the ICD 0007, followed by an organization number. For corporations (aktiebolag/aksjeselskap) a ten-numbered organization number is sufficient, whereas for a sole proprietorship (enskild firma/enkeltmannsforetak) a century prefix is required in order to verify the organization's identity. Valid century prefixes are 18, 19 and 20. The format is thus [18|19|20] + <organization-number>.
 
 ### Delete participant
