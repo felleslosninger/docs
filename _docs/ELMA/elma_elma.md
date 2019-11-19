@@ -87,6 +87,8 @@ If you click on a participant you will see the processes connected to this parti
 
 Note that process dependencies are shown. In a special case, when viewing a 0192-participant, profiles which are dependencies that are profiles on the 9908-sibling-participant will also be shown. Those dependencies are not processes on the 0192-participant, but are still shown in ELMA web. They are not visible in a SMP-lookup. 
 
+## Swedish participants
+Swedish participants are added by specifying the ICD 0007, followed by an organization number. For corporations (aktiebolag/aksjeselskap) a ten-numbered organization number is sufficient, whereas for a sole proprietorship (enskild firma/enkeltmannsforetak) a century prefix is required in order to verify the organization's identity. Valid century prefixes are 18, 19 and 20. The format is thus [18|19|20] + <organization-number>.
 
 ### Delete participant
 To delete a participant you should be standing in the same window as above. (Endpoints->Your endpoint). From here you can click delete on the selected participant to remove it from your endpoint. If you attempt to delete a participant from the Participants view(pressing the home button) you will get an error. This delete button will be removed in a future release as it's not meant to be there.
@@ -149,11 +151,6 @@ After you have succesfully added a new user you can edit this user, add another 
 
 ![](/felleslosninger/images/elma/new_user_1.PNG)
 
-
-## Changelog
-
-*20.03.2019*
-- Added information about process dependencies being shown when viewing a participant
 
 
 If you have any questions don't hesitate to contact us <a href="elma@difi.no">elma@difi.no</a>
