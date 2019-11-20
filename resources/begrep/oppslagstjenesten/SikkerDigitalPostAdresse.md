@@ -1,6 +1,6 @@
 ---
 title: SikkerDigitalPostAdresse  
-permalink: ot_sikkerfigitalpostadresse.html
+permalink: ot_sikkerdigitalpostadresse.html
 sidebar: begrep_sidebar
 ---
 
