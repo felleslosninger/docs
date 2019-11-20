@@ -21,17 +21,6 @@ Responsen er en [HentPersonerRespons](HentPersonerRespons.md)
 | [personidentifikator](../felles/personidentifikator.md) | 1..1000      |
 | [informasjonsbehov](../felles/informasjonsbehov.md)     | 0..\*        |
 
-#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov.md)
-
-| Kodeverdi                          | Beskrivelse                                                                                                                                                                                                                                                                |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Person                             | Person gir kun informasjon om Personen finnes i registeret og reservasjonsstatus. Person er implisitt og returneres alltid.                                                                                                                                                |
-| Kontaktinfo                        | Kontaktinfo gir informasjon om Person og Personers kontaktinformasjon, dvs epost-addresse og mobiltelefonnummer                                                                                                                                                            |
-| Sertifikat                         | Sertifikat gir informasjon om Person sitt sertifikat som skal brukes i forbindelse med kryptering av Sikker Digital Post                                                                                                                                                   |
-| SikkerDigitalPost                  | SikkerDigitalPost gir informasjon om Person, postkasse og postkasseleverandøren.                                                                                                                                                                                           |
-| [VarslingsStatus](varslingsstatus.md) | VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert. |
-| Språk                              | Innbyggers foretrukne språk for kommunikasjon med det offentlige. Attributtet Spraak utleveres kun i REST-grensesnittet. |
-
 
 Dersom det ikke spesifiseres noen informasjonsbehov-element i
 forespørselen, vil standard responsverdi være Person.  
