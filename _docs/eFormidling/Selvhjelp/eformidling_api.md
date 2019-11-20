@@ -44,19 +44,17 @@ sidebar: eformidling_install_sidebar
 
 # Sjekke forsendelser - grafisk brukergrensesnitt
 
+### Hvordan?
+
 Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuelt sjekkes i .propertiesfilen som ligger i integrasjonspunktmappen.
   
-En skal få opp en liste med virksomhetens forsendelser slik som under:
+Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunktet: 
 
 ![](/felleslosninger/images/eformidling/api_gui_example.png)
 
 ### Forklaring til grensesnittet
 
-Hver blokk inneholder én forsendelse (conversation), og kan fortelle viktige ting som: hvem avsender er, hvem mottaker er, tjeneste/forsendelsesmåte, ```meldingsId```, forsendelsesId, forsendelsestidspunkt, [status](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html) på forsendelsen. 
-
-Det er viktig å forstå at statusene her forteller hvor langt forsendelsen er kommet og om mottaker har mottatt forsendelsen eller forsendelsen har feilet. Dette kan benyttes som et verktøy for å spore forsendelsen om den er kommet frem til mottaker. Se lenken over for å finne en liste over statuser for alle typer tjenester. 
-
-> Merk: Én ```conversationId``` har én eller flere ```messageId```'er knyttet til samme forsendelse/konversasjon.
+Forklaring kommer her..
 
 ---
 
@@ -72,6 +70,11 @@ Til dette kan en bruke f.eks Postman.
 
 På dette endepunktet kan en se alle innkommende og utgående forsendelser via dette integrasjonspunktet, slik som i det grafiske brukergrensesnittet. Innholdet blir vist på JSON-format og er lett tilgjengelig for maskinlesing. 
 
+Hver blokk inneholder én forsendelse (id), og kan fortelle viktige ting som: hvem avsender er, hvem mottaker er, tjeneste/forsendelsesmåte, ```meldingsId```, forsendelsesId, forsendelsestidspunkt, [status](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html) på forsendelsen. 
+
+Det er viktig å forstå at statusene her forteller hvor langt forsendelsen er kommet og om mottaker har mottatt forsendelsen eller forsendelsen har feilet. Dette kan benyttes som et verktøy for å spore forsendelsen om den er kommet frem til mottaker. Se lenken over for å finne en liste over statuser for alle typer tjenester. 
+
+> Merk: Én ```conversationId``` har én eller flere ```messageId```'er knyttet til samme forsendelse/konversasjon.
 
 ### Ikke ennå levert forsendelse
 ![](/felleslosninger/images/eformidling/api_conv_unfinished.PNG)
