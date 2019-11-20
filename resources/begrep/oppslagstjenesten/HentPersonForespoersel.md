@@ -15,20 +15,8 @@ sidebar: begrep_sidebar
 Responsen er en [HentPersonRespons](HentPersonRespons.md)
 
 
-#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov.md)
 
-| Kodeverdi                          | Beskrivelse                                                                                                                                                                                                                                                                |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Person](sdp_person.html)                             | Person gir kun informasjon om Personen finnes i registeret og reservasjonsstatus. Person er implisitt og returneres alltid.                                                                                                                                                |
-| [Kontaktinformasjon](ot_kontakinformasjon.html)                        | Kontaktinfo gir informasjon om Person og Personers kontaktinformasjon, dvs epost-addresse og mobiltelefonnummer                                                                                                                                                            |
-| [Sertifikat](ot_sertifikat.html)                         | Sertifikat gir informasjon om Person sitt sertifikat som skal brukes i forbindelse med kryptering av Sikker Digital Post                                                                                                                                                   |
-| SikkerDigitalPost                  | SikkerDigitalPost gir informasjon om Person, postkasse og postkasseleverandøren.                                                                                                                                                                                           |
-| [VarslingsStatus](varslingsstatus.md) | VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert. |
-| [Spraak](spraak.html)                              | Innbyggers foretrukne språk for kommunikasjon med det offentlige. |
-
-
-
-### Eksempel på HentPersonerForespoersel (REST)
+### Eksempel på HentPersonForespoersel (REST)
 
 ```
 POST /rest/v1/personer
@@ -41,7 +29,7 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 }
 ```
 
-### Eksempel på HentPersonerRespons (REST)
+### Eksempel på HentPersonRespons (REST)
 
 ```
 {
