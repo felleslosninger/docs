@@ -30,6 +30,8 @@ Responsen er en [HentPersonerRespons](HentPersonerRespons.md)
 | Sertifikat                         | Sertifikat gir informasjon om Person sitt sertifikat som skal brukes i forbindelse med kryptering av Sikker Digital Post                                                                                                                                                   |
 | SikkerDigitalPost                  | SikkerDigitalPost gir informasjon om Person, postkasse og postkasseleverandøren.                                                                                                                                                                                           |
 | [VarslingsStatus](varslingsstatus.md) | VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert. |
+| Språk                              | Innbyggers foretrukne språk for kommunikasjon med det offentlige.
+|
 
 Dersom det ikke spesifiseres noen informasjonsbehov-element i
 forespørselen, vil standard responsverdi være Person.  
@@ -44,6 +46,7 @@ vil ignoreres.
  <ns:informasjonsbehov>Sertifikat</ns:informasjonsbehov>
  <ns:informasjonsbehov>SikkerDigitalPost</ns:informasjonsbehov>
  <ns:informasjonsbehov>VarslingsStatus</ns:informasjonsbehov>
+ <ns:informasjonsbehov>Spraak</ns:informasjonsbehov>
 
  <ns:personidentifikator>01013355300</ns:personidentifikator>
  <ns:personidentifikator>01013355491</ns:personidentifikator>
