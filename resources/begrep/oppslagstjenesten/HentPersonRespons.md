@@ -7,7 +7,7 @@ sidebar: begrep_sidebar
 
 |---|---|
 | Term          | {{page.title}} |
-| Definisjon    | Webservice-respons på en [HentPersonForespoersel](ot_hentpersonforespoersel.html |
+| Definisjon    | Webservice-respons på en [HentPersonForespoersel](ot_hentpersonforespoersel.html) |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
 | Kommentar     | Respons gjelder innlogget person som accesstokenet er knyttet til. |
