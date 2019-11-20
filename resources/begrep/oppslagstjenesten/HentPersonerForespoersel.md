@@ -71,7 +71,7 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 }
 ```
 
-#### Eksempel på HentPersonerForespoersel (SOAP)
+### Eksempel på HentPersonerForespoersel (SOAP)
 
 ``` 
 <ns:HentPersonerForespoersel>
