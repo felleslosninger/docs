@@ -25,6 +25,7 @@ for hver datatype. Følgende datatyper er definert:
 - [FysiskpostInfo](FysiskPostInfo.md)
 - [HentEndringerForespoersel](ot_hentendringerforespoersel.html)
 - [HentEndringerRespons](ot_hentendringerrespons.html)
+- [HentPersonForespoersel](ot_hentpersonforespoersel.html)
 - [HentPersonerForespoersel](ot_hentpersonerforespoersel.html)
 - [HentPersonerRespons](ot_hentpersonerrespons.html)
 - [HentPrintsertifikatForespoersel](ot_hentprintsertifikatforespoersel.html)
