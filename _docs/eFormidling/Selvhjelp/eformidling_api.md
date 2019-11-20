@@ -12,7 +12,7 @@ sidebar: eformidling_install_sidebar
 * TOC
 {:toc}
 
-## Terminologi
+# Terminologi
 
 **Disse begrepene vil heretter bli benyttet og er relevante for å forstå innholdet på denne siden korrekt.**
 
@@ -33,7 +33,7 @@ sidebar: eformidling_install_sidebar
 | Databehandler | [se kap 9, avsnitt 2](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-einnsyn) | 
 | | |
 
-## Før du starter
+# Før du starter
 
 - Sørg for at du kan nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
 - Du må ha en nettleser eller et API-testverktøy (f.e. Postman via GET request) for å spørre mot APIet.
@@ -41,6 +41,20 @@ sidebar: eformidling_install_sidebar
 - Om du sletter activemq-data mappe eller database-filer som ligger i integrasjonspunktet hovedmappen, vil du ikke finne data. Informasjon og statuser om forsendelser blir lagret der.
 
 ---
+
+# Sjekke forsendelser med grafisk brukergrensesnitt
+
+Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuell sjekkes i .propertiesfilen som ligger i integrasjonspunktmappen.
+  
+En skal få opp en liste med virksomhetens forsendelser slik som under:
+
+![](/felleslosninger/images/eformidling/api_gui_example.png)
+
+---
+
+# Sjekke forsendelser med API-testverktøy
+
+Til dette kan en bruke f.eks Postman.
 
 ## Hente alle forsendelser
 
