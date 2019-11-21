@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,81 +8,156 @@
 <title>NextMove API Specification</title>
 <link rel="stylesheet" href="assets/css/asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.hidden {
-    display: none;
-}
-
-.switch {
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-color: #7a2518;
-    display: inline-block;
-}
-
-.switch--item {
-    padding: 10px;
-    background-color: #ffffff;
-    color: #7a2518;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.switch--item.selected {
-    background-color: #7a2519;
-    color: #ffffff;
-}
-
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-<script type="text/javascript">
-function addBlockSwitches() {
-    $('.primary').each(function() {
-        primary = $(this);
-        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
-        primary.children('.title').remove();
-    });
-    $('.secondary').each(function(idx, node) {
-        secondary = $(node);
-        primary = findPrimary(secondary);
-        switchItem = createSwitchItem(secondary, primary.children('.switch'));
-        switchItem.content.addClass('hidden');
-        findPrimary(secondary).append(switchItem.content);
-        secondary.remove();
-    });
-}
-
-function createBlockSwitch(primary) {
-    blockSwitch = $('<div class="switch"></div>');
-    primary.prepend(blockSwitch);
-    return blockSwitch;
-}
-
-function findPrimary(secondary) {
-    candidate = secondary.prev();
-    while (!candidate.is('.primary')) {
-        candidate = candidate.prev();
-    }
-    return candidate;
-}
-
-function createSwitchItem(block, blockSwitch) {
-    blockName = block.children('.title').text();
-    content = block.children('.content').first().append(block.next('.colist'));
-    item = $('<div class="switch--item">' + blockName + '</div>');
-    item.on('click', '', content, function(e) {
-        $(this).addClass('selected');
-        $(this).siblings().removeClass('selected');
-        e.data.siblings('.content').addClass('hidden');
-        e.data.removeClass('hidden');
-    });
-    blockSwitch.append(item);
-    return {'item': item, 'content': content};
-}
-
-$(addBlockSwitches);
-
-</script>
+<style>
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+.switch {
+
+    border-width: 1px 1px 0 1px;
+
+    border-style: solid;
+
+    border-color: #7a2518;
+
+    display: inline-block;
+
+}
+
+
+
+.switch--item {
+
+    padding: 10px;
+
+    background-color: #ffffff;
+
+    color: #7a2518;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+}
+
+
+
+.switch--item.selected {
+
+    background-color: #7a2519;
+
+    color: #ffffff;
+
+}
+
+
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+
+<script type="text/javascript">
+
+function addBlockSwitches() {
+
+    $('.primary').each(function() {
+
+        primary = $(this);
+
+        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
+
+        primary.children('.title').remove();
+
+    });
+
+    $('.secondary').each(function(idx, node) {
+
+        secondary = $(node);
+
+        primary = findPrimary(secondary);
+
+        switchItem = createSwitchItem(secondary, primary.children('.switch'));
+
+        switchItem.content.addClass('hidden');
+
+        findPrimary(secondary).append(switchItem.content);
+
+        secondary.remove();
+
+    });
+
+}
+
+
+
+function createBlockSwitch(primary) {
+
+    blockSwitch = $('<div class="switch"></div>');
+
+    primary.prepend(blockSwitch);
+
+    return blockSwitch;
+
+}
+
+
+
+function findPrimary(secondary) {
+
+    candidate = secondary.prev();
+
+    while (!candidate.is('.primary')) {
+
+        candidate = candidate.prev();
+
+    }
+
+    return candidate;
+
+}
+
+
+
+function createSwitchItem(block, blockSwitch) {
+
+    blockName = block.children('.title').text();
+
+    content = block.children('.content').first().append(block.next('.colist'));
+
+    item = $('<div class="switch--item">' + blockName + '</div>');
+
+    item.on('click', '', content, function(e) {
+
+        $(this).addClass('selected');
+
+        $(this).siblings().removeClass('selected');
+
+        e.data.siblings('.content').addClass('hidden');
+
+        e.data.removeClass('hidden');
+
+    });
+
+    blockSwitch.append(item);
+
+    return {'item': item, 'content': content};
+
+}
+
+
+
+$(addBlockSwitches);
+
+
+
+</script>
+
 
 <style>.plusimageapply{
     list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T7XTsQkCQRAF0He1ybUhiAYHFmBkaGQFBpca2IAgYjNiEYqibKCB4t0yy026/Mdnd7ZSOFVh3mDABTPs+xr+a/DEA3NsupAu4J1bY4GE/kwOkEI7jHH9FnKBlDthVAIcUUeBLSa4RYAVlpFLvKNBG3nGM6Y4RBepL/c5H+wvZDd4AeooGhGCcrDIAAAAAElFTkSuQmCC);
@@ -2128,8 +2202,13 @@ X-Content-Type-Options: nosniff
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Content-Type: application/vnd.etsi.asic-e+zip
 
-PK  �RuO               test ������d�_�����|�~7E�mco�q���^�T����9A����%Y��/u/���=d�w���\g���#D��  ��D'*=�~a�L?���dS;P��{+5��o/����s\��+�3*{y۷�Zt�6��^��֡�S�=��u�F���Q9�t� �q��ZO� �K�l��$I������7���0-r��&lt;#8OzТD!"�K���V�,�&gt;�$�&lt;?oA�=��(3F��d�C��A���[�����LVn��v����
-�/^�A Y���?.�QvI�W���9�\�Oo�1��~J�q���~��`p�%��C�C���Q����R\0��딠tF	�q�p&amp;ו��pY�4Ru�H&gt;��#���y��DR眅3�?q.�J��8S�@^R�È��"q]qM���o8��6K͡x���!Ǧ|H����@��J��/a�&lt;�Jj]�q�m��	��v��U�����\lƧ�ϮB(�e빇�x[��@!�w��(R������R0�v[�Qa��Q�y�E��.ŉ0��RH%T����g��B�a��ո��zI�m�Y�����~97v��-&lt;�Џ&amp;j��H���^f9�yz��ك����������&gt;�~+UAB�䘁�Cp��p����13�e-;�Gr�5P��⢊-PBT?�D�,�K@f;��*�����r{\����A���4۷�#kq)�J�c.���B��Ѳ�z��;'L-���^I����#����&amp;�fQR��zx��~4���!|�a�������Xs�9�fI�����1�O8#�vӿ�2{0�۩0��5���r�+�?���5Ʋ�ۈ%�F|��W7\�'�X������\�����
+PK  �RuO               test ������d�_�����|�~7E�mco�q���^�T
+����9A����%Y��/u/���=d�w���\g�
+��#D��  ��D'*=�~a�L?���dS;P��{+5��o/����s\��+�3*{y۷�Zt�6��^��֡�S�=��u�F���Q9�t� �q��ZO� �K�l��$I������7���0-r��&lt;#8OzТD!"�K���V�,�&gt;�$�&lt;?oA�=��(3F��d�C��A���[�����LVn��v����
+�/^�A Y���?.�QvI�W���9�\�Oo�1��~J�q���~��`p�%��C�C���Q����R\0��딠tF	�q�p&amp;ו��pY�4Ru�H&gt;��#���y��DR眅3�?q.�J��8S�@^R�È��"q]qM���o8��6K͡x���!Ǧ|H����@��J��/a�&lt;�Jj]�q�m��	��v��U�����\lƧ�ϮB(�e빇�x[��@!�w��(R������R0�v[�Qa��Q�y�E��.ŉ0��RH%T����g��B�a��ո��zI�m�Y�����~97v��-&lt;�Џ&amp;j��H���^f9�yz��ك�������
+���&gt;�~+UAB�䘁�Cp��p����13�e-;�Gr�5P��⢊-P
+BT?�D�,�K@f;��*�����r{\����A���4۷�#kq)�J�c.���B��Ѳ�z��;'L-���^I����#����&amp;�fQR��zx��~4���!|�a�������Xs�9�fI�����1�O8#�vӿ�2{0�۩0��5���r�+�?���5Ʋ�ۈ%�F|��W7\�
+'�X������\�����
 ��+:o[%�56灾�,�`&amp;2hS��O�fDl����b8�����r�N��r�s�#̈IId�[�~��/��h����:����x��-��-�����MY�(��e�"|�����������E.ƫB��%nř��\�w�b�PK]�     PK   �RuO]�                      testPK      2   7</code></pre>
 </div>
 </div>
