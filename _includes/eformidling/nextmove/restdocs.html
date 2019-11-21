@@ -249,8 +249,10 @@ $(addBlockSwitches);
 <ul class="sectlevel3">
 <li><a href="#_example_1_creating_an_arkivmelding_message">Example 1 - Creating an arkivmelding message</a></li>
 <li><a href="#_example_2_creating_a_dpi_digital_message">Example 2 - Creating a DPI digital message</a></li>
-<li><a href="#_example_3_validation_error">Example 3 - Validation error</a></li>
-<li><a href="#_example_4_constraint_violation">Example 4 - Constraint violation</a></li>
+<li><a href="#_example_3_creating_a_dpe_innsynskrav_message">Example 3 - Creating a DPE innsynskrav message</a></li>
+<li><a href="#_example_4_creating_a_dpe_publisering_message">Example 4 - Creating a DPE publisering message</a></li>
+<li><a href="#_example_5_validation_error">Example 5 - Validation error</a></li>
+<li><a href="#_example_6_constraint_violation">Example 6 - Constraint violation</a></li>
 </ul>
 </li>
 <li><a href="#messages-out-upload">Upload attachment</a>
@@ -2569,9 +2571,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 3397
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 3429
 
 {
   "content" : [ {
@@ -2594,15 +2596,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -2632,15 +2634,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+        "instanceIdentifier" : "bd00ee46-8bd5-4c8a-a8e0-c1e9d8bdb562",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "e290ac53-ef87-476c-a202-135a46378c9e",
+          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -2664,24 +2666,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
     "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "paged" : true,
+    "unpaged" : false
   },
   "last" : true,
-  "totalElements" : 2,
   "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : true,
@@ -2717,7 +2719,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1741
+Content-Length: 1764
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -2742,15 +2744,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -2763,24 +2765,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
     "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "paged" : true,
+    "unpaged" : false
   },
   "last" : true,
-  "totalElements" : 1,
   "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : true,
@@ -2815,8 +2817,8 @@ Pragma: no-cache
 X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 3399
 X-Content-Type-Options: nosniff
+Content-Length: 3431
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -2841,15 +2843,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -2879,15 +2881,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+        "instanceIdentifier" : "bd00ee46-8bd5-4c8a-a8e0-c1e9d8bdb562",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "e290ac53-ef87-476c-a202-135a46378c9e",
+          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -2911,24 +2913,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
     "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "paged" : true,
+    "unpaged" : false
   },
   "last" : true,
-  "totalElements" : 2,
   "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -2961,10 +2963,10 @@ Host: localhost:8080</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Pragma: no-cache
 X-XSS-Protection: 1; mode=block
-Content-Length: 2160
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
+Content-Length: 2169
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -2989,15 +2991,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+        "instanceIdentifier" : "bd00ee46-8bd5-4c8a-a8e0-c1e9d8bdb562",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "e290ac53-ef87-476c-a202-135a46378c9e",
+          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -3021,24 +3023,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 30,
     "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "paged" : true,
+    "unpaged" : false
   },
   "last" : false,
-  "totalElements" : 41,
   "totalPages" : 5,
+  "totalElements" : 41,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : false,
@@ -3279,6 +3281,11 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The DPO business message</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].arkivmelding.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
@@ -3437,14 +3444,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -3458,7 +3465,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1163
+Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -3482,15 +3489,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -3702,6 +3709,11 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The DPO business message</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
@@ -3746,14 +3758,14 @@ Business Document.</p>
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -3771,7 +3783,7 @@ Business Document.</p>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Accept: application/json;charset=UTF-8
-Content-Length: 1103
+Content-Length: 1126
 Content-Type: application/json;charset=UTF-8
 Host: localhost:8080
 
@@ -3795,14 +3807,14 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -3824,7 +3836,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1163
+Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -3848,15 +3860,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -4064,6 +4076,12 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
@@ -4240,6 +4258,11 @@ partner&#8217;s end.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date and time when response is expected. This element could be
 populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
@@ -4279,14 +4302,14 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+      "instanceIdentifier" : "bd00ee46-8bd5-4c8a-a8e0-c1e9d8bdb562",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "e290ac53-ef87-476c-a202-135a46378c9e",
+        "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -4315,7 +4338,7 @@ echoed back in a subsequent response.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Accept: application/json;charset=UTF-8
-Content-Length: 1496
+Content-Length: 1505
 Content-Type: application/json;charset=UTF-8
 Host: localhost:8080
 
@@ -4339,14 +4362,14 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+      "instanceIdentifier" : "bd00ee46-8bd5-4c8a-a8e0-c1e9d8bdb562",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "e290ac53-ef87-476c-a202-135a46378c9e",
+        "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -4379,9 +4402,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
+Content-Length: 1565
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1556
 
 {
   "standardBusinessDocumentHeader" : {
@@ -4403,15 +4426,15 @@ Content-Length: 1556
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+      "instanceIdentifier" : "bd00ee46-8bd5-4c8a-a8e0-c1e9d8bdb562",
       "type" : "digital",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "e290ac53-ef87-476c-a202-135a46378c9e",
+        "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -4917,7 +4940,1143 @@ echoed back in a subsequent response.</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_3_validation_error">Example 3 - Validation error</h4>
+<h4 id="_example_3_creating_a_dpe_innsynskrav_message">Example 3 - Creating a DPE innsynskrav message</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+    -H 'Accept: application/json;charset=UTF-8' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
+  "standardBusinessDocumentHeader" : {
+    "headerVersion" : "1.0",
+    "sender" : [ {
+      "identifier" : {
+        "value" : "0192:910077473",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "receiver" : [ {
+      "identifier" : {
+        "value" : "0192:910075918",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "documentIdentification" : {
+      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
+      "typeVersion" : "1.0",
+      "instanceIdentifier" : "3ad13dc0-1dbf-4ed1-941e-71d4a85da9c8",
+      "type" : "innsynskrav"
+    },
+    "businessScope" : {
+      "scope" : [ {
+        "type" : "ConversationId",
+        "instanceIdentifier" : "a4b54938-2867-43c6-b028-56f4fe1f511c",
+        "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+        "scopeInformation" : [ {
+          "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
+        } ]
+      } ]
+    }
+  },
+  "innsynskrav" : {
+    "sikkerhetsnivaa" : 4,
+    "hoveddokument" : "kafka_quotes.txt",
+    "orgnr" : "98765432",
+    "epost" : "doofenshmirtz@evil.inc"
+  }
+}'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
+Accept: application/json;charset=UTF-8
+Content-Length: 1201
+Content-Type: application/json;charset=UTF-8
+Host: localhost:8080
+
+{
+  "standardBusinessDocumentHeader" : {
+    "headerVersion" : "1.0",
+    "sender" : [ {
+      "identifier" : {
+        "value" : "0192:910077473",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "receiver" : [ {
+      "identifier" : {
+        "value" : "0192:910075918",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "documentIdentification" : {
+      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
+      "typeVersion" : "1.0",
+      "instanceIdentifier" : "3ad13dc0-1dbf-4ed1-941e-71d4a85da9c8",
+      "type" : "innsynskrav"
+    },
+    "businessScope" : {
+      "scope" : [ {
+        "type" : "ConversationId",
+        "instanceIdentifier" : "a4b54938-2867-43c6-b028-56f4fe1f511c",
+        "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+        "scopeInformation" : [ {
+          "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
+        } ]
+      } ]
+    }
+  },
+  "innsynskrav" : {
+    "sikkerhetsnivaa" : 4,
+    "hoveddokument" : "kafka_quotes.txt",
+    "orgnr" : "98765432",
+    "epost" : "doofenshmirtz@evil.inc"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Content-Length: 1261
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Expires: 0
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+
+{
+  "standardBusinessDocumentHeader" : {
+    "headerVersion" : "1.0",
+    "sender" : [ {
+      "identifier" : {
+        "value" : "0192:910077473",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "receiver" : [ {
+      "identifier" : {
+        "value" : "0192:910075918",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "documentIdentification" : {
+      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
+      "typeVersion" : "1.0",
+      "instanceIdentifier" : "3ad13dc0-1dbf-4ed1-941e-71d4a85da9c8",
+      "type" : "innsynskrav",
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
+    },
+    "businessScope" : {
+      "scope" : [ {
+        "type" : "ConversationId",
+        "instanceIdentifier" : "a4b54938-2867-43c6-b028-56f4fe1f511c",
+        "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+        "scopeInformation" : [ {
+          "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
+        } ]
+      } ]
+    }
+  },
+  "innsynskrav" : {
+    "sikkerhetsnivaa" : 4,
+    "hoveddokument" : "kafka_quotes.txt",
+    "orgnr" : "98765432",
+    "epost" : "doofenshmirtz@evil.inc"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="openblock primary request-fields">
+<div class="title">Request fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 25.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.headerVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Header version. Expected value is 1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that has created the standard business document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that receives the SBD.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
+Size must be between 1 and 1 inclusive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics containing identification about the document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The business scope
+contains 1 to many [1..*] scopes. It is not mandatory to put all intermediary
+scopes in an SBDH. Only those scopes that the parties agree to are valid. The
+following examples are all valid: transaction; business process; collaboration. A
+Profile may be used to group well-formedness rules together. The business
+scope block consists of the Scope block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the sending party.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the receiving party.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.standard</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The
+originator of the type of the Business Data standard, e.g. SWIFT, OAG,
+EAN.UCC, EDIFACT, X12; references which Data Dictionary is being
+used. Used for the task of verifying that the grammar of a message is
+valid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.typeVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains versioning information or number of
+the standard that defines the document which is specified in the ’Type’
+data element, e.g. values could be ‘1.3’ or ‘D.96A’, etc. . This is the
+version of the document itself and is different than the HeaderVersion.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains reference information which uniquely identifies
+this instance of the SBD between the sender and the receiver. This
+identifier identifies this document as distinct from others. There is only
+one SBD instance per Standard Header. The Instance Identifier is
+automatically generated as an UUID if not specified.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be a UUID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A logical indicator
+representing the type of Business Data being sent or the named type of
+business data. This attribute identifies the type of document and not the
+instance of that document. The instance document or interchange can
+contain one or more business documents of a single document type or
+closely related types. The industry standard body (as referenced in the
+‘Standard’ element) is responsible for defining the Type value to be used
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
+Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains date and time of SBDH/document
+creation. In the SBDH the parser translator or service component assigns
+the SBD a Date and Time stamp. The creation date and time expressed
+here most likely will be different from the date and time stamped in the
+transport envelope.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the type of scope,
+the identifiers for the scope, other supporting information and the scope
+content itself. The importance of the Scope is that it allows the SBDH to
+operate under auspices of an agreement; that parties agree that they only
+include reference agreements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null.
+Size must be between 1 and 2147483647 inclusive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
+scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier that references the instance of the scope (e.g.
+process execution instance, document instance). For example, the
+Instance Identifier could be used to identify the specific instance of
+a Business Process. This identifier would be used to correlate all
+the way back to the business domain layer; it can be thought of as
+a session descriptor at the business domain application level.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be a UUID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation[].expectedResponseDateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time when response is expected. This element could be
+populated in an initial message of a correlation sequence, and should be
+echoed back in a subsequent response.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.orgnr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number for the organization that you want to gain insight to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.epost</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E-mail of the recipient of the inquiry.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock secondary response-fields">
+<div class="title">Response fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.headerVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Header version. Expected value is 1.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that has created the standard business document.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that receives the SBD.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics containing identification about the document.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The business scope
+contains 1 to many [1..*] scopes. It is not mandatory to put all intermediary
+scopes in an SBDH. Only those scopes that the parties agree to are valid. The
+following examples are all valid: transaction; business process; collaboration. A
+Profile may be used to group well-formedness rules together. The business
+scope block consists of the Scope block.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the sending party.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the receiving party.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.standard</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The
+originator of the type of the Business Data standard, e.g. SWIFT, OAG,
+EAN.UCC, EDIFACT, X12; references which Data Dictionary is being
+used. Used for the task of verifying that the grammar of a message is
+valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.typeVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains versioning information or number of
+the standard that defines the document which is specified in the ’Type’
+data element, e.g. values could be ‘1.3’ or ‘D.96A’, etc. . This is the
+version of the document itself and is different than the HeaderVersion.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains reference information which uniquely identifies
+this instance of the SBD between the sender and the receiver. This
+identifier identifies this document as distinct from others. There is only
+one SBD instance per Standard Header. The Instance Identifier is
+automatically generated as an UUID if not specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A logical indicator
+representing the type of Business Data being sent or the named type of
+business data. This attribute identifies the type of document and not the
+instance of that document. The instance document or interchange can
+contain one or more business documents of a single document type or
+closely related types. The industry standard body (as referenced in the
+‘Standard’ element) is responsible for defining the Type value to be used
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains date and time of SBDH/document
+creation. In the SBDH the parser translator or service component assigns
+the SBD a Date and Time stamp. The creation date and time expressed
+here most likely will be different from the date and time stamped in the
+transport envelope.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the type of scope,
+the identifiers for the scope, other supporting information and the scope
+content itself. The importance of the Scope is that it allows the SBDH to
+operate under auspices of an agreement; that parties agree that they only
+include reference agreements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
+scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier that references the instance of the scope (e.g.
+process execution instance, document instance). For example, the
+Instance Identifier could be used to identify the specific instance of
+a Business Process. This identifier would be used to correlate all
+the way back to the business domain layer; it can be thought of as
+a session descriptor at the business domain application level.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation[].expectedResponseDateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time when response is expected. This element could be
+populated in an initial message of a correlation sequence, and should be
+echoed back in a subsequent response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.orgnr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number for the organization that you want to gain insight to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.epost</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E-mail of the recipient of the inquiry.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_4_creating_a_dpe_publisering_message">Example 4 - Creating a DPE publisering message</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+    -H 'Accept: application/json;charset=UTF-8' \
+    -H 'Content-Type: application/json;charset=UTF-8' \
+    -d '{
+  "standardBusinessDocumentHeader" : {
+    "headerVersion" : "1.0",
+    "sender" : [ {
+      "identifier" : {
+        "value" : "0192:910077473",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "receiver" : [ {
+      "identifier" : {
+        "value" : "0192:910075918",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "documentIdentification" : {
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "typeVersion" : "1.0",
+      "instanceIdentifier" : "f0167b86-613f-43f7-85a5-809bb18f069b",
+      "type" : "publisering"
+    },
+    "businessScope" : {
+      "scope" : [ {
+        "type" : "ConversationId",
+        "instanceIdentifier" : "0ede946e-45a7-48b6-8e4e-a244570c4b48",
+        "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "scopeInformation" : [ {
+          "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
+        } ]
+      } ]
+    }
+  },
+  "publisering" : {
+    "sikkerhetsnivaa" : 4,
+    "hoveddokument" : "kafka_quotes.txt",
+    "orgnr" : "98765432"
+  }
+}'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
+Accept: application/json;charset=UTF-8
+Content-Length: 1160
+Content-Type: application/json;charset=UTF-8
+Host: localhost:8080
+
+{
+  "standardBusinessDocumentHeader" : {
+    "headerVersion" : "1.0",
+    "sender" : [ {
+      "identifier" : {
+        "value" : "0192:910077473",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "receiver" : [ {
+      "identifier" : {
+        "value" : "0192:910075918",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "documentIdentification" : {
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "typeVersion" : "1.0",
+      "instanceIdentifier" : "f0167b86-613f-43f7-85a5-809bb18f069b",
+      "type" : "publisering"
+    },
+    "businessScope" : {
+      "scope" : [ {
+        "type" : "ConversationId",
+        "instanceIdentifier" : "0ede946e-45a7-48b6-8e4e-a244570c4b48",
+        "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "scopeInformation" : [ {
+          "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
+        } ]
+      } ]
+    }
+  },
+  "publisering" : {
+    "sikkerhetsnivaa" : 4,
+    "hoveddokument" : "kafka_quotes.txt",
+    "orgnr" : "98765432"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Expires: 0
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Length: 1220
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+
+{
+  "standardBusinessDocumentHeader" : {
+    "headerVersion" : "1.0",
+    "sender" : [ {
+      "identifier" : {
+        "value" : "0192:910077473",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "receiver" : [ {
+      "identifier" : {
+        "value" : "0192:910075918",
+        "authority" : "iso6523-actorid-upis"
+      },
+      "contactInformation" : [ ]
+    } ],
+    "documentIdentification" : {
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "typeVersion" : "1.0",
+      "instanceIdentifier" : "f0167b86-613f-43f7-85a5-809bb18f069b",
+      "type" : "publisering",
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
+    },
+    "businessScope" : {
+      "scope" : [ {
+        "type" : "ConversationId",
+        "instanceIdentifier" : "0ede946e-45a7-48b6-8e4e-a244570c4b48",
+        "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "scopeInformation" : [ {
+          "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
+        } ]
+      } ]
+    }
+  },
+  "publisering" : {
+    "sikkerhetsnivaa" : 4,
+    "hoveddokument" : "kafka_quotes.txt",
+    "orgnr" : "98765432"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="openblock primary request-fields">
+<div class="title">Request fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 25.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.headerVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Header version. Expected value is 1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that has created the standard business document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that receives the SBD.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
+Size must be between 1 and 1 inclusive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics containing identification about the document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The business scope
+contains 1 to many [1..*] scopes. It is not mandatory to put all intermediary
+scopes in an SBDH. Only those scopes that the parties agree to are valid. The
+following examples are all valid: transaction; business process; collaboration. A
+Profile may be used to group well-formedness rules together. The business
+scope block consists of the Scope block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the sending party.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the receiving party.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.standard</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The
+originator of the type of the Business Data standard, e.g. SWIFT, OAG,
+EAN.UCC, EDIFACT, X12; references which Data Dictionary is being
+used. Used for the task of verifying that the grammar of a message is
+valid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.typeVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains versioning information or number of
+the standard that defines the document which is specified in the ’Type’
+data element, e.g. values could be ‘1.3’ or ‘D.96A’, etc. . This is the
+version of the document itself and is different than the HeaderVersion.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains reference information which uniquely identifies
+this instance of the SBD between the sender and the receiver. This
+identifier identifies this document as distinct from others. There is only
+one SBD instance per Standard Header. The Instance Identifier is
+automatically generated as an UUID if not specified.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be a UUID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A logical indicator
+representing the type of Business Data being sent or the named type of
+business data. This attribute identifies the type of document and not the
+instance of that document. The instance document or interchange can
+contain one or more business documents of a single document type or
+closely related types. The industry standard body (as referenced in the
+‘Standard’ element) is responsible for defining the Type value to be used
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
+Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains date and time of SBDH/document
+creation. In the SBDH the parser translator or service component assigns
+the SBD a Date and Time stamp. The creation date and time expressed
+here most likely will be different from the date and time stamped in the
+transport envelope.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the type of scope,
+the identifiers for the scope, other supporting information and the scope
+content itself. The importance of the Scope is that it allows the SBDH to
+operate under auspices of an agreement; that parties agree that they only
+include reference agreements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null.
+Size must be between 1 and 2147483647 inclusive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
+scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+Must not be null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier that references the instance of the scope (e.g.
+process execution instance, document instance). For example, the
+Instance Identifier could be used to identify the specific instance of
+a Business Process. This identifier would be used to correlate all
+the way back to the business domain layer; it can be thought of as
+a session descriptor at the business domain application level.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be a UUID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation[].expectedResponseDateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time when response is expected. This element could be
+populated in an initial message of a correlation sequence, and should be
+echoed back in a subsequent response.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.orgnr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock secondary response-fields">
+<div class="title">Response fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.headerVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Header version. Expected value is 1.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that has created the standard business document.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
+organization that receives the SBD.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristics containing identification about the document.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The business scope
+contains 1 to many [1..*] scopes. It is not mandatory to put all intermediary
+scopes in an SBDH. Only those scopes that the parties agree to are valid. The
+following examples are all valid: transaction; business process; collaboration. A
+Profile may be used to group well-formedness rules together. The business
+scope block consists of the Scope block.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.sender[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the sending party.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor with information to identify this party. Requires a 0192: prefix for all norwegian organizations. Prefix is not required for individuals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.receiver[].identifier.authority</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor that qualifies the identifier used to identify the receiving party.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.standard</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The
+originator of the type of the Business Data standard, e.g. SWIFT, OAG,
+EAN.UCC, EDIFACT, X12; references which Data Dictionary is being
+used. Used for the task of verifying that the grammar of a message is
+valid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.typeVersion</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains versioning information or number of
+the standard that defines the document which is specified in the ’Type’
+data element, e.g. values could be ‘1.3’ or ‘D.96A’, etc. . This is the
+version of the document itself and is different than the HeaderVersion.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains reference information which uniquely identifies
+this instance of the SBD between the sender and the receiver. This
+identifier identifies this document as distinct from others. There is only
+one SBD instance per Standard Header. The Instance Identifier is
+automatically generated as an UUID if not specified.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A logical indicator
+representing the type of Business Data being sent or the named type of
+business data. This attribute identifies the type of document and not the
+instance of that document. The instance document or interchange can
+contain one or more business documents of a single document type or
+closely related types. The industry standard body (as referenced in the
+‘Standard’ element) is responsible for defining the Type value to be used
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descriptor which contains date and time of SBDH/document
+creation. In the SBDH the parser translator or service component assigns
+the SBD a Date and Time stamp. The creation date and time expressed
+here most likely will be different from the date and time stamped in the
+transport envelope.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the type of scope,
+the identifiers for the scope, other supporting information and the scope
+content itself. The importance of the Scope is that it allows the SBDH to
+operate under auspices of an agreement; that parties agree that they only
+include reference agreements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
+scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].instanceIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier that references the instance of the scope (e.g.
+process execution instance, document instance). For example, the
+Instance Identifier could be used to identify the specific instance of
+a Business Process. This identifier would be used to correlate all
+the way back to the business domain layer; it can be thought of as
+a session descriptor at the business domain application level.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional unique
+descriptor that identifies the "contract" or "agreement" that this
+instance relates to. It operates at the level of business domain, not
+at the transport or messaging level, by providing the information
+necessary and sufficient to configure the service at the other
+partner&#8217;s end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope[].scopeInformation[].expectedResponseDateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time when response is expected. This element could be
+populated in an initial message of a correlation sequence, and should be
+echoed back in a subsequent response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.orgnr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_5_validation_error">Example 5 - Validation error</h4>
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
@@ -4993,7 +6152,7 @@ Content-Type: application/json;charset=UTF-8
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_4_constraint_violation">Example 4 - Constraint violation</h4>
+<h4 id="_example_6_constraint_violation">Example 6 - Constraint violation</h4>
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
@@ -5126,7 +6285,7 @@ Content-Length: 684
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d' -i -X PUT \
     -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt' \
     -H 'Content-Type: text/plain' \
@@ -5136,7 +6295,7 @@ Content-Length: 684
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d HTTP/1.1
 Accept: application/json;charset=UTF-8
 Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt
 Content-Length: 120
@@ -5224,14 +6383,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d' -i -X POST \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -5340,14 +6499,14 @@ For larger messages, please use the following combination:
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -5393,14 +6552,14 @@ Content-Type: application/json;charset=UTF-8
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -5428,7 +6587,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1163
+Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -5452,15 +6611,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "ac8b3af9-8d44-429a-b306-4487b9b82e7d",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "113f02ef-6141-4e01-bb76-706b835843f8",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -5674,6 +6833,11 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
@@ -5692,14 +6856,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d' -i -X DELETE \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/0e36b632-b5c7-4755-b21a-16c11c97d5e0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/ac8b3af9-8d44-429a-b306-4487b9b82e7d HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
