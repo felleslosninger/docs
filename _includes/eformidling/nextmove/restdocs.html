@@ -212,7 +212,7 @@ $(addBlockSwitches);
 <li><a href="#messages-in-peek">Peek incoming messages</a>
 <ul class="sectlevel3">
 <li><a href="#_example_1_peek_incoming_message">Example 1 - Peek incoming message</a></li>
-<li><a href="#_example_2_peek_incoming_dpo_message">Example 2 - Peek incoming DPO message</a></li>
+<li><a href="#_example_2_peek_incoming_dpe_message">Example 2 - Peek incoming DPE message</a></li>
 <li><a href="#_example_3_no_more_messages">Example 3 - No more messages</a></li>
 <li><a href="#_about_the_service_3">About the service</a></li>
 </ul>
@@ -996,9 +996,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
+Content-Length: 2991
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 3429
 
 {
   "content" : [ {
@@ -1021,14 +1021,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1057,58 +1057,47 @@ Content-Length: 3429
         "contactInformation" : [ ]
       } ],
       "documentIdentification" : {
-        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+        "standard" : "urn:no:difi:einnsyn:xsd::publisering",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
-        "type" : "digital",
+        "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
+        "type" : "publisering",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
-          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+          "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
+          "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
         } ]
       }
     },
-    "digital" : {
-      "sikkerhetsnivaa" : 4,
-      "hoveddokument" : "kafka_quotes.txt",
-      "tittel" : "Kafka quotes",
-      "spraak" : "en",
-      "digitalPostInfo" : {
-        "virkningsdato" : "2019-04-01",
-        "aapningskvittering" : true
-      },
-      "varsler" : {
-        "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
-        "smsTekst" : "A book must be the axe for the frozen sea within us."
-      }
+    "publisering" : {
+      "orgnr" : "98765432"
     }
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : true,
@@ -1169,14 +1158,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1190,24 +1179,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : true,
@@ -1243,8 +1232,8 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 3431
 Content-Type: application/json;charset=UTF-8
+Content-Length: 2993
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
 {
@@ -1268,14 +1257,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1304,58 +1293,47 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
         "contactInformation" : [ ]
       } ],
       "documentIdentification" : {
-        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+        "standard" : "urn:no:difi:einnsyn:xsd::publisering",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
-        "type" : "digital",
+        "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
+        "type" : "publisering",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
-          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+          "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
+          "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
         } ]
       }
     },
-    "digital" : {
-      "sikkerhetsnivaa" : 4,
-      "hoveddokument" : "kafka_quotes.txt",
-      "tittel" : "Kafka quotes",
-      "spraak" : "en",
-      "digitalPostInfo" : {
-        "virkningsdato" : "2019-04-01",
-        "aapningskvittering" : true
-      },
-      "varsler" : {
-        "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
-        "smsTekst" : "A book must be the axe for the frozen sea within us."
-      }
+    "publisering" : {
+      "orgnr" : "98765432"
     }
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -1416,14 +1394,14 @@ Content-Length: 1767
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1437,24 +1415,24 @@ Content-Length: 1767
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 30,
-    "pageNumber" : 3,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 3,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 31,
-  "totalPages" : 4,
   "last" : true,
+  "totalPages" : 4,
+  "totalElements" : 31,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : false,
@@ -1700,59 +1678,14 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].publisering.</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The digital DPI business message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The publisering DPI business message</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].publisering.orgnr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.tittel</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The title of the message.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.spraak</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Language of the message.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.digitalPostInfo</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Language of the message.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.varsler</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Information on how the mailbox supplier should notify the Recipient of the new mail. Receiver overrides its own notification preferences</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.digitalPostInfo.virkningsdato</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date for when a message is to be made available to the Resident in the Resident&#8217;s mailbox. The document will be delivered to the mailbox before this time, but will not be visible / accessible to Citizen. Note that the field is only a DATE and cannot be controlled at the time. In practice, this means that the mail will be made available on the night of the business day and that the mailbox can spend all day accessing mail with the same effective date.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.digitalPostInfo.aapningskvittering</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you want a receipt when the recipient has opened the document.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.varsler.epostTekst</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Email content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.varsler.smsTekst</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMS content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>last</code></p></td>
@@ -1878,9 +1811,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1149
 
 {
   "standardBusinessDocumentHeader" : {
@@ -1900,43 +1833,43 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "contactInformation" : [ ]
     } ],
     "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
-      "type" : "arkivmelding",
+      "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
+      "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
-        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
+        "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
       } ]
     }
   },
-  "arkivmelding" : {
-    "hoveddokument" : "before_the_law.txt"
+  "publisering" : {
+    "orgnr" : "98765432"
   }
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_2_peek_incoming_dpo_message">Example 2 - Peek incoming DPO message</h4>
+<h4 id="_example_2_peek_incoming_dpe_message">Example 2 - Peek incoming DPE message</h4>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/peek?serviceIdentifier=DPO' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/peek?serviceIdentifier=DPE' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/peek?serviceIdentifier=DPO HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/peek?serviceIdentifier=DPE HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -1950,9 +1883,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1149
 
 {
   "standardBusinessDocumentHeader" : {
@@ -1972,25 +1905,25 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "contactInformation" : [ ]
     } ],
     "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
-      "type" : "arkivmelding",
+      "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
+      "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
-        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
+        "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
       } ]
     }
   },
-  "arkivmelding" : {
-    "hoveddokument" : "before_the_law.txt"
+  "publisering" : {
+    "orgnr" : "98765432"
   }
 }</code></pre>
 </div>
@@ -2286,14 +2219,14 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The DPO business message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The DPE business message</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.orgnr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2323,14 +2256,14 @@ Please note, that the message must be deleted from the queue, using <a href="#me
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/65c071d4-ce48-4c00-a1dc-39730acc2bd9' -i -X GET \
     -H 'Accept: application/vnd.etsi.asic-e+zip'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/65c071d4-ce48-4c00-a1dc-39730acc2bd9 HTTP/1.1
 Accept: application/vnd.etsi.asic-e+zip
 Host: localhost:8080</code></pre>
 </div>
@@ -2349,18 +2282,15 @@ X-Content-Type-Options: nosniff
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Content-Type: application/vnd.etsi.asic-e+zip
 
-PK  �rvO               test ��wr���T������CX��q'������!C�h���Rl�O��A���6aΙ�W���ڭ��yZ1�,��  ẙ��@��݂9�`&lt;�K��[��������4��eV��Ą��gxK�.�ص�^�쪾�' ��&amp;S1�&lt;R!��)hHTT��n�^Jz�7o�����֪4n�H��K¾�
-���:�Ꭸ1|�����`"������4j���N�I��H�3��$:"���;&gt;t;"�G�{~ Z�K#�Dֱt����ܗ��[�����`C*���R421��b��7h%�K�=�}g|���T�v
-=���۳Ue0����Aߊ��U�G�ʑ�͝_�:�E�+�p T�i�9�63�,F��M�
-��Im4p��"h	t�y&lt;y�c,-Pp��~�@�&lt;3�16�~�K���q2JuUz
-e=��{r;��,��G�)dc;���
-E[��39K���B� ��ެ������ʹ��i���ܮ&gt;� ��~����/�����c�P�[sT��i�L�֪��%�!I"�ni&lt;��!w��Ay.і��ǴNC3�� ~��2�}�|߽v̸�
-��.h��)�$�X��2c����e�g��v&gt;1XWT�r��=���f�Ck$6?��?�Dy�w�V�2�BÓ`I}Z0y�nF`S�b�y3�e`Z|3c�U یę
-��e�:�L��xs$fć�[ ����c�H�	s��&lt;��/j�]�[jOZ��W�MGmͤ��� ��KJdZa�s����Nb���oTg�|�B	�F]c�?I?��2�L�ʆW���+~�r��/�^��K��ί����0ȑ.���j�2�x��
-K��j���6��L�hm�����24]�:�Q��×)4X�y.�u 
-��S�H��m�������HB�jE��	���+J	1�%�?����Z&lt;S�^�[ߝ���i��_����!�\���u��q��u�V�8�,�ꜪR�x�-w�}"�R�P
-0^�F��')�|t�~��N*
-[̲,F�VN)ؕ[�0n`PK�qg�     PK   �rvO�qg�                      testPK      2   7</code></pre>
+PK  kuvO               test ��&gt;"����u�Wj/Bb3�O�'[�5����]C�OC�؂S�l�;RͰ�L=��/E�P�P����������PK)4�5��u5��v��U=4~I�UOsk�7�m��~�� �;P�Es����^�$�HϪfԤ	l��h�P�Vw��O���gI�8��'�|� }"�U/WI&lt;�É���,��&gt;�|r3v�wRG�w��ǹ�s�}���*�9�?W1�G�����^#ETT)S�[S�2���]�0��N:������Z��b�ݐ��!�O�Cz�������O7��w26e�9�Vvyj�F�Y99I/�� W`��ȡ,DX0�dZ�$ce�5}k�F����2�Ԗ��Ԟ�w�7=��(J3L)#�pq7�EF�ߖ*�]!ا.{�{�	&amp;�H&amp;�z���F���
+9~���o�vέ���e����-���F�� er�$�+��|Yb�~#����V�־�׃G����1���Z�}��������:�$
+�l���Ѭ�7l�R:��
+�:� V�����fy���I�f�Q�G7,��@��ة_�Nd��~�e�����PY�E�H�Wt�W]�fC�	�t^�'to����8����ʏN1�x�B.T�d3�
+�	��&amp;q�}ɠ�7������(�����/}��i�GhA��P�{@�4�'ȭN6�s��cpO�r'u\v�8f-Z��xz�ǁ�T#U��K�⚋��G�{��~y�f�5�r�EB��IS_S�n�tnԦ�]��-��+h�E4�E�}�Fc�J�'dw)�����6d`�Q]���Ag�H�&lt;=�65�J�`�;(
+�P*�v�3Q�E	�#
+��(�6�D
+���oZ���PX㘯:/���#[Ee�;]��͘�vm�Z���h)G�J�]3��-~�ƍ�����gy� �˩�ʫ�0�A�"	&amp;��Ҷ��s,pV���
+���Y�����B��У�oV��\�����d���@�2��UJ��B���~��`^�PK?x     PK   kuvO?x                      testPK      2   7</code></pre>
 </div>
 </div>
 </div>
@@ -2402,14 +2332,14 @@ K��j���6��L�hm�����24]�:�Q��×)4X�y.�u
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/65c071d4-ce48-4c00-a1dc-39730acc2bd9' -i -X DELETE \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/65c071d4-ce48-4c00-a1dc-39730acc2bd9 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -2447,14 +2377,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2745,14 +2675,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2783,14 +2713,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
+        "instanceIdentifier" : "97c8ac77-167c-40be-862e-0ba13a592669",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+          "instanceIdentifier" : "d8d3e793-f637-41d2-a31b-05131eac1f40",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2815,24 +2745,24 @@ Content-Length: 3429
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : true,
@@ -2893,14 +2823,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2914,24 +2844,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : true,
@@ -2992,14 +2922,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+        "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3030,14 +2960,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
+        "instanceIdentifier" : "97c8ac77-167c-40be-862e-0ba13a592669",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+          "instanceIdentifier" : "d8d3e793-f637-41d2-a31b-05131eac1f40",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3062,24 +2992,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -3140,14 +3070,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
+        "instanceIdentifier" : "97c8ac77-167c-40be-862e-0ba13a592669",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+          "instanceIdentifier" : "d8d3e793-f637-41d2-a31b-05131eac1f40",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3172,24 +3102,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 30,
-    "pageNumber" : 3,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 3,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 41,
-  "totalPages" : 5,
   "last" : false,
+  "totalPages" : 5,
+  "totalElements" : 41,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : false,
@@ -3588,14 +3518,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -3633,14 +3563,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3939,13 +3869,13 @@ Business Document.</p>
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3988,13 +3918,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4041,14 +3971,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4490,13 +4420,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
+      "instanceIdentifier" : "97c8ac77-167c-40be-862e-0ba13a592669",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+        "instanceIdentifier" : "d8d3e793-f637-41d2-a31b-05131eac1f40",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4550,13 +4480,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
+      "instanceIdentifier" : "97c8ac77-167c-40be-862e-0ba13a592669",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+        "instanceIdentifier" : "d8d3e793-f637-41d2-a31b-05131eac1f40",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4614,14 +4544,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
+      "instanceIdentifier" : "97c8ac77-167c-40be-862e-0ba13a592669",
       "type" : "digital",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+        "instanceIdentifier" : "d8d3e793-f637-41d2-a31b-05131eac1f40",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5173,13 +5103,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "649a7043-37df-45a8-85b2-52c5e7cbaaa2",
+      "instanceIdentifier" : "eba5494c-5d8d-44c4-a2d8-d50c9c9a014f",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "f839268e-5c97-49b1-961a-e4d01cee8668",
+        "instanceIdentifier" : "08b7d0e8-329d-4600-ba97-9677e0e45ab5",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5224,13 +5154,13 @@ Content-Length: 1589
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "649a7043-37df-45a8-85b2-52c5e7cbaaa2",
+      "instanceIdentifier" : "eba5494c-5d8d-44c4-a2d8-d50c9c9a014f",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "f839268e-5c97-49b1-961a-e4d01cee8668",
+        "instanceIdentifier" : "08b7d0e8-329d-4600-ba97-9677e0e45ab5",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5279,14 +5209,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "649a7043-37df-45a8-85b2-52c5e7cbaaa2",
+      "instanceIdentifier" : "eba5494c-5d8d-44c4-a2d8-d50c9c9a014f",
       "type" : "digital_dpv",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "f839268e-5c97-49b1-961a-e4d01cee8668",
+        "instanceIdentifier" : "08b7d0e8-329d-4600-ba97-9677e0e45ab5",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5752,13 +5682,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "3a623544-243c-4ef6-ba83-6907d1b61014",
+      "instanceIdentifier" : "46dde550-96d7-4cca-973a-83d1d8bcc0e5",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "a7e024ba-a635-4d55-b44c-5c5cac070cde",
+        "instanceIdentifier" : "6ad9c51c-8ff6-4c78-9bc9-b2567fcc9926",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5828,13 +5758,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "3a623544-243c-4ef6-ba83-6907d1b61014",
+      "instanceIdentifier" : "46dde550-96d7-4cca-973a-83d1d8bcc0e5",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "a7e024ba-a635-4d55-b44c-5c5cac070cde",
+        "instanceIdentifier" : "6ad9c51c-8ff6-4c78-9bc9-b2567fcc9926",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5908,14 +5838,14 @@ Content-Length: 1921
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "3a623544-243c-4ef6-ba83-6907d1b61014",
+      "instanceIdentifier" : "46dde550-96d7-4cca-973a-83d1d8bcc0e5",
       "type" : "print",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "a7e024ba-a635-4d55-b44c-5c5cac070cde",
+        "instanceIdentifier" : "6ad9c51c-8ff6-4c78-9bc9-b2567fcc9926",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6630,13 +6560,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "3acd07dc-75db-4230-a9e3-a498206f1bdc",
+      "instanceIdentifier" : "a700cdd4-6243-469e-8925-c73fd92caae0",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "9244a91a-2e89-400d-9ae1-9ad401ce372d",
+        "instanceIdentifier" : "0e810bc7-da22-48e5-928b-41dfde6da2ef",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6680,13 +6610,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "3acd07dc-75db-4230-a9e3-a498206f1bdc",
+      "instanceIdentifier" : "a700cdd4-6243-469e-8925-c73fd92caae0",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "9244a91a-2e89-400d-9ae1-9ad401ce372d",
+        "instanceIdentifier" : "0e810bc7-da22-48e5-928b-41dfde6da2ef",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6734,14 +6664,14 @@ Content-Length: 1190
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "3acd07dc-75db-4230-a9e3-a498206f1bdc",
+      "instanceIdentifier" : "a700cdd4-6243-469e-8925-c73fd92caae0",
       "type" : "innsynskrav",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "9244a91a-2e89-400d-9ae1-9ad401ce372d",
+        "instanceIdentifier" : "0e810bc7-da22-48e5-928b-41dfde6da2ef",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7195,13 +7125,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "4a8a9077-1624-448e-a386-9a4862fc78cd",
+      "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "946b6fb3-3c9b-4a11-b1cf-6f9b575a3a1d",
+        "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7244,13 +7174,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "4a8a9077-1624-448e-a386-9a4862fc78cd",
+      "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "946b6fb3-3c9b-4a11-b1cf-6f9b575a3a1d",
+        "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7297,14 +7227,14 @@ Content-Length: 1149
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "4a8a9077-1624-448e-a386-9a4862fc78cd",
+      "instanceIdentifier" : "49ead094-e6ef-42e1-b355-fdb2acdb51ff",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "946b6fb3-3c9b-4a11-b1cf-6f9b575a3a1d",
+        "instanceIdentifier" : "e0bf4ada-9f05-4f40-8af8-8ec0b21730a9",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7910,7 +7840,7 @@ Content-Length: 684
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9' -i -X PUT \
     -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt' \
     -H 'Content-Type: text/plain' \
@@ -7920,7 +7850,7 @@ Content-Length: 684
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt
 Content-Length: 120
@@ -8008,14 +7938,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9' -i -X POST \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -8124,13 +8054,13 @@ For larger messages, please use the following combination:
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8177,13 +8107,13 @@ Content-Type: application/json;charset=UTF-8
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8236,14 +8166,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
+      "instanceIdentifier" : "65c071d4-ce48-4c00-a1dc-39730acc2bd9",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "instanceIdentifier" : "2e91f623-f10d-499f-b5ae-181f251d88ae",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8476,14 +8406,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9' -i -X DELETE \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/65c071d4-ce48-4c00-a1dc-39730acc2bd9 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -8571,8 +8501,8 @@ Content-Length: 2181
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "5e8b3f68-04d5-4b2c-9161-c94d32f2f330",
-    "messageId" : "62ddf773-c1dc-4c8f-94a4-ece398be243c",
+    "conversationId" : "c88fb9a5-c6af-447f-8727-f001168945b9",
+    "messageId" : "4df3a3c1-3805-4257-9622-3a6e24b561e0",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8593,8 +8523,8 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "93b2218f-978a-4554-9fcf-66baac4b33e1",
-    "messageId" : "fbf78a5f-96ff-472c-9bde-f1693db55dcb",
+    "conversationId" : "edaf1d5d-efe2-4a85-97b2-dcc833a38e36",
+    "messageId" : "fbc8d7e1-9986-4d30-9f19-869299c81741",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -8616,24 +8546,24 @@ Content-Length: 2181
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -8676,8 +8606,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "3f38cbee-b722-4d5e-a7a4-7cb49a96eb21",
-    "messageId" : "d4e46435-06b0-4b7d-8659-d134e0970733",
+    "conversationId" : "69c256cf-907d-459d-909c-e047c30105bb",
+    "messageId" : "e4759415-405c-4432-9c9a-62ab51bf7de4",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8699,24 +8629,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -8759,8 +8689,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "c07d9437-fd0d-4d33-a408-2c57bf3cede9",
-    "messageId" : "09110665-ea5e-425b-bc72-10fa46c580b1",
+    "conversationId" : "7136fdbf-1bf6-4484-9e28-116d66d20d38",
+    "messageId" : "d0ef9efb-66c0-494a-9a1a-b69e7181d5a8",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8782,24 +8712,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -8842,8 +8772,8 @@ Content-Length: 1336
 {
   "content" : [ {
     "id" : 56,
-    "conversationId" : "21375122-d64b-4431-b120-5ab4a58b9c9c",
-    "messageId" : "3af0589f-e6a9-489a-923c-33fc44e52006",
+    "conversationId" : "d007b9e9-60be-4ca3-bca4-3b19cd16fe32",
+    "messageId" : "40f3c675-08b2-488f-beee-329571fa95c3",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -8865,24 +8795,24 @@ Content-Length: 1336
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 30,
-    "pageNumber" : 3,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 3,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 31,
-  "totalPages" : 4,
   "last" : true,
+  "totalPages" : 4,
+  "totalElements" : 31,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : false,
@@ -9207,8 +9137,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
 {
   "id" : 49,
-  "conversationId" : "63ccd475-de4f-4248-8f07-8d30b7a0f919",
-  "messageId" : "315fc2b8-7372-4c9a-8ecb-61dfa481c75d",
+  "conversationId" : "9c14aca1-c3e3-4bb5-98d7-f4abd5c2b3b1",
+  "messageId" : "4cf9b249-8802-4f3f-bb70-2d40111e0819",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9467,14 +9397,14 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/4257dc07-1164-462d-9b5d-2d985fca6f5d' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/b8abbfdc-5649-4e12-a7f2-133d5131f3fe' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/4257dc07-1164-462d-9b5d-2d985fca6f5d HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/b8abbfdc-5649-4e12-a7f2-133d5131f3fe HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -9494,8 +9424,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
 {
   "id" : 49,
-  "conversationId" : "73d68ee2-2477-460d-ab10-b7bb6e343775",
-  "messageId" : "4257dc07-1164-462d-9b5d-2d985fca6f5d",
+  "conversationId" : "e188d7b5-bfc5-4fb4-9b92-cfb0b0bdb32a",
+  "messageId" : "b8abbfdc-5649-4e12-a7f2-133d5131f3fe",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9782,8 +9712,8 @@ Content-Length: 2181
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "8595d0d2-2a37-4c2e-a353-0c65ac34c10c",
-    "messageId" : "606c5015-044f-44a4-88e7-e1c172e0b982",
+    "conversationId" : "c8df96bf-ae80-4454-8245-7b6242282158",
+    "messageId" : "dc0f66c2-960d-47fd-87fd-4872cd8837b2",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9804,8 +9734,8 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "462ccd8e-bdc4-40eb-9337-dce96a966570",
-    "messageId" : "78463c52-cf25-4815-a560-4a4774b4df80",
+    "conversationId" : "d720f8cc-3c7c-4233-abb7-de74a55d131d",
+    "messageId" : "c9c64def-889b-42bd-aa66-61097d974a79",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -9827,24 +9757,24 @@ Content-Length: 2181
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -10156,24 +10086,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -10225,24 +10155,24 @@ Content-Length: 774
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -10302,24 +10232,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -10371,24 +10301,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 30,
-    "pageNumber" : 3,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 3,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 31,
-  "totalPages" : 4,
   "last" : true,
+  "totalPages" : 4,
+  "totalElements" : 31,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : false,
@@ -10643,24 +10573,24 @@ Content-Length: 774
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : false,
       "sorted" : true,
+      "unsorted" : false,
       "empty" : false
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 1,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : false,
     "sorted" : true,
+    "unsorted" : false,
     "empty" : false
   },
   "first" : true,
@@ -11182,8 +11112,8 @@ Content-Type: application/json;charset=UTF-8
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "3a7e2d38-bf8a-43cb-b073-24b7e89de3a5",
-  "conversationId" : "3a3a5c2e-b2e2-49a9-bf59-47d2d214a779",
+  "messageId" : "c33e8585-5917-49b8-a841-3271e4e259f1",
+  "conversationId" : "48c2c0a9-0242-4aa7-afe6-1d1668d2d853",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11204,8 +11134,8 @@ Content-Type: application/json;charset=UTF-8
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "3a7e2d38-bf8a-43cb-b073-24b7e89de3a5",
-  "conversationId" : "3a3a5c2e-b2e2-49a9-bf59-47d2d214a779",
+  "messageId" : "c33e8585-5917-49b8-a841-3271e4e259f1",
+  "conversationId" : "48c2c0a9-0242-4aa7-afe6-1d1668d2d853",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11350,24 +11280,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 0,
-    "pageNumber" : 0,
     "pageSize" : 10,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 0,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
   "last" : true,
+  "totalPages" : 1,
+  "totalElements" : 2,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : true,
@@ -11418,24 +11348,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "unsorted" : true,
       "sorted" : false,
+      "unsorted" : true,
       "empty" : true
     },
     "offset" : 1,
-    "pageNumber" : 1,
     "pageSize" : 1,
-    "paged" : true,
-    "unpaged" : false
+    "pageNumber" : 1,
+    "unpaged" : false,
+    "paged" : true
   },
-  "totalElements" : 2,
-  "totalPages" : 2,
   "last" : true,
+  "totalPages" : 2,
+  "totalElements" : 2,
   "size" : 1,
   "number" : 1,
   "sort" : {
-    "unsorted" : true,
     "sorted" : false,
+    "unsorted" : true,
     "empty" : true
   },
   "first" : false,
