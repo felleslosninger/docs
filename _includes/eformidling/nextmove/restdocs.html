@@ -189,8 +189,10 @@ $(addBlockSwitches);
 <ul class="sectlevel2">
 <li><a href="#capabilities">Get capabilities</a>
 <ul class="sectlevel3">
-<li><a href="#_example_1_get_all_capabilities">Example 1 - Get all capabilities</a></li>
-<li><a href="#_example_2_get_capabilities_with_security_level">Example 2 - Get capabilities with security level</a></li>
+<li><a href="#_example_1_get_all_capabilities_for_an_organization">Example 1 - Get all capabilities for an organization</a></li>
+<li><a href="#_example_2_get_capabilities_for_an_organization_with_security_level">Example 2 - Get capabilities for an organization with security level</a></li>
+<li><a href="#_example_3_get_all_capabilities_for_an_individual">Example 3 - Get all capabilities for an individual</a></li>
+<li><a href="#_example_4_get_capabilities_for_an_individual_with_security_level">Example 4 - Get capabilities for an individual with security level</a></li>
 <li><a href="#_about_the_service">About the service</a></li>
 </ul>
 </li>
@@ -545,7 +547,7 @@ $(addBlockSwitches);
 <p>The service is used to get capabilities for a receiver.</p>
 </div>
 <div class="sect3">
-<h4 id="_example_1_get_all_capabilities">Example 1 - Get all capabilities</h4>
+<h4 id="_example_1_get_all_capabilities_for_an_organization">Example 1 - Get all capabilities for an organization</h4>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
@@ -567,10 +569,10 @@ Host: localhost:8080</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Pragma: no-cache
 X-XSS-Protection: 1; mode=block
-Content-Length: 1538
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
+Content-Length: 732
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -578,20 +580,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   "capabilities" : [ {
     "process" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
     "serviceIdentifier" : "DPO",
-    "postAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
       "type" : "arkivmelding",
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding"
@@ -599,29 +587,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   }, {
     "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
     "serviceIdentifier" : "DPO",
-    "postAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
       "type" : "arkivmelding_kvittering",
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering"
     }, {
       "type" : "status",
-      "standard" : "urn:no:difi:eformidling:xsd::status"
+      "standard" : "urn:no:difi:arkivmelding:xsd::status"
     }, {
       "type" : "feil",
-      "standard" : "urn:no:difi:eformidling:xsd::feil"
+      "standard" : "urn:no:difi:arkivmelding:xsd::feil"
     } ]
   } ]
 }</code></pre>
@@ -629,7 +603,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_2_get_capabilities_with_security_level">Example 2 - Get capabilities with security level</h4>
+<h4 id="_example_2_get_capabilities_for_an_organization_with_security_level">Example 2 - Get capabilities for an organization with security level</h4>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
@@ -651,10 +625,10 @@ Host: localhost:8080</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Pragma: no-cache
 X-XSS-Protection: 1; mode=block
-Content-Length: 1538
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
+Content-Length: 732
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -662,20 +636,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   "capabilities" : [ {
     "process" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
     "serviceIdentifier" : "DPO",
-    "postAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
       "type" : "arkivmelding",
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding"
@@ -683,29 +643,171 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   }, {
     "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
     "serviceIdentifier" : "DPO",
-    "postAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Fjellheimen kommune",
-      "street" : "Rådhusgaten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
       "type" : "arkivmelding_kvittering",
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering"
     }, {
       "type" : "status",
-      "standard" : "urn:no:difi:eformidling:xsd::status"
+      "standard" : "urn:no:difi:arkivmelding:xsd::status"
     }, {
       "type" : "feil",
-      "standard" : "urn:no:difi:eformidling:xsd::feil"
+      "standard" : "urn:no:difi:arkivmelding:xsd::feil"
+    } ]
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_3_get_all_capabilities_for_an_individual">Example 3 - Get all capabilities for an individual</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345' -i -X GET \
+    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345 HTTP/1.1
+Accept: application/json;charset=UTF-8
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Expires: 0
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Length: 1269
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+
+{
+  "capabilities" : [ {
+    "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "serviceIdentifier" : "DPI",
+    "postAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "returnAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "documentTypes" : [ {
+      "type" : "digital",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
+    } ]
+  }, {
+    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+    "serviceIdentifier" : "DPI",
+    "postAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "returnAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "documentTypes" : [ {
+      "type" : "digital",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
+    } ]
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_4_get_capabilities_for_an_individual_with_security_level">Example 4 - Get capabilities for an individual with security level</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345?securityLevel=4' -i -X GET \
+    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345?securityLevel=4 HTTP/1.1
+Accept: application/json;charset=UTF-8
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Pragma: no-cache
+X-XSS-Protection: 1; mode=block
+Expires: 0
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Length: 1269
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+
+{
+  "capabilities" : [ {
+    "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "serviceIdentifier" : "DPI",
+    "postAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "returnAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "documentTypes" : [ {
+      "type" : "digital",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
+    } ]
+  }, {
+    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+    "serviceIdentifier" : "DPI",
+    "postAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "returnAddress" : {
+      "name" : "Kari Nordmann",
+      "street" : "Utsikten 1",
+      "postalCode" : "2900",
+      "postalArea" : "FJELLHEIMEN",
+      "country" : "Norway"
+    },
+    "documentTypes" : [ {
+      "type" : "digital",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
     } ]
   } ]
 }</code></pre>
@@ -782,7 +884,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].postAddress.name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SName of recipient..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the recipient.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].postAddress.street</code></p></td>
@@ -807,7 +909,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].returnAddress.name</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SName of recipient..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the recipient.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].returnAddress.street</code></p></td>
@@ -894,9 +996,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 3397
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 3429
 
 {
   "content" : [ {
@@ -919,15 +1021,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -957,15 +1059,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -989,24 +1091,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : true,
@@ -1042,7 +1144,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1741
+Content-Length: 1764
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -1067,15 +1169,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -1088,24 +1190,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 1,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : true,
@@ -1140,8 +1242,8 @@ Pragma: no-cache
 X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 3399
 X-Content-Type-Options: nosniff
+Content-Length: 3431
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -1166,15 +1268,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -1204,15 +1306,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "1585ce11-b664-498a-9226-540d4dd90a9a",
+        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "2f324a51-722f-4d2b-8c5a-86c82f0f4dd7",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
+          "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -1236,24 +1338,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -1291,7 +1393,7 @@ X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1744
+Content-Length: 1767
 
 {
   "content" : [ {
@@ -1314,15 +1416,15 @@ Content-Length: 1744
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-          "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+          "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
           } ]
@@ -1335,24 +1437,24 @@ Content-Length: 1744
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 31,
   "totalPages" : 4,
+  "last" : true,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : false,
@@ -1595,7 +1697,7 @@ echoed back in a subsequent response.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.</code></p></td>
@@ -1603,14 +1705,14 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The digital DPI business message</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.sikkerhetsnivaa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.tittel</code></p></td>
@@ -1776,7 +1878,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1163
+Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -1800,15 +1902,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -1848,7 +1950,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1163
+Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -1872,15 +1974,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -1897,21 +1999,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="sect3">
 <h4 id="_example_3_no_more_messages">Example 3 - No more messages</h4>
 <div class="listingblock primary">
-<div class="title">Curl</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/error' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
-<div class="title">Request</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /error HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: localhost:8080</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
@@ -1926,6 +2013,62 @@ Content-Type: application/json;charset=UTF-8
   "message" : "No content",
   "path" : "/api/messages/in/peek"
 }</code></pre>
+</div>
+</div>
+<div class="openblock primary response-fields">
+<div class="title">Response fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time for when the error occured.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP status code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The java class of the Exception that was thrown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>message</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A more detailed description of the error.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -2150,7 +2293,7 @@ echoed back in a subsequent response.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2180,14 +2323,14 @@ Please note, that the message must be deleted from the queue, using <a href="#me
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/0e36b632-b5c7-4755-b21a-16c11c97d5e0' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X GET \
     -H 'Accept: application/vnd.etsi.asic-e+zip'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/0e36b632-b5c7-4755-b21a-16c11c97d5e0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
 Accept: application/vnd.etsi.asic-e+zip
 Host: localhost:8080</code></pre>
 </div>
@@ -2206,14 +2349,18 @@ X-Content-Type-Options: nosniff
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Content-Type: application/vnd.etsi.asic-e+zip
 
-PK  �RuO               test ������d�_�����|�~7E�mco�q���^�T
-����9A����%Y��/u/���=d�w���\g�
-��#D��  ��D'*=�~a�L?���dS;P��{+5��o/����s\��+�3*{y۷�Zt�6��^��֡�S�=��u�F���Q9�t� �q��ZO� �K�l��$I������7���0-r��&lt;#8OzТD!"�K���V�,�&gt;�$�&lt;?oA�=��(3F��d�C��A���[�����LVn��v����
-�/^�A Y���?.�QvI�W���9�\�Oo�1��~J�q���~��`p�%��C�C���Q����R\0��딠tF	�q�p&amp;ו��pY�4Ru�H&gt;��#���y��DR眅3�?q.�J��8S�@^R�È��"q]qM���o8��6K͡x���!Ǧ|H����@��J��/a�&lt;�Jj]�q�m��	��v��U�����\lƧ�ϮB(�e빇�x[��@!�w��(R������R0�v[�Qa��Q�y�E��.ŉ0��RH%T����g��B�a��ո��zI�m�Y�����~97v��-&lt;�Џ&amp;j��H���^f9�yz��ك�������
-���&gt;�~+UAB�䘁�Cp��p����13�e-;�Gr�5P��⢊-P
-BT?�D�,�K@f;��*�����r{\����A���4۷�#kq)�J�c.���B��Ѳ�z��;'L-���^I����#����&amp;�fQR��zx��~4���!|�a�������Xs�9�fI�����1�O8#�vӿ�2{0�۩0��5���r�+�?���5Ʋ�ۈ%�F|��W7\�
-'�X������\�����
-��+:o[%�56灾�,�`&amp;2hS��O�fDl����b8�����r�N��r�s�#̈IId�[�~��/��h����:����x��-��-�����MY�(��e�"|�����������E.ƫB��%nř��\�w�b�PK]�     PK   �RuO]�                      testPK      2   7</code></pre>
+PK  �rvO               test ��wr���T������CX��q'������!C�h���Rl�O��A���6aΙ�W���ڭ��yZ1�,��  ẙ��@��݂9�`&lt;�K��[��������4��eV��Ą��gxK�.�ص�^�쪾�' ��&amp;S1�&lt;R!��)hHTT��n�^Jz�7o�����֪4n�H��K¾�
+���:�Ꭸ1|�����`"������4j���N�I��H�3��$:"���;&gt;t;"�G�{~ Z�K#�Dֱt����ܗ��[�����`C*���R421��b��7h%�K�=�}g|���T�v
+=���۳Ue0����Aߊ��U�G�ʑ�͝_�:�E�+�p T�i�9�63�,F��M�
+��Im4p��"h	t�y&lt;y�c,-Pp��~�@�&lt;3�16�~�K���q2JuUz
+e=��{r;��,��G�)dc;���
+E[��39K���B� ��ެ������ʹ��i���ܮ&gt;� ��~����/�����c�P�[sT��i�L�֪��%�!I"�ni&lt;��!w��Ay.і��ǴNC3�� ~��2�}�|߽v̸�
+��.h��)�$�X��2c����e�g��v&gt;1XWT�r��=���f�Ck$6?��?�Dy�w�V�2�BÓ`I}Z0y�nF`S�b�y3�e`Z|3c�U یę
+��e�:�L��xs$fć�[ ����c�H�	s��&lt;��/j�]�[jOZ��W�MGmͤ��� ��KJdZa�s����Nb���oTg�|�B	�F]c�?I?��2�L�ʆW���+~�r��/�^��K��ί����0ȑ.���j�2�x��
+K��j���6��L�hm�����24]�:�Q��×)4X�y.�u 
+��S�H��m�������HB�jE��	���+J	1�%�?����Z&lt;S�^�[ߝ���i��_����!�\���u��q��u�V�8�,�ꜪR�x�-w�}"�R�P
+0^�F��')�|t�~��N*
+[̲,F�VN)ؕ[�0n`PK�qg�     PK   �rvO�qg�                      testPK      2   7</code></pre>
 </div>
 </div>
 </div>
@@ -2255,14 +2402,14 @@ BT?�D�,�K@f;��*�����r{\����A���4۷�#kq
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/0e36b632-b5c7-4755-b21a-16c11c97d5e0' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X DELETE \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/0e36b632-b5c7-4755-b21a-16c11c97d5e0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -2276,7 +2423,7 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1163
+Content-Length: 1186
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
@@ -2300,15 +2447,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "0e36b632-b5c7-4755-b21a-16c11c97d5e0",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "d6f4588f-b5de-45cf-826a-945ed3dc0711",
-        "identifier" : "urn:no:difi:meldingsutveksling:2.0",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
+        "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
         } ]
@@ -2524,7 +2671,7 @@ echoed back in a subsequent response.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2598,14 +2745,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2636,14 +2783,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "802c5dae-8936-4746-84e2-60fcb9bf79d2",
+        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "6a705908-fce2-4d72-950c-214b8f767a7e",
+          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2668,8 +2815,8 @@ Content-Length: 3429
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
@@ -2678,17 +2825,17 @@ Content-Length: 3429
     "paged" : true,
     "unpaged" : false
   },
-  "last" : true,
-  "totalPages" : 1,
   "totalElements" : 2,
+  "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
-  "first" : true,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
+  "first" : true,
   "numberOfElements" : 2,
   "empty" : false
 }</code></pre>
@@ -2746,14 +2893,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2767,8 +2914,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
@@ -2777,17 +2924,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "paged" : true,
     "unpaged" : false
   },
-  "last" : true,
-  "totalPages" : 1,
   "totalElements" : 1,
+  "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
-  "first" : true,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
+  "first" : true,
   "numberOfElements" : 1,
   "empty" : false
 }</code></pre>
@@ -2845,14 +2992,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+        "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+          "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2883,14 +3030,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "802c5dae-8936-4746-84e2-60fcb9bf79d2",
+        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "6a705908-fce2-4d72-950c-214b8f767a7e",
+          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2915,8 +3062,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
@@ -2925,17 +3072,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "paged" : true,
     "unpaged" : false
   },
-  "last" : true,
-  "totalPages" : 1,
   "totalElements" : 2,
+  "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
-  "first" : true,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
+  "first" : true,
   "numberOfElements" : 2,
   "empty" : false
 }</code></pre>
@@ -2993,14 +3140,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "802c5dae-8936-4746-84e2-60fcb9bf79d2",
+        "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "6a705908-fce2-4d72-950c-214b8f767a7e",
+          "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3025,8 +3172,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 30,
@@ -3035,17 +3182,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "paged" : true,
     "unpaged" : false
   },
-  "last" : false,
-  "totalPages" : 5,
   "totalElements" : 41,
+  "totalPages" : 5,
+  "last" : false,
   "size" : 10,
   "number" : 3,
-  "first" : false,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
+  "first" : false,
   "numberOfElements" : 1,
   "empty" : false
 }</code></pre>
@@ -3283,14 +3430,9 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The DPO business message</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].arkivmelding.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.</code></p></td>
@@ -3298,14 +3440,14 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The digital DPI business message</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.sikkerhetsnivaa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.tittel</code></p></td>
@@ -3446,14 +3588,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -3491,14 +3633,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3711,14 +3853,9 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The DPO business message</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3802,13 +3939,13 @@ Business Document.</p>
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3851,13 +3988,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3904,14 +4041,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3930,10 +4067,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -4120,15 +4257,9 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -4304,14 +4435,9 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4324,10 +4450,12 @@ echoed back in a subsequent response.</p></td>
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Available processes</p></td>
+<th class="tableblock halign-left valign-top">Available processes</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">urn:no:difi:profile:digitalpost:info:ver1.0</p></td>
 </tr>
@@ -4362,13 +4490,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "802c5dae-8936-4746-84e2-60fcb9bf79d2",
+      "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "6a705908-fce2-4d72-950c-214b8f767a7e",
+        "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4422,13 +4550,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "802c5dae-8936-4746-84e2-60fcb9bf79d2",
+      "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "6a705908-fce2-4d72-950c-214b8f767a7e",
+        "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4486,14 +4614,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "802c5dae-8936-4746-84e2-60fcb9bf79d2",
+      "instanceIdentifier" : "e6c2864f-e9e5-46c9-835d-43df7dfbfcb6",
       "type" : "digital",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "6a705908-fce2-4d72-950c-214b8f767a7e",
+        "instanceIdentifier" : "d391cbdb-ad7d-448e-bab6-1319fef5ea2b",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4523,10 +4651,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -4713,16 +4841,16 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.sikkerhetsnivaa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.tittel</code></p></td>
@@ -4945,14 +5073,14 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.hoveddokument</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.sikkerhetsnivaa</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.tittel</code></p></td>
@@ -5045,13 +5173,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f28b48-861b-4b81-a626-e04ce5bf0cf6",
+      "instanceIdentifier" : "649a7043-37df-45a8-85b2-52c5e7cbaaa2",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "2496c00d-9761-478d-921a-0e8441705c03",
+        "instanceIdentifier" : "f839268e-5c97-49b1-961a-e4d01cee8668",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5096,13 +5224,13 @@ Content-Length: 1589
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f28b48-861b-4b81-a626-e04ce5bf0cf6",
+      "instanceIdentifier" : "649a7043-37df-45a8-85b2-52c5e7cbaaa2",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "2496c00d-9761-478d-921a-0e8441705c03",
+        "instanceIdentifier" : "f839268e-5c97-49b1-961a-e4d01cee8668",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5151,14 +5279,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f28b48-861b-4b81-a626-e04ce5bf0cf6",
+      "instanceIdentifier" : "649a7043-37df-45a8-85b2-52c5e7cbaaa2",
       "type" : "digital_dpv",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "2496c00d-9761-478d-921a-0e8441705c03",
+        "instanceIdentifier" : "f839268e-5c97-49b1-961a-e4d01cee8668",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5179,10 +5307,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -5624,13 +5752,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "84586dab-6cf4-4e93-8a8e-4ce2c1b40676",
+      "instanceIdentifier" : "3a623544-243c-4ef6-ba83-6907d1b61014",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "96e2f397-7d12-4aee-8ef1-7f46aa6227b1",
+        "instanceIdentifier" : "a7e024ba-a635-4d55-b44c-5c5cac070cde",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5639,7 +5767,6 @@ echoed back in a subsequent response.</p></td>
     }
   },
   "print" : {
-    "sikkerhetsnivaa" : 4,
     "hoveddokument" : "kafka_quotes.txt",
     "mottaker" : {
       "navn" : "Ola Nordmann",
@@ -5677,8 +5804,8 @@ echoed back in a subsequent response.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Accept: application/json;charset=UTF-8
+Content-Length: 1861
 Content-Type: application/json;charset=UTF-8
-Content-Length: 1889
 Host: localhost:8080
 
 {
@@ -5701,13 +5828,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "84586dab-6cf4-4e93-8a8e-4ce2c1b40676",
+      "instanceIdentifier" : "3a623544-243c-4ef6-ba83-6907d1b61014",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "96e2f397-7d12-4aee-8ef1-7f46aa6227b1",
+        "instanceIdentifier" : "a7e024ba-a635-4d55-b44c-5c5cac070cde",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5716,7 +5843,6 @@ Host: localhost:8080
     }
   },
   "print" : {
-    "sikkerhetsnivaa" : 4,
     "hoveddokument" : "kafka_quotes.txt",
     "mottaker" : {
       "navn" : "Ola Nordmann",
@@ -5758,9 +5884,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1949
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1921
 
 {
   "standardBusinessDocumentHeader" : {
@@ -5782,14 +5908,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "84586dab-6cf4-4e93-8a8e-4ce2c1b40676",
+      "instanceIdentifier" : "3a623544-243c-4ef6-ba83-6907d1b61014",
       "type" : "print",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "96e2f397-7d12-4aee-8ef1-7f46aa6227b1",
+        "instanceIdentifier" : "a7e024ba-a635-4d55-b44c-5c5cac070cde",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5798,7 +5924,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     }
   },
   "print" : {
-    "sikkerhetsnivaa" : 4,
     "hoveddokument" : "kafka_quotes.txt",
     "mottaker" : {
       "navn" : "Ola Nordmann",
@@ -5836,10 +5961,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -6026,16 +6151,10 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker</code></p></td>
@@ -6114,18 +6233,6 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of country.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.mottaker</code></p></td>
@@ -6366,14 +6473,9 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker</code></p></td>
@@ -6439,16 +6541,6 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.land</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of country.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.mottaker</code></p></td>
@@ -6538,13 +6630,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "5542674c-7909-40b7-bc0f-20b1c48f921b",
+      "instanceIdentifier" : "3acd07dc-75db-4230-a9e3-a498206f1bdc",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "01dee1d4-c746-4692-b388-5030209fa67d",
+        "instanceIdentifier" : "9244a91a-2e89-400d-9ae1-9ad401ce372d",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6553,8 +6645,6 @@ echoed back in a subsequent response.</p></td>
     }
   },
   "innsynskrav" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
     "orgnr" : "98765432",
     "epost" : "doofenshmirtz@evil.inc"
   }
@@ -6566,7 +6656,7 @@ echoed back in a subsequent response.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Accept: application/json;charset=UTF-8
-Content-Length: 1201
+Content-Length: 1130
 Content-Type: application/json;charset=UTF-8
 Host: localhost:8080
 
@@ -6590,13 +6680,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "5542674c-7909-40b7-bc0f-20b1c48f921b",
+      "instanceIdentifier" : "3acd07dc-75db-4230-a9e3-a498206f1bdc",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "01dee1d4-c746-4692-b388-5030209fa67d",
+        "instanceIdentifier" : "9244a91a-2e89-400d-9ae1-9ad401ce372d",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6605,8 +6695,6 @@ Host: localhost:8080
     }
   },
   "innsynskrav" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
     "orgnr" : "98765432",
     "epost" : "doofenshmirtz@evil.inc"
   }
@@ -6617,7 +6705,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 1261
 Pragma: no-cache
 X-XSS-Protection: 1; mode=block
 Expires: 0
@@ -6625,6 +6712,7 @@ X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1190
 
 {
   "standardBusinessDocumentHeader" : {
@@ -6646,14 +6734,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "5542674c-7909-40b7-bc0f-20b1c48f921b",
+      "instanceIdentifier" : "3acd07dc-75db-4230-a9e3-a498206f1bdc",
       "type" : "innsynskrav",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "01dee1d4-c746-4692-b388-5030209fa67d",
+        "instanceIdentifier" : "9244a91a-2e89-400d-9ae1-9ad401ce372d",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6662,8 +6750,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     }
   },
   "innsynskrav" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
     "orgnr" : "98765432",
     "epost" : "doofenshmirtz@evil.inc"
   }
@@ -6675,10 +6761,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -6863,18 +6949,6 @@ partner&#8217;s end.</p></td>
 populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.orgnr</code></p></td>
@@ -7061,16 +7135,6 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>innsynskrav.orgnr</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Business registration number for the organization that you want to gain insight to.</p></td>
@@ -7131,13 +7195,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "fca11efd-d326-42dd-81b1-aa7450a491ed",
+      "instanceIdentifier" : "4a8a9077-1624-448e-a386-9a4862fc78cd",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e38576ad-5233-484d-8041-2b551028bf46",
+        "instanceIdentifier" : "946b6fb3-3c9b-4a11-b1cf-6f9b575a3a1d",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7146,8 +7210,6 @@ echoed back in a subsequent response.</p></td>
     }
   },
   "publisering" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
     "orgnr" : "98765432"
   }
 }'</code></pre>
@@ -7158,7 +7220,7 @@ echoed back in a subsequent response.</p></td>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Accept: application/json;charset=UTF-8
-Content-Length: 1160
+Content-Length: 1089
 Content-Type: application/json;charset=UTF-8
 Host: localhost:8080
 
@@ -7182,13 +7244,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "fca11efd-d326-42dd-81b1-aa7450a491ed",
+      "instanceIdentifier" : "4a8a9077-1624-448e-a386-9a4862fc78cd",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e38576ad-5233-484d-8041-2b551028bf46",
+        "instanceIdentifier" : "946b6fb3-3c9b-4a11-b1cf-6f9b575a3a1d",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7197,8 +7259,6 @@ Host: localhost:8080
     }
   },
   "publisering" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
     "orgnr" : "98765432"
   }
 }</code></pre>
@@ -7213,9 +7273,9 @@ X-XSS-Protection: 1; mode=block
 Expires: 0
 X-Frame-Options: DENY
 X-Content-Type-Options: nosniff
-Content-Length: 1220
 Content-Type: application/json;charset=UTF-8
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1149
 
 {
   "standardBusinessDocumentHeader" : {
@@ -7237,14 +7297,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "fca11efd-d326-42dd-81b1-aa7450a491ed",
+      "instanceIdentifier" : "4a8a9077-1624-448e-a386-9a4862fc78cd",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e38576ad-5233-484d-8041-2b551028bf46",
+        "instanceIdentifier" : "946b6fb3-3c9b-4a11-b1cf-6f9b575a3a1d",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7253,8 +7313,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     }
   },
   "publisering" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
     "orgnr" : "98765432"
   }
 }</code></pre>
@@ -7265,10 +7323,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -7453,18 +7511,6 @@ partner&#8217;s end.</p></td>
 populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the future</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.orgnr</code></p></td>
@@ -7643,16 +7689,6 @@ partner&#8217;s end.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date and time when response is expected. This element could be
 populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.hoveddokument</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>publisering.orgnr</code></p></td>
@@ -7874,7 +7910,7 @@ Content-Length: 684
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X PUT \
     -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt' \
     -H 'Content-Type: text/plain' \
@@ -7884,7 +7920,7 @@ Content-Length: 684
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt
 Content-Length: 120
@@ -7972,14 +8008,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X POST \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -8052,7 +8088,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Please note, that multipart is only allowed for smaller messages.
+Please note, that multipart is only allowed for smaller messages up to 5 MB.
 For larger messages, please use the following combination:
  <a href="#messages-out-create">Create message</a>, <a href="#messages-out-upload">Upload attachment</a> and <a href="#messages-out-send">Send message</a> instead.
 <a href="#messages-out-upload">Upload attachment</a> can be used several times if you have more than one attachment.
@@ -8088,13 +8124,13 @@ For larger messages, please use the following combination:
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8141,13 +8177,13 @@ Content-Type: application/json;charset=UTF-8
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8200,14 +8236,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d288e3f1-d44f-4ed5-b4bf-e45396494797",
+      "instanceIdentifier" : "f1c94ea4-d11f-4d38-9249-41712c0a4d60",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "c3555ac7-7192-4195-a107-a01724541d99",
+        "instanceIdentifier" : "82ebb468-5bbf-4445-91b4-5993089be888",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8422,14 +8458,9 @@ populated in an initial message of a correlation sequence, and should be
 echoed back in a subsequent response.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.sikkerhetsnivaa</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the authentication level required for the document to be opened.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>arkivmelding.hoveddokument</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 </tbody>
 </table>
@@ -8445,14 +8476,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60' -i -X DELETE \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/d288e3f1-d44f-4ed5-b4bf-e45396494797 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/f1c94ea4-d11f-4d38-9249-41712c0a4d60 HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -8540,8 +8571,8 @@ Content-Length: 2181
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "d1305890-908f-4e7c-a5ea-51d1a77f075a",
-    "messageId" : "55a78a5c-69b3-467b-ab95-410a6ed752c8",
+    "conversationId" : "5e8b3f68-04d5-4b2c-9161-c94d32f2f330",
+    "messageId" : "62ddf773-c1dc-4c8f-94a4-ece398be243c",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8562,8 +8593,8 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "3be7f10e-d286-4eff-863d-962c47af47c4",
-    "messageId" : "44def26e-5892-4553-b33c-670e9f0277c6",
+    "conversationId" : "93b2218f-978a-4554-9fcf-66baac4b33e1",
+    "messageId" : "fbf78a5f-96ff-472c-9bde-f1693db55dcb",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -8585,24 +8616,24 @@ Content-Length: 2181
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -8645,8 +8676,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "3ab63780-07ea-4cb9-a967-e8270ec9cbb4",
-    "messageId" : "f2a79a12-5629-4e13-b271-ee6414dd0a9f",
+    "conversationId" : "3f38cbee-b722-4d5e-a7a4-7cb49a96eb21",
+    "messageId" : "d4e46435-06b0-4b7d-8659-d134e0970733",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8668,24 +8699,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 1,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -8728,8 +8759,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "1a8a5795-3a55-49bd-8eb0-b00334655453",
-    "messageId" : "9114bc69-aff0-428b-81d5-318ca1a772c5",
+    "conversationId" : "c07d9437-fd0d-4d33-a408-2c57bf3cede9",
+    "messageId" : "09110665-ea5e-425b-bc72-10fa46c580b1",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8751,24 +8782,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 1,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -8811,8 +8842,8 @@ Content-Length: 1336
 {
   "content" : [ {
     "id" : 56,
-    "conversationId" : "5b8a4ba4-c420-43c5-9874-d6bc61a8f09e",
-    "messageId" : "d8d36348-9cc3-4594-8beb-06459caea290",
+    "conversationId" : "21375122-d64b-4431-b120-5ab4a58b9c9c",
+    "messageId" : "3af0589f-e6a9-489a-923c-33fc44e52006",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -8834,24 +8865,24 @@ Content-Length: 1336
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 31,
   "totalPages" : 4,
+  "last" : true,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : false,
@@ -9035,7 +9066,7 @@ Content-Length: 1336
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses[].status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses[].description</code></p></td>
@@ -9176,8 +9207,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
 {
   "id" : 49,
-  "conversationId" : "ce2fbaa8-b54d-437f-b59a-3258020e2621",
-  "messageId" : "cdfe64f8-96dc-402f-8939-85de2e4d68f0",
+  "conversationId" : "63ccd475-de4f-4248-8f07-8d30b7a0f919",
+  "messageId" : "315fc2b8-7372-4c9a-8ecb-61dfa481c75d",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9203,21 +9234,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="sect3">
 <h4 id="_example_2_conversation_not_found">Example 2 - Conversation not found</h4>
 <div class="listingblock primary">
-<div class="title">Curl</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/error' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
-<div class="title">Request</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /error HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: localhost:8080</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
@@ -9232,6 +9248,62 @@ Content-Length: 277
   "message" : "Conversation with id = 49 was not found",
   "path" : "/api/conversations/49"
 }</code></pre>
+</div>
+</div>
+<div class="openblock primary response-fields">
+<div class="title">Response fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time for when the error occured.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP status code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The java class of the Exception that was thrown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>message</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A more detailed description of the error.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -9366,7 +9438,7 @@ Content-Length: 277
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses[].status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses[].description</code></p></td>
@@ -9395,14 +9467,14 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/9b0fdd9c-9f3f-4f48-9b95-14d6ed487c65' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/4257dc07-1164-462d-9b5d-2d985fca6f5d' -i -X GET \
     -H 'Accept: application/json;charset=UTF-8'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/9b0fdd9c-9f3f-4f48-9b95-14d6ed487c65 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/4257dc07-1164-462d-9b5d-2d985fca6f5d HTTP/1.1
 Accept: application/json;charset=UTF-8
 Host: localhost:8080</code></pre>
 </div>
@@ -9422,8 +9494,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 
 {
   "id" : 49,
-  "conversationId" : "153e3cea-0005-4239-8ef1-cffbb3f2e819",
-  "messageId" : "9b0fdd9c-9f3f-4f48-9b95-14d6ed487c65",
+  "conversationId" : "73d68ee2-2477-460d-ab10-b7bb6e343775",
+  "messageId" : "4257dc07-1164-462d-9b5d-2d985fca6f5d",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9449,21 +9521,6 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="sect3">
 <h4 id="_example_2_conversation_not_found_2">Example 2 - Conversation not found</h4>
 <div class="listingblock primary">
-<div class="title">Curl</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/error' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
-<div class="title">Request</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /error HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: localhost:8080</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
@@ -9478,6 +9535,62 @@ Content-Type: application/json;charset=UTF-8
   "message" : "Conversation with messageId = df64afa1-83f4-497c-ae94-db22108801b9 was not found",
   "path" : "/api/conversations/messageId/df64afa1-83f4-497c-ae94-db22108801b9"
 }</code></pre>
+</div>
+</div>
+<div class="openblock primary response-fields">
+<div class="title">Response fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time for when the error occured.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP status code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The java class of the Exception that was thrown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>message</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A more detailed description of the error.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -9612,7 +9725,7 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses[].status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses[].description</code></p></td>
@@ -9669,8 +9782,8 @@ Content-Length: 2181
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "3dc275aa-5b81-4ea2-ab80-75903e5f6a7a",
-    "messageId" : "765a734c-62bc-4609-b037-7914404eae19",
+    "conversationId" : "8595d0d2-2a37-4c2e-a353-0c65ac34c10c",
+    "messageId" : "606c5015-044f-44a4-88e7-e1c172e0b982",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9691,8 +9804,8 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "afb7900c-3add-4255-839c-74d544b85fdb",
-    "messageId" : "81c71152-becc-4f77-a7a8-42c3d331469b",
+    "conversationId" : "462ccd8e-bdc4-40eb-9337-dce96a966570",
+    "messageId" : "78463c52-cf25-4815-a560-4a4774b4df80",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -9714,24 +9827,24 @@ Content-Length: 2181
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -9879,7 +9992,7 @@ Content-Length: 2181
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses[].status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses[].description</code></p></td>
@@ -10043,24 +10156,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -10112,24 +10225,24 @@ Content-Length: 774
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 1,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -10189,24 +10302,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -10258,24 +10371,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 31,
   "totalPages" : 4,
+  "last" : true,
   "size" : 10,
   "number" : 3,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : false,
@@ -10374,7 +10487,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].description</code></p></td>
@@ -10530,24 +10643,24 @@ Content-Length: 774
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : true,
       "unsorted" : false,
+      "sorted" : true,
       "empty" : false
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 1,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : true,
     "unsorted" : false,
+    "sorted" : true,
     "empty" : false
   },
   "first" : true,
@@ -10635,7 +10748,7 @@ Content-Length: 774
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].description</code></p></td>
@@ -10793,21 +10906,6 @@ Content-Length: 254
 <div class="sect3">
 <h4 id="_example_2_unsuccessful_peek">Example 2 - Unsuccessful peek</h4>
 <div class="listingblock primary">
-<div class="title">Curl</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/error' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
-<div class="title">Request</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /error HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: localhost:8080</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
@@ -10822,6 +10920,62 @@ Content-Length: 235
   "message" : "No content",
   "path" : "/api/statuses/peek"
 }</code></pre>
+</div>
+</div>
+<div class="openblock primary response-fields">
+<div class="title">Response fields</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Path</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>timestamp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date and time for when the error occured.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP status code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>error</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exception</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The java class of the Exception that was thrown</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>message</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The request URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A more detailed description of the error.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -10867,7 +11021,7 @@ Content-Length: 235
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>status</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message status. Can be one of: OPPRETTET, SENDT, MOTTATT, LEVERT, LEST, FEIL, ANNET, INNKOMMENDE_MOTTATT, INNKOMMENDE_LEVERT, LEVETID_UTLOPT. More details can be found <a href="https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html">here</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code></p></td>
@@ -10985,10 +11139,10 @@ Content-Type: application/json;charset=UTF-8
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -11028,8 +11182,8 @@ Content-Type: application/json;charset=UTF-8
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "c445623c-e6b6-40d2-9180-be276395e430",
-  "conversationId" : "9b7c0a40-45f4-4f9f-9cf2-374b1211816a",
+  "messageId" : "3a7e2d38-bf8a-43cb-b073-24b7e89de3a5",
+  "conversationId" : "3a3a5c2e-b2e2-49a9-bf59-47d2d214a779",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11050,8 +11204,8 @@ Content-Type: application/json;charset=UTF-8
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "c445623c-e6b6-40d2-9180-be276395e430",
-  "conversationId" : "9b7c0a40-45f4-4f9f-9cf2-374b1211816a",
+  "messageId" : "3a7e2d38-bf8a-43cb-b073-24b7e89de3a5",
+  "conversationId" : "3a3a5c2e-b2e2-49a9-bf59-47d2d214a779",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11064,10 +11218,10 @@ Content-Type: application/json;charset=UTF-8
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -11196,24 +11350,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 1,
+  "last" : true,
   "size" : 10,
   "number" : 0,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : true,
@@ -11264,24 +11418,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
   } ],
   "pageable" : {
     "sort" : {
-      "sorted" : false,
       "unsorted" : true,
+      "sorted" : false,
       "empty" : true
     },
     "offset" : 1,
-    "pageSize" : 1,
     "pageNumber" : 1,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 1,
+    "paged" : true,
+    "unpaged" : false
   },
-  "last" : true,
   "totalElements" : 2,
   "totalPages" : 2,
+  "last" : true,
   "size" : 1,
   "number" : 1,
   "sort" : {
-    "sorted" : false,
     "unsorted" : true,
+    "sorted" : false,
     "empty" : true
   },
   "first" : false,
@@ -11801,10 +11955,10 @@ Content-Length: 576
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -11965,10 +12119,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 25.0001%;">
+<col style="width: 36.3636%;">
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 18.1819%;">
 </colgroup>
 <thead>
 <tr>
@@ -12092,7 +12246,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-21 14:08:51 +0100
+Last updated 2019-11-22 10:28:44 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
