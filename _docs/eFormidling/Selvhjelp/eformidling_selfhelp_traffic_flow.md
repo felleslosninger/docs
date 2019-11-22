@@ -114,7 +114,9 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 ### Digital post til innbygger (DPI)
 ![](/felleslosninger/images/eformidling/flyt_dpi.jpg)
 
-Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldingsformidler. Der vil det bli formidlet til innbygger sin digitale postkasse, eBoks eller Digipost. Om innbygger ikke har en digital postkasse vil brevet bli sendt til innboksen i Altinn. Om avsender ønsker det kan det bli sendt til print i stedet for til Altinn. 
+Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldingsformidler. Der vil det bli formidlet til innbygger sin digitale postkasse, eBoks eller Digipost. Om innbygger ikke har en digital postkasse skal brevet bli sendt til print. Alternativt til innboksen i Altinn** 
+
+**Opsjon for virksomheter som allerede har avtale om levering av innbyggerpost i Altinn (viser til punkt 1.7 i [digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2623277/))  
 
 Integrasjonspunktet adresserer forsendelsen ved å slå opp mottakeren i Kontakt- og Reservasjonsregisteret og velger forsendelseskanal basert på reservasjonsstatus.
 
@@ -133,7 +135,7 @@ Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgj
   | SENDT | Forsendelse er sendt til meldingsformidler | 
   | LEVERT | Forsendelse levert til innbyggers prefererte kanal** | 
 
-** innbyggers prefererte kanal er enten digital postkasse, innboksen i Altinn eller fysisk print. 
+** innbyggers prefererte kanal er enten digital postkasse eller fysisk print. Enkelte innbyggere kan også få brev sendt til Altinn dersom avsender har dette som opsjon (viser til punkt 1.7 i [digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2623277/)). Dette er ikke et innbyggervalg.
 
 
 #### DPI feilstatus 
