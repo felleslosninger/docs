@@ -120,8 +120,6 @@ Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldings
 
 Integrasjonspunktet adresserer forsendelsen ved å slå opp mottakeren i Kontakt- og Reservasjonsregisteret og velger forsendelseskanal basert på reservasjonsstatus.
 
-![bilde](/felleslosninger/images/eformidling/DPI_statusflyt.jpg)
-
 DPI via eFormidling bruker NextMove grensesnittet. Det betyr at avsendersystemet ditt må støtte dette. DPI støtter også printtjenesten til Posten.
 
 ### DPI statuser
