@@ -20,8 +20,8 @@ folders:
       - title: Sikkerhet
         jurl: /eformidling_nm_sikkerhet.html
 
-      - title: Grensesnitt / Swagger
-        jurl: /eformidling_nm_swagger.html
+      - title: Grensesnitt / REST docs
+        jurl: /eformidling_nm_restdocs.html
         
       - title: Endringslogg 
         jurl: /eformidling_releasenotes.html

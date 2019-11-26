@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-> Utviklere: [Swagger dokumentasjon finner du den her](https://difi.github.io/felleslosninger/eformidling_nm_swagger.html)
+> Utviklere: [REST docs finner du her](https://difi.github.io/felleslosninger/eformidling_nm_restdocs.html)
 
 * TOC
 {:toc}
@@ -210,7 +210,7 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 
 > /api/messages/out/{```messageId```}
 
-> [Se her for opprett og send](https://difi.github.io/felleslosninger/eformidling_nm_swagger.html#operation/createMessageUsingPOST)
+> [Se her for opprett og send](https://difi.github.io/felleslosninger/eformidling_nm_restdocs.html##messages-out-create)
 
 *Kommer*
 
