@@ -33,12 +33,7 @@ sidebar: eformidling_install_sidebar
 | Databehandler | [se kap 9, avsnitt 2](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-einnsyn) | 
 | | |
 
-## Før du starter
 
-- Sørg for at du kan nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
-- Du må ha en nettleser eller et API-testverktøy (f.e. Postman via GET request) for å spørre mot APIet.
-- Eksempel på forespørsel mot lokalt integrasjonspunkt API ```http://localhost:9093/api/conversations```. En kan også benytte servernavn eller en eksponert url. ```https://test-ip-leik-meldingsutveksling.dificloud.net/api/messages/in```
-- Om du sletter activemq-data mappe eller database-filer som ligger i integrasjonspunktet hovedmappen, vil du ikke finne data. Informasjon og statuser om forsendelser blir lagret der.
 
 ---
 
@@ -68,6 +63,14 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 > NB! Det blir logget forskjellige statuser avhengig av om en er mottaker eller avsender av en forsendelse. Disse finner du [her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html).
 
+### Fargekoder
+
+*RØD* - denne forsendelsen har feilet
+*GUL* - denne forsendelsen er ikke fullført enda.
+*GRØNN* - denne forsendelsen er levert og fullført.
+
+> NB! En liten bug gjør at DPV forsendelser ikke får GRØNN farge selv om forsendelsen har status LEVERT. Dette vil bli rette så snart som mulig (versjon 2.0.8) og har kun estetisk betydning. Om DPV forsendelser har status LEVERT er de kommet frem.
+
 ### Søkefunksjonen
 
 I søkefeltet kan en frisøke etter data som ligg under verdiane nevnt over. I tillegg kan en skille mellom inngående og utgående traffikk, samt søke etter dato.
@@ -89,7 +92,12 @@ BildeEks på søk med operatorer inn her
 
 ## Sjekke forsendelser - API-testverktøy
 
-Til dette kan en bruke f.eks Postman.
+### Før du starter
+
+- Sørg for at du kan nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
+- Du må ha en nettleser eller et API-testverktøy (f.e. Postman via GET request) for å spørre mot APIet.
+- Eksempel på forespørsel mot lokalt integrasjonspunkt API ```http://localhost:9093/api/conversations```. En kan også benytte servernavn eller en eksponert url. ```https://test-ip-leik-meldingsutveksling.dificloud.net/api/messages/in```
+- Om du sletter activemq-data mappe eller database-filer som ligger i integrasjonspunktet hovedmappen, vil du ikke finne data. Informasjon og statuser om forsendelser blir lagret der.
 
 ### Hente alle forsendelser
 
