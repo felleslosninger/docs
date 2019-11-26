@@ -12,7 +12,7 @@ sidebar: eformidling_install_sidebar
 * TOC
 {:toc}
 
-# Terminologi
+## Terminologi
 
 **Disse begrepene vil heretter bli benyttet og er relevante for å forstå innholdet på denne siden korrekt.**
 
@@ -33,7 +33,7 @@ sidebar: eformidling_install_sidebar
 | Databehandler | [se kap 9, avsnitt 2](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-einnsyn) | 
 | | |
 
-# Før du starter
+## Før du starter
 
 - Sørg for at du kan nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
 - Du må ha en nettleser eller et API-testverktøy (f.e. Postman via GET request) for å spørre mot APIet.
@@ -42,7 +42,7 @@ sidebar: eformidling_install_sidebar
 
 ---
 
-# Sjekke forsendelser - grafisk brukergrensesnitt
+## Sjekke forsendelser - grafisk brukergrensesnitt
 
 ### Hvordan?
 
@@ -58,11 +58,11 @@ Forklaring kommer her..
 
 ---
 
-# Sjekke forsendelser - API-testverktøy
+## Sjekke forsendelser - API-testverktøy
 
 Til dette kan en bruke f.eks Postman.
 
-## Hente alle forsendelser
+### Hente alle forsendelser
 
 > /api/conversations
 
