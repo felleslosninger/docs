@@ -66,6 +66,8 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 - **Last status:** nåværende status på forsendelsen.
 
+> NB! Det blir logget forskjellige statuser avhengig av om en er mottaker eller avsender av en forsendelse. Disse finner du [her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html).
+
 
 ---
 
