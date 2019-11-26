@@ -68,6 +68,20 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 > NB! Det blir logget forskjellige statuser avhengig av om en er mottaker eller avsender av en forsendelse. Disse finner du [her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html).
 
+### Søkefunksjonen
+
+I søkefeltet kan en frisøke etter data som ligg under verdiane nevnt over. I tillegg kan en skille mellom inngående og utgående traffikk, samt søke etter dato.
+
+BildeEks på søk inn her
+
+En kan også søke på flere verdier ved hjelp av logiske operatorer. 
+
+- **&&**: betyr 'og'. 
+Denne returnerer alle forsendelser der begge verdier stemmer.
+- **||**: betyr 'eller'.
+Denne returner alle forsendelser der en av verdiene stemmer.
+
+BildeEks på søk med operatorer inn her
 
 ---
 
