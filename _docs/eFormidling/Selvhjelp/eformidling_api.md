@@ -54,17 +54,17 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 ### Forklaring til grensesnittet
 
--**Id:** dette er messageID - se mer info [her](https://difi.github.io/felleslosninger/eformidling_nm_message.html#messageid)
+- **Id:** dette er messageID - se mer info [her](https://difi.github.io/felleslosninger/eformidling_nm_message.html#messageid)
 
--**Title:** tittelen på dokumentet som er sendt.
+- **Title:** tittelen på dokumentet som er sendt.
 
--**Date:** tid og dato for forsendelsen.
+- **Date:** tid og dato for forsendelsen.
 
--**Receiver:** mottaker av forsendelsen.
+- **Receiver:** mottaker av forsendelsen.
 
--**Type:** hvilken type forsendelse det er. Se [terminologi](https://difi.github.io/felleslosninger/eformidling_api.html#terminologi)
+- **Type:** hvilken type forsendelse det er. Se [terminologi](https://difi.github.io/felleslosninger/eformidling_api.html#terminologi)
 
--**Last status:** nåværende status på forsendelsen.
+- **Last status:** nåværende status på forsendelsen.
 
 
 ---
