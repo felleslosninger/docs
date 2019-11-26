@@ -76,12 +76,14 @@ BildeEks på søk inn her
 
 En kan også søke på flere verdier ved hjelp av logiske operatorer. 
 
-- **&&**: betyr 'og'. 
+- **&&** betyr 'og'. 
 Denne returnerer alle forsendelser der begge verdier stemmer.
-- **||**: betyr 'eller'.
+- **||** betyr 'eller'.
 Denne returner alle forsendelser der en av verdiene stemmer.
 
 BildeEks på søk med operatorer inn her
+
+> Skulle det være ting som er uklart når det kommer til bruk av det grafiske brukergrensesnittet, send gjerne en epost til idporten@difi.no.
 
 ---
 
