@@ -66,8 +66,8 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 ### Fargekoder
 
 - <span style="color:red">*RØD*</span> = denne forsendelsen har feilet
-- *GUL* = denne forsendelsen er ikke fullført enda.
-- *GRØNN* = denne forsendelsen er levert og fullført.
+- <span style="color:yellow">*GUL*</span> = denne forsendelsen er ikke fullført enda.
+- *<span style="color:green">*GRØNN*</span> = denne forsendelsen er levert og fullført.
 
 > NB! En liten bug gjør at DPV forsendelser ikke får GRØNN farge selv om forsendelsen har status LEVERT. Dette vil bli rette så snart som mulig (versjon 2.0.8) og har kun estetisk betydning. Om DPV forsendelser har status LEVERT er de kommet frem.
 
