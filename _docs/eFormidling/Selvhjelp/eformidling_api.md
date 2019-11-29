@@ -41,7 +41,7 @@ sidebar: eformidling_install_sidebar
 
 ### Hvordan?
 
-Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuelt sjekkes i .propertiesfilen som ligger i integrasjonspunktmappen.
+Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuelt sjekkes i .properties filen som ligger i integrasjonspunktmappen.
   
 Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunktet: 
 
