@@ -39,6 +39,8 @@ sidebar: eformidling_install_sidebar
 
 ## Sjekke forsendelser - grafisk brukergrensesnitt
 
+Det er laget et grafisk brukergrensesnitt til integrasjonspunktet (tilgjengelig fra versjon 2.0.7). Tanken bak er at virksomhetene, evt. driftsleverandør, enkelt skal kunne sjekke status på inngående og utgående meldinger fra integrasjonspunktet.
+
 ### Hvordan?
 
 Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuelt sjekkes i .properties filen som ligger i integrasjonspunktmappen.
@@ -46,6 +48,8 @@ sidebar: eformidling_install_sidebar
 Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunktet: 
 
 ![](/felleslosninger/images/eformidling/api_gui_example.png)
+
+> NB! En må kunne nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
 
 ### Forklaring til grensesnittet
 
