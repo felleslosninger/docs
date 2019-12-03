@@ -124,7 +124,6 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 - mapping til ks
 -->
 
-<!---
 
 ### Digital post til innbygger
 
