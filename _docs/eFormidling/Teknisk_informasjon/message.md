@@ -118,11 +118,13 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpo.json %}
 ```
-```
+<!---
 - betydning av felter 
 - mapping mot dpv
 - mapping til ks
-```
+-->
+
+<!---
 
 ### Digital post til innbygger
 
