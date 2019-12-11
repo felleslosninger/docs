@@ -26,15 +26,10 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 [For mer informasjon om Network Time Protocol.](https://no.wikipedia.org/wiki/Network_Time_Protocol)
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 
-### VIKTIG - Fremtidig endring i brannmuråpninger
-eFormidling blir flyttet til nytt driftsmiljø den 11. desember. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene. Nedenfor kan en lese om hva som må endres. 
+### Brannmuråpninger
 
-> * NB! Gamle IP-adresser må beholdes i tillegg fram til 15.01.2020.
 
-**Her finner du de nye brannmuråpningene**
-
-- [Testmiljø](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-testmiljøet)
-- [Produksjon](https://difi.github.io/felleslosninger/eformidling_forutsetninger.html#nye-adresser-produksjon)
+> * eFormidling ble flyttet til nytt driftsmiljø den 11. desember. Dette medfører at det må åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene.
 
 Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:idporten@difi.no">idporten@difi.no</a>
 
@@ -49,30 +44,20 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
-| beta-meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 | Alle |
-| beta-meldingsutveksling.difi.no lb2 | 79.170.81.232:443	 | 2001:67c:2d68:d1f1::1b:2 | Alle |
-| beta-meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 | Alle |
-| stream.difi.no | 	79.170.81.228:8300  | 2001:67c:2d68:d1f1::56:1 | Alle |
+| qa-meldingsutveksling.difi.no | 51.144.60.111:443	 | - | Alle |
+| qa-stream-meldingsutveksling.difi.no | 	40.74.39.255:443  | - | Alle |
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 
-#### Nye adresser testmiljøet
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
-| ------------- |:-------------:| :-----:| :------:|
-| qa-meldingsutveksling.difi.no | 51.144.60.111:443	 | | Tidligere beta-meldingsutveksling.difi.no |
-| qa-stream-meldingsutveksling.difi.no | 40.74.39.255:443 | | Tidligere stream.difi.no |
 
 ### Brannmuråpninger i produksjon
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
-| meldingsutveksling.difi.no lb1 | 79.170.81.231:443	 | 2001:67c:2d68:d1f1::1b:1 | Alle |
-| meldingsutveksling.difi.no lb2 | 79.170.81.232:443	 | 2001:67c:2d68:d1f1::1b:2 | Alle |
-| meldingsutveksling.difi.no lb3 | 79.170.81.233:443	 | 2001:67c:2d68:d1f1::1b:3 | Alle |
-| stream.difi.no | 	79.170.81.228:8400  | 2001:67c:2d68:d1f1::56:1 | Alle |
+| meldingsutveksling.difi.no | 51.144.60.163:443	 | - | Alle |
+| stream-meldingsutveksling.difi.no | 	40.74.39.254:443  | - | Alle |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
 | eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | eInnsyn - move-dpe.servicebus.windows.net	 | 52.169.10.235:5671 | - | DPE | 
@@ -81,12 +66,6 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | meldingsformidler.digipost.no | 146.192.168.80:443 | -  | DPI |
 | svarut.ks.no | 193.161.171.187:443 | - | DPF |
 
-#### Nye adresser produksjon
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste | 
-| ------------- |:-------------:| :-----:| :------: | 
-| meldingsutveksling.difi.no | 51.144.60.163:443 | | Tidligere beta-meldingsutveksling.difi.no |
-| stream-meldingsutveksling.difi.no | 40.74.39.254:443 | | Tidligere stream.difi.no |
 
 ---
 
