@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere integrasjonspunktet
 
-Nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.8/integrasjonspunkt-2.0.8.jar) 
+Nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.9/integrasjonspunkt-2.0.9.jar) 
 
 
 Hva må gjøres? 
@@ -18,7 +18,7 @@ Hva må gjøres?
 Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 1. Stopp integrasjonspunktet.
-2. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.8/integrasjonspunkt-2.0.8.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
+2. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.9/integrasjonspunkt-2.0.9.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
 3. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
 4. Start integrasjonspunktet. 
 
