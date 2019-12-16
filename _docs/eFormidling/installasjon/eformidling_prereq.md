@@ -48,7 +48,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255:443**  | - | **Alle** |
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
-| eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
+| move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 
 
@@ -59,8 +59,8 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | **meldingsutveksling.difi.no** | **51.144.60.163:443**	 | - | **Alle** |
 | **stream-meldingsutveksling.difi.no** | 	**40.74.39.254:443**  | - | **Alle** |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
-| eInnsyn - move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
-| eInnsyn - move-dpe.servicebus.windows.net	 | 52.169.10.235:5671 | - | DPE | 
+| move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
+| move-dpe.servicebus.windows.net	 | 52.169.10.235:5671 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no | 146.192.168.126:443 | -  | DPI |
 | meldingsformidler.digipost.no | 146.192.168.80:443 | -  | DPI |
