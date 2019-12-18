@@ -118,6 +118,8 @@ cache-control: no-cache
 
 - Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
 
+[![Opprette API](https://samarbeid.difi.no/sites/samarbeid2/files/opprette-api.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_api.mp4 "Opprette API")
+
 ### 2a. Tilgangsstyring - Oauth2-selvbetjeningsklient
 
 API-tilbyder kan bruke følgende operasjoner for tilgangsstyring:
