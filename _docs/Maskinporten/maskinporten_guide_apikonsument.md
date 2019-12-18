@@ -55,11 +55,11 @@ Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whiteli
 Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange APIer, så vi anbefaler at konsumenter lager en ny klient ved å POSTe inn konfigurasjonen til denne:
 
 
-#### Registrering via utviklerportal
+#### Registrering via Samarbeidsportalen
 
-Du kan logge inn på [utviklerportalen] og registrere den nye integrasjon. Merk at utviklerportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat.
+Du kan logge inn på https://samarbeid.difi.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
 
-Alle organisasjoner som har inngått Difis bruksvilkår skal ha tilgang til utviklerportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
+Alle organisasjoner som har inngått Difis bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
 
 For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
 
