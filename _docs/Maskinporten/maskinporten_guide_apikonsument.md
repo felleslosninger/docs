@@ -66,7 +66,7 @@ For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndige
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [HER].
+For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
