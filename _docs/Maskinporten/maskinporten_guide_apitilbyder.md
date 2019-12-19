@@ -31,7 +31,7 @@ Først må du bli manuelt provisjonert som API-tilbyder:  Du må bestemme:
 * ønsket `client_id` for din selvbetjenings-applikasjon
 * ditt `organisasjonsnummer`
 
-Send inn skjema: <Lenke her>
+Send inn skjema: https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u
 
 Du må så lage en tilhørende Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
 
@@ -101,6 +101,8 @@ API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ve
 - For å legge til ny tilgang, trykk på "+ legg til ny tilgang" og registrer organisasjonsnummeret til virksomheten som skal få tilgang.
 
 - For å revokere tilgang, trykk på "Slette" i listen over tilganger.
+
+[![Tilgangsstyre API](https://samarbeid.difi.no/sites/samarbeid2/files/tilgangsstyre-api-png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/tilgangsstyre_api.mp4 "Tilgangsstyre API")
 
 ### 2a. Opprette APIer - Oauth2-selvbetjeningsklient
 
