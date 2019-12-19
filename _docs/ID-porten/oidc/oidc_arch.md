@@ -30,6 +30,7 @@ graph LR
 
 ID-portens OIDC provider tilbyr **autentisering** av sluttbrukere opp mot netttjenester.  Funksjonaliteten er grunnleggende den samme som dagens SAML2-basert løsning.
 
+
 ID-portens OIDC Provider er en frittstående applikasjon som står foran den eksisterende ID-porten og snakker SAML2 med denne, tilsvarende eksisterende tjenester hos kundene.
 
 Det er ID-porten som håndterer SSO-sesjoner både for SAML2 og OIDC.  Dette medfører at kunder får [single-signon (SSO)](oidc_func_sso.html) både mellom OIDC-baserte tjenester, og mellom SAML2- og OIDC-baserte tjenester.
