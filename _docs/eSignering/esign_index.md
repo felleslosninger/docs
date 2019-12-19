@@ -5,4 +5,8 @@ permalink: esign_index.html
 product: eSignering
 ---
 
-Difi har etablert en felles tjeneste for elektronisk signering. Signeringstjenesten er en frittstående tjeneste som er tilgjengelig for offentlige virksomheter. Tjenesten gjør det mulig for innbyggere å signere dokument fra det offentlige digitalt ved påføring av digital personsignatur. Tjenesten forvaltes av Difi og leveres av Posten Norge AS.
+Tjenesten kan hjelpe offentlige virksomheter med å sikre brukervennlig, sikker og effektiv håndtering av dokumenter som krever signatur fra innbyggere.
+
+Den digitale prosessen ved eSignering gjør at virksomhetene slipper manuell håndtering ved utlevering og innhenting av dokumenter som skal signeres. Ved eSignering av dokumenter gjennomføres selve signeringen med elektronisk ID. Det signerte dokumentet kan ikke endres i etterkant, og vil være klart for arkivering i sak- og arkivsystem etter at innbygger har fullført signeringsprosessen. Tjenesten støtter både enkeltsignatur og multisignatur av signeringsoppdrag. 
+
+Tjenesten forvaltes av Difi og leveres av Posten Norge AS.

@@ -1,0 +1,74 @@
+sidebarTitle: eFormidling
+
+folders:
+- title: Installasjon av integrasjonspunktet
+
+  folderitems:
+  
+      - title: Oppgradere til ny versjon
+        jurl: /eformidling_ip_upgrade.html  
+      
+      - title: Last ned integrasjonspunktet
+        jurl: /eformidling_download_ip.html
+
+      - title: Forutsetninger for installasjon
+        jurl: /eformidling_forutsetninger.html
+
+      - title: Virksomhetssertifikat
+        jurl: /eformidling_virksomhetssertifikat.html
+
+      - title: Konfigurasjon av properties
+        jurl: /eformidling_properties_config.html
+
+      - title: Oppstart av integrasjonspunktet
+        jurl: /eformidling_ip_run.html
+
+      - title: Opprette brukere i eFormidling
+        jurl: /eformidling_create_users.html
+        
+     
+
+
+- title: Selvhjelp og nyttig informasjon
+
+  folderitems:
+
+      - title: Nyttig informasjon
+        jurl: /eformidling_selfhelp.html
+       
+      - title: Typiske feil
+        jurl: /eformidling_selfhelp_typical_errors.html
+
+      - title: Trafikkflyt, kvitteringer og status
+        jurl: /eformidling_selfhelp_traffic_flow.html
+        
+      - title: Sporing av forsendelser
+        jurl: /eformidling_api.html
+              
+      - title: Testmiljø eFormidling
+        jurl: /eformidling_testing_env.html
+               
+      - title: Endringslogg
+        jurl: /eformidling_releasenotes.html
+             
+      - title: Sak-arkiv
+        jurl: /eformidling_veiledning_sakark.html
+        
+- title: Utviklerdokumentasjon
+  jurl: /eformidling_nm_about.html
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.difi.no/felleslosninger
+
+- title: Difi
+  jurl: https://www.difi.no
+

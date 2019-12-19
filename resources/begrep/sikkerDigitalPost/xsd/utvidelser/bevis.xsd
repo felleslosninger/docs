@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://begrep.difi.no/sdp/utvidelser/bevis" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            version="1.0" targetNamespace="http://begrep.difi.no/sdp/utvidelser/bevis" elementFormDefault="qualified">
+    <xsd:element name="bevis" type="Bevis"/>
+    <xsd:complexType name="Bevis">
+        <xsd:sequence>
+            <xsd:element name="utsteder-visningsnavn" type="UtstederVisningsnavn" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="bakgrunnsfarge" type="HexFargeKode" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="utstedt-tidspunkt" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="gyldighetsperiode" type="Gyldighetsperiode" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="bevisholder" type="Bruker" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="tittel" type="Tittel" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="bevis-id-navn" type="BevisIdNavn" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="bevis-id-verdi" type="String100" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="attributt" type="Attributt" minOccurs="0" maxOccurs="5"/>
+            <xsd:element name="info" type="Info" minOccurs="0" maxOccurs="3"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="HexFargeKode">
+        <xsd:annotation>
+            <xsd:documentation>#RRGGBB fargekode</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="#[A-Fa-f0-9]{6}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="Gyldighetsperiode">
+        <xsd:sequence>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+                <xsd:element name="periode" type="Periode"/>
+                <xsd:element name="aarlig-repeterende-periode" type="AarligRepeterendePeriode"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Periode">
+        <xsd:sequence>
+            <xsd:element name="fra" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="til" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AarligRepeterendePeriode">
+        <xsd:sequence>
+            <xsd:element name="start-aar" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="slutt-aar" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="fra" type="Maanedstidspunkt" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="til" type="Maanedstidspunkt" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Maanedstidspunkt">
+        <xsd:sequence>
+            <xsd:element name="maaned" type="Maaned" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="dag" type="Dag" default="1" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="time" type="Time" default="0" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="minutt" type="Minutt" default="0" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="tidssone" type="Tidssone" default="+02:00" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="Maaned">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Dag">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="1"/>
+            <xsd:maxInclusive value="31"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Time">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="23"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Minutt">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="59"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="Bruker">
+        <xsd:sequence>
+            <xsd:element name="fornavn" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="etternavn" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="foedselsnummer" type="Foedselsnummer" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="adresse" type="Adresse" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="Foedselsnummer">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{11}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="Tidssone">
+        <xsd:annotation>
+            <xsd:documentation>Tidssone ihht ISO8601</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="Z|[+-][01]\d(:{0,1}[0-5]\d)?"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="Adresse">
+        <xsd:sequence>
+            <xsd:element name="gate" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="postnummer" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="sted" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="land" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Attributt">
+        <xsd:sequence>
+            <xsd:element name="navn" type="Attributtnavn" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="verdi" type="Attributtverdi" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Info">
+        <xsd:sequence>
+            <xsd:element name="navn" type="Infonavn" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="verdi" type="Infoverdi" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Tittel">
+        <xsd:simpleContent>
+            <xsd:extension base="String255">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="BevisIdNavn">
+        <xsd:simpleContent>
+            <xsd:extension base="String100">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="UtstederVisningsnavn">
+        <xsd:simpleContent>
+            <xsd:extension base="String100">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="Attributtnavn">
+        <xsd:simpleContent>
+            <xsd:extension base="String100">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="Attributtverdi">
+        <xsd:simpleContent>
+            <xsd:extension base="String100">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="Infonavn">
+        <xsd:simpleContent>
+            <xsd:extension base="String100">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="Infoverdi">
+        <xsd:simpleContent>
+            <xsd:extension base="String255">
+                <xsd:attribute name="lang" type="Spraakkode" use="required"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="String100">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="String255">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="255"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Spraakkode">
+        <xsd:annotation>
+            <xsd:documentation>Språkkode ihht ISO-639-1 (2 bokstaver)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2"/>
+            <xsd:maxLength value="2"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

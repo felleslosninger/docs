@@ -8,67 +8,101 @@ folders:
   folderitems:
 
   - title: Om eFormidling
-    jurl: /eform_index.html
+    jurl: /eformidling_index.html
     subfolders:
 
-    - title: Bakgrunn
-      subfolderitems:
+  - title: Installasjonsveiledning
+    jurl: /eformidling_download_ip.html
 
-      - title: Meldingstyper og flyt
-        jurl: /eform_messagetypes.html
+  - title: Utviklerdokumentasjon
+    jurl: /eformidling_nm_about.html
+    #Må endre jurl på teknisk info
 
-      - title: Miljø
-        jurl: /eform_environment.html
-
-      - title: Begreper
-        jurl: /eform_terms.html
-
-    - title: Selvhjelp
-      subfolderitems:
-
-      - title: Selvhjelp til eFormidling
-        jurl: /eform_selvhjelp.html
 
 - title: ID-porten
   folderitems:
-
+  
   - title: Om ID-porten
     jurl: /idporten_index.html
 
-    subfolders:
-    - title: OpenID Connect i ID-porten
-      subfolderitems:
+  - title: Overordnet
+    jurl: /idporten_overordnet.html
 
-      -
+  - title: Bruksområder
+    jurl: /idporten_bruksomrader_index.html
 
-        subsubfolders:
-        - title: Kom i gang
+  - title: Grensesnitt
+    jurl: /saml_tilgang.html
 
-          subsubfolderitems:
-          - title: Integrasjonsguide
-            jurl: /oidc_guide_idporten.html
-            ref: oidc_subsublevel1
+  - title: Spørsmål og svar
+    jurl: /idporten_faq.html
 
+
+- title: Maskinporten
+  folderitems:
+
+  - title: Om Maskinporten
+    jurl: /maskinporten_index.html
+    
+  - title: Overordnet
+    jurl: /maskinporten_overordnet.html
+  
+  - title: Bruksområde
+    jurl: /maskinporten_bruksomrade.html
+    
+  - title: Grensesnitt
+    jurl: /maskinporten_grensesnitt.html
+    
+  - title: Spørsmål og svar
+    jurl: /maskinporten_sporsmal_og_svar.html
 
 - title: Kontaktregisteret
   folderitems:
   - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /kkr_index.html
+    jurl: /krr_index.html
+
+  - title: Oppslagstjenesten REST
+    jurl: /oppslagstjenesten_rest.html
+
+  - title: Brukerspesifikt oppslag REST
+    jurl: /brukerspesifikt_oppslag_krr_rest.html
+
+  - title: Oppslagstjenesten SOAP
+    jurl: /oppslagstjenesten_soap.html
 
 - title: Digital postkasse
   folderitems:
   - title: Om digital postkasse
     jurl: /digipost_index.html
 
+  - title: Veiledning og klienter
+    jurl: /sdp_index_innledning.html
+
 - title: eInnsyn
   folderitems:
   - title: Om eInnsyn
     jurl: /einnsyn_index.html
 
+  - title: eInnsyn-klient
+    jurl: /einnsyn_forutsetninger.html
+
 - title: eSignering
   folderitems:
   - title: Om eSignering
     jurl: /esign_index.html
+
+  - title: Kom i gang med eSignering
+    jurl: /esign_komigang.html
+
+- title: ELMA
+
+  folderitems:
+
+  - title: about ELMA
+    jurl: /elma_index.html
+
+  - title: Documentation
+    jurl: /elma_user_manual.html
 
 
 ###########################
@@ -77,11 +111,17 @@ related_resources_title: Andre nyttige lenker
 
 related_resources_list:
 
+- title: Begrepskatalog
+  jurl: begrep_index.html
+
 - title: Github
-  jurl: https://github.com/difi/dokumentasjonsprosjektet
+  jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
 - title: Difi
   jurl: https://www.difi.no
+
+- title: Altinn Docs
+  jurl: https://altinn.github.io/docs/

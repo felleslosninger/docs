@@ -1,7 +1,7 @@
 {% include topnav.html %}
 <div class="container">
 
-  <link rel="stylesheet" href="/assets/css/syntax.css"/>
+ <!-- <link rel="stylesheet" href="/assets/css/syntax.css"/>-->
 
         <div class="row row-offcanvas row-offcanvas-left">
 
@@ -31,12 +31,16 @@
 
                       {% endif %}
 
-
                     <h1>{{page.title}}</h1>
 
                 {% if site.github_button_location_below_title == true %}
                 {% include github_button.html %}
                 {% endif %}
+
+                {% if page.summary %}
+                 <div class="summary">{{page.summary}}</div>
+                {% endif %}
+
                     {{content}}
                   {% if site.github_button_location_page_bottom == true %}
                   {% include github_button.html %}
@@ -50,6 +54,8 @@
 
 
     </div><!--/.page-container-->
+
+    {% include search-result-highlighting.html %}
     {% include footer.html %}
 
     {% include google_analytics.html %}

@@ -1,0 +1,38 @@
+sidebarTitle: Oppslagstjenesten
+
+folders:
+- title: Oppslagstjeneste klient dotnet
+  folderitems:
+
+  - title: Eksempler på kall
+    jurl: /krr_eksempler_paa_kall.html
+    
+  - title: Hvordan komme i gang
+    jurl: /krr_hvordan_komme_i_gang.html
+
+  - title: Konfigurasjon
+    jurl: /krr_konfigurasjon.html
+    
+  - title: Sertifikater
+    jurl: /krr_sertifikater.html
+    
+  - title: Asynkronitet
+    jurl: /krr_async.html    
+    
+  - title: Logging
+    jurl: /krr_logging.html
+    
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.difi.no/felleslosninger
+
+- title: Difi
+  jurl: https://www.difi.no

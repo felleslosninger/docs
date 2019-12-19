@@ -1,0 +1,12 @@
+---
+title: Utskrifts- og forsendelsestjenesten
+permalink: sdp_index_utskrift.html
+sidebar: dpi_sidebar
+---
+
+En tjeneste som tilbyr en papirposttjeneste ved å skrive ut posten på
+papir, konvoluttere og sende papirpost til postmottaker.  Tjenesten bidrar til at Sikker digital posttjeneste fungerer som en
+totalleverandør for avsendervirksomhetene vedrørende post til innbyggere.  Tjenesten kan brukes for å sende forsendelser av brev til mottakere som har reservert seg eller ikke registrert/oppdatert sin
+kontaktinformasjon.
+
+Les mer om [utskrifts- og forsendelsestjenesten](https://samarbeid.difi.no/node/202) i samarbeidsportalen.

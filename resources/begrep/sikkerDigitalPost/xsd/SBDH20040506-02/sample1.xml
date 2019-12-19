@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sh:StandardBusinessDocumentHeader xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader StandardBusinessDocumentHeader.xsd">
+  <sh:HeaderVersion>2.2</sh:HeaderVersion>
+  <sh:Sender>
+    <sh:Identifier Authority="EAN.UCC">6903148000007</sh:Identifier>
+    <sh:ContactInformation>
+      <sh:Contact>Corporate Headquarters</sh:Contact>
+      <sh:EmailAddress>Corporate_Headquarters@XYZretailer.com</sh:EmailAddress>
+      <sh:FaxNumber>+1-212-555-1212</sh:FaxNumber>
+      <sh:TelephoneNumber>+1-212-555-2121</sh:TelephoneNumber>
+      <sh:ContactTypeIdentifier>Corporate Organization</sh:ContactTypeIdentifier>
+    </sh:ContactInformation>
+  </sh:Sender>
+  <sh:Sender>
+    <sh:Identifier Authority="EAN.UCC">6903148000008</sh:Identifier>
+    <sh:ContactInformation>
+      <sh:Contact>John Doe</sh:Contact>
+      <sh:EmailAddress>John_Doe@purchasing.XYZretailer.com</sh:EmailAddress>
+      <sh:FaxNumber>+1-212-555-1213</sh:FaxNumber>
+      <sh:TelephoneNumber>+1-212-555-2122</sh:TelephoneNumber>
+      <sh:ContactTypeIdentifier>Buyer</sh:ContactTypeIdentifier>
+    </sh:ContactInformation>
+  </sh:Sender>
+  <sh:Receiver>
+    <sh:Identifier Authority="Widgets">2203148000007</sh:Identifier>
+    <sh:ContactInformation>
+      <sh:Contact>Mary Smith</sh:Contact>
+      <sh:EmailAddress>Mary_Smith@widgets.com</sh:EmailAddress>
+      <sh:FaxNumber>+1-312-555-1214</sh:FaxNumber>
+      <sh:TelephoneNumber>+1-312-555-2125</sh:TelephoneNumber>
+      <sh:ContactTypeIdentifier>Seller</sh:ContactTypeIdentifier>
+    </sh:ContactInformation>
+  </sh:Receiver>
+  <sh:Receiver>
+    <sh:Identifier Authority="Widgets">2203148000008</sh:Identifier>
+    <sh:ContactInformation>
+      <sh:Contact>Jane Austin</sh:Contact>
+      <sh:EmailAddress>Jane _Austin@widgets.com</sh:EmailAddress>
+      <sh:FaxNumber>+1-312-555-1216</sh:FaxNumber>
+      <sh:TelephoneNumber>+1-312-555-2127</sh:TelephoneNumber>
+      <sh:ContactTypeIdentifier>Assistant Seller</sh:ContactTypeIdentifier>
+    </sh:ContactInformation>
+  </sh:Receiver>
+  <sh:DocumentIdentification>
+    <sh:Standard>http://www.uc-council.org/smp/schemas/simpl-eb/Order</sh:Standard>
+    <sh:TypeVersion>Order V1.3</sh:TypeVersion>
+    <sh:InstanceIdentifier>100002</sh:InstanceIdentifier>
+    <sh:Type>Ordering</sh:Type>
+    <sh:MultipleType>false</sh:MultipleType>
+    <sh:CreationDateAndTime>2003-05-02T00:31:52Z</sh:CreationDateAndTime>
+  </sh:DocumentIdentification>
+  <sh:Manifest>
+    <sh:NumberOfItems>2</sh:NumberOfItems>
+    <sh:ManifestItem>
+      <sh:MimeTypeQualifierCode>application/xml</sh:MimeTypeQualifierCode>
+      <sh:UniformResourceIdentifier> http://www.widgets.com//ProductImage
+</sh:UniformResourceIdentifier>
+      <sh:Description>MPEG Video Image of Product</sh:Description>
+      <sh:LanguageCode>EN</sh:LanguageCode>
+    </sh:ManifestItem>
+  </sh:Manifest>
+</sh:StandardBusinessDocumentHeader>

@@ -1,40 +1,14 @@
 about_title: Om disse sidene
 about_description: >
-  Teknisk dokumentasjon for Difi sine fellesløsninger.
-
-column1_title: Fellesløsninger kildekode
-column1_links:
-  -
-    target: http://someurl1.com
-    text: eFormidling
-  -
-    target: http://someurl2.com
-    text: ID-porten
-  -
-    target: https://github.com/difi/oppslagstjeneste-klient-dotnet
-    text: Oppslagstjenesten, klient .Net
-
-  -
-    target: https://github.com/difi/kontaktregister-statistikk-klient
-    text: Statistikk klient, KKR
-  -
-    target: https://github.com/difi/sikker-digital-post-klient-java
-    text: Sikker digital post klient java
-  -
-    target: https://github.com/difi/sikker-digital-post-klient-dotnet
-    text: Sikker digital post klient .Net
-  -
-    target: http://someurl5.com
-    text: eInnsyn
 
 column2_title: Hvordan bidra?
 column2_links:
   -
-    target: /CONTRIBUTING.html
+    target: https://difi.github.io/felleslosninger/CONTRIBUTING.html
     text: Gjøre endringer direkte
   -
-    target: https://github.com/difi/dokumentasjonsprosjektet/issues
+    target: https://github.com/difi/felleslosninger/issues
     text: Opprette issue på GitHub
   -
-    target: /NOTICE.html
+    target: https://difi.github.io/felleslosninger/NOTICE.html
     text: Teknologi brukt på disse sidene

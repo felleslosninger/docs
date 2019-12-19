@@ -1,0 +1,27 @@
+sidebarTitle: ELMA
+
+folders:
+- title: ELMA documentation
+  folderitems:
+
+  - title: ELMA user manual
+    jurl: /elma_user_manual.html
+
+  - title: ICD 0192 and new profiles
+    jurl: /elma_icd0192andNewProfiles.html
+
+  - title: Upgrade to new 3.0 profiles
+    jurl: /elma_upgradeTo0192Profiles.html
+
+  - title: Webservice
+    jurl: /elma_webservice.html
+
+  - title: WSDL
+    jurl: /elma_wsdl.html
+
+  - title: Status & releasenotes
+    jurl: /elma_status.html
+    
+  - title: REST API
+    jurl: /elma_swagger.html
+

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.ean-ucc.org/schemas/1.3/eanucc" schemaLocation="OrderResponse.xsd"/>
+  <xs:include schemaLocation="StandardBusinessDocumentHeader.xsd"/>
+</xs:schema>

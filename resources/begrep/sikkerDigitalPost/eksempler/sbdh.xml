@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StandardBusinessDocumentHeader 
+	xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader ../xsd/SBDH20040506-02/StandardBusinessDocumentHeader.xsd">
+	<HeaderVersion>1.0</HeaderVersion>
+	<Sender> <!-- orgnr avsender -->
+		<Identifier Authority="iso6523-actorid-upis">9908:991825827</Identifier>
+	</Sender>
+	<Receiver> <!-- orgnr mottaker, postboks eller print -->
+		<Identifier Authority="iso6523-actorid-upis">9908:996460320</Identifier>
+	</Receiver>
+	<DocumentIdentification> 
+		<Standard>urn:no:difi:sdp:1.0</Standard>
+		<TypeVersion>1.0</TypeVersion>
+		<!-- Unik identifikator i "Sender" sitt scope -->
+		<InstanceIdentifier>12e57bde-ea5d-43ee-96b6-e2cf73f8311e</InstanceIdentifier>
+		<Type>Sikkerpost</Type>
+		<CreationDateAndTime>2013-02-19T05:10:10Z</CreationDateAndTime>
+	</DocumentIdentification>
+	<BusinessScope>
+	    <Scope>
+	        <Type>ConversationId</Type>
+        	<!-- Dette er den reelle unike identifikatoren i SDBH - bør vera GUID! -->
+            <InstanceIdentifier>12e57bde-ea5d-43ee-96b6-e2cf73f8311e</InstanceIdentifier>
+	        <Identifier>urn:no:difi:sdp:1.0</Identifier>
+	    </Scope>
+	</BusinessScope>
+</StandardBusinessDocumentHeader>

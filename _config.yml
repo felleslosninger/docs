@@ -1,5 +1,7 @@
 
 ############# SITE PROPERTIES #############
+name: Dokumentasjon av fellesløsninger
+url: https://difi.github.io/felleslosninger
 
 # localhost port (can be anything)
 port: 4000
@@ -52,7 +54,7 @@ link_type: jurl
 show_feedback: true
 
 # email address feedback gets sent to
-feedback_email: someemail@gmail.com
+feedback_email: idporten@difi.no
 
 # note: to customize the auto-completed body text, overwrite it by adding _includes/feedback.html in your own theme.
 
@@ -69,7 +71,16 @@ github_button_location_below_title: false
 github_button_location_page_bottom: false
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
-github_editme_path: https://github.com/difi/dokumentasjonsprosjektet/blob/master
+github_editme_path: https://github.com/difi/felleslosninger/blob/gh-pages
+
+
+############# Glossary info #############
+
+# inserts glossary link in top nav bar (recommended)
+glossary: true
+
+# link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
+glossary_path: https://difi.github.io/felleslosninger/ordliste.html
 
 
 ############# EXCLUDE LIST #############
@@ -152,11 +163,11 @@ disqus_shortname:
 ############# GOOGLE ANALYTICS #############
 
 # include Google Analytics?
-show_google_analytics: false
+show_google_analytics: true
 
 # Google Analytics tracking code number (not the whole code snippet -- just UA-123456 or so)
 # To adjust the google analytics code snippet, see the _includes/google_analytics.html code in the gem
-google_analytics_code:
+google_analytics_code: UA-12685001-29
 
 ############# Breadcrumb ############
 # you can modify the breadcrumb in _includes/breadcrumb.html
@@ -168,7 +179,7 @@ breadcrumb_display: false
 breadcrumb_home_display: true
 
 # Url for Home path to point to
-breadcrumb_home_url: https://github.com/difi/dokumentasjonsprosjektet
+breadcrumb_home_url: https://github.com/difi/felleslosninger
 
 ##########  MARKDOWN PROCESS AND FILTER ##########
 # leave these settings as is unless you want to use something other than kramdown Markdown
@@ -206,10 +217,12 @@ uistring:
     tableofcontents: Innhold # text that appears before in-page table of contents
     expandall: Utvid # appears as text in sidebar to expand all levels
     collapseall: Kollaps # appears as text in sidebar to collapse all levels
+    home_btn: Hjem # sends the user to the frontpage
     search_placeholder_text: Søk ... # appears as placeholder in search field
     no_search_results_found: Vi fant ingen sider som passet til søket ditt. Prøv igjen med andre søkeord?
     feedback_link_name: Tilbakemeldinger # name of Feedback link
     feedback_subject_line: Tilbakemelding vedr. teknisk dokumentasjon # Auto-filled Subject link of email
     github_edit_button_text: Endre/rediger innhold # text for github button
+    glossary_text: Ordliste # text for glossary link
 
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman

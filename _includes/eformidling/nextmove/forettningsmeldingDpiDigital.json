@@ -1,0 +1,16 @@
+{
+    "digital": {
+        "sikkerhetsnivaa": "",
+        "hoveddokument": "",
+        "tittel": "",
+        "spraak": "NO",
+        "digitalPostInfo": {
+            "virkningsdato": "",
+            "aapningskvittering": "false"
+        },
+        "varsler": {
+            "epostTekst": "Varseltekst",
+            "smsTekst": "Varseltekst"
+        }
+    }
+}

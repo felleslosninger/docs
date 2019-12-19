@@ -1,0 +1,54 @@
+sidebarTitle: ID-porten SAML
+
+folders:
+- title: Integrasjonsveiledning
+  folderitems:
+
+  - title: Hvordan komme få tilgang
+    jurl: /saml_tilgang.html
+    
+  - title: Funksjonell beskrivelse
+    jurl: /saml_funksjonell.html
+
+  - title: Teknisk - Innlogging
+    jurl: /saml_teknisk_innlogging.html
+    
+  - title: Detaljert beskrivelse av teknisk løsning
+    jurl: /saml_teknisk_losning.html
+    
+  - title: Sikkerhet
+    jurl: /saml_sikkerhet.html    
+    
+  - title: Detaljert beskrivelse av støttede SAML 2.0 profiler
+    jurl: /saml_stottede_profiler.html
+    
+  - title: Mer om metadata og SAML
+    jurl: /saml_metadata.html
+    
+  - title: Hurtigguide - Teknisk Integrasjon
+    jurl: /saml_hurtigguide.html
+    
+  - title: Verifikasjonstester SAML og OpenID Connect
+    jurl: /saml_verifikasjonstester.html    
+
+
+- title: OpenID Connect i ID-porten
+  folderitems:
+
+  - title: Integrasjonsguide OpenID Connec
+    jurl: /oidc_index.html
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.difi.no/felleslosninger
+
+- title: Difi
+  jurl: https://www.difi.no
