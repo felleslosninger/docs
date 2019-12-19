@@ -74,7 +74,35 @@ Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan 
 
 API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ved bruk av web-grensesnitt via Samarbeidsportalen.
 
-### 1a. Opprette APIer - Oauth2-selvbetjeningsklient
+### 1a: Opprette et API - via Samarbeidsportalen
+
+ - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
+
+- Velg "Mine API" i det miljøet du vil opprette API'et i.
+
+- Trykk på "Nytt scope"
+
+- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på idporten@difi.no. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
+
+- Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
+
+[![Opprette API](https://samarbeid.difi.no/sites/samarbeid2/files/opprette-api.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_api.mp4 "Opprette API")
+
+### 1b: Tilgangsstyring - via Samarbeidsportalen
+
+ - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
+
+- Velg "Mine API" i det miljøet du vil tilgangsstyre i.
+
+- Velg API'et du vil tilgangsstyre.
+
+- Gå til "Tilganger" under skjemaet.
+
+- For å legge til ny tilgang, trykk på "+ legg til ny tilgang" og registrer organisasjonsnummeret til virksomheten som skal få tilgang.
+
+- For å revokere tilgang, trykk på "Slette" i listen over tilganger.
+
+### 2a. Opprette APIer - Oauth2-selvbetjeningsklient
 
 Når prefix er blitt manuelt tildelt, er følgdende operasjoner tilgjengelige:
 
@@ -106,21 +134,9 @@ cache-control: no-cache
 }
 ```
 
-### 1b: Opprette et API - via Samarbeidsportalen
 
- - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
 
-- Velg "Mine API" i det miljøet du vil opprette API'et i.
-
-- Trykk på "Nytt scope"
-
-- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på idporten@difi.no. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
-
-- Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
-
-[![Opprette API](https://samarbeid.difi.no/sites/samarbeid2/files/opprette-api.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_api.mp4 "Opprette API")
-
-### 2a. Tilgangsstyring - Oauth2-selvbetjeningsklient
+### 2b. Tilgangsstyring - Oauth2-selvbetjeningsklient
 
 API-tilbyder kan bruke følgende operasjoner for tilgangsstyring:
 
@@ -156,20 +172,6 @@ Respons:
     }
 ]
 ```
-### 2b: Tilgangsstyring - via Samarbeidsportalen
-
- - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
-
-- Velg "Mine API" i det miljøet du vil tilgangsstyre i.
-
-- Velg API'et du vil tilgangsstyre.
-
-- Gå til "Tilganger" under skjemaet.
-
-- For å legge til ny tilgang, trykk på "+ legg til ny tilgang" og registrer organisasjonsnummeret til virksomheten som skal få tilgang.
-
-- For å revokere tilgang, trykk på "Slette" i listen over tilganger.
-
 ### 3. Provisjonering av konsument
 
 Konsumenten må provisjonere tilgangen ned til en aktuell klient, før han kan få utstedt tokens.  Dette gjøres ved å oppdatere Oauth2 klienten som skal ha tilgangen med det nye scopet, via [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes).
