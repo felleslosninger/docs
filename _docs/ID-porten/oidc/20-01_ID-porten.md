@@ -6,7 +6,9 @@ sidebar: oidc
 ---
 
 
- I denne releasen vert ID-portens SAML-grensesnitt oppgradert til siste versjon av Forgerock AM. 
+I denne releasen vert ID-portens SAML-grensesnitt oppgradert til siste versjon av Forgerock AM.
+
+
 
 Releasen vart produksjonssatt 2020-01-28
 
@@ -15,4 +17,5 @@ Releasen vart produksjonssatt 2020-01-28
 
 #### Oppgradring til AM 6.5
 
- ID-porten SAML-grensesnitt skal oppgraderast til Forgerock AM 6.5 
+ID-porten SAML-grensesnitt skal oppgraderast til Forgerock AM 6.5
+

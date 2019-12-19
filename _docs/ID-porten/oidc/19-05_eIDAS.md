@@ -6,7 +6,7 @@ sidebar: oidc
 ---
 
 
- 
+
 
 Releasen vart produksjonssatt 2019-05-07
 
@@ -15,4 +15,5 @@ Releasen vart produksjonssatt 2019-05-07
 
 #### eIDAS: Entydig gjenkjenning mot Modernisert Folkeregister
 
- Norsk eIDAS Node kobles mot Modernisert Folkeregister, slik at det blir mulig å entydig gjenkjenne norsk F/D-nummer når en eIDAS-bruker forsøker å logge inn til norske tjenester. 
+Norsk eIDAS Node kobles mot Modernisert Folkeregister, slik at det blir mulig å entydig gjenkjenne norsk F/D-nummer når en eIDAS-bruker forsøker å logge inn til norske tjenester.
+

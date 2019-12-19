@@ -15,4 +15,5 @@ Releasen vart produksjonssatt 2018-11-20
 
 #### OpenAM-oppgradering
 
- Oppgradering av ID-porten til OpenAM 13.5 
+Oppgradering av ID-porten til OpenAM 13.5
+

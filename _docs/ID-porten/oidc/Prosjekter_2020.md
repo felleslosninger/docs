@@ -6,7 +6,9 @@ sidebar: oidc
 ---
 
 
- Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020. 
+Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020.
+
+
 
 Releasen vart produksjonssatt 2020-12-31
 
@@ -30,7 +32,17 @@ Releasen vart produksjonssatt 2020-12-31
 
 #### OIDC-provider som kjerne i ny systemarkitektur
 
- Overgangen fra SAML-integrasjoner til OIDC-integrasjoner går raskt. 40% av trafikken i ID-porten går nå over OIDC.  Som følge av dette besluttet Difi i et prosjekt i 2019 at ID-portens systemarkitektur må endres til at OpenID Connect / Oauth2-delen blir kjernen i ny arkitektur. En må se på om det er mulig å bruke et hyllevare IAM-produkt istedet for dagens egenutviklede løsning. Samtidig skal vi tilrettelegge for bruk av skyteknologi, både PaaS og SaaS-løsninger der dette er mulig.  Omskriving til ny systemarkitektur begynner nå, og vil pågå kontinuerlig fram til dagens driftsavtale går ut i slutten av 2021.  I 2020 ser vi for oss å gjøre følgende:    Pilotering av ulike IAM-produkter     Flytte SSO-håndtering ut av dagens SAML-kjerne og "frem" til OIDC-provider    
+Overgangen fra SAML-integrasjoner til OIDC-integrasjoner går raskt. 40% av trafikken i ID-porten går nå over OIDC. Som følge av dette besluttet Difi i et prosjekt i 2019 at ID-portens systemarkitektur må endres til at OpenID Connect / Oauth2-delen blir kjernen i ny arkitektur. En må se på om det er mulig å bruke et hyllevare IAM-produkt istedet for dagens egenutviklede løsning. Samtidig skal vi tilrettelegge for bruk av skyteknologi, både PaaS og SaaS-løsninger der dette er mulig.
+
+Omskriving til ny systemarkitektur begynner nå, og vil pågå kontinuerlig fram til dagens driftsavtale går ut i slutten av 2021.
+
+I 2020 ser vi for oss å gjøre følgende:
+
+- Pilotering av ulike IAM-produkter
+
+- Flytte SSO-håndtering ut av dagens SAML-kjerne og "frem" til OIDC-provider
+
+
 
 
 #### Anskaffelse av ny driftsavtale
