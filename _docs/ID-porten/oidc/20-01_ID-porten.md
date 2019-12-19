@@ -7,6 +7,7 @@ sidebar: oidc
 
 
  I denne releasen vert ID-portens SAML-grensesnitt oppgradert til siste versjon av Forgerock AM. 
+
 Releasen vart produksjonssatt 2020-01-14
 
 ## Ny funksjonalitet:
