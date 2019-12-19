@@ -22,7 +22,6 @@ ID-porten håndterer 5 ulike typer av integrasjoner:
 * Kontaktregisteret
 * Maskinporten
 * API-klient innlogget bruker
-* (eFormidling integrasjonspunkt)
 
 Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, men med ulike egenskaper.  Se detaljer lenger ned.
 

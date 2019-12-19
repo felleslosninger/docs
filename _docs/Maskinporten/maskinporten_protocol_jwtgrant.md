@@ -1,9 +1,9 @@
 ---
 title: "JWT grant "
-description: "This page summarizes the protocol options availalbe for on JWT grants on the /token endpoint for ID-porten OIDC Provider"
-summary: "This page summarizes the protocol options availalbe for on JWT grants on the /token endpoint for ID-porten OIDC Provider"
-permalink: oidc_protocol_jwtgrant.html
-sidebar: oidc
+description: "This page summarizes the protocol options availalbe for on JWT grants on the /token endpoint for Maskinporten"
+summary: "This page summarizes the protocol options availalbe for on JWT grants on the /token endpoint for Maskinporten"
+permalink: maskinporten_protocol_jwtgrant.html
+sidebar: maskinporten_sidebar
 product: ID-porten
 ---
 
