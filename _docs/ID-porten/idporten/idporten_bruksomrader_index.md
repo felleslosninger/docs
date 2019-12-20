@@ -7,7 +7,7 @@ sidebar: main_sidebar
 product: ID-porten
 ---
 
-ID-porten støtter følgende tjenester
+ID-porten støtter følgende tjenester:
 
 - [Innlogging til web-tjeneste](oidc_guide_idporten.html)
 - [Innlogging til mobil-app](oidc_auth_app.html)
