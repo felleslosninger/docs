@@ -35,6 +35,9 @@ folders:
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
 
+      - title: Metadata
+        jurl: /maskinporten_func_wellknown.html
+
 - title: Spørsmål og svar
   folderitems:
 

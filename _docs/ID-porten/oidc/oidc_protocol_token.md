@@ -6,8 +6,6 @@ permalink: oidc_protocol_token.html
 sidebar: oidc
 product: ID-porten
 ---
-* TOC
-{:toc}
 
 ## About
 
