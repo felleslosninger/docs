@@ -44,10 +44,9 @@ folders:
         jurl: /oidc_protocol_userinfo.html
       - title: "JWT grants"
         jurl: /oidc_protocol_jwtgrant.html
-      - title: "Scopes"
+      - title: "API scopes"
         jurl: /oidc_protocol_scope.html
-
-      - title: Arkitektur
+      - title: Systemarkitektur
         jurl: /oidc_arch.html
 
 - title: Funksjonalitet
