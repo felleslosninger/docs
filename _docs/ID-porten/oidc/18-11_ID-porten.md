@@ -6,6 +6,8 @@ sidebar: oidc
 ---
 
 
+Oppgradering til OpenAM 13.5
+
 
 
 Releasen vart produksjonssatt 2018-11-20

@@ -17,17 +17,29 @@ Releasen vart produksjonssatt 2020-12-31
 
 #### Anskaffelse nye eID-avtaler - ID-porten og eSignering
 
- Oppstart og planlegging med tanke på nye avtaler fra november 2020. Innmeldt av produktsjef.  Dagens avtaler løper til november 2020, med mulighet for 1 års opsjon. Ut fra dagens situasjon med revisjon av nasjonalt rammeverk for eID er det ønskelig å komme over til nytt regime fra 2020.  Vil kreve mer ressurser enn årets anskaffelse, med tanke på at det nye rammeverket baserer seg på eIDAS i stedet for rammeverk for PKI. Vil kreve stor grad av interne ressurser, med supplering fra konsulenter. God erfaring med å dele opp i delprosjekter for kravstilling, anskaffelse og merkantil forberedelse. Trenger intern prosjektstøtte i tillegg til fagressursene og konsulentkjøp ca 300K. 
+Dagens avtaler med eID-leverandørene løper til november 2020, og det må gjøres en anskaffelse av nye avtaler. De nye avtalene vil basere seg på krav som følger av de nye forskriftene for tillitstjenester (innført november 2019).
+
+
 
 
 #### Notifisere norske eID til eIDAS
 
- FDF har sagt vi kan køyre prosjektet som notifiserer norske eID.  Det vil først og fremst vere jus, kravstiller og prosjektleiarkompetanse som bidreg her.  Men kan vere behov for endringar i eID-selector dersom ikkje alle leverandørane ønskjer å verte notifisert (vurdere å bruke eigen selector, ref. IDP-277) 
+Nye forskrifter for tillitstjenester innført november 2019 gjør at eID-leverandører må selvdeklareres på nytt til NKOM. Siden de nasjonale kravene i stor grad er basert på europeiske krav (eIDAS) ønsker Difi å kjøre et prosjekt i 2020 der vi ser på å samtidig melde eID-løsningene til EU, slik at norske borgere kan bruke sine eIDer på europeiske tjenester.
+
+
 
 
 #### Pilotering av ansattporten
 
- Her trenger vi kunder før vi går igang !    lage ny "port" som selvstendig tjenste    buypass og commfides som egne applikasjonar (IDP-353, IDP-354)    minid som egen tjeneste (IDP-161)    selvbetjente circle-of-trusts (IDP-352)    aktørvalg som del av innloggingsflyten (trigga av "RAR"-request, kall mot Altinn Autorisasjon)    og sikkert mykje meir...   
+Dersom det er interesse fra kunder, ønsker vi å pilotere ulike varianter av "Ansattporten" i 2020. Mulige konsepter som er pekt på initielt er:
+
+- kombinere innlogging med en "avgiver-velger" fra t.d. Altinn Autorisasjon eller andre kilder til ansatt-forhold
+
+- selvbetjente circle-of-trust 
+
+- bruk av Azure AD
+
+
 
 
 #### OIDC-provider som kjerne i ny systemarkitektur
@@ -41,9 +53,4 @@ I 2020 ser vi for oss å gjøre følgende:
 - Pilotering av ulike IAM-produkter
 
 - Flytte SSO-håndtering ut av dagens SAML-kjerne og "frem" til OIDC-provider
-
-
-
-
-#### Anskaffelse av ny driftsavtale
 

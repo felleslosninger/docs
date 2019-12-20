@@ -6,6 +6,8 @@ sidebar: oidc
 ---
 
 
+Støtte for entydig gjenkjenning av europeiske brukere gjennom Modernisert Folkeregister
+
 
 
 Releasen vart produksjonssatt 2019-05-07
