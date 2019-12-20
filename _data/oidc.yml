@@ -5,6 +5,8 @@ folders:
 - title: Om ID-porten
   jurl: /idporten_index.html
 
+  folderitems:
+
       - title: Getting started
         jurl: /oidc_guide_english.html
 
@@ -34,6 +36,7 @@ folders:
   jurl: /idporten_index.html
 
 
+  folderitems:
 
 
       - title: "/authorize"
@@ -95,6 +98,8 @@ folders:
 
 - title: Spørsmål og svar
   jurl: /idporten_faq.html
+
+  folderitems:
 
       - title: Ofte stilte spørsmål
         jurl: /oidc_guide_faq.html
