@@ -21,7 +21,7 @@ folders:
 
 - title: ID-porten
   folderitems:
-  
+
   - title: Om ID-porten
     jurl: /idporten_index.html
 
@@ -32,7 +32,7 @@ folders:
     jurl: /idporten_bruksomrader_index.html
 
   - title: Grensesnitt
-    jurl: /saml_tilgang.html
+    jurl: /idporten_grensesnitt.html
 
   - title: Spørsmål og svar
     jurl: /idporten_faq.html
@@ -43,16 +43,16 @@ folders:
 
   - title: Om Maskinporten
     jurl: /maskinporten_index.html
-    
+
   - title: Overordnet
     jurl: /maskinporten_overordnet.html
-  
+
   - title: Bruksområde
     jurl: /maskinporten_bruksomrade.html
-    
+
   - title: Grensesnitt
     jurl: /maskinporten_grensesnitt.html
-    
+
   - title: Spørsmål og svar
     jurl: /maskinporten_sporsmal_og_svar.html
 
