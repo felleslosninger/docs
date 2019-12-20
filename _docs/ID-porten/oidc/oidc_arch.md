@@ -1,7 +1,7 @@
 ---
-title: OIDC arkitektur
-description: Arkitekturen til ID-portens OIDC Provider
-summary: "OIDC Provideren til ID-porten er realisert som en frittstående applikasjon 'foran' ID-porten"
+title: OIDC systemarkitektur
+description: Systemarkitektur i ID-porten
+summary: "OIDC Provideren til ID-porten er realisert som en frittstående applikasjon 'foran' ID-porten SAML-tjeneste"
 permalink: oidc_arch.html
 sidebar: oidc
 product: ID-porten
@@ -9,7 +9,7 @@ product: ID-porten
 
 ## Autentiseringstjenester i ID-porten
 
-Arkitekturen for den OIDC-funskjonaliteten i ID-porten  ser slik ut:
+Arkitekturen for  OIDC-funksjonaliteten i ID-porten  ser slik ut:
 
 <div class="mermaid">
 graph LR

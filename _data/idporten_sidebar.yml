@@ -5,7 +5,6 @@ folders:
       jurl: /idporten_overordnet.html
 
     - title: Ulike brukområder
-      jurl: /idporten_bruksomrader_index.html
       folderitems:
 
         - title: Innlogging til webtjeneste
@@ -16,7 +15,7 @@ folders:
           jurl: /idporten_bruksomrade_spa.html
         - title: Tilgangsstyring til dine API'er
           jurl: /idporten_bruksomrade_tilgang_api.html
-        
+
     - title: Grensesnitt
       folderitems:
 
@@ -24,11 +23,11 @@ folders:
         jurl: /idporten_grensesnitt_saml.html
       - title: OpenID Connect (OIDC)
         jurl: /idporten_grensesnitt_oidc.html
-        
+
     - title: Spørsmål og svar
       jurl: /idporten_faq.html
 
-       
+
 ###########################
 
 related_resources_title: Andre nyttige lenker

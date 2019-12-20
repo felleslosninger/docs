@@ -2,33 +2,52 @@ sidebarTitle: ID-porten OIDC
 
 
 folders:
-- title: Hvordan komme i gang
-
+- title: Om ID-porten
   folderitems:
 
-      - title: Kom i gang
-        jurl: /oidc_index.html
+      - title: Om ID-porten
+        jurl: /idporten_index.html
 
-      - title: Integrasjonsguide ID-porten
-        jurl: /oidc_guide_idporten.html
-
-      - title: Integrasjonsguide Maskinporten
-        jurl: /oidc_guide_maskinporten.html
-
-      - title: Ofte stilte spørsmål
-        jurl: /oidc_guide_faq.html
+      - title: Overordnet arkitekturbeskrivelse
+        jurl: /idporten_overordnet.html
 
       - title: Getting started
         jurl: /oidc_guide_english.html
 
-- title: Eksempler
+
+- title: Bruksområder
   folderitems:
 
-    - title: SPA in React
-      jurl: /oidc_sample_react.html
+      - title: Innlogging til webtjeneste
+        jurl: /oidc_guide_idporten.html
 
-    - title: Using Postman towards Maskinporten
-      jurl: /oidc_sample_jwtgrant_postman.html
+      - title: Innlogging til mobilapp
+        jurl: /oidc_auth_app.html
+
+      - title: Innlogging til SPA
+        jurl: /oidc_auth_spa.html
+
+      - title: Tilgangsstyring til dine API'er
+        jurl: /oidc_auth_oauth2.html
+
+
+- title: Grensesnittsdefinisjon
+  folderitems:
+
+      - title: "/authorize"
+        jurl: /oidc_protocol_authorize.html
+      - title: "/token"
+        jurl: /oidc_protocol_token.html
+      - title: "/tokeninfo"
+        jurl: /oidc_protocol_tokeninfo.html
+      - title: "/userinfo"
+        jurl: /oidc_protocol_userinfo.html
+      - title: "JWT grants"
+        jurl: /oidc_protocol_jwtgrant.html
+      - title: "API scopes"
+        jurl: /oidc_protocol_scope.html
+      - title: Systemarkitektur
+        jurl: /oidc_arch.html
 
 - title: Funksjonalitet
   folderitems:
@@ -51,57 +70,8 @@ folders:
       - title: Pseudonymisert innlogging
         jurl: /oidc_func_nopid.html
 
-      - title: Javascript-applikasjoner
-        jurl: /oidc_auth_spa.html
-
       - title: eIDAS
         jurl: /oidc_func_eidas.html
-
-      - title: Administrasjon av OICD-integrasjoner
-        jurl: /oidc_api_admin.html
-
-      - title: Administrasjon av Maskinporten
-        jurl: /oidc_api_admin_maskinporten.html
-
-- title: Arkitektur
-  folderitems:
-
-      - title: "/authorize"
-        jurl: /oidc_protocol_authorize.html
-      - title: "/token"
-        jurl: /oidc_protocol_token.html
-      - title: "/tokeninfo"
-        jurl: /oidc_protocol_tokeninfo.html
-      - title: "/userinfo"
-        jurl: /oidc_protocol_userinfo.html
-      - title: "JWT grants"
-        jurl: /oidc_protocol_jwtgrant.html
-      - title: "Scopes"
-        jurl: /oidc_protocol_scope.html
-
-      - title: Arkitektur
-        jurl: /oidc_arch.html
-
-      - title: Autentisering med code-flow
-        jurl: /oidc_auth_codeflow.html
-
-      - title: Autentisering til mobil-app'er
-        jurl: /oidc_auth_app.html
-
-      - title: API-autorisasjon innlogget bruker
-        jurl: /oidc_auth_oauth2.html
-
-      - title: Server-til-server API-autorisasjon
-        jurl: /oidc_auth_server-to-server-oauth2.html
-
-- title: Oauth2-beskytta API'er fra Difi
-  folderitems:
-
-      - title: Kontakt- og Reservasjonsregisteret
-        jurl: /oidc_api_krr.html
-
-      - title: Kontakt- og Reservasjonsregisteret (innlogget bruker)
-        jurl: /oidc_api_krr_user.html
 
       - title: Innbyggers innloggingsnivå
         jurl: /oidc_api_authlevel.html
@@ -111,6 +81,25 @@ folders:
 
       - title: Innbyggers autorisasjoner
         jurl: /oidc_api_autorisasjoner.html
+
+- title: Administrasjon
+  folderitems:
+
+      - title: Administrasjon av OICD-integrasjoner
+        jurl: /oidc_api_admin.html
+
+      - title: Administrasjon av API-tilgang
+        jurl: /oidc_api_admin_maskinporten.html
+
+- title: Spørsmål og eksempler
+
+  folderitems:
+
+      - title: Ofte stilte spørsmål
+        jurl: /oidc_guide_faq.html
+
+      - title: SPA in React
+        jurl: /oidc_sample_react.html
 
 - title: Releaser
   folderitems:
@@ -126,17 +115,6 @@ folders:
     jurl: /releaser_2020.html
 #==rel_notes_stop==
 
-- title: Vedlegg
-  folderitems:
-
-      - title: Om disse sidene
-        jurl: /oidc_about.html
-
-- title: SAML i ID-porten
-  folderitems:
-
-      - title: Integrasjonsguide Id-porten SAML
-        jurl: /saml_tilgang.html
 
 ###########################
 
