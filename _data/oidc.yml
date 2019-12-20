@@ -29,9 +29,6 @@ folders:
 
 
 - title: Grensesnitt
-  jurl: /idporten_index.html
-
-
   folderitems:
 
 
@@ -51,6 +48,8 @@ folders:
       - title: Arkitektur
         jurl: /oidc_arch.html
 
+- title: Funksjonalitet
+  folderitems:
 
       - title: Metadata
         jurl: /oidc_func_wellknown.html
@@ -76,12 +75,6 @@ folders:
       - title: eIDAS
         jurl: /oidc_func_eidas.html
 
-      - title: Administrasjon av OICD-integrasjoner
-        jurl: /oidc_api_admin.html
-
-      - title: Administrasjon av Maskinporten
-        jurl: /oidc_api_admin_maskinporten.html
-
       - title: Innbyggers innloggingsnivå
         jurl: /oidc_api_authlevel.html
 
@@ -91,21 +84,24 @@ folders:
       - title: Innbyggers autorisasjoner
         jurl: /oidc_api_autorisasjoner.html
 
+- title: Administrasjon
+  folderitems:
 
-- title: Spørsmål og svar
-  jurl: /idporten_faq.html
+      - title: Administrasjon av OICD-integrasjoner
+        jurl: /oidc_api_admin.html
+
+      - title: Administrasjon av Maskinporten
+        jurl: /oidc_api_admin_maskinporten.html
+
+- title: Spørsmål og eksempler
 
   folderitems:
 
       - title: Ofte stilte spørsmål
         jurl: /oidc_guide_faq.html
-
-
-- title: Eksempler
-  folderitems:
-
-    - title: SPA in React
-      jurl: /oidc_sample_react.html
+        
+      - title: SPA in React
+        jurl: /oidc_sample_react.html
 
 - title: Releaser
   folderitems:
