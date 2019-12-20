@@ -3,8 +3,6 @@ sidebarTitle: ID-porten OIDC
 
 folders:
 - title: Om ID-porten
-  jurl: /idporten_index.html
-
   folderitems:
 
       - title: Getting started
@@ -12,8 +10,6 @@ folders:
 
 
 - title: Bruksområde
-  jurl: /idporten_index.html
-
   folderitems:
 
       - title: Innlogging til webtjeneste
