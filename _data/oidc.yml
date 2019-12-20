@@ -40,7 +40,7 @@ folders:
       - title: "/token"
         jurl: /oidc_protocol_token.html
       - title: "/tokeninfo"
-         jurl: /oidc_protocol_tokeninfo.html
+        jurl: /oidc_protocol_tokeninfo.html
       - title: "/userinfo"
         jurl: /oidc_protocol_userinfo.html
       - title: "JWT grants"
