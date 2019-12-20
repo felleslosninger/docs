@@ -10,4 +10,4 @@ product: ID-porten
 ID-porten støtter to grensesnittsprotokoller:
 
 - [OpenID Connect / Oauth2]()
-- [SAML2](/saml_tilgang.html)
+- [SAML2](saml_tilgang.html)
