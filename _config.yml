@@ -211,8 +211,8 @@ collections:
 
 uistring:
     title: Dokumentasjon av fellesløsninger # title to appear in nav bar and page meta
-    description: Teknisk dokumentasjon av Difi's fellesløsninger # Displays as site description meta tag for site
-    copyright: 2019 Direktoratet for forvaltning og IKT(Difi) # appears in footer
+    description: Teknisk dokumentasjon av Digitaliseringsdirektoratets fellesløsninger # Displays as site description meta tag for site
+    copyright: Digitaliseringsdirektoratet # appears in footer
     breadcrumb_home_name: Home # display name for "Home" path in the breadcrumb
     tableofcontents: Innhold # text that appears before in-page table of contents
     expandall: Utvid # appears as text in sidebar to expand all levels
