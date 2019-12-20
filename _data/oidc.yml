@@ -15,28 +15,24 @@ folders:
         jurl: /oidc_guide_english.html
 
 
-- title: Bruksområde
+- title: Bruksområder
   folderitems:
 
       - title: Innlogging til webtjeneste
-        jurl: /idporten_bruksomrade_webtjenester.html
-
-      - title: Innlogging til mobilapp
-        jurl: /idporten_bruksomrade_mobilapp.html
-
-      - title: Innlogging til SPA
-        jurl: /idporten_bruksomrade_spa.html
-
-      - title: Tilgangsstyring til dine API'er
-        jurl: /idporten_bruksomrade_tilgang_api.html
-
-      - title: Integrasjonsguide ID-porten
         jurl: /oidc_guide_idporten.html
 
+      - title: Innlogging til mobilapp
+        jurl: /oidc_auth_app.html
 
-- title: Grensesnitt
+      - title: Innlogging til SPA
+        jurl: /oidc_auth_spa.html
+
+      - title: Tilgangsstyring til dine API'er
+        jurl: /oidc_auth_oauth2.html
+
+
+- title: Grensesnittsdefinisjon
   folderitems:
-
 
       - title: "/authorize"
         jurl: /oidc_protocol_authorize.html
@@ -75,9 +71,6 @@ folders:
       - title: Pseudonymisert innlogging
         jurl: /oidc_func_nopid.html
 
-      - title: Javascript-applikasjoner
-        jurl: /oidc_auth_spa.html
-
       - title: eIDAS
         jurl: /oidc_func_eidas.html
 
@@ -96,7 +89,7 @@ folders:
       - title: Administrasjon av OICD-integrasjoner
         jurl: /oidc_api_admin.html
 
-      - title: Administrasjon av Maskinporten
+      - title: Administrasjon av API-tilgang
         jurl: /oidc_api_admin_maskinporten.html
 
 - title: Spørsmål og eksempler
@@ -123,17 +116,6 @@ folders:
     jurl: /releaser_2020.html
 #==rel_notes_stop==
 
-- title: Vedlegg
-  folderitems:
-
-      - title: Om disse sidene
-        jurl: /oidc_about.html
-
-- title: SAML i ID-porten
-  folderitems:
-
-      - title: Integrasjonsguide Id-porten SAML
-        jurl: /saml_tilgang.html
 
 ###########################
 
