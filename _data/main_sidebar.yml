@@ -36,6 +36,9 @@ folders:
 
   - title: Spørsmål og svar
     jurl: /idporten_faq.html
+    
+  - title: Verifikasjonstester
+    jurl: /idporten_verifikasjonstester.html
 
 
 - title: Maskinporten
