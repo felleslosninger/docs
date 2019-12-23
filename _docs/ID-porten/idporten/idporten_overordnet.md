@@ -111,3 +111,51 @@ Logoen må oppfylle følgende krav:
 | Størrelse | Maksimal høyre 90 pixel og en bredde som ikke bør overskride 135 pixel. |
 | Farge | Bakgrunnsfargen på ID-porten er #f3f4f4, så logoen bør enten ha denne bakgrunnsfargen eller eventuelt ha transparent bakgrunn. |
 | | |
+
+
+
+## Detaljert beskrivelse av teknisk løsning
+
+
+### Logging
+
+ID-porten oppbevarer som standard alle logger i 12+1 måned. Logginformasjon om når sluttbruker inngikk samtykke er eneste informasjon i ID-porten som lagres lengre, i 10 år.
+
+Det anbefales at tjenesteleverandør logger følgende informasjon om forsøk på autentisering: 
+* Dato og tidspunkt 
+* Hvilken handling som ble forsøkt 
+* Resultatet av handlingen 
+* Brukerens IP-adresse  
+* SessionIndex 
+
+FødselsnummerSessionIndex er en identifikator som identifiserer brukersesjonen på tvers av føderasjonen. ID-porten logger mer detaljert informasjon om hver brukersesjon enn det som er vår anbefaling til tjenesteleverandør. Tjenesteeier kan be om tilgang til denne med referanse til SessionIndex. Et eksempel på en SessionIndex er *“s295ce0f891244bf4a68e468368aaa923ead5f4301”*.  
+
+Tjenesteeier sitt konkrete behov for logging må vurderes av den enkelte tjenesteeier.
+
+### Sesjonshåndtering
+ 
+ID-porten sender ikke en forespørsel om utlogging til tjenesteleverandør når en sesjon timer ut pga total lengde eller inaktivitet. Forespørsel om utlogging sendes bare når en bruker foretar en eksplisitt utlogging (ved å klikke på logout-knappen hos en tjenesteinnenfor Circle of Trust). En slik forespørsel om utlogging fra ID-porten **må** resultere i en utlogging fra tjenesteeier, ellers vil SingleLogout-mekanismen bli kompromittert. 
+ 
+#### **Levetid for Sesjoner**
+ 
+I føderasjon skal medlemmene konfigurere systemene, slik at sesjoner utløper ved inaktivitet etter høyst **30 minutter.**
+ 
+I ID-porten måles maksimum sesjonstid for en brukers sesjon og denne settes til **120 minutter.**	
+
+Det er valgfritt om timeout-perioden nullstilles hver gang brukerens nettleser forespør en av tjenesteleverandørs tjeneste, eller om den er uavhengig av brukeraktivitet (fast timeout periode).
+
+
+Det må bemerkes at timeout hos en tjenesteleverandør ikke nødvendigvis medfører at brukeren blir tvunget til å logge på ID-porten. Hvis brukeren har en aktiv sesjon hos ID-porten, kan denne svare på forespørselen fra tjenesteleverandør uten brukerdialog (dvs. foreta single sign-on). Brukeren vil dermed ikke oppdage at sesjonen blir fornyet (bortsett fra at hans nettleser muligens ”blinker” et kort øyeblikk).
+
+Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at brukeren blir tvunget til aktiv pålogging i ID-porten, kan man benytte muligheter for dette i SAML og OIDC-protokollen. 
+
+
+
+
+
+
+
+### IP-adresser som må åpnes for
+* Produksjon: 146.192.252.60
+* Verifikasjon 1: 146.192.252.124
+* Verifikasjon 2: 146.192.252.156
