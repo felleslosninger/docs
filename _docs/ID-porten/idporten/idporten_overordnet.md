@@ -39,14 +39,14 @@ ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 ![](/idporten-integrasjonsguide/assets/images/autentiseringstjenester.bmp "Autentiseringstjenester")
 
 
-### Innlogging
+## Innlogging
 
 Dette er en overordnet beskrivelse av innloggingstjenesten. For detaljer se [Detaljert beskrivelse av teknisk løsning.](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html)
 
 
-### Utlogging
+## Utlogging
 
-## Støtta protokoller
+## Støttede protokoller
 * SAML2
 * OpenID Connext
 
@@ -58,15 +58,15 @@ Difi har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om 
 
 Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til en tjenesteeier B uten å logge ut, vil bruker automatisk logges inn uten at bruker må autentisere seg på nytt. Det vil gjøres forespørsler mellom tjenesteeier B og ID-porten på samme måte som ved en normal innlogging. Forskjellen er kun at sluttbruker ikke opplever å få opp en autentiseringsdialog.
 
-## **Sesjonstid**
+### **Sesjonstid**
 
 Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Difi anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
 
-## **Sesjonsoppgradering**
+### **Sesjonsoppgradering**
 
 Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og seinere gå til en tjeneste som krever et høyere sikkerhetsnivå. I dette tilfellet vil ID-porten be brukeren om å oppgradere sikkerhetsnivå.
 
-## **Alternative innlogingsmetoder**
+### **Alternative innlogingsmetoder**
 
 ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier selv forvalter. Lenken vil bli vist når brukeren skal velge innlogging mellom de ulike eID-leverandørene.
 
@@ -75,7 +75,7 @@ ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier se
 ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser 
 
 
-### Hvordan få tilgang til ID-porten
+## Hvordan få tilgang til ID-porten
 
 Følg prosessen på [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten) for å integrere en SAML-integrasjon i ID-porten.
 
@@ -90,10 +90,10 @@ ID-porten vil utlevere følgende tekniske informasjon til tjenesteeier:
 
 
 
-#### **Annen informasjon**
+### **Annen informasjon**
 
 
-#### **Logo-format**
+### **Logo-format**
 
 Logoen for tjenesten må oppfylle følgende krav:
 
@@ -126,7 +126,7 @@ Tjenesteeier sitt konkrete behov for logging må vurderes av den enkelte tjenest
  
 ID-porten sender ikke en forespørsel om utlogging til tjenesteleverandør når en sesjon timer ut pga total lengde eller inaktivitet. Forespørsel om utlogging sendes bare når en bruker foretar en eksplisitt utlogging (ved å klikke på logout-knappen hos en tjenesteinnenfor Circle of Trust). En slik forespørsel om utlogging fra ID-porten **må** resultere i en utlogging fra tjenesteeier, ellers vil SingleLogout-mekanismen bli kompromittert. 
  
-#### **Levetid for Sesjoner**
+### **Levetid for Sesjoner**
  
 I føderasjon skal medlemmene konfigurere systemene, slik at sesjoner utløper ved inaktivitet etter høyst **30 minutter.**
  
@@ -155,7 +155,7 @@ Det kreves at tjenesteleverandør benytter nøkler utstedt som virksomhetssertif
 Tjenesteleverandøre må sjekke at bare de virksomhetssertifikater som er utvekslet som en del av metadatautveksling er i bruk i føderasjonen.
 
 
-#### **Bestilling av virksomhetssertifikat**
+### **Bestilling av virksomhetssertifikat**
 Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
 
 
