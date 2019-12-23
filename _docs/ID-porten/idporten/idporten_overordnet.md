@@ -73,3 +73,41 @@ ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier se
 ## **Europeiske Brukere**
 
 ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser 
+
+
+### Hvordan få tilgang til ID-porten
+
+Følg prosessen på [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten) for å integrere en SAML-integrasjon i ID-porten.
+
+
+### Informasjon som må utveksles
+
+Tjenesteeier må utlevere følgende tekniske informasjon til ID-porten:
+* Logo
+
+ID-porten vil utlevere følgende tekniske informasjon til tjenesteeier:
+* Testbrukere til verifikasjonsmiljø
+
+
+
+#### **Annen informasjon**
+
+Under er et eksempel på hvilken informasjon som trengs i tillegg til informasjonen i SAML2-integrasjonen
+
+| Eksempel verdi | Beskrivelse |
+| --- | --- | --- |
+| https://www.eksempel.no | Dette er URL til tjenesteleverandør som benyttes for å rute innbyggeren tilbake til tjenesteleverandør ved avbryting av innlogging eller feilsituasjoner. |
+| Eksempel_202 | Denne parameteren blir kun brukt ved [bruk av onBehalfOf](https://difi.github.io/idporten-integrasjonsguide//3_teknisk_innlogging.html#overføring-av-informasjon-om-tjenesteeier-for-leverandører) |
+| | | |
+
+Dette gjelder per integrasjon man har med ID-porten. Om man har flere integrasjoner, kan disse ha ulike verdier.
+
+#### **Logo-format**
+
+Logoen må oppfylle følgende krav:
+
+| --- | --- |
+| Filformat | .png .jpg eller .gif |
+| Størrelse | Maksimal høyre 90 pixel og en bredde som ikke bør overskride 135 pixel. |
+| Farge | Bakgrunnsfargen på ID-porten er #f3f4f4, så logoen bør enten ha denne bakgrunnsfargen eller eventuelt ha transparent bakgrunn. |
+| | |
