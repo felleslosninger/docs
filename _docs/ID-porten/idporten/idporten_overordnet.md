@@ -92,26 +92,16 @@ ID-porten vil utlevere følgende tekniske informasjon til tjenesteeier:
 
 #### **Annen informasjon**
 
-Under er et eksempel på hvilken informasjon som trengs i tillegg til informasjonen i SAML2-integrasjonen
-
-| Eksempel verdi | Beskrivelse |
-| --- | --- | --- |
-| https://www.eksempel.no | Dette er URL til tjenesteleverandør som benyttes for å rute innbyggeren tilbake til tjenesteleverandør ved avbryting av innlogging eller feilsituasjoner. |
-| Eksempel_202 | Denne parameteren blir kun brukt ved [bruk av onBehalfOf](https://difi.github.io/idporten-integrasjonsguide//3_teknisk_innlogging.html#overføring-av-informasjon-om-tjenesteeier-for-leverandører) |
-| | | |
-
-Dette gjelder per integrasjon man har med ID-porten. Om man har flere integrasjoner, kan disse ha ulike verdier.
 
 #### **Logo-format**
 
-Logoen må oppfylle følgende krav:
+Logoen for tjenesten må oppfylle følgende krav:
 
 | --- | --- |
 | Filformat | .png .jpg eller .gif |
 | Størrelse | Maksimal høyre 90 pixel og en bredde som ikke bør overskride 135 pixel. |
 | Farge | Bakgrunnsfargen på ID-porten er #f3f4f4, så logoen bør enten ha denne bakgrunnsfargen eller eventuelt ha transparent bakgrunn. |
 | | |
-
 
 
 ## Detaljert beskrivelse av teknisk løsning
@@ -152,10 +142,35 @@ Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at bruker
 
 
 
-
-
-
 ### IP-adresser som må åpnes for
 * Produksjon: 146.192.252.60
 * Verifikasjon 1: 146.192.252.124
 * Verifikasjon 2: 146.192.252.156
+
+
+### Sertifikatkrav
+
+Det kreves at tjenesteleverandør benytter nøkler utstedt som virksomhetssertifikater iht. [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor), og at sertifikatutstederen er selvdeklarert for dette hos Nasjonal kommunikasjonsmyndighet (NKOM). Pr dags dato er det bare Buypass og Commfides som er selvdeklarert for utstedelse av virksomhetssertifikater hos NKOM, og dermed kun disse som kan utstede gyldige virksomhetssertifikater for bruk mot ID-porten. 
+
+Tjenesteleverandøre må sjekke at bare de virksomhetssertifikater som er utvekslet som en del av metadatautveksling er i bruk i føderasjonen.
+
+
+#### **Bestilling av virksomhetssertifikat**
+Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
+
+
+### Håndtering av nøkler 
+
+Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management) for private nøkler. Hvis en privat nøkkel kompromitteres, kan en angriper utgi seg for å være tjenesteleverandør i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til tjenesteleverandør, men kan også tenkes å svekke tilliten til hele føderasjonen.
+
+Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelhåndtering:
+* Hvor oppbevares private nøkler, og hvordan sikres adgang til dem? For optimal beskyttelse kan en nøkkel oppbevares i kryptografisk hardware (HSM – hardware security module), men ofte benyttes krypterte filer som et billig, men mindre sikkert alternativ.
+* Hvordan håndteres backup av nøkler og hvordan gjenetableres disse ved behov?
+* Hvilket personell har tilgang til servere med private nøkler, og hvem har eventuelt tilgang til passord som kan benyttes til å dekryptere nøklene slik at de opptrer i klartekst? Kan enkeltpersoner skaffe seg adgang til private nøkler? Ligger passord for tilgang til nøkkellager ubeskyttet i konfigurasjonsfiler?
+* Hvordan håndteres fornyelse av nøkler når tilhørende sertifikater utløper? Hvis en tjenesteleverandør ikke fornyer nøkler/sertifikater innen de utløper, kan tjenester for tjenesteeier plutselig slutte å virke.
+* Hva er prosedyren om en privat nøkkel kompromitteres, eller om det er mistanke om at så har skjedd?
+* Hvordan loggføres nøkkelhåndteringsprosessen hos tjenesteleverandør? 
+
+En tjenesteleverandør bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk. 
+
+Både [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor) og sertifikatutsteders policy kan gi krav som må etterleves. Krav til slike prosedyrer for håndtering av nøkler stilles også til IdP-delen av løsningen, som i dette tilfellet er ID-porten. 
