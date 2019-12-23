@@ -32,11 +32,11 @@ folders:
     jurl: /saml_verifikasjonstester.html
 
 
-- title: OpenID Connect i ID-porten
-  folderitems:
+#- title: OpenID Connect i ID-porten
+#  folderitems:
 
-  - title: Integrasjonsguide OpenID Connec
-    jurl: /oidc_index.html
+#  - title: Integrasjonsguide OpenID Connec
+#    jurl: /oidc_index.html
 
 ###########################
 
@@ -50,5 +50,5 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no
