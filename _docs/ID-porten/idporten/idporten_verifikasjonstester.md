@@ -2,8 +2,8 @@
 title: Verifikasjonstestar ID-porten  - SAML og OpenID Connect
 description: Verifikasjonstestar
 summary: "Verifikasjonstestar"
-permalink: saml_verifikasjonstester.html
-sidebar: saml_idporten_sidebar
+permalink: idporten_verifikasjonstester.html
+sidebar: idporten_sidebar
 product: ID-porten
 ---
 
