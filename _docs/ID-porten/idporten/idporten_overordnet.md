@@ -34,12 +34,21 @@ Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjon
 | | |
 
 ## Autentisering av sluttbruker
+ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
+
+![](/idporten-integrasjonsguide/assets/images/autentiseringstjenester.bmp "Autentiseringstjenester")
+
 
 ### Innlogging
+
+Dette er en overordnet beskrivelse av innloggingstjenesten. For detaljer se [Detaljert beskrivelse av teknisk løsning.](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html)
+
 
 ### Utlogging
 
 ## Støtta protokoller
+* SAML2
+* OpenID Connext
 
 ## **Brukervennlighet**
 
@@ -63,10 +72,4 @@ ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier se
 
 ## **Europeiske Brukere**
 
-Fra 15-09 releasen inkluderer ID-porten støtte for at europeiske brukere knyttet til EUs pilot-infrastruktur for autentisering, STORK, kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser fra 2018. Den tekniske løsningen vil på sikt bli oppgradert til eIDAS-profilen når denne er klar fra EU.
-
-Tjenesteeiere som ønsker pålogging fra utenlandske brukere, må be spesielt om det på *idporten@difi.no*, og implementere teknisk støtte for å håndtere de ulike SAML-attributt-kombinasjonene som de da kan møte.
-
-En tjeneste kan velge å kun støtte pålogging fra europeisk brukere, eller å støtte både norske brukere og europeiske brukere. Ved å støtte begge brukergrupper, vil man kunne beholde single-signOn til andre norske tjenester som før.
-
-For alle europeiske eID vil ID-porten forsøke å framskaffe et eventuelt norsk d-nummer/fødselsnummer fra Det Sentrale Folkeregister (DSF). Hvis et d-nummer ikke ble funnet, eller ved integrasjonsproblem mot DSF, vil ID-porten likevel fullføre autentiseringen. Dette betyr at fravær av D-nummer/fødselsnummer ikke entydig garanterer at personen ikke har fått tildelt d-nummer.
+ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser 
