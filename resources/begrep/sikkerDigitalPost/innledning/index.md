@@ -8,7 +8,7 @@ Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomhete
 
 ### Klient/Klientbibliotek finner du her:
 
-[.Net-klient](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
+[.Net-klient](https://github.com/difi/sikker-digital-post-klient-dotnet/releases)
 
 [Java-klient](http://difi.github.io/sikker-digital-post-klient-java/v5/) 
 
