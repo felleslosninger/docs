@@ -11,32 +11,33 @@ folders:
 - title: Bruksområde
   folderitems:
 
-      - title: Slik bruker du maskinporten
-        jurl: /maskinporten_bruksomrade.html
+      - title: Hvordan virker Maskinporten?
+        jurl: /maskinporten_auth_server-to-server-oauth2.html
 
-      - title: API-tilbyder
+      - title: Guide for API-tilbyder
         jurl: /maskinporten_guide_apitilbyder.html
 
-      - title: API-konsument
+      - title: Guide for API-konsument
         jurl: /maskinporten_guide_apikonsument.html
 
 
-- title: Grensesnitt
+- title: Grensesnittspesifikasjon
   folderitems:
 
-      - title: Hvordan virker Maskinporten?
-        jurl: /maskinporten_auth_server-to-server-oauth2.html
       - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
       - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
-      - title: /tokeninfo-endepunkt
-        jurl: /maskinporten_protocol_tokeninfo.html
-      - title: Klientregistrering
-        jurl: /oidc_func_clientreg.html
+
+- title: Funksjonalitet
+  folderitems:
 
       - title: Metadata
         jurl: /maskinporten_func_wellknown.html
+
+      - title: Klientregistrering
+        jurl: /oidc_func_clientreg.html
+
 
 - title: Spørsmål og svar
   folderitems:
