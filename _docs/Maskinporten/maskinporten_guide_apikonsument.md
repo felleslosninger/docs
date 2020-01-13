@@ -191,10 +191,9 @@ Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en lev
 1. Etter innlogging, velg å representere foretaket
 2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
 1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
-1. Oppgi en av de andre test-organisasjonene (orgnr + første 4 tegn)
+1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
 ![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
 1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
 
 1. Bekreft med å klikk "Gi rettigheter"
 ![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_bekreftelse.png)
@@ -204,4 +203,3 @@ Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en lev
 1. opprett integrasjon **uten** scope
 2. i /token-kall, oppgi scope samt aktuell konsument som `consumer_orgno` i JWT-grantet
   * Maskinporten vil da sjekke Altinn, om delegeringsforholdet finnes mellom konsument og leverandør for aktuelt scope.
-  
