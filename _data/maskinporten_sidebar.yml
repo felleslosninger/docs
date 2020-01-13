@@ -30,8 +30,6 @@ folders:
         jurl: /maskinporten_protocol_jwtgrant.html
       - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
-      - title: /tokeninfo-endepunkt
-        jurl: /maskinporten_protocol_tokeninfo.html
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
 

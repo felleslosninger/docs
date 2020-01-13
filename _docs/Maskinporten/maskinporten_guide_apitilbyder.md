@@ -4,7 +4,7 @@ description: API-sikring med Maskinporten
 summary:
 permalink: maskinporten_guide_apitilbyder.html
 sidebar: maskinporten_sidebar
-product: ID-porten
+product: Maskinporten
 ---
 
 ### Overordnet prosedyre for API-sikring
@@ -110,7 +110,7 @@ Når prefix er blitt manuelt tildelt, er følgdende operasjoner tilgjengelige:
 
 | Operasjon | inndata | beskrivelse |
 |-|-|-|
-|`GET    /scopes/all `| |Åpent endepunkt som gir liste over alle synlige scopes beskyttet av ID-porten (evt. filtrering)|
+|`GET    /scopes/all `| |Åpent endepunkt som gir liste over alle synlige scopes beskyttet av ID-porten/Maskinporten (evt. filtrering)|
 |`GET    /scopes `| |Beskyttet endepunkt som lister alle scopes for min organisasjon, både public og private|
 |`POST   /scopes ` | prefix*, subscope*, description, token_egenskaper  | Oppretter et nytt scope (lik prefix+subscope)    |
 |`GET    /scopes?scope={scope} `  |   | Hent et scope.  |
@@ -199,9 +199,73 @@ PUT /clients/if2018_apikonsument HTTP/1.1
 Når en konsument bruker Maskinporten-token mot ditt API, må du gjøre en skikkelig validering av dette.  Oauth2 og JWT-spec'ene spesifiserer i detalj hva du skal gjøre.  
 
 Dersom token er self-contained :
-- sjekke at 'issuer' stemmer med Maskinporten ("https://oidc.difi.no/idporten-oidc-provider/" i prod)
+- sjekke at 'issuer' stemmer med Maskinporten ("https://maskinporten.no/" i prod)
 - validere signering, og at signeringsertifikat stemmer med det Maskinporten publiserer på sitt JWK-endepunkt
 - verifisere at scope stemmer med ditt aktuelle  API-endepunktet
 - validere at token ikke er utløpt (exp)
 
-Dersom token er by-reference, må du sende dette til  Maskinporten sitt /tokeninfo-endepunkt og verifisere at du får "active:true" tilbake, i tillegg til sjekkene ovenfor.
+
+## Bruke delegering i Altinn
+
+Dersom du ønsker at konsumenter av ditt API skal kunne bruke Altinn til å delegering tilgangen videre til en systemleverandør, må du oppretter et såkalt delegeringsoppsett (delegationScheme) som må tilknyttes et eller flere av dine Oauth2 scopes i Maskinporten.  Dette fordrer at du er tjenesteeier i Altinn.
+
+Prosedyre:
+
+
+1. Du må lage en "delegerbar ressurs" i Altinn:
+  * Be Altinn om å få tilgang til `altinn:maskinporten/delegationschemes.write` scope.
+  * Lag en maskinporten-klient som har dette admin-scopet provisjonert.
+  * Denne klienten må be et token fra Maskinporten, og så opprette ressursen slik:
+```
+POST /maskinporten-api/delegationSchemes HTTP/1.1
+Host: tt02.altinn.no
+Content-Type: application/json
+Authorization: Bearer  <mitt maskinporten-token>
+
+{
+    "owner_org": "991825827",
+    "scopes": [
+        "difitest:test2"
+    ],
+    "title": [
+        {
+            "code": "nb_NO",
+            "value": "Difi tester delegering"
+        }
+    ],
+    "description": [
+        {
+            "code": "nb_NO",
+            "value": "Bla bla bla bla bla og enno meir blah"
+        }
+    ],
+    "default_language": "nb_NO"
+}
+```
+Du vil få en ID til delegeringoppsettet i retur.
+
+TODO: link til swagger-dok
+
+
+2. Så må du opprette scopet i Maskinporten på vanlig måte (se ovenfor), men passe på å sette at dette scopet har en **delegeringskilde** knyttet til seg:
+
+```
+POST /scopes HTTP/1.1
+Host: integrasjon.difi.no
+Content-Type: application/json
+Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
+cache-control: no-cache
+{
+  "prefix": "difi",
+  "subscope": "api3",
+  "description": "Difi sitt API nummer 3 for demo-formål",
+  "delegation_source": "https://www.altinn.no"
+}
+```
+
+3. Til slutt gir du tilgang til konsumenter på vanlig måte.
+
+
+Merk:
+* Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering
+* Maskinporten-scopes som har delegeringskilde, vil ikke kunne konsumeres av leverandører som benytter ID-porten/Maskinportens interne delegeringsfunksjonalitet (onbehalfof)

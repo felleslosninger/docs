@@ -77,8 +77,8 @@ The token is a JWT with the following structure:
 
 | claim | verdi |
 | --- | --- |
-| kid | "Key identifier" - unique identifier for the key and certificate used by ID-porten. The public key and the certificate must be fetched from our .well-known endpoint. |
-| alg | "algorithm" - algorithm used for signing the token. ID-porten only supports `RS256` (RSA-SHA256) |
+| kid | "Key identifier" - unique identifier for the key and certificate used by Maskinporten. The public key and the certificate must be fetched from our .well-known endpoint. |
+| alg | "algorithm" - algorithm used for signing the token. Maskinporten only supports `RS256` (RSA-SHA256) |
 
 
 
@@ -86,15 +86,15 @@ The token is a JWT with the following structure:
 
 | claim | value | example |
 | --- | --- | --- |
-| aud   |  The indended audience for token.  Normally the Oauth2 'issuer' URL of the Resource Server / API. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  ID-porten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  `https://api.examples.com/users`|
+| aud   |  The indended audience for token.  Normally the Oauth2 'issuer' URL of the Resource Server / API. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  Maskinporten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  `https://api.examples.com/users`|
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
 | client_amr  | How the client authenticated itselft towards the AS.  | `virksomhetssertifikat`|
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
 | supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
-| delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://sts.altinn.no`
+| delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://www.altinn.no`
 | scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
 | token_type | Type of token. Only `Bearer` supported. |
-| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)| `https://oidc.idporten.no/idporten-oidc-provider`
+| iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
@@ -113,7 +113,7 @@ The following values may be returned for the `client_amr`-claim.  The values are
 
 #### Access token validation
 
-**The client and resource server MUST validate all responses from ID-porten according to the OIDC and Oauth2 standards as well as  practice recommendations from the IETF.**
+**The client and resource server MUST validate all responses from Maskinporten according to the Oauth2 standards as well as best practice recommendations from the IETF.**
 
 Access tokens must always be validated by the Resource Server / API before granting access. Clients should normally just pass the access token along to the resource server without any processing of it, however if any processing is performed, clients must also perform such validation.
 
