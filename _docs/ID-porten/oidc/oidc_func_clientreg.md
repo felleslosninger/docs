@@ -1,7 +1,7 @@
 ---
-title: Registrering av OIDC klienter
-description: Registrering av OIDC klienter
-summary: "ID-porten støtter flere typer klienter. Klienter må forhåndsregisteres, og korrekt registering av klient er viktig at sikkerheten skal være ivaretatt."
+title: Registrering av klienter
+description: Registrering av klienter
+summary: "Selvbetjeningsløsningen støtter flere typer klienter. Klienter må forhåndsregisteres, og korrekt registering av klient er viktig at sikkerheten skal være ivaretatt."
 permalink: oidc_func_clientreg.html
 sidebar: oidc
 product: ID-porten
@@ -10,13 +10,12 @@ product: ID-porten
 
 ## Bakgrunn
 
-ID-porten støtter flere typer klienter, og det er kundens ansvar å sørge for at det faktiske bruksmønsteret er i samsvar med registreringen. Korrekt registrering er spesielt viktig for klienter som konsumerer APIer tilbudt av andre, og ID-porten og API-tilbyders bruksavtaler regulerer dette ansvarsforholdet.
-
+Det er kundens ansvar å sørge for at det faktiske bruksmønsteret er i samsvar med registreringen. Korrekt registrering er spesielt viktig for klienter som konsumerer APIer tilbudt av andre, og Digitaliseringsdirektoratets og API-tilbyders bruksavtaler regulerer dette ansvarsforholdet.
 
 
 ## ID-portens integrasjoner {#integrasjoner}
 
-ID-porten håndterer 5 ulike typer av integrasjoner:
+Selvbetjeningsløsningen håndterer 4 ulike typer av integrasjoner:
 
 * ID-porten
 * Kontaktregisteret
