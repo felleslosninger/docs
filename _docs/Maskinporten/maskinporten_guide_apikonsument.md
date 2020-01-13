@@ -177,3 +177,31 @@ Authorization: Bearer  <access_token>
 De fleste API tillater flere API-kall med samme token, slik at man trenger ikke hente nytt token ved hvert kall.
 
 Når tokenet er utløpt, vil klient typisk få 401-respons fra APIet, og steg 5 må repeteres.
+
+
+
+## Bruke delegering via Altinn autorisasjon
+
+
+
+### Bruke delegering som kunde
+
+Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en leverandør:
+
+1. Etter innlogging, velg å representere foretaket
+2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
+1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
+1. Oppgi en av de andre test-organisasjonene (orgnr + første 4 tegn)
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
+1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
+
+1. Bekreft med å klikk "Gi rettigheter"
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_bekreftelse.png)
+
+### Bruke delegering som leverandør
+
+1. opprett integrasjon **uten** scope
+2. i /token-kall, oppgi scope samt aktuell konsument som `consumer_orgno` i JWT-grantet
+  * Maskinporten vil da sjekke Altinn, om delegeringsforholdet finnes mellom konsument og leverandør for aktuelt scope.
+  
