@@ -47,6 +47,15 @@ Funksjonaliteten er primært tiltenkt kundar som har app'ar med svært høg utbr
 
 
 
+#### Kreve at alle scope provisjoneres
+
+Per idag må kunder følge ulike prosedyrer alt etter om integrasjonen deira skal konsumerer scopes direkte, kontra scopes som er tilgjenglig for alle eller scopes som krev ekstern delegering.
+
+Dette er forvirrande, og difor endrar vi det slik at alle scopes som ein klient skal kunne forespørre, _alltid_ må vere provisjonert i klient-registreringa.
+
+
+
+
 #### RAR-støtte
 
 Rich autorization requests (RAR) er ein kommande Oauth-spesifikasjon som gjer det mogeleg å be om transaksjonsbaserte samtykker eller mer kompliserte autorisasjonar på ein standardisert måte. I første omgang tenker vi å benytte dette til å bygge den såkalte "Ansattporten", men det er også identifisert behov for å kunne bruke dette til å tilby avgiver/fullmakts-basert innlogging.
