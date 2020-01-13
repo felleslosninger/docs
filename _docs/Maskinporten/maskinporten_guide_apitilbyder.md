@@ -216,6 +216,7 @@ Prosedyre:
   * Be Altinn om å få tilgang til `altinn:maskinporten/delegationschemes.write` scope.
   * Lag en maskinporten-klient som har dette admin-scopet provisjonert.
   * Denne klienten må be et token fra Maskinporten, og så opprette ressursen slik:
+
 ```
 POST /maskinporten-api/delegationSchemes HTTP/1.1
 Host: tt02.altinn.no
@@ -242,6 +243,7 @@ Authorization: Bearer  <mitt maskinporten-token>
     "default_language": "nb_NO"
 }
 ```
+
 Du vil få en ID til delegeringoppsettet i retur.
 
 TODO: link til swagger-dok
