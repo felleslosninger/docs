@@ -194,6 +194,7 @@ Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en lev
 1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
 ![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
 1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
 
 1. Bekreft med å klikk "Gi rettigheter"
 ![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_bekreftelse.png)

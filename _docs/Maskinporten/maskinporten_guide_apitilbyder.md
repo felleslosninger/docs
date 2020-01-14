@@ -258,9 +258,9 @@ Content-Type: application/json
 Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
 cache-control: no-cache
 {
-  "prefix": "difi",
-  "subscope": "api3",
-  "description": "Difi sitt API nummer 3 for demo-formål",
+  "prefix": "difitest",
+  "subscope": "test2",
+  "description": "scope som krever ekstern delegeringskilde",
   "delegation_source": "https://www.altinn.no"
 }
 ```
