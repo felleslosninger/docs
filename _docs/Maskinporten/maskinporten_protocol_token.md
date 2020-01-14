@@ -15,7 +15,6 @@ Using JWT grants towards the `/token` endpoint is documented in [RFC 7523, secti
 
 The client requests a token by passing the JWT-bearer authorization grant to the /token endpoint.
 
-Maskinporten only There are different parameters available for the request, depending on grant type and client authentication method.   The following always apply:
 
 | Header parameters  | Value |
 | --- | --- |
@@ -23,7 +22,7 @@ Maskinporten only There are different parameters available for the request, depe
 | Content-type | application/x-www-form-urlencoded |
 
 
-The following request body attributes are available when using the JWT-grants:
+The following request body attributes shall be used when passing the JWT-grant:
 
 | Attribute  | Value | Description |
 | --- | --- | --- |
@@ -32,7 +31,7 @@ The following request body attributes are available when using the JWT-grants:
 
 There is no need to perform client authenticion when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
-See [JWT grant](maskinporten_protocol_jwtgrant.html) for requirements for the JWT grant.
+See [JWT grant](maskinporten_protocol_jwtgrant.html) for requirements for constructing the JWT grant.
 
 
 
@@ -44,7 +43,7 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 | - |-|
 |access_token   | An Oauth2 access token, either by reference or as a JWT depending on which scopes was requested and/or client registration properties. |
 |expires_in  | Number of seconds until this access_token is no longer valid   |
-| scope   | The list of scopes issued in the access token. Included for convenience only, and should not be trusted for access control decisions.  |
+| scope   | The list of scopes issued in the access token. Included for convenience for the client, and should not be trusted for access control decisions.  |
 
 Example:
 ```
@@ -69,11 +68,9 @@ Maskinporten issues only self-contained tokens:
 
 
 
-#### "By value" / self-contained access token
-
 The token is a JWT with the following structure:
 
-**Access tokenets header:**
+**Access token header:**
 
 | claim | verdi |
 | --- | --- |
@@ -92,8 +89,8 @@ The token is a JWT with the following structure:
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
 | supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
 | delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://www.altinn.no`
-| scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
-| token_type | Type of token. Only `Bearer` supported. |
+| scope | A list of scopes the access_token is bound to.   |
+| token_type | Type of token. Only bearer supported. | `Bearer`|
 | iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
