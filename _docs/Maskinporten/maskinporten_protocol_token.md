@@ -9,7 +9,7 @@ product: Maskinporten
 
 ## About
 
-The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
+Using JWT grants towards the `/token` endpoint is documented in [RFC 7523, section 2.1 ](https://tools.ietf.org/html/rfc7523#section-2.1).
 
 ## Request
 
