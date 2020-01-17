@@ -11,7 +11,7 @@ This english summary is intentionally kept very brief.  We advice english speaki
 
 The authorization code flow is recommended from almost all services which integrates towards ID-porten.  
 
-The integration activity is started by sending an email to "idporten (at) difi (dot) no".
+The integration activity is started by sending an email to "idporten (at) Digitaliseringsdirektoratet (dot) no".
 
 ## Overall description
 
