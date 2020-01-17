@@ -30,6 +30,23 @@ Vi har 3 måter du kan få registrert din integrasjon:
 - Selvbetjening, ved å bruke vårt [selvbetjenings-API](oidc_api_admin.html)
 - Manuelt, ved å sende epost til idporten@difi.no  (kun for ID-porten og Kontaktregisteret)
 
+## Integrasjonstyper
+
+Du må registrere en klientype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
+
+Det som støttes foreløpig er:
+
+| Integrasjonstype |Beskrivelse|
+|-|-|
+|idporten   | krever sluttburker autentisering   |
+|maskinporten  | kun for server til server integrasjoner (B2B)  |
+|krr   | Kontaktregisteret   |
+|eformidling    | for eFormidling  |
+|api_klient    | API-klient innlogget bruker  |
+
+Du vil ikke være i stand til å legge på et scope på klienten din som er i konflikt med klienten's integrasjonstype. F.eks du kan ikke legge til et scope som er begrenset til "maskinporten" på en ID-porten klient, og vice versa.
+
+
 ## Oauth2-egenskaper
 
 Dette avsnittet detaljerer noen viktige Oauth2 egenskaper som kategoriserer våre klienter.  Se gjerne [Oauth2 Dynamic Client Registration for mer informasjon (RFC7591)](https://tools.ietf.org/html/rfc7591#section-2).
