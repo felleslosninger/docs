@@ -51,9 +51,9 @@ Alt etter bruksområde, så tilbyr vi forskjellige metoder for autentisering av 
 | Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg.  For å få lov til å registere slike klienter, må kunden etablere en [egen  selvbetjeningsapplikasjon](oidc_api_admin.html) (som selv må bruke virksomhetssertifikat) |
 | Ingen   | none  | Klienten er en såkalt *public*-klient som ikke kan beskytte en hemmelighet på en tilfredstillende måte.  Gjelder single-page-applikasjon og i noen tilfeller mobil-apper  |
 
-Difi anbefaler bruk av virksomhetssertifikat til klientautentisering,  da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Difi og API-tilbydere en god og sikker identifisering av klienten.   
+Digitaliseringsdirektoratet anbefaler bruk av virksomhetssertifikat til klientautentisering,  da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Difi og API-tilbydere en god og sikker identifisering av klienten.   
 
-Difi forutsetter at API-tilbyder og API-konsument håndterer sertifikat og nøkler på en måte som sikrer at ikke uvedkommende kan misbruke disse.
+Digitaliseringsdirektoratet forutsetter at API-tilbyder og API-konsument håndterer sertifikat og nøkler på en måte som sikrer at ikke uvedkommende kan misbruke disse.
 
 **Merk at eksisterende secret slettes dersom man endrer metoden til noe annet enn client_secret_***
 

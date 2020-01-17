@@ -75,7 +75,7 @@ graph LR
   KRR -- SOAP --- Oppslagstjenesten
 </div>
 
-Difi tilbyr to Oauth2-beskytta APIer:
+Digitaliseringsdirektoratet tilbyr to Oauth2-beskytta APIer:
 
 * [KRR-Oauth2](oidc_api_krr.html) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
 * [authlevel](oidc_api_authlevel.html) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  
