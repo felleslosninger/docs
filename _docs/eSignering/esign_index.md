@@ -9,4 +9,4 @@ Tjenesten kan hjelpe offentlige virksomheter med å sikre brukervennlig, sikker 
 
 Den digitale prosessen ved eSignering gjør at virksomhetene slipper manuell håndtering ved utlevering og innhenting av dokumenter som skal signeres. Ved eSignering av dokumenter gjennomføres selve signeringen med elektronisk ID. Det signerte dokumentet kan ikke endres i etterkant, og vil være klart for arkivering i sak- og arkivsystem etter at innbygger har fullført signeringsprosessen. Tjenesten støtter både enkeltsignatur og multisignatur av signeringsoppdrag. 
 
-Tjenesten forvaltes av Difi og leveres av Posten Norge AS.
+Tjenesten forvaltes avDigitaliseringsdirektoratet og leveres av Posten Norge AS.

@@ -22,7 +22,7 @@ Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester ka
 
 ## Single Logout (SLO)
 
-SLO i OpenID Connect skiller seg noe fra SAML2, og er etter Difis vurdering en mer robust metode enn SAML2 sin kjede av redirects.
+SLO i OpenID Connect skiller seg noe fra SAML2, og er etterDigitaliseringsdirektoratets  vurdering en mer robust metode enn SAML2 sin kjede av redirects.
 
 Vi baserer oss på følgende spesifikasjoner:
 

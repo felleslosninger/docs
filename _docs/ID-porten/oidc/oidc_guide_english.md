@@ -99,7 +99,7 @@ The use of the token endpoint differ somewhat depending on which client authenti
 
 ### Using static client secret
 
-A static symmetric key (*client_secret*) must be obtained from Difi. Production secrets will not be handed over by email.  The relying party is responsible for rotating the secret before it expires at ID-porten.
+A static symmetric key (*client_secret*) must be obtained from Digitaliseringsdirektoratet. Production secrets will not be handed over by email.  The relying party is responsible for rotating the secret before it expires at ID-porten.
 
 The client auth is performed by adding a standard HTTP Basic authentication header. (base64-encoded concatenated string by client_id, a colon and the  client_secret).
 

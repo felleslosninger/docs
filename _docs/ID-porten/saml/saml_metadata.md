@@ -178,7 +178,7 @@ I tillegg til basisverdiene for norske eID kan AuthMethod også ha verdien:
 
 **Extended-fil**
 
-Extended-fil trengs ikke sendes til Difi. Denne genererer vi selv basert på entity_ID som står i metadata som sendes til Difi.
+Extended-fil trengs ikke sendes til Digitaliseringsdirektoratet. Denne genererer vi selv basert på entity_ID som står i metadata som sendes til Difi.
 
 **status-dsf**
 

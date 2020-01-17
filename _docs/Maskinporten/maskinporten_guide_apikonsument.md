@@ -40,11 +40,11 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 
 | Egenskap   | Verdi   |   Forklaring |
 |-|-|-|
-|integration_type (TBD)   | "Maskinporten"   |  Dette feltet forteller Difi hvilken integrasjon dette er.   |
+|integration_type (TBD)   | "Maskinporten"   |  Dette feltet fortellerDigitaliseringsdirektoratet hvilken integrasjon dette er.   |
 | token_endpoint_auth_method  | "private_key_jwt"  | Maskinporten aksepterer kun sertifikat og nøkler, og ikke client_secret for å autentisere klienter |
 | grant_types   | "urn:ietf:params:oauth:grant-type:jwt-bearer"  | Maskinporten aksepterer kun signerte JWTer som grants.  |
-| client_id  | auto-tildelt  | Blir satt at Difi ved registrering  |
-| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig for Difis personell,  |
+| client_id  | auto-tildelt  | Blir satt atDigitaliseringsdirektoratet ved registrering  |
+| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig forDigitaliseringsdirektoratets  personell,  |
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
@@ -59,7 +59,7 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 Du kan logge inn på https://samarbeid.difi.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
 
-Alle organisasjoner som har inngått Difis bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
+Alle organisasjoner som har inngåttDigitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
 
 For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
 
