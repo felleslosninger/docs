@@ -40,10 +40,10 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 
 | Egenskap   | Verdi   |   Forklaring |
 |-|-|-|
-|integration_type (TBD)   | "Maskinporten"   |  Dette feltet forteller Difi hvilken integrasjon dette er.   |
+|integration_type (TBD)   | "Maskinporten"   |  Dette feltet fortellerDigitaliseringsdirektoratet hvilken integrasjon dette er.   |
 | token_endpoint_auth_method  | "private_key_jwt"  | Maskinporten aksepterer kun sertifikat og nøkler, og ikke client_secret for å autentisere klienter |
 | grant_types   | "urn:ietf:params:oauth:grant-type:jwt-bearer"  | Maskinporten aksepterer kun signerte JWTer som grants.  |
-| client_id  | auto-tildelt  | Blir satt at Difi ved registrering  |
+| client_id  | auto-tildelt  | Blir satt atDigitaliseringsdirektoratet ved registrering  |
 | description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig for Difis personell,  |
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 

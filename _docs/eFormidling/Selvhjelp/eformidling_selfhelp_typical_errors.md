@@ -13,9 +13,9 @@ Mykje kan gå feil når ein setter opp integrasjonspunktet. Under har vi forsøk
 - White spaces bak linjer i ```integrasjonspunkt-local.properties``` fila kan ofte føre til feil. Sørg for å fjerne desse
 
 ### 400 bad request
-400 Bad request feil i loggen betyr ofte at du forsøker å bruke et scope du ikkje har tilgang til. Typisk sett fordi dette ikkje er åpna på Difi si side. Dei scopesa du forsøker å bruke er bestemt av properties som feks ```difi.move.feature.enableDPO=true``` eller ```difi.move.feature.enableDPV=true```
+400 Bad request feil i loggen betyr ofte at du forsøker å bruke et scope du ikkje har tilgang til. Typisk sett fordi dette ikkje er åpna påDigitaliseringsdirektoratet si side. Dei scopesa du forsøker å bruke er bestemt av properties som feks ```difi.move.feature.enableDPO=true``` eller ```difi.move.feature.enableDPV=true```
   
-Kontakt Difi på <a href="mailto:idporten@difi.no">idporten@difi.no</a> og be om tilgang. Send gjerne med application.log 
+KontaktDigitaliseringsdirektoratet på <a href="mailto:idporten@difi.no">idporten@difi.no</a> og be om tilgang. Send gjerne med application.log 
 
 ## DPO 
 DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter har et integrasjonspunkt og DPO aktivert for å motta/sende.
@@ -80,14 +80,14 @@ Typisk pga brukernamn/passord feil. Muligens white spaces
 Failed to initiate Altinn broker service Reason: There was errors in the list of recipients: The following recipients is not in SRR with appropriate rights: "123456789". ErrorId 40202. UserId 0
 ```
 
-Manglande SRR rettigheter hos Altinn. Kontakt Difi og oppgje orgnr og brukernamn til DPO. <a href="mailto:idporten@difi.no">idporten@difi.no</a>. Difi vil kontakte Altinn på vegne av dykk og få det retta.
+Manglande SRR rettigheter hos Altinn. KontaktDigitaliseringsdirektoratet og oppgje orgnr og brukernamn til DPO. <a href="mailto:idporten@difi.no">idporten@difi.no</a>.Digitaliseringsdirektoratet vil kontakte Altinn på vegne av dykk og få det retta.
 
 ### The given reportee is not authorized to send files.
 ```
 no.difi.meldingsutveksling.shipping.ws.AltinnWsException: failed to initiate Altinn broker service Reason: The given reportee is not authorized to send files..
 ```
 
-Dette er også ein SRR feil. Kontakt Difi og oppgje orgnr og brukernamn til DPO. <a href="mailto:idporten@difi.no">idporten@difi.no</a>. Difi vil kontakte Altinn på vegne av dykk og få det retta.
+Dette er også ein SRR feil. KontaktDigitaliseringsdirektoratet og oppgje orgnr og brukernamn til DPO. <a href="mailto:idporten@difi.no">idporten@difi.no</a>.Digitaliseringsdirektoratet vil kontakte Altinn på vegne av dykk og få det retta.
 
 ### Failed delivering to archive
 Her kan det være mange forskjellige grunner. Dette er ei veldig generell feilmelding som seie at innkommande DPO-melding ikkje kunne sendast til sak-arkivsystemet. Her må ein lese nærmare på feilmeldinga for å sjå kva det er. 
@@ -103,7 +103,7 @@ Caused by: java.lang.NullPointerException: null
 
     at no.difi.meldingsutveksling.noarkexchange.receive.InternalQueue.sendToNoarkSystem(InternalQueue.java:317)
 ```
-Sjekk at ...endpointURL er korrekt satt. Kontakt Difi på <a href="mailto:idporten@difi.no">idporten@difi.no</a> ved spørsmål.
+Sjekk at ...endpointURL er korrekt satt. KontaktDigitaliseringsdirektoratet på <a href="mailto:idporten@difi.no">idporten@difi.no</a> ved spørsmål.
 
 ## DPV
 DPV-meldinger blir sendt frå sak-arkivsystem via integrasjonspunktet og til virksomhetens innboks i Altinn.
@@ -115,7 +115,7 @@ AgencySystem 123 is not authorized to call service from ip 192.168.0.1
 
 IP-adressa på serveren er ikkje lagt inn hos Altinn. Dette blei etterspurt i informasjonsskjema som blei fylt ut i starten av prosessen. 
 
-Om IP-adresser skal endrast eller leggast til, kontakt Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a> så vil vi ta det vidare til Altinn. Oppgje orgnummer, DPV-brukernamn, og ønska IP-adresse eller IP-range. Om du vil sjå skjemaet så finn du det [her](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUQzlQTzNVSUdLTjVGWFpJNk1ITjBWTkNKSy4u) 
+Om IP-adresser skal endrast eller leggast til, kontaktDigitaliseringsdirektoratet <a href="mailto:idporten@difi.no">idporten@difi.no</a> så vil vi ta det vidare til Altinn. Oppgje orgnummer, DPV-brukernamn, og ønska IP-adresse eller IP-range. Om du vil sjå skjemaet så finn du det [her](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUQzlQTzNVSUdLTjVGWFpJNk1ITjBWTkNKSy4u) 
 
 ### Invalid security token
 ```
@@ -125,7 +125,7 @@ Invalid security token
 
 Ofte pga feil brukernamn/passord på ``` difi.move.dpv.password=``` og/eller ```difi.move.dpv.username=```. Kan også vise til feil med IP-adresse eller tilganger hos Altinn. 
 
-Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. Kontakt Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
+Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. KontaktDigitaliseringsdirektoratet <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
 
 ### Sjekk at brukernamn og passord er korrekt
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse. (Krever SoapUi installert)
@@ -178,7 +178,7 @@ Generell feilmelding med en lenger stack trace . Nede i stack tracen står feks
 no.difi.meldingsutveksling.ks.svarut.SvarUtWebServiceClientImpl.sendMessage
 ```
 
-Her er må det djupare feilsøking til for å finne feilen. Kontakt Difi og oppgje tidspunkt for forsendelse og orgnr. Difi kan finne diverse soapFaults i loggen sin, desse vises ikkje i integrasjonspunktloggen d.d. Dette ønsker vi å få inn i ein framtidig versjon av integrasjonspunktet.
+Her er må det djupare feilsøking til for å finne feilen. KontaktDigitaliseringsdirektoratet og oppgje tidspunkt for forsendelse og orgnr.Digitaliseringsdirektoratet kan finne diverse soapFaults i loggen sin, desse vises ikkje i integrasjonspunktloggen d.d. Dette ønsker vi å få inn i ein framtidig versjon av integrasjonspunktet.
 
 ### Post i svarInn blir ikkje henta automatisk til sak-arkivsystemet
 Her kan det også være fleire grunner til dette, blant annet:

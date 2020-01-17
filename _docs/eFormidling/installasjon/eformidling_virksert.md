@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 
 Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
 
-Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lagt sertifikatet i keystoren må det sendes til Difi på denne adressen <a href="mailto:idporten@difi.no">idporten@difi.no</a> slik at vi kan laste det opp.
+Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lagt sertifikatet i keystoren må det sendes tilDigitaliseringsdirektoratet på denne adressen <a href="mailto:idporten@difi.no">idporten@difi.no</a> slik at vi kan laste det opp.
 
 > * NB! Testmiljø krever **test virksomhetssertifikat**. Produksjonsertifikat vil ikke virke i test  
 > * NB2! I produksjon **må** en ha produksjon **virksomhetssertifikat**. 
@@ -91,7 +91,7 @@ Keytool finner du i
 
 NB! Zip sertifikatfila før du sender den.
 
-For at Difi skal vite hvem sitt Integrasjonspunkt det er så må sertifikatet lastes opp hos Difi. Dette gjøres ved å sende 
+For atDigitaliseringsdirektoratet skal vite hvem sitt Integrasjonspunkt det er så må sertifikatet lastes opp hos Difi. Dette gjøres ved å sende 
 Public key (.cer fil) på e-post til [idporten@difi.no](mailto:idporten@difi.no). 
 
 <!-- Public key (.cer fil) lastes opp til [virksomhetssertifikatserveren for test](https://beta-meldingsutveksling.difi.no/virksomhetssertifikat/) og [virksomhetssertifikatserveren for produksjon](https://meldingsutveksling.difi.no/virksomhetssertifikat/) -->
