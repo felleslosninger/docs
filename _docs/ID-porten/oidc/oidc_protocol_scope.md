@@ -57,3 +57,9 @@ You need to ask us for permission to be able to use these scopes:
 |idporten:scopes*   | Scopes allowing for self-service of ID-porten/Maskinporten API management    |
 |global/*    | Scopes for global access to the Contact Registry |
 |user/*      | Scopes giving Contact Registry details for the authenticated users  |
+
+## Scope limitations
+
+If the attribute allowed_integration_types isn't empty, the scope is limited to that usage.
+Current values are "maskinporten", "idporten", "krr", "eformidling" and "api_klient".
+You will not be able to add a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
