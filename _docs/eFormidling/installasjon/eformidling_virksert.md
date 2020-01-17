@@ -91,7 +91,7 @@ Keytool finner du i
 
 NB! Zip sertifikatfila før du sender den.
 
-For atDigitaliseringsdirektoratet skal vite hvem sitt Integrasjonspunkt det er så må sertifikatet lastes opp hos Difi. Dette gjøres ved å sende 
+For atDigitaliseringsdirektoratet skal vite hvem sitt Integrasjonspunkt det er så må sertifikatet lastes opp hos Digitaliseringsdirektoratet. Dette gjøres ved å sende 
 Public key (.cer fil) på e-post til [idporten@difi.no](mailto:idporten@difi.no). 
 
 <!-- Public key (.cer fil) lastes opp til [virksomhetssertifikatserveren for test](https://beta-meldingsutveksling.difi.no/virksomhetssertifikat/) og [virksomhetssertifikatserveren for produksjon](https://meldingsutveksling.difi.no/virksomhetssertifikat/) -->

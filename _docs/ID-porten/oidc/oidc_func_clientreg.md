@@ -126,7 +126,7 @@ Følgende metadata er felles for alle typer klienter:
 
 |attributt|Påkrevd?|beskrivelse|
 |-|-|-|
-| client_id | Ja |Unik identifikator for klienten. Blir tildelt av Difi. |
+| client_id | Ja |Unik identifikator for klienten. Blir tildelt av Digitaliseringsdirektoratet. |
 | client_orgno | Ja |Klientens organisasjonsnummer.  Juridisk konsument dersom leverandør-styrt integrasjon. Utleveres som "consumer_orgno" i tokens |
 | supplier_orgno   | Nei  | Leverandørens organisansjonummer, dersom integrasjonen er kontrollert av leverandør  |
 | scopes | Ja |Liste over scopes som klienten kan forespørre. For innlogging må alltid *openid* være tilstede. |
