@@ -15,7 +15,7 @@ Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportal
 [Integrasjonsguide/begrepskatalog](https://begrep.difi.no/SikkerDigitalPost/) 
 
 #### Hvem kan bruke digital post til innbyggere?
-Offentlige virksomheter som har godtatt Difis bruksvilkår kan ta i bruk denne tjenesten. Se [bruksvilkår i samarbeidsportalen](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-difis-felleslosninger)
+Offentlige virksomheter som har godtattDigitaliseringsdirektoratets  bruksvilkår kan ta i bruk denne tjenesten. Se [bruksvilkår i samarbeidsportalen](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-difis-felleslosninger)
 
 #### Rutine for tilgang
 Følg [stegvis veiledning på samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/ta-i-bruk-digital-postkasse)

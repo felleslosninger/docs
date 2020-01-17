@@ -82,7 +82,7 @@ Les mer på <http://samarbeid.difi.no> eller ta kontakt med <idporten@difi.no> f
 Følgende må gjøres før din virksomhet kan ta i bruk oppslagstjenesten:
 
 **Merkantile krav:**
-* Bruksvilkår for Difis felleskomponenter og spesielle bruksvilkår for kontakt- og reservasjonsregisteret må aksepteres.
+* Bruksvilkår forDigitaliseringsdirektoratets  felleskomponenter og spesielle bruksvilkår for kontakt- og reservasjonsregisteret må aksepteres.
 * Kontaktpersoner hos virksomhet og eventuelt tjenesteleverandører må være registrert i samarbeidsportalen.
 * Virksomheten må bidra med informasjon til årshjulet for forvaltningen av kontaktregisteret.
 
