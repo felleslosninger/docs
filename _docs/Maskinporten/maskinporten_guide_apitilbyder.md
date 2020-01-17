@@ -207,7 +207,7 @@ Dersom token er self-contained :
 
 ## Bruke delegering i Altinn
 
-Dersom du ønsker at konsumenter av ditt API skal kunne bruke Altinn til å delegering tilgangen videre til en systemleverandør, må du oppretter et såkalt delegeringsoppsett (delegationScheme) som må tilknyttes et eller flere av dine Oauth2 scopes i Maskinporten.  Dette fordrer at du er tjenesteeier i Altinn.
+Dersom du ønsker at konsumenter av ditt API skal kunne bruke Altinn til å delegere tilgangen videre til en systemleverandør, må du opprette et såkalt delegeringsoppsett (delegationScheme) som må tilknyttes et eller flere av dine Oauth2 scopes i Maskinporten.  Dette fordrer at du er tjenesteeier i Altinn.
 
 Prosedyre:
 
