@@ -113,7 +113,7 @@ cache-control: no-cache
 {
 	"prefix": "difi",
 	"subscope": "api3",
-	"description": "Difi sitt API nummer 3 for demo-formål"
+	"description": "Digitaliseringsdirektoratetsitt API nummer 3 for demo-formål"
 }
 ```
 
