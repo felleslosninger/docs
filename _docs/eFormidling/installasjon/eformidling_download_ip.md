@@ -17,7 +17,7 @@ sidebar: eformidling_install_sidebar
 For å ta ibruk integrasjonspunktet må du gjennomføre listen under
 
 1. Installere Java 8 med JCE
-2. Ansaffe virksomhetssertifikat for test og produksjon
+2. Anskaffe virksomhetssertifikat for test og produksjon
 3. Skru på ekspederingskanal for BestEdu i Sak-/Arkivsystemet (Gjelder ikke for eInnsyn)
 4. Gjøre lokalt oppsett for integrasjonpunktet
 5. Sørg for å holde server i Sync med NTP
