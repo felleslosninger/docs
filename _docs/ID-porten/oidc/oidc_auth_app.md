@@ -22,7 +22,7 @@ Vanligvis er det backend-en som er registrert som klient i ID-porten, ikke selve
 
 ## Sentral oversikt og revokasjon
 
-Digitaliseringsdirektoratet krever at kunder som omsetter punkt-autentiseringen fra ID-porten til en langt-levende innlogging, oppfyller følgende krav:
+ Digitaliseringsdirektoratet krever at kunder som omsetter punkt-autentiseringen fra ID-porten til en langt-levende innlogging, oppfyller følgende krav:
 
 * Har lokal sikring av app vha. touchID, ansiktsgjenkjenning el. lignende
 * Aktive innlogginger skal vises på sentrale oversikt i ID-portens brukerprofil

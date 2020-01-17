@@ -24,7 +24,7 @@ graph LR
   subgraph 3djepart
     API
   end
-  subgraph Digitaliseringsdirektoratet
+  subgraph Digitaliseringsdirektoratet 
     OIDC[OIDC Provider]
   end
   subgraph Kunde

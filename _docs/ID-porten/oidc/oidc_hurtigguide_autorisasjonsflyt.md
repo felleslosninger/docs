@@ -19,7 +19,7 @@ Se
  
 ## Framgangsmåte
 
-Vi ønsker at alle tjenester skal verifiseres via testmiljøet før det går i produksjon.Digitaliseringsdirektoratetsitt Ver2-miljø er standard testmiljø for OIDC.
+Vi ønsker at alle tjenester skal verifiseres via testmiljøet før det går i produksjon. Digitaliseringsdirektoratetsitt Ver2-miljø er standard testmiljø for OIDC.
 
  1. Be om å få en klient-integrasjon ved å sende mail til <a href="mailto:idporten@difi.no">idporten@difi.no</a> eller meld inn klient via [web-skjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUNVVMR0JKVjRHQlNPMU80VEs3NDc1MzNQUC4u) Husk å oppgi ønsket redirect-uri're og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html) 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.

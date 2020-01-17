@@ -63,7 +63,7 @@ Man kan opprette ulike typer integrajonser over APIet.  Det er klient-autentiser
 
 For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui.html#/oidc-client-controller/updateSecretUsingPOST)
 
-Merk:Digitaliseringsdirektoratetvil på sikt innføre maks-levetid på client_secret.
+Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_secret.
 
 ## Bruk av asymmetrisk nøkkel
 

@@ -92,8 +92,8 @@ Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 
 | eID | Rutine | 
 | --- | --- | 
-| MinID |Digitaliseringsdirektoratetoppretter | 
-| BankID |Digitaliseringsdirektoratetkan bestille for tjenesteeier ( ikke bankID for mobil ) | 
+| MinID | Digitaliseringsdirektoratet oppretter | 
+| BankID | Digitaliseringsdirektoratet kan bestille for tjenesteeier ( ikke bankID for mobil ) | 
 | Buypass | Tjenesteeier må direkte kontakt | 
 | Commfides | Tjenesteeier må ta direkte kontakt | 
 | | | 

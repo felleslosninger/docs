@@ -13,7 +13,7 @@ Arkitekturen for  OIDC-funksjonaliteten i ID-porten  ser slik ut:
 
 <div class="mermaid">
 graph LR
-  subgraph Digitaliseringsdirektoratet
+  subgraph Digitaliseringsdirektoratet 
     subgraph Eksisterende funksjonalitet
       idp[ID-porten]
       end
@@ -44,7 +44,7 @@ graph LR
   subgraph 3djepart
     API
   end
-  subgraph Digitaliseringsdirektoratet
+  subgraph Digitaliseringsdirektoratet 
     OIDC[OIDC Provider]
   end
   subgraph Kunde
@@ -59,7 +59,7 @@ graph LR
 API-tilgangen kan være innloggingsbasert (implisitt samtykke), brukerstyrt (eksplisitt samtykke), eller maskin-til-maskin-basert. I de to første tilfellene gjelder autorisasjonen kun en enkelt innbygger, mens det siste tilfellet er tiltenkt hjemmelsbaserte autorisasjoner.
 
 
-## Oauth2-beskytta APIer fra Digitaliseringsdirektoratet
+## Oauth2-beskytta APIer fra Digitaliseringsdirektoratet 
 
 <div class="mermaid">
 graph LR
@@ -75,7 +75,7 @@ graph LR
   KRR -- SOAP --- Oppslagstjenesten
 </div>
 
-Digitaliseringsdirektoratet tilbyr to Oauth2-beskytta APIer:
+ Digitaliseringsdirektoratet tilbyr to Oauth2-beskytta APIer:
 
 * [KRR-Oauth2](oidc_api_krr.html) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
 * [authlevel](oidc_api_authlevel.html) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  

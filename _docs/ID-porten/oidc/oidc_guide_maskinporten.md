@@ -20,7 +20,7 @@ graph LR
   subgraph API-tilbyder
     API
   end
-  subgraph Digitaliseringsdirektoratet
+  subgraph Digitaliseringsdirektoratet 
     OIDC[OIDC Provider]
   end
   subgraph API-konsument
@@ -78,7 +78,7 @@ cache-control: no-cache
 {
 	"prefix": "difi",
 	"subscope": "api3",
-	"description": "Digitaliseringsdirektoratetsitt API nummer 3 for demo-formål"
+	"description": " Digitaliseringsdirektoratetsitt API nummer 3 for demo-formål"
 }
 ```
 Autorization-headeren i eksempelet er et access_token som selvbetjeningsklienten din først har fått fra Maskinporten. Dette tokenet må ha "idporten:scopes.write" scope.

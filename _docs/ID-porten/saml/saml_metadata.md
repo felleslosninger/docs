@@ -139,7 +139,7 @@ Standardverdi:
 
 Dersom parameteren ikke er satt, vil lenken gå til Logg ut i ID-porten, og innbygger vil få en informasjonsside om at hun er logget ut, uten videre lenker.
 
-Goto-urlen må utveksles medDigitaliseringsdirektoratetfor at lenketjenesten skal fungere. 
+Goto-urlen må utveksles med Digitaliseringsdirektoratet for at lenketjenesten skal fungere. 
 
 ### **Showlogout**
 Eksempel på verdi: false

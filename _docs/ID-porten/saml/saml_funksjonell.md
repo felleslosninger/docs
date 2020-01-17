@@ -17,7 +17,7 @@ Per i dag inneholder ID-porten kun funksjonalitet for **autentisering**
 
 ### Aktører
 
-Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellomDigitaliseringsdirektoratetog tjenesteeierne.
+Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellom Digitaliseringsdirektoratet og tjenesteeierne.
 
 | Aktører | Beskrivelse | 
 | --- | --- |
@@ -92,7 +92,7 @@ Når en sluttbruker er ferdig hos en tjenesteeier skal han logge ut. Utloggingen
 
 #### **Brukervennlighet**
 
-Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf). 
+ Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf). 
 
 #### **Føderering** 
 
@@ -100,7 +100,7 @@ Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til e
 
 #### **Sesjonstid**
 
-Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre.Digitaliseringsdirektoratetanbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
+Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Digitaliseringsdirektoratet anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
 
 #### **Sesjonsoppgradering**
 
