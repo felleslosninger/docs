@@ -70,8 +70,7 @@ folders:
   - title: Brukerspesifikt oppslag REST
     jurl: /brukerspesifikt_oppslag_krr_rest.html
 
-  - title: Oppslagstjenesten SOAP
-    jurl: /oppslagstjenesten_soap.html
+
 
 - title: Digital postkasse
   folderitems:
