@@ -17,7 +17,7 @@ Per i dag inneholder ID-porten kun funksjonalitet for **autentisering**
 
 ### Aktører
 
-Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellom Difi og tjenesteeierne.
+Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellomDigitaliseringsdirektoratetog tjenesteeierne.
 
 | Aktører | Beskrivelse | 
 | --- | --- |
@@ -100,7 +100,7 @@ Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til e
 
 #### **Sesjonstid**
 
-Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Difi anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
+Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre.Digitaliseringsdirektoratetanbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
 
 #### **Sesjonsoppgradering**
 

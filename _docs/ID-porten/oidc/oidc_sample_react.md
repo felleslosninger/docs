@@ -45,7 +45,7 @@ class Login extends Component {
 ```
 
 
-**auth/LoginResponse.jsx**: The authentication process is completed by executing the completeLogin()-method in the authStore (which executes the signinRedirectCallback()-method in the oidc client library that fetches the access token among other housekeeping). Errors from ID-porten oidc provider are given as query parameters – handle them appropriately. Important: The route for this component must match the redirect_uri setting of your client configuration at Difi (eg http://yourhost:8080/login/response).
+**auth/LoginResponse.jsx**: The authentication process is completed by executing the completeLogin()-method in the authStore (which executes the signinRedirectCallback()-method in the oidc client library that fetches the access token among other housekeeping). Errors from ID-porten oidc provider are given as query parameters – handle them appropriately. Important: The route for this component must match the redirect_uri setting of your client configuration atDigitaliseringsdirektoratet(eg http://yourhost:8080/login/response).
 ```js
 @inject("authStore")
 @observer

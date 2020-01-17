@@ -6,7 +6,7 @@ sidebar: oidc
 ---
 
 
-Backlog inneheld utviklingstiltak som me ikkje har starta på enno. Det er ei målsetning for Difi å gjennomføre desse i 2020, men det vert ikkje gjeve garantiar.
+Backlog inneheld utviklingstiltak som me ikkje har starta på enno. Det er ei målsetning forDigitaliseringsdirektoratetå gjennomføre desse i 2020, men det vert ikkje gjeve garantiar.
 
 
 

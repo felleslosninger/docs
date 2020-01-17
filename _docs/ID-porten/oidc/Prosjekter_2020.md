@@ -24,7 +24,7 @@ Dagens avtaler med eID-leverandørene løper til november 2020, og det må gjør
 
 #### Notifisere norske eID til eIDAS
 
-Nye forskrifter for tillitstjenester innført november 2019 gjør at eID-leverandører må selvdeklareres på nytt til NKOM. Siden de nasjonale kravene i stor grad er basert på europeiske krav (eIDAS) ønsker Difi å kjøre et prosjekt i 2020 der vi ser på å samtidig melde eID-løsningene til EU, slik at norske borgere kan bruke sine eIDer på europeiske tjenester.
+Nye forskrifter for tillitstjenester innført november 2019 gjør at eID-leverandører må selvdeklareres på nytt til NKOM. Siden de nasjonale kravene i stor grad er basert på europeiske krav (eIDAS) ønskerDigitaliseringsdirektoratetå kjøre et prosjekt i 2020 der vi ser på å samtidig melde eID-løsningene til EU, slik at norske borgere kan bruke sine eIDer på europeiske tjenester.
 
 
 
@@ -44,7 +44,7 @@ Dersom det er interesse fra kunder, ønsker vi å pilotere ulike varianter av "A
 
 #### OIDC-provider som kjerne i ny systemarkitektur
 
-Overgangen fra SAML-integrasjoner til OIDC-integrasjoner går raskt. 40% av trafikken i ID-porten går nå over OIDC. Som følge av dette besluttet Difi i et prosjekt i 2019 at ID-portens systemarkitektur må endres til at OpenID Connect / Oauth2-delen blir kjernen i ny arkitektur. En må se på om det er mulig å bruke et hyllevare IAM-produkt istedet for dagens egenutviklede løsning. Samtidig skal vi tilrettelegge for bruk av skyteknologi, både PaaS og SaaS-løsninger der dette er mulig.
+Overgangen fra SAML-integrasjoner til OIDC-integrasjoner går raskt. 40% av trafikken i ID-porten går nå over OIDC. Som følge av dette besluttetDigitaliseringsdirektorateti et prosjekt i 2019 at ID-portens systemarkitektur må endres til at OpenID Connect / Oauth2-delen blir kjernen i ny arkitektur. En må se på om det er mulig å bruke et hyllevare IAM-produkt istedet for dagens egenutviklede løsning. Samtidig skal vi tilrettelegge for bruk av skyteknologi, både PaaS og SaaS-løsninger der dette er mulig.
 
 Omskriving til ny systemarkitektur begynner nå, og vil pågå kontinuerlig fram til dagens driftsavtale går ut i slutten av 2021.
 
