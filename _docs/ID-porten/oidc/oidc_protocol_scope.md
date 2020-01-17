@@ -60,8 +60,9 @@ You need to ask us for permission to be able to use these scopes:
 
 ## Scope limitations
 
-If the attribute allowed_integration_types isn't empty, the scope is limited to that usage.
-|Integration Type|Description|
+If the attribute allowed_integration_types isn't empty, the scope is limited to that usage. The current integration types are:
+
+| Integration Type |Description|
 |-|-|
 |idporten   | requires end-user authentication   |
 |maskinporten  | only for server to server integration   |
