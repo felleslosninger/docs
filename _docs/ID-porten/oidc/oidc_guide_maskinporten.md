@@ -20,7 +20,7 @@ graph LR
   subgraph API-tilbyder
     API
   end
-  subgraph Difi
+  subgraph Digitaliseringsdirektoratet
     OIDC[OIDC Provider]
   end
   subgraph API-konsument

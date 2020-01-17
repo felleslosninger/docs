@@ -47,7 +47,7 @@ The following scopes triggers special treatment in ID-porten OIDC provider.  The
 |no_pid   | Triggers a [pseudonymous authentication](oidc_func_nopid.html)   |
 |eidas    | Include the eIDAS attributes in the id_token   |
 
-## Scopes for APIs from Difi
+## Scopes for APIs from Digitaliseringsdirektoratet
 
 You need to ask us for permission to be able to use these scopes:
 
