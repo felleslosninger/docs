@@ -9,7 +9,7 @@ product: ID-porten
 
 ## Introduksjon
 
-Kontaktregisteret sin oppslagstjeneste tilbyr i dag eit SOAP-basert grensesnitt beskytta med WS-Security. Som del av lanseringen av OpenID Connect i ID-porten  tilbyr Difi nå også et alternativt REST-basert grensesnitt som gjør det enklere å implementere nye integrasjoner mot registeret.
+Kontaktregisteret sin oppslagstjeneste tilbyr i dag eit SOAP-basert grensesnitt beskytta med WS-Security. Som del av lanseringen av OpenID Connect i ID-porten  tilbyr Digitaliseringsdirektoratet nå også et alternativt REST-basert grensesnitt som gjør det enklere å implementere nye integrasjoner mot registeret.
 
 ## Bruk av Oauth2
 

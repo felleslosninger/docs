@@ -21,6 +21,6 @@ versjonen som er ført opp i ELMA. Det er aksesspunktleverandøren som registrer
 
 **English**
 
-Elektronisk mottaker- og adresseregister (ELMA) is the SMP provided by Difi for the norwegian market. Using ELMA is free of charge for approved access points in the OpenPEPPOL network.
+Elektronisk mottaker- og adresseregister (ELMA) is the SMP provided byDigitaliseringsdirektoratet for the norwegian market. Using ELMA is free of charge for approved access points in the OpenPEPPOL network.
 
 Approved access points may get access by sending an e-mail to <a href="mailto:elma@difi.no">elma@difi.no</a>.

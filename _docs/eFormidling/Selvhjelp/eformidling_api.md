@@ -171,7 +171,7 @@ Det er mulig å slå opp én spesifikk conversation ved å bruke ```messageId```
 
 Legg merke til at ```messageId``` på linje 4 er brukt som parameter i URL'en og at en med den kan hente hele conversation for gitt ```messageId```. Denne forsendelsen er en opplasting til eInnsyn indikert av linje 12 og 13 ved ```direction``` = ```OUTGOING``` og ```serviceIdentifier``` = ```DPE```. Status indikerer at meldingen har kun blitt sendt, men mottaker har ikke svart enda. Det kan være fordi meldingen ikke er hentet ned fra servicebus og dermed ikke prosessert av mottakende integrasjonspunkt sentralt i eInnsyn. 
 
-Både ```senderIdentifier``` og ```receiverIdentifier``` er satt til samme organisasjon, det er tilfeldigvis fordi Difi er databehandler for journalposter som lastes opp på www.einnsyn.no . Det er også fullt mulig å sende DPO-meldinger til seg selv. 
+Både ```senderIdentifier``` og ```receiverIdentifier``` er satt til samme organisasjon, det er tilfeldigvis fordiDigitaliseringsdirektoratet er databehandler for journalposter som lastes opp på www.einnsyn.no . Det er også fullt mulig å sende DPO-meldinger til seg selv. 
 
 ## Hente statuser
 

@@ -50,7 +50,7 @@ Se [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html).
 
 ### Beskrivelse av APIer
 
-I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Difi ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
+I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Digitaliseringsdirektoratet ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
 
 Følgende syntax brukes:
 
@@ -73,7 +73,7 @@ Attributtet `visibility` brukes for å angi scopets synlighet:
 |-|-|
 |PUBLIC | Scopet er synlig for alle på /scopes/all endepunkt.    |
 |PRIVATE| Scopet er ikke synlig for andre enn API-tilbyder og de konsuementer som har fått tilgang |Konsument må bli fortalt at scopet finnes    |
-|INTERAL | Inten bruk i Difi   |   
+|INTERAL | Inten bruk i Digitaliseringsdirektoratet  |   
 
 Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
 
@@ -84,7 +84,7 @@ Attributtet "allowed_integration_types" legger føringer på bruken av et scope.
 
 ### Inaktive entiteter
 
-For å sikre juridisk logging og statistikk, vil Difi aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
+For å sikre juridisk logging og statistikk, vil Digitaliseringsdirektoratet aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
 
 Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
 
@@ -118,7 +118,7 @@ cache-control: no-cache
 {
 	"prefix": "difi",
 	"subscope": "api3",
-	"description": "Difi sitt API nummer 3 for demo-formål"
+	"description": " Digitaliseringsdirektoratetsitt API nummer 3 for demo-formål"
 }
 ```
 

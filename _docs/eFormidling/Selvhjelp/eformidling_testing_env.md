@@ -31,7 +31,7 @@ For å logge inn i Altinn sitt testmiljø bruker du denne lenken <a href="https:
 
 ### Digital post til offentlige virksomheter(DPO)
 
-Tabellen gjelder integrasjonspunktet til Difi Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
+Tabellen gjelder integrasjonspunktet tilDigitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
 
 | Nøkkel | verdi |  
 | --- | --- | 

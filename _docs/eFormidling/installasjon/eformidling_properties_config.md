@@ -20,7 +20,7 @@ Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge.
 
 Vi anbefaler dere å konfigurere DPO før DPV/DPF for å unngå å motta post fra svarUt til virksomhetens SvarInn innboks. Ved å konfigurere DPO først vil dere motta post i sak-arkivsystemet. Om ønsket kan en også sette opp DPI først.
 
-Husk å melde fra til <a href="mailto:idporten@difi.no">idporten@difi.no</a> når dere har konfigurert slik at Difi kan åpne opp tilganger. Ellers vil du få 400 Bad request feil. 
+Husk å melde fra til <a href="mailto:idporten@difi.no">idporten@difi.no</a> når dere har konfigurert slik atDigitaliseringsdirektoratet kan åpne opp tilganger. Ellers vil du få 400 Bad request feil. 
 
 
 ### Integrasjonspunkt-local.properties
