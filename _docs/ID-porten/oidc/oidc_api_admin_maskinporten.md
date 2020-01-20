@@ -67,7 +67,7 @@ der `prefix` er en tekststreng som blir manuelt tildelt API-tilbyderen. En API-t
 
 ### Synlighet
 
-Attributtet `visibilty` brukes for å angi scopets synlighet:
+Attributtet `visibility` brukes for å angi scopets synlighet:
 
 |verdi|beskrivelse|
 |-|-|
@@ -76,6 +76,11 @@ Attributtet `visibilty` brukes for å angi scopets synlighet:
 |INTERAL | Inten bruk i Difi   |   
 
 Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
+
+### Scope-begrensinger
+
+Attributtet "allowed_integration_types" legger føringer på bruken av et scope. En eller flere integrasjonstyper kan være tillatt. Dersom dette attributtet er satt, må en av verdiene inkludere "maskinporten" for at du skal kunne bruke scopet med en maskinporten klient.
+
 
 ### Inaktive entiteter
 
