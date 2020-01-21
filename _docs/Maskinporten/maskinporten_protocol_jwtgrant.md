@@ -36,16 +36,22 @@ Note that production certificates are not supported in test environments.
 | --- | --- |--- |
 |aud| Required | Audience - identifier for Maskinporten.  See the [well-known endpoint](maskinporten_func_wellknown.html) for the environment you are using to find correct value.  The value in production is `https://maskinporten.no/`  |
 |iss| Required |issuer - Your client ID |
-|iss_onbehalfof| Optional | Maskinporten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
-|scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes. |
 |iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
 | resource   | optional  | *Currently only array supported.*  The indended audience for token. If included, the value will be transparantly set as the `aud`-claim in the access token. See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05). if not included, the audience will be set to `unspecified` |   
+|scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
+
+If the client belongs to a supplier and requests a token for another organization (legal consumer), there are two mutually exclusive claims available:
+
+| Claim  |  Cardinality | Description  |
+| --- | --- |--- |
+|consumer_org| Optional |  The organization number of the legal consumer the client wants to get a token for. Maskinporten will validate against Altinn that the consumer-supplier delegation exists.  Note that client can not be provisioned with the scope. |
+|iss_onbehalfof| Optional | Maskinporten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
 
 
 
-### Eksempel på JWT-grant struktur
+### Example
 
 The final JWT may look like this:
 
