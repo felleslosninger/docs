@@ -64,6 +64,10 @@ Attributtet `visibilty` brukes for å angi scopets synlighet:
 
 Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
 
+### Scope-begrensninger
+
+Det anbefales at man setter en begrensning på bruk av scopet. Ved å sette attributtet  `allowed_integration_types`, vil man begrense bruken til de integrasjonstypene som er inkludert i attributtet. F.eks kan man begrense bruken til kun å kunne brukes med maskinporten- (server til server) eller idportenklienter (brukerinnlogging).
+
 ### Inaktive entiteter
 
 For å sikre juridisk logging og statistikk, vilDigitaliseringsdirektoratet aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
