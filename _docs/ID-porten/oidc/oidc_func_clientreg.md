@@ -114,7 +114,7 @@ Merk at klient-type ikke blir lagret som del av klient-registreringen, men utled
 Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 
 
-| Integrasjon | Klient-type |  tillatte `token_endpoint_auth_method` | tillatte `grant_types` | scope | Kan legge til scopes? |
+| Integrasjon | Klient-type |  tillatte token_endpoint_auth_method | tillatte grant_types | scope | Kan legge til scopes? |
 |-|-|-|-|-|-|
 |ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | nei |
 ||  browser |  none     | authorization_code   |openid profile | nei |
