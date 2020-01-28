@@ -38,6 +38,9 @@ folders:
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
 
+      - title: Delegering
+        jurl: /maskinporten_func_delegering.html
+
 
 - title: Spørsmål og svar
   folderitems:
