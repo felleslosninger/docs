@@ -48,7 +48,7 @@ Dette er en overordnet beskrivelse av innloggingstjenesten. For detaljer se [Det
 
 ## Støttede protokoller
 * SAML2
-* OpenID Connext
+* OpenID Connect
 
 ## **Brukervennlighet**
 
