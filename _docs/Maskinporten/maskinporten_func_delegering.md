@@ -1,7 +1,7 @@
 ---
 title: Delegering i Maskinporten
 description: Delegering i Maskinporten
-summary: "En API-konsument kan delegere en tildelt tiltang videre til en leverandør."
+summary: "En API-konsument kan bruke Altinn til å delegere en tildelt API-tilgang videre til en leverandør."
 permalink: maskinporten_func_delegering.html
 sidebar: maskinporten_sidebar
 product: Maskinporten
@@ -20,9 +20,9 @@ graph LR
   a[API-tilbyder]
   l[Leverandør]
 
-  k---|  avtale om tilgang til data | a
-  k---| databehandleravtale | l
-  l---| henter data fra | a
+  k---| har avtale om tilgang til data med | a
+  k---| har databehandleravtale med | l
+  l---| henter data på vegne av konsument fra | a
 </div>
 
 
