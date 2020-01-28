@@ -6,7 +6,7 @@ sidebar: oidc
 ---
 
 
-Backlog inneheld utviklingstiltak som me ikkje har starta på enno. Det er ei målsetning for Digitaliseringsdirektoratet å gjennomføre desse i 2020, men det vert ikkje gjeve garantiar.
+Backlog inneheld utviklingstiltak som me ikkje har starta på enno. Det er ei målsetning for Difi å gjennomføre desse i 2020, men det vert ikkje gjeve garantiar.
 
 
 
@@ -34,24 +34,6 @@ Produktet som brukes til å produsere MinID pinkode-brev er end-of-life, og tren
 Behovsdrevet viderutvikling av Maskinporten.
 
 Med leveranse av delegering i eOppslag ved årskiftet, regner vi at hovedvekten av nødvendig funksjonalitet for Maskinporten er ferdig, og produktet går inn i en roligere fase preget av fokus på å øke bruken. Det vil sikkert dukke opp behov i løpet av året som blir vurdert som viktige å få løst.
-
-
-
-
-#### Endepunkt for revokerte autorisasjoner
-
-Det kjem eit nytt endepunkt i OIDC som publiserer revokerte app-autorisasjonar.
-
-Funksjonaliteten er primært tiltenkt kundar som har app'ar med svært høg utbreiing, og/eller har veldig høg samtidig bruk, slik at standardisert token introspection for å sjekke om ein autorisasjon framleis er gyldig kan gje ytelsesutfordringar
-
-
-
-
-#### Kreve at alle scope provisjoneres
-
-Per idag må kunder følge ulike prosedyrer alt etter om integrasjonen deira skal konsumerer scopes direkte, kontra scopes som er tilgjenglig for alle eller scopes som krev ekstern delegering.
-
-Dette er forvirrande, og difor endrar vi det slik at alle scopes som ein klient skal kunne forespørre, _alltid_ må vere provisjonert i klient-registreringa.
 
 
 
