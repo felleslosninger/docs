@@ -29,7 +29,7 @@ graph LR
 
 ### Initielt oppsett
 
-For å klaregjøre for bruk av delegering, må API-tilbyder registrere nødendige opplysninger om APIet som følger:  
+For å klaregjøre for bruk av delegering, må API-tilbyder registrere nødvendige opplysninger om APIet som følger:  
 
 <div class="mermaid">
 sequenceDiagram
@@ -95,7 +95,7 @@ Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at an
 
 ### Gi tilgang til konsumenter
 
-API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html#2b-tilgangsstyring---oauth2-selvbetjeningsklient).  
+API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html#2b-tilgangsstyring---oauth2-selvbetjeningsklient) på ordinær måte.  
 
 ### Lage en leverandør-integrasjon
 
