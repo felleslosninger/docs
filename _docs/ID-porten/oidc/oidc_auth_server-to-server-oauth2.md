@@ -63,7 +63,7 @@ I dette scenariet ønsker en **klient** å bruke en **ressurs (API)** tilbudt av
 
 ## 1. Generere JWT
 
-Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [JWT-grant](oidc_protocol_jwtgrant.html)
+Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [JWT-grant](maskinporten_protocol_jwtgrant.html)
 
 
 ### Eksempel på JWT-grant struktur
