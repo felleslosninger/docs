@@ -50,6 +50,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
+| qaoffentlig.meldingsformidler.digipost.no | 146.192.168.18:443 | -  | DPI |
 
 
 ### Brannmuråpninger i produksjon

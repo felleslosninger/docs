@@ -36,6 +36,9 @@ folders:
 
   - title: Spørsmål og svar
     jurl: /idporten_faq.html
+    
+  - title: Verifikasjonstester
+    jurl: /idporten_verifikasjonstester.html
 
 
 - title: Maskinporten
@@ -67,8 +70,7 @@ folders:
   - title: Brukerspesifikt oppslag REST
     jurl: /brukerspesifikt_oppslag_krr_rest.html
 
-  - title: Oppslagstjenesten SOAP
-    jurl: /oppslagstjenesten_soap.html
+
 
 - title: Digital postkasse
   folderitems:

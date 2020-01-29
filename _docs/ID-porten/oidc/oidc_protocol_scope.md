@@ -57,3 +57,17 @@ You need to ask us for permission to be able to use these scopes:
 |idporten:scopes*   | Scopes allowing for self-service of ID-porten/Maskinporten API management    |
 |global/*    | Scopes for global access to the Contact Registry |
 |user/*      | Scopes giving Contact Registry details for the authenticated users  |
+
+## Scope limitations
+
+If the attribute allowed_integration_types isn't empty, the scope is limited to that usage. The current integration types are:
+
+| Integration Type |Description|
+|-|-|
+|idporten   | requires end-user authentication   |
+|maskinporten  | only for server to server integration   |
+|krr   | for kundereservasjonsregister   |
+|eformidling    | for eformidling  |
+|api_klient    | requires end-user authentication. DigDir service.  |
+
+You will not be able to add a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
