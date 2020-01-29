@@ -62,7 +62,7 @@ graph LR
   ny -->|3.bruker token mot|API
 </div>
 
-API-konsumenter kan selv administrere sine klientkonfigurasjoner og provisjonere disse med tildelte tilganger fra tilbyderene.
+API-konsumenter kan selv administrere sine klientkonfigurasjoner og registrere disse med tildelte scopes fra tilbyderene.
 
 API-tilbydere og konsumenter kan bruke denne tjenesten for å styre tilgang i de tilfellene der informasjonsverdiene APIet tilbyr er regulert av lovhjemmel, og ikke krever samtykke av brukeren.
 

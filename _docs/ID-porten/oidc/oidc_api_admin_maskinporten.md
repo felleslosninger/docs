@@ -160,11 +160,11 @@ Respons:
 ]
 ```
 
-### 3. Provisjonering av konsument
+### 3. Konsument lager en integrasjon
 
-Konsumenten må provisjonere tilgangen ned til en aktuell klient, før han kan få utstedt tokens.  Dette gjøres ved å oppdatere Oauth2 klienten som skal ha tilgangen med det nye scopet, via [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes).
+Konsumenten må registere en integrasjon (=oauth2-klient) som skal bruke den aktuelle tilgangen. Konsumenten kan enten lage en ny klient, eller oppdatere en eksisterende.  Generelt anbefaler vi av sikkerhetsgrunner å lage en ny, siden klienter ikke bør får for vide tilganger (altså for mange scopes).  Dette gjøres ved [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes).
 
-#### Eksempel på provisjonering
+#### Eksempel på registrering
 
 Først henter du aktuell klient-konfigurasjon med GET, og tar utgangspunkt i denne for å generere en modifisert objekt  tilbake:
 
