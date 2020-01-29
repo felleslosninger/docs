@@ -201,8 +201,32 @@ Begge prosessene støtter både digitalpost og fysisk post.
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpeJournal.json %}
 ```
+<!--
+### Avtalt
+
+Avtalt er en bilateral meldingstype som lar avsender og mottaker sende en forhåndsbestemt forretningsmelding som kan være strukturert eller ustrukturert. 
+
+| Prosess | Dokumenttype | 
+|---------|--------------|
+|urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
+|  |urn:no:difi:avtalt:xsd::avtalt |
+|urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
+|  |urn:no:difi:avtalt:xsd::avtalt |
 
 
+Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Avtalt. 
 
+**Avtalt**
+```json
+{% include /eformidling/nextmove/forretningsmeldingDpoAvtalt.json %}
+```
 
+**Eksempel**
+```json
+{% include /eformidling/nextmove/forretningsmeldingDpoAvtaltEksempel.json %}
+```
+
+> Forretningsmeldinger som inneholder " " må disse endres til  ' ' for å unngå at json-validatoren leser det som et json-element. Dette kan spesielt være aktuelt i XML-filer som inlines i forretningsmeldingen.
+
+-->
 
