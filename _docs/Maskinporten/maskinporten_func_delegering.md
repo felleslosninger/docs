@@ -59,6 +59,7 @@ Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
   "delegation_source": "https://tt02.altinn.no"
 }
 ```
+Merk at Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering.
 
 Du må så [opprette et delegeringsoppett i Altinn](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/#registrering-av-delegerbar-ressurs-i-altinn), som inneholder scopet du nettopp registrerte i Maskinporten:
 
@@ -102,10 +103,10 @@ API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](https://di
 Leverandør-integrasjoner som skal bruke ekstern delegering, er litt forskjellige fra andre integrasjoner i ID-porten/Maskinporten, og det er derfor viktig å få de registrert korrekt.
 
 
-ID-porten/Maskinporten har allerede [to eksisterende interne delegeringsmekanismer](oidc_api_admin.html#eierskap-til-integrasjoner), og det er viktig at disse ikke blandes:
+ID-porten/Maskinporten har allerede [to eksisterende interne delegeringsmekanismer](oidc_api_admin.html#eierskap-til-integrasjoner), som ikke er kompatible med delegering i Altinn. For å oppnå korrekt registrering, må du da:
 
 * For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
-* For leverandører som bruke selvbetjenings-API, må de **ikke** bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette `client_orgno` i registrerings-kallet.
+* For leverandører som bruker selvbetjenings-API, må de **ikke** bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette `client_orgno` i registrerings-kallet.
 
 
 **Merk: i første utgave av denne funksjonaliteten er det ikke mulig for leverandør å registrere det aktuelle oauth2-scopet tilhørende API-tilbyder på klienten. Dette vil bli endret ila. våren 2020.**
@@ -130,14 +131,13 @@ Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org
 
 Delegering kan kun testes i VER2-miljøet, dette er koblet mot Altinns TT02-miljø.
 
-Endepunkt for støttede delegeringsoppsett:
+For å teste som konsument, må du be Altinn om å få en testbruker tilknyttet en  organisasjon i TT02-miljøet.
+
+For API-tilbydere som ønsker å teste delegering selv, er det enklest å bruke eget orgno som leverandør siden oauth2-klienten til leverandøren trenger test-virksomhetssertifikat.
+
+Endepunkt som lister opp støttede delegeringsoppsett:
 
 |Miljø| Endepunkt|
 |-|-|
 | VER2 | https://integrasjon-ver2.difi.no/delegationsources |
 | PROD | https://integrasjon.difi.no/delegationsources |
-
-
-For å teste som konsument, må du be Altinn om å få en testbruker tilknyttet en  organisasjon i TT02-miljøet.
-
-For API-tilbydere som ønsker å teste delegering, er det enklest å bruke eget orgno som leverandør siden leverandøren (=oauth2-klienten) trenger test-virksomhetssertifikat.
