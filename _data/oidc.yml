@@ -115,7 +115,7 @@ folders:
 - title: SAML grensesnitt
   folderitems:
 
-      - title: Integrasjon via SAML (fases ut)
+      - title: SAML Integrasjon (fases ut!)
         jurl: /saml_tilgang.html
 
 ###########################
