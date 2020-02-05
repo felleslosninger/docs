@@ -9,12 +9,11 @@ folders:
 
   - title: Om eFormidling
     jurl: /eformidling_index.html
-    subfolders:
 
   - title: Installasjonsveiledning
     jurl: /eformidling_download_ip.html
 
-  - title: Utviklerdokumentasjon
+  - title: Teknisk dokumentasjon
     jurl: /eformidling_nm_about.html
     #Må endre jurl på teknisk info
 
