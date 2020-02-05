@@ -3,7 +3,7 @@ title: Overordnet arkitekturbeskrivelse
 description:
 summary:
 permalink: idporten_overordnet.html
-sidebar: main_sidebar
+sidebar: oidc
 product: ID-porten
 ---
 
