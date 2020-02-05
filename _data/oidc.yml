@@ -1,4 +1,4 @@
-sidebarTitle: ID-porten OIDC
+sidebarTitle: ID-porten - Teknisk
 
 
 folders:
@@ -112,6 +112,11 @@ folders:
     jurl: /releaser_2020.html
 #==rel_notes_stop==
 
+- title: SAML grensesnitt
+  folderitems:
+
+      - title: Integrasjon via SAML (fases ut)
+        jurl: /saml_tilgang.html
 
 ###########################
 
