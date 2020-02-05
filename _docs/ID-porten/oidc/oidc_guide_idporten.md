@@ -317,6 +317,14 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 Korrekt validering av Id token på klientsiden er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel *3.1.3.7 - ID Token Validation* i OpenID Connect Core 1.0 spesifikasjonen.
 
 
+## Token levetid
+
+| Token | Levetid |
+| --- | --- |
+| Access_token | 120 sekunder |
+| Refresh_token | 600 sekunder |
+
+
 ## Userinfo-endepunkt
 
 Ved å forespørre scopet *profile* vil klienttjenesten sammen med id tokenet også få utstedt et access_token (og evnt. refresh_token)
