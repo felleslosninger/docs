@@ -25,20 +25,8 @@ folders:
   - title: Om ID-porten
     jurl: /idporten_index.html
 
-  - title: Overordnet
+  - title: Teknisk dokumentasjon
     jurl: /idporten_overordnet.html
-
-  - title: Bruksområder
-    jurl: /idporten_bruksomrader_index.html
-
-  - title: Grensesnitt
-    jurl: /idporten_grensesnitt.html
-
-  - title: Spørsmål og svar
-    jurl: /idporten_faq.html
-    
-  - title: Verifikasjonstester
-    jurl: /idporten_verifikasjonstester.html
 
 
 - title: Maskinporten
