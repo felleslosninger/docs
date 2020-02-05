@@ -5,9 +5,6 @@ folders:
 - title: Om ID-porten
   folderitems:
 
-      - title: Om ID-porten
-        jurl: /idporten_index.html
-
       - title: Overordnet arkitekturbeskrivelse
         jurl: /idporten_overordnet.html
 
