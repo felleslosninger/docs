@@ -11,7 +11,7 @@ product: ID-porten
 
 Denne siden gir en oversikt over de funksjoner som ID-porten tilbyr som tjenesteleverandør.
 
-![](/idporten-integrasjonsguide/assets/images/funksjonelt_gammal.bmp "minId_tjenester")
+<!---[](/idporten-integrasjonsguide/assets/images/funksjonelt_gammal.bmp "minId_tjenester")--->
 
 ID-porten tilbyr følgende funksjonalitet
 - **autentisering av sluttbrukere**
