@@ -9,6 +9,8 @@ sidebar: eformidling_technical_sidebar
 
 ## Capability oppslag
 
+<div class="mermaid">
+
 graph LR  
   subgraph DigDir
     Maskinporten[Maskinporten]
@@ -21,6 +23,8 @@ graph LR
   klient -->|1. forspør tilgang til scope|Maskinporten
   klient -->|3.bruker token mot|sr
 
+  <div>
+
 
 
 ```json
@@ -29,7 +33,7 @@ graph LR
 
 | Identifier | Type        | Maskinporten scope  | Wsdl| Tjenestebeskrivelse |
 | -----------|-------------|---------------------|-----|---------------------|
-| DPO        | SOAP        | move/dpo.read       | https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc?wsdl <br> https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc?wsdl | https://altinn.github.io/docs/api/soap/grensesnitt/#brokerservice-formidlingstjenester-ws |
+| DPO        | SOAP        | move/dpo.read       | [BrokerServiceExternalBasic] (https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc?wsdl) <br> [BrokerServiceExternalBasicStreamed] (https://www.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc?wsdl) |[Brokerservice dokumentasjon] https://altinn.github.io/docs/api/soap/grensesnitt/#brokerservice-formidlingstjenester-ws |
  		
 
 ## Meldingsoppbygging
