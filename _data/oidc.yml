@@ -5,9 +5,12 @@ folders:
 - title: Om ID-porten
   folderitems:
 
-      - title: Overordnet arkitekturbeskrivelse
+      - title: Overordnet arkitektur
         jurl: /idporten_overordnet.html
 
+      - title: OIDC i ID-porten
+        jurl: /oidc_index.html
+        
       - title: Getting started
         jurl: /oidc_guide_english.html
 
