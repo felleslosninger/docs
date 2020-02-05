@@ -23,10 +23,11 @@ graph LR
   klient -->|1. forspør tilgang til scope|Maskinporten
   klient -->|3.bruker token mot|sr
 
-  </div>
+</div>
 
 
 
+SR response
 ```json
 { % include /eformidling/nextmove/sr_response.json % }
 ```
