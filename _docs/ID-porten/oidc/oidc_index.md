@@ -33,7 +33,7 @@ Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Di
 Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Digitaliseringsdirektoratetsitt [Ver2-miljø](https://samarbeid.difi.no/node/232) er standard testmiljø for OIDC.
 
 1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no/#/).  Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
-   - Alternativt kan du be om å få en klient-integrasjon ved å sende mail til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> eller meld inn klient via [web-skjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUNVVMR0JKVjRHQlNPMU80VEs3NDc1MzNQUC4u)
+   - Alternativt kan du be om å få en klient-integrasjon ved å sende mail til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.
  3. Det skal nå være mulig å logge inn
