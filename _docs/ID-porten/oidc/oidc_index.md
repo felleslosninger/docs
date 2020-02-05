@@ -45,14 +45,12 @@ Det må utføres en rekke verifikasjonstester for å teste blant annet innloggin
 
 ### Testbrukere
 
-Hvis du allerede har fått testbrukere utdelt kan du gjenbruke disse. Om du trenger nye testbrukere kan du kontakte <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+Hvis du allerede har fått testbrukere utdelt kan du gjenbruke disse. Om du trenger nye testbrukere kan du kontakte <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ## Produksjonssetting
 
-Client_secret i produksjonsmiljøet utleveres ikke i klartekst over e-post, men i ein kryptert zip-fil. Passord til denne filen sendes på sms. Derfor er det viktig at du angir mobiltelefonnummer for i bestillingen om. Om du bruker virksomhetssertifikat (anbefalt) trenger du ikke legge ved mobiltelefonnummer.
-
-Når du har utført verifikasjonstestene og er klar for å prodsette så sender du en ny e-post til <a href="mailto:idporten@difi.no">idporten@difi.no</a> der du oppgir hvilken client_id som ble brukt i testmiljøet, ønsket redirect-uri'er og annen nødvendig informasjon.
+Når du har utført verifikasjonstestene og er klar for å prodsette så sender du en ny e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> der du oppgir hvilken client_id som ble brukt i testmiljøet, ønsket redirect-uri'er og annen nødvendig informasjon.
 
 ## Problemer?
 
-Om du opplever problemer med integrasjonen din: Kontakt <a href="mailto:idporten@difi.no">idporten@difi.no</a> oppgi client_id og miljø og forklar problemet.
+Om du opplever problemer med integrasjonen din: Kontakt <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> oppgi client_id og miljø og forklar problemet.
