@@ -89,3 +89,25 @@ DELETE /authorizations/{authorization_id}
 Authorization: Bearer yyyyy
 ```
 Bearer-tokenet i forespørselen må ha `idporten:authorizations.revoke` scope.
+
+### Revokasjonsliste
+Endepunktet /revokelist gir oversikt over kva autorisasjoner som har blitt revokert den siste tida. Typisk bruk er klientar med mange langt-levande token der ein ynskjer å redusere antall kall mot /tokeninfo. Normal bruk av /tokeninfo er foretrukken for dei aller fleste. Endepunktet er åpent og krever ikkje autentisering.
+
+```
+GET /idporten-oidc-provider/revokelist?clientId=testklient
+{
+    "created": 1580303929800,
+    "revokedAccessTokens": [
+        {
+            "expires": 1581306298998, 
+            "revoked": 1580302929704, 
+            "access_token_id": "gWbJcYm54F4Tf5-iQXVyyy1FHI2CnAlZPLx6ChvWnyu"
+        },
+        {
+            "expires": 1581306299998, 
+            "revoked": 1580302929707, 
+            "access_token_id": "gWbJcYm54F4Tf5-iQXVyyy1FHI2CnAlZPLx625vWnop"
+        }
+    ]
+}
+```
