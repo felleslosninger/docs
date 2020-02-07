@@ -20,7 +20,7 @@ Les gjerne [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html) f�
 
 ### Hvordan f책 tilgang ?
 
-Ta kontakt med idporten@difi.no for 책 f책 tilgang til 책 bruke APIet.
+Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for 책 f책 tilgang til 책 bruke APIet.
 
 ### Bruk av Oauth2
 
