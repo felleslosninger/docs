@@ -176,7 +176,7 @@ Accept: gzip, deflate
 | Produksjon | | https://kontaktinfo-ws.difi.no/kontaktinfo-external/ws-v5 |
 | | | | 
 
-I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via idporten@difi.no
+I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 Miljøene er:
 
@@ -188,7 +188,7 @@ Miljøene er:
 
 Miljøene er tilgjengelig over internett. IP-adressen finnes ved å slå opp DNS-adressen for hvert miljø. Portnummeret er standard port for HTTPS, port: 443.
 
-Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailtO:idporten@difi.no">idporten@difi.no</a>. 
+Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 *** 
 
