@@ -77,7 +77,7 @@ Denne tjenesten gir offentlig virksomhet tilgang til printleverandør sitt serti
 ## Hvordan få tilgang til oppslagstjenesten? 
 
 **Kontakt oss**
-Les mer på <http://samarbeid.difi.no> eller ta kontakt med <idporten@difi.no> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
+Les mer på <http://samarbeid.difi.no> eller ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
 
 Følgende må gjøres før din virksomhet kan ta i bruk oppslagstjenesten:
 
@@ -99,7 +99,7 @@ Følgende må oppgis/avtales før man kan ta i brukt kontakt- og reservasjonsreg
 | Organisasjonsnummer for virksomheten | Dette må være det organisasjonsnummeret som ligger i virksomhetssertifikatet brukt i forbindelse med oppslag mot oppslagstjenesten. | 
 | | | 
 
-All informasjon utveksles over e-post til <idporten@difi.no>
+All informasjon utveksles over e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Datamodell
 
