@@ -34,6 +34,7 @@ formatet.
 | xlsx    | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet         |
 | pptx    | application/vnd.openxmlformats-officedocument.presentationml.presentation |
 | zip     | application/octet-stream                                                  |
+| Mime-type for utvidelser:                                                           |
 | xml     | application/vnd.difi.dpi.bevis+xml                                        |
 | xml     | application/vnd.difi.dpi.lenke+xml                                        |
 | xml     | application/vnd.difi.dpi.arrangement+xml                                  |
