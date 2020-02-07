@@ -83,7 +83,7 @@ API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ve
 
 - Trykk på "Nytt scope"
 
-- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på idporten@difi.no. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
+- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
 
 - Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
 
