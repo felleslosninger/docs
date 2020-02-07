@@ -118,7 +118,7 @@ ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier se
 
 Fra 15-09 releasen inkluderer ID-porten støtte for at europeiske brukere knyttet til EUs pilot-infrastruktur for autentisering, STORK, kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser fra 2018. Den tekniske løsningen vil på sikt bli oppgradert til eIDAS-profilen når denne er klar fra EU.
 
-Tjenesteeiere som ønsker pålogging fra utenlandske brukere, må be spesielt om det på *idporten@difi.no*, og implementere teknisk støtte for å håndtere de ulike SAML-attributt-kombinasjonene som de da kan møte.
+Tjenesteeiere som ønsker pålogging fra utenlandske brukere, må be spesielt om det på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>, og implementere teknisk støtte for å håndtere de ulike SAML-attributt-kombinasjonene som de da kan møte.
 
 En tjeneste kan velge å kun støtte pålogging fra europeisk brukere, eller å støtte både norske brukere og europeiske brukere. Ved å støtte begge brukergrupper, vil man kunne beholde single-signOn til andre norske tjenester som før. 
 
