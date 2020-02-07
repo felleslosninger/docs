@@ -34,9 +34,9 @@ formatet.
 | xlsx    | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet         |
 | pptx    | application/vnd.openxmlformats-officedocument.presentationml.presentation |
 | zip     | application/octet-stream                                                  |
-| Mime-type for utvidelser:                                                           |
-| xml     | application/vnd.difi.dpi.bevis+xml                                        |
-| xml     | application/vnd.difi.dpi.lenke+xml                                        |
-| xml     | application/vnd.difi.dpi.arrangement+xml                                  |
+| Utvidelser: |                                                                       |
+| xml     | [application/vnd.difi.dpi.bevis+xml](https://difi.github.io/felleslosninger/sdp_bevis.html) |
+| xml     | [application/vnd.difi.dpi.lenke+xml](sdp_lenke.html)                      |
+| xml     | [application/vnd.difi.dpi.arrangement+xml](sdp_arrangement.html)          |
 
 Listen kan eventuelt utvides ved behov.
