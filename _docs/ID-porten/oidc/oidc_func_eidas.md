@@ -9,14 +9,12 @@ product: ID-porten
 
 ## Om eIDAS
 
-ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser.  For mer info om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/How+does+it+work+-+eIDAS+solution](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/How+does+it+work+-+eIDAS+solution).  
+ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser.  For mer info om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030](https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030).  
 
 Funksjonaliteten har blitt utviklet med støtte fra EU-kommisjonen, se [Connecting Europe Facility Norge](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital).
 
 
 {% include image.html file="oidc_func_eidas-931dea0a.png" url="https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital" alt="CEF logo" max-width="200" %}
-
-## Overordnet om eIDAS-støtte
 
 
 ID-porten tilbyr to typer eidas-støtte over OIDC:
@@ -25,20 +23,24 @@ ID-porten tilbyr to typer eidas-støtte over OIDC:
 * **Avansert**:  Tjenesten kan selv styre hvilken eIDAS-oppførsel de vil ha, ved å sende ulike parametre som del av autentiseringsforespørselen.
 
 
-Alternativene er oppsummert i følgende tabell:
 
-|Alternativ | |	Parametre tilstades i autentiseringsforespørsel	||||Respons||
-|Flyt	|Krever gjenkjenning (1)|eidas-støtte<br> (login_hint) | utlevere eidas-kjerneattributter<br>(scope = eidas)| tilleggsgjenkjenningsalgoritmer<br> (claims{identitymatch} ) | sektor-spesifikke attributter <br>(claims {eidas_*} )|Benytta gjenkjenningsalgoritme <br>(eidas_identitymatch )|Sikkerhetsnivå <br>(acr) |
-| --- |:---:| --- |--- | --- | --- | --- | --- |
-|Enkel| JA    |ja |nei |nei  | nei |tom  (2)|	Level3 Level4|
-|Avansert	|JA|	ja|	ja	|nei|	mulig|	tom (2)	|Level3 Level4 |
-|||||BEST_EFFORT| mulig | UNAMBIGUOUS BEST_EFFORT|Level3 Level4 |
-|Avansert	|NEI	|ja	|ja	|NOT_FOUND	|mulig| UNAMBIGUOUS NOT_FOUND ERROR |Level3 Level4|
-|||||NOT_FOUND BEST_EFFORT|	mulig|UNAMBIGUOUS BEST_EFFORT NOT_FOUND ERROR|Level3 Level4|
+## Hva må jeg gjøre for å motta enkel eIDAS-pålogging over OIDC?
 
-(1) Ved "krever gjenkjenning", vil ID-porten vise en feilside dersom bruker ikke ble gjenkjent ihht forespurt gjenkjenningsstyrke
+- sende en mail til ID-porten og be om at OIDC-integrasjonen blir aktivert for eidas i den såkalte 'eid-selector'
 
-(2) UNAMBIGUOUS vil bli brukt, men IdentityMatch returneres ikke dersom ikke den er forspurt.
+Ein gong i fremtida vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tenester
+
+## Hva må jeg gjøre for å motta avansert eIDAS-pålogging over OIDC ?
+
+P.t er avansert eIDAS kun tilgjenglig ved at du må i egen løsning lage to "innganger" til tjenesten din, dvs.  en "logg på med eidas"-knapp, og en "logg på med norsk eID"-knapp.
+
+- /autorize-kallet må inneholde `eidas:true` i `login_hint`
+- For å få du utlevert eidas-attributter, kan du forespørre om scopet `eidas`
+- Du kan styre gjenkjenning-prosessen mot Folkeregisteret ved å forespørre `identitymatch` som oidc-claims
+- Du kan be om sektor-spesifikke eidas-attributter ved å forespørre disse i som oidc-claims
+
+
+Disse valgene er nærmere detaljert i egne avsnitt nedenfor:
 
 
 
@@ -48,13 +50,11 @@ Se http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest for korrekt 
 
 ### 1: eIDAS-støtte
 
-Alle som vil motta eidas-pålogging sender inn `eidas:true` som "login_hint".
-
-Standard gjenkjenningsalgoritme basert på entydig, identifikator-basert gjenkjenning ('UNAMBIGUOUS')  vil bli forsøkt. Dersom ingen folkeregisterperson ble gjenkjent, vil innloggingsflyten da stoppe med at ID-porten OIDC-provider viser en feilmelding ("This service require a norwegian D-number, but none could be found" (Denne oppførselen kalles "kreve gjenkjenning").
+Avansert eidas-pålogging trigges ved å sende inn `eidas:true` som "login_hint" i /authorize-kallet.
 
 eIDAS sikkerhetstnivå "high" mappes til "Level4" og nivå "substantial" mappes til "Level3" i acr-claimet i id_token.
 
-Det er ingen sentral tilgongsstyring i OIDC provider på kven som skal ha tilgong, alle klienter kan sende login_hint. Ein gong i fremtida (2020?) vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tenester.
+Det er ingen sentral tilgongsstyring i OIDC provider på kven som skal ha tilgong, alle klienter kan sende login_hint.
 
 ```
 https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
@@ -91,6 +91,14 @@ https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
 ### 3: Forespørre tilleggsgjenkjenningsalgoritmer  (herunder "kreve gjenkjenning")
 
 Klienter kan forespørre ekstra gjenkjenningsalgoritmer, som vil bli forsøkt i tillegg til standard-oppførselen med entydig identifikator-basert gjenkjenning ('UNAMBIGUOUS').
+
+
+
+Standard gjenkjenningsalgoritme basert på entydig, identifikator-basert gjenkjenning ('UNAMBIGUOUS')  vil bli forsøkt. Dersom ingen folkeregisterperson ble gjenkjent, vil innloggingsflyten da stoppe med at ID-porten OIDC-provider viser en feilmelding ("This service require a norwegian D-number, but none could be found" (Denne oppførselen kalles "kreve gjenkjenning").
+
+
+
+
 
 Dette gjøres ved å bruke standard OIDC-funksjonalitet for å forespørre claims i id_token, se [http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter](http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter) .  Klienten må inkludere en array over ønska identitymatch-verdier, slik:
 
