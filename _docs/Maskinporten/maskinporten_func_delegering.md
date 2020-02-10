@@ -56,7 +56,7 @@ Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
   "prefix": "difitest",
   "subscope": "test2",
   "description": "scope som støtter ekstern delegeringskilde",
-  "delegation_source": "https://tt02.altinn.no"
+  "delegation_source": "https://tt02.altinn.no/"
 }
 ```
 Merk at Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering.
