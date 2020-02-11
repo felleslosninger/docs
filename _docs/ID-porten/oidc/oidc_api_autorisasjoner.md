@@ -94,7 +94,7 @@ Bearer-tokenet i forespørselen må ha `idporten:authorizations.revoke` scope.
 Endepunktet /revokelist gir oversikt over kva autorisasjoner som har blitt revokert den siste tida. Typisk bruk er klientar med mange langt-levande token der ein ynskjer å redusere antall kall mot /tokeninfo. Normal bruk av /tokeninfo er foretrukken for dei aller fleste. Endepunktet er åpent og krever ikkje autentisering.
 
 ```
-GET /idporten-oidc-provider/revokelist?clientId=testklient
+GET /idporten-oidc-provider/revokelist?client_id=testklient
 {
     "created": 1580303929800,
     "revoked_access_tokens": [
