@@ -97,7 +97,7 @@ Endepunktet /revokelist gir oversikt over kva autorisasjoner som har blitt revok
 GET /idporten-oidc-provider/revokelist?clientId=testklient
 {
     "created": 1580303929800,
-    "revokedAccessTokens": [
+    "revoked_access_tokens": [
         {
             "expires": 1581306298998, 
             "revoked": 1580302929704, 
