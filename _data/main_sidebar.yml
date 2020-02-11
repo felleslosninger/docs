@@ -3,21 +3,6 @@ sidebarTitle: Fellesløsninger
 ## See the generic.yml file as an example of the allowed yaml format.
 
 folders:
-- title: eFormidling
-
-  folderitems:
-
-  - title: Om eFormidling
-    jurl: /eformidling_index.html
-
-  - title: Installasjonsveiledning
-    jurl: /eformidling_download_ip.html
-
-  - title: Teknisk dokumentasjon
-    jurl: /eformidling_nm_about.html
-    #Må endre jurl på teknisk info
-
-
 - title: ID-porten
   folderitems:
 
@@ -40,6 +25,7 @@ folders:
 
 - title: Kontaktregisteret
   folderitems:
+  
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /krr_index.html
 
@@ -49,34 +35,47 @@ folders:
   - title: Brukerspesifikt oppslag REST
     jurl: /brukerspesifikt_oppslag_krr_rest.html
 
-
-
 - title: Digital postkasse
   folderitems:
+  
   - title: Om digital postkasse
     jurl: /digipost_index.html
 
   - title: Veiledning og klienter
     jurl: /sdp_index_innledning.html
 
-- title: eInnsyn
+- title: eFormidling
   folderitems:
-  - title: Om eInnsyn
-    jurl: /einnsyn_index.html
 
-  - title: eInnsyn-klient
-    jurl: /einnsyn_forutsetninger.html
+  - title: Om eFormidling
+    jurl: /eformidling_index.html
+
+  - title: Installasjonsveiledning
+    jurl: /eformidling_download_ip.html
+
+  - title: Teknisk dokumentasjon
+    jurl: /eformidling_nm_about.html
+    #Må endre jurl på teknisk info
 
 - title: eSignering
   folderitems:
+
   - title: Om eSignering
     jurl: /esign_index.html
 
   - title: Kom i gang med eSignering
     jurl: /esign_komigang.html
 
-- title: ELMA
+- title: eInnsyn
+  folderitems:
 
+  - title: Om eInnsyn
+    jurl: /einnsyn_index.html
+
+  - title: eInnsyn-klient
+    jurl: /einnsyn_forutsetninger.html
+
+- title: ELMA
   folderitems:
 
   - title: about ELMA
@@ -106,3 +105,4 @@ related_resources_list:
 
 - title: Altinn Docs
   jurl: https://altinn.github.io/docs/
+
