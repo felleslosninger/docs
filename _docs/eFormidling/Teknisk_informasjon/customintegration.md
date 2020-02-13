@@ -28,7 +28,7 @@ graph LR
 
 SR response
 ```json
-{ % include /eformidling/nextmove/sr_response.json % }
+{ % include eformidling/nextmove/sr_response.json % }
 ```
 
 
@@ -42,7 +42,11 @@ SR response
 Eksempler på hvordan meldingene bygges opp
 
 [Kryptering](https://github.com/difi/move-integrasjonspunkt/blob/master/dokumentpakking/src/main/java/no/difi/meldingsutveksling/dokumentpakking/service/CmsUtil.java)
+
+
 [Maskinporten](https://github.com/difi/move-integrasjonspunkt/blob/master/security/src/main/java/no/difi/meldingsutveksling/auth/OidcTokenClient.java)
+
+
 [Asic](https://github.com/difi/move-integrasjonspunkt/blob/master/integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/AsicHandler.java)
 
 ## Kvitteringsmeldinger og logging
