@@ -17,7 +17,7 @@ Utvalgte OIDC-klienter kan få tilgang til å administrere integrasjonar i ID-po
 
 ## Hvordan få tilgang ?
 
-Ta kontakt med idporten@difi.no for å få tilgang til å bruke tjenesten.
+Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få tilgang til å bruke tjenesten.
 
 
 ## Bruk av Oauth2 {#scopes}

@@ -31,7 +31,7 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 
 > * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
 
-Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Brannmuråpninger i testmiljø
 
@@ -109,7 +109,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 **Å gjøre:**
 1. Anskaffe virksomhetssertifikat
 2. Legge sertifikat i Java Key Store.
-3. Sende sertifikat tilDigitaliseringsdirektoratet <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+3. Sende sertifikat tilDigitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 **Hvordan?**
 

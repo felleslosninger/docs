@@ -18,7 +18,7 @@ Id-porten til byr eit OAuth2 beskytta REST-api for å vise, opprette, endre og s
 
 ## Hvordan få tilgang ?
 
-Ta kontakt med idporten@difi.no for å få tilgang til å bruke tjenesten.
+Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få tilgang til å bruke tjenesten.
 
 
 ## Bruk av Oauth2

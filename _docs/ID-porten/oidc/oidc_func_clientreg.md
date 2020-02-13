@@ -28,7 +28,7 @@ Vi har 3 måter du kan få registrert din integrasjon:
 
 - Selvbetjening, ved å logge inn på [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no/#/).
 - Selvbetjening, ved å bruke vårt [selvbetjenings-API](oidc_api_admin.html)
-- Manuelt, ved å sende epost til idporten@difi.no  (kun for ID-porten og Kontaktregisteret)
+- Manuelt, ved å sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>  (kun for ID-porten og Kontaktregisteret)
 
 ## Integrasjonstyper
 

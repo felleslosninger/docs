@@ -34,5 +34,9 @@ formatet.
 | xlsx    | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet         |
 | pptx    | application/vnd.openxmlformats-officedocument.presentationml.presentation |
 | zip     | application/octet-stream                                                  |
+| Utvidelser: |                                                                       |
+| xml     | [application/vnd.difi.dpi.bevis+xml](sdp_bevis.html)                      |
+| xml     | [application/vnd.difi.dpi.lenke+xml](sdp_lenke.html)                      |
+| xml     | [application/vnd.difi.dpi.arrangement+xml](sdp_arrangement.html)          |
 
 Listen kan eventuelt utvides ved behov.

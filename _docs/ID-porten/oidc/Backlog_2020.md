@@ -15,13 +15,6 @@ Releasen vart produksjonssatt 2020-12-31
 ## Ny funksjonalitet:
 
 
-#### Altinn Autorisasjons-basert tilgangstyring mot selvbetjenings-web
-
-Det blirt no mogeleg for kundar å peike ut administratorar som skal kunne sjølvbetjene i Produksjon ved å tildele ei spesiell rolle i Altinn. Dette erstatter dagens manuelle innmelding av fødselsnummer.
-
-
-
-
 #### Modernisere utsendelse av pinkodebrev
 
 Produktet som brukes til å produsere MinID pinkode-brev er end-of-life, og trenger erstattes.

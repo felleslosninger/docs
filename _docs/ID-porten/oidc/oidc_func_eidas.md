@@ -9,14 +9,12 @@ product: ID-porten
 
 ## Om eIDAS
 
-ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser.  For mer info om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/How+does+it+work+-+eIDAS+solution](https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/How+does+it+work+-+eIDAS+solution).  
+ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser.  For mer info om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030](https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030).  
 
 Funksjonaliteten har blitt utviklet med støtte fra EU-kommisjonen, se [Connecting Europe Facility Norge](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital).
 
 
 {% include image.html file="oidc_func_eidas-931dea0a.png" url="https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital" alt="CEF logo" max-width="200" %}
-
-## Overordnet om eIDAS-støtte
 
 
 ID-porten tilbyr to typer eidas-støtte over OIDC:
@@ -25,36 +23,33 @@ ID-porten tilbyr to typer eidas-støtte over OIDC:
 * **Avansert**:  Tjenesten kan selv styre hvilken eIDAS-oppførsel de vil ha, ved å sende ulike parametre som del av autentiseringsforespørselen.
 
 
-Alternativene er oppsummert i følgende tabell:
 
-|Alternativ | |	Parametre tilstades i autentiseringsforespørsel	||||Respons||
-|Flyt	|Krever gjenkjenning (1)|eidas-støtte<br> (login_hint) | utlevere eidas-kjerneattributter<br>(scope = eidas)| tilleggsgjenkjenningsalgoritmer<br> (claims{identitymatch} ) | sektor-spesifikke attributter <br>(claims {eidas_*} )|Benytta gjenkjenningsalgoritme <br>(eidas_identitymatch )|Sikkerhetsnivå <br>(acr) |
-| --- |:---:| --- |--- | --- | --- | --- | --- |
-|Enkel| JA    |ja |nei |nei  | nei |tom  (2)|	Level3 Level4|
-|Avansert	|JA|	ja|	ja	|nei|	mulig|	tom (2)	|Level3 Level4 |
-|||||BEST_EFFORT| mulig | UNAMBIGUOUS BEST_EFFORT|Level3 Level4 |
-|Avansert	|NEI	|ja	|ja	|NOT_FOUND	|mulig| UNAMBIGUOUS NOT_FOUND ERROR |Level3 Level4|
-|||||NOT_FOUND BEST_EFFORT|	mulig|UNAMBIGUOUS BEST_EFFORT NOT_FOUND ERROR|Level3 Level4|
+## Hva må jeg gjøre for å motta enkel eIDAS-pålogging over OIDC?
 
-(1) Ved "krever gjenkjenning", vil ID-porten vise en feilside dersom bruker ikke ble gjenkjent ihht forespurt gjenkjenningsstyrke
+- du må sende en mail til ID-porten og be om at OIDC-integrasjonen blir aktivert for eidas i den såkalte 'eid-selector'
 
-(2) UNAMBIGUOUS vil bli brukt, men IdentityMatch returneres ikke dersom ikke den er forspurt.
+Ein gong i fremtida vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tenester
+
+## Hva må jeg gjøre for å motta avansert eIDAS-pålogging over OIDC ?
+
+P.t er avansert eIDAS kun tilgjenglig ved at du må i egen løsning lage to "innganger" til tjenesten din, dvs.  en "logg på med eidas"-knapp, og en "logg på med norsk eID"-knapp.
+
+- /autorize-kallet må inneholde `eidas:true` i `login_hint`
+- For å få du utlevert eidas-attributter, kan du forespørre om scopet `eidas`
+- Du kan styre gjenkjenning-prosessen mot Folkeregisteret ved å forespørre `identitymatch` som oidc-claims
+- Du kan be om sektor-spesifikke eidas-attributter ved å forespørre disse i som oidc-claims
 
 
+Disse valgene er nærmere detaljert i egne avsnitt nedenfor:
 
-## Tilgjengelig eIDAS-funksjonalitet i autentiseringsforespørsel
-
-Se http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest for korrekt syntax og valideringsregler for en autentiseringsforespørsel.
 
 ### 1: eIDAS-støtte
 
-Alle som vil motta eidas-pålogging sender inn `eidas:true` som "login_hint".
-
-Standard gjenkjenningsalgoritme basert på entydig, identifikator-basert gjenkjenning ('UNAMBIGUOUS')  vil bli forsøkt. Dersom ingen folkeregisterperson ble gjenkjent, vil innloggingsflyten da stoppe med at ID-porten OIDC-provider viser en feilmelding ("This service require a norwegian D-number, but none could be found" (Denne oppførselen kalles "kreve gjenkjenning").
+Avansert eidas-pålogging trigges ved å sende inn `eidas:true` som "login_hint" i /authorize-kallet.
 
 eIDAS sikkerhetstnivå "high" mappes til "Level4" og nivå "substantial" mappes til "Level3" i acr-claimet i id_token.
 
-Det er ingen sentral tilgongsstyring i OIDC provider på kven som skal ha tilgong, alle klienter kan sende login_hint. Ein gong i fremtida (2020?) vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tenester.
+Det er ingen sentral tilgongsstyring i OIDC provider på kven som skal ha tilgong, alle klienter kan sende login_hint.
 
 ```
 https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
@@ -67,14 +62,12 @@ https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
 
 ### 2: Utlevere eidas kjerneattributter
 
-Ved å sende 'eidas' som et scope i autentiseringsforespørsel, vil eidas kjerneattributter (Minimum Data Set) verte utlevert i id_token:
+Ved å sende 'eidas' som et scope i autentiseringsforespørsel, vil eidas kjerneattributter bli utlevert i id_token:
 
 * 4 obligatoriske eidas attributter (PersonIdentifier, fornavn, etternavn, fødselsdato)
-* 5 valfrie eidas attributter (om desse eksisterer) (todo)
+* Dersom medlemslandet også sender med noen av de valgfrie edias kjerneattributtene, vil disse også utleveres: Navn ved fødsel, fødested, nåværende addresse, kjønn.
 
-Denne funksjonaliteten medfører implisitt aktivering av "avansert" eidas-oppførsel, der mao: resterende funksjonalitet i dette kan avsnittet kan også då benyttast.
-
-Den aktuelle Oauth2-klienten må pre-registreres med tilgang til 'eidas'-scope, for at dette skal virke.
+Den aktuelle Oauth2-klienten må også registreres med 'eidas'-scope i selvbetjeningsløsningen for at dette skal virke.
 
 #### Eksempel:
 
@@ -88,33 +81,46 @@ https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
 
 
 
-### 3: Forespørre tilleggsgjenkjenningsalgoritmer  (herunder "kreve gjenkjenning")
+### 3: Styre gjenkjenning mot folkeregisteret
 
-Klienter kan forespørre ekstra gjenkjenningsalgoritmer, som vil bli forsøkt i tillegg til standard-oppførselen med entydig identifikator-basert gjenkjenning ('UNAMBIGUOUS').
+ID-porten vil alltid forsøke å finne norsk fødsels/d-nummer på den europeiske brukeren, ved å søke i Folkeregisteret etter den utenlandske identifikatoren (eidas-personidentifier).  En vellykka gjenkjenning er avhengig av at:
+1. Personen finnes i Folkeregisteret fra før
+2. Utenlandsk identifikator finnes i Folkregisteret fra før (typisk registrert ved søknad om d-nummer, kilde er passet/id-bevis som ble vist ved identitetskontroll)
+3. Landet sender samme identifikator i eidas-pålogging som er registrert i pkt. 2 (noen land sender av personvernhensyn andre identifikatorer enn de som er trykt på fysiske id-bevis)
 
-Dette gjøres ved å bruke standard OIDC-funksjonalitet for å forespørre claims i id_token, se [http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter](http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter) .  Klienten må inkludere en array over ønska identitymatch-verdier, slik:
+Dersom gjenkjenning ikke var vellykka, vil ID-porten vise en feilside.  
+
+For å slippe å vise denne feilsiden, for eksempel hvis din tjeneste fint kan håndtere brukere uten norsk f/d-nummer, må du eksplisitt be om alternative algoritme for gjenkjenning, såkalt `identitymatch`.  Dette gjøres ved å bruke standard OIDC-funksjonalitet for å forespørre spesifikke claims i id_token, se [http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter](http://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter) .  Klienten må inkludere en array over ønska identitymatch-verdier, slik:
 
 ```
 claims=
 {
   "id_token":
      {
-      "identitymatch":  { "values": ["BEST_EFFORT", "NOT_FOUND"] }
+      "identitymatch":  { "values": [ "NOT_FOUND"] }
      }
 }
 
 ```
 
-
 Følgende verdier er per idag mulig å sende inn i forespørsel
 
-* BEST_EFFORT: Dersom unambiguous ikke gir treff, vil gjenkjenning bli forsøkt basert på navn+fødselsdato.
 * NOT_FOUND: Deaktivere "kreve gjenkjenning", mao: vil motta eIDAS-brukere som ikke er gjenkjent
-* NOT_FOUND BEST_EFFORT: En kombinasjon av de to foregående.
 
-Den algoritmen som ligger til grunn for norsk personidentifikator i reponsen vil bli utlevert i id_token som et claim `eidas_identitymatch`. Verdien "ERROR" kan også utleveres, her har det skjedd en feil i gjenkjenningsprosedyren og/eller integrasjonen mellom ID-porten og Folkeregisteret, og klienten kan ikke tolke fravær av norsk folkeregisteridentifikator som at eidas-brukeren ikke har F/D-nummer.
+Den algoritmen som ligger til grunn for norsk personidentifikator i reponsen vil bli utlevert i id_token som et claim `eidas_identitymatch`. Følgende responser er da mulige:
 
-Dersom verdien "NOT_FOUND" er tilstede i array'en over forespurte gjenkjenningsalgoritmer, medfører dette at standardoppførselen "kreve gjenkjenning" blir deaktivert, og tjenesten vil også kunne motta ikkje-gjenkjente eIDAS-brukere. Claimet "pid" vil da ikke nødvendigvis være tilstede i id_token. Ikke-gjenkjente eIDAS-brukeres sikkerhetsnivå mappes fremdeles til norske nivåer. 'sub'-claimet vil være en pairwise verdi basert på eidas-PersonIdentifier, som medfører at dersom samme eidas-brukere senere blir gjenkjent, vil 'sub' endre seg.
+|`eidas_identitymatch`|Beskrivelse|
+|-|-|
+|UNAMBIGUOUS| Entydig gjenkjenning av norsk f/d-nummer basert på utenlansk id|
+|NOT_FOUND| Vi klarte ikke finne norsk personidentifikator |
+|ERROR| Det har skjedd en feil i gjenkjenningsprosedyren og/eller integrasjonen mellom ID-porten og Folkeregisteret.  Klienten kan ikke tolke fravær av norsk folkeregisteridentifikator som at eidas-brukeren ikke har F/D-nummer|
+
+
+Ikke-gjenkjente eIDAS-brukeres sikkerhetsnivå mappes fremdeles til norske nivåer. 'sub'-claimet vil være en pairwise verdi basert på eidas-PersonIdentifier, som medfører at dersom samme eidas-bruker senere blir gjenkjent, vil 'sub' ikke endre seg.
+
+
+
+
 
 #### Eksempel:
 
@@ -123,7 +129,7 @@ https://oidc-ver2.difi.no/idporten-oidc-provider/authorize?
  ...
   scope=openid profile eidas&
   login_hint=eidas:true&
-  claims={"id_token": { "identitymatch": { "values": ["BEST_EFFORT", "NOT_FOUND"] }}}
+  claims={"id_token": { "identitymatch": { "values": [ "NOT_FOUND"] }}}
  ...
 ```
 
@@ -143,7 +149,7 @@ https://oidc.difi.no/authorize?
    ...              
    &scopes=openid eidas             
    &login_hint=eidas:true             
-   &claims={"idtoken":{"eidas_sector_att_1":null, "eidas_sector_att_2":null, "identitymatch": { "values": ["BEST_EFFORT", "NOT_FOUND"] } }}      
+   &claims={"idtoken":{"eidas_sector_att_1":null, "eidas_sector_att_2":null, "identitymatch": { "values": [ "NOT_FOUND"] } }}      
     ...                                          
 ```
 
@@ -195,12 +201,10 @@ Dersom en tilleggsgjenkjenningsalgoritmer var forspurt, vil claimet `identitymat
 | IdentityMatch | forklaring |
 | --- | --- |
 | UNAMBIGUOS | Identifikator fra utenlandsk eID'en har en entydig kobling mot identitet i Det Sentrale Folkeregister |
-| BEST_EFFORT | Attributter fra utenlandsk eID er benyttet til koble mot sannsynlig identitet i Det Sentrale Folkeregister.   (For eksempel: navn og fødselsdato stemmer med en person i DSF). Metoden har risiko for feil-kobling. |
 | CACHED | Kobling mot norsk personidentifikator er basert på lagret informasjon i ID-porten, og ikke som del av denne innloggingen.  (dette kan typisk skje ved midlertidige integrasjonsfeil mellom ID-porten og DSF)|
 | ERROR | Det oppstod en feil ved forsøket på å koble utenlandsk eID mot norsk personidentifikator (Dette kan skje feks ved feil i kommuniksajonen mellom ID-porten og Det Sentrale Folkeregisteret|
 |NOT_FOUND | Ingen treff ved forsøk på kobling av utenlandsk eID mot norsk personidentifikator i Det Sentrale Folkeregister)|
 |SELF_DECLARED | Norsk personidentifikator er basert på opplysninger som brukeren selv har oppgitt (Brukeren har for eksempel koblet sin Facebook-konto med ID-porten|
-
 
 
 Ved bruk av tilleggsgjenkjenningsalgoritmer vil  tjenesteeier kunne motta to identifikatorer på brukerne:
@@ -233,8 +237,17 @@ Den først i lista, Mohamed Al Samed, er hardkoda i den norske eIDAS Noden til �
  "acr" : "Level3",
  ```
 
+I testmiljøet har vi for tiden 19 land integrert.
+
+
 ## Integrerte land i produksjonsmiljøet
 
-Per Januar 2019 er Estland koblet på i produksjonsmiljøet.    Vi forventer å ha Tyskland, Italia, Portugal, Spania og Luxemburg i løpet av 2019, etterhvert som de blir formelt *notifisert* og fagfellevurdert av EU-kommisjonen.  For en oppdatert status, se EU-kommisjonen sin side: [https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS](https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS)
+Per februar 2020 er følgende land koblet på i produksjonsmiljøet:
+- Belgia
+- Kroatia
+- Estland
+- Italia
+- Luxembourg
+- Spania
 
-I testmiljøet har vi for tiden 19 land integrert.
+For å bli integerte i produksjon, må et land bli formelt *notifisert* og fagfellevurdert av EU-kommisjonen.  For en oppdatert status over denne prosessen, se EU-kommisjonen sin side: [https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS](https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS)
