@@ -28,7 +28,7 @@ graph LR
 
 SR response
 ```json
-{ % include eformidling/nextmove/sr_response.json % }
+{% include /eformidling/nextmove/sr_response.json %}
 ```
 
 
