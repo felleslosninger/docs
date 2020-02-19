@@ -17,7 +17,7 @@ Kunden mottar opplysningene for å vise disse til innbygger i egne løsninger, o
 
 ## Hvordan få tilgang ?
 
-Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester](https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester) for generelle vilkår for tilleggstjenester.
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester-og-priser](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-digdirs-digitale-felleslosninger/tilleggstjenester-og-priser#Tilleggstjenester%20-%C2%A0ID-porten) for generelle vilkår for tilleggstjenester.
 
 ## Brukergrensesnitt
 
