@@ -98,6 +98,8 @@ Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at an
 
 API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html#2b-tilgangsstyring---oauth2-selvbetjeningsklient) på ordinær måte.  
 
+Merk at API-tilbyder aldri må gi direkte tilgang til leverandøren.
+
 ### Lage en leverandør-integrasjon
 
 Leverandør-integrasjoner som skal bruke ekstern delegering, er litt forskjellige fra andre integrasjoner i ID-porten/Maskinporten, og det er derfor viktig å få de registrert korrekt.
