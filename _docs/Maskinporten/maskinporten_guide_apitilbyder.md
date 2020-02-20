@@ -196,7 +196,7 @@ Prosedyren er nærmere dokumentert i [funksjonalitetsbeskrivelse for ekstern del
   * Denne klienten må be et token fra Maskinporten, og så opprette ressursen ved et POST-kall til `https://tt02.altinn.no/maskinporten-api/delegationSchemes`
 
 
-3. Til slutt gir du tilgang til konsumenter på vanlig måte.
+3. Til slutt gir du tilgang til konsumenter på vanlig måte. Merk at leverandøren aldri må gis direkte tilgang.
 
 Merk:
 * Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering
