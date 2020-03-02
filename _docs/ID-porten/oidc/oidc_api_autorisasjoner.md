@@ -17,7 +17,7 @@ Kunden mottar opplysningene for å vise disse til innbygger i egne løsninger, o
 
 ## Hvordan få tilgang ?
 
-Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester](https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester) for generelle vilkår for tilleggstjenester.
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester-og-priser](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-digdirs-digitale-felleslosninger/tilleggstjenester-og-priser#Tilleggstjenester%20-%C2%A0ID-porten) for generelle vilkår for tilleggstjenester.
 
 ## Brukergrensesnitt
 
@@ -89,3 +89,25 @@ DELETE /authorizations/{authorization_id}
 Authorization: Bearer yyyyy
 ```
 Bearer-tokenet i forespørselen må ha `idporten:authorizations.revoke` scope.
+
+### Revokasjonsliste
+Endepunktet /revokelist gir oversikt over kva autorisasjoner som har blitt revokert den siste tida. Typisk bruk er klientar med mange langt-levande token der ein ynskjer å redusere antall kall mot /tokeninfo. Normal bruk av /tokeninfo er foretrukken for dei aller fleste. Endepunktet er åpent og krever ikkje autentisering.
+
+```
+GET /idporten-oidc-provider/revokelist?client_id=testklient
+{
+    "created": 1580303929800,
+    "revoked_access_tokens": [
+        {
+            "expires": 1581306298998, 
+            "revoked": 1580302929704, 
+            "access_token_id": "gWbJcYm54F4Tf5-iQXVyyy1FHI2CnAlZPLx6ChvWnyu"
+        },
+        {
+            "expires": 1581306299998, 
+            "revoked": 1580302929707, 
+            "access_token_id": "gWbJcYm54F4Tf5-iQXVyyy1FHI2CnAlZPLx625vWnop"
+        }
+    ]
+}
+```

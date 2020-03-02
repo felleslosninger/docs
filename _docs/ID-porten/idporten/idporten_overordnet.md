@@ -3,7 +3,7 @@ title: Overordnet arkitekturbeskrivelse
 description:
 summary:
 permalink: idporten_overordnet.html
-sidebar: main_sidebar
+sidebar: oidc
 product: ID-porten
 ---
 
@@ -11,7 +11,7 @@ product: ID-porten
 
 Denne siden gir en oversikt over de funksjoner som ID-porten tilbyr som tjenesteleverandør.
 
-![](/idporten-integrasjonsguide/assets/images/funksjonelt_gammal.bmp "minId_tjenester")
+<!---[](/idporten-integrasjonsguide/assets/images/funksjonelt_gammal.bmp "minId_tjenester")--->
 
 ID-porten tilbyr følgende funksjonalitet
 - **autentisering av sluttbrukere**
@@ -39,20 +39,13 @@ ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 ![](/idporten-integrasjonsguide/assets/images/autentiseringstjenester.bmp "Autentiseringstjenester")
 
 
-## Innlogging
-
-Dette er en overordnet beskrivelse av innloggingstjenesten. For detaljer se [Detaljert beskrivelse av teknisk løsning.](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html)
-
-
-## Utlogging
-
 ## Støttede protokoller
-* SAML2
 * OpenID Connect
+* SAML2 (fases ut!)
 
 ## **Brukervennlighet**
 
- Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf).
+Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf).
 
 ## **Føderering**
 
@@ -77,7 +70,7 @@ ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenes
 
 ## Hvordan få tilgang til ID-porten
 
-Følg prosessen på [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten) for å integrere en SAML-integrasjon i ID-porten.
+Følg prosessen på [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten) for å integrere mot ID-porten.
 
 
 ### Informasjon som må utveksles

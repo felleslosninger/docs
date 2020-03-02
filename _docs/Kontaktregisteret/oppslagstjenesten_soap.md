@@ -77,7 +77,7 @@ Denne tjenesten gir offentlig virksomhet tilgang til printleverandør sitt serti
 ## Hvordan få tilgang til oppslagstjenesten? 
 
 **Kontakt oss**
-Les mer på <http://samarbeid.difi.no> eller ta kontakt med <idporten@difi.no> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
+Les mer på <http://samarbeid.difi.no> eller ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
 
 Følgende må gjøres før din virksomhet kan ta i bruk oppslagstjenesten:
 
@@ -99,7 +99,7 @@ Følgende må oppgis/avtales før man kan ta i brukt kontakt- og reservasjonsreg
 | Organisasjonsnummer for virksomheten | Dette må være det organisasjonsnummeret som ligger i virksomhetssertifikatet brukt i forbindelse med oppslag mot oppslagstjenesten. | 
 | | | 
 
-All informasjon utveksles over e-post til <idporten@difi.no>
+All informasjon utveksles over e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Datamodell
 
@@ -176,7 +176,7 @@ Accept: gzip, deflate
 | Produksjon | | https://kontaktinfo-ws.difi.no/kontaktinfo-external/ws-v5 |
 | | | | 
 
-I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via idporten@difi.no
+I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 Miljøene er:
 
@@ -188,7 +188,7 @@ Miljøene er:
 
 Miljøene er tilgjengelig over internett. IP-adressen finnes ved å slå opp DNS-adressen for hvert miljø. Portnummeret er standard port for HTTPS, port: 443.
 
-Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailtO:idporten@difi.no">idporten@difi.no</a>. 
+Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 *** 
 
