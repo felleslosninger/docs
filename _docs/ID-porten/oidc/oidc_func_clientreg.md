@@ -116,7 +116,7 @@ Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for sc
 Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 
 
-| Integrasjonstype | Klient-type `application_type` |  tillatte `token_endpoint_auth_method` | tillatte `grant_types` | Standard-scope | [Kan legge til scopes?](oidc_protocol_scope.html) |
+| Integrasjonstype | Klient-type 'application_type' |  tillatte 'token_endpoint_auth_method' | tillatte 'grant_types' | Standard-scope | Kan legge til scopes? |
 |-|-|-|-|-|-|
 |ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | eidas, no_pid |
 ||  browser |  none     | authorization_code   |openid profile | kun eidas, no_pid |
