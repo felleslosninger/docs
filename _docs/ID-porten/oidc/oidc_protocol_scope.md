@@ -10,11 +10,29 @@ product: ID-porten
 
 ID-porten and Maskinporten can issue tokens to scopes controlled by Difi, as well as scopes controlled by other organizations.
 
-Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope.
+
+## Scope limitation
+
+Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope.  An empty value means that clients of any integration type can get access_tokens containing the scope.
+
+The available scope limitations are :
+
+| Integration Type |Description|
+|-|-|
+|maskinporten  | Only for server to server integration   |
+|api_klient    | For integrations consuming APIs that require an authenticated user  |
+
+In addition, there are some reserved integration_types like 'idporten', 'krr' for dedicated use cases as can be seen from the tables below.
+
+
+You will not be able to register a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
+
+
+
 
 ## Reserved scopes
 
-The following scopes triggers special treatment in ID-porten OIDC provider.  They can be used by all customers.
+The following scopes triggers special behaviour in ID-porten OIDC provider.  They can be used by all customers.
 
 |Scope|Description| Allowed integration_types|
 |-|-|-|
@@ -25,6 +43,14 @@ The following scopes triggers special treatment in ID-porten OIDC provider.  The
 
 ## Scopes for APIs from Digitaliseringsdirektoratet
 
+Any customer can self-service their clients with the following scopes:
+
+| Scope |Description|Allowed integration_types|
+|-|-|-|
+|global/*    | Scopes for global access to the Contact Registry |  krr |
+|user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
+
+
 You need to ask us for permission to be able to use these scopes:
 
 | Scope |Description|Allowed integration_types|
@@ -33,9 +59,7 @@ You need to ask us for permission to be able to use these scopes:
 |idporten:scopes*   | Scopes allowing for self-service of ID-porten/Maskinporten API management    | maskinporten|
 |idporten:authorizations.*  | [API for authorizations](oidc_api_autorisasjoner.html) | api_klient |
 |idporten:user.log.read |[API for authentication history](oidc_api_logghistorikk.html) | api_klient |
-|global/*    | Scopes for global access to the Contact Registry |  krr |
 |global/idporten.authlevel.read| [API for authentication level of assurance](oidc_api_authlevel.html) | maskinporten|
-|user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
 
 
 ## Scopes for APIs from 3rd parties
@@ -48,23 +72,7 @@ ID-porten and Maskinporten protect a number of APIs from other organizations. Se
 | [https://integrasjon.difi.no/scopes/all](https://integrasjon.difi.no/scopes/all)  | A list of scopes protected by ID-porten in Production |
 | [https://integrasjon-ver2.difi.no/scopes/all](https://integrasjon-ver2.difi.no/scopes/all)     |  A list of scopes protected by ID-porten in VER2 environment.  |
 
-
-
-## Limiting scope usage
-
-Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope.  An empty value means that clients of any integration type can get access_tokens containing the scope.
-
-| Integration Type |Description|
-|-|-|
-|idporten   | requires end-user authentication   |
-|maskinporten  | only for server to server integration   |
-|krr   | for Contact Registry   |
-|eformidling    | for eformidling  |
-|api_klient    | requires end-user authentication. DigDir service.  |
-
-
-
-You will not be able to add a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
+See the allowed_integration_type claim on each entry to see if any scope limitation applies.
 
 ## Delegation source
 

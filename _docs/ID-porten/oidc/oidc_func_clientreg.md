@@ -98,11 +98,11 @@ Vi støtter ikke implicit, password eller client-credentials grant.
 Klient-type (`application_type`) forteller hvilke type kjøretidsmiljø klienten kjører under.  [Oauth2 kap 2.1](https://tools.ietf.org/html/rfc6749#section-2.1) lister opp hvilke valg som finnes.  Valg av klient-type er en sikkerhetsvurdering kunden skal utføre.
 
 
-|Klient-type|Oauth2 `application_type`|tilatt klientautentisering|Beskrivelse|
+|Klient-type|Oauth2 'application_type'|tilatt klientautentisering|Beskrivelse|
 |-|-|-|-|
-| Standard-klient   | Web app   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
-| [Single-page applikasjon (SPA)](oidc_auth_spa.html)   | Brower-based app  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
-| [Mobil-app](oidc_auth_app.html)  | Native app | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
+| Standard-klient   | Web   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
+| [Single-page applikasjon (SPA)](oidc_auth_spa.html)   | browser  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
+| [Mobil-app](oidc_auth_app.html)  | native  | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
 
 
 
@@ -117,7 +117,7 @@ Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 
 | Integrasjonstype | Klient-type 'application_type' |  tillatte 'token_endpoint_auth_method' | tillatte 'grant_types' | Standard-scope | Kan legge til scopes? |
 |-|-|-|-|-|-|
-|ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | eidas, no_pid |
+|ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
 ||  browser |  none     | authorization_code   |openid profile | kun eidas, no_pid |
 ||  native |   none     | authorization_code   |openid profile | kun eidas, no_pid |
 |API-klient innlogget bruker  |samme som for idporten ||| | ja |
