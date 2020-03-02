@@ -47,7 +47,7 @@ The following scopes triggers special treatment in ID-porten OIDC provider.  The
 |no_pid   | Triggers a [pseudonymous authentication](oidc_func_nopid.html)   |
 |eidas    | Include the eIDAS attributes in the id_token   |
 
-## Scopes for APIs from Digitaliseringsdirektoratet 
+## Scopes for APIs from Digitaliseringsdirektoratet
 
 You need to ask us for permission to be able to use these scopes:
 
@@ -71,3 +71,7 @@ If the attribute allowed_integration_types isn't empty, the scope is limited to 
 |api_klient    | requires end-user authentication. DigDir service.  |
 
 You will not be able to add a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
+
+## Delegation source
+
+The attribute `delegation_source` can be set on a scope in order to activate it for external delegation in e.g. Altinn.
