@@ -110,8 +110,7 @@ ID-porten/Maskinporten har allerede [to eksisterende interne delegeringsmekanism
 * For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
 * For leverandører som bruker selvbetjenings-API, må de **ikke** bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette `client_orgno` i registrerings-kallet.
 
-
-**Merk: i første utgave av denne funksjonaliteten er det ikke mulig for leverandør å registrere det aktuelle oauth2-scopet tilhørende API-tilbyder på klienten. Dette vil bli endret ila. våren 2020.**
+Leverandør må registrere API-tilbyders scope på sin klient.
 
 
 ### Delegering i Altinn

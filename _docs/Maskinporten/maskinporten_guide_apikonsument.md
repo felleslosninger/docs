@@ -112,9 +112,9 @@ POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
 ```
 'kid'-verdien må være unik blant alle Maskinportens kunder.  
 
-#### Registrere klient som leverandør
+#### Registrere klient som leverandør for ekstern delegering
 
-En leverandør kan registere sin integrasjon på samme måte som over, med ett unntak: *leverandør har ikke mulighet til å forhåndsregistrere det aktuelle API-scopet på sin klient.  I stedet må scope og kunde oppgis run-time i token-forespørsel.*.
+Leverandører sm bruke ekstern delegering registerer sin integrasjon på samme måte som over.
 
 
 ### 5: Be om token
@@ -161,7 +161,7 @@ Content-type: application/x-www-form-urlencoded
 ```
 Maskinporten vil først validere gyldigheten av JWT'en. Deretter vil virksomhetssertifikatet (brukt til signering av JWT'en) valideres og dersom klienten har tilgang til de forespurte ressursene returneres et access_token til klienten.
 
-Dersom du er leverandør må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
+Dersom du er leverandør opp mot et API som krever ekstern delegering, må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
 
 Generelt er det sikkerhetsmessig problematisk å be om mange scopes i samme token, så vi anbefaler ett scope per token.
 
@@ -205,7 +205,7 @@ Leverandør-integrasjoner som skal bruke ekstern delegering, er litt forskjellig
 
 ID-porten/Maskinporten har allerede to eksisterende interne delegeringsmekanismer, som ikke er kompatible med delegering i Altinn. For å oppnå korrekt registrering, må du da:
 
-For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
-For leverandører som bruker selvbetjenings-API, må de ikke bruke tokens med idporten:dcr.supplier-scopet, men derimot idporten:dcr.write: leverandøren skal altså ikke sette client_orgno i registrerings-kallet.
+* For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
+* For leverandører som bruker selvbetjenings-API, må de ikke bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette client_orgno i registrerings-kallet.
 
-Når integrasjonen din så skal forespørre tokens på vegne av konsumenter, må du oppgi konsumentens organisasjonsnummer som `consumer_org`-claim i JWT-grantet. Maskinporten vil da sjekke Altinn, om delegeringsforholdet finnes mellom konsument og leverandør for aktuelt scope.
+Når integrasjonen din så skal forespørre tokens på vegne av konsumenter, må du oppgi konsumentens organisasjonsnummer som `consumer_org`-claim i JWT-grantet. Maskinporten vil da sjekke Altinn, om et gyldig delegeringsforhold finnes mellom konsument og leverandør for aktuelt scope.
