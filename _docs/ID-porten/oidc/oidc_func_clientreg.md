@@ -32,17 +32,19 @@ Vi har 3 måter du kan få registrert din integrasjon:
 
 ## Integrasjonstyper
 
-Du må registrere en klientype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
+Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
 
 Det som støttes foreløpig er:
 
 | Integrasjonstype |Beskrivelse|
 |-|-|
-|idporten   | krever sluttburker autentisering   |
+|idporten   | Ordinær innlogging gjennom ID-porten  |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
 |krr   | Kontaktregisteret   |
 |eformidling    | for eFormidling  |
-|api_klient    | API-klient innlogget bruker  |
+|api_klient    | For tjenester som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
+
+Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 
 Du vil ikke være i stand til å legge på et scope på klienten din som er i konflikt med klienten's integrasjonstype. F.eks du kan ikke legge til et scope som er begrenset til "maskinporten" på en ID-porten klient, og vice versa.
 
@@ -93,38 +95,34 @@ Vi støtter ikke implicit, password eller client-credentials grant.
 
 ### Klient-typer
 
-Valg av klient-type er en sikkerhetsvurdering kunden skal utføre.  Vi kategoriserer klienter ved hvordan de autentiserer og identifiserer seg opp mot ID-porten. Dette er i sin tur avhengig av kjøretidsmiljøet til klienten. Vi legger til grunn  på definisjonene fra  [Oauth2 kap 2.1](https://tools.ietf.org/html/rfc6749#section-2.1).
+Klient-type (`application_type`) forteller hvilke type kjøretidsmiljø klienten kjører under.  [Oauth2 kap 2.1](https://tools.ietf.org/html/rfc6749#section-2.1) lister opp hvilke valg som finnes.  Valg av klient-type er en sikkerhetsvurdering kunden skal utføre.
 
 
-|Klient-type|Oauth2-begrep|tilatt klientautentisering|Beskrivelse|
+|Klient-type|Oauth2 'application_type'|tilatt klientautentisering|Beskrivelse|
 |-|-|-|-|
-| Standard-klient   | Web app   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
-| Single-page applikasjon (SPA)   | Brower-based app  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
-| Mobil-app  | Native app | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
-
-Merk at klient-type ikke blir lagret som del av klient-registreringen, men utledet basert på `token_endpoint_auth_method` og `grant_types`.
+| Standard-klient   | Web   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
+| [Single-page applikasjon (SPA)](oidc_auth_spa.html)   | browser  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
+| [Mobil-app](oidc_auth_app.html)  | native  | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
 
 
 
+### Scopes
 
+Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for scopes](oidc_protocol_scope.html) for fullstendige detaljer.
 
 
 ## Oversikt over kombinasjonar
 
 Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 
-
-| Integrasjon | application_type |  tillatte token_endpoint_auth_method | tillatte grant_types | scope | Kan legge til scopes? |
+| Integrasjonstype | Klient-type 'application_type' |  tillatte 'token_endpoint_auth_method' | tillatte 'grant_types' | Standard-scope | Kan legge til scopes? |
 |-|-|-|-|-|-|
-|ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | nei |
-||  browser |  none     | authorization_code   |openid profile | nei |
-||  native |   none     | authorization_code   |openid profile | nei |
+|ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
+||  browser |  none     | authorization_code   |openid profile | kun eidas, no_pid |
+||  native |   none     | authorization_code   |openid profile | kun eidas, no_pid |
 |API-klient innlogget bruker  |samme som for idporten ||| | ja |
 |Maskinporten| web |private_key_jwt  | jwt_bearer_token | |ja|
 |Kontaktregisteret| web | private_key_jwt  | jwt_bearer_token |global/kontaktinformasjon.read global/spraak.read global/sikkerdigitalpost.read global/sertifikat.read global/varslingsstatus.read |nei|
-
-
-
 
 
 

@@ -1,7 +1,7 @@
 ---
-title: OAuth2 beskytta REST-API for administrasjon av OIDC-integrasjoner
+title: REST-API for administrasjon av OIDC-integrasjoner
 description: API som gir tjenesteleverandørar mulighet til å administrere sine OIDC-integrasjoner.
-summary: "Oauth2-beskyttet REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere sine OIDC/Oauth2-integrasjoner i ID-porten."
+summary: "REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere sine OIDC/Oauth2-integrasjoner i ID-porten."
 permalink: oidc_api_admin.html
 sidebar: oidc
 product: ID-porten
@@ -37,7 +37,7 @@ Klienten må få tildelt scopes for å få tilgang til APIet:
 
 ## Eierskap til integrasjoner
 
-Leverandører kan velge to måter å integrere sine kunder på:
+Leverandører kan velge tre måter å integrere sine kunder på:
 
 ### 1: onbehalfof-integrasjoner
 
@@ -53,6 +53,9 @@ Med selvstendige integrasjoner har hver integrasjon har egen client_id og klient
 
 Ved endring og sletting tillater APIet kun operasjoner på integrasjoner der eget orgno er lagret som supplier_orgno fra før.
 
+### 3: Delegert tilgang i Altinn
+
+Dette gjelder leverandør-integrasjonar som skal konsumere API-er fra 3djepart der API-eier krever at den juridiske konsumenten (=leverandørens kunde) bruker Altinn til å aktivt delegerer en tildelt API-tilgang videre til leverandør.  Se [dokumentasjon av delegering](/maskinporten_func_delegering.html) for detaljer.
 
 ## Ulike typer integrasjonar
 
@@ -96,6 +99,10 @@ POST /clients/{client_id}/jwks
 `kid` må være unik innenfor alle ID-portens kunder.
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
+
+## Registrering av scopes
+
+Se [dokumentasjon av klient-registrering](/oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for registrering av Oauth2 scopes på en integrasjon.
 
 ## REST-grensesnittet
 
