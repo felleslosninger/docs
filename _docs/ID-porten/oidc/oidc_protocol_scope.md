@@ -31,10 +31,10 @@ You need to ask us for permission to be able to use these scopes:
 |-|-|-|
 |idporten:dcr*  | Scopes allowing for self-service of ID-porten integrations   | maskinporten|
 |idporten:scopes*   | Scopes allowing for self-service of ID-porten/Maskinporten API management    | maskinporten|
-|idporten:authorizations.*  | [API for authorizations](/oidc_api_autorisasjoner.html) | api_klient |
-|idporten:user.log.read |[API for authentication history](/oidc_api_logghistorikk.html) | api_klient |
+|idporten:authorizations.*  | [API for authorizations](oidc_api_autorisasjoner.html) | api_klient |
+|idporten:user.log.read |[API for authentication history](oidc_api_logghistorikk.html) | api_klient |
 |global/*    | Scopes for global access to the Contact Registry |  krr |
-|global/idporten.authlevel.read| [API for authentication level of assurance](/oidc_api_authlevel.html) | maskinporten|
+|global/idporten.authlevel.read| [API for authentication level of assurance](oidc_api_authlevel.html) | maskinporten|
 |user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
 
 
