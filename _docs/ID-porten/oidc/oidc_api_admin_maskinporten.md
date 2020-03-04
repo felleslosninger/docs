@@ -20,7 +20,7 @@ Les gjerne [integrasjonsguide for API-tilbydere](maskinporten_guide_apitilbyder.
 
 ### Hvordan få tilgang ?
 
-Ta kontakt med idporten@difi.no for å få tilgang til å bruke APIet.
+Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få tilgang til å bruke APIet.
 
 ### Bruk av Oauth2
 

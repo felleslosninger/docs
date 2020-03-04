@@ -90,7 +90,7 @@ Denne returner alle forsendelser der en av verdiene stemmer.
 
 BildeEks på søk med operatorer inn her
 
-> Skulle det være ting som er uklart når det kommer til bruk av det grafiske brukergrensesnittet, send gjerne en epost til idporten@difi.no.
+> Skulle det være ting som er uklart når det kommer til bruk av det grafiske brukergrensesnittet, send gjerne en epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
 ---
 
