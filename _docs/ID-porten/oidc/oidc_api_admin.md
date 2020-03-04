@@ -49,7 +49,7 @@ Med selvstendige integrasjoner har hver integrasjon har egen client_id og klient
 * Leverandøren må sette client_orgno lik egen kunde sitt organisasjonsnummer.
 * Leverandøren kan opprette integrasjoner på vilkårlige client_orgno
 * Leverandørens eget organisasjonnummer blir *automatisk* satt som `supplier_orgno` (basert på virksomhetssertifikatet som blir brukt mot admin-APIet)
-* (På sikt vil) access_tokens utsted til klienten vil innholde både leverandørens og kundens organisasjonsnummer.
+* Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene.
 
 Ved endring og sletting tillater APIet kun operasjoner på integrasjoner der eget orgno er lagret som supplier_orgno fra før.
 
@@ -96,7 +96,7 @@ POST /clients/{client_id}/jwks
 }
 ```
 
-`kid` må være unik innenfor alle ID-portens kunder.
+`kid` velges av kunde selv, og må være unik innenfor alle ID-porten/Maskinportens kunder.
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 

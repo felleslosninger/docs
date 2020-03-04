@@ -22,7 +22,7 @@ The available scope limitations are :
 |maskinporten  | Only for server to server integration   |
 |api_klient    | For integrations consuming APIs that require an authenticated user  |
 
-In addition, there are some reserved integration_types like 'idporten', 'krr' for dedicated use cases as can be seen from the tables below.
+In addition, there are some reserved integration_types like 'idporten', 'krr' or 'eformidling' for dedicated use cases as can be seen from the tables below.
 
 
 You will not be able to register a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
