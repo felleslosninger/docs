@@ -9,7 +9,6 @@
             "adresselinje4": "Kan hentes fra capabilitylookup eller supleres fra eget register *",
             "postnummer": "Kan hentes fra capabilitylookup eller supleres fra eget register",
             "poststed": "Kan hentes fra capabilitylookup eller supleres fra eget register",                
-            "landkode": "Kan hentes fra capabilitylookup eller supleres fra eget register",
             "land": "Kan hentes fra capabilitylookup eller supleres fra eget register"
         },         
         "utskriftsfarge" : "SORT_HVIT",
@@ -23,7 +22,6 @@
                 "adresselinje4": "Kan hentes fra capabilitylookup eller supleres fra eget register *",
                 "postnummer": "Kan hentes fra capabilitylookup eller supleres fra eget register",
                 "poststed": "Kan hentes fra capabilitylookup eller supleres fra eget register",                
-                "landkode": "Kan hentes fra capabilitylookup eller supleres fra eget register",
                 "land": "Kan hentes fra capabilitylookup eller supleres fra eget register"
             },
             "returhaandtering": "DIREKTE_RETUR"

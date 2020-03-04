@@ -1,8 +1,10 @@
 {
-    "identifier": {
-        "content": {
-        	"eksempel" : "puttHvaDuVilHer",
-        	"eksempel2" : "<?xml....>"
-        }
-    }
+	"avtalt": {
+		"identifier": "no.difi.avtalt.test.v1",
+		"content": {
+			"eksempel" : "innhold",
+			"eksempel2" : "<?xml....>"
+		}
+
+	}
 }
