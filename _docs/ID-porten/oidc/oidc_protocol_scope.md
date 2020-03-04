@@ -74,6 +74,9 @@ ID-porten and Maskinporten protect a number of APIs from other organizations. Se
 
 See the allowed_integration_type claim on each entry to see if any scope limitation applies.
 
+You need to ask the organization owning the scope to grant you permission to use these scopes, unless the flag `accessible_for_all` is set.  
+
+
 ## Delegation source
 
 The attribute `delegation_source` can be set on a scope in order to activate it for external delegation in e.g. Altinn.
