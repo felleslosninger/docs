@@ -13,7 +13,7 @@ product: ID-porten
 
 På denne siden dokumenterer vi hvordan  API-tilbydere gir mulighet til selvbetjening av egen API-sikring.
 
-Les gjerne [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html) først.  API-konsumenter bør se på [selvbetjenings-API for integrasjoner](oidc_api_admin.html).
+Les gjerne [integrasjonsguide for API-tilbydere](maskinporten_guide_apitilbyder.html) først.  API-konsumenter bør se på [integrsasjonsguide for API-konsumenter](maskinporten_guide_apikonsument.html) og [selvbejenings-API for integrasjoner](oidc_admin.html)
 
 
 ## Om selvbetjenings-APIet
@@ -79,8 +79,15 @@ Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv m�
 
 ### Scope-begrensinger
 
-Attributtet "allowed_integration_types" legger føringer på bruken av et scope. En eller flere integrasjonstyper kan være tillatt. Dersom dette attributtet er satt, må en av verdiene inkludere "maskinporten" for at du skal kunne bruke scopet med en maskinporten klient.
+Attributtet `allowed_integration_types` legger føringer på bruken av et scope. En eller flere integrasjonstyper kan være tillatt. Dersom dette attributtet er satt, må en av verdiene inkludere "maskinporten" for at du skal kunne bruke scopet med en maskinporten klient.
 
+### Whitelisting av tilgang
+
+API-tilbyder kan velge å deaktivere tilgangskontrollen til et API/scope.  Det kan være flere grunner til å bruke dette:
+- API-tilbyder ønsker å utføre tilgangskontrollen lokalt som del av APIet istedenfor hos Maskinporten
+- APIet er "åpent", dvs alle skal kunne hente data, men man ønsker å spore hvem som bruker det
+
+For å aktivere denne funksjonen, settes attributtet  `accessible_for_all` på det aktuell API-scopet.
 
 ### Inaktive entiteter
 
