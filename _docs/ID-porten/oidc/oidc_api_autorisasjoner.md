@@ -93,6 +93,8 @@ Bearer-tokenet i forespørselen må ha `idporten:authorizations.revoke` scope.
 ### Revokasjonsliste
 Endepunktet /revokelist gir oversikt over kva autorisasjoner som har blitt revokert den siste tida. Typisk bruk er klientar med mange langt-levande token der ein ynskjer å redusere antall kall mot /tokeninfo. Normal bruk av /tokeninfo er foretrukken for dei aller fleste. Endepunktet er åpent og krever ikkje autentisering.
 
+URL til revokelist endepunktet: https://oidc.difi.no/idporten-oidc-provider/revokelist
+
 ```
 GET /idporten-oidc-provider/revokelist?client_id=testklient
 {
