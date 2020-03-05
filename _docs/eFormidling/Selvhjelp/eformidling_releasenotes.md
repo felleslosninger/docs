@@ -7,6 +7,11 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.1.0
+05.03.2020
+
+[Release notes for 2.1.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10174)
+
 ## 2.0.10
 16.12.19
 
