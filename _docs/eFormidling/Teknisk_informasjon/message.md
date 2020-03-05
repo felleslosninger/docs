@@ -209,7 +209,7 @@ Begge prosessene støtter både digitalpost og fysisk post.
 Avtalt er en bilateral meldingstype som lar avsender og mottaker sende en forhåndsbestemt forretningsmelding som kan være strukturert eller ustrukturert. 
 
 | Prosess | Dokumenttype | 
-|---------|--------------|
+|---|---|
 |urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
 |  |urn:no:difi:avtalt:xsd::avtalt |
 
