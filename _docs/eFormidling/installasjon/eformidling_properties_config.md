@@ -25,7 +25,7 @@ Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.
 
 ### Integrasjonspunkt-local.properties
 
-Her laster du ned [integrasjonspunkt-local.properties-filen](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
+Her laster du ned [integrasjonspunkt-local.properties-filen](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
 2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt_local.properties) og lagre i overnevnte mappe
