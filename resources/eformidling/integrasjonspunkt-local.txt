@@ -1,4 +1,4 @@
-#Fyll inn lokale vedier der de mangler
+#Fyll inn lokale verdier der de mangler
 
 ## NB! Beskrivelse om alle properties finner en her: https://difi.github.io/felleslosninger/eformidling_properties_config.html
 
