@@ -23,8 +23,11 @@ folders:
       - title: Grensesnitt / REST docs
         jurl: /eformidling_nm_restdocs.html
         
-      - title: Endringslogg 
+      - title: Endringslogg integrasjonspunktet
         jurl: /eformidling_releasenotes.html
+        
+      - title: Endringslogg sentrale komponenter
+        jurl: /eformidling_releasenotes_sentral_komp.html
 
 ###########################
 
@@ -38,7 +41,7 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no
 
 
