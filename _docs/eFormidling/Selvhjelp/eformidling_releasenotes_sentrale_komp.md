@@ -2,7 +2,7 @@
 title: Endringslogg sentralkomponenter eFormidling
 description: Endringslogg for sentralkomponenter
 sidebar: eformidling
-permalink: eformidling_sentralkomp_releasenotes.html
+permalink: eformidling_releasenotes_sentrale_komp.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
