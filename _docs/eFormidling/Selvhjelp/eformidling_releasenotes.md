@@ -12,20 +12,20 @@ sidebar: eformidling_install_sidebar
 
 ### Hva er endret/nytt?
 
-**Ny meldingstype - Avtalt:**
+**Ny meldingstype - Avtalt:**  
 Les her: https://difi.github.io/felleslosninger/eformidling_nm_message.html#avtalt
 
-**Batchoppdatering av DPV/DPF statuser:**
+**Batchoppdatering av DPV/DPF statuser:**  
 Istedenfor å sjekke status for en og en melding blir dette gjort som en batchjobb. Øker ytelsen.
 
-**Grafisk statusgrensesnitt:**
+**Grafisk statusgrensesnitt:**  
 Etter ønske er det nå lagt til avsender orgnr, samt søkbar messageReference. Forenkler oversikten i status GUI.
 
-**Mindre bugfixes:**
+**Mindre bugfixes:**  
 - Spamvarsling av DPV meldinger er fikset
 - KS avviser duplikate forsendelser med en gang.
-
-
+  
+  
 Full endringslogg: [Release notes for 2.1.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10174)
 
 ## 2.0.10
