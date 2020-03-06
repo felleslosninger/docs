@@ -13,7 +13,7 @@ sidebar: eformidling_install_sidebar
 ### Hva er endret/nytt?
 
 **Ny meldingstype - Avtalt:**  
-Les her: https://difi.github.io/felleslosninger/eformidling_nm_message.html#avtalt
+[Les her.](https://difi.github.io/felleslosninger/eformidling_nm_message.html#avtalt)
 
 **Batchoppdatering av DPV/DPF statuser:**  
 Istedenfor å sjekke status for en og en melding blir dette gjort som en batchjobb. Øker ytelsen.
