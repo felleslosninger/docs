@@ -10,60 +10,23 @@ sidebar: eformidling_install_sidebar
 ## 2.1.0
 05.03.2020
 
-Utgivelsesmerknader - eFormidling - Versjon IP 2.1.0
-    
-<h2>Feil</h2>
-<ul>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1725'>MOVE-1725</a>] -         Thymeleaf error on root request
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1726'>MOVE-1726</a>] -         Message re-sends if AppReceipt fails against archive system
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1756'>MOVE-1756</a>] -         DPI Print - landkode ikke i bruk
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1757'>MOVE-1757</a>] -         Legge til avsender i status GUI
-</li>
-</ul>
-    
-<h2>Oppgave</h2>
-<ul>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1656'>MOVE-1656</a>] -         Cache JAXBContext
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1657'>MOVE-1657</a>] -         AltinnWsClient should be a singleton
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1686'>MOVE-1686</a>] -         Legge til messageReference i status GUI
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1719'>MOVE-1719</a>] -         Batch-oppdatering av DPV-statuser
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1751'>MOVE-1751</a>] -         Payload  class no longer in use
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1763'>MOVE-1763</a>] -         DPI digital trenger avsenderIdentifikator
-</li>
-</ul>
-    
-<h2>Historie</h2>
-<ul>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1580'>MOVE-1580</a>] -         På-vegne-av: Dekke dagens funsjonalitet i DPI
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1581'>MOVE-1581</a>] -         På vegne av - DPV
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1663'>MOVE-1663</a>] -         AvtaltMelding: Endringer i Integrasjonspunkt
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1723'>MOVE-1723</a>] -         Batch-oppdatering av DPF-statuser
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1764'>MOVE-1764</a>] -         Muliggjøre sending av sensitiv informasjon med DPV
-</li>
-</ul>
-        
-<h2>Deloppgave</h2>
-<ul>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1332'>MOVE-1332</a>] -         duplikat forsendelse: Ks avviser duplikate
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1668'>MOVE-1668</a>] -         AvtaltMelding: Utvikle forretningsmelding
-</li>
-<li>[<a href='https://difino.atlassian.net/browse/MOVE-1765'>MOVE-1765</a>] -         Legge til defaultprossess mot DPV for BestEdu
-</li>
-</ul>
+### Hva er endret/nytt?
 
+**Ny meldingstype - Avtalt:**
+Les her: https://difi.github.io/felleslosninger/eformidling_nm_message.html#avtalt
+
+**Batchoppdatering av DPV/DPF statuser:**
+Istedenfor å sjekke status for en og en melding blir dette gjort som en batchjobb. Øker ytelsen.
+
+**Grafisk statusgrensesnitt:**
+Etter ønske er det nå lagt til avsender orgnr, samt søkbar messageReference. Forenkler oversikten i status GUI.
+
+**Mindre bugfixes:**
+- Spamvarsling av DPV meldinger er fikset
+- KS avviser duplikate forsendelser med en gang.
+
+
+Full endringslogg: [Release notes for 2.1.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10174)
 
 ## 2.0.10
 16.12.19
