@@ -78,6 +78,9 @@ Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST
 
 Kun RS256 støttes som algoritme.
 
+Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
+
+Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
 Eksempel på å legge inn en nøkkel:
 ```
 POST /clients/{client_id}/jwks
