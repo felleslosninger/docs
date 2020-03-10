@@ -125,6 +125,42 @@ Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 |Kontaktregisteret| web | private_key_jwt  | jwt_bearer_token |global/kontaktinformasjon.read global/spraak.read global/sikkerdigitalpost.read global/sertifikat.read global/varslingsstatus.read |nei|
 
 
+## Bruk av asymmetrisk nøkkel
+
+Man kan sende inn en [JWKS-struktur (RFC7517)](https://tools.ietf.org/html/rfc7517), dvs. en array av flere (inntil 5) JWK-representasjoner.
+
+Er modellert som egen ressurs under klient `/clients/{client_id}/jwks`
+
+Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
+
+Kun RS256 støttes som algoritme.
+
+Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
+
+Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
+
+Eksempel på å legge inn en nøkkel:
+```
+POST /clients/{client_id}/jwks
+
+{
+  [
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "jbi_min_noekkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
+}
+```
+
+`kid` velges av kunde selv, og må være unik innenfor alle ID-porten/Maskinportens kunder.
+
+Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
+
 
 Ved bruk av selvbetjenings-API, må kunden passe på å sende konfigurasjoner som er kompatible med tabellen over, ellers risikerer man å ende opp med en ubrukelig klient.
 
