@@ -6,7 +6,6 @@ permalink: eformidling_sr_restdocs.html
 layout: restdocs-ui
 ---
 
-Dummy text for testing
 
 {% include /eformidling/nextmove/serviceregistry-restdocs.html %}
 
