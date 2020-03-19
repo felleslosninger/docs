@@ -121,9 +121,9 @@ $(addBlockSwitches);
 </li>
 <li><a href="#service-record-process">Lookup by process</a>
 <ul class="sectlevel3">
-<li><a href="#dpo">Arkivmelding</a></li>
-<li><a href="#dpv">eInnsyn</a></li>
-<li><a href="#dpe">Digital post</a></li>
+<li><a href="#identifier-arkivmelding">Arkivmelding</a></li>
+<li><a href="#identifier-einnsyn">eInnsyn</a></li>
+<li><a href="#identifier-digital">Digital post</a></li>
 </ul>
 </li>
 </ul>
@@ -231,6 +231,25 @@ $(addBlockSwitches);
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
@@ -311,25 +330,6 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect3">
 <h4 id="identifier-person">Person</h4>
@@ -372,6 +372,25 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -444,25 +463,6 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect3">
 <h4 id="errors">Errors</h4>
@@ -491,25 +491,6 @@ Host: localhost:8080</code></pre>
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect4">
 <h5 id="_receiver_does_not_have_given_security_level">Receiver does not have given security level</h5>
@@ -545,25 +526,6 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -573,7 +535,7 @@ Content-Type: application/json;charset=UTF-8
 <p>One may lookup a single service record by its given process. A list of valid processes can be found here: <a href="https://difi.github.io/felleslosninger/eformidling_nm_message.html" class="bare">https://difi.github.io/felleslosninger/eformidling_nm_message.html</a></p>
 </div>
 <div class="sect3">
-<h4 id="dpo">Arkivmelding</h4>
+<h4 id="identifier-arkivmelding">Arkivmelding</h4>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">/identifier/{identifier}/process/{processIdentifier}</caption>
 <colgroup>
@@ -617,6 +579,25 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -677,28 +658,9 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect3">
-<h4 id="dpv">eInnsyn</h4>
+<h4 id="identifier-einnsyn">eInnsyn</h4>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">/identifier/{identifier}/process/{processIdentifier}</caption>
 <colgroup>
@@ -742,6 +704,25 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -802,28 +783,9 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect3">
-<h4 id="dpe">Digital post</h4>
+<h4 id="identifier-digital">Digital post</h4>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">/identifier/{identifier}/process/{processIdentifier}</caption>
 <colgroup>
@@ -867,6 +829,25 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -940,25 +921,6 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -984,6 +946,25 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -1031,25 +1012,6 @@ Content-Type: application/json;charset=UTF-8
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="info-person">Person</h3>
@@ -1069,6 +1031,25 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
 </tr>
 </tbody>
 </table>
@@ -1109,25 +1090,6 @@ Content-Length: 200
 }</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch secondary">
-<caption class="title">Headers</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
