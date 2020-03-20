@@ -180,6 +180,41 @@ Dersom token er self-contained :
 - validere at token ikke er utløpt (exp)
 
 
+#### Eksempel på token:
+
+
+```
+{
+  "aud" : "unspecified",
+  "scope" : "difitest:test2",
+  "iss" : "https://ver2.maskinporten.no/",
+  "client_amr" : "virksomhetssertifikat",
+  "token_type" : "Bearer",
+  "exp" : 1584694565,
+  "iat" : 1584693565,
+  "jti" : "IYRtIEzOYb8fHiIMEaqVHq_tXYGWe6OEOjOdsK-P_30",
+  "consumer" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  }
+}
+```
+Det er `consumer`-claimet som forteller hvilken konsument som har fått tokenet.
+Merk:  Du skal ikke bruke client_id eller client_org til tilgangstyring, disse er gamle claims som vil bli fjernet.
+
+
+Dersom konsumenten bruker leverandør, vil du i tillegg få to ekstra claims, de fleste API-tilbydere trenger ikke ta tilgangsbeslutninger basert på leverandør, men det kan være nyttig å logge informasjon for sporbarhet.
+```
+...
+  "supplier" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  },
+  "delegation_source" : "https://tt02.altinn.no/",
+...
+```
+
+
 ## Bruke delegering i Altinn
 
 Dersom du ønsker at konsumenter av ditt API skal kunne bruke Altinn til å delegere tilgangen videre til en systemleverandør, må du opprette et såkalt delegeringsoppsett (delegationScheme) som må tilknyttes et eller flere av dine Oauth2 scopes i Maskinporten.  Dette fordrer at du er tjenesteeier i Altinn.
