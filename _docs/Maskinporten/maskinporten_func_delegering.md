@@ -124,9 +124,44 @@ Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  A
 
 Når overstående punkter er utført, kan leverandøren [forespørre token fra Maskinporten](https://difi.github.io/felleslosninger/maskinporten_protocol_token.html).
 
-Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org`-claimet i JWT-grantet.
+Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org`-claimet i JWT-grantet:
 
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "oidc_difi_delegering_altinn",
+  "exp" : 1584693557,
+  "consumer_org" : "910753614",
+  "iat" : 1584693437,
+  "jti" : "eb6ab01e-5834-4ba0-a2a1-457bfd0f0a49"
+}
+```
 
+og det returnerte tokenet vil se slik ut:
+```
+{
+  "iss" : "https://ver2.maskinporten.no/",
+  "client_amr" : "virksomhetssertifikat",
+  "token_type" : "Bearer",
+  "client_id" : "oidc_difi_delegering_altinn",
+  "aud" : "unspecified",
+  "scope" : "difitest:test2",
+  "supplier" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  },
+  "exp" : 1584694440,
+  "delegation_source" : "https://tt02.altinn.no/",
+  "iat" : 1584693440,
+  "client_orgno" : "991825827",
+  "jti" : "faulA3FDWRqpd59Cwc1DqvA72kOV_xDHggBXpSpptsw",
+  "consumer" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:910753614"
+  }
+}
+```
 
 ## Miljøer og testdata
 

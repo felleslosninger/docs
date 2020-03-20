@@ -141,7 +141,7 @@ Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
 
 | Claim  |  Verdi | Beskrivelse  |
 | --- | --- |--- |
-|aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljøå finner du på .well-known-endpunkt. |
+|aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljø finner du på .well-known-endpunkt. |
 |iss| client_id |issuer - Din egen client_id.  |
 |scope| <string>| Space-separert liste over scopes som klienten forespør. |
 |iat| 1573132283| issued at - Tidspunkt for når JWTen ble laget. **Merk:** UTC-tid|
@@ -159,6 +159,18 @@ Content-type: application/x-www-form-urlencoded
   grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&
   assertion=<jwt>
 ```
+der payload i JWT kan se slik ut:
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "min_egen_clientid",
+  "exp" : 1584693183,
+  "iat" : 1584693063,
+  "jti" : "b1197d5a-0c68-4c4a-a95c-dc07c1194600"
+}
+```
+
 Maskinporten vil først validere gyldigheten av JWT'en. Deretter vil virksomhetssertifikatet (brukt til signering av JWT'en) valideres og dersom klienten har tilgang til de forespurte ressursene returneres et access_token til klienten.
 
 Dersom du er leverandør opp mot et API som krever ekstern delegering, må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
@@ -209,3 +221,40 @@ ID-porten/Maskinporten har allerede to eksisterende interne delegeringsmekanisme
 * For leverandører som bruker selvbetjenings-API, må de ikke bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette client_orgno i registrerings-kallet.
 
 Når integrasjonen din så skal forespørre tokens på vegne av konsumenter, må du oppgi konsumentens organisasjonsnummer som `consumer_org`-claim i JWT-grantet. Maskinporten vil da sjekke Altinn, om et gyldig delegeringsforhold finnes mellom konsument og leverandør for aktuelt scope.
+
+#### Eksempel på bruk  av altinn:
+JWT Grant i request:
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "oidc_difi_delegering_altinn",
+  "exp" : 1584693183,
+  "consumer_org" : "910753614",
+  "iat" : 1584693063,
+  "jti" : "b1197d5a-0c68-4c4a-a95c-dc07c1194600"
+}
+```
+som gir respons:
+```
+{
+  "iss" : "https://ver2.maskinporten.no/",
+  "client_amr" : "virksomhetssertifikat",
+  "token_type" : "Bearer",
+  "client_id" : "oidc_difi_delegering_altinn",
+  "aud" : "unspecified",
+  "scope" : "difitest:test2",
+  "supplier" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  },
+  "exp" : 1584694406,
+  "delegation_source" : "https://tt02.altinn.no/",
+  "iat" : 1584693406,
+  "jti" : "U8E9-Zu8qVyAOLfm_M0UbalbVYjMt3kakanvE5dV9zk",
+  "consumer" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:910753614"
+  }
+}
+```
