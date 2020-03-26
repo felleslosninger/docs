@@ -95,6 +95,12 @@ Når en skal starte integrasjonspunktet så kreves det visse rettigheter på den
 Egenskaper på mappen
   * Security:
     * Legg til integrasjonspunkt brukeren med modify rettigheter
+    
+**Bruker må ha modify tilgang på Windows EventLog**
+
+Registry Editor
+  * Permissions på HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog
+  * Legg til integrasjonspunkt brukeren med modify rettigheter på Security "mappe".
   
 ### Kjøre kommandoen i "Task Scheduler"
 
