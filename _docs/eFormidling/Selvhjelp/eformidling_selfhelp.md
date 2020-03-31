@@ -19,6 +19,7 @@ sidebar: eformidling_install_sidebar
 - Bruksvilkår/avtale må være på plass for å bruke eFormidling. Se lenke under.
 - [Mer om eFormidling og hvordan det fungerer](https://difi.github.io/felleslosninger/eformidling_index.html)
 - Standard tid før en melding som feiler og får en status LEVETID_UTLOPT er ca 24t. Den kan også overstyres. [Les mer her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#feilstatus-levetid_utlopt)
+- Integrasjonspunktet konverterer ikke originalformatet, men forventer PDF/docx dersom mimetype ikke er spesifisert i avsendersystemet.
 
 For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
 
