@@ -337,14 +337,14 @@ Content-Length: 88
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/participants/all' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/participants' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/participants/all HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/participants HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -398,7 +398,7 @@ X-Frame-Options: DENY</code></pre>
 <p>A <code>POST</code> request is used to add a new participant</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Request parameters</caption>
+<caption class="title">/api/v1/participants/{identifier}/{name}/</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -423,21 +423,18 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/participants' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/participants/9908:910539000/Grimsby/' -i -X POST \
     -H 'Content-Type: application/json' \
-    -H 'Accept: application/json' \
-    -d 'identifier=9908%3A910539000&amp;name=Grimsby'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/participants HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/participants/9908:910539000/Grimsby/ HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Host: localhost:8080
-
-identifier=9908%3A910539000&amp;name=Grimsby</code></pre>
+Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
@@ -492,7 +489,7 @@ X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If the participant already exists then <code>409 Conflict</code> will be returned. If the request is missing a request parameter the method will return an <code>500 Error</code>. Both <code>name</code> and <code>identifier</code> are required.</p>
+<p>If the participant already exists then <code>409 Conflict</code> will be returned. If the request is missing a path parameter the method will return an <code>500 Error</code>. Both <code>name</code> and <code>identifier</code> are required.</p>
 </div>
 </div>
 <div class="sect2">
@@ -996,7 +993,7 @@ X-Frame-Options: DENY
 <p>A <code>GET</code> request used to find and return a given user.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Request parameters</caption>
+<caption class="title">/api/v1/users/{email}/</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1017,14 +1014,14 @@ X-Frame-Options: DENY
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users?email=united%40test.no' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users/united@test.no/' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/users?email=united%40test.no HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/users/united@test.no/ HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -1094,14 +1091,14 @@ Content-Length: 81
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users/all' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users' -i -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/users/all HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/users HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -1164,7 +1161,7 @@ X-Frame-Options: DENY</code></pre>
 may be empty. The API does not support adding users to a specific participant due to current use cases, this might be added in the future.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Request parameters</caption>
+<caption class="title">/api/v1/users/{email}/{name}/</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1189,21 +1186,18 @@ may be empty. The API does not support adding users to a specific participant du
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users/United@test.no/manchester/' -i -X POST \
     -H 'Content-Type: application/json' \
-    -H 'Accept: application/json' \
-    -d 'email=United%40test.no&amp;name=Manchester'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/users HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/users/United@test.no/manchester/ HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Host: localhost:8080
-
-email=United%40test.no&amp;name=Manchester</code></pre>
+Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
@@ -1252,7 +1246,7 @@ Content-Length: 86
 <p>A <code>DELETE</code> request that deletes the given user if found and returns <code>200 OK</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Request parameters</caption>
+<caption class="title">/api/v1/users/{email}/</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1273,14 +1267,14 @@ Content-Length: 86
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users?email=united%40test.no' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users/united@test.no/' -i -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/v1/users?email=united%40test.no HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/v1/users/united@test.no/ HTTP/1.1
 Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -1292,29 +1286,12 @@ Host: localhost:8080</code></pre>
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
-Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
-X-Frame-Options: DENY
-Content-Length: 319
-
-{
-  "id" : 1337,
-  "identifier" : "UserDummyIdentifier",
-  "participant" : {
-    "id" : 10,
-    "identifier" : "9908:910539000",
-    "scheme" : "iso6523-actorid-upis",
-    "name" : "Grimsby"
-  },
-  "name" : "Manchester",
-  "email" : "united@test.no",
-  "hasAccess" : false,
-  "hasReceiveMessages" : false
-}</code></pre>
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
