@@ -26,8 +26,7 @@ Illustrasjonen over viser hvordan en melding i eFormidling blir forflyttet fra s
 
 **DPF** = Digital post til FIKS meldingsformidler - meldinger til kommuner og andre virksomheter som bruker FIKS meldingsformidler
 
-**DPI** = Digital post til innbygger - meldinger sendt til innbyggers digitale postkasse (ikke tilgjengelig via eFormidling pr. i dag)
- 
+**DPI** = Digital post til innbygger - meldinger sendt til innbyggers digitale postkasse 
 
 ​​​​​​**A - Avsender av meldinger**
 * Til venstre ser du «huset» som representerer din virksomhet. Her har du et sak-/arkiv system og flere fagsystemer.
