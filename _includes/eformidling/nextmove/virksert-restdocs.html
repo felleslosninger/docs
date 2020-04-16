@@ -476,10 +476,11 @@ Content-Length: 93
 <div class="listingblock secondary">
 <div class="title">Error response2</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 500 Internal Server Error
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 405 Method Not Allowed
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
+Allow: GET,DELETE
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -666,7 +667,7 @@ Content-Length: 2201
 <div class="listingblock secondary">
 <div class="title">Error response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -679,7 +680,7 @@ X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If the given certificate is not found a <code>404 Not Found</code> will be returned.</p>
+<p>If the given certificate is not found a <code>204 No Content</code> will be returned.</p>
 </div>
 </div>
 <div class="sect2">
@@ -688,7 +689,7 @@ X-Frame-Options: DENY</code></pre>
 <p>A <code>POST</code> request is used to upload a certificate and set registrations on a given participant</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">/api/v1/participants/{participantParam}/certificate/{certificateName}/{processParam}</caption>
+<caption class="title">/api/v1/participants/{participantParam}/certificate/{certificateName}/process/{processParam}</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -717,7 +718,7 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/participants/iso6523-actorid-upis::9908:910539892/certificate/straumsgrendCertName/difi-move-temp::urn:www.difi.no:profile:move:ver1.0' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/participants/iso6523-actorid-upis::9908:910539892/certificate/straumsgrendCertName/process/difi-move-temp::urn:www.difi.no:profile:move:ver1.0' -i -X POST \
     -H 'Content-Type: application/json' \
     -H 'Accept: application/json'</code></pre>
 </div>
@@ -725,7 +726,7 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/participants/iso6523-actorid-upis::9908:910539892/certificate/straumsgrendCertName/difi-move-temp::urn:www.difi.no:profile:move:ver1.0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/participants/iso6523-actorid-upis::9908:910539892/certificate/straumsgrendCertName/process/difi-move-temp::urn:www.difi.no:profile:move:ver1.0 HTTP/1.1
 Content-Type: application/json
 Accept: application/json
 Host: localhost:8080</code></pre>
@@ -1160,44 +1161,70 @@ X-Frame-Options: DENY</code></pre>
 <p>A <code>POST</code> request to add a new admin user, no specific participant need to be supplied. Default the values other than <code>email</code> and <code>name</code>
 may be empty. The API does not support adding users to a specific participant due to current use cases, this might be added in the future.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">/api/v1/users/{email}/{name}/</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>email</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Email of the user</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the user</p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="title">Request body</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-" hljs" data-lang=""">{
+  "id" : 1337,
+  "identifier" : "UserDummyIdentifier",
+  "participant" : {
+    "id" : 10,
+    "identifier" : "9908:910539000",
+    "scheme" : "iso6523-actorid-upis",
+    "name" : "Grimsby"
+  },
+  "name" : "Manchester",
+  "email" : "united@test.no",
+  "hasAccess" : false,
+  "hasReceiveMessages" : false
+}</code></pre>
+</div>
+</div>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users/United@test.no/manchester/' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/v1/users/' -i -X POST \
     -H 'Content-Type: application/json' \
-    -H 'Accept: application/json'</code></pre>
+    -H 'Accept: application/json' \
+    -d '{
+  "id" : 1337,
+  "identifier" : "UserDummyIdentifier",
+  "participant" : {
+    "id" : 10,
+    "identifier" : "9908:910539000",
+    "scheme" : "iso6523-actorid-upis",
+    "name" : "Grimsby"
+  },
+  "name" : "Manchester",
+  "email" : "united@test.no",
+  "hasAccess" : false,
+  "hasReceiveMessages" : false
+}'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/users/United@test.no/manchester/ HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/v1/users/ HTTP/1.1
 Content-Type: application/json
 Accept: application/json
-Host: localhost:8080</code></pre>
+Content-Length: 319
+Host: localhost:8080
+
+{
+  "id" : 1337,
+  "identifier" : "UserDummyIdentifier",
+  "participant" : {
+    "id" : 10,
+    "identifier" : "9908:910539000",
+    "scheme" : "iso6523-actorid-upis",
+    "name" : "Grimsby"
+  },
+  "name" : "Manchester",
+  "email" : "united@test.no",
+  "hasAccess" : false,
+  "hasReceiveMessages" : false
+}</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
