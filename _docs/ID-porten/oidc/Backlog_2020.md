@@ -15,13 +15,6 @@ Releasen vart produksjonssatt 2020-12-31
 ## Ny funksjonalitet:
 
 
-#### Modernisere utsendelse av pinkodebrev
-
-Produktet som brukes til å produsere MinID pinkode-brev er end-of-life, og trenger erstattes.
-
-
-
-
 #### Viderutvikling Maskinporten
 
 Behovsdrevet viderutvikling av Maskinporten.
@@ -34,13 +27,6 @@ Med leveranse av delegering i eOppslag ved årskiftet, regner vi at hovedvekten 
 #### RAR-støtte
 
 Rich autorization requests (RAR) er ein kommande Oauth-spesifikasjon som gjer det mogeleg å be om transaksjonsbaserte samtykker eller mer kompliserte autorisasjonar på ein standardisert måte. I første omgang tenker vi å benytte dette til å bygge den såkalte "Ansattporten", men det er også identifisert behov for å kunne bruke dette til å tilby avgiver/fullmakts-basert innlogging.
-
-
-
-
-#### Støtte random port for native-klienter
-
-Ihht RFC8252 kap 7.3 skal native-klienter (mobil, desktop) kunne støtte redirect-uri på loopback-device på vilkårleg portnummer. Innfører støtte for dette både i klient-registrering og runtime i OIDC provider.
 
 
 
