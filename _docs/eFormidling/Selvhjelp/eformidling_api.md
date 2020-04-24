@@ -59,7 +59,11 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 - **Date:** tid og dato for forsendelsen.
 
+- **Sender:** avsender av forsendelsen.
+
 - **Receiver:** mottaker av forsendelsen.
+
+- **Reference:** messageReference hentet fra sak/arkiv.
 
 - **Type:** hvilken type forsendelse det er. Se [terminologi](https://difi.github.io/felleslosninger/eformidling_api.html#terminologi)
 
