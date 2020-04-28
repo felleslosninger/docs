@@ -41,6 +41,9 @@ folders:
       - title: Delegering
         jurl: /maskinporten_func_delegering.html
 
+      - title: Audience-begrensning
+        jurl: /maskinporten_func_audience_restricted_tokens.html
+
 
 - title: Spørsmål og svar
   folderitems:

@@ -45,6 +45,8 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 |expires_in  | Number of seconds until this access_token is no longer valid   |
 | scope   | The list of scopes issued in the access token. Included for convenience for the client, and should not be trusted for access control decisions.  |
 
+Please note that the access token is opaque for the client, and the format may be changed. Thus the client should not inspect/validate the token contents.
+
 Example:
 ```
 {
@@ -83,18 +85,31 @@ The token is a JWT with the following structure:
 
 | claim | value | example |
 | --- | --- | --- |
-| aud   |  The indended audience for token.  Normally the Oauth2 'issuer' URL of the Resource Server / API. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  Maskinporten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  `https://api.examples.com/users`|
+| iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
-| client_amr  | How the client authenticated itselft towards the AS.  | `virksomhetssertifikat`|
+| client_amr  | How the client authenticated itselft towards Maskinporten  | `virksomhetssertifikat`|
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
-| supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
-| delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://www.altinn.no`
 | scope | A list of scopes the access_token is bound to.   |
 | token_type | Type of token. Only bearer supported. | `Bearer`|
-| iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
+
+If the token was issued to a supplier acting on behalf of another organization, the token will also include the following two claims:
+
+| claim | value | example |
+| --- | --- | --- |
+| supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
+| delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://www.altinn.no`
+
+
+If the token is audience-restricted, the following claim will also be included:
+
+| claim | value | example |
+| --- | --- | --- |
+| aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction](/maskinporten_func_audience_restricted_tokens.html) for details. |  `https://api.examples.com/users`|
+
+
 
 #### client_amr
 
