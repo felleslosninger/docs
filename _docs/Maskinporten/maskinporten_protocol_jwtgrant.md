@@ -42,7 +42,7 @@ Note that production certificates are not supported in test environments.
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
 |scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
-| resource   | optional  | The target API that the client intends to use the token. Only used by some APIs, and the actual value to use must be obtained by the API owner. Please see [audience-restriction](/maskinporten_func_audience_restricted_tokens.html) for details. *Currently only array supported.*  |   
+| resource   | optional  | The target API that the client intends to use the token. Only used by some APIs, and the actual value to use must be obtained from the API owner. Please see [audience-restriction](maskinporten_func_audience_restricted_tokens.html) for details. *Currently only array supported.*  |   
 
 
 If the client belongs to a supplier requesting a token on behalf of another organization (legal consumer), there are two mutually exclusive claims available:
