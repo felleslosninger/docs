@@ -9,6 +9,8 @@ product: Maskinporten
 
 ## About
 
+The JWT grant is a request sent by the client towards Maskinporten, in order to obtain an access_token.  Both the grant and the access_token looks similar and share some of the same claims, as they as JWT structures, however they must not be mixed up.
+
 JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
 
 ## Request
@@ -34,15 +36,16 @@ Note that production certificates are not supported in test environments.
 
 | Claim  |  Cardinality | Description  |
 | --- | --- |--- |
-|aud| Required | Audience - identifier for Maskinporten.  See the [well-known endpoint](maskinporten_func_wellknown.html) for the environment you are using to find correct value.  The value in production is `https://maskinporten.no/`  |
+|aud| Required | The intended target for this JWT grant, ie. the identifier for Maskinporten.   The value in production is `https://maskinporten.no/`  |
 |iss| Required |issuer - Your client ID |
 |iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
-| resource   | optional  | *Currently only array supported.*  The indended audience for token. If included, the value will be transparantly set as the `aud`-claim in the access token. See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05). if not included, the audience will be set to `unspecified` |   
 |scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
+| resource   | optional  | The target API that the client intends to use the token. Only used by some APIs, and the actual value to use must be obtained by the API owner. Please see [audience-restriction](/maskinporten_func_audience_restricted_tokens.html) for details. *Currently only array supported.*  |   
 
-If the client belongs to a supplier and requests a token for another organization (legal consumer), there are two mutually exclusive claims available:
+
+If the client belongs to a supplier requesting a token on behalf of another organization (legal consumer), there are two mutually exclusive claims available:
 
 | Claim  |  Cardinality | Description  |
 | --- | --- |--- |
