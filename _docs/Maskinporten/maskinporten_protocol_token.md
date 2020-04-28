@@ -107,7 +107,7 @@ If the token is audience-restricted, the following claim will also be included:
 
 | claim | value | example |
 | --- | --- | --- |
-| aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction](/maskinporten_func_audience_restricted_tokens.html) for details. |  `https://api.examples.com/users`|
+| aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction](maskinporten_func_audience_restricted_tokens.html) for details. |  `https://api.examples.com/users`|
 
 
 
