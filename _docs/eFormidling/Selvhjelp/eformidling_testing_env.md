@@ -43,7 +43,8 @@ Her kan dere bruke samme som i produksjon.
 
 **Testvirksomheter**
 
-En kan sende til alle som bruker DPO i testmiljø, men det er også satt opp et eget testintegrasjonspunkt som kan brukes.
+Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
+Ellers kan en avtale med andre vikrsomheter som bruker DPO i testmiljøet.
 
 Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
 
@@ -54,7 +55,6 @@ Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger s
 | URL-integrasjonspunkt | https://ip-leik-meldingsutveksling.difi.no/ |
 | URL sak-arkiv mock | https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/ |
 
-Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
 
 <!--
  [NextMove: Postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
