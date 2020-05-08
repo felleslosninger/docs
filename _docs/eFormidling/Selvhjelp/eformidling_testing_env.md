@@ -15,6 +15,12 @@ Informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [h
 
 ### Digital post til virksomheter(DPV)
 
+**Brukernavn og passord som brukes i integrasjonspunktet**
+
+Om virksomheten ikke har fått dette allerede, ta kontakt med tjenesteeier@altinn.no, legg ved orgnummeret og forklar at dere skal teste mot tt02 miljøet til Altinn.
+
+**Testbrukere og testvirksomheter**
+
 Det er opprettet test virksomheter en kan bruke som mottakere. Her vil du kunne logge inn å finne forsendelsen din. Disse virksomhetene og brukeren vil være **felles** for alle virksomheter i testmiljø. Pass på å ikke sende sensitiv informasjon under testingen med disse virksomhetene.
 
 Testbruker og passord til innlogging i Altinn testmiljøet fåes ved å kontakte <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> 
@@ -31,7 +37,15 @@ For å logge inn i Altinn sitt testmiljø bruker du denne lenken <a href="https:
 
 ### Digital post til offentlige virksomheter(DPO)
 
-Tabellen gjelder integrasjonspunktet tilDigitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
+**Brukernavn og passord som brukes i integrasjonspunktet**
+
+Her kan dere bruke samme som i produksjon.
+
+**Testvirksomheter**
+
+En kan sende til alle som bruker DPO i testmiljø, men det er også satt opp et eget testintegrasjonspunkt som kan brukes.
+
+Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
 
 | Nøkkel | verdi |  
 | --- | --- | 
@@ -55,7 +69,7 @@ Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra gr
 ![](/felleslosninger/images/eformidling/sakarkiv_flyt.PNG)
 
 
-
+**NB! Ønsker virksomheten å teste eInnsyn? Ta kontakt med servicedesk@digdir.no**
 
 ---
 
