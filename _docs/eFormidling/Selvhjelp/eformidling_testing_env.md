@@ -44,7 +44,8 @@ Her kan dere bruke samme som i produksjon.
 **Testvirksomheter**
 
 Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
-Ellers kan en avtale med andre vikrsomheter som bruker DPO i testmiljøet.
+
+Ellers kan en avtale med andre virksomheter som bruker DPO i testmiljøet.
 
 Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
 
