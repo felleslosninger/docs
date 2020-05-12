@@ -1,5 +1,5 @@
 ## Teknisk dokumentasjon av Difi's fellesløsninger
 
-Dette er kildekoden til den tekniske dokumentasjonen for Difi's fellesløsninger.
+Publisering av dokumentasjon gjøres fra gh-pages branchen.
 
-Du finner en formattert versjon av denne dokumentasjonen på følgende nettside: 
+Du finner den formaterte versjon av dokumentasjonen her: https://difi.github.io/felleslosninger/
