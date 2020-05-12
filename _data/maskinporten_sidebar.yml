@@ -8,7 +8,7 @@ folders:
 
       - title: Overordnet
         jurl: /maskinporten_overordnet.html
-        
+
 
 - title: Bruksområde og guide
   folderitems:
@@ -21,6 +21,7 @@ folders:
 
       - title: Guide for API-konsument
         jurl: /maskinporten_guide_apikonsument.html
+        
 
   - title: Selvbetjening
     folderitems:
