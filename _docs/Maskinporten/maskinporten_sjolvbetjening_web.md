@@ -7,7 +7,10 @@ sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
 
-Dette dokumentet viser de stegene som en API-konsument må gjøre for å bruke Maskinporten.
+Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyder og API-konsument.
+
+* TOC
+{:toc}
 
 ## Innlogging og tilgang
 
