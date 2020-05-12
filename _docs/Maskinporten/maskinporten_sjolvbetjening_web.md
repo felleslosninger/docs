@@ -14,7 +14,9 @@ Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyde
 
 ## Innlogging og tilgang
 
-### innlogging
+### Innlogging
+
+Samarbeidsportalen er inngangen til selvbetjeningen på nett. En forutsetning for å ta dette i bruk, er at virksomheten din er registrert hos oss og bruksvilkår er signert. Når du oppretter en bruker så knyttes du til den virksomheten som er registrert med domenet i epost-adressen din. F.eks logger du inn med <navn>@digdir.no, så blir du knyttet til Digitaliseringsdirektoratet.
 
 ### Tilgang i testmiljø
 
@@ -53,6 +55,10 @@ Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres f�
 ### Vedlikehald av merkantile data
 
 ### 4. Opprett en integrasjon i Maskinporten
+
+## Kjente feil
+
+
 
 Du må opprette en integrasjon (en såkalt oauth2-klient) i Maskinporten.
 
