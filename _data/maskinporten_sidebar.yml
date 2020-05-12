@@ -14,10 +14,13 @@ folders:
       - title: Hvordan virker Maskinporten?
         jurl: /maskinporten_auth_server-to-server-oauth2.html
 
-      - title: Guide for API-tilbyder
+      - title: API-tilbyder
         jurl: /maskinporten_guide_apitilbyder.html
+        folderitems:
+              - title: Tilgang
+                jurl:
 
-      - title: Guide for API-konsument
+      - title: API-konsument
         jurl: /maskinporten_guide_apikonsument.html
 
 
