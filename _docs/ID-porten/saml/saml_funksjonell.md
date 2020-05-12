@@ -17,7 +17,7 @@ Per i dag inneholder ID-porten kun funksjonalitet for **autentisering**
 
 ### Aktører
 
-Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellom Difi og tjenesteeierne.
+Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellom Digitaliseringsdirektoratet og tjenesteeierne.
 
 | Aktører | Beskrivelse | 
 | --- | --- |
@@ -92,7 +92,7 @@ Når en sluttbruker er ferdig hos en tjenesteeier skal han logge ut. Utloggingen
 
 #### **Brukervennlighet**
 
-Difi har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf). 
+ Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf). 
 
 #### **Føderering** 
 
@@ -100,7 +100,7 @@ Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til e
 
 #### **Sesjonstid**
 
-Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Difi anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
+Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Digitaliseringsdirektoratet anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
 
 #### **Sesjonsoppgradering**
 
@@ -118,7 +118,7 @@ ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier se
 
 Fra 15-09 releasen inkluderer ID-porten støtte for at europeiske brukere knyttet til EUs pilot-infrastruktur for autentisering, STORK, kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser fra 2018. Den tekniske løsningen vil på sikt bli oppgradert til eIDAS-profilen når denne er klar fra EU.
 
-Tjenesteeiere som ønsker pålogging fra utenlandske brukere, må be spesielt om det på *idporten@difi.no*, og implementere teknisk støtte for å håndtere de ulike SAML-attributt-kombinasjonene som de da kan møte.
+Tjenesteeiere som ønsker pålogging fra utenlandske brukere, må be spesielt om det på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>, og implementere teknisk støtte for å håndtere de ulike SAML-attributt-kombinasjonene som de da kan møte.
 
 En tjeneste kan velge å kun støtte pålogging fra europeisk brukere, eller å støtte både norske brukere og europeiske brukere. Ved å støtte begge brukergrupper, vil man kunne beholde single-signOn til andre norske tjenester som før. 
 

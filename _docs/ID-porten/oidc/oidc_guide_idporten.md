@@ -62,7 +62,7 @@ Merk: OpenID Connect bygger på OAuth2, og denne flyten er derfinert i OAuth2-sp
 
 ## Sesjonshåndtering
 
-Merk: Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Men Difi anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten.
+Merk: Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Men Digitaliseringsdirektoratet anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten.
 
 ID-porten sender ikke en forespørsel om utlogging til tjenesteleverandør når en sesjon timer ut pga total lengde eller inaktivitet. Forespørsel om utlogging sendes bare når en bruker foretar en eksplisitt utlogging (ved å klikke på logout-knappen hos en tjenesteinnenfor Circle of Trust). En slik forespørsel om utlogging fra ID-porten må resultere i en utlogging fra tjenesteeier, ellers vil SingleLogout-mekanismen bli kompromittert.
 
@@ -175,7 +175,7 @@ samt at følgende attributter må sendes inn i requesten:
 
 Her benyttes tidligere utlevert statisk hemmelighet(*client_secret*) til autentisering ved å legge på en standard HTTP Basic autentiserings-header (base64-enkoda sammensatt streng av client_id, kolon og client_secret).
 
-MERK:  Difi vil på sikt innføre levetid på client_secret, slik at ikke disse blir evigvarende som idag. Kunde har selv ansvaret for å få rotert sin client_secret før den utløper for å unngå avbrudd i tjenesteleveransen.
+MERK: Digitaliseringsdirektoratet vil på sikt innføre levetid på client_secret, slik at ikke disse blir evigvarende som idag. Kunde har selv ansvaret for å få rotert sin client_secret før den utløper for å unngå avbrudd i tjenesteleveransen.
 
 ##### Eksempel på forespørsel
 
@@ -315,6 +315,14 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 ## Validering av Id token
 
 Korrekt validering av Id token på klientsiden er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel *3.1.3.7 - ID Token Validation* i OpenID Connect Core 1.0 spesifikasjonen.
+
+
+## Token levetid
+
+| Token | Levetid |
+| --- | --- |
+| Access_token | 120 sekunder |
+| Refresh_token | 600 sekunder |
 
 
 ## Userinfo-endepunkt

@@ -8,34 +8,48 @@ folders:
       - title: Overordnet
         jurl: /maskinporten_overordnet.html
 
-- title: Bruksområde
-  folderitems:
-
-      - title: Slik bruker du maskinporten
-        jurl: /maskinporten_bruksomrade.html
-
-      - title: API-tilbyder
-        jurl: /maskinporten_guide_apitilbyder.html
-
-      - title: API-konsument
-        jurl: /maskinporten_guide_apikonsument.html
-
-
-- title: Grensesnitt
+- title: Bruksområde og guide
   folderitems:
 
       - title: Hvordan virker Maskinporten?
         jurl: /maskinporten_auth_server-to-server-oauth2.html
+
+      - title: Guide for API-tilbyder
+        jurl: /maskinporten_guide_apitilbyder.html
+
+      - title: Guide for API-konsument
+        jurl: /maskinporten_guide_apikonsument.html
+
+
+- title: Grensesnittspesifikasjon
+  folderitems:
+
       - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
       - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
-      - title: /tokeninfo-endepunkt
-        jurl: /maskinporten_protocol_tokeninfo.html
+
+- title: Funksjonalitet
+  folderitems:
+
+      - title: Metadata
+        jurl: /maskinporten_func_wellknown.html
+
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
 
+      - title: Delegering
+        jurl: /maskinporten_func_delegering.html
 
+      - title: Audience-begrensning
+        jurl: /maskinporten_func_audience_restricted_tokens.html
+
+
+- title: Spørsmål og svar
+  folderitems:
+
+     - title: Using Postman towards Maskinporten
+       jurl: /oidc_sample_jwtgrant_postman.html
 
 ###########################
 

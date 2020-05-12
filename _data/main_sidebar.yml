@@ -3,39 +3,14 @@ sidebarTitle: Fellesløsninger
 ## See the generic.yml file as an example of the allowed yaml format.
 
 folders:
-- title: eFormidling
-
-  folderitems:
-
-  - title: Om eFormidling
-    jurl: /eformidling_index.html
-    subfolders:
-
-  - title: Installasjonsveiledning
-    jurl: /eformidling_download_ip.html
-
-  - title: Utviklerdokumentasjon
-    jurl: /eformidling_nm_about.html
-    #Må endre jurl på teknisk info
-
-
 - title: ID-porten
   folderitems:
-  
+
   - title: Om ID-porten
     jurl: /idporten_index.html
 
-  - title: Overordnet
+  - title: Teknisk dokumentasjon
     jurl: /idporten_overordnet.html
-
-  - title: Bruksområder
-    jurl: /idporten_bruksomrader_index.html
-
-  - title: Grensesnitt
-    jurl: /saml_tilgang.html
-
-  - title: Spørsmål og svar
-    jurl: /idporten_faq.html
 
 
 - title: Maskinporten
@@ -43,21 +18,14 @@ folders:
 
   - title: Om Maskinporten
     jurl: /maskinporten_index.html
-    
-  - title: Overordnet
+
+  - title: Teknisk dokumentasjon
     jurl: /maskinporten_overordnet.html
-  
-  - title: Bruksområde
-    jurl: /maskinporten_bruksomrade.html
-    
-  - title: Grensesnitt
-    jurl: /maskinporten_grensesnitt.html
-    
-  - title: Spørsmål og svar
-    jurl: /maskinporten_sporsmal_og_svar.html
+
 
 - title: Kontaktregisteret
   folderitems:
+  
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /krr_index.html
 
@@ -67,35 +35,47 @@ folders:
   - title: Brukerspesifikt oppslag REST
     jurl: /brukerspesifikt_oppslag_krr_rest.html
 
-  - title: Oppslagstjenesten SOAP
-    jurl: /oppslagstjenesten_soap.html
-
 - title: Digital postkasse
   folderitems:
+  
   - title: Om digital postkasse
     jurl: /digipost_index.html
 
   - title: Veiledning og klienter
     jurl: /sdp_index_innledning.html
 
-- title: eInnsyn
+- title: eFormidling
   folderitems:
-  - title: Om eInnsyn
-    jurl: /einnsyn_index.html
 
-  - title: eInnsyn-klient
-    jurl: /einnsyn_forutsetninger.html
+  - title: Om eFormidling
+    jurl: /eformidling_index.html
+
+  - title: Installasjonsveiledning
+    jurl: /eformidling_download_ip.html
+
+  - title: Teknisk dokumentasjon
+    jurl: /eformidling_nm_about.html
+    #Må endre jurl på teknisk info
 
 - title: eSignering
   folderitems:
+
   - title: Om eSignering
     jurl: /esign_index.html
 
   - title: Kom i gang med eSignering
     jurl: /esign_komigang.html
 
-- title: ELMA
+- title: eInnsyn
+  folderitems:
 
+  - title: Om eInnsyn
+    jurl: /einnsyn_index.html
+
+  - title: eInnsyn-klient
+    jurl: /einnsyn_forutsetninger.html
+
+- title: ELMA
   folderitems:
 
   - title: about ELMA
@@ -120,8 +100,9 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no
 
 - title: Altinn Docs
   jurl: https://altinn.github.io/docs/
+

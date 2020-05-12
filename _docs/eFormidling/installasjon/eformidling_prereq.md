@@ -31,7 +31,7 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 
 > * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
 
-Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Brannmuråpninger i testmiljø
 
@@ -50,6 +50,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
+| qaoffentlig.meldingsformidler.digipost.no | 146.192.168.18:443 | -  | DPI |
 
 
 ### Brannmuråpninger i produksjon
@@ -83,7 +84,7 @@ java -version
 Integrasjonspunktet krever minimum versjon 1.8.0
 
 ### OpenJDK Java 8 (gratis)
-Difi har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. 
+Digitaliseringsdirektoratet har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. 
 
 Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din platform inne på lenken.
 
@@ -108,7 +109,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 **Å gjøre:**
 1. Anskaffe virksomhetssertifikat
 2. Legge sertifikat i Java Key Store.
-3. Sende sertifikat til Difi <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+3. Sende sertifikat tilDigitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 **Hvordan?**
 

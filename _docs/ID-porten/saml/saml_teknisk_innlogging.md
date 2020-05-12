@@ -93,7 +93,7 @@ https://idporten-inttest.difi.local/opensso/SSORedirect/metaAlias/norge.no/idp?S
 
 ### Overføring av informasjon om tjenesteeier for leverandører
 
-Kun i de tilfeller der tjenesteleverandør leverer tjenester til flere tjenesteeiere under en og samme føderasjon, må tjenesteleverandør sende med informasjon om den spesifikke tjenesteeier i AuthnRequest. Dette gjøres ved å bruke extensions *idpe:OnBehalfOf:* ID og navnekonvensjon blir satt i samråd med Difi. I AuthnRequesten må denne extension komme *før* "NameIDPolicy Format".
+Kun i de tilfeller der tjenesteleverandør leverer tjenester til flere tjenesteeiere under en og samme føderasjon, må tjenesteleverandør sende med informasjon om den spesifikke tjenesteeier i AuthnRequest. Dette gjøres ved å bruke extensions *idpe:OnBehalfOf:* ID og navnekonvensjon blir satt i samråd med Digitaliseringsdirektoratet. I AuthnRequesten må denne extension komme *før* "NameIDPolicy Format".
 
 ```xml
 <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ...>

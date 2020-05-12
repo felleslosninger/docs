@@ -17,14 +17,14 @@ For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken mi
 
 Samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_. Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.
 
-Hvilket API/ressurs som skal aksesserers, er styrt av _scopes_.  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.
+Hvilket API/ressurs som skal aksesserers, er styrt av [_scopes_](oidc_protocol_scope.html).  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.
 
 <div class="mermaid">
 graph LR
   subgraph 3djepart
     API
   end
-  subgraph Difi
+  subgraph Digitaliseringsdirektoratet 
     OIDC[OIDC Provider]
   end
   subgraph Kunde

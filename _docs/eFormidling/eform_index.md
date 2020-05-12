@@ -1,6 +1,6 @@
 ---
 title: eFormidling
-description: Difis løsning for meldingsutveksling i offentlig forvalting
+description: Digitaliseringsdirektoratets  løsning for meldingsutveksling i offentlig forvalting
 summary: "Difis løsning for meldingsutveksling i offentlig forvalting"
 permalink: eformidling_index.html
 sidebar: main_sidebar
@@ -10,7 +10,7 @@ sidebar: main_sidebar
 
 eFormidling er et konsept for sikker og effektiv meldingsutveksling i offentlig sektor. eFormidling vil tilrettelegge for videre samspill på tvers av offentlig sektor.
 
-Difi har utviklet integrasjonspunktet for eFormidling, som er en løsning som bidrar til en mer sikker, samordnet og effektiv meldingsutveksling, primært i offentlig sektor. Arkitekturen som ligger til grunn i eFormidling vil gjøre det enkelt å ta i bruk CEF-eDelivery for meldingsutveksling. Løsningen er i produksjon og er allerede tatt i bruk av flere virksomheter.
+Digitaliseringsdirektoratet har utviklet integrasjonspunktet for eFormidling, som er en løsning som bidrar til en mer sikker, samordnet og effektiv meldingsutveksling, primært i offentlig sektor. Arkitekturen som ligger til grunn i eFormidling vil gjøre det enkelt å ta i bruk CEF-eDelivery for meldingsutveksling. Løsningen er i produksjon og er allerede tatt i bruk av flere virksomheter.
 
 Kort fortalt gjør eFormidling det mulig å kommunisere med virksomheter (etterhvert også innbyggere) på en enkel og sikker måte, uten å måtte ta hensyn til om mottakeren er en privat eller offentlig virksomhet.
 
@@ -26,8 +26,7 @@ Illustrasjonen over viser hvordan en melding i eFormidling blir forflyttet fra s
 
 **DPF** = Digital post til FIKS meldingsformidler - meldinger til kommuner og andre virksomheter som bruker FIKS meldingsformidler
 
-**DPI** = Digital post til innbygger - meldinger sendt til innbyggers digitale postkasse (ikke tilgjengelig via eFormidling pr. i dag)
- 
+**DPI** = Digital post til innbygger - meldinger sendt til innbyggers digitale postkasse 
 
 ​​​​​​**A - Avsender av meldinger**
 * Til venstre ser du «huset» som representerer din virksomhet. Her har du et sak-/arkiv system og flere fagsystemer.

@@ -30,10 +30,10 @@ Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Di
 
 ## Framgangsmåte
 
-Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Difi sitt [Ver2-miljø](https://samarbeid.difi.no/node/232) er standard testmiljø for OIDC.
+Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Digitaliseringsdirektoratetsitt [Ver2-miljø](https://samarbeid.difi.no/node/232) er standard testmiljø for OIDC.
 
 1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no/#/).  Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
-   - Alternativt kan du be om å få en klient-integrasjon ved å sende mail til <a href="mailto:idporten@difi.no">idporten@difi.no</a> eller meld inn klient via [web-skjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUNVVMR0JKVjRHQlNPMU80VEs3NDc1MzNQUC4u)
+   - Alternativt kan du be om å få en klient-integrasjon ved å sende mail til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.
  3. Det skal nå være mulig å logge inn
@@ -45,14 +45,12 @@ Det må utføres en rekke verifikasjonstester for å teste blant annet innloggin
 
 ### Testbrukere
 
-Hvis du allerede har fått testbrukere utdelt kan du gjenbruke disse. Om du trenger nye testbrukere kan du kontakte <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+Hvis du allerede har fått testbrukere utdelt kan du gjenbruke disse. Om du trenger nye testbrukere kan du kontakte <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ## Produksjonssetting
 
-Client_secret i produksjonsmiljøet utleveres ikke i klartekst over e-post, men i ein kryptert zip-fil. Passord til denne filen sendes på sms. Derfor er det viktig at du angir mobiltelefonnummer for i bestillingen om. Om du bruker virksomhetssertifikat (anbefalt) trenger du ikke legge ved mobiltelefonnummer.
-
-Når du har utført verifikasjonstestene og er klar for å prodsette så sender du en ny e-post til <a href="mailto:idporten@difi.no">idporten@difi.no</a> der du oppgir hvilken client_id som ble brukt i testmiljøet, ønsket redirect-uri'er og annen nødvendig informasjon.
+Når du har utført verifikasjonstestene og er klar for å prodsette så sender du en ny e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> der du oppgir hvilken client_id som ble brukt i testmiljøet, ønsket redirect-uri'er og annen nødvendig informasjon.
 
 ## Problemer?
 
-Om du opplever problemer med integrasjonen din: Kontakt <a href="mailto:idporten@difi.no">idporten@difi.no</a> oppgi client_id og miljø og forklar problemet.
+Om du opplever problemer med integrasjonen din: Kontakt <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> oppgi client_id og miljø og forklar problemet.

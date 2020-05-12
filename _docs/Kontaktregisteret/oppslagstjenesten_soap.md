@@ -51,7 +51,7 @@ For mer informasjon henvises det til [integrasjonsguide for ID-porten.](https://
 
 | Aktør | Beskrivelse | 
 | --- | --- | 
-| Sentralforvalter | Difi er forvalter av oppslagstjenesten | 
+| Sentralforvalter |Digitaliseringsdirektoratet er forvalter av oppslagstjenesten | 
 | Offentlig virksomhet | Virksomhet som henter kontaktinformasjon fra oppslagstjenesten. Kan være representert av en teknisk tjenesteleverandør. | 
 | Innbygger | Person som har registrert opplysning i kontaktregisteret. Også omtalt som person. | 
 | ID-porten | Felleskomponent for autentisering i offentlig sektor.
@@ -77,12 +77,12 @@ Denne tjenesten gir offentlig virksomhet tilgang til printleverandør sitt serti
 ## Hvordan få tilgang til oppslagstjenesten? 
 
 **Kontakt oss**
-Les mer på <http://samarbeid.difi.no> eller ta kontakt med <idporten@difi.no> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
+Les mer på <http://samarbeid.difi.no> eller ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
 
 Følgende må gjøres før din virksomhet kan ta i bruk oppslagstjenesten:
 
 **Merkantile krav:**
-* Bruksvilkår for Difis felleskomponenter og spesielle bruksvilkår for kontakt- og reservasjonsregisteret må aksepteres.
+* Bruksvilkår forDigitaliseringsdirektoratets  felleskomponenter og spesielle bruksvilkår for kontakt- og reservasjonsregisteret må aksepteres.
 * Kontaktpersoner hos virksomhet og eventuelt tjenesteleverandører må være registrert i samarbeidsportalen.
 * Virksomheten må bidra med informasjon til årshjulet for forvaltningen av kontaktregisteret.
 
@@ -99,7 +99,7 @@ Følgende må oppgis/avtales før man kan ta i brukt kontakt- og reservasjonsreg
 | Organisasjonsnummer for virksomheten | Dette må være det organisasjonsnummeret som ligger i virksomhetssertifikatet brukt i forbindelse med oppslag mot oppslagstjenesten. | 
 | | | 
 
-All informasjon utveksles over e-post til <idporten@difi.no>
+All informasjon utveksles over e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Datamodell
 
@@ -176,7 +176,7 @@ Accept: gzip, deflate
 | Produksjon | | https://kontaktinfo-ws.difi.no/kontaktinfo-external/ws-v5 |
 | | | | 
 
-I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor krever Difi at ytelsestester skal bestilles via idporten@difi.no
+I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 Miljøene er:
 
@@ -188,7 +188,7 @@ Miljøene er:
 
 Miljøene er tilgjengelig over internett. IP-adressen finnes ved å slå opp DNS-adressen for hvert miljø. Portnummeret er standard port for HTTPS, port: 443.
 
-Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailtO:idporten@difi.no">idporten@difi.no</a>. 
+Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 *** 
 
@@ -391,7 +391,7 @@ Standardverdi:
 
 Dersom parameteren ikke er satt, vil lenken gå til Logg ut i ID-porten, og innbygger vil få en informasjonsside om at hun er logget ut, uten videre lenker.
 
-Goto-urlen må utveksles med Difi for at lenketjenesten skal fungere. 
+Goto-urlen må utveksles medDigitaliseringsdirektoratet for at lenketjenesten skal fungere. 
 
 ### Showlogout
 
@@ -423,10 +423,10 @@ eForvaltningsforskriftens §32 setter krav til at innbyggerens kontaktinformasjo
 
 Dette betyr at brudd på § 32 andre ledd vil utgjøre saksbehandlingsfeil i den sak varselet ble sendt. Feilen vil medføre risiko for at innbyggeren lider rettstap, for eksempel ved at varsel om enkeltvedtak blir sendt til en e-postadresse som ikke lenger er i bruk.
 
-Det er den enkelte virksomhet sitt ansvar å overholde §32, og ** Difi sin klare anbefaling er at virksomhetene sjekker datofeltene som følger med kontaktinformasjonen. ** Så lenge ett av datofeltene sistOppdatert eller sistVerifisert er nyere enn 18 mnd, kan kontaktinformasjonen brukes til varsling etter §8. Merk at datoene kan være forskjellig mellom mobil og epost, slik at for eksempel epost kan være utløpt, mens mobil fremdeles er aktivt. Varsling kan da ikke sendes til epost. 
+Det er den enkelte virksomhet sitt ansvar å overholde §32, og **Digitaliseringsdirektoratet sin klare anbefaling er at virksomhetene sjekker datofeltene som følger med kontaktinformasjonen. ** Så lenge ett av datofeltene sistOppdatert eller sistVerifisert er nyere enn 18 mnd, kan kontaktinformasjonen brukes til varsling etter §8. Merk at datoene kan være forskjellig mellom mobil og epost, slik at for eksempel epost kan være utløpt, mens mobil fremdeles er aktivt. Varsling kan da ikke sendes til epost. 
 Vi tror det beste er at fagsystemet/integrasjonen gjør denne kontrollen automatisk for saksbehandler, slik at man sikrer at vedtak ikke blir sendt feil.
 
-Samtidig kan kontaktinformasjon som er utløpt, fremdeles brukes til å sende servicemeldinger både av alvorlig og mindre alvorlig karakter, som for eksempel om snøbrøyting i gata, eller krav om koking av vann pga akutt forurensing.  Difi kan derfor ikke la være å utlevere utløpt kontaktinformasjon gjennom Oppslagstjenesten.
+Samtidig kan kontaktinformasjon som er utløpt, fremdeles brukes til å sende servicemeldinger både av alvorlig og mindre alvorlig karakter, som for eksempel om snøbrøyting i gata, eller krav om koking av vann pga akutt forurensing. Digitaliseringsdirektoratet kan derfor ikke la være å utlevere utløpt kontaktinformasjon gjennom Oppslagstjenesten.
 
 ### Informasjon "Varslingsstatus"
 

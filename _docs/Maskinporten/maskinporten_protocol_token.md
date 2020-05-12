@@ -9,13 +9,12 @@ product: Maskinporten
 
 ## About
 
-The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
+Using JWT grants towards the `/token` endpoint is documented in [RFC 7523, section 2.1 ](https://tools.ietf.org/html/rfc7523#section-2.1).
 
 ## Request
 
 The client requests a token by passing the JWT-bearer authorization grant to the /token endpoint.
 
-Maskinporten only There are different parameters available for the request, depending on grant type and client authentication method.   The following always apply:
 
 | Header parameters  | Value |
 | --- | --- |
@@ -23,7 +22,7 @@ Maskinporten only There are different parameters available for the request, depe
 | Content-type | application/x-www-form-urlencoded |
 
 
-The following request body attributes are available when using the JWT-grants:
+The following request body attributes shall be used when passing the JWT-grant:
 
 | Attribute  | Value | Description |
 | --- | --- | --- |
@@ -32,7 +31,7 @@ The following request body attributes are available when using the JWT-grants:
 
 There is no need to perform client authenticion when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
-See [JWT grant](maskinporten_protocol_jwtgrant.html) for requirements for the JWT grant.
+See [JWT grant](maskinporten_protocol_jwtgrant.html) for requirements for constructing the JWT grant.
 
 
 
@@ -44,7 +43,9 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 | - |-|
 |access_token   | An Oauth2 access token, either by reference or as a JWT depending on which scopes was requested and/or client registration properties. |
 |expires_in  | Number of seconds until this access_token is no longer valid   |
-| scope   | The list of scopes issued in the access token. Included for convenience only, and should not be trusted for access control decisions.  |
+| scope   | The list of scopes issued in the access token. Included for convenience for the client, and should not be trusted for access control decisions.  |
+
+Please note that the access token is opaque for the client, and the format may be changed. Thus the client should not inspect/validate the token contents.
 
 Example:
 ```
@@ -69,16 +70,14 @@ Maskinporten issues only self-contained tokens:
 
 
 
-#### "By value" / self-contained access token
-
 The token is a JWT with the following structure:
 
-**Access tokenets header:**
+**Access token header:**
 
 | claim | verdi |
 | --- | --- |
-| kid | "Key identifier" - unique identifier for the key and certificate used by ID-porten. The public key and the certificate must be fetched from our .well-known endpoint. |
-| alg | "algorithm" - algorithm used for signing the token. ID-porten only supports `RS256` (RSA-SHA256) |
+| kid | "Key identifier" - unique identifier for the key and certificate used by Maskinporten. The public key and the certificate must be fetched from our .well-known endpoint. |
+| alg | "algorithm" - algorithm used for signing the token. Maskinporten only supports `RS256` (RSA-SHA256) |
 
 
 
@@ -86,18 +85,31 @@ The token is a JWT with the following structure:
 
 | claim | value | example |
 | --- | --- | --- |
-| aud   |  The indended audience for token.  Normally the Oauth2 'issuer' URL of the Resource Server / API. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  ID-porten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  `https://api.examples.com/users`|
+| iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
-| client_amr  | How the client authenticated itselft towards the AS.  | `virksomhetssertifikat`|
+| client_amr  | How the client authenticated itselft towards Maskinporten  | `virksomhetssertifikat`|
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
-| supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
-| delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://sts.altinn.no`
-| scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
-| token_type | Type of token. Only `Bearer` supported. |
-| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)| `https://oidc.idporten.no/idporten-oidc-provider`
+| scope | A list of scopes the access_token is bound to.   |
+| token_type | Type of token. Only bearer supported. | `Bearer`|
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
+
+If the token was issued to a supplier acting on behalf of another organization, the token will also include the following two claims:
+
+| claim | value | example |
+| --- | --- | --- |
+| supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
+| delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://www.altinn.no`
+
+
+If the token is audience-restricted, the following claim will also be included:
+
+| claim | value | example |
+| --- | --- | --- |
+| aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction](maskinporten_func_audience_restricted_tokens.html) for details. |  `https://api.examples.com/users`|
+
+
 
 #### client_amr
 
@@ -113,7 +125,7 @@ The following values may be returned for the `client_amr`-claim.  The values are
 
 #### Access token validation
 
-**The client and resource server MUST validate all responses from ID-porten according to the OIDC and Oauth2 standards as well as  practice recommendations from the IETF.**
+**The client and resource server MUST validate all responses from Maskinporten according to the Oauth2 standards as well as best practice recommendations from the IETF.**
 
 Access tokens must always be validated by the Resource Server / API before granting access. Clients should normally just pass the access token along to the resource server without any processing of it, however if any processing is performed, clients must also perform such validation.
 

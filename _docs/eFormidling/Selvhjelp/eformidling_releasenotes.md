@@ -7,6 +7,27 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.1.0
+05.03.2020
+
+### Hva er endret/nytt?
+
+**Ny meldingstype - Avtalt:**  
+[Les her.](https://difi.github.io/felleslosninger/eformidling_nm_message.html#avtalt)
+
+**Batchoppdatering av DPV/DPF statuser:**  
+Istedenfor å sjekke status for en og en melding blir dette gjort som en batchjobb. Øker ytelsen.
+
+**Grafisk statusgrensesnitt:**  
+Etter ønske er det nå lagt til avsender orgnr, samt søkbar messageReference. Forenkler oversikten i status GUI.
+
+**Mindre bugfixes:**  
+- Spamvarsling av DPV meldinger er fikset
+- KS avviser duplikate forsendelser med en gang.
+  
+  
+Full endringslogg: [Release notes for 2.1.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10174)
+
 ## 2.0.10
 16.12.19
 
@@ -62,7 +83,7 @@ Kommer.
 25.01.19
 ```
 MOVE-1125 - Dersom en DPO-melding havner i dlq'en til mottaker, sender mottaker en appreceipt tilbake (dette for å si i fra hvis meldingen stopper opp på vei til sakark f.eks)
-MOVE-1246 - Endring av IP-adresser i Difis driftmiljø. Opdaterte logstash URL for staging og produksjon profilene (miljøene)
+MOVE-1246 - Endring av IP-adresser iDigitaliseringsdirektoratets  driftmiljø. Opdaterte logstash URL for staging og produksjon profilene (miljøene)
 
 Det vil si:
 - Dersom en DPO-melding havner i dlq'en til mottaker, sender mottaker en appreceipt tilbake (dette for å si i fra hvis meldingen stopper opp på vei til sakark f.eks)

@@ -1,0 +1,16 @@
+<service>
+            <id>integrasjonspunkt</id>
+            <name>integrasjonspunkt for einnsyn og eformidling</name>
+            <description>Oppsett for testmiljø</description>
+            <argument>-jar</argument>
+			<argument>-Dspring.profiles.active=staging</argument>
+            <argument>integrasjonspunkt-2.0.10.jar</argument>
+      	    <argument>-Xmx2048m</argument>
+            <logpath>%BASE%/integrasjonspunkt-logs</logpath>
+			<log mode="roll-by-size">
+				<sizeThreshold>10240</sizeThreshold>
+				<keepFiles>8</keepFiles>
+			</log>
+            <executable>java</executable>
+</service> 
+ 

@@ -1,7 +1,7 @@
 ---
-title: OAuth2 beskytta REST-API for administrasjon av OIDC-integrasjoner
+title: REST-API for administrasjon av OIDC-integrasjoner
 description: API som gir tjenesteleverandørar mulighet til å administrere sine OIDC-integrasjoner.
-summary: "Oauth2-beskyttet REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere sine OIDC/Oauth2-integrasjoner i ID-porten."
+summary: "REST-grensesnitt som gir utvalgte kunder mulighet til å selv-administrere sine OIDC/Oauth2-integrasjoner i ID-porten."
 permalink: oidc_api_admin.html
 sidebar: oidc
 product: ID-porten
@@ -17,7 +17,7 @@ Utvalgte OIDC-klienter kan få tilgang til å administrere integrasjonar i ID-po
 
 ## Hvordan få tilgang ?
 
-Ta kontakt med idporten@difi.no for å få tilgang til å bruke tjenesten.
+Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få tilgang til å bruke tjenesten.
 
 
 ## Bruk av Oauth2 {#scopes}
@@ -37,7 +37,7 @@ Klienten må få tildelt scopes for å få tilgang til APIet:
 
 ## Eierskap til integrasjoner
 
-Leverandører kan velge to måter å integrere sine kunder på:
+Leverandører kan velge tre måter å integrere sine kunder på:
 
 ### 1: onbehalfof-integrasjoner
 
@@ -49,10 +49,13 @@ Med selvstendige integrasjoner har hver integrasjon har egen client_id og klient
 * Leverandøren må sette client_orgno lik egen kunde sitt organisasjonsnummer.
 * Leverandøren kan opprette integrasjoner på vilkårlige client_orgno
 * Leverandørens eget organisasjonnummer blir *automatisk* satt som `supplier_orgno` (basert på virksomhetssertifikatet som blir brukt mot admin-APIet)
-* (På sikt vil) access_tokens utsted til klienten vil innholde både leverandørens og kundens organisasjonsnummer.
+* Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene.
 
 Ved endring og sletting tillater APIet kun operasjoner på integrasjoner der eget orgno er lagret som supplier_orgno fra før.
 
+### 3: Delegert tilgang i Altinn
+
+Dette gjelder leverandør-integrasjonar som skal konsumere API-er fra 3djepart der API-eier krever at den juridiske konsumenten (=leverandørens kunde) bruker Altinn til å aktivt delegerer en tildelt API-tilgang videre til leverandør.  Se [dokumentasjon av delegering](/maskinporten_func_delegering.html) for detaljer.
 
 ## Ulike typer integrasjonar
 
@@ -63,7 +66,7 @@ Man kan opprette ulike typer integrajonser over APIet.  Det er klient-autentiser
 
 For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui.html#/oidc-client-controller/updateSecretUsingPOST)
 
-Merk: Difi vil på sikt innføre maks-levetid på client_secret.
+Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_secret.
 
 ## Bruk av asymmetrisk nøkkel
 
@@ -75,6 +78,9 @@ Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST
 
 Kun RS256 støttes som algoritme.
 
+Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
+
+Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
 Eksempel på å legge inn en nøkkel:
 ```
 POST /clients/{client_id}/jwks
@@ -93,9 +99,13 @@ POST /clients/{client_id}/jwks
 }
 ```
 
-`kid` må være unik innenfor alle ID-portens kunder.
+`kid` velges av kunde selv, og må være unik innenfor alle ID-porten/Maskinportens kunder.
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
+
+## Registrering av scopes
+
+Se [dokumentasjon av klient-registrering](/oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for registrering av Oauth2 scopes på en integrasjon.
 
 ## REST-grensesnittet
 

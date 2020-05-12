@@ -13,14 +13,14 @@ product: ID-porten
 
 På denne siden dokumenterer vi hvordan  API-tilbydere gir mulighet til selvbetjening av egen API-sikring.
 
-Les gjerne [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html) først.  API-konsumenter bør se på [selvbetjenings-API for integrasjoner](oidc_api_admin.html).
+Les gjerne [integrasjonsguide for API-tilbydere](maskinporten_guide_apitilbyder.html) først.  API-konsumenter bør se på [integrsasjonsguide for API-konsumenter](maskinporten_guide_apikonsument.html) og [selvbejenings-API for integrasjoner](oidc_admin.html)
 
 
 ## Om selvbetjenings-APIet
 
 ### Hvordan få tilgang ?
 
-Ta kontakt med idporten@difi.no for å få tilgang til å bruke APIet.
+Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få tilgang til å bruke APIet.
 
 ### Bruk av Oauth2
 
@@ -50,7 +50,7 @@ Se [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html).
 
 ### Beskrivelse av APIer
 
-I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Difi ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
+I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Digitaliseringsdirektoratet ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
 
 Følgende syntax brukes:
 
@@ -67,19 +67,31 @@ der `prefix` er en tekststreng som blir manuelt tildelt API-tilbyderen. En API-t
 
 ### Synlighet
 
-Attributtet `visibilty` brukes for å angi scopets synlighet:
+Attributtet `visibility` brukes for å angi scopets synlighet:
 
 |verdi|beskrivelse|
 |-|-|
 |PUBLIC | Scopet er synlig for alle på /scopes/all endepunkt.    |
 |PRIVATE| Scopet er ikke synlig for andre enn API-tilbyder og de konsuementer som har fått tilgang |Konsument må bli fortalt at scopet finnes    |
-|INTERAL | Inten bruk i Difi   |   
+|INTERAL | Inten bruk i Digitaliseringsdirektoratet  |   
 
 Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
 
+### Scope-begrensinger
+
+Attributtet `allowed_integration_types` legger føringer på bruken av et scope. En eller flere integrasjonstyper kan være tillatt. Dersom dette attributtet er satt, må en av verdiene inkludere "maskinporten" for at du skal kunne bruke scopet med en maskinporten klient.
+
+### Whitelisting av tilgang
+
+API-tilbyder kan velge å deaktivere tilgangskontrollen til et API/scope.  Det kan være flere grunner til å bruke dette:
+- API-tilbyder ønsker å utføre tilgangskontrollen lokalt som del av APIet istedenfor hos Maskinporten
+- APIet er "åpent", dvs alle skal kunne hente data, men man ønsker å spore hvem som bruker det
+
+For å aktivere denne funksjonen, settes attributtet  `accessible_for_all` på det aktuell API-scopet.
+
 ### Inaktive entiteter
 
-For å sikre juridisk logging og statistikk, vil Difi aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
+For å sikre juridisk logging og statistikk, vil Digitaliseringsdirektoratet aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
 
 Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
 
@@ -113,7 +125,7 @@ cache-control: no-cache
 {
 	"prefix": "difi",
 	"subscope": "api3",
-	"description": "Difi sitt API nummer 3 for demo-formål"
+	"description": " Digitaliseringsdirektoratetsitt API nummer 3 for demo-formål"
 }
 ```
 
@@ -155,11 +167,11 @@ Respons:
 ]
 ```
 
-### 3. Provisjonering av konsument
+### 3. Konsument lager en integrasjon
 
-Konsumenten må provisjonere tilgangen ned til en aktuell klient, før han kan få utstedt tokens.  Dette gjøres ved å oppdatere Oauth2 klienten som skal ha tilgangen med det nye scopet, via [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes).
+Konsumenten må registere en integrasjon (=oauth2-klient) som skal bruke den aktuelle tilgangen. Konsumenten kan enten lage en ny klient, eller oppdatere en eksisterende.  Generelt anbefaler vi av sikkerhetsgrunner å lage en ny, siden klienter ikke bør får for vide tilganger (altså for mange scopes).  Dette gjøres ved [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes).
 
-#### Eksempel på provisjonering
+#### Eksempel på registrering
 
 Først henter du aktuell klient-konfigurasjon med GET, og tar utgangspunkt i denne for å generere en modifisert objekt  tilbake:
 

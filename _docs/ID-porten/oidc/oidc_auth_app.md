@@ -22,7 +22,7 @@ Vanligvis er det backend-en som er registrert som klient i ID-porten, ikke selve
 
 ## Sentral oversikt og revokasjon
 
-Difi krever at kunder som omsetter punkt-autentiseringen fra ID-porten til en langt-levende innlogging, oppfyller følgende krav:
+ Digitaliseringsdirektoratet krever at kunder som omsetter punkt-autentiseringen fra ID-porten til en langt-levende innlogging, oppfyller følgende krav:
 
 * Har lokal sikring av app vha. touchID, ansiktsgjenkjenning el. lignende
 * Aktive innlogginger skal vises på sentrale oversikt i ID-portens brukerprofil
@@ -37,9 +37,9 @@ Den enkleste måten å håndtere kravene ovenfor, er å bruke et **langt-levende
     - en innbygger-vennlig beskrivelse
     - en levetid, basert på kundens egen risikovurdering
     - flagg som bestemmer om ID-porten skal spørre innbyggeren om et samtykke til den lange innloggingen.
-3. Ved innlogging mottar klienten et *access_token* knyttet til innbyggeren med dette scopet og lagrer dette trygt i egen backend så lenge innloggingen er gyldig.  
-4. Validerer at access_tokenet fremdeles er gyldig ved å sjekke det mot ID-portens /tokeninfo-endepunkt ved brukerhandlinger
-5. På grunn av den lange levetiden, bør ikke ID-portens token flyte ut til app'en, men istedet omsettes til egne token for sikring mellom app og egen backend.
+2. Ved innlogging mottar klienten et *access_token* knyttet til innbyggeren med dette scopet og lagrer dette trygt i egen backend så lenge innloggingen er gyldig.  
+3. Validerer at access_tokenet fremdeles er gyldig ved å sjekke det mot ID-portens /tokeninfo-endepunkt ved brukerhandlinger. Alternativt kan /revokelist-endepunktet brukes for bulkoversikt over revokerte access token, filtreres på clientId.
+4. På grunn av den lange levetiden, bør ikke ID-portens token flyte ut til app'en, men istedet omsettes til egne token for sikring mellom app og egen backend.
 
 Alternativt  kan kunden bruke en variant med kort-levde access_token i kombinasjon med refresh_tokens.
 

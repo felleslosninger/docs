@@ -31,15 +31,15 @@ Forutsatt at de riktige tilgangene er gitt, kan API-konsumenter nå opprette sin
 
 <div class="mermaid">
 graph LR
+subgraph Difi
+  MP[Maskinporten]
+end
   subgraph API-konsument
     client[Administrasjonsklient]
   end
-  subgraph Difi
-    MP[Maskinporten]
-  end
 
-  MP -->|ny / endret klientregistrering|client
   client -->|opprette / endre klient med tildelte scopes |MP
+  MP -->|ny / endret klientregistrering|client
 
 
 </div>
@@ -52,17 +52,17 @@ graph LR
     API
   end
   subgraph Difi
-    OIDC[OIDC Provider]
+    Maskinporten[Maskinporten]
   end
   subgraph API-konsument
      ny[Klient]
   end
-  OIDC -->|2.utsteder token med tildelt scope|ny
-  ny -->|1. forspør tilgang til scope|OIDC
+  Maskinporten -->|2.utsteder token med tildelt scope|ny
+  ny -->|1. forspør tilgang til scope|Maskinporten
   ny -->|3.bruker token mot|API
 </div>
 
-API-konsumenter kan selv administrere sine klientkonfigurasjoner og provisjonere disse med tildelte tilganger fra tilbyderene.
+API-konsumenter kan selv administrere sine klientkonfigurasjoner og registrere disse med tildelte scopes fra tilbyderene.
 
 API-tilbydere og konsumenter kan bruke denne tjenesten for å styre tilgang i de tilfellene der informasjonsverdiene APIet tilbyr er regulert av lovhjemmel, og ikke krever samtykke av brukeren.
 

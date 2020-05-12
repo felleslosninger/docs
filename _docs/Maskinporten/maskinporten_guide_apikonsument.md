@@ -1,7 +1,7 @@
 ---
 title: Slik bruker du Maskinporten som API-konsument
 description:  Maskinporten som API-konsument
-summary: 'API-konsumenter må lage en Oauth2-integrasjon mot Maskinporten og så videreføre/provisjonere en tildelt API-tilgang til denne integrasjonen.'
+summary: 'API-konsumenter må lage en Maskinporten-integrasjon som har det aktuelle APIet sitt scope registrert.'
 permalink: maskinporten_guide_apikonsument.html
 sidebar: maskinporten_sidebar
 product: Maskinporten
@@ -15,11 +15,11 @@ Dette dokumentet viser de stegene som en API-konsument må gjøre for å bruke M
 En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 
 1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
-2. API-tilbyder oppretter et API
+2. API-tilbyder oppretter et API (scope)
 3. API-tilbyder gir tilgang til en konsument
-4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og provisjonerer tilgangen til denne.
+4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrer  scopet til denne.
 
-Provisjonering/konfigurasjon av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
 5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
 6. Konsumenten inkluderer token i kall til APIet.
@@ -40,11 +40,11 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 
 | Egenskap   | Verdi   |   Forklaring |
 |-|-|-|
-|integration_type (TBD)   | "Maskinporten"   |  Dette feltet forteller Difi hvilken integrasjon dette er.   |
+|integration_type  | "Maskinporten"   |  Dette feltet forteller Digitaliseringsdirektoratet hvilken integrasjon dette er.   |
 | token_endpoint_auth_method  | "private_key_jwt"  | Maskinporten aksepterer kun sertifikat og nøkler, og ikke client_secret for å autentisere klienter |
 | grant_types   | "urn:ietf:params:oauth:grant-type:jwt-bearer"  | Maskinporten aksepterer kun signerte JWTer som grants.  |
-| client_id  | auto-tildelt  | Blir satt at Difi ved registrering  |
-| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig for Difis personell,  |
+| client_id  | auto-tildelt  | Blir satt atDigitaliseringsdirektoratet ved registrering  |
+| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig forDigitaliseringsdirektoratets  personell,  |
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
@@ -59,7 +59,7 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 Du kan logge inn på https://samarbeid.difi.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
 
-Alle organisasjoner som har inngått Difis bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
+Alle organisasjoner som har inngåttDigitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
 
 For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
 
@@ -112,9 +112,9 @@ POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
 ```
 'kid'-verdien må være unik blant alle Maskinportens kunder.  
 
-#### Registrere klient som leverandør
+#### Registrere klient som leverandør for ekstern delegering
 
-En leverandør kan registere sin integrasjon på samme måte som over, med ett unntak: *leverandør har ikke mulighet til å forhåndsregistrere det aktuelle API-scopet på sin klient.  I stedet må scope og kunde oppgis run-time i token-forespørsel.*.
+Leverandører sm bruke ekstern delegering registerer sin integrasjon på samme måte som over.
 
 
 ### 5: Be om token
@@ -141,7 +141,7 @@ Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
 
 | Claim  |  Verdi | Beskrivelse  |
 | --- | --- |--- |
-|aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljøå finner du på .well-known-endpunkt. |
+|aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljø finner du på .well-known-endpunkt. |
 |iss| client_id |issuer - Din egen client_id.  |
 |scope| <string>| Space-separert liste over scopes som klienten forespør. |
 |iat| 1573132283| issued at - Tidspunkt for når JWTen ble laget. **Merk:** UTC-tid|
@@ -159,9 +159,21 @@ Content-type: application/x-www-form-urlencoded
   grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&
   assertion=<jwt>
 ```
+der payload i JWT kan se slik ut:
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "min_egen_clientid",
+  "exp" : 1584693183,
+  "iat" : 1584693063,
+  "jti" : "b1197d5a-0c68-4c4a-a95c-dc07c1194600"
+}
+```
+
 Maskinporten vil først validere gyldigheten av JWT'en. Deretter vil virksomhetssertifikatet (brukt til signering av JWT'en) valideres og dersom klienten har tilgang til de forespurte ressursene returneres et access_token til klienten.
 
-Dersom du er leverandør må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
+Dersom du er leverandør opp mot et API som krever ekstern delegering, må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
 
 Generelt er det sikkerhetsmessig problematisk å be om mange scopes i samme token, så vi anbefaler ett scope per token.
 
@@ -177,3 +189,72 @@ Authorization: Bearer  <access_token>
 De fleste API tillater flere API-kall med samme token, slik at man trenger ikke hente nytt token ved hvert kall.
 
 Når tokenet er utløpt, vil klient typisk få 401-respons fra APIet, og steg 5 må repeteres.
+
+
+
+## Bruke delegering via Altinn autorisasjon
+
+
+
+### Bruke delegering som konsument
+
+Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en leverandør:
+
+1. Etter innlogging, velg å representere foretaket
+2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
+1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
+1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
+1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
+
+1. Bekreft med å klikk "Gi rettigheter"
+![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_bekreftelse.png)
+
+### Bruke delegering som leverandør
+
+Leverandør-integrasjoner som skal bruke ekstern delegering, er litt forskjellige fra andre integrasjoner i ID-porten/Maskinporten, og det er derfor viktig å få de registrert korrekt.
+
+ID-porten/Maskinporten har allerede to eksisterende interne delegeringsmekanismer, som ikke er kompatible med delegering i Altinn. For å oppnå korrekt registrering, må du da:
+
+* For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
+* For leverandører som bruker selvbetjenings-API, må de ikke bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette client_orgno i registrerings-kallet.
+
+Når integrasjonen din så skal forespørre tokens på vegne av konsumenter, må du oppgi konsumentens organisasjonsnummer som `consumer_org`-claim i JWT-grantet. Maskinporten vil da sjekke Altinn, om et gyldig delegeringsforhold finnes mellom konsument og leverandør for aktuelt scope.
+
+#### Eksempel på bruk  av altinn:
+JWT Grant i request:
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "oidc_difi_delegering_altinn",
+  "exp" : 1584693183,
+  "consumer_org" : "910753614",
+  "iat" : 1584693063,
+  "jti" : "b1197d5a-0c68-4c4a-a95c-dc07c1194600"
+}
+```
+som gir respons:
+```
+{
+  "iss" : "https://ver2.maskinporten.no/",
+  "client_amr" : "virksomhetssertifikat",
+  "token_type" : "Bearer",
+  "client_id" : "oidc_difi_delegering_altinn",
+  "aud" : "unspecified",
+  "scope" : "difitest:test2",
+  "supplier" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  },
+  "exp" : 1584694406,
+  "delegation_source" : "https://tt02.altinn.no/",
+  "iat" : 1584693406,
+  "jti" : "U8E9-Zu8qVyAOLfm_M0UbalbVYjMt3kakanvE5dV9zk",
+  "consumer" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:910753614"
+  }
+}
+```

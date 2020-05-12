@@ -1,7 +1,7 @@
 ---
-title: OIDC arkitektur
-description: Arkitekturen til ID-portens OIDC Provider
-summary: "OIDC Provideren til ID-porten er realisert som en frittstående applikasjon 'foran' ID-porten"
+title: OIDC systemarkitektur
+description: Systemarkitektur i ID-porten
+summary: "OIDC Provideren til ID-porten er realisert som en frittstående applikasjon 'foran' ID-porten SAML-tjeneste"
 permalink: oidc_arch.html
 sidebar: oidc
 product: ID-porten
@@ -9,11 +9,11 @@ product: ID-porten
 
 ## Autentiseringstjenester i ID-porten
 
-Arkitekturen for den OIDC-funskjonaliteten i ID-porten  ser slik ut:
+Arkitekturen for  OIDC-funksjonaliteten i ID-porten  ser slik ut:
 
 <div class="mermaid">
 graph LR
-  subgraph Difi
+  subgraph Digitaliseringsdirektoratet 
     subgraph Eksisterende funksjonalitet
       idp[ID-porten]
       end
@@ -30,6 +30,7 @@ graph LR
 
 ID-portens OIDC provider tilbyr **autentisering** av sluttbrukere opp mot netttjenester.  Funksjonaliteten er grunnleggende den samme som dagens SAML2-basert løsning.
 
+
 ID-portens OIDC Provider er en frittstående applikasjon som står foran den eksisterende ID-porten og snakker SAML2 med denne, tilsvarende eksisterende tjenester hos kundene.
 
 Det er ID-porten som håndterer SSO-sesjoner både for SAML2 og OIDC.  Dette medfører at kunder får [single-signon (SSO)](oidc_func_sso.html) både mellom OIDC-baserte tjenester, og mellom SAML2- og OIDC-baserte tjenester.
@@ -43,7 +44,7 @@ graph LR
   subgraph 3djepart
     API
   end
-  subgraph Difi
+  subgraph Digitaliseringsdirektoratet 
     OIDC[OIDC Provider]
   end
   subgraph Kunde
@@ -58,7 +59,7 @@ graph LR
 API-tilgangen kan være innloggingsbasert (implisitt samtykke), brukerstyrt (eksplisitt samtykke), eller maskin-til-maskin-basert. I de to første tilfellene gjelder autorisasjonen kun en enkelt innbygger, mens det siste tilfellet er tiltenkt hjemmelsbaserte autorisasjoner.
 
 
-## Oauth2-beskytta APIer fra Difi
+## Oauth2-beskytta APIer fra Digitaliseringsdirektoratet 
 
 <div class="mermaid">
 graph LR
@@ -74,7 +75,7 @@ graph LR
   KRR -- SOAP --- Oppslagstjenesten
 </div>
 
-Difi tilbyr to Oauth2-beskytta APIer:
+ Digitaliseringsdirektoratet tilbyr to Oauth2-beskytta APIer:
 
 * [KRR-Oauth2](oidc_api_krr.html) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
 * [authlevel](oidc_api_authlevel.html) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  

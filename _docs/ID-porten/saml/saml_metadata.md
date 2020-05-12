@@ -139,7 +139,7 @@ Standardverdi:
 
 Dersom parameteren ikke er satt, vil lenken gå til Logg ut i ID-porten, og innbygger vil få en informasjonsside om at hun er logget ut, uten videre lenker.
 
-Goto-urlen må utveksles med Difi for at lenketjenesten skal fungere. 
+Goto-urlen må utveksles med Digitaliseringsdirektoratet for at lenketjenesten skal fungere. 
 
 ### **Showlogout**
 Eksempel på verdi: false
@@ -178,7 +178,7 @@ I tillegg til basisverdiene for norske eID kan AuthMethod også ha verdien:
 
 **Extended-fil**
 
-Extended-fil trengs ikke sendes til Difi. Denne genererer vi selv basert på entity_ID som står i metadata som sendes til Difi.
+Extended-fil trengs ikke sendes til Digitaliseringsdirektoratet. Denne genererer vi selv basert på entity_ID som står i metadata som sendes til Difi.
 
 **status-dsf**
 

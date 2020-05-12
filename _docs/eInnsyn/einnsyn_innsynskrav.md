@@ -10,7 +10,7 @@ Når en sluttbruker bestiller innsynskrav til en virksomhet så skal dette motta
 
 ## Hvordan fungerer det ?
 
-Når en sluttbruker bestiller et innsynskrav så vil Difi sin einnsyn-klient generere en bestilling og sende denne til Difi sitt integrasjonspunkt. Dette integrasjonspunktet vil dermed kryptere, signere og pakke meldingen for så å sende denne via Azure Servicebus til mottaker sitt integrasjonspunkt. Her vil det bli dekryptert og sendt videre til mottakers einnsyn-klienten. Denne vil kontakte en intern SMTP-server og be den sende bestillingen. Det vil så gå en e-post fra denne e-postserveren, men med avsender e-postadresse "admin@oep.no". Denne e-posten går til den adressen som er angitt på einnsyn.no under ``` virksomhet -> "..." -> endre -> e-post ```. Deretter må filen importeres inn i sakarkivsystemet. 
+Når en sluttbruker bestiller et innsynskrav så vilDigitaliseringsdirektoratet sin einnsyn-klient generere en bestilling og sende denne tilDigitaliseringsdirektoratet sitt integrasjonspunkt. Dette integrasjonspunktet vil dermed kryptere, signere og pakke meldingen for så å sende denne via Azure Servicebus til mottaker sitt integrasjonspunkt. Her vil det bli dekryptert og sendt videre til mottakers einnsyn-klienten. Denne vil kontakte en intern SMTP-server og be den sende bestillingen. Det vil så gå en e-post fra denne e-postserveren, men med avsender e-postadresse "admin@oep.no". Denne e-posten går til den adressen som er angitt på einnsyn.no under ``` virksomhet -> "..." -> endre -> e-post ```. Deretter må filen importeres inn i sakarkivsystemet. 
 
 ![nettverksoppsett einnsyn-klient](/felleslosninger/images/einnsyn/nettverksoppsett.png)
 

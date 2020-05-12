@@ -6,8 +6,6 @@ permalink: oidc_protocol_token.html
 sidebar: oidc
 product: ID-porten
 ---
-* TOC
-{:toc}
 
 ## About
 
@@ -36,7 +34,7 @@ The following request attributes are available when using the authorization code
 | grant_type | required | Type of grant the client is sending, ie. `authorization_code` |
 | code | required  | The authorization code received in the authorization response.  |
 | redirect_uri | required | The desired redirect uri.  Must be the same value as was used in the corresponding authentication request. |
-| code_verifier | recommended | The PKCE code verifier. Mandatory for public clients. |
+| code_verifier | recommended | The PKCE code verifier. Mandatory for public clients. Between 43 and 128 characters (ASCII). |
 | client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
 | client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
 

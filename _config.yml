@@ -21,7 +21,8 @@ favicon: assets/difi_emplem_negativ.jpg
 use_logo: true
 
 # logo image to use. logo images are constrained at 50px in height.
-logo: assets/difi-logo.png
+# logo: assets/difi-logo.png
+logo: assets/digdir_logo.png
 
 # use text title instead. text title read from uistring.title in ui strings section.
 use_text_title: false
@@ -211,8 +212,8 @@ collections:
 
 uistring:
     title: Dokumentasjon av fellesløsninger # title to appear in nav bar and page meta
-    description: Teknisk dokumentasjon av Difi's fellesløsninger # Displays as site description meta tag for site
-    copyright: 2019 Direktoratet for forvaltning og IKT(Difi) # appears in footer
+    description: Teknisk dokumentasjon av Digitaliseringsdirektoratets fellesløsninger # Displays as site description meta tag for site
+    copyright: Digitaliseringsdirektoratet # appears in footer
     breadcrumb_home_name: Home # display name for "Home" path in the breadcrumb
     tableofcontents: Innhold # text that appears before in-page table of contents
     expandall: Utvid # appears as text in sidebar to expand all levels

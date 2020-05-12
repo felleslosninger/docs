@@ -48,8 +48,11 @@ folders:
       - title: Testmiljø eFormidling
         jurl: /eformidling_testing_env.html
                
-      - title: Endringslogg
+      - title: Endringslogg integrasjonspunktet
         jurl: /eformidling_releasenotes.html
+        
+      - title: Endringslogg sentrale komponenter
+        jurl: /eformidling_releasenotes_sentrale_komp.html
              
       - title: Sak-arkiv
         jurl: /eformidling_veiledning_sakark.html
@@ -69,6 +72,6 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no
 

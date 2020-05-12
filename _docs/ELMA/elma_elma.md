@@ -153,7 +153,7 @@ After you have succesfully added a new user you can edit this user, add another 
 
 
 
-If you have any questions don't hesitate to contact us <a href="elma@difi.no">elma@difi.no</a>
+If you have any questions don't hesitate to contact us <a href="elma@digdir.no">elma@digdir.no</a>
 
 
 ---

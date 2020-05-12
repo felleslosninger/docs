@@ -11,6 +11,20 @@ product: ID-porten
 
 PKCE - Proof Key  for Code Exchange - (utt. "pixy") er en metode som beskytter public klienter som benytter autorisasjonskodeflyten (typisk mobil-app'er) mot stjeling av autorisasjonskoden.
 
-Metoden er basert på at klienten genererer en hemmelighet `code_verifier` ved hver autentiseringsforespørsel og sender en hash'et versjon `t(code_verifier)` av denne som en del av forespørselen. Når autorisasjonskoden etterpå skal utveksles i tokens, må code_verifier sendes med. En eventuell angriper som har snappet opp autorisasjonskoden, kjenner ikke hemmeligheten, og vil derfor ikke får utlevert tokens.
-
 PKCE er definert i [RFC7636](https://tools.ietf.org/html/rfc7636), og vi henviser til denne for detaljert dokumentasjon av funksjonaliten.
+
+Metoden er basert på  følgende steg:
+
+1. klienten genererer en hemmelighet `code_verifier` ved hver innlogging.  
+2. I /authorize-kallet sendes en hash'et versjon `code_challenge` av hemmeligheten som en del av forespørselen
+3. I /token-kallet må `code_verifier` sendes med. En eventuell angriper som har snappet opp autorisasjonskoden, kjenner ikke hemmeligheten, og vil derfor ikke får utlevert tokens.
+
+Vi støtter bare `code_challenge_method=S256`
+
+Alle klienter i ID-porten kan og bør bruke PKCE, men det er påkrevd for browser- og native klienter.
+
+**Merk at code_verifier må vere minst 43 karakterer lang, og ikkje lengre enn 128.**
+
+Dersom `code_verier` er `xyo94uhy3zKvgB0NJwLms86SwcjtWviEOpkBnGgaLlo` så blir utrekna `code_challenge` lik `b7elB7ZyxIXgFyvBznKvxl7wOB-H17Pz0a3B62NIMFI=`.
+
+Her er et verktøy for å rekne ut challenges: https://gist.github.com/tonyxu-io/21eb57ab2a4aeb2a3ee10f77542abe64

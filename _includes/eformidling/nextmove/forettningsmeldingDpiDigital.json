@@ -2,6 +2,7 @@
     "digital": {
         "sikkerhetsnivaa": "",
         "hoveddokument": "",
+        "avsenderId": "", // valgfri
         "tittel": "",
         "spraak": "NO",
         "digitalPostInfo": {

@@ -141,7 +141,7 @@ Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelsese
 
 ## Opprette DPV bruker
 
-Dette gjøres av Altinn etter at Difi sender bestilling. For at Difi skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
+Dette gjøres av Altinn etter atDigitaliseringsdirektoratet sender bestilling. For atDigitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
 
 [Informasjonsskjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUQzlQTzNVSUdLTjVGWFpJNk1ITjBWTkNKSy4u)
 

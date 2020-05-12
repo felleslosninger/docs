@@ -1,7 +1,7 @@
 ---
 title: OAuth2 beskytta REST-API for innloggingshistorikk i ID-porten
 description: API for innloggingshistorikk i ID-porten
-summary: "Innbygger sin innloggingshistorikk fra ID-porten kan konsumeres via API og synliggjøres for innbygger i andre tjenester. Dette gir innbygger innsyn i bruk av egne data fra Difis løsninger"
+summary: "Innbygger sin innloggingshistorikk fra ID-porten kan konsumeres via API og synliggjøres for innbygger i andre tjenester. Dette gir innbygger innsyn i bruk av egne data fraDigitaliseringsdirektoratets  løsninger"
 permalink: oidc_api_logghistorikk.html
 sidebar: oidc
 product: ID-porten
@@ -15,7 +15,7 @@ Kunden mottar opplysningene for at innbyggeren kan lettere deteketere misbruk av
 
 ## Hvordan få tilgang ?
 
-Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester](https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester) for generelle vilkår for tilleggstjenester.
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester-og-priser](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-digdirs-digitale-felleslosninger/tilleggstjenester-og-priser#Tilleggstjenester%20-%C2%A0ID-porten) for generelle vilkår for tilleggstjenester.
 
 ## Brukergrensesnitt
 
