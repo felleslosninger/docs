@@ -21,10 +21,10 @@ folders:
 
       - title: Guide for API-konsument
         jurl: /maskinporten_guide_apikonsument.html
-        
 
-  - title: Selvbetjening
-    folderitems:
+
+- title: Selvbetjening
+  folderitems:
 
       - title: Selvbetjening via Web
         jurl: /maskinporten_sjolvbetjening_web.html
@@ -38,6 +38,7 @@ folders:
 
       - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
+
       - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
 
