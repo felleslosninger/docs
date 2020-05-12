@@ -24,10 +24,10 @@ folders:
     folderitems:
 
       - title: Selvbetjening via Web
-        jurl: /maskinporten_sjolvbetjening_web
+        jurl: /maskinporten_sjolvbetjening_web.html
 
       - title: Selvbetjening via API
-        jurl:
+        jurl: /maskinporten_sjolvbetjening_web.html
 
 
 - title: Grensesnittspesifikasjon
