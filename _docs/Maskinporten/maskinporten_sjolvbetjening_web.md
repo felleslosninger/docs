@@ -8,6 +8,7 @@ product: Maskinporten
 ---
 
 Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyder og API-konsument.
+
 ---
 * TOC
 {:toc}
