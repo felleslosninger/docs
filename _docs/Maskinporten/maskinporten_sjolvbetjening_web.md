@@ -53,43 +53,53 @@ For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten 
 
 For bestilling til produksjonsmiljøet, send inn skjema:
 
-### Opprette scopes
+### Innlogging
+
+For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 
 1. Logg inn på samarbeidsportalen.
 2. Trykk på "Virksomhetens tjenester" i venstremenyen.
 3. Trykk på "Administrasjon av tjenester" i venstremenyen.
 4. Velg "Mine API" i det miljøet du vil opprette scope.
-5. Trykk på "Nytt scope".
-6. Velg prefix og fullfør registrering.
-7. Trykk "Opprett for å lagre".
+
+### Opprette scopes
+
+1. Fullfør stegene i "Innlogging"
+2. Trykk på "Nytt scope".
+3. Velg prefix og fullfør registrering.
+4. Trykk "Opprett for å lagre".
 
 ### Tilgangsstyring
 
-1. Logg inn på samarbeidsportalen.
-2. Trykk på "Virksomhetens tjenester" i venstremenyen.
-3. Trykk på "Administrasjon av tjenester" i venstremenyen.
-4. Velg "Mine API" i det miljøet scopet ligger i.
-5. Trykk på scopet du skal tilgangsstyre.
-6. Scroll ned til under konfigurasjonen og trykk "Legg til tilgang".
-7. Legg inn organisasjonsnummer og trykk "Legg til"
-8. For å slette en tilgang, trykk på søppelkasse-ikonet til høyre for organisasjonen med tilgang.
+1. Fullfør stegene i "Innlogging"
+2. Trykk på scopet du skal tilgangsstyre.
+3. Scroll ned til under konfigurasjonen og trykk "Legg til tilgang".
+4. Legg inn organisasjonsnummer og trykk "Legg til"
+5. For å slette en tilgang, trykk på søppelkasse-ikonet til høyre for organisasjonen med tilgang.
 
-### Slette subscopes
+### Deaktivere subscopes
+
+NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil de som har fått tilgang fortsatt få scopet utlistet på sine tilgjengelige scopes.
+
+1. Fullfør stegene i "Innlogging"
+2. Trykk på scopet du skal deaktivere.
+3. Trykk på "Endre"
+4. Trykk på "Deaktiver" og bekreft at du vil deaktivere.
+
 
 ### Vedlikehald av merkantile data
 
-En full verdikjede for API-sikring med Maskinporten består av følgende steg:
+Vedlikehold av fakturainformasjon og varslingspunkter er viktig for at vi hele tiden skal ha oppdatert informasjon om dette. Varslingspunkt(er) får eposter ved kritiske hendelser i løsningen og om det ikke er registrert noe her, så kan man gå glipp av viktig informasjon.
 
-1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
-2. API-tilbyder oppretter et API (scope)
-3. API-tilbyder gir tilgang til en konsument
-4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrer  scopet til denne.
+For å administrere merkantile data:
 
-Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+1. Logg inn på Samarbeidsportalen
+2. Trykk på "Virksomhetens tjenester" i venstremenyen
+3. Finn integrasjonen av type "API-tilbyder" og trykk på den.
+4. Trykk på "Rediger integrasjon"
+5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
-5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
-6. Konsumenten inkluderer token i kall til APIet.
-7. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
+Tutorial:
 
 
 ## Selvbetjening som API-konsument
