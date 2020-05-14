@@ -9,30 +9,42 @@ product: ID-porten
 
 ## Om eIDAS
 
-ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser.  For mer info om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030](https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030).  
+ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser. Det betyr at europeiske brukere med "EU-godkjent" eID kan logge seg på norske offentlige tjenester.  Per februar 2020 er følgende land koblet på i produksjonsmiljøet:
+- Belgia
+- Kroatia
+- Estland
+- Italia
+- Luxembourg
+- Spania
 
-Funksjonaliteten har blitt utviklet med støtte fra EU-kommisjonen, se [Connecting Europe Facility Norge](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital).
+For å bli integerte i produksjon, må et land bli formelt *notifisert* og fagfellevurdert av EU-kommisjonen.  For en oppdatert status over denne prosessen, se EU-kommisjonen sin side: [https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS](https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS)
+
+For mer informasjon om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030](https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030).  
+
+Denne funksjonaliteten har blitt utviklet med støtte fra EU-kommisjonen, se [Connecting Europe Facility Norge](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital).
 
 
 {% include image.html file="oidc_func_eidas-931dea0a.png" url="https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital" alt="CEF logo" max-width="200" %}
 
+
+## Hvordan aktivere eIDAS-pålogging?
 
 ID-porten tilbyr to typer eidas-støtte over OIDC:
 
 * **Enkel**: Her sees eIDAS på lik linje med en norsk eID, slik at tjenesten kun vil motta innlogginger der eIDAS-brukeren er blitt entydig gjenkjent i Folkeregisteret med F/D-nummer. De fleste tjenester vil ønske denne oppførselen.
 * **Avansert**:  Tjenesten kan selv styre hvilken eIDAS-oppførsel de vil ha, ved å sende ulike parametre som del av autentiseringsforespørselen.
 
+Per idag er ikkje eIDAS-pålogging aktivert som standard, slik at dette må aktiveres per tjeneste.
 
-
-## Hva må jeg gjøre for å motta enkel eIDAS-pålogging over OIDC?
+### Hva må jeg gjøre for å motta enkel eIDAS-pålogging over OIDC?
 
 - du må sende en mail til ID-porten og be om at OIDC-integrasjonen blir aktivert for eidas i den såkalte 'eid-selector'
 
-Ein gong i fremtida vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tenester
+En gang i fremtiden vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tjenester
 
-## Hva må jeg gjøre for å motta avansert eIDAS-pålogging over OIDC ?
+## Hvordan motta avansert eIDAS-pålogging over OIDC ?
 
-P.t er avansert eIDAS kun tilgjenglig ved at du må i egen løsning lage to "innganger" til tjenesten din, dvs.  en "logg på med eidas"-knapp, og en "logg på med norsk eID"-knapp.
+P.t er avansert eIDAS kun tilgjenglig ved at du må i egen løsning lage to "innganger" til tjenesten din, dvs.  en "logg på med eidas"-knapp, og en "logg på med norsk eID"-knapp.  På auteniseringsforespørselen fra "eidas-knappen" har du 4 valg: 
 
 - /autorize-kallet må inneholde `eidas:true` i `login_hint`
 - For å få du utlevert eidas-attributter, kan du forespørre om scopet `eidas`
@@ -238,16 +250,3 @@ Den først i lista, Mohamed Al Samed, er hardkoda i den norske eIDAS Noden til �
  ```
 
 I testmiljøet har vi for tiden 19 land integrert.
-
-
-## Integrerte land i produksjonsmiljøet
-
-Per februar 2020 er følgende land koblet på i produksjonsmiljøet:
-- Belgia
-- Kroatia
-- Estland
-- Italia
-- Luxembourg
-- Spania
-
-For å bli integerte i produksjon, må et land bli formelt *notifisert* og fagfellevurdert av EU-kommisjonen.  For en oppdatert status over denne prosessen, se EU-kommisjonen sin side: [https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS](https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS)
