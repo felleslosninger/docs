@@ -9,9 +9,12 @@
             "virkningsdato": "",
             "aapningskvittering": "false"
         },
-        "varsler": {
+        "varsler": { // valgfri
             "epostTekst": "Varseltekst",
             "smsTekst": "Varseltekst"
+        },
+        "metadataFiler": { // valgfri
+            "test.pdf": "test-metadata.xml"
         }
     }
 }
