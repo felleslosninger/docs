@@ -25,15 +25,60 @@ Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
 Les også "Grunnleggende prosedyre for API-sikring". (https://difi.github.io/felleslosninger/oidc_api_admin_maskinporten.html#grunnleggende-prosedyre-for-api-sikring)
 
-### Opprette API
+### Opprette API - Oauth2-selvbetjeningsklient
 
-For å opprette bruker på Samarbeidsportalen. Gjør følgende:
+Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
 
-https://difi.github.io/felleslosninger/oidc_api_admin_maskinporten.html#1-opprette-apier
+#### Eksempel på å opprette scope
+
+```
+POST /scopes HTTP/1.1
+Host: integrasjon-ver2.difi.no
+Content-Type: application/json
+Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
+cache-control: no-cache
+{
+	"prefix": "difi",
+	"subscope": "api3",
+	"description": "Difi sitt API nummer 3 for demo-formål"
+}
+```
 
 ### Tilgangsstyring
 
-https://difi.github.io/felleslosninger/oidc_api_admin_maskinporten.html#2-tilgangsstyring
+Tilgang gis og fjernes ved enkle REST-kall:  
+
+#### Eksempel på å gi tilgang
+
+```
+PUT /scopes/access/889640782?scope=difi:api3 HTTP/1.1
+```
+som gir organisasjonsnummer `889640782` tilgang til scopet `difi:api3`.
+
+Send DELETE for å trekke tilbake en tilgang.
+
+#### Eksempel på å se tilganger
+Request:
+```
+GET /scopes/access?scope=difi:api3 HTTP/1.1
+```
+Respons:
+```
+[
+    {
+        "scope": "difi:api3",
+        "state": "APPROVED",
+        "prefix": null,
+        "created": "2018-11-28T14:11:35+01:00",
+        "consumer_orgno": "889640782",
+        "last_updated": "2018-11-28T14:11:35+01:00",
+        "owner_orgno": "991825827"
+    }
+]
+```
+
+
+Vi har valgt å legge scope som query-parameter, da det innen noen sektorer finnes spesifikke standarder som krever bruk av slash "/" i scope-definisjonen, og dette vil bli unødig tungvindt for brukere av APIet å skulle støtte dette som del av path-komponenten.
 
 
 ### Vedlikehald av merkantile data
@@ -53,30 +98,68 @@ Tutorial:
 
 ## Selvbetjening som API-konsument
 
-### Innnlogging (Integrasjoner)
+For å kunne bruke selvbetjening via API, så må virksomheten få utdelt en administrasjons-klient fra Digdir. API'et er sikret med oAuth2 med bruk av virksomhetssertifikat. Merk at i testmiljøene må det benyttes gyldig test-virksomhetssertifikat.
 
-For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør følgende:
+For å administrere integrajoner/klienter må administrasjons-klienten ha tilgang til ett eller flere scopes:
 
-1. Logg inn på samarbeidsportalen.
-2. Trykk på "Virksomhetens tjenester" i venstremenyen.
-3. Trykk på "Administrasjon av tjenester" i venstremenyen.
-4. Velg "Integrasjoner" i det miljøet du vil opprette selvbetjene i.
+| scope | beskrivelse |
+|-|-|
+|idporten:dcr.read|Gir tilgang til å lese klientregistreringer for klienter bundet mot samme org.nr. som gitt i access_token. Gir også lesetilgang til onbehalfof-registreringer|
+|idporten:dcr.modify|Gir tilgang til å endre klientregistreringer for klienter bundet mot samme org.nr. som gitt i access_token. Gir også lesetilgang til onbehalfof-registreringer|
+|idporten:dcr.write|Gir tilgang til å opprette nye klientregistreringer for klienter bundet mot samme org.nr. som gitt i access_token. Gir også lesetilgang til onbehalfof-registreringer|
+|idporten:dcr/onbehalfof:write|Gir tilgang til å vise, opprette, endre og slette onbehalfofregistreringer tilhørende en gitt klient. Gir ikke mulighet til å endre andre parametere på selve klienten.|
+|idporten:dcr.supplier|Gir leverandører tilgang til å vise, opprette, endre og slette selvstendige OIDC-integrasjoner for andre organisasjoner. Eget org.no blir koblet til disse integrasjonene.  |
 
-### Opprette klient for å konsumere API
+Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
-1. Fullfør stegene i "Innlogging"
-2. Trykk på "Ny integrasjon".
-3. Velg "Maskinporten" på "Difi-tjeneste".
-4. Trykk på "Legg til scopes" for å legge til scopet du skal konsumere. (Dersom scopet ikke ligger i listen, så har ikke API-tilbyder delt tilgang til virksomheten du representerer.)
-5. Fullfør registreringen.
-6. Trykk "Opprett" for å lagre.
+### Registrere klient
 
-### Slette klient
+#### Registrere klient som bruker virksomhetssertifikat
 
-1. Fullfør stegene i "Innlogging"
-2. Trykk på klienten du skal slette.
-3. Trykk på "Endre".
-4. Trykk på "Deaktiver" og bekreft.
+For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
+
+Deretter kan du opprette Maskinporten-integrasjonen slik:
+
+```
+POST https://integrasjon.difi.no/clients/
+{
+   "integration_type": "maskinporten",
+    "client_name": "oidc_difi_jb_test",
+    "description": "ny integrajson igjen.",
+    "token_endpoint_auth_method": "private_key_jwt",
+    "grant_types": [
+        "urn:ietf:params:oauth:grant-type:jwt-bearer"
+    ],
+    "scopes": [  "difitest:api3", "difitest:api4"]
+}
+
+```
+
+Maskinporten vil svare med en auto-generert client_id, for eksempel  `238259d7-f0ab-4bd5-b253-0f0159375096`
+
+#### Registrere klient som bruker egen nøkkel
+
+For å slippe å spre virksomhetssertifikatet rundt til mange systemer, kan du opprette dine egne asymmetriske nøkler knyttet til en enkelt integrasjon.
+
+Dette må gjøres i to steg: først oppretter du en klient som i eksempelet over, for så å oppretter du et nøkkel-sett på denne:
+```
+POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
+
+{
+  "keys": [
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "min_egen_nokkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
+}
+```
+'kid'-verdien må være unik blant alle Maskinportens kunder.
+
 
 ### Vedlikehald av merkantile data
 
