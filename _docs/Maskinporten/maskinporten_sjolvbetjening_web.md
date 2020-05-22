@@ -1,6 +1,6 @@
 ---
-title: Sjølvbetjening av Maskinporten via Samarbeidsportalen
-description:  Sjølvbetjening av Maskinporten via Samarbeidsportalen
+title: Selvbetjening av Maskinporten via Samarbeidsportalen
+description:  Selvbetjening av Maskinporten via Samarbeidsportalen
 summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene Maskinporten via Samarbeidsportalen'
 permalink: maskinporten_sjolvbetjening_web.html
 sidebar: maskinporten_sidebar
