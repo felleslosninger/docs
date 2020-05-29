@@ -2,7 +2,7 @@
 title: Generelt om møtemodellen
 description:
 summary:
-permalink: generelt_om_moetemodellen.html
+permalink: einnsyn_generelt_om_moetemodellen.html
 sidebar: einnsyn_technical_sidebar
 ---
 
@@ -16,3 +16,4 @@ typisk forekomstar av innkallingar, protokollar osv. Medan møteasaksregistrerin
 
 
 ## Bruk av modellen
+![Overornda datamodell møter](/felleslosninger/images/einnsyn/bruk_av_moetedatamodellen.png)

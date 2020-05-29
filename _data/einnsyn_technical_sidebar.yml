@@ -5,19 +5,19 @@ folders:
   folderitems:
 
   - title: Generelt om datamodell
-    jurl: /generelt_om_modellen.html
+    jurl: /einnsyn_generelt_om_modellen.html
 
   - title: Eksempel
-    jurl: /eksempelfiler.html
+    jurl: /einnsyn_eksempelfiler.html
 
 - title: Publisering av møter
   folderitems:
 
   - title: Generelt om møtemodellen
-    jurl: /generelt_om_moetemodellen.html
+    jurl: /einnsyn_generelt_om_moetemodellen.html
 
   - title: Utviding møteavlevering
-    jurl: /utvida_moeteavlevering.html
+    jurl: /einnsyn_utvida_moeteavlevering.html
 
 ###########################
 

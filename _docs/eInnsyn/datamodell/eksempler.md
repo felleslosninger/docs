@@ -2,7 +2,7 @@
 title: Eksempelfiler
 description:
 summary:
-permalink: eksempelfiler.html
+permalink: einnsyn_eksempelfiler.html
 sidebar: einnsyn_technical_sidebar
 ---
 ## Kryssreferanse
