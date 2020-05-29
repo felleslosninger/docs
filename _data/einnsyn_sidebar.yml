@@ -3,28 +3,31 @@ sidebarTitle: eInnsyn-klient
 folders:
 - title: eInnsyn
   folderitems:
-        
+
   - title: Forutsetning for installasjon og verktøy
     jurl: /einnsyn_forutsetninger.html
-       
+
   - title: Konfigurasjon av einnsyn-klient.xml
     jurl: /einnsyn_konfigurasjon.html
-        
+
   - title: Installere einnsyn-klient som Windows service
     jurl: /einnsyn_install_tjeneste.html
-        
+
   - title: Oppdatere einnsyn-klient
     jurl: /einnsyn_oppdatere_tjeneste.html
-                
+
 - title: Avansert - ekstra innstillinger
   folderitems:
-    
+
   - title: Flere einnsyn-klienter på samme server
     jurl: /einnsyn_flere_klienter.html
-        
+
   - title: Innsynskrav og e-postoppsett
     jurl: /einnsyn_innsynskrav.html
-              
+
+- title: Datamodellen
+  jurl: /generelt_om_modellen.html
+
 ###########################
 
 related_resources_title: Andre nyttige lenker
@@ -39,4 +42,3 @@ related_resources_list:
 
 - title: Difi
   jurl: https://www.difi.no
-        
