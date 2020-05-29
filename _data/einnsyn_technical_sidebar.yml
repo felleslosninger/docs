@@ -1,0 +1,35 @@
+sidebarTitle: eInnsyn-datamodell
+
+folders:
+- title: eInnsyn
+  folderitems:
+
+  - title: Generelt om datamodell
+    jurl: /generelt_om_modellen.html
+
+  - title: Eksempel
+    jurl: /eksempelfiler.html
+
+- title: Publisering av møter
+  folderitems:
+
+  - title: Generelt om møtemodellen
+    jurl: /generelt_om_moetemodellen.html
+
+  - title: Utviding møteavlevering
+    jurl: /utvida_moeteavlevering.html
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.difi.no/felleslosninger
+
+- title: Difi
+  jurl: https://www.difi.no
