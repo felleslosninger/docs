@@ -16,4 +16,4 @@ typisk forekomstar av innkallingar, protokollar osv. Medan møteasaksregistrerin
 
 
 ## Bruk av modellen
-![Overornda datamodell møter](/felleslosninger/images/einnsyn/bruk_av_moetedatamodellen.png)
+![Overornda datamodell møter](/felleslosninger/images/einnsyn/einnsyn_bruk_av_moetedatamodell.png)
