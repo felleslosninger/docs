@@ -28,7 +28,7 @@ As an access point, you register participants in ELMA by connecting organization
 
 In order to drive the migration forward, new Profiles and Document Types will only be available on 0192-identifiers. In this way, we will eventually migrate to the 0192-identifiers without making any drastic intervention on existing profiles and management routines associated with the 9908-identifiers.
 
-![](/felleslosninger/images/elma/participant_search_example_of_org_with_two_participants.png)
+![](images/elma/participant_search_example_of_org_with_two_participants.png)
 
 *Screenshot 1: Example of an organization with two Participants, one for each ICD.*
 
@@ -41,7 +41,7 @@ For example, the new profile “PEPPOLBIS_3_0_BILLING_01_CII” has “BIS05 V2�
 
 A dependency can also be fulfilled across endpoints and service providers. If a Profile which is a required dependency already exists on another endpoint, even an endpoint from another service provider
 
-![](/felleslosninger/images/elma/elma/view_process.png)
+![](images/elma/elma/view_process.png)
 
 *Screenshot 2: You can see what dependencies a Profile has under [“Processes” in ELMA-web](https://smp.difi.no/process).*
 
