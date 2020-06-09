@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_technical_sidebar
 ---
 
-BEST/EDUs meldingsformat var tett knyttet til NOARK4. For meldinger som sendes mellom Sak-/arkivsystemer med NextMove er det valgt et meldingsformat som ligger tettere opp mot NOARK5 basisregistrering. 
+BEST/EDUs meldingsformat var tett knyttet til NOARK4. For meldinger som sendes mellom Sak-/arkivsystemer med eFormidling 2.0 er det valgt et meldingsformat som ligger tettere opp mot NOARK5 basisregistrering. 
 
 I et møte mellom Digitaliseringsdirektoratet og Acos ble det diskutert at ACOS ønsker å realisere en meldingsbasert integrasjon. I den sammenheng ønsker kunden å standardisere meldinger slik at de kan få til en asynkron arkivering fra fagsystem til arkivkjerne av ferdige elementer. Løsningen er altså tenkt å fungere i scenariet:
 
