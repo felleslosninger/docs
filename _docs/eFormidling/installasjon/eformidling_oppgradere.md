@@ -24,7 +24,7 @@ Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 
 
-> Den 23. september 2019 ble det tilgjengeliggjort den første versjonen av integrasjonspunktet med NextMove. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
+> Den 23. september 2019 ble det tilgjengeliggjort den første versjonen av integrasjonspunktet med eFormidling 2.0. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
 > Alle må oppgradere. Eldre versjoner enn 2.0.X av integrasjonspunktet fungerer ikke etter mandag 23. september 2019. Vi anbefaler å oppgradere integrasjonspunktet til den nyeste versjonen
 
 ---
