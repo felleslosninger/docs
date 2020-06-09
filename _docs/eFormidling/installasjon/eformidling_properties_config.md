@@ -91,6 +91,8 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 #### DPI
 ```difi.move.feature.enableDPI=true``` Må settes til true om du skal bruke DPI. Ingen andre DPI-spesifikke properties kreves, men en har mulighet til å overstyre ved å sette de. 
 
+**NB!** En forutsetning for å bruke DPI gjennom eFormidling er at sak/arkiv/fagsystem er integrert mot eFormidling 2.0 grensesnittet. Spør din leverandør om dette. Les mer [her.](https://difi.github.io/felleslosninger/eformidling_nm_about.html)
+
 ---
 
 ### Hvordan opprette brukere for DPO/DPF/DPV?
