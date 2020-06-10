@@ -163,7 +163,9 @@ For å administrere merkantile data:
 4. Trykk på "Rediger integrasjon"
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
-Tutorial:
+Videotutorial: (https://vimeo.com/397388041)
+
+[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 
