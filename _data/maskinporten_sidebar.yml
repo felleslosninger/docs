@@ -30,7 +30,7 @@ folders:
         jurl: /maskinporten_sjolvbetjening_web.html
 
       - title: Selvbetjening via API
-        jurl: /maskinporten_sjolvbetjening_api.html
+        jurl: /maskinporten_sjolvbetjening_web.html
 
 
 - title: Grensesnittspesifikasjon
