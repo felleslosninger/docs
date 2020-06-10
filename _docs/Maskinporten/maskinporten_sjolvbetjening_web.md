@@ -1,279 +1,186 @@
 ---
-title: Sjølvbetjening av Maskinporten via Samarbeidsportalen
-description:  Sjølvbetjening av Maskinporten via Samarbeidsportalen
+title: Selvbetjening av Maskinporten via Samarbeidsportalen
+description:  Selvbetjening av Maskinporten via Samarbeidsportalen
 summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene Maskinporten via Samarbeidsportalen'
 permalink: maskinporten_sjolvbetjening_web.html
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
 
-Dette dokumentet viser de stegene som en API-konsument må gjøre for å bruke Maskinporten.
+Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyder og API-konsument.
+
+---
+* TOC
+{:toc}
 
 ## Innlogging og tilgang
 
-### innlogging
+### Innlogging
+
+Samarbeidsportalen er inngangen til selvbetjeningen på nett. En forutsetning for å ta dette i bruk, er at virksomheten din er registrert hos oss og bruksvilkår er signert. Når du oppretter en bruker så knyttes du til den virksomheten som er registrert med domenet i epost-adressen din. F.eks logger du inn med <navn>@digdir.no, så blir du knyttet til Digitaliseringsdirektoratet.
+
+### Opprette bruker
+
+For å opprette bruker på Samarbeidsportalen. Gjør følgende:
+
+1. Gå til samarbeid.difi.no
+2. Trykk på "Min profil" oppe i høyre hjørne.
+3. Trykk på "Registrer deg" i påloggingsvinduet
+4. Registrer bruker med din jobbadresse
+5. Bekreft brukeren ved å trykke på lenken som kommer på epost. (NB! Sjekk søppelpost om ikke eposten kommer frem).
 
 ### Tilgang i testmiljø
 
+I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til selvbetjening i testmiljøene ver1 og ver2. Noen virksomheter har innført restriksjoner og har strengere tilgangsstyring.
+
+
 ### Tilgang i produksjonsmiljø
+
+Tilgang i produksjon er sikret med ID-porten, og tilgangen må bestilles av en bemyndiget person i virksomheten. (Direktør/Leder). Bestillingen kan se noe slik ut:
+
+"Følgende person(er) trenger tilgang til selvbetjening i produksjonsmiljøet på vegne av Eksempel AS:
+Navn, epost og telefonnummer"
+
+Så avtaler vi utveksling av personnummer etter dette.
+
+Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
 
 ## Selvbetjening som API-tilbyder
 
-### Opprette subscopes
+### Forutsetninger
+
+For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
+
+For bestilling til produksjonsmiljøet, send inn skjema:
+
+### Innlogging (Scopes/API'er)
+
+For å komme til administrasjonsgrensesnittet for API, gjør følgende:
+
+1. Logg inn på samarbeidsportalen.
+2. Trykk på "Virksomhetens tjenester" i venstremenyen.
+3. Trykk på "Administrasjon av tjenester" i venstremenyen.
+4. Velg "Mine API" i det miljøet du vil opprette scope.
+
+### Opprette scopes
+
+1. Fullfør stegene i "Innlogging"
+2. Trykk på "Nytt scope".
+3. Velg prefix og fullfør registrering.
+4. Trykk "Opprett" for å lagre.
+
+Videotutorial: (https://vimeo.com/427689809)
+
+[![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
 ### Tilgangsstyring
 
-### Slette subscopes
+1. Fullfør stegene i "Innlogging"
+2. Trykk på scopet du skal tilgangsstyre.
+3. Scroll ned til under konfigurasjonen og trykk "Legg til tilgang".
+4. Legg inn organisasjonsnummer og trykk "Legg til"
+5. For å slette en tilgang, trykk på søppelkasse-ikonet til høyre for organisasjonen med tilgang.
+
+Videotutorial: (https://vimeo.com/427689702)
+
+[![Tilgangsstyre scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
+
+### Deaktivere subscopes
+
+NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil de som har fått tilgang fortsatt få scopet utlistet på sine tilgjengelige scopes.
+
+1. Fullfør stegene i "Innlogging"
+2. Trykk på scopet du skal deaktivere.
+3. Trykk på "Endre"
+4. Trykk på "Deaktiver" og bekreft at du vil deaktivere.
+
+Videotutorial: (https://vimeo.com/427689583)
+
+[![Deaktivere scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
+
 
 ### Vedlikehald av merkantile data
 
-En full verdikjede for API-sikring med Maskinporten består av følgende steg:
+Vedlikehold av fakturainformasjon og varslingspunkter er viktig for at vi hele tiden skal ha oppdatert informasjon om dette. Varslingspunkt(er) får eposter ved kritiske hendelser i løsningen og om det ikke er registrert noe her, så kan man gå glipp av viktig informasjon.
 
-1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
-2. API-tilbyder oppretter et API (scope)
-3. API-tilbyder gir tilgang til en konsument
-4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrer  scopet til denne.
+For å administrere merkantile data:
 
-Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+1. Logg inn på Samarbeidsportalen
+2. Trykk på "Virksomhetens tjenester" i venstremenyen
+3. Finn integrasjonen av type "API-tilbyder" og trykk på den.
+4. Trykk på "Rediger integrasjon"
+5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
-5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
-6. Konsumenten inkluderer token i kall til APIet.
-7. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
+Videotutorial: (https://vimeo.com/397388041)
+
+[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 
 ## Selvbetjening som API-konsument
 
-### Opprette klient
+### Innnlogging (Integrasjoner)
+
+For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør følgende:
+
+1. Logg inn på samarbeidsportalen.
+2. Trykk på "Virksomhetens tjenester" i venstremenyen.
+3. Trykk på "Administrasjon av tjenester" i venstremenyen.
+4. Velg "Integrasjoner" i det miljøet du vil opprette selvbetjene i.
+
+### Opprette klient for å konsumere API
+
+1. Fullfør stegene i "Innlogging"
+2. Trykk på "Ny integrasjon".
+3. Velg "Maskinporten" på "Difi-tjeneste".
+4. Trykk på "Legg til scopes" for å legge til scopet du skal konsumere. (Dersom scopet ikke ligger i listen, så har ikke API-tilbyder delt tilgang til virksomheten du representerer.)
+5. Fullfør registreringen.
+6. Trykk "Opprett" for å lagre.
+
+Videotutorial: (https://vimeo.com/427689834)
+
+[![Opprette klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
 
 ### Slette klient
 
+1. Fullfør stegene i "Innlogging"
+2. Trykk på klienten du skal slette.
+3. Trykk på "Endre".
+4. Trykk på "Deaktiver" og bekreft.
+
+Videotutorial: (https://vimeo.com/427689782)
+
+[![Deaktivere klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+
 ### Vedlikehald av merkantile data
 
-### 4. Opprett en integrasjon i Maskinporten
+Vedlikehold av fakturainformasjon og varslingspunkter er viktig for at vi hele tiden skal ha oppdatert informasjon om dette. Varslingspunkt(er) får eposter ved kritiske hendelser i løsningen og om det ikke er registrert noe her, så kan man gå glipp av viktig informasjon.
 
-Du må opprette en integrasjon (en såkalt oauth2-klient) i Maskinporten.
+For å administrere merkantile data:
 
-Klienten må autentisere seg mot Maskinporten enten med virksomhetssertifikat, eller med en  asymmetrisk nøkkel som konsumenten selv lager.
+1. Logg inn på Samarbeidsportalen
+2. Trykk på "Virksomhetens tjenester" i venstremenyen
+3. Finn klienten i listen og trykk på den.
+4. Trykk på "Rediger integrasjon"
+5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
-Klienten må registreres med følgende Oauth2 egenskaper:
+Videotutorial: (https://vimeo.com/397388041)
 
-| Egenskap   | Verdi   |   Forklaring |
-|-|-|-|
-|integration_type  | "Maskinporten"   |  Dette feltet forteller Digitaliseringsdirektoratet hvilken integrasjon dette er.   |
-| token_endpoint_auth_method  | "private_key_jwt"  | Maskinporten aksepterer kun sertifikat og nøkler, og ikke client_secret for å autentisere klienter |
-| grant_types   | "urn:ietf:params:oauth:grant-type:jwt-bearer"  | Maskinporten aksepterer kun signerte JWTer som grants.  |
-| client_id  | auto-tildelt  | Blir satt atDigitaliseringsdirektoratet ved registrering  |
-| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig forDigitaliseringsdirektoratets  personell,  |
-| scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
+[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
+## Ofte stillte spørsmål
 
-Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn av din , så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
+### "Prefiks" feltet er tomt når jeg skal opprette et nytt scope.
 
-Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whitelisting). Det er da ikke mulig å forhåndsregistere slike scopes på klienten.
+Om prefiks feltet er tomt, så har ikke virksomheten din fått opprettet et prefiks. Da får du ikke opprette et scope. Ta kontakt med servicedesk@digdir.no.
 
-Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange APIer, så vi anbefaler at konsumenter lager en ny klient ved å POSTe inn konfigurasjonen til denne:
+### Scopet jeg skal konsumere mangler når jeg trykker på "Legg til scopes".
 
+Mest sannsynlig har ikke API-tilbyder delt tilgang med virksomheten du representerer, eller så har de gitt tilgang i et annet miljø. Kontakt API-tilbyder.
 
-#### Registrering via Samarbeidsportalen
+### "Ny integrasjon" er grået ut i produksjonsmiljøet.
 
-Du kan logge inn på https://samarbeid.difi.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
+For å administrere i produksjonsmiljøet, så må man logge inn med ID-porten. Dette forutsetter at vi har lagt inn personnummeret ditt på forhånd. Om "Ny integrasjon" fortsatt er grået ut etter innlogging med ID-porten. Kontakt servicedesk@digdir.no
 
-Alle organisasjoner som har inngåttDigitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
+### Jeg ser integrasjonene til en annen virksomhet enn det jeg forventer.
 
-For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
-
-[![Opprette integrasjon](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon_png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon.mp4 "Opprette integrasjon")
-
-
-#### Registrere klient som bruker virksomhetssertifikat
-
-For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
-
-Deretter kan du opprette Maskinporten-integrasjonen slik:
-
-```
-POST https://integrasjon.difi.no/clients/
-{
-   "integration_type": "maskinporten",
-    "client_name": "oidc_difi_jb_test",
-    "description": "ny integrajson igjen.",
-    "token_endpoint_auth_method": "private_key_jwt",
-    "grant_types": [
-        "urn:ietf:params:oauth:grant-type:jwt-bearer"
-    ],
-    "scopes": [  "difitest:api3", "difitest:api4"]
-}
-
-```
-
-Maskinporten vil svare med en auto-generert client_id, for eksempel  `238259d7-f0ab-4bd5-b253-0f0159375096`
-
-#### Registrere klient som bruker egen nøkkel
-
-For å slippe å spre virksomhetssertifikatet rundt til mange systemer, kan du opprette dine egne asymmetriske nøkler knyttet til en enkelt integrasjon.
-
-Dette må gjøres i to steg: først oppretter du en klient som i eksempelet over, for så å oppretter du et nøkkel-sett på denne:
-```
-POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
-
-{
-  "keys": [
-    {
-      "kty": "RSA",
-      "e": "AQAB",
-      "use": "sig",
-      "kid": "min_egen_nokkel",
-      "alg": "RS256",
-      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
-    }
-  ]
-}
-```
-'kid'-verdien må være unik blant alle Maskinportens kunder.  
-
-#### Registrere klient som leverandør for ekstern delegering
-
-Leverandører sm bruke ekstern delegering registerer sin integrasjon på samme måte som over.
-
-
-### 5: Be om token
-
-
-I ordinær bruksfase følges flyten under:
-
-<div class="mermaid">
-sequenceDiagram
-  note over Klient:  Generer og signer JWT
-  Klient ->> Maskinporten: Bruk JWT til å forespørre token
-  note over Maskinporten: Valider virksomhetssertifikat og utfør tilgangskontroll
-  Maskinporten ->> Klient: Returnere access_token
-  Klient ->> API: Bruk token mot API
-  note over API: Valider token
-  API ->> Klient: Resultat av API-kall
-
-</div>
-
-Konsumenten sin klient forespør et access_token fra Maskinporten ved å generere en **JWT-basert tokenforespørsel** (JWT-bearer authorization grant). Dersom forespørselen er godkjent, vil Maskinporten utstede et access_token som konsumenten kan bruke i kall mot API-tilbyder.
-
-
-Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
-
-| Claim  |  Verdi | Beskrivelse  |
-| --- | --- |--- |
-|aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljø finner du på .well-known-endpunkt. |
-|iss| client_id |issuer - Din egen client_id.  |
-|scope| <string>| Space-separert liste over scopes som klienten forespør. |
-|iat| 1573132283| issued at - Tidspunkt for når JWTen ble laget. **Merk:** UTC-tid|
-|exp| 1573132383| expiration time - Tidspunkt for utløp av JWTen.  **Merk:** Max 120 sekund tillatt.  (exp - iat <= 120 )|
-|jti|Anbefalt | JWT ID - unique id for denne jwt. **Merk:** A JWT kan ikke gjenbrukes.  |
-
-
-Se gjerne [den fullstendige grensesnittspesifikasjonen for JWT-grants](maskinporten_protocol_jwtgrant.html) for utfyllende dokumentasjon.
-
-Slik kan en forspørsel se ut:
-```
-POST /token
-Content-type: application/x-www-form-urlencoded
-
-  grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&
-  assertion=<jwt>
-```
-der payload i JWT kan se slik ut:
-```
-{
-  "aud" : "https://ver2.maskinporten.no/",
-  "scope" : "difitest:test2",
-  "iss" : "min_egen_clientid",
-  "exp" : 1584693183,
-  "iat" : 1584693063,
-  "jti" : "b1197d5a-0c68-4c4a-a95c-dc07c1194600"
-}
-```
-
-Maskinporten vil først validere gyldigheten av JWT'en. Deretter vil virksomhetssertifikatet (brukt til signering av JWT'en) valideres og dersom klienten har tilgang til de forespurte ressursene returneres et access_token til klienten.
-
-Dersom du er leverandør opp mot et API som krever ekstern delegering, må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
-
-Generelt er det sikkerhetsmessig problematisk å be om mange scopes i samme token, så vi anbefaler ett scope per token.
-
-
-### 6: Sende API-kall med token
-
-Klienten kan nå aksessere APIet ved bruk av access_tokenet.  Hvordan dette gjøres, vil fremgå av API-tilbyder sin dokumentasjon, men for et "standard" REST-API brukes access_tokenet som en Authorization-header, typisk slik:
-
-```
-GET https://api.example.com/some-resource
-Authorization: Bearer  <access_token>
-```
-De fleste API tillater flere API-kall med samme token, slik at man trenger ikke hente nytt token ved hvert kall.
-
-Når tokenet er utløpt, vil klient typisk få 401-respons fra APIet, og steg 5 må repeteres.
-
-
-
-## Bruke delegering via Altinn autorisasjon
-
-
-
-### Bruke delegering som konsument
-
-Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en leverandør:
-
-1. Etter innlogging, velg å representere foretaket
-2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
-1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
-1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
-1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
-
-1. Bekreft med å klikk "Gi rettigheter"
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_bekreftelse.png)
-
-### Bruke delegering som leverandør
-
-Leverandør-integrasjoner som skal bruke ekstern delegering, er litt forskjellige fra andre integrasjoner i ID-porten/Maskinporten, og det er derfor viktig å få de registrert korrekt.
-
-ID-porten/Maskinporten har allerede to eksisterende interne delegeringsmekanismer, som ikke er kompatible med delegering i Altinn. For å oppnå korrekt registrering, må du da:
-
-* For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
-* For leverandører som bruker selvbetjenings-API, må de ikke bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette client_orgno i registrerings-kallet.
-
-Når integrasjonen din så skal forespørre tokens på vegne av konsumenter, må du oppgi konsumentens organisasjonsnummer som `consumer_org`-claim i JWT-grantet. Maskinporten vil da sjekke Altinn, om et gyldig delegeringsforhold finnes mellom konsument og leverandør for aktuelt scope.
-
-#### Eksempel på bruk  av altinn:
-JWT Grant i request:
-```
-{
-  "aud" : "https://ver2.maskinporten.no/",
-  "scope" : "difitest:test2",
-  "iss" : "oidc_difi_delegering_altinn",
-  "exp" : 1584693183,
-  "consumer_org" : "910753614",
-  "iat" : 1584693063,
-  "jti" : "b1197d5a-0c68-4c4a-a95c-dc07c1194600"
-}
-```
-som gir respons:
-```
-{
-  "iss" : "https://ver2.maskinporten.no/",
-  "client_amr" : "virksomhetssertifikat",
-  "token_type" : "Bearer",
-  "client_id" : "oidc_difi_delegering_altinn",
-  "aud" : "unspecified",
-  "scope" : "difitest:test2",
-  "supplier" : {
-    "authority" : "iso6523-actorid-upis",
-    "ID" : "0192:991825827"
-  },
-  "exp" : 1584694406,
-  "delegation_source" : "https://tt02.altinn.no/",
-  "iat" : 1584693406,
-  "jti" : "U8E9-Zu8qVyAOLfm_M0UbalbVYjMt3kakanvE5dV9zk",
-  "consumer" : {
-    "authority" : "iso6523-actorid-upis",
-    "ID" : "0192:910753614"
-  }
-}
-```
+Tilgang til Samarbeidsportalen og selvbetjeningsløsningen gis på bakgrunn av epost-domenet ditt, som igjen er koblet til en virksomhet på vår side.  For store virksomheter og selskap, så kan det være at det gjenbrukes epost-domene på tvers av flere virksomheter. Ta kontakt med servicedesk@digdir.no.

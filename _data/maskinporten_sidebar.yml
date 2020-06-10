@@ -2,11 +2,13 @@ sidebarTitle: Maskinporten
 
 
 folders:
+
 - title: Maskinporten
   folderitems:
 
       - title: Overordnet
         jurl: /maskinporten_overordnet.html
+
 
 - title: Bruksområde og guide
   folderitems:
@@ -21,11 +23,22 @@ folders:
         jurl: /maskinporten_guide_apikonsument.html
 
 
+- title: Selvbetjening
+  folderitems:
+
+      - title: Selvbetjening via Web
+        jurl: /maskinporten_sjolvbetjening_web.html
+
+      - title: Selvbetjening via API
+        jurl: /maskinporten_sjolvbetjening_api.html
+
+
 - title: Grensesnittspesifikasjon
   folderitems:
 
       - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
+
       - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
 
