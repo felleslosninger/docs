@@ -69,7 +69,7 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 3. Velg prefix og fullfør registrering.
 4. Trykk "Opprett" for å lagre.
 
-Videotutorial:
+Videotutorial: (https://vimeo.com/427689809)
 
 [![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
@@ -81,6 +81,10 @@ Videotutorial:
 4. Legg inn organisasjonsnummer og trykk "Legg til"
 5. For å slette en tilgang, trykk på søppelkasse-ikonet til høyre for organisasjonen med tilgang.
 
+Videotutorial: (https://vimeo.com/427689702)
+
+[![Tilgangsstyre scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
+
 ### Deaktivere subscopes
 
 NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil de som har fått tilgang fortsatt få scopet utlistet på sine tilgjengelige scopes.
@@ -89,6 +93,10 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 2. Trykk på scopet du skal deaktivere.
 3. Trykk på "Endre"
 4. Trykk på "Deaktiver" og bekreft at du vil deaktivere.
+
+Videotutorial: (https://vimeo.com/427689583)
+
+[![Deaktivere scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
 
 
 ### Vedlikehald av merkantile data
@@ -103,7 +111,9 @@ For å administrere merkantile data:
 4. Trykk på "Rediger integrasjon"
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
-Tutorial:
+Videotutorial: (https://vimeo.com/397388041)
+
+[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 
 ## Selvbetjening som API-konsument
@@ -126,12 +136,20 @@ For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør 
 5. Fullfør registreringen.
 6. Trykk "Opprett" for å lagre.
 
+Videotutorial: (https://vimeo.com/427689834)
+
+[![Opprette klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
+
 ### Slette klient
 
 1. Fullfør stegene i "Innlogging"
 2. Trykk på klienten du skal slette.
 3. Trykk på "Endre".
 4. Trykk på "Deaktiver" og bekreft.
+
+Videotutorial: (https://vimeo.com/427689782)
+
+[![Deaktivere klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
