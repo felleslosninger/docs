@@ -69,6 +69,10 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 3. Velg prefix og fullfør registrering.
 4. Trykk "Opprett" for å lagre.
 
+Videotutorial:
+
+[![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
+
 ### Tilgangsstyring
 
 1. Fullfør stegene i "Innlogging"
