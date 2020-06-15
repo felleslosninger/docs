@@ -109,11 +109,21 @@ Se [dokumentasjon av klient-registrering](/oidc_func_clientreg.html) for detalje
 
 ## REST-grensesnittet
 
+API endepunkter:
+
+|Miljø|URL|
+|-|-|
+|VER1|[https://integrasjon-ver1.difi.no/clients/](https://integrasjon-ver1.difi.no/clients/)|
+|VER2|[https://integrasjon-ver2.difi.no/clients/](https://integrasjon-ver2.difi.no/clients/)|
+|YT2|[https://integrasjon-yt2.difi.no/clients/](https://integrasjon-yt2.difi.no/clients/)|
+|PROD|[https://integrasjon.difi.no/clients/](https://integrasjon.difi.no/clients/)|
+
+
 Se Open-API dokumentasjon her:
 
-[https://integrasjon-ver2.difi.no/swagger-ui.html#/](https://integrasjon-ver2.difi.no/swagger-ui.html#/)
+[https://integrasjon.difi.no/swagger-ui.html?urls.primaryName=External%20OIDC](https://integrasjon.difi.no/swagger-ui.html?urls.primaryName=External%20OIDC)
 
-Merk at ID-porten vil opprette client_id og client_secret.
+Merk at ID-porten vil opprette og returnere client_id og client_secret for klienter som opprettes via APIet.
 
 
 ## Eksempel
