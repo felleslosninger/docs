@@ -1,12 +1,12 @@
 ---
 title: Mappinger mellom meldingsformater
 description: Mappinger mellom meldingsformater
-summary: ""
 permalink: eformidling_mappinger.html
 product: eFormidling
 ---
 
 ### BestEdu - Arkivmelding
+
 |BestEdu|    |Arkivmelding|    |
 |-------|----|------------|----|
 |Noarksak| |Saksmappe| |
