@@ -22,18 +22,18 @@ Steg-for-steg
 
 #### 1. Logg inn i Azure
 
-```shell script
+```console
 $ az login
 ```
 
 #### 2. Sett opp kubectl til å gå mot AKS
 
-```shell script
+```console
 $ az aks get-credentials --resource-group ip-rg --name ip-akscluster
 ```
 Verifisér at oppsett for kubectl er riktig:
 
-```shell script
+```console
 $ kubectl get all
 ```
 
@@ -41,7 +41,7 @@ $ kubectl get all
 
 Database installeres via Helm.
 
-```shell script
+```console
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm repo update
 $ helm search repo postgresql
@@ -57,7 +57,7 @@ Installasjonen oppretter en standard database ved navn `postgres`, denne vil bli
 ##### 3.1
 Alternativt kan man opprette egen database. Eksportér passord til miljøvariabel, og koble til:
 
-```shell script
+```console
 $ export POSTGRES_PASSWORD=$(kubectl get secret --namespace default postgresql -o jsonpath="{.data.postgresql-password}" | base64 --decode)
 $ kubectl run postgresql-client --rm --tty -i --restart='Never' --namespace default --image docker.io/bitnami/postgresql:11.8.0-debian-10-r19 --env="PGPASSWORD=$POSTGRES_PASSWORD" --command -- psql --host postgresql -U postgres -d postgres -p 5432
 postgres=# create database testdb;
@@ -120,7 +120,7 @@ status:
 
 Deployes med `kubectl`:
 
-```shell script
+```console
 $ kubectl apply -f deployment.yaml
 ```
 
@@ -129,20 +129,20 @@ Azure Key Vault kan brukes til å lagre secrets. Her vil vi lagre passordet til 
 
 Steget forutsetter at Azure Key Vault er satt opp i Azure portalen. Alternativt kan den opprettes via følgende kommando:
 
-```shell script
+```console
 az keyvault create --name "ip-kv" --resource-group "ip-rg" --location norwayeast
 ```
 
 Legg til secret for keystore passord
 
-```shell script
+```console
 az keyvault secret set --vault-name "ip-kv" --name "kspass" --value "hemmelig passord"
 ```
 
 For å tilgjengeliggjøre denne secret'en som en miljøvariabel, slik at den kan suppleres til integrasjonspunktet, benytter
 vi *Azure Key Vault Env Injector* (https://github.com/SparebankenVest/public-helm-charts/tree/master/stable/azure-key-vault-env-injector)
 
-```shell script
+```console
 $ kubectl create ns akv2k8s
 $ helm repo add spv-charts http://charts.spvapi.no
 $ helm repo update
@@ -151,7 +151,7 @@ $ helm install spv-charts/azure-key-vault-env-injector --namespace akv2k8s
 
 Skru på komponenten for default namespace
 
-```shell script
+```console
 cat << EOF | kubectl apply -f -
 apiVersion: v1
 kind: Namespace
@@ -164,7 +164,7 @@ EOF
 
 Key Vault secret'en må så gjøres tilgjenglig for clusteret:
 
-```shell script
+```console
 apiVersion: spv.no/v1alpha1
 kind: AzureKeyVaultSecret
 metadata:
@@ -181,7 +181,7 @@ spec:
 #### 6. Java KeyStore
 Selve keystoren lagres som en kubernetes secret.
 
-```shell script
+```console
 $ kubectl create secret generic keystore.jks --from-file=./keystore.jks
 ```
 
@@ -282,13 +282,13 @@ status:
 
 Deploy:
 
-```shell script
+```console
 $ kubectl apply -f integrasjonspunkt.yaml
 ```
 
 Servicen er her satt opp med type `LoadBalancer`. Kjør følgende kommando for å finne ekstern ip:
 
-```shell script
+```console
 $ kubectl get service ip-staging
 NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)          AGE
 ip-staging   LoadBalancer   10.0.237.167   20.191.55.61   9093:31108/TCP   1d
@@ -296,6 +296,6 @@ ip-staging   LoadBalancer   10.0.237.167   20.191.55.61   9093:31108/TCP   1d
 
 Integrasjonspunktet skal da kunne nåes på følgende adresse (bytt ut med egen ekstern ip):
 
-```shell script
+```console
 $ curl http://20.191.55.61:9093/manage/health
 ```
