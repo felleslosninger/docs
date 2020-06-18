@@ -57,3 +57,71 @@ product: eFormidling
 | |VeFilnavn| |ReferanseDokumentfil|
 | |VeVariant| |Variantformat|
 
+### Arkivmelding - SvarUt
+
+|Arkivmelding/IP|   |SvarUt|   |
+|---------------|---|------|---|
+|-| |Forsendelse| |
+| |SBD.SenderRef/SBD.messageId| |ForsendelseId|
+| |messageId| |EksternRef|
+| |*false*| |KunDigitalLevering|
+| |SBD.ReceiverRef| |SvarPaForsendelse|
+| |Journalpost.Offentligtittel| |Tittel|
+| |SBD.Sikkerhetsnivaa| |KrevNiva4Innlogging|
+| |*IP-property*.konteringskode| |Konteringskode|
+| |*IP-property*.kryptert(default: true)| |Kryptert|
+| |*IP-property*.noarkSystem.type| |AvgivendeSystem|
+| |*statisk: Tosidig, B-post*| |Printkonfigurasjon|
+| |*InfoRecord fra SR*| |Mottaker|
+| |KorrespondansePart.Avsender| |SvarSendesTil|
+|Saksmappe/Journalpost| |NoarkMetadataFraAvleverendeSakssystem| |
+| |SM.Sakssekvensnummer| |Sakssekvensnummer|
+| |SM.Saksaar| |Saksaar|
+| |JP.Journalaar| |Journalaar|
+| |JP.Journalsekvensnummer| |Journalsekvensnummer|
+| |JP.Journalpostnummer| |Journalpostnummer|
+| |JP.Journalposttype| |Journalposttype|
+| |JP.Journalstatus| |Journalstatus|
+| |JP.Journaldato| |Journaldato|
+| |JP.DokumentetsDato| |DokumentetsDato|
+| |JP.OffentligTittel| |Tittel|
+| |JP.Korrespondansepart.Saksbehandler| |Saksbehandler|
+|Dokumentobjekt| |Dokument| |
+| |*filinnhold*| |Data|
+| |ReferanseDokumentFil| |Filnavn|
+| |*fil*.mimetype| |Mimetype|
+
+### SvarInn - BestEdu
+
+|SvarInn|   |BestEdu|   |
+|-------|---|-------|---|
+|MetadataFraAvleverendeSystem| |Journpost| |
+| |Dokumentetsdato| |JpDokdato|
+| |Journalposttype| |JpNdoktype|
+| |Journalstatus| |JpStatus|
+| |Journalaar| |JpJaar|
+| |Journalsekvensnummer| |JpSeknr|
+| |Journalpostnummer| |JpJpostnr|
+| |ForsendelseTittel| |JpOffinnhold|
+| |ForsendelseTittel| |JpInnhold|
+| |Journaldato| |JpJdato|
+| |Saksbehandler| |Avsmot.AmIhtype 0|
+| |-            | |...AmNavn|
+| |SvarSendesTil| |Avsmot.AmIhtype 1|
+| |...Adresse1  | |...AmAdresse|
+| |...Postnr    | |...AmPostnr|
+| |...Poststed  | |...AmPoststed|
+| |...Navn      | |...AmNavn|
+| |...Land      | |...AmUtland|
+| |...Orgnr     | |...AmOrgnr|
+| | |NoarkSak| |
+| |Sakssekvensnummer| |SaSeknr|
+| |Saksaar| |SaSaar|
+| |ForsendelseTittel| |SaTittel|
+|File| |Dokument| |
+| |MimeType| |VeMimeType|
+| |mappet fra MimeType| |VeDokformat|
+| |FileName| |VeFilnavn|
+| |FileName| |DbTittel|
+| | | |VeVariant "P"|
+| |*filinnhold*| |Base64|
