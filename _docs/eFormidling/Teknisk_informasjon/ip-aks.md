@@ -7,13 +7,13 @@ product: eFormidling
 
 Forutsetninger
 ---
-- Kubectl - https://kubernetes.io/docs/tasks/tools/install-kubectl/
-- Azure CLI - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
-- Helm - https://helm.sh/
-- Azure Key Vault - https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal
+- Kubectl - <https://kubernetes.io/docs/tasks/tools/install-kubectl/>
+- Azure CLI - <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>
+- Helm - <https://helm.sh/>
+- Azure Key Vault - <https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal>
 
 Det forutsettes også at det er satt opp en ressursgruppe, et Azure kubernetes-cluster, og Azure Key Vault. Dette kan gjøres enten via Azure web
-portal, eller via Azure CLI som forklart her: https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+portal, eller via Azure CLI som forklart her: <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough>
 
 Videre i dokumentasjonen vil ressursgruppen, AKS-clusteret, og Key Vault  bli referert til ved navn `ip-rg`, `ip-akscluster`, og `ip-kv` respektivt.
 
@@ -140,7 +140,7 @@ az keyvault secret set --vault-name "ip-kv" --name "kspass" --value "hemmelig pa
 ```
 
 For å tilgjengeliggjøre denne secret'en som en miljøvariabel, slik at den kan suppleres til integrasjonspunktet, benytter
-vi *Azure Key Vault Env Injector* (https://github.com/SparebankenVest/public-helm-charts/tree/master/stable/azure-key-vault-env-injector)
+vi *Azure Key Vault Env Injector* (<https://github.com/SparebankenVest/public-helm-charts/tree/master/stable/azure-key-vault-env-injector>)
 
 ```console
 $ kubectl create ns akv2k8s
