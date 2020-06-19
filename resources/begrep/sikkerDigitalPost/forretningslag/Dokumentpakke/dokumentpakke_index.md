@@ -36,6 +36,7 @@ inneholder metadata relatert til hver fil.
 
 ### Begrensninger
 
+  - Dokumentpakken kan ikke overstige 30Mb
   - Dokumentpakken kan inneholde et hoveddokument
   - Dokumentpakken kan ha inntil 200 vedlegg
   - Avsender kan ikke definere rekkefølgende på vedleggene, sorteringen
