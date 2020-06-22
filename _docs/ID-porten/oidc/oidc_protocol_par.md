@@ -1,29 +1,34 @@
 ---
-title: "/authorize endpoint"
-description: "This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten OIDC Provider"
-summary: 'This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten OIDC Provider'
-permalink: oidc_protocol_authorize.html
+title: "/par endpoint"
+description: "This page summarizes the protocol options availalbe for on the /par endpoint for ID-porten OIDC Provider"
+summary: 'This page summarizes the protocol options available for on the /par endpoint (Pushed Authorization Requests) for ID-porten OIDC Provider'
+permalink: oidc_protocol_par.html
 sidebar: oidc
 product: ID-porten
 ---
 
 ## About
 
-The `/authorize` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.2](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
+Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly documented in the draft IETF-specification [draft-ietf-oauth-par-01](https://tools.ietf.org/html/draft-ietf-oauth-par-01)
+
+PAR lets the client push the authorization request (see [/authorize](oidc_protocol_authorize.html) ) to ID-porten ahead of end-user involvement.
+
 
 ## Request
 
-The client passes an authentication request by redirecting the end user browser user's browser to the /authorize endpoint.
+The client pushes an authentication request by POST´ing it to the PAR endpoint.
 
 Supported HTTP headers:
 
 | Header  | Value |
 | --- | --- |
-|Http method|GET|
+|Http method|POST|
+| Content-type | application/x-www-form-urlencoded |
 
 &nbsp;
 
-Supported request attributes:
+The supported request attributes are identical to attributes available on the [/authorize](oidc_protocol_authorize.html) endpoint, ie:
+
 
 | Attribute  | Optionality | Description |
 | --- | --- | --- |
@@ -41,45 +46,49 @@ Supported request attributes:
 | code_challenge_method   | Recommended   | Algorithm for PKCE. Only `S256` supported.  |
 |login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
 |claims   | Optional  | Currently only used for [eIDAS](oidc_func_eidas.html)|
-|request_uri| Optional | The identifier returned by ID-porten from a [PAR request](oidc_protocol_par.html). No other attributes shold then be present |
+
 
 
 ### Sample request
 
 ```
+POST /idporten-oidc-provider/par HTTP/1.1
+Host: oidc.difi.no
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3
 
-GET /idporten-oidc-provider/authorize
-
-  scope=openid&
-  acr_values=Level3&
-  client_id=test_rp_yt2&
-  redirect_uri=https://eid-exttest.difi.no/idporten-oidc-client/authorize/response&
   response_type=code&
-  state=my_csrf_protection_value&
-  nonce=some_string_only_used_once&
-  ui_locales=nb
+  state=af0ifjsldkj&
+  client_id=s6BhdRkqt3&
+  redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb&
+  code_challenge=K2-ltc83acc4h0c9w6ESC_rEMTJ3bww-uCHaoeK1t8U&
+  code_challenge_method=S256&
+  scope=openid
 
 ```
 
-### Sample request when using pushed authorization requests (PAR)
 
-```
-GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw
-```
+
+## STØTTER VI REQUEST PARAMETER ?
+
+Aamund sjekkar
 
 
 ## Response
 
-When the user has performend a successful login, and optionally consented to any scopes requiring such consent, the browser will be redirected back to client.  The redirect will contain the authorization `code` parameter which is then used when fetching tokens. The code is base64-encoded and URL-safe.
-
-The `state` parameter is also included, and MUST be used by the client to detect CSRF attacks.
-
+The response is a `request_uri` identifier.
 
 ### Sample response: {#authresponse}
 
 ```
 {
-  "code" : "1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0=",
-  "state" : "my_csrf_protection_value"
+    "expires_in": 120,
+    "request_uri": "urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw"
 }
+
 ```
+The client must then use the request_uri by redirecting the end user to the /authorize endpoint before the request_uri expires.
+```
+GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw
+```
+Request parameters should not be repeated in the authorize-request, but if they are inclued, they must be excactly matching the values that was pushed in the PAR.
