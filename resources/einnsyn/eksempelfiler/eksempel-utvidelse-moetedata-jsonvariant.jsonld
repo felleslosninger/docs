@@ -1,0 +1,133 @@
+  {
+  "@context": {
+  "@base": "http://data.einnsyn.no/noark4/",
+  "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+  "xsd": "http://www.w3.org/2001/XMLSchema#",
+  "arkiv:møtedokumentregistreringstype": {"@type":"@id"},
+  "arkiv:tilknyttetRegistreringSom": {"@type":"@id"},
+  "arkiv:referanseTilMøtesak": {"@type":"@id"},
+  "arkiv:møtesakstype":{"@type":"@id"},
+  "arkiv:møtesakssekvensnummer":{"@type":"xsd:integer"},
+  "arkiv:møtesaksnummer":{"@type":"xsd:integer"},
+  "arkiv:moetedato":{"@type":"xsd:dateTime"},
+  "arkiv:offentligTittel_LIST":{"@container":"@list"},
+  "arkiv:tittel_LIST":{"@container":"@list"},
+  "arkiv:soekbar":{"@type":"xsd:boolean"},
+  "arkiv:parent":{"@type":"@id"}
+},
+  "@graph":[
+{
+  "@id": "moetemappe-2020-1",
+  "@type": "arkiv:Moetemappe",
+  "arkiv:moetedato":"2020-04-21T10:00:00",
+  "arkiv:moetested": "Teams",
+  "arkiv:offentligTittel": "Eksempelmøte med ekstra spesifisering",
+  "arkiv:offentligTittel_SENSITIV": "Eksempelmøte med ekstra spesifisering",
+  "arkiv:offentligTittel_LIST":["Eksempelmøte med ekstra spesifisering"],
+  "arkiv:utvalg":"Formansskapet"
+},
+{
+  "@id":"moetedokumentregistrering-2020-1-1-2020",
+  "@type":"arkiv:Møtedokumentregistrering",
+  "arkiv:offentligTittel":"Protokoll Møte",
+  "arkiv:offentligTittel_SENSITIV":"Protokoll Møte",
+  "arkiv:offentligTittel_LIST":"Protokoll Møte",
+  "arkiv:møtedokumentregistreringstype": "arkiv:protokoll",
+  "arkiv:parent":"moetemappe-2020-1",
+  "arkiv:dokumentbeskrivelse":
+  [
+    {
+      "@id":"dokumentbeskrivelse-moetedokumentregistrering-1-1-1",
+      "@type":"arkiv:Dokumentbeskrivelse",
+      "arkiv:tittel":"Protokoll ekspempelmøte",
+      "arkiv:tittel_SENSITIV":"Protokoll ekspempelmøte",
+      "arkiv:tittel_LIST":["Protokoll ekspempelmøte"],
+      "arkiv:dokumentnummer":1,
+      "arkiv:tilknyttetRegistreringSom":"arkiv:hoveddokument"
+    },
+    {
+      "@id":"dokumentbeskrivelse-moetedokumentregistrering-1-1-2",
+      "@type":"arkiv:Dokumentbeskrivelse",
+      "arkiv:tittel":"Vedlegg til protokoll",
+      "arkiv:tittel_SENSITIV":"Vedlegg til protokoll",
+      "arkiv:tittel_LIST":["Vedlegg til protokoll"],
+      "arkiv:dokumentnummer":2,
+      "arkiv:møtedokumentregistreringstype": "arkiv:vedlegg_protokoll",
+      "arkiv:tilknyttetRegistreringSom":"arkiv:vedlegg"
+    }
+  ]
+},
+{
+  "@id":"moetesaksregistrering-2020-1-2-2020",
+  "@type":"arkiv:Møtesaksregistrering",
+  "arkiv:offentligTittel":"Ferdig Plandokument",
+  "arkiv:offentligTittel_SENSITIV":"Ferdig Plandokument",
+  "arkiv:offentligTittel_LIST":["Ferdig Plandokument"],
+  "arkiv:moetsaksnummer":1,
+  "arkiv:møtesaksår":2020,
+  "arkiv:møtesakssekvensnummer":42,
+  "arkiv:møtesakstype":"arkiv:politiskSak",
+  "arkiv:parent":"moetemappe-2020-1",
+  "arkiv:referanseTilMøtesak":"arkiv:Journalpost-2020-1-2-2020",
+  "arkiv:moetregistreringsstatus":"Ferdig behandlet",
+  "arkiv:dokumentbeskrivelse":[
+    {
+      "@id":"dokumentbeskrivelse-moetsaksregistrering-1-2-1",
+      "@type":"arkiv:Dokumentbeskrivelse",
+      "arkiv:tittel":"Vedtak",
+      "arkiv:tittel_SENSITIV":"Vedtak",
+      "arkiv:tittel_LIST":["Vedtak"],
+      "arkiv:dokumenttype":"Vedtak",
+      "arkiv:dokumentnummer":1,
+      "arkiv:tilknyttetRegistreringSom":"arkiv:hoveddokument"
+    },
+    {
+      "@id":"dokumentbeskrivelse-moetsaksregistrering-1-2-2",
+      "@type":"arkiv:Dokumentbeskrivelse",
+      "arkiv:tittel":"Endelig plandokument",
+      "arkiv:tittel_SENSITIV":"Endelig plandokument",
+      "arkiv:tittel_LIST":["Endelig plandokument"],
+      "arkiv:dokumentnummer":2,
+      "arkiv:dokumenttype":"Vedlegg til vedtak",
+      "arkiv:tilknyttetRegistreringSom":"arkiv:vedlegg",
+      "arkiv:soerbar":true
+    }
+  ]
+},
+{
+  "@id":"moetesaksregistrering-2020-1-3-2020",
+  "@type":"arkiv:Møtesaksregistrering",
+  "arkiv:offentligTittel":"Foreløpig plan",
+  "arkiv:offentligTittel_SENSITIV":"Foreløpig plan",
+  "arkiv:offentligTittel_LIST":["Foreløpig plan"],
+  "arkiv:moetsaksnummer":2,
+  "arkiv:møtesaksår":2020,
+  "arkiv:møtesakssekvensnummer":43,
+  "arkiv:møtesakstype":"arkiv:politiskSak",
+  "arkiv:parent":"moetemappe-2020-1",
+  "arkiv:referanseTilMøtesak":"arkiv:Journalpost-2020-1-2-2020",
+  "arkiv:dokumentbeskrivelse":[
+    {
+      "@id":"dokumentbeskrivelse-moetsaksregistrering-2-2-1",
+      "@type":"arkiv:Dokumentbeskrivelse",
+      "arkiv:tittel":"Vedtak",
+      "arkiv:tittel_SENSITIV":"Vedtak",
+      "arkiv:tittel_LIST":["Vedtak"],
+      "arkiv:dokumentnummer":1,
+      "arkiv:dokumenttype":"Vedtak",
+      "arkiv:tilknyttetRegistreringSom":"arkiv:hoveddokument"
+    },
+    {
+      "@id":"dokumentbeskrivelse-moetsaksregistrering-2-2-2",
+      "@type":"arkiv:Dokumentbeskrivelse",
+      "arkiv:tittel":"Foreløpig til plandokument",
+      "arkiv:tittel_SENSITIV":"Foreløpig til plandokument",
+      "arkiv:tittel_LIST":["Foreløpig til plandokument"],
+      "arkiv:dokumentnummer":2,
+      "arkiv:dokumenttype":"Vedlegg til vedtak",
+      "arkiv:tilknyttetRegistreringSom":"arkiv:vedlegg",
+      "arkiv:soerbar":"false"
+    }
+  ]
+}
+]}

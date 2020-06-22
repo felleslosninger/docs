@@ -1,0 +1,221 @@
+<arkiv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="arkivstruktur.xsd" xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+  <systemID>fa351a0b-6dab-4540-a6f0-19b644d1ce87</systemID>
+  <tittel>eInnsyn arkiv</tittel>
+  <arkivstatus>Opprettet</arkivstatus>
+  <opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+  <opprettetAv>eInnsyn</opprettetAv>
+  <avsluttetAv>Ukjent</avsluttetAv>
+  <arkivskaper>
+    <arkivskaperID>0001</arkivskaperID>
+    <arkivskaperNavn>Ukjent</arkivskaperNavn>
+  </arkivskaper>
+  <arkivdel>
+    <systemID>86a204da-36fc-44f8-ac45-e676ce16f2ee</systemID>
+    <tittel>Statens Fellesnøkkel</tittel>
+    <beskrivelse>Statens Fellesnøkkel</beskrivelse>
+    <arkivdelstatus>Avsluttet periode</arkivdelstatus>
+    <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+    <opprettetDato>2016-03-01T00:00:00</opprettetDato>
+    <opprettetAv>360 Administrator</opprettetAv>
+    <avsluttetDato>2016-03-06T00:00:00</avsluttetDato>
+    <avsluttetAv>360 Administrator</avsluttetAv>
+    <arkivperiodeStartDato>2016-03-01</arkivperiodeStartDato>
+    <arkivperiodeSluttDato>2016-03-06</arkivperiodeSluttDato>
+    <mappe xsi:type="ark:moetemappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+      <systemID>9ecbd0bb-d10e-46bc-9ba1-d6087acf2322</systemID>
+      <mappeID>557da9af-5ba6-4d91-be86-79e57cc89422</mappeID>
+      <tittel>Møte</tittel>
+      <offentligTittel>Møte</offentligTittel>
+      <beskrivelse>Avholdt</beskrivelse>
+      <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+      <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+      <opprettetAv/>
+      <avsluttetDato>2018-04-12T00:00:00.000+02:00</avsluttetDato>
+      <avsluttetAv/>
+      <registrering xsi:type="ark:moetedokumentregistrering">
+        <systemID>0ce1ab72-2010-45c3-8e23-ce92151263f7</systemID>
+        <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+        <opprettetAv/>
+        <arkivertDato>2018-04-12T00:00:00.000+02:00</arkivertDato>
+        <arkivertAv/>
+        <dokumentbeskrivelse>
+          <systemID>878e94eb-bdb7-479f-8771-51dcceb6a33b</systemID>
+          <dokumenttype>MI</dokumenttype>
+          <dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+          <tittel>Saksliste. AU, 120418  1800, Møte.</tittel>
+          <beskrivelse>Møteinnkalling/sakskart</beskrivelse>
+          <opprettetDato>1900-01-01T00:00:00.000+01:00</opprettetDato>
+          <opprettetAv/>
+          <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+          <tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+          <dokumentnummer>175280</dokumentnummer>
+          <tilknyttetDato>2018-04-12T00:00:00.000+02:00</tilknyttetDato>
+          <tilknyttetAv/>
+          <dokumentobjekt>
+            <versjonsnummer>1</versjonsnummer>
+            <variantformat>Arkivformat</variantformat>
+            <format>pdf</format>
+            <opprettetDato>2018-05-24T21:55:14.000+02:00</opprettetDato>
+            <opprettetAv/>
+            <referanseDokumentfil>http://example.com/2018007271-175280.pdf</referanseDokumentfil>
+            <sjekksum/>
+            <sjekksumAlgoritme/>
+            <filstoerrelse>0</filstoerrelse>
+          </dokumentobjekt>
+        </dokumentbeskrivelse>
+        <registreringsID>b589947f-ea1b-4bd1-98da-21c469018cd9</registreringsID>
+        <tittel>Innkalling</tittel>
+        <offentligTittel>Innkalling</offentligTittel>
+        <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+        <administrativEnhet>874778842</administrativEnhet>
+        <saksbehandler>Ukjent</saksbehandler>
+        <moetedokumentregistreringstype>Innkalling</moetedokumentregistreringstype>
+      </registrering>
+      <registrering xsi:type="ark:moetedokumentregistrering">
+        <systemID>f134c949-e985-48c2-9678-a6bb646a6c7c</systemID>
+        <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+        <opprettetAv/>
+        <arkivertDato>2018-04-12T00:00:00.000+02:00</arkivertDato>
+        <arkivertAv/>
+        <dokumentbeskrivelse>
+          <systemID>4226e2a8-10b1-40c1-a370-458d01e01068</systemID>
+          <dokumenttype>MP</dokumenttype>
+          <dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+          <tittel>Godkjent møteprotokoll</tittel>
+          <beskrivelse>Protokoll</beskrivelse>
+          <opprettetDato>1900-01-01T00:00:00.000+01:00</opprettetDato>
+          <opprettetAv/>
+          <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+          <tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+          <dokumentnummer>175443</dokumentnummer>
+          <tilknyttetDato>2018-04-12T00:00:00.000+02:00</tilknyttetDato>
+          <tilknyttetAv/>
+          <dokumentobjekt>
+            <versjonsnummer>1</versjonsnummer>
+            <variantformat>Arkivformat</variantformat>
+            <format>pdf</format>
+            <opprettetDato>2018-05-24T21:55:14.000+02:00</opprettetDato>
+            <opprettetAv/>
+            <referanseDokumentfil>http://dkitest.oslo.kommune.no/dok/Bsr/2018/AU/2018007372-175443.pdf</referanseDokumentfil>
+            <sjekksum/>
+            <sjekksumAlgoritme/>
+            <filstoerrelse>0</filstoerrelse>
+          </dokumentobjekt>
+        </dokumentbeskrivelse>
+        <registreringsID>fa3d554f-9aa6-4fda-b23a-e99a0d73b4f0</registreringsID>
+        <tittel>Protokoll</tittel>
+        <offentligTittel>Protokoll</offentligTittel>
+        <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+        <administrativEnhet>avdeling 1</administrativEnhet>
+        <saksbehandler>Ukjent</saksbehandler>
+        <moetedokumentregistreringstype>Protokoll</moetedokumentregistreringstype>
+      </registrering>
+      <registrering xsi:type="ark:moetesaksregistrering">
+        <systemID>18203a7d-d9cd-436c-bfea-8b7bcac8c18d</systemID>
+        <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+        <opprettetAv/>
+        <arkivertDato>2018-04-12T00:00:00.000+02:00</arkivertDato>
+        <arkivertAv/>
+        <registreringsID>35/2018</registreringsID>
+        <tittel>Møtesak nr 1</tittel>
+        <offentligTittel>Møtesak nr 1</offentligTittel>
+        <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+        <moetesakstype>Politisk sak</moetesakstype>
+        <moeteregistreringsstatus>Behandlet i møte</moeteregistreringsstatus>
+        <administrativEnhet>Formannsskapet</administrativEnhet>
+        <saksbehandler>Ola Normann</saksbehandler>
+        <referanseTilMoetesak>0d85d441-386a-4b46-8f8b-2bb9a50576b9</referanseTilMoetesak>
+        <moetesaksaar>2018</moetesaksaar>
+        <moetesakssekvensnummer>3</moetesakssekvensnummer>
+      </registrering>
+      <moetenummer/>
+      <utvalg>Formannsskapet</utvalg>
+      <moetedato>2018-04-12T18:00:00.000+02:00</moetedato>
+      <moetested>Teams</moetested>
+    </mappe>
+    <mappe xsi:type="ark:saksmappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+      <systemID>a5f710de-7acc-4a81-801f-93ed12685341</systemID>
+      <mappeID>2018/2</mappeID>
+      <tittel>Møter i FMT</tittel>
+      <offentligTittel>Møter i FMT</offentligTittel>
+      <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+      <opprettetAv>Ola Normann</opprettetAv>
+      <avsluttetDato>2018-04-12T00:00:00.000+02:00</avsluttetDato>
+      <avsluttetAv/>
+      <registrering xsi:type="ark:journalpost">
+        <systemID>df5753a0-fbd7-48a4-ae76-258f1d18f864</systemID>
+        <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+        <opprettetAv>Ola Normann</opprettetAv>
+        <arkivertDato>2018-04-12T00:00:00.000+02:00</arkivertDato>
+        <arkivertAv/>
+        <registreringsID>df5753a0-fbd7-48a4-ae76-258f1d18f864</registreringsID>
+        <tittel>Test Saksframlegg 2</tittel>
+        <offentligTittel>Test Saksframlegg 2</offentligTittel>
+        <ark:kryssreferanse>
+          <ark:referanseTilRegistrering>b98dca69-335b-4018-9b18-4da5e22f95c2</ark:referanseTilRegistrering>
+        </ark:kryssreferanse>
+        <journalaar>2018</journalaar>
+        <journalsekvensnummer>3</journalsekvensnummer>
+        <journalposttype>Saksframlegg</journalposttype>
+        <journalstatus>Journalført</journalstatus>
+        <journaldato>2018-04-12+02:00</journaldato>
+      </registrering>
+      <saksaar>2018</saksaar>
+      <sakssekvensnummer>3</sakssekvensnummer>
+      <saksdato>2018-04-12+02:00</saksdato>
+      <administrativEnhet>Formansskapet</administrativEnhet>
+      <saksansvarlig>Ola Normann</saksansvarlig>
+      <saksstatus>Avsluttet</saksstatus>
+    </mappe>
+    <mappe xsi:type="ark:saksmappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+      <systemID>aea10ffa-85ff-46a2-8ab8-a51f73621aa7</systemID>
+      <mappeID>2018/1</mappeID>
+      <tittel>Møter i FSU</tittel>
+      <offentligTittel>Møter i FSU</offentligTittel>
+      <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+      <opprettetAv>Ola Normann</opprettetAv>
+      <registrering xsi:type="ark:journalpost">
+        <systemID>0d85d441-386a-4b46-8f8b-2bb9a50576b9</systemID>
+        <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+        <opprettetAv>Ola Normann</opprettetAv>
+        <arkivertDato>2018-04-12T00:00:00.000+02:00</arkivertDato>
+        <arkivertAv/>
+        <registreringsID>0d85d441-386a-4b46-8f8b-2bb9a50576b9</registreringsID>
+        <tittel>Test Saksframlegg</tittel>
+        <offentligTittel>Test Saksframlegg</offentligTittel>
+        <ark:kryssreferanse>
+          <ark:referanseTilRegistrering>dc793bd6-566d-4bc3-a6fb-7b29821625e1</ark:referanseTilRegistrering>
+        </ark:kryssreferanse>
+        <journalaar>2018</journalaar>
+        <journalsekvensnummer>3</journalsekvensnummer>
+        <journalposttype>Saksframlegg</journalposttype>
+        <journalstatus>Journalført</journalstatus>
+        <journaldato>2018-04-12+02:00</journaldato>
+      </registrering>
+      <registrering xsi:type="ark:journalpost">
+        <systemID>b98dca69-335b-4018-9b18-4da5e22f95c2</systemID>
+        <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+        <opprettetAv>Ola Normann</opprettetAv>
+        <arkivertDato>2018-04-12T00:00:00.000+02:00</arkivertDato>
+        <arkivertAv/>
+        <registreringsID>b98dca69-335b-4018-9b18-4da5e22f95c2</registreringsID>
+        <tittel>Test Arkivsak</tittel>
+        <offentligTittel>Test Arkivsak</offentligTittel>
+        <ark:kryssreferanse>
+          <ark:referanseTilRegistrering>df5753a0-fbd7-48a4-ae76-258f1d18f864</ark:referanseTilRegistrering>
+        </ark:kryssreferanse>
+        <journalaar>2018</journalaar>
+        <journalsekvensnummer>3</journalsekvensnummer>
+        <journalposttype>Saksframlegg</journalposttype>
+        <journalstatus>Journalført</journalstatus>
+        <journaldato>2018-04-12+02:00</journaldato>
+      </registrering>
+      <saksaar>2018</saksaar>
+      <sakssekvensnummer>3</sakssekvensnummer>
+      <saksdato>2018-04-12+02:00</saksdato>
+      <administrativEnhet>Kommunestyret</administrativEnhet>
+      <saksansvarlig>Ola Normann</saksansvarlig>
+      <saksstatus>Avsluttet</saksstatus>
+    </mappe>
+  </arkivdel>
+</arkiv>

@@ -1,0 +1,196 @@
+{
+  "@graph": [
+    {
+      "@id": "http://data.einnsyn.no/noark4/moetemappe-2020-1",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Moetemappe",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetedato": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2020-04-21T10:00:00"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetested": "Teams",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": "Eksempelmøte med ekstra spesifisering",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": {
+        "@list": [
+          "Eksempelmøte med ekstra spesifisering"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": "Eksempelmøte med ekstra spesifisering",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/utvalg": "Formansskapet"
+    },
+    {
+      "@id": "http://data.einnsyn.no/noark4/moetedokumentregistrering-2020-1-1-2020",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Møtedokumentregistrering",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentbeskrivelse": [
+        {
+          "@id": "http://data.einnsyn.no/noark4/dokumentbeskrivelse-moetedokumentregistrering-1-1-1",
+          "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": 1,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/hoveddokument"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Protokoll ekspempelmøte",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+            "@list": [
+              "Protokoll ekspempelmøte"
+            ]
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Protokoll ekspempelmøte"
+        },
+        {
+          "@id": "http://data.einnsyn.no/noark4/dokumentbeskrivelse-moetedokumentregistrering-1-1-2",
+          "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": 2,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtedokumentregistreringstype": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/vedlegg_protokoll"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/vedlegg"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Vedlegg til protokoll",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+            "@list": [
+              "Vedlegg til protokoll"
+            ]
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Vedlegg til protokoll"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtedokumentregistreringstype": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/protokoll"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": "Protokoll Møte",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": {
+        "@list": [
+          "Protokoll Møte"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": "Protokoll Møte",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": {
+        "@id": "http://data.einnsyn.no/noark4/moetemappe-2020-1"
+      }
+    },
+    {
+      "@id": "http://data.einnsyn.no/noark4/moetesaksregistrering-2020-1-2-2020",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Møtesaksregistrering",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentbeskrivelse": [
+        {
+          "@id": "http://data.einnsyn.no/noark4/dokumentbeskrivelse-moetsaksregistrering-1-2-1",
+          "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": 1,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumenttype": "Vedtak",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/hoveddokument"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Vedtak",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+            "@list": [
+              "Vedtak"
+            ]
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Vedtak"
+        },
+        {
+          "@id": "http://data.einnsyn.no/noark4/dokumentbeskrivelse-moetsaksregistrering-1-2-2",
+          "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": 2,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumenttype": "Vedlegg til vedtak",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/soerbar": true,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/vedlegg"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Endelig plandokument",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+            "@list": [
+              "Endelig plandokument"
+            ]
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Endelig plandokument"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetregistreringsstatus": "Ferdig behandlet",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetsaksnummer": 1,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesakssekvensnummer": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 42
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesakstype": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/politiskSak"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesaksår": 2020,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": "Ferdig Plandokument",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": {
+        "@list": [
+          "Ferdig Plandokument"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": "Ferdig Plandokument",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": {
+        "@id": "http://data.einnsyn.no/noark4/moetemappe-2020-1"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/referanseTilMøtesak": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost-2020-1-2-2020"
+      }
+    },
+    {
+      "@id": "http://data.einnsyn.no/noark4/moetesaksregistrering-2020-1-3-2020",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Møtesaksregistrering",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentbeskrivelse": [
+        {
+          "@id": "http://data.einnsyn.no/noark4/dokumentbeskrivelse-moetsaksregistrering-2-2-1",
+          "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": 1,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumenttype": "Vedtak",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/hoveddokument"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Vedtak",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+            "@list": [
+              "Vedtak"
+            ]
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Vedtak"
+        },
+        {
+          "@id": "http://data.einnsyn.no/noark4/dokumentbeskrivelse-moetsaksregistrering-2-2-2",
+          "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": 2,
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumenttype": "Vedlegg til vedtak",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/soerbar": "false",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+            "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/vedlegg"
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Foreløpig til plandokument",
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+            "@list": [
+              "Foreløpig til plandokument"
+            ]
+          },
+          "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Foreløpig til plandokument"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetsaksnummer": 2,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesakssekvensnummer": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 43
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesakstype": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/politiskSak"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesaksår": 2020,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": "Foreløpig plan",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": {
+        "@list": [
+          "Foreløpig plan"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": "Foreløpig plan",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": {
+        "@id": "http://data.einnsyn.no/noark4/moetemappe-2020-1"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/referanseTilMøtesak": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost-2020-1-2-2020"
+      }
+    }
+  ]
+}

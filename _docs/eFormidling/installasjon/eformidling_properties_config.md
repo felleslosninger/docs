@@ -25,10 +25,10 @@ Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.
 
 ### Integrasjonspunkt-local.properties
 
-Her laster du ned [integrasjonspunkt-local.properties-filen](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt_local.properties) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
+Her laster du ned [integrasjonspunkt-local.properties-filen](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
-2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt_local.properties) og lagre i overnevnte mappe
+2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
 3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](https://difi.github.io/felleslosninger/eformidling_download_ip.html)
 
 Når du er ferdig skal strukturen på området se slik ut:
@@ -90,6 +90,8 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 
 #### DPI
 ```difi.move.feature.enableDPI=true``` Må settes til true om du skal bruke DPI. Ingen andre DPI-spesifikke properties kreves, men en har mulighet til å overstyre ved å sette de. 
+
+**NB!** En forutsetning for å bruke DPI gjennom eFormidling er at sak/arkiv/fagsystem er integrert mot eFormidling 2.0 grensesnittet. Spør din leverandør om dette. Les mer [her.](https://difi.github.io/felleslosninger/eformidling_nm_about.html)
 
 ---
 

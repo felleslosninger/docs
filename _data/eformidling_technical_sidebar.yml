@@ -5,7 +5,7 @@ folders:
 
   folderitems:
       
-      - title: Om NextMove
+      - title: Om eFormidling 2.0
         jurl: /eformidling_nm_about.html
 
       - title: Arkivmeldingen
@@ -23,8 +23,7 @@ folders:
       - title: Grensesnitt / REST docs
         jurl: /eformidling_nm_restdocs.html
         
-      - title: Endringslogg 
-        jurl: /eformidling_releasenotes.html
+
 
 ###########################
 
@@ -38,7 +37,7 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no
 
 

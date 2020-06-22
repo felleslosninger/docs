@@ -41,6 +41,9 @@ Adresseinformasjon legges i Standard Business Document Header.
 
 ```value``` feltet krever prefiks ```0192:``` før organisasjonsnummer for alle forsendelser til norske virksomheter. Prefiks er ikke påkrevd på mottaker om mottaker er innbygger. 
 
+#### På-vegne-av-avsender - DPV og DPI
+DPV og DPI støtter å sende meldinger på-vegne-av andre virksomheter. Dette angis i ```sender.identifier.value``` med følgende syntaks: ```0192:<orgnr>:<paa-vegne-av-orgnr>```. Når det gjelder DPI, støttes også avsenderidentifikator. Se eksempel under [Digital post til innbygger](#digital-post-til-innbygger).
+
 #### messageId
 Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne "erstatter" den gamle ConversationId for meldinger, se info under. 
 
@@ -201,15 +204,12 @@ Begge prosessene støtter både digitalpost og fysisk post.
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpeJournal.json %}
 ```
-<!--
 ### Avtalt
 
 Avtalt er en bilateral meldingstype som lar avsender og mottaker sende en forhåndsbestemt forretningsmelding som kan være strukturert eller ustrukturert. 
 
 | Prosess | Dokumenttype | 
-|---------|--------------|
-|urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
-|  |urn:no:difi:avtalt:xsd::avtalt |
+|---|---|
 |urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
 |  |urn:no:difi:avtalt:xsd::avtalt |
 
@@ -228,5 +228,4 @@ Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Av
 
 > Forretningsmeldinger som inneholder " " må disse endres til  ' ' for å unngå at json-validatoren leser det som et json-element. Dette kan spesielt være aktuelt i XML-filer som inlines i forretningsmeldingen.
 
--->
 

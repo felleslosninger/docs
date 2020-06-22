@@ -2,15 +2,19 @@
     "digital": {
         "sikkerhetsnivaa": "",
         "hoveddokument": "",
+        "avsenderId": "", // valgfri
         "tittel": "",
         "spraak": "NO",
         "digitalPostInfo": {
             "virkningsdato": "",
             "aapningskvittering": "false"
         },
-        "varsler": {
+        "varsler": { // valgfri
             "epostTekst": "Varseltekst",
             "smsTekst": "Varseltekst"
+        },
+        "metadataFiler": { // valgfri
+            "test.pdf": "test-metadata.xml"
         }
     }
 }

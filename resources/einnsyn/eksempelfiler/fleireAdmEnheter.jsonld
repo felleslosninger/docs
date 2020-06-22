@@ -1,0 +1,122 @@
+[ {
+  "@id" : "_:b0",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Skjerming" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilgangsrestriksjon" : [ {
+    "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/ugradert"
+  } ]
+}, {
+  "@id" : "_:b1",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkivskaper" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperNavn" : [ {
+    "@value" : "ukjent"
+  } ]
+}, {
+  "@id" : "http://data.einnsyn.no/noark4/53b5804c-8a6b-4963-9e66-c0911681db4e",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Korrespondansepart" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/administrativEnhet" : [ {
+    "@value" : "FSU"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn" : [ {
+    "@value" : "Norges teknisk-naturvitenskapelige universitet - NTNU"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn_LIST" : [ {
+    "@list" : [ {
+      "@value" : "Norges teknisk-naturvitenskapelige universitet - NTNU"
+    } ]
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn_SENSITIV" : [ {
+    "@value" : "Norges teknisk-naturvitenskapelige universitet - NTNU"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondanseparttype" : [ {
+    "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsender"
+  } ]
+}, {
+  "@id" : "http://data.einnsyn.no/noark4/Journalpost--991825827--2014--588--17--2016",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentetsDato" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2015-02-13"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalaar" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2016"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journaldato" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2016-01-04"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalpostnummer" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "17"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalposttype" : [ {
+    "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/inngåendeDokument"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalsekvensnummer" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "65"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepart" : [ {
+    "@id" : "http://data.einnsyn.no/noark4/53b5804c-8a6b-4963-9e66-c0911681db4e"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel" : [ {
+    "@value" : "Journalpost med annna admenhet"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST" : [ {
+    "@list" : [ {
+      "@value" : "Journalpost med annna admenhet"
+    } ]
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV" : [ {
+    "@value" : "Journalpost med annna admenhet"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent" : [ {
+    "@id" : "http://data.einnsyn.no/noark4/Saksmappe--991825827--588--2014"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/skjerming" : [ {
+    "@id" : "_:b0"
+  } ]
+}, {
+  "@id" : "http://data.einnsyn.no/noark4/Saksmappe--991825827--588--2014",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Saksmappe" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/administrativEnhet" : [ {
+    "@value" : "FDF"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel" : [ {
+    "@value" : "Saksmappe med admenhet"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST" : [ {
+    "@list" : [ {
+      "@value" : "Saksmappe med admenhet"
+    } ]
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV" : [ {
+    "@value" : "Saksmappe med admenhet"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent" : [ {
+    "@id" : "http://data.einnsyn.no/noark4/arkivdel--991825827"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksaar" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2014"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig" : [ {
+    "@value" : "SCM"
+  } ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/sakssekvensnummer" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "588"
+  } ]
+}, {
+  "@id" : "http://data.einnsyn.no/noark4/arkiv--991825827",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkiv" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaper" : [ {
+    "@id" : "_:b1"
+  } ]
+}, {
+  "@id" : "http://data.einnsyn.no/noark4/arkivdel--991825827",
+  "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkivdel" ],
+  "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent" : [ {
+    "@id" : "http://data.einnsyn.no/noark4/arkiv--991825827"
+  } ]
+} ]
