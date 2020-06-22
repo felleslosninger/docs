@@ -10,7 +10,7 @@ folders:
 
       - title: OIDC i ID-porten
         jurl: /oidc_index.html
-        
+
       - title: Getting started
         jurl: /oidc_guide_english.html
 
@@ -36,6 +36,8 @@ folders:
 
       - title: "/authorize"
         jurl: /oidc_protocol_authorize.html
+      - title: "/par"
+        jurl: /oidc_protocol_par.html
       - title: "/token"
         jurl: /oidc_protocol_token.html
       - title: "/tokeninfo"
