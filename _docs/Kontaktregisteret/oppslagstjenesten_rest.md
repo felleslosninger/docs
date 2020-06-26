@@ -48,7 +48,7 @@ OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-se
 |YT2 |[https://krr-yt2.digdir.no/rest/v1/personer](https://krr-yt2.digdir.no/rest/v1/personer)|
 |PROD|[https://krr.digdir.no/rest/v1/personer](https://krr.digdir.no/rest/v1/personer)|
 
-**Merk:** Man vil oppnå vesentlig bedre ytelse (målt i personer/sekund) ved å slå opp 1000 personer i gangen kontra tusen enkelt-oppslag.
+**Merk:** Man vil oppnå vesentlig bedre ytelse (målt i personer/sekund) ved å slå opp 1000 personer 1 gang kontra 1000 enkelt-oppslag.
 
 Følgende header-parametere må brukes på request:
 
