@@ -1,14 +1,16 @@
 ---
-title: 19-04 Digital borger 1
-description: 19-04 Digital borger 1
-permalink: 19-04_Digital_borger_1.html
+title: 19-04 ID-porten
+description: 19-04 ID-porten
+permalink: 19-04_ID-porten.html
 sidebar: oidc
 ---
 
 
+Støtte for innloggingshistorikk og app-innlogginger med sentraisert revokasjon i ID-portens brukerprofil
 
 
-Releasen vart produksjonssatt 2019-06-06
+
+Planlagd produksjonssetting: 2019-06-06
 
 ## Ny funksjonalitet:
 
