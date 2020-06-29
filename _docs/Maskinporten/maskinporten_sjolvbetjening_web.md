@@ -77,7 +77,7 @@ Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal d
 
 Videotutorial: (https://vimeo.com/433540358)
 
-[![Delegere rettigheter](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
+[![Fjerne tilgang](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
 
 ## Selvbetjening som API-tilbyder
 
