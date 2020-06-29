@@ -45,6 +45,19 @@ Så avtaler vi utveksling av personnummer etter dette.
 
 Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
 
+Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+
+1. Gå til Altinn.no
+2. Trykk på "Logg inn"
+3. Velg å representere Buypass
+4. Trykk på "Profil"
+5. Trykk på "Andre med rettigheter til virksomheten"
+6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
+7. Søk på "Digdir" i søkefeltet på "Gi nye rettigheter"
+8. Velg "Selvbetjening av integrasjoner hos Digdir"
+9. Trykk på alle rettighetene
+10. Trykk på "Gi rettigheter"
+
 ## Selvbetjening som API-tilbyder
 
 ### Forutsetninger
