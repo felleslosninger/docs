@@ -1,13 +1,13 @@
 ---
-title: Selvbetjening av Maskinporten via Samarbeidsportalen
-description:  Selvbetjening av Maskinporten via Samarbeidsportalen
-summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene Maskinporten via Samarbeidsportalen'
-permalink: maskinporten_sjolvbetjening_web.html
-sidebar: maskinporten_sidebar
-product: Maskinporten
+title: Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
+description:  Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
+summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene KRR via Samarbeidsportalen'
+permalink: krr_sjolvbetjening_web.html
+sidebar: main_sidebar
+product: KRR
 ---
 
-Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyder og API-konsument.
+Dette dokumentet viser hvordan du kan selvbetjene KRR i Samarbeidsportalen.
 
 ---
 * TOC
@@ -45,24 +45,11 @@ Så avtaler vi utveksling av personnummer etter dette.
 
 Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
 
-Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
-
-1. Gå til Altinn.no
-2. Trykk på "Logg inn"
-3. Velg å representere Buypass
-4. Trykk på "Profil"
-5. Trykk på "Andre med rettigheter til virksomheten"
-6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
-7. Søk på "Digdir" i søkefeltet på "Gi nye rettigheter"
-8. Velg "Selvbetjening av integrasjoner hos Digdir"
-9. Trykk på alle rettighetene
-10. Trykk på "Gi rettigheter"
-
-## Selvbetjening som API-tilbyder
+## Selvbetjening for oppslagstjenesten REST
 
 ### Forutsetninger
 
-For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
+For å kunne opprette en integrasjon mot KRR, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
 
 For bestilling til produksjonsmiljøet, send inn skjema:
 
@@ -129,7 +116,7 @@ Videotutorial: (https://vimeo.com/397388041)
 [![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 
-## Selvbetjening som API-konsument
+## Selvbetjening for brukerspesifikt oppslag REST
 
 ### Innnlogging (Integrasjoner)
 
