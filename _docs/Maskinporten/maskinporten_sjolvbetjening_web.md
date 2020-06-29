@@ -49,7 +49,7 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 
 1. Gå til Altinn.no
 2. Trykk på "Logg inn"
-3. Velg å representere Buypass
+3. Velg virksomheten du skal representere
 4. Trykk på "Profil"
 5. Trykk på "Andre med rettigheter til virksomheten"
 6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
@@ -57,6 +57,27 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 8. Velg "Selvbetjening av integrasjoner hos Digdir"
 9. Trykk på alle rettighetene
 10. Trykk på "Gi rettigheter"
+
+Videotutorial: (https://vimeo.com/433540385)
+
+[![Delegere rettigheter](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
+
+Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+
+1. Gå til Altinn.no
+2. Trykk på "Logg inn"
+3. Velg virksomheten du skal representere
+4. Trykk på "Profil"
+5. Trykk på "Andre med rettigheter til virksomheten"
+6. Finn personen du skal frata rettigheter fra
+7. Trykk på "Gi eller fjerne tilgang"
+8. Trykk på "Fjern en eller flere rettigheter"
+9. Trykk på "Fjern" på rettigheten som skal fjernes.
+10. Trykk på "Ferdig for å bekrefte"
+
+Videotutorial: (https://vimeo.com/433540358)
+
+[![Fjerne tilgang](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
 
 ## Selvbetjening som API-tilbyder
 
