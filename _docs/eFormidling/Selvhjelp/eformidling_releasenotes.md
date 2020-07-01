@@ -7,6 +7,25 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+##2.1.2
+01.07.2020
+
+### Hva er endret/nytt?
+
+**Basic auth for alle endepunkter integrasjonspunktet tilbyre (bortsett fra "manage/health"**
+
+**Går over til bruk av JWK(JSON Web Key) for signering i integrasjonspunkt - hentes fra et nytt endepunkt i SR.**
+
+**Mindre feilrettinger:**
+
+-Content-disposition name-felt støtter ikkje support RFC5987
+
+-"0MB" vises som feilmelding når size limit er mindre enn ein megabyte.
+
+
+Full endringslogg: [Release notes for 2.1.2](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10187)
+
+
 ## 2.1.0
 05.03.2020
 
