@@ -73,7 +73,7 @@ The client can pass a request using a using a JWT based request object, as descr
 
 Passing a Request Object by reference (as described in OpenID Connect Core chapter 6.2) is not supported.
 
-The use of request objects requires use of a predefined public key on the client-registration, see [client administration api](oidc_api_admin.html#bruk-av-asymmetrisk-nøkkel
+The use of request objects requires use of a predefined public key on the client-registration, see [client administration api](oidc_api_admin.html#bruk-av-asymmetrisk-nøkkel)
 
 ### Sampe request using request object
 
