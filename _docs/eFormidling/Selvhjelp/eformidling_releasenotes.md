@@ -18,9 +18,9 @@ sidebar: eformidling_install_sidebar
 
 **Mindre feilrettinger:**
 
--Content-disposition name-felt støtter ikkje support RFC5987
+- Content-disposition name-felt støtter ikkje support RFC5987
 
--"0MB" vises som feilmelding når size limit er mindre enn ein megabyte.
+- "0MB" vises som feilmelding når size limit er mindre enn ein megabyte.
 
 
 Full endringslogg: [Release notes for 2.1.2](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10187)
