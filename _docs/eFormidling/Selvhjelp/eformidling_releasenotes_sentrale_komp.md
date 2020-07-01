@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 01.07.2020
 
 **Sertifikat**: 
-Legge til rette for nytt sertifikat. Krever også minimum Integrasjonspunktet 2.1.2  
+Legge til rette for nytt sertifikat frå august 2020. Sertifikatendringa krever også minimum Integrasjonspunktet 2.1.2 for å unngå å måtte restarte integrasjonspunktet.  
 
 **Diverse**: Mindre endringer.  
 
