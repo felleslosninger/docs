@@ -109,7 +109,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 **Å gjøre:**
 1. Anskaffe virksomhetssertifikat
 2. Legge sertifikat i Java Key Store.
-3. Sende sertifikat tilDigitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+3. Sende public delen av sertifikatet i .cer eller .crt format til Digitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 **Hvordan?**
 
