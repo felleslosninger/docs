@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-## ServiceRegistry 2.0.7
+## ServiceRegistry 2.0.8
 01.07.2020
 
 **Sertifikat**: 
