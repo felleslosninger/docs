@@ -26,7 +26,7 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
  
   | Status | Logget av Avsender/mottaker | Kommentar |
   | :--- | :--- | :--- |  
-  | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPO-melding |
+  | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPO-melding |
   | SENDT| Avsender | Integrasjonspunkt har sendt forsendelsen til meldingsformidler | 
   | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
@@ -120,7 +120,7 @@ Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldings
 
 Integrasjonspunktet adresserer forsendelsen ved å slå opp mottakeren i Kontakt- og Reservasjonsregisteret og velger forsendelseskanal basert på reservasjonsstatus.
 
-DPI via eFormidling bruker NextMove grensesnittet. Det betyr at avsendersystemet ditt må støtte dette. DPI støtter også printtjenesten til Posten.
+DPI via eFormidling bruker eFormidling 2.0 grensesnittet. Det betyr at avsendersystemet ditt må støtte dette. DPI støtter også printtjenesten til Posten.
 
 ### DPI statuser
 
@@ -207,7 +207,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
  
   | Status | Logget av Avsender/mottaker | Kommentar |
   | :--- | :--- | :--- |  
-  | OPPRETTET| Avsender |  Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPE-melding. |
+  | OPPRETTET| Avsender |  Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPE-melding. |
   | SENDT| Avsender| Integrasjonspunkt har sendt forsendelsen til meldingsformidler. | 
   | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg. | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 

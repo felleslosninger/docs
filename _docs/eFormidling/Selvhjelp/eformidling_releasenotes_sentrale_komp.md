@@ -7,6 +7,19 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## ServiceRegistry 2.0.8
+01.07.2020
+
+**Sertifikat**: 
+Legge til rette for nytt sertifikat frå august 2020. Sertifikatendringa krever også minimum Integrasjonspunktet 2.1.2 for å unngå å måtte restarte integrasjonspunktet.  
+
+**Diverse**: Mindre endringer.  
+
+[Detaljer](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10178)
+
+
+
+
 ## ServiceRegistry 2.0.6
 05.03.2020
 

@@ -241,6 +241,7 @@ The token is a JWT with the following structure:
 | --- | --- | --- |
 | sub | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.  |
 | aud   |  The indended audience for token.  Normally the Oauth2 'issuer' URL of the Resource Server / API. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  ID-porten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  `https://api.examples.com/users`|
+| acr | sikkerhetsnivå |
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
 | client_amr  | How the client authenticated itselft towards the AS.  | `virksomhetssertifikat`|
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
@@ -253,7 +254,7 @@ The token is a JWT with the following structure:
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
-| client_orgno | The organization number of the client. Present for legacy reasons, but note that using consumer/supplier claims is recommended for access control decisions by the Resource Server |
+| client_orgno | **deprecated** The organization number of the client. Present for legacy reasons, but note that access control decisions by the Resource Server should be based on the `consumer`/`supplier` claims. |
 
 #### client_amr
 

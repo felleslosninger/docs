@@ -7,7 +7,7 @@ product: elma
 sidebar: elma_sidebar
 ---
 
-*Updated: 10.04.2019*
+*Updated: 02.06.2020*
 
 ### Terminology
 Here are some terms which will be used throughout this page.
@@ -20,26 +20,27 @@ Here are some terms which will be used throughout this page.
 - Domains = Collections of processes used in e-procurement. 
 - Document types = Standardized message types belonging to processes, used in communication between access points.
 - Identifier = Consists of a set prefix and a organizational number. e.g. 9908:991825827
+- SML (Service Metadata Locator) = A DNS that returns the adress to the SMP that holds the metadata of a PEPPOL receiver. The SML is the only centrally operated component in the PEPPOL transport infrastructure. It is managed by OpenPEPPOL and operates out of Brussels by DG/DIGIT.
 
 ## Endpoints
 Here you will see all the endpoints linked to you as a service provider
 
-![](/felleslosninger/images/elma/endpoints_0.PNG)
+![](images/elma/endpoints_0.PNG)
 
 ### Add endpoint
 To add a new endpoint you go to the Endpoint page and click "Add endpoint" just above the title line.
 
 Then you will see new window. Make sure you fill in all text fields. Click save when you're done.
 
-![](/felleslosninger/images/elma/ny_endpoint_0.PNG)
+![](images/elma/ny_endpoint_0.PNG)
 
 After your endpoint is created you will see it in the list of Endpoints. 
 
-![](/felleslosninger/images/elma/ny_endpoint_1.PNG)
+![](images/elma/ny_endpoint_1.PNG)
 
 You may add several endpoints if you wish.
 
-![](/felleslosninger/images/elma/ny_endpoint_2.PNG)
+![](images/elma/ny_endpoint_2.PNG)
 
 ---
 
@@ -51,20 +52,20 @@ To edit an endpoint you click on an endpoint and then the "Edit endpoint" button
 -->
 
 ### Adding endpointURL or participant to endpoint
-First you need to choose the endpoint you want and click on it. To add either a endpoint URL or a participant to your endpoint you click the links at the bottom of this window. 
+First you need to choose the endpoint you want and click on it. There you will see buttons to either add an endpoint URL or a participant to your endpoint.
 
-![](/felleslosninger/images/elma/endpointurl_add_0.PNG)
+![](images/elma/endpointurl_add_0.PNG)
 
 See the next two sections for further instructions
 
 ### EndpointURL
 To add an endpointURL you need to already have uploaded a certificate. Choose a transport profile, your certificate and a URL.
 
-![](/felleslosninger/images/elma/new_endpoint_url_0.PNG)
+![](images/elma/new_endpoint_url_0.PNG)
 
 After you've added the endpointURL it shows up in endpoint.
 
-![](/felleslosninger/images/elma/new_endpoint_url_1.PNG)
+![](images/elma/new_endpoint_url_1.PNG)
 
 To edit or delete an endpoint url you click the edit or delete button next to the endpointURL. 
 
@@ -75,15 +76,15 @@ To add a new participant to your endpoint you first open up the selected endpoin
 
 Fill in the required information
 
-![](/felleslosninger/images/elma/new_participant.PNG)
+![](images/elma/new_participant.PNG)
 
 Confirmation message after you've added a participant to your endpoint
 
-![](/felleslosninger/images/elma/add_participant_successful.PNG)
+![](images/elma/add_participant_successful.PNG)
 
 If you click on a participant you will see the processes connected to this participant. 
 
-![](/felleslosninger/images/elma/participant.PNG)
+![](images/elma/participant.PNG)
 
 Note that process dependencies are shown. In a special case, when viewing a 0192-participant, profiles which are dependencies that are profiles on the 9908-sibling-participant will also be shown. Those dependencies are not processes on the 0192-participant, but are still shown in ELMA web. They are not visible in a SMP-lookup. 
 
@@ -98,22 +99,22 @@ First choose the endpoint you wish to delete from the Endpoints list. To delete 
 
 Click the "delete endpoint" button
 
-![](/felleslosninger/images/elma/delete_endpoint_0.PNG)
+![](images/elma/delete_endpoint_0.PNG)
 
 Carefully read the warning and confirm the delete operation. If you wish to cancel just click anywhere outside of the textbox.
 
-![](/felleslosninger/images/elma/delete_endpoint_1.PNG)
+![](images/elma/delete_endpoint_1.PNG)
 
 Delete ok
 
-![](/felleslosninger/images/elma/delete_endpoint_2.PNG)
+![](images/elma/delete_endpoint_2.PNG)
 
 ---
 
 ## Processes
 Here you see the different processes currently in use as well as deprecated ones. By clicking on either one you can see the document types connected to that process. Only the Elma admins are allowed to add, edit or remove processes. To add a process to a participant you need to go through the Endpoint -> edit/add participant menu.
 
-![](/felleslosninger/images/elma/process.PNG)
+![](images/elma/process.PNG)
 
 ---
 
@@ -126,10 +127,10 @@ To delete your certificate you simply click delete and then confirm your action.
 When you add a certificate you need to upload your own certificate and make sure you choose a title and a Certificate type from the drop-down menu. You can choose certificate type "none".
 
 Give the certificate a name and browse through your system and choose the certificate you want to upload.
-![](/felleslosninger/images/elma/new_certificate_0.PNG)
+![](images/elma/new_certificate_0.PNG)
 
 This is what it looks like when a certificate is uploaded.
-![](/felleslosninger/images/elma/new_certificate_1.PNG)
+![](images/elma/new_certificate_1.PNG)
 
 
 
@@ -145,12 +146,25 @@ Whenever you make a new user it will be automatically added to the same Service 
 ### Add/edit new user
 Make sure you fill in all the fields before you click save.
 
-![](/felleslosninger/images/elma/new_user_0.PNG)
+![](images/elma/new_user_0.PNG)
 
 After you have succesfully added a new user you can edit this user, add another or view log of the currently added users.
 
-![](/felleslosninger/images/elma/new_user_1.PNG)
+![](images/elma/new_user_1.PNG)
 
+## SML Queue
+
+When adding or deleting a participant there will be sent a request to update the SML (Service Metadata Locator) accordingly.
+The requests will be put on a queue and processed as soon as possible. Typically within a minute. Below is a screenshot
+of the SML queue containing one entry that hasn't yet been processed.
+
+![](images/elma/sml_queue.PNG)
+
+There can be situations where the requests can't be processed. I.e. due to planned maintenance of the SML Application server or network problems.
+Is such scenarios the operations will fail, but they will automatically be retried later on. The SML Queue screen shows the active queue.
+Entries that are successfully executed will get status COMPLETED and will disappear after some time. Typically an hour.
+Sometimes the same request will fail over and over again due to a specific problem. Then it is important to check the error message.
+You can manually retry the request be pressing the Retry-button or delete the SML request by pressing the Delete-button.
 
 
 If you have any questions don't hesitate to contact us <a href="elma@digdir.no">elma@digdir.no</a>

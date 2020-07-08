@@ -41,14 +41,14 @@ Supported request attributes:
 | code_challenge_method   | Recommended   | Algorithm for PKCE. Only `S256` supported.  |
 |login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
 |claims   | Optional  | Currently only used for [eIDAS](oidc_func_eidas.html)|
-
+|request_uri| Optional | The identifier returned by ID-porten from a [PAR request](oidc_protocol_par.html). No other attributes shold then be present |
 
 
 ### Sample request
 
 ```
 
-GET /authorize
+GET /idporten-oidc-provider/authorize
 
   scope=openid&
   acr_values=Level3&
@@ -61,12 +61,18 @@ GET /authorize
 
 ```
 
+### Sample request when using pushed authorization requests (PAR)
+
+```
+GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw
+```
+
 
 ## Response
 
-When the user has performend a successful login, and optionally consented to any scopes requiring such consent, the browser will be redirected back to client.  The redirect will contain the authorization 'code' parameter which is then used when fetching tokens. The code is base64-encoded and URL-safe.
+When the user has performend a successful login, and optionally consented to any scopes requiring such consent, the browser will be redirected back to client.  The redirect will contain the authorization `code` parameter which is then used when fetching tokens. The code is base64-encoded and URL-safe.
 
-The 'state' parameter is also included, and MUST be used by the client to detect CSRF attacks.
+The `state` parameter is also included, and MUST be used by the client to detect CSRF attacks.
 
 
 ### Sample response: {#authresponse}

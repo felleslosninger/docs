@@ -143,7 +143,7 @@ Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelsese
 
 Dette gjøres av Altinn etter atDigitaliseringsdirektoratet sender bestilling. For atDigitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
 
-[Informasjonsskjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUQzlQTzNVSUdLTjVGWFpJNk1ITjBWTkNKSy4u)
+[Informasjonsskjema](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMjhUWVMxWk1OUkw0SDZXME9NVk8zOUEwNS4u)
 
 [Mer info](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
 
