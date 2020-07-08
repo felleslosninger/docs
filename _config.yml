@@ -55,7 +55,7 @@ link_type: jurl
 show_feedback: true
 
 # email address feedback gets sent to
-feedback_email: idporten@difi.no
+feedback_email: servicedesk@digdir.no
 
 # note: to customize the auto-completed body text, overwrite it by adding _includes/feedback.html in your own theme.
 
