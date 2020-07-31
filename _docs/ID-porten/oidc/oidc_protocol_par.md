@@ -68,12 +68,6 @@ Authorization: Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3
 ```
 
 
-
-## STØTTER VI REQUEST PARAMETER ?
-
-Aamund sjekkar
-
-
 ## Response
 
 The response is a `request_uri` identifier.
