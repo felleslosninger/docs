@@ -10,7 +10,7 @@ I denne releasen vert ID-portens SAML-grensesnitt oppgradert til siste versjon a
 
 
 
-Planlagd produksjonssetting: 2020-04-21
+Releasen vart produksjonssatt 2020-04-21
 
 ## Ny funksjonalitet:
 

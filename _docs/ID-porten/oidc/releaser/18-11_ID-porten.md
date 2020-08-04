@@ -10,7 +10,7 @@ Oppgradering til OpenAM 13.5
 
 
 
-Planlagd produksjonssetting: 2018-11-20
+Releasen vart produksjonssatt 2018-11-20
 
 ## Ny funksjonalitet:
 
