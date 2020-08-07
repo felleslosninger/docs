@@ -4,8 +4,14 @@ folders:
 - title: eInnsyn
   folderitems:
 
+  - title: Publisering til einnsyn
+    jurl: /einnsyn_publisering_til_einnsyn.html
+
   - title: Generelt om datamodell
     jurl: /einnsyn_generelt_om_modellen.html
+
+  - title: Validering
+    jurl: /einnsyn_shackl.html
 
   - title: Eksempel
     jurl: /einnsyn_eksempelfiler.html
