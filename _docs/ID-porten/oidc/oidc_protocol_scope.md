@@ -8,24 +8,22 @@ product: ID-porten
 ---
 
 
-ID-porten and Maskinporten can issue tokens to scopes controlled by Difi, as well as scopes controlled by other organizations.
+ID-porten and Maskinporten can issue access tokens to scopes controlled by Difi, as well as scopes controlled by other organizations.
 
 
-## Scope limitation
+## Scope limitations
 
-Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope.  An empty value means that clients of any integration type can get access_tokens containing the scope.
-
-The available scope limitations are :
+Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope:
 
 | Integration Type |Description|
 |-|-|
+| |  An empty value means that clients of any integration type can get access_tokens containing the scope. | 
 |maskinporten  | Only for server to server integration   |
-|api_klient    | For integrations consuming APIs that require an authenticated user  |
-
-In addition, there are some reserved integration_types like 'idporten', 'krr' or 'eformidling' for dedicated use cases as can be seen from the tables below.
+|api_klient    | For integrations consuming APIs that require an authenticated user, ie: ID-porten  |
 
 
-You will not be able to register a scope to your client if there is a conflict with the client's integration type and the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
+
+You will not be able to register a client with a certain scope if there is a conflict with the `integration_type` of the client and the `allowable_integration_type` of the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
 
 
 
@@ -47,11 +45,11 @@ Any customer can self-service their clients with the following scopes:
 
 | Scope |Description|Allowed integration_types|
 |-|-|-|
-|global/*    | Scopes for global access to the Contact Registry |  krr |
-|user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
+|krr:global/*    | Scopes for global access to the Contact Registry |  krr,maskinporten |
+|krr:user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
 
 
-You need to ask us for permission to be able to use these scopes:
+For the following scopes, you need to ask us to add them to your client manually:
 
 | Scope |Description|Allowed integration_types|
 |-|-|-|
