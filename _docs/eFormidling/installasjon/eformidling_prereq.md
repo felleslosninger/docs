@@ -50,14 +50,14 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
-| qaoffentlig.meldingsformidler.digipost.no | 146.192.168.18:443 | -  | DPI |
+| qaoffentlig.meldingsformidler.digipost.no | 51.105.206.80:443/28  | -  | DPI |
 
 
 ### Brannmuråpninger i produksjon
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
-| **meldingsutveksling.difi.no** | **51.144.60.163:443** **51.124.140.176:443/28 f.o.m 18.08.2020**	 | - | **Alle** |
+| **meldingsutveksling.difi.no** | **51.144.60.163:443** <br/> **51.124.140.176:443/28 f.o.m 18.08.2020**	 | - | **Alle** |
 | **stream-meldingsutveksling.difi.no** | 	**40.74.39.254:443**  | - | **Alle** |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
