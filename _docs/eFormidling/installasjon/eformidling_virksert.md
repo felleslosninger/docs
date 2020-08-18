@@ -19,6 +19,7 @@ Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lag
 > * NB4! Sertifikatet **må** være utstedt til deres organisasjonsnummer(samme som integrasjonspunktet bruker)
 > * NB5! Sertifikatet kan ikke være et wildcard sertifikat.
 > * NB6! alias = entry name. Entry name er namnet på alias(namnet på sertifikatet) i keystore explorer. Integrasjonspunkt.local.properties fila bruker alias som namn på sertifikatet
+> * NB7! eSegl sertifikater er ikke egnet for bruk i eFormidling. 
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/hjelp/virksomhetssertifikat)
