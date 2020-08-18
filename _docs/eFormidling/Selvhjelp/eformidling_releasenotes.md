@@ -7,6 +7,22 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.1.3
+18.08.2020
+
+### Hva er endret/nytt?
+
+**Validering av felt ved sending av DPF-forsendelser**
+
+
+**Mindre feilrettinger:**
+
+- Content-Disposition name-field does not support RFC5987
+
+
+Full endringslogg: [Release notes for 2.1.3](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10191)
+
+
 ## 2.1.2
 01.07.2020
 
