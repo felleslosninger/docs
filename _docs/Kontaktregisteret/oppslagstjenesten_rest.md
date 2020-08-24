@@ -39,7 +39,7 @@ Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...1000 personer:
 
-OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
+OpenAPI-dokumentasjon mangler p.t. for det nye endepunktet.  Inntil videre må du se på gammel doc her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
 
 |miljø|url|
 |-|-|
@@ -100,21 +100,6 @@ Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "inneby
 
 
 
-### Migrering
-
-Dersom du skal migrere fra gammelt OIDC-beskytta endepunkt til nytt Maskinporten-sikra endepunkt, må følgende gjøres:
-
-1. Oppdater klient-registrering til å bruke nye scopes med `krr:`-prefix
-2. Klienten må endres til å hente tokens fra Maskinporten isteden for ID-porten OIDC
-  - typisk ved å oppdatere url for autorisasjonsserverens oauth2 metadata-endepunkt til `https://maskinporten.no/.well-known/oauth-authorization-server`
-  - evt. ved å konfigurere nytt token-endepunkt direkte (`https://maskinporten.no/token`)
-3. Endre API-kall til å gå mot nytt endepunkt
-
- slik den ble utviklet i ID-porten.
-
-
-
-
  Gammel API-dok er her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
 
 Gamle URLer:
@@ -125,3 +110,15 @@ Gamle URLer:
  |VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
  |YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer)|
  |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+
+
+
+### Migrering
+
+Dersom du skal migrere fra gammelt OIDC-beskytta endepunkt til nytt Maskinporten-sikra endepunkt, må følgende gjøres:
+
+1. Oppdater klient-registrering til å bruke nye scopes med `krr:`-prefix
+2. Klienten må endres til å hente tokens fra Maskinporten isteden for ID-porten OIDC
+  - typisk ved å oppdatere url for autorisasjonsserverens oauth2 metadata-endepunkt til `https://maskinporten.no/.well-known/oauth-authorization-server`
+  - evt. ved å konfigurere nytt token-endepunkt direkte (`https://maskinporten.no/token`) og oppdatere trust mot Maskinporten sitt signeringssertifikat.
+3. Endre API-kall til å gå mot nytt endepunkt

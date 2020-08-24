@@ -15,15 +15,15 @@ ID-porten and Maskinporten can issue access tokens to scopes controlled by Difi,
 
 Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope:
 
-| Integration Type |Description|
+| Allowable Integration Type |Description|
 |-|-|
 | |  An empty value means that clients of any integration type can get access_tokens containing the scope. | 
 |maskinporten  | Only for server to server integration   |
-|api_klient    | For integrations consuming APIs that require an authenticated user, ie: ID-porten  |
+|api_klient    | For APIs that require access_tokens bound to an authenticated user, ie: ID-porten  |
 
 
 
-You will not be able to register a client with a certain scope if there is a conflict with the `integration_type` of the client and the `allowable_integration_type` of the scope. E.g. you can't add a "maskinporten" scope to a "idporten" client.
+You will not be able to register a client with a certain scope if there is a conflict with the `integration_type` of the client and the `allowable_integration_type` of the scope. E.g. you can't add a "maskinporten" scope to a "api_klient" client.
 
 
 
