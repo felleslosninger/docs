@@ -45,17 +45,16 @@ Selve samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access
 
 ## Motivasjon
 
-Det er flere gode grunner for tjenesteeiere til å bruke dette samhandlingsmønsteret:
+Det er flere gode grunner for API-tilbydere til å bruke dette samhandlingsmønsteret:
 
 * En ønsker at brukeren selv skal kontrollere deling av sine data.
-* En ønsker å tilrettelegge for standardisert samhandling med eksterne parter.
-* APIet er tenkt å konsumeres av sluttbrukersystemer som PC-programmer eller mobil-app'er.
+* En ønsker å tilrettelegge for standardisert samhandling med eksterne parter, og kan gjøre dette på samme måte både mot ordinære nett-tjenester og mot sluttbrukersystemer som PC-programmer eller mobil-app'er.
 * Gir mulighet for at private virksomheter kan få tilgang til offentlige API/data, kontrollert av innbygger selv. Ved å kombinere med pseudonymisert innlogging, slipper den private virksomheten behandlingsansvar for fødselsnummer.
 * Misbrukspotensialet sett fra API-tilbyders side blir redusert ifht maskin-til-maskin-scenario, siden en ikke åpner for tilgang til hele datasettet, men kun for de brukere som faktisk er tilstede i utvalgte tjenester hos ID-porten.
 
 Eksempler på bruk av løsningsmønsteret:
  * [Oppdatere innbyggers preferert språk i Kontaktregisteret](Brukerspesifikt-oppslag_rest.html#spraak)
- * 
+ *
 
 
 
