@@ -1,7 +1,7 @@
 ---
-title: "API-autorisasjon  med OAuth2 og OpenID Connect"
-description: "API-autorisasjon  med OAuth2 og OpenID Connect"
-summary: 'I forbindelse med en OpenID Connect-autentisering kan ID-portens OpenID Connect provider også autorisere en tjeneste til å opptre på vegne av innbyggeren opp mot et API tilbudt av en 3.dje-part, såkalt "autentiseringsnær autorisasjon"'
+title: "Datadeling for innlogget bruker"
+description: "Datadeling for innlogget bruker"
+summary: 'I forbindelse med en innlogging i ID-porten kan brukeren også gi tjenesten mulighet til å hente innbyggers data fra APIer tilbudt av 3.dje-part'
 permalink: oidc_auth_oauth2.html
 sidebar: oidc
 product: ID-porten
@@ -10,21 +10,44 @@ product: ID-porten
 
 ## Overordna beskrivelse av scenariet
 
-Dette er den klassise Oauth2-flyten, der innbyggeren samtykker - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.  I ID-porten-sammenheng vil vanligvis samtykket være implisitt, siden det er autentiseringshandlingen som i seg selv tolkes som det informerte samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV"). Vi bruker derfor begrepet *autentiseringsnær autorisasjon*.
+I dette scenariet har tjenesten behov for å hente data om den innlogga brukeren fra et API som ligger hos en 3dje-part.  Dette er den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.
+
+Det kan være flere grunner til å bruke denne flyten:
+
+* En ønsker at brukeren selv skal kontrollere deling av sine data.
+* Misbrukspotensialet sett fra API-tilbyders side er redusert, siden en ikke åpner for tilgang til hele datasettet, men kun for brukere som faktisk er tilstede i ID-porten.
+* En ønsker å legge til rette for
+
+
+
+
+
+
+
+ I ID-porten-sammenheng vil vanligvis samtykket være implisitt, siden det er autentiseringshandlingen som i seg selv tolkes som det informerte samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV"). Vi bruker derfor begrepet *autentiseringsnær autorisasjon*.
 
 For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken min kan hente inntektsopplysninger hos Skatteetaten de neste 3 årene") henviser vi til bruk av Samtykkeløsningen i Altinn.
 
 
-Samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_. Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.
+Samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_ (datadelingstoken). Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.
 
-Hvilket API/ressurs som skal aksesserers, er styrt av [_scopes_](oidc_protocol_scope.html).  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.
+## Godkjenningsdialog
+
+Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_](oidc_protocol_scope.html).  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.   Dersom scopet har egenskapen `requires_user_consent` satt, vil ID-porten vise en enkel godkjennings-dialog til innbygger når autentisering er fullført.  Se eksempel under:
+
+![grynt](/felleslosninger/images/idporten/oidc/samtykkedialog2.png)
+
+
+
+## Aktører
+
 
 <div class="mermaid">
 graph LR
   subgraph 3djepart
     API
   end
-  subgraph Digitaliseringsdirektoratet 
+  subgraph Digitaliseringsdirektoratet
     OIDC[OIDC Provider]
   end
   subgraph Kunde
