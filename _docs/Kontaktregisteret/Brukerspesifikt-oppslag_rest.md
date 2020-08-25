@@ -77,7 +77,7 @@ Se https://begrep.difi.no/Oppslagstjenesten/Person for definisjon av kodeverket.
       }
 ```
 
-### Eksempel på endring av språk:
+### Eksempel på endring av språk: {#spraak} 
 
 Forspørselen nedenfor vil endre innlogget bruker sitt foretrukne språk i Kontaktregisteret til engelsk:
 

@@ -10,7 +10,9 @@ product: ID-porten
 
 ## Overordna beskrivelse av scenariet
 
-I dette scenariet har tjenesten behov for å hente data om den innlogga brukeren fra et API som ligger hos en 3dje-part. Dette realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.
+I dette scenariet logger en innbygger inn til en tjeneste, og tjenesten har behov for å hente data om den innlogga brukeren fra et API som ligger hos en 3dje-part.  Man er selvsagt ikke begrenset til kun lese-operasjoner, enhver API-operasjon som API-tilbyderen tilrettelegger for at skal kunne integreres i eksterne tjenester kan realiseres med dette løsningsmønsteret.
+
+Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren samtykker - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.
 
 I ID-porten-sammenheng vil ofte samtykket være implisitt, siden det er autentiseringshandlingen som i seg selv tolkes som det informerte samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV"). Vi bruker derfor begrepet *autentiseringsnær autorisasjon*.
 
@@ -22,7 +24,7 @@ For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken mi
    subgraph 3djepart
      API
    end
-   subgraph Digitaliseringsdirektoratet
+   subgraph Digdir
      OIDC[ID-porten]
    end
    subgraph Kunde
@@ -30,22 +32,30 @@ For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken mi
    end
    Sluttbruker ---|1. Vil bruke|ny
    OIDC -->|3.utsteder token|ny
-   Sluttbruker ---|2. logger inn til  |OIDC
+   Sluttbruker ---|2. logger inn i  |OIDC
    ny -->|4.bruker token mot|API
  </div>
 
-Det er flere gode grunner for tjenesteeiere til å bruke dette samhandlingsmønsteret:
-
-* En ønsker at brukeren selv skal kontrollere deling av sine data.
-* En ønsker å tilrettelegge for standardisert samhandling med eksterne parter.
-* Gir mulighet for at private virksomheter kan få tilgang til offentlige API/data, kontrollert av innbygger selv. Ved å kombinere med pseudonymisert innlogging, slipper den private virksomheten behandlingsansvar for fødselsnummer.
-* Misbrukspotensialet sett fra API-tilbyders side blir redusert ifht maskin-til-maskin-scenario, siden en ikke åpner for tilgang til hele datasettet, men kun for de brukere som faktisk er tilstede i utvalgte tjenester hos ID-porten.
 
 Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_](oidc_protocol_scope.html).  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.   Dersom scopet har egenskapen `requires_user_consent` satt, vil ID-porten vise en enkel godkjennings-dialog til innbygger når autentisering er fullført.  Se eksempel under:
 
 ![samtykkedialog](/felleslosninger/images/idporten/oidc/samtykkedialog2.png)
 
 Selve samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_ (datadelingstoken).   Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.  Dersom brukeren ikke godtar, vil det aktuelle scopet ikke bli inkludert i access_tokenet
+
+## Motivasjon
+
+Det er flere gode grunner for tjenesteeiere til å bruke dette samhandlingsmønsteret:
+
+* En ønsker at brukeren selv skal kontrollere deling av sine data.
+* En ønsker å tilrettelegge for standardisert samhandling med eksterne parter.
+* APIet er tenkt å konsumeres av sluttbrukersystemer som PC-programmer eller mobil-app'er.
+* Gir mulighet for at private virksomheter kan få tilgang til offentlige API/data, kontrollert av innbygger selv. Ved å kombinere med pseudonymisert innlogging, slipper den private virksomheten behandlingsansvar for fødselsnummer.
+* Misbrukspotensialet sett fra API-tilbyders side blir redusert ifht maskin-til-maskin-scenario, siden en ikke åpner for tilgang til hele datasettet, men kun for de brukere som faktisk er tilstede i utvalgte tjenester hos ID-porten.
+
+Eksempler på bruk av løsningsmønsteret:
+ * [Oppdatere innbyggers preferert språk i Kontaktregisteret](Brukerspesifikt-oppslag_rest.html#spraak)
+ * 
 
 
 
