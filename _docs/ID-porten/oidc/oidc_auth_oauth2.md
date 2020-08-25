@@ -17,7 +17,24 @@ I ID-porten-sammenheng vil ofte samtykket være implisitt, siden det er autentis
 For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken min kan hente inntektsopplysninger hos Skatteetaten de neste 3 årene") henviser vi til bruk av Samtykkeløsningen i Altinn.
 
 
-Det er flere gode grunner for tjenesteeiere til å bruke dette samhandlingsmønsteret: 
+ <div class="mermaid">
+ graph LR
+   subgraph 3djepart
+     API
+   end
+   subgraph Digitaliseringsdirektoratet
+     OIDC[ID-porten]
+   end
+   subgraph Kunde
+      ny[Tjeneste]
+   end
+   Sluttbruker ---|1. Vil bruke|ny
+   OIDC -->|3.utsteder token|ny
+   Sluttbruker ---|2. logger inn til  |OIDC
+   ny -->|4.bruker token mot|API
+ </div>
+
+Det er flere gode grunner for tjenesteeiere til å bruke dette samhandlingsmønsteret:
 
 * En ønsker at brukeren selv skal kontrollere deling av sine data.
 * En ønsker å tilrettelegge for standardisert samhandling med eksterne parter.
@@ -28,12 +45,12 @@ Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_](oidc_protocol_sc
 
 ![samtykkedialog](/felleslosninger/images/idporten/oidc/samtykkedialog2.png)
 
+Selve samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_ (datadelingstoken).   Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.  Dersom brukeren ikke godtar, vil det aktuelle scopet ikke bli inkludert i access_tokenet
 
 
-Selve samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_ (datadelingstoken). Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.
 
+## Beskrivelse av Oauth2-flyten
 
-## Aktører
 
 
 Følgende aktører inngår:
@@ -46,26 +63,7 @@ Følgende aktører inngår:
  API | 3.part, som tilbyr et API som sluttbrukertjenesten ønsker å benytte | - | Resource server (RS) | -
 
 
- <div class="mermaid">
- graph LR
-   subgraph 3djepart
-     API
-   end
-   subgraph Digitaliseringsdirektoratet
-     OIDC[OIDC Provider]
-   end
-   subgraph Kunde
-      ny[Tjeneste]
-   end
-   OIDC -->|3.utsteder token|ny
-   Sluttbruker ---|2.autentiserer og autoriserer|OIDC
-   ny -->|1. forspør tilgang|OIDC
-   ny -->|4.bruker token mot|API
- </div>
 
-
-
-## Beskrivelse av Oauth2-flyten
 
 
 <div class="mermaid">
