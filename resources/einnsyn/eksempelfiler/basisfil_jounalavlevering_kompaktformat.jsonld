@@ -7,7 +7,10 @@
       "arkivstruktur:formatDetaljer": "Arkivformat",
       "arkivstruktur:referanseDokumentfil": "dokumenter\\925351bf-bb50-4ded-8982-34f297955434\\991381_1_1.PDF",
       "arkivstruktur:variantformat": "arkivstruktur:arkivformat",
-      "arkivstruktur:versjonsnummer": 1
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturversjonsnummer": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
     },
     {
       "@id": "http://data.einnsyn.no/52588bec-3760-4e30-8d7b-0560fd79d1e6",
@@ -16,9 +19,7 @@
       "arkivstruktur:opprettetAv": "Administrator",
       "arkivstruktur:systemID": "9f58bae3-afd7-4f5f-b22d-9d1890da6267",
       "arkivstruktur:tilknyttetAv": "360 Administrator",
-      "arkivstruktur:tilknyttetRegistreringSom": "arkivstruktur:vedlegg",
       "arkivstruktur:tittel": "Vedlegg.pdf",
-      "arkivstruktur:tittel_LIST": "Vedlegg.pdf",
       "arkivstruktur:tittel_SENSITIV": "Vedlegg.pdf",
       "http://www.arkivverket.no/standarder/noark5/arkivstrukturdokumentnummer": {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
@@ -37,6 +38,14 @@
       "http://www.arkivverket.no/standarder/noark5/arkivstrukturtilknyttetDato": {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
         "@value": "2016-03-04T09:00:00"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturtilknyttetRegistreringSom": {
+        "@id": "arkivstruktur:vedlegg"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturtittel_LIST": {
+        "@list": [
+          "Vedlegg.pdf"
+        ]
       }
     },
     {
@@ -59,15 +68,18 @@
       "arkivstruktur:administrativEnhet": "FSU",
       "arkivstruktur:mappeID": "16/00011",
       "arkivstruktur:offentligTittel": "Søknad om ny parykk",
-      "arkivstruktur:offentligTittel_LIST": "Søknad om ny parykk",
       "arkivstruktur:offentligTittel_SENSITIV": "Søknad om ny parykk",
       "arkivstruktur:saksansvarlig": "Meg",
       "arkivstruktur:saksansvarlig_LIST\"": "Meg",
       "arkivstruktur:saksansvarlig_SENSITIV": "Meg",
       "arkivstruktur:systemID": "bb802b0e-2cd6-411c-b2f2-11ce4a8fb537",
       "arkivstruktur:tittel": "Søknad om ny parykk",
-      "arkivstruktur:tittel_LIST": "Søknad om ny parykk",
       "arkivstruktur:tittel_SENSITIV": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturoffentligTittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      },
       "http://www.arkivverket.no/standarder/noark5/arkivstruktursaksaar": {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
         "@value": "2020"
@@ -82,6 +94,11 @@
       },
       "http://www.arkivverket.no/standarder/noark5/arkivstruktursaksstatus": {
         "@id": "arkivstruktur:saksstatus_avsluttet"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturtittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
       }
     },
     {
@@ -93,15 +110,10 @@
       "arkivstruktur:journalposttype": "arkivstruktur:inngåendeDokument",
       "arkivstruktur:journalsekvensnummer": "25",
       "arkivstruktur:offentligTittel": "Søknad om ny parykk",
-      "arkivstruktur:offentligTittel_LIST": "Søknad om ny parykk",
       "arkivstruktur:offentligTittel_SENSITIV": "Søknad om ny parykk",
-      "arkivstruktur:parent": {
-        "@id": "http://data.einnsyn.no/bb802b0e-2cd6-411c-b2f2-11ce4a8fb537"
-      },
       "arkivstruktur:registreringsID": "16/00011-1",
       "arkivstruktur:systemID": "bc7d4f0f-00d9-44ee-8fbd-7980f2d582a8",
       "arkivstruktur:tittel": "Søknad om ny parykk",
-      "arkivstruktur:tittel_LIST": "Søknad om ny parykk",
       "arkivstruktur:tittel_SENSITIV": "Søknad om ny parykk",
       "http://www.arkivverket.no/standarder/noark5/arkivstrukturdokumentbeskrivelse": [
         {
@@ -125,7 +137,20 @@
         {
           "@id": "http://data.einnsyn.no/c8239ecb-7ab0-46b1-81d6-577b42f53ea2"
         }
-      ]
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturoffentligTittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturparent": {
+        "@id": "http://data.einnsyn.no/bb802b0e-2cd6-411c-b2f2-11ce4a8fb537"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstrukturtittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      }
     }
   ]
 }
