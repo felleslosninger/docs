@@ -4,7 +4,14 @@ description:
 summary:
 permalink: einnsyn_eksempelfiler.html
 sidebar: einnsyn_technical_sidebar
+
 ---
+
+## Basiseksempel journalpostavlevering
+Eksempelfiler med kun nødvendige element
+* [Basis jsonvariant](/felleslosninger/resources/einnsyn/eksempelfiler/basisfil_journalavlevering_jsonformat.jsonld)
+* [Basis kompakt jsonld](/felleslosninger/resources/einnsyn/eksempelfiler/basisfil_journalavlevering_kompaktformat.jsonld)
+
 ## Kryssreferanse
 Ekspempel fil med Kryssreferanse
 * [Kryssreferanse xml](/felleslosninger/resources/einnsyn/eksempelfiler/kryssreferanse.xml)
