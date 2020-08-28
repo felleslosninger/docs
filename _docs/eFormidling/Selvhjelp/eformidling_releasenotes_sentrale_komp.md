@@ -1,6 +1,6 @@
 ---
-title: Endringslogg sentralkomponenter eFormidling
-description: Endringslogg for sentralkomponenter
+title: Endringslogg sentrale komponenter eFormidling
+description: Endringslogg for sentrale komponenter
 sidebar: eformidling
 permalink: eformidling_releasenotes_sentrale_komp.html
 product: eFormidling
@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 01.07.2020
 
 **Sertifikat**: 
-Legge til rette for nytt sertifikat frå august 2020. Sertifikatendringa krever også minimum Integrasjonspunktet 2.1.2 for å unngå å måtte restarte integrasjonspunktet.  
+Legge til rette for nytt sertifikat i Serviceregistry fra 1. september 2020. Sertifikatendringa krever også minimum Integrasjonspunktet 2.1.2 for å unngå å måtte restarte integrasjonspunktet etter endring til det nye sertifikatet i Serviceregistry.  
 
 **Diverse**: Mindre endringer.  
 
