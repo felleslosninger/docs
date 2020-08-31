@@ -114,7 +114,7 @@
 										<formatDetaljer>Arkivformat</formatDetaljer>
 										<opprettetDato>2016-03-04T18:28:45</opprettetDato>
 										<opprettetAv>Administrator</opprettetAv>
-										<referanseDokumentfil>dokumenter\925351bf-bb50-4ded-8982-34f297955434\991381_1_1.PDF</referanseDokumentfil>
+										<referanseDokumentfil>http://example.com/925351bf-bb50-4ded-8982-34f297955434/991381_1_1.PDF</referanseDokumentfil>
 										<sjekksum>E969663ABE70D2DB73264DF75131388562180CC15D1300EBDBAF82F43F6E7F31</sjekksum>
 										<sjekksumAlgoritme>SHA-256</sjekksumAlgoritme>
 										<filstoerrelse>95742</filstoerrelse>

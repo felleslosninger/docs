@@ -1,6 +1,6 @@
 {
   "@context": {
-    "arkivstruktur":"http://www.arkivverket.no/standarder/noark5/arkivstruktur",
+    "arkivstruktur":"http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
     "@base": "http://data.einnsyn.no/noark4/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "arkivstruktur:tilknyttetRegistreringSom": {"@type":"@id"},
@@ -18,20 +18,21 @@
     "arkivstruktur:korrespondansepartNavn_LIST":{"@container":"@list"},
     "arkivstruktur:korrespondanseparttype":{"@type":"@id"},
     "arkivstruktur:saksaar":{"@type":"xsd:integer"},
-    "arkivstruktur:saksdato":{"@type":"xsd:dateTime"},
-    "arkivstruktur:saksansvarlig_LIST":"arkivstruktur:saksansvarlig_LIST",
+    "arkivstruktur:saksdato":{"@type":"xsd:date"},
+    "arkivstruktur:saksansvarlig_LIST":{"@container":"@list"},
     "arkivstruktur:sakssekvensnummer":{"@type":"xsd:integer"},
     "arkivstruktur:saksstatus": {"@type":"@id"},
     "arkivstruktur:dokumentbeskrivelse": {"@type":"@id"},
-    "arkivstruktur:dokumentetsDato": {"@type":"xsd:dateTime"},
+    "arkivstruktur:dokumentetsDato": {"@type":"xsd:date"},
     "arkivstruktur:journalaar:":{"@type":"xsd:integer"},
-    "arkivstruktur:journaldato:":{"@type":"xsd:dateTime"},
+    "arkivstruktur:journaldato": {"@type":"xsd:date"},
     "arkivstruktur:journalpostnummer:":{"@type":"xsd:integer"},
-    "arkivstruktur:journalposttype:":{"@type":"@id"},
+    "arkivstruktur:journalposttype": {"@type":"@id"},
     "arkivstruktur:journalstatus:":{"@type":"@id"},
     "arkivstruktur:journalsekvensnummer:":{"@type":"xsd:integer"},
     "arkivstruktur:journalstatus": {"@type":"@id"},
-    "arkivstruktur:korrespondansepart": {"@type":"@id"}
+    "arkivstruktur:korrespondansepart": {"@type":"@id"},
+    "arkivstruktur:variantformat": {"@type":"@id"}
   },
   "@graph": [
     {
@@ -78,7 +79,7 @@
       "arkivstruktur:offentligTittel_SENSITIV": "Søknad om ny parykk",
       "arkivstruktur:saksaar": "2020",
       "arkivstruktur:saksansvarlig": "Meg",
-      "arkivstruktur:saksansvarlig_LIST\"": ["Meg"],
+      "arkivstruktur:saksansvarlig_LIST": ["Meg"],
       "arkivstruktur:saksansvarlig_SENSITIV": "Meg",
       "arkivstruktur:saksdato": "2020-08-06",
       "arkivstruktur:sakssekvensnummer": "24",
@@ -92,19 +93,17 @@
       "@id": "http://data.einnsyn.no/bc7d4f0f-00d9-44ee-8fbd-7980f2d582a8",
       "@type": "arkivstruktur:Journalpost",
       "arkivstruktur:dokumentbeskrivelse": [
-        "http://data.einnsyn.no/52588bec-3760-4e30-8d7b-0560fd79d1e6",
-        "http://data.einnsyn.no/ba17cb58-6e68-4b15-a262-43830c763f66"
+        "http://data.einnsyn.no/52588bec-3760-4e30-8d7b-0560fd79d1e6"
       ],
       "arkivstruktur:dokumentetsDato": "2016-03-04",
-      "arkivstruktur:journalaar": "2016",
+      "arkivstruktur:journalaar": 2016,
       "arkivstruktur:journaldato": "2016-03-04",
       "arkivstruktur:journalpostnummer": 1,
       "arkivstruktur:journalposttype":"arkivstruktur:inngåendeDokument",
-      "arkivstruktur:journalsekvensnummer": "25",
+      "arkivstruktur:journalsekvensnummer": 25,
       "arkivstruktur:journalstatus": "arkivstruktur:arkivert",
       "arkivstruktur:korrespondansepart": [
-        "http://data.einnsyn.no/5a3c3800-d10a-4e42-97ac-41338f7f971b",
-        "http://data.einnsyn.no/c8239ecb-7ab0-46b1-81d6-577b42f53ea2"
+        "http://data.einnsyn.no/5a3c3800-d10a-4e42-97ac-41338f7f971b"
       ],
       "arkivstruktur:offentligTittel": "Søknad om ny parykk",
       "arkivstruktur:offentligTittel_LIST": ["Søknad om ny parykk"],
