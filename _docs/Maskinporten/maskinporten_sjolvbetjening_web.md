@@ -81,8 +81,6 @@ For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten 
 For bestilling til produksjonsmiljøet, send inn skjema:
 [Maskinporten - Innhenting av opplysningar](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u).
 
-[Maskinporten![Innhenting av opplysningar for API-tilbydar](]
-
 ### Innlogging (Scopes/API'er)
 
 For å komme til administrasjonsgrensesnittet for API, gjør følgende:
