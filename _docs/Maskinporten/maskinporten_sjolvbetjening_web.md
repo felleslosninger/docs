@@ -78,7 +78,10 @@ Videotutorial: (https://vimeo.com/433540358)
 
 For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
 
-For bestilling til produksjonsmiljøet, send inn skjema: [Maskinporten![Innhenting av opplysningar for API-tilbydar](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u)]
+For bestilling til produksjonsmiljøet, send inn skjema:
+[Maskinporten - Innhenting av opplysningar](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u).
+
+[Maskinporten![Innhenting av opplysningar for API-tilbydar](]
 
 ### Innlogging (Scopes/API'er)
 
