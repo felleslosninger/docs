@@ -36,14 +36,7 @@ I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til s
 
 ### Tilgang i produksjonsmiljø
 
-Tilgang i produksjon er sikret med ID-porten, og tilgangen må bestilles av en bemyndiget person i virksomheten. (Direktør/Leder). Bestillingen kan se noe slik ut:
-
-"Følgende person(er) trenger tilgang til selvbetjening i produksjonsmiljøet på vegne av Eksempel AS:
-Navn, epost og telefonnummer"
-
-Så avtaler vi utveksling av personnummer etter dette.
-
-Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
+Tilgang i produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
 
 Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
@@ -85,7 +78,7 @@ Videotutorial: (https://vimeo.com/433540358)
 
 For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
 
-For bestilling til produksjonsmiljøet, send inn skjema:
+For bestilling til produksjonsmiljøet, send inn skjema: [Maskinporten![Innhenting av opplysningar for API-tilbydar](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u)]
 
 ### Innlogging (Scopes/API'er)
 
