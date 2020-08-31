@@ -51,7 +51,7 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 9. Trykk på alle rettighetene
 10. Trykk på "Gi rettigheter"
 
-Videotutorial: (https://vimeo.com/433540385)
+Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
 
 [![Delegere rettigheter](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
 
@@ -68,7 +68,7 @@ Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal d
 9. Trykk på "Fjern" på rettigheten som skal fjernes.
 10. Trykk på "Ferdig for å bekrefte"
 
-Videotutorial: (https://vimeo.com/433540358)
+Videotutorial: [https://vimeo.com/433540358](https://vimeo.com/433540358)
 
 [![Fjerne tilgang](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
 
