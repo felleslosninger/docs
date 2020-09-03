@@ -44,7 +44,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
-| **qa-meldingsutveksling.difi.no** | **51.144.60.111:443**	 | - | **Alle** |
+| **qa-meldingsutveksling.difi.no** | **51.144.60.111:443** <br/> **51.105.206.80:443 f.o.m 18.08.2020**	 | - | **Alle** |
 | **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255:443**  | - | **Alle** |
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
