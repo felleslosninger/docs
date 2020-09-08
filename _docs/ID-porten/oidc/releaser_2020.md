@@ -12,5 +12,8 @@ sidebar: oidc
 |[20-04 ID-porten](20-04_ID-porten.html)|2020-04-21| I denne releasen vert ID-portens SAML-grensesnitt oppgradert til siste versjon av Forgerock AM.   BankID på Mobil blir optimalisert til å bruke Server Events for de nettlesere som støtter dette. |
 |[20-04 OIDC](20-04_OIDC.html)|2020-04-23| Signerte autentiseringsforespørsler (PAR og request objects).  Produksjonstilgang til sjølvbetjening gjennom Altinn Autorisasjon. |
 |[20-05 ID-porten](20-05_ID-porten.html)|2020-05-19| ID-porten utvides med nye eID for utvalgte tjenesteeiere (ie. NA)V ifbm korona-krisa.  Ny prosess for online bruker-oppretting av MinID basert på selvbetjent verifikasjon av pass. |
-|[20-06 OIDC](20-06_OIDC.html)|*2020-06-23*| Vedlikeholdsrelease med mindre feilrettingar og forbetringar. Utsatt til aug/sep.  |
-|[20-06 Maskinporten](20-06_Maskinporten.html)|*2020-06-23*| Vedlikeholdsrelease for Maskinporten |
+|[20-06 Maskinporten](20-06_Maskinporten.html)|2020-06-23| Vedlikeholdsrelease for Maskinporten |
+|[20-08 MinID](20-08_MinID.html)|2020-08-25| Støtte for manuell gjenkjenning av utenlandske brukere.  |
+|[20-09 OIDC](20-09_OIDC.html)|*2020-09-29*| Vedlikehaldsrelease med mindre feilrettingar og forbetringar. |
+|[Backlog 2020](Backlog_2020.html)|*2020-12-31*| Backlog inneheld utviklingstiltak som me ikkje har starta på enno.  |
+|[Prosjekter 2020](Prosjekter_2020.html)|*2020-12-31*| Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020. |

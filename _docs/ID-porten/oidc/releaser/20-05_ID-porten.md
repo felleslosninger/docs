@@ -15,7 +15,7 @@ Releasen vart produksjonssatt 2020-05-19
 ## Ny funksjonalitet:
 
 
-#### Støtte korona-eID i ID-porten
+#### Støtte korona-eID i ID-porten (Ready to ship)
 
 Det er flere aktører som vurderer å lage midlertidige krise-eIDer nå ifbm med korona-situasjonen. Disse eIDene er primært tiltenkt utenlandske arbeidstagere som har blitt permittert og måtte dra tilbake til sitt hjemland uten å mulighet for å kunne logge inn på feks NAV sine tjenester.
 

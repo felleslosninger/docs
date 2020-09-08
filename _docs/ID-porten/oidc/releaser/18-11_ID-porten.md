@@ -15,7 +15,7 @@ Releasen vart produksjonssatt 2018-11-20
 ## Ny funksjonalitet:
 
 
-#### OpenAM-oppgradering
+#### OpenAM-oppgradering (Shipped)
 
 Oppgradering av ID-porten til OpenAM 13.5
 
