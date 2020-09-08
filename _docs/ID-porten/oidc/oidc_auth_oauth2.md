@@ -1,6 +1,6 @@
 ---
-title: "Datadeling for innlogget bruker"
-description: "Datadeling for innlogget bruker"
+title: "Brukerstyrt datadeling"
+description: "Brukerstyrt datadeling"
 summary: 'I forbindelse med en innlogging i ID-porten kan brukeren også gi tjenesten mulighet til å hente innbyggers data fra APIer tilbudt av 3.dje-part'
 permalink: oidc_auth_oauth2.html
 sidebar: oidc
@@ -12,9 +12,13 @@ product: ID-porten
 
 I dette scenariet logger en innbygger inn til en tjeneste, og tjenesten har behov for å hente data om den innlogga brukeren fra et API som ligger hos en 3dje-part.  Man er selvsagt ikke begrenset til kun lese-operasjoner, enhver API-operasjon som API-tilbyderen tilrettelegger for at skal kunne integreres i eksterne tjenester kan realiseres med dette løsningsmønsteret.
 
-Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren samtykker - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.
+Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.
 
-I ID-porten-sammenheng vil ofte samtykket være implisitt, siden det er autentiseringshandlingen som i seg selv tolkes som det informerte samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV"). Vi bruker derfor begrepet *autentiseringsnær autorisasjon*.
+* Ved implisitt samtykke er det autentiseringshandlingen som i seg selv tolkes som det informerte samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV").  Vi bruker derfor begrepet *autentiseringsnær autorisasjon* om dette løsningsmønsteret.
+
+* Ved eksplisitt samtykke er det brukeren selv som godkjenner om tjenesten får agere på dennes vegne opp mot APIet.  Vi bruker derfor begrepet *brukerstyrt datadeling* om dette løsningsmønsteret.
+
+
 
 For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken min kan hente inntektsopplysninger hos Skatteetaten de neste 3 årene") henviser vi til bruk av Samtykkeløsningen i Altinn.
 
@@ -41,7 +45,8 @@ Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_](oidc_protocol_sc
 
 ![samtykkedialog](/felleslosninger/images/idporten/oidc/samtykkedialog2.png)
 
-Selve samtykket, eller autorisasjonen, blir av ID-porten utlevert som et _access_token_ (datadelingstoken).   Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.  Dersom brukeren ikke godtar, vil det aktuelle scopet ikke bli inkludert i access_tokenet
+Selve autorisasjonen blir av ID-porten utlevert som et _access_token_ (datadelingstoken).   Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.  Dersom brukeren ikke godtar, vil det aktuelle scopet ikke bli inkludert i access_tokenet
+
 
 ## Motivasjon
 
