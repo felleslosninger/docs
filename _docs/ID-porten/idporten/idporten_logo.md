@@ -15,7 +15,7 @@ I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider
 
 Denne skal hovedsaklig benyttes.
 
-[![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png)]
+[![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png | width=100)]
 
 Last ned .eps fil her: (assets\Merket_hovedlogoRGB.eps)
 
