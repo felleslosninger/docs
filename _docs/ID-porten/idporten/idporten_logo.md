@@ -23,6 +23,6 @@ Last ned .eps fil her: [Nedlasting](assets\Merket_hovedlogoRGB.eps)
 
 Denne kan benyttes der hovedlogo ikke blir tydelig nok.
 
-![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png)
+![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png width=100px)
 
 Last ned .eps fil her: [Nedlasting](assets\Merket_Negativ_logoRGB.eps)]
