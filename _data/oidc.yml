@@ -26,7 +26,7 @@ folders:
       - title: Innlogging til SPA
         jurl: /oidc_auth_spa.html
 
-      - title: Tilgangsstyring til dine API'er
+      - title: Brukerstyrt datadeling
         jurl: /oidc_auth_oauth2.html
 
 

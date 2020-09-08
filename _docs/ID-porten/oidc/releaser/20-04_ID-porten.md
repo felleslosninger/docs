@@ -15,7 +15,7 @@ Releasen vart produksjonssatt 2020-04-21
 ## Ny funksjonalitet:
 
 
-#### Oppgradring til AM 6.5
+#### Oppgradring til AM 6.5 (Shipped)
 
 ID-porten SAML-grensesnitt skal oppgraderast til Forgerock AM 6.5
 

@@ -180,7 +180,7 @@ Det returnerte ID tokenet er en signert JWT struktur i henhold til OpenID Connec
 OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 ```
 
-Se [detaljert dokumentasjon av innholdet i id_token](oidc_protocol_token.html#the-id_token) for dokumentasjon av de ulike claims i id_tokenet.
+Se [detaljert dokumentasjon av innholdet i id_token](oidc_protocol_id_token.html) for dokumentasjon av de ulike claims i id_tokenet.
 
 
 

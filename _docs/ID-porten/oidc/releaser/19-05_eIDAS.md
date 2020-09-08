@@ -15,7 +15,7 @@ Releasen vart produksjonssatt 2019-05-07
 ## Ny funksjonalitet:
 
 
-#### eIDAS: Entydig gjenkjenning mot Modernisert Folkeregister
+#### eIDAS: Entydig gjenkjenning mot Modernisert Folkeregister (Shipped)
 
 Norsk eIDAS Node kobles mot Modernisert Folkeregister, slik at det blir mulig å entydig gjenkjenne norsk F/D-nummer når en eIDAS-bruker forsøker å logge inn til norske tjenester.
 
