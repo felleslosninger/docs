@@ -17,12 +17,16 @@ Denne skal hovedsaklig benyttes.
 
 ![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png | width=100)
 
-Last ned .eps fil her: [Nedlasting](assets\Merket_hovedlogoRGB.eps)
+Last ned .eps fil her: [Merket_hovedlogoRGB.eps](assets\Merket_hovedlogoRGB.eps)
 
 ### ID-porten hovedlogo negativ
 
 Denne kan benyttes der hovedlogo ikke blir tydelig nok.
 
-![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png width=100px)
+![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png)
 
-Last ned .eps fil her: [Nedlasting](assets\Merket_Negativ_logoRGB.eps)]
+Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](assets\Merket_Negativ_logoRGB.eps)]
+
+Test HTML:
+<img src="assets\Merket_Negativ_logoRGB.png" alt="assets\Merket_Negativ_logoRGB.png"
+	title="assets\Merket_Negativ_logoRGB.png" width="150" />
