@@ -15,7 +15,7 @@ I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider
 
 Denne skal hovedsaklig benyttes.
 
-![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png | width=100)
+![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png)
 
 Last ned .eps fil her: [Merket_hovedlogoRGB.eps](assets\Merket_hovedlogoRGB.eps)
 
@@ -29,4 +29,4 @@ Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](assets\Merket_Negativ_logoRG
 
 Test HTML:
 <img src="assets\Merket_Negativ_logoRGB.png" alt="assets\Merket_Negativ_logoRGB.png"
-	title="assets\Merket_Negativ_logoRGB.png" width="150" />
+	title="assets\Merket_Negativ_logoRGB.png" width="50" />
