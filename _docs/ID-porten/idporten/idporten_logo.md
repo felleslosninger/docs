@@ -15,14 +15,14 @@ I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider
 
 Denne skal hovedsaklig benyttes.
 
-[![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png | width=100)]
+![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png | width=100)
 
-Last ned .eps fil her: (assets\Merket_hovedlogoRGB.eps)
+Last ned .eps fil her: [Nedlasting](assets\Merket_hovedlogoRGB.eps)
 
 ### ID-porten hovedlogo negativ
 
 Denne kan benyttes der hovedlogo ikke blir tydelig nok.
 
-[![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png)]
+![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png)
 
-Last ned .eps fil her: (assets\Merket_Negativ_logoRGB.eps)
+Last ned .eps fil her: [Nedlasting](assets\Merket_Negativ_logoRGB.eps)]
