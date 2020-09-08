@@ -14,6 +14,8 @@ folders:
       - title: Getting started
         jurl: /oidc_guide_english.html
 
+      - title: Logo
+        jurl: /idporten_logo.html
 - title: Bruksområder og guide
   folderitems:
 
