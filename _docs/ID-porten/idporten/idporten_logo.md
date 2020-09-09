@@ -65,6 +65,12 @@ HTML: 353435<br/>
 <br/>
 ### Tips til bruk
 
+#### Logo som del av "logg inn" knapp
+
+Logo kan benyttes til å synliggjøre at ID-porten benyttes til innlogging. Eksempel fra Miljødirektoratet.
+
+![Logo som del av "logg inn" knapp](assets\idp_mdir_inlogging.png)
+
 #### ID-porten som en av flere innloggingsmetoder
 
 Logoen kan nyttes til å synliggjøre ID-porten som en av flere innloggingsmetoder. Slik som dette eksempelet fra "Meldeboka" til Trondheim kommune.
