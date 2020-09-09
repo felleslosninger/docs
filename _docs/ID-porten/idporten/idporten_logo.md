@@ -31,7 +31,7 @@ vises i sin helhet.
 
 ![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png)
 
-Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](assets\Merket_Negativ_logoRGB.eps)]
+Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](assets\Merket_Negativ_logoRGB.eps)
 
 ### Farger/Fargekoder
 
@@ -57,10 +57,16 @@ HTML: D9D9D6<br/>
 <br/>
 **Mørk gråtone**<br/>
 
-![ID-porten Lys gråtone](assets\idp_morkgratone.png)
+![ID-porten Mørk gråtone](assets\idp_morkgratone.png)
 
 CMYK: 69-64-61-57<br/>
 RGB: 53-52-53<br/>
 HTML: 353435<br/>
 <br/>
 ### Tips til bruk
+
+#### ID-porten som en av flere innloggingsmetoder
+
+Logoen kan nyttes til å synliggjøre ID-porten som en av flere innloggingsmetoder. Slik som dette eksemepelet fra "Meldeboka" til Trondheim kommune.
+
+![ID-porten som en av flere innloggingsmetoder](assets\idp_trondheim_meldeboka.png)
