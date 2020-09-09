@@ -47,12 +47,20 @@ andre designelementer.
 **Slike spesialjusteringer av gråskalaen skal
 godkjennes av Digdir**
 
-**Lys gråtone**
-CMYK: 4-2-4-8
-RGB: 217-217-214
-HTML: D9D9D6
+**Lys gråtone**<br/>
 
-**Mørk gråtone**
-CMYK: 69-64-61-57
-RGB: 53-52-53
-HTML: 353435
+![ID-porten Lys gråtone](assets\idp_lysgratone.png)
+
+CMYK: 4-2-4-8<br/>
+RGB: 217-217-214<br/>
+HTML: D9D9D6<br/>
+<br/>
+**Mørk gråtone**<br/>
+
+![ID-porten Lys gråtone](assets\idp_morkgratone.png)
+
+CMYK: 69-64-61-57<br/>
+RGB: 53-52-53<br/>
+HTML: 353435<br/>
+<br/>
+### Tips til bruk
