@@ -67,6 +67,6 @@ HTML: 353435<br/>
 
 #### ID-porten som en av flere innloggingsmetoder
 
-Logoen kan nyttes til å synliggjøre ID-porten som en av flere innloggingsmetoder. Slik som dette eksemepelet fra "Meldeboka" til Trondheim kommune.
+Logoen kan nyttes til å synliggjøre ID-porten som en av flere innloggingsmetoder. Slik som dette eksempelet fra "Meldeboka" til Trondheim kommune.
 
 ![ID-porten som en av flere innloggingsmetoder](assets\idp_trondheim_meldeboka.png)
