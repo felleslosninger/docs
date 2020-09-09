@@ -45,7 +45,7 @@ ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 
 ## **Brukervennlighet**
 
-Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://samarbeid.difi.no/sites/samarbeid/files/designguide_id-porten_v2.0_0.pdf).
+Digitaliseringsdirektoratet har utarbeidet en egen designguide for ID-porten. Denne inneholder tips om brukervennlighet, universell utforming og sikkerheten til brukerne av ID-porten, se [ID-porten designguide](https://www.difi.no/sites/difino/files/designguide_id-porten_v2_2.pdf).
 
 ## **Føderering**
 
