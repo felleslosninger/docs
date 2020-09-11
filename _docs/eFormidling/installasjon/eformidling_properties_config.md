@@ -46,6 +46,12 @@ c:/
 
 Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
 
+#### Integrasjonspunkt-local.properties - testmiljø
+
+Om du skal sette opp integrasjonspunktet mot testmiljø, må du i tillegg legge inn følgenge linje i [integrasjonspunkt-local.properties-filen](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt):
+
+```spring.profiles.active=staging ```
+
 ### eFormidling - Digital Post til virksomheter
 
 Når en virksomhet sender digital post til virksomheter kan virksomheten sende både til og motta fra andre virksomheter som har et integrasjonspunkt. Sende til virksomheter som ikke har. 
