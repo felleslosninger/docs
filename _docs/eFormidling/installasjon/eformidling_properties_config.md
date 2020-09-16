@@ -46,11 +46,6 @@ c:/
 
 Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
 
-#### Integrasjonspunkt-local.properties - testmiljø
-
-Om du skal sette opp integrasjonspunktet mot testmiljø, må du i tillegg legge inn følgenge linje i [integrasjonspunkt-local.properties-filen](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt):
-
-```spring.profiles.active=staging ```
 
 ### eFormidling - Digital Post til virksomheter
 
