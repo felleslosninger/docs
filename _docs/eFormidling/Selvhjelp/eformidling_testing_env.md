@@ -11,7 +11,13 @@ For å få tilgang til testmiljø må bestilling skje på samme måte som en ell
 
 I testmiljø må det brukes test virksomhetssertifikat og mottaker må enten være en test virksomhet eller annen virksomhet som også er aktiv i testmiljøet. 
 
-Informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [https://difi.github.io/felleslosninger/eformidling_ip_run.html](https://difi.github.io/felleslosninger/eformidling_ip_run.html)
+### Kjøre integrasjonspunktet mot testmiljø
+
+Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til ```spring.profiles.active=staging ``` i [integrasjonspunkt-local.properties-filen](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt) eller legge til ```-Dspring.profiles.active=staging``` som argument i XML-fila.
+
+**NB!** Kommandolinje har presendens over properties.
+
+Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [https://difi.github.io/felleslosninger/eformidling_ip_run.html](https://difi.github.io/felleslosninger/eformidling_ip_run.html)
 
 ### Digital post til virksomheter(DPV)
 
