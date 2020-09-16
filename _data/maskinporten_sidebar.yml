@@ -65,6 +65,7 @@ folders:
        jurl: /oidc_sample_jwtgrant_postman.html
 
 - title: Feilsøking
+  folderitems:
 
   - title: Feilsøking i Maskinporten
     jurl: /maskinporten_feilsoking.html
