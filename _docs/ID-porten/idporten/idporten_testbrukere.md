@@ -17,7 +17,7 @@ Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicede
 Passord og engangskoder:
 
 | MinID | BankID |
-| -------------------- | ----------------- |
+| - | - |
 | Passord: password01 | Engangskode: otp |
 | Pin: 12345 | Passord: qwer1234 |
 
