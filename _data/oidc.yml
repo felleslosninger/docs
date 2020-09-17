@@ -85,6 +85,14 @@ folders:
       - title: Innbyggers autorisasjoner
         jurl: /oidc_api_autorisasjoner.html
 
+- title: Testing
+  folderitems:
+
+  - title: Testbrukere
+    jurl: /idporten_grensesnitt_saml.html
+  - title: Verifikasjonstester
+    jurl: /idporten_testbrukere.html
+
 - title: Administrasjon
   folderitems:
 

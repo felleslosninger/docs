@@ -87,6 +87,14 @@ Muligens feil med x5c element i header.
 
 ### Finner ikke scope i nedtrekkslisten
 
-API-tilbyder har ikke delt tilgang med virksomheten din.
+API-tilbyder har ikke delt tilgang med virksomheten din i det miljøet du befinner deg i.
 
 **Løsning:** Kontakt API-tilbyder
+
+### "Ny integrasjon" blir ikke tilgjengelig etter innlogging med ID-porten
+
+Du har ikke tilgang til selvbetjening.
+
+**Løsning:** En person med rolle "Hovedadministrator" i Altinn for din virksomhet, må logge seg inn og delegere tilgang til deg.
+
+Fremgangsmåte: https://thorsortevik.github.io/dokumentasjonsprosjektet/maskinporten_sjolvbetjening_web.html#tilgang-i-produksjonsmilj%C3%B8
