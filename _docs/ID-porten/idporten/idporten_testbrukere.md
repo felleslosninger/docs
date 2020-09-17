@@ -12,11 +12,11 @@ I tabellen under finner du en rekke testbrukere som kan benyttes for testing av 
 
 Du kan bruke disse testbrukerene om du vil sjekke at integrasjonen er satt opp rett.
 
-Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no 
+Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no
 
 Passord og engangskoder:
 
-| MinID                | BankID            |
+| MinID | BankID |
 | -------------------- | ----------------- |
 | Passord: password01  | Engangskode: otp  |
 | Pin: 12345           | Passord: qwer1234 |
