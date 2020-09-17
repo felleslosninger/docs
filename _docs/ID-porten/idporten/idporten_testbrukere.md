@@ -33,3 +33,9 @@ Passord og engangskoder:
 | 08089408165 | 08089406901	| 08089405794	| 08089404305	| 08089403198 |
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
+
++---------+---------+---------+----------+
+| Header1 | header2 | header3 | header4  |
++---------+---------+---------+----------+
+| Bar     | bar     | bar     | bar      |
++---------+---------+---------+----------+
