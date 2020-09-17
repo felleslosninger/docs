@@ -89,9 +89,9 @@ folders:
   folderitems:
 
   - title: Testbrukere
-    jurl: /idporten_grensesnitt_saml.html
-  - title: Verifikasjonstester
     jurl: /idporten_testbrukere.html
+  - title: Verifikasjonstester
+    jurl: /idporten_verifikasjonstester.html
 
 - title: Administrasjon
   folderitems:
