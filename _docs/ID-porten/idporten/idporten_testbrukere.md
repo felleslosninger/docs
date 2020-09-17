@@ -18,8 +18,8 @@ Passord og engangskoder:
 
 | MinID | BankID |
 | -------------------- | ----------------- |
-| Passord: password01  | Engangskode: otp  |
-| Pin: 12345           | Passord: qwer1234 |
+| Passord: password01 | Engangskode: otp |
+| Pin: 12345 | Passord: qwer1234 |
 
 | 08089409382 |	08089408084 |	08089406820	| 08089405603	| 08089404224 |
 | 08089409110 |	08089407967	| 08089406669	| 08089405522	| 08089404143 |
