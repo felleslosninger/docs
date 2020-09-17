@@ -15,10 +15,11 @@ product: Maskinporten
 
 ### Invalid grant
 
-| #### Invalid assertion. Client authentication failed. |
-|-|
-| Kan være skrivefeil på clientID.|
-| **Løsning:** | Sjekk at ClientID er korrekt. |
+#### Invalid assertion. Client authentication failed.
+
+Kan være skrivefeil på clientID.
+
+**Løsning:** Sjekk at ClientID er korrekt.
 
 #### "Invalid assertion. Client authentication failed. Invalid JWT claim aud"
 
