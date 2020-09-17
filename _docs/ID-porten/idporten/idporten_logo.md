@@ -63,6 +63,15 @@ CMYK: 69-64-61-57<br/>
 RGB: 53-52-53<br/>
 HTML: 353435<br/>
 <br/>
+
+|**Lys gråtone**|**Mørk gråtone**|
+| - | - |
+| ![ID-porten Lys gråtone](assets\idp_lysgratone.png) | ![ID-porten Mørk gråtone](assets\idp_morkgratone.png) |
+| CMYK: 4-2-4-8 | CMYK: 69-64-61-57 |
+| RGB: 217-217-214 | RGB: 53-52-53 |
+| HTML: D9D9D6 | HTML: 353435 |
+
+
 ### Tips til bruk
 
 #### Logo som del av "logg inn" knapp
