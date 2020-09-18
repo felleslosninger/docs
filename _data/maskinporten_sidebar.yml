@@ -64,6 +64,12 @@ folders:
      - title: Using Postman towards Maskinporten
        jurl: /oidc_sample_jwtgrant_postman.html
 
+- title: Feilsøking
+  folderitems:
+
+  - title: Feilsøking i Maskinporten
+    jurl: /maskinporten_feilsoking.html
+
 ###########################
 
 related_resources_title: Andre nyttige lenker

@@ -3,23 +3,23 @@ title: Verifikasjonstestar ID-porten
 description: Verifikasjonstestar
 summary: "Verifikasjonstestar"
 permalink: idporten_verifikasjonstester.html
-sidebar: idporten_sidebar
+sidebar: oidc
 product: ID-porten
 ---
 
 ### Om testane
 
-Dette dokumentet viser kva testar som skal gjennomførast i samband med ein integrasjon med ID-porten for tenesteleverandørar med krav om sikkerheitsnivå 3 og 4. 
+Dette dokumentet viser kva testar som skal gjennomførast i samband med ein integrasjon med ID-porten for tenesteleverandørar med krav om sikkerheitsnivå 3 og 4.
 
 Dei fleste testane må gjennomføras. Nokre er valfrie, avhengig av om ein har støtte for funksjonaliteten eller ikkje.
-Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonstestar for integrasjon med ID-porten»*. 
+Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonstestar for integrasjon med ID-porten»*.
 
-> URL til test-tenesteeigar til Difi <br> 
+> URL til test-tenesteeigar til Difi <br>
 > <https://idporten-sptest2.difi.no/testsp> <br><br>
-> URL til "Dine kontaktopplysninger" ("brukerprofilen") <br> 
+> URL til "Dine kontaktopplysninger" ("brukerprofilen") <br>
 > ver1: <https://brukerprofil-ver1.difi.no/minprofil/> <br>
 > ver2: <https://brukerprofil-ver2.difi.no/minprofil/>
-  
+
 ### Testar som må gjennomførast
 
 [Test 1: Single sign-on (SSO) frå eiga teneste med sikkerheitsnivå 3](../96_verifikasjonstest.html#1-single-sign-on-sso-frå-eiga-teneste-med-sikkerheitsnivå-3)
@@ -31,7 +31,7 @@ Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonste
 [Test 7: SLO frå anna tjeneste](96_verifikasjonstest.html#7-slo-frå-anna-tjeneste)
 
 [Test 8: SLO etter timeout](96_verifikasjonstest.html#8-test-av-timeout-i--applikasjonen)
-  
+
 
 ### Testar som kan gjennomførast
 Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
@@ -62,7 +62,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **1.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
 **1.7** - Verifiser i feltet «Dekryptert Assertion fra mottatt ArtifactResponse», at sikkerheitsnivået er 3 og at autentiseringsmetoden er MinID (PIN eller SMS).  
 
-  
+
 ### 2.	SSO frå eiga teneste med sikkerheitsnivå 4
 
 **2.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
@@ -71,7 +71,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **2.5** - Endre URL i nettleser til Difi [test-tenesteeigar](https://idporten-sptest2.difi.no/testsp). Vel konfigurasjon «*idporten-ver2*», eller «*idporten-ver1*», alt etter kva verifikasjonsmiljø tenesta er integrert mot.    
 **2.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
 **2.7** - Verifiser i feltet «Dekryptert Assertion fra mottatt ArtifactResponse» at sikkerheitsnivået er 4 og at autentiseringsmetoden er den aktuelle eID.  
-  
+
 ### 3.	SSO til eiga teneste med sikkerheitsnivå 3
 
 **3.1** - Start ein ny nettlesarsesjon og gå til "Dine kontaktopplysninger".<br>
@@ -84,7 +84,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 
 ### 4.	SSO til eiga teneste med sikkerheitsnivå 4
 
-**4.1** - 	Start ein ny nettlesarsesjon og gå til "Dine kontaktopplysninger". <br> 
+**4.1** - 	Start ein ny nettlesarsesjon og gå til "Dine kontaktopplysninger". <br>
 **4.2** - 	Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **4.3** - 	Vel ein eID på nivå 4 som innloggingsalternativ og fullfør innlogging.  
 **4.4** - 	Verifiser at du er innlogga.   
@@ -116,7 +116,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **6.9** - Endre URL til ID-porten sin test-tenesteeigar og verifiser at du også er logga ut her.  
 
 *PS: Verifiser i tillegg at det er mogleg med aktiv utlogging for ALLE brukarar som prøver å logge inn til tenesta sjølv om dei ikkje har tilgang til tjenesten.*  
-  
+
 ### 7.	SLO frå anna tjeneste
 
 *PS. For OpenID Connect-integrasjonar må Front-Channel Logout spesifikasjonen vere støtta (Frontchannel logout uri) for at SLO frå anna til eiga tjeneste skal kunne fungere.*
@@ -150,17 +150,17 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **9.5 a)** - For SAML: Endre URL til eiga teneste (må sende med attributt *\<ForceAuth>=true* i autentiseringsforespørsel til ID-porten).  
 **9.5 b)** - For OIDC: Endre URL til eiga teneste (må sende med parameter *prompt=login* i autentiseringsforespørsel til ID-porten).  
 **9.6** - 	Verifiser at du blir bedt om å logge inn på nytt.  
-  
+
 ### 10. 	Autentiseringsforespørsel – "OnBehalfOf" («på vegne av»)
 **10.1 a)** For SAML: Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med attributt *\<OnBehalfOf=xxx>*, der xxxx er namnet er ID for den som autentiseringsforespørselen er på vegne av.)<br>
 **10.1 b)** For OIDC: Start ein ny nettlesarsesjon og gå til eiga teneste ( må sende med ekstra parameter *onbehalfof=xxxx*, der xxxx er ID for den som autentiseringsforespørselen er på vegne av.)   
 **10.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **10.3** - Logg inn med ein vilkårleg eID.  
 **10.4** - Verifiser at du blir innlogga.  
-  
+
 ### 11. Autentiseringsforespørsel – (språk)
 **11.1 a)** For SAML: - Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med attributt *\<locale=språk>*). <br>
-**11.1 b)** For OIDC: - Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med parameter *ui_locales=språk*).<br> 
+**11.1 b)** For OIDC: - Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med parameter *ui_locales=språk*).<br>
 **11.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **11.3** - Verifiser at ID-porten er på riktig språk (som du sendte med i autentiseringsforespørselen).  
 **11.4** - Logg inn med ein vilkårleg eID.  
