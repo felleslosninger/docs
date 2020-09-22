@@ -41,6 +41,10 @@ folders:
         jurl: /oidc_protocol_par.html
       - title: "/token"
         jurl: /oidc_protocol_token.html
+      - title: "ID token"
+        jurl: /oidc_protocol_id_token.html
+      - title: "Access token"
+        jurl: /oidc_protocol_access_token.html
       - title: "/tokeninfo"
         jurl: /oidc_protocol_tokeninfo.html
       - title: "/userinfo"
