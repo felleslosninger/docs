@@ -20,3 +20,7 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  ID-portens signeri
 |VER2|[https://oidc-ver2.difi.no/idporten-oidc-provider/.well-known/openid-configuration](https://oidc-ver2.difi.no/idporten-oidc-provider/.well-known/openid-configuration)|
 |YT2|[https://oidc-yt2.difi.eon.no/idporten-oidc-provider/.well-known/openid-configuration](https://oidc-yt2.difi.eon.no/idporten-oidc-provider/.well-known/openid-configuration)|
 |PROD|[https://oidc.difi.no/idporten-oidc-provider/.well-known/openid-configuration](https://oidc.difi.no/idporten-oidc-provider/.well-known/openid-configuration)|
+
+## Maskinporten
+
+Merk at Maskinporten har sine egne metadata, som er [publisert her](maskinporten_func_wellknown.html)
