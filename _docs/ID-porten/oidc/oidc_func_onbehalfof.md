@@ -35,4 +35,4 @@ Returnert ID-token vil då innehalde eit nytt claim ```client_onbehalfof```:
 
 Klient må validere at returnert "client_onbehalfof" stemmer overens med forespurt onbehalfof-verdi.
 
-Kombinasjonen av client og client_onbehalfof må vere pre-registrert hjå ID-porten. Me held på med å utarbeide eit API for automatisering av dette.
+Kombinasjonen av client og client_onbehalfof må vere pre-registrert hjå ID-porten.
