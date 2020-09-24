@@ -83,6 +83,10 @@ Muligens feil med x5c element i header.
 
 **Løsning:** Sjekk at sertifikatet ligger med som et array av string, og ikke string.
 
+#### Could not validate JWT Signature
+
+Feil på sertifikat. Sjekk at sertifikatet ikke er utløpt og at det benyttes prod.sertifikat i produksjonsmiljøet, og test-virksomhetssertifikat i testmiljøene.
+
 ## Feilsøking for selvbetjening via web
 
 ### Finner ikke scope i nedtrekkslisten
