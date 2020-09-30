@@ -9,6 +9,8 @@ product: ID-porten
 
 Audience-begrensning er aktuelt der flere APIer er sikret av samme `scope`.  Ved å låse tokenet til et spesifikt audience (feks https://api.a.no/ ), så kan ikke tokenet brukes mot andre API (https://api.b.no), gitt at de aktuelle APIene utfører nødvendig validering.
 
+Funksjonaliteten er basert på [RFC 8707 Resource Indicators for Oauth2](https://tools.ietf.org/html/rfc8707).
+
 ## Virkemåte
 
 ID-porten og Maskinporten tilbyr en rudimentær støtte for å audience-begrense access-token:  Det er klientens ansvar be om et audience-begrensa token, og klient og API-tilbyder må avtale bilateralt seg imellom hvilke verdier som skal brukes.  
