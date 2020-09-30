@@ -14,20 +14,27 @@ Single-page applikasjoner (SPA) har økende popularitet. Disse skiller seg fra t
 En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (evt. virksomhetssertifikatets privatnøkkel) siden hele klienten lever i brukers nettleser. SPAer er altså det som i Oauth2-verdenen kalles **public klienter**. For slike klienter var det tidligere anbefalt å bruke _implicit flow_, men **de nyeste anbefalingen går på å bruke code flow sammen med PKCE og state**.
 
 
+
 ## Anbefalinger / krav til bruk av SPAer
 
 Trusselbildet er forskjellig ved bruk av SPA  kontra tjenester som bruker ordinær autorisasjonskodeflyt.  Siden access_token blir eksporert ut i brukers browser, er det øka risiko for at token lettere kan komme på avveie eller byttes ut/manipuleres.
 
 Tjenesteeiere må:
- * Lese [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00) og følge anbefalingene i denne
- * Gjennomføre en risikovurdering av de dataene som blir eksport av APIet og vurdere om de sikringsmekanismer som ovennevte tilbyr,gir tilstrekkelig beskyttelse.
+
+ * Dersom SPA kun skal aksessere egne API (1st party API), bør man vurdere en backend-for-frontend (BFF) arkitektur, dvs. etablere en tynn API-gateway-komponent som operer somm oauth2-klient og omsetter ID-portens id_token til egen sesjon (egne cookies) mellom BFF og SPA.
+
+ * APIer som blir sikret av ID-portens access_token direkte, bør bruke egne scopes og ikke bare `openid profile` (ellers så kan alle gyldige ID-porten-innlogginger til alle andre tjenester også brukes mot ditt API)
+
+ * APIer som blir sikret av ID-portens access_token direkte bør bruke [audience-begrensa tokens](oidc_func_aud.html), der `aud`-verdien settes lik URL til API-endepunktet
+
+
+Forøvrig anbefaler vi å lese [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00) og følge anbefalingene i denne.  Dette bør være del av egen isikovurdering av de dataene som blir eksport av APIet og vurdere om de sikringsmekanismer som ovennevte tilbyr gir tilstrekkelig beskyttelse.
 
 ## Flyt
 
 I praksis er flyten den samme som [ordinær autorisasjonskodeflyt](oidc_auth_codeflow.html), men der:
 
-- Klienten må registreres som "public" klient i ID-porten (se [klientregistrering](oidc_func_clientreg.html))
-- Det registreres ingen client-secret
+- Klienten må registreres med klient-autentiseringsmetode `none`  i ID-porten (se [klientregistrering](oidc_func_clientreg.html)) (dersom ikke BFF-mønster)
 - Bruk av [PKCE](oidc_func_pkce.html) er påkrevd
 - Bruk av `state`-claimet i autorisasjonsforespørsel er påkrevd
 

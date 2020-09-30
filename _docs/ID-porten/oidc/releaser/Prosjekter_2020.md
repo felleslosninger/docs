@@ -31,9 +31,11 @@ Nye forskrifter for tillitstjenester innført november 2019 gjør at eID-leveran
 
 #### Pilotering av ansattporten (Under consideration)
 
-Dersom det er interesse fra kunder, ønsker vi å pilotere ulike varianter av "Ansattporten" i 2020. Mulige konsepter som er pekt på initielt er:
+Vi ønsker å pilotere ulike varianter av "Ansattporten" i Q1 2021. Piloten vil minimum inneholde:
 
 - kombinere innlogging med en "avgiver-velger" fra t.d. Altinn Autorisasjon eller andre kilder til ansatt-forhold
+
+Eventuelt kan vi se om vi kan teste ut:
 
 - selvbetjente circle-of-trust 
 

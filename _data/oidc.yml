@@ -68,6 +68,9 @@ folders:
       - title: Single sign-on og -logout
         jurl: /oidc_func_sso.html
 
+      - title: Audience-begrensning
+        jurl: /oidc_func_aud.html
+
       - title: PKCE
         jurl: /oidc_func_pkce.html
 
