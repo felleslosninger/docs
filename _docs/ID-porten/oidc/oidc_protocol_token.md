@@ -26,9 +26,9 @@ There are different parameters available for the request, depending on grant typ
 
 ### Request parameters when using `code` grant
 
-The following request attributes are available when using the authorization code grant
+The following request parameters are available when using the authorization code grant
 
-| Attribute  | Requirement | Description |
+| Parameter  | Requirement | Description |
 | --- | --- | --- |
 | client_id | required | The identifier of the client  |
 | grant_type | required | Type of grant the client is sending, ie. `authorization_code` |
@@ -41,9 +41,9 @@ The following request attributes are available when using the authorization code
 
 ### Request parameters when using `JWT-bearer` grant
 
-The following request attributes are available when using the authorization code grant
+The following request parameters are available when using the JWT bearer grant
 
-| Attribute  | Requirement | Description |
+| Parameter  | Requirement | Description |
 | --- | --- | --- |
 | grant_type | required | Type of grant the client is sending, ie. `urn:ietf:params:oauth:grant-type:jwt-bearer`  |
 | assertion   | optional   | The JWT grant  |
@@ -55,7 +55,14 @@ See [JWT grant](oidc_protocol_jwtgrant.html) for requirements for the JWT grant.
 
 ### Request parameters when using `refresh_token ` grant
 
-TODO
+The following request parameters are available when using the refresh_token grant
+
+| Parameter  | Requirement | Description |
+| --- | --- | --- |
+| grant_type | required | Type of grant the client is sending, ie. `refresh_token`  |
+| refresh_token | required   | The refresh token  |
+
+Client authentication must be used with this grant.  Client authentication methods client_secret_post or private_key_jwt adds parameters to the request.  Client authentication method client_secret_basic uses the Authorization header.  Client authentication method none cannot be used for the refresh_token grant.
 
 
 ### Client authentication
