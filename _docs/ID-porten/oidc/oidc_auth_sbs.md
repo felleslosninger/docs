@@ -2,7 +2,7 @@
 title: Autentisering til sluttbrukersystemer
 description: Autentisering til sluttbrukersystemer
 summary: "Såkalte sluttbrukersystemer er typisk tykk-klienter og programmer som installeres på brukers PC. De må bruke loopback redirection i autentiseringsflyten."
-permalink: oidc_auth_app.html
+permalink: oidc_auth_sbs.html
 sidebar: oidc
 product: ID-porten
 ---
