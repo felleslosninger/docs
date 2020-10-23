@@ -27,11 +27,12 @@ ID-porten støtter [RFC8252, kap 7.3](https://tools.ietf.org/html/rfc8252#sectio
 
 Dersom application_type er `native`, får man lov til å registrere ein redirect_uri som starter med `http://127.0.0.1:0/` på klienten (altså http uten s og :0 som portnummer).
 
-Når en instans av et sluttbrukerstyetm starter opp, må det forespørre eierskap til en gitt portnummer av operativsystemet.  Klient bruker så det tildelte portnummeret i autorisasjonsforespørselen:
+Når en instans av et sluttbrukersystem starter opp, må det forespørre eierskap til en gitt portnummer av operativsystemet.  Klient bruker så det tildelte portnummeret i autorisasjonsforespørselen:
 `https://oidc.difi.no/idporten-oidc-provider/authorize?redirect_uri=http://127.0.0.1:35432/min_callback&...`
 
 Samme portnummer må også oppgis på token-kallet.
 
+Både ipv6 og ipv4 er støtta.
 
 ## Beskrivelse av innloggingsflyten for sluttbrukersystemer
 
