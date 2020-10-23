@@ -22,11 +22,14 @@ folders:
       - title: Innlogging til webtjeneste
         jurl: /oidc_guide_idporten.html
 
+      - title: Innlogging til SPA
+        jurl: /oidc_auth_spa.html
+
       - title: Innlogging til mobilapp
         jurl: /oidc_auth_app.html
 
-      - title: Innlogging til SPA
-        jurl: /oidc_auth_spa.html
+      - title: Innlogging til sluttbrukersystem
+        jurl: /oidc_auth_sbs.html
 
       - title: Brukerstyrt datadeling
         jurl: /oidc_auth_oauth2.html
@@ -131,6 +134,9 @@ folders:
 
   - title: 2020
     jurl: /releaser_2020.html
+
+  - title: 2021
+    jurl: /releaser_2021.html
 #==rel_notes_stop==
 
 - title: SAML grensesnitt
