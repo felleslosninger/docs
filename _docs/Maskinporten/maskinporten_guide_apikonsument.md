@@ -141,7 +141,7 @@ Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
 
 | Claim  |  Verdi | Beskrivelse  |
 | --- | --- |--- |
-|aud| httsp://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljø finner du på .well-known-endpunkt. |
+|aud| https://maskinporten.no/ | Audience - issuer-identifikatoren til  Maskinporten. Verdi for aktuelt miljø finner du på .well-known-endpunkt. |
 |iss| client_id |issuer - Din egen client_id.  |
 |scope| <string>| Space-separert liste over scopes som klienten forespør. |
 |iat| 1573132283| issued at - Tidspunkt for når JWTen ble laget. **Merk:** UTC-tid|
