@@ -1,7 +1,7 @@
 ---
-title: Autentisering til sluttbrukersystemer
-description: Autentisering til sluttbrukersystemer
-summary: "Såkalte sluttbrukersystemer er typisk tykk-klienter og programmer som installeres på brukers PC. De må bruke loopback redirection i autentiseringsflyten."
+title: Autentisering til tykke klienter
+description: Autentisering til tykke klienter
+summary: "Tykke klienter er applikasjoner som installeres og kjøres lokalt på en datamaskin. De er må bruke autorisasjonskodeflyt med loopback redirection ved innlogging."
 permalink: oidc_auth_sbs.html
 sidebar: oidc
 product: ID-porten
@@ -9,16 +9,16 @@ product: ID-porten
 
 ## Overordna beskrivelse av bruksområdet
 
-Et sluttbrukersystem er en tykk-klient / PC-program som innstalleres på en PC.  
+Med tykke klienter mener vi applikasjoner som installeres og kjøres lokalt på en datamaskin. Eksempler på dette er Microsoft .Net WPF eller Winforms.
 
 I Oauth2-sammenheng, er dette en *native* klient, siden den ikke kan beskytte en klienthemmelighet/virksomhetssertifikat, og [behandles på samme måte som innlogging til mobil-app'er](oidc_auth_app.html).
 
 
-Sluttbrukerstystemer bør:
+Tykke klienter bør:
 * registreres med `application_type=native`
 * registreres med felles client_id for alle instanser
 * autentisering skal skje i ekstern browser
-* bruke [loopback interface redirection ihht. RFC8252](https://tools.ietf.org/html/rfc8252#section-7.3)
+* bruke loopback interface redirection (se nedenfor)
 
 
 ## Loopback interface redirection
@@ -27,18 +27,18 @@ ID-porten støtter [RFC8252, kap 7.3](https://tools.ietf.org/html/rfc8252#sectio
 
 Dersom application_type er `native`, får man lov til å registrere ein redirect_uri som starter med `http://127.0.0.1:0/` på klienten (altså http uten s og :0 som portnummer).
 
-Når en instans av et sluttbrukersystem starter opp, må det forespørre eierskap til en gitt portnummer av operativsystemet.  Klient bruker så det tildelte portnummeret i autorisasjonsforespørselen:
+Når en instans av den tykke klienten starter opp, må det forespørre eierskap til en gitt portnummer av operativsystemet.  Klient bruker så det tildelte portnummeret i autorisasjonsforespørselen:
 `https://oidc.difi.no/idporten-oidc-provider/authorize?redirect_uri=http://127.0.0.1:35432/min_callback&...`
 
 Samme portnummer må også oppgis på token-kallet.
 
 Både ipv6 og ipv4 er støtta.
 
-## Beskrivelse av innloggingsflyten for sluttbrukersystemer
+## Beskrivelse av innloggingsflyten for tykke klienter
 
 Flyten er identisk som for [autorisasjonskode-flyten](oidc_auth_codeflow.html), men med bruk av [PKCE](oidc_func_pkce.html):
 
-Normal vil sluttbrukersystemet trenge tilgang til APIer fra 3-dje-part,  [se nærmere dokumentasjon av brukerstyrt datadeling](oidc_auth_oauth2.html)
+Normal vil klienten trenge tilgang til APIer fra 3-dje-part,  [se nærmere dokumentasjon av brukerstyrt datadeling](oidc_auth_oauth2.html)
 
 
 ## Struktur på token
