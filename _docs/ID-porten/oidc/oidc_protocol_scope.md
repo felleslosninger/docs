@@ -11,6 +11,55 @@ product: ID-porten
 ID-porten and Maskinporten can issue access tokens to scopes controlled by Difi, as well as scopes controlled by other organizations.
 
 
+## Scope model
+The following attributes are available for a scope:
+
+| attribute| cardinality | description |
+|-|-|-|
+| prefix | mandatory| A prefix used for namespacing scopes belonging to a certain organization. Manually assigned by Digdir |
+| visiblity | mandatory | Controls whether the scope appear on the public listing of available scopes known to ID-porten / Maskinporten |
+| description | mandatory | A human-readable short description of the scope. Shown to the end-user in consent dialogue. |
+| long_description (20-11) | optional | A longer human-readable description of the scope. Paragraphs break and links allowed. Shown to the end-user in consent dialogue.
+| delegation_source | optional | If set, allows consumers to [delegate a given scope  access to a supplier in a external autoriative register of delegations](maskinporten_func_delegering.html). |
+| accessible_for_all | default false | If true, any registrered consumer organization can register a client having this scope |
+| allowable_integration_types | optional | Array. If set, nly clients having the same integration type(s) can get tokens for this scope, from the corresponsing oauth Autorization Server |
+|at_max_age | optional | If set, defines a maximium allowable expires_in for access tokens having this scope.  If multiple scopes are included into one token, the lowest value for at_max_age is enforced. |
+| authoriation_max_age (20-11) | optional | If set, defines a maximum allowable lifetime for the authorization / consent granted by the end-user to client. For Maskinporten, set this value equal to at_max_age | 
+| requires_user_consent | default false | If true, the consent dialogue is shown to the end user when performing the authorization.  |
+| requires_user_authentication | default false | If true, a fresh authentication must be performed by the end-user as part of the authorization even if the she has an active SSO-session in ID-porten |
+| requires_pseudonymous_tokens (20-11) | default false | If true, access_tokens having this scope (and any accompanying id_token) will lack the `pid`-claim. |
+| token_type | default SELF-CONTAINED | Which type of tokens are expected by the API: SELF-CONTAINED or OPAQUE |
+| active | default true | if false, no clients are allowed to get tokens having this scope.  To change, use DELETE / PUT operations. (already issued accesses and client reqgistrations are not altered by the DELETE operation, meaning it is suitable for temporary deactivation of scope)
+
+Example:
+```
+{
+    "name": "altinn:serviceowner",
+    "prefix": "altinn",
+    "subscope": "serviceowner",
+    "description": "Full access scope for the Altinn Service Owner API. Used for clients not specifying any API limitations.",
+    "visibility": "PUBLIC",
+    "token_type": "SELF_CONTAINED",
+    "at_max_age": 1000,
+    "requires_user_consent": false,
+    "requires_user_authentication": false,
+    "requires_pseudonymous_tokens": false,
+    "accessible_for_all": false,
+    "delegation_source": "https://tt02.altinn.no/",
+    "allowed_integration_types": [
+        "maskinporten"
+    ]
+    "last_updated": "2020-11-03T11:28:13.826+01:00",
+    "created": "2020-11-03T11:28:13.826+01:00",
+    "owner_orgno": "991825827",
+    "active": true,
+
+}
+```
+
+
+
+
 ## Scope limitations
 
 Some scopes only work towards Maskinporten, others only towards ID-porten, while some can be used for both. This depends on the `allowed_integration_types` attribute registrered on the scope:
@@ -28,7 +77,7 @@ You will not be able to register a client with a certain scope if there is a con
 
 
 
-## Reserved scopes
+## List of Reserved scopes
 
 The following scopes triggers special behaviour in ID-porten OIDC provider.  They can be used by all customers.
 
@@ -39,7 +88,7 @@ The following scopes triggers special behaviour in ID-porten OIDC provider.  The
 |no_pid   | Triggers a [pseudonymous authentication](oidc_func_nopid.html)   |  idporten, api_klient|
 |eidas    | Include the eIDAS attributes in the id_token. See [eidas login](/oidc_func_eidas.html)   |  idporten, api_klient|
 
-## Scopes for APIs from Digitaliseringsdirektoratet
+## List of scopes for APIs from Digitaliseringsdirektoratet
 
 Any customer can self-service their clients with the following scopes:
 
@@ -47,7 +96,9 @@ Any customer can self-service their clients with the following scopes:
 |-|-|-|
 |krr:global/*    | Scopes for global access to the Contact Registry |  krr,maskinporten |
 |krr:user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
-
+|idporten:authorizations.*  | [API for authorizations](oidc_api_autorisasjoner.html) | api_klient |
+|idporten:user.log.read |[API for authentication history](oidc_api_logghistorikk.html) | api_klient |
+|global/idporten.authlevel.read| [API for authentication level of assurance](oidc_api_authlevel.html) | maskinporten|
 
 For the following scopes, you need to ask us to add them to your client manually:
 
@@ -55,12 +106,10 @@ For the following scopes, you need to ask us to add them to your client manually
 |-|-|-|
 |idporten:dcr*  | Scopes allowing for self-service of ID-porten integrations   | maskinporten|
 |idporten:scopes*   | Scopes allowing for self-service of ID-porten/Maskinporten API management    | maskinporten|
-|idporten:authorizations.*  | [API for authorizations](oidc_api_autorisasjoner.html) | api_klient |
-|idporten:user.log.read |[API for authentication history](oidc_api_logghistorikk.html) | api_klient |
-|global/idporten.authlevel.read| [API for authentication level of assurance](oidc_api_authlevel.html) | maskinporten|
 
 
-## Scopes for APIs from 3rd parties
+
+## List of scopes for APIs from 3rd parties
 
 ID-porten and Maskinporten protect a number of APIs from other organizations. See the links below for the complete list:
 
