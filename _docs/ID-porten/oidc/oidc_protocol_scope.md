@@ -21,15 +21,15 @@ The following attributes are available for a scope:
 | description | mandatory | A human-readable short description of the scope. Shown to the end-user in consent dialogue. |
 | long_description (20-11) | optional | A longer human-readable description of the scope. Paragraphs break and links allowed. Shown to the end-user in consent dialogue.
 | delegation_source | optional | If set, allows consumers to [delegate a given scope  access to a supplier in a external autoriative register of delegations](maskinporten_func_delegering.html). |
-| accessible_for_all | default false | If true, any registrered consumer organization can register a client having this scope |
-| allowable_integration_types | optional | Array. If set, nly clients having the same integration type(s) can get tokens for this scope, from the corresponsing oauth Autorization Server |
-|at_max_age | optional | If set, defines a maximium allowable expires_in for access tokens having this scope.  If multiple scopes are included into one token, the lowest value for at_max_age is enforced. |
-| authoriation_max_age (20-11) | optional | If set, defines a maximum allowable lifetime for the authorization / consent granted by the end-user to client. For Maskinporten, set this value equal to at_max_age | 
+| accessible_for_all | default false | If true, any consumer organization can register a client having this scope and get tokens. |
+| [allowable_integration_types](#scope-limitations) | optional | Array. If set, only clients having the same integration type(s) can get tokens for this scope, from the corresponsing Autorization Server |
+|at_max_age | optional | If set, defines a maximium allowable expires_in for access tokens having this scope.  If multiple scopes are included into one token, the lowest value for at_max_age is enforced. A zero value means that lifetime is based on the client setting or system default.|
+| authorization_max_age (20-11) | optional | If set, defines a maximum allowable lifetime for the authorization / consent granted by the end-user to the client. For Maskinporten-type scopes, set this value equal to at_max_age. A zero value means that lifetime is based on the client setting or system default. | 
 | requires_user_consent | default false | If true, the consent dialogue is shown to the end user when performing the authorization.  |
 | requires_user_authentication | default false | If true, a fresh authentication must be performed by the end-user as part of the authorization even if the she has an active SSO-session in ID-porten |
 | requires_pseudonymous_tokens (20-11) | default false | If true, access_tokens having this scope (and any accompanying id_token) will lack the `pid`-claim. |
 | token_type | default SELF-CONTAINED | Which type of tokens are expected by the API: SELF-CONTAINED or OPAQUE |
-| active | default true | if false, no clients are allowed to get tokens having this scope.  To change, use DELETE / PUT operations. (already issued accesses and client reqgistrations are not altered by the DELETE operation, meaning it is suitable for temporary deactivation of scope)
+| active | default true | if false, no clients are allowed to get tokens having this scope.  To change, use DELETE / PUT operations. (already issued accesses and client reqgistrations are not altered by the DELETE operation, meaning it is suitable for temporary deactivation of a scope)
 
 Example:
 ```
