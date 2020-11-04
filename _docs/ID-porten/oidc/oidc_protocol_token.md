@@ -48,7 +48,7 @@ The following request parameters are available when using the JWT bearer grant
 | grant_type | required | Type of grant the client is sending, ie. `urn:ietf:params:oauth:grant-type:jwt-bearer`  |
 | assertion   | optional   | The JWT grant  |
 
-There is no need to perform client authenticion when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
+There is no need to perform client authentication when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
 See [JWT grant](oidc_protocol_jwtgrant.html) for requirements for the JWT grant.
 
