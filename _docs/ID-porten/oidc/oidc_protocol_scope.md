@@ -74,7 +74,7 @@ Some scopes only work towards Maskinporten, others only towards ID-porten, while
 
 You will not be able to register a client with a certain scope if there is a conflict with the `integration_type` of the client and the `allowable_integration_type` of the scope. E.g. you can't add a "maskinporten" scope to a "api_klient" client.
 
-
+See also [client registration](oidc_func_clientreg.html#integrasjonstyper).
 
 
 ## List of Reserved scopes
