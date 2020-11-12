@@ -50,7 +50,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
-| qaoffentlig.meldingsformidler.digipost.no | 51.105.206.80:443/28  | -  | DPI |
+| qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80:443/28  | -  | DPI |
 
 
 ### Brannmuråpninger i produksjon
@@ -63,8 +63,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | move-dpe-prod.servicebus.windows.net	 | 52.169.10.235:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
-| meldingsformidler.digipost.no | 146.192.168.126:443 | -  | DPI |
-| meldingsformidler.digipost.no | 146.192.168.80:443 | -  | DPI |
+| meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
 | svarut.ks.no | 193.161.171.187:443 | - | DPF |
 
 
