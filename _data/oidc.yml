@@ -26,7 +26,7 @@ folders:
       - title: Innlogging til mobilapp
         jurl: /oidc_auth_app.html
 
-      - title: Innlogging til sluttbrukersystem
+      - title: Innlogging til tykke klienter
         jurl: /oidc_auth_sbs.html
 
       - title: Brukerstyrt datadeling
