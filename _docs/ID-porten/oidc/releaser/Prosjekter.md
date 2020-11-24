@@ -15,7 +15,7 @@ Planlagd produksjonssetting: 2021-12-31
 ## Ny funksjonalitet:
 
 
-#### Anskaffelse nye eID-avtaler - ID-porten og eSignering (Under consideration)
+#### Anskaffelse nye eID-avtaler - ID-porten og eSignering (In development)
 
 Dagens avtaler med eID-leverandørene løper til november 2020, og det må gjøres en anskaffelse av nye avtaler. De nye avtalene vil basere seg på krav som følger av de nye forskriftene for tillitstjenester (innført november 2019).
 
@@ -24,12 +24,12 @@ Dagens avtaler med eID-leverandørene løper til november 2020, og det må gjør
 
 #### Notifisere norske eID til eIDAS (Under consideration)
 
-Nye forskrifter for tillitstjenester innført november 2019 gjør at eID-leverandører må selvdeklareres på nytt til NKOM. Siden de nasjonale kravene i stor grad er basert på europeiske krav (eIDAS) ønsker Difi å kjøre et prosjekt i 2020 der vi ser på å samtidig melde eID-løsningene til EU, slik at norske borgere kan bruke sine eIDer på europeiske tjenester.
+Gjennomføre fagfelle-vurdering av norske eID-løsninger til EU, slik at norske borgere kan bruke sine eIDer på europeiske tjenester.
 
 
 
 
-#### Pilotering av ansattporten (Under consideration)
+#### Pilotering av ansattporten (In design)
 
 Vi ønsker å pilotere ulike varianter av "Ansattporten" i Q1 2021. Piloten vil minimum inneholde:
 
