@@ -15,4 +15,4 @@ sidebar: oidc
 |[20-06 Maskinporten](20-06_Maskinporten.html)|2020-06-23| Vedlikeholdsrelease for Maskinporten |
 |[20-08 MinID](20-08_MinID.html)|2020-08-25| Støtte for manuell gjenkjenning av utenlandske brukere.  |
 |[20-09 OIDC](20-09_OIDC.html)|2020-09-29| Vedlikehaldsrelease med mindre feilrettingar og forbetringar. |
-|[20-11 OIDC](20-11_OIDC.html)|*2020-11-17*| Forbetringar i tilgangsdialog for "brukerstyrt datadeling" |
+|[20-11 OIDC](20-11_OIDC.html)|*2020-12-08*| Forbetringar i tilgangsdialog for "brukerstyrt datadeling" |
