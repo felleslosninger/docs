@@ -22,7 +22,7 @@ Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> 
 
 ## Bruk av Oauth2 {#scopes}
 
-APIet er sikret vha. [server-til-server Oauth](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), dvs. med bruk av virksomhetssertifikat.
+APIet er sikret vha. [server-til-server Oauth](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten (ikke støtte for Maskinporten-tokens ennå).
 
 Klienten må få tildelt scopes for å få tilgang til APIet:
 
@@ -37,11 +37,15 @@ Klienten må få tildelt scopes for å få tilgang til APIet:
 
 ## Eierskap til integrasjoner
 
-Leverandører kan velge tre måter å integrere sine kunder på:
+Leverandører kan velge tre måter å integrere sine kunder på
+
 
 ### 1: onbehalfof-integrasjoner
 
-Bruke *onbehalfof* "under-integrasjoner" knyttet til Leverandørens egen integrasjon, som dokumentert [her](/oidc_func_onbehalfof.html).
+Bruke *onbehalfof* "under-integrasjoner" knyttet til Leverandørens egen integrasjon, som dokumentert [her](oidc_func_onbehalfof.html).
+
+MERK: onbehalfof er en proprietær protokoll-mekanisme som er støttet av historiske årsaker, og kan bli fjernet i fremtiden. Digdir mener alt. 2 med selvstendige integrasjoner er et bedre valg.
+
 
 ### 2: Selvstendige integrasjoner
 
@@ -55,7 +59,7 @@ Ved endring og sletting tillater APIet kun operasjoner på integrasjoner der ege
 
 ### 3: Delegert tilgang i Altinn
 
-Dette gjelder leverandør-integrasjonar som skal konsumere API-er fra 3djepart der API-eier krever at den juridiske konsumenten (=leverandørens kunde) bruker Altinn til å aktivt delegerer en tildelt API-tilgang videre til leverandør.  Se [dokumentasjon av delegering](/maskinporten_func_delegering.html) for detaljer.
+Dette gjelder leverandør-integrasjonar som skal konsumere API-er fra 3djepart der API-eier krever at den juridiske konsumenten (=leverandørens kunde) bruker Altinn til å aktivt delegerer en tildelt API-tilgang videre til leverandør.  Se [dokumentasjon av delegering](maskinporten_func_delegering.html) for detaljer.
 
 ## Ulike typer integrasjonar
 
@@ -105,7 +109,7 @@ Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grant
 
 ## Registrering av scopes
 
-Se [dokumentasjon av klient-registrering](/oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for registrering av Oauth2 scopes på en integrasjon.
+Se [dokumentasjon av klient-registrering](oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for registrering av Oauth2 scopes på en integrasjon.
 
 ## REST-grensesnittet
 
@@ -115,7 +119,7 @@ API endepunkter:
 |-|-|
 |VER1|[https://integrasjon-ver1.difi.no/clients/](https://integrasjon-ver1.difi.no/clients/)|
 |VER2|[https://integrasjon-ver2.difi.no/clients/](https://integrasjon-ver2.difi.no/clients/)|
-|YT2|[https://integrasjon-yt2.difi.no/clients/](https://integrasjon-yt2.difi.no/clients/)|
+|YT2|[https://integrasjon-yt2.difi.eon.no/clients/](https://integrasjon-yt2.difi.eon.no/clients/)|
 |PROD|[https://integrasjon.difi.no/clients/](https://integrasjon.difi.no/clients/)|
 
 
