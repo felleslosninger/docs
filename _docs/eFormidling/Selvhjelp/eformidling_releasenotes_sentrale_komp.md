@@ -18,7 +18,7 @@ Versjonen inneholder to primærendringer:
 FIKS IO-integrasjonen vil ligge latent til den faktisk skal taes i bruk. Denne har et eget administrasjonsAPI for å håndtere mapping mellom eFormidlingsprosesser og FIKS-protokoller. API’et er dokumentert her: https://difi.github.io/felleslosninger/sr_internal_restdocs.html
 
 
-[Detaljer](https://fylle inn her)
+[Detaljer](https://)
 
 
 ## ServiceRegistry 2.0.8
