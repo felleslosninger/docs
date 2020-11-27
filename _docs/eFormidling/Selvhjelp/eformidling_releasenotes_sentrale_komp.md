@@ -7,6 +7,23 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## ServiceRegistry 2.1.0
+25.11.2020
+
+**Endring**: 
+Versjonen inneholder to primærendringer: 
++Ny versjon av virksert klient som kun gjør CRL-validering (og ikke OCSP)
++FIKS IO-integrasjon
+
+FIKS IO-integrasjonen vil ligge latent til den faktisk skal taes i bruk. Denne har et eget administrasjonsAPI for å håndtere mapping mellom eFormidlingsprosesser og FIKS-protokoller. API’et er dokumentert her: https://difi.github.io/felleslosninger/sr_internal_restdocs.html
+
+Omfang
+
+**Diverse**: Mindre endringer.  
+
+[Detaljer](https://difino.atlassian.net/projects/MOVE/versions/10197/tab/release-report-all-issues)
+
+
 ## ServiceRegistry 2.0.8
 01.07.2020
 
