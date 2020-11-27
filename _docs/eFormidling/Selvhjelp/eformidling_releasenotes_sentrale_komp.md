@@ -12,8 +12,8 @@ sidebar: eformidling_install_sidebar
 
 **Endring**: 
 Versjonen inneholder to primærendringer: 
-+Ny versjon av virksert klient som kun gjør CRL-validering (og ikke OCSP)
-+FIKS IO-integrasjon
+* Ny versjon av virksert klient som kun gjør CRL-validering (og ikke OCSP)
+* FIKS IO-integrasjon
 
 FIKS IO-integrasjonen vil ligge latent til den faktisk skal taes i bruk. Denne har et eget administrasjonsAPI for å håndtere mapping mellom eFormidlingsprosesser og FIKS-protokoller. API’et er dokumentert her: https://difi.github.io/felleslosninger/sr_internal_restdocs.html
 
