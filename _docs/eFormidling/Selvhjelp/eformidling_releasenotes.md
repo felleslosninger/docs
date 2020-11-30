@@ -12,7 +12,7 @@ sidebar: eformidling_install_sidebar
 
 ### Hva er endret/nytt?
 
-**Validering av felt ved sending av DPF-forsendelser**
+* Validering av felt ved sending av DPF-forsendelser**
 
 
 **Mindre feilrettinger:**
@@ -28,9 +28,9 @@ Full endringslogg: [Release notes for 2.1.3](https://difino.atlassian.net/secure
 
 ### Hva er endret/nytt?
 
-**Basic auth for alle endepunkter integrasjonspunktet tilbyre (bortsett fra "manage/health"**
+* Basic auth for alle endepunkter integrasjonspunktet tilbyre (bortsett fra "manage/health"**
 
-**Går over til bruk av JWK(JSON Web Key) for signering i integrasjonspunkt - hentes fra et nytt endepunkt i SR.**
+* Går over til bruk av JWK(JSON Web Key) for signering i integrasjonspunkt - hentes fra et nytt endepunkt i SR.**
 
 **Mindre feilrettinger:**
 
