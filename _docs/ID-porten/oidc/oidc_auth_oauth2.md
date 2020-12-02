@@ -14,7 +14,7 @@ I dette scenariet logger en innbygger inn til en tjeneste, og tjenesten har beho
 
 Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke et API på vegne av seg selv.
 
-* Ved implisitt samtykke er det autentiseringshandlingen som i seg selv tolkes som det informerte samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV").  Vi bruker derfor begrepet *autentiseringsnær autorisasjon* om dette løsningsmønsteret.
+* Ved implisitt samtykke er det autentiseringshandlingen som i seg selv tolkes som samtykket ("Ved å logge inn i tjenesten godtar du at vi henter opplysninger om deg fra NAV").  Vi bruker derfor begrepet *autentiseringsnær autorisasjon* om dette løsningsmønsteret.
 
 * Ved eksplisitt samtykke er det brukeren selv som godkjenner om tjenesten får agere på dennes vegne opp mot APIet.  Vi bruker derfor begrepet *brukerstyrt datadeling* om dette løsningsmønsteret.
 
@@ -43,7 +43,7 @@ For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken mi
 
 Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_](oidc_protocol_scope.html).  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.   Dersom scopet har egenskapen `requires_user_consent` satt, vil ID-porten vise en enkel godkjennings-dialog til innbygger når autentisering er fullført.  Se eksempel under:
 
-![samtykkedialog](/felleslosninger/images/idporten/oidc/samtykkedialog2.png)
+![tilgangsdialog](/felleslosninger/images/idporten/oidc/samtykkedialog3.png)
 
 Selve autorisasjonen blir av ID-porten utlevert som et _access_token_ (datadelingstoken).   Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.  Dersom brukeren ikke godtar, vil det aktuelle scopet ikke bli inkludert i access_tokenet
 
