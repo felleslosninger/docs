@@ -9,7 +9,7 @@ sidebar: einnsyn_sidebar
 
 # Test og verifiser
 
-Etter installasjon av integrasjonspunktet og eInnsyn-klienten er ferdig er dere klare til å teste overføring mellom sak/arkiv-systemet deres og eInnsyn. For å logge inn trenger dere brukenavn og passord til admin i eInnsyn. Dersom dere ikke har fått brukernavn og passord, ta kontakt med servicedesk@digdir.no.
+Etter installasjon av integrasjonspunktet og eInnsyn-klienten er ferdig er dere klare til å teste overføring mellom sak/arkiv-systemet deres og eInnsyn. For å logge inn trenger dere brukenavn og passord til admin i eInnsyn. Dersom dere ikke har fått brukernavn og passord, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
 Første gang du logger inn til eInnsyn admin klikker du på «Glemt passord». Da kan du opprette et selvvalgt passord for adminbrukeren din i eInnsyn. Det kan ta noen minutter å motta e-posten for aktivering av brukerprofilen. Sjekk spamfilter i e-posten din dersom du ikke mottar e-posten innen 10 minutter. 
 
@@ -51,7 +51,7 @@ Søk frem journalpostene i [eInnsyn](https://einnsyn.no/) og søk innsyn. Send i
 4. Skjule virksomheten og verifisere at virksomheten forsvinner fra søket
 5. Opphev skjuling av virksomhet
 
-Når punktene over er utført, sender dere en e-post til servicedesk@digdir.no og verifiserer at eInnsyn fungerer tilfredsstillende i produksjon. Tilse også at bruksvilkår er akseptert og varslingspunkt er meldt inn til Digitaliseringsdirektoratet.
+Når punktene over er utført, sender dere en e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> og verifiserer at eInnsyn fungerer tilfredsstillende i produksjon. Tilse også at bruksvilkår er akseptert og varslingspunkt er meldt inn til Digitaliseringsdirektoratet.
 
 
  
