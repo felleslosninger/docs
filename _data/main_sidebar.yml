@@ -25,7 +25,7 @@ folders:
 
 - title: Kontaktregisteret
   folderitems:
-  
+
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /krr_index.html
 
@@ -35,9 +35,12 @@ folders:
   - title: Brukerspesifikt oppslag REST
     jurl: /brukerspesifikt_oppslag_krr_rest.html
 
+  - title: Testbrukere KRR
+    jurl: /krr_testbrukere.html
+
 - title: Digital postkasse
   folderitems:
-  
+
   - title: Om digital postkasse
     jurl: /digipost_index.html
 
@@ -105,4 +108,3 @@ related_resources_list:
 
 - title: Altinn Docs
   jurl: https://altinn.github.io/docs/
-
