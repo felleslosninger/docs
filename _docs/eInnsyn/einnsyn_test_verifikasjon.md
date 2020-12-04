@@ -9,7 +9,7 @@ sidebar: einnsyn_sidebar
 
 # Test og verifiser
 
-Etter installasjon av integrasjonspunktet og eInnsyn-klienten er ferdig er dere klare til å teste overføring mellom sak/arkiv-systemet deres og eInnsyn. For å teste så trenger dere brukenavn og passord til admin i eInnsyn. Dersom dere ikke har fått brukernavn og passord, ta kontakt med servicedesk@digdir.no.
+Etter installasjon av integrasjonspunktet og eInnsyn-klienten er ferdig er dere klare til å teste overføring mellom sak/arkiv-systemet deres og eInnsyn. For å logge inn trenger dere brukenavn og passord til admin i eInnsyn. Dersom dere ikke har fått brukernavn og passord, ta kontakt med servicedesk@digdir.no.
 
 Første gang du logger inn til eInnsyn admin klikker du på «Glemt passord». Da kan du opprette et selvvalgt passord for adminbrukeren din i eInnsyn. Det kan ta noen minutter å motta e-posten for aktivering av brukerprofilen. Sjekk spamfilter i e-posten din dersom du ikke mottar e-posten innen 10 minutter. 
 
@@ -23,7 +23,11 @@ Gjør et OEP-uttrekk til eInnsyn. I versjon 0 og 0+ er filkatalogen (inputDirect
 
 Mappen er definert som filkatalog( InputDirectory)i  eInnsyn-klient.xml
 
-EKS: <argument>-Dapplication.inputDirectory=C:\eInnsyndok</argument>
+EKS: 
+```
+<argument>-Dapplication.inputDirectory=C:\eInnsyndok</argument>
+```
+
 
 Du laster opp innhold til eInnsyn ved å kopiere ønsket dokumentet til denne katalogen.  eInnsynsklienten overvåker denne katalogen og laster automatisk opp dokumenter som ligger der til Integrasjonspunktet.
 
