@@ -22,6 +22,7 @@ Her kan du finne testbrukere for KRR som innehar følgende variabler:
 Kort oppsummering av brukerene
 
 | Fnr | Reservert | Status | Varslingsstatus | Mobil | Epost | Postkasse | Språk | Merknad |
+| - | - | - | - | - | - | - | - | - |
 | 01048800153 | NEI | AKTIV | KAN_IKKE_VARSLES | - |  - | - | - | Utgått kontaktinformasjon 18mnd regelen |
 | 01066100746 | NEI | AKTIV | KAN_IKKE_VARSLES | - | - | - | - | Utgått kontaktinformasjon 18mnd regelen |
 | 27129323960 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
