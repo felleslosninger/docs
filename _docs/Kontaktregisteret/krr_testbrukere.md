@@ -19,7 +19,9 @@ Her kan du finne testbrukere for KRR som innehar følgende variabler:
 - Reservert med digital postkasse
 - Reservert uten digital postkasse
 
-Kort oppsummering av brukerene
+
+Kort oppsummering av brukerene:
+
 
 | Fnr | Reservert | Status | Varslingsstatus | Mobil | Epost | Postkasse | Språk | Merknad |
 | - | - | - | - | - | - | - | - | - |
@@ -44,3 +46,4 @@ Kort oppsummering av brukerene
 | 29129318781 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | se | Språkvalg Samisk |
 
 For full oversikt over responsene kan du laste ned et excell-ark her:
+[oppslagstjenesten_testdata_med_forventet_respons_0.xlsx](assets\oppslagstjenesten_testdata_med_forventet_respons_0.xlsx)
