@@ -13,7 +13,7 @@ port: 4000
 format: web
 
 # the little icon that appears in the browser window's tab
-favicon: assets/difi_emplem_negativ.jpg
+favicon: assets/Favikon - Digdir.png
 
 ############# TOP NAVIGATION BAR ################
 
