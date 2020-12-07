@@ -4,13 +4,10 @@ folders:
 - title: ELMA user manual
   folderitems:
 
-  - title: Gjeldende
-    jurl: /elma_user_manual.html
-
-  - title: For Service Provider (Kommende)
+  - title: For Service Provider
     jurl: /elma_service_provider_user_manual.html
 
-  - title: For Access Point Provider (Kommende)
+  - title: For Access Point Provider
     jurl: /elma_access_point_provider_user_manual.html
 
 - title: ELMA documentation
@@ -34,7 +31,7 @@ folders:
 - title: REST API
   folderitems:
 
-  - title: Produksjon (smp.difi.no) (Kommer snart)
+  - title: Produksjon (smp.difi.no)
     jurl: https://smp.difi.no/rest/resources/docs/index.html
 
   - title: QA (test-smp.difi.no)
