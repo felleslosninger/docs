@@ -1,5 +1,5 @@
 ---
-title: KRR attributter
+title: Attributter i KRR
 description: KRR attributter
 summary:
 permalink: krr_attributter.html

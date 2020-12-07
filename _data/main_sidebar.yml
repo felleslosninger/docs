@@ -29,8 +29,8 @@ folders:
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /krr_index.html
 
-  - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /krr_attributter.html    
+  - title: Attributter i KRR
+    jurl: /krr_attributter.html
 
   - title: Oppslagstjenesten REST
     jurl: /oppslagstjenesten_rest.html
