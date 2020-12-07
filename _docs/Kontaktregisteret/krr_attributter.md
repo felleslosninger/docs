@@ -28,4 +28,4 @@ Her er en oversikt over attributtene som finnes i KRR og hvilken respons man kan
 | spraak | Bruker sitt foretrukne språk for kommunikasjon med det offentlige | nn, nb, en, se |
 | spraak_oppdatert | Sist gang språkvalg ble oppdatert | Angis som dato og klokkeslett |
 
-Du kan finne et utvalg testbrukere på siden [Testbrukere i KRR](krr_testbrukere.html).
+Du kan finne et utvalg testbrukere på siden [Testbrukere i KRR](krr_testbrukere.html)
