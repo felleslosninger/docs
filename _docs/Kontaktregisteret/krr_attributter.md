@@ -8,7 +8,7 @@ sidebar: main_sidebar
 product: KRR
 
 ---
-Her er en oversikt over attributtene som finnes i KRR og hvilken respons man kan forvente.
+Her er en oversikt over attributtene som finnes i KRR sitt REST API og hvilken respons man kan forvente.
 
 | Attributtnavn | Beskrivelse | Mulige responser |
 | - | - | - |
