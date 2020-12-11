@@ -21,7 +21,7 @@ sidebar: eformidling_install_sidebar
 - Standard tid før en melding som feiler og får en status LEVETID_UTLOPT er ca 24t. Den kan også overstyres. [Les mer her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#feilstatus-levetid_utlopt)
 - Integrasjonspunktet konverterer ikke originalformatet, men forventer PDF/docx dersom mimetype ikke er spesifisert i avsendersystemet.
 
-For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
+For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98)
 
 ### Sjekke status på forsendelser
 
