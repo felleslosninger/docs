@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 
 - DPV = Digital post til virksomheter. Eget brukernavn/passord. Brukernamn/passord opprettes av Altinn og passord mottas på SMS. [Mer](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpv-bruker)
 - DPF = Brukernavn/passord for både SvarUt og SvarInn (ulike). Begge settene med brukernavn/passord genereres/hentes på [https://svarut.ks.no/](https://svarut.ks.no/). [Veiledning finner du her](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpf-brukere-svarinn-og-svarut)
-- DPO = Digital post til offentlige virksomheter. Eget brukernavn/passord. [Opprettes selv](https://difi.github.io/eformidling/create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste) 
+- DPO = Digital post til offentlige virksomheter. Eget brukernavn/passord. [Opprettes selv](https://difi.github.io/felleslosninger/eformidling_create_users.html?h=opprette-dpo-bruker-altinn-formidlingstjeneste#opprette-dpo-bruker-altinn-formidlingstjeneste)   
 - DPI = Digital post til innbygger. Virksomhetssertifikatet benyttes. Ingen brukernavn/passord benyttes.
 - Virksomheten må ha et [virksomhetssertifikat](https://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html). Offentlig nøkkel sendes til Digitaliseringsdirektoratet. 
 - Integrasjonspunktet både sender og mottar meldinger.
