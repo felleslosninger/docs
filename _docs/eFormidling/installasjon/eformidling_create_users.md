@@ -145,6 +145,6 @@ Dette gjøres av Altinn etter atDigitaliseringsdirektoratet sender bestilling. F
 
 [Informasjonsskjema](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMjhUWVMxWk1OUkw0SDZXME9NVk8zOUEwNS4u)
 
-[Mer info](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
+[Mer info](http://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98)
 
 --- 
