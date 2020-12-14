@@ -64,7 +64,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | move-dpe-prod.servicebus.windows.net	 | 52.169.10.235:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
-| svarut.ks.no | 193.161.171.187:443 | - | DPF |
+| svarut.ks.no | 137.221.25.66 (ny 04.12.2020) | - | DPF |
 
 
 ---
