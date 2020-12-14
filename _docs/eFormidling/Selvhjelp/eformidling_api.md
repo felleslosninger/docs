@@ -45,19 +45,19 @@ Det er laget et grafisk brukergrensesnitt til integrasjonspunktet (tilgjengelig 
 
 Om en forsendelse timer ut eller feiler vil avsender bli varslet i løpet av 24 timer. Registrerte varslingspunkt vil få en email som ser slik ut:
 
- "Kjære VIRKSOMHETSNAVN
+ *-Kjære VIRKSOMHETSNAVN
  
- Følgande meldingar i eFormidling har feila.
+ -Følgande meldingar i eFormidling har feila.
           
- Tidspunkt for feil: 2020-07-09 09:18:19.323
- Tidspunkt opprettet: 2020-07-08 09:18:07.825
- Message-ID: 1cbe29fb-20ce-46d2-a774-6707034ba6d9
- Conversation-ID: 1cbe29fb-20ce-46d2-a774-6707034ba6d9
- Service identifier: DPO
- Status: LEVETID_UTLOPT
- Process-ID: urn:no:difi:profile:arkivmelding:administrasjon:ver1.0
- Sender: Avsenders orgnr
- Receiver: Mottakers orgnr"
+ -Tidspunkt for feil: 2020-07-09 09:18:19.323
+ -Tidspunkt opprettet: 2020-07-08 09:18:07.825
+ -Message-ID: 1cbe29fb-20ce-46d2-a774-6707034ba6d9
+ -Conversation-ID: 1cbe29fb-20ce-46d2-a774-6707034ba6d9
+ -Service identifier: DPO
+ -Status: LEVETID_UTLOPT
+ -Process-ID: urn:no:difi:profile:arkivmelding:administrasjon:ver1.0
+ -Sender: Avsenders orgnr
+ -Receiver: Mottakers orgnr*
 
 Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuelt sjekkes i .properties filen som ligger i integrasjonspunktmappen. 
   
