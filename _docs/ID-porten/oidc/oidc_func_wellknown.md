@@ -14,6 +14,9 @@ Metadata om ID-porten er tilgjengelig på vårt .well-known-endepunkt ihht. [Ope
 
 På endepunktet finner du lenke til vårt JWK-endepunkt, der  ID-portens signeringssertifikat publiseres.  Vi anbefaler kunder sterkt om å bruke endepunktet til dynamisk egen-konfigurasjon for å sikre kontinuerlig tjeneste-leveranse når ID-porten bytter signeringssertifikat.
 
+
+{% include_relative oidc_include_metadata.md %}
+
 |Miljø|URL|
 |-|-|
 |VER1|[https://oidc-ver1.difi.no/idporten-oidc-provider/.well-known/openid-configuration](https://oidc-ver1.difi.no/idporten-oidc-provider/.well-known/openid-configuration)|
