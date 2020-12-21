@@ -17,12 +17,12 @@ funksjonelle testmiljøet er det etablert noen kjøreregler for hvordan miljøet
 
 #### Kjøreregler for bruk av det funksjonelle testmiljøet:
 
-    Det skal kun brukes fiktive testdata i funksjonelt testmiljø. Ingen sporbare personopplysninger skal brukes.
-    Størrelsen på dokumenter, logoer og annet som brukes bør være som forventet i produksjon.
-    Alle forsendelser eldre enn 30 dager slettes automatisk fra funksjonelt testmiljø, unntak fra denne regelen kan avtales. 
-    Mengden brev som sendes innenfor en periode skal ligne produksjonsmønsteret. Unngå å sende veldig mange brev innenfor en kort periode med mindre det er planlagt trafikkmønster.
-    Det totale antallet brev som sendes over tid bør ikke være for høyt.
-    Brev bør fordeles til flere test-mottakere. Unngå å sende veldig mange brev til samme test-mottakere. 
+- Det skal kun brukes fiktive testdata i funksjonelt testmiljø. Ingen sporbare personopplysninger skal brukes.
+- Størrelsen på dokumenter, logoer og annet som brukes bør være som forventet i produksjon.
+- Alle forsendelser eldre enn 30 dager slettes automatisk fra funksjonelt testmiljø, unntak fra denne regelen kan avtales. 
+- Mengden brev som sendes innenfor en periode skal ligne produksjonsmønsteret. Unngå å sende veldig mange brev innenfor en kort periode med mindre det er planlagt trafikkmønster.
+- Det totale antallet brev som sendes over tid bør ikke være for høyt.
+- Brev bør fordeles til flere test-mottakere. Unngå å sende veldig mange brev til samme test-mottakere. 
 
 ### Ytelsestesting:
 
