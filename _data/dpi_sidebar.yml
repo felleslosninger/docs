@@ -150,7 +150,7 @@ folders:
       folderitems:
 
       - title: Postkasser til testbrukere
-        jurl: /sdp_pk_til_testbruker.html
+        jurl: /sdp_pk_til_testbruker_index.html
       - title: Integrasjonstest
         jurl: /sdp_integrasjonstest.html    
       - title: Beskrivelse av testmiljø
