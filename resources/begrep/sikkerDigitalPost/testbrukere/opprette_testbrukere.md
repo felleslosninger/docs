@@ -4,19 +4,20 @@ permalink: sdp_pk_til_testbruker_index.html
 sidebar: dpi_sidebar
 ---
 
-## Testbrukere for testing av Digital postkasse
+Merk! Testbrukere med rette egenskaper for testing av digital postkasse får en ved å sende en bestilling til servicedesk@digdir.no
 
 ### Digital postkasse i testmiljø krever at testbrukere:
 - Har gyldig eID på nivå 4
 - Er registrert i test-folkeregisteret
 - Er registrert i kontakt og reservasjonsregisteret
-Testbrukere med rette egenskaper får en ved å sende en bestilling til servicedesk@digdir.no 
-En kan også sjekke om testbrukere har rette egenskaper på denne måten:
+ 
+En kan sjekke om testbrukere har rette egenskaper på denne måten:
 
 ### eID på nivå 4 i testmiljøet:
 Testes på følgende måte:
 1.	Gå til brukerprofil i kontakt og reservasjonsregisteret: [https://brukerprofil-ver1.difi.no/minprofil/](https://brukerprofil-ver1.difi.no/minprofil/)
 2.	velg BankID i ID-porten (engangskode: otp, passord: qwer1234)
+
 Dersom innlogging med BankID med din testbruker ikke fungerer, så ta kontakt med Digitaliseringsdirektoratet på servicedesk@digdir.no.
 
 ### Finne ut om testbruker finnes i test-folkeregisteret og sjekke profil i kontakt og reservasjonsregisteret:
@@ -41,13 +42,16 @@ Logg på: [https://brukerprofil-ver1.difi.no/postkasse/](https://brukerprofil-ve
 ## Bytte postkasse for en testbruker:
 Det er fullt mulig for brukere ha å flere digitale postkasser for private tjenester, men en kan bare ha en postkasse for brev fra det offentlige. Det offentlige har inngått avtale med e-Boks og Digipost om å levere digital postkasse til innbyggere for brev fra det offentlige. Innbygger kan fritt velge mellom disse, og kan når som helst bytte mellom postkasseleverandørene. For å kunne bytte må bruker ha opprettet konto/postkasse hos begge leverandørene på forhånd. Bytte av offentlig postkasse i testmiljøet gjøres igjennom brukerprofilen i kontakt og reservasjonsregisteret.
 (Merk at alle forutsetninger beskrevet i kapitlene over må være på plass)
-Gå til brukerprofil i kontakt og reservasjonsregisteret: [https://brukerprofil-ver1.difi.no/minprofil/](https://brukerprofil-ver1.difi.no/minprofil/). Logg på og Velg/bytt postkasse.
+- Gå til brukerprofil i kontakt og reservasjonsregisteret: [https://brukerprofil-ver1.difi.no/minprofil/](https://brukerprofil-ver1.difi.no/minprofil/). Logg på og Velg/bytt postkasse.
+
 Merk: Dersom det står: "Velg på norge.no" så har du ikke husket å opprette en postkasse først og da vil du måtte gjøre det først.
  
 ## Vanlige spørsmål og problemstillinger
-jeg har valgt meg en postkasse men når jeg gjør oppslag i kontakt og reservasjonsregisteret får jeg tilbake status IKKE_REGISTRERT
-Som oftest skyldes dette en forveksling/blanding av de to funksjonelle testmiljøene til kontakt og reservasjonsregisteret.
-Oppslaget i kontakt og reservasjonsregisteret må gjøres mot verifikasjon1 miljøet, samme miljø som du bruker for å velge deg postkasse.
+Spørsmål: "jeg har valgt meg en postkasse men når jeg gjør oppslag i kontakt og reservasjonsregisteret får jeg tilbake status IKKE_REGISTRERT"
+
+Svar: Som oftest skyldes dette en forveksling/blanding av de to funksjonelle testmiljøene til kontakt og reservasjonsregisteret.
+Oppslaget i kontakt og reservasjonsregisteret må gjøres mot verifikasjon1-miljøet (ver1), samme miljø som du bruker for å velge deg postkasse.
+
 adressen til kontakt og reservasjonsregisteret må altså være:
-•	[https://kontaktinfo-ws-ver1.difi.no/kontaktinfo-external/ws-v5](https://kontaktinfo-ws-ver1.difi.no/kontaktinfo-external/ws-v5) 
+[https://kontaktinfo-ws-ver1.difi.no/kontaktinfo-external/ws-v5](https://kontaktinfo-ws-ver1.difi.no/kontaktinfo-external/ws-v5) 
 (merk "-ver1" i url'en både for lenken til oppslagstjenesten og brukerprofilen)
