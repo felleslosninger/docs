@@ -30,13 +30,13 @@ Testes på følgende måte:
 ## Opprett en digital postkasse på en testbruker
 En kan opprette postkasse på testbrukere på to ulike måter. Enten ved å registrere direkte hos hver enkelt postkasseleverandør, eller ved å benytte forenklet postkasseregistrering via KRR. Begge deler er fort gjort og består kun av noen få klikk pr bruker.
 
-### Alternativ 1: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
+##### Alternativ 1: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
 - E-boks: [http://demo2-www.e-boks.no](http://demo2-www.e-boks.no)
 - Digipost: [https://difitest.digipost.no](https://difitest.digipost.no)
 
 Logg på med BankID underveis i opprettelsesprosessen.
 
-### Alternativ 2: Forenklet postkasseregistrering via KRR
+##### Alternativ 2: Forenklet postkasseregistrering via KRR
 Logg på: [https://brukerprofil-ver1.difi.no/postkasse/](https://brukerprofil-ver1.difi.no/postkasse/), velg postkasse og følg instruksene. 
  
 ## Bytte postkasse for en testbruker:
