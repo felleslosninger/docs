@@ -47,9 +47,17 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 5. Trykk på "Andre med rettigheter til virksomheten"
 6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
 7. Søk på "Digdir" i søkefeltet på "Gi nye rettigheter"
-8. Velg "Selvbetjening av integrasjoner hos Digdir"
+8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten"
 9. Trykk på alle rettighetene
 10. Trykk på "Gi rettigheter"
+
+Tabell for tilgjengelige rettigheter:
+
+|**Rettighet**|**Funksjon**|
+| - | - |
+| Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere |
+| Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten |
+| Selvbetjening for leverandører i ID-porten/Maskinporten | Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer |
 
 Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
 
