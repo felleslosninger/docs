@@ -57,7 +57,9 @@ Tabell for tilgjengelige rettigheter:
 | - | - |
 | Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere |
 | Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten |
-| Selvbetjening for leverandører i ID-porten/Maskinporten | Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer |
+| Selvbetjening for leverandører i ID-porten/Maskinporten*| Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer |
+
+*NB! Selvbetjening for leverandører krever "Selvbetjening av integrasjoner..." i tillegg.
 
 Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
 
