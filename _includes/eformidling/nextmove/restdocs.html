@@ -1,163 +1,89 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Version 2.0.8">
+<meta name="author" content="Version 2.2.0">
 <title>NextMove API Specification</title>
 <link rel="stylesheet" href="assets/css/asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-
 .hidden {
-
     display: none;
-
 }
-
-
 
 .switch {
-
     border-width: 1px 1px 0 1px;
-
     border-style: solid;
-
     border-color: #7a2518;
-
     display: inline-block;
-
 }
-
-
 
 .switch--item {
-
     padding: 10px;
-
     background-color: #ffffff;
-
     color: #7a2518;
-
     display: inline-block;
-
     cursor: pointer;
-
 }
-
-
 
 .switch--item.selected {
-
     background-color: #7a2519;
-
     color: #ffffff;
-
 }
-
-
 
 </style>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-
 <script type="text/javascript">
-
 function addBlockSwitches() {
-
     $('.primary').each(function() {
-
         primary = $(this);
-
         createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
-
         primary.children('.title').remove();
-
     });
-
     $('.secondary').each(function(idx, node) {
-
         secondary = $(node);
-
         primary = findPrimary(secondary);
-
         switchItem = createSwitchItem(secondary, primary.children('.switch'));
-
         switchItem.content.addClass('hidden');
-
         findPrimary(secondary).append(switchItem.content);
-
         secondary.remove();
-
     });
-
 }
-
-
 
 function createBlockSwitch(primary) {
-
     blockSwitch = $('<div class="switch"></div>');
-
     primary.prepend(blockSwitch);
-
     return blockSwitch;
-
 }
-
-
 
 function findPrimary(secondary) {
-
     candidate = secondary.prev();
-
     while (!candidate.is('.primary')) {
-
         candidate = candidate.prev();
-
     }
-
     return candidate;
-
 }
-
-
 
 function createSwitchItem(block, blockSwitch) {
-
     blockName = block.children('.title').text();
-
     content = block.children('.content').first().append(block.next('.colist'));
-
     item = $('<div class="switch--item">' + blockName + '</div>');
-
     item.on('click', '', content, function(e) {
-
         $(this).addClass('selected');
-
         $(this).siblings().removeClass('selected');
-
         e.data.siblings('.content').addClass('hidden');
-
         e.data.removeClass('hidden');
-
     });
-
     blockSwitch.append(item);
-
     return {'item': item, 'content': content};
-
 }
-
-
 
 $(addBlockSwitches);
 
-
-
 </script>
-
 
 <style>.plusimageapply{
     list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T7XTsQkCQRAF0He1ybUhiAYHFmBkaGQFBpca2IAgYjNiEYqibKCB4t0yy026/Mdnd7ZSOFVh3mDABTPs+xr+a/DEA3NsupAu4J1bY4GE/kwOkEI7jHH9FnKBlDthVAIcUUeBLSa4RYAVlpFLvKNBG3nGM6Y4RBepL/c5H+wvZDd4AeooGhGCcrDIAAAAAElFTkSuQmCC);
@@ -179,7 +105,7 @@ $(addBlockSwitches);
 <div id="header">
 <h1>NextMove API Specification</h1>
 <div class="details">
-<span id="author" class="author">Version 2.0.8</span><br>
+<span id="author" class="author">Version 2.2.0</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -305,6 +231,16 @@ $(addBlockSwitches);
 <li><a href="#_example_1_get_conversation_by_messageid">Example 1 - Get conversation by messageId</a></li>
 <li><a href="#_example_2_conversation_not_found_2">Example 2 - Conversation not found</a></li>
 <li><a href="#_about_the_service_14">About the service</a></li>
+</ul>
+</li>
+<li><a href="#conversations-delete-by-id">Delete conversation by id</a>
+<ul class="sectlevel3">
+<li><a href="#_example_delete_conversation_by_id">Example: delete conversation by id</a></li>
+</ul>
+</li>
+<li><a href="#conversations-delete-by-message-id">Delete conversation by messageId</a>
+<ul class="sectlevel3">
+<li><a href="#_example_delete_conversation_by_messageid">Example: delete conversation by messageId</a></li>
 </ul>
 </li>
 <li><a href="#conversations-queue">Queued conversations</a>
@@ -552,14 +488,14 @@ $(addBlockSwitches);
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/987654321' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/987654321 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -567,14 +503,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 732
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 710
 
 {
   "capabilities" : [ {
@@ -608,14 +547,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/987654321?securityLevel=4' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/987654321?securityLevel=4 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -623,14 +562,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 732
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 710
 
 {
   "capabilities" : [ {
@@ -664,14 +606,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -679,14 +621,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1269
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1225
 
 {
   "capabilities" : [ {
@@ -742,14 +687,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345?securityLevel=4' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345?securityLevel=4 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -757,14 +702,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1269
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1225
 
 {
   "capabilities" : [ {
@@ -864,7 +812,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].postAddress</code></p></td>
@@ -961,7 +909,7 @@ After the message is successfully downloaded, it should be deleted using the <a 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/eformidling/messages-in.png" alt="messages in" width="630" height="345">
+<img src="images/eformidling/messages-in.png" alt="messages in" width="684" height="332">
 </div>
 </div>
 <div class="sect2">
@@ -976,14 +924,14 @@ The response is paged with a default page size of 10.</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -991,14 +939,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 2991
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 2888
 
 {
   "content" : [ {
@@ -1021,14 +972,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1059,14 +1010,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:einnsyn:xsd::publisering",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+        "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
         "type" : "publisering",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+          "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
           "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1084,24 +1035,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -1113,14 +1064,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in?serviceIdentifier=DPO' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in?serviceIdentifier=DPO HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1128,14 +1079,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1764
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1699
 
 {
   "content" : [ {
@@ -1158,14 +1112,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1183,24 +1137,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 1,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 1,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 1,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -1212,14 +1166,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in?sort=lastUpdated%2Casc' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in?sort=lastUpdated%2Casc HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1227,14 +1181,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Content-Length: 2993
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 2890
 
 {
   "content" : [ {
@@ -1257,14 +1214,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1295,14 +1252,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:einnsyn:xsd::publisering",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+        "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
         "type" : "publisering",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+          "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
           "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1320,24 +1277,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -1349,14 +1306,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in?page=3&amp;size=10' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in?page=3&amp;size=10 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1364,14 +1321,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1767
+Content-Length: 1702
 
 {
   "content" : [ {
@@ -1394,14 +1354,14 @@ Content-Length: 1767
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1419,24 +1379,24 @@ Content-Length: 1767
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 30,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 31,
   "last" : true,
   "totalPages" : 4,
-  "totalElements" : 31,
-  "size" : 10,
-  "number" : 3,
-  "first" : false,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 1,
+  "first" : false,
+  "size" : 10,
+  "number" : 3,
   "empty" : false
 }</code></pre>
 </div>
@@ -1477,7 +1437,7 @@ Content-Length: 1767
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>process</code></p></td>
@@ -1604,7 +1564,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -1791,14 +1751,14 @@ The message is now ready for download.</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/peek' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/peek HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1806,14 +1766,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1149
+Content-Length: 1111
 
 {
   "standardBusinessDocumentHeader" : {
@@ -1835,14 +1798,14 @@ Content-Length: 1149
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+      "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+        "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1863,14 +1826,14 @@ Content-Length: 1149
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/peek?serviceIdentifier=DPE' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/peek?serviceIdentifier=DPE HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -1878,14 +1841,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1149
+Content-Length: 1111
 
 {
   "standardBusinessDocumentHeader" : {
@@ -1907,14 +1873,14 @@ Content-Length: 1149
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+      "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+        "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1935,8 +1901,8 @@ Content-Length: 1149
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
-Content-Length: 238
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
+Content-Length: 231
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -2040,7 +2006,7 @@ Content-Type: application/json;charset=UTF-8
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>process</code></p></td>
@@ -2155,7 +2121,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -2256,14 +2222,14 @@ Please note, that the message must be deleted from the queue, using <a href="#me
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/ccad511a-883a-4dbc-8cf6-1e0a16d89cae' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/33e5d495-4497-4b48-a207-b6c05bb0a966' -i -X GET \
     -H 'Accept: application/vnd.etsi.asic-e+zip'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/ccad511a-883a-4dbc-8cf6-1e0a16d89cae HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/33e5d495-4497-4b48-a207-b6c05bb0a966 HTTP/1.1
 Accept: application/vnd.etsi.asic-e+zip
 Host: localhost:8080</code></pre>
 </div>
@@ -2272,27 +2238,26 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Content-Length: 1151
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Disposition: attachment; filename=asic.zip
+Content-Type: application/vnd.etsi.asic-e+zip
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Disposition: attachment; filename=asic.zip
-X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Type: application/vnd.etsi.asic-e+zip
+Content-Length: 1151
 
-PK  �xzO               test ���S���i��K4+\�ie���+&gt;��i��ʯ��_�}2E=^,�q	��|+49�|��܁
-�j����@3�zo�,gцy%�?�1�m���F��_����}��8�^]�}��T'��GL�iCڻ��ٌsߓRf^�%�/MHĉR��E�������+P8i1FK�"����޴���.tYڈ�S�HW�&gt;��D�Aׂ�L"�14�f}0����O��ϩ��z�N*D��;�k��w�k�k	�Z��YxoQ�N�$Qp��p�T���4j)v�t�e���cL�kR�%z�S��ib�	ea���Gu-�j���me���rG`�U5�����y�_��`�%&lt;'Ǟ&amp;X
-�?��) q��3��t�)h%l��u��g_�c�/�r��
-ƞ0��2T���E?�|���*
-(a�fk)Yn�{�!�:"�;-ycp����eJ� ~x44���cB:�ʣ@���B|�)v_�� ��Cب�@�(ư��Smu6�`�J��^�m��u����p�5V�]���`�x��p�]���ܛF1��B:k��{�?�`u"""4B��+��ˡ�n[wޔ_��n�B�w,�%�cl�`����9�u{R��&lt;������J���f�|�:T�5��Q������W�0f�۬`�I)E���͌��f�Y�He��ڈ�֗ �������y	�7����xF�ۮ���
-�@YRH	�3����ޣ�q��Q)|��p~)��*�
-s�@}v���k�!�n���. ��#8��T���"c��rqq��4�*Q`ՕG&lt;{�'�+�˽֘��
-&gt; 86\�wB��X��E�E�����[�&gt;GC�y��yB5��W�����g
-2����8��h��M�}~��wp��X�e�IhIH��G�=�g����&gt;�
-zor���I��~�צ��U�ʟ��%�
-��`c��~�r��v���D|b��	$r�I݄2���˻�����,��n�&gt;/����IE����W)�+���2o&amp;�f�C.Y"IPK��6     PK   �xzO��6                      testPK      2   7</code></pre>
+PK  �m(R               test ��K�W����,3�W��B+�ʭ�'�R�T����]G�KG��O�6;:��Vlg��a�h�p_�_�Ŵ_ꕑ�(]�\�'3W�D K8��&gt;�D"� e�f���3XI���ژ
+�)Gz�}F}B⛖u���,Fe�L�A�R��B4�lo=�4�V�c������wЯ2*��*�'�{3`�a���b���1�6�,�t��{ȿ�w]�bd��C���}&gt;�,A���޴�]��,(ЙU����U��h=ڼM6��Fq�\��u���j���&gt;8B�M�[��1�/�����)d[��B�"&amp;�6�� +�����4���mpl*u����Q�
+�\�8Q�)*e��W�XsZ@E�`c��}�x�|b�-Z-l8H�Z�i�6��t�6y��"��aXw�X������OF-�M�GP"\5H�z��R�7j}�ݭK�-�����S nAg��/Ӡ6��)hqL���~�F���,����w�ꊫu;iV\����&gt;isV	a��tWf&gt;��/v�9�����у��#V����'�V�V_���[�7KF璽���a�&gt;ƭ�M��&lt;� OL�/ZX�P7��eI��1��xW|�7R�~-ð,'��ؒ�!�ۈ
+ h�j����1X9a1�T�r~/7IL ���u;�]�k��㾙F+%(�$����z��Dl3v���Mt��
+�B���;g����6���{��Ս'$rժs# 1�LrW�Vd��KaA�it&amp;��N-qv_���-�����1K��u�[�&lt;�s�8w&gt;Ȇ��a���@�'N�-����dVT���P�o^mܸ�ǳvT����z�&lt;�?����)C��%�K�G��dcw�5�g��p��AI�
+�������m"3V��	�7���fr
+��ԦH&lt;�vj�)��_o1A�`�mm�V�JNe�a�lʸ����q(2G�a�����$������᳢o��O�ps��LC���^5;���=H��D�l��Y1"�����PK�i     PK   �m(R�i                      testPK      2   7</code></pre>
 </div>
 </div>
 </div>
@@ -2334,15 +2299,15 @@ zor���I��~�צ��U�ʟ��%�
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/ccad511a-883a-4dbc-8cf6-1e0a16d89cae' -i -X DELETE \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/33e5d495-4497-4b48-a207-b6c05bb0a966' -i -X DELETE \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/ccad511a-883a-4dbc-8cf6-1e0a16d89cae HTTP/1.1
-Accept: application/json;charset=UTF-8
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/33e5d495-4497-4b48-a207-b6c05bb0a966 HTTP/1.1
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -2350,14 +2315,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1186
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1148
 
 {
   "standardBusinessDocumentHeader" : {
@@ -2379,14 +2347,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2532,7 +2500,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -2618,7 +2586,7 @@ echoed back in a subsequent response.</p></td>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/eformidling/create-message.png" alt="create message" width="715" height="646">
+<img src="images/eformidling/create-message.png" alt="create message" width="777" height="622">
 </div>
 </div>
 <div class="sect2">
@@ -2632,14 +2600,14 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -2647,14 +2615,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 3429
+Content-Length: 3344
 
 {
   "content" : [ {
@@ -2677,14 +2648,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2715,14 +2686,14 @@ Content-Length: 3429
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "35fb972d-554f-47e4-a740-6bc5c113c1dc",
+        "instanceIdentifier" : "34064cdf-cbde-4996-b819-13177570dd31",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "0bc0f74e-92aa-4c43-92a7-e4cde9a5ed56",
+          "instanceIdentifier" : "75bf5e01-9bd6-4b64-ba72-b1b0843b28a9",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2742,7 +2713,8 @@ Content-Length: 3429
       "varsler" : {
         "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
         "smsTekst" : "A book must be the axe for the frozen sea within us."
-      }
+      },
+      "metadataFiler" : { }
     }
   } ],
   "pageable" : {
@@ -2751,24 +2723,24 @@ Content-Length: 3429
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -2780,14 +2752,14 @@ Content-Length: 3429
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out?serviceIdentifier=DPO' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out?serviceIdentifier=DPO HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -2795,14 +2767,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1764
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1699
 
 {
   "content" : [ {
@@ -2825,14 +2800,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2850,24 +2825,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 1,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 1,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 1,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -2879,14 +2854,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out?sort=lastUpdated%2Casc' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out?sort=lastUpdated%2Casc HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -2894,14 +2869,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 3431
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 3346
 
 {
   "content" : [ {
@@ -2924,14 +2902,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+        "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+          "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2962,14 +2940,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "35fb972d-554f-47e4-a740-6bc5c113c1dc",
+        "instanceIdentifier" : "34064cdf-cbde-4996-b819-13177570dd31",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "0bc0f74e-92aa-4c43-92a7-e4cde9a5ed56",
+          "instanceIdentifier" : "75bf5e01-9bd6-4b64-ba72-b1b0843b28a9",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2989,7 +2967,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "varsler" : {
         "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
         "smsTekst" : "A book must be the axe for the frozen sea within us."
-      }
+      },
+      "metadataFiler" : { }
     }
   } ],
   "pageable" : {
@@ -2998,24 +2977,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -3027,14 +3006,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out?page=3&amp;size=10' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out?page=3&amp;size=10 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -3042,14 +3021,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 2169
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 2122
 
 {
   "content" : [ {
@@ -3072,14 +3054,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "35fb972d-554f-47e4-a740-6bc5c113c1dc",
+        "instanceIdentifier" : "34064cdf-cbde-4996-b819-13177570dd31",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "0bc0f74e-92aa-4c43-92a7-e4cde9a5ed56",
+          "instanceIdentifier" : "75bf5e01-9bd6-4b64-ba72-b1b0843b28a9",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3099,7 +3081,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "varsler" : {
         "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
         "smsTekst" : "A book must be the axe for the frozen sea within us."
-      }
+      },
+      "metadataFiler" : { }
     }
   } ],
   "pageable" : {
@@ -3108,24 +3091,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 30,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 41,
   "last" : false,
   "totalPages" : 5,
-  "totalElements" : 41,
-  "size" : 10,
-  "number" : 3,
-  "first" : false,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 1,
+  "first" : false,
+  "size" : 10,
+  "number" : 3,
   "empty" : false
 }</code></pre>
 </div>
@@ -3170,7 +3153,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on service identifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
@@ -3293,7 +3276,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -3400,6 +3383,11 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.varsler</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Information on how the mailbox supplier should notify the Recipient of the new mail. Receiver overrides its own notification preferences</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.metadataFiler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map of metadatadocuments.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.digitalPostInfo.virkningsdato</code></p></td>
@@ -3520,15 +3508,15 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae HTTP/1.1
-Accept: application/json;charset=UTF-8
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966 HTTP/1.1
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -3536,14 +3524,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1186
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1148
 
 {
   "standardBusinessDocumentHeader" : {
@@ -3565,14 +3556,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3716,7 +3707,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -3849,8 +3840,8 @@ Business Document.</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -3871,13 +3862,13 @@ Business Document.</p>
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3895,9 +3886,9 @@ Business Document.</p>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 1126
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 1089
 Host: localhost:8080
 
 {
@@ -3920,13 +3911,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3944,14 +3935,17 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1186
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1148
 
 {
   "standardBusinessDocumentHeader" : {
@@ -3973,14 +3967,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4114,7 +4108,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
 Must not be null</p></td>
 </tr>
@@ -4303,7 +4297,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -4400,8 +4394,8 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -4422,13 +4416,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "35fb972d-554f-47e4-a740-6bc5c113c1dc",
+      "instanceIdentifier" : "34064cdf-cbde-4996-b819-13177570dd31",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "0bc0f74e-92aa-4c43-92a7-e4cde9a5ed56",
+        "instanceIdentifier" : "75bf5e01-9bd6-4b64-ba72-b1b0843b28a9",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4448,7 +4442,8 @@ echoed back in a subsequent response.</p></td>
     "varsler" : {
       "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
       "smsTekst" : "A book must be the axe for the frozen sea within us."
-    }
+    },
+    "metadataFiler" : { }
   }
 }'</code></pre>
 </div>
@@ -4457,9 +4452,9 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 1505
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 1484
 Host: localhost:8080
 
 {
@@ -4482,13 +4477,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "35fb972d-554f-47e4-a740-6bc5c113c1dc",
+      "instanceIdentifier" : "34064cdf-cbde-4996-b819-13177570dd31",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "0bc0f74e-92aa-4c43-92a7-e4cde9a5ed56",
+        "instanceIdentifier" : "75bf5e01-9bd6-4b64-ba72-b1b0843b28a9",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4508,7 +4503,8 @@ Host: localhost:8080
     "varsler" : {
       "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
       "smsTekst" : "A book must be the axe for the frozen sea within us."
-    }
+    },
+    "metadataFiler" : { }
   }
 }</code></pre>
 </div>
@@ -4517,14 +4513,17 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1565
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1543
 
 {
   "standardBusinessDocumentHeader" : {
@@ -4546,14 +4545,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "35fb972d-554f-47e4-a740-6bc5c113c1dc",
+      "instanceIdentifier" : "34064cdf-cbde-4996-b819-13177570dd31",
       "type" : "digital",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "0bc0f74e-92aa-4c43-92a7-e4cde9a5ed56",
+        "instanceIdentifier" : "75bf5e01-9bd6-4b64-ba72-b1b0843b28a9",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4573,7 +4572,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "varsler" : {
       "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
       "smsTekst" : "A book must be the axe for the frozen sea within us."
-    }
+    },
+    "metadataFiler" : { }
   }
 }</code></pre>
 </div>
@@ -4698,7 +4698,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
 Must not be null</p></td>
 </tr>
@@ -4806,7 +4806,13 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.varsler</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Information on how the mailbox supplier should notify the Recipient of the new mail. Receiver overrides its own notification preferences</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.metadataFiler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map of metadatadocuments.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.digitalPostInfo.virkningsdato</code></p></td>
@@ -4941,7 +4947,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -5035,6 +5041,11 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Information on how the mailbox supplier should notify the Recipient of the new mail. Receiver overrides its own notification preferences</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.metadataFiler</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map of metadatadocuments.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>digital.digitalPostInfo.virkningsdato</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varies</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date for when a message is to be made available to the Resident in the Resident&#8217;s mailbox. The document will be delivered to the mailbox before this time, but will not be visible / accessible to Citizen. Note that the field is only a DATE and cannot be controlled at the time. In practice, this means that the mail will be made available on the night of the business day and that the mailbox can spend all day accessing mail with the same effective date.</p></td>
@@ -5083,8 +5094,8 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -5105,13 +5116,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "da9b8068-732c-4b5b-b3e3-0cfea7924b6a",
+      "instanceIdentifier" : "ca51da00-7f59-4ee3-b338-ab5c4bb460c7",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "03bf336c-6fd3-4caf-b847-17aeb3ddcf79",
+        "instanceIdentifier" : "69029cc1-cabe-4f6e-8009-15783792a8ba",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5131,10 +5142,10 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 1550
 Host: localhost:8080
-Content-Length: 1589
 
 {
   "standardBusinessDocumentHeader" : {
@@ -5156,13 +5167,13 @@ Content-Length: 1589
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "da9b8068-732c-4b5b-b3e3-0cfea7924b6a",
+      "instanceIdentifier" : "ca51da00-7f59-4ee3-b338-ab5c4bb460c7",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "03bf336c-6fd3-4caf-b847-17aeb3ddcf79",
+        "instanceIdentifier" : "69029cc1-cabe-4f6e-8009-15783792a8ba",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5182,14 +5193,17 @@ Content-Length: 1589
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-Content-Length: 1649
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1609
 
 {
   "standardBusinessDocumentHeader" : {
@@ -5211,14 +5225,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "da9b8068-732c-4b5b-b3e3-0cfea7924b6a",
+      "instanceIdentifier" : "ca51da00-7f59-4ee3-b338-ab5c4bb460c7",
       "type" : "digital_dpv",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "03bf336c-6fd3-4caf-b847-17aeb3ddcf79",
+        "instanceIdentifier" : "69029cc1-cabe-4f6e-8009-15783792a8ba",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5354,7 +5368,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
 Must not be null</p></td>
 </tr>
@@ -5555,7 +5569,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -5662,8 +5676,8 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -5684,13 +5698,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "6cd9e1aa-779b-4f85-86ef-34c4a0c6f3a0",
+      "instanceIdentifier" : "23d84385-c53e-41d8-bce9-339637722e1f",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "3290d67e-855b-4637-96ef-85a6e091b059",
+        "instanceIdentifier" : "cbddeb27-4bb3-4ff4-bb18-72fbc27b26ba",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5708,7 +5722,6 @@ echoed back in a subsequent response.</p></td>
       "adresselinje4" : "",
       "postnummer" : "9999",
       "poststed" : "FJELL",
-      "landkode" : "NO",
       "land" : "Norway"
     },
     "utskriftsfarge" : "FARGE",
@@ -5722,11 +5735,11 @@ echoed back in a subsequent response.</p></td>
         "adresselinje4" : "",
         "postnummer" : "9999",
         "poststed" : "FJELL",
-        "landkode" : "NO",
         "land" : "Norway"
       },
       "returhaandtering" : "DIREKTE_RETUR"
-    }
+    },
+    "printinstruksjoner" : { }
   }
 }'</code></pre>
 </div>
@@ -5735,9 +5748,9 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 1861
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 1777
 Host: localhost:8080
 
 {
@@ -5760,13 +5773,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "6cd9e1aa-779b-4f85-86ef-34c4a0c6f3a0",
+      "instanceIdentifier" : "23d84385-c53e-41d8-bce9-339637722e1f",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "3290d67e-855b-4637-96ef-85a6e091b059",
+        "instanceIdentifier" : "cbddeb27-4bb3-4ff4-bb18-72fbc27b26ba",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5784,7 +5797,6 @@ Host: localhost:8080
       "adresselinje4" : "",
       "postnummer" : "9999",
       "poststed" : "FJELL",
-      "landkode" : "NO",
       "land" : "Norway"
     },
     "utskriftsfarge" : "FARGE",
@@ -5798,11 +5810,11 @@ Host: localhost:8080
         "adresselinje4" : "",
         "postnummer" : "9999",
         "poststed" : "FJELL",
-        "landkode" : "NO",
         "land" : "Norway"
       },
       "returhaandtering" : "DIREKTE_RETUR"
-    }
+    },
+    "printinstruksjoner" : { }
   }
 }</code></pre>
 </div>
@@ -5811,14 +5823,17 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1921
+Content-Length: 1836
 
 {
   "standardBusinessDocumentHeader" : {
@@ -5840,14 +5855,14 @@ Content-Length: 1921
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "6cd9e1aa-779b-4f85-86ef-34c4a0c6f3a0",
+      "instanceIdentifier" : "23d84385-c53e-41d8-bce9-339637722e1f",
       "type" : "print",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "3290d67e-855b-4637-96ef-85a6e091b059",
+        "instanceIdentifier" : "cbddeb27-4bb3-4ff4-bb18-72fbc27b26ba",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5865,7 +5880,6 @@ Content-Length: 1921
       "adresselinje4" : "",
       "postnummer" : "9999",
       "poststed" : "FJELL",
-      "landkode" : "NO",
       "land" : "Norway"
     },
     "utskriftsfarge" : "FARGE",
@@ -5879,11 +5893,11 @@ Content-Length: 1921
         "adresselinje4" : "",
         "postnummer" : "9999",
         "poststed" : "FJELL",
-        "landkode" : "NO",
         "land" : "Norway"
       },
       "returhaandtering" : "DIREKTE_RETUR"
-    }
+    },
+    "printinstruksjoner" : { }
   }
 }</code></pre>
 </div>
@@ -6008,7 +6022,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
 Must not be null</p></td>
 </tr>
@@ -6113,6 +6127,12 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.printinstruksjoner</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map of print instructions</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.navn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the recipient.</p></td>
@@ -6152,12 +6172,6 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.poststed</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">City / Postal area.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.landkode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Country code.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
 </tr>
 <tr>
@@ -6218,12 +6232,6 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.mottaker.poststed</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">City / Postal area.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.mottaker.landkode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Country code.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
 </tr>
 <tr>
@@ -6341,7 +6349,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -6430,6 +6438,11 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return address to be placed on the back of the envelope.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.printinstruksjoner</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map of print instructions</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.navn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the recipient.</p></td>
@@ -6463,11 +6476,6 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.poststed</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">City / Postal area.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.landkode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Country code.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker.land</code></p></td>
@@ -6520,11 +6528,6 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">City / Postal area.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.mottaker.landkode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Country code.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur.mottaker.land</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of country.</p></td>
@@ -6540,8 +6543,8 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -6562,13 +6565,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "5c20301d-66be-4756-81ea-a7d33e6f1dc2",
+      "instanceIdentifier" : "185ab57e-621e-425b-9c14-b961ff13a3ab",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "67e3b342-33da-4941-a827-d6beb2fb226c",
+        "instanceIdentifier" : "04bcf701-9b50-4b60-b85b-8e5bc0367416",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6587,9 +6590,9 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 1130
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 1092
 Host: localhost:8080
 
 {
@@ -6612,13 +6615,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "5c20301d-66be-4756-81ea-a7d33e6f1dc2",
+      "instanceIdentifier" : "185ab57e-621e-425b-9c14-b961ff13a3ab",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "67e3b342-33da-4941-a827-d6beb2fb226c",
+        "instanceIdentifier" : "04bcf701-9b50-4b60-b85b-8e5bc0367416",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6637,14 +6640,17 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1190
+Content-Length: 1151
 
 {
   "standardBusinessDocumentHeader" : {
@@ -6666,14 +6672,14 @@ Content-Length: 1190
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "5c20301d-66be-4756-81ea-a7d33e6f1dc2",
+      "instanceIdentifier" : "185ab57e-621e-425b-9c14-b961ff13a3ab",
       "type" : "innsynskrav",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "67e3b342-33da-4941-a827-d6beb2fb226c",
+        "instanceIdentifier" : "04bcf701-9b50-4b60-b85b-8e5bc0367416",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6808,7 +6814,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
 Must not be null</p></td>
 </tr>
@@ -7003,7 +7009,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -7105,8 +7111,8 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -7127,13 +7133,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+      "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+        "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7151,9 +7157,9 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 1089
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 1052
 Host: localhost:8080
 
 {
@@ -7176,13 +7182,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+      "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+        "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7200,14 +7206,17 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1149
+Content-Length: 1111
 
 {
   "standardBusinessDocumentHeader" : {
@@ -7229,14 +7238,14 @@ Content-Length: 1149
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "950b4598-f7f0-44c1-aa2b-82989be4660c",
+      "instanceIdentifier" : "867a0791-89ba-4354-9487-436759d9e559",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "7c42787d-ff10-4ab1-b29b-178a1ed372d4",
+        "instanceIdentifier" : "c4691b21-b41e-4100-8583-46bd0fdc5012",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7370,7 +7379,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove document type.
 Must not be null</p></td>
 </tr>
@@ -7559,7 +7568,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -7638,8 +7647,8 @@ echoed back in a subsequent response.</p></td>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 400 Bad Request
-Content-Length: 259
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
+Content-Length: 252
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -7714,8 +7723,8 @@ Content-Type: application/json;charset=UTF-8
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 400 Bad Request
-Content-Type: application/json;charset=UTF-8
-Content-Length: 684
+Content-Type: application/json
+Content-Length: 668
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -7842,22 +7851,22 @@ Content-Length: 684
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae' -i -X PUT \
-    -H 'Accept: application/json;charset=UTF-8' \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966' -i -X PUT \
+    -H 'Content-Type: text/plain;charset=UTF-8' \
     -H 'Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt' \
-    -H 'Content-Type: text/plain' \
+    -H 'Accept: application/json' \
     -d 'Before the law sits a gatekeeper. To this gatekeeper comes a man from the country who asks to gain entry into the law...'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae HTTP/1.1
-Accept: application/json;charset=UTF-8
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966 HTTP/1.1
+Content-Type: text/plain;charset=UTF-8
 Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt
+Accept: application/json
 Content-Length: 120
 Host: localhost:8080
-Content-Type: text/plain
 
 Before the law sits a gatekeeper. To this gatekeeper comes a man from the country who asks to gain entry into the law...</code></pre>
 </div>
@@ -7866,12 +7875,15 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-X-XSS-Protection: 1; mode=block
-Expires: 0
-X-Frame-Options: DENY
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -7940,15 +7952,15 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966' -i -X POST \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae HTTP/1.1
-Accept: application/json;charset=UTF-8
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966 HTTP/1.1
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -7956,12 +7968,15 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-X-XSS-Protection: 1; mode=block
-Expires: 0
-X-Frame-Options: DENY
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -8034,8 +8049,8 @@ For larger messages, please use the following combination:
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/multipart' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
-    -H 'Content-Type: multipart/form-data' \
+    -H 'Content-Type: multipart/form-data;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -F 'sbd={
   "standardBusinessDocumentHeader" : {
     "headerVersion" : "1.0",
@@ -8056,13 +8071,13 @@ For larger messages, please use the following combination:
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8073,7 +8088,7 @@ For larger messages, please use the following combination:
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
   }
-};type=application/json;charset=UTF-8' \
+};type=application/json' \
     -F 'Before The Law=@before_the_law.txt;type=text/plain'</code></pre>
 </div>
 </div>
@@ -8081,13 +8096,13 @@ For larger messages, please use the following combination:
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/multipart HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Type: multipart/form-data; boundary=6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
+Content-Type: multipart/form-data;charset=UTF-8; boundary=6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
+Accept: application/json
 Host: localhost:8080
 
 --6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
 Content-Disposition: form-data; name=sbd
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
 
 {
   "standardBusinessDocumentHeader" : {
@@ -8109,13 +8124,13 @@ Content-Type: application/json;charset=UTF-8
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8139,14 +8154,17 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1186
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1148
 
 {
   "standardBusinessDocumentHeader" : {
@@ -8168,14 +8186,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "ccad511a-883a-4dbc-8cf6-1e0a16d89cae",
+      "instanceIdentifier" : "33e5d495-4497-4b48-a207-b6c05bb0a966",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "72acd0ca-aaa4-463f-ae47-0617f1c6ae15",
+        "instanceIdentifier" : "dc6e4641-fed2-430c-88b9-54d21a90737e",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8326,7 +8344,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
+in this field. Currently NextMove supports the following types: status, arkivmelding_kvittering, arkivmelding, avtalt, digital, digital_dpv, print, einnsyn_kvittering, innsynskrav, publisering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -8408,15 +8426,15 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae' -i -X DELETE \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966' -i -X DELETE \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/ccad511a-883a-4dbc-8cf6-1e0a16d89cae HTTP/1.1
-Accept: application/json;charset=UTF-8
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/33e5d495-4497-4b48-a207-b6c05bb0a966 HTTP/1.1
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -8424,12 +8442,15 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-X-XSS-Protection: 1; mode=block
-Expires: 0
-X-Frame-Options: DENY
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -8476,14 +8497,14 @@ The response is paged with a default page size of 10.</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -8491,20 +8512,23 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 2181
+Content-Length: 2110
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "21fd76ec-fa0f-4071-80a9-52aefea07122",
-    "messageId" : "10b9d8b1-46c9-4cc0-ac9a-4501e76176c7",
+    "conversationId" : "ccaa3005-a5fd-4e10-ba1e-1609ee6318fa",
+    "messageId" : "fef13316-fd44-42ef-b1b5-2fb5c73ad8a7",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8525,8 +8549,8 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "cba0fc0b-46c6-43a3-bcd5-04a9d746ff89",
-    "messageId" : "923fcbd0-a6bf-48a6-ac38-0db82177d985",
+    "conversationId" : "3b382d65-adb6-463e-8a71-59b7e0db6674",
+    "messageId" : "9be92af2-5ab7-4f7f-bebd-476bf52ce741",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -8552,24 +8576,24 @@ Content-Length: 2181
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -8581,14 +8605,14 @@ Content-Length: 2181
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations?serviceIdentifier=DPO' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations?serviceIdentifier=DPO HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -8596,20 +8620,23 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1350
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1301
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "88f3dacb-91d9-4b9a-8c14-e28e99a3e906",
-    "messageId" : "25ed66b6-5852-4b5e-96cb-533c0b2bbe67",
+    "conversationId" : "1fade058-56c1-4bc2-9d26-92966f37267d",
+    "messageId" : "706b3055-ad50-4893-ab21-5b05232ed2b2",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8635,24 +8662,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 1,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 1,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 1,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -8664,14 +8691,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations?sort=lastUpdated%2Casc' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations?sort=lastUpdated%2Casc HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -8679,20 +8706,23 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1350
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1301
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "d907eb4c-f72c-48e7-9964-33bb3e8c3f21",
-    "messageId" : "05624375-6e26-4439-af92-2cf7b7112882",
+    "conversationId" : "3d4ca24c-b8ff-4ad2-b100-2fd78d349476",
+    "messageId" : "55b61cef-17b0-4c73-8780-5ec82d2ba468",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -8718,24 +8748,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 1,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 1,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 1,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -8747,14 +8777,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations?page=3&amp;size=10' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations?page=3&amp;size=10 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -8762,20 +8792,23 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 1336
+Content-Length: 1287
 
 {
   "content" : [ {
     "id" : 56,
-    "conversationId" : "ba1d671b-161f-45f6-9b6d-765032099db2",
-    "messageId" : "62936146-67b6-45ed-9db5-4944283660eb",
+    "conversationId" : "ffb1e09e-6cd8-4b4a-aec8-df180e528ae6",
+    "messageId" : "f0cc7809-9ddb-4009-b55e-ea608e44b0db",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -8801,24 +8834,24 @@ Content-Length: 1336
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 30,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 31,
   "last" : true,
   "totalPages" : 4,
-  "totalElements" : 31,
-  "size" : 10,
-  "number" : 3,
-  "first" : false,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 1,
+  "first" : false,
+  "size" : 10,
+  "number" : 3,
   "empty" : false
 }</code></pre>
 </div>
@@ -8850,8 +8883,16 @@ Content-Length: 1336
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter on conversationId</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>receiver</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on receiver (as ISO-6523)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>receiverIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter on receiverIdentifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sender</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on sender (as ISO-6523)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>senderIdentifier</code></p></td>
@@ -8983,7 +9024,7 @@ Content-Length: 1336
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses</code></p></td>
@@ -9113,14 +9154,14 @@ The response is paged with a default page size of 10</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/49' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/49 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -9128,19 +9169,22 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 802
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 780
 
 {
   "id" : 49,
-  "conversationId" : "b00753e9-1662-4cd6-8501-191aa2be118c",
-  "messageId" : "61211c39-a6c1-495a-b7ab-d594343a13d9",
+  "conversationId" : "4abdd68c-c536-49e4-b70c-16bb70ac5596",
+  "messageId" : "0a05f487-6c9b-4fea-9bdc-79d4db197021",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9169,8 +9213,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
-Content-Type: application/json;charset=UTF-8
-Content-Length: 277
+Content-Type: application/json
+Content-Length: 270
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -9355,7 +9399,7 @@ Content-Length: 277
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses</code></p></td>
@@ -9399,15 +9443,15 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/33c910ee-82d6-4928-9a5a-6dd96516d8e6' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/82f54dff-75b6-4431-a6c2-309c940786f4' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/33c910ee-82d6-4928-9a5a-6dd96516d8e6 HTTP/1.1
-Accept: application/json;charset=UTF-8
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/82f54dff-75b6-4431-a6c2-309c940786f4 HTTP/1.1
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -9415,19 +9459,22 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 802
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 780
 
 {
   "id" : 49,
-  "conversationId" : "3ba6f0fc-0887-45b3-bd18-0e50873e7e83",
-  "messageId" : "33c910ee-82d6-4928-9a5a-6dd96516d8e6",
+  "conversationId" : "6a7070f3-08b5-4f02-90e5-cec1a74b34de",
+  "messageId" : "82f54dff-75b6-4431-a6c2-309c940786f4",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9456,8 +9503,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
-Content-Length: 362
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
+Content-Length: 355
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -9546,7 +9593,7 @@ Content-Type: application/json;charset=UTF-8
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageId</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The messageId. Typically a UUID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The messageId. Typically an UUID.</p></td>
 </tr>
 </tbody>
 </table>
@@ -9642,7 +9689,7 @@ Content-Type: application/json;charset=UTF-8
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses</code></p></td>
@@ -9676,6 +9723,84 @@ Content-Type: application/json;charset=UTF-8
 </div>
 </div>
 <div class="sect2">
+<h3 id="conversations-delete-by-id">Delete conversation by id</h3>
+<div class="paragraph">
+<p>This service is used to delete a conversation based on its database id.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_delete_conversation_by_id">Example: delete conversation by id</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/42' -i -X DELETE \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/conversations/42 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="conversations-delete-by-message-id">Delete conversation by messageId</h3>
+<div class="paragraph">
+<p>This service is used to delete a conversation based on its messageId.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_delete_conversation_by_messageid">Example: delete conversation by messageId</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/5a4aa76b-7c71-41d1-b235-924b20ee7b80' -i -X DELETE \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/conversations/messageId/5a4aa76b-7c71-41d1-b235-924b20ee7b80 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="conversations-queue">Queued conversations</h3>
 <div class="paragraph">
 <p>The service is used to get all conversations with not-finished state.
@@ -9687,14 +9812,14 @@ The response is paged with a default page size of 10</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/queue' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/queue HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -9702,20 +9827,23 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 2181
+Content-Length: 2110
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "75cd1d51-c984-4bdb-a0ef-4b813c44ded7",
-    "messageId" : "1319ca22-f2bb-412d-83f4-f6494ef15867",
+    "conversationId" : "91051f76-a63a-4658-a7a0-d6d6143346dd",
+    "messageId" : "ccd27e09-332f-4456-b320-392d1ea9f6c4",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
@@ -9736,8 +9864,8 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "c1e4ef0c-9baf-49e0-b1c1-f43c32685722",
-    "messageId" : "9df6d298-551a-48d4-aa8f-27b714fe5c51",
+    "conversationId" : "168f07c5-ac40-4cfe-ab0b-1cf665d8a584",
+    "messageId" : "9e304352-4249-4014-8dc1-d369929e69a3",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
@@ -9763,24 +9891,24 @@ Content-Length: 2181
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -9909,7 +10037,7 @@ Content-Length: 2181
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPFIO, DPE, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses</code></p></td>
@@ -10044,14 +10172,14 @@ The response is paged with a default page size of 10.</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -10059,14 +10187,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1044
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1001
 
 {
   "content" : [ {
@@ -10074,17 +10205,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
     "status" : "MOTTATT",
     "description" : "Mottatt",
+    "convId" : 2,
     "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "convId" : 2
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
   }, {
     "id" : 7,
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
     "status" : "LEVERT",
     "description" : "Levert",
+    "convId" : 4,
     "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
-    "convId" : 4
+    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
   } ],
   "pageable" : {
     "sort" : {
@@ -10092,24 +10223,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -10121,14 +10252,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses?messageId=1cc3fb67-b776-4730-b017-1028b86a8b8b&amp;status=MOTTATT' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses?messageId=1cc3fb67-b776-4730-b017-1028b86a8b8b&amp;status=MOTTATT HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -10136,14 +10267,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 774
+Content-Length: 739
 
 {
   "content" : [ {
@@ -10151,9 +10285,9 @@ Content-Length: 774
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
     "status" : "MOTTATT",
     "description" : "Mottatt",
+    "convId" : 2,
     "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "convId" : 2
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
   } ],
   "pageable" : {
     "sort" : {
@@ -10161,24 +10295,24 @@ Content-Length: 774
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 1,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 1,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 1,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -10190,14 +10324,14 @@ Content-Length: 774
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses?sort=lastUpdated%2Casc' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses?sort=lastUpdated%2Casc HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -10205,14 +10339,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 1044
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 1001
 
 {
   "content" : [ {
@@ -10220,17 +10357,17 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
     "status" : "LEVERT",
     "description" : "Levert",
+    "convId" : 4,
     "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
-    "convId" : 4
+    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
   }, {
     "id" : 1,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
     "status" : "MOTTATT",
     "description" : "Mottatt",
+    "convId" : 2,
     "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "convId" : 2
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
   } ],
   "pageable" : {
     "sort" : {
@@ -10238,24 +10375,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -10267,14 +10404,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses?page=3&amp;size=10' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses?page=3&amp;size=10 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -10282,14 +10419,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 775
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 740
 
 {
   "content" : [ {
@@ -10297,9 +10437,9 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
     "status" : "LEVERT",
     "description" : "Levert",
+    "convId" : 4,
     "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
-    "convId" : 4
+    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
   } ],
   "pageable" : {
     "sort" : {
@@ -10307,24 +10447,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 30,
-    "pageSize" : 10,
     "pageNumber" : 3,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 30,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 31,
   "last" : true,
   "totalPages" : 4,
-  "totalElements" : 31,
-  "size" : 10,
-  "number" : 3,
-  "first" : false,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 1,
+  "first" : false,
+  "size" : 10,
+  "number" : 3,
   "empty" : false
 }</code></pre>
 </div>
@@ -10539,14 +10679,14 @@ The response is paged with a default page size of 10</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses/1cc3fb67-b776-4730-b017-1028b86a8b8b' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses/1cc3fb67-b776-4730-b017-1028b86a8b8b HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -10554,14 +10694,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 774
+Content-Length: 739
 
 {
   "content" : [ {
@@ -10569,9 +10712,9 @@ Content-Length: 774
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
     "status" : "MOTTATT",
     "description" : "Mottatt",
+    "convId" : 2,
     "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "convId" : 2
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
   } ],
   "pageable" : {
     "sort" : {
@@ -10579,24 +10722,24 @@ Content-Length: 774
       "unsorted" : false,
       "empty" : false
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 1,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 1,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : true,
     "unsorted" : false,
     "empty" : false
   },
   "numberOfElements" : 1,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -10799,14 +10942,14 @@ Content-Length: 774
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses/peek' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses/peek HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -10814,23 +10957,26 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Content-Length: 254
+Content-Length: 246
 
 {
   "id" : 1,
   "lastUpdate" : "2019-11-05T12:04:34+02:00",
   "status" : "MOTTATT",
   "description" : "Mottatt",
+  "convId" : 2,
   "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-  "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-  "convId" : 2
+  "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
 }</code></pre>
 </div>
 </div>
@@ -10841,8 +10987,8 @@ Content-Length: 254
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
-Content-Type: application/json;charset=UTF-8
-Content-Length: 235
+Content-Type: application/json
+Content-Length: 228
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -11043,8 +11189,8 @@ Content-Length: 235
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://your.pushendpoint.com/push' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "event" : "ping"
@@ -11055,10 +11201,10 @@ Content-Length: 235
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /push HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: your.pushendpoint.com
-Content-Length: 70
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 67
+Host: your.pushendpoint.com
 
 {
   "createdTs" : "2019-03-25T12:38:23+01:00",
@@ -11108,14 +11254,14 @@ Content-Type: application/json;charset=UTF-8
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://your.pushendpoint.com/push' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "9ab5d9f3-47d7-4ff3-bcb1-ec2962e2f53f",
-  "conversationId" : "f2ed0019-6d35-48d7-9940-78f7169333cd",
+  "messageId" : "a4772676-7424-4313-b1e7-5e56e9f52076",
+  "conversationId" : "7e689698-dc29-4958-a4f7-2947d7d50996",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11127,17 +11273,17 @@ Content-Type: application/json;charset=UTF-8
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /push HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: your.pushendpoint.com
-Content-Length: 390
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 380
+Host: your.pushendpoint.com
 
 {
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "9ab5d9f3-47d7-4ff3-bcb1-ec2962e2f53f",
-  "conversationId" : "f2ed0019-6d35-48d7-9940-78f7169333cd",
+  "messageId" : "a4772676-7424-4313-b1e7-5e56e9f52076",
+  "conversationId" : "7e689698-dc29-4958-a4f7-2947d7d50996",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11240,14 +11386,14 @@ The response is paged with a default page size of 10.</p>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/subscriptions HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -11255,14 +11401,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 974
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 933
 
 {
   "content" : [ {
@@ -11286,24 +11435,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 0,
-    "pageSize" : 10,
     "pageNumber" : 0,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 10,
+    "offset" : 0,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 1,
-  "totalElements" : 2,
-  "size" : 10,
-  "number" : 0,
-  "first" : true,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 2,
+  "first" : true,
+  "size" : 10,
+  "number" : 0,
   "empty" : false
 }</code></pre>
 </div>
@@ -11315,14 +11464,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions?page=1&amp;size=1' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/subscriptions?page=1&amp;size=1 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -11330,14 +11479,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Length: 727
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 693
 
 {
   "content" : [ {
@@ -11354,24 +11506,24 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
       "unsorted" : true,
       "empty" : true
     },
-    "offset" : 1,
-    "pageSize" : 1,
     "pageNumber" : 1,
-    "unpaged" : false,
-    "paged" : true
+    "pageSize" : 1,
+    "offset" : 1,
+    "paged" : true,
+    "unpaged" : false
   },
+  "totalElements" : 2,
   "last" : true,
   "totalPages" : 2,
-  "totalElements" : 2,
-  "size" : 1,
-  "number" : 1,
-  "first" : false,
   "sort" : {
     "sorted" : false,
     "unsorted" : true,
     "empty" : true
   },
   "numberOfElements" : 1,
+  "first" : false,
+  "size" : 1,
+  "number" : 1,
   "empty" : false
 }</code></pre>
 </div>
@@ -11559,14 +11711,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions/84' -i -X GET \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/subscriptions/84 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -11574,14 +11726,17 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-Content-Length: 230
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 223
 
 {
   "id" : 84,
@@ -11600,8 +11755,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
-Content-Type: application/json;charset=UTF-8
-Content-Length: 276
+Content-Type: application/json
+Content-Length: 269
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -11732,8 +11887,8 @@ Creating a webhook for each message is considered bad practise, and can lead to 
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions' -i -X POST \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
@@ -11747,9 +11902,9 @@ Creating a webhook for each message is considered bad practise, and can lead to 
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/subscriptions HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 216
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 210
 Host: localhost:8080
 
 {
@@ -11765,14 +11920,17 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-Content-Length: 230
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Content-Type: application/json
+X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-X-Content-Type-Options: nosniff
-Content-Type: application/json;charset=UTF-8
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-Length: 223
 
 {
   "id" : 84,
@@ -11793,10 +11951,10 @@ of such a ping message:</p>
 <div class="title">Ping event</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /push HTTP/1.1
-Accept: application/json;charset=UTF-8
-Host: your.pushendpoint.com
-Content-Length: 70
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 67
+Host: your.pushendpoint.com
 
 {
   "createdTs" : "2019-03-25T12:38:23+01:00",
@@ -11857,8 +12015,8 @@ Content-Type: application/json;charset=UTF-8
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 400 Bad Request
-Content-Type: application/json;charset=UTF-8
-Content-Length: 576
+Content-Type: application/json
+Content-Length: 560
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
@@ -12002,8 +12160,8 @@ Must not be null</p></td>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions/84' -i -X PUT \
-    -H 'Accept: application/json;charset=UTF-8' \
     -H 'Content-Type: application/json;charset=UTF-8' \
+    -H 'Accept: application/json' \
     -d '{
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
@@ -12017,9 +12175,9 @@ Must not be null</p></td>
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/subscriptions/84 HTTP/1.1
-Accept: application/json;charset=UTF-8
-Content-Length: 216
 Content-Type: application/json;charset=UTF-8
+Accept: application/json
+Content-Length: 210
 Host: localhost:8080
 
 {
@@ -12035,12 +12193,15 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-X-XSS-Protection: 1; mode=block
-Expires: 0
-X-Frame-Options: DENY
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 </div>
@@ -12112,14 +12273,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions/84' -i -X DELETE \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/subscriptions/84 HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -12127,12 +12288,15 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-X-XSS-Protection: 1; mode=block
-Expires: 0
-X-Frame-Options: DENY
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 </div>
@@ -12148,14 +12312,14 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 <div class="title">Curl</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions' -i -X DELETE \
-    -H 'Accept: application/json;charset=UTF-8'</code></pre>
+    -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/subscriptions HTTP/1.1
-Accept: application/json;charset=UTF-8
+Accept: application/json
 Host: localhost:8080</code></pre>
 </div>
 </div>
@@ -12163,12 +12327,15 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Pragma: no-cache
-X-XSS-Protection: 1; mode=block
-Expires: 0
-X-Frame-Options: DENY
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY</code></pre>
 </div>
 </div>
 </div>
@@ -12178,7 +12345,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-26 14:00:27 +0100
+Last updated 2020-10-20 11:32:58 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
