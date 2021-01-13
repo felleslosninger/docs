@@ -46,8 +46,8 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 4. Trykk på "Profil"
 5. Trykk på "Andre med rettigheter til virksomheten"
 6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
-7. Søk på "Digdir" i søkefeltet på "Gi nye rettigheter"
-8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten"
+7. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
+8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten" (Se tabell under for forklaring av rettighetene)
 9. Trykk på alle rettighetene
 10. Trykk på "Gi rettigheter"
 
