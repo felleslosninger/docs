@@ -240,6 +240,8 @@ spec:
           value: "brukernavn"
         - name: DIFI_MOVE_DPO_PASSWORD
           value: "passord"
+        - name: DIFI_MOVE_NEXTMOVE_USE_DB_PERSISTENCE
+          value: "true"
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:postgresql://postgresql.default.svc.cluster.local:5432/postgres"
         - name: SPRING_DATASOURCE_USERNAME
