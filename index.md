@@ -1,5 +1,5 @@
 ---
-title: "Digdir Docs"
+title: "Fellesløsninger"
 permalink: index.html
 sidebar: main_sidebar
 layout: LandingCard
