@@ -1,5 +1,5 @@
 ---
-title: "Teknisk dokumentasjon av fellesløsninger"
+title: "Digdir Docs - Teknisk dokumentasjon av fellesløsninger"
 permalink: index.html
 sidebar: main_sidebar
 layout: LandingCard
