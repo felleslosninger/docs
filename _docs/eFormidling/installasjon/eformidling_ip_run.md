@@ -16,7 +16,7 @@ Integrasjonspunktet kan også installeres som en tjeneste på server. For å gj�
 Dokumentasjonen på programvaren du trenger ligger [på github](https://github.com/kohsuke/winsw). Du trenger to filer: .exe -filen fra dette programmet og en egen .xml-fil for å fortelle .exe -filen hvilke innstillinger som skal brukes. Dette er samme konseptet som [einnsyn-klient installasjonen er basert på](https://difi.github.io/felleslosninger/einnsyn_index.html). 
 
 1. Last ned Winsw.exe [her](https://github.com/kohsuke/winsw/releases). Mer informasjon om hvilken versjon du skal velge står [her: Supported .NET versions](https://github.com/kohsuke/winsw#user-content-supported-net-versions). Om du er usikker på hvilken .NET versjon du har, [les her](https://support.microsoft.com/nb-no/help/318785/how-to-determine-which-versions-and-service-pack-levels-of-the-microso)
-2. Last ned konfigurasjonsfila vår for [testmiljø](/felleslosninger/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø](docs.digdir.no/felleslosninger/resources/eformidling/integrasjonspunkt-prod.xml) <!-- desse er korrekte URL'er til felleslosninger integrasjonspunkt 05.03.2020 -->
+2. Last ned konfigurasjonsfila vår for [testmiljø](/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø](/resources/eformidling/integrasjonspunkt-prod.xml) <!-- desse er korrekte URL'er til felleslosninger integrasjonspunkt 05.03.2020 -->
 3. Endre navn på .exe fila og xml-filene til de navnene du ønsker. For eksempel integrasjonspunkt-service.exe og integrasjonspunkt-service.xml. (begge må ha samme navn)
 4. Legg begge disse filene i integrasjonspunktmappa di.
 5. Endre versjonsnummeret på integrasjonspunkt-%versjonsnr%.jar til å være lik din versjon
