@@ -7,5 +7,6 @@ sidebar: oidc
 
 |Release|Produksjonsetting|Beskrivelse|
 |-|-|-|
+|21-01 ID-porten|2021-01-26|Legge til rette for ny kontaktinfo-modul og ny minid-eid|
 |[Backlog](Backlog.html)|*2021-12-31*| Backlog inneheld utviklingstiltak som me ikkje har starta på enno.  |
-|[Prosjekter](Prosjekter.html)|*2021-12-31*| Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020. |
+
