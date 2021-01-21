@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 
 
 ### Digital post til offentlige virksomheter (DPO)
-![](/felleslosninger/images/eformidling/flyt_dpo.jpg)
+![](/images/eformidling/flyt_dpo.jpg)
 
 Utgående/innkommende: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Denne meldingen blir lastet opp til Altinn's meldingsformidler og sendt videre til mottaker sitt integrasjonspunkt og mottas i sak-arkivsystemet. Appreceipt blir levert til avsender når mottakende integrasjonspunkt laster ned meldingen.
 
