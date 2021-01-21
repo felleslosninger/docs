@@ -41,7 +41,7 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
 
 
 ### Digital post KS FIKS SvarInn/SvarUt (DPF)
-![](/felleslosninger/images/eformidling/flyt_dpf.jpg)
+![](/images/eformidling/flyt_dpf.jpg)
 
 Utgående: Melding blir initiert i sak-arkivsystemet og sendt til avsenders integrasjonspunkt. Meldingen blir sendt til KS FIKS sin meldingsformidler SvarInn, for så å bli ekspedert til mottaker sin SvarInn innboks. Appreceipt blir levert til avsender når SvarInn mottar forsendelsen. Tjenesten har leveringsgaranti, ref bruksvilkår hos KS.
 
@@ -87,7 +87,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 ---
 
 ### Digital post til virksomheter (DPV)
-![](/felleslosninger/images/eformidling/flyt_dpv.jpg)
+![](/images/eformidling/flyt_dpv.jpg)
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Meldinga vil så bli levert til Altinn sin DPV tjeneste. Appreceipt blir levert til avsender etter at Integrasjonspunktet får "ok" på forsendelserequesten mot Altinn. Leveringskvittering blir levert tilbake til avsender. Meldingen kan hentes i virksomhetens innboks i Altinn. Personen som henter meldinga må ha riktige rettigheter i Altinn for å kunne lese den (feks. sak-arkiv rolle)
 
@@ -112,7 +112,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 
 
 ### Digital post til innbygger (DPI)
-![](/felleslosninger/images/eformidling/flyt_dpi.jpg)
+![](/images/eformidling/flyt_dpi.jpg)
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldingsformidler. Der vil det bli formidlet til innbygger sin digitale postkasse, eBoks eller Digipost. Om innbygger ikke har en digital postkasse skal brevet bli sendt til print. Alternativt til innboksen i Altinn** 
 
@@ -180,7 +180,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 ### eInnsyn (DPE)
 
-![](/felleslosninger/images/eformidling/flyt_dpe.png)
+![](/images/eformidling/flyt_dpe.png)
 
 
 1. Arkivar trigger eksport av journalpost.
