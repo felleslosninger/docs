@@ -119,7 +119,7 @@ user: %servernavn%\integrasjonspunkt
         * "disk:\mappenavn» til integrasjonspunktet"
 
 
-![Taskscheduler](/felleslosninger/images/eformidling/taskscheduler.PNG)
+![Taskscheduler](/images/eformidling/taskscheduler.PNG)
 
 
 Merk: om du skal starte integrasjonspunktet i staging-miljø må du bruke følgende argument i stedet: ```-jar -Dspring.profiles.active=staging integrasjonspunkt-%versjonsnr%.jar ```
