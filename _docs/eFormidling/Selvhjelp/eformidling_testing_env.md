@@ -13,7 +13,7 @@ I testmiljø må det brukes test virksomhetssertifikat og mottaker må enten væ
 
 ### Kjøre integrasjonspunktet mot testmiljø
 
-Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til ```spring.profiles.active=staging ``` i [integrasjonspunkt-local.properties-filen](/felleslosninger/resources/eformidling/integrasjonspunkt-local.txt) eller legge til ```-Dspring.profiles.active=staging``` som argument i XML-fila.
+Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til ```spring.profiles.active=staging ``` i [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt) eller legge til ```-Dspring.profiles.active=staging``` som argument i XML-fila.
 
 **NB!** Kommandolinje har presendens over properties.
 
@@ -75,7 +75,7 @@ Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra gr
 
 
 
-![](/felleslosninger/images/eformidling/sakarkiv_flyt.PNG)
+![](/images/eformidling/sakarkiv_flyt.PNG)
 
 
 **NB! Ønsker virksomheten å teste eInnsyn? Ta kontakt med servicedesk@digdir.no**
