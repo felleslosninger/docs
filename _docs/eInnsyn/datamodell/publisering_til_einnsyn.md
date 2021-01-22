@@ -14,8 +14,8 @@ eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga e
 Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsond.
 
 Her er eksempel på jsonld-fil og tilsvarande data som Noark5-xml
-* [Payload.jsonld](/felleslosninger/resources/einnsyn/eksempelfiler/konvertert_noark5tiljsonld.jsonld)
-* [Noark5 xml](/felleslosninger/resources/einnsyn/eksempelfiler/noark5_basiseksempel.xml)
+* [Payload.jsonld](/resources/einnsyn/eksempelfiler/konvertert_noark5tiljsonld.jsonld)
+* [Noark5 xml](/resources/einnsyn/eksempelfiler/noark5_basiseksempel.xml)
 
 ## Fulltekstpublisering
 For å fulltekstpublisere trengst det at ein set opp eit fillager lokalt som er tilgjengeleg frå internett. Ein legg der dokumenta som skal fulltekstpubliserast. I metadata som blir sendt til eInnsyn legg ein så inn lenke til dokumenta som er skal fulltekstpubliserast.
