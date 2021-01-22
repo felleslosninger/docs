@@ -27,4 +27,4 @@ Det er mogleg å fulltekstpublisere kun delar av dokumenta som er tilknytta ein 
 
 For å få til dette så kan ein avlevere *dokumentbeskrivelsen* på alle dokument ein vil vise at eksistere. For dei som skal fulltekstpubliserast, så følger også med *dokumentobjektet* som ligg under dokumentbeskrivelsen.
 
-![Struktur fulltekspublisering](/felleslosninger/images/einnsyn/struktur_fulltekstpublisering.png)
+![Struktur fulltekspublisering](/images/einnsyn/struktur_fulltekstpublisering.png)
