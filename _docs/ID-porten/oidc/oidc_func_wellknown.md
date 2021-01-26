@@ -16,9 +16,6 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  ID-portens signeri
 
  
 
-{% include_relative oidc_include_metadata.md %}
-
-
 
 
 |Miljø|URL|
