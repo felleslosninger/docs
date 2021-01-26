@@ -31,7 +31,7 @@ Gjennomføre fagfelle-vurdering av norske eID-løsninger til EU, slik at norske 
 
 #### Pilotering av ansattporten (In design)
 
-Vi ønsker å pilotere ulike varianter av "Ansattporten" i Q1 2021. Piloten vil minimum inneholde:
+Vi ønsker å pilotere "Ansattporten" i 2021. Piloten vil minimum inneholde:
 
 - kombinere innlogging med en "avgiver-velger" fra t.d. Altinn Autorisasjon eller andre kilder til ansatt-forhold
 
@@ -41,18 +41,22 @@ Eventuelt kan vi se om vi kan teste ut:
 
 - bruk av Azure AD
 
+P.t. er det planlagt å begynne utvikling i mars/april, med mål om skarp pilot rett før sommeren.
 
 
 
-#### OIDC-provider som kjerne i ny systemarkitektur (In development)
 
-Overgangen fra SAML-integrasjoner til OIDC-integrasjoner går raskt. 40% av trafikken i ID-porten går nå over OIDC. Som følge av dette besluttet Difi i et prosjekt i 2019 at ID-portens systemarkitektur må endres til at OpenID Connect / Oauth2-delen blir kjernen i ny arkitektur. En må se på om det er mulig å bruke et hyllevare IAM-produkt istedet for dagens egenutviklede løsning. Samtidig skal vi tilrettelegge for bruk av skyteknologi, både PaaS og SaaS-løsninger der dette er mulig.
+#### Ny systemarkitektur for ID-porten (In development)
 
-Omskriving til ny systemarkitektur begynner nå, og vil pågå kontinuerlig fram til dagens driftsavtale går ut i slutten av 2021.
+Overgangen fra SAML-integrasjoner til OIDC-integrasjon går raskt. Som følge av dette besluttet Difi i et prosjekt i 2019 at ID-portens systemarkitektur må endres til at OpenID Connect / Oauth2-delen blir kjernen i ny arkitektur. En må se på om det er mulig å bruke et hyllevare IAM-produkt istedet for dagens egenutviklede løsning.. Samtidig skal vi tilrettelegge for bruk av skyteknologi, både PaaS og SaaS-løsninger der dette er mulig.
 
-I 2020 ser vi for oss å gjøre følgende:
+Omskriving til ny systemarkitektur begynner nå, og vil kontinuerlig fram til dagens driftsavtale går ut i slutten av 2021.
 
-- Pilotering av ulike IAM-produkter
+I 2021 ser vi for oss å gjøre følgende:
 
-- Flytte SSO-håndtering ut av dagens SAML-kjerne og "frem" til OIDC-provider
+- Utvikling av første versjon av "nye ID-porten". 
+
+- Prøvedrift av nye ID-porten i form av pilot på Ansattporten.
+
+- Prøvedrift i produksjon i public cloud (Azure)
 
