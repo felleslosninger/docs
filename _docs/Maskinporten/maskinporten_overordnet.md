@@ -19,7 +19,7 @@ graph LR
   subgraph API-tilbyder
     API[API manager]
   end
-  subgraph Difi
+  subgraph Digdir
     MP[Maskinporten]
   end
 
@@ -31,7 +31,7 @@ Forutsatt at de riktige tilgangene er gitt, kan API-konsumenter nå opprette sin
 
 <div class="mermaid">
 graph LR
-subgraph Difi
+subgraph Digdir
   MP[Maskinporten]
 end
   subgraph API-konsument
