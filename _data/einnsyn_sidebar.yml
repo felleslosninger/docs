@@ -13,6 +13,9 @@ folders:
   - title: Installere einnsyn-klient som Windows service
     jurl: /einnsyn_install_tjeneste.html
 
+  - title: Teste og verifisere installasjon
+    jurl: einnsyn_test_verifikasjon.html
+
   - title: Oppdatere einnsyn-klient
     jurl: /einnsyn_oppdatere_tjeneste.html
 

@@ -18,7 +18,7 @@ Etter du er ferdig å redigere einnsyn-klient.xml-fila må du reinstallere tjene
 
 Disse kommandoene må kjøres uten skråstrek eller bindestrek foran. Skrives nøyaktig som på bildet under:
 
-![Reinstallere tjeneste](/felleslosninger/images/einnsyn/reinstall_klient.png)
+![Reinstallere tjeneste](/images/einnsyn/reinstall_klient.png)
 
 
 > Om du bruker mer enn 1 einnsyn-klient på samme server må du også sette et senderId felt i ```einnsyn-klient.xml``` for at adressering til eInnsyn skal bli korrekt. I dette feltet skal samme orgnummer som er brukt i ```integrasjonspunkt-local.properties```. I mange tilfeller er dette organisasjonens hovedorgnummer. [Mer informasjon om propertyen finner du her](https://difi.github.io/felleslosninger/einnsyn_flere_klienter.html)

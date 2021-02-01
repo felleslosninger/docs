@@ -12,8 +12,8 @@ klassar som arvar registrering- og mappe-klassane i den generelle Noarkmodellen.
 
 Det er gjort ei generell tilpassing.  Typen *møteregistrering* er delt opp i møtedokumentregistrering og møtesaksregistrering. Møtedokumentregistrering er
 typisk forekomstar av innkallingar, protokollar osv. Medan møteasaksregistrering er sjølve saksframlegga
-![Overornda datamodell møter](/felleslosninger/images/einnsyn/einnsynn_moetemodell_overordna.png)
+![Overornda datamodell møter](/images/einnsyn/einnsynn_moetemodell_overordna.png)
 
 
 ## Bruk av modellen
-![Overornda datamodell møter](/felleslosninger/images/einnsyn/einnsyn_bruk_av_moetedatamodell.png)
+![Overornda datamodell møter](/images/einnsyn/einnsyn_bruk_av_moetedatamodell.png)

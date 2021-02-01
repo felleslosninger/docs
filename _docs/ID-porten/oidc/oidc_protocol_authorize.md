@@ -52,7 +52,7 @@ GET /idporten-oidc-provider/authorize
 
   scope=openid&
   acr_values=Level3&
-  client_id=test_rp_yt2&
+  client_id=test_rp&
   redirect_uri=https://eid-exttest.difi.no/idporten-oidc-client/authorize/response&
   response_type=code&
   state=my_csrf_protection_value&
@@ -67,6 +67,23 @@ GET /idporten-oidc-provider/authorize
 GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw
 ```
 
+## Request using request objects
+
+The client can pass a request using a using a JWT based request object, as described in [OpenID Connect Core, chapter 6.1](https://openid.net/specs/openid-connect-core-1_0.html#JWTRequests)
+
+Passing a Request Object by reference (as described in OpenID Connect Core chapter 6.2) is not supported.
+
+The use of request objects requires use of a predefined public key on the client-registration, see [client administration api](oidc_api_admin.html#bruk-av-asymmetrisk-nøkkel)
+
+### Sampe request using request object
+
+```
+GET https://oidc-test1.difi.eon.no/idporten-oidc-provider/authorize?
+client_id=test_rp
+&scope=openid
+&response_type=code
+&request=eyJraWQiOiJ0ZXN0a2V5IiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJodHRwczovL29pZGMtdGVzdDEuZGlmaS5lb24ubm8vaWRwb3J0ZW4tb2lkYy1wcm92aWRlci8iLCJ1aV9sb2NhbGVzIjoibmIiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiYWNyX3ZhbHVlcyI6IkxldmVsMyIsImlzcyI6InRlc3RfcnAiLCJyZXNwb25zZV90eXBlIjoiY29kZSIsInJlZGlyZWN0X3VyaSI6Imh0dHBzOi8vZWlkLWV4dHRlc3QuZGlmaS5uby9pZHBvcnRlbi1vaWRjLWNsaWVudC9hdXRob3JpemUvcmVzcG9uc2UiLCJleHAiOjE1OTM1OTc2NTksImlhdCI6MTU5MzU5NzUzOSwiY2xpZW50X2lkIjoidGVzdF9ycCIsImp0aSI6IjZlNTFjNjBjLTcxZDQtNDMxZi04NTBjLWY0ODNiYzMwZjYzMyJ9.fKPx1HAW8XqxyabtiRtT90uzIZoY0GS6BmPEaKOKDkDYQExLp1jNcLZNpMVKBkk8ZXGZG7HR62o-6e0tczEnJbhQCQ8c1IdB2XWhOyZBBJ4Vc4mJu5fqU5fKToxEOlArwCEnw0PJbgYMMNiFYRt-B8GiVrzy4Qgw4ts58Q8V7GT57ZjckhioSb28F4B1QUopcS40jckQMbzo5R372vOKkqsZnRxcxJttwQ65ALDV454Cwc_tVYr6B1z7D2SpN-ct8mqe6UblwEKMDlEtGg6i8iRczC4W6PwzlG9gRMpNXpt6Hy4_cOQ1152jqf6dCmxTumNfp568naKu_-glCdSNmg
+```
 
 ## Response
 

@@ -36,14 +36,51 @@ I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til s
 
 ### Tilgang i produksjonsmiljø
 
-Tilgang i produksjon er sikret med ID-porten, og tilgangen må bestilles av en bemyndiget person i virksomheten. (Direktør/Leder). Bestillingen kan se noe slik ut:
+Tilgang i produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
 
-"Følgende person(er) trenger tilgang til selvbetjening i produksjonsmiljøet på vegne av Eksempel AS:
-Navn, epost og telefonnummer"
+Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
-Så avtaler vi utveksling av personnummer etter dette.
+1. Gå til Altinn.no
+2. Trykk på "Logg inn"
+3. Velg virksomheten du skal representere
+4. Trykk på "Profil"
+5. Trykk på "Andre med rettigheter til virksomheten"
+6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
+7. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
+8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten" (Se tabell under for forklaring av rettighetene)
+9. Trykk på alle rettighetene
+10. Trykk på "Gi rettigheter"
 
-Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
+Tabell for tilgjengelige rettigheter:
+
+|**Rettighet**|**Funksjon**|
+| - | - |
+| Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere |
+| Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten |
+| Selvbetjening for leverandører i ID-porten/Maskinporten*| Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer |
+
+*NB! Selvbetjening for leverandører krever "Selvbetjening av integrasjoner..." i tillegg.
+
+Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
+
+[![Delegere rettigheter](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
+
+Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+
+1. Gå til Altinn.no
+2. Trykk på "Logg inn"
+3. Velg virksomheten du skal representere
+4. Trykk på "Profil"
+5. Trykk på "Andre med rettigheter til virksomheten"
+6. Finn personen du skal frata rettigheter fra
+7. Trykk på "Gi eller fjerne tilgang"
+8. Trykk på "Fjern en eller flere rettigheter"
+9. Trykk på "Fjern" på rettigheten som skal fjernes.
+10. Trykk på "Ferdig for å bekrefte"
+
+Videotutorial: [https://vimeo.com/433540358](https://vimeo.com/433540358)
+
+[![Fjerne tilgang](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
 
 ## Selvbetjening som API-tilbyder
 
@@ -52,6 +89,7 @@ Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede per
 For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
 
 For bestilling til produksjonsmiljøet, send inn skjema:
+[Maskinporten - Innhenting av opplysningar](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u).
 
 ### Innlogging (Scopes/API'er)
 

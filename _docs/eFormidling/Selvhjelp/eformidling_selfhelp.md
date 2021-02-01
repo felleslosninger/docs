@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 
 - DPV = Digital post til virksomheter. Eget brukernavn/passord. Brukernamn/passord opprettes av Altinn og passord mottas på SMS. [Mer](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpv-bruker)
 - DPF = Brukernavn/passord for både SvarUt og SvarInn (ulike). Begge settene med brukernavn/passord genereres/hentes på [https://svarut.ks.no/](https://svarut.ks.no/). [Veiledning finner du her](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpf-brukere-svarinn-og-svarut)
-- DPO = Digital post til offentlige virksomheter. Eget brukernavn/passord. [Opprettes selv](https://difi.github.io/eformidling/create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste) 
+- DPO = Digital post til offentlige virksomheter. Eget brukernavn/passord. [Opprettes selv](https://difi.github.io/felleslosninger/eformidling_create_users.html?h=opprette-dpo-bruker-altinn-formidlingstjeneste#opprette-dpo-bruker-altinn-formidlingstjeneste)   
 - DPI = Digital post til innbygger. Virksomhetssertifikatet benyttes. Ingen brukernavn/passord benyttes.
 - Virksomheten må ha et [virksomhetssertifikat](https://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html). Offentlig nøkkel sendes til Digitaliseringsdirektoratet. 
 - Integrasjonspunktet både sender og mottar meldinger.
@@ -21,7 +21,7 @@ sidebar: eformidling_install_sidebar
 - Standard tid før en melding som feiler og får en status LEVETID_UTLOPT er ca 24t. Den kan også overstyres. [Les mer her](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#feilstatus-levetid_utlopt)
 - Integrasjonspunktet konverterer ikke originalformatet, men forventer PDF/docx dersom mimetype ikke er spesifisert i avsendersystemet.
 
-For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/eformidling/ta-i-bruk-eformidling/1-forberedelser)
+For informasjon om ikke tekniske ting og bruksvilkår/avtaler [se Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98)
 
 ### Sjekke status på forsendelser
 

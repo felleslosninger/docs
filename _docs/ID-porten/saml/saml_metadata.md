@@ -9,10 +9,9 @@ product: ID-porten
 
 ### Metadata validator og ID-porten sine metadatafiler
 
-* [Denne validatoren anbefales for å sjekke metadata etter feil](https://test-vefa.difi.no/validator/)
-* [Metadata for ID-porten produksjon (ny fra 07.01.2019)](https://samarbeid.difi.no/sites/samarbeid2/files/idporten.difi_.no-v4-prod.zip)
-* [Metadata for ID-porten verifikasjon 1 (ny frå 15.03.2019) ](https://samarbeid.difi.no/sites/samarbeid2/files/idporten.difi_.no-v4-ver1_0.zip)
-* [Metadata for ID-porten verifikasjon 2 (ny frå 15.03.2019) ](https://samarbeid.difi.no/sites/samarbeid2/files/idporten.difi_.no-v4-ver2-meta.zip)
+* [Metadata for ID-porten produksjon (ny fra 07.01.2019)](assets\idporten.difi.no-v4-prod.zip)
+* [Metadata for ID-porten verifikasjon 1 (ny frå 15.03.2019) ](assets\idporten.difi.no-v4-ver1.zip)
+* [Metadata for ID-porten verifikasjon 2 (ny frå 15.03.2019) ](assets\idporten.difi.no-v4-ver2-meta.zip)
 
 ### Eksempel på metadatafil
 
@@ -46,16 +45,16 @@ Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hu
 
 | Element | Attributt | Sjekkpunkt |
 | --- | --- | --- |
-| EntityDescriptor | entityID | Må være unik for alle ID-porten sine tjenesteeiere | 
+| EntityDescriptor | entityID | Må være unik for alle ID-porten sine tjenesteeiere |
 | SPSSODescriptor | AuthnRequestsSigned=true | Denne må vere med og satt til *true*. Pass skrivefeil |
 | SPSSODescriptor | WantAssertionsSigned=true | Denne må vere med og satt til *true*. Pass skrivefeil |
-| SPSSODescriptor/KeyDescriptor | _må_ inneholde både KeyDescriptor use="signing" og "encryption" | Sjekk gyldig virksomhetssertifikat: sertifiseringsbane, emne, "bruk av nøkler", nøkkellengde og algoritme. | 
+| SPSSODescriptor/KeyDescriptor | _må_ inneholde både KeyDescriptor use="signing" og "encryption" | Sjekk gyldig virksomhetssertifikat: sertifiseringsbane, emne, "bruk av nøkler", nøkkellengde og algoritme. |
 | SPSSODescriptor / SingleLogoutService | | Rekkefølge viktig - må komme før NameIDFormat, som må være før AssertionConsumerService |
-| SPSSODescriptor / SingleLogoutService | Binding="..SAML:2.0 :...HTTP-Redirect" | HTTP-redirect er foretrukket. _SOAP_ er ikke støttet. HTTP-POST er _ikke_ støttet. SAML1:0-element er _ikke_ støttet. Kan ikke ha index | 
-| SPSSODescriptor / SingleLogoutService | Location=.. / ResponseLocation | Må være sikret med HTTPS (gjelder spesielt i PROD) Skal ikke være en link, men streng | 
+| SPSSODescriptor / SingleLogoutService | Binding="..SAML:2.0 :...HTTP-Redirect" | HTTP-redirect er foretrukket. _SOAP_ er ikke støttet. HTTP-POST er _ikke_ støttet. SAML1:0-element er _ikke_ støttet. Kan ikke ha index |
+| SPSSODescriptor / SingleLogoutService | Location=.. / ResponseLocation | Må være sikret med HTTPS (gjelder spesielt i PROD) Skal ikke være en link, men streng |
 | SPSSODescriptor/ NameIDFormat | | Både transient og persistent er støttet, men anbefaler transient. |
-| SPSSODescriptor/ AssertionConsumerService | Binding="..SAML: 2.0...HTTP-Artifact" eller HTTP-POST | Kun disse verdiene er støttet. | 
-| | | | 
+| SPSSODescriptor/ AssertionConsumerService | Binding="..SAML: 2.0...HTTP-Artifact" eller HTTP-POST | Kun disse verdiene er støttet. |
+| | | |
 
  **Eksempel AssertionConsumerService:**
 ``` xml
@@ -68,7 +67,7 @@ Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hu
 ```
 ### SAML-extension
 
-ID-porten benytter seg av en ekstensjon *(extensions)* i *AuthnRequest* forespørselen med et eget xml navnerom som beskrevet i [SAML Core 2.0 spesifikasjon.](https://www.oasis-open.org/committees/download.php/35711/sstc-saml-core-errata-2.0-wd-06-diff.pdf) kapittel 3.2.1 og 7. 
+ID-porten benytter seg av en ekstensjon *(extensions)* i *AuthnRequest* forespørselen med et eget xml navnerom som beskrevet i [SAML Core 2.0 spesifikasjon.](https://www.oasis-open.org/committees/download.php/35711/sstc-saml-core-errata-2.0-wd-06-diff.pdf) kapittel 3.2.1 og 7.
 
 Følgende skjema (XSD) er definert for ekstensjonen:
 ```xml
@@ -90,18 +89,18 @@ Følgende skjema (XSD) er definert for ekstensjonen:
 
 | Nettleser | Versjon | Operativsystem |
 | --- | --- | --- |
-| Internet Explorer | Alle hovedversjoner siste 12 mnd | Windows | 
+| Internet Explorer | Alle hovedversjoner siste 12 mnd | Windows |
 | Mozilla Firefox | Alle hovedversjoner siste 12 mnd | Windows |
-| Google Chrome | Alle hovedversjoner siste 12 mnd | Windows/Mac | 
-| Opera | Alle hovedversjoner siste 12 mnd | Windows | 
+| Google Chrome | Alle hovedversjoner siste 12 mnd | Windows/Mac |
+| Opera | Alle hovedversjoner siste 12 mnd | Windows |
 | Safari | Alle hovedversjoner siste 12 mnd | Mac |
-| | | | 
+| | | |
 
 **Javascript**
 Javascript er brukt i deler av løsningen og er nødvendig for å gjennomføre innlogging på nivå 4.
 
 **Java runtime**
-Sluttbruker må ha Java installert for å gjennomføre innlogging på nivå 4 med Commfides. 
+Sluttbruker må ha Java installert for å gjennomføre innlogging på nivå 4 med Commfides.
 
 ### Administrasjon av egen informasjon
 
@@ -114,13 +113,13 @@ Offentlige virksomheter kan lenke til brukerprofilen slik at innbyggerne kan opp
 
 #### **Input data**
 
-Tjenesten har følgende http request paramter som kan brukes: 
+Tjenesten har følgende http request paramter som kan brukes:
 
-| Request parameter | Beskrivelse | 
+| Request parameter | Beskrivelse |
 | --- | --- |
 | Goto | Lenke (URL) til tjeneste hos offentlig virksomhet som innbygger skal bli sendt tilbake til. |
-| Showlogout | Boolean parameter for om innbygger skal bli vist utloggingslenke eller ikke.| 
-| | | 
+| Showlogout | Boolean parameter for om innbygger skal bli vist utloggingslenke eller ikke.|
+| | |
 
 **Merk:**
 * **Ingen av parameterne er påkrevd**
@@ -129,7 +128,7 @@ Tjenesten har følgende http request paramter som kan brukes:
 * Parameteren må URLencodes.
 
 ### **Goto**
-Eksempel på verdi: http://www.virksomhet.no/tjenesteforinnsendingsomjegvari 
+Eksempel på verdi: http://www.virksomhet.no/tjenesteforinnsendingsomjegvari
 
 Valideringsregler:
 * Gyldig URL med protokoll
@@ -139,7 +138,7 @@ Standardverdi:
 
 Dersom parameteren ikke er satt, vil lenken gå til Logg ut i ID-porten, og innbygger vil få en informasjonsside om at hun er logget ut, uten videre lenker.
 
-Goto-urlen må utveksles med Digitaliseringsdirektoratet for at lenketjenesten skal fungere. 
+Goto-urlen må utveksles med Digitaliseringsdirektoratet for at lenketjenesten skal fungere.
 
 ### **Showlogout**
 Eksempel på verdi: false
@@ -162,19 +161,19 @@ Følgende 3 grunnkombinasjoner er mulige:
 
 |AuthMethod | eIdentifier | uid | Beskrivelse |
 | --- | --- | --- | --- |
-| eIDAS | NC/NC/xxxxxx.. | | Personen har autentisert seg med europeisk eID. Norsk D-nummer ble ikke funnet | 
-| eIDAS | NC/NC/xxxxxx.. | personidentifikator | Personen har autentisert seg med europeisk eID og har norsk D-nummer. | 
-| *norske eID* | | personidentifikator | Personen har autentisert seg med norsk eID | 
-| | | | | 
+| eIDAS | NC/NC/xxxxxx.. | | Personen har autentisert seg med europeisk eID. Norsk D-nummer ble ikke funnet |
+| eIDAS | NC/NC/xxxxxx.. | personidentifikator | Personen har autentisert seg med europeisk eID og har norsk D-nummer. |
+| *norske eID* | | personidentifikator | Personen har autentisert seg med norsk eID |
+| | | | |
 
 **AuthMethod**
 
 I tillegg til basisverdiene for norske eID kan AuthMethod også ha verdien:
 
-| Kodeverdi | Beskrivelse | 
+| Kodeverdi | Beskrivelse |
 | --- | --- |
 | eIDAS | Autentisering utført med europeisk eID |
-| | | 
+| | |
 
 **Extended-fil**
 
@@ -186,9 +185,9 @@ status-dsf gjelder ID-portens integrasjonsstatus mot Det Sentrale Folkeregistere
 
 | Kodeverdi | Beskrivelse |
 | --- | --- |
-| OK | ID-porten har som del av innlogging gjennomført en spørring mot DSF uten tekniske feil | 
-| SYSTEMFEIL | ID-porten har ikke tilgang til informasjon fra Det Sentrale Folkeregisteret, f.eks. ved feil i integrasjon mot registrert. | 
-| FLERETREFF | Oppslag mot DSF har resultert i flere mulige treff, og ID-porten kan ikke gjøre en garantert kobling mellom utenlandsk eID og D-nummer i DSF | 
+| OK | ID-porten har som del av innlogging gjennomført en spørring mot DSF uten tekniske feil |
+| SYSTEMFEIL | ID-porten har ikke tilgang til informasjon fra Det Sentrale Folkeregisteret, f.eks. ved feil i integrasjon mot registrert. |
+| FLERETREFF | Oppslag mot DSF har resultert i flere mulige treff, og ID-porten kan ikke gjøre en garantert kobling mellom utenlandsk eID og D-nummer i DSF |
 | IKKESJEKKET | ID-porten mangler tilstrekkelig informasjon til å kunne gjøre en spørring mot DSF, for eksempel hvis navn eller fødselsdato mangler på utenlandsk bruker
 | | |
 
@@ -198,42 +197,41 @@ status gjelder personens status i Kontakt- og Reservasjonsregisteret, og kan ha 
 
 | Kodeverdi | Beskrivelse |
 | --- | --- |
-| AKTIV | Person finnes i Kontakt- og Reservasjonsregisteret | 
-| IKKE_REGISTRERT | Person finnes ikke i Kontakt- og Reservasjonsregisteret, enten ikke registrert eller slettet | 
-| SYSTEMFEIL | ID-porten har ikke tilgang til informasjon fra Kontakt- og Reservasjonsregisteret, f.eks. ved feil i integrasjon mot registrert. | 
-| | | 
+| AKTIV | Person finnes i Kontakt- og Reservasjonsregisteret |
+| IKKE_REGISTRERT | Person finnes ikke i Kontakt- og Reservasjonsregisteret, enten ikke registrert eller slettet |
+| SYSTEMFEIL | ID-porten har ikke tilgang til informasjon fra Kontakt- og Reservasjonsregisteret, f.eks. ved feil i integrasjon mot registrert. |
+| | |
 
 Ved autentisering med europeisk eID, er det frivillig for personer som har fått tildelt norsk D-nummer/fødselsnummer å oppgi kontaktopplysninger til Kontakt- og reservasjonsregisteret. Personer som ikke har fått tildet norsk D-nummer/fødselsnummer, har ikke mulighet til å oppgi kontaktopplysninger.
 
 For utenlandske innbyggere, blir Kontakt- og reservasjonsregisteret kun sjekket dersom det er oppnådd en entydig kobling mot norsk D-nummer/fødselsnummer. Dette kan skje ved manglende kobling eller ved feilsituasjoner mot DSF. Informasjon fra Kontakt-og reservasjonsregisteret vil da mangle.
 
-I tillegg kommer eventuelle attributter fra europeisk eID-intrastruktur, eIDAS / STORK (se nærmere definisjoner i rapport ‘D5.7.3 Functional Design for PEPS, MW models and interoperability’) fra 
+I tillegg kommer eventuelle attributter fra europeisk eID-intrastruktur, eIDAS / STORK (se nærmere definisjoner i rapport ‘D5.7.3 Functional Design for PEPS, MW models and interoperability’) fra
 [STORK-prosjektet](https://www.eid-stork.eu/index.php?option=com_processes&act=list_documents&id=312%20&s=1&Itemid=60)
 
-| Field | Type | Values and comment | Kardinalitet | 
+| Field | Type | Values and comment | Kardinalitet |
 | --- | --- | --- | --- |
-| eidas-eIdentifier | String | NC/NC/xxxxxxxxxx…. (NC=NationalityCode, the first one the country of origin of the eIdentifier, the second one the destination country)| 1 | 
+| eidas-eIdentifier | String | NC/NC/xxxxxxxxxx…. (NC=NationalityCode, the first one the country of origin of the eIdentifier, the second one the destination country)| 1 |
 | eidas-givenName | String | | 0..1 |
-| eidas-surname | String | inheritedFamilyName / adoptedFamilyName | 0..1 | 
-| eidas-inheritedFamilyName | String | | 0..1 | 
+| eidas-surname | String | inheritedFamilyName / adoptedFamilyName | 0..1 |
+| eidas-inheritedFamilyName | String | | 0..1 |
 | eidas-adoptedFamilyName | String | | 0..1 |
-| eidas-gender | String(1) | F(Female) / M(Male) | 0..1 | 
-| eidas-nationalityCode | String(2) | ISO 3166-1 alpha-2 | 0..1 | 
+| eidas-gender | String(1) | F(Female) / M(Male) | 0..1 |
+| eidas-nationalityCode | String(2) | ISO 3166-1 alpha-2 | 0..1 |
 | eidas-maritalStatus | String(1) | S (Single) / M (Married) / P (Separated) D (Divorced) / W (Widowed) | 0..1 |
-| eidas-dateOfBirth | Date(basic format of ISO 8601) | YYYYMMDD / YYYYMM / YYYY | 0..1 | 
-| eidas-countryCodeOfBirth | String(4) | ISO 3166-3. Please note that this code is equal to ISO3166-1 alpha-2 in the majority of countries, but includes 4 letter abbreviations for disappeared countries. E.g. DDDE for the DDR or YGCS for Yugoslavia. | 0..1 | 
-| eidas-age | Number | in years(0..130) | 0..1 | 
-| eidas-isAgeOver | Boolean | Logically this is boolean, in technical design another domain may be chosen | 0..1 | 
-| eidas-textResidenceAddress | Text | | 0..1 | 
+| eidas-dateOfBirth | Date(basic format of ISO 8601) | YYYYMMDD / YYYYMM / YYYY | 0..1 |
+| eidas-countryCodeOfBirth | String(4) | ISO 3166-3. Please note that this code is equal to ISO3166-1 alpha-2 in the majority of countries, but includes 4 letter abbreviations for disappeared countries. E.g. DDDE for the DDR or YGCS for Yugoslavia. | 0..1 |
+| eidas-age | Number | in years(0..130) | 0..1 |
+| eidas-isAgeOver | Boolean | Logically this is boolean, in technical design another domain may be chosen | 0..1 |
+| eidas-textResidenceAddress | Text | | 0..1 |
 | eidas-canonicalResidenceAddress | XML | | 0..1 |
 | eidas-residencePermit | String | | 0..1 |
 | eidas-eMail | String | RFC 822 | 0..1 |
 | eidas-title | Text | | 0..1 |
 | eidas-pseudonym | String | | 0..1 |
-| eidas-signedDoc | | | 0..1 | 
-| eidas-CitizenQAAlevel | Number | 1,2,3,4 | 0..1 | 
-| eidas-fiscalNumber | | String | 0..1 | 
-| | | | | 
+| eidas-signedDoc | | | 0..1 |
+| eidas-CitizenQAAlevel | Number | 1,2,3,4 | 0..1 |
+| eidas-fiscalNumber | | String | 0..1 |
+| | | | |
 
 Vær oppmerksom på at noen land kan sende med ekstra attributter utover de som finst i eIDAS-standarden. Disse vil bli prefixet med “eidas-landskode-”, og så videreformidlet av ID-porten.
-

@@ -11,7 +11,7 @@ sidebar: eformidling_install_sidebar
 
 Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
-Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lagt sertifikatet i keystoren må det sendes tilDigitaliseringsdirektoratet på denne adressen <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> slik at vi kan laste det opp.
+Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lagt sertifikatet i keystoren må det sendes til Digitaliseringsdirektoratet på denne adressen <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> slik at vi kan laste det opp.
 
 > * NB! Testmiljø krever **test virksomhetssertifikat**. Produksjonsertifikat vil ikke virke i test  
 > * NB2! I produksjon **må** en ha produksjon **virksomhetssertifikat**. 
@@ -19,6 +19,7 @@ Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lag
 > * NB4! Sertifikatet **må** være utstedt til deres organisasjonsnummer(samme som integrasjonspunktet bruker)
 > * NB5! Sertifikatet kan ikke være et wildcard sertifikat.
 > * NB6! alias = entry name. Entry name er namnet på alias(namnet på sertifikatet) i keystore explorer. Integrasjonspunkt.local.properties fila bruker alias som namn på sertifikatet
+> * NB7! eSegl sertifikater er ikke egnet for bruk i eFormidling. 
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/hjelp/virksomhetssertifikat)
@@ -91,7 +92,7 @@ Keytool finner du i
 
 NB! Zip sertifikatfila før du sender den.
 
-For atDigitaliseringsdirektoratet skal vite hvem sitt Integrasjonspunkt det er så må sertifikatet lastes opp hos Digitaliseringsdirektoratet. Dette gjøres ved å sende 
+For at Digitaliseringsdirektoratet skal vite hvem sitt Integrasjonspunkt det er så må sertifikatet lastes opp hos Digitaliseringsdirektoratet. Dette gjøres ved å sende 
 Public key (.cer fil) på e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 <!-- Public key (.cer fil) lastes opp til [virksomhetssertifikatserveren for test](https://beta-meldingsutveksling.difi.no/virksomhetssertifikat/) og [virksomhetssertifikatserveren for produksjon](https://meldingsutveksling.difi.no/virksomhetssertifikat/) -->

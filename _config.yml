@@ -13,7 +13,7 @@ port: 4000
 format: web
 
 # the little icon that appears in the browser window's tab
-favicon: assets/difi_emplem_negativ.jpg
+favicon: assets/Favikon - Digdir.png
 
 ############# TOP NAVIGATION BAR ################
 
@@ -22,7 +22,7 @@ use_logo: true
 
 # logo image to use. logo images are constrained at 50px in height.
 # logo: assets/difi-logo.png
-logo: assets/digdir_logo.png
+logo: assets/Docs - blaasvart.png
 
 # use text title instead. text title read from uistring.title in ui strings section.
 use_text_title: false
@@ -55,7 +55,7 @@ link_type: jurl
 show_feedback: true
 
 # email address feedback gets sent to
-feedback_email: idporten@difi.no
+feedback_email: servicedesk@digdir.no
 
 # note: to customize the auto-completed body text, overwrite it by adding _includes/feedback.html in your own theme.
 
