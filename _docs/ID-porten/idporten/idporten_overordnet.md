@@ -30,7 +30,7 @@ Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjon
 | Kontakt- og reservasjonsregisteret | Felleskomponent for sentral ajourhold av digital kontaktinformasjon (e-postadresse og mobilnummer) i offentlig sektor.  |
 | e-ID-leverandør | En av de 4 e-ID-aktørene som er tilgjengelige i ID-porten: minID, Commfides, Buypass, BankID |
 | MinID | *MinID* er en e-ID på nivå 3, som tilbyr autentisering basert på engangskoder på sms eller pinkoder på brev. |
-| Sertifikatutsteder | Sertifikatutsteder som oppfyller kravene for virksomhetssertifikater i henhold til [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor). |
+| Sertifikatutsteder | Sertifikatutsteder som oppfyller kravene for virksomhetssertifikater i henhold til [kravspesifikasjon PKI](https://www.digdir.no/digitale-felleslosninger/bruk-av-pki-med-og-i-offentleg-sektor/1485). |
 | | |
 
 ## Autentisering av sluttbruker
@@ -66,7 +66,7 @@ ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenes
 
 ## Hvordan få tilgang til ID-porten
 
-Følg prosessen på [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten) for å integrere mot ID-porten.
+Følg prosessen på [samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94) for å integrere mot ID-porten.
 
 
 ### Informasjon som må utveksles
@@ -145,7 +145,7 @@ OIDC:
 
 ### Sertifikatkrav
 
-Det kreves at tjenesteleverandør benytter nøkler utstedt som virksomhetssertifikater iht. [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor), og at sertifikatutstederen er selvdeklarert for dette hos Nasjonal kommunikasjonsmyndighet (NKOM). Pr dags dato er det bare Buypass og Commfides som er selvdeklarert for utstedelse av virksomhetssertifikater hos NKOM, og dermed kun disse som kan utstede gyldige virksomhetssertifikater for bruk mot ID-porten.
+Det kreves at tjenesteleverandør benytter nøkler utstedt som virksomhetssertifikater iht. [kravspesifikasjon PKI](https://www.digdir.no/digitale-felleslosninger/bruk-av-pki-med-og-i-offentleg-sektor/1485), og at sertifikatutstederen er selvdeklarert for dette hos Nasjonal kommunikasjonsmyndighet (NKOM). Pr dags dato er det bare Buypass og Commfides som er selvdeklarert for utstedelse av virksomhetssertifikater hos NKOM, og dermed kun disse som kan utstede gyldige virksomhetssertifikater for bruk mot ID-porten.
 
 Tjenesteleverandøre må sjekke at bare de virksomhetssertifikater som er utvekslet som en del av metadatautveksling er i bruk i føderasjonen.
 
@@ -168,4 +168,4 @@ Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelh
 
 En tjenesteleverandør bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
 
-Både [kravspesifikasjon PKI](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/standarder/referansekatalogen/bruk-av-pki-med-og-i-offentlig-sektor) og sertifikatutsteders policy kan gi krav som må etterleves. Krav til slike prosedyrer for håndtering av nøkler stilles også til IdP-delen av løsningen, som i dette tilfellet er ID-porten.
+Både [kravspesifikasjon PKI](https://www.digdir.no/digitale-felleslosninger/bruk-av-pki-med-og-i-offentleg-sektor/1485) og sertifikatutsteders policy kan gi krav som må etterleves. Krav til slike prosedyrer for håndtering av nøkler stilles også til IdP-delen av løsningen, som i dette tilfellet er ID-porten.
