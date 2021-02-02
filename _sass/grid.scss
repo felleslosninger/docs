@@ -1,0 +1,22 @@
+.container {
+  max-width: 1240px;
+}
+
+.content {
+  padding-left: 45px;
+}
+
+@media (min-width: 576px) {
+  .col-sm-3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 26%;
+    flex: 0 0 26%;
+    max-width: 26%;
+  }
+  .col-sm-9 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 74%;
+    flex: 0 0 74%;
+    max-width: 74%;
+  }
+}

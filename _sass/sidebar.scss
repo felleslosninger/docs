@@ -1,132 +1,206 @@
+.sidebar {
+  padding-bottom: 50px;
+  padding-top: 50px;
+  height: 100%;
+  padding-right: 0;
+
+  & .nav {
+    width: 95%;
+  }
+
+  .test2 {
+    background: linear-gradient(180deg, $color-grey-100, #ffffff);
+    height: 1000px;
+    position: absolute;
+    width: 1047px;
+    right: 0;
+    top: 0;
+  }
+
+  .sidebar {
+    &-inner {
+      position: relative;
+    }
+  }
+
+  .productTitle {
+    @include font-style(700, 500);
+    display: block;
+    margin-bottom: 11px;
+  }
+
+  .external {
+    display: none;
+  }
+
+}
+
 .docnav {
-  max-width: 225px;
-}
-.docnav {
-  padding-left: 0px;
-  margin-left: 10px;
-  padding-right: 15px;
-}
-.docnav ul {
-  padding-left: 15px
-}
-.docnav li {
-  list-style: none;
-  font: normal 12px "Open Sans", "Lucida Grande", "Helvetica Neue", Arial;
-  border-bottom: 0px;
-}
-.docnav li a:hover,
-.docnav li a:active {
-  text-decoration: none;
-  color: #666;
-}
+  padding-left: 0;
+  margin-left: 0;
+  padding-right: 35px;
 
-/*
-// plus
+  ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
 
-.docnav li.level1 > a > span:after,
-.docnav li.level2 > a > span:after,
-.docnav li.level3 > a > span:after {
-  content: '\f0fe';
-  font-family: 'FontAwesome';
-  color: #e47911;
-  font-size: 14px;
-  padding-right: 12px;
-  text-decoration: none;
+  li {
+    list-style: none;
+    border-bottom: 0;
+
+    &.level1 {
+      > a {
+        padding: 6px 0;
+      }
+
+      &.open {
+        > a {
+          font-weight: 500;
+          color: black;
+        }
+      }
+    }
+
+    .level1items {
+
+      > a {
+        color: $color-link;
+        padding: 5px 0;
+        @include font-style(300);
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+
+    span {
+      font-size: 18px;
+      margin-right: 8px;
+      display: none;
+    }
+
+    a {
+      display: flex;
+      align-items: baseline;
+      position: relative;
+
+      &:hover {
+        color: $color-link;
+      }
+    }
+
+    &.level1 > a:before {
+      content: "";
+      display: inline-block;
+      font-family: "Font Awesome 5 Pro", sans-serif;
+      transition: 0.36s all;
+      font-size: 16px;
+      margin-right: 8px;
+      font-weight: 100;
+    }
+
+    &.level1.open > a:before {
+      content: "";
+    }
+
+
+    &.level1items.open {
+
+      > a {
+        padding-left: 13px;
+
+        &:before {
+          display: inline-block;
+          font-family: "Font Awesome 5 Pro", sans-serif;
+          content: "";
+          font-size: 6px;
+          color: blue;
+          font-weight: 900;
+          position: absolute;
+          left: 0;
+          top: 12px;
+        }
+      }
+
+    }
+
+  }
+
+  a {
+    @include font-style(400);
+    color: $color-grey-500;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+      color: #666;
+    }
+  }
 }
-
-
-// empty square
-
-.docnav li.level1items > a:before,
-.docnav li.level2items > a:before,
-.docnav li.level3items > a:before {
-  content: '\f096';
-  font-family: 'FontAwesome';
-  color: #e47911;
-  padding-right: 10px;
-  text-decoration: none;
-  text-indent: -1.5em;
-}
-// minus
-
-.docnav li.open > a > span:after {
-  content: '\f146';
-  font-family: 'FontAwesome';
-  color: #e47911;
-  font-size: 14px;
-  padding-right: 10px;
-}
-*/
 
 .docnav li.level3,
 .docnav li.level3items {
   padding-left: 10px
 }
+
 .docnav li.level2,
 .docnav li.level2items {
-  padding-left: 10px;
+  padding-left: 5px;
 }
-.docnav li.level1,
-.docnav li.level1items {
-  padding-left: 10px;
-}
-.docnav li {
-  margin: 7px 0px;
-}
+
 li.level1.open > ul > li.level1items.open a,
 li.level2.open > ul > li.level2items.open a,
 li.level3.open > ul > li.level3items.open a {
   color: black;
-  font-weight: bold;
+  font-weight: 500;
 }
+
 li.level1.open > ul > li.level1items.open > a:before,
 li.level2.open > ul > li.level2items.open > a:before,
 li.level3.open > ul > li.level3items.open > a:before {
   color: black;
 }
+
 .relatedResources {
-  font-size: 13px;
-  color: black;
-  margin: 10px 0px;
+  @include font-style(500, 500);
+  margin: 10px 0px 10px 0;
 }
-.productTitle {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333333;
-  display: block;
-  margin-right: 8px;
+
+#entrypages {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    a {
+      @include font-style(400, 400);
+      color: $color-link;
+      padding: 5px 0;
+      display: block;
+
+      &:before {
+        content: "";
+        font-family: "Font Awesome 5 Pro", sans-serif;
+        margin-right: 9px;
+        font-size: 17px;
+      }
+    }
+  }
+
 }
+
 hr.resourceSeparator {
   display: block;
-  margin-top: 1.7em;
-  margin-bottom: 1.7em;
-  margin-left: 0px;
-  /*margin-right: auto;*/
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+  margin-left: 0;
 
   border-width: 1px;
   color: black;
   max-width: 80%;
 }
-.docnav li a {
-  line-height: 18px;
-  display: table;
-  white-space: pre-wrap;
-  /* css-3 */
 
-  white-space: -moz-pre-wrap;
-  /* Mozilla, since 1999 */
-
-  white-space: -pre-wrap;
-  /* Opera 4-6 */
-
-  white-space: -o-pre-wrap;
-  /* Opera 7 */
-
-  word-wrap: break-word;
-  /* Internet Explorer 5.5+ */
-
-  text-indent: -20px;
-}
 @media (max-width: 600px) {
   .docnav li a {
     max-width: 180px;
@@ -135,67 +209,10 @@ hr.resourceSeparator {
     display: none;
   }
 }
-/*
-@media (min-width: 600px) {
-  .docnav li a {
-    max-width: 240px;
-  }
-}*/
 
 ul#docnavsidebar li a:focus {
   text-decoration: none;
 }
-
-#sidebar {
-  height: 100%;
-  padding-right: 0;
-  overflow-y: auto;
-}
-#sidebar .nav {
-  width: 95%;
-}
-
-/* collapsed sidebar styles
-
-@media screen and (max-width: 767px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.3s ease-out;
-    -moz-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
-  }
-  .row-offcanvas-right .sidebar-offcanvas {
-    right: -70%;
-  }
-  .row-offcanvas-left .sidebar-offcanvas {
-    left: -70%;
-  }
-  .row-offcanvas-right.active {
-    right: 70%;
-  }
-  .row-offcanvas-left.active {
-    left: 70%;
-  }
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 70%;
-    padding: 0;
-  }
-  #sidebar {
-    padding-top: 0;
-    padding-left: 40px;
-  }
-}*/
-
-#sidebar {
-  background-color: #f7f7f7;
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-
-
-
 
 .mydocsidebar .input-group.search {
   margin-top: -10px;
