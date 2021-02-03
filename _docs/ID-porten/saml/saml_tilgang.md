@@ -10,13 +10,13 @@ product: ID-porten
 ```
 OBS!  SAML vil på sikt fases ut i ID-porten. Ved nye integrasjoner ber vi om at OpenID Connect benyttes.
 ```
-[OpenID Connect (OIDC)](https://difi.github.io/felleslosninger/oidc_index.html)
+[OpenID Connect (OIDC)](oidc_index.html)
 
 
 
 ### Hvordan få tilgang til ID-porten
 
-Følg prosessen på [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten) for å integrere en SAML-integrasjon i ID-porten.
+Følg prosessen på [Samarbeidsportalen](https://samarbeid.digdir.no) for å integrere en SAML-integrasjon i ID-porten.
 
 
 ### Informasjon som må utveksles
@@ -33,7 +33,7 @@ ID-porten vil utlevere følgende tekniske informasjon til tjenesteeier:
 
 Informasjon om huben og nodene utveksles i form av XML-filer med metadata i henhold til SAML2-standarden. Dette er en toveis kommunikasjon, så tjenesteleverandør må konfigurere sin egen programvare med XML-fil fra ID-porten, og sende sin egen konfigurasjonsfil til ID-porten.
 
-Disse filene inneholder alle detaljene om lokasjonen for SAML2 endepunktene, og hvilke bindinger som er tilgjengelige. Et eksempel på en slik metadatafil finner du [her.](https://difi.github.io/idporten-integrasjonsguide//91_metadata_og_mer_saml.html#eksempel-på-metadatafil)
+Disse filene inneholder alle detaljene om lokasjonen for SAML2 endepunktene, og hvilke bindinger som er tilgjengelige. Et eksempel på en slik metadatafil finner du [her.](saml_metadata.html#eksempel-på-metadatafil)
 Påse at følgende parametere er satt til **TRUE:**
 
 | Attributt og verdi | Beskrivelse |
@@ -53,7 +53,7 @@ Under er et eksempel på hvilken informasjon som trengs i tillegg til informasjo
 | ENTITY_ID | eksempel_101 | Dette feltet **må** være lik entityID i metadatafilen. Entity_ID kan bestemmes selv, men må være unik. |
 | NAME | Norsk data og eksempelforening | Dette blir brukt av ID-porten under innlogging og beskriver tjenesteeier til innbyggeren i ulike sammenhenger. |
 | URL | https://www.eksempel.no | Dette er URL til tjenesteleverandør som benyttes for å rute innbyggeren tilbake til tjenesteleverandør ved avbryting av innlogging eller feilsituasjoner. |
-| REFERRING_SP | Eksempel_202 | Denne parameteren blir kun brukt ved [bruk av onBehalfOf](https://difi.github.io/idporten-integrasjonsguide//3_teknisk_innlogging.html#overføring-av-informasjon-om-tjenesteeier-for-leverandører) |
+| REFERRING_SP | Eksempel_202 | Denne parameteren blir kun brukt ved [bruk av onBehalfOf](saml_teknisk_innlogging.html#overføring-av-informasjon-om-tjenesteeier-for-leverandører) |
 | DIGITALCONTACTINFO_NAME | NorskDataForeningProd | Denne parameteren blir kun brukt for tjenesteeiere som har tatt i bruk kontakt- og reservasjonsregisteret.  Navnet er det unike navnet som tjenesteeier bruker for oppslag mot kontakt- og reservasjonsregisteret sin webservice. |
 | | | |
 
