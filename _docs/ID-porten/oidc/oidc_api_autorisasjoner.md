@@ -17,7 +17,7 @@ Kunden mottar opplysningene for å vise disse til innbygger i egne løsninger, o
 
 ## Hvordan få tilgang ?
 
-Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester-og-priser](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-digdirs-digitale-felleslosninger/tilleggstjenester-og-priser#Tilleggstjenester%20-%C2%A0ID-porten) for generelle vilkår for tilleggstjenester.
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.digdir.no](https://samarbeid.digdir.no) for generelle vilkår for tilleggstjenester.
 
 ## Brukergrensesnitt
 
@@ -25,7 +25,7 @@ Innbyggere kan gå til [https://brukerprofil.idporten.no/](https://brukerprofil.
 
 ## REST-grensesnittet
 
-REST-grensesnittet er beskyttet med Oauth2 og er basert på at innkommende access token tilhører innlogget bruker,  såkalt  [autentiseringsnær autorisasjon](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_auth_oauth2.html), kunden skal derfor ikke oppgi fødselsnummer selv.
+REST-grensesnittet er beskyttet med Oauth2 og er basert på at innkommende access token tilhører innlogget bruker,  såkalt  [autentiseringsnær autorisasjon](oidc_auth_oauth2.html), kunden skal derfor ikke oppgi fødselsnummer selv.
 
 Følgende Oauth2 scopes aksepteres av grensesnittet:
 
@@ -82,7 +82,7 @@ Autorisasjonene kan tilhøre scopes som kunden selv eier, samt scopes som eies a
 
 Normalt vil en kunde slette en autorisasjon ved at klienten som fikk utstedt det aktuelle tokenet kaller /revoke-endepunktet til ID-porten med tokenet (access eller fortrinnvis refresh) som skal slettes.
 
-Dette API-kallet gir derimot kunden anledning til å revokere fra en annen klient enn den som fikk tokenet utdelt.  Ved sletting av autorisasjon, blir alle tilhørende aktive access_token og refresh_token invalideret.   (Merk at evt. allerede utstedte self-contained access_token fremdeles vil fremstå som gyldige, dersom de ikke valideres via nettverkskall mot ID-portens /tokeninfo-endepunkt).
+Dette API-kallet gir derimot kunden anledning til å revokere fra en annen klient enn den som fikk tokenet utdelt.  Ved sletting av autorisasjon, blir alle tilhørende aktive access_token og refresh_token invalideret. (Merk at evt. allerede utstedte self-contained access_token fremdeles vil fremstå som gyldige, dersom de ikke valideres via nettverkskall mot ID-portens /tokeninfo-endepunkt).
 
 ```
 DELETE /authorizations/{authorization_id}
