@@ -16,9 +16,9 @@ I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider
 Symbolet er spesialdesignet og tilpasset slik at
 det også fungerer godt i et lite format.
 
-![ID-porten hovedlogo](assets\Merket_hovedlogoRGB.png)
+![ID-porten hovedlogo](/assets/Merket_hovedlogoRGB.png)
 
-Last ned .eps fil her: [Merket_hovedlogoRGB.eps](assets\Merket_hovedlogoRGB.eps)
+Last ned .eps fil her: [Merket_hovedlogoRGB.eps](/assets/Merket_hovedlogoRGB.eps)
 
 ### ID-porten hovedlogo negativ
 
@@ -29,9 +29,9 @@ er plassering av symbol på en bakgrunn der
 kontrasten påvirkes og symbolet ikke lengre
 vises i sin helhet.
 
-![ID-porten hovedlogo](assets\Merket_Negativ_logoRGB.png)
+![ID-porten hovedlogo](/assets/Merket_Negativ_logoRGB.png)
 
-Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](assets\Merket_Negativ_logoRGB.eps)
+Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](/assets7Merket_Negativ_logoRGB.eps)
 
 ### Farger/Fargekoder
 
@@ -49,7 +49,7 @@ godkjennes av Digdir**
 
 |**Lys gråtone**|**Mørk gråtone**|
 | - | - |
-| ![ID-porten Lys gråtone](assets\idp_lysgratone.png) | ![ID-porten Mørk gråtone](assets\idp_morkgratone.png) |
+| ![ID-porten Lys gråtone](assets\idp_lysgratone.png) | ![ID-porten Mørk gråtone](/assets/idp_morkgratone.png) |
 | CMYK: 4-2-4-8 | CMYK: 69-64-61-57 |
 | RGB: 217-217-214 | RGB: 53-52-53 |
 | HTML: D9D9D6 | HTML: 353435 |
@@ -61,10 +61,10 @@ godkjennes av Digdir**
 
 Logo kan benyttes til å synliggjøre at ID-porten benyttes til innlogging. Eksempel fra Miljødirektoratet.
 
-![Logo som del av "logg inn" knapp](assets\idp_mdir_inlogging.png)
+![Logo som del av "logg inn" knapp](/assets/idp_mdir_inlogging.png)
 
 #### ID-porten som en av flere innloggingsmetoder
 
 Logoen kan nyttes til å synliggjøre ID-porten som en av flere innloggingsmetoder. Slik som dette eksempelet fra "Meldeboka" til Trondheim kommune.
 
-![ID-porten som en av flere innloggingsmetoder](assets\idp_trondheim_meldeboka.png)
+![ID-porten som en av flere innloggingsmetoder](/assets/idp_trondheim_meldeboka.png)
