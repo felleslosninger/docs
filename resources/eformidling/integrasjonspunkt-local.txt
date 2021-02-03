@@ -1,6 +1,6 @@
 #Fyll inn lokale verdier der de mangler
 
-## NB! Beskrivelse om alle properties finner en [her:] (eformidling_properties_config.html)
+## NB! Beskrivelse om alle properties finner en her: https://docs.digdir.no/eformidling_properties_config.html
 
 server.port=Portnummer integrasjonspunktet skal kjøre på (default 9093)
 difi.move.org.number=Organisasjonsnummer til din organisasjon (9 siffer)
