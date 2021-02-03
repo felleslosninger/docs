@@ -36,7 +36,7 @@ Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjon
 ## Autentisering av sluttbruker
 ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 
-![](images/autentiseringstjenester.bmp "Autentiseringstjenester")
+![](/images/idporten/saml/autentiseringstjenester.bmp "Autentiseringstjenester")
 
 
 ## Støttede protokoller
