@@ -11,7 +11,7 @@ sidebar: begrep_sidebar
 |Kilde|DIFI|
 |Kommentar|Dette gir en henvisning til dokumentet i [Dokumentpakken](dokumentpakke_index.html) sammen med en tittel. Denne tittelen vil vises til Innbygger når Dokumentpakken er dekryptert og Innbygger er autentisert på tilstrekkelig sikkerhetsnivå.|
 
-#### Eigenskapar
+#### Egenskaper
 
 | --- | --- | --- |
 | Identifikator        | Kardinalitet | Datatype                     |
