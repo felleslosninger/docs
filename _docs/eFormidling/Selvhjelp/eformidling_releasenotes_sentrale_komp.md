@@ -7,10 +7,35 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## ServiceRegistry 2.2.0
+20.01.2021
+
+**Endringer**
+* Tilrettelegging for at integrasjonspunktet skal kunne brukes i fire-hjørners modell, ved å introdusere støtte for plugins. Eksempelprosjekt: https://github.com/felleslosninger/efm-ip-plugin-example - Connect to preview 
+* Støtte for FIKS IO
+* Validering av eget sertifikat, samt. sertifikat registrert i Virksert, både ved oppstart og sending av melding
+* Ny raskere pollingoperasjon mot Altinn
+* Asynkron sletteoperasjon i API for innkommende meldinger - mindre sårbar for nettverksfeil
+* Innført støtte for JSON appender til stdout. Settes via property app.logger.stdoutAppender=JSON (default CONSOLE)
+* Støtte for RFC5987 i name-attributt for filopplasting til utgående meldinger
+* Nytt endepunkt for sletting av meldinger i status-API
+* Introdusert logging av correlationId for meldingsflyt (og feil-logging)
+
+**Feilrettinger**
+* Oppslag mot KRR hvor mottakere mangler enten mobil eller epost vil ikke føre til feil under forsendelse, så lenge én av verdiene er satt (kun ett av mottakene for varsling er påkrevd)
+* Rettet prefetching-feil i forsendelseskø (ActiveMQ), som kunne føre til at feilende forsendelser blokkerte køen
+* Filtrering av innkommende meldinger fungerte ikke som forventet (API)
+* Error-respons uten melding fra noark-klient førte til feilsituasjon
+* Manglende timeout-config for serviceregistry-klient
+* Fjernet logging-spam fra servicebus AMQP-klient under shutdown
+
+[Detaljer](https://)
+
+
 ## ServiceRegistry 2.1.0
 25.11.2020
 
-**Endring**: 
+**Endringer**: 
 Versjonen inneholder to primærendringer: 
 * Ny versjon av virksert klient som kun gjør CRL-validering (og ikke OCSP)
 * FIKS IO-integrasjon
