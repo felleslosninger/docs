@@ -17,8 +17,8 @@ Målgruppen for denne spesifikasjonen er
 ### Hvordan ta i bruk digital postkasse til innbyggere?
 
 Ønsker du å komme igang med Digital postkasse til innbyggere så gå til
-[samarbeidsportalen](https://samarbeid.difi.no/) for felleskomponenter
-forvaltet av Difi og les hvordan du kan ta i bruk Digital postkasse til
+[Samarbeidsportalen](https://samarbeid.digdir.no/) for felleskomponenter
+forvaltet av Digitaliseringsdirektoratet og les hvordan du kan ta i bruk Digital postkasse til
 innbyggere.
 
 ### Innledning
