@@ -12,7 +12,7 @@ sidebar: einnsyn_sidebar
 * Minimum Java Runtime Environment 1.8 installert
 * Et virksomhetssertifikat utstedt til virksomheten
 * Verktøy for xml-redigering. feks Notepad, Notepad++ eller Sublime Text.
-* Integrasjonspunkt installert på samme server. [Sjå veiledning her](https://difi.github.io/felleslosninger/eformidling_download_ip.html)
+* Integrasjonspunkt installert på samme server. [Sjå veiledning her](eformidling_download_ip.html)
 
 ## Dette må du laste ned for å installere einnsyn-klienten
 
