@@ -53,7 +53,7 @@ ID-porten vil tolke alle forespørsler til *minimum* og at *AuthnContextClassRef
 
 #### **NameID** 
 
-Det anbefales at tjenesteleverandør setter *NameID* til *transient*. ID-porten støtter både *transient* og *persistent*. Se eventuelt [Detaljert beskrivelse av støttede SAML2-profiler](90_detaljert_beskrivelse_stotta_saml2-profiler) for mer informasjon.
+Det anbefales at tjenesteleverandør setter *NameID* til *transient*. ID-porten støtter både *transient* og *persistent*. Se eventuelt [Detaljert beskrivelse av støttede SAML2-profiler](saml_stottede_profiler.html) for mer informasjon.
 
 #### **ForceAuthn**
 
@@ -84,7 +84,7 @@ ID-porten støtter følgende språk:
 
 I de tilfeller der tjenesteleverandør ikke sender over språkvalg, vil ID-porten benytte språket som er satt i nettleseren. Er nettleseren innstilt på et språk som ID-porten ikke støtter, vil ID-porten velge standardspråket bokmål.
 
-ID-porten sender over språket som er brukt ved innlogging i [assertion til tjenesteleverandør](https://difi.github.io/idporten-integrasjonsguide//3_teknisk_innlogging.html#artifactresponse)
+ID-porten sender over språket som er brukt ved innlogging i [assertion til tjenesteleverandør](saml_teknisk_innlogging.html#artifactresponse)
 
 Her er et eksempel på hvordan en forespørsel med språk ser ut: 
 ```xml
@@ -139,7 +139,7 @@ Når det gjelder bak-kanal for SLO, så er det ID-porten som er ansvarlig for å
 
 #### **ArtifactResponse**
 
-Begrepene og dataene i ArtifactResponsen er beskrevet i begrepskatalogen på [begrep.difi.no](https://begrep.difi.no/)
+Begrepene og dataene i ArtifactResponsen er beskrevet i begrepskatalogen på https://begrep.difi.no/ID-porten
 
 ID-porten tilbyr fire ulike Assertion-profiler:
 
@@ -168,6 +168,6 @@ Følgende attributter legges ved i assertion:
 
 #### **AuthnContextClassRef som informasjonsbærer om sikkerhetsnivå**
 
-Assertion vil alltid inneholde informasjon om sikkerhetsnivå benyttet under autentisering. Til dette benyttes AuthnContextClassRef på samme måte som i autentiseringsforespørselen. Se [tabell knyttet til autentiseringsforespørsel](https://difi.github.io/idporten-integrasjonsguide//3_teknisk_innlogging.html#requestedauthncontext) for spesifisering av gyldige klasser støttet i ID-porten og deres tilhørende autentiseringsnivå. 
+Assertion vil alltid inneholde informasjon om sikkerhetsnivå benyttet under autentisering. Til dette benyttes AuthnContextClassRef på samme måte som i autentiseringsforespørselen. Se [tabell knyttet til autentiseringsforespørsel](saml_teknisk_innlogging.htmll#requestedauthncontext) for spesifisering av gyldige klasser støttet i ID-porten og deres tilhørende autentiseringsnivå. 
 
 
