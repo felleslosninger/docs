@@ -62,18 +62,13 @@ virksomhetsertifikater utstedt til egen virksomhet eller autorisert
 databehandler.  
 Se under for generell informasjon om kvalifisertesertifikater.
 
-## Kvalifisertesertifikater
+## Kvalifiserte sertifikater
 
-Kvalifisertesertifikater som er utstedt iht. [Kravspesifikasjon for PKI
-i offentlig
-sektor](http://www.regjeringen.no/nb/dep/fad/dok/lover-og-regler/retningslinjer/2010/kravspesifikasjon-for-pki-i-offentlig-se.html?id=611085)
-leveres fra to leverandører
-([Buypass](http://www.buypass.no/produkter-og-tjenester/virksomhetssertifikat)
+Kvalifisertesertifikater som er utstedt iht. [Kravspesifikasjon for PKI i offentlig sektor](http://www.regjeringen.no/nb/dep/fad/dok/lover-og-regler/retningslinjer/2010/kravspesifikasjon-for-pki-i-offentlig-se.html?id=611085) leveres fra to leverandører ([Buypass](http://www.buypass.no/produkter-og-tjenester/virksomhetssertifikat)
 ,
 [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html)
 )  
-Her er en oversikt over de CA sertifikater som offentlig virksomhet må
-forholde seg til for å kunne validere signaturene i sikker digital post.
+Her er en oversikt over de CA sertifikater som offentlig virksomhet må forholde seg til for å kunne validere signaturene i sikker digital post.
 
 #### For testing
 
