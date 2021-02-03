@@ -71,8 +71,11 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 
 Videotutorial: (https://vimeo.com/427689809)
 
-[![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
+<!--kommentert bort pga død lenke under-->
 
+<!-- 
+[![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
+-->
 ### Tilgangsstyring
 
 1. Fullfør stegene i "Innlogging"
@@ -83,7 +86,11 @@ Videotutorial: (https://vimeo.com/427689809)
 
 Videotutorial: (https://vimeo.com/427689702)
 
+<!--kommentert bort pga død lenke under-->
+
+<!-- 
 [![Tilgangsstyre scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
+-->
 
 ### Deaktivere subscopes
 
@@ -95,9 +102,10 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 4. Trykk på "Deaktiver" og bekreft at du vil deaktivere.
 
 Videotutorial: (https://vimeo.com/427689583)
-
+<!--kommentert bort pga død lenke under-->
+<!-- 
 [![Deaktivere scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
-
+-->
 
 ### Vedlikehald av merkantile data
 
@@ -112,9 +120,10 @@ For å administrere merkantile data:
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
 Videotutorial: (https://vimeo.com/397388041)
-
+<!--kommentert bort pga død lenke under-->
+<!-- 
 [![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
-
+-->
 
 ## Selvbetjening for brukerspesifikt oppslag REST
 
