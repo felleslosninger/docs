@@ -13,6 +13,6 @@ JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
 
 ## Request
 
-ID-porten uses [the same grant format as Maskinporten](https://difi.github.io/felleslosninger/maskinporten_protocol_jwtgrant.html), with the following exceptions:
+ID-porten uses [the same grant format as Maskinporten](maskinporten_protocol_jwtgrant.html), with the following exceptions:
 - the `consumer_org`-claim (ie external delegation) is not supported.
 -  make sure the OIDC-provider is used as audience for the grant, ie: the `aud` claim.
