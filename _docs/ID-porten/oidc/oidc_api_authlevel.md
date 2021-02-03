@@ -15,7 +15,7 @@ Kunden mottar opplysningene for å tilpasse sin dialog med innbygger, basert på
 
 ## Hvordan få tilgang ?
 
-Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester-og-priser](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-digdirs-digitale-felleslosninger/tilleggstjenester-og-priser#Tilleggstjenester%20-%C2%A0ID-porten) for generelle vilkår for tilleggstjenester.
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [Samarbeidsportalen](https://samarbeid.digdir.no) for generelle vilkår for tilleggstjenester.
 
 
 ## Bruk av Oauth2
