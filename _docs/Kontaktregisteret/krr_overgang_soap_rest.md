@@ -25,9 +25,7 @@ Her kommer litt informasjon om hva virksomhetene må gjøre for å komme seg ove
 For å bruke selvbetjening så forutsetter det at din virksomhet har tilgang til Samarbeidsportalen. Opprett bruker med din jobb-adresse og gå til "Min profil" på
 [https://samarbeid.digdir.no.](https://samarbeid.digdir.no)
 
-1. Gå til "integrasjoner" i høyremenyen og velg det miljøet du vil opprette klienten i.
-
-NB! For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn, fra din virksomhet. Prosessen er beskrevet på [Tilgang til produksjonsmiljø.](maskinporten_sjolvbetjening_web.html#tilgang-i-produksjonsmilj%C3%B8)
+1. Gå til "integrasjoner" i høyremenyen og velg det miljøet du vil opprette klienten i. NB! For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn, fra din virksomhet. Prosessen er beskrevet på [Tilgang til produksjonsmiljø.](maskinporten_sjolvbetjening_web.html#tilgang-i-produksjonsmilj%C3%B8)
 
 2. Velg "Ny integrasjon"
 
@@ -52,11 +50,4 @@ Det er noe forskjell i navnene på attributtene i KRR fra SOAP til REST. For ove
 
 ## Kontakt
 
-Ved spørsmål eller behov for hjelp, kan dere kontakte oss på servicedesk@digdir.no .
-
-
-
-
-
-
-## Hjelp?
+Ved spørsmål eller behov for hjelp, kan dere kontakte oss på servicedesk@digdir.no.
