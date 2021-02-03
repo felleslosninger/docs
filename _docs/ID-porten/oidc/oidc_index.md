@@ -13,13 +13,13 @@ product: ID-porten
 ## Hvem kan bruke ID-porten OpenID Connect provider?
 Tjenesteeiere som har godtatt ID-porten sine bruksvilkår kan ta i bruk denne tjenesten i produksjonsmiljø. Man kan gjerne teste løsningen i testmiljø før man godtar bruksvilkårene.
 
-Se [bruksvilkår i samarbeidsportalen](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-difis-felleslosninger)
+Se [bruksvilkår i Samarbeidsportalen](https://samarbeid.digdir.no)
 
 ## Rutine for tilgang
-Følg [stegvis veiledning på samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/id-porten/ta-i-bruk-id-porten)
+Følg [stegvis veiledning på Samarbeidsportalen](https://samarbeid.digdir.no)
 
 ### Planlegging
-Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Difi)
+Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Digitaliseringsdirektoratet)
 
 * Tidsplan
 * Produksjonsplan
@@ -30,17 +30,17 @@ Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Di
 
 ## Framgangsmåte
 
-Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Digitaliseringsdirektoratetsitt [Ver2-miljø](https://samarbeid.difi.no/node/232) er standard testmiljø for OIDC.
+Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Digitaliseringsdirektoratets Ver2-miljø er standard testmiljø for OIDC.
 
-1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no/#/).  Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
-   - Alternativt kan du be om å få en klient-integrasjon ved å sende mail til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no).  Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
+   - Alternativt kan du be om å få en klient-integrasjon ved å sende e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.
  3. Det skal nå være mulig å logge inn
 
 ## Test
 
-Det må utføres en rekke verifikasjonstester for å teste blant annet innlogging og utlogging. [Verifikasjonstester finner du her](https://difi.github.io/idporten-integrasjonsguide//96_verifikasjonstest.html).  
+Det må utføres en rekke verifikasjonstester for å teste blant annet innlogging og utlogging. [Verifikasjonstester finner du her](idporten_verifikasjonstester.html).  
 
 
 ### Testbrukere
