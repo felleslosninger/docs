@@ -137,8 +137,11 @@ For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør 
 6. Trykk "Opprett" for å lagre.
 
 Videotutorial: (https://vimeo.com/427689834)
+<!--kommentert bort pga død lenke under-->
 
+<!--
 [![Opprette klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
+-->
 
 ### Slette klient
 
@@ -149,7 +152,11 @@ Videotutorial: (https://vimeo.com/427689834)
 
 Videotutorial: (https://vimeo.com/427689782)
 
+<!--kommentert bort pga død lenke under-->
+
+<!-- 
 [![Deaktivere klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+-->
 
 ### Vedlikehald av merkantile data
 
@@ -164,8 +171,11 @@ For å administrere merkantile data:
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
 Videotutorial: (https://vimeo.com/397388041)
+<!--kommentert bort pga død lenke under-->
 
+<!-- 
 [![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+-->
 
 ## Ofte stillte spørsmål
 
