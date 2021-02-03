@@ -23,7 +23,7 @@ For å administrere API'er må administrasjons-klienten ha tilgang til scopet id
 
 Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
-Les også "Grunnleggende prosedyre for API-sikring". (https://difi.github.io/felleslosninger/oidc_api_admin_maskinporten.html#grunnleggende-prosedyre-for-api-sikring)
+Les også "Grunnleggende prosedyre for API-sikring". (oidc_api_admin_maskinporten.html#grunnleggende-prosedyre-for-api-sikring)
 
 ### Opprette API - Oauth2-selvbetjeningsklient
 
