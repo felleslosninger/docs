@@ -20,7 +20,7 @@ Kontakt Digitaliseringsdirektoratet på <a href="mailto:servicedesk@digdir.no">s
 ## DPO 
 DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter har et integrasjonspunkt og DPO aktivert for å motta/sende.
 
-Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
+Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](eformidling_create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
 
 ### ErrorId 0. UserId 0
 ```
@@ -193,7 +193,7 @@ Her kan det også være fleire grunner til dette, blant annet:
 ### Invalid location size
 
 Dette er ikke en error, men en warning. Denne kan forekomme når receipts.mv.db databasen inneholder data fra tidligere versjoner av integrasjonspunktet. Altså at det er oppgradert utan å tømme denne. Dette er inga krise, men vil vises i loggen. Kan fjernes ved å 
-[gjøre følgende](https://difi.github.io/felleslosninger/eformidling_selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
+[gjøre følgende](eformidling_selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
 
 ```
 2018-11-29 09:46:45.933  WARN 3932 --- [main] o.a.a.store.kahadb.MessageDatabase       : Cannot recover message audit
