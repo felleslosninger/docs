@@ -17,7 +17,7 @@ Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til `
 
 **NB!** Kommandolinje har presendens over properties.
 
-Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [https://difi.github.io/felleslosninger/eformidling_ip_run.html](https://difi.github.io/felleslosninger/eformidling_ip_run.html)
+Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du [her](eformidling_ip_run.html)
 
 ### Digital post til virksomheter(DPV)
 
