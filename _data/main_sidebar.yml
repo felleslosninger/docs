@@ -32,7 +32,7 @@ folders:
   - title: Teknisk dokumentasjon
     jurl: /oppslagstjenesten_rest.html
 
-  
+
 - title: Digital postkasse
   folderitems:
 
@@ -101,8 +101,8 @@ related_resources_list:
 - title: Digitaliseringsdirektoratet
   jurl: https://www.digdir.no
 
-- title: Digdir Status
-  jurl: https://status.digdir.no
+#- title: Digdir Status
+#  jurl: https://status.digdir.no
 
 - title: Altinn Docs
   jurl: https://altinn.github.io/docs/
