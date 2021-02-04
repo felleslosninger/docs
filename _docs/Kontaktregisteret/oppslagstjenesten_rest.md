@@ -2,7 +2,7 @@
 title: Oppslagstjenesten REST
 description: REST-API for Kontakt- og Reservasjonsregisteret
 permalink: oppslagstjenesten_rest.html
-sidebar: main_sidebar
+sidebar: krr_sidebar
 product: KRR
 ---
 

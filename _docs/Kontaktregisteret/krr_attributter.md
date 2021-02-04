@@ -4,7 +4,7 @@ description: KRR attributter
 summary:
 permalink: krr_attributter.html
 toc: false
-sidebar: main_sidebar
+sidebar: krr_sidebar
 product: KRR
 
 ---

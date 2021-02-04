@@ -3,7 +3,7 @@ title: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsreg
 description: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsregisteret
 summary: "Kontaktinformasjon fra Kontakt- og Reservasjonsregisteret tilhørende  innlogget bruker er tilgjengelig på et eget Oauth2-beskyttet REST-API."
 permalink: brukerspesifikt_oppslag_krr_rest.html
-sidebar: main_sidebar
+sidebar: krr_sidebar
 product: KRR
 ---
 
@@ -77,7 +77,7 @@ Se https://begrep.difi.no/Oppslagstjenesten/Person for definisjon av kodeverket.
       }
 ```
 
-### Eksempel på endring av språk: {#spraak} 
+### Eksempel på endring av språk: {#spraak}
 
 Forspørselen nedenfor vil endre innlogget bruker sitt foretrukne språk i Kontaktregisteret til engelsk:
 
