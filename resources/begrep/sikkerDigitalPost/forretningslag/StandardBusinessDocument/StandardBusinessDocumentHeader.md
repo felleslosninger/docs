@@ -15,34 +15,28 @@ sidebar: dpi_sidebar
 | Identifikator                                    | Kardinalitet | Datatype                                              | Kommentar                                                                                                                                                                                   |
 | ------------------------------------------------ | ------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | HeaderVersion                                    | 1..1         | xs:string                                             | “1.0”                                                                                                                                                                                       |
-| [Sender](https://difi.github.io/felleslosninger/sdp_sender.html)                                 | 1..1         | [sbdh:Sender](https://difi.github.io/felleslosninger/sdp_sender.html)                                 | Identifikator (organisasjonsnummer) til virksomheten som initierer (er avsender) i meldingsprosessen. Alle kvitteringer skal addresseres til denne parten som mottaker                      |
+| [Sender](sdp_sender.html)                                 | 1..1         | [sbdh:Sender](sdp_sender.html)                                 | Identifikator (organisasjonsnummer) til virksomheten som initierer (er avsender) i meldingsprosessen. Alle kvitteringer skal addresseres til denne parten som mottaker                      |
 | [Receiver](Receiver.md)                             | 1..1         | [sbdh:Receiver](Receiver.md)                             | Identifikator (organisasjonsnummer) til virksomheten som er sluttmottaker i meldingsprosessen. Ved initiell sending av melding vil dette alltid være en postboks eller utskriftsleverandør. |
 | [DocumentIdentification](DocumentIdentification.md) | 1..1         | [sbdh:DocumentIdentification](DocumentIdentification.md) | Unik identifikator for meldingen, generert av Avsender                                                                                                                                      |
 | [BusinessScope](BusinessScope.md)                   | 1..1         | [sbdh:BusinessScope](BusinessScope.md)                   | Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen                                                                                                  |
 
 ### Kommentar
 
-Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i
-[FormidleDigitalPostForsendelse](https://difi.github.io/felleslosninger/sdp_formidledigitalpostforsendelse.html)
-prosessen så vil Sender være [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller) og Receiver
-være [Postkasse](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller).
+Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i [FormidleDigitalPostForsendelse](sdp_formidledigitalpostforsendelse.html)
+prosessen så vil Sender være [Databehandler](sdp_aktorer.html#roller) og Receiver være [Postkasse](felleslosninger/sdp_aktorer.html#roller).
 
-Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den
-offisielle standarden (BusinessScope er obligatorisk i Sikker Digital
-Post). Konsekvesen er at man kan få en [forretningsrelatert
-feilmelding]https://difi.github.io/felleslosninger/sdp_forretningsfeil.html) selv om XML’en
-validerer mot xsd.
+Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den offisielle standarden (BusinessScope er obligatorisk i Sikker Digital Post). Konsekvesen er at man kan få en [forretningsrelatert feilmelding](sdp_forretningsfeil.html) selv om XML’en validerer mot xsd.
 
 ### XML eksempel fra Databehandler til Postkasseleverandør
 
-**** En melding fra [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#rollerl) med orgnummer: 123456789
-til [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html) med orgnummer: 987654321
+**** En melding fra [Databehandler](sdp_aktorer.html#rollerl) med orgnummer: 123456789
+til [Postkasseleverandør](sdp_aktorer.html) med orgnummer: 987654321
 
-**** [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller) har generert en unik
+**** [Databehandler](sdp_aktorer.html#roller) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “35e21e33-22b3-4554-9707-5fa829ee8bc0”
 
-**** [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html#roller) har generert en unik
+**** [Databehandler](hsdp_aktorer.html#roller) har generert en unik
 BusinessScope.InstanceIdentifier for hele konversasjonen:
 “37efbd4c-413d-4e2c-bbc5-257ef4a65a45”
 
@@ -75,20 +69,20 @@ konversasjon sammen.
     </ns3:StandardBusinessDocumentHeader>
 ```
 
-### XML eksempel fra Postkasseleverandør til Databehandler
+###XML eksempel fra Postkasseleverandør til Databehandler
 
-**** En melding fra [Postkasseleverandør](../Aktorer.md) med orgnummer:
-987654321 til [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) med orgnummer: 123456789
+****En melding fra [Postkasseleverandør](../Aktorer.md) med orgnummer:
+987654321 til [Databehandler](sdp_aktorer.html) med orgnummer: 123456789
 
-**** [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html) har generert en unik
+****[Postkasseleverandør](sdp_aktorer.html) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “12e57bde-ea5d-43ee-96b6-e2cf73f8311e”
 
-**** [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html) bruker den
-BusinessScope.InstanceIdentifier som [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) har
+****[Postkasseleverandør](sdp_aktorer.html) bruker den
+BusinessScope.InstanceIdentifier som [Databehandler](sdp_aktorer.html) har
 generert.
 
-****\* Dette er knytningen mot den opprinnelige forsendelsen.
+****\*Dette er knytningen mot den opprinnelige forsendelsen.
 
 ``` brush: xml; toolbar: false
     <ns3:StandardBusinessDocumentHeader>
