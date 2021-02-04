@@ -16,6 +16,16 @@ REST-API'et inneholder samme data og funksjonalitet som SOAP-grensesnittet, men 
 
 ## Bakgrunn:
 
+Det er flere grunner til at vi ønsker å fase ut SOAP grensesnittet.
+
+- Enklere å bruke og vedlikeholde
+- Bedre ytelse
+- REST er den foretrukne protokollen for WEB Service i dag i det offentlige
+- Støtte for flere dataformat bl.a. JSON
+- Å støtte både SOAP og REST gir utfordringer både med ressurser og kompetanse
+- Oppslag via SOAP er i dag tett integrert med IDporten, REST går mot et API som er sikret med Maskinporten.
+
+
 ## Hva må gjøres?
 
 Her kommer litt informasjon om hva virksomhetene må gjøre for å komme seg over på REST-grensesnittet.
