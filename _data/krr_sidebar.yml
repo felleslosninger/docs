@@ -1,5 +1,8 @@
 sidebarTitle: KRR
-folderitems:
+
+folders:
+- title: Om ID-porten
+  folderitems:
   - title: Oppslagstjenesten REST
     jurl: /oppslagstjenesten_rest.html
 
