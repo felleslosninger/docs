@@ -4,7 +4,7 @@ description: Overgang fra SOAP til REST for KRR
 summary:
 permalink: krr_overgang_soap_rest.html
 toc: false
-sidebar: main_sidebar
+sidebar: krr_sidebar
 product: KRR
 
 ---
