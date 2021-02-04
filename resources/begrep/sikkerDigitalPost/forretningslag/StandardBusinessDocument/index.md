@@ -23,12 +23,12 @@ neste versjon av PEPPOL infrastrukturen for fakturaformidling.
 
 I sikker digital post blir Standard Business Document brukt til å sende:
 
-**** informasjonen som meldingsformidler trenger for å formidle
+* informasjonen som meldingsformidler trenger for å formidle
 meldingen
 
-**** identifisering og knytningen mellom forretningsmeldingen
+* identifisering og knytningen mellom forretningsmeldingen
 
-**** informasjon som postboksen trenger for å presentere og håndtere
+* informasjon som postboksen trenger for å presentere og håndtere
 dokumentpakken
 
 ### Klassediagram
