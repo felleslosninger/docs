@@ -96,7 +96,7 @@ Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at an
 
 ### Gi tilgang til konsumenter
 
-API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](https://difi.github.io/felleslosninger/maskinporten_guide_apitilbyder.html#2b-tilgangsstyring---oauth2-selvbetjeningsklient) på ordinær måte.  
+API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](maskinporten_guide_apitilbyder.html#2b-tilgangsstyring---oauth2-selvbetjeningsklient) på ordinær måte.  
 
 Merk at API-tilbyder aldri må gi direkte tilgang til leverandøren.
 
@@ -122,7 +122,7 @@ Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  A
 
 ### Hente tokens
 
-Når overstående punkter er utført, kan leverandøren [forespørre token fra Maskinporten](https://difi.github.io/felleslosninger/maskinporten_protocol_token.html).
+Når overstående punkter er utført, kan leverandøren [forespørre token fra Maskinporten](maskinporten_protocol_token.html).
 
 Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org`-claimet i JWT-grantet:
 

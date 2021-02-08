@@ -13,21 +13,19 @@ Tjenesteeiere som har godtatt ID-porten sine bruksvilkår kan ta i bruk denne tj
 
 Man kan gjerne teste løsningen i testmiljø før man godtar bruksvilkårene.
 
-Se
-[https://samarbeid.difi.no/bruksvilkar/bruksvilkar-difis-felleslosninger](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-difis-felleslosninger#1.%20Generelle%20bruksvilk%C3%A5r%20for%20Difis%20fellesl%C3%B8sninger)
- for mer informasjon om hvordan du kan bli tjenesteeier i ID-porten
+Se [Samarbeidsportalen](https://samarbeid.digdir.no)  for mer informasjon om hvordan du kan bli kunde i ID-porten
  
 ## Framgangsmåte
 
 Vi ønsker at alle tjenester skal verifiseres via testmiljøet før det går i produksjon. Digitaliseringsdirektoratetsitt Ver2-miljø er standard testmiljø for OIDC.
 
- 1. Be om å få en klient-integrasjon ved å sende mail til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> eller meld inn klient via [web-skjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUNVVMR0JKVjRHQlNPMU80VEs3NDc1MzNQUC4u) Husk å oppgi ønsket redirect-uri're og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html) 
+ 1. Be om å få en klient-integrasjon ved å sende e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> eller meld inn klient via [web-skjema](https://forms.office.com/Pages/ResponsePage.aspx?id=dV4PJZxZFEaXBwztYRT_xpi569dsKKZOkO1f2ClqM-VUNVVMR0JKVjRHQlNPMU80VEs3NDc1MzNQUC4u) Husk å oppgi ønsket redirect-uri're og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html) 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.
  3. Det skal nå være mulig å logge inn
 
 ## Test 
 
-Det må utføres en rekke verifikasjonstester for å teste blant annet innlogging og utlogging. [Verifikasjonstester finner du her](https://difi.github.io/idporten-integrasjonsguide//96_verifikasjonstest.html)
+Det må utføres en rekke verifikasjonstester for å teste blant annet innlogging og utlogging. [Verifikasjonstester finner du her](idporten_verifikasjonstester.html)
 
 ### Testbrukere
 

@@ -23,12 +23,10 @@ neste versjon av PEPPOL infrastrukturen for fakturaformidling.
 
 I sikker digital post blir Standard Business Document brukt til å sende:
 
-**** informasjonen som meldingsformidler trenger for å formidle
+* informasjonen som meldingsformidler trenger for å formidle
 meldingen
-
-**** identifisering og knytningen mellom forretningsmeldingen
-
-**** informasjon som postboksen trenger for å presentere og håndtere
+* identifisering og knytningen mellom forretningsmeldingen
+* informasjon som postboksen trenger for å presentere og håndtere
 dokumentpakken
 
 ### Klassediagram
@@ -39,5 +37,5 @@ dokumentpakken
 
 | Identifikator                                                    | Kardinalitet | Datatype                    | Kommentar                                                                          |
 | ---------------------------------------------------------------- | ------------ | --------------------------- | ---------------------------------------------------------------------------------- |
-| [StandardBusinessDocumentHeader](https://difi.github.io/felleslosninger/sdp_standardbusinessdocumentheader.html) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
-| [Melding](https://difi.github.io/felleslosninger/sdp_index.html)      | 0..1         | [Melding](https://difi.github.io/felleslosninger/sdp_index.html) | Forretningsmelding identifisert i [DocumentIdentification](https://difi.github.io/felleslosninger/sdp_documentidentification.html) |
+| [StandardBusinessDocumentHeader](sdp_standardbusinessdocumentheader.html) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
+| [Melding](sdp_index.html)      | 0..1         | [Melding](sdp_index.html) | Forretningsmelding identifisert i [DocumentIdentification](sdp_documentidentification.html) |

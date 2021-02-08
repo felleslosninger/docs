@@ -18,7 +18,7 @@ integritet og konfidensialitet i overføringen av digital post fra
 avsendervirksomhetene til innbyggernes digitale postkasser.
 
 Formatet på digitalt post er detaljert på
-<https://difi.github.io/felleslosninger/sdp_innledning_index.html>. Løsningen legger opp til at
+<https://docs.digdir.no>. Løsningen legger opp til at
 all post sikres på samme nivå, og er tiltenkt å kunne beskytte
 informasjon av særlig følsomme taushetsbelagte opplysninger, herunder de
 fleste sensitive personopplysninger, stigmatiserende opplysninger m.v.

@@ -9,7 +9,7 @@ sidebar: eformidling_install_sidebar
 
 Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Dette er det siste steget før virksomheten din kan ta i bruk eFormidling. Denne guiden er ment som en rettesnor for testing og verifisering i **produksjonsmiljøet**.
 
-Lenke til **testmiljøet** finner du derimot [her](https://difi.github.io/felleslosninger/eformidling_testing_env.html).
+Lenke til **testmiljøet** finner du derimot [her](eformidling_testing_env.html).
 
 ## Hva må jeg huske på?
 
@@ -24,7 +24,7 @@ Lenke til **testmiljøet** finner du derimot [her](https://difi.github.io/felles
 ## Hvordan tester jeg?
 
 ### DPO - Digital post til offentlig virksomhet
-Meldinger mellom offentlige virksomheter som bruker integrasjonspunktet. En liste over virksomheter som bruker DPO kan dere finne her under [Virksomheter som har tilgang til eFormidling](https://samarbeid.difi.no/felleslosninger/eformidling).
+Meldinger mellom offentlige virksomheter som bruker integrasjonspunktet. En liste over virksomheter som bruker DPO kan dere finne her under [Virksomheter som har tilgang til eFormidling](https://samarbeid.digdir.no).
 
 En kan sende en DPO melding til egen virksomhet, men anbefaler at en tar kontakt med en annen virksomhet fra listen over.
 

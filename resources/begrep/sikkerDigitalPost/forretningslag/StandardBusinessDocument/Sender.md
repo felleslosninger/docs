@@ -12,7 +12,7 @@ sidebar: dpi_sidebar
 | Kommentar     | Sender den som har signert [Standard Business Document](https://difi.github.io/felleslosninger/standardbusinessdocument_index.html). Regler for hvem som opptrer som Sender er beskrevet under. |
 
 \*For [digital post meldinger](../../meldinger/DigitalPostMelding.md) er
-[Sender](https://difi.github.io/felleslosninger/sdp_sender.html)
+[Sender](sdp_sender.html)
 
   - [Behandlingsansvarlig](https://difi.github.io/felleslosninger/sdp_aktorer.html) eller en
     [databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html) på veien av

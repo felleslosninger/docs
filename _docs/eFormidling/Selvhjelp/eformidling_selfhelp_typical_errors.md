@@ -15,12 +15,12 @@ Mykje kan gå feil når ein setter opp integrasjonspunktet. Under har vi forsøk
 ### 400 bad request
 400 Bad request feil i loggen betyr ofte at du forsøker å bruke et scope du ikkje har tilgang til. Typisk sett fordi dette ikkje er åpna påDigitaliseringsdirektoratet si side. Dei scopesa du forsøker å bruke er bestemt av properties som feks ```difi.move.feature.enableDPO=true``` eller ```difi.move.feature.enableDPV=true```
   
-KontaktDigitaliseringsdirektoratet på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> og be om tilgang. Send gjerne med application.log 
+Kontakt Digitaliseringsdirektoratet på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> og be om tilgang. Send gjerne med application.log 
 
 ## DPO 
 DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter har et integrasjonspunkt og DPO aktivert for å motta/sende.
 
-Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](https://difi.github.io/felleslosninger/eformidling_create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
+Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](eformidling_create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
 
 ### ErrorId 0. UserId 0
 ```
@@ -46,7 +46,7 @@ Dette er fordi brukaren er blitt låst pga for mange forsøk med feil passord. E
 ### Sjekk at brukernamn og passord er korrekt
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. (Krever SoapUi installert)
 
-> [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
+> [SoapUi prosjektet kan lastes ned her](/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
 
 1. Last ned prosjektet
 2. Start SoapUi og importer prosjektet
@@ -59,12 +59,12 @@ Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamne
 
 **Korrekt brukernamn/passord**
 
-![](/felleslosninger/images/eformidling/soap/soapDpoPassordOk.PNG)
+![](/images/eformidling/soap/soapDpoPassordOk.PNG)
 Brukernamn og passord er korrekt.  
 
 **Feil brukernamn/passord**
 
-![](/felleslosninger/images/eformidling/soap/soapDpoPassordFeil.PNG)
+![](/images/eformidling/soap/soapDpoPassordFeil.PNG)
 Feil i brukernamn eller passord. Nytt passord kan opprettes ved å logge inn i Altinn. Må gjøres av en person med myndighet i virksomheten.
 
 
@@ -130,7 +130,7 @@ Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. KontaktDig
 ### Sjekk at brukernamn og passord er korrekt
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse. (Krever SoapUi installert)
 
-> [SoapUi prosjektet kan lastes ned her](/felleslosninger/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
+> [SoapUi prosjektet kan lastes ned her](/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
 
 1. Last ned prosjektet
 2. Start SoapUi og importer prosjektet
@@ -144,17 +144,17 @@ Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamne
 	
 **Korrekt brukernamn/passord**
 
-![](/felleslosninger/images/eformidling/soap/soapPassordOk.PNG)
+![](/images/eformidling/soap/soapPassordOk.PNG)
 Brukernamn og passord er korrekt. Det betyr også at IP-adressen er korrekt. 
 
 **Feil brukernamn/passord**
 
-![](/felleslosninger/images/eformidling/soap/soapFeilpassord2.PNG)
+![](/images/eformidling/soap/soapFeilpassord2.PNG)
 Feil i brukernamn eller passord. Nytt passord kan mottas på SMS, kontakt <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> . 
 
 **Feil IP-adresse, korrekt brukernamn/passord** 
 
-![](/felleslosninger/images/eformidling/soap/soapPassordOkIpFeil.PNG)
+![](/eformidling/soap/soapPassordOkIpFeil.PNG)
 IP-adressen på hosten må hvitelistes hos Altinn.
 
 ## DPF
@@ -193,7 +193,7 @@ Her kan det også være fleire grunner til dette, blant annet:
 ### Invalid location size
 
 Dette er ikke en error, men en warning. Denne kan forekomme når receipts.mv.db databasen inneholder data fra tidligere versjoner av integrasjonspunktet. Altså at det er oppgradert utan å tømme denne. Dette er inga krise, men vil vises i loggen. Kan fjernes ved å 
-[gjøre følgende](https://difi.github.io/felleslosninger/eformidling_selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
+[gjøre følgende](eformidling_selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
 
 ```
 2018-11-29 09:46:45.933  WARN 3932 --- [main] o.a.a.store.kahadb.MessageDatabase       : Cannot recover message audit

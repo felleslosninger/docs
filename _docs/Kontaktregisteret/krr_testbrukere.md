@@ -4,7 +4,7 @@ description: KRR testbrukere
 summary:
 permalink: krr_testbrukere.html
 toc: false
-sidebar: main_sidebar
+sidebar: krr_sidebar
 product: KRR
 
 ---

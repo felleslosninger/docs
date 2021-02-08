@@ -29,17 +29,9 @@ folders:
   - title: Om Kontakt- og reservasjonsregisteret
     jurl: /krr_index.html
 
-  - title: Attributter i KRR
-    jurl: /krr_attributter.html
-
-  - title: Oppslagstjenesten REST
+  - title: Teknisk dokumentasjon
     jurl: /oppslagstjenesten_rest.html
 
-  - title: Brukerspesifikt oppslag REST
-    jurl: /brukerspesifikt_oppslag_krr_rest.html
-
-  - title: Testbrukere KRR
-    jurl: /krr_testbrukere.html
 
 - title: Digital postkasse
   folderitems:
@@ -108,6 +100,9 @@ related_resources_list:
 
 - title: Digitaliseringsdirektoratet
   jurl: https://www.digdir.no
+
+#- title: Digdir Status
+#  jurl: https://status.digdir.no
 
 - title: Altinn Docs
   jurl: https://altinn.github.io/docs/

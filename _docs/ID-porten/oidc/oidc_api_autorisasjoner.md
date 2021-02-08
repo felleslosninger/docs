@@ -19,6 +19,7 @@ Kunden mottar opplysningene for å vise disse til innbygger i egne løsninger, o
 
 Dersom ikke kunden ønsker å bygge eget brukergrensesnitt, kan de lenke til [https://brukerprofil.idporten.no/](https://brukerprofil.idporten.no/).  Her kan innbygger se sine aktive innlogginger og autorisasjoner til alle tjenester, samt trekke de tilbake.
 
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.digdir.no](https://samarbeid.digdir.no) for generelle vilkår for tilleggstjenester.
 
 
 ## Hvordan få tilgang ?
@@ -127,7 +128,7 @@ Content-Type: application/json
 
 Normalt vil en kunde slette en autorisasjon ved at klienten som fikk utstedt det aktuelle tokenet kaller /revoke-endepunktet til ID-porten med tokenet (access eller fortrinnvis refresh) som skal slettes.
 
-Dette API-kallet gir derimot kunden anledning til å revokere fra en annen klient enn den som fikk tokenet utdelt.  Ved sletting av autorisasjon, blir alle tilhørende aktive access_token og refresh_token invalideret.   (Merk at evt. allerede utstedte self-contained access_token fremdeles vil fremstå som gyldige, dersom de ikke valideres via nettverkskall mot ID-portens /tokeninfo-endepunkt).
+Dette API-kallet gir derimot kunden anledning til å revokere fra en annen klient enn den som fikk tokenet utdelt.  Ved sletting av autorisasjon, blir alle tilhørende aktive access_token og refresh_token invalideret. (Merk at evt. allerede utstedte self-contained access_token fremdeles vil fremstå som gyldige, dersom de ikke valideres via nettverkskall mot ID-portens /tokeninfo-endepunkt).
 
 ```
 DELETE /authorizations/{authorization_id}

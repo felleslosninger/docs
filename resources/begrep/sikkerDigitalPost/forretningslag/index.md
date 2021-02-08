@@ -12,7 +12,7 @@ må forholde seg til, samt fordeling av eierskap på de forskjellige
 delene av en komplett melding.
 
 | --- | --- |
-| [Aktører](https://difi.github.io/felleslosninger/sdp_aktorer.html)                                   | Aktører og roller                                                           |
+| [Aktører](sdp_aktorer.html)                                   | Aktører og roller                                                           |
 | [Sending av digital post](forretningsprosess.md)        | Sending av digital post til innbyggere                                      |
 | [Sending på vegne av andre](send_paa_vegne_av_andre.md) | Sending av digital post på vegne av andre                                   |
 | [Kvitteringer](forretningsprosess_kvittering.md)        | Henting av kvitteringer                                                     |

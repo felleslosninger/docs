@@ -15,4 +15,4 @@ Registeret inneholder informasjon om:
 
 Registrering og oppdatering av informasjonen ligger til de ulike registrene og er ikke en del av oppslagstjenesten.
 
-Mer informasjon om Kontakt- og reservasjonsregisteret finner du på [Samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/kontakt-og-reservasjonsregisteret)
+Mer informasjon om Kontakt- og reservasjonsregisteret finner du på [Samarbeidsportalen](https://samarbeid.digdir.no)

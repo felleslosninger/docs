@@ -29,7 +29,7 @@ Her laster du ned [integrasjonspunkt-local.properties-filen](/resources/eformidl
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
 2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
-3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](https://difi.github.io/felleslosninger/eformidling_download_ip.html)
+3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](eformidling_download_ip.html)
 
 Når du er ferdig skal strukturen på området se slik ut:
 ```

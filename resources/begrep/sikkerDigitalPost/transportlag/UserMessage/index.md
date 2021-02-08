@@ -37,4 +37,4 @@ skal formidles, samt settinger angitt i
 ### Eksempel
 
   - [SOAP forretningsmelding fra avsender til
-    meldingsformidler](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)
+    meldingsformidler](/resources/begrep/sikkerDigitalPost/eksempler/soap/1_request_forretningsmelding_fra_postavsender_til_meldingsformidler.xml)

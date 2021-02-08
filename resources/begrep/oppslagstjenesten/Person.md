@@ -13,13 +13,13 @@ sidebar:
 | Kilde | DIFI |
 | Kommentar | Person er en Innbygger utlevert fra kontakt og reservasjonsregisteret. [status](../felles/status.md) definerer om Person er registrert eller ikke i registreret. |
 
-Merk at Person ikke er unik definert på tvers av Difi sine
+Merk at Person ikke er unik definert på tvers av Digdirs
 felleskomponenter, men at hver av felleskomponentene har en definisjon
 av Person i forhold til behovene i den enkelte felleskomponentene.
 
 #### Datamodell
 
-![Visualisering avdatamodellen](/felleslosninger/resources/begrep/oppslagstjenesten/uml_diagram_oppslagstjenesten_ekstern.jpg)
+![Visualisering av datamodellen](/resources/begrep/oppslagstjenesten/uml_diagram_oppslagstjenesten_ekstern.jpg)
 
 #### Attributer
 

@@ -32,7 +32,7 @@ I denne config-fila er det lagt inn automatisk loggrotering ved 10MB størrelse 
 Loggene for denne tjenesten vil i utgangspunktet bli skrevet til feks ```c:\integrasjonspunkt\integrasjonspunkt-logs``` og filen integrasjonspunkt-service.out. Innholdet i denne er veldig likt innholdet i application.log filen.
 
 ### Kjøre med lavest mulige rettigheter
-Vi anbefaler å kjøre integrasjonspunktet med en minste rettighetsbruker. For å endre hvilken bruker som kjører tjenesten ved å høyreklikke på den, velge "properties" og så velge "logg på" fanen. [Hvordan opprette en minste rettighetsbruker.](https://difi.github.io/felleslosninger/eformidling_ip_run.html#alt-3-kj%C3%B8re-via-task-scheduler-med-minste-rettigheter)
+Vi anbefaler å kjøre integrasjonspunktet med en minste rettighetsbruker. For å endre hvilken bruker som kjører tjenesten ved å høyreklikke på den, velge "properties" og så velge "logg på" fanen. [Hvordan opprette en minste rettighetsbruker.](eformidling_ip_run.html#alt-3-kj%C3%B8re-via-task-scheduler-med-minste-rettigheter)
 
 ### Reinstallasjon av tjenesten
 

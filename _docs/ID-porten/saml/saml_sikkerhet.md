@@ -19,10 +19,10 @@ ID-porten støtter bade HTTP-POST og HTTP-ARTIFACT som transportbinding for resp
 Med HTTP Artifact skjer utvekslingen av IDP-ens (ID-portens) bekreftelse på gyldig innlogging i en bak-kanal, direkte mellom IDP-en og tjenesteeier (SP). Med HTTP POST utveksles bekreftelsen via nettleser, mao. via framkanal. LINK TIL VEDLEGG 7 for mer om metadataoppbyggingen
 
 #### **Web Browser SSO-profil med HTTP Redirect (request) og artifact resolution over SOAP binding (reply)**
-![](/felleslosninger/images/idporten/saml/web_sso_soap.bmp "web sso over SOAP")
+![](/images/idporten/saml/web_sso_soap.bmp "web sso over SOAP")
 
 #### **Web Browser SSO-profil med HTTP Redirect (request) og POST binding**
-![](/felleslosninger/images/idporten/saml/web_sso_post.bmp "web sso over POST")
+![](/images/idporten/saml/web_sso_post.bmp "web sso over POST")
 
 Forklaring: 
 * Tjenesteleverandør bruker privat nøkkel til signering av AuthnRequest. ID-porten verifiserer signeringen ved hjelp av tjenesteleverandørs tilhørende sertifikat.
@@ -33,7 +33,7 @@ Ved POST-binding hentes assertion via nettleser, med andre ord via frontkanal. (
 
 #### **Single Logout**
 
-![](/felleslosninger/images/idporten/saml/slo.bmp "Single logout")
+![](/images/idporten/saml/slo.bmp "Single logout")
 
 Forklaring:
 1. Tjenesteleverandør sender LogoutRequest til ID-porten via frontkanal (HTTP redirect via User agent). Denne skal være signert med SPs private signeringsnøkkel.
@@ -111,7 +111,7 @@ Sertifikat med følgende bruksområde er testet og fungerer i ID-porten:
 Virksomhetssertifikat fra Buypass utstedes parvis med et nøkkelpar/sertifikat som en bruker for autentisering og kryptering(Autentiseringssertifikatet), og et nøkkelpar/sertifikat for signering (signeringssertifikatet).
 Ved bestilling av virksomhetssertifikat fra Buypass blir det derfor levert to p12-filer:
 
-![](/felleslosninger/images/idporten/saml/buypass_censored.bmp "Buypass sertifikat")
+![](/images/idporten/saml/buypass_censored.bmp "Buypass sertifikat")
 
 #### **Commfides**
 
@@ -125,7 +125,7 @@ Virksomhetssertifikat fra Commfides blir utstedt med tre nøkkelpar.
 Et nøkkelpar/sertifikat som benyttes for autentisering (autentiseringssertifikat), et nøkkelpar/sertifikat for kryptering (krypteringssertifikat) og et siste nøkkelpar/sertifikat for signering (signeringssertifikatet).
 
 Ved bestilling av virksomhetssertifikat fra Commfides blir det derfor levert tre filer:
-![](/felleslosninger/images/idporten/saml/commfides_censored.bmp "Commfides sertifikat")
+![](/images/idporten/saml/commfides_censored.bmp "Commfides sertifikat")
 
 | Commfides sertifikat | Bruksområdet | 
 | --- | --- |
