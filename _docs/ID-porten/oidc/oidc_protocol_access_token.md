@@ -47,7 +47,7 @@ The token is a JWT with the following structure:
 | acr | sikkerhetsnivå |
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
 | client_amr  | How the client authenticated itselft towards the AS.  | `virksomhetssertifikat`|
-| consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
+| consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;"ID": "9908:910075918"<br/>}</code> |
 | supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
 | delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://sts.altinn.no`
 | scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
@@ -59,9 +59,33 @@ The token is a JWT with the following structure:
 | jti | jwt id - unique identifer for a given token  |
 | client_orgno | **deprecated** The organization number of the client. Present for legacy reasons, but note that access control decisions by the Resource Server should be based on the `consumer`/`supplier` claims. |
 
+## Identifying organizations
+
+ID-porten and Maskinporten use a forward-compatible notation for identifying organizations. This is because we expect that the solutions in the future will be extended handle both foreign organizations, organizations not having a registration in the Enhetsregisteret (i.e. "offentlige utvalg") as well a sub-entities within an organization.
+
+
+The `ID`-claim identifies the organization, which the `authority`-claim states how this identifier is encoded:
+
+| `authority` |description|
+|-|-|
+|iso6523-actorid-upis| The organization ID is an [ISO6523-formatted string](https://en.wikipedia.org/wiki/ISO/IEC_6523), where the first element can have values from [PEPPOLs extensions to the official ICD list from ISO](https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/).  The ID can have 2-4 elements, separated by colon.   As of Jan 2021,  only 0192 is supported as ICD value (Norwegian organizations being registered in Enhetsregisteret) |
+
+Customer implementations must thus be able to handle that the authority list and consequently the ID formatting may be extended in the future.
+
+
+Below is an example for Digitaliseringsdirektoratet:
+```
+"consumer" : {
+   "authority" : "iso6523-actorid-upis",
+   "ID" : "0192:991825827"
+ }
+```
+
 #### client_amr
 
 The following values may be returned for the `client_amr`-claim.  The values are partly from [Oauth Token Endpoint Authentication Methods](https://www.iana.org/assignments/oauth-parameters/oauth-parameters.xhtml#token-endpoint-auth-method), plus some custom claims for certificate-based authentication:
+
+
 
 | value | description |
 |-|-|
