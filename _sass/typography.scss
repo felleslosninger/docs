@@ -53,20 +53,20 @@ h1 {
 }
 
 h2 {
-  margin-top: 35px;
-  margin-bottom: 12px;
+  margin-top: 36px;
+  margin-bottom: 14px;
   @include font-style(800, 500);
 }
 
 h3 {
-  margin-top: 35px;
-  margin-bottom: 12px;
+  margin-top: 36px;
+  margin-bottom: 14px;
   @include font-style(700, 500);
 }
 
 h4 {
-  margin-top: 35px;
-  margin-bottom: 12px;
+  margin-top: 36px;
+  margin-bottom: 14px;
   @include font-style(600, 500);
 }
 
@@ -84,4 +84,8 @@ p {
 
 strong {
   font-weight: 500;
+}
+
+p img {
+  max-width: 100%;
 }
