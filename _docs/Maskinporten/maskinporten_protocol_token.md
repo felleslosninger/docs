@@ -88,7 +88,7 @@ The token is a JWT with the following structure:
 | iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
 | client_amr  | How the client authenticated itselft towards Maskinporten  | `virksomhetssertifikat`|
-| consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"Identifier": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;"Authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;&nbsp;&nbsp;"ID": "9908:910075918"<br/>&nbsp;&nbsp;}<br/>}</code> |
+| consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;"ID": "9908:910075918"<br/>}</code> |
 | scope | A list of scopes the access_token is bound to.   |
 | token_type | Type of token. Only bearer supported. | `Bearer`|
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
@@ -110,6 +110,27 @@ If the token is audience-restricted, the following claim will also be included:
 | aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction](maskinporten_func_audience_restricted_tokens.html) for details. |  `https://api.examples.com/users`|
 
 
+### Identifying organizations
+
+ID-porten and Maskinporten use a forward-compatible notation for identifying organizations. This is because we expect that the solutions in the future will be extended handle both foreign organizations, organizations not having a registration in the Enhetsregisteret (i.e. "offentlige utvalg") as well a sub-entities within an organization.
+
+
+The `ID`-claim identifies the organization, which the `authority`-claim states how this identifier is encoded:
+
+| `authority` |description|
+|-|-|
+|iso6523-actorid-upis| The organization ID is an [ISO6523-formatted string](https://en.wikipedia.org/wiki/ISO/IEC_6523), where the first element can have values from [PEPPOLs extensions to the official ICD list from ISO](https://docs.peppol.eu/poacc/billing/3.0/codelist/ICD/).  The ID can have 2-4 elements, separated by colon.   As of Jan 2021,  only 0192 is supported as ICD value (Norwegian organizations being registered in Enhetsregisteret) |
+
+Customer implementations must thus be able to handle that the authority list and consequently the ID formatting may be extended in the future.
+
+
+Below is an example for Digitaliseringsdirektoratet:
+```
+"consumer" : {
+   "authority" : "iso6523-actorid-upis",
+   "ID" : "0192:991825827"
+ }
+```
 
 #### client_amr
 
