@@ -9,9 +9,9 @@ product: KRR
 
 ## Introduksjon
 
-Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten](https://begrep.difi.no/Oppslagstjenesten/) (eller [Oauth2-varianten](oidc_api_krr.html) av denne).  
+Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten](oppslagstjenesten_rest.html).
 
-Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammehenger være mer hensiktsmessig.
+Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammenhenger være mer hensiktsmessig.
 
 ## Hvordan få tilgang ?
 
