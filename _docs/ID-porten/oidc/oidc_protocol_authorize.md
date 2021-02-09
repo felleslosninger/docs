@@ -44,6 +44,9 @@ Supported request attributes:
 |request_uri| Optional | The identifier returned by ID-porten from a [PAR request](oidc_protocol_par.html). No other attributes shold then be present |
 
 
+Clients are strongly recommended to use state, nonce and [PKCE](oidc_func_pkce.html).  In the future, these parameteres will be mandatory to use when the protocol baseline in ID-porten is upgraded from Ouath2.0 to Oauth2.1.
+
+
 ### Sample request
 
 ```
