@@ -46,7 +46,7 @@ OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-se
 |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/person)|
 
 
-{% include note.html content="Merk den lille forskjellen mellom 'person' (dette endepunktet) og 'personer' ([server-til-server endepunktet](oidc_api_krr.html))" %}
+{% include note.html content="Merk den lille forskjellen mellom 'person' (dette endepunktet) og 'personer' ([maskin-til-maskin endepunktet](oppslagstjenesten_rest.html)). De to tjenestene har også forskjellige domene-navn." %}
 
 
 Følgende header-parametere må brukes på request:

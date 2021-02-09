@@ -241,7 +241,7 @@ Respons:
 
 ## 5: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
 
-Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt](oidc_api_krr_user.html) dersom access_token inneholder `user/kontaktinformasjon.read`-scopet.
+Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt](brukerspesifikt_oppslag_krr_rest.html) dersom access_token inneholder `user/kontaktinformasjon.read`-scopet.
 
 ## 6: Utlogging
 
