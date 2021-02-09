@@ -90,6 +90,8 @@ Klienten sender en autentiseringsforespørsel ved å redirecte sluttbrukeren til
 
 Se [detaljert dokumentasjon for autorisasjonsendepunktet](oidc_protocol_authorize.html) for valgmuligheter.
 
+Klienten må være forhåndsregistrert i ID-porten, se [klient-registrering](oidc_func_clientreg.html).
+
 
 ### Eksempel på forespørsel
 
@@ -212,7 +214,7 @@ Levetiden på aksess_tokenet er som oftest relativt kort (typisk 120 sekunder). 
 
 Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes](oidc_protocol_scope.html) som er i tokenet. Merk til slutt at levetidene på autorisasjon og tilhørende access/refresh_token har ingen sammenheng med Single-Signon(SSO)-sesjonen i ID-porten.
 
-[Klikk her for full dokumentasjon av access_token-formatet til ID-porten](oidc_protocol_access_token.hml).
+[Klikk her for full dokumentasjon av access_token-formatet til ID-porten](oidc_protocol_access_token.html).
 
 
 
@@ -249,6 +251,6 @@ Klienten må håndtere to forskjellige utloggings-scenarier:
 
 1. **Brukeren logger ut fra din tjeneste:**  Du må redirecte brukeren til /endsession-endepunktet til ID-porten.  ID-porten sørger for å logge brukeren ut av alle andre tjenester, og redirecter til slutt brukeren tilbake til deg.
 
-2. **Brukeren logger ut fra annen tjeneste:** Du vil motta en front_channel_logout-melding med en sesjons-identifikator `sid` som du tidlegere har mottatt i id_token. Basert på denne må du finne lokal brukersesjon og invalidere denne.
+2. **Brukeren logger ut fra annen tjeneste:** Du vil motta en front_channel_logout-melding med en sesjons-identifikator `sid` som du tidligere har mottatt i id_token. Basert på denne må du finne lokal brukersesjon og invalidere denne.
 
 [Se full dokumentasjon om utlogging her](oidc_func_sso.html).
