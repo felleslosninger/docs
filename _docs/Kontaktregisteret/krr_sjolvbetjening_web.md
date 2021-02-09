@@ -13,7 +13,7 @@ Dette dokumentet viser hvordan du kan selvbetjene KRR i Samarbeidsportalen.
 * TOC
 {:toc}
 
-## Innlogging og tilgang.
+## Innlogging og tilgang
 
 ### Innlogging
 
