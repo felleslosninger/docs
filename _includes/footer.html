@@ -1,81 +1,62 @@
-<!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
-
-<div class="footertop">
-    <div class="container">
-        <div class="col-md-6">
-            <p></p>
-        </div>
-        <div class="col-md-6">
-            <ul class="bottom_ul">
-        </div>
-    </div>
-</div>
-
 <footer>
+    {% assign footer = site.data[page.footer] %}
 
     <div class="container">
 
         <div class="row">
 
+            <div class="col-md-4 col-sm-6">
 
-            <div class="col-md-4 col-sm-6 paddingtop-bottom">
-                  {% assign footer = site.data[page.footer] %}
-                <h6 class="heading7">{{footer.column1_title}}</h6>
-                <ul class="footer-ul">
-                  {% for link in footer.column1_links %}
-                    <li><a class="noExtIcon" href="{{link.target}}"> {{link.text}}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
+                <div class="footer-brand">
 
-            <div class="col-md-4 col-sm-6 paddingtop-bottom">
-              <h6 class="heading7">{{footer.column2_title}}</h6>
-              <ul class="footer-ul">
-                {% for link in footer.column2_links %}
-                  <li><a class="noExtIcon" href="{{link.target}}"> {{link.text}}</a></li>
-                  {% endfor %}
-              </ul>
-            </div>
-
-            <div class="col-md-4 col-sm-6 paddingtop-bottom ">
-
-
-              <div class="logofooter"><img class="navbar-logo" src="assets/Docs - hvit png med ramme.png"/></div>
-              <p class="footer-description">{{footer.about_description}}</p>
-
-              <!--Added social media buttons-->
-                <a class="noExtIcon"href="https://twitter.com/digdir_no" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);">
-                  <span class="noExtIcon fa fa-twitter"></span></a>
-
-                <a class="noExtIcon" href="https://www.facebook.com/groups/samarbeidsportalen" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Facebook']);">
-                    <span class="fa fa-facebook"></span></a>
-
-                <a class="noExtIcon" href="https://difi.github.io/felleslosninger/feed.xml" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Rss',]);">
-                    <span class="fa fa-rss"></span></a>
+                    <img class="footer-brand__logo" src="/assets/img/docs_white.svg" alt=""/>
+                    <div class="footer-brand__text">{{footer.about_description}}
+                    </div>
 
                 </div>
 
-<!--
-            <div class="col-md-3 col-sm-6 paddingtop-bottom">
-              <h6 class="heading7">{{footer.column3_title}}</h6>
-              <ul class="footer-ul">
-                {% for link in footer.column3_links %}
-                  <li><a class="noExtIcon" href="{{link.target}}"> {{link.text}}</a></li>
-                  {% endfor %}
-              </ul>
             </div>
--->
+
+            <div class="col-md-4 col-sm-6">
+                <div class="footer-links">
+                    <div class="footer__heading">{{footer.column2_title}}</div>
+                    <ul class="footer-links__list">
+                        {% for link in footer.column2_links %}
+                        <li class="footer-links__item"><a class="noExtIcon" href="{{link.target}}"> {{link.text}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+
+                <div class="footer-contact">
+                    <div class="footer__heading">Kontakt</div>
+
+                    <div class="footer-contact__item">
+                        <span>E-post: </span><a href="mailto:{{ footer.about_email }}">{{ footer.about_email }}</a>
+                    </div>
+                    <div class="footer-contact__item">
+                        <span>Telefon:</span> <span>{{ footer.about_telephone }}</span>
+                    </div>
+
+                    <a class="footer-contact__icon" href="https://twitter.com/digdir_no"
+                       onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);">
+                        <span class="noExtIcon fab fa-twitter"></span></a>
+
+                    <a class="footer-contact__icon" href="https://www.facebook.com/groups/samarbeidsportalen"
+                       onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Facebook']);">
+                        <span class="fab fa-facebook-f"></span></a>
+
+                    <a class="footer-contact__icon" href="https://difi.github.io/felleslosninger/feed.xml"
+                       onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Rss',]);">
+                        <span class="fas fa-rss"></span></a>
+
+                </div>
+
+            </div>
 
         </div>
-    </div>
     </div>
 </footer>
-<!--subfooter start from here -->
-
-<div class="copyright">
-    <div class="container">
-        <div class="col-md-12">
-            <p>© {{site.uistring.copyright}}</p>
-        </div>
-    </div>
-</div>

@@ -36,7 +36,7 @@ Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjon
 ## Autentisering av sluttbruker
 ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 
-![](/idporten-integrasjonsguide/assets/images/autentiseringstjenester.bmp "Autentiseringstjenester")
+![](/images/idporten/saml/autentiseringstjenester.bmp "Autentiseringstjenester")
 
 
 ## Støttede protokoller
@@ -49,7 +49,7 @@ Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til e
 
 ### **Sesjonstid**
 
-Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Digitaliseringsdirektoratet anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](https://difi.github.io/idporten-integrasjonsguide//4_detaljert_beskrivelse.html#sesjonshåndtering) for mer detaljer
+Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Digitaliseringsdirektoratet anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering](saml_teknisk_losning.html#sesjonshåndtering) for mer detaljer
 
 ### **Sesjonsoppgradering**
 
@@ -66,7 +66,7 @@ ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenes
 
 ## Hvordan få tilgang til ID-porten
 
-Følg prosessen på [samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94) for å integrere mot ID-porten.
+Følg prosessen på [Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94) for å integrere mot ID-porten.
 
 
 ### Informasjon som må utveksles

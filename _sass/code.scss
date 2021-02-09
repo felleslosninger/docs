@@ -1,0 +1,8 @@
+.highlight > .highlight {
+  background-color: $color-grey-700;
+  border-radius: 2px;
+  padding: 30px;
+  code {
+    color: white;
+  }
+}

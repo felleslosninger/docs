@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ### [Siste versjon av integrasjonspunktet kan lastes ned her (2.1.3)](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.1.3/integrasjonspunkt-2.1.3.jar) 
 
-### [Endringslogg finner du her](https://difi.github.io/felleslosninger/eformidling_releasenotes.html)
+### [Endringslogg finner du her](../eformidling_releasenotes.html)
 
 ### Versjonering 
 
@@ -20,7 +20,7 @@ eFormidling følger semantisk versjonering https://semver.org/ for å vise hvor 
 En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
 integrasjonspunkt-2.0.7.jar
 
-![versjonsnummerbild](/felleslosninger/images/eformidling/ipversjon.PNG)
+![versjonsnummerbild](/images/eformidling/ipversjon.PNG)
 
 
 Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH

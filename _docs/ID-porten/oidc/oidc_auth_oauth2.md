@@ -43,7 +43,7 @@ For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken mi
 
 Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_](oidc_protocol_scope.html).  Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.   Dersom scopet har egenskapen `requires_user_consent` satt, vil ID-porten vise en enkel godkjennings-dialog til innbygger når autentisering er fullført.  Se eksempel under:
 
-![tilgangsdialog](/felleslosninger/images/idporten/oidc/samtykkedialog3.png)
+![tilgangsdialog](/images/idporten/oidc/samtykkedialog3.png)
 
 Selve autorisasjonen blir av ID-porten utlevert som et _access_token_ (datadelingstoken).   Tjenesten bruker så dette access_tokenet når den skal aksessere APIet.  Dersom brukeren ikke godtar, vil det aktuelle scopet ikke bli inkludert i access_tokenet
 

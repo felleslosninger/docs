@@ -29,14 +29,14 @@ Under opprettelse av datasystem velger du passord og får tildelt brukerid (ID),
 > Id'en du får er brukernavnet som skal inn i integrasjonspunkt-local.properties. Passordet du velger skal også inn i denne filen. Dette gjelder DPO. 
 
 **Registrere datasystem:**
-![](/felleslosninger/images/eformidling/altinnDatasystemRegistrer.PNG)
+![](/images/eformidling/altinnDatasystemRegistrer.PNG)
 
 ___
 
 **Datasystem registrert:**
 
 
-![](/felleslosninger/images/eformidling/altinnDatasystemRegistrert.PNG)
+![](/images/eformidling/altinnDatasystemRegistrert.PNG)
 
 ___
 
@@ -46,7 +46,7 @@ Informasjon om hvordan du logger på Altinn portal finner du <a href="https://ww
 
 ## Opprette DPF brukere (SvarInn og SvarUt)
 
- Når beskrivelsen under er utført må brukernamn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"](https://difi.github.io/felleslosninger/eformidling_properties_config.html#digital-post-til-virksomheter). 
+ Når beskrivelsen under er utført må brukernamn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"](eformidling_properties_config.html#digital-post-til-virksomheter). 
 
 Se [Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/eformidling/20) for alt om avtaler, begrunnelser, sammenhenger og lignende ikke teknisk. Avtaler må være på plass før en begynner å konfigurere
 
@@ -56,7 +56,7 @@ Forvaltningsgrensesnittet som administrator får tilgang til (informeres om av K
 
 KS vil sende påloggingsadresse til administrator etter at virksomheten er opprettet som bruker. Etter pålogging har administrator forskjellige valg: 
  
-![bilde1](/felleslosninger/images/eformidling/01_FIKS.png)
+![bilde1](/images/eformidling/01_FIKS.png)
  
 > Alle eksemplene og skjermbildene er hentet fra oppsettet til FM Nordland. Det gjelder tilsvarende for din virksomhet – bare med deres eget navn og organisasjonsnummer. Det er bare opplysninger som nevnes heretter må utfylles i konfigureringen. 
 
@@ -66,13 +66,13 @@ KS vil sende påloggingsadresse til administrator etter at virksomheten er oppre
 
 **Klikk på «overordnet organisasjon» og legg inn fakturaopplysninger:**
 
-![bilde2](/felleslosninger/images/eformidling/02_FIKS.png)
+![bilde2](/images/eformidling/02_FIKS.png)
  
 **Klikk så på «underordnet» organisasjonsnivå**
 
 Menypunktene du ser markert med grønn hake skal du klikke deg gjennom og fylle ut. I dette tilfellet er brukernamnet for svarut brukeren vist venstre side av skjermbildet, altså "fm_nordland". Feks: ```difi.move.fiks.ut.username=fm_nordland```.
  
-![bilde3](/felleslosninger/images/eformidling/03_FIKS.png) 
+![bilde3](/images/eformidling/03_FIKS.png) 
  
 
 ### ReturAdresse/forside
@@ -81,22 +81,22 @@ Menypunktene du ser markert med grønn hake skal du klikke deg gjennom og fylle 
 ### Altinn
 **Velg «ingen varsling»** 
  
-![bilde4](/felleslosninger/images/eformidling/04_FIKS.png)
+![bilde4](/images/eformidling/04_FIKS.png)
 
 ### Print
 **Velg «manuell print»** 
 
-![bilde5](/felleslosninger/images/eformidling/05_FIKS.png)
+![bilde5](/images/eformidling/05_FIKS.png)
 
 ### Servicepassord
 **Dette er passord nr. 1 dere må notere dere. Passord generes ved å klikke på «generer nytt servicepassord». Pass på at du ikke endrer dette senere ved å klikke på «generer» på nytt!**
  
-![bilde6](/felleslosninger/images/eformidling/06_FIKS.png) 
+![bilde6](/images/eformidling/06_FIKS.png) 
 
 ### Tilganger
 **Her kan administrator legge til flere brukere som skal ha administratorrettigheter i SvarUt-forvaltning. Sett i så fall hake i alle tilganger.** 
 
-![bilde7](/felleslosninger/images/eformidling/07_FIKS.png)
+![bilde7](/images/eformidling/07_FIKS.png)
  
 Dere ser bort fra punktene SDP, Edialog og Admin. 
 
@@ -107,7 +107,7 @@ Dere ser bort fra punktene SDP, Edialog og Admin.
 **Klikk på «mottakersystem» i menyen på toppen og så på organisasjonen din i menyen på venstre side** 
 
  
-![bilde8](/felleslosninger/images/eformidling/08_FIKS.png) 
+![bilde8](/images/eformidling/08_FIKS.png) 
 
 ---
 
@@ -117,12 +117,12 @@ Dere ser bort fra punktene SDP, Edialog og Admin.
 #### Offentlig nøkkel / virksomhetssertifikat
 **Her må en også laste opp den offentlige-nøkkelen til et virksomhetssertifikatet, det kan godt være den samme som integrasjonspunktet bruker.**
  
-![bilde9](/felleslosninger/images/eformidling/09_FIKS2.PNG)
+![bilde9](/images/eformidling/09_FIKS2.PNG)
  
 ### Administrasjon
 **Dette feltet skal være utfylt på forhånd. Sjekk at e-postadressene er lagt inn rett. De brukes til varsel om driftsproblemer eller hvis KS vil varsle dere om noe de fanger opp som avvik.** 
 
-![bilde10](/felleslosninger/images/eformidling/10_FIKS.png)
+![bilde10](/images/eformidling/10_FIKS.png)
   
 ### Tilganger
 **Også her kan det legges til andre brukere.**
@@ -134,7 +134,7 @@ Dere ser bort fra punktene SDP, Edialog og Admin.
 
 Man må vente med å legge inn organisasjonsnumrene til konfigurasjon av integrasjonspunktet er utført, fordi SvarUt vil prøve å sende til integrasjonen når numrene er lagt inn. De kan bare legges inn av administrator som har gyldig post/arkiv-rolle for alle organisasjonsnumrene.  
  
-![bilde11](/felleslosninger/images/eformidling/11_FIKS.png)
+![bilde11](/images/eformidling/11_FIKS.png)
 
 ### Sjekke om DPF passord er riktig
 Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV6). Her blir du bedt om brukernavn og passord. Tast inn brukernavn og det passordet dere mener å ha fått. Dersom det resulterer i at servicen igjen ber om brukernavn og passord, er passordet galt. Om dere har oppgitt riktig brukernavn og passord får dere en respons som kan variere litt fra nettleser til nettleser.

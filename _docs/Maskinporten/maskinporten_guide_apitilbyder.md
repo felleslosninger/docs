@@ -77,7 +77,7 @@ API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ve
 
 ### 1a: Opprette et API - via Samarbeidsportalen
 
- - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
+ - Gå til "Min profil" på https://samarbeid.digdir.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
 
 - Velg "Mine API" i det miljøet du vil opprette API'et i.
 
@@ -102,9 +102,13 @@ API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ve
 - For å legge til ny tilgang, trykk på "+ legg til ny tilgang" og registrer organisasjonsnummeret til virksomheten som skal få tilgang.
 
 - For å revokere tilgang, trykk på "Slette" i listen over tilganger.
+<!--
+kommenterte bort død lenke
+-->
 
+<!--
 [![Tilgangsstyre API](https://samarbeid.difi.no/sites/samarbeid2/files/tilgangsstyre-api-png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/tilgangsstyre_api.mp4 "Tilgangsstyre API")
-
+-->
 ### 2a. Opprette APIer - Oauth2-selvbetjeningsklient
 
 Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.

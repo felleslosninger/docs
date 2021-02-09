@@ -57,13 +57,16 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 #### Registrering via Samarbeidsportalen
 
-Du kan logge inn på https://samarbeid.difi.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
+Du kan logge inn på https://samarbeid.digdir.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
 
 Alle organisasjoner som har inngåttDigitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
 
 For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
 
-[![Opprette integrasjon](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon_png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon.mp4 "Opprette integrasjon")
+<!-- 
+[![Opprette integrasjon](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon_png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon.mp4 "Opprette integrasjon") 
+-->
+
 
 
 #### Registrere klient som bruker virksomhetssertifikat
@@ -204,12 +207,12 @@ Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en lev
 2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
 1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
 1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_leggtil.png)
+![delgering-gi tilgang](/images/maskinporten/altinn_delegering_leggtil.png)
 1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
+![delgering-gi tilgang](/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
 
 1. Bekreft med å klikk "Gi rettigheter"
-![delgering-gi tilgang](/felleslosninger/images/maskinporten/altinn_delegering_bekreftelse.png)
+![delgering-gi tilgang](/images/maskinporten/altinn_delegering_bekreftelse.png)
 
 ### Bruke delegering som leverandør
 
