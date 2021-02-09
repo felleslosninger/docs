@@ -84,36 +84,13 @@ Merk: Id-tokenet returnert fra ID-porten vil inneholde en "expire (exp)" verdi. 
 
 
 
-## Autentiseringsforespørsel til autorisasjons-endepunktet
+## 1: Autentiseringsforespørsel til autorisasjons-endepunktet
 
-Klienten sender en autentiseringsforespørsel ved å redirecter sluttbrukeren til autorisasjonsendepunktet.
+Klienten sender en autentiseringsforespørsel ved å redirecte sluttbrukeren til autorisasjonsendepunktet.
 
+Se [detaljert dokumentasjon for autorisasjonsendepunktet](oidc_protocol_authorize.html) for valgmuligheter.
 
-
-Følgende header-parametere må brukes på request:
-
-| Parameter  | Verdi |
-| --- | --- |
-|Http-metode|GET|
-
-&nbsp;
-
-Følgende attributter må settes på request:
-
-| Parameter  | Verdi |
-| --- | --- |
-| response_type | Her støtter vi kun 'code'|
-| client\_id | Klientens tildelte id |
-| redirect\_uri | URI som sluttbruker skal redirectes tilbake til etter fullført authentisering. Kun forhåndsregistrerte url'er kan brukes |
-| scope | Scope som forespørres. Kan være en liste separert med whitespace. For autentiseringer må _openid_ brukes |
-| state | Verdi som settes av klient og returneres i callback-responsen etter fullført autentisering. Bør benyttes til å implementere CSRF-beskyttelse |
-| nonce | Verdi som settes av klient og returneres som en del av ID token. Bør brukes til å binde en klient-sesjon til et gitt ID-token, og hindre replay attacks  |
-| acr\_values | Ønsket sikkerhetsnivå, kan være *Level3* eller *Level4* **MERK:** klienten må selv validere ønsket sikkerhetsnivå basert på responsen |
-| ui\_locales | Ønsket språk brukt i Id-porten. støtter *nb*, *nn*, *en* eller *se* |
-| prompt | Brukes til å styre providerens interaksjon med sluttbrukeren. Foreløpig er dette parameteret lite relevant da piloten ikke ivaretar noen sentral brukersesjon |
-
-
-Etter at brukeren har logget inn vil det sendes en redirect url tilbake til klienten. Denne url'en vil inneholde et autorisasjonskode-parameter `code` som kan brukes til oppslag for å hente tokens.  Koden er base64-enkoda og URL-safe.
+Klienten må være forhåndsregistrert i ID-porten, se [klient-registrering](oidc_func_clientreg.html).
 
 
 ### Eksempel på forespørsel
@@ -128,56 +105,42 @@ GET /authorize?
   response_type=code&
   state=min_egendefinerte_state_verdi&
   nonce=min_egendefinerte_nonce_verdi&
+  code_challenge=8B6wE6tV7QzZ_F7-6pLKzMh530HVWAp38kaxcmehZac&
   ui_locales=nb
 
 ```
 
+Alle tjenester blir sterkt anbefalt å bruke state, nonce og  [PKCE](oidc_func_pkce.html) i kallet. På sikt vil disse bli obligatoriske når ID-porten oppgraderes fra Oauth2.0 til Oauth2.1
+
+For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR](oidc_protocol_par.html) til å første POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert i brukers browser.
+
+## 2: Redirect tilbake til tjenesten
+
+Etter at brukeren har logget inn vil det sendes en redirect tilbake til klienten til den forhåndsregistrerte `redirect_uri`.  Redirecten vil vil inneholde et autorisasjonskode-parameter `code` som  brukes til oppslag for å hente tokens.  Koden er base64-enkoda og URL-safe.
+
+
+
 ### Eksempel på respons: {#authresponse}
 
 ```
-{
-  "code" : "1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0=",
-  "state" : "min_egendefinerte_state_verdi"
-}
+GET https://min.tjeneste.no/login_callback?code=1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0&state=min_egendefinerte_state_verdi
 ```
 
 
-## Utstedelse av token fra token-endepunktet
+## 3: Utstedelse av token fra token-endepunktet
 
 Token-endepunktet brukes for utstedelse av tokens.
+
 
 Bruk av endepunktet varierer litt med hvilken klient-autentiseringsmetode som benyttes. Følgende autentiseringsmetoder fra [OIDC kap. 9](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication) støttes:
 
 * **client_secret_basic** / **client_secret_post** - Klientautentisering basert på client_secret
 * **private_key_jwt** - Klientautentisering basert på JWT'er signert med virksomhetssertifikater
 
-Felles for alle metoder er at følgende header-parametere må brukes på request:
+Sistnevnte metode er anbefalt for klienter med høye krav til sikkerhet.
 
-| Parameter  | Verdi |
-| --- | --- |
-| Http-metode | POST |
-| Content-type | application/x-www-form-urlencoded |
+##### Eksempel på forespørsel:
 
-&nbsp;
-
-samt at følgende attributter må sendes inn i requesten:
-
-| Attributt  | Verdi |
-| --- | --- |
-| client_id | Klientens ID |
-| grant_type | Valgt grant-metode, en av: <ul><li>`authorization_code`</li><li>`refresh_token`</li></ul>|
-| code | autorisasjonskode (*code*) motatt i [autentiseringsresponsen](#authresponse).   |
-| redirect_uri | ønsket redirect_uri, skal være identisk med verdi brukt i autentiseringsforespørsel |
-
-
-
-### Klientautentisering med statisk klienthemmelighet
-
-Her benyttes tidligere utlevert statisk hemmelighet(*client_secret*) til autentisering ved å legge på en standard HTTP Basic autentiserings-header (base64-enkoda sammensatt streng av client_id, kolon og client_secret).
-
-MERK: Digitaliseringsdirektoratet vil på sikt innføre levetid på client_secret, slik at ikke disse blir evigvarende som idag. Kunde har selv ansvaret for å få rotert sin client_secret før den utløper for å unngå avbrudd i tjenesteleveransen.
-
-##### Eksempel på forespørsel
 
 ```
 POST /token
@@ -186,60 +149,18 @@ Authorization: Basic dGVzdF9ycF95dDI6cGFzc3dvcmQ=
 
 grant_type=authorization_code&
   redirect_uri=https%3A%2F%2Feid-exttest.difi.no%2Fidporten-oidc-client%2Fauthorize%2Fresponse&
-  code=1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0%3D
+  code=1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0%3D&
+  code_verifier=8B6wE6tV7QzZ_F7-6pLKzMh530HVWAp38kaxcmehZac
 ```
 
+Se [detaljert dokumentasjon for token-endepunktet](oidc_protocol_token.html) for alle valgmuligheter.  
 
+Dersom forespørselen blir validert som gyldig, vil det returneres et eller flere token:
 
-### Klientautentisering med JWT token
+* **id_token**: Autentiseringsbevis,  "hvem brukeren er"
+* **access_token**: Tilgangs-token, forteller "hva brukeren kan få tilgang til"
+* **refresh_token**: Brukes av klienten til å fornye access_token uten brukerinteraksjon (så lenge som autorisasjonen er gyldig)
 
-Klienten må generere et JWT token med claims som definert under `private_key_jwt`-avsnittet i  [kapittel 9 av OIDC-spesifikasjonen](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), og signere dette med et gyldig virksomhetssertifikat ihht [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
-
-Forespørselen må utvides med følgende attributter:
-
-| Attributt  | Verdi |
-| --- | --- |
-| client_assertion_type | `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`|
-| client_assertion | JWT ihht. kravene under   |
-
-#### Krav til JWT for token-forespørsel
-
-Klienten må generere og signere ein jwt med følgende elementer for å forespørre tokens fra autorisasjonsserveren:
-
-
-**Header:**
-
-| Parameter  | Verdi |
-| --- | --- |
-| x5c | Inneholde klientens virksomhetssertifikat som er brukt for signering av JWT'en. Må være angitt som en array.  |
-| alg | RS256 - Vi støtter kun RSA-SHA256 som signeringsalgoritme |
-
-&nbsp;
-
-**Body:**
-
-| Parameter  | Verdi |
-| --- | --- |
-|aud| Audience - identifikator for ID-portens OIDC Provider.  Se ID-portens `well-known`-endepunkt for aktuelt miljø for å finne riktig verdi. |
-|iss| issuer - client ID som er registert hos ID-porten OIDC-provider|
-|iat| issued at - tidsstempel for når jwt'en ble generert - **MERK:** Tidsstempelet tar utgangspunkt i UTC-tid|
-|exp| expiration time - tidsstempel for når jwt'en utløper - **MERK:** Tidsstempelet tar utgangspunkt i UTC-tid **MERK:** ID-porten godtar kun maks levetid på jwt'en til 120 sekunder (exp - iat <= 120 )|
-|jti| Optional - JWT ID - unik id på jwt'en som settes av klienten. **MERK:** JWT'er kan ikke gjenbrukes. ID-porten håndterer dette ved å sammenligne en hash-verdi av jwt'en mot tidligere brukte jwt'er. Dette impliserer at dersom klienten ønsker å sende mer enn en token-request i sekundet må jti elementet benytttes.|
-
-#### Eksempel på forespørsel:
-
-```
-POST /token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=authorization_code&
-   code=n0esc3NRze7LTCu7iYzS6a5acc3f0ogp4&
-   client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&
-   client_assertion=< jwt >
-```
-
-
-### Eksempel på respons fra token-endepunktet:
 
 ```
 {
@@ -253,17 +174,14 @@ grant_type=authorization_code&
 ```
 
 
-## Struktur på Id token {#idtoken}
 
-Det returnerte ID tokenet er en signert JWT struktur i henhold til OpenID Connect spesifikasjonen:
+### id_token
 
-```
-{
-  "kid" : "mqT5A3LOSIHbpKrscb3EHGrr-WIFRfLdaqZ_5J9GR9s",
-  "alg" : "RS256"
-}
-```
+id_tokenet inneholder identiteten til den autentiserte brukeren - det forteller det hvem brukeren er, men ikke hvilke tilganger brukeren har.
 
+Normal bruker tjenesten id_tokenet kun til å opprette en egen, lokal sesjon.  Id_tokenet har derfor en ganske kort gyldighetsperiode.
+
+#### Eksempel:
 ```
 {
   "sub" : "-v-lcae5rGG-jlvzuv9Y9H7R8NmAeM2-kh0qWb-vPIE=",
@@ -281,77 +199,58 @@ Det returnerte ID tokenet er en signert JWT struktur i henhold til OpenID Connec
 }
 ```
 
-```
-OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
-```
+
+**Korrekt validering av id_token** av klienten er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel [3.1.3.7 - ID Token Validation i OpenID Connect Core 1.0 spesifikasjonen](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation).
+
+[Klikk her for full dokumentasjon av id_token i ID-porten](oidc_protocol_id_token.html).
 
 
-### ID tokenets header:
 
-| claim | verdi |
-| --- | --- |
-| kid | "Key identifier" - unik identifikator for signeringsnøkkel brukt av provideren. Nøkkel og sertifikat hentes fra providerens JWK-endepunkt |
-| alg | "algorithm" - signeringsalgoritme, Id-porten støtter kun RS256 (RSA-SHA256)
+### access_token
 
+Access_tokenet (tilgangstoken) gir klienten [tilgang til APIer hos tredjepart](oidc_auth_oauth2.html) på vegne av den autentiserte brukeren.  
 
-### ID tokenets body:
+Levetiden på aksess_tokenet er som oftest relativt kort (typisk 120 sekunder). Dersom tokenet er utløpt, kan klienten forespørre nytt acess_token ved å bruke refresh_tokenet. Det gjennomføres da en klient-autentisering, for å sikre at tokens ikke blir utlevert til feil part.
 
-| claim | verdi |
-| --- | --- |
-| sub | "subject identifier" - unik identifikator for den aktuelle brukeren. Verdien er her *pairwise* - dvs en klient får alltid samme verdi for samme bruker. Men ulike klienter vil få ulik verdi for samme bruker |
-| aud | "audience" - client_id til klienten som er mottaker av dette tokenet |
-| acr | "Authentication Context Class Reference" - Angir sikkerhetsnivå for utført autentisering. I ID-porten sammenheng er mulige verdier "Level3" (dvs. MinID) eller "Level4" (De andre eID'ene), denne skal brukes for å sikre at brukeren er autentisert på tilstrekkelig nivå |
-| auth_time | Tidspunktet for når autentiseringen ble utført. Dvs tidspunktet når brukeren logget inn i ID-porten |
-| amr | "Authentication Methods References" - Autentiseringsmetode. For ID-porten er mulige verdier her *Minid-PIN*, *Minid-OTC*, *Commfides*, *Buypass*, *BankID* eller *BankID-mobil*, dette kan endre seg med avtaler og tilgjengelige e-IDer |
-| iss | Identifikator for provideren som har utstedt token'et. For ID-porten sitt ext-test miljø er dette *https://eid-exttest.difi.no/idporten-oidc-provider/* |
-| pid | Personidentifikator - Id-porten spesifikt claim som gir brukerens norske personidentifikator (fødselsnummer eller d-nummer) |
-| exp | Expire - Utløpstidspunktet for Id tokenet. Klienten skal ikke akseptere token'et etter dette tidspunktet |
-| locale | Språk valgt av sluttbrukeren under innlogging i Id-porten |
-| iat | Tidspunkt for utstedelse av tokenet |
-| jti | jwt id - unik identifikator for det aktuelle Id tokenet |
-| sid | sesjonsid - en unik identifikator for brukerens sesjon med ID-porten OIDC Provider |
+Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes](oidc_protocol_scope.html) som er i tokenet. Merk til slutt at levetidene på autorisasjon og tilhørende access/refresh_token har ingen sammenheng med Single-Signon(SSO)-sesjonen i ID-porten.
+
+[Klikk her for full dokumentasjon av access_token-formatet til ID-porten](oidc_protocol_access_token.html).
 
 
-## Validering av Id token
 
-Korrekt validering av Id token på klientsiden er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel *3.1.3.7 - ID Token Validation* i OpenID Connect Core 1.0 spesifikasjonen.
+## 4: Userinfo-endepunkt
 
+Ved å forespørre scopet *profile* vil klienttjenesten sammen med id tokenet også få utstedt et access_token (og evnt. refresh_token)som kan benyttes mot providerens userinfo-endepunkt.
 
-## Token levetid
-
-| Token | Levetid |
-| --- | --- |
-| Access_token | 120 sekunder |
-| Refresh_token | 600 sekunder |
-
-
-## Userinfo-endepunkt
-
-Ved å forespørre scopet *profile* vil klienttjenesten sammen med id tokenet også få utstedt et access_token (og evnt. refresh_token)
-som kan benyttes mot providerens userinfo-endepunkt. Dette endepunktet kan benyttes for å hente ytterligere data om brukeren enn det som blir eksponert via ID tokenet.
-Da ID-porten generelt har lite data om sluttbrukeren har dette endepunktet begrenset verdi for denne tjenesten. Personnummer og valgt språk under innlogging er de
+Dette endepunktet kan i henhold til standarden benyttes for å hente ytterligere data om brukeren enn det som blir eksponert via ID tokenet. Da ID-porten generelt har lite data om sluttbrukeren har dette endepunktet begrenset verdi i de fleste tilfeller. Personnummer og valgt språk under innlogging er de
 dataene som vil bli eksponert her.
 
 
 ```
-URL: https://<<miljø>>/idporten-oidc-provider/userinfo
-```
+GET https://<<miljø>>/idporten-oidc-provider/userinfo
+Authorization: Bearer eyJA...
 
-&nbsp;
-
-Følgende header-parametere må brukes på request:
-
-| Parameter  | Verdi |
-| --- | --- |
-| Http-metode: | GET |
-| Authorization: | Bearer \<utstedt access_token\> |
-
-### Eksempel på respons:
-
-```
+Respons:
 {
   "sub" : "NR8vTTPrM3T7rWf8dXxeWLZpxEMsug4E7pxqJuh9wIM=",
   "pid" : "23079421936",
   "locale" : "nb"
 }
 ```
+
+
+## 5: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
+
+Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt](brukerspesifikt_oppslag_krr_rest.html) dersom access_token inneholder `user/kontaktinformasjon.read`-scopet.
+
+## 6: Utlogging
+
+ID-porten tilbyr single signon-funksjonalitet (SSO) mellom alle integrerte tjenester.  **Derfor må alle tjenester også implementere støtte for single logout (SLO).**
+
+Klienten må håndtere to forskjellige utloggings-scenarier:
+
+1. **Brukeren logger ut fra din tjeneste:**  Du må redirecte brukeren til /endsession-endepunktet til ID-porten.  ID-porten sørger for å logge brukeren ut av alle andre tjenester, og redirecter til slutt brukeren tilbake til deg.
+
+2. **Brukeren logger ut fra annen tjeneste:** Du vil motta en front_channel_logout-melding med en sesjons-identifikator `sid` som du tidligere har mottatt i id_token. Basert på denne må du finne lokal brukersesjon og invalidere denne.
+
+[Se full dokumentasjon om utlogging her](oidc_func_sso.html).

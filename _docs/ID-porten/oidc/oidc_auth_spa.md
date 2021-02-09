@@ -13,6 +13,7 @@ Single-page applikasjoner (SPA) har økende popularitet. Disse skiller seg fra t
 
 En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (evt. virksomhetssertifikatets privatnøkkel) siden hele klienten lever i brukers nettleser. SPAer er altså det som i Oauth2-verdenen kalles **public klienter**. For slike klienter var det tidligere anbefalt å bruke _implicit flow_, men **de nyeste anbefalingen går på å bruke code flow sammen med PKCE og state**.
 
+**Merk også at den metoden for "silent renewal" ikke støttes av ID-porten.**  Denne metoden er også på vei "ut", da de store browser-aktørene er i ferd med å sperre tilgang til 3djparts-cookies.
 
 
 ## Anbefalinger / krav til bruk av SPAer

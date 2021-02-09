@@ -16,7 +16,7 @@ Tjenesteeiere som har godtatt ID-porten sine bruksvilkår kan ta i bruk denne tj
 Se [bruksvilkår i Samarbeidsportalen](https://samarbeid.digdir.no)
 
 ## Rutine for tilgang
-Følg [stegvis veiledning på Samarbeidsportalen](https://samarbeid.digdir.no)
+Følg [stegvis veiledning på Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94)
 
 ### Planlegging
 Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Digitaliseringsdirektoratet)

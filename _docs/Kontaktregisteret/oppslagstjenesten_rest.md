@@ -14,7 +14,7 @@ Kontaktregisteret sin oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-A
 
 Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon](maskinporten_auth_server-to-server-oauth2.html)
 
-Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke dMaskinporten.
+Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke Maskinporten.
 
 Merk at funksjonalitet for lokal kopi (endringsmeldinger) ikke er støttet over Oauth2-grensenittet.
 
