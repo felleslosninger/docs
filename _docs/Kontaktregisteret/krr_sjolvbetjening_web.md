@@ -13,7 +13,7 @@ Dette dokumentet viser hvordan du kan selvbetjene KRR i Samarbeidsportalen.
 * TOC
 {:toc}
 
-## Innlogging og tilgang
+## Innlogging og tilgang.
 
 ### Innlogging
 
@@ -73,7 +73,7 @@ Videotutorial: (https://vimeo.com/427689809)
 
 <!--kommentert bort pga død lenke under-->
 
-<!-- 
+<!--
 [![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 -->
 ### Tilgangsstyring
@@ -88,7 +88,7 @@ Videotutorial: (https://vimeo.com/427689702)
 
 <!--kommentert bort pga død lenke under-->
 
-<!-- 
+<!--
 [![Tilgangsstyre scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
 -->
 
@@ -103,7 +103,7 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 
 Videotutorial: (https://vimeo.com/427689583)
 <!--kommentert bort pga død lenke under-->
-<!-- 
+<!--
 [![Deaktivere scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
 -->
 
@@ -121,7 +121,7 @@ For å administrere merkantile data:
 
 Videotutorial: (https://vimeo.com/397388041)
 <!--kommentert bort pga død lenke under-->
-<!-- 
+<!--
 [![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 -->
 
@@ -163,7 +163,7 @@ Videotutorial: (https://vimeo.com/427689782)
 
 <!--kommentert bort pga død lenke under-->
 
-<!-- 
+<!--
 [![Deaktivere klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 -->
 
@@ -182,7 +182,7 @@ For å administrere merkantile data:
 Videotutorial: (https://vimeo.com/397388041)
 <!--kommentert bort pga død lenke under-->
 
-<!-- 
+<!--
 [![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 -->
 
