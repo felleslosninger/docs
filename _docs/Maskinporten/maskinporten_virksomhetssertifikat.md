@@ -7,6 +7,8 @@ sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
 
+Virksomhetssertifikat er en viktig del av Maskinporten. Her har vi samlet litt informasjon om virksomhetssertifikat.
+
 * TOC
 {:toc}
 
@@ -38,6 +40,6 @@ Buypass: https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhet
 
 Commfides: https://www.commfides.com/commfides-virksomhetssertifikat/
 
-## Kan man gjenbruke et virksomhetssertifikat på flere API'er i Maskinporten?
+## Kan man gjenbruke et virksomhetssertifikat på flere klienter i Maskinporten?
 
 Ja, man kan bruke samme sertifikat på flere klienter i Maskinporten.
