@@ -1,11 +1,14 @@
 ---
-title: Overordnet
+title: Virksomhetssertifikat
 description:
 summary:
 permalink: maskinporten_virksomhetssertifikat.html
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
+
+* TOC
+{:toc}
 
 ## Hva er et virksomhetssertifikat
 
