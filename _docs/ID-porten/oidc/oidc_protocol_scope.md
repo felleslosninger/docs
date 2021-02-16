@@ -18,7 +18,7 @@ The following attributes are available for a scope:
 |-|-|-|
 | prefix | mandatory| A prefix used for namespacing scopes belonging to a certain organization. Manually assigned by Digdir |
 | description | mandatory | A human-readable short description of the scope. Shown to the end-user in consent dialogue. |
-| long_description (20-11) | optional | A longer human-readable description of the scope. Paragraphs break and links allowed. Shown to the end-user in consent dialogue.
+| long_description  | optional | A longer human-readable description of the scope. Supports basic Markdown-formatting using bold, italic, paragraphs break and links allowed. Shown to the end-user in consent dialogue.
 | delegation_source | optional | If set, allows consumers to [delegate a given scope  access to a supplier in a external autoriative register of delegations](maskinporten_func_delegering.html). NOTE: this only works in Maskinporten, please set `allowable_integration_types` accordingly. |
 | accessible_for_all | default false | If true, any consumer organization can register a client having this scope and get tokens. |
 | [allowable_integration_types](#scope-limitations) | optional | Array. If set, only clients having the same integration type(s) can get tokens for this scope, from the corresponsing Autorization Server |
