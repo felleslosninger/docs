@@ -111,3 +111,15 @@ footer, .footer {
   }
 
 }
+
+@media (max-width: 767.98px) {
+
+  footer {
+    .row {
+      .col-md-6:nth-child(2) {
+        margin: 30px 0;
+      }
+    }
+  }
+
+}

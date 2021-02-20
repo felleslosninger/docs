@@ -71,3 +71,15 @@
   color: white;
   text-decoration: none !important;
 }
+
+@media (max-width: 767.98px) {
+
+  .cards {
+
+    &__item {
+      max-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+
+}

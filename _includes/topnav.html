@@ -100,18 +100,16 @@
         <div class="container topnavlinks">
             <div class="navbar-header">
               {% if site.navbar-toggle == true %}
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="fa fa-bars fa-2x"></span>
+                <button type="button" class="navbar-toggle toggle-menu-button collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 </button>
                 {% endif %}
                 {% if site.toggle-sidebar-button == true %}
-                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
-                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                <button type="button" class="navbar-toggle toggle-sidebar-button collapsed"  data-toggle="offcanvas" data-target=".sidebar-nav">
                 </button>
                 {% endif %}
 
                   {% include logo.html %}
-                <div class="tomato"></div>
+                <div class="nav-overlay"></div>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
