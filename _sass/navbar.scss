@@ -108,6 +108,12 @@
         z-index: 5;
         position: relative;
 
+        &:hover {
+          i {
+            color: black;
+          }
+        }
+
         i {
           font-weight: 400;
         }
@@ -137,6 +143,10 @@
 }
 
 @media (max-width: 991.98px) {
+
+  .nav-overlay {
+    background-color: rgb(246, 246, 246) !important;
+  }
 
   .navbar {
 
@@ -224,6 +234,14 @@
     }
   }
 
+}
 
+@media (max-width: 767.98px) {
+  .navbar {
+
+    &-header {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+  }
 }
 

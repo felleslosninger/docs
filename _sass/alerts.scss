@@ -63,11 +63,24 @@
 }
 
 blockquote {
-    background-color: #eef7fa;
-    font-family: arial;
-    font-size: .9em;
-    margin: 0px;
-    padding: 1em;
+    background-color: $color-lighter-yellow;
+    font-size: .95em;
+    margin: 20px 0;
+    padding: 26px;
+
+  p:last-child,
+  ul:last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    padding-left: 32px;
+
+    li {
+      margin: 2px 0;
+    }
+  }
+
 }
 
 p.note {

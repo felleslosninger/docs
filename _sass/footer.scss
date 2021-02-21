@@ -89,6 +89,10 @@ footer, .footer {
       a {
         color: $color-grey-300;
         text-decoration: underline;
+
+        &:hover {
+          color: white;
+        }
       }
 
       span:first-child {

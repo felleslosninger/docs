@@ -54,19 +54,19 @@ h1 {
 
 h2 {
   margin-top: 36px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   @include font-style(800, 500);
 }
 
 h3 {
   margin-top: 36px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   @include font-style(700, 500);
 }
 
 h4 {
   margin-top: 36px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   @include font-style(600, 500);
 }
 
@@ -79,13 +79,9 @@ h4 {
 p {
   @include font-style(400, 400);
   line-height: 1.65em;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 strong {
   font-weight: 500;
-}
-
-p img {
-  max-width: 100%;
 }

@@ -3,3 +3,10 @@ body {
   color: $color-grey-700;
   padding-top: $top-bar-height;
 }
+
+p img,
+figure img {
+  max-width: 100%;
+}
+
+
