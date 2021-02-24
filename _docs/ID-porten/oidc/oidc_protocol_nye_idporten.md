@@ -27,7 +27,7 @@ Omskrivningsarbeidet er i full gang, og har holdt på siden sommer 2020.  Det p�
 
 ## Protokoll-målbilde
 
-Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen når denne er klar.  De senste årene har det kommet mange nye utvidelser til ompatibel.
+Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen når denne er klar.   Standard-flyt for alle integrasjon blir code-flow med tvungen bruk av PKCE og state og nonce.
 
 SAML blir videreført for eksisterende tjenster, men her  begrenset
 
@@ -35,6 +35,10 @@ SAML blir videreført for eksisterende tjenster, men her  begrenset
 ## Funksjonalitet som ikke blir videreført
 
 ### OIDC/Oauth2
+
+#### Tvungen bruk av PKCE og state og nonce
+
+Alle klient-integrasjoner **må** bruke PKCE-funksjonaliten og sende state og nonce-verdier.  I dag er dette påkrev for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
 
 ####Ny issuer
  Nye ID-porten vil komme på et nytt domene, og da få en ny issuer-verdi, og vil bruke et annet signeringssertifkat enn dagens.  Verdien er p.t. ikke bestemt.   Ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
@@ -53,6 +57,8 @@ Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingenefra I
 Med ny løsning er det trolig at `sub`-verdien som en klient for et gitt fødselsnummer i `id_token` vil bli endret. Selv om de aller fleste bruker av ID-porten forholder seg primært til fødselsnummer i `pid`-feltet, kan det være at deres IAM-programvare forholder seg sub-verdien, og i de tilfellene der IAM-programvaren også oppretter lokale brukerbaser (Keycloak, blant annet) risikerer kundene at det vil bli generert duplikater.
 
 I `access_token` vil `sub` få nye verdier.
+
+
 
 ### SAML
 
