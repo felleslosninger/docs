@@ -40,7 +40,7 @@ SAML blir videreført for eksisterende tjenster, men her  begrenset
 
 Alle klient-integrasjoner **må** bruke PKCE-funksjonaliten og sende state og nonce-verdier.  I dag er dette påkrev for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
 
-####Ny issuer
+#### Ny issuer
  Nye ID-porten vil komme på et nytt domene, og da få en ny issuer-verdi, og vil bruke et annet signeringssertifkat enn dagens.  Verdien er p.t. ikke bestemt.   Ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
 
 Samtidig gjør dette det mer komplekst for API-tilbydere, som da må håndtere access_token fra to issuere dersom de ikke er i stand til å kreve/koordinere at sine konsumenter koordinert migrerer til Nye ID-porten samtidig med at APIet truster den nye issueren.
