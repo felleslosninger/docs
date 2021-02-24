@@ -35,6 +35,8 @@ Følgende aktører inngår:
 
 ## Beskrivelse av autorisasjonskode-flyten
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 <div class="mermaid">
 sequenceDiagram
   Sluttbruker ->> Relying Party: Klikker login-knapp

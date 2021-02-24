@@ -13,6 +13,8 @@ Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly docum
 
 PAR lets the client push the authorization request (see [/authorize](oidc_protocol_authorize.html) ) to ID-porten ahead of end-user involvement.
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 
 ## Request
 
