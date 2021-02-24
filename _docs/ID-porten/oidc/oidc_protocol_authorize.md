@@ -15,6 +15,8 @@ The `/authorize` endpoint is thoroughly documented in [OpenID Connect Core, chap
 
 <div markdown="span" class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html). </div>
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 ## Request
 
 The client passes an authentication request by redirecting the end user browser user's browser to the /authorize endpoint.
