@@ -4,6 +4,7 @@ description: description
 summary: "summary"
 sidebar: main_sidebar
 product: eFormidling
+permalink: test2.html
 ---
 
 ## Bakgrunn
@@ -19,4 +20,4 @@ Kort fortalt gjør eFormidling det mulig å kommunisere med virksomheter (etterh
 {% include image.html file="/eformidling/illustrasjon_eformidling_hvit.png"  alt="eFormidling skisse over flyt" caption="eFormidling flyt" %}
 
 
-permalink: eformidling_index.html
+
