@@ -31,7 +31,7 @@ Rask redigering gjør det enklere å rapportere og fikse små feil og utelatelse
 
 5. Du blir da sendt til en ny side, og her velger du *Create pull request*, legger inn tittel og beskrivelse for pull forespørselen og trykker på *Create pull request* en gang til.
 
-6. De foreslåtte endringene dine vil nå bli behandlet av Difi, og det kan eventuelt komme tilbakemeldinger eller kommentarer som du bør følge opp.
+6. De foreslåtte endringene dine vil nå bli behandlet av Digdir, og det kan eventuelt komme tilbakemeldinger eller kommentarer som du bør følge opp.
 
 
 ## Større endringer ved å lage en forgrening
