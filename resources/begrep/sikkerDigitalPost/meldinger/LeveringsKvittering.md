@@ -13,7 +13,7 @@ sidebar: dpi_sidebar
 
 #### For Digitalpost forsendelser
 
-Kvitteringen sendes fra [Postkassleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
+Kvitteringen sendes fra [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
 når postforsendelsen er validert og de garanterer for at posten vil bli
 tilgjengeliggjort.  
 Kvitteringen vil bli sendt så fort
