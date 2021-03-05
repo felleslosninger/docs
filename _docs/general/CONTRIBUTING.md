@@ -7,7 +7,7 @@ product: general
 
 Vi setter pris på at du ønsker å bidra inn i denne dokumentasjonen, og ønsker alle typer tilbakemeldinger velkommen (feilmelding, ny funksjonalitet, korrigering, tilleggsdokumentasjon etc.).
 
-Under finner du inforomasjon om hvordan du kan bidra.
+Under finner du informasjon om hvordan du kan bidra.
 
 ## Rapportere om feil eller be om ny funksjonalitet
 
