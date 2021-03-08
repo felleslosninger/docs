@@ -50,6 +50,8 @@ For å bruke selvbetjening så forutsetter det at din virksomhet har tilgang til
 
 For å få et access_token til KRR sitt REST-API, må det sendes et JWT-grant til Maskinporten. Vi har en egen side som beskriver [JWT grant.](maskinporten_protocol_jwtgrant.html)
 
+Well-known endepunkter for [Maskinporten](maskinporten_func_wellknown.html)
+
 ### Sette opp forespørsel mot KRR sitt endepunkt
 
 Se adressene til de forskjellige endepunktene og videre beskrivelse av hvordan kalle REST-API'et på [Oppslagstjenesten REST.](oppslagstjenesten_rest.html)

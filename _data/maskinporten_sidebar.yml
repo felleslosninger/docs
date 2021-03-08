@@ -9,6 +9,9 @@ folders:
       - title: Overordnet
         jurl: /maskinporten_overordnet.html
 
+      - title: Virksomhetssertifikat
+        jurl: /maskinporten_virksomhetssertifikat.html
+
 
 - title: Bruksområde og guide
   folderitems:
