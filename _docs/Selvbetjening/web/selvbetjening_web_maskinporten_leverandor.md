@@ -1,57 +1,23 @@
 ---
-title: Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
-description:  Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
-summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene KRR via Samarbeidsportalen'
-permalink: krr_sjolvbetjening_web.html
-sidebar: main_sidebar
-product: KRR
+title: Selvbetjening som leverandør i Maskinporten via Samarbeidsportalen
+description:  Selvbetjening som leverandør i Maskinporten via Samarbeidsportalen
+permalink: selvbetjening_web_maskinporten_leverandor.html
+sidebar: selvbetjening_sidebar
+product: Selvbetjening
 ---
 
-Dette dokumentet viser hvordan du kan selvbetjene KRR i Samarbeidsportalen.
+Dette dokumentet viser hvordan du som API-tilbyder kan selvbetjene dine scopes i Maskinporten gjennom Samarbeidsportalen.
 
 ---
 * TOC
 {:toc}
 
-## Innlogging og tilgang
 
-### Innlogging
-
-Samarbeidsportalen er inngangen til selvbetjeningen på nett. En forutsetning for å ta dette i bruk, er at virksomheten din er registrert hos oss og bruksvilkår er signert. Når du oppretter en bruker så knyttes du til den virksomheten som er registrert med domenet i epost-adressen din. F.eks logger du inn med <navn>@digdir.no, så blir du knyttet til Digitaliseringsdirektoratet.
-
-### Opprette bruker
-
-For å opprette bruker på Samarbeidsportalen. Gjør følgende:
-
-1. Gå til samarbeid.difi.no
-2. Trykk på "Min profil" oppe i høyre hjørne.
-3. Trykk på "Registrer deg" i påloggingsvinduet
-4. Registrer bruker med din jobbadresse
-5. Bekreft brukeren ved å trykke på lenken som kommer på epost. (NB! Sjekk søppelpost om ikke eposten kommer frem).
-
-### Tilgang i testmiljø
-
-I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til selvbetjening i testmiljøene ver1 og ver2. Noen virksomheter har innført restriksjoner og har strengere tilgangsstyring.
-
-
-### Tilgang i produksjonsmiljø
-
-Tilgang i produksjon er sikret med ID-porten, og tilgangen må bestilles av en bemyndiget person i virksomheten. (Direktør/Leder). Bestillingen kan se noe slik ut:
-
-"Følgende person(er) trenger tilgang til selvbetjening i produksjonsmiljøet på vegne av Eksempel AS:
-Navn, epost og telefonnummer"
-
-Så avtaler vi utveksling av personnummer etter dette.
-
-Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
-
-## Selvbetjening for oppslagstjenesten REST
+## Selvbetjening som leverandør i Maskinporten
 
 ### Forutsetninger
 
-For å kunne opprette en integrasjon mot KRR, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
-
-For bestilling til produksjonsmiljøet, send inn skjema:
+For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Les mer om dette på [Slik bruker du Maskinporten som API-tilbyder](https://docs.digdir.no/maskinporten_guide_apitilbyder.html)
 
 ### Innlogging (Scopes/API'er)
 
@@ -71,11 +37,8 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 
 Videotutorial: (https://vimeo.com/427689809)
 
-<!--kommentert bort pga død lenke under-->
+[![Opprette scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
-<!--
-[![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
--->
 ### Tilgangsstyring
 
 1. Fullfør stegene i "Innlogging"
@@ -86,11 +49,7 @@ Videotutorial: (https://vimeo.com/427689809)
 
 Videotutorial: (https://vimeo.com/427689702)
 
-<!--kommentert bort pga død lenke under-->
-
-<!--
-[![Tilgangsstyre scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
--->
+[![Tilgangsstyre scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
 
 ### Deaktivere subscopes
 
@@ -102,10 +61,9 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 4. Trykk på "Deaktiver" og bekreft at du vil deaktivere.
 
 Videotutorial: (https://vimeo.com/427689583)
-<!--kommentert bort pga død lenke under-->
-<!--
-[![Deaktivere scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
--->
+
+[![Deaktivere scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
+
 
 ### Vedlikehald av merkantile data
 
@@ -120,12 +78,11 @@ For å administrere merkantile data:
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
 Videotutorial: (https://vimeo.com/397388041)
-<!--kommentert bort pga død lenke under-->
-<!--
-[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
--->
 
-## Selvbetjening for brukerspesifikt oppslag REST
+[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+
+
+## Selvbetjening som API-konsument
 
 ### Innnlogging (Integrasjoner)
 
@@ -146,11 +103,8 @@ For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør 
 6. Trykk "Opprett" for å lagre.
 
 Videotutorial: (https://vimeo.com/427689834)
-<!--kommentert bort pga død lenke under-->
 
-<!--
 [![Opprette klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
--->
 
 ### Slette klient
 
@@ -161,11 +115,7 @@ Videotutorial: (https://vimeo.com/427689834)
 
 Videotutorial: (https://vimeo.com/427689782)
 
-<!--kommentert bort pga død lenke under-->
-
-<!--
-[![Deaktivere klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
--->
+[![Deaktivere klient](assets\videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
@@ -180,11 +130,8 @@ For å administrere merkantile data:
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
 Videotutorial: (https://vimeo.com/397388041)
-<!--kommentert bort pga død lenke under-->
 
-<!--
-[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
--->
+[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 

@@ -1,13 +1,12 @@
 ---
-title: Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
-description:  Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
-summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene KRR via Samarbeidsportalen'
-permalink: krr_sjolvbetjening_web.html
-sidebar: main_sidebar
-product: KRR
+title: Tilgang til selvbetjening via Samarbeidsportalen
+description:  Tilgang til selvbetjening via Samarbeidsportalen
+permalink: selvbetjening_web_tilgang.html
+sidebar: selvbetjening_sidebar
+product: Maskinporten
 ---
 
-Dette dokumentet viser hvordan du kan selvbetjene KRR i Samarbeidsportalen.
+Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyder og API-konsument.
 
 ---
 * TOC
@@ -36,22 +35,60 @@ I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til s
 
 ### Tilgang i produksjonsmiljø
 
-Tilgang i produksjon er sikret med ID-porten, og tilgangen må bestilles av en bemyndiget person i virksomheten. (Direktør/Leder). Bestillingen kan se noe slik ut:
+Tilgang i produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
 
-"Følgende person(er) trenger tilgang til selvbetjening i produksjonsmiljøet på vegne av Eksempel AS:
-Navn, epost og telefonnummer"
+Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
-Så avtaler vi utveksling av personnummer etter dette.
+1. Gå til Altinn.no
+2. Trykk på "Logg inn"
+3. Velg virksomheten du skal representere
+4. Trykk på "Profil"
+5. Trykk på "Andre med rettigheter til virksomheten"
+6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
+7. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
+8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten" (Se tabell under for forklaring av rettighetene)
+9. Trykk på alle rettighetene
+10. Trykk på "Gi rettigheter"
 
-Dette erstattes ganske snart av Altinn autorisasjon, slik at den bemyndigede personen må logge inn i Altinn for å delegere tilgang til sine ansatte.
+Tabell for tilgjengelige rettigheter:
 
-## Selvbetjening for oppslagstjenesten REST
+|**Rettighet**|**Funksjon**|
+| - | - |
+| Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere |
+| Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten |
+| Selvbetjening for leverandører i ID-porten/Maskinporten*| Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer |
+
+*NB! Selvbetjening for leverandører krever "Selvbetjening av integrasjoner..." i tillegg.
+
+Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
+
+[![Delegere rettigheter](assets\videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
+
+Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+
+1. Gå til Altinn.no
+2. Trykk på "Logg inn"
+3. Velg virksomheten du skal representere
+4. Trykk på "Profil"
+5. Trykk på "Andre med rettigheter til virksomheten"
+6. Finn personen du skal frata rettigheter fra
+7. Trykk på "Gi eller fjerne tilgang"
+8. Trykk på "Fjern en eller flere rettigheter"
+9. Trykk på "Fjern" på rettigheten som skal fjernes.
+10. Trykk på "Ferdig for å bekrefte"
+
+Videotutorial: [https://vimeo.com/433540358](https://vimeo.com/433540358)
+
+[![Fjerne tilgang](assets\videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
+
+## Selvbetjening som API-tilbyder
 
 ### Forutsetninger
 
-For å kunne opprette en integrasjon mot KRR, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
+For å kunne opprette subscopes i Maskinporten, forutsetter det at virksomheten er registrert med et prefix. Prefix må opprettes av Digitaliseringsdirektoratet ved bestilling. For bestilling til testmiljø, send en epost til servicedesk@digdir.no.
 
 For bestilling til produksjonsmiljøet, send inn skjema:
+[Maskinporten - Innhenting av opplysningar](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u).
 
 ### Innlogging (Scopes/API'er)
 
@@ -71,11 +108,8 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 
 Videotutorial: (https://vimeo.com/427689809)
 
-<!--kommentert bort pga død lenke under-->
+[![Opprette scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
-<!--
-[![Opprette scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
--->
 ### Tilgangsstyring
 
 1. Fullfør stegene i "Innlogging"
@@ -86,11 +120,7 @@ Videotutorial: (https://vimeo.com/427689809)
 
 Videotutorial: (https://vimeo.com/427689702)
 
-<!--kommentert bort pga død lenke under-->
-
-<!--
-[![Tilgangsstyre scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
--->
+[![Tilgangsstyre scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
 
 ### Deaktivere subscopes
 
@@ -102,10 +132,9 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 4. Trykk på "Deaktiver" og bekreft at du vil deaktivere.
 
 Videotutorial: (https://vimeo.com/427689583)
-<!--kommentert bort pga død lenke under-->
-<!--
-[![Deaktivere scopes](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
--->
+
+[![Deaktivere scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
+
 
 ### Vedlikehald av merkantile data
 
@@ -120,12 +149,11 @@ For å administrere merkantile data:
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
 Videotutorial: (https://vimeo.com/397388041)
-<!--kommentert bort pga død lenke under-->
-<!--
-[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
--->
 
-## Selvbetjening for brukerspesifikt oppslag REST
+[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+
+
+## Selvbetjening som API-konsument
 
 ### Innnlogging (Integrasjoner)
 
@@ -146,11 +174,8 @@ For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør 
 6. Trykk "Opprett" for å lagre.
 
 Videotutorial: (https://vimeo.com/427689834)
-<!--kommentert bort pga død lenke under-->
 
-<!--
 [![Opprette klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
--->
 
 ### Slette klient
 
@@ -161,11 +186,7 @@ Videotutorial: (https://vimeo.com/427689834)
 
 Videotutorial: (https://vimeo.com/427689782)
 
-<!--kommentert bort pga død lenke under-->
-
-<!--
-[![Deaktivere klient](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
--->
+[![Deaktivere klient](assets\videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
@@ -180,11 +201,8 @@ For å administrere merkantile data:
 5. Legg inn informasjon og trykk "Lagre" når du er ferdig.
 
 Videotutorial: (https://vimeo.com/397388041)
-<!--kommentert bort pga død lenke under-->
 
-<!--
-[![Vedlikehald av merkantile data](https://samarbeid.difi.no/sites/samarbeid2/files/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
--->
+[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 
