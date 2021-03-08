@@ -36,9 +36,9 @@ Vi viser til [Norges tillitsliste](https://www.nkom.no/internett/elektronisk-id-
 
 Lenke til utstedere:
 
-Buypass: (https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge)
+Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge)
 
-Commfides: (https://www.commfides.com/commfides-virksomhetssertifikat/)
+Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/)
 
 ## Kan man gjenbruke et virksomhetssertifikat på flere klienter i Maskinporten?
 
