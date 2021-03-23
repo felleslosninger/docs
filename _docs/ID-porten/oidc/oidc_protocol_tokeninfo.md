@@ -21,7 +21,7 @@ The following header parameters must be used:
 |Http method:|POST|
 |Content-type:|application/x-www-form-urlencoded|
 
-The preregistered method of client authentication (token_endpoint_auth_method) must be used also on the /tokeninfo endpoint.
+The client calling /tokeninfo must be pre-registered, and must authenticate itself using the registered method of client authentication (ie `token_endpoint_auth_method`).
 
 The following JSON payload must be submitted:
 
@@ -33,20 +33,22 @@ The following JSON payload must be submitted:
 
 The most important parameter in the reponse is the `active`-claim.  If its value is *false*, the submitted token is not longer valid, and must not be used or trusted by the sending party.
 
-The remainder of the response is intentionally kept as equal to the claims available in the access_token as possible, please see the table for [self-contained access token](oidc_protocol_token.html#by-value--self-contained-access-token).
 
-| claim | verdi |
-| --- | --- |
-| active | true / false |
+| claim | value | description |
+| --- | --- | --- |
+| active | true / false | Authorative statement from ID-porten whether the submitted token is valid or not. |
 
-ER DET NOKRE ANDRE FORSKJELLER ?
+The response will also include a number of claims related to the submitted token, and are equal to the claims available for [self-contained access token](oidc_protocol_token.html#by-value--self-contained-access-token).
+
+Please note that the response from the /tokeninfo-endpoint is NOT an access_token, even though it is a JWT.
 
 
-Sample request:
+**Sample request:**
 
 ```
 POST /tokeninfo
 Content-type: application/x-www-form-urlencoded
+Authorization: Basic xxxxx
 
 token=fK0dhs5vQsuAUguLL2wxbXEQSE91XbOAL3foY5VR0Uk=
 ```
@@ -65,3 +67,5 @@ Sample response:
     "client_orgno": "991825827"
 }
 ```
+
+### Introspection of pseudonymous tokens
