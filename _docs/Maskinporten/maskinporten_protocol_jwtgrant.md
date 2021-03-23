@@ -49,12 +49,12 @@ If the client belongs to a supplier requesting a token on behalf of another orga
 
 | Claim  |  Cardinality | Description  |
 | --- | --- |--- |
-|consumer_org| Optional |  The organization number of the legal consumer the client wants to get a token for. Maskinporten will validate against Altinn that the consumer-supplier delegation exists.  Note that client can not be provisioned with the scope. |
+|consumer_org| Optional |  String value carrying the Norwegian organization number of the legal consumer the client wants to get a token for. Maskinporten will validate against Altinn that the consumer-supplier delegation exists.  |
 |iss_onbehalfof| Optional | Maskinporten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
 
 
 
-### Example
+#### Example JWT grant
 
 The final JWT may look like this:
 
@@ -66,12 +66,28 @@ The final JWT may look like this:
 .
 {
   "aud": "https://ver2.maskinporten.no",
-  "scope": "global/kontaktinformasjon.read global/varslingsstatus.read global/navn.read global/postadresse.read global/sertifikat.read",
-  "iss": "test_rp",
+  "scope": "difitest:test2",
+  "iss": "my_client_id",
   "exp": 1520589928,
   "iat": 1520589808,
   "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
 }
 .
 <<signature-value>>
+```
+
+#### Example JWT grant when using delegation
+
+If the client rely on delegation of scope access in Altinn, the client needs to include the `consumer_org`-claim in the grant:
+
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "my_client_id",
+  "exp" : 1584693557,
+  "iat" : 1584693437,
+  "jti" : "eb6ab01e-5834-4ba0-a2a1-457bfd0f0a49",
+  "consumer_org" : "910753614"
+}
 ```

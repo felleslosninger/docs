@@ -11,6 +11,8 @@ product: ID-porten
 
 The `/authorize` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.2](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 ## Request
 
 The client passes an authentication request by redirecting the end user browser user's browser to the /authorize endpoint.
