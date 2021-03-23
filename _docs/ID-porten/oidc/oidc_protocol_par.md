@@ -9,7 +9,7 @@ product: ID-porten
 
 ## About
 
-Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly documented in the draft IETF-specification [draft-ietf-oauth-par-01](https://tools.ietf.org/html/draft-ietf-oauth-par-01)
+Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly documented in the draft IETF-specification [draft-ietf-oauth-par-06](https://tools.ietf.org/html/draft-ietf-oauth-par-06)
 
 PAR lets the client push the authorization request (see [/authorize](oidc_protocol_authorize.html) ) to ID-porten ahead of end-user involvement.
 
@@ -72,7 +72,7 @@ Authorization: Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3
 
 ## Response
 
-The response is a `request_uri` identifier.
+The response is a `request_uri` identifier, and an associated expiry time in seconds.
 
 ### Sample response: {#authresponse}
 
@@ -81,10 +81,12 @@ The response is a `request_uri` identifier.
     "expires_in": 120,
     "request_uri": "urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw"
 }
+```
 
+## Continue the authorization
+
+The client must then use the request_uri and its client_id when redirecting the end user to the /authorize endpoint before the request_uri expires.
 ```
-The client must then use the request_uri by redirecting the end user to the /authorize endpoint before the request_uri expires.
+GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&client_id=s6BhdRkqt3
 ```
-GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw
-```
-Request parameters should not be repeated in the authorize-request, but if they are inclued, they must be excactly matching the values that was pushed in the PAR.
+Request parameters  (apart from client_id) should not be repeated in the authorize-request, but if they are inclued, they must be excactly matching the values that was pushed in the PAR.
