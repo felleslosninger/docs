@@ -87,7 +87,6 @@ SAML2 HTTP Artifact og SAML2 SOAP bindingene må sikres med SSL både for SSO- o
 | PROD | Produksjonsmiljø | Virksomhetssertifikat kreves | 
 | VER1 | Test-miljø. Samme versjon som PROD | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
 | VER2 | Test-miljø. Kjører pre-releaser av kommende versjon | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
-| YT1 | Ytelsetest. Samme versjon som PROD. Tilgang bestilles separat | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
 | YT2 | Ytelsetest. Kjører pre-release av kommende versjon. Tilgang bestilles separat | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
 | | | | 
 
