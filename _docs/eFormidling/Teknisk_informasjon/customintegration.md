@@ -25,6 +25,27 @@ graph LR
 
 </div>
 
+<div class="mermaid">
+sequenceDiagram
+    participant a as Avsender
+    participant mp as Maksinporten
+    participant sr as SR
+    participant af as AltInn <br> formidlingstjeneste
+    participant m as Mottaker
+    a->mp: Be om tilgang til scope
+    mp-->a: Token med scope
+    a->sr: Hent kabpailiteter for mottaker
+    sr-->a: Kapabiliteter
+    a->a: Opprett forsendelse
+    a->af: Last opp forsendelse
+    m->af: Hent nye forsendeslser
+    m->af: Send mottakskvittering
+    a->af: Hent nye forsendelser
+    a->a: Lagre mottakskvittering
+    m->m: Pakk ut forsendelse
+    m->af: Send Levertkvittering
+    a->af: Hent nye forsendelser
+<div>
 
 SR response
 ```json
