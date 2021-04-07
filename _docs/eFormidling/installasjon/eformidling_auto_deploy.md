@@ -117,8 +117,8 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
 *[Last ned konfigurasjonsfila her](/resources/eformidling/deploymanager-service.xml)*
 
 Døme: No bør du ha desse filene i liggande i mappa.
-
-![ph: bilde](/images/eformidling/dm-filer.png) 
+    
+![ph:bilde](/images/eformidling/dm-filer.png)
 
 ## Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
