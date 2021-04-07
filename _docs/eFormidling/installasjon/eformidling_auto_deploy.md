@@ -52,16 +52,10 @@ Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og d
 ## Konfigurere properties fil
 Åpne ```deploymanager-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties.
 
-**TODO desse treng edit. Outdated**
-
 ```java
 # Replace hosts and ports of URL with the location
 # of your integrasjonspunkt.
 deploymanager.integrasjonspunkt.baseURL=http://localhost:9093
-
-deploymanager.keystore.path=file:c:/jks/deploymanager.jks
-deploymanager.keystore.password=xxx
-deploymanager.keystore.alias=difi
 
 # E-mail is optional. Please specify these properties 
 # to receive e-mails when the deploy-manager updates the integrasjonspunkt-application.
@@ -71,6 +65,7 @@ deploymanager.mail.from=noreply@yourdomain.no
 spring.mail.host=smtp.yourdomain.no
 spring.mail.port=<set-your-port-here>
 ```
+*[last ned properties-fila her](/resources/eformidling/deploymanager-local.properties)*
 
 ## Starte som Windows-teneste
 Vi har lagt opp til at deploymanager<tbd> kan køyrast som ei Windows-teneste vha jar-wrapperen https://github.com/kohsuke/winsw. Følg veiledninga og bruk konfigurasjonen under. Dette er same wrapper som vi har nytta for [integrasjonspunktet](https://docs.digdir.no/eformidling_ip_run.html#alt-1-kj%C3%B8re-integrasjonspunktet-som-en-tjeneste) og [einnsyn](https://docs.digdir.no/einnsyn_install_tjeneste.html) før. 
@@ -100,6 +95,7 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
   </log>
 </configuration>
 ```
+*[Last ned konfigurasjonsfila her](/resources/eformidling/deploymanager-service.xml)*
 
 ## Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
@@ -115,7 +111,11 @@ For å starte frå kommandolinja kan du bruke følgande kommando:
 ---
 
 # Verifisere sertifikatet
-Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med ein privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen.
+Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen.
+
+```
+PH:Her kjem noværande gyldige Digdir offentleg nøkkel.
+```
 
 > [Offentleg nøkkel kan du laste ned her]()
 

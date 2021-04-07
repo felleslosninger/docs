@@ -1,0 +1,19 @@
+<configuration>
+  
+  <!-- ID of the service. It should be unique accross the Windows system-->
+  <id>deploymanagersvc</id>
+  <!-- Display name of the service -->
+  <name>Deploymanager Service</name>
+  <!-- Service description -->
+  <description>Keeps the integrasjonspunkt application up-to-date.</description>
+  
+  <!-- Path to the executable, which should be started -->
+  <executable>java</executable>
+    <arguments>-jar %BASE%\deploymanager-X.Y.Z.jar --spring.profiles.active=production --spring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties</arguments>
+  <logpath>%BASE%\deploymanager-logs</logpath>
+  
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>8</keepFiles>
+  </log>
+</configuration>
