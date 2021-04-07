@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-> Denne applikasjonen og veiledninga er tiltenkt lokal drift av integrasjonspunkt og ikkje for å nytte i skymiljø som til dømes Azure, Google eller AWS.
+> Denne applikasjonen og veiledninga er tiltenkt **lokal drift** av integrasjonspunkt. Den er ikkje for å nytte i skymiljø som til dømes Azure, Google eller AWS.
 
 
 # Introduksjon
@@ -48,6 +48,8 @@ Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og d
 
 1. Legg inn jar-fila og ```deploymanager-local.properties``` i ønska katalog.
 2. Sett opp naudsynte konfigurasjonar i ```deploymanager-local.properties```. Sjå under.
+3. [Laste ned Digdir sin offentlege nøkkel](/resources/eformidling/public_keys/eformidling-test-key.gpg) og lagre valgt katalog.
+<!--<tbd oppdater lenke før merge med gh-pages>-->
 
 ## Konfigurere properties fil
 Åpne ```deploymanager-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties.
@@ -64,8 +66,25 @@ deploymanager.mail.from=noreply@yourdomain.no
 
 spring.mail.host=smtp.yourdomain.no
 spring.mail.port=<set-your-port-here>
+
+# Digitaliseringsdirektoratet public key paths. i.e: file:keyname.gpg.
+deploymanager.verification.publicKeyPaths[0]=file:eformidling-key.gpg
 ```
-*[last ned properties-fila her](/resources/eformidling/deploymanager-local.properties)*
+*[Last ned properties-fila her](/resources/eformidling/deploymanager-local.properties)*
+
+## Verifisere sertifikatet
+Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen.
+
+```
+PH:Her kjem noværande gyldige Digdir offentleg nøkkel.
+<include> 
+```
+
+[Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-test-key.gpg)
+<!--<tbd oppdater lenke før merge med gh-pages>-->
+
+> [Slik sjekkar du fingeravtrykket]()
+
 
 ## Starte som Windows-teneste
 Vi har lagt opp til at deploymanager<tbd> kan køyrast som ei Windows-teneste vha jar-wrapperen https://github.com/kohsuke/winsw. Følg veiledninga og bruk konfigurasjonen under. Dette er same wrapper som vi har nytta for [integrasjonspunktet](https://docs.digdir.no/eformidling_ip_run.html#alt-1-kj%C3%B8re-integrasjonspunktet-som-en-tjeneste) og [einnsyn](https://docs.digdir.no/einnsyn_install_tjeneste.html) før. 
@@ -97,6 +116,10 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
 ```
 *[Last ned konfigurasjonsfila her](/resources/eformidling/deploymanager-service.xml)*
 
+Døme: No bør du ha desse filene i liggande i mappa.
+
+![ph: bilde](/images/eformidling/dm-filer.png) 
+
 ## Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
 
@@ -106,21 +129,4 @@ For å starte frå kommandolinja kan du bruke følgande kommando:
 **I staging**
 ```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging```
 
-
-
 ---
-
-# Verifisere sertifikatet
-Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen.
-
-```
-PH:Her kjem noværande gyldige Digdir offentleg nøkkel.
-```
-
-> [Offentleg nøkkel kan du laste ned her]()
-
-> [Slik sjekkar du fingeravtrykket]()
-
-
-
-
