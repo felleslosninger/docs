@@ -28,6 +28,8 @@ Deploymanager<tbd> køyrer periodiske sjekkar i rekkefølge beskriven her. Innst
 6. Stopp av gammalt integrasjonspunkt.
 7. Oppstart av ny versjon.
 
+Ein kan sjølv velge tidspunkt for når ny versjon skal starte opp. Standard verdien er <todo>.
+
 ## Krav til integrasjonspunkt som skal verta oppdatert
 + Integrasjonspunktet har alle naudsynte portåpningar definert, jf. tilhøyrande dokumentasjon.
 + Shutdown-endepunktet til det køyrande integrasjonspunktet må vera eksponert hjå klienten (ikkje eksternt mot Internett). Dette gjer at Deploymanager kan stoppa integrasjonspunktet når ein ny versjon er tilgjengeleg.
@@ -48,7 +50,7 @@ Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og d
 2. Sett opp naudsynte konfigurasjonar i ```deploymanager-local.properties```. Sjå under.
 
 ## Konfigurere properties fil
-Lag fila ```deploymanager-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties.
+Åpne ```deploymanager-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties.
 
 **TODO desse treng edit. Outdated**
 
@@ -74,8 +76,7 @@ spring.mail.port=<set-your-port-here>
 Vi har lagt opp til at deploymanager<tbd> kan køyrast som ei Windows-teneste vha jar-wrapperen https://github.com/kohsuke/winsw. Følg veiledninga og bruk konfigurasjonen under. Dette er same wrapper som vi har nytta for [integrasjonspunktet](https://docs.digdir.no/eformidling_ip_run.html#alt-1-kj%C3%B8re-integrasjonspunktet-som-en-tjeneste) og [einnsyn](https://docs.digdir.no/einnsyn_install_tjeneste.html) før. 
 
 
-> filnamn: legg til
-
+> Lagre konfigurasjonsfila fila som ```deploymanager-service.xml```<tbd> og *winsw.exe* fila endrast til ```deploymanager-service.exe```.<tbd>
 
 Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå følgande konfigurasjon:
 ```
