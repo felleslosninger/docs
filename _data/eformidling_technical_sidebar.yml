@@ -4,7 +4,7 @@ folders:
 - title: Utviklerdokumentasjon
 
   folderitems:
-      
+
       - title: Om eFormidling 2.0
         jurl: /eformidling_nm_about.html
 
@@ -22,7 +22,7 @@ folders:
 
       - title: Grensesnitt / REST docs
         jurl: /eformidling_nm_restdocs.html
-        
+
 
 
 ###########################
@@ -37,7 +37,8 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
 - title: Digitaliseringsdirektoratet
   jurl: https://www.digdir.no
-
-
