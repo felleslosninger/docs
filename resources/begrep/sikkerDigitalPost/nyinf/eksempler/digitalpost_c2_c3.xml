@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<StandardBusinessDocument xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader">
+  <StandardBusinessDocumentHeader>
+    <HeaderVersion>1.0</HeaderVersion>
+    <Sender>
+      <Identifier Authority="iso6523-actorid-upis">0192:810418052</Identifier>
+    </Sender>
+    <Receiver>
+      <Identifier Authority="iso6523-actorid-upis">0088:TBCNTRL00002</Identifier>
+    </Receiver>
+    <DocumentIdentification>
+      <Standard>urn:no:digdir:digitalpost:xsd:digital::dpi</Standard>
+      <TypeVersion>2.1</TypeVersion>
+      <InstanceIdentifier>PNO000001-5-20200120T090717</InstanceIdentifier>
+      <Type>Digitalpost</Type>
+      <CreationDateAndTime>2020-01-20T09:07:17.589Z</CreationDateAndTime>
+    </DocumentIdentification>
+    <BusinessScope>
+      <Scope>
+        <Type>DOCUMENTID</Type>
+        <InstanceIdentifier>urn:no:digdir:digitalpost:xsd:digital::dpi</InstanceIdentifier>
+      </Scope>
+      <Scope>
+        <Type>PROCESSID</Type>
+        <InstanceIdentifier>urn:no:digdir:profile:digitalpost:innbygger:ver1.0</InstanceIdentifier>
+      </Scope>
+    </BusinessScope>
+  </StandardBusinessDocumentHeader>
+  <Digitalpost >
+    <Jwt>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGFuZGFyZEJ1c2l.....</Jwt>
+    <BinaryContent xmlns="http://peppol.eu/xsd/ticc/envelope/1.0" mimeType="application/vnd.etsi.asic-e+zip" encoding="UTF-8">
+        ABCD45678922 ...
+    </<BinaryContent>
+  </Digitalpost>
+</StandardBusinessDocument>
