@@ -11,7 +11,22 @@ $(function() {
         offset =  progress * spectrum;
 
         var color = 'rgb(' + (baseColorValue + offset) + ',' + (baseColorValue + offset) + ',' + (baseColorValue + offset) + ')';
-        $('.tomato').css({'background-color': color})
+        $('.nav-overlay').css({'background-color': color})
+    });
+
+    $('.toggle-sidebar-button').click(function () {
+
+        $(this).toggleClass('collapsed');
+        $('.sidebar-offcanvas').toggleClass('sidebar-offcanvas--open');
+
+        $('.toggle-menu-button').addClass('collapsed');
+        $('.navbar-collapse').removeClass('show');
+
+    });
+
+    $('.toggle-menu-button').click(function () {
+        $('.toggle-sidebar-button').addClass('collapsed');
+        $('.sidebar-offcanvas').removeClass('sidebar-offcanvas--open');
     });
 
 });

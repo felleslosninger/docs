@@ -13,6 +13,7 @@ Single-page applikasjoner (SPA) har økende popularitet. Disse skiller seg fra t
 
 En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (evt. virksomhetssertifikatets privatnøkkel) siden hele klienten lever i brukers nettleser. SPAer er altså det som i Oauth2-verdenen kalles **public klienter**. For slike klienter var det tidligere anbefalt å bruke _implicit flow_, men **de nyeste anbefalingen går på å bruke code flow sammen med PKCE og state**.
 
+**Merk også at den metoden for "silent renewal" ikke støttes av ID-porten.**  Denne metoden er også på vei "ut", da de store browser-aktørene er i ferd med å sperre tilgang til 3djparts-cookies.
 
 
 ## Anbefalinger / krav til bruk av SPAer
@@ -29,6 +30,11 @@ Tjenesteeiere må:
 
 
 Forøvrig anbefaler vi å lese [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00) og følge anbefalingene i denne.  Dette bør være del av egen isikovurdering av de dataene som blir eksport av APIet og vurdere om de sikringsmekanismer som ovennevte tilbyr gir tilstrekkelig beskyttelse.
+
+## Oppsett i selvbetjing
+
+SPA-er som bruker ID-portens access_tokens som sikringsmekanisme mot eget API, må opprettast som `integration_type=API_KLIENT` i Sjølvbetjeningsløsninga.  Då får ein mogelegheit til å sjølv styre levetid på autorisasjon, access_token og refresh_token.  Dei må også opprettast som `application-type=web"
+
 
 ## Flyt
 

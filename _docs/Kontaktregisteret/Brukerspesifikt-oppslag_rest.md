@@ -9,9 +9,9 @@ product: KRR
 
 ## Introduksjon
 
-Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten](https://begrep.difi.no/Oppslagstjenesten/) (eller [Oauth2-varianten](oidc_api_krr.html) av denne).  
+Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten](oppslagstjenesten_rest.html).
 
-Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammehenger være mer hensiktsmessig.
+Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammenhenger være mer hensiktsmessig.
 
 ## Hvordan få tilgang ?
 
@@ -46,7 +46,7 @@ OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-se
 |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/person)|
 
 
-{% include note.html content="Merk den lille forskjellen mellom 'person' (dette endepunktet) og 'personer' ([server-til-server endepunktet](oidc_api_krr.html))" %}
+{% include note.html content="Merk den lille forskjellen mellom 'person' (dette endepunktet) og 'personer' ([maskin-til-maskin endepunktet](oppslagstjenesten_rest.html)). De to tjenestene har også forskjellige domene-navn." %}
 
 
 Følgende header-parametere må brukes på request:

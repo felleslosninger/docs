@@ -7,6 +7,7 @@ sidebar: oidc
 product: ID-porten
 
 ---
+ 
 * TOC
 {:toc}
 
@@ -16,7 +17,7 @@ Tjenesteeiere som har godtatt ID-porten sine bruksvilkår kan ta i bruk denne tj
 Se [bruksvilkår i Samarbeidsportalen](https://samarbeid.digdir.no)
 
 ## Rutine for tilgang
-Følg [stegvis veiledning på Samarbeidsportalen](https://samarbeid.digdir.no)
+Følg [stegvis veiledning på Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94)
 
 ### Planlegging
 Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Digitaliseringsdirektoratet)
@@ -32,7 +33,7 @@ Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Di
 
 Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Digitaliseringsdirektoratets Ver2-miljø er standard testmiljø for OIDC.
 
-1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no).  Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
+1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no). Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
    - Alternativt kan du be om å få en klient-integrasjon ved å sende e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.

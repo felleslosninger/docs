@@ -171,7 +171,6 @@ Accept: gzip, deflate
 
 | Miljø | Beskrivelse | Lenke | 
 | --- | --- | --- | 
-| Ver1 | Lik som produksjon | https://kontaktinfo-ws-ver1.difi.no/kontaktinfo-external/ws-v5 | 
 | Ver2 | Inneholder siste versjon under utvikling | https://kontaktinfo-ws-ver2.difi.no/kontaktinfo-external/ws-v5 |
 | Produksjon | | https://kontaktinfo-ws.difi.no/kontaktinfo-external/ws-v5 |
 | | | | 
@@ -182,7 +181,6 @@ Miljøene er:
 
 | Miljø | Beskrivelse | Lenke | 
 | --- | --- | --- |
-| Ytelsetest1 | Lik som produksjon | https://kontaktinfo-ws-yt1.difi.no/kontaktinfo-external/ws-v5 | 
 | Ytelsetest2 | Inneholder siste versjon under utvikling | https://kontaktinfo-ws-yt2.difi.no/kontaktinfo-external/ws-v5 | 
 | | | | 
 

@@ -93,7 +93,7 @@ spec:
         app: activemq
     spec:
       containers:
-      - image: rmohr/activemq:5.10.0
+      - image: rmohr/activemq:5.15.9
         name: activemq
         resources: {}
 status: {}

@@ -11,6 +11,8 @@ product: ID-porten
 
 The `/authorize` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.2](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 ## Request
 
 The client passes an authentication request by redirecting the end user browser user's browser to the /authorize endpoint.
@@ -42,6 +44,9 @@ Supported request attributes:
 |login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
 |claims   | Optional  | Currently only used for [eIDAS](oidc_func_eidas.html)|
 |request_uri| Optional | The identifier returned by ID-porten from a [PAR request](oidc_protocol_par.html). No other attributes shold then be present |
+
+
+Clients are strongly recommended to use state, nonce and [PKCE](oidc_func_pkce.html).  In the future, these parameteres will be mandatory to use when the protocol baseline in ID-porten is upgraded from Ouath2.0 to Oauth2.1.
 
 
 ### Sample request

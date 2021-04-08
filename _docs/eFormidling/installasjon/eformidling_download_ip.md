@@ -8,8 +8,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-### [Siste versjon av integrasjonspunktet kan lastes ned her (2.1.3)](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.1.3/integrasjonspunkt-2.1.3.jar) 
-
+### [Siste versjon av integrasjonspunktet kan lastes ned her (2.2.0)](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.2.0/integrasjonspunkt-2.2.0.jar)
 ### [Endringslogg finner du her](../eformidling_releasenotes.html)
 
 ### Versjonering 

@@ -21,33 +21,30 @@
   border: 0;
 }
 
-// .listNavShow {
-  //display: list-item;
-// }
-
 .letterCountShow {
   display: block;
 }
 
 .ln-letters {
   a {
-    border: 1px solid silver;
+    border: 1px solid transparent;
     border-right: none;
     display: block;
     float: left;
-    font-size: 1.5em;
-    padding: 4px 6px;
+    font-size: 20px;
+    padding: 0 7px;
     text-decoration: none;
+    transition: 0.1s all;
   }
 
   .ln-last {
-    border-right: 1px solid silver;
+    //border-right: 1px solid silver;
   }
 
   a:hover,
   .ln-selected {
-    background-color: #eaeaea;
-    color: #976396;
+    background-color: $color-grey-700;
+    color: white;
   }
 
   .ln-disabled {

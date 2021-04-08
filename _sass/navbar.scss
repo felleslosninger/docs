@@ -1,7 +1,11 @@
 .navbar {
   font-size: 16px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   padding: 0;
+
+  &-toggle {
+    display: none;
+  }
 
   &-nav {
     display: flex;
@@ -11,6 +15,7 @@
 
     li {
       @include font-style(400);
+
       a {
         padding: 15px 20px;
         display: flex;
@@ -56,13 +61,13 @@
 
   &-header {
     position: relative;
-    width: 413px;
+    width: 32.3%;
     height: $top-bar-height;
     display: flex;
     align-items: center;
   }
 
-  .tomato {
+  .nav-overlay {
     background-color: $color-grey-100;
     width: 1000px;
     position: absolute;
@@ -71,12 +76,6 @@
     bottom: 0;
     height: $top-bar-height;
   }
-
-  .navbar-toggle {
-    display: none;
-  }
-
-
 
   #search-topnav-container {
 
@@ -93,9 +92,10 @@
       @include font-style(200);
       padding-left: 16px;
       padding-right: 40px;
-      box-shadow: 0 0 2px rgba(0,0,0,0.25);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
       min-width: 200px;
     }
+
     .input-group-btn {
       position: absolute;
       right: 2px;
@@ -108,6 +108,12 @@
         z-index: 5;
         position: relative;
 
+        &:hover {
+          i {
+            color: black;
+          }
+        }
+
         i {
           font-weight: 400;
         }
@@ -118,3 +124,124 @@
   }
 
 }
+
+@media (max-width: 1199.98px) {
+
+  .navbar {
+
+    &-nav {
+      margin-left: 20px;
+    }
+
+    li {
+      a {
+        padding: 15px 10px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 991.98px) {
+
+  .nav-overlay {
+    background-color: rgb(246, 246, 246) !important;
+  }
+
+  .navbar {
+
+    &-header {
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+
+    &-toggle {
+      display: block;
+      z-index: 1;
+      order: 3;
+      background-color: transparent;
+      border: none;
+      min-width: 34px;
+
+      &:before {
+        font-family: "Font Awesome 5 Pro", sans-serif;
+        content: '';
+        font-weight: 100;
+        font-size: 24px;
+      }
+
+      &.collapsed {
+        &:before {
+          content: '';
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+    }
+
+    &-brand {
+      order: 2;
+    }
+
+    &-collapse {
+      background-color: white;
+      border-top: 1px solid $color-grey-200;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    &-nav {
+      margin-left: 0;
+      align-items: flex-start;
+      padding: 10px 0;
+    }
+
+    li {
+      a {
+        padding: 20px 20px;
+      }
+    }
+
+  }
+
+  #search-topnav-container {
+    border-top: 1px solid $color-grey-200;
+
+    form {
+      margin: 25px 20px;
+    }
+
+  }
+
+  .toggle-sidebar-button {
+    order: 1;
+
+    &:before {
+      font-family: "Font Awesome 5 Pro", sans-serif;
+      content: '';
+      font-weight: 100;
+      font-size: 24px;
+    }
+
+    &.collapsed {
+      &:before {
+        content: '';
+      }
+    }
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .navbar {
+
+    &-header {
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    }
+  }
+}
+

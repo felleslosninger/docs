@@ -21,6 +21,7 @@ versjonen som er ført opp i ELMA. Det er aksesspunktleverandøren som registrer
 
 **English**
 
-Elektronisk mottaker- og adresseregister (ELMA) is the SMP provided byDigitaliseringsdirektoratet for the norwegian market. Using ELMA is free of charge for approved access points in the OpenPEPPOL network.
+Elektronisk mottaker- og adresseregister (ELMA) is the SMP provided by Digitaliseringsdirektoratet for the Norwegian market. Using ELMA is free of charge for approved access points in the OpenPEPPOL network.
 
-Approved access points may get access by sending an e-mail to <a href="mailto:elma@digdir.no">elma@digdir.no</a>.
+Approved access points may get access by sending an e-mail to <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
+Information on [Samarbeidsportalen](https://samarbeid.digdir.no/elma/ta-i-bruk-elma/109)

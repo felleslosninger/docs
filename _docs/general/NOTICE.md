@@ -12,7 +12,7 @@ Denne siden benytter følgende tredjeparts-komponenter, og i mappen /assets/lice
 
 * Bootstrap: <http://themes.getbootstrap.com/pages/licenses> (MIT lisens)
 
-* jQuery:<https://github.com/jquery/jquery/edit/master/lisens.txt> (MIT lisens)
+* jQuery: <https://github.com/jquery/jquery/edit/master/LICENSE.txt> (MIT lisens)
 
 * Jekyll: <https://github.com/jekyll/jekyll> (MIT lisens)
 

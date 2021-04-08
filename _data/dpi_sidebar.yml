@@ -161,3 +161,9 @@ folders:
       
       - title: Begrepskatalog
         jurl: /begrep_index.html
+
+    - title: Ny transportinfrastruktur
+      folderitems:
+      
+      - title: Ny transportinfrastruktur
+        jurl: /nyinf_index.html

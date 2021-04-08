@@ -65,6 +65,8 @@ Eksempler på bruk av løsningsmønsteret:
 
 ## Beskrivelse av Oauth2-flyten
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 
 
 Følgende aktører inngår:
