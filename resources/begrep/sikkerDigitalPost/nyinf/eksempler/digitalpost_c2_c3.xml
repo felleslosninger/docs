@@ -29,7 +29,7 @@
   <Digitalpost >
     <Jwt>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGFuZGFyZEJ1c2l.....</Jwt>
     <BinaryContent xmlns="http://peppol.eu/xsd/ticc/envelope/1.0" mimeType="application/vnd.etsi.asic-e+zip" encoding="UTF-8">
-        ABCD45678922 ...
-    </<BinaryContent>
+        ABCD45678922...
+    </BinaryContent>
   </Digitalpost>
 </StandardBusinessDocument>
