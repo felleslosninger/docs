@@ -11,10 +11,10 @@ product: ID-porten
 
 Dette dokumentet viser kva testar som skal gjennomførast i samband med ein integrasjon med ID-porten for tenesteleverandørar med krav om sikkerheitsnivå 3 og 4.
 
-Dei fleste testane må gjennomføras. Nokre er valfrie, avhengig av om ein har støtte for funksjonaliteten eller ikkje.
+Dei fleste testane må gjennomførast. Nokre er valfrie, avhengig av om ein har støtte for funksjonaliteten eller ikkje.
 Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonstestar for integrasjon med ID-porten»*.
 
-> URL til test-tenesteeigar til Difi <br>
+> URL til test-tenesteeigar <br>
 > <https://idporten-sptest2.difi.no/testsp> <br><br>
 > URL til "Dine kontaktopplysninger" ("brukerprofilen") <br>
 > ver1: <https://brukerprofil-ver1.difi.no/minprofil/> <br>

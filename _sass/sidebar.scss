@@ -8,7 +8,7 @@
     width: 95%;
   }
 
-  .test2 {
+  .overlay {
     background: linear-gradient(180deg, $color-grey-100, #ffffff);
     height: 1000px;
     position: absolute;
@@ -199,6 +199,14 @@ hr.resourceSeparator {
   border-width: 1px;
   color: black;
   max-width: 80%;
+}
+
+@media (max-width: 991.98px) {
+
+  .sidebar .overlay {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
 }
 
 @media (max-width: 600px) {

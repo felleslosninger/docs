@@ -13,7 +13,9 @@ The authorization code flow is recommended from almost all services which integr
 
 The integration activity is started by sending an email to "idporten (at) Digitaliseringsdirektoratet (dot) no".
 
+
 ## Overall description
+
 
 
 <div class="mermaid">
@@ -35,6 +37,8 @@ Følgende aktører inngår:
 | ID-porten | The authentication service offered by ID-porten| OpenID Provider (OP) |
 
 ## Authorization code flow:
+
+{% include note.html content="[Breaking changes in 2022](oidc_protocol_nye_idporten.html)." %}
 
 <div class="mermaid">
 sequenceDiagram

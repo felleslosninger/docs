@@ -10,8 +10,7 @@ knytter de offentlige virksomhetene og e-ID leverandørene sammen.
 
 ### Integrasjonsguide:
 
-  - Integrasjonsguide er tilgjengelig på [DIFI sin
-    samarbeidsportal](http://samarbeid.difi.no)
+  - Integrasjonsguide er tilgjengelig på [Samarbeidsportalen](http://samarbeid.digdir.no)
 
 ### Autentiseringsforespørsel
 

@@ -11,6 +11,9 @@ product: ID-porten
 
 The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
+
 ## Request
 
 The client requests a token by passing the authorization grant (normally a 'code' value) to the /token endpoint.
