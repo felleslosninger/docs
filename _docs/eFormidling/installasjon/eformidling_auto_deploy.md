@@ -83,7 +83,12 @@ PH:Her kjem noværande gyldige Digdir offentleg nøkkel.
 [Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-test-key.gpg)
 <!--<tbd oppdater lenke før merge med gh-pages>-->
 
-> [Slik sjekkar du fingeravtrykket](https://github.com/felleslosninger/efm-deploy-manager/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
+Den offentlege nøkkelen vår har fingeravtrykket: 
+```
+PH:her kjem offentleg nøkkel fingeravtrykk
+```
+Vi anbefalar at ein sjølv gjer ein manuell sjekk etter byte av nøkkel for å verifisere at fingeravtrykket er korrekt.
+[Slik sjekkar du fingeravtrykket](https://github.com/felleslosninger/efm-deploy-manager/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
 
 
 ## Starte som Windows-teneste
