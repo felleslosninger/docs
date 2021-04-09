@@ -1,0 +1,88 @@
+{
+    "standardBusinessDocument": {
+        "standardBusinessDocumentHeader": {
+            "headerVersion": "1.0",
+            "sender": [ {
+                "identifier": {
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:<orgnr>"
+                }
+            }],
+            "receiver": [{
+                "identifier": {
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:<orgnr>"
+                }
+            }],
+            "documentIdentification": {
+                "standard": "urn:no:digdir:fysiskpost:xsd:fysisk::print",
+                "typeVersion": "1.0",
+                "instanceIdentifier": "ff88849c-e281-4809-8555-7cd54952b916",
+                "type": "fysiskpost",
+                "creationDateAndTime": "20xx-04-11T15:29:58.753+02:00"
+            },
+            "businessScope": {
+                "scope": [
+                    {
+                        "type": "ConversationId",
+                        "instanceIdentifier": "37efbd4c-413d-4e2c-bbc5-257ef4a65a45",
+                        "identifier": "FYSISKPOST_PRINT_1_0",
+                        "scopeInformation": [
+                            {
+                                "expectedResponseDateTime": "20xx-05-10T00:31:52Z"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },        
+        "digitalpost":{                
+            "avsender": {
+                "virksomhetsidentifikator": {
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:999888999"                    
+                },
+                "avsenderindentifikator": "123456",
+                "fakturaReferanse": "987654"
+
+            },
+            "mottaker": {
+                "personidentifikator": {
+                    "authority": "norsk_personidentifikator",
+                    "value": "17050411111"
+                }
+            },
+            "fysiskpostinfo" : {
+                "mottaker":{
+                    "navn": "navn",
+                    "adresselinje1": "adresselinje1",
+                    "adresselinje2": "adresselinje2",
+                    "adresselinje3": "adresselinje3",
+                    "adresselinje4": "adresselinje4",
+                    "postnummer": "1234",
+                    "poststed": "poststed"
+                },         
+                "utskriftstype" : "SORT_HVIT",
+                "posttype": "B",
+                "retur":{
+                    "mottaker":{
+                        "navn": "navn",
+                        "adresselinje1": "adresselinje1",
+                        "adresselinje2": "adresselinje2",
+                        "adresselinje3": "adresselinje3",
+                        "adresselinje4": "adresselinje4",
+                        "postnummer": "1234",
+                        "poststed": "poststed"
+                    },
+                    "returposthaandtering": "DIREKTE_RETUR"
+                }
+            },   
+            "dokumentpakkefingeravtrykk": {
+                "digestMethod": "",
+                "digestValue": "5f2652040b33bccfd8c5f06e2beffc1ab822830807e8d0f0b721503e60df0eb6"
+            },
+            "maskinportentoken" : "aølkdsølkdsj=="
+        }            
+               
+    }
+}
