@@ -28,7 +28,7 @@ Deploymanager<tbd> køyrer periodiske sjekkar i rekkefølge beskriven her. Innst
 6. Stopp av gammalt integrasjonspunkt.
 7. Oppstart av ny versjon.
 
-Ein kan sjølv velge tidspunkt for når ny versjon skal starte opp. Standard verdien er <todo>.
+Ein kan sjølv velge tidspunkt for når ny versjon skal starte opp. Standard verdiane er kl 05:30, 19:30 og 21:30.
 
 ## Krav til integrasjonspunkt som skal verta oppdatert
 + Integrasjonspunktet har alle naudsynte portåpningar definert, jf. tilhøyrande dokumentasjon.
@@ -83,7 +83,7 @@ PH:Her kjem noværande gyldige Digdir offentleg nøkkel.
 [Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-test-key.gpg)
 <!--<tbd oppdater lenke før merge med gh-pages>-->
 
-> [Slik sjekkar du fingeravtrykket]()
+> [Slik sjekkar du fingeravtrykket](https://github.com/felleslosninger/efm-deploy-manager/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
 
 
 ## Starte som Windows-teneste
@@ -116,6 +116,8 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
 ```
 *[Last ned konfigurasjonsfila her](/resources/eformidling/deploymanager-service.xml)*
 
+> **Merk:** Visst du har mellomrom i mappenamn i stien bør du endre %BASE% til absolutt sti. Døme: *C:\\"deploymanager user"\\sti\\til\\her\\deploymanager.X.Y.Z.jar*
+
 Døme: No bør du ha desse filene i liggande i mappa.
     
 ![ph:bilde](/images/eformidling/dm-filer.png)
@@ -123,10 +125,10 @@ Døme: No bør du ha desse filene i liggande i mappa.
 ## Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
 
-**I Produksjon**
-```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=production```
+**I produksjon**
+```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=production -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
 
 **I staging**
-```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging```
+```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
 
 ---
