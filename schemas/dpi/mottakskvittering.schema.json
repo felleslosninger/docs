@@ -1,8 +1,44 @@
 {
-	"id": "http://docs.digdir.no/schemas/dpi/mottakskvittering.schema.json",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"description": "Schema for mottakskvittering brukt av Digdir innenfor Digital post til innbygger (DPI)",
-	"definitions": {        
-	}	
-	
+    "id": "http://docs.digdir.no/schemas/dpi/mottakskvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for mottakskvittering brukt av Digdir innenfor Digital post til innbygger (DPI)",
+    "definitions": {
+        "kvittering": {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json#/definitions/mottaker"
+                },
+                "maskinportentoken": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json#/definitions/maskinportentoken"
+                },
+                "tidspunkt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "maskinportentoken",
+                "tidspunkt"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "mottakskvittering": {
+            "$ref": "#/definitions/kvittering"
+        }
+    },
+    "required": [
+        "mottakskvittering"
+    ],
+    "additionalProperties": false
 }
