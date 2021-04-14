@@ -67,7 +67,19 @@
             "$id": "#/definitions/maskinportentoken",
             "title": "maskinportentoken",
             "description": "TODO"
+        },
+
+        "kvittering" : {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender" : {"$ref": "#/definitions/avsender"},
+                "mottaker" : {"$ref": "#/definitions/mottaker"},
+                "maskinportentoken" : {"$ref": "#/definitions/maskinportentoken"}
+            },
+            "required": ["avsender", "mottaker", "maskinportentoken"]
         }
-	}	
-	
+	}  
+    
 }
