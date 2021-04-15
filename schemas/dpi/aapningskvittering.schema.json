@@ -10,13 +10,13 @@
 			"title": "kvittering",
 			"properties": {
 				"avsender": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json#/definitions/avsender"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
 				},
 				"mottaker": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json#/definitions/mottaker"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/mottaker"
 				},
 				"maskinportentoken": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json#/definitions/maskinportentoken"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
 				},
 				"tidspunkt": {
 					"type": "string",

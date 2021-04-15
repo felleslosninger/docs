@@ -1,5 +1,5 @@
 {
-    "id": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json",
+    "id": "http://docs.digdir.no/schemas/dpi/commons.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "Schema for kvittering brukt av Digdir innenfor Digital post til innbygger (DPI)",
     "definitions": {
