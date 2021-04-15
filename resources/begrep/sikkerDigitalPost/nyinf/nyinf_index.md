@@ -128,7 +128,7 @@ Ved bruk av Altinn Autorisasjon til delegering, må det opprettes et "delegation
 
 Det opprettes `processid` i ELMA for de dokumenttyper som trengs støttes.
 - digitalpost
-- fysiskpost  (eller er denne eigentleg berre ein type digitalpost, ref dok?)
+- fysiskpost  
 - dpi-kvittering
 - flytt-digitalpost
 
@@ -363,16 +363,16 @@ APL kan nå konstrurere en PEPPOL-melding. Dvs:
 
 ### 5: Hjørne 3 mottek meldinga, og sender vidare til hjørne 4
 
-C3 og PK-leverandør avtaler selv protokoll seg i mellom.  
+Leverandør i C3 og mottaker i hjørne 4 avtaler protokoll seg i mellom i samarbeid med Digdir.  
 
 De står fritt til å bruke PEPPOL payload-formatet direkte, eller dele opp forretningsmelding/dokumentpakke slik det er gjort over Avsender->Hjørne 2-grensesnittet, eller andre hensiktsmessige protokoller.  Det må dog være enkelt og entydig for PK-leverandør å koble dokumentpakke og forretningsmelding sammen.
 
 Partene bestemmer selv hvilken sikringsmekanisme de vil ha (feks egen oauth2 autorisasjonsserver, bruke 2-vegs tls, eller noe annet). Vi anbefaler ikke at de bruker maskinporten-tokenet, da dette kan ha utløpt undervegs.
 
 
-### 6: Hjørne 4 mottek meldinga og puttar i postkassen til innnbygger
+### 6: Hjørne 4 mottar meldingen og putter i postkassen til innnbygger eller skriver ut og sender meldingen
 
-Ved mottak av melding, må postkasse-leverandør validere ende-til-ende integritet, dvs:
+Ved mottak av melding, må postkasse-leverandør/utskriftsleverandør validere ende-til-ende integritet, dvs:
 
 a: at DigitalPostMelding er signert av Avsender(eller Databehandler) og inneholder en digest for tilhørende dokumentpakke
 b: at dokumentpakken er signert av Avsender(eller Databehandler)
