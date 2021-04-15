@@ -1,0 +1,62 @@
+{
+    "id": "http://docs.digdir.no/schemas/dpi/feil.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler.",
+    "$comment": "Denne kvitteringen kan Behandlingsansvarlig oppbevare som en garanti på at posten vil bli levert til Mottaker.",
+    "definitions": {
+        "feil": {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+                },
+                "maskinportentoken": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                },
+                "tidspunkt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "feiltype": {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "const": "KLIENT",
+                            "description": "Feilen kommer pga. feil på input eller andre feil der Avsender må rette opp i årsaken til feilen"
+                        },
+                        {
+                            "const": "SERVER",
+                            "description": "Feilen kommer av feil på sentral infrastruktur. Avsender må ta kontakt med Sentralforvalter for å få rettet opp i feilen."
+                        }
+                    ]
+                },
+                "detaljer": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "maskinportentoken",
+                "tidspunkt",
+                "feiltype"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "feil": {
+            "$ref": "#/definitions/feil"
+        }
+    },
+    "required": [
+        "feil"
+    ],
+    "additionalProperties": false
+}
