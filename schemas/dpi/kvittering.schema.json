@@ -1,72 +1,75 @@
 {
-	"id": "http://ekorra.github.io/felleslosninger/schemas/dpi/kvittering.schema.json",
-	"$schema": "http://json-schema.org/draft-07/schema#",
-	"description": "Schema for kvittering brukt av Digdir innenfor Digital post til innbygger (DPI)",
-	"definitions": {
-        "avsender":{
-            "type" : "object",
+    "id": "http://docs.digdir.no/schemas/dpi/kvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for kvittering brukt av Digdir innenfor Digital post til innbygger (DPI)",
+    "definitions": {
+        "avsender": {
+            "type": "object",
             "$id": "#/definitions/avsender",
             "title": "avsender",
             "properties": {
-				"virksomhetsidentifikator" : {"$ref": "#/definitions/virksomhetsidentifikator"}
-			},
-			"required": [
-				"virksomhetsidentifikator"
-			]
+                "virksomhetsidentifikator": {
+                    "$ref": "#/definitions/virksomhetsidentifikator"
+                }
+            },
+            "required": [
+                "virksomhetsidentifikator"
+            ]
         },
-
-		"mottaker" : {
-			"type" : "object",
+        "mottaker": {
+            "type": "object",
             "$id": "#/definitions/mottaker",
             "title": "mottaker",
-			"description": "Person som er mottaker av en sikker digital post",
-			"$comment": "",
+            "description": "Person som er mottaker av en sikker digital post",
+            "$comment": "",
             "properties": {
-				"virksomhetsidentifikator" : {"$ref": "#/definitions/virksomhetsidentifikator"},
-                "motakeridentifikator" : {"$ref": "#/definitions/motakeridentifikator"}
-			},
-			"required": [
-				"virksomhetsidentifikator"
-			]
-		},
-
-        "virksomhetsidentifikator":{
+                "virksomhetsidentifikator": {
+                    "$ref": "#/definitions/virksomhetsidentifikator"
+                },
+                "motakeridentifikator": {
+                    "$ref": "#/definitions/motakeridentifikator"
+                }
+            },
+            "required": [
+                "virksomhetsidentifikator"
+            ]
+        },
+        "virksomhetsidentifikator": {
             "type": "object",
             "$id": "#/definitions/virksomhetsidentifikator",
             "title": "virksomhetsidentifikator",
             "description": "Identifikasjon av en virksomhet",
             "$comment": "virksomhetsidentifikator er et organisasjonsnummer i henhold til ISO 6523. Det vil si at organisasjonsnummeret er prefixet med et Global Location Number utstedt av GS1. I tillegg bør scope angis ihht Oasis PartyIdType. Dersom det ikke er angitt scope så skal dette alltid tolkes som ISO 6523 kode 9908 som angir organisasjonsnummer for norske virksomheter forvaltet av Brønnøysundregistrene.",
             "properties": {
-				"authority": {
-					"type": "string",
-					"description": "Henviser til identitesautoritet for orgnr angi iso6523-actorid-upis, for personnummer iso3166-1"
-				},
-				"value": {
-					"type": "string",
-					"description": "For norsk organisasjon 0192:<organisasjonsnummer>, for person NO:<personnummer>",
+                "authority": {
+                    "type": "string",
+                    "enum": ["iso6523-actorid-upis"],
+                    "description": "Henviser til identitesautoritet for orgnr angi iso6523-actorid-upis, for personnummer iso3166-1"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "For norsk organisasjon 0192:<organisasjonsnummer>, for person NO:<personnummer>",
                     "pattern": "[0-9]{4}:\\w{1,35}"
-				}
-			},
-			"required": [
-				"authority",
-				"value"
-			]
+                }
+            },
+            "required": [
+                "authority",
+                "value"
+            ]
         },
-
-        "motakeridentifikator":{
+        "motakeridentifikator": {
             "type": "string",
             "$id": "#/definitions/motakeridentifikator",
             "title": "motakeridentifikator",
             "description": "Identifikasjon av en ansvarlig avsenderenhet",
             "$comment": "Brukt for å identifisere en ansvarlig enhet innen for en virksomhet. I Sikker digital posttjenteste tildeles avsenderidentifikator ved tilkobling til tjenesten. Maks 100 tegn.",
             "maxLength": 100
-        },	
-        
+        },
         "maskinportentoken": {
             "type": "string",
             "$id": "#/definitions/maskinportentoken",
             "title": "maskinportentoken",
             "description": "TODO"
-        }        
-	}    
+        }
+    }
 }

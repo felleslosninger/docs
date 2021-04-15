@@ -1,8 +1,8 @@
 {
-    "id": "http://docs.digdir.no/schemas/dpi/mottakskvittering.schema.json",
+    "id": "http://docs.digdir.no/schemas/dpi/returpostkvittering.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "description": "En Kvitteringsmelding til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift.",
-    "$comment": "Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post.",
+    "description": "En Kvitteringsmelding fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker.",
+    "$comment": "Dette er Kvittering på at posten har kommet i retur og har blitt makulert.",
     "definitions": {
         "kvittering": {
             "type": "object",
@@ -34,12 +34,12 @@
     },
     "type": "object",
     "properties": {
-        "mottakskvittering": {
+        "returpostkvittering": {
             "$ref": "#/definitions/kvittering"
         }
     },
     "required": [
-        "mottakskvittering"
+        "returpostkvittering"
     ],
     "additionalProperties": false
 }
