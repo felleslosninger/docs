@@ -13,7 +13,7 @@
 					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
 				},
 				"mottaker": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/mottaker"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
 				},
 				"maskinportentoken": {
 					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"

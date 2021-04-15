@@ -16,9 +16,9 @@
                 "virksomhetsidentifikator"
             ]
         },
-        "mottaker": {
+        "virksomhetmottaker": {
             "type": "object",
-            "$id": "#/definitions/mottaker",
+            "$id": "#/definitions/virksomhetmottaker",
             "title": "mottaker",
             "description": "Person som er mottaker av en sikker digital post",
             "$comment": "",
@@ -33,6 +33,19 @@
             "required": [
                 "virksomhetsidentifikator"
             ]
+        },
+        "personmottaker": {
+            "type" : "object",
+            "$id": "#/definitions/personmottaker",
+            "title": "mottaker",
+			"description": "Person som er mottaker av en sikker digital post",
+			"$comment": "",
+            "properties": {
+				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"}
+			},
+			"required": [
+				"personidentifikator"
+			]
         },
         "virksomhetsidentifikator": {
             "type": "object",
@@ -56,6 +69,18 @@
                 "authority",
                 "value"
             ]
+        },
+        "personidentifikator":{
+            "type": "object",
+            "$id": "#/definitions/personidentifikator",
+            "title": "personidentifikator",
+            "description": "Identifikasjon av en person",
+            "$comment": "Personidentifikator er enten et fødselsnummer eller et gyldig D-nummer.",
+            "properties": {
+				"authority": { "type": "string", "enum": ["iso3166-1-alfa2"]},
+				"value": { "type": "string"}
+			},
+			"required": ["value"]
         },
         "motakeridentifikator": {
             "type": "string",
