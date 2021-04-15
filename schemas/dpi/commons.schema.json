@@ -101,6 +101,21 @@
             "$id": "#/definitions/tidspunkt",
             "title": "tidspunkt",
             "format": "date-time"
-        }
+        },
+        "dokumentpakkefingeravtrykk": {
+			"type": "object",
+			"$id": "#/definitions/dokumentpakkefingeravtrykk",
+			"description": "Hash av den krypterte dokumentpakken",
+			"properties": {
+				"digestMethod": {
+					"type": "string",
+					"description": "Referanse til Hash algoritmen brukt for lage hash"
+				},
+				"digestValue": {
+					"type": "string",
+					"description": "Base64 encoded Hash av den krypterte Dokumentpakken"
+				}
+			}
+		},
     }
 }

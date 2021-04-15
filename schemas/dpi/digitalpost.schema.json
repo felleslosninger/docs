@@ -182,23 +182,6 @@
 			],
 			"title": "Identifier"
 		},
-		
-		
-		"dokumentpakkefingeravtrykk": {
-			"type": "object",
-			"$id": "#/definitions/dokumentpakkefingeravtrykk",
-			"description": "Hash av den krypterte dokumentpakken",
-			"properties": {
-				"digestMethod": {
-					"type": "string",
-					"description": "Referanse til Hash algoritmen brukt for lage hash"
-				},
-				"digestValue": {
-					"type": "string",
-					"description": "Base64 encoded Hash av den krypterte Dokumentpakken"
-				}
-			}
-		},
 
 
 		"dpimelding": {
@@ -213,7 +196,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
@@ -463,7 +446,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
