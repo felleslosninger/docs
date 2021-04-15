@@ -19,8 +19,7 @@
                     "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
                 },
                 "tidspunkt": {
-                    "type": "string",
-                    "format": "date-time"
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
                 },
                 "beskrivelse": {
                     "type": "string",

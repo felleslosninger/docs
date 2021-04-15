@@ -95,6 +95,12 @@
             "$id": "#/definitions/maskinportentoken",
             "title": "maskinportentoken",
             "description": "TODO"
+        },
+        "tidspunkt": {
+            "type": "string",
+            "$id": "#/definitions/tidspunkt",
+            "title": "tidspunkt",
+            "format": "date-time"
         }
     }
 }
