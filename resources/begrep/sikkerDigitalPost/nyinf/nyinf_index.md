@@ -29,7 +29,7 @@ samt noen av Meldingsformidlers oppgaver flyttes til Postkassene:
 Det må etableres en ny transport-protokoll mellom hjørne 1 og hjørne 2.  I tradisjonell PEPPOL-tenking er dette noe som markedsaktørene selv skal ta fram - dvs i prinsippet er dette opp til aksesspunktleverandørene selv å bestemme. Siden Digdir ønsker å gjøre en anskaffelse av aksesspunktleverandørtjenester for formidling av digital post, som de fleste avsendere kommer til å benytte, er det hensiktismessig at Digdir kravstiller en protokoll som skal brukes av denne leverandøren.  Det hindrer ikke andre aktører å implementere andre, egne protokoller.
 
 Protokoll mellom hjørne 2 og 3 er bestemt av PEPPOL, og heter AS4.
-Protokoll mellom hjørne 3 og Postkasse-leverandør bør avtales bilateralt mellom disse aktørene.
+Protokoll mellom hjørne 3 og Postkasse-leverandør bør avtales bilateralt mellom disse aktørene i samarbeid med Digdir.
 
 
 
@@ -115,7 +115,7 @@ tbd - beskrivelse kommer
 
 ## Hjørne 3 -> Postkasse-leverandør
 
-Dette avtales bilateralt mellom de to partene.
+Dette avtales bilateralt mellom de to partene i samarbeid med Digdir.
 
 
 # Forutsetninger:
