@@ -1,0 +1,19 @@
+{
+	"id": "http://docs.digdir.no/schemas/dpi/dpi.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"description": "Schema for Standard business document (SBD) brukt av Digdir",
+	"definitions": {
+		"standardBusinessDocument": {
+			"type": "object",
+			"additionalProperties": false,
+			"title": "standardBusinessDocument",
+			"properties": {
+				"standardBusinessDocumentHeader": { "$ref": "http://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"	},
+				"digitalpost" : {"$ref": "http://docs.digdir.no/schemas/dpi/digitalpost.schema.json#/definitions/digitalpost"}
+			},
+			"required": [
+				"standardBusinessDocumentHeader", "digitalpost"
+			]
+		}
+    }
+}
