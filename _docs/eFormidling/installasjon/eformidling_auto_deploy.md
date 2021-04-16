@@ -18,7 +18,7 @@ Deploymanager<tbd> er ein Spring Boot-støtta applikasjon (JAR) som køyrer som 
 3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen. Dersom den nye versjonen ikkje startar, rullar Deploymanager attende.
 
 ## Funksjonalitet
-Deploymanager<tbd> køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```deploymanager.scheduler-fixed-rate-in-ms``` avgjer kor ofte dette skjer. 
+Deploymanager<tbd> køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```deploymanager.schedulerCronExpression``` avgjer kor ofte dette skjer. 
 
 1. Finne noværande versjon av integrasjonspunktet.
 2. Finne siste versjon av integrasjonspunktet.
