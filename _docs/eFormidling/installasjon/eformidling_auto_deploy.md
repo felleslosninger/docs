@@ -131,9 +131,9 @@ Døme: No bør du ha desse filene i liggande i mappa.
 For å starte frå kommandolinja kan du bruke følgande kommando:
 
 **I produksjon**
-```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=production -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+```java -jar deploymanager-x.y.z.jar -Dspring.profiles.active=production -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
 
 **I staging**
-```java jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+```java -jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
 
 ---
