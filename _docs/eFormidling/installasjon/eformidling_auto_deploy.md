@@ -72,6 +72,30 @@ deploymanager.verification.publicKeyPaths[0]=file:eformidling-key.gpg
 ```
 *[Last ned properties-fila her](/resources/eformidling/deploymanager-local.properties)*
 
+### Setje tidspunkt for oppdatering
+*Valgfritt*
+
+Ein kan setje tidspunkt for kortid applikasjonen vil forsøke å oppdatere integrasjonspunktet om ein ikkje ynskjer å benytte standard-verdiane. 
+
+Her er nokre døme som viser korleis ein kan styre tidspunkt for oppdatering.
+
+```java
+#Standard verdi: Sjekkar etter oppdatering mandag-fredag kl 05:30, 19:30 og 21:30.
+deploymanager.schedulerCronExpression=0 30 5,19,21 * * MON-FRI
+
+#Sjekkar etter oppdatering kvar dag kl 06:00.
+deploymanager.schedulerCronExpression=0 0 6 * * ?
+
+#Sjekkar etter oppdatering kvar dag kl 23:15.
+deploymanager.schedulerCronExpression=0 15 23 ? * *
+
+#Sjekkar etter oppdatering kvar laurdag og søndag kl 12:00.
+deploymanager.schedulerCronExpression=0 0 12 ? * SAT,SUN
+
+#Sjekkar etter oppdatering kvart tredje minutt kvar time.
+deploymanager.schedulerCronExpression=0 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * ? * *
+```
+
 ## Verifisere sertifikatet
 Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen.
 
