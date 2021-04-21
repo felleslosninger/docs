@@ -1,0 +1,109 @@
+openapi: 3.0.2
+info:
+    title: API for aksesspunktleverandører i DPI
+    version: 1.0.0
+    description: A brand new API with no content.  Go nuts!
+paths:
+    /send:    
+      post:
+        summary: intitierer og sender ny forsendelse.
+        requestBody:          
+          description: består av to deler,  digitalpostmelding og dokumentpakke   
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  forettningsmelding: 
+                    type: string
+                    format: base64
+                    description: 'Digitalpost melding formatert som base64 encoded JWT'
+                  dokumentpakke: 
+                    type: object
+                
+                
+              
+        responses: 
+          201: 
+            description: Mottatt OK av aksesspunktleverandør, og vil bli sendt videre til postkasse
+          400: 
+            description: valideringsfeil - fornuftig beskrivelse bør inkluderes
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+    /startnyforsendelse/{id}: 
+      description: 'starter ny forsendelse med å generere id til forsendelsen. TODO: trenger vi denne?'
+    /lastopp/{id}: 
+      description: 'brukes for å laste opp ASiC på forsendelsen. TODO: trenger vi denne?'
+    /sendforsendelse/{id} : 
+      description: 'Sender forsendelsen gitt id. TODO: trenger vi denne?'       
+    /hentbevis/{id}:      
+      get:
+        summary: 'Henter mdn kvittering på fosendelse gitt id. TODO: trenger vi denne?'
+        responses:
+          200:
+            description: MDN kvittering for foresendelse
+    /status/{id}: 
+      get: 
+        summary: 'henter status gitt foreendelsesid (documentIdentification - instanceIdentifier) oprettet, sendt, mottatt TODO: trenger vi statuser eller er det godt nok med det som ligger på forrettningslaget'
+        responses:
+          200:
+            description: returnerer siste status for forsendelse
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+    /statuses/{id}:
+      get:
+        summary: henter liste med statuser gitt foreendelsesid
+        responses:
+          200:
+            description: liste med statuser
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+    /statuses/:
+      get:
+        summary: 'Henter alle statuser gitt ett eller annet scompe TODO: finne ut hvordan denne bør løses'
+        responses:
+          200: 
+            description: liste med siste statuser
+    /hentnyeforsendelser:
+      get: 
+        summary: Henter ned liste med forettningsmeldinger på mottatte forsendelser
+        parameters:
+          - in: path
+            name: mottakeridentifikator            
+            schema:
+              type: string
+              description: identifikator til gitt i avsenderidentifikator ved sending av melding
+        responses:
+          200: 
+            description: 'Liste med forsendleser TODO: bør vi ha noen form for låsing?'
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+          
+    /lastnedforsendelse/{id}:
+      get:  
+        summary: Laster ned dokumentpakke (ASiC) for gitt forsendelse
+        responses:
+          200:
+            description: Kryptert dokumentpakke
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+    /settforsendelsemottatt/{id}:
+      get:
+        summary: Setter forsendelse mottatt ovenfor aksesspunkt. Medfører at den blir fjernet fra listen hentnyeforsendelser returnerer. Aksesspunkt kan slette melding 
+        responses:
+          200:
+            description: Setter gitt forsendelse mottatt
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
