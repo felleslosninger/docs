@@ -4,7 +4,6 @@ permalink: nyinf_index.html
 sidebar: dpi_sidebar
 ---
 
-Dette dokumentet er eit framlegg til nytt, proprietært REST-api sikret med Maskinporten, for å sende Digital Post til Innbygger.
 
 
 # Bakgrunn
@@ -30,7 +29,7 @@ samt noen av Meldingsformidlers oppgaver flyttes til Postkassene:
 Det må etableres en ny transport-protokoll mellom hjørne 1 og hjørne 2.  I tradisjonell PEPPOL-tenking er dette noe som markedsaktørene selv skal ta fram - dvs i prinsippet er dette opp til aksesspunktleverandørene selv å bestemme. Siden Digdir ønsker å gjøre en anskaffelse av aksesspunktleverandørtjenester for formidling av digital post, som de fleste avsendere kommer til å benytte, er det hensiktismessig at Digdir kravstiller en protokoll som skal brukes av denne leverandøren.  Det hindrer ikke andre aktører å implementere andre, egne protokoller.
 
 Protokoll mellom hjørne 2 og 3 er bestemt av PEPPOL, og heter AS4.
-Protokoll mellom hjørne 3 og Postkasse-leverandør bør avtales bilateralt mellom disse aktørene.
+Protokoll mellom hjørne 3 og Postkasse-leverandør bør avtales bilateralt mellom disse aktørene i samarbeid med Digdir.
 
 
 
@@ -107,16 +106,16 @@ GET /status/{conversationid}
 | SBDH | https://github.com/joergenb/dpi_transport/blob/main/Schemas/sbd.schema.json  (Felles for alle meldinger) |
 | *Forretningsmeldinger* ||
 | Digital og fysisk post | https://github.com/joergenb/dpi_transport/blob/main/Schemas/digitalpost_dpi_1_0.schema.json |
-| Kvittering | TODO |
-| API |   TODO: skrive openapi-definisjon |
+| Kvittering | definisjon kommer her |
+| API |   definisjon kommer her |
 
 ## PEPPOL (hjørne 2-> 3)
 
-tbd
+tbd - beskrivelse kommer
 
 ## Hjørne 3 -> Postkasse-leverandør
 
-Dette avtales bilateralt mellom de to partene.
+Dette avtales bilateralt mellom de to partene i samarbeid med Digdir.
 
 
 # Forutsetninger:
@@ -129,7 +128,7 @@ Ved bruk av Altinn Autorisasjon til delegering, må det opprettes et "delegation
 
 Det opprettes `processid` i ELMA for de dokumenttyper som trengs støttes.
 - digitalpost
-- fysiskpost  (eller er denne eigentleg berre ein type digitalpost, ref dok?)
+- fysiskpost  
 - dpi-kvittering
 - flytt-digitalpost
 
@@ -154,7 +153,7 @@ Avsender må bli satt opp i ELMA som mottaker av DPI-kvitteringsmeldinger. Dette
 
 PK-leverandør mottar beskjed manuelt fra Digdir om at det er etablert en ny Avsender.
 
-TODO:  kva viss avsender har fleire fagsystemer som sender digital post (/Avsender/avsenderidentifiktor/ ) - må alle Oslo Kommune sine systemer være kobla til samme aksesspunkt ?
+
 
 
 # Meldingsflyt
@@ -290,7 +289,7 @@ Avsender kan nå konstruere korrekt **forretningsmelding** (DigitalPostMelding) 
 * Token mottatt fra Maskinporten inkluderes i et felt `maskinporten_token` under `digitalpost`
 * Hele SBD'en må signeres på meldingsnivå for å sikre ende-til-ende integritet, og den må defor da bli en JWT.
   * Databehandler må signere forretningsmeldingen med samme sertifikat som benyttes til å signere Dokumentpakke.
-  * TODO: hvordan får PK-leverandør vite sertifikatet slik at full X509-validering + orgno-sjekk kan skje?
+  
 
 Regler for hvilke organisasjonsnummer som skal på ulike steder i meldingsstrukturen videreføres, se [eksempelet om Bunadsrådet og Acos i eksisterende dokumentasjon](https://docs.digdir.no/sdp_meldingsformat.html?h=bunadsr%C3%A5det#p%C3%A5vegne-eksempel).
 
@@ -364,16 +363,16 @@ APL kan nå konstrurere en PEPPOL-melding. Dvs:
 
 ### 5: Hjørne 3 mottek meldinga, og sender vidare til hjørne 4
 
-C3 og PK-leverandør avtaler selv protokoll seg i mellom.  
+Leverandør i C3 og mottaker i hjørne 4 avtaler protokoll seg i mellom i samarbeid med Digdir.  
 
 De står fritt til å bruke PEPPOL payload-formatet direkte, eller dele opp forretningsmelding/dokumentpakke slik det er gjort over Avsender->Hjørne 2-grensesnittet, eller andre hensiktsmessige protokoller.  Det må dog være enkelt og entydig for PK-leverandør å koble dokumentpakke og forretningsmelding sammen.
 
 Partene bestemmer selv hvilken sikringsmekanisme de vil ha (feks egen oauth2 autorisasjonsserver, bruke 2-vegs tls, eller noe annet). Vi anbefaler ikke at de bruker maskinporten-tokenet, da dette kan ha utløpt undervegs.
 
 
-### 6: Hjørne 4 mottek meldinga og puttar i postkassen til innnbygger
+### 6: Hjørne 4 mottar meldingen og putter i postkassen til innnbygger eller skriver ut og sender meldingen
 
-Ved mottak av melding, må postkasse-leverandør validere ende-til-ende integritet, dvs:
+Ved mottak av melding, må postkasse-leverandør/utskriftsleverandør validere ende-til-ende integritet, dvs:
 
 a: at DigitalPostMelding er signert av Avsender(eller Databehandler) og inneholder en digest for tilhørende dokumentpakke
 b: at dokumentpakken er signert av Avsender(eller Databehandler)
@@ -413,17 +412,11 @@ C3 lager en PEPPOL-melding til C2.
 C2 mottar kvitteringa, og legger den i kø.  Venter på at Avsenders system poll'er på kvitteringer med riktig conversation-id.  Verifiserer at Avsender som forsøker å hente kvittering, er den samme som sendte digitalpostmeldinga.
 
 
-TODO: kva viss det er fleire fagsystemer hjå Avsender som sender Digtal Post - korleis identifisere og adressere det rette?
 
 
 
 
 # 2-vegs svar
 
-TODO
+TODO - Beskrivelse av 2-vegs-svar vil komme dersom funskjonaliteten vedtas og utvikles.
 
-# Annet
-
-TODO: Bør man legge til mer info i kvitteringer for routing tilbake til avsender systeme. Feks avsenderidentifikator i retur
-
-TODO: Trenger man et statusgrensesnitt der man kan se transportstatus på meldingen fra C2-C3
