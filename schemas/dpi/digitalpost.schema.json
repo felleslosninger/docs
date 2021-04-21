@@ -1,5 +1,5 @@
 {
-	"id": "http://digdir/dpi/digitalpost.json",
+	"id": "http://docs.digdir.no/schemas/dpi/digitalpost.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"description": "Schema for Standard business document (SBD) brukt av Digdir",
 	"definitions": {
@@ -182,23 +182,6 @@
 			],
 			"title": "Identifier"
 		},
-		
-		
-		"dokumentpakkefingeravtrykk": {
-			"type": "object",
-			"$id": "#/definitions/dokumentpakkefingeravtrykk",
-			"description": "Hash av den krypterte dokumentpakken",
-			"properties": {
-				"digestMethod": {
-					"type": "string",
-					"description": "Referanse til Hash algoritmen brukt for lage hash"
-				},
-				"digestValue": {
-					"type": "string",
-					"description": "Base64 encoded Hash av den krypterte Dokumentpakken"
-				}
-			}
-		},
 
 
 		"dpimelding": {
@@ -213,7 +196,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
@@ -265,6 +248,7 @@
             "properties": {
 				"authority": {
 					"type": "string",
+					"enum": ["iso6523-actorid-upis"],
 					"description": "Henviser til identitesautoritet for orgnr angi iso6523-actorid-upis, for personnummer iso3166-1"
 				},
 				"value": {
@@ -286,7 +270,7 @@
             "description": "Identifikasjon av en person",
             "$comment": "Personidentifikator er enten et fødselsnummer eller et gyldig D-nummer.",
             "properties": {
-				"authority": { "type": "string"},
+				"authority": { "type": "string", "enum": ["iso3166-1-alfa2"]},
 				"value": { "type": "string"}
 			},
 			"required": ["value"]
@@ -462,7 +446,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
