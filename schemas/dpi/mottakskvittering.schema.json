@@ -1,0 +1,44 @@
+{
+    "id": "http://docs.digdir.no/schemas/dpi/mottakskvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En Kvitteringsmelding til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift.",
+    "$comment": "Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post.",
+    "definitions": {
+        "kvittering": {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+                },
+                "maskinportentoken": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                },
+                "tidspunkt": {
+                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "maskinportentoken",
+                "tidspunkt"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "mottakskvittering": {
+            "$ref": "#/definitions/kvittering"
+        }
+    },
+    "required": [
+        "mottakskvittering"
+    ],
+    "additionalProperties": false
+}

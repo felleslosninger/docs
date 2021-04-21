@@ -1,0 +1,44 @@
+{
+	"id": "http://docs.digdir.no/schemas/dpi/aapningskvittering.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"description": "En KvitteringsMelding til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse.",
+	"$comment": "Åpningskvitteringer blir bare sendt dersom dette er bestilt av Avsender i digital post meldingen ved å spesifisere dette i digitalpostinfo. Mottaker må aksepteres at det sendes en ÅpningsKvittering til Avsender for å få lest den digital posten. Mangel på ÅpningsKvittering betyr at Mottaker ikke har lest dokumentet.",
+	"definitions": {
+		"kvittering": {
+			"type": "object",
+			"$id": "#/definitions/kvittering",
+			"title": "kvittering",
+			"properties": {
+				"avsender": {
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+				},
+				"mottaker": {
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+				},
+				"maskinportentoken": {
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+				},
+				"tidspunkt": {
+					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+				}
+			},
+			"required": [
+				"avsender",
+				"mottaker",
+				"maskinportentoken",
+				"tidspunkt"
+			],
+			"additionalProperties": false
+		}
+	},
+	"type": "object",
+	"properties": {
+		"aapningskvittering": {
+			"$ref": "#/definitions/kvittering"
+		}
+	},
+	"required": [
+		"aapningskvittering"
+	],
+	"additionalProperties": false
+}
