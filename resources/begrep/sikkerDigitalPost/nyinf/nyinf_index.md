@@ -11,25 +11,25 @@ sidebar: dpi_sidebar
 Den proprietære transportinfrastrukturen for Digital Postkasse til innbyggere skal erstattes med en standard-infrastruktur for meldingsutvekling i det offentlege, dvs 4-hjørnes-modell med CEF eDelivery/PEPPOL. Følgende aktører inngår:
 - Hjørne 1: Avsender (og evt. avsender sin leverandør/databehandler)
 - Hjørne 2: Avsenders aksesspunkt-leverandør
-- Hjørne 3: Postkasse-leverandørs aksesspunktleverandør
-- Hjørne 4: Postkasse-leverandør
+- Hjørne 3: Postkasse- og utskriftsleverandørs aksesspunktleverandør
+- Hjørne 4: Postkasse- og utskriftsleverandør
 
 Vi ser altså at den sentraliserte Meldingsformidleren blir erstattet av et distribuert nettverk av aksesspunkt-leverandører.
 
 Av sikkerhetsgrunner må derfor:
 - meldingsformatet i DPI endres noe
 
-samt noen av Meldingsformidlers oppgaver flyttes til Postkassene:
+samt noen av Meldingsformidlers oppgaver flyttes til tjenesteleverandører i hjørne 4:
 - validere ende-til-ende integritet på sendte meldinger
 - validere at avsender har tillatelse til å sende digital post
-- dersom en melding er sendt av en databehandler, validere at databehandler har lov til å opptre på vegne av avsnder
+- dersom en melding er sendt av en databehandler, validere at databehandler har lov til å opptre på vegne av avsender
 - sørge for at kvitteringer blir sendt tilbake til rett system uavhengig av om avsender bruker databehandler eller ikke
 
 
 Det må etableres en ny transport-protokoll mellom hjørne 1 og hjørne 2.  I tradisjonell PEPPOL-tenking er dette noe som markedsaktørene selv skal ta fram - dvs i prinsippet er dette opp til aksesspunktleverandørene selv å bestemme. Siden Digdir ønsker å gjøre en anskaffelse av aksesspunktleverandørtjenester for formidling av digital post, som de fleste avsendere kommer til å benytte, er det hensiktismessig at Digdir kravstiller en protokoll som skal brukes av denne leverandøren.  Det hindrer ikke andre aktører å implementere andre, egne protokoller.
 
 Protokoll mellom hjørne 2 og 3 er bestemt av PEPPOL, og heter AS4.
-Protokoll mellom hjørne 3 og Postkasse-leverandør bør avtales bilateralt mellom disse aktørene i samarbeid med Digdir.
+Protokoll mellom hjørne 3 og tjenesteleverandører i hjørne 4 bør avtales bilateralt mellom disse aktørene i samarbeid med Digdir.
 
 
 
@@ -113,7 +113,7 @@ GET /status/{conversationid}
 
 tbd - beskrivelse kommer
 
-## Hjørne 3 -> Postkasse-leverandør
+## Hjørne 3 -> Tjenesteleverandører i hjørne 4 (postkasse- og utskriftsleverandører)
 
 Dette avtales bilateralt mellom de to partene i samarbeid med Digdir.
 
@@ -134,9 +134,9 @@ Det opprettes `processid` i ELMA for de dokumenttyper som trengs støttes.
 
 
 
-### Oppsett av PK-leverandør
+### Oppsett av postkasse- og utskriftsleverandør
 
-PK-leverandørene registreres som mottakere av aktuelle processid i ELMA. Må utføres av Hjørne 3.
+Tjenesteleverandørene i hjørne 4 registreres som mottakere av aktuelle processid i ELMA. Må utføres av Hjørne 3.
 
 
 ### Oppsett av ny Avsender
