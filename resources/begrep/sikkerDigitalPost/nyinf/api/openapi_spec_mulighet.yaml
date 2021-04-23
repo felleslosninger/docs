@@ -22,14 +22,36 @@ paths:
                     type: string
                     format: binary   
         responses: 
-          200: 
+          201: 
             description: Mottatt OK av aksesspunktleverandør, og vil bli sendt videre til postkasse
           400: 
             description: valideringsfeil - fornuftig beskrivelse bør inkluderes
           401:
             description: Utløpt token
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.   
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+    /startnyforsendelse/{id}: 
+      description: 'starter ny forsendelse med å generere id til forsendelsen. TODO: trenger vi denne?'
+    /lastopp/{id}: 
+      description: 'brukes for å laste opp ASiC på forsendelsen. TODO: trenger vi denne?'
+    /sendforsendelse/{id} : 
+      description: 'Sender forsendelsen gitt id. TODO: trenger vi denne?'       
+    /hentbevis/{id}:      
+      get:
+        summary: 'Henter mdn kvittering på fosendelse gitt id. TODO: trenger vi denne?'
+        responses:
+          200:
+            description: MDN kvittering for foresendelse
+    /status/{id}: 
+      get: 
+        summary: 'henter status gitt foreendelsesid (documentIdentification - instanceIdentifier) oprettet, sendt, mottatt TODO: trenger vi statuser eller er det godt nok med det som ligger på forrettningslaget'
+        responses:
+          200:
+            description: returnerer siste status for forsendelse
+          401:
+            description: Utløpt token
+          403:
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
     /statuses/{id}:
       get:
         summary: henter liste med statuser gitt foreendelsesid
@@ -40,11 +62,17 @@ paths:
             description: Utløpt token
           403:
             description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
-    /getmessages:
+    /statuses/:
+      get:
+        summary: 'Henter alle statuser gitt ett eller annet scompe TODO: finne ut hvordan denne bør løses'
+        responses:
+          200: 
+            description: liste med siste statuser
+    /hentnyeforsendelser:
       get: 
         summary: Henter ned liste med forettningsmeldinger på mottatte forsendelser
         parameters:
-          - in: query
+          - in: path
             name: mottakeridentifikator            
             schema:
               type: string
@@ -52,55 +80,24 @@ paths:
         responses:
           200: 
             description: 'Liste med forsendleser TODO: bør vi ha noen form for låsing?'
-            content:
-              application/json:
-                schema:
-                  type: "array"
-                  items:
-                    description: Liste med sbd (jwk format base64 formatert)
-                    type: string
-                    format: binary
-          204:
-            description: Ingen nye meldinger
           401:
             description: Utløpt token
           403:
             description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
           
-    /downloadmessage/{id}:
+    /lastnedforsendelse/{id}:
       get:  
         summary: Laster ned dokumentpakke (ASiC) for gitt forsendelse
-        parameters:
-          - in: path
-            name: id
-            schema: 
-              type: string
-              format: uuid
-            required: true
         responses:
           200:
             description: Kryptert dokumentpakke
-            content:
-              application/json:
-                schema:
-                  type: string
-                  format: binary 
           401:
             description: Utløpt token
           403:
             description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
-          404:
-            description: Ugyldig id
-    /setmessageread/{id}:
-      post:
+    /settforsendelsemottatt/{id}:
+      get:
         summary: Setter forsendelse mottatt ovenfor aksesspunkt. Medfører at den blir fjernet fra listen hentnyeforsendelser returnerer. Aksesspunkt kan slette melding 
-        parameters:
-          - in: path
-            name: id
-            schema:
-              type: string
-              format: uuid
-            required: true
         responses:
           200:
             description: Setter gitt forsendelse mottatt
@@ -108,5 +105,3 @@ paths:
             description: Utløpt token
           403:
             description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
-          404:
-            description: Ugyldig id
