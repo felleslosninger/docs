@@ -21,25 +21,23 @@ ID-porten tilbyr p.t. tre metoder for å pseudonymisere fødselsnummer i token.
 
 ### 1: Ren oauth2 med bruk av Opaque token
 
-Ved "ren" oauth2 (altså ikke OIDC), så mottar ikke klienten noe `id_token`, kun `access_token`.  Det må opprettes et eget oauth2-scope for formålet, og dette må være konfigurert til ha `token_type=OPAQUE`.  Da vil mottatt `access_token` ikke være meningsbærende, og APIet / backend kan da [introspecte tokenet for å hente ut fødselsnummer](oidc_protocol_tokeninfo.html).
+Ved "ren" oauth2 (altså ikke OIDC), så mottar ikke klienten noe `id_token`, kun `access_token`.  API-tilbyder må opprette et eget oauth2-scope for formålet, og dette må være konfigurert til ha `token_type=OPAQUE`.  Da vil mottatt `access_token` ikke være meningsbærende, og APIet / backend kan da [introspecte tokenet for å hente ut fødselsnummer](oidc_protocol_tokeninfo.html).
 
-Klienten må passe på å *ikke* etterspørre `openid`-scopet (for da vil den få et id_token som inneholder fødselsnummer...)
-
-Dette mønsteret passer bra når klient og API tilhører samme organisasjon.
+Klienten må passe på å *ikke* etterspørre `openid`-scopet (for da vil den få et id_token som inneholder fødselsnummer...).  Dette mønsteret passer derfor best når klient og API tilhører samme organisasjon, eller API-tilbyder stoler på at konsumentene konfigurer riktig.
 
 ### 2: Pseudoynimiserende scopes
 
-I dette tilfellet så er scopet satt opp med flagget `requires_pseudonymous_tokens` til true. Hverken id_token eller access_token utlevert til klienter vil da inneholde f/d-nr (`pid`).  
+I dette tilfellet så må API-tilbyder lage et scope, og sette det opp med  satt opp med flagget `requires_pseudonymous_tokens` til true. Nå vil hverken id_token eller access_token utlevert til klienter inneholde f/d-nr (`pid`).  
 
-Når klientene bruker tokenet mot API-tilbyders endepunkt, kan API-tilbyder i sin tur da kalle /tokeninfo-endepunktet for å hente ut f/d-nr som hører til tokenet.  API-tilbyder må lage en egen klient-autentisering på samme organisasjonsnummer som scopet, for å kunne gjøre dette.
+Når klientene bruker tokenet mot API-tilbyders endepunkt, kan API-tilbyder i sin tur da kalle /tokeninfo-endepunktet for å hente ut f/d-nr som hører til tokenet.  API-tilbyder må lage en egen klient (må være registrert på samme organisasjonsnummer som eier scopet), og bruke denne opp mot [tokeninfo-endepunktet](oidc_protocol_tokeninfo.html).
 
-Dette kan gjerne kombineres med at `token_type` settes til `OPAQUE` for ytterligere beskyttelse.
+Bruk av pseudonymiserende scopes kan gjerne kombineres med at `token_type` settes til `OPAQUE` for ytterligere beskyttelse.
 
 Dette mønsteret passer bra når det der mange klienter fra ulike virksomheter som skal ha tilgang til ditt API.
 
 ### 3: (under utfasing) no_pid-scope
 
-Klientet kan sende ```no_pid``` scopet i autentiseringsforespørselen for å trigge pseudonymisert innlogging.  Fødselsnummer/D-nummer vil da ikke bli inkludert i tokens fra ID-porten.
+Klienter kan sende ```no_pid``` scopet i autentiseringsforespørselen for å trigge pseudonymisert innlogging.  Fødselsnummer/D-nummer vil da ikke bli inkludert i tokens fra ID-porten.
 
 Pseudonyumisering vil skje uansett om klienten har også har brukt  ```openid``` eller ```profile``` scope.
 

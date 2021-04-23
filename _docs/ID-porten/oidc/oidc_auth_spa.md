@@ -11,9 +11,9 @@ product: ID-porten
 
 Single-page applikasjoner (SPA) har økende popularitet. Disse skiller seg fra tradisjonelle nettjenester ved at SPAen er realisert som en ren javascript-applikasjon i brukers browser, kontra tradisjonelle nettjtenester der en sentral applikasjonserver generer HTML som blir vist i browseren.
 
-En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (evt. virksomhetssertifikatets privatnøkkel) siden hele klienten lever i brukers nettleser. SPAer er altså det som i Oauth2-verdenen kalles **public klienter**. For slike klienter var det tidligere anbefalt å bruke _implicit flow_, men **de nyeste anbefalingen går på å bruke code flow sammen med PKCE og state**.
+En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (evt. virksomhetssertifikatets privatnøkkel) siden hele klienten lever i brukers nettleser. SPAer er altså det som i Oauth2-verdenen kalles **public klienter**. For slike klienter var det tidligere anbefalt å bruke implicit flow, men **de nyeste anbefalingen går på å bruke code flow sammen med PKCE og state**.
 
-**Merk også at den metoden for "silent renewal" ikke støttes av ID-porten.**  Denne metoden er også på vei "ut", da de store browser-aktørene er i ferd med å sperre tilgang til 3djparts-cookies.
+**Merk også at den ofte brukte metoden for "silent renewal" ikke støttes av ID-porten.**  Denne metoden er også på vei "ut", da de store browser-aktørene er i ferd med å sperre tilgang til 3djparts-cookies som ødelegger for silent renewal.
 
 
 ## Anbefalinger / krav til bruk av SPAer
@@ -24,16 +24,19 @@ Tjenesteeiere må:
 
  * Dersom SPA kun skal aksessere egne API (1st party API), bør man vurdere en backend-for-frontend (BFF) arkitektur, dvs. etablere en tynn API-gateway-komponent som operer som oauth2-klient og omsetter ID-portens id_token til egen sesjon (egne cookies) mellom BFF og SPA.
 
- * APIer som blir sikret av ID-portens access_token direkte, må bruke egne scopes og ikke bare `openid profile` (ellers så kan alle gyldige ID-porten-innlogginger til alle andre tjenester også brukes mot ditt API)
+ * Dersom man heller velger at SPAens backend-APIer blir sikret av ID-portens access_token direkte, må kunden opprette et egen oauth2-scope for formålet og ikke bare bruke `openid profile` (ellers så kan alle gyldige ID-porten-innlogginger til alle andre tjenester også brukes mot ditt API)
 
- * APIer som blir sikret av ID-portens access_token direkte bør bruke [audience-begrensa tokens](oidc_func_aud.html), der `aud`-verdien settes lik URL til API-endepunktet
+ * Man bør bruke kortlevede access_token,  og relativt kort_levede
 
 
-Forøvrig anbefaler vi å lese [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00) og følge anbefalingene i denne.  Dette bør være del av egen isikovurdering av de dataene som blir eksport av APIet og vurdere om de sikringsmekanismer som ovennevte tilbyr gir tilstrekkelig beskyttelse.
 
-## Oppsett i selvbetjing
+Forøvrig anbefaler vi å lese [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07) og følge anbefalingene i denne.  Dette bør være del av egen risikovurdering av de dataene som blir eksport av APIet og vurdere om de sikringsmekanismer som ovennevte tilbyr gir tilstrekkelig beskyttelse.
 
-SPA-er som bruker ID-portens access_tokens som sikringsmekanisme mot eget API, må opprettast som `integration_type=API_KLIENT` i Sjølvbetjeningsløsninga.  Då får ein mogelegheit til å sjølv styre levetid på autorisasjon, access_token og refresh_token.  Dei må også opprettast som `application-type=web"
+## Oppsett i selvbetjening
+
+SPA-er som bruker ID-portens access_tokens som sikringsmekanisme mot eget API, må opprettast som `integration_type=API_KLIENT` i Sjølvbetjeningsløsninga.  Då får ein mogelegheit til å sjølv styre levetid på autorisasjon, access_token og refresh_token.
+
+Fram til release 21-06 må klienten opprettast som `application-type=web` (og client_secret må anses som kjent) dersom den skal få refresh_token.
 
 
 ## Flyt
