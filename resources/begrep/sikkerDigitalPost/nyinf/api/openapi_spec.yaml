@@ -2,11 +2,11 @@ openapi: 3.0.2
 info:
     title: API for aksesspunktleverandører i DPI
     version: 1.0.0
-    description: A brand new API with no content.  Go nuts!
+    description: API for kommunikasjon mellom C1 og C2 i firehjørers akritektur for DPI
 paths:
     /send:    
       post:
-        summary: intitierer og sender ny forsendelse.
+        summary: intitierer og laseter opp ny forsendelse til C2.
         requestBody:          
           description: består av to deler,  digitalpostmelding og dokumentpakke   
           content:
@@ -20,26 +20,51 @@ paths:
                     description: 'Digitalpost melding formatert som base64 encoded JWT'
                   dokumentpakke: 
                     type: string
-                    format: binary   
+                    format: binary
+                    description: kryptert dokumentpakke. Formate på dokumentpakke følger ASiC     
         responses: 
           200: 
             description: Mottatt OK av aksesspunktleverandør, og vil bli sendt videre til postkasse
           400: 
             description: valideringsfeil - fornuftig beskrivelse bør inkluderes
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           401:
             description: Utløpt token
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.   
+            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'   
     /statuses/{id}:
       get:
         summary: henter liste med statuser gitt foreendelsesid
         responses:
           200:
-            description: liste med statuser
+            description: liste med statuser  
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/statuses'          
           401:
             description: Utløpt token
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Token mangler "dpi:read" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
     /getmessages:
       get: 
         summary: Henter ned liste med forettningsmeldinger på mottatte forsendelser
@@ -56,16 +81,25 @@ paths:
               application/json:
                 schema:
                   type: "array"
+                  description: Liste med SBD (jwk format base64 formatert)
                   items:
-                    description: Liste med sbd (jwk format base64 formatert)
+                    description: SBD (jwk format base64 formatert)
                     type: string
                     format: binary
           204:
             description: Ingen nye meldinger
           401:
             description: Utløpt token
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Token mangler "dpi:read" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem' 
           
     /downloadmessage/{id}:
       get:  
@@ -87,10 +121,22 @@ paths:
                   format: binary 
           401:
             description: Utløpt token
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Token mangler "dpi:read" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem' 
           404:
             description: Ugyldig id
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
     /setmessageread/{id}:
       post:
         summary: Setter forsendelse mottatt ovenfor aksesspunkt. Medfører at den blir fjernet fra listen hentnyeforsendelser returnerer. Aksesspunkt kan slette melding 
@@ -106,7 +152,85 @@ paths:
             description: Setter gitt forsendelse mottatt
           401:
             description: Utløpt token
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Token mangler "dpi:read" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
           404:
             description: Ugyldig id
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+security:
+  - OAuth2:
+    - dpi:send
+    - dpi:read
+components:
+  schemas: 
+    statuses:
+      type: array
+      items: 
+        $ref: '#/components/schemas/status'
+      uniqueItems: true
+    status:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - OPPRETTET
+            - SENDT
+            - MOTTATT
+        timestamp:
+          type: string
+          format: date-time
+    problem:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+          description: |
+            Kopiert fra https://opensource.zalando.com/problem/schema.yaml#/Problem - Bør lage tilsvarende Digdir problem
+            An absolute URI that identifies the problem type.  When dereferenced,
+            it SHOULD provide human-readable documentation for the problem type
+            (e.g., using HTML).
+          default: 'about:blank'
+          example: 'https://zalando.github.io/problem/constraint-violation'
+        title:
+          type: string
+          description: |
+            A short, summary of the problem type. Written in english and readable
+            for engineers (usually not suited for non technical stakeholders and
+            not localized); example: Service Unavailable
+        status:
+          type: integer
+          format: int32
+          description: |
+            The HTTP status code generated by the origin server for this occurrence
+            of the problem.
+          minimum: 100
+          maximum: 600
+          exclusiveMaximum: true
+          example: 503
+        detail:
+          type: string
+          description: |
+            A human readable explanation specific to this occurrence of the
+            problem.
+          example: Connection to database timed out
+        instance:
+          type: string
+          format: uri
+          description: |
+            An absolute URI that identifies the specific occurrence of the problem.
+            It may or may not yield further information if dereferenced.
+
+
