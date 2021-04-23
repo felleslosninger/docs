@@ -89,6 +89,8 @@ ID-porten støtter følgende grants:
 |urn:ietf:params:oauth:grant-type:jwt-bearer|En signert JWT ihht [RFC7523](https://tools.ietf.org/html/rfc7523#section-2.1). Kan enten bruke virksomhetssertifikat i `x5c` eller `kid` til forhåndsregistrert asymmetrisk nøkkel.|  
 |jwt_bearer_token   | kortform av urn:ietf:params:oauth:grant-type:jwt-bearer    |
 
+Kun klienter som er registrert med `refresh_token` som tillatt grant-type, vil få utdelt refresh_token ved bruk av autorisasjonskode-grant.   
+
 Maskinporten-klienter skal alltid bruke `jwt_bearer_token`.
 
 Vi støtter ikke implicit, password eller client-credentials grant.
@@ -118,11 +120,11 @@ Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 | Integrasjonstype | Klient-type 'application_type' |  tillatte 'token_endpoint_auth_method' | tillatte 'grant_types' | Standard-scope | Kan legge til scopes? |
 |-|-|-|-|-|-|
 |ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
-||  browser |  none     | authorization_code   |openid profile | kun eidas, no_pid |
-||  native |   none     | authorization_code   |openid profile | kun eidas, no_pid |
+||  browser |  none     | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
+||  native |   none     | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
 |API-klient innlogget bruker  |samme som for idporten ||| | ja |
 |Maskinporten| web |private_key_jwt  | jwt_bearer_token | |ja|
-|Kontaktregisteret| web | private_key_jwt  | jwt_bearer_token |global/kontaktinformasjon.read global/spraak.read global/sikkerdigitalpost.read global/sertifikat.read global/varslingsstatus.read |nei|
+|Kontaktregisteret| web | private_key_jwt  | jwt_bearer_token |krr:global/kontaktinformasjon.read krr:global/digitalpost.read |nei|
 
 
 ## Bruk av asymmetrisk nøkkel
