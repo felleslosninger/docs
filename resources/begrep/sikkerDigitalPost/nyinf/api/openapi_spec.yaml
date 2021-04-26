@@ -21,7 +21,7 @@ paths:
                   dokumentpakke: 
                     type: string
                     format: binary
-                    description: kryptert dokumentpakke. Formate på dokumentpakke følger ASiC     
+                    description: kryptert dokumentpakke. Formate på dokumentpakke følger ASiC                    
         responses: 
           200: 
             description: Mottatt OK av aksesspunktleverandør, og vil bli sendt videre til postkasse
@@ -80,12 +80,7 @@ paths:
             content:
               application/json:
                 schema:
-                  type: "array"
-                  description: Liste med SBD (jwk format base64 formatert)
-                  items:
-                    description: SBD (jwk format base64 formatert)
-                    type: string
-                    format: binary
+                  $ref: '#/components/schemas/messages'
           204:
             description: Ingen nye meldinger
           401:
@@ -117,8 +112,7 @@ paths:
             content:
               application/json:
                 schema:
-                  type: string
-                  format: binary 
+                  $ref: '#/components/schemas/dokumentpakke'
           401:
             description: Utløpt token
             content:
@@ -169,10 +163,20 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
 security:
-  - OAuth2:
-    - dpi:send
+  - OAuth2Schema:
+    - dpi:send       
     - dpi:read
 components:
+  securitySchemes:
+    OAuth2Schema:
+      type: oauth2
+      description: 'TODO: skal vi ha både read og write scope; Sett riktig url; Skriv skikkelig beskrivelse her'
+      flows: 
+        implicit:
+          authorizationUrl: https://maskinporten.no/
+          scopes: 
+            'dpi:write' : for sending av meldinger
+            'dpi:read' : for leseopperasjoner  
   schemas: 
     statuses:
       type: array
@@ -191,6 +195,25 @@ components:
         timestamp:
           type: string
           format: date-time
+    messages:
+      type: array
+      description: Liste med SBD (JWK, base64 formatert)
+      items:
+        $ref: '#/components/schemas/message'
+    message:
+      type: object  
+      properties:
+        forettningsmelding:
+          type: string
+          format: byte
+          description: base64 formatert jwt som inneholder forettnignsmelding
+        downloadurl:
+          type: string
+          format: uri
+          description: uri meldingen kan lastes ned fra
+    dokumentpakke:
+      type: string
+      format: binary  
     problem:
       type: object
       properties:
