@@ -4,11 +4,18 @@ info:
     version: 1.0.0
     description: API for kommunikasjon mellom C1 og C2 i firehjørers akritektur for DPI
 paths:
-    /send:    
+    /{version}/send:    
       post:
         summary: intitierer og laseter opp ny forsendelse til C2.
+        parameters: 
+            - in: path
+              name: version            
+              schema:
+                type: string                               
+                description: versjon av API
+              required: true
         requestBody:          
-          description: består av to deler,  digitalpostmelding og dokumentpakke   
+          description: består av to deler,  digitalpostmelding og dokumentpakke          
           content:
             multipart/form-data:
               schema:
@@ -43,9 +50,23 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'   
-    /statuses/{id}:
+    /{version}/statuses/{id}:
       get:
         summary: henter liste med statuser gitt foreendelsesid
+        parameters: 
+            - in: path
+              name: version            
+              schema:
+                type: string                               
+                description: versjon av API
+              required: true
+            - in: path
+              name: id            
+              schema: 
+                type: string
+                format: uuid
+                description: unik id til meldingen
+              required: true
         responses:
           200:
             description: liste med statuser  
@@ -65,15 +86,21 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /getmessages:
+    /{version}/getmessages:
       get: 
         summary: Henter ned liste med forettningsmeldinger på mottatte forsendelser
         parameters:
+          - in: path
+            name: version            
+            schema:
+              type: string                               
+              description: versjon av API
+            required: true
           - in: query
             name: mottakeridentifikator            
             schema:
               type: string
-              description: identifikator til gitt i avsenderidentifikator ved sending av melding
+              description: identifikator til gitt i avsenderidentifikator ved sending av melding          
         responses:
           200: 
             description: 'Liste med forsendleser TODO: bør vi ha noen form for låsing?'
@@ -96,15 +123,22 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem' 
           
-    /downloadmessage/{id}:
+    /{version}/downloadmessage/{id}:
       get:  
         summary: Laster ned dokumentpakke (ASiC) for gitt forsendelse
         parameters:
+          - in: path
+            name: version            
+            schema:
+              type: string                               
+              description: versjon av API
+            required: true
           - in: path
             name: id
             schema: 
               type: string
               format: uuid
+              description: unik id til meldingen
             required: true
         responses:
           200:
@@ -131,10 +165,16 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /setmessageread/{id}:
+    /{version}/setmessageread/{id}:
       post:
         summary: Setter forsendelse mottatt ovenfor aksesspunkt. Medfører at den blir fjernet fra listen hentnyeforsendelser returnerer. Aksesspunkt kan slette melding 
         parameters:
+          - in: path
+            name: version            
+            schema:
+              type: string                               
+              description: versjon av API
+            required: true
           - in: path
             name: id
             schema:
