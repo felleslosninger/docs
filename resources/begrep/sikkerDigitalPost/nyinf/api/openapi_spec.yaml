@@ -6,16 +6,16 @@ info:
 paths:
     /{version}/send:    
       post:
-        summary: intitierer og laseter opp ny forsendelse til C2.
+        summary: Intitierer og laseter opp ny forsendelse til C2.
         parameters: 
             - in: path
               name: version            
               schema:
                 type: string                               
-                description: versjon av API
+                description: Versjon av API
               required: true
         requestBody:          
-          description: består av to deler,  digitalpostmelding og dokumentpakke          
+          description: Består av to deler,  forrettningsmelding og dokumentpakke          
           content:
             multipart/form-data:
               schema:
@@ -28,12 +28,12 @@ paths:
                   dokumentpakke: 
                     type: string
                     format: binary
-                    description: kryptert dokumentpakke. Formate på dokumentpakke følger ASiC                    
+                    description: Kryptert dokumentpakke. Formate på dokumentpakke følger ASiC                    
         responses: 
           201: 
             description: Mottatt OK av aksesspunktleverandør, og vil bli sendt videre til postkasse
           400: 
-            description: valideringsfeil - fornuftig beskrivelse bør inkluderes
+            description: Valideringsfeil - utdypende informasjon om feilen beskrevet i problem+json
             content:
               application/problem+json:
                 schema: 
@@ -52,20 +52,20 @@ paths:
                   $ref : '#/components/schemas/problem'   
     /{version}/statuses/{id}:
       get:
-        summary: henter liste med statuser gitt foreendelsesid
+        summary: Henter liste med statuser gitt foreendelsesid
         parameters: 
             - in: path
               name: version            
               schema:
                 type: string                               
-                description: versjon av API
+                description: Versjon av API
               required: true
             - in: path
               name: id            
               schema: 
                 type: string
                 format: uuid
-                description: unik id til meldingen
+                description: Unik ID til meldingen gitt i SBDH - documentIdentification - instanceIdentifier
               required: true
         responses:
           200:
@@ -94,23 +94,23 @@ paths:
             name: version            
             schema:
               type: string                               
-              description: versjon av API
+              description: Versjon av API
             required: true
           - in: query
             name: mottakeridentifikator            
             schema:
               type: string
-              description: identifikator til gitt i avsenderidentifikator ved sending av melding
+              description: Identifikator til gitt i avsenderidentifikator ved sending av melding
           - in: query
             name: page_size            
             schema:
               type: string
-              description: 'identifikator til gitt i avsenderidentifikator ved sending av melding. TODO: Usikker på om vi trenger paging'
+              description: 'Identifikator til gitt i avsenderidentifikator ved sending av melding. TODO: Usikker på om vi trenger paging'
           - in: query
             name: page            
             schema:
               type: string
-              description: 'identifikator til gitt i avsenderidentifikator ved sending av melding. TODO: Usikker på om vi trenger paging '         
+              description: 'Identifikator til gitt i avsenderidentifikator ved sending av melding. TODO: Usikker på om vi trenger paging '         
         responses:
           200: 
             description: 'Liste med forsendleser TODO: bør vi ha noen form for låsing?'
@@ -148,7 +148,7 @@ paths:
             schema: 
               type: string
               format: uuid
-              description: unik id til meldingen
+              description: Unik ID til meldingen gitt i SBDH - documentIdentification - instanceIdentifier
             required: true
         responses:
           200:
@@ -183,7 +183,7 @@ paths:
             name: version            
             schema:
               type: string                               
-              description: versjon av API
+              description: Versjon av API
             required: true
           - in: path
             name: id
@@ -225,8 +225,8 @@ components:
         implicit:
           authorizationUrl: https://maskinporten.no/
           scopes: 
-            'dpi:write' : for sending av meldinger
-            'dpi:read' : for leseopperasjoner  
+            'dpi:write' : For sending av meldinger
+            'dpi:read' : For leseopperasjoner  
   schemas: 
     statuses:
       type: array
@@ -247,7 +247,7 @@ components:
           format: date-time
     messages:
       type: array
-      description: Liste med SBD (JWK, base64 formatert)
+      description: Liste med forettningsmeldinger/SBD (JWT, base64 formatert)
       items:
         $ref: '#/components/schemas/message'
     message:
@@ -256,17 +256,17 @@ components:
         forettningsmelding:
           type: string
           format: byte
-          description: base64 formatert jwt som inneholder forettnignsmelding
+          description: Base64 formatert JWT som inneholder forettnignsmelding
         downloadurl:
           type: string
           format: uri
-          description: uri meldingen kan lastes ned fra
+          description: URI meldingen kan lastes ned fra
     dokumentpakke:
       type: string
       format: binary  
     problem:
       type: object
-      description: 'problem+json according to [RFC7807](https://tools.ietf.org/html/rfc7807)'
+      description: 'problem+json as proposed in [RFC7807](https://tools.ietf.org/html/rfc7807)'
       properties:
         type:
           type: string
