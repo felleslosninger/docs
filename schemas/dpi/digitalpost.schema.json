@@ -475,18 +475,7 @@
 					]
 				}],			
 			"additionalProperties": false
-		},			
-		
-		
-		"fysiskpost": {
-			"type": "object",			
-			"$ref": "#/definitions/dpimelding",
-			"properties": {
-				"fysiskpostinfo" : {"$ref": "#/definitions/fysiskpostinfo"}	
-			},
-			"required": ["fysiskpostinfo"],
-			"additionalProperties": false
-		},
+		},	
 		
 		"fysiskpostinfo" : {
 			"type": "object",
@@ -496,7 +485,7 @@
 			"$comment": "Dette er informasjon om den Digitalpostforsendelsen som vil bli brukt av Postkasseleverandør for å presentere og behandle den digitale posten. Den ikkeSensitiveTittelen vil bli brukt i dialogen med Innbygger dersom ikke Innbygger er autentisert på tilstrekkelig nivå. Den ikkeSensitiveTittelen vil også bli brukt i varsling til Innbygger. Når den digitale posten er dekryptert og innbygger er autentisert på tilstrekkelig sikkerhetsnivå så vil Tittel i Manifest-filen brukes.",
 			"properties": {
 				
-				"mottaker" : {"$ref": "#/definitions/adressseInfo"},
+				"mottaker" : {"$ref": "#/definitions/adresseInformasjon"},
 				"utskriftstype": {"$ref": "#/definitions/utskriftstype"},				
 				"retur" : { "$ref": "#/definitions/retur"},
 				"posttype": {"$ref": "#/definitions/posttype"}
@@ -521,7 +510,7 @@
 			"title": "retur",
 			"description": "Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.",
 			"properties": {
-				"mottaker" : { "$ref": "#/definitions/adressseInfo"},
+				"mottaker" : { "$ref": "#/definitions/adresseInformasjon"},
 				"returposthaandtering": { "$ref": "#/definitions/returposthaandtering"}
 			},
 			"required": ["mottaker", "returposthaandtering"],
