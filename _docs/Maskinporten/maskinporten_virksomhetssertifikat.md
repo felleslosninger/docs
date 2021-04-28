@@ -20,7 +20,7 @@ Virksomhetssertifikat er virksomheten sin digitale ID. For våre tjenester må d
 
 Virksomhetssertifikatet brukes for å autentisere virksomheten som gjør et kall mot Maskinporten.
 
-Sertifikatet brukes til å signere JWT grantet/forespørselen mot Maskinporten. Maskinporten sjekker sertifikatets gyldighet opp mot sertifikatutstederene. (Buypass og Commfides).
+Sertifikatet brukes til å signere forespørselen mot Maskinporten. Maskinporten sjekker sertifikatets gyldighet opp mot sertifikatutstederene. (Buypass og Commfides).
 
 Dette er nærmere beskrevet på [JWT grant](https://docs.digdir.no/maskinporten_protocol_jwtgrant.html) siden.
 

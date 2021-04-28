@@ -4,10 +4,10 @@ folders:
 - title: Installasjon av integrasjonspunktet
 
   folderitems:
-  
+
       - title: Oppgradere til ny versjon
-        jurl: /eformidling_ip_upgrade.html  
-      
+        jurl: /eformidling_ip_upgrade.html
+
       - title: Last ned integrasjonspunktet
         jurl: /eformidling_download_ip.html
 
@@ -26,8 +26,7 @@ folders:
       - title: Opprette brukere i eFormidling
         jurl: /eformidling_create_users.html
 
-        
-     
+
 
 
 - title: Selvhjelp og nyttig informasjon
@@ -36,28 +35,28 @@ folders:
 
       - title: Nyttig informasjon
         jurl: /eformidling_selfhelp.html
-       
+
       - title: Typiske feil
         jurl: /eformidling_selfhelp_typical_errors.html
 
       - title: Trafikkflyt, kvitteringer og status
         jurl: /eformidling_selfhelp_traffic_flow.html
-        
+
       - title: Sporing av forsendelser
         jurl: /eformidling_api.html
-              
+
       - title: Testmiljø eFormidling
         jurl: /eformidling_testing_env.html
-               
+
       - title: Endringslogg integrasjonspunktet
         jurl: /eformidling_releasenotes.html
-        
+
       - title: Endringslogg sentrale komponenter
         jurl: /eformidling_releasenotes_sentrale_komp.html
-             
+
       - title: Sak-arkiv
         jurl: /eformidling_veiledning_sakark.html
-        
+
 - title: Utviklerdokumentasjon
   jurl: /eformidling_nm_about.html
 
@@ -73,6 +72,8 @@ related_resources_list:
 - title: Samarbeidsportalen
   jurl: https://samarbeid.difi.no/felleslosninger
 
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
 - title: Digitaliseringsdirektoratet
   jurl: https://www.digdir.no
-

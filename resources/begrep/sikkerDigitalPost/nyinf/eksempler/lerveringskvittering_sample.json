@@ -1,0 +1,18 @@
+{
+  "leveringskvittering": {
+    "avsender": {
+      "virksomhetsidentifikator": {
+        "authority": "iso6523-actorid-upis",
+        "value": "0192:123456789"
+      }
+    },
+    "mottaker": {
+      "personidentifikator": {
+        "value": "ABCDEFGHIJKLMNOPQRSTUVWXY",
+        "authority": "0192:987654321"
+      }
+    },
+    "maskinportentoken": "ABCDE",
+    "tidspunkt": "2021-04-11T15:29:58.753+02:00"
+  }
+}

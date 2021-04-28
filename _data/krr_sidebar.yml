@@ -28,10 +28,13 @@ related_resources_title: Andre nyttige lenker
 related_resources_list:
 
 - title: Github
-  jurl: https://docs.digdir.no
+  jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
-  jurl: https://samarbeid.digdir.no/
+  jurl: https://samarbeid.difi.no/felleslosninger
 
-- title: Digdir
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
   jurl: https://www.digdir.no

@@ -48,6 +48,7 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255:443**  | - | **Alle** |
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
+| ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 | tt02.altinn.no | 89.250.123.40:443 | - | DPV |
@@ -61,12 +62,14 @@ Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-a
 | **meldingsutveksling.difi.no** | **51.144.60.163:443** | - | **Alle** |
 | **stream-meldingsutveksling.difi.no** | 	**40.74.39.254:443**  | - | **Alle** |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
+| maskinporten.no | 146.192.252.50:443 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | move-dpe-prod.servicebus.windows.net	 | 52.169.10.235:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
 | svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
 
+> **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
 
 ---
 
