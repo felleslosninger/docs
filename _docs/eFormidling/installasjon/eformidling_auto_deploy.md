@@ -179,7 +179,7 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
 
 Døme: No bør du ha desse filene i liggande i mappa.
     
-![ph:bilde](/images/eformidling/dm-filer.png)
+![Filer for å køyre applikasjon som Windows wrapper](/images/eformidling/dm-filer.png)
 
 ## Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
@@ -189,5 +189,16 @@ For å starte frå kommandolinja kan du bruke følgande kommando:
 
 **I staging**
 ```java -jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+
+
+## Starte i Linux
+For å starte kan ein bruke samme kommando som over, men om ein ynskjer å starte Deploymanager <tbd> som ei bakgrunnsteneste kan ein legge på ein ampersand på slutten av kommandoen. Her treng du sjølvsagt ikkje wrapper filene som vist på biletet over, men heller ha ein mappestruktur som liknar på dette: 
+
+![Filer for å køyre applikasjon i linux](/images/eformidling/dm-filer-linux.png)
+
+Døme:
+```java -jar deploymanager-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties &```
+
+Like etter at kommandoen er eksekvert vil du få returnert ein PID for prosessen. Denne kan nyttast om du treng å stoppe prosessen. Du vil også kunne finne den ved å bruke *htop* og sjå etter kommandoen, eller i *top* og stenge ned java prosessen. Integrasjonspunktet startar som eigen Java-prosess. 
 
 ---
