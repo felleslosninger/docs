@@ -7,14 +7,10 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-> Denne applikasjonen og veiledninga er tiltenkt **lokal drift** av integrasjonspunkt. Den er ikkje for å nytte i skymiljø som til dømes Azure, Google eller AWS.
-
-> Om du bruker windows tenesten på integrasjonspunktet så anbefales det å fjerne den, for å unngå at den starter opp eldre versjoner av integrasjonspunktet ved til dømes restart av server. 
-
 # Introduksjon
-Deploymanager<tbd> er ein Spring Boot-støtta applikasjon (JAR) som køyrer som ei teneste, side om side med eit integrasjonspunkt (også JAR). Den fungerar i grove trekk slik:
+Deploymanager<tbd> er ein Java-applikasjon (JAR) som køyrer som ei teneste, side om side med eit integrasjonspunkt (også JAR). Den fungerar i grove trekk slik:
 
-1. Samanliknar gjeldande integrasjonspunkt-versjon mot siste tilgjengelege i Maven-repositoriet til Digdir.
+1. Samanliknar gjeldande integrasjonspunkt-versjon mot siste tilgjengelege versjon hjå Digdir.
 2. Dersom det er ein nyare versjon tilgjengeleg, vert denne lasta ned til klienten. 
 3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen. Dersom den nye versjonen ikkje startar, rullar Deploymanager attende.
 
@@ -25,19 +21,21 @@ Deploymanager<tbd> køyrer periodiske sjekkar i rekkefølge beskriven her. Innst
 2. Finne siste versjon av integrasjonspunktet.
 3. Sjekk av versjon-kompabilitet.
 4. Nedlasting av siste lanserte versjon.
-5. Validering av nedlasta artefakt.
+5. Validere autentisitet på nedlasta versjon.
 6. Stopp av gammalt integrasjonspunkt.
 7. Oppstart av ny versjon.
 
 Ein kan sjølv velge tidspunkt for når ny versjon skal starte opp. Standard verdiane er kl 05:30, 19:30 og 21:30.
 
 ## Krav til integrasjonspunkt som skal verta oppdatert
-+ Integrasjonspunktet har alle naudsynte portåpningar definert, jf. tilhøyrande dokumentasjon.
-+ Shutdown-endepunktet til det køyrande integrasjonspunktet må vera eksponert hjå klienten (ikkje eksternt mot Internett). Dette gjer at Deploymanager kan stoppa integrasjonspunktet når ein ny versjon er tilgjengeleg.
-+ Info-endepunktet til integrasjonspunktet må vera internt eksponert, for bestemming av inneværande versjon.
-+ Helse-endepunktet til integrasjonspunktet må vera internt eksponert, for at deploymanager skal kunna avgjera om applikasjonen køyrer eller ikkje.
+Det anbefales å begynne med eit fungerande oppsett for integrasjonspunktet, men ved nyinstallasjon av både DeployManager<tbd> og integrasjonspunktet er det også mulig å bruke deploy-manager til å laste ned integrasjonspunktet for så å konfigurere både integrasjonspunkt og deploy-manager.
++ Alle nødvendige portopningar for integrasjonspunktet er satt opp i brannmur(ar) som beskytter dette. [Sjå dokumentasjon](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger). Om du allereie køyrer integrasjonspunktet er desse på plass og du treng ikkje åpne noko nytt for å bruke Deploymanager<tbd>.
++ Følgande endepunkt må være internt eksponerte i integrasjonspunktet. 
+  1. Shutdown-endepunktet: ```/manage/shutdown```. Dette gjer at Deploymanager kan stoppa integrasjonspunktet når ein ny versjon er tilgjengeleg.
+  2. Info-endepunktet: ```/manage/info```. For bestemming av inneværande versjon.
+  3. Helse-endepunktet: ```/manage/health```. For at deploymanager skal kunna avgjera om applikasjonen køyrer eller ikkje.
 
-*Som standard er desse endepunkta eksponerte lokalt i integrasjonspunktet*
+Om du har skrudd desse av i integrasjonspunktet kan du skru det på ved denne propertyen ```management.endpoints.enabled-by-default=true```
 
 ---
 
@@ -58,6 +56,9 @@ Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og d
 # Replace hosts and ports of URL with the location
 # of your integrasjonspunkt.
 deploymanager.integrasjonspunkt.baseURL=http://localhost:9093
+
+# Your organisationnumber. Should be the same as in integrasjonspunkt-local.properties
+difi.move.org.number=
 
 # E-mail is optional. Please specify these properties 
 # to receive e-mails when the deploy-manager updates the integrasjonspunkt-application.
@@ -97,7 +98,7 @@ deploymanager.schedulerCronExpression=0 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42
 ```
 
 ## Verifisere sertifikatet
-Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen.
+Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen. Det er viktig å verifisere signatur på *deploymanager.jar*, og dersom ein velger å laste ned integrasjonspunktet manuelt er det viktig å verifisere denne .jar fila også. Om du allereie har ein køyrande versjon av integrasjonspunktet som er tidlegare enn 2.2.1 så vil ikkje den være signert. 
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -149,6 +150,7 @@ Om du ikkje har GnuPG frå før eller ynskjer meir utdjupande forklaring om korl
 ## Starte som Windows-teneste
 Vi har lagt opp til at deploymanager<tbd> kan køyrast som ei Windows-teneste vha jar-wrapperen https://github.com/kohsuke/winsw. Følg veiledninga og bruk konfigurasjonen under. Dette er same wrapper som vi har nytta for [integrasjonspunktet](https://docs.digdir.no/eformidling_ip_run.html#alt-1-kj%C3%B8re-integrasjonspunktet-som-en-tjeneste) og [einnsyn](https://docs.digdir.no/einnsyn_install_tjeneste.html) før. 
 
+> Køyrer du allereie integrasjonspunktet som ei teneste så må denne tenesta stoppes til fordel for Deploymanager<tbd> slik at det er Deploymanager<tbd> som styrer oppstart (inkl. ønska versjon) av integrasjonspunktet
 
 > Lagre konfigurasjonsfila fila som ```deploymanager-service.xml```<tbd> og *winsw.exe* fila endrast til ```deploymanager-service.exe```.<tbd>
 
