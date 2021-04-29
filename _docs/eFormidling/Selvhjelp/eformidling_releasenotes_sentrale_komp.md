@@ -8,7 +8,7 @@ sidebar: eformidling_install_sidebar
 ---
 
 
-## ServiceRegistry v2.1.3
+## ServiceRegistry 2.1.3
 29.04.2021
 
 **Endringer**
