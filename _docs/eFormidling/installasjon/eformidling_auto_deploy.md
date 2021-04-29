@@ -9,6 +9,7 @@ sidebar: eformidling_install_sidebar
 
 > Denne applikasjonen og veiledninga er tiltenkt **lokal drift** av integrasjonspunkt. Den er ikkje for å nytte i skymiljø som til dømes Azure, Google eller AWS.
 
+> Om du bruker windows tenesten på integrasjonspunktet så anbefales det å fjerne den, for å unngå at den starter opp eldre versjoner av integrasjonspunktet ved til dømes restart av server. 
 
 # Introduksjon
 Deploymanager<tbd> er ein Spring Boot-støtta applikasjon (JAR) som køyrer som ei teneste, side om side med eit integrasjonspunkt (også JAR). Den fungerar i grove trekk slik:
