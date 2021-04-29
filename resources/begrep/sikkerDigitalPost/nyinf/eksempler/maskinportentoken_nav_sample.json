@@ -1,0 +1,11 @@
+{
+    "iss": "https://maskinporten.no",
+    "scope": "dpi:send",
+    "aud": "https://api.aksesspunktleverandør.no/",
+    "consumer": {
+        "Authority": "iso6523-actorid-upis",
+        "ID": "0192:889640782" 
+    },  
+    "iat": "1621238400",
+    "exp": "1621238430"
+}
