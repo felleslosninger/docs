@@ -7,7 +7,18 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-## ServiceRegistry 2.2.0
+
+## ServiceRegistry v2.1.3
+29.04.2021
+
+**Endringer**
+* Versjonen legger til støtte for bruk av maskinporten-autentisering (i tillegg til OIDC-provider), da det er Maskinporten som vil benyttes fra integrasjonspunktet fom. versjon 2.2.1. Som en konsekvens av dette, måtte det også gjøres en endring i bruk av KRR og DSF, da endepunktene brukt frem til nå (oppslagstjenesten-rest) kun støttet OIDC provider. SR vil nå rute forespørsler med OIDC-provider- og maskinporten-tokens til henholdsvis oppslagstjenesten-rest og oppslagstjenesten-maskinporten, basert på hvilken issuer tokenet har.
+* Det er også gjort en endring ift. hvordan SR forholder seg til FIKS IO-protokoller, da vi ikke lenger vil oversette mellom eFormidling-prosesser og disse. Det åpnes for å kunne bruke alle protokoller, så lenge de er definert som søkbare i SR sitt admingrensesnitt (se https://docs.digdir.no/sr_internal_restdocs.html#fiks-api
+
+
+
+
+## ServiceRegistry 2.1.1
 20.01.2021
 
 **Endringer**
