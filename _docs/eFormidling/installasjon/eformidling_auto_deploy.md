@@ -99,7 +99,7 @@ deploymanager.schedulerCronExpression=0 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42
 
 #### Svarteliste versjon
 
-Det finnes funksjonalitet for å la applikasjonen svarteliste versjonar om den ikkje er godkjend ellerk an starte opp. Standard verdien til denne er false, men kan aktivere ved å endre properties. Det kan være fornuftig å bruke om ein ynskjer hyppig polling på kor ofte applikasjonen skal sjekke etter ny versjon.
+Det finnes funksjonalitet for å la applikasjonen svarteliste versjonar om den ikkje er godkjend eller klarer starte opp. Standard verdien til denne er false, men kan aktivere ved å endre properties. Det kan være fornuftig å bruke om ein ynskjer hyppig polling på kor ofte applikasjonen skal sjekke etter ny versjon.
 
 ```
 deploymanager.blacklist.enabled=true
