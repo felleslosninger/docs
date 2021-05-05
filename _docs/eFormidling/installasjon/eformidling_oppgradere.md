@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere integrasjonspunktet
 
-[Nyeste versjonen av integrasjonspuntket lastes ned her.](https://docs.digdir.no/eformidling_download_ip.html)
+[Nyeste versjon av integrasjonspunktet lastes ned her.](https://docs.digdir.no/eformidling_download_ip.html)
 
 
 Hva må gjøres? 
