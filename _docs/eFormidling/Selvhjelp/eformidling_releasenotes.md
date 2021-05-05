@@ -7,6 +7,23 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.2.1
+05.05.2021
+
+### Hva er endret/nytt?
+
+**Features**
+
+Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det er en forutsetning for bl.a. bruk av på-vegne-av funksjonalitet (delegering) for DPO. I tillegg inneholder den flere mindre feilrettinger og endringer:
+
+* Ved bruk av DPF, kan SvarInn nå skrus av separat via property “difi.move.fiks.inn.enable”. Denne har standardverdi tilsvarende “difi.move.feature.enableDPF“.
+* På-vegne-av DPV hadde feil avsender i varseltekst. Denne settes nå til organisasjonen som blir sendt på vegne av.
+* Egendefinert DPV varslingstekst støtter nå substitusjonsvariabelen “$reporterName$“ (i tillegg til allerede eksisterende “$reporteeName$“) .
+* Ifm. overgangen til Maskinporten, benyttes nå en nyere versjon av DSF som støtter flere adresselinjer. Integrasjonspunktet vil automatisk tilordne adresselinjene til feltene i forretningsmeldingen “urn:no:difi:digitalpost:xsd:fysisk::print“, men det er ikke gjort endringer i grensesnittet til kapabilitetsoppslag. Her vil adresselinjene ligge separert med semikolon (;) i “street”-feltet.
+* For å støtte en enklere overgangsfase for sakarkiv-leverandører ved implementasjon av eFormidling 2.0-grensesnittet, har vi fjernet kravet om UUID i ReceiverRef i SBDH. Denne valideringen vil bli gjeninnført ved et senere tidspunkt.
+* [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon) 	146.192.252.50:443 - maskinporten.no
+
+
 ## 2.2.0
 09.02.2021
 
