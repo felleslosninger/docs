@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere integrasjonspunktet
 
-Nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.2.0/integrasjonspunkt-2.2.0.jar) 
+[Nyeste versjonen av integrasjonspuntket lastes ned her.](https://docs.digdir.no/eformidling_download_ip.html)
 
 
 Hva må gjøres? 
