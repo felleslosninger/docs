@@ -10,9 +10,9 @@ sidebar: eformidling_install_sidebar
 
 ### [Siste versjon av integrasjonspunktet kan lastes ned her (2.2.1)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.1/integrasjonspunkt-2.2.1.jar)
 
-### [OBS. 2.2.1 krever ny brannmuråpning] (https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
+### [OBS. 2.2.1 krever ny brannmuråpning](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
 
-### [Endringslogg finner du her](../eformidling_releasenotes.html)
+### [Endringslogg](../eformidling_releasenotes.html)
 
 ### Versjonering 
 
