@@ -1,7 +1,7 @@
 ---
 title: Automatisk oppdatering av integrasjonspunkt
-description: Korleis sette opp og bruke deploy manager<tbd>
-summary: "Sette opp deploy manager<tbd> for automatisk oppdatering av integrasjonspunktet"
+description: Korleis sette opp og bruke deploymanager<tbd>
+summary: "Sette opp deploymanager<tbd> for automatisk oppdatering av integrasjonspunktet"
 permalink: eformidling_auto_deploy.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
@@ -97,15 +97,15 @@ deploymanager.schedulerCronExpression=0 0 12 ? * SAT,SUN
 deploymanager.schedulerCronExpression=0 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * ? * *
 ```
 
-#### Svarteliste versjon
+#### Blokkere versjonar
 
-Det finnes funksjonalitet for å la applikasjonen svarteliste versjonar om den ikkje er godkjend eller klarer starte opp. Standard verdien til denne er false, men kan aktivere ved å endre properties. Det kan være fornuftig å bruke om ein ynskjer hyppig polling på kor ofte applikasjonen skal sjekke etter ny versjon.
+Det finnes funksjonalitet for å la applikasjonen blokkliste versjonar om den ikkje er godkjend eller klarer starte. Standard verdien til denne er false, men kan aktivere ved å endre properties. Det kan være fornuftig å bruke om ein ynskjer hyppig polling på kor ofte applikasjonen skal sjekke etter ny versjon.
 
 ```
-deploymanager.blacklist.enabled=true
+deploymanager.blocklist.enabled=true
 ```
 
-Ein kan fjerne ein svartelista versjon ved å slette den frå katalogen.
+Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste [schedulerte tidspunkt.](###Setje-tidspunkt-for-oppdatering)
 
 ## Verifisere sertifikatet
 Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen. Det er viktig å verifisere signatur på *deploymanager.jar*, og dersom ein velger å laste ned integrasjonspunktet manuelt er det viktig å verifisere denne .jar fila også. Om du allereie har ein køyrande versjon av integrasjonspunktet som er tidlegare enn 2.2.1 så vil ikkje den være signert. 
