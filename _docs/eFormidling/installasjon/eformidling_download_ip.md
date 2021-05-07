@@ -15,9 +15,12 @@ sidebar: eformidling_install_sidebar
 ### [Integrasjonspunktet 2.2.1 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.1/images/sha256-cfa5b7907[…]05e86e31daa16c9a0da893cd3d32fbc2c4068a941fdea?context=explore)
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
+
 ___
+
 ### [Endringslogg](../eformidling_releasenotes.html)
 ___
+
 ### Versjonering 
 
 eFormidling følger semantisk versjonering https://semver.org/ for å vise hvor omfattende endringer mellom forskjellige versjoner er. 
