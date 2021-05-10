@@ -10,9 +10,11 @@ sidebar: eformidling_install_sidebar
 
 ### Siste versjon av integrasjonspunktet kan lastes ned her
  
-### [Integrasjonspunktet 2.2.1 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.1/integrasjonspunkt-2.2.1.jar)
+> 10.05.2021: Vi har identifisert et problem knyttet til versjon 2.2.1. Dette kan påvirke enkelte virksomheter. Vi har derfor midlertidig fjernet nedlastingslenkene til versjon 2.2.1
 
-### [Integrasjonspunktet 2.2.1 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.1/images/sha256-cfa5b79074e2667164105e86e31daa16c9a0da893cd3d32fbc2c4068a941fdea?context=explore)
+
+### [Integrasjonspunktet 2.2.0 (JAR)](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.2.0/integrasjonspunkt-2.2.0.jar)
+
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
 
