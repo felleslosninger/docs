@@ -536,7 +536,7 @@
 		
 		"adresseInformasjon": {
 			"type": "object",
-			"$id": "#/definitions/adressseInfo",
+			"$id": "#/definitions/adresseInformasjon",
 			"additionalProperties": false,
 			"properties": {
 				"navn": {
