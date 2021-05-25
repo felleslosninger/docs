@@ -14,8 +14,10 @@ sidebar: dpi_sidebar
 | Kontaktinformasjon | Avsendere kan varsle innbygger ut fra kontaktinformasjon som innbygger selv har lagt til i [kontakt-og reservasjonsregisteret](krr_index.html). Dette kan være epost til oppgitt [epostaddresse](ot_epostadresse.html) og/eller sms til oppgitt [mobiltelefonnummer](mobiltelefonnummer.html) |
 | Kommentar | Varslinger i digital postkasse til innbyggere sendes kun til Innbygger dersom innbygger ikke har gjort seg kjent med brevet. Det vil si at varslinger bestilt av virksomheter kun blir sendt Innbygger dersom innbygger ikke har vært inn i postkassen og behandlet brevet |
 
+<!--- 
 - [Når skal avsendere varsle innbygger om digitale forsendelser?](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/dokumentasjon/hvordan-skal-jeg-bruke-varsling-i-digital-postkasse) (artikkel i samarbeidsportalen)
-
+ --->
+ 
 - Avsenderstyrt varsling settes opp i [sdp_melding.xsd](sdp_skjema.html) og er en del av en [DigitalPostMelding](sdp_digitalpostmeldinger.html)
 
 - Beskrivelse av [varslingsinnstillinger (med eksempler)](sdp_varsler.html)
