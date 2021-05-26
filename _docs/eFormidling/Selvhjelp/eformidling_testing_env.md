@@ -81,6 +81,7 @@ Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra gr
 
 
 **Brukernavn og passord som brukes i integrasjonspunktet**
+
 Ta kontakt med svarut-utvikling@ks.no og si at dere skal teste SvarUt/SvarInn gjennom eformidling så får dere testbrukere.
 
 **Testvirksomheter**
