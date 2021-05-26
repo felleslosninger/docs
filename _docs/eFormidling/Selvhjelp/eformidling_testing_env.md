@@ -19,7 +19,7 @@ Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til `
 
 Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du [her](eformidling_ip_run.html)
 
-### Digital post til virksomheter(DPV)
+### Digital post til virksomheter (DPV)
 
 **Brukernavn og passord som brukes i integrasjonspunktet**
 
@@ -41,7 +41,7 @@ For å logge inn i Altinn sitt testmiljø bruker du denne lenken <a href="https:
 | 910568655 | AUKLANDSHAMN OG ELVEGARD | BEDR |
 
 
-### Digital post til offentlige virksomheter(DPO)
+### Digital post til offentlige virksomheter (DPO)
 
 **Brukernavn og passord som brukes i integrasjonspunktet**
 
@@ -77,6 +77,15 @@ Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra gr
 
 ![](/images/eformidling/sakarkiv_flyt.PNG)
 
+### Digital post til SvarInn/SvarUt (DPF)
+
+
+**Brukernavn og passord som brukes i integrasjonspunktet**
+Ta kontakt med svarut-utvikling@ks.no og si at dere skal teste SvarUt/SvarInn gjennom eformidling så får dere testbrukere.
+
+**Testvirksomheter**
+
+Dere kan sende til orgnummer 910229028.
 
 **NB! Ønsker virksomheten å teste eInnsyn? Ta kontakt med servicedesk@digdir.no**
 
