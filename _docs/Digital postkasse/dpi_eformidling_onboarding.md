@@ -49,7 +49,7 @@ Sertifikatet må legges inn i en JKS (Java Key Store) og det gjør en slik:
 2. Trykk 'File' og 'Open'. Naviger til der sertifikatet ligger og åpne.
 3. Trykk 'Tools' og så 'Change KeyStore type'. Velg JKS.
 4. Trykk 'File' og 'Save As'. Lagre filen som navn.jks. 
-Eksempel: *myKeystore.jks*
+Eksempel: *MinKeystore.jks*
 
 Vi anbefaler at dere beholder passordet som kom med sertifikatet.
 
@@ -63,6 +63,10 @@ Det kan eksporteres slik i Key Store Explorer:
 3. La alt stå som det er og lagre som en .cer fil. 
 Eksempel: *MittPublicSertifikat.cer*
 
+Send så filen til servicedesk@digdir.no.
+
 ## Nedlasting og installasjon av integrasjonspunktet
+
+
 
 ## Oppsett og oppstart av integrasjonspunktet
