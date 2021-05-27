@@ -14,6 +14,8 @@ TODO: Kvifor virksomheiter må gå over til å bruke integrasjonspunktet.
 
 ## Krav og forutsetninger
 
+Denne guiden er en steg-for-steg guide for hvordan en installerer integrasjonspunktet som en Windows tjeneste. 
+
 Dette må gjøres før du går i gang med installering.
 
 - Installere Java 8 på serveren der integrasjonspunktet skal kjøre fra.
@@ -26,6 +28,7 @@ Den kan lastes ned [her](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=h
 - Sjekk at serveren er synkronisert med NTP (Network Time Protocol). Kan gjøres ved å trykke [her.](https://time.is/)
 
 - Bestille virksomhetssertifikat til din virksomhet fra enten [Commfides](https://www.commfides.com/commfides-virksomhetssertifikat/bestilling-commfides-virksomhetssertifikat/) eller [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge).
+
 
 ### Brannmuråpninger
 
