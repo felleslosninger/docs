@@ -65,8 +65,12 @@ Eksempel: *MittPublicSertifikat.cer*
 
 Send så filen til servicedesk@digdir.no.
 
-## Nedlasting og installasjon av integrasjonspunktet
+## Nedlasting av integrasjonspunktet og andre ressurser
 
+For å installere og kjøre integrasjonspunktet må en laste ned disse:
 
+- (Integrasjonspunktet.jar)[https://docs.digdir.no/eformidling_download_ip.html#integrasjonspunktet-221-jar]
+- (Winsw.exe)[https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW.NET4.exe]
+- (Konfigurasjonsfil.xml)[link her]
 
-## Oppsett og oppstart av integrasjonspunktet
+## Installasjon og oppsett av integrasjonspunktet
