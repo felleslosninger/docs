@@ -25,6 +25,8 @@ Den kan lastes ned [her](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=h
 
 - Sjekk at serveren er synkronisert med NTP (Network Time Protocol). Kan gjøres ved å trykke [her.](https://time.is/)
 
+- Bestille virksomhetssertifikat fra enten [Commfides](https://www.commfides.com/commfides-virksomhetssertifikat/bestilling-commfides-virksomhetssertifikat/) eller [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge).
+
 ### Brannmuråpninger
 
 Digdirs endepunkter er eksponert ut mot Internett, men det må åpnes for trafikk inn og ut mot disse IP-adressene fra server:
@@ -37,6 +39,10 @@ Digdirs endepunkter er eksponert ut mot Internett, men det må åpnes for trafik
 | maskinporten.no | 146.192.252.50:443 |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443 |
 
-## Installering
+## Håndtering av virksomhetssertifikat
+
+
+
+## Installasjon
 
 ## Oppsett og oppstart av integrasjonspunktet
