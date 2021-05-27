@@ -69,9 +69,9 @@ Send så filen til servicedesk@digdir.no.
 
 For å installere og kjøre integrasjonspunktet må en laste ned disse ressursene:
 
-- [Integrasjonspunktet.jar](https://docs.digdir.no/eformidling_download_ip.html#integrasjonspunktet-221-jar)
-- [Winsw.exe](https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW.NET4.exe)
-- [Konfigurasjonsfil.xml](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.xml)
+- [Integrasjonspunktet](https://docs.digdir.no/eformidling_download_ip.html#integrasjonspunktet-221-jar)
+- [Winsw](https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW.NET4.exe)
+- [Konfigurasjonsfil](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.xml)
 - [Propertiesfil](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.properties)
 
 ## Installasjon og oppsett av integrasjonspunktet
