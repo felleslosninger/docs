@@ -17,7 +17,7 @@ TODO: Kvifor virksomheiter må gå over til å bruke integrasjonspunktet.
 Dette må gjøres før du går i gang med installering.
 
 - Installere Java 8 på serveren der integrasjonspunktet skal kjøre fra.
-Den kan lastes ned her og er gratis: https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot
+Den kan lastes ned [her](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot) og er gratis.
 
 - Installere Key Store Explorer for håndtering av virksomhetssertifikat (gratis). [Last ned.](http://keystore-explorer.org/downloads.html)
 
