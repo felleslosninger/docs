@@ -49,7 +49,7 @@ Sertifikatet må legges inn i en JKS (Java Key Store) og det gjør en slik:
 2. Trykk 'File' og 'Open'. Naviger til der sertifikatet ligger og åpne.
 3. Trykk 'Tools' og så 'Change KeyStore type'. Velg JKS.
 4. Trykk 'File' og 'Save As'. Lagre filen som navn.jks. 
-Eksempel: myKeystore.jks
+Eksempel: *myKeystore.jks*
 
 Vi anbefaler at dere beholder passordet som kom med sertifikatet.
 
@@ -61,7 +61,7 @@ Det kan eksporteres slik i Key Store Explorer:
 1. Bruk Åpne JKSen du nettopp laget.
 2. Høyreklikk på sertifikatet som ligger i keystoren, finn 'Export' og trykk så på 'Export Certificate Chain'.
 3. La alt stå som det er og lagre som en .cer fil. 
-Eks: MittPublicSertifikat.cer
+Eksempel: *MittPublicSertifikat.cer*
 
 ## Nedlasting og installasjon av integrasjonspunktet
 
