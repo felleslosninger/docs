@@ -74,4 +74,28 @@ For å installere og kjøre integrasjonspunktet må en laste ned disse ressursen
 - [Konfigurasjonsfil](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.xml)
 - [Propertiesfil](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.properties)
 
-## Installasjon og oppsett av integrasjonspunktet
+## Oppsett og intallasjon av integrasjonspunktet
+
+Begynn med å lage en ny mappe der du legger alle ressursene du lastet ned. Anbefaler at dere også legger JKSen der, men det er valgfritt.
+Følg så stegene under:
+
+1. Navngi xml-og exe-filen slik at de har samme navn. Det er viktig at disse er like.
+2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen.
+3. Integrasjonspunktmappen bør se slik ut nå:
+bilde her
+4. Åpne kommandovindu som administrator. Naviger frem til integrasjonspunktmappen.
+5. Kjør denne kommandoen for installasjon:
+```
+mitt-integrasjonspunkt.exe install
+```
+6. For å starte integrasjonspunktet bruk denne kommandoen:
+```
+mitt-integrasjonspunkt.exe start
+```
+Du kan se om tjenesten kjører i Windows Services. Den kan du også bruke til å stoppe/starte integrasjonspunktet.
+
+Etter installering og oppstart bør integrasjonspunktmappen se slik ut:
+bilde her
+
+
+
