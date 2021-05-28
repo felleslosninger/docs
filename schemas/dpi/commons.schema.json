@@ -116,6 +116,6 @@
 					"description": "Base64 encoded Hash av den krypterte Dokumentpakken"
 				}
 			}
-		},
+		}
     }
 }
