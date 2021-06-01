@@ -66,6 +66,14 @@ Følgende scopes støttes utover `openid profile`:
 |idporten:utland:fhnummer|fhnummer|Nei|Nasjonalt Felles Hjelpenummer|FH-nummer finnes i Personregisteret til Norsk Helsenett. idporten-utland vil rekvirere et nytt FH-nummer for hver ny eID første gang den logger på.|
 |idporten:utland:contactinfo|mobile <br/> email |Nei|Selv-registrerte kontaktopplysninger | idporten-utland vil spørre brukeren om å oppgi epost og mobilnummer, og lagrer dette. Kontaktopplysningene blir ikke validert, og bruker kan også endre de ifht de som er registert hos eIDen. |
 
+Følgende claims er viktige:
+
+|claim|eksempel|Navn|Forklaring|
+|-|-|-|-|-|-|
+|acr|low| Authentication Context Class Reference. |Forespurt sikkerhetsnivå. Apple/Google-id har verdien `low`. Under testing kan en bruke TestID som der en kan velge mellom `Level3` eller `Level4`|
+
+
+
 
 
 ## Claims i id_token
