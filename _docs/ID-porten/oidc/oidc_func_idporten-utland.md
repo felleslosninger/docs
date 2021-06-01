@@ -93,7 +93,9 @@ Standard OIDC / oauth2 claims
 |exp|-|expires at| id_token utløper tidspunkt|
 
 
-#### Eksempel på id-token:
+#### Eksempel på id-token
+
+I dette tilfellet har klienten forespurt scope `openid idporten:utland:fhnummer idporten:utland:contactinfo`
 ```
     {
       "sub" : "en pseodonym identifikator",
