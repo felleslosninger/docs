@@ -42,7 +42,7 @@
                     "authority": "iso6523-actorid-upis",
                     "value": "0192:999888999"                    
                 },
-                "avsenderindentifikator": "123456",
+                "avsenderidentifikator": "123456",
                 "fakturaReferanse": "987654"
 
             },

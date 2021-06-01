@@ -41,7 +41,7 @@
                 "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
                     "value": "0192:972417866",
-                    "avsenderindentifikator": "budnad"                    
+                    "avsenderidentifikator": "budnad"                    
                 }
             },
             "mottaker": {
