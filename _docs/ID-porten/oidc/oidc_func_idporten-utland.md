@@ -20,7 +20,7 @@ For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den varias
 | Mijlø | Issuer | .well-known |
 |-|-|-|
 |PROD| tbd | tbd|
-|PREPROD| [https://idporten-utland-test.digdir.eon.no/c2id/](https://idporten-utland-test.digdir.eon.no/c2id/) | [https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration](https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration) |
+|PREPROD| https://idporten-utland-test.digdir.eon.no/c2id | [https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration](https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration) |
 
 
 idporten-utland kjører i et eget, Kubernetes-basert on-prem driftsmiljø hos driftsleverandør TietoEvry.
@@ -61,11 +61,9 @@ Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er le
 Følgende scopes støttes utover `openid profile`:
 
 
-UTKAST !!!
-
 |scope|claims|[IdAA-verified-struktur](https://openid.net/specs/openid-connect-4-identity-assurance-1_0.html)|Beskrivelse|Forklaring|
 |-|-|-|-|-|-|
-|idporten:utland:fhnummer|fhnummer|Nei|Nasjonalt Felles Hjelpenummer|FH-nummer finnes i Personregisteret til Norsk Helsenett. Utlendingsporten vil rekvirere et nytt FH-nummer for hver ny eID første gang den logger på.|
+|idporten:utland:fhnummer|fhnummer|Nei|Nasjonalt Felles Hjelpenummer|FH-nummer finnes i Personregisteret til Norsk Helsenett. idporten-utland vil rekvirere et nytt FH-nummer for hver ny eID første gang den logger på.|
 |idporten:utland:contactinfo|mobile <br/> email |Nei|Selv-registrerte kontaktopplysninger | idporten-utland vil spørre brukeren om å oppgi epost og mobilnummer, og lagrer dette. Kontaktopplysningene blir ikke validert, og bruker kan også endre de ifht de som er registert hos eIDen. |
 
 
@@ -98,8 +96,8 @@ Standard OIDC / oauth2 claims
 #### Eksempel på id-token:
 ```
     {
-      "sub" : "asdfasfasdf",
-      "iss" : "https://c2id-demo.westeurope.cloudapp.azure.com/c2id",
+      "sub" : "en pseodonym identifikator",
+      "iss" : "https://idporten-utland-test.digdir.eon.no/c2id",
       "aud" : "b7198ea6-14f0-488f-bb9a-206993ad28bc",
       "iat" : 1616765456,
       "exp" : 1616765576,
@@ -111,6 +109,8 @@ Standard OIDC / oauth2 claims
       "acr" : "low",
       "amr" : [ "Apple" ],  
       "fhnummer": "17012054321",
+      "mobile": "+4799998888"
+      "email": "email@example.com"
 
     }
 ```     
