@@ -1,15 +1,12 @@
 ---
 title: idporten-utland
 description: ID-porten utland
-summary: "**idporten-utland** er en ny nasjonal fellestjeneste for brukere som mangler F/D-nummer i norsk folkeregister. "
+summary: "idporten-utland er en ny nasjonal fellestjeneste for brukere som mangler F/D-nummer i norsk folkeregister. "
 permalink: oidc_func_idporten-utland.html
 sidebar: oidc
 product: ID-porten
 ---
 
-## Om
-
-**idporten-utland** er en ny nasjonal fellestjeneste for brukere som mangler F/D-nummer i norsk folkeregister.
 
 Løsningen baserer seg på gjenbruk av eID-løsninger som brukeren allerede har, som Google/Apple-ID. På denne måten slipper brukeren å måtte lage nok en brukerkonto med passord som lett kan glemmes.  Alle som har en smart-telefon har en slik eID.
 
@@ -23,7 +20,7 @@ For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den varias
 | Mijlø | Issuer | .well-known |
 |-|-|-|
 |PROD| tbd | tbd|
-|PREPROD| https://idporten-utland-test.digdir.eon.no/c2id/ |https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration|
+|PREPROD| [https://idporten-utland-test.digdir.eon.no/c2id/](https://idporten-utland-test.digdir.eon.no/c2id/) | [https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration](https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration) |
 
 
 idporten-utland kjører i et eget, Kubernetes-basert on-prem driftsmiljø hos driftsleverandør TietoEvry.
