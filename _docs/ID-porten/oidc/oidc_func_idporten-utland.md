@@ -84,6 +84,7 @@ id_tokenet er
 
 
 Standard OIDC / oauth2 claims
+
 |claim|eksempel|Navn|Forklaring|
 |-|-|-|-|
 |iss||issuer|idporten-utland sin issuer-verdi|
@@ -96,6 +97,7 @@ Standard OIDC / oauth2 claims
 #### Eksempel på id-token
 
 I dette tilfellet har klienten forespurt scope `openid idporten:utland:fhnummer idporten:utland:contactinfo`
+
 ```
     {
       "sub" : "en pseodonym identifikator",
