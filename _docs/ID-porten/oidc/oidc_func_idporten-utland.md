@@ -27,17 +27,17 @@ idporten-utland kjører i et eget, Kubernetes-basert on-prem driftsmiljø hos dr
 
 Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er lett å integrere mot den.  Det er ennå ikke lagt til eget valg for idporten-utland som  `integration_type` i Samarbeidsportalen, slik at alle  integrasjoner som virker i den "vanlige" ID-porten (OIDC) også virker mot id-porten utland.  Vi anbefaler dog at kunder oppretter egne integrasjoner spesifikt for idporten-utland. For testmiljø er det VER2 som gjelder.
 
-**Merk:** Pga. en intern begrensning er det kun klienter registert med 1 og bare 1 redirect-uri som virker i idporten-utland p.t.
+**Merk:** Pga. en intern begrensning er det kun klienter registert via Selvbetjening med 1 og bare 1 redirect-uri som virker i idporten-utland p.t.
 
+**Merk:** Provideren støtter ikke alle protokoll-varianter som er annonsert på .well-known-endepunktet
 
 
 
 ## Protokoll
 
 * Bruker OIDC med oauth2.1 i botn,  dvs authorization-code-flow med  PKCE+state+nonce er påkrevd for alle klienter.
-  * ikkje støtte for PAR i første versjon
 
-* klienter bruker primært scopes for å få de sektor-spesifikke identifikatorene de ønsker
+* Klienter bruker primært scopes for å få de sektor-spesifikke identifikatorene de ønsker
 
     * t.d `idporten:utland:fhnummer` dersom klienten ønsker Nasjonalt Felles Hjelpenummer
 
@@ -46,13 +46,17 @@ Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er le
     * `openid profile` er ein gyldig kombinasjon, dvs. lov å logge inn utan noko beriking eller kobling
 
 
-* klienter må håndere et bredt mulighetsrom av “sikkerhetsnivå”,  dvs. en innlogget bruker kan ha:
+* Klienter må håndere et bredt mulighetsrom av “sikkerhetsnivå”,  dvs. en innlogget bruker kan ha:
 
     * svak eller sterk identitetskontroll
 
     * svake eller sterke autentiseringsmekanismer
 
     * svake eller sterke koblinger til nasjonale/sektorvise norske identifikatorer
+
+* OP-initiert logout (både front-channel og back-channel) er p.t. ikkje støtta
+
+*
 
 
 ## Authentication request
@@ -64,47 +68,41 @@ Følgende scopes støttes utover `openid profile`:
 |scope|claims|[IdAA-verified-struktur](https://openid.net/specs/openid-connect-4-identity-assurance-1_0.html)|Beskrivelse|Forklaring|
 |-|-|-|-|-|-|
 |idporten:utland:fhnummer|fhnummer|Nei|Nasjonalt Felles Hjelpenummer|FH-nummer finnes i Personregisteret til Norsk Helsenett. idporten-utland vil rekvirere et nytt FH-nummer for hver ny eID første gang den logger på.|
-|idporten:utland:contactinfo|mobile <br/> email |Nei|Selv-registrerte kontaktopplysninger | idporten-utland vil spørre brukeren om å oppgi epost og mobilnummer, og lagrer dette. Kontaktopplysningene blir ikke validert, og bruker kan også endre de ifht de som er registert hos eIDen. |
 
-Følgende claims er viktige:
+
+Følgende claims er viktige å få korrekt i requesten:
 
 |claim|eksempel|Navn|Forklaring|
 |-|-|-|-|-|-|
-|acr|low| Authentication Context Class Reference. |Forespurt sikkerhetsnivå. Apple/Google-id har verdien `low`. Under testing kan en bruke TestID som der en kan velge mellom `Level3` eller `Level4`|
+|acr|low| Authentication Context Class Reference. |Forespurt sikkerhetsnivå. Apple/Google-id har verdien `low`. |
 
 
 
+## Autentiseringsrespons (id_token)
 
 
-## Claims i id_token
+### Testbrukere
+Man må opprette egne google/apple-brukere for å teste idporten-utland.  
 
-id_tokenet er
+Eventelt kan man bruke "TestID", og fylle ut et norsk syntaktisk gyldig fødselsnummer, så lenge man bruker nummer som ikke er tildelt ekte personer (altså finnes i produksjon i Folkeregisteret). Vi anbefaler å bruke syntetiske fødselsnummer, dvs. nummer som har 80 som verdi for måned.
+
+### Claims i id_token
 
 |claim|eksempel|Navn|Forklaring|
 |-|-|-|-|-|-|
 |sub||subject identifier|Basert på klient-konfigurasjon, enten en [pairwise verdi](https://openid.net/specs/openid-connect-core-1_0.html#PairwiseAlg) (dvs forskjellige sub-verdier mellom ulike klienter for samme brukerkonto ), eller [public verdi](https://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes) lik bruker-id i idporten-utlands brukerdatabase.
-|acr|low| Authentication Context Class Reference. |Sikkerhetsnivå.  Apple/Google-id har verdien `low`.|
-|amr| `["apple"]` | Authentication Methods References|Innloggingsmetode / eID.|
-|fhnummer| 87012054321| Felles Nasjonal Hjelpenumme| Revirert fra Personregisteret (PREG) til Norsk Helsenett|
-|mobile|-|-|-|
-|email|-|-|-|
+|acr|low| Sikkerhetsnivå | Apple/Google-id har verdien `low`. Klient må validere at innlogging har det sikkerhetsnivået som man forespurte. |
+|amr| `["Apple"]` | Innloggingsmetode | Enten `Google` eller `Apple`.  Merk at klient bør ikke validere på disse verdiene, og heller sjekke acr.|
+|fhnummer| 87012054321| Felles Nasjonalt Hjelpenummer| Revirert fra Personregisteret (PREG) til Norsk Helsenett|
+|mobile|+4799998888|Mobilnummer|Bruker sitt selv-registrerte mobilnummer.  Innhentes av idporten-utland ved første gangs innlogging. |
+|email| email@example.com |Epost| Bruker sitt selv-registrete epost-adresse.  Innhentes av idporten-utland ved første gangs innlogging. |
 
 
-
-Standard OIDC / oauth2 claims
-
-|claim|eksempel|Navn|Forklaring|
-|-|-|-|-|
-|iss||issuer|idporten-utland sin issuer-verdi|
-|aud||audience| for id_token er dette alltid lik client_id på klienten|
-|sid||session id | innloggingssesjon.  Behøves for å kunne støtte utlogging |
-|iat|-|issued at| id_token utstedt tidspunkt|
-|exp|-|expires at| id_token utløper tidspunkt|
-
+I tillegg er det selvsagt standard OIDC / oauth2 claims i tokenet, som valideres ihht reglene i spesifikasjonen.
 
 #### Eksempel på id-token
 
-I dette tilfellet har klienten forespurt scope `openid idporten:utland:fhnummer idporten:utland:contactinfo`
+I dette tilfellet har klienten forespurt scope `openid idporten:utland:fhnummer`
 
 ```
     {
