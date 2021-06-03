@@ -10,7 +10,7 @@ Vedlikeholdsrelease for Maskinporten
 
 
 
-Releasen vart produksjonssatt 2020-06-23
+Releasen vart produksjonssatt Jun 23, 2020
 
 ## Forbetringar:
 

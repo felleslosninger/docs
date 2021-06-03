@@ -10,7 +10,7 @@ Backlog inneheld utviklingstiltak som me ikkje har starta på enno.
 
 
 
-Planlagd produksjonssetting: 2021-12-31
+Planlagd produksjonssetting: Q4 2021
 
 ## Ny funksjonalitet:
 

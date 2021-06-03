@@ -12,4 +12,4 @@ Forberedelser i ID-porten for å støtte app-innlogging med MinID.
 
 
 
-Releasen vart produksjonssatt 2021-01-26
+Releasen vart produksjonssatt Jan 26, 2021
