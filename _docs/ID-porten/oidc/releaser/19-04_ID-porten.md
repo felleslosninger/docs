@@ -10,7 +10,7 @@ Støtte for innloggingshistorikk og app-innlogginger med sentraisert revokasjon 
 
 
 
-Releasen vart produksjonssatt 2019-06-06
+Releasen vart produksjonssatt Jun 6, 2019
 
 ## Ny funksjonalitet:
 
