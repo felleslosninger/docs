@@ -34,7 +34,7 @@ Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bl
    Sluttbruker ---|2. logger inn i  |OIDC
    OIDC ---|3.sjekker|db
    OIDC ---|4. evt. rekvirerer nytt FH-nummer |reg
- </div>
+</div>
 
 
 ### Flytskjema:
