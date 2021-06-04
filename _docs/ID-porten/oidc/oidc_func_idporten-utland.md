@@ -13,6 +13,58 @@ Løsningen baserer seg på gjenbruk av eID-løsninger som brukeren allerede har,
 For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den variasjon av fagsystem og identifikatorer som er i bruk i offentlig sektor, kan kunder be om at apple/google-innloggingen blir **beriket** med norske sektor-spesifikke identifikatorer som feks Nasjonal Felles Hjelpenummer fra helsesektoren. Første gang en eID logger på vil idporten-utland rekvirere en ny sektor-identifikator fra forespurt register og lagre en permanent kobling mellom eID og identifikator i idporten-utland sin lokale brukerdatabase.  Ved senere innlogginger med samme eID, mottar derfor kunde samme sektor-identifikator.
 
 
+### Aktører som inngår:
+
+Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bli koblet på andre registre med egne sektor-identifikatorer.
+
+<div class="mermaid">
+ graph LR
+   subgraph Kunde
+      ny[Tjeneste]
+   end
+   subgraph Digdir
+     OIDC[idporten-utland]
+     db[database<br/> kobling eid - FH-nummer]
+   end
+   subgraph NHN
+      reg[PREG]
+   end
+   Sluttbruker ---|1. Vil bruke|ny
+   OIDC -->|5. videresender bruker til |ny
+   Sluttbruker ---|2. logger inn i  |OIDC
+   OIDC ---|3.sjekker|db
+   OIDC ---|4. evt. rekvirerer nytt FH-nummer |reg
+</div>
+
+
+### Flytskjema:
+
+Sekvensdiagrammet viser hva som skjer når en tjeneste trenger en innlogging med FH-nummer:
+
+<div class="mermaid">
+sequenceDiagram
+   participant U as Sluttbruker
+   participant C as Tjeneste
+   participant I as idporten-utland
+   participant P as PREG <br/> (NHN)
+
+   U ->> C: Klikker login-knapp
+   C ->> U: Redirect med autentiseringsforespørsel <br/>som etterspør FH-nummer
+   U ->> I: følg redirect...
+   note over U,I: Sluttbruker autentiserer seg med Apple/Google
+   I ->> I: Sjekk om bruker har FH-nummer fra før
+   opt Nei
+     I ->> P: Rekvirer nytt FH-nummer
+     I ->> I: lagre kobling i lokal database
+  end
+
+   I ->> U:  Redirect med autorisasjonscode
+   U ->> C: følg redirect...
+   C ->> I: forespørre token (/token)
+   I ->> C: id_token + access_token (evt. refresh_token)
+   note over U,C: Innlogget i tjenesten
+</div>
+
 
 ## Metadata, endepunkt og klientregistreringer
 
@@ -33,7 +85,19 @@ Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er le
 
 
 
-# Protokoll
+
+
+### Testbrukere
+Man må opprette egne google/apple-brukere for å teste idporten-utland.  
+
+Eventelt kan man bruke "TestID", og fylle ut et norsk syntaktisk gyldig fødselsnummer, så lenge man bruker nummer som ikke er tildelt ekte personer (altså finnes i produksjon i Folkeregisteret). Vi anbefaler å bruke syntetiske fødselsnummer, dvs. nummer som har 80 som verdi for måned.
+
+### Test-tjeneste
+Den enkleste måten å teste tjenesten på, er å logge inn til profil-sida med en testbruker: [https://idporten-utland-test.digdir.eon.no/idporten-utland-registration/](https://idporten-utland-test.digdir.eon.no/idporten-utland-registration/)
+
+Alternativ kan man bruke en teknisk test-klient dersom man vil utforske selve protokollen mer: [https://idporten-utland-test.digdir.eon.no/idporten-test-client/](https://idporten-utland-test.digdir.eon.no/idporten-test-client/)
+
+# Grensesnittsdefinisjon
 
 * Bruker OIDC med oauth2.1 i botn,  dvs authorization-code-flow med  PKCE+state+nonce er påkrevd for alle klienter.
 
@@ -80,11 +144,6 @@ Følgende claims er viktige å få korrekt i requesten:
 
 ## Autentiseringsrespons (id_token)
 
-
-### Testbrukere
-Man må opprette egne google/apple-brukere for å teste idporten-utland.  
-
-Eventelt kan man bruke "TestID", og fylle ut et norsk syntaktisk gyldig fødselsnummer, så lenge man bruker nummer som ikke er tildelt ekte personer (altså finnes i produksjon i Folkeregisteret). Vi anbefaler å bruke syntetiske fødselsnummer, dvs. nummer som har 80 som verdi for måned.
 
 ### Claims i id_token
 
