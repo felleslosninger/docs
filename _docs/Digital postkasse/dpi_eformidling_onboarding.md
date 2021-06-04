@@ -21,7 +21,7 @@ Dette må gjøres før du går i gang med installering.
 - Installere Java 8 på serveren der integrasjonspunktet skal kjøre fra.
 Den kan lastes ned [her](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot) og er gratis.
 
-!(https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/OpenJDK.png)
+![Sånn installerer du OpenJDK](https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/OpenJDK.png)
 
 - Installere Key Store Explorer for håndtering av virksomhetssertifikat (gratis). [Last ned.](http://keystore-explorer.org/downloads.html)
 
@@ -68,7 +68,7 @@ Det kan eksporteres slik i Key Store Explorer:
 3. La alt stå som det er og lagre som en .cer fil. 
 Eksempel: *MittPublicSertifikat.cer*
 
-!(https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/JKS.png)
+![Slik eksporterer du public key](https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/JKS.png)
 
 Send så filen til servicedesk@digdir.no.
 
@@ -89,7 +89,7 @@ Følg så stegene under:
 1. Navngi xml-og exe-filen slik at de har samme navn. Det er viktig at disse er like.
 2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen.
 3. Integrasjonspunktmappen bør se slik ut nå:
-!(https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/mappe%20pre-install.png)
+![Mappen pre-install](https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/mappe%20pre-install.png)
 4. Åpne kommandovindu som administrator. Naviger frem til integrasjonspunktmappen.
 5. Kjør denne kommandoen for installasjon:
 ```
@@ -102,7 +102,7 @@ mitt-integrasjonspunkt.exe start
 Du kan se om tjenesten kjører i Windows Services. Den kan du også bruke til å stoppe/starte integrasjonspunktet.
 
 Etter installering og oppstart bør integrasjonspunktmappen se slik ut:
-!(https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/mappe%20post-install.png)
+![Mappen post-install](https://github.com/difi/felleslosninger/blob/gh-pages/images/eformidling/mappe%20post-install.png)
 
 
 
