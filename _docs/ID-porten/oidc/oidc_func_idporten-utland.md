@@ -83,7 +83,17 @@ Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er le
 
 
 
-# Protokoll
+
+
+### Testbrukere
+Man må opprette egne google/apple-brukere for å teste idporten-utland.  
+
+Eventelt kan man bruke "TestID", og fylle ut et norsk syntaktisk gyldig fødselsnummer, så lenge man bruker nummer som ikke er tildelt ekte personer (altså finnes i produksjon i Folkeregisteret). Vi anbefaler å bruke syntetiske fødselsnummer, dvs. nummer som har 80 som verdi for måned.
+
+### Test-tjeneste
+Den enkleste måten å teste tjenesten på, er å logge inn til profil-sida med en testbruker: [https://idporten-utland-test.digdir.eon.no/idporten-utland-registration/](https://idporten-utland-test.digdir.eon.no/idporten-utland-registration/)
+
+# Grensesnittsdefinisjon
 
 * Bruker OIDC med oauth2.1 i botn,  dvs authorization-code-flow med  PKCE+state+nonce er påkrevd for alle klienter.
 
@@ -130,11 +140,6 @@ Følgende claims er viktige å få korrekt i requesten:
 
 ## Autentiseringsrespons (id_token)
 
-
-### Testbrukere
-Man må opprette egne google/apple-brukere for å teste idporten-utland.  
-
-Eventelt kan man bruke "TestID", og fylle ut et norsk syntaktisk gyldig fødselsnummer, så lenge man bruker nummer som ikke er tildelt ekte personer (altså finnes i produksjon i Folkeregisteret). Vi anbefaler å bruke syntetiske fødselsnummer, dvs. nummer som har 80 som verdi for måned.
 
 ### Claims i id_token
 
