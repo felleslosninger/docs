@@ -15,7 +15,9 @@ For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den varias
 
 ### Aktører som inngår:
 
- <div class="mermaid">
+Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bli koblet på andre registre med egne sektor-identifikatorer.
+
+<div class="mermaid">
  graph LR
   Sluttbruker ---|1. Vil bruke|ny
 
@@ -38,8 +40,9 @@ For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den varias
 
 ### Flytskjema:
 
+Sekvensdiagrammet viser hva som skjer når en tjeneste trenger en innlogging med FH-nummer:
 
- <div class="mermaid">
+<div class="mermaid">
  sequenceDiagram
    participant U as Sluttbruker
    participant C as Tjeneste
@@ -61,7 +64,7 @@ For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den varias
    C ->> I: forespørre token (/token)
    I ->> C: id_token + access_token (evt. refresh_token)
    note over U,C: Innlogget i tjenesten
- </div>
+</div>
 
 
 ## Metadata, endepunkt og klientregistreringer
