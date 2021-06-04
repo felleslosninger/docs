@@ -93,6 +93,8 @@ Eventelt kan man bruke "TestID", og fylle ut et norsk syntaktisk gyldig fødsels
 ### Test-tjeneste
 Den enkleste måten å teste tjenesten på, er å logge inn til profil-sida med en testbruker: [https://idporten-utland-test.digdir.eon.no/idporten-utland-registration/](https://idporten-utland-test.digdir.eon.no/idporten-utland-registration/)
 
+Alternativ kan man bruke en teknisk test-klient dersom man vil utforske selve protokollen mer: [https://idporten-utland-test.digdir.eon.no/idporten-test-client/](https://idporten-utland-test.digdir.eon.no/idporten-test-client/)
+
 # Grensesnittsdefinisjon
 
 * Bruker OIDC med oauth2.1 i botn,  dvs authorization-code-flow med  PKCE+state+nonce er påkrevd for alle klienter.
