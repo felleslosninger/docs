@@ -24,7 +24,7 @@ Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bl
    end
    subgraph Digdir
      OIDC[idporten-utland]
-     db[(kobling eid - FH-nummer)]
+     db[database<br/> kobling eid - FH-nummer]
    end
    subgraph NHN
       reg[(PREG)]
