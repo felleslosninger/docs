@@ -46,10 +46,10 @@ sequenceDiagram
    participant U as Sluttbruker
    participant C as Tjeneste
    participant I as idporten-utland
-   participant P as PREG [[NHN]]
+   participant P as PREG <br/> (NHN)
 
    U ->> C: Klikker login-knapp
-   C ->> U: Redirect med autentiseringsforespørsel som etterspør FH-nummer
+   C ->> U: Redirect med autentiseringsforespørsel <br/>som etterspør FH-nummer
    U ->> I: følg redirect...
    note over U,I: Sluttbruker autentiserer seg med Apple/Google
    I ->> I: Sjekk om bruker har FH-nummer fra før
@@ -58,7 +58,7 @@ sequenceDiagram
      I ->> I: lagre kobling i lokal database
   end
 
-   I ->> U: Sluttbruker: Redirect med autorisasjonscode
+   I ->> U:  Redirect med autorisasjonscode
    U ->> C: følg redirect...
    C ->> I: forespørre token (/token)
    I ->> C: id_token + access_token (evt. refresh_token)
