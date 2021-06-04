@@ -27,7 +27,7 @@ Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bl
      db[database<br/> kobling eid - FH-nummer]
    end
    subgraph NHN
-      reg[(PREG)]
+      reg[PREG]
    end
    Sluttbruker ---|1. Vil bruke|ny
    OIDC -->|5. videresender bruker til |ny
