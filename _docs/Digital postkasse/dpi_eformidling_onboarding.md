@@ -63,7 +63,7 @@ Vi anbefaler at dere beholder passordet som kom med sertifikatet.
 Som en del av autentiseringen må Digdir ha public key av sertifikatet. 
 Det kan eksporteres slik i Key Store Explorer:
 
-1. Bruk Åpne JKSen du nettopp laget.
+1. Åpne JKSen du nettopp laget i Key Store Explorer.
 2. Høyreklikk på sertifikatet som ligger i keystoren, finn 'Export' og trykk så på 'Export Certificate Chain'.
 3. La alt stå som det er og lagre som en .cer fil. 
 Eksempel: *MittPublicSertifikat.cer*
