@@ -19,8 +19,6 @@ Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bl
 
 <div class="mermaid">
  graph LR
-  Sluttbruker ---|1. Vil bruke|ny
-
    subgraph Kunde
       ny[Tjeneste]
    end
@@ -31,6 +29,7 @@ Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bl
    subgraph NHN
       reg[(PREG)]
    end
+   Sluttbruker ---|1. Vil bruke|ny
    OIDC -->|5. videresender bruker til |ny
    Sluttbruker ---|2. logger inn i  |OIDC
    OIDC ---|3.sjekker|db
@@ -43,7 +42,7 @@ Figuren under viser hvilke aktører som inngår ved lansering. Senere kan det bl
 Sekvensdiagrammet viser hva som skjer når en tjeneste trenger en innlogging med FH-nummer:
 
 <div class="mermaid">
- sequenceDiagram
+sequenceDiagram
    participant U as Sluttbruker
    participant C as Tjeneste
    participant I as idporten-utland
