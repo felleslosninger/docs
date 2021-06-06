@@ -19,21 +19,22 @@ See section below on how to do a proper lookup.
 ### Datasets
 There are currently three datasets which are updated every hour.
 
-Participants
+#### Participants
 Shows all participants and what processes they support.
 
-Capabilities
+#### Capabilities
 Show all participants in ELMA and their capabilities.
 Capabilities is an ELMA-specific grouping of processes, where a participant must have all of a given set of processes to be listed as having a specific capability.
 The capability-grouping in ELMA is currently not updated, and this dataset may be removed.
 
-Document types
+#### Document types
 Show all document types in ELMA and what processes they are connected to.
 
-See links to data and more information: https://data.norge.no/datasets/5a5374c3-c6a7-49f8-b9cc-0a9e48c1acd7 
+#### Links and documentation
+See [links to data and more information at data.norge.no](https://data.norge.no/datasets/5a5374c3-c6a7-49f8-b9cc-0a9e48c1acd7)
 
-The datasets are hosted on hotell.difi.no. See documentation for the API here (norwegian):
-https://hotell.difi.no/api 
+[Documentation for the API can be found at hotell.difi.no (in norwegian)](https://hotell.difi.no/api)
+
 
 ### How to lookup participants in PEPPOL
 
