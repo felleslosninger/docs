@@ -1,7 +1,7 @@
 ---
-title: Elma
+title: Elma open data
 description: Elma open data
-summary: "Elma open data"
+summary: "ELMA provides open datasets containing information about participants and what profiles each participant is registered with."
 permalink: elma_open_data.html
 product: elma
 sidebar: elma_sidebar
@@ -40,15 +40,13 @@ See [links to data and more information at data.norge.no](https://data.norge.no/
 
 The only valid way to lookup an organization is the PEPPOL way of lookup via the SML.
 
-Previously, ELMA was the only PEPPOL SMP where norwegian organizations were registered. This is no longer the case. A norwegian organization may be registered to an SMP which is not ELMA. A lookup only in ELMA is no longer a valid way to lookup norwegian organizations in PEPPOL.
+Previously, ELMA was the only PEPPOL SMP where norwegian organizations were registered. This is no longer the case. A norwegian organization may be registered to an other SMP. A lookup only in ELMA is no longer a valid way to lookup norwegian organizations in PEPPOL.
 
 It is also possible to lookup organizations via PEPPOL Directory. It is currently not mandatory for SMPs to publish information to PEPPOL Directory, so the list there is not complete.
 
-Recipe for creating the URL to lookup an organization can be found at helger.com:
-https://peppol.helger.com/public/menuitem-docs-smp-sml-interplay
+[Recipe for creating the URL to lookup an organization can be found at helger.com](https://peppol.helger.com/public/menuitem-docs-smp-sml-interplay)  
 Under the section “Create participant in SMP and SML” at the bullet point “A new DNS entry in the form of …”
 
-See PEPPOL Documentation on SML and SMP for more details:
-https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/ 
+See [official PEPPOL Documentation on SML and SMP for more details](https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/)
 
-??? Link to Oxalis-source code here ???
+See the [vefa-peppol lookup library](https://github.com/OxalisCommunity/vefa-peppol/tree/master/peppol-lookup) for a Java implementation.
