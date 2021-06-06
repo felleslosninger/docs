@@ -14,12 +14,40 @@ ELMA provides open datasets containing information about participants and what p
 ### Important note on use
 NB! These datasets must not be used to check if a given norwegian organization is registered in PEPPOL or what documents an organization can receive. This should be done via a lookup via the SML (Service Metadata Locator).
 
+See section below on how to do a proper lookup.
+
+### Datasets
+There are currently three datasets which are updated every hour.
+
+Participants
+Shows all participants and what processes they support.
+
+Capabilities
+Show all participants in ELMA and their capabilities.
+Capabilities is an ELMA-specific grouping of processes, where a participant must have all of a given set of processes to be listed as having a specific capability.
+The capability-grouping in ELMA is currently not updated, and this dataset may be removed.
+
+Document types
+Show all document types in ELMA and what processes they are connected to.
+
+See links to data and more information: https://data.norge.no/datasets/5a5374c3-c6a7-49f8-b9cc-0a9e48c1acd7 
+
+The datasets are hosted on hotell.difi.no. See documentation for the API here (norwegian):
+https://hotell.difi.no/api 
+
+### How to lookup participants in PEPPOL
+
+The only valid way to lookup an organization is the PEPPOL way of lookup via the SML.
+
 Previously, ELMA was the only PEPPOL SMP where norwegian organizations were registered. This is no longer the case. A norwegian organization may be registered to an SMP which is not ELMA. A lookup only in ELMA is no longer a valid way to lookup norwegian organizations in PEPPOL.
 
 It is also possible to lookup organizations via PEPPOL Directory. It is currently not mandatory for SMPs to publish information to PEPPOL Directory, so the list there is not complete.
 
-PAGE IS UNDER CONSTRUCTION
+Recipe for creating the URL to lookup an organization can be found at helger.com:
+https://peppol.helger.com/public/menuitem-docs-smp-sml-interplay
+Under the section “Create participant in SMP and SML” at the bullet point “A new DNS entry in the form of …”
 
----
+See PEPPOL Documentation on SML and SMP for more details:
+https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/ 
 
-
+??? Link to Oxalis-source code here ???
