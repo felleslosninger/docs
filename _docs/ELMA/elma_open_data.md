@@ -7,9 +7,7 @@ product: elma
 sidebar: elma_sidebar
 ---
 
-*Updated: 02.06.2020*
-
-ELMA provides open datasets containing information about participants and what profiles each participant is registered with.
+*Updated: 06.06.2020*
 
 ### Important note on use
 NB! These datasets must not be used to check if a given norwegian organization is registered in PEPPOL or what documents an organization can receive. This should be done via a lookup via the SML (Service Metadata Locator).
