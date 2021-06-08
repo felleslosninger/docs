@@ -17,7 +17,7 @@ En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
 2. API-tilbyder oppretter et API (scope)
 3. API-tilbyder gir tilgang til en konsument
-4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrer  scopet til denne.
+4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrerer  scopet til denne.
 
 Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
@@ -43,12 +43,12 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 |integration_type  | "Maskinporten"   |  Dette feltet forteller Digitaliseringsdirektoratet hvilken integrasjon dette er.   |
 | token_endpoint_auth_method  | "private_key_jwt"  | Maskinporten aksepterer kun sertifikat og nøkler, og ikke client_secret for å autentisere klienter |
 | grant_types   | "urn:ietf:params:oauth:grant-type:jwt-bearer"  | Maskinporten aksepterer kun signerte JWTer som grants.  |
-| client_id  | auto-tildelt  | Blir satt atDigitaliseringsdirektoratet ved registrering  |
-| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig forDigitaliseringsdirektoratets  personell,  |
+| client_id  | auto-tildelt  | Blir satt av Digitaliseringsdirektoratet ved registrering  |
+| description  |  string | Du må skrive inn en god beskrivelse av tjenesten. Denne blir synlig for Digitaliseringsdirektoratets  personell.  |
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
-Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn av din , så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
+Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
 
 Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whitelisting). Det er da ikke mulig å forhåndsregistere slike scopes på klienten.
 
@@ -57,11 +57,11 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 #### Registrering via Samarbeidsportalen
 
-Du kan logge inn på https://samarbeid.digdir.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke assymetriske nøkler.
+Du kan logge inn på https://samarbeid.digdir.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
 
-Alle organisasjoner som har inngåttDigitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.  
+Alle organisasjoner som har inngått Digitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.
 
-For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
+For selvbetjening i Produksjon, kreves innlogging med ID-porten og at bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
 
 <!-- 
 [![Opprette integrasjon](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon_png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon.mp4 "Opprette integrasjon") 
@@ -71,7 +71,7 @@ For selvbetjening i Produksjon, kreves innlogging med ID-porten og at  bemyndige
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
+For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
@@ -96,7 +96,7 @@ Maskinporten vil svare med en auto-generert client_id, for eksempel  `238259d7-f
 
 For å slippe å spre virksomhetssertifikatet rundt til mange systemer, kan du opprette dine egne asymmetriske nøkler knyttet til en enkelt integrasjon.
 
-Dette må gjøres i to steg: først oppretter du en klient som i eksempelet over, for så å oppretter du et nøkkel-sett på denne:
+Dette må gjøres i to steg: først oppretter du en klient som i eksempelet over, for så å opprette et nøkkel-sett på denne:
 ```
 POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
 
@@ -113,11 +113,11 @@ POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
   ]
 }
 ```
-'kid'-verdien må være unik blant alle Maskinportens kunder.  
+'kid'-verdien må være unik blant alle Maskinportens kunder.
 
 #### Registrere klient som leverandør for ekstern delegering
 
-Leverandører sm bruke ekstern delegering registerer sin integrasjon på samme måte som over.
+Leverandører som bruke ekstern delegering registerer sin integrasjon på samme måte som over.
 
 
 ### 5: Be om token
