@@ -13,6 +13,9 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 2. Dersom det er ein nyare versjon tilgjengeleg, vert denne lasta ned til klienten. 
 3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen. Dersom den nye versjonen ikkje startar, rullar KOSMOS attende.
 
+## Laste ned
+> [PH:Her kjem nedlastingslenke til kosmos.jar når applikasjonen er lansert]()
+
 ## Funksjonalitet
 KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
 
