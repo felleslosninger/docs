@@ -1,7 +1,7 @@
 ---
 title: Automatisk oppdatering av integrasjonspunkt 
 description: Korleis sette opp og bruke Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS
-summary: "Sette opp KOSMOS for automatisk oppdatering av integrasjonspunktet"
+summary: Sette opp KOSMOS for automatisk oppdatering av integrasjonspunktet
 permalink: eformidling_auto_update.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
