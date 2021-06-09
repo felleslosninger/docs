@@ -1,5 +1,5 @@
 {
-	"id": "http://docs.digdir.no/schemas/dpi/digitalpost.schema.json",
+	"id": "https://docs.digdir.no/schemas/dpi/digitalpost.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"description": "Schema for Standard business document (SBD) brukt av Digdir",
 	"definitions": {
@@ -196,7 +196,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
@@ -446,7 +446,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
