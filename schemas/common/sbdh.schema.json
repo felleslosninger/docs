@@ -1,6 +1,6 @@
 {
 	"id": "https://docs.digdir.no/schemas/common/sbdh.schema.json",
-	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$schema": "https://json-schema.org/draft-07/schema#",
 	"description": "Schema for Standard business document header (SBD) brukt av Digdir",
 	"definitions": {
 		"standardBusinessDocumentHeader": {
