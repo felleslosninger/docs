@@ -1,6 +1,6 @@
 {
-    "id": "http://docs.digdir.no/schemas/dpi/returpostkvittering.schema.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id": "https://docs.digdir.no/schemas/dpi/returpostkvittering.schema.json",
+    "$schema": "https://json-schema.org/draft-07/schema#",
     "description": "En Kvitteringsmelding fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker.",
     "$comment": "Dette er Kvittering på at posten har kommet i retur og har blitt makulert.",
     "definitions": {
@@ -10,16 +10,16 @@
             "title": "kvittering",
             "properties": {
                 "avsender": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
                 },
                 "mottaker": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
                 },
                 "maskinportentoken": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
                 },
                 "tidspunkt": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
                 }
             },
             "required": [
