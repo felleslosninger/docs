@@ -60,7 +60,7 @@ Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger s
 | Organisasjonsnummer: | 987464291 | 
 | Tjeneste: | DPO | 
 | URL-integrasjonspunkt | https://ip-leik-meldingsutveksling.difi.no/ |
-| URL sak-arkiv mock | https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/ |
+| URL sak-arkiv mock | https://qa-meldingsutveksling.difi.no/sa-mock/incoming |
 
 
 <!--
@@ -69,9 +69,8 @@ Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger s
 
 #### Sak-arkiv mock
 
-**NB!** Mocken fungerer ikke for øyeblikket(08.06.2020)! Ta kontakt med servicedesk@digdir.no for testing av DPO.
 
-Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
+Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://qa-meldingsutveksling.difi.no/sa-mock/incoming](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
 
 
 
