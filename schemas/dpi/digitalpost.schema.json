@@ -495,9 +495,9 @@
 			"description": "Informasjon relatert til presentasjon og behandling av en sikker digital post melding",
 			"$comment": "Dette er informasjon om den Digitalpostforsendelsen som vil bli brukt av Postkasseleverandør for å presentere og behandle den digitale posten. Den ikkeSensitiveTittelen vil bli brukt i dialogen med Innbygger dersom ikke Innbygger er autentisert på tilstrekkelig nivå. Den ikkeSensitiveTittelen vil også bli brukt i varsling til Innbygger. Når den digitale posten er dekryptert og innbygger er autentisert på tilstrekkelig sikkerhetsnivå så vil Tittel i Manifest-filen brukes.",
 			"properties": {
-				
-				"mottaker" : {"$ref": "#/definitions/adressseInfo"},
-				"utskriftstype": {"$ref": "#/definitions/utskriftstype"},				
+
+				"mottaker" : {"$ref": "#/definitions/adresseInformasjon"},
+				"utskriftstype": {"$ref": "#/definitions/utskriftstype"},
 				"retur" : { "$ref": "#/definitions/retur"},
 				"posttype": {"$ref": "#/definitions/posttype"}
 			},
@@ -521,7 +521,7 @@
 			"title": "retur",
 			"description": "Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.",
 			"properties": {
-				"mottaker" : { "$ref": "#/definitions/adressseInfo"},
+				"mottaker" : { "$ref": "#/definitions/adresseInformasjon"},
 				"returposthaandtering": { "$ref": "#/definitions/returposthaandtering"}
 			},
 			"required": ["mottaker", "returposthaandtering"],
@@ -547,7 +547,7 @@
 		
 		"adresseInformasjon": {
 			"type": "object",
-			"$id": "#/definitions/adressseInfo",
+			"$id": "#/definitions/adresseInformasjon",
 			"additionalProperties": false,
 			"properties": {
 				"navn": {
