@@ -232,10 +232,12 @@
 			"description": "Person som er mottaker av en sikker digital post",
 			"$comment": "",
             "properties": {
-				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"}
+				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"},
+				"postkasseadresse" : {"$ref": "#/definitions/postkasseadresse"}
 			},
 			"required": [
-				"personidentifikator"
+				"personidentifikator",
+				"postkasseadresse"
 			]
 		},
 
@@ -275,6 +277,14 @@
 			},
 			"required": ["value"]
         },
+
+		"postkasseadresse": {
+			"type": "string",
+			"$id": "#/definitions/postkasseadresse",
+			"title": "postkasseadresse",
+			"description": "Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør",
+			"$comment": "Dette er en unik adresse for en Person sin Postkasseadresse hos en Postkasseleverandør. Enten digipost eller eboks"
+		},
 
         "avsenderidentifikator":{
             "type": "string",
