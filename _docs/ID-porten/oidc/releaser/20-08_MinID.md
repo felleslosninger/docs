@@ -10,7 +10,7 @@ Støtte for manuell gjenkjenning av utenlandske brukere.
 
 
 
-Releasen vart produksjonssatt 2020-08-25
+Releasen vart produksjonssatt Aug 25, 2020
 
 ## Ny funksjonalitet:
 

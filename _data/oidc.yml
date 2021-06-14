@@ -88,6 +88,10 @@ folders:
       - title: eIDAS
         jurl: /oidc_func_eidas.html
 
+      - title: idporten-utland
+        jurl: /oidc_func_idporten-utland.html
+
+
       - title: Innbyggers innloggingsnivå
         jurl: /oidc_api_authlevel.html
 

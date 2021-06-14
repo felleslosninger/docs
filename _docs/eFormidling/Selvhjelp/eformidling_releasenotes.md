@@ -7,6 +7,28 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.2.2
+Planlagt 14.06.2021
+
+### Hva er endret/nytt?
+
+**Features**
+
+I denne versjonen er det gjort flere endringer for å bedre paralellitet ved sending og lesing fra kø vha konfigurerbare verdier for antall tråder og kanaler. Det er også innført en ytelsestest-profil og målinger for svartider på forespørsler. 
+
+* Innført valgfri prosess-parameter for capabilities oppslag.  
+* Måling av svartider for utgående forespørsler.
+* Innført ytelsestest-profil(YT)
+* Støtte for å deaktivere cache i YT-profil
+* Forbedret throughput på uthenting av kvitteringer for DPI. 
+* Mulighet for å konfigurere hvor mange tråder som skal brukes til sending. Standard er 10.
+* Konfigurerbar property for å ikke slå opp i DSF ved sending til DPI.
+* Konfigurerbar tråd pool for Sikker Digital Post klient i integrasjonspunktet.
+* Konfigurerbart hvor regelmessig meldingsstatuser skal hentes i DPV og DPF.
+* Innført paging for å redusere minnebruke ved oppslag av meldingsstatuser i DPV og DPF. 
+
+*Alle nye properties finner du [her](https://docs.digdir.no/eformidling_properties_config.html#eformidling---digital-post-til-innbyggere)*
+
 ## 2.2.1
 05.05.2021
 

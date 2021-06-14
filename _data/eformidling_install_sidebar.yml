@@ -23,6 +23,9 @@ folders:
       - title: Oppstart av integrasjonspunktet
         jurl: /eformidling_ip_run.html
 
+      - title: Automatisk oppdatering av integrasjonspunktet
+        jurl: /eformidling_auto_update.html
+
       - title: Opprette brukere i eFormidling
         jurl: /eformidling_create_users.html
 

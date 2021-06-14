@@ -1,6 +1,6 @@
 {
-    "id": "http://docs.digdir.no/schemas/dpi/flyttedigitalpost.schema.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id": "https://docs.digdir.no/schemas/dpi/flyttedigitalpost.schema.json",
+    "$schema": "https://json-schema.org/draft-07/schema#",
     "description": "Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler.",
     "$comment": "Denne kvitteringen kan Behandlingsansvarlig oppbevare som en garanti på at posten vil bli levert til Mottaker.",
     "definitions": {
@@ -10,23 +10,23 @@
             "title": "kvittering",
             "properties": {
                 "avsender": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
                 },
                 "mottaker": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/personmottaker"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/personmottaker"
                 },
                 "maskinportentoken": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
                 },
                 "tidspunkt": {
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
                 },
                 "dokumentpakkefingeravtrykk":{
-                    "$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
                 },
                 "mottakstidspunkt": {"type": "string", "format": "date"},
                 "aapnet" : {"type": "boolean"},
-                "digitalpostinfo" : {"$ref": "http://docs.digdir.no/schemas/dpi/digitalpost.schema.json#/definitions/digitalpostinfo"}
+                "digitalpostinfo" : {"$ref": "https://docs.digdir.no/schemas/dpi/digitalpost.schema.json#/definitions/digitalpostinfo"}
             },
             "required": [
                 "avsender",

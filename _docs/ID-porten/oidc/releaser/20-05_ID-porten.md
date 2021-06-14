@@ -10,7 +10,7 @@ ID-porten utvides med nye eID for utvalgte tjenesteeiere (ie. NA)V ifbm korona-k
 
 
 
-Releasen vart produksjonssatt 2020-05-19
+Releasen vart produksjonssatt May 19, 2020
 
 ## Ny funksjonalitet:
 
