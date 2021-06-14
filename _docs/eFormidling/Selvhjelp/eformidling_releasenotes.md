@@ -8,7 +8,7 @@ sidebar: eformidling_install_sidebar
 ---
 
 ## 2.2.2
-14.06.2021
+Planlagt 14.06.2021
 
 ### Hva er endret/nytt?
 
