@@ -485,18 +485,7 @@
 					]
 				}],			
 			"additionalProperties": false
-		},			
-		
-		
-		"fysiskpost": {
-			"type": "object",			
-			"$ref": "#/definitions/dpimelding",
-			"properties": {
-				"fysiskpostinfo" : {"$ref": "#/definitions/fysiskpostinfo"}	
-			},
-			"required": ["fysiskpostinfo"],
-			"additionalProperties": false
-		},
+		},	
 		
 		"fysiskpostinfo" : {
 			"type": "object",
@@ -505,7 +494,6 @@
 			"description": "Informasjon relatert til presentasjon og behandling av en sikker digital post melding",
 			"$comment": "Dette er informasjon om den Digitalpostforsendelsen som vil bli brukt av Postkasseleverandør for å presentere og behandle den digitale posten. Den ikkeSensitiveTittelen vil bli brukt i dialogen med Innbygger dersom ikke Innbygger er autentisert på tilstrekkelig nivå. Den ikkeSensitiveTittelen vil også bli brukt i varsling til Innbygger. Når den digitale posten er dekryptert og innbygger er autentisert på tilstrekkelig sikkerhetsnivå så vil Tittel i Manifest-filen brukes.",
 			"properties": {
-
 				"mottaker" : {"$ref": "#/definitions/adresseInformasjon"},
 				"utskriftstype": {"$ref": "#/definitions/utskriftstype"},
 				"retur" : { "$ref": "#/definitions/retur"},
