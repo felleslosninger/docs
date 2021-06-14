@@ -8,6 +8,15 @@ sidebar: eformidling_install_sidebar
 ---
 
 
+## ServiceRegistry 2.1.4
+14.06.2021
+
+**Endringer**
+* Utvidet oppslag til å kunne signalisere at DSF-oppslag ikke er nødvendig.
+* Lagt til ytelsestest profil
+* Støtte for å deaktivere cache ved ytelsetesting
+* Måling av svartider for utgåande forespørsler.
+
 ## ServiceRegistry 2.1.3
 29.04.2021
 
