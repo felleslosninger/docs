@@ -37,4 +37,5 @@ folders:
   - title: QA (test-smp.difi.no)
     jurl: https://test-smp.difi.no/rest/resources/docs/index.html
 
-
+- title: Open data
+  jurl: /elma_open_data.html

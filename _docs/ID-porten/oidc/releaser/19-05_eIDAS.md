@@ -10,7 +10,7 @@ Støtte for entydig gjenkjenning av europeiske brukere gjennom Modernisert Folke
 
 
 
-Releasen vart produksjonssatt 2019-05-07
+Releasen vart produksjonssatt May 7, 2019
 
 ## Ny funksjonalitet:
 

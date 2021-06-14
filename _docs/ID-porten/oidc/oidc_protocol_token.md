@@ -162,6 +162,6 @@ The [id_token is documented here](oidc_protocol_id_token.html).
 
 ### The access token
 
-The access_token enable the client to access APIs on behalf of the authenticated user.  
+The access_token enables the client to access APIs on behalf of the authenticated user.  
 
-The [acess_token is documented here](oidc_protocol_access_token.hml).
+The [access_token is documented here](oidc_protocol_access_token.html).

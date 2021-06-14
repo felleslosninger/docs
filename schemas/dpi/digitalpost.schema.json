@@ -1,6 +1,6 @@
 {
-	"id": "http://docs.digdir.no/schemas/dpi/digitalpost.schema.json",
-	"$schema": "http://json-schema.org/draft-07/schema#",
+	"id": "https://docs.digdir.no/schemas/dpi/digitalpost.schema.json",
+	"$schema": "https://json-schema.org/draft-07/schema#",
 	"description": "Schema for Standard business document (SBD) brukt av Digdir",
 	"definitions": {
 		"standardBusinessDocument": {
@@ -196,7 +196,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
@@ -232,10 +232,12 @@
 			"description": "Person som er mottaker av en sikker digital post",
 			"$comment": "",
             "properties": {
-				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"}
+				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"},
+				"postkasseadresse" : {"$ref": "#/definitions/postkasseadresse"}
 			},
 			"required": [
-				"personidentifikator"
+				"personidentifikator",
+				"postkasseadresse"
 			]
 		},
 
@@ -275,6 +277,14 @@
 			},
 			"required": ["value"]
         },
+
+		"postkasseadresse": {
+			"type": "string",
+			"$id": "#/definitions/postkasseadresse",
+			"title": "postkasseadresse",
+			"description": "Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør",
+			"$comment": "Dette er en unik adresse for en Person sin Postkasseadresse hos en Postkasseleverandør. Enten digipost eller eboks"
+		},
 
         "avsenderidentifikator":{
             "type": "string",
@@ -446,7 +456,7 @@
 					"$ref": "#/definitions/mottaker"
 				},
 				"dokumentpakkefingeravtrykk": {
-					"$ref": "http://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+					"$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
 				},
 				"maskinportentoken": {
 					"type": "string",
@@ -495,9 +505,9 @@
 			"description": "Informasjon relatert til presentasjon og behandling av en sikker digital post melding",
 			"$comment": "Dette er informasjon om den Digitalpostforsendelsen som vil bli brukt av Postkasseleverandør for å presentere og behandle den digitale posten. Den ikkeSensitiveTittelen vil bli brukt i dialogen med Innbygger dersom ikke Innbygger er autentisert på tilstrekkelig nivå. Den ikkeSensitiveTittelen vil også bli brukt i varsling til Innbygger. Når den digitale posten er dekryptert og innbygger er autentisert på tilstrekkelig sikkerhetsnivå så vil Tittel i Manifest-filen brukes.",
 			"properties": {
-				
-				"mottaker" : {"$ref": "#/definitions/adressseInfo"},
-				"utskriftstype": {"$ref": "#/definitions/utskriftstype"},				
+
+				"mottaker" : {"$ref": "#/definitions/adresseInformasjon"},
+				"utskriftstype": {"$ref": "#/definitions/utskriftstype"},
 				"retur" : { "$ref": "#/definitions/retur"},
 				"posttype": {"$ref": "#/definitions/posttype"}
 			},
@@ -521,7 +531,7 @@
 			"title": "retur",
 			"description": "Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.",
 			"properties": {
-				"mottaker" : { "$ref": "#/definitions/adressseInfo"},
+				"mottaker" : { "$ref": "#/definitions/adresseInformasjon"},
 				"returposthaandtering": { "$ref": "#/definitions/returposthaandtering"}
 			},
 			"required": ["mottaker", "returposthaandtering"],
@@ -547,7 +557,7 @@
 		
 		"adresseInformasjon": {
 			"type": "object",
-			"$id": "#/definitions/adressseInfo",
+			"$id": "#/definitions/adresseInformasjon",
 			"additionalProperties": false,
 			"properties": {
 				"navn": {

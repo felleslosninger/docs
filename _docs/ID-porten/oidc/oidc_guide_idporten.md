@@ -42,7 +42,7 @@ sequenceDiagram
   Sluttbruker ->> Relying Party: Klikker login-knapp
   Relying Party ->> Sluttbruker: Redirect med autentiseringsforespørsel
   Sluttbruker ->> OpenID Provider: følg redirect...
-  note over Sluttbruker,OpenID Provider: Sluttbruker autentiserer seg (og evt. samtykker til førespurte scopes)
+  note over Sluttbruker,OpenID Provider: Sluttbruker autentiserer seg (og evt. samtykker til forespurte scopes)
   OpenID Provider ->> Sluttbruker: Redirect med autorisasjonscode
   Sluttbruker ->> Relying Party: følg redirect...
   Relying Party ->> OpenID Provider: forespørre token (/token)

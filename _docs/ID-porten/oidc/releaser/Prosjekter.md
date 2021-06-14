@@ -10,7 +10,7 @@ Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer 
 
 
 
-Planlagd produksjonssetting: 2021-12-31
+Planlagd produksjonssetting: Q4 2021
 
 ## Ny funksjonalitet:
 

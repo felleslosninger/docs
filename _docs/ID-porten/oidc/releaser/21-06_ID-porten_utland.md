@@ -10,7 +10,7 @@ Ifbm korona-situasjonen er det behov for å etablere en innloggingsløsning til 
 
 
 
-Planlagd produksjonssetting: 2021-06-15
+Planlagd produksjonssetting: Jun 15, 2021
 
 ## Ny funksjonalitet:
 

@@ -88,6 +88,10 @@ folders:
       - title: eIDAS
         jurl: /oidc_func_eidas.html
 
+      - title: idporten-utland
+        jurl: /oidc_func_idporten-utland.html
+
+
       - title: Innbyggers innloggingsnivå
         jurl: /oidc_api_authlevel.html
 
@@ -157,7 +161,7 @@ related_resources_list:
   jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
-  jurl: https://samarbeid.difi.no/felleslosninger
+  jurl: https://samarbeid.digdir.no
 
 - title: Status og driftsmeldinger
   jurl: https://status.digdir.no/
