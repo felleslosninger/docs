@@ -9,8 +9,10 @@
             "title": "avsender",
             "properties": {
                 "virksomhetsidentifikator": {
-                    "$ref": "#/definitions/virksomhetsidentifikator"
-                }
+                    "$ref": "#/definitions/virksomhetsidentifikator"                    
+                },
+                "avsenderidentifikator" : {"$ref": "#/definitions/avsenderidentifikator"},
+                "fakturaReferanse" : {"type":"string", "maxLength": 40}
             },
             "required": [
                 "virksomhetsidentifikator"
@@ -34,6 +36,14 @@
                 "virksomhetsidentifikator"
             ]
         },
+        "avsenderidentifikator":{
+            "type": "string",
+            "$id": "#/definitions/avsenderidentifikator",
+            "title": "avsenderidentifikator",
+            "description": "Identifikasjon av en ansvarlig avsenderenhet",
+            "$comment": "Brukt for å identifisere en ansvarlig enhet innen for en virksomhet. I Sikker digital posttjenteste tildeles avsenderidentifikator ved tilkobling til tjenesten. Maks 100 tegn.",
+            "maxLength": 100
+        },
         "personmottaker": {
             "type" : "object",
             "$id": "#/definitions/personmottaker",
@@ -41,10 +51,11 @@
 			"description": "Person som er mottaker av en sikker digital post",
 			"$comment": "",
             "properties": {
-				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"}
+				"personidentifikator" : {"$ref": "#/definitions/personidentifikator"},
+                "postkasseadresse" : {"$ref": "#/definitions/postkasseadresse"}
 			},
 			"required": [
-				"personidentifikator"
+				"personidentifikator", "postkasseadresse"
 			]
         },
         "virksomhetsidentifikator": {
@@ -82,6 +93,13 @@
 			},
 			"required": ["value"]
         },
+        "postkasseadresse": {
+			"type": "string",
+			"$id": "#/definitions/postkasseadresse",
+			"title": "postkasseadresse",
+			"description": "Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør",
+			"$comment": "Dette er en unik adresse for en Person sin Postkasseadresse hos en Postkasseleverandør. Enten digipost eller eboks"
+		},
         "motakeridentifikator": {
             "type": "string",
             "$id": "#/definitions/motakeridentifikator",
