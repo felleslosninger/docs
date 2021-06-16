@@ -48,8 +48,8 @@
             },
             "mottaker": {
                 "personidentifikator": {
-                    "authority": "norsk_personidentifikator",
-                    "value": "17050411111"
+                    "authority": "iso3166-1-alfa2",
+                    "value": "NO:17050411111"
                 }
             },
             "fysiskpostinfo" : {
