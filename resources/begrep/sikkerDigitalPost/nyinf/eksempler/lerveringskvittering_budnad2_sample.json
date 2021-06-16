@@ -49,8 +49,8 @@
             },
             "mottaker": {
                 "virksomhetsidentifikator": {
-                    "value": "iso6523-actorid-upis",
-                    "authority": "0192:972417866",
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:972417866",
                     "motakeridentifikator": "budnad"
                 }
             },

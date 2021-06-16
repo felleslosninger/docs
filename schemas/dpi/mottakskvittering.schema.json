@@ -4,6 +4,18 @@
     "description": "En Kvitteringsmelding til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift.",
     "$comment": "Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post.",
     "definitions": {
+        "standardBusinessDocument": {
+			"type": "object",
+			"additionalProperties": false,
+			"title": "standardBusinessDocument",
+			"properties": {
+				"standardBusinessDocumentHeader": { "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"	},
+				"mottakskvittering" : {"$ref": "#/definitions/kvittering"}
+			},
+			"required": [
+				"standardBusinessDocumentHeader", "mottakskvittering"
+			]
+		},        
         "kvittering": {
             "type": "object",
             "$id": "#/definitions/kvittering",
@@ -32,13 +44,13 @@
         }
     },
     "type": "object",
-    "properties": {
-        "mottakskvittering": {
-            "$ref": "#/definitions/kvittering"
-        }
-    },
+	"properties": {
+		"standardBusinessDocument": {
+			"$ref": "#/definitions/standardBusinessDocument"
+		}
+	},
     "required": [
-        "mottakskvittering"
+        "standardBusinessDocument"
     ],
-    "additionalProperties": false
+	"additionalProperties": false    
 }

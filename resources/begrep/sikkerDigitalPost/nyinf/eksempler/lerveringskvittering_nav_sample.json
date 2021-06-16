@@ -49,8 +49,8 @@
             },
             "mottaker": {
                 "virksomhetsidentifikator": {
-                    "value": "iso6523-actorid-upis",
-                    "authority": "0192:889640782"
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:889640782"
                 }
             },
             "maskinportentoken": "eyJpc3MiOiJodHRwczovL21hc2tpbnBvcnRlbi5ubyIsInNjb3BlIjoiZHBpOnNlbmQiLCJhdWQiOiJodHRwczovL2FwaS5ha3Nlc3NwdW5rdGxldmVyYW5kw7hyLm5vLyIsImNvbnN1bWVyIjp7IkF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjk4NDY2MTE4NSJ9LCJpYXQiOiIxNjIxMjM4NDAwIiwiZXhwIjoiMTYyMTIzODQzMCJ9",
