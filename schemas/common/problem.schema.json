@@ -1,5 +1,5 @@
 {
-    "id": "http://docs.digdir.no/schemas/common/problem.schema.json",
+    "$id": "https://docs.digdir.no/schemas/common/problem.schema.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "Digdir schema for problem+json described in RFC7807",
     "definitions": {
