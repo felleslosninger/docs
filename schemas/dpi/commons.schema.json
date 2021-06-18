@@ -134,6 +134,66 @@
 					"description": "Base64 encoded Hash av den krypterte Dokumentpakken"
 				}
 			}
-		}
+		},
+
+        "kvittering": {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+                },
+                "maskinportentoken": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                },
+                "tidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                },
+                "beskrivelse": {
+                    "type": "string",
+                    "description": "beskrivelse gir en tekstlig beskrivelse utover det som er gitt av andre datatyper som f.eks. status"
+                },
+                "varslingskanal": {
+                    "type": "string",
+                    "enum": [
+                        "epost",
+                        "sms"
+                    ],
+                    "description": "Kommunikasjonskanal for utsending av varsel og påminnelse",
+                    "$comment": "Varsling og påminnelsesmeldinger skal sendes på den kanal som blir spesifisert. Kanalen SMS er priset."
+                }
+            },
+            "oneOf": [
+                {
+                    "required": [
+                        "avsender",
+                        "mottaker",
+                        "maskinportentoken",
+                        "tidspunkt"
+                    ]
+                },
+                {
+                    "required": [
+                        "avsender",
+                        "mottaker",
+                        "maskinportentoken",
+                        "tidspunkt",
+                        "beskrivelse",
+                        "varslingskanal"
+                    ]
+                }
+            ],
+            "required": [
+                "avsender",
+                "mottaker",
+                "maskinportentoken",
+                "tidspunkt"
+            ],
+            "additionalProperties": false
+        }
     }
 }
