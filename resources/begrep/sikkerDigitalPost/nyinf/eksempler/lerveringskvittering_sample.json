@@ -49,7 +49,7 @@
             },
             "mottaker": {
                 "personidentifikator": {
-                    "value": "ABCDEFGHIJKLMNOPQRSTUVWXY",
+                    "value": "iso6523-actorid-upis",
                     "authority": "0192:987654321"
                 }
             },
