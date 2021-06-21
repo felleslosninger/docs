@@ -1,5 +1,5 @@
 ---
-title: Ekesmepler
+title: Eksemepler
 permalink: nyinf_eksempler.html
 sidebar: dpi_sidebar
 ---
