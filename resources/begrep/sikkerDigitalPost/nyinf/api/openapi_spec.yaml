@@ -242,6 +242,7 @@ components:
             - OPPRETTET
             - SENDT
             - MOTTATT
+            - FEILET
         timestamp:
           type: string
           format: date-time
