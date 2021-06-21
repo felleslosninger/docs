@@ -1,0 +1,106 @@
+---
+title: Utvikler API-supplement
+description: Her finner du tips for å ta i bruk eFormidling 2.0 grensesnittet. Et supplement til REST docs. Av utvikler for utvikler.
+summary: ""
+permalink: eformidling_dev.html
+product: eFormidling
+sidebar: eformidling_technical_sidebar
+---
+
+For å ta i bruk eFormidling 2.0 API'et (som vi anbefaler) så må en ha et StandardBusinessDocument(SBD) på rett format, opprette og sende melding, handtere innkommende meldinger og kvitteringer, og rydde opp i køen(activeMQ) etter seg ved å slette prosesserte meldinger.
+
+Dette er ment som et supplement til [Integrasjonspunkt REST docs](https://docs.digdir.no/eformidling_nm_restdocs.html) for å gjøre det enklere og komme i gang. I tillegg til tekstlig beskrivelse vil det ligge vedlagt Postman requester som kan brukes for å komme i gang med testingen. Om du har innspill eller ønsker til andre deler av API'et som bør dekkes her send oss gjerne en e-post på [servicedesk@digdir.no](mailto:servicedesk@digdir.no).
+
+---
+
+## Sende store filer
+
+> Ref API-dokumentasjon [opprett melding](https://docs.digdir.no/eformidling_nm_restdocs.html#_example_1_creating_an_arkivmelding_message) å sende DPO.
+
+For å sende ei stor melding må du utføre 4 steg:
+
+```Opprette melding -> last opp arkivmelding -> last opp fil -> sende```
+
+Når ein sender via DPO så må ein laste opp arkivmeldinga som del av forsendelsen. 
+
+SBD må være på rett format, her er eit eksempel som fungerer for avsender 991825827 (Digdir), bytt avsender(*sender ->value*) til å være samme orgnummer som du har i propertyen ```difi.move.org.number```
+
+```json
+{
+  "standardBusinessDocumentHeader": {
+    "headerVersion": "1.0",
+    "sender": [
+      {
+        "identifier": {
+          "authority": "iso6523-actorid-upis",
+          "value": "0192:991825827"
+        }
+      }
+    ],
+    "receiver": [
+      {
+        "identifier": {
+          "authority": "iso6523-actorid-upis",
+          "value": "0192:991825827"
+        }
+      }
+    ],
+    "documentIdentification": {
+      "standard": "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "typeVersion": "2.0",
+      "instanceIdentifier": "{{largeMessageId}}",
+      "type": "arkivmelding",
+      "creationDateAndTime": "2019-07-02T15:05:04.7960494+02:00"
+    },
+    "businessScope": {
+      "scope": [
+        {
+          "type": "ConversationId",
+          "instanceIdentifier": "{{conversationId}}",
+          "identifier": "urn:no:difi:profile:arkivmelding:administrasjon:ver1.0"          
+        },
+        {
+          "type": "SenderRef",
+          "instanceIdentifier": "be293280-4629-4b51-823e-6fd6ca363579",
+          "identifier": "AvsenderSystem"
+        },
+        {
+          "type": "ReceiverRef",
+          "instanceIdentifier": "47558623-685c-4d40-b5ea-e299b27b985f",
+          "identifier": "MottakerSystem"
+        }
+      ]
+    }
+  },
+  "arkivmelding": {
+    "sikkerhetsnivaa": "3",
+    "hoveddokument": "arkivmelding.xml"    
+  }
+}
+```
+
+*largeMessageId og conversationId skal være UUID'er.*
+
+### Store filer via Postman
+
+Her finner du en .zip fil som inneholder en postman samling for oppretting og sending av store filer i tillegg til arkivmelding.xml som du trenger. 
+
+> [Postman collection og arkivmelding](/resources/eformidling/stormelding_eformidling_api.zip)
+
+Den kan kjøres nesten utav boksen med noen små justeringer:
+
+- Sett ```sender->value``` til ditt orgnummer. Feks "0192:991825827". (0192: skal være med)
+- I *UploadFileArkivmelding Body->Binary* må du velge ```arkivmelding.xml``` frå din disk.
+- I *UploadFileLargeFile Body->Binary* må du velge fila du vil sende OG sette ```name``` and ```filename``` som attachments i Content-Disposition i header.
+
+> Eksempel: Sender fila ```test.pdf``` og verdi i Content-Disposition er : ```attachment; name="test"; filename="test.pdf"```
+
+---
+
+Nå skal du være klar til å sende stor melding. Det gjør du ved å kjøre postman-kallene: 
+
+1. CreateMessage
+2. UploadFileArkivmelding
+3. UploadFileLargeFile
+4. SendMessage
+
