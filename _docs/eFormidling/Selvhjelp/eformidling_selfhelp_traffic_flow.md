@@ -162,6 +162,14 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 DPI: har ikke implementert lesebekreftelse. Opp til innbygger å gi lesebekreftelse. Gir difor lite meining å implementere. 
 
+#### ESA mottar
+
+DPO: Applikasjonskvittering sendes når melding har kommet inn til mottakers sak-arkivsystem.
+
+DPF: Forutsettes mottatt via DPO.
+
+Alle tjenester: Leveringsbekreftelser mottatt via integrasjonspunktet håndteres umiddelbart.
+
 #### P360 mottar 
 
 DPO:  Applikasjonskvittering sendes når melding har kommet inn til mottakers sak-arkivsystem.   

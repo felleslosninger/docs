@@ -7,6 +7,21 @@ product: elma
 sidebar: elma_sidebar
 ---
 
+## Elma update 21.06.2021 (3.9.0)
+
+### Tasks
+```
+[MOVE-2428] - ELMA - REST delete participant by uuid-identifier
+[MOVE-2195]	- Avslutte støtte for nye svenske virksomheter i ELMA
+[MOVE-2444] - ELMA - REST basic dokumentasjon
+```
+
+### Bugs
+```
+[MOVE-2463] - ELMA - NullPointerException i Base.hashcode()
+[MOVE-2442] - ELMA - Feil i OpenAPI-spesifikasjonen
+```
+
 ## Elma update 19.05.2021 (3.8.2)
 
 ### Tasks
