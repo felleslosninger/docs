@@ -14,6 +14,8 @@ folders:
         jurl: /dpi_sikkerhet_index.html 
       - title: Sertifikathåndtering
         jurl: /dpi_sertifikathandtering.html   
+      - title: Ingegrasjon
+        jurl: /openapi.html
       - title: Skjema (XSD) filer
         jurl: /dpi_skjema.html 
       - title: Eksempler

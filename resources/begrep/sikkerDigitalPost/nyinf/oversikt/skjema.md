@@ -21,4 +21,7 @@ Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 ### C2 -> C3 XSD
  - [Digitalpost](xsd/digitalpost.xsd)
  - [BusinessMessageEnvelope](xsd/businessMessageEnvelope.xsd)
+
+ ### API C2
+ - [OpenAPI spec for C2]()
  
