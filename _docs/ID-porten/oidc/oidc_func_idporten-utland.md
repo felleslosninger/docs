@@ -155,7 +155,7 @@ Følgende claims er viktige å få korrekt i requesten:
 |sub||subject identifier|Basert på klient-konfigurasjon, enten en [pairwise verdi](https://openid.net/specs/openid-connect-core-1_0.html#PairwiseAlg) (dvs forskjellige sub-verdier mellom ulike klienter for samme brukerkonto ), eller [public verdi](https://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes) lik bruker-id i idporten-utlands brukerdatabase.
 |acr|`low`| Sikkerhetsnivå | Apple/Google-id har verdien `low`. MinID har `Level3`, og BankID/Buypass/Commfides har `Level4`. Klient må alltid validere at innlogging har det sikkerhetsnivået som man forespurte. |
 |amr| `["Apple"]` | Innloggingsmetode | Enten `Google` eller `Apple`.  Merk at klient bør ikke validere på disse verdiene, og heller sjekke acr.|
-|fhnummer| `87012054321`| Felles Nasjonalt Hjelpenummer| Revirert fra Personregisteret (PREG) til Norsk Helsenett|
+|fhnummer| `80012054321`| Felles Nasjonalt Hjelpenummer| Revirert fra Personregisteret (PREG) til Norsk Helsenett|
 |mobile|`+4799998888`|Mobilnummer|Bruker sitt selv-registrerte mobilnummer.  Alltid inkludert utenlandsprefix (+) og landkode ihht E.164.  Innhentes av idporten-utland ved første gangs innlogging. |
 |email| `email@example.com` |Epost| Bruker sitt selv-registrete epost-adresse.  Innhentes av idporten-utland ved første gangs innlogging. |
 
@@ -180,7 +180,7 @@ I dette tilfellet har klienten forespurt scope `openid idporten:utland:fhnummer`
 
       "acr" : "low",
       "amr" : [ "Apple" ],  
-      "fhnummer": "17012054321",
+      "fhnummer": "80012054321",
       "mobile": "+4799998888"
       "email": "email@example.com"
 
