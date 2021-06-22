@@ -1,12 +1,24 @@
 {
-    "id": "https://docs.digdir.no/schemas/dpi/flyttedigitalpost.schema.json",
+    "$id": "https://docs.digdir.no/schemas/dpi/flyttedigitalpost.schema.json",
     "$schema": "https://json-schema.org/draft-07/schema#",
-    "description": "Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler.",
-    "$comment": "Denne kvitteringen kan Behandlingsansvarlig oppbevare som en garanti på at posten vil bli levert til Mottaker.",
+    "description": "En digital post med tilhørende Dokumentpakke som flyttes fra en postkasseleverandør til en annen",
+    "$comment": "Denne meldingstypen brukes kun imellom Postkasseleverandørene og ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin post over til en annen postkasseleverandør.",
     "definitions": {
-        "kvittering": {
+        "standardBusinessDocument": {
+			"type": "object",
+			"additionalProperties": false,
+			"title": "standardBusinessDocument",
+			"properties": {
+				"standardBusinessDocumentHeader": { "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"},
+				"flyttedigitalpost" : {"$ref": "#/definitions/flyttedigitalpost"}
+			},
+			"required": [
+				"standardBusinessDocumentHeader", "flyttedigitalpost"
+			]
+		},
+        "flyttedigitalpost": {
             "type": "object",
-            "$id": "#/definitions/kvittering",
+            "$id": "#/definitions/flyttedigitalpost",
             "title": "kvittering",
             "properties": {
                 "avsender": {
@@ -40,13 +52,13 @@
         }
     },
     "type": "object",
-    "properties": {
-        "leveringskvittering": {
-            "$ref": "#/definitions/kvittering"
-        }
-    },
+	"properties": {
+		"standardBusinessDocument": {
+			"$ref": "#/definitions/standardBusinessDocument"
+		}
+	},
     "required": [
-        "leveringskvittering"
+        "standardBusinessDocument"
     ],
-    "additionalProperties": false
+	"additionalProperties": false
 }

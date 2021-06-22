@@ -20,6 +20,9 @@ folders:
       - title: Sikkerhet
         jurl: /eformidling_nm_sikkerhet.html
 
+      - title: Utivkler API-supplement
+        jurl: /eformidling_dev.html
+
       - title: Grensesnitt / REST docs
         jurl: /eformidling_nm_restdocs.html
 

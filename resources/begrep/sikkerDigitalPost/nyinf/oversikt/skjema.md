@@ -1,8 +1,10 @@
 ---
 title: Skjema  
-permalink: nyinf_skjema.html
-sidebar: dpi_sidebar
+permalink: dpi_skjema.html
+sidebar: dpi_timo_sidebar
 ---
+
+![](/images/dpi/underarbeide.png)
 
 Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 
