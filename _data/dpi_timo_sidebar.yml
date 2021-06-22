@@ -111,7 +111,7 @@ folders:
       folderitems:
 
       - title: Standard Business Document
-        jurl: /sbd_index.html
+        jurl: /dpi_sbd_index.html
       - title: StandardBusinessDocumentHeader
         jurl: /dpi_sbdh.html   
       - title: Sender

@@ -1,6 +1,6 @@
 ---
 title: Sertifikathåndtering
-permalink: dpi_sertifikathåndtering.html
+permalink: dpi_sertifikathandtering.html
 sidebar: dpi_timo_sidebar
 ---
 

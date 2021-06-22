@@ -1,6 +1,6 @@
 ---
-title: Varsling
-permalink: dpi_varsling.html
+title: Lenke utenfor brev
+permalink: dpi_lenke.html
 sidebar: dpi_timo_sidebar
 ---
 
