@@ -18,6 +18,7 @@ Planlagt 24.06.21
 - Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
 - Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
 - Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
+- Added curl to Docker image.
 
 ## 2.2.2
 14.06.2021
