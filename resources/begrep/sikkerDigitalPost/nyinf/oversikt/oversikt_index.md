@@ -13,14 +13,14 @@ Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomhete
 ### Kort beskrivelse av de øvrige kapitlene i veiledningen:
 
 | --- | --- |
-| [Forretningslag](sdp_forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
-| [Dokumentpakke](dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
-| [Utvidelser](sdp_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
-| [Utskrift og forsendelse](sdp_index_utskrift.html) | Mer om utskriftstjenesten knyttet til digital post |
-| [Forretningsmeldinger](sdp_index.html) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
-| [Standard Business Document](standardbusinessdocument_index.html) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
-| [Transportlag](sdp_transportlag_index.html) | Rammeverk for overføring av meldinger |
-| [Feilhåndtering](sdp_feil_index.html) | Generelt om feilhåndtering |
+| [Forretningslag](dpi_forretningslag_index.html) | Aktører, prosesser og overordnet meldingsstruktur/format |
+| [Dokumentpakke](dpi_dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
+| [Utvidelser](dpi_utvidelser_index.html) | Utvidelser som beriker dokumenter i innbyggers postkasse |
+| [Utskrift og forsendelse](dpi_utskrift_index.html) | Mer om utskriftstjenesten knyttet til digital post |
+| [Forretningsmeldinger](dpi_forretiningsmelding_index.html) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
+| [Standard Business Document](dpi_sbd_index.html) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
+| [Testing](dpi_testing_index.html) | Hvordan teste |
+| [Feilhåndtering](dpi_feilhandtering_index.html) | Generelt om feilhåndtering |
 
 (Eldre releaser av dokumentasjonen finnes på: [https://begrep.difi.no/SikkerDigitalPost/](https://begrep.difi.no/SikkerDigitalPost/) )
 
