@@ -11,17 +11,17 @@
                 "standardBusinessDocumentHeader": {
                     "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
                 },
-                "fysisk": {
-                    "$ref": "#/definitions/fysisk"
+                "utskrift": {
+                    "$ref": "#/definitions/utskrift"
                 }
             },
             "required": [
                 "standardBusinessDocumentHeader",
-                "fysisk"
+                "utskrift"
             ]
         },
-        "fysisk": {
-            "$id": "#/definitions/fysisk",
+        "utskrift": {
+            "$id": "#/definitions/utskrift",
             "type": "object",
             "title": "digitalpost",
             "properties": {
@@ -29,7 +29,7 @@
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
                 },
                 "mottaker": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/personmottaker"
+                    "$ref": "#/definitions/adresseInformasjon"
                 },
                 "dokumentpakkefingeravtrykk": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
@@ -55,7 +55,6 @@
                 "mottaker",
                 "dokumentpakkefingeravtrykk",
                 "maskinportentoken",
-                "adresse",
                 "utskriftstype",
                 "retur"
             ],
