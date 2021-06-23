@@ -5,52 +5,31 @@
     "$comment": "Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post.",
     "definitions": {
         "standardBusinessDocument": {
-			"type": "object",
-			"additionalProperties": false,
-			"title": "standardBusinessDocument",
-			"properties": {
-				"standardBusinessDocumentHeader": { "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"	},
-				"mottakskvittering" : {"$ref": "#/definitions/kvittering", "required": []}
-			},
-			"required": [
-				"standardBusinessDocumentHeader", "mottakskvittering"
-			]
-		},        
-        "kvittering": {
             "type": "object",
-            "$id": "#/definitions/kvittering",
-            "title": "kvittering",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
             "properties": {
-                "avsender": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
                 },
-                "mottaker": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
-                },
-                "maskinportentoken": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
-                },
-                "tidspunkt": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                "mottakskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/kvittering"
                 }
             },
             "required": [
-                "avsender",
-                "mottaker",
-                "maskinportentoken",
-                "tidspunkt"
-            ],
-            "additionalProperties": false
+                "standardBusinessDocumentHeader",
+                "mottakskvittering"
+            ]
         }
     },
     "type": "object",
-	"properties": {
-		"standardBusinessDocument": {
-			"$ref": "#/definitions/standardBusinessDocument"
-		}
-	},
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
     "required": [
         "standardBusinessDocument"
     ],
-	"additionalProperties": false    
+    "additionalProperties": false
 }

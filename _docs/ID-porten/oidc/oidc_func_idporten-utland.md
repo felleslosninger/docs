@@ -12,6 +12,7 @@ Løsningen baserer seg på gjenbruk av eID-løsninger som brukeren allerede har,
 
 For at løsningen skal kunne brukes i ulike sektorer og kunne støtte den variasjon av fagsystem og identifikatorer som er i bruk i offentlig sektor, kan kunder be om at apple/google-innloggingen blir **beriket** med norske sektor-spesifikke identifikatorer som feks Nasjonal Felles Hjelpenummer fra helsesektoren. Første gang en eID logger på vil idporten-utland rekvirere en ny sektor-identifikator fra forespurt register og lagre en permanent kobling mellom eID og identifikator i idporten-utland sin lokale brukerdatabase.  Ved senere innlogginger med samme eID, mottar derfor kunde samme sektor-identifikator.
 
+idporten-utland bruker merkenavnet **Connect2Norway** ut mot sluttbruker.
 
 ### Aktører som inngår:
 
@@ -71,13 +72,15 @@ sequenceDiagram
 
 | Mijlø | Issuer | .well-known |
 |-|-|-|
-|PROD| tbd | tbd|
+|PROD| https://connect2norway.no/ | [https://connect2norway.no/.well-known/openid-configuration](https://connect2norway.no/.well-known/openid-configuration) |
 |PREPROD| https://idporten-utland-test.digdir.eon.no/c2id | [https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration](https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration) |
 
 
 idporten-utland kjører i et eget, Kubernetes-basert on-prem driftsmiljø hos driftsleverandør TietoEvry.
 
 Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er lett å integrere mot den.  Det er ennå ikke lagt til eget valg for idporten-utland som  `integration_type` i Samarbeidsportalen, slik at alle  integrasjoner som virker i den "vanlige" ID-porten (OIDC) også virker mot id-porten utland.  Vi anbefaler dog at kunder oppretter egne integrasjoner spesifikt for idporten-utland. For testmiljø er det VER2 som gjelder.
+
+**Merk:** Det kan ta opptil 10 minutter fra en registrerer en klient i selvbetjeningsløsningen, til den er aktiv i idporten-utland.
 
 **Merk:** Pga. en intern begrensning er det kun klienter registert via Selvbetjening med 1 og bare 1 redirect-uri som virker i idporten-utland p.t.
 
@@ -152,7 +155,7 @@ Følgende claims er viktige å få korrekt i requesten:
 |sub||subject identifier|Basert på klient-konfigurasjon, enten en [pairwise verdi](https://openid.net/specs/openid-connect-core-1_0.html#PairwiseAlg) (dvs forskjellige sub-verdier mellom ulike klienter for samme brukerkonto ), eller [public verdi](https://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes) lik bruker-id i idporten-utlands brukerdatabase.
 |acr|`low`| Sikkerhetsnivå | Apple/Google-id har verdien `low`. MinID har `Level3`, og BankID/Buypass/Commfides har `Level4`. Klient må alltid validere at innlogging har det sikkerhetsnivået som man forespurte. |
 |amr| `["Apple"]` | Innloggingsmetode | Enten `Google` eller `Apple`.  Merk at klient bør ikke validere på disse verdiene, og heller sjekke acr.|
-|fhnummer| `87012054321`| Felles Nasjonalt Hjelpenummer| Revirert fra Personregisteret (PREG) til Norsk Helsenett|
+|fhnummer| `80012054321`| Felles Nasjonalt Hjelpenummer| Revirert fra Personregisteret (PREG) til Norsk Helsenett|
 |mobile|`+4799998888`|Mobilnummer|Bruker sitt selv-registrerte mobilnummer.  Alltid inkludert utenlandsprefix (+) og landkode ihht E.164.  Innhentes av idporten-utland ved første gangs innlogging. |
 |email| `email@example.com` |Epost| Bruker sitt selv-registrete epost-adresse.  Innhentes av idporten-utland ved første gangs innlogging. |
 
@@ -177,7 +180,7 @@ I dette tilfellet har klienten forespurt scope `openid idporten:utland:fhnummer`
 
       "acr" : "low",
       "amr" : [ "Apple" ],  
-      "fhnummer": "17012054321",
+      "fhnummer": "80012054321",
       "mobile": "+4799998888"
       "email": "email@example.com"
 

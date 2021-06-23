@@ -73,3 +73,12 @@ Typiske verdiar her vil vere
 * Vedlegg til protokoll
 
 * Innkalling
+
+
+### Videolenke på møter
+For å støtte publisering av opptak av møter er det laga til eit eige felt for dette.  Feltet videolenke kan leggast til å møter og møtesaksregistrering for å lenke inn opptak på møter og politiske saker
+Data blir då som følgje
+
+```sparql
+<http://data.einnsyn.no/ei-moetemappe> arkiv:videolink "https://eitvideostystem.no/archive/269" .
+```

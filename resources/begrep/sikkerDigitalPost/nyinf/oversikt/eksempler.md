@@ -1,8 +1,10 @@
 ---
-title: Ekesmepler
-permalink: nyinf_eksempler.html
-sidebar: dpi_sidebar
+title: Eksemepler
+permalink: dpi_eksempler.html
+sidebar: dpi_timo_sidebar
 ---
+
+![](/images/dpi/underarbeide.png)
 
 På denne siden finner du eksempler må meldinger mellom de forskjellige aktuørene i 4-hjørnes modellen
 
