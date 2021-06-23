@@ -5,52 +5,32 @@
     "$comment": "Denne kvitteringen kan Behandlingsansvarlig oppbevare som en garanti på at posten vil bli levert til Mottaker.",
     "definitions": {
         "standardBusinessDocument": {
-			"type": "object",
-			"additionalProperties": false,
-			"title": "standardBusinessDocument",
-			"properties": {
-				"standardBusinessDocumentHeader": { "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"	},
-				"leveringskvittering" : {"$ref": "#/definitions/kvittering"}
-			},
-			"required": [
-				"standardBusinessDocumentHeader", "leveringskvittering"
-			]
-		},
-        "kvittering": {
             "type": "object",
-            "$id": "#/definitions/kvittering",
-            "title": "kvittering",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
             "properties": {
-                "avsender": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
                 },
-                "mottaker": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
-                },
-                "maskinportentoken": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
-                },
-                "tidspunkt": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                "leveringskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/kvittering"
                 }
             },
             "required": [
-                "avsender",
-                "mottaker",
-                "maskinportentoken",
-                "tidspunkt"
-            ],
-            "additionalProperties": false
-        }
-    },    
+                "standardBusinessDocumentHeader",
+                "leveringskvittering"
+            ]
+        },
+        "additionalProperties": false
+    },
     "type": "object",
-	"properties": {
-		"standardBusinessDocument": {
-			"$ref": "#/definitions/standardBusinessDocument"
-		}
-	},
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
     "required": [
         "standardBusinessDocument"
     ],
-	"additionalProperties": false
+    "additionalProperties": false
 }

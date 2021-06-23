@@ -49,8 +49,8 @@
             },
             "mottaker": {
                 "personidentifikator": {
-                    "value": "iso6523-actorid-upis",
-                    "authority": "0192:987654321"
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:987654321"
                 }
             },
             "maskinportentoken": "ABCDE",
