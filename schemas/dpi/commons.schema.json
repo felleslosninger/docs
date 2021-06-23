@@ -166,27 +166,7 @@
                     "description": "Kommunikasjonskanal for utsending av varsel og påminnelse",
                     "$comment": "Varsling og påminnelsesmeldinger skal sendes på den kanal som blir spesifisert. Kanalen SMS er priset."
                 }
-            },
-            "oneOf": [
-                {
-                    "required": [
-                        "avsender",
-                        "mottaker",
-                        "maskinportentoken",
-                        "tidspunkt"
-                    ]
-                },
-                {
-                    "required": [
-                        "avsender",
-                        "mottaker",
-                        "maskinportentoken",
-                        "tidspunkt",
-                        "beskrivelse",
-                        "varslingskanal"
-                    ]
-                }
-            ],
+            },            
             "required": [
                 "avsender",
                 "mottaker",
