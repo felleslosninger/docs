@@ -15,7 +15,7 @@ folders:
       - title: Sertifikathåndtering
         jurl: /dpi_sertifikathandtering.html   
       - title: Ingegrasjon
-        jurl: /openapi_spec.html
+        jurl: /resources/begrep/sikkerDigitalPost/nyinf/api/openapi_spec.html
       - title: Skjema (XSD) filer
         jurl: /dpi_skjema.html 
       - title: Eksempler
