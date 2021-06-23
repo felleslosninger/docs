@@ -12,13 +12,13 @@
                 "standardBusinessDocumentHeader": {
                     "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
                 },
-                "flyttedigitalpost": {
-                    "$ref": "#/definitions/flyttedigitalpost"
+                "flyttet": {
+                    "$ref": "#/definitions/flyttet"
                 }
             },
             "required": [
                 "standardBusinessDocumentHeader",
-                "flyttedigitalpost"
+                "flyttet"
             ]
         },
         "flyttet": {
