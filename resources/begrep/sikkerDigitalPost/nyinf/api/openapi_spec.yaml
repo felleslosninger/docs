@@ -3,6 +3,9 @@ info:
     title: API for aksesspunktleverandører i DPI
     version: 0.0.1
     description: API for kommunikasjon mellom C1 og C2 i firehjørers akritektur for DPI
+    x-logo: 
+      url: "https://docs.digdir.no/assets/Digdir.png"
+      altText: "Digdir logo"
 paths:
     /{version}/send:    
       post:
