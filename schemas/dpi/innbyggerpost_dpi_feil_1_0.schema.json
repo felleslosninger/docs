@@ -5,17 +5,22 @@
     "$comment": "Feilmelding sendes fra Postkasseleverandør når det oppstår en uventet feil som ikke kan håndteres av postkasseleverandør innenfor SLA krav. Feilene kategoriseres overordnet i to typer, enten som klient feil som Avsender må rette opp i eller som server feil som oppstår hos postkasseleverandør.",
     "definitions": {
         "standardBusinessDocument": {
-			"type": "object",
-			"additionalProperties": false,
-			"title": "standardBusinessDocument",
-			"properties": {
-				"standardBusinessDocumentHeader": { "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"	},
-				"feil" : {"$ref": "#/definitions/feil"}
-			},
-			"required": [
-				"standardBusinessDocumentHeader", "feil"
-			]
-		},
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "feil": {
+                    "$ref": "#/definitions/feil"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "feil"
+            ]
+        },
         "feil": {
             "type": "object",
             "$id": "#/definitions/feil",
@@ -61,13 +66,13 @@
         }
     },
     "type": "object",
-	"properties": {
-		"standardBusinessDocument": {
-			"$ref": "#/definitions/standardBusinessDocument"
-		}
-	},
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
     "required": [
         "standardBusinessDocument"
     ],
-	"additionalProperties": false
+    "additionalProperties": false
 }

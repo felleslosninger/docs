@@ -59,7 +59,7 @@
                 "retur"
             ],
             "additionalProperties": false
-        },        
+        },
         "utskriftstype": {
             "type": "string",
             "enum": [

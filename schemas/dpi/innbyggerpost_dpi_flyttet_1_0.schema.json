@@ -5,18 +5,23 @@
     "$comment": "Denne meldingstypen brukes kun imellom Postkasseleverandørene og ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin post over til en annen postkasseleverandør.",
     "definitions": {
         "standardBusinessDocument": {
-			"type": "object",
-			"additionalProperties": false,
-			"title": "standardBusinessDocument",
-			"properties": {
-				"standardBusinessDocumentHeader": { "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"},
-				"flyttedigitalpost" : {"$ref": "#/definitions/flyttedigitalpost"}
-			},
-			"required": [
-				"standardBusinessDocumentHeader", "flyttedigitalpost"
-			]
-		},
-        "flyttedigitalpost": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "flyttedigitalpost": {
+                    "$ref": "#/definitions/flyttedigitalpost"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "flyttedigitalpost"
+            ]
+        },
+        "flyttet": {
             "type": "object",
             "$id": "#/definitions/flyttedigitalpost",
             "title": "kvittering",
@@ -33,12 +38,19 @@
                 "tidspunkt": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
                 },
-                "dokumentpakkefingeravtrykk":{
+                "dokumentpakkefingeravtrykk": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
                 },
-                "mottakstidspunkt": {"type": "string", "format": "date"},
-                "aapnet" : {"type": "boolean"},
-                "digitalpostinfo" : {"$ref": "https://docs.digdir.no/schemas/dpi/digitalpost.schema.json#/definitions/digitalpostinfo"}
+                "mottakstidspunkt": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "aapnet": {
+                    "type": "boolean"
+                },
+                "digitalpostinfo": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/digitalpost.schema.json#/definitions/digitalpostinfo"
+                }
             },
             "required": [
                 "avsender",
@@ -52,13 +64,13 @@
         }
     },
     "type": "object",
-	"properties": {
-		"standardBusinessDocument": {
-			"$ref": "#/definitions/standardBusinessDocument"
-		}
-	},
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
     "required": [
         "standardBusinessDocument"
     ],
-	"additionalProperties": false
+    "additionalProperties": false
 }
