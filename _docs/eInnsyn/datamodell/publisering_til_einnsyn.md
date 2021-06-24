@@ -11,11 +11,15 @@ Meldingane til eInnsyn er basert på Noark, men konvertert til json-ld som er ei
 
 eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen](https://difi.github.io/felleslosninger/eformidling_nm_message.html#einnsyn).
 
-Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsond.
+Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsonld.
 
 Her er eksempel på jsonld-fil og tilsvarande data som Noark5-xml
 * [Payload.jsonld](/resources/einnsyn/eksempelfiler/konvertert_noark5tiljsonld.jsonld)
 * [Noark5 xml](/resources/einnsyn/eksempelfiler/noark5_basiseksempel.xml)
+
+Publisering til eInnsyn kan gjøres på to måter:
+* Ved bruk av [eInnsyn-klient](https://docs.digdir.no/einnsyn_forutsetninger.html). Klienten kan motta data på Noark4/5 xml format. Den vil da validere og konvertere data til jsonld som sendes til integrasjonspunktet.
+* Direkteintegrasjon, dvs. poste meldinger direkte til integrasjonspunktet. Meldingene må da være i jsonld-format. Det er en maks størrelse på meldinger som kan sendes på 1 MB, det er derfor intensjonen at systemer som benytter direkteintegrasjon sender mest mulig atomiske meldinger (eks. en og en journalpost/møtesak). 
 
 ## Fulltekstpublisering
 For å fulltekstpublisere trengst det at ein set opp eit fillager lokalt som er tilgjengeleg frå internett. Ein legg der dokumenta som skal fulltekstpubliserast. I metadata som blir sendt til eInnsyn legg ein så inn lenke til dokumenta som er skal fulltekstpubliserast.
