@@ -1,5 +1,5 @@
 {
-    "$id": "https://docs.digdir.no/schemas/dpi/flyttedigitalpost.schema.json",
+git     "$id": "https://docs.digdir.no/schemas/dpi/flyttet.schema.json",
     "$schema": "https://json-schema.org/draft-07/schema#",
     "description": "En digital post med tilhørende Dokumentpakke som flyttes fra en postkasseleverandør til en annen",
     "$comment": "Denne meldingstypen brukes kun imellom Postkasseleverandørene og ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin post over til en annen postkasseleverandør.",
@@ -48,8 +48,23 @@
                 "aapnet": {
                     "type": "boolean"
                 },
-                "digitalpostinfo": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/digitalpost.schema.json#/definitions/digitalpostinfo"
+                "sikkerhetsnivaa": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/sikkerhetsnivaa"
+                },
+                "virkningsdato": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningsdato"                    
+                },
+                "virkningstidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningstidspunkt"                    
+                },
+                "aapningskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/aapningskvittering"                    
+                },
+                "ikkesensitivtittel": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/ikkesensitivtittel"
+                },
+                "varsler": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/varsler"
                 }
             },
             "required": [
@@ -58,7 +73,9 @@
                 "maskinportentoken",
                 "tidspunkt",
                 "dokumentpakkefingeravtrykk",
-                "mottakstidspunkt"
+                "mottakstidspunkt",
+                "sikkerhetsnivaa",
+                "ikkesensitivtittel"
             ],
             "additionalProperties": false
         }
