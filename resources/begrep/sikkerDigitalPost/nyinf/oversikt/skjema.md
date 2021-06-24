@@ -9,8 +9,8 @@ sidebar: dpi_timo_sidebar
 Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 
 ### Forettningsmelding schema
-- [Digital] (schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json)
-- [Utskrift] (schemas/dpi/innbyggerpost_dpi_utskrift_1_0.schema.json)
+- [Digital](schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json)
+- [Utskrift](schemas/dpi/innbyggerpost_dpi_utskrift_1_0.schema.json)
 - [Leveringskvittering](schemas/dpi/innbyggerpost_dpi_leveringskvittering_1_0.schema.json)
 - [AapningsKvittering](schemas/dpi/innbyggerpost_dpi_aapningskvittering_1_0.schema.json)
 - [VarslingfeiletKvittering](schemas/dpi/innbyggerpost_dpi_varslingfeiletkvittering_1_0.schema.json)
