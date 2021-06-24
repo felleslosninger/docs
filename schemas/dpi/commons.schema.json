@@ -182,6 +182,17 @@
             ],
             "additionalProperties": false
         },
+        "sikkerhetsnivaa": {
+            "$id": "#/definitions/sikkerhetsnivaa",
+            "title": "sikkerhetsnivaa",
+            "description": "Definerer hvilket autentiseringsnivå som kreves for at dokumentet skal åpnes",
+            "$comment": "Gyldige verdier 3,4",
+            "type": "integer",
+            "enum": [
+                3,
+                4
+            ]
+        },
         "virkningsdato": {
             "$id": "#/definitions/virkningsdato",
             "title": "virkningsdato",
@@ -212,7 +223,6 @@
             "type": "boolean",
             "default": false
         },
-        
         "varsler": {
             "$id": "#/definitions/varsler",
             "title": "varsler",
