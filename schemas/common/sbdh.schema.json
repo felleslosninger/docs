@@ -122,7 +122,8 @@
 					"type": "string"
 				},
 				"creationDateAndTime": {
-					"type": "string"
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -157,7 +158,7 @@
 			"properties": {
 				"authority": {
 					"type": "string",
-					"description": "Henviser til identitesautoritet for orgnr angi iso6523-actorid-upis, for personnummer iso3166-1"
+					"description": "Henviser til identitesautoritet. For orgnr angi iso6523-actorid-upis, for personnummer iso3166-1"
 				},
 				"value": {
 					"type": "string",
