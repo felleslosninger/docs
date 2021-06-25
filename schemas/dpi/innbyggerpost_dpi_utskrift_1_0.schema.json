@@ -37,9 +37,6 @@
                 "maskinportentoken": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
                 },
-                "adresse": {
-                    "$ref": "#/definitions/adresseInformasjon"
-                },
                 "utskriftstype": {
                     "$ref": "#/definitions/utskriftstype"
                 },
