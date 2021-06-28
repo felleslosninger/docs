@@ -185,5 +185,8 @@
             "$ref": "#/definitions/standardBusinessDocument"
         }
     },
+    "required": [
+        "standardBusinessDocument"
+    ],
     "additionalProperties": false
 }
