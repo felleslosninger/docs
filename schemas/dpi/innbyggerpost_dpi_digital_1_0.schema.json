@@ -41,13 +41,13 @@
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/sikkerhetsnivaa"
                 },
                 "virkningsdato": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningsdato"                    
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningsdato"
                 },
                 "virkningstidspunkt": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningstidspunkt"                    
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningstidspunkt"
                 },
                 "aapningskvittering": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/aapningskvittering"                    
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/aapningskvittering"
                 },
                 "ikkesensitivtittel": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/ikkesensitivtittel"
@@ -65,7 +65,7 @@
                 "ikkesensitivtittel"
             ],
             "additionalProperties": false
-        }        
+        }
     },
     "type": "object",
     "properties": {
@@ -73,5 +73,8 @@
             "$ref": "#/definitions/standardBusinessDocument"
         }
     },
+    "required": [
+        "standardBusinessDocument"
+    ],
     "additionalProperties": false
 }
