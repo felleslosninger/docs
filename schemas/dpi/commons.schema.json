@@ -21,7 +21,8 @@
             },
             "required": [
                 "virksomhetsidentifikator"
-            ]
+            ],
+            "additionalProperties": false
         },
         "virksomhetmottaker": {
             "type": "object",
@@ -66,7 +67,8 @@
             "required": [
                 "personidentifikator",
                 "postkasseadresse"
-            ]
+            ],
+            "additionalProperties": false
         },
         "virksomhetsidentifikator": {
             "type": "object",
@@ -91,7 +93,8 @@
             "required": [
                 "authority",
                 "value"
-            ]
+            ],
+            "additionalProperties": false
         },
         "personidentifikator": {
             "type": "object",
@@ -112,7 +115,8 @@
             },
             "required": [
                 "value"
-            ]
+            ],
+            "additionalProperties": false
         },
         "postkasseadresse": {
             "type": "string",
@@ -154,7 +158,12 @@
                     "type": "string",
                     "description": "Base64 encoded Hash av den krypterte Dokumentpakken"
                 }
-            }
+            },
+            "required": [
+                "digestMethod",
+                "digestValue"
+            ],
+            "additionalProperties": false
         },
         "kvittering": {
             "type": "object",
@@ -256,7 +265,8 @@
             "required": [
                 "tittel",
                 "spraak"
-            ]
+            ],
+            "additionalProperties": false
         },
         "epostvarsel": {
             "type": "object",
@@ -351,7 +361,8 @@
                 "varslingstekst",
                 "spraak",
                 "repetisjoner"
-            ]
+            ],
+            "additionalProperties": false
         }
     }
 }
