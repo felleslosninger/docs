@@ -76,10 +76,10 @@ Send så filen til servicedesk@digdir.no.
 
 For å installere og kjøre integrasjonspunktet må en laste ned disse ressursene:
 
-- [Integrasjonspunktet](https://docs.digdir.no/eformidling_download_ip.html#integrasjonspunktet-221-jar)
-- [Winsw](https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW.NET4.exe)
-- [Konfigurasjonsfil](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.xml)
-- [Propertiesfil](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.properties)
+- [Integrasjonspunktet(.jar)](https://docs.digdir.no/eformidling_download_ip.html#integrasjonspunktet-221-jar)
+- [Winsw(.exe)](https://github.com/winsw/winsw/releases/download/v2.11.0/WinSW.NET4.exe)
+- [Konfigurasjonsfil.xml](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.xml)
+- [Propertiesfil.properties](https://github.com/difi/felleslosninger/blob/gh-pages/resources/eformidling/integrasjonspunkt_dpi.properties)
 
 ## Oppsett og intallasjon av integrasjonspunktet
 
@@ -87,7 +87,7 @@ Begynn med å lage en ny mappe der du legger alle ressursene du lastet ned. Anbe
 Følg så stegene under:
 
 1. Navngi xml-og exe-filen slik at de har samme navn. Det er viktig at disse er like.
-2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen.
+2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen. Disse verdiene må være fylt ut:
 3. Integrasjonspunktmappen bør se slik ut nå:
 ![Mappen pre-install](/images/eformidling/mappe%20pre-install.png)
 4. Åpne kommandovindu som administrator. Naviger frem til integrasjonspunktmappen.
