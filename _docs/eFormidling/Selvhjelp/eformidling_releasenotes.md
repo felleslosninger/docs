@@ -20,6 +20,8 @@ sidebar: eformidling_install_sidebar
 - Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
 - Added curl to Docker image.
 
+***
+
 ## 2.2.2
 14.06.2021
 
@@ -42,6 +44,8 @@ I denne versjonen er det gjort flere endringer for å bedre paralellitet ved sen
 
 *Alle nye properties finner du [her](https://docs.digdir.no/eformidling_properties_config.html#eformidling---digital-post-til-innbyggere)*
 
+***
+
 ## 2.2.1
 05.05.2021
 
@@ -58,6 +62,7 @@ Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det e
 * For å støtte en enklere overgangsfase for sakarkiv-leverandører ved implementasjon av eFormidling 2.0-grensesnittet, har vi fjernet kravet om UUID i ReceiverRef i SBDH. Denne valideringen vil bli gjeninnført ved et senere tidspunkt.
 * [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon) 	146.192.252.50:443 - maskinporten.no (TCP)
 
+***
 
 ## 2.2.0
 09.02.2021
@@ -99,9 +104,9 @@ Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det e
 Fjernet logging-spam fra servicebus AMQP-klient under shutdown
 
 
-
 Full endringslogg: [Release notes for 2.2.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10196)
 
+***
 
 ## 2.1.3
 18.08.2020
@@ -117,7 +122,8 @@ Full endringslogg: [Release notes for 2.2.0](https://difino.atlassian.net/secure
 
 
 Full endringslogg: [Release notes for 2.1.3](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10191)
-
+ 
+***
 
 ## 2.1.2
 01.07.2020
@@ -137,6 +143,7 @@ Full endringslogg: [Release notes for 2.1.3](https://difino.atlassian.net/secure
 
 Full endringslogg: [Release notes for 2.1.2](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10187)
 
+***
 
 ## 2.1.0
 05.03.2020
@@ -159,20 +166,28 @@ Etter ønske er det nå lagt til avsender orgnr, samt søkbar messageReference. 
   
 Full endringslogg: [Release notes for 2.1.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10174)
 
+***
+
 ## 2.0.10
 16.12.19
 
 [Release notes for 2.0.10](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10173)
+
+***
 
 ## 2.0.9
 12.12.19
 
 [Release notes for 2.0.9](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10172)
 
+***
+
 ## 2.0.8
 09.12.19
 
 [Release notes for 2.0.8](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10170)
+
+***
 
 ## 2.0.7
 18.11.19
