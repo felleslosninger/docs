@@ -31,9 +31,9 @@ folders:
         jurl: /dpi_aktorer.html   
       - title: Varsling
         jurl: /dpi_varsling.html   
-      - title: Sending av digital post
+      - title: Sending av innbyggerpost
         jurl: /dpi_sending_av_digital_post.html
-      - title: Sending av digital post på vegne av andre
+      - title: Sending av innbyggerpost på vegne av andre
         jurl: /dpi_send_paa_vegne_av_andre.html  
       - title: Kvitteringer
         jurl: /dpi_kvitteringer.html
@@ -41,7 +41,7 @@ folders:
         jurl: /dpi_tilstander.html
       - title: Struktur på melding
         jurl: /dpi_meldingsformat.html
-      - title: Prisen på digital post
+      - title: Prisen på innbyggerpost som DPI-melding
         jurl: /dpi_pris.html
    
     - title: Dokumentpakke (ASiC)
