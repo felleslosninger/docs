@@ -14,7 +14,9 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen. Dersom den nye versjonen ikkje startar, rullar KOSMOS attende.
 
 ## Laste ned
-> [PH:Her kjem nedlastingslenke til kosmos.jar når applikasjonen er lansert]()
+> [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+
+> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
 
 ## Funksjonalitet
 KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
