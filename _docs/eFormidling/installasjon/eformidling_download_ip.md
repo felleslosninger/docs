@@ -13,7 +13,7 @@ sidebar: eformidling_install_sidebar
 > 21.06.2021: Vi har identifisert et problem knyttet til versjon 2.2.1 som påvirker enkelte virksomheter som bruker sak- og arkivsystemet Elements fra Sikri. Vi ber derfor  om at virksomheter som bruker Elements ikke oppgraderer til versjon 2.2.1 eller 2.2.2.
 
 
-### [Integrasjonspunktet 2.2.2 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.2/integrasjonspunkt-2.2.2.jar)
+### [Integrasjonspunktet 2.2.3 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.3/integrasjonspunkt-2.2.3.jar)
 
 ### [Integrasjonspunktet 2.2.2 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.2/images/sha256-304f723e61c644ca4a4e663a0b8800b7a38e309a70c140c1b912358a0172c928?context=explore)
 
