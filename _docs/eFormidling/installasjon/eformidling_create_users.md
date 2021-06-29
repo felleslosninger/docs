@@ -2,7 +2,7 @@
 title: Opprette brukere til eFormidling
 description: Informasjon om hvordan man oppretter brukere for DPF, DPO og DPV
 summary: "Informasjon om hvordan man oppretter brukere for DPF, DPO og DPV"
-permalink: /eformidling_create_users/
+permalink: eformidling_create_users.html
 product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
