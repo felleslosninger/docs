@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-# 2.2.3
+## 2.2.3
 28.06.21
 
 ### Hva er endret/nytt?
