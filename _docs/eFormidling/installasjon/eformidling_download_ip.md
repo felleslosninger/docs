@@ -10,12 +10,13 @@ sidebar: eformidling_install_sidebar
 
 ### Siste versjon av integrasjonspunktet kan lastes ned her
  
-> 21.06.2021: Vi har identifisert et problem knyttet til versjon 2.2.1 som påvirker enkelte virksomheter som bruker sak- og arkivsystemet Elements fra Sikri. Vi ber derfor  om at virksomheter som bruker Elements ikke oppgraderer til versjon 2.2.1 eller 2.2.2.
+>  28.06.2021 Dette er rettet i versjon 2.2.3 som nå er tilgjengelig for nedlasting. 
+>  21.06.2021: Vi har identifisert et problem knyttet til versjon 2.2.1 som påvirker enkelte virksomheter som bruker sak- og arkivsystemet Elements fra Sikri. Vi ber derfor  om at virksomheter som bruker Elements ikke oppgraderer til versjon 2.2.1 eller 2.2.2.
 
 
 ### [Integrasjonspunktet 2.2.3 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.3/integrasjonspunkt-2.2.3.jar)
 
-### [Integrasjonspunktet 2.2.2 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.2/images/sha256-304f723e61c644ca4a4e663a0b8800b7a38e309a70c140c1b912358a0172c928?context=explore)
+### [Integrasjonspunktet 2.2.3 (Docker container image) ](https://hub.docker.com/layers/difi/integrasjonspunkt/2.2.3/images/sha256-a7909b3ae3bd80cb02d2f9176d8f2123ec2e9f6984d9e1552a1d0074a34d4c8e?context=explore)
 
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
