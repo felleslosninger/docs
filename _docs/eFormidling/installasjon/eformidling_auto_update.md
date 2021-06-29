@@ -15,6 +15,7 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 
 ## Laste ned
 > [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+
 > [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
 
 ## Funksjonalitet
