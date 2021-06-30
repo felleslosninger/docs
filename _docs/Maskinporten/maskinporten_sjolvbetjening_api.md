@@ -23,7 +23,7 @@ For å administrere API'er må administrasjons-klienten ha tilgang til scopet id
 
 Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
-Les også "Grunnleggende prosedyre for API-sikring". (oidc_api_admin_maskinporten.html#grunnleggende-prosedyre-for-api-sikring)
+Les også ["Grunnleggende prosedyre for API-sikring".](oidc_api_admin_maskinporten.html#grunnleggende-prosedyre-for-api-sikring)
 
 ### Opprette API - Oauth2-selvbetjeningsklient
 
@@ -116,7 +116,7 @@ Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
+For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html.](https://difi.github.io/felleslosninger/oidc_api_admin.html)
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
