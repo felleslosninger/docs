@@ -73,12 +73,12 @@ sequenceDiagram
 | Mijlø | Issuer | .well-known |
 |-|-|-|
 |PROD| https://connect2norway.no/ | [https://connect2norway.no/.well-known/openid-configuration](https://connect2norway.no/.well-known/openid-configuration) |
-|PREPROD| https://idporten-utland-test.digdir.eon.no/c2id | [https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration](https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration) |
+|VER2| https://idporten-utland-test.digdir.eon.no/c2id | [https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration](https://idporten-utland-test.digdir.eon.no/c2id/.well-known/openid-configuration) |
 
 
 idporten-utland kjører i et eget, Kubernetes-basert on-prem driftsmiljø hos driftsleverandør TietoEvry.
 
-Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er lett å integrere mot den.  Det er ennå ikke lagt til eget valg for idporten-utland som  `integration_type` i Samarbeidsportalen, slik at alle  integrasjoner som virker i den "vanlige" ID-porten (OIDC) også virker mot id-porten utland.  Vi anbefaler dog at kunder oppretter egne integrasjoner spesifikt for idporten-utland. For testmiljø er det VER2 som gjelder.
+Løsningen er koblet mot Selvbetjening på samarbeidsportalen, slik at det er lett å integrere mot den.  Det er ennå ikke lagt til eget valg for idporten-utland som  `integration_type` i Samarbeidsportalen, slik at alle  integrasjoner som virker i den "vanlige" ID-porten (OIDC) også virker mot id-porten utland.  Vi anbefaler dog at kunder oppretter egne integrasjoner spesifikt for idporten-utland. For testmiljø er det VER2 som skal benyttes. Husk å opprette integrasjonen som type API_KLIENT, slik at du kan få registrert scopes på den.
 
 **Merk:** Det kan ta opptil 10 minutter fra en registrerer en klient i selvbetjeningsløsningen, til den er aktiv i idporten-utland.
 
