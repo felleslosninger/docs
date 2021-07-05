@@ -4,8 +4,18 @@ permalink: identifiers.html
 sidebar: dpi_sidebar
 ---
 
-# Processes
+![](/images/dpi/underarbeide.png)
 
+Oversikten under inneholder oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI og prosessene disse brukes under. Frem til identifikatorene er godtkjent av norsk peppolmyndighet og Open Peppol kan det forekome justering på idetifikatorenne.
+
+</br>
+</br>
+</br>
+</br>
+
+
+
+# Processes
 
 ### INNBYGGERPOST_DIGITAL_1_0
 |Title|Description|Domain|Identifier|Schema|
@@ -45,6 +55,10 @@ Documents
 - INNBYGGERPOST_DPI_LEVERINGSKVITTERING_1_0
 
 
+</br>
+</br>
+</br>
+</br>
 
 # Documents
 

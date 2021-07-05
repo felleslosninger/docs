@@ -16,6 +16,8 @@ folders:
         jurl: /dpi_sertifikathandtering.html   
       - title: Integrasjon
         jurl: /resources/begrep/sikkerDigitalPost/nyinf/api/openapi_spec.html
+      - title: Prosesser og dokumenttyper
+        jurl: /identifiers.html
       - title: Schema og XSD 
         jurl: /dpi_skjema.html 
       - title: Eksempler
