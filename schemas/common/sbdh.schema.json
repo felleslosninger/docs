@@ -81,9 +81,6 @@
 					"items": {
 						"$ref": "#/definitions/scopeInformation"
 					}
-				},
-				"identfier": {
-					"type": "string"
 				}
 			},
 			"required": [
