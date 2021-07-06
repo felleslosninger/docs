@@ -43,10 +43,6 @@
                 }
             },
             "mottaker": {
-                "personidentifikator": {
-                    "authority": "iso3166-1-alfa2",
-                    "value": "NO:17050411111"
-                },
                 "postkasseadresse": "ola.nordmann#9YDT"
             },
             "dokumentpakkefingeravtrykk": {

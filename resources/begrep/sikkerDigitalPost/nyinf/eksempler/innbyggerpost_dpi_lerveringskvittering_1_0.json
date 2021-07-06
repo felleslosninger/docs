@@ -48,7 +48,7 @@
                 }
             },
             "mottaker": {
-                "personidentifikator": {
+                "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
                     "value": "0192:987654321"
                 }

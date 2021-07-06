@@ -56,16 +56,12 @@
             "title": "mottaker",
             "description": "Person som er mottaker av en sikker digital post",
             "$comment": "",
-            "properties": {
-                "personidentifikator": {
-                    "$ref": "#/definitions/personidentifikator"
-                },
+            "properties": {                
                 "postkasseadresse": {
                     "$ref": "#/definitions/postkasseadresse"
                 }
             },
             "required": [
-                "personidentifikator",
                 "postkasseadresse"
             ],
             "additionalProperties": false
