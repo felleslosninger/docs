@@ -2,7 +2,7 @@
 title: Digital
 permalink: dpi_digital.html
 sidebar: dpi_timo_sidebar
-dpi_schema_location: https://docs.digdir.no/schemas/dpi/commons.schema.json
+dpi_common_schema_location: https://docs.digdir.no/schemas/dpi/commons.schema.json
 ---
 
 ![](/images/dpi/underarbeide.png)
@@ -22,13 +22,13 @@ Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering](dpi_le
 
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
-| [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_schema_location }}#/definitions/avsender) |
-| [mottaker](2sdp_mottaker.html) | 1..1 | [mottaker]({{ site.dpi_schema_location }}#/definitions/personmottaker) |
-| [dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md) | 1..1 | [dokumentpakkefingeravtrykk]({{ site.dpi_schema_location }}#/definitions/dokumentpakkefingeravtrykk) |
-| [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [sdp:Dokumentpakkefingeravtrykk]({{ site.dpi_schema_location }}#/definitions/maskinportentoken) |
-| [sikkerhetsnivaa](sikkerhetsnivaa.html) | 0..1 | [sikkerhetsnivaa]({{ site.dpi_schema_location }}#/definitions/sikkerhetsnivaa) |
-| [virkningsdato](virkningsdato.html) | 0..1 | [virkningsdato]({{ site.dpi_schema_location }}#/definitions/virkningsdato) |
-| [virkningstidspunkt](virkningstidspunkt.html) | 0..1 | [virkningstidspunkt]({{ site.dpi_schema_location }}#/definitions/virkningstidspunkt) |
-| [aapningskvittering](aapningskvittering.html) | 0..1 | [aapningskvittering]({{ site.dpi_schema_location }}#/definitions/aapningskvittering) |
-| [ikkesensitivtittel](ikkesensitivtittel.html) | 0..1 | [ikkesensitivtittel]({{ site.dpi_schema_location }}#/definitions/ikkesensitivtittel) |
-| [varsler](sdp_varsler.html) | 0..1 | [varsler]({{ site.dpi_schema_location }}#/definitions/varsler) |
+| [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
+| [mottaker](2sdp_mottaker.html) | 1..1 | [mottaker]({{ page.dpi_common_schema_location }}#/definitions/personmottaker) |
+| [dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md) | 1..1 | [dokumentpakkefingeravtrykk]({{ page.dpi_common_schema_location }}#/definitions/dokumentpakkefingeravtrykk) |
+| [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [sdp:Dokumentpakkefingeravtrykk]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
+| [sikkerhetsnivaa](sikkerhetsnivaa.html) | 0..1 | [sikkerhetsnivaa]({{ page.dpi_common_schema_location }}#/definitions/sikkerhetsnivaa) |
+| [virkningsdato](virkningsdato.html) | 0..1 | [virkningsdato]({{ page.dpi_common_schema_location }}#/definitions/virkningsdato) |
+| [virkningstidspunkt](virkningstidspunkt.html) | 0..1 | [virkningstidspunkt]({{ page.dpi_common_schema_location }}#/definitions/virkningstidspunkt) |
+| [aapningskvittering](aapningskvittering.html) | 0..1 | [aapningskvittering]({{ page.dpi_common_schema_location }}#/definitions/aapningskvittering) |
+| [ikkesensitivtittel](ikkesensitivtittel.html) | 0..1 | [ikkesensitivtittel]({{ page.dpi_common_schema_location }}#/definitions/ikkesensitivtittel) |
+| [varsler](sdp_varsler.html) | 0..1 | [varsler]({{ page.dpi_common_schema_location }}#/definitions/varsler) |
