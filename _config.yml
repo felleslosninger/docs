@@ -154,6 +154,14 @@ defaults:
     values:
       image: true
 
+  -
+    scope:
+      path: ""
+    values:
+      dpi_schema_location: "https://docs.digdir.no/schemas/dpi/commons.schema.json"
+      sbdh_schema_location: "https://docs.digdir.no/schemas/common/sbdh.schema.json"
+      problem_schema_location: "https://docs.digdir.no/schemas/common/problem.schema.json"
+
 ############# COMMENTS #############
 # show Disqus comments after pages
 show_disqus_comments: false
