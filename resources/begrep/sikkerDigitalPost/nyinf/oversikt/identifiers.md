@@ -12,6 +12,7 @@ Oversikten under inneholder oversikt over de forskjellige dokumenttypene som vil
 # Processes
 
 ### INNBYGGERPOST_DIGITAL_1_0
+
 | --- | --- |
 | Title | INNBYGGERPOST_DIGITAL_1_0 |
 | Description | Brev til innbyggers digitale postkasse |
