@@ -15,7 +15,7 @@ inneholder to klasser:
   - Det ene er
     [StandardBusinessDocumentHeader](dpi_sbdh.html)
     som er felles for alle meldinger. 
-  - Den andre er Meldingsklassen som enten er av typen Digital, Utskrift, Feil
+  - Den andre er Meldingsklassen som enten er av typen Digital, Utskrift, FlyttetDigitalpost, Feil
     eller en [kvittering](dpi_kvitteringer.html). Kvittering kan være av typen
     LeveringsKvittering, VarslingfeiletKvittering, ÅpningsKvittering,  eller
     MottaksKvittering.

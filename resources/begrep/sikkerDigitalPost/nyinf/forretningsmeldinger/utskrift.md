@@ -24,8 +24,8 @@ Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering](dpi_le
 | --- | --- | --- |
 | [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
 | [mottaker](2sdp_mottaker.html) | 1..1 | [mottaker]({{ page.dpi_common_schema_location }}#/definitions/adresseInformasjon) |
-| [dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md) | 1..1 | [dokumentpakkefingeravtrykk]({{ page.dpi_common_schema_location }}#/definitions/dokumentpakkefingeravtrykk) |
-| [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [sdp:Dokumentpakkefingeravtrykk]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
+| [dokumentpakkefingeravtrykk](sdp_dokumentpakkefingeravtrykk.html) | 1..1 | [dokumentpakkefingeravtrykk]({{ page.dpi_common_schema_location }}#/definitions/dokumentpakkefingeravtrykk) |
+| [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [maksinportentoken]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
 | [utskriftstype](utskriftstype.html) | 0..1 | [utskriftstype]({{ page.dpi_common_schema_location }}#/definitions/utskriftstype) |
 | [retur](sdp_fysiskpostretur.html) | 0..1 | [retur]({{ page.dpi_common_schema_location }}#/definitions/retur) |
 | [posttype](posttype.html) | 0..1 | [posttype]({{ page.dpi_common_schema_location }}#/definitions/posttype) |
