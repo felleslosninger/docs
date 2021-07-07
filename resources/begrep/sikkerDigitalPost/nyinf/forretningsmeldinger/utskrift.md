@@ -18,7 +18,7 @@ Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering](dpi_le
 ### Schema
 [innbyggerpost_dpi_utskrift_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_utskrift_1_0.schema.json)
 
-### Objekter
+### Properties
 
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |

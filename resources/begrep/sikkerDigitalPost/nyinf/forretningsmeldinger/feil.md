@@ -40,7 +40,7 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 ### Schema
 [innbyggerpost_dpi_feil_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_feil_1_0.schema.json)
 
-### Objekt
+### Properties
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
 | [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
