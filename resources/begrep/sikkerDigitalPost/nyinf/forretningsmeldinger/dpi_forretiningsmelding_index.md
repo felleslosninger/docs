@@ -9,16 +9,16 @@ sidebar: dpi_timo_sidebar
 ## Forretningsmeldingene i Sikker Digital Post
 
 Alle meldinger er beskrevet i [Standard Business
-Document](https://difi.github.io/felleslosninger/standardbusinessdocument_index.htmll). Denne klassen
+Document](dpi_sbd_index.html). Denne klassen
 inneholder to klasser:
 
   - Det ene er
-    [StandardBusinessDocumentHeader](https://difi.github.io/felleslosninger/sdp_standardbusinessdocumentheader.html)
+    [StandardBusinessDocumentHeader](dpi_sbdh.html)
     som er felles for alle meldinger. 
-  - Den andre er Meldingsklassen som enten er av typen Digitalpost, Feil
-    eller Kvittering. Kvittering kan være av typen
-    VarslingfeiletKvittering, Åpningskvittering eller
-    LeveringsKvittering.
+  - Den andre er Meldingsklassen som enten er av typen Digital, Utskrift, Feil
+    eller en [kvittering](dpi_kvitteringer.html). Kvittering kan være av typen
+    LeveringsKvittering, VarslingfeiletKvittering, ÅpningsKvittering,  eller
+    MottaksKvittering.
 
 ### Klassediagram
 
