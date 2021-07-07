@@ -20,12 +20,6 @@ inneholder to klasser:
     LeveringsKvittering, VarslingfeiletKvittering, ÅpningsKvittering,  eller
     MottaksKvittering.
 
-### Klassediagram
-
-TODO: Fjernes?
-Meldingen er en av følgende typer beskrevet i diagrammet under.
-
-![]()
 
 ### Meldingstypene
 
