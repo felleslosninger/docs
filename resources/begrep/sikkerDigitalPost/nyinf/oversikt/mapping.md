@@ -1,6 +1,6 @@
 ---
 title: Mapping XML -> JSON 
-permalink: mapping.html
+permalink: dpi_mapping.html
 sidebar: dpi_sidebar
 ---
 
