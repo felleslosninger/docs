@@ -152,7 +152,7 @@ Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli l
 
 Når sak-arkivsystem mottar meldinger fra de forskjellige kanalene responderer de litt ulikt. Appreceipts blir sendt ut og statuser blir oppdatert.
 
-#### ePhorte mottar 
+#### Elements/ephorte mottar
 
 DPO: Applikasjonskvittering sendes når melding har kommet inn til mottakers sak-arkivsystem. Dette er per i dag en manuell operasjon og det betyr at det kan ta ekstra tid før avsender blir oppdatert. Det er en utviklingsoppgave å gjøre dette automatisk.
 
