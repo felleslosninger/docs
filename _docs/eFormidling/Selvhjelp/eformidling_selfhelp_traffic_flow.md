@@ -132,6 +132,7 @@ Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgj
   | OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
   | SENDT | Forsendelse er sendt til meldingsformidler | 
   | LEVERT | Forsendelse levert til innbyggers prefererte kanal** | 
+  | LEST | Innbygger har åpnet forsendelse i sin postkasse innboks |
 
 ** _innbyggers prefererte kanal er enten digital postkasse eller fysisk print. Enkelte innbyggere kan også få brev sendt til  Altinn dersom avsender har dette som opsjon (viser til punkt 1.7 i [digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2623277/)). Dette er ikke et innbyggervalg._
 
