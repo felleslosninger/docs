@@ -15,7 +15,7 @@ sidebar: eformidling_install_sidebar
 
 Utgående/innkommende: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Denne meldingen blir lastet opp til Altinn's meldingsformidler og sendt videre til mottaker sitt integrasjonspunkt og mottas i sak-arkivsystemet. Appreceipt blir levert til avsender når mottakende integrasjonspunkt laster ned meldingen.
 
-Integrasjonspunktet velger DPO som avsendermetode om både avsender og mottaker har fått tilganger til å bruke DPO ( Åpnet av Difi). Om mottaker ikke har konfigurert sitt integrasjonspunkt for mottak av DPO vil denne meldingen ikke komme frem før dette er gjort. Derfor er det viktig at virksomheter som skal bruke eFormidling sørger for å konfigurere integrasjonspunktet sitt riktig før de berDigitaliseringsdirektoratet om å åpne tilgang til DPO. 
+Integrasjonspunktet velger DPO som avsendermetode om både avsender og mottaker har fått tilganger til å bruke DPO ( Åpnet av Digitaliseringsdirektoratet). Om mottaker ikke har konfigurert sitt integrasjonspunkt for mottak av DPO vil denne meldingen ikke komme frem før dette er gjort. Derfor er det viktig at virksomheter som skal bruke eFormidling sørger for å konfigurere integrasjonspunktet sitt riktig før de berDigitaliseringsdirektoratet om å åpne tilgang til DPO. 
 
 Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mottaker en error appreceipt tilbake. Viss avsender ikke får leveringskvittering som avslutter polling innen satt timeout(24t), får meldingen feilstatus i statusgrensesnittet. 
 
@@ -132,6 +132,7 @@ Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgj
   | OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
   | SENDT | Forsendelse er sendt til meldingsformidler | 
   | LEVERT | Forsendelse levert til innbyggers prefererte kanal** | 
+  | LEST | Innbygger har åpnet forsendelse i sin postkasse innboks |
 
 ** _innbyggers prefererte kanal er enten digital postkasse eller fysisk print. Enkelte innbyggere kan også få brev sendt til  Altinn dersom avsender har dette som opsjon (viser til punkt 1.7 i [digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2623277/)). Dette er ikke et innbyggervalg._
 
@@ -152,7 +153,7 @@ Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli l
 
 Når sak-arkivsystem mottar meldinger fra de forskjellige kanalene responderer de litt ulikt. Appreceipts blir sendt ut og statuser blir oppdatert.
 
-#### ePhorte mottar 
+#### Elements/ephorte mottar
 
 DPO: Applikasjonskvittering sendes når melding har kommet inn til mottakers sak-arkivsystem. Dette er per i dag en manuell operasjon og det betyr at det kan ta ekstra tid før avsender blir oppdatert. Det er en utviklingsoppgave å gjøre dette automatisk.
 
