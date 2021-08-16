@@ -40,7 +40,7 @@
                 ]
             }
         },
-        "digitalpost": {
+        "digital": {
             "avsender": {
                 "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
@@ -49,34 +49,32 @@
             },
             "mottaker": {
                 "postkasseadresse": "ola.nordmann#9YDT"
+            },            
+            "sikkerhetsnivaa": 3,
+            "virkningsdato": "2021-01-01",
+            "aapningskvittering": false,
+            "ikkesensitivtittel": {
+                "tittel": "ikkeSensitivTittel",
+                "spraak": "NO"
             },
-            "digitalpostinfo": {
-                "sikkerhetsnivaa": 3,
-                "virkningsdato": "2021-01-01",
-                "aapningskvittering": false,
-                "ikkesensitivtittel": {
-                    "tittel": "ikkeSensitivTittel",
-                    "spraak": "NO"
+            "varsler": {
+                "epostvarsel": {
+                    "epostadresse": "test@epost.no",
+                    "varslingstekst": "Dette er en varslingstekst",
+                    "spraak": "NO",
+                    "repetisjoner": [
+                        1,
+                        7
+                    ]
                 },
-                "varsler": {
-                    "epostvarsel": {
-                        "epostadresse": "test@epost.no",
-                        "varslingstekst": "Dette er en varslingstekst",
-                        "spraak": "NO",
-                        "repetisjoner": [
-                            1,
-                            7
-                        ]
-                    },
-                    "smsvarsel": {
-                        "mobiltelefonnummer": "12345678",
-                        "varslingstekst": "Dette er en varslingstekst",
-                        "spraak": "NO",
-                        "repetisjoner": [
-                            1,
-                            7
-                        ]
-                    }
+                "smsvarsel": {
+                    "mobiltelefonnummer": "12345678",
+                    "varslingstekst": "Dette er en varslingstekst",
+                    "spraak": "NO",
+                    "repetisjoner": [
+                        1,
+                        7
+                    ]
                 }
             },
             "dokumentpakkefingeravtrykk": {

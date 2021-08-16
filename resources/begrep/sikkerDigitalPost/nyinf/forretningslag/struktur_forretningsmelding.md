@@ -51,7 +51,8 @@ virksomhetssertifikat
 | DigitalPostMelding/Avsender | NAV        | \-            | Postboks sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter) i forhold til maksinportentoken fra forretningsmeldingen |
 | SBDH/Sender                 | NAV        | NAV           | Postboks sjekker at signaturen stemmer med verdien i SBDH/Sender (skal være like) |
 
-[forretningsmelding eksempel](resources/begrep/sikkerDigitalPost/nyinf/eksempler/digitalpost_dpi_1_0_nav_sample.json)
+eksepmpler
+[forretningsmelding eksempel](resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_1_0_nav_sample.json)
 [leveringskvittering](resources/begrep/sikkerDigitalPost/nyinf/eksempler/lerveringskvittering_nav_sample.json)
 
 #### “Påvegne” eksempel
@@ -66,7 +67,7 @@ Avsender (Bunadsrådet) bruker en skytjeneste levert av Acos
 | DigitalPostMelding/Avsender | Bunadsrådet | \-            | Postboks sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter) i forhold til maksinportentoken fra forretningsmeldingen |
 | SBDH/Sender                 | Acos        | Acos          | Postboks sjekker at signaturen stemmer med verdien i SBDH/Sender (skal være like) |
 
-[forretningsmelding eksempel](resources/begrep/sikkerDigitalPost/nyinf/eksempler/digitalpost_dpi_1_0_budnad_sample.json)
+[forretningsmelding eksempel](resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_1_0_budnad_sample.json)
 [leveringskvittering](resources/begrep/sikkerDigitalPost/nyinf/eksempler/lerveringskvittering_budnad_sample.json)
 
 #### “Påvegne” med avsenderidentifikator eksempel
@@ -81,7 +82,7 @@ Avsender (Bunadsrådet) bruker en skytjeneste levert av Acos
 | DigitalPostMelding/Avsender | Bunadsrådet | \-            | Postboks sjekker at kombinasjonen DigitalPostMelding/Avsender og SBDH/Sender er gyldig (godkjent av Sentralforvalter) i forhold til maksinportentoken fra forretningsmeldingen |
 | SBDH/Sender                 | Acos        | Acos          | Postboks sjekker at signaturen stemmer med verdien i SBDH/Sender (skal være like) |
 
-[forretningsmelding eksempel](resources/begrep/sikkerDigitalPost/nyinf/eksempler/digitalpost_dpi_1_0_budnad_sample.json)
+[forretningsmelding eksempel](resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_1_0_budnad_sample.json)
 [leveringskvittering](resources/begrep/sikkerDigitalPost/nyinf/eksempler/lerveringskvittering_budnad2_sample.json)
 
 ## Standarder benyttet i strukturen

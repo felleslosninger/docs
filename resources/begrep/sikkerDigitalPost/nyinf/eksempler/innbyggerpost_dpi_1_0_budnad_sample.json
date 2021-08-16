@@ -36,7 +36,7 @@
                 ]
             }
         },        
-        "digitalpost":{                
+        "digital":{                
             "avsender": {
                 "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
@@ -46,26 +46,25 @@
             "mottaker": {               
                 "postkasseadresse":"ola.nordmann#9YDT"
             },
-            "digitalpostinfo" : {
-                "sikkerhetsnivaa": 3,                                                     
-                "virkningsdato": "2021-01-01",
-                "aapningskvittering": false ,
-                "ikkesensitivtittel": { "tittel":"ikkeSensitivTittel", "spraak": "NO" },
-                "varsler": { 
-                    "epostvarsel":{
-                        "epostadresse" : "test@epost.no",
-                        "varslingstekst" : "Dette er en varslingstekst",
-                        "spraak": "NO",
-                        "repetisjoner" : [1,7]
-                    },
-                    "smsvarsel":{
-                        "mobiltelefonnummer" : "12345678",
-                        "varslingstekst" : "Dette er en varslingstekst",
-                        "spraak": "NO",
-                        "repetisjoner" : [1,7]
-                    }                    
-                }                             
-            },  
+            
+            "sikkerhetsnivaa": 3,                                                     
+            "virkningsdato": "2021-01-01",
+            "aapningskvittering": false ,
+            "ikkesensitivtittel": { "tittel":"ikkeSensitivTittel", "spraak": "NO" },
+            "varsler": { 
+                "epostvarsel":{
+                    "epostadresse" : "test@epost.no",
+                    "varslingstekst" : "Dette er en varslingstekst",
+                    "spraak": "NO",
+                    "repetisjoner" : [1,7]
+                },
+                "smsvarsel":{
+                    "mobiltelefonnummer" : "12345678",
+                    "varslingstekst" : "Dette er en varslingstekst",
+                    "spraak": "NO",
+                    "repetisjoner" : [1,7]
+                }                    
+            }, 
             "dokumentpakkefingeravtrykk": {
                 "digestMethod": "",
                 "digestValue": "5f2652040b33bccfd8c5f06e2beffc1ab822830807e8d0f0b721503e60df0eb6"
