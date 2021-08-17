@@ -104,5 +104,24 @@ Du kan se om tjenesten kjører i Windows Services. Den kan du også bruke til å
 Etter installering og oppstart bør integrasjonspunktmappen se slik ut:
 ![Mappen post-install](/images/eformidling/mappe%20post-install.png)
 
+## FAQ (Blir oppdatert fortløpende)
+
+### Hvordan avinstallere/reinstallere tjenesten?
+
+For avinstallere må en først stoppe tjenesten, så bruke denne kommandoen:
+```
+mitt-integrasjonspunkt.exe uninstall
+```
+### Hvor kan en lese logger?
+
+Loggene til integrasjonspunktet finner du i integrasjonspunktmappen under *integrasjonspunkt-logs -> application.log*.
+De nyeste loggene legger seg nederst i tekstfilen.
+
+### Hvordan kan jeg se status på mine forsendelser?
+
+Etterhvert vil det mulig å se dette i sak/arkivsystemet, men enn så lenge kan en bruke *ttp://localhost:serverport/conversations*.
+Mer info finner du ![her](https://docs.digdir.no/eformidling_api.html#sjekke-forsendelser---grafisk-brukergrensesnitt)
 
 
+
+### Har du andre spørsmål eller innspill? Ta kontakt med servicedesk@digdir.no!
