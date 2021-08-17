@@ -120,7 +120,7 @@ De nyeste loggene legger seg nederst i tekstfilen.
 ### Hvordan kan jeg se status på mine forsendelser?
 
 Etterhvert vil det mulig å se dette i sak/arkivsystemet, men enn så lenge kan en bruke *ttp://localhost:serverport/conversations*.
-Mer info finner du ![her](https://docs.digdir.no/eformidling_api.html#sjekke-forsendelser---grafisk-brukergrensesnitt)
+Mer info finner du [her](https://docs.digdir.no/eformidling_api.html#sjekke-forsendelser---grafisk-brukergrensesnitt)
 
 
 
