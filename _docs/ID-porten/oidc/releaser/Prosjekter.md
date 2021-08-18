@@ -15,7 +15,7 @@ Planlagd produksjonssetting: Q4 2021
 ## Ny funksjonalitet:
 
 
-#### Anskaffelse nye eID-avtaler - ID-porten og eSignering (In development)
+#### Anskaffelse nye eID-avtaler - ID-porten og eSignering (Shipped)
 
 Dagens avtaler med eID-leverandørene løper til november 2020, og det må gjøres en anskaffelse av nye avtaler. De nye avtalene vil basere seg på krav som følger av de nye forskriftene for tillitstjenester (innført november 2019).
 
