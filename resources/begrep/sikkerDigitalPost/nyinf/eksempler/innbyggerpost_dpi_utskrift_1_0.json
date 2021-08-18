@@ -19,7 +19,7 @@
                 }
             ],
             "documentIdentification": {
-                "standard": "urn:fdc:digdir.no:2020:innbyggerpost:xsd:utskrift::utskrift##urn:fdc:digdir.no:2020:innbyggerpost:schema:utskrift::1.0",
+                "standard": "urn:fdc:digdir.no:2020:innbyggerpost:xsd:digital::utskrift##urn:fdc:digdir.no:2020:innbyggerpost:schema:utskrift::1.0",
                 "typeVersion": "1.0",
                 "instanceIdentifier": "ff88849c-e281-4809-8555-7cd54952b916",
                 "type": "utskrift",
