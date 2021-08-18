@@ -20,33 +20,7 @@
                 "standardBusinessDocumentHeader",
                 "returpostkvittering"
             ]
-        },
-        "kvittering": {
-            "type": "object",
-            "$id": "#/definitions/kvittering",
-            "title": "kvittering",
-            "properties": {
-                "avsender": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
-                },
-                "mottaker": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
-                },
-                "maskinportentoken": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
-                },
-                "tidspunkt": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
-                }
-            },
-            "required": [
-                "avsender",
-                "mottaker",
-                "maskinportentoken",
-                "tidspunkt"
-            ],
-            "additionalProperties": false
-        }
+        }        
     },
     "type": "object",
     "properties": {

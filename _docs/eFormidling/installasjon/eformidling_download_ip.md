@@ -10,8 +10,8 @@ sidebar: eformidling_install_sidebar
 
 ### Siste versjon av integrasjonspunktet kan lastes ned her
  
->  28.06.2021 Dette er rettet i versjon 2.2.3 som nå er tilgjengelig for nedlasting. 
->  21.06.2021: Vi har identifisert et problem knyttet til versjon 2.2.1 som påvirker enkelte virksomheter som bruker sak- og arkivsystemet Elements fra Sikri. Vi ber derfor  om at virksomheter som bruker Elements ikke oppgraderer til versjon 2.2.1 eller 2.2.2.
+>  - 28.06.2021 Dette er rettet i versjon 2.2.3 som nå er tilgjengelig for nedlasting. 
+>  - 21.06.2021: Vi har identifisert et problem knyttet til versjon 2.2.1 som påvirker enkelte virksomheter som bruker sak- og arkivsystemet Elements fra Sikri. Vi ber derfor  om at virksomheter som bruker Elements ikke oppgraderer til versjon 2.2.1 eller 2.2.2.
 
 
 ### [Integrasjonspunktet 2.2.3 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.3/integrasjonspunkt-2.2.3.jar)

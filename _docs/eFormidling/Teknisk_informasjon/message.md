@@ -130,7 +130,7 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 
 ### Digital post til innbygger
 
-Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. [Les mer om dette her](http://samarbeid.digi.no/digital-postkasse/dette-er-digital-postkasse/105)
+Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. [Les mer om dette her](http://samarbeid.digdir.no/digital-postkasse/dette-er-digital-postkasse/105)
 
 Begge prosessene støtter både digitalpost og fysisk post.
 
