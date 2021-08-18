@@ -10,12 +10,12 @@ Ifbm korona-situasjonen er det behov for å etablere en innloggingsløsning til 
 
 
 
-Planlagd produksjonssetting: Jun 15, 2021
+Releasen vart produksjonssatt Jun 15, 2021
 
 ## Ny funksjonalitet:
 
 
-#### Etablere idporten-utland som egen IDP (Under consideration)
+#### Etablere idporten-utland som egen IDP (Shipped)
 
 ID-porten utland etableres som egen IDP.
 
