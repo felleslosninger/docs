@@ -48,7 +48,7 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
             content:
               application/problem+json:
                 schema: 
@@ -84,7 +84,7 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
             content:
               application/problem+json:
                 schema: 
@@ -130,7 +130,7 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
             content:
               application/problem+json:
                 schema: 
@@ -167,7 +167,7 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
             content:
               application/problem+json:
                 schema: 
@@ -204,7 +204,7 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "dpi:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
             content:
               application/problem+json:
                 schema: 
@@ -217,7 +217,7 @@ paths:
                   $ref : '#/components/schemas/problem'
 security:
   - OAuth2Schema:
-    - dpi:send    
+    - digitalpostinnbygger:send    
 components:
   securitySchemes:
     OAuth2Schema:
@@ -227,7 +227,7 @@ components:
         implicit:
           authorizationUrl: https://maskinporten.no/
           scopes: 
-            'dpi:send' : For sending av meldinger
+            'digitalpostinnbygger:send' : For sending av meldinger
   schemas: 
     statuses:
       type: array
