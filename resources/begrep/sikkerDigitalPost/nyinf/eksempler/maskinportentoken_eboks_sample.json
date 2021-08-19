@@ -4,11 +4,7 @@
     "aud": "https://api.aksesspunktleverandør.no/",
     "consumer": {
         "Authority": "iso6523-actorid-upis",
-        "ID": "0192:972417866" 
-    },  
-    "supplier": {
-        "Authority": "iso6523-actorid-upis",
-        "ID": "0192:922017433"
+        "ID": "0192:922020175" 
     },  
     "iat": "1621238400",
     "exp": "1621238430"
