@@ -7,6 +7,15 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.2.4
+20.08.21
+
+### Hva er endret/nytt?
+
+- Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
+
+
+
 ## 2.2.3
 28.06.21
 
