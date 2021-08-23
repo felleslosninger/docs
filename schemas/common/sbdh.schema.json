@@ -95,10 +95,7 @@
 				"expectedResponseDateTime": {
 					"type": "string"
 				}
-			},
-			"required": [
-				"expectedResponseDateTime"
-			],
+			},			
 			"title": "ScopeInformation"
 		},
 		"documentIdentification": {
