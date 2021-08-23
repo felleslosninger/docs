@@ -36,6 +36,14 @@ Vi viser til [Norges tillitsliste](https://www.nkom.no/internett/elektronisk-id-
 
 Lenke til utstedere:
 
+Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl/bestill-testsertifikat-VID-Norge](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/bestill-testsertifikat-VID-Norge)
+
+Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/)
+
+## Bruker man samme sertifikat til testing som i produksjon?
+
+Nei, i testmiljøene må man ha et test-virksomhetssertifikat. Dette bestilles også fra Buypass og Commfides.
+
 Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/virksomhetssertifikat-for-norge)
 
 Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/)
@@ -43,3 +51,7 @@ Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://
 ## Kan man gjenbruke et virksomhetssertifikat på flere klienter i Maskinporten?
 
 Ja, man kan bruke samme sertifikat på flere klienter i Maskinporten.
+
+## Støtter Maskinporten de nye SEID 2.0 sertifikatene?
+
+Nei, men vi jobber med å utvikle støtte for dette. 
