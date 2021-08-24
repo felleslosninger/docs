@@ -13,6 +13,9 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 2. Dersom det er ein nyare versjon tilgjengeleg, vert denne lasta ned til klienten. 
 3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen. Dersom den nye versjonen ikkje startar, rullar KOSMOS attende.
 
+> Om du har integrasjonspunktet frå før trenger du keystoren og integrasjonspunkt-local.properties fila. Eldre integrasjonspunkt-[versjon].jar filer treng du ikkje.
+> Om du ikkje har integrasjonspunktet så må desse settast opp også, sjå [integrasjonspunkt dokumentasjon.](https://docs.digdir.no/eformidling_properties_config.html)
+
 ## Laste ned
 > [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
 
@@ -72,8 +75,8 @@ kosmos.mail.from=noreply@yourdomain.no
 spring.mail.host=smtp.yourdomain.no
 spring.mail.port=<set-your-port-here>
 
-# Digitaliseringsdirektoratet public key paths. i.e: file:keyname.gpg.
-kosmos.verification.publicKeyPaths[0]=file:eformidling-key.gpg
+# Digitaliseringsdirektoratet public key paths. i.e: file:keyname.asc
+kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
 ```
 *[Last ned properties-fila her](/resources/eformidling/kosmos-local.properties)*
 
