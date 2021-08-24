@@ -226,4 +226,6 @@ Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Av
 
 > Forretningsmeldinger som inneholder " " må disse endres til  ' ' for å unngå at json-validatoren leser det som et json-element. Dette kan spesielt være aktuelt i XML-filer som inlines i forretningsmeldingen.
 
+Avtalt-meldingen forklart på Integrasjon og sikkerhetsforum 2020. (00:26 – 11:31)
 
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/487591943?h=72a0cb0a4e" width="640" height="360" frameborder="0" allowfullscreen></iframe> 
