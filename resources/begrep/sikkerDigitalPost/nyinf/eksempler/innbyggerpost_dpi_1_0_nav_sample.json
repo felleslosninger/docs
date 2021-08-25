@@ -30,12 +30,7 @@
                     {
                         "type": "ConversationId",
                         "instanceIdentifier": "37efbd4c-413d-4e2c-bbc5-257ef4a65a45",
-                        "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:digital:ver1.0",
-                        "scopeInformation": [
-                            {
-                                "expectedResponseDateTime": "2021-05-10T00:31:52Z"
-                            }
-                        ]
+                        "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:digital:ver1.0"                        
                     }
                 ]
             }
@@ -53,10 +48,8 @@
             "sikkerhetsnivaa": 3,
             "virkningsdato": "2021-01-01",
             "aapningskvittering": false,
-            "ikkesensitivtittel": {
-                "tittel": "ikkeSensitivTittel",
-                "spraak": "NO"
-            },
+            "ikkesensitivtittel": "ikkeSensitivTittel",
+            "spraak": "NO",
             "varsler": {
                 "epostvarsel": {
                     "epostadresse": "test@epost.no",

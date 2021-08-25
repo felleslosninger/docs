@@ -53,10 +53,7 @@
             "sikkerhetsnivaa": 3,
             "virkningsdato": "2021-01-01",
             "aapningskvittering": false,
-            "ikkesensitivtittel": {
-                "tittel": "ikkeSensitivTittel"
-                
-            },
+            "ikkesensitivtittel": "ikkeSensitivTittel",
             "spraak": "NO",
             "varsler": {
                 "epostvarsel": {
