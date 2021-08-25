@@ -243,22 +243,13 @@
             }
         },
         "ikkesensitivtittel": {
-            "type": "object",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255, 
             "$id": "#/definitions/ikkesensitivtittel",
             "title": "ikkesensitivtittel",            
             "description": "En tittel som ikke inneholder sensitiv informasjon",
-            "$comment": "Vil vises til Innbygger og brukes i varslinger/påminnelser på e-post og sms til Innbygger. Skal ikke inneholde sensitiv informasjon. Kan brukes på lavere sikkerhetsnivå enn det selve dokumentet er klassifisert på.",
-            "properties": {
-                "tittel": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 255
-                }
-            },
-            "required": [
-                "tittel"
-            ],
-            "additionalProperties": false
+            "$comment": "Vil vises til Innbygger og brukes i varslinger/påminnelser på e-post og sms til Innbygger. Skal ikke inneholde sensitiv informasjon. Kan brukes på lavere sikkerhetsnivå enn det selve dokumentet er klassifisert på."            
         },
         "epostvarsel": {
             "type": "object",
