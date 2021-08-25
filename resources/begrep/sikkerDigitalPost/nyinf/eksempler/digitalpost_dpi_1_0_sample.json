@@ -58,13 +58,11 @@
                     "epostvarsel":{
                         "epostadresse" : "test@epost.no",
                         "varslingstekst" : "Dette er en varslingstekst",
-                        "spraak": "NO",
                         "repetisjoner" : [1,7]
                     },
                     "smsvarsel":{
                         "mobiltelefonnummer" : "12345678",
                         "varslingstekst" : "Dette er en varslingstekst",
-                        "spraak": "NO",
                         "repetisjoner" : [1,7]
                     }                    
                 }                             
