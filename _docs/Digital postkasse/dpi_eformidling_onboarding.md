@@ -46,15 +46,16 @@ Digdirs endepunkter er eksponert ut mot Internett, men det må åpnes for trafik
 
 ## Håndtering av virksomhetssertifikat
 
-Når en mottar virksomhetssertifikatet(p12-format) fra Buypass elle Commfides får en det i 2 eller 3 deler, samt tilhørende passord. Det som skal brukes er autentiseringsdelen.
+Når du mottar virksomhetssertifikatet(p12-format) fra Buypass eller Commfides får du det i 2 eller 3 deler, samt tilhørende passord. Det som skal brukes er autentiseringsdelen.
 
-Sertifikatet må legges inn i en JKS (Java Key Store) og det gjør en slik:
+Sertifikatet må legges inn i en JKS (Java Key Store) og det gjøres slik:
 
 1. Åpne Key Store Explorer.
 2. Trykk 'File' og 'Open'. Naviger til der sertifikatet ligger og åpne.
 3. Trykk 'Tools' og så 'Change KeyStore type'. Velg JKS.
 4. Trykk 'File' og 'Save As'. Lagre filen som navn.jks. 
 Eksempel: *MinKeystore.jks*
+5. Sjekk at filen er lagret som .JKS, ikke .KS!
 
 Vi anbefaler at dere beholder passordet som kom med sertifikatet.
 
@@ -108,7 +109,7 @@ Etter installering og oppstart bør integrasjonspunktmappen se slik ut:
 
 ### Hvordan avinstallere/reinstallere tjenesten?
 
-For avinstallere må en først stoppe tjenesten, så bruke denne kommandoen:
+For avinstallere må du først stoppe tjenesten, så bruke denne kommandoen:
 ```
 mitt-integrasjonspunkt.exe uninstall
 ```
@@ -119,7 +120,7 @@ De nyeste loggene legger seg nederst i tekstfilen.
 
 ### Hvordan kan jeg se status på mine forsendelser?
 
-Etterhvert vil det mulig å se dette i sak/arkivsystemet, men enn så lenge kan en bruke *ttp://localhost:serverport/conversations*.
+Etterhvert vil det mulig å se dette i sak/arkivsystemet, men enn så lenge kan du bruke *ttp://localhost:serverport/conversations*.
 Mer info finner du [her](https://docs.digdir.no/eformidling_api.html#sjekke-forsendelser---grafisk-brukergrensesnitt)
 
 

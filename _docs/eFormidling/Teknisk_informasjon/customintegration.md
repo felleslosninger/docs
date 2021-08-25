@@ -10,9 +10,8 @@ sidebar: eformidling_technical_sidebar
 ## Capability oppslag
 
 <div class="mermaid">
-
-graph LR  
-  subgraph DigDir
+graph LR 
+  subgraph DigDir  
     Maskinporten[Maskinporten]
     sr[SR]
   end
@@ -22,7 +21,6 @@ graph LR
   Maskinporten -->|2.utsteder token med tildelt scope|klient
   klient -->|1. forspør tilgang til scope|Maskinporten
   klient -->|3.bruker token mot|sr
-
 </div>
 
 <div class="mermaid">
@@ -32,25 +30,33 @@ sequenceDiagram
     participant sr as SR
     participant af as AltInn <br> formidlingstjeneste
     participant m as Mottaker
-    a->mp: Be om tilgang til scope
-    mp-->a: Token med scope
-    a->sr: Hent kabpailiteter for mottaker
-    sr-->a: Kapabiliteter
-    a->a: Opprett forsendelse
-    a->af: Last opp forsendelse
-    m->af: Hent nye forsendeslser
-    m->af: Send mottakskvittering
-    a->af: Hent nye forsendelser
-    a->a: Lagre mottakskvittering
-    m->m: Pakk ut forsendelse
-    m->af: Send Levertkvittering
-    a->af: Hent nye forsendelser
+    a->>mp: Be om tilgang til scope
+    mp-->>a: Token med scope
+    a->>sr: Hent kabpailiteter for mottaker
+    sr-->>a: Kapabiliteter
+    a->>a: Opprett forsendelse
+    a->>af: Last opp forsendelse
+    m->>af: Hent forsendeslse
+    af-->>m: Forsendelse
+    m->>af: Send mottakskvittering
+    a->>af: Hent forsendelse
+    af-->>a: Forsendelse 
+    a->>a: Lagre mottakskvittering
+    m->>m: Pakk ut forsendelse
+    m->>af: Send Levertkvittering
+    a->>af: Hent forsendelse
+    af-->>a: Forsendelse
+    a->>a: Lagre Levertkvittering
 <div>
 
 SR response
 ```json
 {% include /eformidling/nextmove/sr_response.json %}
 ```
+
+TODO: Link til DPO schema
+
+
 
 
 | Identifier | Type        | Maskinporten scope  | Wsdl| Tjenestebeskrivelse |
@@ -70,4 +76,8 @@ Eksempler på hvordan meldingene bygges opp
 
 [Asic](https://github.com/difi/move-integrasjonspunkt/blob/master/integrasjonspunkt/src/main/java/no/difi/meldingsutveksling/nextmove/AsicHandler.java)
 
+
 ## Kvitteringsmeldinger og logging
+
+TODO: Kvittering schema
+TODO: Dokumenter statusgrensesnitt

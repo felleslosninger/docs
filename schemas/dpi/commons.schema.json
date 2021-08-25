@@ -281,9 +281,6 @@
                     "minLength": 1,
                     "maxLength": 500
                 },
-                "spraak": {
-                    "$ref": "#/definitions/spraak"
-                },
                 "repetisjoner": {
                     "$ref": "#/definitions/repetisjoner"
                 }
@@ -291,8 +288,7 @@
             "required": [
                 "epostadresse",
                 "varslingstekst",
-                "repetisjoner",
-                "spraak"
+                "repetisjoner"
             ]
         },
         "repetisjoner": {
@@ -345,9 +341,6 @@
                     "minLength": 1,
                     "maxLength": 160
                 },
-                "spraak": {
-                    "$ref": "#/definitions/spraak"
-                },
                 "repetisjoner": {
                     "$ref": "#/definitions/repetisjoner"
                 }
@@ -355,7 +348,6 @@
             "required": [
                 "mobiltelefonnummer",
                 "varslingstekst",
-                "spraak",
                 "repetisjoner"
             ],
             "additionalProperties": false
