@@ -52,6 +52,9 @@
                 "ikkesensitivtittel": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/ikkesensitivtittel"
                 },
+                "spraak": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/spraak"
+                },
                 "varsler": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/varsler"
                 }
@@ -62,7 +65,8 @@
                 "dokumentpakkefingeravtrykk",
                 "maskinportentoken",
                 "sikkerhetsnivaa",
-                "ikkesensitivtittel"
+                "ikkesensitivtittel",
+                "spraak"
             ],
             "additionalProperties": false
         }

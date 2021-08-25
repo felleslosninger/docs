@@ -245,7 +245,7 @@
         "ikkesensitivtittel": {
             "type": "object",
             "$id": "#/definitions/ikkesensitivtittel",
-            "title": "ikkesensitivtittel",
+            "title": "ikkesensitivtittel",            
             "description": "En tittel som ikke inneholder sensitiv informasjon",
             "$comment": "Vil vises til Innbygger og brukes i varslinger/påminnelser på e-post og sms til Innbygger. Skal ikke inneholde sensitiv informasjon. Kan brukes på lavere sikkerhetsnivå enn det selve dokumentet er klassifisert på.",
             "properties": {
@@ -253,22 +253,17 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 255
-                },
-                "spraak": {
-                    "$ref": "#/definitions/spraak"
                 }
             },
             "required": [
-                "tittel",
-                "spraak"
+                "tittel"
             ],
             "additionalProperties": false
         },
         "epostvarsel": {
             "type": "object",
             "$id": "#/definitions/epostvarsel",
-            "title": "epostvarsel",
-            "additionalProperties": false,
+            "title": "epostvarsel",            
             "description": "Informasjon om hvordan man skal varsle sluttbruker på epost",
             "$comment": "Beskriver når det skal sendes epostvarsel fra postkassen etter at posten er tilgjengeliggjort",
             "properties": {
@@ -289,12 +284,13 @@
                 "epostadresse",
                 "varslingstekst",
                 "repetisjoner"
-            ]
+            ],
+            "additionalProperties": false
         },
         "repetisjoner": {
             "type": "array",
             "$id": "#/definitions/repetisjoner",
-            "title": "repetisjoner",
+            "title": "repetisjoner",            
             "description": "Gjentagelser etter et bestemt tidspunkt",
             "$comment": "Beskriver hvilke dager noe skal repeteres etter en definert dag, der dagerEtter angir hvor mange dager etter tidspunktet det skal repeteres. dagerEtter=0 betyr samme dag. dagerEtter=7 betyr den syvende dagen etter en bestemt dag. Det kreves at alle dagerEtter er unike. For Sikker digital post er repetisjonene knyttet opp til virkningsdato. Det vil si at dagerEtter=0 betyr samme dag som virkningsdato. dagerEtter=7 betyr den syvende dagen etter virkningsdato",
             "minItems": 1,
