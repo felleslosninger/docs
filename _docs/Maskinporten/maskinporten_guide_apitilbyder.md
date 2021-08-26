@@ -67,7 +67,7 @@ Det anbefales at man setter en begrensning på bruk av scopet. Ved å sette attr
 
 #### Inaktive entiteter
 
-For å sikre juridisk logging og statistikk, vil Digitaliseringsdirektoratet aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
+For å sikre juridisk logging og statistikk, vil Digitaliseringsdirektoratet aldri slette scopes og tilganger (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
 
 Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
 
