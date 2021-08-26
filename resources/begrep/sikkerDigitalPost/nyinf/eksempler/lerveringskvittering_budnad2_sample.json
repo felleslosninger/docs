@@ -50,11 +50,10 @@
             "mottaker": {
                 "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
-                    "value": "0192:972417866",
-                    "motakeridentifikator": "budnad"
-                }
-            },
-            "maskinportentoken": "eyJpc3MiOiJodHRwczovL21hc2tpbnBvcnRlbi5ubyIsInNjb3BlIjoiZHBpOnNlbmQiLCJhdWQiOiJodHRwczovL2FwaS5ha3Nlc3NwdW5rdGxldmVyYW5kw7hyLm5vLyIsImNvbnN1bWVyIjp7IkF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjkyMjAyMDE3NSJ9LCJpYXQiOiIxNjIxMjM4NDAwIiwiZXhwIjoiMTYyMTIzODQzMCJ9",
+                    "value": "0192:972417866"                    
+                },
+                "motakeridentifikator": "budnad"
+            },            
             "tidspunkt": "2021-04-11T15:29:58.753+02:00"
         }
     }
