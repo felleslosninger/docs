@@ -172,9 +172,6 @@
                 "mottaker": {
                     "$ref": "#/definitions/virksomhetmottaker"
                 },
-                "maskinportentoken": {
-                    "$ref": "#/definitions/maskinportentoken"
-                },
                 "tidspunkt": {
                     "$ref": "#/definitions/tidspunkt"
                 }
@@ -182,7 +179,6 @@
             "required": [
                 "avsender",
                 "mottaker",
-                "maskinportentoken",
                 "tidspunkt"
             ],
             "additionalProperties": false

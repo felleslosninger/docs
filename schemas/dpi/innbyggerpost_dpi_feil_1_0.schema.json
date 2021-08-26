@@ -32,9 +32,6 @@
                 "mottaker": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
                 },
-                "maskinportentoken": {
-                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
-                },
                 "tidspunkt": {
                     "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
                 },
@@ -58,7 +55,6 @@
             "required": [
                 "avsender",
                 "mottaker",
-                "maskinportentoken",
                 "tidspunkt",
                 "feiltype"
             ],
