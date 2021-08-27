@@ -11,7 +11,7 @@ Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdi
 
 # Bakgrunn
 
-Den proprietære transportinfrastrukturen for Digital Postkasse til innbyggere skal erstattes med en standard-infrastruktur for meldingsutvekling i det offentlege, dvs 4-hjørnes-modell med CEF eDelivery/PEPPOL. Følgende aktører inngår:
+Den proprietære transportinfrastrukturen for Digital Postkasse til innbyggere skal erstattes med en standard-infrastruktur for meldingsutvekling i det offentlige, dvs 4-hjørnes-modell med CEF eDelivery/PEPPOL. Følgende aktører inngår:
 - Hjørne 1: Avsender (og evt. avsender sin leverandør/databehandler)
 - Hjørne 2: Avsenders aksesspunkt-leverandør
 - Hjørne 3: Postkasse- og utskriftsleverandørs aksesspunktleverandør
