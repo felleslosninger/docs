@@ -1,7 +1,7 @@
 {
     "$id": "https://docs.digdir.no/schemas/dpi/commons.schema.json",
     "$schema": "https://json-schema.org/draft-07/schema#",
-    "description": "Schema for kvittering brukt av Digdir innenfor Digital post til innbygger (DPI)",
+    "description": "Schema for felles objekter brukt i Digital post til innbygger (DPI)",
     "definitions": {
         "avsender": {
             "type": "object",

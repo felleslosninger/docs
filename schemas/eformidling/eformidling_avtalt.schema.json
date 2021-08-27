@@ -1,0 +1,51 @@
+{
+    "$id": "https://docs.digdir.no/schemas/eformidling/eformidling_avtalt.schema.json",
+    "$schema": "https://json-schema.org/draft/20129-09/schema",
+    "description": "Schema for Avtalt melding brukt innenfor eFormidling fra Digdir",
+    "definitions": {
+        "avtalt": {
+            "$id": "#/definitions/avtalt",
+            "type": "object",
+            "title": "avtalt",
+            "properties": {
+                "identifier": {
+                    "$ref": "#/definitions/identifier"
+                },
+                "content": {
+                    "$ref": "#/definitions/content"
+                }
+            },
+            "required": [
+                "identifier",
+                "content"
+            ],
+            "additionalProperties": false
+        },
+        "identifier": {
+            "$id": "#/definitions/identifier",
+            "type": "string",
+            "title": "identifier",
+            "additionalProperties": false
+        },
+        "content": {
+            "$id": "#/definitions/content",
+            "type": "object",
+            "title": "content",
+            "additionalProperties": true
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocumentHeader": {
+            "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+        },
+        "avtalt": {
+            "$ref": "#/definitions/avtalt"
+        }
+    },
+    "required": [
+        "standardBusinessDocumentHeader",
+        "avtalt"
+    ],
+    "additionalProperties": false
+}

@@ -8,6 +8,13 @@
             "$id": "#/definitions/maskinportentoken",
             "title": "maskinportentoken",
             "description": "TODO"
+        },
+        "organisasjonsnummer": {
+            "type": "string",
+            "$id": "#/definitions/organisasjonsnummer",
+            "title": "organisasjonsnummer",
+            "description": "Norsk organisasjonsnummer, støtter med og uten ICD",
+            "pattern": "^([0-9]{9})$"
         }
     }
 }

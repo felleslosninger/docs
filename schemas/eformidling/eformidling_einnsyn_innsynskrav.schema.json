@@ -1,0 +1,39 @@
+{
+    "$id": "https://docs.digdir.no/schemas/eformidling/eformidling_einnsyn_publisering.schema.json",
+    "$schema": "https://json-schema.org/draft/20129-09/schema",
+    "description": "Schema for publisering  brukt innenfor eInnsyn fra Digdir",
+    "definitions": {
+        "publisering": {
+            "$id": "#/definitions/publisering",
+            "type": "object",
+            "title": "publisering",
+            "properties": {
+                "orgnr": {
+                    "$ref": "https://docs.digdir.no/schemas/common/commons.schema.json#/definitions/organisasjonsnummer"
+                },
+                "epost": {
+                    "type": "string",
+                    "format": "epost"
+                }
+            },
+            "required": [
+                "orgnr"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocumentHeader": {
+            "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+        },
+        "publisering": {
+            "$ref": "#/definitions/publisering"
+        }
+    },
+    "required": [
+        "standardBusinessDocumentHeader",
+        "publisering"
+    ],
+    "additionalProperties": false
+}
