@@ -109,6 +109,7 @@
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="varsler" type="Varsler" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="maskinportentoken" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -226,6 +227,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+            <xsd:element name="maskinportentoken" type="xsd:string" minOccurs="0" maxOccurs="1"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
