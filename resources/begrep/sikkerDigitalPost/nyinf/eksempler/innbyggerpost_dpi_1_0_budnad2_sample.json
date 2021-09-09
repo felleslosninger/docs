@@ -6,7 +6,7 @@
                 {
                     "identifier": {
                         "authority": "iso6523-actorid-upis",
-                        "value": "0192:<orgnr>"
+                        "value": "0192:922017433"
                     }
                 }
             ],
@@ -14,7 +14,7 @@
                 {
                     "identifier": {
                         "authority": "iso6523-actorid-upis",
-                        "value": "0192:<orgnr>"
+                        "value": "0192:922020175"
                     }
                 }
             ],
@@ -22,7 +22,7 @@
                 "standard": "urn:fdc:digdir.no:2020:innbyggerpost:xsd:digital::digital##urn:fdc:digdir.no:2020:innbyggerpost:schema:digital::1.0",
                 "typeVersion": "1.0",
                 "instanceIdentifier": "ff88849c-e281-4809-8555-7cd54952b916",
-                "type": "digital",
+                "type": "digitalpost",
                 "creationDateAndTime": "2021-04-11T15:29:58.753+02:00"
             },
             "businessScope": {
@@ -30,7 +30,12 @@
                     {
                         "type": "ConversationId",
                         "instanceIdentifier": "37efbd4c-413d-4e2c-bbc5-257ef4a65a45",
-                        "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:digital:ver1.0"
+                        "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:digital:ver1.0",
+                        "scopeInformation": [
+                            {
+                                "expectedResponseDateTime": "2021-05-10T00:31:52Z"
+                            }
+                        ]
                     }
                 ]
             }
@@ -39,17 +44,13 @@
             "avsender": {
                 "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
-                    "value": "0192:999888999"
-                }
+                    "value": "0192:972417866"
+                },
+                "avsenderidentifikator": "budnad"
             },
             "mottaker": {
                 "postkasseadresse": "ola.nordmann#9YDT"
-            },
-            "dokumentpakkefingeravtrykk": {
-                "digestMethod": "",
-                "digestValue": "5f2652040b33bccfd8c5f06e2beffc1ab822830807e8d0f0b721503e60df0eb6"
-            },
-            "maskinportentoken": "aølkdsølkdsj==",
+            },           
             "sikkerhetsnivaa": 3,
             "virkningsdato": "2021-01-01",
             "aapningskvittering": false,
@@ -76,7 +77,12 @@
                         7
                     ]
                 }
-            }
+            },
+            "dokumentpakkefingeravtrykk": {
+                "digestMethod": "",
+                "digestValue": "5f2652040b33bccfd8c5f06e2beffc1ab822830807e8d0f0b721503e60df0eb6"
+            },
+            "maskinportentoken": "eyJpc3MiOiJodHRwczovL21hc2tpbnBvcnRlbi5ubyIsInNjb3BlIjoiZHBpOnNlbmQiLCJhdWQiOiJodHRwczovL2FwaS5ha3Nlc3NwdW5rdGxldmVyYW5kw7hyLm5vLyIsImNvbnN1bWVyIjp7IkF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjk3MjQxNzg2NiJ9LCJzdXBwbGllciI6eyJBdXRob3JpdHkiOiJpc282NTIzLWFjdG9yaWQtdXBpcyIsIklEIjoiMDE5Mjo5MjIwMTc0MzMifSwiaWF0IjoiMTYyMTIzODQwMCIsImV4cCI6IjE2MjEyMzg0MzAifQ=="
         }
     }
 }

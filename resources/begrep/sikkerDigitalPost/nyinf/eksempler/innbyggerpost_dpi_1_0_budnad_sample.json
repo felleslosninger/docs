@@ -5,13 +5,13 @@
             "sender": [ {
                 "identifier": {
                     "authority": "iso6523-actorid-upis",
-                    "value": "0192:889640782"
+                    "value": "0192:922017433"
                 }
             }],
             "receiver": [{
                 "identifier": {
                     "authority": "iso6523-actorid-upis",
-                    "value": "0192:984661185"
+                    "value": "0192:922020175"
                 }
             }],
             "documentIdentification": {                
@@ -36,45 +36,40 @@
                 ]
             }
         },        
-        "digitalpost":{                
+        "digital":{                
             "avsender": {
                 "virksomhetsidentifikator": {
                     "authority": "iso6523-actorid-upis",
-                    "value": "0192:889640782"                    
+                    "value": "0192:972417866"                    
                 }
             },
-            "mottaker": {
-                "personidentifikator": {
-                    "authority": "iso3166-1-alfa2",
-                    "value": "NO:17050411111"
-                },
+            "mottaker": {               
                 "postkasseadresse":"ola.nordmann#9YDT"
             },
-            "digitalpostinfo" : {
-                "sikkerhetsnivaa": 3,                                                     
-                "virkningsdato": "2021-01-01",
-                "aapningskvittering": false ,
-                "ikkesensitivtittel": { "tittel":"ikkeSensitivTittel", "spraak": "NO" },
-                "varsler": { 
-                    "epostvarsel":{
-                        "epostadresse" : "test@epost.no",
-                        "varslingstekst" : "Dette er en varslingstekst",
-                        "spraak": "NO",
-                        "repetisjoner" : [1,7]
-                    },
-                    "smsvarsel":{
-                        "mobiltelefonnummer" : "12345678",
-                        "varslingstekst" : "Dette er en varslingstekst",
-                        "spraak": "NO",
-                        "repetisjoner" : [1,7]
-                    }                    
-                }                             
-            },  
+            
+            "sikkerhetsnivaa": 3,                                                     
+            "virkningsdato": "2021-01-01",
+            "aapningskvittering": false ,
+            "ikkesensitivtittel": { "tittel":"ikkeSensitivTittel", "spraak": "NO" },
+            "varsler": { 
+                "epostvarsel":{
+                    "epostadresse" : "test@epost.no",
+                    "varslingstekst" : "Dette er en varslingstekst",
+                    "spraak": "NO",
+                    "repetisjoner" : [1,7]
+                },
+                "smsvarsel":{
+                    "mobiltelefonnummer" : "12345678",
+                    "varslingstekst" : "Dette er en varslingstekst",
+                    "spraak": "NO",
+                    "repetisjoner" : [1,7]
+                }                    
+            }, 
             "dokumentpakkefingeravtrykk": {
                 "digestMethod": "",
                 "digestValue": "5f2652040b33bccfd8c5f06e2beffc1ab822830807e8d0f0b721503e60df0eb6"
             },
-            "maskinportentoken" : "eyJpc3MiOiJodHRwczovL21hc2tpbnBvcnRlbi5ubyIsInNjb3BlIjoiZHBpOnNlbmQiLCJhdWQiOiJodHRwczovL2FwaS5ha3Nlc3NwdW5rdGxldmVyYW5kw7hyLm5vLyIsImNvbnN1bWVyIjp7IkF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjg4OTY0MDc4MiJ9LCJpYXQiOiIxNjIxMjM4NDAwIiwiZXhwIjoiMTYyMTIzODQzMCJ9"
+            "maskinportentoken" : "eyJpc3MiOiJodHRwczovL21hc2tpbnBvcnRlbi5ubyIsInNjb3BlIjoiZHBpOnNlbmQiLCJhdWQiOiJodHRwczovL2FwaS5ha3Nlc3NwdW5rdGxldmVyYW5kw7hyLm5vLyIsImNvbnN1bWVyIjp7IkF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjk3MjQxNzg2NiJ9LCJzdXBwbGllciI6eyJBdXRob3JpdHkiOiJpc282NTIzLWFjdG9yaWQtdXBpcyIsIklEIjoiMDE5Mjo5MjIwMTc0MzMifSwiaWF0IjoiMTYyMTIzODQwMCIsImV4cCI6IjE2MjEyMzg0MzAifQ=="
         }            
                
     }

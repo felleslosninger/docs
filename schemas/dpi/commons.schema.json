@@ -21,7 +21,8 @@
             },
             "required": [
                 "virksomhetsidentifikator"
-            ]
+            ],
+            "additionalProperties": false
         },
         "virksomhetmottaker": {
             "type": "object",
@@ -55,18 +56,15 @@
             "title": "mottaker",
             "description": "Person som er mottaker av en sikker digital post",
             "$comment": "",
-            "properties": {
-                "personidentifikator": {
-                    "$ref": "#/definitions/personidentifikator"
-                },
+            "properties": {                
                 "postkasseadresse": {
                     "$ref": "#/definitions/postkasseadresse"
                 }
             },
             "required": [
-                "personidentifikator",
                 "postkasseadresse"
-            ]
+            ],
+            "additionalProperties": false
         },
         "virksomhetsidentifikator": {
             "type": "object",
@@ -91,7 +89,8 @@
             "required": [
                 "authority",
                 "value"
-            ]
+            ],
+            "additionalProperties": false
         },
         "personidentifikator": {
             "type": "object",
@@ -112,7 +111,8 @@
             },
             "required": [
                 "value"
-            ]
+            ],
+            "additionalProperties": false
         },
         "postkasseadresse": {
             "type": "string",
@@ -154,7 +154,12 @@
                     "type": "string",
                     "description": "Base64 encoded Hash av den krypterte Dokumentpakken"
                 }
-            }
+            },
+            "required": [
+                "digestMethod",
+                "digestValue"
+            ],
+            "additionalProperties": false
         },
         "kvittering": {
             "type": "object",
@@ -256,7 +261,8 @@
             "required": [
                 "tittel",
                 "spraak"
-            ]
+            ],
+            "additionalProperties": false
         },
         "epostvarsel": {
             "type": "object",
@@ -351,7 +357,8 @@
                 "varslingstekst",
                 "spraak",
                 "repetisjoner"
-            ]
+            ],
+            "additionalProperties": false
         }
     }
 }
