@@ -10,4 +10,4 @@ Oppdatering av openam
 
 
 
-Planlagd produksjonssetting: Aug 24, 2021
+Planlagd produksjonssetting: Aug 25, 2021
