@@ -14,19 +14,19 @@ Leverandører spiller en viktig rolle med å hjelpe offentlige virksomheter til 
 
 Leverandører får normalt ikke tilgang til ID-porten/Maskinporten på egne vegne. Integrasjon mot Digdirs fellesløsninger skal bare gjøres på vegne av kunder som har akseptert Digdirs bruksvilkår.
 
-
 Det er viktig å være klar over at "en leverandør ikke er en leverandør", dvs. ulike leverandører og ulike brukscenario har ulike behov.  Typiske leverandør-bruksmønster i ID-porten/Maskinporten er:
-- System-leverandører som utvikler fagsystemer i sky som kundens saksbehandlere logger inn til
+- System-leverandører som utvikler fagsystemer i sky som kundens saksbehandlere eller innbyggere logger inn til
 - Driftsleverandører som utfører "ren" basis IT-drift av kundens egne systemer.
+- Leverandører av "sluttbrukersystemer" som skal bruke offentlige APIer
 - Konsulent-selskaper som utvikler "skreddersøm"-systemer på oppdrag av en enkelt kunde.
 - Sektor-løsninger fra det offentlige som HelseID og Feide
 
 
 # Generelle råd
 
-Leverandører (og forsåvidt alle andre) som har mange installasjoner av et system, bør ikke gjenbruke hemmeligheter mellom installasjoner. Dersom en installasjon blir kompromittert (for eksempel client_secret på avveie), så er plutselig alle installasjoner blitt kompromittert, og alle kunde-installasjoner må oppdateres.
+Vi fraråder sterkt å dele klientregistreringer (med secrets/nøkler) på tvers av flere installasjoner. Dersom én installasjon med delt klient-registrering blir kompromittert (for eksempel client_secret på avveie), så er plutselig alle delte installasjoner blitt kompromittert, og leverandøren må umiddelbart oppdatere alle kunde-installasjoner.   Da er det mye bedre å ha mange klient-registreringer, en for hver "logiske" installasjon.
 
-Leverandører bør av sikkerhetshensyn ikke forvalte kundene sine virksomhetssertifikater, da disse potensielt kan gi vide tilganger også til andre systemer utover ID-porten/Maskinporten.
+Vi anbefaler videre å bruke asymmetriske nøkler til klient-autentisering (private_key_jwt), istedet for virksomhetssertifkater eller statiske nøkler (client_secrets). Av sikkerhetshensyn bør ikke leverandører forvalte kundene sine virksomhetssertifikater, da disse potensielt kan gi vide tilganger også til andre systemer utover ID-porten/Maskinporten.
 
 Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi API-basert selvbetjening. (LINK). Sistnevnte er basert på RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
 
@@ -35,29 +35,32 @@ Digdir forventer at leverandører bruker selvbetjening til administrere sine kun
 
 Leverandør-funksjonaliteten slik den er i dag er i hovedsak tilpasset **innloggingstjenester**, og ikke datadeling i ID-porten eller Maskinporten.
 
-Siden leverandør-funksjonaliteten gjør det mulig for Leverandør å selv-deklarere at de opptrer på vegne av vilkårlige orgno uten kundens eksplisitte samtykke, er det av sikkerhetshensyn ikke åpnet for at en leverandør kan "arve" kundens sine tildelte tilganger til 3-parts APIer.  
+Siden leverandør-funksjonaliteten i ID-porten gjør det mulig for Leverandør å selv-deklarere at de opptrer på vegne av vilkårlige orgno uten kundens eksplisitte samtykke, er det av sikkerhetshensyn ikke åpnet for at en leverandør kan "arve" kundens sine tildelte tilganger til 3-parts APIer.
 
-I Maskinporten er det mulig for kunden å eksplisitt delegere API-tilgang gjennom Altinn Autorisasjon.  Tilsvarende funksjonalitet finnes ikke i ID-porten for brukerstyrt datadeling.
+Derimot er det i Maskinporten mulig for kunden å eksplisitt delegere API-tilgang gjennom Altinn Autorisasjon.  Tilsvarende funksjonalitet finnes p.t. ikke i ID-porten for brukerstyrt datadeling.
 
 
 # Ulike måter å integrere på
 
 
-## Onbehalfof i ID-porten
+## 1. Onbehalfof i ID-porten
 
 onbehalfof (LINK) er en ID-porten-proprietær mekanisme som gir en leverandør mulighet til å gjenbruke en OIDC-integrasjon på vegne av mange kunder.  
 
-Leverandøren må forhåndsregistere såkalte "onbehalfof"-verdier som blir knyttet til kundens orgno, normalt 1 verdi per kunde, og må sende riktig onbehalfof-verdi runtime ved innlogging.  Hver obof-verdi har eget tjensteeier-navn og logo som blir vist sluttbruker ved innlogging.
+Mønsterer passer best der leverandøren har egen
 
 Leverandøren bruker eget virksomhetssertifkat og/eller client_secret for å autentisere seg mot ID-porten.
 
 
-Dersom integrasjonen skal kunne bruke brukerstyrt datadeling (LINK) på vegne av kunden, eller integrasjonen har behov for å motta access_tokens med scopes eid av 3dje-part, må API-tilbyder gi leverandøren (altså ikke kunden) tilgang til scopet, for at leverandøren skal kunne registrer scopet på sin klient. `consumer`-claimet i access_token blir satt lik orgnummeret som tilhører onbehalfof-verdien.
+Leverandøren må forhåndsregistere såkalte "onbehalfof"-verdier som blir knyttet til kundens orgno, normalt 1 verdi per kunde, og må sende riktig onbehalfof-verdi runtime ved innlogging.  Hver obof-verdi har eget tjensteeier-navn og logo som blir vist sluttbruker ved innlogging.  Merk at redirect_uri'er må registreres på "mor-integrasjonen" og ikke på onbehalfof'ene.
+
+
+Dersom integrasjonen skal kunne bruke brukerstyrt datadeling (LINK) på vegne av kunden, eller integrasjonen har behov for å motta access_tokens med scopes eid av 3dje-part, må API-tilbyder gi leverandøren (altså ikke kunden) tilgang til scopet, for at leverandøren skal kunne registrer scopet på sin klient. `consumer`-claimet i access_token blir satt lik orgnummeret som tilhører onbehalfof-verdien.  Av samme grunn gir det liten mening å bruke onbehalfof for Maskinporten-integrasjoner.
 
 Tilgang til selvbetjening via `idporten:dcr.onbehalfof` scope
 
 
-## Selvstendige kunde-integrasjoner i ID-porten
+## 2. Selvstendige kunde-integrasjoner i ID-porten
 
 Noen leverandører har av historiske årsaker systemer der de låner kunden sitt virksomhetssertifikat for å integrere mot ID-porten, selv om det ikke er anbefalt.
 

@@ -115,6 +115,9 @@ folders:
       - title: Administrasjon av OICD-integrasjoner
         jurl: /oidc_api_admin.html
 
+      - title: Administrasjon for leverandører
+        jurl: /oidc_api_admin_leverandør.html
+
       - title: Administrasjon av API-tilgang
         jurl: /oidc_api_admin_maskinporten.html
 

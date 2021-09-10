@@ -48,6 +48,9 @@ Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 
 Du vil ikke være i stand til å legge på et scope på klienten din som er i konflikt med klienten's integrasjonstype. F.eks du kan ikke legge til et scope som er begrenset til "maskinporten" på en ID-porten klient, og vice versa.
 
+## Leverandører
+
+Dersom du er leverandør, er det noen av klient-egenskapene nedenfor som du må passe på å få registrert rett.  Se [egen leverandør-informasjon](oidc_admin_leverandør.html).
 
 ## Oauth2-egenskaper
 

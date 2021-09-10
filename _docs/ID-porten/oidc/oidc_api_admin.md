@@ -10,7 +10,7 @@ product: ID-porten
 
 ## Introduksjon
 
-Utvalgte OIDC-klienter kan få tilgang til å administrere integrasjonar i ID-porten. APIet muliggjør for eksempel:
+Utvalgte kunder kan få tilgang til å administrere integrasjonar i ID-porten. APIet muliggjør for eksempel:
 * Kunde kan opprette/endre nye klienter knyttet til eget org.nummer
 * Leverandør kan opprette/endre selvstendige klienter knyttet til egne kunder
 * Leverandør kan opprette/endre onbehalfof-klienter på vegne av egne kunder
@@ -19,12 +19,11 @@ Utvalgte OIDC-klienter kan få tilgang til å administrere integrasjonar i ID-po
 
 Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få tilgang til å bruke tjenesten.
 
-
 ## Bruk av Oauth2 {#scopes}
 
-APIet er sikret vha. [server-til-server Oauth](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten (ikke støtte for Maskinporten-tokens ennå).
+APIet er basert på [RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret vha. [server-til-server Oauth2](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten (dessverre ikke støtte for Maskinporten-tokens ennå).
 
-Klienten må få tildelt scopes for å få tilgang til APIet:
+Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
 | scope | beskrivelse |
 |-|-|
@@ -37,33 +36,13 @@ Klienten må få tildelt scopes for å få tilgang til APIet:
 
 ## Eierskap til integrasjoner
 
-Leverandører kan velge tre måter å integrere sine kunder på
+Normalt blir kunden selv automatisk eier (`client_orgno`) av integrasjoner som opprettes via selvbetjenings-API basert på organisasjonsnummeret i virksomhetssertifikatet som brukes.
 
-
-### 1: onbehalfof-integrasjoner
-
-Bruke *onbehalfof* "under-integrasjoner" knyttet til Leverandørens egen integrasjon, som dokumentert [her](oidc_func_onbehalfof.html).
-
-MERK: onbehalfof er en proprietær protokoll-mekanisme som er støttet av historiske årsaker, og kan bli fjernet i fremtiden. Digdir mener alt. 2 med selvstendige integrasjoner er et bedre valg.
-
-
-### 2: Selvstendige integrasjoner
-
-Med selvstendige integrasjoner har hver integrasjon har egen client_id og klientautentisering.    
-* Leverandøren må sette client_orgno lik egen kunde sitt organisasjonsnummer.
-* Leverandøren kan opprette integrasjoner på vilkårlige client_orgno
-* Leverandørens eget organisasjonnummer blir *automatisk* satt som `supplier_orgno` (basert på virksomhetssertifikatet som blir brukt mot admin-APIet)
-* Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene.
-
-Ved endring og sletting tillater APIet kun operasjoner på integrasjoner der eget orgno er lagret som supplier_orgno fra før.
-
-### 3: Delegert tilgang i Altinn
-
-Dette gjelder leverandør-integrasjonar som skal konsumere API-er fra 3djepart der API-eier krever at den juridiske konsumenten (=leverandørens kunde) bruker Altinn til å aktivt delegerer en tildelt API-tilgang videre til leverandør.  Se [dokumentasjon av delegering](maskinporten_func_delegering.html) for detaljer.
+Dersom du er leverandør har du flere muligheter til hvordan du skal registere dine kunders integrasjoner. [Se egen leverandør-informasjon](oidc_admin_leverandør.html).
 
 ## Ulike typer integrasjonar
 
-Man kan opprette ulike typer integrajonser over APIet.  Det er klient-autentiseringsmetode og grant-type som bestemmer hvilken integrasjon som blir opprettet. ID-porten har validering som hindrer at ulovlige kombinasjoner blir opprettet. Se [klient-registrering](oidc_func_clientreg.html) for detaljer.
+Man kan opprette ulike typer integrasjoner over APIet. Attributtet `integration_type` setter begrensninger på hvilke kombinasjoner av andre oauth2 dcr-egenskaper som er lovlige. Se [klient-registrering](oidc_func_clientreg.html) for detaljer.
 
 
 ## Rotering av client_secret
@@ -74,11 +53,11 @@ Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_
 
 ## Bruk av asymmetrisk nøkkel
 
-Man kan sende inn en [JWKS-struktur (RFC7517)](https://tools.ietf.org/html/rfc7517), dvs. en array av flere (inntil 5) JWK-representasjoner.
+Man kan sende inn en [JWKS-struktur (RFC7517)](https://tools.ietf.org/html/rfc7517), dvs. et Set som er en array av flere (inntil 5) JWK-representasjoner.
 
-Er modellert som egen ressurs under klient `/clients/{client_id}/jwks`
+Vi har valgt å modellere disse som egen ressurs under klient `/clients/{client_id}/jwks`
 
-Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
+Man kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
 
 Kun RS256 støttes som algoritme.
 
@@ -109,7 +88,7 @@ Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grant
 
 ## Registrering av scopes
 
-Se [dokumentasjon av klient-registrering](oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for registrering av Oauth2 scopes på en integrasjon.
+Se [dokumentasjon av klient-registrering](oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for å få lov til å registrere Oauth2 scopes tilhørende Digdir eller 3djeparter på en integrasjon.
 
 ## REST-grensesnittet
 
