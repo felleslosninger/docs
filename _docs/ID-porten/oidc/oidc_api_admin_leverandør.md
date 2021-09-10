@@ -1,7 +1,5 @@
 ---
 title: Leverandører i ID-porten/Maskinporten
-description: Retningslinjer for teknisk integrasjon for leverandører
-summary: Retningslinjer for teknisk integrasjon for leverandører
 permalink: oidc_api_admin_leverandør.html
 sidebar: oidc
 product: ID-porten
