@@ -169,6 +169,8 @@ Begge prosessene støtter både digitalpost og fysisk post.
 {% include /eformidling/nextmove/forretningsmeldingDpvDigital.json %}
 ```
 
+> Lenke uten for brev støttet funksjonalitet og er [dokumentert her](https://docs.digdir.no/eformidling_dev.html#Digital-post-til-innbygger-lenke-utenfor-brev)
+
 ### eInnsyn
 
 | Prosess | Dokumenttype | 

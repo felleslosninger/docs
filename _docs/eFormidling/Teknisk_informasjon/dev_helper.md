@@ -104,3 +104,38 @@ Nå skal du være klar til å sende stor melding. Det gjør du ved å kjøre pos
 3. UploadFileLargeFile
 4. SendMessage
 
+---
+
+## Digital post til innbygger lenke utenfor brev
+I Integrasjonspunktet er det støtte for DPI utvidelsen ["Lenke utenfor brev")](https://begrep.difi.no/SikkerDigitalPost/1.3.0/forretningslag/Utvidelser/Lenke) som en del av [forretningsmeldingen](https://docs.digdir.no/eformidling_nm_message.html#digital-post-til-innbygger). 
+
+Forretningsmeldingen har attributten "metadataFiler" der nøkler refererer til vedlagte dokument og verdier refererer metadataFil/utvidelse for gitt dokument. 
+
+```
+"digital": {
+        "sikkerhetsnivaa": 3,
+        "hoveddokument": "Test.txt",
+        "tittel": "Test",
+        "spraak": "en",
+        "digitalPostInfo": {
+            "virkningsdato": "2021-01-01",
+            "aapningskvittering": false
+        },
+        "metadataFiler": {
+            "Test.txt": "Testlenke.xml"
+        }
+    }
+```
+
+> Eksempel på metadataFil/utvidelse for lenke:
+
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lenke xmlns="http://begrep.difi.no/sdp/utvidelser/lenke">
+  <url>http://example.com</url>
+</lenke>
+```
+
+Det er også nødvendig at MetaFil/utvidelse gis mimetype ```application/vnd.difi.dpi.lenke+xml``` i tilfellet lenke utenfor brev(andre mimetypes for andre utvidelser)
+
+En kan også oppgi tekst for lenkeknapp, frist, og beskrivelse for lenke. [Se eksempel her.](https://begrep.difi.no/SikkerDigitalPost/1.3.0/forretningslag/Utvidelser/Lenke)
