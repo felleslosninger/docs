@@ -52,7 +52,7 @@ Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> 
 
 ### Tilgangstyring av APIet {#scopes}
 
-APIet er basert på en [etablert standard for å vedlikeholde Oauth2-integrasjoner, dvs. RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret vha. [server-til-server Oauth2](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten (dessverre ikke støtte for Maskinporten-tokens ennå). 
+APIet er basert på en [etablert standard for å vedlikeholde Oauth2-integrasjoner, dvs. RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret vha. [server-til-server Oauth2](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten (dessverre ikke støtte for Maskinporten-tokens ennå).
 
 Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
@@ -189,7 +189,7 @@ sequenceDiagram
   participant S as SelvbetjeningsAPI
   participant I as ID-porten
 
-note over A, I: 1: Administrasjonssystemet vil starte en ny applikasjon:
+  note over A, I: 1: Administrasjonssystemet vil starte en ny applikasjon:
   A ->> C: Oppstartskommando (feks kubectl)
   note over C: Applikasjonen vet / blir fortalt sin client_id
   note over C: Applikasjonen generer selv et nøkkelpar
@@ -204,7 +204,7 @@ note over A, I: 1: Administrasjonssystemet vil starte en ny applikasjon:
   note over A, I: 3: Sluttbrukere kan nå logge inn i den nye applikasjonen
 
   C ->> I: Token-forespørsel signert med privat-nøkkel
-  </div>
+</div>
 
 Merk at vi anbefaler at kunden bruker asymmetriske nøkler for klient-autentisering, og at nøkkel-paret blir generert ute hos applikasjonen i stedet for sentralt i admininstrasjonssytestemet, på denne måten minimerer man risiko for misbruk siden privatnøkkel aldri sendes over nettet, og det ikke finst noe sentralt system som sitter på en kopi av alle organisasjonen sine nøkler.
 

@@ -23,7 +23,7 @@ Vi fraråder sterkt å dele klientregistreringer (med secrets/nøkler) på tvers
 
 Vi anbefaler videre å bruke asymmetriske nøkler til klient-autentisering (private_key_jwt), istedet for virksomhetssertifkater eller statiske nøkler (client_secrets). Av sikkerhetshensyn bør ikke leverandører forvalte kundene sine virksomhetssertifikater, da disse potensielt kan gi vide tilganger også til andre systemer utover ID-porten/Maskinporten.
 
-Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi API-basert selvbetjening. (LINK). Sistnevnte er basert på en standard RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
+Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi [API-basert selvbetjening](oidc_api_admin.html). Sistnevnte er basert på en standard RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
 
 
 ## Spesielt om datadeling
