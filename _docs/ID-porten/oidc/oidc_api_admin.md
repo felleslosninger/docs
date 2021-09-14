@@ -182,30 +182,6 @@ Selvbetjenings-APIet skal legge tilrette for automatisering hos kunder som har h
 
 Hvordan APIet konkret skal brukes slik, vil variere mye mellom ulike kunder alt etter hvilket applikasjonslandskap de har, men et "typisk" anbefalt bruksmønster som Digdir ser for seg er slik:
 
-<div class="mermaid">
-sequenceDiagram
-  participant A as Eget administrasjonssystem
-  participant C as Applikasjon i sky / pod
-  participant S as SelvbetjeningsAPI
-  participant I as ID-porten
-
-  note over A, I: 1: Administrasjonssystemet vil starte en ny applikasjon:
-  A ->> C: Oppstartskommando (feks kubectl)
-  note over C: Applikasjonen vet / blir fortalt sin client_id
-  note over C: Applikasjonen generer selv et nøkkelpar
-  C ->> A: public-nøkkel og client_id
-
-  note over A, I: 2: Administrasjonssystemet registrerer den nye applikasjonen hos Digdir
-  A ->> S: POST /clients  (client_id)
-  A ->> S: POST /clients/{client_id}/jwks
-
-  S --> I: Overføring av integrasjonskonfigurasjon, 0-2 minutter
-
-  note over A, I: 3: Sluttbrukere kan nå logge inn i den nye applikasjonen
-
-  C ->> I: Token-forespørsel signert med privat-nøkkel
-</div>
-
 Merk at vi anbefaler at kunden bruker asymmetriske nøkler for klient-autentisering, og at nøkkel-paret blir generert ute hos applikasjonen i stedet for sentralt i admininstrasjonssytestemet, på denne måten minimerer man risiko for misbruk siden privatnøkkel aldri sendes over nettet, og det ikke finst noe sentralt system som sitter på en kopi av alle organisasjonen sine nøkler.
 
 Et godt eksempel på slik bruk er [NAV sin kubernetes-operator Digdirator](https://github.com/nais/digdirator).
