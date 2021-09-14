@@ -10,9 +10,9 @@ Leverandører spiller en viktig rolle med å hjelpe offentlige virksomheter til 
 Leverandører får normalt ikke tilgang til ID-porten/Maskinporten på egne vegne. Integrasjon mot Digdirs fellesløsninger skal bare gjøres på vegne av kunder som har akseptert Digdirs bruksvilkår.
 
 Det er viktig å være klar over at "en leverandør ikke er en leverandør", dvs. ulike leverandører og ulike brukscenario har ulike behov.  Typiske leverandør-bruksmønster i ID-porten/Maskinporten er:
-- System-leverandører som utvikler fagsystemer i sky som kundens saksbehandlere eller innbyggere logger inn til
+- System-leverandører som utvikler fagsystemer i sky som kundens saksbehandlere eller innbyggere logger inn til.
 - Driftsleverandører som utfører "ren" basis IT-drift av kundens egne systemer.
-- Leverandører av "sluttbrukersystemer" som skal bruke offentlige APIer
+- Leverandører av "sluttbrukersystemer" (dvs. typisk app'er eller pc-software) som skal bruke offentlige APIer
 - Konsulent-selskaper som utvikler "skreddersøm"-systemer på oppdrag av en enkelt kunde.
 - Sektor-løsninger fra det offentlige som HelseID og Feide
 
@@ -23,7 +23,7 @@ Vi fraråder sterkt å dele klientregistreringer (med secrets/nøkler) på tvers
 
 Vi anbefaler videre å bruke asymmetriske nøkler til klient-autentisering (private_key_jwt), istedet for virksomhetssertifkater eller statiske nøkler (client_secrets). Av sikkerhetshensyn bør ikke leverandører forvalte kundene sine virksomhetssertifikater, da disse potensielt kan gi vide tilganger også til andre systemer utover ID-porten/Maskinporten.
 
-Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi API-basert selvbetjening. (LINK). Sistnevnte er basert på RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
+Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi API-basert selvbetjening. (LINK). Sistnevnte er basert på en standard RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
 
 
 ## Spesielt om datadeling
@@ -80,3 +80,72 @@ For datadeling mellom virksomheter gjennom Maskinporten er det mulig for en Kund
 Kunde-Leverandør-forholdet blir for slike integrasjoner ikke forhåndsregistert på klient-registreringa via selvbetjening (som for de ovenstående alternativene), men sjekkes istedet runtime ved bruk.
 
 Funksjonaliteten er kun tilgjengelig for 3-djeparts scopes som har `delegation_source`-feltet satt.
+
+
+
+## Eksempler på bruk av selvbetjeningsAPI
+
+
+### Eksempel på å lese onbehalfof-registrering:
+
+Forespørsel
+```
+GET /clients/oidc_eksempel_klient/onbehalof/example_onbehalof
+Accept: application/json
+Authorization: Bearer <token med idporten:dcr/onbehalfof:write>
+```
+
+Respons:
+```
+Status code 200
+{
+	"onbehalfof": "example_onbehalfof",
+	"display_name": "Oslo kommune barnehagesystem"
+	"orgno": "991825828"
+	"url": "https://oslo.eksempel.no"
+}
+```
+
+### Eksempel på å ny opprette onbehalfof-registrering:
+
+Forespørsel
+```
+POST /clients/oidc_eksempel_klient/onbehalof/
+Accept: application/json
+Authorization: Bearer token med idporten:dcr/onbehalfof:write>
+
+{
+	"onbehalfof": "new_example_onbehalof",
+	"display_name": "Bergen kommune barnehagesystem"
+	"orgno": "999888777"
+	"url": "https://bergen.eksempel.no"
+}
+```
+
+
+###Eksempel på å endre onbehalfof-registrering:
+
+Forespørsel
+```
+PUT /clients/oidc_eksempel_klient/onbehalof/example_onbehalof
+Content-type: application/json
+Authorization: Bearer <my_access_token_value>
+
+{
+	"onbehalfof": "example_onbehalof",
+	"display_name": "Modified display_name value"
+	"orgno": "991825828"
+	"url": "https://service.eksempel.no"
+}
+```
+
+
+### Eksempel på å slette onbehalfof-registrering:
+
+Forespørsel
+```
+DELETE /clients/oidc_eksempel_klient/onbehalof/example_onbehalof
+Authorization: Bearer <my_access_token_value>
+```
+
+Får respons med statuskode 200, og tom body.
