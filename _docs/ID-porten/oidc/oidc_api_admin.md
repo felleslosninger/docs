@@ -1,7 +1,7 @@
 ---
 title: REST-API for administrasjon av OIDC-integrasjoner
 description: API som gir tjenesteleverandørar mulighet til å administrere sine OIDC-integrasjoner.
-spermalink: oidc_api_admin.html
+permalink: oidc_api_admin.html
 sidebar: oidc
 product: ID-porten
 ---
@@ -205,6 +205,9 @@ sequenceDiagram
 
   C ->> I: Token-forespørsel signert med privat-nøkkel
 </div>
+
+
+
 
 Merk at vi anbefaler at kunden bruker asymmetriske nøkler for klient-autentisering, og at nøkkel-paret blir generert ute hos applikasjonen i stedet for sentralt i admininstrasjonssytestemet, på denne måten minimerer man risiko for misbruk siden privatnøkkel aldri sendes over nettet, og det ikke finst noe sentralt system som sitter på en kopi av alle organisasjonen sine nøkler.
 
