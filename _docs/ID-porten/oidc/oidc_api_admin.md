@@ -192,7 +192,7 @@ sequenceDiagram
   note over A, I: 1: Administrasjonssystemet vil starte en ny applikasjon:
   A ->> C: Oppstartskommando (feks kubectl)
   note over C: Applikasjonen generer selv et nøkkelpar
-  C ->> A: public-nøkkel og client_id
+  C ->> A: public-nøkkel
 
   note over A, I: 2: Administrasjonssystemet registrerer den nye applikasjonen hos Digdir
   A ->> S: POST /clients  
