@@ -7,6 +7,14 @@ product: elma
 sidebar: elma_sidebar
 ---
 
+## Elma update 16.09.2021 (3.10.0)
+
+### Tasks
+```
+[MOVE-2331] - SMP Redirection i ELMA
+```
+
+
 ## Elma update 21.06.2021 (3.9.0)
 
 ### Tasks
