@@ -113,7 +113,7 @@ Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdU
 }
 ```
 Responsen er en json-struktur med den komplette klientmodellen som ble registrert.  
-Merk også at APIet vil opprette og returnere client_id og client_secret for klienter som opprettes, og at sistnevnte returneres i klartekst.
+Merk også at APIet vil opprette og returnere client_id og eventuell client_secret for klienter som opprettes, og at sistnevnte returneres i klartekst.
 
 Eksempelet ovenfor oppretter en ID-porten-klient for [brukerstyrt datadeling på vegne av innlogget bruker](oidc_auth_oauth2.html) (`integration_type=api_klient`), den er et sluttbrukersystem som er tenkt installert lokalt på en PC (`application_type=native` kombinert med en [redirect-uri som peker på en lokal port](oidc_auth_sbs.html) )
 
@@ -191,15 +191,15 @@ sequenceDiagram
 
   note over A, I: 1: Administrasjonssystemet vil starte en ny applikasjon:
   A ->> C: Oppstartskommando (feks kubectl)
-  note over C: Applikasjonen vet / blir fortalt sin client_id
   note over C: Applikasjonen generer selv et nøkkelpar
-  C ->> A: public-nøkkel og client_id
+  C ->> A: public-nøkkel
 
   note over A, I: 2: Administrasjonssystemet registrerer den nye applikasjonen hos Digdir
-  A ->> S: POST /clients  (client_id)
+  A ->> S: POST /clients  
+  S ->> A: 200 OK (client_id)
   A ->> S: POST /clients/{client_id}/jwks
-
-  S --> I: Overføring av integrasjonskonfigurasjon, 0-2 minutter
+  A ->> C: her er din client_id
+  S -->> I: Overføring av integrasjonskonfigurasjon, 0-2 minutter
 
   note over A, I: 3: Sluttbrukere kan nå logge inn i den nye applikasjonen
 
