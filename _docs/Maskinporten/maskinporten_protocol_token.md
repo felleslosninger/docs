@@ -29,7 +29,7 @@ The following request body attributes shall be used when passing the JWT-grant:
 | grant_type |  `urn:ietf:params:oauth:grant-type:jwt-bearer` | Type of grant the client is sending, ie. `urn:ietf:params:oauth:grant-type:jwt-bearer`  |
 | assertion   | string  | The JWT grant  |
 
-There is no need to perform client authenticion when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
+There is no need to perform client authentication when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
 See [JWT grant](maskinporten_protocol_jwtgrant.html) for requirements for constructing the JWT grant.
 
