@@ -3,6 +3,7 @@ title: Integrasjonspunkt i AKS
 description: Sjekkliste for hvordan sette opp integrasjonspunktet i AKS
 permalink: integrasjonspunkt_aks.html
 product: eFormidling
+sidebar: eformidling_install_sidebar
 ---
 
 Forutsetninger
@@ -214,7 +215,7 @@ spec:
         app: ip-staging
     spec:
       containers:
-      - image: difi/integrasjonspunkt:2.1.1
+      - image: difi/integrasjonspunkt:2.2.4
         name: integrasjonspunkt
         resources: {}
         volumeMounts:

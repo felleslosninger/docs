@@ -29,6 +29,9 @@ folders:
       - title: Opprette brukere i eFormidling
         jurl: /eformidling_create_users.html
 
+      - title: Installer integrasjonspunktet i AKS
+        jurl: /integrasjonspunkt_aks.html
+
 
 
 
