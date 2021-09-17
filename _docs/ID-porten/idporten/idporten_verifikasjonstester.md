@@ -22,29 +22,29 @@ Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonste
 
 ### Testar som må gjennomførast
 
-[Test 1: Single sign-on (SSO) frå eiga teneste med sikkerheitsnivå 3](../96_verifikasjonstest.html#1-single-sign-on-sso-frå-eiga-teneste-med-sikkerheitsnivå-3)
+[Test 1: Single sign-on (SSO) frå eiga teneste med sikkerheitsnivå 3](idporten_verifikasjonstester.html#1-single-sign-on-sso-frå-eiga-teneste-med-sikkerheitsnivå-3)
 
-[Test 3: SSO til eiga teneste med sikkerheitsnivå 3](96_verifikasjonstest.html#3-sso-til-eiga-teneste-med-sikkerheitsnivå-3)
+[Test 3: SSO til eiga teneste med sikkerheitsnivå 3](idporten_verifikasjonstester.html#3-sso-til-eiga-teneste-med-sikkerheitsnivå-3)
 
-[Test 6: Single log-out (SLO) frå eiga teneste](96_verifikasjonstest.html#6-single-log-out-slo-frå-eiga-teneste)
+[Test 6: Single log-out (SLO) frå eiga teneste](idporten_verifikasjonstester.html#6-single-log-out-slo-frå-eiga-teneste)
 
-[Test 7: SLO frå anna tjeneste](96_verifikasjonstest.html#7-slo-frå-anna-tjeneste)
+[Test 7: SLO frå anna tjeneste](idporten_verifikasjonstester.html#7-slo-frå-anna-tjeneste)
 
-[Test 8: SLO etter timeout](96_verifikasjonstest.html#8-test-av-timeout-i--applikasjonen)
+[Test 8: SLO etter timeout](idporten_verifikasjonstester.html#8-test-av-timeout-i--applikasjonen)
 
 
 ### Testar som kan gjennomførast
 Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 
-[Test 2: SSO frå eiga teneste med sikkerheitsnivå 4](96_verifikasjonstest.html#2-sso-frå-eiga-teneste-med-sikkerheitsnivå-4)
+[Test 2: SSO frå eiga teneste med sikkerheitsnivå 4](idporten_verifikasjonstester.html#2-sso-frå-eiga-teneste-med-sikkerheitsnivå-4)
 
-[Test 4: SSO til eiga teneste med sikkerheitsnivå 4](96_verifikasjonstest.html#4-sso-til-eiga-teneste-med-sikkerheitsnivå-4)
+[Test 4: SSO til eiga teneste med sikkerheitsnivå 4](idporten_verifikasjonstester.html#4-sso-til-eiga-teneste-med-sikkerheitsnivå-4)
 
-[Test 9: Autentiseringsforespørsel – attributt \<ForceAuth> (tvinga re-autentisering)](96_verifikasjonstest.html#9-autentiseringsforespørsel--tvinga-reautentisering)
+[Test 9: Autentiseringsforespørsel – attributt \<ForceAuth> (tvinga re-autentisering)](idporten_verifikasjonstester.html#9-autentiseringsforespørsel--tvinga-reautentisering)
 
-[Test 10: Autentiseringsforespørsel – attributt \<OnBehalfOf> («på vegne av»)](96_verifikasjonstest.html#10--autentiseringsforespørsel--onbehalfof-på-vegne-av)
+[Test 10: Autentiseringsforespørsel – attributt \<OnBehalfOf> («på vegne av»)](idporten_verifikasjonstester.html#10--autentiseringsforespørsel--onbehalfof-på-vegne-av)
 
-[Test 11: Autentiseringsforespørsel – attributt \<locale> (språk)](96_verifikasjonstest.html#11-autentiseringsforespørsel--språk)
+[Test 11: Autentiseringsforespørsel – attributt \<locale> (språk)](idporten_verifikasjonstester.html#11-autentiseringsforespørsel--språk)
 
 
 ***
