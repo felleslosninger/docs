@@ -240,7 +240,6 @@ components:
           enum:
             - OPPRETTET
             - SENDT
-            - MOTTATT
             - FEILET
         timestamp:
           type: string
