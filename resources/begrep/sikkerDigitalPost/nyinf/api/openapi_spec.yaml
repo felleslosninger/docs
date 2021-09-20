@@ -7,16 +7,9 @@ info:
       url: "https://docs.digdir.no/assets/Digdir.png"
       altText: "Digdir logo"
 paths:
-    /{version}/send:    
+    /send:    
       post:
         summary: Send forsendelse til innbygger
-        parameters: 
-            - in: path
-              name: version            
-              schema:
-                type: string                               
-                description: Versjon av APIet
-              required: true
         requestBody:          
           description: Foresendelse bestående av forretningsmelding og dokumentpakke.
           content:
@@ -52,16 +45,10 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'   
-    /{version}/statuses/{id}:
+    /statuses/{id}:
       get:
         summary: Hent statuser for foresendelse
         parameters: 
-            - in: path
-              name: version            
-              schema:
-                type: string                               
-                description: Versjon av APIet
-              required: true
             - in: path
               name: id            
               schema: 
@@ -88,17 +75,11 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /{version}/messages:
+    /messages:
       get: 
         summary: Hent innkommende forsendelser
         description: NB. De eneste innkommende forsendelsene som er støttet i versjon 1.0.0 er kvitteringer.
         parameters:
-          - in: path
-            name: version            
-            schema:
-              type: string                               
-              description: Versjon av APIet
-            required: true
           - in: query
             name: mottakeridentifikator            
             schema:
@@ -136,16 +117,10 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem' 
           
-    /{version}/downloadmessage/{id}:
+    /downloadmessage/{id}:
       get:  
         summary: Hent dokumentpakke for innkommende forsendelse
         parameters:
-          - in: path
-            name: version            
-            schema:
-              type: string                               
-              description: versjon av APIet
-            required: true
           - in: path
             name: id
             schema: 
@@ -178,17 +153,11 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /{version}/setmessageread/{id}:
+    /setmessageread/{id}:
       post:
         summary: Marker innkommende forsendelse som mottatt av avsender
-        description: NB. Medfører at innkommende forsendelse blir fjernet fra listen <code>GET {version}/messages</code> returnerer. Avsenders aksesspunkt kan slette melding.
+        description: NB. Medfører at innkommende forsendelse blir fjernet fra listen <code>GET messages</code> returnerer. Avsenders aksesspunkt kan slette melding.
         parameters:
-          - in: path
-            name: version            
-            schema:
-              type: string                               
-              description: Versjon av APIet
-            required: true
           - in: path
             name: id
             schema:
