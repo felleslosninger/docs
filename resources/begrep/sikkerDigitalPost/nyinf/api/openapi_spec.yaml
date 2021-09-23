@@ -48,6 +48,11 @@ paths:
     /statuses/{id}:
       get:
         summary: Hent statuser for foresendelse
+        description: |
+          Henter statuser for forsendelse
+          * OPPRETTET: Forsendelse er markert som opprettet (men ikke sendt) i avsenders aksesspunkt
+          * SENDT: Foresendelse er markert som sendt OK til mottakers aksesspunkt
+          * FEILET: Foresendelse er markert som feilet i avsenderes aksesspunkt
         parameters: 
             - in: path
               name: id            
