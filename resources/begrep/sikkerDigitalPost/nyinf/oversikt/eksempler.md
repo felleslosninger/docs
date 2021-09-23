@@ -19,4 +19,4 @@ Eksempler på forettningsmelding fra avsender
 -[Leveringskvittering](resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_lerveringskvittering_1_0.json)
 
 ### Avsenders aksesspunkt til mottakers aksesspunkt (C2 -> C3)
-- [Digitalpost melding C2 -> C3](digitalpost_c2_c3.xml)
+- [Digitalpost melding C2 -> C3](resources/begrep/sikkerDigitalPost/nyinf/eksempler/digitalpost_c2_c3.xml)
