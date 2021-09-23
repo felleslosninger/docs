@@ -20,7 +20,7 @@ Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 - [FlyttetDigitalpostMelding](schemas/dpi/innbyggerpost_dpi_flyttet_1_0.schema.json)
 
 ### C2 -> C3 XSD
- - [Digitalpost](xsd/digitalpost.xsd)
+ - [Digitalpost](resources/begrep/sikkerDigitalPost/nyinf/xsd/innbyggerpost.xsd)
 
 ### API C2
  - [OpenAPI spec for C2](resources/begrep/sikkerDigitalPost/nyinf/api/openapi_spec.html)
