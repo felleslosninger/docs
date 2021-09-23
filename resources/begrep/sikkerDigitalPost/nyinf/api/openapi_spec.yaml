@@ -19,11 +19,11 @@ paths:
                 properties:
                   forretningsmelding: 
                     type: string
-                    description: JWT med forretningsmelding i payload. Se https://todo.no
+                    description: JWT med forretningsmelding i payload. Se https://docs.digdir.no/dpi_skjema.html
                   dokumentpakke: 
                     type: string
                     format: binary
-                    description: Kryptert dokumentpakke. Se https://todo.no
+                    description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
         responses: 
           201: 
             description: Foresendelse sendt til avsenders aksesspunkt.
@@ -130,7 +130,7 @@ paths:
             required: true
         responses:
           200:
-            description: Kryptert dokumentpakke. Se https://todo.no
+            description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
             content:
               application/json:
                 schema:
@@ -215,7 +215,7 @@ components:
           format: date-time
     messages:
       type: array
-      description: Liste med forsendelser. Se https://todo.no
+      description: Liste med forsendelser. Se https://docs.digdir.no/dpi_skjema.html
       items:
         $ref: '#/components/schemas/message'
     message:
@@ -223,7 +223,7 @@ components:
       properties:
         forretningsmelding:
           type: string
-          description: JWT med forretningsmelding i payload. Se https://todo.no
+          description: JWT med forretningsmelding i payload. Se https://docs.digdir.no/dpi_skjema.html
         downloadurl:
           type: string
           format: uri
