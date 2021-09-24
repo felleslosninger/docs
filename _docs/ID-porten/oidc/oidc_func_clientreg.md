@@ -50,7 +50,7 @@ Du vil ikke være i stand til å legge på et scope på klienten din som er i ko
 
 ## Leverandører
 
-Dersom du er leverandør, er det noen av klient-egenskapene nedenfor som du må passe på å få registrert rett.  Se [egen leverandør-informasjon](oidc_admin_leverandør.html).
+Dersom du er leverandør, er det noen av klient-egenskapene nedenfor som du må passe på å få registrert rett.  Se [egen leverandør-informasjon] (oidc_api_admin_leverand%C3%B8r.html).
 
 ## Oauth2-egenskaper
 
