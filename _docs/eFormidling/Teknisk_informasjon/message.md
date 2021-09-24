@@ -4,7 +4,7 @@ description: Beskrivelse av konvolutt og melding
 summary: ""
 permalink: eformidling_nm_message.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_install_sidebar
 ---
 
 En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke - som er selve meldingen man ønsker å sende.

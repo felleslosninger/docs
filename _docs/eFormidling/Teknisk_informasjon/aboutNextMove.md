@@ -4,7 +4,7 @@ description: Beskrivelse av forretningsmeldinger
 summary: ""
 permalink: eformidling_nm_about.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_install_sidebar
 ---
 
 Under utarbeidelse av 2015:3 rapporten ble det identifisert at et viktig kriteria for suksess var mulighet for hurtig utbredelse uten endringer i lokale installasjoner. Dette gjorde at man i første omgang reimplementerte BEST/EDU grensesnittet som allerede var støttet i de mest brukte Sak-/Arkivløsningene. 

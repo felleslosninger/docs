@@ -4,7 +4,7 @@ description: Beskrivelse av forretningsmeldinger
 summary: ""
 permalink: eformidling_nm_meldingsflyt.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_install_sidebar
 ---
 
 ## Sende melding

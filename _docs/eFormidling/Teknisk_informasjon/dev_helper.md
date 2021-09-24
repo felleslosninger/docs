@@ -4,7 +4,7 @@ description: Her finner du tips for å ta i bruk eFormidling 2.0 grensesnittet. 
 summary: ""
 permalink: eformidling_dev.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_install_sidebar
 ---
 
 For å ta i bruk eFormidling 2.0 API'et (som vi anbefaler) så må en ha et StandardBusinessDocument(SBD) på rett format, opprette og sende melding, handtere innkommende meldinger og kvitteringer, og rydde opp i køen(activeMQ) etter seg ved å slette prosesserte meldinger.
