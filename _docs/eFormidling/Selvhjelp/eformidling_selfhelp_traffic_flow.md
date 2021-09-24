@@ -4,7 +4,7 @@ description: Trafikkflyt, kvitteringer og statuser
 summary: "Trafikkflyt, kvitteringer og statuser i eFormidling og eInnsyn"
 permalink: eformidling_selfhelp_traffic_flow.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 * TOC
 {:toc}

@@ -4,7 +4,7 @@ description: Selvhjelp og nyttig informasjon som øking av loggnivå, loggruller
 summary: "Selvhjelp og nyttig informasjon om eFormidling"
 permalink: eformidling_selfhelp.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 ### eFormidling på 2 minutter - dette må du vite

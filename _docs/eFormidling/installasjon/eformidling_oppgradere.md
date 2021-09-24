@@ -5,7 +5,7 @@ summary: "Hvordan man oppgraderer integrasjonspunktet til ny versjon."
 
 permalink: eformidling_ip_upgrade.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 ## Oppgradere integrasjonspunktet

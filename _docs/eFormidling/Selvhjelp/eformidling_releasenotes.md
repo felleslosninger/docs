@@ -4,7 +4,7 @@ description: Endringslogg for integrasjonspunktet
 sidebar: eformidling
 permalink: eformidling_releasenotes.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 ## 2.2.4

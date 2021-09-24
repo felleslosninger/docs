@@ -6,7 +6,7 @@ summary: "Oversikt over forkjellige tjenester du kan nå med integrasjonspunket"
 sidebar: eformidling
 permalink: eformidling_veiledning_sakark.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 Denne siden vil inneholde informasjon om konfigurasjon som må gjøres i det enkelte sakarkiv system

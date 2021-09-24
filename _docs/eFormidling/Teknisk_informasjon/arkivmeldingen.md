@@ -4,7 +4,7 @@ description: Om Arkivmeldingen
 summary: ""
 permalink: eformidling_nm_arkivmeldingen.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 BEST/EDUs meldingsformat var tett knyttet til NOARK4. For meldinger som sendes mellom Sak-/arkivsystemer med eFormidling 2.0 er det valgt et meldingsformat som ligger tettere opp mot NOARK5 basisregistrering. 

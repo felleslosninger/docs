@@ -4,7 +4,7 @@ description: Selvhjelp og nyttig informasjon som øking av loggnivå, loggruller
 summary: "Typiske feil ved konfigurasjon av integrasjonspunktet og spesielt eFormidling"
 permalink: eformidling_selfhelp_typical_errors.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 Mykje kan gå feil når ein setter opp integrasjonspunktet. Under har vi forsøkt å liste opp vanlege feil og korleis du kan unngå eller løyse desse sjølv.

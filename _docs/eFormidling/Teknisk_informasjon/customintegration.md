@@ -4,7 +4,7 @@ description: Beskrivelse av hvordan man kan ta i bruk DPO via egenutviklet kode
 summary: ""
 permalink: eformidling_nm_customintegration.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 ## Capability oppslag

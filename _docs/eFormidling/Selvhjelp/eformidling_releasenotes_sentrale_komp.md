@@ -4,7 +4,7 @@ description: Endringslogg for sentrale komponenter
 sidebar: eformidling
 permalink: eformidling_releasenotes_sentrale_komp.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 

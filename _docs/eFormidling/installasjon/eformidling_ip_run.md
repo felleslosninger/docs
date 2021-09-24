@@ -4,7 +4,7 @@ description: Hvordan man kjører integrasjonspunktet.
 summary: "Hvordan man kjører integrasjonspunktet."
 permalink: eformidling_ip_run.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 Det finnes flere måter å kjøre integrasjonspunktet på. Den vi anbefaler for enkel start/stopp i tillegg til tilgangsstyring er å installere integrasjonspunktet som en tjeneste. Her vil vi vise tre forskjellige måter å kjøre integrasjonspunktet på.

@@ -4,7 +4,7 @@ description: Her finner du informasjon om bruk av testmiljø i eFormidling
 summary: "Bruk av testmiljø i eFormidling"
 permalink: eformidling_testing_env.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 For å få tilgang til testmiljø må bestilling skje på samme måte som en ellers, ved å kontakte  <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> og informere om at det gjelder testmiljø. 

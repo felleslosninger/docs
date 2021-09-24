@@ -4,7 +4,7 @@ description: Konfigurering av integrasjonspunkt-local.properties-filen.
 summary: "Konfigurering av integrasjonspunkt-local.properties-filen."
 permalink: eformidling_properties_config.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 Denne delen av veiledningen er delt opp slik at du først finner litt generell informasjon før du deretter finner eksempler på integrasjonspunkt-local.properties oppsett spesifikt for den tjenesten du skal ta i bruk. 
