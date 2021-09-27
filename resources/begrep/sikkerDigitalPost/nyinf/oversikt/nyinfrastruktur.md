@@ -125,7 +125,7 @@ Dette avtales bilateralt mellom de to partene i samarbeid med Digdir.
 
 ### System-oppsett
 
-Digdir oppretter maskinporten-scopet `dpi:send`. Tilgang til dette scopet betyr at Avsender har inngår bruksvilkår for Digital Postkasse til Innbygger.  Digdir settes som eier av Maskinporten-scopet, som betyr at det er Digdir som administrerer hvem som får tilgang. Faktura for konsumentene (= alle avsendere) går til Digdir selv og faktureres ikke.
+Digdir oppretter maskinporten-scopet `digitalpostinnbygger:send`. Tilgang til dette scopet betyr at Avsender har inngår bruksvilkår for Digital Postkasse til Innbygger.  Digdir settes som eier av Maskinporten-scopet, som betyr at det er Digdir som administrerer hvem som får tilgang. Faktura for konsumentene (= alle avsendere) går til Digdir selv og faktureres ikke.
 
 Ved bruk av Altinn Autorisasjon til delegering, må det opprettes et "delegationScheme" i Altinn som muliggjør at Behandlingsansvarlig kan delegere til Databehandler.   Digdir blir eier av delegationSchemet, og Digdir vil motta faktura for bruk av Altinn.
 
@@ -144,7 +144,7 @@ Tjenesteleverandørene i hjørne 4 registreres som mottakere av aktuelle process
 
 ### Oppsett av ny Avsender
 
-Digdir gjev Avsender tilgang i Maskinporten til oauth2-scopet `dpi:send`  når bruksvilkår for Digital Postkasse er inngått.
+Digdir gjev Avsender tilgang i Maskinporten til oauth2-scopet `digitalpostinnbygger:send`  når bruksvilkår for Digital Postkasse er inngått.
 
 Alt 1: Avsender som skal setje opp sitt eige system, må få tilgang til Samarbeidsportalen (i Prod) og registere ein maskinporten-integrasjon med det aktuelle scopet.  Fagsystemet/oauth2-klieten må konfigurerast med den genererte `client_id` og Avsender sitt virksomheitssertifikat.  Avsender som bruker integrasjonspunktet, trenger ikke gjennomfør dette, men må følge de retningslinjer som gjelder for å få satt opp et integrasjonspunkt.
 
@@ -251,7 +251,7 @@ sequenceDiagram
 
 ## 1:  Avsender henter token fra maskinporten
 
-Fagsystem lager en JWT grant som etterspør `dpi:send`-scopet, signerer denne ( se https://docs.digdir.no/maskinporten_protocol_jwtgrant.html, sender dette til Maskinporten og får  et access_token i retur.
+Fagsystem lager en JWT grant som etterspør `digitalpostinnbygger:send`-scopet, signerer denne ( se https://docs.digdir.no/maskinporten_protocol_jwtgrant.html, sender dette til Maskinporten og får  et access_token i retur.
 
 Ved utstedelse av token vil Maskinporten kontrollere:
 - at Avsender har lov til å bruka DPI.
