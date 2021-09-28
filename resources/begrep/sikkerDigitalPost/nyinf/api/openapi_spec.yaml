@@ -10,6 +10,13 @@ paths:
     /messages/out:
       post:
         summary: Send forsendelse til innbygger
+        parameters:
+          - in: query
+            name: kanal
+            schema:
+              type: string
+              description: Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen.
+            required: true
         requestBody:          
           description: Foresendelse bestående av forretningsmelding og dokumentpakke.
           content:
@@ -90,6 +97,11 @@ paths:
             schema:
               type: string
               description: Unik ID for fagsystem hos virksomhet. Brukes for å støtte at samme virksomhet kan ha flere fagsystem. Gitt som del av forretningsmelding ved sending (<code>digital.avsender.avsenderidentifikator</code>).
+          - in: query
+            name: kanal
+            schema:
+              type: string
+              description: Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen. Dersom kanal ikke oppgis returneres innkommende meldinger uavhengig av kanal.
           - in: query
             name: page_size            
             schema:
