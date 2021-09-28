@@ -43,11 +43,6 @@ Merk at du må manuelt velge riktig spec' oppe i høyre hjørne.  For Maskinport
 
 
 
-## Grunnleggende prosedyre for API-sikring
-
-Se [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html).
-
-
 ### Beskrivelse av APIer
 
 I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Digitaliseringsdirektoratet ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
