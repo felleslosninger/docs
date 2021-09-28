@@ -7,7 +7,7 @@ info:
       url: "https://docs.digdir.no/assets/Digdir.png"
       altText: "Digdir logo"
 paths:
-    /send:    
+    /messages/out:
       post:
         summary: Send forsendelse til innbygger
         requestBody:          
@@ -45,7 +45,7 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'   
-    /statuses/{id}:
+    /messages/out/{id}/statuses:
       get:
         summary: Hent statuser for foresendelse
         description: |
@@ -80,8 +80,8 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /messages:
-      get: 
+    /messages/in:
+      get:
         summary: Hent innkommende forsendelser
         description: NB. De eneste innkommende forsendelsene som er støttet i versjon 1.0.0 er kvitteringer.
         parameters:
@@ -121,8 +121,7 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem' 
-          
-    /downloadmessage/{id}:
+    /messages/in/{id}:
       get:  
         summary: Hent dokumentpakke for innkommende forsendelse
         parameters:
@@ -158,7 +157,7 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /setmessageread/{id}:
+    /messages/in/{id}/read:
       post:
         summary: Marker innkommende forsendelse som mottatt av avsender
         description: NB. Medfører at innkommende forsendelse blir fjernet fra listen <code>GET messages</code> returnerer. Avsenders aksesspunkt kan slette melding.
