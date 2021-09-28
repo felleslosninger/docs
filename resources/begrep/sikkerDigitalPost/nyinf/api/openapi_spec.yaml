@@ -93,7 +93,7 @@ paths:
         description: NB. De eneste innkommende forsendelsene som er støttet i versjon 1.0.0 er kvitteringer.
         parameters:
           - in: query
-            name: mottakeridentifikator            
+            name: avsenderidentifikator
             schema:
               type: string
               description: Unik ID for fagsystem hos virksomhet. Brukes for å støtte at samme virksomhet kan ha flere fagsystem. Gitt som del av forretningsmelding ved sending (<code>digital.avsender.avsenderidentifikator</code>).
