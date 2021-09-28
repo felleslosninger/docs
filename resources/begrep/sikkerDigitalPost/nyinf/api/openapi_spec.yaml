@@ -96,7 +96,7 @@ paths:
             name: avsenderidentifikator
             schema:
               type: string
-              description: Unik ID for fagsystem hos virksomhet. Brukes for å støtte at samme virksomhet kan ha flere fagsystem. Gitt som del av forretningsmelding ved sending (<code>digital.avsender.avsenderidentifikator</code>).
+              description: Identifiserer en avsender innenfor en virksomhet. Brukes for å støtte at samme virksomhet kan ha flere avsendere. Avsenderidentifikator må registreres manuelt i postkassene og framstår med egen logo, navn, osv. Gitt som del av forretningsmelding ved sending (<code>digital.avsender.avsenderidentifikator</code>).
           - in: query
             name: kanal
             schema:
