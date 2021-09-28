@@ -18,7 +18,7 @@ paths:
               description: Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen.
             required: true
         requestBody:          
-          description: Foresendelse bestående av forretningsmelding og dokumentpakke.
+          description: Forsendelse bestående av forretningsmelding og dokumentpakke.
           content:
             multipart/form-data:
               schema:
@@ -33,7 +33,7 @@ paths:
                     description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
         responses: 
           201: 
-            description: Foresendelse sendt til avsenders aksesspunkt.
+            description: Forsendelse sendt til avsenders aksesspunkt.
           400: 
             description: Valideringsfeil. Utdypende informasjon om feilen beskrevet i problem+json.
             content:
@@ -54,12 +54,12 @@ paths:
                   $ref : '#/components/schemas/problem'   
     /messages/out/{id}/statuses:
       get:
-        summary: Hent statuser for foresendelse
+        summary: Hent statuser for forsendelse
         description: |
           Henter statuser for forsendelse
           * OPPRETTET: Forsendelse er markert som opprettet (men ikke sendt) i avsenders aksesspunkt
-          * SENDT: Foresendelse er markert som sendt OK til mottakers aksesspunkt
-          * FEILET: Foresendelse er markert som feilet i avsenderes aksesspunkt
+          * SENDT: Forsendelse er markert som sendt OK til mottakers aksesspunkt
+          * FEILET: Forsendelse er markert som feilet i avsenderes aksesspunkt
         parameters: 
             - in: path
               name: id            
@@ -243,7 +243,7 @@ components:
         downloadurl:
           type: string
           format: uri
-          description: URI til dokumentpakken for foresendelsen.
+          description: URI til dokumentpakken for forsendelsen.
     dokumentpakke:
       type: string
       format: binary  
