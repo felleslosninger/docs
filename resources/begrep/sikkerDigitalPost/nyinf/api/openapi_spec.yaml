@@ -29,7 +29,6 @@ paths:
                 * Kanalnavnet er case-insensitivt slik at "minkanal" og "MINKANAL" er samme kanal
                 * Kanalnavnet er begrenset til maksimalt 28 tegn
                 * Særnorske tegn er ikke støttet. Whitespace er ikke støttet
-                * Dersom kanal ikke oppgis sette kanal til "UKJENT"
         requestBody:          
           description: Forsendelse bestående av forretningsmelding og dokumentpakke.
           content:
