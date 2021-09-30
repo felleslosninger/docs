@@ -15,8 +15,21 @@ paths:
             name: kanal
             schema:
               type: string
-              description: Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen.
-            required: true
+              description: |
+                Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen.
+
+                Lovlige tegn for en kanal er:
+                * a-z
+                * A-Z
+                * 0-9
+                * _
+                * -
+
+                Andre begrensninger for kanal:
+                * Kanalnavnet er case-insensitivt slik at "minkanal" og "MINKANAL" er samme kanal
+                * Kanalnavnet er begrenset til maksimalt 28 tegn
+                * Særnorske tegn er ikke støttet. Whitespace er ikke støttet
+                * Dersom kanal ikke oppgis sette kanal til "UKJENT"
         requestBody:          
           description: Forsendelse bestående av forretningsmelding og dokumentpakke.
           content:
