@@ -7,6 +7,23 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.2.5
+01.10.21
+
+**Features**
+
+- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse finn [finn du her]()
+
+**Feilrettinger**
+
+- Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
+- rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
+- Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
+- PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
+- document_type er nå logget som document_id. 
+- DPV klient vil nå ha en levetid som utløper og kan håndtere en utgått connection pool. 
+
+
 ## 2.2.4
 20.08.21
 
