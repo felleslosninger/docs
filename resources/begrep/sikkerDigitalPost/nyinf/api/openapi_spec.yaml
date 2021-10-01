@@ -1,173 +1,176 @@
 openapi: 3.0.2
 info:
-    title: API for aksesspunktleverandører i DPI
-    version: 0.0.1
-    description: API for kommunikasjon mellom C1 og C2 i firehjørers akritektur for DPI
+    title: API for digital post til innbygger (DPI)
+    version: 1.0.0
+    description: API for digital post til innbygger (DPI). APIet brukes av avsender (Peppol hjørne 1) og tilbys av avsenders aksesspunktleverandør (Peppol hjørne 2).
     x-logo: 
       url: "https://docs.digdir.no/assets/Digdir.png"
       altText: "Digdir logo"
 paths:
-    /{version}/send:    
+    /messages/out:
       post:
-        summary: Intitierer og laseter opp ny forsendelse til C2.
-        parameters: 
-            - in: path
-              name: version            
-              schema:
-                type: string                               
-                description: Versjon av API
-              required: true
+        summary: Send forsendelse til innbygger
+        parameters:
+          - in: query
+            name: kanal
+            schema:
+              type: string
+              description: |
+                Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen.
+
+                Lovlige tegn for en kanal er:
+                * a-z
+                * A-Z
+                * 0-9
+                * _
+                * -
+
+                Andre begrensninger for kanal:
+                * Kanalnavnet er case-insensitivt slik at "minkanal" og "MINKANAL" er samme kanal
+                * Kanalnavnet er begrenset til maksimalt 28 tegn
+                * Særnorske tegn er ikke støttet. Whitespace er ikke støttet
         requestBody:          
-          description: Består av to deler,  forrettningsmelding og dokumentpakke          
+          description: Forsendelse bestående av forretningsmelding og dokumentpakke.
           content:
             multipart/form-data:
               schema:
                 type: object
                 properties:
-                  forettningsmelding: 
+                  forretningsmelding: 
                     type: string
-                    format: base64
-                    description: 'Digitalpost melding formatert som base64 encoded JWT'
+                    description: JWT med forretningsmelding i payload. Se https://docs.digdir.no/dpi_skjema.html
                   dokumentpakke: 
                     type: string
                     format: binary
-                    description: Kryptert dokumentpakke. Formate på dokumentpakke følger ASiC                    
+                    description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
         responses: 
           201: 
-            description: Mottatt OK av aksesspunktleverandør, og vil bli sendt videre til postkasse
+            description: Forsendelse sendt til avsenders aksesspunkt.
           400: 
-            description: Valideringsfeil - utdypende informasjon om feilen beskrevet i problem+json
+            description: Valideringsfeil. Utdypende informasjon om feilen beskrevet i problem+json.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
           401:
-            description: Utløpt token
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'   
-    /{version}/statuses/{id}:
+    /messages/out/{id}/statuses:
       get:
-        summary: Henter liste med statuser gitt foreendelsesid
+        summary: Hent statuser for forsendelse
+        description: |
+          Henter statuser for forsendelse
+          * OPPRETTET: Forsendelse er markert som opprettet (men ikke sendt) i avsenders aksesspunkt
+          * SENDT: Forsendelse er markert som sendt OK til mottakers aksesspunkt
+          * FEILET: Forsendelse er markert som feilet i avsenderes aksesspunkt
         parameters: 
-            - in: path
-              name: version            
-              schema:
-                type: string                               
-                description: Versjon av API
-              required: true
             - in: path
               name: id            
               schema: 
                 type: string
                 format: uuid
-                description: Unik ID til meldingen gitt i SBDH - documentIdentification - instanceIdentifier
+                description: Unik ID for forsendelsen. Gitt som del av standard business document header (SBDH) ved sending (<code>standardBusinessDocument.documentIdentification.instanceIdentifier</code>).
               required: true
         responses:
           200:
-            description: liste med statuser  
+            description: Liste med statuser  
             content:
               application/json:
                 schema:
                   $ref: '#/components/schemas/statuses'          
           401:
-            description: Utløpt token
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /{version}/messages:
-      get: 
-        summary: Henter ned liste med forettningsmeldinger på mottatte forsendelser
+    /messages/in:
+      get:
+        summary: Hent innkommende forsendelser
+        description: NB. De eneste innkommende forsendelsene som er støttet i versjon 1.0.0 er kvitteringer.
         parameters:
-          - in: path
-            name: version            
-            schema:
-              type: string                               
-              description: Versjon av API
-            required: true
           - in: query
-            name: mottakeridentifikator            
+            name: avsenderidentifikator
             schema:
               type: string
-              description: Identifikator til gitt i avsenderidentifikator ved sending av melding
+              description: Identifiserer en avsender innenfor en virksomhet. Brukes for å støtte at samme virksomhet kan ha flere avsendere. Avsenderidentifikator må registreres manuelt i postkassene og framstår med egen logo, navn, osv. Gitt som del av forretningsmelding ved sending (<code>digital.avsender.avsenderidentifikator</code>).
+          - in: query
+            name: kanal
+            schema:
+              type: string
+              description: Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen. Dersom kanal ikke oppgis returneres innkommende meldinger uavhengig av kanal.
           - in: query
             name: page_size            
             schema:
               type: string
-              description: 'Identifikator til gitt i avsenderidentifikator ved sending av melding. TODO: Usikker på om vi trenger paging'
+              description: Antall forsendelser per side.
           - in: query
             name: page            
             schema:
               type: string
-              description: 'Identifikator til gitt i avsenderidentifikator ved sending av melding. TODO: Usikker på om vi trenger paging '         
+              description: Sidenummer for side som skal hentes.
         responses:
           200: 
-            description: 'Liste med forsendleser TODO: bør vi ha noen form for låsing?'
+            description: Liste med forsendelser.
             content:
               application/json:
                 schema:
                   $ref: '#/components/schemas/messages'
           204:
-            description: Ingen nye meldinger
+            description: Ingen uleste meldinger.
           401:
-            description: Utløpt token
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem' 
-          
-    /{version}/downloadmessage/{id}:
+    /messages/in/{id}:
       get:  
-        summary: Laster ned dokumentpakke (ASiC) for gitt forsendelse
+        summary: Hent dokumentpakke for innkommende forsendelse
         parameters:
-          - in: path
-            name: version            
-            schema:
-              type: string                               
-              description: versjon av API
-            required: true
           - in: path
             name: id
             schema: 
               type: string
               format: uuid
-              description: Unik ID til meldingen gitt i SBDH - documentIdentification - instanceIdentifier
+              description: Unik ID for forsendelsen. Gitt som del av standard business document header (SBDH) ved sending (<code>standardBusinessDocument.documentIdentification.instanceIdentifier</code>).
             required: true
         responses:
           200:
-            description: Kryptert dokumentpakke
+            description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
             content:
               application/json:
                 schema:
                   $ref: '#/components/schemas/dokumentpakke'
           401:
-            description: Utløpt token
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør.
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
             content:
               application/problem+json:
                 schema: 
@@ -178,16 +181,11 @@ paths:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
-    /{version}/setmessageread/{id}:
+    /messages/in/{id}/read:
       post:
-        summary: "Setter forsendelse mottatt ovenfor aksesspunkt. Medfører at den blir fjernet fra listen hentnyeforsendelser returnerer. Aksesspunkt kan slette melding TODO: Burde dette være delete"
+        summary: Marker innkommende forsendelse som mottatt av avsender
+        description: NB. Medfører at innkommende forsendelse blir fjernet fra listen <code>GET messages</code> returnerer. Avsenders aksesspunkt kan slette melding.
         parameters:
-          - in: path
-            name: version            
-            schema:
-              type: string                               
-              description: Versjon av API
-            required: true
           - in: path
             name: id
             schema:
@@ -196,15 +194,15 @@ paths:
             required: true
         responses:
           200:
-            description: Setter gitt forsendelse mottatt
+            description: Forsendelse markert som mottatt av avsender.
           401:
-            description: Utløpt token
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
             content:
               application/problem+json:
                 schema: 
                   $ref : '#/components/schemas/problem'
           403:
-            description: Token mangler "digitalpostinnbygger:send" scope, eller avsender har ikke gyldig avtale med aksesspunktleverandør. 
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
             content:
               application/problem+json:
                 schema: 
@@ -216,18 +214,15 @@ paths:
                 schema: 
                   $ref : '#/components/schemas/problem'
 security:
-  - OAuth2Schema:
+  - Maskinporten:
     - digitalpostinnbygger:send    
 components:
   securitySchemes:
-    OAuth2Schema:
-      type: oauth2
-      description: 'TODO: skal vi ha både read og write scope; Sett riktig url; Skriv skikkelig beskrivelse her'
-      flows: 
-        implicit:
-          authorizationUrl: https://maskinporten.no/
-          scopes: 
-            'digitalpostinnbygger:send' : For sending av meldinger
+    Maskinporten:
+      type: http
+      description: APIet sikres med JWT bearer token fra Maskinporten. Se teknisk dokumentasjon for Maskinporten på https://docs.digdir.no/maskinporten_overordnet.html
+      scheme: bearer
+      bearerFormat: JWT
   schemas: 
     statuses:
       type: array
@@ -242,27 +237,28 @@ components:
           enum:
             - OPPRETTET
             - SENDT
-            - MOTTATT
             - FEILET
+        beskrivelse:
+          type: string
+          description: Ytterligere beskrivelse av status. For eksempel forklaring på hvorfor melding er markert som FEILET.
         timestamp:
           type: string
           format: date-time
     messages:
       type: array
-      description: Liste med forettningsmeldinger/SBD (JWT, base64 formatert)
+      description: Liste med forsendelser. Se https://docs.digdir.no/dpi_skjema.html
       items:
         $ref: '#/components/schemas/message'
     message:
       type: object  
       properties:
-        forettningsmelding:
+        forretningsmelding:
           type: string
-          format: byte
-          description: Base64 formatert JWT som inneholder forettnignsmelding
+          description: JWT med forretningsmelding i payload. Se https://docs.digdir.no/dpi_skjema.html
         downloadurl:
           type: string
           format: uri
-          description: URI meldingen kan lastes ned fra
+          description: URI til dokumentpakken for forsendelsen.
     dokumentpakke:
       type: string
       format: binary  
