@@ -241,7 +241,7 @@ Døme på payload i JWT access token
 ```
 {
   "iss": "https://maskinporten.no",
-  "scope": "dpi:send",
+  "scope": "digitalpostinnbygger:send",
   "aud": "https://api.aksesspunktleverandør.no/"
   "consumer": {
       "Authority": "iso6523-actorid-upis",
