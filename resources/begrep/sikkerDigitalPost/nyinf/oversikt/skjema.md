@@ -19,6 +19,11 @@ Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 - [Feil](schemas/dpi/innbyggerpost_dpi_feil_1_0.schema.json)
 - [FlyttetDigitalpostMelding](schemas/dpi/innbyggerpost_dpi_flyttet_1_0.schema.json)
 
+### Delte skjema
+- [Commons](schemas/common/commons.schema.json)
+- [Problem](schemas/common/problem.schema.json)
+- [SBDH](schemas/common/sbdh.schema.json)
+
 ### C2 -> C3 XSD
  - [Digitalpost](resources/begrep/sikkerDigitalPost/nyinf/xsd/innbyggerpost.xsd)
 

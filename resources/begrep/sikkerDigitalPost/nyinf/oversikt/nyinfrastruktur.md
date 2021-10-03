@@ -38,7 +38,7 @@ Protokoll mellom hjørne 3 og tjenesteleverandører i hjørne 4 bør avtales bil
 
 # Revidert meldingsformat- og transportformat i DPI
 
-Motivasjon bak forslaget:
+Motivasjon bak revidert meldings- og transportformat i DPI:
 
 * Minst mulig endringer på eksisterende format, da både avsender-systemer og postkasse-leverandører støtter dette.
 * Må ta høyde for at en aksesspunktleverandør i PEPPOL kan bli kompromittert av en angriper som vil forsøke å injisere falske meldinger
@@ -46,7 +46,7 @@ Motivasjon bak forslaget:
 * Gjenbrukbart format også for andre meldinger i eMeldingsinfrastrukturen
 * Utviklervenlig format med høyt rammeverk- og produktstøtte, for å gjøre det så lett som mulig å sende meldinger fra hjørne 1.
 
-Forslaget er derfor:
+Revidert meldings- og transportformat i DPI innebærer derfor:
 1. [*Dokumentpakken*, dvs ASiC-pakken](https://docs.digdir.no/dokumentpakke_index.html) beholdes uendret
 2. [*Forretningsmeldingene*](https://docs.digdir.no/sdp_index.html) beholdes også stort sett uendret, men:
   * Formatet skal endres fra XML til JSON for å bli mer tilpasset vanlig REST-bruk
@@ -70,51 +70,36 @@ Aksesspunkt-leverandør skal tilby 2 endepunkt:
 
 ### Sende post
 
-Post sendes i to steg - i første steg sendes forretningsmeldingen:
+Post sendes som multipart/form-data og inneholder både forretningsmelding og dokumentpakke. Det oppfordres til å bruke strømming for å støtte sending av store filer.
 ```
-POST /sendmelding/{meldingsid}
+POST /messages/out
 Authorization: Bearer <maskinporten_token>
 
 Body:
-<forretningsmelding i JWT-format>
+<multipart/form-data med forretningsmelding (JWT) og dokumentpakke (kryptert ASICE)>
 ```
 
-og i andre steg sendes / strømmes selve dokumentet.
-```
-PUT /sendmelding/{meldingsid}
-Authorization: Bearer <maskinporten_token>
-
-Body:
-<ASCI-e>
-```
-Oppdeling i to steg skaper fleksibilitet og sikrer støtte for store dokumenter, evt. flere dokumenter på samme melding  (for andre meldingstyper enn INNBYGGERPOST)
-
-### Hente kvitteringer:
+### Hente kvitteringer og marker som lest
 
 URL på formen
 ```
-GET /kvittering/{conversationid}
-GET /kvittering/avsenderidentifikator/{conversationid}
+GET /messages/in
+GET /messages/in/{messageId}
+POST /messages/in/{messageId}/read
 ```
 ### Se status på en melding
 Gir en statuskode på hva som har skjedd med den sendte meldingen.
 ```
-GET /status/{conversationid}
+GET /messages/out/{messageId}/statuses
 ```
 
-### API-definisjoner:
-
-| Type | Definisjon |
-|-|-|
-| SBDH | https://github.com/joergenb/dpi_transport/blob/main/Schemas/sbd.schema.json  (Felles for alle meldinger) |
-| *Forretningsmeldinger* ||
-| Digital og fysisk post | https://github.com/joergenb/dpi_transport/blob/main/Schemas/digitalpost_dpi_1_0.schema.json |
-| Kvittering | definisjon kommer her |
-| API |   definisjon kommer her |
+### API-definisjoner
+Se [DPI skjema](dpi_skjema.html) 
 
 ## PEPPOL (hjørne 2-> 3)
+Se [DPI skjema](dpi_skjema.html)
 
-tbd - beskrivelse kommer
+Se [Peppol eDelivery network specifications](https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/)
 
 ## Hjørne 3 -> Tjenesteleverandører i hjørne 4 (postkasse- og utskriftsleverandører)
 
@@ -129,17 +114,13 @@ Digdir oppretter maskinporten-scopet `digitalpostinnbygger:send`. Tilgang til de
 
 Ved bruk av Altinn Autorisasjon til delegering må det opprettes et "delegationScheme" i Altinn som muliggjør at Behandlingsansvarlig kan delegere til Databehandler.   Digdir blir eier av delegationSchemet, og Digdir vil motta faktura for bruk av Altinn.
 
-Det opprettes `processid` i ELMA for de dokumenttyper som trengs støttes.
-- digitalpost
-- fysiskpost  
-- dpi-kvittering
-- flytt-digitalpost
+Nødvendige prosesser og dokumenttyper registreres for mottaker i ELMA av mottakers Peppol-aksesspunkt.
 
-
+Se [prosesser og dokumenttyper](identifiers.html)
 
 ### Oppsett av postkasse- og utskriftsleverandør
 
-Tjenesteleverandørene i hjørne 4 registreres som mottakere av aktuelle processid'er i ELMA. Må utføres av Hjørne 3.
+Tjenesteleverandørene i hjørne 4 registreres i ELMA som mottakere av aktuelle processer og dokumenttyper. Må utføres av Hjørne 3.
 
 
 ### Oppsett av ny Avsender
@@ -202,10 +183,8 @@ sequenceDiagram
   end
   MP-->>F: maskinporten_token
   deactivate MP
-  F->>C2: POST /sendmelding/{meldingsid} (Forretningmelding)
+  F->>C2: POST /messages/out (Forretningmelding og Dokumentpakke)
   activate C2
-  C2-->>F: 200 OK
-  F->>C2: PUT  /sendmelding/{meldingsid} (Dokumentpakke)
   C2->>C2: validere
   C2-->>F: 200 OK
   deactivate F
@@ -258,8 +237,9 @@ Ved utstedelse av token vil Maskinporten kontrollere:
 - Viss Avsender har databehandler, sjekkar Maskinporten mot Altinn Autorisasjon at aktuell autentisert Databehandlar har fått lov til å opptre på vegne av Avsender for sending av DPI.
 
 
-Døme på access_token
+Døme på payload i JWT access token
 ```
+{
   "iss": "https://maskinporten.no",
   "scope": "dpi:send",
   "aud": "https://api.aksesspunktleverandør.no/"
@@ -273,7 +253,7 @@ Døme på access_token
   }
   "iat": <timestamp>
   "exp": <iat-verdi + 30 sec>
-  }
+}
 ```
 
 Dersom avsender er sin egen Databehandler så mangler tokenet `supplier`-claimet.
@@ -285,7 +265,7 @@ Avsender slår opp i KRR og finner hvilken PK-leverandør som innbygger benytter
 
 Avsender kan nå konstruere korrekt **forretningsmelding** (DigitalPostMelding) etter [dagens regler](https://docs.digdir.no/sdp_digitalpostmeldinger.html), men med følgende tillegg/endringer:
 
-* Format skal være JSON, og følge skjema-definisjonen her: https://github.com/joergenb/dpi_transport/blob/main/Schemas/digitalpost_dpi_1_0.schema.json
+* Format skal være JSON, og følge skjema-definisjonen her på [https://docs.digdir.no/schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json)
 * Strukturen er fremdeles en SBD, dvs. består av  
   * Først en [*SBDH*](https://docs.digdir.no/standardbusinessdocument_index.html), nå JSON-ifisert.
   * Så selve forretningsmeldingen (eks. digitalpostmelding), også JSON-ifisert
@@ -302,48 +282,31 @@ Regler for hvilke organisasjonsnummer som skal på ulike steder i meldingsstrukt
 
 
 
-Avsender lager nå til slutt en unik meldingsid, og sender så posten  i to steg - i første steg sendes forretningsmeldingen:
+Avsender lager nå til slutt en unik meldingsid, og sender så posten :
 ```
-POST /sendmelding/{meldingsid}
+POST /messages/out
 Host: api.aksesspunktleveradandør.no
 Content-Type: application/jwt
 Authorization: Bearer <maskinporten_token>
 
 Body:
-<forretningsmelding i JWT-format>
+<forretningsmelding (JWT) og dokumentpakke (kryptert ASICE)>
 ```
-
-og i andre steg sendes / strømmes selve dokumentpakken.
-```
-PUT /sendmelding/{meldingsid}
-Host: api.aksesspunktleveradandør.no
-Content-Type: vnd.etsi.asic-e+zip
-Authorization: Bearer <maskinporten_token>
-
-Body:
-<ASCI-e>
-```
-
-
-
-
-
-
 
 ### 3: Aksesspunkt-leverandør mottek melding
 
 Aksesspunktleverandør (APL) må gjennomføre en teknisk validering av Maskinporten-tokenet ihht Oauth-standarden (ustedt av Maskinporten, gyldig signatur, ikke utløpt).  
 - Utgått token medfører 401-respons
-- Gyldig token men som mangler "dpi:send"-scope eller avsender med manglende avtale med APL -> 403 repons
+- Gyldig token men som mangler "digitalpostinnbygger:send"-scope eller avsender med manglende avtale med APL -> 403 repons
 
 Aksesspunktleverandør må videre validere at:
 * `consumer`-claimet i token stemmer med Avsender i forretningsmelding.
-* [`aud`-claimet i token](ttps://docs.digdir.no/maskinporten_func_audience_restricted_tokens.html) stemmer med eget API-endepunkt
+* [`aud`-claimet i token](https://docs.digdir.no/maskinporten_func_audience_restricted_tokens.html) stemmer med eget API-endepunkt
 * `maskinporten_token` i forretningsmelding er identisk med det som ble brukt som Bearer token det aktuelle API-kallet
 * `meldingsid` ikke er forsøkt brukt tidligere.
 
 
-Aksesspunktleverandør lagrer converstation-id og tilhørende avsender/databehandler og avsenderidentifikator, slik at kvitteringsmeldinger og feilmeldinger relatert til meldingen kan håndteres, og fagsystemet kan etterspørre status.
+Aksesspunktleverandør lagrer meldingsid, konversasjonsid og tilhørende avsender/databehandler og avsenderidentifikator, slik at kvitteringsmeldinger og feilmeldinger relatert til meldingen kan håndteres, og fagsystemet kan etterspørre status.
 
 
 ### 4: Aksesspunkt-leverandør i hjørne 2 sender meldingen videre til hjørne 3
@@ -359,7 +322,7 @@ APL kan nå konstrurere en PEPPOL-melding. Dvs:
   * SBDH `processid` settes lik `processid`
   * SBDH `Sender` settes lik  (TODO: Avsender eller Databehandler)?
 
-**Eksempel**: Et mulig transport-format i PEPPOL kan se ut som her: https://github.com/joergenb/dpi_transport/blob/main/Samples/DIGITALPOST_DPI_1_0_Minimal_Sample.xml
+**Eksempel**: Transport-format i PEPPOL ser ut som her: https://github.com/joergenb/dpi_transport/blob/main/Samples/DIGITALPOST_DPI_1_0_Minimal_Sample.xml
 
 
 
