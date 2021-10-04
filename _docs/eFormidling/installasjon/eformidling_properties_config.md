@@ -81,7 +81,7 @@ Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt o
 
   {% include eformidling/properties/ip_properties.html %}
 
-.
+
 
 --- 
 
