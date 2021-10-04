@@ -75,6 +75,14 @@ Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle
   {% include eformidling/properties/jks_generell.html %} 
   {% include eformidling/properties/dpi.html %}
   
+
+### Valgfrie properties
+Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt over. Denne listen er ikke (per 01.10.21) helt utfyllende for alle properties, men vil bli utvidet: 
+
+  {% include eformidling/properties/ip_properties.html %}
+
+--- 
+
 ### Regel:
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
 
