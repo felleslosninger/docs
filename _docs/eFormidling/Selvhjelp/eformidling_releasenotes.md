@@ -12,7 +12,7 @@ sidebar: eformidling_install_sidebar
 
 **Features**
 
-- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse finn [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
 
 **Feilrettinger**
 
