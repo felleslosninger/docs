@@ -113,3 +113,38 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 > For DPI kreves ingen bruker, da benyttes virksomhetssertifikatet.
 
 --- 
+
+### HashiCorp Vault
+Integrasjonspunktet støtter HashiCorp Vault for innlesing av properties og filer. Dokumentasjon på installasjon og oppsett finnes her: <https://www.vaultproject.io/>
+
+|Property|Eksempelverdi|Beskrivelse|
+|--------|-------------|-----------|
+|vault.uri|http://localhost:8200|Adresse til tjeneste|
+|vault.token|s.7NP3IvIjdpHqaInbNQD4NpIY|Token for autentisering|
+|vault.path|secret/move|Sti til Key/Value secrets|
+|vault.resource-path|secret/resource|Sti til secrets som vil lastes som filer, må være Base64-encoded. Disse kan referes i properties med prefix "vault:"|
+
+#### Eksempelkonfigurasjon
+Følgende eksempel viser hvordan man kan benytte vault til å referere keystore og passord.
+
+
+Legg til ønskede passord og keystore i vault:
+```console
+$ vault kv put secret/move difi.move.org.keystore.password=p4ss0rD difi.move.dpo.password=h3mm3L16
+$ vault kv put secret/resource keystore="$(base64 keystore.jks)"
+```
+> Filer **må** legges under egen ressurs med Base64-encoded verdi.
+
+Keystore kan nå refereres i integrasjonspunkt-local.properties med følgende syntaks:
+```console
+...
+difi.move.org.keystore.alias=fiktivtalias
+difi.move.org.keystore.path=vault:keystore
+...
+```
+
+Integrasjonspunktet støtter kun token-autentisering. Token kan angis som et JVM-argument:
+```console
+$ java -Dvault.token=s.7NP3IvIjdpHqaInbNQD4NpIY ... -jar integrasjonspunkt-2.2.5.jar
+```
+---
