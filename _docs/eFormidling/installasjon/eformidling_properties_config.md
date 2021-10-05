@@ -128,12 +128,12 @@ Integrasjonspunktet støtter HashiCorp Vault for innlesing av properties og file
 Følgende eksempel viser hvordan man kan benytte vault til å referere keystore og passord.
 
 
-Legg til ønskede passord og keystore i vault:
+Legg til ønskede properties og keystore i vault:
 ```console
 $ vault kv put secret/move difi.move.org.keystore.password=p4ss0rD difi.move.dpo.password=h3mm3L16
 $ vault kv put secret/resource keystore="$(base64 keystore.jks)"
 ```
-> Filer **må** legges under egen ressurs med Base64-encoded verdi.
+> Filer **må** legges under egen ressurs, referert av *vault.resource-path*, med Base64-encoded verdi.
 
 Keystore kan nå refereres i integrasjonspunkt-local.properties med følgende syntaks:
 ```console
