@@ -20,8 +20,7 @@ sidebar: eformidling_install_sidebar
 - rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
 - Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
 - PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
-- document_type er nå logget som document_id. 
-- DPV klient vil nå ha en levetid som utløper og kan håndtere en utgått connection pool. 
+- Tilkoblinger til DPV har nå begrenset levetid. 
 
 
 ## 2.2.4
