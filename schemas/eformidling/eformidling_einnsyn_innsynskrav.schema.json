@@ -1,6 +1,6 @@
 {
     "$id": "https://docs.digdir.no/schemas/eformidling/eformidling_einnsyn_publisering.schema.json",
-    "$schema": "https://json-schema.org/draft/20129-09/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "description": "Schema for publisering  brukt innenfor eInnsyn fra Digdir",
     "definitions": {
         "publisering": {
