@@ -277,8 +277,8 @@ Avsender kan nå konstruere korrekt **forretningsmelding** (DigitalPostMelding) 
 Regler for hvilke organisasjonsnummer som skal på ulike steder i meldingsstrukturen videreføres, se [eksempelet om Bunadsrådet og Acos i eksisterende dokumentasjon](https://docs.digdir.no/sdp_meldingsformat.html?h=bunadsr%C3%A5det#p%C3%A5vegne-eksempel).
 
 **Eksempel på forretningsmeldinger**:
-* Se https://github.com/joergenb/dpi_transport/blob/main/Samples/DIGITALPOST_DPI_1_0_Sample.json for et eksempel med digital post. `receiver` er her PK-leverandør sitt orgno.
-* Se https://github.com/joergenb/dpi_transport/blob/main/Samples/FYSISKPOST_PRINT_1_0_Sample.json for eksempel med fysisk post. `receiver` er her org.no til printtjeneste-leverandør.
+* Se [https://docs.digdir.no/resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_digital_1_0.json](https://docs.digdir.no/resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_digital_1_0.json) for et eksempel med digital post. `receiver` er her PK-leverandør sitt orgno.
+* Se [https://docs.digdir.no/resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_utskrift_1_0.json](https://docs.digdir.no/resources/begrep/sikkerDigitalPost/nyinf/eksempler/innbyggerpost_dpi_utskrift_1_0.json) for eksempel med fysisk post. `receiver` er her org.no til printtjeneste-leverandør.
 
 
 
