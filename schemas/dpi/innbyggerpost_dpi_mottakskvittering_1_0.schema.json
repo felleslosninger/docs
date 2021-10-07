@@ -1,6 +1,6 @@
 {
     "$id": "https://docs.digdir.no/schemas/dpi/mottakskvittering.schema.json",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "En Kvitteringsmelding til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift.",
     "$comment": "Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post.",
     "definitions": {

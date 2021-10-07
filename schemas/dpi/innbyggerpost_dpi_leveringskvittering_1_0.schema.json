@@ -1,6 +1,6 @@
 {
     "$id": "https://docs.digdir.no/schemas/dpi/leveringskvittering.schema.json",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler.",
     "$comment": "Denne kvitteringen kan Behandlingsansvarlig oppbevare som en garanti på at posten vil bli levert til Mottaker.",
     "definitions": {

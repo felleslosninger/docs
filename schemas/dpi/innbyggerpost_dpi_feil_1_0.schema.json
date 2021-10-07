@@ -1,6 +1,6 @@
 {
     "$id": "https://docs.digdir.no/schemas/dpi/feil.schema.json",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "En feilmelding fra postkasseleverandør med informasjon om en forretningsfeil knyttet til en digital post forsendelse.",
     "$comment": "Feilmelding sendes fra Postkasseleverandør når det oppstår en uventet feil som ikke kan håndteres av postkasseleverandør innenfor SLA krav. Feilene kategoriseres overordnet i to typer, enten som klient feil som Avsender må rette opp i eller som server feil som oppstår hos postkasseleverandør.",
     "definitions": {
