@@ -7,6 +7,12 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.2.6
+08.10.2021
+
+**Feilrettinger**
+- Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
+
 ## 2.2.5
 01.10.21
 
