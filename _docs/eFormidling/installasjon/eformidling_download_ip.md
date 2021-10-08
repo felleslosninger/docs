@@ -8,15 +8,12 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-### Siste versjon av integrasjonspunktet kan lastes ned her
+### Siste versjon av integrasjonspunktet
  
->  - 28.06.2021 Dette er rettet i versjon 2.2.3 som nå er tilgjengelig for nedlasting. 
->  - 21.06.2021: Vi har identifisert et problem knyttet til versjon 2.2.1 som påvirker enkelte virksomheter som bruker sak- og arkivsystemet Elements fra Sikri. Vi ber derfor  om at virksomheter som bruker Elements ikke oppgraderer til versjon 2.2.1 eller 2.2.2.
 
+### [Integrasjonspunktet 2.2.6 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.6/integrasjonspunkt-2.2.6.jar)
 
-### [Integrasjonspunktet 2.2.5 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.5/integrasjonspunkt-2.2.5.jar)
-
-### [Integrasjonspunktet 2.2.5 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.5/images/sha256-076a81215cd273d6202c3bf541c1d6c49a3eedecc45f0e07d25911f665a54ac2?context=explore)
+### [Integrasjonspunktet 2.2.6 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.6/images/sha256-2b462e7d699b2dfbc0495e58c2dc54cb289d641611ae8f48240620594e769153?context=explore)
 
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
@@ -28,7 +25,7 @@ ___
 
 ### Versjonering 
 
-eFormidling følger [semantisk versjonering] (https://semver.org) for å vise hvor omfattende endringer mellom forskjellige versjoner er. 
+eFormidling følger [semantisk versjonering] (https://semver.org) for å vise endringer mellom forskjellige versjoner. 
 
 
 En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
