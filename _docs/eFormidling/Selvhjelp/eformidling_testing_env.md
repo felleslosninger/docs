@@ -70,7 +70,7 @@ Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger s
 #### Sak-arkiv mock
 
 
-Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://qa-meldingsutveksling.difi.no/sa-mock/incoming](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
+Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://qa-meldingsutveksling.difi.no/sa-mock/incoming](https://qa-meldingsutveksling.difi.no/sa-mock/incoming) 
 
 
 
