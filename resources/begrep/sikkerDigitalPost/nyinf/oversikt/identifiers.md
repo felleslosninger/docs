@@ -1,7 +1,7 @@
 ---
 title: Prosesser og dokumenttyper 
 permalink: identifiers.html
-sidebar: dpi_sidebar
+sidebar: dpi_timo_sidebar
 ---
 
 ![](/images/dpi/underarbeide.png)
