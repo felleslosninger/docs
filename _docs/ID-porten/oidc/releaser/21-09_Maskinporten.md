@@ -6,7 +6,7 @@ sidebar: oidc
 ---
 
 
-Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl ihht eIDAS, innimellom kjent som såkalte "PSD2-sertifikater)
+Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl ihht eIDAS)
 
 
 
