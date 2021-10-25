@@ -9,7 +9,7 @@ sidebar: dpi_timo_sidebar
 Hvordan koble seg til og ta i bruk transportinfrastruktur for å sende digital post til innbyggere (DPI-meldinger)
 
 ## Velge Service Provider - Leverandør av aksesspunkt
-Transportinfrastrukturen baserer seg på Peppol og bruk av en såkalt [fire-hjørners-modell (se arkitekturskisse)](https://docs.digdir.no/dpi_arkitektur.html). Denne baserer seg på at avsendere og mottakertjenester gjør 
+Transportinfrastrukturen baserer seg på [Peppol](https://peppol.eu/what-is-peppol/peppol-country-profiles/norway-country-profile/) og bruk av en såkalt [fire-hjørners-modell (se arkitekturskisse)](https://docs.digdir.no/dpi_arkitektur.html). Denne baserer seg på at avsendere og mottakertjenester gjør 
 avtale med en Peppol Service Provider om leveranse av aksesspunkttjenester. Service Providere utveksler så meldinger på vegne av sine kunder, via sine aksesspunkt. Formidling 
 mellom aksesspunktene utføres i henhold til Peppol og eGovernment-domenet.
 
