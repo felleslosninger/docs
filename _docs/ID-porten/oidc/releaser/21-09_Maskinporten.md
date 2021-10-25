@@ -10,7 +10,7 @@ Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl i
 
 
 
-Planlagd produksjonssetting: Nov 2, 2021
+Planlagd produksjonssetting: Oct 26, 2021
 
 ## Ny funksjonalitet:
 
