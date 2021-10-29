@@ -15,7 +15,7 @@ For å støtte enkelte scenario rundt møteavlevering, er det identifisert nokon
 ### Bruk av møtesakstype i Møtesaksregistrering
 Møtesaksregistering er dokument som høyrer til sakslista i eit møte. Sjølve møteregistreringa vil ha «referanseTilMøtesak» som peikar til den aktuelle journalposten som er det faktiske saksframlegget til saken. Denne journalposten vil ha journalposttype sett til saksfremlegg
 
-Sjølve møtesaksregisterering kan ha ulik type. Spesifisert ved moetesakstype
+Sjølve møtesaksregisterering kan ha ulik type. Spesifisert ved møtesakstype
 
 Dette kan t.d vere
 
@@ -55,14 +55,14 @@ Rekkefølgen på sjølve vedlegga vil følge Noark-standarden med bruk av dokume
 
 
 ### Status på møtebehandling
-Behovet er for å synleggjere om ein behandling av ei sak er den endelege behandlinga. Og på så måte synleggjere og vekte denne behandlinga tydlegare.  Til dette finst moeteregistreringsstatus som finst på møtesaksdokument  Her kan det leggast inn verdien "Ferdig behandlet”.
+Behovet er for å synleggjere om ein behandling av ei sak er den endelege behandlinga. Og på så måte synleggjere og vekte denne behandlinga tydlegare.  Til dette finst møteregistreringsstatus som finst på møtesaksdokument  Her kan det leggast inn verdien "Ferdig behandlet”.
 
 
 
 ### Møtedokumentregistreringstypar
 Dette er registreringar som inneheld informasjon om sjølve møtet.  
 
-På møteredokumentregistreringa vert typen spesifisert i feltet moetedokumentregistreringstype.
+På møtedokumentregistreringa vert typen spesifisert i feltet møtedokumentregistreringstype.
 
 Typiske verdiar her vil vere
 
