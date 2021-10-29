@@ -22,7 +22,7 @@ Dagens avtaler med eID-leverandørene løper til november 2020, og det må gjør
 
 
 
-#### Notifisere norske eID til eIDAS (Under consideration)
+#### Notifisere norske eID til eIDAS (In design)
 
 Gjennomføre fagfelle-vurdering av norske eID-løsninger til EU, slik at norske borgere kan bruke sine eIDer på europeiske tjenester.
 
