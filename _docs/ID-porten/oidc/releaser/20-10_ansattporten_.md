@@ -10,7 +10,7 @@ En første versjon av pilot for Ansattporten
 
 
 
-Planlagd produksjonssetting: Oct 28, 2021
+Planlagd produksjonssetting: Nov 3, 2021
 
 ## Ny funksjonalitet:
 

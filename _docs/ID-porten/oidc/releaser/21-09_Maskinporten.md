@@ -10,19 +10,19 @@ Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl i
 
 
 
-Planlagd produksjonssetting: Nov 2, 2021
+Releasen vart produksjonssatt Oct 26, 2021
 
 ## Ny funksjonalitet:
 
 
-#### SEID 2.0-støtte i Maskinporten  (Ready to ship)
+#### SEID 2.0-støtte i Maskinporten  (Shipped)
 
 Maskinporten støtter i dag kun "gamle" virksomhetsertifikater. Må utvides med støtte for nye kvalifiserte sertifikater ihht eIDAS ihht SEID2.0 profilen
 
 
 
 
-#### Pilot underenheter (Ready to ship)
+#### Pilot underenheter (Shipped)
 
 Maskinporten-støtte for underenheter. I første omgang kun tiltenkt pilot i eFormidling der en skal teste ut meldingsutveksling til under-enheter som ikke har organisasjonsnummer.
 
@@ -33,7 +33,7 @@ Mogeleg døme på identifikator for ein underenhet:
 
 
 
-#### SelvbetjeningsAPI med støtte for Maskinporten-tokens (Ready to ship)
+#### SelvbetjeningsAPI med støtte for Maskinporten-tokens (Shipped)
 
 Det blir nå mulig å bruke tokens fra Maskinporten mot selvbetjenings-APIet
 
