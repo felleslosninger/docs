@@ -90,7 +90,7 @@ Dersom brukarane har sett innstillingane ```kosmos.mail.recipient``` og ```kosmo
 
 #### Blocklisting av versjon som ikkje starta
 
-Dersom kosmos.blocklist.enable har verdien 'true', og eit forsøk på oppdatering av integrasjonspunktet feilar innan vindauget beskrive i førre seksjon, vil versjonen verta blocklista. Dette medfører at KOSMOS ikkje vil forsøka å oppdatera til denne versjonen innan eit vindauge som er bestemt av innstillinga ```kosmos.blocklist.duration-in-hours```. Ved kvar periodiske køyring vil KOSMOS sjekka levetida på ei ev. blocklisting av siste versjon, som beskrive i ein tidlegare seksjon av dette dokumentet.
+Dersom ```kosmos.blocklist.enable``` har verdien 'true', og eit forsøk på oppdatering av integrasjonspunktet feilar innan vindauget beskrive i førre seksjon, vil versjonen verta blocklista. Dette medfører at KOSMOS ikkje vil forsøka å oppdatera til denne versjonen innan eit vindauge som er bestemt av innstillinga ```kosmos.blocklist.duration-in-hours```. Ved kvar periodiske køyring vil KOSMOS sjekka levetida på ei ev. blocklisting av siste versjon, som beskrive i ein tidlegare seksjon av dette dokumentet.
 
 #### Logg frå oppdaterande integrasjonspunkt
 
