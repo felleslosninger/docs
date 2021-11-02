@@ -101,6 +101,7 @@ Integrasjonspunktet loggar mykje under oppstart, noko som kan vera nyttig medan 
 Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet etter at applikasjonen har vore skrudd av så vart allowlisting innført og denne lagar .allowlisted filer. Til dømes om applikasjonen og integrasjonspunktet begge er av så vil den ikkje forsøker å oppdatere integrasjonspunktet om det allereie eksisterer ei .allowlisted fil. Dette var også eit behov i ein spesiell case der ```kosmos.integrasjonspunkt.supported-major-version``` var satt lik køyrande versjon og det har vore releasa ein “latest-version” som har høgare major enn det som er konfigurert til å være støtta.  Etter at integrasjonspunktet har starta så vil applikasjonen lage denne .allowlisted fila, denne vert automatisk fjerna ved oppgradering og ny fil for gjeldande versjon vert oppretta. Innhaldet er tidspunktet den vart oppretta. 
 
 ## Innstillingar
+ 
 |Namn|Standard-verdi|Beskriving|
 |----|--------------|----------|
 |kosmos.actuator-connect-timeout-in-ms|5000|Kor lenge KOSMOS ventar på å få kontakt med info-, helse- og shutdow-endepunkt på integrasjonspunkt.|
