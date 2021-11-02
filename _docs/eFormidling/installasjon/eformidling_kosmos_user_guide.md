@@ -135,17 +135,9 @@ Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet 
 
 Denne er ikkje satt som default og må leggast inn manuelt
 
-Namn
-
-Anbefalt-verdi
-
-Beskriving
-
-logging.level.no.difi.move.kosmos
-
-TRACE
-
-Auke loggnivået på KOSMOS for å få ekstra informasjon ved oppstart eller feilsøking.
+|Namn|Anbefalt-verdi|Beskriving|
+|----|--------------|----------|
+|logging.level.no.difi.move.kosmos|TRACE| Auke loggnivået på KOSMOS for å få ekstra informasjon ved oppstart eller feilsøking.|
 
 ## Kjeldekode og tilhøyrande dokumentasjon
 
