@@ -61,7 +61,7 @@ Man kan opprette ulike typer integrajonser over APIet.  Det er klient-autentiser
 
 ## Rotering av client_secret
 
-For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui.html#/oidc-client-controller/updateSecretUsingPOST)
+For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui/?urls.primaryName=External%20OIDC#/oidc-client-controller/updateSecretUsingPOST)
 
 Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_secret.
 
@@ -101,7 +101,7 @@ Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grant
 
 Se Open-API dokumentasjon her:
 
-[https://integrasjon-ver2.difi.no/swagger-ui.html#/](https://integrasjon-ver2.difi.no/swagger-ui.html#/)
+[https://integrasjon-ver2.difi.no/swagger-ui/](https://integrasjon-ver2.difi.no/swagger-ui/)
 
 Merk at ID-porten vil opprette client_id og client_secret.
 
