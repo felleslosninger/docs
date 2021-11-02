@@ -1,9 +1,10 @@
 ---
 title: eFormidling
-description:Digitaliseringsdirektoratets  løsning for meldingsutveksling i offentlig forvalting
-summary: "Difis løsning for meldingsutveksling i offentlig forvalting"
+description: Digitaliseringsdirektoratets  løsning for meldingsutveksling i offentlig forvalting
+summary: "Digdirs løsning for meldingsutveksling i offentlig forvalting"
 permalink: eformidling_index.html
 sidebar: main_sidebar
+product: eFormidling
 ---
 
 ## Bakgrunn
@@ -18,7 +19,7 @@ Kort fortalt gjør eFormidling det mulig å kommunisere med virksomheter (etterh
 
 {% include image.html file="/eformidling/illustrasjon_eformidling_hvit.png"  alt="eFormidling skisse over flyt" caption="eFormidling flyt" %}
 
-Illustrasjonen over viser hvordan en melding i eFormidling blir forflyttet fra sak/arkivsystemet eller et annet fagsystem i din virksomhet, gjennom integrasjonspunktet, via en meldingsformidler, og gjort tilgjengelig for mottaker. Mottakeren vil få meldingen enten gjennom sitt sak/arkivsystem eller i virksomheten sin meldingsboks i Altinn. På sikt vil du også kunne sende til innbyggers digitale postkasse, Digipost eller eBoks.
+Illustrasjonen over viser hvordan en melding i eFormidling blir forflyttet fra sak/arkivsystemet eller et annet fagsystem i din virksomhet, gjennom integrasjonspunktet, via en meldingsformidler, og gjort tilgjengelig for mottaker. Mottakeren vil få meldingen enten gjennom sitt sak/arkivsystem eller i virksomheten sin meldingsboks i Altinn. Og til Eller til innbyggers digitale postkasse, Digipost eller eBoks.
 
 **DPO** = Digital post offentlig virksomhet - meldinger mellom offentlige virksomheter som bruker integrasjonspunktet
 
@@ -26,8 +27,7 @@ Illustrasjonen over viser hvordan en melding i eFormidling blir forflyttet fra s
 
 **DPF** = Digital post til FIKS meldingsformidler - meldinger til kommuner og andre virksomheter som bruker FIKS meldingsformidler
 
-**DPI** = Digital post til innbygger - meldinger sendt til innbyggers digitale postkasse (ikke tilgjengelig via eFormidling pr. i dag)
- 
+**DPI** = Digital post til innbygger - meldinger sendt til innbyggers digitale postkasse 
 
 ​​​​​​**A - Avsender av meldinger**
 * Til venstre ser du «huset» som representerer din virksomhet. Her har du et sak-/arkiv system og flere fagsystemer.

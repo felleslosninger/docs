@@ -1,0 +1,36 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/leveringskvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler.",
+    "$comment": "Denne kvitteringen kan Behandlingsansvarlig oppbevare som en garanti på at posten vil bli levert til Mottaker.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "leveringskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/kvittering"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "leveringskvittering"
+            ]
+        },
+        "additionalProperties": false
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

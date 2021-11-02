@@ -1,0 +1,157 @@
+{
+  "@graph": [
+    {
+      "@id": "http://data.einnsyn.no/474b3d2c-5894-486a-92f1-f4f66514901e",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentobjekt",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/format": "PDF",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/formatDetaljer": "Arkivformat",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/referanseDokumentfil": "dokumenter\\925351bf-bb50-4ded-8982-34f297955434\\991381_1_1.PDF",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/variantformat": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivformat"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/versjonsnummer": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    },
+    {
+      "@id": "http://data.einnsyn.no/52588bec-3760-4e30-8d7b-0560fd79d1e6",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Dokumentbeskrivelse",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentnummer": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentobjekt": {
+        "@id": "http://data.einnsyn.no/474b3d2c-5894-486a-92f1-f4f66514901e"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentstatus": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentetErFerdigstilt"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumenttype": "Inngående eksternt produsert",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv": "Administrator",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2016-03-04T18:28:45"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": "9f58bae3-afd7-4f5f-b22d-9d1890da6267",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetAv": "360 Administrator",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetDato": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2016-03-04T09:00:00"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tilknyttetRegistreringSom": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/vedlegg"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Vedlegg.pdf",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+        "@list": [
+          "Vedlegg.pdf"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Vedlegg.pdf"
+    },
+    {
+      "@id": "http://data.einnsyn.no/5a3c3800-d10a-4e42-97ac-41338f7f971b",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Korrespondansepart",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn": "Digdir",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn_LIST": {
+        "@list": [
+          "Digdir"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn_SENSITIV": "Digdir",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondanseparttype": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/mottaker"
+      }
+    },
+    {
+      "@id": "http://data.einnsyn.no/bb802b0e-2cd6-411c-b2f2-11ce4a8fb537",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Saksmappe",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/administrativEnhet": "FSU",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/mappeID": "16/00011",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksaar": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": "2020"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig": "Meg",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig_LIST": {
+        "@list": [
+          "Meg"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig_SENSITIV": "Meg",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksdato": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-08-06"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/sakssekvensnummer": {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": "24"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksstatus": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksstatus_avsluttet"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": "bb802b0e-2cd6-411c-b2f2-11ce4a8fb537",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Søknad om ny parykk"
+    },
+    {
+      "@id": "http://data.einnsyn.no/bc7d4f0f-00d9-44ee-8fbd-7980f2d582a8",
+      "@type": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentbeskrivelse": {
+        "@id": "http://data.einnsyn.no/52588bec-3760-4e30-8d7b-0560fd79d1e6"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentetsDato": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2016-03-04"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalaar": 2016,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journaldato": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2016-03-04"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalpostnummer": 1,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalposttype": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/inngåendeDokument"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalsekvensnummer": 25,
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalstatus": {
+        "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivert"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepart": {
+        "@id": "http://data.einnsyn.no/5a3c3800-d10a-4e42-97ac-41338f7f971b"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": {
+        "@id": "http://data.einnsyn.no/bb802b0e-2cd6-411c-b2f2-11ce4a8fb537"
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/registreringsID": "16/00011-1",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": "bc7d4f0f-00d9-44ee-8fbd-7980f2d582a8",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": "Søknad om ny parykk",
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": {
+        "@list": [
+          "Søknad om ny parykk"
+        ]
+      },
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": "Søknad om ny parykk"
+    }
+  ]
+}

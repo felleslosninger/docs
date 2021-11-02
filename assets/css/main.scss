@@ -4,8 +4,11 @@
 layout: null
 ---
 
+@import "variables";
+@import "typography";
+@import "body";
+@import "code";
 @import "navbar";
-@import "headings";
 @import "sidebar";
 @import "alerts";
 @import "syntax_highlighting";
@@ -19,3 +22,6 @@ layout: null
 @import "landingcard";
 @import "syntax";
 @import "monokai";
+@import "grid";
+@import "a";
+@import "glossary";

@@ -1,0 +1,268 @@
+<!-- Original fra DKI: https://tjenester.oslo.kommune.no/ekstern/einnsyn/moetemappe?id=http%3A%2F%2Fdata.einnsyn.no%2Fnoark5%2Fmoetemappe- -MM-12597-BR2- -976819837 -->
+<arkiv xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <systemID>1d1bc9e0-3b1f-4364-abcb-370aa23c3e62</systemID>
+    <tittel>eInnsyn arkiv for virksomhet 976819837</tittel>
+    <arkivstatus>Opprettet</arkivstatus>
+    <opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+    <opprettetAv>eInnsyn</opprettetAv>
+    <avsluttetDato>2100-01-01T00:00:00.000+01:00</avsluttetDato>
+    <avsluttetAv>Ukjent</avsluttetAv>
+    <arkivskaper>
+        <arkivskaperID>0001</arkivskaperID>
+        <arkivskaperNavn>Ukjent</arkivskaperNavn>
+    </arkivskaper>
+
+    <arkivdel>
+        <systemID>ba5f8c02-b38c-4538-ba64-440334487410</systemID>
+        <tittel>eInnsyn-Moeter</tittel>
+        <arkivdelstatus>Aktiv periode</arkivdelstatus>
+        <opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+        <opprettetAv>Ukjent</opprettetAv>
+        <avsluttetDato>3000-01-01T00:00:00.000+01:00</avsluttetDato>
+        <avsluttetAv>Ukjent</avsluttetAv>
+
+        <mappe xsi:type="moetemappe">
+            <!-- MM-12597-BR2 -->
+            <systemID>79ac059a-cb02-4312-9f34-233318a19f0d</systemID>
+            <mappeID>79ac059a-cb02-4312-9f34-233318a19f0d</mappeID>
+            <tittel>Byrådsmøte</tittel>
+            <offentligTittel>Byrådsmøte</offentligTittel>
+            <beskrivelse>Avholdt</beskrivelse>
+            <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+            <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+            <opprettetAv>N/A</opprettetAv>
+            <avsluttetDato>2018-04-19T00:00:00.000+02:00</avsluttetDato>
+            <avsluttetAv>N/A</avsluttetAv>
+            <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+
+            <registrering xsi:type="moetedokumentregistrering">
+                <!-- MR-12597-BR2 -->
+                <systemID>59a82e69-9ca1-4b95-ab0d-910db2b8f183</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>N/A</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                <dokumentbeskrivelse>
+                    <systemID>DB-976819837-1874252</systemID>
+                    <dokumenttype>Sakskart</dokumenttype>
+                    <dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+                    <tittel>Sakskart</tittel>
+                    <beskrivelse>Sakskart</beskrivelse>
+                    <opprettetDato>2018-04-12T00:00:00.000+02:00</opprettetDato>
+                    <opprettetAv>N/A</opprettetAv>
+                    <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                    <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                    <tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+                    <dokumentnummer>1874252</dokumentnummer>
+                    <tilknyttetDato>2018-04-19T00:00:00.000+02:00</tilknyttetDato>
+                    <tilknyttetAv>N/A</tilknyttetAv>
+                    <dokumentobjekt>
+                        <versjonsnummer>1</versjonsnummer>
+                        <variantformat>Arkivformat</variantformat>
+                        <format>pdf</format>
+                        <opprettetDato>2018-04-19T11:50:01.000+02:00</opprettetDato>
+                        <opprettetAv>N/A</opprettetAv>
+                        <referanseDokumentfil>https://tjenester.oslo.kommune.no/ekstern/einnsyn-fillager/filtjeneste/fil?virksomhet=976819837&amp;filnavn=byr%2F2018%2Fbr2%2F2018023134-1874252.pdf</referanseDokumentfil>
+                        <sjekksum>N/A</sjekksum>
+                        <sjekksumAlgoritme>N/A</sjekksumAlgoritme>
+                        <filstoerrelse>0</filstoerrelse>
+                    </dokumentobjekt>
+                </dokumentbeskrivelse>
+                <registreringsID>59a82e69-9ca1-4b95-ab0d-910db2b8f183</registreringsID>
+                <tittel>Sakskart</tittel>
+                <offentligTittel>Sakskart</offentligTittel>
+                <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                <administrativEnhet>976819837</administrativEnhet>
+                <saksbehandler>N/A</saksbehandler>
+                <moetedokumentregistreringstype>Innkalling</moetedokumentregistreringstype>
+            </registrering>
+
+            <registrering xsi:type="moetedokumentregistrering">
+                <!-- MR-12597-BR2 -->
+                <systemID>f853e9df-8f80-458f-8f8b-46f6021400c0</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>N/A</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                <dokumentbeskrivelse>
+                    <systemID>DB-976819837-1877987</systemID>
+                    <dokumenttype>Protokoll</dokumenttype>
+                    <dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+                    <tittel>Protokoll</tittel>
+                    <beskrivelse>Protokoll</beskrivelse>
+                    <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                    <opprettetAv>N/A</opprettetAv>
+                    <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                    <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                    <tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+                    <dokumentnummer>1877987</dokumentnummer>
+                    <tilknyttetDato>2018-04-19T00:00:00.000+02:00</tilknyttetDato>
+                    <tilknyttetAv>N/A</tilknyttetAv>
+                    <dokumentobjekt>
+                        <versjonsnummer>1</versjonsnummer>
+                        <variantformat>Arkivformat</variantformat>
+                        <format>pdf</format>
+                        <opprettetDato>2018-04-19T11:50:01.000+02:00</opprettetDato>
+                        <opprettetAv>N/A</opprettetAv>
+                        <referanseDokumentfil>https://tjenester.oslo.kommune.no/ekstern/einnsyn-fillager/filtjeneste/fil?virksomhet=976819837&amp;filnavn=byr%2F2018%2Fbr2%2F2018024599-1877987.pdf</referanseDokumentfil>
+                        <sjekksum>N/A</sjekksum>
+                        <sjekksumAlgoritme>N/A</sjekksumAlgoritme>
+                        <filstoerrelse>0</filstoerrelse>
+                    </dokumentobjekt>
+                </dokumentbeskrivelse>
+                <registreringsID>59a82e69-9ca1-4b95-ab0d-910db2b8f183</registreringsID>
+                <tittel>Protokoll</tittel>
+                <offentligTittel>Protokoll</offentligTittel>
+                <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                <administrativEnhet>ADM</administrativEnhet>
+                <saksbehandler>N/A</saksbehandler>
+                <moetedokumentregistreringstype>Protokoll</moetedokumentregistreringstype>
+            </registrering>
+
+            <registrering xsi:type="moetesaksregistrering">
+                <!-- MR-12597-201604935-19063-1031 -->
+                <systemID>98211794-b9e7-4f68-9cd7-4df65d27c90b</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>N/A</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                <dokumentbeskrivelse>
+                    <systemID>DB-976819837-1877987</systemID>
+                    <dokumenttype>Vedtak</dokumenttype>
+                    <dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+                    <tittel>Innstilling/Vedtak</tittel>
+                    <beskrivelse>Innstilling/Vedtak</beskrivelse>
+                    <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                    <opprettetAv>N/A</opprettetAv>
+                    <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                    <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                    <tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+                    <dokumentnummer>1877987</dokumentnummer>
+                    <tilknyttetDato>2018-04-19T00:00:00.000+02:00</tilknyttetDato>
+                    <tilknyttetAv>N/A</tilknyttetAv>
+                    <dokumentobjekt>
+                        <versjonsnummer>1</versjonsnummer>
+                        <variantformat>Arkivformat</variantformat>
+                        <format>pdf</format>
+                        <opprettetDato>2018-04-19T11:50:01.000+02:00</opprettetDato>
+                        <opprettetAv>N/A</opprettetAv>
+                        <referanseDokumentfil>https://tjenester.oslo.kommune.no/ekstern/einnsyn-fillager/filtjeneste/fil?virksomhet=976819837&amp;filnavn=byr%2F2018%2Fbr2%2F2018024599-1877987.pdf</referanseDokumentfil>
+                        <sjekksum>N/A</sjekksum>
+                        <sjekksumAlgoritme>N/A</sjekksumAlgoritme>
+                        <filstoerrelse>0</filstoerrelse>
+                    </dokumentobjekt>
+                </dokumentbeskrivelse>
+                <registreringsID>1031/2018</registreringsID>
+                <tittel>Fordeling av kommunale og statlige midler til Groruddalssatsingen i 2018. Byrådssak 1031/18</tittel>
+                <offentligTittel>Fordeling av kommunale og statlige midler til Groruddalssatsingen i 2018. Byrådssak 1031/18</offentligTittel>
+                <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                <moetesakstype>Politisk sak</moetesakstype>
+                <moeteregistreringsstatus>Behandlet i møte</moeteregistreringsstatus>
+                <administrativEnhet>HR</administrativEnhet>
+                <saksbehandler>Zongo Inger Marie Silli</saksbehandler>
+                <referanseTilMoetesak>ba5b0283-ac67-4c8a-a9f2-c32551eb4128</referanseTilMoetesak>
+                <moetesaksaar>2018</moetesaksaar>
+                <moetesakssekvensnummer>1</moetesakssekvensnummer>
+            </registrering>
+
+            <moetenummer>N/A</moetenummer>
+            <utvalg>Kommunestyret</utvalg>
+            <moetedato>2018-04-19T10:00:00.000+02:00</moetedato>
+            <moetested>Byrådets møterom</moetested>
+        </mappe>
+
+        <mappe xsi:type="saksmappe">
+            <!-- SM-201604935-19063 -->
+            <systemID>4eddbfec-d68a-4e50-9a3a-f4e30af0ec80</systemID>
+            <mappeID>4eddbfec-d68a-4e50-9a3a-f4e30af0ec80</mappeID>
+            <tittel>Fordeling av kommunale og statlige midler til Groruddalssatsingen i 2018. Byrådssak 1031/18</tittel>
+            <offentligTittel>Fordeling av kommunale og statlige midler til Groruddalssatsingen i 2018. Byrådssak 1031/18</offentligTittel>
+            <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+            <opprettetAv>Zongo Inger Marie Silli</opprettetAv>
+            <avsluttetDato>2018-04-19T00:00:00.000+02:00</avsluttetDato>
+            <avsluttetAv>N/A</avsluttetAv>
+            <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+
+            <registrering xsi:type="journalpost">
+                <!-- JP-201604935-19063-1031 -->
+                <systemID>ba5b0283-ac67-4c8a-a9f2-c32551eb4128</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>Zongo Inger Marie Silli</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <referanseArkivdel>ba5f8c02-b38c-4538-ba64-440334487410</referanseArkivdel>
+                <registreringsID>ba5b0283-ac67-4c8a-a9f2-c32551eb4128</registreringsID>
+                <tittel>Journalpost med administrativ enhet</tittel>
+                <offentligTittel>Journalpost med administrativ enhet</offentligTittel>
+                <journalaar>2010</journalaar>
+                <journalsekvensnummer>4935</journalsekvensnummer>
+                <journalpostnummer>1</journalpostnummer>
+                <journalposttype>Saksframlegg</journalposttype>
+                <journalstatus>Journalført</journalstatus>
+                <journaldato>2018-04-19</journaldato>
+                <korrespondansepart>
+                    <korrespondanseparttype>Mottaker</korrespondanseparttype>
+                    <korrespondansepartNavn>Ola Normann</korrespondansepartNavn>
+                    <administrativEnhet>ADM</administrativEnhet>
+                </korrespondansepart>
+            </registrering>
+            <registrering xsi:type="journalpost">
+                <!-- JP-201604935-19063-1031 -->
+                <systemID>992a8dcc-7640-425c-86ee-54bdd88b8d17</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>Zongo Inger Marie Silli</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <registreringsID>992a8dcc-7640-425c-86ee-54bdd88b8d17</registreringsID>
+                <tittel>Journalpost i ei anna avdeling</tittel>
+                <offentligTittel>Journalpost i ei anna avdeling</offentligTittel>
+                <journalaar>2020</journalaar>
+                <journalsekvensnummer>4936</journalsekvensnummer>
+                <journalpostnummer>2</journalpostnummer>
+                <journalposttype>Saksframlegg</journalposttype>
+                <journalstatus>Journalført</journalstatus>
+                <journaldato>2018-04-19</journaldato>
+                <korrespondansepart>
+                    <korrespondanseparttype>Mottaker</korrespondanseparttype>
+                    <korrespondansepartNavn>Ola Normann</korrespondansepartNavn>
+                    <administrativEnhet>ØK</administrativEnhet>
+                </korrespondansepart>
+            </registrering>
+
+            <registrering xsi:type="journalpost">
+                <!-- JP-201604935-19063-1031 -->
+                <systemID>6f7819a5-6953-498f-bca3-fadbc17ef4bd</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>Zongo Inger Marie Silli</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <registreringsID>6f7819a5-6953-498f-bca3-fadbc17ef4bd</registreringsID>
+                <tittel>Vanleg journalpost</tittel>
+                <offentligTittel>Vanleg journalpost</offentligTittel>
+                <journalaar>2020</journalaar>
+                <journalsekvensnummer>4936</journalsekvensnummer>
+                <journalpostnummer>3</journalpostnummer>
+                <journalposttype>Utgående dokument</journalposttype>
+                <journalstatus>Journalført</journalstatus>
+                <journaldato>2018-04-19</journaldato>
+                <korrespondansepart>
+                    <korrespondanseparttype>Mottaker</korrespondanseparttype>
+                    <korrespondansepartNavn>Ola Normann</korrespondansepartNavn>
+                    <administrativEnhet>ØK</administrativEnhet>
+                </korrespondansepart>
+            </registrering>
+
+            <saksaar>201</saksaar>
+            <sakssekvensnummer>4935</sakssekvensnummer>
+            <saksdato>2018-04-19+02:00</saksdato>
+            <administrativEnhet>976819837</administrativEnhet>
+            <saksansvarlig>Zongo Inger Marie Silli</saksansvarlig>
+            <saksstatus>Avsluttet</saksstatus>
+        </mappe>
+
+    </arkivdel>
+</arkiv>

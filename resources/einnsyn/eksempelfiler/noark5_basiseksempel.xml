@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<arkiv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="arkivstruktur.xsd" xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+	<systemID>3ecfffe6-afe8-4842-8c95-199120d16e80</systemID>
+	<tittel>Felles arkiv</tittel>
+	<beskrivelse><![CDATA[Felles arkiv]]></beskrivelse>
+	<opprettetDato>2020-08-05T12:00:00</opprettetDato>
+	<opprettetAv>Digdir</opprettetAv>
+	<avsluttetDato>2020-08-05T12:00:00</avsluttetDato>
+	<avsluttetAv>Digdir </avsluttetAv>
+	<arkivskaper>
+		<arkivskaperID>arkivskaper:1001</arkivskaperID>
+		<arkivskaperNavn>Digdir</arkivskaperNavn>
+	</arkivskaper>
+	<arkivdel>
+		<systemID>58caf4f1-d72a-450b-8c87-dd2faddb0568</systemID>
+		<tittel>Sakarkiv Mars 2016</tittel>
+		<beskrivelse>Sakarkiv Mars 2016</beskrivelse>
+		<arkivdelstatus>Avsluttet periode</arkivdelstatus>
+		<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+		<opprettetDato>2016-03-01T00:00:00</opprettetDato>
+		<opprettetAv>Administrator</opprettetAv>
+		<avsluttetDato>2016-03-06T00:00:00</avsluttetDato>
+		<avsluttetAv>Administrator</avsluttetAv>
+		<arkivperiodeStartDato>2016-03-01</arkivperiodeStartDato>
+		<arkivperiodeSluttDato>2016-03-06</arkivperiodeSluttDato>
+		<klassifikasjonssystem>
+			<systemID>eec1df67-52a8-487a-80ba-7be6f2dcea81</systemID>
+			<klassifikasjonstype>Emneorganisert hierarkisk oppbygd arkivnøkkel</klassifikasjonstype>
+			<tittel>Statens Fellesnøkkel</tittel>
+			<beskrivelse>Statens Fellesnøkkel</beskrivelse>
+			<opprettetDato>2015-04-16T15:53:37</opprettetDato>
+			<opprettetAv>Administrator</opprettetAv>
+			<klasse>
+				<systemID>0334f5b8-db4c-43da-af3c-6cc8928c3787</systemID>
+				<klasseID>0</klasseID>
+				<tittel>Organisasjon og administrasjon</tittel>
+				<opprettetDato>2015-04-16T15:53:37</opprettetDato>
+				<opprettetAv>Administrator</opprettetAv>
+				<klasse>
+					<systemID>7faf9e62-01fa-4c17-8d4f-1b2a12e0b532</systemID>
+					<klasseID>00</klasseID>
+					<tittel>Organisasjon og administrasjon generelt</tittel>
+					<opprettetDato>2015-04-16T15:53:37</opprettetDato>
+					<opprettetAv>Administrator</opprettetAv>
+					<klasse>
+						<systemID>28791596-989c-44e8-beec-801c70865108</systemID>
+						<klasseID>000</klasseID>
+						<tittel>Generelle instrukser og bestemmelser</tittel>
+						<opprettetDato>2015-04-16T15:53:37</opprettetDato>
+						<opprettetAv>Administrator</opprettetAv>
+						<mappe xsi:type="saksmappe">
+							<systemID>bb802b0e-2cd6-411c-b2f2-11ce4a8fb537</systemID>
+							<mappeID>16/00011</mappeID>
+							<tittel>Søknad om ny parykk</tittel>
+							<offentligTittel>Søknad om ny parykk</offentligTittel>
+							<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+							<opprettetDato>2016-03-04T18:21:40</opprettetDato>
+							<opprettetAv>Administrator</opprettetAv>
+							<avsluttetDato>2016-03-04T19:19:58</avsluttetDato>
+							<avsluttetAv>Administrator</avsluttetAv>
+							<referanseArkivdel>cc9b743d-d3b5-49ea-8e7d-05ea4da9f279</referanseArkivdel>
+							<registrering xsi:type="journalpost">
+								<systemID>bc7d4f0f-00d9-44ee-8fbd-7980f2d582a8</systemID>
+								<opprettetDato>2016-03-04T18:28:45</opprettetDato>
+								<opprettetAv>Administrator</opprettetAv>
+								<arkivertDato>2016-03-04T18:28:45</arkivertDato>
+								<arkivertAv>Administrator</arkivertAv>
+								<referanseArkivdel>cc9b743d-d3b5-49ea-8e7d-05ea4da9f279</referanseArkivdel>
+								<dokumentbeskrivelse>
+									<systemID>7b3a56ff-4f19-4e73-8999-e63358f8d85c</systemID>
+									<dokumenttype>Inngående eksternt produsert</dokumenttype>
+									<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+									<tittel>Soknad.pdf</tittel>
+									<forfatter>Administrator</forfatter>
+									<opprettetDato>2016-03-04T18:28:45</opprettetDato>
+									<opprettetAv>Administrator</opprettetAv>
+									<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+									<referanseArkivdel>cc9b743d-d3b5-49ea-8e7d-05ea4da9f279</referanseArkivdel>
+									<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+									<dokumentnummer>1</dokumentnummer>
+									<tilknyttetDato>2016-03-04T09:00:00</tilknyttetDato>
+									<tilknyttetAv>360 Administrator</tilknyttetAv>
+									<dokumentobjekt>
+										<versjonsnummer>1</versjonsnummer>
+										<variantformat>Arkivformat</variantformat>
+										<format>PDF</format>
+										<formatDetaljer>Arkivformat</formatDetaljer>
+										<opprettetDato>2016-03-04T18:28:45</opprettetDato>
+										<opprettetAv>Administrator</opprettetAv>
+										<referanseDokumentfil>dokumenter\925351bf-bb50-4ded-8982-34f297955434\991380_1_1.PDF</referanseDokumentfil>
+										<sjekksum>A12D4575A3B5965D0C03C6BD4D84C1D09931CB778F61BAC775FAA59FE65B207D</sjekksum>
+										<sjekksumAlgoritme>SHA-256</sjekksumAlgoritme>
+										<filstoerrelse>96176</filstoerrelse>
+									</dokumentobjekt>
+								</dokumentbeskrivelse>
+								<dokumentbeskrivelse>
+									<systemID>9f58bae3-afd7-4f5f-b22d-9d1890da6267</systemID>
+									<dokumenttype>Inngående eksternt produsert</dokumenttype>
+									<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+									<tittel>Vedlegg.pdf</tittel>
+									<forfatter>Administrator</forfatter>
+									<opprettetDato>2016-03-04T18:28:45</opprettetDato>
+									<opprettetAv>Administrator</opprettetAv>
+									<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+									<referanseArkivdel>cc9b743d-d3b5-49ea-8e7d-05ea4da9f279</referanseArkivdel>
+									<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+									<dokumentnummer>2</dokumentnummer>
+									<tilknyttetDato>2016-03-04T09:00:00</tilknyttetDato>
+									<tilknyttetAv>360 Administrator</tilknyttetAv>
+									<dokumentobjekt>
+										<versjonsnummer>1</versjonsnummer>
+										<variantformat>Arkivformat</variantformat>
+										<format>PDF</format>
+										<formatDetaljer>Arkivformat</formatDetaljer>
+										<opprettetDato>2016-03-04T18:28:45</opprettetDato>
+										<opprettetAv>Administrator</opprettetAv>
+										<referanseDokumentfil>http://example.com/925351bf-bb50-4ded-8982-34f297955434/991381_1_1.PDF</referanseDokumentfil>
+										<sjekksum>E969663ABE70D2DB73264DF75131388562180CC15D1300EBDBAF82F43F6E7F31</sjekksum>
+										<sjekksumAlgoritme>SHA-256</sjekksumAlgoritme>
+										<filstoerrelse>95742</filstoerrelse>
+									</dokumentobjekt>
+								</dokumentbeskrivelse>
+								<registreringsID>16/00011-1</registreringsID>
+								<tittel>Søknad om ny parykk</tittel>
+                <offentligTittel>Søknad om ny parykk</offentligTittel>
+								<forfatter>Fiktiv Etternavntest</forfatter>
+								<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+								<journalaar>2016</journalaar>
+								<journalsekvensnummer>25</journalsekvensnummer>
+								<journalpostnummer>1</journalpostnummer>
+								<journalposttype>Inngående dokument</journalposttype>
+								<journalstatus>Arkivert</journalstatus>
+								<journaldato>2016-03-04</journaldato>
+								<dokumentetsDato>2016-03-04</dokumentetsDato>
+								<mottattDato>2016-03-04T18:28:45</mottattDato>
+								<antallVedlegg>2</antallVedlegg>
+								<journalenhet>Sentralarkiv</journalenhet>
+								<korrespondansepart>
+									<korrespondanseparttype>Avsender</korrespondanseparttype>
+									<korrespondansepartNavn>Ola Normann</korrespondansepartNavn>
+									<postadresse>Skrivarvegen 2</postadresse>
+									<postnummer>6863</postnummer>
+									<poststed>Leikanger</poststed>
+									<land>Norge</land>
+								</korrespondansepart>
+								<korrespondansepart>
+									<korrespondanseparttype>Mottaker</korrespondanseparttype>
+									<korrespondansepartNavn>Digdir</korrespondansepartNavn>
+									<epostadresse>fiktiv.etternavntest@digdir.no</epostadresse>
+									<administrativEnhet>FSU</administrativEnhet>
+									<saksbehandler>Fiktiv Etternavntest</saksbehandler>
+								</korrespondansepart>
+								<avskrivning>
+									<avskrivningsdato>2016-03-04</avskrivningsdato>
+									<avskrevetAv>Administrator</avskrevetAv>
+									<avskrivningsmaate>Besvart med brev</avskrivningsmaate>
+									<referanseAvskrivesAvJournalpost>4a80103c-b9b8-464a-aca2-65f7011f3de4</referanseAvskrivesAvJournalpost>
+								</avskrivning>
+							</registrering>
+              <saksaar>2020</saksaar>
+              <sakssekvensnummer>24</sakssekvensnummer>
+              <saksdato>2020-08-06</saksdato>
+              <administrativEnhet>FSU</administrativEnhet>
+              <saksansvarlig>Meg</saksansvarlig>
+              <journalenhet>Sentralarkiv</journalenhet>
+              <saksstatus>Avsluttet</saksstatus>
+						</mappe>
+					</klasse>
+				</klasse>
+			</klasse>
+		</klassifikasjonssystem>
+	</arkivdel>
+</arkiv>

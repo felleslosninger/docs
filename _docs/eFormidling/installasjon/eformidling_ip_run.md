@@ -16,7 +16,7 @@ Integrasjonspunktet kan også installeres som en tjeneste på server. For å gj�
 Dokumentasjonen på programvaren du trenger ligger [på github](https://github.com/kohsuke/winsw). Du trenger to filer: .exe -filen fra dette programmet og en egen .xml-fil for å fortelle .exe -filen hvilke innstillinger som skal brukes. Dette er samme konseptet som [einnsyn-klient installasjonen er basert på](https://difi.github.io/felleslosninger/einnsyn_index.html). 
 
 1. Last ned Winsw.exe [her](https://github.com/kohsuke/winsw/releases). Mer informasjon om hvilken versjon du skal velge står [her: Supported .NET versions](https://github.com/kohsuke/winsw#user-content-supported-net-versions). Om du er usikker på hvilken .NET versjon du har, [les her](https://support.microsoft.com/nb-no/help/318785/how-to-determine-which-versions-and-service-pack-levels-of-the-microso)
-2. Last ned konfigurasjonsfila vår for [testmiljø](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/staging/integrasjonspunkt-service.xml) eller [produksjonsmiljø](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt-service.xml) <!-- desse er korrekte URL'er til move-integrasjonspunkt. 10.04.19 -->
+2. Last ned konfigurasjonsfila vår for [testmiljø](/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø](/resources/eformidling/integrasjonspunkt-prod.xml) <!-- desse er korrekte URL'er til felleslosninger integrasjonspunkt 05.03.2020 -->
 3. Endre navn på .exe fila og xml-filene til de navnene du ønsker. For eksempel integrasjonspunkt-service.exe og integrasjonspunkt-service.xml. (begge må ha samme navn)
 4. Legg begge disse filene i integrasjonspunktmappa di.
 5. Endre versjonsnummeret på integrasjonspunkt-%versjonsnr%.jar til å være lik din versjon
@@ -32,7 +32,7 @@ I denne config-fila er det lagt inn automatisk loggrotering ved 10MB størrelse 
 Loggene for denne tjenesten vil i utgangspunktet bli skrevet til feks ```c:\integrasjonspunkt\integrasjonspunkt-logs``` og filen integrasjonspunkt-service.out. Innholdet i denne er veldig likt innholdet i application.log filen.
 
 ### Kjøre med lavest mulige rettigheter
-Vi anbefaler å kjøre integrasjonspunktet med en minste rettighetsbruker. For å endre hvilken bruker som kjører tjenesten ved å høyreklikke på den, velge "properties" og så velge "logg på" fanen. [Hvordan opprette en minste rettighetsbruker.](https://difi.github.io/felleslosninger/eformidling_ip_run.html#alt-3-kj%C3%B8re-via-task-scheduler-med-minste-rettigheter)
+Vi anbefaler å kjøre integrasjonspunktet med en minste rettighetsbruker. For å endre hvilken bruker som kjører tjenesten ved å høyreklikke på den, velge "properties" og så velge "logg på" fanen. [Hvordan opprette en minste rettighetsbruker.](eformidling_ip_run.html#alt-3-kj%C3%B8re-via-task-scheduler-med-minste-rettigheter)
 
 ### Reinstallasjon av tjenesten
 
@@ -95,6 +95,12 @@ Når en skal starte integrasjonspunktet så kreves det visse rettigheter på den
 Egenskaper på mappen
   * Security:
     * Legg til integrasjonspunkt brukeren med modify rettigheter
+    
+**Bruker må ha modify tilgang på Windows EventLog**
+
+Registry Editor
+  * Permissions på HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog
+  * Legg til integrasjonspunkt brukeren med modify rettigheter på Security "mappe".
   
 ### Kjøre kommandoen i "Task Scheduler"
 
@@ -113,7 +119,7 @@ user: %servernavn%\integrasjonspunkt
         * "disk:\mappenavn» til integrasjonspunktet"
 
 
-![Taskscheduler](/felleslosninger/images/eformidling/taskscheduler.PNG)
+![Taskscheduler](/images/eformidling/taskscheduler.PNG)
 
 
 Merk: om du skal starte integrasjonspunktet i staging-miljø må du bruke følgende argument i stedet: ```-jar -Dspring.profiles.active=staging integrasjonspunkt-%versjonsnr%.jar ```

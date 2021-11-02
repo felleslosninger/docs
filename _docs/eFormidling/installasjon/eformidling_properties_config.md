@@ -20,16 +20,16 @@ Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge.
 
 Vi anbefaler dere å konfigurere DPO før DPV/DPF for å unngå å motta post fra svarUt til virksomhetens SvarInn innboks. Ved å konfigurere DPO først vil dere motta post i sak-arkivsystemet. Om ønsket kan en også sette opp DPI først.
 
-Husk å melde fra til <a href="mailto:idporten@difi.no">idporten@difi.no</a> når dere har konfigurert slik atDigitaliseringsdirektoratet kan åpne opp tilganger. Ellers vil du få 400 Bad request feil. 
+Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere har konfigurert slik at Digitaliseringsdirektoratet kan åpne opp tilganger. Ellers vil du få 400 Bad request feil. 
 
 
 ### Integrasjonspunkt-local.properties
 
-Her laster du ned [integrasjonspunkt-local.properties-filen](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt_local.properties) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:idporten@difi.no">idporten@difi.no</a>. 
+Her laster du ned [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
-2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](https://github.com/difi/move-integrasjonspunkt/blob/gh-pages/resources/integrasjonspunkt_local.properties) og lagre i overnevnte mappe
-3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](https://difi.github.io/felleslosninger/eformidling_download_ip.html)
+2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
+3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](eformidling_download_ip.html)
 
 Når du er ferdig skal strukturen på området se slik ut:
 ```
@@ -45,6 +45,7 @@ c:/
 **NB:** Benytt skråstrek (/) eller dobbel omvendt skråstrek (\\\\) som ressursdeler når dere angir filbaner.
 
 Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
+
 
 ### eFormidling - Digital Post til virksomheter
 
@@ -74,6 +75,16 @@ Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle
   {% include eformidling/properties/jks_generell.html %} 
   {% include eformidling/properties/dpi.html %}
   
+
+### Valgfrie properties
+Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt over. Denne listen er ikke (per 01.10.21) helt utfyllende for alle properties, men vil bli utvidet: 
+
+  {% include eformidling/properties/ip_properties.html %}
+
+
+
+--- 
+
 ### Regel:
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
 
@@ -91,12 +102,49 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 #### DPI
 ```difi.move.feature.enableDPI=true``` Må settes til true om du skal bruke DPI. Ingen andre DPI-spesifikke properties kreves, men en har mulighet til å overstyre ved å sette de. 
 
+**NB!** En forutsetning for å bruke DPI gjennom eFormidling er at sak/arkiv/fagsystem er integrert mot eFormidling 2.0 grensesnittet. Spør din leverandør om dette. Les mer [her.](https://difi.github.io/felleslosninger/eformidling_nm_about.html)
+
 ---
 
 ### Hvordan opprette brukere for DPO/DPF/DPV?
 
-[Denne delen er flyttet](https://difi.github.io/felleslosninger/eformidling_create_users.html)
+[Denne delen er flyttet](/eformidling_create_users.html)
 
 > For DPI kreves ingen bruker, da benyttes virksomhetssertifikatet.
 
 --- 
+
+### HashiCorp Vault
+Integrasjonspunktet støtter HashiCorp Vault for innlesing av properties og filer. Dokumentasjon på installasjon og oppsett finnes her: <https://www.vaultproject.io/>
+
+|Property|Eksempelverdi|Beskrivelse|
+|--------|-------------|-----------|
+|vault.uri|http://localhost:8200|Adresse til tjeneste|
+|vault.token|s.7NP3IvIjdpHqaInbNQD4NpIY|Token for autentisering|
+|vault.path|secret/move|Sti til Key/Value secrets|
+|vault.resource-path|secret/resource|Sti til secrets som vil lastes som filer, må være Base64-encoded. Disse kan referes i properties med prefix "vault:"|
+
+#### Eksempelkonfigurasjon
+Følgende eksempel viser hvordan man kan benytte vault til å referere keystore og passord.
+
+
+Legg til ønskede properties og keystore i vault:
+```console
+$ vault kv put secret/move difi.move.org.keystore.password=p4ss0rD difi.move.dpo.password=h3mm3L16
+$ vault kv put secret/resource keystore="$(base64 keystore.jks)"
+```
+> Filer **må** legges under egen ressurs, referert av *vault.resource-path*, med Base64-encoded verdi.
+
+Keystore kan nå refereres i integrasjonspunkt-local.properties med følgende syntaks:
+```console
+...
+difi.move.org.keystore.alias=fiktivtalias
+difi.move.org.keystore.path=vault:keystore
+...
+```
+
+Integrasjonspunktet støtter kun token-autentisering. Token kan angis som et JVM-argument:
+```console
+$ java -Dvault.token=s.7NP3IvIjdpHqaInbNQD4NpIY ... -jar integrasjonspunkt-2.2.5.jar
+```
+---

@@ -19,7 +19,7 @@ graph LR
   subgraph API-tilbyder
     API[API manager]
   end
-  subgraph Difi
+  subgraph Digdir
     MP[Maskinporten]
   end
 
@@ -31,7 +31,7 @@ Forutsatt at de riktige tilgangene er gitt, kan API-konsumenter nå opprette sin
 
 <div class="mermaid">
 graph LR
-subgraph Difi
+subgraph Digdir
   MP[Maskinporten]
 end
   subgraph API-konsument
@@ -51,7 +51,7 @@ graph LR
   subgraph API-tilbyder
     API
   end
-  subgraph Difi
+  subgraph Digdir
     Maskinporten[Maskinporten]
   end
   subgraph API-konsument
@@ -62,7 +62,7 @@ graph LR
   ny -->|3.bruker token mot|API
 </div>
 
-API-konsumenter kan selv administrere sine klientkonfigurasjoner og provisjonere disse med tildelte tilganger fra tilbyderene.
+API-konsumenter kan selv administrere sine klientkonfigurasjoner og registrere disse med tildelte scopes fra tilbyderene.
 
 API-tilbydere og konsumenter kan bruke denne tjenesten for å styre tilgang i de tilfellene der informasjonsverdiene APIet tilbyr er regulert av lovhjemmel, og ikke krever samtykke av brukeren.
 

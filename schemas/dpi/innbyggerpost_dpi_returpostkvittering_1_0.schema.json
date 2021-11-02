@@ -1,0 +1,35 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/returpostkvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En Kvitteringsmelding fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker.",
+    "$comment": "Dette er Kvittering på at posten har kommet i retur og har blitt makulert.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "returpostkvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/kvittering"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "returpostkvittering"
+            ]
+        }        
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

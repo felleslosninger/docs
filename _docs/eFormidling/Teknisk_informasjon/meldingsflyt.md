@@ -8,7 +8,7 @@ sidebar: eformidling_technical_sidebar
 ---
 
 ## Sende melding
-NextMove APIet lar deg sende filer på to måter. Hvilke av de du velger avhenger av størrelsen på meldingen du skal sende. 
+eFormidling 2.0 APIet lar deg sende filer på to måter. Hvilke av de du velger avhenger av størrelsen på meldingen du skal sende. 
 
 Dersom meldingen er opp til 5 MB brukes multipart sending, der en kan sende forretningsmelding og payload i samme kall. 
 Ved meldinger større enn 5 MB må en for å oppnå god ytelse bruke metoden for store meldinger

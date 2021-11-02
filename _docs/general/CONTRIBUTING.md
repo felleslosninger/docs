@@ -7,11 +7,11 @@ product: general
 
 Vi setter pris på at du ønsker å bidra inn i denne dokumentasjonen, og ønsker alle typer tilbakemeldinger velkommen (feilmelding, ny funksjonalitet, korrigering, tilleggsdokumentasjon etc.).
 
-Under finner du inforomasjon om hvordan du kan bidra.
+Under finner du informasjon om hvordan du kan bidra.
 
 ## Rapportere om feil eller be om ny funksjonalitet
 
-Vi benytter GitHub issue tracker for å rapportere feil eller ønsker om ny funksjonalitet.
+Vi benytter [GitHub issue tracker](https://github.com/difi/felleslosninger/issues) for å rapportere feil eller ønsker om ny funksjonalitet.
 
 Før du legger inn en sak, er det fint om du sjekker raskt gjennom de saker som [allerede er rapportert](https://github.com/difi/felleslosninger/issues),for å sikre at ikke noen andre allerede har rapportert det samme.
 
@@ -31,7 +31,7 @@ Rask redigering gjør det enklere å rapportere og fikse små feil og utelatelse
 
 5. Du blir da sendt til en ny side, og her velger du *Create pull request*, legger inn tittel og beskrivelse for pull forespørselen og trykker på *Create pull request* en gang til.
 
-6. De foreslåtte endringene dine vil nå bli behandlet av Difi, og det kan eventuelt komme tilbakemeldinger eller kommentarer som du bør følge opp.
+6. De foreslåtte endringene dine vil nå bli behandlet av Digdir, og det kan eventuelt komme tilbakemeldinger eller kommentarer som du bør følge opp.
 
 
 ## Større endringer ved å lage en forgrening

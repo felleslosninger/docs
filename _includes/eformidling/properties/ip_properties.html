@@ -1,0 +1,85 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="properties_css.css">
+</head>
+<body>
+<table style="width:100%">
+  <tr>
+	<th>Valgfrie properties</th>
+	 <th>Eksempel verdier</th>
+	 <th>Beskrivelse</th>
+  </tr>
+  <tr>
+	<td>difi.ssl.enabled</td>
+	<td>true</td>
+	<td>Om en bruker SSL/TLS på proxy eller sak-arkivsystem og har eigen sertifikatkjede</td>
+  </tr>
+  <tr>
+	<td>difi.ssl.key-store-type</td>
+	<td>PKSC12</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.ssl.key-store</td>
+	<td>file:ssl.p12</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.ssl.key-store-password</td>
+	<td>password</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.ssl.key-alias</td>
+	<td>ssl</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>ifi.security.enable</td>
+	<td>true</td>
+	<td>Basic auth på rest-endepunkt. feks /conversations</td>
+  </tr>
+  <tr>
+	<td>difi.security.user.name</td>
+	<td>a</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.security.user.password</td>
+	<td>abc</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.datasource.url</td>
+	<td>jdbc:postgresql://localhost:5432/ip_db</td>
+	<td>URL til eigen database</td>
+  </tr>
+  <tr>
+	<td>difi.datasource.username</td>
+	<td>postgres</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.datasource.password</td>
+	<td>password1</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.activemq.broker-url</td>
+	<td>tcp://localhost:61616</td>
+	<td>Overstyre activemq for å benytte egen instans av activemq</td>
+  </tr>
+  <tr>
+	<td>difi.activemq.user</td>
+	<td>foo</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>difi.activemq.password</td>
+	<td>bar</td>
+	<td></td>
+  </tr>
+</table>
+
+ </body>
+</html>

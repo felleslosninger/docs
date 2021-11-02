@@ -14,7 +14,7 @@ For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følg
 
 ## Dette gjør du før installasjon av Integrasjonspunktet
 
-+ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](https://difi.github.io/felleslosninger/eformidling_selfhelp.html#justere-tilgjengelig-minne)
++ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](eformidling_selfhelp.html#justere-tilgjengelig-minne)
 + Nødvendige brannmuråpninger
 + Java 8 X med JCE installert (JDK)
 + Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
@@ -31,7 +31,7 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 
 > * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
 
-Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Brannmuråpninger i testmiljø
 
@@ -39,33 +39,36 @@ Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp
 <!--
 En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
 -->
-Vi anbefaler å åpne mot DNS da dette vil gjøre at eventuelle endringer i ip-adresser blir plukket opp automatisk.
 
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
-| **qa-meldingsutveksling.difi.no** | **51.144.60.111:443**	 | - | **Alle** |
+| **qa-meldingsutveksling.difi.no** | **51.144.60.111:443** <br/> **51.105.206.80:443 f.o.m 18.08.2020**	 | - | **Alle** |
 | **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255:443**  | - | **Alle** |
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
+| ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
+| tt02.altinn.no | 89.250.123.40:443 | - | DPV |
+| qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
 
 
 ### Brannmuråpninger i produksjon
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
-| **meldingsutveksling.difi.no** | **51.144.60.163:443**	 | - | **Alle** |
+| **meldingsutveksling.difi.no** | **51.144.60.163:443** | - | **Alle** |
 | **stream-meldingsutveksling.difi.no** | 	**40.74.39.254:443**  | - | **Alle** |
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
+| maskinporten.no | 146.192.252.50:443 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
-| move-dpe.servicebus.windows.net	 | 52.169.10.235:5671 | - | DPE | 
+| move-dpe-prod.servicebus.windows.net	 | 52.169.10.235:443 | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
-| meldingsformidler.digipost.no | 146.192.168.126:443 | -  | DPI |
-| meldingsformidler.digipost.no | 146.192.168.80:443 | -  | DPI |
-| svarut.ks.no | 193.161.171.187:443 | - | DPF |
+| meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
+| svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
 
+> **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
 
 ---
 
@@ -86,6 +89,8 @@ Integrasjonspunktet krever minimum versjon 1.8.0
 Digitaliseringsdirektoratet har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. 
 
 Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din platform inne på lenken.
+
+> **NB!** 32-bits Java kan skape utfordringer for minnebruken til integrasjonspunktet, så 64-bits er å foretrekke!
 
 ### Oracle Java 8 (lisensbasert)
 Dersom Java ikke er installert eller versjonen er for gammel, kan ny versjon lastes ned [her](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) og installeres. Denne vil integrasjonspunktet støtte.
@@ -108,13 +113,13 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 **Å gjøre:**
 1. Anskaffe virksomhetssertifikat
 2. Legge sertifikat i Java Key Store.
-3. Sende sertifikat tilDigitaliseringsdirektoratet <a href="mailto:idporten@difi.no">idporten@difi.no</a>
+3. Sende public delen av sertifikatet i .cer eller .crt format til Digitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 **Hvordan?**
 
-[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
+[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](eformidling_virksomhetssertifikat.html)
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
-Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](http://www.buypass.no/bedrift/produkter-og-tjenester/buypass-virksomhetssertifikat)
+Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
 
 ***

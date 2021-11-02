@@ -1,50 +1,54 @@
 ---
 title: Oppslagstjenesten REST
-description: OAuth2 beskytta REST-API for Kontakt- og Reservasjonsregisteret
+description: REST-API for Kontakt- og Reservasjonsregisteret
 permalink: oppslagstjenesten_rest.html
-sidebar: main_sidebar
+sidebar: krr_sidebar
 product: KRR
 ---
 
 ## Introduksjon
 
-Kontaktregisteret sin oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API. Dette gjør det enkelt å implementere integrasjoner mot registeret.
+Kontaktregisteret sin oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API, sikret med Maskinporten. Dette gjør det enkelt å implementere integrasjoner mot registeret.
 
 ## Bruk av Oauth2
 
-Tilgangskontrollen til api'et benytter seg av flyten som er beskrevet i [Server til server autorisasjon med Oauth2](oidc_auth_server-to-server-oauth2.html)
+Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon](maskinporten_auth_server-to-server-oauth2.html)
+
+Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke Maskinporten.
 
 Merk at funksjonalitet for lokal kopi (endringsmeldinger) ikke er støttet over Oauth2-grensenittet.
 
 
 ### Tilgjenglige scopes
 
-Det er 1-1 mapping mellom OAuth2 scopes og informasjonsbehov-elementet brukt i SOAP-API’et. Se [begrepskatalogen for Kontaktregisteret](https://begrep.difi.no/Oppslagstjenesten/).
+API-responsen er avhengig av hvilke scope som er forespurt i tokenet.   Tilgjengelige scopes er:
 
 | scope | beskrivelse |
 |-|-|
-| global/kontaktinformasjon.read | Returnerer epostadresse og mobilnummer + tidspunkt for sist oppdatering |
-| global/varslingsstatus.read | Returnerer status for om kontaktinfomasjonen kan brukast for varsling iht. eForvaltningsforskrifta sin §32 |
-| global/sikkerdigitalpost.read | Returnerer adresse for digital post til innbygger |
-| global/sertifikat.read | Returnerer brukerens krypteringssertifikat ved sending av digital post |
-| global/spraak.read | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |
+| krr:global/kontaktinformasjon.read | Returnerer epostadresse og mobilnummer + tidspunkt for sist oppdatering |
+| | Returnerer status for om kontaktinfomasjonen kan brukast for varsling iht. eForvaltningsforskriften  §32 |
+| | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |
+| krr:global/digitalpost.read | Returnerer adresse for digital post til innbygger |
+| | Returnerer brukerens krypteringssertifikat ved sending av digital post |
 
 Det vil alltid returneres reservasjonsstatus for brukeren.
+
+Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 ## Endepunkt
 
 Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...1000 personer:
 
-OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
+OpenAPI-dokumentasjon mangler p.t. for det nye endepunktet.  Inntil videre må du se på gammel doc her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
 
 |miljø|url|
 |-|-|
-|VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
-|VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
-|YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer)|
-|PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+|VER1|[https://krr-ver1.digdir.no/rest/v1/personer](https://krr-ver1.digdir.no/rest/v1/personer)|
+|VER2|[https://krr-ver2.digdir.no/rest/v1/personer](https://krr-ver2.digdir.no/rest/v1/personer)|
+|YT2 |[https://krr-yt2.digdir.no/rest/v1/personer](https://krr-yt2.digdir.no/rest/v1/personer)|
+|PROD|[https://krr.digdir.no/rest/v1/personer](https://krr.digdir.no/rest/v1/personer)|
 
-**Merk:** Man vil oppnå vesentlig bedre ytelse (målt i personer/sekund) ved å slå opp 1000 personer i gangen kontra tusen enkelt-oppslag.
+**Merk:** Man vil oppnå vesentlig bedre ytelse (målt i personer/sekund) ved å slå opp 1000 personer 1 gang kontra 1000 enkelt-oppslag.
 
 Følgende header-parametere må brukes på request:
 
@@ -86,3 +90,35 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
    ]
 }
 ```
+
+
+## Gammel dokumentasjon
+
+Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "innebygd" i ID-porten OIDC. Som en følge av at Maskinporten ble skilt ut som egen, selvstendig tjeneste (egen Oauth2 issuer) høsten 2019, ble også Oppslagstjensten endret til å være sikret av Maskinporten. Samtidig ble det gjort noen forenklinger:
+- Konsolidert antall scopes fra 5 til 2 basert på analyse av faktisk bruk
+- Forenklet URL til APIet
+
+
+
+ Gammel API-dok er her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
+
+Gamle URLer:
+
+ |miljø|url|
+ |-|-|
+ |VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+ |VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+ |YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+ |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+
+
+
+### Migrering
+
+Dersom du skal migrere fra gammelt OIDC-beskytta endepunkt til nytt Maskinporten-sikra endepunkt, må følgende gjøres:
+
+1. Oppdater klient-registrering til å bruke nye scopes med `krr:`-prefix
+2. Klienten må endres til å hente tokens fra Maskinporten isteden for ID-porten OIDC
+  - typisk ved å oppdatere url for autorisasjonsserverens oauth2 metadata-endepunkt til `https://maskinporten.no/.well-known/oauth-authorization-server`
+  - evt. ved å konfigurere nytt token-endepunkt direkte (`https://maskinporten.no/token`) og oppdatere trust mot Maskinporten sitt signeringssertifikat.
+3. Endre API-kall til å gå mot nytt endepunkt

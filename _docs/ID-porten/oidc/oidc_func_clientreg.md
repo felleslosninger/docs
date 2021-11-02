@@ -28,24 +28,29 @@ Vi har 3 måter du kan få registrert din integrasjon:
 
 - Selvbetjening, ved å logge inn på [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no/#/).
 - Selvbetjening, ved å bruke vårt [selvbetjenings-API](oidc_api_admin.html)
-- Manuelt, ved å sende epost til idporten@difi.no  (kun for ID-porten og Kontaktregisteret)
+- Manuelt, ved å sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>  (kun for ID-porten og Kontaktregisteret)
 
 ## Integrasjonstyper
 
-Du må registrere en klientype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
+Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
 
 Det som støttes foreløpig er:
 
 | Integrasjonstype |Beskrivelse|
 |-|-|
-|idporten   | krever sluttburker autentisering   |
+|idporten   | Ordinær innlogging gjennom ID-porten  |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
 |krr   | Kontaktregisteret   |
 |eformidling    | for eFormidling  |
-|api_klient    | API-klient innlogget bruker  |
+|api_klient    | For tjenester som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
+
+Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 
 Du vil ikke være i stand til å legge på et scope på klienten din som er i konflikt med klienten's integrasjonstype. F.eks du kan ikke legge til et scope som er begrenset til "maskinporten" på en ID-porten klient, og vice versa.
 
+## Leverandører
+
+Dersom du er leverandør, er det noen av klient-egenskapene nedenfor som du må passe på å få registrert rett.  Se [egen leverandør-informasjon](oidc_api_admin_leverand%C3%B8r.html).
 
 ## Oauth2-egenskaper
 
@@ -87,45 +92,79 @@ ID-porten støtter følgende grants:
 |urn:ietf:params:oauth:grant-type:jwt-bearer|En signert JWT ihht [RFC7523](https://tools.ietf.org/html/rfc7523#section-2.1). Kan enten bruke virksomhetssertifikat i `x5c` eller `kid` til forhåndsregistrert asymmetrisk nøkkel.|  
 |jwt_bearer_token   | kortform av urn:ietf:params:oauth:grant-type:jwt-bearer    |
 
+Kun klienter som er registrert med `refresh_token` som tillatt grant-type, vil få utdelt refresh_token ved bruk av autorisasjonskode-grant.   
+
 Maskinporten-klienter skal alltid bruke `jwt_bearer_token`.
 
 Vi støtter ikke implicit, password eller client-credentials grant.
 
 ### Klient-typer
 
-Valg av klient-type er en sikkerhetsvurdering kunden skal utføre.  Vi kategoriserer klienter ved hvordan de autentiserer og identifiserer seg opp mot ID-porten. Dette er i sin tur avhengig av kjøretidsmiljøet til klienten. Vi legger til grunn  på definisjonene fra  [Oauth2 kap 2.1](https://tools.ietf.org/html/rfc6749#section-2.1).
+Klient-type (`application_type`) forteller hvilke type kjøretidsmiljø klienten kjører under.  [Oauth2 kap 2.1](https://tools.ietf.org/html/rfc6749#section-2.1) lister opp hvilke valg som finnes.  Valg av klient-type er en sikkerhetsvurdering kunden skal utføre.
 
 
-|Klient-type|Oauth2-begrep|tilatt klientautentisering|Beskrivelse|
+|Klient-type|Oauth2 'application_type'|tilatt klientautentisering|Beskrivelse|
 |-|-|-|-|
-| Standard-klient   | Web app   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
-| Single-page applikasjon (SPA)   | Brower-based app  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
-| Mobil-app  | Native app | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
-
-Merk at klient-type ikke blir lagret som del av klient-registreringen, men utledet basert på `token_endpoint_auth_method` og `grant_types`.
+| Standard-klient   | Web   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
+| [Single-page applikasjon (SPA)](oidc_auth_spa.html)   | browser  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
+| [Mobil-app](oidc_auth_app.html)  | native  | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
 
 
 
+### Scopes
 
+Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for scopes](oidc_protocol_scope.html) for fullstendige detaljer.
 
 
 ## Oversikt over kombinasjonar
 
 Tabellen under oppsummerer sammenhengen mellom de ulike egenskapene:
 
-
-| Integrasjon | Klient-type |  tillatte `token_endpoint_auth_method` | tillatte `grant_types` | scope | Kan legge til scopes? |
+| Integrasjonstype | Klient-type 'application_type' |  tillatte 'token_endpoint_auth_method' | tillatte 'grant_types' | Standard-scope | Kan legge til scopes? |
 |-|-|-|-|-|-|
-|ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | nei |
-||  browser |  none     | authorization_code   |openid profile | nei |
-||  native |   none     | authorization_code   |openid profile | nei |
+|ID-porten| web |  client_secret_basic client_secret_post private_key_jwt      | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
+||  browser |  none     | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
+||  native |   none     | authorization_code refresh_token  |openid profile | kun eidas, no_pid |
 |API-klient innlogget bruker  |samme som for idporten ||| | ja |
 |Maskinporten| web |private_key_jwt  | jwt_bearer_token | |ja|
-|Kontaktregisteret| web | private_key_jwt  | jwt_bearer_token |global/kontaktinformasjon.read global/spraak.read global/sikkerdigitalpost.read global/sertifikat.read global/varslingsstatus.read |nei|
+|Kontaktregisteret| web | private_key_jwt  | jwt_bearer_token |krr:global/kontaktinformasjon.read krr:global/digitalpost.read |nei|
 
 
+## Bruk av asymmetrisk nøkkel
 
+Man kan sende inn en [JWKS-struktur (RFC7517)](https://tools.ietf.org/html/rfc7517), dvs. en array av flere (inntil 5) JWK-representasjoner.
 
+Er modellert som egen ressurs under klient `/clients/{client_id}/jwks`
+
+Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
+
+Kun RS256 støttes som algoritme.
+
+Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
+
+Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
+
+Eksempel på å legge inn en nøkkel:
+```
+POST /clients/{client_id}/jwks
+
+{
+  [
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "jbi_min_noekkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
+}
+```
+
+`kid` velges av kunde selv, og må være unik innenfor alle ID-porten/Maskinportens kunder.
+
+Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
 
 Ved bruk av selvbetjenings-API, må kunden passe på å sende konfigurasjoner som er kompatible med tabellen over, ellers risikerer man å ende opp med en ubrukelig klient.

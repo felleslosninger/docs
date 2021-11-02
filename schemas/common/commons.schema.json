@@ -1,0 +1,20 @@
+{
+    "$id": "https://docs.digdir.no/schemas/common/commons.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Standard business document header (SBD) brukt av Digdir",
+    "definitions": {
+        "maskinportentoken": {
+            "type": "string",
+            "$id": "#/definitions/maskinportentoken",
+            "title": "maskinportentoken",
+            "description": "TODO"
+        },
+        "organisasjonsnummer": {
+            "type": "string",
+            "$id": "#/definitions/organisasjonsnummer",
+            "title": "organisasjonsnummer",
+            "description": "Norsk organisasjonsnummer, støtter med og uten ICD",
+            "pattern": "^([0-9]{9})$"
+        }
+    }
+}

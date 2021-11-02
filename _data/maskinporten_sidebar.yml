@@ -2,13 +2,18 @@ sidebarTitle: Maskinporten
 
 
 folders:
+
 - title: Maskinporten
   folderitems:
 
       - title: Overordnet
         jurl: /maskinporten_overordnet.html
 
-- title: Bruksområde
+      - title: Virksomhetssertifikat
+        jurl: /maskinporten_virksomhetssertifikat.html
+
+
+- title: Bruksområde og guide
   folderitems:
 
       - title: Hvordan virker Maskinporten?
@@ -21,11 +26,22 @@ folders:
         jurl: /maskinporten_guide_apikonsument.html
 
 
+- title: Selvbetjening
+  folderitems:
+
+      - title: Selvbetjening via Web
+        jurl: /maskinporten_sjolvbetjening_web.html
+
+      - title: Selvbetjening via API
+        jurl: /maskinporten_sjolvbetjening_api.html
+
+
 - title: Grensesnittspesifikasjon
   folderitems:
 
       - title: JWT grants
         jurl: /maskinporten_protocol_jwtgrant.html
+
       - title: /token-endepunkt
         jurl: /maskinporten_protocol_token.html
 
@@ -38,12 +54,24 @@ folders:
       - title: Klientregistrering
         jurl: /oidc_func_clientreg.html
 
+      - title: Delegering
+        jurl: /maskinporten_func_delegering.html
+
+      - title: Audience-begrensning
+        jurl: /maskinporten_func_audience_restricted_tokens.html
+
 
 - title: Spørsmål og svar
   folderitems:
 
      - title: Using Postman towards Maskinporten
        jurl: /oidc_sample_jwtgrant_postman.html
+
+- title: Feilsøking
+  folderitems:
+
+  - title: Feilsøking i Maskinporten
+    jurl: /maskinporten_feilsoking.html
 
 ###########################
 
@@ -55,7 +83,10 @@ related_resources_list:
   jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
-  jurl: https://samarbeid.difi.no/felleslosninger
+  jurl: https://samarbeid.digdir.no
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

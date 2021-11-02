@@ -2,89 +2,103 @@
 <div class="container">
 
 
-        <div class="row row-offcanvas row-offcanvas-left">
+    <div class="row row-offcanvas row-offcanvas-left">
 
-            <!-- sidebar -->
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <!-- sidebar -->
+        <div class="col-lg-3 sidebar-offcanvas" role="navigation">
 
+            <div class="sidebar">
                 {% include sidebar.html %}
-
             </div>
 
-            <!-- main area -->
-            <div class="col-xs-12 col-sm-9 main">
-              <div class="subtitle">
-                {% include breadcrumb.html %}
+        </div>
+
+        <!-- main area -->
+        <div class="col-md-12 col-lg-9 main">
+            <div class="content">
+                <div class="subtitle">
+                    {% include breadcrumb.html %}
                 </div>
 
-                      {% if page.simple_map == true %}
+                {% if page.simple_map == true %}
 
-                      <script>
-                          $(document).ready ( function(){
-                              $('.box{{page.box_number}}').addClass('active');
-                          });
-                      </script>
+                <script>
+                    $(document).ready(function () {
+                        $('.box{{page.box_number}}').addClass('active');
+                    });
+                </script>
 
-                      {% include {{page.map_name}} %}
+                {% include {{page.map_name}} %}
 
 
-                      {% endif %}
+                {% endif %}
 
-                    <h1>{{page.title}}</h1>
+                <h1>{{page.title}}</h1>
 
                 {% if site.github_button_location_below_title == true %}
                 {% include github_button.html %}
                 {% endif %}
 
                 {% if page.summary %}
-                 <div class="summary">{{page.summary}}</div>
+                <div class="summary">{{page.summary}}</div>
                 {% endif %}
 
 
-                  {% if site.github_button_location_page_bottom == true %}
-                  {% include github_button.html %}
-                  {% endif %}
+                {% if site.github_button_location_page_bottom == true %}
+                {% include github_button.html %}
+                {% endif %}
 
-                    {% include disqus.html %}
+                {% include disqus.html %}
 
-                    <div class="card card-1" onclick="location.href='https://difi.github.io/felleslosninger/sdp_index_innledning.html';" >
-                      <a class="card-text" >Digital postkasse til innbyggere</a>
+                <div class="cards">
+                    <div class="cards__item cards__item--1"
+                         onclick="location.href='https://difi.github.io/felleslosninger/idporten_overordnet.html';">
+                        <a class="cards__text">ID-porten</a>
                     </div>
-                    <div class="card card-2" onclick="location.href='https://difi.github.io/felleslosninger/eformidling_download_ip.html';" >
-                      <a class="card-text" >eFormidling</a>
+                    <div class="cards__item cards__item--2"
+                         onclick="location.href='https://difi.github.io/felleslosninger/eformidling_download_ip.html';">
+                        <a class="cards__text">eFormidling</a>
                     </div>
-                    <div class="card card-3" onclick="location.href='https://difi.github.io/felleslosninger/einnsyn_forutsetninger.html';" >
-                      <a class="card-text" >eInnsyn</a>
+                    <div class="cards__item cards__item--3"
+                         onclick="location.href='https://difi.github.io/felleslosninger/maskinporten_overordnet.html';">
+                        <a class="cards__text">Maskinporten</a>
                     </div>
-                    <div class="card card-4" onclick="location.href='https://difi.github.io/felleslosninger/elma_user_manual.html';" >
-                      <a class="card-text" >ELMA</a>
+                    <div class="cards__item cards__item--4"
+                         onclick="location.href='https://difi.github.io/felleslosninger/esign_komigang.html';">
+                        <a class="cards__text">eSignering</a>
                     </div>
-                    <div class="card card-5" onclick="location.href='https://difi.github.io/felleslosninger/esign_komigang.html';" >
-                      <a class="card-text" >eSignering</a>
+                    <div class="cards__item cards__item--5"
+                         onclick="location.href='https://difi.github.io/felleslosninger/oppslagstjenesten_rest.html';">
+                        <a class="cards__text">Kontakt- og reservasjonsregisteret</a>
                     </div>
-                    <div class="card card-6" onclick="location.href='https://difi.github.io/felleslosninger/oidc_guide_idporten.html';" >
-                      <a class="card-text" >ID-porten</a>
+                    <div class="cards__item cards__item--6"
+                         onclick="location.href='https://difi.github.io/felleslosninger/einnsyn_forutsetninger.html';">
+                        <a class="cards__text">eInnsyn</a>
                     </div>
-                    <div class="card card-7" onclick="location.href='https://difi.github.io/felleslosninger/oppslagstjenesten_rest.html';" >
-                      <a class="card-text" >Kontakt- og reservasjonsregisteret</a>
+                    <div class="cards__item cards__item--7"
+                         onclick="location.href='https://difi.github.io/felleslosninger/sdp_index_innledning.html';">
+                        <a class="cards__text">Digital postkasse til innbyggere</a>
                     </div>
-                    <div class="card card-8" onclick="location.href='https://difi.github.io/felleslosninger/maskinporten_overordnet.html';" >
-                      <a class="card-text" >Maskinporten</a>
+                    <div class="cards__item cards__item--8"
+                         onclick="location.href='https://difi.github.io/felleslosninger/elma_user_manual.html';">
+                        <a class="cards__text">ELMA</a>
                     </div>
-                    <div></br>{{content}}</div>
-                </div>  </div>
+                </div>
+                <div></br>{{content}}</div>
+            </div>
+        </div>
+    </div>
 
 
+    <!--Här kan man lägga på flera knappar om man önskar... samt editera LandingCard.css-->
 
-                    <!--Här kan man lägga på flera knappar om man önskar... samt editera LandingCard.css-->
 
+</div><!--/.container-->
 
-        </div><!--/.container-->
+</div><!--/.page-container-->
+{% include footer.html %}
 
-    </div><!--/.page-container-->
-    {% include footer.html %}
-
-    {% include google_analytics.html %}
+{% include google_analytics.html %}
 
 </body>
 

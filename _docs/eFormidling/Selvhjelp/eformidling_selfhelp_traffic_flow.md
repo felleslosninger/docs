@@ -11,11 +11,11 @@ sidebar: eformidling_install_sidebar
 
 
 ### Digital post til offentlige virksomheter (DPO)
-![](/felleslosninger/images/eformidling/flyt_dpo.jpg)
+![](/images/eformidling/flyt_dpo.jpg)
 
 Utgående/innkommende: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Denne meldingen blir lastet opp til Altinn's meldingsformidler og sendt videre til mottaker sitt integrasjonspunkt og mottas i sak-arkivsystemet. Appreceipt blir levert til avsender når mottakende integrasjonspunkt laster ned meldingen.
 
-Integrasjonspunktet velger DPO som avsendermetode om både avsender og mottaker har fått tilganger til å bruke DPO ( Åpnet av Difi). Om mottaker ikke har konfigurert sitt integrasjonspunkt for mottak av DPO vil denne meldingen ikke komme frem før dette er gjort. Derfor er det viktig at virksomheter som skal bruke eFormidling sørger for å konfigurere integrasjonspunktet sitt riktig før de berDigitaliseringsdirektoratet om å åpne tilgang til DPO. 
+Integrasjonspunktet velger DPO som avsendermetode om både avsender og mottaker har fått tilganger til å bruke DPO ( Åpnet av Digitaliseringsdirektoratet). Om mottaker ikke har konfigurert sitt integrasjonspunkt for mottak av DPO vil denne meldingen ikke komme frem før dette er gjort. Derfor er det viktig at virksomheter som skal bruke eFormidling sørger for å konfigurere integrasjonspunktet sitt riktig før de berDigitaliseringsdirektoratet om å åpne tilgang til DPO. 
 
 Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mottaker en error appreceipt tilbake. Viss avsender ikke får leveringskvittering som avslutter polling innen satt timeout(24t), får meldingen feilstatus i statusgrensesnittet. 
 
@@ -26,7 +26,7 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
  
   | Status | Logget av Avsender/mottaker | Kommentar |
   | :--- | :--- | :--- |  
-  | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPO-melding |
+  | OPPRETTET| Avsender | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPO-melding |
   | SENDT| Avsender | Integrasjonspunkt har sendt forsendelsen til meldingsformidler | 
   | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 
@@ -41,7 +41,7 @@ Dersom en DPO-melding havner i Dead letter queue (DLQ) hos mottaker, sender mott
 
 
 ### Digital post KS FIKS SvarInn/SvarUt (DPF)
-![](/felleslosninger/images/eformidling/flyt_dpf.jpg)
+![](/images/eformidling/flyt_dpf.jpg)
 
 Utgående: Melding blir initiert i sak-arkivsystemet og sendt til avsenders integrasjonspunkt. Meldingen blir sendt til KS FIKS sin meldingsformidler SvarInn, for så å bli ekspedert til mottaker sin SvarInn innboks. Appreceipt blir levert til avsender når SvarInn mottar forsendelsen. Tjenesten har leveringsgaranti, ref bruksvilkår hos KS.
 
@@ -87,7 +87,7 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
 ---
 
 ### Digital post til virksomheter (DPV)
-![](/felleslosninger/images/eformidling/flyt_dpv.jpg)
+![](/images/eformidling/flyt_dpv.jpg)
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til integrasjonspunktet. Meldinga vil så bli levert til Altinn sin DPV tjeneste. Appreceipt blir levert til avsender etter at Integrasjonspunktet får "ok" på forsendelserequesten mot Altinn. Leveringskvittering blir levert tilbake til avsender. Meldingen kan hentes i virksomhetens innboks i Altinn. Personen som henter meldinga må ha riktige rettigheter i Altinn for å kunne lese den (feks. sak-arkiv rolle)
 
@@ -104,15 +104,15 @@ Om forsendelsen feiler blir det levert error appreceipt tilbake til avsender.
  | Status | Kommentar| 
  | :--- | :--- |
  | OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPV-melding |
- | SENDT | Integrasjonspunkt har sendt forsendelsen til Altinn's DPV tjeneste | 
- | LEVERT | Når DPV-melding er levert til Altinn sin DPV tjeneste blir en appreceipt sendt tilbake og status i sak-arkivsystem blir oppdatert | 
+ | SENDT | Integrasjonspunkt har sendt forsendelsen til Altinn's DPV tjeneste og appreceipt blir levert tilbake til sak/arkiv | 
+ | LEVERT | Når DPV-melding er levert til Altinn sin DPV tjeneste og status blit oppdatert | 
  | LEST | Når mottaker har åpnet og lest meldingen i Altinn, blir status oppdatert til LEST| 
  
 ---
 
 
 ### Digital post til innbygger (DPI)
-![](/felleslosninger/images/eformidling/flyt_dpi.jpg)
+![](/images/eformidling/flyt_dpi.jpg)
 
 Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldingsformidler. Der vil det bli formidlet til innbygger sin digitale postkasse, eBoks eller Digipost. Om innbygger ikke har en digital postkasse skal brevet bli sendt til print. Alternativt til innboksen i Altinn** 
 
@@ -120,7 +120,7 @@ Utgående: Vil bli initiert i sak-arkivsystemet og sendt til Posten sin meldings
 
 Integrasjonspunktet adresserer forsendelsen ved å slå opp mottakeren i Kontakt- og Reservasjonsregisteret og velger forsendelseskanal basert på reservasjonsstatus.
 
-DPI via eFormidling bruker NextMove grensesnittet. Det betyr at avsendersystemet ditt må støtte dette. DPI støtter også printtjenesten til Posten.
+DPI via eFormidling bruker eFormidling 2.0 grensesnittet. Det betyr at avsendersystemet ditt må støtte dette. DPI støtter også printtjenesten til Posten.
 
 ### DPI statuser
 
@@ -132,6 +132,7 @@ Logg ved status LEVERT kan være feks:  *Kvittering på at digital post er tilgj
   | OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
   | SENDT | Forsendelse er sendt til meldingsformidler | 
   | LEVERT | Forsendelse levert til innbyggers prefererte kanal** | 
+  | LEST | Innbygger har åpnet forsendelse i sin postkasse innboks |
 
 ** _innbyggers prefererte kanal er enten digital postkasse eller fysisk print. Enkelte innbyggere kan også få brev sendt til  Altinn dersom avsender har dette som opsjon (viser til punkt 1.7 i [digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2623277/)). Dette er ikke et innbyggervalg._
 
@@ -152,7 +153,7 @@ Ved feil vil meldingen få en egen status FEIL som betyr at denne ikke kan bli l
 
 Når sak-arkivsystem mottar meldinger fra de forskjellige kanalene responderer de litt ulikt. Appreceipts blir sendt ut og statuser blir oppdatert.
 
-#### ePhorte mottar 
+#### Elements/ephorte mottar
 
 DPO: Applikasjonskvittering sendes når melding har kommet inn til mottakers sak-arkivsystem. Dette er per i dag en manuell operasjon og det betyr at det kan ta ekstra tid før avsender blir oppdatert. Det er en utviklingsoppgave å gjøre dette automatisk.
 
@@ -161,6 +162,14 @@ DPF: Når mottaker tar imot posten via SvarInn, sendes ok kvittering når posten
 DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.  
 
 DPI: har ikke implementert lesebekreftelse. Opp til innbygger å gi lesebekreftelse. Gir difor lite meining å implementere. 
+
+#### ESA mottar
+
+DPO: Applikasjonskvittering sendes når melding har kommet inn til mottakers sak-arkivsystem.
+
+DPF: Forutsettes mottatt via DPO.
+
+Alle tjenester: Leveringsbekreftelser mottatt via integrasjonspunktet håndteres umiddelbart.
 
 #### P360 mottar 
 
@@ -180,7 +189,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
 
 ### eInnsyn (DPE)
 
-![](/felleslosninger/images/eformidling/flyt_dpe.png)
+![](/images/eformidling/flyt_dpe.png)
 
 
 1. Arkivar trigger eksport av journalpost.
@@ -207,7 +216,7 @@ DPV: Mottar leveringsbekreftelse umiddelbart etter leveranse til Altinn DPV.
  
   | Status | Logget av Avsender/mottaker | Kommentar |
   | :--- | :--- | :--- |  
-  | OPPRETTET| Avsender |  Integrasjonspunktet mottar BEST/EDU- eller NextMove-melding fra sak-arkivsystem og oppretter en DPE-melding. |
+  | OPPRETTET| Avsender |  Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPE-melding. |
   | SENDT| Avsender| Integrasjonspunkt har sendt forsendelsen til meldingsformidler. | 
   | OPPRETTET | Mottaker | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg. | 
   | INNKOMMENDE_MOTTATT | Mottaker| Integrasjonspunkt hos mottaker har mottatt melding. | 

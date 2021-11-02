@@ -13,12 +13,12 @@ Derfor er prisen regnet ut i fra det innhold som postkasseleverandørene
 er forpliktet til å langtidslagre.
 
 Les mer om hva som langtidslagres hos postkasseleverandørene i seksjonen
-om [Dokumentpakken](https://difi.github.io/felleslosninger/sdp_langtidslagring.html).
+om [Dokumentpakken](sdp_langtidslagring.html).
 
 Prisen på en forsendelse regnes ut i fra størrelsen på Dokumentpakkens
 innhold, før det det pakkes ned.
 
 ## Priser
 
-Se [samarbeidsportalen](https://samarbeid.difi.no) for informasjon
+Se [Samarbeidsportalen](https://samarbeid.digdir.no) for informasjon
 oversikt over oppdaterte priser.

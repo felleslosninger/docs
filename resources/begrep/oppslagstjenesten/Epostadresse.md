@@ -6,10 +6,10 @@ sidebar: begrep_sidebar
 
 | --- | --- |
 |Term | Epostadresse |
-| Definisjon  | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret |
+| Definisjon  | Informasjon om Epostadresse tilhørende en person som er registrert i kontakt og reservasjonsregisteret |
 | Datatype  | complexType |
 | Kilde | DIFI |
-| Kommentar | Informasjon om en Person sitt Epostadresse registrert i kontakt og reservasjonsregisteret. Epost-addressen blir validert vha. biblioteket [ApacheCommons](http://commons.apache.org/proper/commons-validator/) |
+| Kommentar | Informasjon om Epostadresse tilhørende en person som er registrert i kontakt og reservasjonsregisteret. Epost-addressen blir validert vha. biblioteket [ApacheCommons](http://commons.apache.org/proper/commons-validator/) |
 
 #### Attributer
 

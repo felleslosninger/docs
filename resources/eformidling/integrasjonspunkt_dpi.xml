@@ -1,0 +1,15 @@
+<service>
+<id>integrasjonspunkt</id>
+<name>integrasjonspunkt for eformidling (DPI)</name>
+<description>Oppsett for produksjonsmiljo</description>
+<argument>-jar</argument>
+<argument>-Dspring.profiles.active=production</argument>
+<argument>integrasjonspunkt-2.2.3.jar</argument>
+<argument>-Xmx2048m</argument>
+<logpath>%BASE%/integrasjonspunkt-logs</logpath>
+<log mode="roll-by-size">
+<sizeThreshold>10240</sizeThreshold>
+<keepFiles>8</keepFiles>
+</log>
+<executable>java</executable>
+</service>

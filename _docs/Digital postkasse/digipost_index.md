@@ -10,5 +10,5 @@ For å gjøre det enkelt for forvaltningen å kommunisere digitalt, harDigitalis
 
 Løsningen er egnet for å sende taushetsbelagt og annen beskyttelsesverdig informasjon. Digital post som sendes gjennom denne løsningen vil være kryptert frem til postkassen, og innbygger logger seg inn via ID-porten. Utskrift og forsendelse er en del av tjenesten, slik at virksomhetene kan ekspedere både digital post og papirpost til innbyggerne i samme kanal.
 
-Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere)
+Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [Samarbeidsportalen](https://samarbeid.digdir.no)
 

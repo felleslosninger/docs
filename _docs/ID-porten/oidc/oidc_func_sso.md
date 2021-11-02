@@ -1,7 +1,7 @@
 ---
 title: SSO og SLO
 description: SSO og SLO
-summary: "Single Signon (SSO) og Single Logout er støttet ved bruk av OIDC."
+summary: "Single Signon (SSO) og Single Logout (SLO) er støttet ved bruk av OIDC."
 permalink: oidc_func_sso.html
 sidebar: oidc
 product: ID-porten
@@ -15,25 +15,27 @@ ID-portens OIDC Provider er integrert med ID-porten SAML sin Circle-of-trust, og
 
 ## Single Signon (SSO)
 
-SSO-sesjonen blir styrt av ID-porten SAML. Dette medfører at innbyggere kan få SSO ikke bare mellom OIDC-baserte tjenester, men også mellom OIDC og SAML2-baserte tjenester. En annen følge av gjenbruken, er at sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+SSO-sesjonen blir styrt av ID-portens SAML-grensesnitt. Dette medfører at innbyggere kan få SSO ikke bare mellom OIDC-baserte tjenester, men også mellom OIDC og SAML2-baserte tjenester. En annen følge av gjenbruken, er at sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
 Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2)
 
+Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på ustedte tokens.
 
 ## Single Logout (SLO)
 
-SLO i OpenID Connect skiller seg noe fra SAML2, og er etterDigitaliseringsdirektoratets  vurdering en mer robust metode enn SAML2 sin kjede av redirects.
+SLO i OpenID Connect skiller seg noe fra SAML2, og er etter Digitaliseringsdirektoratets  vurdering en mer robust metode enn SAML2 sin kjede av redirects.
 
 Vi baserer oss på følgende spesifikasjoner:
 
 * [OIDC Session Management](http://openid.net/specs/openid-connect-session-1_0.html)
 * [OIDC Front Channel Logout](http://openid.net/specs/openid-connect-frontchannel-1_0.html)
 
-Merk at begge disse spesifikasjonene er per juli 2017 i draft status.
+Alle OIDC-tjenester må implementere støtte for følgende to utloggings-scenario:
 
-### Initiering av SLO (Session Management)
+### 1: Utlogging fra egen tjeneste
 
-Når brukeren vil logge ut fra din tjeneste, må du sende en redirect til ID-porten OIDC Provider endsession-endepunkt.  Adressen til endepunktet er definert i konfigurasjonsendepunktet.  ID-porten OIDC Provider sender en redirect til *post_logout_redirect_uri*, dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
+Når brukeren vil logge ut fra din tjeneste, må du sende en redirect til ID-portens endsession-endepunkt.  Adressen til endepunktet er definert i [well-known-endepunktet](oidc_func_wellknown.html).  
+
 
 Følgende attributer kan være del av requesten:
 
@@ -42,10 +44,6 @@ Følgende attributer kan være del av requesten:
 |```id_token_hint``` | anbefalt | Settes lik mottatt id-token.  Nødvendig for å kunne sende brukeren tilbake til tjenesteeiers *post_logout_redirect_uri* etter endt utlogging.|
 |```post_logout_redirect_uri```| anbefalt | Må være forhåndsregistrert på klient som id_token er utstedt til |
 |```state``` | valgfri | Verdi som klient kan bestemme selv.  ID-porten vil inkludere denne tilbake i redirecten tilbake til utloggings-urlen |
-
-Ang. validering av state
-* Regex for validering: ^[\x20-\x7E]+$ 
-* Godtar dermed gyldige ascii-tegn med hex-verdi mellom 20 og 7E, ref. f.eks. http://www.asciitable.com/
 
 
 Eksempel:
@@ -56,15 +54,25 @@ https://oidc-ver2.difi.no/idporten-oidc-provider/endsession
 	&state=fe93c125-4d69-4ee3-8ca5-299ac6e3e499
 ```
 
-### Motta informasjon om SLO (Front Channel Logout)
+Ved mottak av endsession-redirect, vil ID-porten  logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon, både OIDC og SAML. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
+
+
+Ang. validering av state
+* Regex for validering: ^[\x20-\x7E]+$
+* Godtar dermed gyldige ascii-tegn med hex-verdi mellom 20 og 7E, ref. f.eks. http://www.asciitable.com/
+
+
+### 2: Håndtere utlogging fra ID-porten
 
 Dersom brukeren logger ut fra en annen tjeneste, vil ID-porten initere utlogging fra alle tjenester som er konfigurert med støtte for Front Channel Logout.  
 
-ID-porten OIDC Provider samler opp informasjon om hvilke tjenester en bruker benytter infor en sesjon.  For OIDC-klienter som støtter Front Channel Logout, sender ID-porten OIDC Provider en GET-forespørsel til klientens *frontchannel_logout_uri*.  Parameterne *iss* og *sid* inkluderes for klienter som krever *frontchannel_logout_session_required*.  *sid* har samme verdi som claim *sid* i id_token.
+ID-porten OIDC Provider samler opp informasjon om hvilke tjenester en bruker benytter innenfor en sesjon.  For OIDC-klienter som støtter Front Channel Logout, sender ID-porten OIDC Provider en GET-forespørsel til klientens *frontchannel_logout_uri*.  Parameterne *iss* og *sid* inkluderes for klienter som krever *frontchannel_logout_session_required*.  *sid* har samme verdi som claim *sid* i id_token.  
 
-Klient som starter utlogging med kall på endsession-endepunktet, mottar ikke melding via front channel logout.
+Merk at siden browser-aktørene stadig strammer inn på tilgangen til 3djeparts-cookies, kan man ikke lenger forvente at egen cookie følger med i front_channel_logout-kallet. Bruk av `sid`er derfor eneste fremtidsrettede løsning for å finne igjen egen, lokale brukersesjon.
 
-Dersom en klient ikke er konfigurert med Front Channel Logout, vil klienten ikke motta utloggingsforespørsel fra ID-porten dersom brukeren logger ut fra en annen tjeneste i circle-of-trust.
+Klient som starter utlogging med kall på endsession-endepunktet, mottar ikke også melding via front channel logout.
+
+Dersom en klient ikke er konfigurert med Front Channel Logout, vil klienten ikke motta utloggingsforespørsel fra ID-porten dersom brukeren logger ut fra en annen tjeneste i circle-of-trust.  
 
 Eksempel på kall fra ID-porten til klient:
 ```
@@ -75,7 +83,7 @@ GET https://client.example.com/myapp/logout
 `sid` er ID-porten OIDC sin sesjons-id som klient også har mottatt som claim i id-token.
 ## Samspill mellom SAML SLO og OpenID Connect SLO
 
-ID-porten OIDC provider er integrert med ID-portens via SAML.  
+ID-porten OIDC provider er integrert med ID-porten via SAML.  
 
 Dersom en tjenesteeier starter SAML SLO, vil ID-porten OIDC Provider delta i SAML SLO. ID-porten OIDC Provider finner alle klienter i samme sesjon, og sender melding til de av klientene som støtter Front Channel Logout. Deretter sendes brukeren tilbake til ID-porten, for avsluttende redirect tilbake til tjenesteeieren som startet SAML SLO.
 

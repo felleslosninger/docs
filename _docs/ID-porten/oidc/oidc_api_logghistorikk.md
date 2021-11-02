@@ -15,7 +15,7 @@ Kunden mottar opplysningene for at innbyggeren kan lettere deteketere misbruk av
 
 ## Hvordan få tilgang ?
 
-Denne tjenesten er en tilleggstjeneste i ID-porten. Se [https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester](https://samarbeid.difi.no/difis-felleslosninger/tilleggstjenester) for generelle vilkår for tilleggstjenester.
+Denne tjenesten er en tilleggstjeneste i ID-porten. Se [Samarbeidsportalen](https://samarbeid.digdir.no) for generelle vilkår for tilleggstjenester.
 
 ## Brukergrensesnitt
 

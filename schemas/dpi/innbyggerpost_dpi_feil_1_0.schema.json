@@ -1,0 +1,74 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/feil.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En feilmelding fra postkasseleverandør med informasjon om en forretningsfeil knyttet til en digital post forsendelse.",
+    "$comment": "Feilmelding sendes fra Postkasseleverandør når det oppstår en uventet feil som ikke kan håndteres av postkasseleverandør innenfor SLA krav. Feilene kategoriseres overordnet i to typer, enten som klient feil som Avsender må rette opp i eller som server feil som oppstår hos postkasseleverandør.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "feil": {
+                    "$ref": "#/definitions/feil"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "feil"
+            ]
+        },
+        "feil": {
+            "type": "object",
+            "$id": "#/definitions/feil",
+            "title": "feil",
+            "properties": {
+                "avsender": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+                },
+                "tidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                },
+                "feiltype": {
+                    "type": "string",
+                    "oneOf": [
+                        {
+                            "const": "KLIENT",
+                            "description": "Feilen kommer pga. feil på input eller andre feil der Avsender må rette opp i årsaken til feilen"
+                        },
+                        {
+                            "const": "SERVER",
+                            "description": "Feilen kommer av feil på sentral infrastruktur. Avsender må ta kontakt med Sentralforvalter for å få rettet opp i feilen."
+                        }
+                    ]
+                },
+                "detaljer": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "tidspunkt",
+                "feiltype"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

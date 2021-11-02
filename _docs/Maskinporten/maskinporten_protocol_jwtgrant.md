@@ -9,6 +9,8 @@ product: Maskinporten
 
 ## About
 
+The JWT grant is a request sent by the client towards Maskinporten, in order to obtain an access_token.  Both the grant and the access_token looks similar and share some of the same claims, as they as JWT structures, however they must not be mixed up.
+
 JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
 
 ## Request
@@ -34,18 +36,25 @@ Note that production certificates are not supported in test environments.
 
 | Claim  |  Cardinality | Description  |
 | --- | --- |--- |
-|aud| Required | Audience - identifier for Maskinporten.  See the [well-known endpoint](maskinporten_func_wellknown.html) for the environment you are using to find correct value.  The value in production is `https://maskinporten.no/`  |
+|aud| Required | The intended target for this JWT grant, ie. the identifier for Maskinporten.   The value in production is `https://maskinporten.no/`  |
 |iss| Required |issuer - Your client ID |
-|iss_onbehalfof| Optional | Maskinporten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
-|scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes. |
 |iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
-| resource   | optional  | *Currently only array supported.*  The indended audience for token. If included, the value will be transparantly set as the `aud`-claim in the access token. See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05). if not included, the audience will be set to `unspecified` |   
+|scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
+| resource   | optional  | The target API that the client intends to use the token. Only used by some APIs, and the actual value to use must be obtained from the API owner. Please see [audience-restriction](maskinporten_func_audience_restricted_tokens.html) for details. *Currently only array supported.*  |   
+
+
+If the client belongs to a supplier requesting a token on behalf of another organization (legal consumer), there are two mutually exclusive claims available:
+
+| Claim  |  Cardinality | Description  |
+| --- | --- |--- |
+|consumer_org| Optional |  String value carrying the Norwegian organization number of the legal consumer the client wants to get a token for. Maskinporten will validate against Altinn that the consumer-supplier delegation exists.  |
+|iss_onbehalfof| Optional | Maskinporten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof](oidc_func_onbehalfof.html))|
 
 
 
-### Eksempel på JWT-grant struktur
+#### Example JWT grant
 
 The final JWT may look like this:
 
@@ -57,12 +66,28 @@ The final JWT may look like this:
 .
 {
   "aud": "https://ver2.maskinporten.no",
-  "scope": "global/kontaktinformasjon.read global/varslingsstatus.read global/navn.read global/postadresse.read global/sertifikat.read",
-  "iss": "test_rp",
+  "scope": "difitest:test2",
+  "iss": "my_client_id",
   "exp": 1520589928,
   "iat": 1520589808,
   "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
 }
 .
 <<signature-value>>
+```
+
+#### Example JWT grant when using delegation
+
+If the client rely on delegation of scope access in Altinn, the client needs to include the `consumer_org`-claim in the grant:
+
+```
+{
+  "aud" : "https://ver2.maskinporten.no/",
+  "scope" : "difitest:test2",
+  "iss" : "my_client_id",
+  "exp" : 1584693557,
+  "iat" : 1584693437,
+  "jti" : "eb6ab01e-5834-4ba0-a2a1-457bfd0f0a49",
+  "consumer_org" : "910753614"
+}
 ```

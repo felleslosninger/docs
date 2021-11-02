@@ -1,0 +1,97 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/flyttet.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En digital post med tilhørende Dokumentpakke som flyttes fra en postkasseleverandør til en annen",
+    "$comment": "Denne meldingstypen brukes kun imellom Postkasseleverandørene og ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin post over til en annen postkasseleverandør.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "flyttet": {
+                    "$ref": "#/definitions/flyttet"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "flyttet"
+            ]
+        },
+        "flyttet": {
+            "type": "object",
+            "$id": "#/definitions/flyttedigitalpost",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/personmottaker"
+                },
+                "maskinportentoken": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                },
+                "tidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                },
+                "dokumentpakkefingeravtrykk": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+                },
+                "mottakstidspunkt": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "aapnet": {
+                    "type": "boolean"
+                },
+                "sikkerhetsnivaa": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/sikkerhetsnivaa"
+                },
+                "virkningsdato": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningsdato"
+                },
+                "virkningstidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningstidspunkt"
+                },
+                "aapningskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/aapningskvittering"
+                },
+                "ikkesensitivtittel": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/ikkesensitivtittel"
+                },
+                "spraak": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/spraak"
+                },
+                "varsler": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/varsler"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "maskinportentoken",
+                "tidspunkt",
+                "dokumentpakkefingeravtrykk",
+                "mottakstidspunkt",
+                "sikkerhetsnivaa",
+                "ikkesensitivtittel",
+                "spraak"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

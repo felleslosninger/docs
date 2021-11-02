@@ -18,7 +18,7 @@
     <!--Mermaid-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
     <!-- FontAwesome (GPL license) -->
-   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-yJpxAFV0Ip/w63YkZfDWDTU6re/Oc3ZiVqMa97pi8uPt92y0wzeK3UFM2yQRhEom" crossorigin="anonymous">
     <!-- jQuery (MIT license)-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <!-- jQuery cookie (MIT license)-->
@@ -26,7 +26,8 @@
     <!-- Navgoco (BSD license)-->
     <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
     <!-- Bootstrap (MIT license)-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Anchor JS (MIT license)-->
     {% unless page.layout == "homepage" or page.type == "search" or page.type =="404" %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
@@ -42,9 +43,9 @@
         $( document ).ready(function() {
             $("#docnavsidebar").navgoco({
                 caretHtml: '',
-                accordion: false,
+                accordion: true,
                 openClass: 'open', // open
-                save: true,
+                save: false,
                 cookie: {
                     name: 'navgoco',
                     expires: false,
@@ -78,9 +79,9 @@
     </script>
 
     <!-- User defined js -->
-    <script src="assets/js/user_defined_javascript.js"></script>
+    <script src="assets/js/header.js"></script>
     <!--Bootstrap (MIT license) -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
@@ -94,24 +95,21 @@
 <body class="{{page.layout}}">
 <div class="page-container">
 
-
     <!-- Top Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container topnavlinks">
             <div class="navbar-header">
               {% if site.navbar-toggle == true %}
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="fa fa-bars fa-2x"></span>
+                <button type="button" class="navbar-toggle toggle-menu-button collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 </button>
                 {% endif %}
                 {% if site.toggle-sidebar-button == true %}
-                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
-                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                <button type="button" class="navbar-toggle toggle-sidebar-button collapsed"  data-toggle="offcanvas" data-target=".sidebar-nav">
                 </button>
                 {% endif %}
 
                   {% include logo.html %}
-
+                <div class="nav-overlay"></div>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -166,30 +164,24 @@
                     <li>{% include glossary.html %}</li>
                     {% endif %}
 
-                    <li>
+                </ul>
 
-                     <div id="search-topnav-container">
-                        <form action="search.html" method="get">
-                          <div class="input-group search">
+                <div id="search-topnav-container">
+                    <form action="search.html" method="get">
+                        <div class="input-group search">
                             <input type="text" id="search-box" name="query" class="form-control" placeholder="{{site.uistring.search_placeholder_text}}">
                             <div class="input-group-btn">
-                              <button class="btn btn-default" type="submit" value="search">
-                                <i class="glyphicon glyphicon-search"></i>
-                              </button>
+                                <button class="btn btn-default" type="submit" value="search">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
-                          </div>
-                        </form>
                         </div>
-
-
-                    </li>
-
-                </ul>
+                    </form>
+                </div>
 
             </div>
 
         </div>
-
 
         <!-- /.container -->
     </nav>

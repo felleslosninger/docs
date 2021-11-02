@@ -1,0 +1,339 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/commons.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for felles objekter brukt i Digital post til innbygger (DPI)",
+    "definitions": {
+        "avsender": {
+            "type": "object",
+            "$id": "#/definitions/avsender",
+            "title": "avsender",
+            "properties": {
+                "virksomhetsidentifikator": {
+                    "$ref": "#/definitions/virksomhetsidentifikator"
+                },
+                "avsenderidentifikator": {
+                    "$ref": "#/definitions/avsenderidentifikator"
+                },
+                "fakturaReferanse": {
+                    "type": "string",
+                    "maxLength": 40
+                }
+            },
+            "required": [
+                "virksomhetsidentifikator"
+            ],
+            "additionalProperties": false
+        },
+        "virksomhetmottaker": {
+            "type": "object",
+            "$id": "#/definitions/virksomhetmottaker",
+            "title": "mottaker",
+            "description": "Virksomhet som er mottaker av en sikker digital post",
+            "$comment": "",
+            "properties": {
+                "virksomhetsidentifikator": {
+                    "$ref": "#/definitions/virksomhetsidentifikator"
+                },
+                "motakeridentifikator": {
+                    "$ref": "#/definitions/motakeridentifikator"
+                }
+            },
+            "required": [
+                "virksomhetsidentifikator"
+            ]
+        },
+        "avsenderidentifikator": {
+            "type": "string",
+            "$id": "#/definitions/avsenderidentifikator",
+            "title": "avsenderidentifikator",
+            "description": "Identifikasjon av en ansvarlig avsenderenhet",
+            "$comment": "Brukt for å identifisere en ansvarlig enhet innen for en virksomhet. I Sikker digital posttjenteste tildeles avsenderidentifikator ved tilkobling til tjenesten. Maks 100 tegn.",
+            "maxLength": 100
+        },
+        "personmottaker": {
+            "type": "object",
+            "$id": "#/definitions/personmottaker",
+            "title": "mottaker",
+            "description": "Person som er mottaker av en sikker digital post",
+            "$comment": "",
+            "properties": {                
+                "postkasseadresse": {
+                    "$ref": "#/definitions/postkasseadresse"
+                }
+            },
+            "required": [
+                "postkasseadresse"
+            ],
+            "additionalProperties": false
+        },
+        "virksomhetsidentifikator": {
+            "type": "object",
+            "$id": "#/definitions/virksomhetsidentifikator",
+            "title": "virksomhetsidentifikator",
+            "description": "Identifikasjon av en virksomhet",
+            "$comment": "virksomhetsidentifikator er et organisasjonsnummer i henhold til ISO 6523. Det vil si at organisasjonsnummeret er prefixet med et Global Location Number utstedt av GS1. I tillegg bør scope angis ihht Oasis PartyIdType. Dersom det ikke er angitt scope så skal dette alltid tolkes som ISO 6523 kode 9908 som angir organisasjonsnummer for norske virksomheter forvaltet av Brønnøysundregistrene.",
+            "properties": {
+                "authority": {
+                    "type": "string",
+                    "enum": [
+                        "iso6523-actorid-upis"
+                    ],
+                    "description": "Henviser til identitesautoritet for orgnr angi iso6523-actorid-upis, for personnummer iso3166-1"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "For norsk organisasjon 0192:<organisasjonsnummer>, for person NO:<personnummer>",
+                    "pattern": "[0-9]{4}:\\w{1,35}"
+                }
+            },
+            "required": [
+                "authority",
+                "value"
+            ],
+            "additionalProperties": false
+        },
+        "personidentifikator": {
+            "type": "object",
+            "$id": "#/definitions/personidentifikator",
+            "title": "personidentifikator",
+            "description": "Identifikasjon av en person",
+            "$comment": "Personidentifikator er enten et fødselsnummer eller et gyldig D-nummer.",
+            "properties": {
+                "authority": {
+                    "type": "string",
+                    "enum": [
+                        "iso3166-1-alfa2"
+                    ]
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "additionalProperties": false
+        },
+        "postkasseadresse": {
+            "type": "string",
+            "$id": "#/definitions/postkasseadresse",
+            "title": "postkasseadresse",
+            "description": "Adresse til en Innbygger sin Postkasse hos en Postkasseleverandør",
+            "$comment": "Dette er en unik adresse for en Person sin Postkasseadresse hos en Postkasseleverandør. Enten digipost eller eboks"
+        },
+        "motakeridentifikator": {
+            "type": "string",
+            "$id": "#/definitions/motakeridentifikator",
+            "title": "motakeridentifikator",
+            "description": "Identifikasjon av en ansvarlig avsenderenhet",
+            "$comment": "Brukt for å identifisere en ansvarlig enhet innen for en virksomhet. I Sikker digital posttjenteste tildeles avsenderidentifikator ved tilkobling til tjenesten. Maks 100 tegn.",
+            "maxLength": 100
+        },
+        "maskinportentoken": {
+            "type": "string",
+            "$id": "#/definitions/maskinportentoken",
+            "title": "maskinportentoken",
+            "description": "TODO"
+        },
+        "tidspunkt": {
+            "type": "string",
+            "$id": "#/definitions/tidspunkt",
+            "title": "tidspunkt",
+            "format": "date-time"
+        },
+        "dokumentpakkefingeravtrykk": {
+            "type": "object",
+            "$id": "#/definitions/dokumentpakkefingeravtrykk",
+            "description": "Hash av den krypterte dokumentpakken",
+            "properties": {
+                "digestMethod": {
+                    "type": "string",
+                    "description": "Referanse til Hash algoritmen brukt for lage hash"
+                },
+                "digestValue": {
+                    "type": "string",
+                    "description": "Base64 encoded Hash av den krypterte Dokumentpakken"
+                }
+            },
+            "required": [
+                "digestMethod",
+                "digestValue"
+            ],
+            "additionalProperties": false
+        },
+        "kvittering": {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "#/definitions/virksomhetmottaker"
+                },
+                "tidspunkt": {
+                    "$ref": "#/definitions/tidspunkt"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "tidspunkt"
+            ],
+            "additionalProperties": false
+        },
+        "sikkerhetsnivaa": {
+            "$id": "#/definitions/sikkerhetsnivaa",
+            "title": "sikkerhetsnivaa",
+            "description": "Definerer hvilket autentiseringsnivå som kreves for at dokumentet skal åpnes",
+            "$comment": "Gyldige verdier 3,4",
+            "type": "integer",
+            "enum": [
+                3,
+                4
+            ]
+        },
+        "virkningsdato": {
+            "$id": "#/definitions/virkningsdato",
+            "title": "virkningsdato",
+            "description": "Dato for når et element skal være aktivt.",
+            "$comment": "Dato for når en melding skal tilgjengeliggjøres for Innbygger i Innbygger sin postkasse. Dokumentet vil leveres til postkassen før dette tidspunkt, men ikke være synlig/tilgjengelig for Innbygger. Merk at feltet kun er en DATO og ikke kan styres på tidspunkt. Dette betyr i praksis at posten vil tilgjengeliggjøres om natten virkningsdagen og at postkassen kan bruke hele dagen på å tilggjengeliggjøre post med med samme virkningsdato.",
+            "type": "string",
+            "format": "date",
+            "examples": [
+                "2013-12-11"
+            ]
+        },
+        "virkningstidspunkt": {
+            "$id": "#/definitions/virkningstidspunkt",
+            "title": "virkningstidspunkt",
+            "description": "Dato for når et element skal være aktivt.",
+            "$comment": "Dato og tidspunkt for når en melding skal tilgjengeliggjøres for Innbygger i Innbygger sin postkasse. Forsendelsen vil leveres til postkassen før dette tidspunkt, men ikke være synlig/tilgjengelig for innbygger. Tidspunktet må spesifiseres med tidssone eventuelt justeres til UTC/Z.",
+            "type": "string",
+            "format": "date-time",
+            "examples": [
+                "2015-01-30T08:00:00.000+01:00"
+            ]
+        },
+        "aapningskvittering": {
+            "$id": "#/definitions/aapningskvittering",
+            "title": "aapningskvittering",
+            "description": "Definerer behovet for Åpningskvittering",
+            "$comment": "Dersom Dataansvarlig ønsker å at Innbygger aktivt skal bli bedt om å sende tilbake en Åpningskvittering ved åpning av Digital Post kan det spesifiseres med dette attributtet. Verdien JA vil kreve at Innbygger samtykker til at kvittering blir sendt tilbake til Databehandler ved åpning av den digital posten",
+            "type": "boolean",
+            "default": false
+        },
+        "varsler": {
+            "$id": "#/definitions/varsler",
+            "title": "varsler",
+            "description": "Informasjon om hvordan postkasseleverandør skal varsle Mottaker om den nye posten. Overstyrer Mottaker sine egne varslingspreferanser",
+            "$comment": "Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne varslingspreferanser, det vil kunne komme som tillegg til Mottaker sine varslingvalg. Avsender kan med instillingene her styre både EpostVarsel og smsVarsel](SmsVarsel.md) helt uavhengig av hverandre. Det vil si at Avsender kan velge å varsle i begge eller en av kanalene. Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til åpningsgrad og kostnader. Bruk av SmsVarsel vil medføre egne kostnader for Avsender",
+            "properties": {
+                "epostvarsel": {
+                    "$ref": "#/definitions/epostvarsel"
+                },
+                "smsvarsel": {
+                    "$ref": "#/definitions/smsvarsel"
+                }
+            }
+        },
+        "ikkesensitivtittel": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255, 
+            "$id": "#/definitions/ikkesensitivtittel",
+            "title": "ikkesensitivtittel",            
+            "description": "En tittel som ikke inneholder sensitiv informasjon",
+            "$comment": "Vil vises til Innbygger og brukes i varslinger/påminnelser på e-post og sms til Innbygger. Skal ikke inneholde sensitiv informasjon. Kan brukes på lavere sikkerhetsnivå enn det selve dokumentet er klassifisert på."            
+        },
+        "epostvarsel": {
+            "type": "object",
+            "$id": "#/definitions/epostvarsel",
+            "title": "epostvarsel",            
+            "description": "Informasjon om hvordan man skal varsle sluttbruker på epost",
+            "$comment": "Beskriver når det skal sendes epostvarsel fra postkassen etter at posten er tilgjengeliggjort",
+            "properties": {
+                "epostadresse": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "varslingstekst": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                },
+                "repetisjoner": {
+                    "$ref": "#/definitions/repetisjoner"
+                }
+            },
+            "required": [
+                "epostadresse",
+                "varslingstekst",
+                "repetisjoner"
+            ],
+            "additionalProperties": false
+        },
+        "repetisjoner": {
+            "type": "array",
+            "$id": "#/definitions/repetisjoner",
+            "title": "repetisjoner",            
+            "description": "Gjentagelser etter et bestemt tidspunkt",
+            "$comment": "Beskriver hvilke dager noe skal repeteres etter en definert dag, der dagerEtter angir hvor mange dager etter tidspunktet det skal repeteres. dagerEtter=0 betyr samme dag. dagerEtter=7 betyr den syvende dagen etter en bestemt dag. Det kreves at alle dagerEtter er unike. For Sikker digital post er repetisjonene knyttet opp til virkningsdato. Det vil si at dagerEtter=0 betyr samme dag som virkningsdato. dagerEtter=7 betyr den syvende dagen etter virkningsdato",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 25
+            }
+        },
+        "varslingstekst": {
+            "type": "object",
+            "$id": "#/definitions/varslingstekst",
+            "title": "varslingstekst",
+            "description": "Tekst til Innbygger. Brukt til å sende påminnelser/varslinger for å sikre at Innbygger skaffer seg tilgang til et tilknyttet dokument.",
+            "$comment": "En tekst knyttet til en digital postforsendelse. Teksten legges med i varslinger/påminnelser til Innbygger. Teksten skal ikke inneholde personopplysninger eller sensitive opplysninger da varslene sendes ukryptert pr epost eller sms."
+        },
+        "spraak": {
+            "type": "string",
+            "$id": "#/definitions/spraak",
+            "title": "spraak",
+            "minLength": 2,
+            "maxLength": 2,
+            "description": "Språkkode ihht ISO-639-1 (2 bokstaver)",
+            "examples": [
+                "no"
+            ]
+        },
+        "smsvarsel": {
+            "type": "object",
+            "$id": "#/definitions/smsvarsel",
+            "title": "smsvarsel",
+            "description": "Informasjon om hvordan man skal varsle sluttbruker på epost",
+            "$comment": "Beskriver når det skal sendes epostvarsel fra postkassen etter at posten er tilgjengeliggjort",
+            "properties": {
+                "mobiltelefonnummer": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 20,
+                    "pattern": "^\\+?[- _0-9]+$"
+                },
+                "varslingstekst": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                },
+                "repetisjoner": {
+                    "$ref": "#/definitions/repetisjoner"
+                }
+            },
+            "required": [
+                "mobiltelefonnummer",
+                "varslingstekst",
+                "repetisjoner"
+            ],
+            "additionalProperties": false
+        }
+    }
+}

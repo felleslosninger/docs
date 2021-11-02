@@ -2,7 +2,7 @@ sidebarTitle: ID-porten
 folders:
 
     - title: Overordna arkitekturbeskrivelse
-      jurl: /idporten_overordnet.html
+      jurl: /idporten_logo.html
 
     - title: Ulike brukområder
       folderitems:
@@ -38,7 +38,10 @@ related_resources_list:
   jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
-  jurl: https://samarbeid.difi.no/felleslosninger
+  jurl: https://samarbeid.digdir.no
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

@@ -1,0 +1,18 @@
+#glossary {
+
+  li {
+    list-style: none;
+    margin-bottom: 30px;
+
+    &::marker {
+      display: none;
+    }
+
+    b {
+      font-weight: 500;
+      margin-bottom: -19px;
+      display: block;
+    }
+  }
+
+}

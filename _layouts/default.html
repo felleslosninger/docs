@@ -1,64 +1,68 @@
 {% include topnav.html %}
 <div class="container">
 
- <!-- <link rel="stylesheet" href="/assets/css/syntax.css"/>-->
+    <!-- <link rel="stylesheet" href="/assets/css/syntax.css"/>-->
 
-        <div class="row row-offcanvas row-offcanvas-left">
+    <div class="row row-offcanvas row-offcanvas-left">
 
-            <!-- sidebar -->
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-
+        <!-- sidebar -->
+        <div class="col-lg-3 sidebar-offcanvas" role="navigation">
+            <div class="sidebar">
                 {% include sidebar.html %}
-
             </div>
+        </div>
 
-            <!-- main area -->
-            <div class="col-xs-12 col-sm-9 main">
-              <div class="subtitle">
-                {% include breadcrumb.html %}
+        <!-- main area -->
+        <div class="col-md-12 col-lg-9 main">
+            <div class="content">
+
+
+                <div class="subtitle">
+                    {% include breadcrumb.html %}
                 </div>
 
-                      {% if page.simple_map == true %}
+                {% if page.simple_map == true %}
 
-                      <script>
-                          $(document).ready ( function(){
-                              $('.box{{page.box_number}}').addClass('active');
-                          });
-                      </script>
+                <script>
+                    $(document).ready(function () {
+                        $('.box{{page.box_number}}').addClass('active');
+                    });
+                </script>
 
-                      {% include {{page.map_name}} %}
+                {% include {{page.map_name}} %}
 
 
-                      {% endif %}
+                {% endif %}
 
-                    <h1>{{page.title}}</h1>
+                <h1>{{page.title}}</h1>
 
                 {% if site.github_button_location_below_title == true %}
                 {% include github_button.html %}
                 {% endif %}
 
                 {% if page.summary %}
-                 <div class="summary">{{page.summary}}</div>
+                <div class="summary">{{page.summary}}</div>
                 {% endif %}
 
-                    {{content}}
-                  {% if site.github_button_location_page_bottom == true %}
-                  {% include github_button.html %}
-                  {% endif %}
+                {{content}}
+                {% if site.github_button_location_page_bottom == true %}
+                {% include github_button.html %}
+                {% endif %}
 
-                    {% include disqus.html %}
+                {% include disqus.html %}
 
 
             </div>
-        </div><!--/.container-->
+        </div>
+    </div><!--/.container-->
 
 
-    </div><!--/.page-container-->
+</div><!--/.page-container-->
 
-    {% include search-result-highlighting.html %}
-    {% include footer.html %}
+{% include search-result-highlighting.html %}
+{% include footer.html %}
 
-    {% include google_analytics.html %}
+{% include google_analytics.html %}
 
 </body>
 

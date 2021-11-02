@@ -1,0 +1,35 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/aapningskvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En KvitteringsMelding til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse.",
+    "$comment": "Åpningskvitteringer blir bare sendt dersom dette er bestilt av Avsender i digital post meldingen ved å spesifisere dette i digitalpostinfo. Mottaker må aksepteres at det sendes en ÅpningsKvittering til Avsender for å få lest den digital posten. Mangel på ÅpningsKvittering betyr at Mottaker ikke har lest dokumentet.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "aapningskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/kvittering"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "aapningskvittering"
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,71 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/varslingfeiletkvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En Kvitteringsmelding til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt.",
+    "$comment": "Dersom Postkasse opplever problemer med å utføre varslingen som spesifisert i meldingen, skal Postkasse informere Avsender om dette ved å sende VarslingfeiletKvittering. Det skal sendes en kvittering for hver forekomst av en feilsituasjon i en spesifisert kanal. Meldinger som angir bruk av flere varslingskanaler kan dermed medføre flere VarslingfeiletKvitteringer. Varslingfeilet kvittering skal sendes seinest dagen etter at varslingen var bestilt.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "varslingfeiletkvittering": {
+                    "$ref": "#/definitions/kvittering"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "varslingfeiletkvittering"
+            ]
+        },
+        "kvittering": {
+            "type": "object",
+            "$id": "#/definitions/kvittering",
+            "title": "kvittering",
+            "properties": {
+                "avsender": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virksomhetmottaker"
+                },
+                "tidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/tidspunkt"
+                },
+                "beskrivelse": {
+                    "type": "string",
+                    "description": "beskrivelse gir en tekstlig beskrivelse utover det som er gitt av andre datatyper som f.eks. status"
+                },
+                "varslingskanal": {
+                    "type": "string",
+                    "enum": [
+                        "epost",
+                        "sms"
+                    ],
+                    "description": "Kommunikasjonskanal for utsending av varsel og påminnelse",
+                    "$comment": "Varsling og påminnelsesmeldinger skal sendes på den kanal som blir spesifisert. Kanalen SMS er priset."
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "tidspunkt",
+                "varslingskanal"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

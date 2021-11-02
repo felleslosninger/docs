@@ -1,5 +1,5 @@
 ---
-title: NextMove
+title: eFormidling 2.0
 description: Beskrivelse av forretningsmeldinger
 summary: ""
 permalink: eformidling_nm_about.html
@@ -17,7 +17,7 @@ Hovedsakelig dreier dette seg om:
 - Begrensinger på meldingsstørrelse
 - Behov for bedre statusoppdateringer
 
-NextMove er arbeidsnavnet på neste generasjons grensesnitt mot integrasjonspunktet.
+eFormidling 2.0 er arbeidsnavnet på neste generasjons grensesnitt mot integrasjonspunktet.
 
 Adresseringen er i likhet med DPI og PEPPOL, SBDH med en fortetningsmelding.
 Hver melding blir i utgangspunktet en unik ressurs i grensesnittet, og kan i løpet av livsløpet sitt spores og endres gjennom denne ressurslenken. 

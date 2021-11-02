@@ -1,52 +1,53 @@
 {% include topnav.html %}
 <div class="container">
 
-        <div class="row row-offcanvas row-offcanvas-left">
+    <div class="row row-offcanvas row-offcanvas-left">
 
-            <!-- sidebar -->
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-
+        <!-- sidebar -->
+        <div class="col-lg-3 sidebar-offcanvas" role="navigation">
+            <div class="sidebar">
                 {% include sidebar.html %}
-
             </div>
+        </div>
 
-            <!-- main area -->
-            <div class="col-xs-12 col-sm-9 main">
+        <!-- main area -->
+        <div class="col-md-12 col-lg-9 main">
+            <div class="content">
 
 
+                <div class="subtitle"></div>
 
-              <div class="subtitle"></div>
-
-              <div id="glossary-nav"></div>
-              <div class="subtitle"></div>
+                <div id="glossary-nav"></div>
+                <div class="subtitle"></div>
                 <dl id="glossary">
 
                     {% assign gs = site.data.glossary | sort %}
-                        {% for kv in gs %}
-                        <li class="ordliste glossary"><b>{{ kv[0] }}</b> <br> {{ kv[1] }} </li>
-                        {% endfor %}
-			</dl>
+                    {% for kv in gs %}
+                    <li class="ordliste glossary"><b>{{ kv[0] }}</b> <br> {{ kv[1] }}</li>
+                    {% endfor %}
+                </dl>
             </div>
-        </div><!--/.container-->
+        </div>
+    </div><!--/.container-->
 
-    </div><!--/.page-container-->
+</div><!--/.page-container-->
 
-    {% include search-result-highlighting.html %}
+{% include search-result-highlighting.html %}
 
-    {% include footer.html %}
+{% include footer.html %}
 
-    {% include google_analytics.html %}
+{% include google_analytics.html %}
 
 
-    <script src="assets/js/jquery-listnav.min.js"></script>
-    <script>
-    $(function(){
-    	$('#glossary').listnav();
-    	$('.demo a').click(function(e) {
-    		e.preventDefault();
-    	});
+<script src="assets/js/jquery-listnav.min.js"></script>
+<script>
+    $(function () {
+        $('#glossary').listnav();
+        $('.demo a').click(function (e) {
+            e.preventDefault();
+        });
     });
-    </script>
+</script>
 
 </body>
 

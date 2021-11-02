@@ -10,16 +10,16 @@ product: ID-porten
 ## HURTIGGUIDE: Teknisk Integrasjon
 
 ### Typisk saksgang for en integrasjon
-![](/felleslosninger/images/idporten/saml/hurtigguide/saksgang.bmp "saksgangs for en integrasjon")
+![](/images/idporten/saml/hurtigguide/saksgang.bmp "saksgangs for en integrasjon")
 
 ### Hva må utveksles?
-![](/felleslosninger/images/idporten/saml/hurtigguide/nyutveksling.PNG "hva må utveksles")
+![](/images/idporten/saml/hurtigguide/nyutveksling.PNG "hva må utveksles")
 
 ### ID-porten støtter ikke alt i SAML2-standarden
 
 Metadata definerer hva som er tillatt 
 
-![](/felleslosninger/images/idporten/saml/hurtigguide/nystotte.PNG "ID-porten støtter ikke salt i SAML2-standarden")
+![](/images/idporten/saml/hurtigguide/nystotte.PNG "ID-porten støtter ikke salt i SAML2-standarden")
 
 ### Typisk metadata-fil
 
@@ -61,7 +61,7 @@ Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hu
 	- Single sign-on
 	- Single logout
 
-![](/felleslosninger/images/idporten/saml/hurtigguide/slo_test.bmp "single log-out test")
+![](/images/idporten/saml/hurtigguide/slo_test.bmp "single log-out test")
 
 ### Test-klient
 
@@ -69,7 +69,7 @@ Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hu
 
 Kan brukes i verifikasjonstesten som «annen tjenesteier» ifbm single sign-on
 
-![](/felleslosninger/images/idporten/saml/hurtigguide/testsp.bmp "ID-porten test-klient")
+![](/images/idporten/saml/hurtigguide/testsp.bmp "ID-porten test-klient")
 
 Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 
@@ -81,7 +81,6 @@ Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 | PROD | Produksjonsmiljø | Virksomhetssertifikat kreves | 
 | VER1 | Test-miljø. Samme versjon som PROD | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
 | VER2 | Test-miljø. Kjører pre-releaser av kommende versjon | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
-| YT1 | Ytelsetest. Samme versjon som PROD. Tilgang bestilles separat | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
 | YT2 | Ytelsetest. Kjører pre-release av kommende versjon. Tilgang bestilles separat | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
 | | | |  
 
@@ -119,7 +118,7 @@ Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 
 ### ID-porten single logout
 
-![](/felleslosninger/images/idporten/saml/hurtigguide/idp_slo.bmp "ID-porten single logout")
+![](/images/idporten/saml/hurtigguide/idp_slo.bmp "ID-porten single logout")
 
 1. Bruker ber om utlogging
 2. Tjenesteeier sender LogoutRequest til ID-porten via frontkanal 
@@ -138,5 +137,5 @@ Hvis én tjenesteeier bryter kjeden, vil brukeren fremdeles være innlogget i ID
 * Maks høgde på logo er 90px. og bredde bør ikkje være meir enn 135px.
 * Bakgrunnsfargen på idporten sidene er #f3f4f4, så tjenesteeigarane bør enten ha denne fargen som bakgrunn på sin logo eller ha bakgrunnen transparent. 
 
-![](/felleslosninger/images/idporten/saml/hurtigguide/eid_selektor.bmp "eid selektor")
+![](/images/idporten/saml/hurtigguide/eid_selektor.bmp "eid selektor")
 

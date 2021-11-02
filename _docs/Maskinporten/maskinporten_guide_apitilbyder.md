@@ -14,9 +14,9 @@ En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
 2. API-tilbyder oppretter et API
 3. API-tilbyder gir tilgang til en konsument
-4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og provisjonerer tilgangen til denne.
+4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrer  scopet til denne.
 
-Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
+Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
 5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
 6. Konsumenten inkluderer token i kall til APIet.
@@ -24,20 +24,17 @@ Provisjonering/konfigursjon av tilgang er nå etablert.  Når API'et så skal br
 
 ## Prosedyre for API-tilbyder
 
-### 1: Manuell provisjonering
+### 1: Manuell tildeling av prefix
 
-Først må du bli manuelt provisjonert som API-tilbyder:  Du må bestemme:
+Første gang du skal ta i bruk Maskinporten, må du bli manuelt satt opp som API-tilbyder:  Du må bestemme:
 * et `scope-prefix` du ønsker bruke for dine APIer
-* ønsket `client_id` for din selvbetjenings-applikasjon
 * ditt `organisasjonsnummer`
 
 Send inn skjema: [https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u)
 
-Du må så lage en tilhørende Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
+#### Beskrivelse av APIer
 
-### Beskrivelse av APIer
-
-I Maskinporten-sammenheng er et API det samme som et Oauth2 scope.Digitaliseringsdirektoratet ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
+I Maskinporten-sammenheng er et API det samme som et Oauth2 scope. Digitaliseringsdirektoratet ønsker å gi API-tilbydere stor frihet til å selv bestemme sin semantikk for API-sikring innenfor rammene av Oauth2-standardene. Samtidig er det behov for noen regler for å sikre interoperabilitet.  
 
 Følgende syntax brukes:
 
@@ -52,7 +49,7 @@ der `prefix` er en tekststreng som blir manuelt tildelt API-tilbyderen. En API-t
      - fravær av postfix bør i utgangspunktet tolkes som kun lese-tilgang
 
 
-### Synlighet
+#### Synlighet
 
 Attributtet `visibilty` brukes for å angi scopets synlighet:
 
@@ -60,33 +57,33 @@ Attributtet `visibilty` brukes for å angi scopets synlighet:
 |-|-|
 |PUBLIC | Scopet er synlig for alle på /scopes/all endepunkt.    |
 |PRIVATE| Scopet er ikke synlig for andre enn API-tilbyder og de konsuementer som har fått tilgang |Konsument må bli fortalt at scopet finnes    |
-|INTERAL | Inten bruk iDigitaliseringsdirektoratet   |   
+|INTERAL | Inten bruk i Digitaliseringsdirektoratet   |   
 
 Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
 
-### Scope-begrensninger
+#### Scope-begrensninger
 
 Det anbefales at man setter en begrensning på bruk av scopet. Ved å sette attributtet  `allowed_integration_types`, vil man begrense bruken til de integrasjonstypene som er inkludert i attributtet. F.eks kan man begrense bruken til kun å kunne brukes med maskinporten- (server til server) eller idportenklienter (brukerinnlogging).
 
-### Inaktive entiteter
+#### Inaktive entiteter
 
-For å sikre juridisk logging og statistikk, vilDigitaliseringsdirektoratet aldri slette scopes og tilganer (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
+For å sikre juridisk logging og statistikk, vil Digitaliseringsdirektoratet aldri slette scopes og tilganger (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
 
 Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
 
-### Administrasjon av API
+## Administrasjon av API
 
 API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ved bruk av web-grensesnitt via Samarbeidsportalen.
 
 ### 1a: Opprette et API - via Samarbeidsportalen
 
- - Gå til "Min profil" på https://samarbeid.difi.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
+ - Gå til "Min profil" på https://samarbeid.digdir.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
 
 - Velg "Mine API" i det miljøet du vil opprette API'et i.
 
 - Trykk på "Nytt scope"
 
-- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på idporten@difi.no. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
+- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
 
 - Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
 
@@ -105,25 +102,16 @@ API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ve
 - For å legge til ny tilgang, trykk på "+ legg til ny tilgang" og registrer organisasjonsnummeret til virksomheten som skal få tilgang.
 
 - For å revokere tilgang, trykk på "Slette" i listen over tilganger.
+<!--
+kommenterte bort død lenke
+-->
 
+<!--
 [![Tilgangsstyre API](https://samarbeid.difi.no/sites/samarbeid2/files/tilgangsstyre-api-png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/tilgangsstyre_api.mp4 "Tilgangsstyre API")
-
+-->
 ### 2a. Opprette APIer - Oauth2-selvbetjeningsklient
 
-Når prefix er blitt manuelt tildelt, er følgdende operasjoner tilgjengelige:
-
-| Operasjon | inndata | beskrivelse |
-|-|-|-|
-|`GET    /scopes/all `| |Åpent endepunkt som gir liste over alle synlige scopes beskyttet av ID-porten/Maskinporten (evt. filtrering)|
-|`GET    /scopes `| |Beskyttet endepunkt som lister alle scopes for min organisasjon, både public og private|
-|`POST   /scopes ` | prefix*, subscope*, description, token_egenskaper  | Oppretter et nytt scope (lik prefix+subscope)    |
-|`GET    /scopes?scope={scope} `  |   | Hent et scope.  |
-|`PUT    /scopes?scope={scope} `  |  description, token_egenskaper | Endrer et scope. Selve scope-navnet kan ikke endres.   |
-|`DELETE /scopes?scope={scope} `   |   | Deaktiverer et scope. (scopet beholdes for konsistens i audit-log)  Konsumenters tilgang beholdes.   |
-
-Vi har valgt å legge scope som query-parameter, da det innen noen sektorer finnes spesifikke standarder som krever bruk av slash "/" i scope-definisjonen, og dette vil bli unødig tungvindt for brukere av APIet å skulle støtte dette som del av path-komponenten.
-
-`token-egenskaper` er tekniske egenskaper som API-tilbyder forventer/krever. Dette kan være max tillatt levetid, self-contained eller ikke, minste sikkerhetsnivå, etc.  Dette vil bli implmentert ila. 2019.
+Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
 
 #### Eksempel på å opprette scope
 
@@ -144,13 +132,7 @@ cache-control: no-cache
 
 ### 2b. Tilgangsstyring - Oauth2-selvbetjeningsklient
 
-API-tilbyder kan bruke følgende operasjoner for tilgangsstyring:
-
-| Operasjon| inndata |beskrivelse |
-|-|-|-|
-|`PUT    /scopes/access/{consumer_orgno}` | scope | Gir konsument consumer_orgno tilgang til aktuelt scope |
-|`DELETE /scopes/access/{consumer_orgno}` | scope | Fjerner tilgangen konsumenten har til scopet |
-|`GET    /scopes/access?scope={scope}`||liste alle tilganger for gitt scope|
+Tilgang gis og fjernes ved enkle REST-kall:  
 
 #### Eksempel på å gi tilgang
 
@@ -158,6 +140,8 @@ API-tilbyder kan bruke følgende operasjoner for tilgangsstyring:
 PUT /scopes/access/889640782?scope=difi:api3 HTTP/1.1
 ```
 som gir organisasjonsnummer `889640782` tilgang til scopet `difi:api3`.
+
+Send DELETE for å trekke tilbake en tilgang.
 
 #### Eksempel på å se tilganger
 Request:
@@ -178,24 +162,15 @@ Respons:
     }
 ]
 ```
-### 3. Provisjonering av konsument
 
-Konsumenten må provisjonere tilgangen ned til en aktuell klient, før han kan få utstedt tokens.  Dette gjøres ved å oppdatere Oauth2 klienten som skal ha tilgangen med det nye scopet, via [ID-porten sitt API for selvbetjening av integrasjoner](oidc_api_admin.html#scopes).
 
-#### Eksempel på provisjonering
+Vi har valgt å legge scope som query-parameter, da det innen noen sektorer finnes spesifikke standarder som krever bruk av slash "/" i scope-definisjonen, og dette vil bli unødig tungvindt for brukere av APIet å skulle støtte dette som del av path-komponenten.
 
-Først henter du aktuell klient-konfigurasjon med GET, og tar utgangspunkt i denne for å generere en modifisert objekt  tilbake:
 
-```
-PUT /clients/if2018_apikonsument HTTP/1.1
+### 3. Gi konsument beskjed om å lage en integrasjon
 
-{
-	...
-    "scopes": [ "difi:api3" ],
-	...
-}
-```
-(fjern created_date, last_updated)
+Du kan nå gi konsumenten beskjed om at han må lage en Maskinporten-integrasjon med det aktuelle API-scopet. Denne prosessen er dokumentert i [guide for API-konsument](maskinporten_guide_apikonsument.html).
+
 
 
 ### 4: Validere token
@@ -209,68 +184,58 @@ Dersom token er self-contained :
 - validere at token ikke er utløpt (exp)
 
 
+#### Eksempel på token:
+
+
+```
+{
+  "aud" : "unspecified",
+  "scope" : "difitest:test2",
+  "iss" : "https://ver2.maskinporten.no/",
+  "client_amr" : "virksomhetssertifikat",
+  "token_type" : "Bearer",
+  "exp" : 1584694565,
+  "iat" : 1584693565,
+  "jti" : "IYRtIEzOYb8fHiIMEaqVHq_tXYGWe6OEOjOdsK-P_30",
+  "consumer" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  }
+}
+```
+Det er `consumer`-claimet som forteller hvilken konsument som har fått tokenet.
+Merk:  Du skal ikke bruke client_id eller client_org til tilgangstyring, disse er gamle claims som vil bli fjernet.
+
+
+Dersom konsumenten bruker leverandør, vil du i tillegg få to ekstra claims, de fleste API-tilbydere trenger ikke ta tilgangsbeslutninger basert på leverandør, men det kan være nyttig å logge informasjon for sporbarhet.
+```
+...
+  "supplier" : {
+    "authority" : "iso6523-actorid-upis",
+    "ID" : "0192:991825827"
+  },
+  "delegation_source" : "https://tt02.altinn.no/",
+...
+```
+
+
 ## Bruke delegering i Altinn
 
 Dersom du ønsker at konsumenter av ditt API skal kunne bruke Altinn til å delegere tilgangen videre til en systemleverandør, må du opprette et såkalt delegeringsoppsett (delegationScheme) som må tilknyttes et eller flere av dine Oauth2 scopes i Maskinporten.  Dette fordrer at du er tjenesteeier i Altinn.
 
-Prosedyre:
+Prosedyren er nærmere dokumentert i [funksjonalitetsbeskrivelse for ekstern delegering](maskinporten_func_delegering.html).
 
 
-1. Du må lage en "delegerbar ressurs" i Altinn:
+1. Først oppretter du et scope i Maskinporten på vanlig måte (se ovenfor), men passe på å sette at dette scopet har en **delegeringskilde** knyttet til seg.
+
+
+2. Du så må lage en "delegerbar ressurs" i Altinn med det aktuelle scopet:
   * Be Altinn om å få tilgang til `altinn:maskinporten/delegationschemes.write` scope.
-  * Lag en maskinporten-klient som har dette admin-scopet provisjonert.
-  * Denne klienten må be et token fra Maskinporten, og så opprette ressursen slik:
-
-```
-POST /maskinporten-api/delegationSchemes HTTP/1.1
-Host: tt02.altinn.no
-Content-Type: application/json
-Authorization: Bearer  <mitt maskinporten-token>
-
-{
-    "owner_org": "991825827",
-    "scopes": [
-        "difitest:test2"
-    ],
-    "title": [
-        {
-            "code": "nb_NO",
-            "value": "Difi tester delegering"
-        }
-    ],
-    "description": [
-        {
-            "code": "nb_NO",
-            "value": "Bla bla bla bla bla og enno meir blah"
-        }
-    ],
-    "default_language": "nb_NO"
-}
-```
-
-Du vil få en ID til delegeringoppsettet i retur.
-
-TODO: link til swagger-dok
+  * Lag en maskinporten-klient som har dette admin-scopet registrert.
+  * Denne klienten må be et token fra Maskinporten, og så opprette ressursen ved et POST-kall til `https://tt02.altinn.no/maskinporten-api/delegationSchemes`
 
 
-2. Så må du opprette scopet i Maskinporten på vanlig måte (se ovenfor), men passe på å sette at dette scopet har en **delegeringskilde** knyttet til seg:
-
-```
-POST /scopes HTTP/1.1
-Host: integrasjon.difi.no
-Content-Type: application/json
-Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
-cache-control: no-cache
-{
-  "prefix": "difitest",
-  "subscope": "test2",
-  "description": "scope som krever ekstern delegeringskilde",
-  "delegation_source": "https://www.altinn.no"
-}
-```
-
-3. Til slutt gir du tilgang til konsumenter på vanlig måte.
-
+3. Til slutt gir du tilgang til konsumenter på vanlig måte. Merk at leverandøren aldri må gis direkte tilgang.
 
 Merk:
 * Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering

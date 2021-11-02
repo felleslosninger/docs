@@ -7,20 +7,218 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
+## 2.2.6
+08.10.2021
+
+**Feilrettinger**
+- Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
+
+## 2.2.5
+01.10.21
+
+**Features**
+
+- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+
+**Feilrettinger**
+
+- Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
+- rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
+- Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
+- PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
+- Tilkoblinger til DPV har nå begrenset levetid. 
+
+
+## 2.2.4
+20.08.21
+
+### Hva er endret/nytt?
+
+- Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
+
+
+
+## 2.2.3
+28.06.21
+
+### Hva er endret/nytt?
+
+**Features**
+
+- Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
+- Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
+- Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
+- Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
+- Added curl to Docker image.
+
+***
+
+## 2.2.2
+14.06.2021
+
+### Hva er endret/nytt?
+
+**Features**
+
+I denne versjonen er det gjort flere endringer for å bedre paralellitet ved sending og lesing fra kø vha konfigurerbare verdier for antall tråder og kanaler. Det er også innført en ytelsestest-profil og målinger for svartider på forespørsler. 
+
+* Innført valgfri prosess-parameter for capabilities oppslag.  
+* Måling av svartider for utgående forespørsler.
+* Innført ytelsestest-profil(YT)
+* Støtte for å deaktivere cache i YT-profil
+* Forbedret throughput på uthenting av kvitteringer for DPI. 
+* Mulighet for å konfigurere hvor mange tråder som skal brukes til sending. Standard er 10.
+* Konfigurerbar property for å ikke slå opp i DSF ved sending til DPI.
+* Konfigurerbar tråd pool for Sikker Digital Post klient i integrasjonspunktet.
+* Konfigurerbart hvor regelmessig meldingsstatuser skal hentes i DPV og DPF.
+* Innført paging for å redusere minnebruke ved oppslag av meldingsstatuser i DPV og DPF. 
+
+*Alle nye properties finner du [her](https://docs.digdir.no/eformidling_properties_config.html#eformidling---digital-post-til-innbyggere)*
+
+***
+
+## 2.2.1
+05.05.2021
+
+### Hva er endret/nytt?
+
+**Features**
+
+Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det er en forutsetning for bl.a. bruk av på-vegne-av funksjonalitet (delegering) for DPO. I tillegg inneholder den flere mindre feilrettinger og endringer:
+
+* Ved bruk av DPF, kan SvarInn nå skrus av separat via property “difi.move.fiks.inn.enable”. Denne har standardverdi tilsvarende “difi.move.feature.enableDPF“.
+* På-vegne-av DPV hadde feil avsender i varseltekst. Denne settes nå til organisasjonen som blir sendt på vegne av.
+* Egendefinert DPV varslingstekst støtter nå substitusjonsvariabelen “$reporterName$“ (i tillegg til allerede eksisterende “$reporteeName$“) .
+* Ifm. overgangen til Maskinporten, benyttes nå en nyere versjon av DSF som støtter flere adresselinjer. Integrasjonspunktet vil automatisk tilordne adresselinjene til feltene i forretningsmeldingen “urn:no:difi:digitalpost:xsd:fysisk::print“, men det er ikke gjort endringer i grensesnittet til kapabilitetsoppslag. Her vil adresselinjene ligge separert med semikolon (;) i “street”-feltet.
+* For å støtte en enklere overgangsfase for sakarkiv-leverandører ved implementasjon av eFormidling 2.0-grensesnittet, har vi fjernet kravet om UUID i ReceiverRef i SBDH. Denne valideringen vil bli gjeninnført ved et senere tidspunkt.
+* [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon) 	146.192.252.50:443 - maskinporten.no (TCP)
+
+***
+
+## 2.2.0
+09.02.2021
+
+### Hva er endret/nytt?
+
+**Features**
+
+* Tilrettelegging for at integrasjonspunktet skal kunne brukes i fire-hjørners modell, ved å introdusere støtte for plugins. Eksempelprosjekt: https://github.com/felleslosninger/efm-ip-plugin-example - Connect to preview 
+
+* Støtte for FIKS IO
+
+* Validering av eget sertifikat, samt. sertifikat registrert i Virksert, både ved oppstart og sending av melding
+
+* Ny raskere pollingoperasjon mot Altinn
+
+* Asynkron sletteoperasjon i API for innkommende meldinger - mindre sårbar for nettverksfeil
+
+* Innført støtte for JSON appender til stdout. Settes via property app.logger.stdoutAppender=JSON (default CONSOLE)
+
+* Støtte for RFC5987 i name-attributt for filopplasting til utgående meldinger
+
+* Nytt endepunkt for sletting av meldinger i status-API
+
+* Introdusert logging av correlationId for meldingsflyt (og feil-logging)
+
+**Feilrettinger:**
+
+* Oppslag mot KRR hvor mottakere mangler enten mobil eller epost vil ikke føre til feil under forsendelse, så lenge én av verdiene er satt (kun ett av mottakene for varsling er påkrevd)
+
+* Rettet prefetching-feil i forsendelseskø (ActiveMQ), som kunne føre til at feilende forsendelser blokkerte køen
+
+* Filtrering av innkommende meldinger fungerte ikke som forventet (API)
+
+* Error-respons uten melding fra noark-klient førte til feilsituasjon
+
+* Manglende timeout-config for serviceregistry-klient
+
+Fjernet logging-spam fra servicebus AMQP-klient under shutdown
+
+
+Full endringslogg: [Release notes for 2.2.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10196)
+
+***
+
+## 2.1.3
+18.08.2020
+
+### Hva er endret/nytt?
+
+* Validering av felt ved sending av DPF-forsendelser**
+
+
+**Mindre feilrettinger:**
+
+- Content-Disposition name-field does not support RFC5987
+
+
+Full endringslogg: [Release notes for 2.1.3](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10191)
+ 
+***
+
+## 2.1.2
+01.07.2020
+
+### Hva er endret/nytt?
+
+* Basic auth for alle endepunkter integrasjonspunktet tilbyre (bortsett fra "manage/health"**
+
+* Går over til bruk av JWK(JSON Web Key) for signering i integrasjonspunkt - hentes fra et nytt endepunkt i SR.**
+
+**Mindre feilrettinger:**
+
+- Content-disposition name-felt støtter ikkje support RFC5987
+
+- "0MB" vises som feilmelding når size limit er mindre enn ein megabyte.
+
+
+Full endringslogg: [Release notes for 2.1.2](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10187)
+
+***
+
+## 2.1.0
+05.03.2020
+
+### Hva er endret/nytt?
+
+**Ny meldingstype - Avtalt:**  
+[Les her.](https://difi.github.io/felleslosninger/eformidling_nm_message.html#avtalt)
+
+**Batchoppdatering av DPV/DPF statuser:**  
+Istedenfor å sjekke status for en og en melding blir dette gjort som en batchjobb. Øker ytelsen.
+
+**Grafisk statusgrensesnitt:**  
+Etter ønske er det nå lagt til avsender orgnr, samt søkbar messageReference. Forenkler oversikten i status GUI.
+
+**Mindre bugfixes:**  
+- Spamvarsling av DPV meldinger er fikset
+- KS avviser duplikate forsendelser med en gang.
+  
+  
+Full endringslogg: [Release notes for 2.1.0](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10174)
+
+***
+
 ## 2.0.10
 16.12.19
 
 [Release notes for 2.0.10](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10173)
+
+***
 
 ## 2.0.9
 12.12.19
 
 [Release notes for 2.0.9](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10172)
 
+***
+
 ## 2.0.8
 09.12.19
 
 [Release notes for 2.0.8](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10170)
+
+***
 
 ## 2.0.7
 18.11.19

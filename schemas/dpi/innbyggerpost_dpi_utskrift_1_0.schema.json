@@ -1,0 +1,192 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/utskrift.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Standard business document (SBD) brukt av Digdir",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "utskrift": {
+                    "$ref": "#/definitions/utskrift"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "utskrift"
+            ]
+        },
+        "utskrift": {
+            "$id": "#/definitions/utskrift",
+            "type": "object",
+            "title": "digitalpost",
+            "properties": {
+                "avsender": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "#/definitions/adresseInformasjon"
+                },
+                "dokumentpakkefingeravtrykk": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+                },
+                "maskinportentoken": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                },
+                "utskriftstype": {
+                    "$ref": "#/definitions/utskriftstype"
+                },
+                "retur": {
+                    "$ref": "#/definitions/retur"
+                },
+                "posttype": {
+                    "$ref": "#/definitions/posttype"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "dokumentpakkefingeravtrykk",
+                "maskinportentoken",
+                "utskriftstype",
+                "retur"
+            ],
+            "additionalProperties": false
+        },
+        "utskriftstype": {
+            "type": "string",
+            "enum": [
+                "SORT_HVIT",
+                "FARGE"
+            ],
+            "$id": "#/definitions/utskriftstype",
+            "title": "utskriftstype",
+            "description": "Betegnelse for hva slags print og utskriftstype som skal velges for dette brevet.",
+            "$comment": "utskriftstype avgjør hvilken utskriftsjobb brevet blir en del av. Det er to forskjellige utskriftsjobber, en for farge utskrift og en for sort-hvit. utskriftstype avgjør fargen på alle ark inklusive forssidearket. Hver utskriftstype har forskjellig pris. Gyldige verdier: SORT_HVITT, FARGE"
+        },
+        "retur": {
+            "type": "object",
+            "$id": "#/definitions/retur",
+            "title": "retur",
+            "description": "Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.",
+            "properties": {
+                "mottaker": {
+                    "$ref": "#/definitions/adresseInformasjon"
+                },
+                "returposthaandtering": {
+                    "$ref": "#/definitions/returposthaandtering"
+                }
+            },
+            "required": [
+                "mottaker",
+                "returposthaandtering"
+            ],
+            "additionalProperties": false
+        },
+        "returposthaandtering": {
+            "type": "string",
+            "$id": "#/definitions/returposthaandtering",
+            "title": "returposthaandtering",
+            "enum": [
+                "DIREKTE_RETUR",
+                "MAKULERING_MED_MELDING"
+            ],
+            "description": "Definerer hvordan fysisk post som ikke blir levert til mottaker skal håndteres.",
+            "$comment": "Valg av håndteringmetode for retur post. Dette blir valgt når post sendes til utskrift og avgjør hvordan returadresse og EA logo m.m. behandles. Gyldige verdier: DIREKTE_RETUR, MAKULERING_MED_MELDING"
+        },
+        "posttype": {
+            "type": "string",
+            "$id": "#/definitions/posttype",
+            "title": "posttype",
+            "enum": [
+                "A",
+                "B"
+            ],
+            "description": ""
+        },
+        "adresseInformasjon": {
+            "type": "object",
+            "$id": "#/definitions/adresseInformasjon",
+            "additionalProperties": false,
+            "properties": {
+                "navn": {
+                    "type": "string"
+                },
+                "adresselinje1": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "adresselinje2": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "adresselinje3": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "adresselinje4": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "postnummer": {
+                    "type": "string",
+                    "pattern": "^\\d{4}$"
+                },
+                "poststed": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "land": {
+                    "type": "string",
+                    "maxLength": 80
+                },
+                "landkode": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z]{2}$"
+                }
+            },
+            "oneOf": [
+                {
+                    "required": [
+                        "navn",
+                        "adresselinje1",
+                        "postnummer",
+                        "poststed"
+                    ]
+                },
+                {
+                    "oneOf": [
+                        {
+                            "required": [
+                                "navn",
+                                "adresselinje1",
+                                "land"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "navn",
+                                "adresselinje1",
+                                "landkode"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

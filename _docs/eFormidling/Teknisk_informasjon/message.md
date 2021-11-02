@@ -41,6 +41,9 @@ Adresseinformasjon legges i Standard Business Document Header.
 
 ```value``` feltet krever prefiks ```0192:``` før organisasjonsnummer for alle forsendelser til norske virksomheter. Prefiks er ikke påkrevd på mottaker om mottaker er innbygger. 
 
+#### På-vegne-av-avsender - DPV og DPI
+DPV og DPI støtter å sende meldinger på-vegne-av andre virksomheter. Dette angis i ```sender.identifier.value``` med følgende syntaks: ```0192:<orgnr>:<paa-vegne-av-orgnr>```. Når det gjelder DPI, støttes også avsenderidentifikator. Se eksempel under [Digital post til innbygger](#digital-post-til-innbygger).
+
 #### messageId
 Unik identifikator for meldingen, og brukes til å referere meldinger i grensesnittene. Mapper til documentIdentification.instanceIdentifier i SBD. Denne "erstatter" den gamle ConversationId for meldinger, se info under. 
 
@@ -127,15 +130,13 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 
 ### Digital post til innbygger
 
-Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. Utvidede regler rundt dette finnes [her](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/dokumentasjon/hvordan-skal-jeg-bruke-varsling-i-digital-postkasse).
+Ved sending av digital post til innbygger må man ta stilling til om meldingen har varslingsplikt eller ikke. [Les mer om dette her](http://samarbeid.digdir.no/digital-postkasse/dette-er-digital-postkasse/105)
+
 Begge prosessene støtter både digitalpost og fysisk post.
 
 - Info = informasjonsmeldinger uten varslingsplikt
 - Vedtak = meldinger som medfører varslingsplikt
 
-[Om Varslingsregelen](https://samarbeid.difi.no/felleslosninger/kontakt-og-reservasjonsregisteret#Varslingsregelen)
-
-[eForvaltningsloven](https://lovdata.no/dokument/SF/forskrift/2004-06-25-988/KAPITTEL_2#KAPITTEL_2)
 
 
 | Prosess | Dokumenttype | 
@@ -167,6 +168,8 @@ Begge prosessene støtter både digitalpost og fysisk post.
 ```json
 {% include /eformidling/nextmove/forretningsmeldingDpvDigital.json %}
 ```
+
+> Lenke uten for brev støttet funksjonalitet og er [dokumentert her](https://docs.digdir.no/eformidling_dev.html#Digital-post-til-innbygger-lenke-utenfor-brev)
 
 ### eInnsyn
 
@@ -201,8 +204,30 @@ Begge prosessene støtter både digitalpost og fysisk post.
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpeJournal.json %}
 ```
+### Avtalt
+
+Avtalt er en bilateral meldingstype som lar avsender og mottaker sende en forhåndsbestemt forretningsmelding som kan være strukturert eller ustrukturert. 
+
+| Prosess | Dokumenttype | 
+|---|---|
+|urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
+|  |urn:no:difi:avtalt:xsd::avtalt |
 
 
+Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Avtalt. 
 
+**Avtalt**
+```json
+{% include /eformidling/nextmove/forretningsmeldingDpoAvtalt.json %}
+```
 
+**Eksempel**
+```json
+{% include /eformidling/nextmove/forretningsmeldingDpoAvtaltEksempel.json %}
+```
 
+> Forretningsmeldinger som inneholder " " må disse endres til  ' ' for å unngå at json-validatoren leser det som et json-element. Dette kan spesielt være aktuelt i XML-filer som inlines i forretningsmeldingen.
+
+Avtalt-meldingen forklart på Integrasjon og sikkerhetsforum 2020. (00:26 – 11:31)
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/487591943?h=72a0cb0a4e" width="720" height="480" frameborder="0" allowfullscreen></iframe> 

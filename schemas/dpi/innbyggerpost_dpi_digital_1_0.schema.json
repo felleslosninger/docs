@@ -1,0 +1,84 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/digital.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Standard business document (SBD) brukt av Digdir",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "digital": {
+                    "$ref": "#/definitions/digital"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "digital"
+            ]
+        },
+        "digital": {
+            "$id": "#/definitions/digital",
+            "type": "object",
+            "title": "digitalpost",
+            "properties": {
+                "avsender": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/avsender"
+                },
+                "mottaker": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/personmottaker"
+                },
+                "dokumentpakkefingeravtrykk": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/dokumentpakkefingeravtrykk"
+                },
+                "maskinportentoken": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/maskinportentoken"
+                },
+                "sikkerhetsnivaa": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/sikkerhetsnivaa"
+                },
+                "virkningsdato": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningsdato"
+                },
+                "virkningstidspunkt": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/virkningstidspunkt"
+                },
+                "aapningskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/aapningskvittering"
+                },
+                "ikkesensitivtittel": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/ikkesensitivtittel"
+                },
+                "spraak": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/spraak"
+                },
+                "varsler": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/varsler"
+                }
+            },
+            "required": [
+                "avsender",
+                "mottaker",
+                "dokumentpakkefingeravtrykk",
+                "maskinportentoken",
+                "sikkerhetsnivaa",
+                "ikkesensitivtittel",
+                "spraak"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

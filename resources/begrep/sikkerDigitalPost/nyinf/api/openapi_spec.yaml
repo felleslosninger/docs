@@ -1,0 +1,304 @@
+openapi: 3.0.2
+info:
+    title: API for digital post til innbygger (DPI)
+    version: 1.0.0
+    description: API for digital post til innbygger (DPI). APIet brukes av avsender (Peppol hjørne 1) og tilbys av avsenders aksesspunktleverandør (Peppol hjørne 2).
+    x-logo: 
+      url: "https://docs.digdir.no/assets/Digdir.png"
+      altText: "Digdir logo"
+paths:
+    /messages/out:
+      post:
+        summary: Send forsendelse til innbygger
+        parameters:
+          - in: query
+            name: kanal
+            schema:
+              type: string
+              description: |
+                Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen.
+
+                Lovlige tegn for en kanal er:
+                * a-z
+                * A-Z
+                * 0-9
+                * _
+                * -
+
+                Andre begrensninger for kanal:
+                * Kanalnavnet er case-insensitivt slik at "minkanal" og "MINKANAL" er samme kanal
+                * Kanalnavnet er begrenset til maksimalt 28 tegn
+                * Særnorske tegn er ikke støttet. Whitespace er ikke støttet
+        requestBody:          
+          description: Forsendelse bestående av forretningsmelding og dokumentpakke.
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  forretningsmelding: 
+                    type: string
+                    description: JWT med forretningsmelding i payload. Se https://docs.digdir.no/dpi_skjema.html
+                  dokumentpakke: 
+                    type: string
+                    format: binary
+                    description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
+        responses: 
+          201: 
+            description: Forsendelse sendt til avsenders aksesspunkt.
+          400: 
+            description: Valideringsfeil. Utdypende informasjon om feilen beskrevet i problem+json.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          401:
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          403:
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'   
+    /messages/out/{id}/statuses:
+      get:
+        summary: Hent statuser for forsendelse
+        description: |
+          Henter statuser for forsendelse
+          * OPPRETTET: Forsendelse er markert som opprettet (men ikke sendt) i avsenders aksesspunkt
+          * SENDT: Forsendelse er markert som sendt OK til mottakers aksesspunkt
+          * FEILET: Forsendelse er markert som feilet i avsenderes aksesspunkt
+        parameters: 
+            - in: path
+              name: id            
+              schema: 
+                type: string
+                format: uuid
+                description: Unik ID for forsendelsen. Gitt som del av standard business document header (SBDH) ved sending (<code>standardBusinessDocument.documentIdentification.instanceIdentifier</code>).
+              required: true
+        responses:
+          200:
+            description: Liste med statuser  
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/statuses'          
+          401:
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          403:
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+    /messages/in:
+      get:
+        summary: Hent innkommende forsendelser
+        description: NB. De eneste innkommende forsendelsene som er støttet i versjon 1.0.0 er kvitteringer.
+        parameters:
+          - in: query
+            name: avsenderidentifikator
+            schema:
+              type: string
+              description: Identifiserer en avsender innenfor en virksomhet. Brukes for å støtte at samme virksomhet kan ha flere avsendere. Avsenderidentifikator må registreres manuelt i postkassene og framstår med egen logo, navn, osv. Gitt som del av forretningsmelding ved sending (<code>digital.avsender.avsenderidentifikator</code>).
+          - in: query
+            name: kanal
+            schema:
+              type: string
+              description: Hvert avsendersystem for en gitt avsender bruker vanligvis en unik kanal (MPC) slik at avsendersystemene ikke leser hverandres innkommende meldinger. Innkommende meldinger i konversasjonen knyttet til den sendte meldingen blir markert med denne kanalen. Dersom kanal ikke oppgis returneres innkommende meldinger uavhengig av kanal.
+          - in: query
+            name: page_size            
+            schema:
+              type: string
+              description: Antall forsendelser per side.
+          - in: query
+            name: page            
+            schema:
+              type: string
+              description: Sidenummer for side som skal hentes.
+        responses:
+          200: 
+            description: Liste med forsendelser.
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/messages'
+          204:
+            description: Ingen uleste meldinger.
+          401:
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          403:
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem' 
+    /messages/in/{id}:
+      get:  
+        summary: Hent dokumentpakke for innkommende forsendelse
+        parameters:
+          - in: path
+            name: id
+            schema: 
+              type: string
+              format: uuid
+              description: Unik ID for forsendelsen. Gitt som del av standard business document header (SBDH) ved sending (<code>standardBusinessDocument.documentIdentification.instanceIdentifier</code>).
+            required: true
+        responses:
+          200:
+            description: Kryptert dokumentpakke. Se https://docs.digdir.no/dpi_dokumentpakke_index.html
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/dokumentpakke'
+          401:
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          403:
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem' 
+          404:
+            description: Ugyldig id
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+    /messages/in/{id}/read:
+      post:
+        summary: Marker innkommende forsendelse som mottatt av avsender
+        description: NB. Medfører at innkommende forsendelse blir fjernet fra listen <code>GET messages</code> returnerer. Avsenders aksesspunkt kan slette melding.
+        parameters:
+          - in: path
+            name: id
+            schema:
+              type: string
+              format: uuid
+            required: true
+        responses:
+          200:
+            description: Forsendelse markert som mottatt av avsender.
+          401:
+            description: Autentiseringsfeil. F.eks. manglande JWT bearer grant.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          403:
+            description: Autorisasjonsfeil. F.eks. gyldig JWT bearer grant som mangler påkrevd scope.
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+          404:
+            description: Ugyldig id
+            content:
+              application/problem+json:
+                schema: 
+                  $ref : '#/components/schemas/problem'
+security:
+  - Maskinporten:
+    - digitalpostinnbygger:send    
+components:
+  securitySchemes:
+    Maskinporten:
+      type: http
+      description: APIet sikres med JWT bearer token fra Maskinporten. Se teknisk dokumentasjon for Maskinporten på https://docs.digdir.no/maskinporten_overordnet.html
+      scheme: bearer
+      bearerFormat: JWT
+  schemas: 
+    statuses:
+      type: array
+      items: 
+        $ref: '#/components/schemas/status'
+      uniqueItems: true
+    status:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - OPPRETTET
+            - SENDT
+            - FEILET
+        beskrivelse:
+          type: string
+          description: Ytterligere beskrivelse av status. For eksempel forklaring på hvorfor melding er markert som FEILET.
+        timestamp:
+          type: string
+          format: date-time
+    messages:
+      type: array
+      description: Liste med forsendelser. Se https://docs.digdir.no/dpi_skjema.html
+      items:
+        $ref: '#/components/schemas/message'
+    message:
+      type: object  
+      properties:
+        forretningsmelding:
+          type: string
+          description: JWT med forretningsmelding i payload. Se https://docs.digdir.no/dpi_skjema.html
+        downloadurl:
+          type: string
+          format: uri
+          description: URI til dokumentpakken for forsendelsen.
+    dokumentpakke:
+      type: string
+      format: binary  
+    problem:
+      type: object
+      description: 'problem+json as proposed in [RFC7807](https://tools.ietf.org/html/rfc7807)'
+      properties:
+        type:
+          type: string
+          format: uri
+          description: 'A URI reference [RFC3986](https://tools.ietf.org/html/rfc3986) that identifies the
+            problem type.  This specification encourages that, when
+            dereferenced, it provide human-readable documentation for the
+            problem type (e.g., using HTML [W3C.REC-html5-20141028](https://tools.ietf.org/html/rfc7807#ref-W3C.REC-html5-20141028)). When
+            this member is not present, its value is assumed to be
+            "about:blank".'
+          default: 'about:blank'
+        title:
+          type: string
+          description: 'A short, human-readable summary of the problem
+            type.  It SHOULD NOT change from occurrence to occurrence of the
+            problem, except for purposes of localization (e.g., using
+            proactive content negotiation; see [RFC7231, Section 3.4](https://tools.ietf.org/html/rfc7231#section-3.4).'
+        status:
+          type: integer
+          format: int32
+          description: 'The HTTP status code ([RFC7231, Section 6](https://tools.ietf.org/html/rfc7231#section-6))
+            generated by the origin server for this occurrence of the problem.'
+          minimum: 100
+          maximum: 600
+          exclusiveMaximum: true
+        detail:
+          type: string
+          description: 'A human-readable explanation specific to this
+            occurrence of the problem.'
+        instance:
+          type: string
+          format: uri
+          description: 'A URI reference that identifies the specific
+            occurrence of the problem.  It may or may not yield further
+            information if dereferenced.'
+
+

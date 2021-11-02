@@ -12,7 +12,7 @@ OBS! SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-
 sette opp nye integrasjoner mot KRR
 ```
 
-Gå til [Oppslagstjenesten REST](https://difi.github.io/felleslosninger/oppslagstjenesten_rest.html) 
+Gå til [Oppslagstjenesten REST](oppslagstjenesten_rest.html) 
 
 **Oppslagstjenesten** gir offentlig forvaltning tilgang til innbyggers registrerte kontaktinformasjon (sikkerpostadresse, e-postadresse og mobilnummer). Tjenesten kan benyttes av offentlige virksomheter og virksomheter som utfører tjenester på vegne av det offentlige. Tjenesten er en overbygning på eksisterende registre for forvaltningens elektroniske kommunikasjon, i første omgang kontakt- og reservasjonsregisteret. På sikt kan oppslagstjenesten også gi tilgang til andre registre. 
 
@@ -45,7 +45,7 @@ En av disse tjenestene er utlevering av **digital kontaktinformasjon via ID-port
 
 Ved innlogging i ID-porten, kan informasjon fra kontakt- og reservasjonsregisteret utleveres til de virksomheter som har tatt i bruk registeret og i tillegg ber om å få denne informasjonen gjennom ID-porten.
 
-For mer informasjon henvises det til [integrasjonsguide for ID-porten.](https://difi.github.io/felleslosninger/saml_tilgang.html)
+For mer informasjon henvises det til integrasjonsguiden for ID-porten.
 
 ### Aktører
 
@@ -77,7 +77,7 @@ Denne tjenesten gir offentlig virksomhet tilgang til printleverandør sitt serti
 ## Hvordan få tilgang til oppslagstjenesten? 
 
 **Kontakt oss**
-Les mer på <http://samarbeid.difi.no> eller ta kontakt med <idporten@difi.no> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
+Les mer på <http://samarbeid.digdir.no> eller ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> for å få hjelp med å ta i bruk kontakt- og reservasjonsregisteret. Da vil du kunne få den mest oppdaterte informasjonen.
 
 Følgende må gjøres før din virksomhet kan ta i bruk oppslagstjenesten:
 
@@ -99,7 +99,7 @@ Følgende må oppgis/avtales før man kan ta i brukt kontakt- og reservasjonsreg
 | Organisasjonsnummer for virksomheten | Dette må være det organisasjonsnummeret som ligger i virksomhetssertifikatet brukt i forbindelse med oppslag mot oppslagstjenesten. | 
 | | | 
 
-All informasjon utveksles over e-post til <idporten@difi.no>
+All informasjon utveksles over e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Datamodell
 
@@ -171,24 +171,22 @@ Accept: gzip, deflate
 
 | Miljø | Beskrivelse | Lenke | 
 | --- | --- | --- | 
-| Ver1 | Lik som produksjon | https://kontaktinfo-ws-ver1.difi.no/kontaktinfo-external/ws-v5 | 
 | Ver2 | Inneholder siste versjon under utvikling | https://kontaktinfo-ws-ver2.difi.no/kontaktinfo-external/ws-v5 |
 | Produksjon | | https://kontaktinfo-ws.difi.no/kontaktinfo-external/ws-v5 |
 | | | | 
 
-I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via idporten@difi.no
+I tillegg fins det to miljøer for ytelsestesting. Bruk av disse miljøene må koordineres med andre offentlige virksomheter, og derfor kreverDigitaliseringsdirektoratet at ytelsestester skal bestilles via <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 Miljøene er:
 
 | Miljø | Beskrivelse | Lenke | 
 | --- | --- | --- |
-| Ytelsetest1 | Lik som produksjon | https://kontaktinfo-ws-yt1.difi.no/kontaktinfo-external/ws-v5 | 
 | Ytelsetest2 | Inneholder siste versjon under utvikling | https://kontaktinfo-ws-yt2.difi.no/kontaktinfo-external/ws-v5 | 
 | | | | 
 
 Miljøene er tilgjengelig over internett. IP-adressen finnes ved å slå opp DNS-adressen for hvert miljø. Portnummeret er standard port for HTTPS, port: 443.
 
-Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailtO:idporten@difi.no">idporten@difi.no</a>. 
+Alle miljø er etablerte, og teknisk oppkobling fra offentlige virksomheter kan etableres ved å ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 *** 
 

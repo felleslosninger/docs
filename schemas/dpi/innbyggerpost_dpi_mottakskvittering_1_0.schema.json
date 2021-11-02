@@ -1,0 +1,35 @@
+{
+    "$id": "https://docs.digdir.no/schemas/dpi/mottakskvittering.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "En Kvitteringsmelding til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift.",
+    "$comment": "Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post.",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "standardBusinessDocument",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "mottakskvittering": {
+                    "$ref": "https://docs.digdir.no/schemas/dpi/commons.schema.json#/definitions/kvittering"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "mottakskvittering"
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}

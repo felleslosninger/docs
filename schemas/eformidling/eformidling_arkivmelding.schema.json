@@ -1,0 +1,60 @@
+{
+    "$id": "https://docs.digdir.no/schemas/eformidling/eformidling_arkivmelding.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Arkivmelding brukt innenfor eFormidling fra Digdir",
+    "definitions": {       
+        "arkivmelding" : {
+            "$id": "#/definitions/arkivmelding",
+            "type": "object",
+            "title": "arkivmelding",
+            "properties": {
+                "sikkerhetsnivaa": {"$ref": "#/definitions/sikkerhetsnivaa" },
+                "sensitiv": {"$ref" : "#/definitions/sensitiv"},
+                "hoveddokument" : {"$ref" : "#/definitions/hoveddokument" }
+            },
+            "required":[
+                "sikkerhetsnivaa",
+                "hoveddokument"
+            ],
+            "additionalProperties" : false
+        },
+        "sikkerhetsnivaa": {
+            "$id": "#/definitions/sikkerhetsnivaa",
+            "title": "sikkerhetsnivaa",
+            "description": "Definerer hvilket autentiseringsnivå som kreves for at dokumentet skal åpnes",
+            "$comment": "Gyldige verdier 3,4",
+            "type": "string",
+            "enum": [
+                "3",
+                "4"
+            ]
+        },
+        "sensitiv" : {
+            "$id": "#/definitions/sensitiv",
+            "title": "sikkerhetsnivaa",
+            "type" : "boolean",
+            "description": ""
+        },
+        "hoveddokument" : {
+            "$id": "#/definitions/hoveddokument",
+            "title": "hoveddokument",
+            "type" : "string",
+            "description": "TODO: må denne alltid være arkvimelding.xml?",
+            "const": "arkivmelding.xml"            
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocumentHeader": {
+            "$ref": "https://docs.digdir.no/schemas/common/sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+        },
+        "arkivmelding": {
+            "$ref": "#/definitions/arkivmelding"
+        }
+    },
+    "required": [
+        "standardBusinessDocumentHeader",
+        "arkivmelding"
+    ],
+    "additionalProperties": false
+}

@@ -7,17 +7,29 @@ product: eFormidling
 sidebar: eformidling_install_sidebar
 ---
 
-For å få tilgang til testmiljø må bestilling skje på samme måte som en ellers, ved å kontakte  <a href="mailto:idporten@difi.no">idporten@difi.no</a> og informere om at det gjelder testmiljø. 
+For å få tilgang til testmiljø må bestilling skje på samme måte som en ellers, ved å kontakte  <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> og informere om at det gjelder testmiljø. 
 
 I testmiljø må det brukes test virksomhetssertifikat og mottaker må enten være en test virksomhet eller annen virksomhet som også er aktiv i testmiljøet. 
 
-Informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du her [https://difi.github.io/felleslosninger/eformidling_ip_run.html](https://difi.github.io/felleslosninger/eformidling_ip_run.html)
+### Kjøre integrasjonspunktet mot testmiljø
 
-### Digital post til virksomheter(DPV)
+Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til ```spring.profiles.active=staging ``` i [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt) eller legge til ```-Dspring.profiles.active=staging``` som argument i XML-fila.
+
+**NB!** Kommandolinje har presendens over properties.
+
+Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du [her](eformidling_ip_run.html)
+
+### Digital post til virksomheter (DPV)
+
+**Brukernavn og passord som brukes i integrasjonspunktet**
+
+Om virksomheten ikke har fått dette allerede, ta kontakt med tjenesteeier@altinn.no, legg ved orgnummeret og forklar at dere skal teste mot tt02 miljøet til Altinn.
+
+**Testbrukere og testvirksomheter**
 
 Det er opprettet test virksomheter en kan bruke som mottakere. Her vil du kunne logge inn å finne forsendelsen din. Disse virksomhetene og brukeren vil være **felles** for alle virksomheter i testmiljø. Pass på å ikke sende sensitiv informasjon under testingen med disse virksomhetene.
 
-Testbruker og passord til innlogging i Altinn testmiljøet fåes ved å kontakte <a href="mailto:idporten@difi.no">idporten@difi.no</a> 
+Testbruker og passord til innlogging i Altinn testmiljøet fåes ved å kontakte <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> 
 
 For å logge inn i Altinn sitt testmiljø bruker du denne lenken <a href="https://tt02.altinn.no">https://tt02.altinn.no</a>
 
@@ -29,18 +41,27 @@ For å logge inn i Altinn sitt testmiljø bruker du denne lenken <a href="https:
 | 910568655 | AUKLANDSHAMN OG ELVEGARD | BEDR |
 
 
-### Digital post til offentlige virksomheter(DPO)
+### Digital post til offentlige virksomheter (DPO)
 
-Tabellen gjelder integrasjonspunktet tilDigitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
+**Brukernavn og passord som brukes i integrasjonspunktet**
+
+Her kan dere bruke samme som i produksjon.
+
+**Testvirksomheter**
+
+Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
+
+Ellers kan en avtale med andre virksomheter som bruker DPO i testmiljøet.
+
+Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger som er eksponert på URL ```https://ip-leik-meldingsutveksling.difi.no/```. Dette integrasjonspunktet kan sende og motta DPO meldinger.
 
 | Nøkkel | verdi |  
 | --- | --- | 
 | Organisasjonsnummer: | 987464291 | 
 | Tjeneste: | DPO | 
 | URL-integrasjonspunkt | https://ip-leik-meldingsutveksling.difi.no/ |
-| URL sak-arkiv mock | https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/ |
+| URL sak-arkiv mock | https://qa-meldingsutveksling.difi.no/sa-mock/incoming |
 
-Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å teste DPO-forsendelser i testmiljøet. Dette er ikke tilgjengelig i produksjon. En kan teste forsendelse ved å sende fra eget sak-arkivsystem til organisasjonsnummeret: ```987464291```
 
 <!--
  [NextMove: Postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
@@ -48,14 +69,25 @@ Vi har satt opp og eksponert et eget integrasjonspunkt som kan benyttes til å t
 
 #### Sak-arkiv mock
 
-Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/](https://beta-meldingsutveksling.difi.no/move-mocks/sa-mock/) 
+
+Det er satt opp en sak-arkiv mock som kan benyttes til å sende meldinger fra grensesnittet, eller se utgående og innkommende meldinger.  Denne er eksponert på [https://qa-meldingsutveksling.difi.no/sa-mock/incoming](https://qa-meldingsutveksling.difi.no/sa-mock/incoming) 
 
 
 
-![](/felleslosninger/images/eformidling/sakarkiv_flyt.PNG)
+![](/images/eformidling/sakarkiv_flyt.PNG)
+
+### Digital post til SvarInn/SvarUt (DPF)
 
 
+**Brukernavn og passord som brukes i integrasjonspunktet**
 
+Ta kontakt med svarut-utvikling@ks.no og si at dere skal teste SvarUt/SvarInn gjennom eformidling så får dere testbrukere.
+
+**Testvirksomheter**
+
+Dere kan sende til orgnummer 910229028.
+
+**NB! Ønsker virksomheten å teste eInnsyn? Ta kontakt med servicedesk@digdir.no**
 
 ---
 

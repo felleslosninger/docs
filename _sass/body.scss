@@ -1,0 +1,22 @@
+body {
+  font-family: "Inter", sans-serif;
+  color: $color-grey-700;
+  padding-top: $top-bar-height;
+}
+
+.content {
+  p img,
+  figure img {
+    max-width: 100%;
+  }
+
+  > .mermaid {
+    margin: 15px 0;
+  }
+
+  > .language-plaintext {
+    margin: 20px 0;
+  }
+
+}
+

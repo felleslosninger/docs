@@ -164,10 +164,10 @@
   <tr>
 	<td>difi.move.nextmove.useDbPersistence=true</td>
 	<td>skrur på bruk av database for persistering</td>
-	<td></td>
+	<td>NB! Denne må brukes sammen med ekstern database dersom en kjører med Docker</td>
   </tr>		
   <tr>
-	<td>spring.datasource.url=jdbc:mysql://databaseserver/databasenavn?serverTimezone=UTC</td>
+	<td>difi.datasource.url=jdbc:mysql://databaseserver/databasenavn?serverTimezone=UTC</td>
 	<td>Path til databasen</td>
 	<td>Om du bruker <i>?serverTimeZone=UTC</i> trenger du ikke den andre tidssone propertyen</td>
   </tr>
@@ -177,12 +177,12 @@
 	<td>Bruk denne eller legg det på etter datasource url. Se over.</td>
   </tr>		
   <tr>
-	<td>spring.datasource.username=</td>
+	<td>difi.datasource.username=</td>
 	<td>Bruker til databasen</td>
 	<td></td>
   </tr>	
   <tr>
-	<td>spring.datasource.password=</td>
+	<td>difi.datasource.password=</td>
 	<td>Passord til databasen</td>
 	<td></td>
   </tr>	

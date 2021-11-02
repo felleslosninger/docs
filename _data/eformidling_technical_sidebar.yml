@@ -4,8 +4,8 @@ folders:
 - title: Utviklerdokumentasjon
 
   folderitems:
-      
-      - title: Om NextMove
+
+      - title: Om eFormidling 2.0
         jurl: /eformidling_nm_about.html
 
       - title: Arkivmeldingen
@@ -20,11 +20,13 @@ folders:
       - title: Sikkerhet
         jurl: /eformidling_nm_sikkerhet.html
 
+      - title: Utivkler API-supplement
+        jurl: /eformidling_dev.html
+
       - title: Grensesnitt / REST docs
         jurl: /eformidling_nm_restdocs.html
-        
-      - title: Endringslogg 
-        jurl: /eformidling_releasenotes.html
+
+
 
 ###########################
 
@@ -36,9 +38,10 @@ related_resources_list:
   jurl: https://github.com/difi/felleslosninger
 
 - title: Samarbeidsportalen
-  jurl: https://samarbeid.difi.no/felleslosninger
+  jurl: https://samarbeid.digdir.no
 
-- title: Difi
-  jurl: https://www.difi.no
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
 
-
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

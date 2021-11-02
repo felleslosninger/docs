@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@mixin font-style($size: 400, $font-weight: 400) {
+
+  font-weight: $font-weight;
+
+  @if $size == 100 {
+    font-size: 12px;
+  }
+
+  @if $size == 200 {
+    font-size: 14px;
+  }
+
+  @if $size == 300 {
+    font-size: 15px;
+  }
+
+  @if $size == 400 {
+    font-size: 16px;
+  }
+
+  @if $size == 500 {
+    font-size: 18px;
+  }
+
+  @if $size == 600 {
+    font-size: 20px;
+  }
+
+  @if $size == 700 {
+    font-size: 22px;
+  }
+
+  @if $size == 800 {
+    font-size: 26px;
+  }
+
+  @if $size == 900 {
+    font-size: 29px;
+  }
+
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+}
+
+h1 {
+  margin-bottom: 30px;
+  @include font-style(900, 500);
+}
+
+h2 {
+  margin-top: 36px;
+  margin-bottom: 18px;
+  @include font-style(800, 500);
+}
+
+h3 {
+  margin-top: 36px;
+  margin-bottom: 18px;
+  @include font-style(700, 500);
+}
+
+h4 {
+  margin-top: 36px;
+  margin-bottom: 18px;
+  @include font-style(600, 500);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: gray;
+  margin-top: 50px;
+}
+
+p {
+  @include font-style(400, 400);
+  line-height: 1.65em;
+  margin-bottom: 18px;
+}
+
+strong {
+  font-weight: 500;
+}

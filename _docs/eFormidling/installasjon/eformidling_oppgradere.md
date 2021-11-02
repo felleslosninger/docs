@@ -10,7 +10,7 @@ sidebar: eformidling_install_sidebar
 
 ## Oppgradere integrasjonspunktet
 
-Nyeste versjonen som kan lastes ned [her.](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.10/integrasjonspunkt-2.0.10.jar) 
+[Nyeste versjon av integrasjonspunktet lastes ned her](https://docs.digdir.no/eformidling_download_ip.html)
 
 
 Hva må gjøres? 
@@ -18,14 +18,14 @@ Hva må gjøres?
 Vi anbefaler å ta backup av integrasjonspunkt-mappen før du begynner.
 
 1. Stopp integrasjonspunktet.
-2. Last ned [nytt integrasjonspunkt](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.10/integrasjonspunkt-2.0.10.jar) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet.
+2. Last ned [nytt integrasjonspunkt](eformidling_download_ip.html) og legg integrasjonspunkt[versjonsnr].jar filen inn i mappen med det gamle integrasjonspunktet. (Egen framgangsmåte ved docker image)
 3. Oppdater versjonsnummer i din tjeneste (xml-fil), scheduled task eller kommando i konsollvindu. Se lenger nede på siden for mer informasjon.
 4. Start integrasjonspunktet. 
 
 
 
-> Den 23. september 2019 ble det tilgjengeliggjort den første versjonen av integrasjonspunktet med NextMove. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
-> Alle må oppgradere. Eldre versjoner enn 2.0.X av integrasjonspunktet fungerer ikke etter mandag 23. september 2019. Vi anbefaler å oppgradere integrasjonspunktet til den nyeste versjonen
+> Den 23. september 2019 ble den første versjonen av integrasjonspunktet med eFormidling 2. tilgjengeliggjort0. Ny generasjon 2.0.X av integrasjonspunktet inneholder vesentlige endringer. 
+> Eldre versjoner enn 2.0.X av integrasjonspunktet fungerer ikke etter mandag 23. september 2019. Vi anbefaler å oppgradere integrasjonspunktet til den nyeste versjonen
 
 ---
 

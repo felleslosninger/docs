@@ -5,7 +5,7 @@ permalink: digipost_dokumentasjon.html
 product: Digital postkasse
 ---
 
-Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere)
+Beskrivelse av tjenesten, priser og tilleggstjenester finnes på [Samarbeidsportalen](https://samarbeid.digdir.no)
 
 #### Dokumentasjon og klienter
 [Klientbibliotek .Net](http://difi.github.io/sikker-digital-post-klient-dotnet/v2/)
@@ -15,10 +15,10 @@ Beskrivelse av tjenesten, priser og tilleggstjenester finnes i [samarbeidsportal
 [Integrasjonsguide/begrepskatalog](https://begrep.difi.no/SikkerDigitalPost/) 
 
 #### Hvem kan bruke digital post til innbyggere?
-Offentlige virksomheter som har godtattDigitaliseringsdirektoratets  bruksvilkår kan ta i bruk denne tjenesten. Se [bruksvilkår i samarbeidsportalen](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-difis-felleslosninger)
+Offentlige virksomheter som har godtatt Digitaliseringsdirektoratets  bruksvilkår kan ta i bruk denne tjenesten. Se [bruksvilkår i Samarbeidsportalen](https://samarbeid.digdir.no)
 
 #### Rutine for tilgang
-Følg [stegvis veiledning på samarbeidsportalen](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/ta-i-bruk-digital-postkasse)
+Følg [stegvis veiledning på Samarbeidsportalen](https://samarbeid.digdir.no)
 
 
 
