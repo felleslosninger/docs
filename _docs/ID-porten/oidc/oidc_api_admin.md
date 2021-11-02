@@ -172,25 +172,6 @@ Nøkkelidentifikatoren `kid` velges av kunde selv, og må være unik innenfor al
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
-
-## REST-grensesnittet
-
-Se Open-API dokumentasjon her:
-
-[https://integrasjon-ver2.difi.no/swagger-ui/](https://integrasjon-ver2.difi.no/swagger-ui/)
-
-Merk at ID-porten vil opprette client_id og client_secret.
-
-
-## Eksempel
-
-### Eksempel på å lese klientregistrering:
-
-```
-GET /clients/oidc_eksempel_klient
-Accept: application/json
-Authorization: Bearer <my_access_token_value>
-
 ## Registrering av scopes
 
 Se [dokumentasjon av klient-registrering](oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for å få lov til å registrere Oauth2 scopes tilhørende Digdir eller 3djeparter på en integrasjon.
