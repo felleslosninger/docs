@@ -288,6 +288,6 @@ Auke loggnivået på KOSMOS for å få ekstra informasjon ved oppstart eller fei
 
 ## Kjeldekode og tilhøyrande dokumentasjon
 
-(Github)[https://github.com/felleslosninger/efm-deploy-manager]
+> [Kjeldekode på Github](https://github.com/felleslosninger/efm-deploy-manager)
  
 
