@@ -141,16 +141,31 @@ az keyvault secret set --vault-name "ip-kv" --name "kspass" --value "hemmelig pa
 ```
 
 For å tilgjengeliggjøre denne secret'en som en miljøvariabel, slik at den kan suppleres til integrasjonspunktet, benytter
-vi *Azure Key Vault Env Injector* (<https://github.com/SparebankenVest/public-helm-charts/tree/master/stable/azure-key-vault-env-injector>)
+vi *akv2k8s (Azure Key Vault to Kubernetes)* (<https://akv2k8s.io/>)
 
 ```console
 $ kubectl create ns akv2k8s
 $ helm repo add spv-charts http://charts.spvapi.no
 $ helm repo update
-$ helm install spv-charts/azure-key-vault-env-injector --namespace akv2k8s
+$ helm upgrade --install akv2k8s spv-charts/akv2k8s --namespace akv2k8s
 ```
 
-Skru på komponenten for default namespace
+akv2k8s trenger lesetilgang til Azure Key Vault for å hente secrets, enten via service principal eller managed identity. Clusteret i dette eksempelet ble satt opp med managed identity:
+
+```console
+$ az aks show -n ip-akscluster -g ip-rg | jq .identityProfile.kubeletidentity.objectId -r
+7c8ce058-55f0-4ae2-b1f2-c22521ae0893
+$ az keyvault set-policy --name ip-kv --object-id 7c8ce058-55f0-4ae2-b1f2-c22521ae0893 --certificate-permissions get
+```
+
+Alternativt med service principal:
+
+```console
+$ az keyvault set-policy --name ip-kv --spn <spn> --certificate-permissions get
+```
+
+
+Skru på env-injection for default namespace
 
 ```console
 cat << EOF | kubectl apply -f -
@@ -166,7 +181,7 @@ EOF
 Key Vault secret'en må så gjøres tilgjenglig for clusteret:
 
 ```console
-apiVersion: spv.no/v1alpha1
+apiVersion: spv.no/v2beta1
 kind: AzureKeyVaultSecret
 metadata:
   name: kv-kspass
@@ -215,7 +230,7 @@ spec:
         app: ip-staging
     spec:
       containers:
-      - image: difi/integrasjonspunkt:2.2.4
+      - image: digdir/integrasjonspunkt:2.2.6
         name: integrasjonspunkt
         resources: {}
         volumeMounts:
@@ -278,7 +293,7 @@ spec:
     targetPort: 9093
   selector:
     app: ip-staging
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer: {}
 ```
@@ -289,16 +304,21 @@ Deploy:
 $ kubectl apply -f integrasjonspunkt.yaml
 ```
 
-Servicen er her satt opp med type `LoadBalancer`. Kjør følgende kommando for å finne ekstern ip:
+Servicen er her satt opp med type `ClusterIP` - port 9093 må forwardes for å få kontakt med tjenesten lokalt:
 
 ```console
 $ kubectl get service ip-staging
-NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)          AGE
-ip-staging   LoadBalancer   10.0.237.167   20.191.55.61   9093:31108/TCP   1d
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+ip-staging   ClusterIP   10.0.166.107   <none>        9093/TCP   15h
+
+$ kubectl port-forward svc/ip-staging 9093
+Forwarding from 127.0.0.1:9093 -> 9093
+Forwarding from [::1]:9093 -> 9093
+Handling connection for 9093
 ```
 
 Integrasjonspunktet skal da kunne nåes på følgende adresse (bytt ut med egen ekstern ip):
 
 ```console
-$ curl http://20.191.55.61:9093/manage/health
+$ curl http://localhost:9093/manage/health
 ```
