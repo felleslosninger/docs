@@ -155,13 +155,13 @@ akv2k8s trenger lesetilgang til Azure Key Vault for å hente secrets, enten via 
 ```console
 $ az aks show -n ip-akscluster -g ip-rg | jq .identityProfile.kubeletidentity.objectId -r
 7c8ce058-55f0-4ae2-b1f2-c22521ae0893
-$ az keyvault set-policy --name ip-kv --object-id 7c8ce058-55f0-4ae2-b1f2-c22521ae0893 --certificate-permissions get
+$ az keyvault set-policy --name ip-kv --object-id 7c8ce058-55f0-4ae2-b1f2-c22521ae0893 --secret-permissions get
 ```
 
 Alternativt med service principal:
 
 ```console
-$ az keyvault set-policy --name ip-kv --spn <spn> --certificate-permissions get
+$ az keyvault set-policy --name ip-kv --spn <spn> --secret-permissions get
 ```
 
 
