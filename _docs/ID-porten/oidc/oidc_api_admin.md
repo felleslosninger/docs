@@ -131,7 +131,7 @@ Klient-hemmelighet (client_secret) blir ikke resatt ved endringer, men dersom ma
 
 ### Rotering av client_secret
 
-For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui.html#/oidc-client-controller/updateSecretUsingPOST)
+For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui/?urls.primaryName=External%20OIDC#/oidc-client-controller/updateSecretUsingPOST)
 
 Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_secret.
 
