@@ -1,4 +1,4 @@
-<configuration>
+<service>
   
   <!-- ID of the service. It should be unique accross the Windows system-->
   <id>kosmossvc</id>
@@ -16,4 +16,4 @@
     <sizeThreshold>10240</sizeThreshold>
     <keepFiles>8</keepFiles>
   </log>
-</configuration>
+</service>
