@@ -81,7 +81,7 @@ github_editme_path: https://github.com/difi/felleslosninger/blob/gh-pages
 glossary: true
 
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
-glossary_path: https://difi.github.io/felleslosninger/ordliste.html
+glossary_path: ordliste.html
 
 
 ############# EXCLUDE LIST #############
