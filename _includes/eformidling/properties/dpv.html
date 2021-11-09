@@ -75,6 +75,7 @@
 	<td>Passord du satte når du opprettet Altinn systembruker</td>
 	<td></td>
   </tr>
+
    <tr>
 	<th>Spesifikk for Digital post til kommuner (DPF)</th>
 	 <th></th>
@@ -155,7 +156,35 @@
 	<td>difi.move.fiks.inn.fallbackSenderOrgNr=000048755</td>
 	<td>Alternativt: Workaround for hente inn meldinger fra svarInn utan orgnr i metadata</td>
 	<td>Sett et vilkårlig nummer (9 siffer). feks 000048755</td>
-   </tr>			
+ </tr>			
+ <tr>
+ 	<th>Spesifikt for FIKS IO</th>
+ </tr>
+ <tr>
+ 	<td>difi.move.feature.enableDPFIO=</td>
+ 	<td>Toggle for FIKS IO-integrasjon</td>
+ 	<td>(true/false)</td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.konto-id=</td>
+	<td>FIKS IO kontoId</td>
+	<td>(UUID)</td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.integrasjons-id=</td>
+	<td>Id til valgt integrasjon</td>
+	<td>(UUID)</td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.integrasjons-passord=</td>
+	<td>Passord til valgt integrasjon</td>
+	<td></td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.sender-orgnr=</td>
+	<td>Statisk avsender-orgnr for mottatte meldinger</td>
+	<td>(orgnr)</td>
+ </tr>
  <tr>
 	<th>Kun om du skal bruke egen database</th>
 	 <th></th>
