@@ -88,7 +88,8 @@ Begynn med å lage en ny mappe der du legger alle ressursene du lastet ned. Anbe
 Følg så stegene under:
 
 1. Navngi xml-og exe-filen slik at de har samme navn. Det er viktig at disse er like.
-2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen. Disse verdiene må være fylt ut:
+2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen. Disse verdiene må være fylt ut (minstekrav):
+![Properties eksempel](/images/eformidling/properties.png)
 3. Integrasjonspunktmappen bør se slik ut nå:
 ![Mappen pre-install](/images/eformidling/mappe%20pre-install.png)
 4. Åpne kommandovindu som administrator. Naviger frem til integrasjonspunktmappen.
