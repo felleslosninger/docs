@@ -3,7 +3,7 @@ title: Integrasjonspunkt i AKS
 description: Sjekkliste for hvordan sette opp integrasjonspunktet i AKS
 permalink: integrasjonspunkt_aks.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 Forutsetninger

@@ -4,7 +4,7 @@ description: Sikkerhet
 summary: ""
 permalink: eformidling_nm_sikkerhet.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_sidebar
 ---
 
 
