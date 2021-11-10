@@ -1,7 +1,6 @@
 ---
 title: Endringslogg integrasjonspunktet
 description: Endringslogg for integrasjonspunktet
-sidebar: eformidling
 permalink: eformidling_releasenotes.html
 product: eFormidling
 sidebar: eformidling_sidebar
