@@ -50,6 +50,9 @@ Unik identifikator for meldingen, og brukes til å referere meldinger i grensesn
 #### conversationId
 Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
 
+#### creationDateAndTime
+Dette feltet kan utelates da det vil bli satt automatisk til nåtid ved oppretting av SBD.  Om en benytter UTC så bør dette feltet utelates. 
+
 ## Forretningsmelding
 
 Forretningsmeldingen inneholder meldingsformidlings-spesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
