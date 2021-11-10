@@ -7,10 +7,10 @@ column2_title: Hvordan bidra?
 column2_links:
   -
     target: CONTRIBUTING.html
-    text: Gjøre endringer direkte
+    text: Gjør endringer direkte
   -
-    target: https://github.com/difi/felleslosninger/issues
-    text: Opprette issue på GitHub
+    target: https://github.com/felleslosninger/docs/issues
+    text: Opprett et problem på GitHub
   -
     target: NOTICE.html
     text: Teknologi brukt på disse sidene
