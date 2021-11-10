@@ -1,6 +1,6 @@
 {
     "$id": "https://docs.digdir.no/schemas/dpi/returpostkvittering.schema.json",
-    "$schema": "https://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "description": "En Kvitteringsmelding fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker.",
     "$comment": "Dette er Kvittering på at posten har kommet i retur og har blitt makulert.",
     "definitions": {

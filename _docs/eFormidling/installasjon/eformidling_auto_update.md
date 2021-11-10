@@ -173,7 +173,7 @@ Vi har lagt opp til at KOSMOS kan køyrast som ei Windows-teneste vha jar-wrappe
 
 Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå følgande konfigurasjon:
 ```
-<configuration>
+<service>
   
   <!-- ID of the service. It should be unique accross the Windows system-->
   <id>kosmossvc</id>
@@ -191,7 +191,7 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
     <sizeThreshold>10240</sizeThreshold>
     <keepFiles>8</keepFiles>
   </log>
-</configuration>
+</service>
 ```
 *[Last ned konfigurasjonsfila her](/resources/eformidling/kosmos-service.xml)*
 

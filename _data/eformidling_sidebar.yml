@@ -23,8 +23,11 @@ folders:
       - title: Oppstart av integrasjonspunktet
         jurl: /eformidling_ip_run.html
 
-      - title: Automatisk oppdatering av integrasjonspunktet
+      - title: KOSMOS - Automatisk oppdatering av integrasjonspunktet
         jurl: /eformidling_auto_update.html
+
+      - title: KOSMOS guide
+        jurl: /eformidling_kosmos_user_guide.html
 
       - title: Opprette brukere i eFormidling
         jurl: /eformidling_create_users.html

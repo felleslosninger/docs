@@ -26,7 +26,7 @@
       </Scope>
     </BusinessScope>
   </StandardBusinessDocumentHeader>
-  <Innbyggerpost>
+  <Innbyggerpost xmlns="http://digdir.no/dpi/innbyggerpost">
     <SignertForretningsmelding>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGFuZGFyZEJ1c2l.....</SignertForretningsmelding>
     <Dokumentpakke>ABCD45678922...</Dokumentpakke>
   </Innbyggerpost>

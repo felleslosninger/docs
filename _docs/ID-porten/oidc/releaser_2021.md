@@ -13,9 +13,9 @@ sidebar: oidc
 |[21-06 ID-porten utland](21-06_ID-porten_utland.html)|Jun 15, 2021| Ifbm korona-situasjonen er det behov for å etablere en innloggingsløsning til helsenorge.no for brukere som mangler F/D-nummer.  |
 |[21-08 ID-porten](21-08_ID-porten.html)|Aug 25, 2021| Oppdatering av openam |
 |[21-08 Maskinporten](21-08_Maskinporten.html)|Aug 29, 2021| Feilretting av en minnelekkasje og forbedret stabilitet i integrasjon mot Altinn |
-|[21-09 Maskinporten](21-09_Maskinporten.html)|*Sep 29, 2021*| Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl ihht eIDAS, innimellom kjent som såkalte "PSD2-sertifikater) |
-|[21-09 MinID](21-09_MinID.html)|*Oct 12, 2021*| Støtte for app-basert innlogging isteden for SMS.  Refaktorering av MinID for å tilpasses ny systemarkitektur-prosjektet. |
-|[20-10 Ansattporten ](20-10_Ansattporten_.html)|*Oct 19, 2021*| En første versjon av pilot for Ansattporten |
-|[21-11 ID-porten](21-11_ID-porten.html)|*Nov 15, 2021*| Overgang til OIDC mot eID-leverandørene ifbm nye leverandøravtaler |
+|[21-09 Maskinporten](21-09_Maskinporten.html)|Oct 26, 2021| Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl ihht eIDAS) |
+|[20-10 Ansattporten ](20-10_Ansattporten_.html)|*Nov 3, 2021*| En første versjon av pilot for Ansattporten |
+|[21-09 MinID](21-09_MinID.html)|*Nov 9, 2021*| Støtte for app-basert innlogging isteden for SMS.  Refaktorering av MinID for å tilpasses ny systemarkitektur-prosjektet. |
+|[21-11 ID-porten](21-11_ID-porten.html)|*Nov 30, 2021*| Overgang til OIDC mot eID-leverandørene ifbm nye leverandøravtaler |
 |[Backlog](Backlog.html)|*Q4 2021*| Backlog inneheld utviklingstiltak som me ikkje har starta på enno.  |
 |[Prosjekter](Prosjekter.html)|*Q4 2021*| Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020. |

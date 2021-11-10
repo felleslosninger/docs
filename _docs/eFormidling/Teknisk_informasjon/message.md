@@ -50,6 +50,9 @@ Unik identifikator for meldingen, og brukes til å referere meldinger i grensesn
 #### conversationId
 Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
 
+#### creationDateAndTime
+Dette feltet kan utelates da det vil bli satt automatisk til nåtid ved oppretting av SBD.  Om en benytter UTC så bør dette feltet utelates. 
+
 ## Forretningsmelding
 
 Forretningsmeldingen inneholder meldingsformidlings-spesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
@@ -231,3 +234,59 @@ Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Av
 Avtalt-meldingen forklart på Integrasjon og sikkerhetsforum 2020. (00:26 – 11:31)
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/487591943?h=72a0cb0a4e" width="720" height="480" frameborder="0" allowfullscreen></iframe> 
+
+
+### Fiks IO
+
+Integrasjonspunktet støtter å sende meldinger over [Fiks IO-platformen](https://ks-no.github.io/fiks-plattform/tjenester/fiksio/). Dette forutsetter konfigurasjon beskrevet [her](https://docs.digdir.no/eformidling_properties_config.html#fiks-io).
+
+Det er opp til den enkelte avsender å verifisere at gitt mottaker kan motta meldinger over valgt meldingsprotokoll; integrasjonspunktet validerer kun at kontoId til mottaker er gyldig.
+
+SBD'en må inneholde følgende:
+- ```receiver.identifier.value```: mottakers kontoId, UUID
+- ```documentIdentification.type```: ```fiksio```
+- ```documentIdentification.standard```: meldingsprotokoll
+- ```businessScope.scope.identifier```: meldingsprotokoll (repetert)
+- Tom forretningsmelding
+
+Eksempel på full SBD:
+```json
+{
+  "standardBusinessDocumentHeader": {
+    "businessScope": {
+      "scope": [
+        {
+          "scopeInformation": [
+            {
+             "expectedResponseDateTime": "20xx-05-10T00:31:52Z"
+           }
+         ],
+          "identifier": "fiks.io.testprotokoll",
+          "type": "ConversationId"
+        }
+      ]
+    },
+    "documentIdentification": {
+      "standard": "fiks.io.testprotokoll",
+      "type": "fiksio",
+      "typeVersion": "2.0"
+    },
+    "headerVersion": "1.0",
+    "receiver": [
+      {
+        "identifier": {
+         "authority": "iso6523-actorid-upis",
+         "value": "fe3070c9-6fc9-4342-becb-cc56f1bc11d3"
+       }
+     }
+   ]
+  },
+  "fiksio": {
+  }
+}
+```
+> NB: avsender kan ikke overstyres da det alltid er kontoId fra konfigurasjon som benyttes, og kan derfor utelates fra SBD.
+
+Vedlegg håndteres som normalt. Det er ingen kjente begrensninger mot platformen på verken antall vedlegg eller størrelse. For vedlegg større enn 5mb benyttes mellomlagring i Fiks Dokumentlager. Dette er automatisk håndtert av klienten.
+
+Dokumentasjon av Fiks IO finnes [her](https://ks-no.github.io/fiks-plattform/tjenester/fiksio/).

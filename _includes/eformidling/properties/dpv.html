@@ -75,6 +75,7 @@
 	<td>Passord du satte når du opprettet Altinn systembruker</td>
 	<td></td>
   </tr>
+
    <tr>
 	<th>Spesifikk for Digital post til kommuner (DPF)</th>
 	 <th></th>
@@ -155,7 +156,35 @@
 	<td>difi.move.fiks.inn.fallbackSenderOrgNr=000048755</td>
 	<td>Alternativt: Workaround for hente inn meldinger fra svarInn utan orgnr i metadata</td>
 	<td>Sett et vilkårlig nummer (9 siffer). feks 000048755</td>
-   </tr>			
+ </tr>			
+ <tr>
+ 	<th><a id="fiks-io">Spesifikt for FIKS IO</a></th>
+ </tr>
+ <tr>
+ 	<td>difi.move.feature.enableDPFIO=</td>
+ 	<td>Toggle for FIKS IO-integrasjon</td>
+ 	<td>(true/false)</td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.konto-id=</td>
+	<td>FIKS IO kontoId</td>
+	<td>(UUID)</td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.integrasjons-id=</td>
+	<td>Id til valgt integrasjon</td>
+	<td>(UUID)</td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.integrasjons-passord=</td>
+	<td>Passord til valgt integrasjon</td>
+	<td></td>
+ </tr>
+ <tr>
+	<td>difi.move.fiks.io.sender-orgnr=</td>
+	<td>Statisk avsender-orgnr for mottatte meldinger</td>
+	<td>(orgnr)</td>
+ </tr>
  <tr>
 	<th>Kun om du skal bruke egen database</th>
 	 <th></th>
@@ -167,7 +196,7 @@
 	<td>NB! Denne må brukes sammen med ekstern database dersom en kjører med Docker</td>
   </tr>		
   <tr>
-	<td>spring.datasource.url=jdbc:mysql://databaseserver/databasenavn?serverTimezone=UTC</td>
+	<td>difi.datasource.url=jdbc:mysql://databaseserver/databasenavn?serverTimezone=UTC</td>
 	<td>Path til databasen</td>
 	<td>Om du bruker <i>?serverTimeZone=UTC</i> trenger du ikke den andre tidssone propertyen</td>
   </tr>
@@ -177,12 +206,12 @@
 	<td>Bruk denne eller legg det på etter datasource url. Se over.</td>
   </tr>		
   <tr>
-	<td>spring.datasource.username=</td>
+	<td>difi.datasource.username=</td>
 	<td>Bruker til databasen</td>
 	<td></td>
   </tr>	
   <tr>
-	<td>spring.datasource.password=</td>
+	<td>difi.datasource.password=</td>
 	<td>Passord til databasen</td>
 	<td></td>
   </tr>	

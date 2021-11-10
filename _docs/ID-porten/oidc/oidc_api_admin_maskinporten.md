@@ -37,15 +37,10 @@ Vi krever at virksomhetene oppretter en egen administrasjons-klient som kun får
 
 ### OpenAPI-dokumentasjon
 
-REST-grensesnittet er [dokumentert her](https://integrasjon-ver2.difi.no/swagger-ui.html#).
+REST-grensesnittet er [dokumentert her](https://integrasjon-ver2.difi.no/swagger-ui/).
 
 Merk at du må manuelt velge riktig spec' oppe i høyre hjørne.  For Maskinporten er det "Scopes" du skal se på.
 
-
-
-## Grunnleggende prosedyre for API-sikring
-
-Se [integrasjonsguide for Maskinporten](oidc_guide_maskinporten.html).
 
 
 ### Beskrivelse av APIer

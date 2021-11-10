@@ -7,6 +7,28 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+## 2.2.6
+08.10.2021
+
+**Feilrettinger**
+- Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
+
+## 2.2.5
+01.10.21
+
+**Features**
+
+- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+
+**Feilrettinger**
+
+- Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
+- rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
+- Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
+- PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
+- Tilkoblinger til DPV har nå begrenset levetid. 
+
+
 ## 2.2.4
 20.08.21
 

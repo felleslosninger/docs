@@ -12,7 +12,7 @@ Refaktorering av MinID for å tilpasses ny systemarkitektur-prosjektet.
 
 
 
-Planlagd produksjonssetting: Oct 12, 2021
+Planlagd produksjonssetting: Nov 9, 2021
 
 ## Ny funksjonalitet:
 

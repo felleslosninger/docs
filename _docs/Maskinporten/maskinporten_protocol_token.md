@@ -148,12 +148,18 @@ The following values may be returned for the `client_amr`-claim.  The values are
 
 **The client and resource server MUST validate all responses from Maskinporten according to the Oauth2 standards as well as best practice recommendations from the IETF.**
 
-Access tokens must always be validated by the Resource Server / API before granting access. Clients should normally just pass the access token along to the resource server without any processing of it, however if any processing is performed, clients must also perform such validation.
+Access tokens must always be validated by the Resource Server / API before granting access. Some key steps in the validation are: 
+* verify that the issuer of the token is Maskinporten (`iss=https://maskinporten.no/`)
+* verify that the token is signed
+* verify that the signature is created by the signing keys of Maskinporten published at our /jwks-endpoint
+  * you should cache the signing keys of Maskinporten for say 24 hours and avoid calling the /jwks-endpoint for each token validation.
+* verify that the token contains the expected oauth2 scope
+
+
+Clients should normally just pass the access token along to the resource server without any processing of it, however if any processing is performed, clients must also perform such validation.
 
 The following references are vital:
 * [RFC6819: Oauth2 threat model](https://tools.ietf.org/html/rfc6819)
-* [RFC8252: OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252)
-* [Draft RFC: OAuth 2.0 for Browser-Based Apps](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-03)
 * [Draft RFC: OAuth 2.0 Security Best Current Practice](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-13)
 
 Developers integrating towards  Maskinporten are expected to know these documents and apply them in their risk assessments. Our documention will not re-iterate the recommendations in the above documents, but overall we would like to hightlight:
