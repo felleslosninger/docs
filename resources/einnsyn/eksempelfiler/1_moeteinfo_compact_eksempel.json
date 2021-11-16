@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@base": "http://data.einnsyn.no/noark5/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "../møtemappe-uuid",
+  "@type": "arkiv:Moetemappe",
+  "arkiv:systemID": "møtemappe-uuid",
+  "arkiv:moetedato": {"@type": "xsd:dateTime","@value": "2021-09-25T18:00:00.000+02:00"},
+  "arkiv:moetenummer": "999",
+  "arkiv:moetested": "Teams, Møterom 066 Leikanger",
+  "arkiv:offentligTittel": "Møte i Quizutvalget",
+  "arkiv:offentligTittel_LIST": {"@list": ["Møte","Quiz"]},
+  "arkiv:offentligTittel_SENSITIV": "Møte Quiz - Sensitiv",
+  "arkiv:tittel": "Møte Quiz",
+  "arkiv:utvalg": "Quizutvalget",
+  "arkiv:videolink": ["https://oslo.kommunetv.no/archive/269","https://oslo.kommunetv.no/archive/268"]
+}
