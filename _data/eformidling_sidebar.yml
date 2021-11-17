@@ -73,8 +73,12 @@ folders:
       jurl: /eformidling_drift_bestille_tilganger.html
     - title: Forberede installasjon
       jurl: /eformidling_drift_forberede_installasjon.html
+    - title: Virksomhetssertifikat
+      jurl: /eformidling_drift_virksomhetssertifikat.html
     - title: Installasjon
       jurl: /eformidling_drift_installasjon.html
+    - title: Installasjon i AKS
+      jurl: /eformidling_drift_installasjon_aks.html
     - title: Start og stopp
       jurl: /eformidling_drift_start_og_stopp.html
     - title: Sikkerhetskopi
