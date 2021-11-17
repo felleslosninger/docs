@@ -15,6 +15,14 @@ Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
 
 Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
 
+## Last ned integrasjonspunktet
+
+## Last ned KOSMOS
+> [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+
+> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
+
+
 ## Etter det første innholdet kan vi ha første header, på nivå 2
 
 [Lær Markdown](https://www.markdownguide.org/cheat-sheet/)

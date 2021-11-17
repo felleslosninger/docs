@@ -107,7 +107,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 
 **Hvordan?**
 
-[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](eformidling_drift_virksomhetssertifikat.html)
+[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](eformidling_drift_sertifikatadministrasjon.html)
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
