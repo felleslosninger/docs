@@ -62,6 +62,15 @@ cd integrasjonspunkt
 New-Item -ItemType file integrasjonspunkt-local.properties
 ```
 
+## Neste steg
+
+Det neste som må gjøres for å installere integrasjonspunktet kan være å sikre at all konfigurasjon er på plass og om så, starte opp integrasjonspunktet 
+
++ [Integrasjonspunktet konfigurasjon / minimal konfigurasjon ](eformidling_konfigurasjon_minimal.html)
++ [Integrasjonspunktet konfigurasjon / tilgjengelig tjenester ](eformidling_konfigurasjon_tilgjengelige_tjenester.html)
++ [Integrasjonspunktet kjøring / Start og stopp ](eformidling_drift_start_og_stopp.html#integrasjonspunktet)
+
+---
 
 ## Installasjon av KOSMOS
 
@@ -69,16 +78,18 @@ New-Item -ItemType file integrasjonspunkt-local.properties
 
 Før du installerer KOSMOS forutsettes det at du har en gyldig integrasjonspunkt-local.properties fil fra før. Dvs at du har konfigurert et fungerende integrasjonspunkt på maskinen hvor KOSMOS skal installeres for å oppdatere dette integrasjonspunktet. Minimum er at du må ha .properties fil og keystore knyttet til denne, for integrasjonspunkt-[versjon].jar filen vil KOSMOS laste ned.
 
-sett inn properties fil info samme som IP
-Eiga fil for start og stopp av begge 
-konfig i eiga fil 
-
-
-
 
 ### Last ned siste versjon
 
 [Siste versjon av KOSMOS finn du her](eformidling_introduksjon_last_ned.html#last-ned-kosmos)
+
+### Last ned offentleg nøkkel
+
+En må laste ned Digitaliseringsdirektoratet sin offentlege nøkkel og legge i samme mappe som kosmos-[versjon].jar filen og kosmos-local.properties filen. 
+
+[Nedlasting av offentleg nøkkel finn du her](eformidling_introduksjon_last_ned.html#last-ned-kosmos)
+
+Om du ønsker å manuelt verifisere .jar fil ved å bruke sertifikatet kan du benytte [denne rettleiinga](eformidling_drift_sertifikatadministrasjon.html#verifisere-sertifikatet)
 
 
 ### Kosmos-local.properties
@@ -172,55 +183,10 @@ Det finnes funksjonalitet for å la applikasjonen blokkliste versjonar om den ik
 kosmos.blocklist.enabled=true
 ```
 
-Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste [schedulerte tidspunkt.](###Setje-tidspunkt-for-oppdatering)
+Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste [schedulerte tidspunkt.](####Setje-tidspunkt-for-oppdatering)
 
-### Verifisere sertifikatet
-*Valgfritt*
+## Neste steg
 
-Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen. Det er viktig å verifisere signatur på *kosmos.jar*, og dersom ein velger å laste ned integrasjonspunktet manuelt er det viktig å verifisere denne .jar fila også. Om du allereie har ein køyrande versjon av integrasjonspunktet som er tidlegare enn 2.2.1 så vil ikkje den være signert. 
-
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mQINBGB+plUBEAC1kbZMrCUXorAHiUxOfatbwkY0oANS9cLF3dRyWhfIFbkv+rxs
-R/5EMo3wNEfpNQ76bNxRvprQWOGmqg30DVfAomGhO2j2o7gmZPcPvcDEokz+rEqt
-enVkqdizc5ABWQHvtX42Cl+9G1iYXV9u5m4ET9HGb2nCqvi4gb0l7751Hv9Y2RAC
-YHAYJhYpnA3WokZEUxIf1SmvjhYj5tWxOYFr5Tj2N5VIXY19bz4pdppGWsT9gB6+
-5jIKNWWEwNE6LyjA9YkT+C6cITcL7x2Ad1tvUfMJEBE7Ib45TGc1BS4QbWnC7Fw0
-G09Kbp4ZJ9vOhysWquT1pVsKeIP1Hrc63XiS3hXf5hlJzqdTaswSNk0jSeGcETRR
-pu6CueiewF2LNUm49iO3r3rPcAKPeokYLFc4/tbCADXSom8pq2fpgqBUvvfRPFy3
-QB7Imn4/Robqw0K2mlguACv1tz2z0+Ygn39nmXIyUzJUJ0p694l/O5wmeukSc5r8
-Dc83GUJOCIxMapuVgib9qYVh8QMVbmy0XUjyZDw7Gsw112fPfsCG4FXcqUAVcNeT
-ERgfzdowPY2LU+TCpONYRy6CgBdKqJQU9FYeMvZAEiMzMmC7mzinCXPOpujNfthD
-YllEAY+aZt4b2pfvwLk1TZefNOQTbzShjfwNLiy7UwmYS0QueN46YdHi6wARAQAB
-tHpLb2Rlc2lnbmVyaW5nIGVGb3JtaWRsaW5nIChEaWdpdGFsaXNlcmluZ3NkaXJl
-a3RvcmF0ZXRzIG7DuGtrZWwgZm9yIGtvZGVzaWduZXJpbmcgZm9yIGVGb3JtaWRs
-aW5nKSA8c2VydmljZWRlc2tAZGlnZGlyLm5vPokCVAQTAQgAPhYhBK7yeqaUijhW
-kyr5jspWQzk3U+zjBQJgfqZVAhsDBQkJZgGABQsJCAcCBhUKCQgLAgQWAgMBAh4B
-AheAAAoJEMpWQzk3U+zjoSkP/RXi6pXz/ZK5eP2aXcmGRuVKo3c6f15Zq2TW2yWH
-Wqozpn1DXT/c5u40WjI7UYabHIJfQqzs4XD9qYFXrgb73zdu8cRkCz2FoBCrzfQB
-3jtC16vyPfuCBzFWg1CQ9QB/y4XThSIXHiVyB/nLLecp+V3JXX7rgImAP9loFXg2
-W/ifxtyuV9LX7c5wraZEI/tTYhGev6pS5OXuY5z2TEcJ6fodoEZujZXLnmDNZgFr
-IKOU3IJOEBpP4zD11C/IKEbYv0J7zuET+mnArxma/9dym8OcBnNvYr8caOK6qa2v
-y/Q5UnBLZNuydaDTl70qTWcuZRqobUqtaSvrtIopwTFhZXzQ3Y06Xpv7e21tq/ew
-SNCA3DI7EA/hLlwwF9NEZTyGSez6TBGwjGgV8J/CyOLnuD5X9cqSIYFtjUtQQ3oM
-KXv2Q+vELUHUBuNRhrZiUKITEB7ubJQuAjgGDTTJrXJDZRRiJ8eGP0dYj/GfNu8i
-vi+E+ZL/cn6J48IIOLS7IZS/NqZjq0t48fBKcyisEzQdvji68GKOipv1vdxj9z1c
-t4IBv4qlDXFQoCjh/aEM7n6xRFGYb9600xiSA1P45h2yBDiGUedwde2ai9OtVwar
-j9yTMuCrbrLOdlG2cNrhnSJS48WrEbk1blsyJrH7zFvsxRj723HdXdtpB+c5OsYo
-o1Dt
-=QEfX
------END PGP PUBLIC KEY BLOCK-----
-```
-
-[Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-key.asc)
-
-Den offentlege nøkkelen vår har fingeravtrykket: 
-```
-AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3
-```
-Vi anbefalar at ein sjølv gjer ein manuell sjekk etter byte av nøkkel for å verifisere at fingeravtrykket er korrekt. Om du har GnuPG installert kan du køyre denne one-lineren: 
-```
-gpg --import-options show-only --import --fingerprint <path-to-downloaded-public-key-file>
-```
-Om du ikkje har GnuPG frå før eller ynskjer meir utdjupande forklaring om korleis sjekke fingeravtrykket: [Sjå her](https://github.com/felleslosninger/efm-kosmos/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
++ [KOSMOS konfigurasjon / minimal konfigurasjon ](eformidling_konfigurasjon_tilgjengelige_tjenester.html#minimal-konfigurasjon)
++ [KOSMOS konfigurasjon / tilgjengelig konfigurasjon ](eformidling_konfigurasjon_tilgjengelige_tjenester.html#tilgjengelig-konfigurasjon)
++ [KOSMOS kjøring / Start og stopp ](eformidling_drift_start_og_stopp.html#kosmos)

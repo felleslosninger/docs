@@ -83,6 +83,8 @@ folders:
       jurl: /eformidling_drift_sikkerhetskopi.html
     - title: Oppgradering
       jurl: /eformidling_drift_oppgradering.html
+    - title: Automatisk oppgradering
+      jurl: /eformidling_drift_automatisk_oppgradering.html
     - title: Sertifikatadministrasjon
       jurl: /eformidling_drift_sertifikatadministrasjon.html
     - title: Feilsøking

@@ -7,48 +7,35 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
+Her finner du informasjon om hvordan oppgradere integrasjonspunktet ditt.
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+## Manuell oppgradering 
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+For å oppdatere integrasjonspunktet må en bytte ut ```integrasjonspunkt-[versjon].jar``` fila med en nyare versjon. [Her finner du nedlasting av nyeste versjon. ](eformidling_introduksjon_last_ned.html#last-ned-integrasjonspunktet)
+Last ned og legg den nye .jar filen i mappen der du har installert integrasjonspunktet.
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
+### Windows tjeneste
 
-## Etter det første innholdet kan vi ha første header, på nivå 2
+Om du har installert integrasjonspunktet som en Windows tjeneste så må du bytte versjonsnummer i ```integrasjonspunkt-service.xml``` filen din, lagre den og reinstallere tjenesten. 
 
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
-
-## Kanskje ein tabell?
-
-| A | B | C |
-| 1 | 2 | 3 |
-
-## Kanskje ein kodesnutt?
-
+Det er denne linjen som må oppdateres med tilsvarende versjon som ```integrasjonspunkt-[versjon].jar``` filen du lastet ned.
 ```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
+<argument>%BASE%/integrasjonspunkt-2.2.6.jar</argument>
 ```
 
-## Kanskje eit diagram?
+[Se hvordan reinstallere windows tjenesten](eformidling_drift_start_og_stopp.html#reinstallasjon-av-tjenesten)
 
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
+### Kommando
 
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
+Oppdater oppstart kommandoen din med versjon tilsvarende ```integrasjonspunkt-[versjon].jar``` du lastest ned. [Se hvordan her](http://localhost:4000/eformidling_drift_start_og_stopp.html#alt-2-kj%C3%B8re-integrasjonspunktet-fra-kommandovindu)
 
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
+## Docker
+
+Om du kjører integrasjonspunktet som Docker container eller pod i Kubernetes så trenger du bare bytte til nyeste image tag og starte container/pod med denne. 
+[Lenke til siste versjon av Docker bildet finner du her](eformidling_introduksjon_last_ned.html#integrasjonspunktet)
+
+## Automatisk oppgradering
+
+Det er mulig å benytte KOSMOS ([Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg](eformidling_introduksjon.html#kosmos)) for å automatisk oppdatere integrasjonspunktet.
+Ved å bruke KOSMOS trenger en ikke lenger å manuelt oppdatere integrasjonspunktet om du drifter på server eller VM. [Installasjonsveiledning for KOSMOS finner du her.](eformidling_drift_installasjon.html#kosmos)
 

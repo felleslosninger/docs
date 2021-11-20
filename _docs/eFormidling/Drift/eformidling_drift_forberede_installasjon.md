@@ -119,3 +119,16 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 [For mer informasjon om Network Time Protocol.](https://no.wikipedia.org/wiki/Network_Time_Protocol)
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 ***
+
+
+--- 
+
+## Neste steg
+
+Det neste blir å installere integrasjonspunktet, men sørg for at virksomhetssertifikatet ligger i keystore og konfigurasjon er satt opp i properties også. 
+
+- [Integrasjonspunktet installasjon / installere integrasjonspunktet](eformidling_drift_installasjon.html#installasjon-av-integrasjonspunktet)
+- [Integrasjonspunktet konfigurasjon / minimal konfigurasjon ](eformidling_konfigurasjon_minimal.html)
+- [Integrasjonspunktet konfigurasjon / tilgjengelig tjenester ](eformidling_konfigurasjon_tilgjengelige_tjenester.html)
+- [Integrasjonspunktet virksomhetssertifikat / sertifikatadministrasjon](eformidling_drift_sertifikatadministrasjon.html#integrasjonspunktet)
+
