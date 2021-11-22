@@ -118,6 +118,6 @@ Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet 
 
 Demo som viser KOSMOS startes opp og oppdaterer integrasjonspunktet. 
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/648594394/d13da10af1" width="720" height="480" frameborder="0" allowfullscreen></iframe> 
+<iframe src="https://player.vimeo.com/video/648594394?h=d13da10af1" width="640" height="400" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
-PS: BYTT UT LENKE TIL VIDEO NÅR VI FÅR EIN SOM ER TILGJENGELEG EKSTERNT
+
