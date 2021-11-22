@@ -42,6 +42,13 @@ c:/
    |-- integrasjonspunkt[versjon].jar
 ```
 
+> i integrasjonspunkt-local.properties-filen må du fjerne bortkommentering for den typen eformidling du skal bruke.
+> keystore.alias er case-sensitivt
+
+**NB:** Benytt skråstrek (/) eller dobbel omvendt skråstrek (\\\\) som ressursdeler når dere angir filbaner.
+
+Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
+
 #### Oppretting via shell
 
 En kan eventuelt opprette mappe og .properties-filen manuelt vha shell kommandoer om det er preferrert:
@@ -81,13 +88,13 @@ Før du installerer KOSMOS forutsettes det at du har en gyldig integrasjonspunkt
 
 ### Last ned siste versjon
 
-[Siste versjon av KOSMOS finn du her](eformidling_introduksjon_last_ned.html#last-ned-kosmos)
+[Siste versjon av KOSMOS finn du her](eformidling_introduksjon_last_ned.html#kosmos)
 
 ### Last ned offentleg nøkkel
 
 En må laste ned Digitaliseringsdirektoratet sin offentlege nøkkel og legge i samme mappe som kosmos-[versjon].jar filen og kosmos-local.properties filen. 
 
-[Nedlasting av offentleg nøkkel finn du her](eformidling_introduksjon_last_ned.html#last-ned-kosmos)
+[Nedlasting av offentleg nøkkel finn du her](eformidling_introduksjon_last_ned.html#kosmos)
 
 Om du ønsker å manuelt verifisere .jar fil ved å bruke sertifikatet kan du benytte [denne rettleiinga](eformidling_drift_sertifikatadministrasjon.html#verifisere-sertifikatet)
 

@@ -7,6 +7,8 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+Djupdykk i KOSMOS der me ser på kva applikasjonen er og korleis den fungerer. 
+ 
 > Visst du ser etter installasjonsveiledning for KOSMOS må du leite [her i staden](eformidling_drift_installasjon.html#kosmos)
 
 ## Introduksjon
