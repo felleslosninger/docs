@@ -77,7 +77,7 @@ Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 |YT2|[https://integrasjon-yt2.difi.eon.no/clients/](https://integrasjon-yt2.difi.eon.no/clients/)|
 |PROD|[https://integrasjon.difi.no/clients/](https://integrasjon.difi.no/clients/)|
 
-Se Open-API dokumentasjon her: [https://integrasjon.difi.no/swagger-ui.html?urls.primaryName=External%20OIDC](https://integrasjon.difi.no/swagger-ui.html?urls.primaryName=External%20OIDC)
+Se Open-API dokumentasjon her: [https://integrasjon.difi.no/swagger-ui/?urls.primaryName=External%20OIDC](https://integrasjon.difi.no/swagger-ui/?urls.primaryName=External%20OIDC)
 
 ## Opprette en integrasjon
 
