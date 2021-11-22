@@ -1,0 +1,96 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="properties_css.css">
+</head>
+<body>
+<table style="width:100%">	
+    <tr>
+        <th>Spesifikk for Digital post til kommuner (DPF)</th>
+         <th></th>
+         <th>Digital post til kommuner via FIKS</th>
+      </tr>
+      <tr>
+        <td>difi.move.fiks.inn.username=</td>
+        <td>KS FIKS brukernavn for svarInn</td>
+        <td>(mottaker)</td>
+      </tr>
+      <tr>
+        <td>difi.move.fiks.inn.password=</td>
+        <td>KS FIKS passord for svarInn</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>difi.move.fiks.ut.username=</td>
+        <td>KS FIKS brukernavn for svarUt</td>
+        <td>(avsender)</td>
+      </tr>
+       <tr>
+        <td>difi.move.fiks.ut.password=</td>
+        <td>KS FIKS passord for svarUt</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>difi.move.mail.smtpHost=</td>
+        <td>Host navn</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>difi.move.mail.smtpPort=</td>
+        <td>Portnummer</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>difi.move.mail.receiverAddress=</td>
+        <td>Mailadresse til postmottaket</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>difi.move.mail.senderAddress=</td>
+        <td>avsenderadresse (intern e-postadresse)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>difi.move.fiks.inn.mailOnError=false</td>
+        <td>Brukes for å skru av mailsending ved feil</td>
+        <td></td>
+      </tr>
+     <tr>
+        <td>difi.move.mail.username=</td>
+        <td>Brukernavn til autentisering mot epostserver</td>
+        <td>Kan stå blank om autentisering ikke kreves</td>
+      </tr>
+     <tr>
+        <td>difi.move.mail.password=</td>
+        <td>Passord til autentisering mot epostserver</td>
+        <td>Kan stå blank om autentisering ikke kreves</td>
+      </tr>
+            
+      <tr>
+        <td>difi.move.feature.enableDPF=true</td>
+        <td>må være på for å bruke mailinnstillinger</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>difi.move.mail.enableAuth=false</td>
+        <td>må være på for å bruke mailinnstillinger</td>
+        <td></td>
+       </tr>
+     <tr>
+        <td>difi.move.mail.trust=${difi.move.mail.smtpHost}</td>
+        <td>la stå som dette</td>
+        <td></td>
+       </tr>
+     <tr>
+        <td>difi.move.fiks.inn.fallbackSenderOrgNr=000048755</td>
+        <td>Alternativt: Workaround for hente inn meldinger fra svarInn utan orgnr i metadata</td>
+        <td>Sett et vilkårlig nummer (9 siffer). feks 000048755</td>
+     </tr>
+     </table>
+ </body>
+</html>
+
+
+
+
+
+

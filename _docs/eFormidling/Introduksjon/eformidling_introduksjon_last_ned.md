@@ -7,48 +7,51 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
+Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS som .jar-fil. 
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+## Integrasjonspunktet
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+### [Integrasjonspunktet 2.2.6 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.6/integrasjonspunkt-2.2.6.jar)
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
+### [Integrasjonspunktet 2.2.6 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.6/images/sha256-2b462e7d699b2dfbc0495e58c2dc54cb289d641611ae8f48240620594e769153?context=explore)
 
-## Etter det første innholdet kan vi ha første header, på nivå 2
 
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
+[OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
 
-## Kanskje ein tabell?
 
-| A | B | C |
-| 1 | 2 | 3 |
+---
 
-## Kanskje ein kodesnutt?
+## KOSMOS
 
-```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
-```
+> [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
 
-## Kanskje eit diagram?
+> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
 
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
+> [Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-key.asc)
 
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
+---
 
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
+## Versjonering 
 
+eFormidling følger [semantisk versjonering] (https://semver.org) for å vise endringer mellom forskjellige versjoner. 
+
+
+En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
+integrasjonspunkt-2.0.7.jar
+
+![versjonsnummerbild](/images/eformidling/ipversjon.PNG)
+
+
+Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH
+
+**PATCH** inneholder bakoverkompatible bug fixer. Med bugfix menes intern endring av uønsket oppførsel eller feil. Dette er versjoner man kan installere uten at man vil merke endringer 
+
+**MINOR** har ny funksjonalitet, men er bakover kompatibel. Her er det lagt til ny funksjonalitet eller gjort endring på eksisterende funksjonalitet uten at dette påvirker konsumenter av API'et. Denne vil også økes dersom det det er funksjonalitet som er ønsket fjernet i senere versjon (deprecated). En MINOR-oppdatering vil ikke endre eksisterende integrasjoner, men det kan være nyttig å teste ny funksjonalitet dersom dette er tilgjengelig gjennom integrasjonen man bruker.
+
+**MAJOR** har endringer som ikke er bakover kompatible.  Dette kan være endringer i hvordan API'et brukes eller fjerning av funksjonalitet, som tidligere er signalisert at vil fjernes gjennom Minor-release og API-kommentar. En Major-oppdatering vil føre til at hele eller deler av funksjonaliteten man bruker ikke lenger virker og vil derfor være viktig å forsikre seg om at det man trenger virker som forventet gjennom testing eller dialog med leverandør av fagsystemet som integrerer mot integrasjonspunktet.
+
+## Neste steg
+
+Første gang du installerer integrasjonspunktet? Her finner du informasjon om hvordan installere eller oppgradere eksisterende integrasjonspunkt.
+
+- [Integrasjonspunktet installasjon / installere integrasjonspunktet](eformidling_drift_installasjon.html#installasjon-av-integrasjonspunktet)

@@ -7,48 +7,13 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
+Minimal konfigurasjon for å kjøre integrasjonspunktet krever port, konfigurasjon av virksomhetssertifikat og organisasjonsnummeret til virksomheten. I tillegg må du aktivere den tjenesten du ønsker å bruke. Feks DPO og DPV. Integrasjonspunktet har også mange andre konfigurasjonsmuligheter en kan styre via properties, disse finner du på denne siden. 
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+Minimum for å starte et integrasjonspunkt: 
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+{% include eformidling/properties/jks_generell.html %} 
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
 
-## Etter det første innholdet kan vi ha første header, på nivå 2
+## Neste steg
 
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
-
-## Kanskje ein tabell?
-
-| A | B | C |
-| 1 | 2 | 3 |
-
-## Kanskje ein kodesnutt?
-
-```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
-```
-
-## Kanskje eit diagram?
-
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
-
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
-
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
-
+Utdypende konfigurasjon for hver enkelt tjeneste, egen database, mm. finner du på [tilgjengelige tjenester.](eformidling_konfigurasjon_tilgjengelige_tjenester.html)

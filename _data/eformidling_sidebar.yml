@@ -75,12 +75,16 @@ folders:
       jurl: /eformidling_drift_forberede_installasjon.html
     - title: Installasjon
       jurl: /eformidling_drift_installasjon.html
+    - title: Installasjon i AKS
+      jurl: /eformidling_drift_installasjon_aks.html
     - title: Start og stopp
       jurl: /eformidling_drift_start_og_stopp.html
     - title: Sikkerhetskopi
       jurl: /eformidling_drift_sikkerhetskopi.html
     - title: Oppgradering
       jurl: /eformidling_drift_oppgradering.html
+    - title: Automatisk oppgradering
+      jurl: /eformidling_drift_automatisk_oppgradering.html
     - title: Sertifikatadministrasjon
       jurl: /eformidling_drift_sertifikatadministrasjon.html
     - title: Feilsøking
