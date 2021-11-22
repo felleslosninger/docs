@@ -55,6 +55,7 @@ Minimum konfigurasjon for å kjøre KOSMOS. Denne skal ligge i ```kosmos-local.p
 |kosmos.shutdown-poll-interval-in-ms|5000|Kor lenge det går mellom kvar førespurnad mot shutdown-endepunktet.|
 |kosmos.shutdown-retries|3|Kor mange gonger KOSMOS prøver å skru av integrasjonspunktet (i påvente av at helse-endepunktet ikkje svarar) før den gir opp.|
 |kosmos.verification.publicKeyPaths|[0]=file:${user.dir}/eformidling-key.asc|Liste med stiar til offentlege nøklar for Digdir sitt GPG-signeringssertifikat. Brukarar lastar ned frå dokumentasjonen vår, og me anbefalar dei å verifisera fingeravtrykk før dei set opp nøkkelen i KOSMOS.|
+| spring.config.additional-location | -  | Mulig å overstyre kor integrasjonspunkt-local.properties fila skal ligge ved å sette denne verdien file:%BASE%\integrasjonspunkt-local.properties |
 
 
 ### Konfigurasjon for logging

@@ -8,7 +8,7 @@ sidebar: eformidling_sidebar
 ---
 
 Djupdykk i KOSMOS der me ser på kva applikasjonen er og korleis den fungerer. 
- 
+
 > Visst du ser etter installasjonsveiledning for KOSMOS må du leite [her i staden](eformidling_drift_installasjon.html#kosmos)
 
 ## Introduksjon
@@ -111,3 +111,13 @@ Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet 
 ## Kjeldekode og tilhøyrande dokumentasjon
 
 > [Kjeldekode på Github](https://github.com/felleslosninger/efm-kosmos)
+
+
+
+## KOSMOS demo 
+
+Demo som viser KOSMOS startes opp og oppdaterer integrasjonspunktet. 
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/648594394/d13da10af1" width="720" height="480" frameborder="0" allowfullscreen></iframe> 
+
+PS: BYTT UT LENKE TIL VIDEO NÅR VI FÅR EIN SOM ER TILGJENGELEG EKSTERNT
