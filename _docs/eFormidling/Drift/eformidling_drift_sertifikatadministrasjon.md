@@ -170,6 +170,8 @@ o1Dt
 
 [Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-key.asc)
 
+> Denne offentlege nøkkelen skal ligge i samme mappe som ```kosmos-[versjon].jar```, ```kosmos-local.properties``` og ```integrasjonspunkt-local.properties```
+
 Den offentlege nøkkelen vår har fingeravtrykket: 
 ```
 AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3

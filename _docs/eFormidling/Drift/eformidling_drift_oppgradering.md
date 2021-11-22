@@ -36,6 +36,6 @@ Om du kjører integrasjonspunktet som Docker container eller pod i Kubernetes s�
 
 ## Automatisk oppgradering
 
-Det er mulig å benytte KOSMOS ([Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg](eformidling_introduksjon.html#kosmos)) for å automatisk oppdatere integrasjonspunktet.
+Det er mulig å benytte KOSMOS ([Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg](eformidling_introduksjon.html#installasjon-av-kosmos)) for å automatisk oppdatere integrasjonspunktet.
 Ved å bruke KOSMOS trenger en ikke lenger å manuelt oppdatere integrasjonspunktet om du drifter på server eller VM. [Installasjonsveiledning for KOSMOS finner du her.](eformidling_drift_installasjon.html#kosmos)
 
