@@ -1,7 +1,7 @@
 {
 	"@context": {
 		"arkivstruktur": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
-		"@base": "http://datad.einnsyn.no/noark5/",
+		"@base": "http://data.einnsyn.no/noark5/",
 		"xsd": "http://www.w3.org/2001/XMLSchema#",
 		"arkivstruktur:tilknyttetRegistreringSom": {
 			"@type": "@id"
