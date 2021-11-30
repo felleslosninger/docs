@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://digdir.no/innbyggerpost" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bme="http://peppol.eu/xsd/ticc/envelope/1.0" targetNamespace="http://digdir.no/dpi/innbyggerpost">
+<xs:schema xmlns="http://digdir.no/innbyggerpost" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bme="http://peppol.eu/xsd/ticc/envelope/1.0" targetNamespace="http://digdir.no/dpi/innbyggerpost"
+           elementFormDefault="qualified" >
 	<xs:import namespace="http://peppol.eu/xsd/ticc/envelope/1.0" schemaLocation="businessMessageEnvelope.xsd"/>	
 	<xs:element name="Innbyggerpost">
 		<xs:complexType>
