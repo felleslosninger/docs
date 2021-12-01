@@ -158,7 +158,7 @@ Følgende attributter legges ved i assertion:
 | uid | Fødselsnummer | |
 | SecurityLevel | sikkerhetsnivå | |
 | Culture | Språk | |
-| AuthMethod | Autentiseringsmetode | Gyldige verdier i AuthMethod er [beskrevet i tabellen for `amr` her](oidc_protocol_id_porten.html) |
+| AuthMethod | Autentiseringsmetode | Gyldige verdier i AuthMethod er [beskrevet i tabellen for `amr` her](/oidc_protocol_id_porten.html) |
 | OnBehalfOf | EntityID for tjenesteeier | Om verdi er mottatt i forespørsel fra tjenesteleverandør |
 | epostadresse | [epostadresse](http://begrep.difi.no/Felles/epostadresse) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
 | mobiltelefonnummer | [mobiltelefonnummer](http://begrep.difi.no/Felles/mobiltelefonnummer) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
