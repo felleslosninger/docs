@@ -17,7 +17,7 @@ Tjenesteleverandør *må* verifisere alle returverdier fra ID-porten.
 
 Blant annet må det sikres og valideres at ID-porten har autentisert sluttbruker på ønsket sikkerhetsnivå.
 
-### AuthnRequest 
+### AuthnRequest
 
 Lokalisering av ID-porten _må_ gjøres i forbindelse med dette steget. SAML2-profilen sier at metadata kan benyttes til dette, men ID-porten krever at tjenesteleverandør må benytte data utvekslet som en del av metadata for å identifisere ID-porten.
 
@@ -35,9 +35,9 @@ Tjenesteleverandør _kan_ benytte *RequestedAuthnContext* til å angi ønsket si
 
 | Nivå | AuthnContextClassRef |
 | --- | --- |
-| 3 | urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport | 
-| 4 | urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI | 
-| | | 
+| 3 | urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport |
+| 4 | urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI |
+| | |
 
 Eksempel på en forespørsel (del av) som *minimum* krever nivå 3 autentisering:
 
@@ -51,7 +51,7 @@ Eksempel på en forespørsel (del av) som *minimum* krever nivå 3 autentisering
 
 ID-porten vil tolke alle forespørsler til *minimum* og at *AuthnContextClassRef* er *urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified* om RequestedAuthnContext ikke er inkludert i *AuthnRequest*.
 
-#### **NameID** 
+#### **NameID**
 
 Det anbefales at tjenesteleverandør setter *NameID* til *transient*. ID-porten støtter både *transient* og *persistent*. Se eventuelt [Detaljert beskrivelse av støttede SAML2-profiler](saml_stottede_profiler.html) for mer informasjon.
 
@@ -65,28 +65,28 @@ Eksempel på en forespørsel (del av) som krever (re)autentisering:
 <saml2p:AuthnRequest
     AssertionConsumerServiceURL="https://idporten-sptest2.difi.no/testsp/assertionconsumer"
     Destination="https://idporten-test1.difi.no/opensso/SSORedirect/metaAlias/norge.no/idp"
-    ForceAuthn="true" 
+    ForceAuthn="true"
 ```
 
 ### Locale
 
 Ved å legge til parameteren \<locale> på requesten som inneholder SAMLRequest, kan tjenesteleverandør styre språkformen ID-porten presenterer for bruker. Locale må angis som ISO 639-1 kode.
 
-ID-porten støtter følgende språk: 
+ID-porten støtter følgende språk:
 
-| Språk | Språkkode | 
+| Språk | Språkkode |
 | --- | --- |
-| Bokmål | nb | 
+| Bokmål | nb |
 | Nynorsk | nn |
-| Samisk | se | 
-| Engelsk | en | 
-| | | 
+| Samisk | se |
+| Engelsk | en |
+| | |
 
 I de tilfeller der tjenesteleverandør ikke sender over språkvalg, vil ID-porten benytte språket som er satt i nettleseren. Er nettleseren innstilt på et språk som ID-porten ikke støtter, vil ID-porten velge standardspråket bokmål.
 
 ID-porten sender over språket som er brukt ved innlogging i [assertion til tjenesteleverandør](saml_teknisk_innlogging.html#artifactresponse)
 
-Her er et eksempel på hvordan en forespørsel med språk ser ut: 
+Her er et eksempel på hvordan en forespørsel med språk ser ut:
 ```xml
 https://idporten-inttest.difi.local/opensso/SSORedirect/metaAlias/norge.no/idp?SAMLRequest=<KRYPTERT SAML2 REQUEST> &SigAlg=<alg>&Signature=<SIGNATUR>&locale=nb
 ```
@@ -106,35 +106,35 @@ Kun i de tilfeller der tjenesteleverandør leverer tjenester til flere tjenestee
 </samlp:AuthnRequest>
 ```
 
-### Autentisering av sluttbruker 
+### Autentisering av sluttbruker
 
 ID-porten sjekker om brukeren har en gyldig sesjon mot ID-porten. Hvis ikke, bes brukeren om å autentisere seg. Om brukeren allerede har en gyldig sesjon mot ID-porten, må brukeren reautentiseres dersom:
-* Tjenesteleverandør krever reautentisering gjennom å sette ForceAuthn-attributtet i forespørselen til ”true”. 
+* Tjenesteleverandør krever reautentisering gjennom å sette ForceAuthn-attributtet i forespørselen til ”true”.
 * Brukeren er innlogget på et lavere sikkerhetsnivå enn den inneværende tjenesteforespørsel krever. I så tilfelle vil ID-porten foreta en reautentisering av brukeren med en e-ID som minimum er på korrekt sikkerhetsnivå.
 
 ### AuthnResponse
 
 Når ID-porten skal lokalisere tjenesteleverandør for å kunne besvare forespørselen, så gjøres dette ved å benytte data utvekslet som en del av metadata.
 
-Artifact returneres ved hjelp av HTTP-redirect. Artifact legges i en parameter med navn SAMLart i URL’en. 
+Artifact returneres ved hjelp av HTTP-redirect. Artifact legges i en parameter med navn SAMLart i URL’en.
 
 HTTP-utveksling over frontkanal skjer over (enveis) SSL/TLS for å understøtte konfidensialitet i meldingene.
 
-Responsmeldingen over frontkanal behøver ikke å være signert. 
+Responsmeldingen over frontkanal behøver ikke å være signert.
 
-Om ID-porten mottar en forespørsel fra en tjenesteleverandør som den ikke har inngått avtale med, så vil forespørselen avvises uten å gi en tilbakemelding til tjenesteleverandør. 
+Om ID-porten mottar en forespørsel fra en tjenesteleverandør som den ikke har inngått avtale med, så vil forespørselen avvises uten å gi en tilbakemelding til tjenesteleverandør.
 
 #### **Etablering av bak-kanal**
 
 Bak-kanal benyttes til artifact resolution og til meldinger i forbindelse med single logout. Meldinger over bak-kanal sendes over etablerte HTTPS-kanaler.
- 
+
 Artifact resolution-kanal etableres alltid initiert fra tjenesteleverandør. Tjenesteleverandør kan av ytelsesmessige hensyn velge å la en etablert HTTPS-kanal bli stående oppe, slik at reetablering av kanalen ikke er nødvendig ved neste melding. Det er tjenesteleverandør sitt ansvar å sørge for at kanalen er oppe, og denne skal håndtere nødvendig reetablering i feilsituasjoner.
 
-Når det gjelder bak-kanal for SLO, så er det ID-porten som er ansvarlig for å etablere denne. 
+Når det gjelder bak-kanal for SLO, så er det ID-porten som er ansvarlig for å etablere denne.
 
 #### **ArtifactResolve**
 
-* ArtifactResolve-melding fra tjenesteleverandør skal signeres. 
+* ArtifactResolve-melding fra tjenesteleverandør skal signeres.
 * ArtifactResolve-melding skal inneholde en og bare en *artifact* verdi.
 
 #### **ArtifactResponse**
@@ -143,31 +143,29 @@ Begrepene og dataene i ArtifactResponsen er beskrevet i begrepskatalogen på htt
 
 ID-porten tilbyr fire ulike Assertion-profiler:
 
-| Profilnavn | Beskrivelse | 
+| Profilnavn | Beskrivelse |
 | --- | --- |
-| SAMLAssertionV1 | Standard profil | 
-| SAMLAssertionV2 | **FORELDET**, kun tilgjengelig for å være bakoverkompatibel | 
-| SAMLAssertionV3 | Utvidet profil med informasjon fra kontakt og reservasjonsregisteret | 
-| SAMLAssertionV4 | Utvidet profil som i tillegg til norske eID støtter autentisering med europeisk eID. | 
-| | | 
+| SAMLAssertionV1 | Standard profil |
+| SAMLAssertionV2 | **FORELDET**, kun tilgjengelig for å være bakoverkompatibel |
+| SAMLAssertionV3 | Utvidet profil med informasjon fra kontakt og reservasjonsregisteret |
+| SAMLAssertionV4 | Utvidet profil som i tillegg til norske eID støtter autentisering med europeisk eID. |
+| | |
 
-Følgende attributter legges ved i assertion: 
+Følgende attributter legges ved i assertion:
 
-| Attributt | Beskrivelse | Kommentar | 
+| Attributt | Beskrivelse | Kommentar |
 | --- | --- | --- |
-| uid | Fødselsnummer | | 
+| uid | Fødselsnummer | |
 | SecurityLevel | sikkerhetsnivå | |
-| Culture | Språk | | 
-| AuthMethod | Autentiseringsmetode | Gyldige verdier i AuthMethod er [beskrevet her](http://begrep.difi.no/ID-porten/SAMLAssertionV1#AuthMethod) |
-| OnBehalfOf | EntityID for tjenesteeier | Om verdi er mottatt i forespørsel fra tjenesteleverandør | 
-| epostadresse | [epostadresse](http://begrep.difi.no/Felles/epostadresse) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret | 
-| mobiltelefonnummer | [mobiltelefonnummer](http://begrep.difi.no/Felles/mobiltelefonnummer) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret | 
+| Culture | Språk | |
+| AuthMethod | Autentiseringsmetode | Gyldige verdier i AuthMethod er [beskrevet i tabellen for `amr` her](oidc_protocol_id_porten.html) |
+| OnBehalfOf | EntityID for tjenesteeier | Om verdi er mottatt i forespørsel fra tjenesteleverandør |
+| epostadresse | [epostadresse](http://begrep.difi.no/Felles/epostadresse) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
+| mobiltelefonnummer | [mobiltelefonnummer](http://begrep.difi.no/Felles/mobiltelefonnummer) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
 | reservasjon | [reservasjon](http://begrep.difi.no/Felles/reservasjon) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
 | status | [status](http://begrep.difi.no/Felles/status) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret. Gyldige verdier i status er [dokumentert her](http://begrep.difi.no/ID-porten/SAMLAssertionV3)
-| | | | 
+| | | |
 
 #### **AuthnContextClassRef som informasjonsbærer om sikkerhetsnivå**
 
-Assertion vil alltid inneholde informasjon om sikkerhetsnivå benyttet under autentisering. Til dette benyttes AuthnContextClassRef på samme måte som i autentiseringsforespørselen. Se [tabell knyttet til autentiseringsforespørsel](saml_teknisk_innlogging.htmll#requestedauthncontext) for spesifisering av gyldige klasser støttet i ID-porten og deres tilhørende autentiseringsnivå. 
-
-
+Assertion vil alltid inneholde informasjon om sikkerhetsnivå benyttet under autentisering. Til dette benyttes AuthnContextClassRef på samme måte som i autentiseringsforespørselen. Se [tabell knyttet til autentiseringsforespørsel](saml_teknisk_innlogging.htmll#requestedauthncontext) for spesifisering av gyldige klasser støttet i ID-porten og deres tilhørende autentiseringsnivå.
