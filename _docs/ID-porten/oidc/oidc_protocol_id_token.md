@@ -85,8 +85,9 @@ Authentication method can have the following values:
 
 |`amr` value| Description|
 |-|-|
-|`Minid-PIN` | MinID with PIN-codes from letter|
-|`Minid-OTC` | MinID with one-time-code received via SMS|
+|`Minid-PIN` | MinID using PIN-codes from letter|
+|`Minid-OTC` | MinID using one-time-code received via SMS|
+|`Minid-APP` | MinID using notification in the MinID-app on android/iOS |
 |`BankID`    | BankID using code generator or app|
 |`BankID Mobil` | BankID on mobile |
 |`Buypass`      | Buypass |
