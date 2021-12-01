@@ -67,7 +67,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | aud | "audience" - The client_id of the client receiving this id_token  |
 | acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values are `Level3` (i.e.  MinID was used) or `Level4` (other eIDs). The level must be validated by the client. |
 | auth_time | Timestamp indicating when the authentication was performed.  |
-| amr | "Authentication Method References" - Method of authentication. Possible values from ID-porten av  `Minid-PIN`, `Minid-OTC`, `Commfides`, `Buypass`, `BankID`, `BankID Mobil` or `eIDAS`. The available values may change over time. |
+| amr | "Authentication Method References" - Method of authentication. Possible values from ID-porten av  `Minid-PIN`, `Minid-OTC`, `Minid-APP`, `Commfides`, `Buypass`, `BankID`, `BankID Mobil` or `eIDAS`. The available values may change over time. |
 | iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)|
 | pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   This claim is not included if `no_pid` scope was requested or pre-registered on the client. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
