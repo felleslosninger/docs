@@ -67,7 +67,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | aud | "audience" - The client_id of the client receiving this id_token  |
 | acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values are `Level3` (i.e.  MinID was used) or `Level4` (other eIDs). The level must be validated by the client. |
 | auth_time | Timestamp indicating when the authentication was performed.  |
-| amr | "Authentication Method References" - Method of authentication. Possible values from ID-porten av  `Minid-PIN`, `Minid-OTC`, `Commfides`, `Buypass`, `BankID`, `BankID Mobil` or `eIDAS`. The available values may change over time. |
+| amr | "Authentication Method References" - Method of authentication. Possible values can be seen below.  The available values may change over time, so the client should not validate this value. |
 | iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)|
 | pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   This claim is not included if `no_pid` scope was requested or pre-registered on the client. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
@@ -76,3 +76,21 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | locale | The language selected by the user during the authentication in ID-porten |
 | sid | session id - an unique identifier for end user session at ID-porten. May be needed when performing logout |
 |at_hash| A hash of the access_token issued together with this id_token. The client may use this value to protect against access_token injections when using by-reference access tokens. |
+
+
+
+## AMR values
+
+Authentication method can have the following values:
+
+|`amr` value| Description|
+|-|-|
+|`Minid-PIN` | MinID using PIN-codes from letter|
+|`Minid-OTC` | MinID using one-time-code received via SMS|
+|`Minid-APP` | MinID using notification in the MinID-app on android/iOS |
+|`BankID`    | BankID using code generator or app|
+|`BankID Mobil` | BankID on mobile |
+|`Buypass`      | Buypass |
+|`Commfides` | Commfides using smartcard |
+|`eIDAS`  | A European approved eID through the eIDAS network|
+|`TestId` |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
