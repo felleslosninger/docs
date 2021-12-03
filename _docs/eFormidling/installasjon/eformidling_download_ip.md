@@ -25,7 +25,7 @@ ___
 
 ### Versjonering 
 
-eFormidling følger [semantisk versjonering] (https://semver.org) for å vise endringer mellom forskjellige versjoner. 
+eFormidling følger [semantisk versjonering](https://semver.org) for å vise endringer mellom forskjellige versjoner. 
 
 
 En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
