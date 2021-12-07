@@ -111,21 +111,21 @@ Det er for stor tidsforskjell mellom serverklokken vår og deres.
 
 **Løsning:** Sjekk klokken på server, synkroniser ved stort avvik. Vi synkroniserer mot justervesenet.
 
-## Forbidden
+### Forbidden
 
-### Consumer has not been granted access to the scope <scope>
+#### Consumer has not been granted access to the scope <scope>
 
 Konsumenten har ikke tilgang til det scopet som det blir spurt om tilgang til.
 
 **Løsning:** Konsumenten må kontakte API-tilbyder for å få tilgang til scope. Eventuelt bytt til et scope som konsumenten har tilgang til.
 
-### Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
+#### Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
 
 Konsumenten har ikke delegert rettigheten videre til leverandør i Altinn. Eventuelt er det delegert feil rettighet.
 
 Vi gjør også oppmerksom på at delegeringer som utføres i Altinn ikke gjelder i Altinn sitt testmiljø tt02.
 
-**Løsning:** Konsument må logge seg inn i Altinn og delegere den korrekte rettigheten videre til leverandør. 
+**Løsning:** Konsument må logge seg inn i Altinn og delegere den korrekte rettigheten videre til leverandør.
 
 ## Feilsøking for selvbetjening via web
 
