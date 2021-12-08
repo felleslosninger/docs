@@ -13,9 +13,9 @@ til ett dokument og tilfører en beriket visning i innbyggers postkasse.
 
 For å knytte en utvidelse til et dokument må det inkluderes en fil ihht.
 utvidelsens XML-schema (XSD) i dokumentpakken, og det aktuelle
-[dokumentet](https://difi.github.io/felleslosninger/sdp_dokument.html) refererer til
-[«data-dokumentet»](https://difi.github.io/felleslosninger/sdp_dokumentdata.html) vha. `<data>`-elementet
-i [manifestet](https://difi.github.io/felleslosninger/sdp_manifest.html).
+[dokumentet](sdp_dokument.html) refererer til
+[«data-dokumentet»](sdp_dokumentdata.html) vha. `<data>`-elementet
+i [manifestet](sdp_manifest.html).
 
 Dersom innbyggers postkasseleverandør ikke støtter utvidelsen blir
 informasjonen forkastet av postkassen uten at hverken avsender eller
@@ -28,6 +28,6 @@ postkasseleverandørene som støtter de ulike.
 
 | Fil     | Mime-Type      | Digipost | e-Boks |
 | --- | --- | --- | --- |
-| [Lenke utenfor brev](https://difi.github.io/felleslosninger/sdp_lenke.html) | `application/vnd.difi.dpi.lenke+xml`       | Ja       | Ja     |
-| [Bevis](https://difi.github.io/felleslosninger/sdp_bevis.html) | `application/vnd.difi.dpi.bevis+xml`       | Ja       | Ja     |
-| [Arrangement](https://difi.github.io/felleslosninger/sdp_arrangement.html)  | `application/vnd.difi.dpi.arrangement+xml` | Ja       | Ja     |
+| [Lenke utenfor brev](sdp_lenke.html) | `application/vnd.difi.dpi.lenke+xml`       | Ja       | Ja     |
+| [Bevis](sdp_bevis.html) | `application/vnd.difi.dpi.bevis+xml`       | Ja       | Ja     |
+| [Arrangement](sdp_arrangement.html)  | `application/vnd.difi.dpi.arrangement+xml` | Ja       | Ja     |
