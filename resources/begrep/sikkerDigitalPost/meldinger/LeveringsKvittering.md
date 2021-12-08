@@ -13,11 +13,11 @@ sidebar: dpi_sidebar
 
 #### For Digitalpost forsendelser
 
-Kvitteringen sendes fra [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
+Kvitteringen sendes fra [Postkasseleverandør](sdp_aktorer.html)
 når postforsendelsen er validert og de garanterer for at posten vil bli
 tilgjengeliggjort.  
 Kvitteringen vil bli sendt så fort
-[Postkassleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html) kan garantere dette,
+[Postkassleverandør](sdp_aktorer.html) kan garantere dette,
 det vil si at [Leveringskvitteringen](LeveringsKvittering.md) vil bli sendt
 før (Skal være link til /felles/virkningsdato.md).
 
@@ -32,7 +32,7 @@ tidspunkt for alle meldinger som postlegges samme dag.
 
 #### Arkivering av kvittering
 
-Det anbefales at [Behandlingsansvarlig](https://difi.github.io/felleslosninger/sdp_aktorer.html)
+Det anbefales at [Behandlingsansvarlig](sdp_aktorer.html)
 arkiverer denne kvitteringen som bevis på at
 [posten](DigitalPostMelding.md) er levert til
 [Mottaker](../begrep/Mottaker.md).
