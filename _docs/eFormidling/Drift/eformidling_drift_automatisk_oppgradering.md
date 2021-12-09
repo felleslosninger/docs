@@ -29,17 +29,29 @@ Denne dokumentasjonen gjeld KOSMOS-1.1.0 og nyare.
 
 ### Krav til integrasjonspunkt som skal verta oppdatert
 
-- Integrasjonspunktet har alle naudsynte portåpningar definert, jf. tilhøyrande dokumentasjon.
+Det anbefales å begynne med eit fungerande oppsett for integrasjonspunktet, men ved nyinstallasjon av både KOSMOS og integrasjonspunktet er det også mulig å bruke KOSMOS til å laste ned integrasjonspunktet for så å konfigurere både integrasjonspunkt og KOSMOS.
++ Alle nødvendige portopningar for integrasjonspunktet er satt opp i brannmur(ar) som beskytter dette. [Sjå dokumentasjon](eformidling_drift_forberede_installasjon.html#brannmur%C3%A5pninger). Om du allereie køyrer integrasjonspunktet er desse på plass og du treng ikkje åpne noko nytt for å bruke KOSMOS.
++ Følgande endepunkt må være internt eksponerte i integrasjonspunktet. 
+  1. Shutdown-endepunktet: ```/manage/shutdown```. Dette gjer at KOSMOS kan stoppa integrasjonspunktet når ein ny versjon er tilgjengeleg.
+  2. Info-endepunktet: ```/manage/info```. For bestemming av inneværande versjon.
+  3. Helse-endepunktet: ```/manage/health```. For at KOSMOS skal kunna avgjera om applikasjonen køyrer eller ikkje.
 
-- Shutdown-endepunktet til det køyrande integrasjonspunktet må vera eksponert hjå klienten (ikkje eksternt mot Internett). Dette gjer at KOSMOS kan stoppa integrasjonspunktet når ein ny versjon er tilgjengeleg.
+Om du har skrudd desse av i integrasjonspunktet kan du skru det på ved denne propertyen ```management.endpoints.enabled-by-default=true```
 
-- Info-endepunktet til integrasjonspunktet må vera internt eksponert, for bestemming av inneværande versjon.
-
-- Helse-endepunktet til integrasjonspunktet må vera internt eksponert, for at KOSMOS skal kunna avgjera om applikasjonen køyrer eller ikkje.
 
 ## Funksjonalitet
 
-KOSMOS køyrer periodiske sjekkar i rekkefølga beskriven her. Innstillinga ```kosmos.scheduler-cron-expression``` avgjer kor ofte dette skjer.
+KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
+
+1. Finne noværande versjon av integrasjonspunktet.
+2. Finne siste versjon av integrasjonspunktet.
+3. Sjekk av versjon-kompabilitet.
+4. Nedlasting av siste lanserte versjon.
+5. Validere autentisitet på nedlasta versjon.
+6. Stopp av gammalt integrasjonspunkt.
+7. Oppstart av ny versjon.
+
+Ein kan sjølv velge tidspunkt for når ny versjon skal starte opp. Standard verdiane er kl 05:30, 19:30 og 21:30.
 
 ### Finna noverande versjon av integrasjonspunktet
 
