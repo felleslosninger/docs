@@ -9,26 +9,23 @@ sidebar: eformidling_sidebar
 
 Installasjonsveiledning for integrasjonspunktet og KOSMOS.
 
+## Innhold
+
+1. [Installasjon av integrasjonspunktet](#installasjon-av-integrasjonspunktet)
+   - [Konfigurasjonsfil](#integrasjonspunkt-localproperties)
+   - [Konfigurasjon](#Konfigurasjon-av-integrasjonspunktet)
+   - [Neste steg](#neste-steg)
+2. [Installasjon av KOSMOS](#installasjon-av-kosmos)
+   - [Konfigurasjonsfil](#kosmos-localproperties)
+   - [KOSMOS konfigurasjon](#konfigurasjon-av-kosmos)
+
+   --- 
+
 ## Installasjon av Integrasjonspunktet
-
-### Anbefalt rekkefølge for installasjon av eFormidling
-
-Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge.
-
-1. Minimumskonfigurasjon for å få starte integrasjonspunktet. 
-2. Konfigurere sak-arkivsystem til å prate med integrasjonspunktet (under DPO innstillinger i tabellen under)
-3. Konfigurere DPO innstillinger (brukernavn og passord) eller DPI.
-4. Konfigurere DPV/DPF innstillinger
-
-> [Properties for konfigurasjon finner du her](eformidling_konfigurasjon_minimal.html)
-
-Vi anbefaler dere å konfigurere DPO før DPV/DPF for å unngå å motta post fra svarUt til virksomhetens SvarInn innboks. Ved å konfigurere DPO først vil dere motta post i sak-arkivsystemet. Om ønsket kan en også sette opp DPI først.
-
-Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere har konfigurert slik at Digitaliseringsdirektoratet kan [gi tilganger](eformidling_drift_bestille_tilganger.html). Ellers vil du få 400 Bad request feil. 
 
 ### Integrasjonspunkt-local.properties
 
-Her laster du ned [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt). Integrasjonspunktet benytter Java Key Store (JKS) som standard for nøkkelhåndtering, men støtter det fleste "kjente" typer, inkl PKSC12. WCS er ikke lenger støttet for andre tjenester enn eInnsyn. Det er også mulig å bruke Azure Vault er støttet via Akv2K8s. [Se eksempeloppsett her](eformidling_drift_installasjon_aks.html#5-azure-key-vault-og-azure-key-vault-env-injector). 
+For å bruke integrasjonspunktet må en sette konfigurasjon, dette gjøres i en egen properties fil. Denne heter ```integrasjonspunkt-local.properties``` og kan lastes ned [her](/resources/eformidling/integrasjonspunkt-local.txt). Integrasjonspunktet benytter Java Key Store (JKS) som standard for nøkkelhåndtering, men støtter det fleste "kjente" typer, inkl PKSC12. WCS er ikke lenger støttet for andre tjenester enn eInnsyn. Det er også mulig å bruke Azure Vault er støttet via Akv2K8s. [Se eksempeloppsett her](eformidling_drift_installasjon_aks.html#5-azure-key-vault-og-azure-key-vault-env-injector). 
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
 2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
@@ -69,6 +66,17 @@ cd integrasjonspunkt
 New-Item -ItemType file integrasjonspunkt-local.properties
 ```
 
+### Konfigurasjon av integrasjonspunktet
+
+Det finnes mange tilgjengelige innstillinger en kan konfigurere integrasjonspunktet med, og disse varierer basert på hvilken tjeneste du ønsker å bruke. Vi har laget en egen side dedikert til alle disse innstillingene som finnes [her](eformidling_konfigurasjon_tilgjengelige_tjenester.html), i tillegg finnes det en side for minimum konfigurasjon for å kjøre et integrasjonspunkt som du finner [her](eformidling_konfigurasjon_minimal.html) 
+
+- [DPE - eInnsyn](eformidling_konfigurasjon_tilgjengelige_tjenester.html#einnsyn)
+- [DPF - Digital post til kommuner via FIKS SvarUt](eformidling_konfigurasjon_tilgjengelige_tjenester.html#dpf)
+- [DPFIO - Digital post til kommuner over FIKSIO](eformidling_konfigurasjon_tilgjengelige_tjenester.html#dpfio)
+- [DPI - Digital post til innbygger](eformidling_konfigurasjon_tilgjengelige_tjenester.html#eformidling---digital-post-til-virksomheter)
+- [DPO - Digital post til offentlige virksomheter](eformidling_konfigurasjon_tilgjengelige_tjenester.html#dpo)
+- [DPV - Digital post til virksomheter (Altinn postboks)](eformidling_konfigurasjon_tilgjengelige_tjenester.html#dpv)
+
 ## Neste steg
 
 Det neste som må gjøres for å installere integrasjonspunktet kan være å sikre at all konfigurasjon er på plass og om så, starte opp integrasjonspunktet 
@@ -81,7 +89,7 @@ Det neste som må gjøres for å installere integrasjonspunktet kan være å sik
 
 ## Installasjon av KOSMOS
 
-> Hva er KOSMOS? Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor. [Les mer her](eformidling_introduksjon.html#kosmos) 
+> Hva er KOSMOS? Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor. [Les mer her](eformidling_drift_automatisk_oppgradering.html) 
 
 Før du installerer KOSMOS forutsettes det at du har en gyldig integrasjonspunkt-local.properties fil fra før. Dvs at du har konfigurert et fungerende integrasjonspunkt på maskinen hvor KOSMOS skal installeres for å oppdatere dette integrasjonspunktet. Minimum er at du må ha .properties fil og keystore knyttet til denne, for integrasjonspunkt-[versjon].jar filen vil KOSMOS laste ned.
 
@@ -100,7 +108,7 @@ Om du ønsker å manuelt verifisere .jar fil ved å bruke sertifikatet kan du be
 
 
 ### Kosmos-local.properties
-Før KOSMOS kan automatisk laste ned ny versjon og oppdatere ditt køyrande integrasjonspunkt må den setjast opp ved å konfigurere properties og velge ein katalog det skal køyre frå. 
+Før KOSMOS kan automatisk laste ned ny versjon og oppdatere ditt køyrande integrasjonspunkt må KOSMOS setjast opp ved å konfigurere properties og velge ein katalog det skal køyre frå. Dette gjer ein via ei ```kosmos-local.properties```-fil
 
 Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og kosmos.jar frå samme katalog, om ønska køyre frå forskjellige katalog [sjå her](https://github.com/felleslosninger/efm-kosmos#running-kosmos-and-integrasjonspunkt-from-different-folders).
 
@@ -131,7 +139,7 @@ cd integrasjonspunkt
 New-Item -ItemType file kosmos-local.properties
 ```
 
-#### Konfigurere properties fil
+#### Konfigurasjon av KOSMOS     
 Åpne ```kosmos-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties. (anbefalt å være samme katalog som integrasjonspunktet)
 
 ```java
