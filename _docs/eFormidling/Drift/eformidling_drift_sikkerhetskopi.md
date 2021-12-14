@@ -7,48 +7,48 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+Det er mulig å ta backup eller flytte integrasjonspunktet og samtidig bevare historikken ved å ta vare på følgende filer/mapper. 
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+## Automatisk genererte filer 
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
+Disse genererte filene/mappene kan du ta vare på for å bevare historikk
 
-## Etter det første innholdet kan vi ha første header, på nivå 2
+- activemq-data
+- integrasjonspunkt.mv.db
+- integrasjonspunkt.trace.db
+- integrasjonspunkt-logs
 
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
+Ingen av disse filene er påkrevde for å starte integrasjonspunktet, om det mangler vil det bli generert. Utdyping om hva hver enkelt fil/mappe er lenger nede på siden. 
 
-## Kanskje ein tabell?
+### Database filer
 
-| A | B | C |
-| 1 | 2 | 3 |
+Integrasjonspunktet benytter H2 fildatabase som standard database, dette kan konfigureres om en ønsker å bruke [egen ekstern database](eformidling_konfigurasjon_tilgjengelige_tjenester.html#ekstern-database). Ved bruk av standard database så vil integrasjonspunktet opprette to database-filer ved oppstart ( om filene ikke finnes), ```integrasjonspunkt.mv.db``` og ```integrasjonspunkt.trace.db```.
 
-## Kanskje ein kodesnutt?
+I databasen vil det lagres historikk på utgående og innkommende meldinger og status på disse. 
 
-```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
-```
+### Integrasjonspunkt logger
 
-## Kanskje eit diagram?
+```integrasjonspunkt-logs``` mappen inneholder loggfiler for integrasjonspunktet. Disse kreves ikke for å bevare historikken, men er relevant om en ønsker å se historiske loggmeldinger. .
 
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
 
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
+### Activemq-data
 
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
+```activemq-data``` innholder meldingskøen internt i integrasjonspunktet, det sørger for ein retry-mekanisme om en ikke får sendt meldingen med en gang. En melding fjernes fra køen når tjenesten meldingen går mot gir http status 200 OK tilbake (status: SENDT), og når vi får kvittering (som er en melding) tilbake (status: MOTTATT/LEVERT).
+
+
+
+## Selvopprettede filer
+
+```integrasjonspunkt-local.properties``` og virksomhetens keystore (jks) må tas vare på og **begge er påkrevd for å starte opp integrasjonspunktet.** 
+
+### Konfigurasjonsfil
+
+Konfigurasjonsfilen ```integrasjonspunkt-local.properties``` må tas vare på. Her ligger din virksomhet sine innstillinger knyttet til tjenestene dere bruker, disse er nødvendige for oppstart av integrasjonspunktet.
+
+
+### Keystore
+
+Keystore inneholder virksomhetssertifikatet til virksomheten, dette må bevares og er påkrevd for å starte integrasjonspunktet. Trenger ikke ligge i samme mappe som integrasjonspunktet. 
+Anbefalte filer å ta backup av: 
 

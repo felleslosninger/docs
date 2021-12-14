@@ -27,7 +27,7 @@ sidebar: eformidling_sidebar
 
 **Features**
 
-- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](eformidling_konfigurasjon_tilgjengelige_tjenester.html#diverse-properties)
 
 **Feilrettinger**
 
@@ -83,7 +83,7 @@ I denne versjonen er det gjort flere endringer for å bedre paralellitet ved sen
 * Konfigurerbart hvor regelmessig meldingsstatuser skal hentes i DPV og DPF.
 * Innført paging for å redusere minnebruke ved oppslag av meldingsstatuser i DPV og DPF. 
 
-*Alle nye properties finner du [her](https://docs.digdir.no/eformidling_properties_config.html#eformidling---digital-post-til-innbyggere)*
+*Alle nye properties finner du [her](eformidling_drift_forberede_installasjon.html#brannmuråpninger)*
 
 ***
 
@@ -101,7 +101,7 @@ Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det e
 * Egendefinert DPV varslingstekst støtter nå substitusjonsvariabelen “$reporterName$“ (i tillegg til allerede eksisterende “$reporteeName$“) .
 * Ifm. overgangen til Maskinporten, benyttes nå en nyere versjon av DSF som støtter flere adresselinjer. Integrasjonspunktet vil automatisk tilordne adresselinjene til feltene i forretningsmeldingen “urn:no:difi:digitalpost:xsd:fysisk::print“, men det er ikke gjort endringer i grensesnittet til kapabilitetsoppslag. Her vil adresselinjene ligge separert med semikolon (;) i “street”-feltet.
 * For å støtte en enklere overgangsfase for sakarkiv-leverandører ved implementasjon av eFormidling 2.0-grensesnittet, har vi fjernet kravet om UUID i ReceiverRef i SBDH. Denne valideringen vil bli gjeninnført ved et senere tidspunkt.
-* [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon) 	146.192.252.50:443 - maskinporten.no (TCP)
+* [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](eformidling_drift_forberede_installasjon.html#brannmuråpninger-i-produksjon) 	146.192.252.50:443 - maskinporten.no (TCP)
 
 ***
 
