@@ -12,7 +12,7 @@ Det er mulig å ta backup eller flytte integrasjonspunktet og samtidig bevare hi
 
 ## Automatisk genererte filer 
 
-Disse genererte filene/mappene kan du ta vare på for å bevare historikk
+Disse genererte filene/mappene kan du ta vare på for å bevare historikk:
 
 - activemq-data
 - integrasjonspunkt.mv.db
@@ -27,7 +27,7 @@ Integrasjonspunktet benytter H2 fildatabase som standard database, dette kan kon
 
 I databasen vil det lagres historikk på utgående og innkommende meldinger og status på disse. 
 
-### Integrasjonspunkt logger
+### Integrasjonspunkt logg
 
 ```integrasjonspunkt-logs``` mappen inneholder loggfiler for integrasjonspunktet. Disse kreves ikke for å bevare historikken, men er relevant om en ønsker å se historiske loggmeldinger. .
 
