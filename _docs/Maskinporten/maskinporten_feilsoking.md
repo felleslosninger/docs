@@ -27,6 +27,12 @@ Feil med audience i JWT-grant.
 
 **Løsning:** Sjekk at audience går mot rett milø, og uten skrivefeil.
 
+#### "Invalid assertion. Client authentication failed. The JWT is signed with an invalid certificate."
+
+Noe er feil med sertifikatet som benyttes.
+
+**Løsning** Sjekk at det benyttes et gyldig virksomhetssertifikat. Sjekk at det ikke benyttes produksjonssertifikat i test eller testsertifikat i PROD. 
+
 ### Invalid request
 
 #### Invalid assertion. Invalid parameter value
