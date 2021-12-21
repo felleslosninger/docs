@@ -57,26 +57,26 @@ Versjon 2 (eksempel):
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:bestilling xmlns:ns2="http://einnsyn.no/schema/order/v2">
-	<id>http://data.einnsyn.no/innsynskrav/b05b9fd4-cbda-4e17-9d09-21a889526484</id>	//eInnsyn ID innsynskrav
+	<id>http://data.einnsyn.no/innsynskrav/b05b9fd4-cbda-4e17-9d09-21a889526484</id>
 	<bestillingsdato>2021-12-21+01:00</bestillingsdato>
-	<til>																				//Virksomhetens kontaktinfo
+	<til>												
 		<virksomhet>LoremIpsum</virksomhet>
 		<orgnr>987654321</orgnr>
 		<enhetepost>lorem@eksempel.no</enhetepost>
 		<innsynskravepost>innsyn@eksempel.no</innsynskravepost>
 	</til>
-	<kontaktinfo>																		//bestillers kontaktinfo
+	<kontaktinfo>									
 		<forsendelsesmåte>e-post</forsendelsesmåte>
 		<e-post>olanordmann@gmail.com</e-post>
 	</kontaktinfo>
 	<dokumenter>
 		<dokument>
 			<fagsysteminfo>
-				<id>cb746da3-41d9-4f29-9895-c62152c207b1</id>							//SystemID Arkiv
-				<delId>3ae3e707-a046-4970-9ac7-f8a270a193e5</delId>						//SystemID Arkivdel
+				<id>cb746da3-41d9-4f29-9895-c62152c207b1</id>
+				<delId>3ae3e707-a046-4970-9ac7-f8a270a193e5</delId>	
 			</fagsysteminfo>
-			<id>http://test.einnsyn.no/noark5/3056b799-a88e-435b-95fc-4b7621b57d26</id>	//eInnsyn ID journalpost
-			<systemId>3056b799-a88e-435b-95fc-4b7621b57d26</systemId>					/SystemID journalpost
+			<id>http://test.einnsyn.no/noark5/3056b799-a88e-435b-95fc-4b7621b57d26</id>
+			<systemId>3056b799-a88e-435b-95fc-4b7621b57d26</systemId>	
 			<saksnr>2025/23456</saksnr>
 			<dokumentnr>1</dokumentnr>
 			<journalnr>2171234/21</journalnr>
@@ -86,6 +86,8 @@ Versjon 2 (eksempel):
 	</dokumenter>
 </ns2:bestilling>
 ```
+fagsysteminfo-id/delId er hentet fra SystemID til "arkiv"/"arkivdel". Disse må derfor være inkludert i den opprinnelige publiseringen/avleveringen for at det skal kunne inkluderes i xml'en. Det samme gjelder systemId på dokumentet. Versjon 2 er derfor kun støttet av fagsystemer som publiserer på Noark5 xml og Json-ld format.
+
 
 ## Meldingsflyt 
 
