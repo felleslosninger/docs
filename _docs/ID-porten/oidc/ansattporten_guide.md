@@ -48,7 +48,7 @@ Ulikt ID-porten så vil ikke brukeren få opprettet en SSO-sesjon i Ansattporten
 
 
 
-### Brukerreise 2: Innlogging på vegne av andre
+### Brukerreise 2: Innlogging på vegne av andre (1. kvartal 2022)
 
 Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autorativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autorativ kilde.
 
@@ -60,7 +60,7 @@ Brukerreise blir da som følger:
 
 1. Bruker klikker login-knapp hos tjeneste.  Kallet til ansattporten inneholder informasjon om hvilket representasjonsforhold som tjenesten trenger
 2. Bruker autentiserer seg med sterk eID.  Det opprettes ikke SSO-sesjon i Ansattporten.
-3. Bruker vises en organisasjonsvelger, der hen kan velge hvilken avgiver (organisasjon, person) som denne innloggingen skal være på vegne av,  
+3. Bruker vises en organisasjonsvelger, der hen kan velge hvilken avgiver (organisasjon) som denne innloggingen skal være på vegne av
 4. Bruker blir sendt tilbake til tjenesten, med informasjon om valgt avgiver
 
 Dette er detaljert i sekvensdiagrammet under:
@@ -79,7 +79,7 @@ C->>A: /authorize inkl forespurt representasjonstype  (redirect)
 note over B, A: sluttbruker autentiserer seg
   A->>AA: hente avgivere for bruker for ønska representasjon
   A->>A: vise organisasjonsvelger
-  note over B, A: Bruker velger en eller flere organisasjoner
+  note over B, A: Bruker velger en  organisasjon
 A->>C: redirect med code
 C->>A: /token  
 note over B,C: innlogget i tjenesten
