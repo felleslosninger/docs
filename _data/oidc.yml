@@ -34,6 +34,12 @@ folders:
       - title: Brukerstyrt datadeling
         jurl: /oidc_auth_oauth2.html
 
+      - title: Ansattporten
+        jurl: /ansattporten_guide.html
+
+      - title: ID-porten utland
+        jurl: /oidc_func_idporten-utland.html
+
 
 - title: Grensesnittsdefinisjon
   folderitems:
