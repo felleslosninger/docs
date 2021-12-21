@@ -25,6 +25,68 @@ Fagsystem som har støtte for direkteintegrasjon kan hente order.xml direkte fra
 Vi har utviklet to varianter av order.xml. Versjon 1 er den originale og "default". Hvis det er ønskelig og støtte for å motta den utvidete versjonen (versjon 2), kan det settes/endres i eInnsyn Admin av en virksomhetsadministrator:
 ![order_xml versjon einnsyn admin](/images/einnsyn/orderversjon_admin.png)
 
+Versjon 1 (eksempel):
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bestilling>
+	<id>http://data.einnsyn.no/innsynskrav/3954cfaa-c5fc-4c05-b3a6-9968855a42af</id>
+	<bestillingsdato>21.12.2021</bestillingsdato>
+	<til>
+		<enhet>LoremIpsum</enhet>
+		<enhetepost>lorem@eksempel.no</enhetepost>
+	</til>
+	<innsynskravepost>innsyn@eksempel.no</innsynskravepost>
+	<kontaktinfo>
+		<forsendelsesmåte>e-post</forsendelsesmåte>
+		<navn> </navn>
+		<organisasjon/>
+		<land/>
+		<e-post>olanordmann@gmail.com</e-post>
+	</kontaktinfo>
+	<dokumenter>
+		<dokument>
+			<saksnr>2025/23456</saksnr>
+			<dokumentnr>1</dokumentnr>
+			<journalnr>2171234/21</journalnr>
+			<saksbehandler>saksbehandler</saksbehandler>
+		</dokument>
+	</dokumenter>
+</bestilling>
+```
+Versjon 2 (eksempel):
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:bestilling xmlns:ns2="http://einnsyn.no/schema/order/v2">
+	<id>http://data.einnsyn.no/innsynskrav/b05b9fd4-cbda-4e17-9d09-21a889526484</id>	//eInnsyn ID innsynskrav
+	<bestillingsdato>2021-12-21+01:00</bestillingsdato>
+	<til>																				//Virksomhetens kontaktinfo
+		<virksomhet>LoremIpsum</virksomhet>
+		<orgnr>987654321</orgnr>
+		<enhetepost>lorem@eksempel.no</enhetepost>
+		<innsynskravepost>innsyn@eksempel.no</innsynskravepost>
+	</til>
+	<kontaktinfo>																		//bestillers kontaktinfo
+		<forsendelsesmåte>e-post</forsendelsesmåte>
+		<e-post>olanordmann@gmail.com</e-post>
+	</kontaktinfo>
+	<dokumenter>
+		<dokument>
+			<fagsysteminfo>
+				<id>cb746da3-41d9-4f29-9895-c62152c207b1</id>							//SystemID Arkiv
+				<delId>3ae3e707-a046-4970-9ac7-f8a270a193e5</delId>						//SystemID Arkivdel
+			</fagsysteminfo>
+			<id>http://test.einnsyn.no/noark5/3056b799-a88e-435b-95fc-4b7621b57d26</id>	//eInnsyn ID journalpost
+			<systemId>3056b799-a88e-435b-95fc-4b7621b57d26</systemId>					/SystemID journalpost
+			<saksnr>2025/23456</saksnr>
+			<dokumentnr>1</dokumentnr>
+			<journalnr>2171234/21</journalnr>
+			<saksbehandler>saksbehandler</saksbehandler>
+			<admEnhet>enhetskode</admEnhet>
+		</dokument>
+	</dokumenter>
+</ns2:bestilling>
+```
+
 ## Meldingsflyt 
 
 Se forklaring under bildet.
