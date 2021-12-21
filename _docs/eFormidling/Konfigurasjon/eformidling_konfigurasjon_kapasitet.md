@@ -7,48 +7,21 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+Ved utsending av stort volum kan det være aktuelt å justere kapasiteten i integrasjonspunktet, feks ved å benytte flere tråder. Dette kan gjerast via properties eller argument til programmet ved oppstart. 
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+### Properties 
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
+ | **Properties** | **Eksempel verdi** | **Beskrivelse** | **Tjeneste** |
+| difi.move.dpi.clientMaxConnectionPoolSize | 10 | Antall tråder som DPI-klienten kan bruke til sending og kvittering | DPI |
+|difi.move.feature.enableDsfPrintLookup| false | Skru på / av DSF oppslag for DPI. Settes til false for å skru av. Standard verdien er true. Dette kan gje noe bedre ytelse ved å ikke slå opp i folkeregisteret etter postadresse | DPI |
+|difi.move.dpi.mpcConcurrency| 1 | Antall kanaler for å lese DPI-kvitteringer | DPI |
+|difi.move.nextmove.statusPollingCron|0 * * * * *|Hvor ofte en sjekker etter meldingsstatus i DPV| DPV|
+|difi.move.queue.concurrency| 10 | Antall tråder for ActiveMQ køen | - |
 
-## Etter det første innholdet kan vi ha første header, på nivå 2
 
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
+### Minne 
 
-## Kanskje ein tabell?
+Anbefaler å sette minimum og maximum minne på Java heap til det samme. Vi anbefaler også minimum 2GB ved bruk av eFormidling, se [her for mer informasjon](eformidling_drift_forberede_installasjon.html#dette-gjør-du-før-installasjon-av-integrasjonspunktet). 
 
-| A | B | C |
-| 1 | 2 | 3 |
-
-## Kanskje ein kodesnutt?
-
-```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
-```
-
-## Kanskje eit diagram?
-
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
-
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
-
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
-
+Oppstartsargument til applikasjonen for å sette tilgjengelig minne ```-Xms2G``` og ```-Xmx2G```. Eksempel kommando: ```java -Xms2G -Xmx2G -jar integrasjonspunkt.jar```. 
