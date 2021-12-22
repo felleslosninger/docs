@@ -1,6 +1,6 @@
 ---
 title: Korrespondanseparttype
-permalink: korrespondanseparttype.html
+
 sidebar: begrep_sidebar
 ---
 

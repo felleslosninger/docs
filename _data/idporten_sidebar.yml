@@ -2,30 +2,30 @@ sidebarTitle: ID-porten
 folders:
 
     - title: Overordna arkitekturbeskrivelse
-      jurl: /idporten_logo.html
+      jurl: /docs/ID-porten/idporten/idporten_logo
 
     - title: Ulike brukområder
       folderitems:
 
         - title: Innlogging til webtjeneste
-          jurl: /idporten_bruksomrade_webtjenester.html
+          jurl: /docs/ID-porten/idporten/idporten_bruksomrade_webtjeneste
         - title: Innlogging til mobilapp
-          jurl: /idporten_bruksomrade_mobilapp.html
+          jurl: /docs/ID-porten/idporten/idporten_bruksomrade_mobilapp
         - title: Innlogging til SPA
-          jurl: /idporten_bruksomrade_spa.html
+          jurl: /docs/ID-porten/idporten/idporten_bruksomrade_spa
         - title: Tilgangsstyring til dine API'er
-          jurl: /idporten_bruksomrade_tilgang_api.html
+          jurl: /docs/ID-porten/idporten/idporten_bruksomrade_tilgang_api
 
     - title: Grensesnitt
       folderitems:
 
       - title: SAML2
-        jurl: /idporten_grensesnitt_saml.html
+        jurl: /docs/ID-porten/idporten/idporten_grensesnitt_saml2
       - title: OpenID Connect (OIDC)
-        jurl: /idporten_grensesnitt_oidc.html
+        jurl: /docs/ID-porten/idporten/idporten_grensenitt_oidc
 
     - title: Spørsmål og svar
-      jurl: /idporten_faq.html
+      jurl: /docs/ID-porten/idporten/idporten_sporsmalsvar
 
 
 ###########################

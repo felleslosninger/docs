@@ -1,7 +1,7 @@
 ---
 
 title: Bevis  
-permalink: sdp_bevis.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -10,7 +10,7 @@ sidebar: dpi_sidebar
 | Mime-Type | application/vnd.difi.dpi.bevis+xml |
 | Datatype | complexType |
 | Kommentar | Definerer et bevis som presenteres for innbygger i postkassen |
-| XSD | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/bevis.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/bevis.xsd) |
+| XSD | [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/bevis.xml]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/bevis.xml) |
     
 
 ### Attributter: Se xsd for mer informasjon om domenet.

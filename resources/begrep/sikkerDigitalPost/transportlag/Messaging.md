@@ -2,7 +2,7 @@
 
 layout: default  
 title: Messaging  
-permalink: sdp_messaging.html
+
 sidebar: dpi_sidebar
 
 ---
@@ -26,5 +26,5 @@ relatert til meldinger sendt mellom to MSH’er slik som definert av ebMS
 
 | Identifikator | Kardinalitet | Datatype | Kommentar |
 | --- | --- | --- | --- |
-| [UserMessage](UserMessage/index.md) | 0..1 | eb:UserMessage | en forretningsmelding som skal overleveres til fagsystemet bak MSH’en som tar i mot meldingen |
-| [SignalMessage](SignalMessage/index.md) | 0..unbounded | eb:SignalMessage | Signalmelding om at det er ønske om en handling fra den andre MSH’en. En signalmelding vil typisk ikke innvolvere fagsystemet til MSH’en. |
+| [UserMessage]({{site.baseurl}}/resources/begrep/ID-porten/index) | 0..1 | eb:UserMessage | en forretningsmelding som skal overleveres til fagsystemet bak MSH’en som tar i mot meldingen |
+| [SignalMessage]({{site.baseurl}}/resources/begrep/ID-porten/index) | 0..unbounded | eb:SignalMessage | Signalmelding om at det er ønske om en handling fra den andre MSH’en. En signalmelding vil typisk ikke innvolvere fagsystemet til MSH’en. |

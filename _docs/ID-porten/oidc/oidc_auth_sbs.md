@@ -2,7 +2,7 @@
 title: Autentisering til tykke klienter
 description: Autentisering til tykke klienter
 summary: "Tykke klienter er applikasjoner som installeres og kjøres lokalt på en datamaskin. De er må bruke autorisasjonskodeflyt med loopback redirection ved innlogging."
-permalink: oidc_auth_sbs.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -11,7 +11,7 @@ product: ID-porten
 
 Med tykke klienter mener vi applikasjoner som installeres og kjøres lokalt på en datamaskin. Eksempler på dette er Microsoft .Net WPF eller Winforms.
 
-I Oauth2-sammenheng, er dette en *native* klient, siden den ikke kan beskytte en klienthemmelighet/virksomhetssertifikat, og [behandles på samme måte som innlogging til mobil-app'er](oidc_auth_app.html).
+I Oauth2-sammenheng, er dette en *native* klient, siden den ikke kan beskytte en klienthemmelighet/virksomhetssertifikat, og [behandles på samme måte som innlogging til mobil-app'er]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_app).
 
 
 Tykke klienter bør:
@@ -36,9 +36,9 @@ Både ipv6 og ipv4 er støtta.
 
 ## Beskrivelse av innloggingsflyten for tykke klienter
 
-Flyten er identisk som for [autorisasjonskode-flyten](oidc_auth_codeflow.html), men med bruk av [PKCE](oidc_func_pkce.html):
+Flyten er identisk som for [autorisasjonskode-flyten]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_codeflow), men med bruk av [PKCE]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_pkce):
 
-Normal vil klienten trenge tilgang til APIer fra 3-dje-part,  [se nærmere dokumentasjon av brukerstyrt datadeling](oidc_auth_oauth2.html)
+Normal vil klienten trenge tilgang til APIer fra 3-dje-part,  [se nærmere dokumentasjon av brukerstyrt datadeling]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2)
 
 
 ## Struktur på token

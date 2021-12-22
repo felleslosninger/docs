@@ -2,7 +2,7 @@
 title: Konfigurasjon av einnsyn-klient
 description: Konfigurasjon av einnsyn-klient
 summary: "Konfigurasjon av einnsyn-klient ++"
-permalink: einnsyn_konfigurasjon.html
+
 sidebar: einnsyn_sidebar
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: tilEndringsNummer
-permalink: tilendringsnummer.html
+
 sidebar: begrep_sidebar
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Om selvbetjening av Digdirs fellesløsninger
 description:  Selvbetjening av Digdirs fellesløsninger
-permalink: selvbetjening_om.html
+
 sidebar: main_sidebar
 product: Selvbetjening
 ---

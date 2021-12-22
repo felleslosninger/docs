@@ -1,7 +1,7 @@
 ---
 
 title: Arkitektur  
-permalink: sdp_arkitektur.html
+
 sidebar: dpi_sidebar
 
 ---

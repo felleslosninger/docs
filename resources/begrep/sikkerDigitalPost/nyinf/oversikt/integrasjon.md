@@ -1,6 +1,6 @@
 ---
 title: Integrasjon 
-permalink: integrasjon.html
+
 sidebar: dpi_timo_sidebar
 ---
 

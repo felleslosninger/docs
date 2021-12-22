@@ -1,7 +1,7 @@
 ---
 
 title: Prisen på digital post  
-permalink: sdp_meldingsstorrelse.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -13,7 +13,7 @@ Derfor er prisen regnet ut i fra det innhold som postkasseleverandørene
 er forpliktet til å langtidslagre.
 
 Les mer om hva som langtidslagres hos postkasseleverandørene i seksjonen
-om [Dokumentpakken](sdp_langtidslagring.html).
+om [Dokumentpakken]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/langtidslagring).
 
 Prisen på en forsendelse regnes ut i fra størrelsen på Dokumentpakkens
 innhold, før det det pakkes ned.

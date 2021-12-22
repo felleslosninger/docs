@@ -1,7 +1,7 @@
 ---
  
 title: PullRequest  
-permalink: sdp_pullrequest.html
+
 sidebar: dpi_sidebar
 ---
 

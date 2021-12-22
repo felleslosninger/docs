@@ -1,6 +1,6 @@
 ---
 title: Skjema  
-permalink: dpi_skjema.html
+
 sidebar: dpi_timo_sidebar
 ---
 

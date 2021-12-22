@@ -1,7 +1,7 @@
 ---
 title: 20-04 ID-porten
 description: 20-04 ID-porten
-permalink: 20-04_ID-porten.html
+
 sidebar: oidc
 ---
 

@@ -2,7 +2,7 @@
 title: Trafikkflyt, kvitteringer og statuser i eFormidling og eInnsyn
 description: Trafikkflyt, kvitteringer og statuser
 summary: "Trafikkflyt, kvitteringer og statuser i eFormidling og eInnsyn"
-permalink: eformidling_selfhelp_traffic_flow.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

@@ -2,7 +2,7 @@
 title: Status
 description: Statuspage for Elma
 summary: "Elma status"
-permalink: elma_status.html
+
 product: elma
 sidebar: elma_sidebar
 ---

@@ -1,6 +1,6 @@
 ---
 title: sistOppdatert
-permalink: sistoppdatert.html
+
 sidebar: begrep_sidebar
 ---
 

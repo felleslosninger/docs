@@ -2,7 +2,7 @@
 title: About the new ICD (0192) and new Profiles
 description: Explanation of the new ICD (0192) and how it relates to ned Profiles.
 summary: "In this guide, we explain the new International Code Designator (ICD), 0192, for Norway, how the new Profiles relates to this ICD, and an overview of how this works in ELMA."
-permalink: elma_icd0192andNewProfiles.html
+
 product: elma
 sidebar: elma_sidebar
 ---

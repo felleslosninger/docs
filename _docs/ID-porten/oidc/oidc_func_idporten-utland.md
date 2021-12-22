@@ -2,7 +2,7 @@
 title: idporten-utland
 description: ID-porten utland
 summary: "idporten-utland er en ny nasjonal fellestjeneste for brukere som mangler F/D-nummer i norsk folkeregister. "
-permalink: oidc_func_idporten-utland.html
+
 sidebar: oidc
 product: ID-porten
 ---

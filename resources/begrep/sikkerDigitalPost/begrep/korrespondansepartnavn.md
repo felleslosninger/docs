@@ -1,6 +1,6 @@
 ---
 title: Korrespondansepartnavn
-permalink: korrespondansepartnavn.html
+
 sidebar: begrep_sidebar
 ---
 

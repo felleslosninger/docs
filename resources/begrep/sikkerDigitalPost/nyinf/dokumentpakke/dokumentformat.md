@@ -1,6 +1,6 @@
 ---
 title: Dokumentformat
-permalink: dpi_dokumentformat.html
+
 sidebar: dpi_timo_sidebar
 ---
 

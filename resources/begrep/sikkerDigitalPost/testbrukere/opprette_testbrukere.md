@@ -1,6 +1,6 @@
 ---
 title: Postkasser til testbrukere
-permalink: sdp_pk_til_testbruker_index.html
+
 sidebar: dpi_sidebar
 ---
 

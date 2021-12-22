@@ -2,7 +2,7 @@
 title: Endringslogg Integrasjonspunkt 2.0 beta (Utvikling)
 description: Mange versjoner av integrasjonspunktet vil bli laget i test- og utviklingsløpet, her vil du finne informasjon om endringer samt nedlastingslenke.
 summary: ""
-permalink: eformidling_nm_changelog.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

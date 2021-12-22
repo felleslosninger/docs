@@ -2,14 +2,14 @@
 title: Teste og verifisere forsendelser
 description: Teste og verfisere forsendelser
 summary: "Liten guide til testing og verfisering av forsendelser eFormidling"
-permalink: eformidling_verifisere_forsendelser.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
 Før en tar i bruk eFormidling er det viktig å verifisere både mottak og sending av forsendelser. Dette er det siste steget før virksomheten din kan ta i bruk eFormidling. Denne guiden er ment som en rettesnor for testing og verifisering i **produksjonsmiljøet**.
 
-Lenke til **testmiljøet** finner du derimot [her](eformidling_testing_env.html).
+Lenke til **testmiljøet** finner du derimot [her]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_testing_env).
 
 ## Hva må jeg huske på?
 

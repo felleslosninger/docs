@@ -2,14 +2,14 @@
 title: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsregisteret
 description: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsregisteret
 summary: "Kontaktinformasjon fra Kontakt- og Reservasjonsregisteret tilhørende  innlogget bruker er tilgjengelig på et eget Oauth2-beskyttet REST-API."
-permalink: brukerspesifikt_oppslag_krr_rest.html
+
 sidebar: krr_sidebar
 product: KRR
 ---
 
 ## Introduksjon
 
-Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten](oppslagstjenesten_rest.html).
+Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest).
 
 Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammenhenger være mer hensiktsmessig.
 
@@ -19,7 +19,7 @@ Kunde må godkjenne bruksvilkår for Kontakt- og Reservasjonsregisteret for å k
 
 ## Bruk av Oauth2
 
-Tjenesten baserer seg på [autentiseringsnær autorisasjon](oidc_auth_oauth2.html).
+Tjenesten baserer seg på [autentiseringsnær autorisasjon]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2).
 
 
 Man må forespørre ett eller flere av følgende scopes:

@@ -1,6 +1,6 @@
 ---
 title: virkningstidspunkt
-permalink: virkningstidspunkt.html
+
 sidebar: begrep_sidebar
 ---
 

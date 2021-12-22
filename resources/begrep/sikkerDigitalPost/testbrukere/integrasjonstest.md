@@ -1,6 +1,6 @@
 ---
 title: Integrasjonstest - Digital postkasse
-permalink: sdp_integrasjonstest.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -8,7 +8,7 @@ Her er en oversikt over de tester som anbefales gjennomført i forbindelse med e
 
 #### Test 1: Oppslagstjenesten
 
-Verifiser at virksomheten kan gjøre oppslag mot [kontakt- og reservasjonsregisteret - Oppslagstjenesten](oppslagstjenesten_rest.md)
+Verifiser at virksomheten kan gjøre oppslag mot [kontakt- og reservasjonsregisteret - Oppslagstjenesten]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest)
 
 #### Test 2: Sending av digital post
 

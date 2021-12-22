@@ -1,4 +1,4 @@
-﻿---
+---
 
 layout: default  
 title: Generere dokumentasjon basert på skjema  

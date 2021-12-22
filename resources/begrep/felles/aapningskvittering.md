@@ -1,6 +1,6 @@
 ---
 title: aapningskvittering
-permalink: aapningskvittering2.html
+
 sidebar: dpi_sidebar
 ---
 

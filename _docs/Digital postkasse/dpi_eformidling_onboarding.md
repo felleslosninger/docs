@@ -3,7 +3,7 @@ title: Veiledning for DPI gjennom eFormidling
 description: Hvordan komme i gang med integrasjonspunktet
 summary: "Hvordan en installerer integrasjonspunktet og setter opp DPI gjennom eFormidling."
 
-permalink: dpi_eformidling_onboarding.html
+
 product: eFormidling
 sidebar: 
 ---
@@ -21,7 +21,7 @@ Dette må gjøres før du går i gang med installering.
 - Installere Java 8 på serveren der integrasjonspunktet skal kjøre fra.
 Den kan lastes ned [her](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot) og er gratis.
 
-![Sånn installerer du OpenJDK](/images/eformidling/OpenJDK.png)
+![Sånn installerer du OpenJDK]({{site.baseurl}}/images/eformidling/OpenJDK.png)
 
 - Installere Key Store Explorer for håndtering av virksomhetssertifikat (gratis). [Last ned.](http://keystore-explorer.org/downloads.html)
 
@@ -69,7 +69,7 @@ Det kan eksporteres slik i Key Store Explorer:
 3. La alt stå som det er og lagre som en .cer fil. 
 Eksempel: *MittPublicSertifikat.cer*
 
-![Slik eksporterer du public key](/images/eformidling/JKS.png)
+![Slik eksporterer du public key]({{site.baseurl}}/images/eformidling/JKS.png)
 
 Send så filen til servicedesk@digdir.no.
 
@@ -89,9 +89,9 @@ Følg så stegene under:
 
 1. Navngi xml-og exe-filen slik at de har samme navn. Det er viktig at disse er like.
 2. Gå gjennom propertiesfilen og fyll inn verdiene som mangler. Lagre filen. Disse verdiene må være fylt ut (minstekrav):
-![Properties eksempel](/images/eformidling/properties.png)
+![Properties eksempel]({{site.baseurl}}/images/eformidling/properties.png)
 3. Integrasjonspunktmappen bør se slik ut nå:
-![Mappen pre-install](/images/eformidling/mappe%20pre-install.png)
+![Mappen pre-install]({{site.baseurl}}/images/eformidling/mappe%20pre-install.png)
 4. Åpne kommandovindu som administrator. Naviger frem til integrasjonspunktmappen.
 5. Kjør denne kommandoen for installasjon:
 ```
@@ -104,7 +104,7 @@ mitt-integrasjonspunkt.exe start
 Du kan se om tjenesten kjører i Windows Services. Den kan du også bruke til å stoppe/starte integrasjonspunktet.
 
 Etter installering og oppstart bør integrasjonspunktmappen se slik ut:
-![Mappen post-install](/images/eformidling/mappe%20post-install.png)
+![Mappen post-install]({{site.baseurl}}/images/eformidling/mappe%20post-install.png)
 
 ## FAQ (Blir oppdatert fortløpende)
 

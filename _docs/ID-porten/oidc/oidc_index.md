@@ -2,7 +2,7 @@
 title: OpenID Connect i ID-porten
 description: OpenID Connect i ID-porten
 summary: "Logg inn på selvbetjeningsportalen for å lage en integrasjon med ID-porten OIDC"
-permalink: oidc_index.html
+
 sidebar: oidc
 product: ID-porten
 
@@ -33,7 +33,7 @@ Følgende punkter bør være en del av planleggingen (gjøres i samarbeid med Di
 
 Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i produksjon. Digitaliseringsdirektoratets Ver2-miljø er standard testmiljø for OIDC.
 
-1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no). Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering](oidc_func_clientreg.html)
+1. Opprett en klient via [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no). Husk å oppgi ønsket redirect-uri'er og annen nødvendig informasjon, se [klient-registrering]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_clientreg)
    - Alternativt kan du be om å få en klient-integrasjon ved å sende e-post til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
  2. Konfigurer din føderasjonsprogramvare med informasjonen mottatt i punkt 1, og pek den mot ID-portens well-known endepunkt.
@@ -41,7 +41,7 @@ Vi ønsker at alle tjenester skal verifiseres via testmiljøet før de går i pr
 
 ## Test
 
-Det må utføres en rekke verifikasjonstester for å teste blant annet innlogging og utlogging. [Verifikasjonstester finner du her](idporten_verifikasjonstester.html).  
+Det må utføres en rekke verifikasjonstester for å teste blant annet innlogging og utlogging. [Verifikasjonstester finner du her]({{site.baseurl}}/docs/ID-porten/idporten/idporten_verifikasjonstester).  
 
 
 ### Testbrukere

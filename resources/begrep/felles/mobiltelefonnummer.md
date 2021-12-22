@@ -1,6 +1,6 @@
 ---
 title: Mobiltelefonnummer
-permalink: mobiltelefonnummer.html
+
 sidebar: begrep_sidebar
 ---
 

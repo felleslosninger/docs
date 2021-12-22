@@ -1,6 +1,6 @@
 ---
 title: Person 
-permalink: sdp_person.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -9,7 +9,7 @@ sidebar: begrep_sidebar
 |Definisjon|Person definert for Sikker digital post|
 |Datatype|complexType|
 |Kilde|DIFI|
-|Kommentar|Person er [mottakeren](sdp_mottaker.html) som Digital Post skal sendes til.|
+|Kommentar|Person er [mottakeren]({{site.baseurl}}/resources/begrep/felles/Mottaker) som Digital Post skal sendes til.|
 
 Merk at Person ikke er unik definert på tvers av Difi sine
 felleskomponenter, men at hver av felleskomponentene har en definisjon
@@ -19,8 +19,8 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 
 | Term                                               | Kardinalitet | Datatype                                              |
 | --- | --- | --- |
-| [personidentifikator](personidentifikator.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [postkasseadresse](postkasseadresse.md)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [postkasseadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseadresse)       | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Xml eksempel
 

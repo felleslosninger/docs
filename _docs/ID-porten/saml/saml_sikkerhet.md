@@ -2,7 +2,7 @@
 title: Sikkerhet
 description: Sikkerhet
 summary: "Om sikkerhet i ID-porten"
-permalink: saml_sikkerhet.html
+
 sidebar: saml_idporten_sidebar
 product: ID-porten
 ---

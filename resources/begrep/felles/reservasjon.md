@@ -1,6 +1,6 @@
 ---
 title: reservasjon
-permalink: 2reservasjon.html
+
 sidebar:
 ---
 

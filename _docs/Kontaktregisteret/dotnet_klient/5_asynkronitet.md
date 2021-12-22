@@ -2,7 +2,7 @@
 title: Async/sync
 description: 
 summary: ""
-permalink: krr_async.html
+
 sidebar: krr_dotnet
 product: KRR
 ---

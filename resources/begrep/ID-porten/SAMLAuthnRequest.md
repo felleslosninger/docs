@@ -1,7 +1,7 @@
 ---
 
 title: SAMLAuthnRequest  
-permalink: IDport_SAMLAuthnRequest.html
+
 sidebar:
 ---
 
@@ -29,7 +29,7 @@ h4. Attributer
 | --- | ---| --- |
 | AuthnContextClassRef | Autentiseringsnivå spesifisert i henhold til kodeverk for [AuthnContextClassRef](#AuthnContextClassRef) beskrevet under | 0..1         |
 | ForceAuth            | Vil kreve at brukeren gjennomfører autentisering .                                                                      | 0..1         |
-| locale               | [spraak](../felles/spraak.md), se under for hvilke språk som er støttet                                                      | 0..1         |
+| locale               | [spraak]({{site.baseurl}}/resources/begrep/felles/spraak), se under for hvilke språk som er støttet                                                      | 0..1         |
 | OnBehalfOf           | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på veien av                                         | 0..1         |
 
 #### Kodeverk
@@ -38,9 +38,9 @@ h4. Attributer
 
 Kodeverk for AuthnContextClassRef er definert som under, der hver
 AuthnContextClassRef er knyttet til et spesielt
-[sikkerhetsnivaa](../felles/sikkerhetsnivaa.md) slik:
+[sikkerhetsnivaa]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/sikkerhetsnivaa) slik:
 
-| AuthnContextClassRef                                              | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md) |
+| AuthnContextClassRef                                              | [sikkerhetsnivaa]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/sikkerhetsnivaa) |
 | --- | --- |
 | urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified                | 3                                          |
 | urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport | 3                                          |

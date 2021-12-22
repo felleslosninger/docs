@@ -1,6 +1,6 @@
 ---
 title: fraEndringsNummer
-permalink: fraendringsnummer.html
+
 sidebar: begrep_sidebar
 ---
 

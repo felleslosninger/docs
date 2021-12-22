@@ -1,6 +1,6 @@
 ---
 title: avsenderidentifikator
-permalink: avsenderidentifikator.html
+
 sidebar: begrep_sidebar
 ---
 

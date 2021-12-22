@@ -1,6 +1,6 @@
 ---
 title: Overordnet struktur på forretningsmeldinger
-permalink: dpi_struktur_forretningsmelding.html
+
 sidebar: dpi_timo_sidebar
 ---
 

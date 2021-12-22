@@ -1,7 +1,7 @@
 ---
 
 title: Error  
-permalink: sdp_error.html
+
 sidebar: dpi_sidebar
 ---
 

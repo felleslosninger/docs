@@ -1,14 +1,14 @@
 ---
 title: Mottaker 
-permalink: sdp_mottaker.html
+
 sidebar: begrep_sidebar
 ---
 
 |---|---|
 |Definisjon|Person som er mottaker av en sikker digital post|
 |Kilde|DIFI|
-|Kommentar|Skjema i sikker digital post støtter at Mottaker kan være en [Person](sdp_person.html).|
+|Kommentar|Skjema i sikker digital post støtter at Mottaker kan være en [Person]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Person).|
 
 | Identifikator    | Term             | Kardinalitet |
 | ---------------- | ---------------- | ------------ |
-| [Person](sdp_person.html) | [Person](sdp_person.html) | 0..1         |
+| [Person]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Person) | [Person]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Person) | 0..1         |

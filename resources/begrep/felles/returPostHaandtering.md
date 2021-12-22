@@ -1,6 +1,6 @@
 ---
 title: returPostHaandtering
-permalink: 2returposthaandtering.html
+
 sidebar:
 ---
 

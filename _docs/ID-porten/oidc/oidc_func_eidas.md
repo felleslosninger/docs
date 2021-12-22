@@ -2,7 +2,7 @@
 title: eIDAS
 description: eIDAS-søtte over OIDC
 summary: "Klienter kan også motta europeiske brukere ihht eIDAS-reguleringen fra ID-portens OIDC-provider. "
-permalink: oidc_func_eidas.html
+
 sidebar: oidc
 product: ID-porten
 ---

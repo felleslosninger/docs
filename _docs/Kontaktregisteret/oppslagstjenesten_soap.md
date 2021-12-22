@@ -2,7 +2,7 @@
 title: Oppslagstjenesten SOAP
 description: SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-grensesnittet for å sette opp nye integrasjoner mot KRR
 summary:
-permalink: oppslagstjenesten_soap.html
+
 sidebar: main_sidebar
 product: KRR
 ---
@@ -12,7 +12,7 @@ OBS! SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-
 sette opp nye integrasjoner mot KRR
 ```
 
-Gå til [Oppslagstjenesten REST](oppslagstjenesten_rest.html) 
+Gå til [Oppslagstjenesten REST]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest) 
 
 **Oppslagstjenesten** gir offentlig forvaltning tilgang til innbyggers registrerte kontaktinformasjon (sikkerpostadresse, e-postadresse og mobilnummer). Tjenesten kan benyttes av offentlige virksomheter og virksomheter som utfører tjenester på vegne av det offentlige. Tjenesten er en overbygning på eksisterende registre for forvaltningens elektroniske kommunikasjon, i første omgang kontakt- og reservasjonsregisteret. På sikt kan oppslagstjenesten også gi tilgang til andre registre. 
 

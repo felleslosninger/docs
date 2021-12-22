@@ -1,7 +1,7 @@
 ---
 title: Oppslagstjenesten REST
 description: REST-API for Kontakt- og Reservasjonsregisteret
-permalink: oppslagstjenesten_rest.html
+
 sidebar: krr_sidebar
 product: KRR
 ---
@@ -12,7 +12,7 @@ Kontaktregisteret sin oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-A
 
 ## Bruk av Oauth2
 
-Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon](maskinporten_auth_server-to-server-oauth2.html)
+Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon]({{site.baseurl}}/docs/Maskinporten/maskinporten_auth_server-to-server-oauth2)
 
 Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke Maskinporten.
 

@@ -1,7 +1,7 @@
 ---
 
 title: KvitteringsForespoersel  
-permalink: sdp_kvitteringsforspoersel.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -20,15 +20,15 @@ et variabelsett. For disse er formen %variabelnavn% benyttet.
 
 | P-Mode | Beskrivelse | Verdi |
 | --- | --- | --- |
-| PMode.ID | Unik identifikator for paramtersettet | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md)%-"KvitteringsForespoersel"-%versjon/løpenummer%) |
+| PMode.ID | Unik identifikator for paramtersettet | %[Sender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender)%-"KvitteringsForespoersel"-%versjon/løpenummer%) |
 | PMode.Agreement | Unik identifikator for samarbeidsprotokollen | [http://begrep.difi.no/SikkerDigitalPost/1.0/transportlag/Meldingsutveksling/KvitteringsForespoersel]({{pageMinorUrl}}) |
 | PMode.MEP | Message Exchange Pattern | “http://www.oasis-open.org/committees/ebxml-msg/one-way” |
 | PMode.MEPbinding | Retning på kommunikasjon, push eller pull | “http://www.oasis-open.org/committees/ebxml-msg/pull” |
-| PMode.Initiator.Party | Identifikator for den som initierar sendingen | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md)% |
-| PMode.Initiator.Role | Rolle for den som initierar sendinga | [“Avsender“](../../begrep/Avsender.md) |
+| PMode.Initiator.Party | Identifikator for den som initierar sendingen | %[Sender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender)% |
+| PMode.Initiator.Role | Rolle for den som initierar sendinga | [“Avsender“]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) |
 | PMode.Initiator.Authorization.username | \- ikke relevant - | \- ikke relevant - |
 | PMode.Initiator.Authorization.password | \- ikke relevant - | \- ikke relevant - |
-| PMode.Responder.Party | Identifikator for den som er mottaker | %[Receiver](../../forretningslag/StandardBusinessDocument/Receiver.md)% |
+| PMode.Responder.Party | Identifikator for den som er mottaker | %[Receiver]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Receiver)% |
 | PMode.Responder.Role | Rolle for den som mottar | “Meldingsformidler” |
 | PMode.Responder.Authorization.username | \- ikke relevant - | \- ikke relevant - |
 | PMode.Responder.Authorization.password | \- ikke relevant - | \- ikke relevant - |
@@ -66,7 +66,7 @@ Støtte ikke påkrevd i profilen.
 | --- | --- |
 | PMode\[1\].Security.WSSVersio | “1.1” |
 | PMode\[1\].Security.X509.Sign | Timestamp, eb:Messaging, SOAP Body, Attachment |
-| PMode\[1\].Security.X509.Signature.Certificate | %[Sender](../../forretningslag/StandardBusinessDocument/Sender.md) sitt sertifikat% |
+| PMode\[1\].Security.X509.Signature.Certificate | %[Sender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender) sitt sertifikat% |
 | PMode\[1\].Security.X509.Signature.HashFunction | “SHA-256” |
 | PMode\[1\].Security.X509.Signature.Algorithm | “RSA-SHA256” |
 | PMode\[1\].Security.X509.Encryption.Encrypt | \- ikke relevant - |

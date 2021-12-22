@@ -1,6 +1,6 @@
 ---
 title: manifest  
-permalink: sdp_manifest.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -10,17 +10,17 @@ sidebar: dpi_sidebar
 | Datatype      | complexType |
 | Kilde         | DIFI |
 | Kommentar     | Manifest er en xml |
-| fil           | som inneholder relevant informasjon om [dokumentene](sdp_dokument.html) i [dokumentpakken](dokumentpakke_index.md). Manifest xml |
-| filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken](dokumentpakke_index.md) over lang tid. |
+| fil           | som inneholder relevant informasjon om [dokumentene]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokument) i [dokumentpakken]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/dokumentpakke_index). Manifest xml |
+| filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/dokumentpakke_index) over lang tid. |
 
 ### Attributer
 
 | Identifikator                     | Kardinalitet | Datatype                              |
 | --------------------------------- | ------------ | ------------------------------------- |
-| [Mottaker](sdp_mottaker.html) | 1..1         | [sdp:Mottaker](sdp_mottaker.html) |
-| [Avsender](sdp_avsender.html) | 1..1         | [sdp:Avsender](sdp_avsender.html) |
-| hoveddokument                     | 1..1         | [sdp:Dokument](sdp_dokument.html) |
-| vedlegg                           | 0..200       | [sdp:Dokument](sdp_dokument.html) |
+| [Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker) | 1..1         | [sdp:Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker) |
+| [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) | 1..1         | [sdp:Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) |
+| hoveddokument                     | 1..1         | [sdp:Dokument]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokument) |
+| vedlegg                           | 0..200       | [sdp:Dokument]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokument) |
 
 ### Eksempel
 

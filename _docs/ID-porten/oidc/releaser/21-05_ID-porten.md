@@ -1,7 +1,7 @@
 ---
 title: 21-05 ID-porten
 description: 21-05 ID-porten
-permalink: 21-05_ID-porten.html
+
 sidebar: oidc
 ---
 

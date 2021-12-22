@@ -2,7 +2,7 @@
 title: Feilsøking i Maskinporten
 description:  Feilsøking i Maskinporten
 summary: 'Her finner du en oversikt over feilmeldinger og hva de kan bety, og hvordan det kan løses'
-permalink: maskinporten_feilsoking.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---

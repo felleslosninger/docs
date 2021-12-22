@@ -2,7 +2,7 @@
 title: Integrasjonsguide - Autentisering i ID-porten over OpenID Connect
 description: Bruk av ID-porten sin OpenID Connect provider til autentisering med autorisasjonskode-flyten
 summary: "Autorisasjonskode-flyten er den vanlige flyten som blir brukt i OpenID Connect, og er anbefalt flyt for de fleste tjenester."
-permalink: oidc_guide_idporten.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -90,9 +90,9 @@ Merk: Id-tokenet returnert fra ID-porten vil inneholde en "expire (exp)" verdi. 
 
 Klienten sender en autentiseringsforespørsel ved å redirecte sluttbrukeren til autorisasjonsendepunktet.
 
-Se [detaljert dokumentasjon for autorisasjonsendepunktet](oidc_protocol_authorize.html) for valgmuligheter.
+Se [detaljert dokumentasjon for autorisasjonsendepunktet]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_authorize) for valgmuligheter.
 
-Klienten må være forhåndsregistrert i ID-porten, se [klient-registrering](oidc_func_clientreg.html).
+Klienten må være forhåndsregistrert i ID-porten, se [klient-registrering]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_clientreg).
 
 
 ### Eksempel på forespørsel
@@ -112,9 +112,9 @@ GET /authorize?
 
 ```
 
-Alle tjenester blir sterkt anbefalt å bruke state, nonce og  [PKCE](oidc_func_pkce.html) i kallet. På sikt vil disse bli obligatoriske når ID-porten oppgraderes fra Oauth2.0 til Oauth2.1
+Alle tjenester blir sterkt anbefalt å bruke state, nonce og  [PKCE]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_pkce) i kallet. På sikt vil disse bli obligatoriske når ID-porten oppgraderes fra Oauth2.0 til Oauth2.1
 
-For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR](oidc_protocol_par.html) til å første POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert i brukers browser.
+For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_par) til å første POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert i brukers browser.
 
 ## 2: Redirect tilbake til tjenesten
 
@@ -155,7 +155,7 @@ grant_type=authorization_code&
   code_verifier=8B6wE6tV7QzZ_F7-6pLKzMh530HVWAp38kaxcmehZac
 ```
 
-Se [detaljert dokumentasjon for token-endepunktet](oidc_protocol_token.html) for alle valgmuligheter.  
+Se [detaljert dokumentasjon for token-endepunktet]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_token) for alle valgmuligheter.  
 
 Dersom forespørselen blir validert som gyldig, vil det returneres et eller flere token:
 
@@ -204,19 +204,19 @@ Normal bruker tjenesten id_tokenet kun til å opprette en egen, lokal sesjon.  I
 
 **Korrekt validering av id_token** av klienten er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel [3.1.3.7 - ID Token Validation i OpenID Connect Core 1.0 spesifikasjonen](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation).
 
-[Klikk her for full dokumentasjon av id_token i ID-porten](oidc_protocol_id_token.html).
+[Klikk her for full dokumentasjon av id_token i ID-porten]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_id_token).
 
 
 
 ### access_token
 
-Access_tokenet (tilgangstoken) gir klienten [tilgang til APIer hos tredjepart](oidc_auth_oauth2.html) på vegne av den autentiserte brukeren.  
+Access_tokenet (tilgangstoken) gir klienten [tilgang til APIer hos tredjepart]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2) på vegne av den autentiserte brukeren.  
 
 Levetiden på aksess_tokenet er som oftest relativt kort (typisk 120 sekunder). Dersom tokenet er utløpt, kan klienten forespørre nytt acess_token ved å bruke refresh_tokenet. Det gjennomføres da en klient-autentisering, for å sikre at tokens ikke blir utlevert til feil part.
 
-Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes](oidc_protocol_scope.html) som er i tokenet. Merk til slutt at levetidene på autorisasjon og tilhørende access/refresh_token har ingen sammenheng med Single-Signon(SSO)-sesjonen i ID-porten.
+Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_scope) som er i tokenet. Merk til slutt at levetidene på autorisasjon og tilhørende access/refresh_token har ingen sammenheng med Single-Signon(SSO)-sesjonen i ID-porten.
 
-[Klikk her for full dokumentasjon av access_token-formatet til ID-porten](oidc_protocol_access_token.html).
+[Klikk her for full dokumentasjon av access_token-formatet til ID-porten]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_access_token).
 
 
 
@@ -243,7 +243,7 @@ Respons:
 
 ## 5: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
 
-Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt](brukerspesifikt_oppslag_krr_rest.html) dersom access_token inneholder `user/kontaktinformasjon.read`-scopet.
+Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt]({{site.baseurl}}/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest) dersom access_token inneholder `user/kontaktinformasjon.read`-scopet.
 
 ## 6: Utlogging
 
@@ -255,4 +255,4 @@ Klienten må håndtere to forskjellige utloggings-scenarier:
 
 2. **Brukeren logger ut fra annen tjeneste:** Du vil motta en front_channel_logout-melding med en sesjons-identifikator `sid` som du tidligere har mottatt i id_token. Basert på denne må du finne lokal brukersesjon og invalidere denne.
 
-[Se full dokumentasjon om utlogging her](oidc_func_sso.html).
+[Se full dokumentasjon om utlogging her]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_sso).

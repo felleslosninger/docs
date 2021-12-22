@@ -1,7 +1,7 @@
 ---
 
 title: Meldingsstruktur  
-permalink: sdp_melding.html
+
 sidebar:
 
 ---

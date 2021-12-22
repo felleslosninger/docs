@@ -2,7 +2,7 @@
 title: Om Elma
 description: elma legg inn beskrivelse
 summary: ""
-permalink: elma_index.html
+
 sidebar: main_sidebar
 product: elma
 ---

@@ -2,7 +2,7 @@
 title: Elma
 description: Elma user manual for service providers
 summary: "Elma user manual service providers"
-permalink: elma_user_manual.html
+
 product: elma
 sidebar: elma_sidebar
 ---

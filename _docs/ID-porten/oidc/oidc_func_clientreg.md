@@ -2,7 +2,7 @@
 title: Registrering av klienter
 description: Registrering av klienter
 summary: "Selvbetjeningsløsningen støtter flere typer klienter. Klienter må forhåndsregisteres, og korrekt registering av klient er viktig at sikkerheten skal være ivaretatt."
-permalink: oidc_func_clientreg.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -27,7 +27,7 @@ Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle e
 Vi har 3 måter du kan få registrert din integrasjon:
 
 - Selvbetjening, ved å logge inn på [selvbetjening på Samarbeidsportalen](https://selvbetjening-samarbeid.difi.no/#/).
-- Selvbetjening, ved å bruke vårt [selvbetjenings-API](oidc_api_admin.html)
+- Selvbetjening, ved å bruke vårt [selvbetjenings-API]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_admin)
 - Manuelt, ved å sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>  (kun for ID-porten og Kontaktregisteret)
 
 ## Integrasjonstyper
@@ -70,7 +70,7 @@ Alt etter bruksområde, så tilbyr vi forskjellige metoder for autentisering av 
 |-|-|-|
 | Statisk hemmelighet | client_secret_basic client_secret_post | En statisk hemmelighet (*client_secret*) som Digitaliseringsdirektoratet genererer og blir utvekslet manuelt, eller tilgjengeliggjort via selvbetjening.  Maks tillatt levetid er satt til 360 dager. Det er kundens ansvar å få rotert hemmeligheten før utløp for å sikre kontinuerlig tjenesteleveranse. |
 | Virksomhetssertifikat   | private_key_jwt | Klienten bruker et gyldig virksomhetssertifikat fra Buypass eller Commfides. Organisasjonsnummeret i sertifikatet må stemme med klient-registreringa. Kunden kan valgfritt velge å "låse" klienten til bare et spesifikt virksomhetssertifikat. |
-| Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg.  For å få lov til å registere slike klienter, må kunden etablere en [egen  selvbetjeningsapplikasjon](oidc_api_admin.html) (som selv må bruke virksomhetssertifikat) |
+| Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg.  For å få lov til å registere slike klienter, må kunden etablere en [egen  selvbetjeningsapplikasjon]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_admin) (som selv må bruke virksomhetssertifikat) |
 | Ingen   | none  | Klienten er en såkalt *public*-klient som ikke kan beskytte en hemmelighet på en tilfredstillende måte.  Gjelder single-page-applikasjon og i noen tilfeller mobil-apper  |
 
  Digitaliseringsdirektoratet anbefaler bruk av virksomhetssertifikat til klientautentisering,  da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.   
@@ -106,14 +106,14 @@ Klient-type (`application_type`) forteller hvilke type kjøretidsmiljø klienten
 |Klient-type|Oauth2 'application_type'|tilatt klientautentisering|Beskrivelse|
 |-|-|-|-|
 | Standard-klient   | Web   | private_key_jwt client_secret_basic client_secret_post | Typisk en server-side nett-tjeneste som er plassert i et sikkert driftsmiljø.  De aller fleste av ID-portens kunder skal bruke denne klient-typen.  Det er sterkt anbefalt, men ikke påkrevd, å bruke PKCE, samt state- og nonce-parametrene for standardklienter. <p/>Maskinporten-klienter faller alltid i 'standardklient'-kategorien, men her tillates ikke statiske hemmeligheter.  |
-| [Single-page applikasjon (SPA)](oidc_auth_spa.html)   | browser  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
-| [Mobil-app](oidc_auth_app.html)  | native  | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
+| [Single-page applikasjon (SPA)]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_spa)   | browser  | none |Typisk en javascript-klient som fullt og helt lever i brukerens browser.  En slik klient kan ikke beskytte en klient-hemmelighet/virksomhetssertfikat, og blir derfor en *public* klient, den har ingen klientautentisering <p/>Vi følger [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-00), som krever at slike klienter skal bruke autorisasjonskodeflyten, og at både PKCE og state-parameter er påkrevd.  |
+| [Mobil-app]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_app)  | native  | none   | Tilsvarende som for SPAer så kan ikke en mobil-app beskytte en hemmelighet når den blir distribuert gjennom App Store, og blir derfor også en public klient.
 
 
 
 ### Scopes
 
-Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for scopes](oidc_protocol_scope.html) for fullstendige detaljer.
+Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for scopes]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_scope) for fullstendige detaljer.
 
 
 ## Oversikt over kombinasjonar

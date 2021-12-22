@@ -2,7 +2,7 @@
 title: Publisering til eInnsyn
 description:
 summary:
-permalink: einnsyn_publisering_til_einnsyn.html
+
 sidebar: einnsyn_technical_sidebar
 ---
 
@@ -14,8 +14,8 @@ eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga e
 Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsonld.
 
 Her er eksempel på jsonld-fil og tilsvarande data som Noark5-xml
-* [Payload.jsonld](/resources/einnsyn/eksempelfiler/konvertert_noark5tiljsonld.jsonld)
-* [Noark5 xml](/resources/einnsyn/eksempelfiler/noark5_basiseksempel.xml)
+* [Payload.jsonld]({{site.baseurl}}/resources/einnsyn/eksempelfiler/konvertert_noark5tiljsonld.jsonld)
+* [Noark5 xml]({{site.baseurl}}/resources/einnsyn/eksempelfiler/noark5_basiseksempel.xml)
 
 Publisering til eInnsyn kan gjøres på to måter:
 * Ved bruk av [eInnsyn-klient](https://docs.digdir.no/einnsyn_forutsetninger.html). Klienten kan motta data på Noark4/5 xml format. Den vil da validere og konvertere data til jsonld som sendes til integrasjonspunktet.
@@ -31,4 +31,4 @@ Det er mogleg å fulltekstpublisere kun delar av dokumenta som er tilknytta ein 
 
 For å få til dette så kan ein avlevere *dokumentbeskrivelsen* på alle dokument ein vil vise at eksistere. For dei som skal fulltekstpubliserast, så følger også med *dokumentobjektet* som ligg under dokumentbeskrivelsen.
 
-![Struktur fulltekspublisering](/images/einnsyn/struktur_fulltekstpublisering.png)
+![Struktur fulltekspublisering]({{site.baseurl}}/images/einnsyn/struktur_fulltekstpublisering.png)

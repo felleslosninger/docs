@@ -1,7 +1,7 @@
 ---
 title: Innlogging og tilgang til selvbetjening via Samarbeidsportalen
 description:  Innlogging og tilgang til selvbetjening via Samarbeidsportalen
-permalink: selvbetjening_web_innlogging.html
+
 sidebar: selvbetjening_sidebar
 product: Selvbetjening
 ---
@@ -67,7 +67,7 @@ Tabell for tilgjengelige rettigheter:
 
 Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
 
-[![Delegere rettigheter](assets\videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
+[![Delegere rettigheter]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
 
 ### Frata skriverettigheter i produksjonsmiljøet
 
@@ -86,7 +86,7 @@ Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal d
 
 Videotutorial: [https://vimeo.com/433540358](https://vimeo.com/433540358)
 
-[![Fjerne tilgang](assets\videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
+[![Fjerne tilgang]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
 
 ## Selvbetjening som API-tilbyder
 
@@ -115,7 +115,7 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 
 Videotutorial: (https://vimeo.com/427689809)
 
-[![Opprette scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
+[![Opprette scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
 ### Tilgangsstyring
 
@@ -127,7 +127,7 @@ Videotutorial: (https://vimeo.com/427689809)
 
 Videotutorial: (https://vimeo.com/427689702)
 
-[![Tilgangsstyre scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
+[![Tilgangsstyre scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
 
 ### Deaktivere subscopes
 
@@ -140,7 +140,7 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 
 Videotutorial: (https://vimeo.com/427689583)
 
-[![Deaktivere scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
+[![Deaktivere scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
 
 
 ### Vedlikehald av merkantile data
@@ -157,7 +157,7 @@ For å administrere merkantile data:
 
 Videotutorial: (https://vimeo.com/397388041)
 
-[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+[![Vedlikehald av merkantile data]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 
 ## Selvbetjening som API-konsument
@@ -193,7 +193,7 @@ Videotutorial: (https://vimeo.com/427689834)
 
 Videotutorial: (https://vimeo.com/427689782)
 
-[![Deaktivere klient](assets\videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+[![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
@@ -209,7 +209,7 @@ For å administrere merkantile data:
 
 Videotutorial: (https://vimeo.com/397388041)
 
-[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+[![Vedlikehald av merkantile data]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 

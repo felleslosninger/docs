@@ -1,6 +1,6 @@
 ---
 title: prioritetType
-permalink: 2prioritettype.html
+
 sidebar:
 ---
 

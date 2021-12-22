@@ -2,7 +2,7 @@
 title: Forutsetninger for installasjon
 description: Forutsetninger for installasjon
 summary: "Forutsetninger for installasjon"
-permalink: eformidling_forutsetninger.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
@@ -14,7 +14,7 @@ For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følg
 
 ## Dette gjør du før installasjon av Integrasjonspunktet
 
-+ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](eformidling_selfhelp.html#justere-tilgjengelig-minne)
++ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_selfhelp#justere-tilgjengelig-minne)
 + Nødvendige brannmuråpninger
 + Java 8 X med JCE installert (JDK)
 + Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
@@ -117,7 +117,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 
 **Hvordan?**
 
-[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](eformidling_virksomhetssertifikat.html)
+[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_virksert)
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)

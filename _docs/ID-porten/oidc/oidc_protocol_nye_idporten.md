@@ -1,7 +1,7 @@
 ---
 title: "Endringer i Nye ID-porten i 2022"
 description: "ID-porten gjennomgår et omfattende moderniseringsløp i perioden 2020-2022, der hele kjernen i løsningen skrives om.  Det er et uttalt hovedmål for prosjektet at overgangen skal skje uten negative konsekvenser for kundene.  Samtidig ser vi at ny løsning ikke kan bli 100%-bakoverkompatible med dagens løsning, og denne siden dokumenterer de endringene vi ser vil komme."
-permalink: oidc_protocol_nye_idporten.html
+
 sidebar: oidc
 product: ID-porten
 ---

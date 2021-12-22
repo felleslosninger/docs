@@ -2,7 +2,7 @@
 title: Server-to-server API-autorisasjon med Oauth2
 description: Server-to-server API-autorisasjon med Oauth2
 summary: 'ID-porten sin OpenID Connect Provider kan også brukes til å autorisere tilgang til API-er uten en bruker-kontekst, såkalt  "server-to-server oauth2" (eller two-legged oauth2)'
-permalink: oidc_auth_server-to-server-oauth2.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -63,7 +63,7 @@ I dette scenariet ønsker en **klient** å bruke en **ressurs (API)** tilbudt av
 
 ## 1. Generere JWT
 
-Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [JWT-grant](maskinporten_protocol_jwtgrant.html)
+Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [JWT-grant]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant)
 
 
 ### Eksempel på JWT-grant struktur
@@ -96,7 +96,7 @@ som dekoda blir:
 
 ## 2. Send JWT til /token-endepunktet
 
-Se [detaljert dokumentasjon av /token-endepunktet](oidc_protocol_token.html).
+Se [detaljert dokumentasjon av /token-endepunktet]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_token).
 
 
 Eksempel på forespørsel:
@@ -155,7 +155,7 @@ TODO:
 
 ### 3. Validering av token mot /tokeninfo-endepunkt
 
-Se [detaljert dokumentasjon av /tokeninfo-endepunktet](oidc_protocol_tokeninfo.html).
+Se [detaljert dokumentasjon av /tokeninfo-endepunktet]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_tokeninfo).
 #### Eksempel på request:
 
 ```

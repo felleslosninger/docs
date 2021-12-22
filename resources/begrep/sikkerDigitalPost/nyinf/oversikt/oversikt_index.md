@@ -1,6 +1,6 @@
 ---
 title: Oversikt
-permalink: dpi_oversikt_index.html
+
 sidebar: dpi_timo_sidebar
 ---
 

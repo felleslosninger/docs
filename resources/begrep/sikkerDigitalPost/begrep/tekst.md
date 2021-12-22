@@ -1,6 +1,6 @@
 ---
 title: tekst
-permalink: tekst.html
+
 sidebar: begrep_sidebar
 ---
 

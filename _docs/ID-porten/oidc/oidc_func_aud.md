@@ -2,7 +2,7 @@
 title: Audience-begrensning
 description: Audience-begrensing
 summary: "Audience-begrensning av token motvirker at tokens kan misbrukes mot andre APIer enn de som er tiltenkt."
-permalink: oidc_func_aud.html
+
 sidebar: oidc
 product: ID-porten
 ---

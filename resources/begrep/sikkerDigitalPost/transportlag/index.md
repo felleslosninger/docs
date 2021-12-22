@@ -1,7 +1,7 @@
 ---
 
 title: Transportlag  
-permalink: sdp_transportlag_index.html
+
 sidebar: dpi_sidebar
 
 ---
@@ -23,9 +23,9 @@ som brukes:
 Mer detaljert informasjon om meldingsutvekslingrammeverket som brukes:
 
 | --- | --- |
-| [ebMS pmode: Formidle digital post](Meldingsutveksling/FormidleDigitalPostForsendelse.md) | ebMS pmodes for formidling av Digital Post |
-| [ebMS pmode: Formidle fysisk post](Meldingsutveksling/FormidleFysiskPostForsendelse.md) | ebMS pmodes for formidling av Fysisk Post |
-| [ebMS pmode: Kvitteringsforespørsel](Meldingsutveksling/KvitteringsForespoersel.md) | ebMS pmodes for henting av kvitteringer |
-| [eb:Messaging](Messaging.md) | beskrivelse av ebMS Messaging headeren |
-| [eb:Usermessage](UserMessage/index.md) | ebMS UserMessage brukt for transport av forretningsmeldinger |
-| [eb:SignalMessage](SignalMessage/index.md) | ebMS Signalmessage brukt for henting av kvitteringer og signalering av feil |
+| [ebMS pmode: Formidle digital post]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse) | ebMS pmodes for formidling av Digital Post |
+| [ebMS pmode: Formidle fysisk post]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/FormidleFysiskPostForsendelse) | ebMS pmodes for formidling av Fysisk Post |
+| [ebMS pmode: Kvitteringsforespørsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/KvitteringsForespoersel) | ebMS pmodes for henting av kvitteringer |
+| [eb:Messaging]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Messaging) | beskrivelse av ebMS Messaging headeren |
+| [eb:Usermessage]({{site.baseurl}}/resources/begrep/ID-porten/index) | ebMS UserMessage brukt for transport av forretningsmeldinger |
+| [eb:SignalMessage]({{site.baseurl}}/resources/begrep/ID-porten/index) | ebMS Signalmessage brukt for henting av kvitteringer og signalering av feil |

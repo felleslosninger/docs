@@ -1,6 +1,6 @@
 ---
 title: varslingsTekst
-permalink: varslingstekst.html
+
 sidebar: begrep_sidebar
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Integrasjonsguide - Ansattporten
 description: Ansattporten er en kopi av ID-porten men der funksjonaliteten er tilpasset innlogging i ansatt/representasjonskontekst.
-permalink: ansattporten_guide.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -54,7 +54,7 @@ Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget 
 
 En tjeneste aktiverer støtte for beriket autentering ved å inkludere informasjon om påkrevd representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
 
-![organsisasjonsvelger](images/idporten/oidc/ansattporten_orgvelger.png)
+![organsisasjonsvelger]({{site.baseurl}}/images/idporten/oidc/ansattporten_orgvelger.png)
 
 Brukerreise blir da som følger:
 
@@ -111,12 +111,12 @@ Følgende miljøer er tilgjengelige for kunder:
 
 Klienten sender en autentiseringsforespørsel ved å redirecte sluttbrukeren til autorisasjonsendepunktet.
 
-Se [detaljert dokumentasjon for autorisasjonsendepunktet](oidc_protocol_authorize.html) for valgmuligheter.  Merk at i Ansattporten følger vi Oauth2.1, slik at bruk av PKCE, state og nonce er påkrevd for alle klienter.
+Se [detaljert dokumentasjon for autorisasjonsendepunktet]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_authorize) for valgmuligheter.  Merk at i Ansattporten følger vi Oauth2.1, slik at bruk av PKCE, state og nonce er påkrevd for alle klienter.
 
-Klienten må være forhåndsregistrert i Ansattporten, se [klient-registrering](oidc_func_clientreg.html).
+Klienten må være forhåndsregistrert i Ansattporten, se [klient-registrering]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_clientreg).
 
 
-For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR](oidc_protocol_par.html) til å først POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert i brukers browser.
+For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_par) til å først POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert i brukers browser.
 
 Dersom klienten ønsker å vise organisasjonsvelger, må forespørselen inkludere et RAR-element som ytterligere detaljerer forespørselen, se detaljer lenger nedenfor.
 
@@ -186,7 +186,7 @@ redirect_uri=https://test-client.test.ansattporten.no/callback&
 code_verifier=oQEG5SwL-dQlUL2ZkteJV8v0Fxz9z6j4Y1Q_86gEq78
 ```
 
-Se [detaljert dokumentasjon for token-endepunktet](oidc_protocol_token.html) for alle valgmuligheter.  
+Se [detaljert dokumentasjon for token-endepunktet]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_token) for alle valgmuligheter.  
 
 Dersom forespørselen blir validert som gyldig, vil det returneres et eller flere token:
 
@@ -248,7 +248,7 @@ Eksempel:
 
 **Korrekt validering av id_token** av klienten er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel [3.1.3.7 - ID Token Validation i OpenID Connect Core 1.0 spesifikasjonen](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation).
 
-I utgangspunktet er id_token frå Ansattporten like med [id_token fra ID-porten](oidc_protocol_id_token.html), men det kan være verdt å merke seg følgende forskjeller:
+I utgangspunktet er id_token frå Ansattporten like med [id_token fra ID-porten]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_id_token), men det kan være verdt å merke seg følgende forskjeller:
 
 |claim|beskrivelse
 |-|-|
@@ -260,13 +260,13 @@ I utgangspunktet er id_token frå Ansattporten like med [id_token fra ID-porten]
 
 #### access_token
 
-Access_tokenet (tilgangstoken) gir klienten [tilgang til APIer hos tredjepart](oidc_auth_oauth2.html) på vegne av den autentiserte brukeren.  
+Access_tokenet (tilgangstoken) gir klienten [tilgang til APIer hos tredjepart]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2) på vegne av den autentiserte brukeren.  
 
 Levetiden på aksess_tokenet er som oftest relativt kort (typisk 120 sekunder). Dersom tokenet er utløpt, kan klienten forespørre nytt acess_token ved å bruke refresh_tokenet. Det gjennomføres da en klient-autentisering, for å sikre at tokens ikke blir utlevert til feil part.
 
-Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes](oidc_protocol_scope.html) som er i tokenet.
+Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_scope) som er i tokenet.
 
-Ansattporten sine access_token er svært like [ID-porten sine access token](oidc_protocol_access_token.html), men med samme unntakene som i avsnittet over.
+Ansattporten sine access_token er svært like [ID-porten sine access token]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_access_token), men med samme unntakene som i avsnittet over.
 
 
 

@@ -2,7 +2,7 @@
 title: Egen integrasjon mot eFormidling
 description: Beskrivelse av hvordan man kan ta i bruk DPO via egenutviklet kode
 summary: ""
-permalink: eformidling_nm_customintegration.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

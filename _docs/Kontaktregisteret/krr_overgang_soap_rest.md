@@ -2,7 +2,7 @@
 title: Overgang fra SOAP til REST
 description: Overgang fra SOAP til REST for KRR
 summary:
-permalink: krr_overgang_soap_rest.html
+
 toc: false
 sidebar: krr_sidebar
 product: KRR
@@ -35,7 +35,7 @@ Her kommer litt informasjon om hva virksomhetene må gjøre for å komme seg ove
 For å bruke selvbetjening så forutsetter det at din virksomhet har tilgang til Samarbeidsportalen. Opprett bruker med din jobb-adresse og gå til "Min profil" på
 [https://samarbeid.digdir.no.](https://samarbeid.digdir.no)
 
-1. Gå til "integrasjoner" i høyremenyen og velg det miljøet du vil opprette klienten i. (*NB! For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn, fra din virksomhet. Prosessen er beskrevet på [Tilgang til produksjonsmiljø.](maskinporten_sjolvbetjening_web.html#tilgang-i-produksjonsmilj%C3%B8)*)
+1. Gå til "integrasjoner" i høyremenyen og velg det miljøet du vil opprette klienten i. (*NB! For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn, fra din virksomhet. Prosessen er beskrevet på [Tilgang til produksjonsmiljø.]({{site.baseurl}}/docs/Maskinporten/maskinporten_sjolvbetjening_web#tilgang-i-produksjonsmilj%C3%B8)*)
 
 2. Velg "Ny integrasjon"
 
@@ -48,17 +48,17 @@ For å bruke selvbetjening så forutsetter det at din virksomhet har tilgang til
 
 ### Sette opp token-forespørsel mot Maskinporten
 
-For å få et access_token til KRR sitt REST-API, må det sendes et JWT-grant til Maskinporten. Vi har en egen side som beskriver [JWT grant.](maskinporten_protocol_jwtgrant.html)
+For å få et access_token til KRR sitt REST-API, må det sendes et JWT-grant til Maskinporten. Vi har en egen side som beskriver [JWT grant.]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant)
 
-Well-known endepunkter for [Maskinporten](maskinporten_func_wellknown.html)
+Well-known endepunkter for [Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_wellknown)
 
 ### Sette opp forespørsel mot KRR sitt endepunkt
 
-Se adressene til de forskjellige endepunktene og videre beskrivelse av hvordan kalle REST-API'et på [Oppslagstjenesten REST.](oppslagstjenesten_rest.html)
+Se adressene til de forskjellige endepunktene og videre beskrivelse av hvordan kalle REST-API'et på [Oppslagstjenesten REST.]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest)
 
 ### Attributter og navn
 
-Det er noe forskjell i navnene på attributtene i KRR fra SOAP til REST. For oversikt over attributtene kan du gå til [Attributter i KRR.](krr_attributter.html)
+Det er noe forskjell i navnene på attributtene i KRR fra SOAP til REST. For oversikt over attributtene kan du gå til [Attributter i KRR.]({{site.baseurl}}/docs/Kontaktregisteret/krr_attributter)
 
 ## Kontakt
 

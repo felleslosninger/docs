@@ -1,6 +1,6 @@
 ---
 title: konversasjonsId
-permalink: 2konversasjonsid.html
+
 sidebar:
 ---
 

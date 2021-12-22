@@ -2,7 +2,7 @@
 title: "/authorize endpoint"
 description: "This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten OIDC Provider"
 summary: 'This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten OIDC Provider'
-permalink: oidc_protocol_authorize.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -42,11 +42,11 @@ Supported request attributes:
 | code_challenge   | Recommended  | The [PKCE](oicd_func_pkce.html) `code_challenge` is a calculated value based on `code_verifier`.  Mandatory to use for public clients |
 | code_challenge_method   | Recommended   | Algorithm for PKCE. Only `S256` supported.  |
 |login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
-|claims   | Optional  | Currently only used for [eIDAS](oidc_func_eidas.html)|
-|request_uri| Optional | The identifier returned by ID-porten from a [PAR request](oidc_protocol_par.html). No other attributes shold then be present |
+|claims   | Optional  | Currently only used for [eIDAS]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_eidas)|
+|request_uri| Optional | The identifier returned by ID-porten from a [PAR request]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_par). No other attributes shold then be present |
 
 
-Clients are strongly recommended to use state, nonce and [PKCE](oidc_func_pkce.html).  In the future, these parameteres will be mandatory to use when the protocol baseline in ID-porten is upgraded from Ouath2.0 to Oauth2.1.
+Clients are strongly recommended to use state, nonce and [PKCE]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_pkce).  In the future, these parameteres will be mandatory to use when the protocol baseline in ID-porten is upgraded from Ouath2.0 to Oauth2.1.
 
 
 ### Sample request
@@ -78,7 +78,7 @@ The client can pass a request using a using a JWT based request object, as descr
 
 Passing a Request Object by reference (as described in OpenID Connect Core chapter 6.2) is not supported.
 
-The use of request objects requires use of a predefined public key on the client-registration, see [client administration api](oidc_api_admin.html#bruk-av-asymmetrisk-nøkkel)
+The use of request objects requires use of a predefined public key on the client-registration, see [client administration api]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_admin#bruk-av-asymmetrisk-nøkkel)
 
 ### Sampe request using request object
 

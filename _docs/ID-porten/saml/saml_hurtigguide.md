@@ -2,7 +2,7 @@
 title: Hurtigguide teknisk integrasjon
 description: Hurtigguide
 summary: "Hurtigguide teknisk integrasjon"
-permalink: saml_hurtigguide.html
+
 sidebar: saml_idporten_sidebar
 product: ID-porten
 ---

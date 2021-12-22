@@ -1,7 +1,7 @@
 ---
 title: 20-10 Ansattporten 
 description: 20-10 Ansattporten 
-permalink: 20-10_Ansattporten_.html
+
 sidebar: oidc
 ---
 

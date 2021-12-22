@@ -2,7 +2,7 @@
 title: Konvolutt og melding
 description: Beskrivelse av konvolutt og melding
 summary: ""
-permalink: eformidling_nm_message.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

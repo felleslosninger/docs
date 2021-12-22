@@ -1,6 +1,6 @@
 ---
 title: postkasseadresse
-permalink: postkasseadresse.html
+
 sidebar: begrep_sidebar
 ---
 

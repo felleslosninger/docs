@@ -1,7 +1,7 @@
 ---
 title: Ei guide til KOSMOS
 description: Bruksrettleiing for Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS
-permalink: eformidling_kosmos_user_guide.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

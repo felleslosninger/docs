@@ -2,7 +2,7 @@
 title: OnBehalfOf
 description: OnBehalfOf - leverandør-støtte
 summary: "OnBehalfOf gir en leverandør mulighet til å gjenbruke en  OIDC-integrasjon på vegne av mange kunder."
-permalink: oidc_func_onbehalfof.html
+
 sidebar: oidc
 product: ID-porten
 ---

@@ -2,7 +2,7 @@
 title: Arkivmeldingen
 description: Om Arkivmeldingen
 summary: ""
-permalink: eformidling_nm_arkivmeldingen.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

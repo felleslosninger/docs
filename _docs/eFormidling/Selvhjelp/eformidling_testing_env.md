@@ -2,7 +2,7 @@
 title: Testmiljø eFormidling
 description: Her finner du informasjon om bruk av testmiljø i eFormidling
 summary: "Bruk av testmiljø i eFormidling"
-permalink: eformidling_testing_env.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
@@ -13,11 +13,11 @@ I testmiljø må det brukes test virksomhetssertifikat og mottaker må enten væ
 
 ### Kjøre integrasjonspunktet mot testmiljø
 
-Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til ```spring.profiles.active=staging ``` i [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt) eller legge til ```-Dspring.profiles.active=staging``` som argument i XML-fila.
+Om du skal sette opp integrasjonspunktet mot testmiljø kan en enten legge til ```spring.profiles.active=staging ``` i [integrasjonspunkt-local.properties-filen]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) eller legge til ```-Dspring.profiles.active=staging``` som argument i XML-fila.
 
 **NB!** Kommandolinje har presendens over properties.
 
-Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du [her](eformidling_ip_run.html)
+Mer informasjon om oppstart av integrasjonspunktet mot testmiljøet finner du [her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_ip_run)
 
 ### Digital post til virksomheter (DPV)
 
@@ -64,7 +64,7 @@ Tabellen gjelder integrasjonspunktet til Digitaliseringsdirektoratet Leikanger s
 
 
 <!--
- [NextMove: Postman Arkivmelding DPO request](/felleslosninger/resources/eformidling/DPO.postman_collection.json)
+ [NextMove: Postman Arkivmelding DPO request]({{site.baseurl}}/resources/eformidling/DPO.postman_collection.json)
 -->
 
 #### Sak-arkiv mock

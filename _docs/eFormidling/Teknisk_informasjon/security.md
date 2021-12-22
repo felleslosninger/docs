@@ -2,7 +2,7 @@
 title: Sikkerhet
 description: Sikkerhet
 summary: ""
-permalink: eformidling_nm_sikkerhet.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

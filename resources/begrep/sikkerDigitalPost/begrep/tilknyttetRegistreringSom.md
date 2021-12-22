@@ -1,6 +1,6 @@
 ---
 title: tilknyttetRegistreringSom
-permalink: tilknyttetregistreringsom.html
+
 sidebar: begrep_sidebar
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: SmsVarsel  
-permalink: sdp_smsvarsel.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -15,9 +15,9 @@ sidebar: begrep_sidebar
 
 | Identifikator                                    | Kardinalitet | Datatype                                              |
 | --- | --- | --- |
-| [mobiltelefonnummer](../../felles/mobiltelefonnummer.md) | 1..1     | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [Varslingstekst](varslingstekst.html)        | 1..1     | [Varslingstekst](varslingstekst.html)        |
-| [Repetisjoner](Repetisjoner.md)                     | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                    |
+| [mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer) | 1..1     | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [Varslingstekst]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/varslingsTekst)        | 1..1     | [Varslingstekst]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/varslingsTekst)        |
+| [Repetisjoner]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Repetisjoner)                     | 1..1         | [sdp:Repetisjoner]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Repetisjoner)                    |
 
 #### Xml eksempel
 

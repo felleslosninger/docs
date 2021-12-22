@@ -1,6 +1,6 @@
 ---
 title: endringsNummer
-permalink: endringsnummer.html
+
 sidebar: begrep_sidebar
 ---
 

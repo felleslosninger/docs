@@ -1,7 +1,7 @@
 ---
 title: 21-05 MinID
 description: 21-05 MinID
-permalink: 21-05_MinID.html
+
 sidebar: oidc
 ---
 

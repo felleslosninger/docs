@@ -1,6 +1,6 @@
 ---
 title: x509Sertifikat
-permalink: 2x509sertifikat.html
+
 sidebar:
 ---
 

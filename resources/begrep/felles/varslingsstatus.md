@@ -1,6 +1,6 @@
 ---
 title: varslingsstatus
-permalink: varslingsstatus.html
+
 sidebar:
 ---
 

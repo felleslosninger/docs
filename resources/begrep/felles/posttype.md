@@ -1,6 +1,6 @@
 ---
 title: posttype
-permalink: posttype.html
+
 sidebar:
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: HentEndringerForespoersel  
-permalink: ot_hentendringerforespoersel.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -11,16 +11,16 @@ sidebar: begrep_sidebar
 | Kilde         | DIFI |
 | Kommentar     | Webservice forespørsel som Klient sender til Kontaktregisteret, forespørselen beskriver hvilke endringer Klienten ønsker. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om forespørselen og hvordan denne sendes. |
 
-Responsen er en [HentEndringerRespons](HentEndringerRespons.md)
+Responsen er en [HentEndringerRespons]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentEndringerRespons)
 
 #### Attributer
 
 | Term                                           | Kardinalitet |
 | ---------------------------------------------- | ------------ |
-| [fraEndringsNummer](../felles/fraEndringsNummer.md) | 1..1         |
-| [informasjonsbehov](../felles/informasjonsbehov.md) | 0..\*        |
+| [fraEndringsNummer]({{site.baseurl}}/resources/begrep/felles/fraEndringsNummer) | 1..1         |
+| [informasjonsbehov]({{site.baseurl}}/resources/begrep/felles/informasjonsbehov) | 0..\*        |
 
-#### Kodeverk for [informasjonsbehov](../felles/informasjonsbehov.md)
+#### Kodeverk for [informasjonsbehov]({{site.baseurl}}/resources/begrep/felles/informasjonsbehov)
 
 | Kodeverdi         | Beskrivelse                                                                                                                 |
 | --- | --- |

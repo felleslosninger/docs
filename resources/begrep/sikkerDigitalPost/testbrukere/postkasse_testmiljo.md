@@ -1,6 +1,6 @@
 ---
 title: Testmiljø for digital postkasse
-permalink: sdp_testmiljo.html
+
 sidebar: dpi_sidebar
 ---
 

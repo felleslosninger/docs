@@ -2,7 +2,7 @@
 title: Selvbetjening av Maskinporten via Samarbeidsportalen
 description:  Selvbetjening av Maskinporten via Samarbeidsportalen
 summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene Maskinporten via Samarbeidsportalen'
-permalink: maskinporten_sjolvbetjening_web.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
@@ -63,7 +63,7 @@ Tabell for tilgjengelige rettigheter:
 
 Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
 
-[![Delegere rettigheter](assets\videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
+[![Delegere rettigheter]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
 
 Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
@@ -80,7 +80,7 @@ Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal d
 
 Videotutorial: [https://vimeo.com/433540358](https://vimeo.com/433540358)
 
-[![Fjerne tilgang](assets\videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
+[![Fjerne tilgang]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
 
 ## Selvbetjening som API-tilbyder
 
@@ -109,7 +109,7 @@ For å komme til administrasjonsgrensesnittet for API, gjør følgende:
 
 Videotutorial: (https://vimeo.com/427689809)
 
-[![Opprette scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
+[![Opprette scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
 ### Tilgangsstyring
 
@@ -121,7 +121,7 @@ Videotutorial: (https://vimeo.com/427689809)
 
 Videotutorial: (https://vimeo.com/427689702)
 
-[![Tilgangsstyre scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
+[![Tilgangsstyre scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689702 "Tilgangsstyre scopes")
 
 ### Deaktivere subscopes
 
@@ -134,7 +134,7 @@ NB! Enn så lenge bør tilganger fjernes før et scope deaktiveres. Om ikke, vil
 
 Videotutorial: [https://vimeo.com/427689583](https://vimeo.com/427689583)
 
-[![Deaktivere scopes](assets\videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
+[![Deaktivere scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689583 "Deaktivere scopes")
 
 
 ### Vedlikehald av merkantile data
@@ -151,7 +151,7 @@ For å administrere merkantile data:
 
 Videotutorial: [https://vimeo.com/397388041](https://vimeo.com/397388041)
 
-[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+[![Vedlikehald av merkantile data]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 
 ## Selvbetjening som API-konsument
@@ -185,7 +185,7 @@ Samme fremgangsmåte gjelder også om man skal delegere rettighet fra en underen
 
 Videotutorial: [https://vimeo.com/533856189](https://vimeo.com/533856189)
 
-[![Delegere rettigheter](assets\videotutorial_300px.png)](https://vimeo.com/533856189 "Delegere rettigheter")
+[![Delegere rettigheter]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/533856189 "Delegere rettigheter")
 
 ### Opprette klient for å konsumere API
 
@@ -198,7 +198,7 @@ Videotutorial: [https://vimeo.com/533856189](https://vimeo.com/533856189)
 
 Videotutorial: [https://vimeo.com/427689834](https://vimeo.com/427689834)
 
-[![Opprette klient](assets\videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
+[![Opprette klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689834 "Opprette klient")
 
 ### Slette klient
 
@@ -209,7 +209,7 @@ Videotutorial: [https://vimeo.com/427689834](https://vimeo.com/427689834)
 
 Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 
-[![Deaktivere klient](assets\videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+[![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
@@ -225,7 +225,7 @@ For å administrere merkantile data:
 
 Videotutorial: [https://vimeo.com/397388041](https://vimeo.com/397388041)
 
-[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+[![Vedlikehald av merkantile data]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 

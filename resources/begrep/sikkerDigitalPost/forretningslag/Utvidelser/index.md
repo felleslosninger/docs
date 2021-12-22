@@ -1,21 +1,21 @@
 ---
   
 title: Utvidelser  
-permalink: sdp_utvidelser_index.html
+
 sidebar: dpi_sidebar
 ---
 
 ## Introduksjon
 
 Postkasseleverandørene støtter ulike verdiøkende tjeneste utover det som
-er definert i [Dokumentpakken](dokumentpakke_index.html). En utvidelse er knyttet
+er definert i [Dokumentpakken]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/dokumentpakke_index). En utvidelse er knyttet
 til ett dokument og tilfører en beriket visning i innbyggers postkasse.
 
 For å knytte en utvidelse til et dokument må det inkluderes en fil ihht.
 utvidelsens XML-schema (XSD) i dokumentpakken, og det aktuelle
-[dokumentet](sdp_dokument.html) refererer til
-[«data-dokumentet»](sdp_dokumentdata.html) vha. `<data>`-elementet
-i [manifestet](sdp_manifest.html).
+[dokumentet]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokument) refererer til
+[«data-dokumentet»]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/DokumentData) vha. `<data>`-elementet
+i [manifestet]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/Manifest).
 
 Dersom innbyggers postkasseleverandør ikke støtter utvidelsen blir
 informasjonen forkastet av postkassen uten at hverken avsender eller
@@ -28,6 +28,6 @@ postkasseleverandørene som støtter de ulike.
 
 | Fil     | Mime-Type      | Digipost | e-Boks |
 | --- | --- | --- | --- |
-| [Lenke utenfor brev](sdp_lenke.html) | `application/vnd.difi.dpi.lenke+xml`       | Ja       | Ja     |
-| [Bevis](sdp_bevis.html) | `application/vnd.difi.dpi.bevis+xml`       | Ja       | Ja     |
-| [Arrangement](sdp_arrangement.html)  | `application/vnd.difi.dpi.arrangement+xml` | Ja       | Ja     |
+| [Lenke utenfor brev]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Lenke) | `application/vnd.difi.dpi.lenke+xml`       | Ja       | Ja     |
+| [Bevis]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Bevis) | `application/vnd.difi.dpi.bevis+xml`       | Ja       | Ja     |
+| [Arrangement]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Arrangement)  | `application/vnd.difi.dpi.arrangement+xml` | Ja       | Ja     |

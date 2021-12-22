@@ -1,6 +1,6 @@
 ---
 title: spraak
-permalink: spraak.html
+
 sidebar: begrep_sidebar
 ---
 

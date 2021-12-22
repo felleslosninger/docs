@@ -1,6 +1,6 @@
 --- 
 title: OppdaterPostkasseRespons  
-permalink: ot_oppdaterpostkasserespons.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -9,7 +9,7 @@ sidebar: begrep_sidebar
 | Definisjon    | Respons sendt tilbake til Postkasseleverandør når kontaktregisteretet er oppdatert. |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
-| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [OppdaterPostkasseForespoersel](OppdaterPostkasseForespoersel.md) |
+| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [OppdaterPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/OppdaterPostkasseForespoersel) |
 
 #### Attributer
 

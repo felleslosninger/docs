@@ -2,14 +2,14 @@
 title: "access token from ID-porten"
 description: "This page documents the access_tokens issued by ID-porten ID-porten OIDC Provider"
 summary: 'his page documents the access_tokens issued by ID-porten ID-porten OIDC Provider'
-permalink: oidc_protocol_access_token.html
+
 sidebar: oidc
 product: ID-porten
 ---
 
 ## Request
 
-To request an *access_token*, use the [/token endpoint](oidc_protocol_token.html).
+To request an *access_token*, use the [/token endpoint]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_token).
 
 
 
@@ -21,7 +21,7 @@ ID-porten issues two different types of access_tokens:
 
 |Token type|Description|
 |-|-|
-|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [/tokeninfo endpoint](oidc_protocol_tokeninfo.html).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transit. |
+|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [/tokeninfo endpoint]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_tokeninfo).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transit. |
 |by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens are non-revokable and should have a short lifetime |
 
 
@@ -53,7 +53,7 @@ The token is a JWT with the following structure:
 | scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
 | pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   Not included if `no_pid` scope was requested or pre-registered on the client.  Also not included for machine-type tokens.|
 | token_type | Type of token. Only `Bearer` supported. |
-| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)| `https://oidc.idporten.no/idporten-oidc-provider`
+| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_wellknown)| `https://oidc.idporten.no/idporten-oidc-provider`
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |

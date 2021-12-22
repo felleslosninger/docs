@@ -2,7 +2,7 @@
 title: Virksomhetssertifikat
 description: Virksomhetssertifikat
 summary: "Håndtering av virksomhetssertifikatet"
-permalink: eformidling_virksomhetssertifikat.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
@@ -28,7 +28,7 @@ Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfi
 
 I dette kapittelet finner du informasjon om hvordan du konverterer en .p12-keystore (filformatet mottatt ved bestilling av virksomhetssertifikat) til en java key store.
 
-Når du har fått sertifikatet, må det legges inn på serveren du kjører integrasjonspunket. Noter deg lokasjonen for sertifikatet, samt brukernavn og passord. Dette skal senere legges inn i integrasjonspunkt-local.properties filen som er en del av [neste steg av installasjonen.](eformidling_properties_config.html)
+Når du har fått sertifikatet, må det legges inn på serveren du kjører integrasjonspunket. Noter deg lokasjonen for sertifikatet, samt brukernavn og passord. Dette skal senere legges inn i integrasjonspunkt-local.properties filen som er en del av [neste steg av installasjonen.]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_properties_config)
 
 
 **NB!** Passord på keystore og sertifikat **MÅ** være like

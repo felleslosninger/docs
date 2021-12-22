@@ -1,6 +1,6 @@
 ---
 title: senesteEndringsNummer
-permalink: senesteendringsnummer.html
+
 sidebar: begrep_sidebar
 ---
 

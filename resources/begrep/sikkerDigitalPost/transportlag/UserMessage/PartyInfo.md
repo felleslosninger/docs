@@ -1,7 +1,7 @@
 ---
 
 title: PartyInfo  
-permalink: sdp_partyinfo.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -26,13 +26,13 @@ Består av to elementer som identifiserer avsender (eb:From) og mottaker
 
 | Identifikator | Type | Kardinalitet | Kommentar |
 | --- | --- | --- | --- |
-| PartyId | [Virksomhetsidentifikator](/Felles/virksomhetsidentifikator) | 1..1 | |
-| Role | [Konstant](../../forretningslag/Aktorer.md) | 1..1 | Definerer rollen i meldingsutvesklingen |
+| PartyId | [Virksomhetsidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/virksomhetsidentifikator) | 1..1 | |
+| Role | [Konstant]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) | 1..1 | Definerer rollen i meldingsutvesklingen |
 
 ### Kodeverdier for konstanten Role
 
 Role skal benytte URN som angitt i listen over
-[aktører](../../forretningslag/Aktorer.md). Merk at avsender av en Digital
+[aktører]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer). Merk at avsender av en Digital
 Forsendelse ofte er enten en behandlingsansvarlig (produsent av
 meldingen) eller databehandler (som formidler meldingen etter avtale med
 behandlingsansvarlig)

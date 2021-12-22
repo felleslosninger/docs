@@ -1,14 +1,14 @@
 ---
 title: Kvitteringsmelding
-permalink: sdp_kvitteringsmelding.html
+
 sidebar: dpi_sidebar
 ---
 
 |---|---|
 | Term          | {{page.title}} |
-| Definisjon    | En kvitteringsmelding på en [digital post melding](DigitalPostMelding.md) fra en [Avsender](../begrep/Avsender.md). |
+| Definisjon    | En kvitteringsmelding på en [digital post melding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png) fra en [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender). |
 | Kilde         | DIFI |
-| Kommentar     | Kvittering er en abstrakt [kvittering melding](index.md) type, se under for de kvitteringer som er definert. |
+| Kommentar     | Kvittering er en abstrakt [kvittering melding]({{site.baseurl}}/resources/begrep/ID-porten/index) type, se under for de kvitteringer som er definert. |
 
 ### Attributer
 
@@ -23,8 +23,8 @@ Alle kvitteringer uavhengig av type har følgende attributter:
 
 Følgende konkrete kvitteringer er definert:
 
-  - [LeveringsKvittering](LeveringsKvittering.md)
-  - [AapningsKvittering](AapningsKvittering.md)
-  - [VarslingfeiletKvittering](VarslingfeiletKvittering.md)
-  - [MottaksKvittering](MottaksKvittering.md)
+  - [LeveringsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/LeveringsKvittering)
+  - [AapningsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/aapningskvittering)
+  - [VarslingfeiletKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/VarslingfeiletKvittering)
+  - [MottaksKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/MottaksKvittering)
 

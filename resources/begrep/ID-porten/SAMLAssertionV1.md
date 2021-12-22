@@ -1,7 +1,7 @@
 ---
 
 title: SAMLAssertionV1  
-permalink: IDport_SAMLAssertionV1.html
+
 sidebar:
 ---
 |---|---|
@@ -18,16 +18,16 @@ sidebar:
 
 | Term          | Beskrivelse                                                                     | Kardinalitet |
 | --- | --- | --- |
-| uid           | [personidentifikator](../felles/personidentifikator.md)                              | 1            |
-| SecurityLevel | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
-| Culture       | [språk](../felles/spraak.md)                                                         | 1            |
+| uid           | [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)                              | 1            |
+| SecurityLevel | [sikkerhetsnivaa]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/sikkerhetsnivaa)                                      | 1            |
+| Culture       | [språk]({{site.baseurl}}/resources/begrep/felles/spraak)                                                         | 1            |
 | AuthMethod    | [Autentiseringsmetode](#AuthMethod)                                             | 1            |
 | OnBehalfOf    | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på vegne av | 0..1         |
 
 #### AuthnContextClassRef
 
 Autentiseringsnivå er spesifisert i henhold til kodeverk for
-[AuthnContextClassRef](SAMLAuthnRequest.md)
+[AuthnContextClassRef]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAuthnRequest)
 
 #### Kodeverk
 

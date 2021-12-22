@@ -2,7 +2,7 @@
 title: Digital postkasse transport
 description: Digital postkasse til innbyggere
 summary: "DPI - Digital postkasse til innbyggere"
-permalink: dpi_transport.html
+
 product: Digital postkasse
 ---
 

@@ -2,7 +2,7 @@
 title: "Scope"
 description: "This page summarizes how Oauth2 scopes are used in ID-porten OIDC provider."
 summary: 'This page summarizes how Oauth2 scopes are used in ID-porten OIDC provider.'
-permalink: oidc_protocol_scope.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -19,7 +19,7 @@ The following attributes are available for a scope:
 | prefix | mandatory| A prefix used for namespacing scopes belonging to a certain organization. Manually assigned by Digdir |
 | description | mandatory | A human-readable short description of the scope. Shown to the end-user in consent dialogue. |
 | long_description  | optional | A longer human-readable description of the scope. Supports basic Markdown-formatting using bold, italic, paragraphs break and links allowed. Shown to the end-user in consent dialogue.
-| delegation_source | optional | If set, allows consumers to [delegate a given scope  access to a supplier in a external autoriative register of delegations](maskinporten_func_delegering.html). NOTE: this only works in Maskinporten, please set `allowable_integration_types` accordingly. |
+| delegation_source | optional | If set, allows consumers to [delegate a given scope  access to a supplier in a external autoriative register of delegations]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_delegering). NOTE: this only works in Maskinporten, please set `allowable_integration_types` accordingly. |
 | accessible_for_all | default false | If true, any consumer organization can register a client having this scope and get tokens. |
 | [allowable_integration_types](#scope-limitations) | optional | Array. If set, only clients having the same integration type(s) can get tokens for this scope, from the corresponsing Autorization Server |
 |at_max_age | optional | If set, defines a maximium allowable expires_in for access tokens having this scope.  If multiple scopes are included into one token, the lowest value for at_max_age is enforced. A zero value means that lifetime is based on the client setting or system default.|
@@ -75,7 +75,7 @@ Some scopes only work towards Maskinporten, others only towards ID-porten, while
 
 You will not be able to register a client with a certain scope if there is a conflict with the `integration_type` of the client and the `allowable_integration_type` of the scope. E.g. you can't add a "maskinporten" scope to a "api_klient" client.
 
-See also [client registration](oidc_func_clientreg.html#integrasjonstyper).
+See also [client registration]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_clientreg#integrasjonstyper).
 
 
 ## List of Reserved scopes
@@ -86,8 +86,8 @@ The following scopes triggers special behaviour in ID-porten OIDC provider.  The
 |-|-|-|
 |openid   | Triggers an OpenID Connect-compliant authentication  | idporten, api_klient |
 |profile  | Gives access to the /userinfo endpoint   |  idporten, api_klient|
-|no_pid   | Triggers a [pseudonymous authentication](oidc_func_nopid.html)   |  idporten, api_klient|
-|eidas    | Include the eIDAS attributes in the id_token. See [eidas login](/oidc_func_eidas.html)   |  idporten, api_klient|
+|no_pid   | Triggers a [pseudonymous authentication]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_nopid)   |  idporten, api_klient|
+|eidas    | Include the eIDAS attributes in the id_token. See [eidas login]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_eidas)   |  idporten, api_klient|
 
 ## List of scopes for APIs from Digitaliseringsdirektoratet
 
@@ -97,9 +97,9 @@ Any customer can self-service their clients with the following scopes:
 |-|-|-|
 |krr:global/*    | Scopes for global access to the Contact Registry |  krr,maskinporten |
 |krr:user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
-|idporten:authorizations.*  | [API for authorizations](oidc_api_autorisasjoner.html) | api_klient |
-|idporten:user.log.read |[API for authentication history](oidc_api_logghistorikk.html) | api_klient |
-|global/idporten.authlevel.read| [API for authentication level of assurance](oidc_api_authlevel.html) | maskinporten|
+|idporten:authorizations.*  | [API for authorizations]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_autorisasjoner) | api_klient |
+|idporten:user.log.read |[API for authentication history]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_logghistorikk) | api_klient |
+|global/idporten.authlevel.read| [API for authentication level of assurance]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_authlevel) | maskinporten|
 
 For the following scopes, you need to ask us to add them to your client manually:
 

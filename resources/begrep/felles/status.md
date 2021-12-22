@@ -1,6 +1,6 @@
 ---
 title: status
-permalink: status.html
+
 sidebar: begrep_sidebar
 ---
 

@@ -2,7 +2,7 @@
 title: Digital postkasse
 description: Digital postkasse til innbyggere
 summary: "DPI - Digital postkasse til innbyggere"
-permalink: digipost_index.html
+
 product: Digital postkasse
 ---
 

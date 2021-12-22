@@ -1,7 +1,7 @@
 ---
 title: 21-06 ID-porten utland
 description: 21-06 ID-porten utland
-permalink: 21-06_ID-porten_utland.html
+
 sidebar: oidc
 ---
 

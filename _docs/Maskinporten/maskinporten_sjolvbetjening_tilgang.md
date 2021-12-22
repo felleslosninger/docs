@@ -2,7 +2,7 @@
 title: Tilgang til selvbetjening i Maskinporten
 description:  Tilgang til selvbetjening i Maskinporten
 summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene Maskinporten via Samarbeidsportalen'
-permalink: maskinporten_sjolvbetjening_tilgang.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---

@@ -1,16 +1,16 @@
 ---
 title: DigitalPostMelding  
-permalink: sdp_digitalpostmeldinger.html
+
 sidebar: dpi_sidebar
 ---
 
 | --- | --- |
 | Term  | {{page.title}} |
-| Definisjon | En digital post med tilhørende [Dokumentpakke](../forretningslag/Dokumentpakke/index.md) |
+| Definisjon | En digital post med tilhørende [Dokumentpakke]({{site.baseurl}}/resources/begrep/ID-porten/index) |
 | Kilde | DIFI |
-| Kommentar  | Digital post melding med tilhørende Dokumentpakke er postforsendelsen [Avsender](../begrep/Avsender.md) sender til [Mottaker](../begrep/Mottaker.md). Denne inneholder informasjon om hvilken Avsender som er [Behandlingsansvarlig](../forretningslag/Aktorer.md), en knytning til dokumentpakken igjennom [Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md)  og informasjon om behandlingsregler som [Postkasseleverandør](../forretningslag/Aktorer.md) skal bruke for å tilgjengeliggjøre posten. |
+| Kommentar  | Digital post melding med tilhørende Dokumentpakke er postforsendelsen [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) sender til [Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker). Denne inneholder informasjon om hvilken Avsender som er [Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer), en knytning til dokumentpakken igjennom [Dokumentpakkefingeravtrykk]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokumentpakkefingeravtrykk)  og informasjon om behandlingsregler som [Postkasseleverandør]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) skal bruke for å tilgjengeliggjøre posten. |
 
-Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering](LeveringsKvittering.md) til avsender via
+Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/LeveringsKvittering) til avsender via
 meldingsformidler. Leveringskvittering for at postkassen har tatt ansvar for å tilgjengeliggjøre meldingen.
 
 ### Attributer
@@ -18,8 +18,8 @@ meldingsformidler. Leveringskvittering for at postkassen har tatt ansvar for å 
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
-| [Avsender](../begrep/Avsender.md) | 1..1 | [sdp:Avsender](../begrep/Avsender.md) |
-| [Mottaker](../begrep/Mottaker.md) | 1..1 | [sdp:Mottaker](../begrep/Mottaker.md) |
-| [Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md) | 1..1 | [sdp:Dokumentpakkefingeravtrykk](../begrep/Dokumentpakkefingeravtrykk.md) |
-| [FysiskpostInfo](../begrep/FysiskPostInfo.md) | 0..1 | [sdp:FysiskpostInfo](../begrep/FysiskPostInfo.md) |
-| [DigitalpostInfo](../begrep/DigitalPostInfo.md) | 0..1 | [sdp:DigitalpostInfo](../begrep/DigitalPostInfo.md) |
+| [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) | 1..1 | [sdp:Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) |
+| [Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker) | 1..1 | [sdp:Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker) |
+| [Dokumentpakkefingeravtrykk]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokumentpakkefingeravtrykk) | 1..1 | [sdp:Dokumentpakkefingeravtrykk]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokumentpakkefingeravtrykk) |
+| [FysiskpostInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/FysiskPostInfo) | 0..1 | [sdp:FysiskpostInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/FysiskPostInfo) |
+| [DigitalpostInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/DigitalPostInfo) | 0..1 | [sdp:DigitalpostInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/DigitalPostInfo) |

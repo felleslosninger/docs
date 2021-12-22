@@ -1,7 +1,7 @@
 ---
 title: Backlog 2020
 description: Backlog 2020
-permalink: Backlog_2020.html
+
 sidebar: oidc
 ---
 

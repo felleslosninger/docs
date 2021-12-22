@@ -2,7 +2,7 @@
 title: Hvordan komme i gang
 description: 
 summary: ""
-permalink: krr_hvordan_komme_i_gang.html
+
 sidebar: krr_dotnet
 product: KRR
 ---

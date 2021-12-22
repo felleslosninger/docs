@@ -1,7 +1,7 @@
 ---
 
 title: MessageInfo  
-permalink: sdp_usermessage.html
+
 sidebar: dpi_sidebar
 ---
 

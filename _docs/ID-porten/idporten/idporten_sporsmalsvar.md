@@ -2,7 +2,7 @@
 title: Ofte stilte spørsmål
 description: Ofte stilte spørsmål
 summary: "Her finner du ofte stilte spørsmål"
-permalink: idporten_faq.html
+
 toc: false
 sidebar: idporten_sidebar
 product: ID-porten

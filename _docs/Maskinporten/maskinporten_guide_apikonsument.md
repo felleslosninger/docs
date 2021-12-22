@@ -2,7 +2,7 @@
 title: Slik bruker du Maskinporten som API-konsument
 description:  Maskinporten som API-konsument
 summary: 'API-konsumenter må lage en Maskinporten-integrasjon som har det aktuelle APIet sitt scope registrert.'
-permalink: maskinporten_guide_apikonsument.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
@@ -152,7 +152,7 @@ Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
 |jti|Anbefalt | JWT ID - unique id for denne jwt. **Merk:** A JWT kan ikke gjenbrukes.  |
 
 
-Se gjerne [den fullstendige grensesnittspesifikasjonen for JWT-grants](maskinporten_protocol_jwtgrant.html) for utfyllende dokumentasjon.
+Se gjerne [den fullstendige grensesnittspesifikasjonen for JWT-grants]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant) for utfyllende dokumentasjon.
 
 Slik kan en forspørsel se ut:
 ```
@@ -207,12 +207,12 @@ Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en lev
 2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
 1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
 1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
-![delgering-gi tilgang](/images/maskinporten/altinn_delegering_leggtil.png)
+![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_leggtil.png)
 1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
-![delgering-gi tilgang](/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
+![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
 
 1. Bekreft med å klikk "Gi rettigheter"
-![delgering-gi tilgang](/images/maskinporten/altinn_delegering_bekreftelse.png)
+![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_bekreftelse.png)
 
 ### Bruke delegering som leverandør
 

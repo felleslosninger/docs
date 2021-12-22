@@ -1,7 +1,7 @@
 ---
  
 title: PayloadInfo  
-permalink: sdk_payload.html
+
 sidebar:
 ---
 
@@ -29,7 +29,7 @@ sidebar:
 
 En SDP forretningsmelding skal alltid ha en PartInfo med referanse til
 SoapBody (som inneholder selve
-[meldingen](../../forretningslag/StandardBusinessDocument/index.md), og
+[meldingen]({{site.baseurl}}/resources/begrep/ID-porten/index), og
 alternativt en til med referanse til [ASIC-E
 vedlegg](../../forretningslag/Dokumentpakke/index.md). For denne skal det alltid
 angis PartProperties for MimeType (konstant “application/cms”) og

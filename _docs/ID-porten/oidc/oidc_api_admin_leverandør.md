@@ -1,6 +1,6 @@
 ---
 title: Leverandører i ID-porten/Maskinporten
-permalink: oidc_api_admin_leverandør.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -23,7 +23,7 @@ Vi fraråder sterkt å dele klientregistreringer (med secrets/nøkler) på tvers
 
 Vi anbefaler videre å bruke asymmetriske nøkler til klient-autentisering (private_key_jwt), istedet for virksomhetssertifkater eller statiske nøkler (client_secrets). Av sikkerhetshensyn bør ikke leverandører forvalte kundene sine virksomhetssertifikater, da disse potensielt kan gi vide tilganger også til andre systemer utover ID-porten/Maskinporten.
 
-Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi [API-basert selvbetjening](oidc_api_admin.html). Sistnevnte er basert på en standard RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
+Digdir forventer at leverandører bruker selvbetjening til administrere sine kunde-integrasjoner.  Vi har web-basert selvbetjening dersom du har en håndfull kunder, og for større kunder anbefaler vi [API-basert selvbetjening]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_admin). Sistnevnte er basert på en standard RFC7591, og krever leverandøren sitt virksomhetssertifikat for tilgang.
 
 
 ## Spesielt om datadeling
@@ -40,7 +40,7 @@ Derimot er det i Maskinporten mulig for kunden å eksplisitt delegere API-tilgan
 
 ## 1. Onbehalfof i ID-porten
 
-[onbehalfof](oidc_func_onbehalfof.html) er en ID-porten-proprietær mekanisme som gir en leverandør mulighet til å gjenbruke en OIDC-integrasjon på vegne av mange kunder.  
+[onbehalfof]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_onbehalfof) er en ID-porten-proprietær mekanisme som gir en leverandør mulighet til å gjenbruke en OIDC-integrasjon på vegne av mange kunder.  
 
 Mønsteret passer best der leverandøren har kontroll over installasjonen (dvs. oauth2-klienten), typisk en installasjon på egen server i sikret driftsmiljø. Det er Leverandøren som eier integrasjonen (attributtet `client_org`), og Leverandøren bruker eget virksomhetssertifkat og/eller client_secret for å autentisere seg mot ID-porten.
 
@@ -48,7 +48,7 @@ Leverandøren må forhåndsregistere såkalte "onbehalfof"-verdier som blir knyt
 
 I selvbetjening opprettes slike integrasjoner med valget "på vegne av flere kunder" (via selvbetjenings-api brukes `idporten:dcr/onbehalfof:write`)
 
-Dersom integrasjonen skal kunne bruke [brukerstyrt datadeling](oidc_auth_oauth2.html) på vegne av kunden, eller integrasjonen har behov for å motta access_tokens med scopes eid av 3dje-part, må API-tilbyder gi leverandøren (altså ikke kunden) tilgang til scopet, for at leverandøren skal kunne registrer scopet på sin klient. Både API-tilbyder og leverandør bør merke seg at `consumer`-claimet i access_token da blir satt lik orgnummeret som tilhører onbehalfof-verdien.
+Dersom integrasjonen skal kunne bruke [brukerstyrt datadeling]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2) på vegne av kunden, eller integrasjonen har behov for å motta access_tokens med scopes eid av 3dje-part, må API-tilbyder gi leverandøren (altså ikke kunden) tilgang til scopet, for at leverandøren skal kunne registrer scopet på sin klient. Både API-tilbyder og leverandør bør merke seg at `consumer`-claimet i access_token da blir satt lik orgnummeret som tilhører onbehalfof-verdien.
 
 Det gir ingen mening å bruke onbehalfof for Maskinporten-integrasjoner.
 
@@ -66,16 +66,16 @@ I selvbetjening opprettes slike integrasjoner med valget "på vegne av en kunde"
 * Leverandørens eget organisasjonnummer blir *automatisk* satt som `supplier_orgno` (basert på virksomhetssertifikatet som blir brukt mot admin-APIet)
 
 
-Dersom integrasjonen skal bruke [brukerstyrt datadeling](oidc_auth_oauth2.html), må - på samme måte som for onbehalfof'er - API-tilbyder gi leverandøren sitt orgno tilgang til scopet, for at scopet skal kunne registreres på klient. Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene.
+Dersom integrasjonen skal bruke [brukerstyrt datadeling]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2), må - på samme måte som for onbehalfof'er - API-tilbyder gi leverandøren sitt orgno tilgang til scopet, for at scopet skal kunne registreres på klient. Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene.
 
 ## 3. Kun bruke redirect-uri
-Noen leverandører velger å ikke bruke en av de 2 foregående mekanismene, og bruker i stedet én integrasjon, med ulike forhåndsregistrerte `redirect_uri` til å skille mellom kunder. Alternativt sendes en kunde-spesifikk `state`-verdi runtime (da må også [PKCE](oidc_func_pkce.html) brukes for å hindre csrf eller replay attack).
+Noen leverandører velger å ikke bruke en av de 2 foregående mekanismene, og bruker i stedet én integrasjon, med ulike forhåndsregistrerte `redirect_uri` til å skille mellom kunder. Alternativt sendes en kunde-spesifikk `state`-verdi runtime (da må også [PKCE]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_pkce) brukes for å hindre csrf eller replay attack).
 
 Ulempen med dette mønsteret er at man ikke kan ha kunde-spesifikt tjenestenavn og logo i innloggingsbildet samt at innlogginger telles og faktureres leverandøren og ikke kunden. Derfor passer mønsteret best for de som primært lager public klienter (typisk mobil-apper eller sluttbrukersystemer installert på pc).
 
 ## 4. Delegering i Altinn for Maskinporten
 
-For datadeling mellom virksomheter gjennom Maskinporten er det mulig for en Kunde å eksplisitt [delegere en API-tilgang videre til Leverandør, ved at bemyndiget representant logger inn i Altinn](maskinporten_func_delegering.html).
+For datadeling mellom virksomheter gjennom Maskinporten er det mulig for en Kunde å eksplisitt [delegere en API-tilgang videre til Leverandør, ved at bemyndiget representant logger inn i Altinn]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_delegering).
 
 Kunde-Leverandør-forholdet blir for slike integrasjoner ikke forhåndsregistert på klient-registreringa via selvbetjening (som for de ovenstående alternativene), men sjekkes istedet runtime ved bruk.
 

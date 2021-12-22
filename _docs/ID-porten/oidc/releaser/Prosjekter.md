@@ -1,7 +1,7 @@
 ---
 title: Prosjekter
 description: Prosjekter
-permalink: Prosjekter.html
+
 sidebar: oidc
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Utvidelser
-permalink: dpi_utvidelser_index.html
+
 sidebar: dpi_timo_sidebar
 ---
 

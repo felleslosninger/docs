@@ -1,7 +1,7 @@
 ---
   
 title: Eldre releaser av dokumentasjonen  
-permalink: sdp_eldre_releaser.html
+
 sidebar: dpi_sidebar
 ---
 

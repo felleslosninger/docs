@@ -1,13 +1,13 @@
 ---
 title: Dokumentpakke (ASiC)  
-permalink: dokumentpakke_index.html
+
 sidebar: dpi_sidebar
 ---
 
 ## Introduksjon
 
 Dokumentpakke inngår kun i
-[DigitalPostMeldinger](../../meldinger/DigitalPostMelding.md).
+[DigitalPostMeldinger]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png).
 
 [Associated Signature Container
 (ASiC)](http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf)
@@ -22,16 +22,16 @@ virksomhet, og om filene har blitt endret.
 Les mer om [hvordan dokumenter som sendes i Sikker digital post er
 beskyttet](sikkerhet_index.html)
 
-Sikker Digital Post har definert et eget begrep [Manifest](Manifest.md) som
+Sikker Digital Post har definert et eget begrep [Manifest]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/Manifest) som
 inneholder metadata relatert til hver fil.
 
 ### Innhold
 
 | Fil                      | Kardinalitet | Beskrivelse                                                                                                                      |
 | ------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| hoveddokument            | 1..1         | fil - se: krav til [filnavn og dokumentformat](dokumentformat_index.html)                                                               |
-| [manifest.xml](Manifest.md) | 1..1         | [manifest](Manifest.md)                                                                                                             |
-| vedlegg                  | 0..200       | fil - se: krav til [filnavn og dokumentformat](dokumentformat_index.html)                                                               |
+| hoveddokument            | 1..1         | fil - se: krav til [filnavn og dokumentformat]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/index)                                                               |
+| [manifest.xml]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/Manifest) | 1..1         | [manifest]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/Manifest)                                                                                                             |
+| vedlegg                  | 0..200       | fil - se: krav til [filnavn og dokumentformat]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/index)                                                               |
 | META-INF/signatures.xml  | 1..1         | [XAdES](http://www.etsi.org/deliver/etsi_ts%5C101900_101999%5C101903%5C01.04.02_60%5Cts_101903v010402p.pdf) signaturer av filene |
 
 ### Begrensninger
@@ -44,8 +44,8 @@ inneholder metadata relatert til hver fil.
 
 ### Eksempel
 
-  - [Manifest](../../eksempler/sdpManifest.xml)
-  - [Full dokumentpakke](../../eksempler/post.asice.zip)
+  - [Manifest]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpManifest.xml)
+  - [Full dokumentpakke]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/post.asice.zip)
 
 ### Refererte standarder
 

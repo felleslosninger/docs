@@ -1,7 +1,7 @@
 ---
 title: REST-API for administrasjon av OIDC-integrasjoner
 description: API som gir tjenesteleverandørar mulighet til å administrere sine OIDC-integrasjoner.
-permalink: oidc_api_admin.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -81,7 +81,7 @@ Se Open-API dokumentasjon her: [https://integrasjon.difi.no/swagger-ui/?urls.pri
 
 ## Opprette en integrasjon
 
-Man kan opprette ulike typer integrasjoner over APIet, dvs. klienter for hhv. ID-porten,  Maskinporten eller Kontaktregisteret.  Dette styres av attributtet `integration_type`, som da setter videre begrensninger på hvilke kombinasjoner av andre oauth2-egenskaper som er lovlige. Se [klient-registrering](oidc_func_clientreg.html) for detaljer.
+Man kan opprette ulike typer integrasjoner over APIet, dvs. klienter for hhv. ID-porten,  Maskinporten eller Kontaktregisteret.  Dette styres av attributtet `integration_type`, som da setter videre begrensninger på hvilke kombinasjoner av andre oauth2-egenskaper som er lovlige. Se [klient-registrering]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_clientreg) for detaljer.
 
 Her er et minimums-eksempel på hvordan opprette en klient:
 
@@ -115,7 +115,7 @@ Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdU
 Responsen er en json-struktur med den komplette klientmodellen som ble registrert.  
 Merk også at APIet vil opprette og returnere client_id og eventuell client_secret for klienter som opprettes, og at sistnevnte returneres i klartekst.
 
-Eksempelet ovenfor oppretter en ID-porten-klient for [brukerstyrt datadeling på vegne av innlogget bruker](oidc_auth_oauth2.html) (`integration_type=api_klient`), den er et sluttbrukersystem som er tenkt installert lokalt på en PC (`application_type=native` kombinert med en [redirect-uri som peker på en lokal port](oidc_auth_sbs.html) )
+Eksempelet ovenfor oppretter en ID-porten-klient for [brukerstyrt datadeling på vegne av innlogget bruker]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_oauth2) (`integration_type=api_klient`), den er et sluttbrukersystem som er tenkt installert lokalt på en PC (`application_type=native` kombinert med en [redirect-uri som peker på en lokal port]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_sbs) )
 
 ### Eierskap til integrasjoner
 
@@ -174,7 +174,7 @@ Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grant
 
 ## Registrering av scopes
 
-Se [dokumentasjon av klient-registrering](oidc_func_clientreg.html) for detaljer om hvilke regler som gjelder for å få lov til å registrere Oauth2 scopes tilhørende Digdir eller 3djeparter på en integrasjon.
+Se [dokumentasjon av klient-registrering]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_clientreg) for detaljer om hvilke regler som gjelder for å få lov til å registrere Oauth2 scopes tilhørende Digdir eller 3djeparter på en integrasjon.
 
 ## Run-time provisjonering / sky
 

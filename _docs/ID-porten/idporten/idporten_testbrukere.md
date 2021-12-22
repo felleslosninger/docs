@@ -2,7 +2,7 @@
 title: ID-porten testbrukere
 description: ID-porten testbrukere
 summary:
-permalink: idporten_testbrukere.html
+
 toc: false
 sidebar: oidc
 product: ID-porten

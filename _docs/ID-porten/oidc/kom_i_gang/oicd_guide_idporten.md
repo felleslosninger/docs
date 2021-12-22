@@ -1,7 +1,7 @@
 ---
 title: Integrasjonsguide - Autentisering i ID-porten over OpenID Connect
 description: Bruk av ID-porten sin OpenID Connect provider til autentisering med autorisasjonskode-flyten
-permalink: oidc_guide_idporten.html
+
 product: ID-porten
 ---
 

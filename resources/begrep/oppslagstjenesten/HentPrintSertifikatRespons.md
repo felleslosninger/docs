@@ -1,22 +1,22 @@
 ---
 title: HentPrintSertifikatRespons  
-permalink: ot_hentprintsertifikatrespons.html
+
 sidebar: begrep_sidebar
 ---
 
 |---|---|
 | Term          | {{page.title}} |
-| Definisjon    | Respons sendt tilbake til Virksomhet som svar på [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md) |
+| Definisjon    | Respons sendt tilbake til Virksomhet som svar på [HentPrintSertifikatForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPrintSertifikatForespoersel) |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
-| Kommentar     | Webservice respons som Oppslagstjenesten sender til Klient, respons inneholder ET Sertifikat. For [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md) leveres det ut det sertifikatet som skal brukes for å kryptere meldinger som skal printes til Innbygger. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om responsen og hvordan denne leveres og sikres. |
+| Kommentar     | Webservice respons som Oppslagstjenesten sender til Klient, respons inneholder ET Sertifikat. For [HentPrintSertifikatForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPrintSertifikatForespoersel) leveres det ut det sertifikatet som skal brukes for å kryptere meldinger som skal printes til Innbygger. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om responsen og hvordan denne leveres og sikres. |
 
 #### Attributer
 
 | Term                                                               | Kardinalitet |
 | ------------------------------------------------------------------ | ------------ |
-| [postkasseleverandoerAdresse](../felles/postkasseleverandoerAdresse.md) | 1..1         |
-| [X509Sertifikat](../felles/x509Sertifikat.md)                           | 1..1         |
+| [postkasseleverandoerAdresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseleverandoerAdresse) | 1..1         |
+| [X509Sertifikat]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/x509Sertifikat)                           | 1..1         |
 
 #### Xml skjema
 

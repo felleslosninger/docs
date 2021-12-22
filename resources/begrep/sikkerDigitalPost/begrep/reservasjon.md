@@ -1,6 +1,6 @@
 ---
 title: reservasjon
-permalink: reservasjon.html
+
 sidebar: begrep_sidebar
 ---
 

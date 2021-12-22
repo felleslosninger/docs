@@ -2,7 +2,7 @@
 title: Elma
 description: Elma user manual for access point providers
 summary: "Elma user manual access point providers"
-permalink: elma_access_point_provider_user_manual.html
+
 product: elma
 sidebar: elma_sidebar
 ---

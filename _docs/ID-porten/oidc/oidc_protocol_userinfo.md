@@ -2,7 +2,7 @@
 title: "/userinfo endpoint"
 description: "This page summarizes the protocol options availalbe for on the /usering endpoint for ID-porten OIDC Provider"
 summary: 'This page summarizes the protocol options availalbe for on the /userinfo endpoint for ID-porten OIDC Provider'
-permalink: oidc_protocol_userinfo.html
+
 sidebar: oidc
 product: ID-porten
 ---

@@ -1,6 +1,6 @@
 ---
 title: returPostHaandtering
-permalink: returposthaandtering.html
+
 sidebar: begrep_sidebar
 ---
 

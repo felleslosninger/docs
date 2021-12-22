@@ -1,6 +1,6 @@
 ---
 title: Feil
-permalink: dpi_feil.html
+
 sidebar: dpi_timo_sidebar
 dpi_common_schema_location: https://docs.digdir.no/schemas/dpi/commons.schema.json
 ---

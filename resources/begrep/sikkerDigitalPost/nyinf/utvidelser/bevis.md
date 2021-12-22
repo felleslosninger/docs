@@ -1,6 +1,6 @@
 ---
 title: Bevis
-permalink: dpi_bevis.html
+
 sidebar: dpi_timo_sidebar
 ---
 

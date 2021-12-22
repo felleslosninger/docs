@@ -1,6 +1,6 @@
 ---
 title: "Hvordan bidra"
-permalink: CONTRIBUTING.html
+
 sidebar: main_sidebar
 product: general
 ---

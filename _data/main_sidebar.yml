@@ -7,80 +7,80 @@ folders:
   folderitems:
 
   - title: Om ID-porten
-    jurl: /idporten_index.html
+    jurl: /docs/ID-porten/idporten_index
 
   - title: Teknisk dokumentasjon
-    jurl: /idporten_overordnet.html
+    jurl: /docs/ID-porten/idporten/idporten_overordnet
 
 
 - title: Maskinporten
   folderitems:
 
   - title: Om Maskinporten
-    jurl: /maskinporten_index.html
+    jurl: /docs/Maskinporten/maskinporten_index
 
   - title: Teknisk dokumentasjon
-    jurl: /maskinporten_overordnet.html
+    jurl: /docs/Maskinporten/maskinporten_overordnet
 
 
 - title: Kontaktregisteret
   folderitems:
 
   - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /krr_index.html
+    jurl: /docs/Kontaktregisteret/krr_index
 
   - title: Teknisk dokumentasjon
-    jurl: /oppslagstjenesten_rest.html
+    jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
 
 
 - title: Digital postkasse
   folderitems:
 
   - title: Om digital postkasse
-    jurl: /digipost_index.html
+    jurl: /docs/Digital postkasse/digipost_index
 
   - title: Veiledning og klienter
-    jurl: /sdp_index_innledning.html
+    jurl: /resources/begrep/sikkerDigitalPost/innledning/index
 
 - title: eFormidling
   folderitems:
 
   - title: Om eFormidling
-    jurl: /eformidling_index.html
+    jurl: /docs/eFormidling/eform_index
 
   - title: Installasjonsveiledning
-    jurl: /eformidling_download_ip.html
+    jurl: /docs/eFormidling/installasjon/eformidling_download_ip
 
   - title: Teknisk dokumentasjon
-    jurl: /eformidling_nm_about.html
+    jurl: /docs/eFormidling/Teknisk_informasjon/aboutNextMove
     #Må endre jurl på teknisk info
 
 - title: eSignering
   folderitems:
 
   - title: Om eSignering
-    jurl: /esign_index.html
+    jurl: /docs/eSignering/esign_index
 
   - title: Kom i gang med eSignering
-    jurl: /esign_komigang.html
+    jurl: /docs/eSignering/esign_komigang
 
 - title: eInnsyn
   folderitems:
 
   - title: Om eInnsyn
-    jurl: /einnsyn_index.html
+    jurl: /docs/eInnsyn/einnsyn_index
 
   - title: eInnsyn-klient
-    jurl: /einnsyn_forutsetninger.html
+    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
 
 - title: ELMA
   folderitems:
 
   - title: about ELMA
-    jurl: /elma_index.html
+    jurl: /docs/ELMA/elma_index
 
   - title: Documentation
-    jurl: /elma_user_manual.html
+    jurl: /docs/ELMA/elma_elma
 
 
 ###########################
@@ -90,7 +90,7 @@ related_resources_title: Andre nyttige lenker
 related_resources_list:
 
 - title: Begrepskatalog
-  jurl: begrep_index.html
+  jurl: /resources/begrep/sikkerDigitalPost/begrep/index
 
 - title: Github
   jurl: https://github.com/difi/felleslosninger

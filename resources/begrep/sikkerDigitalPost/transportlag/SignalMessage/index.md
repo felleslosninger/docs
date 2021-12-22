@@ -2,7 +2,7 @@
  
 title: SignalMessage  
 group: transportlag
-permalink: sdp_index_signalmessage.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -23,10 +23,10 @@ transportkvitteringer eller en forespørsel om å få levert en melding.
 
 | Identifikator | Kardinalitet | Datatype | Kommentar |
 | --- | --- | --- | --- |
-| [MessageInfo](../UserMessage/MessageInfo.md) | 1..1 | eb:MessageInfo | Samme element som i UserMessage - intern identifikator og timestamp |
-| [PullRequest](PullRequest.md) | 0..1 | eb:PullRequest | Forespørsel om å få levert en ventende melding |
-| [Receipt](Receipt.md) | 0..1 | eb:Receipt | Standard kvittering relatert til en UserMessage |
-| [Error](Error.md) | 0..unbounded | eb:Error | Standardfeilmelding relatert til en melding |
+| [MessageInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/UserMessage/MessageInfo) | 1..1 | eb:MessageInfo | Samme element som i UserMessage - intern identifikator og timestamp |
+| [PullRequest]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/SignalMessage/PullRequest) | 0..1 | eb:PullRequest | Forespørsel om å få levert en ventende melding |
+| [Receipt]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/SignalMessage/Receipt) | 0..1 | eb:Receipt | Standard kvittering relatert til en UserMessage |
+| [Error]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/SignalMessage/Error) | 0..unbounded | eb:Error | Standardfeilmelding relatert til en melding |
 
 ### Eksempel
 

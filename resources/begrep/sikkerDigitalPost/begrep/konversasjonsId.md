@@ -1,6 +1,6 @@
 ---
 title: konversasjonsId
-permalink: konversasjonsid.html
+
 sidebar: begrep_sidebar
 ---
 

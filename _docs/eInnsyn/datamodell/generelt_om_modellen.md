@@ -2,7 +2,7 @@
 title: Generelt om modellen
 description:
 summary:
-permalink: einnsyn_generelt_om_modellen.html
+
 sidebar: einnsyn_technical_sidebar
 ---
 

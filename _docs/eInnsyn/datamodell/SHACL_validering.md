@@ -2,7 +2,7 @@
 title: SHACL-validering
 description:
 summary:
-permalink: einnsyn_shackl.html
+
 sidebar: einnsyn_technical_sidebar
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Om ID-porten
 description: Om ID-porten
-permalink: idporten_index.html
+
 product: ID-porten
 
 ---

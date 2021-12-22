@@ -1,7 +1,7 @@
 ---
 
 title: Transportfeil  
-permalink: sdp_transportfeil.html
+
 sidebar: dpi_sidebar
 ---
 

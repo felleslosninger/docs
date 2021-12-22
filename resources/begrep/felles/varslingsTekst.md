@@ -1,6 +1,6 @@
 ---
 title: varslingsTekst
-permalink: 2varslingstekst.html
+
 sidebar:
 ---
 

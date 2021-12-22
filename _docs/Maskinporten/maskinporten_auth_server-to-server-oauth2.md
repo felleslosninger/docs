@@ -2,7 +2,7 @@
 title: Server-to-server API-autorisasjon med Oauth2
 description: Server-to-server API-autorisasjon med Oauth2
 summary: 'Maskinporten brukes til å autorisere tilgang til API-er mellom virksomheter.  Dette er basert på såkalt "server-to-server oauth2"-oppførsel.'
-permalink: maskinporten_auth_server-to-server-oauth2.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---
@@ -59,7 +59,7 @@ I dette scenariet ønsker en **klient** å bruke en **ressurs (API)** tilbudt av
 
 ## 1. Generere JWT
 
-Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [grensesnittspesifikasjon for JWT-grant](maskinporten_protocol_jwtgrant.html)
+Klienten må generere og signere ein JWT for å forespørre tokens fra autorisasjonsserveren.  For komplett dokumentasjon, se [grensesnittspesifikasjon for JWT-grant]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant)
 
 Selve grantet kan se slik ut:
 
@@ -84,7 +84,7 @@ Selve grantet kan se slik ut:
 
 ## 2. Send JWT til /token-endepunktet
 
-Se [detaljert grensesnittspesifikasjon  av /token-endepunktet](maskinporten_protocol_token.html).
+Se [detaljert grensesnittspesifikasjon  av /token-endepunktet]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_token).
 
 
 Eksempel på forespørsel:

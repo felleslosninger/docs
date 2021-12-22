@@ -1,6 +1,6 @@
 ---
 title: x509Sertifikat
-permalink: x509sertifikat.html
+
 sidebar: begrep_sidebar
 ---
 

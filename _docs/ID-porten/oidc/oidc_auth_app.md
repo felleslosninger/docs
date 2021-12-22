@@ -2,14 +2,14 @@
 title: Autentisering til mobil-app'er
 description: Bruk av Idporten sin OpenID Connect provider til autentisering til mobil-app'er
 summary: "Ved innlogging til en mobil-app, er det anbefalt å bruke PKCE sammen med autorisasjonskode-flyten"
-permalink: oidc_auth_app.html
+
 sidebar: oidc
 product: ID-porten
 ---
 
 ## Overordna beskrivelse av bruksområdet
 
-Tilsvarende [Single-page applikasjoner](oidc_auth_spa.html), så kan ikke en mobil-app beskytte hemlighetene sine på en tilfredstillende måte. Den er altså en Oauth2 public klient, og kalles ofte **native app** i oauth2-dokumentasjonen.
+Tilsvarende [Single-page applikasjoner]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_spa), så kan ikke en mobil-app beskytte hemlighetene sine på en tilfredstillende måte. Den er altså en Oauth2 public klient, og kalles ofte **native app** i oauth2-dokumentasjonen.
 
 I [OAuth 2.0 for Native Apps](https://tools.ietf.org/html/draft-ietf-oauth-native-apps-12) er det gitt anbefalinger for hvordan bruke Oauth2/OpenID Connect på mobil-app'er. Vi anbefaler kunder  å studere dette dokumentet nøye. Vi vil trekke frem følgende:
 * Autentisering må skje i ekstern browser (ikke embedded web-view).
@@ -28,7 +28,7 @@ Vanligvis er det backend-en som er registrert som klient i ID-porten, ikke selve
 * Aktive innlogginger skal vises på sentrale oversikt i ID-portens brukerprofil
 * Håndterer sentral innbygger-initiert revokasjon av innloggingen fra ID-portens brukerprofil
 
-Oversikt over innlogginger med revokasjonsmulighet for innlogget innbygger er også tilgjengelig [på et eget API](oidc_api_autorisasjoner.html), slik at kunden kan velge å også tilby slik funksjonalitet integrert i egen selvbetjeningsløsning.
+Oversikt over innlogginger med revokasjonsmulighet for innlogget innbygger er også tilgjengelig [på et eget API]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_autorisasjoner), slik at kunden kan velge å også tilby slik funksjonalitet integrert i egen selvbetjeningsløsning.
 
 ### Teknisk beskrivelse
 
@@ -45,7 +45,7 @@ Alternativt  kan kunden bruke en variant med kort-levde access_token i kombinasj
 
 ## Beskrivelse av innloggingsflyten for mobil-app'er
 
-Flyten er identisk som for [autorisasjonskode-flyten](oidc_auth_codeflow.html), men med bruk av [PKCE](oidc_func_pkce.html):
+Flyten er identisk som for [autorisasjonskode-flyten]({{site.baseurl}}/docs/ID-porten/oidc/oidc_auth_codeflow), men med bruk av [PKCE]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_pkce):
 
 I tilegg må kunden forespørre eget scope som hører til den langt-levende innloggingen og behandle dette som forklart i forrige avsnitt.
 

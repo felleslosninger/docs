@@ -2,7 +2,7 @@
 title: audience-restricted tokens
 description: Audience-restricted access tokens
 summary: "Some APIs require that the access_tokens are audience-restricted, ie. should have a specific ´aud´ value."
-permalink: maskinporten_func_audience_restricted_tokens.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
 ---

@@ -2,16 +2,16 @@
 title: Mer om metadata og SAML
 description: Mer om metadata og SAML
 summary: "Mer om metadata og SAML"
-permalink: saml_metadata.html
+
 sidebar: saml_idporten_sidebar
 product: ID-porten
 ---
 
 ### Metadata validator og ID-porten sine metadatafiler
 
-* [Metadata for ID-porten produksjon (ny fra 07.01.2019)](assets\idporten.difi.no-v4-prod.zip)
-* [Metadata for ID-porten verifikasjon 1 (ny frå 15.03.2019) ](assets\idporten.difi.no-v4-ver1.zip)
-* [Metadata for ID-porten verifikasjon 2 (ny frå 15.03.2019) ](assets\idporten.difi.no-v4-ver2-meta.zip)
+* [Metadata for ID-porten produksjon (ny fra 07.01.2019)]({{site.baseurl}}/assets/idporten.difi.no-v4-prod.zip)
+* [Metadata for ID-porten verifikasjon 1 (ny frå 15.03.2019) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver1.zip)
+* [Metadata for ID-porten verifikasjon 2 (ny frå 15.03.2019) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver2-meta.zip)
 
 ### Eksempel på metadatafil
 

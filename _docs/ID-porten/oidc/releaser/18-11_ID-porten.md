@@ -1,7 +1,7 @@
 ---
 title: 18-11 ID-porten
 description: 18-11 ID-porten
-permalink: 18-11_ID-porten.html
+
 sidebar: oidc
 ---
 

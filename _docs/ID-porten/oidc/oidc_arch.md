@@ -2,7 +2,7 @@
 title: OIDC systemarkitektur
 description: Systemarkitektur i ID-porten
 summary: "OIDC Provideren til ID-porten er realisert som en frittstående applikasjon 'foran' ID-porten SAML-tjeneste"
-permalink: oidc_arch.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -33,7 +33,7 @@ ID-portens OIDC provider tilbyr **autentisering** av sluttbrukere opp mot netttj
 
 ID-portens OIDC Provider er en frittstående applikasjon som står foran den eksisterende ID-porten og snakker SAML2 med denne, tilsvarende eksisterende tjenester hos kundene.
 
-Det er ID-porten som håndterer SSO-sesjoner både for SAML2 og OIDC.  Dette medfører at kunder får [single-signon (SSO)](oidc_func_sso.html) både mellom OIDC-baserte tjenester, og mellom SAML2- og OIDC-baserte tjenester.
+Det er ID-porten som håndterer SSO-sesjoner både for SAML2 og OIDC.  Dette medfører at kunder får [single-signon (SSO)]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_sso) både mellom OIDC-baserte tjenester, og mellom SAML2- og OIDC-baserte tjenester.
 
 ## Autorisasjonstjenester
 
@@ -78,7 +78,7 @@ graph LR
  Digitaliseringsdirektoratet tilbyr to Oauth2-beskytta APIer:
 
 * [KRR-Oauth2](oidc_api_krr.html) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
-* [authlevel](oidc_api_authlevel.html) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  
+* [authlevel]({{site.baseurl}}/docs/ID-porten/oidc/oidc_api_authlevel) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  
 
 
 ## Om OpenID Connect

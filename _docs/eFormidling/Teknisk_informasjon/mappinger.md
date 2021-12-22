@@ -1,7 +1,7 @@
 ---
 title: Mappinger mellom meldingsformater
 description: Mappinger mellom meldingsformater
-permalink: eformidling_mappinger.html
+
 product: eFormidling
 ---
 

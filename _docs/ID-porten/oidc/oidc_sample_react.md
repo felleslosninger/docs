@@ -2,7 +2,7 @@
 title: OIDC-client using React and code flow
 description: OIDC-client using React and code flow
 summary: "This is short how-to on using the code flow from a React-based javascript OIDC-client."
-permalink: oidc_sample_react.html
+
 sidebar: oidc
 product: ID-porten
 ---

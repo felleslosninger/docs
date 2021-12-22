@@ -2,7 +2,7 @@
 title: Installere sertifikater
 description: 
 summary: ""
-permalink: krr_sertifikater.html
+
 sidebar: krr_dotnet
 product: KRR
 ---

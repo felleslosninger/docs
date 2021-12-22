@@ -2,7 +2,7 @@
 title: Meldingsflyt
 description: Beskrivelse av forretningsmeldinger
 summary: ""
-permalink: eformidling_nm_meldingsflyt.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

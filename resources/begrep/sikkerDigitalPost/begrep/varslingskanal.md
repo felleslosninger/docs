@@ -1,6 +1,6 @@
 ---
 title: varslingskanal
-permalink: varslingskanal.html
+
 sidebar: begrep_sidebar
 ---
 

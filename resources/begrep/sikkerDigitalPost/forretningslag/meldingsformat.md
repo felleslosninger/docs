@@ -1,6 +1,6 @@
 ---
 title: Struktur på melding  
-permalink: sdp_meldingsformat.html
+
 sidebar: dpi_sidebar
 ---
 

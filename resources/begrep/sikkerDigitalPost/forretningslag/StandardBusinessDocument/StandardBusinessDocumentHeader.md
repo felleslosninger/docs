@@ -1,6 +1,6 @@
 ---
 title: StandardBusinessDocumentHeader  
-permalink: sdp_standardbusinessdocumentheader.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -15,24 +15,24 @@ sidebar: dpi_sidebar
 | Identifikator                                    | Kardinalitet | Datatype                                              | Kommentar                                                                                                                                                                                   |
 | ------------------------------------------------ | ------------ | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | HeaderVersion                                    | 1..1         | xs:string                                             | “1.0”                                                                                                                                                                                       |
-| [Sender](sdp_sender.html)                                 | 1..1         | [sbdh:Sender](sdp_sender.html)                                 | Identifikator (organisasjonsnummer) til virksomheten som initierer (er avsender) i meldingsprosessen. Alle kvitteringer skal addresseres til denne parten som mottaker                      |
-| [Receiver](Receiver.md)                             | 1..1         | [sbdh:Receiver](Receiver.md)                             | Identifikator (organisasjonsnummer) til virksomheten som er sluttmottaker i meldingsprosessen. Ved initiell sending av melding vil dette alltid være en postboks eller utskriftsleverandør. |
-| [DocumentIdentification](DocumentIdentification.md) | 1..1         | [sbdh:DocumentIdentification](DocumentIdentification.md) | Unik identifikator for meldingen, generert av Avsender                                                                                                                                      |
-| [BusinessScope](BusinessScope.md)                   | 1..1         | [sbdh:BusinessScope](BusinessScope.md)                   | Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen                                                                                                  |
+| [Sender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender)                                 | 1..1         | [sbdh:Sender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender)                                 | Identifikator (organisasjonsnummer) til virksomheten som initierer (er avsender) i meldingsprosessen. Alle kvitteringer skal addresseres til denne parten som mottaker                      |
+| [Receiver]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Receiver)                             | 1..1         | [sbdh:Receiver]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Receiver)                             | Identifikator (organisasjonsnummer) til virksomheten som er sluttmottaker i meldingsprosessen. Ved initiell sending av melding vil dette alltid være en postboks eller utskriftsleverandør. |
+| [DocumentIdentification]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/DocumentIdentification) | 1..1         | [sbdh:DocumentIdentification]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/DocumentIdentification) | Unik identifikator for meldingen, generert av Avsender                                                                                                                                      |
+| [BusinessScope]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/BusinessScope)                   | 1..1         | [sbdh:BusinessScope]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/BusinessScope)                   | Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen                                                                                                  |
 
 ### Kommentar
 
-Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i [FormidleDigitalPostForsendelse](sdp_formidledigitalpostforsendelse.html)
-prosessen så vil Sender være [Databehandler](sdp_aktorer.html#roller) og Receiver være [Postkasse](felleslosninger/sdp_aktorer.html#roller).
+Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i [FormidleDigitalPostForsendelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse)
+prosessen så vil Sender være [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer#roller) og Receiver være [Postkasse](felleslosninger/{{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer#roller).
 
-Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den offisielle standarden (BusinessScope er obligatorisk i Sikker Digital Post). Konsekvesen er at man kan få en [forretningsrelatert feilmelding](sdp_forretningsfeil.html) selv om XML’en validerer mot xsd.
+Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den offisielle standarden (BusinessScope er obligatorisk i Sikker Digital Post). Konsekvesen er at man kan få en [forretningsrelatert feilmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/feilhandtering/Forretningsfeil) selv om XML’en validerer mot xsd.
 
 ### XML eksempel fra Databehandler til Postkasseleverandør
 
-**** En melding fra [Databehandler](sdp_aktorer.html#rollerl) med orgnummer: 123456789
-til [Postkasseleverandør](sdp_aktorer.html) med orgnummer: 987654321
+**** En melding fra [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer#rollerl) med orgnummer: 123456789
+til [Postkasseleverandør]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) med orgnummer: 987654321
 
-**** [Databehandler](sdp_aktorer.html#roller) har generert en unik
+**** [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer#roller) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “35e21e33-22b3-4554-9707-5fa829ee8bc0”
 
@@ -71,15 +71,15 @@ konversasjon sammen.
 
 ###XML eksempel fra Postkasseleverandør til Databehandler
 
-****En melding fra [Postkasseleverandør](../Aktorer.md) med orgnummer:
-987654321 til [Databehandler](sdp_aktorer.html) med orgnummer: 123456789
+****En melding fra [Postkasseleverandør]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) med orgnummer:
+987654321 til [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) med orgnummer: 123456789
 
-****[Postkasseleverandør](sdp_aktorer.html) har generert en unik
+****[Postkasseleverandør]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
 “12e57bde-ea5d-43ee-96b6-e2cf73f8311e”
 
-****[Postkasseleverandør](sdp_aktorer.html) bruker den
-BusinessScope.InstanceIdentifier som [Databehandler](sdp_aktorer.html) har
+****[Postkasseleverandør]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) bruker den
+BusinessScope.InstanceIdentifier som [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) har
 generert.
 
 ****\*Dette er knytningen mot den opprinnelige forsendelsen.

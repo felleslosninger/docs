@@ -1,6 +1,6 @@
 ---
 title: BusinessScope  
-permalink: sdp_businessscope.html
+
 sidebar: dpi_sidebar
 ---
 

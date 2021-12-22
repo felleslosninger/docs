@@ -1,7 +1,7 @@
 ---
  
 title: ID-porten  
-permalink: IDport_index.html
+
 sidebar:
 ---
 
@@ -14,7 +14,7 @@ knytter de offentlige virksomhetene og e-ID leverandørene sammen.
 
 ### Autentiseringsforespørsel
 
-[SAMLAuthnRequest](SAMLAuthnRequest.md)
+[SAMLAuthnRequest]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAuthnRequest)
 
 ### SAML2Assertion profiler
 
@@ -22,8 +22,8 @@ ID-porten har følgende forskjellige profiler:
 
 | Profilnavn                                                                       | Beskrivelse                                                          |
 | --- | --- |
-| [SAMLAssertionV1](SAMLAssertionV1.md)                                               | Standard profil                                                      |
-| [SAMLAssertionV2](SAMLAssertionV2.md)                                               | FORELDET, kun tilgjengelig for å være bakoverkompatibel              |
-| [SAMLAssertionV3](SAMLAssertionV3.md)                                               | Utvidet profil med informasjon fra kontakt og reservasjonsregisteret |
-| [SAMLAssertionV4](SAMLAssertionV4.md)                                               | FORELDET                                                             |
+| [SAMLAssertionV1]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAssertionV1)                                               | Standard profil                                                      |
+| [SAMLAssertionV2]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAssertionV2)                                               | FORELDET, kun tilgjengelig for å være bakoverkompatibel              |
+| [SAMLAssertionV3]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAssertionV3)                                               | Utvidet profil med informasjon fra kontakt og reservasjonsregisteret |
+| [SAMLAssertionV4]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAssertionV4)                                               | FORELDET                                                             |
 | [SAMLAssertionV5](http://difi.github.io/begrep-ID-porten/3_SAMLAssertionv5.html) | FORELDET                                                             |

@@ -1,7 +1,7 @@
 ---
 
 title: Teknisk beskrivelse  
-permalink: sdp_teknisk.html
+
 sidebar:
 ---
 

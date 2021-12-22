@@ -2,7 +2,7 @@
 title: "/token endpoint"
 description: "This page summarizes the protocol options available for on the /token endpoint for ID-porten OIDC Provider"
 summary: 'This page summarizes the protocol options available for on the /token endpoint for ID-porten OIDC Provider'
-permalink: oidc_protocol_token.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -53,7 +53,7 @@ The following request parameters are available when using the JWT bearer grant
 
 There is no need to perform client authentication when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
-See [JWT grant](oidc_protocol_jwtgrant.html) for requirements for the JWT grant.
+See [JWT grant]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_jwtgrant) for requirements for the JWT grant.
 
 
 ### Request parameters when using `refresh_token ` grant
@@ -106,7 +106,7 @@ The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.i
 
 The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see above.
 
-The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grants](oidc_protocol_jwtgrant.html).
+The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grants]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_jwtgrant).
 
 #### Example:
 
@@ -156,7 +156,7 @@ Example:
 
 The id_token is the assertion of the authenticated user identity.  It tells you "who the user is", but not "what the user can access".
 
-The [id_token is documented here](oidc_protocol_id_token.html).
+The [id_token is documented here]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_id_token).
 
 
 
@@ -164,4 +164,4 @@ The [id_token is documented here](oidc_protocol_id_token.html).
 
 The access_token enables the client to access APIs on behalf of the authenticated user.  
 
-The [access_token is documented here](oidc_protocol_access_token.html).
+The [access_token is documented here]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_access_token).

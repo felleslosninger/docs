@@ -1,7 +1,7 @@
 ---
  
 title: Forretninglag  
-permalink: sdp_forretningslag_index.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -12,9 +12,9 @@ må forholde seg til, samt fordeling av eierskap på de forskjellige
 delene av en komplett melding.
 
 | --- | --- |
-| [Aktører](sdp_aktorer.html)                                   | Aktører og roller                                                           |
-| [Sending av digital post](forretningsprosess.md)        | Sending av digital post til innbyggere                                      |
-| [Sending på vegne av andre](send_paa_vegne_av_andre.md) | Sending av digital post på vegne av andre                                   |
-| [Kvitteringer](forretningsprosess_kvittering.md)        | Henting av kvitteringer                                                     |
-| [Struktur på melding](meldingsformat.md)                | ebMS Signalmessage brukt for henting av kvitteringer og signalering av feil |
-| [Pris og størrelse](meldingsstorrelse.md)               | Priser og utregning av meldingsstørrelse                                    |
+| [Aktører]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer)                                   | Aktører og roller                                                           |
+| [Sending av digital post]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/forretningsprosess)        | Sending av digital post til innbyggere                                      |
+| [Sending på vegne av andre]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/send_paa_vegne_av_andre) | Sending av digital post på vegne av andre                                   |
+| [Kvitteringer]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/forretningsprosess_kvittering)        | Henting av kvitteringer                                                     |
+| [Struktur på melding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/meldingsformat)                | ebMS Signalmessage brukt for henting av kvitteringer og signalering av feil |
+| [Pris og størrelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/meldingsstorrelse)               | Priser og utregning av meldingsstørrelse                                    |

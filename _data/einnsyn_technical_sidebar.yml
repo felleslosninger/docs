@@ -5,25 +5,25 @@ folders:
   folderitems:
 
   - title: Publisering til einnsyn
-    jurl: /einnsyn_publisering_til_einnsyn.html
+    jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
 
   - title: Generelt om datamodell
-    jurl: /einnsyn_generelt_om_modellen.html
+    jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
 
   - title: Validering
-    jurl: /einnsyn_shackl.html
+    jurl: /docs/eInnsyn/datamodell/SHACL_validering
 
   - title: Eksempel
-    jurl: /einnsyn_eksempelfiler.html
+    jurl: /docs/eInnsyn/datamodell/eksempler
 
 - title: Publisering av møter
   folderitems:
 
   - title: Generelt om møtemodellen
-    jurl: /einnsyn_generelt_om_moetemodellen.html
+    jurl: /docs/eInnsyn/datamodell/publisering_moeter/generelt_om_moetemodellen
 
   - title: Utviding møteavlevering
-    jurl: /einnsyn_utvida_moeteavlevering.html
+    jurl: /docs/eInnsyn/datamodell/publisering_moeter/utviding_moetavlevering
 
 ###########################
 

@@ -1,6 +1,6 @@
 ---
 title: paaVegneAv
-permalink: paavegneav.html
+
 sidebar: begrep_sidebar
 ---
 

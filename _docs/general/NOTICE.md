@@ -1,6 +1,6 @@
 ---
 title: "Komponenter som er benyttet"
-permalink: NOTICE.html
+
 sidebar: main_sidebar
 product: general
 ---

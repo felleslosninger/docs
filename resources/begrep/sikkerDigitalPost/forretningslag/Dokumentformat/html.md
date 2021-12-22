@@ -2,7 +2,7 @@
 title: html  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
-permalink: sdp_html.html
+
 sidebar: dpi_sidebar
 ---
 

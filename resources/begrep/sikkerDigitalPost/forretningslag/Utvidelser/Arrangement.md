@@ -1,7 +1,7 @@
 ---
 
 title: Arrangement  
-permalink: sdp_arrangement.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -10,7 +10,7 @@ sidebar: dpi_sidebar
 | Mime-Type | application/vnd.difi.dpi.arrangement+xml |
 | Datatype | complexType |
 | Kommentar | Definerer et arrangement som presenteres for innbygger i postkassen |
-| XSD | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd) |
+| XSD | [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/arrangement.xml]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/arrangement.xml) |
     
 
 ### Attributter: Se xsd for mer informasjon om domenet.

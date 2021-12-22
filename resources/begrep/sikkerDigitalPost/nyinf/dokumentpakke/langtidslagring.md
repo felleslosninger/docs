@@ -1,6 +1,6 @@
 ---
 title: Langtidslagring
-permalink: dpi_langtidslagring.html
+
 sidebar: dpi_timo_sidebar
 ---
 

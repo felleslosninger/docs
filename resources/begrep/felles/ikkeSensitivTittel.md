@@ -1,6 +1,6 @@
 ---
 title: ikkeSensitivTittel
-permalink: 2ikkesensitivtittel.html
+
 sidebar:
 ---
 

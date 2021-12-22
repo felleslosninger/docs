@@ -1,7 +1,7 @@
 ---
 title: Digital postkasse
 description: Digital postkasse til innbyggere
-permalink: digipost_dokumentasjon.html
+
 product: Digital postkasse
 ---
 

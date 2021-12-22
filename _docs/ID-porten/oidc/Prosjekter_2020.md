@@ -1,7 +1,7 @@
 ---
 title: Prosjekter 2020
 description: Prosjekter 2020
-permalink: Prosjekter_2020.html
+
 sidebar: oidc
 ---
 

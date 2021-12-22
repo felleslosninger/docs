@@ -1,13 +1,13 @@
 ---
 title: HentPersonRespons
-permalink: ot_hentpersonrespons.html
+
 datatype: Metode
 sidebar: begrep_sidebar
 ---
 
 |---|---|
 | Term          | {{page.title}} |
-| Definisjon    | Webservice-respons på en [HentPersonForespoersel](ot_hentpersonforespoersel.html) |
+| Definisjon    | Webservice-respons på en [HentPersonForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonForespoersel) |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
 | Kommentar     | Respons gjelder innlogget person som accesstokenet er knyttet til. |

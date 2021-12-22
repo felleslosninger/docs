@@ -1,17 +1,17 @@
 ---
 
 title: VarslingfeiletKvittering  
-permalink: sdp_varslingfeiletkvittering.html
+
 sidebar: dpi_sidebar
 ---
 
 |---|---|
 | Term          | {{page.title}} |
-| Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt. |
+| Definisjon    | En [Kvitteringsmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/KvitteringsMelding) til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt. |
 | Kilde         | DIFI |
 | Kommentar     | Dersom Postkasse opplever problemer med å utføre varslingen som spesifisert i meldingen, skal Postkasse informere Avsender om dette ved å sende VarslingfeiletKvittering. Det skal sendes en kvittering for hver forekomst av en feilsituasjon i en spesifisert kanal. Meldinger som angir bruk av flere varslingskanaler kan dermed medføre flere VarslingfeiletKvitteringer. Varslingfeilet kvittering skal sendes seinest dagen etter at varslingen var bestilt. 
 
-Se [Varsel](../begrep/Varsler.md) for mer informasjon om bruken av varsel.
+Se [Varsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Varsler) for mer informasjon om bruken av varsel.
 
 Årsaken til at postkasseleverandør ikke klarer å sende en slik melding
 kan være en av følgende:
@@ -66,6 +66,6 @@ basert på en gjennomført vurdering.
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
 | Signature | 1..1 | [ds:Signature](https://www.oasis-open.org/committees/download.php/21256/wss-v1.1-spec-errata-os-SOAPMessageSecurity.htm#_Toc118717148), Enveloped XML signatur |
-| [beskrivelse](../../felles/beskrivelse.md) | 0..1 | [beskrivelse](../../felles/beskrivelse.md) |
+| [beskrivelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/beskrivelse) | 0..1 | [beskrivelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/beskrivelse) |
 | tidspunkt | 1..1 | [xs:dateTime](http://www.w3.org/TR/xmlschema-2/#dateTime) |
-| Varslingskanal | 1..1 | [Varslingskanal](varslingskanal.html) |
+| Varslingskanal | 1..1 | [Varslingskanal]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/varslingskanal) |

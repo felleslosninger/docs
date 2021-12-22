@@ -1,7 +1,7 @@
 ---
 title: Ansattporten backlog
 description: Ansattporten backlog
-permalink: Ansattporten_backlog.html
+
 sidebar: oidc
 ---
 

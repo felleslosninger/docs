@@ -1,6 +1,6 @@
 ---
 title: Ny transportinfrastruktur  
-permalink: dpi_nyinfrastruktur.html
+
 sidebar: dpi_timo_sidebar
 ---
 

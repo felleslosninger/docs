@@ -2,7 +2,7 @@
 title: well-known
 description: ID-portens well-known endepunkt
 summary: "Metadata om ID-porten er tilgjengelig på vårt .well-known-endepunkt"
-permalink: oidc_func_wellknown.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -27,4 +27,4 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  ID-portens signeri
 
 ## Maskinporten
 
-Merk at Maskinporten har sine egne metadata, som er [publisert her](maskinporten_func_wellknown.html)
+Merk at Maskinporten har sine egne metadata, som er [publisert her]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_wellknown)

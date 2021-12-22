@@ -1,6 +1,6 @@
 ---
 title: skjerming
-permalink: skjerming.html
+
 sidebar: begrep_sidebar
 ---
 

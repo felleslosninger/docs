@@ -2,7 +2,7 @@
 title: Using Postman with Maskinporten JWT-grants
 description: Using Postman with Maskinporten JWT-grants
 summary: "This is short how-to on using Postman towards APIs secured by Maskinporten, includingDigitaliseringsdirektoratets  self-service APIs.  A small standalone tool is used to generate the JWT-grant and exchange it for an access token.  This access token is then used as a bearer token in Postman."
-permalink: oidc_sample_jwtgrant_postman.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -19,16 +19,16 @@ The general process to use Postman towards an API secured with Maskinporten is:
 Download the JWT grant generator from [https://github.com/difi/jwt-grant-generator](https://github.com/difi/jwt-grant-generator).
 
 Create a keystore (JKS) holding your business certificate ("virksomhetssertifikat") keypair.  Both the certificate and private key should be included in the JKS.  The certificate should be the one use for signing (not non-repuditation).  The JKS  should look similar to the figure below in Keytool Explorer:
-![keytool screenshot](/images/idporten/oidc/oidc_sample_jwtgrant_postman-7b70f6e0.png).
+![keytool screenshot]({{site.baseurl}}/images/idporten/oidc/oidc_sample_jwtgrant_postman-7b70f6e0.png).
 
-Configure the properties file with correct settings,  ie passwords to the keystore and private key,  your clientid, and the ìdentifier of Maskinporten for the [environment you're using](oidc_func_wellknown.html).
+Configure the properties file with correct settings,  ie passwords to the keystore and private key,  your clientid, and the ìdentifier of Maskinporten for the [environment you're using]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_wellknown).
 
 Configure the properties file with the scope for the API you want to access (ForDigitaliseringsdirektoratets  self-service APIs, the relevant scopes are `idporten:dcr.write` and `idporten:dcr.read` for integration management, and `idporten:scopes.write` for API management).
 
 ## 2. Obtain access token
 Run the generator - it will generate a JWT,  send it to Maskinporten, and return an access token
 
-![run_generator screenshot](/images/idporten/oidc/oidc_sample_jwtgrant_postman-8e2e42d9.png)
+![run_generator screenshot]({{site.baseurl}}/images/idporten/oidc/oidc_sample_jwtgrant_postman-8e2e42d9.png)
 
 (note that on this platform, the padding character is escaped.)
 
@@ -42,15 +42,15 @@ More obscure errors are typical coming from using the wrong certificate, or tryi
 Open Postman and create a new Collection.  Set the Authorization type to `Bearer token` and paste in the access token returned by the generator (note that you might need to replace `\u00d3` with the equal sign  `=` on some platforms):
 
 
-![configure collection screenshot](/images/idporten/oidc/oidc_sample_jwtgrant_postman-828e7ff6.png)
+![configure collection screenshot]({{site.baseurl}}/images/idporten/oidc/oidc_sample_jwtgrant_postman-828e7ff6.png)
 
 
 Under the new Collection, create a new Request:
 
-![new request screenshot](/images/idporten/oidc/oidc_sample_jwtgrant_postman-4b37ef54.png)
+![new request screenshot]({{site.baseurl}}/images/idporten/oidc/oidc_sample_jwtgrant_postman-4b37ef54.png)
 
 Make sure the request inherits the authenication settings from the parent Collection:
 
-![request detail screenshot](/images/idporten/oidc/oidc_sample_jwtgrant_postman-630003c4.png)
+![request detail screenshot]({{site.baseurl}}/images/idporten/oidc/oidc_sample_jwtgrant_postman-630003c4.png)
 
 You shall now be able to use the API.

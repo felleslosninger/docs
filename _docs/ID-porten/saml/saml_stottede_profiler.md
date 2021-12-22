@@ -2,7 +2,7 @@
 title: Detaljert beskrivelse av støttede SAML2-profiler
 description: Detaljert beskrivelse av støttede SAML2-profiler
 summary: "Detaljert beskrivelse av støttede SAML2-profiler"
-permalink: saml_stottede_profiler.html
+
 sidebar: saml_idporten_sidebar
 product: ID-porten
 ---

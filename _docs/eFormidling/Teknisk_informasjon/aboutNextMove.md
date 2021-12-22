@@ -2,7 +2,7 @@
 title: eFormidling 2.0
 description: Beskrivelse av forretningsmeldinger
 summary: ""
-permalink: eformidling_nm_about.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
 ---

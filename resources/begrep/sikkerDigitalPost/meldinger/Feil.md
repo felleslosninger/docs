@@ -1,7 +1,7 @@
 ---
 
 title: Feil  
-permalink: sdp_feil.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -31,10 +31,10 @@ Dette kan være feil som f.eks:
   - Virkningsdato er satt for langt frem i tid
 
 Generelt vil dette være alle feil med
-[Digitalpostmelding](DigitalPostMelding.md) og
-[Dokumentpakken](../forretningslag/Dokumentpakke/index.md).
+[Digitalpostmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png) og
+[Dokumentpakken]({{site.baseurl}}/resources/begrep/ID-porten/index).
 
-Feilen må utbedres og ny [Digitalpostmelding](DigitalPostMelding.md) må
+Feilen må utbedres og ny [Digitalpostmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png) må
 sendes.
 
 #### Håndtering av server feil
@@ -57,5 +57,5 @@ feiltype kan ha følgende verdi:
 
 | Kodeverdi | Beskrivelse |
 | --- | --- |
-| KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender](../begrep/Avsender.md) må rette opp i årsaken til feilen |
-| SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender](../begrep/Avsender.md) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |
+| KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) må rette opp i årsaken til feilen |
+| SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |

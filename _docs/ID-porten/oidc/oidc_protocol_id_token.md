@@ -2,7 +2,7 @@
 title: "id_token from ID-porten"
 description: "This page documents the id_tokens issued by ID-porten ID-porten OIDC Provider"
 summary: 'his page documents the id_tokens issued by ID-porten ID-porten OIDC Provider'
-permalink: oidc_protocol_id_token.html
+
 sidebar: oidc
 product: ID-porten
 ---
@@ -10,7 +10,7 @@ product: ID-porten
 
 ## Request
 
-To request an *id_token*, use the [/token endpoint](oidc_protocol_token.html).
+To request an *id_token*, use the [/token endpoint]({{site.baseurl}}/docs/ID-porten/oidc/oidc_protocol_token).
 
 
 ## The id_token
@@ -68,7 +68,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values are `Level3` (i.e.  MinID was used) or `Level4` (other eIDs). The level must be validated by the client. |
 | auth_time | Timestamp indicating when the authentication was performed.  |
 | amr | "Authentication Method References" - Method of authentication. Possible values can be seen below.  The available values may change over time, so the client should not validate this value. |
-| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint](oidc_func_wellknown.html)|
+| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/ID-porten/oidc/oidc_func_wellknown)|
 | pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   This claim is not included if `no_pid` scope was requested or pre-registered on the client. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |

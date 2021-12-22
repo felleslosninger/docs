@@ -2,7 +2,7 @@
 title: Elma open data
 description: Elma open data
 summary: "ELMA provides open datasets containing information about participants and what profiles each participant is registered with."
-permalink: elma_open_data.html
+
 product: elma
 sidebar: elma_sidebar
 ---

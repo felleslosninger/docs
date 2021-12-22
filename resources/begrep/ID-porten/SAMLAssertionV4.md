@@ -1,7 +1,7 @@
 ---
 
 title: SAMLAssertionV4  
-permalink: IDport_SAMLAssertionV4.html
+
 sidebar:
 ---
 |---|---|

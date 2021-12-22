@@ -1,7 +1,7 @@
 ---
 
 title: Feilhåndteringsprosess  
-permalink: sdp_feilhandteringsprosess.html
+
 sidebar: dpi_sidebar
 ---
 
