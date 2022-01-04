@@ -9,8 +9,8 @@ sidebar: einnsyn_technical_sidebar
 
 ## Basiseksempel journalpostavlevering
 Eksempelfiler med kun nødvendige element
-* [Basis jsonvariant](/resources/einnsyn/eksempelfiler/basisfil_journalavlevering_jsonformat.jsonld)
-* [Basis kompakt jsonld](/resources/einnsyn/eksempelfiler/basisfil_journalavlevering_kompaktformat.jsonld)
+* [Basis kompakt jsonvariant](/resources/einnsyn/eksempelfiler/basisfil_journalavlevering_jsonformat.jsonld)
+* [Basis jsonld](/resources/einnsyn/eksempelfiler/basisfil_journalavlevering_kompaktformat.jsonld)
 
 ## Kryssreferanse
 Ekspempel fil med Kryssreferanse
@@ -20,8 +20,8 @@ Ekspempel fil med Kryssreferanse
 ## Utviding møteavlevering
 Eksempelfiler for utvida møteavlevering
 * [eksempelfil ekspandert json-ld variant (foretrekt avleveringsformat)](/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-ekspandert.jsonld)
-* [eksempelfil jsonvariant](/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-jsonvariant.jsonld)
-* [eksempelfil kompakt json-ld](/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-kompakt.jsonld)
+* [eksempelfil kompakt jsonvariant](/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-jsonvariant.jsonld)
+* [eksempelfil json-ld](/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-kompakt.jsonld)
 
 ---
 ## Administrativ enhet på fleire nivå
