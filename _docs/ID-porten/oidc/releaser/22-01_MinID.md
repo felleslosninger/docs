@@ -10,4 +10,4 @@ feilrettingar
 
 
 
-Planlagd produksjonssetting: Feb 14, 2022
+Planlagd produksjonssetting: Jan 17, 2022

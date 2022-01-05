@@ -12,15 +12,6 @@ Vedlikeholdsrelease av Maskinporten
 
 Planlagd produksjonssetting: Jan 25, 2022
 
-## Ny funksjonalitet:
-
-
-#### Innbygger-bunde tokens fra Maskinporten (Ready to ship)
-
-Maskinporten vil nå kunne utstede tokens som er begrenset til en enkelt innbygger. Dette kan være nyttig for API-tilbydere som ønsker å begrense risiko ved token på avveie.
-
-
-
 ## Forbetringar:
 
 #### Som maskinporten-klient skal eg kunne be om innbygger-bundne tokens (PBLEID-22951)
