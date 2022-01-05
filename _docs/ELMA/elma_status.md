@@ -7,6 +7,14 @@ product: elma
 sidebar: elma_sidebar
 ---
 
+## ELMA update 01.12.2021 (3.11.1)
+
+### Tasks
+```
+[MOVE-2617] - ELMA - Opprettelse av participant kan medføre Organization med null som title 
+[MOVE-2498] - ELMA - Støtte for utvidet adressering 
+```
+
 ## Elma update 16.09.2021 (3.10.0)
 
 ### Tasks
