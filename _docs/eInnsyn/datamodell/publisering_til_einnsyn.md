@@ -39,17 +39,18 @@ Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInn
 Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/eformidling_nm_message.html), uten payload på meldingen.
 Virksomheter som ønsker å motta kvitteringer må registrere dette i virksomhetsadministrasjonen på einnsyn.no.
 
-Ved direkteintegrasjon:
+**Ved direkteintegrasjon**:
 Systemet må tilrettelegges for å motta prosessen “response” og dokumenttype “einnsyn_kvittering”, i henhold til [eformidlingsdokumentasjonen](https://docs.digdir.no/eformidling_nm_message.html#einnsyn).
 Sannsynligvis er integrasjonen allerede satt opp for å hente innsynskrav, og kvitteringer hentes ned på samme måte, men med annen prosessidentifikator.
 Hva som skjer videre med kvitteringen blir opp til systemeier.
 
-Ved bruk av klient:
-Klienten (v.2.1.0 og nyere)kommer med funksjonalitet for å hente ned kvitteringsmeldinger, men den krever at miljøvariabelen “skalMottaKvitteringer” er satt til true (standard innstilling).
+**Ved bruk av klient**:
+Klienten (v.2.1.0 og nyere) kommer med funksjonalitet for å hente ned kvitteringsmeldinger, men den krever at miljøvariabelen “skalMottaKvitteringer” er satt til true (standard innstilling).
 Status for publisering logges i applikasjonsloggen, samt egen loggfil for kvitteringer med daglig rullering. Dagens loggfil heter kvitteringer.log, og får datostempel når det rulles over til neste dag.
 Plassering for kvitteringslogger settes i einnsyn-klient.xml (parameter “kvitteringer.loggmappe").
 
-Lesing av kvittering:
+**Lesing av kvittering**:
+
 Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i SBDH, i “status”, og er på json-format.
 
 ```
@@ -61,9 +62,9 @@ Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i 
         "publisert" : true,
         "publisertDatotid" : "2021-10-29T11:57:43.773",
         "enhetskode" : "HSK",
-        "enhetsnavn" : "Stovner helse- og sosialkomité",
-        "arkivskaperOrgnummer" : "874778842",
-        "arkivskapernavn" : "Bydel Stovner",
+        "enhetsnavn" : "Helse- og sosialkomite",
+        "arkivskaperOrgnummer" : "964968241",
+        "arkivskapernavn" : "Luster",
         "publisertAvOrgnummer" : "<org.nr som ble brukt til å sende inn data>",
         "dokumentId" : "http://data.einnsyn.no/f2345b26-ad94-4460-9399-39badeda762e"
       }",
