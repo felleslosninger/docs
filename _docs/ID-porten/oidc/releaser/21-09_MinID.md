@@ -12,12 +12,12 @@ Refaktorering av MinID for å tilpasses ny systemarkitektur-prosjektet.
 
 
 
-Planlagd produksjonssetting: Nov 9, 2021
+Releasen vart produksjonssatt Nov 30, 2021
 
 ## Ny funksjonalitet:
 
 
-#### App-basert innlogging i MinID (In development)
+#### App-basert innlogging i MinID (Shipped)
 
 En pilot der Digdir skal teste ut om det er hensiktsmessig å erstatte innlogging med SMS med en MinID-app istedet.
 
