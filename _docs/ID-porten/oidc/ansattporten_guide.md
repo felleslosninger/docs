@@ -15,7 +15,7 @@ Nøkkelfunksjonalitet er:
 - Integrasjoner må opprettes med `integration_type=ansattporten` i selvbetjening
 
 
-Ansattporten er p.t. i en pilot-status med redusert SLA, og det er foreløpig ikke besluttes om den skal bli en varig nasjonal fellesløsning.  Det er mulig for alle interesserte kunder av Digdir å tegne seg for deltager i piloet.
+Ansattporten er p.t. i en pilot-status med redusert SLA, og det er foreløpig ikke besluttes om den skal bli en varig nasjonal fellesløsning.  Ta kontakt om du har lyst å delta i piloten!
 
 
 ## Overordna beskrivelse av støtta brukerreiser
