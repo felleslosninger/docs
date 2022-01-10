@@ -136,7 +136,7 @@ eFormidling støtter å sende taushetsbelagt post via DPV. Denne meldingskategor
 Standard varslingstekst for taushetsbelagte meldinger er:
 > $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For å få tilgang til meldingen, er det nødvendig at noen i $reporteeName$ har fått tildelt rollen «Taushetsbelagt post fra det offentlige» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider.
 
-Denne varslingsteksten kan enten overstyres per melding i dens respektive forretningsmelding, eller generelt for alle meldinger ved å sette _difi.move.dpv.sensitive-notification-text_ til valgt tekst i Integrasjonspunktet. Teksten kan inneholde substitusjonsvariablene _$reporteeName$_ (mottakernavn) og _$reporterName$_ (avsendernavn).
+Denne varslingsteksten kan enten overstyres per melding i dens respektive forretningsmelding, eller generelt for alle meldinger ved å sette `difi.move.dpv.sensitive-notification-text` til valgt tekst i Integrasjonspunktet. Teksten kan inneholde substitusjonsvariablene `$reporteeName$` (mottakernavn) og `$reporterName$` (avsendernavn).
 
 ### Digital post til innbygger
 
