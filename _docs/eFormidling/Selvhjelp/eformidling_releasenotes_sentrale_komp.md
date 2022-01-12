@@ -5,6 +5,7 @@ permalink: eformidling_releasenotes_sentrale_komp.html
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
+(Endringer som er relevant for brukere av eFormidling)
 
 ## ServiceRegistry 2.2.0
 11.01.2022
