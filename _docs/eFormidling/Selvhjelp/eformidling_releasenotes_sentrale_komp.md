@@ -6,6 +6,19 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+## ServiceRegistry 2.2.0
+11.01.2022
+
+**Endringer**
+* MOVE-2192	Meir spesifikk feilmelding ved utgått sertifikat
+
+
+## ServiceRegistry 2.1.5
+10.11.2021
+
+**Endringer**
+* støtte for ny utgave av virksomhetssertifikatstandard (SEID v2) for Buypass-sertifikat.
+
 
 ## ServiceRegistry 2.1.4
 14.06.2021
