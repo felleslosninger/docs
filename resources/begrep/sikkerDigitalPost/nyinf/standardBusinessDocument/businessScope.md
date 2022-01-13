@@ -18,7 +18,7 @@ sidebar: dpi_timo_sidebar
 | ------------------ | ------------ | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type               | 1..1         | string | “ConversationId”                                                                                                                                                        |
 | instanceIdentifier | 1..1         | string - uuid | Unik identifikator for konversasjonen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Identifikator som binder meldinger og tilhørende kvitteringer/feilmeldinger sammen. Opprettet av Databehandler. Se format under. |
-| identifier         | 1..1         | string | Prosess meldingen tilhører i hennold til [meldingstypene](dpi_forretningsmelding_index.html|
+| identifier         | 1..1         | string | Prosess meldingen tilhører i hennold til [meldingstypene](dpi_forretningsmelding_index.html)|
 
 
 
