@@ -12,7 +12,7 @@ sidebar: eformidling_sidebar
 ### Hva er endret/nytt?
 
 * støtte for å legge fagsystem og versjon som er i bruk i eFormidling i user-agent header
-* Statuser for Avtalt-meldinger blir ikke sendt	
+* Retta feil der Statuser for Avtalt-meldinger blir ikke sendt	
 * Hikari max connection too high - consumes all available connections	
 * Missing default value for property difi.ssl.key-store-type
 * Logge utvalgte properties under oppstart i IP	
@@ -23,6 +23,7 @@ sidebar: eformidling_sidebar
 * Hindre integrasjonspunktet i å starte opp dersom kontakt med Eureka ikkje oppnås	
 * Flytte konfigurasjon fra Eureka til integrasjonspunktet	
 * Oppgradere integrasjonspunktet til Spring boot 2.6.2
+* Håndtering av meldinger uten vedlegg eller asic ved at /pop/<id> returnerer 204. 
 
 ## 2.2.6
 08.10.2021
