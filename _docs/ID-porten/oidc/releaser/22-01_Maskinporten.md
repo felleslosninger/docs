@@ -10,7 +10,7 @@ Vedlikeholdsrelease av Maskinporten
 
 
 
-Planlagd produksjonssetting: Jan 25, 2022
+Planlagd produksjonssetting: Feb 1, 2022
 
 ## Forbetringar:
 
