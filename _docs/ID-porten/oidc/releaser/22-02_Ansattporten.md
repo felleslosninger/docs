@@ -6,6 +6,8 @@ sidebar: oidc
 ---
 
 
+Enkel organisasjonsvelger for Altinn Autorisasjon
+
 
 
 Planlagd produksjonssetting: Feb 15, 2022
