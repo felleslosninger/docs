@@ -7,7 +7,7 @@ product: elma
 sidebar: elma_sidebar
 ---
 
-*Updated: 06.11.2020*
+*Updated: 20.01.2022*
 
 ### Terminology
 Here are some terms which will be used throughout this page.
@@ -54,8 +54,6 @@ To edit a participant you can press the "Edit participant"-button.
 
 ![](images/elma/sp/participant_edit.PNG)
 
-### Swedish participants
-Swedish participants are added by specifying the ICD 0007, followed by an organization number. For corporations (aktiebolag/aksjeselskap) a ten-numbered organization number is sufficient, whereas for a sole proprietorship (enskild firma/enkeltmannsforetak) a century prefix is required in order to verify the organization's identity. Valid century prefixes are 18, 19 and 20. The format is thus [18|19|20] + <organization-number>.
 
 ### Delete participant
 To delete a participant you should be standing in the same window as above. (Endpoints->Your endpoint). From here you can click delete on the selected participant to remove it from your endpoint. If you attempt to delete a participant from the Participants view(pressing the home button) you will get an error. This delete button will be removed in a future release as it's not meant to be there.
