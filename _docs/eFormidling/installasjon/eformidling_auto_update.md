@@ -205,10 +205,10 @@ Døme: No bør du ha desse filene i liggande i mappa.
 For å starte frå kommandolinja kan du bruke følgande kommando:
 
 **I produksjon**
-```java -jar kosmos-x.y.z.jar --spring.profiles.active=production```
+```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=production -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
 
 **I staging**
-```java -jar kosmos-x.y.z.jar --spring.profiles.active=staging```
+```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
 
 
 ## Starte i Linux
@@ -217,7 +217,7 @@ For å starte kan ein bruke samme kommando som over, men om ein ynskjer å start
 ![Filer for å køyre applikasjon i linux](/images/eformidling/kosmos-linux-filer.PNG)
 
 Døme:
-```java -jar kosmos-x.y.z.jar --spring.profiles.active=staging &```
+```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties &```
 
 Like etter at kommandoen er eksekvert vil du få returnert ein PID for prosessen. Denne kan nyttast om du treng å stoppe prosessen. Du vil også kunne finne den ved å bruke *htop* og sjå etter kommandoen, eller i *top* og stenge ned java prosessen. Integrasjonspunktet startar som eigen Java-prosess. 
 
