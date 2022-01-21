@@ -17,9 +17,9 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 > Om du ikkje har integrasjonspunktet så må desse settast opp også, sjå [integrasjonspunkt dokumentasjon.](https://docs.digdir.no/eformidling_properties_config.html)
 
 ## Laste ned
-> [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+> [Her kan du laste ned kosmos-1.2.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar)
 
-> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
+> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar.asc)
 
 ## Funksjonalitet
 KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
