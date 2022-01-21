@@ -16,7 +16,7 @@ Her finner du informasjon om testbrukere som kan benyttes for testing av ID-port
 
 Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten.  
 
-![TestID logo](/assets/testid.svg)
+![TestID logo](assets/testid.svg)
 
 TestID støtter innlogging med **syntetiske personidentifikator**  (du må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
 
@@ -47,4 +47,4 @@ Passord og engangskoder:
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
 
-Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no
+Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no for manuell behandling.
