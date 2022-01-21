@@ -1,29 +1,29 @@
 ---
 title: Konfigurering av integrasjonspunkt-local.properties
-description: Konfigurering av integrasjonspunkt-local.properties-filen.
-summary: "Konfigurering av integrasjonspunkt-local.properties-filen."
+description: Konfigurasjon vha. integrasjonspunkt-local.properties-filen.
+summary: "Konfigurasjon vha. integrasjonspunkt-local.properties-filen."
 permalink: eformidling_properties_config.html
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Denne delen av veiledningen er delt opp slik at du først finner litt generell informasjon før du deretter finner eksempler på integrasjonspunkt-local.properties oppsett spesifikt for den tjenesten du skal ta i bruk. 
+Denne delen av veiledningen er delt opp slik at du først finner generell informasjon, før du deretter finner eksempler på spesifikke innstillinger i integrasjonspunkt-local.properties for den tjenesten du skal ta i bruk. 
 
 ### Anbefalt rekkefølge for installasjon av eFormidling
 
-Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge.
+Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
 
 1. Minimumskonfigurasjon for å få starte integrasjonspunktet. 
 2. Konfigurere sak-arkivsystem til å prate med integrasjonspunktet (under DPO innstillinger i tabellen under)
-3. Konfigurere DPO innstillinger (brukernavn og passord) eller DPI.
-4. Konfigurere DPV/DPF innstillinger
+3. Konfigurere DPO-innstillinger (brukernavn og passord) eller DPI.
+4. Konfigurere DPV-/DPF-innstillinger
 
 Vi anbefaler dere å konfigurere DPO før DPV/DPF for å unngå å motta post fra svarUt til virksomhetens SvarInn innboks. Ved å konfigurere DPO først vil dere motta post i sak-arkivsystemet. Om ønsket kan en også sette opp DPI først.
 
-Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere har konfigurert slik at Digitaliseringsdirektoratet kan åpne opp tilganger. Ellers vil du få 400 Bad request feil. 
+Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere har konfigurert slik at Digitaliseringsdirektoratet kan åpne opp tilganger. Ellers vil du få "HTTP 400 Bad Request"-feil. 
 
 
-### Integrasjonspunkt-local.properties
+### integrasjonspunkt-local.properties
 
 Her laster du ned [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
@@ -39,26 +39,26 @@ c:/
    |-- integrasjonspunkt[versjon].jar
 ```
 
-> i integrasjonspunkt-local.properties-filen må du fjerne bortkommentering for den typen eformidling du skal bruke.
+> i integrasjonspunkt-local.properties-filen må du fjerne utkommentering av den typen eformidling du skal bruke.
 > keystore.alias er case-sensitivt
 
-**NB:** Benytt skråstrek (/) eller dobbel omvendt skråstrek (\\\\) som ressursdeler når dere angir filbaner.
+**NB:** Benytt skråstrek (/) eller dobbel omvendt skråstrek (\\\\) som ressurs-deler når dere angir filbaner.
 
-Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
+Eksempler på konfigurasjoner finner du lenger nede under hver enkelt tjeneste.
 
 
 ### eFormidling - Digital Post til virksomheter
 
-Når en virksomhet sender digital post til virksomheter kan virksomheten sende både til og motta fra andre virksomheter som har et integrasjonspunkt. Sende til virksomheter som ikke har. 
+Når en virksomhet sender digital post til virksomheter, kan virksomheten både sende til og motta fra andre virksomheter som har et integrasjonspunkt, samt sende til virksomheter som ikke har. 
 
 
 > Om du **ikke** bruker eInnsyn må du i tillegg legge inn ```difi.move.feature.enableDPE=false``` for å skru av eInnsyn. Ellers får du feilmeldinger.
 
-> **NB!** Sørg for å fjerne  alle whitespace bak hver linje.
+> **NB!** Sørg for å fjerne alle whitespace-karakterer på slutten av hver linje.
 
 ---
 
-Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle ut desse. Se etter DPV/DPO/DPF i tabellen under og legg inn innstillinger som kreves for denne tjenesten. Se under tabellen for unntak.
+Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties, og fylle ut desse. Se etter DPV/DPO/DPF i tabellen under og legg inn innstillinger som kreves for denne tjenesten. Se under tabellen for unntak.
 
   {% include eformidling/properties/jks_generell.html %} 
   
@@ -77,7 +77,7 @@ Når du skal ta i bruk DPF/DPO/DPV må du legge inn en rekke properties og fylle
   
 
 ### Valgfrie properties
-Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt over. Denne listen er ikke (per 01.10.21) helt utfyllende for alle properties, men vil bli utvidet: 
+Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt over. Denne listen er ikke  helt utfyllende (per 01.10.21) for alle properties, men vil bli utvidet: 
 
   {% include eformidling/properties/ip_properties.html %}
 
@@ -89,18 +89,18 @@ Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt o
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
 
 #### DPF
-Du trenger alle innstillinger utenom ```difi.move.fiks.inn.fallbackSenderOrgNr=```. Denne er for at eFormidling skal kunne videresende post fra SvarInn som kommer fra virksomheter som ikke sender med orgnummer i metadata. Her setter du et helt valgfritt og fiktivt organisasjonsnummer. AppReceipts tilbake til dette orgnummeret blir discardet og dermed ikke sendt. 
+Du trenger alle innstillinger utenom ```difi.move.fiks.inn.fallbackSenderOrgNr=```. Denne finnes for at eFormidling skal kunne videresende post fra SvarInn som kommer fra virksomheter som ikke sender med orgnummer i metadata. Her setter du et helt valgfritt og fiktivt organisasjonsnummer. AppReceipts tilbake til dette orgnummeret blir discardet og dermed ikke sendt. 
 
-Ved bruk av denne propertyen så vil all post se ut til å komme fra samme fiktive orgnummer, så her må arkivar lese i meldingen for å se hvem den ekte avsenderen er.
+Ved bruk av denne innstillingen vil all post se ut til å komme fra samme fiktive orgnummer, så her må arkivar lese i meldingen for å se hvem den ekte avsenderen er.
 
 #### DPO
 Av erfaring så er av og til ikke følgende properties brukt. Dette kommer an på sak-arkivsystemet og lokalt oppsett. ```difi.move.noarkSystem.username``` , ```difi.move.noarkSystem.password=```, ```difi.move.noarkSystem.domain=``` 
 
 #### DPV og DPF
-Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet til integrasjonspunktet for DPV- og DPF-forsendelser så **må** DPO være aktivert. ```difi.move.feature.enableDPO=true```. Altså for å få feks  ```difi.move.noarkSystem.endpointURL``` til å fungere
+Ikke et unntak, men også viktig å merke seg: For å koble sak-arkivsystemet til integrasjonspunktet for DPV- og DPF-forsendelser så **må** DPO være aktivert. ```difi.move.feature.enableDPO=true```. Altså for å få feks  ```difi.move.noarkSystem.endpointURL``` til å fungere.
 
 #### DPI
-```difi.move.feature.enableDPI=true``` Må settes til true om du skal bruke DPI. Ingen andre DPI-spesifikke properties kreves, men en har mulighet til å overstyre ved å sette de. 
+```difi.move.feature.enableDPI=true``` Må settes til true om du skal bruke DPI. Ingen andre DPI-spesifikke properties kreves, men en har mulighet til å overstyre standard-innstillingene.
 
 **NB!** En forutsetning for å bruke DPI gjennom eFormidling er at sak/arkiv/fagsystem er integrert mot eFormidling 2.0 grensesnittet. Spør din leverandør om dette. Les mer [her.](https://difi.github.io/felleslosninger/eformidling_nm_about.html)
 
@@ -124,7 +124,7 @@ Integrasjonspunktet støtter HashiCorp Vault for innlesing av properties og file
 |vault.path|secret/move|Sti til Key/Value secrets|
 |vault.resource-path|secret/resource|Sti til secrets som vil lastes som filer, må være Base64-encoded. Disse kan referes i properties med prefix "vault:"|
 
-#### Eksempelkonfigurasjon
+#### Eksempel på konfigurasjon
 Følgende eksempel viser hvordan man kan benytte vault til å referere keystore og passord.
 
 
