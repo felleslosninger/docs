@@ -120,9 +120,20 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 
 \* dokumenttypen er forbeholdt kontrollmeldinger i infrastrukturen og skal ikke brukes av integrasjoner
 
-
+Forretningsmelding _arkivmelding_:
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpo.json %}
+```
+Forretningsmelding _arkivmelding\_kvittering_:
+```json
+"arkivmelding_kvittering": {
+  "receiptType" : "OK",
+  "relatedToMessageId" : "5f57494f-9ce7-47ec-853d-f212a65b3dbe",
+  "messages" : [ {
+    "code" : "Recno",
+    "text" : "315890"
+  } ]
+}
 ```
 
 ### Taushetsbelagt DPV
