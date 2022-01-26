@@ -11,7 +11,7 @@ product: ID-porten
 
 NB! Sertifikatet for ID-porten i PROD går ut 20.03.2022. Vi ber alle kunder som bruker SAML laste ned nye metadata for ID-porten v5 og melde tilbake til servicedesk@digdir.no når dette er gjort.
 
-Les mer på [Samarbeidsportalen](https://samarbeid.digdir.no)
+Det vil komme mer informasjon på [Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/sertifikatbyte-id-porten-saml-i-produksjon/1117)
 
 * [Metadata for ID-porten produksjon (ny fra 24.01.2022)](assets\idporten.difi.no-v5-prod.zip)
 * [Metadata for ID-porten verifikasjon 1 (ny frå 15.03.2019) ](assets\idporten.difi.no-v4-ver1.zip)
