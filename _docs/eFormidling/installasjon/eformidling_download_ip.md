@@ -11,9 +11,10 @@ sidebar: eformidling_sidebar
 ### Siste versjon av integrasjonspunktet
  
 
-### [Integrasjonspunktet 2.2.6 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.6/integrasjonspunkt-2.2.6.jar)
+### [Integrasjonspunktet 2.3.0 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.3.0/integrasjonspunkt-2.3.0.jar)
 
-### [Integrasjonspunktet 2.2.6 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.6/images/sha256-2b462e7d699b2dfbc0495e58c2dc54cb289d641611ae8f48240620594e769153?context=explore)
+### [Integrasjonspunktet 2.3.0 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.3.0/images/sha256-31ae69eb8d2dfa7744d21e5cbfe861071a285711bec7d34817a230a092724b2f?context=explore)
+
 
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)

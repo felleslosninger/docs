@@ -6,6 +6,25 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+## 2.3.0
+17.01.2022
+
+### Hva er endret/nytt?
+
+* støtte for å legge fagsystem og versjon som er i bruk i eFormidling i user-agent header
+* Retta feil der Statuser for Avtalt-meldinger blir ikke sendt	
+* Retta feil der Hikari konsumerte alle tilgjengelige connections til database	
+* Missing default value for property difi.ssl.key-store-type
+* Logge utvalgte properties under oppstart i IP	
+* Støtte for å sende meldinger over DPO for samme organisasjon fra fleire integrasjonspunkt	
+* Justere sending av taushetsbelagt/sensistiv post til Altinn	
+* Ryddet i xml/ws-biblioteker	
+* Legg inn document_identifier i status logginga	
+* Hindre integrasjonspunktet i å starte opp dersom kontakt med Eureka ikkje oppnås	
+* Flyttet konfigurasjon fra Eureka til integrasjonspunktet	
+* Oppgradert integrasjonspunktet til Spring boot 2.6.2
+* Håndtering av meldinger uten vedlegg eller asic ved at /api/messages/in/pop/<id> returnerer 204. 
+
 ## 2.2.6
 08.10.2021
 

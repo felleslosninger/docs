@@ -9,7 +9,7 @@ sidebar: einnsyn_technical_sidebar
 eInnsyn nyttar eFormidling til transport av data mellom innhaldsleverandørar og eInnsyn.
 Meldingane til eInnsyn er basert på Noark, men konvertert til json-ld som er ei RDF-serialisering. Datafelta, klassar og koplingane mellom dei er i stor grad det same, men formatet er ulikt
 
-eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen](https://difi.github.io/felleslosninger/eformidling_nm_message.html#einnsyn).
+eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen](https://docs.digdir.no/eformidling_nm_message.html#einnsyn).
 
 Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsonld.
 
@@ -38,3 +38,44 @@ Det er mogleg å fulltekstpublisere kun delar av dokumenta som er tilknytta ein 
 For å få til dette så kan ein avlevere *dokumentbeskrivelsen* på alle dokument ein vil vise at eksistere. For dei som skal fulltekstpubliserast, så følger også med *dokumentobjektet* som ligg under dokumentbeskrivelsen.
 
 ![Struktur fulltekspublisering](/images/einnsyn/struktur_fulltekstpublisering.png)
+
+### Kvittering på publisert data
+Alle som bruker integrasjonspunkt og kan motta innsynskrav, kan også hente ned kvitteringsmeldinger for publiseringer.
+Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInnsyn.
+Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/eformidling_nm_message.html), uten payload på meldingen.
+Virksomheter som ønsker å motta kvitteringer må registrere dette i virksomhetsadministrasjonen på einnsyn.no.
+
+**Ved direkteintegrasjon**:
+
+Systemet må tilrettelegges for å motta prosessen “response” og dokumenttype “einnsyn_kvittering”, i henhold til [eformidlingsdokumentasjonen](https://docs.digdir.no/eformidling_nm_message.html#einnsyn).
+Sannsynligvis er integrasjonen allerede satt opp for å hente innsynskrav, og kvitteringer hentes ned på samme måte, men med annen prosessidentifikator.
+Hva som skjer videre med kvitteringen blir opp til systemeier.
+
+**Ved bruk av klient**:
+
+Klienten (v.2.1.0 og nyere) kommer med funksjonalitet for å hente ned kvitteringsmeldinger, men den krever at miljøvariabelen “skalMottaKvitteringer” er satt til true (standard innstilling).
+Status for publisering logges i applikasjonsloggen, samt egen loggfil for kvitteringer med daglig rullering. Dagens loggfil heter kvitteringer.log, og får datostempel når det rulles over til neste dag.
+Plassering for kvitteringslogger settes i einnsyn-klient.xml (parameter “kvitteringer.loggmappe").
+
+**Lesing av kvittering**:
+
+Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i SBDH, i “status”, og er på json-format.
+
+```
+  "einnsyn_kvittering" : {
+    "sikkerhetsnivaa" : null,
+    "hoveddokument" : null,
+    "dokumentId" : "http://data.einnsyn.no/ff530c93-5ea7-48d4-abbb-c62b284192f3",
+    "status" : "{
+        "publisert" : true,
+        "publisertDatotid" : "2021-10-29T11:57:43.773",
+        "enhetskode" : "HSK",
+        "enhetsnavn" : "Helse- og sosialkomite",
+        "arkivskaperOrgnummer" : "964968241",
+        "arkivskapernavn" : "Luster",
+        "publisertAvOrgnummer" : "<org.nr som ble brukt til å sende inn data>",
+        "dokumentId" : "http://data.einnsyn.no/f2345b26-ad94-4460-9399-39badeda762e"
+      }",
+    "referanseType" : "publisering"
+  }
+```  

@@ -6,7 +6,7 @@ sidebar: dpi_timo_sidebar
 
 ![](/images/dpi/underarbeide.png)
 
-Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
+Siden innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 
 ### Forettningsmelding schema
 - [Digital](schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json)
