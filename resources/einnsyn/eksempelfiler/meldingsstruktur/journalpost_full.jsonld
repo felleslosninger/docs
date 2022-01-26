@@ -1,0 +1,269 @@
+{
+  "@graph" : [ {
+    "@id" : "http://data.einnsyn.no/32419302-0687-40db-b0c8-9c09d9f2f599",
+    "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkivdel" ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivdelstatus" : [ {
+      "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/aktivPeriode"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetAv" : [ {
+      "@value" : "Ukjent"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "2999-12-31T23:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv" : [ {
+      "@value" : "Ukjent"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "1989-12-31T23:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent" : [ {
+      "@id" : "http://data.einnsyn.no/a3893b25-63a6-4f38-ad9d-973fe39e7ed5"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID" : [ {
+      "@value" : "32419302-0687-40db-b0c8-9c09d9f2f599"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel" : [ {
+      "@value" : "eInnsyn-Moeter"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST" : [ {
+      "@list" : [ {
+        "@value" : "eInnsyn-Moeter"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV" : [ {
+      "@value" : "eInnsyn-Moeter"
+    } ]
+  }, {
+    "@id" : "http://data.einnsyn.no/4579ef4f-8c8d-4900-a70e-8dbc8e5eba49",
+    "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Korrespondansepart" ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn" : [ {
+      "@value" : "Ola Normann"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn_LIST" : [ {
+      "@list" : [ {
+        "@value" : "Ola Normann"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepartNavn_SENSITIV" : [ {
+      "@value" : "Ola Normann"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondanseparttype" : [ {
+      "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/mottaker"
+    } ]
+  }, {
+    "@id" : "http://data.einnsyn.no/a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+    "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkiv" ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivstatus" : [ {
+      "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettet"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetAv" : [ {
+      "@value" : "Ukjent"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "2099-12-31T23:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv" : [ {
+      "@value" : "eInnsyn"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "1989-12-31T23:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID" : [ {
+      "@value" : "a3893b25-63a6-4f38-ad9d-973fe39e7ed5"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel" : [ {
+      "@value" : "eInnsyn arkiv for virksomhet 976819837"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST" : [ {
+      "@list" : [ {
+        "@value" : "eInnsyn arkiv for virksomhet 976819837"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV" : [ {
+      "@value" : "eInnsyn arkiv for virksomhet 976819837"
+    } ]
+  }, {
+    "@id" : "http://data.einnsyn.no/c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7",
+    "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost" ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivertAv" : [ {
+      "@value" : "N/A"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivertDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "2018-04-18T22:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaper" : [ {
+      "@id" : "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperNavn" : [ {
+      "@value" : "Direktoratet for forvaltning og IKT"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperSorteringNavn" : [ {
+      "@value" : "Direktoratet for forvaltning og IKT"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperTransitive" : [ {
+      "@id" : "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+    }, {
+      "@id" : "http://data.einnsyn.no/virksomhet/toppnodeStat"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalaar" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2030"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journaldato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#date",
+      "@value" : "2018-04-19"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalpostnummer" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "1"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalposttype" : [ {
+      "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksframlegg"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalsekvensnummer" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "9999"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalstatus" : [ {
+      "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/journalført"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/korrespondansepart" : [ {
+      "@id" : "http://data.einnsyn.no/4579ef4f-8c8d-4900-a70e-8dbc8e5eba49"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel" : [ {
+      "@value" : "Saksframlegg"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST" : [ {
+      "@list" : [ {
+        "@value" : "Saksframlegg"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV" : [ {
+      "@value" : "Saksframlegg"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv" : [ {
+      "@value" : "Ola Normann"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "2018-04-18T22:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent" : [ {
+      "@id" : "http://data.einnsyn.no/e9e9aff9-660d-43dd-9231-f50ef529b8e1"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/registreringsID" : [ {
+      "@value" : "c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID" : [ {
+      "@value" : "c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel" : [ {
+      "@value" : "Saksframlegg"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST" : [ {
+      "@list" : [ {
+        "@value" : "Saksframlegg"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV" : [ {
+      "@value" : "Saksframlegg"
+    } ]
+  }, {
+    "@id" : "http://data.einnsyn.no/e9e9aff9-660d-43dd-9231-f50ef529b8e1",
+    "@type" : [ "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Saksmappe" ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/administrativEnhet" : [ {
+      "@value" : "976819837"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaper" : [ {
+      "@id" : "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperNavn" : [ {
+      "@value" : "Direktoratet for forvaltning og IKT"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperSorteringNavn" : [ {
+      "@value" : "Direktoratet for forvaltning og IKT"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperTransitive" : [ {
+      "@id" : "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+    }, {
+      "@id" : "http://data.einnsyn.no/virksomhet/toppnodeStat"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetAv" : [ {
+      "@value" : "N/A"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "2018-04-18T22:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/mappeID" : [ {
+      "@value" : "e9e9aff9-660d-43dd-9231-f50ef529b8e1"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel" : [ {
+      "@value" : "Eksempel arkivsak"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST" : [ {
+      "@list" : [ {
+        "@value" : "Eksempel arkivsak"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV" : [ {
+      "@value" : "Eksempel arkivsak"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv" : [ {
+      "@value" : "Ola Normann"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime",
+      "@value" : "2018-04-18T22:00:00Z"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent" : [ {
+      "@id" : "http://data.einnsyn.no/32419302-0687-40db-b0c8-9c09d9f2f599"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksaar" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "2030"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig" : [ {
+      "@value" : "Ola Normann"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig_LIST" : [ {
+      "@list" : [ {
+        "@value" : "Ola Normann"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksansvarlig_SENSITIV" : [ {
+      "@value" : "Ola Normann"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksdato" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#date",
+      "@value" : "2018-04-19+02:00"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/sakssekvensnummer" : [ {
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+      "@value" : "9000"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksstatus" : [ {
+      "@id" : "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksstatus_avsluttet"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID" : [ {
+      "@value" : "e9e9aff9-660d-43dd-9231-f50ef529b8e1"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel" : [ {
+      "@value" : "Eksempel arkivsak"
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST" : [ {
+      "@list" : [ {
+        "@value" : "Eksempel arkivsak"
+      } ]
+    } ],
+    "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV" : [ {
+      "@value" : "Eksempel arkivsak"
+    } ]
+  } ]
+}

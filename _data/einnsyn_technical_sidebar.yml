@@ -13,8 +13,12 @@ folders:
   - title: Validering
     jurl: /einnsyn_shackl.html
 
+  - title: Kodelister
+    jurl: /einnsyn_publisering_kodelister.html
+
   - title: Eksempel
     jurl: /einnsyn_eksempelfiler.html
+
 
 - title: Publisering av møter
   folderitems:

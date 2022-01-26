@@ -1,0 +1,413 @@
+{
+  "@graph": [
+    {
+      "@id": "http://data.einnsyn.no/21e81ac8-d1e2-4620-aa4d-f7a7df8e164e",
+      "@type": [
+        "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Møtesaksregistrering"
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivertAv": [
+        {
+          "@value": "N/A"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivertDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2018-04-18T22:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaper": [
+        {
+          "@id": "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperNavn": [
+        {
+          "@value": "Direktoratet for forvaltning og IKT"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperSorteringNavn": [
+        {
+          "@value": "Direktoratet for forvaltning og IKT"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperTransitive": [
+        {
+          "@id": "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+        },
+        {
+          "@id": "http://data.einnsyn.no/virksomhet/toppnodeStat"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentmedium": [
+        {
+          "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/elektroniskArkiv"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møteregistreringsstatus": [
+        {
+          "@value": "Behandlet i møte"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesakssekvensnummer": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#integer",
+          "@value": "1"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesakstype": [
+        {
+          "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/politiskSak"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/møtesaksår": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#integer",
+          "@value": "2030"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": [
+        {
+          "@value": "Eksempel Politisk sak/Møtesaksregistrering"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "Eksempel Politisk sak/Møtesaksregistrering"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": [
+        {
+          "@value": "Eksempel Politisk sak/Møtesaksregistrering"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv": [
+        {
+          "@value": "N/A"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2018-04-18T22:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": [
+        {
+          "@id": "http://data.einnsyn.no/8f63e8f9-70f2-4ddd-99eb-257082c885a8"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/referanseTilMøtesak": [
+        {
+          "@id": "http://data.einnsyn.no/c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/registreringsID": [
+        {
+          "@value": "1031/2018"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksbehandler": [
+        {
+          "@value": "Ola Normann"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksbehandler_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "Ola Normann"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/saksbehandler_SENSITIV": [
+        {
+          "@value": "Ola Normann"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": [
+        {
+          "@value": "21e81ac8-d1e2-4620-aa4d-f7a7df8e164e"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": [
+        {
+          "@value": "Eksempel Politisk sak/Møtesaksregistrering"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "Eksempel Politisk sak/Møtesaksregistrering"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": [
+        {
+          "@value": "Eksempel Politisk sak/Møtesaksregistrering"
+        }
+      ]
+    },
+    {
+      "@id": "http://data.einnsyn.no/32419302-0687-40db-b0c8-9c09d9f2f599",
+      "@type": [
+        "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkivdel"
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivdelstatus": [
+        {
+          "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/aktivPeriode"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetAv": [
+        {
+          "@value": "Ukjent"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2999-12-31T23:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv": [
+        {
+          "@value": "Ukjent"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "1989-12-31T23:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": [
+        {
+          "@id": "http://data.einnsyn.no/a3893b25-63a6-4f38-ad9d-973fe39e7ed5"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": [
+        {
+          "@value": "32419302-0687-40db-b0c8-9c09d9f2f599"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": [
+        {
+          "@value": "eInnsyn-Moeter"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "eInnsyn-Moeter"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": [
+        {
+          "@value": "eInnsyn-Moeter"
+        }
+      ]
+    },
+    {
+      "@id": "http://data.einnsyn.no/8f63e8f9-70f2-4ddd-99eb-257082c885a8",
+      "@type": [
+        "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Moetemappe"
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaper": [
+        {
+          "@id": "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperNavn": [
+        {
+          "@value": "Direktoratet for forvaltning og IKT"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperSorteringNavn": [
+        {
+          "@value": "Direktoratet for forvaltning og IKT"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivskaperTransitive": [
+        {
+          "@id": "http://data.einnsyn.no/virksomhet/oepeksport_content_provider_196"
+        },
+        {
+          "@id": "http://data.einnsyn.no/virksomhet/toppnodeStat"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetAv": [
+        {
+          "@value": "N/A"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2018-04-18T22:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/beskrivelse": [
+        {
+          "@value": "Eksempelmøte med utvalgskodemapping"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/dokumentmedium": [
+        {
+          "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/elektroniskArkiv"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/mappeID": [
+        {
+          "@value": "8f63e8f9-70f2-4ddd-99eb-257082c885a8"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetedato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2018-04-19T08:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetenummer": [
+        {
+          "@value": "N/A"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/moetested": [
+        {
+          "@value": "Byrådets møterom"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel": [
+        {
+          "@value": "Byrådsmøte"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "Byrådsmøte"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/offentligTittel_SENSITIV": [
+        {
+          "@value": "Byrådsmøte"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv": [
+        {
+          "@value": "N/A"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2018-04-18T22:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent": [
+        {
+          "@id": "http://data.einnsyn.no/32419302-0687-40db-b0c8-9c09d9f2f599"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": [
+        {
+          "@value": "8f63e8f9-70f2-4ddd-99eb-257082c885a8"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": [
+        {
+          "@value": "Eksempelmøte med utvalgskodemapping"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "Eksempelmøte med utvalgskodemapping"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": [
+        {
+          "@value": "Eksempelmøte med utvalgskodemapping"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/utvalg": [
+        {
+          "@value": "Kommunestyret"
+        }
+      ]
+    },
+    {
+      "@id": "http://data.einnsyn.no/a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "@type": [
+        "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Arkiv"
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/arkivstatus": [
+        {
+          "@id": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettet"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetAv": [
+        {
+          "@value": "Ukjent"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/avsluttetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "2099-12-31T23:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetAv": [
+        {
+          "@value": "eInnsyn"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/opprettetDato": [
+        {
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "@value": "1989-12-31T23:00:00Z"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/systemID": [
+        {
+          "@value": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel": [
+        {
+          "@value": "eInnsyn arkiv for virksomhet 976819837"
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_LIST": [
+        {
+          "@list": [
+            {
+              "@value": "eInnsyn arkiv for virksomhet 976819837"
+            }
+          ]
+        }
+      ],
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/tittel_SENSITIV": [
+        {
+          "@value": "eInnsyn arkiv for virksomhet 976819837"
+        }
+      ]
+    }
+  ]
+}
