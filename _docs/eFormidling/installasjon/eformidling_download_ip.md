@@ -11,7 +11,7 @@ sidebar: eformidling_sidebar
 ### Siste versjon av integrasjonspunktet
  
 
-### [Integrasjonspunktet 2.3.0 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.3.2/integrasjonspunkt-2.3.2.jar)
+### [Integrasjonspunktet 2.3.2 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.3.2/integrasjonspunkt-2.3.2.jar)
 
 ### [Integrasjonspunktet 2.3.2 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.3.2/images/sha256-bff3b8dac0df2f8f60849e67eb37cc6195b2fb3b35b3ea2b562a75df95da70da?context=explore)
 
