@@ -10,7 +10,7 @@ sidebar: eformidling_sidebar
 ## 2.3.2
 27.01.2022
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
 * Bugfix 2.3.1
 
@@ -19,7 +19,7 @@ sidebar: eformidling_sidebar
 ## 2.3.1
 26.01.2022
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
 * støtte for å spesifisere forsendelsestype for KS SvarUt på meldingsnivå
 
@@ -28,7 +28,7 @@ sidebar: eformidling_sidebar
 ## 2.3.0
 17.01.2022
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
 * støtte for å legge fagsystem og versjon som er i bruk i eFormidling i user-agent header
 * Retta feil der Statuser for Avtalt-meldinger blir ikke sendt	
@@ -49,46 +49,44 @@ sidebar: eformidling_sidebar
 ## 2.2.6
 08.10.2021
 
-**Feilrettinger**
-- Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
+**Funksjonalitet/feilretting**
+* Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
 
 ## 2.2.5
 01.10.21
 
 **Features**
 
-- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+* Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
 
 **Feilrettinger**
 
-- Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
-- rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
-- Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
-- PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
-- Tilkoblinger til DPV har nå begrenset levetid. 
+* Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
+* rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
+* Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
+* PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
+* Tilkoblinger til DPV har nå begrenset levetid. 
 
 
 ## 2.2.4
 20.08.21
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
-- Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
+* Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
 
 
 
 ## 2.2.3
 28.06.21
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
-**Features**
-
-- Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
-- Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
-- Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
-- Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
-- Added curl to Docker image.
+* Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
+* Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
+* Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
+* Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
+* Added curl to Docker image.
 
 ***
 
