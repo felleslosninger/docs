@@ -6,6 +6,25 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+
+## 2.3.2
+27.01.2022
+
+### Hva er endret/nytt?
+
+* Bugfix 2.3.1
+
+***
+
+## 2.3.1
+26.01.2022
+
+### Hva er endret/nytt?
+
+* støtte for å spesifisere forsendelsestype for KS SvarUt på meldingsnivå
+
+***
+
 ## 2.3.0
 17.01.2022
 
@@ -25,6 +44,8 @@ sidebar: eformidling_sidebar
 * Oppgradert integrasjonspunktet til Spring boot 2.6.2
 * Håndtering av meldinger uten vedlegg eller asic ved at /api/messages/in/pop/<id> returnerer 204. 
 
+***
+	
 ## 2.2.6
 08.10.2021
 
