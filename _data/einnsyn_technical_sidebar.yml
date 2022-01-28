@@ -1,6 +1,30 @@
 sidebarTitle: eInnsyn-datamodell
 
 folders:
+- title: eInnsyn-klient
+  folderitems:
+
+  - title: Forutsetning for installasjon og verktøy
+    jurl: /einnsyn_forutsetninger.html
+
+  - title: Konfigurasjon av einnsyn-klient.xml
+    jurl: /einnsyn_konfigurasjon.html
+
+  - title: Installere einnsyn-klient som Windows service
+    jurl: /einnsyn_install_tjeneste.html
+
+  - title: Teste og verifisere installasjon
+    jurl: einnsyn_test_verifikasjon.html
+
+  - title: Oppdatere einnsyn-klient
+    jurl: /einnsyn_oppdatere_tjeneste.html
+
+  - title: Flere einnsyn-klienter på samme server
+    jurl: /einnsyn_flere_klienter.html
+
+  - title: Innsynskrav og e-postoppsett
+    jurl: /einnsyn_innsynskrav.html
+
 - title: eInnsyn
   folderitems:
 
