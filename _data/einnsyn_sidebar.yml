@@ -1,7 +1,7 @@
 sidebarTitle: eInnsyn-klient
 
 folders:
-- title: eInnsyn
+- title: eInnsyn-klient
   folderitems:
 
   - title: Forutsetning for installasjon og verktøy
@@ -19,17 +19,39 @@ folders:
   - title: Oppdatere einnsyn-klient
     jurl: /einnsyn_oppdatere_tjeneste.html
 
-- title: Avansert - ekstra innstillinger
-  folderitems:
-
   - title: Flere einnsyn-klienter på samme server
     jurl: /einnsyn_flere_klienter.html
 
   - title: Innsynskrav og e-postoppsett
     jurl: /einnsyn_innsynskrav.html
 
-- title: Datamodellen
-  jurl: /einnsyn_generelt_om_modellen.html
+- title: eInnsyn
+  folderitems:
+
+  - title: Publisering til einnsyn
+    jurl: /einnsyn_publisering_til_einnsyn.html
+
+  - title: Generelt om datamodell
+    jurl: /einnsyn_generelt_om_modellen.html
+
+  - title: Validering
+    jurl: /einnsyn_shackl.html
+
+  - title: Kodelister
+    jurl: /einnsyn_publisering_kodelister.html
+
+  - title: Eksempel
+    jurl: /einnsyn_eksempelfiler.html
+
+
+- title: Publisering av møter
+  folderitems:
+
+  - title: Generelt om møtemodellen
+    jurl: /einnsyn_generelt_om_moetemodellen.html
+
+  - title: Utviding møteavlevering
+    jurl: /einnsyn_utvida_moeteavlevering.html
 
 ###########################
 
