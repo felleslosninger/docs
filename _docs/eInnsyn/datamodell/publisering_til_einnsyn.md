@@ -25,7 +25,7 @@ Publisering til eInnsyn kan gjøres på to måter:
 **Ved direkteintegrasjon med Json-ld**
 ID på klasser/typer (journalpost, saksmappe, møtemappe, møtedokumentregistrering, møtesaksregistrering, dokumentbeskrivelse og dokumentobjekt) kan defineres av avleverende system. Anbefalingen fra eInnsyn er at UUID som benyttes i URI er samme som finnes i avleverende system fra før. Dette for å unngå duplikat og kunne støtte både slettemeldinger og innsynskrav versjon 2 (order-v2.xml) fremover. SystemID i Noark v.5+ anbefales der den er av UUID versjon 1,2 eller 4.
 Namespace i URI må gjerne settes likt for alle klasser/typer. Ved bruk av Json-ld compact versjon gjøres dette enkelt ved "base"-verdien i context:
-```
+```json
 {
   "@context": {
     "@base": "http://data_test.einnsyn.no/",
@@ -52,6 +52,7 @@ Ved bruk av extended json-ld format vil eksempelet over se slik ut:
 
 **Ved bruk av klient og Noark 5 xml**
 Klienten vil konvertere til Jsonld og ID vil bli generert utfra SystemID der det er oppgitt, ellers vil den generere egne uuid’er. Namespace settes likt på alle typer/klasser (http://data.einnsyn.no/noark5/)
+
 **Ved bruk av klient og Noark 4 xml**
 Klienten konverterer til jsonld og ID blir generert utfra orgnr, sakssekvensnummer/saksaar og journalnummer/journalaar. Uuid blir generert på dokumentbeskrivelser/dokumentobjekter.  Namespace settes likt på alle typer/klasser (http://data.einnsyn.no/noark4/)
 
