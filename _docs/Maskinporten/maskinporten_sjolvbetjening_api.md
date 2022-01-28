@@ -116,7 +116,7 @@ Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html.](https://difi.github.io/felleslosninger/oidc_api_admin.html)
+For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [oidc_api_admin.html.](oidc_api_admin.html)
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 

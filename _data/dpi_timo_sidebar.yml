@@ -99,7 +99,7 @@ folders:
       - title: LeveringsKvittering
         jurl: /dpi_leveringskvittering.html 
       - title: AapningsKvittering
-        jurl: dpi_aapningskvittering.html  
+        jurl: /dpi_aapningskvittering.html  
       - title: VarslingfeiletKvittering
         jurl: /dpi_varslingfeiletkvittering.html 
       - title: MottaksKvittering

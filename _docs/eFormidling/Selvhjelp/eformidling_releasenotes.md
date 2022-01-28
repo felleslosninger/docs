@@ -1,55 +1,92 @@
 ---
 title: Endringslogg integrasjonspunktet
 description: Endringslogg for integrasjonspunktet
-sidebar: eformidling
 permalink: eformidling_releasenotes.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
+
+## 2.3.2
+27.01.2022
+
+**Funksjonalitet/feilretting**
+
+* Bugfix 2.3.1
+
+***
+
+## 2.3.1
+26.01.2022
+
+**Funksjonalitet/feilretting**
+
+* støtte for å spesifisere forsendelsestype for KS SvarUt på meldingsnivå
+
+***
+
+## 2.3.0
+17.01.2022
+
+**Funksjonalitet/feilretting**
+
+* støtte for å legge fagsystem og versjon som er i bruk i eFormidling i user-agent header
+* Retta feil der Statuser for Avtalt-meldinger blir ikke sendt	
+* Retta feil der Hikari konsumerte alle tilgjengelige connections til database	
+* Missing default value for property difi.ssl.key-store-type
+* Logge utvalgte properties under oppstart i IP	
+* Støtte for å sende meldinger over DPO for samme organisasjon fra fleire integrasjonspunkt	
+* Justere sending av taushetsbelagt/sensistiv post til Altinn	
+* Ryddet i xml/ws-biblioteker	
+* Legg inn document_identifier i status logginga	
+* Hindre integrasjonspunktet i å starte opp dersom kontakt med Eureka ikkje oppnås	
+* Flyttet konfigurasjon fra Eureka til integrasjonspunktet	
+* Oppgradert integrasjonspunktet til Spring boot 2.6.2
+* Håndtering av meldinger uten vedlegg eller asic ved at /api/messages/in/pop/<id> returnerer 204. 
+
+***
+	
 ## 2.2.6
 08.10.2021
 
-**Feilrettinger**
-- Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
+**Funksjonalitet/feilretting**
+* Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
 
 ## 2.2.5
 01.10.21
 
 **Features**
 
-- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+* Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
 
 **Feilrettinger**
 
-- Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
-- rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
-- Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
-- PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
-- Tilkoblinger til DPV har nå begrenset levetid. 
+* Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
+* rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
+* Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
+* PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
+* Tilkoblinger til DPV har nå begrenset levetid. 
 
 
 ## 2.2.4
 20.08.21
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
-- Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
+* Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
 
 
 
 ## 2.2.3
 28.06.21
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
-**Features**
-
-- Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
-- Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
-- Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
-- Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
-- Added curl to Docker image.
+* Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
+* Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
+* Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
+* Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
+* Added curl to Docker image.
 
 ***
 

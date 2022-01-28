@@ -4,7 +4,7 @@ description: Virksomhetssertifikat
 summary: "Håndtering av virksomhetssertifikatet"
 permalink: eformidling_virksomhetssertifikat.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 ### Om virksomhetssertifikat

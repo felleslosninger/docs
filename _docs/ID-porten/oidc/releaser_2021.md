@@ -14,8 +14,8 @@ sidebar: oidc
 |[21-08 ID-porten](21-08_ID-porten.html)|Aug 25, 2021| Oppdatering av openam |
 |[21-08 Maskinporten](21-08_Maskinporten.html)|Aug 29, 2021| Feilretting av en minnelekkasje og forbedret stabilitet i integrasjon mot Altinn |
 |[21-09 Maskinporten](21-09_Maskinporten.html)|Oct 26, 2021| Støtte for SEID2-profilen for virksomhetssertifikater (dvs. kvalifiserte segl ihht eIDAS) |
-|[20-10 Ansattporten ](20-10_Ansattporten_.html)|*Nov 3, 2021*| En første versjon av pilot for Ansattporten |
-|[21-09 MinID](21-09_MinID.html)|*Nov 9, 2021*| Støtte for app-basert innlogging isteden for SMS.  Refaktorering av MinID for å tilpasses ny systemarkitektur-prosjektet. |
-|[21-11 ID-porten](21-11_ID-porten.html)|*Nov 30, 2021*| Overgang til OIDC mot eID-leverandørene ifbm nye leverandøravtaler |
-|[Backlog](Backlog.html)|*Q4 2021*| Backlog inneheld utviklingstiltak som me ikkje har starta på enno.  |
-|[Prosjekter](Prosjekter.html)|*Q4 2021*| Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020. |
+|[21-10 Ansattporten](21-10_Ansattporten.html)|Nov 24, 2021| En første versjon av pilot for Ansattporten |
+|[21-09 MinID](21-09_MinID.html)|Nov 30, 2021| Støtte for app-basert innlogging isteden for SMS.  Refaktorering av MinID for å tilpasses ny systemarkitektur-prosjektet. |
+|[21-11 ID-porten](21-11_ID-porten.html)|Dec 7, 2021| Overgang til OIDC mot eID-leverandørene ifbm nye leverandøravtaler |
+|[Prosjekter 2021](Prosjekter_2021.html)|FY21 Q4| Denne "releasen" innheld større prosjekt og potensielle pilotar som me ynskjer å gjennomføre i 2020. |
+|[Backlog](Backlog.html)|*FY21 Q4*| Backlog inneheld utviklingstiltak som me ikkje har starta på enno.  |

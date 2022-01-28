@@ -156,7 +156,7 @@ Videotutorial: [https://vimeo.com/397388041](https://vimeo.com/397388041)
 
 ## Selvbetjening som API-konsument
 
-### Innnlogging (Integrasjoner)
+### Innlogging (Integrasjoner)
 
 For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør følgende:
 

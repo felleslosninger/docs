@@ -55,7 +55,6 @@ Klienten vil konvertere til Jsonld og ID vil bli generert utfra SystemID der det
 **Ved bruk av klient og Noark 4 xml**
 Klienten konverterer til jsonld og ID blir generert utfra orgnr, sakssekvensnummer/saksaar og journalnummer/journalaar. Uuid blir generert på dokumentbeskrivelser/dokumentobjekter.  Namespace settes likt på alle typer/klasser (http://data.einnsyn.no/noark4/)
 
-
 ## Strukturering av publiseringen
 eInnsyn forsøker i så stor grad som mogleg å legge til rette for løpande overføring. Og strukturen legg opp til dette sjølv i tilfeller der dette ikkje er tilfelle.
 Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. Der det t.d er fleire journalpostar i samme saksmappe, eller dokument som tilhøyrer fleire journalpostar. Så vil dette dupliserast for kvar journalpost.

@@ -34,6 +34,12 @@ folders:
       - title: Brukerstyrt datadeling
         jurl: /oidc_auth_oauth2.html
 
+      - title: Ansattporten
+        jurl: /ansattporten_guide.html
+
+      - title: ID-porten utland
+        jurl: /oidc_func_idporten-utland.html
+
 
 - title: Grensesnittsdefinisjon
   folderitems:
@@ -146,6 +152,9 @@ folders:
 
   - title: 2021
     jurl: /releaser_2021.html
+
+  - title: 2022
+    jurl: /releaser_2022.html
 #==rel_notes_stop==
 
 - title: SAML grensesnitt

@@ -8,11 +8,24 @@ sidebar: oidc
 product: ID-porten
 
 ---
-I tabellen under finner du en rekke testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2.
 
-Du kan bruke disse testbrukerene om du vil sjekke at integrasjonen er satt opp rett.
 
-Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no
+Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2.
+
+## TestID
+
+Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten.  
+
+![TestID logo](assets/testid.svg)
+
+TestID støtter innlogging med **syntetiske personidentifikator**  (du må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
+
+TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å tildelt, opprettet eller nullstilt brukere.
+
+
+## MinID og BankID
+
+For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard test-brukere med personnumre som ikke finnes i Folkeregisteret.
 
 Passord og engangskoder:
 
@@ -33,3 +46,5 @@ Passord og engangskoder:
 | 08089408165 | 08089406901	| 08089405794	| 08089404305	| 08089403198 |
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
+
+Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no for manuell behandling.

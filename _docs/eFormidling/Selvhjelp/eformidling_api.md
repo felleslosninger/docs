@@ -4,7 +4,7 @@ description: Denne siden har som mål å forklare hvordan bruke API'et til å se
 summary: "Denne siden har som mål å forklare hvordan bruke API'et til å se status på forsendelser, innkommende meldinger og utgående meldinger"
 permalink: eformidling_api.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 > Utviklere: [REST docs finner du her](https://difi.github.io/felleslosninger/eformidling_nm_restdocs.html)

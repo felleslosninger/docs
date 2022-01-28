@@ -3,7 +3,7 @@ title: Automatisk oppdatering av integrasjonspunkt
 description: Korleis sette opp og bruke Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS
 permalink: eformidling_auto_update.html
 product: eFormidling
-sidebar: eformidling_install_sidebar
+sidebar: eformidling_sidebar
 ---
 
 # Introduksjon
@@ -17,9 +17,9 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 > Om du ikkje har integrasjonspunktet så må desse settast opp også, sjå [integrasjonspunkt dokumentasjon.](https://docs.digdir.no/eformidling_properties_config.html)
 
 ## Laste ned
-> [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+> [Her kan du laste ned kosmos-1.2.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar)
 
-> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
+> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar.asc)
 
 ## Funksjonalitet
 KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
@@ -173,7 +173,7 @@ Vi har lagt opp til at KOSMOS kan køyrast som ei Windows-teneste vha jar-wrappe
 
 Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå følgande konfigurasjon:
 ```
-<configuration>
+<service>
   
   <!-- ID of the service. It should be unique accross the Windows system-->
   <id>kosmossvc</id>
@@ -191,7 +191,7 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
     <sizeThreshold>10240</sizeThreshold>
     <keepFiles>8</keepFiles>
   </log>
-</configuration>
+</service>
 ```
 *[Last ned konfigurasjonsfila her](/resources/eformidling/kosmos-service.xml)*
 
@@ -205,10 +205,10 @@ Døme: No bør du ha desse filene i liggande i mappa.
 For å starte frå kommandolinja kan du bruke følgande kommando:
 
 **I produksjon**
-```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=production -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+```java -jar kosmos-x.y.z.jar --spring.profiles.active=production```
 
 **I staging**
-```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+```java -jar kosmos-x.y.z.jar --spring.profiles.active=staging```
 
 
 ## Starte i Linux
@@ -217,7 +217,7 @@ For å starte kan ein bruke samme kommando som over, men om ein ynskjer å start
 ![Filer for å køyre applikasjon i linux](/images/eformidling/kosmos-linux-filer.PNG)
 
 Døme:
-```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties &```
+```java -jar kosmos-x.y.z.jar --spring.profiles.active=staging &```
 
 Like etter at kommandoen er eksekvert vil du få returnert ein PID for prosessen. Denne kan nyttast om du treng å stoppe prosessen. Du vil også kunne finne den ved å bruke *htop* og sjå etter kommandoen, eller i *top* og stenge ned java prosessen. Integrasjonspunktet startar som eigen Java-prosess. 
 

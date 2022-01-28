@@ -4,7 +4,7 @@ description: Mange versjoner av integrasjonspunktet vil bli laget i test- og utv
 summary: ""
 permalink: eformidling_nm_changelog.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_sidebar
 ---
 
 ## [Siste versjon av integrasjonspunktet kan hentes her](https://beta-meldingsutveksling.difi.no/service/local/repositories/releases/content/no/difi/meldingsutveksling/integrasjonspunkt/2.0.0/integrasjonspunkt-2.0.0.jar) 

@@ -52,7 +52,7 @@ Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> 
 
 ### Tilgangstyring av APIet {#scopes}
 
-APIet er basert på en [etablert standard for å vedlikeholde Oauth2-integrasjoner, dvs. RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret vha. [server-til-server Oauth2](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten (dessverre ikke støtte for Maskinporten-tokens ennå).
+APIet er basert på en [etablert standard for å vedlikeholde Oauth2-integrasjoner, dvs. RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret vha. [server-til-server Oauth2](https://difi.github.io/idporten-oidc-dokumentasjon//oidc_auth_server-to-server-oauth2.html), med tokens utstedt av ID-porten eller Maskinporten.
 
 Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
@@ -77,7 +77,7 @@ Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 |YT2|[https://integrasjon-yt2.difi.eon.no/clients/](https://integrasjon-yt2.difi.eon.no/clients/)|
 |PROD|[https://integrasjon.difi.no/clients/](https://integrasjon.difi.no/clients/)|
 
-Se Open-API dokumentasjon her: [https://integrasjon.difi.no/swagger-ui.html?urls.primaryName=External%20OIDC](https://integrasjon.difi.no/swagger-ui.html?urls.primaryName=External%20OIDC)
+Se Open-API dokumentasjon her: [https://integrasjon.difi.no/swagger-ui/?urls.primaryName=External%20OIDC](https://integrasjon.difi.no/swagger-ui/?urls.primaryName=External%20OIDC)
 
 ## Opprette en integrasjon
 
@@ -131,7 +131,7 @@ Klient-hemmelighet (client_secret) blir ikke resatt ved endringer, men dersom ma
 
 ### Rotering av client_secret
 
-For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui.html#/oidc-client-controller/updateSecretUsingPOST)
+For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui/?urls.primaryName=External%20OIDC#/oidc-client-controller/updateSecretUsingPOST)
 
 Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_secret.
 

@@ -4,7 +4,7 @@ description: Beskrivelse av konvolutt og melding
 summary: ""
 permalink: eformidling_nm_message.html
 product: eFormidling
-sidebar: eformidling_technical_sidebar
+sidebar: eformidling_sidebar
 ---
 
 En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke - som er selve meldingen man ønsker å sende.
@@ -50,6 +50,9 @@ Unik identifikator for meldingen, og brukes til å referere meldinger i grensesn
 #### conversationId
 Unik identifikator for konversasjonen, knytter meldinger og tilhørende kvitteringer sammen. Mapper til businessScope.instanceIdentifier.
 
+#### creationDateAndTime
+Dette feltet kan utelates da det vil bli satt automatisk til nåtid ved oppretting av SBD.  Om en benytter UTC så bør dette feltet utelates. 
+
 ## Forretningsmelding
 
 Forretningsmeldingen inneholder meldingsformidlings-spesifikk informasjon. Dette er informasjon som ikke krypteres og dermed kan brukes til f.eks. routing av meldingen, samt som beslutningsgrunnlag ved mottak av meldingen. 
@@ -85,7 +88,7 @@ Associated Signature Containers er et pakkeformat som er designet for å ivareta
 
 Arkivmeldinger er meldinger som sendes mellom sak-/arkivsystemer basert på NOARK5 metadata. 
 Dersom mottaker ikke har integrasjonspunkt, vil avsenders integrasjonspunkt mappe meldingen til mottakers foretrukne mottaksplattform. I første omgang vil dette i hovedsak dreie seg SvarInn og SvarInn2 etterhvert som denne tas i bruk. Dersom mottaker ikke er knyttet til en annen plattform, vil meldingen sendes til Digital postkasse for virksomheter (DPV). 
-En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle meldingstyper i sitt integrasjonspunkt. Meldingene man ikke ønsker å motta vil da routes til virksomhetens postboks i AltInn via DPV.
+En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle meldingstyper i sitt integrasjonspunkt. Meldingene man ikke ønsker å motta vil da sendes til virksomhetens postboks i AltInn via DPV.
 
 
 | Prosess | Dokumenttype | 
@@ -117,16 +120,34 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 
 \* dokumenttypen er forbeholdt kontrollmeldinger i infrastrukturen og skal ikke brukes av integrasjoner
 
-
+Forretningsmelding _arkivmelding_:
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpo.json %}
 ```
-<!---
-- betydning av felter 
-- mapping mot dpv
-- mapping til ks
--->
+Forretningsmelding _arkivmelding\_kvittering_:
+```json
+"arkivmelding_kvittering": {
+    "receiptType" : "OK",
+    "relatedToMessageId" : "5f57494f-9ce7-47ec-853d-f212a65b3dbe",
+    "messages" : [ {
+        "code" : "Recno",
+        "text" : "315890"
+    } ]
+}
+```
 
+### Taushetsbelagt DPV
+eFormidling støtter å sende taushetsbelagt post via DPV. Denne meldingskategorien skal benyttes dersom meldingen inneholder særlig sensitive personopplysninger og taushetsbelagt informasjon. Mer om forutsetninger for bruk av meldingen, og krav til roller for lesetilgang kan leses på Altinns sider [her](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/#støtte-for-taushetsbelagt-post).
+
+| Prosess | Dokumenttype | 
+|---------|--------------|
+|urn:no:difi:profile:arkivmelding:taushetsbelagt:ver1.0 | |
+|  |urn:no:difi:arkivmelding:xsd::arkivmelding |
+
+Standard varslingstekst for taushetsbelagte meldinger er:
+> $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For å få tilgang til meldingen, er det nødvendig at noen i $reporteeName$ har fått tildelt rollen «Taushetsbelagt post fra det offentlige» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider.
+
+Denne varslingsteksten kan enten overstyres per melding i dens respektive forretningsmelding, eller generelt for alle meldinger ved å sette `difi.move.dpv.sensitive-notification-text` til valgt tekst i Integrasjonspunktet. Teksten kan inneholde substitusjonsvariablene `$reporteeName$` (mottakernavn) og `$reporterName$` (avsendernavn).
 
 ### Digital post til innbygger
 
@@ -208,10 +229,13 @@ Begge prosessene støtter både digitalpost og fysisk post.
 
 Avtalt er en bilateral meldingstype som lar avsender og mottaker sende en forhåndsbestemt forretningsmelding som kan være strukturert eller ustrukturert. 
 
-| Prosess | Dokumenttype | 
-|---|---|
-|urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
-|  |urn:no:difi:avtalt:xsd::avtalt |
+| Prosess                                    | Dokumenttype                         | 
+|--------------------------------------------|--------------------------------------|
+| urn:no:difi:profile:avtalt:avtalt:ver1.0   |                                      |
+|                                            | urn:no:difi:avtalt:xsd::avtalt       |
+| urn:no:difi:profile:avtalt:response:ver1.0 |                                      |
+|                                            | urn:no:difi:eformidling:xsd::status* |
+|                                            | urn:no:difi:eformidling:xsd::feil*   |
 
 
 Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Avtalt. 
@@ -231,3 +255,59 @@ Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Av
 Avtalt-meldingen forklart på Integrasjon og sikkerhetsforum 2020. (00:26 – 11:31)
 
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/487591943?h=72a0cb0a4e" width="720" height="480" frameborder="0" allowfullscreen></iframe> 
+
+
+### Fiks IO
+
+Integrasjonspunktet støtter å sende meldinger over [Fiks IO-platformen](https://ks-no.github.io/fiks-plattform/tjenester/fiksio/). Dette forutsetter konfigurasjon beskrevet [her](https://docs.digdir.no/eformidling_properties_config.html#fiks-io).
+
+Det er opp til den enkelte avsender å verifisere at gitt mottaker kan motta meldinger over valgt meldingsprotokoll; integrasjonspunktet validerer kun at kontoId til mottaker er gyldig.
+
+SBD'en må inneholde følgende:
+- ```receiver.identifier.value```: mottakers kontoId, UUID
+- ```documentIdentification.type```: ```fiksio```
+- ```documentIdentification.standard```: meldingsprotokoll
+- ```businessScope.scope.identifier```: meldingsprotokoll (repetert)
+- Tom forretningsmelding
+
+Eksempel på full SBD:
+```json
+{
+  "standardBusinessDocumentHeader": {
+    "businessScope": {
+      "scope": [
+        {
+          "scopeInformation": [
+            {
+             "expectedResponseDateTime": "20xx-05-10T00:31:52Z"
+           }
+         ],
+          "identifier": "fiks.io.testprotokoll",
+          "type": "ConversationId"
+        }
+      ]
+    },
+    "documentIdentification": {
+      "standard": "fiks.io.testprotokoll",
+      "type": "fiksio",
+      "typeVersion": "2.0"
+    },
+    "headerVersion": "1.0",
+    "receiver": [
+      {
+        "identifier": {
+         "authority": "iso6523-actorid-upis",
+         "value": "fe3070c9-6fc9-4342-becb-cc56f1bc11d3"
+       }
+     }
+   ]
+  },
+  "fiksio": {
+  }
+}
+```
+> NB: avsender kan ikke overstyres da det alltid er kontoId fra konfigurasjon som benyttes, og kan derfor utelates fra SBD.
+
+Vedlegg håndteres som normalt. Det er ingen kjente begrensninger mot platformen på verken antall vedlegg eller størrelse. For vedlegg større enn 5mb benyttes mellomlagring i Fiks Dokumentlager. Dette er automatisk håndtert av klienten.
+
+Dokumentasjon av Fiks IO finnes [her](https://ks-no.github.io/fiks-plattform/tjenester/fiksio/).
