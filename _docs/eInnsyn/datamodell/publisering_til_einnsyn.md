@@ -21,7 +21,7 @@ Publisering til eInnsyn kan gjøres på to måter:
 * Ved bruk av [eInnsyn-klient](einnsyn_forutsetninger.html). Klienten kan motta data på Noark4/5 xml format. Den vil da validere og konvertere data til jsonld som sendes til integrasjonspunktet.
 * Direkteintegrasjon, dvs. poste meldinger direkte til integrasjonspunktet. Meldingene må da være i jsonld-format. Det er en maks størrelse på meldinger som kan sendes på 1 MB, det er derfor intensjonen at systemer som benytter direkteintegrasjon sender mest mulig atomiske meldinger (eks. en og en journalpost/møtesak).
 
-## ID-strategi
+## Identifikator strategi
 **Ved direkteintegrasjon med Json-ld**
 ID på klasser/typer (journalpost, saksmappe, møtemappe, møtedokumentregistrering, møtesaksregistrering, dokumentbeskrivelse og dokumentobjekt) kan defineres av avleverende system. Anbefalingen fra eInnsyn er at UUID som benyttes i URI er samme som finnes i avleverende system fra før. Dette for å unngå duplikat og kunne støtte både slettemeldinger og innsynskrav versjon 2 (order-v2.xml) fremover. SystemID i Noark v.5+ anbefales der den er av UUID versjon 1,2 eller 4.
 Namespace i URI må gjerne settes likt for alle klasser/typer. Ved bruk av Json-ld compact versjon gjøres dette enkelt ved "base"-verdien i context:
