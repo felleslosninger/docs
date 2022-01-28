@@ -21,6 +21,40 @@ Publisering til eInnsyn kan gjøres på to måter:
 * Ved bruk av [eInnsyn-klient](einnsyn_forutsetninger.html). Klienten kan motta data på Noark4/5 xml format. Den vil da validere og konvertere data til jsonld som sendes til integrasjonspunktet.
 * Direkteintegrasjon, dvs. poste meldinger direkte til integrasjonspunktet. Meldingene må da være i jsonld-format. Det er en maks størrelse på meldinger som kan sendes på 1 MB, det er derfor intensjonen at systemer som benytter direkteintegrasjon sender mest mulig atomiske meldinger (eks. en og en journalpost/møtesak).
 
+## ID-strategi
+**Ved direkteintegrasjon med Json-ld**
+ID på klasser/typer (journalpost, saksmappe, møtemappe, møtedokumentregistrering, møtesaksregistrering, dokumentbeskrivelse og dokumentobjekt) kan defineres av avleverende system. Anbefalingen fra eInnsyn er at UUID som benyttes i URI er samme som finnes i avleverende system fra før. Dette for å unngå duplikat og kunne støtte både slettemeldinger og innsynskrav versjon 2 (order-v2.xml) fremover. SystemID i Noark v.5+ anbefales der den er av UUID versjon 1,2 eller 4.
+Namespace i URI må gjerne settes likt for alle klasser/typer. Ved bruk av Json-ld compact versjon gjøres dette enkelt ved "base"-verdien i context:
+```
+{
+  "@context": {
+    "@base": "http://data_test.einnsyn.no/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "692650f3-f090-4ab0-a2ee-d564adb5644f",
+      "@type": "arkiv:Saksmappe",
+	.....
+```  
+http://data_test.einnsyn.no/ er her bare eksempel, og en leverandør må gjerne sette den til noe annet. 
+Ved bruk av extended json-ld format vil eksempelet over se slik ut:
+``` 
+[
+	{
+    "@id": "http://data_test.einnsyn.no/692650f3-f090-4ab0-a2ee-d564adb5644f",
+    "@type": [
+      "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Saksmappe"
+    ],
+	.....
+``` 
+
+**Ved bruk av klient og Noark 5 xml**
+Klienten vil konvertere til Jsonld og ID vil bli generert utfra SystemID der det er oppgitt, ellers vil den generere egne uuid’er. Namespace settes likt på alle typer/klasser (http://data.einnsyn.no/noark5/)
+**Ved bruk av klient og Noark 4 xml**
+Klienten konverterer til jsonld og ID blir generert utfra orgnr, sakssekvensnummer/saksaar og journalnummer/journalaar. Uuid blir generert på dokumentbeskrivelser/dokumentobjekter.  Namespace settes likt på alle typer/klasser (http://data.einnsyn.no/noark4/)
+
 ## Strukturering av publiseringen
 eInnsyn forsøker i så stor grad som mogleg å legge til rette for løpande overføring. Og strukturen legg opp til dette sjølv i tilfeller der dette ikkje er tilfelle.
 Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. Der det t.d er fleire journalpostar i samme saksmappe, eller dokument som tilhøyrer fleire journalpostar. Så vil dette dupliserast for kvar journalpost.
@@ -40,7 +74,7 @@ For å få til dette så kan ein avlevere *dokumentbeskrivelsen* på alle dokume
 
 ![Struktur fulltekspublisering](/images/einnsyn/struktur_fulltekstpublisering.png)
 
-### Kvittering på publisert data
+## Kvittering på publisert data
 Alle som bruker integrasjonspunkt og kan motta innsynskrav, kan også hente ned kvitteringsmeldinger for publiseringer.
 Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInnsyn.
 Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/eformidling_nm_message.html), uten payload på meldingen.
