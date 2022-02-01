@@ -30,7 +30,7 @@ Første gang du skal ta i bruk Maskinporten, må du bli manuelt satt opp som API
 * et `scope-prefix` du ønsker bruke for dine APIer
 * ditt `organisasjonsnummer`
 
-Send inn skjema: [https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWS4u)
+Send inn skjema: [https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5kZbWwz0nwnRGrfJqFQYggctUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWSQlQCN0PWcu](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5kZbWwz0nwnRGrfJqFQYggctUMVNWWVYwSlhTWlpRTjQwWEVDS09EUFVWWSQlQCN0PWcu)
 
 #### Beskrivelse av APIer
 
