@@ -2,9 +2,10 @@
 title: Virksomhetssertifikat
 description:
 summary:
-permalink: maskinporten_virksomhetssertifikat.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_virksomhetssertifikat
 ---
 
 Virksomhetssertifikat er en viktig del av Maskinporten. Her har vi samlet litt informasjon om virksomhetssertifikat.

@@ -7,71 +7,71 @@ folders:
   folderitems:
 
       - title: Overordnet
-        jurl: /maskinporten_overordnet.html
+        jurl: /docs/Maskinporten/maskinporten_overordnet
 
       - title: Virksomhetssertifikat
-        jurl: /maskinporten_virksomhetssertifikat.html
+        jurl: /docs/Maskinporten/maskinporten_virksomhetssertifikat
 
 
 - title: Bruksområde og guide
   folderitems:
 
       - title: Hvordan virker Maskinporten?
-        jurl: /maskinporten_auth_server-to-server-oauth2.html
+        jurl: /docs/Maskinporten/maskinporten_auth_server-to-server-oauth2
 
       - title: Guide for API-tilbyder
-        jurl: /maskinporten_guide_apitilbyder.html
+        jurl: /docs/Maskinporten/maskinporten_guide_apitilbyder
 
       - title: Guide for API-konsument
-        jurl: /maskinporten_guide_apikonsument.html
+        jurl: /docs/Maskinporten/maskinporten_guide_apikonsument
 
 
 - title: Selvbetjening
   folderitems:
 
       - title: Selvbetjening via Web
-        jurl: /maskinporten_sjolvbetjening_web.html
+        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_web
 
       - title: Selvbetjening via API
-        jurl: /maskinporten_sjolvbetjening_api.html
+        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_api
 
 
 - title: Grensesnittspesifikasjon
   folderitems:
 
       - title: JWT grants
-        jurl: /maskinporten_protocol_jwtgrant.html
+        jurl: /docs/Maskinporten/maskinporten_protocol_jwtgrant
 
       - title: /token-endepunkt
-        jurl: /maskinporten_protocol_token.html
+        jurl: /docs/Maskinporten/maskinporten_protocol_token
 
 - title: Funksjonalitet
   folderitems:
 
       - title: Metadata
-        jurl: /maskinporten_func_wellknown.html
+        jurl: /docs/Maskinporten/maskinporten_func_wellknown
 
       - title: Klientregistrering
-        jurl: /oidc_func_clientreg.html
+        jurl: /docs/idporten/oidc/oidc_func_clientreg
 
       - title: Delegering
-        jurl: /maskinporten_func_delegering.html
+        jurl: /docs/Maskinporten/maskinporten_func_delegering
 
       - title: Audience-begrensning
-        jurl: /maskinporten_func_audience_restricted_tokens.html
+        jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens
 
 
 - title: Spørsmål og svar
   folderitems:
 
      - title: Using Postman towards Maskinporten
-       jurl: /oidc_sample_jwtgrant_postman.html
+       jurl: /docs/idporten/oidc/oidc_sample_jwtgrant_postman
 
 - title: Feilsøking
   folderitems:
 
   - title: Feilsøking i Maskinporten
-    jurl: /maskinporten_feilsoking.html
+    jurl: /docs/Maskinporten/maskinporten_feilsoking
 
 ###########################
 

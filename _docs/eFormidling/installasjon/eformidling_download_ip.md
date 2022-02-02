@@ -3,9 +3,10 @@ title: Installasjonsveiledning for integrasjonpunktet
 description: Hvordan komme i gang med integrasjonspunktet
 summary: "Hvordan man oppgraderer integrasjonspunktet til ny versjon."
 
-permalink: eformidling_download_ip.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_download_ip
 ---
 
 ### Siste versjon av integrasjonspunktet
@@ -21,7 +22,7 @@ sidebar: eformidling_sidebar
 
 ___
 
-### [Endringslogg](../eformidling_releasenotes.html)
+### [Endringslogg]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_releasenotes)
 ___
 
 ### Versjonering 
@@ -32,7 +33,7 @@ eFormidling følger [semantisk versjonering](https://semver.org) for å vise end
 En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
 integrasjonspunkt-2.0.7.jar
 
-![versjonsnummerbild](/images/eformidling/ipversjon.PNG)
+![versjonsnummerbild]({{site.baseurl}}/images/eformidling/ipversjon.PNG)
 
 
 Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH

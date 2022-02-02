@@ -1,8 +1,9 @@
 ---
 
 title: Webservice sikkerhet  
-permalink: sdp_webservicesecurity.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_webservicesecurity
 ---
 
 

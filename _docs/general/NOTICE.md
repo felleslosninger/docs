@@ -1,8 +1,9 @@
 ---
 title: "Komponenter som er benyttet"
-permalink: NOTICE.html
+
 sidebar: main_sidebar
 product: general
+redirect_from: /notice
 ---
 
 Denne siden benytter følgende tredjeparts-komponenter, og i mappen /assets/licences finner du de lisens filer som er påkrevd inkludert av disse tredjeparts-leverandørene.

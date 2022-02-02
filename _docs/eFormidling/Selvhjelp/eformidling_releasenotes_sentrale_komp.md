@@ -1,9 +1,10 @@
 ---
 title: Endringslogg sentrale komponenter eFormidling
 description: Endringslogg for sentrale komponenter
-permalink: eformidling_releasenotes_sentrale_komp.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_releasenotes_sentrale_komp
 ---
 (Endringer som er relevant for brukere av eFormidling)
 

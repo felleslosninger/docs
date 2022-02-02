@@ -1,7 +1,8 @@
 ---
 title: epostadresse
-permalink: epostadresse.html
+
 sidebar: dpi_sidebar
+redirect_from: /epostadresse
 ---
 
 | ---- | ---- |

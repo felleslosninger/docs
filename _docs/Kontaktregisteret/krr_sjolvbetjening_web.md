@@ -2,9 +2,10 @@
 title: Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
 description:  Selvbetjening av Kontakt- og reservasjonsregisteret via Samarbeidsportalen
 summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene KRR via Samarbeidsportalen'
-permalink: krr_sjolvbetjening_web.html
+
 sidebar: main_sidebar
 product: KRR
+redirect_from: /krr_sjolvbetjening_web
 ---
 
 Dette dokumentet viser hvordan du kan selvbetjene KRR i Samarbeidsportalen.

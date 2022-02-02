@@ -1,7 +1,8 @@
 ---
 title: postkasseadresse
-permalink: 2postkasseadresse.html
+
 sidebar:
+redirect_from: /2postkasseadresse
 ---
 
 | ---- | ---- |

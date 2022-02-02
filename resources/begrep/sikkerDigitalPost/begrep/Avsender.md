@@ -1,6 +1,6 @@
 ---
 title: Avsender  
-permalink: sdp_avsender.html
+
 sidebar: begrep_sidebar
 ---  
 

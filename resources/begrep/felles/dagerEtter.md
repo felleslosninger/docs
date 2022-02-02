@@ -1,7 +1,8 @@
 ---
 title: dagerEtter
-permalink: 2dageretter.html
+
 sidebar: dpi_sidebar
+redirect_from: /2dageretter
 ---
 
 | ---- | ---- |

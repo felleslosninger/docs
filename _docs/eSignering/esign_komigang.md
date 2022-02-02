@@ -1,8 +1,9 @@
 ---
 title: eSignering
 description: eSignering
-permalink: esign_komigang.html
+
 product: eSignering
+redirect_from: /esign_komigang
 ---
 
 #### Dokumentasjon

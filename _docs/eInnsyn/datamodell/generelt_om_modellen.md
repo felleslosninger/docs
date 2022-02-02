@@ -2,8 +2,9 @@
 title: Generelt om modellen
 description:
 summary:
-permalink: einnsyn_generelt_om_modellen.html
+
 sidebar: einnsyn_technical_sidebar
+redirect_from: /einnsyn_generelt_om_modellen
 ---
 
 ## Introduksjon

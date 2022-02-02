@@ -2,8 +2,9 @@
 title: Kodelister
 description:
 summary:
-permalink: einnsyn_publisering_kodelister.html
+
 sidebar: einnsyn_technical_sidebar
+redirect_from: /einnsyn_publisering_kodelister
 ---
 
 #Kodelister RDF

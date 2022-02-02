@@ -1,9 +1,10 @@
 ---
 title: Endringslogg integrasjonspunktet
 description: Endringslogg for integrasjonspunktet
-permalink: eformidling_releasenotes.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_releasenotes
 ---
 
 

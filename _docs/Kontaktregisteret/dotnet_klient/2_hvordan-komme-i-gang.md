@@ -2,9 +2,10 @@
 title: Hvordan komme i gang
 description: 
 summary: ""
-permalink: krr_hvordan_komme_i_gang.html
+
 sidebar: krr_dotnet
 product: KRR
+redirect_from: /krr_hvordan_komme_i_gang
 ---
 
 Klienten er tilgjengelig som en NuGet-pakke. Denne vil oppdateres jevnlig etter hvert som ny funksjonalitet legges til.

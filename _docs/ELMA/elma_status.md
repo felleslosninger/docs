@@ -2,9 +2,10 @@
 title: Status
 description: Statuspage for Elma
 summary: "Elma status"
-permalink: elma_status.html
+
 product: elma
 sidebar: elma_sidebar
+redirect_from: /elma_status
 ---
 
 ## ELMA update 05.01.2022 (3.12.0)

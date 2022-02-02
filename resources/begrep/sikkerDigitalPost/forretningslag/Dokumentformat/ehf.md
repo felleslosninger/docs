@@ -2,8 +2,9 @@
 title: ehf  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: forretningslag
-permalink: sdp_ehf.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_ehf
 ---
 
   - Identifikator  

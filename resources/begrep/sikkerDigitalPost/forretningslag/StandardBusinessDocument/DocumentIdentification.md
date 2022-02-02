@@ -1,6 +1,6 @@
 --- 
 title: DocumentIdentification  
-permalink: sdp_documentidentification.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -19,7 +19,7 @@ sidebar: dpi_sidebar
 | InstanceIdentifier  | 1..1         | xs:string   | Unik identifikator for meldingen. Opprettet av Databehandler. Se format under.                                             |
 | Type                | 1..1         | xs:string   | Type forretningsmelding. Skal alltid være “local-name” til rot-elementet XML’en til forretningmeldingen. Se kodeverk under |
 | MultipleType        | 0..0         | xs:boolean  | brukes ikke                                                                                                                |
-| CreationDateAndTime | 1..1         | xs:dateTime | Tidspunkt for oppretting av [Standard Business Document](index.md)                                                            |
+| CreationDateAndTime | 1..1         | xs:dateTime | Tidspunkt for oppretting av [Standard Business Document]({{site.baseurl}}/resources/begrep/felles/)                                                            |
 
 ### Format InstanceIdentifier
 

@@ -5,53 +5,53 @@ folders:
   folderitems:
 
   - title: Forutsetning for installasjon og verktøy
-    jurl: /einnsyn_forutsetninger.html
+    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
 
   - title: Konfigurasjon av einnsyn-klient.xml
-    jurl: /einnsyn_konfigurasjon.html
+    jurl: /docs/eInnsyn/einnsyn_install_konfigurasjon
 
   - title: Installere einnsyn-klient som Windows service
-    jurl: /einnsyn_install_tjeneste.html
+    jurl: /docs/eInnsyn/einnsyn_install_tjeneste
 
   - title: Teste og verifisere installasjon
-    jurl: einnsyn_test_verifikasjon.html
+    jurl: /docs/eInnsyn/einnsyn_test_verifikasjon
 
   - title: Oppdatere einnsyn-klient
-    jurl: /einnsyn_oppdatere_tjeneste.html
+    jurl: /docs/eInnsyn/einnsyn_oppdatere_tjeneste
 
   - title: Flere einnsyn-klienter på samme server
-    jurl: /einnsyn_flere_klienter.html
+    jurl: /docs/eInnsyn/einnsyn_flere_klienter
 
   - title: Innsynskrav og e-postoppsett
-    jurl: /einnsyn_innsynskrav.html
+    jurl: /docs/eInnsyn/einnsyn_innsynskrav
 
 - title: eInnsyn
   folderitems:
 
   - title: Publisering til einnsyn
-    jurl: /einnsyn_publisering_til_einnsyn.html
+    jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
 
   - title: Generelt om datamodell
-    jurl: /einnsyn_generelt_om_modellen.html
+    jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
 
   - title: Validering
-    jurl: /einnsyn_shackl.html
+    jurl: /docs/eInnsyn/datamodell/SHACL_validering
 
   - title: Kodelister
-    jurl: /einnsyn_publisering_kodelister.html
+    jurl: /docs/eInnsyn/datamodell/einnsyn_publisering_kodelister
 
   - title: Eksempel
-    jurl: /einnsyn_eksempelfiler.html
+    jurl: /docs/eInnsyn/datamodell/eksempler
 
 
 - title: Publisering av møter
   folderitems:
 
   - title: Generelt om møtemodellen
-    jurl: /einnsyn_generelt_om_moetemodellen.html
+    jurl: /docs/eInnsyn/datamodell/publisering_moeter/generelt_om_moetemodellen
 
   - title: Utviding møteavlevering
-    jurl: /einnsyn_utvida_moeteavlevering.html
+    jurl: /docs/eInnsyn/datamodell/publisering_moeter/utviding_moetavlevering
 
 ###########################
 

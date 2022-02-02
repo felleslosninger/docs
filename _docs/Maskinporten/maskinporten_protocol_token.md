@@ -2,9 +2,10 @@
 title: "/token endpoint"
 description: "This page summarizes the protocol options available for on the /token endpoint for Maskinporten"
 summary: 'This page summarizes the protocol options available for on the /token endpoint for Maskinporten'
-permalink: maskinporten_protocol_token.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_protocol_token
 ---
 
 ## About
@@ -31,7 +32,7 @@ The following request body attributes shall be used when passing the JWT-grant:
 
 There is no need to perform client authentication when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
 
-See [JWT grant](maskinporten_protocol_jwtgrant.html) for requirements for constructing the JWT grant.
+See [JWT grant]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant) for requirements for constructing the JWT grant.
 
 
 
@@ -85,7 +86,7 @@ The token is a JWT with the following structure:
 
 | claim | value | example |
 | --- | --- | --- |
-| iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint](maskinporten_func_wellknown.html)| `https://maskinporten.no/`
+| iss | The identifier of Maskinporten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_wellknown)| `https://maskinporten.no/`
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
 | client_amr  | How the client authenticated itselft towards Maskinporten  | `virksomhetssertifikat`|
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | see below |
@@ -107,7 +108,7 @@ If the token is audience-restricted, the following claim will also be included:
 
 | claim | value | example |
 | --- | --- | --- |
-| aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction](maskinporten_func_audience_restricted_tokens.html) for details. |  `https://api.examples.com/users`|
+| aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_audience_restricted_tokens) for details. |  `https://api.examples.com/users`|
 
 
 ###  Identifying organizations

@@ -1,7 +1,8 @@
 ---
 title: Skjema (XSD) filer  
-permalink: sdp_skjema.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_skjema
 ---
 
 Dokumentasjon av kilder og ev. endringer i XSD-skjemaer for [Sikker
@@ -22,23 +23,23 @@ terminalen (uten farger).
 
 #### Sikker digital post XSD filer:
 
-  - [sdp.xsd](sdp.xsd)
-  - [sdp-feil.xsd](sdp-feil.xsd)
-  - [sdp-felles.xsd](sdp-felles.xsd)
-  - [sdp-kvittering.xsd](sdp-kvittering.xsd)
-  - [sdp-manifest.xsd](sdp-manifest.xsd)
-  - [sdp-melding.xsd](sdp-melding.xsd)
+  - [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp.xsd)
+  - [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-feil.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-feil.xsd)
+  - [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-felles.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-felles.xsd)
+  - [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-kvittering.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-kvittering.xsd)
+  - [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd)
+  - [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-melding.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp-melding.xsd)
   
 #### Utvidelser - Sikker digital post XSD:
-  - [lenke.xsd](utvidelser/lenke.xsd)
-  - [bevis.xsd](utvidelser/bevis.xsd)
-  - [arrangement.xsd](utvidelser/arrangement.xsd)
+  - [lenke.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/lenke.xml)
+  - [bevis.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/bevis.xml)
+  - [arrangement.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/arrangement.xml)
 
 #### [ASiC XSD fil](asic-e/)
 
   - Skjema for META-INF/signatures.xml i en [Dokumentpakke (ASiC-E
     bundle)](dokumentpakke_index.html)
-  - [ts\_102918v010201.xsd](asic-e/ts_102918v010201.xsd)
+  - [ts\_102918v010201.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/asic-e/ts_102918v010201.xsd)
       - Original:
         <http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.02.01_60/ts_102918v010201p0.zip>
       - Endringer:
@@ -51,7 +52,7 @@ terminalen (uten farger).
 #### [Ebxml XSD filer](ebxml/)
 
   - Skjemaer som hører til ebXML-standarden.
-  - [ebbp-signals-2.0.xsd](ebxml/ebbp-signals-2.0.xsd)
+  - [ebbp-signals-2.0.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/ebxml/ebbp-signals-2.0.xsd)
       - Original:
         <http://docs.oasis-open.org/ebxml-bp/2.0.4/ebbp-signals-2.0.4.xsd>
       - Endringer:
@@ -63,7 +64,7 @@ terminalen (uten farger).
 
 <!-- end list -->
 
-  - [ebms-header-3\_0-200704.xsd](ebxml/ebms-header-3_0-200704.xsd)
+  - [ebms-header-3\_0-200704.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/ebxml/ebms-header-3_0-200704.xsd)
       - Original:
         <http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/core/os/ebms-header-3_0-200704.xsd>
       - Endringer:
@@ -77,7 +78,7 @@ terminalen (uten farger).
 
 #### [ETSI XSD fil](etsi/)
 
-  - [XAdES.xsd](etsi/XAdES.xsd)
+  - [XAdES.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/etsi/XAdES.xsd)
       - Original: http://uri.etsi.org/01903/v1.3.2/XAdES.xsd
       - Endringer:
         ``` 
@@ -88,7 +89,7 @@ terminalen (uten farger).
 
 #### [Difi sin oppslagstjeneste XSD](oppslag/)
 
-  - [oppslagstjeneste-metadata-14-05.xsd](oppslag/oppslagstjeneste-metadata-14-05.xsd)
+  - [oppslagstjeneste-metadata-14-05.xsd]({{site.baseurl}}/resources/begrep/oppslagstjenesten/xsd/oppslagstjeneste-metadata-14-05.xsd)
       - Original:
         http://begrep.difi.no/Oppslagstjenesten/xsd/oppslagstjeneste-metadata-14-05.xsd
       - Endringer:
@@ -114,7 +115,7 @@ terminalen (uten farger).
 
 #### [World Wide Web Consortium XSD filer](w3/)
 
-  - [exc-c14n.xsd](w3/exc-c14n.xsd)
+  - [exc-c14n.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/w3/exc-c14n.xsd)
       - Original:
         <http://www.w3.org/TR/2002/REC-xml-exc-c14n-20020718/exc-c14n.xsd>
       - Endringer:
@@ -126,7 +127,7 @@ terminalen (uten farger).
 
 <!-- end list -->
 
-  - [soap-envelope.xsd](w3/soap-envelope.xsd)
+  - [soap-envelope.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/w3/soap-envelope.xsd)
       - Original: <http://www.w3.org/2003/05/soap-envelope/>
       - Endringer:
         ``` 
@@ -137,7 +138,7 @@ terminalen (uten farger).
 
 <!-- end list -->
 
-  - [xenc-schema.xsd](w3/xenc-schema.xsd)
+  - [xenc-schema.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/w3/xenc-schema.xsd)
       - Original:
         <http://www.w3.org/TR/2002/REC-xmlenc-core-20021210/xenc-schema.xsd>
       - Endringer:
@@ -149,7 +150,7 @@ terminalen (uten farger).
 
 <!-- end list -->
 
-  - [xlink.xsd](w3/xlink.xsd)
+  - [xlink.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/w3/xlink.xsd)
       - Original: <http://www.w3.org/1999/xlink.xsd>
       - Endringer:
         ``` 
@@ -160,10 +161,10 @@ terminalen (uten farger).
 
 <!-- end list -->
 
-  - [xml.xsd](w3/xml.xsd)
+  - [xml.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/w3/xml.xsd)
       - Original: <http://www.w3.org/2001/xml.xsd>
       - Ingen endringer.
-  - [xmldsig-core-schema.xsd](w3/xmldsig-core-schema.xsd)
+  - [xmldsig-core-schema.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/w3/xmldsig-core-schema.xsd)
       - Original:
         <http://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd>
       - Endringer:
@@ -174,7 +175,7 @@ terminalen (uten farger).
 
 #### [SOAP/1.1 envelope XSD fil](xmlsoap/)
 
-  - [envelope.xsd](xmlsoap/envelope.xsd)
+  - [envelope.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/xmlsoap/envelope.xsd)
       - Original: <http://schemas.xmlsoap.org/soap/envelope/>
       - Ingen endringer.
 

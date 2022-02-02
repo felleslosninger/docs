@@ -1,7 +1,8 @@
 ---
 title: SlettPostkasseForespoersel  
-permalink: ot_slettpostkasseforespoersel.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_slettpostkasseforespoersel
 ---
 
 |---|---|
@@ -15,9 +16,9 @@ sidebar: begrep_sidebar
 
 | Term                                                              | Kardinalitet | Datatype                                              |
 | ----------------------------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [personidentifikator](../felles/personidentifikator.md)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [virksomhetssidentifikator](virksomhetsidentifikator.html) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [virksomhetssidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/virksomhetsidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Respons
 
-Responsen er en [SlettPostkasseRespons](SlettPostkasseRespons.md)
+Responsen er en [SlettPostkasseRespons]({{site.baseurl}}/resources/begrep/oppslagstjenesten/SlettPostkasseRespons)

@@ -1,6 +1,6 @@
 --- 
 title: Receiver  
-permalink: sdp_receiver.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -12,12 +12,12 @@ sidebar: dpi_sidebar
 | Kommentar     | Regler for hvem som opptrer som [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html) er beskrevet under. |
 
 
-\*For [digital post meldinger](sdp_digitalpostmeldinger.html) er
+\*For [digital post meldinger]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/DigitalPostMelding) er
 [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html)
 
   - [Postkasseleverandør](https://difi.github.io/felleslosninger/sdp_aktorer.html)
 
-\*For [digital post kvitteringer](../../meldinger/KvitteringsMelding.md) er
+\*For [digital post kvitteringer]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/KvitteringsMelding) er
 [Receiver](https://difi.github.io/felleslosninger/sdp_receiver.html)
 
   - Den [Aktør](https://difi.github.io/felleslosninger/sdp_aktorer.html) som sto som [Sender](https://difi.github.io/felleslosninger/sdp_sender.html) for [digital

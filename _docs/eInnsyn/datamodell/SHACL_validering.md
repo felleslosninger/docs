@@ -2,8 +2,9 @@
 title: SHACL-validering
 description:
 summary:
-permalink: einnsyn_shackl.html
+
 sidebar: einnsyn_technical_sidebar
+redirect_from: /einnsyn_shackl
 ---
 
 Validering av json-ld blir gjort basert på [SHACL](https://www.w3.org/TR/shacl/)

@@ -1,7 +1,8 @@
 ---
 title: Dokumentformater  
-permalink: dokumentformat_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /dokumentformat_index
 ---
 
 ## Innledning
@@ -23,5 +24,5 @@ Generelle regler for alle filer:
 
 Spesielle regler knyttet til de enkelte dokument formatene:
 
-  - [HTML dokumenter](sdp_html.html)
-  - [EHF dokumenter](sdp_ehf.html)
+  - [HTML dokumenter]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/html)
+  - [EHF dokumenter]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/ehf)

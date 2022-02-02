@@ -1,8 +1,9 @@
 ---
 
 title: SAMLAssertionV3  
-permalink: IDport_SAMLAssertionV3.html
+
 sidebar:
+redirect_from: /idport_samlassertionv3
 ---
 |---|---|
 | Identifikator | <https://begrep.difi.no/ID-porten/SAMLAssertionV3> |
@@ -19,27 +20,27 @@ sidebar:
 
 | Term                                                         | Beskrivelse                                                                     | Kardinalitet |
 | --- | --- | --- |
-| uid                                                          | [personidentifikator](../felles/personidentifikator.md)                              | 1            |
-| SecurityLevel                                                | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
-| Culture                                                      | [språk](../felles/spraak.md)                                                         | 1            |
-| AuthMethod                                                   | [Autentiseringsmetode](SAMLAssertionV1.md)                              | 1            |
-| [reservasjon](../felles/reservasjon.md)                           | [reservasjon](../felles/reservasjon.md)                                              | 0..1         |
-| [epostadresse](../felles/epostadresse.md)                         | [epostadresse](../felles/epostadresse.md)                                            | 0..1         |
-| [mobiltelefonnummer](../felles/mobiltelefonnummer.md)             | [mobiltelefonnummer](../felles/mobiltelefonnummer.md)                                | 0..1         |
-| [postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md) | [postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md)                    | 0..1         |
-| [status](../felles/status.md)                                     | Kodeverk for [status](#status)                                                  | 0..1         |
+| uid                                                          | [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)                              | 1            |
+| SecurityLevel                                                | [sikkerhetsnivaa]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/sikkerhetsnivaa)                                      | 1            |
+| Culture                                                      | [språk]({{site.baseurl}}/resources/begrep/felles/spraak)                                                         | 1            |
+| AuthMethod                                                   | [Autentiseringsmetode]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAssertionV1)                              | 1            |
+| [reservasjon]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/reservasjon)                           | [reservasjon]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/reservasjon)                                              | 0..1         |
+| [epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)                         | [epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)                                            | 0..1         |
+| [mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer)             | [mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer)                                | 0..1         |
+| [postkasseleverandoerNavn]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseleverandoerNavn) | [postkasseleverandoerNavn]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseleverandoerNavn)                    | 0..1         |
+| [status]({{site.baseurl}}/resources/begrep/felles/status)                                     | Kodeverk for [status](#status)                                                  | 0..1         |
 | OnBehalfOf                                                   | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på veien av | 0..1         |
 
 #### AuthnContextClassRef
 
 Autentiseringsnivå er spesifisert i henhold til kodeverk for
-[AuthnContextClassRef](SAMLAuthnRequest.md)
+[AuthnContextClassRef]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAuthnRequest)
 
 #### Kodeverk
 
 ##### status
 
-[status](../felles/status.md) kan ha følgende verdi:
+[status]({{site.baseurl}}/resources/begrep/felles/status) kan ha følgende verdi:
 
 | Kodeverdi        | Beskrivelse                                                                                                 |
 | --- | --- |
@@ -48,9 +49,9 @@ Autentiseringsnivå er spesifisert i henhold til kodeverk for
 | SYSTEMFEIL       | ID-porten har ikke informasjon om Digital kontaktinformasjon, f.eks. ved feil i integrasjon mot registrert. |
 
 Ved IKKE\_REGISTRERT har ikke registeret informasjon om
-[mobiltelefonnummer](../felles/mobiltelefonnummer.md) eller
-[epostadresse](../felles/epostadresse.md) eller
-[postkasseleverandoerNavn](../felles/postkasseleverandoerNavn.md) , og vil
+[mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer) eller
+[epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse) eller
+[postkasseleverandoerNavn]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseleverandoerNavn) , og vil
 ikke kunne levere ut disse elementene til Offentlig virksomhet.
 
 #### Eksempel

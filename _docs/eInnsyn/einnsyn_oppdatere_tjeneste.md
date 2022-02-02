@@ -2,8 +2,9 @@
 title: Oppdatere til ny versjon av einnsyn-klient
 description: Oppdatere til ny versjon av einnsyn-klient
 summary: "Her finner du informasjon om hvordan oppdatere til ny versjon av einnsyn-klient"
-permalink: einnsyn_oppdatere_tjeneste.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_oppdatere_tjeneste
 ---
 [Last ned eInnsyn-klient](https://github.com/difi/einnsyn-klient/releases/tag/2.0.4)
 
@@ -18,11 +19,11 @@ Etter du er ferdig å redigere einnsyn-klient.xml-fila må du reinstallere tjene
 
 Disse kommandoene må kjøres uten skråstrek eller bindestrek foran. Skrives nøyaktig som på bildet under:
 
-![Reinstallere tjeneste](/images/einnsyn/reinstall_klient.png)
+![Reinstallere tjeneste]({{site.baseurl}}/images/einnsyn/reinstall_klient.png)
 
 
-> Om du bruker mer enn 1 einnsyn-klient på samme server må du også sette et senderId felt i ```einnsyn-klient.xml``` for at adressering til eInnsyn skal bli korrekt. I dette feltet skal samme orgnummer som er brukt i ```integrasjonspunkt-local.properties```. I mange tilfeller er dette organisasjonens hovedorgnummer. [Mer informasjon om propertyen finner du her](einnsyn_flere_klienter.html)
+> Om du bruker mer enn 1 einnsyn-klient på samme server må du også sette et senderId felt i ```einnsyn-klient.xml``` for at adressering til eInnsyn skal bli korrekt. I dette feltet skal samme orgnummer som er brukt i ```integrasjonspunkt-local.properties```. I mange tilfeller er dette organisasjonens hovedorgnummer. [Mer informasjon om propertyen finner du her]({{site.baseurl}}/docs/eInnsyn/einnsyn_flere_klienter)
 
 ---
 
-[Informasjon om oppgradering av Integrasjonspunktet](eformidling_ip_upgrade.html)
+[Informasjon om oppgradering av Integrasjonspunktet]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_oppgradere)

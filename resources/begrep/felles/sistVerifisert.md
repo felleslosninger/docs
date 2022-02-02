@@ -1,7 +1,8 @@
 ---
 title: sistVerifisert
-permalink: sistverifisert.html
+
 sidebar: begrep_sidebar
+redirect_from: /sistverifisert
 ---
 
 | ---- | ---- |

@@ -1,9 +1,10 @@
 ---
 title: Ei guide til KOSMOS
 description: Bruksrettleiing for Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS
-permalink: eformidling_kosmos_user_guide.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_kosmos_user_guide
 ---
 
 > Visst du ser etter installasjonsveiledning for KOSMOS må du leite [her i staden](https://docs.digdir.no/eformidling_auto_update.html)

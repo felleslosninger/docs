@@ -1,8 +1,9 @@
 ---
 title: "Hvordan bidra"
-permalink: CONTRIBUTING.html
+
 sidebar: main_sidebar
 product: general
+redirect_from: /contributing
 ---
 
 Vi setter pris på at du ønsker å bidra inn i denne dokumentasjonen, og ønsker alle typer tilbakemeldinger velkommen (feilmelding, ny funksjonalitet, korrigering, tilleggsdokumentasjon etc.).

@@ -21,9 +21,9 @@
 {% endfor %}
 
 {% else %}
-[{{folderitem.ref}}]: {{folderitem.jurl | remove: "/"}}
+[{{folderitem.ref}}]: {{folderitem.jurl | relative_url}}
 {% for bookmark in folderitem.bookmarks %}
-[{{folderitem.ref | append: "#" | append: bookmark }}]: {{folderitem.jurl | remove: "/" | append: "#" | append: bookmark }}
+[{{folderitem.ref | append: "#" | append: bookmark }}]: {{folderitem.jurl | relative_url | append: "#" | append: bookmark }}
 {% endfor %}
 {% endif %}
 {% endif %}
@@ -39,9 +39,9 @@
 {% endfor %}
 
 {% else %}
-[{{subfolderitem.ref}}]: {{subfolderitem.jurl | remove: "/"}}
+[{{subfolderitem.ref}}]: {{subfolderitem.jurl | relative_url}}
 {% for bookmark in subfolderitem.bookmarks %}
-[{{subfolderitem.ref | append: "#" | append: bookmark }}]: {{subfolderitem.jurl | remove: "/" | append: "#" | append: bookmark }}
+[{{subfolderitem.ref | append: "#" | append: bookmark }}]: {{subfolderitem.jurl | relative_url | append: "#" | append: bookmark }}
 {% endfor %}
 {% endif %}
 {% endif %}
@@ -57,9 +57,9 @@
 {% endfor %}
 
 {% else %}
-[{{subsubfolderitem.ref}}]: {{subsubfolderitem.jurl | remove: "/"}}
+[{{subsubfolderitem.ref}}]: {{subsubfolderitem.jurl | relative_url}}
 {% for bookmark in subsubfolderitem.bookmarks %}
-[{{subsubfolderitem.ref | append: "#" | append: bookmark }}]: {{subsubfolderitem.jurl | remove: "/" | append: "#" | append: bookmark }}
+[{{subsubfolderitem.ref | append: "#" | append: bookmark }}]: {{subsubfolderitem.jurl | relative_url | append: "#" | append: bookmark }}
 {% endfor %}
 {% endif %}
 {% endif%}

@@ -1,8 +1,9 @@
 ---
 
 title: Signering og kryptering av Sikker Digital Post forsendelse  
-permalink: sdp_sertifikatbruk.html
+
 sidebar:
+redirect_from: /sdp_sertifikatbruk
 ---
 
 ## Innledning
@@ -20,11 +21,11 @@ krypteringsalgoritmer etc.
 ### Overordnet
 
 Deler av Digital postforsendelse er sikret ende til ende, fra
-[Avsender](StandardBusinessDocument/Melding/Avsender) til
-[Mottaker](StandardBusinessDocument/Melding/Mottaker).  
+[Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender) til
+[Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker).  
 Deler av Digital postforsendelse er sikret punkt til punkt fra [Teknisk
 Mottaker](UserMessage/PartyInfo) til
-[Meldingsformidlerleverandør](UserMessage/PartyInfo), og fra
+[Meldingsformidlerleverandør]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/UserMessage/PartyInfo), og fra
 Meldingsformidler- til Postkasseleverandør.
 
 ### Sikret ende til ende
@@ -38,7 +39,7 @@ Følgende deler av Digital postforsendelse er sikret ende-til-ende
 
 Følgende deler av Digital postforsendelse er sikret punkt til punkt:
 
-  - [Webservice security timestamp](WebserviceSecurity)
+  - [Webservice security timestamp]({{site.baseurl}}/resources/begrep/oppslagstjenesten/ws-security/WebserviceSecurity)
   - [Eb:messaging](ebMS30)
   - [SOAP:Body](StandardBusinessDocument/)
   - [Dokumentpakke](Dokumentpakke/)
@@ -66,7 +67,7 @@ Signeringssertifikatet er lagt inn i
 
 [StandardBusinessDocument.Melding.Dokumentpakke](StandardBusinessDocument/Melding/Dokumentpakke)
 har en kryptert engangsnøkkel,kryptert med innbyggers sertifikat.  
-[StandardBusinessDocument.Melding.Avsender](StandardBusinessDocument/Melding/Avsender)
+[StandardBusinessDocument.Melding.Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender)
 skal være organisasjonsnummeret til Behandlingsansvarlig.
 
 I tillegg så er [StandardBusinessDocument](StandardBusinessDocument/)
@@ -76,25 +77,25 @@ signert i meldingsutvekslingen punkt til punkt.
 
 EB:Messaging headeren er signert punkt til punkt.
 
-### [Webservice Security](WebserviceSecurity)
+### [Webservice Security]({{site.baseurl}}/resources/begrep/oppslagstjenesten/ws-security/WebserviceSecurity)
 
   - wsse:Secuity skal inneholde et Timestamp som angir meldingens
     levetid, signert av avsender av meldingen.
   - wsse:Secuity skal inneholde en signatur.
       - Denne signaturen skal ha referanse til følgende signerte
         elementer:
-          - [Timestamp](WebserviceSecurity)
+          - [Timestamp]({{site.baseurl}}/resources/begrep/oppslagstjenesten/ws-security/WebserviceSecurity)
           - [eb:Messaging](ebMS30)
           - [SOAP Body
             (StandardBusinessDocument)](StandardBusinessDocument/)
           - [Attachment (Dokumentpakke)](Dokumentpakke/)
   - Signeringssertifikatet skal være vedlagt SOAP meldingen i
-    [wsse:security](WebserviceSecurity)
+    [wsse:security]({{site.baseurl}}/resources/begrep/oppslagstjenesten/ws-security/WebserviceSecurity)
 
 ### Signering på veien av Behandlingsansvarlig
 
 Som beskrevet over skal [Dokumentpakke](Dokumentpakke/) og
 [StandardBusinessDocument](StandardBusinessDocument/) signeres av
-[Behandlingsansvarlig](Aktorer).  
+[Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).  
 Det er åpnet for at Databehandler kan signere på vegne av
 Behandlingsansvarlig.

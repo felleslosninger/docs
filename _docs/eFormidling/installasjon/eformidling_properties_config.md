@@ -2,9 +2,10 @@
 title: Konfigurering av integrasjonspunkt-local.properties
 description: Konfigurering av integrasjonspunkt-local.properties-filen.
 summary: "Konfigurering av integrasjonspunkt-local.properties-filen."
-permalink: eformidling_properties_config.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_properties_config
 ---
 
 Denne delen av veiledningen er delt opp slik at du først finner litt generell informasjon før du deretter finner eksempler på integrasjonspunkt-local.properties oppsett spesifikt for den tjenesten du skal ta i bruk. 
@@ -25,11 +26,11 @@ Husk å melde fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.
 
 ### Integrasjonspunkt-local.properties
 
-Her laster du ned [integrasjonspunkt-local.properties-filen](/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
+Her laster du ned [integrasjonspunkt-local.properties-filen]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) Per i dag så benytter vi Java Key Store (JKS). Vi jobber med en virtuell HSM-løsning som alternativ til JKS. Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
 1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
-2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
-3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](eformidling_download_ip.html)
+2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
+3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_download_ip)
 
 Når du er ferdig skal strukturen på området se slik ut:
 ```
@@ -108,7 +109,7 @@ Ikke et unntak, men også viktig å merke seg. For å koble sak-arkivsystemet ti
 
 ### Hvordan opprette brukere for DPO/DPF/DPV?
 
-[Denne delen er flyttet](/eformidling_create_users.html)
+[Denne delen er flyttet]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_create_users)
 
 > For DPI kreves ingen bruker, da benyttes virksomhetssertifikatet.
 

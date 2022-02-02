@@ -2,9 +2,10 @@
 title: Konvolutt og melding
 description: Beskrivelse av konvolutt og melding
 summary: ""
-permalink: eformidling_nm_message.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_nm_message
 ---
 
 En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke - som er selve meldingen man ønsker å sende.

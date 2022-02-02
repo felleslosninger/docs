@@ -1,7 +1,8 @@
 ---
 title: Epostadresse  
-permalink: ot_epostadresse.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_epostadresse
 ---
 
 | --- | --- |
@@ -15,9 +16,9 @@ sidebar: begrep_sidebar
 
 | --- | --- |
 | Term | Kardinalitet |
-| [epostadresse](../felles/epostadresse.md)     | 0..1 |
-| [sistOppdatert](../felles/sistOppdatert.md)   | 0..1 |
-| [sistVerifisert](../felles/sistVerifisert.md) | 0..1 |
+| [epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)     | 0..1 |
+| [sistOppdatert]({{site.baseurl}}/resources/begrep/felles/sistOppdatert)   | 0..1 |
+| [sistVerifisert]({{site.baseurl}}/resources/begrep/felles/sistVerifisert) | 0..1 |
  
 
 

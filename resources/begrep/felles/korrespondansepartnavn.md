@@ -1,7 +1,8 @@
 ---
 title: Korrespondansepartnavn
-permalink: 2korrespondansepartnavn.html
+
 sidebar:
+redirect_from: /2korrespondansepartnavn
 ---
 
 | ---- | ---- |

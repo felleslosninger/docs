@@ -1,7 +1,8 @@
 ---
 title: personidentifikator 
-permalink: 2personidentifikator.html
+
 sidebar:
+redirect_from: /2personidentifikator
 ---
 
 | ---- | ---- |

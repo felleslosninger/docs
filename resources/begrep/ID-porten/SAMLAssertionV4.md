@@ -1,8 +1,9 @@
 ---
 
 title: SAMLAssertionV4  
-permalink: IDport_SAMLAssertionV4.html
+
 sidebar:
+redirect_from: /idport_samlassertionv4
 ---
 |---|---|
 | Identifikator    | <https://begrep.difi.no/ID-porten/SAMLAssertionV4> |

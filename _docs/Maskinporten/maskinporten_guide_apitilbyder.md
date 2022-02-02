@@ -2,9 +2,10 @@
 title: Slik bruker du Maskinporten som API-tilbyder
 description: API-sikring med Maskinporten
 summary:
-permalink: maskinporten_guide_apitilbyder.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_guide_apitilbyder
 ---
 
 ### Overordnet prosedyre for API-sikring
@@ -111,7 +112,7 @@ kommenterte bort død lenke
 -->
 ### 2a. Opprette APIer - Oauth2-selvbetjeningsklient
 
-Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
+Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [{{site.baseurl}}/docs/idporten/oidc/oidc_api_admin_maskinporten]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin_maskinporten) for detaljer.
 
 #### Eksempel på å opprette scope
 
@@ -169,7 +170,7 @@ Vi har valgt å legge scope som query-parameter, da det innen noen sektorer finn
 
 ### 3. Gi konsument beskjed om å lage en integrasjon
 
-Du kan nå gi konsumenten beskjed om at han må lage en Maskinporten-integrasjon med det aktuelle API-scopet. Denne prosessen er dokumentert i [guide for API-konsument](maskinporten_guide_apikonsument.html).
+Du kan nå gi konsumenten beskjed om at han må lage en Maskinporten-integrasjon med det aktuelle API-scopet. Denne prosessen er dokumentert i [guide for API-konsument]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apikonsument).
 
 
 
@@ -223,7 +224,7 @@ Dersom konsumenten bruker leverandør, vil du i tillegg få to ekstra claims, de
 
 Dersom du ønsker at konsumenter av ditt API skal kunne bruke Altinn til å delegere tilgangen videre til en systemleverandør, må du opprette et såkalt delegeringsoppsett (delegationScheme) som må tilknyttes et eller flere av dine Oauth2 scopes i Maskinporten.  Dette fordrer at du er tjenesteeier i Altinn.
 
-Prosedyren er nærmere dokumentert i [funksjonalitetsbeskrivelse for ekstern delegering](maskinporten_func_delegering.html).
+Prosedyren er nærmere dokumentert i [funksjonalitetsbeskrivelse for ekstern delegering]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_delegering).
 
 
 1. Først oppretter du et scope i Maskinporten på vanlig måte (se ovenfor), men passe på å sette at dette scopet har en **delegeringskilde** knyttet til seg.

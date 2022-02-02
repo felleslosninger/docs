@@ -1,6 +1,6 @@
 --- 
 title: Webservice sikkerhet  
-permalink: ot_webservicesecurity.html
+
 sidebar:
 ---
 

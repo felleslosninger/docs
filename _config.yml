@@ -74,6 +74,8 @@ github_button_location_page_bottom: false
 # link to your github repo. replace <organization> (if applicable) and <repo name> and <branch name>. Note that the github link will be {{site.github_editme_path}}/{{page.path}}
 github_editme_path: https://github.com/felleslosninger/docs/blob/gh-pages
 
+plugins:
+  - jekyll-redirect-from
 
 ############# Glossary info #############
 

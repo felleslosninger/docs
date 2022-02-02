@@ -1,8 +1,9 @@
 ---
 
 title: Lenke utenfor brev  
-permalink: sdp_lenke.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_lenke
 ---
 
 |---|---|
@@ -10,7 +11,7 @@ sidebar: dpi_sidebar
 | Mime-Type | application/vnd.difi.dpi.lenke+xml |
 | Datatype   | complexType |
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
-| XSD        | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd) |
+| XSD        | [{{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/lenke.xml]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/utvidelser/lenke.xml) |
 
 ### Attributer
 

@@ -1,7 +1,8 @@
 ---
 title: Aktører og Roller  
-permalink: sdp_aktorer.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_aktorer
 ---
 
 ## Aktør
@@ -16,7 +17,7 @@ Tabellen under inneholder en oversikt over hovedaktørene i prosessen med
 | Tilbyder av postkassetjeneste | urn:sdp:forvalter-postkasse         |(Her skal det være link til virksomhetsidentifikator under felles. ) | Virksomhet (offentlig eller privat) som tilbyr postkassetjenester, enten direkte eller via underleverandører                                |
 | Tilbyder av utskriftstjeneste | urn:sdp:forvalter-utskrift          | (Her skal det være link til virksomhetsidentifikator under felles. ) | Virksomhet (offentlig eller privat) som tilbyr utskriftstjeneste, enten direkte eller via underleverandører                                 |
 | Sentralforvalter              | urn:sdp:sentralforvalter            |(Her skal det være link til virksomhetsidentifikator under felles. ) | Ansvarlig for forvaltning/kontroll av forholdet mellom offentlig virksomheter, mottaker og tilbydere av meldingsformidler/postkassetjeneste |
-| Innbygger                     | urn:sdp:innbygger                   | [personidentifikator](personidentifikator.html)           | Mottaker av postforsendelsen                                                                                                                |
+| Innbygger                     | urn:sdp:innbygger                   | [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)           | Mottaker av postforsendelsen                                                                                                                |
 
 Begrepet **Ansvarlig enhet** har også blitt brukt:
 

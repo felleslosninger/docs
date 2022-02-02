@@ -1,7 +1,8 @@
 ---
 title: virkningstidspunkt
-permalink: 2virkningstidspunkt.html
+
 sidebar:
+redirect_from: /2virkningstidspunkt
 ---
 
 | ---- | ---- |

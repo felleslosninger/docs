@@ -1,7 +1,8 @@
 ---
 title: Sikkerhet  
-permalink: sikkerhet_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /sikkerhet_index
 ---
 
 ## Sikkerhet
@@ -71,8 +72,8 @@ videre begrenset i henhold til profilen definert i [Baseline Profile
 
 #### Signatur i dokumentpakken for sikker digital post
 
-Dokumentpakken bør være signert av [Behandlingsansvarlig](../Aktorer.md),
-men kan signeres av [Databehandler](../Aktorer.md).
+Dokumentpakken bør være signert av [Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer),
+men kan signeres av [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).
 
 Signaturen skal være i henhold til [XAdES (ETSI TS 101 903)](etsi3) med
 basisprofilen definert i [XAdES Baseline Profile (ETSI TS 103
@@ -243,7 +244,7 @@ Ved bruk av aes256-CBC skal padding gjøres i henhold til [kapittel 6.3 i
 CMS spesifikasjonen](ietf5_6_3)
 
 Integriteten til den krypterte dokumentpakken ivaretas av
-[Dokumentpakkefingeravtrykk](../../begrep/Dokumentpakkefingeravtrykk.md)
+[Dokumentpakkefingeravtrykk]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokumentpakkefingeravtrykk)
 som ligger i en signert melding.
 
 Det er avsenders ansvar å generere en AES-nøkkel med tilstrekkelig

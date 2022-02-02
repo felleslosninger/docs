@@ -1,7 +1,8 @@
 ---
 title: Maskinportentoken
-permalink: dpi_maskinportentoken.html
+
 sidebar: begrep_sidebar
+redirect_from: /dpi_maskinportentoken
 ---
 
 ![](/images/dpi/underarbeide.png)

@@ -2,8 +2,9 @@
 title: Person  
 headtitle: Begrepskatalog for Sikker digital post -  
 group: Oppslagstjenesten/complexType  
-permalink: ot_person.html
+
 sidebar:
+redirect_from: /ot_person
 ---
 | --- | --- |
 | Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/5.0/Person> |
@@ -11,7 +12,7 @@ sidebar:
 | Definisjon | Person slik den er definert i kontakt og reservasjonsregisteret. |
 | Datatype | complexType |
 | Kilde | DIFI |
-| Kommentar | Person er en Innbygger utlevert fra kontakt og reservasjonsregisteret. [status](../felles/status.md) definerer om Person er registrert eller ikke i registreret. |
+| Kommentar | Person er en Innbygger utlevert fra kontakt og reservasjonsregisteret. [status]({{site.baseurl}}/resources/begrep/felles/status) definerer om Person er registrert eller ikke i registreret. |
 
 Merk at Person ikke er unik definert på tvers av Digdirs
 felleskomponenter, men at hver av felleskomponentene har en definisjon
@@ -19,23 +20,23 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 
 #### Datamodell
 
-![Visualisering av datamodellen](/resources/begrep/oppslagstjenesten/uml_diagram_oppslagstjenesten_ekstern.jpg)
+![Visualisering av datamodellen]({{site.baseurl}}/resources/begrep/oppslagstjenesten/uml_diagram_oppslagstjenesten_ekstern.jpg)
 
 #### Attributer
 
 | Term                                                                    | Kardinalitet |
 | ----------------------------------------------------------------------- | ------------ |
-| [personidentifikator](../felles/personidentifikator.md)                      | 1..1         |
-| [reservasjon](../felles/reservasjon.md)                                      | 0..1         |
-| [status](../felles/status.md)                                                | 0..1         |
-| [varslingsstatus](varslingsstatus.md)                 | 0..1         |
-| [Kontaktinformasjon](Kontaktinformasjon.md)             | 0..1         |
-| [SikkerDigitalPostAdresse](SikkerDigitalPostAdresse.md) | 0..1         |
-| [X509Sertifikat](../felles/x509Sertifikat.md)                                | 0..1         |
+| [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)                      | 1..1         |
+| [reservasjon]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/reservasjon)                                      | 0..1         |
+| [status]({{site.baseurl}}/resources/begrep/felles/status)                                                | 0..1         |
+| [varslingsstatus]({{site.baseurl}}/resources/begrep/felles/varslingsstatus)                 | 0..1         |
+| [Kontaktinformasjon]({{site.baseurl}}/resources/begrep/oppslagstjenesten/Kontaktinformasjon)             | 0..1         |
+| [SikkerDigitalPostAdresse]({{site.baseurl}}/resources/begrep/oppslagstjenesten/SikkerDigitalPostAdresse) | 0..1         |
+| [X509Sertifikat]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/x509Sertifikat)                                | 0..1         |
 
 #### Kodeverk for status
 
-[status](../felles/status.md) kan ha følgende verdi:
+[status]({{site.baseurl}}/resources/begrep/felles/status) kan ha følgende verdi:
 
 | Kodeverdi        | Beskrivelse                      |
 | ---------------- | -------------------------------- |

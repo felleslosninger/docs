@@ -1,7 +1,8 @@
 ---
 title: Forvaltning og tekniske feil  
-permalink: sdp_forvaltning.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_forvaltning
 ---
 
 ## Forvaltningsmessige og tekniske feil
