@@ -1,6 +1,6 @@
 ---
-title: "Endringer i Nye ID-porten i 2022"
-description: "ID-porten gjennomgår et omfattende moderniseringsløp i perioden 2020-2022, der hele kjernen i løsningen skrives om.  Det er et uttalt hovedmål for prosjektet at overgangen skal skje uten negative konsekvenser for kundene.  Samtidig ser vi at ny løsning ikke kan bli 100%-bakoverkompatible med dagens løsning, og denne siden dokumenterer de endringene vi ser vil komme."
+title: "Endringer i Nye ID-porten i 2022-2023"
+description: "ID-porten gjennomgår et omfattende moderniseringsløp i perioden 2020-2023, der hele kjernen i løsningen skrives om.  Det er et uttalt hovedmål for prosjektet at overgangen skal skje uten negative konsekvenser for kundene.  Samtidig ser vi at ny løsning ikke kan bli 100%-bakoverkompatible med dagens løsning, og denne siden dokumenterer de endringene vi ser vil komme."
 permalink: oidc_protocol_nye_idporten.html
 sidebar: oidc
 product: ID-porten
@@ -9,7 +9,7 @@ product: ID-porten
 
 ## Bakgrunn
 
-ID-porten gjennomgår et omfattende moderniseringsløp i perioden 2020-2022, der hele kjernen i løsningen skrives om.  Det er et uttalt hovedmål for prosjektet at overgangen skal skje uten negative konsekvenser for kundene.  
+ID-porten gjennomgår et omfattende moderniseringsløp i perioden 2020-2023, der hele kjernen i løsningen skrives om.  Det er et uttalt hovedmål for prosjektet at overgangen skal skje uten negative konsekvenser for kundene.  
 
 Samtidig ser vi at ny løsning ikke kan bli 100%-bakoverkompatible med dagens løsning, og denne siden dokumenterer de endringene vi ser vil komme.  Dette gjelder særlig proprietære mekanismer som vi har innført, eller på områder der vår bruk av protokollen skiller seg fra det som er gjengs i bransjen.  For eksempel har vi vært tidlig ute med å ta i bruk noen Oauth2-spesifikasjoner selv om de var i tidlig draft-fase, og vi ser på noen områder at standardbibliotek og -programmer ikke bruke mekanismene slik vi trodde.
 
@@ -20,16 +20,16 @@ Dagens driftsavtale med TietoEvry om drift av ID-porten utløper høsten 2022.  
 
 Omskrivningsarbeidet er i full gang, og har holdt på siden sommer 2020.  Det pågår et anskaffelsesprosjekt for
 
-* Vi håper å kunne tilby testmiljøer for kundene rundt sommer 2021.
-* Vi håper å kunne tilby et isolert produksjonsmiljø tidlig 2022 som kjører i parallell med eksisterende løsning.  Dette gjør det mulig for kunden selv å bestemme et passende tidspunkt for migrering til ny løsning.
-* Mot slutten av 2022, når dagens driftsavtale med TieotoEvry utløper, vil det bli gjennomført en "hard" migrering der alle resterende kunde-integrasjoner flyttes til ny løsning.
+* Vi håper å kunne tilby testmiljøer for kundene rundt sommer 2022.
+* Vi håper å kunne tilby et isolert produksjonsmiljø sent i 2022 som kjører i parallell med eksisterende løsning.  Dette gjør det mulig for kunden selv å bestemme et passende tidspunkt for migrering til ny løsning.
+* Etter sommeren 2023, når dagens driftsavtale med TieotoEvry utløper, vil det bli gjennomført en "hard" migrering der alle resterende kunde-integrasjoner flyttes til ny løsning.
 
 
 ## Protokoll-målbilde
 
 Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen når denne er klar.   Standard-flyt for alle integrasjon blir code-flow med tvungen bruk av PKCE og state og nonce.
 
-SAML blir videreført for eksisterende tjenster, men her  begrenset
+SAML blir videreført for eksisterende tjenster, men her begrenset
 
 
 ## Funksjonalitet som ikke blir videreført
