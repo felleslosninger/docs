@@ -41,8 +41,8 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	(t.o.m feb 22) | 13.69.253.135:443 | - | DPE | 
-| move-dpe.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443  | - | DPE | 
-| move-dpe.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671  | - | DPE | 
+| efm-dpe-qa.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443  | - | DPE | 
+| efm-dpe-qa.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671  | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 | tt02.altinn.no | 89.250.123.40:443 | - | DPV |
 | qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
@@ -58,8 +58,8 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | maskinporten.no | 146.192.252.50:443 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | move-dpe-prod.servicebus.windows.net (t.o.m 16.02.2022)	 | 52.169.10.235:443 | - | DPE | 
-| move-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443 | - | DPE |  
-| move-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671 | - | DPE |  
+| efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443 | - | DPE |  
+| efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671 | - | DPE |  
 | altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
 | svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
