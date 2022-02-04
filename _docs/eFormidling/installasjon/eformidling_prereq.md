@@ -29,17 +29,8 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 
 ### Brannmuråpninger
 Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksområder (meldingstyper) i eFormidling.
-<!--
-> * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
-
-Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
--->
 
 
-
-<!--
-En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
--->
 ### Brannmuråpninger i testmiljø
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
