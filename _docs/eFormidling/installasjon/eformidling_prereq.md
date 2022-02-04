@@ -34,7 +34,7 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 
 Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 -->
-### Brannmuråpninger i testmiljø
+
 
 
 <!--
