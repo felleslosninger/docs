@@ -28,19 +28,19 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 
 ### Brannmuråpninger
-
-
+Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksområder (meldingstyper) i eFormidling.
+<!--
 > * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
 
 Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
-
+-->
 ### Brannmuråpninger i testmiljø
 
-Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp noen brannmuråpninger. 
+
 <!--
 En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
 -->
-
+### Brannmuråpninger i testmiljø
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
@@ -51,6 +51,7 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
 | move-dpe.servicebus.windows.net	(t.o.m feb 22) | 13.69.253.135:443 | - | DPE | 
 | move-dpe.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443  | - | DPE | 
+| move-dpe.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671  | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 | tt02.altinn.no | 89.250.123.40:443 | - | DPV |
 | qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
@@ -67,7 +68,8 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
 | move-dpe-prod.servicebus.windows.net (t.o.m 16.02.2022)	 | 52.169.10.235:443 | - | DPE | 
 | move-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443 | - | DPE |  
-| www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
+| move-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671 | - | DPE |  
+| altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
 | svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
 
