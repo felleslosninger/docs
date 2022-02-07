@@ -9,81 +9,156 @@
 <title>Virksert API Specification</title>
 <link rel="stylesheet" href="{{site.baseurl}}/assets/css/asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.hidden {
-    display: none;
-}
-
-.switch {
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-color: #7a2518;
-    display: inline-block;
-}
-
-.switch--item {
-    padding: 10px;
-    background-color: #ffffff;
-    color: #7a2518;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.switch--item.selected {
-    background-color: #7a2519;
-    color: #ffffff;
-}
-
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-<script type="text/javascript">
-function addBlockSwitches() {
-    $('.primary').each(function() {
-        primary = $(this);
-        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
-        primary.children('.title').remove();
-    });
-    $('.secondary').each(function(idx, node) {
-        secondary = $(node);
-        primary = findPrimary(secondary);
-        switchItem = createSwitchItem(secondary, primary.children('.switch'));
-        switchItem.content.addClass('hidden');
-        findPrimary(secondary).append(switchItem.content);
-        secondary.remove();
-    });
-}
-
-function createBlockSwitch(primary) {
-    blockSwitch = $('<div class="switch"></div>');
-    primary.prepend(blockSwitch);
-    return blockSwitch;
-}
-
-function findPrimary(secondary) {
-    candidate = secondary.prev();
-    while (!candidate.is('.primary')) {
-        candidate = candidate.prev();
-    }
-    return candidate;
-}
-
-function createSwitchItem(block, blockSwitch) {
-    blockName = block.children('.title').text();
-    content = block.children('.content').first().append(block.next('.colist'));
-    item = $('<div class="switch--item">' + blockName + '</div>');
-    item.on('click', '', content, function(e) {
-        $(this).addClass('selected');
-        $(this).siblings().removeClass('selected');
-        e.data.siblings('.content').addClass('hidden');
-        e.data.removeClass('hidden');
-    });
-    blockSwitch.append(item);
-    return {'item': item, 'content': content};
-}
-
-$(addBlockSwitches);
-
-</script>
+<style>
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+.switch {
+
+    border-width: 1px 1px 0 1px;
+
+    border-style: solid;
+
+    border-color: #7a2518;
+
+    display: inline-block;
+
+}
+
+
+
+.switch--item {
+
+    padding: 10px;
+
+    background-color: #ffffff;
+
+    color: #7a2518;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+}
+
+
+
+.switch--item.selected {
+
+    background-color: #7a2519;
+
+    color: #ffffff;
+
+}
+
+
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+
+<script type="text/javascript">
+
+function addBlockSwitches() {
+
+    $('.primary').each(function() {
+
+        primary = $(this);
+
+        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
+
+        primary.children('.title').remove();
+
+    });
+
+    $('.secondary').each(function(idx, node) {
+
+        secondary = $(node);
+
+        primary = findPrimary(secondary);
+
+        switchItem = createSwitchItem(secondary, primary.children('.switch'));
+
+        switchItem.content.addClass('hidden');
+
+        findPrimary(secondary).append(switchItem.content);
+
+        secondary.remove();
+
+    });
+
+}
+
+
+
+function createBlockSwitch(primary) {
+
+    blockSwitch = $('<div class="switch"></div>');
+
+    primary.prepend(blockSwitch);
+
+    return blockSwitch;
+
+}
+
+
+
+function findPrimary(secondary) {
+
+    candidate = secondary.prev();
+
+    while (!candidate.is('.primary')) {
+
+        candidate = candidate.prev();
+
+    }
+
+    return candidate;
+
+}
+
+
+
+function createSwitchItem(block, blockSwitch) {
+
+    blockName = block.children('.title').text();
+
+    content = block.children('.content').first().append(block.next('.colist'));
+
+    item = $('<div class="switch--item">' + blockName + '</div>');
+
+    item.on('click', '', content, function(e) {
+
+        $(this).addClass('selected');
+
+        $(this).siblings().removeClass('selected');
+
+        e.data.siblings('.content').addClass('hidden');
+
+        e.data.removeClass('hidden');
+
+    });
+
+    blockSwitch.append(item);
+
+    return {'item': item, 'content': content};
+
+}
+
+
+
+$(addBlockSwitches);
+
+
+
+</script>
+
 
 </head>
 <body class="book toc2 toc-left">
@@ -123,6 +198,14 @@ $(addBlockSwitches);
 <li><a href="#get-processes-for-certificate">Get processes certificate</a></li>
 <li><a href="#add-process-to-certificate">Add process to certificate</a></li>
 <li><a href="#remove-process-from-certificate">Remove process from certificate</a></li>
+</ul>
+</li>
+<li><a href="#_certificate_providers">Certificate Providers</a>
+<ul class="sectlevel2">
+<li><a href="#find-all-providers">Find all certificate providers</a></li>
+<li><a href="#delete-provider">Delete provider</a></li>
+<li><a href="#add-provider-process">Add provider process</a></li>
+<li><a href="#delete-provider-process">Delete provider process</a></li>
 </ul>
 </li>
 <li><a href="#_users">Users</a>
@@ -238,6 +321,30 @@ $(addBlockSwitches);
 <td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#get-find-certificate"></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#get-certificate">Get certificate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find-all-providers">/api/v1/providers</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#find-all-providers">Find all certificate providers</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete-provider">/api/v1/providers/{providerIdentifier}}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete-provider">Delete provider</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add-provider-process">/api/v1/providers/{providerIdentifier}/{processIdentifier}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add-provider-process">Add provider process</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete-provider-process">/api/v1/providers/{providerIdentifier}/{processIdentifier}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete-provider-process">Delete provider process</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
 </tr>
 <tr>
@@ -932,7 +1039,7 @@ Host: localhost:8080</code></pre>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 515
+Content-Length: 521
 
 [ {
   "id" : 0,
@@ -949,12 +1056,12 @@ Content-Length: 515
     "scheme" : "iso6523-actorid-upis",
     "name" : "Grimsby"
   },
-  "process" : {
+  "processes" : [ {
     "id" : 0,
     "identifier" : "urn:www.difi.no:profile:move:ver1.0",
     "scheme" : "difi-move-temp",
     "title" : "difi-move-temp"
-  }
+  } ]
 } ]</code></pre>
 </div>
 </div>
@@ -962,7 +1069,7 @@ Content-Length: 515
 <div class="sect2">
 <h3 id="add-certificate-provider">Add certificate provider for participant</h3>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">/api/v1/participants/{qualifiedIdentifier}/providers/{providerQualifiedIdentifier}/{processIdentifier}</caption>
+<caption class="title">/api/v1/participants/{qualifiedIdentifier}/providers/{providerQualifiedIdentifier}</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -982,23 +1089,19 @@ Content-Length: 515
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>providerQualifiedIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provider qualified identifier. Example 'iso6523-actorid-upis::0192:123123123'</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Process identifier. Example 'urn:www.difi.no:profile:dpo:ver1.0'</p></td>
-</tr>
 </tbody>
 </table>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/participants/iso6523-actorid-upis::9908:000777000/providers/iso6523-actorid-upis::0192:123123123/urn:www.difi.no:profile:dpo:ver1.0' -i -X POST \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/participants/iso6523-actorid-upis::9908:000777000/providers/iso6523-actorid-upis::0192:123123123' -i -X POST \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/v1/participants/iso6523-actorid-upis::9908:000777000/providers/iso6523-actorid-upis::0192:123123123/urn:www.difi.no:profile:dpo:ver1.0 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/v1/participants/iso6523-actorid-upis::9908:000777000/providers/iso6523-actorid-upis::0192:123123123 HTTP/1.1
 Content-Type: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -1013,7 +1116,7 @@ Host: localhost:8080</code></pre>
 <div class="sect2">
 <h3 id="delete-certificate-provider">Delete certificate provider from participant</h3>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">/api/v1/participants/{qualifiedIdentifier}/providers/{providerIdentifier}</caption>
+<caption class="title">/api/v1/providers/{providerIdentifier}</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1026,10 +1129,6 @@ Host: localhost:8080</code></pre>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>qualifiedIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">scheme + identifier = qualifiedIdentifier. Example 'iso6523-actorid-upis::9908:910539000'</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>providerIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Provider identifier, UUID. Example 'e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f'</p></td>
 </tr>
@@ -1038,14 +1137,14 @@ Host: localhost:8080</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/participants/iso6523-actorid-upis::9908:000777000/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f' -i -X DELETE \
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f' -i -X DELETE \
     -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/v1/participants/iso6523-actorid-upis::9908:000777000/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f HTTP/1.1
 Content-Type: application/json
 Host: localhost:8080</code></pre>
 </div>
@@ -1411,6 +1510,199 @@ Content-Length: 84
 </div>
 </div>
 <div class="sect1">
+<h2 id="_certificate_providers">Certificate Providers</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="find-all-providers">Find all certificate providers</h3>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/providers' -i -X GET \
+    -H 'Content-Type: application/json' \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/v1/providers HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Ok response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 542
+
+[ {
+  "id" : 0,
+  "identifier" : "e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f",
+  "delegatedParticipant" : {
+    "id" : 10,
+    "identifier" : "0192:910539000",
+    "scheme" : "iso6523-actorid-upis",
+    "name" : "Grimsby"
+  },
+  "providerParticipant" : {
+    "id" : 9,
+    "identifier" : "0192:123123123",
+    "scheme" : "iso6523-actorid-upis",
+    "name" : "ACME Corp"
+  },
+  "processes" : [ {
+    "id" : 0,
+    "identifier" : "urn:no:difi:profile:dpo:ver1.0",
+    "scheme" : "cenbii-procid-ubl",
+    "title" : "DPO"
+  } ]
+} ]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-provider">Delete provider</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/api/v1/providers/{providerIdentifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>providerIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provider identifier, UUID. Example 'e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f'</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f' -i -X DELETE \
+    -H 'Content-Type: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Ok response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-provider-process">Add provider process</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/api/v1/providers/{providerIdentifier}/{processIdentifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>providerIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provider identifier, UUID. Example 'e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process identifier. Example 'urn:no:difi:profile:dpo:ver1.0'</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f/urn:no:difi:profile:dpo:ver1.0' -i -X POST \
+    -H 'Content-Type: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f/urn:no:difi:profile:dpo:ver1.0 HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Ok response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-provider-process">Delete provider process</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/api/v1/providers/{providerIdentifier}/{processIdentifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>providerIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provider identifier, UUID. Example 'e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process identifier. Example 'urn:no:difi:profile:dpo:ver1.0'</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f/urn:no:difi:profile:dpo:ver1.0' -i -X DELETE \
+    -H 'Content-Type: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/v1/providers/e5b38a62-4fc1-4de6-be7c-cf8cfdd5160f/urn:no:difi:profile:dpo:ver1.0 HTTP/1.1
+Content-Type: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Ok response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_users">Users</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -1704,7 +1996,7 @@ Content-Length: 81
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-31 13:51:08 +0100
+Last updated 2022-02-07 13:55:18 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
