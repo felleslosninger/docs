@@ -1,0 +1,40 @@
+sidebarTitle: KRR
+
+
+folders:
+- title: KRR
+  folderitems:
+
+      - title: Oppslagstjenesten REST
+        jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
+
+      - title: Brukerspesifikt oppslag REST
+        jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
+
+      - title: Attributter i KRR
+        jurl: /docs/Kontaktregisteret/krr_attributter
+
+      - title: Testbrukere
+        jurl: /docs/Kontaktregisteret/krr_testbrukere
+
+      - title: Overgang fra SOAP til REST
+        jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
+
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

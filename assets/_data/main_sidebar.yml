@@ -1,0 +1,111 @@
+sidebarTitle: Fellesløsninger
+
+## See the generic.yml file as an example of the allowed yaml format.
+
+folders:
+- title: ID-porten
+  folderitems:
+
+  - title: Om ID-porten
+    jurl: /docs/idporten/
+
+  - title: Teknisk dokumentasjon
+    jurl: /docs/idporten/idporten/idporten_overordnet
+
+
+- title: Maskinporten
+  folderitems:
+
+  - title: Om Maskinporten
+    jurl: /docs/Maskinporten/
+
+  - title: Teknisk dokumentasjon
+    jurl: /docs/Maskinporten/maskinporten_overordnet
+
+
+- title: Kontaktregisteret
+  folderitems:
+
+  - title: Om Kontakt- og reservasjonsregisteret
+    jurl: /docs/Kontaktregisteret/
+
+  - title: Teknisk dokumentasjon
+    jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
+
+
+- title: Digital postkasse
+  folderitems:
+
+  - title: Om digital postkasse
+    jurl: /docs/digitalpostkasse/
+
+  - title: Veiledning og klienter
+    jurl: /resources/begrep/sikkerDigitalPost/innledning/
+
+- title: eFormidling
+  folderitems:
+
+  - title: Om eFormidling
+    jurl: /docs/eFormidling/
+
+  - title: Installasjonsveiledning
+    jurl: /docs/eFormidling/installasjon/eformidling_download_ip
+
+  - title: Teknisk dokumentasjon
+    jurl: /docs/eFormidling/Teknisk_informasjon/aboutNextMove
+    #Må endre jurl på teknisk info
+
+- title: eSignering
+  folderitems:
+
+  - title: Om eSignering
+    jurl: /docs/eSignering/
+
+  - title: Kom i gang med eSignering
+    jurl: /docs/eSignering/esign_komigang
+
+- title: eInnsyn
+  folderitems:
+
+  - title: Om eInnsyn
+    jurl: /docs/eInnsyn/
+
+  - title: eInnsyn-klient
+    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
+
+- title: ELMA
+  folderitems:
+
+  - title: about ELMA
+    jurl: /docs/ELMA/
+
+  - title: Documentation
+    jurl: /docs/ELMA/elma_elma
+
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Begrepskatalog
+  jurl: /resources/begrep/sikkerDigitalPost/begrep/
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no
+
+#- title: Digdir Status
+#  jurl: https://status.digdir.no
+
+- title: Altinn Docs
+  jurl: https://altinn.github.io/docs/

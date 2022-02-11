@@ -1,0 +1,112 @@
+sidebarTitle: eFormidling
+
+folders:
+- title: Installasjon av integrasjonspunktet
+
+  folderitems:
+
+      - title: Oppgradere til ny versjon
+        jurl: /docs/eFormidling/installasjon/eformidling_oppgradere
+
+      - title: Last ned integrasjonspunktet
+        jurl: /docs/eFormidling/installasjon/eformidling_download_ip
+
+      - title: Forutsetninger for installasjon
+        jurl: /docs/eFormidling/installasjon/eformidling_prereq
+
+      - title: Virksomhetssertifikat
+        jurl: /docs/eFormidling/installasjon/eformidling_virksert
+
+      - title: Konfigurasjon av properties
+        jurl: /docs/eFormidling/installasjon/eformidling_properties_config
+
+      - title: Oppstart av integrasjonspunktet
+        jurl: /docs/eFormidling/installasjon/eformidling_ip_run
+
+      - title: KOSMOS - Automatisk oppdatering av integrasjonspunktet
+        jurl: /docs/eFormidling/installasjon/eformidling_auto_update
+
+      - title: KOSMOS guide
+        jurl: /docs/eFormidling/installasjon/eformidling_kosmos_user_guide
+
+      - title: Opprette brukere i eFormidling
+        jurl: /docs/eFormidling/installasjon/eformidling_create_users
+
+      - title: Installer integrasjonspunktet i AKS
+        jurl: /docs/eFormidling/installasjon/ip-aks
+
+
+
+
+- title: Selvhjelp og nyttig informasjon
+
+  folderitems:
+
+      - title: Nyttig informasjon
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_selfhelp
+
+      - title: Typiske feil
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_selfhelp_typical_errors
+
+      - title: Trafikkflyt, kvitteringer og status
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_selfhelp_traffic_flow
+
+      - title: Sporing av forsendelser
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_api
+
+      - title: Testmiljø eFormidling
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_testing_env
+
+      - title: Endringslogg integrasjonspunktet
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_releasenotes
+
+      - title: Endringslogg sentrale komponenter
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_releasenotes_sentrale_komp
+
+      - title: Sak-arkiv
+        jurl: /docs/eFormidling/Selvhjelp/eformidling_veiledning_sakark
+
+
+- title: Utviklerdokumentasjon
+
+  folderitems:
+
+      - title: Om eFormidling 2.0
+        jurl: /docs/eFormidling/Teknisk_informasjon/aboutNextMove
+
+      - title: Arkivmeldingen
+        jurl: /docs/eFormidling/Teknisk_informasjon/arkivmeldingen
+
+      - title: Meldingsflyt
+        jurl: /docs/eFormidling/Teknisk_informasjon/meldingsflyt
+
+      - title: Meldingen
+        jurl: /docs/eFormidling/Teknisk_informasjon/message
+
+      - title: Sikkerhet
+        jurl: /docs/eFormidling/Teknisk_informasjon/security
+
+      - title: Utivkler API-supplement
+        jurl: /docs/eFormidling/Teknisk_informasjon/dev_helper
+
+      - title: Grensesnitt / REST docs
+        jurl: /docs/eFormidling/Teknisk_informasjon/restdocs
+
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

@@ -1,0 +1,35 @@
+sidebarTitle: ELMA
+
+folders:
+- title: ELMA user manual
+  folderitems:
+
+  - title: For Service Provider
+    jurl: /docs/ELMA/elma_as_service_provider
+
+  - title: For Access Point Provider
+    jurl: /docs/ELMA/elma_as_access_point_provider
+
+- title: ELMA documentation
+  folderitems:
+
+  - title: ICD 0192 and new profiles
+    jurl: /docs/ELMA/elma_0192andnewprofiles
+
+  - title: Upgrade to new 3.0 profiles
+    jurl: /docs/ELMA/elma_upgradingto0192profiles
+
+  - title: Status & releasenotes
+    jurl: /docs/ELMA/elma_status
+
+- title: REST API
+  folderitems:
+
+  - title: Produksjon (smp.difi.no)
+    jurl: /resources/begrep/felles/
+
+  - title: QA (test-smp.difi.no)
+    jurl: /resources/begrep/felles/
+
+- title: Open data
+  jurl: /docs/ELMA/elma_open_data

@@ -1,0 +1,92 @@
+sidebarTitle: Maskinporten
+
+
+folders:
+
+- title: Maskinporten
+  folderitems:
+
+      - title: Overordnet
+        jurl: /docs/Maskinporten/maskinporten_overordnet
+
+      - title: Virksomhetssertifikat
+        jurl: /docs/Maskinporten/maskinporten_virksomhetssertifikat
+
+
+- title: Bruksområde og guide
+  folderitems:
+
+      - title: Hvordan virker Maskinporten?
+        jurl: /docs/Maskinporten/maskinporten_auth_server-to-server-oauth2
+
+      - title: Guide for API-tilbyder
+        jurl: /docs/Maskinporten/maskinporten_guide_apitilbyder
+
+      - title: Guide for API-konsument
+        jurl: /docs/Maskinporten/maskinporten_guide_apikonsument
+
+
+- title: Selvbetjening
+  folderitems:
+
+      - title: Selvbetjening via Web
+        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_web
+
+      - title: Selvbetjening via API
+        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_api
+
+
+- title: Grensesnittspesifikasjon
+  folderitems:
+
+      - title: JWT grants
+        jurl: /docs/Maskinporten/maskinporten_protocol_jwtgrant
+
+      - title: /token-endepunkt
+        jurl: /docs/Maskinporten/maskinporten_protocol_token
+
+- title: Funksjonalitet
+  folderitems:
+
+      - title: Metadata
+        jurl: /docs/Maskinporten/maskinporten_func_wellknown
+
+      - title: Klientregistrering
+        jurl: /docs/idporten/oidc/oidc_func_clientreg
+
+      - title: Delegering
+        jurl: /docs/Maskinporten/maskinporten_func_delegering
+
+      - title: Audience-begrensning
+        jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens
+
+
+- title: Spørsmål og svar
+  folderitems:
+
+     - title: Using Postman towards Maskinporten
+       jurl: /docs/idporten/oidc/oidc_sample_jwtgrant_postman
+
+- title: Feilsøking
+  folderitems:
+
+  - title: Feilsøking i Maskinporten
+    jurl: /docs/Maskinporten/maskinporten_feilsoking
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

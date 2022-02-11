@@ -1,0 +1,41 @@
+sidebarTitle: Oppslagstjenesten
+
+folders:
+- title: Oppslagstjeneste klient dotnet
+  folderitems:
+
+  - title: Eksempler på kall
+    jurl: /krr_eksempler_paa_kall.html
+
+  - title: Hvordan komme i gang
+    jurl: /docs/Kontaktregisteret/dotnet_klient/2_hvordan-komme-i-gang
+
+  - title: Konfigurasjon
+    jurl: /docs/Kontaktregisteret/dotnet_klient/3_konfigurasjon
+
+  - title: Sertifikater
+    jurl: /docs/Kontaktregisteret/dotnet_klient/4_sertifikater
+
+  - title: Asynkronitet
+    jurl: /docs/Kontaktregisteret/dotnet_klient/5_asynkronitet
+
+  - title: Logging
+    jurl: /docs/Kontaktregisteret/dotnet_klient/6_logging
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

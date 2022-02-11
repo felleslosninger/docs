@@ -1,0 +1,47 @@
+sidebarTitle: ID-porten
+folders:
+
+    - title: Overordna arkitekturbeskrivelse
+      jurl: /docs/idporten/idporten/idporten_logo
+
+    - title: Ulike brukområder
+      folderitems:
+
+        - title: Innlogging til webtjeneste
+          jurl: /docs/idporten/idporten/idporten_bruksomrade_webtjeneste
+        - title: Innlogging til mobilapp
+          jurl: /docs/idporten/idporten/idporten_bruksomrade_mobilapp
+        - title: Innlogging til SPA
+          jurl: /docs/idporten/idporten/idporten_bruksomrade_spa
+        - title: Tilgangsstyring til dine API'er
+          jurl: /docs/idporten/idporten/idporten_bruksomrade_tilgang_api
+
+    - title: Grensesnitt
+      folderitems:
+
+      - title: SAML2
+        jurl: /docs/idporten/idporten/idporten_grensesnitt_saml2
+      - title: OpenID Connect (OIDC)
+        jurl: /docs/idporten/idporten/idporten_grensenitt_oidc
+
+    - title: Spørsmål og svar
+      jurl: /docs/idporten/idporten/idporten_sporsmalsvar
+
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

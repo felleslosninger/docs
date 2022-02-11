@@ -1,0 +1,72 @@
+sidebarTitle: eInnsyn-klient
+
+folders:
+- title: eInnsyn-klient
+  folderitems:
+
+  - title: Forutsetning for installasjon og verktøy
+    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
+
+  - title: Konfigurasjon av einnsyn-klient.xml
+    jurl: /docs/eInnsyn/einnsyn_install_konfigurasjon
+
+  - title: Installere einnsyn-klient som Windows service
+    jurl: /docs/eInnsyn/einnsyn_install_tjeneste
+
+  - title: Teste og verifisere installasjon
+    jurl: /docs/eInnsyn/einnsyn_test_verifikasjon
+
+  - title: Oppdatere einnsyn-klient
+    jurl: /docs/eInnsyn/einnsyn_oppdatere_tjeneste
+
+  - title: Flere einnsyn-klienter på samme server
+    jurl: /docs/eInnsyn/einnsyn_flere_klienter
+
+  - title: Innsynskrav og e-postoppsett
+    jurl: /docs/eInnsyn/einnsyn_innsynskrav
+
+- title: eInnsyn
+  folderitems:
+
+  - title: Publisering til einnsyn
+    jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
+
+  - title: Generelt om datamodell
+    jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
+
+  - title: Validering
+    jurl: /docs/eInnsyn/datamodell/SHACL_validering
+
+  - title: Kodelister
+    jurl: /docs/eInnsyn/datamodell/einnsyn_publisering_kodelister
+
+  - title: Eksempel
+    jurl: /docs/eInnsyn/datamodell/eksempler
+
+
+- title: Publisering av møter
+  folderitems:
+
+  - title: Generelt om møtemodellen
+    jurl: /docs/eInnsyn/datamodell/publisering_moeter/generelt_om_moetemodellen
+
+  - title: Utviding møteavlevering
+    jurl: /docs/eInnsyn/datamodell/publisering_moeter/utviding_moetavlevering
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

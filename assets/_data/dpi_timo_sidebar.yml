@@ -1,0 +1,157 @@
+sidebarTitle: DPI - Ny Infrastruktur
+folders:
+
+    - title: Oversikt
+      folderitems:
+
+      - title: Innledning
+        jurl: /dpi_oversikt_index.html
+      - title: Ny transportinfrastruktur
+        jurl: /dpi_nyinfrastruktur.html
+      - title: Arkitektur
+        jurl: /dpi_arkitektur.html   
+      - title: Sikkerhet
+        jurl: /dpi_sikkerhet_index.html 
+      - title: Sertifikathåndtering
+        jurl: /dpi_sertifikathandtering.html   
+      - title: Integrasjon
+        jurl: /integrasjon.html
+      - title: Prosesser og dokumenttyper
+        jurl: /identifiers.html
+      - title: Schema og XSD 
+        jurl: /dpi_skjema.html 
+      - title: Eksempler
+        jurl: /dpi_eksempler.html
+      
+        
+    - title: Forretningslag
+      folderitems:
+
+      - title: Forretningslag
+        jurl: /dpi_forretningslag_index.html
+      - title: Aktører og Roller
+        jurl: /dpi_aktorer.html   
+      - title: Varsling
+        jurl: /dpi_varsling.html   
+      - title: Sending av innbyggerpost
+        jurl: /dpi_sending_av_digital_post.html
+      - title: Sending av innbyggerpost på vegne av andre
+        jurl: /dpi_send_paa_vegne_av_andre.html  
+      - title: Kvitteringer
+        jurl: /dpi_kvitteringer.html
+      - title: Tilstander for Avsender
+        jurl: /dpi_tilstander.html
+      - title: Struktur på melding
+        jurl: /dpi_struktur_forretningsmelding.html
+      - title: Prisen på innbyggerpost som DPI-melding
+        jurl: /dpi_pris.html
+   
+    - title: Dokumentpakke (ASiC)
+      folderitems:
+
+      - title: Introduksjon
+        jurl: /dpi_dokumentpakke_index.html
+      - title: Langtidslagring
+        jurl: /dpi_langtidslagring.html   
+      - title: Manifest
+        jurl: /dpi_manifest.html
+      - title: Dokumentformater
+        jurl: /dpi_dokumentformat.html   
+      - title: MIME type
+        jurl: /dpi_mimetypes.html  
+      - title: HTML
+        jurl: /dpi_html.html
+      - title: EHF
+        jurl: /dpi_ehf.html
+      - title: Sikkerhet
+        jurl: /dpi_dokumentpakke_sikkerhet.html
+
+    - title: Utvidelser
+      folderitems:
+
+      - title: Introduksjon
+        jurl: /dpi_utvidelser_index.html
+      - title: Lenke utenfor brev
+        jurl: /dpi_lenke.html
+      - title: Bevis
+        jurl: /dpi_bevis.html
+      - title: Arrangement
+        jurl: /dpi_arrangement.html
+        
+    - title: Utskrift og forsendelse
+      folderitems:
+           
+      - title: Utskriftstjenesten
+        jurl: /dpi_utskrift_index.html
+        
+      - title: Prosessbeskrivelse
+        jurl: /dpi_utskrift_prosess.html
+ 
+    - title: Forretningsmeldinger
+      folderitems:
+
+      - title: Forretningsmeldinger
+        jurl: /dpi_forretiningsmelding_index.html
+      - title: Digital
+        jurl: /dpi_digital.html 
+      - title: Utskrift
+        jurl: /dpi_utskrift.html   
+      - title: LeveringsKvittering
+        jurl: /dpi_leveringskvittering.html 
+      - title: AapningsKvittering
+        jurl: /dpi_aapningskvittering.html  
+      - title: VarslingfeiletKvittering
+        jurl: /dpi_varslingfeiletkvittering.html 
+      - title: MottaksKvittering
+        jurl: /dpi_mottakskvittering.html
+      - title: ReturpostKvittering
+        jurl: /dpi_returpostkvittering.html
+      - title: Feil
+        jurl: /dpi_feil.html
+      - title: FlyttetDigitalpost
+        jurl: /dpi_flyttetdigitalpost.html
+ 
+    - title: Standard Business Document
+      folderitems:
+
+      - title: Standard Business Document
+        jurl: /dpi_sbd_index.html
+      - title: StandardBusinessDocumentHeader
+        jurl: /dpi_sbdh.html   
+      - title: Sender
+        jurl: /dpi_sender.html
+      - title: Receiver
+        jurl: /dpi_receiver.html 
+      - title: DocumentIdentification
+        jurl: /dpi_documentidentification.html 
+      - title: BusinessScope
+        jurl: /dpi_businessscope.html
+    
+ 
+    - title: Feilhåndtering
+      folderitems:
+
+      - title: Feilhåndtering
+        jurl: /dpi_feilhandtering_index.html
+      - title: Forvaltning og tekniske feil
+        jurl: /dpi_forvaltning.html    
+      - title: Transportfeil
+        jurl: /dpi_transportfeil.html
+      - title: Forretningsfeil
+        jurl: /dpi_forretningsfeil.html   
+
+    - title: Testing
+      folderitems:
+
+      - title: Postkasser til testbrukere
+        jurl: /dpi_testing_index.html
+      - title: Integrasjonstest
+        jurl: /dpi_integrasjonstest.html    
+      - title: Testmiljø
+        jurl: /dpi_testmiljo.html   
+    
+    - title: Begrep
+      folderitems:
+      
+      - title: Begrepskatalog
+        jurl: /resources/begrep/sikkerDigitalPost/begrep/
