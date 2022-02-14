@@ -18,6 +18,8 @@ Det vil komme mer informasjon på [Samarbeidsportalen](https://samarbeid.digdir.
 * [Metadata for ID-porten verifikasjon 1 (ny frå 15.03.2019) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver1.zip)
 * [Metadata for ID-porten verifikasjon 2 (ny frå 15.03.2019) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver2-meta.zip)
 
+* [Metadata for versjon 4 i PROD for de som må rulle tilbake og ikke har tatt vare på v4 sine metadata]({{site.baseurl}}/assets/idporten.difi.no-v4-prod.zip)
+
 ### Eksempel på metadatafil
 
 Her er eksempel på en metadatafil. Forklaring på hva som må være med, se [hurtigsjekk av metadata](https://difi.github.io/idporten-integrasjonsguide//91_metadata_og_mer_saml.html#hurtigsjekk-av-metadata) under eksempelet.
