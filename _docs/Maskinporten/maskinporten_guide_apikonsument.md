@@ -58,7 +58,7 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 #### Registrering via Samarbeidsportalen
 
-Du kan logge inn på https://samarbeid.digdir.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
+Du kan logge inn på [https://samarbeid.digdir.no/](https://samarbeid.digdir.no/) og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
 
 Alle organisasjoner som har inngått Digitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.
 
@@ -72,7 +72,7 @@ For selvbetjening i Produksjon, kreves innlogging med ID-porten og at bemyndiget
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
+For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html](https://docs.digdir.no/docs/idporten/oidc/oidc_api_admin).
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
