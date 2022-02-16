@@ -49,11 +49,7 @@ folders:
     jurl: /eformidling_index.html
 
   - title: Installasjonsveiledning
-    jurl: /eformidling_download_ip.html
-
-  - title: Teknisk dokumentasjon
-    jurl: /eformidling_nm_about.html
-    #Må endre jurl på teknisk info
+    jurl: /eformidling_introduksjon.html
 
 - title: eSignering
   folderitems:

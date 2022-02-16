@@ -1,7 +1,7 @@
 sidebarTitle: eFormidling
 
 folders:
-- title: (ny) Introduksjon
+- title: Introduksjon
   folderitems:
     - title: Introduksjon
       jurl: /eformidling_introduksjon.html
@@ -11,23 +11,29 @@ folders:
       jurl: /eformidling_introduksjon_last_ned.html
     - title: Endringslogg
       jurl: /eformidling_introduksjon_endringslogg.html
-- title: (ny) Funksjonalitet
+    - title: Fagsystem
+      jurl: /eformidling_introduksjon_fagsystem.html
+- title: Funksjonalitet
   folderitems:
-    - title: Sende til virksomhet
-      jurl: /eformidling_funksjonalitet_sende_til_virksomhet.html
-    - title: Motta fra virksomhet
-      jurl: /eformidling_funksjonalitet_motta_fra_virksomhet.html
-    - title: Sende til innbygger
-      jurl: /eformidling_funksjonalitet_sende_til_innbygger.html
-    - title: Publisere til eInnsyn
-      jurl: /eformidling_funksjonalitet_publisere_til_einnsyn.html
-    - title: Motta innsynskrav fra eInnsyn
-      jurl: /eformidling_funksjonalitet_motta_innsynskrav_fra_einnsyn.html
-    - title: Hente virksomhets foretrukne kanal
-      jurl: /eformidling_funksjonalitet_hente_virksomhets_foretrukne_kanal.html
-    - title: Hente innbyggers foretrukne kanal
-      jurl: /eformidling_funksjonalitet_hente_innbyggers_foretrukne_kanal.html
-- title: (ny) Egenskaper
+    - title: Vedtak til innbygger
+      jurl: /eformidling_funksjonalitet_vedtak_til_innbygger.html
+    - title: Informasjon til innbygger
+      jurl: /eformidling_funksjonalitet_informasjon_til_innbygger.html
+    - title: Saksbehandling
+      jurl: /eformidling_funksjonalitet_saksbehandling.html
+    - title: Taushetsbelagt saksbehandling
+      jurl: /eformidling_funksjonalitet_taushetsbelagt_saksbehandling.html
+    - title: Journalpost til eInnsyn
+      jurl: /eformidling_funksjonalitet_journalpost.html
+    - title: Møte til eInnsyn
+      jurl: /eformidling_funksjonalitet_mote.html
+    - title: Innsynskrav fra eInnsyn
+      jurl: /eformidling_funksjonalitet_innsynskrav.html
+    - title: Avtalt meldingsutveksling
+      jurl: /eformidling_funksjonalitet_avtalt.html
+    - title: FIKS IO-meldingsutveksling
+      jurl: /eformidling_funksjonalitet_fiks_io.html
+- title: Egenskaper
   folderitems:
     - title: Pålitelighet
       jurl: /eformidling_egenskaper_palitlighet.html
@@ -41,7 +47,7 @@ folders:
       jurl: /eformidling_egenskaper_fleksibilitet.html
     - title: Driftbarhet
       jurl: /eformidling_egenskaper_driftbarhet.html
-- title: (ny) Utvikling
+- title: Utvikling
   folderitems:
     - title: Utvikling
       jurl: /eformidling_utvikling.html
@@ -53,10 +59,12 @@ folders:
       jurl: /eformidling_utvikling_for_leverandører.html
     - title: For meldingstjenester
       jurl: /eformidling_utvikling_for_meldingstjenester.html
-    - title: Kapabiliteter - prosesser, dokumenttyper og tjenester
-      jurl: /eformidling_utvikling_kapabiliteter.html
-    - title: Dokumenttyper med skjema
-      jurl: /eformidling_utvikling_dokumenttyper_med_skjema.html
+    - title: Dokumenttyper
+      jurl: /eformidling_utvikling_dokumenttyper.html
+    - title: Eksempler
+      jurl: /eformidling_utvikling_eksempler.html
+    - title: Meldingstjenester
+      jurl: /eformidling_utvikling_meldingstjenester.html
     - title: Integrasjonspunkt API
       jurl: /eformidling_utvikling_integrasjonspunkt_api.html
     - title: Serviceregistry API
@@ -67,7 +75,7 @@ folders:
       jurl: /eformidling_utvikling_arkitekturskisser.html
     - title: Testing
       jurl: /eformidling_utvikling_testing.html
-- title: (ny) Drift
+- title: Drift
   folderitems:
     - title: Bestille tilganger
       jurl: /eformidling_drift_bestille_tilganger.html
@@ -93,7 +101,7 @@ folders:
       jurl: /eformidling_drift_kjente_feil.html
     - title: Overvåking
       jurl: /eformidling_drift_overvaking.html
-- title: (ny) Konfigurasjon
+- title: Konfigurasjon
   folderitems:
     - title: Minimal konfigurasjon
       jurl: /eformidling_konfigurasjon_minimal.html
@@ -111,7 +119,7 @@ folders:
       jurl: /eformidling_konfigurasjon_logging.html
     - title: Kapasitet
       jurl: /eformidling_konfigurasjon_kapasitet.html
-- title: (ny) Miljø
+- title: Miljø
   folderitems:
     - title: Produksjon
       jurl: /eformidling_miljo_produksjon.html
@@ -119,17 +127,15 @@ folders:
       jurl: /eformidling_miljo_qa.html
     - title: Test
       jurl: /eformidling_miljo_test.html
-- title: (ny) Videre arbeid
+- title: Videre arbeid
   folderitems:
     - title: Utvidet adressering
       jurl: /eformidling_videre_arbeid_utvidet_adressering.html
     - title: Motta fra innbygger
       jurl: /eformidling_videre_arbeid_motta_fra_innbygger.html
-    - title: På vegne av
-      jurl: /eformidling_videre_arbeid_pa_vegne_av.html
     - title: Sensitive meldinger
       jurl: /eformidling_videre_arbeid_sensitive_meldingers.html
-- title: (ny) Spørsmål og svar
+- title: Spørsmål og svar
   folderitems:
     - title: Spørsmål og svar
       jurl: /eformidling_sporsmal_og_svar.html
