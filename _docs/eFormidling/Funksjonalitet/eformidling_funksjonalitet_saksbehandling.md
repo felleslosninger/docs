@@ -135,6 +135,21 @@ Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes 
 - [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)
 - [KS SvarUt og SvarInn](eformidling_utvikling_ks_svarut_og_svarinn.html)
 
+## Varsling
+
+Avsenders system mottar statusmeldinger når en melding blir levert. Avsenders system mottar også statusmeldinger ved
+feilsituasjoner og når en melding ikke blir levert innenfor den definerte levetiden. Avsenders system kan varsle
+avsenderen om både vellykkede sendinger og avvik.
+
+eFormidling sender i tillegg epost-varsel om eventuelle avvik til avsenders definerte varslingspunkt. Varsel samles opp
+og sendes periodisk.
+
+Ved mottak til fagsystem kan mottakende system gjøre varsling om mottak av melding slik at meldingen ikke risikerer å
+bli liggende ulest.
+
+Ved mottak til Altinn Digital Post kan virksomheten varsles om mottak av melding. Varsel går til virksomhetens
+registrerte varslingsadresse i Enhetsregisteret.
+
 ## Forutsetninger
 
 - Bruk av Altinn Formidling krever avtale

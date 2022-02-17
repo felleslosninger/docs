@@ -51,6 +51,10 @@ A -->|Nei| B
 
 Tilsvarer [Sende meldinger for vedtak til innbygger](eformidling_funksjonalitet_vedtak_til_innbygger.html#sende-meldinger)
 
+## Varsling
+
+Tilsvarer [Varsling for vedtak til innbygger](eformidling_funksjonalitet_vedtak_til_innbygger.html#varsling)
+
 ## Forutsetninger
 
 Tilsvarer [Forutsetninger for vedtak til innbygger](eformidling_funksjonalitet_vedtak_til_innbygger.html#forutsetninger)

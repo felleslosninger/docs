@@ -77,6 +77,15 @@ B->>A: Innkommende melding
 Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
 - [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)
 
+## Varsling
+
+Avsenders system mottar statusmeldinger når en melding blir levert. Avsenders system mottar også statusmeldinger ved
+feilsituasjoner og når en melding ikke blir levert innenfor den definerte levetiden. Avsenders system kan varsle
+avsenderen om både vellykkede sendinger og avvik.
+
+eFormidling sender i tillegg epost-varsel om eventuelle avvik til avsenders definerte varslingspunkt. Varsel samles opp
+og sendes periodisk.
+
 ## Forutsetninger
 
 - Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)

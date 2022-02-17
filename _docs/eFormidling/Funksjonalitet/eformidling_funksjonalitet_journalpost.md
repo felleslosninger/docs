@@ -19,11 +19,11 @@ av innholdet som kan søkes i.
 
 > Bruk av eInnsyn er obligatorisk for de statlige virksomhetene omfattet av forskrift til offentleglova § 6.
 >
-> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/)
+> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/) (ekstern lenke)
 
 > Bruk av eInnsyn er anbefalt for statlige virksomheter som ikke er omfattet av forskrift til offentleglova § 6.
 >
-> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/)
+> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/) (ekstern lenke)
 
 eFormidling brukes for å publisere informasjon til eInnsyn. Vanligvis brukes eFormidling gjennom eInnsyn-klienten, men
 dette er en midlertidig løsning frem leverandørene i større grad støtter integrasjon direkte gjennom eFormidling.
@@ -74,6 +74,12 @@ B->>D: Utgående melding
 
 Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
 - [eInnsyns meldingstjeneste](eformidling_utvikling_einnsyns_meldingstjeneste.html)
+
+## Varsling
+
+Avsenders system mottar statusmeldinger når en melding blir levert. Avsenders system mottar også statusmeldinger ved
+feilsituasjoner og når en melding ikke blir levert innenfor den definerte levetiden. Avsenders system kan varsle
+avsenderen om både vellykkede sendinger og avvik.
 
 ## Forutsetninger
 

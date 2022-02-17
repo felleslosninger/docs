@@ -87,6 +87,12 @@ Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes 
 - Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
 - Bruk av FIKS IO krever avtale
 
+## Varsling
+
+Avsenders system mottar statusmeldinger når en melding blir levert. Avsenders system mottar også statusmeldinger ved
+feilsituasjoner og når en melding ikke blir levert innenfor den definerte levetiden. Avsenders system kan varsle
+avsenderen om både vellykkede sendinger og avvik.
+
 ## Konfigurasjon
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:

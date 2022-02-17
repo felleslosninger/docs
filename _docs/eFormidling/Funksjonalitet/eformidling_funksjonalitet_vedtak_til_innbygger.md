@@ -24,7 +24,14 @@ Krav til varsling:
 > Virksomheten skal bruke kontaktinformasjon fra kontakt- og reservasjonsregisteret ved varsling av innbyggere om og
 > utsendelse av enkeltvedtak og andre viktige digitale henvendelser, jf. eForvaltningsforskriften § 8.
 >
-> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/)
+> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/) (ekstern lenke)
+
+> Informasjonssystemet skal registrere tidspunktet for når parten har skaffet seg tilgang til enkeltvedtaket, og data
+> som bekrefter at vedkommende har rett til å gjøre seg kjent med vedtaket. Har parten ikke skaffet seg tilgang til
+> enkeltvedtaket innen én uke fra det tidspunktet vedtaket ble gjort tilgjengelig, og varsel ble sendt, skal parten
+> varsles en gang til i samsvar med tredje ledd.
+>
+> [eForvaltningsforskriften](https://lovdata.no/forskrift/2004-06-25-988/§8) (ekstern lenke)
 
 Krav til bruk av Digital Post til Innbyggere:
 > Virksomheten skal bruke Digital postkasse til innbyggere for utsending av post til innbyggere som har valgt digital
@@ -32,14 +39,14 @@ Krav til bruk av Digital Post til Innbyggere:
 > hvor det sendes brev som har dokumentasjonsverdi for innbygger. Slike brev kan være både vedtak og andre viktige
 > henvendelser. Virksomheten skal vurdere hvilke brev som har viktig dokumentasjonsverdi for innbygger.
 >
-> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/)
+> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/) (ekstern lenke)
 
 Mulighet til å bruke Altinn Digital Post for innbyggere uten digital postkasse:
 > Virksomheter som ved etablering av Digital postkasse til innbyggere benyttet Altinns meldingsboks for utsending av
 > post til innbyggere, skulle fra 1. oktober 2016 bruke Digital postkasse til innbyggere . Har innbyggeren ikke valgt
 > postkasse og ikke reservert seg mot digital post, kan post fortsatt sendes til Altinns meldingsboks.
 > 
-> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/)
+> [Digitaliseringsrundskrivet](https://www.regjeringen.no/no/dokumenter/digitaliseringsrundskrivet/id2895185/) (ekstern lenke)
 
 eFormidlings støtte for å sende vedtak og andre viktige henvendelser til innbygger gjør det enkelt å etterleve gjeldende
 regelverk og retningslinjer.
@@ -112,6 +119,18 @@ B->>-E: .
 Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
 - [Digital Post til Innbyggere](eformidling_utvikling_digital_post_til_innbyggere.html)
 - [Altinn Digital Post](eformidling_utvikling_altinn_digital_post.html)
+
+## Varsling
+
+Avsenders system mottar statusmeldinger når en melding blir levert. Avsenders system mottar også statusmeldinger ved
+feilsituasjoner og når en melding ikke blir levert innenfor den definerte levetiden. Avsenders system kan varsle
+avsenderen om både vellykkede sendinger og avvik.
+
+Ved mottak til Digital Post til Innbyggere kan innbyggeren varsles om mottak av melding. Varsel går til innbyggerens
+registrert kontaktinformasjon i kontakt- og reservasjonsregisteret.
+
+Ved mottak til Altinn Digital Post kan innbyggeren varsles om mottak av melding. Varsel går til innbyggerens
+registrerte kontaktinformasjon i kontakt- og reservasjonsregisteret.
 
 ## Forutsetninger
 
