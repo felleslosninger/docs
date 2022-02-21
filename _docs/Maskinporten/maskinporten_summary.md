@@ -8,7 +8,7 @@ product: Maskinporten
 redirect_from: /maskinporten_overordnet
 ---
 
-## Overordnet arkitekturbeskrivelse
+## Simple description of architecture
 
 Maskinporten offers a simple security model for API's, based on the OAuth2 protocol and the use of JWT-bearer grants, inspired by [Google system accounts](https://developers.google.com/identity/protocols/OAuth2ServiceAccount).
 
