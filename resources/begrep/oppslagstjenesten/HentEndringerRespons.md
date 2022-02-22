@@ -1,7 +1,8 @@
 ---
 title: HentEndringerRespons 
-permalink: ot_hentendringerrespons.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_hentendringerrespons
 ---
 | --- | --- |
 | Term          | {{page.title}} |
@@ -14,18 +15,18 @@ sidebar: begrep_sidebar
 
 | Term                                                   | Kardinalitet |
 | ------------------------------------------------------ | ------------ |
-| [fraEndringsNummer](../felles/fraEndringsNummer.md)         | 1..1         |
-| [tilEndringsNummer](../felles/tilEndringsNummer.md)         | 1..1         |
-| [senesteEndringsNummer](../felles/senesteEndringsNummer.md) | 1..1         |
-| [Person](Person.md)                    | 0..1000      |
+| [fraEndringsNummer]({{site.baseurl}}/resources/begrep/felles/fraEndringsNummer)         | 1..1         |
+| [tilEndringsNummer]({{site.baseurl}}/resources/begrep/felles/tilEndringsNummer)         | 1..1         |
+| [senesteEndringsNummer]({{site.baseurl}}/resources/begrep/felles/senesteEndringsNummer) | 1..1         |
+| [Person]({{site.baseurl}}/resources/begrep/oppslagstjenesten/Person)                    | 0..1000      |
 
-  - Dersom [tilEndringsNummer](../felles/tilEndringsNummer.md) og
-    [senesteEndringsNummer](../felles/senesteEndringsNummer.md) er lik finnes
+  - Dersom [tilEndringsNummer]({{site.baseurl}}/resources/begrep/felles/tilEndringsNummer) og
+    [senesteEndringsNummer]({{site.baseurl}}/resources/begrep/felles/senesteEndringsNummer) er lik finnes
     det ikke fler endringer i registeret som ikke er utlevert.
-  - Dersom [tilEndringsNummer](../felles/tilEndringsNummer.md) er ulik fra
-    [senesteEndringsNummer](../felles/senesteEndringsNummer.md) så bør
+  - Dersom [tilEndringsNummer]({{site.baseurl}}/resources/begrep/felles/tilEndringsNummer) er ulik fra
+    [senesteEndringsNummer]({{site.baseurl}}/resources/begrep/felles/senesteEndringsNummer) så bør
     Offentlig Virksomhet sende ny
-    [HentEndringerForespoersel](HentEndringerForespoersel.md).
+    [HentEndringerForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentEndringerForespoersel).
 
 #### Xml eksempel
 

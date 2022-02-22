@@ -2,9 +2,10 @@
 title: Delegering i Maskinporten
 description: Delegering i Maskinporten
 summary: "En API-konsument kan bruke Altinn til å delegere en tildelt API-tilgang videre til en leverandør."
-permalink: maskinporten_func_delegering.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_func_delegering
 ---
 
 ## Bakgrunn
@@ -45,7 +46,7 @@ sequenceDiagram
 </div>
 
 
-Scope i Maskinporten [opprettes ved bruk av selvbetjening](/maskinporten_guide_apitilbyder.html#administrasjon-av-api),  men du må passe på å registrere en **delegeringskilde**.  Liste over gyldige delegeringskilder finnes nederst på denne siden, du skal bruke `issuer`-verdien som `delegation_source` på scopet ditt:
+Scope i Maskinporten [opprettes ved bruk av selvbetjening]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder#administrasjon-av-api),  men du må passe på å registrere en **delegeringskilde**.  Liste over gyldige delegeringskilder finnes nederst på denne siden, du skal bruke `issuer`-verdien som `delegation_source` på scopet ditt:
 
 ```
 POST /scopes HTTP/1.1
@@ -96,7 +97,7 @@ Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at an
 
 ### Gi tilgang til konsumenter
 
-API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter](maskinporten_guide_apitilbyder.html#2b-tilgangsstyring---oauth2-selvbetjeningsklient) på ordinær måte.  
+API-tilbyder bruker [selvbetjening for å gi tilgang til konsumenter]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder#2b-tilgangsstyring---oauth2-selvbetjeningsklient) på ordinær måte.  
 
 Merk at API-tilbyder aldri må gi direkte tilgang til leverandøren.
 
@@ -105,7 +106,7 @@ Merk at API-tilbyder aldri må gi direkte tilgang til leverandøren.
 Leverandør-integrasjoner som skal bruke ekstern delegering, er litt forskjellige fra andre integrasjoner i ID-porten/Maskinporten, og det er derfor viktig å få de registrert korrekt.
 
 
-ID-porten/Maskinporten har allerede [to eksisterende interne delegeringsmekanismer](oidc_api_admin.html#eierskap-til-integrasjoner), som ikke er kompatible med delegering i Altinn. For å oppnå korrekt registrering, må du da:
+ID-porten/Maskinporten har allerede [to eksisterende interne delegeringsmekanismer]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin#eierskap-til-integrasjoner), som ikke er kompatible med delegering i Altinn. For å oppnå korrekt registrering, må du da:
 
 * For leverandører som bruker selvbetjeningsløsningen på samarbeidsportalen, er det viktig å merke seg at du må opprette integrasjonen som tilhørende deg selv, og ikke velge "på vegne av en kunde" eller "på vegne av flere kunder".
 * For leverandører som bruker selvbetjenings-API, må de **ikke** bruke tokens med `idporten:dcr.supplier`-scopet, men derimot `idporten:dcr.write`: leverandøren skal altså ikke sette `client_orgno` i registrerings-kallet.
@@ -122,7 +123,7 @@ Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  A
 
 ### Hente tokens
 
-Når overstående punkter er utført, kan leverandøren [forespørre token fra Maskinporten](maskinporten_protocol_token.html).
+Når overstående punkter er utført, kan leverandøren [forespørre token fra Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_token).
 
 Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org`-claimet i JWT-grantet:
 

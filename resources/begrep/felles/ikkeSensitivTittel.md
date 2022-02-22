@@ -1,7 +1,8 @@
 ---
 title: ikkeSensitivTittel
-permalink: 2ikkesensitivtittel.html
+
 sidebar:
+redirect_from: /2ikkesensitivtittel
 ---
 
 | ---- | ---- |

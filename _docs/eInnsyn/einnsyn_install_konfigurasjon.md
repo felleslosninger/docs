@@ -2,8 +2,9 @@
 title: Konfigurasjon av einnsyn-klient
 description: Konfigurasjon av einnsyn-klient
 summary: "Konfigurasjon av einnsyn-klient ++"
-permalink: einnsyn_konfigurasjon.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_konfigurasjon
 ---
 
 ## Konfigurasjon av einnsyn-klient.xml filen

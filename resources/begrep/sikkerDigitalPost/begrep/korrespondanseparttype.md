@@ -1,7 +1,8 @@
 ---
 title: Korrespondanseparttype
-permalink: korrespondanseparttype.html
+
 sidebar: begrep_sidebar
+redirect_from: /korrespondanseparttype
 ---
 
 | ---- | ---- |

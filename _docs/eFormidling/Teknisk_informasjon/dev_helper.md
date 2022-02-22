@@ -2,9 +2,10 @@
 title: Utvikler API-supplement
 description: Her finner du tips for å ta i bruk eFormidling 2.0 grensesnittet. Et supplement til REST docs. Av utvikler for utvikler.
 summary: ""
-permalink: eformidling_dev.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_dev
 ---
 
 For å ta i bruk eFormidling 2.0 API'et (som vi anbefaler) så må en ha et StandardBusinessDocument(SBD) på rett format, opprette og sende melding, handtere innkommende meldinger og kvitteringer, og rydde opp i køen(activeMQ) etter seg ved å slette prosesserte meldinger.
@@ -85,7 +86,7 @@ SBD må være på rett format, her er eit eksempel som fungerer for avsender 991
 
 Her finner du en .zip fil som inneholder en postman samling for oppretting og sending av store filer i tillegg til arkivmelding.xml som du trenger. 
 
-> [Postman collection og arkivmelding](/resources/eformidling/stormelding_eformidling_api.zip)
+> [Postman collection og arkivmelding]({{site.baseurl}}/resources/eformidling/stormelding_eformidling_api.zip)
 
 Den kan kjøres nesten utav boksen med noen små justeringer:
 

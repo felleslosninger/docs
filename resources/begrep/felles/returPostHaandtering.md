@@ -1,7 +1,8 @@
 ---
 title: returPostHaandtering
-permalink: 2returposthaandtering.html
+
 sidebar:
+redirect_from: /2returposthaandtering
 ---
 
 | ---- | ---- |

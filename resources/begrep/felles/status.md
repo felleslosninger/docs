@@ -1,7 +1,8 @@
 ---
 title: status
-permalink: status.html
+
 sidebar: begrep_sidebar
+redirect_from: /status
 ---
 
 | ---- | ---- |

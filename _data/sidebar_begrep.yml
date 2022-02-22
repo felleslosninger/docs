@@ -3,147 +3,147 @@ folders:
 - title: Digital post til innbyggere/Sikker digital Post
   folderitems:
   - title: 
-    jurl: /test.html
+    jurl: /resources/begrep/oppslagstjenesten/test
   
     subfolders:
     - title: Oversikt
       subfolderitems:
 
       - title: Innledning
-        jurl: /sdp_index_innledning.html 
+        jurl: /resources/begrep/sikkerDigitalPost/innledning/
       - title: Arkitektur
-        jurl: /sdp_arkitektur.html   
+        jurl: /resources/begrep/sikkerDigitalPost/innledning/arkitektur
       - title: Sikkerhet
-        jurl: /sdp_sikkerhet_index.html 
+        jurl: /resources/begrep/sikkerDigitalPost/sikkerhet/
       - title: Sertifikathåndtering
-        jurl: /sdp_sertifikathandtering.html   
+        jurl: /resources/begrep/sikkerDigitalPost/sikkerhet/sertifikathandtering
       - title: Skjema (XSD) filer
-        jurl: /sdp_skjema.html 
+        jurl: /resources/begrep/sikkerDigitalPost/xsd/sdp_skjema
       - title: Eksempler
-        jurl: /sdp_index_eksempler.html
+        jurl: /resources/begrep/sikkerDigitalPost/eksempler/
         
     - title: Forretningslag
       subfolderitems:
 
       - title: Forretningslag
-        jurl: /sdp_forretningslag_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/
       - title: Aktører og Roller
-        jurl: /sdp_aktorer.html   
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Aktorer
       - title: Sending av digital post
-        jurl: /sdp_avsender_tilstanddiagram.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/forretningsprosess
       - title: Sending av digital post på vegne av andre
-        jurl: /sdp_send_paa_vegne_av_andre.html  
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/send_paa_vegne_av_andre
       - title: Henting av kvittering
-        jurl: /sdp_forretningsprosess_kvittering.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/forretningsprosess_kvittering
       - title: Tilstander for Avsender
-        jurl: /sdp_avsender_tilstanddiagram2.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/avsender_tilstanddiagram
       - title: Struktur på melding
-        jurl: /sdp_meldingsformat.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/meldingsformat
       - title: Prisen på digital post
-        jurl: /sdp_meldingsstorrelse.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/meldingsstorrelse
    
     - title: Dokumentpakke (ASiC)
       subfolderitems:
 
 
       - title: Introduksjon
-        jurl: /dokumentpakke_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/
       - title: Langtidslagring
-        jurl: /sdp_langtidslagring.html   
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/langtidslagring
       - title: Manifest
-        jurl: /sdp_manifest.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/Manifest
       - title: Dokumentformater
-        jurl: /dokumentformat_index.html   
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/
       - title: MIME type
-        jurl: /sdp_mimetypes.html  
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/mimetypes
       - title: html
-        jurl: /sdp_html.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/html
       - title: ehf
-        jurl: /sdp_ehf.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/ehf
       - title: Sikkerhet
-        jurl: /sikkerhet_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Sikkerhet/
 
     - title: Utvidelser
       subfolderitems:
 
       - title: Introduksjon
-        jurl: /sdp_utvidelser_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/
       - title: Lenke utenfor brev
-        jurl: /sdp_lenke.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Lenke
         
     - title: Utskrift og forsendelse
       subfolderitems:
            
       - title: Utskrift
-        jurl: /sdp_index_utskrift.html
+        jurl: /resources/begrep/sikkerDigitalPost/utskrift/
  
     - title: Forretningsmeldinger
       subfolderitems:
 
       - title: Forretningsmeldinger
-        jurl: /sdp_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/
       - title: DigitalPostMelding
-        jurl: /sdp_digitalpostmeldinger.html   
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/DigitalPostMelding
       - title: LeveringsKvittering
-        jurl: /sdp_leveringskvittering.html 
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/LeveringsKvittering
       - title: AapningsKvittering
         jurl: /osdp_aapningskvittering.html   
       - title: VarslingfeiletKvittering
-        jurl: /sdp_varslingfeiletkvittering.html 
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/VarslingfeiletKvittering
       - title: MottaksKvittering
-        jurl: /sdp_mottakskvittering.html
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/MottaksKvittering
       - title: ReturpostKvittering
-        jurl: /sdp_returpostkvittering.html
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/ReturpostKvittering
       - title: Feil
-        jurl: /sdp_feil.html
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/Feil
       - title: FlyttetDigitalpostMelding
-        jurl: /sdp_flyttetdigitalpostmelding.html
+        jurl: /resources/begrep/sikkerDigitalPost/meldinger/FlyttetDigitalPostMelding
  
     - title: Standard Business Document
       subfolderitems:
 
       - title: Standard Business Document
-        jurl: /standardbusinessdocument_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/
       - title: StandardBusinessDocumentHeader
-        jurl: /sdp_standardbusinessdocumentheader.html   
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader
       - title: Sender
-        jurl: /sdp_sender.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender
       - title: Receiver
-        jurl: /sdp_receiver.html 
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Receiver
       - title: DocumentIdentification
-        jurl: /sdp_documentidentification.html 
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/DocumentIdentification
       - title: BusinessScope
-        jurl: /sdp_businessscope.html
+        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/BusinessScope
  
     - title: Transportlag
       subfolderitems: 
 
       - title: Transport av meldinger
-        jurl: /sdp_transportlag_index.html 
+        jurl: /resources/begrep/sikkerDigitalPost/transportlag/
       - title: Meldingsutveksling
-        jurl: /sdp_index_meldingsutveksling.htm   
+        jurl: /resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/
       - title: Meldingsidentifikatorer
-        jurl: /sdp_meldingsidentifikatorer.html
+        jurl: /resources/begrep/sikkerDigitalPost/transportlag/MeldingsIdentifikatorer
       - title: Meldingsformat
-        jurl: /sdp_transportlag_meldingsformat.html    
+        jurl: /resources/begrep/sikkerDigitalPost/transportlag/Meldingsformat
       - title: Webservice sikkerhet
-        jurl: /sdp_webservicesecurity.html
+        jurl: /resources/begrep/sikkerDigitalPost/transportlag/WebserviceSecurity
  
     - title: Feilhåndtering
       subfolderitems:
 
       - title: Feilhåndtering
-        jurl: /sdp_feil_index.html
+        jurl: /resources/begrep/sikkerDigitalPost/feilhandtering/
       - title: Forvaltning og tekniske feil
-        jurl: /sdp_forvaltning.html    
+        jurl: /resources/begrep/sikkerDigitalPost/feilhandtering/Forvaltning
       - title: Transportfeil
-        jurl: /sdp_transportfeil.html
+        jurl: /resources/begrep/sikkerDigitalPost/feilhandtering/Transportfeil
       - title: Forretningsfeil
-        jurl: /sdp_forretningsfeil.html   
+        jurl: /resources/begrep/sikkerDigitalPost/feilhandtering/Forretningsfeil
       - title: Feilhåndteringsprosess
-        jurl: /sdp_feilhandteringsprosess.html
+        jurl: /resources/begrep/sikkerDigitalPost/feilhandtering/feilhandteringsprosess
  
     - title: Begreper
  
 - title: Felles
-  jurl: /begrep_felles_index.html   
+  jurl: /resources/begrep/felles/

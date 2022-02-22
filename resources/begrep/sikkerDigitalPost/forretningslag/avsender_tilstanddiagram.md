@@ -1,8 +1,9 @@
 ---
  
 title: Tilstander for Avsender  
-permalink: sdp_avsender_tilstanddiagram2.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_avsender_tilstanddiagram2
 ---
 
 ## Tilstander for Sikker digital postforsendelse hos Avsender
@@ -12,7 +13,7 @@ Avsender. Målsetningen med tilstandsdiagrammet er å gi Avsendere en
 forståelse av hvilke prosesser og rutiner som bør etableres ved
 integrasjon mot Sikker digital post.
 
-![Utkast til tilstandsdiagram for prosess hosavsender](../forretningslag/tilstander_avsender.png)
+![Utkast til tilstandsdiagram for prosess hosavsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/tilstander_avsender.png)
 
 ### Tilstander
 

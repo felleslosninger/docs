@@ -1,8 +1,9 @@
 ---
 
 title: Transportfeil  
-permalink: sdp_transportfeil.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_transportfeil
 ---
 
 Feil i transportlaget vil være feil relatert til transportprotokoll og

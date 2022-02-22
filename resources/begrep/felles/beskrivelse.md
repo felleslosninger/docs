@@ -1,7 +1,8 @@
 ---
 title: beskrivelse
-permalink: 2beskrivelse.html
+
 sidebar: dpi_sidebar
+redirect_from: /2beskrivelse
 ---
 
 

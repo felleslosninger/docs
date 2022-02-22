@@ -3,9 +3,10 @@ title: Tjenester
 keywords: tjenester, dpo, dpi, dpv, dpf, dpe
 tags: [dpo, dpv, dpi, dpe, dpf, dpi]
 summary: "Oversikt over forkjellige tjenester du kan nå med integrasjonspunket"
-permalink: eformidling_veiledning_sakark.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_veiledning_sakark
 ---
 
 Denne siden vil inneholde informasjon om konfigurasjon som må gjøres i det enkelte sakarkiv system
@@ -25,19 +26,19 @@ Innstillinger for utgående meldinger kan endres her:
 
 Format: 
 
-![ChanellData](/images/eformidling/ChannelData.png)
+![ChanellData]({{site.baseurl}}/images/eformidling/ChannelData.png)
 
 * Trykk på «Channel Data» kolonnen i BEST/EDU raden og legg inn riktig web service URL og kryss av for Update all languages.
 
 Format: 
 
-![SnapIn](/images/eformidling/SnapIn.png)
+![SnapIn]({{site.baseurl}}/images/eformidling/SnapIn.png)
 
 * Etter endringen, kjør en iisreset via CMD
 
 Format: 
 
-![iisreset](/images/eformidling/iisreset.png)
+![iisreset]({{site.baseurl}}/images/eformidling/iisreset.png)
 
 
 ### INNKOMMENDE INNSTILLINGER

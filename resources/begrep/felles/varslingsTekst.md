@@ -1,7 +1,8 @@
 ---
 title: varslingsTekst
-permalink: 2varslingstekst.html
+
 sidebar:
+redirect_from: /2varslingstekst
 ---
 
 | ---- | ---- |

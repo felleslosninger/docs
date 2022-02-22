@@ -2,9 +2,10 @@
 title: Logging
 description: 
 summary: ""
-permalink: krr_logging.html
+
 sidebar: krr_dotnet
 product: KRR
+redirect_from: /krr_logging
 ---
 
 ### Generelt

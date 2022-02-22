@@ -1,7 +1,8 @@
 ---
 title: epostadresse
-permalink: 2epostadresse.html
+
 sidebar:
+redirect_from: /2epostadresse
 ---
 
 | ---- | ---- |

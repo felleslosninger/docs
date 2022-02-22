@@ -2,9 +2,10 @@
 title: Forutsetninger for installasjon
 description: Forutsetninger for installasjon
 summary: "Forutsetninger for installasjon"
-permalink: eformidling_forutsetninger.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_forutsetninger
 ---
 
 Einnsyn er en prosess der statlige virksomheter gjør metadata for korrespondanse tilgjengelig for offentligheten. Integrasjonspunktet fungerer som et bindeledd mellom eInnsyn-klient brukt av arkivarene og det sentrale eInnsyn-systemet.
@@ -14,7 +15,7 @@ For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følg
 
 ## Dette gjør du før installasjon av Integrasjonspunktet
 
-+ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](eformidling_selfhelp.html#justere-tilgjengelig-minne)
++ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_selfhelp#justere-tilgjengelig-minne)
 + Nødvendige brannmuråpninger
 + Java 8 X med JCE installert (JDK)
 + Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
@@ -27,19 +28,10 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 
 ### Brannmuråpninger
+Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksområder (meldingstyper) i eFormidling.
 
-
-> * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
-
-Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Brannmuråpninger i testmiljø
-
-Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp noen brannmuråpninger. 
-<!--
-En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
--->
-
 
 |    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
 | ------------- |:-------------:| :-----:| :------:|
@@ -48,7 +40,9 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
 | oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
 | ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
-| move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
+| move-dpe.servicebus.windows.net	(t.o.m feb 22) | 13.69.253.135:443 | - | DPE | 
+| efm-dpe-qa.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443  | - | DPE | 
+| efm-dpe-qa.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671  | - | DPE | 
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 | tt02.altinn.no | 89.250.123.40:443 | - | DPV |
 | qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
@@ -63,8 +57,10 @@ En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalans
 | oidc.difi.no | 146.192.252.54:443	 | - | Alle |
 | maskinporten.no | 146.192.252.50:443 | - | Alle |
 | move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
-| move-dpe-prod.servicebus.windows.net	 | 52.169.10.235:443 | - | DPE | 
-| www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
+| move-dpe-prod.servicebus.windows.net (t.o.m 16.02.2022)	 | 52.169.10.235:443 | - | DPE | 
+| efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443 | - | DPE |  
+| efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671 | - | DPE |  
+| altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
 | svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
 
@@ -117,7 +113,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 
 **Hvordan?**
 
-[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](eformidling_virksomhetssertifikat.html)
+[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_virksert)
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)

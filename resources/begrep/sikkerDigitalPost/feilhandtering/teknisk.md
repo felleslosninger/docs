@@ -1,8 +1,9 @@
 ---
 
 title: Teknisk beskrivelse  
-permalink: sdp_teknisk.html
+
 sidebar:
+redirect_from: /sdp_teknisk
 ---
 
 ## {{page.title}}

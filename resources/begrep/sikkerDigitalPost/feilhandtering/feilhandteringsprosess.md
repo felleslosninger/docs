@@ -1,8 +1,9 @@
 ---
 
 title: Feilhåndteringsprosess  
-permalink: sdp_feilhandteringsprosess.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_feilhandteringsprosess
 ---
 
 Prosessen for feilhåndtering i Sikker digital post er under re-konstruksjon. 

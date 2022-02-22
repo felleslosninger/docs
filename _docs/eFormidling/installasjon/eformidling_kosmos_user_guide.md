@@ -1,9 +1,10 @@
 ---
 title: Ei guide til KOSMOS
 description: Bruksrettleiing for Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS
-permalink: eformidling_kosmos_user_guide.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_kosmos_user_guide
 ---
 
 > Visst du ser etter installasjonsveiledning for KOSMOS må du leite [her i staden](https://docs.digdir.no/eformidling_auto_update.html)
@@ -86,7 +87,7 @@ Innstillingane ```kosmos.launch-poll-interval-in-ms``` og ```kosmos.launch-timeo
 
 #### Meldingar til brukarane
 
-Dersom brukarane har sett innstillingane ```kosmos.mail.recipient``` og ```kosmos.mail.from```, vil KOSMOS senda e-postar ved vellykka og feilande oppgraderingar. Elles er informasjonen tilgjengeleg i loggane til applikasjonen, som kan sendast til Digdir dersom kunden ønsker det.
+Dersom brukarane har sett innstillingane ```kosmos.mail.recipient``` og ```kosmos.mail.from```, vil KOSMOS senda e-postar ved vellykka og feilande oppgraderingar. Fom. kosmos-1.2.0 er det mogleg å modifisera tittelen på dei utsende e-postane vha. innstillinga ```kosmos.mail.append-subject```. Elles er informasjonen tilgjengeleg i loggane til applikasjonen, som kan sendast til Digdir dersom kunden ønsker det.
 
 #### Blocklisting av versjon som ikkje starta
 
@@ -123,6 +124,7 @@ Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet 
 |kosmos.integrasjonspunkt.shutdownURL|${kosmos.integrasjonspunkt.baseURL}/manage/shutdown|Shutdown-endepunktet til integrasjonspunktet hjå klienten. Nytta for å stoppa utdaterte versjonar.|
 |kosmos.launch-poll-interval-in-ms|1000|Kor lenge KOSMOS ventar mellom kvar gong den spør helse-endepunktet om status.|
 |kosmos.launch-timeout-in-ms|100000|Kor lenge KOSMOSventar på informasjon om integrasjonspunktet køyrer eller ikkje.|
+|kosmos.mail.append-subject| - |Gjeld KOSMOS-1.2.0 og seinare versjonar: Tekst som vert lagt til i tittelen på e-postar som vert sende av KOSMOS.|
 |kosmos.mavenCentral|(https://repo1.maven.org/)|Maven central repository for nedlasting av artifakter.|
 |kosmos.nexus-connect-timeout-in-ms|5000|Kor lenge KOSMOS ventar på å få kontakt med artefakt-repositoriet.|
 |kosmos.read-timeout-in-ms|60000|Kor lenge KOSMOS ventar på data frå artefakt-repositoriet.|

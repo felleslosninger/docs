@@ -2,9 +2,10 @@
 title: Sporing av forsendelser
 description: Denne siden har som mål å forklare hvordan bruke API'et til å se status på forsendelser, innkommende meldinger og utgående meldinger. 
 summary: "Denne siden har som mål å forklare hvordan bruke API'et til å se status på forsendelser, innkommende meldinger og utgående meldinger"
-permalink: eformidling_api.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_api
 ---
 
 > Utviklere: [REST docs finner du her](https://difi.github.io/felleslosninger/eformidling_nm_restdocs.html)
@@ -234,7 +235,7 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 
 > /api/messages/out/{```messageId```}
 
-> [Se her for opprett og send](https://difi.github.io/felleslosninger/eformidling_nm_restdocs.html##messages-out-create)
+> [Se her for opprett og send]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/restdocs##messages-out-create)
 
 *Kommer*
 

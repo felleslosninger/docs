@@ -3,8 +3,9 @@ title: varslingsstatus
 headtitle: Begrepskatalog for Oppslagstjenesten -  
 group: Egenskap  
 datatype: string  
-permalink: ot_varslingsstatus.html
+
 sidebar:
+redirect_from: /ot_varslingsstatus
 ---
 
 |---|---|
@@ -17,7 +18,7 @@ sidebar:
 
 #### Kodeverk for varslingsstatus
 
-[varslingsstatus](varslingsstatus.md) kan ha følgende
+[varslingsstatus]({{site.baseurl}}/resources/begrep/felles/varslingsstatus) kan ha følgende
 verdi:
 
 | Kodeverdi          | Beskrivelse                                                                                   |

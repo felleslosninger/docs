@@ -2,8 +2,9 @@
 title: Installere eInnsyn-klient som Windows-service
 description: Installere eInnsyn-klient som Windows-service
 summary: "Her finner du informasjon om hvordan installere eInnsyn-klient som Windows-service"
-permalink: einnsyn_install_tjeneste.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_install_tjeneste
 ---
 
 
@@ -14,7 +15,7 @@ Etter du er ferdig å redigere einnsyn-klient.xml-fila må du installere tjenest
 
 Disse kommandoene må kjøres uten noe form for skråstrek eller bindestrek foran. Skrives nøyaktig som på bildet under:
 
-![installere einnsyn-klient tjenesten](/images/einnsyn/install_klient.png)
+![installere einnsyn-klient tjenesten]({{site.baseurl}}/images/einnsyn/install_klient.png)
 
 Du kan sjekke status på tjenesten ved å bruke følgande kommando i samme kommandovindu:
 
@@ -27,7 +28,7 @@ Meldinga **no.difi.einnsyn.Application - Started Application in 7.121 seconds (J
 ### Verifisere at klienten har prosessert filene
 
 I loggfilen einnsyn-klient.out vil det komme meldinger som disse:
-[Last ned som loggfil](/resources/einnsyn/einnsyn_sending_eksempel.txt)
+[Last ned som loggfil]({{site.baseurl}}/resources/einnsyn/einnsyn_sending_eksempel.txt)
 
 ```
 {"@timestamp":"2017-11-30T12:22:42.812+01:00","@version":1,"message":"Splitting took 0 ms","logger_name":"no.difi.einnsyn.sender.service.AsyncDataSplittingService","thread_name":"main","level":"DEBUG","level_value":10000}
@@ -39,7 +40,7 @@ I loggfilen einnsyn-klient.out vil det komme meldinger som disse:
 ```
 
 Ved opplasting vil det i integrasjonspunktloggen ```application.log``` vil det ligge loggmeldinger som disse:
-[Last ned som loggfil](/resources/einnsyn/ip_sending_eksempel.txt)
+[Last ned som loggfil]({{site.baseurl}}/resources/einnsyn/ip_sending_eksempel.txt)
 
 ```
 2017-12-11 11:01:19.538  INFO 14932 --- [ qtp10823740-24] n.d.m.nextmove.MessageOutController      : Created new conversation resource [id=b32ef599-4a2f-41ab-b641-ca29d0d63715, serviceIdentifier=DPE_DATA]

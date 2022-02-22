@@ -3,24 +3,26 @@ title: Installasjonsveiledning for integrasjonpunktet
 description: Hvordan komme i gang med integrasjonspunktet
 summary: "Hvordan man oppgraderer integrasjonspunktet til ny versjon."
 
-permalink: eformidling_download_ip.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_download_ip
 ---
 
 ### Siste versjon av integrasjonspunktet
  
 
-### [Integrasjonspunktet 2.2.6 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.6/integrasjonspunkt-2.2.6.jar)
+### [Integrasjonspunktet 2.3.2 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.3.2/integrasjonspunkt-2.3.2.jar)
 
-### [Integrasjonspunktet 2.2.6 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.6/images/sha256-2b462e7d699b2dfbc0495e58c2dc54cb289d641611ae8f48240620594e769153?context=explore)
+### [Integrasjonspunktet 2.3.2 (Docker container image) ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.3.2/images/sha256-bff3b8dac0df2f8f60849e67eb37cc6195b2fb3b35b3ea2b562a75df95da70da?context=explore)
+
 
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
 
 ___
 
-### [Endringslogg](../eformidling_releasenotes.html)
+### [Endringslogg]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_releasenotes)
 ___
 
 ### Versjonering 
@@ -31,7 +33,7 @@ eFormidling følger [semantisk versjonering](https://semver.org) for å vise end
 En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
 integrasjonspunkt-2.0.7.jar
 
-![versjonsnummerbild](/images/eformidling/ipversjon.PNG)
+![versjonsnummerbild]({{site.baseurl}}/images/eformidling/ipversjon.PNG)
 
 
 Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH

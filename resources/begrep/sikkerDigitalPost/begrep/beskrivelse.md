@@ -1,7 +1,8 @@
 ---
 title: beskrivelse
-permalink: beskrivelse.html
+
 sidebar: begrep_sidebar
+redirect_from: /beskrivelse
 ---
 
 

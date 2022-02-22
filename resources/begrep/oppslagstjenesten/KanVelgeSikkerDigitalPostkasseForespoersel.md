@@ -1,7 +1,8 @@
 ---
 title: KanVelgeSikkerDigitalPostkasseForespoersel  
-permalink: ot_kanvelgesikkerdigitalpostkasseforespoersel.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_kanvelgesikkerdigitalpostkasseforespoersel
 ---
 
 |---|---|
@@ -15,9 +16,9 @@ sidebar: begrep_sidebar
 
 | Term                                               | Kardinalitet | Datatype                                              |
 | -------------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [personidentifikator](../felles/personidentifikator.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
 
 #### Respons
 
 Responsen er en
-[KanVelgeSikkerDigitalPostkasseRespons](KanVelgeSikkerDigitalPostkasseRespons.md)
+[KanVelgeSikkerDigitalPostkasseRespons]({{site.baseurl}}/resources/begrep/oppslagstjenesten/KanVelgeSikkerDigitalPostkasseRespons)

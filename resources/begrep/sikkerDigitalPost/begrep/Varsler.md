@@ -1,6 +1,6 @@
 --- 
 title: Varsler  
-permalink: sdp_varsler.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -9,14 +9,14 @@ sidebar: begrep_sidebar
 | Definisjon | Informasjon om hvordan postkasseleverandør skal varsle Mottaker om den nye posten. Overstyrer Mottaker sine egne varslingspreferanser |
 | Datatype | complexType |
 | Kjelde | DIFI |
-| Kommentar | Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne varslingspreferanser, det vil kunne komme som tillegg til Mottaker sine varslingvalg. Avsender kan med instillingene her styre både [EpostVarsel](EpostVarsel.md) og smsVarsel](SmsVarsel.md) helt uavhengig av hverandre. Det vil si at Avsender kan velge å varsle i begge eller en av kanalene.     Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til åpningsgrad og kostnader. Bruk av [SmsVarsel](SmsVarsel.md) vil medføre egne kostnader for Avsender |
+| Kommentar | Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne varslingspreferanser, det vil kunne komme som tillegg til Mottaker sine varslingvalg. Avsender kan med instillingene her styre både [EpostVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/EpostVarsel) og smsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel) helt uavhengig av hverandre. Det vil si at Avsender kan velge å varsle i begge eller en av kanalene.     Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til åpningsgrad og kostnader. Bruk av [SmsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel) vil medføre egne kostnader for Avsender |
 
 #### Eigenskapar
 
 | Identifikator              | Kardinalitet | Datatype                       |
 | -------------------------- | ------------ | ------------------------------ |
-| [epostVarsel](EpostVarsel.md) | 0..1         | [sdp:EpostVarsel](EpostVarsel.md) |
-| [smsVarsel](SmsVarsel.md)     | 0..1         | [sdp:SmsVarsel](SmsVarsel.md)     |
+| [epostVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/EpostVarsel) | 0..1         | [sdp:EpostVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/EpostVarsel) |
+| [smsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel)     | 0..1         | [sdp:SmsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel)     |
 
 #### Xml eksempel - Brev som krever varsling etter eForvaltningsforskriften
 

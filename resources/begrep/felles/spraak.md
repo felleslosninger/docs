@@ -1,7 +1,8 @@
 ---
 title: spraak
-permalink: spraak.html
+
 sidebar: begrep_sidebar
+redirect_from: /spraak
 ---
 
 | ---- | ---- |

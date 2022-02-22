@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "arkivstruktur": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "@base": "http://data.einnsyn.no/noark5/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "arkivstruktur:tilknyttetRegistreringSom": {
+      "@type": "@id"
+    },
+    "arkivstruktur:offentligTittel_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:tittel_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:soekbar": {
+      "@type": "xsd:boolean"
+    },
+    "arkivstruktur:parent": {
+      "@type": "@id"
+    },
+    "arkivstruktur:versjonsnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:versjonsformat": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:dokumentobjekt": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentstatus": {
+      "@type": "@id"
+    },
+    "arkivstruktur:opprettetDato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:tilknyttetDato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:korrespondansepartNavn_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:korrespondanseparttype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:saksaar": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:saksdato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:saksansvarlig_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:saksansbehandler_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:sakssekvensnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:saksstatus": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentbeskrivelse": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentetsDato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:journalaar:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:journaldato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:journalpostnummer:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:journalposttype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:journalstatus:": {
+      "@type": "@id"
+    },
+    "arkivstruktur:journalsekvensnummer:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:møtesaksaar": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:møtesakssekvensnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:moetedato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:korrespondansepart": {
+      "@type": "@id"
+    },
+    "arkivstruktur:variantformat": {
+      "@type": "@id"
+    },
+    "arkivstruktur:møtesakstype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:referanseTilMoetesak": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "32419302-0687-40db-b0c8-9c09d9f2f599",
+      "@type": "arkivstruktur:Arkivdel",
+      "arkivstruktur:parent": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "arkivstruktur:systemID": "32419302-0687-40db-b0c8-9c09d9f2f599",
+      "arkivstruktur:tittel": "eInnsyn-Moeter",
+      "arkivstruktur:tittel_LIST": [
+        "eInnsyn-Moeter"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "eInnsyn-Moeter"
+    },
+    {
+      "@id": "4579ef4f-8c8d-4900-a70e-8dbc8e5eba49",
+      "@type": "arkivstruktur:Korrespondansepart",
+      "arkivstruktur:korrespondansepartNavn": "Ola Normann",
+      "arkivstruktur:korrespondansepartNavn_LIST": [
+        "Ola Normann"
+      ],
+      "arkivstruktur:korrespondansepartNavn_SENSITIV": "Ola Normann",
+      "arkivstruktur:korrespondanseparttype": "arkivstruktur:mottaker"
+    },
+    {
+      "@id": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "@type": "arkivstruktur:Arkiv",
+      "arkivstruktur:systemID": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "arkivstruktur:tittel": "eInnsyn arkiv for virksomhet 976819837",
+      "arkivstruktur:tittel_LIST": [
+        "eInnsyn arkiv for virksomhet 976819837"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "eInnsyn arkiv for virksomhet 976819837"
+    },
+    {
+      "@id": "c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7",
+      "@type": "arkivstruktur:Journalpost",
+      "arkivstruktur:journalaar": 2030,
+      "arkivstruktur:journaldato": "2018-04-19",
+      "arkivstruktur:journalpostnummer": 1,
+      "arkivstruktur:journalposttype": "arkivstruktur:saksframlegg",
+      "arkivstruktur:journalsekvensnummer":9999,
+      "arkivstruktur:korrespondansepart": "4579ef4f-8c8d-4900-a70e-8dbc8e5eba49",
+      "arkivstruktur:offentligTittel": "Saksframlegg",
+      "arkivstruktur:offentligTittel_LIST": [
+        "Saksframlegg"
+      ],
+      "arkivstruktur:offentligTittel_SENSITIV": "Saksframlegg",
+      "arkivstruktur:parent": "e9e9aff9-660d-43dd-9231-f50ef529b8e1",
+      "arkivstruktur:registreringsID": "c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7",
+      "arkivstruktur:systemID": "c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7",
+      "arkivstruktur:tittel": "Saksframlegg",
+      "arkivstruktur:tittel_LIST": [
+        "Saksframlegg"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "Saksframlegg"
+    },
+    {
+      "@id": "e9e9aff9-660d-43dd-9231-f50ef529b8e1",
+      "@type": "arkivstruktur:Saksmappe",
+      "arkivstruktur:administrativEnhet": "976819837",
+      "arkivstruktur:mappeID": "e9e9aff9-660d-43dd-9231-f50ef529b8e1",
+      "arkivstruktur:offentligTittel": "Eksempel arkivsak",
+      "arkivstruktur:offentligTittel_LIST": [
+        "Eksempel arkivsak"
+      ],
+      "arkivstruktur:offentligTittel_SENSITIV": "Eksempel arkivsak",
+      "arkivstruktur:parent": "32419302-0687-40db-b0c8-9c09d9f2f599",
+      "arkivstruktur:saksaar": "2030",
+      "arkivstruktur:saksansvarlig": "Ola Normann",
+      "arkivstruktur:saksansvarlig_LIST": [
+        "Ola Normann"
+      ],
+      "arkivstruktur:saksansvarlig_SENSITIV": "Ola Normann",
+      "arkivstruktur:saksdato": "2018-04-19+02:00",
+      "arkivstruktur:sakssekvensnummer": "9000",
+      "arkivstruktur:saksstatus": "arkivstruktur:saksstatus_avsluttet",
+      "arkivstruktur:systemID": "e9e9aff9-660d-43dd-9231-f50ef529b8e1",
+      "arkivstruktur:tittel": "Eksempel arkivsak",
+      "arkivstruktur:tittel_LIST": [
+        "Eksempel arkivsak"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "Eksempel arkivsak"
+    }
+  ]
+}

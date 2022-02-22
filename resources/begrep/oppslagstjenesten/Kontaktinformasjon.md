@@ -1,6 +1,6 @@
 --- 
 title: Kontaktinformasjon  
-permalink: ot_kontakinformasjon.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -15,8 +15,8 @@ sidebar: begrep_sidebar
 
 | Term                                     | Kardinalitet |
 | ---------------------------------------- | ------------ |
-| [Mobiltelefonnummer](Mobiltelefonnummer.md) | 0..1         |
-| [Epostadresse](Epostadresse.md)             | 0..1         |
+| [Mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer) | 0..1         |
+| [Epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)             | 0..1         |
 
 #### Xml eksempel
 

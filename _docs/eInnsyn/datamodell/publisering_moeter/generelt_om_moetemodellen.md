@@ -2,8 +2,9 @@
 title: Generelt om møtemodellen
 description:
 summary:
-permalink: einnsyn_generelt_om_moetemodellen.html
+
 sidebar: einnsyn_technical_sidebar
+redirect_from: /einnsyn_generelt_om_moetemodellen
 ---
 
 ## Generelt om møtemodellen
@@ -12,17 +13,17 @@ klassar som arvar registrering- og mappe-klassane i den generelle Noarkmodellen.
 
 Det er gjort ei generell tilpassing.  Typen *møteregistrering* er delt opp i møtedokumentregistrering og møtesaksregistrering. Møtedokumentregistrering er
 typisk forekomstar av innkallingar, protokollar osv. Medan møteasaksregistrering er sjølve saksframlegga
-![Overornda datamodell møter](/images/einnsyn/einnsynn_moetemodell_overordna.png)
+![Overornda datamodell møter]({{site.baseurl}}/images/einnsyn/einnsynn_moetemodell_overordna.png)
 
 
 ## Bruk av modellen
-![Overornda datamodell møter](/images/einnsyn/einnsyn_bruk_av_moetedatamodell.png)
+![Overornda datamodell møter]({{site.baseurl}}/images/einnsyn/einnsyn_bruk_av_moetedatamodell.png)
 
 ## Prioritering av møter ved sending
 I mottak på eInnsyn er det oppretta ein eigen inn-kø for møter. Dette er for å øke gjennomstrømning av for møteavlevering.
 
 For å ta i bruk denne så må ein ved sending over integrasjonspunktet endre prosesstype til *meeting*, der det i dag er *journalpost*.
 
-![Dataflyt ved overlevering](/images/einnsyn/moetekoe.png)
+![Dataflyt ved overlevering]({{site.baseurl}}/images/einnsyn/moetekoe.png)
 
 [Verdiar og felt ligg her](https://docs.digdir.no/eformidling_nm_message.html#einnsyn)

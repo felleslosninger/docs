@@ -1,7 +1,8 @@
 ---
 title: ikkeSensitivTittel
-permalink: ikkesensitivtittel.html
+
 sidebar: begrep_sidebar
+redirect_from: /ikkesensitivtittel
 ---
 
 | ---- | ---- |

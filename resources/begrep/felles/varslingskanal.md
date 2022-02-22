@@ -1,7 +1,8 @@
 ---
 title: varslingskanal
-permalink: 2varslingskanal.html
+
 sidebar:
+redirect_from: /2varslingskanal
 ---
 
 | ---- | ---- |

@@ -2,8 +2,9 @@
 title: SR REST docs
 description: Spring REST docs for service registry
 summary: "Spring REST docs for service registry"
-permalink: eformidling_sr_restdocs.html
+
 layout: restdocs-ui
+redirect_from: /eformidling_sr_restdocs
 ---
 
 

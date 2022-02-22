@@ -7,83 +7,158 @@
 <meta name="generator" content="Asciidoctor 1.5.8">
 <meta name="author" content="Version 2.2.2">
 <title>NextMove API Specification</title>
-<link rel="stylesheet" href="assets/css/asciidoctor.css">
+<link rel="stylesheet" href="{{site.baseurl}}/assets/css/asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.hidden {
-    display: none;
-}
-
-.switch {
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-color: #7a2518;
-    display: inline-block;
-}
-
-.switch--item {
-    padding: 10px;
-    background-color: #ffffff;
-    color: #7a2518;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.switch--item.selected {
-    background-color: #7a2519;
-    color: #ffffff;
-}
-
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-<script type="text/javascript">
-function addBlockSwitches() {
-    $('.primary').each(function() {
-        primary = $(this);
-        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
-        primary.children('.title').remove();
-    });
-    $('.secondary').each(function(idx, node) {
-        secondary = $(node);
-        primary = findPrimary(secondary);
-        switchItem = createSwitchItem(secondary, primary.children('.switch'));
-        switchItem.content.addClass('hidden');
-        findPrimary(secondary).append(switchItem.content);
-        secondary.remove();
-    });
-}
-
-function createBlockSwitch(primary) {
-    blockSwitch = $('<div class="switch"></div>');
-    primary.prepend(blockSwitch);
-    return blockSwitch;
-}
-
-function findPrimary(secondary) {
-    candidate = secondary.prev();
-    while (!candidate.is('.primary')) {
-        candidate = candidate.prev();
-    }
-    return candidate;
-}
-
-function createSwitchItem(block, blockSwitch) {
-    blockName = block.children('.title').text();
-    content = block.children('.content').first().append(block.next('.colist'));
-    item = $('<div class="switch--item">' + blockName + '</div>');
-    item.on('click', '', content, function(e) {
-        $(this).addClass('selected');
-        $(this).siblings().removeClass('selected');
-        e.data.siblings('.content').addClass('hidden');
-        e.data.removeClass('hidden');
-    });
-    blockSwitch.append(item);
-    return {'item': item, 'content': content};
-}
-
-$(addBlockSwitches);
-
-</script>
+<style>
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+.switch {
+
+    border-width: 1px 1px 0 1px;
+
+    border-style: solid;
+
+    border-color: #7a2518;
+
+    display: inline-block;
+
+}
+
+
+
+.switch--item {
+
+    padding: 10px;
+
+    background-color: #ffffff;
+
+    color: #7a2518;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+}
+
+
+
+.switch--item.selected {
+
+    background-color: #7a2519;
+
+    color: #ffffff;
+
+}
+
+
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+
+<script type="text/javascript">
+
+function addBlockSwitches() {
+
+    $('.primary').each(function() {
+
+        primary = $(this);
+
+        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
+
+        primary.children('.title').remove();
+
+    });
+
+    $('.secondary').each(function(idx, node) {
+
+        secondary = $(node);
+
+        primary = findPrimary(secondary);
+
+        switchItem = createSwitchItem(secondary, primary.children('.switch'));
+
+        switchItem.content.addClass('hidden');
+
+        findPrimary(secondary).append(switchItem.content);
+
+        secondary.remove();
+
+    });
+
+}
+
+
+
+function createBlockSwitch(primary) {
+
+    blockSwitch = $('<div class="switch"></div>');
+
+    primary.prepend(blockSwitch);
+
+    return blockSwitch;
+
+}
+
+
+
+function findPrimary(secondary) {
+
+    candidate = secondary.prev();
+
+    while (!candidate.is('.primary')) {
+
+        candidate = candidate.prev();
+
+    }
+
+    return candidate;
+
+}
+
+
+
+function createSwitchItem(block, blockSwitch) {
+
+    blockName = block.children('.title').text();
+
+    content = block.children('.content').first().append(block.next('.colist'));
+
+    item = $('<div class="switch--item">' + blockName + '</div>');
+
+    item.on('click', '', content, function(e) {
+
+        $(this).addClass('selected');
+
+        $(this).siblings().removeClass('selected');
+
+        e.data.siblings('.content').addClass('hidden');
+
+        e.data.removeClass('hidden');
+
+    });
+
+    blockSwitch.append(item);
+
+    return {'item': item, 'content': content};
+
+}
+
+
+
+$(addBlockSwitches);
+
+
+
+</script>
+
 
 <style>.plusimageapply{
     list-style-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T7XTsQkCQRAF0He1ybUhiAYHFmBkaGQFBpca2IAgYjNiEYqibKCB4t0yy026/Mdnd7ZSOFVh3mDABTPs+xr+a/DEA3NsupAu4J1bY4GE/kwOkEI7jHH9FnKBlDthVAIcUUeBLSa4RYAVlpFLvKNBG3nGM6Y4RBepL/c5H+wvZDd4AeooGhGCcrDIAAAAAElFTkSuQmCC);
@@ -2394,7 +2469,8 @@ X-Frame-Options: DENY
 Content-Length: 1151
 
 PK  ݤ�R               test ��v��&amp;���*O]Ʒ�)�
-k��� �1?�#�Z+��W���Uֲˎ�?��֪;`D�g�-~�b9Ү}�@`b��}XyC�n�^X}x�M���"؟�D")���%���x���;$&gt;�F^&lt;;��;� ^����&gt;YTu�J�̍;t�z�T�@W��&amp;؀N��L�@�pC�E�c��2�B�g�}&lt;A�s�1�@صW�7������9]6[����R��0H�*�`�����)�BLn�N�_y�z��x���������A�']Ê[#!K�y��؀�ׂp�{Ã�����S��fXo��Q��J�IQ���D`��B��A�yK^�L\��.���c8%�a4�o�'��l���w&gt;Ku�!�0X-7Ku�x4XM"��|�E�U��m.'�����n��j'Zn�FE����Ĺ��z@�Jw��zf�1Zh)�`�ޢc�[;w�m���[Ժ�r��ꝱ�|%f��}�{�J��|�t
+k��� �1?�#�Z+��W���Uֲˎ�?��֪;`D�g�-~�b9Ү}�@`b��}XyC�n�^X}x�M���"؟�D")���%���x���;$&gt;�F^&lt;;��;� ^����&gt;YTu�J�̍;t�z�T�@W��&amp;؀N��L�@�pC�E�c��2�B�g�}&lt;A�s�1�@صW�7������9]6[����R��0H�*�`�����)�BL
+n�N�_y�z��x���������A�']Ê[#!K�y��؀�ׂp�{Ã�����S��fXo��Q��J�IQ���D`��B��A�yK^�L\��.���c8%�a4�o�'��l���w&gt;Ku�!�0X-7Ku�x4XM"��|�E�U��m.'�����n��j'Zn�FE����Ĺ��z@�Jw��zf�1Zh)�`�ޢc�[;w�m���[Ժ�r��ꝱ�|%f��}�{�J��|�t
 ��V��@��=�HH��WY�~�Q�`T�gjO�-3�����Pa\�)�;X�.�Ĳ)T����ʨ`88:��.���hN�a[&amp;�H�a�1�,�HD�=`r�D��Q��*�{*&lt;Kd�)���-�:��u��Pλc�?G��a`()��r�����g-�p&gt;t��b��Ha�R򄢀�c����E$Cj���	5n�&gt;V��gO�T�%�QȞ0��č����&lt;�k��P�?����O� ��LzlD��,uJ)�`���;%iom4`��.�}*P�5f��#�Z���3����C*wf����pd�0����]���o�Iɣq$��a�?݃��һ�sV���!�"��D4Uh�� }�#7��s4T�A�Yb�L��)w�PC*��=���RF��r�Ŝa��X��)�8�Ȱ���7,˛�?]اQ #Q�� lP}̷�
 ��&amp;���$�����o4
 �ȉ�H��v��'���Z�l��ҕ���S�[�f誛�~�����&amp;X�;op{N�Nky��/������C��9�5��m��A ��PK�(��     PK   ݤ�R�(��                      testPK      2   7</code></pre>

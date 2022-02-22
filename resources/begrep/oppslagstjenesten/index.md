@@ -1,7 +1,8 @@
 ---
 title: Oppslagstjenesten for kontakt og reservasjonsregisteret  
-permalink: ot_oppslagstjenesten.html
+
 sidebar:
+redirect_from: /ot_oppslagstjenesten
 ---
 
 ### Integrasjonsguide:
@@ -15,48 +16,48 @@ webservice, sikra med WS-security. Det må benyttes
 virksomhetssertifikater ihtt rammeverket for PKI i offentlig sektor for
 å få tilgang.
 
-  - [WSDL definisjon](xsd/oppslagstjeneste-ws-16-02.wsdl)
-  - [XSD definisjon](xsd/oppslagstjeneste-ws-16-02.xsd)
-  - [XSD metadata](xsd/oppslagstjeneste-metadata-16-02.xsd)
+  - [WSDL definisjon]({{site.baseurl}}/resources/begrep/oppslagstjenesten/xsd/oppslagstjeneste-ws-16-02.wsdl)
+  - [XSD definisjon]({{site.baseurl}}/resources/begrep/oppslagstjenesten/xsd/oppslagstjeneste-ws-16-02.wsdl)
+  - [XSD metadata]({{site.baseurl}}/resources/begrep/oppslagstjenesten/xsd/oppslagstjeneste-metadata-16-02.xsd)
   - [XSD definisjon for fil
     eksport](xsd/kontaktregister-export-14-05.xsd)
-  - [Egendefinert SOAP header: paaVegneAv](paaVegneAv.md)
-  - [Web Service Security header](ws-security/WebserviceSecurity.md)
+  - [Egendefinert SOAP header: paaVegneAv]({{site.baseurl}}/resources/begrep/felles/paaVegneAv)
+  - [Web Service Security header]({{site.baseurl}}/resources/begrep/oppslagstjenesten/ws-security/WebserviceSecurity)
 
 ### Datamodell:
 
 For en oversikt over den eksterne datamodellen utlevert fra
-Oppslagstjenesten se klassedefinisjonen for [Person](Person.md).
+Oppslagstjenesten se klassedefinisjonen for [Person]({{site.baseurl}}/resources/begrep/oppslagstjenesten/Person).
 
 ### Klassedefinisjonen
 
 Følgende liste gir en oversikt over de klasser som er brukt i
 Oppslagstjenesten.
 
-  - [Epostadresse](Epostadresse.md)
-  - [Kontaktinformation](Kontaktinformasjon.md)
-  - [Mobiltelefonnummer](Mobiltelefonnummer.md)
-  - [Person](Person.md)
-  - [Sertifikat](Sertifikat.md)
-  - [SikkerDigitalPostAdresse](SikkerDigitalPostAdresse.md)
+  - [Epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)
+  - [Kontaktinformation]({{site.baseurl}}/resources/begrep/oppslagstjenesten/Kontaktinformasjon)
+  - [Mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer)
+  - [Person]({{site.baseurl}}/resources/begrep/oppslagstjenesten/Person)
+  - [Sertifikat]({{site.baseurl}}/resources/begrep/oppslagstjenesten/Sertifikat)
+  - [SikkerDigitalPostAdresse]({{site.baseurl}}/resources/begrep/oppslagstjenesten/SikkerDigitalPostAdresse)
 
 ### Tjenester for offentlige virksomheter:
 
 Følgende forespørslser er tilgjengelig i Oppslagstjenesten for
 offentlige virksomheter
 
- - [HentEndringerForespoersel](HentEndringerForespoersel.md)
- - [HentPersonerForespoersel](HentPersonerForespoersel.md)
- - [HentPrintSertifikatForespoersel](HentPrintSertifikatForespoersel.md)
+ - [HentEndringerForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentEndringerForespoersel)
+ - [HentPersonerForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonerForespoersel)
+ - [HentPrintSertifikatForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPrintSertifikatForespoersel)
 
 ### Tjenester for postkasseleverandører knyttet til Digital postkasse til innbyggere:
 
 Postkasseleverandører har følgende forespørsler tilgjengelig i
 oppslagstjenesten.
 
- - [KanVelgeSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
- - [OppdaterPostkasseForespoersel](OppdaterPostkasseForespoersel.md)
- - [OpprettOgVelgSikkerDigitalPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md)
+ - [KanVelgeSikkerDigitalPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/KanVelgeSikkerDigitalPostkasseForespoersel)
+ - [OppdaterPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/OppdaterPostkasseForespoersel)
+ - [OpprettOgVelgSikkerDigitalPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/OpprettOgVelgSikkerDigitalPostkasseForespoersel)
  - SKAL VÆRE LINK TIL OpprettPostkasseForespoersel.md
- - [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md)
- - [VelgSikkerDigitalPostkasseForespoersel](KanVelgeSikkerDigitalPostkasseForespoersel.md)
+ - [SlettPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/SlettPostkasseForespoersel)
+ - [VelgSikkerDigitalPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/KanVelgeSikkerDigitalPostkasseForespoersel)

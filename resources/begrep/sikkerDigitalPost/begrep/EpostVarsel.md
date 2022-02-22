@@ -1,7 +1,8 @@
 ---
 title: EpostVarsel 
-permalink: sdp_epostvarsel.html
+
 sidebar: begrep_sidebar
+redirect_from: /sdp_epostvarsel
 ---
 
 |---|---|
@@ -15,9 +16,9 @@ sidebar: begrep_sidebar
 
 | --- | --- | --- |
 | Identifikator                            | Kardinalitet | Datatype                                              |
-| [epostadresse](epostadresse.md)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
-| [varslingstekst](varslingstekst.html) | 1..1         | [varslingstekst](varslingstekst.html)           |
-| [repetisjoner](Repetisjoner.md)             | 1..1         | [sdp:Repetisjoner](Repetisjoner.md)                      |
+| [epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)     | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [varslingstekst]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/varslingsTekst) | 1..1         | [varslingstekst]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/varslingsTekst)           |
+| [repetisjoner]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Repetisjoner)             | 1..1         | [sdp:Repetisjoner]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Repetisjoner)                      |
 
 #### Xml eksempel
 

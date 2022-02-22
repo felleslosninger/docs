@@ -1,8 +1,9 @@
 ---
 title: HentPersonForespoersel  
-permalink: ot_hentpersonforespoersel.html
+
 datatype: Metode
 sidebar: begrep_sidebar
+redirect_from: /ot_hentpersonforespoersel
 ---
 
 |---|---|
@@ -12,7 +13,7 @@ sidebar: begrep_sidebar
 | Kilde         | DIFI |
 | Kommentar     | Webservice forespørsel som Klient sender til Kontakt- og reservasjonsregisteret. Forespørselen gjelder innlogget person. |
 
-Responsen er en [HentPersonRespons](HentPersonRespons.md)
+Responsen er en [HentPersonRespons]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonRespons)
 
 
 

@@ -1,0 +1,189 @@
+{
+  "@context": {
+    "arkivstruktur": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "@base": "http://data.einnsyn.no/noark5/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "arkivstruktur:tilknyttetRegistreringSom": {
+      "@type": "@id"
+    },
+    "arkivstruktur:offentligTittel_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:tittel_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:soekbar": {
+      "@type": "xsd:boolean"
+    },
+    "arkivstruktur:parent": {
+      "@type": "@id"
+    },
+    "arkivstruktur:versjonsnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:versjonsformat": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:dokumentobjekt": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentstatus": {
+      "@type": "@id"
+    },
+    "arkivstruktur:opprettetDato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:tilknyttetDato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:korrespondansepartNavn_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:korrespondanseparttype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:saksaar": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:saksdato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:saksansvarlig_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:saksbehandler_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:sakssekvensnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:saksstatus": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentbeskrivelse": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentetsDato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:journalaar:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:journaldato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:journalpostnummer:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:journalposttype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:journalstatus:": {
+      "@type": "@id"
+    },
+    "arkivstruktur:journalsekvensnummer:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:møtesaksaar": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:møtesakssekvensnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:moetedato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:korrespondansepart": {
+      "@type": "@id"
+    },
+    "arkivstruktur:variantformat": {
+      "@type": "@id"
+    },
+    "arkivstruktur:møtesakstype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:referanseTilMoetesak": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "../21e81ac8-d1e2-4620-aa4d-f7a7df8e164e",
+      "@type": "arkivstruktur:Møtesaksregistrering",
+      "arkivstruktur:møteregistreringsstatus": "Behandlet i møte",
+      "arkivstruktur:møtesakssekvensnummer": "1",
+      "arkivstruktur:møtesakstype": {
+        "@id": "arkivstruktur:politiskSak"
+      },
+      "arkivstruktur:møtesaksår":2030,
+      "arkivstruktur:offentligTittel": "Eksempel Politisk sak/Møtesaksregistrering",
+      "arkivstruktur:offentligTittel_LIST": [
+        "Eksempel Politisk sak/Møtesaksregistrering"
+      ],
+      "arkivstruktur:offentligTittel_SENSITIV": "Eksempel Politisk sak/Møtesaksregistrering",
+      "arkivstruktur:parent": "8f63e8f9-70f2-4ddd-99eb-257082c885a8",
+      "arkivstruktur:referanseTilMøtesak": {
+        "@id": "c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7"
+      },
+      "arkivstruktur:registreringsID": "1031/2018",
+      "arkivstruktur:saksbehandler": "Ola Normann",
+      "arkivstruktur:saksbehandler_LIST": [
+          "Ola Normann"
+        ]
+      ,
+      "arkivstruktur:saksbehandler_SENSITIV": "Ola Normann",
+      "arkivstruktur:systemID": "21e81ac8-d1e2-4620-aa4d-f7a7df8e164e",
+      "arkivstruktur:tittel": "Eksempel Politisk sak/Møtesaksregistrering",
+      "arkivstruktur:tittel_LIST": [
+        "Eksempel Politisk sak/Møtesaksregistrering"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "Eksempel Politisk sak/Møtesaksregistrering"
+    },
+    {
+      "@id": "32419302-0687-40db-b0c8-9c09d9f2f599",
+      "@type": "arkivstruktur:Arkivdel",
+      "arkivstruktur:parent": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "arkivstruktur:systemID": "32419302-0687-40db-b0c8-9c09d9f2f599",
+      "arkivstruktur:tittel": "eInnsyn-Moeter",
+      "arkivstruktur:tittel_LIST": [
+        "eInnsyn-Moeter"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "eInnsyn-Moeter"
+    },
+    {
+      "@id": "8f63e8f9-70f2-4ddd-99eb-257082c885a8",
+      "@type": "arkivstruktur:Moetemappe",
+      "arkivstruktur:beskrivelse": "Eksempelmøte med utvalgskodemapping",
+      "arkivstruktur:mappeID": "8f63e8f9-70f2-4ddd-99eb-257082c885a8",
+      "arkivstruktur:moetedato": "2018-04-19T08:00:00Z",
+      "arkivstruktur:moetenummer": "N/A",
+      "arkivstruktur:moetested": "Byrådets møterom",
+      "arkivstruktur:offentligTittel": "Byrådsmøte",
+      "arkivstruktur:offentligTittel_LIST": [
+        "Byrådsmøte"
+      ],
+      "arkivstruktur:offentligTittel_SENSITIV": "Byrådsmøte",
+      "arkivstruktur:parent": "32419302-0687-40db-b0c8-9c09d9f2f599",
+      "arkivstruktur:systemID": "8f63e8f9-70f2-4ddd-99eb-257082c885a8",
+      "arkivstruktur:tittel": "Eksempelmøte med utvalgskodemapping",
+      "arkivstruktur:tittel_LIST": [
+        "Eksempelmøte med utvalgskodemapping"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "Eksempelmøte med utvalgskodemapping",
+      "arkivstruktur:utvalg": "Kommunestyret"
+    },
+    {
+      "@id": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "@type": "arkivstruktur:Arkiv",
+      "arkivstruktur:systemID": "a3893b25-63a6-4f38-ad9d-973fe39e7ed5",
+      "arkivstruktur:tittel": "eInnsyn arkiv for virksomhet 976819837",
+      "arkivstruktur:tittel_LIST": [
+        "eInnsyn arkiv for virksomhet 976819837"
+      ],
+      "arkivstruktur:tittel_SENSITIV": "eInnsyn arkiv for virksomhet 976819837"
+    }
+  ]
+}

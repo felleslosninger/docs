@@ -1,7 +1,8 @@
 ---
 title: FysiskPostRetur  
-permalink: sdp_fysiskpostretur.html
+
 sidebar: begrep_sidebar
+redirect_from: /sdp_fysiskpostretur
 ---
 
 |---|---|
@@ -14,5 +15,5 @@ sidebar: begrep_sidebar
 
 | Identifikator                                   | Kardinalitet | Datatype                                              |
 | ----------------------------------------------- | ------------ | ----------------------------------------------------- |
-| [mottaker](Mottaker.md)                   | 1..1         | [sdp:FysiskPostadresse](FysiskPostadresse.md)            |
-| [postHaandtering](returPostHaandtering.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |
+| [mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker)                   | 1..1         | [sdp:FysiskPostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/FysiskPostadresse)            |
+| [postHaandtering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/returPostHaandtering) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string) |

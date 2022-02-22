@@ -1,8 +1,9 @@
 ---
 
 title: Error  
-permalink: sdp_error.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_error
 ---
 
   - Identifikator  

@@ -1,7 +1,8 @@
 ---
 title: utskriftstype
-permalink: 2utskriftstype.html
+
 sidebar:
+redirect_from: /2utskriftstype
 ---
 
 | ---- | ---- |

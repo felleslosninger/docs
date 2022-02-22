@@ -1,7 +1,8 @@
 ---
 title: varslingskanal
-permalink: varslingskanal.html
+
 sidebar: begrep_sidebar
+redirect_from: /varslingskanal
 ---
 
 | ---- | ---- |

@@ -1,7 +1,8 @@
 ---
 title: avsenderidentifikator
-permalink: 2avsenderidentifikator.html
+
 sidebar: dpi_sidebar
+redirect_from: /2avsenderidentifikator
 ---
 
 | ---- | ---- |

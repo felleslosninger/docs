@@ -1,8 +1,9 @@
 ---
 
 title: MessageInfo  
-permalink: sdp_usermessage.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_usermessage
 ---
 
 ## {{page.title}}

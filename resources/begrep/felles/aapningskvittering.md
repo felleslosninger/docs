@@ -1,7 +1,8 @@
 ---
 title: aapningskvittering
-permalink: aapningskvittering2.html
+
 sidebar: dpi_sidebar
+redirect_from: /aapningskvittering2
 ---
 
 | ---- | ---- |

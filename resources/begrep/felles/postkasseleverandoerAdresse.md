@@ -1,7 +1,8 @@
 ---
 title: postkasseleverandoerAdresse
-permalink: 2postkasseleverandoeradresse.html
+
 sidebar:
+redirect_from: /2postkasseleverandoeradresse
 ---
 
 | ---- | ---- |

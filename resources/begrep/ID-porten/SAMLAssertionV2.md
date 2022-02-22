@@ -1,8 +1,9 @@
 ---
  
 title: SAMLAssertionV2  
-permalink: IDport_SAMLAssertionV2.html
+
 sidebar:
+redirect_from: /idport_samlassertionv2
 ---
 |---|---|
 | Identifikator | <https://begrep.difi.no/ID-porten/SAMLAssertionV2> |
@@ -18,19 +19,19 @@ sidebar:
 
 | Term                     | Beskrivelse                                                                     | Kardinalitet |
 | --- | --- | --- |
-| uid                      | [personidentifikator](../felles/personidentifikator.md)                              | 1            |
-| SecurityLevel            | [sikkerhetsnivaa](../felles/sikkerhetsnivaa.md)                                      | 1            |
-| Culture                  | [språk](../felles/spraak.md)                                                         | 1            |
-| AuthMethod               | [Autentiseringsmetode](SAMLAssertionV1.md)                              | 1            |
-| Email                    | [epostadresse](../felles/epostadresse.md)                                            | 0..1         |
-| MobilePhone              | [mobiltelefonnummer](../felles/mobiltelefonnummer.md)                                | 0..1         |
+| uid                      | [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)                              | 1            |
+| SecurityLevel            | [sikkerhetsnivaa]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/sikkerhetsnivaa)                                      | 1            |
+| Culture                  | [språk]({{site.baseurl}}/resources/begrep/felles/spraak)                                                         | 1            |
+| AuthMethod               | [Autentiseringsmetode]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAssertionV1)                              | 1            |
+| Email                    | [epostadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/epostadresse)                                            | 0..1         |
+| MobilePhone              | [mobiltelefonnummer]({{site.baseurl}}/resources/begrep/felles/mobiltelefonnummer)                                | 0..1         |
 | DigitalContactInfoStatus | Status                                                                          | 1            |
 | OnBehalfOf               | Referanse til annen Offentlig Virksomhet som forespørselen er gjort på vegne av | 0..1         |
 
 #### AuthnContextClassRef
 
 Autentiseringsnivå er spesifisert i henhold til kodeverk for
-[AuthnContextClassRef](SAMLAuthnRequest.md)
+[AuthnContextClassRef]({{site.baseurl}}/resources/begrep/ID-porten/SAMLAuthnRequest)
 
 #### Kodeverk
 

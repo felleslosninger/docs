@@ -1,7 +1,8 @@
 ---
 title: x509Sertifikat
-permalink: 2x509sertifikat.html
+
 sidebar:
+redirect_from: /2x509sertifikat
 ---
 
 | ---- | ---- |

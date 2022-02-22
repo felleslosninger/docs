@@ -1,10 +1,39 @@
 ---
 title: Endringslogg sentrale komponenter eFormidling
 description: Endringslogg for sentrale komponenter
-permalink: eformidling_releasenotes_sentrale_komp.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_releasenotes_sentrale_komp
 ---
+(Endringer som er relevant for brukere av eFormidling)
+
+
+
+## ServiceRegistry 2.3.0
+15.02.2022
+
+**Endringer**
+*
+
+## Virksert 1.6.0 
+15.02.2022
+
+**Endringer**
+*
+
+## ServiceRegistry 2.2.0
+11.01.2022
+
+**Endringer**
+* MOVE-2192	Meir spesifikk feilmelding ved utgått sertifikat
+
+
+## ServiceRegistry 2.1.5
+10.11.2021
+
+**Endringer**
+* støtte for ny utgave av virksomhetssertifikatstandard (SEID v2) for Buypass-sertifikat.
 
 
 ## ServiceRegistry 2.1.4

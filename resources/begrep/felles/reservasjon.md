@@ -1,7 +1,8 @@
 ---
 title: reservasjon
-permalink: 2reservasjon.html
+
 sidebar:
+redirect_from: /2reservasjon
 ---
 
 | ---- | ---- |

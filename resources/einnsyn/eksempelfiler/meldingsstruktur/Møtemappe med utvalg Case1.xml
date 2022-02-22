@@ -1,0 +1,112 @@
+<arkiv xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <systemID>a3893b25-63a6-4f38-ad9d-973fe39e7ed5</systemID>
+    <tittel>eInnsyn arkiv for virksomhet 976819837</tittel>
+    <arkivstatus>Opprettet</arkivstatus>
+    <opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+    <opprettetAv>eInnsyn</opprettetAv>
+    <avsluttetDato>2100-01-01T00:00:00.000+01:00</avsluttetDato>
+    <avsluttetAv>Ukjent</avsluttetAv>
+    <arkivskaper>
+        <arkivskaperID>0001</arkivskaperID>
+        <arkivskaperNavn>Ukjent</arkivskaperNavn>
+    </arkivskaper>
+    <arkivdel>
+        <systemID>32419302-0687-40db-b0c8-9c09d9f2f599</systemID>
+        <tittel>eInnsyn-Moeter</tittel>
+        <arkivdelstatus>Aktiv periode</arkivdelstatus>
+        <opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+        <opprettetAv>Ukjent</opprettetAv>
+        <avsluttetDato>3000-01-01T00:00:00.000+01:00</avsluttetDato>
+        <avsluttetAv>Ukjent</avsluttetAv>
+        <mappe xsi:type="moetemappe">
+            <!--  MM-12597-BR2  -->
+            <systemID>8f63e8f9-70f2-4ddd-99eb-257082c885a8</systemID>
+            <mappeID>8f63e8f9-70f2-4ddd-99eb-257082c885a8</mappeID>
+            <tittel>Eksempelmøte med utvalgskodemapping</tittel>
+            <offentligTittel>Byrådsmøte</offentligTittel>
+            <beskrivelse>Eksempelmøte med utvalgskodemapping</beskrivelse>
+            <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+            <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+            <opprettetAv>N/A</opprettetAv>
+            <avsluttetDato>2018-04-19T00:00:00.000+02:00</avsluttetDato>
+            <avsluttetAv>N/A</avsluttetAv>
+            <registrering
+                    xsi:type="moetedokumentregistrering"> <!-- Dokument tilknytta møte.  Protokoll, innkalling, referat osv -->
+                <!--  MR-12597-BR2  -->
+                <systemID>d2353eb1-d73b-4971-a9cb-e9af7e396548</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>N/A</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <registreringsID>d2353eb1-d73b-4971-a9cb-e9af7e396548</registreringsID>
+                <tittel>Sakskart</tittel>
+                <offentligTittel>Sakskart</offentligTittel>
+                <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                <saksbehandler>N/A</saksbehandler>
+                <moetedokumentregistreringstype>Innkalling</moetedokumentregistreringstype>
+            </registrering>
+            <registrering
+                    xsi:type="moetesaksregistrering"><!-- Dette er forekomstane i sakslista.  Dvs filter på politisk sak -->
+                <!--  MR-12597-201604935-19063-1031  -->
+                <systemID>21e81ac8-d1e2-4620-aa4d-f7a7df8e164e</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>N/A</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <registreringsID>1031/2018</registreringsID>
+                <tittel>Eksempel Politisk sak/Møtesaksregistrering</tittel>
+                <offentligTittel>Eksempel Politisk sak/Møtesaksregistrering</offentligTittel>
+                <dokumentmedium>Elektronisk arkiv</dokumentmedium>
+                <moetesakstype>Politisk sak</moetesakstype>
+                <moeteregistreringsstatus>Behandlet i møte</moeteregistreringsstatus>
+                <saksbehandler>Ola Normann</saksbehandler>
+                <referanseTilMoetesak>c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7</referanseTilMoetesak>
+                <moetesaksaar>2030</moetesaksaar>
+                <moetesakssekvensnummer>1</moetesakssekvensnummer>
+            </registrering>
+            <moetenummer>N/A</moetenummer>
+            <utvalg>Kommunestyret</utvalg><!-- Her legg ein inn enhetkode til utvalget som finst -->
+            <moetedato>2018-04-19T10:00:00.000+02:00</moetedato>
+            <moetested>Byrådets møterom</moetested>
+        </mappe>
+        <mappe xsi:type="saksmappe">
+            <!--  SM-201604935-19063  -->
+            <systemID>e9e9aff9-660d-43dd-9231-f50ef529b8e1</systemID>
+            <mappeID>e9e9aff9-660d-43dd-9231-f50ef529b8e1</mappeID>
+            <tittel>Eksempel arkivsak</tittel>
+            <offentligTittel>Eksempel arkivsak</offentligTittel>
+            <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+            <opprettetAv>Ola Normann</opprettetAv>
+            <avsluttetDato>2018-04-19T00:00:00.000+02:00</avsluttetDato>
+            <avsluttetAv>N/A</avsluttetAv>
+            <registrering xsi:type="journalpost">
+                <!--  JP-201604935-19063-1031  -->
+                <systemID>c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7</systemID>
+                <opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+                <opprettetAv>Ola Normann</opprettetAv>
+                <arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+                <arkivertAv>N/A</arkivertAv>
+                <registreringsID>c4e6682b-7fa0-4977-b1fb-a5be8ca2dab7</registreringsID>
+                <tittel>Saksframlegg</tittel>
+                <offentligTittel>Saksframlegg</offentligTittel>
+                <journalaar>2030</journalaar>
+                <journalsekvensnummer>9999</journalsekvensnummer>
+                <journalpostnummer>1</journalpostnummer>
+                <journalposttype>Saksframlegg</journalposttype>
+                <journalstatus>Journalført</journalstatus>
+                <journaldato>2018-04-19</journaldato>
+                <korrespondansepart>
+                    <korrespondanseparttype>Mottaker</korrespondanseparttype>
+                    <korrespondansepartNavn>Ola Normann</korrespondansepartNavn>
+                </korrespondansepart>
+            </registrering>
+            <saksaar>2030</saksaar>
+            <sakssekvensnummer>9000</sakssekvensnummer>
+            <saksdato>2018-04-19+02:00</saksdato>
+            <administrativEnhet>976819837</administrativEnhet>
+            <saksansvarlig>Ola Normann</saksansvarlig>
+            <saksstatus>Avsluttet</saksstatus>
+        </mappe>
+    </arkivdel>
+</arkiv>

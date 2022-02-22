@@ -1,8 +1,9 @@
 ---
 title: HentPersonerForespoersel  
-permalink: ot_hentpersonerforespoersel.html
+
 datatype: Metode
 sidebar: begrep_sidebar
+redirect_from: /ot_hentpersonerforespoersel
 ---
 
 |---|---|
@@ -12,14 +13,14 @@ sidebar: begrep_sidebar
 | Kilde         | DIFI |
 | Kommentar     | Webservice forespørsel som Klient sender til Kontaktregisteret, forespørselen beskriver hvilke personer Klienten ønsker uthentet og hvilken informasjon som ønskes utlevert. Se integrasjonsguiden for Oppslagstjenesten for tekniske detaljer om forespørselen og hvordan denne sendes. |
 
-Responsen er en [HentPersonerRespons](HentPersonerRespons.md)
+Responsen er en [HentPersonerRespons]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonerRespons)
 
 #### Attributer
 
 | Term                                               | Kardinalitet |
 | -------------------------------------------------- | ------------ |
-| [personidentifikator](../felles/personidentifikator.md) | 1..1000      |
-| [informasjonsbehov](../felles/informasjonsbehov.md)     | 0..\*        |
+| [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator) | 1..1000      |
+| [informasjonsbehov]({{site.baseurl}}/resources/begrep/felles/informasjonsbehov)     | 0..\*        |
 
 
 Dersom det ikke spesifiseres noen informasjonsbehov-element i

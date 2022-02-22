@@ -1,6 +1,6 @@
 --- 
 title: OpprettOgVelgSikkerDigitalPostkasseForespoersel  
-permalink: ot_opprettogvelgsikkerdigitalpostkasseforespoersel.html
+
 sidebar: begrep_sidebar
 ---
 
@@ -15,12 +15,12 @@ sidebar: begrep_sidebar
 
 | Term                                                              | Kardinalitet | Datatype                                                          |
 | ----------------------------------------------------------------- | ------------ | ----------------------------------------------------------------- |
-| [personidentifikator](../felles/personidentifikator.md)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [virksomhetsidentifikator](../felles/virksomhetsidentifikator.md) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [postkasseadresse](../felles/postkasseadresse.md)                      | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
-| [X509Sertifikat](../felles/x509Sertifikat.md)                          | 0..1         | [X509Certifiate](http://www.w3.org/TR/xmldsig-core/#sec-X509Data) |
+| [personidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/personidentifikator)                | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [virksomhetsidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/virksomhetsidentifikator) | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [postkasseadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseadresse)                      | 1..1         | [xs:string](http://www.w3.org/TR/xmlschema-2/#string)             |
+| [X509Sertifikat]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/x509Sertifikat)                          | 0..1         | [X509Certifiate](http://www.w3.org/TR/xmldsig-core/#sec-X509Data) |
 
 #### Respons
 
 Responsen er en
-[OpprettOgVelgSikkerDigitalPostkasseRespons](OpprettOgVelgSikkerDigitalPostkasseRespons.md)
+[OpprettOgVelgSikkerDigitalPostkasseRespons]({{site.baseurl}}/resources/begrep/oppslagstjenesten/OpprettOgVelgSikkerDigitalPostkasseRespons)

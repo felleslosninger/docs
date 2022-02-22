@@ -1,7 +1,8 @@
 ---
 title: utskriftstype
-permalink: utskriftstype.html
+
 sidebar: begrep_sidebar
+redirect_from: /utskriftstype
 ---
 
 | ---- | ---- |
