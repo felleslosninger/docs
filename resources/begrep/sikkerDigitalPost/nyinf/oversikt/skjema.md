@@ -4,7 +4,7 @@ permalink: dpi_skjema.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 Siden innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 
