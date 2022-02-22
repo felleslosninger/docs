@@ -4,9 +4,9 @@ permalink: dpi_eksempler.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
-På denne siden finner du eksempler må meldinger mellom de forskjellige aktuørene i 4-hjørnes modellen
+På denne siden finner du eksempler på meldinger mellom de forskjellige aktørene i 4-hjørners-modellen
 
 ### Avsendende virksomhet til avsenders aksesspunkt
 Eksempler på forettningsmelding fra avsender
