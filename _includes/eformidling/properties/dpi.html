@@ -1,116 +1,131 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="properties_css.css">
+    <link rel="stylesheet" type="text/css" href="properties_css.css">
 </head>
 <body>
 <table style="width:100%">
+    <tr>
+        <th>Påkrevd DPI properties</th>
+        <th>Denne må settes for å bruke DPI</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>difi.move.feature.enableDPI=true</td>
+        <td>true</td>
+        <td>Skrur på muligheten til å sende meldinger til innbygger</td>
+    </tr>
+    <tr>
+        <td>difi.move.feature.statusQueueIncludes=</td>
+        <td>DPI</td>
+        <td>Gjeld kun dersom en bruker DPI proxyklient (JAVA og .NET)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Valgfrie DPI properties</th>
+        <th>Default verdi</th>
+        <th>Disse kan brukes</th>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.priority</td>
+        <td>NORMAL</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.printSettings.shippingType</td>
+        <td>ECONOMY</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.printSettings.inkType</td>
+        <td>BLACK_WHITE</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.printSettings.returnType</td>
+        <td>SHREDDING</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.mpcId</td>
+        <td>no.difi.move.integrasjonspunkt</td>
+        <td>kanal for å lese DPI-kvitteringer</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.mpcConcurrency</td>
+        <td>1</td>
+        <td>Antall kanaler for å lese DPI-kvitteringer</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.mpcIdListe</td>
+        <td>difi.move.dpi.mpcIdListe[0]=id1</td>
+        <td>Denne overstyrer kombinasjonen av mpcId + mpcConcurrency dersom den er satt. De kanalene som listes opp her vil bli brukt ved polling av DPI-kvitteringer</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.avsenderidentifikatorListe</td>
+        <td>difi.move.dpi.avsenderidentifikatorListe[0]=ai1</td>
+        <td>Ved polling av DPI-kvitteringer brukes denne for å indikere at man kun ønsker kvitteringer med gitt avsenderindikator</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.pollWithoutAvsenderidentifikator</td>
+        <td>true</td>
+        <td>Om det skal polles etter kvitteringer uten bruk av avsenderindikator</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.clientMaxConnectionPoolSize</td>
+        <td>10</td>
+        <td>Antall tråder som DPI-klienten kan bruke til sending og kvittering</td>
+    </tr>
+    <tr>
+        <td>difi.move.feature.enableDsfPrintLookup</td>
+        <td>true</td>
+        <td>Skru på / av DSF oppslag for DPI. Settes til false for å skru av</td>
+    </tr>
+    <tr>
+        <td>difi.move.nextmove.statusPollingCron</td>
+        <td>0 * * * * *</td>
+        <td>Hvor ofte en sjekker etter meldingsstatus i DPV</td>
+    </tr>
+    <tr>
+        <td>difi.move.queue.concurrency</td>
+        <td>10</td>
+        <td>Antall tråder for ActiveMQ køen</td>
+    </tr>
+    <!--
   <tr>
-	<th>Påkrevd DPI properties</th>
-	<th>Denne må settes for å bruke DPI</th>
-	<th></th>
-  </tr>	
-  <tr>
-	<td>difi.move.feature.enableDPI=true</td>
-	<td>true</td>
-	<td>Skrur på muligheten til å sende meldinger til innbygger</td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-	<td>difi.move.feature.statusQueueIncludes=</td>
-	<td>DPI</td>
-	<td>Gjeld kun dersom en bruker DPI proxyklient (JAVA og .NET)</td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-  <tr>
-	<th>Valgfrie DPI properties</th>
-	<th>Default verdi</th>
-	<th>Disse kan brukes</th>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-	<td>difi.move.dpi.priority</td>
-	<td>NORMAL</td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td>difi.move.dpi.printSettings.shippingType</td>
-	<td>ECONOMY</td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td>difi.move.dpi.printSettings.inkType</td>
-	<td>BLACK_WHITE</td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td>difi.move.dpi.printSettings.returnType</td>
-	<td>SHREDDING</td>
-	<td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   </tr>
   <tr>
-	<td>difi.move.dpi.mpcId</td>
-	<td>no.difi.move.integrasjonspunkt</td>
-	<td>kanal for å lese DPI-kvitteringer</td>
-  </tr>	
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
   <tr>
-	<td>difi.move.dpi.mpcConcurrency</td>
-	<td>1</td>
-	<td>Antall kanaler for å lese DPI-kvitteringer</td>
-  </tr>	
-  <tr>
-	<td>difi.move.dpi.clientMaxConnectionPoolSize</td>
-	<td>10</td>
-	<td>Antall tråder som DPI-klienten kan bruke til sending og kvittering</td>
-  </tr>	
-  <tr>
-	<td>difi.move.feature.enableDsfPrintLookup</td>
-	<td>true</td>
-	<td>Skru på / av DSF oppslag for DPI. Settes til false for å skru av</td>
-  </tr>	
-  <tr>
-	<td>difi.move.nextmove.statusPollingCron</td>
-	<td>0 * * * * *</td>
-	<td>Hvor ofte en sjekker etter meldingsstatus i DPV</td>
-  </tr>	
-  <tr>
-	<td>difi.move.queue.concurrency</td>
-	<td>10</td>
-	<td>Antall tråder for ActiveMQ køen</td>
-  </tr>	
-	<!--
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-  <tr>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>	
-	-->
- </table>
- </body>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+    -->
+</table>
+</body>
 </html>
