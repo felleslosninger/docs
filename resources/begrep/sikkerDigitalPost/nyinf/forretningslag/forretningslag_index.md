@@ -4,7 +4,7 @@ permalink: dpi_forretningslag_index.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 Forretningslaget dokumenterer den logiske flyten av meldinger i
 infrastrukturen, inkludert oversikt over aktører, roller og prosesser.  
