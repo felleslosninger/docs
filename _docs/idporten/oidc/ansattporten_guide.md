@@ -337,3 +337,4 @@ Ansattporten sine access_token er svært like [ID-porten sine access token](oidc
 Ansattporten tilbyr ikke et /userinfo-endepunkt.
 
 Siden Ansattporten ikke tilbyr SSO, er det heller ikke behov for å logge brukeren ut, eller måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i circle-of-trust.
+
