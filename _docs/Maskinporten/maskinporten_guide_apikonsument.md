@@ -49,7 +49,7 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
-Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
+Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så må du opprette en klient og legge det korrekt scopet på klienten. Alle scopes som bruker Altinn-delegering er tilgjengelig dersom du trykker på "Scopes tilgjengelig for alle" når du skal legge til scopes på en klient.
 
 Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whitelisting). Det er da ikke mulig å forhåndsregistere slike scopes på klienten.
 
