@@ -11,11 +11,11 @@ Ansattporten er en egen innloggingtjeneste med funksjonalitet som skiller seg no
 Nøkkelfunksjonalitet er:
 - Er egen Oauth2 issuer
 - Har ikke Single-Signon (SSO) mellom tjenester
-- Valgfri *organisasjonsvelger* som lar sluttbruker bestemme representasjonsforhold (kommer 1 kvartal '22)
+- Valgfri *organisasjonsvelger* som lar sluttbruker bestemme representasjonsforhold
 - Integrasjoner må opprettes med `integration_type=ansattporten` i selvbetjening
 
 
-Ansattporten er p.t. i en pilot-status med redusert SLA, og det er foreløpig ikke besluttes om den skal bli en varig nasjonal fellesløsning.  Ta kontakt om du har lyst å delta i piloten!
+Ansattporten er p.t. i en pilot-status med redusert SLA, og det er foreløpig ikke besluttes om den skal bli en varig nasjonal fellesløsning.  Det er fritt fram for alle å teste løsningen i test-miljø, men ta kontakt med oss først for å delta med produksjonstjenester i piloten!
 
 
 ## Overordna beskrivelse av støtta brukerreiser
@@ -27,7 +27,7 @@ Ansattporten tilbyr per nå to brukerreiser:
 Dette er den enkleste brukerreisen.  I dette scenariet utfører brukeren en engangs punktautentisering til en tjeneste.
 
 1. Bruker klikker login-knapp hos tjeneste.  
-2. Bruker autentiserer seg med sterk eID gjennom Ansattporten. Det opprettes ikke en SSO-sesjon.
+2. Bruker autentiserer seg med eID gjennom Ansattporten. Det opprettes ikke en SSO-sesjon.
 4. Bruker blir sendt tilbake til tjenesten.
 
 Teknisk er dette løst som en helt standard [OpenID Connect code flow](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth), som vist i sekvensdiagrammet nedenfor:
@@ -56,7 +56,7 @@ Ulikt ID-porten så vil ikke brukeren få opprettet en SSO-sesjon i Ansattporten
 
 Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autorativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autorativ kilde.
 
-En tjeneste aktiverer støtte for beriket autentering ved å inkludere informasjon om påkrevd representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
+En tjeneste aktiverer støtte for beriket autentisering ved å inkludere informasjon om påkrevd representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
 
 ![organsisasjonsvelger](images/idporten/oidc/ansattporten_orgvelger.png)
 
@@ -104,6 +104,49 @@ Følgende miljøer er tilgjengelige for kunder:
 
 
 
+## Test
+
+Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://test-client.test.ansattporten.no/](https://test-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.
+
+Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Ved å bruke **TestID** som innloggingsmetode slipper man å kontakte Digdir for å få opprettet og resatt testbrukere.  En annen fordel med Tenor er at det kun er syntetiske testdata her, så man slipper å risikere å blande produksjons- og test-data.
+
+
+
+
+## Representasjonsforhold og RAR
+
+Ansattporten bruker [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.  Dette er nærmere forklart under *protokollflyt* nedenfor.
+
+Følgende `authorization_type` er støttet i Ansattporten:
+
+| `authorization_type` | Skildring |
+|-|-|
+|ansattporten:altinn:service| Bruker tjenestekoder (ServiceCode) fra Altinn Autorisasjon som autorativ kilde for representasjonsforhold |
+
+
+
+#### Datamodell for `ansattporten:altinn:service`
+
+I første omgang er datamodellen ganske enkel, det er gjort tanker om potensielle forbedringer på sikt [her](https://github.com/joergenb/oauth/edit/main/ansattporten_rar.md).
+
+Datamodell:
+
+| claim | beskrivelse |
+|-|-|
+|resource | Hvilken ressurs i Altinn som etterspørres. Se kodeverk nedenfor. |
+
+
+der `resource` må følgje desse reglane:
+
+|Ressurs-identifikator| Beskrivelse|Eksempel|
+|-|-|-|
+|urn:altinn:resource:{tjenestekode}:{tjenesteutgave} | Altinn 2 [tenestekode/utgåve](https://www.altinn.no/api/metadata?language=1044) | altinn:resource:3906:141205
+
+De konkrete ressurs-definisjonene kan finnes på [metadata-endepunktet til Altinn](https://tt02.altinn.no/api/metadata).
+
+> **Mange av dagens standard Altinn-roller gir veldig breie tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipp, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor er ikke rolle tilbudt som mulig ressurs i Ansattporten i første runde.  Vi vurderer dette løpende, inkludert å innføre støtte for nøkkelroller fra Enhetsregisteret.
+
+
 
 
 
@@ -122,7 +165,7 @@ Klienten må være forhåndsregistrert i Ansattporten, se [klient-registrering](
 
 For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR](oidc_protocol_par.html) til å først POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert i brukers browser.
 
-Dersom klienten ønsker å vise organisasjonsvelger, må forespørselen inkludere et RAR-element som ytterligere detaljerer forespørselen, se detaljer lenger nedenfor.
+Dersom klienten ønsker å vise organisasjonsvelger, må forespørselen inkludere et RAR-element som ytterligere detaljerer forespørselen. På sikt vil det lages støtte for å etterspørre flere autorisasjonstyper i samme forespørsel.
 
 Eksempel på request:
 ```
@@ -138,11 +181,25 @@ https://login.test.ansattporten.no/authorize?
   code_challenge=YhKJpC67w6qB2KupfDuKocVarvxL8vb9WSmSB6-p-Zc&
   authorization_details= [
     {
-      "type": "ansattporten:altinnressurs",
-      "ressurs": "urn:altinn:resource:skd:sirius"
+      "type": "ansattporten:altinn:service",
+      "ressurs": "urn:altinn:resource:3906:141205"
     }
 ```
 (merk at eksempelet er vist i klartekst for lesbarhet og ikke riktig enkoda)
+
+
+#### Litt mer om RAR
+
+RAR er en ny Oauth2-utvidelse for transaksjonsspesifikke autorisasjoner.  Der "basic" Oauth2 kun gir tilgang til et såkalt "scope" (tekst-streng), åpner RAR for tilgang til mer utvidede datamodeller i form av **autorisasjonstyper**.  Autorisasjonstypen(e) blir utlevert i token som et nytt hierarkisk claim kalla `authorization_details` som igjen er ein array av autorisasjonsobjekter, der hvert objekt består av:
+- standardiserte felt:
+  - type (påkrevd felt, definerer den aktuelle autorisasjonstypen)
+  - action
+  - locations (tiltenkt mottakar, aka =audience for tokenet)
+  - identifier  (kan peike på ein konkret ressurs hjå APIet)
+  - datatypes (ein array med datatyper klient ønsker å få frå APIet)
+- eigendefinerte felt,
+  - til ein gitt `type` vil det normalt vere definert og dokumentert ein tilhøyrande gyldig datamodell
+
 
 
 
@@ -237,7 +294,7 @@ Eksempel:
   "jti" : "bWAcJLMpJfs"
   "authorization_details": [
     {
-      "type": "ansattporten:altinnressurs",
+      "type": "ansattporten:altinn:service",
       "ressurs": "urn:altinn:resource:3906:141205"
       "ressurs_name": "A01 a-melding",
       "avgiver": [{
@@ -252,12 +309,12 @@ Eksempel:
 
 **Korrekt validering av id_token** av klienten er kritisk for sikkerheten i løsningen. Tjenesteleverandører som tar i bruk tjenesten må utføre validering i henhold til kapittel [3.1.3.7 - ID Token Validation i OpenID Connect Core 1.0 spesifikasjonen](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation).
 
-I utgangspunktet er id_token frå Ansattporten like med [id_token fra ID-porten](oidc_protocol_id_token.html), men det kan være verdt å merke seg følgende forskjeller:
+I utgangspunktet er id_token frå Ansattporten identiske som [id_token fra ID-porten](oidc_protocol_id_token.html), men det kan være verdt å merke seg følgende forskjeller:
 
 |claim|beskrivelse
 |-|-|
 |acr| Ansattporten bruker de nye verdiene: `substantial` og `high`|
-|authorization_details| Informasjon om representasjonsforhold. Se detaljer nedenfor|
+|authorization_details| Informasjon om representasjonsforhold. Se detaljer ovenfor.|
 
 
 
@@ -279,90 +336,3 @@ Ansattporten sine access_token er svært like [ID-porten sine access token](oidc
 Ansattporten tilbyr ikke et /userinfo-endepunkt.
 
 Siden Ansattporten ikke tilbyr SSO, er det heller ikke behov for å logge brukeren ut, eller måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i circle-of-trust.
-
-
-## Representasjonsforhold og RAR
-
-Ansattporten bruker [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.
-
-RAR er ein ny Oauth2-utvidelse for transaksjonsspesifikke autorisasjonar.  Der "basic" Oauth2 kun gir tilgang til eit såkalt "scope" (tekst-streng), opnar RAR for tilgang til meir utvida datamodeller i form av **autorisasjonstyper**.  Autorisasjonstypen(e) blir utlevert i token som eit nytt hierarkisk claim kalla `authorization_details` som igjen er ein array av autorisasjonsobjekter, der kvart objekt består av:
-- standardiserte felt:
-  - type (påkrevd felt, definerer den aktuelle autorisasjonstypen)
-  - action
-  - locations (tiltenkt mottakar =audience for tokenet)
-  - identifier  (kan peike på ein konkret ressurs hjå APIet)
-  - datatypes (ein array med datatyper klient ønsker å få frå APIet)
-- eigendefinerte felt,
-  - til ein gitt `type` vil det normalt vere definert og dokumentert ein tilhøyrande gyldig datamodell
-
-
-#### Etterspørre en autorisasjon
-
-```
-authorization_details= [
-  {
-    "type": "ansattporten:altinnressurs",
-    "ressurs": "urn:altinn:resource:skd:sirius"
-  }
-```
-
-På sikt vil det lages støtte for å etterspørre flere autorisasjonstyper i samme forespørsel.
-
-#### Respons i token
-
-Dersom den innlogga brukeren har valgt en organisasjon, vil token inneholde `authorization_details` slik:
-
-```
-"sub": "WE0DjFv9ygb2rjS7s_tXsg-fez2Co3Q8oxUmcvQ0mzQ=",
-"iss": "https://ansattporten.no/",
-"pid": "<fødselsnummer til sluttbruker>",
-...
-"authorization_details": [
-  {
-    "type": "ansattporten:altinnressurs",
-    "ressurs": "urn:altinn:resource:3906:141205"
-    "ressurs_name": "A01 a-melding",
-    "avgiver": [{
-        "Authority": "iso6523-actorid-upis",
-        "ID": "0192:999888777"  // org.no til arbeidsgiveren som den innlogga brukeren har valgt i org.velger
-    }]
-  }
-]
-```
-
-
-
-
-### Støtta representasjonsforhold i Ansattporten
-
-Følgende `authorization_type` er støttet i Ansattporten:
-
-| `authorization_type` | Skildring |
-|-|-|
-|ansattporten:altinnressurs| Bruker Altinn Autorisasjon som autorativ kilde for representasjonsforhold |
-
-
-
-#### 1: Altinn Autorisasjon
-
-I første omgang er datamodellen ganske enkel, det er gjort tanker om potensielle forbedringer på sikt [her](https://github.com/joergenb/oauth/edit/main/ansattporten_rar.md).
-
-
-
-Datamodell:
-
-| claim | beskrivelse |
-|-|-|
-|ressurs | Hvilken ressurs i Altinn som etterspørres. Se kodeverk nedenfor. |
-
-
-der `ressurs` må følgje desse reglane:
-
-|Ressurs-identifikator| Beskrivelse|Eksempel|
-|-|-|-|
-|urn:altinn:resource:{tjenestekode}:{tjenesteutgave} | Altinn 2 [tenestekode/utgåve](https://www.altinn.no/api/metadata?language=1044) | altinn:resource:3906:141205
-|urn:altinn:resource:{org}:{appname} | Altinn 3 [org/app](https://www.altinn.no/api/metadata?language=1044) | altinn:resource:skd:sirius
-
-De konkrete ressurs-definisjonene kan finnes på metadata-endepunktet til Altinn.
-
-> **Mange av dagens standard Altinn-roller gir veldig breie tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipp, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor er ikke rolle tilbudt som mulig ressurs i Ansattporten i første runde.  Vi vurderer dette løpende, inkludert å innføre støtte for nøkkelroller fra Enhetsregisteret.
