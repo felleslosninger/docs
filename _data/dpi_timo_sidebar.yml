@@ -43,8 +43,7 @@ folders:
         jurl: /dpi_tilstander.html
       - title: Struktur på melding
         jurl: /dpi_struktur_forretningsmelding.html
-      - title: Prisen på innbyggerpost som DPI-melding
-        jurl: /dpi_pris.html
+
    
     - title: Dokumentpakke (ASiC)
       folderitems:
