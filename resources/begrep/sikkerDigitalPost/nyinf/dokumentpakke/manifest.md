@@ -4,7 +4,7 @@ permalink: dpi_manifest.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 |---|---|
 | Term          | {{page.title}} |
