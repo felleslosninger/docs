@@ -31,7 +31,7 @@ vil hjelpe avsendervirksomhetene i denne vurderingen.
 ### Integritet
 
 Det er flere forhold som ivaretas ved integritetsbeskyttelse.
-Meldingsformidler og postkasseleverandør vil kontrollere og verifisere
+Aksesspunktleverandør, postkasseleverandør og utskriftsleverandør vil kontrollere og verifisere
 identiteten til avsender for å hindre uautoriserte avsendere, og for å
 etablere et trygt sporings- og fakturaregime. Videre kan innbygger være
 trygg på at posten faktisk er fra den som har utgitt seg for å sende
@@ -67,9 +67,9 @@ henhold til XAdES-standarden.
 For å sende digital post må en avsendervirksomhet være registrert med
 organisasjonsnummer hos sentralforvalteren av sikker digital post, og må
 inneha et virksomhetssertifikat som benyttes for å signere all digital
-post. Meldingsformidler og postkasseleverandører vil validere
+post. Aksesspunktleverandør, postkasseleverandører og utskriftsleverandør vil validere
 signaturen, og undersøke om avsendervirksomheten er registrert for
-utsending av digital post.
+utsending av digital post eller meldinger til utskrift.
 
 Innbyggere kan ha behov for å gjenbruke dokumenter utenfor postkassen,
 der en tredjepart ønsker å validere ektheten av dokumentet. Signaturen i
@@ -81,7 +81,7 @@ Sikker digital post.
 
 Avsendervirksomheten benytter oppslagstjenesten for digital
 kontaktinformasjon for å få levert innbyggerens digitale
-postkasseadresse og tilhørende X.509 sertifikat. Postkasseleverandøren
+postkasseadresse og tilhørende X.509 sertifikat. Postkasseleverandørene
 må gjøre sertifikatet tilgjengelig for oppslagstjenesten, og det kan
 enten være et unikt sertifikat tilhørende innbyggeren eller innbyggerens
 postkasse, eller det kan være postkasseleverandørens
@@ -114,7 +114,7 @@ avsender til mottaker, og denne kan ikke være innenfor det som er
 kryptert. Selv om denne informasjonen er utenfor det krypterte
 innholdet, så er den beskyttet under overføringen, fordi i tillegg til
 innholdskryptering er det også kanalkryptering i form av TLS mellom
-avsendervirksomheten og meldingsformidleren, og mellom
-meldingsformidleren og postkasseleverandøren.
+avsendervirksomheten og aksesspunktleverandøren, og mellom
+aksesspunktleverandøren og postkasse-/utskriftsleverandøren.
 
 Her kan du lese mer om [sikkerhetsarkitekturen]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/innledning/Sikkerhetsarkitektur.pdf)
