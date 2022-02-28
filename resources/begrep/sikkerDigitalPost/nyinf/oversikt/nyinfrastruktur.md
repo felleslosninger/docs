@@ -8,6 +8,7 @@ sidebar: dpi_timo_sidebar
 Denne og flere av de sidene under "Ny infrastruktur" er under arbeide og det vil derfor kunne komme hyppige oppdateringer både på sider og i spesifikasjon. Sidene det gjelder vil ha under "Under construction" bildet. 
 Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdigstilt -->
 
+Denne dokumentasjonen beskriver ny og kommende transportinfrastruktur for digital post til innbyggere, samt hvordan en kan ta denne i bruk og integrere egne avsendersystemer. Trenger du tilgang til [utgående DPI-dokumentasjon finnes denne her](/resources/begrep/sikkerDigitalPost/innledning/)
 
 # Bakgrunn
 
