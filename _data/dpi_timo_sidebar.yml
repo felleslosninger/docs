@@ -151,3 +151,9 @@ folders:
       
       - title: Begrepskatalog
         jurl: /resources/begrep/sikkerDigitalPost/begrep/
+
+    - title: DPI GAMMEL DOKUMENTASJON
+      folderitems:
+
+      - title: Veiledning og klienter
+        jurl: /resources/begrep/sikkerDigitalPost/innledning/
