@@ -15,13 +15,13 @@ redirect_from: /eformidling_releasenotes_sentrale_komp
 *
 
 ## ServiceRegistry 2.3.0
-15.02.2022
+17.02.2022
 
 **Endringer**
 *
 
 ## Virksert 1.6.0 
-15.02.2022
+17.02.2022
 
 **Endringer**
 *
