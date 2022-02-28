@@ -8,7 +8,11 @@ redirect_from: /eformidling_releasenotes_sentrale_komp
 ---
 (Endringer som er relevant for brukere av eFormidling)
 
+## ServiceRegistry 2.4.0
+28.02.2022
 
+**Endringer**
+*
 
 ## ServiceRegistry 2.3.0
 15.02.2022
