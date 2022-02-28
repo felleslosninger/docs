@@ -12,19 +12,21 @@ redirect_from: /eformidling_releasenotes_sentrale_komp
 28.02.2022
 
 **Endringer**
-*
+* MOVE-2728	Utvide mock for virksomheter med statisk returadresse
+* MOVE-2742 Feilretting logging
 
 ## ServiceRegistry 2.3.0
 17.02.2022
 
 **Endringer**
-*
+* MOVE-1992	Støtte for på-vegne-av DPO
 
 ## Virksert 1.6.0 
 17.02.2022
 
 **Endringer**
-*
+* MOVE-1992	Støtte for på-vegne-av DPO
+* Diverse tekniske oppgaver
 
 ## ServiceRegistry 2.2.0
 11.01.2022
