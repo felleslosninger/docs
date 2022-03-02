@@ -30,6 +30,11 @@
         <th>Disse kan brukes</th>
     </tr>
     <tr>
+        <td>difi.move.dpi.language</td>
+        <td>NO</td>
+        <td></td>
+    </tr>
+    <tr>
         <td>difi.move.dpi.priority</td>
         <td>NORMAL</td>
         <td></td>
@@ -52,7 +57,7 @@
     <tr>
         <td>difi.move.dpi.mpcId</td>
         <td>no.difi.move.integrasjonspunkt</td>
-        <td>kanal for å lese DPI-kvitteringer</td>
+        <td>Kanal for å lese DPI-kvitteringer</td>
     </tr>
     <tr>
         <td>difi.move.dpi.mpcConcurrency</td>
@@ -78,6 +83,31 @@
         <td>difi.move.dpi.clientMaxConnectionPoolSize</td>
         <td>10</td>
         <td>Antall tråder som DPI-klienten kan bruke til sending og kvittering</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.client-type</td>
+        <td>json+xmlsoap</td>
+        <td>Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI) og json+xmlsoap (Ny DPI som også poller etter kvitteringer i gammel løsning).</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.timeout.connect</td>
+        <td>5000</td>
+        <td>Connection timeout mot hjørne2 i millisekunder</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.timeout.read</td>
+        <td>60000</td>
+        <td>Read timeout mot hjørne2 i millisekunder</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.timeout.write</td>
+        <td>60000</td>
+        <td>Write timeout mot hjørne2 i millisekunder</td>
+    </tr>
+    <tr>
+        <td>difi.move.dpi.certificate.recipe</td>
+        <td>classpath:/pki/recipe-dpi-norway-production.xml</td>
+        <td>Oppskriften til validering av virksomhetssertifikater</td>
     </tr>
     <tr>
         <td>difi.move.feature.enableDsfPrintLookup</td>
