@@ -15,6 +15,7 @@ NB! Sertifikatet for ID-porten i PROD går ut 20.03.2022. Vi ber alle kunder som
 Det vil komme mer informasjon på [Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/sertifikatbyte-id-porten-saml-i-produksjon/1117)
 
 * [Metadata for ID-porten produksjon (ny fra 24.01.2022)]({{site.baseurl}}/assets/idporten.difi.no-v5-prod.zip) (NB! Oppdatert med signerte metadata og ny extended fil 11.02.2021)
+
 * [Metadata for ID-porten verifikasjon 1 (ny frå 22.02.2022) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver1-feb22_medsignert.zip)
 * [Metadata for ID-porten verifikasjon 2 (ny frå 22.02.2022) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver2-feb22_medsignert.zip)
 

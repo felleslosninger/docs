@@ -4,9 +4,9 @@ permalink: identifiers.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
-Oversikten under inneholder oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI og prosessene disse brukes under. Frem til identifikatorene er godtkjent av norsk peppolmyndighet og Open Peppol kan det forekome justering på idetifikatorenne.
+Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosessene disse brukes under. 
 
 
 # Processes

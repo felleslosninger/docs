@@ -4,11 +4,11 @@ permalink: dpi_oversikt_index.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png)
 Denne og flere av de sidene under "Ny infrastruktur" er under arbeide og det vil derfor kunne komme hyppige oppdateringer både på sider og i spesifikasjon. Sidene det gjelder vil ha under "Under construction" bildet. 
-Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdigstilt 
+Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdigstilt -->
 
-Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomheter for å sende brev digitalt til innbyggere. I oversikt-avsnittet finner du en overordnet beskrivelse av den underliggende virksomhetsarkitekturen for løsningen.
+Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomheter for å sende brev digitalt til innbyggere. I oversikt-avsnittet finner du en beskrivelse av virksomhetsarkitekturen for løsningen.
 
 ### Kort beskrivelse av de øvrige kapitlene i veiledningen:
 

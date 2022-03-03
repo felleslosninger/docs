@@ -19,8 +19,8 @@ Her er eksempel på jsonld-fil og tilsvarande data som Noark5-xml
 * [Noark5 xml]({{site.baseurl}}/resources/einnsyn/eksempelfiler/noark5_basiseksempel.xml)
 
 Publisering til eInnsyn kan gjøres på to måter:
-* Ved bruk av [eInnsyn-klient]({{site.baseurl}}/docs/eInnsyn/einnsyn_install_forutsetninger_verktoy). Klienten kan motta data på Noark4/5 xml format. Den vil da validere og konvertere data til jsonld som sendes til integrasjonspunktet.
-* Direkteintegrasjon, dvs. poste meldinger direkte til integrasjonspunktet. Meldingene må da være i jsonld-format. Det er en maks størrelse på meldinger som kan sendes på 1 MB, det er derfor intensjonen at systemer som benytter direkteintegrasjon sender mest mulig atomiske meldinger (eks. en og en journalpost/møtesak).
+* Ved bruk av [eInnsyn-klient]({{site.baseurl}}/docs/eInnsyn/einnsyn_install_forutsetninger_verktoy). Klienten kan motta data på Noark4/5 xml format. Den vil da validere og konvertere data til jsonld som sendes til integrasjonspunktet. Klienten kan også benyttes til å validere json-ld format.
+* Direkteintegrasjon, dvs. poste meldinger direkte til integrasjonspunktet. Meldingene må da være i jsonld-format (både compact og extended er støttet). Det er en maks størrelse på meldinger som kan sendes på 1 MB, det er derfor intensjonen at systemer som benytter direkteintegrasjon sender mest mulig atomiske meldinger (eks. en og en journalpost/møtesak). Ved oppdatering/endring av en registrering må all relevant informasjon (referanse til parent, dokumentbeskrivelse og dokumentobjekt) sendes på nytt, ellers blir dette utelatt ("slettet").
 
 ## Identifikator strategi
 **Ved direkteintegrasjon med Json-ld**

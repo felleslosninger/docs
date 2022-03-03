@@ -49,7 +49,7 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
-Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
+Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så må du opprette en klient og legge det korrekt scopet på klienten. Alle scopes som bruker Altinn-delegering er tilgjengelig dersom du trykker på "Scopes tilgjengelig for alle" når du skal legge til scopes på en klient.
 
 Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whitelisting). Det er da ikke mulig å forhåndsregistere slike scopes på klienten.
 
@@ -58,7 +58,7 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 #### Registrering via Samarbeidsportalen
 
-Du kan logge inn på https://samarbeid.digdir.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
+Du kan logge inn på [https://samarbeid.digdir.no/](https://samarbeid.digdir.no/) og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
 
 Alle organisasjoner som har inngått Digitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.
 
@@ -72,7 +72,7 @@ For selvbetjening i Produksjon, kreves innlogging med ID-porten og at bemyndiget
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
+For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html](https://docs.digdir.no/docs/idporten/oidc/oidc_api_admin).
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 

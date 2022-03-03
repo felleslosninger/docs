@@ -4,7 +4,7 @@ permalink: dpi_struktur_forretningsmelding.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 ## Overordnet struktur på forretningsmeldinger
 

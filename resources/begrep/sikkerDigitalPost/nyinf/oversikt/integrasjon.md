@@ -4,7 +4,7 @@ permalink: integrasjon.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 Hvordan koble seg til og ta i bruk transportinfrastruktur for å sende digital post til innbyggere (DPI-meldinger). 
 
