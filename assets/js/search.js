@@ -17,9 +17,7 @@ var markInstance = new Mark(document.getElementById('search-results'));
   }
 
   function getPreview(searchTerm, content, previewLength) {
-      previewLength = previewLength || (content.length * 2);
-      // console.log('getpreview');
-      // console.log(content);
+      previewLength = previewLength || (content.length * 2);      
       var parts = searchTerm.split(" "),
           loweredContent = content.toLowerCase(),
           match = content.toLowerCase().indexOf(searchTerm.toLowerCase()),
@@ -109,13 +107,7 @@ var markInstance = new Mark(document.getElementById('search-results'));
 
           return value;
         },
-        // sortMiddleware: function(a, b) {
-        //   var astr = String(a.title) + "-" + String(a.content);
-        //   var bstr = String(b.title) + "-" + String(b.content);
-        //   return astr.localeCompare(bstr)
-        // },
-        success: function() {
-          //document.getElementById('search-results').innerHTML = document.getElementById('search-results').innerHTML, markInstance.mark(document.getElementById('search-box').value);
+        success: function() {          
           console.log('success search');
         }
         });
