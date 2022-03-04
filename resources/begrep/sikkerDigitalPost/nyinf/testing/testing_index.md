@@ -4,7 +4,7 @@ permalink: dpi_testing_index.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 
 Merk! Testbrukere med rette egenskaper for testing av digital postkasse får en ved å sende en bestilling til servicedesk@digdir.no

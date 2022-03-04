@@ -4,10 +4,11 @@ permalink: dpi_nyinfrastruktur.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png)
 Denne og flere av de sidene under "Ny infrastruktur" er under arbeide og det vil derfor kunne komme hyppige oppdateringer både på sider og i spesifikasjon. Sidene det gjelder vil ha under "Under construction" bildet. 
-Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdigstilt 
+Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdigstilt -->
 
+Denne dokumentasjonen beskriver ny og kommende transportinfrastruktur for digital post til innbyggere, samt hvordan en kan ta denne i bruk og integrere egne avsendersystemer. Trenger du tilgang til [utgående DPI-dokumentasjon finnes denne her](/resources/begrep/sikkerDigitalPost/innledning/)
 
 # Bakgrunn
 
@@ -140,7 +141,7 @@ PK-leverandør mottar beskjed manuelt fra Digdir om at det er etablert en ny Avs
 
 
 
-# Meldingsflyt
+## Meldingsflyt
 
 **(dersom du ikke ser et sekvensdiagram under her, må du åpne dokumentet i noe som kan vise mermaid inline grafikk)**
 
