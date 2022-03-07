@@ -8,7 +8,7 @@ layout: none
       "category" : "{{ post.category }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "content"  : "{{ post.content | strip_html | strip_newlines | remove_chars | escape}}",
+      "content"  : {{ post.content | jsonify}},
       "product"     : "{{ post.product }}"     
     } {% unless forloop.last %},{% endunless %}
   {% endfor %},
@@ -18,7 +18,7 @@ layout: none
       "category" : "{{ page.category }}",
       "tags"     : "{{ page.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ page.url }}",
-      "content"  : "{{ page.content | strip_html | strip_newlines | remove_chars | escape}}",
+      "content"  : {{ page.content | jsonify}},
       "product"     : "{{ page.product }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}

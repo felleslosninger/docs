@@ -85,7 +85,7 @@ var markInstance = new Mark(document.getElementById('search-results'));
         searchResultTemplate: "<h4 class='search-result-title'><a href={url}>{title}</a></h4>" +
             "<p class='search-result-url'><small>" + "Produkt: {product}</small></p>" +
             "<div><p class='search-result-snippet'>{content}</p></div>",
-        json: '/search.json',        
+        json: '../search.json',        
         debounceTime: 200,
         templateMiddleware: function(prop, value, template) {
           if(prop === 'content') {
