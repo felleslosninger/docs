@@ -17,7 +17,7 @@ Det vil komme mer informasjon på [Samarbeidsportalen](https://samarbeid.digdir.
 * [Metadata for ID-porten produksjon (ny fra 24.01.2022)]({{site.baseurl}}/assets/idporten.difi.no-v5-prod.zip) (NB! Oppdatert med signerte metadata og ny extended fil 11.02.2021)
 
 * [Metadata for ID-porten verifikasjon 1 (ny frå 22.02.2022) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver1-feb22_medsignert.zip)
-* [Metadata for ID-porten verifikasjon 2 (ny frå 22.02.2022) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver2-feb22_medsignert.zip)
+* [Metadata for ID-porten verifikasjon 2 (ny frå 10.03.2022) ]({{site.baseurl}}/assets/idporten.difi.no-v4-ver2-mar22_medsignert.zip)
 
 * [Metadata for versjon 4 i PROD for de som må rulle tilbake og ikke har tatt vare på v4 sine metadata]({{site.baseurl}}/assets/idporten.difi.no-v4-prod.zip)
 
