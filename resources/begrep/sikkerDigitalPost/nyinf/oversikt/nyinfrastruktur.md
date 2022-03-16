@@ -37,7 +37,7 @@ Protokoll mellom hjørne 3 og tjenesteleverandører i hjørne 4 bør avtales bil
 
 
 
-# Revidert meldingsformat- og transportformat i DPI
+## Revidert meldingsformat- og transportformat i DPI
 
 Motivasjon bak revidert meldings- og transportformat i DPI:
 
