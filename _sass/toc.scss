@@ -1,14 +1,19 @@
 ul#markdown-toc {
   margin-top: 20px;
 
+
   li {
-    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  > li {
+    margin-bottom: 8px;
   }
 
   &:before {
     font-size: 22px;
     font-weight: 500;
-    margin-bottom: 9px;
+    margin-bottom: 2px;
     display: block;
   }
 
