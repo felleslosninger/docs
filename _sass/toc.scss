@@ -1,0 +1,15 @@
+ul#markdown-toc {
+  margin-top: 20px;
+
+  li {
+    padding-bottom: 4px;
+  }
+
+  &:before {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 9px;
+    display: block;
+  }
+
+}
