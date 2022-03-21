@@ -23,6 +23,7 @@ TestID støtter innlogging med **syntetiske personidentifikator**  (du må legge
 
 TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å tildelt, opprettet eller nullstilt brukere.
 
+Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere fra Test-Folkeregisteret.
 
 ## MinID og BankID
 
