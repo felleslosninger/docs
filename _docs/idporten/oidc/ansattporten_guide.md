@@ -111,7 +111,7 @@ Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjen
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Ved å bruke **TestID** som innloggingsmetode slipper man å kontakte Digdir for å få opprettet og resatt testbrukere.  En annen fordel med Tenor er at det kun er syntetiske testdata her, så man slipper å risikere å blande produksjons- og test-data.
 
-
+**MERK:** Dersom testbrukeren ikke finnes i Altinn sitt testmiljø, vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i TT02 en gang.
 
 
 ## Representasjonsforhold og RAR
