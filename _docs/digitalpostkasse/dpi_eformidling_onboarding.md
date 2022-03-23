@@ -50,7 +50,7 @@ Digdirs endepunkter er eksponert ut mot Internett, men det må åpnes for trafik
 **Testmiljø**
 |    Beskrivelse    | IP-adresse |
 | ------------- |:-------------:|
-| qa-meldingsutveksling.difi.no | 51.144.60.111:443** og 51.105.206.80:443 |
+| qa-meldingsutveksling.difi.no | 51.144.60.111:443/51.105.206.80:443 |
 | qa-stream-meldingsutveksling.difi.no | 40.74.39.255:443 |
 | oidc-ver1.difi.no | 146.192.252.121:443	 |
 | oidc-ver2.difi.no | 146.192.252.121:443	|
