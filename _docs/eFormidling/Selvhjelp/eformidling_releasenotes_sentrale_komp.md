@@ -11,8 +11,7 @@ redirect_from: /eformidling_releasenotes_sentrale_komp
 ## ServiceRegistry 2.5.0
 22.03.2022
 
-**Endringer**
-MOVE-2783	Bruk av OSIV kan potenielt gi ytelesproblem. Skrudde av OSIV og fikset lasting av documenttype fra process.
+* MOVE-2783	Bruk av OSIV kan potenielt gi ytelesproblem. Skrudde av OSIV og fikset lasting av documenttype fra process.
 
 ## ServiceRegistry 2.4.0
 28.02.2022
