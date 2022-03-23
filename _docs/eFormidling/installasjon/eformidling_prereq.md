@@ -46,7 +46,7 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | www.altinn.no | 89.250.123.0:443 | - | DPO |
 | tt02.altinn.no | 89.250.123.40:443 | - | DPV |
 | qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
-
+| https://srest.qa.dataplatfor.ms/ (Ny transport infrastruktur) | 51.120.49.231 | - | DPI |
 
 ### Brannmuråpninger i produksjon
 
@@ -62,6 +62,7 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671 | - | DPE |  
 | altinn.no | 89.250.123.0:443 | - | DPO/DPV |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
+| https://srest.dataplatfor.ms/ (Ny transport infrastruktur) | 51.120.1.137 | - | DPI |
 | svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
 
 > **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
