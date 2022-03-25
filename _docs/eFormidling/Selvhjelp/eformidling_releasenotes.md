@@ -13,7 +13,7 @@ redirect_from: /eformidling_releasenotes
 **Funksjonalitet**
 
 * Støtte for På-vegne-av funksjonalitet for DPO
-* Støtte for DPI på ny infrastruktur. Her kan en velge gammal eller ny infrastruktur vha properties. Gammal infrastruktur er standard då den nye infrastrukturen ikkje er klar per 23.03.22. 
+* Støtte for DPI på ny infrastruktur. Her kan en velge gammal eller ny infrastruktur vha properties. Gammal infrastruktur er aktivert som standard. Den nye infrastrukturen ikkje er klar per 25.03.22. 
 * Støtte for å lese kvitteringer frå gammal og ny DPI-infrastruktur i parallell. 
 * Støtte for å konfigurere  kønamn i activemq for å ha 2 integrasjonspunkt som brukar samme activemq. 
 * Standardisert/Forenklet avsenderadresse for meldinger sendt på-vegne-av
