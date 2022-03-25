@@ -7,6 +7,22 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.4.0
+25.03.2022
+
+**Funksjonalitet**
+
+* Støtte for På-vegne-av funksjonalitet for DPO
+* Støtte for DPI på ny infrastruktur. Her kan en velge gammal eller ny infrastruktur vha properties. Gammal infrastruktur er aktivert som standard. Den nye infrastrukturen ikkje er klar per 25.03.22. 
+* Støtte for å lese kvitteringer frå gammal og ny DPI-infrastruktur i parallell. 
+* Støtte for å konfigurere  kønamn i activemq for å ha 2 integrasjonspunkt som brukar samme activemq. 
+* Standardisert/Forenklet avsenderadresse for meldinger sendt på-vegne-av
+* Støtte for å sende post til personer utan å oppgi fødselsnummer
+* Flyttet BusinessCertificateValidator ut i efm-commons biblioteket for å tilrettelegge for gjenbruk. 
+* Støtte for å ekskludere hvilke filer som skal ekskluderes fra print ved bruk av KS SvarUt. 
+
+**Feilrettinger**
+* fiksa feil ved oppretting av manifest for DPI
 
 ## 2.3.2
 27.01.2022
