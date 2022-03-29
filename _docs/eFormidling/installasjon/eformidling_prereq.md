@@ -33,37 +33,34 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 
 ### Brannmuråpninger i testmiljø
 
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
-| ------------- |:-------------:| :-----:| :------:|
-| **qa-meldingsutveksling.difi.no** | **51.144.60.111:443** <br/> **51.105.206.80:443 f.o.m 18.08.2020**	 | - | **Alle** |
-| **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255:443**  | - | **Alle** |
-| oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
-| oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
-| ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
-| move-dpe.servicebus.windows.net	(t.o.m feb 22) | 13.69.253.135:443 | - | DPE | 
-| efm-dpe-qa.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443  | - | DPE | 
-| efm-dpe-qa.servicebus.windows.net (f.o.m feb 22)	 | 13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671  | - | DPE | 
-| www.altinn.no | 89.250.123.0:443 | - | DPO |
-| tt02.altinn.no | 89.250.123.40:443 | - | DPV |
-| qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
-| https://srest.qa.dataplatfor.ms/ (Ny transport infrastruktur) | 51.120.49.231 | - | DPI |
+|    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Innkommende/utgående trafikk |
+| ------------- |:-------------:| :-----:| :------:| :-----:| :------:|
+| **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80:443 f.o.m 18.08.2020**	 | 443 | **Alle** |
+| **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255**  | 443 | **Alle** |
+| oidc-ver1.difi.no | 146.192.252.121		 | 443 | Alle |
+| oidc-ver2.difi.no | 146.192.252.121	 | 443 | Alle |
+| ver1.maskinporten.no | 146.192.252.118	 | 443 | Alle |
+| efm-dpe-qa.servicebus.windows.net 	 | 13.74.107.66, 13.69.227.68, 52.138.226.67  | 443 | DPE | Azure Service Bus, HTTP/REST API |
+| efm-dpe-qa.servicebus.windows.net 	 | 13.74.107.66, 13.69.227.68, 52.138.226.67  | 5671 | DPE | Azure Service Bus, AMQP med TLS |
+| altinn.no | 89.250.123.0 | 443 | DPO | Altinn formidlingstjeneste |
+| tt02.altinn.no | 89.250.123.40 | 443 | DPV | Altinn formidlingstjeneste |
+| qaoffentlig.meldingsformidler.digipost.no  | 51.105.206.80/28  | 443  | DPI | Meldingsformidler for DPI-meldinger |
+| srest.qa.dataplatfor.ms  | 51.120.49.231 | 443 | DPI | (For ny transportinfrastruktur i Digital postkasse) |
 
 ### Brannmuråpninger i produksjon
 
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
-| ------------- |:-------------:| :-----:| :------:|
-| **meldingsutveksling.difi.no** | **51.144.60.163:443** | - | **Alle** |
-| **stream-meldingsutveksling.difi.no** | 	**40.74.39.254:443**  | - | **Alle** |
-| oidc.difi.no | 146.192.252.54:443	 | - | Alle |
-| maskinporten.no | 146.192.252.50:443 | - | Alle |
-| move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
-| move-dpe-prod.servicebus.windows.net (t.o.m 16.02.2022)	 | 52.169.10.235:443 | - | DPE | 
-| efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:443, 13.69.227.68:443, 52.138.226.67:443 | - | DPE |  
-| efm-dpe-prod.servicebus.windows.net	(f.o.m 16.02.2022) |  13.74.107.66:5671, 13.69.227.68:5671, 52.138.226.67:5671 | - | DPE |  
-| altinn.no | 89.250.123.0:443 | - | DPO/DPV |
-| meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
-| https://srest.dataplatfor.ms/ (Ny transport infrastruktur) | 51.120.1.137 | - | DPI |
-| svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
+|    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Innkommende/utgående trafikk |
+| ------------- |:-------------:| :-----:| :------:| :-----:| :------:|
+| **meldingsutveksling.difi.no** | **51.144.60.163** | 443 | **Alle** |
+| **stream-meldingsutveksling.difi.no** | 	**40.74.39.254**  | 443 | **Alle** |
+| oidc.difi.no | 146.192.252.54	 | 443 | Alle |
+| maskinporten.no | 146.192.252.50 | 443 | Alle |
+| efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66, 13.69.227.68, 52.138.226.67 | 443 | DPE | Azure Service Bus, HTTP/REST API |
+| efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66, 13.69.227.68, 52.138.226.67 | 5671 | DPE |  Azure Service Bus, AMQP med TLS |
+| altinn.no | 89.250.123.0 | 443 | DPO/DPV | Altinn formidlingstjeneste|
+| meldingsformidler.digipost.no  | 51.124.140.176/28| 443  | DPI | Meldingsformidler for DPI-meldinger|
+| srest.dataplatfor.ms  | 51.120.1.137 | 443 | DPI | (For ny transportinfrastruktur i Digital postkasse)|
+| svarut.ks.no | 137.221.25.66 og 137.221.28.66 | 443 | DPF | KS FIKS meldingformidler |
 
 > **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
 
