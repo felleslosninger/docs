@@ -35,8 +35,8 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 
 | DNS-navn | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
 | :-------- |-------------| :-----:| :----:| :-----| :------|
-| **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80**	 | 443 | **Alle** |
-| **qa-stream-meldingsutveksling.difi.no** | **40.74.39.255**  | 443 | **Alle** |
+| **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80**	 | 443 | **Alle** | eFormidling, diverse tjenester, adresseoppslag m.m. | |
+| **qa-stream-meldingsutveksling.difi.no** | **40.74.39.255**  | 443 | **Alle** | eFormidling, logging | |
 | oidc-ver1.difi.no | 146.192.252.121	 | 443 | Alle |
 | oidc-ver2.difi.no | 146.192.252.121	 | 443 | Alle |
 | ver1.maskinporten.no | 146.192.252.118	 | 443 | Alle |
@@ -51,8 +51,8 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 
 | DNS-navn | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
 | :-------- |-------------| :-----:| :----:| :-----| :------|
-| **meldingsutveksling.difi.no** | **51.144.60.163** | 443 | **Alle** |
-| **stream-meldingsutveksling.difi.no** | **40.74.39.254**  | 443 | **Alle** |
+| **meldingsutveksling.difi.no** | **51.144.60.163** | 443 | **Alle** | eFormidling, diverse tjenester, adresseoppslag m.m. | |
+| **stream-meldingsutveksling.difi.no** | **40.74.39.254**  | 443 | **Alle** | eFormidling, logging | |
 | oidc.difi.no | 146.192.252.54	 | 443 | Alle |
 | maskinporten.no | 146.192.252.50 | 443 | Alle |
 | efm-dpe-prod.servicebus.windows.net	|  13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 443 | DPE | Azure Service Bus, HTTP/REST API |
