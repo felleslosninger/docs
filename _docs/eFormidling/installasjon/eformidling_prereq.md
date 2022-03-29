@@ -33,7 +33,7 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 
 ### Brannmuråpninger i testmiljø
 
-|    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Innkommende/utgående trafikk |
+|    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
 | ------------- |:-------------:| :-----:| :------:| :-----:| :------:|
 | **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80**	 | 443 | **Alle** |
 | **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255**  | 443 | **Alle** |
@@ -45,11 +45,11 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | altinn.no | 89.250.123.0 | 443 | DPO | Altinn formidlingstjeneste |
 | tt02.altinn.no | 89.250.123.40 | 443 | DPV | Altinn formidlingstjeneste |
 | qaoffentlig.meldingsformidler.digipost.no  | 51.105.206.80/28  | 443  | DPI | Meldingsformidler for DPI-meldinger |
-| srest.qa.dataplatfor.ms  | 51.120.49.231 | 443 | DPI | (For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2) |
+| srest.qa.dataplatfor.ms  | 51.120.49.231 | 443 | DPI | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2 |
 
 ### Brannmuråpninger i produksjon
 
-|    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Innkommende/utgående trafikk |
+|    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
 | ------------- |:-------------:| :-----:| :------:| :-----:| :------:|
 | **meldingsutveksling.difi.no** | **51.144.60.163** | 443 | **Alle** |
 | **stream-meldingsutveksling.difi.no** | 	**40.74.39.254**  | 443 | **Alle** |
@@ -59,7 +59,7 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 5671 | DPE |  Azure Service Bus, AMQP med TLS |
 | altinn.no | 89.250.123.0 | 443 | DPO/DPV | Altinn formidlingstjeneste|
 | meldingsformidler.digipost.no  | 51.124.140.176/28| 443  | DPI | Meldingsformidler for DPI-meldinger (16 adresser)|
-| srest.dataplatfor.ms  | 51.120.1.137 | 443 | DPI | (For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2)|
+| srest.dataplatfor.ms  | 51.120.1.137 | 443 | DPI | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2|
 | svarut.ks.no | 137.221.25.66 <br/> 137.221.28.66 | 443 | DPF | KS FIKS meldingformidler |
 
 > **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
