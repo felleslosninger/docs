@@ -40,8 +40,8 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | oidc-ver1.difi.no | 146.192.252.121		 | 443 | Alle |
 | oidc-ver2.difi.no | 146.192.252.121	 | 443 | Alle |
 | ver1.maskinporten.no | 146.192.252.118	 | 443 | Alle |
-| efm-dpe-qa.servicebus.windows.net 	 | 13.74.107.66, 13.69.227.68, 52.138.226.67  | 443 | DPE | Azure Service Bus, HTTP/REST API |
-| efm-dpe-qa.servicebus.windows.net 	 | 13.74.107.66, 13.69.227.68, 52.138.226.67  | 5671 | DPE | Azure Service Bus, AMQP med TLS |
+| efm-dpe-qa.servicebus.windows.net 	 | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67  | 443 | DPE | Azure Service Bus, HTTP/REST API |
+| efm-dpe-qa.servicebus.windows.net 	 | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67  | 5671 | DPE | Azure Service Bus, AMQP med TLS |
 | altinn.no | 89.250.123.0 | 443 | DPO | Altinn formidlingstjeneste |
 | tt02.altinn.no | 89.250.123.40 | 443 | DPV | Altinn formidlingstjeneste |
 | qaoffentlig.meldingsformidler.digipost.no  | 51.105.206.80/28  | 443  | DPI | Meldingsformidler for DPI-meldinger |
@@ -55,12 +55,12 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | **stream-meldingsutveksling.difi.no** | 	**40.74.39.254**  | 443 | **Alle** |
 | oidc.difi.no | 146.192.252.54	 | 443 | Alle |
 | maskinporten.no | 146.192.252.50 | 443 | Alle |
-| efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66, 13.69.227.68, 52.138.226.67 | 443 | DPE | Azure Service Bus, HTTP/REST API |
-| efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66, 13.69.227.68, 52.138.226.67 | 5671 | DPE |  Azure Service Bus, AMQP med TLS |
+| efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 443 | DPE | Azure Service Bus, HTTP/REST API |
+| efm-dpe-prod.servicebus.windows.net	 |  13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 5671 | DPE |  Azure Service Bus, AMQP med TLS |
 | altinn.no | 89.250.123.0 | 443 | DPO/DPV | Altinn formidlingstjeneste|
-| meldingsformidler.digipost.no  | 51.124.140.176/28| 443  | DPI | Meldingsformidler for DPI-meldinger|
+| meldingsformidler.digipost.no  | 51.124.140.176/28| 443  | DPI | Meldingsformidler for DPI-meldinger (16 adresser)|
 | srest.dataplatfor.ms  | 51.120.1.137 | 443 | DPI | (For ny transportinfrastruktur i Digital postkasse)|
-| svarut.ks.no | 137.221.25.66 og 137.221.28.66 | 443 | DPF | KS FIKS meldingformidler |
+| svarut.ks.no | 137.221.25.66 <br/> 137.221.28.66 | 443 | DPF | KS FIKS meldingformidler |
 
 > **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
 
