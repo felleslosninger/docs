@@ -35,7 +35,7 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 
 |    DNS-navn    | IPv4-adresse | Port | Tjeneste | Beskrivelse | Innkommende/utgående trafikk |
 | ------------- |:-------------:| :-----:| :------:| :-----:| :------:|
-| **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80	 | 443 | **Alle** |
+| **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80**	 | 443 | **Alle** |
 | **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255**  | 443 | **Alle** |
 | oidc-ver1.difi.no | 146.192.252.121		 | 443 | Alle |
 | oidc-ver2.difi.no | 146.192.252.121	 | 443 | Alle |
