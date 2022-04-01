@@ -7,6 +7,12 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.4.1
+01.04.2022
+
+**Feilrettinger**
+- Retta feil der rekkefølge på innholdet i StandardBusinessDocument hadde ei påkrevd rekkefølge, dette var eit brudd med API-et og påverka nokre implementasjonar av REST-APIet ved sending.
+
 # 2.4.0
 25.03.2022
 
