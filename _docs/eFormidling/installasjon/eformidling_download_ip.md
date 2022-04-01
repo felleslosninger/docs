@@ -12,7 +12,7 @@ redirect_from: /eformidling_download_ip
 ### Siste versjon av integrasjonspunktet
  
 
-### [Integrasjonspunktet 2.4.0 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.4.0/integrasjonspunkt-2.4.0.jar)
+### [Integrasjonspunktet 2.3.2 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.3.2/integrasjonspunkt-2.3.2.jar)
 
 ### [Integrasjonspunktet 2.4.0 (Docker container image) ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.4.0/images/sha256-0c9a5b58fc4ea220357cfde343c98b43f6df0d3d9b3632933d0e2242c6e0daef?context=explore)
 
