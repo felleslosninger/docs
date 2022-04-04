@@ -7,6 +7,19 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.5.0
+04.04.2022
+
+**Funksjonalitet**
+- Generert arkivmeldingkvittering legges på kø for forsendelser som går mot DPV og DPF.
+- Fjerna bruk av Optionals på påkrevde felt i SBD.
+- Arkivmeldingkvittering handtering for andre kanalar enn DPO
+
+
+**Feilrettinger**
+- Lagt inn manglande felt ```messageId, system og tidspunkt``` i arkivmelding.xml ved forsendelse frå best/edu (eFormidling 1).  
+
+
 # 2.4.1
 01.04.2022
 
