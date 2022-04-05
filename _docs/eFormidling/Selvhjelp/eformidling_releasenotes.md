@@ -7,6 +7,12 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.5.1
+05.04.2022
+
+**Feilrettinger**
+- Fjerna validering på senderRef som UUID for å støtte bakoverkompatibilitet med BEST/EDU (eFormidling 1)
+
 # 2.5.0
 04.04.2022
 
