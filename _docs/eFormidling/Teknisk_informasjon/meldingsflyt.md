@@ -105,7 +105,7 @@ sequenceDiagram
         mf-->>ip: messages
     end
     
-    fs->>ip: GET /api/messages/in/peek[?serviceIdentifier={serviceIdentifierName}]
+    fs->>ip: GET /api/messages/in/peek[?process={processName}]
     ip-->>fs: messageMetaData
     fs->>ip: GET /api/messages/in/pop/{messageId}
     ip-->>fs: ASiC
