@@ -84,12 +84,13 @@ sequenceDiagram
 
 ## Motta melding
 
-Når en skal laste ned meldinger fra integrasjonspunktet må dette initieres med en peek, som låser førte meldingen i køen. Dersom en er ute etter meldinger av en bestemt type kan dette gjøres ved å sende med filter for denne 
-Etter man har låst meldingen kan denne deretter lastes ned via endepunktet
-/api/messages/in/{messageId}.
+Når en skal laste ned meldinger fra integrasjonspunktet må dette initieres med en peek ```/api/messages/in/peek```, som låser første meldingen i køen. Dersom en er ute etter meldinger av en bestemt type kan dette gjøres ved å sende med filter for denne. For eksempel ```/api/messages/in/peek?serviceIdentifier=DPO```.
 
-Etter meldingen er lastet ned kan denne slettes via å kalle DELETE mot 
-/api/messages/in/pop/{messageId} eller den kan låses opp igjen (hva med unlock batch)
+Etter man har låst meldingen kan denne deretter lastes ned via GET på endepunktet ```/api/messages/in/pop/{messageId}```. Om meldingen er en kvittering så vil en få 204 No Content når meldingen lastes ned.
+
+Etter meldingen er lastet ned kan denne slettes ved å kalle DELETE mot ```/api/messages/in/{messageId}```. 
+
+Etter melding er lastet ned og slettet, bør det sendes en applikasjonskvittering tilbake til avsender. Denne kvitteringen må ha samme conversationId som meldingen man svarer på. Eksempel på en slik type kvittering finnes [her](/docs/eFormidling/Teknisk_informasjon/message#forretningsmelding-arkivmelding_kvittering). 
 
 
 <div class="mermaid">
@@ -104,11 +105,13 @@ sequenceDiagram
         mf-->>ip: messages
     end
     
-    fs->>ip: GET /api/messages/in/peek[?process={processName}]
+    fs->>ip: GET /api/messages/in/peek[?serviceIdentifier={serviceIdentifierName}]
     ip-->>fs: messageMetaData
     fs->>ip: GET /api/messages/in/pop/{messageId}
     ip-->>fs: ASiC
     fs->>ip: DELETE /api/messages/in/{messageId}
+    ip-->>fs: deleteResponseOK
+    fs->>ip: Send kvittering
 
 </div>
 

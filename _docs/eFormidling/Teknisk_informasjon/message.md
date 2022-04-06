@@ -121,11 +121,11 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 
 \* dokumenttypen er forbeholdt kontrollmeldinger i infrastrukturen og skal ikke brukes av integrasjoner
 
-Forretningsmelding _arkivmelding_:
+#### Forretningsmelding _arkivmelding_
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpo.json %}
 ```
-Forretningsmelding _arkivmelding\_kvittering_:
+#### Forretningsmelding _arkivmelding\_kvittering_
 ```json
 "arkivmelding_kvittering": {
     "receiptType" : "OK",
