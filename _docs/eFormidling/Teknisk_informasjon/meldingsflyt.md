@@ -84,13 +84,13 @@ sequenceDiagram
 
 ## Motta melding
 
-Når en skal laste ned meldinger fra integrasjonspunktet må dette initieres med en peek ```/api/messages/in/peek```, som låser første meldingen i køen. Dersom en er ute etter meldinger av en bestemt type kan dette gjøres ved å sende med filter for denne. For eksempel ```/api/messages/in/peek?serviceIdentifier=DPO```.
+Når meldinger skal hentes ut fra integrasjonspunktet må dette initieres med en peek ```/api/messages/in/peek```, som låser første meldingen i køen. Dersom en er ute etter meldinger av en bestemt type kan dette gjøres ved å sende med filter for denne. For eksempel ```/api/messages/in/peek?serviceIdentifier=DPO```.
 
-Etter man har låst meldingen kan denne deretter lastes ned via GET på endepunktet ```/api/messages/in/pop/{messageId}```. Om meldingen er en kvittering så vil en få 204 No Content når meldingen lastes ned.
+Etter at meldingen er låst, kan ASiC hentes ned ved å gjøre GET mot endepunktet ```/api/messages/in/pop/{messageId}```. Kvitteringer vil alltid gi HTTP status 204 (no content), da disse ikke har vedlagt ASiC.
 
-Etter meldingen er lastet ned kan denne slettes ved å kalle DELETE mot ```/api/messages/in/{messageId}```. 
+Etter en melding er lastet ned, må den slettes ved å gjøre DELETE kall mot ```/api/messages/in/{messageId}```. Blir ikke sletteoperasjon utført på meldingen, vil den bli låst opp og tilgjengeliggjort på køen igjen etter fem minutter. 
 
-Etter melding er lastet ned og slettet, bør det sendes en applikasjonskvittering tilbake til avsender. Denne kvitteringen må ha samme conversationId som meldingen man svarer på. Eksempel på en slik type kvittering finnes [her](/docs/eFormidling/Teknisk_informasjon/message#forretningsmelding-arkivmelding_kvittering). 
+Etter en melding er lastet ned og slettet, bør det sendes en applikasjonskvittering tilbake til avsender. Denne kvitteringen må ha samme conversationId som meldingen man svarer på. Eksempel på en slik type kvittering finnes [her](/docs/eFormidling/Teknisk_informasjon/message#forretningsmelding-arkivmelding_kvittering). 
 
 
 <div class="mermaid">
