@@ -7,6 +7,16 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.6.0
+07.04.2022
+
+**Funksjonalitet**
+- Side for meldingsoversikt viser nå kolonner for "MessageId" og "ConversationId", istedenfor berre "ID".
+
+**Feilrettinger**
+- Feilretting for manglende statuser i status kø-API.
+- Retting av feil relatert til DPI for conversations-API
+
 # 2.5.1
 05.04.2022
 
