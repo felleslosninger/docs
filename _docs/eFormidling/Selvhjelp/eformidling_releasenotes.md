@@ -7,6 +7,12 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.6.2
+
+**Feilrettinger**
+- Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
+
+
 # 2.6.0
 07.04.2022
 
