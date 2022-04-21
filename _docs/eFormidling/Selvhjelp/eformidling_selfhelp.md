@@ -122,4 +122,7 @@ Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer 
 3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
 4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
 
+### 'large object'-opprydding ved bruk av egen database for integrasjonspunktet
+En bør vurdere  opprydding av store objekt dersom en bruker PostgreSQL som egen database for integrasjonspunktet. Dette skyldes at PostgreSQL som standard lagrer BLOB som “large object” (i egen tabell), og at JDBC ikke rydder opp ved sletting. Konsekvensene hvis dette ikke gjøres, vil kunne være at sikkerhetskopi først tar lang tid, og deretter begynner å terminere grunnet høy minnebruk. Verktøyet [vacuumlo](https://www.postgresql.org/docs/13/vacuumlo.html) fjerner foreldreløse store objekter. 
+
 ---
