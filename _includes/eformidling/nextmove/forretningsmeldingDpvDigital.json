@@ -2,6 +2,12 @@
     "digital_dpv": {
         "tittel": "",
         "sammendrag": "",
-        "innhold": ""
+        "innhold": "",
+        "dpv": { // Valgfri
+            "varselType": "VarselDPVMedRevarsel", // "VarselDPVUtenRevarsel"
+            "varselTransportType": "EpostOgSMS", // "Epost", "SMS
+            "varselTekst": "Valgfri tekst",
+            "dagerTilSvarfrist": 7
+        }
     }
 }
