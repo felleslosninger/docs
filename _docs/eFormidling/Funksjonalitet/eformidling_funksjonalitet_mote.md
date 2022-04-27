@@ -34,11 +34,19 @@ Les mer om eInnsyn på:
 - [Ta i bruk eInnsyn](https://samarbeid.digdir.no/einnsyn/ta-i-bruk-einnsyn/99) (ekstern lenke)
 - [Teknisk dokumentasjon for eInnsyn](https://docs.digdir.no/einnsyn_index.html) (ekstern lenke)
 
-Publisering av møter representeres med følgende prosess:
+Publisering av møter representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                   |
 | --------------- | ------------------------------------------ |
 | Meeting         | urn:no:difi:profile:einnsyn:meeting:ver1.0 |
+
+Publisering av møter representeres med følgende prosess for avsender:
+
+| **Prosessnavn** | **Prosessidentifikator**                     |
+| --------------- | -------------------------------------------- |
+| eInnsyn-respons  | urn:no:difi:profile:einnsyn:response:ver1.0 |
+
+En virksomhet opptrer alltid som avsender, mens mottaker av møter alltid er eInnsyn ved Digdir.
 
 ## Meldingsinnhold
 
@@ -48,6 +56,9 @@ meldingstjeneste.
 | **Dokumenttype**                                                   | **Meldingstjenester**                                                             |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
 | [Publisering](eformidling_utvikling_dokumenttype_publisering.html) | [eInnsyns meldingstjeneste](eformidling_utvikling_einnsyns_meldingstjeneste.html) |
+
+eInnsyn-kvittering
+
 
 ## Adressere meldinger
 
@@ -72,7 +83,7 @@ A->>B: Utgående melding
 B->>D: Utgående melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 - [eInnsyns meldingstjeneste](eformidling_utvikling_einnsyns_meldingstjeneste.html)
 
 ## Varsling

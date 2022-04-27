@@ -155,6 +155,13 @@ curl -XPOST http://localhost:9093/api/messages/out/93f530e3-0d4f-4273-94cd-e0d64
 curl http://localhost:9093/api/statuses/93f530e3-0d4f-4273-94cd-e0d64019ea83
 ```
 
+### Motta og slett kvittering
+
+```
+curl http://localhost:9093/api/messages/in/peek?process=urn:no:difi:profile:arkivmelding:response:ver1.0
+curl -XDELETE 'http://localhost:9093/api/messages/in/9e1ad87d-256d-46f6-ae5f-5dfabb0246af
+```
+
 ## Motta meldinger
 
 ### Sjekk innkommende meldinger
@@ -175,7 +182,7 @@ curl http://localhost:9093/api/messages/in/pop/9e1ad87d-256d-46f6-ae5f-5dfabb024
 curl -XDELETE 'http://localhost:9093/api/messages/in/9e1ad87d-256d-46f6-ae5f-5dfabb0246af
 ```
 
-### Bekreft innkommende melding
+### Send kvittering
 
 ```
 curl -XPOST http://localhost:9093/api/messages/out
@@ -191,13 +198,13 @@ curl -XPOST http://localhost:9093/api/messages/out
             }
         ],
         "documentIdentification": {
-            "standard": "urn:no:difi:arkivmelding:xsd::arkivmelding",
-            "type": "arkivmelding",
+            "standard": "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering",
+            "type": "arkivmelding_kvittering",
             "typeVersion": "2.0"
         },
         "businessScope": {
             "scope": [{
-                    "identifier": "urn:no:difi:profile:arkivmelding:administrasjon:ver1.0",
+                    "identifier": "urn:no:difi:profile:arkivmelding:response:ver1.0",
                     "type": "ConversationId"
                 }
             ]

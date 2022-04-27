@@ -18,19 +18,37 @@ Avtalt meldingsutveksling lar avsender og mottaker utveksle forhåndsbestemte me
 ustrukturerte. Meldingene er ikke forhåndsdefinert i kontekst av eFormidling, men avtales direkte mellom avsender(e) og
 mottaker(e).
 
-Avtalt meldingsutveksling representeres med følgende prosesser:
+Avtalt meldingsutveksling representeres med følgende prosess for mottaker:
 
 | **Prosessnavn**           | **Prosessidentifikator**                 |
 | ------------------------- | ---------------------------------------- |
 | Avtalt meldingsutveksling | urn:no:difi:profile:avtalt:avtalt:ver1.0 |
 
+Avtalt meldingsutveksling representeres med følgende prosess for avsender:
+
+| **Prosessnavn** | **Prosessidentifikator**                   |
+| --------------- | -------------------------------------------|
+| Avtalt-respons  | urn:no:difi:profile:avtalt:response:ver1.0 |
+
+Vanligvis opptrer en virksomhet både som avsender og mottaker, men det er også mulig å bare opptre som avsender.
+
 ## Meldingsinnhold
 
-Det er bare en dokumenttype som støttes for avtalt meldingsutveksling, og denne er bare støttet av Altinn Formidling.
+Det er bare en dokumenttype som støttes for avtalt meldingsutveksling, og denne er bare støttet av eFormidlings
+meldingstjeneste.
 
 | **Dokumenttype**                                         | **Meldingstjenester**                                             |
 | -------------------------------------------------------- | ----------------------------------------------------------------- |
-| [Avtalt](eformidling_utvikling_dokumenttype_avtalt.html) | [Altinn Formidling](eformidling_utvikling_altinn_formidling.html) |
+| [Avtalt](eformidling_utvikling_dokumenttype_avtalt.html) | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html) |
+
+I tillegg har eFormidling interne dokumenttyper som brukes for å signalisere tilbake fra mottaker til avsender om en
+melding ble levert til integrasjonspunktet eller om levering feilet. Dette er interne kontrollmeldinger som håndteres av
+integrasjonspunktet. Bare integrasjoner uten integrasjonspunkt skal bruke disse dokumenttypene.
+
+| **Dokumenttype**                                         | **Meldingstjenester**                                             |
+| -------------------------------------------------------- | ----------------------------------------------------------------- |
+| [Status](eformidling_utvikling_dokumenttype_status.html) | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html) |
+| [Feil](eformidling_utvikling_dokumenttype_feil.html)     | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html) |
 
 ## Adressere meldinger
 
@@ -43,39 +61,39 @@ forretningsregler knyttet til valg av disse.
 
 Før en virksomhet sender en melding gjøres et frivillig kapabilitetsoppslag for å se om mottakeren støtter
 avtalt-prosessen. I så fall er dokumenttype og meldingstjeneste gitt. Virksomheten bygger så meldingen før den sendes
-til integrasjonspunktet. Integrasjonspunktet ruter meldingen til Altinn Formidling.
+til integrasjonspunktet. Integrasjonspunktet ruter meldingen til eFormidlings meldingstjeneste.
 
 <div class="mermaid">
 sequenceDiagram
 participant A as Virksomhetens<br>fagsystem
 participant B as Virksomhetens<br>integrasjonspunkt
 participant C as Adressetjeneste
-participant D as Altinn Formidling
+participant D as eFormidlings meldingstjeneste
 A->>B: Kapabilitetsoppslag
 B->>C: Kapabilitetsoppslag
 A->>B: Utgående melding
 B->>D: Utgående melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
-- [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
+- [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html)
 
 ## Motta meldinger
 
 Virksomhetens fagsystem mottar kontinuerlig innkommende meldinger fra virksomhetens integrasjonspunkt som igjen mottar
-meldingene fra Altinn Formidling.
+meldingene fra eFormidlings meldingstjeneste.
 
 <div class="mermaid">
 sequenceDiagram
 participant A as Virksomhetens<br>fagsystem
 participant B as Virksomhetens<br>integrasjonspunkt
-participant D as Altinn Formidling
+participant D as eFormidlings meldingstjeneste
 D->>B: Innkommende melding
 B->>A: Innkommende melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
-- [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
+- [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html)
 
 ## Varsling
 
@@ -89,14 +107,14 @@ og sendes periodisk.
 ## Forutsetninger
 
 - Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
-- Bruk av Altinn Formidling krever avtale
+- Bruk av eFormidlings meldingstjeneste krever avtale
 
 ## Konfigurasjon
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
 - [Minimal konfigurasjon av integrasjonspunktet](eformidling_konfigurasjon_minimal.html)
-- [Konfigurasjon av Altinn Formidling](eformidling_konfigurasjon_altinn_formidling.html)
+- [Konfigurasjon av eFormidlings meldingstjeneste](eformidling_konfigurasjon_eformidlings_meldingstjeneste.html)
 
 ## Utvikling
 

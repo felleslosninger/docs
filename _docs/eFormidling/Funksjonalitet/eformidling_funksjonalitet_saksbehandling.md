@@ -35,7 +35,7 @@ slik at dokumentene som sendes og mottas automatisk kan knyttes til den aktuelle
 saksbehandling gir effektiv kommunikasjon om saker mellom ulike saksbehandlingssystem. eFormidling kan også brukes for
 å legge til rette for (del-)automatisert saksbehandling.
 
-Saksbehandling representeres med følgende prosesser:
+Saksbehandling representeres med følgende prosesser for mottaker:
 
 | **Prosessnavn**               | **Prosessidentifikator**                                          |
 | ----------------------------- | ----------------------------------------------------------------- |
@@ -50,32 +50,54 @@ Saksbehandling representeres med følgende prosesser:
 | Tekniske tjenester            | urn:no:difi:profile:arkivmelding:tekniskeTjenester:ver1.0         |
 | Trafikk, reiser og samferdsel | urn:no:difi:profile:arkivmelding:trafikkReiserOgSamferdsel:ver1.0 |
 
+Saksbehandling representeres med følgende prosess for avsender:
+
+| **Prosessnavn**      | **Prosessidentifikator**                         |
+| -------------------- | -------------------------------------------------|
+| Arkivmelding-respons | urn:no:difi:profile:arkivmelding:response:ver1.0 |
+
 Hvilke prosesser en mottaker støtter er opp til mottakeren og fremgår av mottakerens kapabiliteter. Mottakeren kan på
 sin side velge å håndtere ulike prosesser ulikt. For eksempel ved å rute meldingene til ulike fagsystem eller til ulike
-arbeidslister i samme system.
+arbeidslister i samme system. Vanligvis opptrer en virksomhet både som avsender og mottaker, men det er også mulig å
+bare opptre som avsender.
 
 ## Meldingsinnhold
 
-Hvilket innhold som kan sendes avhenger av hvilke dokumenttyper mottakeren støtter for saksbehandling. En
-dokumenttype støttes av en eller flere meldingstjenester.
+Det er bare en dokumenttype som støttes for saksbehandling.
 
-| **Dokumenttype**                                                     | **Meldingstjenester**                                                                                                                                                                                      |
-| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Arkivmelding](eformidling_utvikling_dokumenttype_arkivmelding.html) | [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)<br>[KS SvarUt](eformidling_utvikling_ks_svarut_og_svarinn.html)<br>[Altinn Digital Post](eformidling_utvikling_altinn_digital_post.html) |
+| **Dokumenttype**                                                                          | **Meldingstjenester**                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Arkivmelding](eformidling_utvikling_dokumenttype_arkivmelding.html)                      | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html)<br>[KS SvarUt](eformidling_utvikling_ks_svarut_og_svarinn.html)<br>[Altinn Digital Post](eformidling_utvikling_altinn_digital_post.html) |
+
+I tillegg forventer avsender en kvittering fra mottaker som en bekreftelse på at en melding er levert helt frem til
+mottakers system (ikke bare til mottakers integrasjonspunkt).
+
+| **Dokumenttype**                                                                          | **Meldingstjenester**                                                                                                                                                                                      |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Arkivmelding-kvittering](eformidling_utvikling_dokumenttype_arkivmeldingkvittering.html) | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html)<br>[KS SvarUt](eformidling_utvikling_ks_svarut_og_svarinn.html)<br>[Altinn Digital Post](eformidling_utvikling_altinn_digital_post.html) |
+
+I tillegg har eFormidling interne dokumenttyper som brukes for å signalisere tilbake fra mottaker til avsender om en
+melding ble levert til integrasjonspunktet eller om levering feilet. Dette er interne kontrollmeldinger som håndteres av
+integrasjonspunktet. Bare integrasjoner uten integrasjonspunkt skal bruke disse dokumenttypene.
+
+| **Dokumenttype**                                         | **Meldingstjenester**                                             |
+| -------------------------------------------------------- | ----------------------------------------------------------------- |
+| [Status](eformidling_utvikling_dokumenttype_status.html) | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html) |
+| [Feil](eformidling_utvikling_dokumenttype_feil.html)     | [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html) |
 
 ## Adressere meldinger
 
 Meldinger adresseres fra avsenders organisasjonsnummer til mottakers organisasjonsnummer.
 
-For mottakere som selv bruker eFormidling blir Altinn Formidling foretrukket. For mottakere som ikke bruker eFormidling
-blir KS SvarUt foretrukket dersom mottaker bruker denne tjenesten. For alle andre mottakere foretrekkes Altinn Digital
-Post.
+For mottakere som selv bruker eFormidling blir eFormidlings meldingstjeneste foretrukket. For mottakere som ikke bruker
+eFormidling blir KS SvarUt foretrukket dersom mottaker bruker denne tjenesten. For alle andre mottakere foretrekkes
+Altinn Digital Post.
 
 <div class="mermaid">
 graph LR
 A{Bruker mottaker<br>eFormidling?}
 B{Bruker mottaker<br>KS SvarUt?}
-U(Altinn Formidling)
+U(eFormidlings meldingstjeneste)
 V(KS SvarUt)
 W(Altinn Digital Post)
 A -->|Ja| U
@@ -95,7 +117,7 @@ sequenceDiagram
 participant A as Virksomhetens<br>fagsystem
 participant B as Virksomhetens<br>integrasjonspunkt
 participant C as Adressetjeneste
-participant D as Altinn Formidling
+participant D as eFormidlings meldingstjeneste
 participant E as KS SvarUt
 participant F as Altinn Digital Post
 A->>B: Kapabilitetsoppslag
@@ -106,8 +128,8 @@ B->>E: Alt 2)
 B->>-F: Alt 3)
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
-- [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
+- [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html)
 - [KS SvarUt og SvarInn](eformidling_utvikling_ks_svarut_og_svarinn.html)
 - [Altinn Digital Post](eformidling_utvikling_altinn_digital_post.html)
 
@@ -124,15 +146,15 @@ meldingene fra meldingstjenestene virksomheten bruker.
 sequenceDiagram
 participant A as Virksomhetens<br>fagsystem
 participant B as Virksomhetens<br>integrasjonspunkt
-participant C as Altinn Formidling
+participant C as eFormidlings meldingstjeneste
 participant D as KS SvarInn
 C->>B: Innkommende melding
 D->>B: Innkommende melding
 B->>A: Innkommende melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
-- [Altinn Formidling](eformidling_utvikling_altinn_formidling.html)
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
+- [eFormidlings meldingstjeneste](eformidling_utvikling_eformidlings_meldingstjeneste.html)
 - [KS SvarUt og SvarInn](eformidling_utvikling_ks_svarut_og_svarinn.html)
 
 ## Varsling
@@ -152,7 +174,7 @@ registrerte varslingsadresse i Enhetsregisteret.
 
 ## Forutsetninger
 
-- Bruk av Altinn Formidling krever avtale
+- Bruk av eFormidlings meldingstjeneste krever avtale
 - Bruk av KS SvarUt og SvarInn krever avtale
 - Bruk av Altinn Digital Post krever avtale
 
@@ -161,7 +183,7 @@ registrerte varslingsadresse i Enhetsregisteret.
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
 - [Minimal konfigurasjon av integrasjonspunktet](eformidling_konfigurasjon_minimal.html)
-- [Konfigurasjon av Altinn Formidling](eformidling_konfigurasjon_altinn_formidling.html) 
+- [Konfigurasjon av eFormidlings meldingstjeneste](eformidling_konfigurasjon_eformidlings_meldingstjeneste.html) 
 - [Konfigurasjon av KS SvarUt og SvarInn](eformidling_konfigurasjon_ks_svarut_og_svarinn.html)
 - [Konfigurasjon av Altinn Digital Post](eformidling_konfigurasjon_altinn_digital_post.html)
 

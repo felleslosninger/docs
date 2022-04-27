@@ -35,11 +35,19 @@ Les mer om eInnsyn på:
 - [Ta i bruk eInnsyn](https://samarbeid.digdir.no/einnsyn/ta-i-bruk-einnsyn/99) (ekstern lenke)
 - [Teknisk dokumentasjon for eInnsyn](https://docs.digdir.no/einnsyn_index.html) (ekstern lenke)
 
-Innsynskrav representeres med følgende prosess:
+Innsynskrav representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                       |
 | --------------- | ---------------------------------------------- |
 | Innsynskrav     | urn:no:difi:profile:einnsyn:innsynskrav:ver1.0 |
+
+Innsynskrav representeres med følgende prosess for avsender:
+
+| **Prosessnavn** | **Prosessidentifikator**                     |
+| --------------- | -------------------------------------------- |
+| eInnsyn-respons  | urn:no:difi:profile:einnsyn:response:ver1.0 |
+
+En virksomhet opptrer alltid som mottaker, mens avsender av innsynskrav alltid er eInnsyn ved Digdir.
 
 ## Meldingsinnhold
 
@@ -71,7 +79,7 @@ C->>B: Innkommende melding *innsynskrav*
 B->>A: Innkommende melding *innsynskrav*
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 - [eInnsyns meldingstjeneste](eformidling_utvikling_einnsyns_meldingstjeneste.html)
 
 ## Varsling

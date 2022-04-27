@@ -157,9 +157,16 @@ curl -XPOST http://localhost:9093/api/messages/out/93f530e3-0d4f-4273-94cd-e0d64
 curl http://localhost:9093/api/statuses/93f530e3-0d4f-4273-94cd-e0d64019ea83
 ```
 
+### Motta og slett kvittering
+
+```
+curl http://localhost:9093/api/messages/in/peek?process=urn:no:difi:profile:einnsyn:response:ver1.0
+curl -XDELETE 'http://localhost:9093/api/messages/in/9e1ad87d-256d-46f6-ae5f-5dfabb0246af
+```
+
 ## Neste steg
 
-- Funksjonell beskrivelse av [Møte til eInnsyng](eformidling_funksjonalitet_mote.html)
+- Funksjonell beskrivelse av [Møte til eInnsyn](eformidling_funksjonalitet_mote.html)
 - Dokumenttypen [Publisering](eformidling_utvikling_dokumenttype_publisering.html)
 - Grensesnittet [eFormidling 2](eformidling_utvikling_integrasjonspunkt_eformidling2_api.html)
 - Flere [Eksempler](eformidling_utvikling_eksempler.html)

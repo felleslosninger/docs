@@ -34,11 +34,19 @@ Les mer om eInnsyn på:
 - [Ta i bruk eInnsyn](https://samarbeid.digdir.no/einnsyn/ta-i-bruk-einnsyn/99) (ekstern lenke)
 - [Teknisk dokumentasjon for eInnsyn](https://docs.digdir.no/einnsyn_index.html) (ekstern lenke)
 
-Publisering av journalpost representeres med følgende prosess:
+Publisering av journalpost representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                       |
 | --------------- | ---------------------------------------------- |
 | Journalpost     | urn:no:difi:profile:einnsyn:journalpost:ver1.0 |
+
+Publisering av journalpost representeres med følgende prosess for avsender:
+
+| **Prosessnavn** | **Prosessidentifikator**                     |
+| --------------- | -------------------------------------------- |
+| eInnsyn-respons  | urn:no:difi:profile:einnsyn:response:ver1.0 |
+
+En virksomhet opptrer alltid som avsender, mens mottaker av journalpost alltid er eInnsyn ved Digdir.
 
 ## Meldingsinnhold
 
@@ -72,7 +80,7 @@ A->>B: Utgående melding
 B->>D: Utgående melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 - [eInnsyns meldingstjeneste](eformidling_utvikling_einnsyns_meldingstjeneste.html)
 
 ## Varsling

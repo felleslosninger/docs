@@ -14,11 +14,24 @@ eFormidling.
 
 Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen over siden.
 
-| **Fagystem**                   | Bedre Sak Enn Arkiv                                                   |
-| -------------------------------| --------------------------------------------------------------------- |
-| **Leverandør**                 | John Doe AS                                                           |
-| **Versjoner**                  | 1.0 og nyere                                                          |
-| **Grensesnitt**                | eFormidling 2                                                         |
-| **Prosesser**                  | Vedtak til innbygger, Saksbehandling                                  |
-| **Drift av integrasjonspunkt** | Tilbys                                                                |
-| **Dokumentasjon**              | [Bruke eFormidling fra Bedre Sak Enn Arkiv](x.html) (ekstern lenke)   |
+| **Fagystem**                                                        | Bedre Sak Enn Arkiv  |
+| ------------------------------------------------------------------- | -------------------- |
+| **Leverandør**                                                      | John Doe AS          |
+| **Grensesnitt**                                                     |                      |
+| - eFormidling 2                                                     | Støttes              |
+| - BEST/EDU                                                          | Støttes ikke         |
+| **Prosesser**                                                       |                      |
+| - Avtalt meldingsutveksling                                         | Støttes ikke         |
+| - FIKS IO-meldingsutveksling                                        | Støttes ikke         |
+| - Informasjon til innbygger                                         | Støttes              |
+| - Innsynskrav fra eInnsyn                                           | Støttes              |
+| - Journalpost til eInnsyn                                           | Støttes              |
+| - Møte til eInnsyn                                                  | Støttes ikke         |
+| - Saksbehandling                                                    | Støttes              |
+| - Taushetsbelagt saksbehandling                                     | Støttes ikke         |        
+| - Vedtak til innbygger                                              | Støttes              |
+| **Leveransemodell**                                                 |                      |
+| - Integrasjonspunkt driftes av kunde                                | Støttes ikke         |
+| - Integrasjonspunkt driftes av leverandør                           | Støttes ikke         |
+| - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes              |
+| **Lenker**                                                          | [Bedre Sak Enn Arkiv](https://bedre-sak-enn-arkiv.no) (ekstern lenke) |

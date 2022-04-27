@@ -19,7 +19,7 @@ Informasjon til innbygger er alt utenom vedtak og andre viktige henvendelser til
 eFormidlings støtte for å sende informasjon til innbygger gjør det enkelt å sende informasjon til innbygger uten
 tilleggskravene vedtak og andre viktige henvendelser medfører.
 
-Informasjon til innbygger representeres med følgende prosess:
+Informasjon til innbygger representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                    |
 | --------------- | ------------------------------------------- |

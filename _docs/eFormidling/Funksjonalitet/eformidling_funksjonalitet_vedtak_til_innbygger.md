@@ -116,7 +116,7 @@ A->>+B: Alt 3) Utgående melding *digital_dpv*
 B->>-E: .
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 - [Digital Post til Innbyggere](eformidling_utvikling_digital_post_til_innbyggere.html)
 - [Altinn Digital Post](eformidling_utvikling_altinn_digital_post.html)
 
@@ -136,7 +136,7 @@ registrerte kontaktinformasjon i kontakt- og reservasjonsregisteret.
 
 - Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
 - Bruk av Digital Post til Innbyggere krever avtale
-- Bruk av Altinn Digital Post krever avtale
+- Bruk av Altinn Digital Post krever avtale (begrenset tilgjengelighet inntil videre)
 
 ## Konfigurasjon
 

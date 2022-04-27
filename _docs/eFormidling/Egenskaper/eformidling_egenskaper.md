@@ -1,9 +1,10 @@
 ---
-title: Testing
+title: Egenskaper
 description: ""
 summary: ""
-permalink: eformidling_utvikling_testing.html
+permalink: eformidling_egenskaper.html
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+TODO

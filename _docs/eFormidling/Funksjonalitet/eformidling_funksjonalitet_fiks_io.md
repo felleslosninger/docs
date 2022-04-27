@@ -18,7 +18,7 @@ FIKS IO-meldingsutveksling lar avsender og mottaker utveksle meldinger som er de
 Meldingene er ikke forhåndsdefinert i kontekst av eFormidling, men protokollene som defineres i FIKS IO støttes.
 
 Alle FIKS IO-meldingsprotokoller er gyldige prosesser i eFormidling. FIKS IO-meldingsutveksling representeres med
-følgende prosesser:
+følgende prosess for mottaker:
 
 | **Prosessnavn**            | **Prosessidentifikator**                                              |
 | -------------------------- | --------------------------------------------------------------------- |
@@ -62,7 +62,7 @@ A->>B: Utgående melding
 B->>D: Utgående melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 - [FIKS IO](eformidling_utvikling_ks_fiks_io.html)
 
 ## Motta meldinger
@@ -79,7 +79,7 @@ D->>B: Innkommende melding
 B->>A: Innkommende melding
 </div>
 
-Detaljert beskrivelse av meldingsflyten i de aktuelle meldingstjenestene finnes på:
+Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 - [FIKS IO](eformidling_utvikling_ks_fiks_io.html)
 
 ## Forutsetninger

@@ -14,14 +14,12 @@ eFormidling lar din virksomhet sende og motta meldinger som del av taushetsbelag
 
 ## Introduksjon
 
-
 Taushetsbelagt saksbehandling er behandling av saker som inkluderer taushetsbelagte opplysninger. Taushetsbelagte
 opplysninger inkluderer:
 
 - sensitive personopplysninger
 - forretningshemmeligheter
 - saker av betydning for rikets sikkerhet
-
 
 Taushetsbelagt saksbehandling følger samme flyt som vanlig saksbehandling, men lar mottaker knytte ekstra
 tilgangskontroller til meldinger for å begrense tilgang til de som har tjenestlig behov til å lese meldingene.
@@ -30,11 +28,19 @@ Regler for behandling av taushetsbelagte opplysninger finnes i forvaltningsloven
 tilpasninger fra regelverk for ulike områder som for eksempel barnevern. Sentrale krav inkluderer å sikre at mottaker
 har tjenestlig behov til behandling av opplysningene og å ikke behandle flere opplysninger enn det som er nødvendig. 
 
-Taushetsbelagt saksbehandling representeres med følgende prosess:
+Taushetsbelagt saksbehandling representeres med følgende prosess for mottaker:
 
 | **Prosessnavn**               | **Prosessidentifikator**                                          |
 | ----------------------------- | ----------------------------------------------------------------- |
 | Taushetsbelagt                | urn:no:difi:profile:arkivmelding:taushetsbelagt:ver1.0            |
+
+Taushetsbelagt saksbehandling representeres med følgende prosess for avsender:
+
+| **Prosessnavn**      | **Prosessidentifikator**                         |
+| -------------------- | -------------------------------------------------|
+| Arkivmelding-respons | urn:no:difi:profile:arkivmelding:response:ver1.0 |
+
+Vanligvis opptrer en virksomhet både som avsender og mottaker, men det er også mulig å bare opptre som avsender.
 
 ## Meldingsinnhold
 
