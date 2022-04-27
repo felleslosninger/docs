@@ -121,3 +121,7 @@ participant D as Meldingstjeneste<br>(f.eks. KS SvarInn)
 D->>B: Innkommende melding
 B->>A: Innkommende melding
 </div>
+
+## Neste steg
+
+- [Kom i gang](eformidling_introduksjon_kom_i_gang.md)
