@@ -124,4 +124,4 @@ B->>A: Innkommende melding
 
 ## Neste steg
 
-- [Kom i gang](eformidling_introduksjon_kom_i_gang.md)
+- [Kom i gang](eformidling_introduksjon_kom_i_gang.html)
