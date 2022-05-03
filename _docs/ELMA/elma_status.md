@@ -8,6 +8,14 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 03.05.2022 (3.14.5)
+
+### Bug fix
+```
+[MOVE-2818] Bug - SMPen viser metadata for skjulte prosesser. 
+```
+
+
 ## ELMA update 11.03.2022 (3.14.1)
 
 ### Tasks
