@@ -21,11 +21,18 @@ Før du legger inn en sak, er det fint om du sjekker raskt gjennom de saker som 
 Rask redigering gjør det enklere å rapportere og fikse små feil og utelatelser i dokumentene. Vi har tilrettelagt for dette ved å legge inn en kobling som tar deg direkte til kildefilen i GitHub, slik at små korrigeringer kan gjøres på en enkel måte.
 
 1. Når du står på en side i dokumentasjonen som du ønsker å korrigere, trykker du på lenken "Endre/rediger innhold" øverst på siden:
-<!---   {% include image.html file="edit-1.jpg" border="true" alt="Enkel redigering" max-width="90%" %}
+
+<!---   
+{% include image.html file="edit-1.jpg" border="true" alt="Enkel redigering" max-width="90%" %}
 ---> 
+
 2. Du vil da bli sendt til den aktuelle markdown filen i GitHub, og klikk deretter på blyantikonet for å redigere filen. (Du må være innlogget i GitHub for at dette skal fungere)
-<!---   {% include image.html file="edit-2.jpg" border="true" alt="Rediger fil i GitHub" max-width="90%" %}
+
+<!---
+{% include image.html file="edit-2.jpg" border="true" alt="Rediger fil i GitHub" max-width="90%" %}
 ---> 
+
+
 3. Gjør endringene dine direkte i nettleseren, og sjekk *Preview changes* for å se hvordan endringene dine vil se ut.
 
 4. Legg inn en tittel og beskrivelse av endringene, og klikk på *Propose file change*
