@@ -6,11 +6,11 @@ about_email: servicedesk@digdir.no
 column2_title: Hvordan bidra?
 column2_links:
   -
-    target: ../docs/general/CONTRIBUTING
+    target: /docs/general/CONTRIBUTING
     text: Gjør endringer direkte
   -
     target: https://github.com/felleslosninger/docs/issues
     text: Opprett et problem på GitHub
   -
-    target: ../docs/general/NOTICE
+    target: /docs/general/NOTICE
     text: Teknologi brukt på disse sidene
