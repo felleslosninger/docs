@@ -13,7 +13,6 @@ redirect_from: /eformidling_releasenotes
 10.05.22
 
 - Utvida kapabilitietsoppslaget til å også innholde informasjon om innbyggers postkasseleverandør. 
-- Støtte for å levere DPI-kvitteringer på gammelt format
 - Støtte for eDialog via svarInn med fallback avsender ved manglende organisasjonsnummer på avsender.
 
 **Feilrettinger**
