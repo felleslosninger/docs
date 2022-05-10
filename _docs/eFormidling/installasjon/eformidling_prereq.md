@@ -37,9 +37,10 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | :-------- |-------------| :-----:| :----:| :-----| :------|
 | **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80**	 | 443 | **Alle** | eFormidling, diverse tjenester, adresseoppslag m.m. | |
 | **qa-stream-meldingsutveksling.difi.no** | **40.74.39.255**  | 443 | **Alle** | eFormidling, logging | |
-| oidc-ver1.difi.no | 146.192.252.121	 | 443 | Alle | ID-porten oidc-provider, verifikasjon 1-miljøet | |
-| oidc-ver2.difi.no | 146.192.252.152	 | 443 | Alle | ID-porten oidc-provider, verifikasjon 2-miljøet | |
-| ver1.maskinporten.no | 146.192.252.118	 | 443 | Alle | Maskinporten | |
+| oidc-ver1.difi.no | 146.192.252.121	 | 443 | Alle | ID-porten oidc-provider, verifikasjon 1-miljøet | utgående |
+| oidc-ver2.difi.no | 146.192.252.152	 | 443 | Alle | ID-porten oidc-provider, verifikasjon 2-miljøet | utgående |
+| ver1.maskinporten.no | 146.192.252.118	 | 443 | Alle | Maskinporten | utgående |
+| ver2.maskinporten.no | 139.105.36.128/27 <br/> 139.105.36.132	 | 443 | Alle | Maskinporten, ny adresse f.o.m ca 01.09.2022 | utgående |
 | efm-dpe-qa.servicebus.windows.net  | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67  | 443 | DPE | Azure Service Bus, HTTP/REST API |
 | efm-dpe-qa.servicebus.windows.net  | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67  | 5671 | DPE | Azure Service Bus, AMQP med TLS |
 | altinn.no | 89.250.123.0 | 443 | DPO | Altinn formidlingstjeneste |
