@@ -17,8 +17,7 @@ redirect_from: /eformidling_releasenotes
 
 **Feilrettinger**
 
-- Lagt til manglende transaksjon definisjoner for store objekt (LOB) ved bruk av PostgreSQL.
-
+- Rettet feil i conversations-APIet som kunne oppstå ved bruk av PostgreSQL.
 
 # 2.6.2
 
