@@ -7,7 +7,7 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
-# 2.7.0
+## 2.7.0
 
 **Funksjonalitet**
 10.05.22
@@ -19,13 +19,13 @@ redirect_from: /eformidling_releasenotes
 
 - Rettet feil i conversations-APIet som kunne oppstå ved bruk av PostgreSQL.
 
-# 2.6.2
+## 2.6.2
 
 **Feilrettinger**
 - Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
 
 
-# 2.6.0
+## 2.6.0
 07.04.2022
 
 **Funksjonalitet**
@@ -35,13 +35,13 @@ redirect_from: /eformidling_releasenotes
 - Feilretting for manglende statuser i status kø-API.
 - Retting av feil relatert til DPI for conversations-API
 
-# 2.5.1
+## 2.5.1
 05.04.2022
 
 **Feilrettinger**
 - Fjerna validering på senderRef som UUID for å støtte bakoverkompatibilitet med BEST/EDU (eFormidling 1)
 
-# 2.5.0
+## 2.5.0
 04.04.2022
 
 **Funksjonalitet**
@@ -54,13 +54,13 @@ redirect_from: /eformidling_releasenotes
 - Lagt inn manglande felt ```messageId, system og tidspunkt``` i arkivmelding.xml ved forsendelse frå best/edu (eFormidling 1).  
 
 
-# 2.4.1
+## 2.4.1
 01.04.2022
 
 **Feilrettinger**
 - Retta feil der rekkefølge på innholdet i StandardBusinessDocument hadde ei påkrevd rekkefølge, dette var eit brudd med API-et og påverka nokre implementasjonar av REST-APIet ved sending.
 
-# 2.4.0
+## 2.4.0
 25.03.2022
 
 **Funksjonalitet**
