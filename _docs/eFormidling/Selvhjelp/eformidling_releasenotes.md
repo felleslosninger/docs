@@ -21,6 +21,7 @@ redirect_from: /eformidling_releasenotes
 
 ## 2.6.2
 11.04.2022
+
 **Feilrettinger**
 - Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
 
