@@ -8,9 +8,9 @@ redirect_from: /eformidling_releasenotes
 ---
 
 ## 2.7.0
+10.05.22
 
 **Funksjonalitet**
-10.05.22
 
 - Utvida kapabilitietsoppslaget til å også innholde informasjon om innbyggers postkasseleverandør. 
 - Støtte for eDialog via svarInn med fallback avsender ved manglende organisasjonsnummer på avsender.
@@ -20,7 +20,7 @@ redirect_from: /eformidling_releasenotes
 - Rettet feil i conversations-APIet som kunne oppstå ved bruk av PostgreSQL.
 
 ## 2.6.2
-
+11.04.2022
 **Feilrettinger**
 - Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
 
