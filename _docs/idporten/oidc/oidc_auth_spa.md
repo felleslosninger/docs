@@ -1,6 +1,6 @@
 ---
 title: Autentisering til SPA'er
-description: Bruk av Idporten sin OpenID Connect provider til autentisering til Single  Page Applikasjoner
+description: Bruk av Idporten sin OpenID Connect provider til autentisering til Single Page Applikasjoner
 summary: "Ved innlogging til en SPA, er det anbefalt å bruke code flow med PKCE og state"
 
 sidebar: oidc
@@ -10,7 +10,7 @@ redirect_from: /oidc_auth_spa
 
 ## Overordna beskrivelse av bruksområdet
 
-Single-page applikasjoner (SPA) har økende popularitet. Disse skiller seg fra tradisjonelle nettjenester ved at SPAen er realisert som en ren javascript-applikasjon i brukers browser, kontra tradisjonelle nettjtenester der en sentral applikasjonserver generer HTML som blir vist i browseren.
+Single-page applikasjoner (SPA) har økende popularitet. Disse skiller seg fra tradisjonelle nettjenester ved at SPAen er realisert som en ren javascript-applikasjon i brukers browser, kontra tradisjonelle nett-tjenester der en sentral applikasjonserver generer HTML som blir vist i browseren.
 
 En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (evt. virksomhetssertifikatets privatnøkkel) siden hele klienten lever i brukers nettleser. SPAer er altså det som i Oauth2-verdenen kalles **public klienter**. For slike klienter var det tidligere anbefalt å bruke implicit flow, men **de nyeste anbefalingen går på å bruke code flow sammen med PKCE og state**.
 
@@ -19,16 +19,15 @@ En utfordring med SPAer er at de ikke klarer å beskytte klient-hemmeligheten (e
 
 ## Anbefalinger / krav til bruk av SPAer
 
-Trusselbildet er forskjellig ved bruk av SPA  kontra tjenester som bruker ordinær autorisasjonskodeflyt.  Siden access_token blir eksporert ut i brukers browser, er det øka risiko for at token lettere kan komme på avveie eller byttes ut/manipuleres.
+Trusselbildet er forskjellig ved bruk av SPA  kontra tjenester som bruker ordinær autorisasjonskodeflyt. Siden access_token blir eksponert ut i brukers browser, er det økt risiko for at token lettere kan komme på avveie eller byttes ut/manipuleres.
 
 Tjenesteeiere må:
 
- * Dersom SPA kun skal aksessere egne API (1st party API), bør man vurdere en backend-for-frontend (BFF) arkitektur, dvs. etablere en tynn API-gateway-komponent som operer som oauth2-klient og omsetter ID-portens id_token til egen sesjon (egne cookies) mellom BFF og SPA.
+ * Dersom SPA kun skal aksessere egne API (1st party API), bør man vurdere en backend-for-frontend (BFF) arkitektur, dvs. etablere en tynn API-gateway-komponent som opererer som oauth2-klient og omsetter ID-portens id_token til egen sesjon (egne cookies) mellom BFF og SPA.
 
  * Dersom man heller velger at SPAens backend-APIer blir sikret av ID-portens access_token direkte, må kunden opprette et egen oauth2-scope for formålet og ikke bare bruke `openid profile` (ellers så kan alle gyldige ID-porten-innlogginger til alle andre tjenester også brukes mot ditt API)
 
- * Man bør bruke kortlevede access_token,  og relativt kort_levede
-
+ * Man bør bruke kortlevede access_token, og relativt kort_levede refresh-tokens
 
 
 Forøvrig anbefaler vi å lese [de siste anbefalingene fra IETF](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07) og følge anbefalingene i denne.  Dette bør være del av egen risikovurdering av de dataene som blir eksport av APIet og vurdere om de sikringsmekanismer som ovennevte tilbyr gir tilstrekkelig beskyttelse.

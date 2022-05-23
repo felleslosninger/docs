@@ -37,6 +37,7 @@ Den kan lastes ned [her](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=h
 
 Digdirs endepunkter er eksponert ut mot Internett, men det må åpnes for trafikk inn og ut mot disse IP-adressene fra server:
 
+**Produksjonsmiljø**
 |    Beskrivelse    | IP-adresse |
 | ------------- |:-------------:|
 | meldingsutveksling.difi.no | 51.144.60.163:443 |
@@ -44,6 +45,19 @@ Digdirs endepunkter er eksponert ut mot Internett, men det må åpnes for trafik
 | oidc.difi.no | 146.192.252.54:443 |
 | maskinporten.no | 146.192.252.50:443 |
 | meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443 |
+| https://srest.dataplatfor.ms/ (Ny transport infrastruktur) | 51.120.1.137 |
+
+**Testmiljø**
+|    Beskrivelse    | IP-adresse |
+| ------------- |:-------------:|
+| qa-meldingsutveksling.difi.no | 51.144.60.111:443/51.105.206.80:443 |
+| qa-stream-meldingsutveksling.difi.no | 40.74.39.255:443 |
+| oidc-ver1.difi.no | 146.192.252.121:443	 |
+| oidc-ver2.difi.no | 146.192.252.121:443	|
+| ver1.maskinporten.no | 146.192.252.118:443 |
+| qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  |
+| https://srest.qa.dataplatfor.ms/ (Ny transport infrastruktur) | 51.120.49.231 |
+
 
 ## Håndtering av virksomhetssertifikat
 

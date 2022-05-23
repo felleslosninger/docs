@@ -4,7 +4,7 @@ permalink: dpi_testmiljo.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 
 Her er en beskrivelse av de testmiljøer som er tilgjengelig for kunder og bruksområdet for disse.

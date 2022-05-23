@@ -39,8 +39,9 @@ folders:
   - title: Om digital postkasse
     jurl: /docs/digitalpostkasse/
 
-  - title: Veiledning og klienter
-    jurl: /resources/begrep/sikkerDigitalPost/innledning/
+  - title: Teknisk dokumentasjon
+    jurl: /dpi_nyinfrastruktur.html
+
 
 - title: eFormidling
   folderitems:

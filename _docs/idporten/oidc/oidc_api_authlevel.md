@@ -21,7 +21,7 @@ Denne tjenesten er en tilleggstjeneste i ID-porten. Se [Samarbeidsportalen](http
 
 ## Bruk av Oauth2
 
-REST-grensesnittet er sikret vha. [server-til-server Oauth](https://difi.github.io/idporten-oidc-dokumentasjon//4_server-to-server-oauth2.html).
+REST-grensesnittet er sikret vha. [server-til-server Oauth](https://docs.digdir.no/docs/Maskinporten/maskinporten_auth_server-to-server-oauth2.html).
 
 
 Følgende scopes aksepteres av grensesnittet:
@@ -56,10 +56,10 @@ Mulige feilkoder er:
 |404 | Forespurt bruker er ikkje registrert som id-porten bruker|
 
 
-## Eksempel-kode
+<!--## Eksempel-kode
 
 Eksempel på bruk av tjenesten kan finnes her:
-[https://github.com/difi/idporten-authlevel-example](https://github.com/difi/idporten-authlevel-example)
+[https://github.com/difi/idporten-authlevel-example](https://github.com/difi/idporten-authlevel-example) -->
 
 ## Informasjon om miljøer
 

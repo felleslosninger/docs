@@ -8,19 +8,31 @@ redirect_from: /eformidling_releasenotes_sentrale_komp
 ---
 (Endringer som er relevant for brukere av eFormidling)
 
+## ServiceRegistry 2.5.0
+22.03.2022
 
+**Endringer**
+* MOVE-2783	Bruk av OSIV kan potensielt gi ytelesproblem. Skrudde av OSIV og fikset lasting av documenttype fra process.
+
+## ServiceRegistry 2.4.0
+28.02.2022
+
+**Endringer**
+* MOVE-2728	Utvide mock for virksomheter med statisk returadresse
+* MOVE-2742 Feilretting logging
 
 ## ServiceRegistry 2.3.0
-15.02.2022
+17.02.2022
 
 **Endringer**
-*
+* MOVE-1992	Støtte for på-vegne-av DPO
 
 ## Virksert 1.6.0 
-15.02.2022
+17.02.2022
 
 **Endringer**
-*
+* MOVE-1992	Støtte for på-vegne-av DPO
+* Diverse tekniske oppgaver
 
 ## ServiceRegistry 2.2.0
 11.01.2022

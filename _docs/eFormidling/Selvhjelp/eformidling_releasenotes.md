@@ -7,6 +7,76 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+## 2.7.0
+10.05.22
+
+**Funksjonalitet**
+
+- Utvida kapabilitietsoppslaget til å også innholde informasjon om innbyggers postkasseleverandør. 
+- Støtte for eDialog via svarInn med fallback avsender ved manglende organisasjonsnummer på avsender.
+
+**Feilrettinger**
+
+- Rettet feil i conversations-APIet som kunne oppstå ved bruk av PostgreSQL.
+
+## 2.6.2
+11.04.2022
+
+**Feilrettinger**
+- Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
+
+
+## 2.6.0
+07.04.2022
+
+**Funksjonalitet**
+- Side for meldingsoversikt viser nå kolonner for "MessageId" og "ConversationId", istedenfor berre "ID".
+
+**Feilrettinger**
+- Feilretting for manglende statuser i status kø-API.
+- Retting av feil relatert til DPI for conversations-API
+
+## 2.5.1
+05.04.2022
+
+**Feilrettinger**
+- Fjerna validering på senderRef som UUID for å støtte bakoverkompatibilitet med BEST/EDU (eFormidling 1)
+
+## 2.5.0
+04.04.2022
+
+**Funksjonalitet**
+- Generert arkivmeldingkvittering legges på kø for forsendelser som går mot DPV og DPF.
+- Fjerna bruk av Optionals på påkrevde felt i SBD.
+- Arkivmeldingkvittering handtering for andre kanalar enn DPO
+
+
+**Feilrettinger**
+- Lagt inn manglande felt ```messageId, system og tidspunkt``` i arkivmelding.xml ved forsendelse frå best/edu (eFormidling 1).  
+
+
+## 2.4.1
+01.04.2022
+
+**Feilrettinger**
+- Retta feil der rekkefølge på innholdet i StandardBusinessDocument hadde ei påkrevd rekkefølge, dette var eit brudd med API-et og påverka nokre implementasjonar av REST-APIet ved sending.
+
+## 2.4.0
+25.03.2022
+
+**Funksjonalitet**
+
+* Støtte for På-vegne-av funksjonalitet for DPO
+* Støtte for DPI på ny infrastruktur. Her kan en velge gammal eller ny infrastruktur vha properties. Gammal infrastruktur er aktivert som standard. Den nye infrastrukturen ikkje er klar per 25.03.22. 
+* Støtte for å lese kvitteringer frå gammal og ny DPI-infrastruktur i parallell. 
+* Støtte for å konfigurere  kønamn i activemq for å ha 2 integrasjonspunkt som brukar samme activemq. 
+* Standardisert/Forenklet avsenderadresse for meldinger sendt på-vegne-av
+* Støtte for å sende post til personer utan å oppgi fødselsnummer
+* Flyttet BusinessCertificateValidator ut i efm-commons biblioteket for å tilrettelegge for gjenbruk. 
+* Støtte for å ekskludere hvilke filer som skal ekskluderes fra print ved bruk av KS SvarUt. 
+
+**Feilrettinger**
+* fiksa feil ved oppretting av manifest for DPI
 
 ## 2.3.2
 27.01.2022

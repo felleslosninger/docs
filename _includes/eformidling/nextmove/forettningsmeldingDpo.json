@@ -6,5 +6,8 @@
         "varselTekst": "Valgfri tekst",
         "taushetsbelagtVarselTekst": "Valgfri tekst", // Kun benyttet for taushetsbelagte meldinger, se under.
         "dagerTilSvarfrist": 7
+    },
+    "dpf": { // Valgfri
+        "forsendelseType": "altinn3.skjema" // Eksempel
     }
 }

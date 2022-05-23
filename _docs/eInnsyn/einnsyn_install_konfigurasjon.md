@@ -22,11 +22,11 @@ Det første som må gjøres er å legge inn korrekte verdier i einnsyn-klient.xm
 	<argument>-Dapplication.moveUrl=</argument>
 	<argument>-Dapplication.inputDirectory=</argument>
 	<argument>-Dapplication.orgnummer=</argument>
+	<argument>-Dapplication.skalKonvertereKlassering=false</argument>
 	<argument>-Dspring.mail.host=</argument>
 	<argument>-Dspring.mail.port</argument>
 	<argument>-Dspring.mail.username=</argument>
 	<argument>-Dspring.mail.password=</argument>
-	<argument>-Dlog4j2.formatMsgNoLookups=true</argument>
 	<argument>sender-2.0.4.jar</argument>
 	<logpath>%BASE%/logs</logpath>
 	<executable>javaw</executable>

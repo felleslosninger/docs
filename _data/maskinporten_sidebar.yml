@@ -9,6 +9,9 @@ folders:
       - title: Overordnet
         jurl: /docs/Maskinporten/maskinporten_overordnet
 
+      - title: English summary
+        jurl: /docs/Maskinporten/maskinporten_summary
+
       - title: Virksomhetssertifikat
         jurl: /docs/Maskinporten/maskinporten_virksomhetssertifikat
 

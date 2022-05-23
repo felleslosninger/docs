@@ -1,0 +1,19 @@
+{
+  "scope": "digitalpostinnbygger:send",
+  "supplier": {
+    "authority": "iso6523-actorid-upis",
+    "ID": "0192:810969342"
+  },
+  "iss": "https://ver2.maskinporten.no/",
+  "client_amr": "virksomhetssertifikat",
+  "token_type": "Bearer",
+  "exp": 1647438118,
+  "delegation_source": "https://tt02.altinn.no/",
+  "iat": 1647437998,
+  "client_id": "DIFI_MOVE_810969342",
+  "jti": "56fKpjkF6LzWxl9FZv4HvKRjo_awkjQMU0UWEaU_SO8",
+  "consumer": {
+    "authority": "iso6523-actorid-upis",
+    "ID": "0192:910076787"
+  }
+}
