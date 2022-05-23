@@ -107,11 +107,11 @@ Følgende miljøer er tilgjengelige for kunder:
 
 ## Test
 
-Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://test-client.test.ansattporten.no/](https://test-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.
+Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://test-client.test.ansattporten.no/](https://test-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.   Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:service","resource": "urn:altinn:resource:2480:40"}]` i authorization_details-feltet.
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Ved å bruke **TestID** som innloggingsmetode slipper man å kontakte Digdir for å få opprettet og resatt testbrukere.  En annen fordel med Tenor er at det kun er syntetiske testdata her, så man slipper å risikere å blande produksjons- og test-data.
 
-
+**MERK:** Dersom testbrukeren ikke finnes i Altinn sitt testmiljø, vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i TT02 en gang.
 
 
 ## Representasjonsforhold og RAR
@@ -337,4 +337,3 @@ Ansattporten sine access_token er svært like [ID-porten sine access token](oidc
 Ansattporten tilbyr ikke et /userinfo-endepunkt.
 
 Siden Ansattporten ikke tilbyr SSO, er det heller ikke behov for å logge brukeren ut, eller måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i circle-of-trust.
-
