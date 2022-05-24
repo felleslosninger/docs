@@ -7,8 +7,20 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.8.0	
+24.05.2022
+
+**Funksjonalitet**
+
+- Lagt til støtte for DPI-kvitteringer på gammelt format for å støtte proxy klient funksjonalitet. 
+
+**Feilrettinger** 
+
+- Lagt til manglande felt i arkivmelding etter mapping frå SvarInn.
+- Manglande transaksjon ved håndtering av kvitteringer for DPI. 
+
 ## 2.7.0
-10.05.22
+10.05.2022
 
 **Funksjonalitet**
 
