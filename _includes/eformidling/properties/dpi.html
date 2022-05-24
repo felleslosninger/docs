@@ -90,6 +90,11 @@
         <td>Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI) og json+xmlsoap (Ny DPI som også poller etter kvitteringer i gammel løsning).</td>
     </tr>
     <tr>
+        <td>difi.move.dpi.receipt-type</td>
+        <td>json</td>
+        <td>Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI). Denne brukes kun i ny DPI, men den må settes til xmlsoap for de som bruker proxy-klienten mot IP, da denne krever kvitteringer på gammelt format.</td>
+    </tr>
+    <tr>
         <td>difi.move.dpi.timeout.connect</td>
         <td>5000</td>
         <td>Connection timeout mot hjørne2 i millisekunder</td>
