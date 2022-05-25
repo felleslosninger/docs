@@ -59,7 +59,7 @@ Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget 
 
 En tjeneste aktiverer støtte for beriket autentisering ved å inkludere informasjon om påkrevd representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
 
-![organsisasjonsvelger](images/idporten/oidc/ansattporten_orgvelger.png)
+![organsisasjonsvelger](/images/idporten/oidc/ansattporten_orgvelger.png)
 
 Brukerreise blir da som følger:
 
