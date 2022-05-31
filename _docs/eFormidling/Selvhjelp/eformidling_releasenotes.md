@@ -7,6 +7,13 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.8.1
+30.05.2022
+
+**Feilrettinger**
+
+- Manglande transaksjon på status-grensesnittet.
+
 # 2.8.0	
 24.05.2022
 

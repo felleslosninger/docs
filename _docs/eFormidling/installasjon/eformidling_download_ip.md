@@ -12,10 +12,11 @@ redirect_from: /eformidling_download_ip
 ### Siste versjon av integrasjonspunktet
  
 
-### [Integrasjonspunktet 2.8.0 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.0/integrasjonspunkt-2.8.0.jar)
+### [Integrasjonspunktet 2.8.1 (JAR)](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.1/integrasjonspunkt-2.8.1.jar)
 
-### [Integrasjonspunktet 2.8.0 (Docker container image) ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.8.0/image[…]c6e56ebbea8cf06aac57ef2bebcffd2d9331d0f04f42d?context=explore)
+### [Integrasjonspunktet 2.8.1 (Docker container image) ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.8.1/images/sha256-f7a0e401e076e62f330ddfea03e37744d215b4c8f9e90b1658b9a5bf2abcd0b8?context=explore)
 
+```docker pull digdir/integrasjonspunkt:2.8.1```
 
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
