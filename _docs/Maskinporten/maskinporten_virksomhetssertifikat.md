@@ -55,4 +55,4 @@ Ja, man kan bruke samme sertifikat på flere klienter i Maskinporten.
 
 ## Støtter Maskinporten de nye SEID 2.0 sertifikatene?
 
-Nei, men vi jobber med å utvikle støtte for dette. 
+Ja, Maskinporten støtter SEID 2.0 sertifikater fra både Buypass og Commfdes. 
