@@ -182,7 +182,7 @@ google_analytics_code: UA-12685001-29
 # you can modify the breadcrumb in _includes/breadcrumb.html
 
 # Display breadcrumbs at all?
-breadcrumb_display: false
+breadcrumb_display: true
 
 # Display Home path in breadcrumb?
 breadcrumb_home_display: true
@@ -222,7 +222,7 @@ uistring:
     title: Dokumentasjon av fellesløsninger # title to appear in nav bar and page meta
     description: Teknisk dokumentasjon av Digitaliseringsdirektoratets fellesløsninger # Displays as site description meta tag for site
     copyright: Digitaliseringsdirektoratet # appears in footer
-    breadcrumb_home_name: Home # display name for "Home" path in the breadcrumb
+    breadcrumb_home_name: Hjem # display name for "Home" path in the breadcrumb
     tableofcontents: Innhold # text that appears before in-page table of contents
     expandall: Utvid # appears as text in sidebar to expand all levels
     collapseall: Kollaps # appears as text in sidebar to collapse all levels
