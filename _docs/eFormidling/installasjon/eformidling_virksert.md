@@ -23,7 +23,7 @@ Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lag
 > * NB7! eSegl sertifikater er ikke egnet for bruk i eFormidling. 
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
-Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/hjelp/virksomhetssertifikat)
+Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
 
 ### Legge sertifikatet i Java Key Store (JKS)
 
