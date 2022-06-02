@@ -23,7 +23,7 @@ Trusselbildet er forskjellig ved bruk av SPA  kontra tjenester som bruker ordin�
 
 Tjenesteeiere må:
 
- * Dersom SPA kun skal aksessere egne API (1st party API), bør man vurdere en backend-for-frontend (BFF) arkitektur, dvs. etablere en tynn API-gateway-komponent som opererer som oauth2-klient og omsetter ID-portens id_token til egen sesjon (egne cookies) mellom BFF og SPA.
+ * Vurdere en backend-for-frontend (BFF) arkitektur, dvs. etablere en tynn API-gateway-komponent som opererer som oauth2-klient og omsetter ID-portens id_token til egen sesjon (egne cookies) mellom BFF og SPA. Dette er det anbefalte arkitekturmønsteret ved bruk av ID-porten.
 
  * Dersom man heller velger at SPAens backend-APIer blir sikret av ID-portens access_token direkte, må kunden opprette et egen oauth2-scope for formålet og ikke bare bruke `openid profile` (ellers så kan alle gyldige ID-porten-innlogginger til alle andre tjenester også brukes mot ditt API)
 
