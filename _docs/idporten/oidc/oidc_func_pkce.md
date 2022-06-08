@@ -28,4 +28,4 @@ Alle klienter i ID-porten kan og bør bruke PKCE, men det er påkrevd for browse
 
 Dersom `code_verifier` er `xyo94uhy3zKvgB0NJwLms86SwcjtWviEOpkBnGgaLlo` så blir utrekna `code_challenge` lik `b7elB7ZyxIXgFyvBznKvxl7wOB-H17Pz0a3B62NIMFI=`.
 
-[Her er et verktøy for å rekne ut challenges:] (https://gist.github.com/tonyxu-io/21eb57ab2a4aeb2a3ee10f77542abe64)
+[Her er et verktøy for å rekne ut challenges:](https://gist.github.com/tonyxu-io/21eb57ab2a4aeb2a3ee10f77542abe64)
