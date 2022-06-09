@@ -7,6 +7,11 @@ product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
+## ELMA update 09.06.2022 (3.15.0)
+
+[MOVE-2646]	Eksponera meir data for Peppol Directory
+
++ Generelle ytelsesforbedringer
 
 ## ELMA update 03.05.2022 (3.14.5)
 
