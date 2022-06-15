@@ -19,7 +19,7 @@ redirect_from: /varsling
 - [Når skal avsendere varsle innbygger om digitale forsendelser?](https://samarbeid.difi.no/felleslosninger/digital-postkasse-til-innbyggere/dokumentasjon/hvordan-skal-jeg-bruke-varsling-i-digital-postkasse) (artikkel i samarbeidsportalen)
  --->
  
-- Avsenderstyrt varsling settes opp i [sdp_melding.xsd]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/xsd/sdp_skjema) og er en del av en [DigitalPostMelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/DigitalPostMelding)
+- Avsenderstyrt varsling settes på meldingsnivå i schema [Digital](schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json) og er en del av en [forretningsmeldingen](resources/begrep/sikkerDigitalPost/nyinf/oversikt/dpi_skjema.html) 
 
 - Beskrivelse av [varslingsinnstillinger (med eksempler)]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Varsler)
 
