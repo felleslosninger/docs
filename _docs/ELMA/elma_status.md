@@ -7,9 +7,18 @@ product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
+## ELMA update 16.06.2022 (3.15.1)
+
+### Bug fix
+```
+[MOVE-2878] Feil ved forsøk på å legge inn nytt sertifikat
+```
+
 ## ELMA update 09.06.2022 (3.15.0)
 
+```
 [MOVE-2646]	Eksponera meir data for Peppol Directory
+```
 
 + Generelle ytelsesforbedringer
 
