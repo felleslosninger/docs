@@ -25,7 +25,7 @@ The client includes the `pid`-claim in the JWT grant in order trigger pid-restri
 
 ## token response
 
-The resulting access token will include the user person identifier in the `pid`-claim.
+The resulting access token will include the person identifier of the intented subject of subsequent API calls in the `pid`-claim.
 
 ## API / resource server tasks
 
