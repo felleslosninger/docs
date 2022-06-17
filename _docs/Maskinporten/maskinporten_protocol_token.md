@@ -111,6 +111,13 @@ If the token is audience-restricted, the following claim will also be included:
 | aud   |  The target API for this token. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band. See [audience-restriction]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_audience_restricted_tokens) for details. |  `https://api.examples.com/users`|
 
 
+If the token is enduser-restricted, the following claim will also be included:
+
+| claim | value | example |
+| --- | --- | --- |
+| pid   |  The enduser subject for this token. Some Resource Servers require enduser-restricted tokens. a See [enduser-restriction]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_pid_restricted_tokens) for details. |  `01010199999`|
+
+
 ###  Identifying organizations
 
 ID-porten and Maskinporten use a forward-compatible notation for identifying organizations. This is because we expect that the solutions in the future will be extended handle both foreign organizations, organizations not having a registration in the Enhetsregisteret (i.e. "offentlige utvalg") as well a sub-entities within an organization.
@@ -149,7 +156,7 @@ The following values may be returned for the `client_amr`-claim.  The values are
 
 **The client and resource server MUST validate all responses from Maskinporten according to the Oauth2 standards as well as best practice recommendations from the IETF.**
 
-Access tokens must always be validated by the Resource Server / API before granting access. Some key steps in the validation are: 
+Access tokens must always be validated by the Resource Server / API before granting access. Some key steps in the validation are:
 * verify that the issuer of the token is Maskinporten (`iss=https://maskinporten.no/`)
 * verify that the token is signed
 * verify that the signature is created by the signing keys of Maskinporten published at our /jwks-endpoint

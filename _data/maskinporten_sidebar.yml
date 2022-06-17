@@ -63,6 +63,9 @@ folders:
       - title: Audience-begrensning
         jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens
 
+      - title: Innbygger-bundne tokens
+        jurl: /docs/Maskinporten/maskinporten_func_pid_restricted_tokens
+
 
 - title: Spørsmål og svar
   folderitems:
