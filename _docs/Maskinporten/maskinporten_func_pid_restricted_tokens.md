@@ -1,6 +1,7 @@
 ---
 title: End-user-restricted tokens
 description: End-user-restricted access tokens
+summary: "Maskinporten-tokens restricted to a specific end-user"
 
 sidebar: maskinporten_sidebar
 product: Maskinporten
