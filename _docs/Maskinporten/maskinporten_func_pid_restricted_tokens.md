@@ -1,7 +1,6 @@
 ---
-title: innbygger-bundne tokens
-description: innbygger-bundne access tokens
-summary: "Maskinporten-token som er låst til ein gitt innbygger"
+title: End-user-restricted tokens
+description: End-user-restricted access tokens
 
 sidebar: maskinporten_sidebar
 product: Maskinporten
@@ -21,7 +20,7 @@ Another countermeasure that APIs securing sensitive data should consider, is req
 
 ## token request
 
-The client includes the `pic`-claim in the JWT grant in order trigger pid-restriction.
+The client includes the `pid`-claim in the JWT grant in order trigger pid-restriction.
 
 ## token response
 
@@ -29,5 +28,5 @@ The resulting access token will include the user person identifier in the `pid`-
 
 ## API / resource server tasks
 
-The API must reject tokens not containing `pid`.
-The API must reject tokens having a different `pid` than the subject of the API call.
+* The API must reject tokens not containing `pid`.
+* The API must reject tokens having a different `pid` than the subject of the API call.
