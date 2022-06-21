@@ -7,6 +7,13 @@ product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
+## ELMA update 21.06.2022 (3.15.2)
+
+### Bug fix
+```
+[MOVE-2879] Kan ikke legge til endpoint 
+```
+
 ## ELMA update 16.06.2022 (3.15.1)
 
 ### Bug fix
