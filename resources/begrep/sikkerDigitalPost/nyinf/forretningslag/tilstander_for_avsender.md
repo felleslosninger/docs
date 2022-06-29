@@ -4,4 +4,6 @@ permalink: dpi_sending_av_digital_post.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+
+[Meldingsflyt](https://docs.digdir.no/dpi_nyinfrastruktur.html#meldingsflyt)
+[Prosessbeskrivelse](https://docs.digdir.no/dpi_nyinfrastruktur.html#1--avsender-henter-token-fra-maskinporten)
