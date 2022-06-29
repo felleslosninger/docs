@@ -10,7 +10,7 @@ Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdi
 
 Denne dokumentasjonen beskriver ny og kommende transportinfrastruktur for digital post til innbyggere, samt hvordan en kan ta denne i bruk og integrere egne avsendersystemer. Trenger du tilgang til [tidligere/utgått DPI-dokumentasjon finnes denne her](/resources/begrep/sikkerDigitalPost/innledning/)
 
-# Bakgrunn
+## Bakgrunn
 
 Den proprietære transportinfrastrukturen for Digital Postkasse til innbyggere skal erstattes med en standard-infrastruktur for meldingsutvekling i det offentlige, dvs 4-hjørnes-modell med CEF eDelivery/PEPPOL. Følgende aktører inngår:
 - Hjørne 1: Avsender (og evt. avsender sin leverandør/databehandler)
