@@ -14,6 +14,163 @@ sidebar: eformidling_sidebar
 
 ## Integrasjonspunktet 
 
+## 2.8.2 
+01.07.2022
+
+**Funksjonalitet**
+
+- Lagt til indeks i databasetabell (conv_id indeks i message_status). Reduserer behovet for iterasjon igjennom tabeller og aukar fart på oppslag i database. 
+
+**Feilrettinger**
+
+- Rettet feil ved duplikate innslag i databasetabell. (next_move_message_entry)
+
+***
+
+## 2.8.1
+30.05.2022
+
+**Feilrettinger**
+
+- Manglande transaksjon på status-grensesnittet.
+
+***
+
+## 2.8.0	
+24.05.2022
+
+**Funksjonalitet**
+
+- Lagt til støtte for DPI-kvitteringer på gammelt format for å støtte proxy klient funksjonalitet. 
+
+**Feilrettinger** 
+
+- Lagt til manglande felt i arkivmelding etter mapping frå SvarInn.
+- Manglande transaksjon ved håndtering av kvitteringer for DPI. 
+
+***
+
+## 2.7.0
+10.05.2022
+
+**Funksjonalitet**
+
+- Utvida kapabilitietsoppslaget til å også innholde informasjon om innbyggers postkasseleverandør. 
+- Støtte for eDialog via svarInn med fallback avsender ved manglende organisasjonsnummer på avsender.
+
+**Feilrettinger**
+
+- Rettet feil i conversations-APIet som kunne oppstå ved bruk av PostgreSQL.
+
+***
+
+## 2.6.2
+11.04.2022
+
+**Feilrettinger**
+- Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
+
+***
+
+## 2.6.0
+07.04.2022
+
+**Funksjonalitet**
+- Side for meldingsoversikt viser nå kolonner for "MessageId" og "ConversationId", istedenfor berre "ID".
+
+**Feilrettinger**
+- Feilretting for manglende statuser i status kø-API.
+- Retting av feil relatert til DPI for conversations-API
+
+***
+
+## 2.5.1
+05.04.2022
+
+**Feilrettinger**
+- Fjerna validering på senderRef som UUID for å støtte bakoverkompatibilitet med BEST/EDU (eFormidling 1)
+
+***
+
+## 2.5.0
+04.04.2022
+
+**Funksjonalitet**
+- Generert arkivmeldingkvittering legges på kø for forsendelser som går mot DPV og DPF.
+- Fjerna bruk av Optionals på påkrevde felt i SBD.
+- Arkivmeldingkvittering handtering for andre kanalar enn DPO
+
+
+**Feilrettinger**
+- Lagt inn manglande felt ```messageId, system og tidspunkt``` i arkivmelding.xml ved forsendelse frå best/edu (eFormidling 1).  
+
+***
+
+## 2.4.1
+01.04.2022
+
+**Feilrettinger**
+- Retta feil der rekkefølge på innholdet i StandardBusinessDocument hadde ei påkrevd rekkefølge, dette var eit brudd med API-et og påverka nokre implementasjonar av REST-APIet ved sending.
+
+***
+
+## 2.4.0
+25.03.2022
+
+**Funksjonalitet**
+
+* Støtte for På-vegne-av funksjonalitet for DPO
+* Støtte for DPI på ny infrastruktur. Her kan en velge gammal eller ny infrastruktur vha properties. Gammal infrastruktur er aktivert som standard. Den nye infrastrukturen ikkje er klar per 25.03.22. 
+* Støtte for å lese kvitteringer frå gammal og ny DPI-infrastruktur i parallell. 
+* Støtte for å konfigurere  kønamn i activemq for å ha 2 integrasjonspunkt som brukar samme activemq. 
+* Standardisert/Forenklet avsenderadresse for meldinger sendt på-vegne-av
+* Støtte for å sende post til personer utan å oppgi fødselsnummer
+* Flyttet BusinessCertificateValidator ut i efm-commons biblioteket for å tilrettelegge for gjenbruk. 
+* Støtte for å ekskludere hvilke filer som skal ekskluderes fra print ved bruk av KS SvarUt. 
+
+**Feilrettinger**
+* fiksa feil ved oppretting av manifest for DPI
+
+***
+
+## 2.3.2
+27.01.2022
+
+**Funksjonalitet/feilretting**
+
+* Bugfix 2.3.1
+
+***
+
+## 2.3.1
+26.01.2022
+
+**Funksjonalitet/feilretting**
+
+* støtte for å spesifisere forsendelsestype for KS SvarUt på meldingsnivå
+
+***
+
+## 2.3.0
+17.01.2022
+
+**Funksjonalitet/feilretting**
+
+* støtte for å legge fagsystem og versjon som er i bruk i eFormidling i user-agent header
+* Retta feil der Statuser for Avtalt-meldinger blir ikke sendt	
+* Retta feil der Hikari konsumerte alle tilgjengelige connections til database	
+* Missing default value for property difi.ssl.key-store-type
+* Logge utvalgte properties under oppstart i IP	
+* Støtte for å sende meldinger over DPO for samme organisasjon fra fleire integrasjonspunkt	
+* Justere sending av taushetsbelagt/sensistiv post til Altinn	
+* Ryddet i xml/ws-biblioteker	
+* Legg inn document_identifier i status logginga	
+* Hindre integrasjonspunktet i å starte opp dersom kontakt med Eureka ikkje oppnås	
+* Flyttet konfigurasjon fra Eureka til integrasjonspunktet	
+* Oppgradert integrasjonspunktet til Spring boot 2.6.2
+* Håndtering av meldinger uten vedlegg eller asic ved at /api/messages/in/pop/<id> returnerer 204. 
+
+
 ### 2.2.6
 08.10.2021
 
@@ -63,7 +220,7 @@ sidebar: eformidling_sidebar
 
 ***
 
-### 2.2.2
+## 2.2.2
 14.06.2021
 
 ### Hva er endret/nytt?
@@ -87,7 +244,7 @@ I denne versjonen er det gjort flere endringer for å bedre paralellitet ved sen
 
 ***
 
-### 2.2.1
+## 2.2.1
 05.05.2021
 
 ### Hva er endret/nytt?
@@ -105,7 +262,7 @@ Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det e
 
 ***
 
-### 2.2.0
+## 2.2.0
 09.02.2021
 
 ### Hva er endret/nytt?
@@ -149,7 +306,7 @@ Full endringslogg: [Release notes for 2.2.0](https://difino.atlassian.net/secure
 
 ***
 
-### 2.1.3
+## 2.1.3
 18.08.2020
 
 ### Hva er endret/nytt?
@@ -166,7 +323,7 @@ Full endringslogg: [Release notes for 2.1.3](https://difino.atlassian.net/secure
  
 ***
 
-### 2.1.2
+## 2.1.2
 01.07.2020
 
 ### Hva er endret/nytt?
@@ -209,75 +366,75 @@ Full endringslogg: [Release notes for 2.1.0](https://difino.atlassian.net/secure
 
 ***
 
-### 2.0.10
+## 2.0.10
 16.12.19
 
 [Release notes for 2.0.10](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10173)
 
 ***
 
-### 2.0.9
+## 2.0.9
 12.12.19
 
 [Release notes for 2.0.9](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10172)
 
 ***
 
-### 2.0.8
+## 2.0.8
 09.12.19
 
 [Release notes for 2.0.8](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10170)
 
 ***
 
-### 2.0.7
+## 2.0.7
 18.11.19
 
 [Release notes for 2.0.7](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10169)
 
 ***
 
-### 2.0.6
+## 2.0.6
 01.11.19
 
 [Release notes for 2.0.6](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10168)
 
 ***
 
-### 2.0.5
+## 2.0.5
 16.10.19
 
 [Release notes for 2.0.5](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10166)
 
 ***
 
-### 2.0.4
+## 2.0.4
 07.10.19
 
 [Release notes for 2.0.4](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10165)
 
 ***
 
-### 2.0.3
+## 2.0.3
 01.10.19
 
 [Release notes for 2.0.3](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10163)
 
 ***
 
-### 2.0.2
+## 2.0.2
 25.09.19
 
 [Release notes for 2.0.2](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10161)
 
 ***
 
-### 2.0.1
+## 2.0.1
 [Release notes for 2.0.1](https://difino.atlassian.net/secure/ReleaseNote.jspa?projectId=10000&version=10162)
 
 ***
 
-### 2.0.0
+## 2.0.0
 20.09.19
 - eFormidling 2.0 API 
 - mm.
@@ -297,7 +454,7 @@ Det vil si:
 
 ***
 
-### 1.7.93
+## 1.7.93
 12.10.2018
 ```
 MOVE-956 setter connect- og sockettimeout i restklienten mot servicebus. For å unngå kø på servicebus. 
@@ -305,10 +462,11 @@ MOVE-956 setter connect- og sockettimeout i restklienten mot servicebus. For å 
 
 ***
 
-### 1.7.92
+## 1.7.92
 24.09.2018
 
 Dette er endringer fra v1.7.90 t.o.m v.1.7.92. Ingen prod-release på 90 og 91.
+
 ```
 MOVE-852 endring av databasemodell for å støtte MySQL
 MOVE-839 Defaultverdier for jpInnhold, orgnr i SvarInn-melding. Mulighet for å angi "fiktiv" organisasjon dersom 
@@ -320,12 +478,11 @@ MOVE-858 Manglende xml-tag i AppReceipt fra p360
 MOVE-870 Oppgradering av azure-servicebus bibliotek (brukes ifm. batch-lesing av eInnsynsmeldinger)
 MOVE-869 Fjernet namespace prefix i AppReceipt xml siden WebSak sliter med å lese disse
 MOVE-874 Sikkerhetsnivå for DPF-meldinger blir nå satt basert på oppslaget fra Service registry mot SvarUt. Dersom mottaker har både nivå 3 og 4 velges sistnevnte
-
 ```
 
 ***
 
-### 1.7.89
+## 1.7.89
 21.08.2018
 ```
 MOVE-794 - AppReceipts på egen kø
@@ -341,6 +498,38 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 ***
 
 ## Sentrale komponenter
+
+## ServiceRegistry 2.5.0
+22.03.2022
+
+**Endringer**
+* MOVE-2783	Bruk av OSIV kan potensielt gi ytelesproblem. Skrudde av OSIV og fikset lasting av documenttype fra process.
+
+## ServiceRegistry 2.4.0
+28.02.2022
+
+**Endringer**
+* MOVE-2728	Utvide mock for virksomheter med statisk returadresse
+* MOVE-2742 Feilretting logging
+
+## ServiceRegistry 2.3.0
+17.02.2022
+
+**Endringer**
+* MOVE-1992	Støtte for på-vegne-av DPO
+
+## ServiceRegistry 2.2.0
+11.01.2022
+
+**Endringer**
+* MOVE-2192	Meir spesifikk feilmelding ved utgått sertifikat
+
+
+## ServiceRegistry 2.1.5
+10.11.2021
+
+**Endringer**
+* støtte for ny utgave av virksomhetssertifikatstandard (SEID v2) for Buypass-sertifikat.
 
 ### ServiceRegistry 2.1.4
 14.06.2021
@@ -443,12 +632,23 @@ ___
 ___
 
 
+## Virksert
+
+### Virksert 1.6.0 
+17.02.2022
+
+**Endringer**
+* MOVE-1992	Støtte for på-vegne-av DPO
+* Diverse tekniske oppgaver
+
+## Valgfrie komponenter
+
 ## KOSMOS
 
 ### KOSMOS 1.1.0
 29.06.2021
 
-KOSMOS lansert.
+KOSMOS lansert. "Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor". Denne applikasjonen kan brukes i tradisjonelle servermiljø for å holde integrasjonspunktet oppdatert automatisk. 
 
 ***
 

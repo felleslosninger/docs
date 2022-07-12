@@ -11,13 +11,16 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ## Integrasjonspunktet
 
-> [**Integrasjonspunktet 2.2.6 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.2.6/integrasjonspunkt-2.2.6.jar)
+> [**Integrasjonspunktet 2.8.2 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.2/integrasjonspunkt-2.8.2.jar)
 
-> [**Integrasjonspunktet 2.2.6 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.2.6/images/sha256-2b462e7d699b2dfbc0495e58c2dc54cb289d641611ae8f48240620594e769153?context=explore)
+> [**Integrasjonspunktet 2.8.2 (Docker container image)** ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.8.2/images/sha256-9fab05b1216e8e6df56ee75208d1d94d89450efbc7729cd2464f3ab0040f4ce0?context=explore)
+
+```docker pull digdir/integrasjonspunkt:2.8.2```
 
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](https://docs.digdir.no/eformidling_forutsetninger.html#brannmur%C3%A5pninger-i-produksjon)
 
+Endringslogg finner du [her.](eformidling_introduksjon_endringslogg.html)
 
 ---
 

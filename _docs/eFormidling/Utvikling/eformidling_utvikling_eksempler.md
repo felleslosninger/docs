@@ -16,5 +16,6 @@ Eksempler på bruk av eFormidling:
 - [Eksempel på journalpost til eInnsyn](eformidling_utvikling_eksempel_journalpost.html)
 - [Eksempel på møte til eInnsyn](eformidling_utvikling_eksempel_mote.html)
 - [Eksempel på saksbehandling](eformidling_utvikling_eksempel_saksbehandling.html)
+- [Eksempel på saksbehandling med på vegne av](eformidling_utvikling_eksempel_paa-vegne-av.html)
 - [Eksempel på taushetsbelagt saksbehandling](eformidling_utvikling_eksempel_taushetsbelagt_saksbehandling.html)
 - [Eksempel på vedtak til innbygger](eformidling_utvikling_eksempel_vedtak_til_innbygger.html)
