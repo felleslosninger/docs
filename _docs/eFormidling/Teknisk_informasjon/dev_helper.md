@@ -144,8 +144,12 @@ En kan også oppgi tekst for lenkeknapp, frist, og beskrivelse for lenke. [Se ek
 
 ## Sende DPO/DPV på-vegne-av 
 
-Ved bruk av versjon 2.4.0 eller nyere av integrasjonspunktet er det mulig å sende på vegne av en annen organisasjon eller underenhet via DPO og DPV. For å sende på vegne av benyttes Altinn autorisasjon hvor daglig leder i din virksomhet kan registrere hvem som kan sende på vegne av virksomheten. 
+Ved bruk av versjon 2.4.0 eller nyere av integrasjonspunktet er det mulig å sende på vegne av en annen organisasjon eller underenhet via DPO og DPV. 
 
-For å sende på vegne av må du gjøre tilpasning i Standard Business Document Header på **sender.identifier.value** feltet. Dette støtter nå et adresseringsformat som ser slik ut ```0192:<orgnr>:<påVegneAvOrgnr>```. Eksempel: Digitaliseringsdirektoratet ønsker å sende på vegne av Digitaliseringsdirektoratet Leikanger , da ser **sender.identifier.value** feltet slik ut ```0192:991825827:987464291```. 
+For å sende på vegne av må du gjøre tilpasning i Standard Business Document Header på **sender.identifier.value** feltet. Dette støtter nå et adresseringsformat som ser slik ut ```0192:<orgnr>:<påVegneAvOrgnr>```. For eksempel: Digitaliseringsdirektoratet ønsker å sende på vegne av Digitaliseringsdirektoratet Leikanger , da ser **sender.identifier.value** feltet slik ut ```0192:991825827:987464291```. 
+
+### Tilgangsstyring
+Hvem som kan sende på vegne av hvem styres av Digdir. kontakt ```servicedesk@digdir.no``` for å få registrert underenhet som gyldig mottaker på vegne av din organisasjon.
+
 
 På-vegne av DPI er også støttet, [ser mer her.](https://docs.digdir.no/docs/eFormidling/Teknisk_informasjon/message.html#p%C3%A5-vegne-av-avsender---dpv-og-dpi)
