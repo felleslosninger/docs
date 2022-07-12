@@ -140,3 +140,12 @@ Forretningsmeldingen har attributten "metadataFiler" der nøkler refererer til v
 Det er også nødvendig at MetaFil/utvidelse gis mimetype ```application/vnd.difi.dpi.lenke+xml``` i tilfellet lenke utenfor brev(andre mimetypes for andre utvidelser)
 
 En kan også oppgi tekst for lenkeknapp, frist, og beskrivelse for lenke. [Se eksempel her.](https://begrep.difi.no/SikkerDigitalPost/1.3.0/forretningslag/Utvidelser/Lenke)
+
+
+## Sende DPO/DPV på-vegne-av 
+
+Ved bruk av versjon 2.4.0 eller nyere av integrasjonspunktet er det mulig å sende på vegne av en annen organisasjon eller underenhet via DPO og DPV. For å sende på vegne av benyttes Altinn autorisasjon hvor daglig leder i din virksomhet kan registrere hvem som kan sende på vegne av virksomheten. 
+
+For å sende på vegne av må du gjøre tilpasning i Standard Business Document Header på **sender.identifier.value** feltet. Dette støtter nå et adresseringsformat som ser slik ut ```0192:<orgnr>:<påVegneAvOrgnr>```. Til dømes: Digitaliseringsdirektoratet ønsker å sende på vegne av Digitaliseringsdirektoratet Leikanger , da ser **sender.identifier.value** feltet slik ut ```0192:991825827:987464291```. 
+
+På-vegne av DPI er også støttet, [ser mer her.] (https://docs.digdir.no/docs/eFormidling/Teknisk_informasjon/message.html#p%C3%A5-vegne-av-avsender---dpv-og-dpi)
