@@ -97,7 +97,7 @@ Integrasjonspunktet har støtte for mange flere properties enn de som er nevnt o
 Alle innstillinger for gitt type forsendelse(DPO/DPF/DPV) må legges inn, men det finnes noen unntak.
 
 #### DPF
-Du trenger alle innstillinger utenom ```difi.move.fiks.inn.fallbackSenderOrgNr=```. Denne er for at eFormidling skal kunne videresende post fra SvarInn som kommer fra virksomheter som ikke sender med orgnummer i metadata. Her setter du et helt valgfritt og fiktivt organisasjonsnummer. AppReceipts tilbake til dette orgnummeret blir discardet og dermed ikke sendt. 
+Du trenger alle innstillinger utenom ```difi.move.fiks.inn.fallbackSenderOrgNr=```. Denne er for at eFormidling skal kunne videresende post fra SvarInn som kommer fra virksomheter som ikke sender med orgnummer i metadata, eller fra innbygger via eDialog. Her setter du et helt valgfritt og fiktivt organisasjonsnummer. AppReceipts tilbake til dette orgnummeret blir discardet og dermed ikke sendt. 
 
 Ved bruk av denne propertyen så vil all post se ut til å komme fra samme fiktive orgnummer, så her må arkivar lese i meldingen for å se hvem den ekte avsenderen er.
 

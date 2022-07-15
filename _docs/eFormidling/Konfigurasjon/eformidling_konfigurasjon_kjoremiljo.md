@@ -7,48 +7,23 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
+eFormidling og integrasjonspunktet har to miljøer tilgjengeliggjort for brukerne: *staging* og *production*. Begge miljø krever bruk av en reell virksomhet som er registrert i Brønnøysundregistrene og har et organisasjonsnummer. I tillegg kreves det at virksomheten har et virksomhetssertifikat. Her skilles det på test-sertifikat og prod-sertifikat for å kunne kjøre integrasjonspunktet i forskjellige miljø. 
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+## Staging-miljø
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+For å kjøre integrasjonspunktet i staging-miljøet er det påkrevd at virksomheten har et test-virksomhetssertifikat (Bestilles hos Buypass/Commfides). Den offentlige delen av nøkkelen må sendes til Digdir på e-post  <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. Digdir må også gi dere tilganger til miljøet for alle eFormidling-tjenestene dere skal bruke. 
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
+For å starte integrasjonspunktet med staging profil angis følgende argument: 
+```-Dspring.profiles.active=staging```
 
-## Etter det første innholdet kan vi ha første header, på nivå 2
+## Produksjons-miljø
 
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
+For å kjøre integrasjonspunktet i produksjonsmiljø-miljøet er det påkrevd at virksomheten har et virksomhetssertifikat (Bestilles hos Buypass/Commfides). Den offentlige delen av nøkkelen må sendes til Digdir på e-post  <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. Digdir må også gi dere tilganger til miljøet for alle eFormidling-tjenestene dere skal bruke. 
 
-## Kanskje ein tabell?
+For å starte integrasjonspunktet med production profil angis følgende argument: 
+```-Dspring.profiles.active=production```
 
-| A | B | C |
-| 1 | 2 | 3 |
+## Relaterte sider
 
-## Kanskje ein kodesnutt?
-
-```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
-```
-
-## Kanskje eit diagram?
-
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
-
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
-
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
-
+- [Se hvordan starte integrasjonspunktet ](eformidling_drift_start_og_stopp.html)
+- [Administrasjon av virksomhetssertifikat](eformidling_drift_sertifikatadministrasjon.html)

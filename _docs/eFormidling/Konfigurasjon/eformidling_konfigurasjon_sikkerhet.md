@@ -7,48 +7,14 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Title (fra header) havner i Google "Tittel \| eFormidling - Digdir Docs \|".
+## Integrasjonspunkt API
 
-Title (fra header) blir også overskrift så treng ikkje gjenta det.
+eFormidling 2.0 API-et i integrasjonspunktet er i utgangspunktet åpent sidan applikasjonen er tenkt køyrt i eit lukka miljø, men den støtter basic auth med brukernavn og passord. Dette kan aktiveres via properties. 
 
-Det øverste innholdet havner i Google og bør beskrive innholdet på sida godt.
+For å aktivere basic auth på API-et setter du følgande properties, du definerer sjølv bruker og passord. Desse setter du der du har dine properties, om det er *integrasjonspunkt-local.properties* eller du setter properties via miljøvariablar så kan du bruke følgande:
 
-Description (fra header) og summary (fra header) ser ikkje ut til å bli brukt og kan med fordel stå tomt.
-
-## Etter det første innholdet kan vi ha første header, på nivå 2
-
-[Lær Markdown](https://www.markdownguide.org/cheat-sheet/)
-
-## Kanskje ein tabell?
-
-| A | B | C |
-| 1 | 2 | 3 |
-
-## Kanskje ein kodesnutt?
-
+``` 
+difi.move.feature.enable-auth=true
+spring.security.user.name=securityuser
+spring.security.user.password=securepassword
 ```
-public static void main(String[] args) {
-  System.out.println("Hello world");
-}
-```
-
-## Kanskje eit diagram?
-
-[Lær Mermaid](https://mermaid-js.github.io/mermaid/#/)
-
-<div class="mermaid">
-sequenceDiagram
-A->>B: Noen
-B->>C: Saker
-A->>C: Skjer
-C->>B: Sekvensielt
-</div>
-
-<div class="mermaid">
-graph TD
-    A[Boks A] --> B[Boks B]
-    B --> C{Valg}
-    C -->|Alternativ 1| D[Boks D]
-    C -->|Alternativ 2| E[Boks E]
-</div>
-

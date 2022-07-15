@@ -20,7 +20,7 @@ Om du har installert integrasjonspunktet som en Windows tjeneste så må du bytt
 
 Det er denne linjen som må oppdateres med tilsvarende versjon som ```integrasjonspunkt-[versjon].jar``` filen du lastet ned.
 ```
-<argument>%BASE%/integrasjonspunkt-2.2.6.jar</argument>
+<argument>%BASE%/integrasjonspunkt-2.9.0.jar</argument>
 ```
 
 [Se hvordan reinstallere windows tjenesten](eformidling_drift_start_og_stopp.html#reinstallasjon-av-tjenesten)

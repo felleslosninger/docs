@@ -7,7 +7,7 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Minimal konfigurasjon for å kjøre integrasjonspunktet krever port, konfigurasjon av virksomhetssertifikat og organisasjonsnummeret til virksomheten. I tillegg må du aktivere den tjenesten du ønsker å bruke. Feks DPO og DPV. Integrasjonspunktet har også mange andre konfigurasjonsmuligheter en kan styre via properties, disse finner du på denne siden. 
+Minimal konfigurasjon for å kjøre integrasjonspunktet krever port, konfigurasjon av virksomhetssertifikat og organisasjonsnummeret til virksomheten. I tillegg må du aktivere den tjenesten du ønsker å bruke. Feks DPO og DPV, men DPE(eInnsyn) er enabled by default. Integrasjonspunktet har også mange andre konfigurasjonsmuligheter en kan styre via properties, disse finner du på denne siden. 
 
 Minimum for å starte et integrasjonspunkt: 
 
