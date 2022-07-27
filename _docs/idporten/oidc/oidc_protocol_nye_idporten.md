@@ -23,8 +23,8 @@ Overgangen til ny løsning vil skje i 4 steg:
 | Steg | Dato | Beskrivelse |
 |-|-|-|
 |1: Prøvedrift | November 2022 | Den nye OIDC-issueren er gjennomtestet og settes i produksjon, klar for reelle tjenester. Driftsplatformen vil være godkjent for 24/7-drift, og informasjonssikkerhet vil være ivaretatt på lik linje med dagens løsning. I denne fasen kan det oppstå mindre "innkjøringsproblemer" mens vi bygger hands-on-erfaring med den nye løsningen. For at prøvedriften skal bli vellykket, er vi derfor helt avhengige av at et tilstrekkelig antall kundetjenester tar løsningen i bruk tidlig. Nye integrasjoner vil derfor blir pålagt å bruke ny løsning, men vi ønsker også at mange eksisterende integrasjoner flyttes. |
-|2: Full SLA | Mars 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  Migreringsperioden starter, og alle OIDC-integrasjoner må ila neste 6 måneder flyttes.   Kunder som er avhengige av SSO med andre, må koordinere migrering seg imellom (Feks. de som har SSO til Altinn, må vente til neste fase).
-|3: SAML flyttes | Mai/Juni 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle openam til ny proxy-løsning. Siden gammel OIDC også benytter SAML internt, medfører dette i praksis at all gjenstående trafikk flyttes til ny løsning denne dagen. |
+|2: Full SLA | Mars 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  Migreringsperioden starter, og alle OIDC-integrasjoner må ila neste 6 måneder flyttes.   Kunder som er avhengige av SSO med andre, må koordinere migrering seg imellom (Feks. de som har SSO til Altinn, må vente til SAML-flyttinga i neste fase).
+|3: SAML flyttes | Mai/Juni 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle openam til ny proxy-løsning. Siden gammel OIDC også benytter SAML internt idag, medfører dette i praksis at all gjenstående trafikk flyttes til ny løsning denne dagen. |
 |4: Sanering | August 2023 |  Den gamle OIDC-issueren skrus av.  OIDC-integrasjoner som ennå ikke har migrert til ny issuer, vil slutte å fungere.
 
 ## Protokoll-målbilde
@@ -55,7 +55,7 @@ Merk at i prøvedriftsperioden og i starten av migreringsfasen så vil ikke klie
 
 ## SSO-fri innlogging
 
-Nye ID-porten vil tilby SSO-fri innlogging.  Hvordan dette skal realiseres er ennå ikke bestemt, det er flere mulige alternativer som å ha to issuere (med og uten sso), eller at kunden gjennom selvbetjening velger om klienten deltar i sso eller ikke.
+Nye ID-porten vil tilby SSO-fri innlogging.  Hvordan dette skal realiseres er ennå ikke bestemt, det er flere mulige alternativer som å ha to issuere (med og uten sso), eller at kunden gjennom selvbetjening velger om klienten skal delta i SSO-sesjonen eller ikke.
 
 
 ## onbehalfof
@@ -77,8 +77,8 @@ I `access_token` vil `sub` også få nye verdier.
 Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
 
 - er det hensiktsmessig at revokasjon av access_token/refresh_token også fører til at SSO-sesjonen blir terminert, slik som idag?
-- bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten skjermbilde?
-- hva skal kreves, for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
+- bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten som del av utloggingen ?
+- hvor strenge krav skal vi engentlig stille for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
 
 ### Støtte for implicit flow blir fjernet
 
