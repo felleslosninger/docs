@@ -22,7 +22,7 @@ ID-porten tilbyr p.t. tre metoder for å pseudonymisere fødselsnummer i token.
 
 ### 1: Ren oauth2 med bruk av Opaque token
 
-Ved "ren" oauth2 (altså ikke OIDC), så mottar ikke klienten noe `id_token`, kun `access_token`.  API-tilbyder må opprette et eget oauth2-scope for formålet, og dette må være konfigurert til ha `token_type=OPAQUE`.  Da vil mottatt `access_token` ikke være meningsbærende, og APIet / backend kan da [introspecte tokenet for å hente ut fødselsnummer]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).
+Ved "ren" oauth2 (altså ikke OIDC), så mottar ikke klienten noe `id_token`, kun `access_token`.  API-tilbyder må opprette et eget oauth2-scope for formålet, og dette må være konfigurert til ha `token_type=OPAQUE`.  Da vil mottatt access_token ikke være meningsbærende, og APIet/backend kan da [introspecte tokenet for å hente ut fødselsnummer]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).
 
 Klienten må passe på å *ikke* etterspørre `openid`-scopet (for da vil den få et id_token som inneholder fødselsnummer...).  Dette mønsteret passer derfor best når klient og API tilhører samme organisasjon, eller API-tilbyder stoler på at konsumentene konfigurer riktig.
 
