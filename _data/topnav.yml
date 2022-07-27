@@ -9,7 +9,7 @@ navbar_dropdowns:
   - title: Navigasjon
     folderitems:
     - title: eFormidling
-      url: /eform_index.html
+      url: /eformidling_introduksjon.html
     - title: ID-porten
       url: /idporten_index.html
     - title: Kontaktregisteret
