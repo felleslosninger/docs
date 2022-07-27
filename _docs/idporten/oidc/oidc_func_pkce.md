@@ -18,11 +18,11 @@ Metoden er basert på  følgende steg:
 
 1. klienten genererer en hemmelighet `code_verifier` ved hver innlogging.  
 2. I /authorize-kallet sendes en hash'et versjon `code_challenge` av hemmeligheten som en del av forespørselen
-3. I /token-kallet må `code_verifier` sendes med. En eventuell angriper som har snappet opp autorisasjonskoden, kjenner ikke hemmeligheten, og vil derfor ikke få utlevert tokens.
+3. I /token-kallet må `code_verifier` sendes med. En eventuell angriper som har snappet opp autorisasjonskoden underveis, kjenner ikke hemmeligheten, og vil derfor ikke få utlevert tokens.
 
 Vi støtter bare `code_challenge_method=S256`
 
-Alle klienter i ID-porten kan og bør bruke PKCE, men det er påkrevd for browser- og native klienter.
+Alle klienter i ID-porten må bruke PKCE.
 
 **Merk at code_verifier må vere minst 43 karakterer lang, og ikkje lengre enn 128.**
 
