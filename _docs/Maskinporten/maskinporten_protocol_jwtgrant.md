@@ -39,7 +39,7 @@ Note that production certificates are not supported in test environments.
 | --- | --- |--- |
 |aud| Required | The intended target for this JWT grant, ie. the identifier for Maskinporten.   The value in production is `https://maskinporten.no/`  |
 |iss| Required |issuer - Your client ID |
-|iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
+|iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time. To allow for clock skew and network delays, Maskinporten will only accept grants where iat is less than 10 seconds ahead/after our clock.  |
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
 |scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
