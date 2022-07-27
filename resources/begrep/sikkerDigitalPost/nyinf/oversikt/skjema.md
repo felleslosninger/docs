@@ -4,11 +4,11 @@ permalink: dpi_skjema.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
-Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
+Siden innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 
-### Forettningsmelding schema
+### Forretningsmelding schema
 - [Digital](schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json)
 - [Utskrift](schemas/dpi/innbyggerpost_dpi_utskrift_1_0.schema.json)
 - [Leveringskvittering](schemas/dpi/innbyggerpost_dpi_leveringskvittering_1_0.schema.json)
@@ -18,6 +18,9 @@ Sidne innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 - [ReturpostKvittering](schemas/dpi/innbyggerpost_dpi_returpostkvittering_1_0.schema.json)
 - [Feil](schemas/dpi/innbyggerpost_dpi_feil_1_0.schema.json)
 - [FlyttetDigitalpostMelding](schemas/dpi/innbyggerpost_dpi_flyttet_1_0.schema.json)
+
+### Dokumentpakke(ASiC) xsd
+- [Manifest](/resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd)
 
 ### Delte skjema
 - [Commons](schemas/common/commons.schema.json)

@@ -1,18 +1,20 @@
 ---
 title: Sikkerhet  
-permalink: sikkerhet_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /sikkerhet_index
 ---
 
 ## Sikkerhet
 
   - Integritet ivaretas ved at dokumentene (posten til mottaker) pakkes
-    og signeres iht. [Associated Signature Container
-    (ASiC)](http://www.etsi.org/deliver/etsi_ts/103100_103199/103174/02.02.01_60/ts_103174v020201p.pdf)
-    fra ETSI. Dette formatet ivaretar integriteten over tid.
-  - Konfidensialitet fra avsender til mottaker ivaretas ved bruk av
-    [Cryptographic Message Syntax
-    (CMS)](http://tools.ietf.org/html/rfc5652) fra IETF
+    og signeres ihht. ASiC-E med XADeS (se 7.2.1 ASiC-E XAdES Conformance Clause)
+    - [ETSI TS 102 918 V.1.3.1 (2013-06) Associated Signature Containers (ASiC)](http://www.etsi.org/deliver/etsi_ts/103100_103199/103174/02.02.01_60/ts_103174v020201p.pdf)
+    - [ETSI TS 101 903 V.1.4.2 (2010-12) XML Advanced Electronic Signatures (XAdES)](https://www.etsi.org/deliver/etsi_ts/101900_101999/101903/01.04.02_60/ts_101903v010402p.pdf) 
+    - Ytterligere krav til bruk av ASiC-E med XAdES (inkludert tillatte signeringsalgoritmer) er spesifisert av Digdir på denne siden
+  - Konfidensialitet fra avsender til mottaker ivaretas ved å pakke ASiC-arkivet ihht. CMS
+    - [RFC 5652 Cryptographic Message Syntax (CMS)](https://datatracker.ietf.org/doc/html/rfc5652)
+    - Ytterligere krav til bruk av CMS (inkludert tillatte krypteringsalgoritmer) er spesifisert av Digdir på denne siden
   - Integritetsbeskyttet [Standard Business Document
     (SBD)](http://www.gs1.org/ecom/standards/guidelines#s2) fra
     UN/CEFACT knytter sammen den krypterte pakken med adressering,
@@ -70,8 +72,8 @@ videre begrenset i henhold til profilen definert i [Baseline Profile
 
 #### Signatur i dokumentpakken for sikker digital post
 
-Dokumentpakken bør være signert av [Behandlingsansvarlig](../Aktorer.md),
-men kan signeres av [Databehandler](../Aktorer.md).
+Dokumentpakken bør være signert av [Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer),
+men kan signeres av [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).
 
 Signaturen skal være i henhold til [XAdES (ETSI TS 101 903)](etsi3) med
 basisprofilen definert i [XAdES Baseline Profile (ETSI TS 103
@@ -242,7 +244,7 @@ Ved bruk av aes256-CBC skal padding gjøres i henhold til [kapittel 6.3 i
 CMS spesifikasjonen](ietf5_6_3)
 
 Integriteten til den krypterte dokumentpakken ivaretas av
-[Dokumentpakkefingeravtrykk](../../begrep/Dokumentpakkefingeravtrykk.md)
+[Dokumentpakkefingeravtrykk]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Dokumentpakkefingeravtrykk)
 som ligger i en signert melding.
 
 Det er avsenders ansvar å generere en AES-nøkkel med tilstrekkelig

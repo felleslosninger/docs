@@ -1,9 +1,10 @@
 ---
 title: Automatisk oppdatering av integrasjonspunkt 
 description: Korleis sette opp og bruke Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS
-permalink: eformidling_auto_update.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_auto_update
 ---
 
 # Introduksjon
@@ -17,9 +18,9 @@ Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - K
 > Om du ikkje har integrasjonspunktet så må desse settast opp også, sjå [integrasjonspunkt dokumentasjon.](https://docs.digdir.no/eformidling_properties_config.html)
 
 ## Laste ned
-> [Her kan du laste ned kosmos-1.1.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+> [Her kan du laste ned kosmos-1.2.0.jar ](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar)
 
-> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
+> [Signaturen finn du her](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar.asc)
 
 ## Funksjonalitet
 KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
@@ -54,7 +55,7 @@ Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og k
 
 1. Legg inn jar-fila og ```kosmos-local.properties``` i ønska katalog.
 2. Sett opp naudsynte konfigurasjonar i ```kosmos-local.properties```. Sjå under.
-3. [Laste ned Digdir sin offentlege nøkkel](/resources/eformidling/public_keys/eformidling-key.asc) og lagre valgt katalog.
+3. [Laste ned Digdir sin offentlege nøkkel]({{site.baseurl}}/resources/eformidling/public_keys/eformidling-key.asc) og lagre valgt katalog.
 
 ## Konfigurere properties fil
 Åpne ```kosmos-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties.
@@ -78,7 +79,7 @@ spring.mail.port=<set-your-port-here>
 # Digitaliseringsdirektoratet public key paths. i.e: file:keyname.asc
 kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
 ```
-*[Last ned properties-fila her](/resources/eformidling/kosmos-local.properties)*
+*[Last ned properties-fila her]({{site.baseurl}}/resources/eformidling/kosmos-local.properties)*
 
 ### Setje tidspunkt for oppdatering
 *Valgfritt*
@@ -151,7 +152,7 @@ o1Dt
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-[Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-key.asc)
+[Last ned offentleg nøkkel]({{site.baseurl}}/resources/eformidling/public_keys/eformidling-key.asc)
 
 Den offentlege nøkkelen vår har fingeravtrykket: 
 ```
@@ -193,31 +194,31 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
   </log>
 </service>
 ```
-*[Last ned konfigurasjonsfila her](/resources/eformidling/kosmos-service.xml)*
+*[Last ned konfigurasjonsfila her]({{site.baseurl}}/resources/eformidling/kosmos-service.xml)*
 
 > **Merk:** Visst du har mellomrom i mappenamn i stien bør du endre %BASE% til absolutt sti. Døme: *C:\\"kosmos app"\\sti\\til\\her\\kosmos.X.Y.Z.jar*
 
 Døme: No bør du ha desse filene i liggande i mappa.
     
-![Filer for å køyre applikasjon som Windows wrapper](/images/eformidling/kosmos-filer.PNG)
+![Filer for å køyre applikasjon som Windows wrapper]({{site.baseurl}}/images/eformidling/kosmos-filer.PNG)
 
 ## Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
 
 **I produksjon**
-```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=production -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+```java -jar kosmos-x.y.z.jar --spring.profiles.active=production```
 
 **I staging**
-```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties```
+```java -jar kosmos-x.y.z.jar --spring.profiles.active=staging```
 
 
 ## Starte i Linux
 For å starte kan ein bruke samme kommando som over, men om ein ynskjer å starte KOSMOS som ei bakgrunnsteneste kan ein legge på ein ampersand på slutten av kommandoen. Her treng du sjølvsagt ikkje wrapper filene som vist på biletet over, men heller ha ein mappestruktur som liknar på dette: 
 
-![Filer for å køyre applikasjon i linux](/images/eformidling/kosmos-linux-filer.PNG)
+![Filer for å køyre applikasjon i linux]({{site.baseurl}}/images/eformidling/kosmos-linux-filer.PNG)
 
 Døme:
-```java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties &```
+```java -jar kosmos-x.y.z.jar --spring.profiles.active=staging &```
 
 Like etter at kommandoen er eksekvert vil du få returnert ein PID for prosessen. Denne kan nyttast om du treng å stoppe prosessen. Du vil også kunne finne den ved å bruke *htop* og sjå etter kommandoen, eller i *top* og stenge ned java prosessen. Integrasjonspunktet startar som eigen Java-prosess. 
 

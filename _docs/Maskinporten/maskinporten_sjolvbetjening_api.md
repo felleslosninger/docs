@@ -2,9 +2,10 @@
 title: Selvbetjening av Maskinporten via API
 description:  Selvbetjening av Maskinporten via API
 summary: 'Her finn du guidar og tutorials på korleis du kan sjølvbetjene Maskinporten via API'
-permalink: maskinporten_sjolvbetjening_api.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_sjolvbetjening_api
 ---
 
 Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyder og API-konsument.
@@ -23,11 +24,11 @@ For å administrere API'er må administrasjons-klienten ha tilgang til scopet id
 
 Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
-Les også ["Grunnleggende prosedyre for API-sikring".](oidc_api_admin_maskinporten.html#grunnleggende-prosedyre-for-api-sikring)
+Les også ["Grunnleggende prosedyre for API-sikring".]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin_maskinporten#grunnleggende-prosedyre-for-api-sikring)
 
 ### Opprette API - Oauth2-selvbetjeningsklient
 
-Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [oidc_api_admin_maskinporten.html](oidc_api_admin_maskinporten.html) for detaljer.
+Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API management-løsning, må du lage en Oauth2-klient som benytter selvbetjeningsAPIet til Maskinporten.  Se [{{site.baseurl}}/docs/idporten/oidc/oidc_api_admin_maskinporten]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin_maskinporten) for detaljer.
 
 #### Eksempel på å opprette scope
 
@@ -116,7 +117,7 @@ Ta kontakt med servicedesk@digdir.no for å få tilgang.
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html.](https://difi.github.io/felleslosninger/oidc_api_admin.html)
+For å kunne registrere en klient via vår selvbetjenings-APi, må du først opprette en selvbetjeningsklient.  Se [{{site.baseurl}}/docs/idporten/oidc/oidc_api_admin.]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin)
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 

@@ -1,8 +1,9 @@
 ---
 
 title: Sending av digital post på vegne av andre  
-permalink: sdp_send_paa_vegne_av_andre.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_send_paa_vegne_av_andre
 ---
 
 ## Sending av Post på vegne av andre
@@ -24,7 +25,7 @@ virksomhetssertifikat på vegne av Helfo dersom Helfo tillatter dette.
 Både Helfo og Nav er opprettet med kontoer hos postkasseleverandørene,
 Helfo som Ansvarlig postavsender og Nav som Teknisk postavsender.
 
-[![Bruk av databehandler](helfo_eksempel.png)
+[![Bruk av databehandler]({{site.baseurl}}/images/helfo_eksempel.png)
 
 ### Eksempel - Sending fra underliggende avdeling
 
@@ -39,7 +40,7 @@ for alle de underliggende prosjektene som er postavsender.
 Både Kreftregisteret og de underliggende prosjektene er opprettet med
 kontoer hos postkasseleverandørene.  
 Kreftregisteret bruker
-[avsenderidentifikator](avsenderidentifikator.html) for å skille på
+[avsenderidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/avsenderidentifikator) for å skille på
 hvilket prosjekt som er postavsender.
 
-[![Bruk av avsenderidentifikator](kreftregister_eksempel.png)
+[![Bruk av avsenderidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/kreftregister_eksempel.png)

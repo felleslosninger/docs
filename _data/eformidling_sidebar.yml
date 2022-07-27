@@ -132,60 +132,59 @@ folders:
 - title: (gammel) Installasjon av integrasjonspunktet
   folderitems:
     - title: Oppgradere til ny versjon
-      jurl: /eformidling_ip_upgrade.html
+      jurl: /docs/eFormidling/installasjon/eformidling_oppgradere
     - title: Last ned integrasjonspunktet
-      jurl: /eformidling_download_ip.html
+      jurl: /docs/eFormidling/installasjon/eformidling_download_ip
     - title: Forutsetninger for installasjon
-      jurl: /eformidling_forutsetninger.html
+      jurl: /docs/eFormidling/installasjon/eformidling_prereq
     - title: Virksomhetssertifikat
-      jurl: /eformidling_virksomhetssertifikat.html
+      jurl: /docs/eFormidling/installasjon/eformidling_virksert
     - title: Konfigurasjon av properties
-      jurl: /eformidling_properties_config.html
+      jurl: /docs/eFormidling/installasjon/eformidling_properties_config
     - title: Oppstart av integrasjonspunktet
-      jurl: /eformidling_ip_run.html
+      jurl: /docs/eFormidling/installasjon/eformidling_ip_run
     - title: KOSMOS - Automatisk oppdatering av integrasjonspunktet
-      jurl: /eformidling_auto_update.html
+      jurl: /docs/eFormidling/installasjon/eformidling_auto_update
     - title: KOSMOS guide
-      jurl: /eformidling_kosmos_user_guide.html
+      jurl: /docs/eFormidling/installasjon/eformidling_kosmos_user_guide
     - title: Opprette brukere i eFormidling
-      jurl: /eformidling_create_users.html
+      jurl: /docs/eFormidling/installasjon/eformidling_create_users
     - title: Installer integrasjonspunktet i AKS
-      jurl: /integrasjonspunkt_aks.html
+      jurl: /docs/eFormidling/installasjon/ip-aks
 - title: (gammel) Selvhjelp og nyttig informasjon
   folderitems:
     - title: Nyttig informasjon
-      jurl: /eformidling_selfhelp.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_selfhelp
     - title: Typiske feil
-      jurl: /eformidling_selfhelp_typical_errors.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_selfhelp_typical_errors
     - title: Trafikkflyt, kvitteringer og status
-      jurl: /eformidling_selfhelp_traffic_flow.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_selfhelp_traffic_flow
     - title: Sporing av forsendelser
-      jurl: /eformidling_api.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_api
     - title: Testmiljø eFormidling
-      jurl: /eformidling_testing_env.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_testing_env
     - title: Endringslogg integrasjonspunktet
-      jurl: /eformidling_releasenotes.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_releasenotes
     - title: Endringslogg sentrale komponenter
-      jurl: /eformidling_releasenotes_sentrale_komp.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_releasenotes_sentrale_komp
     - title: Sak-arkiv
-      jurl: /eformidling_veiledning_sakark.html
+      jurl: /docs/eFormidling/Selvhjelp/eformidling_veiledning_sakark
 - title: (gammel) Utviklerdokumentasjon
   folderitems:
     - title: Om eFormidling 2.0
-      jurl: /eformidling_nm_about.html
+      jurl: /docs/eFormidling/Teknisk_informasjon/aboutNextMove
     - title: Arkivmeldingen
-      jurl: /eformidling_nm_arkivmeldingen.html
+      jurl: /docs/eFormidling/Teknisk_informasjon/arkivmeldingen
     - title: Meldingsflyt
-      jurl: /eformidling_nm_meldingsflyt.html
+      jurl: /docs/eFormidling/Teknisk_informasjon/meldingsflyt
     - title: Meldingen
-      jurl: /eformidling_nm_message.html
+      jurl: /docs/eFormidling/Teknisk_informasjon/message
     - title: Sikkerhet
-      jurl: /eformidling_nm_sikkerhet.html
+      jurl: /docs/eFormidling/Teknisk_informasjon/security
     - title: Utivkler API-supplement
-      jurl: /eformidling_dev.html
+      jurl: /docs/eFormidling/Teknisk_informasjon/dev_helper
     - title: Grensesnitt / REST docs
-      jurl: /eformidling_nm_restdocs.html
-
+      jurl: /docs/eFormidling/Teknisk_informasjon/restdocs
 
 ###########################
 

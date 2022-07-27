@@ -1,7 +1,8 @@
 ---
 title: endringsNummer
-permalink: endringsnummer.html
+
 sidebar: begrep_sidebar
+redirect_from: /endringsnummer
 ---
 
 | ---- | ---- |

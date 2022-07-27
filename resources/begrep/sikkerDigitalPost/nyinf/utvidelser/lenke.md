@@ -4,7 +4,7 @@ permalink: dpi_lenke.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 
 |---|---|
@@ -12,7 +12,7 @@ sidebar: dpi_timo_sidebar
 | Mime-Type | application/vnd.difi.dpi.lenke+xml |
 | Datatype   | complexType |
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
-| XSD        | [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd) |
+| XSD        | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd) |
 
 ### Attributer
 

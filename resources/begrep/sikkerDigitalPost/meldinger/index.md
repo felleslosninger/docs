@@ -1,8 +1,9 @@
 ---
 
 title: Forretningsmeldinger  
-permalink: sdp_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_index
 ---
 
 ## Forretningsmeldingene i Sikker Digital Post
@@ -33,14 +34,14 @@ og er en av følgende:
 
 | Type | Beskrivelse |
 | --- | --- |
-| [Digitalpost](DigitalPostMelding.md) | Forsendelse av digital post |
-| [LeveringsKvittering](LeveringsKvittering.md) | Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt |
-| [ÅpningsKvittering](AapningsKvittering.md) | Kvittering fra Innbygger for at digital post er åpnet |
-| [Varslingfeilet](VarslingfeiletKvittering.md) | Kvittering for at en spesifisert varsling ikke har blitt sendt |
-| [MottaksKvittering](MottaksKvittering.md) | Kvittering fra utskrift og forsendelsestjenesten om at melding er mottatt og lagt til print |
-| [ReturpostKvittering](ReturpostKvittering.md) | Kvittering fra utskrift og forsendelsestjenesten om at posten ikke har blitt levert til Mottaker. |
-| [Feil](Feil.md) | Generell melding om at det har skjedd en feil. |
-| [FlyttetDigitalpost](FlyttetDigitalPostMelding.md) | For flytting av post fra en postkasse til en annen. Brukes kun i mellom postkasseleverandørene |
+| [Digitalpost]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png) | Forsendelse av digital post |
+| [LeveringsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/LeveringsKvittering) | Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt |
+| [ÅpningsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/aapningskvittering) | Kvittering fra Innbygger for at digital post er åpnet |
+| [Varslingfeilet]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/VarslingfeiletKvittering) | Kvittering for at en spesifisert varsling ikke har blitt sendt |
+| [MottaksKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/MottaksKvittering) | Kvittering fra utskrift og forsendelsestjenesten om at melding er mottatt og lagt til print |
+| [ReturpostKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/ReturpostKvittering) | Kvittering fra utskrift og forsendelsestjenesten om at posten ikke har blitt levert til Mottaker. |
+| [Feil]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/Feil) | Generell melding om at det har skjedd en feil. |
+| [FlyttetDigitalpost]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/FlyttetDigitalPostMelding) | For flytting av post fra en postkasse til en annen. Brukes kun i mellom postkasseleverandørene |
 
 ### Felles meldingsatributt
 
@@ -65,7 +66,7 @@ Det er satt følgende krav til signaturen av forretningsmeldingene:
   - Fingeravtrykksalgoritmen i referansene skal være
     <http://www.w3.org/2001/04/xmlenc#sha256>
   - Signature skal være en signatur av Meldingen og signatur av
-    [StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md).
+    [StandardBusinessDocumentHeader]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader).
   - BØR være signert av
-    [Behandlingsansvarlig](../forretningslag/Aktorer.md), men KAN signeres
-    av [Databehandler](../forretningslag/Aktorer.md).
+    [Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer), men KAN signeres
+    av [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).

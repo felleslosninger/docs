@@ -1,7 +1,8 @@
 ---
 title: prioritetType
-permalink: prioritettype.html
+
 sidebar: begrep_sidebar
+redirect_from: /prioritettype
 ---
 
 | ---- | ---- |

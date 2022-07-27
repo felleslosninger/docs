@@ -3,6 +3,7 @@
         "sikkerhetsnivaa": "",
         "hoveddokument": "",
         "avsenderId": "", // valgfri
+        "fakturaReferanse": "", // valgfri
         "tittel": "",
         "spraak": "NO",
         "digitalPostInfo": {

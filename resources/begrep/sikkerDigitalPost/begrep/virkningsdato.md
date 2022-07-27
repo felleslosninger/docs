@@ -1,7 +1,8 @@
 ---
 title: virkningsdato
-permalink: virkningsdato.html
+
 sidebar: begrep_sidebar
+redirect_from: /virkningsdato
 ---
 
 | ---- | ---- |

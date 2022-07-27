@@ -1,7 +1,8 @@
 ---
 title: Sertifikat  
-permalink: ot_sertifikat.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_sertifikat
 ---
 
 |---|---|

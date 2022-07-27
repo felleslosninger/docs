@@ -2,9 +2,10 @@
 title: Konvolutt og melding
 description: Beskrivelse av konvolutt og melding
 summary: ""
-permalink: eformidling_nm_message.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_nm_message
 ---
 
 En inndelt i tre logiske deler: Adressering, forretningsmelding og dokumentpakke - som er selve meldingen man ønsker å sende.
@@ -88,7 +89,7 @@ Associated Signature Containers er et pakkeformat som er designet for å ivareta
 
 Arkivmeldinger er meldinger som sendes mellom sak-/arkivsystemer basert på NOARK5 metadata. 
 Dersom mottaker ikke har integrasjonspunkt, vil avsenders integrasjonspunkt mappe meldingen til mottakers foretrukne mottaksplattform. I første omgang vil dette i hovedsak dreie seg SvarInn og SvarInn2 etterhvert som denne tas i bruk. Dersom mottaker ikke er knyttet til en annen plattform, vil meldingen sendes til Digital postkasse for virksomheter (DPV). 
-En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle meldingstyper i sitt integrasjonspunkt. Meldingene man ikke ønsker å motta vil da routes til virksomhetens postboks i AltInn via DPV.
+En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle meldingstyper i sitt integrasjonspunkt. Meldingene man ikke ønsker å motta vil da sendes til virksomhetens postboks i AltInn via DPV.
 
 
 | Prosess | Dokumenttype | 
@@ -120,16 +121,34 @@ En kan som mottaker med integrasjonspunkt velge at en ikke ønsker motta alle me
 
 \* dokumenttypen er forbeholdt kontrollmeldinger i infrastrukturen og skal ikke brukes av integrasjoner
 
-
+#### Forretningsmelding _arkivmelding_
 ```json
 {% include /eformidling/nextmove/forettningsmeldingDpo.json %}
 ```
-<!---
-- betydning av felter 
-- mapping mot dpv
-- mapping til ks
--->
+#### Forretningsmelding _arkivmelding\_kvittering_
+```json
+"arkivmelding_kvittering": {
+    "receiptType" : "OK",
+    "relatedToMessageId" : "5f57494f-9ce7-47ec-853d-f212a65b3dbe",
+    "messages" : [ {
+        "code" : "Recno",
+        "text" : "315890"
+    } ]
+}
+```
 
+### Taushetsbelagt DPV
+eFormidling støtter å sende taushetsbelagt post via DPV. Denne meldingskategorien skal benyttes dersom meldingen inneholder særlig sensitive personopplysninger og taushetsbelagt informasjon. Mer om forutsetninger for bruk av meldingen, og krav til roller for lesetilgang kan leses på Altinns sider [her](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/#støtte-for-taushetsbelagt-post).
+
+| Prosess | Dokumenttype | 
+|---------|--------------|
+|urn:no:difi:profile:arkivmelding:taushetsbelagt:ver1.0 | |
+|  |urn:no:difi:arkivmelding:xsd::arkivmelding |
+
+Standard varslingstekst for taushetsbelagte meldinger er:
+> $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For å få tilgang til meldingen, er det nødvendig at noen i $reporteeName$ har fått tildelt rollen «Taushetsbelagt post fra det offentlige» i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen «Taushetsbelagt post» på Altinns nettsider.
+
+Denne varslingsteksten kan enten overstyres per melding i dens respektive forretningsmelding, eller generelt for alle meldinger ved å sette `difi.move.dpv.sensitive-notification-text` til valgt tekst i Integrasjonspunktet. Teksten kan inneholde substitusjonsvariablene `$reporteeName$` (mottakernavn) og `$reporterName$` (avsendernavn).
 
 ### Digital post til innbygger
 
@@ -211,10 +230,13 @@ Begge prosessene støtter både digitalpost og fysisk post.
 
 Avtalt er en bilateral meldingstype som lar avsender og mottaker sende en forhåndsbestemt forretningsmelding som kan være strukturert eller ustrukturert. 
 
-| Prosess | Dokumenttype | 
-|---|---|
-|urn:no:difi:profile:avtalt:avtalt:ver1.0 | |
-|  |urn:no:difi:avtalt:xsd::avtalt |
+| Prosess                                    | Dokumenttype                         | 
+|--------------------------------------------|--------------------------------------|
+| urn:no:difi:profile:avtalt:avtalt:ver1.0   |                                      |
+|                                            | urn:no:difi:avtalt:xsd::avtalt       |
+| urn:no:difi:profile:avtalt:response:ver1.0 |                                      |
+|                                            | urn:no:difi:eformidling:xsd::status* |
+|                                            | urn:no:difi:eformidling:xsd::feil*   |
 
 
 Det er ikke opprettet en egen type kvittering for forretningsmelding av typen Avtalt. 

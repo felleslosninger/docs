@@ -2,9 +2,10 @@
 title: Typiske feil og hvordan løse de
 description: Selvhjelp og nyttig informasjon som øking av loggnivå, loggrullering, trafikkflyt mm. 
 summary: "Typiske feil ved konfigurasjon av integrasjonspunktet og spesielt eFormidling"
-permalink: eformidling_selfhelp_typical_errors.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_selfhelp_typical_errors
 ---
 
 Mykje kan gå feil når ein setter opp integrasjonspunktet. Under har vi forsøkt å liste opp vanlege feil og korleis du kan unngå eller løyse desse sjølv.
@@ -20,7 +21,7 @@ Kontakt Digitaliseringsdirektoratet på <a href="mailto:servicedesk@digdir.no">s
 ## DPO 
 DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter har et integrasjonspunkt og DPO aktivert for å motta/sende.
 
-Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](eformidling_create_users.html#opprette-dpo-bruker-altinn-formidlingstjeneste)
+Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_create_users#opprette-dpo-bruker-altinn-formidlingstjeneste)
 
 ### ErrorId 0. UserId 0
 ```
@@ -46,7 +47,7 @@ Dette er fordi brukaren er blitt låst pga for mange forsøk med feil passord. E
 ### Sjekk at brukernamn og passord er korrekt
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. (Krever SoapUi installert)
 
-> [SoapUi prosjektet kan lastes ned her](/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
+> [SoapUi prosjektet kan lastes ned her]({{site.baseurl}}/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
 
 1. Last ned prosjektet
 2. Start SoapUi og importer prosjektet
@@ -130,7 +131,7 @@ Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. KontaktDig
 ### Sjekk at brukernamn og passord er korrekt
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse. (Krever SoapUi installert)
 
-> [SoapUi prosjektet kan lastes ned her](/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
+> [SoapUi prosjektet kan lastes ned her]({{site.baseurl}}/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
 
 1. Last ned prosjektet
 2. Start SoapUi og importer prosjektet
@@ -193,7 +194,7 @@ Her kan det også være fleire grunner til dette, blant annet:
 ### Invalid location size
 
 Dette er ikke en error, men en warning. Denne kan forekomme når receipts.mv.db databasen inneholder data fra tidligere versjoner av integrasjonspunktet. Altså at det er oppgradert utan å tømme denne. Dette er inga krise, men vil vises i loggen. Kan fjernes ved å 
-[gjøre følgende](eformidling_selfhelp.html#fersk-installasjon-av-integrasjonspunktet) 
+[gjøre følgende]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_selfhelp#fersk-installasjon-av-integrasjonspunktet) 
 
 ```
 2018-11-29 09:46:45.933  WARN 3932 --- [main] o.a.a.store.kahadb.MessageDatabase       : Cannot recover message audit

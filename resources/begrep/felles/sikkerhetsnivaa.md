@@ -1,7 +1,8 @@
 ---
 title: sikkerhetsnivaa
-permalink: 2sikkerhetsnivaa.html
+
 sidebar:
+redirect_from: /2sikkerhetsnivaa
 ---
 
 | ---- | ---- |

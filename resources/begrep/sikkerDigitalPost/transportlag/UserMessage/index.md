@@ -1,8 +1,9 @@
 ---
 
 title: UserMessage  
-permalink: sdp_index_usermessage.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_index_usermessage
 ---
 
 ## {{page.title}}
@@ -19,20 +20,20 @@ sidebar: dpi_sidebar
 
 UserMessage blir brukt når innholdet i SOAP-meldingen er en
 forretningsmelding. I sikker digial post er type forretningsmelding
-definert i [meldingen](../../meldinger/index.md).  
+definert i [meldingen]({{site.baseurl}}/resources/begrep/felles/).  
 eb:UserMessage skal bygges opp ved å tolke innholdet i meldingen som
 skal formidles, samt settinger angitt i
-[P-Modes](../Meldingsutveksling/index.md)
+[P-Modes]({{site.baseurl}}/resources/begrep/felles/)
 
 ### Attributter
 
 | Identifikator | Kardinalitet | Datatype | Kommentar |
 | --- | --- | --- | --- |
 | mpc | 1..1 | xs:anyURI | Konstantverdi som angir kanal som skal benyttes |
-| [MessageInfo](MessageInfo.md) | 1..1 | eb:MessageInfo | Intern identifikator og timestamp |
-| [PartyInfo](PartyInfo.md) | 1..1 | eb:PartyInfo | Informasjon om avsender og mottaker |
-| [CollaborationInfo](CollaborationInfo.md) | 1..1 | eb:CollaborationInfo | Informasjon om avtalt samhandlingsmønster for meldingen |
-| [PayloadInfo](PayloadInfo.md) | 1..1 | eb:PayloadInfo | Informasjon om selve forretningsmeldingen |
+| [MessageInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/UserMessage/MessageInfo) | 1..1 | eb:MessageInfo | Intern identifikator og timestamp |
+| [PartyInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/UserMessage/PartyInfo) | 1..1 | eb:PartyInfo | Informasjon om avsender og mottaker |
+| [CollaborationInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/UserMessage/CollaborationInfo) | 1..1 | eb:CollaborationInfo | Informasjon om avtalt samhandlingsmønster for meldingen |
+| [PayloadInfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/UserMessage/PayloadInfo) | 1..1 | eb:PayloadInfo | Informasjon om selve forretningsmeldingen |
 
 ### Eksempel
 

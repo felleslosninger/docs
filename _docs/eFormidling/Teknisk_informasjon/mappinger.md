@@ -1,8 +1,9 @@
 ---
 title: Mappinger mellom meldingsformater
 description: Mappinger mellom meldingsformater
-permalink: eformidling_mappinger.html
+
 product: eFormidling
+redirect_from: /eformidling_mappinger
 ---
 
 ### BestEdu - Arkivmelding

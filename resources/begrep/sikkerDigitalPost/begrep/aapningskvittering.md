@@ -1,7 +1,8 @@
 ---
 title: aapningskvittering
-permalink: aapningskvittering.html
+
 sidebar: begrep_sidebar
+redirect_from: /aapningskvittering
 ---
 
 | ---- | ---- |

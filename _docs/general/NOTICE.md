@@ -1,8 +1,9 @@
 ---
 title: "Komponenter som er benyttet"
-permalink: NOTICE.html
+
 sidebar: main_sidebar
 product: general
+redirect_from: /notice
 ---
 
 Denne siden benytter følgende tredjeparts-komponenter, og i mappen /assets/licences finner du de lisens filer som er påkrevd inkludert av disse tredjeparts-leverandørene.
@@ -20,7 +21,9 @@ Denne siden benytter følgende tredjeparts-komponenter, og i mappen /assets/lice
 
 * Anchor JS: <https://github.com/bryanbraun/anchorjs/> (MIT lisens)
 
-* Lunr.js: <https://github.com/olivernn/lunr.js> (MIT lisens)
+* Lunr.js: <https://github.com/olivernn/lunr.js> (MIT lisens) (søk) (ikke i bruk, erstattet av SimpleJekyllSearch)
+
+* SimpleJekyllSearch <https://github.com/christian-fei/Simple-Jekyll-Search> (søk, preindekserer klientside
 
 * pygments-css (monokai.css) for syntaksvisning av kode: <https://github.com/richleland/pygments-css> (Unlisens)
 

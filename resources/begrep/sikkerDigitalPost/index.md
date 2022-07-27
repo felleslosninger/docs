@@ -1,8 +1,9 @@
 ---
 
 title: Digital postkasse til innbyggere 
-permalink: sdp_innledning_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_innledning_index
 ---
 
 Denne delen av begrepskatalogen inneholder spesifikasjonen av
@@ -10,9 +11,9 @@ grensesnittene for [Digital post til
 innbyggere](https://docs.digdir.no).
 
 Målgruppen for denne spesifikasjonen er
-[Avsendervirksomheter](forretningslag/Aktorer.md),
-[Meldingsformidler](forretningslag/Aktorer.md) og
-[Postkasseleverandører](forretningslag/Aktorer.md).
+[Avsendervirksomheter]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer),
+[Meldingsformidler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer) og
+[Postkasseleverandører]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).
 
 ### Hvordan ta i bruk digital postkasse til innbyggere?
 
@@ -27,26 +28,26 @@ Dersom du nettopp har vært der og vil ha mer detaljer så sett deg først
 inn i følgende:
 
 | --- | --- |
-| [Arkitekturen](innledning/arkitektur.md) | Oversikt over de sentrale aktørene |
-| [Prosess for sending av digital post](forretningslag/forretningsprosess.md) | Beskrivelse av hvordan meldingen i digital post flyter mellom aktørene |
+| [Arkitekturen]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/innledning/arkitektur) | Oversikt over de sentrale aktørene |
+| [Prosess for sending av digital post]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/forretningsprosess) | Beskrivelse av hvordan meldingen i digital post flyter mellom aktørene |
 
 ### Kapiteloversikt
 
 Katalogen er bygd opp av følgende kapitler:
 
 | --- | --- |
-| [Oversikt](innledning/index.md) | Mer om sikker digital post og generelle aspekter ved løsningen |
-| [Forretningslag](forretningslag/index.md) | Aktører, prosesser og overordnet meldingsstruktur/format |
-| [Dokumentpakke](dokumentpakke_index.html) | Oppbygging av selve dokumentpakken som skal til mottaker |
-| [Utvidelser](forretningslag/Utvidelser/index.md) | Utvidelser som beriker dokumenter i innbyggers postkasse |
-| [Utskrift og forsendelse](utskrift/sdp_index_utskrift.md) | Mer om utskriftstjenesten knyttet til digital post |
-| [Forretningsmeldinger](meldinger/index.md) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
-| [Standard Business Document](forretningslag/StandardBusinessDocument/index.md) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
-| [Transportlag](transportlag/index.md) | Rammeverk for overføring av meldinger |
-| [Feilhåndtering](feilhandtering/index.md) | Generelt om feilhåndtering |
-| [Begreper](begrep/index.md) | Begreper benyttet i Sikker Digital Post |
+| [Oversikt]({{site.baseurl}}/resources/begrep/felles/) | Mer om sikker digital post og generelle aspekter ved løsningen |
+| [Forretningslag]({{site.baseurl}}/resources/begrep/felles/) | Aktører, prosesser og overordnet meldingsstruktur/format |
+| [Dokumentpakke]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/) | Oppbygging av selve dokumentpakken som skal til mottaker |
+| [Utvidelser]({{site.baseurl}}/resources/begrep/felles/) | Utvidelser som beriker dokumenter i innbyggers postkasse |
+| [Utskrift og forsendelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/utskrift/) | Mer om utskriftstjenesten knyttet til digital post |
+| [Forretningsmeldinger]({{site.baseurl}}/resources/begrep/felles/) | Oppbygging av forretningsinformasjonen for behandling av dokumentpakken |
+| [Standard Business Document]({{site.baseurl}}/resources/begrep/felles/) | Informasjon relatert til ruting og håndtering av forretningsmeldingen |
+| [Transportlag]({{site.baseurl}}/resources/begrep/felles/) | Rammeverk for overføring av meldinger |
+| [Feilhåndtering]({{site.baseurl}}/resources/begrep/felles/) | Generelt om feilhåndtering |
+| [Begreper]({{site.baseurl}}/resources/begrep/felles/) | Begreper benyttet i Sikker Digital Post |
 
 Vil du ha tak i mer tekniske detaljar se gjerne her:
 
-  - [Xml Eksempel på meldingar](eksempler/index.md)
+  - [Xml Eksempel på meldingar]({{site.baseurl}}/resources/begrep/felles/)
   - [XML Schema Definition filer](xsd/README.md)

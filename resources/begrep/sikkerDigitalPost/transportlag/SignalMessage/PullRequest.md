@@ -1,8 +1,9 @@
 ---
  
 title: PullRequest  
-permalink: sdp_pullrequest.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_pullrequest
 ---
 
   - Identifikator  

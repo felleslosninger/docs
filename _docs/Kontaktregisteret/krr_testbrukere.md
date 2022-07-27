@@ -2,11 +2,12 @@
 title: KRR testbrukere
 description: KRR testbrukere
 summary:
-permalink: krr_testbrukere.html
+
 toc: false
 sidebar: krr_sidebar
 product: KRR
 
+redirect_from: /krr_testbrukere
 ---
 Her kan du finne testbrukere for KRR som innehar følgende variabler:
 
@@ -48,4 +49,4 @@ Kort oppsummering av brukerene:
 
 <br>
 For full oversikt over responsene kan du laste ned et excell-ark her:
-[oppslagstjenesten_testdata_med_forventet_respons_0.xlsx](assets\oppslagstjenesten_testdata_med_forventet_respons_0.xlsx)
+[oppslagstjenesten_testdata_med_forventet_respons_0.xlsx]({{site.baseurl}}/assets/oppslagstjenesten_testdata_med_forventet_respons_0.xlsx)

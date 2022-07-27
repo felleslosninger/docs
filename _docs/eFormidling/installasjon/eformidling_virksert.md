@@ -2,9 +2,10 @@
 title: Virksomhetssertifikat
 description: Virksomhetssertifikat
 summary: "Håndtering av virksomhetssertifikatet"
-permalink: eformidling_virksomhetssertifikat.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_virksomhetssertifikat
 ---
 
 ### Om virksomhetssertifikat
@@ -21,14 +22,14 @@ Hvordan du legger inn sertifikatet i JKS finner du nedenfor. Etter at du har lag
 > * NB6! alias = entry name. Entry name er namnet på alias(namnet på sertifikatet) i keystore explorer. Integrasjonspunkt.local.properties fila bruker alias som namn på sertifikatet
 > * NB7! eSegl sertifikater er ikke egnet for bruk i eFormidling. 
 
-Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkt.
-Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/hjelp/virksomhetssertifikat)
+Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
+Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
 
 ### Legge sertifikatet i Java Key Store (JKS)
 
 I dette kapittelet finner du informasjon om hvordan du konverterer en .p12-keystore (filformatet mottatt ved bestilling av virksomhetssertifikat) til en JKS.
 
-Når du har fått sertifikatet, må det legges inn på serveren du kjører integrasjonspunket. Noter deg lokasjonen for sertifikatet, samt brukernavn og passord. Dette skal senere legges inn i integrasjonspunkt-local.properties filen som er en del av [neste steg av installasjonen.](eformidling_properties_config.html)
+Når du har fått sertifikatet, må det legges inn på serveren du kjører integrasjonspunket. Noter deg lokasjonen for sertifikatet, samt brukernavn og passord. Dette skal senere legges inn i integrasjonspunkt-local.properties filen som er en del av [neste steg av installasjonen.]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_properties_config)
 
 
 **NB!** Passord på keystore og sertifikat **MÅ** være like

@@ -1,7 +1,8 @@
 ---
 title: DokumentData  
-permalink: sdp_dokumentdata.html
+
 sidebar: begrep_sidebar
+redirect_from: /sdp_dokumentdata
 ---
 
 |---|---|

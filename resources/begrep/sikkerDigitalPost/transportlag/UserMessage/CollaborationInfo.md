@@ -1,8 +1,9 @@
 ---
 
 title: CollaborationInfo  
-permalink: sdp_collaborationinfo.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_collaborationinfo
 ---
 
 ## {{page.title}}
@@ -23,8 +24,8 @@ sidebar: dpi_sidebar
 
 <!-- end list -->
 
-  - [FormidleDigitalPostForsendelse](sdp_formidledigitalpostforsendelse.html)
-  - [KvitteringsForespoersel](sdp_kvitteringsforspoersel.html)
+  - [FormidleDigitalPostForsendelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse)
+  - [KvitteringsForespoersel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/KvitteringsForespoersel)
 
 ### Egenskaper
 

@@ -1,9 +1,10 @@
 ---
 title: Selvbetjening av ID-porten via Samarbeidsportalen
 description:  Selvbetjening av ID-porten via Samarbeidsportalen
-permalink: selvbetjening_web_apiklient.html
+
 sidebar: selvbetjening_sidebar
 product: Selvbetjening
+redirect_from: /selvbetjening_web_apiklient
 ---
 
 Dette dokumentet viser hvordan du kan selvbetjene API-klienter via Samarbeidsportalen.
@@ -45,7 +46,7 @@ Videotutorial: (https://vimeo.com/427689834)
 
 Videotutorial: (https://vimeo.com/427689782)
 
-[![Deaktivere klient](assets\videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+[![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
@@ -63,7 +64,7 @@ For å administrere merkantile data:
 
 Videotutorial: (https://vimeo.com/397388041)
 
-[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+[![Vedlikehald av merkantile data]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 

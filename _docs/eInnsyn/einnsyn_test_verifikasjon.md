@@ -2,8 +2,9 @@
 title: Testing og verifikasjon av installasjonen
 description: Test og verifikasjon
 summary: "Her finner du informasjon om hvordan verifisere overføring mellom sak/arkiv-systemet deres og eInnsyn etter installasjonen av integrasjonspunktet og einnsyn-klienten"
-permalink: einnsyn_test_verifikasjon.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_test_verifikasjon
 ---
 
 

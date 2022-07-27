@@ -1,9 +1,10 @@
 ---
 title: Selvbetjening for API-tilbydere via Samarbeidsportalen
 description:  Selvbetjening for API-tilbydere via Samarbeidsportalen
-permalink: selvbetjening_web_api-konsument.html
+
 sidebar: selvbetjening_sidebar
 product: Selvbetjening
+redirect_from: /selvbetjening_web_api-konsument
 ---
 
 Dette dokumentet viser hvordan du som API-tilbyder kan selvbetjene dine scopes i Maskinporten gjennom Samarbeidsportalen.
@@ -46,7 +47,7 @@ Videotutorial: (https://vimeo.com/427689834)
 
 Videotutorial: (https://vimeo.com/427689782)
 
-[![Deaktivere klient](assets\videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+[![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
 ### Vedlikehald av merkantile data
 
@@ -62,7 +63,7 @@ For å administrere merkantile data:
 
 Videotutorial: (https://vimeo.com/397388041)
 
-[![Vedlikehald av merkantile data](assets\videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
+[![Vedlikehald av merkantile data]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/397388041 "Vedlikehald av merkantile data")
 
 ## Ofte stillte spørsmål
 

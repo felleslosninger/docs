@@ -1,9 +1,10 @@
 ---
 title: Om selvbetjening av Digdirs fellesløsninger
 description:  Selvbetjening av Digdirs fellesløsninger
-permalink: selvbetjening_om.html
+
 sidebar: main_sidebar
 product: Selvbetjening
+redirect_from: /selvbetjening_om
 ---
 
 På denne delen av dokumentasjonssidene finner du informasjon om hvordan du kan selvbetjene våre fellesløsninger.

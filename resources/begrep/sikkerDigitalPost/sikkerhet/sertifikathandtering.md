@@ -1,8 +1,9 @@
 ---
 
 title: Sertifikathåndtering  
-permalink: sdp_sertifikathandtering.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_sertifikathandtering
 ---
 
 ## Sertifikater
@@ -76,7 +77,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
 (Disse sertifikatene må legges inn i truststore)
 
   - Fra Buypass:
-    [Buypass\_Class\_3\_Test4\_Root\_CA](sertifikater/test/Buypass_Class_3_Test4_Root_CA.cer)
+    [Buypass\_Class\_3\_Test4\_Root\_CA]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater/test/Buypass_Class_3_Test4_Root_CA.cer)
   - Fra Commfides: [root - cpn root sha256 ca - test.crt (2.03
     KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/155/22538)
 
@@ -85,7 +86,7 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
 (Disse må ligge i CertStore)
 
   - Fra Buypass:
-    [Buypass\_Class\_3\_Test4\_CA\_3](sertifikater/test/Buypass_Class_3_Test4_CA_3.cer)
+    [Buypass\_Class\_3\_Test4\_CA\_3]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater/test/Buypass_Class_3_Test4_CA_3.cer)
   - Fra Commfides: [intermediate - commfides cpn enterprise-norwegian
     sha256 ca - test2.crt (2.23
     KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/155/22537)

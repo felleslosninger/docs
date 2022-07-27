@@ -43,8 +43,7 @@ folders:
         jurl: /dpi_tilstander.html
       - title: Struktur på melding
         jurl: /dpi_struktur_forretningsmelding.html
-      - title: Prisen på innbyggerpost som DPI-melding
-        jurl: /dpi_pris.html
+
    
     - title: Dokumentpakke (ASiC)
       folderitems:
@@ -84,9 +83,6 @@ folders:
       - title: Utskriftstjenesten
         jurl: /dpi_utskrift_index.html
         
-      - title: Prosessbeskrivelse
-        jurl: /dpi_utskrift_prosess.html
- 
     - title: Forretningsmeldinger
       folderitems:
 
@@ -99,7 +95,7 @@ folders:
       - title: LeveringsKvittering
         jurl: /dpi_leveringskvittering.html 
       - title: AapningsKvittering
-        jurl: dpi_aapningskvittering.html  
+        jurl: /dpi_aapningskvittering.html  
       - title: VarslingfeiletKvittering
         jurl: /dpi_varslingfeiletkvittering.html 
       - title: MottaksKvittering
@@ -154,4 +150,10 @@ folders:
       folderitems:
       
       - title: Begrepskatalog
-        jurl: /begrep_index.html    
+        jurl: /resources/begrep/sikkerDigitalPost/begrep/
+
+    - title: DPI GAMMEL DOKUMENTASJON
+      folderitems:
+
+      - title: Veiledning og klienter
+        jurl: /resources/begrep/sikkerDigitalPost/innledning/

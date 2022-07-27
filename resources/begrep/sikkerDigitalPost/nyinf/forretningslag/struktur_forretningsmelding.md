@@ -4,7 +4,7 @@ permalink: dpi_struktur_forretningsmelding.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 ## Overordnet struktur på forretningsmeldinger
 
@@ -28,9 +28,9 @@ I praksis betyr dette at eier er ansvarlig for signering av sin del.
 
 | Element    | Eier     | Identifikator    | Kontroll eierskap  | Kommentar    |
 | --- | --- | --- | --- | --- |
-| Dokumentpakke              | [Avsender](https://difi.github.io/felleslosninger/sdp_aktorer.html) | Manifest/Avsender | Signerte bruksvilkår med Sentralforvalter | Eierskapet til dokumentpakken blir bruk til å garantere integriteten til dokumentpakken over tid. Det kan tenkes at dokumentpakken blir signert av en [Databehandler](https://difi.github.io/felleslosninger/sdp_aktorer.html). I så tilfelle bør dette klart framkomme av selve dokumentet, slik at Mottaker forstår sammenhengen. |
-| Forretningmelding          | [Avsender](https://difi.github.io/felleslosninger/sdp_aktorer.html) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter | Vil som regel være den samme som eier av dokumentpakken. |
-| Standard Business Document | [Avsender](https://difi.github.io/felleslosninger/sdp_aktorer.html) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter | Skal alltid være den samme som eier av Forretningsmelding |
+| Dokumentpakke              | [Avsender](sdp_aktorer.html) | Manifest/Avsender | Signerte bruksvilkår med Sentralforvalter | Eierskapet til dokumentpakken blir bruk til å garantere integriteten til dokumentpakken over tid. Det kan tenkes at dokumentpakken blir signert av en [Databehandler](sdp_aktorer.html). I så tilfelle bør dette klart framkomme av selve dokumentet, slik at Mottaker forstår sammenhengen. |
+| Forretningmelding          | [Avsender](sdp_aktorer.html) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter | Vil som regel være den samme som eier av dokumentpakken. |
+| Standard Business Document | [Avsender](sdp_aktorer.html) | DigitalPostMelding/Avsender | Registrert hos Sentralforvalter | Skal alltid være den samme som eier av Forretningsmelding |
 
 Postboksleverandør er ansvarlig for å validere eier-integriteten i meldingen på vegne av Sentralforvalter. Meldinger som ikke har gyldig integritet blir avvist.  
 Integriteten blir sjekket ved å sammenligne virksomhetsidentifikator i virksomhetssertifikat med identifikator i meldingen på signaturen relatert til den delen av meldingen, og at kombinasjonen av disse stemmer med opplysninger i vedlagt maksinportentoken. 

@@ -7,46 +7,47 @@ folders:
   folderitems:
 
   - title: Om ID-porten
-    jurl: /idporten_index.html
+    jurl: /docs/idporten/
 
   - title: Teknisk dokumentasjon
-    jurl: /idporten_overordnet.html
+    jurl: /docs/idporten/idporten/idporten_overordnet
 
 
 - title: Maskinporten
   folderitems:
 
   - title: Om Maskinporten
-    jurl: /maskinporten_index.html
+    jurl: /docs/Maskinporten/
 
   - title: Teknisk dokumentasjon
-    jurl: /maskinporten_overordnet.html
+    jurl: /docs/Maskinporten/maskinporten_overordnet
 
 
 - title: Kontaktregisteret
   folderitems:
 
   - title: Om Kontakt- og reservasjonsregisteret
-    jurl: /krr_index.html
+    jurl: /docs/Kontaktregisteret/
 
   - title: Teknisk dokumentasjon
-    jurl: /oppslagstjenesten_rest.html
+    jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
 
 
 - title: Digital postkasse
   folderitems:
 
   - title: Om digital postkasse
-    jurl: /digipost_index.html
+    jurl: /docs/digitalpostkasse/
 
-  - title: Veiledning og klienter
-    jurl: /sdp_index_innledning.html
+  - title: Teknisk dokumentasjon
+    jurl: /dpi_nyinfrastruktur.html
+
 
 - title: eFormidling
   folderitems:
 
   - title: Om eFormidling
-    jurl: /eformidling_index.html
+    jurl: /docs/eFormidling/
 
   - title: Teknisk dokumentasjon
     jurl: /eformidling_introduksjon.html
@@ -55,28 +56,28 @@ folders:
   folderitems:
 
   - title: Om eSignering
-    jurl: /esign_index.html
+    jurl: /docs/eSignering/
 
   - title: Kom i gang med eSignering
-    jurl: /esign_komigang.html
+    jurl: /docs/eSignering/esign_komigang
 
 - title: eInnsyn
   folderitems:
 
   - title: Om eInnsyn
-    jurl: /einnsyn_index.html
+    jurl: /docs/eInnsyn/
 
   - title: eInnsyn-klient
-    jurl: /einnsyn_forutsetninger.html
+    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
 
 - title: ELMA
   folderitems:
 
   - title: about ELMA
-    jurl: /elma_index.html
+    jurl: /docs/ELMA/
 
   - title: Documentation
-    jurl: /elma_user_manual.html
+    jurl: /docs/ELMA/elma_elma
 
 
 ###########################
@@ -86,7 +87,7 @@ related_resources_title: Andre nyttige lenker
 related_resources_list:
 
 - title: Begrepskatalog
-  jurl: begrep_index.html
+  jurl: /resources/begrep/sikkerDigitalPost/begrep/
 
 - title: Github
   jurl: https://github.com/difi/felleslosninger

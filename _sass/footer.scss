@@ -21,7 +21,7 @@ footer, .footer {
 
   &__heading {
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     margin-top: 8px;
     @include font-style(400, 500);
     letter-spacing: 0.4px;
@@ -31,7 +31,7 @@ footer, .footer {
 
     &__logo {
       height: 38px;
-      margin-bottom: 15px;
+      margin-bottom: 13px;
       margin-left: -8px;
     }
 

@@ -2,10 +2,66 @@
 title: Status
 description: Statuspage for Elma
 summary: "Elma status"
-permalink: elma_status.html
+
 product: elma
 sidebar: elma_sidebar
+redirect_from: /elma_status
 ---
+## ELMA update 21.06.2022 (3.15.2)
+
+### Bug fix
+```
+[MOVE-2879] Kan ikke legge til endpoint 
+```
+
+## ELMA update 16.06.2022 (3.15.1)
+
+### Bug fix
+```
+[MOVE-2878] Feil ved forsøk på å legge inn nytt sertifikat
+```
+
+## ELMA update 09.06.2022 (3.15.0)
+
+```
+[MOVE-2646]	Eksponera meir data for Peppol Directory
+```
+
++ Generelle ytelsesforbedringer
+
+## ELMA update 03.05.2022 (3.14.5)
+
+### Bug fix
+```
+[MOVE-2818] Bug - SMPen viser metadata for skjulte prosesser. 
+```
+
+
+## ELMA update 11.03.2022 (3.14.1)
+
+### Tasks
+```
+[MOVE-2767] 	Forbetringar ifht. connection-timeout mot databasen 
+```
+
+## ELMA update 05.01.2022 (3.12.0)
+
+### Tasks
+```
+[MOVE-2624] - Som bruker ønsker jeg å kunne filtrere prosesslisten i elma-web
+[MOVE-2621] - Som bruker av elma-web ønsker jeg at søket etter participant skal tåle at jeg har whitespace før eller etter det jeg søker
+[MOVE-2620] - Som ServiceProvider ønsker jeg e-post dersom en organisasjon ikke kan registreres i SMLen fordi den allerede tilhører en annen SMP
+[MOVE-2619] - Som bruker av elma-rest-api ønsker jeg at apiet skal tåle at jeg setter inn samme participant i parallel
+[MOVE-1056] - Validering av kontaktinformasjon (e-post og telefonnummer)
+```
+
+## ELMA update 01.12.2021 (3.11.1)
+
+### Tasks
+```
+[MOVE-2617] - ELMA - Opprettelse av participant kan medføre Organization med null som title 
+[MOVE-2498] - ELMA - Støtte for utvidet adressering 
+```
 
 ## Elma update 16.09.2021 (3.10.0)
 

@@ -1,7 +1,8 @@
 ---
 title: posttype
-permalink: posttype.html
+
 sidebar:
+redirect_from: /posttype
 ---
 
 | ---- | ---- |

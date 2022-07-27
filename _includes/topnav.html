@@ -24,7 +24,7 @@
     <!-- jQuery cookie (MIT license)-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <!-- Navgoco (BSD license)-->
-    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/assets/js/jquery.navgoco.min.js"></script>
     <!-- Bootstrap (MIT license)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -79,12 +79,12 @@
     </script>
 
     <!-- User defined js -->
-    <script src="assets/js/header.js"></script>
+    <script src="{{site.baseurl}}/assets/js/header.js"></script>
     <!--Bootstrap (MIT license) -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/css/user_defined_web_styles.css" />
     <style>
         ul#markdown-toc::before  {
         content: "{{site.uistring.tableofcontents}}"
@@ -123,9 +123,9 @@
                     {% if item.url contains "http://" or item.url contains "https://" %}
                     <li><a href="{{item.url}}" class="noExtIcon">{{item.title}}</a></li>
                     {% elsif page.url contains item.url %}
-                    <li class="active"><a href="{{item.url | remove: "/"}}">{{item.title}}</a></li>
+                    <li class="active"><a href="{{item.url | relative_url}}">{{item.title}}</a></li>
                     {% else %}
-                    <li><a href="{{item.url | remove: "/"}}">{{item.title}}</a></li>
+                    <li><a href="{{item.url | relative_url}}">{{item.title}}</a></li>
                     {% endif %}
                     {% endfor %}
                     {% endfor %}
@@ -143,7 +143,7 @@
                             {% elsif page.url contains folderitem.url %}
                             <li class="dropdownActive"><a href="{{folderitem.url |  remove: "/"}}">{{folderitem.title}}</a></li>
                             {% else %}
-                            <li><a href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
+                            <li><a href="{{folderitem.url | relative_url}}">{{folderitem.title}}</a></li>
                             {% endif %}
                             {% endfor %}
                         </ul>
@@ -167,7 +167,7 @@
                 </ul>
 
                 <div id="search-topnav-container">
-                    <form action="search.html" method="get">
+                    <form action="{{site.baseurl}}/assets/search.html" method="get">
                         <div class="input-group search">
                             <input type="text" id="search-box" name="query" class="form-control" placeholder="{{site.uistring.search_placeholder_text}}">
                             <div class="input-group-btn">

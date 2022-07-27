@@ -4,7 +4,7 @@ permalink: dpi_documentidentification.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 |---|---|
 | Identifikator | |
@@ -16,7 +16,7 @@ sidebar: dpi_timo_sidebar
 
 | Identifikator       | Kardinalitet | Datatype    | Verdi                                                                                                                      |
 | ------------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Standard            | 1..1         | string   | Id til en av de gyldigie [meldingstypene](dpi_forretiningsmelding_index.html)                                                |
+| Standard            | 1..1         | string   | Id til en av de gyldige [meldingstypene](dpi_forretiningsmelding_index.html)                                                |
 | TypeVersion         | 1..1         | string   | “1.0”                                                                                                                      |
 | InstanceIdentifier  | 1..1         | string - uuid   | Unik identifikator for meldingen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Opprettet av Databehandler|
 | Type                | 1..1         | string   | Type forretningsmelding. Skal alltid være “local-name” melding objektet Melding. Se kodeverk under |

@@ -1,7 +1,8 @@
 ---
 title: postkasseleverandoerAdresse
-permalink: postkasseleverandoeradresse.html
+
 sidebar: begrep_sidebar
+redirect_from: /postkasseleverandoeradresse
 ---
 
 | ---- | ---- |

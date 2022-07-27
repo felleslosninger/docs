@@ -1,7 +1,8 @@
 ---
 title: OrderReference  
-permalink: sdp_orderreference.html
+
 sidebar: begrep_sidebar
+redirect_from: /sdp_orderreference
 ---
 
 |---|---|

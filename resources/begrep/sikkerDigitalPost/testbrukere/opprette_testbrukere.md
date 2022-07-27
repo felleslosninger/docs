@@ -1,7 +1,8 @@
 ---
 title: Postkasser til testbrukere
-permalink: sdp_pk_til_testbruker_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_pk_til_testbruker_index
 ---
 
 Merk! Testbrukere med rette egenskaper for testing av digital postkasse får en ved å sende en bestilling til servicedesk@digdir.no

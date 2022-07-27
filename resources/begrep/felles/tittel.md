@@ -1,7 +1,8 @@
 ---
 title: tittel
-permalink: 2tittel.html
+
 sidebar:
+redirect_from: /2tittel
 ---
 
 | ---- | ---- |

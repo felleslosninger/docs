@@ -2,9 +2,10 @@
 title: Begrep
 description: Begrep og forkortelser brukt i eFormidling
 summary: "Begrep og forkortelser brukt i eFormidling"
-permalink: eform_terms.html
+
 product: eFormidling
 
+redirect_from: /eform_terms
 ---
 
 * TOC

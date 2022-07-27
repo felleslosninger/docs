@@ -8,19 +8,19 @@ folders:
     jurl: /krr_eksempler_paa_kall.html
 
   - title: Hvordan komme i gang
-    jurl: /krr_hvordan_komme_i_gang.html
+    jurl: /docs/Kontaktregisteret/dotnet_klient/2_hvordan-komme-i-gang
 
   - title: Konfigurasjon
-    jurl: /krr_konfigurasjon.html
+    jurl: /docs/Kontaktregisteret/dotnet_klient/3_konfigurasjon
 
   - title: Sertifikater
-    jurl: /krr_sertifikater.html
+    jurl: /docs/Kontaktregisteret/dotnet_klient/4_sertifikater
 
   - title: Asynkronitet
-    jurl: /krr_async.html
+    jurl: /docs/Kontaktregisteret/dotnet_klient/5_asynkronitet
 
   - title: Logging
-    jurl: /krr_logging.html
+    jurl: /docs/Kontaktregisteret/dotnet_klient/6_logging
 
 ###########################
 

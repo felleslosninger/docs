@@ -6,7 +6,7 @@ layout: LandingCard
 class: first
 ---
 
-> Onsdag 10.11.2021 kl 14.00 endrar vi i DNS og hosting for Digdir Docs. Det kan bli noko ustabilitet 14.00 - 18.00. 
+
 
 [Digitaliseringsdirektoratet](https://www.digdir.no/) forvalter og utvikler en rekke åpne og gjenbrukbare fellesløsninger for offentlige virksomheter. Disse sidene inneholder teknisk dokumentasjon av løsningene, og integrasjonsmuligheter for de som ønsker å ta løsningene i bruk. Bruksvilkår, priser og beskrivelse av fellesløsningene finnes i [Samarbeidsportalen](https://samarbeid.digdir.no/).
 

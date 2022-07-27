@@ -1,8 +1,13 @@
-{
-    "arkivmelding":{
-        "sikkerhetsnivaa": "3",
-        "sensitiv": "true/false"
+"arkivmelding": {
+    "sikkerhetsnivaa": "3", // Alt. "4". Valgfri, kun benyttet for DPF
+    "dpv": { // Valgfri
+        "varselType": "VarselDPVMedRevarsel", // "VarselDPVUtenRevarsel"
+        "varselTransportType": "EpostOgSMS", // "Epost", "SMS
+        "varselTekst": "Valgfri tekst",
+        "taushetsbelagtVarselTekst": "Valgfri tekst", // Kun benyttet for taushetsbelagte meldinger, se under.
+        "dagerTilSvarfrist": 7
+    },
+    "dpf": { // Valgfri
+        "forsendelseType": "altinn3.skjema" // Eksempel
     }
-}  
-
-
+}

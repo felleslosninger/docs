@@ -2,9 +2,10 @@
 title: Forutsetninger for installasjon
 description: Forutsetninger for installasjon
 summary: "Forutsetninger for installasjon"
-permalink: eformidling_forutsetninger.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_forutsetninger
 ---
 
 Einnsyn er en prosess der statlige virksomheter gjør metadata for korrespondanse tilgjengelig for offentligheten. Integrasjonspunktet fungerer som et bindeledd mellom eInnsyn-klient brukt av arkivarene og det sentrale eInnsyn-systemet.
@@ -14,7 +15,7 @@ For å sette opp integrasjonspunktet til å støtte eInnsyn, må du gjøre følg
 
 ## Dette gjør du før installasjon av Integrasjonspunktet
 
-+ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.](eformidling_selfhelp.html#justere-tilgjengelig-minne)
++ Tilgjengelig minne må være minimum 1GB for eInnsyn og minimum 2GB for eFormidling. [Les mer om minne her.]({{site.baseurl}}/docs/eFormidling/Selvhjelp/eformidling_selfhelp#justere-tilgjengelig-minne)
 + Nødvendige brannmuråpninger
 + Java 8 X med JCE installert (JDK)
 + Virksomhetssertifikat utstedt av Buypass eller Commfides. [Les mer](http://difi.github.io/felleslosninger/eformidling_virksomhetssertifikat.html)
@@ -27,46 +28,40 @@ Bekreftelse på at bruker er autentisert sendes fra OIDC til ditt integrasjonspu
 Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i datasenteret.
 
 ### Brannmuråpninger
+Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksområder (meldingstyper) i eFormidling.
 
-
-> * eFormidling ble flyttet til nytt driftsmiljø den 11. desember 2019. Dette medfører at det må i tillegg åpnes for trafikk fra integrasjonspunktene til de nye IP-adressene merket med fet skrift i tabellene under, både i testmiljø og produksjon.
-
-Har virksomheten spørsmål knyttet til disse endringene kan de sende epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Brannmuråpninger i testmiljø
 
-Når du installerer den typen eFormidling du skal ta i bruk så må du åpne opp noen brannmuråpninger. 
-<!--
-En kan også åpne DNS mot domenet ```lb.difi.no``` som dekker alle 3 lastbalansererene. DNS for logging er ```stream.difi.no``` som er utgående TCP. 
--->
-
-
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
-| ------------- |:-------------:| :-----:| :------:|
-| **qa-meldingsutveksling.difi.no** | **51.144.60.111:443** <br/> **51.105.206.80:443 f.o.m 18.08.2020**	 | - | **Alle** |
-| **qa-stream-meldingsutveksling.difi.no** | 	**40.74.39.255:443**  | - | **Alle** |
-| oidc-ver1.difi.no | 146.192.252.121:443		 | - | Alle |
-| oidc-ver2.difi.no | 146.192.252.121:443	 | - | Alle |
-| ver1.maskinporten.no | 146.192.252.118:443	 | - | Alle |
-| move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
-| www.altinn.no | 89.250.123.0:443 | - | DPO |
-| tt02.altinn.no | 89.250.123.40:443 | - | DPV |
-| qaoffentlig.meldingsformidler.digipost.no (IP-range) | 51.105.206.80/28:443  | -  | DPI |
-
+| DNS-navn | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
+| :-------- |-------------| :-----:| :----:| :-----| :------|
+| **qa-meldingsutveksling.difi.no** | **51.144.60.111** <br/> **51.105.206.80**	 | 443 | **Alle** | eFormidling, diverse tjenester, adresseoppslag m.m. | |
+| **qa-stream-meldingsutveksling.difi.no** | **40.74.39.255**  | 443 | **Alle** | eFormidling, logging | |
+| oidc-ver1.difi.no | 146.192.252.121	 | 443 | Alle | ID-porten oidc-provider, verifikasjon 1-miljøet | utgående |
+| oidc-ver2.difi.no | 146.192.252.152	 | 443 | Alle | ID-porten oidc-provider, verifikasjon 2-miljøet | utgående |
+| ver1.maskinporten.no | 146.192.252.118	 | 443 | Alle | Maskinporten | utgående |
+| ver2.maskinporten.no | 139.105.36.128/27 <br/> 139.105.36.132	 | 443 | Alle | Maskinporten, ny adresse f.o.m ca 01.09.2022 | utgående |
+| efm-dpe-qa.servicebus.windows.net  | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67  | 443 | DPE | Azure Service Bus, HTTP/REST API |
+| efm-dpe-qa.servicebus.windows.net  | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67  | 5671 | DPE | Azure Service Bus, AMQP med TLS |
+| altinn.no | 89.250.123.0 | 443 | DPO | Altinn formidlingstjeneste |
+| tt02.altinn.no | 89.250.123.40 | 443 | DPV | Altinn formidlingstjeneste |
+| qaoffentlig.meldingsformidler.digipost.no  | 51.105.206.80/28  | 443  | DPI | Meldingsformidler for DPI-meldinger |
+| srest.qa.dataplatfor.ms  | 51.120.49.231 | 443 | DPI | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2 |
 
 ### Brannmuråpninger i produksjon
 
-|    Beskrivelse    | IPv4-adresse | IPv6-adresse | Tjeneste |
-| ------------- |:-------------:| :-----:| :------:|
-| **meldingsutveksling.difi.no** | **51.144.60.163:443** | - | **Alle** |
-| **stream-meldingsutveksling.difi.no** | 	**40.74.39.254:443**  | - | **Alle** |
-| oidc.difi.no | 146.192.252.54:443	 | - | Alle |
-| maskinporten.no | 146.192.252.50:443 | - | Alle |
-| move-dpe.servicebus.windows.net	 | 13.69.253.135:443 | - | DPE | 
-| move-dpe-prod.servicebus.windows.net	 | 52.169.10.235:443 | - | DPE | 
-| www.altinn.no | 89.250.123.0:443 | - | DPO/DPV |
-| meldingsformidler.digipost.no (IP-range) | 51.124.140.176/28:443| -  | DPI |
-| svarut.ks.no | 137.221.25.66:443 og 137.221.28.66:443 | - | DPF |
+| DNS-navn | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
+| :-------- |-------------| :-----:| :----:| :-----| :------|
+| **meldingsutveksling.difi.no** | **51.144.60.163** | 443 | **Alle** | eFormidling, diverse tjenester, adresseoppslag m.m. | |
+| **stream-meldingsutveksling.difi.no** | **40.74.39.254**  | 443 | **Alle** | eFormidling, logging | |
+| oidc.difi.no | 146.192.252.54	 | 443 | Alle | ID-porten oidc-provider | |
+| maskinporten.no | 146.192.252.50 | 443 | Alle | Maskinporten | |
+| efm-dpe-prod.servicebus.windows.net	|  13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 443 | DPE | Azure Service Bus, HTTP/REST API |
+| efm-dpe-prod.servicebus.windows.net	|  13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 5671 | DPE |  Azure Service Bus, AMQP med TLS |
+| altinn.no | 89.250.123.0 | 443 | DPO/DPV | Altinn formidlingstjeneste|
+| meldingsformidler.digipost.no | 51.124.140.176/28| 443  | DPI | Meldingsformidler for DPI-meldinger (16 adresser)|
+| srest.dataplatfor.ms  | 51.120.1.137 | 443 | DPI | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2|
+| svarut.ks.no | 137.221.25.66 <br/> 137.221.28.66 | 443 | DPF | KS FIKS meldingformidler |
 
 > **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
 
@@ -86,11 +81,12 @@ java -version
 Integrasjonspunktet krever minimum versjon 1.8.0
 
 ### OpenJDK Java 8 (gratis)
-Digitaliseringsdirektoratet har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. 
+Digitaliseringsdirektoratet har valgt å bruke JDK 8 fra [https://adooptium.net/](https://adoptium.net/temurin/releases/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8. 
 
 Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din platform inne på lenken.
 
 > **NB!** 32-bits Java kan skape utfordringer for minnebruken til integrasjonspunktet, så 64-bits er å foretrekke!
+> **NB2!** Nedlasting via Firefox er ustabilt, så bruk en annen nettleser!
 
 ### Oracle Java 8 (lisensbasert)
 Dersom Java ikke er installert eller versjonen er for gammel, kan ny versjon lastes ned [her](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) og installeres. Denne vil integrasjonspunktet støtte.
@@ -117,7 +113,7 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 
 **Hvordan?**
 
-[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her](eformidling_virksomhetssertifikat.html)
+[VEILEDNING: Les alt om håndtering av virksomhetssertifikat her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_virksert)
 
 Integrasjonspunktet bruker virksomhetssertifikat til kryptering og signering av meldinger som går mellom integrasjonpunkter.
 Virksomhetssertifikat som kan benyttes leveres av [Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html) og [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)

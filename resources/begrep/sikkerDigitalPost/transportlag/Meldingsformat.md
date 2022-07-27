@@ -1,17 +1,18 @@
 ---
 title: Meldingsformat  
-permalink: sdp_transportlag_meldingsformat.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_transportlag_meldingsformat
 ---
 
 ## Meldingsformat
 
 Transportlaget i Sikker Digital Post benytter seg av **AS4 light client
 conformance profile** som rammeverk for å overføre
-[Forretningsmeldinger](../forretningslag/meldingsformat.md).
+[Forretningsmeldinger]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/meldingsformat).
 
 I praksis medfører dette at forretningsmeldingen blir pakket inn som en
-SOAP melding som illustrert i [eksemplene](../eksempler/index.md).
+SOAP melding som illustrert i [eksemplene]({{site.baseurl}}/resources/begrep/felles/).
 
 ### Illustrasjon
 

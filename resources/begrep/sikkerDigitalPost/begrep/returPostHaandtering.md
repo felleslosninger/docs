@@ -1,7 +1,8 @@
 ---
 title: returPostHaandtering
-permalink: returposthaandtering.html
+
 sidebar: begrep_sidebar
+redirect_from: /returposthaandtering
 ---
 
 | ---- | ---- |

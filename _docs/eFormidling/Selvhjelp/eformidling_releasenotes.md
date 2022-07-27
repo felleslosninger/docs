@@ -1,54 +1,194 @@
 ---
 title: Endringslogg integrasjonspunktet
 description: Endringslogg for integrasjonspunktet
-permalink: eformidling_releasenotes.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_releasenotes
 ---
 
+# 2.8.2 
+01.07.2022
+
+**Funksjonalitet**
+
+- Lagt til indeks i databasetabell (conv_id indeks i message_status). Reduserer behovet for iterasjon igjennom tabeller og aukar fart på oppslag i database. 
+
+**Feilrettinger**
+
+- Rettet feil ved duplikate innslag i databasetabell. (next_move_message_entry)
+
+
+# 2.8.1
+30.05.2022
+
+**Feilrettinger**
+
+- Manglande transaksjon på status-grensesnittet.
+
+# 2.8.0	
+24.05.2022
+
+**Funksjonalitet**
+
+- Lagt til støtte for DPI-kvitteringer på gammelt format for å støtte proxy klient funksjonalitet. 
+
+**Feilrettinger** 
+
+- Lagt til manglande felt i arkivmelding etter mapping frå SvarInn.
+- Manglande transaksjon ved håndtering av kvitteringer for DPI. 
+
+## 2.7.0
+10.05.2022
+
+**Funksjonalitet**
+
+- Utvida kapabilitietsoppslaget til å også innholde informasjon om innbyggers postkasseleverandør. 
+- Støtte for eDialog via svarInn med fallback avsender ved manglende organisasjonsnummer på avsender.
+
+**Feilrettinger**
+
+- Rettet feil i conversations-APIet som kunne oppstå ved bruk av PostgreSQL.
+
+## 2.6.2
+11.04.2022
+
+**Feilrettinger**
+- Fjernet bug der Arkivmelding_kvittering blir generert for DPF og DPV selv om BestEdu er i bruk.
+
+
+## 2.6.0
+07.04.2022
+
+**Funksjonalitet**
+- Side for meldingsoversikt viser nå kolonner for "MessageId" og "ConversationId", istedenfor berre "ID".
+
+**Feilrettinger**
+- Feilretting for manglende statuser i status kø-API.
+- Retting av feil relatert til DPI for conversations-API
+
+## 2.5.1
+05.04.2022
+
+**Feilrettinger**
+- Fjerna validering på senderRef som UUID for å støtte bakoverkompatibilitet med BEST/EDU (eFormidling 1)
+
+## 2.5.0
+04.04.2022
+
+**Funksjonalitet**
+- Generert arkivmeldingkvittering legges på kø for forsendelser som går mot DPV og DPF.
+- Fjerna bruk av Optionals på påkrevde felt i SBD.
+- Arkivmeldingkvittering handtering for andre kanalar enn DPO
+
+
+**Feilrettinger**
+- Lagt inn manglande felt ```messageId, system og tidspunkt``` i arkivmelding.xml ved forsendelse frå best/edu (eFormidling 1).  
+
+
+## 2.4.1
+01.04.2022
+
+**Feilrettinger**
+- Retta feil der rekkefølge på innholdet i StandardBusinessDocument hadde ei påkrevd rekkefølge, dette var eit brudd med API-et og påverka nokre implementasjonar av REST-APIet ved sending.
+
+## 2.4.0
+25.03.2022
+
+**Funksjonalitet**
+
+* Støtte for På-vegne-av funksjonalitet for DPO
+* Støtte for DPI på ny infrastruktur. Her kan en velge gammal eller ny infrastruktur vha properties. Gammal infrastruktur er aktivert som standard. Den nye infrastrukturen ikkje er klar per 25.03.22. 
+* Støtte for å lese kvitteringer frå gammal og ny DPI-infrastruktur i parallell. 
+* Støtte for å konfigurere  kønamn i activemq for å ha 2 integrasjonspunkt som brukar samme activemq. 
+* Standardisert/Forenklet avsenderadresse for meldinger sendt på-vegne-av
+* Støtte for å sende post til personer utan å oppgi fødselsnummer
+* Flyttet BusinessCertificateValidator ut i efm-commons biblioteket for å tilrettelegge for gjenbruk. 
+* Støtte for å ekskludere hvilke filer som skal ekskluderes fra print ved bruk av KS SvarUt. 
+
+**Feilrettinger**
+* fiksa feil ved oppretting av manifest for DPI
+
+## 2.3.2
+27.01.2022
+
+**Funksjonalitet/feilretting**
+
+* Bugfix 2.3.1
+
+***
+
+## 2.3.1
+26.01.2022
+
+**Funksjonalitet/feilretting**
+
+* støtte for å spesifisere forsendelsestype for KS SvarUt på meldingsnivå
+
+***
+
+## 2.3.0
+17.01.2022
+
+**Funksjonalitet/feilretting**
+
+* støtte for å legge fagsystem og versjon som er i bruk i eFormidling i user-agent header
+* Retta feil der Statuser for Avtalt-meldinger blir ikke sendt	
+* Retta feil der Hikari konsumerte alle tilgjengelige connections til database	
+* Missing default value for property difi.ssl.key-store-type
+* Logge utvalgte properties under oppstart i IP	
+* Støtte for å sende meldinger over DPO for samme organisasjon fra fleire integrasjonspunkt	
+* Justere sending av taushetsbelagt/sensistiv post til Altinn	
+* Ryddet i xml/ws-biblioteker	
+* Legg inn document_identifier i status logginga	
+* Hindre integrasjonspunktet i å starte opp dersom kontakt med Eureka ikkje oppnås	
+* Flyttet konfigurasjon fra Eureka til integrasjonspunktet	
+* Oppgradert integrasjonspunktet til Spring boot 2.6.2
+* Håndtering av meldinger uten vedlegg eller asic ved at /api/messages/in/pop/<id> returnerer 204. 
+
+***
+	
 ## 2.2.6
 08.10.2021
 
-**Feilrettinger**
-- Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
+**Funksjonalitet/feilretting**
+* Håndtere nytt kommende felt "ekstraMetadata" i SvarInn responsen (DPF) for å unngå JSON unmarshalling error. 
 
 ## 2.2.5
 01.10.21
 
 **Features**
 
-- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
+* Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](https://docs.digdir.no/eformidling_properties_config.html#valgfrie-properties)
 
 **Feilrettinger**
 
-- Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
-- rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
-- Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
-- PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
-- Tilkoblinger til DPV har nå begrenset levetid. 
+* Visning av kvittering LEVERT dukker nå opp i statusnettsiden på /conversations.
+* rettet optistimistisk låsefeil ved handtering av flere forespørsler mot tom database.
+* Fikset trådsikkerhet i RestTemplate benyttet til uthenting av token frå Maskinporten.
+* PostgreSQL - rettet transaksjonsfeil som førte til problem med uthenting av store objekter.
+* Tilkoblinger til DPV har nå begrenset levetid. 
 
 
 ## 2.2.4
 20.08.21
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
-- Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
+* Fikset: Peek i eFormidling 2 tar ikke hensyn til mer enn en query parameter"
 
 
 
 ## 2.2.3
 28.06.21
 
-### Hva er endret/nytt?
+**Funksjonalitet/feilretting**
 
-**Features**
-
-- Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
-- Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
-- Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
-- Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
-- Added curl to Docker image.
+* Rettet utilsiktet endring som førte til krav om gyldig UUID for senderRef for best/edu grensesnittet.
+* Utvidet forretningsmelding med støtte for eInnsyn-kvittering. 
+* Rettet en feil ved låsing mot database ved bruk av flere einnsyn-klient konsumenter mot integrasjonspunktet. 
+* Lagt til mulighet for å konfigurere om en vil sette frist ved sending av post til Altinn postboks.
+* Added curl to Docker image.
 
 ***
 

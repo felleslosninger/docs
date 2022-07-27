@@ -2,9 +2,10 @@
 title: Utvikler API-supplement
 description: Her finner du tips for å ta i bruk eFormidling 2.0 grensesnittet. Et supplement til REST docs. Av utvikler for utvikler.
 summary: ""
-permalink: eformidling_dev.html
+
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_dev
 ---
 
 For å ta i bruk eFormidling 2.0 API'et (som vi anbefaler) så må en ha et StandardBusinessDocument(SBD) på rett format, opprette og sende melding, handtere innkommende meldinger og kvitteringer, og rydde opp i køen(activeMQ) etter seg ved å slette prosesserte meldinger.
@@ -85,7 +86,7 @@ SBD må være på rett format, her er eit eksempel som fungerer for avsender 991
 
 Her finner du en .zip fil som inneholder en postman samling for oppretting og sending av store filer i tillegg til arkivmelding.xml som du trenger. 
 
-> [Postman collection og arkivmelding](/resources/eformidling/stormelding_eformidling_api.zip)
+> [Postman collection og arkivmelding]({{site.baseurl}}/resources/eformidling/stormelding_eformidling_api.zip)
 
 Den kan kjøres nesten utav boksen med noen små justeringer:
 
@@ -139,3 +140,16 @@ Forretningsmeldingen har attributten "metadataFiler" der nøkler refererer til v
 Det er også nødvendig at MetaFil/utvidelse gis mimetype ```application/vnd.difi.dpi.lenke+xml``` i tilfellet lenke utenfor brev(andre mimetypes for andre utvidelser)
 
 En kan også oppgi tekst for lenkeknapp, frist, og beskrivelse for lenke. [Se eksempel her.](https://begrep.difi.no/SikkerDigitalPost/1.3.0/forretningslag/Utvidelser/Lenke)
+
+
+## Sende DPO/DPV på-vegne-av 
+
+Ved bruk av versjon 2.4.0 eller nyere av integrasjonspunktet er det mulig å sende på vegne av en annen organisasjon eller underenhet via DPO og DPV. 
+
+For å sende på vegne av må du gjøre tilpasning i Standard Business Document Header på **sender.identifier.value** feltet. Dette støtter nå et adresseringsformat som ser slik ut ```0192:<orgnr>:<påVegneAvOrgnr>```. For eksempel: Digitaliseringsdirektoratet ønsker å sende på vegne av Digitaliseringsdirektoratet Leikanger , da ser **sender.identifier.value** feltet slik ut ```0192:991825827:987464291```. 
+
+### Tilgangsstyring
+Hvem som kan sende på vegne av hvem styres av Digdir. kontakt ```servicedesk@digdir.no``` for å få registrert underenhet som gyldig mottaker på vegne av din organisasjon.
+
+
+På-vegne av DPI er også støttet, [ser mer her.](https://docs.digdir.no/docs/eFormidling/Teknisk_informasjon/message.html#p%C3%A5-vegne-av-avsender---dpv-og-dpi)

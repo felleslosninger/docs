@@ -1,7 +1,8 @@
 ---
 title: Standard Business Document  
-permalink: standardbusinessdocument_index.html
+
 sidebar: dpi_sidebar
+redirect_from: /standardbusinessdocument_index
 ---
 
 |---|---|
@@ -31,11 +32,11 @@ dokumentpakken
 
 ### Klassediagram
 
-[![](uml_diagram.jpg)](uml_diagram.jpg)
+[![]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/uml_diagram.jpg)]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/uml_diagram.jpg)
 
 ### Attributter
 
 | Identifikator                                                    | Kardinalitet | Datatype                    | Kommentar                                                                          |
 | ---------------------------------------------------------------- | ------------ | --------------------------- | ---------------------------------------------------------------------------------- |
-| [StandardBusinessDocumentHeader](sdp_standardbusinessdocumentheader.html) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
-| [Melding](sdp_index.html)      | 0..1         | [Melding](sdp_index.html) | Forretningsmelding identifisert i [DocumentIdentification](sdp_documentidentification.html) |
+| [StandardBusinessDocumentHeader]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
+| [Melding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/)      | 0..1         | [Melding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/) | Forretningsmelding identifisert i [DocumentIdentification]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/DocumentIdentification) |

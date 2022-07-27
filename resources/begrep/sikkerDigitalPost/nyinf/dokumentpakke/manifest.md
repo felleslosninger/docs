@@ -4,7 +4,7 @@ permalink: dpi_manifest.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 |---|---|
 | Term          | {{page.title}} |
@@ -12,7 +12,7 @@ sidebar: dpi_timo_sidebar
 | Datatype      | complexType |
 | Kilde         | DIFI |
 | Kommentar     | Manifest er en xml |
-| fil           | som inneholder relevant informasjon om [dokumentene](sdp_dokument.html) i [dokumentpakken](dokumentpakke_index.md). Manifest xml |
+| fil           | som inneholder relevant informasjon om [dokumentene](sdp_dokument.html) i [dokumentpakken](dokumentpakke_index.md). [Manifest xml](/resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd) |
 | filen         | skal langtidsoppbevares sammen med dokumentene for å bevare integriteten på hele [dokumentpakken](dokumentpakke_index.md) over lang tid. |
 
 ### Attributer

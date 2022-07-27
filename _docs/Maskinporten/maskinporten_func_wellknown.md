@@ -2,9 +2,10 @@
 title: well-known
 description: Maskinportens well-known endepunkt
 summary: "Metadata om Maskinporten er tilgjengelig på vårt .well-known-endepunkt"
-permalink: maskinporten_func_wellknown.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_func_wellknown
 ---
 
 
@@ -22,4 +23,4 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  Maskinportens sign
 |PROD|[https://maskinporten.no/.well-known/oauth-authorization-server](https://maskinporten.no/.well-known/oauth-authorization-server)|
 
 ## ID-porten
-Merk at ID-porten OIDC provider har sine egne metadata, som er [publisert her](oidc_func_wellknown.html)
+Merk at ID-porten OIDC provider har sine egne metadata, som er [publisert her]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)
