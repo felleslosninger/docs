@@ -50,7 +50,7 @@ folders:
     jurl: /docs/eFormidling/
 
   - title: Teknisk dokumentasjon
-    jurl: /eformidling_introduksjon.html
+    jurl: /docs/eFormidling/Introduksjon/
 
 - title: eSignering
   folderitems:

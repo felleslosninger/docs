@@ -4,131 +4,133 @@ folders:
 - title: Introduksjon
   folderitems:
     - title: Introduksjon
-      jurl: /eformidling_introduksjon.html
+      jurl: /docs/eFormidling/Introduksjon/
     - title: Kom i gang
-      jurl: /eformidling_introduksjon_kom_i_gang.html
+      jurl: /docs/eFormidling/Introduksjon/kom_i_gang
     - title: Last ned
-      jurl: /eformidling_introduksjon_last_ned.html
+      jurl: /docs/eFormidling/Introduksjon/last_ned
     - title: Endringslogg
-      jurl: /eformidling_introduksjon_endringslogg.html
+      jurl: /docs/eFormidling/Introduksjon/endringslogg
     - title: Fagsystem
-      jurl: /eformidling_introduksjon_fagsystem.html
+      jurl: /docs/eFormidling/Introduksjon/fagsystem
 - title: Funksjonalitet
   folderitems:
     - title: Oversikt
-      jurl: /eformidling_funksjonalitet.html
+      jurl: /docs/eFormidling/Funksjonalitet/
     - title: Avtalt meldingsutveksling
-      jurl: /eformidling_funksjonalitet_avtalt.html
+      jurl: /docs/eFormidling/Funksjonalitet/avtalt
     - title: FIKS IO-meldingsutveksling
-      jurl: /eformidling_funksjonalitet_fiks_io.html
+      jurl: /docs/eFormidling/Funksjonalitet/fiks_io
     - title: Informasjon til innbygger
-      jurl: /eformidling_funksjonalitet_informasjon_til_innbygger.html
+      jurl: /docs/eFormidling/Funksjonalitet/informasjon_til_innbygger
     - title: Innsynskrav fra eInnsyn
-      jurl: /eformidling_funksjonalitet_innsynskrav.html
+      jurl: /docs/eFormidling/Funksjonalitet/innsynskrav
     - title: Journalpost til eInnsyn
-      jurl: /eformidling_funksjonalitet_journalpost.html
+      jurl: /docs/eFormidling/Funksjonalitet/journalpost
     - title: Møte til eInnsyn
-      jurl: /eformidling_funksjonalitet_mote.html
+      jurl: /docs/eFormidling/Funksjonalitet/mote
     - title: Saksbehandling
-      jurl: /eformidling_funksjonalitet_saksbehandling.html
+      jurl: /docs/eFormidling/Funksjonalitet/saksbehandling
     - title: Taushetsbelagt saksbehandling
-      jurl: /eformidling_funksjonalitet_taushetsbelagt_saksbehandling.html
+      jurl: /docs/eFormidling/Funksjonalitet/taushetsbelagt_saksbehandling
     - title: Vedtak til innbygger
-      jurl: /eformidling_funksjonalitet_vedtak_til_innbygger.html
+      jurl: /docs/eFormidling/Funksjonalitet/vedtak_til_innbygger
 - title: Egenskaper
   folderitems:
     - title: Oversikt
-      jurl: /eformidling_egenskaper.html
+      jurl: /docs/eFormidling/Egenskaper/
     - title: Driftbarhet
-      jurl: /eformidling_egenskaper_driftbarhet.html
+      jurl: /docs/eFormidling/Egenskaper/driftbarhet
     - title: Fleksibilitet
-      jurl: /eformidling_egenskaper_fleksibilitet.html
+      jurl: /docs/eFormidling/Egenskaper/fleksibilitet
     - title: Kapasitet
-      jurl: /eformidling_egenskaper_kapasitet.html
+      jurl: /docs/eFormidling/Egenskaper/kapasitet
     - title: Pålitelighet
-      jurl: /eformidling_egenskaper_palitlighet.html
+      jurl: /docs/eFormidling/Egenskaper/palitlighet
     - title: Responsitivitet
-      jurl: /eformidling_egenskaper_responsitivitet.html
+      jurl: /docs/eFormidling/Egenskaper/responsitivitet
     - title: Sikkerhet
-      jurl: /eformidling_egenskaper_sikkerhet.html
+      jurl: /docs/eFormidling/Egenskaper/sikkerhet
 - title: Utvikling
   folderitems:
     - title: Kom i gang med utvikling
-      jurl: /eformidling_utvikling.html
+      jurl: /docs/eFormidling/Utvikling/
     - title: Eksempler
-      jurl: /eformidling_utvikling_eksempler.html
+      jurl: /docs/eFormidling/Utvikling/Eksempel/
     - title: Meldingstjenester
-      jurl: /eformidling_utvikling_meldingstjenester.html
+      jurl: /docs/eFormidling/Utvikling/Meldingstjenester/
     - title: Dokumenttyper
-      jurl: /eformidling_utvikling_dokumenttyper.html
-    - title: Integrasjonspunkt API
-      jurl: /eformidling_utvikling_integrasjonspunkt_eformidling2_api.html
+      jurl: /docs/eFormidling/Utvikling/Dokumenttyper/
+    - title: Integrasjonspunktets API (eFormidling 2)
+      jurl: /docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api
+    - title: Integrasjonspunktets API (BEST/EDU) (fases ut)
+      jurl: /docs/eFormidling/Utvikling/integrasjonspunkt_bestedu_api
     - title: Adressetjenestens API
-      jurl: /eformidling_utvikling_serviceregistry_api.html
+      jurl: /docs/eFormidling/Utvikling/serviceregistry_api
     - title: Meldingsstatus API
-      jurl: /eformidling_utvikling_meldingsstatus_api.html
+      jurl: /docs/eFormidling/Utvikling/meldingsstatus_api
 - title: Testing
   folderitems:
     - title: Kom i gang med testing
-      jurl: /eformidling_testing.html
+      jurl: /docs/eFormidling/Testing/
 - title: Drift
   folderitems:
     - title: Kom i gang med integrasjonspunktet
-      jurl: /eformidling_drift.html
+      jurl: /docs/eFormidling/Drift/
     - title: 1) Bestille tilganger
-      jurl: /eformidling_drift_bestille_tilganger.html
+      jurl: /docs/eFormidling/Drift/bestille_tilganger
     - title: 2) Forberede installasjon
-      jurl: /eformidling_drift_forberede_installasjon.html
+      jurl: /docs/eFormidling/Drift/forberede_installasjon
     - title: 3a) Installasjon
-      jurl: /eformidling_drift_installasjon.html
+      jurl: /docs/eFormidling/Drift/installasjon
     - title: 3b) Installasjon i AKS
-      jurl: /eformidling_drift_installasjon_aks.html
+      jurl: /docs/eFormidling/Drift/installasjon_aks
     - title: 4a) Oppgradering
-      jurl: /eformidling_drift_oppgradering.html
+      jurl: /docs/eFormidling/Drift/oppgradering
     - title: 4b) Automatisk oppgradering
-      jurl: /eformidling_drift_automatisk_oppgradering.html
+      jurl: /docs/eFormidling/Drift/automatisk_oppgradering
     - title: 5) Start og stopp
-      jurl: /eformidling_drift_start_og_stopp.html
+      jurl: /docs/eFormidling/Drift/start_og_stopp
     - title: 6) Sikkerhetskopi
-      jurl: /eformidling_drift_sikkerhetskopi.html
+      jurl: /docs/eFormidling/Drift/sikkerhetskopi
     - title: 7) Sertifikatadministrasjon
-      jurl: /eformidling_drift_sertifikatadministrasjon.html
+      jurl: /docs/eFormidling/Drift/sertifikatadministrasjon
     - title: 8) Overvåking
-      jurl: /eformidling_drift_overvaking.html
+      jurl: /docs/eFormidling/Drift/overvaking
     - title: 9) Feilsøking
-      jurl: /eformidling_drift_feilsøking.html
+      jurl: /docs/eFormidling/Drift/feilsoking
     - title: 10) Kjente feil
-      jurl: /eformidling_drift_kjente_feil.html
+      jurl: /docs/eFormidling/Drift/kjente_feil
 - title: Konfigurasjon
   folderitems:
     - title: Minimal konfigurasjon
-      jurl: /eformidling_konfigurasjon_minimal.html
+      jurl: /docs/eFormidling/Konfigurasjon/minimal
     - title: Tilgjengelige tjenester
-      jurl: /eformidling_konfigurasjon_tilgjengelige_tjenester.html
+      jurl: /docs/eFormidling/Konfigurasjon/tilgjengelige_tjenester
     - title: Kjøremiljø
-      jurl: /eformidling_konfigurasjon_kjoremiljo.html
+      jurl: /docs/eFormidling/Konfigurasjon/kjoremiljo
     - title: Sikkerhet
-      jurl: /eformidling_konfigurasjon_sikkerhet.html
+      jurl: /docs/eFormidling/Konfigurasjon/sikkerhet
     - title: Automatisk oppdatering
-      jurl: /eformidling_konfigurasjon_automatisk_oppdatering.html
+      jurl: /docs/eFormidling/Konfigurasjon/automatisk_oppdatering
     - title: Overvåking
-      jurl: /eformidling_konfigurasjon_overvaking.html
+      jurl: /docs/eFormidling/Konfigurasjon/overvaking
     - title: Logging
-      jurl: /eformidling_konfigurasjon_logging.html
+      jurl: /docs/eFormidling/Konfigurasjon/logging
     - title: Kapasitet
-      jurl: /eformidling_konfigurasjon_kapasitet.html
+      jurl: /docs/eFormidling/Konfigurasjon/kapasitet
 - title: Miljø
   folderitems:
     - title: Produksjon
-      jurl: /eformidling_miljo_produksjon.html
+      jurl: /docs/eFormidling/Miljo/produksjon
     - title: QA
-      jurl: /eformidling_miljo_qa.html
+      jurl: /docs/eFormidling/Miljo/qa
     - title: Test
-      jurl: /eformidling_miljo_test.html
+      jurl: /docs/eFormidling/Miljo/test
 - title: Spørsmål og svar
   folderitems:
     - title: Spørsmål og svar
-      jurl: /eformidling_sporsmal_og_svar.html
+      jurl: /docs/eFormidling/Sporsmal_og_svar
 - title: (gammel) Installasjon av integrasjonspunktet
   folderitems:
     - title: Oppgradere til ny versjon
