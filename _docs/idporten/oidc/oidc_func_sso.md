@@ -32,11 +32,9 @@ Alle OIDC-integrasjoner mot ID-porten må implementere støtte for følgende to 
 
 Merk at ID-porten ikke støtter back-channel logout.
 
-### 1: Utlogging fra egen tjeneste
-
+### 1: Utlogging fra egen tjeneste (/endsession)
 
 Når brukeren vil logge ut fra din tjeneste, må du sende en redirect til ID-portens endsession-endepunkt.  Adressen til endepunktet er definert i [well-known-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown).  
-
 
 Følgende attributer kan være del av requesten:
 
@@ -55,18 +53,23 @@ https://oidc-ver2.difi.no/idporten-oidc-provider/endsession
 	&state=fe93c125-4d69-4ee3-8ca5-299ac6e3e499
 ```
 
-Ved mottak av endsession-redirect, vil ID-porten  logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon, både OIDC og SAML. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
+Ved mottak av endsession-redirect, vil ID-porten logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon, både OIDC og SAML. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
+
+Utlogging fra egen tjeneste er basert på OIDC Session Management](http://openid.net/specs/openid-connect-session-1_0.html)-spesifikasjonen.
+
+#### Samspill mellom sesjoner og tokens ved utlogging
+
+ID-porten vil også invalidere alle tokens som tilhører rene innlogginger (dvs. som kun har scopene "openid" og/eller "profile"). Merk at dette betyr at tokens som inneholder ytterligere scopes, fremdeles vil være aktive etter utlogging.  Motivasjonen bak denne oppførselen er at en utlogging fra netttjeneste tilhørende virksomhet A, ikke naturlig skal føre til at langt-levende app-tilgang tilhørende virksomhet B skal trekkes tilbake, om disse to tilfeldigvis ble utstedt med utgangspunkt i samme sso-sesjon.
 
 
-Ang. validering av state
+#### Ang. validering av state
+
 * Regex for validering: ^[\x20-\x7E]+$
 * Godtar dermed gyldige ascii-tegn med hex-verdi mellom 20 og 7E, ref. f.eks. http://www.asciitable.com/
 
 
-Utlogging fra egen tjeneste er basert på OIDC Session Management](http://openid.net/specs/openid-connect-session-1_0.html)-spesifikasjonen.
 
-
-### 2: Håndtere utlogging fra ID-porten
+### 2: Håndtere utlogging fra ID-porten (front-channel logout)
 
 Dersom brukeren logger ut fra en annen tjeneste, vil ID-porten trigge utlogging fra alle andre tjenester, dvs. både OIDC-tjenester som er konfigurert med støtte for Front Channel Logout.  
 
@@ -88,6 +91,8 @@ GET https://client.example.com/myapp/logout
 
 
 Front-channel logout i ID-porten er basert på  [OIDC Front Channel Logout](http://openid.net/specs/openid-connect-frontchannel-1_0.html)-spesifikasjonen.
+
+
 
 ## Samspill mellom SAML SLO og OpenID Connect SLO
 
