@@ -24,12 +24,12 @@ Overgangen til ny løsning vil skje i 4 steg:
 |-|-|-|
 |1: Prøvedrift | November 2022 | Den nye OIDC-issueren er gjennomtestet og settes i produksjon, klar for reelle tjenester. Driftsplatformen vil være godkjent for 24/7-drift, og informasjonssikkerhet vil være ivaretatt på lik linje med dagens løsning. I denne fasen kan det oppstå mindre "innkjøringsproblemer" mens vi bygger hands-on-erfaring med den nye løsningen. For at prøvedriften skal bli vellykket, er vi derfor helt avhengige av at et tilstrekkelig antall kundetjenester tar løsningen i bruk tidlig. Nye integrasjoner vil derfor blir pålagt å bruke ny løsning, men vi ønsker også at mange eksisterende integrasjoner flyttes. |
 |2: Full SLA | Mars 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  Migreringsperioden starter, og alle OIDC-integrasjoner må ila neste 6 måneder flyttes.   Kunder som er avhengige av SSO med andre, må koordinere migrering seg imellom (Feks. de som har SSO til Altinn, må vente til SAML-flyttinga i neste fase).
-|3: SAML flyttes | Mai/Juni 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle openam til ny proxy-løsning. Siden gammel OIDC også benytter SAML internt idag, medfører dette i praksis at all gjenstående trafikk flyttes til ny løsning denne dagen. |
+|3: SAML flyttes | Mai/Juni 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle openam til ny proxy-løsning. Siden gammel OIDC også benytter SAML internt idag, medfører dette i praksis at all gjenstående trafikk flyttes til å gå gjennom ny løsning denne dagen. |
 |4: Sanering | August 2023 |  Den gamle OIDC-issueren skrus av.  OIDC-integrasjoner som ennå ikke har migrert til ny issuer, vil slutte å fungere.
 
 ## Protokoll-målbilde
 
-Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen når denne er klar.   Standard-flyt for alle integrasjoner blir OIDC og code-flow med tvungen bruk av PKCE og state og nonce.
+Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen, ulikt dagens løsning som er basert på 2.0. Grunnen til denne endringen er at vi ønsker å følge de oppdaterte sikkerhetskravene som er i 2.1.  Standard-flyt for alle integrasjoner blir OIDC og code-flow med tvungen bruk av PKCE og state og nonce.
 
 SAML blir videreført kun for eksisterende tjenster, men med begrenset funksjonalitet, og fases på sikt ut.
 
@@ -77,6 +77,7 @@ I `access_token` vil `sub` også få nye verdier.
 Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
 
 - er det hensiktsmessig at revokasjon av access_token/refresh_token også fører til at SSO-sesjonen blir terminert, slik som idag?
+- er det hensiktsmessig at utlogging fra SSO-sesjon også invaliderer alle tokens til alle klienter tilhørende sesjonen?
 - bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten som del av utloggingen ?
 - hvor strenge krav skal vi engentlig stille for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
 
