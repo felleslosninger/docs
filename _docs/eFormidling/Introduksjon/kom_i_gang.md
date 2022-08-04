@@ -12,3 +12,6 @@ sidebar: eformidling_sidebar
 - [Kom i gang med integrasjonspunktet](../Drift/)
 - [Kom i gang med utvikling](../Utvikling/)
 - [Kom i gang med testing](../Testing/)
+- Demoer
+  - [Demonstrasjon av avtalt meldingsutveksling](Demo/avtalt_meldingsutveksling)
+  - [Demonstrasjon av automatisk oppgradering (Kosmos)](Demo/automatisk_oppgradering)

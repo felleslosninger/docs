@@ -41,13 +41,16 @@ Java-parametre eller miljøvariable.
 
 1. Start med å opprette en mappe, for eksempel `c:\integrasjonspunkt`
 2. Last så ned [integrasjonspunkt-local.properties]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
-3. Last ned [integrasjonspunkt-[versjonsnummer].jar](../Introduksjon/last_ned)
+3. Last ned [integrasjonspunkt-[versjonsnummer].jar](../Introduksjon/last_ned#integrasjonspunktet)
+4. Last ned [eFormidlings offentlige nøkkel](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
+5. [Verifiser at jar-filen er fra Digitaliseringsdirektoratet](../Selvhjelp/sporsmal_og_svar#hvordan-verifiserer-jeg-at-jar-filen-er-fra-digitaliseringsdirektoratet)
 
 Når du er ferdig skal strukturen på området se slik ut:
 
 ```
 c:/
 |-- integrasjonspunkt/
+   |-- eformidling-key.asc
    |-- integrasjonspunkt-local.properties
    |-- integrasjonspunkt-[versjon].jar
 ```
@@ -66,7 +69,7 @@ integrasjonspunktet når operativsystemet starter og stopper, og som ved behov k
 
 Det er også mulig å starte og stoppe integrasjonspunktet manuelt:
 
-- [Kjøre integrasjonspunktet fra kommandovindu](Eksempel/start_og_stopp#alt-3-kjøre-via-task-scheduler-med-minste-rettigheter)
+- [Kjøre integrasjonspunktet fra kommandovindu](Eksempel/start_og_stopp#alt-2-kjøre-integrasjonspunktet-fra-kommandovindu)
 
 ## Konfigurer integrasjonspunktet
 
@@ -122,9 +125,10 @@ difi.move.org.keystore.type=PKCS12
 difi.move.feature.enableDPE=false
 ```
 
-### Frivillig konfigurasjon
+### Valgfri konfigurasjon
 
 #### eFormidlingsmiljø (produksjon eller QA)
+*Valgfritt*
 
 I tillegg til produksjon til byr eFormidling ett offentlig testmiljø:
 
@@ -142,6 +146,7 @@ spring.profiles.active=staging
 ```
 
 #### Hashicorp Vault
+*Valgfritt*
 
 Hashicorp Vault gjør det mulig å beskytte virksomhetssertifikat, passord og andre hemmeligheter. Dokumentasjon for
 HashiCorp Vault finnes på [https://www.vaultproject.io/](https://www.vaultproject.io/).
@@ -177,6 +182,7 @@ difi.move.org.keystore.path=vault:keystore
 ```
 
 #### Ekstern database
+*Valgfritt*
 
 Integrasjonspunktet bruker en intern fildatabase (`H2`) som standard. Denne er mulig å bytte ut med en ekstern database.
 MySQL, Postgres og MSSQL støttes. Ved bruk av Docker må en slå på ekstern database for å unngå risiko for datatap ved
@@ -213,6 +219,7 @@ difi.datasource.password=mypassword
 ```
 
 #### Mellomlagring av meldinger til ekstern database
+*Valgfritt*
 
 Integrasjonspunktet mellomlagrer meldinger til fil som standard. Dette er mulig å bytte ut med mellomlagring til
 database. Ved bruk av Docker må en slå på mellomlagring til database for å unngå risiko for datatap ved f.eks.
@@ -229,6 +236,7 @@ difi.move.nextmove.useDbPersistence=true
 ```
 
 #### Ekstern meldingskø
+*Valgfritt*
 
 Integrasjonspunktet bruker en intern meldingskø (`ActiveMQ`) som standard. Denne er mulig å bytte ut med en ekstern
 meldingskø. Bare ActiveMQ støttes. Ved bruk av Docker må en slå på ekstern meldingskø for å unngå risiko for datatap ved
@@ -249,6 +257,7 @@ difi.activemq.password=mypassword
 ```
 
 #### Transportsikring
+*Valgfritt*
 
 Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
 grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard verken beskyttet av
@@ -273,6 +282,7 @@ difi.ssl.key-alias=myalias
 ```
 
 #### HTTP Basic Auth
+*Valgfritt*
 
 Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
 grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet
@@ -294,6 +304,7 @@ difi.security.user.name=mypassword
 ```
 
 #### Levetid for meldinger
+*Valgfritt*
 
 Integrasjonspunktet er designet for å tåle at meldingstjenestene som brukes kan ha nedetid og andre driftsproblemer uten
 at dette skal medføre at levering av meldinger feiler. 
@@ -304,6 +315,7 @@ at dette skal medføre at levering av meldinger feiler.
 
 
 #### Kapasitet
+*Valgfritt*
 
 Ved utsending av store volum kan det være aktuelt å justere kapasiteten i integrasjonspunktet:
 
@@ -328,6 +340,7 @@ difi.move.queue.concurrency=20
 ```
 
 #### Port
+*Valgfritt*
 
 | Egenskap      | Beskrivelse                                | Standardverdi |
 |---------------|--------------------------------------------|---------------|
@@ -340,18 +353,19 @@ server.port=80
 ```
 
 #### Støttetjenester
+*Valgfritt*
 
 Integrasjonspunktet tilbyr en del støttetjenester som eksponerer helsestatus, konfigurasjon og annet som standard. Disse
 kan begrenses eller slås helt av dersom en ønsker dette.
 
-- [Støttetjenester](../Feilsoking/feilsoking#støttetjenester)
+- [Støttetjenester](../Selvhjelp/feilsoking#støttetjenester)
 
 | Egenskap                                  | Beskrivelse                                                                                       | Standardverdi |
 |-------------------------------------------|---------------------------------------------------------------------------------------------------|---------------|
 | management.endpoints.web.exposure.include | Angir hvilke støttetjenester som skal være tilgjengelige (`*` for alle eller kommaseparert liste) | *             |
 | management.endpoint.health.show-details   | Angir om helseendepunktet skal vise detaljer utover enkel status (`always` eller `never`)         | always        |
 
-Dersom en skal bruke automatisk oppgradering av integrasjonspunktet krever dette at støttetjenesten `info`, `health` og
+Dersom en skal bruke automatisk oppgradering av integrasjonspunktet krever dette at støttetjenestene `info`, `health` og
 `shutdown` er tilgjengelig.
 
 Eksempel:
@@ -362,6 +376,7 @@ management.endpoint.health.show-details=never
 ```
 
 #### BEST/EDU-grensesnittet (under utfasing)
+*Valgfritt*
 
 Dersom en skal ta i bruk integrasjonspunktet mha. BEST/EDU-grensesnittet (under utfasing) så må dette konfigureres.
 Dette er bare aktuelt for eldre sak- og arkivsystemer.
@@ -389,6 +404,7 @@ difi.move.noarkSystem.domain=MYUSERDOMAIN
 ```
 
 #### E-post
+*Valgfritt*
 
 Ved bruk av KS SvarInn så vil integrasjonspunktet håndtere feil ved behandling av inngående meldinger med å sende en
 e-post. Dette fordi det har oppstått noen sporadiske problem med konvertering av meldinger mellom KS FIKS og
@@ -544,7 +560,7 @@ difi.move.dpv.enableDueDate=false
 
 Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
 
-- [Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?](../Feilsoking/sporsmal_og_svar/hva-skal-til-for-at-proxy-klientbiblioteket-for-digital-post-til-innbyggere-skal-fungere)
+- [Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?](../Selvhjelp/sporsmal_og_svar/hva-skal-til-for-at-proxy-klientbiblioteket-for-digital-post-til-innbyggere-skal-fungere)
 
 Eksempel:
 
@@ -578,7 +594,7 @@ difi.move.fiks.io.sender-orgnr=910077473
 
 ## Neste steg
 
-Etter konfigurasjon av integrasjonspunktet anbefales det å også konfigurere:
+Etter konfigurasjon av integrasjonspunktet anbefales det å konfigurere:
 
 - [Automatisk oppgradering](automatisk oppgradering)
 - [Sikkerhetskopi](sikkerhetskopi)

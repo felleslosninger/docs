@@ -9,8 +9,6 @@ folders:
       jurl: /docs/eFormidling/Introduksjon/kom_i_gang
     - title: Last ned
       jurl: /docs/eFormidling/Introduksjon/last_ned
-    - title: Endringslogg
-      jurl: /docs/eFormidling/Introduksjon/endringslogg
     - title: Fagsystem
       jurl: /docs/eFormidling/Introduksjon/fagsystem
 - title: Funksjonalitet
@@ -73,10 +71,8 @@ folders:
   folderitems:
     - title: Oppgradering
       jurl: /docs/eFormidling/Oppgradering/
-- title: Konfigurasjon
-  folderitems:
-    - title: Automatisk oppdatering
-      jurl: /docs/eFormidling/Konfigurasjon/automatisk_oppdatering
+    - title: Endringslogg
+      jurl: /docs/eFormidling/Oppgradering/endringslogg
 - title: Utvikling
   folderitems:
     - title: Kom i gang med utvikling
@@ -102,11 +98,11 @@ folders:
 - title: Selvhjelp
   folderitems:
     - title: Feilsøking
-      jurl: /docs/eFormidling/Feilsoking/feilsoking
+      jurl: /docs/eFormidling/Selvhjelp/feilsoking
     - title: Kjente feil
-      jurl: /docs/eFormidling/Feilsoking/kjente_feil
+      jurl: /docs/eFormidling/Selvhjelp/kjente_feil
     - title: Spørsmål og svar
-      jurl: /docs/eFormidling/Feilsoking/sporsmal_og_svar
+      jurl: /docs/eFormidling/Selvhjelp/sporsmal_og_svar
 - title: Miljø
   folderitems:
     - title: Produksjon

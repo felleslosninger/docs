@@ -6,55 +6,186 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Djupdykk i KOSMOS der me ser på kva applikasjonen er og korleis den fungerer. 
+eFormidling anbefaler automatisk oppgradering av integrasjonspunktet.
 
-> Visst du ser etter installasjonsveiledning for KOSMOS må du leite [her i staden](installasjon#kosmos)
+1. TOC
+{:toc}
 
 ## Introduksjon
 
-Kontinuerlege oppdateringar for sikker meldingsutveksling i offentleg sektor - KOSMOS er ein Java Spring Boot-støtta applikasjon (JAR) som køyrer som ei teneste, side om side med eit integrasjonspunkt (også JAR). Den fungerar i grove trekk slik:
+Automatisk oppgradering av integrasjonspunktet skjer ved hjelp av støtteapplikasjonen Kosmos. Kosmos er en Java-
+applikasjon som kan kjøre side om side med integrasjonspunktet.
 
-1. Samanliknar gjeldande integrasjonspunkt-versjon mot siste tilgjengelege i Maven-repositoriet til Digdir.
+- [Demo av automatisk oppgradering](../Introduksjon/Demo/automatisk_oppgradering)
 
-2. Dersom det er ein nyare versjon tilgjengeleg, vert denne lasta ned til klienten. 
+Automatisk oppgradering fungerar i grove trekk slik:
 
-3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen. Dersom den nye versjonen ikkje startar, rullar KOSMOS attende.
+1. Samanliknar gjeldande integrasjonspunkt-versjon mot siste tilgjengelege i Maven-repositoriet til Digdir
+2. Dersom det er ein nyare versjon tilgjengeleg, vert denne lasta ned til klienten
+3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen (Dersom den nye versjonen ikkje startar, rullar KOSMOS attende)
 
-Vidare følgjer ei grundigare beskriving av korleis KOSMOS fungerar.
+## Forutsetninger
 
-### Relevant versjon
+Konfigurasjon av automatisk oppgradering forutsetter:
 
-Denne dokumentasjonen gjeld KOSMOS-1.1.0 og nyare.
+- [Installasjon av integrasjonspunktet](installasjon) og bruk av Java
+- [Støttetjenestene er tilgjengelig i integrasjonspunktet](installasjon#støttetjenester)
 
-### Krav til integrasjonspunkt som skal verta oppdatert
+## Konfigurasjon
 
-Det anbefales å begynne med eit fungerande oppsett for integrasjonspunktet, men ved nyinstallasjon av både KOSMOS og integrasjonspunktet er det også mulig å bruke KOSMOS til å laste ned integrasjonspunktet for så å konfigurere både integrasjonspunkt og KOSMOS.
-+ Alle nødvendige portopningar for integrasjonspunktet er satt opp i brannmur(ar) som beskytter dette. [Sjå dokumentasjon](forberede_installasjon#brannmur%C3%A5pninger). Om du allereie køyrer integrasjonspunktet er desse på plass og du treng ikkje åpne noko nytt for å bruke KOSMOS.
-+ Følgande endepunkt må være internt eksponerte i integrasjonspunktet. 
-  1. Shutdown-endepunktet: ```/manage/shutdown```. Dette gjer at KOSMOS kan stoppa integrasjonspunktet når ein ny versjon er tilgjengeleg.
-  2. Info-endepunktet: ```/manage/info```. For bestemming av inneværande versjon.
-  3. Helse-endepunktet: ```/manage/health```. For at KOSMOS skal kunna avgjera om applikasjonen køyrer eller ikkje.
+Automatisk oppgradering av integrasjonspunktet konfigureres ved hjelp av en konfigurasjonsfil.
 
-Om du har skrudd desse av i integrasjonspunktet kan du skru det på ved denne propertyen ```management.endpoints.enabled-by-default=true```
+1. Start med å finne mappen integrasjonspunktet er installert til, for eksempel `c:\integrasjonspunkt`
+2. Last så ned [kosmos-local.properties]({{site.baseurl}}/resources/eformidling/kosmos-local.txt) og lagre i overnevnte mappe
+3. Last ned [kosmos-[versjonsnummer].jar](../Introduksjon/last_ned#kosmos)
+4. Last ned [eFormidlings offentlige nøkkel](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
+5. [Verifiser at jar-filen er fra Digitaliseringsdirektoratet](../Selvhjelp/sporsmal_og_svar#hvordan-verifiserer-jeg-at-jar-filen-er-fra-digitaliseringsdirektoratet)
 
+Når du er ferdig skal strukturen på området se slik ut:
 
-## Funksjonalitet
+```
+c:/
+|-- integrasjonspunkt/
+   |-- eformidling-key.asc
+   |-- integrasjonspunkt-local.properties
+   |-- integrasjonspunkt-[versjon].jar
+   |-- kosmos-local.properties
+   |-- kosmos-[versjon].jar
+```
 
-KOSMOS køyrer periodiske sjekkar i rekkefølge beskriven her. Innstillinga ```kosmos.schedulerCronExpression``` avgjer kor ofte dette skjer. 
+I tillegg må Kosmos kjøres med nødvendige tilganger til å opprette filer og mapper på dette filområdet.
 
-1. Finne noværande versjon av integrasjonspunktet.
-2. Finne siste versjon av integrasjonspunktet.
-3. Sjekk av versjon-kompabilitet.
-4. Nedlasting av siste lanserte versjon.
-5. Validere autentisitet på nedlasta versjon.
-6. Stopp av gammalt integrasjonspunkt.
-7. Oppstart av ny versjon.
+Ved bruk av Java direkte anbefales det at det konfigureres en bakgrunnstjeneste som starter og stopper Kosmos når
+operativsystemet starter og stopper, og som ved behov kan startes og stoppes manuelt. Eksempel:
 
-Ein kan sjølv velge tidspunkt for når ny versjon skal starte opp. Standard verdiane er kl 05:30, 19:30 og 21:30.
+- [Kjøre kosmos som en tjeneste (Windows)](Eksempel/start_og_stopp#starte-som-windows-teneste)
+- `systemctl`, `upstart` eller lignende, avhengig av distribusjon (Linux)
+
+Det er også mulig å starte og stoppe integrasjonspunktet manuelt:
+
+- [Kjøre integrasjonspunktet fra kommandovindu](Eksempel/start_og_stopp#starte-frå-kommandolinja)
+
+## Minimumskonfigurasjon
+
+| **Egenskap**                          | **Beskrivelse**                                                                           | **Standardverdi**        |
+|---------------------------------------|-------------------------------------------------------------------------------------------|--------------------------|
+| kosmos.integrasjonspunkt.baseURL      | Host og port til ditt integrasjonspunkt                                                   | http://localhost:9093    |
+| difi.move.org.number                  | Samme organisasjonsnummer som i integrasjonspunkt-local.properties                        | (ingen)                  |
+| kosmos.mail.recipient                 | Motta varsler på e-post når Kosmos har forsøkt en oppdatering                             | (ingen)                  |
+| kosmos.mail.from                      | Avsender av varsler                                                                       | (ingen)                  |
+| spring.mail.host                      | Din SMTP-server for utsending av e-post                                                   | (ingen)                  |
+| spring.mail.port                      | Port benyttet av din SMTP-server                                                          | (ingen)                  |
+| kosmos.verification.publicKeyPaths[0] | Digitaliseringsdirektoratet sin offentlige nøkkel for å verifisere signatur på .jar filen | file:eformidling-key.asc |
+
+Eksempel:
+
+```
+# Replace hosts and ports of URL with the location
+# of your integrasjonspunkt.
+kosmos.integrasjonspunkt.baseURL=http://localhost:9093
+
+# Your organisationnumber. Should be the same as in integrasjonspunkt-local.properties
+difi.move.org.number=991825827
+
+# E-mail is optional. Please specify these properties 
+# to receive e-mails when KOSMOS updates the integrasjonspunkt-application.
+kosmos.mail.recipient=someone@yourdomain.no
+kosmos.mail.from=noreply@yourdomain.no
+
+spring.mail.host=smtp.yourdomain.no
+spring.mail.port=25
+
+# Digitaliseringsdirektoratet public key paths. i.e: file:keyname.asc
+kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
+```
+
+## Valgfri konfigurasjon
+
+### Setje tidspunkt for oppdatering
+*Valgfritt*
+
+Ein kan setje tidspunkt for kortid applikasjonen vil forsøke å oppdatere integrasjonspunktet om ein ikkje ynskjer å
+benytte standard-verdiane. Standard verdiane er kl 05:30, 19:30 og 21:30
+
+Her er nokre døme som viser korleis ein kan styre tidspunkt for oppdatering.
+
+```
+#Standard verdi: Sjekkar etter oppdatering mandag-fredag kl 05:30, 19:30 og 21:30.
+kosmos.schedulerCronExpression=0 30 5,19,21 * * MON-FRI
+
+#Sjekkar etter oppdatering kvar dag kl 06:00.
+kosmos.schedulerCronExpression=0 0 6 * * ?
+
+#Sjekkar etter oppdatering kvar dag kl 23:15.
+kosmos.schedulerCronExpression=0 15 23 ? * *
+
+#Sjekkar etter oppdatering kvar laurdag og søndag kl 12:00.
+kosmos.schedulerCronExpression=0 0 12 ? * SAT,SUN
+
+#Sjekkar etter oppdatering kvart tredje minutt kvar time.
+kosmos.schedulerCronExpression=0 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * ? * *
+```
+
+### Blokkere versjonar
+*Valgfritt*
+Det finnes funksjonalitet for å la applikasjonen blokkliste versjonar om den ikkje er godkjend eller klarer starte. Standard verdien til denne er false, men kan aktivere ved å endre properties. Det kan være fornuftig å bruke om ein ynskjer hyppig polling på kor ofte applikasjonen skal sjekke etter ny versjon.
+
+```
+kosmos.blocklist.enabled=true
+```
+
+Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste [schedulerte tidspunkt.](####Setje-tidspunkt-for-oppdatering)
+
+### Konfigurasjon for logging
+*Valgfritt*
+
+Denne er ikkje satt som default og må leggast inn manuelt
+
+| Namn                               | Anbefalt-verdi | Beskriving                                                                            |
+|------------------------------------|----------------|---------------------------------------------------------------------------------------|
+| logging.level.no.difi.move.kosmos  | TRACE          | Auke loggnivået på KOSMOS for å få ekstra informasjon ved oppstart eller feilsøking.  |
+
+### Diverse konfigurasjon
+*Valgfritt*
+
+| **Namn**                                               | **Standard-verdi**                                  | **Beskriving**                                                                                                                                                                                                 |
+|--------------------------------------------------------|-----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| kosmos.actuator-connect-timeout-in-ms                  | 5000                                                | Kor lenge KOSMOS ventar på å få kontakt med info-, helse- og shutdow-endepunkt på integrasjonspunkt.                                                                                                           |
+| kosmos.actuator-read-timeout-in-ms                     | 5000                                                | Kor lenge KOSMOS ventar på svar frå info-, helse- og shutdown-endepunkt på integrasjonspunkt.                                                                                                                  |
+| kosmos.artifact-id                                     | integrasjonspunkt                                   | Namnet på applikasjonen som er handtert av KOSMOS.                                                                                                                                                             |
+| kosmos.blocklist.duration-in-hours                     | 2                                                   | Levetid på blockliste over feilande versjonar.                                                                                                                                                                 |
+| kosmos.blocklist.enabled                               | true                                                | Flagg som styrer aktivering av blockliste.                                                                                                                                                                     |
+| kosmos.environment.prefixes-removed-from-child-process | [spring, kosmos]                                    | Prefiks for innstillingar som ikkje skal vidareførast til oppdaterte integrasjonspunkt. Gjer at t.d. spring.mail.host ikkje vert vidareført og forårsakar aktivering av uønska bean-ar i integrasjonspunktet.  |
+| kosmos.group-id                                        | no.difi.meldingsutveksling                          | Maven-group-ID-en til artefakten som er handtert av KOSMOS.                                                                                                                                                    |
+| kosmos.integrasjonspunkt.baseURL                       | http://localhost:9093                               | URL-en integrasjonspunktet køyrer på hjå klienten. Fungerar som snarveg for å setja info-, helse- og shutdownURL-innstillingane. Ikkje påkrevd i seg sjølv, aktuator-endepunkta kan konfigurerast individuelt. |
+| kosmos.integrasjonspunkt.early-bird                    | false                                               | Flagg som styrer aktivering av early-bird-funksjonalitet.                                                                                                                                                      |
+| kosmos.integrasjonspunkt.early-bird-version            | -                                                   | Early-bird-versjon: Ein nyare versjon enn siste offisielle.                                                                                                                                                    |
+| kosmos.integrasjonspunkt.healthURL                     | ${kosmos.integrasjonspunkt.baseURL}/manage/health   | Helse-endepunktet til integrasjonspunktet hjå klienten. Fortel om programmet fungerar.                                                                                                                         |
+| kosmos.integrasjonspunkt.home                          | ${user.dir}                                         | Mappa integrasjonspunktet køyrer frå. Standard-verdien mappar til der KOSMOS køyrer frå. Sjå README for konfigurasjon som trengs dersom dei skal vera i forskjellige mapper.                                   |
+| kosmos.integrasjonspunkt.include-log                   | false                                               | Styrer importering av logg frå oppdaterte integrasjonspunkt.                                                                                                                                                   |
+| kosmos.integrasjonspunkt.infoURL                       | ${kosmos.integrasjonspunkt.baseURL}/manage/info     | Info-endepunktet til integrasjonspunktet hjå klienten. Gir informasjon om bla. køyrande versjon av programmet.                                                                                                 |
+| kosmos.integrasjonspunkt.latest-version                | Avhengig av profil som applikasjonen køyrer med.    | Siste offisielle versjon av integrasjonspunktet. Vert overstyrt av konfigurasjon frå efm-eureka (Spring Cloud Config Server).                                                                                  |
+| kosmos.integrasjonspunkt.profile                       | Avhengig av profil.                                 | Angir profil som det oppdaterte integrasjonspunktet vert starta opp med.                                                                                                                                       |
+| kosmos.integrasjonspunkt.shutdownURL                   | ${kosmos.integrasjonspunkt.baseURL}/manage/shutdown | Shutdown-endepunktet til integrasjonspunktet hjå klienten. Nytta for å stoppa utdaterte versjonar.                                                                                                             |
+| kosmos.launch-poll-interval-in-ms                      | 1000                                                | Kor lenge KOSMOS ventar mellom kvar gong den spør helse-endepunktet om status.                                                                                                                                 |
+| kosmos.launch-timeout-in-ms                            | 100000                                              | Kor lenge KOSMOSventar på informasjon om integrasjonspunktet køyrer eller ikkje.                                                                                                                               |
+| kosmos.mavenCentral                                    | (https://repo1.maven.org/)                          | Maven central repository for nedlasting av artifakter.                                                                                                                                                         |
+| kosmos.nexus-connect-timeout-in-ms                     | 5000                                                | Kor lenge KOSMOS ventar på å få kontakt med artefakt-repositoriet.                                                                                                                                             |
+| kosmos.read-timeout-in-ms                              | 60000                                               | Kor lenge KOSMOS ventar på data frå artefakt-repositoriet.                                                                                                                                                     |
+| kosmos.orgnumber                                       | ${difi.move.org.number}                             | Henta frå integrasjonspunkt-konfigurasjonen.                                                                                                                                                                   |
+| kosmos.scheduler-cron-expression                       | 0 0 5,19,21 * * MON-FRI                             | Kor ofte KOSMOS køyrer synkronisering.                                                                                                                                                                         |
+| kosmos.shutdown-poll-interval-in-ms                    | 5000                                                | Kor lenge det går mellom kvar førespurnad mot shutdown-endepunktet.                                                                                                                                            |
+| kosmos.shutdown-retries                                | 3                                                   | Kor mange gonger KOSMOS prøver å skru av integrasjonspunktet (i påvente av at helse-endepunktet ikkje svarar) før den gir opp.                                                                                 |
+| kosmos.verification.publicKeyPaths                     | [0]=file:${user.dir}/eformidling-key.asc            | Liste med stiar til offentlege nøklar for Digdir sitt GPG-signeringssertifikat. Brukarar lastar ned frå dokumentasjonen vår, og me anbefalar dei å verifisera fingeravtrykk før dei set opp nøkkelen i KOSMOS. |
+| spring.config.additional-location                      | -                                                   | Mulig å overstyre kor integrasjonspunkt-local.properties fila skal ligge ved å sette denne verdien file:%BASE%\integrasjonspunkt-local.properties                                                              |
+
+## Hvordan fungerer automatisk oppgradering?
+
+KOSMOS køyrer periodiske sjekkar i rekkefølga beskriven her. Innstillinga ```kosmos.scheduler-cron-expression``` avgjer kor ofte dette skjer.
 
 ### Finna noverande versjon av integrasjonspunktet
 
-Den versjonen av integrasjonspunktet som ev. køyrer, vert henta frå info-endepunktet (Spring Boot Actuator) til det køyrande integrasjonspunktet. URL-en til info-endepunktet er avleia frå verdien på ```kosmos.integrasjonspunkt.baseURL```. Dersom KOSMOS ikkje mottek informasjon frå info-endepunktet, eller det ikkje finst - noko som er godt mogleg - antek me at det ikkje køyrer noko integrasjonspunkt hjå klienten. Applikasjonen held då fram med neste steg.
+Den versjonen av integrasjonspunktet som ev. køyrer, vert henta frå info-endepunktet (Spring Boot Actuator) til det køyrande integrasjonspunktet. URL-en til info-endepunktet er avleia frå verdien på `kosmos.integrasjonspunkt.baseURL`. Dersom KOSMOS ikkje mottek informasjon frå info-endepunktet, eller det ikkje finst - noko som er godt mogleg - antek me at det ikkje køyrer noko integrasjonspunkt hjå klienten. Applikasjonen held då fram med neste steg.
 
 ### Finna siste versjon av integrasjonspunktet
 
@@ -75,8 +206,6 @@ Ein oppgradert major-versjon (t.d. frå integrasjonspunkt-1.9.2 til integrasjons
 JAR-fila med siste integrasjonspunkt-versjon vert lasta ned til mappa angjeve i ```kosmos.integrasjonspunkt.home```, som har mappa KOSMOS køyrer frå som standard-verdi. Dersom eit tidlegare forsøk på å starta den siste versjonen har feila (dvs. versjonen er blocklista), vil KOSMOS avbryta nedlastinga og skriva ut ein beskjed om tilfellet. Sjå meir om block- og allow-listing av versjonar seinare.
 
 Artefaktar vert lasta ned frå lokasjonen som er angjeven i innstillinga ```kosmos.mavenCentral``` . Innstillingane , ```kosmos.group-id``` og ```kosmos.artifact-id``` bidreg vidare med å plukka ut den ønska distribusjonen for klienten. Nedlastinga skjer frå MavenCentral repositoriet til Digdir, døme kan [sjåast her](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/)
-
-
 
 ### Validering av nedlasta artefakt
 
@@ -113,22 +242,3 @@ Integrasjonspunktet loggar mykje under oppstart, noko som kan vera nyttig medan 
 #### Allowlisting av versjon som har vore starta før
 
 Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet etter at applikasjonen har vore skrudd av så vart allowlisting innført og denne lagar .allowlisted filer. Til dømes om applikasjonen og integrasjonspunktet begge er av så vil den ikkje forsøker å oppdatere integrasjonspunktet om det allereie eksisterer ei .allowlisted fil. Dette var også eit behov i ein spesiell case der ```kosmos.integrasjonspunkt.supported-major-version``` var satt lik køyrande versjon og det har vore releasa ein “latest-version” som har høgare major enn det som er konfigurert til å være støtta.  Etter at integrasjonspunktet har starta så vil applikasjonen lage denne .allowlisted fila, denne vert automatisk fjerna ved oppgradering og ny fil for gjeldande versjon vert oppretta. Innhaldet er tidspunktet den vart oppretta. 
-
-## Innstillingar
-
-[Tilgjengelig konfigurasjon finn du her ](../Konfigurasjon/automatisk_oppdatering#tilgjenglig-konfigurasjon)
-
-
-## Kjeldekode og tilhøyrande dokumentasjon
-
-> [Kjeldekode på Github](https://github.com/felleslosninger/efm-kosmos) (ekstern lenke)
-
-
-
-## KOSMOS demo 
-
-Demo som viser KOSMOS startes opp og oppdaterer integrasjonspunktet. 
-
-<iframe src="https://player.vimeo.com/video/648594394?h=d13da10af1" width="640" height="400" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
-

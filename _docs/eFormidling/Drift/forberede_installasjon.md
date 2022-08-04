@@ -16,7 +16,7 @@ Docker anbefales dersom en allerede bruker Docker eller Kubernetes i sitt drifts
 
 Java anbefales dersom en har et tradisjonelt server-basert driftsmiljø.
 
-- [Hvordan installerer jeg Java-versjonen integrasjonspunktet krever?](../Feilsoking/sporsmal_og_svar#hvordan-installerer-jeg-java-versjonen-integrasjonspunktet-krever)
+- [Hvordan installerer jeg Java-versjonen integrasjonspunktet krever?](../Selvhjelp/sporsmal_og_svar#hvordan-installerer-jeg-java-versjonen-integrasjonspunktet-krever)
 
 Dersom eInnsyn-klienten skal brukes sammen med integrasjonspunktet anbefales det at disse installeres på samme server.
 

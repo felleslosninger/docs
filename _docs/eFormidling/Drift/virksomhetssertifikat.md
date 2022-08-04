@@ -48,7 +48,7 @@ Dersom leverandøren har sendt flere filer er det den merket som **autentisering
 Den offentlige delen av virksomhetssertifikatet kan hentes fra `P12`- eller `JKS`-filen, og har vanligvis etternavn
 `CER`, `CRT` eller `PEM`.
 
-- [Hvordan henter jeg den offentlige delen av virksomhetssertifikatet fra en keystore (`JKS` eller `P12`)?](../Feilsoking/sporsmal_og_svar#hvordan-henter-jeg-den-offentlige-delen-av-virksomhetssertifikatet-fra-en-keystore-jks-eller-p12)
+- [Hvordan henter jeg den offentlige delen av virksomhetssertifikatet fra en keystore (`JKS` eller `P12`)?](../Selvhjelp/sporsmal_og_svar#hvordan-henter-jeg-den-offentlige-delen-av-virksomhetssertifikatet-fra-en-keystore-jks-eller-p12)
 
 For å gjøre den offentlige delen av virksomhetssertifikatet tilgjengelig i eFormidlings sertifikatkatalog må en sende
 denne til vår servicedesk:

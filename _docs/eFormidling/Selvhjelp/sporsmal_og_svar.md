@@ -126,3 +126,51 @@ difi.move.dpi.client-type=json
 difi.move.dpi.receipt-type=xmlsoap
 difi.move.feature.statusQueueIncludes=DPI
 ```
+
+### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?
+
+[Nedlasting av offentleg nøkkel finn du her](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
+
+Om du ønsker å manuelt verifisere .jar fil ved å bruke sertifikatet kan du benytte [denne rettleiinga](sertifikatadministrasjon#verifisere-sertifikatet)
+
+[Laste ned Digdir sin offentlege nøkkel](/resources/eformidling/public_keys/eformidling-key.asc) og lagre valgt katalog.
+
+> Denne offentlege nøkkelen skal ligge i samme mappe som ```kosmos-[versjon].jar```, ```kosmos-local.properties``` og ```integrasjonspunkt-local.properties```
+
+Den offentlege nøkkelen vår har fingeravtrykket:
+```
+AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3
+```
+Vi anbefalar at ein sjølv gjer ein manuell sjekk etter byte av nøkkel for å verifisere at fingeravtrykket er korrekt. Om du har GnuPG installert kan du køyre denne one-lineren:
+```
+gpg --import-options show-only --import --fingerprint <path-to-downloaded-public-key-file>
+```
+Om du ikkje har GnuPG frå før eller ynskjer meir utdjupande forklaring om korleis sjekke fingeravtrykket: [Sjå her](https://github.com/felleslosninger/efm-kosmos/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
+
+https://github.com/felleslosninger/efm-kosmos
+
+TODO sjekke at nøkkelen er rett gitt fingeravtrykket, sjekke at jar-fila er rett gitt nøkkelen
+
+### Hva er KOSMOS?
+
+KOSMOS står for kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor. KOSMOS er en støtte-
+applikasjon som automatisk holder integrasjonspunktet oppgradert.
+
+- [Automatisk oppgradering](../Drift/automatisk_oppgradering)
+
+### Hva betyr versjonsnummeret?
+
+eFormidling følger [semantisk versjonering] (https://semver.org) for å vise endringer mellom forskjellige versjoner.
+
+En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
+integrasjonspunkt-2.0.7.jar
+
+![versjonsnummerbild](/images/eformidling/ipversjon.PNG)
+
+Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH
+
+**PATCH** inneholder bakoverkompatible bug fixer. Med bugfix menes intern endring av uønsket oppførsel eller feil. Dette er versjoner man kan installere uten at man vil merke endringer
+
+**MINOR** har ny funksjonalitet, men er bakover kompatibel. Her er det lagt til ny funksjonalitet eller gjort endring på eksisterende funksjonalitet uten at dette påvirker konsumenter av API'et. Denne vil også økes dersom det det er funksjonalitet som er ønsket fjernet i senere versjon (deprecated). En MINOR-oppdatering vil ikke endre eksisterende integrasjoner, men det kan være nyttig å teste ny funksjonalitet dersom dette er tilgjengelig gjennom integrasjonen man bruker.
+
+**MAJOR** har endringer som ikke er bakover kompatible.  Dette kan være endringer i hvordan API'et brukes eller fjerning av funksjonalitet, som tidligere er signalisert at vil fjernes gjennom Minor-release og API-kommentar. En Major-oppdatering vil føre til at hele eller deler av funksjonaliteten man bruker ikke lenger virker og vil derfor være viktig å forsikre seg om at det man trenger virker som forventet gjennom testing eller dialog med leverandør av fagsystemet som integrerer mot integrasjonspunktet.

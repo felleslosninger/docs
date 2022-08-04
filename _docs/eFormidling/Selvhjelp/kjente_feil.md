@@ -212,4 +212,3 @@ java.io.IOException: Invalid location size: 11:4218153, size: 91
         at org.apache.activemq.store.kahadb.disk.journal.Journal.read(Journal.java:936)
 ```
 
----

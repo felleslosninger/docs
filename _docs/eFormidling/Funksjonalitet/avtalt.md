@@ -17,6 +17,8 @@ Avtalt meldingsutveksling lar avsender og mottaker utveksle forhåndsbestemte me
 ustrukturerte. Meldingene er ikke forhåndsdefinert i kontekst av eFormidling, men avtales direkte mellom avsender(e) og
 mottaker(e).
 
+- [Demo av avtalt meldingsutveksling](../Introduksjon/Demo/avtalt_meldingsutveksling)
+
 Avtalt meldingsutveksling representeres med følgende prosess for mottaker:
 
 | **Prosessnavn**           | **Prosessidentifikator**                 |

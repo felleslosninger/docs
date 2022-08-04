@@ -29,4 +29,3 @@ TODO sertifikat og feila meldinger og levetid utløpt
 ## Neste steg
 
 TODO kjente feil, spørsmål og svar, servicedesk
-
