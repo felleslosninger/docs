@@ -22,7 +22,7 @@ Ingen av disse filene er påkrevde for å starte integrasjonspunktet, om det man
 
 ### Database filer
 
-Integrasjonspunktet benytter H2 fildatabase som standard database, dette kan konfigureres om en ønsker å bruke [egen ekstern database](../Konfigurasjon/tilgjengelige_tjenester#ekstern-database). Ved bruk av standard database så vil integrasjonspunktet opprette to database-filer ved oppstart ( om filene ikke finnes), ```integrasjonspunkt.mv.db``` og ```integrasjonspunkt.trace.db```.
+Integrasjonspunktet benytter H2 fildatabase som standard database, dette kan konfigureres om en ønsker å bruke [egen ekstern database](installasjon#ekstern-database). Ved bruk av standard database så vil integrasjonspunktet opprette to database-filer ved oppstart ( om filene ikke finnes), ```integrasjonspunkt.mv.db``` og ```integrasjonspunkt.trace.db```.
 
 I databasen vil det lagres historikk på utgående og innkommende meldinger og status på disse. 
 
@@ -51,3 +51,6 @@ Konfigurasjonsfilen ```integrasjonspunkt-local.properties``` må tas vare på. H
 Keystore inneholder virksomhetssertifikatet til virksomheten, dette må bevares og er påkrevd for å starte integrasjonspunktet. Trenger ikke ligge i samme mappe som integrasjonspunktet. 
 Anbefalte filer å ta backup av: 
 
+## Neste steg
+
+- [Overvåking](overvaking)

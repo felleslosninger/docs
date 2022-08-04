@@ -1,5 +1,5 @@
 ---
-title: Installasjon i AKS
+title: Eksempel på installasjon av integrasjonspunktet i Azure Kubernetes Service (AKS)
 description: ""
 summary: ""
 product: eFormidling

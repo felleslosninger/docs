@@ -183,7 +183,7 @@ sidebar: eformidling_sidebar
 
 **Features**
 
-- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](../Konfigurasjon/tilgjengelige_tjenester#diverse-properties)
+- Støtte for difi.* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](../Drift/installasjon#konfigurer-integrasjonspunktet)
 
 **Feilrettinger**
 

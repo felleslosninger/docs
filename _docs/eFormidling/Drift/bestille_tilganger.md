@@ -6,6 +6,21 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Ved å bruke eFormidling har virksomheten mulighet til å utveksle meldinger med andre offentlige virksomheter, private virksomheter, innbyggere, kommuner og fylkeskommuner. For å komme i gang med eFormidling trenger Digitaliseringsdirektoratet litt informasjon om virksomheten. Det må bestilles tilgang for å benytte tjenestene som eFormidling tilbyr. [Les mer på samarbeidsportalen og se punkt 1.3 for innsending av informasjonsskjema](https://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98) (ekstern lenke)
+Før en kan ta i bruk eFormidling må en bestille nødvendige tilganger til eFormidling og de meldingstjenestene som ønskes
+brukt.
 
-Ved spørsmål eller bestilling av tilganger, kontakt oss gjerne på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+Merk at dersom en ønsker å ta i bruk eFormidling i testmiljø så må det bestilles egne test-tilganger.
+
+Se Samarbeidsportalen for hva som skal til for å få nødvendige tilganger til eFormidling:
+
+- [Ta i bruk eFormidling](https://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98) (ekstern lenke)
+
+TODO Bestille tilganger til tjenestene du skal benytte. [Les mer](bestille_tilganger)
+
+Ta kontakt med vår servicedesk ved behov:
+
+- <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+
+## Neste steg
+
+- [Virksomhetssertifikat](virksomhetssertifikat)

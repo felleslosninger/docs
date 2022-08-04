@@ -100,8 +100,8 @@ avsenderen om både vellykkede sendinger og avvik.
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
-- [Minimal konfigurasjon av integrasjonspunktet](../Konfigurasjon/minimal)
-- [Konfigurasjon av eInnsyns meldingstjeneste](../Konfigurasjon/einnsyns_meldingtjeneste)
+- [Minimumskonfigurasjon av integrasjonspunktet](../Drift/installasjon#minimumskonfigurasjon)
+- [Konfigurasjon av eInnsyns meldingstjeneste](../Drift/installasjon#konfigurere-einnsyns-meldingstjeneste-dpe)
 
 ## Utvikling
 

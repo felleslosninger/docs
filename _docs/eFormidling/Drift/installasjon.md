@@ -6,247 +6,580 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Installasjonsveiledning for integrasjonspunktet og KOSMOS.
-
-## Innhold
-
 1. TOC
 {:toc}
 
-## Installasjon av Integrasjonspunktet
+## Forutsetninger
 
-### Integrasjonspunkt-local.properties
+Installasjon av eFormidlings integrasjonspunkt forutsetter at følgende punkt er gjennomført:
 
-For å bruke integrasjonspunktet må en sette konfigurasjon, dette gjøres i en egen properties fil. Denne heter ```integrasjonspunkt-local.properties``` og kan lastes ned [her](/resources/eformidling/integrasjonspunkt-local.txt). Integrasjonspunktet benytter Java Key Store (JKS) som standard for nøkkelhåndtering, men støtter det fleste "kjente" typer, inkl PKSC12. WCS er ikke lenger støttet for andre tjenester enn eInnsyn. Det er også mulig å bruke Azure Vault er støttet via Akv2K8s. [Se eksempeloppsett her](installasjon_aks#5-azure-key-vault-og-azure-key-vault-env-injector). 
+- [Bestille tilganger](bestille_tilganger)
+- [Virksomhetssertifikat](virksomhetssertifikat)
+- [Forberede installasjon](forberede_installasjon)
 
-1. Start med å opprette en mappe med navn integrasjonspunkt på for eksempel c:\
-2. Last så ned integrasjonspunkt-local.properties filen. den kan lastes ned [her ](/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
-3. last ned integrasjonspunkt[versjonsnummer].jar filen. Den finner du [her](../Introduksjon/last_ned)
+## Docker-spesifikk konfigurasjon
+
+Ved bruk av Docker må integrasjonspunktet konfigureres ved hjelp av miljøvariable.
+
+Hvordan en spesifiserer konfigurasjonen avhenger av hvilke verktøy som brukes: docker-compose, Kubernetes
+eller andre. Et par eksempler:
+
+- [Eksempel på konfigurasjon med Kubernetes](Eksempel/installasjon_aks#7-integrasjonspunktet)
+- [Eksempel på konfigurasjon med docker-compose](https://github.com/felleslosninger/efm-mocks/blob/development/docker-compose.yml) (ekstern lenke)
+
+Integrasjonspunktets Docker-image er uten persistent volum. For å unngå tap av data ved f.eks. omstarter er det derfor
+nødvendig å konfigurere:
+
+- [Ekstern database](#ekstern-database)
+- [Mellomlagring av meldinger til ekstern database](#mellomlagring-av-meldinger-til-ekstern-database)
+- [Ekstern meldingskø](#ekstern-meldingskø)
+
+## Java-spesifikk konfigurasjon
+
+Ved bruk av Java direkte kan integrasjonspunktet konfigureres ved hjelp av en konfigurasjonsfil (anbefalt),
+Java-parametre eller miljøvariable.
+
+1. Start med å opprette en mappe, for eksempel `c:\integrasjonspunkt`
+2. Last så ned [integrasjonspunkt-local.properties]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
+3. Last ned [integrasjonspunkt-[versjonsnummer].jar](../Introduksjon/last_ned)
 
 Når du er ferdig skal strukturen på området se slik ut:
+
 ```
 c:/
 |-- integrasjonspunkt/
    |-- integrasjonspunkt-local.properties
-   |-- integrasjonspunkt[versjon].jar
+   |-- integrasjonspunkt-[versjon].jar
 ```
 
-> i integrasjonspunkt-local.properties-filen må du fjerne bortkommentering for den typen eformidling du skal bruke.
-> keystore.alias er case-sensitivt
+> Du må fjerne bortkommentering (`#` i starten av en linje) fra `integrasjonspunkt-local.properties` for at
+> den aktuelle konfigurasjonsegenskapen skal ha effekt.
 
-**NB:** Benytt skråstrek (/) eller dobbel omvendt skråstrek (\\\\) som ressursdeler når dere angir filbaner.
+I tillegg må integrasjonspunktet kjøres med nødvendige tilganger til å opprette filer og mapper på dette filområdet.
 
-Eksempler på konfigurering finner du lenger nede under hver enkelt tjeneste.
+Ved bruk av Java direkte anbefales det at det konfigureres en bakgrunnstjeneste som starter og stopper
+integrasjonspunktet når operativsystemet starter og stopper, og som ved behov kan startes og stoppes manuelt. Eksempel:
 
-#### Oppretting via shell
+- [Kjøre integrasjonspunktet som en tjeneste (Windows)](Eksempel/start_og_stopp#alt-1-kjøre-integrasjonspunktet-som-en-tjeneste)
+- [Kjøre integrasjonspunktet med task scheduler (Windows)](Eksempel/start_og_stopp#alt-3-kjøre-via-task-scheduler-med-minste-rettigheter)
+- `systemctl`, `upstart` eller lignende, avhengig av distribusjon (Linux)
 
-En kan eventuelt opprette mappe og .properties-filen manuelt vha shell kommandoer om det er preferrert:
+Det er også mulig å starte og stoppe integrasjonspunktet manuelt:
 
-##### Unix
+- [Kjøre integrasjonspunktet fra kommandovindu](Eksempel/start_og_stopp#alt-3-kjøre-via-task-scheduler-med-minste-rettigheter)
 
-``` bash
-mkdir integrasjonspunkt
-cd integrasjonspunkt
-touch integrasjonspunkt-local.properties
+## Konfigurer integrasjonspunktet
+
+Før integrasjonspunktet kan startes må det konfigureres.
+
+Det brukes ulike konvensjoner for navngiving av konfigurasjonsegenskaper avhengig av hvilke mekanisme som brukes for
+konfigurasjon. Følgende varianter tilsvarer samme konfigurasjonsegenskap: 
+
+- `person.firstName`, `person.first-name` eller `person.first_name` (for konfigurasjonsfil og Java-parametre)
+- `PERSON_FIRST_NAME` (for miljøvariable)
+
+Ved behov for ekstra beskyttelse av virksomhetssertifikat, passord og andre hemmeligheter er det mulig å ta i bruk
+Hashicorp Vault eller mekanismer som injiserer verdier til miljøvariable.
+
+- [HashiCorp Vault](#hashicorp-vault)
+- [Eksempel på installasjon av integrasjonspunktet på Azure](../installasjon/ip-aks) inneholder et eksempel på en
+mekanisme som injiserer verdier til miljøvariable
+
+Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
+
+1. Minimumskonfigurasjon for å få starte integrasjonspunktet
+2. Frivillig konfigurasjon (f.eks. ekstern database, BEST/EDU-integrasjon, osv)
+3. En og en meldingstjeneste
+
+> Vi anbefaler å konfigurere eFormidlings meldingstjeneste (DPO) før Altinn Digital Post (DPV) og KS SvarUt og SvarInn
+> (DPF) for å sikre at virksomheten mottar post i sak- og arkivsystemet (og unngå fallback til Altinn Digital Post og
+> KS SvarUt og SvarInn for virksomheter som ikke har konfigurert eFormidligs meldingstjeneste)
+
+### Minimumskonfigurasjon
+
+Integrasjonspunktet krever at virksomhetens virksomhetssertifikat er konfigurert.
+
+I tillegg anbefales det å skru av støtte for eInnsyn, som er den eneste meldingstjenesten som er på som standard. Dersom
+en skal bruke eInnsyn kan en heller slå på igjen støtten etter at en har verifisert at minimumskonfigurasjonen er ok.
+
+| Egenskap                        | Beskrivelse                                                        | Standardverdi |
+|---------------------------------|--------------------------------------------------------------------|---------------|
+| difi.move.org.number            | Organisasjonsnummer til din organisasjon (9 siffer)                | (ingen)       |
+| difi.move.org.keystore.alias    | Alias (navn) for virksomhetssertifikat i keystore (case sensitivt) | (ingen)       |
+| difi.move.org.keystore.password | Passord for virksomhetssertifikat og keystore                      | (ingen)       |
+| difi.move.org.keystore.path     | Sti til keystore                                                   | (ingen)       |
+| difi.move.org.keystore.type     | Format for keystore (`PKCS12` eller `JKS`)                         | JKS           |
+| difi.move.feature.enableDPE     | Skrur på/av støtte for eInnsyn                                     | true          |
+
+Eksempel:
+
+```
+difi.move.org.number=991825827
+difi.move.org.keystore.alias=myalias
+difi.move.org.keystore.password=mypassword
+difi.move.org.keystore.path=file:c:/integrasjonspunkt/keystore.p12
+difi.move.org.keystore.type=PKCS12
+difi.move.feature.enableDPE=false
 ```
 
-##### Powershell
+### Frivillig konfigurasjon
 
-``` powershell
-mkdir integrasjonspunkt
-cd integrasjonspunkt
-New-Item -ItemType file integrasjonspunkt-local.properties
+#### eFormidlingsmiljø (produksjon eller QA)
+
+I tillegg til produksjon til byr eFormidling ett offentlig testmiljø:
+
+- [Produksjon](../Miljo/produksjon)
+- [QA](../Miljo/qa)
+
+| Egenskap               | Beskrivelse                                    | Standardverdi |
+|------------------------|------------------------------------------------|---------------|
+| spring.profiles.active | Produksjon (`production`) eller QA (`staging`) | production    |
+
+Eksempel:
+
+```
+spring.profiles.active=staging
 ```
 
-### Konfigurasjon av integrasjonspunktet
+#### Hashicorp Vault
 
-Det finnes mange tilgjengelige innstillinger en kan konfigurere integrasjonspunktet med, og disse varierer basert på hvilken tjeneste du ønsker å bruke. Vi har laget en egen side dedikert til alle disse innstillingene som finnes [her](../Konfigurasjon/tilgjengelige_tjenester), i tillegg finnes det en side for minimum konfigurasjon for å kjøre et integrasjonspunkt som du finner [her](../Konfigurasjon/minimal) 
+Hashicorp Vault gjør det mulig å beskytte virksomhetssertifikat, passord og andre hemmeligheter. Dokumentasjon for
+HashiCorp Vault finnes på [https://www.vaultproject.io/](https://www.vaultproject.io/).
 
-- [DPE - eInnsyn](../Konfigurasjon/tilgjengelige_tjenester#einnsyn)
-- [DPF - Digital post til kommuner via FIKS SvarUt](../Konfigurasjon/tilgjengelige_tjenester#dpf)
-- [DPFIO - Digital post til kommuner over FIKSIO](../Konfigurasjon/tilgjengelige_tjenester#dpfio)
-- [DPI - Digital post til innbygger](../Konfigurasjon/tilgjengelige_tjenester#eformidling---digital-post-til-virksomheter)
-- [DPO - Digital post til offentlige virksomheter](../Konfigurasjon/tilgjengelige_tjenester#dpo)
-- [DPV - Digital post til virksomheter (Altinn postboks)](../Konfigurasjon/tilgjengelige_tjenester#dpv)
+| Egenskap            | Beskrivelse                                                                                                                         | Standardverdi |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| vault.uri           | Sti HashiCorp Vaults grensesnitt                                                                                                    | (ingen)       |
+| vault.token         | Token for autentisering mot HashiCorp Vaults grensesnitt (integrasjonspunktet støtter bare token-autentisering mot HashiCorp Vault) | (ingen)       |
+| vault.path          | Vault-sti til tekstlige hemmeligheter (f.eks. passord)                                                                              | (ingen)       |
+| vault.resource-path | Vault-sti til binære hemmeligheter (f.eks. keystore med virksomhetssertifikat)                                                      | (ingen)       |
+
+Eksempel:
+
+```
+vault.uri=http://localhost:8200
+vault.token=s.7NP3IvIjdpHqaInbNQD4NpIY	
+vault.path=secret/move
+vault.resource-path=secret/resourceleve
+```
+
+For å legge hemmeligheter i HashiCorp Vault kan følgende kommandoer brukes:
+
+```
+vault kv put secret/move difi.move.org.keystore.password=mypassword difi.move.dpo.password=mypassword
+$ vault kv put secret/resource keystore="$(base64 keystore.jks)"
+```
+
+Ved bruk av tekstlige hemmeligheter overstyrer disse eventuelle tilsvarende hemmeligheter satt i konfigurasjon. Ved
+bruk av binære hemmeligheter må disse refereres i konfigurasjon som i eksempelet under:
+
+```
+difi.move.org.keystore.path=vault:keystore
+```
+
+#### Ekstern database
+
+Integrasjonspunktet bruker en intern fildatabase (`H2`) som standard. Denne er mulig å bytte ut med en ekstern database.
+MySQL, Postgres og MSSQL støttes. Ved bruk av Docker må en slå på ekstern database for å unngå risiko for datatap ved
+f.eks. omstarter.
+
+| Egenskap                                       | Beskrivelse                                                                                                   | Standardverdi                    |
+|------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------|
+| difi.datasource.url                            | Sti til databasen                                                                                             | jdbc:h2:file:./integrasjonspunkt |
+| difi.datasource.username                       | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)         | sa                               |
+| difi.datasource.password                       | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)            | (ingen)                          |
+
+Eksempel (MySQL):
+
+```
+difi.datasource.url=jdbc:mysql://mydatabaseserver/mydatabase?serverTimezone=UTC
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
+```
+
+Eksempel (Postgres):
+
+```
+difi.datasource.url=jdbc:postgresql://mydatabaseserver:5432/mydatabase
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
+```
+
+Eksempel (MSSQL):
+
+```
+difi.datasource.url=jdbc:sqlserver://mydatabaseserver:1433;databaseName=mydatabase
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
+```
+
+#### Mellomlagring av meldinger til ekstern database
+
+Integrasjonspunktet mellomlagrer meldinger til fil som standard. Dette er mulig å bytte ut med mellomlagring til
+database. Ved bruk av Docker må en slå på mellomlagring til database for å unngå risiko for datatap ved f.eks.
+omstarter.
+
+| Egenskap                            | Beskrivelse                                                                                                             | Standardverdi |
+|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.nextmove.useDbPersistence | Slår på/av mellomlagring av meldinger til database. Meldinger mellomlagres til fil istedetfor dersom denne er slått av. | false         |
+
+Eksempel:
+
+```
+difi.move.nextmove.useDbPersistence=true
+```
+
+#### Ekstern meldingskø
+
+Integrasjonspunktet bruker en intern meldingskø (`ActiveMQ`) som standard. Denne er mulig å bytte ut med en ekstern
+meldingskø. Bare ActiveMQ støttes. Ved bruk av Docker må en slå på ekstern meldingskø for å unngå risiko for datatap ved
+f.eks. omstarter.
+
+| Egenskap                 | Beskrivelse             | Standardverdi  |
+|--------------------------|-------------------------|----------------|
+| difi.activemq.broker-url | Sti til ActiveMQ        | vm://localhost |
+| difi.activemq.user       | Brukernavn for ActiveMQ | (ingen)        |
+| difi.activemq.password   | Passord for ActiveMQ    | (ingen)        |
+
+Eksempel:
+
+```
+difi.activemq.broker-url=tcp://localhost:61616
+difi.activemq.user=myuser
+difi.activemq.password=mypassword
+```
+
+#### Transportsikring
+
+Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
+grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard verken beskyttet av
+transportsikring. Det er mulig å slå på støtte for transportsikring.
+
+| Egenskap                    | Beskrivelse                                                               | Standardverdi |
+|-----------------------------|---------------------------------------------------------------------------|---------------|
+| difi.ssl.enabled            | Skrur på/av `HTTPS` transportsikring for integrasjonspunktets grensesnitt | false         |
+| difi.ssl.key-store-type     | Format for keystore (`PKCS12` eller `JKS`)                                | (ingen)       |
+| difi.ssl.key-store          | Sti til keystore                                                          | (ingen)       |
+| difi.ssl.key-store-password | Passord for keystore                                                      | (ingen)       |
+| difi.ssl.key-alias          | Alias (navn) for `TLS``-sertifikat i keystore (case sensitivt)            | (ingen)       |
+
+Eksempel:
+
+```
+difi.ssl.enabled=true
+difi.ssl.key-store-type=PKCS12
+difi.ssl.key-store=file:c:/integrasjonspunkt/https.p12
+difi.ssl.key-store-password=mypassword
+difi.ssl.key-alias=myalias
+```
+
+#### HTTP Basic Auth
+
+Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
+grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet
+autentisering. Det er mulig å slå på støtte for autentisering. Det er bare autentiseringsmekanismen `HTTP basic auth`
+som støttes.
+
+| Egenskap                    | Beskrivelse                                                        | Standardverdi |
+|-----------------------------|--------------------------------------------------------------------|---------------|
+| difi.security.enable        | Skrur på/av `HTTP basic auth` for integrasjonspunktets grensesnitt | false         |
+| difi.security.user.name     | Brukernavn for `HTTP basic auth`                                   | (ingen)       |
+| difi.security.user.password | Passord for `HTTP basic auth`                                      | (ingen)       |
+
+Eksempel:
+
+```
+difi.security.enable=true
+difi.security.user.name=myusername
+difi.security.user.name=mypassword
+```
+
+#### Levetid for meldinger
+
+Integrasjonspunktet er designet for å tåle at meldingstjenestene som brukes kan ha nedetid og andre driftsproblemer uten
+at dette skal medføre at levering av meldinger feiler. 
+
+| Egenskap                              | Beskrivelse                                                                                                                                                           | Standardverdi |
+|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.nextmove.default-ttl-hours  | Tid i timer integrasjonspunktet prøver å levere en utgående melding før denne får status LEVETID_UTLOPT og må sendes på nytt eller håndteres på annet vis av avsender | 24            |
+
+
+#### Kapasitet
+
+Ved utsending av store volum kan det være aktuelt å justere kapasiteten i integrasjonspunktet:
+
+- øke samtidigheten
+- senke intervall for innhenting av meldingsstatuser
+- slå av oppslag i DSF dersom dette ikke trengs
+
+| Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
+|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.statusQueueIncludes   | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
+| difi.move.nextmove.statusPollingCron    | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 * * * * *   |
+| difi.move.feature.enableDsfPrintLookup  | Slår på/av oppslag av postadresse i DSF. Kan slås av dersom en ikke trenger postadresse                                   | true          |
+| difi.move.queue.concurrency             | Samtidighet ved behandling av utgående meldinger                                                                          | 10            |
+
+Eksempel:
+
+```
+difi.move.feature.statusQueueIncludes=
+difi.move.nextmove.statusPollingCron=0 0/10 * * * *
+difi.move.feature.enableDsfPrintLookup=false
+difi.move.queue.concurrency=20
+```
+
+#### Port
+
+| Egenskap      | Beskrivelse                                | Standardverdi |
+|---------------|--------------------------------------------|---------------|
+| server.port   | Port for integrasjonspunktets grensesnitt  | 9093          |
+
+Eksempel:
+
+```
+server.port=80
+```
+
+#### Støttetjenester
+
+Integrasjonspunktet tilbyr en del støttetjenester som eksponerer helsestatus, konfigurasjon og annet som standard. Disse
+kan begrenses eller slås helt av dersom en ønsker dette.
+
+- [Støttetjenester](../Feilsoking/feilsoking#støttetjenester)
+
+| Egenskap                                  | Beskrivelse                                                                                       | Standardverdi |
+|-------------------------------------------|---------------------------------------------------------------------------------------------------|---------------|
+| management.endpoints.web.exposure.include | Angir hvilke støttetjenester som skal være tilgjengelige (`*` for alle eller kommaseparert liste) | *             |
+| management.endpoint.health.show-details   | Angir om helseendepunktet skal vise detaljer utover enkel status (`always` eller `never`)         | always        |
+
+Dersom en skal bruke automatisk oppgradering av integrasjonspunktet krever dette at støttetjenesten `info`, `health` og
+`shutdown` er tilgjengelig.
+
+Eksempel:
+
+```
+management.endpoints.web.exposure.include=info,health,shutdown
+management.endpoint.health.show-details=never
+```
+
+#### BEST/EDU-grensesnittet (under utfasing)
+
+Dersom en skal ta i bruk integrasjonspunktet mha. BEST/EDU-grensesnittet (under utfasing) så må dette konfigureres.
+Dette er bare aktuelt for eldre sak- og arkivsystemer.
+
+| Egenskap                          | Beskrivelse                                                            | Standardverdi |
+|-----------------------------------|------------------------------------------------------------------------|---------------|
+| difi.move.noarkSystem.endpointURL | Sti til sak- og arkivsystemets BEST/EDU-grensesnitt                    | (ingen)       |
+| difi.move.noarkSystem.type        | Type sak- og arkivsystem: ePhorte, P360, WebSak eller mail             | (ingen)       |
+| difi.move.noarkSystem.username    | Brukernavn for autentisering mot sak-/arkivsystem (benyttes av P360)   | (ingen)       |
+| difi.move.noarkSystem.password    | Passord for autentisering mot sak-/arkivsystem (benyttes av P360)      | (ingen)       |
+| difi.move.noarkSystem.domain      | Brukerdomene for autentisering mot sak-/arkivsystem (benyttes av P360) | (ingen)       |
+
+For å benytte BEST/EDU kreves det at eFormidlings meldingstjeneste også brukes:
+
+- [Konfigurasjon av eFormidlings meldingstjeneste](#konfigurere-eformidlings-meldingstjeneste-dpo)
+
+Eksempel:
+
+```
+difi.move.noarkSystem.endpointURL=http://localhost:8088/testExchangeBinding
+difi.move.noarkSystem.type=P360
+difi.move.noarkSystem.username=myuser
+difi.move.noarkSystem.password=mypassword
+difi.move.noarkSystem.domain=MYUSERDOMAIN
+```
+
+#### E-post
+
+Ved bruk av KS SvarInn så vil integrasjonspunktet håndtere feil ved behandling av inngående meldinger med å sende en
+e-post. Dette fordi det har oppstått noen sporadiske problem med konvertering av meldinger mellom KS FIKS og
+eFormidling.
+
+Ved bruk av BEST/EDU-grensesnittet er det støttet å levere innkommende meldinger på e-post istedetfor en BEST/EDU-
+integrasjon. Dette kan slås på ved å sette `difi.move.noarkSystem.type=mail`.
+
+I disse tilfellene er det nødvendig å konfigurere e-post.
+
+| Egenskap                       | Beskrivelse                                       | Standardverdi |
+|--------------------------------|---------------------------------------------------|---------------|
+| difi.move.mail.smtpHost        | Host navn                                         | (ingen)       |
+| difi.move.mail.smtpPort        | Portnummer                                        | (ingen)       |
+| difi.move.mail.receiverAddress | E-postadresse til postmottaket                    | (ingen)       |
+| difi.move.mail.senderAddress   | E-postadresse for avsender (intern e-postadresse) | (ingen)       |
+| difi.move.mail.enableAuth      | Slår på/av autentisering mot epost-server         | false         |
+| difi.move.mail.username        | Brukernavn til autentisering mot epost-server     | (ingen)       |
+| difi.move.mail.password        | Brukernavn til autentisering mot epost-server     | (ingen)       |
+| difi.move.mail.trust           | Må settes til ${difi.move.mail.smtpHost}          | (ingen)       |
+
+Eksempel:
+
+```
+difi.move.mail.smtpHost=localhost
+difi.move.mail.smtpPort=25
+difi.move.mail.receiverAddress=postmottak@virksomheten.no
+difi.move.mail.senderAddress=integrasjonspunkt@virksomheten.no
+difi.move.mail.trust=${difi.move.mail.smtpHost}
+```
+
+
+### Meldingstjenester
+
+#### Konfigurere eFormidlings meldingstjeneste (DPO)
+
+eFormidlings meldingstjeneste er realisert ved hjelp av Altinn Formidling, og krever bruker for Altinn Formidling.
+
+- [Opprette bruker i Altinn Formidling](../installasjon/eformidling_create_users#opprette-dpo-bruker-altinn-formidlingstjeneste)
+
+> Før eFormidlings meldingstjeneste kan tas i bruk må Digdir aktivere den sentralt.
+>
+> Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+
+| Egenskap                      | Beskrivelse                                          | Standardverdi |
+|-------------------------------|------------------------------------------------------|---------------|
+| difi.move.feature.enableDPO   | Slår på/av støtte for eFormidlings meldingstjeneste  | false         |
+| difi.move.dpo.username        | Brukernavn for en Altinn Formidling datasystembruker | (ingen)       |
+| difi.move.dpo.password        | Passord for en Altinn Formidling datasystembruker    | (ingen)       |
+| difi.move.dpo.message-channel | Identifikator for meldingskanal, maks 25 tegn        | (ingen)       |
+
+Eksempel:
+
+```
+difi.move.feature.enableDPO=true
+difi.move.dpo.username=1234
+difi.move.dpo.password=mypassword
+```
+
+#### Konfigurere eInnsyns meldingstjeneste (DPE)
+
+> Før eInnsyns meldingstjeneste kan tas i bruk må Digdir aktivere den sentralt.
+>
+> Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+
+| Egenskap                    | Beskrivelse                                          | Standardverdi |
+|-----------------------------|------------------------------------------------------|---------------|
+| difi.move.feature.enableDPE | Slår på/av støtte for eFormidlings meldingstjeneste  | true          |
+
+Eksempel:
+
+```
+difi.move.feature.enableDPE=true
+```
+
+#### Konfigurere KS SvarUt og SvarInn (DPF)
+
+KS SvarUt og SvarInn krever hver sin bruker:
+
+- [Opprette brukere i KS SvarUt og SvarInn](../installasjon/eformidling_create_users#opprette-dpf-brukere-svarinn-og-svarut)
+
+| Egenskap                               | Beskrivelse                                                                                                             | Standardverdi |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.enableDPF            | Slår på/av støtte for KS SvarUt og SvarInn                                                                              | false         |
+| difi.move.fiks.inn.username            | Brukernavn for KS SvarInn (mottakersystem)                                                                              | (ingen)       |
+| difi.move.fiks.inn.password            | Passord for KS SvarInn (mottakersystem)                                                                                 | (ingen)       |
+| difi.move.fiks.ut.username             | Brukernavn for KS SvarUt (avsender)                                                                                     | (ingen)       |
+| difi.move.fiks.ut.password             | Passord for KS SvarUt (avsender)                                                                                        | (ingen)       |
+| difi.move.fiks.ut.konteringsKode       | Kode som beskriver faktureringskonto for forsendelsen                                                                   | (ingen)       |
+| difi.move.fiks.ut.ekskluderesFraPrint  | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering | (ingen)       |
+| difi.move.fiks.ut.kunDigitalLevering   | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert. | (ingen)       |
+| difi.move.fiks.inn.mailOnError         | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                    | true          |
+| difi.move.fiks.inn.fallbackSenderOrgNr | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)          | (ingen)       |
+| difi.move.fiks.inn.enable              | Slår på/av støtte for KS SvarInn                                                                                        | true          |
+| difi.move.fiks.inn.mailSubject         | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                         | (ingen)       |
+
+Eksempel:
+
+```
+difi.move.feature.enableDPF=true
+difi.move.fiks.inn.username=myusername
+difi.move.fiks.inn.password=mypassword
+difi.move.fiks.ut.username=myusername2
+difi.move.fiks.ut.password=mypassword2
+difi.move.fiks.inn.mailOnError=false
+```
+
+#### Konfigurere Altinn Digital Post (DPV)
+
+Altinn Digital Post krever bruker:
+
+- [Opprette bruker i Altinn Digital Post](http://localhost:4000/docs/eFormidling/installasjon/eformidling_create_users#opprette-dpv-bruker)
+
+| Egenskap                                | Beskrivelse                                                                                               | Standardverdi                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|-----------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| difi.move.feature.enableDPV             | Slår på/av støtte for Altinn Digital Post                                                                 | false                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| difi.move.dpv.username                  | Brukernavn for Altinn tjenesteeier (Mottas på epost til oppgitt kontaktperson)                            | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| difi.move.dpv.password                  | Passord for overnevnte bruker (Mottas på SMS til oppgitt kontaktperson - TIPS. Kopier og lim)             | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| difi.move.dpv.notificationText          | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost)                         | $reporteeName$: Du har mottatt en melding fra $reporterName$.                                                                                                                                                                                                                                                                                                                                                                                                  |
+| difi.move.dpv.sensitiveNotificationText | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost) for sensitive meldinger | $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For \u00E5 f\u00E5 tilgang til meldingen, er det n\u00F8dvendig at noen i $reporteeName$ har f\u00E5tt tildelt rollen \u00ABTaushetsbelagt post fra det offentlige\u00BB i Altinn. Dersom dere er usikre p\u00E5 om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om \u00E5 gi tilgang til rollen \u00ABTaushetsbelagt post\u00BB p\u00E5 Altinns nettsider.  |
+| difi.move.dpv.notifyEmail               | Slår på/av varsling til e-post som standard                                                               | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| difi.move.dpv.notifySms                 | Slår på/av varsling til SMS som standard                                                                  | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| difi.move.dpv.allowForwarding           | Slår på/av støtte for at mottaker kan videresende fra Altinn Digital Post                                 | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| difi.move.dpv.enableDueDate             | Slår på/av visuell svarfrist i Altinn Digital Post for sendte meldinger som standard                      | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| difi.move.dpv.daysToReply               | Standard antall dager til svarfrist i Altinn Digital Post                                                 | 7                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
+Eksempel:
+
+```
+difi.move.feature.enableDPV=true
+difi.move.dpv.username=myusername
+difi.move.dpv.password=mypassword
+difi.move.dpv.enableDueDate=false
+```
+
+#### Konfigurere Digital Post til Innbyggere (DPI)
+
+> Før Digital Post til Innbyggere kan tas i bruk må Digdir aktivere den sentralt.
+>
+> Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+
+| Egenskap                                       | Beskrivelse                                                                                                                                                                                               | Standardverdi                                   |
+|------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| difi.move.feature.enableDPI                    | Slår på/av støtte for Digital Post til Innbyggere                                                                                                                                                         | false                                           |
+| difi.move.dpi.mpcId                            | Kanal for å lese DPI-kvitteringer                                                                                                                                                                         | no.difi.move.integrasjonspunkt                  |
+| difi.move.dpi.mpcConcurrency                   | Antall kanaler for å lese DPI-kvitteringer                                                                                                                                                                | 1                                               |
+| difi.move.dpi.mpcIdListe                       | Denne overstyrer kombinasjonen av mpcId + mpcConcurrency dersom den er satt. De kanalene som listes opp her vil bli brukt ved polling av DPI-kvitteringer                                                 | difi.move.dpi.mpcIdListe[0]=id1                 |
+| difi.move.dpi.avsenderidentifikatorListe       | Ved polling av DPI-kvitteringer brukes denne for å indikere at man kun ønsker kvitteringer med gitt avsenderindikator                                                                                     | difi.move.dpi.avsenderidentifikatorListe[0]=ai1 |
+| difi.move.dpi.pollWithoutAvsenderidentifikator | Om det skal polles etter kvitteringer uten bruk av avsenderindikator                                                                                                                                      | true                                            |
+| difi.move.dpi.client-type                      | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI) og json+xmlsoap (Ny DPI som også poller etter kvitteringer i gammel løsning).                                                                      | xmlsoap                                         |
+| difi.move.dpi.receipt-type                     | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI). Denne brukes kun i ny DPI, men den må settes til xmlsoap for de som bruker proxy-klienten mot IP, da denne krever kvitteringer på gammelt format. | json                                            |
+| difi.move.feature.enableDsfPrintLookup         | Skru på / av DSF oppslag for DPI. Settes til false for å skru av                                                                                                                                          | true                                            |
+
+Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
+
+- [Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?](../Feilsoking/sporsmal_og_svar/hva-skal-til-for-at-proxy-klientbiblioteket-for-digital-post-til-innbyggere-skal-fungere)
+
+Eksempel:
+
+```
+difi.move.feature.enableDPI=true
+```
+
+#### Konfigurere KS FIKS IO
+
+KS FIKS IO krever bruker:
+
+- [Hvordan tar man i bruk FIKS IO](https://ks-no.github.io/fiks-plattform/tjenester/fiksprotokoll/fiksio/#hvordan-tar-man-i-bruk-fiks-io) (ekstern lenke)
+
+| Egenskap                               | Beskrivelse                                                                                                    | Standardverdi |
+|----------------------------------------|----------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.enableDPFIO          | Slår på/av støtte for KS FIKS IO                                                                               | false         |
+| difi.move.fiks.io.konto-id             | FIKS IO kontoId                                                                                                | (ingen)       |
+| difi.move.fiks.io.integrasjons-id      | Id til valgt integrasjon                                                                                       | (ingen)       |
+| difi.move.fiks.io.integrasjons-passord | Passord til valgt integrasjon                                                                                  | (ingen)       |
+| difi.move.fiks.io.sender-orgnr         | Statisk avsender-orgnr for mottatte meldinger                                                                  | (ingen)       |
+
+Eksempel:
+
+```
+difi.move.feature.enableDPFIO=true
+difi.move.fiks.io.konto-id=47b0c75b-ddb5-447b-88d2-c4030d183fb3
+difi.move.fiks.io.integrasjons-id=54f9d591-5523-447a-b839-eb5a43bb75ca
+difi.move.fiks.io.integrasjons-passord=d9efdc55-a3a3-4b66-8b38-c73202655f2f
+difi.move.fiks.io.sender-orgnr=910077473
+```
 
 ## Neste steg
 
-Det neste som må gjøres for å installere integrasjonspunktet kan være å sikre at all konfigurasjon er på plass og om så, starte opp integrasjonspunktet 
+Etter konfigurasjon av integrasjonspunktet anbefales det å også konfigurere:
 
-+ [Integrasjonspunktet konfigurasjon / minimal konfigurasjon ](../Konfigurasjon/minimal)
-+ [Integrasjonspunktet konfigurasjon / tilgjengelig tjenester ](../Konfigurasjon/tilgjengelige_tjenester)
-+ [Integrasjonspunktet kjøring / Start og stopp ](start_og_stopp#integrasjonspunktet)
-
----
-
-## Installasjon av KOSMOS
-
-> Hva er KOSMOS? Kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor. [Les mer her](automatisk_oppgradering) 
-
-Før du installerer KOSMOS forutsettes det at du har en gyldig integrasjonspunkt-local.properties fil fra før. Dvs at du har konfigurert et fungerende integrasjonspunkt på maskinen hvor KOSMOS skal installeres for å oppdatere dette integrasjonspunktet. Minimum er at du må ha .properties fil og keystore knyttet til denne, for integrasjonspunkt-[versjon].jar filen vil KOSMOS laste ned.
-
-
-### Last ned siste versjon
-
-[Siste versjon av KOSMOS finn du her](../Introduksjon/last_ned#kosmos)
-
-### Last ned offentleg nøkkel
-
-En må laste ned Digitaliseringsdirektoratet sin offentlege nøkkel og legge i samme mappe som kosmos-[versjon].jar filen og kosmos-local.properties filen. 
-
-[Nedlasting av offentleg nøkkel finn du her](../Introduksjon/last_ned#kosmos)
-
-Om du ønsker å manuelt verifisere .jar fil ved å bruke sertifikatet kan du benytte [denne rettleiinga](sertifikatadministrasjon#verifisere-sertifikatet)
-
-
-### Kosmos-local.properties
-Før KOSMOS kan automatisk laste ned ny versjon og oppdatere ditt køyrande integrasjonspunkt må KOSMOS setjast opp ved å konfigurere properties og velge ein katalog det skal køyre frå. Dette gjer ein via ei ```kosmos-local.properties```-fil
-
-Det er anbefalt (minst konfigurasjon) å køyre både integrasjonspunkt.jar og kosmos.jar frå samme katalog, om ønska køyre frå forskjellige katalog [sjå her](https://github.com/felleslosninger/efm-kosmos#running-kosmos-and-integrasjonspunkt-from-different-folders).
-
-
-1. Legg inn jar-fila og ```kosmos-local.properties``` i ønska katalog.
-2. Sett opp naudsynte konfigurasjonar i ```kosmos-local.properties```. Sjå under.
-3. [Laste ned Digdir sin offentlege nøkkel](/resources/eformidling/public_keys/eformidling-key.asc) og lagre valgt katalog.
-
-#### Oppretting via shell
-
-Ein kan eventuelt opprette mappe og .properties-filen manuelt vha shell kommandoer om det er preferrert:
-
-##### Unix
-
-*Forutsatt namn på mappen er integrasjonspunkt fordi det eksisterer ein integrasjonspunkt installasjon frå før*
-
-``` bash
-cd integrasjonspunkt
-touch kosmos-local.properties
-```
-
-##### Powershell
-
-*Forutsatt namn på mappen er integrasjonspunkt fordi det eksisterer ein integrasjonspunkt installasjon frå før*
-
-``` powershell
-cd integrasjonspunkt
-New-Item -ItemType file kosmos-local.properties
-```
-
-#### Konfigurasjon av KOSMOS     
-Åpne ```kosmos-local.properties``` i katalogen du skal køyre ```.jar``` fila frå sett inn følgande properties. (anbefalt å være samme katalog som integrasjonspunktet)
-
-```java
-# Replace hosts and ports of URL with the location
-# of your integrasjonspunkt.
-kosmos.integrasjonspunkt.baseURL=http://localhost:9093
-
-# Your organisationnumber. Should be the same as in integrasjonspunkt-local.properties
-difi.move.org.number=
-
-# E-mail is optional. Please specify these properties 
-# to receive e-mails when KOSMOS updates the integrasjonspunkt-application.
-kosmos.mail.recipient=someone@yourdomain.no
-kosmos.mail.from=noreply@yourdomain.no
-
-spring.mail.host=smtp.yourdomain.no
-spring.mail.port=<set-your-port-here>
-
-# Digitaliseringsdirektoratet public key paths. i.e: file:keyname.asc
-kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
-```
-*[Last ned properties-fila her](/resources/eformidling/kosmos-local.properties)*
-
-> [Sjå her for ei utfyllande liste av tilgjengelege properties for KOSMOS](../Konfigurasjon/automatisk_oppdatering)
-
-#### Setje tidspunkt for oppdatering
-*Valgfritt*
-
-Ein kan setje tidspunkt for kortid applikasjonen vil forsøke å oppdatere integrasjonspunktet om ein ikkje ynskjer å benytte standard-verdiane. 
-
-Her er nokre døme som viser korleis ein kan styre tidspunkt for oppdatering.
-
-```java
-#Standard verdi: Sjekkar etter oppdatering mandag-fredag kl 05:30, 19:30 og 21:30.
-kosmos.schedulerCronExpression=0 30 5,19,21 * * MON-FRI
-
-#Sjekkar etter oppdatering kvar dag kl 06:00.
-kosmos.schedulerCronExpression=0 0 6 * * ?
-
-#Sjekkar etter oppdatering kvar dag kl 23:15.
-kosmos.schedulerCronExpression=0 15 23 ? * *
-
-#Sjekkar etter oppdatering kvar laurdag og søndag kl 12:00.
-kosmos.schedulerCronExpression=0 0 12 ? * SAT,SUN
-
-#Sjekkar etter oppdatering kvart tredje minutt kvar time.
-kosmos.schedulerCronExpression=0 0,3,6,9,12,15,18,21,24,27,30,33,36,39,42,45,48,51,54,57 * ? * *
-```
-
-
-### Verifisere sertifikatet
-
-Når Digitaliseringsdirektoratet publiserer eit nytt integrasjonspunkt vil dette være signert med vår privat nøkkel. For å verifisere denne signaturen kan du laste ned vår offentlege nøkkel og sjekke om fingeravtrykket på signaturen er likt som nøkkelen. Det er viktig å verifisere signatur på *kosmos.jar*, og dersom ein velger å laste ned integrasjonspunktet manuelt er det viktig å verifisere denne .jar fila også. Om du allereie har ein køyrande versjon av integrasjonspunktet som er tidlegare enn 2.2.1 så vil ikkje den være signert. 
-
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mQINBGB+plUBEAC1kbZMrCUXorAHiUxOfatbwkY0oANS9cLF3dRyWhfIFbkv+rxs
-R/5EMo3wNEfpNQ76bNxRvprQWOGmqg30DVfAomGhO2j2o7gmZPcPvcDEokz+rEqt
-enVkqdizc5ABWQHvtX42Cl+9G1iYXV9u5m4ET9HGb2nCqvi4gb0l7751Hv9Y2RAC
-YHAYJhYpnA3WokZEUxIf1SmvjhYj5tWxOYFr5Tj2N5VIXY19bz4pdppGWsT9gB6+
-5jIKNWWEwNE6LyjA9YkT+C6cITcL7x2Ad1tvUfMJEBE7Ib45TGc1BS4QbWnC7Fw0
-G09Kbp4ZJ9vOhysWquT1pVsKeIP1Hrc63XiS3hXf5hlJzqdTaswSNk0jSeGcETRR
-pu6CueiewF2LNUm49iO3r3rPcAKPeokYLFc4/tbCADXSom8pq2fpgqBUvvfRPFy3
-QB7Imn4/Robqw0K2mlguACv1tz2z0+Ygn39nmXIyUzJUJ0p694l/O5wmeukSc5r8
-Dc83GUJOCIxMapuVgib9qYVh8QMVbmy0XUjyZDw7Gsw112fPfsCG4FXcqUAVcNeT
-ERgfzdowPY2LU+TCpONYRy6CgBdKqJQU9FYeMvZAEiMzMmC7mzinCXPOpujNfthD
-YllEAY+aZt4b2pfvwLk1TZefNOQTbzShjfwNLiy7UwmYS0QueN46YdHi6wARAQAB
-tHpLb2Rlc2lnbmVyaW5nIGVGb3JtaWRsaW5nIChEaWdpdGFsaXNlcmluZ3NkaXJl
-a3RvcmF0ZXRzIG7DuGtrZWwgZm9yIGtvZGVzaWduZXJpbmcgZm9yIGVGb3JtaWRs
-aW5nKSA8c2VydmljZWRlc2tAZGlnZGlyLm5vPokCVAQTAQgAPhYhBK7yeqaUijhW
-kyr5jspWQzk3U+zjBQJgfqZVAhsDBQkJZgGABQsJCAcCBhUKCQgLAgQWAgMBAh4B
-AheAAAoJEMpWQzk3U+zjoSkP/RXi6pXz/ZK5eP2aXcmGRuVKo3c6f15Zq2TW2yWH
-Wqozpn1DXT/c5u40WjI7UYabHIJfQqzs4XD9qYFXrgb73zdu8cRkCz2FoBCrzfQB
-3jtC16vyPfuCBzFWg1CQ9QB/y4XThSIXHiVyB/nLLecp+V3JXX7rgImAP9loFXg2
-W/ifxtyuV9LX7c5wraZEI/tTYhGev6pS5OXuY5z2TEcJ6fodoEZujZXLnmDNZgFr
-IKOU3IJOEBpP4zD11C/IKEbYv0J7zuET+mnArxma/9dym8OcBnNvYr8caOK6qa2v
-y/Q5UnBLZNuydaDTl70qTWcuZRqobUqtaSvrtIopwTFhZXzQ3Y06Xpv7e21tq/ew
-SNCA3DI7EA/hLlwwF9NEZTyGSez6TBGwjGgV8J/CyOLnuD5X9cqSIYFtjUtQQ3oM
-KXv2Q+vELUHUBuNRhrZiUKITEB7ubJQuAjgGDTTJrXJDZRRiJ8eGP0dYj/GfNu8i
-vi+E+ZL/cn6J48IIOLS7IZS/NqZjq0t48fBKcyisEzQdvji68GKOipv1vdxj9z1c
-t4IBv4qlDXFQoCjh/aEM7n6xRFGYb9600xiSA1P45h2yBDiGUedwde2ai9OtVwar
-j9yTMuCrbrLOdlG2cNrhnSJS48WrEbk1blsyJrH7zFvsxRj723HdXdtpB+c5OsYo
-o1Dt
-=QEfX
------END PGP PUBLIC KEY BLOCK-----
-```
-
-[Last ned offentleg nøkkel](/resources/eformidling/public_keys/eformidling-key.asc)
-
-> Denne offentlege nøkkelen skal ligge i samme mappe som ```kosmos-[versjon].jar```, ```kosmos-local.properties``` og ```integrasjonspunkt-local.properties```
-
-Den offentlege nøkkelen vår har fingeravtrykket: 
-```
-AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3
-```
-Vi anbefalar at ein sjølv gjer ein manuell sjekk etter byte av nøkkel for å verifisere at fingeravtrykket er korrekt. Om du har GnuPG installert kan du køyre denne one-lineren: 
-```
-gpg --import-options show-only --import --fingerprint <path-to-downloaded-public-key-file>
-```
-Om du ikkje har GnuPG frå før eller ynskjer meir utdjupande forklaring om korleis sjekke fingeravtrykket: [Sjå her](https://github.com/felleslosninger/efm-kosmos/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
-
-### Blokkere versjonar
-*Valgfritt*
-
-Det finnes funksjonalitet for å la applikasjonen blokkliste versjonar om den ikkje er godkjend eller klarer starte. Standard verdien til denne er false, men kan aktivere ved å endre properties. Det kan være fornuftig å bruke om ein ynskjer hyppig polling på kor ofte applikasjonen skal sjekke etter ny versjon.
-
-```
-kosmos.blocklist.enabled=true
-```
-
-Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste [schedulerte tidspunkt.](####Setje-tidspunkt-for-oppdatering)
-
-## Neste steg
-
-+ [KOSMOS konfigurasjon / minimal konfigurasjon ](../Konfigurasjon/automatisk_oppdatering#minimal-konfigurasjon)
-+ [KOSMOS konfigurasjon / tilgjengelig konfigurasjon ](../Konfigurasjon/automatisk_oppdatering#minimal-konfigurasjon)
-+ [KOSMOS kjøring / Start og stopp ](start_og_stopp#kosmos)
+- [Automatisk oppgradering](automatisk oppgradering)
+- [Sikkerhetskopi](sikkerhetskopi)
+- [Overvåking](overvaking)

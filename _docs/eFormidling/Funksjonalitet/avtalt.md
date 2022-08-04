@@ -112,8 +112,8 @@ og sendes periodisk.
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
-- [Minimal konfigurasjon av integrasjonspunktet](../Konfigurasjon/minimal)
-- [Konfigurasjon av eFormidlings meldingstjeneste](../Konfigurasjon/eformidlings_meldingstjeneste)
+- [Minimumskonfigurasjon av integrasjonspunktet](../Drift/installasjon#minimumskonfigurasjon)
+- [Konfigurasjon av eFormidlings meldingstjeneste](../Drift/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
 
 ## Utvikling
 

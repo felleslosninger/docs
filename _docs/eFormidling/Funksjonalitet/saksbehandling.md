@@ -181,10 +181,10 @@ registrerte varslingsadresse i Enhetsregisteret.
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
-- [Minimal konfigurasjon av integrasjonspunktet](../Konfigurasjon/minimal)
-- [Konfigurasjon av eFormidlings meldingstjeneste](../Konfigurasjon/eformidlings_meldingstjeneste) 
-- [Konfigurasjon av KS SvarUt og SvarInn](../Konfigurasjon/ks_svarut_og_svarinn)
-- [Konfigurasjon av Altinn Digital Post](../Konfigurasjon/altinn_digital_post)
+- [Minimumskonfigurasjon av integrasjonspunktet](../Drift/installasjon#minimumskonfigurasjon)
+- [Konfigurasjon av eFormidlings meldingstjeneste](../Drift/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
+- [Konfigurasjon av KS SvarUt og SvarInn](../Drift/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
+- [Konfigurasjon av Altinn Digital Post](../Drift/installasjon#konfigurere-altinn-digital-post-dpv)
 
 Det er også støtte for delvis konfigurasjon. Delvis konfigurasjon medfører at en ikke når alle mottakere. For eksempel
 trenger en ikke konfigurere KS SvarUt dersom en bare skal nå statlige virksomheter. En trenger heller ikke konfigurere

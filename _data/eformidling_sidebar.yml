@@ -51,6 +51,32 @@ folders:
       jurl: /docs/eFormidling/Egenskaper/responsitivitet
     - title: Sikkerhet
       jurl: /docs/eFormidling/Egenskaper/sikkerhet
+- title: Installasjon
+  folderitems:
+    - title: Kom i gang med integrasjonspunktet
+      jurl: /docs/eFormidling/Drift/
+    - title: 1) Bestille tilganger
+      jurl: /docs/eFormidling/Drift/bestille_tilganger
+    - title: 2) Virksomhetssertifikat
+      jurl: /docs/eFormidling/Drift/virksomhetssertifikat
+    - title: 3) Forberede installasjon
+      jurl: /docs/eFormidling/Drift/forberede_installasjon
+    - title: 4) Installasjon
+      jurl: /docs/eFormidling/Drift/installasjon
+    - title: 5) Automatisk oppgradering
+      jurl: /docs/eFormidling/Drift/automatisk_oppgradering
+    - title: 6) Sikkerhetskopi
+      jurl: /docs/eFormidling/Drift/sikkerhetskopi
+    - title: 7) Overvåking
+      jurl: /docs/eFormidling/Drift/overvaking
+- title: Oppgradering
+  folderitems:
+    - title: Oppgradering
+      jurl: /docs/eFormidling/Oppgradering/
+- title: Konfigurasjon
+  folderitems:
+    - title: Automatisk oppdatering
+      jurl: /docs/eFormidling/Konfigurasjon/automatisk_oppdatering
 - title: Utvikling
   folderitems:
     - title: Kom i gang med utvikling
@@ -73,52 +99,14 @@ folders:
   folderitems:
     - title: Kom i gang med testing
       jurl: /docs/eFormidling/Testing/
-- title: Drift
+- title: Selvhjelp
   folderitems:
-    - title: Kom i gang med integrasjonspunktet
-      jurl: /docs/eFormidling/Drift/
-    - title: 1) Bestille tilganger
-      jurl: /docs/eFormidling/Drift/bestille_tilganger
-    - title: 2) Forberede installasjon
-      jurl: /docs/eFormidling/Drift/forberede_installasjon
-    - title: 3a) Installasjon
-      jurl: /docs/eFormidling/Drift/installasjon
-    - title: 3b) Installasjon i AKS
-      jurl: /docs/eFormidling/Drift/installasjon_aks
-    - title: 4a) Oppgradering
-      jurl: /docs/eFormidling/Drift/oppgradering
-    - title: 4b) Automatisk oppgradering
-      jurl: /docs/eFormidling/Drift/automatisk_oppgradering
-    - title: 5) Start og stopp
-      jurl: /docs/eFormidling/Drift/start_og_stopp
-    - title: 6) Sikkerhetskopi
-      jurl: /docs/eFormidling/Drift/sikkerhetskopi
-    - title: 7) Sertifikatadministrasjon
-      jurl: /docs/eFormidling/Drift/sertifikatadministrasjon
-    - title: 8) Overvåking
-      jurl: /docs/eFormidling/Drift/overvaking
-    - title: 9) Feilsøking
-      jurl: /docs/eFormidling/Drift/feilsoking
-    - title: 10) Kjente feil
-      jurl: /docs/eFormidling/Drift/kjente_feil
-- title: Konfigurasjon
-  folderitems:
-    - title: Minimal konfigurasjon
-      jurl: /docs/eFormidling/Konfigurasjon/minimal
-    - title: Tilgjengelige tjenester
-      jurl: /docs/eFormidling/Konfigurasjon/tilgjengelige_tjenester
-    - title: Kjøremiljø
-      jurl: /docs/eFormidling/Konfigurasjon/kjoremiljo
-    - title: Sikkerhet
-      jurl: /docs/eFormidling/Konfigurasjon/sikkerhet
-    - title: Automatisk oppdatering
-      jurl: /docs/eFormidling/Konfigurasjon/automatisk_oppdatering
-    - title: Overvåking
-      jurl: /docs/eFormidling/Konfigurasjon/overvaking
-    - title: Logging
-      jurl: /docs/eFormidling/Konfigurasjon/logging
-    - title: Kapasitet
-      jurl: /docs/eFormidling/Konfigurasjon/kapasitet
+    - title: Feilsøking
+      jurl: /docs/eFormidling/Feilsoking/feilsoking
+    - title: Kjente feil
+      jurl: /docs/eFormidling/Feilsoking/kjente_feil
+    - title: Spørsmål og svar
+      jurl: /docs/eFormidling/Feilsoking/sporsmal_og_svar
 - title: Miljø
   folderitems:
     - title: Produksjon
@@ -127,10 +115,6 @@ folders:
       jurl: /docs/eFormidling/Miljo/qa
     - title: Test
       jurl: /docs/eFormidling/Miljo/test
-- title: Spørsmål og svar
-  folderitems:
-    - title: Spørsmål og svar
-      jurl: /docs/eFormidling/Sporsmal_og_svar
 - title: (gammel) Installasjon av integrasjonspunktet
   folderitems:
     - title: Oppgradere til ny versjon

@@ -6,7 +6,7 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Formålet med denne siden er å hjelpe driftspersonell med å tilby funksjonaliteten i eFormidling.
+Formålet med denne siden er å hjelpe arkitekter, utviklere og driftspersonell med å tilby funksjonaliteten i eFormidling.
 
 1. TOC
 {:toc}
@@ -213,17 +213,4 @@ Ved bruk av ekstern database og meldingskø er det mulig å kjøre flere integra
 
 ## Neste steg
 
-1. [Bestille tilganger](bestille_tilganger)
-2. [Forberede installasjon](forberede_installasjon)
-3. Installasjon
-    - [Installasjon på Linux og Windows](installasjon)
-    - [Installasjon i AKS](installasjon_aks)
-4. Oppgradering
-   - [Manuell oppgradering](oppgradering)
-   - [Automatisk oppgradering](automatisk_oppgradering)
-5. [Start og stopp](start_og_stopp)
-6. [Sikkerhetskopi](sikkerhetskopi)
-7. [Sertifikatadministrasjon](sertifikatadministrasjon)
-8. [Overvåking](overvaking)
-9. [Feilsøking](feilsoking)
-10. [Kjente feil](kjente_feil)
+- [Bestille tilganger](bestille_tilganger)
