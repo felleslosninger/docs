@@ -52,21 +52,21 @@ folders:
 - title: Installasjon
   folderitems:
     - title: Kom i gang med integrasjonspunktet
-      jurl: /docs/eFormidling/Drift/
+      jurl: /docs/eFormidling/Installasjon/
     - title: 1) Bestille tilganger
-      jurl: /docs/eFormidling/Drift/bestille_tilganger
+      jurl: /docs/eFormidling/Installasjon/bestille_tilganger
     - title: 2) Virksomhetssertifikat
-      jurl: /docs/eFormidling/Drift/virksomhetssertifikat
+      jurl: /docs/eFormidling/Installasjon/virksomhetssertifikat
     - title: 3) Forberede installasjon
-      jurl: /docs/eFormidling/Drift/forberede_installasjon
+      jurl: /docs/eFormidling/Installasjon/forberede_installasjon
     - title: 4) Installasjon
-      jurl: /docs/eFormidling/Drift/installasjon
+      jurl: /docs/eFormidling/Installasjon/installasjon
     - title: 5) Automatisk oppgradering
-      jurl: /docs/eFormidling/Drift/automatisk_oppgradering
+      jurl: /docs/eFormidling/Installasjon/automatisk_oppgradering
     - title: 6) Sikkerhetskopi
-      jurl: /docs/eFormidling/Drift/sikkerhetskopi
+      jurl: /docs/eFormidling/Installasjon/sikkerhetskopi
     - title: 7) Overvåking
-      jurl: /docs/eFormidling/Drift/overvaking
+      jurl: /docs/eFormidling/Installasjon/overvaking
 - title: Oppgradering
   folderitems:
     - title: Oppgradering

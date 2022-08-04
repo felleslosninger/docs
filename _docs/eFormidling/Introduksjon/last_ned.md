@@ -16,7 +16,7 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ```docker pull digdir/integrasjonspunkt:2.8.2```
 
-[OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../Drift/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
+[OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../Installasjon/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
 
 Endringslogg finner du [her.](endringslogg)
 
@@ -34,4 +34,4 @@ Endringslogg finner du [her.](endringslogg)
 
 Første gang du installerer integrasjonspunktet? Her finner du informasjon om hvordan installere eller oppgradere eksisterende integrasjonspunkt.
 
-- [Kom i gang med integrasjonspunktet](../Drift/)
+- [Kom i gang med integrasjonspunktet](../Installasjon/)

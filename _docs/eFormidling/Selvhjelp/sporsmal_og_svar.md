@@ -156,7 +156,7 @@ TODO sjekke at nøkkelen er rett gitt fingeravtrykket, sjekke at jar-fila er ret
 KOSMOS står for kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor. KOSMOS er en støtte-
 applikasjon som automatisk holder integrasjonspunktet oppgradert.
 
-- [Automatisk oppgradering](../Drift/automatisk_oppgradering)
+- [Automatisk oppgradering](../Installasjon/automatisk_oppgradering)
 
 ### Hva betyr versjonsnummeret?
 
