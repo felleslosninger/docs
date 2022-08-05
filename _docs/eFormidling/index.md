@@ -11,7 +11,7 @@ redirect_from: /eformidling_index
 Dette er den tekniske dokumentasjonen for eFormidling. Formålet er å støtte arkitekter, utviklere og driftspersonell hos
 offentlige virksomheter og deres leverandører i innføring og bruk av eFormidling.
 
-- [Teknisk dokumentasjon](/Introduksjon/)
+- [Teknisk dokumentasjon](Introduksjon/)
 
 Se gjerne Samarbeidsportalen for en helt overordnet ikke-teknisk introduksjon til eFormidling:
 
