@@ -45,15 +45,16 @@ Java-parametre eller miljøvariable.
 1. Start med å opprette en mappe, for eksempel `c:\integrasjonspunkt`
 2. Last så ned [integrasjonspunkt-local.properties]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
 3. Last ned [integrasjonspunkt-[versjonsnummer].jar](../Introduksjon/last_ned#integrasjonspunktet)
-4. Last ned [eFormidlings offentlige nøkkel](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
-5. [Verifiser at jar-filen er fra Digitaliseringsdirektoratet](../Selvhjelp/sporsmal_og_svar#hvordan-verifiserer-jeg-at-jar-filen-er-fra-digitaliseringsdirektoratet)
+
+eFormidling anbefaler å verifisere at `integrasjonspunkt-[versjon].jar` er fra Digitaliseringsdirektoratet.
+
+- [Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?](../Selvhjelp/sporsmal_og_svar#hvordan-verifiserer-jeg-at-jar-filen-er-fra-digitaliseringsdirektoratet)
 
 Når du er ferdig skal strukturen på området se slik ut:
 
 ```
 c:/
 |-- integrasjonspunkt/
-   |-- eformidling-key.asc
    |-- integrasjonspunkt-local.properties
    |-- integrasjonspunkt-[versjon].jar
 ```
@@ -338,10 +339,23 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 Eksempel:
 
 ```
-difi.move.feature.statusQueueIncludes=
 difi.move.nextmove.statusPollingCron=0 0/10 * * * *
 difi.move.feature.enableDsfPrintLookup=false
 difi.move.queue.concurrency=20
+```
+
+### Webhook-abonnement
+
+Som standard blir ingen meldinger videreformidlet til webhook-abonnement. Dette må konfigureres.
+
+| Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
+|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.statusQueueIncludes   | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
+
+Eksempel:
+
+```
+difi.move.feature.statusQueueIncludes=DPI,DPV
 ```
 
 #### Port

@@ -38,9 +38,12 @@ Automatisk oppgradering av integrasjonspunktet konfigureres ved hjelp av en konf
 
 1. Start med å finne mappen integrasjonspunktet er installert til, for eksempel `c:\integrasjonspunkt`
 2. Last så ned [kosmos-local.properties]({{site.baseurl}}/resources/eformidling/kosmos-local.txt) og lagre i overnevnte mappe
-3. Last ned [kosmos-[versjonsnummer].jar](../Introduksjon/last_ned#kosmos)
+3. Last ned [kosmos-[versjon.jar](../Introduksjon/last_ned#kosmos)
 4. Last ned [eFormidlings offentlige nøkkel](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
-5. [Verifiser at jar-filen er fra Digitaliseringsdirektoratet](../Selvhjelp/sporsmal_og_svar#hvordan-verifiserer-jeg-at-jar-filen-er-fra-digitaliseringsdirektoratet)
+
+eFormidling anbefaler å verifisere at `kosmos-[versjon].jar` er fra Digitaliseringsdirektoratet.
+
+- [Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?](../Selvhjelp/sporsmal_og_svar#hvordan-verifiserer-jeg-at-jar-filen-er-fra-digitaliseringsdirektoratet)
 
 Når du er ferdig skal strukturen på området se slik ut:
 

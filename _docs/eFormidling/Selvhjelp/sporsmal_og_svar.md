@@ -13,7 +13,7 @@ sidebar: eformidling_sidebar
 
 ### Hvordan henter jeg den offentlige delen av virksomhetssertifikatet fra en keystore (`JKS` eller `P12`)?
 
-**eksportere public key fra keystore explorer**
+Eksportere public key fra Keystore Explorer:
 
 1. Åpne opp keystoren i keystore explorer.
 2. Høgreklikk på valgt sertifikat og velg "export->Certificate" eller "certificate chain" i menyen.
@@ -22,13 +22,13 @@ sidebar: eformidling_sidebar
 3. Marker for PEM format.
 4. Naviger til valgt mappe og lagre som .cer fil.
 
-**public key kan eksporteres fra JKS-keystore med kommandoen**
+Eksportere public key fra jks-keystore med keytool:
 
 ```
 keytool -export -keystore [MY_KEYSTORE.jks] -alias [ALIAS] -file [FILENAME.cer]
 ```
 
-**public key kan eksporteres fra P12-keystore med kommandoen**
+Eksportere public key fra p12-keystore med keytool:
 ```
 keytool -export -keystore [MY_KEYSTORE.p12] -alias [ALIAS] -file [FILENAME.cer] -storetype PKCS12
 ```
@@ -37,28 +37,32 @@ keytool -export -keystore [MY_KEYSTORE.p12] -alias [ALIAS] -file [FILENAME.cer] 
 
 Det er viktig at passordet på keystore er likt passordet på sertifikatet for at integrasjonspunktet skal fungere. Her er veiledning for å endre passord på begge to.
 
-**Endre keystore passord:**
+Endre keystore passord:
+
 1. Åpne opp keystoren i JKS.
 2. På arbeidslinjen på toppen av vinduet:
     - Tools
     - Set KeyStore password
     - skriv inn nytt passord
 
-**Endre sertifikat passord:**
+Endre sertifikat passord:
+
 1. Åpne opp keystore i JKS.
 2. Høgreklikk på valgt sertifikat og velg "set password" i menyen.
 3. Skriv inn nytt passord.
 
 ### Hvordan oppdaterer jeg virksomhetssertifikatet som brukes i eFormidling?
 
-TODO
+Når en bytter virksohetssertifikat kan en følge samme fremgangsmåte som ved første gangs installasjon:
+
+- [virksomhetssertifikat](../installasjon/virksomhetssertifikat)
+
 
 ### Hvordan kan jeg beskytte sertifikat, passord og annet som integrasjonspunktet trenger?
 
-Det er også mulig å bruke Azure Vault er støttet via Akv2K8s. [Se eksempeloppsett her](installasjon_aks#5-azure-key-vault-og-azure-key-vault-env-injector).
+En kan bruke HashiCorp Vault eller injisering av miljøvariable. Se beskrivelse på:
 
-Vi har valgt å pensjonere Windows Certificate Store løsningen fordi den ikke støtter alle former for eFormidling. Om du
-allerede bruker WCS og trenger støtte, ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
+- [Konfigurer integrasjonspunktet](../installasjon/installasjon#konfigurer-integrasjonspunktet)
 
 ## Java
 
@@ -106,13 +110,11 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 - mellomlagring av innkommende meldinger før de er konsumert
 - mellomlagring av utgående meldinger før de er sendt
 
-### Hvordan bruke selvsignerte sertifikat i integrasjonspunktet?
+### Hvorfor kommer det ikke meldinger på webhook-abonnementet jeg har satt opp?
 
-TODO for grensesnittene som tilbys
+Ingen meldinger blir videreformidlet til webhook-abonnement som standard. Dette må konfigureres. Se:
 
-### Hvorfor kommer det ikke meldinger på websocket-abonnementet jeg har satt opp?
-
-TODO lenke config difi.move.feature.statusQueueIncludes
+- [Webhook-abonnement](../installasjon/installasjon#webhook-abonnement)
 
 ## Digital Post til Innbyggere via proxy-klientbibliotek
 
@@ -127,29 +129,30 @@ difi.move.dpi.receipt-type=xmlsoap
 difi.move.feature.statusQueueIncludes=DPI
 ```
 
+## Diverse
+
 ### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?
 
-[Nedlasting av offentleg nøkkel finn du her](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
+Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
 
-Om du ønsker å manuelt verifisere .jar fil ved å bruke sertifikatet kan du benytte [denne rettleiinga](sertifikatadministrasjon#verifisere-sertifikatet)
+- [Last ned](../Introduksjon/last_ned)
 
-[Laste ned Digdir sin offentlege nøkkel](/resources/eformidling/public_keys/eformidling-key.asc) og lagre valgt katalog.
+En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG-kommandoen under:
 
-> Denne offentlege nøkkelen skal ligge i samme mappe som ```kosmos-[versjon].jar```, ```kosmos-local.properties``` og ```integrasjonspunkt-local.properties```
-
-Den offentlege nøkkelen vår har fingeravtrykket:
 ```
-AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3
+gpg --verify "integrasjonspunkt-X.Y.Z.jar.asc" "integrasjonspunkt-X.Y.Z.jar"
 ```
-Vi anbefalar at ein sjølv gjer ein manuell sjekk etter byte av nøkkel for å verifisere at fingeravtrykket er korrekt. Om du har GnuPG installert kan du køyre denne one-lineren:
-```
-gpg --import-options show-only --import --fingerprint <path-to-downloaded-public-key-file>
-```
-Om du ikkje har GnuPG frå før eller ynskjer meir utdjupande forklaring om korleis sjekke fingeravtrykket: [Sjå her](https://github.com/felleslosninger/efm-kosmos/tree/feature_MOVE-2144_code_signing#verify-your-download-recommended)
 
-https://github.com/felleslosninger/efm-kosmos
+Resultatet skal inneholde `Good signature from...` og `Primary key fingerprint` skal samsvare med eksempelet under:
 
-TODO sjekke at nøkkelen er rett gitt fingeravtrykket, sjekke at jar-fila er rett gitt nøkkelen
+```
+gpg: Signature made tir. 29. jun 2021 12:26:03
+gpg:                using RSA key CA5643393753ECE3
+gpg: Good signature from "Kodesignering eFormidling (Digitaliseringsdirektoratets nøkkel for kodesignering for eFormidling) <servicedesk@digdir.no>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3
+```
 
 ### Hva er KOSMOS?
 
@@ -165,12 +168,14 @@ eFormidling følger [semantisk versjonering] (https://semver.org) for å vise en
 En distribusjon av integrasjonspunktet inneholder navnet på komponenten, versjonsnummer og filtype som i dette eksemplet:
 integrasjonspunkt-2.0.7.jar
 
-![versjonsnummerbild](/images/eformidling/ipversjon.PNG)
-
 Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH
 
-**PATCH** inneholder bakoverkompatible bug fixer. Med bugfix menes intern endring av uønsket oppførsel eller feil. Dette er versjoner man kan installere uten at man vil merke endringer
+**PATCH** inneholder bakoverkompatible feilrettelser. Med feilretting menes intern endring av uønsket oppførsel eller feil. Dette er versjoner man kan installere uten at man vil merke endringer
 
-**MINOR** har ny funksjonalitet, men er bakover kompatibel. Her er det lagt til ny funksjonalitet eller gjort endring på eksisterende funksjonalitet uten at dette påvirker konsumenter av API'et. Denne vil også økes dersom det det er funksjonalitet som er ønsket fjernet i senere versjon (deprecated). En MINOR-oppdatering vil ikke endre eksisterende integrasjoner, men det kan være nyttig å teste ny funksjonalitet dersom dette er tilgjengelig gjennom integrasjonen man bruker.
+**MINOR** har ny funksjonalitet, men er bakover-kompatibel. Her er det lagt til ny funksjonalitet eller gjort endring på eksisterende funksjonalitet uten at dette påvirker konsumenter av API'et. Denne vil også økes dersom det det er funksjonalitet som er ønsket fjernet i senere versjon (deprecated). En MINOR-oppdatering vil ikke endre eksisterende integrasjoner, men det kan være nyttig å teste ny funksjonalitet dersom dette er tilgjengelig gjennom integrasjonen man bruker.
 
-**MAJOR** har endringer som ikke er bakover kompatible.  Dette kan være endringer i hvordan API'et brukes eller fjerning av funksjonalitet, som tidligere er signalisert at vil fjernes gjennom Minor-release og API-kommentar. En Major-oppdatering vil føre til at hele eller deler av funksjonaliteten man bruker ikke lenger virker og vil derfor være viktig å forsikre seg om at det man trenger virker som forventet gjennom testing eller dialog med leverandør av fagsystemet som integrerer mot integrasjonspunktet.
+**MAJOR** har endringer som ikke er bakover-kompatible. Dette kan være endringer i hvordan API'et brukes eller fjerning av funksjonalitet, som tidligere er signalisert at vil fjernes gjennom Minor-release og API-kommentar. En Major-oppdatering vil føre til at hele eller deler av funksjonaliteten man bruker ikke lenger virker og vil derfor være viktig å forsikre seg om at det man trenger virker som forventet gjennom testing eller dialog med leverandør av fagsystemet som integrerer mot integrasjonspunktet.
+
+### Hva betyr MOVE, NEXTMOVE og MIIF?
+
+MOVE, NEXTMOVE og MIIF er tidligere arbeidsnavn for eFormidling.
