@@ -97,8 +97,6 @@ folders:
       jurl: /docs/eFormidling/Miljo/produksjon
     - title: QA
       jurl: /docs/eFormidling/Miljo/qa
-    - title: Test
-      jurl: /docs/eFormidling/Miljo/test
 - title: (gammel) Installasjon av integrasjonspunktet
   folderitems:
     - title: Oppgradere til ny versjon

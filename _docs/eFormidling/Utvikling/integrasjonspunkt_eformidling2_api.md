@@ -168,6 +168,7 @@ participant ip as Integrasjonspunkt
 
         loop Til det er tomt
             fs->>ip: GET /api/statuses/peek?status=LEVERT
+            fs->>ip: DELETE /api/statuses/{id}
         end
 
     end

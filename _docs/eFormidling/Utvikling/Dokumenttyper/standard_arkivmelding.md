@@ -60,6 +60,5 @@ I tillegg er det gjort noen strukturelle endringer:
 
 Se gjerne relevante XSDer
 
-- [Arkivmelding.xsd (basert på NOARK 5 v3.1 arkivstruktur.xsd)](https://github.com/felleslosninger/efm-integrasjonspunkt/blob/master/nextmove/src/main/resources/xsd/arkivmelding.xsd) (ekstern lenke)
+- [Arkivmelding.xsd](https://github.com/felleslosninger/efm-integrasjonspunkt/blob/master/nextmove/src/main/resources/xsd/arkivmelding.xsd) (basert på [NOARK 5 v3.1 arkivstruktur.xsd](https://github.com/arkivverket/schemas/blob/master/N5/v3.1/arkivstruktur.xsd)) (ekstern lenke)
 - [NOARK 5 v3.1 metadatakatalog.xsd](https://github.com/arkivverket/schemas/blob/master/N5/v3.1/metadatakatalog.xsd) (ekstern lenke)
-- ([NOARK 5 v3.1 arkivstruktur.xsd](https://github.com/arkivverket/schemas/blob/master/N5/v3.1/arkivstruktur.xsd)) (ekstern lenke)
