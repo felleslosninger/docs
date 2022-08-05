@@ -9,7 +9,7 @@ sidebar: eformidling_sidebar
 - [Introduksjon til eFormidling](./)
 - [Oversikt over funksjonalitet](../Funksjonalitet/)
 - [Oversikt over egenskaper](../Egenskaper/)
-- [Kom i gang med integrasjonspunktet](../Installasjon/)
+- [Kom i gang med integrasjonspunktet](../installasjon/)
 - [Kom i gang med utvikling](../Utvikling/)
 - [Kom i gang med testing](../Testing/)
 - Demoer

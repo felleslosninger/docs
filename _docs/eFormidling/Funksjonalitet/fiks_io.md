@@ -96,8 +96,8 @@ avsenderen om både vellykkede sendinger og avvik.
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
-- [Minimumskonfigurasjon av integrasjonspunktet](../Installasjon/installasjon#minimumskonfigurasjon)
-- [Konfigurasjon av FIKS IO](../Installasjon/installasjon#konfigurere-ks-fiks-io)
+- [Minimumskonfigurasjon av integrasjonspunktet](../installasjon/installasjon#minimumskonfigurasjon)
+- [Konfigurasjon av FIKS IO](../installasjon/installasjon#konfigurere-ks-fiks-io)
 
 ## Utvikling
 

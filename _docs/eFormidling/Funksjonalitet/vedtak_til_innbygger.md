@@ -141,9 +141,9 @@ registrerte kontaktinformasjon i kontakt- og reservasjonsregisteret.
 
 Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
-- [Minimumskonfigurasjon av integrasjonspunktet](../Installasjon/installasjon#minimumskonfigurasjon)
-- [Konfigurasjon av Digital Post til Innbyggere](../Installasjon/installasjon#konfigurere-digital-post-til-innbyggere-dpi)
-- [Konfigurasjon av Altinn Digital Post](../Installasjon/installasjon#konfigurere-altinn-digital-post-dpv)
+- [Minimumskonfigurasjon av integrasjonspunktet](../installasjon/installasjon#minimumskonfigurasjon)
+- [Konfigurasjon av Digital Post til Innbyggere](../installasjon/installasjon#konfigurere-digital-post-til-innbyggere-dpi)
+- [Konfigurasjon av Altinn Digital Post](../installasjon/installasjon#konfigurere-altinn-digital-post-dpv)
 
 Det er også støtte for delvis konfigurasjon. Delvis konfigurasjon medfører at en ikke når alle mottakere. For eksempel
 kan en la være å konfigurere Altinn Digital Post dersom en ikke ønsker å nå mottakere som rutes til denne tjenesten.
