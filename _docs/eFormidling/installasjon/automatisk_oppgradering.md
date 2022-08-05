@@ -6,7 +6,8 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-eFormidling anbefaler automatisk oppgradering av integrasjonspunktet.
+Formålet med denne siden er å gjøre det enklest mulig å installere og konfigurere automatisk
+oppgradering av eFormidlings integrasjonspunkt.
 
 1. TOC
 {:toc}

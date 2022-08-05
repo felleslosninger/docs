@@ -8,11 +8,6 @@ sidebar: eformidling_sidebar
 
 Før en virksomhet kan ta i bruk eFormidling må den ha fått utstedt et virksomhetssertifikat.
 
-Merk at dersom en ønsker å ta i bruk eFormidling i testmiljø så må den få utstedt et eget test-virksomhetssertifikat.
-
-eFormidling støtter virksomhetssertifikat av typene SEID v1 og v2, men ikke eSegl. SSL-sertifikater (inkludert wildcard-
-sertifikater) er ikke virksomhetssertifikater.
-
 eFormidling krever virksomhetssertifikat for å autentisere virksomhetene som bruker tjenesten på en sikker måte. I
 tillegg brukes virksomhetssertifikatet til:
 
@@ -28,7 +23,10 @@ TODO lenke
 
 ## Bestille virksomhetssertifikat
 
-eFormidling støtter virksomhetssertifikat av typene SEID v1 og v2, men ikke eSegl.
+eFormidling støtter virksomhetssertifikat av typene SEID v1 og v2, men ikke eSegl. SSL-sertifikater (inkludert
+wildcard-sertifikater) er ikke virksomhetssertifikater.
+
+Merk at dersom en ønsker å ta i bruk eFormidlings QA-miljø så må den få utstedt et eget test-virksomhetssertifikat.
 
 En kan enten bruke et allerede utstedt virksomhetssertifikat eller bestille et nytt:
 
@@ -41,7 +39,8 @@ For å gjøre det mulig for avsender å sende ende-til-ende-krypterte meldinger 
 mottakers virksomhetssertifikat først gjøres tilgjengelig i eFormidlings sertifikatkatalog.
 
 Leverandørene sender vanligvis virksomhetssertifikatet med den tilhørende private nøkkelen i én enkelt fil med etternavn
-`P12` (`PKCS #12`) eller `JKS` (`Java KeyStore`) - denne filen må ikke deles med andre.
+`P12` (`PKCS #12`) eller `JKS` (`Java KeyStore`) - denne filen må ikke deles med Digitaliseringsdirektoratet 
+eller andre.
 
 Dersom leverandøren har sendt flere filer er det den merket som **autentiseringssertifikatet** som skal brukes.
 

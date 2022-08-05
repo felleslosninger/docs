@@ -6,6 +6,9 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+Formålet med denne siden er å gjøre det enklest mulig å installere og konfigurere eFormidlings
+integrasjonspunkt.
+
 1. TOC
 {:toc}
 
@@ -65,7 +68,7 @@ integrasjonspunktet når operativsystemet starter og stopper, og som ved behov k
 
 - [Kjøre integrasjonspunktet som en tjeneste (Windows)](Eksempel/start_og_stopp#alt-1-kjøre-integrasjonspunktet-som-en-tjeneste)
 - [Kjøre integrasjonspunktet med task scheduler (Windows)](Eksempel/start_og_stopp#alt-3-kjøre-via-task-scheduler-med-minste-rettigheter)
-- `systemctl`, `upstart` eller lignende, avhengig av distribusjon (Linux)
+- `systemctl`, `upstart` eller tilsvarende, avhengig av distribusjon (Linux)
 
 Det er også mulig å starte og stoppe integrasjonspunktet manuelt:
 
@@ -127,13 +130,13 @@ difi.move.feature.enableDPE=false
 
 ### Valgfri konfigurasjon
 
-#### eFormidlingsmiljø (produksjon eller QA)
+#### Miljø (produksjon eller QA)
 *Valgfritt*
 
-I tillegg til produksjon til byr eFormidling ett offentlig testmiljø:
+Tilgjengelige miljø:
 
-- [Produksjon](../Miljo/produksjon)
-- [QA](../Miljo/qa)
+- [eForidling Produksjon](../Miljo/produksjon)
+- [eFormidling QA](../Miljo/qa)
 
 | Egenskap               | Beskrivelse                                    | Standardverdi |
 |------------------------|------------------------------------------------|---------------|
@@ -260,7 +263,7 @@ difi.activemq.password=mypassword
 *Valgfritt*
 
 Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
-grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard verken beskyttet av
+grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet av
 transportsikring. Det er mulig å slå på støtte for transportsikring.
 
 | Egenskap                    | Beskrivelse                                                               | Standardverdi |
@@ -285,7 +288,7 @@ difi.ssl.key-alias=myalias
 *Valgfritt*
 
 Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
-grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet
+grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet av
 autentisering. Det er mulig å slå på støtte for autentisering. Det er bare autentiseringsmekanismen `HTTP basic auth`
 som støttes.
 
@@ -317,11 +320,13 @@ at dette skal medføre at levering av meldinger feiler.
 #### Kapasitet
 *Valgfritt*
 
-Ved utsending av store volum kan det være aktuelt å justere kapasiteten i integrasjonspunktet:
+Standardoppsettet for integrasjonspunktet har vanligvis god kapasitet. Ved utsending av store volum (fra ~ 50 000 daglige
+meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke kapasiteten:
 
-- øke samtidigheten
+- øke samtidigheten for utgående meldinger
 - senke intervall for innhenting av meldingsstatuser
 - slå av oppslag i DSF dersom dette ikke trengs
+- øke tilgjenglige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og netteverk
 
 | Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -389,7 +394,7 @@ Dette er bare aktuelt for eldre sak- og arkivsystemer.
 | difi.move.noarkSystem.password    | Passord for autentisering mot sak-/arkivsystem (benyttes av P360)      | (ingen)       |
 | difi.move.noarkSystem.domain      | Brukerdomene for autentisering mot sak-/arkivsystem (benyttes av P360) | (ingen)       |
 
-For å benytte BEST/EDU kreves det at eFormidlings meldingstjeneste også brukes:
+For å benytte BEST/EDU kreves det at eFormidlings meldingstjeneste er slått på:
 
 - [Konfigurasjon av eFormidlings meldingstjeneste](#konfigurere-eformidlings-meldingstjeneste-dpo)
 
@@ -406,8 +411,8 @@ difi.move.noarkSystem.domain=MYUSERDOMAIN
 #### E-post
 *Valgfritt*
 
-Ved bruk av KS SvarInn så vil integrasjonspunktet håndtere feil ved behandling av inngående meldinger med å sende en
-e-post. Dette fordi det har oppstått noen sporadiske problem med konvertering av meldinger mellom KS FIKS og
+Ved bruk av KS SvarInn så kan integrasjonspunktet håndtere feil ved behandling av inngående meldinger ved å sende en
+e-post. Dette fordi det kan oppstå uforutsette problem med konvertering av meldinger mellom KS FIKS og
 eFormidling.
 
 Ved bruk av BEST/EDU-grensesnittet er det støttet å levere innkommende meldinger på e-post istedetfor en BEST/EDU-
@@ -435,7 +440,6 @@ difi.move.mail.receiverAddress=postmottak@virksomheten.no
 difi.move.mail.senderAddress=integrasjonspunkt@virksomheten.no
 difi.move.mail.trust=${difi.move.mail.smtpHost}
 ```
-
 
 ### Meldingstjenester
 
@@ -485,6 +489,7 @@ difi.move.feature.enableDPE=true
 KS SvarUt og SvarInn krever hver sin bruker:
 
 - [Opprette brukere i KS SvarUt og SvarInn](../installasjon/eformidling_create_users#opprette-dpf-brukere-svarinn-og-svarut)
+
 
 | Egenskap                               | Beskrivelse                                                                                                             | Standardverdi |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -556,7 +561,6 @@ difi.move.dpv.enableDueDate=false
 | difi.move.dpi.pollWithoutAvsenderidentifikator | Om det skal polles etter kvitteringer uten bruk av avsenderindikator                                                                                                                                      | true                                            |
 | difi.move.dpi.client-type                      | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI) og json+xmlsoap (Ny DPI som også poller etter kvitteringer i gammel løsning).                                                                      | xmlsoap                                         |
 | difi.move.dpi.receipt-type                     | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI). Denne brukes kun i ny DPI, men den må settes til xmlsoap for de som bruker proxy-klienten mot IP, da denne krever kvitteringer på gammelt format. | json                                            |
-| difi.move.feature.enableDsfPrintLookup         | Skru på / av DSF oppslag for DPI. Settes til false for å skru av                                                                                                                                          | true                                            |
 
 Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
 
@@ -594,8 +598,6 @@ difi.move.fiks.io.sender-orgnr=910077473
 
 ## Neste steg
 
-Etter konfigurasjon av integrasjonspunktet anbefales det å konfigurere:
-
-- [Automatisk oppgradering](automatisk oppgradering)
-- [Sikkerhetskopi](sikkerhetskopi)
-- [Overvåking](overvaking)
+- [Automatisk oppgradering](automatisk_oppgradering) (anbefalt)
+- [Sikkerhetskopi](sikkerhetskopi) (anbefalt)
+- [Overvåking](overvaking) (anbefalt)

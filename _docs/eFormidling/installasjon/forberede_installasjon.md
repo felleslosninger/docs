@@ -33,8 +33,12 @@ Følgende ressurser kreves av integrasjonspunktet:
 
 ## Konfigurer brannmur dersom nødvendig
 
-Dersom integrasjonspunktet skal kjøres i et driftsmiljø beskyttet av brannmur kan det være nødvendig å konfigurere denne
-for å tillate utgående trafikk fra eFormidlings integrasjonspunkt til tjenestene integrasjonspunktet bruker.
+Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
+grensesnittene som tilbys av integrasjonspunktet.
+
+Dersom integrasjonspunktet skal kjøres i et driftsmiljø der utgående trafikk blir filtrert av en brannmur er det nødvendig
+å konfigurere denne for å tillate utgående trafikk fra eFormidlings integrasjonspunkt til tjenestene integrasjonspunktet
+bruker.
 
 Se beskrivelser inkludert IP-adresser for tjenestene integrasjonspunktet bruker:
 
@@ -42,6 +46,8 @@ Se beskrivelser inkludert IP-adresser for tjenestene integrasjonspunktet bruker:
 - [eFormidling QA](../Miljo/qa)
 
 En må også tillate inngående trafikk til integrasjonspunktet fra tjenesten(e) som skal benytte integrasjonspunktet.
+Integrasjonspunktets grensesnitt er som standard tilgjengelig på port `9093`, men kan settes til noe annet dersom
+ønskelig.
 
 ## Konfigurer tidssynkronisering dersom det mangler
 
