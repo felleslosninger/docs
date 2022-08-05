@@ -35,20 +35,8 @@ folders:
       jurl: /docs/eFormidling/Funksjonalitet/vedtak_til_innbygger
 - title: Egenskaper
   folderitems:
-    - title: Oversikt
+    - title: Egenskaper
       jurl: /docs/eFormidling/Egenskaper/
-    - title: Driftbarhet
-      jurl: /docs/eFormidling/Egenskaper/driftbarhet
-    - title: Fleksibilitet
-      jurl: /docs/eFormidling/Egenskaper/fleksibilitet
-    - title: Kapasitet
-      jurl: /docs/eFormidling/Egenskaper/kapasitet
-    - title: Pålitelighet
-      jurl: /docs/eFormidling/Egenskaper/palitlighet
-    - title: Responsitivitet
-      jurl: /docs/eFormidling/Egenskaper/responsitivitet
-    - title: Sikkerhet
-      jurl: /docs/eFormidling/Egenskaper/sikkerhet
 - title: Installasjon
   folderitems:
     - title: Kom i gang med integrasjonspunktet
