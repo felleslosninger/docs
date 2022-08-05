@@ -116,3 +116,14 @@ Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i 
     "referanseType" : "publisering"
   }
 ```  
+## Slettemeldinger
+Sletting fra eInnsyn kan automatiseres ved å sende slettemelding. Dette sendes på samme måte som en journalpost (samme meldingstype i eFormidling) med en slettemelding som payload. Eksempel på slettemelding:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<trekkTilbake
+        xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <registrering xsi:type="journalpost">
+        <systemID>fb81a8d1-c78a-4447-9710-b668fd144769</systemID>
+    </registrering>
+</trekkTilbake>
+```
