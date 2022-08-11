@@ -273,7 +273,7 @@ transportsikring. Det er mulig å slå på støtte for transportsikring.
 | difi.ssl.key-store-type     | Format for keystore (`PKCS12` eller `JKS`)                                | (ingen)       |
 | difi.ssl.key-store          | Sti til keystore                                                          | (ingen)       |
 | difi.ssl.key-store-password | Passord for keystore                                                      | (ingen)       |
-| difi.ssl.key-alias          | Alias (navn) for `TLS``-sertifikat i keystore (case sensitivt)            | (ingen)       |
+| difi.ssl.key-alias          | Alias (navn) for `TLS`-sertifikat i keystore (case sensitivt)             | (ingen)       |
 
 Eksempel:
 
@@ -325,8 +325,8 @@ Standardoppsettet for integrasjonspunktet har vanligvis god kapasitet. Ved utsen
 meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke kapasiteten:
 
 - øke samtidigheten for utgående meldinger
-- senke intervall for innhenting av meldingsstatuser
-- slå av oppslag i DSF dersom dette ikke trengs
+- senke hyppighet for innhenting av meldingsstatuser
+- slå av oppslag i det sentrale folkeregister (DSF) dersom dette ikke trengs
 - øke tilgjenglige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og netteverk
 
 | Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
@@ -344,7 +344,7 @@ difi.move.feature.enableDsfPrintLookup=false
 difi.move.queue.concurrency=20
 ```
 
-### Webhook-abonnement
+#### Webhook-abonnement
 
 Som standard blir ingen meldinger videreformidlet til webhook-abonnement. Dette må konfigureres.
 
@@ -425,7 +425,7 @@ difi.move.noarkSystem.domain=MYUSERDOMAIN
 #### E-post
 *Valgfritt*
 
-Ved bruk av KS SvarInn så kan integrasjonspunktet håndtere feil ved behandling av inngående meldinger ved å sende en
+Ved bruk av KS SvarInn så kan integrasjonspunktet håndtere feil ved behandling av innkommende meldinger ved å sende en
 e-post. Dette fordi det kan oppstå uforutsette problem med konvertering av meldinger mellom KS FIKS og
 eFormidling.
 

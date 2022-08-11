@@ -114,7 +114,7 @@ Forretningsmeldingen `digital` er beskrevet under.
 Hvilke typer dokument som støttes avhenger av mottakeren og er ikke kjent på forhånd. Dette medfører at forsøk på å
 sende dokumenter som ikke støttes av mottakeren feiler først ved mottak.
 
-Dokumenttyper som støttes: TODO hva støttes for digital?
+Filformat som støttes: TODO hva støttes for digital?
 
 ## En eller flere utvidelser
 

@@ -26,7 +26,7 @@ Dokumenttypen `publisering` adresseres fra avsenders organisasjonsnummer til Dig
 
 Forretningsmeldingen `publisering` er beskrevet under.
 
-> `innsynskrav.orgnr` (påkrevd)
+> `publisering.orgnr` (påkrevd)
 >
 > Organisasjonsnummer for avsender av innsynskravet.
 >

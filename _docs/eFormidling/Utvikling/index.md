@@ -24,7 +24,7 @@ et integrasjonspunkt å utvikle mot. eFormidling tilbyr et offentlig testmiljø 
 eFormidling, og integrasjonspunktet må konfigureres med nødvendige tilganger til disse. Se gjerne:
 
 - [Kom i gang med integrasjonspunktet](../installasjon/)
-- [QA-miljø](../Miljo/qa)
+- [Testing](../Testing/)
 
 I noen sjeldne tilfeller ønsker en virksomhet å kommunisere med virksomheter på eFormidling uten selv å kjøre et
 integrasjonspunkt. Dette er mulig, men ikke anbefalt. Se gjerne:
@@ -64,6 +64,10 @@ Se mer om eFormidlings standard business document (SBD) på:
 
 - [Standard business document](Dokumenttyper/standard_sbd)
 
+SBD har en gitt dokumenttype og en tilhørende forretningsmelding:
+
+- [Dokumenttyper](Dokumenttyper/)
+
 Se mer om eFormidlings dokumentpakke på:
 
 - [Dokumentpakke](Dokumenttyper/standard_dokumentpakke)
@@ -90,6 +94,8 @@ på flere tjenesteleverandører
 Les mer om leveransemodeller i eFormidling:
 
 - [Kom i gang med integrasjonspunktet](../installasjon/)
+- [På vegne av andre](pa_vegne_av)
+- [Kanal](kanal)
 
 ## Kom i gang med eFormidling uten integrasjonspunkt
 
