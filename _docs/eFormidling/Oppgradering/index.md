@@ -8,9 +8,9 @@ sidebar: eformidling_sidebar
 
 Her finner du informasjon om hvordan oppgradere integrasjonspunktet ditt.
 
-> For de som ikke bruker Docker anbefales det å ta i bruk automatisk oppgradering:
+> For de som bruker Java anbefales det å ta i bruk automatisk oppgradering:
 >
-> - [Automatisk oppgradering](../Drift/automatisk_oppgradering) 
+> - [Automatisk oppgradering](../installasjon/automatisk_oppgradering) 
 
 ## Docker
 
@@ -32,8 +32,8 @@ Det er denne linjen som må oppdateres med tilsvarende versjon som ```integrasjo
 <argument>%BASE%/integrasjonspunkt-2.9.0.jar</argument>
 ```
 
-[Se hvordan reinstallere windows tjenesten](../Drift/Eksempel/start_og_stopp#reinstallasjon-av-tjenesten)
+[Se hvordan reinstallere windows tjenesten](../installasjon/Eksempel/start_og_stopp#reinstallasjon-av-tjenesten)
 
 ### Kommando
 
-Oppdater oppstart kommandoen din med versjon tilsvarende ```integrasjonspunkt-[versjon].jar``` du lastest ned. [Se hvordan her](../Drift/Eksempel/start_og_stopp#alt-2-kj%C3%B8re-integrasjonspunktet-fra-kommandovindu)
+Oppdater oppstart kommandoen din med versjon tilsvarende ```integrasjonspunkt-[versjon].jar``` du lastest ned. [Se hvordan her](../installasjon/Eksempel/start_og_stopp#alt-2-kj%C3%B8re-integrasjonspunktet-fra-kommandovindu)

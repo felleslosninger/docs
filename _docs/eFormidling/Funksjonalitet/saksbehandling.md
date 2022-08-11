@@ -190,13 +190,6 @@ Det er også støtte for delvis konfigurasjon. Delvis konfigurasjon medfører at
 trenger en ikke konfigurere KS SvarUt dersom en bare skal nå statlige virksomheter. En trenger heller ikke konfigurere
 KS SvarInn dersom en ikke ønsker å motta fra avsendere som bruker KS SvarUt.
 
-## Sende på vegne av 
-Det er også mulig å sende på vegne av en annen organisasjon eller underenhet. For å sende på vegne av må du gjøre tilpasning i Standard Business Document Header på **sender.identifier.value** feltet. Dette støtter nå et adresseringsformat som ser slik ut ```0192:<orgnr>:<påVegneAvOrgnr>```. For eksempel: Digitaliseringsdirektoratet ønsker å sende på vegne av Digitaliseringsdirektoratet Leikanger , da ser **sender.identifier.value** feltet slik ut ```0192:991825827:987464291```. 
-
-### Tilgangsstyring
-Hvem som kan sende på vegne av hvem styres av Digdir. kontakt ```servicedesk@digdir.no``` for å få registrert underenhet som gyldig mottaker på vegne av din organisasjon.
-
 ## Utvikling
 
 - [Eksempel på saksbehandling](../Utvikling/Eksempel/saksbehandling)
-- [Eksempel på saksbehandling med på vegne av](../Utvikling/Eksempel/paa-vegne-av)
