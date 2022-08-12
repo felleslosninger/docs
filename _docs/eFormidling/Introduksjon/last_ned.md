@@ -20,7 +20,7 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../installasjon/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
 
-Endringslogg finner du [her.](endringslogg)
+Endringslogg finner du [her.](../oppgradering/endringslogg)
 
 ## KOSMOS
 
