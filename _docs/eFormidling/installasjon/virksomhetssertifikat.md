@@ -26,7 +26,7 @@ TODO lenke
 eFormidling støtter virksomhetssertifikat av typene SEID v1 og v2, men ikke eSegl. SSL-sertifikater (inkludert
 wildcard-sertifikater) er ikke virksomhetssertifikater.
 
-Merk at dersom en ønsker å ta i bruk eFormidlings QA-miljø så må den få utstedt et eget test-virksomhetssertifikat.
+Merk at dersom en ønsker å ta i bruk eFormidlings testmiljø så må den få utstedt et eget test-virksomhetssertifikat.
 
 En kan enten bruke et allerede utstedt virksomhetssertifikat eller bestille et nytt:
 

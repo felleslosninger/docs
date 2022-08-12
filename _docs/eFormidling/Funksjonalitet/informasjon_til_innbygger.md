@@ -35,7 +35,9 @@ Meldinger adresseres fra avsenders organisasjonsnummer til mottakers fødselsnum
 For mottakere som har valgt digital postkasse foretrekkes denne. For mottakere som ikke har valgt postkasse må avsender
 selv velge om meldingen kan sendes til Altinn Digital Post eller om den må sendes som fysisk post. Ved sending av fysisk
 post kan avsender velge å bruke utskriftstjenesten i Digital Post til Innbyggere eller håndtere disse meldingene med
-egen utskriftstjeneste.
+egen utskriftstjeneste. Det kan være greit å legge merke til at reservasjon og mulighet til å varsle innbygger
+ignoreres. Dersom innholdet som skal sendes krever at reservasjon respekteres må
+[vedtak til innbygger](vedtak_til_innbygger) brukes. 
 
 <div class="mermaid">
 graph LR

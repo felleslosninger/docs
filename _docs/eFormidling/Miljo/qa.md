@@ -6,13 +6,13 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Ved å bruke eFormidlings QA-miljø når, og nås, integrasjonspunktet av test-virksomheter og test-innbyggere.
+Ved å bruke eFormidlings testmiljø når, og nås, integrasjonspunktet av test-virksomheter og test-innbyggere.
 
-For å bruke eFormidlings QA-miljø kreves et test-virksomhetssertifikat.
+For å bruke eFormidlings testmiljø kreves et test-virksomhetssertifikat utstedt.
 
 - TODO syntetisk vs ekte organisasjonsnumer
 
-Integrasjonspunktet må konfigureres til å bruke QA-miljøet:
+Integrasjonspunktet må konfigureres til å bruke testmiljøet:
 
 - [Konfigurasjon av miljø (produksjon eller QA)](../installasjon/installasjon#miljø-produksjon-eller-qa)
 
