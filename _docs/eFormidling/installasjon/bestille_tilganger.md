@@ -11,11 +11,16 @@ brukt.
 
 Merk at dersom en ønsker å ta i bruk eFormidling i testmiljø så må det bestilles egne test-tilganger.
 
-Se Samarbeidsportalen for hva som skal til for å få nødvendige tilganger til eFormidling:
+Se Samarbeidsportalen for hva som skal til for å få nødvendige tilganger til eFormidling og meldingstjenestene som
+brukes av eFormidling:
 
 - [Ta i bruk eFormidling](https://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98) (ekstern lenke)
 
-TODO Bestille tilganger til tjenestene du skal benytte. [Les mer](bestille_tilganger)
+Enkelte av meldingstjenestene krever at virksomheten oppretter en bruker med brukernavn og passord:
+
+- [Opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) (nødvendig for å bruke eFormidlings meldingstjeneste)
+- [Opprette bruker for KS SvarUt og SvarInn](opprette_brukere#opprette-bruker-for-altinn-digital-post)
+- [Opprette bruker for Altinn Digital Post](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
 
 Ta kontakt med vår servicedesk ved behov:
 
