@@ -85,8 +85,7 @@ meldingen gjelder slik at det er så enkelt som mulig for mottaker å rute meldi
 mottakerens organisasjon uten å måtte åpne meldingens innhold.
 
 Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
-- [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste)
-- [KS SvarUt og SvarInn](../Utvikling/Meldingstjenester/ks_svarut_og_svarinn)
+
 - [Altinn Digital Post](../Utvikling/Meldingstjenester/altinn_digital_post)
 
 ## Varsling
