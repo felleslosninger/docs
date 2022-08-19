@@ -114,7 +114,9 @@ Forretningsmeldingen `digital` er beskrevet under.
 Hvilke typer dokument som støttes avhenger av mottakeren og er ikke kjent på forhånd. Dette medfører at forsøk på å
 sende dokumenter som ikke støttes av mottakeren feiler først ved mottak.
 
-Filformat som støttes: TODO hva støttes for digital?
+Filformat som støttes inkluderer PDF, HTML, TXT og flere. Nærmere beskrivelse finnes på:
+
+- [Dokumenttyper for Digital Post til Innbygger](https://docs.digdir.no/dpi_dokumentformat.html) (ekstern lenke)
 
 ## En eller flere utvidelser
 

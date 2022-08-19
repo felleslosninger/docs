@@ -122,7 +122,12 @@ Arkivmeldingen inneholder dokumentreferanser med filnavn for et eller flere doku
 dokumentene må inkluderes. Hvilke typer dokument som støttes avhenger av mottakeren og er ikke kjent på forhånd. Dette
 medfører at forsøk på å sende dokumenter som ikke støttes av mottakeren feiler først ved mottak.
 
-Filformat som støttes: TODO hva støttes for arkivmelding?
+Alle filformat støttes i utgangspunktet, men i praksis vil mottakers system i mange tilfeller stille strengere krav.
+Derfor anbefales PDF. Kjente begrensninger:
+
+- Mottakere som bruker Altinn Digital Post støtter HTML og vedlegg med vilkårlige filformat
+- Mottakere som bruker KS SvarUt og SvarInn støtter i utgangspunktet bare PDF, men kan konfigureres til å støtte flere 
+filformat på bekostning av leveransegaranti
 
 ## Beriking og transformasjon
 
