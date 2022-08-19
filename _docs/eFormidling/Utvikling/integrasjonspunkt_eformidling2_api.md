@@ -218,7 +218,7 @@ participant mf  as Meldingsformidler
     end
     
     fs->>ip: GET /api/messages/in/peek[?process={processName}]
-    ip-->>fs: messageMetaData
+    ip-->>fs: SBD
     fs->>ip: GET /api/messages/in/pop/{messageId}
     ip-->>fs: ASiC
     fs->>ip: DELETE /api/messages/in/{messageId}
@@ -258,7 +258,7 @@ participant mf  as Meldingsformidler
     ip->>fs: POST http://my.webhook.no/my-endpoint
     
     fs->>ip: GET /api/messages/in/peek?messageId={messageId}]
-    ip-->>fs: messageMetaData
+    ip-->>fs: SBD
     fs->>ip: GET /api/messages/in/pop/{messageId}
     ip-->>fs: ASiC
     fs->>ip: DELETE /api/messages/in/{messageId}
