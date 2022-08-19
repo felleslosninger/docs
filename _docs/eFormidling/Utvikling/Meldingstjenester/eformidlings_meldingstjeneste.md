@@ -8,11 +8,10 @@ sidebar: eformidling_sidebar
 
 eFormidling støtter følgende prosesser med eFormidlings meldingstjeneste med følgende dokumenttyper.
 
-| **Prosess**                                                                         | **Dokumenttype**                              | **Eksempel**                                                                                                                                                |
-| ----------------------------------------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------- |
-| [Avtalt meldingsutveksling](../../Funksjonalitet/avtalt)                            | [Avtalt](../Dokumenttyper/avtalt)             | [Eksempel](../Eksempel/avtalt)                        |
-| [Saksbehandling](../../Funksjonalitet/saksbehandling)                               | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling)                |
-| [Taushetsbelagt saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling) | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/taushetsbelagt_saksbehandling) |
+| **Prosess**                                              | **Dokumenttype**                              | **Eksempel**                           |
+|----------------------------------------------------------|-----------------------------------------------|----------------------------------------|
+| [Avtalt meldingsutveksling](../../Funksjonalitet/avtalt) | [Avtalt](../Dokumenttyper/avtalt)             | [Eksempel](../Eksempel/avtalt)         |
+| [Saksbehandling](../../Funksjonalitet/saksbehandling)    | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling) |
 
 Om eFormidlings meldingstjeneste er en del av en mottakers kapabiliteter eller ikke avhenger av flere faktorer slik som
 beskrevet for den enkelte prosess.
