@@ -467,12 +467,13 @@ eFormidlings meldingstjeneste er realisert ved hjelp av Altinn Formidling, og kr
 >
 > Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
-| Egenskap                      | Beskrivelse                                          | Standardverdi |
-|-------------------------------|------------------------------------------------------|---------------|
-| difi.move.feature.enableDPO   | Slår på/av støtte for eFormidlings meldingstjeneste  | false         |
-| difi.move.dpo.username        | Brukernavn for en Altinn Formidling datasystembruker | (ingen)       |
-| difi.move.dpo.password        | Passord for en Altinn Formidling datasystembruker    | (ingen)       |
-| difi.move.dpo.message-channel | Identifikator for meldingskanal, maks 25 tegn        | (ingen)       |
+| Egenskap                      | Beskrivelse                                                     | Standardverdi |
+|-------------------------------|-----------------------------------------------------------------|---------------|
+| difi.move.feature.enableDPO   | Slår på/av støtte for eFormidlings meldingstjeneste             | false         |
+| difi.move.dpo.username        | Brukernavn for en Altinn Formidling datasystembruker            | (ingen)       |
+| difi.move.dpo.password        | Passord for en Altinn Formidling datasystembruker               | (ingen)       |
+| difi.move.dpo.message-channel | Identifikator for meldingskanal, maks 25 tegn                   | (ingen)       |
+| difi.move.dpo.reportees       | Liste av organisasjonsnummer en skal sende og motta på vegne av | (ingen)       |
 
 Eksempel:
 
@@ -505,20 +506,24 @@ KS SvarUt og SvarInn krever hver sin bruker:
 - [Opprette brukere i KS SvarUt og SvarInn](../installasjon/eformidling_create_users#opprette-dpf-brukere-svarinn-og-svarut)
 
 
-| Egenskap                               | Beskrivelse                                                                                                             | Standardverdi |
-|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.feature.enableDPF            | Slår på/av støtte for KS SvarUt og SvarInn                                                                              | false         |
-| difi.move.fiks.inn.username            | Brukernavn for KS SvarInn (mottakersystem)                                                                              | (ingen)       |
-| difi.move.fiks.inn.password            | Passord for KS SvarInn (mottakersystem)                                                                                 | (ingen)       |
-| difi.move.fiks.ut.username             | Brukernavn for KS SvarUt (avsender)                                                                                     | (ingen)       |
-| difi.move.fiks.ut.password             | Passord for KS SvarUt (avsender)                                                                                        | (ingen)       |
-| difi.move.fiks.ut.konteringsKode       | Kode som beskriver faktureringskonto for forsendelsen                                                                   | (ingen)       |
-| difi.move.fiks.ut.ekskluderesFraPrint  | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering | (ingen)       |
-| difi.move.fiks.ut.kunDigitalLevering   | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert. | (ingen)       |
-| difi.move.fiks.inn.mailOnError         | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                    | true          |
-| difi.move.fiks.inn.fallbackSenderOrgNr | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)          | (ingen)       |
-| difi.move.fiks.inn.enable              | Slår på/av støtte for KS SvarInn                                                                                        | true          |
-| difi.move.fiks.inn.mailSubject         | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                         | (ingen)       |
+| Egenskap                                         | Beskrivelse                                                                                                             | Standardverdi |
+|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.enableDPF                      | Slår på/av støtte for KS SvarUt og SvarInn                                                                              | false         |
+| difi.move.fiks.ut.username                       | Brukernavn for KS SvarUt (avsender)                                                                                     | (ingen)       |
+| difi.move.fiks.ut.password                       | Passord for KS SvarUt (avsender)                                                                                        | (ingen)       |
+| difi.move.fiks.ut.konteringsKode                 | Kode som beskriver faktureringskonto for forsendelsen                                                                   | (ingen)       |
+| difi.move.fiks.ut.ekskluderesFraPrint            | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering | (ingen)       |
+| difi.move.fiks.ut.kunDigitalLevering             | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert. | (ingen)       |
+| difi.move.fiks.ut.paa-vegne-av.<orgnr>.username  | Brukernavn for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)             | (ingen)       |
+| difi.move.fiks.ut.paa-vegne-av.<orgnr>.password  | Passord for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                | (ingen)       |
+| difi.move.fiks.inn.username                      | Brukernavn for KS SvarInn (mottakersystem)                                                                              | (ingen)       |
+| difi.move.fiks.inn.password                      | Passord for KS SvarInn (mottakersystem)                                                                                 | (ingen)       |
+| difi.move.fiks.inn.mailOnError                   | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                    | true          |
+| difi.move.fiks.inn.fallbackSenderOrgNr           | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)          | (ingen)       |
+| difi.move.fiks.inn.enable                        | Slår på/av støtte for KS SvarInn                                                                                        | true          |
+| difi.move.fiks.inn.mailSubject                   | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                         | (ingen)       |
+| difi.move.fiks.inn.paa-vegne-av.<orgnr>.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
+| difi.move.fiks.inn.paa-vegne-av.<orgnr>.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
 
 Eksempel:
 
@@ -529,6 +534,19 @@ difi.move.fiks.inn.password=mypassword
 difi.move.fiks.ut.username=myusername2
 difi.move.fiks.ut.password=mypassword2
 difi.move.fiks.inn.mailOnError=false
+```
+
+Eksempel på oppsett for å sende og motta på vegne av to virksomheter:
+```
+difi.move.feature.enableDPF=true
+difi.move.fiks.ut.paa-vegne-av.991825827.username=myusername
+difi.move.fiks.ut.paa-vegne-av.991825827.password=mypassword
+difi.move.fiks.inn.paa-vegne-av.991825827.username=myusername2
+difi.move.fiks.inn.paa-vegne-av.991825827.password=mypassword2
+difi.move.fiks.ut.paa-vegne-av.986252932.username=myusername
+difi.move.fiks.ut.paa-vegne-av.986252932.password=mypassword
+difi.move.fiks.inn.paa-vegne-av.986252932.username=myusername2
+difi.move.fiks.inn.paa-vegne-av.986252932.password=mypassword2
 ```
 
 #### Konfigurere Altinn Digital Post (DPV)
@@ -584,6 +602,7 @@ Eksempel:
 
 ```
 difi.move.feature.enableDPI=true
+```
 ```
 
 #### Konfigurere KS FIKS IO
