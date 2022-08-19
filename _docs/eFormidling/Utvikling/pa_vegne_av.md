@@ -38,9 +38,11 @@ autorisasjonsbevisene kan Maskinporten utstede til en leverandør på vegne av e
 - Kunden har delegert sin tilgang til å sende Digital Post til Innbyggere til leverandøren
 - Leverandøren har gitt Digdir beskjed om delegeringsforholdet mellom leverandøren og kunden
 
-Oppsettet krever ingen ekstra konfigurasjon av integrasjonspunktet. 
+Oppsettet krever ingen ekstra konfigurasjon av integrasjonspunktet.
 
-TODO navn og beskrivelse på tilgangen i Altinn.
+Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altinn:
+
+- `Meldingsutveksling i offentlig sektor`
 
 ## På vegne av for KS SvarUt og SvarInn
 
@@ -48,16 +50,24 @@ KS SvarUt og SvarInn har ikke innebygd støtte for at en leverandør kan opptre 
 løses i praksis ved at kunden gir sitt brukernavn og passord til KS SvarUt og SvarInn til leverandøren. Dette støttes av
 integrasjonspunktet ved at en kan konfigurere mange brukernavn og passord for KS SvarUt og SvarInn.
 
-TODO lenke til konfigurasjon
+Organisasjonsnummer, brukernavn og passord for virksomhetene som integrasjonspunktet skal sende og motta på vegne av må
+oppgis i konfigurasjon. Se `difi.move.fiks.ut.paa-vegne-av.*` og `difi.move.fiks.inn.paa-vegne-av.*` under:
+
+- [Konfigurere KS SvarUt og SvarInn](../installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
 
 ## På vegne av for eFormidlings meldingstjeneste
 
 eFormidlings meldingstjeneste er realisert med Altinn Formidling. Kunden kan delegere sin tilgang til eFormidlings
 meldingstjeneste til leverandøren.
 
-Oppsettet krever ingen ekstra konfigurasjon av integrasjonspunktet.
+Organisasjonsnummer for virksomhetene som integrasjonspunktet skal sende og motta på vegne av må oppgis i konfigurasjon.
+Se `difi.move.dpo.reportees` under:
 
-TODO navn og beskrivelse på tilgangen i Altinn.
+- [Konfigurere eFormidlings meldingstjeneste](../installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
+
+Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altinn:
+
+- `Delegere rettighet til å sende DPI-meldinger på vegne av virksomheten`
 
 ## På vegne av for eInnsyns meldingstjeneste
 
