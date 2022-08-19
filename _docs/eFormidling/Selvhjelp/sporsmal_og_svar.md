@@ -129,6 +129,51 @@ difi.move.dpi.receipt-type=xmlsoap
 difi.move.feature.statusQueueIncludes=DPI
 ```
 
+### Hvilke meldingsmetadata lagres av integrasjonspunktet?
+
+Et eksempel av hvilke meldingsmetadata som lagres av integrasjonspunktet kan sees under:
+```
+{
+    "id": 30,
+    "conversationId": "d4b37bf7-367a-4167-8fd8-0dba0e448e8e",
+    "messageId": "d4b37bf7-367a-4167-8fd8-0dba0e448e8e",
+    "sender": "0192:991825827:991825827",
+    "senderIdentifier": "991825827",
+    "receiver": "06068700602",
+    "receiverIdentifier": "06068700602",
+    "processIdentifier": "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+    "documentIdentifier": "urn:no:difi:digitalpost:xsd:digital::digital",
+    "messageReference": "d4b37bf7-367a-4167-8fd8-0dba0e448e8e",
+    "messageTitle": "Test DPI proxy client",
+    "lastUpdate": "2022-05-19T23:03:36.146+02:00",
+    "finished": true,
+    "expiry": "2022-05-20T23:01:54.781+02:00",
+    "direction": "OUTGOING",
+    "serviceIdentifier": "DPI",
+    "messageStatuses": [{
+            "id": 31,
+            "lastUpdate": "2022-05-19T23:01:54.787+02:00",
+            "status": "OPPRETTET"
+        }, {
+            "id": 50,
+            "lastUpdate": "2022-05-19T23:01:56.02+02:00",
+            "status": "SENDT"
+        }, {
+            "id": 58,
+            "lastUpdate": "2022-05-19T23:03:00.471+02:00",
+            "status": "MOTTATT",
+            "description": "Hjørne 3 ha mottatt meldingen"
+        }, {
+            "id": 70,
+            "lastUpdate": "2022-05-19T23:02:15.485+02:00",
+            "status": "LEVERT",
+            "description": "Kvittering på at digital post er tilgjengeliggjort eller at en fysisk post er postlagt"
+        }
+    ]
+}
+```
+
+
 ## Diverse
 
 ### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?
