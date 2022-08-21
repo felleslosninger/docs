@@ -57,14 +57,13 @@ Når en bytter virksohetssertifikat kan en følge samme fremgangsmåte som ved f
 
 - [virksomhetssertifikat](../installasjon/virksomhetssertifikat)
 
+## Integrasjonspunktet
 
 ### Hvordan kan jeg beskytte sertifikat, passord og annet som integrasjonspunktet trenger?
 
 En kan bruke HashiCorp Vault eller injisering av miljøvariable. Se beskrivelse på:
 
 - [Konfigurer integrasjonspunktet](../installasjon/installasjon#konfigurer-integrasjonspunktet)
-
-## Java
 
 ### Hvordan installerer jeg Java-versjonen integrasjonspunktet krever?
 
@@ -98,8 +97,6 @@ Bruker du ny versjon av Java, må ny JCE installeres. Last ned JCE fra [Oracles 
 Det er ikke noen enkel måte å sjekke om Java Cryptography Extension er installert. Ofte kan det enkleste være å bare laste ned og installere JCE, men en du ønsker å sjekke, kan du gå til mappen ```$JAVA_HOME/jre/lib/security``` og sjekke om filene ```US_export_policy.jar``` og ```local_policy.jar``` har nyere dato enn øvrige filer. Hvis datoen er lik, må du installere JCE.
 Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggmelding om manglende JCE. På nyere Java versjoner må en legge JCE-filene inn i både ```$JAVA_HOME/jre/lib/security/unlimited ``` og ```$JAVA_HOME/jre/lib/security/limited```.
 
-## Integrasjonspunktet
-
 ### Hvor mye diskplass trenger integrasjonspunktet?
 
 1 million meldinger medfører:
@@ -115,19 +112,6 @@ Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggme
 Ingen meldinger blir videreformidlet til webhook-abonnement som standard. Dette må konfigureres. Se:
 
 - [Webhook-abonnement](../installasjon/installasjon#webhook-abonnement)
-
-## Digital Post til Innbyggere via proxy-klientbibliotek
-
-### Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?
-
-Proxy-klientbiblioteket krever spesiell konfigurasjon av integrasjonspunktet, se under:
-
-```
-difi.move.feature.enableDPI=true
-difi.move.dpi.client-type=json
-difi.move.dpi.receipt-type=xmlsoap
-difi.move.feature.statusQueueIncludes=DPI
-```
 
 ### Hvilke meldingsmetadata lagres av integrasjonspunktet?
 
@@ -173,6 +157,18 @@ Et eksempel av hvilke meldingsmetadata som lagres av integrasjonspunktet kan see
 }
 ```
 
+## Digital Post til Innbyggere
+
+### Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?
+
+Proxy-klientbiblioteket krever spesiell konfigurasjon av integrasjonspunktet, se under:
+
+```
+difi.move.feature.enableDPI=true
+difi.move.dpi.client-type=json
+difi.move.dpi.receipt-type=xmlsoap
+difi.move.feature.statusQueueIncludes=DPI
+```
 
 ## Diverse
 

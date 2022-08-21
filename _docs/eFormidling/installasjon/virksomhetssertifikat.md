@@ -16,10 +16,8 @@ tillegg brukes virksomhetssertifikatet til:
 - signering av utgående meldinger i de tilfeller den underliggende meldingstjenesten støtter dette
 - autentisering av virksomheten mot enkelte tredjepartstjenester
 
-En virksomhet på eFormidling kommuniserer som organisasjonen virksomhetssertifikatet er utstedt til. Det er mulig for en
-organisasjon å opptre på vegne av andre organisasjoner.
-
-TODO lenke
+En virksomhet på eFormidling kommuniserer i utgangspunktet som organisasjonen virksomhetssertifikatet er utstedt til,
+men det er også mulig for en organisasjon å opptre på vegne av andre organisasjoner.
 
 ## Bestille virksomhetssertifikat
 

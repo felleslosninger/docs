@@ -8,9 +8,11 @@ sidebar: eformidling_sidebar
 
 Ved å bruke eFormidlings testmiljø når, og nås, integrasjonspunktet av test-virksomheter og test-innbyggere.
 
-For å bruke eFormidlings testmiljø kreves et test-virksomhetssertifikat utstedt.
+Se mer om testing av eFormidling på:
 
-- TODO syntetisk vs ekte organisasjonsnumer
+- [Testing](../Testing/)
+
+For å bruke eFormidlings testmiljø kreves et test-virksomhetssertifikat utstedt.
 
 Integrasjonspunktet må konfigureres til å bruke testmiljøet:
 
