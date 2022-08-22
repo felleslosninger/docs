@@ -12,37 +12,21 @@ skal.
 1. TOC
 {:toc}
 
-## Testcase
+## Teststrategier
 
-> Gitt en annen virksomhet som bruker eFormidling
-> Når jeg sender en saksbehandlingsmelding til denne virksomheten
-> Så skal jeg få tilbake status LEVERT
-> Og så skal jeg få tilbake en arkivemeldings-kvittering
+Det er flere mulige strategier for å teste eFormidling og de passer gjerne i ulike faser av arbeidet med å ta i bruk
+eFormidling.
 
-> Gitt en annen virksomhet som bruker KS SvarUt og SvarInn
-> Når jeg sender en saksbehandlingsmelding til denne virksomheten
-> Så skal jeg få tilbake status LEVERT
-> Og så skal jeg få tilbake en arkivemeldings-kvittering
-
-> Gitt en annen virksomhet som bruker Altinn Digital Post
-> Når jeg sender en saksbehandlingsmelding til denne virksomheten
-> Så skal jeg få tilbake status LEVERT
-> Og så skal jeg få tilbake en arkivmeldings-kvittering
-
-TODO alle prosesser, sende og motta
-TODO instruksjoner - varsling, åpningskvittering, sender-ref, receiver-ref, osv
-TODO innhold i responser
-
-## Teste i et lokalt mock-miljø
+### Teste i et lokalt mock-miljø
 
 eFormidling tilbyr oppsett for et lokalt mock-miljø som lar en teste integrasjonspunktet. Alle eksterne tjenester er
 mocket bort. Mock-miljøet anbefales som en støtte for utvikling og tidlig brøytetesting. Det er viktig å merke seg at
 testing i Mock-miljøet ikke er tilstrekkelig for å verifisere at en integrasjon mot eFormidling fungerer. Se beskrivelse
 av hvordan en kan ta i bruk mock-miljøet:
 
-- [efm-mocks](https://github.com/felleslosninger/efm-mocks)
+- [efm-mocks](https://github.com/felleslosninger/efm-mocks) (ekstern lenke)
 
-## Teste i eFormidlings testmiljø
+### Teste i eFormidlings testmiljø
 
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
 
@@ -51,32 +35,39 @@ Vanlig installasjonveiledning kan følges, men før en går i gang må en sørge
 
 - En velger et ekte eller syntetisk organisasjonsnummer for testvirksomheten
 - En bestiller et testvirksomhetssertifikat utstedt til testvirksomhetens organisasjonsnummer
-- En bestiller registrering og tilganger av testvirksomheten i testmiljø for eFormidling og meldingstjenestene som skal
-brukes
+- En bestiller registrering av testvirksomheten i testmiljø for eFormidling og meldingstjenestene som skal brukes
 
-Begrensninger ved bruk av ekte organisasjonsnummer:
+#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer
 
-- Testiljøet for Altinn Digital Post støtter ikke bruk av ekte organisasjonsnummer
-- Testmiljøet for KS SvarUt og SvarInn støtter ikke bruk av ekte organisasjonsnummer
+Testmiljøet for eFormidlings meldingstjeneste er realisert ved hjelp av en egen meldingstjeneste i Altinn Formidlings
+produksjonsmiljø. Altinn Formidlings produksjonsmiljø støtter bare ekte organisasjonsnummer.
 
-Begrensninger ved bruk av syntetisk organisasjonsnummer:
+Altinn Digital Post og KS SvarUt og SvarInn benytter testmiljø som bare støtter syntetiske organisasjonsnummer. En kan
+dermed ikke benytte ekte organisasjonsnummer mot alle meldingstjenestene som brukes av eFormidling. En kan likevel
+benytte alle meldingstjenestene ved å legge inn brukernavn og passord for testvirksomhet hos Altinn Digital Post med
+et annet organisasjonsnummer enn det integrasjonspunktet kjører. Det samme gjelder KS SvarUt og SvarInn.
 
-- Testmiljøet for eFormidlings meldingstjeneste støtter ikke bruk av syntetisk organisasjonsnummer (fordi denne er
-realisert med en egen meldingstjeneste i Altinn Formidlings produksjonsmiljø som bare støtter ekte organisasjonsnummer)
+#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer
 
-Workarounds ved bruk av ekte organisasjonsnummer:
+Dersom en ikke har et behov for å benytte ekte organisasjonsnummer i sitt testmiljø anbefales bruk av syntetisk
+organisasjonsnummer. En må i så fall overstyre konfigurasjon av eFormidlings meldingstjeneste fra meldingstjenesten i
+Altinn Formidlings produksjonsmiljø til en tilsvarende meldingstjeneste i Altinn Formidlings testmiljø. Dette oppnår
+en med å legge følgende konfigurasjon i integrasjonspunktet:
 
-- TODO kan en overstyre Altinn Digital Post til å bruke et annet organisasjonsnummer enn integrasjonspunktets?
-- TODO kan en overstyre KS SvarUt og SvarInn til å bruke et annet organisasjonsnummer enn integrasjonspunktets?
+```
+difi.move.dpo.streamingserviceUrl=https://tt02.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc?wsdl
+difi.move.dpo.brokerserviceUrl=https://tt02.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc?wsdl
+difi.move.dpo.serviceCode=4192
+difi.move.dpo.serviceEditionCode=270815
+```
 
-Workarounds ved bruk av syntetisk organisasjonsnummer:
+TODO dobbeltsjekk
+TODO opprette testorganisasjon med samme organisasjonsnummer hos FIKS og Altinn?
+TODO opprette testorganisasjon som hos FIKS og Altinn som leverandør?
 
-- TODO kan en overstyre Altinn Formidling til TT02 ved hjelp av konfigurasjon? eller må en bytte også service-registry osv?
-- TODO eventuelt ta i bruk Digdirs interne testmiljø (nb: kontinuerlig leveranse)
-
-Merk at ved behov for flere installasjoner (f.eks. en per utvikler + et eget testmiljæ) av integrasjonspunktet i samme
-miljø så vil en oppleve at installasjonene "stjeler" meldinger fra hverandre. En kan løse dette ved å bruke kanaler
-eller ved å å benytte en testvirksomhet per installasjon.
+Merk at ved behov for flere installasjoner av integrasjonspunktet (f.eks. to utviklere med hver sin installasjon) i
+samme miljø så vil en oppleve at installasjonene "stjeler" meldinger fra hverandre dersom de deler testvirksomhet. En
+kan løse dette ved å bruke kanaler eller ved å å benytte en testvirksomhet per installasjon.
 
 Avhengig av hvilke meldingstjenester som brukes vil det være behov for testbrukere og testvirksomheter å sende til og
 motta fra:
@@ -95,13 +86,100 @@ motta fra:
 |                                                                               | Eventuelt kan en samarbeide med en annen virksomhet som bruker eFormidlings testmiljø                                                                                                                                   | 
 | Motta post fra innbygger og virksomheter fra KS eDialog                       | Fødselsnummer tilgjengelig i ID-porten                                                                                                                                                                                  | 
 
+Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 er tilgjengelig i eFormidlings
+testmiljø:
+
+- [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
+- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/) (ekstern lenke)
+
 For å teste varsling og reservasjon for innbyggere kan en selv registrere reservasjon, mobilnummer og/eller
-e-postadresse i kontakt- og reservasjonsregisteret.
+e-postadresse for egne testbrukere i kontakt- og reservasjonsregisteret.
 
 For å teste varsling for virksomheter kan en selv registrere mobilnummer og/eller e-postadresse i Altinn.
 
 For å teste på vegne av må en ha to testvirksomheter i Altinn.
 
-## Teste i eFormidlings produksjonsmiljø
+### Teste i eFormidlings produksjonsmiljø
 
-..
+En virksomhet som er klar til å ta i bruk eFormidling eller som skal gjøre endringer i oppsettet sitt anbefales å gjøre
+enkel gjennomføre noen enkle tester for å bekrefte at kommunikasjon, tilganger og sertifikatoppsett fungerer som
+forventet.
+
+## Testcase
+
+### Saksbehandling
+
+#### Sending
+
+> Gitt en annen virksomhet som bruker eFormidling <br>
+> Når min virksomhet sender en saksbehandlingsmelding til denne virksomheten <br>
+> Så skal denne virksomheten motta meldingen <br>
+> Og så skal innholdet være som forventet <br>
+> Og så skal min virksomhet få tilbake statusen LEVERT <br>
+> Og så skal min virksomhet få tilbake en arkivmeldings-kvittering <br>
+> Og så skal innholdet i arkivmeldings-kvitteringen være som forventet <br>
+
+> Gitt en annen virksomhet som bruker KS SvarUt og SvarInn <br>
+> Når min virksomhet sender en saksbehandlingsmelding til denne virksomheten <br>
+> Så skal denne virksomheten motta meldingen <br>
+> Og så skal innholdet være som forventet <br>
+> Og så skal min virksomhet få tilbake statusen LEVERT <br>
+> Og så skal min virksomhet få tilbake en arkivmeldings-kvittering <br>
+> Og så skal innholdet i arkivmeldings-kvitteringen være som forventet <br>
+
+> Gitt en annen virksomhet som bruker Altinn Digital Post <br>
+> Når jeg sender en saksbehandlingsmelding til denne virksomheten <br>
+> Så skal denne virksomheten motta meldingen <br>
+> Og så skal innholdet være som forventet <br>
+> Og så skal min virksomhet få tilbake statusen LEVERT <br>
+> Og så skal min virksomhet få tilbake en arkivmeldings-kvittering <br>
+> Og så skal innholdet i arkivmeldings-kvitteringen være som forventet <br>
+
+#### Mottak
+
+> Gitt en annen virksomhet som bruker eFormidling <br>
+> Når denne sender en saksbehandlingsmelding til min virksomhet <br>
+> Så skal min virksomhet motta meldingen i integrasjonspunktet <br>
+> Og så skal innholdet være som forventet <br>
+> Og så skal min virksomhet sende tilbake statusen LEVERT <br>
+> Og så skal min virksomhet sende tilbake en arkivmeldings-kvittering <br>
+> Og så skal innholdet i arkivmeldings-kvitteringen være som forventet <br>
+
+> Gitt en annen virksomhet som bruker KS SvarUt <br>
+> Når denne sender en melding til min virksomhet <br>
+> Så skal min virksomhet motta meldingen i integrasjonspunktet <br>
+> Og så skal innholdet være som forventet <br>
+> Og så skal min virksomhet sende tilbake en arkivmeldings-kvittering <br>
+> Og så skal innholdet i arkivmeldings-kvitteringen være som forventet <br>
+
+### Taushetsbelagt saksbehandling
+
+todo testcase taushetsbelagt saksbehandling
+
+### Informasjon til innbygger
+
+todo testcase informasjon til innbygger
+
+### Vedtak til innbygger
+
+todo testcase vedtak til innbygger
+
+### Avtalt meldingsutveksling
+
+todo testcase avtalt meldingsutveksling
+
+### FIKS IO-meldingsutveksling
+
+todo testcase fiks io meldingsutveksling
+
+### Journalpost til eInnsyn
+
+todo testcase journalpost til eInnsyn
+
+### Møte til eInnsyn
+
+todo testcase møte til eInnsyn
+
+### Innsynskrav fra eInnsyn
+
+todo testcase innsynskrav fra eInnsyn

@@ -6,12 +6,12 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-eFormidling støtter følgende prosesser med meldingstjenesten Digital Post til Innbyggere (DPI) med følgende dokumenttyper.
+eFormidling støtter følgende prosesser og dokumenttyper med meldingstjenesten Digital Post til Innbyggere (DPI).
 
-| **Prosess**                                                                         | **Dokumenttype**                                                       | **Eksempel**                                      |
-| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------- |
-| [Informasjon til innbygger](../../Funksjonalitet/informasjon_til_innbygger)         | [Digital](../Dokumenttyper/digital)<br>[Print](../Dokumenttyper/print) | [Eksempel](../Eksempel/informasjon_til_innbygger) |
-| [Vedtak til innbygger](../../Funksjonalitet/vedtak_til_innbygger)                   | [Digital](../Dokumenttyper/digital)<br>[Print](../Dokumenttyper/print) | [Eksempel](../Eksempel/vedtak_til_innbygger)      |
+| **Prosess**                                                                 | **Dokumenttype**                                                       | **Eksempel**                                      |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
+| [Informasjon til innbygger](../../Funksjonalitet/informasjon_til_innbygger) | [Digital](../Dokumenttyper/digital)<br>[Print](../Dokumenttyper/print) | [Eksempel](../Eksempel/informasjon_til_innbygger) |
+| [Vedtak til innbygger](../../Funksjonalitet/vedtak_til_innbygger)           | [Digital](../Dokumenttyper/digital)<br>[Print](../Dokumenttyper/print) | [Eksempel](../Eksempel/vedtak_til_innbygger)      |
 
 Om Digital Post til Innbyggere er en del av en mottakers kapabiliteter eller ikke avhenger av flere faktorer slik som
 beskrevet for den enkelte prosess.

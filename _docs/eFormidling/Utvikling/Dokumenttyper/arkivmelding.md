@@ -160,4 +160,3 @@ ikke alle metadata fra avsender kan leveres til mottaker.
 ## Neste steg
 
 - [Eksempel på saksbehandling](../Eksempel/saksbehandling)
-- [Eksempel på taushetsbelagt saksbehandling](../Eksempel/taushetsbelagt_saksbehandling)

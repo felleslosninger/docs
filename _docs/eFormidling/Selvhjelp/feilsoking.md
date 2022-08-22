@@ -6,26 +6,24 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-TODO
+eFormidling tilbyr flere verktøy som lar en feilsøke eFormidling:
 
-## Støttetjenester
+- Integrasjonspunktet tilbyr støttetjenester under `/manage/<støttetjeneste>`. Se gjerne:
+  - [Spring Boot`s støttetjenester](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints) (ekstern lenke)
+- Integrasjonspunkt produserer logg (både til fil og STDOUT)
+- Integrasjonspunktet sender logg til eFormidling sentrale loggtjeneste slik at Digdir kan feilsøke på tvers av
+avsenders integrasjonspunkt, mottakers integrasjonspunkt og eFormidlings sentrale tjenester
+- Integrasjonspunktets grensesnitt tilbyr tjenester for å hente ut meldingsmetadata inkludert status for meldinger
+- eFormidlings sentrale tjenester tilbyr e-postvarsling for meldinger som feiler og utløper, og sertifikat som utløper
 
-Integrasjonspunktet tilbyr Spring Boot`s støttetjenester under `/manage/<støttetjeneste>`. Se gjerne:
+De fleste feilsituasjoner som oppstår er kjente og utenfor eFormidlings kontroll slik som nettverksproblemer,
+nedetid og andre feilsituasjoner hos meldingstjenestene som brukes, utgåtte sertifikat hos avsender/mottaker, osv.
 
-- [Spring Boot`s støttetjenester](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints) (ekstern lenke)
+Ta kontakt med vår servicedesk ved behov:
 
-## Lokal logg
-
-TODO
-
-## Sentral logg
-
-TODO
-
-## Varsling
-
-TODO sertifikat og feila meldinger og levetid utløpt
+- <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ## Neste steg
 
-TODO kjente feil, spørsmål og svar, servicedesk
+- [Kjente feil](kjente_feil)
+- [Spørsmål og svar](sporsmal_og_svar)

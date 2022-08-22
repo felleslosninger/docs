@@ -23,13 +23,15 @@ ofte denne kategorien. For større meldinger støttes bare en fler-stegs-strateg
 sluttbrukere som styrer innholdet (og dermed meldingsstørrelsen) anbefales å implementere fler-stegs strategien slik at
 både små og store meldinger støttes. Det anbefales bare å implementere en av strategiene.
 
-Ett-stegs strategien medfører færre HTTP-forespørsler og er kanskje litt raskere utviklingsarbeid å implementere.
-De to strategiene gir for alle praktiske formål tilnærmet lik ytelse.
+Ett-stegs strategien medfører færre HTTP-forespørsler og er kanskje litt raskere å implementere. Ett-stegs strategien
+er ment for små meldinger, mens fler-stegs strategien er ment for store. De to strategiene gir for alle praktiske formål tilnærmet lik ytelse.
 
 Når en melding er sendt må implementasjonen vente på meldingsstatusen `LEVERT` før sending kan regnes som vellykket. Det
 er flere strategier for å følge med på meldingsstatuser. Disse er beskrevet for seg selv.
 
 ### Ett-stegs strategi for små meldinger
+
+Ett-stegs strategien for små meldinger støtter meldingsstørrelser opp til 5 MB.
 
 <div class="mermaid">
 

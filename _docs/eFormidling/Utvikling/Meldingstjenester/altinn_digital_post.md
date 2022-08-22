@@ -6,10 +6,10 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-eFormidling støtter følgende prosesser med meldingstjenesten Altinn Digital Post (DPV) med følgende dokumenttyper.
+eFormidling støtter følgende prosesser og dokumenttyper med meldingstjenesten Altinn Digital Post (DPV).
 
 | **Prosess**                                                                         | **Dokumenttype**                              | **Eksempel**                                          |
-| ----------------------------------------------------------------------------------- | --------------------------------------------- | ----------------------------------------------------- |
+|-------------------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------------------|
 | [Informasjon til innbygger](../../Funksjonalitet/informasjon_til_innbygger)         | [Digital DPV](../Dokumenttyper/digital_dpv)   | [Eksempel](../Eksempel/informasjon_til_innbygger)     |
 | [Saksbehandling](../../Funksjonalitet/saksbehandling)                               | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling)                |
 | [Taushetsbelagt saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling) | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/taushetsbelagt_saksbehandling) |

@@ -24,7 +24,6 @@ Kvitteringer:
 
 Interne kvitteringer:
 
-- [Feil](feil)
 - [Status](status)
 
 Standardformater og eFormidlings bruk av disse:

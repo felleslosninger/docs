@@ -6,7 +6,7 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-eFormidling støtter følgende prosesser med meldingstjenesten KS SvarUt og SvarInn (DPF) med følgende dokumenttyper.
+eFormidling støtter følgende prosesser og dokumenttyper med meldingstjenesten KS SvarUt og SvarInn (DPF).
 
 | **Prosess**                                           | **Dokumenttype**                              | **Eksempel**                           |
 |-------------------------------------------------------|-----------------------------------------------|----------------------------------------|

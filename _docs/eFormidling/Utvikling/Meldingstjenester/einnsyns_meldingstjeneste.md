@@ -6,13 +6,23 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-eFormidling støtter følgende prosesser med eInnsyns meldingstjeneste (DPE) med følgende dokumenttyper.
+eFormidling støtter følgende prosesser og dokumenttyper med eInnsyns meldingstjeneste (DPE).
 
-| **Prosess**                                                 | **Dokumenttype**                            | **Eksempel**                        |
-| ----------------------------------------------------------- | ------------------------------------------- | ----------------------------------- |
-| [Innsynskrav fra eInnsyn](../../Funksjonalitet/innsynskrav) | [Innsynskrav](../Dokumenttyper/innsynskrav) | [Eksempel](../Eksempel/innsynskrav) |
-| [Journalpost til eInnsyn](../../Funksjonalitet/journalpost) | [Publisering](../Dokumenttyper/publisering) | [Eksempel](../Eksempel/journalpost) |
-| [Møte til eInnsyn](../../Funksjonalitet/mote)               | [Publisering](../Dokumenttyper/publisering) | [Eksempel](../Eksempel/mote)        |
+Mottakere støtter en eller flere av følgende prosesser:
+
+| **Prosess**                                                 | **Dokumenttype**                                                                              | **Eksempel**                        |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-------------------------------------|
+| [Innsynskrav fra eInnsyn](../../Funksjonalitet/innsynskrav) | [Innsynskrav](../Dokumenttyper/innsynskrav)                                                   | [Eksempel](../Eksempel/innsynskrav) |
+| [Journalpost til eInnsyn](../../Funksjonalitet/journalpost) | [Publisering](../Dokumenttyper/publisering)                                                   | [Eksempel](../Eksempel/journalpost) |
+| [Møte til eInnsyn](../../Funksjonalitet/mote)               | [Publisering](../Dokumenttyper/publisering)                                                   | [Eksempel](../Eksempel/mote)        |
+
+Avsendere støtter prosessen:
+
+| **Prosess**                                       | **Dokumenttype**                                                                              | **Eksempel**       |
+|---------------------------------------------------|-----------------------------------------------------------------------------------------------|--------------------|
+| `urn:no:difi:profile:einnsyn:response:ver1.0`     | [eInnsyn-kvittering](../Dokumenttyper/einnsynkvittering)<br>[Status](../Dokumenttyper/status) | Se eksemplene over |
+
+Ved bruk av eInnsyns meldingstjeneste opptrer en virksomhet vanligvis både som avsender og mottaker.
 
 Om eInnsyns meldingstjeneste er en del av en mottakers kapabiliteter eller ikke avhenger av flere faktorer slik som
 beskrevet for den enkelte prosess.
@@ -25,9 +35,10 @@ meldingstjeneste tilbyr.
 Integrasjonspunktet pakker meldingene og sender disse uforandret gjennom APIet eInnsyns meldingstjeneste tilbyr. Se
 dokumenttypene for detaljer.
 
-Mottakers integrasjonspunkt produserer eFormidling meldingsstatuser og sender disse tilbake til avsenders
-integrasjonspunkt med eInnsyns meldingstjeneste. eInnsyn sender tilbake en eInnsyn-kvittering som del av
-prosessene journalpost til eInnsyn og møte til eInnsyn.
+eInnsyn sender tilbake en eInnsyn-kvittering etter publisering av journalpost og møte.
+
+I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender. Dersom en velger
+å integere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv.
 
 Flytskisse for `innsynskrav`:
 <div class="mermaid">
@@ -37,9 +48,12 @@ B --> |Innsynskrav| C("fa:fa-server" eInnsyns<br>integrasjonspunkt)
 C --> |Innsynskrav| D("fa:fa-server eInnsyns<br>meldingstjeneste")
 D --> |Innsynskrav| E("fa:fa-server Mottakers<br>integrasjonspunkt")
 E --> |Innsynskrav| F["fa:fa-server Mottakers<br>fagsystem"]
-C --> |Status| B
-D --> |Status| C
-E --> |Status| D
+C --> |Status: Mottatt| B
+D --> |Status: Mottatt| C
+E --> |Status: Mottatt| D
+C --> |Status: Levert| B
+D --> |Status: Levert| C
+E --> |Status: Levert| D
 </div>
 
 Flytskisse for `publisering`:
@@ -50,9 +64,12 @@ B --> |Publisering| C("fa:fa-server" Avsenders<br>integrasjonspunkt)
 C --> |Publisering| D("fa:fa-server eInnsyns<br>meldingstjeneste")
 D --> |Publisering| E("fa:fa-server eInnsyns<br>integrasjonspunkt")
 E --> |Journalpost| F["fa:fa-server eInnsyn.no"]
-C --> |Status| B
-D --> |Status| C
-E --> |Status| D
+C --> |Status: Mottatt| B
+D --> |Status: Mottatt| C
+E --> |Status: Mottatt| D
+C --> |Status: Levert| B
+D --> |Status: Levert| C
+E --> |Status: Levert| D
 C --> |eInnsyn-kvittering| B
 D --> |eInnsyn-kvittering| C
 E --> |eInnsyn-kvittering| D

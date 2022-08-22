@@ -6,11 +6,11 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-eFormidling støtter følgende prosesser med meldingstjenesten KS FIKS IO med følgende dokumenttyper.
+eFormidling støtter følgende prosesser og dokumenttyper med meldingstjenesten KS FIKS IO (DPFIO).
 
-| **Prosess**                             | **Dokumenttype**                    | **Eksempel**                       |
-| --------------------------------------- | ----------------------------------- | ---------------------------------- |
-| [FIKS IO](../../Funksjonalitet/fiks_io) | [FIKS IO](../Dokumenttyper/fiks_io) | [Eksempel](../Eksempel/fiks_io) |
+| **Prosess**                             | **Dokumenttype**                    | **Eksempel**                      |
+|-----------------------------------------|-------------------------------------|-----------------------------------|
+| [FIKS IO](../../Funksjonalitet/fiks_io) | [FIKS IO](../Dokumenttyper/fiks_io) | [Eksempel](../Eksempel/fiks_io)   |
 
 Alle FIKS IO-meldingsprotokoller er gyldige prosesser i eFormidling. KS FIKS IO er ikke synlig del av mottakers
 kapabiliteter. Avsender må vite at mottaker støtter en gitt FIKS IO protokoll og kan nås med en gitt FIKS IO
