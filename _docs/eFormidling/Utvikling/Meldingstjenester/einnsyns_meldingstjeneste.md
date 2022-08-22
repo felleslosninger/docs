@@ -37,8 +37,7 @@ dokumenttypene for detaljer.
 
 eInnsyn sender tilbake en eInnsyn-kvittering etter publisering av journalpost og møte.
 
-I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender. Dersom en velger
-å integere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv.
+I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender.
 
 Flytskisse for `innsynskrav`:
 <div class="mermaid">

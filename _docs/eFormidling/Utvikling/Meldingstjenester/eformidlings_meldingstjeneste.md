@@ -44,7 +44,9 @@ sendes som beskrevet over.
 Saksbehandlingsprosessene krever at mottaker sender tilbake en arkivmelding-kvittering.
 
 I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender. Dersom en velger
-å integere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv.
+å integere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv. I tillegg må en
+ved bruk av eFormidling uten integrasjonspunkt passe på å returnere statuser og kvitteringer med samme Altinn Formidling
+`senders reference` som den oppgitt av avsender.
 
 Flytskisse for `arkivmelding`:
 <div class="mermaid">

@@ -129,7 +129,7 @@ Innholdet i SBDH er beskrevet under.
 
 > `businessScope.scope[type=ReceiverRef].identifier` (frivillig)
 > 
-> Mottakers referanse
+> Mottakers referanse.
 >
 > | Lovlige verdier                 | UUID (fritekst støttes inntil videre for bakoverkompabilitet) |
 > | Standard verdi                  | Ingen                                                         |

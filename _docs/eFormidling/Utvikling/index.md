@@ -104,11 +104,15 @@ integrasjonspunkt. Dette er mulig, men ikke anbefalt.
 
 For å ta i bruk eFormidling uten integrasjonspunkt:
 
-- Oppslag mot eFormidlings adressetjeneste (service registry) må implementeres for å vite hvilke virksomheter som kan motta hvilket innhold (se [Adressetjenestens (Service Registry) API](serviceregistry_api))
+- Oppslag mot eFormidlings adressetjeneste må implementeres for å vite hvilke virksomheter som kan motta hvilket innhold
+  - [eFormidlings adressetjeneste](serviceregistry_api)
+- Det må settes opp en integrasjon mot eFormidlings meldingstjeneste
+   - [eFormidlings meldingstjeneste](Meldingstjenester/eformidlings_meldingstjeneste)
+- Levering av meldingsstatuser til eFormidlings meldingsstatustjeneste må implementeres
+   - [eFormidlings meldingsstatustjeneste](meldingsstatus_api)
 - Forretningsregler som skal sikre at meldinger sendes dit mottaker ønsker dem, påkrevd varsling, osv må implementeres
-- Det må settes opp en integrasjon mot eFormidlings meldingstjeneste (se [eFormidlings meldingstjeneste](Meldingstjenester/eformidlings_meldingstjeneste))
-- Flyten i ønsket prosess må implementeres (og eventuelt integrasjoner med øvrige meldingstjenester som kreves av en prosess)
-- Levering av meldingsstatuser til eFormidlings meldingsstatustjeneste må implementeres (for statistikk og sentral varslingsfunksjonalitet)
+- Flyten i ønsket prosess må implementeres inkludert integrasjoner med eventuelle andre meldingstjenester som kreves av
+en prosess
 - Eventuell øvrig meldingsfunksjonalitet (køing, feilhåndtering, ...) som ønskes må implementeres
 
 ## Støtte ved utvikling
