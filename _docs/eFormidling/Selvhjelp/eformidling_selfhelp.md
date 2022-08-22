@@ -122,7 +122,26 @@ Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer 
 3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
 4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
 
+
+---
+
 ### 'large object'-opprydding ved bruk av egen database for integrasjonspunktet
 En bør vurdere  opprydding av store objekt dersom en bruker PostgreSQL som egen database for integrasjonspunktet. Dette skyldes at PostgreSQL som standard lagrer BLOB som “large object” (i egen tabell), og at JDBC ikke rydder opp ved sletting. Konsekvensene hvis dette ikke gjøres, vil kunne være at sikkerhetskopi først tar lang tid, og deretter begynner å terminere grunnet høy minnebruk. Verktøyet [vacuumlo](https://www.postgresql.org/docs/13/vacuumlo.html) fjerner foreldreløse store objekter. 
 
+
 ---
+### Låst database
+
+Dersom Integrasjonspunktet blir drept under oppstart, og liquibase ikke får fjernet låsen i databasen, må en manuelt inn i databasen og fjerne innholdet fra tabellen DATABASECHANGELOGLOCK
+
+
+1. last ned https://repo1.maven.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.jar
+2. legg jar'en i samme katalog som databasen ligger dvs. working directory, der dere kjører integrasjonspunktet
+3. kjør "java -jar .\h2-1.4.200.jar"
+4. jdbcurl: jdbc:h2:./integrasjonspunkt, user: sa, blankt passord
+5. slett tabellen DATABASECHANGELOGLOCK
+
+URLen skal være slik som denne: jdbc:h2:C:/Users/katalog/IdeaProjects/efm-integrasjonspunkt/integrasjonspunkt/integrasjonspunkt
+Bytt ut med riktig path 
+
+Shellet en kjører h2-klienten fra må  ha administratorrettigheter. Og pass på at integrasjonspunktet ikke kjører samtidig.

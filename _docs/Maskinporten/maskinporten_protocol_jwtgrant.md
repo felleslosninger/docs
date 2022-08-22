@@ -39,12 +39,12 @@ Note that production certificates are not supported in test environments.
 | --- | --- |--- |
 |aud| Required | The intended target for this JWT grant, ie. the identifier for Maskinporten.   The value in production is `https://maskinporten.no/`  |
 |iss| Required |issuer - Your client ID |
-|iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time|
+|iat| Required| issued at - Timestamp when generating this jwt.  **NOTE:** UTC-time. To allow for clock skew and network delays, Maskinporten will only accept grants where iat is less than 10 seconds ahead/after our clock.  |
 |exp| Required| expiration time - Timestamp for the expiry of this jwt,  in UTC-time. **NOTE:** Maximum 120 seconds allowed. (exp - iat <= 120 )|
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
 |scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
 | resource   | optional  | The target API that the client intends to use the token. Only used by some APIs, and the actual value to use must be obtained from the API owner. Please see [audience-restriction]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_audience_restricted_tokens) for details. *Currently only array supported.*  |   
-| pid | optional | The target end-user that the client intends to do subsequent API-calls on.  Please see [enduser-restriced tokens]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html)) |
+| pid | optional | The target end-user that the client intends to do subsequent API-calls on. This claim might be required by some APIs. Please see [enduser-restriced tokens]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html)) |
 
 
 If the client belongs to a supplier requesting a token on behalf of another organization (legal consumer), there are two mutually exclusive claims available:

@@ -7,6 +7,18 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_releasenotes
 ---
 
+# 2.8.2 
+01.07.2022
+
+**Funksjonalitet**
+
+- Lagt til indeks i databasetabell (conv_id indeks i message_status). Reduserer behovet for iterasjon igjennom tabeller og aukar fart på oppslag i database. 
+
+**Feilrettinger**
+
+- Rettet feil ved duplikate innslag i databasetabell. (next_move_message_entry)
+
+
 # 2.8.1
 30.05.2022
 

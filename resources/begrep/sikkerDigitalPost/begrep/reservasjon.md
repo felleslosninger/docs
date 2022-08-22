@@ -10,7 +10,7 @@ redirect_from: /reservasjon
 | Definisjon | avgitt Forbehold i henhold til eForvaltningsforskriften |
 | Datatype | string |
 | Kilde | DIFI |
-| Kommentar | Reservasjon avgitt av Innbygger, brukt i henhold til eForvaltningsforskriften § 15 a. | 
+| Kommentar | Reservasjon avgitt av Innbygger, brukt i henhold til eForvaltningsforskriften § 9. | 
 | Gyldige verdier | JA ; NEI |
 | Standardverdi | NEI |
 
