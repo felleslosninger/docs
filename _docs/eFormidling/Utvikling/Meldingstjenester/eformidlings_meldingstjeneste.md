@@ -43,10 +43,14 @@ sendes som beskrevet over.
 
 Saksbehandlingsprosessene krever at mottaker sender tilbake en arkivmelding-kvittering.
 
-I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender. Dersom en velger
-å integere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv. I tillegg må en
-ved bruk av eFormidling uten integrasjonspunkt passe på å returnere statuser og kvitteringer med samme Altinn Formidling
-`senders reference` som den oppgitt av avsender.
+I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender.
+
+Dersom en velger å integere mot eFormidling uten integrasjonspunkt må integrasjonen:
+
+- benytte eFormidlings meldingstjeneste hos Altinn Formidling (`service code` og `service edition code`)
+- sende tilbake statuser (mottatt og levert) etter mottak av melding
+- dersom mottatt melding inneholder Altinn Formidling `senders reference` så må kvitteringer og statuser merkes med
+samme `senders reference` når de sendes tilbake
 
 Flytskisse for `arkivmelding`:
 <div class="mermaid">

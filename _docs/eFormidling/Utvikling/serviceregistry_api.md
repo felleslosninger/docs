@@ -8,7 +8,7 @@ sidebar: eformidling_sidebar
 
 Denne siden beskriver adressetjenestens (Service Registry) API og bruksmønstre for dette.
 
-- [API-dokumentasjon](/eformidling_sr_restdocs) (ekstern lenke)
+- [API-dokumentasjon](serviceregistry_api_restdocs) (ekstern lenke)
 
 Adressetjenesten er en sentral komponent som tilbys av eFormidling.
 
@@ -46,3 +46,19 @@ A --> E
 A --> FO
 A --> V
 </div>
+
+Service Registry API bruker OAuth2 for autorisasjon og forventer selvforsynte JWT fra Maskinporten. JWT-forespørsler til
+Maskinporten er forventet å inneholde x5c for det norske virksomhetssertifikatet (SEIDv1 or SEIDv2) JWT-forespørselen
+ble signert med.
+
+- [Maskinporten](https://docs.digdir.no/docs/Maskinporten/maskinporten_overordnet) (ekstern lenke)
+
+eFormidling oppretter OAuth-klienter i Maskinporten som del av onboarding-prosessen:
+
+- Klient-IDen er `MOVE_IP_<orgnummer>`
+- En eller flere av følgende scope blir tildelt klienten:
+    - move/dpo.read (eFormidlings meldingstjeneste)
+    - move/dpe.read</code> (eInnsyns meldingstjeneste)
+    - move/dpi.read</code> (Digital Post til Innbyggere)
+    - move/dpf.read</code> (KS SvarUt og SvarInn)
+    - move/dpv.read</code> (Altinn Digital Post)

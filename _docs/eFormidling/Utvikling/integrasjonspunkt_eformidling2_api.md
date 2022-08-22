@@ -13,7 +13,7 @@ Denne siden beskriver integrasjonspunktets API (`eFormidling 2`) og bruksmønstr
 
 Se API-definisjon for detaljer:
 
-- [API-dokumentasjon](/eformidling_nm_restdocs) (ekstern lenke)
+- [API-dokumentasjon](integrasjonspunkt_eformidling2_api_restdocs) (ekstern lenke)
 
 ## Sende meldinger
 
