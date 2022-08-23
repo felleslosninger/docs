@@ -61,10 +61,6 @@ difi.move.dpo.serviceCode=4192
 difi.move.dpo.serviceEditionCode=270815
 ```
 
-TODO dobbeltsjekk
-TODO opprette testorganisasjon med samme organisasjonsnummer hos FIKS og Altinn?
-TODO opprette testorganisasjon som hos FIKS og Altinn som leverandør?
-
 Merk at ved behov for flere installasjoner av integrasjonspunktet (f.eks. to utviklere med hver sin installasjon) i
 samme miljø så vil en oppleve at installasjonene "stjeler" meldinger fra hverandre dersom de deler testvirksomhet. En
 kan løse dette ved å bruke kanaler eller ved å å benytte en testvirksomhet per installasjon.

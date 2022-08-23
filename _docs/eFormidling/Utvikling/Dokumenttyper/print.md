@@ -20,7 +20,8 @@ og en forretningsmelding som brukes for dokumenttype-spesifikk adresseringsinfor
 
 eFormidlings bruk av standarden `SBD` er beskrevet på [Standard business document](standard_sbd).
 
-Dokumenttypen `print` adresseres fra avsenders organisasjonsnummer til mottakers fødselsnummer. 
+Dokumenttypen `print` adresseres fra avsenders organisasjonsnummer til mottakers fødselsnummer. Dersom mottakers
+fødselsnummer er ukjent kan dette utelates.
 
 ### Forretningsmeldingen
 
