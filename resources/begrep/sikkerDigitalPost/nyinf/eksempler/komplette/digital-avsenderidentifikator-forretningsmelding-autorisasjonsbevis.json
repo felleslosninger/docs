@@ -1,0 +1,14 @@
+{
+  "scope": "digitalpostinnbygger:send",
+  "iss": "https://ver1.maskinporten.no/",
+  "client_amr": "virksomhetssertifikat",
+  "token_type": "Bearer",
+  "exp": 1647436816,
+  "iat": 1647436696,
+  "client_id": "MOVE_IP_991825827",
+  "jti": "L5DWjnQoQMtBVr_1PVjXUjzsFmupiLCtZ1URGUAfjJQ",
+  "consumer": {
+    "authority": "iso6523-actorid-upis",
+    "ID": "0192:991825827"
+  }
+}

@@ -1,7 +1,8 @@
 ---
 title: paaVegneAv
-permalink: paavegneav.html
+
 sidebar: begrep_sidebar
+redirect_from: /paavegneav
 ---
 
 | ---- | ---- |

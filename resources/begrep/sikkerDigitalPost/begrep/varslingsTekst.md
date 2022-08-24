@@ -1,7 +1,8 @@
 ---
 title: varslingsTekst
-permalink: varslingstekst.html
+
 sidebar: begrep_sidebar
+redirect_from: /varslingstekst
 ---
 
 | ---- | ---- |

@@ -3,8 +3,9 @@ title: paaVegneAv
 headtitle: Begrepskatalog for Oppslagstypen -  
 group: Egenskap  
 datatype: string  
-permalink: ot_paavegneav.html
+
 sidebar:
+redirect_from: /ot_paavegneav
 ---
 |---|---|
 | Identifikator | <http://begrep.difi.no/Oppslagstjenesten/5.0.0/paaVegneAv> |

@@ -1,7 +1,8 @@
 ---
 title: postkasseleverandoerNavn
-permalink: postkasseleverandoernavn.html
+
 sidebar: begrep_sidebar
+redirect_from: /postkasseleverandoernavn
 ---
 
 | ---- | ---- |

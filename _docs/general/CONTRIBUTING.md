@@ -1,8 +1,9 @@
 ---
 title: "Hvordan bidra"
-permalink: CONTRIBUTING.html
+
 sidebar: main_sidebar
 product: general
+redirect_from: /contributing
 ---
 
 Vi setter pris på at du ønsker å bidra inn i denne dokumentasjonen, og ønsker alle typer tilbakemeldinger velkommen (feilmelding, ny funksjonalitet, korrigering, tilleggsdokumentasjon etc.).
@@ -20,17 +21,12 @@ Før du legger inn en sak, er det fint om du sjekker raskt gjennom de saker som 
 Rask redigering gjør det enklere å rapportere og fikse små feil og utelatelser i dokumentene. Vi har tilrettelagt for dette ved å legge inn en kobling som tar deg direkte til kildefilen i GitHub, slik at små korrigeringer kan gjøres på en enkel måte.
 
 1. Når du står på en side i dokumentasjonen som du ønsker å korrigere, trykker du på lenken "Endre/rediger innhold" øverst på siden:
-    {% include image.html file="edit-1.jpg" border="true" alt="Enkel redigering" max-width="90%" %}
-
+<!--- {% include image.html file="edit-1.jpg" border="true" alt="Enkel redigering" max-width="90%" %} ---> 
 2. Du vil da bli sendt til den aktuelle markdown filen i GitHub, og klikk deretter på blyantikonet for å redigere filen. (Du må være innlogget i GitHub for at dette skal fungere)
-    {% include image.html file="edit-2.jpg" border="true" alt="Rediger fil i GitHub" max-width="90%" %}
-
+<!--- {% include image.html file="edit-2.jpg" border="true" alt="Rediger fil i GitHub" max-width="90%" %} ---> 
 3. Gjør endringene dine direkte i nettleseren, og sjekk *Preview changes* for å se hvordan endringene dine vil se ut.
-
 4. Legg inn en tittel og beskrivelse av endringene, og klikk på *Propose file change*
-
 5. Du blir da sendt til en ny side, og her velger du *Create pull request*, legger inn tittel og beskrivelse for pull forespørselen og trykker på *Create pull request* en gang til.
-
 6. De foreslåtte endringene dine vil nå bli behandlet av Digdir, og det kan eventuelt komme tilbakemeldinger eller kommentarer som du bør følge opp.
 
 

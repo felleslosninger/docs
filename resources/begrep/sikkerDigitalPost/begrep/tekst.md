@@ -1,7 +1,8 @@
 ---
 title: tekst
-permalink: tekst.html
+
 sidebar: begrep_sidebar
+redirect_from: /tekst
 ---
 
 | ---- | ---- |

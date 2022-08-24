@@ -1,7 +1,8 @@
 ---
 title: tilEndringsNummer
-permalink: tilendringsnummer.html
+
 sidebar: begrep_sidebar
+redirect_from: /tilendringsnummer
 ---
 
 | ---- | ---- |

@@ -1,7 +1,8 @@
 ---
 title: sikkerhetsnivaa
-permalink: sikkerhetsnivaa.html
+
 sidebar: begrep_sidebar
+redirect_from: /sikkerhetsnivaa
 ---
 
 | ---- | ---- |

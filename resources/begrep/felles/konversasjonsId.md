@@ -1,7 +1,8 @@
 ---
 title: konversasjonsId
-permalink: 2konversasjonsid.html
+
 sidebar:
+redirect_from: /2konversasjonsid
 ---
 
 | ---- | ---- |

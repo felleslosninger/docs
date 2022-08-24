@@ -5,22 +5,22 @@ folders:
   folderitems:
 
   - title: For Service Provider
-    jurl: /elma_service_provider_user_manual.html
+    jurl: /docs/ELMA/elma_as_service_provider
 
   - title: For Access Point Provider
-    jurl: /elma_access_point_provider_user_manual.html
+    jurl: /docs/ELMA/elma_as_access_point_provider
 
 - title: ELMA documentation
   folderitems:
 
   - title: ICD 0192 and new profiles
-    jurl: /elma_icd0192andNewProfiles.html
+    jurl: /docs/ELMA/elma_0192andnewprofiles
 
   - title: Upgrade to new 3.0 profiles
-    jurl: /elma_upgradeTo0192Profiles.html
+    jurl: /docs/ELMA/elma_upgradingto0192profiles
 
   - title: Status & releasenotes
-    jurl: /elma_status.html
+    jurl: /docs/ELMA/elma_status
 
 - title: REST API
   folderitems:
@@ -32,4 +32,4 @@ folders:
     jurl: https://test-smp.difi.no/rest/resources/docs/index.html
 
 - title: Open data
-  jurl: /elma_open_data.html
+  jurl: /docs/ELMA/elma_open_data

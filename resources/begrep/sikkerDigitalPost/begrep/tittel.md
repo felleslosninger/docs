@@ -1,6 +1,6 @@
 --- 
 title: Tittel  
-permalink: sdp_tittel.html
+
 sidebar: dpi_sidebar
 ---
 
@@ -22,7 +22,7 @@ sidebar: dpi_sidebar
 
 | Identifikator | Kardinalitet | Datatype                 |
 | --- | --- | --- |
-| lang          | 1..1         | [spraak](../../felles/spraak.md) |
+| lang          | 1..1         | [spraak]({{site.baseurl}}/resources/begrep/felles/spraak) |
 
 ### Xml eksempel
 

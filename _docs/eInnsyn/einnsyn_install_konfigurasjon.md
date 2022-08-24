@@ -2,8 +2,9 @@
 title: Konfigurasjon av einnsyn-klient
 description: Konfigurasjon av einnsyn-klient
 summary: "Konfigurasjon av einnsyn-klient ++"
-permalink: einnsyn_konfigurasjon.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_konfigurasjon
 ---
 
 ## Konfigurasjon av einnsyn-klient.xml filen
@@ -21,11 +22,12 @@ Det første som må gjøres er å legge inn korrekte verdier i einnsyn-klient.xm
 	<argument>-Dapplication.moveUrl=</argument>
 	<argument>-Dapplication.inputDirectory=</argument>
 	<argument>-Dapplication.orgnummer=</argument>
+	<argument>-Dapplication.skalKonvertereKlassering=false</argument>
 	<argument>-Dspring.mail.host=</argument>
 	<argument>-Dspring.mail.port</argument>
 	<argument>-Dspring.mail.username=</argument>
 	<argument>-Dspring.mail.password=</argument>
-	<argument>sender-2017-11-29T10_48.jar</argument>
+	<argument>sender-2.0.4.jar</argument>
 	<logpath>%BASE%/logs</logpath>
 	<executable>javaw</executable>
 </service>
@@ -81,7 +83,8 @@ Her er et eksempel på en ferdig konfigurert einnsyn-klient.xml-fil inkludert lo
 	<argument>-Dspring.mail.port</argument>
 	<argument>-Dspring.mail.username=</argument>
 	<argument>-Dspring.mail.password=</argument>
-	<argument>sender-2017-11-29T10_48.jar</argument>
+	<argument>-Dlog4j2.formatMsgNoLookups=true</argument>
+	<argument>sender-2.0.4.jar</argument>
 	<logpath>%BASE%/logs</logpath>
 	<log mode="roll-by-size">
 		<sizeThreshold>10240</sizeThreshold>

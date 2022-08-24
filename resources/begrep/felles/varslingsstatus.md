@@ -1,7 +1,8 @@
 ---
 title: varslingsstatus
-permalink: varslingsstatus.html
+
 sidebar:
+redirect_from: /varslingsstatus
 ---
 
 | ---- | ---- |

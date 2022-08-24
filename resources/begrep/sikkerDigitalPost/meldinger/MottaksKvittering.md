@@ -1,14 +1,15 @@
 ---
 
 title: MottaksKvittering  
-permalink: sdp_mottakskvittering.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_mottakskvittering
 ---
 
 |---|---|
 | Identifikator |  |
 | Term          | {{page.title}} |
-| Definisjon    | En [Kvitteringsmelding](KvitteringsMelding.md) til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift. |
+| Definisjon    | En [Kvitteringsmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/KvitteringsMelding) til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift. |
 | Kilde         | DIFI |
 | Kommentar     | Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post. |
 

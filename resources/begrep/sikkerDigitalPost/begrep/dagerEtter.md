@@ -1,7 +1,8 @@
 ---
 title: dagerEtter
-permalink: dageretter.html
+
 sidebar: begrep_sidebar
+redirect_from: /dageretter
 ---
 
 | ---- | ---- |

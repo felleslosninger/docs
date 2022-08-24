@@ -1,7 +1,8 @@
 ---
 title: Dokumentpakkefingeravtrykk   
-permalink: sdp_dokumentpakkefingeravtrykk.html
+
 sidebar: begrep_sidebar
+redirect_from: /sdp_dokumentpakkefingeravtrykk
 ---
 
 |---|---|

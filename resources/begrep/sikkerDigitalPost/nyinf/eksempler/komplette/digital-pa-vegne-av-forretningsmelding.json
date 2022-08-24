@@ -1,0 +1,66 @@
+{
+  "standardBusinessDocument": {
+    "standardBusinessDocumentHeader": {
+      "headerVersion": "1.0",
+      "sender": [
+        {
+          "identifier": {
+            "value": "0192:810969342",
+            "authority": "iso6523-actorid-upis"
+          }
+        }
+      ],
+      "receiver": [
+        {
+          "identifier": {
+            "value": "0192:984661185",
+            "authority": "iso6523-actorid-upis"
+          }
+        }
+      ],
+      "documentIdentification": {
+        "standard": "urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:digital::1.0",
+        "typeVersion": "1.0",
+        "instanceIdentifier": "6f4b19ee-1af0-44c4-8606-4b29d7ec1596",
+        "type": "digital",
+        "creationDateAndTime": "2022-03-16T14:39:58.068+01:00"
+      },
+      "businessScope": {
+        "scope": [
+          {
+            "type": "ConversationId",
+            "instanceIdentifier": "e65c8044-4fe9-49bb-b52f-697674d695d8",
+            "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:digital:ver1.0",
+            "scopeInformation": [
+              {
+                "expectedResponseDateTime": "2022-03-17T14:39:55.177+01:00"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "digital": {
+      "avsender": {
+        "virksomhetsidentifikator": {
+          "authority": "iso6523-actorid-upis",
+          "value": "0192:910076787"
+        }
+      },
+      "mottaker": {
+        "postkasseadresse": "test.testesen#8HC7"
+      },
+      "dokumentpakkefingeravtrykk": {
+        "digestMethod": "http://www.w3.org/2001/04/xmlenc#sha256",
+        "digestValue": "KmKYbNHzGOBn16C53jbQ5BxRjXeOewOFtrBKZ6Q123g="
+      },
+      "maskinportentoken": "eyJraWQiOiJ2UHBaZW9HOGRkTHpmdHMxLWxnc3VnOHNyYVd3bW04dHhJaGJ3Y1h3R01JIiwiYWxnIjoiUlMyNTYifQ.eyJzY29wZSI6ImRpZ2l0YWxwb3N0aW5uYnlnZ2VyOnNlbmQiLCJzdXBwbGllciI6eyJhdXRob3JpdHkiOiJpc282NTIzLWFjdG9yaWQtdXBpcyIsIklEIjoiMDE5Mjo4MTA5NjkzNDIifSwiaXNzIjoiaHR0cHM6XC9cL3ZlcjIubWFza2lucG9ydGVuLm5vXC8iLCJjbGllbnRfYW1yIjoidmlya3NvbWhldHNzZXJ0aWZpa2F0IiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImV4cCI6MTY0NzQzODExOCwiZGVsZWdhdGlvbl9zb3VyY2UiOiJodHRwczpcL1wvdHQwMi5hbHRpbm4ubm9cLyIsImlhdCI6MTY0NzQzNzk5OCwiY2xpZW50X2lkIjoiRElGSV9NT1ZFXzgxMDk2OTM0MiIsImp0aSI6IjU2ZktwamtGNkx6V3hsOUZadjRIdktSam9fYXdralFNVTBVV0VhVV9TTzgiLCJjb25zdW1lciI6eyJhdXRob3JpdHkiOiJpc282NTIzLWFjdG9yaWQtdXBpcyIsIklEIjoiMDE5Mjo5MTAwNzY3ODcifX0.klAPW9znNap0JrcUT8EwZZcbCs2ZWpZ04i29_gcs77cgqIFUTH0G2KTV_3p-8Hyn9GoTY69l-zsmBzWV3BHZ9jZKdqmFj4Zq6ypNcCwP2Qd6jq5NbtDXLF5hJWs9bJcX7sHJ9of55QOeqC86XkdDLCm3FMV1h6hR43Esqs1pZ-2hoYjtetPmoEuVeXX3ggJgbyPKQBpqrDl8nvXxwxmk2svZ7no8pcLndGRDwpPIFS3-GbklM3-HU5Ugret9qOCK2G4Fd_vwI_oUE-4ftsUKmdTIRTIUje6DWNBbRKuruZPAnAYaTbb0Fy0cXob4bSEvaUqFgM3jtaC76udUZisrwQ",
+      "sikkerhetsnivaa": 3,
+      "virkningstidspunkt": "2022-03-16T00:00:00+01:00",
+      "aapningskvittering": false,
+      "ikkesensitivtittel": "Test",
+      "spraak": "no",
+      "varsler": {}
+    }
+  }
+}

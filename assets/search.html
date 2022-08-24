@@ -1,13 +1,13 @@
 ---
 title: Søkeresultat
 type: search
-permalink: search.html
+
 sidebar: main_sidebar
 ---
 
 
 <div style="display:none">
-<form action="search.html" method="get">
+<form action="{{site.baseurl}}/assets/search.html" method="get">
   <div class="input-group search">
     <input type="text" id="search-box" name="query" class="form-control" placeholder="{{site.uistring.search_placeholder}}">
     <div class="input-group-btn">
@@ -21,39 +21,8 @@ sidebar: main_sidebar
 
 <div id="search-results"></div>
 
-<script>
-  window.store = {
-          {% for doc in site.docs %}
-            {% unless doc.search == false %}
-
-      "{{ doc.url | slugify }}": {
-        "title": "{{ doc.title | xml_escape }}",
-        "tags": "{{ doc.tags | xml_escape }}",
-        "content": {{ doc.content | strip_html | strip_newlines | jsonify }},
-        "url": "{{ doc.url | remove: '/' | xml_escape }}",
-         "product": "{{doc.product | xml_escape}}"
-
-      }
-      {% unless forloop.last %},{% endunless %}
-      {% endunless %}
-    {% endfor %},
-
-    {% for doc in site.pages %}
-      {% unless doc.search == false %}
-
-"{{ doc.url | slugify }}": {
-  "title": "{{ doc.title | xml_escape }}",
-  "tags": "{{ doc.tags | xml_escape }}",
-  "content": {{ doc.content | strip_html | strip_newlines | jsonify }},
-  "url": "{{ doc.url | remove: '/' | xml_escape }}",
-  "product": "{{doc.product | xml_escape}}"
-}
-{% unless forloop.last %},{% endunless %}
-{% endunless %}
-{% endfor %}
-  };
-</script>
 <!-- Lunr.js (MIT license) -->
-<script src="assets/js/mark.min.js"></script>
-<script src="assets/js/lunr.min.js"></script>
-<script src="assets/js/search.js"></script>
+<script src="{{site.baseurl}}/assets/js/mark.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/lunr.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/simple-jekyll-search.js"></script>
+<script src="{{site.baseurl}}/assets/js/search.js"></script>

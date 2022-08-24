@@ -1,7 +1,8 @@
 ---
 title: FysiskPostadresse  
-permalink: sdp_fysiskpostadresse.html
+
 sidebar: begrep_sidebar
+redirect_from: /sdp_fysiskpostadresse
 ---
 
 |---|---|
@@ -9,7 +10,7 @@ sidebar: begrep_sidebar
 |Definisjon|FysiskPostadresse definert for Sikker digital post|
 |Datatype|complexType|
 |Kilde|DIFI|
-|Kommentar|FysiskPostadresse er adressen til [mottakeren](Mottaker.md) som Post skal sendes til.|
+|Kommentar|FysiskPostadresse er adressen til [mottakeren]({{site.baseurl}}/resources/begrep/felles/Mottaker) som Post skal sendes til.|
 
 #### Attributer
 

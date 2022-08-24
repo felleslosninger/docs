@@ -1,0 +1,74 @@
+{
+  "standardBusinessDocument": {
+    "standardBusinessDocumentHeader": {
+      "headerVersion": "1.0",
+      "sender": [
+        {
+          "identifier": {
+            "value": "0192:991825827",
+            "authority": "iso6523-actorid-upis"
+          }
+        }
+      ],
+      "receiver": [
+        {
+          "identifier": {
+            "value": "0192:984661185",
+            "authority": "iso6523-actorid-upis"
+          }
+        }
+      ],
+      "documentIdentification": {
+        "standard": "urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:utskrift::1.0",
+        "typeVersion": "1.0",
+        "instanceIdentifier": "a501fed4-8b07-4f22-a179-dc632cec1525",
+        "type": "utskrift",
+        "creationDateAndTime": "2022-03-16T14:29:22.168+01:00"
+      },
+      "businessScope": {
+        "scope": [
+          {
+            "type": "ConversationId",
+            "instanceIdentifier": "96c64686-57b5-4d7e-8c4e-11ba98a1ce54",
+            "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:utskrift:ver1.0",
+            "scopeInformation": [
+              {
+                "expectedResponseDateTime": "2022-03-17T14:29:22.041+01:00"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "utskrift": {
+      "avsender": {
+        "virksomhetsidentifikator": {
+          "authority": "iso6523-actorid-upis",
+          "value": "0192:991825827"
+        }
+      },
+      "mottaker": {
+        "navn": "Ola Nordmann",
+        "adresselinje1": "Langtoppilia 1",
+        "adresselinje2": "9999 FJELL",
+        "land": "NO"
+      },
+      "dokumentpakkefingeravtrykk": {
+        "digestMethod": "http://www.w3.org/2001/04/xmlenc#sha256",
+        "digestValue": "eWySx+B37A0je5mII7NKrYFHuWACubaAHcop1ylLKBI="
+      },
+      "maskinportentoken": "eyJraWQiOiJ2UHBaZW9HOGRkTHpmdHMxLWxnc3VnOHNyYVd3bW04dHhJaGJ3Y1h3R01JIiwiYWxnIjoiUlMyNTYifQ.eyJzY29wZSI6ImRpZ2l0YWxwb3N0aW5uYnlnZ2VyOnNlbmQiLCJpc3MiOiJodHRwczpcL1wvdmVyMS5tYXNraW5wb3J0ZW4ubm9cLyIsImNsaWVudF9hbXIiOiJ2aXJrc29taGV0c3NlcnRpZmlrYXQiLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiZXhwIjoxNjQ3NDM3NDgyLCJpYXQiOjE2NDc0MzczNjIsImNsaWVudF9pZCI6Ik1PVkVfSVBfOTkxODI1ODI3IiwianRpIjoiOEZsQ3hqTmNQUE8tbWFXd1JIdTZ2WENVV01rZVRONFRKY081TUlPV2QyNCIsImNvbnN1bWVyIjp7ImF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjk5MTgyNTgyNyJ9fQ.Tut7vNTqFwpRjKJI79iUPxLOUk2OjTrnsuR8buuE3wXJ-Nuzq7JQ668NQlLFd-lZ7TW68a6d2sv58h__kl-z4gemcGXcnZYFnzTng-lQwzeBIBYUKlWyt4cysytAMhoNyASF1AYngJ0O1FiXwsmP7ToDEaX3xldW2Aer-FDSRWmjleFpd4PArMWsQuUInLnpRZkiCWLJfaLmWoM05nkMKYGYIgt5c2e20eLbjgUJoKU0_1KQcUqmlnlRkQOT5ho_lrI7KJBslz9OjxZ01p0xK3hzaVg5CnkQmCKF9VBZ-ak5hSAD_iTfN-GDBCJu4cb-wEMDFGoAA72_e0unPcwZGw",
+      "utskriftstype": "FARGE",
+      "retur": {
+        "mottaker": {
+          "navn": "Fjellheimen kommune",
+          "adresselinje1": "Luftigveien 1",
+          "adresselinje2": "9999 FJELL",
+          "land": "NO"
+        },
+        "returposthaandtering": "DIREKTE_RETUR"
+      },
+      "posttype": "A"
+    }
+  }
+}

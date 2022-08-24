@@ -1,7 +1,8 @@
 ---
 title: senesteEndringsNummer
-permalink: senesteendringsnummer.html
+
 sidebar: begrep_sidebar
+redirect_from: /senesteendringsnummer
 ---
 
 | ---- | ---- |

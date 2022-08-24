@@ -1,7 +1,8 @@
 ---
 title: Korrespondanseparttype
-permalink: 2korrespondanseparttype.html
+
 sidebar:
+redirect_from: /2korrespondanseparttype
 ---
 
 | ---- | ---- |

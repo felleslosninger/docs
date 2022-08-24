@@ -2,8 +2,9 @@
 title: Forutsetninger for installasjon og verktøy
 description: Forutsetninger og verktøy
 summary: "Her finner du informasjon om program som må lastes ned og installeres for å bruke einnsyn-klienten"
-permalink: einnsyn_forutsetninger.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_forutsetninger
 ---
 
 
@@ -12,7 +13,7 @@ sidebar: einnsyn_sidebar
 * Minimum Java Runtime Environment 1.8 installert
 * Et virksomhetssertifikat utstedt til virksomheten
 * Verktøy for xml-redigering. feks Notepad, Notepad++ eller Sublime Text.
-* Integrasjonspunkt installert på samme server. [Sjå veiledning her](eformidling_download_ip.html)
+* Integrasjonspunkt installert på samme server. [Sjå veiledning her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_download_ip)
 
 ## Dette må du laste ned for å installere einnsyn-klienten
 

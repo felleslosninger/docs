@@ -1,7 +1,8 @@
 ---
 title: virkningsdato
-permalink: 2virkningsdato.html
+
 sidebar:
+redirect_from: /2virkningsdato
 ---
 
 | ---- | ---- |

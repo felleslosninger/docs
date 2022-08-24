@@ -1,23 +1,24 @@
 ---
 
 title: AapningsKvittering  
-permalink: sdp_aapningskvittering.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_aapningskvittering
 ---
 
 |---|---|
 | Identifikator | |
 | Term          | {{page.title}} |
-| Definisjon    | En [KvitteringsMelding](KvitteringsMelding.md) til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse. |
+| Definisjon    | En [KvitteringsMelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/KvitteringsMelding) til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse. |
 | Kilde         | DIFI |
-| Kommentar     | Åpningskvitteringer blir bare sendt dersom dette er bestilt av [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) i [digital post meldingen](DigitalPostMelding.md) ved å spesifisere dette i [digitalpostinfo](../begrep/DigitalPostInfo.md). [Mottaker](../begrep/Mottaker.md) må aksepteres at det sendes en [ÅpningsKvittering](AapningsKvittering.md) til [Avsender](../forretningslag/StandardBusinessDocument/Sender.md) for å få lest den digital posten. Mangel på [ÅpningsKvittering](AapningsKvittering.md) betyr at [Mottaker](../begrep/Mottaker.md) ikke har lest dokumentet. |
+| Kommentar     | Åpningskvitteringer blir bare sendt dersom dette er bestilt av [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender) i [digital post meldingen]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png) ved å spesifisere dette i [digitalpostinfo]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/DigitalPostInfo). [Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker) må aksepteres at det sendes en [ÅpningsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/aapningskvittering) til [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender) for å få lest den digital posten. Mangel på [ÅpningsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/aapningskvittering) betyr at [Mottaker]({{site.baseurl}}/resources/begrep/felles/Mottaker) ikke har lest dokumentet. |
 
-Bruk av [ÅpningsKvittering](AapningsKvittering.md) er priset for
-[Avsender](../forretningslag/StandardBusinessDocument/Sender.md).
+Bruk av [ÅpningsKvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/aapningskvittering) er priset for
+[Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/Sender).
 
 Åpningskvittering vil være påkrevd helt frem til Innbygger har akseptert
 at kvitteringen sendes til Avsender. Det vil si at Åpningskvittering kan
-komme lang tid etter at [digital post meldingen](DigitalPostMelding.md)
+komme lang tid etter at [digital post meldingen]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png)
 blir sendt.
 
 ### Anbefalt bruk

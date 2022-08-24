@@ -1,8 +1,9 @@
 ---
 
 title: Receipt  
-permalink: sdp_receipt.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_receipt
 ---
 
   - Identifikator  

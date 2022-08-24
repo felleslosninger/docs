@@ -1,7 +1,8 @@
 ---
 title: prioritetType
-permalink: 2prioritettype.html
+
 sidebar:
+redirect_from: /2prioritettype
 ---
 
 | ---- | ---- |

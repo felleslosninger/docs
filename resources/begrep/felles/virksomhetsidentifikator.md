@@ -1,7 +1,8 @@
 ---
 title: virksomhetsidentifikator
-permalink: 2virksomhetsidentifikator.html
+
 sidebar: sidebar_begrep
+redirect_from: /2virksomhetsidentifikator
 ---
 
 | ---- | ---- |

@@ -1,7 +1,8 @@
 ---
 title: SikkerDigitalPostAdresse  
-permalink: ot_sikkerdigitalpostadresse.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_sikkerdigitalpostadresse
 ---
 
 |---|---|
@@ -15,8 +16,8 @@ sidebar: begrep_sidebar
 
 | Term                                                               | Kardinalitet |
 | ------------------------------------------------------------------ | ------------ |
-| [postkasseadresse](../felles/postkasseadresse.md)                       | 1..1         |
-| [postkasseleverandoerAdresse](../felles/postkasseleverandoerAdresse.md) | 1..1         |
+| [postkasseadresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseadresse)                       | 1..1         |
+| [postkasseleverandoerAdresse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/postkasseleverandoerAdresse) | 1..1         |
 
 #### Xml eksempel
 

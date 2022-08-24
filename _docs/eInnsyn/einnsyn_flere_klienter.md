@@ -2,8 +2,9 @@
 title: Flere eInnsyn-klienter på samme integrasjonspunkt
 description: Flere eInnsyn-klienter på samme integrasjonspunkt
 summary: "Her finner du informasjon om hvordan bruke flere eInnsyn-klienter på samme integrasjonspunkt"
-permalink: einnsyn_flere_klienter.html
+
 sidebar: einnsyn_sidebar
+redirect_from: /einnsyn_flere_klienter
 ---
 
 Når du skal bruke flere integrasjonspunkt eller eInnsyn-klienter på samme server må du bruke forskjellige porter. Om du skal bruke ett integrasjonspunkt og flere einnsyn-klienter må du endre id, navn og port på einnsyn-klient tjenesten. I tillegg må hver eInnsyn-klient ha sin egen inputDirectory-mappe. 

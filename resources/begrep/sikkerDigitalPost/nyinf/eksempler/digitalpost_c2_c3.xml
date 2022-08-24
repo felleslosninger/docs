@@ -10,7 +10,7 @@
     </Receiver>
     <DocumentIdentification>
       <Standard>urn:fdc:digdir.no:2020:innbyggerpost:xsd::Innbyggerpost</Standard>
-      <TypeVersion>2.1</TypeVersion>
+      <TypeVersion>1.0</TypeVersion>
       <InstanceIdentifier>PNO000001-5-20200120T090717</InstanceIdentifier>
       <Type>Innbyggerpost</Type>
       <CreationDateAndTime>2020-01-20T09:07:17.589Z</CreationDateAndTime>

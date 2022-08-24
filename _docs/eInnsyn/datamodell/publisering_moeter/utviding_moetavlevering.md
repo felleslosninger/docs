@@ -2,8 +2,9 @@
 title: Utvida møteavlevering med fleire eigenskapar
 description:
 summary:
-permalink: einnsyn_utvida_moeteavlevering.html
+
 sidebar: einnsyn_technical_sidebar
+redirect_from: /einnsyn_utvida_moeteavlevering
 ---
 ## Utvida møteavlevering med fleire eigenskapar
 

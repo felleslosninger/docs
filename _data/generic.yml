@@ -27,7 +27,7 @@ folders:
 
   folderitems:
   - title: Sample Item 1
-    jurl: /sample1.html
+    jurl: /resources/begrep/sikkerDigitalPost/xsd/SBDH20040506-02/sample1.xml
     hurl: http://yourcompanyurl.com/docs/sample1
     ref: sample1
     pdf: true
@@ -39,13 +39,13 @@ folders:
     pdf: true
 
   - title: Sample Item 3
-    jurl: /sample3.html
+    jurl: /resources/begrep/sikkerDigitalPost/xsd/SBDH20040506-02/sample3.xml
     hurl: http://yourcompanyurl.com/docs/sample3
     ref: sample3
     pdf: true
 
   - title: Glossary
-    jurl: /glossary.html
+    jurl: /_data/glossary.json
     hurl: http://yourcompanyurl.com/docs/glossary
     ref: glossary
     bookmarks: [abstruse, adumbrate, arboreal, Ebullient, macabre, riparian]
@@ -55,7 +55,7 @@ folders:
   pdf: true
   folderitems:
   - title: Sample Item 4
-    jurl: /sample1.html
+    jurl: /resources/begrep/sikkerDigitalPost/xsd/SBDH20040506-02/sample1.xml
     hurl: http://yourcompanyurl.com/docs/sample4
     ref: sample4
     pdf: true
@@ -67,7 +67,7 @@ folders:
     pdf: true
 
   - title: Sample Item 6
-    jurl: /sample3.html
+    jurl: /resources/begrep/sikkerDigitalPost/xsd/SBDH20040506-02/sample3.xml
     hurl: http://yourcompanyurl.com/docs/sample6
     ref: sample6
     pdf: true

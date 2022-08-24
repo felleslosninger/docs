@@ -2,9 +2,10 @@
 title: Slik bruker du Maskinporten som API-konsument
 description:  Maskinporten som API-konsument
 summary: 'API-konsumenter må lage en Maskinporten-integrasjon som har det aktuelle APIet sitt scope registrert.'
-permalink: maskinporten_guide_apikonsument.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_guide_apikonsument
 ---
 
 Dette dokumentet viser de stegene som en API-konsument må gjøre for å bruke Maskinporten.
@@ -48,7 +49,7 @@ Klienten må registreres med følgende Oauth2 egenskaper:
 | scopes | string, space-separert | Ett eller flere API/scopes som din organisasjon har fått tildelt tilgang til av API-tilbyder.
 
 
-Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så vil du ikke kunne lagre API-scopet som del av klient-registreringa, men må aktivt forespørre det run-time.
+Dersom du er leverandør som skal bruke APIer som krever at din kunde aktivt delegerer tildelt API-tilgang i Altinn, så må du opprette en klient og legge det korrekt scopet på klienten. Alle scopes som bruker Altinn-delegering er tilgjengelig dersom du trykker på "Scopes tilgjengelig for alle" når du skal legge til scopes på en klient.
 
 Noen APIer kan aksesseres av alle Maskinporten sine konsumenter (såkalt whitelisting). Det er da ikke mulig å forhåndsregistere slike scopes på klienten.
 
@@ -57,7 +58,7 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 #### Registrering via Samarbeidsportalen
 
-Du kan logge inn på https://samarbeid.digdir.no/ og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
+Du kan logge inn på [https://samarbeid.digdir.no/](https://samarbeid.digdir.no/) og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
 
 Alle organisasjoner som har inngått Digitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.
 
@@ -71,7 +72,7 @@ For selvbetjening i Produksjon, kreves innlogging med ID-porten og at bemyndiget
 
 #### Registrere klient som bruker virksomhetssertifikat
 
-For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se https://difi.github.io/felleslosninger/oidc_api_admin.html.
+For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html](https://docs.digdir.no/docs/idporten/oidc/oidc_api_admin).
 
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
@@ -152,7 +153,7 @@ Grantet kan inneholde mange forskjellige claims. Disse er de mest vesentlige:
 |jti|Anbefalt | JWT ID - unique id for denne jwt. **Merk:** A JWT kan ikke gjenbrukes.  |
 
 
-Se gjerne [den fullstendige grensesnittspesifikasjonen for JWT-grants](maskinporten_protocol_jwtgrant.html) for utfyllende dokumentasjon.
+Se gjerne [den fullstendige grensesnittspesifikasjonen for JWT-grants]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant) for utfyllende dokumentasjon.
 
 Slik kan en forspørsel se ut:
 ```
@@ -207,12 +208,12 @@ Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en lev
 2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
 1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
 1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
-![delgering-gi tilgang](/images/maskinporten/altinn_delegering_leggtil.png)
+![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_leggtil.png)
 1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
-![delgering-gi tilgang](/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
+![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
 
 1. Bekreft med å klikk "Gi rettigheter"
-![delgering-gi tilgang](/images/maskinporten/altinn_delegering_bekreftelse.png)
+![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_bekreftelse.png)
 
 ### Bruke delegering som leverandør
 

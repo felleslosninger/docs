@@ -2,9 +2,10 @@
 title: Virksomhetssertifikat
 description:
 summary:
-permalink: maskinporten_virksomhetssertifikat.html
+
 sidebar: maskinporten_sidebar
 product: Maskinporten
+redirect_from: /maskinporten_virksomhetssertifikat
 ---
 
 Virksomhetssertifikat er en viktig del av Maskinporten. Her har vi samlet litt informasjon om virksomhetssertifikat.
@@ -54,4 +55,4 @@ Ja, man kan bruke samme sertifikat på flere klienter i Maskinporten.
 
 ## Støtter Maskinporten de nye SEID 2.0 sertifikatene?
 
-Nei, men vi jobber med å utvikle støtte for dette. 
+Ja, Maskinporten støtter SEID 2.0 sertifikater fra både Buypass og Commfides. 

@@ -1,7 +1,8 @@
 ---
 title: sistOppdatert
-permalink: sistoppdatert.html
+
 sidebar: begrep_sidebar
+redirect_from: /sistoppdatert
 ---
 
 | ---- | ---- |

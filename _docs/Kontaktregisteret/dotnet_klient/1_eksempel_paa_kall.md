@@ -2,9 +2,10 @@
 title: Eksempel på kall
 description: 
 summary: ""
-permalink: krr_eksempel_paa_kall.html
+
 sidebar: krr_dotnet
 product: KRR
+redirect_from: /krr_eksempel_paa_kall
 ---
 
 Det er bare tre kall du kan gjøre mot oppslagstjenesten; 

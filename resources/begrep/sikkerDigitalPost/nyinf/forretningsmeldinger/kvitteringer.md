@@ -5,7 +5,7 @@ sidebar: dpi_timo_sidebar
 dpi_common_schema_location: https://docs.digdir.no/schemas/dpi/commons.schema.json
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 |---|---|
 | Term          | {{page.title}} |
@@ -20,7 +20,7 @@ Det anbefales at [Behandlingsansvarlig](dpi_aktorer.html) arkiverer kvitteringen
 
 
 ### Properties
-Samtlige kvitteirnger inneholder undernevnte properties, varslingfeiletkvitterin har to ekstra
+Samtlige kvitteringer inneholder undernevnte properties, varslingfeiletkvittering har to ekstra
 
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |

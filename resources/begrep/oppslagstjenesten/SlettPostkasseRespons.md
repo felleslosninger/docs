@@ -1,7 +1,8 @@
 ---
 title: SlettPostkasseRespons  
-permalink: ot_slettpostkasserespons.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_slettpostkasserespons
 ---
 
 |---|---|
@@ -9,7 +10,7 @@ sidebar: begrep_sidebar
 | Definisjon    | Respons sendt tilbake til Postkasseleverandør når en postkasse er sletter fra kontaktregisteret. |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
-| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [SlettPostkasseForespoersel](SlettPostkasseForespoersel.md) |
+| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [SlettPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/SlettPostkasseForespoersel) |
 
 #### Attributer
 

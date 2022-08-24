@@ -1,7 +1,8 @@
 ---
 title: Testmiljø for digital postkasse
-permalink: sdp_testmiljo.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_testmiljo
 ---
 
 Her er en beskrivelse av de testmiljøer som er tilgjengelig for kunder og bruksområdet for disse.

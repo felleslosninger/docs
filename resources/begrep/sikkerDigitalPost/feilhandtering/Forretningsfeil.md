@@ -1,8 +1,9 @@
 ---
 
 title: Forretningsfeil  
-permalink: sdp_forretningsfeil.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_forretningsfeil
 ---
 
 
@@ -13,15 +14,15 @@ forretningsmeldinger.
 ### Manglende mottakskvittering fra Meldingsformidler
 
 Meldingsformidler vil verifisere format og innhold på
-[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
+[StandardBusinessDocumentHeader]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
 ved mottak av en
-[DigitalPostMelding](../meldinger/DigitalPostMelding.md).  
+[DigitalPostMelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/DigitalpostMelding.png).  
 Dette gjøres for å sikre at meldingen kan rutes videre til en
 postkasseleverandør og garantere for at forretningskvitteringer vil
 kunne bli returnert til Avsender.
 
 Ved feil i
-[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
+[StandardBusinessDocumentHeader]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
 vil meldingsformidler returnere en [SignalMessage med
 Error](sdp_index_signalmessage.html).
 
@@ -30,7 +31,7 @@ en rask, enkel og sikker feilhåndtering fra Meldingsformidler.
 Meldingsformidler returnerer ingen forretningskvitteringer, men operer
 nærmere transportlaget, dette er årsaken til at feil i
 adresseringsinformasjonen i
-[StandardBusinessDocumentHeader](../forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader.md)
+[StandardBusinessDocumentHeader]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/StandardBusinessDocumentHeader)
 vil resultere i en [SignalMessage med
 Error](sdp_index_signalmessage.html) og ikke en egen forretningsfeil
 som Avsender må hente igjennom kvitteringsgrensesnittet.
@@ -38,7 +39,7 @@ som Avsender må hente igjennom kvitteringsgrensesnittet.
 ### Manglende Leveringskvittering
 
 Postkasseleverandør skal returnere en
-[Leveringskvittering](../meldinger/LeveringsKvittering.md) til Avsender.  
+[Leveringskvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/LeveringsKvittering) til Avsender.  
 Dersom denne uteblir lengre enn forventet bør Avsender håndtere dette
 igjennom feilhåndteringsprosedyrer etablert med sentralforvalter.  
 (Feilhåndteringsprosedyrene etableres som del av bruksvilkår)
@@ -55,7 +56,7 @@ bruksvilkårene.
 ### Varslingfeilet
 
 Les mer om hvordan Avsender bør håndtere en
-[Varslingfeiletkvittering](../meldinger/VarslingfeiletKvittering.md).
+[Varslingfeiletkvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/meldinger/VarslingfeiletKvittering).
 
 ### Innholdsfeil i forretningsmeldingen
 

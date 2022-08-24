@@ -1,7 +1,8 @@
 ---
 title: personidentifikator 
-permalink: personidentifikator.html
+
 sidebar: begrep_sidebar
+redirect_from: /personidentifikator
 ---
 
 | ---- | ---- |

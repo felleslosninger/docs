@@ -1,16 +1,24 @@
 ---
-title: Page Not Found
+title: 404 - Beklager. Siden du ser etter, ble dessverre ikke funnet.
 layout: default
 
 type: 404
 ---
 
-<p>Sorry, page not found. Please let us know about the broken link.</p>
+
+<p>Det kan være at siden er slettet, eller at den har fått ny nettadresse.</p>
+
+<p>Prøv gjerne søket vårt eller gå til <a href="https://docs.digdir.no">startsiden</a> </p>
 
 <div class="searchForm404">
-  <form action="search.html" method="get">
-  <label for="search-box">Search</label>
+  <form action="{{site.baseurl}}/assets/search.html" method="get">
+  <label for="search-box">Søk</label>
   <input type="text" id="search-box" name="query">
-  <input type="submit" value="search">
+  <input type="submit" value="søk">
 </form>
 </div>
+
+
+
+
+

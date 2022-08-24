@@ -3,14 +3,15 @@ title: Updating your participants to PEPPOL Billing 3.0 Profiles
 description: Guide on how to upgrade participants to new 0192-Profiles
 summary: "Here we’ll outline how you can update your existing norwegian 9908-participants to support PEPPOL BIS 3.0, and what considerations to make.
 The main emphasis is on updating via the web services."
-permalink: elma_upgradeTo0192Profiles.html
+
 product: elma
 sidebar: elma_sidebar
+redirect_from: /elma_upgradeto0192profiles
 ---
 
 *Updated: 20.03.2019*
 
-Recommended reading: [explanation of the new ICD (0192), new Profiles and how this works in ELMA](elma_icd0192andNewProfiles.html).
+Recommended reading: [explanation of the new ICD (0192), new Profiles and how this works in ELMA]({{site.baseurl}}/docs/ELMA/elma_0192andnewprofiles).
 
 You can either update via ELMA-web (if you have relatively few participants) or via the Web Service.
 

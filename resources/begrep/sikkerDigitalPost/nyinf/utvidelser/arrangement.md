@@ -4,7 +4,7 @@ permalink: dpi_arrangement.html
 sidebar: dpi_timo_sidebar
 ---
 
-![](/images/dpi/underarbeide.png)
+<!-- ![](/images/dpi/underarbeide.png) -->
 
 
 |---|---|
@@ -12,7 +12,7 @@ sidebar: dpi_timo_sidebar
 | Mime-Type | application/vnd.difi.dpi.arrangement+xml |
 | Datatype | complexType |
 | Kommentar | Definerer et arrangement som presenteres for innbygger i postkassen |
-| XSD | [https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](https://difi.github.io/felleslosninger/resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd) |
+| XSD | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd) |
     
 
 ### Attributter: Se xsd for mer informasjon om domenet.

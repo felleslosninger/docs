@@ -64,6 +64,9 @@
 		<xs:complexContent>
 			<xs:extension base="mappe">
 				<xs:sequence>
+					<xs:element name="saksaar" type="n5mdk:saksaar" minOccurs="0"/>
+					<xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer"
+						minOccurs="0"/>
 					<xs:element name="saksdato" type="n5mdk:saksdato"/>
 					<xs:element name="administrativEnhet" type="n5mdk:administrativEnhet"/> 
 					<xs:element name="saksansvarlig" type="n5mdk:saksansvarlig"/>

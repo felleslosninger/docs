@@ -1,7 +1,8 @@
 ---
 title: OpprettOgVelgSikkerDigitalPostkasseRespons  
-permalink: ot_opprettogvelgsikkerdigitalpostkasserespons.html
+
 sidebar: begrep_sidebar
+redirect_from: /ot_opprettogvelgsikkerdigitalpostkasserespons
 ---
 
 |---|---|
@@ -9,7 +10,7 @@ sidebar: begrep_sidebar
 | Definisjon    | Response sendt tilbake til Postkasseleverandør for å at en Innbygger har valgt digital postkasse for offentlig bruk. |
 | Datatype      | {{ page.datatype }} |
 | Kilde         | DIFI |
-| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [OpprettOgVelgPostkasseForespoersel](OpprettOgVelgSikkerDigitalPostkasseForespoersel.md) |
+| Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [OpprettOgVelgPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/OpprettOgVelgSikkerDigitalPostkasseForespoersel) |
 
 #### Attributer
 

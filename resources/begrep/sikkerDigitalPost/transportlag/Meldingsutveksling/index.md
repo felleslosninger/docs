@@ -1,7 +1,8 @@
 ---
 title: Meldingsutveksling  
-permalink: sdp_index_meldingsutveksling.html
+
 sidebar: dpi_sidebar
+redirect_from: /sdp_index_meldingsutveksling
 ---
 
 ## Spesifikasjon for meldingutveksling i Sikker digital Post
@@ -19,7 +20,7 @@ Det er opp til avsender om man vil fullintegrere MSH inn i eksisterende
 løsning, benytte seg av en standard “hyllevare” løsning med lokal
 integrasjon eller benytte seg av tredjepart som MSH.
 
-Les mer om [meldingsidentifikatorer](../MeldingsIdentifikatorer.md)
+Les mer om [meldingsidentifikatorer]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/MeldingsIdentifikatorer)
 
 ### AS4 Light Client profilen
 
@@ -37,10 +38,10 @@ implementasjon skal støtte.
 Grensesnittet mellom avsender og meldingsformidler har to sett med
 P-Mode parametere:
 
-  - [FormidleDigitalPostForsendelse](FormidleDigitalPostForsendelse.md) -
+  - [FormidleDigitalPostForsendelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/FormidleDigitalPostForsendelse) -
     benyttes ved sending av en digital post forsendelse fra avsender til
     meldingsformidler
-  - [KvitteringsForespoersel](KvitteringsForespoersel.md) - benyttes av
+  - [KvitteringsForespoersel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/KvitteringsForespoersel) - benyttes av
     avsender for å sjekke om det er forretningskvitteringer som kan
     hentes
 
@@ -84,7 +85,7 @@ oppfølging av en melding for å få ferdigbehandlet den.
 
 #### Intervall mellom kvitteringsforespørsler
 
-Ved [KvitteringsForespoersel](KvitteringsForespoersel.md) så er det
+Ved [KvitteringsForespoersel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/transportlag/Meldingsutveksling/KvitteringsForespoersel) så er det
 forventet at man respekterer følgende intervaller mellom hver
 forespørsel når forrige forespørsel returnerte at det er ikke er
 meldinger å hente:
@@ -112,6 +113,6 @@ duplikater.
 
 ### Eksempler
 
-Det er utarbeidet [eksempler på SOAP meldinger](sdp_index_eksempler.html) knyttet til flyt
+Det er utarbeidet [eksempler på SOAP meldinger]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/) knyttet til flyt
 diagrammet over
 

@@ -1,7 +1,8 @@
 ---
 title: Mobiltelefonnummer
-permalink: mobiltelefonnummer.html
+
 sidebar: begrep_sidebar
+redirect_from: /mobiltelefonnummer
 ---
 
 | ---- | ---- |
