@@ -19,11 +19,11 @@ Meldingene er ikke forhåndsdefinert i kontekst av eFormidling, men protokollene
 Alle FIKS IO-meldingsprotokoller er gyldige prosesser i eFormidling. FIKS IO-meldingsutveksling representeres med
 følgende prosess for mottaker:
 
-| **Prosessnavn**            | **Prosessidentifikator**                                              |
-| -------------------------- | --------------------------------------------------------------------- |
-| Arkivlett Byggesak         | no.dibk.arkivlett.byggesak.v1                                         |
-| Matrikkelføring            | no.ks.fiks.matrikkelfoering.v2                                        |
-| (...)                      | (alle FIKS IO-meldingsprotokoller er gyldige prosesser i eFormidling) |
+| **Prosessnavn**       | **Prosessidentifikator**                                              |
+|-----------------------|-----------------------------------------------------------------------|
+| Arkivlett Byggesak    | no.dibk.arkivlett.byggesak.v1                                         |
+| Matrikkelføring       | no.ks.fiks.matrikkelfoering.v2                                        |
+| (...)                 | (alle FIKS IO-meldingsprotokoller er gyldige prosesser i eFormidling) |
 
 ## Meldingsinnhold
 
@@ -31,7 +31,7 @@ Alle FIKS IO-meldingsprotokoller er gyldige dokumenttyper i eFormidling. Prosess
 -meldingsutveksling. Dokumenttypene støttes bare av FIKS IO.
 
 | **Dokumenttype**                                                          | **Meldingstjenester**                                |
-| ------------------------------------------------------------------------- | ---------------------------------------------------- |
+|---------------------------------------------------------------------------|------------------------------------------------------|
 | no.dibk.arkivlett.byggesak.v1                                             | [FIKS IO](../Utvikling/Meldingstjenester/ks_fiks_io) |
 | no.ks.fiks.matrikkelfoering.v2                                            | [FIKS IO](../Utvikling/Meldingstjenester/ks_fiks_io) |
 | (alle FIKS IO-meldingsprotokoller er gyldige dokumenttyper i eFormidling) | [FIKS IO](../Utvikling/Meldingstjenester/ks_fiks_io) |

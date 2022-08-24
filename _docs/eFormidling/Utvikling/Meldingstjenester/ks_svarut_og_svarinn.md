@@ -59,6 +59,25 @@ F --> |Arkivmelding-kvittering| E
 E --> D
 </div>
 
+## Meldingsstatuser
+
+Meldingsstatuser for meldinger sendt med KS SvarUt:
+
+| Status    | Kommentar                                                                                  |
+|-----------|--------------------------------------------------------------------------------------------|
+| OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPF-melding |
+| SENDT     | Integrasjonspunkt har sendt forsendelsen til meldingsformidler                             |
+| LEVERT    | Forsendelsen er klar for mottak og kan hentes ned fra SvarInn                              |
+| LEST      | En forsendelse er lest når hele forsendelsesfilen er lastet ned av mottaker                | 
+
+Meldingsstatuser for meldinger mottatt med KS SvarInn:
+
+| Status              | Kommentar                                                          |
+|---------------------|--------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunkt laster frå KS ned og oppretter meldingen hos seg |
+| INNKOMMENDE_MOTTATT | Meldingen blir konvertert til internt format                       | 
+| INNKOMMENDE_LEVERT  | Meldingen er levert til sak-arkivsystem                            | 
+
 ## Neste steg
 
 - [Produktdokumentasjon for KS SvarUt og SvarInn](https://www.ks.no/fagomrader/digitalisering/felleslosninger/svar-inn-og-svar-ut/) (ekstern lenke)

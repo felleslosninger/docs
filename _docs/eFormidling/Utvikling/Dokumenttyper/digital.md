@@ -63,7 +63,7 @@ Forretningsmeldingen `digital` er beskrevet under.
 
 > `digital.spraak` (påkrevd)
 >
-> Språkkode ihht ISO-639-1 (2 bokstaver).
+> Språkkode ihht. ISO-639-1 (2 bokstaver).
 >
 > | Lovlige verdier                 | String                       |
 > | Standard verdi                  | Ingen                        |

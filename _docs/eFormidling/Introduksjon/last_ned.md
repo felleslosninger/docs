@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_download_ip
 ---
 
 Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS som .jar-fil. 
@@ -30,10 +31,12 @@ Endringslogg finner du [her.](../oppgradering/endringslogg)
 
 ## eFormidlings offentlige kodesigneringsnøkkel
 
-> [**Last ned offentleg nøkkel**](/resources/eformidling/public_keys/eformidling-key.asc)
+> [**Last ned offentlig nøkkel**](/resources/eformidling/public_keys/eformidling-key.asc)
 
 ## Neste steg
 
 Første gang du installerer integrasjonspunktet? Her finner du informasjon om hvordan installere eller oppgradere eksisterende integrasjonspunkt.
 
 - [Kom i gang med integrasjonspunktet](../installasjon/)
+- [Installasjon](../installasjon/installasjon)
+- [Oppgradering](../Oppgradering/)

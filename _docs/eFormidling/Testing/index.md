@@ -4,6 +4,9 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from:
+- /eformidling_testing_env
+- /eformidling_verifisere_forsendelser
 ---
 
 Formålet med denne siden er å støtte de som utvikler egne integrasjoner mot eFormidling å teste at disse fungerer som de
@@ -31,28 +34,26 @@ av hvordan en kan ta i bruk mock-miljøet:
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
 
 For å teste i eFormidlings testmiljø må en installere et integrasjonspunkt og konfigurere det til å benytte testmiljø.
-Vanlig installasjonveiledning kan følges, men før en går i gang må en sørge for å ha en fullverdig testvirksomhet:
-
-- En velger et ekte eller syntetisk organisasjonsnummer for testvirksomheten
-- En bestiller et testvirksomhetssertifikat utstedt til testvirksomhetens organisasjonsnummer
-- En bestiller registrering av testvirksomheten i testmiljø for eFormidling og meldingstjenestene som skal brukes
+Vanlig installasjonveiledning kan følges, men før en går i gang må en sørge for å ha en fullverdig testvirksomhet. En
+må først velge om en ønsker å bruke ekte eller syntetisk organisasjonsnummer. Dersom en ikke har et behov for å benytte
+ekte organisasjonsnummer i sitt testmiljø anbefales bruk av syntetisk organisasjonsnummer.
 
 #### Teste i eFormidlings testmiljø med ekte organisasjonsnummer
 
 Testmiljøet for eFormidlings meldingstjeneste er realisert ved hjelp av en egen meldingstjeneste i Altinn Formidlings
 produksjonsmiljø. Altinn Formidlings produksjonsmiljø støtter bare ekte organisasjonsnummer.
 
-Altinn Digital Post og KS SvarUt og SvarInn benytter testmiljø som bare støtter syntetiske organisasjonsnummer. En kan
-dermed ikke benytte ekte organisasjonsnummer mot alle meldingstjenestene som brukes av eFormidling. En kan likevel
+For Altinn Digital Post og KS SvarUt og SvarInn benyttes testmiljø som bare støtter syntetiske organisasjonsnummer. En
+kan dermed ikke benytte ekte organisasjonsnummer mot alle meldingstjenestene som brukes av eFormidling. En kan likevel
 benytte alle meldingstjenestene ved å legge inn brukernavn og passord for testvirksomhet hos Altinn Digital Post med
 et annet organisasjonsnummer enn det integrasjonspunktet kjører. Det samme gjelder KS SvarUt og SvarInn.
 
 #### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer
 
-Dersom en ikke har et behov for å benytte ekte organisasjonsnummer i sitt testmiljø anbefales bruk av syntetisk
-organisasjonsnummer. En må i så fall overstyre konfigurasjon av eFormidlings meldingstjeneste fra meldingstjenesten i
-Altinn Formidlings produksjonsmiljø til en tilsvarende meldingstjeneste i Altinn Formidlings testmiljø. Dette oppnår
-en med å legge følgende konfigurasjon i integrasjonspunktet:
+For å bruke syntetisk organisasjonsnummer må en bytte testmiljøet for eFormidlings meldingstjeneste til et alternativt
+testmiljø. En må i så fall overstyre konfigurasjon av eFormidlings meldingstjeneste fra test-meldingstjenesten i
+Altinn Formidlings produksjonsmiljø til en tilsvarende test-meldingstjeneste i Altinn Formidlings testmiljø. Dette
+oppnår en med å legge følgende konfigurasjon i integrasjonspunktet:
 
 ```
 difi.move.dpo.streamingserviceUrl=https://tt02.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc?wsdl
@@ -60,6 +61,12 @@ difi.move.dpo.brokerserviceUrl=https://tt02.altinn.no/ServiceEngineExternal/Brok
 difi.move.dpo.serviceCode=4192
 difi.move.dpo.serviceEditionCode=270815
 ```
+
+Med et slikt oppsett kan en bruke samme syntetiske organisasjonsnummer på tvers av meldingstjenestene så lenge en passer
+på når en bestiller tilganger og testvirksomhet: alt må bestilles til samme organisasjonsnummer, det er ingen sentral
+koordinering av dette.
+
+## Test-oppsett
 
 Merk at ved behov for flere installasjoner av integrasjonspunktet (f.eks. to utviklere med hver sin installasjon) i
 samme miljø så vil en oppleve at installasjonene "stjeler" meldinger fra hverandre dersom de deler testvirksomhet. En
@@ -82,12 +89,6 @@ motta fra:
 |                                                                               | Eventuelt kan en samarbeide med en annen virksomhet som bruker eFormidlings testmiljø                                                                                                                                   | 
 | Motta post fra innbygger og virksomheter fra KS eDialog                       | Fødselsnummer tilgjengelig i ID-porten                                                                                                                                                                                  | 
 
-Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 er tilgjengelig i eFormidlings
-testmiljø:
-
-- [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
-- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/) (ekstern lenke)
-
 For å teste varsling og reservasjon for innbyggere kan en selv registrere reservasjon, mobilnummer og/eller
 e-postadresse for egne testbrukere i kontakt- og reservasjonsregisteret.
 
@@ -95,11 +96,66 @@ For å teste varsling for virksomheter kan en selv registrere mobilnummer og/ell
 
 For å teste på vegne av må en ha to testvirksomheter i Altinn.
 
-### Teste i eFormidlings produksjonsmiljø
+Ønskede tilganger bestilles fra:
+
+- eFormidling, eInnsyn og Digital Post til Innbyggere: <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+- Altinn Formidling og Altinn Digital Post: <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>
+- FIKS IO og KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
+
+### Tilrettelegging for test av eFormidlings meldingstjeneste
+
+Alternativt til selv å sette opp to integrasjonspunkt for å teste eFormidlings meldingstjeneste er det også tilrettelagt
+for et enklere test-oppsett.
+
+Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 er tilgjengelig i eFormidlings
+testmiljø:
+
+- [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
+- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/) (ekstern lenke)
+
+### Tilrettelegging for test av Altinn Digital Post
+
+Alternativt til selv å sette opp testvirksomhet for å teste Altinn Digital Post integrasjonspunkt er det også
+tilrettelagt for et enklere test-oppsett.
+
+Det er opprettet noen testvirksomheter i Altinn som en kan bruke som mottakere. Her vil en kunne logge inn for å finne
+og se meldinger en har sendt. Disse virksomhetene og brukerne er **felles** for alle virksomheter i testmiljø. Pass på å
+ikke sende sensitiv informasjon under testingen med disse virksomhetene.
+
+| Orgnr     | Navn                     | Enhetstype  |  
+|-----------|--------------------------|-------------|
+| 910624474 | NESFLATEN OG BORRE       | KOMM        |
+| 810624582 | SELJORD OG SØRVIK        | BEDR        | 
+| 810568712 | ALTA OG KARDEMOMME BY    | BEDR        |
+| 910568655 | AUKLANDSHAMN OG ELVEGARD | BEDR        |
+
+Brukernavn og passord for testbrukere til virksomhetene over fåes ved å kontakte <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+
+### Lenker til testmiljø
+
+- Altinn <a href="https://tt02.altinn.no">https://tt02.altinn.no</a>
+- eBoks (Digital Post til Innbyggere) <a href="http://demo2-www.e-boks.no/">http://demo2-www.e-boks.no/</a>
+- Digipost (Digital Post til Innbyggere) <a href="http://www.difitest.digipost.no/">http://www.difitest.digipost.no/</a>
+- KS SvarUt og SvarInn <a href="https://test.svarut.ks.no/tjenester/">https://test.svarut.ks.no/tjenester/</a>
+
+## Teste i eFormidlings produksjonsmiljø
 
 En virksomhet som er klar til å ta i bruk eFormidling eller som skal gjøre endringer i oppsettet sitt anbefales å gjøre
-enkel gjennomføre noen enkle tester for å bekrefte at kommunikasjon, tilganger og sertifikatoppsett fungerer som
-forventet.
+noen enkle tester i produksjonsmiljøet for å bekrefte at kommunikasjon, tilganger og sertifikatoppsett fungerer som forventet. 
+
+Ved testing før første gangs bruk av en ny meldingstjeneste kan det være greit å huske på:
+
+- Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
+- Avtal med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
+- Husk å teste alle meldingstjenester som virksomheten skal benytte
+- Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
+- **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i dette tidsrommet. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
+- Om noe ikke skulle fungere gi straks beskjed til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> så vi kan fjerne tilganger og feilsøke problemet.
+- Reelle forsendelser som mottas under testperioden uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
+- Hvordan vet jeg at det fungerer?
+  - Ved forsendelser må en høre med mottaker at meldingen er kommet frem
+  - Ved mottak skal meldingene bli pushet fra integrasjonspunktet inn i sak/arkiv/fagsystem
+- Når en har verifisert at både mottak og sending av forsendelser fungerer melder en fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
 ## Testcase
 
@@ -115,7 +171,7 @@ forventet.
 > Og så skal min virksomhet få tilbake en arkivmeldings-kvittering <br>
 > Og så skal innholdet i arkivmeldings-kvitteringen være som forventet <br>
 
-> Gitt en annen virksomhet som bruker KS SvarUt og SvarInn <br>
+> Gitt en annen virksomhet som bruker KS SvarInn <br>
 > Når min virksomhet sender en saksbehandlingsmelding til denne virksomheten <br>
 > Så skal denne virksomheten motta meldingen <br>
 > Og så skal innholdet være som forventet <br>

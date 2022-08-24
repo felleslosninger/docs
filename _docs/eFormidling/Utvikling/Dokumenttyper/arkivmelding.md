@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_mappinger
 ---
 
 Dokumenttypen `arkivmelding` består av et standard business document (SBD), en arkivmelding og et eller flere dokument.
@@ -56,7 +57,7 @@ mottak. Les mer på:
 > Instruksjonen gjelder bare ved formidling med Altinn Digital Post, og ignoreres ved formidling til de andre
 meldingstjenestene.
 >
-> Instruksjonen bestemmer om varsel om innnkommende post skal sendes til mottaker med e-post, SMS eller både e-post og
+> Instruksjonen bestemmer om varsel om innkommende post skal sendes til mottaker med e-post, SMS eller både e-post og
 SMS.
 >
 > | Lovlige verdier                 | `EpostOgSMS`, `Epost` eller `SMS`                        |
@@ -90,7 +91,7 @@ meldingstjenestene.
 > Instruksjonen gjelder bare ved formidling med Altinn Digital Post, og ignoreres ved formidling til de andre
 meldingstjenestene.
 >
-> Instruksjonen bestemmer hvor mange dager som skal gå før revarsel sendes til mottakar om innkommende post. 
+> Instruksjonen bestemmer hvor mange dager som skal gå før revarsel sendes til mottaker om innkommende post. 
 >
 > | Lovlige verdier                 | Heltall                     |
 > | Standard verdi                  | `7`                         |
@@ -103,7 +104,7 @@ meldingstjenestene.
 >
 > Instruksjonen bestemmer hvilken foresendelsestype i KS SvarUt meldingen skal markeres med.
 >
-> | Lovlige verdier                 | En av forsendelsestypene som er tilgjenglig i KS SvarUt |
+> | Lovlige verdier                 | En av forsendelsestypene som er tilgjengelig i KS SvarUt |
 > | Standard verdi                  | Utelatt                                                 |
 > | Konfigurasjon av standard verdi | Ikke støttet                                            |
 

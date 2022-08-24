@@ -29,3 +29,8 @@ Ingen av disse filene er påkrevde for å starte integrasjonspunktet, om det man
 `integrasjonspunkt-local.properties` og virksomhetens keystore (p12 eller jks) må tas vare på og kreves for å starte opp integrasjonspunktet.
 
 `integrasjonspunkt-[versjon].jar` kan lastes ned på nytt ved behov.
+
+## Neste steg
+
+- [Automatisk oppgradering](automatisk_oppgradering) (anbefalt)
+- [Overvåking](overvaking) (anbefalt)

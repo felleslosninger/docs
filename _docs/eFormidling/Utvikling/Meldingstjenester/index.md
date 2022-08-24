@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_selfhelp_traffic_flow
 ---
 
 Meldingstjenester som brukes i eFormidling:

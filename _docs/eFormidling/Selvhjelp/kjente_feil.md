@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_selfhelp_typical_errors
 ---
 
 Det finnes noen kjente feilsituasjoner som kan oppstå når en skal installere integrasjonspunktet, ofte knyttet til feil- eller manglende konfigurasjon. Under har vi forsøkt å liste opp vanlige feilsituasjoner og hvordan du kan unngå eller løse disse selv.
@@ -12,7 +13,28 @@ Det finnes noen kjente feilsituasjoner som kan oppstå når en skal installere i
 {:toc}
 
 ## Generelle feil
-- White spaces bak linjer i ```integrasjonspunkt-local.properties``` fila kan ofte føre til feil. Sørg for å fjerne desse
+- White spaces bak linjer i `integrasjonspunkt-local.properties` fila kan ofte føre til feil. Sørg for å fjerne desse
+
+### Låst fil-database
+
+Dersom Integrasjonspunktet blir drept under oppstart, og liquibase ikke får fjernet låsen i databasen, må en manuelt inn i databasen og fjerne innholdet fra tabellen DATABASECHANGELOGLOCK
+
+1. last ned https://repo1.maven.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.jar
+2. legg jar'en i samme katalog som databasen ligger dvs. working directory, der dere kjører integrasjonspunktet
+3. kjør "java -jar .\h2-1.4.200.jar"
+4. jdbcurl: jdbc:h2:./integrasjonspunkt, user: sa, blankt passord
+5. slett tabellen DATABASECHANGELOGLOCK
+
+URLen skal være slik som denne: jdbc:h2:C:/Users/katalog/IdeaProjects/efm-integrasjonspunkt/integrasjonspunkt/integrasjonspunkt
+Bytt ut med riktig path
+
+Shellet en kjører h2-klienten fra må  ha administratorrettigheter. Og pass på at integrasjonspunktet ikke kjører samtidig.
+
+### Postgres database vokser urimelig mye
+
+'large object'-opprydding ved bruk av egen database for integrasjonspunktet
+En bør vurdere  opprydding av store objekt dersom en bruker PostgreSQL som egen database for integrasjonspunktet. Dette skyldes at PostgreSQL som standard lagrer BLOB som “large object” (i egen tabell), og at JDBC ikke rydder opp ved sletting. Konsekvensene hvis dette ikke gjøres, vil kunne være at sikkerhetskopi først tar lang tid, og deretter begynner å terminere grunnet høy minnebruk. Verktøyet [vacuumlo](https://www.postgresql.org/docs/13/vacuumlo.html) fjerner foreldreløse store objekter.
+
 
 ### 400 bad request
 400 Bad request feil i loggen betyr ofte at du forsøker å bruke et scope du ikkje har tilgang til. Typisk sett fordi dette ikkje er åpna på Digitaliseringsdirektoratet si side. Dei scopesa du forsøker å bruke er bestemt av properties som feks ```difi.move.feature.enableDPO=true``` eller ```difi.move.feature.enableDPV=true```
@@ -211,4 +233,3 @@ java.io.IOException: Invalid location size: 11:4218153, size: 91
         at org.apache.activemq.store.kahadb.disk.journal.DataFileAccessor.readRecord(DataFileAccessor.java:88)
         at org.apache.activemq.store.kahadb.disk.journal.Journal.read(Journal.java:936)
 ```
-

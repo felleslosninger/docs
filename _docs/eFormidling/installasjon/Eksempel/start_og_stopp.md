@@ -4,9 +4,13 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_ip_run
 ---
 
 Her er alternative måter en kan bruke til å kjøre integrasjonspunktet og KOSMOS.
+
+1. TOC
+{:toc}
 
 ## Integrasjonspunktet
 
@@ -19,12 +23,12 @@ Integrasjonspunktet kan også installeres som en tjeneste på server. For å gj�
 Dokumentasjonen på programvaren du trenger ligger [på github](https://github.com/kohsuke/winsw). Du trenger to filer: .exe -filen fra dette programmet og en egen .xml-fil for å fortelle .exe -filen hvilke innstillinger som skal brukes. Dette er samme konseptet som [einnsyn-klient installasjonen er basert på](/docs/eInnsyn/). 
 
 1. Last ned Winsw.exe [her](https://github.com/kohsuke/winsw/releases). Mer informasjon om hvilken versjon du skal velge står [her: Supported .NET versions](https://github.com/kohsuke/winsw#user-content-supported-net-versions). Om du er usikker på hvilken .NET versjon du har, [les her](https://support.microsoft.com/nb-no/help/318785/how-to-determine-which-versions-and-service-pack-levels-of-the-microso)
-2. Last ned konfigurasjonsfila vår for [testmiljø](/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø](/resources/eformidling/integrasjonspunkt-prod.xml) <!-- desse er korrekte URL'er til felleslosninger integrasjonspunkt 05.03.2020 -->
+2. Last ned konfigurasjonsfila vår for [testmiljø](/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø](/resources/eformidling/integrasjonspunkt-prod.xml)
 3. Endre navn på .exe fila og xml-filene til de navnene du ønsker. For eksempel integrasjonspunkt-service.exe og integrasjonspunkt-service.xml. (begge må ha samme navn)
 4. Legg begge disse filene i integrasjonspunktmappa di.
 5. Endre versjonsnummeret på integrasjonspunkt-%versjonsnr%.jar til å være lik din versjon
 * For å installere tjenesten gjør du følgende:
-  - åpne kommandovindu som administrator og naviger til integrasjonspunktmappa. Feks ```cd c:\integrasjonspunkt```. Kjør så følgende kommando
+  - åpne kommandovindu som administrator og naviger til integrasjonspunktmappa. F.eks. ```cd c:\integrasjonspunkt```. Kjør så følgende kommando
   ```
   integrasjonspunkt-service.exe install
   integrasjonspunkt-service.exe start
@@ -35,11 +39,49 @@ I denne config-fila er det lagt inn automatisk loggrotering ved 10MB størrelse 
 Loggene for denne tjenesten vil i utgangspunktet bli skrevet til feks ```c:\integrasjonspunkt\integrasjonspunkt-logs``` og filen integrasjonspunkt-service.out. Innholdet i denne er veldig likt innholdet i application.log filen.
 
 #### Kjøre med lavest mulige rettigheter
+
 Vi anbefaler å kjøre integrasjonspunktet med en minste rettighetsbruker. For å endre hvilken bruker som kjører tjenesten ved å høyreklikke på den, velge "properties" og så velge "logg på" fanen. [Hvordan opprette en minste rettighetsbruker.](#alt-3-kj%C3%B8re-via-task-scheduler-med-minste-rettigheter)
 
-#### Reinstallasjon av tjenesten
+#### Loggrullering
 
-Om du gjør endringer i ip-service.xml filen så må du reinstallere tjenesten. Det betyr at all oppgradering til ny versjon krever en reinstallasjon av tjenesten. Det gjør du ved å åpne kommandovindu som administrator og navigere til integrasjonspunktmappa. Kjør så følgende kommandoer.
+Om integrasjonspunktet ditt er satt opp til å kjøre som en Windows-tjeneste så kan en enkelt også aktivere loggrullering.
+
+Du kan rotere logger på størrelse og samtidig velge hvor mange en ønsker å ta vare på. standardstørrelsen her er 10MB, denne kan du endre til ønsket størrelse. Antall filer som blir tatt vare på er 8. Dette kan også endres. Sørg for at dette er innenfor ``` <service> </service> ``` taggen slik som resten av konfigurasjonen.
+
+```
+<log mode="roll-by-size">
+	<sizeThreshold>10240</sizeThreshold>
+	<keepFiles>8</keepFiles>
+</log> 
+```
+
+Ferdig konfigurert ser det feks slik ut:
+
+```
+<service>
+            <id>einnsyn-integrasjonspunkt</id>
+            <name>einnsyn-integrasjonspunkt</name>
+            <description>Klient for opplasting av journaldata og nedlasting av innsynskrav</description>
+            <argument>-Xmx2048m</argument>
+            <argument>-jar</argument>
+            <argument>integrasjonspunkt-2.0.7.jar</argument>
+            <argument>--app.logger.enableSSL=false</argument>
+            <logpath>%BASE%/integrasjonspunkt-logs</logpath>
+            <log mode="roll-by-size">
+                <sizeThreshold>10240</sizeThreshold>
+                <keepFiles>8</keepFiles>
+            </log>
+            <executable>java</executable>
+</service>
+```
+
+#### Oppgradere integrasjonspunkt som kjører som en tjeneste
+
+Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Om du har integrasjonspunkt installert som en tjeneste så må du endre versjonsnummer i integrasjonspunkt-service.xml-filen og dermed reinstallere tjenesten.
+
+I integrasjonspunkt-service.xml-filen er det denne linjen som må oppdateres med korrekt(nytt) versjonsnummer: ```<argument>integrasjonspunkt-2.0.X.jar</argument>```.
+
+Når du gjør endringer i versjon / integrasjonspunkt-service.xml fil så må du reinstallere tjenesten. Det gjør du ved å åpne kommandovindu som administrator og navigere til integrasjonspunktmappa. Kjør så følgende kommandoer.
 
 ```
 integrasjonspunkt-service.exe stop
@@ -50,18 +92,18 @@ integrasjonspunkt-service.exe start
 
 Da er tjenesten reinstallert og restartet.
 
-### Alt 2: Kjøre Integrasjonspunktet fra kommandovindu
+### Alt 2: Kjøre integrasjonspunktet fra kommandovindu
 
 Integrasjonspunktet startes fra kommandolinjen med følgende kommandoer for henholdsvis test og produksjon. For å starte integrasjonspunktet kreves visse minimum brukerrettigheter, [les mer om dette her](#alt-3-kj%C3%B8re-via-task-scheduler-med-minste-rettigheter). Eller så kan en eventuelt starte kommandovinduet som administrator og dermed også ha rettigheter til å starte det.
 
 #### TEST
 ```powershell
-java -jar -Dspring.profiles.active=staging integrasjonspunkt-[versjon].jar  
+java -Xmx2048m -jar -Dspring.profiles.active=staging integrasjonspunkt-[versjon].jar  
 ```
 
 #### PROD
 ```powershell
-java -jar integrasjonspunkt-[versjon].jar 
+java -Xmx2048m -jar integrasjonspunkt-[versjon].jar 
 ```
 
 Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form av en wsdl.
@@ -77,8 +119,11 @@ http://localhost:<port-til-integrasjonspunkt>/manage/health
 
 Merk: Om du kjører integrasjonspunktet fra kommandolinjen så må dette vinduet stå åpent. Eventuelt så kan du endre ```java -jar``` i kommandoen til ```javaw -jar```. Da vil det kjøre uten kommandovinduet, men du vil måtte lukke det ved å finner prosessen i task manager / oppgavebehandling og stoppe den der. 
 
-### Alt 3: Kjøre via task scheduler med minste rettigheter
+#### Oppgradere integrasjonspunkt som kjører fra kommandovindu
 
+Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Dermed må du bytte ut versjonsnummeret i din oppstartskommando.
+
+### Alt 3: Kjøre via task scheduler med minste rettigheter
 
 Når en skal starte integrasjonspunktet så kreves det visse rettigheter på denne brukeren for at programmet skal kunne fungere. 
 
@@ -86,7 +131,7 @@ Når en skal starte integrasjonspunktet så kreves det visse rettigheter på den
 
 %servernavn%\integrasjonspunkt
  
-**Sette rettar for brukar i local security policy (deaktivere påloggingsmulighet):**
+**Sette rettigheter for bruker i local security policy (deaktivere påloggingsmulighet):**
 
 - Deny log on locally
 - Deny log on thru remote desktop service 
@@ -124,12 +169,11 @@ user: %servernavn%\integrasjonspunkt
 
 ![Taskscheduler](/images/eformidling/taskscheduler.PNG)
 
-
 Merk: om du skal starte integrasjonspunktet i staging-miljø må du bruke følgende argument i stedet: ```-jar -Dspring.profiles.active=staging integrasjonspunkt-%versjonsnr%.jar ```
 
+#### Oppgradere integrasjonspunkt som kjører via task scheduler
 
----
-
+Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg den i integrasjonspunkt-mappen. Dermed må du bytte ut versjonsnummeret i din task. Under argument (optional)
 
 ## KOSMOS
 
@@ -181,7 +225,6 @@ For å starte frå kommandolinja kan du bruke følgande kommando:
 **I staging**
 ```java -jar -Dspring.profiles.active=staging kosmos-x.y.z.jar```
 
-
 ### Starte i Linux
 For å starte kan ein bruke samme kommando som over, men om ein ynskjer å starte KOSMOS som ei bakgrunnsteneste kan ein legge på ein ampersand på slutten av kommandoen. Her treng du sjølvsagt ikkje wrapper filene som vist på biletet over, men heller ha ein mappestruktur som liknar på dette: 
 
@@ -191,5 +234,3 @@ Døme:
 ```java -jar -Dspring.profiles.active=staging kosmos-x.y.z.jar &```
 
 Like etter at kommandoen er eksekvert vil du få returnert ein PID for prosessen. Denne kan nyttast om du treng å stoppe prosessen. Du vil også kunne finne den ved å bruke *htop* og sjå etter kommandoen, eller i *top* og stenge ned java prosessen. Integrasjonspunktet startar som eigen Java-prosess. 
-
----

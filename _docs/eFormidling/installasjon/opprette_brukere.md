@@ -5,6 +5,7 @@ summary: ""
 
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_create_users
 ---
 
 Enkelte av meldingstjenestene som brukes av eFormidling krever at virksomheten selv oppretter en bruker med brukernavn
@@ -16,7 +17,7 @@ og passord.
 ## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste)
 
 (Gjelder bare for digital post til offentlige virksomheter)
-Integrasjonspunktet kjører som [datasystem](https://www.altinn.no/no/Portalhjelp/Datasystemer/) mot Altinn's meldingsformidler. Integrasjonspunktet må registeres som et datasystem AltInn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
+Integrasjonspunktet kjører som [datasystem](https://www.altinn.no/no/Portalhjelp/Datasystemer/) mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
 
 Når du oppretter datasystemet er det viktig at det gjøres av person som kan representere virksomheten. Hvordan man representerer virksomheten kan du lese [her](https://www.altinn.no/hjelp/skjema/faq/).
 
@@ -42,7 +43,7 @@ Informasjon om hvordan du logger på Altinn portal finner du <a href="https://ww
 
 ## Opprette brukere for KS SvarUt og SvarInn
 
-Når beskrivelsen under er utført må brukernamn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_properties_config#digital-post-til-virksomheter). 
+Når beskrivelsen under er utført må brukernavn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_properties_config#digital-post-til-virksomheter). 
 
 Se [Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/eformidling/20) for alt om avtaler, begrunnelser, sammenhenger og lignende ikke teknisk. Avtaler må være på plass før en begynner å konfigurere
 
@@ -64,7 +65,7 @@ Klikk på «overordnet organisasjon» og legg inn fakturaopplysninger:
  
 Klikk så på «underordnet» organisasjonsnivå
 
-Menypunktene du ser markert med grønn hake skal du klikke deg gjennom og fylle ut. I dette tilfellet er brukernamnet for svarut brukeren vist venstre side av skjermbildet, altså "fm_nordland". Feks: ```difi.move.fiks.ut.username=fm_nordland```.
+Menypunktene du ser markert med grønn hake skal du klikke deg gjennom og fylle ut. I dette tilfellet er brukernavnet for svarut brukeren vist venstre side av skjermbildet, altså "fm_nordland". Feks: ```difi.move.fiks.ut.username=fm_nordland```.
  
 ![bilde3]({{site.baseurl}}/images/eformidling/03_FIKS.png) 
 
@@ -141,7 +142,7 @@ Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelsese
 
 ## Opprette bruker for Altinn Digital Post
 
-Dette gjøres av Altinn etter atDigitaliseringsdirektoratet sender bestilling. For atDigitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
+Dette gjøres av Altinn etter at Digitaliseringsdirektoratet sender bestilling. For at Digitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
 
 [Informasjonsskjema](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMjhUWVMxWk1OUkw0SDZXME9NVk8zOUEwNS4u)
 

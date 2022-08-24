@@ -22,7 +22,7 @@ Se gjerne mer om SBD på:
 eFormidling benytter en JSON-variant av SBD. Se eksempelet under:
 
 ```json
-{% include /eformidling/nextmove/sbd.json %}
+{% include /eformidling/sbd.json %}
 ```
 
 ## Standard Business Document Header
@@ -37,7 +37,7 @@ Innholdet i SBDH er beskrevet under.
 > (ICD) 0192). Identifkatorer for norske virksomheter er på formen `0192:<organisasjonsnummer>`. 
 > 
 > Ved sending på vegne av en annen virksomhet oppgis den andre virksomhetens organisasjonsnummer istedet for
-> virksomheten som kjører integrasjonspunktet. For bakoverkompatabilitet støttes syntaksen
+> virksomheten som kjører integrasjonspunktet. For bakoverkompatibilitet støttes syntaksen
 > `0192:<orgnr>:<paa-vegne-av-orgnr>` fortsatt, selv om den ikke anbefales.
 >
 > | Lovlige verdier                 | ISO6523                |
@@ -123,17 +123,17 @@ Innholdet i SBDH er beskrevet under.
 > 
 > Avsenders referanse.
 >
-> | Lovlige verdier                 | UUID (fritekst støttes inntil videre for bakoverkompabilitet) |
-> | Standard verdi                  | Ingen                                                         |
-> | Konfigurasjon av standard verdi | Ikke støttet                                                  |
+> | Lovlige verdier                 | UUID (fritekst støttes inntil videre for bakoverkompatibilitet) |
+> | Standard verdi                  | Ingen                                                           |
+> | Konfigurasjon av standard verdi | Ikke støttet                                                    |
 
 > `businessScope.scope[type=ReceiverRef].identifier` (frivillig)
 > 
 > Mottakers referanse.
 >
-> | Lovlige verdier                 | UUID (fritekst støttes inntil videre for bakoverkompabilitet) |
-> | Standard verdi                  | Ingen                                                         |
-> | Konfigurasjon av standard verdi | Ikke støttet                                                  |
+> | Lovlige verdier                 | UUID (fritekst støttes inntil videre for bakoverkompatibilitet) |
+> | Standard verdi                  | Ingen                                                           |
+> | Konfigurasjon av standard verdi | Ikke støttet                                                    |
 
 ## Forretningsmelding
 

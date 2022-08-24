@@ -12,7 +12,7 @@ Dokumenttypen har identifikatoren `urn:no:difi:eformidling:xsd::status`.
 
 Dokumenttypen er en intern kvittering som brukes i eFormidlings meldingstjeneste og eInnsyns meldingstjeneste. Meldinger
 med denne dokumenttypen produseres av integrasjonspunktet for å signalisere en status tilbake til avsender. Dersom en
-velger å integere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv.
+velger å integrere mot eFormidling uten integrasjonspunkt må integrasjonen sende disse statusmeldingene selv.
 
 Ved bruk av eFormidlings meldingstjeneste sendes dokumenttypen med prosessen `urn:no:difi:profile:arkivmelding:response:ver1.0`.
 

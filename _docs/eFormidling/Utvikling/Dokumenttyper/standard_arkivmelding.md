@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_nm_arkivmeldingen
 ---
 
 Arkivmeldingen inneholder arkivspesifikke metadata og er utformet for kommunikasjon mellom sak- og arkivsystem. Den ble
@@ -14,7 +15,7 @@ Det finnes per i dag flere varianter av arkivmeldingen. Den varianten som brukes
 NOARK 5 versjon 3.1 og er definert i arkivmelding.xsd. Arkivmelding.xsd definerer typen arkivmelding.
 
 | Felt              | Type                                  | Påkrevd                             |
-| ----------------- |-------------------------------------- |------------------------------------ |
+|-------------------|---------------------------------------|-------------------------------------|
 | system            | string                                | ja                                  |
 | meldingId         | string                                | ja                                  |
 | tidspunkt         | datetime                              | ja                                  |
@@ -30,6 +31,12 @@ eFormidlings krav til utforming av arkivmelding:
 - arkivmelding skal inneholde en saksmappe
 - saksmappen skal inneholde en journalpost
 - det tas bare hensyn til dokumentobjekt under tilhørende dokumentbeskrivelse
+
+## Eksempel
+
+```xml
+{% include /eformidling/arkivmelding.xml %}
+```
 
 ## Tilpasninger til NOARKs typer
 

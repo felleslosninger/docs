@@ -36,13 +36,13 @@ Les mer om eInnsyn på:
 Publisering av møter representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                   |
-| --------------- | ------------------------------------------ |
+|-----------------|--------------------------------------------|
 | Meeting         | urn:no:difi:profile:einnsyn:meeting:ver1.0 |
 
 Publisering av møter representeres med følgende prosess for avsender:
 
-| **Prosessnavn** | **Prosessidentifikator**                     |
-| --------------- | -------------------------------------------- |
+| **Prosessnavn**  | **Prosessidentifikator**                    |
+|------------------|---------------------------------------------|
 | eInnsyn-respons  | urn:no:difi:profile:einnsyn:response:ver1.0 |
 
 En virksomhet opptrer alltid som avsender, mens mottaker av møter alltid er eInnsyn ved Digdir.
@@ -53,7 +53,7 @@ Det er bare en dokumenttype som støttes for å publisere møter til eInnsyn, og
 meldingstjeneste.
 
 | **Dokumenttype**                                      | **Meldingstjenester**                                                                 |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
+|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | [Publisering](../Utvikling/Dokumenttyper/publisering) | [eInnsyns meldingstjeneste](../Utvikling/Meldingstjenester/einnsyns_meldingstjeneste) |
 
 eInnsyn-kvittering
@@ -69,7 +69,7 @@ forretningsregler knyttet til valg av disse.
 ## Sende meldinger
 
 Før en virksomhet sender en melding gjøres et frivillig kapabilitetsoppslag for å se om mottakeren støtter
-meeting-prosessen. I så fall er dokumenttype og meldingstjeneste gitt. Virksomheten bygger så meldingen før den sendes
+møte-prosessen. I så fall er dokumenttype og meldingstjeneste gitt. Virksomheten bygger så meldingen før den sendes
 til integrasjonspunktet. Integrasjonspunktet ruter meldingen til eInnsyns meldingstjeneste.
 
 <div class="mermaid">

@@ -14,7 +14,7 @@ eFormidling lar din virksomhet motta innsynskrav fra eInnsyn.
 ## Introduksjon
 
 eInnsyn er _en søketjeneste for alle som leter etter informasjon knyttet til offentlig sektor_. Dersom et dokument ikke
-er tilgjenglig i sin helhet kan innbyggere sende innsynskrav fra eInnsyn til virksomheten som eier dokumentet.
+er tilgjengelig i sin helhet kan innbyggere sende innsynskrav fra eInnsyn til virksomheten som eier dokumentet.
 
 > Bruk av eInnsyn er obligatorisk for de statlige virksomhetene omfattet av forskrift til offentleglova § 6.
 >
@@ -37,13 +37,13 @@ Les mer om eInnsyn på:
 Innsynskrav representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                       |
-| --------------- | ---------------------------------------------- |
+|-----------------|------------------------------------------------|
 | Innsynskrav     | urn:no:difi:profile:einnsyn:innsynskrav:ver1.0 |
 
 Innsynskrav representeres med følgende prosess for avsender:
 
-| **Prosessnavn** | **Prosessidentifikator**                     |
-| --------------- | -------------------------------------------- |
+| **Prosessnavn**  | **Prosessidentifikator**                    |
+|------------------|---------------------------------------------|
 | eInnsyn-respons  | urn:no:difi:profile:einnsyn:response:ver1.0 |
 
 En virksomhet opptrer alltid som mottaker, mens avsender av innsynskrav alltid er eInnsyn ved Digdir.
@@ -54,7 +54,7 @@ Det er bare en dokumenttype som støttes for å sende innsynskrav fra eInnsyn, o
 meldingstjeneste.
 
 | **Dokumenttype**                                      | **Meldingstjenester**                                                                 |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
+|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | [Innsynskrav](../Utvikling/Dokumenttyper/innsynskrav) | [eInnsyns meldingstjeneste](../Utvikling/Meldingstjenester/einnsyns_meldingstjeneste) |
 
 ## Adressere meldinger

@@ -10,7 +10,7 @@ Denne siden viser et eksempel på vedtak til innbygger. Mottaker i eksempelet er
 `06068700602`. Det gjøres først et kapabilitetsoppslag for innbyggeren fordi vedtak til innbygger støttes av en
 eller flere meldingstjenester og fordi de ulike meldingstjenestene støtter vedtak til innbygger gjennom ulike
 dokumenttyper. Avsenders system må derfor vite hvilke dokumenttype som skal bygges. I tillegg må avsenders system velge
-hvilken meldingstjenste som skal brukes dersom flere støttes.
+hvilken meldingstjeneste som skal brukes dersom flere støttes.
 
 1. TOC
 {:toc}

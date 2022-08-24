@@ -4,6 +4,9 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from:
+- /eformidling_auto_update
+- /eformidling_kosmos_user_guide
 ---
 
 Formålet med denne siden er å gjøre det enklest mulig å installere og konfigurere automatisk
@@ -19,11 +22,11 @@ applikasjon som kan kjøre side om side med integrasjonspunktet.
 
 - [Demo av automatisk oppgradering](../Introduksjon/Demo/automatisk_oppgradering)
 
-Automatisk oppgradering fungerar i grove trekk slik:
+Automatisk oppgradering e i grove trekk slik:
 
-1. Samanliknar gjeldande integrasjonspunkt-versjon mot siste tilgjengelege i Maven-repositoriet til Digdir
-2. Dersom det er ein nyare versjon tilgjengeleg, vert denne lasta ned til klienten
-3. Gjeldande integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen (Dersom den nye versjonen ikkje startar, rullar KOSMOS attende)
+1. Sammenligner gjeldende integrasjonspunkt-versjon mot siste tilgjengelige i Maven-repositoriet til Digdir
+2. Dersom det er en nyere versjon tilgjengelig, vert denne lasta ned til klienten
+3. Gjeldende integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen (Dersom den nye versjonen ikke starter, ruller KOSMOS attende)
 
 ## Forutsetninger
 
@@ -108,22 +111,22 @@ kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
 ### Setje tidspunkt for oppdatering
 *Valgfritt*
 
-Ein kan setje tidspunkt for kortid applikasjonen vil forsøke å oppdatere integrasjonspunktet om ein ikkje ynskjer å
-benytte standard-verdiane. Standard verdiane er kl 05:30, 19:30 og 21:30
+Ein kan setje tidspunkt for kor tid applikasjonen vil forsøke å oppdatere integrasjonspunktet om ein ikkje ynskjer å
+bruke standard-verdiane. Standard verdiane er kl. 05:30, 19:30 og 21:30
 
 Her er nokre døme som viser korleis ein kan styre tidspunkt for oppdatering.
 
 ```
-#Standard verdi: Sjekkar etter oppdatering mandag-fredag kl 05:30, 19:30 og 21:30.
+#Standard verdi: Sjekkar etter oppdatering måndag-fredag kl. 05:30, 19:30 og 21:30.
 kosmos.schedulerCronExpression=0 30 5,19,21 * * MON-FRI
 
-#Sjekkar etter oppdatering kvar dag kl 06:00.
+#Sjekkar etter oppdatering kvar dag kl. 06:00.
 kosmos.schedulerCronExpression=0 0 6 * * ?
 
-#Sjekkar etter oppdatering kvar dag kl 23:15.
+#Sjekkar etter oppdatering kvar dag kl. 23:15.
 kosmos.schedulerCronExpression=0 15 23 ? * *
 
-#Sjekkar etter oppdatering kvar laurdag og søndag kl 12:00.
+#Sjekkar etter oppdatering kvar laurdag og søndag kl. 12:00.
 kosmos.schedulerCronExpression=0 0 12 ? * SAT,SUN
 
 #Sjekkar etter oppdatering kvart tredje minutt kvar time.
@@ -197,7 +200,7 @@ Siste versjon av integrasjonspunktet vert bestemt av konfigurasjonar frå efm-eu
 
 #### Early-Bird-versjon
 
-For interne test-miljø (som endå ikkje er på føtene) og klientar som ev. ønsker å hjelpa oss med testing, kan siste lanserte versjon overstyrast til den såkalla “early-bird-versjonen”. Dette er versjonar som har vorte testa i mindre grad enn siste offisielle versjon ovanfor. Early-bird-versjon kan aktiverast vha. ```kosmos.integrasjonspunkt.early-bird``` (true/false). Dersom denne er aktivert, vil versjonen i ```kosmos.integrasjonspunkt.early-bird-version``` overstyra ```kosmos.integrasjonspunkt.latest-version```. Early-bird-versjonen skal også konfigurerast vha. efm-eureka (dvs. utan lokal overstyring hjå klienten).
+For interne test-miljø (som endå ikkje er på føtene) og klientar som ev. ønsker å hjelpa oss med testing, kan siste lanserte versjon overstyrast til den såkalla “early-bird-versjonen”. Dette er versjonar som har vorte testa i mindre grad enn siste offisielle versjon ovanfor. Early-bird-versjon kan aktiverast mha. ```kosmos.integrasjonspunkt.early-bird``` (true/false). Dersom denne er aktivert, vil versjonen i ```kosmos.integrasjonspunkt.early-bird-version``` overstyra ```kosmos.integrasjonspunkt.latest-version```. Early-bird-versjonen skal også konfigurerast mha. efm-eureka (dvs. utan lokal overstyring hjå klienten).
 
 ### Sjekk av versjon-kompatibilitet
 
@@ -215,13 +218,13 @@ Artefaktar vert lasta ned frå lokasjonen som er angjeven i innstillinga ```kosm
 
 MD5- og SHA1-sjekksummar vert samanlikna etter nedlasting av JAR-filer frå Maven-repositoriet. 
 
-Kodesignering og validering er innført. Den offentlege delen av eFormidling sitt GPG-signeringssertifikat er gjort tilgjengeleg for kundane på [maven central](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/)  . Dette vil nyttast til verifikasjon av at JAR-filene som vert lasta ned er signert av Digdir. Brukarar av KOSMOS må lasta ned den offentlege nøkkelen til eFormidling sitt GPG-signeringssertifikat frå ei sikker nettside (dokumentasjonen vår/ HTTPS). Dokumentasjonen vil også innehalda fingeravtrykket til den offentlege nøkkelen. Etter å ha lasta ned offentleg nøkkel, kan brukarar rekna ut fingeravtrykket frå den nedlasta fila og samanlikna med den publiserte verdien frå Digdir. Dersom verdiane er like, kan dei nytta nøkkelen til å verifisera integrasjonspunkt-distribusjonar. Verifiseringa vert gjort av deploymanager, og det einaste brukarane treng å gjera er å legga nøkkelen i samme mappe som deploymanager-JAR-fila. 
+Kodesignering og validering er innført. Den offentlege delen av eFormidling sitt GPG-signeringssertifikat er gjort tilgjengeleg for kundane på [maven central](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/)  . Dette vil nyttast til verifikasjon av at JAR-filene som vert lasta ned er signert av Digdir. Brukarar av KOSMOS må lasta ned den offentlege nøkkelen til eFormidling sitt GPG-signeringssertifikat frå ei sikker nettside (dokumentasjonen vår/ HTTPS). Dokumentasjonen vil også innehalda fingeravtrykket til den offentlege nøkkelen. Etter å ha lasta ned offentleg nøkkel, kan brukarar rekna ut fingeravtrykket frå den nedlasta fila og samanlikna med den publiserte verdien frå Digdir. Dersom verdiane er like, kan dei nytta nøkkelen til å verifisera integrasjonspunkt-distribusjonar. Verifiseringa vert gjort av deploymanager, og det einaste brukarane treng å gjera er å legga nøkkelen i same mappe som deploymanager-JAR-fila. 
 
 Dersom namnet på nøkkel-fila har vorte endra, eller brukarane ønsker å legga den offentlege nøkkelen i ei anna mappe, må dei setja ein konfigurasjonsverdi: ```kosmos.verification.publicKeyPaths[0]```. Talet i klammeparantes er påkrevd fordi publicKeyPaths er ei liste - noko me nyttar oss av i overgangsperiodar når ein nøkkel er i ferd med å gå ut på tid. To offentlege nøklar med tilhøyrande fingeravtrykk vil då vera publiserte i Digdir sin dokumentasjon, og brukarane må setja publicKeyPaths[0] og -[1] for å bruka begge til å verifisera integrasjonspunkt-distribusjonar.
 
 ### Stopp av gammalt integrasjonspunkt
 
-Dersom valideringa av den nye versjonen passerar, vert eit ev. køyrande integrasjonspunkt stoppa via ein førespurnad til shutdown-endepunktet. Deretter sjekkar KOSMOS helse-endepunktet inntil status ikkje lenger returnerar “UP” eller operasjonen timar ut. Innstillingane ```kosmos.shutdown-retries``` og ```kosmos.shutdown-poll-interval-in-ms``` har sentrale rollar i denne funksjonaliteten. Dersom integrasjonspunktet ikkje stoppar innan det resulterande vindauget, vil KOSMOS logga at den ikkje kunne stoppa integrasjonspunktet. Operasjonen vil då avbryta, og integrasjonspunktet vil vera i inneverande tilstand fram til neste periodiske KOSMOS-køyring.
+Dersom valideringa av den nye versjonen passerer, vert eit ev. køyrande integrasjonspunkt stoppa via ein førespurnad til shutdown-endepunktet. Deretter sjekkar KOSMOS helse-endepunktet inntil status ikkje lenger returnerer “UP” eller operasjonen timar ut. Innstillingane ```kosmos.shutdown-retries``` og ```kosmos.shutdown-poll-interval-in-ms``` har sentrale rollar i denne funksjonaliteten. Dersom integrasjonspunktet ikkje stoppar innan det resulterande vindauget, vil KOSMOS logga at den ikkje kunne stoppa integrasjonspunktet. Operasjonen vil då avbryta, og integrasjonspunktet vil vera i inneverande tilstand fram til neste periodiske KOSMOS-køyring.
 
 ### Oppstart av ny versjon
 
@@ -246,3 +249,8 @@ Integrasjonspunktet loggar mykje under oppstart, noko som kan vera nyttig medan 
 #### Allowlisting av versjon som har vore starta før
 
 Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet etter at applikasjonen har vore skrudd av så vart allowlisting innført og denne lagar .allowlisted filer. Til dømes om applikasjonen og integrasjonspunktet begge er av så vil den ikkje forsøker å oppdatere integrasjonspunktet om det allereie eksisterer ei .allowlisted fil. Dette var også eit behov i ein spesiell case der ```kosmos.integrasjonspunkt.supported-major-version``` var satt lik køyrande versjon og det har vore releasa ein “latest-version” som har høgare major enn det som er konfigurert til å være støtta.  Etter at integrasjonspunktet har starta så vil applikasjonen lage denne .allowlisted fila, denne vert automatisk fjerna ved oppgradering og ny fil for gjeldande versjon vert oppretta. Innhaldet er tidspunktet den vart oppretta. 
+
+## Neste steg
+
+- [Sikkerhetskopi](sikkerhetskopi) (anbefalt)
+- [Overvåking](overvaking) (anbefalt)

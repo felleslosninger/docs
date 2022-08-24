@@ -36,14 +36,14 @@ Les mer om eInnsyn på:
 Publisering av journalpost representeres med følgende prosess for mottaker:
 
 | **Prosessnavn** | **Prosessidentifikator**                       |
-| --------------- | ---------------------------------------------- |
+|-----------------|------------------------------------------------|
 | Journalpost     | urn:no:difi:profile:einnsyn:journalpost:ver1.0 |
 
 Publisering av journalpost representeres med følgende prosess for avsender:
 
-| **Prosessnavn** | **Prosessidentifikator**                     |
-| --------------- | -------------------------------------------- |
-| eInnsyn-respons  | urn:no:difi:profile:einnsyn:response:ver1.0 |
+| **Prosessnavn**    | **Prosessidentifikator**                    |
+|--------------------|---------------------------------------------|
+| eInnsyn-respons    | urn:no:difi:profile:einnsyn:response:ver1.0 |
 
 En virksomhet opptrer alltid som avsender, mens mottaker av journalpost alltid er eInnsyn ved Digdir.
 
@@ -53,7 +53,7 @@ Det er bare en dokumenttype som støttes for å publisere journalpost til eInnsy
 meldingstjeneste.
 
 | **Dokumenttype**                                      | **Meldingstjenester**                                                                 |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
+|-------------------------------------------------------|---------------------------------------------------------------------------------------|
 | [Publisering](../Utvikling/Dokumenttyper/publisering) | [eInnsyns meldingstjeneste](../Utvikling/Meldingstjenester/einnsyns_meldingstjeneste) |
 
 ## Adressere meldinger

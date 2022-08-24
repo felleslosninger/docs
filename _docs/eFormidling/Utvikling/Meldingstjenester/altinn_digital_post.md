@@ -23,7 +23,7 @@ Post tilbyr.
 
 Integrasjonspunktet omformer dokumenttypene arkivmelding og digital DPV til kall mot APIet Altinn Digital Post tilbyr.
 Se dokumenttypene for detaljer. For saksbehandlingsprosessene (inkludert taushetsbelagt saksbehandling) omformes den
-aktuelle prosessen til tilsvarande teneste i Altinn Digital Post (servicecode & serviceditoncode) slik at mottakende
+aktuelle prosessen til tilsvarende tjeneste i Altinn Digital Post (servicecode & serviceditoncode) slik at mottakende
 virksomheter kan ha ulik tilgangsstyring avhengig av prosess.
 
 Ved bruk av grensesnittet BEST/EDU omformer integrasjonspunktet først fra BEST/EDU til arkivmelding, før meldingen
@@ -54,6 +54,17 @@ C --> D("fa:fa-server Altinn Digital Post")
 C --> |Status| B
 D --> C
 </div>
+
+## Meldingsstatuser
+
+Meldingsstatuser for meldinger sendt med Altinn Digital Post:
+
+| Status    | Kommentar                                                                                                          | 
+|-----------|--------------------------------------------------------------------------------------------------------------------|
+| OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPV-melding                         |
+| SENDT     | Integrasjonspunkt har sendt forsendelsen til Altinn's DPV tjeneste og appreceipt blir levert tilbake til sak/arkiv |
+| LEVERT    | Når DPV-melding er levert til Altinn sin DPV tjeneste og status blit oppdatert                                     | 
+| LEST      | Når mottaker har åpnet og lest meldingen i Altinn, blir status oppdatert til LEST                                  | 
 
 ## Neste steg
 

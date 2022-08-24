@@ -14,7 +14,7 @@ samhandlingsmønstre denne understøtter.
 
 ## En-veis kommunikasjon med innbyggere
 
-En virksomhet sender en melding til en innbygger mha. eFormidling. Et enkelt mønster som passer bra når det som
+En virksomhet sender en melding til en innbygger ved hjelp av eFormidling. Et enkelt mønster som passer bra når det som
 hovedregel ikke forventes ytterligere kommunikasjon fra mottakers side. 
 
 <div class="mermaid">
@@ -29,8 +29,8 @@ V --> |eFormidling| I
 
 ## En-veis kommunikasjon med virksomheter
 
-En virksomhet sender en melding til en annen virksomhet mha. eFormidling. Et enkelt mønster som passer bra når det som
-hovedregel ikke forventes ytterligere kommunikasjon fra mottakers side.
+En virksomhet sender en melding til en annen virksomhet ved hjelp av eFormidling. Et enkelt mønster som passer bra når
+det som hovedregel ikke forventes ytterligere kommunikasjon fra mottakers side.
 
 <div class="mermaid">
 graph LR
@@ -44,8 +44,8 @@ V1 --> |eFormidling| V2
 
 ## To-veis kommunikasjon mellom virksomheter som bruker eFormidling eller KS FIKS
 
-En virksomhet sender en melding til en annen virksomhet mha. eFormidling. Den andre virksomheten svarer på den
-opprinnelige meldingen mha. eFormidling eller KS FIKS. Et enkelt mønster som passer bra til samhandling mellom
+En virksomhet sender en melding til en annen virksomhet ved hjelp av eFormidling. Den andre virksomheten svarer på den
+opprinnelige meldingen ved hjelp av eFormidling eller KS FIKS. Et enkelt mønster som passer bra til samhandling mellom
 virksomheter.
 
 <div class="mermaid">
@@ -61,9 +61,9 @@ V2 --> V1
 
 ## Forespørre informasjon fra innbyggere
 
-En virksomhet sender en melding til en innbygger mha. eFormidling. Meldingen inneholder en forespørsel om informasjon
-fra innbyggeren og en tydelig "call to action" som innbyggeren oppfordres til å følge videre til en tredjeparts
-tjeneste som lar innbyggeren oppgi forespurt informasjon. Tjenesten kan være laget av virksomheten selv, en
+En virksomhet sender en melding til en innbygger ved hjelp av eFormidling. Meldingen inneholder en forespørsel om
+informasjon fra innbyggeren og en tydelig "call to action" som innbyggeren oppfordres til å følge videre til en
+tredjeparts tjeneste som lar innbyggeren oppgi forespurt informasjon. Tjenesten kan være laget av virksomheten selv, en
 skjematjeneste hos Altinn eller noe annet. Etter at innbyggeren har oppgitt forespurt informasjon kan denne sendes
 tilbake til virksomheten med hjelp av eFormidling dersom det er ønskelig og støttet. Alternativt kan informasjonen
 innbyggeren har oppgitt tilgjengeliggjøres for virksomheten på en annen måte.
@@ -85,9 +85,9 @@ S --> |eFormidling| V
 
 ## Forespørre informasjon fra virksomheter
 
-En virksomhet (avsendervirksomheten) sender en melding til en annen virksomhet (mottakervirksomheten) mha. eFormidling.
-Meldingen inneholder en forespørsel om informasjon fra mottakervirksomheten og en tydelig "call to action" som
-mottaker virksomheten oppfordres til å følge videre til en tredjeparts tjeneste som lar mottakervirksomheten oppgi
+En virksomhet (avsendervirksomheten) sender en melding til en annen virksomhet (mottakervirksomheten) ved hjelp av
+eFormidling. Meldingen inneholder en forespørsel om informasjon fra mottakervirksomheten og en tydelig "call to action"
+som mottaker virksomheten oppfordres til å følge videre til en tredjeparts tjeneste som lar mottakervirksomheten oppgi
 forespurt informasjon. Tjenesten kan være laget av avsendervirksomheten selv, en skjematjeneste hos Altinn eller noe
 annet. Etter at mottakervirksomheten har oppgitt forespurt informasjon kan denne sendes tilbake til avsendervirksomheten
 med hjelp av eFormidling dersom det er ønskelig og støttet. Alternativt kan informasjonen mottakervirksomheten har

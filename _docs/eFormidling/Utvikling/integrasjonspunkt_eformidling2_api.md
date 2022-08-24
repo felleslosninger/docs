@@ -4,6 +4,11 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from:
+- /eformidling_dev
+- /eformidling_nm_meldingsflyt
+- /eformidling_nm_restdocs
+- /eformidling_nm_swagger
 ---
 
 Denne siden beskriver integrasjonspunktets API (`eFormidling 2`) og bruksmønstre for dette.
@@ -17,21 +22,21 @@ Se API-definisjon for detaljer:
 
 ## Sende meldinger
 
-Grensesnittet støtter to strategier for å sende meldinger. En ett-stegs strategi støttes for meldinger opp til 5 MB.
+Grensesnittet støtter to strategier for å sende meldinger. En ettstegs strategi støttes for meldinger opp til 5 MB.
 Denne strategien er først og fremst relevant ved masseutsendinger av små meldinger. Maskin-til-maskin meldinger tilhører
-ofte denne kategorien. For større meldinger støttes bare en fler-stegs-strategi. Implementasjoner der det er
-sluttbrukere som styrer innholdet (og dermed meldingsstørrelsen) anbefales å implementere fler-stegs strategien slik at
+ofte denne kategorien. For større meldinger støttes bare en flerstegs-strategi. Implementasjoner der det er
+sluttbrukere som styrer innholdet (og dermed meldingsstørrelsen) anbefales å implementere flerstegs strategien slik at
 både små og store meldinger støttes. Det anbefales bare å implementere en av strategiene.
 
-Ett-stegs strategien medfører færre HTTP-forespørsler og er kanskje litt raskere å implementere. Ett-stegs strategien
-er ment for små meldinger, mens fler-stegs strategien er ment for store. De to strategiene gir for alle praktiske formål tilnærmet lik ytelse.
+Ettstegs strategien medfører færre HTTP-forespørsler og er kanskje litt raskere å implementere. Ettstegs strategien
+er ment for små meldinger, mens flerstegs strategien er ment for store. De to strategiene gir for alle praktiske formål tilnærmet lik ytelse.
 
 Når en melding er sendt må implementasjonen vente på meldingsstatusen `LEVERT` før sending kan regnes som vellykket. Det
 er flere strategier for å følge med på meldingsstatuser. Disse er beskrevet for seg selv.
 
-### Ett-stegs strategi for små meldinger
+### Ettstegs strategi for små meldinger
 
-Ett-stegs strategien for små meldinger støtter meldingsstørrelser opp til 5 MB.
+Ettstegs strategien for små meldinger støtter meldingsstørrelser opp til 5 MB.
 
 <div class="mermaid">
 
@@ -62,7 +67,7 @@ participant mf  as Meldingsformidler
 
 </div>
 
-### Fler-stegs strategi for store og små meldinger
+### Flerstegs strategi for store og små meldinger
 
 <div class="mermaid">
 
@@ -102,20 +107,20 @@ Når en melding er sendt må implementasjonen vente på meldingsstatusen `LEVERT
 
 En utgående melding går gjennom en rekke statuser:
 
-| Verdi     | Beskrivelse |
-| --------- | ----------- |
+| Verdi     | Beskrivelse                                                       |
+|-----------|-------------------------------------------------------------------|
 | OPPRETTET | Melding mottatt i integrasjonspunktet fra fagsystem og lagt på kø |
-| SENDT     | Melding sendt |
-| MOTTATT   | Melding lastet ned og lagt på kø hos mottaker |
-| LEVERT    | Melding lastet ned fra mottakers kø |
-| LEST      | Mottaker har lest medlingen / sendt applikasjonskvittering |
+| SENDT     | Melding sendt                                                     |
+| MOTTATT   | Melding lastet ned og lagt på kø hos mottaker                     |
+| LEVERT    | Melding lastet ned fra mottakers kø                               |
+| LEST      | Mottaker har lest meldingen / sendt applikasjonskvittering        |
 
 Avvik:
 
-| Verdi          | Beskrivelse |
-| -------------- | ----------- |
+| Verdi          | Beskrivelse                                                                  |
+|----------------|------------------------------------------------------------------------------|
 | LEVETID_UTLOPT | Melding har ikke blitt levert og innen leveringsfristen og må sendes på nytt |
-| FEIL           | Uventet feilsitusjon oppstått |
+| FEIL           | Uventet feilsituasjon oppstått                                               |
 
 Det er flere strategier for å følge med på meldingsstatuser. Den enkleste strategien er å regelmessig slå opp på status
 for meldingene som er sendt men ikke ennå bekreftet levert. Ved større mengder meldinger vil dette medføre større mengder
@@ -186,7 +191,7 @@ gjerne:
 
 ## Motta meldinger
 
-Gresnsenittet støtter en hovedstrategi for å motta meldinger: regelmessig henting. I tillegg kan denne strategien
+Grensesnittet støtter en hovedstrategi for å motta meldinger: regelmessig henting. I tillegg kan denne strategien
 suppleres med webhook-abonnement slik at integrasjonspunktet aktivt sender meldinger videre til et endepunkt på
 klienten. Webhook-implementasjonen garanterer ikke leveranse i tilfeller der integrasjonspunktet startes på nytt eller
 der videresending av meldinger feiler (for eksempel dersom klientens endepunkt er nede). Denne strategien er derfor
@@ -229,7 +234,7 @@ participant mf  as Meldingsformidler
 
 ### Supplerende webhook-abonnement for innkommende meldinger
 
-Ved å sette opp et supplerende webhook-abonnement for innkommende meldinger oppnår en bedre responsitivitet enn om en
+Ved å sette opp et supplerende webhook-abonnement for innkommende meldinger oppnår en bedre responsivitet enn om en
 bare baserer seg på regelessig henting av innkommende meldinger. Når en får beskjed om en innkommende melding må en
 gjennom hovedstrategien for å hente meldingen.
 

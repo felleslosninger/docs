@@ -4,6 +4,10 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from:
+- /eformidling_releasenotes
+- /eformidling_releasenotes_sentrale_komp
+- /eformidling_nm_changelog
 ---
 
 ## Innhold

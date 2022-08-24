@@ -4,6 +4,9 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from:
+- /eformidling_nm_message
+- /eformidling_nm_customintegration
 ---
 
 Formålet med denne siden er å hjelpe utviklere i gang med å ta i bruk funksjonaliteten i eFormidling.
@@ -110,7 +113,7 @@ For å ta i bruk eFormidling uten integrasjonspunkt:
    - [eFormidlings meldingstjeneste](Meldingstjenester/eformidlings_meldingstjeneste)
 - Levering av meldingsstatuser til eFormidlings meldingsstatustjeneste må implementeres
    - [eFormidlings meldingsstatustjeneste](meldingsstatus_api)
-- Forretningsregler som skal sikre at meldinger sendes dit mottaker ønsker dem, påkrevd varsling, osv må implementeres
+- Forretningsregler som skal sikre at meldinger sendes dit mottaker ønsker dem, påkrevd varsling, osv. må implementeres
 - Flyten i ønsket prosess må implementeres inkludert integrasjoner med eventuelle andre meldingstjenester som kreves av
 en prosess
 - Eventuell øvrig meldingsfunksjonalitet (køing, feilhåndtering, ...) som ønskes må implementeres

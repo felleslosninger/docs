@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_properties_config
 ---
 
 Formålet med denne siden er å gjøre det enklest mulig å installere og konfigurere eFormidlings
@@ -16,8 +17,6 @@ integrasjonspunkt.
 
 Installasjon av eFormidlings integrasjonspunkt forutsetter at følgende punkt er gjennomført:
 
-- [Bestille tilganger](bestille_tilganger)
-- [Virksomhetssertifikat](virksomhetssertifikat)
 - [Forberede installasjon](forberede_installasjon)
 
 ## Docker-spesifikk konfigurasjon
@@ -40,7 +39,7 @@ nødvendig å konfigurere:
 ## Java-spesifikk konfigurasjon
 
 Ved bruk av Java direkte kan integrasjonspunktet konfigureres ved hjelp av en konfigurasjonsfil (anbefalt),
-Java-parametre eller miljøvariable.
+Java-parametere eller miljøvariable.
 
 1. Start med å opprette en mappe, for eksempel `c:\integrasjonspunkt`
 2. Last så ned [integrasjonspunkt-local.properties]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-local.txt) og lagre i overnevnte mappe
@@ -59,7 +58,7 @@ c:/
    |-- integrasjonspunkt-[versjon].jar
 ```
 
-> Du må fjerne bortkommentering (`#` i starten av en linje) fra `integrasjonspunkt-local.properties` for at
+> Du må fjerne bort-kommentering (`#` i starten av en linje) fra `integrasjonspunkt-local.properties` for at
 > den aktuelle konfigurasjonsegenskapen skal ha effekt.
 
 I tillegg må integrasjonspunktet kjøres med nødvendige tilganger til å opprette filer og mapper på dette filområdet.
@@ -82,7 +81,7 @@ Før integrasjonspunktet kan startes må det konfigureres.
 Det brukes ulike konvensjoner for navngiving av konfigurasjonsegenskaper avhengig av hvilke mekanisme som brukes for
 konfigurasjon. Følgende varianter tilsvarer samme konfigurasjonsegenskap: 
 
-- `person.firstName`, `person.first-name` eller `person.first_name` (for konfigurasjonsfil og Java-parametre)
+- `person.firstName`, `person.first-name` eller `person.first_name` (for konfigurasjonsfil og Java-parametere)
 - `PERSON_FIRST_NAME` (for miljøvariable)
 
 Ved behov for ekstra beskyttelse av virksomhetssertifikat, passord og andre hemmeligheter er det mulig å ta i bruk
@@ -95,7 +94,7 @@ mekanisme som injiserer verdier til miljøvariable
 Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
 
 1. Minimumskonfigurasjon for å få starte integrasjonspunktet
-2. Frivillig konfigurasjon (f.eks. ekstern database, BEST/EDU-integrasjon, osv)
+2. Frivillig konfigurasjon (f.eks. ekstern database, BEST/EDU-integrasjon, osv.)
 3. En og en meldingstjeneste
 
 > Vi anbefaler å konfigurere eFormidlings meldingstjeneste (DPO) før Altinn Digital Post (DPV) og KS SvarUt og SvarInn
@@ -231,7 +230,7 @@ omstarter.
 
 | Egenskap                            | Beskrivelse                                                                                                             | Standardverdi |
 |-------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.nextmove.useDbPersistence | Slår på/av mellomlagring av meldinger til database. Meldinger mellomlagres til fil istedetfor dersom denne er slått av. | false         |
+| difi.move.nextmove.useDbPersistence | Slår på/av mellomlagring av meldinger til database. Meldinger mellomlagres til fil istedenfor dersom denne er slått av. | false         |
 
 Eksempel:
 
@@ -327,7 +326,7 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 - øke samtidigheten for utgående meldinger
 - senke hyppighet for innhenting av meldingsstatuser
 - slå av oppslag i det sentrale folkeregister (DSF) dersom dette ikke trengs
-- øke tilgjenglige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og netteverk
+- øke tilgjengelige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og nettverk
 
 | Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -397,7 +396,7 @@ management.endpoint.health.show-details=never
 #### BEST/EDU-grensesnittet (under utfasing)
 *Valgfritt*
 
-Dersom en skal ta i bruk integrasjonspunktet mha. BEST/EDU-grensesnittet (under utfasing) så må dette konfigureres.
+Dersom en skal ta i bruk integrasjonspunktet vha. BEST/EDU-grensesnittet (under utfasing) så må dette konfigureres.
 Dette er bare aktuelt for eldre sak- og arkivsystemer.
 
 | Egenskap                          | Beskrivelse                                                            | Standardverdi |
@@ -429,7 +428,7 @@ Ved bruk av KS SvarInn så kan integrasjonspunktet håndtere feil ved behandling
 e-post. Dette fordi det kan oppstå uforutsette problem med konvertering av meldinger mellom KS FIKS og
 eFormidling.
 
-Ved bruk av BEST/EDU-grensesnittet er det støttet å levere innkommende meldinger på e-post istedetfor en BEST/EDU-
+Ved bruk av BEST/EDU-grensesnittet er det støttet å levere innkommende meldinger på e-post istedenfor en BEST/EDU-
 integrasjon. Dette kan slås på ved å sette `difi.move.noarkSystem.type=mail`.
 
 I disse tilfellene er det nødvendig å konfigurere e-post.
@@ -489,9 +488,10 @@ difi.move.dpo.password=mypassword
 >
 > Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
-| Egenskap                    | Beskrivelse                                          | Standardverdi |
-|-----------------------------|------------------------------------------------------|---------------|
-| difi.move.feature.enableDPE | Slår på/av støtte for eFormidlings meldingstjeneste  | true          |
+| Egenskap                                | Beskrivelse                                               | Standardverdi |
+|-----------------------------------------|-----------------------------------------------------------|---------------|
+| difi.move.feature.enableDPE             | Slår på/av støtte for eFormidlings meldingstjeneste       | true          |
+| difi.move.nextmove.serviceBus.batchRead | Slår på/av ytelsesforbedring (batch read med AMQP)        | false         |
 
 Eksempel:
 

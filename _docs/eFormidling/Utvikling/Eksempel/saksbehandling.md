@@ -6,7 +6,7 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Denne siden viser et eksempel på meldingsutveksling i forbindeslse med saksbehandling. Mottaker i eksempelet er
+Denne siden viser et eksempel på meldingsutveksling i forbindelse med saksbehandling. Mottaker i eksempelet er
 Direktoratet for Forvaltning og Økonomistyring (DFØ) med organisasjonsnummer `986 252 932`.
 
 1. TOC

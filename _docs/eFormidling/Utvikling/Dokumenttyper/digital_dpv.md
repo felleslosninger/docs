@@ -64,7 +64,7 @@ mottak. Les mer på:
 
 > `digital_dpv.dpv.varselTransportType` (frivillig)
 >
-> Instruksjonen bestemmer om varsel om innnkommende post skal sendes til mottaker med e-post, SMS eller både e-post og
+> Instruksjonen bestemmer om varsel om innkommende post skal sendes til mottaker med e-post, SMS eller både e-post og
 SMS.
 >
 > | Lovlige verdier                 | `EpostOgSMS`, `Epost` eller `SMS`                        |
@@ -89,7 +89,7 @@ SMS.
 
 > `digital_dpv.dpv.dagerTilSvarfrist` (frivillig)
 >
-> Instruksjonen bestemmer hvor mange dager som skal gå før revarsel sendes til mottakar om innkommende post.
+> Instruksjonen bestemmer hvor mange dager som skal gå før revarsel sendes til mottaker om innkommende post.
 >
 > | Lovlige verdier                 | Heltall                     |
 > | Standard verdi                  | `7`                         |

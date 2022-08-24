@@ -19,3 +19,8 @@ Integrasjonspunktets støttetjenester inkluderer tjenester som kan brukes for å
 | /manage/prometheus       | Diverse målinger for Prometheus                      |
 
 Integrasjonspunktet logg kan også overvåkes. Integrasjonspunktet logger både til fil og til standard output (STDOUT).
+
+## Neste steg
+
+- [Automatisk oppgradering](automatisk_oppgradering) (anbefalt)
+- [Sikkerhetskopi](sikkerhetskopi) (anbefalt)

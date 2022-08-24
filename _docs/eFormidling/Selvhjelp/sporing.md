@@ -1,42 +1,17 @@
 ---
-title: Sporing av forsendelser
-description: Denne siden har som mål å forklare hvordan bruke API'et til å se status på forsendelser, innkommende meldinger og utgående meldinger. 
-summary: "Denne siden har som mål å forklare hvordan bruke API'et til å se status på forsendelser, innkommende meldinger og utgående meldinger"
+title: Sporing av meldinger
+description: "" 
+summary: ""
 
 product: eFormidling
 sidebar: eformidling_sidebar
 redirect_from: /eformidling_api
 ---
 
-> Utviklere: [REST docs finner du her](https://difi.github.io/felleslosninger/eformidling_nm_restdocs.html)
+Denne siden har som mål å forklare hvordan en kan spore meldinger.
 
-* TOC
+1. TOC
 {:toc}
-
-## Terminologi
-
-**Disse begrepene vil heretter bli benyttet og er relevante for å forstå innholdet på denne siden korrekt.**
-
-|    Begrep   | Forkortelse/forklaring | 
-| :---: | :---: | 
-| Digital post til offentlige virksomheter | [DPO](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-offentlige-virksomheter-dpo) | 
-| Digital post til virksomheter | [DPV](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-virksomheter-dpv) | 
-| Digital post til innbygger | [DPI](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-til-innbygger-dpi) | 
-| Digital post KS FIKS SvarInn/SvarUt | [DPF](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#digital-post-ks-fiks-svarinnsvarut-dpf) | 
-| Forsendelser til/fra Einnsyn | [DPE](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#einnsyn-dpe) | 
-| Conversation | Forsendelse/konversasjon | 
-| ```conversationId``` | [ForsendelsesId](https://difi.github.io/felleslosninger/eformidling_nm_message.html#conversationid) | 
-| ```messageId```| [```MeldingsId``` i en Conversation](https://difi.github.io/felleslosninger/eformidling_nm_message.html#messageid) | 
-| ServiceIdentifier | Tjeneste/forsendelsesmåte. Feks DPO | 
-| Direction | Utgående eller innkommende forsendelse | 
-| Servicebus | Meldingsformidler brukt i Einnsyn| 
-| DLQ | [Dead Letter Queue](https://en.wikipedia.org/wiki/Dead_letter_queue) | 
-| Databehandler | [se kap 9, avsnitt 2](https://samarbeid.difi.no/bruksvilkar/bruksvilkar-einnsyn) | 
-| | |
-
-
-
----
 
 ## Sjekke forsendelser - grafisk brukergrensesnitt
 
@@ -113,8 +88,6 @@ BildeEks på søk med operatorer inn her
 
 > Skulle det være ting som er uklart når det kommer til bruk av det grafiske brukergrensesnittet, send gjerne en epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
----
-
 ## Sjekke forsendelser - API-testverktøy
 
 ### Før du starter
@@ -147,7 +120,6 @@ Markert på linje 7 og 8 er ```senderIdentifier``` og ```receiverIdentifier``` s
 
 På linje 16 starter ```messageStatuses``` som inneholder alle statuser registrert for denne DPO forsendelsen i kontekst av dette integrasjonspunktet (den andre parten i forsendelsen kan ha [andre statuser](https://difi.github.io/felleslosninger/eformidling_selfhelp_traffic_flow.html#dpo-statuser)). For denne forsendelsen er statusene ```OPPRETTET``` og ```INNKOMMENDE_MOTTATT``` registrert hos mottaker som betyr at avsender skal ha fått statuser oppdatert i sitt integrasjonspunkt. Denne forsendelsen er ikke fullført ennå.
 
-
 ### Levert forsendelse 
 ![](/images/eformidling/api_conv_delivered.PNG)
 
@@ -177,8 +149,6 @@ Her er et eksempel av en DPO forsendelse som feilet ved utsending og fikk aldri 
 ![](/images/eformidling/api_conv.PNG)
 
 Eksempel på hvordan et oppslag kan se ut med flere conversations delt opp i hver sin blokk med informasjon og statuser.
-
----
 
 ## Hente forsendelse på messageId 
 
@@ -228,8 +198,6 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 
 *Kommer*
 
---- 
-
 ## Utgående meldinger
 > /api/messages/out
 
@@ -238,6 +206,3 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 > [Se her for opprett og send]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/restdocs##messages-out-create)
 
 *Kommer*
-
----
-

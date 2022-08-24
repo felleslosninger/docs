@@ -28,10 +28,10 @@ integrasjonspunkt. Ett integrasjonspunkt kan konfigureres til å støtte en elle
 - Informasjon og vedtak til innbygger
 - FIKS IO-meldingsutveksling
 
-En virksomhet kan ha ett hovedintegrasjonspunkt som kan både sende og motta per funksjonalitet. I tillegg kan
+En virksomhet kan ha ett hoved-integrasjonspunkt som kan både sende og motta per funksjonalitet. I tillegg kan
 virksomheten ha flere integrasjonspunkt som er konfigurert til bare å støtte sending.
 
-Uavhengig av hvilke funksjonalitet ett integrasjonspunkt støtter kan denne gjøres tilgjenglig for virksomheten på flere
+Uavhengig av hvilke funksjonalitet ett integrasjonspunkt støtter kan denne gjøres tilgjengelig for virksomheten på flere
 måter:
 
 - Virksomheten drifter integrasjonspunktet selv
@@ -213,4 +213,4 @@ Ved bruk av ekstern database og meldingskø er det mulig å kjøre flere integra
 
 ## Neste steg
 
-- [Bestille tilganger](bestille_tilganger)
+- [Forberede installasjon](forberede_installasjon)

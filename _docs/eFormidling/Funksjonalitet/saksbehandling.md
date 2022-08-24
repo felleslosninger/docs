@@ -24,7 +24,7 @@ etterlevelse av saksbehandlingsregler. Mange av saksbehandlingssystemene innehol
 arkivering og kalles gjerne sak- og arkivsystemer. Det finnes også mange saksbehandlingssystem tilpasset spesifikke
 områder (for eksempel barnevern) som gjerne kalles fagsystemer.
 
-Som del av saksbehandlingen vil det ofte være behov for kommmunikasjon mellom flere virksomheter. Eksempel inkluderer:
+Som del av saksbehandlingen vil det ofte være behov for kommunikasjon mellom flere virksomheter. Eksempel inkluderer:
 - Innhenting av dokumentasjon
 - Klagebehandling
 - Kvalitetssikring
@@ -37,7 +37,7 @@ saksbehandling gir effektiv kommunikasjon om saker mellom ulike saksbehandlingss
 Saksbehandling representeres med følgende prosesser for mottaker:
 
 | **Prosessnavn**               | **Prosessidentifikator**                                          |
-| ----------------------------- | ----------------------------------------------------------------- |
+|-------------------------------|-------------------------------------------------------------------|
 | Administrasjon                | urn:no:difi:profile:arkivmelding:administrasjon:ver1.0            |
 | Helse, sosial og omsorg       | urn:no:difi:profile:arkivmelding:helseSosialOgOmsorg:ver1.0       |
 | Kultur, idrett og fritid      | urn:no:difi:profile:arkivmelding:kulturIdrettOgFritid:ver1.0      |
@@ -52,7 +52,7 @@ Saksbehandling representeres med følgende prosesser for mottaker:
 Saksbehandling representeres med følgende prosess for avsender:
 
 | **Prosessnavn**      | **Prosessidentifikator**                         |
-| -------------------- | -------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | Arkivmelding-respons | urn:no:difi:profile:arkivmelding:response:ver1.0 |
 
 Hvilke prosesser en mottaker støtter er opp til mottakeren og fremgår av mottakerens kapabiliteter. Mottakeren kan på
@@ -65,14 +65,14 @@ bare opptre som avsender.
 Det er bare en dokumenttype som støttes for saksbehandling.
 
 | **Dokumenttype**                                        | **Meldingstjenester**                                                                                                                                                                                                                          |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|---------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Arkivmelding](../Utvikling/Dokumenttyper/arkivmelding) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste)<br>[KS SvarUt](../Utvikling/Meldingstjenester/ks_svarut_og_svarinn)<br>[Altinn Digital Post](../Utvikling/Meldingstjenester/altinn_digital_post) |
 
 I tillegg forventer avsender en kvittering fra mottaker som en bekreftelse på at en melding er levert helt frem til
 mottakers system (ikke bare til mottakers integrasjonspunkt).
 
 | **Dokumenttype**                                                             | **Meldingstjenester**                                                                                                                                                                                                                          |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Arkivmelding-kvittering](../Utvikling/Dokumenttyper/arkivmeldingkvittering) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste)<br>[KS SvarUt](../Utvikling/Meldingstjenester/ks_svarut_og_svarinn)<br>[Altinn Digital Post](../Utvikling/Meldingstjenester/altinn_digital_post) |
 
 I tillegg har eFormidling interne dokumenttyper som brukes for å signalisere tilbake fra mottaker til avsender om en
@@ -80,7 +80,7 @@ melding ble levert til integrasjonspunktet eller om levering feilet. Dette er in
 integrasjonspunktet. Bare integrasjoner uten integrasjonspunkt skal bruke disse dokumenttypene.
 
 | **Dokumenttype**                            | **Meldingstjenester**                                                                         |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------- |
+|---------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Status](../Utvikling/Dokumenttyper/status) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
 | [Feil](../Utvikling/Dokumenttyper/feil)     | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
 

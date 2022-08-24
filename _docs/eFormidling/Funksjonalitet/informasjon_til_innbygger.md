@@ -20,9 +20,9 @@ tilleggskravene vedtak og andre viktige henvendelser medfører.
 
 Informasjon til innbygger representeres med følgende prosess for mottaker:
 
-| **Prosessnavn** | **Prosessidentifikator**                    |
-| --------------- | ------------------------------------------- |
-| Info            | urn:no:difi:profile:digitalpost:info:ver1.0 |
+| **Prosessnavn**  | **Prosessidentifikator**                    |
+|------------------|---------------------------------------------|
+| Info             | urn:no:difi:profile:digitalpost:info:ver1.0 |
 
 ## Meldingsinnhold
 

@@ -10,7 +10,7 @@ Denne siden viser et eksempel på avtalt meldingsutveksling. Mottaker i eksempel
 Økonomistyring (DFØ) med organisasjonsnummer `986 252 932`. Avsender og mottaker har avtalt seg imellom at de skal bruke
 avtalt meldingsutveksling til å kommunisere. De har videre avtalt å gi den avtalte meldingstypen identifikatoren
 `no.digir.avtalt.test.v1`. Avsender må bygge og sende meldinger med innhold som avtalt for denne meldingstypen. Mottaker
-må gjenkjenne denne avtalte meldingstypen og tolke og behandle innkommende meldingener av denne typen slik som avtalt
+må gjenkjenne denne avtalte meldingstypen og tolke og behandle innkommende meldinger av denne typen slik som avtalt
 mellom avsender og mottaker.
 
 1. TOC

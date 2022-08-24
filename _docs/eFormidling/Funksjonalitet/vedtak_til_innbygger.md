@@ -53,7 +53,7 @@ regelverk og retningslinjer.
 Vedtak til innbygger representeres med følgende prosess:
 
 | **Prosessnavn** | **Prosessidentifikator**                      |
-| --------------- | --------------------------------------------- |
+|-----------------|-----------------------------------------------|
 | Vedtak          | urn:no:difi:profile:digitalpost:vedtak:ver1.0 |
 
 ## Meldingsinnhold
@@ -61,8 +61,8 @@ Vedtak til innbygger representeres med følgende prosess:
 Hvilket innhold som kan sendes avhenger av hvilke dokumenttyper mottakeren støtter for vedtak til innbygger. En
 dokumenttype støttes av en eller flere meldingstjenester.
 
-| **Dokumenttype**                                      | **Meldingstjenester**                                                                 |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **Dokumenttype**                                      | **Meldingstjenester**                                                                     |
+|-------------------------------------------------------|-------------------------------------------------------------------------------------------|
 | [Digital](../Utvikling/Dokumenttyper/digital)         | [Digital Post til Innbyggere](../Utvikling/Meldingstjenester/digital_post_til_innbyggere) |
 | [Print](../Utvikling/Dokumenttyper/print)             | [Digital Post til Innbyggere](../Utvikling/Meldingstjenester/digital_post_til_innbyggere) |
 | [Digital DPV](../Utvikling/Dokumenttyper/digital_dpv) | [Altinn Digital Post](../Utvikling/Meldingstjenester/altinn_digital_post)                 |

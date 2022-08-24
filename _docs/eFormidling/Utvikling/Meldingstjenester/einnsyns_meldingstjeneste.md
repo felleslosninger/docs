@@ -75,6 +75,25 @@ E --> |eInnsyn-kvittering| D
 F --> |eInnsyn-kvittering| E
 </div>
 
+## Meldingsstatuser
+
+Meldingsstatuser for meldinger sendt med eInnsyns meldingstjeneste:
+
+| Status              | Kommentar                                                                                                           |
+|---------------------|---------------------------------------------------------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPE-melding. |
+| SENDT               | Integrasjonspunkt har sendt forsendelsen til meldingsformidler.                                                     |
+| MOTTATT             | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt meldingen.                               |
+| LEVERT              | Forsendelsen (innsynskrav) er sendt på e-post til mottakers postmottak.                                             |
+
+Meldingsstatuser for meldinger mottatt med eInnsyns meldingstjeneste:
+
+| Status              | Kommentar                                                                          |
+|---------------------|------------------------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg. |
+| INNKOMMENDE_MOTTATT | Integrasjonspunkt hos mottaker har mottatt melding.                                |
+| INNKOMMENDE_LEVERT  | Har generert to mottakskvitteringer og disse blir sendt til avsender.              |
+
 ## Neste steg
 
 - [Produktdokumentasjon for eInnsyn](https://samarbeid.digdir.no/einnsyn/dette-er-einnsyn/81) (ekstern lenke)

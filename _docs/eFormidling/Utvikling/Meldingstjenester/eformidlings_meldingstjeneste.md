@@ -45,7 +45,7 @@ Saksbehandlingsprosessene krever at mottaker sender tilbake en arkivmelding-kvit
 
 I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender.
 
-Dersom en velger å integere mot eFormidling uten integrasjonspunkt må integrasjonen:
+Dersom en velger å integrere mot eFormidling uten integrasjonspunkt må integrasjonen:
 
 - benytte eFormidlings meldingstjeneste hos Altinn Formidling (`service code` og `service edition code`)
 - sende tilbake statuser (mottatt og levert) etter mottak av melding
@@ -87,6 +87,27 @@ C --> |Status: Levert| B
 D --> |Status: Levert| C
 E --> |Status: Levert| D
 </div>
+
+## Meldingsstatuser
+
+Meldingsstatuser for meldinger sendt med eFormidlings meldingstjeneste:
+
+| Status              | Kommentar                                                                                                                                                        |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPO-melding                                               |
+| SENDT               | Integrasjonspunkt har sendt forsendelsen til meldingsformidler                                                                                                   |
+| MOTTATT             | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt.                                                                                      | 
+| LEVERT              | Leveransen er videresendt til sak-arkivsystemet og bekreftet fullført.                                                                                           |
+| LEST                | Appreceipt blir sendt fra mottaker til avsender. Dette er både en kvittering og meldingstype som indikerer at sak-arkivsystemet hos mottaker har fått meldingen. | 
+
+Meldingsstatuser for meldinger mottatt med eFormidlings meldingstjeneste:
+
+| Status              | Kommentar                                                                         |
+|---------------------|-----------------------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunkt laster fra meldingsformidler ned og oppretter meldingen hos seg |
+| INNKOMMENDE_MOTTATT | Integrasjonspunkt hos mottaker har mottatt melding.                               |
+| INNKOMMENDE_LEVERT  | Har generert to mottakskvitteringer og disse blir sendt til avsender              |
+
 
 ## Neste steg
 

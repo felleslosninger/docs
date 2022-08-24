@@ -20,11 +20,11 @@ opplysninger inkluderer:
 - forretningshemmeligheter
 
 Taushetsbelagt saksbehandling lar mottaker knytte ekstra tilgangskontroller til meldinger for å begrense tilgang til de
-som har tjenestlig behov til å lese meldingene.
+som har tjenstlig behov til å lese meldingene.
 
 Regler for behandling av taushetsbelagte opplysninger finnes i forvaltningsloven og personopplysningsloven  med
 tilpasninger fra regelverk for ulike områder som for eksempel barnevern. Sentrale krav inkluderer å sikre at mottaker
-har tjenestlig behov til behandling av opplysningene og å ikke behandle flere opplysninger enn det som er nødvendig. 
+har tjenstlig behov til behandling av opplysningene og å ikke behandle flere opplysninger enn det som er nødvendig. 
 
 Taushetsbelagt saksbehandling representeres med følgende prosess for mottaker:
 

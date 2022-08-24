@@ -22,14 +22,14 @@ mottaker(e).
 Avtalt meldingsutveksling representeres med følgende prosess for mottaker:
 
 | **Prosessnavn**           | **Prosessidentifikator**                 |
-| ------------------------- | ---------------------------------------- |
+|---------------------------|------------------------------------------|
 | Avtalt meldingsutveksling | urn:no:difi:profile:avtalt:avtalt:ver1.0 |
 
 Avtalt meldingsutveksling representeres med følgende prosess for avsender:
 
-| **Prosessnavn** | **Prosessidentifikator**                   |
-| --------------- | -------------------------------------------|
-| Avtalt-respons  | urn:no:difi:profile:avtalt:response:ver1.0 |
+| **Prosessnavn**  | **Prosessidentifikator**                   |
+|------------------|--------------------------------------------|
+| Avtalt-respons   | urn:no:difi:profile:avtalt:response:ver1.0 |
 
 Vanligvis opptrer en virksomhet både som avsender og mottaker, men det er også mulig å bare opptre som avsender.
 
@@ -39,7 +39,7 @@ Det er bare en dokumenttype som støttes for avtalt meldingsutveksling, og denne
 meldingstjeneste.
 
 | **Dokumenttype**                            | **Meldingstjenester**                                                                         |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------- |
+|---------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Avtalt](../Utvikling/Dokumenttyper/avtalt) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
 
 I tillegg har eFormidling interne dokumenttyper som brukes for å signalisere tilbake fra mottaker til avsender om en
@@ -47,7 +47,7 @@ melding ble levert til integrasjonspunktet eller om levering feilet. Dette er in
 integrasjonspunktet. Bare integrasjoner uten integrasjonspunkt skal bruke disse dokumenttypene.
 
 | **Dokumenttype**                            | **Meldingstjenester**                                                                         |
-| ------------------------------------------- | --------------------------------------------------------------------------------------------- |
+|---------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Status](../Utvikling/Dokumenttyper/status) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
 | [Feil](../Utvikling/Dokumenttyper/feil)     | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
 

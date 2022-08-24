@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_nm_sikkerhet
 ---
 
 Formålet med denne siden er å gi en oversikt over hvilke egenskaper eFormidling har.
@@ -31,15 +32,15 @@ dekkes godt:
   brukstilfeller
 - Virksomhetene mangler mulighet for selv å eksplisitt bestemme hvor de ønsker å motta meldinger i ulike sammenhenger,
   og må derfor forholde seg til valgene eFormidlings forretningslogikk gjør på vegne av virksomhetene
-- Private virksomheter mangler enkelt tilgjenglig mulighet for å sende meldinger til virksomheter som bruker eFormidling
-- Innbyggere mangler enkelt tilgjenglig mulighet for å sende meldinger til virksomheter som bruker eFormidling
+- Private virksomheter mangler enkelt tilgjengelig mulighet for å sende meldinger til virksomheter som bruker eFormidling
+- Innbyggere mangler enkelt tilgjengelig mulighet for å sende meldinger til virksomheter som bruker eFormidling
 
 Funksjonaliteten som tilbys av eFormidling fungerer i stor grad som den skal. Det er likevel noen unntak knyttet til
 sporadiske feilsituasjoner:
 
 - Meldinger som sendes mellom eFormidling og KS FIKS må gjennom en transformasjon som har medført enkelte problemer for
   enkelte fagsystem
-- Fagsystem med mangelfulle integrerasjoner mot eFormidling har medført enkelte problemer
+- Fagsystem med mangelfulle integrasjoner mot eFormidling har medført enkelte problemer
 
 Funksjonaliteten i eFormidling legger til rette for effektiv gjennomføring av oppgavene og målene virksomhetene har, men
 kan på noen områder bli bedre:
@@ -52,10 +53,10 @@ Digdir jobber kontinuerlig med å gjøre eFormidling enda mer egnet til å dekke
 
 ## Ytelse og effektivitet
 
-eFormidlings ytelse og effektivitet er nært knyttet til ytelse og effektivtet for meldingstjenestene som brukes av
+eFormidlings ytelse og effektivitet er nært knyttet til ytelse og effektivitet for meldingstjenestene som brukes av
 eFormidling.
 
-Reell responsitivitet målt en vanlig uke (fra og med 2022-05-17 til og med 2022-05-24):
+Reell responsivitet målt en vanlig uke (fra og med 2022-05-17 til og med 2022-05-24):
 
 | Tjeneste                      | Bekreftet sendt | Bekreftet levert | Antall levert |
 |-------------------------------|-----------------|------------------|---------------|
@@ -68,15 +69,14 @@ Reell responsitivitet målt en vanlig uke (fra og med 2022-05-17 til og med 2022
 
 Integrasjonspunktet har relativt beskjeden ressursbruk:
 
-| Ressurs | Anbefaling                                                                                                                                                                                                                                                                                                                             |
-|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CPU     | Ved vanlig bruk kan integrasjonspunktet fint dele en standard CPU med andre applikasjoner. Ved store meldingsvolum over kort tid (masseutsendelser) medfører kryptooperasjonene samlet at integrasjonspunktet bruker mer CPU. For slike tilfeller anbefales det å gjøre en praktisk test for å utelukke at tilgjengelig CPU makser ut. |
-| Minne   | 2GB anbefales til integrasjonspunktets JVM. Ved bruk av grensesnittet BEST/EDU er det en klar sammenheng mellom avsatt minne og hvor store meldinger som kan sendes og mottas av integrasjonspunktet og en kan oppleve at integrasjonspunktet krasjer dersom en har for lite avsatt minne.                                             |
-| Disk    | 2 GB dekker omtrent 1 million meldinger ved bruk av intern database og meldingskø                                                                                                                                                                                                                                                      |
+| Ressurs | Anbefaling                                                                                                                                                                                                                                                                                                                                     |
+|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CPU     | Ved vanlig bruk kan integrasjonspunktet fint dele en standard CPU med andre applikasjoner. Ved store meldingsvolum over kort tid (masseutsendelser) medfører kryptooperasjonene samlet at integrasjonspunktet bruker mer CPU. For slike tilfeller anbefales det å gjøre en praktisk test for å utelukke at tilgjengelig CPU er en begrensning. |
+| Minne   | 2GB anbefales til integrasjonspunktets JVM. Ved bruk av grensesnittet BEST/EDU er det en klar sammenheng mellom avsatt minne og hvor store meldinger som kan sendes og mottas av integrasjonspunktet og en kan oppleve at integrasjonspunktet krasjer dersom en har for lite avsatt minne.                                                     |
+| Disk    | 2 GB dekker omtrent 1 million meldinger ved bruk av intern database og meldingskø                                                                                                                                                                                                                                                              |
 
 Kapasiteten i eFormidling er nær knyttet mot kapasiteten for meldingstjenestene som brukes av eFormidling. I noen få
-brukstilfeller er meldingsstørrelse en utfordring. Throughput har derimot ikke vært en utfordring for noen
-brukstilfeller. En liten oversikt over terskelverdier:
+brukstilfeller er meldingsstørrelse en utfordring. En liten oversikt over terskelverdier:
 
 | Terskelverdi                  | Meldingsstørrelse                                                        |
 |-------------------------------|--------------------------------------------------------------------------|
@@ -87,25 +87,28 @@ brukstilfeller. En liten oversikt over terskelverdier:
 | FIKS IO                       | 2 GB                                                                     |
 | KS SvarUt og SvarInn          | 1 GB                                                                     |
 
-## Kompatabilitet
+Throughput er begrenset til throughput for meldingstjenestene som brukes, men dette har ikke vært en utfordring per dags
+dato.
+
+## Kompatibilitet
 
 Integrasjonspunktet støttes på alle plattformer som kan kjøre Java eller Docker: Windows, Linux og så videre.
 Integrasjonspunktet kjører fint sammen med annen programvare og kan konfigureres til å bruke alternative
 nettverksporter, filstier og annet ved eventuelle konflikter.
 
-eFormidling utvikles med tanke på kompatabilitet:
+eFormidling utvikles med tanke på kompatibilitet:
 
-- Kompatabilitet mellom grensesnittene BEST/EDU og eFormidling 2 slik at brukere med det ene grensesnittet kan samhandle
+- Kompatibilitet mellom grensesnittene BEST/EDU og eFormidling 2 slik at brukere med det ene grensesnittet kan samhandle
   med brukere av det andre
-- Kompatabilitet mellom ulike versjoner av integrasjonspunktet slik at brukere med en versjon kan samhandle med brukere
+- Kompatibilitet mellom ulike versjoner av integrasjonspunktet slik at brukere med en versjon kan samhandle med brukere
   av en annen versjon
-- Kompatabilitet med andre meldingstjenester slik som KS SvarUt og SvarInn
+- Kompatibilitet med andre meldingstjenester slik som KS SvarUt og SvarInn
 
-Likevel er det enkelte utfordringer knyttet til kompatabilitet i eFormidling
+Likevel er det enkelte utfordringer knyttet til kompatibilitet i eFormidling
 
 - Noen ganger krever ny funksjonalitet som utvikles at alle virksomheter er på en minimumsversjon før den nye
   funksjonaliteten kan tas i bruk
-- Ikke alle metadata kan transformeres fra BEST/EDU til eFormidling 2, fra eFormidling til KS SvarUt, osv
+- Ikke alle metadata kan transformeres fra BEST/EDU til eFormidling 2, fra eFormidling til KS SvarUt, og så videre
 
 ## Brukervennlighet
 
@@ -116,25 +119,25 @@ hvordan:
 - den enkelte funksjonalitet i eFormidling tilbys av fagsystemene som tar i bruk eFormidling
 - den enkelte funksjonalitet i meldingstjenestene eFormidling bruker tilbys av eFormidling
 
-eFormidling tilbyr testmiljø som gjør det mulig å lære løsningen risikofritt. I hvilke grad testmiljøet er tilgjengelig
+eFormidling tilbyr testmiljø som gjør det mulig å lære løsningen risikofritt. I hvilken grad testmiljøet er tilgjengelig
 for virksomhetens sluttbrukere avhenger av fagsystemet virksomheten bruker eFormidling fra.
 
 eFormidling tilbyr en godt gjennomarbeidet dokumentasjon blant annet med tanke på å lære eFormidling. Denne
-dokumentasjonen er rettet mot arkitekter, utviklere og driftspersonell. I hvilke grad dokumentasjon rettet mot
+dokumentasjonen er rettet mot arkitekter, utviklere og driftspersonell. I hvilken grad dokumentasjon rettet mot
 virksomhetens sluttbrukere er tilgjengelig avhenger av fagsystemet virksomheten bruker eFormidling fra.
 
 Integrasjonspunktet er designet for å være drifts- og utviklervennlig. Konfigurasjonsstyring og
 programmeringsgrensesnitt er utformet i tråd med god praksis. Konfigurasjon og API-kall valideres for å hjelpe
 driftspersonell og utviklere med å unngå feilsituasjoner. Det jobbes kontinuerlig med å forbedre validering og
 feilmeldinger. Brukervennligheten for sluttbrukere avhenger av fagsystemet virksomheten bruker eFormidling fra: hvor
-enkelt det er å bruke og kontrollere, hvor godt brukerene beskyttes mot å gjøre feil, i hvilke grad brukergrensesnittet
-gir en tilfredsstillende interaksjon for brukerene og hvor godt egnet løsningen er til å oppnå ønsket mål.
+enkelt det er å bruke og kontrollere, hvor godt brukerne beskyttes mot å gjøre feil, i hvilke grad brukergrensesnittet
+gir en tilfredsstillende interaksjon for brukerne og hvor godt egnet løsningen er til å oppnå ønsket mål.
 
 ## Pålitelighet
 
-Under normal drift er det få feilsituasjoner som oppstår i eFormidling. De vanligeste feilsituasjonene er knyttet til
+Under normal drift er det få feilsituasjoner som oppstår i eFormidling. De vanligste feilsituasjonene er knyttet til
 feil konfigurasjon av integrasjonspunktet, feil bruk av integrasjonspunktets grensesnitt og nedetid hos
-meldingstjenestene som eFormidling bruker. I tilllegg må meldinger som sendes mellom eFormidling og KS FIKS gjennom en
+meldingstjenestene som eFormidling bruker. I tillegg må meldinger som sendes mellom eFormidling og KS FIKS gjennom en
 transformasjon som har medført enkelte problemer for enkelte fagsystem.
 
 eFormidlings sentrale komponenter har høy tilgjengelighet og kjører hos profesjonelle driftsleverandører med høye krav
@@ -170,7 +173,7 @@ De fleste elementene behandles bare av avsender og mottaker, men noen behandles 
 
 Alle disse elementene har behov for sikring. eFormidlings sikringstiltak er designet ut fra risiko- og sårbarhets-
 analyser som gjøres ved jevnlige mellomrom, og etterprøves blant annet ved hjelp av ekstern sikkerhetstest. eFormidling
-har en utviklings- og leveranseprosess som fokuserer på sikkerhet ved hjelp av kompetanse, testautomatisering,
+har en utviklings- og leveranseprosess som vektlegger sikkerhet ved hjelp av kompetanse, testautomatisering,
 kontinuerlige sårbarhetsanalyser, kodesignering og mer.
 
 eFormidling er designet for konfidensialitet. Meldinger som sendes med eFormidlings meldingstjeneste eller eInnsyns
@@ -220,3 +223,7 @@ Integrasjonspunktet kan kjøres i alle miljø som kan kjøre Java eller Docker. 
 integrasjonspunkt selv, eller lar en leverandør opptre på vegne av seg. Integrasjonspunktet lar seg enkelt
 installere, avinstaller og flytte. Direkteintegrasjoner mot enkelte av meldingstjenestene kan erstattes med
 integrasjonspunktet ved ønske om å ta i bruk eFormidlings funksjonalitet eller dra nytte av eFormidlings egenskaper.
+
+## Neste steg
+
+- [Kom i gang](../Introduksjon/kom_i_gang)

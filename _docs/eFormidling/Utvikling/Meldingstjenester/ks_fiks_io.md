@@ -47,6 +47,24 @@ D --> |FIKS IO-melding| E("fa:fa-server Sak/arkiv")
 E --> F("fa:fa-user Saksbehandler<br>stat")
 </div>
 
+## Meldingsstatuser
+
+Meldingsstatuser for meldinger sendt med KS FIKS IO:
+
+| Status              | Kommentar                                                                                                           |
+|---------------------|---------------------------------------------------------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPE-melding. |
+| SENDT               | Integrasjonspunkt har sendt forsendelsen til meldingsformidler.                                                     |
+| MOTTATT             | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt meldingen.                               |
+| LEVERT              | Forsendelsen (innsynskrav) er sendt på e-post til mottakers postmottak.                                             |
+
+Meldingsstatuser for meldinger sendt med KS FIKS IO:
+
+| Status              | Kommentar                                                          |
+|---------------------|--------------------------------------------------------------------|
+| OPPRETTET           | Integrasjonspunkt laster frå KS ned og oppretter meldingen hos seg |
+| INNKOMMENDE_MOTTATT | Meldingen blir konvertert til internt format                       |
+| INNKOMMENDE_LEVERT  | Meldingen er levert til sak-arkivsystem                            |
 
 ## Neste steg
 

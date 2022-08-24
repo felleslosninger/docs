@@ -46,6 +46,17 @@ C --> |Status| B
 D --> C
 </div>
 
+## Meldingsstatuser
+
+Meldingsstatuser for meldinger sendt med Digital Post til Innbyggere:
+
+| Status    | Kommentar                                                                     |
+|-----------|-------------------------------------------------------------------------------|
+| OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
+| SENDT     | Forsendelse er sendt til meldingsformidler                                    |
+| LEVERT    | Forsendelse levert til innbyggers prefererte kanal                            |
+| LEST      | Innbygger har åpnet forsendelse i sin postkasse innboks                       |
+
 ## Neste steg
 
 - [Produktdokumentasjon for Digital Post til Innbyggere](https://samarbeid.digdir.no/digital-postkasse/digital-postkasse-til-innbyggere/23) (ekstern lenke)

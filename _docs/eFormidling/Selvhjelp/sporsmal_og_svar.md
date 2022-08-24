@@ -4,6 +4,10 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from:
+- /eform_terms
+- /eformidling_veiledning_sakark
+- /eformidling_selfhelp
 ---
 
 1. TOC
@@ -53,7 +57,7 @@ Endre sertifikat passord:
 
 ### Hvordan oppdaterer jeg virksomhetssertifikatet som brukes i eFormidling?
 
-Når en bytter virksohetssertifikat kan en følge samme fremgangsmåte som ved første gangs installasjon:
+Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved første gangs installasjon:
 
 - [virksomhetssertifikat](../installasjon/virksomhetssertifikat)
 
@@ -81,7 +85,7 @@ Integrasjonspunktet krever minimum versjon 1.8.0
 **OpenJDK Java 8 (gratis)**
 Digitaliseringsdirektoratet har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8.
 
-Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din platform inne på lenken.
+Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din plattform inne på lenken.
 
 > **NB!** 32-bits Java kan skape utfordringer for minnebruken til integrasjonspunktet, så 64-bits er å foretrekke!
 
@@ -157,6 +161,26 @@ Et eksempel av hvilke meldingsmetadata som lagres av integrasjonspunktet kan see
 }
 ```
 
+### Hvordan sjekker jeg om integrasjonspunktet har startet?
+
+Dersom integrasjonspunktets helse-status svarer OK har integrasjonspunktet startet. Helse-status er tilgjengelig på
+`/manage/health` (f.eks. `http://localhost:9093/manage/health`)
+
+I tillegg produseres følgende logg-linje etter en vellykket start:
+
+```
+Started IntegrasjonspunktApplication ...
+```
+
+### Hvordan kan jeg nullstille integrasjonspunktet?
+
+Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer i integrasjonspunktet. Dette kan føre til warnings og i nokre tilfeller errors. For å få en fersk installasjon av integrasjonspunktet bør du gjere følgande:
+
+1. Stopp integrasjonspunktet.
+2. Ta backup av ```activemq-data``` mappa og ```receipts.mv.db``` fila.
+3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
+4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
+
 ## Digital Post til Innbyggere
 
 ### Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?
@@ -217,6 +241,72 @@ Versjonsnummer er angitt i formatet MAJOR.MINOR.PATCH
 
 **MAJOR** har endringer som ikke er bakover-kompatible. Dette kan være endringer i hvordan API'et brukes eller fjerning av funksjonalitet, som tidligere er signalisert at vil fjernes gjennom Minor-release og API-kommentar. En Major-oppdatering vil føre til at hele eller deler av funksjonaliteten man bruker ikke lenger virker og vil derfor være viktig å forsikre seg om at det man trenger virker som forventet gjennom testing eller dialog med leverandør av fagsystemet som integrerer mot integrasjonspunktet.
 
+## Begrep
+
 ### Hva betyr MOVE, NEXTMOVE og MIIF?
 
 MOVE, NEXTMOVE og MIIF er tidligere arbeidsnavn for eFormidling.
+
+### Hva betyr DPO?
+
+DPO er en teknisk kode for eFormidlings meldingstjeneste. DPO oppstod som en forkortelse for Digital Post til Offentlig
+Virksomhet. At ikke alle offentlige virksomheter bruker eFormidlings meldingstjeneste har medført en del misforståelser.
+Bruken av begrepet blir tonet ned.
+
+### Hva betyr DPV?
+
+DPV er en teknisk kode for Altinn Digital Post. DPV oppstod som en forkortelse for Digital Post til Virksomhet. At
+Altinn Digital Post også kan brukes til å sende til innbyggere har medført en del misforståelser. Bruken av begrepet
+blir tonet ned til fordel for Altinn Digital Post.
+
+### Hva betyr DPF?
+
+DPF er en teknisk kode for KS SvarUt og SvarInn (KS FIKS). DPF oppstod som en forkortelse for Digital Post til Fiks. At
+ikke alle har et forhold til Fiks (digitale fellesløsninger som kommuner og fylkeskommuner kan ta i bruk) har medført en
+del misforståelser. Bruken av begrepet blir tonet ned til fordel for KS SvarUt og SvarInn.
+
+### Hva betyr DPE?
+
+DPE er en teknisk kode for Digital Post til eInnsyn. Bruken av begrepet blir tonet ned til fordel for eInnsyns
+meldingstjeneste.
+
+### Hva betyr DPI?
+
+DPI er en teknisk kode for Digital Post til Innbyggere. At også andre meldingstjenester kan brukes til å sende digital
+post til innbyggere har medført en del misforståelser. Bruken av begrepet blir tonet ned til fordel for Digital Post til
+Innbyggere. 
+
+### Hva betyr DPFIO?
+
+DPFIO er en teknisk kode for Digital Post til FIKS IO. FIKS IO er en meldingstjeneste tilbydd av KS. Bruken av begrepet
+blir tonet ned til fordel for FIKS IO.
+
+## Sak- og arkivsystem
+
+### Hvordan konfigurerer jeg sak- og arkvisystem X til å bruke eFormidling?
+
+Leverandøren må bistå ved konfigurasjon av sak- og arkivsystem X til å bruke eFormidling. Enten ved å peke til riktig
+dokumentasjon eller ved å gjøre oppsettet.
+
+## Arkitektur
+
+### Hvorfor ble eFormidling etablert?
+
+Følgende arbeid ligger til grunn for at eFormidling ble etablert:
+
+- [Meldingsutveksling internt i forvaltninga](https://www.digdir.no/felleslosninger/meldingsutveksling-internt-i-forvaltninga/1376)
+- [Løsning for meldingsutveksling i offentlig sektor](https://www.digdir.no/felleslosninger/losning-meldingsutveksling-i-offentlig-sektor/1390)
+
+### Hvorfor baseres eFormidling på asynkron meldingsutveksling?
+
+Følgende arbeid ligger til grunn for at eFormidling baseres på asynkron meldingsutveksling:
+
+- [Meldingsutveksling internt i forvaltninga](https://www.digdir.no/felleslosninger/meldingsutveksling-internt-i-forvaltninga/1376)
+- [Løsning for meldingsutveksling i offentlig sektor](https://www.digdir.no/felleslosninger/losning-meldingsutveksling-i-offentlig-sektor/1390)
+
+### Hvorfor baseres eFormidling på at integrasjonspunktet skal installeres hos virksomhetene?
+
+Følgende arbeid ligger til grunn for at eFormidling baseres på at integrasjonspunktet skal installeres hos virksomhetene:
+
+- [Meldingsutveksling internt i forvaltninga](https://www.digdir.no/felleslosninger/meldingsutveksling-internt-i-forvaltninga/1376)
+- [Løsning for meldingsutveksling i offentlig sektor](https://www.digdir.no/felleslosninger/losning-meldingsutveksling-i-offentlig-sektor/1390)

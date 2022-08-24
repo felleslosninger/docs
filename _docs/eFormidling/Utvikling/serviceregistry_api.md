@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_sr_restdocs
 ---
 
 Denne siden beskriver adressetjenestens (Service Registry) API og bruksmønstre for dette.

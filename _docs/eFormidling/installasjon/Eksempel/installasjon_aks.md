@@ -4,9 +4,13 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /integrasjonspunkt_aks
 ---
 
-Integrasjonspunktet kan kjøres i AKS eller andre skyplattformer som støter Kubernetes. Azure Key vault er alternativ for oppbevaring av kryptografiske nøkler.
+Integrasjonspunktet kan kjøres i AKS eller andre skyplattformer som støter Kubernetes. Azure Key Vault er alternativ for oppbevaring av kryptografiske nøkler.
+
+1. TOC
+{:toc}
 
 ## Forutsetninger
 ---
@@ -15,7 +19,7 @@ Integrasjonspunktet kan kjøres i AKS eller andre skyplattformer som støter Kub
 - Helm - <https://helm.sh/>
 - Azure Key Vault - <https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal>
 
-Det forutsettes også at det er satt opp en ressursgruppe, et Azure kubernetes-cluster, og Azure Key Vault. Dette kan gjøres enten via Azure web
+Det forutsettes også at det er satt opp en ressursgruppe, et Azure Kubernetes-cluster, og Azure Key Vault. Dette kan gjøres enten via Azure web
 portal, eller via Azure CLI som forklart her: <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough>
 
 Videre i dokumentasjonen vil ressursgruppen, AKS-clusteret, og Key Vault  bli referert til ved navn `ip-rg`, `ip-akscluster`, og `ip-kv` respektivt.
@@ -34,7 +38,7 @@ $ az login
 ```console
 $ az aks get-credentials --resource-group ip-rg --name ip-akscluster
 ```
-Verifisér at oppsett for kubectl er riktig:
+Verifiser at oppsett for kubectl er riktig:
 
 ```console
 $ kubectl get all
@@ -58,7 +62,7 @@ Postgresql-instansen kan så nåes fra clusteret på `postgresql.default.svc.clu
 Installasjonen oppretter en standard database ved navn `postgres`, denne vil bli benyttet videre i guiden.
 
 #### 3.1
-Alternativt kan man opprette egen database. Eksportér passord til miljøvariabel, og koble til:
+Alternativt kan man opprette egen database. Eksporter passord til miljøvariabel, og koble til:
 
 ```console
 $ export POSTGRES_PASSWORD=$(kubectl get secret --namespace default postgresql -o jsonpath="{.data.postgresql-password}" | base64 --decode)
@@ -180,7 +184,7 @@ metadata:
 EOF
 ```
 
-Key Vault secret'en må så gjøres tilgjenglig for clusteret:
+Key Vault secret'en må så gjøres tilgjengelig for clusteret:
 
 ```console
 apiVersion: spv.no/v2beta1

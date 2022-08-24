@@ -4,6 +4,7 @@ description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
+redirect_from: /eformidling_nm_about
 ---
 
 Dette er den tekniske dokumentasjonen for eFormidling. Formålet er å støtte arkitekter, utviklere og driftspersonell hos
@@ -20,7 +21,7 @@ Se gjerne Samarbeidsportalen for en helt overordnet ikke-teknisk introduksjon ti
 ## Hva er eFormidling?
 eFormidling lar din virksomhet:
 - sende meldinger til mottakende virksomhets foretrukne kanal
-- sende meldinger til mottakende innbygggers foretrukne kanal
+- sende meldinger til mottakende innbyggers foretrukne kanal
 - motta innkommende meldinger på ønsket kanal
 
 Alle norske virksomheter og innbyggere kan nås gjennom eFormidling.
@@ -48,7 +49,7 @@ Alle meldinger i eFormidling sendes derfor som del av en gitt sammenheng. I eFor
 prosesser. En mottaker støtter meldingsutveksling i forbindelse med en eller flere prosesser. En mottaker støtter en
 gitt prosess gjennnom en eller flere dokumenttyper som igjen støttes av en eller flere meldingstjenester. Dokumenttypene
 definerer hvilket innhold som kan sendes. I tilfeller der en prosess støttes gjennom flere dokumenttyper må avsender ta
-stilling til hvilke dokumenttype som ønskes brukt. I tilfeller der samme dokumenttype støttes av flere meldingstjenester
+stilling til hvilken dokumenttype som ønskes brukt. I tilfeller der samme dokumenttype støttes av flere meldingstjenester
 sikrer eFormidling at mottakers foretrukne meldingstjeneste blir brukt. Prosesser, meldingstjenester og dokumenttyper
 utgjør mottakerens kapabiliteter.
 
@@ -95,7 +96,7 @@ I tillegg leverer eFormidling:
 Før en virksomhet sender en melding gjøres et kapabilitetsoppslag for å se om mottakeren støtter den aktuelle prosessen
 meldingen skal sendes som del av og i så fall med hvilke dokumenttyper mottakeren støtter denne. Virksomheten bygger så
 meldingen med ønsket dokumenttype før den sendes til integrasjonspunktet. Integrasjonspunktet ruter meldingen til
-foretrukket meldingstjeneste (f.eks KS SvarUt) for mottakeren.
+foretrukket meldingstjeneste (f.eks. KS SvarUt) for mottakeren.
 
 <div class="mermaid">
 sequenceDiagram
