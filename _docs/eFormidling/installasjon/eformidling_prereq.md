@@ -31,7 +31,7 @@ Tjenesteleverandør velger selv tidskilde, denne bør være lokalisert internt i
 Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksområder (meldingstyper) i eFormidling.
 
 
-### Brannmuråpninger i testmiljø
+### Brannmuråpninger i testmiljø (QA)
 
 | DNS-navn | IPv4-adresse | Port | Tjeneste | Beskrivelse | Inn-/utgående trafikk |
 | :-------- |-------------| :-----:| :----:| :-----| :------|
@@ -47,6 +47,8 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | tt02.altinn.no | 89.250.123.40 | 443 | DPV | Altinn formidlingstjeneste |
 | qaoffentlig.meldingsformidler.digipost.no  | 51.105.206.80/28  | 443  | DPI | Meldingsformidler for DPI-meldinger |
 | srest.qa.dataplatfor.ms  | 51.120.49.231 | 443 | DPI | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2 |
+|  |  20.103.153.55	 | 443 | Alle | Kjøremiljø - "ny" | inngående |
+|  | 52.149.75.168	 | 443 | Alle | Kjøremiljø - "gammel" | inngående |
 
 ### Brannmuråpninger i produksjon
 
@@ -62,6 +64,9 @@ Oversikt over nødvendige brannmuråpninger. Noen gjelder bare bestemte bruksomr
 | meldingsformidler.digipost.no | 51.124.140.176/28| 443  | DPI | Meldingsformidler for DPI-meldinger (16 adresser)|
 | srest.dataplatfor.ms  | 51.120.1.137 | 443 | DPI | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2|
 | svarut.ks.no | 137.221.25.66 <br/> 137.221.28.66 | 443 | DPF | KS FIKS meldingformidler |
+|  | 20.82.85.218	 | 443 | Alle | Kjøremiljø - "ny" | inngående |
+|  | 51.105.167.136	 | 443 | Alle | Kjøremiljø - "gammel" | inngående |
+
 
 > **NB!** Maskinporten.no adressa gjeld berre for dei som skal ta i bruk versjon 2.2.1 eller nyare!
 
