@@ -88,7 +88,7 @@ Ved behov for ekstra beskyttelse av virksomhetssertifikat, passord og andre hemm
 Hashicorp Vault eller mekanismer som injiserer verdier til miljøvariable.
 
 - [HashiCorp Vault](#hashicorp-vault)
-- [Eksempel på installasjon av integrasjonspunktet på Azure](../installasjon/ip-aks) inneholder et eksempel på en
+- [Eksempel på installasjon av integrasjonspunktet på Azure](Eksempel/installasjon_aks) inneholder et eksempel på en
 mekanisme som injiserer verdier til miljøvariable
 
 Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
@@ -460,7 +460,7 @@ difi.move.mail.trust=${difi.move.mail.smtpHost}
 
 eFormidlings meldingstjeneste er realisert ved hjelp av Altinn Formidling, og krever bruker for Altinn Formidling.
 
-- [Opprette bruker i Altinn Formidling](../installasjon/eformidling_create_users#opprette-dpo-bruker-altinn-formidlingstjeneste)
+- [Opprette bruker i Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
 
 > Før eFormidlings meldingstjeneste kan tas i bruk må Digdir aktivere den sentralt.
 >
@@ -503,7 +503,7 @@ difi.move.feature.enableDPE=true
 
 KS SvarUt og SvarInn krever hver sin bruker:
 
-- [Opprette brukere i KS SvarUt og SvarInn](../installasjon/eformidling_create_users#opprette-dpf-brukere-svarinn-og-svarut)
+- [Opprette brukere i KS SvarUt og SvarInn](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
 
 
 | Egenskap                                         | Beskrivelse                                                                                                             | Standardverdi |
@@ -553,7 +553,7 @@ difi.move.fiks.inn.paa-vegne-av.986252932.password=mypassword2
 
 Altinn Digital Post krever bruker:
 
-- [Opprette bruker i Altinn Digital Post](http://localhost:4000/docs/eFormidling/installasjon/eformidling_create_users#opprette-dpv-bruker)
+- [Opprette bruker i Altinn Digital Post](opprette_brukere#opprette-bruker-for-altinn-digital-post)
 
 | Egenskap                                | Beskrivelse                                                                                               | Standardverdi                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -596,13 +596,12 @@ difi.move.dpv.enableDueDate=false
 
 Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
 
-- [Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?](../Selvhjelp/sporsmal_og_svar/hva-skal-til-for-at-proxy-klientbiblioteket-for-digital-post-til-innbyggere-skal-fungere)
+- [Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?](../Selvhjelp/sporsmal_og_svar#hva-skal-til-for-at-proxy-klientbiblioteket-for-digital-post-til-innbyggere-skal-fungere)
 
 Eksempel:
 
 ```
 difi.move.feature.enableDPI=true
-```
 ```
 
 #### Konfigurere KS FIKS IO

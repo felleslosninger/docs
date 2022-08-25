@@ -29,7 +29,7 @@ av hvordan en kan ta i bruk mock-miljøet:
 
 - [efm-mocks](https://github.com/felleslosninger/efm-mocks) (ekstern lenke)
 
-### Teste i eFormidlings testmiljø
+### Teste i eFormidlings testmiljø (QA)
 
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
 
@@ -65,6 +65,25 @@ difi.move.dpo.serviceEditionCode=270815
 Med et slikt oppsett kan en bruke samme syntetiske organisasjonsnummer på tvers av meldingstjenestene så lenge en passer
 på når en bestiller tilganger og testvirksomhet: alt må bestilles til samme organisasjonsnummer, det er ingen sentral
 koordinering av dette.
+
+### Teste i eFormidlings produksjonsmiljø
+
+En virksomhet som er klar til å ta i bruk eFormidling eller som skal gjøre endringer i oppsettet sitt anbefales å gjøre
+noen enkle tester i produksjonsmiljøet for å bekrefte at kommunikasjon, tilganger og sertifikatoppsett fungerer som forventet. 
+
+Ved testing før første gangs bruk av en ny meldingstjeneste kan det være greit å huske på:
+
+- Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
+- Avtal med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
+- Husk å teste alle meldingstjenester som virksomheten skal benytte
+- Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
+- **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i dette tidsrommet. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
+- Om noe ikke skulle fungere gi straks beskjed til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> så vi kan fjerne tilganger og feilsøke problemet.
+- Reelle forsendelser som mottas under testperioden uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
+- Hvordan vet jeg at det fungerer?
+  - Ved forsendelser må en høre med mottaker at meldingen er kommet frem
+  - Ved mottak skal meldingene bli pushet fra integrasjonspunktet inn i sak/arkiv/fagsystem
+- Når en har verifisert at både mottak og sending av forsendelser fungerer melder en fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
 ## Test-oppsett
 
@@ -137,25 +156,6 @@ Brukernavn og passord for testbrukere til virksomhetene over fåes ved å kontak
 - eBoks (Digital Post til Innbyggere) <a href="http://demo2-www.e-boks.no/">http://demo2-www.e-boks.no/</a>
 - Digipost (Digital Post til Innbyggere) <a href="http://www.difitest.digipost.no/">http://www.difitest.digipost.no/</a>
 - KS SvarUt og SvarInn <a href="https://test.svarut.ks.no/tjenester/">https://test.svarut.ks.no/tjenester/</a>
-
-## Teste i eFormidlings produksjonsmiljø
-
-En virksomhet som er klar til å ta i bruk eFormidling eller som skal gjøre endringer i oppsettet sitt anbefales å gjøre
-noen enkle tester i produksjonsmiljøet for å bekrefte at kommunikasjon, tilganger og sertifikatoppsett fungerer som forventet. 
-
-Ved testing før første gangs bruk av en ny meldingstjeneste kan det være greit å huske på:
-
-- Dette bør gjøres sammen med en person fra arkivet som er kjent med sak/arkiv/fagsystemet til virksomheten.
-- Avtal med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> når dere vil verifisere så vi kan åpne tilganger på vår side. Definer en tidsramme for testing.
-- Husk å teste alle meldingstjenester som virksomheten skal benytte
-- Test gjerne flere forsendelser per meldingstype og varier størrelse, vedlegg osv.
-- **NB!** Når testing foregår kan virksomheten motta reelle forsendelser i dette tidsrommet. Det er viktig at virksomheten er obs på dette så de ikke går glipp av viktige forsendelser.
-- Om noe ikke skulle fungere gi straks beskjed til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> så vi kan fjerne tilganger og feilsøke problemet.
-- Reelle forsendelser som mottas under testperioden uten at alt fungerer må sjekkes. Varsle avsender og be de sende på nytt.
-- Hvordan vet jeg at det fungerer?
-  - Ved forsendelser må en høre med mottaker at meldingen er kommet frem
-  - Ved mottak skal meldingene bli pushet fra integrasjonspunktet inn i sak/arkiv/fagsystem
-- Når en har verifisert at både mottak og sending av forsendelser fungerer melder en fra til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
 ## Testcase
 

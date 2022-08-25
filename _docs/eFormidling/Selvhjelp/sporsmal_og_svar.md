@@ -59,7 +59,8 @@ Endre sertifikat passord:
 
 Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved første gangs installasjon:
 
-- [virksomhetssertifikat](../installasjon/virksomhetssertifikat)
+- [Tilgjengeliggjøre virksomhetssertifikatet i eFormidlings sertifikatkatalog](../installasjon/installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-i-eformidlings-sertifikatkatalog)
+- [Tilgjengeliggjøre virksomhetssertifikatet for virksomhetens integrasjonspunkt](../installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-for-virksomhetens-integrasjonspunkt)
 
 ## Integrasjonspunktet
 
@@ -200,7 +201,7 @@ difi.move.feature.statusQueueIncludes=DPI
 
 Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
 
-- [Last ned](../Introduksjon/last_ned)
+- [Last ned](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
 En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG-kommandoen under:
 

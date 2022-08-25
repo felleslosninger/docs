@@ -81,7 +81,7 @@ Se mer om integrasjonspunktets programmeringsgrensesnitt på:
 
 Eksempler er ofte en god måte å komme i gang på. Se eksempler på bruk av de ulike prosessene i eFormidling:
 
-- [Eksempler](eksempler)
+- [Eksempler](Eksempel/)
 - [Eksempel-klient på GitHub](https://github.com/felleslosninger/efm-eformidling-klient) (ekstern lenke)
 
 ## Utvikling for tjenesteleverandører

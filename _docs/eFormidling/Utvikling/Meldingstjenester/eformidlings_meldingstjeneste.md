@@ -43,7 +43,9 @@ sendes som beskrevet over.
 
 Saksbehandlingsprosessene krever at mottaker sender tilbake en arkivmelding-kvittering.
 
-I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender.
+I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender. Disse brukes
+for å signalisere tilbake fra mottaker til avsender om en melding ble levert til integrasjonspunktet eller om levering
+feilet. Dette er interne kontrollmeldinger som håndteres av integrasjonspunktet.
 
 Dersom en velger å integrere mot eFormidling uten integrasjonspunkt må integrasjonen:
 
