@@ -75,15 +75,6 @@ mottakers system (ikke bare til mottakers integrasjonspunkt).
 |------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Arkivmelding-kvittering](../Utvikling/Dokumenttyper/arkivmeldingkvittering) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste)<br>[KS SvarUt](../Utvikling/Meldingstjenester/ks_svarut_og_svarinn)<br>[Altinn Digital Post](../Utvikling/Meldingstjenester/altinn_digital_post) |
 
-I tillegg har eFormidling interne dokumenttyper som brukes for å signalisere tilbake fra mottaker til avsender om en
-melding ble levert til integrasjonspunktet eller om levering feilet. Dette er interne kontrollmeldinger som håndteres av
-integrasjonspunktet. Bare integrasjoner uten integrasjonspunkt skal bruke disse dokumenttypene.
-
-| **Dokumenttype**                            | **Meldingstjenester**                                                                         |
-|---------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Status](../Utvikling/Dokumenttyper/status) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
-| [Feil](../Utvikling/Dokumenttyper/feil)     | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
-
 ## Adressere meldinger
 
 Meldinger adresseres fra avsenders organisasjonsnummer til mottakers organisasjonsnummer.

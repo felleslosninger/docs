@@ -41,8 +41,8 @@ Automatisk oppgradering av integrasjonspunktet konfigureres ved hjelp av en konf
 
 1. Start med å finne mappen integrasjonspunktet er installert til, for eksempel `c:\integrasjonspunkt`
 2. Last så ned [kosmos-local.properties]({{site.baseurl}}/resources/eformidling/kosmos-local.txt) og lagre i overnevnte mappe
-3. Last ned [kosmos-[versjon.jar](../Introduksjon/last_ned#kosmos)
-4. Last ned [eFormidlings offentlige nøkkel](../Introduksjon/last_ned#eformidlings-offentlige-nøkkel)
+3. Last ned [kosmos-[versjon].jar](../Introduksjon/last_ned#kosmos)
+4. Last ned [eFormidlings offentlige nøkkel](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
 eFormidling anbefaler å verifisere at `kosmos-[versjon].jar` er fra Digitaliseringsdirektoratet.
 
@@ -141,7 +141,7 @@ Det finnes funksjonalitet for å la applikasjonen blokkliste versjonar om den ik
 kosmos.blocklist.enabled=true
 ```
 
-Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste [schedulerte tidspunkt.](####Setje-tidspunkt-for-oppdatering)
+Ein kan fjerne ein blokklista versjon ved å slette den frå katalogen. Filnamn er til dømes ```integrasjonspunkt-versjonsnr.blocklisted```. Denne har standard levetid på 2 timar om aktivert, så etter levetid er utløpt vil applikasjonen fjerne den og forsøke å oppdatere igjen ved neste schedulerte tidspunkt.
 
 ### Konfigurasjon for logging
 *Valgfritt*

@@ -32,7 +32,7 @@ Les mer om eInnsyn på:
 
 - [Dette er eInnsyn](https://samarbeid.digdir.no/einnsyn/dette-er-einnsyn/81) (ekstern lenke)
 - [Ta i bruk eInnsyn](https://samarbeid.digdir.no/einnsyn/ta-i-bruk-einnsyn/99) (ekstern lenke)
-- [Teknisk dokumentasjon for eInnsyn](/docs/eInnsyn/) (ekstern lenke)
+- [Teknisk dokumentasjon for eInnsyn](https://docs.digdir.no/docs/eInnsyn/) (ekstern lenke)
 
 Innsynskrav representeres med følgende prosess for mottaker:
 

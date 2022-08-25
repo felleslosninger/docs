@@ -6,7 +6,7 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Ved å bruke eFormidlings testmiljø når, og nås, integrasjonspunktet av test-virksomheter og test-innbyggere.
+Ved å bruke eFormidlings testmiljø (QA) når, og nås, integrasjonspunktet av test-virksomheter og test-innbyggere.
 
 Se mer om testing av eFormidling på:
 

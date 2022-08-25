@@ -42,15 +42,6 @@ meldingstjeneste.
 |---------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Avtalt](../Utvikling/Dokumenttyper/avtalt) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
 
-I tillegg har eFormidling interne dokumenttyper som brukes for å signalisere tilbake fra mottaker til avsender om en
-melding ble levert til integrasjonspunktet eller om levering feilet. Dette er interne kontrollmeldinger som håndteres av
-integrasjonspunktet. Bare integrasjoner uten integrasjonspunkt skal bruke disse dokumenttypene.
-
-| **Dokumenttype**                            | **Meldingstjenester**                                                                         |
-|---------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Status](../Utvikling/Dokumenttyper/status) | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
-| [Feil](../Utvikling/Dokumenttyper/feil)     | [eFormidlings meldingstjeneste](../Utvikling/Meldingstjenester/eformidlings_meldingstjeneste) |
-
 ## Adressere meldinger
 
 Meldinger adresseres fra avsenders organisasjonsnummer til mottakers organisasjonsnummer.
@@ -119,4 +110,4 @@ Følgende konfigurasjon er nødvendig for full funksjonalitet:
 
 ## Utvikling
 
-- [Eksempel på avtalt_meldingsutveksling](../Utvikling/Eksempel/avtalt)
+- [Eksempel på avtalt meldingsutveksling](../Utvikling/Eksempel/avtalt)

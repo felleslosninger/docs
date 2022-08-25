@@ -17,7 +17,7 @@ og passord.
 ## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste)
 
 (Gjelder bare for digital post til offentlige virksomheter)
-Integrasjonspunktet kjører som [datasystem](https://www.altinn.no/no/Portalhjelp/Datasystemer/) mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
+Integrasjonspunktet kjører som datasystem mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
 
 Når du oppretter datasystemet er det viktig at det gjøres av person som kan representere virksomheten. Hvordan man representerer virksomheten kan du lese [her](https://www.altinn.no/hjelp/skjema/faq/).
 
@@ -43,7 +43,7 @@ Informasjon om hvordan du logger på Altinn portal finner du <a href="https://ww
 
 ## Opprette brukere for KS SvarUt og SvarInn
 
-Når beskrivelsen under er utført må brukernavn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_properties_config#digital-post-til-virksomheter). 
+Når beskrivelsen under er utført må brukernavn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"](installasjon#konfigurere-altinn-digital-post-dpv).
 
 Se [Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/eformidling/20) for alt om avtaler, begrunnelser, sammenhenger og lignende ikke teknisk. Avtaler må være på plass før en begynner å konfigurere
 

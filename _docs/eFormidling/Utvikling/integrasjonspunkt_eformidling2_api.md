@@ -274,4 +274,4 @@ participant mf  as Meldingsformidler
 
 Se:
 
-- [Eksempel på opprettelse av webhook-abonnement](/eformidling_nm_restdocs#_example_1_create_a_subscription)
+- [Eksempel på opprettelse av webhook-abonnement](integrasjonspunkt_eformidling2_api_restdocs#_example_1_create_a_subscription)

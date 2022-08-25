@@ -20,10 +20,10 @@ Det finnes flere måter å kjøre integrasjonspunktet på. Den vi anbefaler for 
 
 Integrasjonspunktet kan også installeres som en tjeneste på server. For å gjøre dette kan en laste ned en tredjepartsprogramvare og sette opp en egen liten config-fil.
 
-Dokumentasjonen på programvaren du trenger ligger [på github](https://github.com/kohsuke/winsw). Du trenger to filer: .exe -filen fra dette programmet og en egen .xml-fil for å fortelle .exe -filen hvilke innstillinger som skal brukes. Dette er samme konseptet som [einnsyn-klient installasjonen er basert på](/docs/eInnsyn/). 
+Dokumentasjonen på programvaren du trenger ligger [på github](https://github.com/kohsuke/winsw). Du trenger to filer: .exe -filen fra dette programmet og en egen .xml-fil for å fortelle .exe -filen hvilke innstillinger som skal brukes. Dette er samme konseptet som [einnsyn-klient installasjonen er basert på](https://docs.digdir.no/docs/eInnsyn/). 
 
 1. Last ned Winsw.exe [her](https://github.com/kohsuke/winsw/releases). Mer informasjon om hvilken versjon du skal velge står [her: Supported .NET versions](https://github.com/kohsuke/winsw#user-content-supported-net-versions). Om du er usikker på hvilken .NET versjon du har, [les her](https://support.microsoft.com/nb-no/help/318785/how-to-determine-which-versions-and-service-pack-levels-of-the-microso)
-2. Last ned konfigurasjonsfila vår for [testmiljø](/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø](/resources/eformidling/integrasjonspunkt-prod.xml)
+2. Last ned konfigurasjonsfila vår for [testmkosmosiljø]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-staging.xml) eller [produksjonsmiljø]({{site.baseurl}}/resources/eformidling/integrasjonspunkt-prod.xml)
 3. Endre navn på .exe fila og xml-filene til de navnene du ønsker. For eksempel integrasjonspunkt-service.exe og integrasjonspunkt-service.xml. (begge må ha samme navn)
 4. Legg begge disse filene i integrasjonspunktmappa di.
 5. Endre versjonsnummeret på integrasjonspunkt-%versjonsnr%.jar til å være lik din versjon
@@ -167,7 +167,7 @@ user: %servernavn%\integrasjonspunkt
         * "disk:\mappenavn» til integrasjonspunktet"
 
 
-![Taskscheduler](/images/eformidling/taskscheduler.PNG)
+![Taskscheduler]({{site.baseurl}}/images/eformidling/taskscheduler.PNG)
 
 Merk: om du skal starte integrasjonspunktet i staging-miljø må du bruke følgende argument i stedet: ```-jar -Dspring.profiles.active=staging integrasjonspunkt-%versjonsnr%.jar ```
 
@@ -181,7 +181,7 @@ Last ned den siste versjon av integrasjonspunkt[versjonsnr].jar filen og legg de
 
 > Køyrer du allereie integrasjonspunktet som ei teneste så må denne tenesta stoppes til fordel for KOSMOS slik at det er KOSMOS som styrer oppstart (inkl. ønska versjon) av integrasjonspunktet
 
-Vi har lagt opp til at KOSMOS kan køyrast som ei Windows-teneste vha jar-wrapperen https://github.com/kohsuke/winsw. Følg veiledninga og bruk konfigurasjonen under. Dette er same wrapper som vi har nytta for [integrasjonspunktet](#alt-1-kj%C3%B8re-integrasjonspunktet-som-en-tjeneste) og [einnsyn](/docs/eInnsyn/) før. 
+Vi har lagt opp til at KOSMOS kan køyrast som ei Windows-teneste vha jar-wrapperen https://github.com/kohsuke/winsw. Følg veiledninga og bruk konfigurasjonen under. Dette er same wrapper som vi har nytta for [integrasjonspunktet](#alt-1-kj%C3%B8re-integrasjonspunktet-som-en-tjeneste) og [einnsyn](https://docs.digdir.no/docs/eInnsyn/) før. 
 
 > Lagre konfigurasjonsfila fila som ```kosmos-service.xml``` og *winsw.exe* fila endrast til ```kosmos-service.exe``` .
 Om du allereie har integrasjonspunktet som Windows-service så kan du benytte samme .exe fil ved å endre namn frå til dømes: ```integrasjonspunkt-service.exe``` til ```kosmos-service.exe```. Du treng ikkje ```integrasjonspunkt-service.xml``` når du bruker KOSMOS, men du må fortsatt ha ```integrasjonspunkt-local.properties.```
@@ -208,13 +208,13 @@ Om du har alt i samme katalog treng du kun endre versjonsnamnet "X.Y.Z" frå fø
   </log>
 </service>
 ```
-*[Last ned konfigurasjonsfila her](/resources/eformidling/kosmos-service.xml)*
+*[Last ned konfigurasjonsfila her]({{site.baseurl}}/resources/eformidling/kosmos-service.xml)*
 
 > **Merk:** Visst du har mellomrom i mappenamn i stien bør du endre %BASE% til absolutt sti. Døme: *C:\\"kosmos app"\\sti\\til\\her\\kosmos.X.Y.Z.jar*
 
 Døme: No bør du ha desse filene i liggande i mappa.
     
-![Filer for å køyre applikasjon som Windows wrapper](/images/eformidling/kosmos-filer.PNG)
+![Filer for å køyre applikasjon som Windows wrapper]({{site.baseurl}}/images/eformidling/kosmos-filer.PNG)
 
 ### Starte frå kommandolinja
 For å starte frå kommandolinja kan du bruke følgande kommando:
@@ -228,7 +228,7 @@ For å starte frå kommandolinja kan du bruke følgande kommando:
 ### Starte i Linux
 For å starte kan ein bruke samme kommando som over, men om ein ynskjer å starte KOSMOS som ei bakgrunnsteneste kan ein legge på ein ampersand på slutten av kommandoen. Her treng du sjølvsagt ikkje wrapper filene som vist på biletet over, men heller ha ein mappestruktur som liknar på dette: 
 
-![Filer for å køyre applikasjon i linux](/images/eformidling/kosmos-linux-filer.PNG)
+![Filer for å køyre applikasjon i linux]({{site.baseurl}}/images/eformidling/kosmos-linux-filer.PNG)
 
 Døme:
 ```java -jar -Dspring.profiles.active=staging kosmos-x.y.z.jar &```

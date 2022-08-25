@@ -31,8 +31,8 @@ brukes av eFormidling:
 Enkelte av meldingstjenestene krever at virksomheten oppretter en bruker med brukernavn og passord:
 
 - [Opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) (nødvendig for å bruke eFormidlings meldingstjeneste)
-- [Opprette bruker for KS SvarUt og SvarInn](opprette_brukere#opprette-bruker-for-altinn-digital-post)
-- [Opprette bruker for Altinn Digital Post](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
+- [Opprette bruker for KS SvarUt og SvarInn](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
+- [Opprette bruker for Altinn Digital Post](opprette_brukere#opprette-bruker-for-altinn-digital-post)
 
 Ta kontakt med vår servicedesk ved behov:
 
