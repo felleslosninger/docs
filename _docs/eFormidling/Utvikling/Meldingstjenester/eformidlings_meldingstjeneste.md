@@ -12,8 +12,8 @@ Mottakere støtter en eller flere av følgende prosesser:
 
 | **Prosess**                                              | **Dokumenttype**                              | **Eksempel**                           |
 |----------------------------------------------------------|-----------------------------------------------|----------------------------------------|
-| [Avtalt meldingsutveksling](../../Funksjonalitet/avtalt) | [Avtalt](../Dokumenttyper/avtalt)             | [Eksempel](../Eksempel/avtalt)         |
 | [Saksbehandling](../../Funksjonalitet/saksbehandling)    | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling) |
+| [Avtalt meldingsutveksling](../../Funksjonalitet/avtalt) | [Avtalt](../Dokumenttyper/avtalt)             | [Eksempel](../Eksempel/avtalt)         |
 
 Avsendere støtter en eller flere av følgende prosesser:
 

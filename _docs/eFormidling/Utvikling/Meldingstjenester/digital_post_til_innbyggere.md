@@ -53,7 +53,8 @@ Meldingsstatuser for meldinger sendt med Digital Post til Innbyggere:
 | Status    | Kommentar                                                                     |
 |-----------|-------------------------------------------------------------------------------|
 | OPPRETTET | Integrasjonspunkt mottar meldingen og oppretter forsendelse på internt format |
-| SENDT     | Forsendelse er sendt til meldingsformidler                                    |
+| SENDT     | Forsendelse er sendt til aksesspunkt                                          |
+| MOTTATT   | Forsendelse er mottatt av mottakers aksesspunkt                               |
 | LEVERT    | Forsendelse levert til innbyggers prefererte kanal                            |
 | LEST      | Innbygger har åpnet forsendelse i sin postkasse innboks                       |
 

@@ -15,24 +15,24 @@ folders:
   folderitems:
     - title: Oversikt
       jurl: /docs/eFormidling/Funksjonalitet/
-    - title: Avtalt meldingsutveksling
-      jurl: /docs/eFormidling/Funksjonalitet/avtalt
-    - title: FIKS IO-meldingsutveksling
-      jurl: /docs/eFormidling/Funksjonalitet/fiks_io
+    - title: Saksbehandling
+      jurl: /docs/eFormidling/Funksjonalitet/saksbehandling
+    - title: Taushetsbelagt saksbehandling
+      jurl: /docs/eFormidling/Funksjonalitet/taushetsbelagt_saksbehandling
     - title: Informasjon til innbygger
       jurl: /docs/eFormidling/Funksjonalitet/informasjon_til_innbygger
+    - title: Vedtak til innbygger
+      jurl: /docs/eFormidling/Funksjonalitet/vedtak_til_innbygger
     - title: Innsynskrav fra eInnsyn
       jurl: /docs/eFormidling/Funksjonalitet/innsynskrav
     - title: Journalpost til eInnsyn
       jurl: /docs/eFormidling/Funksjonalitet/journalpost
     - title: Møte til eInnsyn
       jurl: /docs/eFormidling/Funksjonalitet/mote
-    - title: Saksbehandling
-      jurl: /docs/eFormidling/Funksjonalitet/saksbehandling
-    - title: Taushetsbelagt saksbehandling
-      jurl: /docs/eFormidling/Funksjonalitet/taushetsbelagt_saksbehandling
-    - title: Vedtak til innbygger
-      jurl: /docs/eFormidling/Funksjonalitet/vedtak_til_innbygger
+    - title: Avtalt meldingsutveksling
+      jurl: /docs/eFormidling/Funksjonalitet/avtalt
+    - title: FIKS IO-meldingsutveksling
+      jurl: /docs/eFormidling/Funksjonalitet/fiks_io
 - title: Egenskaper
   folderitems:
     - title: Egenskaper
