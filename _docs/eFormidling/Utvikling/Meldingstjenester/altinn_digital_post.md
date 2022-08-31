@@ -10,9 +10,9 @@ eFormidling støtter følgende prosesser og dokumenttyper med meldingstjenesten 
 
 | **Prosess**                                                                         | **Dokumenttype**                              | **Eksempel**                                          |
 |-------------------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------------------|
-| [Informasjon til innbygger](../../Funksjonalitet/informasjon_til_innbygger)         | [Digital DPV](../Dokumenttyper/digital_dpv)   | [Eksempel](../Eksempel/informasjon_til_innbygger)     |
 | [Saksbehandling](../../Funksjonalitet/saksbehandling)                               | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling)                |
 | [Taushetsbelagt saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling) | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/taushetsbelagt_saksbehandling) |
+| [Informasjon til innbygger](../../Funksjonalitet/informasjon_til_innbygger)         | [Digital DPV](../Dokumenttyper/digital_dpv)   | [Eksempel](../Eksempel/informasjon_til_innbygger)     |
 | [Vedtak til innbygger](../../Funksjonalitet/vedtak_til_innbygger)                   | [Digital DPV](../Dokumenttyper/digital_dpv)   | [Eksempel](../Eksempel/vedtak_til_innbygger)          |
 
 Om Altinn Digital Post er en del av en mottakers kapabiliteter eller ikke avhenger av flere faktorer slik som

@@ -78,10 +78,10 @@ I --> |Følger lenke| S
 S --> |eFormidling| V
 </div>
 
-- [Informasjon til innbygger](informasjon_til_innbygger)
-- [Vedtak til innbygger](vedtak_til_innbygger)
 - [Saksbehandling](saksbehandling)
 - [Taushetsbelagt saksbehandling](taushetsbelagt_saksbehandling)
+- [Informasjon til innbygger](informasjon_til_innbygger)
+- [Vedtak til innbygger](vedtak_til_innbygger)
 
 ## Forespørre informasjon fra virksomheter
 
@@ -173,8 +173,8 @@ av eFormidling til maskin-til-maskin kommunikasjon og et annet er støtten for p
 støtter også "lettvekts" protokoller som avtales direkte mellom de som skal samhandle, og som verken krever koordinering
 med eller tilpassing av eFormidling.
 
-- [Avtalt meldingsutveksling](avtalt)
-- [FIKS IO-meldingsutveksling](fiks_io)
 - [Innsynskrav fra eInnsyn](innsynskrav)
 - [Journalpost til eInnsyn](journalpost)
 - [Møte til eInnsyn](mote)
+- [Avtalt meldingsutveksling](avtalt)
+- [FIKS IO-meldingsutveksling](fiks_io)

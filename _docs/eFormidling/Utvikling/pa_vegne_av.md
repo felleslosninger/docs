@@ -55,6 +55,8 @@ oppgis i konfigurasjon. Se `difi.move.fiks.ut.paa-vegne-av.*` og `difi.move.fiks
 
 - [Konfigurere KS SvarUt og SvarInn](../installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
 
+> NB: På vegne av for KS Svarut og SvarInn kan først tas i bruk ved versjon 2.9.0 av integrasjonspunktet.
+
 ## På vegne av for eFormidlings meldingstjeneste
 
 eFormidlings meldingstjeneste er realisert med Altinn Formidling. Kunden kan delegere sin tilgang til eFormidlings
@@ -71,15 +73,12 @@ Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altin
 
 ## På vegne av for eInnsyns meldingstjeneste
 
-Ved bruk av eInnsyns meldingstjeneste må leverandøren være avsender ved sending på vegne av kunde.
-
-> Dette er i motsetning til de andre meldingstjenestenes støtte for på vegne av
-
-Ved bruk av eInnsyn spesifiseres kunden i på-vegne-av forholdet i forretningsmeldingen for publiseringen. Se:
+I motsetning til de andre meldingstjenestene, så må leverandøren oppgis som avsender i SBDH ved bruk av eInnsyns
+meldingstjeneste. På-vegne-av forholdet spesifiseres i forretningsmeldingen for publiseringen. Se:
 
 - [Publisering](Dokumenttyper/publisering#forretningsmeldingen)
 
-Leverandøren må gi Digdir beskjed om delegeringsforholdet mellom leverandøren og kunden.
+Leverandøren må gi eInnsyn beskjed om delegeringsforholdet mellom leverandøren og kunden.
 
 Oppsettet krever ingen ekstra konfigurasjon av integrasjonspunktet.
 
