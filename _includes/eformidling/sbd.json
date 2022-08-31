@@ -1,0 +1,46 @@
+{
+    "standardBusinessDocumentHeader": {
+        "headerVersion": "1.0",
+        "sender": [ {
+            "identifier": {
+                "authority": "iso6523-actorid-upis",
+                "value": "<avsenderidentifikator>"
+            }
+        }],
+        "receiver": [{
+            "identifier": {
+                "authority": "iso6523-actorid-upis",
+                "value": "<mottakeridentifikator>"
+            }
+        }],
+        "documentIdentification": {
+            "standard": "<dokumenttype>",
+            "typeVersion": "1.0",
+            "instanceIdentifier": "<meldingsidentifikator>",
+            "type": "<forretningsmeldingnavn>"
+        },
+        "businessScope": {
+            "scope": [
+                {
+                    "type": "ConversationId",
+                    "instanceIdentifier": "<konversasjonsIdentifikator>",
+                    "identifier": "<prosessidentifikator>",
+                    "scopeInformation": [
+                        {
+                            "expectedResponseDateTime": "<leveringsfrist>"
+                        }
+                    ]
+                },
+                {
+                    "type": "SenderRef",
+                    "identifier": "<UUID>"
+                },
+                {
+                    "type": "ReceiverRef",
+                    "identfier": "<UUID>"
+                }
+            ]
+        }
+    },
+    "<forretningsmeldingnavn>": {}
+}

@@ -49,12 +49,8 @@ folders:
   - title: Om eFormidling
     jurl: /docs/eFormidling/
 
-  - title: Installasjonsveiledning
-    jurl: /docs/eFormidling/installasjon/eformidling_download_ip
-
   - title: Teknisk dokumentasjon
-    jurl: /docs/eFormidling/Teknisk_informasjon/aboutNextMove
-    #Må endre jurl på teknisk info
+    jurl: /docs/eFormidling/Introduksjon/
 
 - title: eSignering
   folderitems:

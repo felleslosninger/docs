@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<meta name="author" content="Version 2.5.0">
+<title>Service Registry API Specification</title>
+<link rel="stylesheet" href="assets/css/asciidoctor.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+.switch {
+
+    border-width: 1px 1px 0 1px;
+
+    border-style: solid;
+
+    border-color: #7a2518;
+
+    display: inline-block;
+
+}
+
+
+
+.switch--item {
+
+    padding: 10px;
+
+    background-color: #ffffff;
+
+    color: #7a2518;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+}
+
+
+
+.switch--item.selected {
+
+    background-color: #7a2519;
+
+    color: #ffffff;
+
+}
+
+
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+
+<script type="text/javascript">
+
+function addBlockSwitches() {
+
+    $('.primary').each(function() {
+
+        primary = $(this);
+
+        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
+
+        primary.children('.title').remove();
+
+    });
+
+    $('.secondary').each(function(idx, node) {
+
+        secondary = $(node);
+
+        primary = findPrimary(secondary);
+
+        switchItem = createSwitchItem(secondary, primary.children('.switch'));
+
+        switchItem.content.addClass('hidden');
+
+        findPrimary(secondary).append(switchItem.content);
+
+        secondary.remove();
+
+    });
+
+}
+
+
+
+function createBlockSwitch(primary) {
+
+    blockSwitch = $('<div class="switch"></div>');
+
+    primary.prepend(blockSwitch);
+
+    return blockSwitch;
+
+}
+
+
+
+function findPrimary(secondary) {
+
+    candidate = secondary.prev();
+
+    while (!candidate.is('.primary')) {
+
+        candidate = candidate.prev();
+
+    }
+
+    return candidate;
+
+}
+
+
+
+function createSwitchItem(block, blockSwitch) {
+
+    blockName = block.children('.title').text();
+
+    content = block.children('.content').first().append(block.next('.colist'));
+
+    item = $('<div class="switch--item">' + blockName + '</div>');
+
+    item.on('click', '', content, function(e) {
+
+        $(this).addClass('selected');
+
+        $(this).siblings().removeClass('selected');
+
+        e.data.siblings('.content').addClass('hidden');
+
+        e.data.removeClass('hidden');
+
+    });
+
+    blockSwitch.append(item);
+
+    return {'item': item, 'content': content};
+
+}
+
+
+
+$(addBlockSwitches);
+
+
+
+</script>
+
+
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Service Registry API Specification</h1>
+<div class="details">
+<span id="author" class="author">Version 2.5.0</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_authorization">Authorization</a></li>
+<li><a href="#_the_services">The services</a></li>
+<li><a href="#_service_records">Service Records</a>
+<ul class="sectlevel2">
+<li><a href="#get-service-records">Lookup all service records</a>
+<ul class="sectlevel3">
+<li><a href="#identifier-org">Organization</a></li>
+<li><a href="#identifier-person">Person</a></li>
+<li><a href="#errors">Errors</a></li>
+</ul>
+</li>
+<li><a href="#service-record-process">Lookup by process</a>
+<ul class="sectlevel3">
+<li><a href="#identifier-arkivmelding">Arkivmelding</a></li>
+<li><a href="#identifier-einnsyn">eInnsyn</a></li>
+<li><a href="#identifier-digital">Digital post</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#info-records">Lookup info records</a>
+<ul class="sectlevel2">
+<li><a href="#info-org">Organization</a></li>
+<li><a href="#info-person">Person</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_authorization">Authorization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The service registry API uses OAuth2 for authorization and expects self-contained JWTs from Maskinporten. The JWT token
+requests to Maskinporten are expected to contain x5c for the Norwegian business certificate (SEIDv1 or SEIDv2) the token
+request was signed with.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.digdir.no/docs/Maskinporten/maskinporten_overordnet">Maskinporten</a> (external link)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>eFormidling creates OAuth clients in Maskinporten as part of the onboarding process:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Client ID is <code>MOVE_IP_&lt;orgnumber&gt;</code></p>
+</li>
+<li>
+<p>One or more of the following scopes are granted to the client:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>move/dpo.read</code> (eFormidlings meldingstjeneste)</p>
+</li>
+<li>
+<p><code>move/dpe.read</code> (eInnsyns meldingstjeneste)</p>
+</li>
+<li>
+<p><code>move/dpi.read</code> (Digital Post til Innbyggere)</p>
+</li>
+<li>
+<p><code>move/dpf.read</code> (KS SvarUt og SvarInn)</p>
+</li>
+<li>
+<p><code>move/dpv.read</code> (Altinn Digital Post)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_services">The services</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP Method</th>
+<th class="tableblock halign-left valign-top">URL</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Media type(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#get-service-records">/identifier/{identifier}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#get-service-records">Lookup all service records</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#service-record-process">/identifier/{identifier}/process/{processIdentifier}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#service-record-process">Lookup by process</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#info-records">/info/{identifier}</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#info-records">Lookup info records</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">application/json, application/jose</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_service_records">Service Records</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="get-service-records">Lookup all service records</h3>
+<div class="paragraph">
+<p>The service is used to get the info record, and all possible service records for the specified identifier</p>
+</div>
+<div class="sect3">
+<h4 id="identifier-org">Organization</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/identifier/{identifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Request parameters</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>securityLevel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security level. Only applies to receivers on the KS Fiks platform. Default is highest available for receiver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/123123123' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/123123123 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 1724
+
+{
+  "infoRecord" : {
+    "identifier" : "123123123",
+    "organizationName" : "foo",
+    "postadresse" : {
+      "adresse" : "Skrivarvegen 42",
+      "postnummer" : "1337",
+      "poststed" : "teststed",
+      "land" : "testland"
+    },
+    "entityType" : {
+      "name" : "ORGL"
+    }
+  },
+  "serviceRecords" : [ {
+    "organisationNumber" : "123123123",
+    "pemCertificate" : "-----BEGIN CERTIFICATE-----\npem123\n-----END CERTIFICATE-----\n",
+    "process" : "urn:no:difi:profile:arkivmelding:administrasjon:ver1.0",
+    "documentTypes" : [ "urn:no:difi:arkivmelding:xsd::arkivmelding" ],
+    "service" : {
+      "identifier" : "DPO",
+      "endpointUrl" : "http://endpoint.here",
+      "serviceCode" : "4192",
+      "serviceEditionCode" : "270815",
+      "securityLevel" : null
+    }
+  }, {
+    "organisationNumber" : "123123123",
+    "pemCertificate" : null,
+    "process" : "urn:no:difi:profile:arkivmelding:tekniskeTjenester:ver1.0",
+    "documentTypes" : [ "urn:no:difi:profile:arkivmelding:tekniskeTjenester:ver1.0" ],
+    "service" : {
+      "identifier" : "DPV",
+      "endpointUrl" : "http://endpoint.here",
+      "serviceCode" : "4255",
+      "serviceEditionCode" : "9",
+      "securityLevel" : null
+    }
+  }, {
+    "organisationNumber" : "123123123",
+    "pemCertificate" : "-----BEGIN CERTIFICATE-----\npem567\n-----END CERTIFICATE-----\n",
+    "process" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+    "documentTypes" : [ "urn:no:difi:einnsyn:xsd::innsynskrav" ],
+    "service" : {
+      "identifier" : "DPE",
+      "endpointUrl" : "innsyn",
+      "serviceCode" : null,
+      "serviceEditionCode" : null,
+      "securityLevel" : null
+    }
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="identifier-person">Person</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/identifier/{identifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Request parameters</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>securityLevel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security level. Only applies to receivers on the KS Fiks platform. Default is highest available for receiver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/12345678901' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/12345678901 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 1245
+
+{
+  "infoRecord" : {
+    "identifier" : "12345678901",
+    "entityType" : {
+      "name" : "citizen"
+    }
+  },
+  "serviceRecords" : [ {
+    "organisationNumber" : "12345678901",
+    "pemCertificate" : "-----BEGIN CERTIFICATE-----\ncert123\n-----END CERTIFICATE-----\n",
+    "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "documentTypes" : [ "urn:no:difi:digitalpost:xsd:digital::digital", "urn:no:difi:digitalpost:xsd:fysisk::print" ],
+    "service" : {
+      "identifier" : "DPI",
+      "endpointUrl" : "http://dpi.endpoint.here",
+      "serviceCode" : null,
+      "serviceEditionCode" : null,
+      "securityLevel" : null
+    },
+    "orgnrPostkasse" : "post123",
+    "postkasseAdresse" : "adr123",
+    "mobilnummer" : "123",
+    "kanVarsles" : true,
+    "epostAdresse" : "post@post.foo",
+    "fysiskPost" : false,
+    "postAddress" : {
+      "name" : "Address name",
+      "street" : "Street x",
+      "postalCode" : "Postal code",
+      "postalArea" : "Area",
+      "country" : "Country"
+    },
+    "returnAddress" : {
+      "name" : "Address name",
+      "street" : "Street x",
+      "postalCode" : "Postal code",
+      "postalArea" : "Area",
+      "country" : "Country"
+    }
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="errors">Errors</h4>
+<div class="sect4">
+<h5 id="_identifier_not_found">Identifier not found</h5>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/404040404' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/404040404 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 404 Not Found
+Content-Type: application/json
+Content-Length: 99
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+
+{
+  "error_code" : "",
+  "error_description" : "Entity with identifier '404040404' not found."
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_receiver_does_not_have_given_security_level">Receiver does not have given security level</h5>
+<div class="paragraph">
+<p>This only applies to receivers on the KS Fiks platform. <a href="https://ks-no.github.io/fiks-platform/" class="bare">https://ks-no.github.io/fiks-platform/</a></p>
+</div>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/321321321?securityLevel=4' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/321321321?securityLevel=4 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 400 Bad Request
+Content-Type: application/json
+Content-Length: 78
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+
+{
+  "error_code" : "",
+  "error_description" : "security level not found"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="service-record-process">Lookup by process</h3>
+<div class="paragraph">
+<p>One may lookup a single service record by its given process. A list of valid processes can be found here: <a href="https://difi.github.io/felleslosninger/eformidling_nm_message.html" class="bare">https://difi.github.io/felleslosninger/eformidling_nm_message.html</a></p>
+</div>
+<div class="sect3">
+<h4 id="identifier-arkivmelding">Arkivmelding</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/identifier/{identifier}/process/{processIdentifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process identifier</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Request parameters</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>securityLevel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security level. Only applies to receivers on the KS Fiks platform. Default is highest available for receiver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/123123123/process/urn:no:difi:profile:arkivmelding:administrasjon:ver1.0' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/123123123/process/urn:no:difi:profile:arkivmelding:administrasjon:ver1.0 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Disposition: inline;filename=f.txt
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 823
+
+{
+  "infoRecord" : {
+    "identifier" : "123123123",
+    "organizationName" : "foo",
+    "postadresse" : {
+      "adresse" : "Skrivarvegen 42",
+      "postnummer" : "1337",
+      "poststed" : "teststed",
+      "land" : "testland"
+    },
+    "entityType" : {
+      "name" : "ORGL"
+    }
+  },
+  "serviceRecords" : [ {
+    "organisationNumber" : "123123123",
+    "pemCertificate" : "-----BEGIN CERTIFICATE-----\npem123\n-----END CERTIFICATE-----\n",
+    "process" : "urn:no:difi:profile:arkivmelding:administrasjon:ver1.0",
+    "documentTypes" : [ "urn:no:difi:arkivmelding:xsd::arkivmelding" ],
+    "service" : {
+      "identifier" : "DPO",
+      "endpointUrl" : "http://endpoint.here",
+      "serviceCode" : "4192",
+      "serviceEditionCode" : "270815",
+      "securityLevel" : null
+    }
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="identifier-einnsyn">eInnsyn</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/identifier/{identifier}/process/{processIdentifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process identifier</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Request parameters</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>securityLevel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security level. Only applies to receivers on the KS Fiks platform. Default is highest available for receiver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/123123123/process/urn:no:difi:profile:einnsyn:innsynskrav:ver1.0' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/123123123/process/urn:no:difi:profile:einnsyn:innsynskrav:ver1.0 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Disposition: inline;filename=f.txt
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 789
+
+{
+  "infoRecord" : {
+    "identifier" : "123123123",
+    "organizationName" : "foo",
+    "postadresse" : {
+      "adresse" : "Skrivarvegen 42",
+      "postnummer" : "1337",
+      "poststed" : "teststed",
+      "land" : "testland"
+    },
+    "entityType" : {
+      "name" : "ORGL"
+    }
+  },
+  "serviceRecords" : [ {
+    "organisationNumber" : "123123123",
+    "pemCertificate" : "-----BEGIN CERTIFICATE-----\npem567\n-----END CERTIFICATE-----\n",
+    "process" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+    "documentTypes" : [ "urn:no:difi:einnsyn:xsd::innsynskrav" ],
+    "service" : {
+      "identifier" : "DPE",
+      "endpointUrl" : "innsyn",
+      "serviceCode" : null,
+      "serviceEditionCode" : null,
+      "securityLevel" : null
+    }
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="identifier-digital">Digital post</h4>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/identifier/{identifier}/process/{processIdentifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>processIdentifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Process identifier</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Request parameters</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>securityLevel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security level. Only applies to receivers on the KS Fiks platform. Default is highest available for receiver.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>conversationId</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conversation ID for the request. Used for logging purposes.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/identifier/12345678901/process/urn:no:difi:profile:digitalpost:info:ver1.0' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /identifier/12345678901/process/urn:no:difi:profile:digitalpost:info:ver1.0 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Disposition: inline;filename=f.txt
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 1245
+
+{
+  "infoRecord" : {
+    "identifier" : "12345678901",
+    "entityType" : {
+      "name" : "citizen"
+    }
+  },
+  "serviceRecords" : [ {
+    "organisationNumber" : "12345678901",
+    "pemCertificate" : "-----BEGIN CERTIFICATE-----\ncert123\n-----END CERTIFICATE-----\n",
+    "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "documentTypes" : [ "urn:no:difi:digitalpost:xsd:digital::digital", "urn:no:difi:digitalpost:xsd:fysisk::print" ],
+    "service" : {
+      "identifier" : "DPI",
+      "endpointUrl" : "http://dpi.endpoint.here",
+      "serviceCode" : null,
+      "serviceEditionCode" : null,
+      "securityLevel" : null
+    },
+    "orgnrPostkasse" : "post123",
+    "postkasseAdresse" : "adr123",
+    "mobilnummer" : "123",
+    "kanVarsles" : true,
+    "epostAdresse" : "post@post.foo",
+    "fysiskPost" : false,
+    "postAddress" : {
+      "name" : "Address name",
+      "street" : "Street x",
+      "postalCode" : "Postal code",
+      "postalArea" : "Area",
+      "country" : "Country"
+    },
+    "returnAddress" : {
+      "name" : "Address name",
+      "street" : "Street x",
+      "postalCode" : "Postal code",
+      "postalArea" : "Area",
+      "country" : "Country"
+    }
+  } ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="info-records">Lookup info records</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="info-org">Organization</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/info/{identifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/info/123123123' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /info/123123123 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 332
+
+{
+  "infoRecord" : {
+    "identifier" : "123123123",
+    "organizationName" : "foo",
+    "postadresse" : {
+      "adresse" : "Skrivarvegen 42",
+      "postnummer" : "1337",
+      "poststed" : "teststed",
+      "land" : "testland"
+    },
+    "entityType" : {
+      "name" : "ORGL"
+    }
+  },
+  "serviceRecords" : [ ]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="info-person">Person</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">/info/{identifier}</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>identifier</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization number, or personal identification number</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Headers</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bearer &lt;JWT&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/info/12345678901' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /info/12345678901 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+Content-Type: application/json
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Length: 146
+
+{
+  "infoRecord" : {
+    "identifier" : "12345678901",
+    "entityType" : {
+      "name" : "citizen"
+    }
+  },
+  "serviceRecords" : [ ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-08-22 21:02:38 +0200
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
+</body>
+</html>
