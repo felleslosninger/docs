@@ -6,6 +6,18 @@ summary: "Elma status"
 product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_status
+
+---
+## ELMA update 22.08.2022 (3.16.0)
+
+### Bug fix
+```
+[MOVE-2906] Feil lenke til ELMA-dokumentasjon
+[MOVE-2905] ELMA - Feil ved visning av CertificateType
+[MOVE-2882] SMP - Tom ServiceEndpointList ikke gyldig i følge XSD
+[MOVE-2875] Oppdater nettsider som del av delta-oppdateringar
+```
+
 ---
 ## ELMA update 21.06.2022 (3.15.2)
 
