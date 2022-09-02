@@ -85,6 +85,11 @@ Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  Vi vurderer p.t. om
 
 Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingene fra IETF.  Allerede idag tilbys ikke implicit for nye integrasjoner, kun for eksisterende.  I Nye ID-porten fjernes støtten for implicit helt, slik at de som bruker det idag, må skrive om sin løsning til å bruke code flow med pkce.
 
+### Innstramming klientautentisering med private_key_jwt
+
+JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim `iss`.  Parameteret `client_id` må angis mot token-endepunktet, i tillegg til `client_assertion`.  Dette er slik det er dokumentert på gammel løsning, men nye løsning håndhever dette strengere.
+
+
 ### SAML
 
 I ny løsning vil det bli tilbudt en rudimentær SAML-støtte, hvis formål kun er å videreføre eksisterende integrasjoner. Vi vil lage en enkel SAML-til-OIDC-proxy, som vi plasser foran ny OIDC-issuer.
