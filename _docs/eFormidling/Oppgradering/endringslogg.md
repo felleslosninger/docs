@@ -17,6 +17,12 @@ redirect_from:
 
 ## Integrasjonspunktet 
 
+## 2.8.3
+08.09.2022
+
+- Fikset feil der integrasjonspunktet i enkelte tilfeller produserte ugyldige arkivmeldinger ved mottak fra KS SvarInn: manglende systemId, manglende journaldato og journaldato fra før kristus
+- Lagt til støtte for å ekskludere alle filer bortsett fra PDF fra print ved bruk av KS SvarUt
+
 ## 2.8.2 
 01.07.2022
 
