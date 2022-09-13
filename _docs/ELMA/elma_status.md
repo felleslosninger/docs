@@ -8,6 +8,14 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 
 ---
+## ELMA update 13.09.2022 (3.16.1)
+
+### Bug fix
+```
+[MOVE-2930] Oppslag mot document-types-endepunktet i REST-API-et feilar
+```
+
+---
 ## ELMA update 22.08.2022 (3.16.0)
 
 ### Bug fix
