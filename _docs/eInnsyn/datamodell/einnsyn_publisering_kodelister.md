@@ -38,6 +38,7 @@ Namespace arkiv=http://www.arkivverket.no/standarder/noark5/arkivstruktur/
 - arkiv:orienterinssak
 - arkiv:politiskSak
 - arkiv:referatsak
+- arkiv:godkjenning
 - arkiv:møtesakstype_annet
 
 ## Møtedokumentregistrering
