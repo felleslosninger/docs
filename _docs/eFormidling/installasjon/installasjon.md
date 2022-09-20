@@ -138,14 +138,14 @@ Tilgjengelige miljø:
 - [eForidling Produksjon](../Miljo/produksjon)
 - [eFormidling QA](../Miljo/qa)
 
-| Egenskap               | Beskrivelse                                    | Standardverdi |
-|------------------------|------------------------------------------------|---------------|
-| spring.profiles.active | Produksjon (`production`) eller QA (`staging`) | production    |
+| Egenskap               | Beskrivelse                                                                                                                                                  | Standardverdi |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| spring.profiles.active | Produksjon (`production`) eller QA (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
 
 Eksempel:
 
 ```
-spring.profiles.active=staging
+java -jar -Dspring.profiles.active=staging integrasjonspunkt-2.8.3.jar  
 ```
 
 #### Hashicorp Vault
