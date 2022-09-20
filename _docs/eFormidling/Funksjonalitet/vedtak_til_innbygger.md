@@ -69,7 +69,7 @@ dokumenttype støttes av en eller flere meldingstjenester.
 
 ## Adressere meldinger
 
-Meldinger adresseres fra avsenders organisasjonsnummer til mottakers fødselsnummer.
+Meldinger adresseres fra avsenders organisasjonsnummer til mottakers fødselsnummer. For print kan mottakers fødselsnummer utelates dersom dette ikke er kjent eller dersom mottaker ikke har fødselsnummer.
 
 For mottakere som har valgt digital postkasse foretrekkes denne. For mottakere som ikke har valgt postkasse må avsender
 selv velge om meldingen kan sendes til Altinn Digital Post eller om den må sendes som fysisk post. Mottakere som er
