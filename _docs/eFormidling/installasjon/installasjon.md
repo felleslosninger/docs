@@ -514,8 +514,8 @@ KS SvarUt og SvarInn krever hver sin bruker:
 | difi.move.fiks.ut.konteringsKode                 | Kode som beskriver faktureringskonto for forsendelsen                                                                   | (ingen)       |
 | difi.move.fiks.ut.ekskluderesFraPrint            | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering. Ved å oppgi `*` ekskluderes alle filer bortsett fra PDF fra print. | (ingen)       |
 | difi.move.fiks.ut.kunDigitalLevering             | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert. | (ingen)       |
-| difi.move.fiks.ut.paa-vegne-av.<orgnr>.username  | Brukernavn for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)             | (ingen)       |
-| difi.move.fiks.ut.paa-vegne-av.<orgnr>.password  | Passord for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                | (ingen)       |
+| difi.move.fiks.ut.paa-vegne-av.&lt;orgnr&gt;.username  | Brukernavn for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)             | (ingen)       |
+| difi.move.fiks.ut.paa-vegne-av.&lt;orgnr&gt;.password  | Passord for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                | (ingen)       |
 | difi.move.fiks.inn.username                      | Brukernavn for KS SvarInn (mottakersystem)                                                                              | (ingen)       |
 | difi.move.fiks.inn.password                      | Passord for KS SvarInn (mottakersystem)                                                                                 | (ingen)       |
 | difi.move.fiks.inn.mailOnError                   | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                    | true          |
