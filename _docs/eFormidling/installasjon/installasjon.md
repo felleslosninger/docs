@@ -522,8 +522,8 @@ KS SvarUt og SvarInn krever hver sin bruker:
 | difi.move.fiks.inn.fallbackSenderOrgNr           | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)          | (ingen)       |
 | difi.move.fiks.inn.enable                        | Slår på/av støtte for KS SvarInn                                                                                        | true          |
 | difi.move.fiks.inn.mailSubject                   | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                         | (ingen)       |
-| difi.move.fiks.inn.paa-vegne-av.\<orgnr\>.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
-| difi.move.fiks.inn.paa-vegne-av.\<orgnr\>.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
+| difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
+| difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
 
 Eksempel:
 
