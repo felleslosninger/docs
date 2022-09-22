@@ -26,11 +26,13 @@ NOARK 5 versjon 3.1 og er definert i arkivmelding.xsd. Arkivmelding.xsd definere
 Arkivmelding bruker typene fra NOARK med en del tilpasninger. NOARK-typene er kopiert og tilpasset fra NOARK-skjemaet
 arkivstruktur.xsd til arkivmelding.xsd. NOARK-skjemaet metadatakatalog.xsd brukes uendret.
 
-eFormidlings krav til utforming av arkivmelding:
+eFormidlings krav til utforming av arkivmeldinger som sendes med grensesnittet `eFormidling 2`:
 - validerer ihht. arkivmelding.xsd
 - arkivmelding skal inneholde en saksmappe
 - saksmappen skal inneholde en journalpost
 - det tas bare hensyn til dokumentobjekt under tilhørende dokumentbeskrivelse
+
+Ved mottak av arkivmeldingen kan en ikke basere seg på å validere mot arkivmelding.xsd fordi det i enkelte tilfeller vil mangle tilstrekkelig informasjon til å produsere en gyldig arkivmelding. Dette gjelder meldinger sendt fra eFormidlings grensesnitt `BEST/EDU` og meldinger mottatt fra KS SvarInn.
 
 ## Eksempel
 
