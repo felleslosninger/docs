@@ -1,7 +1,6 @@
 ---
 title: 2022
 description: 2022
-permalink: /releaser_2022.html
 sidebar: oidc
 ---
 
