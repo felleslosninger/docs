@@ -1,7 +1,6 @@
 ---
 title: 2020
 description: 2020
-permalink: /releaser_2020.html
 sidebar: oidc
 ---
 
