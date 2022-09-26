@@ -9,7 +9,7 @@ product: KRR
 
 redirect_from: /krr_overgang_soap_rest
 ---
-SOAP-grensesnittet til KRR blir faset ut 31.12.2021
+SOAP-grensesnittet til KRR blir faset ut 01.11.2022
 
 I den forbindelse må alle som i dag bruker SOAP, sørge for å gå over til å bruke KRR sitt REST-API.
 
