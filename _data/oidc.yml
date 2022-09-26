@@ -141,6 +141,7 @@ folders:
   folderitems:
 
 #==rel_notes_start==
+
   - title: 2018
     jurl: /docs/idporten/oidc/releaser_2018
 
@@ -155,6 +156,7 @@ folders:
 
   - title: 2022
     jurl: /docs/idporten/oidc/releaser_2022
+    
 #==rel_notes_stop==
 
 - title: SAML grensesnitt
