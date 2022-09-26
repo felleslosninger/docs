@@ -1,7 +1,6 @@
 ---
 title: 2021
 description: 2021
-permalink: /releaser_2021.html
 sidebar: oidc
 ---
 
