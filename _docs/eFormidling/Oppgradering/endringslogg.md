@@ -17,6 +17,15 @@ redirect_from:
 
 ## Integrasjonspunktet 
 
+## 2.9.0
+28.09.2022
+
+- DPF - Støtte for på-vegne-av
+- Oppdatert Azure Service Bus bibliotek
+- Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet 
+- Rettet default DPI-property (difi.move.dpi.uri)
+
+
 ## 2.8.3
 08.09.2022
 
