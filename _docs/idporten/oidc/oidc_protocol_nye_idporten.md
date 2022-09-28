@@ -89,6 +89,8 @@ Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingene fra 
 
 JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim `iss`.  Parameteret `client_id` må angis mot token-endepunktet, i tillegg til `client_assertion`.  Dette er slik det er dokumentert på gammel løsning, men nye løsning håndhever dette strengere.
 
+### Nytt parameter iss i respons fra autorisasjons-endepunktet
+Responser fra autorisasjons-endepunktet vil inneholde parameteret `iss` med verdien fra ID-portens issuer i det aktuelle miljøet.  Dette kan brukes til å unngå "mix-up-attacks" og er spesifisert i RFC 9207.
 
 ### SAML
 
