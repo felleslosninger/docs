@@ -24,7 +24,7 @@ Det er flere grunner til at vi ønsker å fase ut SOAP grensesnittet.
 - REST er den foretrukne protokollen for WEB Service i dag i det offentlige
 - Støtte for flere dataformat bl.a. JSON
 - Å støtte både SOAP og REST gir utfordringer både med ressurser og kompetanse
-- Oppslag via SOAP er i dag tett integrert med IDporten, REST går mot et API som er sikret med Maskinporten.
+- Oppslag via SOAP er i dag tett integrert med ID-porten, REST går mot et API som er sikret med Maskinporten.
 
 
 ## Hva må gjøres?
