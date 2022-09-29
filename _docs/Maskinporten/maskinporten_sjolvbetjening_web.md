@@ -24,7 +24,7 @@ Samarbeidsportalen er inngangen til selvbetjeningen på nett. En forutsetning fo
 
 For å opprette bruker på Samarbeidsportalen. Gjør følgende:
 
-1. Gå til samarbeid.difi.no
+1. Gå til samarbeid.digdir.no
 2. Trykk på "Min profil" oppe i høyre hjørne.
 3. Trykk på "Registrer deg" i påloggingsvinduet
 4. Registrer bruker med din jobbadresse
