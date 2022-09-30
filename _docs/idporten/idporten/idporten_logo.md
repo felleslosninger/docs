@@ -17,7 +17,7 @@ I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider
 Symbolet er spesialdesignet og tilpasset slik at
 det også fungerer godt i et lite format.
 
-![ID-porten hovedlogo]({{site.baseurl}}/assets/Merket_hovedlogoRGB.eps)
+![ID-porten hovedlogo]({{site.baseurl}}/assets/Merket_hovedlogoRGB.png)
 
 Last ned .eps fil her: [Merket_hovedlogoRGB.eps]({{site.baseurl}}/assets/Merket_hovedlogoRGB.eps)
 
@@ -30,9 +30,9 @@ er plassering av symbol på en bakgrunn der
 kontrasten påvirkes og symbolet ikke lengre
 vises i sin helhet.
 
-![ID-porten hovedlogo]({{site.baseurl}}/assets/Merket_Negativ_logoRGB.eps)
+![ID-porten hovedlogo]({{site.baseurl}}/assets/Merket_Negativ_logoRGB.png)
 
-Last ned .eps fil her: [Merket_Negativ_logoRGB.eps](/assets7Merket_Negativ_logoRGB.eps)
+Last ned .eps fil her: [Merket_Negativ_logoRGB.eps]({{site.baseurl}}/assets/Merket_Negativ_logoRGB.eps)
 
 ### Farger/Fargekoder
 
