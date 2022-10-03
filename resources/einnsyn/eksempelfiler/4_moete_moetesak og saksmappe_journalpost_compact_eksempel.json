@@ -17,7 +17,7 @@
 	"arkiv:offentligTittel_SENSITIV": "Årsmøte i Quizutvalget - M-mappe_offentligTittel_SENSITIV",
 	"arkiv:tittel": "Møte Quiz",
 	"arkiv:utvalg": "Quizutvalget",
-	"arkiv:videolink": ["https://oslo.kommunetv.no/archive/269","https://oslo.kommunetv.no/archive/268"]
+	"arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
     {
       "@id": "saksmappe-uuid",
@@ -77,7 +77,7 @@
       "arkiv:tittel": "Møtesakreg - Leikanger Quizturnering",
       "arkiv:tittel_LIST": {"@list": ["Møtesakreg - Leikanger Quizturnering"]},
       "arkiv:tittel_SENSITIV": "Møtesakreg - Leikanger Quizturnering",
-	  "arkiv:videolink": ["https://oslo.kommunetv.no/archive/269","https://oslo.kommunetv.no/archive/268"]
+	  "arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
 	{
       "@id": "dokbeskrivelse_saksreg-vedlegg-uuid",

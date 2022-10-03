@@ -6,7 +6,7 @@
   },
   "@graph": [
     {
-	"@id": "../møtemappe-uuid",
+	"@id": "møtemappe-uuid",
 	"@type": "arkiv:Moetemappe",
 	"arkiv:systemID": "møtemappe-uuid",
 	"arkiv:moetedato": {"@type": "xsd:dateTime","@value": "2021-09-25T18:00:00.000+02:00"},
@@ -17,14 +17,14 @@
 	"arkiv:offentligTittel_SENSITIV": "Møte Quiz - Sensitiv",
 	"arkiv:tittel": "Møte Quiz",
 	"arkiv:utvalg": "Quizutvalget",
-	"arkiv:videolink": ["https://oslo.kommunetv.no/archive/269","https://oslo.kommunetv.no/archive/268"]
+	"arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
     {
-    "@id": "../møteredokregistrering-innkalling-uuid",
+    "@id": "møteredokregistrering-innkalling-uuid",
     "@type": "arkiv:Møtedokumentregistrering",
     "arkiv:systemID": "møteredokregistrering-innkalling-uuid",
 	"arkiv:administrativEnhet": "BridgeUtvalget",
-	"arkiv:parent": {"@id": "../møtemappe-uuid"},
+	"arkiv:parent": {"@id": "møtemappe-uuid"},
     "arkiv:møtedokumentregistreringstype": {"@id": "arkiv:innkalling"},
     "arkiv:tittel_SENSITIV": "Møtedokumenter",
 	"arkiv:offentligTittel": "Møtedokumenter",
