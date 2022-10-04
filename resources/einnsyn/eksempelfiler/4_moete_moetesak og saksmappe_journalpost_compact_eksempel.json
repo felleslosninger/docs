@@ -67,15 +67,14 @@
 	{
       "@id": "dokbeskrivelse_saksreg-vedlegg-uuid",
       "@type": "arkiv:Dokumentbeskrivelse",
-      "arkiv:beskrivelse": "Innstilling/Vedtak",
       "arkiv:dokumentmedium": {"@id": "arkiv:elektroniskArkiv"},
       "arkiv:dokumentnummer": {"@type": "xsd:integer","@value": "177092"},
       "arkiv:dokumentobjekt": {"@id": "dokobjekt-dokbeskrivelse_saksreg-vedlegg-uuid"},
       "arkiv:dokumentstatus": {"@id": "arkiv:dokumentetErFerdigstilt"},
-      "arkiv:dokumenttype": "Vedtak",
+      "arkiv:dokumenttype": "IN",
       "arkiv:systemID": "dokbeskrivelse_saksreg-vedlegg-uuid",
       "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
-      "arkiv:tittel": "Innstilling/Vedtak",
+      "arkiv:tittel": "Innstilling/Vedtak - tittel",
       "arkiv:tittel_SENSITIV": "Innstilling/Vedtak - Møtesakreg_Dokbeskr-vedtak_tittel_SENSITIV"
     },
 	{
@@ -89,12 +88,10 @@
 	{
       "@id": "dokbeskrivelse_jpost-1-uuid",
       "@type": "arkiv:Dokumentbeskrivelse",
-      "arkiv:beskrivelse": "Vedlegg",
       "arkiv:dokumentmedium": {"@id": "arkiv:elektroniskArkiv"},
       "arkiv:dokumentnummer": {"@type": "xsd:integer","@value": "174080"},
       "arkiv:dokumentobjekt": {"@id": "dokobjekt-dokbeskrivelse_jpost-1-uuid"},
       "arkiv:dokumentstatus": {"@id": "arkiv:dokumentetErFerdigstilt"},
-      "arkiv:dokumenttype": "Vedlegg",
       "arkiv:systemID": "dokbeskrivelse_jpost-1-uuid",
       "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:vedlegg"},
       "arkiv:tittel": "E-Postmelding",
@@ -111,12 +108,10 @@
 	{
       "@id": "dokbeskrivelse_jpost-2-uuid",
       "@type": "arkiv:Dokumentbeskrivelse",
-      "arkiv:beskrivelse": "Saksframlegg",
       "arkiv:dokumentmedium": {"@id": "arkiv:elektroniskArkiv"},
       "arkiv:dokumentnummer": {"@type": "xsd:integer","@value": "174081"},
       "arkiv:dokumentobjekt": {"@id": "dokobjekt-dokbeskrivelse_jpost-2-uuid"},
       "arkiv:dokumentstatus": {"@id": "arkiv:dokumentetErFerdigstilt"},
-      "arkiv:dokumenttype": "Saksframlegg",
       "arkiv:systemID": "dokbeskrivelse_jpost-2-uuid",
       "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
       "arkiv:tittel": "Dokbeskr_journalpost",
