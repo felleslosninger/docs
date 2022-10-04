@@ -1,6 +1,6 @@
 {
   "@context": {
-    "@base": "http://data.einnsyn.no/noark5/",
+    "@base": "http://namespace/",
     "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
@@ -11,9 +11,7 @@
   "arkiv:moetenummer": "999",
   "arkiv:moetested": "Teams, Møterom 066 Leikanger",
   "arkiv:offentligTittel": "Møte i Quizutvalget",
-  "arkiv:offentligTittel_LIST": {"@list": ["Møte","Quiz"]},
   "arkiv:offentligTittel_SENSITIV": "Møte Quiz - Sensitiv",
-  "arkiv:tittel": "Møte Quiz",
   "arkiv:utvalg": "Quizutvalget",
-  "arkiv:videolink": ["https://oslo.kommunetv.no/archive/269","https://oslo.kommunetv.no/archive/268"]
+  "arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
 }

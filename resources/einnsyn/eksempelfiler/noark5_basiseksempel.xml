@@ -66,6 +66,11 @@
 								<arkivertDato>2016-03-04T18:28:45</arkivertDato>
 								<arkivertAv>Administrator</arkivertAv>
 								<referanseArkivdel>cc9b743d-d3b5-49ea-8e7d-05ea4da9f279</referanseArkivdel>
+								<skjerming>
+									<tilgangsrestriksjon>Unntatt offentlighet</tilgangsrestriksjon>
+									<skjermingshjemmel>Off. §13</skjermingshjemmel>
+									<skjermingMetadata>xxx</skjermingMetadata>
+								</skjerming>
 								<dokumentbeskrivelse>
 									<systemID>7b3a56ff-4f19-4e73-8999-e63358f8d85c</systemID>
 									<dokumenttype>Inngående eksternt produsert</dokumenttype>

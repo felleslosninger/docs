@@ -1,6 +1,6 @@
 {
   "@context": {
-    "@base": "http://data.einnsyn.no/noark5/",
+    "@base": "http://namespace/",
     "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
@@ -15,7 +15,6 @@
 	"arkiv:offentligTittel": "Møte i Quizutvalget",
 	"arkiv:offentligTittel_LIST": {"@list": ["Møte","Quiz"]},
 	"arkiv:offentligTittel_SENSITIV": "Møte Quiz - Sensitiv",
-	"arkiv:tittel": "Møte Quiz",
 	"arkiv:utvalg": "Quizutvalget",
 	"arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
@@ -26,9 +25,7 @@
 	"arkiv:administrativEnhet": "BridgeUtvalget",
 	"arkiv:parent": {"@id": "møtemappe-uuid"},
     "arkiv:møtedokumentregistreringstype": {"@id": "arkiv:innkalling"},
-    "arkiv:tittel_SENSITIV": "Møtedokumenter",
 	"arkiv:offentligTittel": "Møtedokumenter",
-	"arkiv:offentligTittel_LIST": {"@list": ["Møtedokumenter"]},
     "arkiv:offentligTittel_SENSITIV": "Møtedokumenter Tittel sensitiv",
     "arkiv:dokumentbeskrivelse": {"@id": "dokumentbeskrivelse-innkalling-uuid"}
     },
@@ -43,7 +40,6 @@
     "arkiv:tilknyttetDato": {"@type": "xsd:dateTime","@value": "2018-04-25T00:00:00.000+02:00"},
     "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
     "arkiv:tittel": "Møteinnkallelse Quizutvalg møte",
-	"arkiv:tittel_LIST": {"@list":["Møteinnkallelse","Quizutvalg","møte"]},
     "arkiv:tittel_SENSITIV": "Møteinnkallelse Quizutvalg møte sensitiv",
     "arkiv:dokumentobjekt": {"@id": "dokumentobjekt-innkalling-uuid"}
     },
