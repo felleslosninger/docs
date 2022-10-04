@@ -13,9 +13,7 @@
 	"arkiv:moetenummer": "999",
 	"arkiv:moetested": "Teams, Møterom 066 Leikanger",
 	"arkiv:offentligTittel": "Møte i Quizutvalget",
-	"arkiv:offentligTittel_LIST": {"@list": ["Møte","Quiz"]},
 	"arkiv:offentligTittel_SENSITIV": "Årsmøte i Quizutvalget - M-mappe_offentligTittel_SENSITIV",
-	"arkiv:tittel": "Møte Quiz",
 	"arkiv:utvalg": "Quizutvalget",
 	"arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
@@ -24,16 +22,12 @@
       "@type": "arkiv:Saksmappe",
       "arkiv:administrativEnhet": "QuizAvd",
       "arkiv:offentligTittel": "Saksmappe - Leikanger Quizturnering",
-      "arkiv:offentligTittel_LIST": {"@list": ["Saksmappe - Leikanger Quizturnering"]},
       "arkiv:offentligTittel_SENSITIV": "Saksmappe - Leikanger Quizturnering - S-mappe_offentligTittel_SENSITIV",
       "arkiv:saksaar": {"@type": "xsd:integer","@value": "2019"},
       "arkiv:saksdato": {"@type": "xsd:date","@value": "2018-04-12+02:00"},
       "arkiv:sakssekvensnummer": {"@type": "xsd:integer","@value": "407"},
       "arkiv:saksstatus": {"@id": "arkiv:underBehandling"},
-      "arkiv:systemID": "saksmappe-uuid",
-      "arkiv:tittel": "Saksmappe - Leikanger Quizturnering",
-      "arkiv:tittel_LIST": {"@list": ["Saksmappe - Leikanger Quizturnering"]},
-      "arkiv:tittel_SENSITIV": "Saksmappe - Leikanger Quizturnering"
+      "arkiv:systemID": "saksmappe-uuid"
 	},
 	{
       "@id": "journalpostregistrering-uuid",
@@ -46,15 +40,11 @@
       "arkiv:journalsekvensnummer": {"@type": "xsd:integer","@value": "407"},
       "arkiv:journalstatus": {"@id": "arkiv:journalført"},
       "arkiv:offentligTittel": "Journalpost - Leikanger Quizturnering",
-      "arkiv:offentligTittel_LIST": {"@list": ["Journalpost - Leikanger Quizturnering"]},
       "arkiv:offentligTittel_SENSITIV": "Journalpost - Leikanger Quizturnering - journalreg_offentligTittel_SENSITIV",
       "arkiv:opprettetAv": "møtesekretær JEP",
       "arkiv:opprettetDato": {"@type": "xsd:dateTime","@value": "2018-04-08T00:00:00.000+02:00"},
       "arkiv:parent": {"@id": "saksmappe-uuid"},
-      "arkiv:systemID": "journalpostregistrering-uuid",
-      "arkiv:tittel": "Journalpost - Leikanger Quizturnering",
-      "arkiv:tittel_LIST": { "@list": ["Journalpost - Leikanger Quizturnering"]},
-      "arkiv:tittel_SENSITIV": "Journalpost - Leikanger Quizturnering"
+      "arkiv:systemID": "journalpostregistrering-uuid"
     },
 	{
       "@id": "møtesaksregistrering-uuid",
@@ -66,17 +56,12 @@
       "arkiv:møtesakstype": {"@id": "arkiv:politiskSak"},
 	  "arkiv:møtesaksår": {"@type": "xsd:integer","@value": "2019"},
       "arkiv:offentligTittel": "Møtesakreg - Leikanger Quizturnering",
-      "arkiv:offentligTittel_LIST": {"@list": ["Møtesakreg - Leikanger Quizturnering"]},
       "arkiv:offentligTittel_SENSITIV": "Møtesakreg - Leikanger Quizturnering - Møtesakreg_offentligTittel_SENSITIV",
       "arkiv:parent": {"@id": "møtemappe-uuid"},
       "arkiv:referanseTilMøtesak": {"@id": "journalpostregistrering-uuid"},
       "arkiv:saksbehandler": "møtesekretær JEP",
-      "arkiv:saksbehandler_LIST": {"@list": ["møtesekretær JEP"]},
       "arkiv:saksbehandler_SENSITIV": "møtesekretær JEP",
       "arkiv:systemID": "møtesaksregistrering-uuid",
-      "arkiv:tittel": "Møtesakreg - Leikanger Quizturnering",
-      "arkiv:tittel_LIST": {"@list": ["Møtesakreg - Leikanger Quizturnering"]},
-      "arkiv:tittel_SENSITIV": "Møtesakreg - Leikanger Quizturnering",
 	  "arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
 	{
@@ -91,7 +76,6 @@
       "arkiv:systemID": "dokbeskrivelse_saksreg-vedlegg-uuid",
       "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
       "arkiv:tittel": "Innstilling/Vedtak",
-      "arkiv:tittel_LIST": {"@list": ["Innstilling/Vedtak"]},
       "arkiv:tittel_SENSITIV": "Innstilling/Vedtak - Møtesakreg_Dokbeskr-vedtak_tittel_SENSITIV"
     },
 	{
@@ -114,7 +98,6 @@
       "arkiv:systemID": "dokbeskrivelse_jpost-1-uuid",
       "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:vedlegg"},
       "arkiv:tittel": "E-Postmelding",
-      "arkiv:tittel_LIST": {"@list": ["E-Postmelding"]},
       "arkiv:tittel_SENSITIV": "E-Postmelding - Journalpost_Dokbeskr-vedlegg_tittel_SENSITIV"
     },
     {
@@ -137,7 +120,6 @@
       "arkiv:systemID": "dokbeskrivelse_jpost-2-uuid",
       "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
       "arkiv:tittel": "Dokbeskr_journalpost",
-      "arkiv:tittel_LIST": {"@list": ["Dokbeskr_journalpost"]},
       "arkiv:tittel_SENSITIV": "Saksfremlegg - Journalpost_Dokbeskr-hoveddok_tittel_SENSITIV"
     },
     {
