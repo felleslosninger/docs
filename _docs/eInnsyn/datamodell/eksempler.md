@@ -45,3 +45,5 @@ Eksempler for publisering av møtedata i json-ld kompakt variant
 * [eksempelfil ekspandert json-ld variant]({{site.baseurl}}/resources/einnsyn/eksempelfiler/5_Møte_allefelter_jsonld-expanded.jsonld)
 * [eksempelfil kompakt jsonvariant-  med minimum context]({{site.baseurl}}/resources/einnsyn/eksempelfiler/5_Møte_allefelter_jsonld-compacted-minimum_context.jsonld)
 * [eksempelfil json-ld kompakt med flere definisjoner i context]({{site.baseurl}}/resources/einnsyn/eksempelfiler/5_Møte_allefelter_jsonld-compacted-medmer_context.jsonld)
+
+Konvertering mellom disse variantene kan utføres bl.a. her: https://json-ld.org/playground/
