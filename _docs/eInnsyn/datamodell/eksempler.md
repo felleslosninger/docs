@@ -19,7 +19,8 @@ Eksempelfiler med kun nødvendige element
 ## Eksempler med alle felter
 Json-LD:
 * [Json-ld variant med møte og journalpostar]({{site.baseurl}}/resources/einnsyn/eksempelfiler/3_møte og journal_allefelter_jsonld-kompakt.jsonld)
-Noark5
+
+Noark5-XML:
 * [xml-variant med journal]({{site.baseurl}}/resources/einnsyn/eksempelfiler/3_jpost_allefelter_noark5.xml)
 * [xml-variant med møter]({{site.baseurl}}/resources/einnsyn/eksempelfiler/3_Møte_allefelter_noark5.xml)
 
