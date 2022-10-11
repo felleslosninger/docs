@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@base": "http://namespace/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+	"einnsyn": "http://data.einnsyn.no/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@graph": [
+        {
+          "@id": "f8145510-8c64-4dac-b14a-3843c43dbb26",
+          "@type": "arkiv:Journalpost"
+        },
+		{
+          "@id": "57b7662c-a87d-4d89-83a1-2c2ef57545e8",
+          "@type": "arkiv:Møtesaksregistrering"
+        },
+		{
+          "@id": "367d69a7-8b71-4cf5-8bce-cc23a47f72ea",
+          "@type": "arkiv:Saksmappe"
+        }
+      ],
+      "@id": "f96f9e3f-390b-4287-a9ce-6856c8625bb6"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "f96f9e3f-390b-4287-a9ce-6856c8625bb6",
+          "@type": "einnsyn:graftype/TrekkeTilbakeGraf"
+        }
+      ],
+      "@id": "einnsyn:graf/meta"
+    }
+  ]
+}

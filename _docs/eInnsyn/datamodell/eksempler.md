@@ -35,14 +35,13 @@ Eksempler for publisering av møtedata i json-ld kompakt variant
 * [Møtesaksregistreringsmelding]({{site.baseurl}}/resources/einnsyn/eksempelfiler/meldingsstruktur/møtesaksregistrering.jsonld)
 * [Møtedokumentregistreringsmelding]({{site.baseurl}}/resources/einnsyn/eksempelfiler/meldingsstruktur/møtedokumentregistrering.jsonld)
 
+## Slettemelding
+* [json-ld med flere typer]({{site.baseurl}}/resources/einnsyn/eksempelfiler/slettemelding_jsonld-compact2.jsonld
+
 ---
-## Kryssreferanse
-Ekspempel fil med Kryssreferanse
-* [Kryssreferanse xml]({{site.baseurl}}/resources/einnsyn/eksempelfiler/kryssreferanse.xml)
 
+## Varianter av JSON-LD
 
-## Utviding møteavlevering
-Eksempelfiler for utvida møteavlevering
-* [eksempelfil ekspandert json-ld variant]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-ekspandert.jsonld)
-* [eksempelfil kompakt jsonvariant]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-jsonvariant.jsonld)
-* [eksempelfil json-ld]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata.jsonld)
+* [eksempelfil ekspandert json-ld variant]({{site.baseurl}}/resources/einnsyn/eksempelfiler/5_Møte_allefelter_jsonld-expanded.jsonld)
+* [eksempelfil kompakt jsonvariant-  med minimum context]({{site.baseurl}}/resources/einnsyn/eksempelfiler/5_Møte_allefelter_jsonld-compacted-minimum_context.jsonld)
+* [eksempelfil json-ld kompakt med flere definisjoner i context]({{site.baseurl}}/resources/einnsyn/eksempelfiler/5_Møte_allefelter_jsonld-compacted-medmer_context.jsonld)

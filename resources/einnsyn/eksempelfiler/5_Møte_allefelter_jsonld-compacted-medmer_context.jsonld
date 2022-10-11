@@ -1,0 +1,583 @@
+{
+  "@context": {
+    "@base": "http://namespace/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "arkivstruktur:tilknyttetRegistreringSom": {
+      "@type": "@id"
+    },
+    "arkivstruktur:offentligTittel_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:tittel_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:soekbar": {
+      "@type": "xsd:boolean"
+    },
+    "arkivstruktur:parent": {
+      "@type": "@id"
+    },
+    "arkivstruktur:versjonsnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:versjonsformat": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:dokumentobjekt": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentstatus": {
+      "@type": "@id"
+    },
+    "arkivstruktur:opprettetDato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:tilknyttetDato": {
+      "@type": "xsd:dateTime"
+    },
+    "arkivstruktur:korrespondansepartNavn_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:korrespondanseparttype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:saksaar": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:saksdato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:saksansvarlig_LIST": {
+      "@container": "@list"
+    },
+    "arkivstruktur:sakssekvensnummer": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:saksstatus": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentbeskrivelse": {
+      "@type": "@id"
+    },
+    "arkivstruktur:dokumentetsDato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:journalaar:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:journaldato": {
+      "@type": "xsd:date"
+    },
+    "arkivstruktur:journalpostnummer:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:journalposttype": {
+      "@type": "@id"
+    },
+    "arkivstruktur:journalstatus:": {
+      "@type": "@id"
+    },
+    "arkivstruktur:journalsekvensnummer:": {
+      "@type": "xsd:integer"
+    },
+    "arkivstruktur:korrespondansepart": {
+      "@type": "@id"
+    },
+    "arkivstruktur:variantformat": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "61606a3e-11ff-4628-897d-4a904dcbccfe",
+      "@type": "arkiv:Moetemappe",
+      "arkiv:moetedato": {
+        "@type": "xsd:dateTime",
+        "@value": "2021-09-27T19:00:00.000+02:00"
+      },
+      "arkiv:moetenummer": "999",
+      "arkiv:moetested": "Teams, Møterom 066 Leikanger",
+      "arkiv:offentligTittel": "Møte i Quizutvalget",
+      "arkiv:offentligTittel_SENSITIV": "Årsmøte i Quizutvalget - Mmappe_offentligTittel_SENSITIV",
+      "arkiv:systemID": "61606a3e-11ff-4628-897d-4a904dcbccfe",
+      "arkiv:utvalg": "Quizutvalget"
+    },
+    {
+      "@id": "206b38f5-867d-491d-9971-5805260332ce",
+      "@type": "arkiv:Moetemappe",
+      "arkiv:moetedato": {
+        "@type": "xsd:dateTime",
+        "@value": "2021-09-28T18:00:00.000+02:00"
+      },
+      "arkiv:moetenummer": "1001",
+      "arkiv:moetested": "Teams, Møterom 068 Leikanger",
+      "arkiv:offentligTittel": "Møte i Quizutvalget",
+      "arkiv:offentligTittel_SENSITIV": "Årsmøte 2 i Quizutvalget - Mmappe_offentligTittel_SENSITIV",
+      "arkiv:systemID": "206b38f5-867d-491d-9971-5805260332ce",
+      "arkiv:utvalg": "Quizutvalget"
+    },
+    {
+      "@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44",
+      "@type": "arkiv:Saksmappe",
+      "arkiv:administrativEnhet": "QuizAvd",
+      "arkiv:offentligTittel": "Saksmappe - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Saksmappe - Leikanger Quizturnering - Smappe_offentligTittel_SENSITIV",
+      "arkiv:parent": {
+        "@id": "3ae3e707-a046-4970-9ac7-f8a270a193e5"
+      },
+      "arkiv:saksaar": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:sakssekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "407"
+      },
+      "arkiv:systemID": "748bc1f7-2da8-43be-87d2-c872b1e55b44"
+    },
+    {
+      "@id": "f8145510-8c64-4dac-b14a-3843c43dbb26",
+      "@type": "arkiv:Journalpost",
+      "arkiv:dokumentbeskrivelse": [
+        {
+          "@id": "f86a5056-5942-4754-8cf2-35b6a2048fa3"
+        },
+        {
+          "@id": "b7ec1d73-1738-401b-bbfc-37b856f063b6"
+        }
+      ],
+      "arkiv:dokumentetsDato": {
+        "@type": "xsd:date",
+        "@value": "2018-04-11"
+      },
+      "arkiv:journalaar": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:journaldato": {
+        "@type": "xsd:date",
+        "@value": "2018-04-12"
+      },
+      "arkiv:journalpostnummer": {
+        "@type": "xsd:integer",
+        "@value": "7"
+      },
+      "arkiv:journalposttype": {
+        "@id": "arkiv:saksframlegg"
+      },
+      "arkiv:journalsekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "4017"
+      },
+      "arkiv:journalstatus": {
+        "@id": "arkiv:journalført"
+      },
+      "arkiv:korrespondansepart": {
+        "@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893"
+      },
+      "arkiv:offentligTittel": "Journalpost - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Journalpost - Leikanger Quizturnering - journalreg_offentligTittel_SENSITIV",
+      "arkiv:opprettetDato": {
+        "@type": "xsd:dateTime",
+        "@value": "2018-04-08T00:00:00.000+02:00"
+      },
+      "arkiv:parent": {
+        "@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44"
+      },
+      "arkiv:skjerming": {
+        "@id": "c320d89c-cf57-4497-bbb4-0fe30058fda6"
+      },
+      "arkiv:systemID": "f8145510-8c64-4dac-b14a-3843c43dbb26"
+    },
+    {
+      "@id": "faa62126-2912-493d-aedf-827082ee6c31",
+      "@type": "arkiv:Journalpost",
+      "arkiv:dokumentetsDato": {
+        "@type": "xsd:date",
+        "@value": "2018-04-12"
+      },
+      "arkiv:journalaar": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:journaldato": {
+        "@type": "xsd:date",
+        "@value": "2018-04-13"
+      },
+      "arkiv:journalpostnummer": {
+        "@type": "xsd:integer",
+        "@value": "8"
+      },
+      "arkiv:journalposttype": {
+        "@id": "arkiv:saksframlegg"
+      },
+      "arkiv:journalsekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "4019"
+      },
+      "arkiv:journalstatus": {
+        "@id": "arkiv:journalført"
+      },
+      "arkiv:korrespondansepart": {
+        "@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893"
+      },
+      "arkiv:offentligTittel": "Journalpost 2 - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "saksframlegg u/dokbeskr - journalreg_offentligTittel_SENSITIV",
+      "arkiv:opprettetDato": {
+        "@type": "xsd:dateTime",
+        "@value": "2018-04-08T00:00:00.000+02:00"
+      },
+      "arkiv:parent": {
+        "@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44"
+      },
+      "arkiv:skjerming": {
+        "@id": "c320d89c-cf57-4497-bbb4-0fe30058fda6"
+      },
+      "arkiv:systemID": "faa62126-2912-493d-aedf-827082ee6c31"
+    },
+    {
+      "@id": "57b7662c-a87d-4d89-83a1-2c2ef57545e8",
+      "@type": "arkiv:Møtesaksregistrering",
+      "arkiv:administrativEnhet": "QuizAvd",
+      "arkiv:dokumentbeskrivelse": {
+        "@id": "109bfe79-6892-4236-9c2f-2b253cb411e1"
+      },
+      "arkiv:møtesakssekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "123"
+      },
+      "arkiv:møtesakstype": {
+        "@id": "arkiv:interpellasjon"
+      },
+      "arkiv:møtesaksår": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:offentligTittel": "Møtesakreg - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Møtesakreg - Leikanger Quizturnering - Møtesakreg_offentligTittel_SENSITIV",
+      "arkiv:parent": {
+        "@id": "61606a3e-11ff-4628-897d-4a904dcbccfe"
+      },
+      "arkiv:referanseTilMøtesak": {
+        "@id": "f8145510-8c64-4dac-b14a-3843c43dbb26"
+      },
+      "arkiv:systemID": "57b7662c-a87d-4d89-83a1-2c2ef57545e8"
+    },
+    {
+      "@id": "d42b0507-a169-43d6-bbe2-8753e8d796a1",
+      "@type": "arkiv:Møtesaksregistrering",
+      "arkiv:administrativEnhet": "QuizAvd",
+      "arkiv:dokumentbeskrivelse": {
+        "@id": "109bfe79-6892-4236-9c2f-2b253cb411e1"
+      },
+      "arkiv:møtesakssekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "127"
+      },
+      "arkiv:møtesakstype": {
+        "@id": "arkiv:interpellasjon"
+      },
+      "arkiv:møtesaksår": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:offentligTittel": "Møtesakreg - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Møtesakreg - Leikanger Quizturnering - Møtesakreg_offentligTittel_SENSITIV",
+      "arkiv:parent": {
+        "@id": "61606a3e-11ff-4628-897d-4a904dcbccfe"
+      },
+      "arkiv:referanseTilMøtesak": {
+        "@id": "faa62126-2912-493d-aedf-827082ee6c31"
+      },
+      "arkiv:systemID": "d42b0507-a169-43d6-bbe2-8753e8d796a1"
+    },
+    {
+      "@id": "0e1837fa-a2a3-434b-9cff-d9cf28fd490a",
+      "@type": "arkiv:Møtesaksregistrering",
+      "arkiv:administrativEnhet": "QuizAvd",
+      "arkiv:møtesakssekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "124"
+      },
+      "arkiv:møtesakstype": {
+        "@id": "arkiv:politiskSak"
+      },
+      "arkiv:møtesaksår": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:offentligTittel": "Møtesakreg - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Møtesakreg_møte-1001- Leikanger Quizturnering - Møtesakreg_offTittel_SENSITIV",
+      "arkiv:parent": {
+        "@id": "206b38f5-867d-491d-9971-5805260332ce"
+      },
+      "arkiv:referanseTilMøtesak": {
+        "@id": "f8145510-8c64-4dac-b14a-3843c43dbb26"
+      },
+      "arkiv:systemID": "0e1837fa-a2a3-434b-9cff-d9cf28fd490a"
+    },
+    {
+      "@id": "ba5a0a1e-b96a-4689-9aa2-47f7608b08a9",
+      "@type": "arkiv:Møtedokumentregistrering",
+      "arkiv:dokumentbeskrivelse": {
+        "@id": "4ed1c280-dabf-4e08-a0fe-b89814105ffc"
+      },
+      "arkiv:møtedokumentregistreringstype": {
+        "@id": "arkiv:innkalling"
+      },
+      "arkiv:offentligTittel": "Møtedokumenter registrering",
+      "arkiv:offentligTittel_SENSITIV": "Denne offtittel vises ikke",
+      "arkiv:parent": {
+        "@id": "61606a3e-11ff-4628-897d-4a904dcbccfe"
+      },
+      "arkiv:systemID": "ba5a0a1e-b96a-4689-9aa2-47f7608b08a9"
+    },
+    {
+      "@id": "4ed1c280-dabf-4e08-a0fe-b89814105ffc",
+      "@type": "arkiv:Dokumentbeskrivelse",
+      "arkiv:dokumentnummer": {
+        "@type": "xsd:integer",
+        "@value": "177093"
+      },
+      "arkiv:dokumentobjekt": {
+        "@id": "3ff9dbda-c354-46a8-b86b-28c68f04eb12"
+      },
+      "arkiv:systemID": "4ed1c280-dabf-4e08-a0fe-b89814105ffc",
+      "arkiv:tilknyttetRegistreringSom": {
+        "@id": "arkiv:hoveddokument"
+      },
+      "arkiv:tittel": "Møteinnkallelse Quizutvalg dokbeskr",
+      "arkiv:tittel_SENSITIV": "Innkalling3_Mdokreg_tittel_SENSITIV"
+    },
+    {
+      "@id": "3ff9dbda-c354-46a8-b86b-28c68f04eb12",
+      "@type": "arkiv:Dokumentobjekt",
+      "arkiv:format": "url",
+      "arkiv:referanseDokumentfil": "https://data.norge.no/datasets/d00066bc-614f-3a43-b25f-ff98e2dd3eca",
+      "arkiv:variantformat": {
+        "@id": "arkiv:arkivformat"
+      },
+      "arkiv:versjonsnummer": {
+        "@type": "xsd:integer",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "109bfe79-6892-4236-9c2f-2b253cb411e1",
+      "@type": "arkiv:Dokumentbeskrivelse",
+      "arkiv:dokumentnummer": {
+        "@type": "xsd:integer",
+        "@value": "111"
+      },
+      "arkiv:dokumentobjekt": {
+        "@id": "abd6a8f0-c02e-470d-8bfe-0a8cd731b4e2"
+      },
+      "arkiv:dokumenttype": "IN",
+      "arkiv:systemID": "109bfe79-6892-4236-9c2f-2b253cb411e1",
+      "arkiv:tilknyttetRegistreringSom": {
+        "@id": "arkiv:hoveddokument"
+      },
+      "arkiv:tittel": "Innstilling/Vedtak_tittel",
+      "arkiv:tittel_SENSITIV": "Innstilling/Vedtak - Møtesakreg_Dokbeskr-vedtak_tittel_SENSITIV"
+    },
+    {
+      "@id": "abd6a8f0-c02e-470d-8bfe-0a8cd731b4e2",
+      "@type": "arkiv:Dokumentobjekt",
+      "arkiv:format": "pdf",
+      "arkiv:referanseDokumentfil": "https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/9f16ce02-80e7-48d4-b6ac-a01bcaa27858:e31d3dd2f0b988cda2d254d9e1f3004b668bca4c/Noark%205%20v%205%20vedl1%20Metadatakatalog.pdf",
+      "arkiv:variantformat": {
+        "@id": "arkiv:arkivformat"
+      },
+      "arkiv:versjonsnummer": {
+        "@type": "xsd:integer",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "f86a5056-5942-4754-8cf2-35b6a2048fa3",
+      "@type": "arkiv:Dokumentbeskrivelse",
+      "arkiv:dokumentnummer": {
+        "@type": "xsd:integer",
+        "@value": "2"
+      },
+      "arkiv:dokumentobjekt": {
+        "@id": "90e3949b-a83a-4d9c-a707-411ad09f1414"
+      },
+      "arkiv:systemID": "f86a5056-5942-4754-8cf2-35b6a2048fa3",
+      "arkiv:tilknyttetRegistreringSom": {
+        "@id": "arkiv:vedlegg"
+      },
+      "arkiv:tittel": "E-Postmelding",
+      "arkiv:tittel_SENSITIV": "E-Postmelding - Journalpost_Dokbeskr-vedlegg_tittel_SENSITIV"
+    },
+    {
+      "@id": "90e3949b-a83a-4d9c-a707-411ad09f1414",
+      "@type": "arkiv:Dokumentobjekt",
+      "arkiv:format": "pdf",
+      "arkiv:referanseDokumentfil": "https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/9f16ce02-80e7-48d4-b6ac-a01bcaa27858:e31d3dd2f0b988cda2d254d9e1f3004b668bca4c/Noark%205%20v%205%20vedl1%20Metadatakatalog.pdf",
+      "arkiv:variantformat": {
+        "@id": "arkiv:arkivformat"
+      },
+      "arkiv:versjonsnummer": {
+        "@type": "xsd:integer",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "b7ec1d73-1738-401b-bbfc-37b856f063b6",
+      "@type": "arkiv:Dokumentbeskrivelse",
+      "arkiv:dokumentnummer": {
+        "@type": "xsd:integer",
+        "@value": "1"
+      },
+      "arkiv:dokumentobjekt": {
+        "@id": "d695aeda-1587-44a0-abb6-4f3a945a19d7"
+      },
+      "arkiv:systemID": "b7ec1d73-1738-401b-bbfc-37b856f063b6",
+      "arkiv:tilknyttetRegistreringSom": {
+        "@id": "arkiv:hoveddokument"
+      },
+      "arkiv:tittel": "Dokbeskr_journalpost",
+      "arkiv:tittel_SENSITIV": "Saksfremlegg - Journalpost_Dokbeskr-hoveddok_tittel_SENSITIV"
+    },
+    {
+      "@id": "d695aeda-1587-44a0-abb6-4f3a945a19d7",
+      "@type": "arkiv:Dokumentobjekt",
+      "arkiv:format": "pdf",
+      "arkiv:referanseDokumentfil": "https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/9f16ce02-80e7-48d4-b6ac-a01bcaa27858:e31d3dd2f0b988cda2d254d9e1f3004b668bca4c/Noark%205%20v%205%20vedl1%20Metadatakatalog.pdf",
+      "arkiv:variantformat": {
+        "@id": "arkiv:arkivformat"
+      },
+      "arkiv:versjonsnummer": {
+        "@type": "xsd:integer",
+        "@value": "1"
+      }
+    },
+    {
+      "@id": "c320d89c-cf57-4497-bbb4-0fe30058fda6",
+      "@type": "arkiv:Skjerming",
+      "arkiv:tilgangsrestriksjon": {
+        "@id": "arkiv:ugradert"
+      }
+    },
+    {
+      "@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893",
+      "@type": "arkiv:Korrespondansepart",
+      "arkiv:administrativEnhet": "UTV",
+      "arkiv:korrespondansepartNavn": "Luster",
+      "arkiv:korrespondansepartNavn_SENSITIV": "Luster_S",
+      "arkiv:korrespondanseparttype": {
+        "@id": "arkiv:avsender"
+      },
+      "arkiv:saksbehandler": "JEP_sbehandler",
+      "arkiv:saksbehandler_SENSITIV": "JEP_sbehandler_S"
+    },
+    {
+      "@id": "56566207-4453-4585-8cc1-78d5e5255054",
+      "@type": "arkiv:Arkivskaper",
+      "arkiv:arkivskaperID": "56566207-4453-4585-8cc1-78d5e5255054",
+      "arkiv:arkivskaperNavn": "Luster kommune"
+    },
+    {
+      "@id": "3ae3e707-a046-4970-9ac7-f8a270a193e5",
+      "@type": "arkiv:Arkivdel",
+      "arkiv:parent": {
+        "@id": "cb746da3-41d9-4f29-9895-c62152c207b1"
+      },
+      "arkiv:systemID": "3ae3e707-a046-4970-9ac7-f8a270a193e5",
+      "arkiv:tittel": "arkivdeltittel"
+    },
+    {
+      "@id": "cb746da3-41d9-4f29-9895-c62152c207b1",
+      "@type": "arkiv:Arkiv",
+      "arkiv:arkivskaper": {
+        "@id": "56566207-4453-4585-8cc1-78d5e5255054"
+      },
+      "arkiv:opprettetDato": {
+        "@type": "xsd:dateTime",
+        "@value": "2019-09-12T12:19:43+02:00"
+      },
+      "arkiv:systemID": "cb746da3-41d9-4f29-9895-c62152c207b1",
+      "arkiv:tittel": "arkivtittel"
+    },
+    {
+      "@id": "367d69a7-8b71-4cf5-8bce-cc23a47f72ea",
+      "@type": "arkiv:Saksmappe",
+      "arkiv:administrativEnhet": "QuizAvd",
+      "arkiv:offentligTittel": "Saksmappe - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Saksmappe 2 - Leikanger Quizturnering - Smappe_offentligTittel_SENSITIV",
+      "arkiv:parent": {
+        "@id": "3ae3e707-a046-4970-9ac7-f8a270a193e5"
+      },
+      "arkiv:saksaar": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:sakssekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "408"
+      },
+      "arkiv:systemID": "367d69a7-8b71-4cf5-8bce-cc23a47f72ea"
+    },
+    {
+      "@id": "8a6b7329-81b4-4cac-a7e7-fdbaa3c56121",
+      "@type": "arkiv:Journalpost",
+      "arkiv:journalaar": {
+        "@type": "xsd:integer",
+        "@value": "2019"
+      },
+      "arkiv:journaldato": {
+        "@type": "xsd:date",
+        "@value": "2018-04-12"
+      },
+      "arkiv:journalpostnummer": {
+        "@type": "xsd:integer",
+        "@value": "3"
+      },
+      "arkiv:journalposttype": {
+        "@id": "arkiv:utgåendeDokument"
+      },
+      "arkiv:journalsekvensnummer": {
+        "@type": "xsd:integer",
+        "@value": "4018"
+      },
+      "arkiv:journalstatus": {
+        "@id": "arkiv:journalført"
+      },
+      "arkiv:korrespondansepart": {
+        "@id": "73e2e60e-6104-4dbb-abfc-e9f2e18088a0"
+      },
+      "arkiv:offentligTittel": "Journalpost - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Journalpost 2 - med arkivskaper_arkivdel_arkiv",
+      "arkiv:parent": {
+        "@id": "367d69a7-8b71-4cf5-8bce-cc23a47f72ea"
+      },
+      "arkiv:skjerming": {
+        "@id": "b11cb118-b933-4a18-a131-27e23d035802"
+      },
+      "arkiv:systemID": "8a6b7329-81b4-4cac-a7e7-fdbaa3c56121"
+    },
+    {
+      "@id": "b11cb118-b933-4a18-a131-27e23d035802",
+      "@type": "arkiv:Skjerming",
+      "arkiv:skjermingshjemmel": "§13",
+      "arkiv:tilgangsrestriksjon": {
+        "@id": "arkiv:unntattOffentlighet"
+      }
+    },
+    {
+      "@id": "73e2e60e-6104-4dbb-abfc-e9f2e18088a0",
+      "@type": "arkiv:Korrespondansepart",
+      "arkiv:administrativEnhet": "UTV",
+      "arkiv:korrespondansepartNavn": "Luster",
+      "arkiv:korrespondansepartNavn_SENSITIV": "Luster_S",
+      "arkiv:korrespondanseparttype": {
+        "@id": "arkiv:mottaker"
+      }
+    }
+  ]
+}
