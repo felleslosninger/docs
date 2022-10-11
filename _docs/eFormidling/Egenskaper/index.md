@@ -80,8 +80,8 @@ brukstilfeller er meldingsstørrelse en utfordring. En liten oversikt over tersk
 
 | Terskelverdi                  | Meldingsstørrelse                                                        |
 |-------------------------------|--------------------------------------------------------------------------|
-| Altinn Digital Post           | 200 MB                                                                   |
-| Digital Post til Innbyggere   | 150 MB                                                                   |
+| Altinn Digital Post           | 30 MB                                                                   |
+| Digital Post til Innbyggere   | 30 MB                                                                   |
 | eInnsyns meldingstjeneste     | 1 MB                                                                     |
 | eFormidlings meldingstjeneste | 1 GB dersom både avsender og mottaker bruker eFormidling 2, ellers 75 MB |
 | FIKS IO                       | 2 GB                                                                     |
