@@ -32,9 +32,9 @@ Eksempel med administrativ enhet på fleire nivå
 
 ## Møtepublisering Json-ld kompakt variant
 Eksempler for publisering av møtedata i json-ld kompakt variant
-* [Kun møteinformasjon]({{site.baseurl}}/resources/einnsyn/eksempelfiler/1_moeteinfo_compact_eksempel.json)
-* [Møte med et møtedokument]({{site.baseurl}}/resources/einnsyn/eksempelfiler/2_moeteinfo med moetedok_innkalling_compact_eksempel.json)
-* [Møte med politisk sak og tilhørende referert saksfremlegg/journalpost]({{site.baseurl}}/resources/einnsyn/eksempelfiler/4_moete_moetesak og saksmappe_journalpost_compact_eksempel.json)
+* [Kun møteinformasjon]({{site.baseurl}}/resources/einnsyn/eksempelfiler/1_moeteinfo_compact_eksempel.jsonld)
+* [Møte med et møtedokument]({{site.baseurl}}/resources/einnsyn/eksempelfiler/2_moeteinfo med moetedok_innkalling_compact_eksempel.jsonld)
+* [Møte med politisk sak og tilhørende referert saksfremlegg/journalpost]({{site.baseurl}}/resources/einnsyn/eksempelfiler/4_moete_moetesak og saksmappe_journalpost_compact_eksempel.jsonld)
 
 ## Oppsplitting av Noark-uttrekk
 * [Original xml-uttrekk]({{site.baseurl}}/resources/einnsyn/eksempelfiler/meldingsstruktur/Møtemappe med utvalg Case1.xml)
