@@ -46,4 +46,4 @@ Ekspempel fil med Kryssreferanse
 Eksempelfiler for utvida møteavlevering
 * [eksempelfil ekspandert json-ld variant]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-ekspandert.jsonld)
 * [eksempelfil kompakt jsonvariant]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-jsonvariant.jsonld)
-* [eksempelfil json-ld]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-kompakt.jsonld)
+* [eksempelfil json-ld]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata.jsonld)
