@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<arkiv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+	<systemID>b87ca23f-ffee-4e20-ab8e-a6361130bb50</systemID>
+	<tittel>arkivfil for testformål JEP</tittel>
+	<arkivstatus>Opprettet</arkivstatus>
+	<opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+	<opprettetAv>Ukjent</opprettetAv>
+	<avsluttetDato>2100-01-01T00:00:00.000+01:00</avsluttetDato>
+	<avsluttetAv>Ukjent</avsluttetAv>
+	<arkivskaper>
+		<arkivskaperID>0001</arkivskaperID>
+		<arkivskaperNavn>Ukjent</arkivskaperNavn>
+	</arkivskaper>
+	<mappe xsi:type="ark:moetemappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+		<systemID>812a8c4b-7895-4457-866e-db6556a3f92c</systemID>
+		<mappeID>812a8c4b-7895-4457-866e-db6556a3f92c</mappeID>
+		<tittel>Møte i Quizgruppa</tittel>
+		<offentligTittel>Møte i Quizgruppa_offentlig_endring</offentligTittel>
+		<beskrivelse>Avholdt</beskrivelse>
+		<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+		<opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+		<opprettetAv>Ukjent</opprettetAv>
+		<avsluttetDato>3000-01-01T00:00:00.000+01:00</avsluttetDato>
+		<avsluttetAv>Ukjent</avsluttetAv>
+		<registrering xsi:type="ark:moetedokumentregistrering">
+			<systemID>1d10f683-b0a0-4772-bc11-eca640a67de1</systemID>
+			<opprettetDato>2021-01-25T15:45:00+01:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>3000-01-01T00:00:00+01:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>8ecff5ee-4d04-47bd-a29d-713b06a80a60</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Møteinnkalling Quizgruppa</tittel>
+				<beskrivelse>Møteinnkalling</beskrivelse>
+				<opprettetDato>2021-01-25T15:45:00+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:45:00+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:45:00+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208639_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>305405</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>MR-Møtedokumenter-979181ae-309d-4778-a045-019a3abae517</registreringsID>
+			<tittel>Møteinnkalling Quizgruppa</tittel>
+			<offentligTittel>Møteinnkalling Quizgruppa</offentligTittel>
+			<administrativEnhet>QuizAvd</administrativEnhet>
+			<saksbehandler>Ukjent</saksbehandler>
+			<moetedokumentregistreringstype>Innkalling</moetedokumentregistreringstype>
+		</registrering>
+		<registrering xsi:type="ark:moetedokumentregistrering">
+			<systemID>76670e13-b5a0-48ae-a9bb-65679bc73089</systemID>
+			<opprettetDato>2021-01-25T15:50:11+01:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>3000-01-01T00:00:00+01:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>12a4f6a9-1ebc-4cbc-95e2-37c704892430</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Møteprotokoll Quizgruppa</tittel>
+				<beskrivelse>Referat</beskrivelse>
+				<opprettetDato>2021-01-25T15:50:11+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:50:11+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:50:11+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208643_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>238417</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>MR-Møtedokumenter-c7b64216-c428-49f9-bf23-7d6a865dd595</registreringsID>
+			<tittel>Møteprotokoll Quizgruppa</tittel>
+			<offentligTittel>Møteprotokoll Quizgruppa</offentligTittel>
+			<administrativEnhet>QuizAvd</administrativEnhet>
+			<saksbehandler>JEP</saksbehandler>
+			<moetedokumentregistreringstype>Protokoll</moetedokumentregistreringstype>
+		</registrering>
+		<registrering xsi:type="moetesaksregistrering">											<!-- Dette er forekomstane i sakslista.  Dvs filter på politisk sak -->
+			<systemID>9bac5395-057a-4b3f-98a8-43109c152e9f</systemID>
+			<opprettetDato>2018-04-19T00:00:00.000+02:00</opprettetDato>
+			<opprettetAv>N/A</opprettetAv>
+			<arkivertDato>2018-04-19T00:00:00.000+02:00</arkivertDato>
+			<arkivertAv>N/A</arkivertAv>
+			<dokumentbeskrivelse>																<!-- Vedtak til møtesaken -->
+				<systemID>84b5cbad-9432-47e1-9a83-537f8b3ac9f9</systemID>
+				<dokumenttype>IN</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Test Vedtak her kommer det alt som skrives inn i tittel</tittel>
+				<beskrivelse>Vedtak</beskrivelse>
+				<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:04:33+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Produksjonsformat</variantformat>
+					<format>MSG</format>
+					<formatDetaljer>Microsoft Outlook-element</formatDetaljer>
+					<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207356_1_0.MSG</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>206848</filstoerrelse>
+				</dokumentobjekt>
+				</dokumentbeskrivelse>
+			<registreringsID>9999/2030_regid</registreringsID>
+			<tittel>Poengtelling ved skriveleif</tittel>
+			<offentligTittel>Poengtelling ved skriveleif_offentlig</offentligTittel>
+			<dokumentmedium>Elektronisk arkiv</dokumentmedium>
+			<moetesakstype>Politisk sak</moetesakstype>
+			<moeteregistreringsstatus>Behandlet i møte</moeteregistreringsstatus>
+			<saksbehandler>JEP</saksbehandler>
+			<referanseTilMoetesak>033211c5-5f8a-433b-a52b-729542e8a87d</referanseTilMoetesak>  	<!-- referer til systemID til journalpost i saksmappe nedenfor -->
+			<moetesaksaar>2031</moetesaksaar>
+			<moetesakssekvensnummer>9090</moetesakssekvensnummer>
+			</registrering>
+		<moetenummer>N/A</moetenummer>
+		<utvalg>Quizutvalget</utvalg>															<!-- Her legg ein inn enhetkode til utvalget som finst  -->
+		<moetedato>2021-01-29T09:00:00+01:00</moetedato>
+		<moetested>Teamsrom</moetested>
+		<moetedeltaker>
+            <moetedeltakerNavn>John Eivind</moetedeltakerNavn>
+            <moetedeltakerFunksjon>QuizMaster</moetedeltakerFunksjon>
+        </moetedeltaker>
+        <videolink>https://oslo.kommunetv.no/archive/268</videolink>
+	</mappe>
+	<mappe xsi:type="ark:saksmappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+		<systemID>2a14674c-95f7-4de6-a466-47386683181a</systemID>
+		<mappeID>2a14674c-95f7-4de6-a466-47386683181a</mappeID>
+		<tittel>Tilskudd - QuizDan</tittel>
+		<offentligTittel>Tilskudd - QuizDan noark5</offentligTittel>
+		<opprettetDato>2019-05-28T11:04:13+02:00</opprettetDato>
+		<opprettetAv>Public360 Kurs33</opprettetAv>
+		<avsluttetDato>3000-01-01T00:00:00.000+01:00</avsluttetDato>
+		<avsluttetAv>Ukjent</avsluttetAv>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>e24aef25-fc82-42c6-856b-0d38975eb5bb</systemID>
+			<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2019-05-28T11:04:33+02:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>e0a5f59a-5251-44a4-80b5-84a4751ff9ef</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Test </tittel>
+				<beskrivelse>Dokument inn</beskrivelse>
+				<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:04:33+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Produksjonsformat</variantformat>
+					<format>MSG</format>
+					<formatDetaljer>Microsoft Outlook-element</formatDetaljer>
+					<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207356_1_0.MSG</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>206848</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>9a1cf3b4-02d2-4d80-b7bb-592c5f5bcc4e</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Dokument2</tittel>
+				<beskrivelse>Dokument inn</beskrivelse>
+				<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>2</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:04:33+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Produksjonsformat</variantformat>
+					<format>DOCX</format>
+					<formatDetaljer>Microsoft Word 2007, produksjonsformat</formatDetaljer>
+					<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207357_1_0.DOCX</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>17011</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201380-207216</registreringsID>
+			<tittel>Test_journal</tittel>
+			<offentligTittel>Test_journal_noark5</offentligTittel>
+			<journalaar>2019</journalaar>
+			<journalsekvensnummer>1203</journalsekvensnummer>
+			<journalpostnummer>1</journalpostnummer>
+			<journalposttype>Inngående dokument</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2019-05-28</journaldato>
+		</registrering>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>d86e556a-929b-4a3a-8794-b8799e758ba3</systemID>
+			<opprettetDato>2019-05-28T11:06:41+02:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2019-05-28T11:06:41+02:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>463cf43f-c804-4762-9163-45a51e240a5c</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Svar - test </tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-28T11:06:41+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:06:41+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Produksjonsformat</variantformat>
+					<format>DOCX</format>
+					<formatDetaljer>Microsoft Word 2007, produksjonsformat</formatDetaljer>
+					<opprettetDato>2019-05-28T11:06:41+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207359_1_0.DOCX</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>87629</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>3c4e32b1-761a-462a-9dfd-963dbe65a996</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>test</tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>2</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:28:06+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207362_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>278683</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>666e93ec-3d16-4e82-b534-bdcfade8a127</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>test - Kopi 4 - ikke publisert</tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>3</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:28:06+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>d33ea734-edd3-4cbb-8e9e-a3bf54710c5b</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>test - Kopi (3)</tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>4</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:28:06+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207364_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>278683</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>2b5f87be-0789-4ded-9127-d92e30440b91</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>test - Kopi (2)</tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>5</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:28:06+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2019-05-28T11:28:06+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207365_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>278683</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>60ecf3da-54f4-41e3-a7b8-ab42352edc57</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>test - Kopi</tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-28T11:28:07+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>6</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:28:07+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2019-05-28T11:28:07+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207366_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>278683</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201380-207218</registreringsID>
+			<tittel>Svar - test </tittel>
+			<offentligTittel>Svar - test tittel offentlig</offentligTittel>
+			<journalaar>2019</journalaar>
+			<journalsekvensnummer>1205</journalsekvensnummer>
+			<journalpostnummer>2</journalpostnummer>
+			<journalposttype>Utgående dokument</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2019-05-28</journaldato>
+		</registrering>
+		<registrering xsi:type="ark:journalpost">                                            
+			<systemID>033211c5-5f8a-433b-a52b-729542e8a87d</systemID>    <!-- systemID som er referert til i møtesaksregistrering over -->
+			<opprettetDato>2021-01-25T15:38:28+01:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2021-01-25T15:42:02+01:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>cbff945c-76cb-480e-9c83-510d4359436e</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Lovlighetskontroll ved skriveleif</tittel>
+				<beskrivelse>Saksframlegg/innstilling</beskrivelse>
+				<opprettetDato>2021-01-25T15:38:28+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:38:28+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:38:28+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208637_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>202873</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201380-208206</registreringsID>
+			<tittel>Lovlighetskontroll ved skriveleif</tittel>
+			<offentligTittel>Lovlighetskontroll ved skriveleif_offentlig</offentligTittel>
+			<journalaar>2021</journalaar>
+			<journalsekvensnummer>3</journalsekvensnummer>
+			<journalpostnummer>3</journalpostnummer>
+			<journalposttype>Saksframlegg</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2021-01-25</journaldato>
+		</registrering>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>78160e81-32e5-4cbc-b4b1-3122192a9cdc</systemID>
+			<opprettetDato>2021-01-25T15:50:00+01:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2021-01-25T15:50:01+01:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>fccc4658-79a0-4f94-a78d-5001554aba40</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Vedtak , 31012021, Sak 21/1, Lovlighetskontroll</tittel>
+				<beskrivelse>Saksprotokoll</beskrivelse>
+				<opprettetDato>2021-01-25T15:50:00+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:50:00+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:50:00+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208642_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>197207</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201380-208211</registreringsID>
+			<tittel>Vedtak , 31012021, Sak 21/1, Lovlighetskontroll</tittel>
+			<offentligTittel>Vedtak , 31012021, Sak 21/1, Lovlighetskontroll</offentligTittel>
+			<journalaar>2021</journalaar>
+			<journalsekvensnummer>6</journalsekvensnummer>
+			<journalpostnummer>4</journalpostnummer>
+			<journalposttype>Organinternt dokument uten oppfølging</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2021-01-25</journaldato>
+		</registrering>
+		<saksaar>2030</saksaar>
+		<sakssekvensnummer>8000</sakssekvensnummer>
+		<saksdato>2019-05-28</saksdato>
+		<administrativEnhet>QuizAvd</administrativEnhet>
+		<saksansvarlig>PublicQuiz kurs</saksansvarlig>
+		<saksstatus>Under behandling</saksstatus>
+	</mappe>
+	<mappe xsi:type="ark:saksmappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+		<systemID>441c662e-34d2-474d-9ded-2fef3037aa56</systemID>
+		<mappeID>441c662e-34d2-474d-9ded-2fef3037aa56</mappeID>
+		<tittel>Søknad om midler til quizmaster</tittel>
+		<offentligTittel>Søknad om midler til quizmaster</offentligTittel>
+		<opprettetDato>2019-05-31T09:30:29+02:00</opprettetDato>
+		<opprettetAv>Public360 Kurs23</opprettetAv>
+		<avsluttetDato>3000-01-01T00:00:00.000+01:00</avsluttetDato>
+		<avsluttetAv>Ukjent</avsluttetAv>
+		<registrering xsi:type="ark:journalpost">                                      <!-- Journalpost uten dokumentbeskrivelse -->
+			<systemID>9b0f03b4-4c8e-48fa-b500-71ef36ea2d3b</systemID>
+			<opprettetDato>2019-05-31T09:32:12+02:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2019-05-31T09:32:12+02:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<registreringsID>JP-201405-207366</registreringsID>
+			<tittel>Fwd: Søknad om midler til quizmaster</tittel>
+			<offentligTittel>Fwd: Søknad om midler til quizmaster</offentligTittel>
+			<journalaar>2019</journalaar>
+			<journalsekvensnummer>1278</journalsekvensnummer>
+			<journalpostnummer>1</journalpostnummer>
+			<journalposttype>Inngående dokument</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2019-05-31</journaldato>
+		</registrering>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>f651205f-0450-406f-912e-f7d4ef636be0</systemID>
+			<opprettetDato>2019-05-31T09:39:55+02:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2019-05-31T09:39:55+02:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>08e1b1d1-c018-43ff-a5d3-f9e8feca435e</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>svar vedr søknad om midler til trikk</tittel>
+				<beskrivelse>Dokument ut</beskrivelse>
+				<opprettetDato>2019-05-31T09:39:56+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2019-05-31T09:39:56+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>2</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2019-05-31T09:39:56+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>207519_2_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>398678</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201405-207368</registreringsID>
+			<tittel>svar vedr søknad om midler til trikk</tittel>
+			<offentligTittel>svar vedr søknad om midler til trikk</offentligTittel>
+			<journalaar>2019</journalaar>
+			<journalsekvensnummer>1280</journalsekvensnummer>
+			<journalpostnummer>2</journalpostnummer>
+			<journalposttype>Utgående dokument</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2019-05-31</journaldato>
+		</registrering>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>f194710c-d9ac-4dce-8815-b4cf464b096f</systemID>
+			<opprettetDato>2021-01-25T15:23:41+01:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2021-01-25T15:35:55+01:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>3ec53e6a-c22d-4cfd-a36d-7c1ddfebaf4a</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Sykkelbyen - ny avtale med fylkeskommunen</tittel>
+				<beskrivelse>Saksframlegg/innstilling</beskrivelse>
+				<opprettetDato>2021-01-25T15:23:42+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:23:42+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>3</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:23:42+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208635_3_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>207564</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<dokumentbeskrivelse>
+				<systemID>a7c8285e-8a0f-45e0-ae09-2318af5f44bb</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Sykkelavtale</tittel>
+				<beskrivelse>Saksframlegg/innstilling</beskrivelse>
+				<opprettetDato>2021-01-25T15:34:34+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Vedlegg</tilknyttetRegistreringSom>
+				<dokumentnummer>2</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:34:34+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:34:34+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208636_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>535224</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201405-208202</registreringsID>
+			<tittel>Sykkelbyen - ny avtale med fylkeskommunen</tittel>
+			<offentligTittel>Sykkelbyen - ny avtale med fylkeskommunen</offentligTittel>
+			<journalaar>2021</journalaar>
+			<journalsekvensnummer>2</journalsekvensnummer>
+			<journalpostnummer>3</journalpostnummer>
+			<journalposttype>Saksframlegg</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2021-01-25</journaldato>
+		</registrering>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>9c82858b-fa7f-439d-b0be-5092ebb4e134</systemID>
+			<opprettetDato>2021-01-25T15:49:50+01:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2021-01-25T15:49:51+01:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>e06ba6ec-b296-443e-884a-7b4cb347d244</systemID>
+				<dokumenttype>Ukjent</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Vedtak , 31012021, Sak 21/2, Sykkelbyen - ny avtale med fylkeskommunen</tittel>
+				<beskrivelse>Saksprotokoll</beskrivelse>
+				<opprettetDato>2021-01-25T15:49:50+01:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2021-01-25T15:49:50+01:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs23</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Arkivformat</variantformat>
+					<format>PDF</format>
+					<formatDetaljer>Arkivformat</formatDetaljer>
+					<opprettetDato>2021-01-25T15:49:50+01:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>208641_1_1.PDF</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>202765</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201405-208210</registreringsID>
+			<tittel>Vedtak , 31012021, Sak 21/2, Sykkelbyen - ny avtale med fylkeskommunen</tittel>
+			<offentligTittel>Vedtak , 31012021, Sak 21/2, Sykkelbyen - ny avtale med fylkeskommunen</offentligTittel>
+			<journalaar>2021</journalaar>
+			<journalsekvensnummer>5</journalsekvensnummer>
+			<journalpostnummer>4</journalpostnummer>
+			<journalposttype>Organinternt dokument uten oppfølging</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2021-01-25</journaldato>
+		</registrering>
+		<saksaar>2030</saksaar>
+		<sakssekvensnummer>7000</sakssekvensnummer>
+		<saksdato>2019-05-31</saksdato>
+		<administrativEnhet>QuizAvd</administrativEnhet>
+		<saksansvarlig>PublicQuiz kurs</saksansvarlig>
+		<saksstatus>Under behandling</saksstatus>
+	</mappe>
+</arkiv>

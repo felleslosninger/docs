@@ -25,10 +25,11 @@ Eksempelfiler for utvida møteavlevering
 * [eksempelfil json-ld]({{site.baseurl}}/resources/einnsyn/eksempelfiler/eksempel-utvidelse-moetedata-kompakt.jsonld)
 
 ---
-## Administrativ enhet på fleire nivå
-Eksempel med administrativ enhet på fleire nivå
-* [Json-ld variant med journalpostar]({{site.baseurl}}/resources/einnsyn/eksempelfiler/fleireAdmEnheter.jsonld)
-* [xml-variant med møter]({{site.baseurl}}/resources/einnsyn/eksempelfiler/moetemappe2-admenhet.xml)
+## Eksempler med alle felter
+Json-LD:
+* [Json-ld variant med møte og journalpostar]({{site.baseurl}}/resources/einnsyn/eksempelfiler/3_møte og journal_allefelter_jsonld-kompakt.jsonld)
+Noark5
+* [xml-variant med møter]({{site.baseurl}}/resources/einnsyn/eksempelfiler/Møte_allefelter_noark5.xml)
 
 ## Møtepublisering Json-ld kompakt variant
 Eksempler for publisering av møtedata i json-ld kompakt variant
