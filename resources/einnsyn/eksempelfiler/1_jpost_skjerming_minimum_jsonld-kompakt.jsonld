@@ -28,9 +28,9 @@
       "arkiv:offentligTittel": "journalreg_offentligTittel",
       "arkiv:offentligTittel_SENSITIV": "journalreg_offentligTittel_SENSITIV",
       "arkiv:parent": {"@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44"},
-	  		"arkiv:skjerming": {"@id": "b11cb118-b933-4a18-a131-27e23d035802"},
+	  "arkiv:skjerming": {"@id": "b11cb118-b933-4a18-a131-27e23d035802"},
 			"arkiv:korrespondansepart": {"@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893"},
-		"arkiv:systemID": "f8145510-8c64-4dac-b14a-3843c43dbb26"
+			"arkiv:systemID": "f8145510-8c64-4dac-b14a-3843c43dbb26"
     },
 	{
 	  "@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893",
