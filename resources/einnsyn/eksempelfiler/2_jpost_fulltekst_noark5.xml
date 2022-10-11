@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<arkiv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+	<systemID>b87ca23f-ffee-4e20-7890-a6361130bb50</systemID>
+	<tittel>arkivfil for testformål</tittel>
+	<arkivstatus>Opprettet</arkivstatus>
+	<opprettetDato>1990-01-01T00:00:00.000+01:00</opprettetDato>
+	<opprettetAv>Ukjent</opprettetAv>
+	<avsluttetDato>2100-01-01T00:00:00.000+01:00</avsluttetDato>
+	<avsluttetAv>Ukjent</avsluttetAv>
+	<arkivskaper>
+		<arkivskaperID>0001</arkivskaperID>
+		<arkivskaperNavn>Ukjent</arkivskaperNavn>
+	</arkivskaper>
+	<mappe xsi:type="ark:saksmappe" xmlns:ark="http://www.arkivverket.no/standarder/noark5/arkivstruktur">
+		<systemID>2a14674c-95f7-4de6-9876-47386683181a</systemID>
+		<mappeID>2a14674c-95f7-4de6-9876-47386683181a</mappeID>
+		<tittel>Databehandleravtaler</tittel>
+		<offentligTittel>Sakstittel</offentligTittel>
+		<opprettetDato>2019-05-28T11:04:13+02:00</opprettetDato>
+		<opprettetAv>Public360 Kurs33</opprettetAv>
+		<registrering xsi:type="ark:journalpost">
+			<systemID>e24aef25-fc82-42c6-1234-0d38975eb5bb</systemID>
+			<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+			<opprettetAv>Ukjent</opprettetAv>
+			<arkivertDato>2019-05-28T11:04:33+02:00</arkivertDato>
+			<arkivertAv>Ukjent</arkivertAv>
+			<dokumentbeskrivelse>
+				<systemID>e0a5f59a-5251-44a4-5678-84a4751ff9ef</systemID>
+				<dokumenttype>Inngående eksternt produsert</dokumenttype>
+				<dokumentstatus>Dokumentet er ferdigstilt</dokumentstatus>
+				<tittel>Test </tittel>
+				<beskrivelse>Dokument inn</beskrivelse>
+				<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+				<opprettetAv>Ukjent</opprettetAv>
+				<tilknyttetRegistreringSom>Hoveddokument</tilknyttetRegistreringSom>
+				<dokumentnummer>1</dokumentnummer>
+				<tilknyttetDato>2019-05-28T11:04:33+02:00</tilknyttetDato>
+				<tilknyttetAv>Public360 Kurs33</tilknyttetAv>
+				<dokumentobjekt>
+					<versjonsnummer>1</versjonsnummer>
+					<variantformat>Produksjonsformat</variantformat>
+					<format>MSG</format>
+					<formatDetaljer>Microsoft Outlook-element</formatDetaljer>
+					<opprettetDato>2019-05-28T11:04:33+02:00</opprettetDato>
+					<opprettetAv>Ukjent</opprettetAv>
+					<referanseDokumentfil>http://fillager/207356_1_0.MSG</referanseDokumentfil>
+					<sjekksum>PH</sjekksum>
+					<sjekksumAlgoritme>SHA256</sjekksumAlgoritme>
+					<filstoerrelse>206848</filstoerrelse>
+				</dokumentobjekt>
+			</dokumentbeskrivelse>
+			<registreringsID>JP-201380-207216</registreringsID>
+			<tittel>Test_journal</tittel>
+			<offentligTittel>Test_journal_noark5</offentligTittel>
+			<journalaar>2019</journalaar>
+			<journalsekvensnummer>1203</journalsekvensnummer>
+			<journalpostnummer>1</journalpostnummer>
+			<journalposttype>Inngående dokument</journalposttype>
+			<journalstatus>Arkivert</journalstatus>
+			<journaldato>2019-05-28</journaldato>
+		</registrering>
+		<saksaar>2016</saksaar>
+		<sakssekvensnummer>2546</sakssekvensnummer>
+		<saksdato>2019-05-28</saksdato>
+		<administrativEnhet>QuizAvd</administrativEnhet>
+		<saksansvarlig>PublicQuiz kurs</saksansvarlig>
+		<saksstatus>Under behandling</saksstatus>
+	</mappe>
+</arkiv>

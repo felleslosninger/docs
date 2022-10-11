@@ -1,0 +1,49 @@
+{
+  "@context": {
+    "@base": "http://namespace/jsonld/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44",
+      "@type": "arkiv:Saksmappe",
+      "arkiv:administrativEnhet": "QuizAvd",
+      "arkiv:offentligTittel": "Saksmappe - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Saksmappe - Leikanger Quizturnering - Smappe_offentligTittel_SENSITIV",
+      "arkiv:saksaar": {"@type": "xsd:integer","@value": "2019"},
+      "arkiv:sakssekvensnummer": {"@type": "xsd:integer","@value": "407"},
+		"arkiv:systemID": "748bc1f7-2da8-43be-87d2-c872b1e55b44",	  
+	  "arkiv:parent": {"@id": "3ae3e707-a046-4970-9ac7-f8a270a193e5"}
+	},
+	{
+      "@id": "f8145510-8c64-4dac-b14a-3843c43dbb26",
+      "@type": "arkiv:Journalpost",
+      "arkiv:journalaar": {"@type": "xsd:integer","@value": "2019"},
+      "arkiv:journaldato": {"@type": "xsd:date","@value": "2018-04-12"},
+      "arkiv:journalpostnummer": {"@type": "xsd:integer","@value": "7"},
+      "arkiv:journalposttype": {"@id": "arkiv:utgåendeDokument"},
+      "arkiv:journalsekvensnummer": {"@type": "xsd:integer","@value": "4018"},
+      "arkiv:journalstatus": {"@id": "arkiv:journalført"},
+      "arkiv:offentligTittel": "journalreg_offentligTittel",
+      "arkiv:offentligTittel_SENSITIV": "journalreg_offentligTittel_SENSITIV",
+      "arkiv:parent": {"@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44"},
+	  		"arkiv:skjerming": {"@id": "b11cb118-b933-4a18-a131-27e23d035802"},
+			"arkiv:korrespondansepart": {"@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893"},
+		"arkiv:systemID": "f8145510-8c64-4dac-b14a-3843c43dbb26"
+    },
+	{
+	  "@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893",
+	  "@type": "arkiv:Korrespondansepart",
+	  "arkiv:korrespondansepartNavn": "Leif Juster",
+	  "arkiv:korrespondansepartNavn_SENSITIV": "***",
+	  "arkiv:korrespondanseparttype": {"@id": "arkiv:mottaker"}
+    },
+	{
+	  "@id": "b11cb118-b933-4a18-a131-27e23d035802",
+	  "@type": "arkiv:Skjerming",
+	  "arkiv:tilgangsrestriksjon": {"@id": "arkiv:unntattOffentlighet"},
+	  "arkiv:skjermingshjemmel": "§xx"
+	}
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "@base": "http://namespace/jsonld/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44",
+      "@type": "arkiv:Saksmappe",
+      "arkiv:administrativEnhet": "QuizAvd",
+			"arkiv:beskrivelse": "Lorem Ipsum",
+      "arkiv:offentligTittel": "Saksmappe - Leikanger Quizturnering",
+      "arkiv:offentligTittel_SENSITIV": "Saksmappe - Leikanger Quizturnering - Smappe_offentligTittel_SENSITIV",
+      "arkiv:saksaar": {"@type": "xsd:integer","@value": "2019"},
+      "arkiv:sakssekvensnummer": {"@type": "xsd:integer","@value": "407"},
+      "arkiv:systemID": "748bc1f7-2da8-43be-87d2-c872b1e55b44",	  
+	  "arkiv:parent": {"@id": "3ae3e707-a046-4970-9ac7-f8a270a193e5"}
+	},
+	{
+      "@id": "f8145510-8c64-4dac-b14a-3843c43dbb26",
+      "@type": "arkiv:Journalpost",
+		    "arkiv:dokumentbeskrivelse": [{"@id": "f86a5056-5942-4754-8cf2-35b6a2048fa3"},{"@id": "b7ec1d73-1738-401b-bbfc-37b856f063b6"}],
+      "arkiv:journalaar": {"@type": "xsd:integer","@value": "2019"},
+      "arkiv:journaldato": {"@type": "xsd:date","@value": "2018-04-12"},
+			"arkiv:dokumentetsDato": {"@type": "xsd:date","@value": "2018-04-11"},
+      "arkiv:journalpostnummer": {"@type": "xsd:integer","@value": "7"},
+      "arkiv:journalposttype": {"@id": "arkiv:inngåendeDokument"},
+      "arkiv:journalsekvensnummer": {"@type": "xsd:integer","@value": "4017"},
+      "arkiv:journalstatus": {"@id": "arkiv:journalført"},
+      "arkiv:offentligTittel": "journalreg_offentligTittel",
+      "arkiv:offentligTittel_SENSITIV": "journalreg_offentligTittel_SENSITIV",
+			"arkiv:dokumentetsDato": {"@type": "xsd:date","@value": "2018-04-11"},
+			"arkiv:opprettetDato": {"@type": "xsd:dateTime","@value": "2018-04-08T00:00:00.000+02:00"},
+      "arkiv:parent": {"@id": "748bc1f7-2da8-43be-87d2-c872b1e55b44"},
+			"arkiv:korrespondansepart": {"@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893"},
+      "arkiv:systemID": "f8145510-8c64-4dac-b14a-3843c43dbb26"
+    },
+	{
+      "@id": "f86a5056-5942-4754-8cf2-35b6a2048fa3",
+      "@type": "arkiv:Dokumentbeskrivelse",
+      "arkiv:dokumentnummer": {"@type": "xsd:integer","@value": "2"},
+      "arkiv:dokumentobjekt": {"@id": "90e3949b-a83a-4d9c-a707-411ad09f1414"},
+      "arkiv:systemID": "f86a5056-5942-4754-8cf2-35b6a2048fa3",
+      "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:vedlegg"},
+      "arkiv:tittel": "Journalpost_Dokbeskr-vedlegg_tittel",
+      "arkiv:tittel_SENSITIV": "Journalpost_Dokbeskr-vedlegg_tittel_SENSITIV"
+    },
+    {
+      "@id": "90e3949b-a83a-4d9c-a707-411ad09f1414",
+      "@type": "arkiv:Dokumentobjekt",
+      "arkiv:format": "pdf",
+      "arkiv:referanseDokumentfil": "https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/9f16ce02-80e7-48d4-b6ac-a01bcaa27858:e31d3dd2f0b988cda2d254d9e1f3004b668bca4c/Noark%205%20v%205%20vedl1%20Metadatakatalog.pdf",
+      "arkiv:variantformat": {"@id": "arkiv:arkivformat"},
+      "arkiv:versjonsnummer": {"@type": "xsd:integer","@value": "1"}
+    },
+	{
+      "@id": "b7ec1d73-1738-401b-bbfc-37b856f063b6",
+      "@type": "arkiv:Dokumentbeskrivelse",
+      "arkiv:dokumentnummer": {"@type": "xsd:integer","@value": "1"},
+      "arkiv:dokumentobjekt": {"@id": "d695aeda-1587-44a0-abb6-4f3a945a19d7"},
+      "arkiv:systemID": "b7ec1d73-1738-401b-bbfc-37b856f063b6",
+      "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
+      "arkiv:tittel": "Journalpost_Dokbeskr-hoveddok",
+      "arkiv:tittel_SENSITIV": "Journalpost_Dokbeskr-hoveddok_tittel_SENSITIV"
+    },
+    {
+      "@id": "d695aeda-1587-44a0-abb6-4f3a945a19d7",
+      "@type": "arkiv:Dokumentobjekt",
+      "arkiv:format": "pdf",
+      "arkiv:referanseDokumentfil": "https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/9f16ce02-80e7-48d4-b6ac-a01bcaa27858:e31d3dd2f0b988cda2d254d9e1f3004b668bca4c/Noark%205%20v%205%20vedl1%20Metadatakatalog.pdf",
+      "arkiv:variantformat": {"@id": "arkiv:arkivformat"},
+      "arkiv:versjonsnummer": {"@type": "xsd:integer","@value": "1"}
+    },
+	{
+	  "@id": "60d2a8d7-50b8-4d95-8b8b-e0979240e893",
+	  "@type": "arkiv:Korrespondansepart",
+	  "arkiv:korrespondansepartNavn": "Luster",
+	  "arkiv:korrespondansepartNavn_SENSITIV": "Luster_S",
+	  "arkiv:korrespondanseparttype": {"@id": "arkiv:avsender"},
+		"arkiv:administrativEnhet": "UTV",
+		"arkiv:saksbehandler": "saksbehandler",
+		"arkiv:saksbehandler_SENSITIV": "saksbehandler_S"
+    },
+    {
+      "@id": "3ae3e707-a046-4970-9ac7-f8a270a193e5",
+      "@type": "arkiv:Arkivdel",
+      "arkiv:parent": {"@id": "cb746da3-41d9-4f29-9895-c62152c207b1"},
+      "arkiv:systemID": "3ae3e707-a046-4970-9ac7-f8a270a193e5",
+      "arkiv:tittel": "arkivdeltittel"
+    },
+	{
+      "@id": "cb746da3-41d9-4f29-9895-c62152c207b1",
+      "@type": "arkiv:Arkiv",
+      "arkiv:arkivskaper": {"@id": "56566207-4453-4585-8cc1-78d5e5255054"},
+      "arkiv:opprettetDato": {"@type": "xsd:dateTime","@value": "2019-09-12T12:19:43+02:00"},
+      "arkiv:systemID": "cb746da3-41d9-4f29-9895-c62152c207b1",
+      "arkiv:tittel": "arkivtittel"
+    },	
+	{
+      "@id": "56566207-4453-4585-8cc1-78d5e5255054",
+      "@type": "arkiv:Arkivskaper",
+      "arkiv:arkivskaperID": "56566207-4453-4585-8cc1-78d5e5255054",
+      "arkiv:arkivskaperNavn": "arkivskaper"
+    }
+  ]
+}
