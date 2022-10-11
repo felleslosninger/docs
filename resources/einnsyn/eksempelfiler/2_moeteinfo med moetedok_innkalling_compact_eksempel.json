@@ -8,20 +8,20 @@
     {
 	"@id": "møtemappe-uuid",
 	"@type": "arkiv:Moetemappe",
-	"arkiv:systemID": "møtemappe-uuid",
+		"arkiv:systemID": "møtemappe-uuid",
 	"arkiv:moetedato": {"@type": "xsd:dateTime","@value": "2021-09-25T18:00:00.000+02:00"},
 	"arkiv:moetenummer": "999",
 	"arkiv:moetested": "Teams, Møterom 066 Leikanger",
 	"arkiv:offentligTittel": "Møte i Quizutvalget",
-	"arkiv:offentligTittel_LIST": {"@list": ["Møte","Quiz"]},
 	"arkiv:offentligTittel_SENSITIV": "Møte Quiz - Sensitiv",
-	"arkiv:utvalg": "Quizutvalget",
+	"arkiv:utvalg": "Quizutvalget",	
+	"arkiv:beskrivelse": "Under forberedelse",
 	"arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
     },
     {
     "@id": "møteredokregistrering-innkalling-uuid",
     "@type": "arkiv:Møtedokumentregistrering",
-    "arkiv:systemID": "møteredokregistrering-innkalling-uuid",
+		"arkiv:systemID": "møteredokregistrering-innkalling-uuid",
 	"arkiv:administrativEnhet": "BridgeUtvalget",
 	"arkiv:parent": {"@id": "møtemappe-uuid"},
     "arkiv:møtedokumentregistreringstype": {"@id": "arkiv:innkalling"},
@@ -32,7 +32,7 @@
     {
     "@id": "dokumentbeskrivelse-innkalling-uuid",
     "@type": "arkiv:Dokumentbeskrivelse",
-    "arkiv:systemID": "dokumentbeskrivelse-innkalling-uuid",
+		"arkiv:systemID": "dokumentbeskrivelse-innkalling-uuid",
     "arkiv:dokumentnummer": {"@type": "xsd:integer","@value": "177093"},
     "arkiv:tilknyttetDato": {"@type": "xsd:dateTime","@value": "2018-04-25T00:00:00.000+02:00"},
     "arkiv:tilknyttetRegistreringSom": {"@id": "arkiv:hoveddokument"},
@@ -44,10 +44,10 @@
     "@id": "dokumentobjekt-innkalling-uuid",
     "@type": "arkiv:Dokumentobjekt",
     "arkiv:format": "pdf",
-    "arkiv:opprettetDato": {"@type": "xsd:dateTime","@value": "2018-04-26T12:15:12.000+02:00"},
+		"arkiv:opprettetDato": {"@type": "xsd:dateTime","@value": "2018-04-26T12:15:12.000+02:00"},
     "arkiv:referanseDokumentfil": "https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark-5/noark5-standarden/_/attachment/download/f52e37da-31ed-4bf0-9fbf-69f0357aa25c:025a30b602a65d74377b9e0c22a0f2fb8eab84df/Noark5v4%20vedl1%20Metadatakatalog.pdf",
-    "arkiv:variantformat": {"@id": "arkiv:arkivformat"},
-    "arkiv:versjonsnummer": {"@type": "xsd:integer","@value": "1"}
+		"arkiv:variantformat": {"@id": "arkiv:arkivformat"},
+		"arkiv:versjonsnummer": {"@type": "xsd:integer","@value": "1"}
     }
   ]
 }

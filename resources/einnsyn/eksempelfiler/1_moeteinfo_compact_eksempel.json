@@ -6,12 +6,13 @@
   },
   "@id": "møtemappe-uuid",
   "@type": "arkiv:Moetemappe",
-  "arkiv:systemID": "møtemappe-uuid",
+	"arkiv:systemID": "møtemappe-uuid",
   "arkiv:moetedato": {"@type": "xsd:dateTime","@value": "2021-09-25T18:00:00.000+02:00"},
   "arkiv:moetenummer": "999",
   "arkiv:moetested": "Teams, Møterom 066 Leikanger",
   "arkiv:offentligTittel": "Møte i Quizutvalget",
   "arkiv:offentligTittel_SENSITIV": "Møte Quiz - Sensitiv",
   "arkiv:utvalg": "Quizutvalget",
+  "arkiv:beskrivelse": "Under forberedelse",
   "arkiv:videolink": "https://oslo.kommunetv.no/archive/269"
 }
