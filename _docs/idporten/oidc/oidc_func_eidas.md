@@ -15,8 +15,11 @@ ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landeg
 - Kroatia
 - Estland
 - Italia
+- Latvia
 - Luxembourg
+- Portugal
 - Spania
+- Sverige
 
 For å bli integerte i produksjon, må et land bli formelt *notifisert* og fagfellevurdert av EU-kommisjonen.  For en oppdatert status over denne prosessen, se EU-kommisjonen sin side: [https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS](https://ec.europa.eu/cefdigital/wiki/display/EIDCOMMUNITY/Overview+of+pre-notified+and+notified+eID+schemes+under+eIDAS)
 
