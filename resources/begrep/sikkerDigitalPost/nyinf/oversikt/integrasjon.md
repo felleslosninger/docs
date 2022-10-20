@@ -29,4 +29,10 @@ For å få et system til å sende digital post til innbyggere via Digdirs aksess
 Digdir har også laget et sett med [ferdige REST-kall](https://docs.digdir.no/eformidling_nm_restdocs.html#_example_2_creating_a_dpi_digital_message) som brukere av eFormidling kan ta i bruk for å sende digital post til innbyggere
 
 ### Gå direkte mot API'et til aksesspunktet
-Avsendere trenger ikke å ta i bruk eFormidling for å sende digital post til innbyggere. Aksesspunktet som digdir har avtale med tilbyr et [API som avsendere kan bruke direkte](https://docs.digdir.no/resources/begrep/sikkerDigitalPost/nyinf/api/openapi_spec.html) om ønskelig. Dette alternativet innebærer at avsendere må bygge DPI-meldinger i henhold til spec og formidle disse til API'et på egenhånd. I tillegg må en selv håndtere kvitteringer som kommer i retur til API'et pr forsendelse.
+Avsendere trenger ikke å ta i bruk eFormidling for å sende digital post til innbyggere. Aksesspunktet som digdir har avtale med tilbyr et API som avsendere kan bruke direkte om ønskelig. Dette alternativet innebærer at avsendere må bygge DPI-meldinger i henhold til spec og formidle disse til API'et på egenhånd. I tillegg må en selv håndtere kvitteringer som kommer i retur til API'et pr forsendelse.
+
+Miljø:
+
+Produksjon: https://srest.dataplatfor.ms/swagger-ui/#/DPI
+
+QA/test: https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI
