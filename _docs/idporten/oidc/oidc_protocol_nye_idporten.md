@@ -92,6 +92,9 @@ JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim 
 ### Nytt parameter iss i respons fra autorisasjons-endepunktet
 Responser fra autorisasjons-endepunktet vil inneholde parameteret `iss` med verdien fra ID-portens issuer i det aktuelle miljøet.  Dette kan brukes til å unngå "mix-up-attacks" og er spesifisert i RFC 9207.
 
+### Parameter client_id påkrevd ved bruk av request_uri mot autorisasjons-endepunktet
+Ved bruk av pushed authorization request, må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet. 
+
 ### SAML
 
 I ny løsning vil det bli tilbudt en rudimentær SAML-støtte, hvis formål kun er å videreføre eksisterende integrasjoner. Vi vil lage en enkel SAML-til-OIDC-proxy, som vi plasser foran ny OIDC-issuer.
