@@ -7,17 +7,17 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_download_ip
 ---
 
-Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS som .jar-fil. 
+Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS som .jar-fil.
 
 ## Integrasjonspunktet
 
-> [**Integrasjonspunktet 2.8.3 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.3/integrasjonspunkt-2.8.3.jar)
+> [**Integrasjonspunktet 2.8.4 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.4/integrasjonspunkt-2.8.4.jar)
 
-> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.3/integrasjonspunkt-2.8.3.jar.asc)
+> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.4/integrasjonspunkt-2.8.4.jar.asc)
 
-> [**Integrasjonspunktet 2.8.3 (Docker container image)** ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.8.3/images/sha256-9fab05b1216e8e6df56ee75208d1d94d89450efbc7729cd2464f3ab0040f4ce0?context=explore)
+> [**Integrasjonspunktet 2.8.4 (Docker container image)** ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.8.4/images/sha256-9fab05b1216e8e6df56ee75208d1d94d89450efbc7729cd2464f3ab0040f4ce0?context=explore)
 
-```docker pull digdir/integrasjonspunkt:2.8.3```
+`docker pull digdir/integrasjonspunkt:2.8.4`
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../installasjon/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
 
