@@ -560,6 +560,24 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 ## Sentrale komponenter
 
+
+## ServiceRegistry 2.6.1
+
+03.11.2022
+
+**Endringer**
+
+- MOVE-2993 	Integrasjonspunkt startar ikkje opp med Seid 2.0-sertifikat
+
+## ServiceRegistry 2.6.0
+
+12.10.2022
+
+**Endringer**
+
+- MOVE-2916 	Taushetsbelagte meldinger må ikkje sendes til FIKS 
+- MOVE-2914 	Legge inn retry mot KRR/MF 
+
 ## ServiceRegistry 2.5.0
 
 22.03.2022
