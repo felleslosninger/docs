@@ -18,6 +18,26 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.11.0
+
+07.11.2022
+
+- Tilgjengeliggjere rawReceipt for meldingsstatuser på DPIs gamle XML-format også ved FEIL fra H2
+- Sjelden feilsituasjon i DPI fører til at integrasjonspunktet kjem i ei tilstand der ein ikkje klarer å hente inn kvitteringar
+- Feil ved pop av melding ved bruk av Postgres 
+- Opplasting av arkivmelding.xml til integrasjonspunktet feiler ved bruk av MySQL
+- Sporadisk NullPointerException ved innhenting av status for sendt melding fra KS SvarUt
+- Setja spring.datasource.hikari.autoCommit=false som standard 
+- Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet 
+- Oppdatere Azure Service Bus biblioteket 
+- På vegne av DPF 
+- IOException frå blob-parsing vert fanga i NextMoveMessageInService 
+- Feil DPI property i prod mot hj2 
+- efm-mocks oppdatert iht nyeste integrasjonspunkt 
+- Innhenting av meldingsstatuser stopper ikke opp ved meir enn 2100 uteståande meldingsstatuser ved bruk av MSSQL 
+- IP-pop av avtaltmelding uten ASIC gir ikkje feil lenger
+- Skru av OSIV i integrasjonspunktet 
+
 ## 2.8.4
 
 25.10.2022
@@ -743,6 +763,12 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 ## Valgfrie komponenter
 
 ## KOSMOS
+
+### KOSMOS 1.2.0
+
+07.11.2022
+
+- Add option to append text to email subject
 
 ### KOSMOS 1.1.0
 

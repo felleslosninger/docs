@@ -11,13 +11,13 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ## Integrasjonspunktet
 
-> [**Integrasjonspunktet 2.8.4 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.4/integrasjonspunkt-2.8.4.jar)
+> [**Integrasjonspunktet 2.11.0 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.11.0/integrasjonspunkt-2.11.0.jar)
 
-> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.8.4/integrasjonspunkt-2.8.4.jar.asc)
+> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.11.0/integrasjonspunkt-2.11.0.jar.asc)
 
-> [**Integrasjonspunktet 2.8.4 (Docker container image)** ](https://hub.docker.com/layers/integrasjonspunkt/digdir/integrasjonspunkt/2.8.4/images/sha256-9fab05b1216e8e6df56ee75208d1d94d89450efbc7729cd2464f3ab0040f4ce0?context=explore)
+> [**Integrasjonspunktet 2.11.0 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.11.0/images/sha256-b8c678873a2ab1601e014dd96f9ab16176ec8963f10f596047b465a223e9c850?context=explore)
 
-`docker pull digdir/integrasjonspunkt:2.8.4`
+`docker pull digdir/integrasjonspunkt:2.11.0`
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../installasjon/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
 
@@ -25,9 +25,9 @@ Endringslogg finner du [her.](../Oppgradering/endringslogg)
 
 ## KOSMOS
 
-> [**KOSMOS 1.1.0 (JAR)**](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar)
+> [**KOSMOS 1.2.0 (JAR)**](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar)
 
-> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.1.0/kosmos-1.1.0.jar.asc)
+> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar.asc)
 
 ## eFormidlings offentlige kodesigneringsnøkkel
 
