@@ -35,7 +35,7 @@ Namespace arkiv=http://www.arkivverket.no/standarder/noark5/arkivstruktur/
 ### Møtesakstype
 - arkiv:delegertSak
 - arkiv:interpellasjon
-- arkiv:orienterinssak
+- arkiv:orienteringssak
 - arkiv:politiskSak
 - arkiv:referatsak
 - arkiv:godkjenning
