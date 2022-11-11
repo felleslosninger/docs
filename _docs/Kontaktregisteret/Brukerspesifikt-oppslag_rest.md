@@ -28,12 +28,12 @@ Man må forespørre ett eller flere av følgende scopes:
 
 | scope | beskrivelse |
 |-|-|
-| user/kontaktinformasjon.read | Returnerer epostadresse og mobilnummer + tidspunkt for sist oppdatering |
-| user/varslingsstatus.read | Returnerer status for om kontaktinfomasjonen kan brukast for varsling iht. eForvaltningsforskrifta sin §32 |
-| user/sikkerdigitalpost.read | Returnerer adresse for digital post til innbygger |
-| user/sertifikat.read | Returnerer brukerens krypteringssertifikat ved sending av digital post |
-| user/spraak.read | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |   
-| user/spraak.write | Endrer brukerens foretrukne språk for kommunikasjon med det offentlige. |
+| krr:user/kontaktinformasjon.read | Returnerer epostadresse og mobilnummer + tidspunkt for sist oppdatering |
+|  | Returnerer status for om kontaktinfomasjonen kan brukast for varsling iht. eForvaltningsforskrifta sin §32 |
+| krr:user/sikkerdigitalpost.read | Returnerer adresse for digital post til innbygger |
+| | Returnerer brukerens krypteringssertifikat ved sending av digital post |
+| | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |   
+| krr:user/spraak.write | Endrer brukerens foretrukne språk for kommunikasjon med det offentlige. |
 
 ## API-endepunkt
 
