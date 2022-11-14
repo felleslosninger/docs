@@ -41,7 +41,7 @@ Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...1000 personer:
 
-OpenAPI-dokumentasjon mangler p.t. for det nye endepunktet.  Inntil videre må du se på gammel doc her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
+OpenAPI-dokumentasjon mangler p.t. for det nye endepunktet.  Den publiseres her når den er klar.
 
 |miljø|url|
 |-|-|
@@ -100,9 +100,6 @@ Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "inneby
 - Konsolidert antall scopes fra 5 til 2 basert på analyse av faktisk bruk
 - Forenklet URL til APIet
 
-
-
- Gammel API-dok er her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Personer)
 
 Gamle URLer:
 
