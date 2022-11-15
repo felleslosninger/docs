@@ -85,7 +85,7 @@ Forretningsmeldingen `digital` er beskrevet under.
 > | Standard verdi                  | Ingen                        |
 > | Konfigurasjon av standard verdi | Ikke støttet                 |
 
-> `digital.varsler.epostTekst` (påkrevd)
+> `digital.varsler.epostTekst` (frivillig)
 >
 > Tekst som skal inkluderes i epost-varsel til sluttbruker etter at posten er tilgjengeliggjort.
 >
@@ -93,7 +93,7 @@ Forretningsmeldingen `digital` er beskrevet under.
 > | Standard verdi                  | Ingen                        |
 > | Konfigurasjon av standard verdi | Ikke støttet                 |
 
-> `digital.varsler.smsTekst` (påkrevd)
+> `digital.varsler.smsTekst` (frivillig)
 >
 > Tekst som skal inkluderes i SMS-varsel til sluttbruker etter at posten er tilgjengeliggjort.
 >
