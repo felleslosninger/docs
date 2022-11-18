@@ -6,7 +6,7 @@ summary: "Her finner du informasjon om hvordan oppdatere til ny versjon av einns
 sidebar: einnsyn_sidebar
 redirect_from: /einnsyn_oppdatere_tjeneste
 ---
-[Last ned eInnsyn-klient](https://github.com/difi/einnsyn-klient/releases/tag/2.0.4)
+[Last ned eInnsyn-klient](https://github.com/difi/einnsyn-klient/releases)
 
 Når du skal oppgradere til ny versjon av einnsyn-klienten må du endre versjonsnummeret i einnsyn-klient.xml fila. Nærmere bestemt denne linja ```<argument>sender-2.0.4.jar</argument>``` . Når du gjør endringer i denne XML-filen så må du reinstallere tjeneste.  Uansett om det er ny versjon eller noe annet som blir endret. 
 
