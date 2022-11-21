@@ -51,10 +51,13 @@ Passord og engangskoder:
 
 
 ## Minid - opprette testbruker på egenhånd
+
 En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/)
 
 **Framgangsmåte**
+
 Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnummer fra Tenor -> Bestill aktiveringsbrev. En får da en aktiveringskode i "Ditt aktiveringsbrev er bestilt". Legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
 
 **Manuell behandling**
+
 Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no for manuell behandling.
