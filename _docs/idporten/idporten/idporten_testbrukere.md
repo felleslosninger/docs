@@ -58,6 +58,6 @@ En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt f
 
 Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnummer fra Tenor -> Bestill aktiveringsbrev. En får da en aktiveringskode i "Ditt aktiveringsbrev er bestilt". Legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
 
-**Manuell behandling**
+## Manuell behandling
 
 Har du spesielle behov knyttet til testbrukere må du kontakte oss på servicedesk@digdir.no for manuell behandling.
