@@ -579,7 +579,14 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 ---
 
 ## Sentrale komponenter
+## ServiceRegistry 2.7.0
 
+22.11.2022
+
+**Endringer**
+
+- MOVE-2946 	Retting av av service registry tolker TCP timeout mot ELMA som "participant not found" 
+- MOVE-3003   Oppgradere peppol-biblioteker i SR
 
 ## ServiceRegistry 2.6.1
 
@@ -750,6 +757,31 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 ---
 
 ## Virksert
+
+### Virksert 1.8.0
+
+22.11.2022
+
+**Endringer**
+
+- MOVE-2991 	Commfides-test-sertifikat (Seid 2.0) vert ikkje aksepterte i test-profilen til VirkSert 
+- MOVE-3002   Oppgradere peppol-biblioteker i virksert
+
+### Virksert 1.7.1
+
+01.11.2022
+
+**Endringer**
+
+- MOVE-2987 	Seid 2.0-sertifikat vert ikkje godteke av VirkSert
+
+### Virksert 1.7.0
+
+20.10.2022
+
+**Endringer**
+
+- MOVE-2967 	Opplasting av verksemdssertifikat feilar 
 
 ### Virksert 1.6.0
 
