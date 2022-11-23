@@ -16,7 +16,7 @@ sidebar: dpi_new_sidebar
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
 | XSD        | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd) |
 
-### Attributer
+**Attributer**
 
 | Identifikator | Kardinalitet | Datatype   |
 | --- | --- | --- |
@@ -25,7 +25,7 @@ sidebar: dpi_new_sidebar
 | knappTekst    | 0..1         | LenkeKnappTekst       |
 | frist         | 0..1         | xsd:dateTime          |
 
-### Eksempel
+**Eksempel**
 
 ``` 
 brush: xml; toolbar: false
@@ -50,7 +50,7 @@ brush: xml; toolbar: false
 | XSD | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/bevis.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/bevis.xsd) |
     
 
-### Attributter: Se xsd for mer informasjon om domenet.
+**Attributter: Se xsd for mer informasjon om domenet.**
 Se xsd for mer informasjon om domenet.
 
 * Gyldighetsperiode (se xsd) kan representeres på to måter: Start-slutt og start-slutt med delvis gyldighetsperiode i 
@@ -62,7 +62,7 @@ Se xsd for mer informasjon om domenet.
 * Bakgrunnsfarge er en helt vanlig color hex.
 
 
-### Eksempel
+**Eksempel**
 
 ``` 
 brush: xml; toolbar: false
@@ -117,7 +117,7 @@ brush: xml; toolbar: false
 | XSD | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/arrangement.xsd) |
     
 
-### Attributter: Se xsd for mer informasjon om domenet.
+**Attributter: Se xsd for mer informasjon om domenet.**
 
 Merk: I typen ‘tekst’ betyr formatering i xml-en noe. Linjeskift og
 tabulatorer vil altså bli brukt aktivt til formatering av teksten i
@@ -128,7 +128,7 @@ fjernet i
 forkant av linjene. Tabulatorer kan benyttes for å gjøre indenteringer i
 teksten.
 
-### Eksempel
+**Eksempel**
 
 ``` 
 brush: xml; toolbar: false
