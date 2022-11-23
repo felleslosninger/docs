@@ -4,7 +4,8 @@ permalink: dpi_utvidelser.html
 sidebar: dpi_new_sidebar
 ---
 
-TOC {:toc}
+1. TOC
+{:toc}
 
 ## Lenke utenfor brev
 
@@ -106,7 +107,7 @@ brush: xml; toolbar: false
 </bevis>
 ```
 
-## Arrangmeent
+## Arrangement
 
 |---|---|
 | Definisjon | Arrangement |
