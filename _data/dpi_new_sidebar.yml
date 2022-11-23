@@ -36,10 +36,22 @@ folders:
         jurl: /dpi_tilstander.html
       - title: Struktur på melding
         jurl: /dpi_struktur_forretningsmelding.html
+      - title: Lenke utenfor brev
+        jurl: /dpi_lenke.html
+      - title: Bevis
+        jurl: /dpi_bevis.html
+      - title: Arrangement
+        jurl: /dpi_arrangement.html
       
     - title: Utvikling
       folderitems:
       
+      - title: Standard business document
+        jurl: 
+      - title: Forretningsmeldinger
+        jurl: 
+      - title: Dokumentpakke (ASiC)
+        jurl: 
       - title: Prosesser og dokumenttyper
         jurl: /identifiers.html
       - title: Schema og XSD 
