@@ -42,6 +42,8 @@ folders:
         jurl: /dpi_bevis.html
       - title: Arrangement
         jurl: /dpi_arrangement.html
+      - title: Utskriftstjenesten
+        jurl: /dpi_utskrift_index.html
       
     - title: Utvikling
       folderitems:
@@ -67,44 +69,7 @@ folders:
       - title: Testmiljø
         jurl: /dpi_testmiljo.html   
       
-    - title: Dokumentpakke (ASiC)
-      folderitems:
 
-      - title: Introduksjon
-        jurl: /dpi_dokumentpakke_index.html
-      - title: Langtidslagring
-        jurl: /dpi_langtidslagring.html   
-      - title: Manifest
-        jurl: /dpi_manifest.html
-      - title: Dokumentformater
-        jurl: /dpi_dokumentformat.html   
-      - title: MIME type
-        jurl: /dpi_mimetypes.html  
-      - title: HTML
-        jurl: /dpi_html.html
-      - title: EHF
-        jurl: /dpi_ehf.html
-      - title: Sikkerhet
-        jurl: /dpi_dokumentpakke_sikkerhet.html
-
-    - title: Utvidelser
-      folderitems:
-
-      - title: Introduksjon
-        jurl: /dpi_utvidelser_index.html
-      - title: Lenke utenfor brev
-        jurl: /dpi_lenke.html
-      - title: Bevis
-        jurl: /dpi_bevis.html
-      - title: Arrangement
-        jurl: /dpi_arrangement.html
-        
-    - title: Utskrift og forsendelse
-      folderitems:
-           
-      - title: Utskriftstjenesten
-        jurl: /dpi_utskrift_index.html
-        
     - title: Forretningsmeldinger
       folderitems:
 
