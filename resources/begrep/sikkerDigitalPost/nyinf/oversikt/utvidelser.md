@@ -51,7 +51,6 @@ brush: xml; toolbar: false
     
 
 **Attributter: Se xsd for mer informasjon om domenet.**
-Se xsd for mer informasjon om domenet.
 
 * Gyldighetsperiode (se xsd) kan representeres på to måter: Start-slutt og start-slutt med delvis gyldighetsperiode i 
     et år. Du kan f.eks si at at beviset er gyldig fra 2020-01-01 og til 2025-01-01 (ikke inkluderende) men bare fra 
