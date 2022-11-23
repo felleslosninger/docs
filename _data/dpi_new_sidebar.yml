@@ -1,7 +1,7 @@
 sidebarTitle: Digital post til innbygger
 folders:
 
-    - title: Oversikt
+    - title: Introduksjon
       folderitems:
 
       - title: Innledning
@@ -16,6 +16,10 @@ folders:
         jurl: /dpi_sertifikathandtering.html   
       - title: Integrasjon
         jurl: /integrasjon.html
+      
+    - title: Utvikling
+      folderitems:
+      
       - title: Prosesser og dokumenttyper
         jurl: /identifiers.html
       - title: Schema og XSD 
@@ -23,7 +27,14 @@ folders:
       - title: Eksempler
         jurl: /dpi_eksempler.html
       
-        
+    - title: Testing
+      folderitems:
+      
+      - title: Postkasser til testbrukere
+        jurl: /dpi_testing_index.html
+      - title: Testmiljø
+        jurl: /dpi_testmiljo.html   
+      
     - title: Forretningslag
       folderitems:
 
@@ -136,15 +147,6 @@ folders:
       - title: Forretningsfeil
         jurl: /dpi_forretningsfeil.html   
 
-    - title: Testing
-      folderitems:
-
-      - title: Postkasser til testbrukere
-        jurl: /dpi_testing_index.html
-      - title: Integrasjonstest
-        jurl: /dpi_integrasjonstest.html    
-      - title: Testmiljø
-        jurl: /dpi_testmiljo.html   
     
     - title: Begrep
       folderitems:
@@ -152,8 +154,3 @@ folders:
       - title: Begrepskatalog
         jurl: /resources/begrep/sikkerDigitalPost/begrep/
 
-    - title: DPI GAMMEL DOKUMENTASJON
-      folderitems:
-
-      - title: Veiledning og klienter
-        jurl: /resources/begrep/sikkerDigitalPost/innledning/
