@@ -16,7 +16,7 @@ sidebar: dpi_new_sidebar
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |
 | XSD        | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/lenke.xsd) |
 
-**Attributer**
+**Attributter**
 
 | Identifikator | Kardinalitet | Datatype   |
 | --- | --- | --- |
