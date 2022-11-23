@@ -70,47 +70,6 @@ folders:
         jurl: /dpi_testmiljo.html   
       
 
-    - title: Forretningsmeldinger
-      folderitems:
-
-      - title: Forretningsmeldinger
-        jurl: /dpi_forretiningsmelding_index.html
-      - title: Digital
-        jurl: /dpi_digital.html 
-      - title: Utskrift
-        jurl: /dpi_utskrift.html   
-      - title: LeveringsKvittering
-        jurl: /dpi_leveringskvittering.html 
-      - title: AapningsKvittering
-        jurl: /dpi_aapningskvittering.html  
-      - title: VarslingfeiletKvittering
-        jurl: /dpi_varslingfeiletkvittering.html 
-      - title: MottaksKvittering
-        jurl: /dpi_mottakskvittering.html
-      - title: ReturpostKvittering
-        jurl: /dpi_returpostkvittering.html
-      - title: Feil
-        jurl: /dpi_feil.html
-      - title: FlyttetDigitalpost
-        jurl: /dpi_flyttetdigitalpost.html
- 
-    - title: Standard Business Document
-      folderitems:
-
-      - title: Standard Business Document
-        jurl: /dpi_sbd_index.html
-      - title: StandardBusinessDocumentHeader
-        jurl: /dpi_sbdh.html   
-      - title: Sender
-        jurl: /dpi_sender.html
-      - title: Receiver
-        jurl: /dpi_receiver.html 
-      - title: DocumentIdentification
-        jurl: /dpi_documentidentification.html 
-      - title: BusinessScope
-        jurl: /dpi_businessscope.html
-    
- 
     - title: Selvhjelp
       folderitems:
 
