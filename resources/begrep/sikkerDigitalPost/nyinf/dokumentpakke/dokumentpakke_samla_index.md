@@ -4,28 +4,19 @@ permalink: dpi_dokumentpakke_samla_index.html
 sidebar: dpi_new_sidebar
 ---
 
-<!-- ![](/images/dpi/underarbeide.png) -->
-
 1. TOC
 {:toc}
 
 ## Introduksjon
 
-Dokumentpakke inngår kun i
-[DigitalPostMeldinger](../../meldinger/DigitalPostMelding.md).
+Dokumentpakke inngår kun i [DigitalPostMeldinger](../../meldinger/DigitalPostMelding.md).
 
-[Associated Signature Container
-(ASiC)](http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf)
-er et pakkeformat som er designet for å ivareta integritet til innholdet
-over lang tid. Kort fortalt så definerer standarden hvordan man skal
-sette sammen en zip fil med en filstruktur der man lager en digital
-signatur hver enkel fil med en kombinasjon av et digitalt fingeravtrykk
-av filen og et PKI sertifikat eid av en virksomheten.  
-Dette medfører at man kan verifisere at filene kommer fra rett
-virksomhet, og om filene har blitt endret.
+[Associated Signature Container (ASiC)](http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf)
+er et pakkeformat som er designet for å ivareta integritet til innholdet over lang tid. Kort fortalt så definerer standarden hvordan man skal
+sette sammen en zip fil med en filstruktur der man lager en digital signatur hver enkel fil med en kombinasjon av et digitalt fingeravtrykk
+av filen og et PKI sertifikat eid av en virksomheten. Dette medfører at man kan verifisere at filene kommer fra rett virksomhet, og om filene har blitt endret.
 
-Les mer om [hvordan dokumenter som sendes i Sikker digital post er
-beskyttet](sikkerhet_index.html)
+Les mer om [hvordan dokumenter som sendes i Sikker digital post er beskyttet](sikkerhet_index.html)
 
 Sikker Digital Post har definert et eget begrep [Manifest](Manifest.md) som
 inneholder metadata relatert til hver fil.
