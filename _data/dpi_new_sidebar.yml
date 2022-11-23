@@ -34,6 +34,8 @@ folders:
         jurl: /dpi_kvitteringer.html
       - title: Tilstander for Avsender
         jurl: /dpi_tilstander.html
+      - title: Utvidelser
+        jurl: /dpi_utvidelser.html
       - title: Lenke utenfor brev
         jurl: /dpi_lenke.html
       - title: Bevis
