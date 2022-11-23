@@ -90,4 +90,10 @@ folders:
       
       - title: Begrepskatalog
         jurl: /resources/begrep/sikkerDigitalPost/begrep/
+        
+    - title: Eksperimentering docs
+      folderitems:
+      
+      - title: side for eksperimentering
+        jurl: dpi_testside.html
 
