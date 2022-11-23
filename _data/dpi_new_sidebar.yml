@@ -16,6 +16,26 @@ folders:
         jurl: /dpi_sertifikathandtering.html   
       - title: Integrasjon
         jurl: /integrasjon.html
+        
+    - title: Funksjonalitet
+      folderitems:
+
+      - title: Forretningslag
+        jurl: /dpi_forretningslag_index.html
+      - title: Aktører og Roller
+        jurl: /dpi_aktorer.html   
+      - title: Varsling
+        jurl: /dpi_varsling.html   
+      - title: Sending av innbyggerpost
+        jurl: /dpi_sending_av_digital_post.html
+      - title: Sending av innbyggerpost på vegne av andre
+        jurl: /dpi_send_paa_vegne_av_andre.html  
+      - title: Kvitteringer
+        jurl: /dpi_kvitteringer.html
+      - title: Tilstander for Avsender
+        jurl: /dpi_tilstander.html
+      - title: Struktur på melding
+        jurl: /dpi_struktur_forretningsmelding.html
       
     - title: Utvikling
       folderitems:
@@ -35,27 +55,6 @@ folders:
       - title: Testmiljø
         jurl: /dpi_testmiljo.html   
       
-    - title: Forretningslag
-      folderitems:
-
-      - title: Forretningslag
-        jurl: /dpi_forretningslag_index.html
-      - title: Aktører og Roller
-        jurl: /dpi_aktorer.html   
-      - title: Varsling
-        jurl: /dpi_varsling.html   
-      - title: Sending av innbyggerpost
-        jurl: /dpi_sending_av_digital_post.html
-      - title: Sending av innbyggerpost på vegne av andre
-        jurl: /dpi_send_paa_vegne_av_andre.html  
-      - title: Kvitteringer
-        jurl: /dpi_kvitteringer.html
-      - title: Tilstander for Avsender
-        jurl: /dpi_tilstander.html
-      - title: Struktur på melding
-        jurl: /dpi_struktur_forretningsmelding.html
-
-   
     - title: Dokumentpakke (ASiC)
       folderitems:
 
@@ -135,7 +134,7 @@ folders:
         jurl: /dpi_businessscope.html
     
  
-    - title: Feilhåndtering
+    - title: Selvhjelp
       folderitems:
 
       - title: Feilhåndtering
