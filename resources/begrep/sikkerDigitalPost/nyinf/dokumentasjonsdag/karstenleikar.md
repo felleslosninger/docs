@@ -7,9 +7,9 @@ sidebar: dpi_new_sidebar
 1. TOC
 {:toc}
 
-## Sjekkliste for etablering av direkteintegrasjon
+## Detta er ein heading nr 2
 
-### Sende inn DPI-infoskjema til Digdir
-# Skaffe gyldig virksomhetssertifikat
+### Detta er ein heading nr 3
+# Detta er ein heading nr 1
 
 
