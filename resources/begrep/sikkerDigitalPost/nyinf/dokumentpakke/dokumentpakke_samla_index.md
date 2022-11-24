@@ -130,7 +130,7 @@ digital post:
 
 ## Dokumentformater
 
-Transportinfrastrukturen som brukes for å sende DPI-meldinger kan i utgangspunktet frakte en hver filtype fra avsender til mottaker, men det er begrenset hva tjenesteleverandørene som mottar meldingene (postkasseleverandører og utskrifts- og forsendelsestjenesten) håndterer, se [oversikt over støttede MIME types](dpi_mimetypes.html).
+Transportinfrastrukturen som brukes for å sende DPI-meldinger kan i utgangspunktet frakte en hver filtype fra avsender til mottaker, men det er begrenset hva tjenesteleverandørene som mottar meldingene (postkasseleverandører og utskrifts- og forsendelsestjenesten) håndterer. Se oversikt over støttede MIME types i neste avsnitt.
 
 Eksekverbare filer kan ikke sendes i Sikker digital posttjeneste.
 
