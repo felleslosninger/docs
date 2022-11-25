@@ -205,10 +205,168 @@ basert på en gjennomført vurdering.
 
 ## MottaksKvittering
 
+|---|---|
+| Identifikator |  |
+| Term          | {{page.title}} |
+| Definisjon    | En [Kvitteringsmelding](dpi_kvitteringer.html) til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift. |
+| Kilde         | DIFI |
+| Kommentar     | Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post. |
+
+**Schema**
+[innbyggerpost_dpi_mottakskvittering_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_mottakskvittering_1_0.schema.json)
+
 ## ReturPostKvittering
+
+|---|---|
+| Identifikator | |
+| Term          | {{page.title}} |
+| Definisjon    | En [Kvitteringsmelding](dpi_kvitteringer.html) fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker. |
+| Kilde         | DIFI |
+| Kommentar     | Dette er Kvittering på at posten har kommet i retur og har blitt makulert. |
+
+Kvitteringen leveres når brevene er mottatt i retur av utskrift og
+forsendelsestjenesten, registrert og makulert. Dette forutsetter at
+avsender har valgt å benytte denne tjenesten i feltet
+(Link til /felles/returPostStrategi.md) i opprinnelig melding.  
+Kvitteringen vil komme flere dager etter at en forsendelse er sendt til
+utskrift og forsendelsetjenesten, dette er overordne de steg som skal
+gjennomføres før Avsender får ReturpostKvittering
+
+| Steg | Beskrivelse | Antatt tidsbruk |
+| --- | --- | --- |
+| Utskrift | Brevet skrives ut og postlegges | 1 dag |
+| Forsendelse | Brevet forsendes til Avsender | 2 til 5 dager |
+| Retur til EA tjeneste | Brev som ikke kan leveres vil bruke noe tid tilbake til retur tjenesten | 1 til 2 dager |
+| Behandling av returpost | Brev makuleres og kvittering skapes | 2 - 4 dager |
+| Retur av kvittering | Kvittering gjøres tilgjengelig i meldingsformidler | Umiddelbart |
+
+**Schema**
+[innbyggerpost_dpi_returpostkvittering_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_returpostkvittering_1_0.schema.json)
 
 ## Feil
 
+**Beskrivelse**
+
+Feilmelding sendes fra Postkasseleverandør når det oppstår en uventet
+feil som ikke kan håndteres av postkasseleverandør innenfor SLA krav.  
+Feilene kategoriseres overordnet i to typer, enten som klient feil som
+Avsender må rette opp i eller som server feil som oppstår hos
+postkasseleverandør.
+
+**Håndtering av klient feil**
+
+Feil kategorisert som klientfeil vil komme dersom Avsender har sendt en
+digital postmelding som ikke kan behandles av Postkasseleverandør.  
+Dette kan være feil som f.eks:
+
+  - Adresseringen til Mottaker er feil
+  - Postkasseleverandør kan ikke dekryptere dokumentpakken
+  - Varslingreglene bryter med forretningsregler
+  - Virkningsdato er satt for langt frem i tid
+
+Generelt vil dette være alle feil med
+[Digital](dpi_digital.html.md) meldignen [Utskrift](dpi_utskrift.html) meldingen og
+[Dokumentpakken](dpi_dokumentpakke_index.html).
+
+Feilen må utbedres og ny meldin må sendes.
+
+**Håndtering av server feil**
+
+Feil kategorisert som serverfeil vil oppstå dersom postkasseleverandør
+har interne feil som stopper behandlingen av den digitale postmeldingen.
+
+**Schema**
+[innbyggerpost_dpi_feil_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_feil_1_0.schema.json)
+
+**Properties**
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
+| [mottaker](2sdp_mottaker.html) | 1..1 | [mottaker]({{ page.dpi_common_schema_location }}#/definitions/virksomhetmottaker) |
+| [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [maksinportentoken]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
+| [tidspunkt](dpi_maskinportentoken.html) | 1..1 | [tidspunkt]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) string - date-time iht [RFC 3339, section 5.6](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) |
+| [feiltype](sikkerhetsnivaa.html) | 0..1 | [feiltype]({{ page.dpi_common_schema_location }}#/definitions/sikkerhetsnivaa) string KlIENT/SERVER|
+| [detaljer](sikkerhetsnivaa.html) | 0..1 | [detaljer]({{ page.dpi_common_schema_location }}#/definitions/sikkerhetsnivaa) string|
+
+
+**Kodeverk for feiltype**
+
+feiltype kan ha følgende verdi:
+
+| Kodeverdi | Beskrivelse |
+| --- | --- |
+| KLIENT | Feilen kommer pga. feil på input eller andre feil der [Avsender](sdp_avsender.html) må rette opp i årsaken til feilen |
+| SERVER | Feilen kommer av feil på sentral infrastruktur. [Avsender](sdp_avsender.html) må ta kontakt med Sentralforvalter for å få rettet opp i feilen. |
+
+
 ## FlyttetDigitalPost
+
+|---|---|
+| Identifikator | |
+| Term          | {{page.title}} |
+| Definisjon    | En digital melding med tilhørende [Dokumentpakke](dpi_dokumentpakke_index.html) som flyttes fra en postkasseleverandør til en annen |
+| Kilde         | DIFI |
+| Kommentar     | Denne meldingstypen brukes kun imellom Postkasseleverandørene og ikke av Avsender. Den brukes dersom Innbygger velger å flytte sin post over til en annen postkasseleverandør. |
+
+Det er den opprinnelige Dokumentpakken som skal sendes til ny postkasse
+ved flytting av post. Denne pakkes inn i en FlytteDigitalpostMelding.  
+Dette er en forretningsmelding som likner DigitalPostMelding, men med
+noe informasjon om statusen på posten.  
+Postkasseleverandøren som sender denne posten står som databehandler for
+meldingen.
+
+**Regler for hvilken post som kan flyttes**
+
+Post med følgende tilstander kan flyttes:
+
+  - Post innbygger har behandlet.
+  - Post som opprinnelig krevde varsling, der varsling er utført eller
+    avsluttet som følge av innbyggers behandling. 
+  - Post som opprinnelig krevde åpningskvittering, som nå er åpnet og
+    åpningskvittering er sendt. 
+  - Post som opprinnelig ikke kom med krav om åpningskvittering eller
+    varslinger kan flyttes.
+
+Post med følgende tilstander **ikke** kan flyttes:
+
+  - Post som har en virkningsdato frem i tid. 
+      - Denne posten er ikke tilgjengelig/synlig for innbygger og kan
+        dermed ikke flyttes.
+  - Post som krever åpningskvittering, der innbygger ikke har åpnet
+    brevet er ikke å betrakte som tilgjengelig 
+      - Postkasseleverandøren som mottar flyttet post kan ikke sende
+        kvitteringer til opprinnelig avsender.
+      - Dermed skal postkasseleverandøren først sikre at
+        åpningskvittering sendes til Avsender før det er mulig å flytte
+        posten.
+  - Post der det er bestilt Varsling og varslingene ikke er ferdig
+    utført 
+      - Postkasseleverandøren som mottar flyttet post kan ikke sende
+        kvitteringer til opprinnelig avsender.
+      - Dermed skal opprinnelig postkasseleverandør først sikre at alle
+        bestilte varslinger blir utført eller at Avsender blir informert
+        om at varsling har feilet før posten kan flyttes.
+
+
+**Schema**
+[innbyggerpost_dpi_flyttet_1_0.schema.json](schemas/dpi/innbyggerpost_dpi_flyttet_1_0.schema.json)
+
+
+**Properties**
+
+| Identifikator | Kardinalitet | Datatype |
+| --- | --- | --- |
+| [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
+| [mottaker](2sdp_mottaker.html) | 1..1 | [mottaker]({{ page.dpi_common_schema_location }}#/definitions/personmottaker) |
+| [dokumentpakkefingeravtrykk](sdp_dokumentpakkefingeravtrykk.html) | 1..1 | [dokumentpakkefingeravtrykk]({{ page.dpi_common_schema_location }}#/definitions/dokumentpakkefingeravtrykk) |
+| [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [maksinportentoken]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
+| [sikkerhetsnivaa](sikkerhetsnivaa.html) | 0..1 | [sikkerhetsnivaa]({{ page.dpi_common_schema_location }}#/definitions/sikkerhetsnivaa) |
+| [virkningsdato](virkningsdato.html) | 0..1 | [virkningsdato]({{ page.dpi_common_schema_location }}#/definitions/virkningsdato) |
+| [virkningstidspunkt](virkningstidspunkt.html) | 0..1 | [virkningstidspunkt]({{ page.dpi_common_schema_location }}#/definitions/virkningstidspunkt) |
+| [aapningskvittering](aapningskvittering.html) | 0..1 | [aapningskvittering]({{ page.dpi_common_schema_location }}#/definitions/aapningskvittering) |
+| [ikkesensitivtittel](ikkesensitivtittel.html) | 0..1 | [ikkesensitivtittel]({{ page.dpi_common_schema_location }}#/definitions/ikkesensitivtittel) |
+| [varsler](sdp_varsler.html) | 0..1 | [varsler]({{ page.dpi_common_schema_location }}#/definitions/varsler) |
+| mottakstidspunkt | 0..1 | string - date |
+| aapnet]| 0..1 | boolean |
 
 
