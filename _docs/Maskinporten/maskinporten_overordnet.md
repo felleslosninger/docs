@@ -28,7 +28,7 @@ graph LR
 
 </div>
 
-Forutsatt at de riktige tilgangene er gitt, kan API-konsumenter nå opprette sine API-klientregistreringen med de tildelte scopene:
+Forutsatt at de riktige tilgangene er gitt, kan API-konsumenter nå opprette sine API-klientregistreringer med de tildelte scopene:
 
 <div class="mermaid">
 graph LR
