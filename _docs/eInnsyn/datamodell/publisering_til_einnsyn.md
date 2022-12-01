@@ -127,3 +127,39 @@ Sletting fra eInnsyn kan automatiseres ved å sende slettemelding. Dette sendes 
     </registrering>
 </trekkTilbake>
 ```
+
+Eksempel på slettelding som jsonld:
+```
+{
+  "@context": {
+    "@base": "http://elefant/vedlegg/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+	"einnsyn": "http://data.einnsyn.no/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@graph": [
+        {
+          "@id": "3056b799-a88e-435b-95fc-4b7621b57d27",
+          "@type": "arkiv:Journalpost"
+        },
+		{
+          "@id": "692650f3-f090-4ab0-a2ee-d564adb5644f",
+          "@type": "arkiv:Saksmappe"
+        }
+      ],
+      "@id": "f96f9e3f-390b-4287-a9ce-6856c8625bb6"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "f96f9e3f-390b-4287-a9ce-6856c8625bb6",
+          "@type": "einnsyn:graftype/TrekkeTilbakeGraf"
+        }
+      ],
+      "@id": "einnsyn:graf/meta"
+    }
+  ]
+}
+```
