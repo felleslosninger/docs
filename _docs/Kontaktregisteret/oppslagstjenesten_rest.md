@@ -97,8 +97,8 @@ OpenAPI-dokumentasjon for endepunkter.
 
 |miljø|url|
 |-|-|
-|VER2|[[https://krr-ver2.digdir.no/rest/v1/personer](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html)]([https://krr-ver2.digdir.no/rest/v1/personer](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html))|
-|PROD|[[https://krr.digdir.no/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html)]([https://krr.digdir.no/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html))|
+|VER2|[https://krr-ver2.digdir.no/rest/v1/personer](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html)([https://krr-ver2.digdir.no/rest/v1/personer](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html))|
+|PROD|[https://krr.digdir.no/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html)]([https://krr.digdir.no/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html))|
 
 ## Gammel dokumentasjon
 
