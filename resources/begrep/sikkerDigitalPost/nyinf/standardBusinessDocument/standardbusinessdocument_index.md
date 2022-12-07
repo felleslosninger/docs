@@ -4,17 +4,11 @@ permalink: dpi_standardbusinessdocument_index.html
 sidebar: dpi_new_sidebar
 ---
 
+
 1. TOC
 {:toc}
 
 ## Standard Business Document (SBD)
-|---|---|
-| Identifikator | |
-| Term          | {{page.title}} |
-| Definisjon    | Forretningsmeldingen i en forsendelse inkludert adresseringsinformasjon. |
-| Forkortelse   | SBD |
-| Kilde         | [GS1](http://www.gs1.org) |
-
 
 [Standard Business
 Document](http://www.gs1.org/ecom/standards/guidelines#s2) er en
@@ -22,7 +16,7 @@ Document](http://www.gs1.org/ecom/standards/guidelines#s2) er en
 dokumenter i en B2B kontekst.  
 
 
-For å senke risiko ved overngang har vi valt å beholde denne strukturen på forretningsmeldingen, men "oversatt" den om til JSON.
+For å senke risiko ved overgang har vi valt å beholde denne strukturen på forretningsmeldingen, men "oversatt" den til JSON.
 
 Standardkonvolutten inneholder informasjon for identifisering,
 adressering og ruting av forretningsmeldingen. SBD er obligatorisk i
