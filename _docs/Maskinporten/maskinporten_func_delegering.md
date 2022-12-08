@@ -129,7 +129,7 @@ Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org
 
 ```
 {
-  "aud" : "https://ver2.maskinporten.no/",
+  "aud" : "https://test.maskinporten.no/",
   "scope" : "difitest:test2",
   "iss" : "oidc_difi_delegering_altinn",
   "exp" : 1584693557,
@@ -142,7 +142,7 @@ Leverandøren **må** inkludere konsumentens organisasjonsnummer i `consumer_org
 og det returnerte tokenet vil se slik ut:
 ```
 {
-  "iss" : "https://ver2.maskinporten.no/",
+  "iss" : "https://test.maskinporten.no/",
   "client_amr" : "virksomhetssertifikat",
   "token_type" : "Bearer",
   "client_id" : "oidc_difi_delegering_altinn",
@@ -166,7 +166,7 @@ og det returnerte tokenet vil se slik ut:
 
 ## Miljøer og testdata
 
-Delegering kan kun testes i VER2-miljøet, dette er koblet mot Altinns TT02-miljø.
+Delegering kan kun testes i TEST-miljøet, dette er koblet mot Altinns TT02-miljø.
 
 For å teste som konsument, må du be Altinn om å få en testbruker tilknyttet en  organisasjon i TT02-miljøet.
 

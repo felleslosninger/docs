@@ -84,7 +84,7 @@ If the client rely on delegation of scope access in Altinn, the client needs to 
 
 ```
 {
-  "aud" : "https://ver2.maskinporten.no/",
+  "aud" : "https://test.maskinporten.no/",
   "scope" : "difitest:test2",
   "iss" : "my_client_id",
   "exp" : 1584693557,
