@@ -190,9 +190,8 @@ Dersom token er self-contained :
 
 ```
 {
-  "aud" : "unspecified",
   "scope" : "difitest:test2",
-  "iss" : "https://ver2.maskinporten.no/",
+  "iss" : "https://test.maskinporten.no/",
   "client_amr" : "virksomhetssertifikat",
   "token_type" : "Bearer",
   "exp" : 1584694565,

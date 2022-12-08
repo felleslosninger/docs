@@ -64,13 +64,13 @@ Alle organisasjoner som har inngått Digitaliseringsdirektoratets  bruksvilkår 
 
 For selvbetjening i Produksjon, kreves innlogging med ID-porten og at bemyndiget person for din organisasjon godkjenner hvilke fødselsnummer som skal ha tilgang.
 
-<!-- 
-[![Opprette integrasjon](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon_png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon.mp4 "Opprette integrasjon") 
+<!--
+[![Opprette integrasjon](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon_png.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_integrasjon.mp4 "Opprette integrasjon")
 -->
 
 
 
-#### Registrere klient som bruker virksomhetssertifikat
+#### Registrere klient via selvbetjenings-API
 
 For å kunne registrere en klient via vår selvbetjenings-API, må du først opprette en selvbetjeningsklient.  Se [https://difi.github.io/felleslosninger/oidc_api_admin.html](https://docs.digdir.no/docs/idporten/oidc/oidc_api_admin).
 
