@@ -56,11 +56,6 @@ kanal, se `difi.move.dpo.message-channel` under:
 
 - [Konfigurere eFormidlings meldingstjeneste](../installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
 
-> NB: Kanaler for eFormidlings meldingstjeneste kan per 26. august 2022 ikke tas i bruk ennå. Dette er fordi mottakere
-> må kjøre versjon 2.3.0 eller høyere av integrasjonspunktet for å være i stand til å rute meldingsstatuser og
-> kvitteringer tilbake til avsender ved bruk av kanal. Dette vil oppleves som en feilsituasjon (levetid utløpt) for
-> avsender. eFormidling vil oppdatere dokumentasjonen når alle som bruker eFormidlings meldingstjeneste støtter kanaler.
-
 ## Kanaler for eInnsyns meldingstjeneste
 
 eInnsyns meldingstjeneste støtter ikke kanaler og én virksomhet kan derfor bare ha én installasjon som benytter eInnsyns
