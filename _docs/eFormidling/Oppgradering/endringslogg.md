@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.12.0
+
+09.12.2022
+
+- Ugyldig korrespondanseparttype skal bli ignorert ved sending av DPF-meldingar
+- Klikk på messageID vil no åpne statusen til gitt melding i ny fane i grensesnittet.
+- Tilrettelegging for ny DPI-utskriftsteneste
+
 ## 2.11.0
 
 07.11.2022
