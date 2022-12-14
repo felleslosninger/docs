@@ -151,6 +151,15 @@ De konkrete ressurs-definisjonene kan finnes på [metadata-endepunktet til Altin
 > **Mange av dagens standard Altinn-roller gir veldig breie tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipp, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor er ikke rolle tilbudt som mulig ressurs i Ansattporten i første runde.  Vi vurderer dette løpende, inkludert å innføre støtte for nøkkelroller fra Enhetsregisteret.
 
 
+##### Respons
+
+Datamodellen for respons er lik datamodellen for request, men i tillegg vil det utleveres:
+
+
+| claim | beskrivelse |
+|-|-|-|
+| reportees | Array med valgte virksomheter. |Rights | Array med rettigheter som innlogget bruker har for aktuell tjenestekode.  |
+|Name| namnet på valgt organisasjon|
 
 
 
@@ -285,32 +294,36 @@ Normal bruker tjenesten id_tokenet kun til å opprette en egen, lokal sesjon.  i
 
 Eksempel:
 ```
+
 {
-  "sub" : "hHkAwIvPNpmkKhLyIjT8zsQ-x291T-SzKvg-KZZByLM",
+  "sub" : "z9RuQiLefXmJOBnywa_c75YQMH05nDsHjw0RFzuJC8M",
   "amr" : [ "TestID" ],
   "iss" : "https://test.ansattporten.no",
   "pid" : "45840375084",
   "locale" : "en",
-  "nonce" : "KUXk5WlVwgz-YYf0UkhLuquqaJSRr7BcmwwPC22IC1o",
-  "sid" : "4fVSpsX-zI93plpHX19CkfO85LXgrhibZ2poXkOI6ro",
-  "aud" : "9a99e96d-b56c-4f74-a689-f936f71c8819",
-  "acr" : "substantial",
-  "auth_time" : 1640073020,
-  "exp" : 1640073140,
-  "iat" : 1640073020,
-  "jti" : "bWAcJLMpJfs"
-  "authorization_details": [
-    {
-      "type": "ansattporten:altinn:service",
-      "ressurs": "urn:altinn:resource:3906:141205"
-      "ressurs_name": "A01 a-melding",
-      "avgiver": [{
-          "Authority": "iso6523-actorid-upis",
-          "ID": "0192:999888777"  // org.no til arbeidsgiveren som den innlogga brukeren har valgt i org.velger
-      }]
-    }
-  ]
+  "nonce" : "h3DeaRXe4pVXEdYAwR4hxeOtG2DHwF_zIDvjAAWf-x0",
+  "sid" : "-EuMkNN8AuLgMhbXgID7ewtpC4Kuw-HS1dXWi7zo8Dc",
+  "aud" : "ansattporten_demo_client_prod",
+  "acr" : "high",
+  "authorization_details" : [ {
+    "resource" : "urn:altinn:resource:2480:40",
+    "type" : "ansattporten:altinn:service",
+    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
+    "reportees" : [ {
+      "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
+      "Authority" : "iso6523-actorid-upis",
+      "ID" : "0192:987464291",
+      "Name" : "DIGITALISERINGSDIREKTORATET AVD LEIKANGER"
+    } ]
+  } ],
+  "auth_time" : 1671033189,
+  "name" : "NAMNET TIL SLUTTBRUKER",
+  "exp" : 1671033331,
+  "iat" : 1671033211,
+  "jti" : "raWcGKMobFU"
 }
+
+
 ```
 
 
