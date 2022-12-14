@@ -59,7 +59,7 @@ Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget 
 
 En tjeneste aktiverer støtte for beriket autentisering ved å inkludere informasjon om påkrevd representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
 
-![organsisasjonsvelger](/images/idporten/oidc/ansattporten_orgvelger.png)
+![organsisasjonsvelger](/images/idporten/oidc/ansattporten_orgvelger2.png)
 
 Brukerreise blir da som følger:
 
@@ -130,13 +130,14 @@ Følgende `authorization_type` er støttet i Ansattporten:
 
 #### Datamodell for `ansattporten:altinn:service`
 
-I første omgang er datamodellen ganske enkel, det er gjort tanker om potensielle forbedringer på sikt [her](https://github.com/joergenb/oauth/edit/main/ansattporten_rar.md).
+Datamodell for request:
 
-Datamodell:
+| claim | kardinalitet|beskrivelse |
+|-|-|-|
+|resource | påkrevd|Hvilken ressurs i Altinn som etterspørres. Se kodeverk nedenfor. |
+|organizationform | Valgfri| Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`)|
+|allow_multiple_organizations| Valgfri| Dersom `true` så kan sluttbruker velge flere organisasjoner i organisasjonsvelgeren. |
 
-| claim | beskrivelse |
-|-|-|
-|resource | Hvilken ressurs i Altinn som etterspørres. Se kodeverk nedenfor. |
 
 
 der `resource` må følgje desse reglane:
@@ -185,8 +186,11 @@ https://login.test.ansattporten.no/authorize?
   authorization_details= [
     {
       "type": "ansattporten:altinn:service",
-      "ressurs": "urn:altinn:resource:3906:141205"
+      "ressurs": "urn:altinn:resource:3906:141205",
+      "allow_multiple_organizations": "true",   
+      "organizationform": "business"
     }
+]
 ```
 (merk at eksempelet er vist i klartekst for lesbarhet og ikke riktig enkoda)
 
