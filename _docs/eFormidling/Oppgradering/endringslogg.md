@@ -38,14 +38,12 @@ redirect_from:
 - Setja spring.datasource.hikari.autoCommit=false som standard 
 - Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet 
 - Oppdatere Azure Service Bus biblioteket 
-- På vegne av DPF. 
-
-***
+- På vegne av DPF  
 
   **NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i bruk):  
   
   difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.username=username
-  difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.password=password**
+  difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.password=password
   
 - IOException frå blob-parsing vert fanga i NextMoveMessageInService 
 - Feil DPI property i prod mot hj2 
