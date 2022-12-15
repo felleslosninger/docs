@@ -42,7 +42,8 @@ redirect_from:
 
 ***
 
-  **NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i   bruk):
+  **NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i bruk):  
+  
   difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.username=username
   difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.password=password**
   
