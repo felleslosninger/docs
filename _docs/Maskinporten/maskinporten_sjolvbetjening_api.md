@@ -159,7 +159,7 @@ POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
   ]
 }
 ```
-'kid'-verdien må være unik blant alle Maskinportens kunder.
+'kid'-verdier må være unike innenfor klientens nøkkel-sett. 
 
 
 ### Vedlikehald av merkantile data
