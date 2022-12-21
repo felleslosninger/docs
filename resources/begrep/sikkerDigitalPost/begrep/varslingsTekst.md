@@ -30,3 +30,6 @@ Tittelen har et språkattributt som beskriver teksten. Språkattributtet kan bru
 <varslingsTekst lang="no">Tilbud om bostøtte til din hybelkanin. Husk svarfrist på dette dokumentet er 24.12 2013.</varslingsTekst>
 ```
 
+### Bruk av lenker (URL) i varsler via SMS og/eller e-post
+
+Grunnet økning i svindel via usikre kanaler, som SMS og e-post, anbefaler Digitaliseringsdirektoratet å unngå all bruk av lenker i varsler. Se innlegg om [temaet](https://samarbeid.digdir.no/digital-postkasse/lenke-eller-ikke-det-er-sporsmalet/1525).
