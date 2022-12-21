@@ -19,3 +19,7 @@ sidebar: dpi_timo_sidebar
 - Avsenderstyrt varsling settes på meldingsnivå i schema [Digital](https://docs.digdir.no/schemas/dpi/innbyggerpost_dpi_digital_1_0.schema.json) og er en del av en [forretningsmeldingen](https://docs.digdir.no/dpi_skjema.html#forretningsmelding-schema)
 
 - Beskrivelse av [varslingsinnstillinger (med eksempler)]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Varsler)
+
+### Bruk av lenker (URL) i varsler via SMS og/eller e-post
+
+Grunnet økning i svindel via usikre kanaler, som SMS og e-post, anbefaler Digitaliseringsdirektoratet å unngå all bruk av lenker i varsler. Se innlegg om [temaet] (https://samarbeid.digdir.no/digital-postkasse/lenke-eller-ikke-det-er-sporsmalet/1525)
