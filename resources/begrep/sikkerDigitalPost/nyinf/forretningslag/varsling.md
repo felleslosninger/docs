@@ -22,4 +22,4 @@ sidebar: dpi_timo_sidebar
 
 ### Bruk av lenker (URL) i varsler via SMS og/eller e-post
 
-Grunnet økning i svindel via usikre kanaler, som SMS og e-post, anbefaler Digitaliseringsdirektoratet å unngå all bruk av lenker i varsler. Se innlegg om [temaet](https://samarbeid.digdir.no/digital-postkasse/lenke-eller-ikke-det-er-sporsmalet/1525)
+Grunnet økning i svindel via usikre kanaler, som SMS og e-post, anbefaler Digitaliseringsdirektoratet å unngå all bruk av lenker i varsler. Se innlegg om [temaet](https://samarbeid.digdir.no/digital-postkasse/lenke-eller-ikke-det-er-sporsmalet/1525).
