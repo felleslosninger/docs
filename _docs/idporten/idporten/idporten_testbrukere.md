@@ -52,7 +52,7 @@ Passord og engangskoder:
 
 ## MinID - opprette testbruker på egenhånd
 
-En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/)
+En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) Kontaktinformasjonen som blir knyttet til brukeren blir vasket uktentlig.
 
 
 
