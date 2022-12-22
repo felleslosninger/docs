@@ -54,11 +54,15 @@ Passord og engangskoder:
 
 En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/)
 
-*Det er planlagt funksjonalitet i VER2 for å kunne bruke statisk OTC i testmiljøet. (I innloggingsflyt og glemt-passordflyt)*
+
 
 **Framgangsmåte**
 
 Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnummer fra Tenor -> Bestill aktiveringsbrev. En får da en aktiveringskode i "Ditt aktiveringsbrev er bestilt". Legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
+
+## MinID - Statiske pinkoder fases ut i VER2 og TEST
+I løpet av våren 2023 blir statiske pinkoder faset ut i VER2 (og VER1)
+Det er planlagt funksjonalitet i miljøet TEST for å kunne bruke statisk OTC i testmiljøet. (I innloggingsflyt og glemt-passordflyt)*
 
 ## Manuell behandling
 
