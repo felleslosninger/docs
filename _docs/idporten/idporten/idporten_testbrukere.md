@@ -61,7 +61,7 @@ En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt f
 Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnummer fra Tenor -> Bestill aktiveringsbrev. En får da en aktiveringskode i "Ditt aktiveringsbrev er bestilt". Legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
 
 ## MinID - Statiske pinkoder fases ut i testmiljøet
-I løpet av våren 2023 blir statiske pinkoder faset ut i VER2 (og VER1). [Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID](https://eid.difi.no/nb/minid) Og at
+I løpet av våren 2023 blir statiske pinkoder faset ut i VER2 (og VER1). [Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID.](https://eid.difi.no/nb/minid) Og at
 Det er planlagt funksjonalitet i miljøet TEST for å kunne bruke statisk OTC i testmiljøet. (I innloggingsflyt og glemt-passordflyt)
 
 ## Manuell behandling
