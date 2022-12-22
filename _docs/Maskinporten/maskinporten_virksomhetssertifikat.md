@@ -45,9 +45,9 @@ Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://
 
 Nei, i testmiljøene må man ha et test-virksomhetssertifikat. Dette bestilles også fra Buypass og Commfides.
 
-Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl/bestill-testsertifikat-VID-Norge](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/bestill-testsertifikat-VID-Norge)
+Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
 
-Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/)
+Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/)
 
 ## Kan man gjenbruke et virksomhetssertifikat på flere klienter i Maskinporten?
 
