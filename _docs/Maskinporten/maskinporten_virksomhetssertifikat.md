@@ -37,7 +37,7 @@ Vi viser til [Norges tillitsliste](https://www.nkom.no/internett/elektronisk-id-
 
 Lenke til utstedere:
 
-Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl/bestill-testsertifikat-VID-Norge](https://www.buypass.no/produkter/virksomhetssertifikat-esegl
+Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
 
 Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/)
 
