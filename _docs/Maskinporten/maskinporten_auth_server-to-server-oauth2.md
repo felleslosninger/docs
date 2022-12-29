@@ -17,7 +17,7 @@ graph LR
   subgraph API-tilbyder
     API
   end
-  subgraph Difi
+  subgraph Digdir
     Maskinporten[Maskinporten]
   end
   subgraph Konsument
