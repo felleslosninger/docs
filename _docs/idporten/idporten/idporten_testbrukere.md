@@ -50,9 +50,9 @@ Passord og engangskoder:
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
 
 
-## MinID - opprette testbruker på egenhånd
+## MinID - opprette testbruker 
 
-En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) Kontaktinformasjonen som blir knyttet til brukeren blir vasket uktentlig.
+En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort uktentlig.
 
 
 
@@ -60,9 +60,17 @@ En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt f
 
 Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnummer fra Tenor -> Bestill aktiveringsbrev. En får da en aktiveringskode i "Ditt aktiveringsbrev er bestilt". Legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
 
-## MinID - Statiske pinkoder fases ut i testmiljøet
-I løpet av våren 2023 blir statiske pinkoder faset ut i VER2 (og VER1). [Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID.](https://eid.difi.no/nb/minid) Og at
-Det er planlagt funksjonalitet i miljøet TEST for å kunne bruke statisk OTC i testmiljøet. (I innloggingsflyt og glemt-passordflyt)
+## MinID - Pinkoder fases ut i testmiljøet VER2 01.02.2023
+01.02.2023 blir statiske pinkoder faset ut i VER2. Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID. Og at pinkoder blir deaktivert i produksjon 16.01.2023
+
+**Statisk OTC - VER2
+
+Det er innført funksjonalitet med statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det gjelder kun brukere syntetisk mobilteleonnummer. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer.
+- OTC innlogging: otc12
+- OTC glemt passord: otc123
+
+
+
 
 ## Manuell behandling
 
