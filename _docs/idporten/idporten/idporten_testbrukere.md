@@ -65,7 +65,7 @@ Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnumm
 
 **Statisk OTC - VER2**
 
-Det er innført funksjonalitet med statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det gjelder kun brukere syntetisk mobilteleonnummer. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer.
+Det er innført funksjonalitet med statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det gjelder kun brukere med syntetisk fødselsnummer. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer.
 - OTC innlogging: otc12
 - OTC glemt passord: otc123
 
