@@ -63,7 +63,7 @@ Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnumm
 ## MinID - Pinkoder fases ut i testmiljøet VER2 01.02.2023
 01.02.2023 blir statiske pinkoder faset ut i VER2. Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID. Og at pinkoder blir deaktivert i produksjon 16.01.2023
 
-**Statisk OTC - VER2
+**Statisk OTC - VER2**
 
 Det er innført funksjonalitet med statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det gjelder kun brukere syntetisk mobilteleonnummer. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer.
 - OTC innlogging: otc12
