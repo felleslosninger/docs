@@ -29,11 +29,11 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret.
 
-Passord og engangskoder:
+**Passord og engangskode
 
-| BankID |
-| Engangskode: otp |
-| Passord: qwer1234 |
+- Engangskode: *otp
+- Passord: *qwer1234 
+
 
 | 08089409382 |	08089408084 |	08089406820	| 08089405603	| 08089404224 |
 | 08089409110 |	08089407967	| 08089406669	| 08089405522	| 08089404143 |
@@ -74,8 +74,8 @@ Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innlo
 
 **OTC**
 
-- innlogging: otc12
-- glemt passord: otc123
+- innlogging: *otc12
+- glemt passord: *otc123
 
 
 
