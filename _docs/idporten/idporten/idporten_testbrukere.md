@@ -31,8 +31,8 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 **Passord og engangskode**
 
-- Engangskode: *otp
-- Passord: *qwer1234 
+- Engangskode: otp
+- Passord: qwer1234 
 
 
 | 08089409382 |	08089408084 |	08089406820	| 08089405603	| 08089404224 |
@@ -74,8 +74,8 @@ Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innlo
 
 **OTC**
 
-- innlogging: *otc12
-- glemt passord: *otc123
+- innlogging: otc12
+- glemt passord: otc123
 
 
 
