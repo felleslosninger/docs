@@ -74,6 +74,7 @@ Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En m�
 Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
 
 **otc**
+
 - innlogging: otc12
 - glemt passord: otc123
 
