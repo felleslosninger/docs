@@ -29,7 +29,7 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret.
 
-**Passord og engangskode
+**Passord og engangskode**
 
 - Engangskode: *otp
 - Passord: *qwer1234 
