@@ -25,16 +25,15 @@ TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å til
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere fra Test-Folkeregisteret.
 
-## MinID og BankID
+## BankID
 
-For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard test-brukere med personnumre som ikke finnes i Folkeregisteret.
+For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret.
 
 Passord og engangskoder:
 
-| MinID | BankID |
-| - | - |
-| Passord: password01 | Engangskode: otp |
-| Pin: 12345 | Passord: qwer1234 |
+| BankID |
+| Engangskode: otp |
+| Passord: qwer1234 |
 
 | 08089409382 |	08089408084 |	08089406820	| 08089405603	| 08089404224 |
 | 08089409110 |	08089407967	| 08089406669	| 08089405522	| 08089404143 |
@@ -48,7 +47,7 @@ Passord og engangskoder:
 | 08089408165 | 08089406901	| 08089405794	| 08089404305	| 08089403198 |
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
-**Merk: Etter 01.02.2022 fungerer ikke pinkode i MinID VER2-miljøet, og blir erstattet med OTC.**
+
 
 
 ## MinID
@@ -73,11 +72,10 @@ Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En m�
 
 Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
 
-**otc**
+**OTC**
 
 - innlogging: otc12
 - glemt passord: otc123
-
 
 
 
