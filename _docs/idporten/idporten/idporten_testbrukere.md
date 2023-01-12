@@ -53,23 +53,29 @@ Passord og engangskoder:
 
 ## MinID
 
-### Opprette testbruker 
+### Opprette testbruker selv i testmiljøet VER2
 
-En kan opprette testbruker i MinID på egenhånd. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk fødselsnummer fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort uktentlig.
+Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetiske personidentifikator (en må legge til +80 på måned-sifrene). En kan også hente fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
+
 
 
 **Framgangsmåte**
 
-Trykk i innloggingsbildet "Bestill ny MinID" -> fyll inn syntestisk fødselsnummer fra Tenor -> Bestill aktiveringsbrev. En får da en aktiveringskode i "Ditt aktiveringsbrev er bestilt". Legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
+- trykk i innloggingsbildet i VER2 i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.digdir.no/order](https://aktiveringsbrev.test.minid.digdir.no/order)
+- fyll inn syntestisk personidentifikator
+- bestill aktiveringsbrev. En får så en aktiveringskode i "Ditt aktiveringsbrev er bestilt". 
+- legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
 
 ### Pinkoder fases ut i testmiljøet VER2 01.02.2023
 01.02.2023 blir statiske pinkoder faset ut i VER2. Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID. Og at pinkoder blir deaktivert i produksjon 16.01.2023
 
-### Statisk OTC - VER2**
+### Statisk OTC - VER2
 
-Det er innført funksjonalitet med statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det gjelder kun brukere med syntetisk fødselsnummer. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer.
-- OTC innlogging: otc12
-- OTC glemt passord: otc123
+Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
+
+**otc
+- innlogging: otc12
+- glemt passord: otc123
 
 
 
