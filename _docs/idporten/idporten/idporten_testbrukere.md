@@ -10,9 +10,7 @@ product: ID-porten
 redirect_from: /idporten_testbrukere
 ---
 
-> Fra kl 10.00, ons **01.02.2023 kan ikke PIN-koder lenger brukes til innlogging med MinID i testmiljøet VER2**. Det er lagt ut inforamsjon på [https://testmiljo.status.digdir.no](https://testmiljo.status.digdir.no)
-
-
+> Fra kl 10.00, ons **01.02.2023 kan ikke PIN-koder lenger brukes til innlogging med MinID i testmiljøet VER2**. Det er lagt ut informasjon på [https://testmiljo.status.digdir.no](https://testmiljo.status.digdir.no/incidents/vk524f3ybsp2)
 Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2.
 
 ## TestID
