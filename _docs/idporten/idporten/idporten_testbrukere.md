@@ -70,6 +70,9 @@ Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En m�
 ### Pinkoder fases ut i testmiljøet VER2 01.02.2023
 01.02.2023 blir statiske pinkoder faset ut i VER2. Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID. Og at pinkoder blir deaktivert i produksjon 16.01.2023
 
+#### Om MinID i testmiljøet VER1 
+Endringen i VER2 01.02.2023 for PIN-koder i MinID omfatter ikke testmiljøet VER1 på dette tidspunktet. Men VER1-miljøet blir faset ut i løpet av våren 2023 og det er kun VER2 som lever videre etter våren 2023. En bør derfor gjennomføre testing mot ID-porten i VER2-miljøet og flytte seg fra VER1.
+
 ### Statisk OTC - VER2
 
 Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
