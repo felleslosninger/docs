@@ -13,7 +13,7 @@ redirect_from: /einnsyn_forutsetninger
 * Minimum Java Runtime Environment 1.8 installert
 * Et virksomhetssertifikat utstedt til virksomheten
 * Verktøy for xml-redigering. feks Notepad, Notepad++ eller Sublime Text.
-* Integrasjonspunkt installert på samme server. [Sjå veiledning her]({{site.baseurl}}/docs/eFormidling/installasjon/eformidling_download_ip)
+* Integrasjonspunkt installert på samme server. [Sjå veiledning her]({{site.baseurl}}/docs/eFormidling/Introduksjon/last_ned)
 
 ## Dette må du laste ned for å installere einnsyn-klienten
 
