@@ -141,6 +141,7 @@ curl -XPUT http://localhost:9093/api/messages/out/93f530e3-0d4f-4273-94cd-e0d640
 -H 'Content-Type: application/octet-stream' -H 'Content-Disposition: attachment; name=My PDF; filename=my.pdf' \
 --data-binary @my.pdf
 ```
+**NB!** Viktig at en laster opp arkivmeldingen før en laster opp vedlegg.
 
 ### Send meldingen fra integrasjonspunktet
 
