@@ -28,7 +28,7 @@ Overgangen til ny løsning vil skje i 4 steg:
 |-|-|-|
 |1: Prøvedrift | Mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
 |2: Ordinær drift |Mai 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
-|3: SAML flyttes | September 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. |
+|3: SAML flyttes | September 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstundes SSO mellom gamal og ny platform. |
 |4: Sanering |Desember 2023 |  Den gamle OIDC-issueren skrus av.
 
 ### Når bør jeg migrere ?
@@ -133,7 +133,7 @@ JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim 
 Responser fra autorisasjons-endepunktet vil inneholde parameteret `iss` med verdien fra ID-portens issuer i det aktuelle miljøet.  Dette kan brukes til å unngå "mix-up-attacks" og er spesifisert i RFC 9207.
 
 ### Parameter client_id påkrevd ved bruk av request_uri mot autorisasjons-endepunktet
-Ved bruk av pushed authorization request, må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet. 
+Ved bruk av pushed authorization request, må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet.
 
 ### SAML
 
