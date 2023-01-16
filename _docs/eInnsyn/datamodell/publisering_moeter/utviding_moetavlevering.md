@@ -91,8 +91,7 @@ NB: Ikke støttet ennå, kun forslag til løsning.
 ```json
 {
       "@id": "uuid-møtesaksregistrering",
-      "@type": "arkiv:Møtesaksregistrering",  
-      "arkiv:administrativEnhet": "Enhetskode",
+      "@type": "arkiv:Møtesaksregistrering", 
       "arkiv:dokumentbeskrivelse": {"@id": " uuid-dokumentbeskrivelse(vedtaksdokument)"},
       "arkiv:vedtak": {"@id": "uuid-1"},
       "arkiv:votering": {"@id": "uuid-2"},
@@ -116,6 +115,5 @@ NB: Ikke støttet ennå, kun forslag til løsning.
     "@id": "uuid-2",
     "@type": "arkiv:Votering"
     "arkiv:voteringstekst": "lorem ipsum"
-    flere felt??
 },
 ```
