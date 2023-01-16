@@ -83,3 +83,39 @@ Data blir då som følgje
 ```sparql
 <http://data.einnsyn.no/ei-moetemappe> arkiv:videolink "https://eitvideostystem.no/archive/269" .
 ```
+
+### Vedtak og votering
+Forslag til publisering av Vedtak og votering på en møtesak. 
+NB: Ikke støttet ennå, kun forslag til løsning.
+
+```json
+{
+      "@id": "uuid-møtesaksregistrering",
+      "@type": "arkiv:Møtesaksregistrering",  
+      "arkiv:administrativEnhet": "Enhetskode",
+      "arkiv:dokumentbeskrivelse": {"@id": " uuid-dokumentbeskrivelse(vedtaksdokument)"},
+      "arkiv:vedtak": {"@id": "uuid-1"},
+      "arkiv:votering": {"@id": "uuid-2"},
+      "arkiv:møtesakssekvensnummer": {"@type": "xsd:integer","@value": "nnn"},
+      "arkiv:møtesakstype": {"@id": "arkiv:politiskSak"},
+      "arkiv:møtesaksår": {"@type": "xsd:integer","@value": "yyyy"},
+      "arkiv:offentligTittel": "offentligTittel",
+      "arkiv:offentligTittel_SENSITIV": "offentligTittel_SENSITIV",
+      "arkiv:parent": {"@id": "uuid-moetemappe"},
+      "arkiv:referanseTilMøtesak": {"@id": "uuid-journalpost(saksframlegg)"}
+},
+{
+    "@id": "uuid-1",
+    "@type": "arkiv:Vedtak",
+    "arkiv:vedtaksdato": "dato",
+    "arkiv:vedtaksresultat": "Vedtatt",
+    "arkiv:endeligVedtak": "lorem ipsum",
+    "arkiv:vedtaksMerknad": "lorem ipsum"
+},
+{
+    "@id": "uuid-2",
+    "@type": "arkiv:Votering"
+    "arkiv:voteringstekst": "lorem ipsum"
+    flere felt??
+},
+```
