@@ -21,7 +21,7 @@ Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten.
 
 ![TestID logo]({{site.baseurl}}/assets/testid.svg)
 
-TestID støtter innlogging med **syntetiske personidentifikator**  (du må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
+TestID støtter innlogging med **syntetisk personidentifikator**  (en må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
 
 TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å tildelt, opprettet eller nullstilt brukere.
 
@@ -75,7 +75,7 @@ Endringen i VER2 01.02.2023 for PIN-koder i MinID omfatter ikke testmiljøet VER
 
 ### Statisk OTC - VER2
 
-Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
+Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator (+80). Støtte for pid med +65 kommer i ver2 i januar/februar 2023. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
 
 **OTC**
 
