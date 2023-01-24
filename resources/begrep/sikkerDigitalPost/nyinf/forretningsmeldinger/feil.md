@@ -44,7 +44,7 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
 | [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
-| 1..1 | [mottaker]({{ page.dpi_common_schema_location }}#/definitions/virksomhetmottaker) |
+|  [mottaker]({{ page.dpi_common_schema_location }}#/definitions/virksomhetmottaker) |
 | [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [maksinportentoken]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
 | [tidspunkt](dpi_maskinportentoken.html) | 1..1 | [tidspunkt]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) string - date-time iht [RFC 3339, section 5.6](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) |
 | [feiltype](sikkerhetsnivaa.html) | 0..1 | [feiltype]({{ page.dpi_common_schema_location }}#/definitions/sikkerhetsnivaa) string KlIENT/SERVER|
