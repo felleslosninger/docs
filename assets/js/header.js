@@ -35,8 +35,7 @@ $(function() {
  window.onload = function(){ // When the page has finished loading.
     $("#docnavsidebar").each(function(){ // Check every "ul" 
     if($(this).children().length == 0){ 
-        $(this).hide(); 
-        $(this).css("display", "none"); 
+        $("#docnavsidebar").remove(); 
         } else{
         $(this).show();
         $(this).css("display", "block");
