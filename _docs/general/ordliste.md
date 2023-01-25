@@ -7,4 +7,4 @@ layout: glossary
 redirect_from: /ordliste
 ---
 
-% Ordliste
+# Ordliste
