@@ -1,3 +1,7 @@
 a {
   color: $color-link;
 }
+a:hover,
+a:focus {
+text-decoration: underline;
+}
