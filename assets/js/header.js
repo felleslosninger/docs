@@ -1,4 +1,17 @@
 $(function() {
+    // Fjerning av tomme UL
+
+ window.onload = function(){ // When the page has finished loading.
+    $(".docnav").each(function(){ // Check every "ul" 
+    if($(this).children().length == 0){ 
+        $(".sidebar-inner").remove(); 
+        } else{
+        $(this).show();
+        $(this).css("display", "block");
+        }
+     }
+)}
+
     $(window).scroll(function(e) {
         var boxHeight = 1000;
         var baseColorValue = 246;
