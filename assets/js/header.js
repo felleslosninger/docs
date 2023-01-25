@@ -30,3 +30,17 @@ $(function() {
     });
 
 });
+// Fjerning av tomme UL
+
+ window.onload = function(){ // When the page has finished loading.
+    $("ul").each(function(){ // Check every "ul" 
+    if($(this).children().length == 0){ 
+        $(this).hide(); 
+        $(this).css("display", "none"); 
+        } else{
+        $(this).show();
+        $(this).css("display", "block");
+        }
+     }
+}
+
