@@ -32,7 +32,7 @@ dokumentpakken
 
 ### Klassediagram
 
-[![]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/uml_diagram.jpg)]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/uml_diagram.jpg)
+[![Diagram]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/uml_diagram.jpg)]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/StandardBusinessDocument/uml_diagram.jpg)
 
 ### Attributter
 
