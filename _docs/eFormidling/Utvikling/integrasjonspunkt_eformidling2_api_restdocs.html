@@ -9,81 +9,156 @@
 <title>NextMove API Specification</title>
 <link rel="stylesheet" href="assets/css/asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.hidden {
-    display: none;
-}
-
-.switch {
-    border-width: 1px 1px 0 1px;
-    border-style: solid;
-    border-color: #7a2518;
-    display: inline-block;
-}
-
-.switch--item {
-    padding: 10px;
-    background-color: #ffffff;
-    color: #7a2518;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.switch--item.selected {
-    background-color: #7a2519;
-    color: #ffffff;
-}
-
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-<script type="text/javascript">
-function addBlockSwitches() {
-    $('.primary').each(function() {
-        primary = $(this);
-        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
-        primary.children('.title').remove();
-    });
-    $('.secondary').each(function(idx, node) {
-        secondary = $(node);
-        primary = findPrimary(secondary);
-        switchItem = createSwitchItem(secondary, primary.children('.switch'));
-        switchItem.content.addClass('hidden');
-        findPrimary(secondary).append(switchItem.content);
-        secondary.remove();
-    });
-}
-
-function createBlockSwitch(primary) {
-    blockSwitch = $('<div class="switch"></div>');
-    primary.prepend(blockSwitch);
-    return blockSwitch;
-}
-
-function findPrimary(secondary) {
-    candidate = secondary.prev();
-    while (!candidate.is('.primary')) {
-        candidate = candidate.prev();
-    }
-    return candidate;
-}
-
-function createSwitchItem(block, blockSwitch) {
-    blockName = block.children('.title').text();
-    content = block.children('.content').first().append(block.next('.colist'));
-    item = $('<div class="switch--item">' + blockName + '</div>');
-    item.on('click', '', content, function(e) {
-        $(this).addClass('selected');
-        $(this).siblings().removeClass('selected');
-        e.data.siblings('.content').addClass('hidden');
-        e.data.removeClass('hidden');
-    });
-    blockSwitch.append(item);
-    return {'item': item, 'content': content};
-}
-
-$(addBlockSwitches);
-
-</script>
+<style>
+
+.hidden {
+
+    display: none;
+
+}
+
+
+
+.switch {
+
+    border-width: 1px 1px 0 1px;
+
+    border-style: solid;
+
+    border-color: #7a2518;
+
+    display: inline-block;
+
+}
+
+
+
+.switch--item {
+
+    padding: 10px;
+
+    background-color: #ffffff;
+
+    color: #7a2518;
+
+    display: inline-block;
+
+    cursor: pointer;
+
+}
+
+
+
+.switch--item.selected {
+
+    background-color: #7a2519;
+
+    color: #ffffff;
+
+}
+
+
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+
+<script type="text/javascript">
+
+function addBlockSwitches() {
+
+    $('.primary').each(function() {
+
+        primary = $(this);
+
+        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
+
+        primary.children('.title').remove();
+
+    });
+
+    $('.secondary').each(function(idx, node) {
+
+        secondary = $(node);
+
+        primary = findPrimary(secondary);
+
+        switchItem = createSwitchItem(secondary, primary.children('.switch'));
+
+        switchItem.content.addClass('hidden');
+
+        findPrimary(secondary).append(switchItem.content);
+
+        secondary.remove();
+
+    });
+
+}
+
+
+
+function createBlockSwitch(primary) {
+
+    blockSwitch = $('<div class="switch"></div>');
+
+    primary.prepend(blockSwitch);
+
+    return blockSwitch;
+
+}
+
+
+
+function findPrimary(secondary) {
+
+    candidate = secondary.prev();
+
+    while (!candidate.is('.primary')) {
+
+        candidate = candidate.prev();
+
+    }
+
+    return candidate;
+
+}
+
+
+
+function createSwitchItem(block, blockSwitch) {
+
+    blockName = block.children('.title').text();
+
+    content = block.children('.content').first().append(block.next('.colist'));
+
+    item = $('<div class="switch--item">' + blockName + '</div>');
+
+    item.on('click', '', content, function(e) {
+
+        $(this).addClass('selected');
+
+        $(this).siblings().removeClass('selected');
+
+        e.data.siblings('.content').addClass('hidden');
+
+        e.data.removeClass('hidden');
+
+    });
+
+    blockSwitch.append(item);
+
+    return {'item': item, 'content': content};
+
+}
+
+
+
+$(addBlockSwitches);
+
+
+
+</script>
+
 
 </head>
 <body class="book toc2 toc-left">
@@ -1953,7 +2028,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -2011,7 +2086,7 @@ Content-Length: 1079
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 204 No Content
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 204 No Content
 Content-Type: application/json
 Content-Length: 238
 
@@ -2362,9 +2437,12 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Length: 1151
 
-PK  SZ]S               test ���U�s"�����Z��a���PH[c-�VNƴ� 2������=�U������1A�ʯ�~|#�Ǿs�!i�A[��q@��#���"�M��?|e��qQ��o�����xx��d#L2���/�#��&amp;�r��Zj+M�ku��G�֬6����&amp;�#��Wj]�t���w�{���S�WY3iGr��
-*n���\��p�?&gt;����9�#L�p�!���#,y��?�)�\���$���;Ǎ�&gt;x�&lt;���M}�ܷ΁J�x�� �9Ľ���:)7&gt;7ǁ�= ���`���6c�������n�=F?$��t-ZJ-��.5M��R ��k���uXy^������(`bcs'�q�{���cGe��Cek,���Se�|R��|}&gt;�F&lt;�5|��8&lt;�˟�vD�3K�����&gt;~���`u��5�$�,F
-I/�����T@.W}R'ồj]Ē��'ߢ�ո%gB�5�&gt;����c�.ղ�i'�݅���V���ѳ�ș����+s&gt;�dZ:�)H3�u�M�V.��1]j�,��B7��,)��G���G���/`@@�T�#�ڥ_r��L� &amp;�^�#�W��9�� Yb:�@�'p��q��b�1��I8^,�)oȺs�RBl����Rp1Ns�בgR.�n���T�L��5�u�9m�K�M��w��9����_��4��G����)������!��~rx��`Z��(&gt;JA��u1�$rV�Q�����yܱ���������@m���u,�q扱�����zV1F	r�Z��$�L�y&amp;Ln'�+�S �oC�ߵ%Tc)��"�Nr�(f3 Xl��&amp;h[O2?�e����Z�w�v9�(g�0@��p�vL}��ӈ��?��A?�pv7��K?�}g~.�8H��"�/�����V�і�~I���������*a�hW]7hyF���1*8�09m����jW�2&gt;�ݔ��u�y����1�Y��������8�赫ѷ@�y=��@K�r����c��c�g�PK��7;     PK   SZ]S��7;                      testPK      2   7</code></pre>
+PK��SZ]S���������������test����U�s"�����Z��a���PH[c-�VNƴ� 2������=�U������1A�ʯ�~|#�Ǿs�!i�A[��q@��#���"�M��?|e��qQ��o�����xx��d#L2���/�#��&amp;�r��Zj+M�ku��G�֬6����&amp;�#��Wj]�t���w�{���S�WY3iGr��
+*n���\��p�?&gt;����9�#L�p�!���#,y��?�)�\���$���;Ǎ�&gt;x�&lt;���M}�ܷ΁J�x����9Ľ���:)7&gt;7ǁ�= ���`���6c�������n�=F?$��t-ZJ-��.5M��R���k���uXy^������(`bcs'�q�{���cGe��Cek,���Se�|R��|}&gt;�F&lt;�5|��8&lt;�˟�vD�3K�����&gt;~���`u��5�$�,F
+I/�����T@.W}R'ồj]Ē��'ߢ�ո%gB�5�&gt;����c�.ղ�i'�݅���V���ѳ�ș����+s&gt;�dZ:�)H3�u�M�V.��1]j�,��B7��,)��G���G���/`@@�T�#�ڥ_r�
+�L��&amp;�^�#�W��9�� Yb:�@�'p��q��b�1��I8^,�)oȺs�RBl����Rp1Ns�בgR.�n���T�L��5�u�9m�K�M��w��9����_��4��G����)������!��~rx��`Z��(&gt;JA��u1�$rV�Q�����yܱ���������@m���u,�q扱�����zV1F	r�Z��$�L�y&amp;Ln'�+�S �oC�ߵ%Tc)��"�Nr�(f3 Xl��&amp;h[O2?�e����Z�w�v9�(g�0@��p�vL}�
+�ӈ��?��A?�pv7��K?�}g~.�8H��"�/�����V�і�~I���������*a�hW]7hyF���1*8�09m����jW�2&gt;�ݔ��u�y��
+��1�Y��������8�赫ѷ@�y=��@K�r����c��c�g�PK��7;�����PK���SZ]S��7;����������������������testPK������2���7</code></pre>
 </div>
 </div>
 </div>
@@ -7701,7 +7779,7 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 400 Bad Request
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 400 Bad Request
 Content-Type: application/json
 Content-Length: 259
 
@@ -7777,7 +7855,7 @@ Content-Length: 259
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 400 Bad Request
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 400 Bad Request
 Content-Type: application/json
 Content-Length: 676
 
@@ -7929,7 +8007,7 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8022,7 +8100,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8204,7 +8282,7 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8490,7 +8568,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8560,7 +8638,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8668,7 +8746,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8754,7 +8832,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -8840,7 +8918,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -9217,7 +9295,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -9261,7 +9339,7 @@ Content-Length: 802
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 404 Not Found
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 404 Not Found
 Content-Type: application/json
 Content-Length: 277
 
@@ -9507,7 +9585,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -9551,7 +9629,7 @@ Content-Length: 802
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 404 Not Found
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 404 Not Found
 Content-Type: application/json
 Content-Length: 362
 
@@ -9796,7 +9874,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -9835,7 +9913,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -9875,7 +9953,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -10315,7 +10393,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -10387,7 +10465,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
@@ -10467,7 +10545,7 @@ Host: localhost:8080</code></pre>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
