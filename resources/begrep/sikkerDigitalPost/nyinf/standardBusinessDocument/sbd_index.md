@@ -37,7 +37,6 @@ dokumentpakken
 
 ### Klassediagram
 
-[![](uml_diagram.jpg)](uml_diagram.jpg)
 
 ### Properties
 
