@@ -11,7 +11,7 @@ Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosess
 
 # Processes
 
-### INNBYGGERPOST_DIGITAL_1_0
+## INNBYGGERPOST_DIGITAL_1_0
 
 | --- | --- |
 | Title | INNBYGGERPOST_DIGITAL_1_0 |
@@ -20,7 +20,7 @@ Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosess
 | Identifier | urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:digital:ver1.0 |
 | Schema | cenbii-procid-ubl |
 
-##### Documents
+### Documents
 - INNBYGGERPOST_DPI_DIGITAL_1_0
 - INNBYGGERPOST_DPI_FEILKVITTERING_1_0
 - INNBYGGERPOST_DPI_LEVERINGSKVITTERING_1_0
@@ -28,7 +28,7 @@ Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosess
 - INNBYGGERPOST_DPI_VARSLINGFEILETKVITTERING_1_0
 
 
-### INNBYGGERPOST_UTSKRIFT_1_0
+#### INNBYGGERPOST_UTSKRIFT_1_0
 
 | --- | --- |
 | Title | INNBYGGERPOST_UTSKRIFT_1_0 |
@@ -47,7 +47,7 @@ Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosess
 - INNBYGGERPOST_DPI_RETURPOSTKVITTERING_1_0
 
 
-### INNBYGGERPOST_FLYTTETPOST_1_0
+###### INNBYGGERPOST_FLYTTETPOST_1_0
 
 | --- | --- |
 | Title | INNBYGGERPOST_FLYTTETPOST_1_0 |
@@ -57,12 +57,12 @@ Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosess
 | Schema | cenbii-procid-ubl |
 
 
-##### Documents
+####### Documents
 - INNBYGGERPOST_DPI_FLYTTET_1_0
 - INNBYGGERPOST_DPI_FEILKVITTERING_1_0
 - INNBYGGERPOST_DPI_LEVERINGSKVITTERING_1_0
 
-# Documents
+######## Documents
 
 |Title|Identifier|Schema|XSD|Busniess message schema|
 | --- | --- | --- | --- | --- |
