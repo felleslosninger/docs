@@ -42,5 +42,5 @@ $(function() {
         $(this).css("display", "block");
         }
      }
-}
+)}
 
