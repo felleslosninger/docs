@@ -6,6 +6,27 @@
 *****************************************************/
 
 (function (global, factory) {
+  window.onload = function(){ // When the page has finished loading.
+    $(".docnav").each(function(){ // Check every "ul" 
+    if($(this).children().length == 0){ 
+        $(".sidebar-inner").remove(); 
+        } else{
+        $(this).show();
+        $(this).css("display", "block");
+        }
+     }
+)}
+    
+     window.onload = function(){ // When the page has finished loading.
+    $("#entrypages").each(function(){ // Check every "ul" 
+    if($(this).children().length == 0){ 
+        $("#entrypages").remove(); 
+        } else{
+        $(this).show();
+        $(this).css("display", "block");
+        }
+     }
+)} 
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global.Mark = factory());
