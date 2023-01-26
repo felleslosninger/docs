@@ -1,4 +1,17 @@
 (function () {
+
+	
+	
+        var results,
+       // the class that will be appended to the current
+       // focused element
+       currentClass = "current",
+       // top offset for the jump (the search bar)
+       offsetTop = 50,
+       // the current index of the focused element
+       currentIndex = 0;
+
+	function getQueryVariable(variable) {
  window.onload = function(){ // When the page has finished loading.
     $(".docnav").each(function(){ // Check every "ul" 
     if($(this).children().length == 0){ 
@@ -21,19 +34,6 @@
      }
 )}  
 	
-	
-	
-        var results,
-       // the class that will be appended to the current
-       // focused element
-       currentClass = "current",
-       // top offset for the jump (the search bar)
-       offsetTop = 50,
-       // the current index of the focused element
-       currentIndex = 0;
-
-	function getQueryVariable(variable) {
-
         var str = window.location.href,
          n = str.indexOf("?"),
          query = str.substring(n+1),
