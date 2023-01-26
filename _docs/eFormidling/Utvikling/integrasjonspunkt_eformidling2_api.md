@@ -275,3 +275,11 @@ participant mf  as Meldingsformidler
 Se:
 
 - [Eksempel på opprettelse av webhook-abonnement](integrasjonspunkt_eformidling2_api_restdocs#_example_1_create_a_subscription)
+
+## Legge til rette for feilsøking
+
+For å legge til rette for feilsøking oppfordres det til å oppgi HTTP-header `User-Agent` ved bruk av integrasjonspunktets API. Det er ønskelig å oppgi navn og versjon for systemet som integrerer, samt plattformen det kjører på. `User-Agent` behandles som fritekst, men noen eksempler som bruker vanlig konvensjon er:
+
+- `Acos Websak/1.1 (X11; Linux x86_64)`
+- `Public 360/1.1 (Windows NT 10.0; Win64; x64)`
+
