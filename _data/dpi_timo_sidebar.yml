@@ -37,10 +37,6 @@ folders:
         jurl: /dpi_sending_av_digital_post.html
       - title: Sending av innbyggerpost på vegne av andre
         jurl: /dpi_send_paa_vegne_av_andre.html  
-      - title: Kvitteringer
-        jurl: /dpi_kvitteringer.html
-      - title: Tilstander for Avsender
-        jurl: /dpi_tilstander.html
       - title: Struktur på melding
         jurl: /dpi_struktur_forretningsmelding.html
 
