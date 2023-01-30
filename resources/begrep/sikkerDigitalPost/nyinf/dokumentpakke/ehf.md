@@ -4,17 +4,6 @@ permalink: dpi_ehf.html
 sidebar: dpi_timo_sidebar
 ---
 
-<!-- ![](/images/dpi/underarbeide.png) -->
-
- - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    EHF faktura fil
-  - Datatype  
-    fil
-
    |---|---|
 | Identifikator | ehf |
 | Term          | EHF |
