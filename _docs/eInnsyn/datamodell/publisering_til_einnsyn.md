@@ -82,6 +82,8 @@ Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInn
 Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/eformidling_nm_message.html), uten payload på meldingen.
 Virksomheter som ønsker å motta kvitteringer må registrere dette i virksomhetsadministrasjonen på einnsyn.no.
 
+![Admin GUI avansert]({{site.baseurl}}/images/einnsyn/einnsyn_admin_gui_avansert.png)
+
 **Ved direkteintegrasjon**:
 
 Systemet må tilrettelegges for å motta prosessen “response” og dokumenttype “einnsyn_kvittering”, i henhold til [eformidlingsdokumentasjonen]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/message#einnsyn).
