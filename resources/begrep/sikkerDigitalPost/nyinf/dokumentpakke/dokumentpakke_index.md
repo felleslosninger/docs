@@ -24,7 +24,7 @@ virksomhet, og om filene har blitt endret.
 Les mer om [hvordan dokumenter som sendes i Sikker digital post er
 beskyttet](sikkerhet_index.html)
 
-Sikker Digital Post har definert et eget begrep [Manifest](sdp-manifest.xsd) som
+Sikker Digital Post har definert et eget begrep [Manifest](resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd) som
 inneholder metadata relatert til hver fil.
 
 ### Innhold
@@ -32,7 +32,7 @@ inneholder metadata relatert til hver fil.
 | Fil                      | Kardinalitet | Beskrivelse                                                                                                                      |
 | ------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | hoveddokument            | 1..1         | fil - se: krav til [filnavn og dokumentformat](dokumentformat_index.html)                                                               |
-| [manifest.xml](sdp-manifest.xsd) | 1..1         | [manifest](sdp-manifest.xsd)                                                                                                             |
+| [manifest.xml](resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd) | 1..1         | [manifest](resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd)                                                                                                             |
 | vedlegg                  | 0..200       | fil - se: krav til [filnavn og dokumentformat](dokumentformat_index.html)                                                               |
 | META-INF/signatures.xml  | 1..1         | [XAdES](http://www.etsi.org/deliver/etsi_ts%5C101900_101999%5C101903%5C01.04.02_60%5Cts_101903v010402p.pdf) signaturer av filene |
 
