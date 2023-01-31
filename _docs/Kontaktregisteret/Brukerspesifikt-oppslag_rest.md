@@ -37,7 +37,7 @@ Man må forespørre ett eller flere av følgende scopes:
 
 ## API-endepunkt
 
-OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Person](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Person)
+OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html#/Person](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html#/Person)
 
 |miljø|url|
 |-|-|
@@ -94,4 +94,4 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 
 Det er viktig at kunder som bruker skrive-API informerer brukeren om at endringer skjer i et nasjonalt register, og ikke kun for denne tjenesten.
 
-Se også [OpenAPI-dokumentasjonen](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/swagger-ui.html#/Person/patchUserUsingPATCH).
+Se også [OpenAPI-dokumentasjonen](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html#/Person/patchUser).
