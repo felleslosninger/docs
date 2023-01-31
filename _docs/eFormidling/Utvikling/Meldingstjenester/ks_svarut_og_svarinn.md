@@ -18,6 +18,8 @@ for den enkelte prosess.
 For å bruke KS SvarUt og SvarInn må integrasjonspunktet konfigureres med nødvendige tilganger til APIet KS SvarUt og
 SvarInn tilbyr.
 
+KS SvarInn sin selvbetjeningsløsning gir mulighet til å konfigurere en integrasjon (ett mottakersystem) til å motta meldinger for flere organisasjonsnummer. Et slikt oppsett kan brukes for å støtte mottak av meldinger adressert til underenheter. Dette vil fungere for meldinger sendt fra KS SvarUt direkte og også de sendt via eFormidling (så lenge avsender har konfigurert integrasjonspunktet med støtte for KS SvarUt).
+
 Integrasjonspunktet omformer dokumenttypen arkivmelding til kall mot APIet KS SvarUt tilbyr. Integrasjonspunktet
 omformer i tillegg responser fra APIet KS SvarInn tilbyr til dokumenttypen arkivmelding. Se dokumenttypene for detaljer.
 KS SvarUt har ikke støtte for prosesser. Meldinger blir derfor videreformidlet til KS SvarUt uten informasjon om
