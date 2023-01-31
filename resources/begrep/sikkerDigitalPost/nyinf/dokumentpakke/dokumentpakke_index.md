@@ -24,7 +24,7 @@ virksomhet, og om filene har blitt endret.
 Les mer om [hvordan dokumenter som sendes i Sikker digital post er
 beskyttet](sikkerhet_index.html)
 
-Sikker Digital Post har definert et eget begrep [Manifest](feed.xml) som
+Sikker Digital Post har definert et eget begrep [Manifest](manifest.xsd) som
 inneholder metadata relatert til hver fil.
 
 ### Innhold
