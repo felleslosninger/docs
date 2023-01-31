@@ -6,7 +6,9 @@ folders:
 
       - title: Innledning
         jurl: /dpi_oversikt_index.html
-      - title: Ny transportinfrastruktur
+      - title: Kom i gang
+        jurl: /integrasjon.html
+      - title: Transportinfrastruktur
         jurl: /dpi_nyinfrastruktur.html
       - title: Arkitektur
         jurl: /dpi_arkitektur.html   
@@ -14,8 +16,6 @@ folders:
         jurl: /dpi_sikkerhet_index.html 
       - title: Sertifikathåndtering
         jurl: /dpi_sertifikathandtering.html   
-      - title: Integrasjon
-        jurl: /integrasjon.html
         
     - title: Funksjonalitet
       folderitems:
