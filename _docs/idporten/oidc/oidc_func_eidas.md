@@ -179,7 +179,7 @@ Brukers folkeregisteridentifikator utleveres i `pid`-claimet på vanlig måte.
 
 ###  eIDAS kjerneattributter
 
-Se [eIDAS SAML Attribute Profile ]( https://ec.europa.eu/cefdigital/wiki/download/attachments/46992719/eIDAS%20SAML%20Attribute%20Profile%20v1.1_2.pdf?version=1&modificationDate=1497252920100&api=v2) for beskrivelse av eIDAS kjerneattributter.
+Se [eIDAS eID Profile ]( https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/eIDAS+eID+Profile) for beskrivelse av eIDAS kjerneattributter.
 
 Kjerneattributtene prefixes av ID-porten med "eidas_".  Det er 4 obligatoriske attributter som alltid vil være tilstede:
 
