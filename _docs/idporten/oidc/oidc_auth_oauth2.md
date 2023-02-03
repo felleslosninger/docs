@@ -60,7 +60,7 @@ Det er flere gode grunner for API-tilbydere til å bruke dette samhandlingsmøns
 
 Eksempler på bruk av løsningsmønsteret:
  * [Oppdatere innbyggers preferert språk i Kontaktregisteret]({{site.baseurl}}/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest#spraak)
- * [Ansatt hos kommune som skal ha tilgang til data som ligger lagret hos Fiks-plattformen til KS](https://ks-no.github.io/fiks-plattform/sikkerhet/#autentisering-og-autorisering)
+ * [Ansatt hos kommune som skal ha tilgang til data som ligger lagret hos Fiks-plattformen til KS](https://developers.fiks.ks.no/felles/sikkerhet/#autentisering-og-autorisering)
 
 
 
