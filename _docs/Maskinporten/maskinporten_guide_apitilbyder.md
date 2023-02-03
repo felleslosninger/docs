@@ -88,7 +88,9 @@ API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ve
 
 - Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
 
-[![Opprette API](https://samarbeid.difi.no/sites/samarbeid2/files/opprette-api.png)](https://samarbeid.difi.no/sites/samarbeid2/files/opprette_api.mp4 "Opprette API")
+Videotutorial: (https://vimeo.com/427689809)
+
+[![Opprette scopes]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689809 "Opprette scopes")
 
 ### 1b: Tilgangsstyring - via Samarbeidsportalen
 
