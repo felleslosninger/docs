@@ -122,7 +122,7 @@ Eksempelet ovenfor oppretter en ID-porten-klient for [brukerstyrt datadeling på
 
 Normalt blir kunden selv automatisk eier (`client_orgno`) av integrasjoner som opprettes via selvbetjenings-API basert på organisasjonsnummeret i virksomhetssertifikatet som brukes.
 
-Dersom du er leverandør har du flere muligheter til hvordan du skal registere dine kunders integrasjoner. [Se egen side med leverandør-informasjon](oidc_admin_leverandør.html).
+Dersom du er leverandør har du flere muligheter til hvordan du skal registere dine kunders integrasjoner. [Se egen side med leverandør-informasjon](https://docs.digdir.no/docs/idporten/oidc/oidc_api_admin_leverand%C3%B8r).
 
 ## Endring av integrasjon
 
