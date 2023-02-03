@@ -111,4 +111,4 @@ Forskjellen på *autentisering* (OpenIDConnect) og *autorisasjon* med "plain" Oa
 1. For å sikre at autentisering-oppførselen blir ihht. OpenID Connect-spesifikasjonen **må** man benytte 'openid'-scopet
 2. OpenID Connect forholder seg ikke til ressurs-servere /API-er, men man kan fint forespørre ekstra scopes i en OIDC autentiseringsforespørsel, og således oppnå kombinert autorisasjon og autentisering.
 
-For nærmere detaljer om innholdet i access_token, se [grensesnittsdefinisjon av /token-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).   Se også [dokumentasjon av scopes](oidc_protocol_scopes.html).
+For nærmere detaljer om innholdet i access_token, se [grensesnittsdefinisjon av /token-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).   Se også [dokumentasjon av scopes](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_scope).
