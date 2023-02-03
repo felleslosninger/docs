@@ -25,12 +25,6 @@ For å bli integerte i produksjon, må et land bli formelt *notifisert* og fagfe
 
 For mer informasjon om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030](https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030).  
 
-Denne funksjonaliteten har blitt utviklet med støtte fra EU-kommisjonen, se [Connecting Europe Facility Norge](https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital).
-
-
-{% include image.html file="oidc_func_eidas-931dea0a.png" url="https://www.difi.no/fagomrader-og-tjenester/digitalisering-og-samordning/europeisk-infrastruktur/cef-digital" alt="CEF logo" max-width="200" %}
-
-
 ## Hvordan aktivere eIDAS-pålogging?
 
 ID-porten tilbyr to typer eidas-støtte over OIDC:
@@ -48,7 +42,7 @@ En gang i fremtiden vil ID-porten aktivere enkel eidas-støtte for alle OIDC-tje
 
 ## Hvordan motta avansert eIDAS-pålogging over OIDC ?
 
-P.t er avansert eIDAS kun tilgjenglig ved at du må i egen løsning lage to "innganger" til tjenesten din, dvs.  en "logg på med eidas"-knapp, og en "logg på med norsk eID"-knapp.  På auteniseringsforespørselen fra "eidas-knappen" har du 4 valg: 
+P.t er avansert eIDAS kun tilgjenglig ved at du må i egen løsning lage to "innganger" til tjenesten din, dvs.  en "logg på med eidas"-knapp, og en "logg på med norsk eID"-knapp.  På auteniseringsforespørselen fra "eidas-knappen" har du 4 valg:
 
 - /autorize-kallet må inneholde `eidas:true` i `login_hint`
 - For å få du utlevert eidas-attributter, kan du forespørre om scopet `eidas`
