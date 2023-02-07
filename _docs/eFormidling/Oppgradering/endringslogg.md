@@ -18,6 +18,19 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.14.0
+
+07.02.2023
+
+- Retta autentiseringsfeil som oppstod ved mottak av meldingar fra KS SvarInn ved bruk av mottakersystem med fleire organisasjonsnummer
+
+## 2.13.0
+
+06.02.2023
+
+- Retta ein ny og sjelden feilsituasjon for DPI-meldingar som førte til at integrasjonspunktet kom i ein tilstand der ein ikkje fekk henta inn kvitteringar
+- Retta problem med at sletting av filer feila ved mottak med BEST/EDU 
+
 ## 2.12.0
 
 09.12.2022
