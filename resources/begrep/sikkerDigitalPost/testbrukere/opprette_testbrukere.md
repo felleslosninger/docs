@@ -4,6 +4,7 @@ title: Postkasser til testbrukere
 sidebar: dpi_sidebar
 redirect_from: /sdp_pk_til_testbruker_index
 ---
+OBS! UTGÅENDE DOKUMENTASJON - [Ny dokumentasjon her](/dpi_testing_index.html)
 
 Merk! Testbrukere med rette egenskaper for testing av digital postkasse får en ved å sende en bestilling til servicedesk@digdir.no
 
