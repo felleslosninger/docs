@@ -4,7 +4,7 @@ title: Oversikt
 sidebar: dpi_sidebar
 redirect_from: /sdp_index_innledning
 ---
-OBS! UTGÅENDE DOKUMENTASJON - [Ny dokumentasjon her](/dpi_testing_index.html)
+OBS! UTGÅENDE DOKUMENTASJON - [Ny dokumentasjon her](/dpi_nyinfrastruktur.html)
 
 Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomheter for å sende brev digitalt til innbyggere. I oversikt-avsnittet finner du en overordnet beskrivelse av den underliggende virksomhetsarkitekturen for løsningen.
 
