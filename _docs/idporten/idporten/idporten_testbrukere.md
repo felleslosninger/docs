@@ -67,8 +67,8 @@ Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En m�
 - bestill aktiveringsbrev. En får så en aktiveringskode i "Ditt aktiveringsbrev er bestilt". 
 - legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
 
-### Pinkoder fases ut i testmiljøet VER2 01.02.2023
-01.02.2023 blir statiske pinkoder faset ut i VER2. Dette henger sammen med at utsending av pinkoder har opphørt som tjeneste i produksjonsversjonen av MinID. Og at pinkoder blir deaktivert i produksjon 16.01.2023
+### Pinkoder er faset ut i testmiljøet VER2 fra 01.02.2023
+01.02.2023 ble statiske pinkoder faset ut i VER2. 
 
 #### Om MinID i testmiljøet VER1 
 Endringen i VER2 01.02.2023 for PIN-koder i MinID omfatter ikke testmiljøet VER1 på dette tidspunktet. VER1-miljøet blir faset ut i løpet av våren 2023 og det er kun VER2 som lever videre etter våren 2023. En bør derfor gjennomføre testing mot ID-porten i VER2-miljøet og flytte seg fra VER1.
