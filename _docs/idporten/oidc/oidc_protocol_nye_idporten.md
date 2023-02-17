@@ -7,6 +7,7 @@ product: ID-porten
 redirect_from: /oidc_protocol_nye_idporten
 ---
 
+This page is also available in English. [Changes in the new ID-porten in 2022-2023](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_new_idporten).
 
 ## Bakgrunn
 
