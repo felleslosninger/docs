@@ -118,6 +118,32 @@ Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i 
     "referanseType" : "publisering"
   }
 ```  
+**Tillegg fra februar 2023:**
+Det vil nå bli sendt tilsvarende kvitteringsmelding som over når en publisering ikke kunne utføres pga valideringsfeil. Feltet "publisert" vil da være "false".
+
+Det er også lagt til en kvitteringsmelding som gir "ADVARSEL" hvis en publiseringsmelding ikke validerer. Denne sier ikke noe om publiseringen faktisk er vellykket. Det er fordi vi har en del tilpasninger som gjør at noen filer som ikke validerer allikevel blir publisert. Vi ønsker å fjerne disse tilpasningene senere, så "ADVARSEL"-feil må rettes for at disse skal være gyldige senere også.
+
+eksempel på en "ADVARSEL"-kvittering:
+``` 
+{
+  "publisertAvOrgnummer": "123456789",
+  "arkivskaper": "http://data.einnsyn.no/virksomhet/3f551702-7580-43e4-aaf7-8cad95b4d07a",
+  "dokumentId": null,
+  "transactionId": "31029542-d619-4f90-b06f-118f360997c6",
+  "conversationId": "baddc276-41df-4ee0-affb-73b4802c58c6",
+  "alvorlighetsgrad": "ADVARSEL",
+  "valideringsfeil": [
+    {
+      "elementId": "http://journalpost.123456789.no/6a5bb1fd-6dac-4495-8c4a-2df8d1de4994",
+      "elementType": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost",
+      "attributt": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent",
+      "attributtVerdi": "http://saksmappe.922017433.no/1cb3665a-e9c5-4790-bc67-8bae9a67d3b3",
+      "feilmelding": "Feil/ukjent type, eller mangler verdi."
+    }
+  ]
+}
+``` 
+
 ## Slettemeldinger
 Sletting fra eInnsyn kan automatiseres ved å sende slettemelding. Dette sendes på samme måte som en journalpost (samme meldingstype i eFormidling) med en slettemelding som payload. Eksempel på slettemelding:
 ```
