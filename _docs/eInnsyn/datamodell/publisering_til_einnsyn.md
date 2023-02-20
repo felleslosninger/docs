@@ -125,7 +125,11 @@ Det er også lagt til en kvitteringsmelding som gir "ADVARSEL" hvis en publiseri
 
 eksempel på en "ADVARSEL"-kvittering:
 ``` 
-{
+  "einnsyn_kvittering" : {
+    "sikkerhetsnivaa" : null,
+    "hoveddokument" : null,
+    "dokumentId" : "http://data.einnsyn.no/ff530c93-5ea7-48d4-abbb-c62b284192f3",
+    "status" : "{
   "publisertAvOrgnummer": "123456789",
   "arkivskaper": "http://data.einnsyn.no/virksomhet/3f551702-7580-43e4-aaf7-8cad95b4d07a",
   "dokumentId": null,
@@ -141,6 +145,8 @@ eksempel på en "ADVARSEL"-kvittering:
       "feilmelding": "Feil/ukjent type, eller mangler verdi."
     }
   ]
+  }",
+    "referanseType" : "publisering"
 }
 ``` 
 
