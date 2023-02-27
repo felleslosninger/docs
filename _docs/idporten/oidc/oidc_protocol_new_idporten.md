@@ -90,6 +90,11 @@ The new ID-porten will offer a SSO-free login. Customers will be able to configu
 
 [onbehalfof](oidc_func_onbehalfof.html) is a custom-made mechanism in ID-porten to be used by vendors. This will still be available for OIDC and SAML.
 
+
+### New acr values
+
+There are new values for authentication levels.  The new values are `idporten-loa-substantial` and `idporten-loa-high`.  They can be used by a client to request user authentication on a minimum level with the `acr_values` parameter.  ID-porten will include the authentication level in the `acr` claim in the `id_token`.
+
 ### Forced use of PKCE, state and nonce.
 
 All clients **must** use [PKCE](oidc_func_pkce.html) in addition to instance-uniquie state and nonce values. On todays solution, this is only required by public clients, and voluntarely yet higly recommended for confidential clients.

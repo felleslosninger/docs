@@ -98,6 +98,10 @@ Nye ID-porten vil tilby ny funksjonalitet for SSO-fri innlogging.  Dette vil skj
 
 [onbehalfof](oidc_func_onbehalfof.html) er en ID-porten-proprietær mekanisme for leverandører.  Denne blir videreført både for OIDC og SAML.
 
+### Nye acr-verdier
+
+Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene er `idporten-loa-substantial` og `idporten-loa-high`.  Disse verdiene kan brukes av klient for å forespørre autentisering på minimum nivå v.hj.a. parameteret `acr_values`.  ID-token vil inkludere nivå i `id_token` i claim `acr`.
+
 ### Tvungen bruk av PKCE og state og nonce
 
 Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
