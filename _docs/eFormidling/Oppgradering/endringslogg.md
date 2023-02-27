@@ -607,6 +607,15 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 ---
 
 ## Sentrale komponenter
+
+## ServiceRegistry 2.9.0
+
+- MOVE-3059   La tausheitsbelagte meldingar verta sende til FIKS
+
+## ServiceRegistry 2.8.0
+
+- MOVE-3067   Oppgradering av efm-common (delt bibliotek i portefølja)
+
 ## ServiceRegistry 2.7.0
 
 22.11.2022
