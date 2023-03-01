@@ -57,7 +57,7 @@ For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende
 
 #### B: Kunde har SAML-integrasjon idag
 
-Dersom du ønsker å forbli på SAML, trenger du ikke gjøre noe, utover å sjekke i testmiljøet i perioden mars-september om din SAML-integrasjon er kompatibel med den reduserte funksjonaliteten i ny SAML-proxy.
+Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mars-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
 
 Vi anbefaler dog at alle migrerer til OIDC, i praksis må kunden da [etablere ny OIDC-integrasjon fra scratch ihht. integrasjonsguiden vår](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
 
