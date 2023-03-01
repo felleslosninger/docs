@@ -56,7 +56,7 @@ In most cases, these are the steps to follow:
 
 #### B: Customer with SAML integration
 
-If you want to stay on SAML, you need to check if your SAML integration is compatible with the reduced functionality of the new SAML proxy. This could be checked when the test-enviroment is ready.
+If you want to stay on SAML, you need to check if your SAML integration is compatible with the reduced functionality of the new SAML proxy. This could be checked when the test-enviroment is ready. You will also need to open the outgoing firewall for the new IP-adress.
 
 We recommend all our customers to use OIDC. This would require [setting up a new client and follow our integration steps.](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
 
