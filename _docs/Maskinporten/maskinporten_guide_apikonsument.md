@@ -58,7 +58,7 @@ Det kan være en sikkerhetsrisiko  å la samme klient ha tilgang til for mange A
 
 #### Registrering via Samarbeidsportalen
 
-Du kan logge inn på [https://samarbeid.digdir.no/](https://samarbeid.digdir.no/) og registrere den nye integrasjonen. Merk at Samarbeidsportalen p.t. kun lar deg opprette integrasjoner som kan bruke virksomhetssertifikat, ikke asymmetriske nøkler.
+Du kan logge inn på [https://samarbeid.digdir.no/](https://samarbeid.digdir.no/) og registrere den nye integrasjonen. 
 
 Alle organisasjoner som har inngått Digitaliseringsdirektoratets  bruksvilkår skal ha tilgang til Samarbeidsportalen i testmiljø.  Du må selv-registrere en bruker med din organisasjon sitt registrerte epost-domene.
 
