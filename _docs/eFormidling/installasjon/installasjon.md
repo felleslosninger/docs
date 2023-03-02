@@ -586,7 +586,7 @@ difi.move.dpv.enableDueDate=false
 | Egenskap                                       | Beskrivelse                                                                                                                                                                                               | Standardverdi                                   |
 |------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
 | difi.move.feature.enableDPI                    | Slår på/av støtte for Digital Post til Innbyggere                                                                                                                                                         | false                                           |
-| difi.move.dpi.mpcId                            | Kanal for å lese DPI-kvitteringer                                                                                                                                                                         | no.difi.move.integrasjonspunkt                  |
+| difi.move.dpi.mpcId                            | Kanal for å lese DPI-kvitteringer, bør brukes dersom flere instanser av integrasjonspunktet                                                                                                                                                                         | no.difi.move.integrasjonspunkt                  |
 | difi.move.dpi.mpcConcurrency                   | Antall kanaler for å lese DPI-kvitteringer                                                                                                                                                                | 1                                               |
 | difi.move.dpi.mpcIdListe                       | Denne overstyrer kombinasjonen av mpcId + mpcConcurrency dersom den er satt. De kanalene som listes opp her vil bli brukt ved polling av DPI-kvitteringer                                                 | difi.move.dpi.mpcIdListe[0]=id1                 |
 | difi.move.dpi.avsenderidentifikatorListe       | Ved polling av DPI-kvitteringer brukes denne for å indikere at man kun ønsker kvitteringer med gitt avsenderindikator                                                                                     | difi.move.dpi.avsenderidentifikatorListe[0]=ai1 |
@@ -603,6 +603,7 @@ Eksempel:
 
 ```
 difi.move.feature.enableDPI=true
+difi.move.dpi.mpcId=DigdirSinKø
 ```
 
 #### Konfigurere KS FIKS IO
