@@ -45,7 +45,6 @@ Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...
 
 |miljø|url|
 |-|-|
-
 |VER2/TEST|[https://test.kontaktregisteret.no/rest/v1/personer](https://test.kontaktregisteret.no/rest/v1/personer)|
 |PROD|[https://kontaktregisteret.no/rest/v1/personer](https://kontaktregisteret.no/rest/v1/personer)|
 
