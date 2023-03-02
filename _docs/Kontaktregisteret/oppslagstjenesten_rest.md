@@ -45,10 +45,9 @@ Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...
 
 |miljø|url|
 |-|-|
-|VER1|[https://krr-ver1.digdir.no/rest/v1/personer](https://krr-ver1.digdir.no/rest/v1/personer)|
-|VER2|[https://krr-ver2.digdir.no/rest/v1/personer](https://krr-ver2.digdir.no/rest/v1/personer)|
-|YT2 |[https://krr-yt2.digdir.eon.no/rest/v1/personer](https://krr-yt2.digdir.eon.no/rest/v1/personer)|
-|PROD|[https://krr.digdir.no/rest/v1/personer](https://krr.digdir.no/rest/v1/personer)|
+
+|VER2/TEST|[https://test.kontaktregisteret.no/rest/v1/personer](https://test.kontaktregisteret.no/rest/v1/personer)|
+|PROD|[https://kontaktregisteret.no/rest/v1/personer](https://kontaktregisteret.no/rest/v1/personer)|
 
 **Merk:** Man vil oppnå vesentlig bedre ytelse (målt i personer/sekund) ved å slå opp 1000 personer 1 gang kontra 1000 enkelt-oppslag.
 
