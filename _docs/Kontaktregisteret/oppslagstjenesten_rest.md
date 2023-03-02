@@ -18,7 +18,7 @@ Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet 
 Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke Maskinporten.
 
 ### Lokal kopi (endringsmeldinger)
-Funksjonalitet for lokal kopi (endringsmeldinger) er fra november 2022 støttet over Oauth2-grensenittet. SOAP-grensesnittet blir faset ut i 2023. Informasjon og dokumentasjon fås ved å kontakte servicedesk@digdir.no
+Funksjonalitet for lokal kopi (endringsmeldinger) er fra november 2022 støttet over Oauth2-grensenittet. SOAP-grensesnittet blir faset ut i 01.04.2023. Informasjon og dokumentasjon fås ved å kontakte servicedesk@digdir.no
 
 
 ### Tilgjenglige scopes
