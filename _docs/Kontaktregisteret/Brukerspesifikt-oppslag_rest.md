@@ -30,7 +30,7 @@ Man må forespørre ett eller flere av følgende scopes:
 |-|-|
 | krr:user/kontaktinformasjon.read | Returnerer epostadresse og mobilnummer + tidspunkt for sist oppdatering |
 |  | Returnerer status for om kontaktinfomasjonen kan brukast for varsling iht. eForvaltningsforskrifta sin §32 |
-| krr:user/sikkerdigitalpost.read | Returnerer adresse for digital post til innbygger |
+| krr:user/digitalpost.read | Returnerer adresse for digital post til innbygger |
 | | Returnerer brukerens krypteringssertifikat ved sending av digital post |
 | | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |   
 | krr:user/spraak.write | Endrer brukerens foretrukne språk for kommunikasjon med det offentlige. |
@@ -42,9 +42,9 @@ OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no//kontaktinfo-oauth2-s
 |miljø|url|
 |-|-|
 |VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/person)|
-|VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/person)|
+|TEST/VER2|[https://test.kontaktregisteret.no/rest/v1/person](https://test.kontaktregisteret.no/rest/v1/person)|
 |YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/person)|
-|PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/person)|
+|PROD|[https://kontaktregisteret.no/rest/v1/person](https://kontaktregisteret.no/rest/v1/person)|
 
 
 {% include note.html content="Merk den lille forskjellen mellom 'person' (dette endepunktet) og 'personer' ([maskin-til-maskin endepunktet](oppslagstjenesten_rest.html)). De to tjenestene har også forskjellige domene-navn." %}
