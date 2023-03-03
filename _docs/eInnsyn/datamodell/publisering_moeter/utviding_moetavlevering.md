@@ -80,8 +80,37 @@ Typiske verdiar her vil vere
 For å støtte publisering av opptak av møter er det laga til eit eige felt for dette.  Feltet videolenke kan leggast til å møter og møtesaksregistrering for å lenke inn opptak på møter og politiske saker
 Data blir då som følgje
 
-```sparql
-<http://data.einnsyn.no/ei-moetemappe> arkiv:videolink "https://eitvideostystem.no/archive/269" .
+```
+  "@context": {
+    "@base": "http://data.virksomhet.no/video/",
+    "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+	"@id": "2571d49a-4210-4bc5-a811-04498f2dd758",
+	"@type": "arkiv:Moetemappe",
+	"arkiv:moetedato": {"@type": "xsd:dateTime","@value": "2021-09-26T18:00:00.000+02:00"},
+	"arkiv:moetenummer": "999",
+	"arkiv:moetested": "Jupiter",
+	"arkiv:offentligTittel": "Møte med video",
+	"arkiv:offentligTittel_SENSITIV": "Møte med video - Sensitiv",
+	"arkiv:utvalg": "utvalgskode",
+	"arkiv:videolink": "https://virksomhet.kommunetv.no/archive/1"
+    },
+	{
+      "@id": "57b7662c-a87d-4d89-83a1-2c2ef57545e8",
+      "@type": "arkiv:Møtesaksregistrering",
+      "arkiv:dokumentbeskrivelse": {"@id": "1eb09d97-a449-4ca3-825e-280bbaba3991"},
+      "arkiv:møtesakssekvensnummer": {"@type": "xsd:integer","@value": "9"},
+      "arkiv:møtesakstype": {"@id": "arkiv:politiskSak"},
+	  "arkiv:møtesaksår": {"@type": "xsd:integer","@value": "2019"},
+      "arkiv:offentligTittel": "Møtesaksregistrering_offentligtittel",
+      "arkiv:offentligTittel_SENSITIV": "Møtesaksregistrering_offentligtittel_sensitiv",
+      "arkiv:parent": {"@id": "2571d49a-4210-4bc5-a811-04498f2dd758"},
+      "arkiv:referanseTilMøtesak": {"@id": "f8145510-8c64-4dac-b14a-3843c43dbb26"},
+	  "arkiv:videolink": "https://virksomhet.kommunetv.no/archive/2"
+    }
 ```
 
 ### Vedtak og votering
