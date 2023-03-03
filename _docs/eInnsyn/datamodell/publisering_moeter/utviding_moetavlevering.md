@@ -77,10 +77,10 @@ Typiske verdiar her vil vere
 
 
 ### Videolenke på møter
-For å støtte publisering av opptak av møter er det laga til eit eige felt for dette.  Feltet videolenke kan leggast til å møter og møtesaksregistrering for å lenke inn opptak på møter og politiske saker
+For å støtte publisering av opptak av møter er det laga til eit eige felt for dette.  Feltet videolenke kan leggast til å møter og møtesaksregistrering for å lenke inn opptak på møter og politiske saker.
 Data blir då som følgje
 
-```
+```json
   "@context": {
     "@base": "http://data.virksomhet.no/video/",
     "arkiv": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/",
@@ -112,6 +112,8 @@ Data blir då som følgje
 	  "arkiv:videolink": "https://virksomhet.kommunetv.no/archive/2"
     }
 ```
+Per nå, må avleverende system sende all data om møte samtidig som det oppdateres med videolenke. Vi har sett at det kan være uhensiktsmessig hvis et annet system enn sak-arkiv-tjenesten skal oppdatere møte med videolenker. Vi jobber derfor for at det skal kunne sendes oppdatering med kun id på objektet og en videolenke til oppdatering.
+
 
 ### Vedtak og votering
 Forslag til publisering av Vedtak og votering på en møtesak. 
