@@ -207,10 +207,10 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 
 For klienter (både innlogging og maskin) som mottar *access_token* til API-sikring kan man registrere følgende:
 
-| attributt | beskrivelse |
+| attributt | beskrivelse | standard levetid |
 |-|-|
-| authorization_lifetime | Levetid for registrert autorisasjon. |
-| access_token_lifetime | Levetid for utstedt access_token |
-| refresh_token_lifetime |Levetid for utstedt refresh_token |
+| authorization_lifetime | Levetid for registrert autorisasjon. | 7200 sekunder |
+| access_token_lifetime | Levetid for utstedt access_token | 120 sekunder |
+| refresh_token_lifetime |Levetid for utstedt refresh_token | 600 sekunder |
 
 Merk at de fleste av egenskapene til access_token blir bestemt av API-tilbyder, og ikke som en del av klient-registreringen.  En klient kan for eksempel ikke få token som har lengre levetid enn det API-tilbyder har satt som maks-grense.
