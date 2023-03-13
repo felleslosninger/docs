@@ -36,8 +36,6 @@ Forøvrig anbefaler vi å lese [de siste anbefalingene fra IETF](https://tools.i
 
 SPA-er som bruker ID-portens access_tokens som sikringsmekanisme mot eget API, må opprettast som `integration_type=API_KLIENT` i Sjølvbetjeningsløsninga.  Då får ein mogelegheit til å sjølv styre levetid på autorisasjon, access_token og refresh_token.
 
-Fram til release 21-06 må klienten opprettast som `application-type=web` (og client_secret må anses som kjent) dersom den skal få refresh_token.
-
 
 ## Flyt
 

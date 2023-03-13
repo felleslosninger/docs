@@ -10,6 +10,8 @@ redirect_from: /oidc_api_logghistorikk
 
 ## Introduksjon
 
+{% include note.html content="Dette APIet gir p.t. bare ut logghistorikk på gammel platform. " %}
+
 Innbygger sin innloggingshistorikk fra ID-porten kan konsumeres via API og synliggjøres for innbygger i andre tjenester.
 
 Kunden mottar opplysningene for at innbyggeren kan lettere deteketere misbruk av eID.
@@ -70,4 +72,3 @@ Authorization: Bearer U_3uI4GjxKbhc4jo54mbnozbSZdHLyw28ZQGnxsScmI=
 ]
 
 ```
-

@@ -14,19 +14,17 @@ Arkitekturen for  OIDC-funksjonaliteten i ID-porten  ser slik ut:
 
 <div class="mermaid">
 graph LR
-  subgraph Digitaliseringsdirektoratet 
-    subgraph Eksisterende funksjonalitet
-      idp[ID-porten]
-      end
-    OIDC[OIDC Provider]
+  subgraph Digitaliseringsdirektoratet
+    IDP[ID-porten]
+    SAML[SAML-proxy]
   end
   subgraph Kunde
-     ny[Nye tjenester]
-     gammel[Eksiterende tjenester]
+     sp[SAML-tjeneste SP]
+     rp[OIDC-tjeneste RP]
   end
-  ny --  OpenID Connect  --- OIDC
-  gammel --  SAML2 ---idp
-  OIDC -- SAML2 ---idp
+  rp --  OIDC  --- IDP
+  sp --  SAML2 ---SAML
+  SAML -- OIDC ---IDP
 </div>
 
 ID-portens OIDC provider tilbyr **autentisering** av sluttbrukere opp mot netttjenester.  Funksjonaliteten er grunnleggende den samme som dagens SAML2-basert løsning.
@@ -45,7 +43,7 @@ graph LR
   subgraph 3djepart
     API
   end
-  subgraph Digitaliseringsdirektoratet 
+  subgraph Digitaliseringsdirektoratet
     OIDC[OIDC Provider]
   end
   subgraph Kunde
@@ -60,7 +58,7 @@ graph LR
 API-tilgangen kan være innloggingsbasert (implisitt samtykke), brukerstyrt (eksplisitt samtykke), eller maskin-til-maskin-basert. I de to første tilfellene gjelder autorisasjonen kun en enkelt innbygger, mens det siste tilfellet er tiltenkt hjemmelsbaserte autorisasjoner.
 
 
-## Oauth2-beskytta APIer fra Digitaliseringsdirektoratet 
+## Oauth2-beskytta APIer fra Digitaliseringsdirektoratet
 
 <div class="mermaid">
 graph LR

@@ -1,7 +1,7 @@
 ---
 title: "Scope"
-description: "This page summarizes how Oauth2 scopes are used in ID-porten."
-summary: 'This page summarizes how Oauth2 scopes are used in ID-porten.'
+description: "This page summarizes how Oauth2 scopes are used in ID-porten OIDC provider."
+summary: 'This page summarizes how Oauth2 scopes are used in ID-porten OIDC provider.'
 
 sidebar: oidc
 product: ID-porten
@@ -9,7 +9,7 @@ redirect_from: /oidc_protocol_scope
 ---
 
 
-ID-porten and Maskinporten can issue access tokens to scopes controlled by Digdir, as well as scopes controlled by other organizations.
+ID-porten and Maskinporten can issue access tokens to scopes controlled by Difi, as well as scopes controlled by other organizations.
 
 
 ## Scope model
@@ -18,8 +18,7 @@ The following attributes are available for a scope:
 | attribute| cardinality | description |
 |-|-|-|
 | prefix | mandatory| A prefix used for namespacing scopes belonging to a certain organization. Manually assigned by Digdir |
-| subscope | mandatory | The actual scope value is  defined by the owning organization itself. It can not be changed after creation. |
-| description | mandatory | A human-readable short description of the scope. Shown to the end-user in consent dialogue for ID-porten scopes. |
+| description | mandatory | A human-readable short description of the scope. Shown to the end-user in consent dialogue. |
 | long_description  | optional | A longer human-readable description of the scope. Supports basic Markdown-formatting using bold, italic, paragraphs break and links allowed. Shown to the end-user in consent dialogue.
 | delegation_source | optional | If set, allows consumers to [delegate a given scope  access to a supplier in a external autoriative register of delegations]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_delegering). NOTE: this only works in Maskinporten, please set `allowable_integration_types` accordingly. |
 | accessible_for_all | default false | If true, any consumer organization can register a client having this scope and get tokens. |

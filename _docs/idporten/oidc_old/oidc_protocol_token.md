@@ -12,6 +12,8 @@ redirect_from: /oidc_protocol_token
 
 The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
 
 ## Request
 
@@ -26,7 +28,7 @@ There are different parameters available for the request, depending on grant typ
 
 
 
-### Request parameters when using `authorization_code` grant
+### Request parameters when using `code` grant
 
 The following request parameters are available when using the authorization code grant
 
@@ -36,14 +38,23 @@ The following request parameters are available when using the authorization code
 | grant_type | required | Type of grant the client is sending, ie. `authorization_code` |
 | code | required  | The authorization code received in the authorization response.  |
 | redirect_uri | required | The desired redirect uri.  Must be the same value as was used in the corresponding authentication request. |
-| code_verifier | required | The PKCE code verifier. Mandatory for public clients. Between 43 and 128 characters (ASCII). |
+| code_verifier | recommended | The PKCE code verifier. Mandatory for public clients. Between 43 and 128 characters (ASCII). |
+| client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
+| client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
 
-The following request parameters are available when using the authorization code grant
+
+### Request parameters when using `JWT-bearer` grant
+
+The following request parameters are available when using the JWT bearer grant
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
-| client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
+| grant_type | required | Type of grant the client is sending, ie. `urn:ietf:params:oauth:grant-type:jwt-bearer`  |
+| assertion   | optional   | The JWT grant  |
+
+There is no need to perform client authentication when using this grant, as the client is implicitly authenticated by the certificate in the JWT.
+
+See [JWT grant]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_jwtgrant) for requirements for the JWT grant.
 
 
 ### Request parameters when using `refresh_token ` grant
@@ -144,7 +155,7 @@ Example:
 
 ### The id_token
 
-The id_token asserts the identity of the authenticated user.  It tells you "who the user is", but not "what the user can access".
+The id_token is the assertion of the authenticated user identity.  It tells you "who the user is", but not "what the user can access".
 
 The [id_token is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_id_token).
 

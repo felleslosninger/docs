@@ -9,37 +9,6 @@ redirect_from: /oidc_protocol_nye_idporten
 
 This page is also available in English. [Changes in the new ID-porten in 2022-2023](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_new_idporten).
 
-
-# Hvordan migrere i praksis ?
-
-Det er to tilfeller:
-
-#### A: Kunde har OIDC-integrasjon idag
-
-For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende steg:
-
-1. Åpne evt. egen utgående brannmur til ny IP-adresse
-
-2. Beslutte om du vil gjenbruke eksisterende integrasjon, eller lage en ny
-    * Du kan gjenbruke samme `client_id` som du bruker idag
-    * Du kan gjenbruke samme `client_secret` som du bruker idag, evt. samme virksomhetssertifkat / asymmetriske nøkkel.
-    * Det kan derimot være lurt å lage en ny, slik at du kan ha en glidene migrering fra gamle til nye ID-porten.
-
-1. Bytt til ID-portens nye issuer-URL: `https://idporten.no`   
-      * Noen IAM-produkter vil da automatisk laste ned oppdaterte metadata og etablere trust til det nye sertifikatet vårt.
-      *  Dersom dette steget ikke går automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust.
-3. Konfigurere din integrasjon til å bruke PKCE
-4. Endre egen kode til å validere de nye verdiene for sikkerhetsnivå (`idporten-loa-*`) 
-
-
-#### B: Kunde har SAML-integrasjon idag
-
-Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mars-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
-
-Vi anbefaler dog at alle migrerer til OIDC, i praksis må kunden da [etablere ny OIDC-integrasjon fra scratch ihht. integrasjonsguiden vår](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
-
-
-
 ## Bakgrunn
 
 ID-porten gjennomgår et omfattende moderniseringsløp i perioden 2020-2023, der hele kjernen i løsningen skrives om.  Det er et uttalt hovedmål for prosjektet at overgangen skal skje uten negative konsekvenser for kundene.  Sjå [status-sida til prosjektet på Samarbeidsportalen](https://samarbeid.digdir.no/eformidling/ny-systemarkitektur/736), der det jamnleg blir publisert løypemeldingar og tidsplanar for migreringa.
@@ -69,6 +38,28 @@ Dersom du er avhengig av SSO til andre tjenester, som feks Altinn, må du vente 
 
 Dersom ikke, så anbefaler vi at du migrerer så tidlig som mulig ifra mars.  Nasjonalt kritiske tjenester skal migrere fra mai, og Digdir vil ha direkte dialog med viktige enkelt-tjenester.
 
+### Hvordan migrere i praksis ?
+
+Det er to tilfeller:
+
+#### A: Kunde har OIDC-integrasjon idag
+
+For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende steg:
+
+1. Åpne evt. egen utgående brannmur til ny IP-adresse
+1. Bytt til ID-portens nye issuer-URL: `https://idporten.no` (tbd).  
+    * Noen IAM-produkter vil da automatisk laste ned oppdaterte metadata og etablere trust til det nye sertifikatet vårt.
+3. Dersom forrige steg ikke gikk automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust til vårt nye signeringssertifak
+3. Konfigurere din integrasjon til å bruke PKCE
+3. Du gjenbruker samme `client_id` som du bruker idag
+3. Du gjenbruker samme `client_secret` som du bruker idag, evt. samme virksomhetssertifkat / asymmetriske nøkkel.
+
+
+#### B: Kunde har SAML-integrasjon idag
+
+Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mars-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
+
+Vi anbefaler dog at alle migrerer til OIDC, i praksis må kunden da [etablere ny OIDC-integrasjon fra scratch ihht. integrasjonsguiden vår](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
 
 
 

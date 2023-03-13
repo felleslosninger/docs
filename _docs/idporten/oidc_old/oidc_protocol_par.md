@@ -41,22 +41,22 @@ The supported request attributes are identical to attributes available on the [/
 | scope |  Required |Whitespace-separated list of requested scopes.  Normally just `openid`.  |
 | state | Recommended | Value set by the client and returned in the callback.  Recommended to use to achieve CSRF-protection. Mandatory to use for public clients|
 | nonce | Recommended |Value set by the client and returned in the id-token. Recommended to use to protect from replay attacks. |
-| acr\_values | Optional | Requested security level, either `idporten-loa-substantial` or  `idporten-loa-high`.  |
+| acr\_values | Optional | Requested security level, either `Level3` or  `Level4`.  |
 | response_mode | Optional | Used if you want alternative way of returning the authentication response. We support `query`,`form_post` and `fragment`. <p/>Note that some of these option may have security implications, and some other conditions may apply.   |
 | ui\_locales | Optional | Requested language in the user interface, we support *nb*, *nn*, *en* or *se* |
 | prompt | Optional | Used to govern end user involvement.  Only `login` is supported by ID-porten  |
-| code_challenge   | Required*  | The [PKCE](oicd_func_pkce.html) `code_challenge` is a calculated value based on `code_verifier`.  Mandatory to use for public clients |
-| code_challenge_method   | Required   | Algorithm for PKCE. Only `S256` supported.  |
-
-
+| code_challenge   | Recommended  | The [PKCE](oicd_func_pkce.html) `code_challenge` is a calculated value based on `code_verifier`.  Mandatory to use for public clients |
+| code_challenge_method   | Recommended   | Algorithm for PKCE. Only `S256` supported.  |
+|login_hint   | Optional   | Set to "eidas:true" to trigger authentication by European users according to eIDAS   |
+|claims   | Optional  | Currently only used for [eIDAS]({{site.baseurl}}/docs/idporten/oidc/oidc_func_eidas)|
 
 
 
 ### Sample request
 
 ```
-POST /par HTTP/1.1
-Host: idporten.no
+POST /idporten-oidc-provider/par HTTP/1.1
+Host: oidc.difi.no
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3
 
@@ -88,6 +88,6 @@ The response is a `request_uri` identifier, and an associated expiry time in sec
 
 The client must then use the request_uri and its client_id when redirecting the end user to the /authorize endpoint before the request_uri expires.
 ```
-GET /authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&client_id=s6BhdRkqt3
+GET /idporten-oidc-provider/authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&client_id=s6BhdRkqt3
 ```
 Request parameters  (apart from client_id) should not be repeated in the authorize-request, but if they are inclued, they must be excactly matching the values that was pushed in the PAR.

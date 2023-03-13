@@ -84,7 +84,7 @@ Dersom en klient ikke er konfigurert med Front Channel Logout, vil klienten ikke
 Eksempel på kall fra ID-porten til klient:
 ```
 GET https://client.example.com/myapp/logout
-     ?iss=https://oidc-ver2.difi.no/idporten-oidc-provider/
+     ?iss=https://test.idporten.no/
      &sid=D8Fgz-jEXG7JXP_VAORmAm1sKB0LjZyA3wAy-rVyMYc=
 ```
 `sid` er ID-porten OIDC sin sesjons-id som klient også har mottatt som claim i id-token.
@@ -96,38 +96,4 @@ Front-channel logout i ID-porten er basert på  [OIDC Front Channel Logout](http
 
 ## Samspill mellom SAML SLO og OpenID Connect SLO
 
-ID-porten OIDC provider er integrert med ID-porten via SAML.  
-
-Dersom en tjenesteeier starter SAML SLO, vil ID-porten OIDC Provider delta i SAML SLO. ID-porten OIDC Provider finner alle klienter i samme sesjon, og sender melding til de av klientene som støtter Front Channel Logout. Deretter sendes brukeren tilbake til ID-porten, for avsluttende redirect tilbake til tjenesteeieren som startet SAML SLO.
-
-Dersom en tjenesteeier starter utlogging med OIDC endsession, vil ID-porten sende melding til de av klientene som støtter Front Channel Logout.  Den vil også sende beskjed om SAML utlogging til ID-porten.  Avslutningsvis vil det sendes en redirect til OIDC-klienten, dersom denne er konfigurert for det.
-
-
-### Eksempel på SLO-utlogging startet fra OIDC-tjeneste
-
-<div class="mermaid">
-sequenceDiagram
-	Initierende tjeneste OIDC ->> ID_porten OIDC: /endsession
-	ID_porten OIDC ->> OIDC tjenester : GET frontchannel_logout_uri
-
-	ID_porten OIDC ->> ID_porten SAML: LogoutRequest
-	ID_porten SAML ->> SAML tjenester: LogoutRequest
-	SAML tjenester ->> ID_porten SAML: LogoutResponse
-	ID_porten SAML ->> ID_porten OIDC: LogoutResponse
-	ID_porten OIDC ->> Initierende tjeneste OIDC: redirect post_logout_redirect_uri
-
-</div>
-
-### Eksempel på SLO-utlogging startet fra SAML-tjeneste
-
-<div class="mermaid">
-sequenceDiagram
-	Initierende tjeneste SAML ->> ID_porten SAML: LogoutRequest
-	ID_porten SAML ->> ID_porten OIDC: LogoutRequest
-	ID_porten OIDC ->> OIDC tjenester : GET frontchannel_logout_uri
-	ID_porten OIDC ->> ID_porten SAML: LogoutResponse
-	ID_porten SAML ->> SAML tjenester: LogoutRequest
-	SAML tjenester ->> ID_porten SAML: LogoutResponse
-	ID_porten SAML ->> Initierende tjeneste SAML: LogoutResponse
-
-</div>
+For Nye ID-porten så er ikke dette ferdig spesifisert ennå.

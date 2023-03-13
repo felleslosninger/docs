@@ -10,6 +10,9 @@ redirect_from: /oidc_api_autorisasjoner
 
 ## Introduksjon
 
+
+ {% include note.html content="Dette APIet gir p.t. bare ut autorisasjoner på gammel platform. " %}
+
 Innbygger sine aktive autorisasjoner i ID-porten OIDC provider er tilgjengelig på et enkelt REST-api.
 
 Typiske autorisasjoner som er tilgjengelig over APIet er autorisasjoner der innbygger har gjennom gitt eksplisitt tilgang til brukerstyrt datadeling, dvs. har innbygger har blitt vist en tilgangsdialog og trykket "godkjenn".  API-tilbyr dog filtreringsmuligheter slik at kunde kan hente andre typer autorisasjoner.

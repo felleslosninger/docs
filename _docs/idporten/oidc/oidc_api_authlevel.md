@@ -8,6 +8,11 @@ product: ID-porten
 redirect_from: /oidc_api_authlevel
 ---
 
+
+
+ {% include note.html content="Denne funksjonaliteten forsvinner på ny platform, ca 29.september 2023." %}
+
+
 ## Introduksjon
 
 Kunder kan bestille utlevering av innbyggers høyeste brukte påloggingsnivå i ID-porten. Informasjonen som utleveres er hvorvidt innbygger har gjennomført en nivå-4 innlogging gjennom ID-porten siden en dato kunde oppgir. Oppgis ingen dato, skjer søket innenfor de siste 18 månedene.

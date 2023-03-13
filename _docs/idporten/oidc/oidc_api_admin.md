@@ -53,7 +53,7 @@ Ta kontakt med <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> 
 
 ### Tilgangstyring av APIet {#scopes}
 
-APIet er basert på en [etablert standard for å vedlikeholde Oauth2-integrasjoner, dvs. RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret vha. [server-til-server Oauth2](https://docs.digdir.no/docs/Maskinporten/maskinporten_auth_server-to-server-oauth2), med tokens utstedt av ID-porten eller Maskinporten.
+APIet er basert på [DCR, en etablert standard for å vedlikeholde Oauth2-integrasjoner, dvs. RFC7591](https://datatracker.ietf.org/doc/html/rfc7591) og er sikret med tokens utstedt av Maskinporten.
 
 Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
