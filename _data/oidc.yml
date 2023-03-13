@@ -8,14 +8,12 @@ folders:
       - title: Overordnet arkitektur
         jurl: /docs/idporten/idporten/idporten_overordnet
 
-      - title: OIDC i ID-porten
-        jurl: /docs/idporten/oidc/
-
       - title: Getting started
         jurl: /docs/idporten/oidc/oidc_guide_english
 
       - title: Logo
         jurl: /docs/idporten/idporten/idporten_logo
+
 - title: Bruksområder og guide
   folderitems:
 
@@ -57,9 +55,11 @@ folders:
       - title: "Access token"
         jurl: /docs/idporten/oidc/oidc_protocol_access_token
       - title: "/tokeninfo"
-        jurl: /docs/idporten/oidc/oidc_protocol_tokeninfo
+        jurl: /docs/idporten/oidc/oidc_protocol_tokenintrospect
       - title: "/userinfo"
         jurl: /docs/idporten/oidc/oidc_protocol_userinfo
+      - title: "/revoke"
+        jurl: /docs/idporten/oidc/oidc_protocol_revoke
       - title: "JWT grants"
         jurl: /docs/idporten/oidc/oidc_protocol_jwtgrant
       - title: "API scopes"
@@ -93,13 +93,6 @@ folders:
 
       - title: eIDAS
         jurl: /docs/idporten/oidc/oidc_func_eidas
-
-      - title: idporten-utland
-        jurl: /docs/idporten/oidc/oidc_func_idporten-utland
-
-
-      - title: Innbyggers innloggingsnivå
-        jurl: /docs/idporten/oidc/oidc_api_authlevel
 
       - title: Innbyggers innloggingshistorikk
         jurl: /docs/idporten/oidc/oidc_api_logghistorikk
@@ -156,10 +149,16 @@ folders:
 
   - title: 2022
     jurl: /docs/idporten/oidc/releaser_2022
-    
+
 #==rel_notes_stop==
 
-- title: SAML grensesnitt
+- title: Gammelt OIDC-grensesnitt
+  folderitems:
+
+      - title: Gammelt OIDC-grensesnitt (fases ut!)
+        jurl: /docs/idporten/oidc_old/
+
+- title: Gammelt SAML-grensesnitt
   folderitems:
 
       - title: SAML Integrasjon (fases ut!)
