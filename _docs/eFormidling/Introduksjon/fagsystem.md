@@ -7,7 +7,7 @@ sidebar: eformidling_sidebar
 ---
 
 Denne siden gir oversikt over hvilke fagsystemer som støtter eFormidling i henhold til krav og tester som beskrevet på
-- TODO lenke til side med krav og tester
+- [Krav og testbeskrivelser](../Testing/krav)
 
 Les mer om hvordan selvdeklarering av støtte for eFormidling fungerer på
 - TODO lenke til samarbeidsportalen
