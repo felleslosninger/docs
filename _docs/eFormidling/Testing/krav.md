@@ -48,8 +48,8 @@ Pass på at følgende kategorier feil håndteres:
 5. Verifiser at en har en gjennomtenkt strategi for å motta meldinger
 6. Verifiser at en har lagt til rette for feilsøking ved å oppgi navn og versjon for eget system ved oppretting av melding
 7. Verifiser at en ikke bruker ettstegs strategi for sending av små meldinger dersom en skal sende meldinger over 5mb
-8. Verifiser at en ikke utelukkende bruker supplerende webhook-abonnement for innkommende statuser
-9. Verifiser at en ikke utelukkende bruker supplerende webhook-abonnement for innkommende meldinger
+8. Verifiser at polling brukes ved mottak av innkommende statuser (webhook-abonnement er bare et supplement)
+9. Verifiser at polling brukes ved mottak av innkommende meldinger (webhook-abonnement er bare et supplement)
 10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
 11. Verifiser at en ikke behandler vellykket bekreftelse på at melding er sendt som at meldingen er levert vellykket
 
