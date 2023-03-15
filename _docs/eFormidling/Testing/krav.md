@@ -59,6 +59,9 @@ Disse kravene gjelder dersom taushetsbelagt saksbehandling støttes.
 
 | Krav | Må/bør/kan | Testbeskrivelse | Kommentar |
 | ---- | ---------- | --------------- | --------- |
+| Støtter sending av taushetsbelagt melding | Må | 1. Verifiser at sending av melding fungerer på samme måte som ved saksbehandling<br>2. Verifiser at det er mulig å oppgi varslingstekst for taushetsbelagt melding | |
+| Støtter mottak av taushetsbelagt melding | Må | 1. Verifiser at mottak av melding fungerer på samme måte som ved saksbehandling | |
+
 
 ## Vedtak og annen viktig informasjon til innbyggere
 
@@ -66,7 +69,14 @@ Disse kravene gjelder dersom vedtak og annen viktig informasjon til innbyggere s
 
 | Krav | Må/bør/kan | Testbeskrivelse | Kommentar |
 | ---- | ---------- | --------------- | --------- |
-
+| Støtter sending til mottakere med DPI | Må | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Verifiser at det er mulig å oppgi varslingstekst<br>3. Send melding til mottaker som bruker  DPI <br>4. Verifiser at meldingen blir markert som sendt i egen løsning<br>5. Verifiser at meldingen kommer frem til DPI<br>6. Verifiser at innholdet i DPI er som forventet<br>7. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning | Som over |
+| Støtter sending til mottakere med Altinn Digital Post (DPV) | Bør | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Verifiser at det er mulig å oppgi varslingstekst<br>3. Send melding til mottaker som bruker  DPV<br>4. Verifiser at meldingen blir markert som sendt i egen løsning<br>5. Verifiser at meldingen kommer frem til DPV<br>6. Verifiser at innholdet i DPV er som forventet<br>7. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning | Som over |
+| Støtter sending til mottakere med postadresse (print) | Bør | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til mottaker som verken bruker DPI eller  DPV<br>3. Verifiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til print<br>5. Verifiser at innholdet i print er som forventet<br>6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning | Som over |
+| Støtter sending til mottaker med postadresse (print) og ukjent fødselsnummer | Bør | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til annen mottaker som verken bruker DPI eller  DPV<br>3. Verifiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til print<br>5. Verifiser at innholdet i print er som forventet<br>6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning | Som over |
+| Støtter DPI-utvidelsen "lenke utenfor brev" | Kan | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til annen mottaker som bruker DPI<br>3. Verfiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til DPI<br>5. Verifiser at innholdet i meldingen er som forventet<br>6. Verifiser at lenke utenfor brev fungerer som forventet | |
+| Støtter DPI-utvidelsen "bevis" | Kan | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til annen mottaker som bruker DPI<br>3. Verfiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til DPI<br>5. Verifiser at innholdet i meldingen er som forventet<br>6. Verifiser at bevis fungerer som forventet | |
+| Støtter DPI-utvidelsen "arrangement" | Kan | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til annen mottaker som bruker DPI<br>3. Verfiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til DPI<br>5. Verifiser at innholdet i meldingen er som forventet<br>6. Verifiser at arrangement fungerer som forventet | |
+| Støtter konfigurasjon av avsenderidentifikator for DPI | Må | 1. Verifiser at det er mulig å konfigurere avsenderidentifikator for DPI | |
 
 ## Publisering av møte til eInnsyn
 
@@ -74,7 +84,7 @@ Disse kravene gjelder dersom publisering av møte til eInnsyn støttes.
 
 | Krav | Må/bør/kan | Testbeskrivelse | Kommentar |
 | ---- | ---------- | --------------- | --------- |
-
+| Støtter publisering av møte til eInnsyn | Må | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til eInnsyn<br>3. Verifiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til eInnsyn<br>5. Verifiser at innholdet i eInnsyn er som forventet<br>6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning | Som over |
 
 
 ## Publisering av journalpost til eInnsyn
@@ -83,6 +93,7 @@ Disse kravene gjelder dersom publisering av journalpost til eInnsyn støttes.
 
 | Krav | Må/bør/kan | Testbeskrivelse | Kommentar |
 | ---- | ---------- | --------------- | --------- |
+| Støtter publisering av journalpost til eInnsyn | Må | 1. Fyll inn ønsket metadata for melding i egen løsning<br>2. Send melding til eInnsyn<br>3. Verifiser at meldingen blir markert som sendt i egen løsning<br>4. Verifiser at meldingen kommer frem til eInnsyn<br>5. Verifiser at innholdet i eInnsyn er som forventet<br>6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning | Som over |
 
 # Mottak av innsynskrav fra eInnsyn
 
@@ -90,4 +101,4 @@ Disse kravene gjelder dersom mottak av innsynskrav fra eInnsyn støttes.
 
 | Krav | Må/bør/kan | Testbeskrivelse | Kommentar |
 | ---- | ---------- | --------------- | --------- |
-
+| Støtter mottak av innsynskrav fra eInnsyn | Må | 1. Send innsynskrav fra eInnsyn<br>2. Verifiser at innsynskravet kommer frem til egen løsning<br>3. Verifiser at innholdet i innsynskravet er som forventet | Som over |
