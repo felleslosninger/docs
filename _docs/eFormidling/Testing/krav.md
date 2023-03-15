@@ -63,17 +63,16 @@ Pass på at følgende kategorier feil håndteres:
 
 ### Produserer og konsumerer meldinger som forventet (MÅ)
 
-1. Verifiser at kommunikasjon fungerer også med andre løsninger enn sin egen
+1. Verifiser at kommunikasjon fungerer også med andre løsninger enn ens egen
 2. Verifiser at spesialtegn fungerer som forventet i titler, filnavn, osv
 3. Verifiser at begrensninger som lengder på tekstfelt fungerer som forventet
 4. Verifiser at sending og mottak fungerer når bare påkrevd informasjon er oppgitt
-5. Verifiser at sending og mottak det fungerer når all mulig informasjon er oppgitt
-6. Verifiser at det fungerer med ønska filstørrelser
-7. Verifiser at det fungerer med ønska filformat
-8. Verifiser at det produseres gyldig meldinger, både når all informasjon er oppgitt og når bare påkrevd informasjon er oppgitt
-9. Verifiser at utgående meldinger validerer
-10. Verifiser at det ikke er streng validering av innkommende meldinger og at en kan ta imot innhold med mangler
-11. Verifiser at en ikke sender filer med navn som inneholder tegn som ikke fungerer bra i filnavn, for eksempel kolon
+5. Verifiser at sending og mottak fungerer når all mulig informasjon er oppgitt
+6. Verifiser at kommunikasjon fungerer med ønskede filstørrelser
+7. Verifiser at kommunikasjon fungerer med ønskede filformat
+8. Verifiser at gyldige meldinger produseres både når all informasjon er oppgitt og når bare påkrevd informasjon er oppgitt
+9. Verifiser at innkommende meldinger ikke valideres strengt og at en kan ta imot innkommende meldinger med mangler
+10. Verifiser at en ikke sender filer med navn som inneholder tegn som ikke fungerer bra i filnavn, for eksempel kolon
 
 ## Krav til eventuell drift av integrasjonspunkt
 
