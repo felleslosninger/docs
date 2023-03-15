@@ -11,15 +11,15 @@ Formålet med denne siden er å gi en oversikt over krav til integrasjoner mot e
 1. TOC
 {:toc}
 
-## 1. Felleskrav
+## Felleskrav
 
 Disse kravene gjelder uavhengig av hvilke prosess(er) som støttes.
 
-### 1.1 Støtter visning av siste status for sendt melding (MÅ)
+### Støtter visning av siste status for sendt melding (MÅ)
 
 1. Verifiser at bruker som sendte meldingen kan se siste status for denne
 
-### 1.2 Støtter varsling av avsender for meldinger som får status feilet eller levetid utløpt (MÅ)
+### Støtter varsling av avsender for meldinger som får status feilet eller levetid utløpt (MÅ)
 
 1. Fyll inn utilstrekkelige eller feil  metadata for melding i egen løsning
 2. Send melding til annen mottaker som bruker eFormidling
@@ -32,14 +32,14 @@ Pass på at følgende kategorier feil håndteres:
 - asynkron feil, for eksempel dersom autentisering feiler mot aktuell meldingstjeneste
 - levetid utløpt, for eksempel dersom mottaker lar være/klarer ikkje behandle melding, send f.eks. til qa-integrasjonspunkt og vent til levetid utløper
 
-### 1.3 Støtter visning av sendte meldinger og status for disse (MÅ)
+### Støtter visning av sendte meldinger og status for disse (MÅ)
 
 1. Fyll inn utilstrekkelige eller feil  metadata for melding i egen løsning
 2. Send melding til annen mottaker som bruker eFormidling
 3. Verifiser at bruker selv kan vise en liste over forsendelser som har feilet
 4. Verifiser at den feilede meldingen er i denne listen
 
-### 1.4 Bruker grensesnittet eFormidling 2 som beskrevet i dokumentasjonen (MÅ)
+### Bruker grensesnittet eFormidling 2 som beskrevet i dokumentasjonen (MÅ)
 
 1. Verifiser at integrasjonspunktets API (eFormidling 2) brukes
 2. Verifiser at integrasjonspunktets gamle API (BEST/EDU) ikke brukes
@@ -53,15 +53,15 @@ Pass på at følgende kategorier feil håndteres:
 10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
 11. Verifiser at en ikke behandler vellykket bekreftelse på at melding er sendt som at meldingen er levert vellykket
 
-### 1.5 Dersom på-vegne-av brukes, så er dette oppsettet testet (MÅ)
+### Dersom på-vegne-av brukes, så er dette oppsettet testet (MÅ)
 
 1. Verifiser at aktuelle tester er gjennomført med på-vegne-av-oppsett
 
-### 1.6 Dersom kanal brukes, så er dette oppsettet testet (MÅ)
+### Dersom kanal brukes, så er dette oppsettet testet (MÅ)
 
 1. Verifiser at aktuelle tester er gjennomført med kanal-oppsett
 
-### 1.7 Produserer og konsumerer meldinger som forventet (MÅ)
+### Produserer og konsumerer meldinger som forventet (MÅ)
 
 1. Verifiser at kommunikasjon fungerer også med andre løsninger enn sin egen
 2. Verifiser at spesialtegn fungerer som forventet i titler, filnavn, osv
@@ -75,11 +75,11 @@ Pass på at følgende kategorier feil håndteres:
 10. Verifiser at det ikke er streng validering av innkommende meldinger og at en kan ta imot innhold med mangler
 11. Verifiser at en ikke sender filer med navn som inneholder tegn som ikke fungerer bra i filnavn, for eksempel kolon
 
-## 2 Krav til eventuell drift av integrasjonspunkt
+## Krav til eventuell drift av integrasjonspunkt
 
 Disse kravene gjelder eventuell drift av integrasjonspunkt.
 
-### 2.1 Har tilfredsstillende tilgangskontroll og sikring av grensesnitt, meldinger og hemmeligheter (MÅ)
+### Har tilfredsstillende tilgangskontroll og sikring av grensesnitt, meldinger og hemmeligheter (MÅ)
 
 1. Verifiser at installsjon og konfigurasjon er gjort i henhold til beskrivelser
 2. Verifiser at transport er tilstrekkelig sikret, f.eks. med hjelp av transportsikring
@@ -87,20 +87,20 @@ Disse kravene gjelder eventuell drift av integrasjonspunkt.
 4. Verifiser at hemmeligheter beskyttes tilfredsstillende, f.eks. med hjelp av Hashicorp Vault
 5. Verifiser at integrasjonspunktets grensesnitt bare er tilgjengelig for autoriserte brukere og system
 
-### 2.2 Har rutiner for å holde integrasjonspunktet oppdatert (MÅ)
+### Har rutiner for å holde integrasjonspunktet oppdatert (MÅ)
 
 1. Verifiser at det finnes en rutine for jevnlig oppdatering av integrasjonspunktet
 
-### 2.3 Har automatiserte rutiner for å holde integrasjonspunktet oppdatert (KAN)
+### Har automatiserte rutiner for å holde integrasjonspunktet oppdatert (KAN)
 
 1. Verifiser at automatisk oppdatering er konfigurert
 2. Verifiser at oppdateringstidspunkt er gjennomtenkt
 
-## 3. Saksbehandling
+## Saksbehandling
 
 Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) støttes.
 
-### 3.1 Støtter sending til mottakere med eFormidling (DPO) (MÅ)
+### Støtter sending til mottakere med eFormidling (DPO) (MÅ)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som bruker  eformidling
@@ -110,7 +110,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 7. Marker melding som lest i annen løsning (varierer fra løsning til løsning hvordan - f.eks. først ved tilordning av saksnummer)<br>8. Verifiser at meldingen blir markert som lest i egen løsning
 
-### 3.2 Støtter sending til mottakere med KS SvarUt/SvarInn (DPF) (MÅ)
+### Støtter sending til mottakere med KS SvarUt/SvarInn (DPF) (MÅ)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som bruker  KS SvarUt/SvarInn
@@ -121,7 +121,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 7. Marker melding som lest i annen løsning (varierer fra løsning til løsning hvordan - f.eks. først ved tilordning av saksnummer)
 8. Verifiser at meldingen blir markert som lest i egen løsning
 
-### 3.3 Støtter sending til mottakere med Altinn Digital Post (DPV) (MÅ)
+### Støtter sending til mottakere med Altinn Digital Post (DPV) (MÅ)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som bruker  Altinn Digital Post
@@ -132,7 +132,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 7. Marker melding som lest i annen løsning (varierer fra løsning til løsning hvordan - f.eks. først ved tilordning av saksnummer)
 8. Verifiser at meldingen blir markert som lest i egen løsning
 
-### 3.4 Støtter mottak fra avsendere med eFormidling (DPO) (MÅ)
+### Støtter mottak fra avsendere med eFormidling (DPO) (MÅ)
 
 1. Fyll inn ønsket metadata for melding i annen løsning som bruker eFormidling (husk 1.7)
 2. Send melding til mottaker som bruker egen løsning
@@ -142,7 +142,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 6. Verifisert at meldingen blir markert som mottat og etterhvert levert i annen løsning
 7. Marker melding som lest i egen løsning<br>8. Verifiser at meldingen blir markert som lest i annen løsning
 
-### 3.5 Støtter mottak fra avsendere med KS SvarUt/SvarInn (DPF) (MÅ)
+### Støtter mottak fra avsendere med KS SvarUt/SvarInn (DPF) (MÅ)
 
 1. Fyll inn ønsket metadata for melding i annen løsning som bruker SvarUt (husk 1.7)
 2. Send melding til mottaker som bruker egen løsning
@@ -153,7 +153,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 7. Marker melding som lest i egen løsning
 8. Verifiser at meldingen blir markert som lest i SvarUt
 
-### 3.6 Støtter å motta svar direkte på sak og journalpost (BØR)
+### Støtter å motta svar direkte på sak og journalpost (BØR)
 
 1. Fyll inn ønsket metadata for melding i egen løsning
 2. Send melding til annen mottaker som bruker eFormidling
@@ -161,7 +161,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 4. Svar på meldingen fra annen løsning
 5. Verifiser at svaret kommer frem til egen løsning, koblet til sak og journalpost som forventet
 
-### 3.7 Støtter å sende svar direkte til sak og journalpost (BØR)
+### Støtter å sende svar direkte til sak og journalpost (BØR)
 
 1. Fyll inn ønsket metadata for melding i annen løsning som bruker eFormidling
 2. Send melding til mottaker som bruker egen løsning
@@ -169,24 +169,24 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 4. Svar på meldingen fra egen løsning
 5. Verifiser at svaret kommer frem til annen løsning, koblet til sak og journalpost som forventet
 
-## 4. Taushetsbelagt saksbehandling
+## Taushetsbelagt saksbehandling
 
 Disse kravene gjelder dersom [taushetsbelagt saksbehandling](../Funksjonalitet/taushetsbelagt_saksbehandling) støttes.
 
-### 4.1 Støtter sending av taushetsbelagt melding (MÅ)
+### Støtter sending av taushetsbelagt melding (MÅ)
 
 1. Verifiser at sending av melding fungerer på samme måte som ved saksbehandling
 2. Verifiser at det er mulig å oppgi varslingstekst for taushetsbelagt melding
 
-### 4.2 Støtter mottak av taushetsbelagt melding (MÅ)
+### Støtter mottak av taushetsbelagt melding (MÅ)
 
 1. Verifiser at mottak av melding fungerer på samme måte som ved saksbehandling
 
-## 5 Vedtak til innbyggere
+## Vedtak til innbyggere
 
 Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_til_innbygger) støttes.
 
-### 5.1 Støtter sending til mottakere med DPI (MÅ)
+### Støtter sending til mottakere med DPI (MÅ)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Verifiser at det er mulig å oppgi varslingstekst
@@ -196,7 +196,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 6. Verifiser at innholdet i DPI er som forventet (husk 1.7)
 7. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 
-### 5.2 Støtter sending til mottakere med Altinn Digital Post (DPV) (BØR)
+### Støtter sending til mottakere med Altinn Digital Post (DPV) (BØR)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Verifiser at det er mulig å oppgi varslingstekst
@@ -206,7 +206,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 6. Verifiser at innholdet i DPV er som forventet (husk 1.7)
 7. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 
-### 5.3 Støtter sending til mottakere med postadresse (print) (BØR)
+### Støtter sending til mottakere med postadresse (print) (BØR)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til mottaker som verken bruker DPI eller DPV
@@ -215,7 +215,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 5. Verifiser at innholdet i print er som forventet (husk 1.7)
 6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 
-### 5.4 Støtter sending til mottaker med postadresse (print) og ukjent fødselsnummer (BØR)
+### Støtter sending til mottaker med postadresse (print) og ukjent fødselsnummer (BØR)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som verken bruker DPI eller DPV
@@ -224,7 +224,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 5. Verifiser at innholdet i print er som forventet (husk 1.7)
 6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 
-### 5.5 Støtter DPI-utvidelsen "lenke utenfor brev" (KAN)
+### Støtter DPI-utvidelsen "lenke utenfor brev" (KAN)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som bruker DPI
@@ -233,7 +233,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 5. Verifiser at innholdet i meldingen er som forventet (husk 1.7)
 6. Verifiser at lenke utenfor brev fungerer som forventet
 
-### 5.6 Støtter DPI-utvidelsen "bevis" (KAN)
+### Støtter DPI-utvidelsen "bevis" (KAN)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som bruker DPI
@@ -242,7 +242,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 5. Verifiser at innholdet i meldingen er som forventet (husk 1.7)
 6. Verifiser at bevis fungerer som forventet
 
-### 5.7 Støtter DPI-utvidelsen "arrangement" (KAN)
+### Støtter DPI-utvidelsen "arrangement" (KAN)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til annen mottaker som bruker DPI
@@ -251,15 +251,15 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 5. Verifiser at innholdet i meldingen er som forventet (husk 1.7)
 6. Verifiser at arrangement fungerer som forventet
 
-### 5.8 Støtter konfigurasjon av avsenderidentifikator for DPI (MÅ)
+### Støtter konfigurasjon av avsenderidentifikator for DPI (MÅ)
 
 1. Verifiser at det er mulig å konfigurere avsenderidentifikator for DPI
 
-## 6. Publisering av møte til eInnsyn
+## Publisering av møte til eInnsyn
 
 Disse kravene gjelder dersom [publisering av møte til eInnsyn](../Funksjonalitet/mote) støttes.
 
-### 6.1 Støtter publisering av møte til eInnsyn (MÅ)
+### Støtter publisering av møte til eInnsyn (MÅ)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til eInnsyn
@@ -268,11 +268,11 @@ Disse kravene gjelder dersom [publisering av møte til eInnsyn](../Funksjonalite
 5. Verifiser at innholdet i eInnsyn er som forventet (husk 1.7)
 6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 
-## 7. Publisering av journalpost til eInnsyn
+## Publisering av journalpost til eInnsyn
 
 Disse kravene gjelder dersom [publisering av journalpost til eInnsyn](../Funksjonalitet/journalpost) støttes.
 
-### 7.1 Støtter publisering av journalpost til eInnsyn (MÅ)
+### Støtter publisering av journalpost til eInnsyn (MÅ)
 
 1. Fyll inn ønsket metadata for melding i egen løsning (husk 1.7)
 2. Send melding til eInnsyn
@@ -281,11 +281,11 @@ Disse kravene gjelder dersom [publisering av journalpost til eInnsyn](../Funksjo
 5. Verifiser at innholdet i eInnsyn er som forventet (husk 1.7)
 6. Verifiser at meldingen blir markert som mottatt og etterhvert levert i egen løsning
 
-# 8. Mottak av innsynskrav fra eInnsyn
+## Mottak av innsynskrav fra eInnsyn
 
 Disse kravene gjelder dersom [mottak av innsynskrav fra eInnsyn](../Funksjonalitet/innsynskrav) støttes.
 
-### 8.1 Støtter mottak av innsynskrav fra eInnsyn (MÅ)
+### Støtter mottak av innsynskrav fra eInnsyn (MÅ)
 
 1. Send innsynskrav fra eInnsyn
 2. Verifiser at innsynskravet kommer frem til egen løsning
