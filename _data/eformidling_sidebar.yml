@@ -79,6 +79,8 @@ folders:
   folderitems:
     - title: Kom i gang med testing
       jurl: /docs/eFormidling/Testing/
+    - title: Krav og testbeskrivelser
+      jurl: /docs/eFormidling/Testing/krav
 - title: Selvhjelp
   folderitems:
     - title: Feilsøking
