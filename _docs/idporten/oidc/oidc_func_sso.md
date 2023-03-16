@@ -1,23 +1,44 @@
 ---
 title: SSO og SLO
 description: SSO og SLO
-summary: "Single Signon (SSO) og Single Logout (SLO) er støttet ved bruk av OIDC."
+summary: "ID-porten tilbyr Single Signon (SSO) og Single Logout (SLO)"
 
 sidebar: oidc
 product: ID-porten
 redirect_from: /oidc_func_sso
 ---
 
+
 ## Om funksjonaliteten
 
-ID-portens OIDC Provider er integrert med ID-porten SAML sin Circle-of-trust, og støtter både SSO og SLO mellom OIDC- og SAML-tjenester.
+
+ID-porten har siden oppstarten tilbudt single-signon (SSO), ved at alle tjenestene i føderasjonen tilhører samme Circle-of-Trust (CoT). Dette er en viktig funksjonalitet for å at innbygger skal ha en friksjonsfri opplevelse ved bruk av offentlige digitale tjenester, ved at man slipper hyppig re-autentisering.  Spesielt for samensatte tjenester, for eksempel såkalte lenketjenester, der innbygger "hopper" mellom ulike etater som del av en komplett tjenesteleveranse, er SSO en nøkkelfunksjonalitet.
+
+<div class="mermaid">
+graph LR
+  subgraph Digitaliseringsdirektoratet
+    IDP[ID-porten]
+    SAML[SAML-proxy]
+  end
+  subgraph Kunde
+     sp[SAML-tjeneste SP]
+     rp[OIDC-tjeneste RP]
+  end
+  rp --  OIDC  --- IDP
+  sp --  SAML2 ---SAML
+  SAML -- OIDC ---IDP
+</div>
+
+ID-porten tilbyr SSO mellom SAML og OIDC-integrasjoner.
 
 
 ## Single Signon (SSO)
 
-SSO-sesjonen blir styrt av ID-portens SAML-grensesnitt. Dette medfører at innbyggere kan få SSO ikke bare mellom OIDC-baserte tjenester, men også mellom OIDC og SAML2-baserte tjenester. En annen følge av gjenbruken, er at sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+SSO-sesjonen blir styrt av ID-porten OIDC-grensesnitt. Dette medfører at innbyggere kan få SSO ikke bare mellom OIDC-baserte tjenester, men også mellom OIDC og SAML2-baserte tjenester. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
 Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2)
+
+Det er også mulig å konfigurere en integrasjon til å bruke [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
 
 Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på utstedte tokens.
 

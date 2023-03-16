@@ -10,7 +10,7 @@ redirect_from: /oidc_arch
 
 ## Autentiseringstjenester i ID-porten
 
-Arkitekturen for  OIDC-funksjonaliteten i ID-porten  ser slik ut:
+Arkitekturen for ID-porten  ser slik ut:
 
 <div class="mermaid">
 graph LR
@@ -27,10 +27,7 @@ graph LR
   SAML -- OIDC ---IDP
 </div>
 
-ID-portens OIDC provider tilbyr **autentisering** av sluttbrukere opp mot netttjenester.  Funksjonaliteten er grunnleggende den samme som dagens SAML2-basert løsning.
-
-
-ID-portens OIDC Provider er en frittstående applikasjon som står foran den eksisterende ID-porten og snakker SAML2 med denne, tilsvarende eksisterende tjenester hos kundene.
+ID-porten tilbyr **autentisering** av sluttbrukere opp mot netttjenester.  
 
 Det er ID-porten som håndterer SSO-sesjoner både for SAML2 og OIDC.  Dette medfører at kunder får [single-signon (SSO)]({{site.baseurl}}/docs/idporten/oidc/oidc_func_sso) både mellom OIDC-baserte tjenester, og mellom SAML2- og OIDC-baserte tjenester.
 
