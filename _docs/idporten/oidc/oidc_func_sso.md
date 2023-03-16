@@ -16,28 +16,9 @@ ID-porten har siden oppstarten tilbudt single-signon (SSO), ved at alle tjeneste
 
 Like viktig som single singon er single logout.  Det er vesentlig for sikkerheten til innbygger at hen blir logget ut av alle tjenester når hen klikker logout. **En feilkonfigurert logout-håndtering hos én kunde kan ødelegge for utlogging hos andre kunder, og gjøre innbygger sårbar for angrep.**
 
-
-<div class="mermaid">
-graph LR
-  subgraph Digitaliseringsdirektoratet
-    IDP[ID-porten]
-    SAML[SAML-proxy]
-  end
-  subgraph Kunde
-     sp[SAML-tjeneste SP]
-     rp[OIDC-tjeneste RP]
-  end
-  rp --  OIDC  --- IDP
-  sp --  SAML2 ---SAML
-  SAML -- OIDC ---IDP
-</div>
-
-ID-porten tilbyr SSO mellom SAML og OIDC-integrasjoner.
-
-
 ## Single Signon (SSO)
 
-SSO-sesjonen blir styrt av ID-porten OIDC-grensesnitt. Dette medfører at innbyggere kan få SSO ikke bare mellom OIDC-baserte tjenester, men også mellom OIDC og SAML2-baserte tjenester. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er styrt av ident. men også mellom OIDC og SAML2-baserte tjenester. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
 Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2)
 
