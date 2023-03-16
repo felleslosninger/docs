@@ -1,7 +1,6 @@
 ---
 title: Integrasjonsguide - Autentisering i ID-porten over OpenID Connect
-description: Bruk av ID-porten sin OpenID Connect provider til autentisering med autorisasjonskode-flyten
-summary: "Autorisasjonskode-flyten er den vanlige flyten som blir brukt i OpenID Connect, og er anbefalt flyt for de fleste tjenester."
+description: Integrasjonsguide - Autentisering i ID-porten over OpenID Connect
 
 sidebar: oidc
 product: ID-porten
@@ -10,16 +9,16 @@ redirect_from: /oidc_guide_idporten
 
 ID-porten tilbyr funksjonalitet for autentisering av sluttbrukere basert på autorisasjonskode-flyten, slik den er spesifisert i OpenID Connect Core 1.0 spesifikasjonen.
 
-**Dette er den foretrukne flyten for de aller fleste tjenester** som skal bruke ID-porten som autentiseringstjeneste. Det kan finnes unntak, som for eksempel [Mobilapp'er](oidc/oidc_auth_app.html) eller [javascript-applikasjoner](oidc/oidc_guide_spa.html), som vil ha en litt annen måte å bruke denne flyten på.
+**Dette er den foretrukne flyten for de aller fleste tjenester** som skal bruke ID-porten som autentiseringstjeneste. Det kan finnes unntak, som for eksempel [mobilapp'er](oidc/oidc_auth_app.html) eller [javascript-applikasjoner](oidc/oidc_guide_spa.html), som vil ha en litt annen måte å bruke denne flyten på.
 
 ## Overordna beskrivelse av bruksområdet
 
-ID-porten tilbyr autentisering av brukere til sluttbrukertjenester. Autentiseringen blir utført av en OpenID Connect provider som utsteder ID Token til den aktuelle tjenesten.
+ID-porten tilbyr autentisering av brukere til sluttbrukertjenester. Autentiseringen blir utført av en OpenID Connect provider som utsteder ID-token til den aktuelle tjenesten.
 
 <div class="mermaid">
 graph LR
   end_user(Sluttbruker)
-  OP(OpenID Connect provider)
+  OP(ID-porten)
   RP(Nett-tjeneste)
   end_user -. autentiserer seg hos .-> OP
   OP -. utsteder id_token .-> RP
@@ -32,7 +31,7 @@ Følgende aktører inngår:
 | -|-|-|
 | Sluttbruker | Ønsker å logge inn til en offentlig tjeneste | End User |
 | Nett-tjeneste | Sluttbruker-tjeneste tilbudt av en offentlig etat | Relying Party (RP) / Client (=klient) |
-| ID-porten | ID-porten sin autentiseringstjeneste som usteder *ID Token* til aktuelle tjenesten| OpenID Provider (OP) |
+| ID-porten | ID-porten sin autentiseringstjeneste som usteder *ID-Token* til aktuelle tjenesten| OpenID Provider (OP) |
 
 ## Beskrivelse av autorisasjonskode-flyten
 
@@ -49,14 +48,14 @@ sequenceDiagram
   note over Sluttbruker,Relying Party: Innlogget i tjenesten
 </div>
 
-* Flyten starter med at en sluttbruker prøver å aksessere en gitt tjeneste ( relying party )
+* Flyten starter med at en sluttbruker prøver å aksessere en gitt tjeneste ( Relying Party )
 * Tjenesten krever innlogging og en redirect url til OpenID Connect provideren blir generert og returnert til sluttbrukeren. Denne redirecten representerer en [**autentiseringsforespørsel**]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_authorize.html), og har parametere som identifiserer den aktuelle tjenesten for provideren.
 * Sluttbrukers browser kommer til **autorisasjonsendepunktet** hos provideren hvor forespørselen blir validert (f.eks. gyldig tjeneste og gyldig redirect_uri tilbake til tjenesten).
 * Brukeren gjennomfører **innlogging i provideren**
 * Provideren redirect'er brukeren tilbake til tjenestens forhåndsregistrere redirect url med en **autorisasjonskode**.
-* Tjenesten bruker den mottatte autorisasjonskoden til å gjøre et direkteoppslag mot providerens [**token-endepunkt**]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token.html). Tjenesten må autentisere seg mot token-endepunktet (enten med client_secret eller en signert forespørsel)
-* Dersom tjenesten kan autentiseres, valideres den mottatte autorisasjonskoden og et **ID token** blir returnert til tjenesten.
-* Tjenesten omsetter normalt id_tokenet til en egen, lokal sesjon
+* Tjenesten bruker den mottatte autorisasjonskoden til å gjøre et direkteoppslag mot providerens [**token-endepunkt**]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token.html). Tjenesten må autentisere seg mot token-endepunktet, såkalt *klient-autentisering* (enten med client_secret eller en signert forespørsel)
+* Dersom klient-autentiseringen var velykket, valideres den mottatte autorisasjonskoden og et **ID-token** blir returnert til tjenesten.
+* Tjenesten omsetter normalt ID-tokenet til en egen, lokal sesjon.
 * Brukeren er nå autentisert for tjenesten og ønsket handling kan utføres
 
 Merk: OpenID Connect bygger på OAuth2, og denne flyten er derfinert i OAuth2-spesifikasjonen. Siden *autentisering* ikke er et begrep i OAuth2 vil en ofte se at begrepet *autorisasjon* blir brukt selv om man egentlig snakker om *autentisering*
@@ -66,24 +65,49 @@ Merk: OpenID Connect bygger på OAuth2, og denne flyten er derfinert i OAuth2-sp
 
 Merk: Kunde og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Men Digitaliseringsdirektoratet anbefaler at kundene bruker samme sesjonstider som ID-porten.
 
-ID-porten sender ikke en forespørsel om utlogging til kunden når en sesjon timer ut pga total lengde eller inaktivitet. Forespørsel om utlogging sendes bare når en bruker foretar en eksplisitt utlogging (ved å klikke på logout-knappen hos en tjeneste innenfor Circle of Trust). En slik forespørsel om utlogging fra ID-porten må resultere i en utlogging fra kunden, ellers vil SingleLogout-mekanismen bli kompromittert.
 
-### Levetid for Sesjoner
+### Levetid for SSO-sesjonen i ID-porten
+
+I ID-porten måles maksimum sesjonstid for en brukers SSO-sesjon og denne settes til 120 minutter fra første autentisering.
+
+Ved inaktivitet over 30 minutter, vil SSO-sesjonen utløpe.  Inaktivet måles som tiden mellom to autentiseringsforespørsler mot ID-porten.
+
+Merk at ved passivt utløp av sesjon så vil det ikke bli sendt noen kall til kundens tjeneste.
+
+Merk: id_tokenet returnert fra ID-porten vil inneholde en "expire (exp)" verdi. Denne verdien angir kun levetid for selve tokenet, dvs. en klient skal ikke akseptere et id_token etter at det utløpt. Denne verdien er ikke koblet mot den SSO-sesjonen hos ID-porten og gir ingen indikasjon på levetid på denne.
+
+### Levetid for kundens lokale sesjon
 
 I en føderasjon skal medlemmene konfigurere systemene slik at sesjoner utløper ved inaktivitet etter høyst 30 minutter.
 
-I ID-porten måles maksimum sesjonstid for en brukers sesjon og denne settes til 120 minutter.
+Det er valgfritt om timeout-perioden nullstilles hver gang brukerens nettleser forespør en av kundens tjeneste, eller om den er uavhengig av brukeraktivitet (fast timeout periode).
 
-Det er valgfritt om timeout-perioden nullstilles hver gang brukerens nettleser forespør en av tjenesteleverandørs tjeneste, eller om den er uavhengig av brukeraktivitet (fast timeout periode).
+Etter lokal timeout hos en kunde, skal brukerens nettleser ved neste http-forespørsel sendes over til ID-porten med en autentiseringsforespørsel.
 
-Etter timeout hos en tjenesteleverandør, skal brukerens nettleser ved neste http-forespørsel sendes over til ID-porten med en autentiseringsforespørsel.
+Det må bemerkes at lokal timeout hos en kunde ikke nødvendigvis medfører at brukeren blir tvunget til å logge på ID-porten. Hvis brukeren har en aktiv SSO-sesjon hos ID-porten, kan denne svare på forespørselen fra kunde uten brukerdialog (dvs. foreta single sign-on). Brukeren vil dermed ikke oppdage at sesjonen blir fornyet (bortsett fra at hans nettleser muligens ”blinker” et kort øyeblikk).
 
-Det må bemerkes at timeout hos en tjenesteleverandør ikke nødvendigvis medfører at brukeren blir tvunget til å logge på ID-porten. Hvis brukeren har en aktiv sesjon hos ID-porten, kan denne svare på forespørselen fra tjenesteleverandør uten brukerdialog (dvs. foreta single sign-on). Brukeren vil dermed ikke oppdage at sesjonen blir fornyet (bortsett fra at hans nettleser muligens ”blinker” et kort øyeblikk).
+### Tvungen re-autentisering
 
-Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at brukeren blir tvunget til aktiv pålogging i ID-porten, kan man sette parameteren prompt=login i autentiseringsforespørselen til ID-porten.  Det er også mulig å konfigurere tjenesten sin slik at den ikke deltar i felles SSO-sesjon (se [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_ssofri.html)).
+Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at brukeren blir tvunget til aktiv pålogging i ID-porten, kan man sette parameteren prompt=login i autentiseringsforespørselen til ID-porten.  
 
-Merk: id_tokenet returnert fra ID-porten vil inneholde en "expire (exp)" verdi. Denne verdien angir kun levetid for selve tokenet, dvs. en klient skal ikke akseptere et id_token etter at det utløpt. Denne verdien er ikke koblet mot den sentrale sesjonen hos id_porten og gir ingen indikasjon på levetid på denne.
+Det er også mulig å konfigurere tjenesten sin slik at den ikke deltar i felles SSO-sesjon (se [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso.html)).
 
+
+### Krav til utlogging
+
+ID-porten tilbyr single signon-funksjonalitet (SSO) mellom alle integrerte tjenester.  **Derfor må alle tjenester også implementere støtte for single logout (SLO).**
+
+
+**En feilkonfigurert logout-håndtering hos én kunde kan ødelegge for utlogging hos andre kunder, og gjøre innbygger sårbar for angrep.**
+
+Klienten må håndtere to forskjellige utloggings-scenarier:
+
+1. **Brukeren logger ut fra din tjeneste:**  Du må redirecte brukeren til /endsession-endepunktet til ID-porten.  ID-porten sørger for å logge brukeren ut av alle andre tjenester, og redirecter til slutt brukeren tilbake til deg.
+
+2. **Brukeren logger ut fra annen tjeneste:** Du vil motta en front_channel_logout-melding med en sesjonsidentifikator `sid` som du tidligere har mottatt i id_token. Basert på denne må du finne lokal brukersesjon og invalidere denne.
+
+
+[Se full dokumentasjon om utlogging her]({{site.baseurl}}/docs/idporten/oidc/oidc_func_sso).
 
 
 ## 1: Autentiseringsforespørsel til autorisasjons-endepunktet
@@ -253,15 +277,3 @@ Respons:
 ## 5: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
 
 Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt]({{site.baseurl}}/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest) dersom access_token inneholder `krr:user/kontaktinformasjon.read`-scopet.
-
-## 6: Utlogging
-
-ID-porten tilbyr single signon-funksjonalitet (SSO) mellom alle integrerte tjenester.  **Derfor må alle tjenester også implementere støtte for single logout (SLO).**
-
-Klienten må håndtere to forskjellige utloggings-scenarier:
-
-1. **Brukeren logger ut fra din tjeneste:**  Du må redirecte brukeren til /endsession-endepunktet til ID-porten.  ID-porten sørger for å logge brukeren ut av alle andre tjenester, og redirecter til slutt brukeren tilbake til deg.
-
-2. **Brukeren logger ut fra annen tjeneste:** Du vil motta en front_channel_logout-melding med en sesjons-identifikator `sid` som du tidligere har mottatt i id_token. Basert på denne må du finne lokal brukersesjon og invalidere denne.
-
-[Se full dokumentasjon om utlogging her]({{site.baseurl}}/docs/idporten/oidc/oidc_func_sso).

@@ -14,6 +14,9 @@ redirect_from: /oidc_func_sso
 
 ID-porten har siden oppstarten tilbudt single-signon (SSO), ved at alle tjenestene i føderasjonen tilhører samme Circle-of-Trust (CoT). Dette er en viktig funksjonalitet for å at innbygger skal ha en friksjonsfri opplevelse ved bruk av offentlige digitale tjenester, ved at man slipper hyppig re-autentisering.  Spesielt for samensatte tjenester, for eksempel såkalte lenketjenester, der innbygger "hopper" mellom ulike etater som del av en komplett tjenesteleveranse, er SSO en nøkkelfunksjonalitet.
 
+Like viktig som single singon er single logout.  Det er vesentlig for sikkerheten til innbygger at hen blir logget ut av alle tjenester når hen klikker logout. **En feilkonfigurert logout-håndtering hos én kunde kan ødelegge for utlogging hos andre kunder, og gjøre innbygger sårbar for angrep.**
+
+
 <div class="mermaid">
 graph LR
   subgraph Digitaliseringsdirektoratet

@@ -29,7 +29,7 @@ For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende
       * Noen IAM-produkter vil da automatisk laste ned oppdaterte metadata og etablere trust til det nye sertifikatet vårt.
       *  Dersom dette steget ikke går automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust.
 3. Konfigurere din integrasjon til å bruke PKCE
-4. Endre egen kode til å validere de nye verdiene for sikkerhetsnivå (`idporten-loa-*`) 
+4. Endre egen kode til å validere de nye verdiene for sikkerhetsnivå (`idporten-loa-*`)
 
 
 #### B: Kunde har SAML-integrasjon idag
@@ -154,6 +154,8 @@ Ved bruk av pushed authorization request, må `client_id` angis i tilegg til `re
 I ny løsning vil det bli tilbudt en rudimentær SAML-støtte, hvis formål kun er å videreføre eksisterende integrasjoner. Vi vil lage en enkel SAML-til-OIDC-proxy, som vi plasser foran ny OIDC-issuer.
 
 Denne vil støtte SAML Web Browser SSO 2.0 med Artifact Resolution-binding.  Det vil bare være støtte for 1 AssertionConsumerURL, og ett kombinert signerings- og krypteringssertifikat.
+
+Det vil ikke lenger utleveres kontaktopplysninger fra KRR som del av Assertion.
 
 Vi vil ikke støtte oppdatering av SAML-metadata, slik at når en kunde sine metadata går ut (typisk ved utløp av virksomhetssertifiktat), forventer vi at integrasjonen i stedet blir skrevet om til å bruke OIDC.
 

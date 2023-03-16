@@ -8,28 +8,41 @@ product: ID-porten
 redirect_from: /oidc_arch
 ---
 
-## Autentiseringstjenester i ID-porten
 
-Arkitekturen for ID-porten  ser slik ut:
+Arkitekturen for ID-porten ser slik ut:
 
-<div class="mermaid">
 graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
     SAML[SAML-proxy]
+    SADM[Selvbetjening <br/> klientregistrering]
   end
   subgraph Kunde
-     sp[SAML-tjeneste SP]
-     rp[OIDC-tjeneste RP]
+     sp[SAML-tjeneste <br/> Service Provider]
+     rp[OIDC-tjeneste <br/> Relying Party]
+     adm[Administrator]
   end
-  rp --  OIDC  --- IDP
+  rp --  OIDC  ---IDP
   sp --  SAML2 ---SAML
   SAML -- OIDC ---IDP
-</div>
+  adm -- utfører ---SADM
+  SADM -- synkronisering 5 min --->IDP
 
-ID-porten tilbyr **autentisering** av sluttbrukere opp mot netttjenester.  
+  Innbygger -- bruker --- sp
+  Innbygger -- bruker --- rp
 
-Det er ID-porten som håndterer SSO-sesjoner både for SAML2 og OIDC.  Dette medfører at kunder får [single-signon (SSO)]({{site.baseurl}}/docs/idporten/oidc/oidc_func_sso) både mellom OIDC-baserte tjenester, og mellom SAML2- og OIDC-baserte tjenester.
+Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
+
+[SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokolle.
+
+Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web)
+ til å registrere og vedlikeholde kundens integrasjoner.
+
+## Autentiseringstjenester i ID-porten
+
+ID-porten tilbyr **autentisering** av sluttbrukere opp mot nett-tjenester.  
+
+Kunden kan velge mellom SAML2-protokollen og OIDC-protokollen når de skal koble seg mot ID-porten.  Alle tjenester deltar i en felles Circle-of-trust med single signon (SSO) seg imellom.
 
 ## Autorisasjonstjenester
 
