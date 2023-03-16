@@ -57,22 +57,22 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | claim | verdi |
 | --- | --- |
 | kid | "Key identifier" - unique identifier for the key and certificate used by ID-porten. The public key and the certificate must be fetched from our .well-known endpoint. |
-| alg | "algorithm" - algorithm used for signing the token. Supported values are published on the .well-known endpoint.  |
+| alg | "algorithm" - algorithm used for signing the token. ID-porten only supports `RS256` (RSA-SHA256) |
 
 **id_token body claims**
 
 
 | claim | value |
 | --- | --- |
-| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)|
-| aud | "audience" - The client_id of the client receiving this id_token  |
 | sub | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.  |
-| pid | OPTIONAL: "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user. |
-| acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values documented below.  The level must be validated by the client. |
-| amr | "Authentication Method References" - Method of authentication. Possible values can be seen below.  The available values may change over time, so the client should not validate this value. |
+| aud | "audience" - The client_id of the client receiving this id_token  |
+| acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values are `Level3` (i.e.  MinID was used) or `Level4` (other eIDs). The level must be validated by the client. |
 | auth_time | Timestamp indicating when the authentication was performed.  |
-| iat | Timestamp when this token was issued. If different from `auth_time`, this indicates a federated/sso login. |
+| amr | "Authentication Method References" - Method of authentication. Possible values can be seen below.  The available values may change over time, so the client should not validate this value. |
+| iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)|
+| pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   This claim is not included if `no_pid` scope was requested or pre-registered on the client. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
+| iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
 | locale | The language selected by the user during the authentication in ID-porten |
 | sid | session id - an unique identifier for end user session at ID-porten. May be needed when performing logout |
@@ -94,21 +94,4 @@ Authentication method can have the following values:
 |`Buypass`      | Buypass |
 |`Commfides` | Commfides using smartcard |
 |`eIDAS`  | A European approved eID through the eIDAS network|
-|`TestID` |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
-
-
-## ACR values
-
-The security level of assurance can have the following values:
-
-|`amr` value| Description|
-|-|-|
-|`idporten-loa-low` | A "low" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
-|`idporten-loa-substantial` | A "substantial" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
-|`idporten-loa-high` | A "high" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
-
-These values was changed i 2023 to comply with the updated Norwegian legal framework introduced in 2018, see [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992).
-
-The actual values are inspired from [the IANA registry of Level-of-assurance profiles](https://www.iana.org/assignments/loa-profiles/loa-profiles.xhtml), ie. comprised of `<legal framework>-<loa level>`.
-
-If more eIDs and LoAs should be added in the future, ID-porten will strive to use the same level postfix for eIDs we consider having the more-or-less the same level even if the legal frameworks are different. As an example: most public agencies will consider an eIDAS-notified eID on `eidas-loa-high` legally comparable to a Norwegian `idporten-loa-high`, and can thus in their validation logic only validate on the `-high` postfix.
+|`TestId` |  An eID for testing purposes. NOT USED IN PRODUCTION.  |

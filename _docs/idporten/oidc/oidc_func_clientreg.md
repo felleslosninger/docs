@@ -40,10 +40,10 @@ Det som støttes foreløpig er:
 | Integrasjonstype |Beskrivelse|
 |-|-|
 |idporten   | Ordinær innlogging gjennom ID-porten  |
+|api_klient    | ID-porten integrasjoner som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
 |krr   | Kontaktregisteret   |
 |eformidling    | for eFormidling  |
-|api_klient    | For tjenester som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
 
 Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 
@@ -74,7 +74,8 @@ Alt etter bruksområde, så tilbyr vi forskjellige metoder for autentisering av 
 | Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg. Maks tillatt levetid er satt til 1 år.  For å få lov til å registere slike klienter, må kunden etablere en [egen  selvbetjeningsapplikasjon]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin) (som selv må bruke virksomhetssertifikat) |
 | Ingen   | none  | Klienten er en såkalt *public*-klient som ikke kan beskytte en hemmelighet på en tilfredstillende måte.  Gjelder single-page-applikasjon og i noen tilfeller mobil-apper  |
 
- Digitaliseringsdirektoratet anbefaler bruk av virksomhetssertifikat til klientautentisering,  da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.   
+ Digitaliseringsdirektoratet anbefaler bruk av asymetriske nøkler `private_key_jwt` til klientautentisering over statiske hemmeligheter. Enten å bruke virksomhetssertifikat, da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.  Dersom organisasjonen har høy modenhet, kan også egen-genererte asymmetriske nøkler anbefales.
+ `client_secret_basic` bør unngås til fordel for `client_secret_post` eller helst `client_secret_jwt`.
 
  Digitaliseringsdirektoratet forutsetter at API-tilbyder og API-konsument håndterer sertifikat og nøkler på en måte som sikrer at ikke uvedkommende kan misbruke disse.
 

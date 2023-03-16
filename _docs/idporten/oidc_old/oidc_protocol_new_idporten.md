@@ -140,8 +140,6 @@ The new ID-porten will only offer a very basic SAML-support, only to existing se
 
 The SAML proxy will support SAML Web Browser SSO 2.0 with Artifact Resolution binding. It will support only 1 AssertionConsumerURL and 1 combined signing- og encryption certificate.
 
-Contact details (email/mobile) will no longer be included as part of the Assertion.
-
 Updating the SAML-metadata will not be available. When the metadata expires (e.g. when the certificate expires), we expect that our customers starts using OIDC instead of SAML.
 
 SAML will be phased out completely.

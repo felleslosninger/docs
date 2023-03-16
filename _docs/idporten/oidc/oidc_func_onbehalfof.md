@@ -10,10 +10,12 @@ redirect_from: /oidc_func_onbehalfof
 
 ## Om funksjonaliteten
 
-*Onbehalfof* gjer det mogleg for tjenesteleverandørar å tilby tjenester til ulike tjenesteeiere over samme føderasjon.
+*Onbehalfof* gjer det mogleg for tjenesteleverandørar å tilby tjenester til ulike kunder over same integrasjon.
 
 * Gir mulighet til å ha ulike navn, logo og tilbake-url
 * Statistikk / fakturering går til riktig tjenesteeier
+
+Merk at en onbehalfof-integrasjon IKKE gir tilgang til scopes som egen kunde har fått tilgang til.
 
 ## Bruk
 

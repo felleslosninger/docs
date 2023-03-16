@@ -1,23 +1,28 @@
 ---
 title: SSO og SLO
 description: SSO og SLO
-summary: "Single Signon (SSO) og Single Logout (SLO) er støttet ved bruk av OIDC."
+summary: "ID-porten tilbyr Single Signon (SSO) og Single Logout (SLO)"
 
 sidebar: oidc
 product: ID-porten
 redirect_from: /oidc_func_sso
 ---
 
+
 ## Om funksjonaliteten
 
-ID-portens OIDC Provider er integrert med ID-porten SAML sin Circle-of-trust, og støtter både SSO og SLO mellom OIDC- og SAML-tjenester.
 
+ID-porten har siden oppstarten tilbudt single-signon (SSO), ved at alle tjenestene i føderasjonen tilhører samme Circle-of-Trust (CoT). Dette er en viktig funksjonalitet for å at innbygger skal ha en friksjonsfri opplevelse ved bruk av offentlige digitale tjenester, ved at man slipper hyppig re-autentisering.  Spesielt for samensatte tjenester, for eksempel såkalte lenketjenester, der innbygger "hopper" mellom ulike etater som del av en komplett tjenesteleveranse, er SSO en nøkkelfunksjonalitet.
+
+Like viktig som single singon er single logout.  Det er vesentlig for sikkerheten til innbygger at hen blir logget ut av alle tjenester når hen klikker logout. **En feilkonfigurert logout-håndtering hos én kunde kan ødelegge for utlogging hos andre kunder, og gjøre innbygger sårbar for angrep.**
 
 ## Single Signon (SSO)
 
-SSO-sesjonen blir styrt av ID-portens SAML-grensesnitt. Dette medfører at innbyggere kan få SSO ikke bare mellom OIDC-baserte tjenester, men også mellom OIDC og SAML2-baserte tjenester. En annen følge av gjenbruken, er at sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er styrt av ident. men også mellom OIDC og SAML2-baserte tjenester. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
 Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2)
+
+Det er også mulig å konfigurere en integrasjon til å bruke [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
 
 Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på utstedte tokens.
 
@@ -84,7 +89,7 @@ Dersom en klient ikke er konfigurert med Front Channel Logout, vil klienten ikke
 Eksempel på kall fra ID-porten til klient:
 ```
 GET https://client.example.com/myapp/logout
-     ?iss=https://oidc-ver2.difi.no/idporten-oidc-provider/
+     ?iss=https://test.idporten.no/
      &sid=D8Fgz-jEXG7JXP_VAORmAm1sKB0LjZyA3wAy-rVyMYc=
 ```
 `sid` er ID-porten OIDC sin sesjons-id som klient også har mottatt som claim i id-token.
@@ -96,38 +101,4 @@ Front-channel logout i ID-porten er basert på  [OIDC Front Channel Logout](http
 
 ## Samspill mellom SAML SLO og OpenID Connect SLO
 
-ID-porten OIDC provider er integrert med ID-porten via SAML.  
-
-Dersom en tjenesteeier starter SAML SLO, vil ID-porten OIDC Provider delta i SAML SLO. ID-porten OIDC Provider finner alle klienter i samme sesjon, og sender melding til de av klientene som støtter Front Channel Logout. Deretter sendes brukeren tilbake til ID-porten, for avsluttende redirect tilbake til tjenesteeieren som startet SAML SLO.
-
-Dersom en tjenesteeier starter utlogging med OIDC endsession, vil ID-porten sende melding til de av klientene som støtter Front Channel Logout.  Den vil også sende beskjed om SAML utlogging til ID-porten.  Avslutningsvis vil det sendes en redirect til OIDC-klienten, dersom denne er konfigurert for det.
-
-
-### Eksempel på SLO-utlogging startet fra OIDC-tjeneste
-
-<div class="mermaid">
-sequenceDiagram
-	Initierende tjeneste OIDC ->> ID_porten OIDC: /endsession
-	ID_porten OIDC ->> OIDC tjenester : GET frontchannel_logout_uri
-
-	ID_porten OIDC ->> ID_porten SAML: LogoutRequest
-	ID_porten SAML ->> SAML tjenester: LogoutRequest
-	SAML tjenester ->> ID_porten SAML: LogoutResponse
-	ID_porten SAML ->> ID_porten OIDC: LogoutResponse
-	ID_porten OIDC ->> Initierende tjeneste OIDC: redirect post_logout_redirect_uri
-
-</div>
-
-### Eksempel på SLO-utlogging startet fra SAML-tjeneste
-
-<div class="mermaid">
-sequenceDiagram
-	Initierende tjeneste SAML ->> ID_porten SAML: LogoutRequest
-	ID_porten SAML ->> ID_porten OIDC: LogoutRequest
-	ID_porten OIDC ->> OIDC tjenester : GET frontchannel_logout_uri
-	ID_porten OIDC ->> ID_porten SAML: LogoutResponse
-	ID_porten SAML ->> SAML tjenester: LogoutRequest
-	SAML tjenester ->> ID_porten SAML: LogoutResponse
-	ID_porten SAML ->> Initierende tjeneste SAML: LogoutResponse
-
-</div>
+For Nye ID-porten så er ikke dette ferdig spesifisert ennå.

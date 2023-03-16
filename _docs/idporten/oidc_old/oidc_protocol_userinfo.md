@@ -16,7 +16,11 @@ Note that ID-porten does not contain any useful additional information about the
 
 ## Request
 
-All clients can request the *profile* scope and will get an access_token that can be used to call the userinfo-endpoint.  The location of the endpoint is publised [in the metadata]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown) as the claim `userinfo_endpoint`.
+All clients can request the *profile* scope and will get an access_token that can be used to gain additional user information.
+
+```
+URL: https://<<miljø>>/idporten-oidc-provider/userinfo
+```
 
 The following header parameters apply:
 
@@ -32,7 +36,7 @@ The response is a JSON structure with claims:
 |Claim|Description
 |-|-|
 |sub   | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.   |
-|pid   |Norwegian national id number - always present unless a pseudonymous scope was requested. |
+|pid   |Norwegian national id number - always present unless the 'no_pid' scope was request / pre-registered on the client  |
 |locale| The language used during authentication|
 
 ```

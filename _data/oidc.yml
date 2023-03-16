@@ -6,136 +6,135 @@ folders:
   folderitems:
 
       - title: Overordnet arkitektur
-        jurl: /docs/idporten/idporten/idporten_overordnet
-
-      - title: OIDC i ID-porten
-        jurl: /docs/idporten/oidc/
+        jurl: /docs/idporten/idporten/idporten_overordnet.html
 
       - title: Getting started
-        jurl: /docs/idporten/oidc/oidc_guide_english
+        jurl: /docs/idporten/oidc/oidc_guide_english.html
 
       - title: Logo
-        jurl: /docs/idporten/idporten/idporten_logo
+        jurl: /docs/idporten/idporten/idporten_logo.html
+
 - title: Bruksområder og guide
   folderitems:
 
       - title: Innlogging til webtjeneste
-        jurl: /docs/idporten/oidc/oidc_guide_idporten
+        jurl: /docs/idporten/oidc/oidc_guide_idporten.html
 
       - title: Innlogging til SPA
-        jurl: /docs/idporten/oidc/oidc_auth_spa
+        jurl: /docs/idporten/oidc/oidc_auth_spa.html
 
       - title: Innlogging til mobilapp
-        jurl: /docs/idporten/oidc/oidc_auth_app
+        jurl: /docs/idporten/oidc/oidc_auth_app.html
 
       - title: Innlogging til tykke klienter
-        jurl: /docs/idporten/oidc/oidc_auth_sbs
+        jurl: /docs/idporten/oidc/oidc_auth_sbs.html
 
       - title: Brukerstyrt datadeling
-        jurl: /docs/idporten/oidc/oidc_auth_oauth2
+        jurl: /docs/idporten/oidc/oidc_auth_oauth2.html
 
       - title: Ansattporten
-        jurl: /docs/idporten/oidc/ansattporten_guide
+        jurl: /docs/idporten/oidc/ansattporten_guide.html
 
       - title: ID-porten utland
-        jurl: /docs/idporten/oidc/oidc_func_idporten-utland
+        jurl: /docs/idporten/oidc/oidc_func_idporten-utland.html
 
 
 - title: Grensesnittsdefinisjon
   folderitems:
 
       - title: "Endringer i 2022"
-        jurl: /docs/idporten/oidc/oidc_protocol_nye_idporten
+        jurl: /docs/idporten/oidc/oidc_protocol_nye_idporten.html
       - title: "/authorize"
-        jurl: /docs/idporten/oidc/oidc_protocol_authorize
+        jurl: /docs/idporten/oidc/oidc_protocol_authorize.html
       - title: "/par"
-        jurl: /docs/idporten/oidc/oidc_protocol_par
+        jurl: /docs/idporten/oidc/oidc_protocol_par.html
       - title: "/token"
-        jurl: /docs/idporten/oidc/oidc_protocol_token
+        jurl: /docs/idporten/oidc/oidc_protocol_token.html
       - title: "ID token"
-        jurl: /docs/idporten/oidc/oidc_protocol_id_token
+        jurl: /docs/idporten/oidc/oidc_protocol_id_token.html
       - title: "Access token"
-        jurl: /docs/idporten/oidc/oidc_protocol_access_token
+        jurl: /docs/idporten/oidc/oidc_protocol_access_token.html
       - title: "/tokeninfo"
-        jurl: /docs/idporten/oidc/oidc_protocol_tokeninfo
+        jurl: /docs/idporten/oidc/oidc_protocol_tokenintrospect.html
       - title: "/userinfo"
-        jurl: /docs/idporten/oidc/oidc_protocol_userinfo
+        jurl: /docs/idporten/oidc/oidc_protocol_userinfo.html
+      - title: "/revoke"
+        jurl: /docs/idporten/oidc/oidc_protocol_revoke.html
       - title: "JWT grants"
-        jurl: /docs/idporten/oidc/oidc_protocol_jwtgrant
+        jurl: /docs/idporten/oidc/oidc_protocol_jwtgrant.html
       - title: "API scopes"
-        jurl: /docs/idporten/oidc/oidc_protocol_scope
+        jurl: /docs/idporten/oidc/oidc_protocol_scope.html
       - title: Systemarkitektur
-        jurl: /docs/idporten/oidc/oidc_arch
+        jurl: /docs/idporten/oidc/oidc_arch.html
 
 - title: Funksjonalitet
   folderitems:
 
       - title: Metadata
-        jurl: /docs/idporten/oidc/oidc_func_wellknown
+        jurl: /docs/idporten/oidc/oidc_func_wellknown.html
 
       - title: Klientregistrering
-        jurl: /docs/idporten/oidc/oidc_func_clientreg
+        jurl: /docs/idporten/oidc/oidc_func_clientreg.html
 
       - title: Single sign-on og -logout
-        jurl: /docs/idporten/oidc/oidc_func_sso
+        jurl: /docs/idporten/oidc/oidc_func_sso.html
+
+      - title: SSO-fri innlogging
+        jurl: /docs/idporten/oidc/oidc_func_nosso.html
 
       - title: Audience-begrensning
-        jurl: /docs/idporten/oidc/oidc_func_aud
+        jurl: /docs/idporten/oidc/oidc_func_aud.html
 
       - title: PKCE
-        jurl: /docs/idporten/oidc/oidc_func_pkce
+        jurl: /docs/idporten/oidc/oidc_func_pkce.html
 
       - title: OnBehalfOf
-        jurl: /docs/idporten/oidc/oidc_func_onbehalfof
+        jurl: /docs/idporten/oidc/oidc_func_onbehalfof.html
 
       - title: Pseudonymisert innlogging
-        jurl: /docs/idporten/oidc/oidc_func_nopid
+        jurl: /docs/idporten/oidc/oidc_func_nopid.html
 
       - title: eIDAS
-        jurl: /docs/idporten/oidc/oidc_func_eidas
+        jurl: /docs/idporten/oidc/oidc_func_eidas.html
 
-      - title: idporten-utland
-        jurl: /docs/idporten/oidc/oidc_func_idporten-utland
-
-
-      - title: Innbyggers innloggingsnivå
-        jurl: /docs/idporten/oidc/oidc_api_authlevel
+      - title: SAML
+        jurl: /docs/idporten/oidc/oidc_func_saml.html
 
       - title: Innbyggers innloggingshistorikk
-        jurl: /docs/idporten/oidc/oidc_api_logghistorikk
+        jurl: /docs/idporten/oidc/oidc_api_logghistorikk.html
 
       - title: Innbyggers autorisasjoner
-        jurl: /docs/idporten/oidc/oidc_api_autorisasjoner
+        jurl: /docs/idporten/oidc/oidc_api_autorisasjoner.html
 
 - title: Testing
   folderitems:
 
   - title: Testbrukere
-    jurl: /docs/idporten/idporten/idporten_testbrukere
+    jurl: /docs/idporten/idporten/idporten_testbrukere.html
   - title: Verifikasjonstester
-    jurl: /docs/idporten/idporten/idporten_verifikasjonstester
+    jurl: /docs/idporten/idporten/idporten_verifikasjonstester.html
 
 - title: Administrasjon
   folderitems:
 
       - title: Administrasjon av OICD-integrasjoner
-        jurl: /docs/idporten/oidc/oidc_api_admin
+        jurl: /docs/idporten/oidc/oidc_api_admin.html
 
       - title: Administrasjon for leverandører
-        jurl: /docs/idporten/oidc/oidc_api_admin_leverandør
+        jurl: /docs/idporten/oidc/oidc_api_admin_leverandør.html
 
       - title: Administrasjon av API-tilgang
-        jurl: /docs/idporten/oidc/oidc_api_admin_maskinporten
+        jurl: /docs/idporten/oidc/oidc_api_admin_maskinporten.html
 
 - title: Spørsmål og eksempler
 
   folderitems:
 
       - title: Ofte stilte spørsmål
-        jurl: /docs/idporten/oidc/oidc_guide_faq
+        jurl: /docs/idporten/oidc/oidc_guide_faq.html
 
       - title: SPA in React
-        jurl: /docs/idporten/oidc/oidc_sample_react
+        jurl: /docs/idporten/oidc/oidc_sample_react.html
 
 - title: Releaser
   folderitems:
@@ -143,27 +142,33 @@ folders:
 #==rel_notes_start==
 
   - title: 2018
-    jurl: /docs/idporten/oidc/releaser_2018
+    jurl: /docs/idporten/oidc/releaser_2018.html
 
   - title: 2019
-    jurl: /docs/idporten/oidc/releaser_2019
+    jurl: /docs/idporten/oidc/releaser_2019.html
 
   - title: 2020
-    jurl: /docs/idporten/oidc/releaser_2020
+    jurl: /docs/idporten/oidc/releaser_2020.html
 
   - title: 2021
-    jurl: /docs/idporten/oidc/releaser_2021
+    jurl: /docs/idporten/oidc/releaser_2021.html
 
   - title: 2022
-    jurl: /docs/idporten/oidc/releaser_2022
-    
+    jurl: /docs/idporten/oidc/releaser_2022.html
+
 #==rel_notes_stop==
 
-- title: SAML grensesnitt
+- title: Gammelt OIDC-grensesnitt
+  folderitems:
+
+      - title: Gammelt OIDC-grensesnitt (fases ut!)
+        jurl: /docs/idporten/oidc_old/index.html
+
+- title: Gammelt SAML-grensesnitt
   folderitems:
 
       - title: SAML Integrasjon (fases ut!)
-        jurl: /docs/idporten/saml/saml_tilgang
+        jurl: /docs/idporten/saml/saml_tilgang.html
 
 ###########################
 

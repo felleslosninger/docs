@@ -39,8 +39,6 @@ Følgende aktører inngår:
 
 ## Authorization code flow:
 
-{% include note.html content="[Breaking changes in 2022](oidc_protocol_nye_idporten.html)." %}
-
 <div class="mermaid">
 sequenceDiagram
   User ->> Relying Party: Clicks "login"-button
@@ -69,7 +67,7 @@ Some relevant paramteres in the authentication request:
 | scope |  Whitespace-separated list of requested scopes.  Normally just "openid".  |
 | state | Value set by the client and returned in the callback.  Recommended to user to implement CSRF-protection. |
 | nonce | Value set by the client and returned in the id-token. Recommended to use to protect from replay attacks. |
-| acr\_values | Requested security level, either *Level3* or  *Level4* |
+| acr\_values | Requested security level, either *idporten-loa-substantial* or  *idporten-loa-high* |
 | ui\_locales | Requested language in the user interface, we support *nb*, *nn*, *en* or *se* |
 | prompt | Optional, used to govern end user involvement.  Only `login` is supported by ID-porten  |
 
@@ -107,6 +105,8 @@ The use of the token endpoint differ somewhat depending on which client authenti
 A static symmetric key (*client_secret*) must be obtained from Digitaliseringsdirektoratet. Production secrets will not be handed over by email.  The relying party is responsible for rotating the secret before it expires at ID-porten.
 
 The client auth is performed by adding a standard HTTP Basic authentication header. (base64-encoded concatenated string by client_id, a colon and the  client_secret).
+
+This method is in general not recommended for sensitive services, and Digdir recommends going for `private_key_jwt` instead.
 
 Example
 
@@ -179,7 +179,7 @@ Body:
 | --- | --- |
 | sub | "subject identifier" - unique identifier for the end user. A *pairwise* value, meaning that a client will always get the same value for the same user,   but different clients get different values.  |
 | aud | "audience" - your client_id  |
-| acr | "Authentication Context Class Reference" -  The security level used.  Possible values are  "Level3" (ie. MinID) or  "Level4". This must be verified by the relying party.  |
+| acr | "Authentication Context Class Reference" -  The security level used.  Possible values are  "idporten-loa-substantial" (ie. MinID) or  "idporten-loa-high". This must be verified by the relying party.  |
 | amr | "Authentication Methods References" - Possible values  *Minid-PIN*, *Minid-OTC*, *Commfides*, *Buypass*, *eIDAS*, *BankID* or  *BankID-mobil*, this may change over time. |
 | iss | The identifier of ID-porten |
 | pid | Personidentifikator - Proprietary claim, for the Norwegian national identifier ("F-number" or "D-number") |

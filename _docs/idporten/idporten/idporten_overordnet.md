@@ -8,150 +8,144 @@ product: ID-porten
 redirect_from: /idporten_overordnet
 ---
 
+ID-porten gjør innlogging til digitale tjenester trygt for innbyggere.  Se [produktsida for ID-porten på Samarbeidsportalen ](https://samarbeid.digdir.no/id-porten/id-porten/18) for overordnet informasjon om hva ID-porten er, hva den koster og hvordan inngå bruksvilkår for å kunne ta den i bruk.
+
 ## Introduksjon
 
-Denne siden gir en oversikt over de funksjoner som ID-porten tilbyr som tjenesteleverandør.
+ID-porten tilbyr følgende bruksområder til kundene:
 
-<!---[](/idporten-integrasjonsguide/assets/images/funksjonelt_gammal.bmp "minId_tjenester")--->
+- [**Autentisering av innbyggere** til nett-tjenester]({{site.baseurl}}/docs/idporten/oidc/oidc_guide_idporten), til [mobil-app'er]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_app) eller til [javascript-applikasjoner]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_spa)
 
-ID-porten tilbyr følgende funksjonalitet
-- **autentisering av sluttbrukere**
-- **API-sikring**
+- [**API-sikring** i kontekst av en innlogget bruker]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2), populært kalt brukerstyrt datadeling.
 
-## Aktører
+## Arkitektur
 
-Dette kapittelet beskriver roller og ansvar knyttet til den tekniske integrasjonen mot ID-porten. Kapittelet er et tillegg til bruksvilkårene som i større grad omhandler det avtalemessige mellom Digitaliseringsdirektoratet og tjenesteeierne. 
+
+Arkitekturen for ID-porten ser slik ut:
+
+<div class="mermaid">
+graph LR
+  subgraph Digitaliseringsdirektoratet
+    IDP[ID-porten]
+    SAML[SAML-proxy]
+    SADM[Selvbetjening <br/> klientregistrering]
+  end
+  subgraph Kunde
+     sp[SAML-tjeneste <br/> Service Provider]
+     rp[OIDC-tjeneste <br/> Relying Party]
+     adm[Administrator]
+  end
+  rp --  OIDC  ---IDP
+  sp --  SAML2 ---SAML
+  SAML -- OIDC ---IDP
+  adm -- utfører ---SADM
+  SADM -- synkronisering 5 min --->IDP
+
+  Innbygger -- bruker --- sp
+  Innbygger -- bruker --- rp
+</div>
+
+Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
+
+[SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokollen.
+
+Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web)
+ til å registrere og vedlikeholde kundens integrasjoner.
+
+Følgende aktører inngår i løsningen:
 
 | Aktører | Beskrivelse |
 | --- | --- |
 | Sluttbruker | Innbygger med eID |
 | ID-porten | *ID-porten* er et tillitsanker for offentlige virksomheter. ID-porten knytter de offentlige virksomhetene og e-ID-leverandørene sammen. |
-| Tjenesteeier | Offentlig virksomhet som har akseptert bruksvilkår |
-| Tjenesteleverandør | Leverandør som leverer tjenester til en offentlig virksomhet. Eller tjenesteeier som forvalter egen løsning |
-| Kontakt- og reservasjonsregisteret | Felleskomponent for sentral ajourhold av digital kontaktinformasjon (e-postadresse og mobilnummer) i offentlig sektor.  |
-| e-ID-leverandør | En av de 4 e-ID-aktørene som er tilgjengelige i ID-porten: minID, Commfides, Buypass, BankID |
-| MinID | *MinID* er en e-ID på nivå 3, som tilbyr autentisering basert på engangskoder på sms eller pinkoder på brev. |
-| Sertifikatutsteder | Sertifikatutsteder som oppfyller kravene for virksomhetssertifikater i henhold til [kravspesifikasjon PKI](https://www.digdir.no/digitale-felleslosninger/bruk-av-pki-med-og-i-offentleg-sektor/1485). |
-| | |
+| Kunde | Offentlig virksomhet som har akseptert bruksvilkår |
+| Tjenesteleverandør | Leverandør som leverer tjenester til en offentlig virksomhet |
+| API-tilbyder | Kunde som tilbyr APIer sikret med ID-porten. |
+| e-ID-leverandør | En av de 4 e-ID-aktørene som er tilgjengelige i ID-porten: MinID, Commfides, Buypass, BankID |
+| MinID | *MinID* er en offentlig utstedt e-ID på nivå betydelig, som tilbyr autentisering basert på engangskoder på sms eller app. |
+| Sertifikatutsteder | Sertifikatutsteder som oppfyller kravene for virksomhetssertifikater i henhold til Lov om Tillitstjenester. |
 
 ## Autentisering av sluttbruker
 ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 
-![](/images/idporten/saml/autentiseringstjenester.bmp "Autentiseringstjenester")
-
-
-## Støttede protokoller
+#### Støttede protokoller
 * OpenID Connect
 * SAML2 (fases ut!)
 
-## **Føderering**
+#### Føderering / SSO
 
-Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til en tjenesteeier B uten å logge ut, vil bruker automatisk logges inn uten at bruker må autentisere seg på nytt. Det vil gjøres forespørsler mellom tjenesteeier B og ID-porten på samme måte som ved en normal innlogging. Forskjellen er kun at sluttbruker ikke opplever å få opp en autentiseringsdialog.
+Dersom sluttbruker er innlogget hos tjenesteeier A og velger å gå videre til en tjenesteeier B uten å logge ut, vil bruker automatisk logges inn uten at bruker må autentisere seg på nytt.
 
-### **Sesjonstid**
-
-Tjenesteleverandør og ID-porten holder egne sesjoner mot sluttbruker som ikke er avhengig av hverandre. Digitaliseringsdirektoratet anbefaler at tjenesteleverandør bruker samme sesjonstider som ID-porten, [Sesjonshåndtering]({{site.baseurl}}/docs/idporten/saml/saml_teknisk_losning#sesjonshåndtering) for mer detaljer
-
-### **Sesjonsoppgradering**
+#### Sesjonsoppgradering
 
 Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og seinere gå til en tjeneste som krever et høyere sikkerhetsnivå. I dette tilfellet vil ID-porten be brukeren om å oppgradere sikkerhetsnivå.
 
-### **Alternative innlogingsmetoder**
+#### Europeiske brukere
 
-ID-porten kan lenke til en URL som tilbyr innloggingsmetoder som tjenesteeier selv forvalter. Lenken vil bli vist når brukeren skal velge innlogging mellom de ulike eID-leverandørene.
+ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
 
-## **Europeiske brukere**
+## Brukerstyrt datadeling
 
-ID-porten har støtte for at europeiske brukere  kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
+ID-porten kan også [styre tilgang til APIer hos 3dje.part]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2)
+
+API-tilgangen kan være innloggingsbasert (implisitt samtykke) eller brukerstyrt (eksplisitt samtykke).  I begge tilfeller  gjelder autorisasjonen kun for en enkelt innbygger, ulikt [Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_overordnet) som er tiltenkt hjemmelsbasert datadeling.
+
+API-tilganger i ID-porten er modellert som Oauth2 scopes. For tilgangsstyrte scopes er det et organisasjonummer (=API-konsument) som blir gitt tilgang av API-tilbyder.  API-konsument må så aktivt selv registrere det tildelte scopet på en av sine integrasjoner.
 
 
 ## Hvordan få tilgang til ID-porten
 
 Følg prosessen på [Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94) for å integrere mot ID-porten.
 
+#### Informasjon som må registreres
 
-### Informasjon som må utveksles
+Kunden bruker selvbetjeningsløsningen til å registrere påkrevd informasjon om integrasjonen sin. Dette er nærmere beskrevet under [klientregistrering]({{site.baseurl}}/docs/idporten/oidc/oidc_func_clientreg)
 
-Tjenesteeier må utlevere følgende tekniske informasjon til ID-porten:
-* Logo
+#### Logo
 
-ID-porten vil utlevere følgende tekniske informasjon til tjenesteeier:
-* Testbrukere til verifikasjonsmiljø
-
-
-
-### **Annen informasjon**
-
-
-### **Logo-format**
-
-Logoen for tjenesten må oppfylle følgende krav:
+Kunde må sende oss egen logo som blir brukt i innloggingsbildet. Logoen for tjenesten må oppfylle følgende krav:
 
 | --- | --- |
 | Filformat | .png .jpg eller .gif |
-| Størrelse | Maksimal høyre 90 pixel og en bredde som ikke bør overskride 135 pixel. |
+| Størrelse | Maksimal høyde 90 pixel og en bredde som ikke bør overskride 135 pixel. |
 | Farge | Bakgrunnsfargen på ID-porten er #f3f4f4, så logoen bør enten ha denne bakgrunnsfargen eller eventuelt ha transparent bakgrunn. |
-| | |
 
+#### Testing
 
-## Detaljert beskrivelse av teknisk løsning
+Kunden må utføre en rekke verifikasjonstester for å bekrefte at integrasjonen oppfyller ID-portens krav.
 
+[Verifikasjonstester finner du her]({{site.baseurl}}/docs/idporten/idporten/idporten_verifikasjonstester).
 
-### Logging
+[Testbrukere finner du her]({{site.baseurl}}/docs/idporten/idporten/idporten_testbrukere).
 
-ID-porten oppbevarer som standard alle logger i 12+1 måned. Logginformasjon om når sluttbruker inngikk samtykke er eneste informasjon i ID-porten som lagres lengre, i 10 år.
+#### IP-adresser
 
-Det anbefales at tjenesteleverandør logger følgende informasjon om forsøk på autentisering:
+Dersom kunden har utgående brannmur, må det [åpnes for ID-portens IP-adresse]({{site.baseurl}}/docs/general/IP).
+
+#### Logging
+
+Det anbefales at kunden logger følgende informasjon om forsøk på autentisering:
 * Dato og tidspunkt
 * Hvilken handling som ble forsøkt
 * Resultatet av handlingen
 * Brukerens IP-adresse  
-* SessionIndex
+* SessionIndex / sid
+* Fødselsnummer
 
-FødselsnummerSessionIndex er en identifikator som identifiserer brukersesjonen på tvers av føderasjonen. ID-porten logger mer detaljert informasjon om hver brukersesjon enn det som er vår anbefaling til tjenesteleverandør. Tjenesteeier kan be om tilgang til denne med referanse til SessionIndex. Et eksempel på en SessionIndex er *“s295ce0f891244bf4a68e468368aaa923ead5f4301”*.  
-
-Tjenesteeier sitt konkrete behov for logging må vurderes av den enkelte tjenesteeier.
-
-### Sesjonshåndtering
-
-ID-porten sender ikke en forespørsel om utlogging til tjenesteleverandør når en sesjon timer ut pga total lengde eller inaktivitet. Forespørsel om utlogging sendes bare når en bruker foretar en eksplisitt utlogging (ved å klikke på logout-knappen hos en tjenesteinnenfor Circle of Trust). En slik forespørsel om utlogging fra ID-porten **må** resultere i en utlogging fra tjenesteeier, ellers vil SingleLogout-mekanismen bli kompromittert.
-
-### **Levetid for Sesjoner**
-
-I føderasjon skal medlemmene konfigurere systemene, slik at sesjoner utløper ved inaktivitet etter høyst **30 minutter.**
-
-I ID-porten måles maksimum sesjonstid for en brukers sesjon og denne settes til **120 minutter.**
-
-Det er valgfritt om timeout-perioden nullstilles hver gang brukerens nettleser forespør en av tjenesteleverandørs tjeneste, eller om den er uavhengig av brukeraktivitet (fast timeout periode).
-
-
-Det må bemerkes at timeout hos en tjenesteleverandør ikke nødvendigvis medfører at brukeren blir tvunget til å logge på ID-porten. Hvis brukeren har en aktiv sesjon hos ID-porten, kan denne svare på forespørselen fra tjenesteleverandør uten brukerdialog (dvs. foreta single sign-on). Brukeren vil dermed ikke oppdage at sesjonen blir fornyet (bortsett fra at hans nettleser muligens ”blinker” et kort øyeblikk).
-
-Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at brukeren blir tvunget til aktiv pålogging i ID-porten, kan man benytte muligheter for dette i SAML og OIDC-protokollen.
+Kunden sitt konkrete behov for logging må vurderes av den enkelte kunde selv.
 
 
 
+#### Etablere gode rutiner i virksomheten
 
-### IP-adresser som må åpnes for
-
-SAML:
-* Produksjon: 146.192.252.60
-* Verifikasjon 1: 146.192.252.124
-* Verifikasjon 2: 146.192.252.156
-
-OIDC:
-* Produksjon: 146.192.252.54
-* Verifikasjon 1: 146.192.252.121
-* Verifikasjon 2: 146.192.252.152
-
-### Sertifikatkrav
-
-Det kreves at tjenesteleverandør benytter nøkler utstedt som virksomhetssertifikater iht. [kravspesifikasjon PKI](https://www.digdir.no/digitale-felleslosninger/bruk-av-pki-med-og-i-offentleg-sektor/1485), og at sertifikatutstederen er selvdeklarert for dette hos Nasjonal kommunikasjonsmyndighet (NKOM). Pr dags dato er det bare Buypass og Commfides som er selvdeklarert for utstedelse av virksomhetssertifikater hos NKOM, og dermed kun disse som kan utstede gyldige virksomhetssertifikater for bruk mot ID-porten.
-
-Tjenesteleverandøre må sjekke at bare de virksomhetssertifikater som er utvekslet som en del av metadatautveksling er i bruk i føderasjonen.
+Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at kun bemyndiget personell har tilgang til  den. Se f.eks [anbefalinger for sertifikatbehandling, logging og sporing fra Veileder for virksomhetsautentisering](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
 
 
-### **Bestilling av virksomhetssertifikat**
+Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992)
+
+
+
+#### Bestille virksomhetssertifkat
 Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
 
 
@@ -169,4 +163,9 @@ Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelh
 
 En tjenesteleverandør bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
 
-Både [kravspesifikasjon PKI](https://www.digdir.no/digitale-felleslosninger/bruk-av-pki-med-og-i-offentleg-sektor/1485) og sertifikatutsteders policy kan gi krav som må etterleves. Krav til slike prosedyrer for håndtering av nøkler stilles også til IdP-delen av løsningen, som i dette tilfellet er ID-porten.
+
+
+
+## Problemer ?
+
+Om du opplever problemer med integrasjonen din: Kontakt servicedesk@digdir.no oppgi client_id og miljø og forklar problemet.
