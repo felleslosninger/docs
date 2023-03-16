@@ -9,34 +9,6 @@ redirect_from: /oidc_arch
 ---
 
 
-Arkitekturen for ID-porten ser slik ut:
-
-graph LR
-  subgraph Digitaliseringsdirektoratet
-    IDP[ID-porten]
-    SAML[SAML-proxy]
-    SADM[Selvbetjening <br/> klientregistrering]
-  end
-  subgraph Kunde
-     sp[SAML-tjeneste <br/> Service Provider]
-     rp[OIDC-tjeneste <br/> Relying Party]
-     adm[Administrator]
-  end
-  rp --  OIDC  ---IDP
-  sp --  SAML2 ---SAML
-  SAML -- OIDC ---IDP
-  adm -- utfører ---SADM
-  SADM -- synkronisering 5 min --->IDP
-
-  Innbygger -- bruker --- sp
-  Innbygger -- bruker --- rp
-
-Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
-
-[SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokolle.
-
-Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web)
- til å registrere og vedlikeholde kundens integrasjoner.
 
 ## Autentiseringstjenester i ID-porten
 
@@ -44,9 +16,9 @@ ID-porten tilbyr **autentisering** av sluttbrukere opp mot nett-tjenester.
 
 Kunden kan velge mellom SAML2-protokollen og OIDC-protokollen når de skal koble seg mot ID-porten.  Alle tjenester deltar i en felles Circle-of-trust med single signon (SSO) seg imellom.
 
-## Autorisasjonstjenester
+## Sikring av API-er
 
-OpenID Connect-provideren kan også utstede **autorisasjoner** for API-tilgang hos 3dje.part.    
+OIDC-grensesnittet til ID-porten OpenID Connect-provideren kan også utstede **autorisasjoner** for API-tilgang hos 3dje.part.    
 
 <div class="mermaid">
 graph LR
@@ -88,30 +60,3 @@ graph LR
 
 * [KRR-Oauth2](oidc_api_krr.html) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
 * [authlevel]({{site.baseurl}}/docs/idporten/oidc/oidc_api_authlevel) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  
-
-
-## Om OpenID Connect
-
-![](/idporten-oidc-dokumentasjon/images/oidc.png "OpenID Connect logo")
-
-OpenID Connect er en protokoll for autentisering basert på OAuth2. Se [http://openid.net/connect/faq/](http://openid.net/connect/faq/) for mer informasjon.
-
-De implementerte tjenestene bygger på (deler av) følgende standarder og spesifikasjoner:
-
-* OpenID Connect Core 1.0 - [http://openid.net/specs/openid-connect-core-1_0.html](http://openid.net/specs/openid-connect-core-1_0.html)
-* OpenID Connect Discovery
-[http://openid.net/specs/openid-connect-discovery-1_0.html](http://openid.net/specs/openid-connect-discovery-1_0.html)
-
-* OpenID Connect Session Management
-[http://openid.net/specs/openid-connect-session-1_0.html](http://openid.net/specs/openid-connect-session-1_0.html)
-* OpenID Connect Front-Channel Logout
-[http://openid.net/specs/openid-connect-frontchannel-1_0.html](http://openid.net/specs/openid-connect-frontchannel-1_0.html)
-* OAuth 2.0 Form Post Response Mode
-[http://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html](http://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html)
-* OAuth 2.0 Token Introspection
-[https://tools.ietf.org/html/rfc7662](https://tools.ietf.org/html/rfc7662)
-* Proof Key for Code Exchange by OAuth Public Clients
-[https://tools.ietf.org/html/rfc7636](https://tools.ietf.org/html/rfc7636)
-
-* IETF RFC6749 The OAuth 2.0 Authorization Framework - [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)
-* IETF RFC7523 JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants - [https://tools.ietf.org/html/rfc7523](https://tools.ietf.org/html/rfc7523)

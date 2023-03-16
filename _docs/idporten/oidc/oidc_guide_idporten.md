@@ -277,3 +277,31 @@ Respons:
 ## 5: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
 
 Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt]({{site.baseurl}}/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest) dersom access_token inneholder `krr:user/kontaktinformasjon.read`-scopet.
+
+
+
+## Om OpenID Connect
+
+![](/idporten-oidc-dokumentasjon/images/oidc.png "OpenID Connect logo")
+
+OpenID Connect er en protokoll for autentisering basert på OAuth2. Se [http://openid.net/connect/faq/](http://openid.net/connect/faq/) for mer informasjon.
+
+De implementerte tjenestene bygger på (deler av) følgende standarder og spesifikasjoner:
+
+* OpenID Connect Core 1.0 - [http://openid.net/specs/openid-connect-core-1_0.html](http://openid.net/specs/openid-connect-core-1_0.html)
+* OpenID Connect Discovery
+[http://openid.net/specs/openid-connect-discovery-1_0.html](http://openid.net/specs/openid-connect-discovery-1_0.html)
+
+* OpenID Connect Session Management
+[http://openid.net/specs/openid-connect-session-1_0.html](http://openid.net/specs/openid-connect-session-1_0.html)
+* OpenID Connect Front-Channel Logout
+[http://openid.net/specs/openid-connect-frontchannel-1_0.html](http://openid.net/specs/openid-connect-frontchannel-1_0.html)
+* OAuth 2.0 Form Post Response Mode
+[http://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html](http://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html)
+* OAuth 2.0 Token Introspection
+[https://tools.ietf.org/html/rfc7662](https://tools.ietf.org/html/rfc7662)
+* Proof Key for Code Exchange by OAuth Public Clients
+[https://tools.ietf.org/html/rfc7636](https://tools.ietf.org/html/rfc7636)
+
+* IETF RFC6749 The OAuth 2.0 Authorization Framework - [https://tools.ietf.org/html/rfc6749](https://tools.ietf.org/html/rfc6749)
+* IETF RFC7523 JSON Web Token (JWT) Profile for OAuth 2.0 Client Authentication and Authorization Grants - [https://tools.ietf.org/html/rfc7523](https://tools.ietf.org/html/rfc7523)

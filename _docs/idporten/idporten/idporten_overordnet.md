@@ -23,6 +23,7 @@ ID-porten tilbyr følgende bruksområder til kundene:
 
 Arkitekturen for ID-porten ser slik ut:
 
+<div class="mermaid">
 graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
@@ -42,6 +43,7 @@ graph LR
 
   Innbygger -- bruker --- sp
   Innbygger -- bruker --- rp
+</div>
 
 Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
 
