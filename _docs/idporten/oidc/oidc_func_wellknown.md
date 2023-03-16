@@ -25,7 +25,11 @@ Disse metadata skal caches i din egen løsning, typisk er 24 timer en passende l
 
 ## Gammel OIDC-løsning
 
- Se {% include note.html content="Den nye ID-porten ble lansert 14. mars 2023. Gammel løsning lever i parallell ut 2023. Se [prosjektsida for mer informasjon om hvordan migrere fra gammel til ny løsning](oidc_protocol_nye_idporten.html)." %}
+
+{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
+
+
+{% include note.html content="Den nye ID-porten ble lansert 14. mars 2023. Gammel løsning lever i parallell ut 2023. Se [prosjektsida for mer informasjon om hvordan migrere fra gammel til ny løsning](oidc_protocol_nye_idporten.html)." %}
 
 For de som av ulike grunner fremdeles må koble seg mot gammel løsning, så er metadata tilgjengelig her:
 

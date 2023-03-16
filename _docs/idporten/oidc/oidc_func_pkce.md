@@ -23,10 +23,17 @@ Metoden er basert på  følgende steg:
 
 Vi støtter bare `code_challenge_method=S256`
 
-Alle klienter i ID-porten må bruke PKCE, hvis ikke vil ID-porten som hovedregel avvise autentiseringsforespørselen.  Men det er mulig å bruke [selvbetjening]({{site.baseurl}}/docs/idporten/oidc/oidc_func_clientreg.html) til å **nedgradere** klienten sin til omgå ID-portens tvungne PKCE-validering, dette gjøres ved å sette `code_challenge_method` på klienten til "none".
-
 **Merk at code_verifier må vere minst 43 karakterer lang, og ikkje lengre enn 128.**
 
 Dersom `code_verifier` er `xyo94uhy3zKvgB0NJwLms86SwcjtWviEOpkBnGgaLlo` så blir utrekna `code_challenge` lik `b7elB7ZyxIXgFyvBznKvxl7wOB-H17Pz0a3B62NIMFI=`.
 
 [Her er et verktøy for å rekne ut challenges:](https://gist.github.com/tonyxu-io/21eb57ab2a4aeb2a3ee10f77542abe64)
+
+
+### PKCE er som hovedregel påkrevd
+
+Oppdaterte sikkerhetsanbefalinger fra IETF er klare på at bruk av PKCE er beste praksis, og det er påkrevd i Oauth 2.1-standarden.
+
+Derfor må alle klienter i ID-porten bruke PKCE, hvis ikke vil ID-porten som hovedregel avvise autentiseringsforespørselen.  
+
+Men for kunder med mindre sikker integrasjonsprogramvare som ennå ikke støtte PKCE, så er det er mulig å bruke [selvbetjening]({{site.baseurl}}/docs/idporten/oidc/oidc_func_clientreg.html) til å **nedgradere** klienten sin til omgå ID-portens tvungne PKCE-validering, dette gjøres ved å sette `code_challenge_method` på klienten til "none".

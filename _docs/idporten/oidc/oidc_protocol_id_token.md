@@ -107,7 +107,7 @@ The security level of assurance can have the following values:
 |`idporten-loa-substantial` | A "substantial" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
 |`idporten-loa-high` | A "high" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
 
-For more information on the legal framework, see [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992).
+These values was changed i 2023 to comply with the updated Norwegian legal framework introduced in 2018, see [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992).
 
 The actual values are inspired from [the IANA registry of Level-of-assurance profiles](https://www.iana.org/assignments/loa-profiles/loa-profiles.xhtml), ie. comprised of `<legal framework>-<loa level>`.
 

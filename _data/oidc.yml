@@ -79,6 +79,9 @@ folders:
       - title: Single sign-on og -logout
         jurl: /docs/idporten/oidc/oidc_func_sso
 
+      - title: SSO-fri innlogging
+        jurl: /docs/idporten/oidc/oidc_func_nosso.html
+
       - title: Audience-begrensning
         jurl: /docs/idporten/oidc/oidc_func_aud
 

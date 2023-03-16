@@ -22,8 +22,8 @@ ID-porten issues two different types of access_tokens:
 
 |Token type|Description|
 |-|-|
-|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [/tokeninfo endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transit. |
-|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens are non-revokable and should have a short lifetime |
+|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [token introspection endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transport. |
+|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens  should have a short lifetime |
 
 
 #### "By value" / self-contained access token
@@ -35,7 +35,7 @@ The token is a JWT with the following structure:
 | claim | verdi |
 | --- | --- |
 | kid | "Key identifier" - unique identifier for the key and certificate used by ID-porten. The corresponding public key and the certificate must be fetched from our .well-known endpoint. |
-| alg | "algorithm" - algorithm used for signing the token. ID-porten only supports `RS256` (RSA-SHA256) |
+| alg | "algorithm" - algorithm used for signing the token. The supported values are published on the .well-known endpoint. |
 
 
 
