@@ -97,6 +97,9 @@ folders:
       - title: eIDAS
         jurl: /docs/idporten/oidc/oidc_func_eidas.html
 
+      - title: SAML
+        jurl: /docs/idporten/oidc/oidc_func_saml.html
+
       - title: Innbyggers innloggingshistorikk
         jurl: /docs/idporten/oidc/oidc_api_logghistorikk.html
 
