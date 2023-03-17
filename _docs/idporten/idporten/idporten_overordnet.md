@@ -142,7 +142,10 @@ Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at
 Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992)
 
 
-#### Bestille virksomhetssertifkat
+#### Bruk av virksomhetssertifikat
+
+Vi anbefaler at kunder bruker virksomhetssertifikat til oppkobling mot ID-porten. For kunder som har mange integrasjoner, bør man heller vurdere å bruke virksomhetssertifikatet til å  automatisere integrasjonsvedlikeholdet slik at hver enkelt-integrasjon istedet bruker en assymetrisk nøkkel til oppkobling og denne blir rotert hyppig. 
+
 Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
 
 
