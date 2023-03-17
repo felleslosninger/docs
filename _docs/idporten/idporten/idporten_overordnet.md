@@ -35,10 +35,8 @@ graph LR
      RP[OIDC-tjeneste <br/>Relying Party]
      ADM[Administrator]
   end
-  RP-- OIDC ---IDP
-  SP-- SAML2 ---SAML
-  SAML-- OIDC ---IDP
-  ADM-- utfører ---SADM
+
+  RP--|OIDC|IDP
 </div>
 
 Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
