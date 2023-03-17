@@ -28,13 +28,21 @@ graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
     SAML[SAML-proxy]
-    SADM[Selvbetjening <br/> klientregistrering]
+    SADM[(Selvbetjening <br/>klientregistrering)]
   end
   subgraph Kunde
-     SP[SAML-tjeneste  Service Provider]
-     RP[OIDC-tjeneste  Relying Party]
+     SP[SAML-tjeneste <br/>Service Provider]
+     RP[OIDC-tjeneste <br/>Relying Party]
      ADM[Administrator]
   end
+  RP-- OIDC ---IDP
+  SP-- SAML2 ---SAML
+  SAML-- OIDC ---IDP
+  ADM-- utfører ---SADM
+  SADM-- synkronisering 5 min -->IDP
+
+  Innbygger-- bruker ---SP
+  Innbygger-- bruker ---RP
 
 </div>
 
