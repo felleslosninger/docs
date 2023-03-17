@@ -97,11 +97,11 @@ API-tilganger i ID-porten er modellert som Oauth2 scopes. For tilgangsstyrte sco
 
 Følg prosessen på [Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94) for å integrere mot ID-porten.
 
-#### Informasjon som må registreres
+#### Bruk selvbetjening til å registere integrasjonen din
 
 Kunden bruker selvbetjeningsløsningen til å registrere påkrevd informasjon om integrasjonen sin. Dette er nærmere beskrevet under [klientregistrering]({{site.baseurl}}/docs/idporten/oidc/oidc_func_clientreg)
 
-#### Logo
+#### Send oss logoen din
 
 Kunde må sende oss egen logo som blir brukt i innloggingsbildet. Logoen for tjenesten må oppfylle følgende krav:
 
@@ -110,7 +110,7 @@ Kunde må sende oss egen logo som blir brukt i innloggingsbildet. Logoen for tje
 | Størrelse | Maksimal høyde 90 pixel og en bredde som ikke bør overskride 135 pixel. |
 | Farge | Bakgrunnsfargen på ID-porten er #f3f4f4, så logoen bør enten ha denne bakgrunnsfargen eller eventuelt ha transparent bakgrunn. |
 
-#### Testing
+#### Test din egen løsning
 
 Kunden må utføre en rekke verifikasjonstester for å bekrefte at integrasjonen oppfyller ID-portens krav.
 
@@ -118,11 +118,11 @@ Kunden må utføre en rekke verifikasjonstester for å bekrefte at integrasjonen
 
 [Testbrukere finner du her]({{site.baseurl}}/docs/idporten/idporten/idporten_testbrukere).
 
-#### IP-adresser
+#### Åpne for IP-adresser
 
 Dersom kunden har utgående brannmur, må det [åpnes for ID-portens IP-adresse]({{site.baseurl}}/docs/general/IP).
 
-#### Logging
+#### Sørg for tilstrekkelig egen logging
 
 Det anbefales at kunden logger følgende informasjon om forsøk på autentisering:
 * Dato og tidspunkt
@@ -132,17 +132,14 @@ Det anbefales at kunden logger følgende informasjon om forsøk på autentiserin
 * SessionIndex / sid
 * Fødselsnummer
 
-Kunden sitt konkrete behov for logging må vurderes av den enkelte kunde selv.
+Kunden sitt konkrete behov for logging opp mot personvernbetraktninger må vurderes av den enkelte kunde selv.
 
+#### Etabler gode IT-sikkerhetsrutiner i virksomheten
 
-
-#### Etablere gode rutiner i virksomheten
-
-Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at kun bemyndiget personell har tilgang til  den. Se f.eks [anbefalinger for sertifikatbehandling, logging og sporing fra Veileder for virksomhetsautentisering](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
+Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at kun bemyndiget personell har tilgang til den. Se f.eks [anbefalinger for sertifikatbehandling, logging og sporing fra Veileder for virksomhetsautentisering](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
 
 
 Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992)
-
 
 
 #### Bestille virksomhetssertifkat
