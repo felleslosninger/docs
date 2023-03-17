@@ -38,11 +38,6 @@ graph LR
   RP-- OIDC ---IDP
   SP-- SAML2 ---SAML
   SAML-- OIDC ---IDP
-  ADM-- utfører ---SADM
-  SADM-- synkronisering 5 min -->IDP
-
-  Innbygger-- bruker ---SP
-  Innbygger-- bruker ---RP
 
 </div>
 
