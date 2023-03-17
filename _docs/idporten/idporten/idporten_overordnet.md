@@ -144,14 +144,16 @@ Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [
 
 #### Bruk av virksomhetssertifikat
 
-Vi anbefaler at kunder bruker virksomhetssertifikat til oppkobling mot ID-porten. For kunder som har mange integrasjoner, bør man heller vurdere å bruke virksomhetssertifikatet til å  automatisere integrasjonsvedlikeholdet slik at hver enkelt-integrasjon istedet bruker en assymetrisk nøkkel til oppkobling og denne blir rotert hyppig. 
+Vi anbefaler at kunder bruker virksomhetssertifikat til oppkobling mot ID-porten. For kunder som har mange integrasjoner, bør man heller vurdere å bruke virksomhetssertifikatet til å  automatisere integrasjonsvedlikeholdet slik at hver enkelt-integrasjon istedet bruker en assymetrisk nøkkel til oppkobling og denne blir rotert hyppig.
 
 Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
 
 
 ### Håndtering av nøkler
 
-Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management) for private nøkler. Hvis en privat nøkkel kompromitteres, kan en angriper utgi seg for å være tjenesteleverandør i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til tjenesteleverandør, men kan også tenkes å svekke tilliten til hele føderasjonen.
+Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetsssertifikat.  
+
+Hvis en nøkkel kompromitteres, kan en angriper utgi seg for å være kunde i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til kunden, men kan også tenkes å svekke tilliten til hele føderasjonen.
 
 Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelhåndtering:
 * Hvor oppbevares private nøkler, og hvordan sikres adgang til dem? For optimal beskyttelse kan en nøkkel oppbevares i kryptografisk hardware (HSM – hardware security module), men ofte benyttes krypterte filer som et billig, men mindre sikkert alternativ.
@@ -161,7 +163,7 @@ Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelh
 * Hva er prosedyren om en privat nøkkel kompromitteres, eller om det er mistanke om at så har skjedd?
 * Hvordan loggføres nøkkelhåndteringsprosessen hos tjenesteleverandør?
 
-En tjenesteleverandør bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
+En kunde bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
 
 
 
