@@ -28,7 +28,7 @@ graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
     SAML[SAML-proxy]
-    SADM[Selvbetjening  klientregistrering]
+    SADM[Selvbetjening <br/> klientregistrering]
   end
   subgraph Kunde
      SP[SAML-tjeneste  Service Provider]
