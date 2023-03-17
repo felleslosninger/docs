@@ -30,19 +30,6 @@ graph LR
     SAML[SAML-proxy]
     SADM[Selvbetjening  klientregistrering]
   end
-  subgraph Kunde
-     SP[SAML-tjeneste  Service Provider]
-     RP[OIDC-tjeneste  Relying Party]
-     ADM[Administrator]
-  end
-  RP --  OIDC  ---IDP
-  SP --  SAML2 ---SAML
-  SAML -- OIDC ---IDP
-  ADM -- utfører ---SADM
-  SADM -- synkronisering 5 min --->IDP
-
-  Innbygger -- bruker ---SP
-  Innbygger -- bruker ---RP
 </div>
 
 Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
