@@ -28,21 +28,21 @@ graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
     SAML[SAML-proxy]
-    SADM[Selvbetjening <br/> klientregistrering]
+    SADM[Selvbetjening <br/>klientregistrering]
   end
   subgraph Kunde
-     sp[SAML-tjeneste <br/> Service Provider]
-     rp[OIDC-tjeneste <br/> Relying Party]
-     adm[Administrator]
+     SP[SAML-tjeneste <br/>Service Provider]
+     RP[OIDC-tjeneste <br/>Relying Party]
+     ADM[Administrator]
   end
-  rp --  OIDC  ---IDP
-  sp --  SAML2 ---SAML
-  SAML -- OIDC ---IDP
-  adm -- utfører ---SADM
-  SADM -- synkronisering 5 min --->IDP
+  RP---|OIDC|IDP
+  SP-- SAML2 ---SAML
+  SAML-- OIDC ---IDP
+  ADM-- utfører ---SADM
+  SADM-- synkronisering 5 min -->IDP
 
-  Innbygger -- bruker --- sp
-  Innbygger -- bruker --- rp
+  Innbygger-- bruker ---SP
+  Innbygger-- bruker ---RP
 </div>
 
 Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
@@ -97,11 +97,11 @@ API-tilganger i ID-porten er modellert som Oauth2 scopes. For tilgangsstyrte sco
 
 Følg prosessen på [Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94) for å integrere mot ID-porten.
 
-#### Informasjon som må registreres
+#### Bruk selvbetjening til å registere integrasjonen din
 
 Kunden bruker selvbetjeningsløsningen til å registrere påkrevd informasjon om integrasjonen sin. Dette er nærmere beskrevet under [klientregistrering]({{site.baseurl}}/docs/idporten/oidc/oidc_func_clientreg)
 
-#### Logo
+#### Send oss logoen din
 
 Kunde må sende oss egen logo som blir brukt i innloggingsbildet. Logoen for tjenesten må oppfylle følgende krav:
 
@@ -110,7 +110,7 @@ Kunde må sende oss egen logo som blir brukt i innloggingsbildet. Logoen for tje
 | Størrelse | Maksimal høyde 90 pixel og en bredde som ikke bør overskride 135 pixel. |
 | Farge | Bakgrunnsfargen på ID-porten er #f3f4f4, så logoen bør enten ha denne bakgrunnsfargen eller eventuelt ha transparent bakgrunn. |
 
-#### Testing
+#### Test din egen løsning
 
 Kunden må utføre en rekke verifikasjonstester for å bekrefte at integrasjonen oppfyller ID-portens krav.
 
@@ -118,11 +118,11 @@ Kunden må utføre en rekke verifikasjonstester for å bekrefte at integrasjonen
 
 [Testbrukere finner du her]({{site.baseurl}}/docs/idporten/idporten/idporten_testbrukere).
 
-#### IP-adresser
+#### Åpne for IP-adresser
 
 Dersom kunden har utgående brannmur, må det [åpnes for ID-portens IP-adresse]({{site.baseurl}}/docs/general/IP).
 
-#### Logging
+#### Sørg for tilstrekkelig egen logging
 
 Det anbefales at kunden logger følgende informasjon om forsøk på autentisering:
 * Dato og tidspunkt
@@ -132,26 +132,28 @@ Det anbefales at kunden logger følgende informasjon om forsøk på autentiserin
 * SessionIndex / sid
 * Fødselsnummer
 
-Kunden sitt konkrete behov for logging må vurderes av den enkelte kunde selv.
+Kunden sitt konkrete behov for logging opp mot personvernbetraktninger må vurderes av den enkelte kunde selv.
 
+#### Etabler gode IT-sikkerhetsrutiner i virksomheten
 
-
-#### Etablere gode rutiner i virksomheten
-
-Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at kun bemyndiget personell har tilgang til  den. Se f.eks [anbefalinger for sertifikatbehandling, logging og sporing fra Veileder for virksomhetsautentisering](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
+Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at kun bemyndiget personell har tilgang til den. Se f.eks [anbefalinger for sertifikatbehandling, logging og sporing fra Veileder for virksomhetsautentisering](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
 
 
 Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992)
 
 
+#### Bruk av virksomhetssertifikat
 
-#### Bestille virksomhetssertifkat
+Vi anbefaler at kunder bruker virksomhetssertifikat til oppkobling mot ID-porten. For kunder som har mange integrasjoner, bør man heller vurdere å bruke virksomhetssertifikatet til å  automatisere integrasjonsvedlikeholdet slik at hver enkelt-integrasjon istedet bruker en assymetrisk nøkkel til oppkobling og denne blir rotert hyppig.
+
 Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
 
 
 ### Håndtering av nøkler
 
-Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management) for private nøkler. Hvis en privat nøkkel kompromitteres, kan en angriper utgi seg for å være tjenesteleverandør i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til tjenesteleverandør, men kan også tenkes å svekke tilliten til hele føderasjonen.
+Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetsssertifikat.  
+
+Hvis en nøkkel kompromitteres, kan en angriper utgi seg for å være kunde i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til kunden, men kan også tenkes å svekke tilliten til hele føderasjonen.
 
 Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelhåndtering:
 * Hvor oppbevares private nøkler, og hvordan sikres adgang til dem? For optimal beskyttelse kan en nøkkel oppbevares i kryptografisk hardware (HSM – hardware security module), men ofte benyttes krypterte filer som et billig, men mindre sikkert alternativ.
@@ -161,7 +163,7 @@ Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelh
 * Hva er prosedyren om en privat nøkkel kompromitteres, eller om det er mistanke om at så har skjedd?
 * Hvordan loggføres nøkkelhåndteringsprosessen hos tjenesteleverandør?
 
-En tjenesteleverandør bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
+En kunde bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
 
 
 
