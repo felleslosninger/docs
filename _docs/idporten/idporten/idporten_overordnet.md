@@ -28,11 +28,11 @@ graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
     SAML[SAML-proxy]
-    SADM[Selvbetjening <br/> klientregistrering]
+    SADM[Selvbetjening  klientregistrering]
   end
   subgraph Kunde
-     SP[SAML-tjeneste <br/> Service Provider]
-     RP[OIDC-tjeneste <br/> Relying Party]
+     SP[SAML-tjeneste  Service Provider]
+     RP[OIDC-tjeneste  Relying Party]
      ADM[Administrator]
   end
   RP --  OIDC  ---IDP
