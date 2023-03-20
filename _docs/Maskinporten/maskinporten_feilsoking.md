@@ -42,7 +42,13 @@ Feil med audience i JWT-grant.
 
 Noe er feil med sertifikatet som benyttes.
 
-**Løsning** Sjekk at det benyttes et gyldig virksomhetssertifikat. Sjekk at det ikke benyttes produksjonssertifikat i test eller testsertifikat i PROD. 
+**Løsning** Sjekk at det benyttes et gyldig virksomhetssertifikat. Sjekk at det ikke benyttes produksjonssertifikat i test eller testsertifikat i PROD.
+
+#### "Invalid assertion. Client authentication failed. Expired key"
+
+Nøkkelen som er postet på klienten er utgått. Nøkler har 1 års levetid fra det tidspunktet de blir postet på klienten.
+
+**Løsning** Post ny nøkkel på klienten. Eventuelt kan du poste den samme nøkkelen en gang til for å fornye den.
 
 ### Invalid request
 
