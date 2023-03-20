@@ -14,7 +14,6 @@ Her er en oversikt over attributtene som finnes i KRR sitt REST API og hvilken r
 | Attributtnavn | Beskrivelse | Mulige responser |
 | - | - | - |
 | personidentifikator | Gyldig fødselsnummer eller D-nummer | 01048800153 |
-<<<<<<< Updated upstream
 | reservasjon | Reservasjon avgitt av person, brukt i henhold til eForvaltningsforskriften § 15 a. | JA, NEI |
 | status | Angir status for personen | AKTIV, SLETTET, IKKE_REGISTRERT |
 | varslingsstatus | Tekstlig beskrivelse om person kan varsles eller ikke | KAN_VARSLES, KAN_IKKE_VARSLES |
