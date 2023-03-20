@@ -14,7 +14,6 @@ Her er en oversikt over attributtene som finnes i KRR sitt REST API og hvilken r
 | Attributtnavn | Beskrivelse | Mulige responser |
 | - | - | - |
 | personidentifikator | Gyldig fødselsnummer eller D-nummer | 01048800153 |
-<<<<<<< Updated upstream
 | reservasjon | Reservasjon avgitt av person, brukt i henhold til eForvaltningsforskriften § 15 a. | JA, NEI |
 | status | Angir status for personen | AKTIV, SLETTET, IKKE_REGISTRERT |
 | varslingsstatus | Tekstlig beskrivelse om person kan varsles eller ikke | KAN_VARSLES, KAN_IKKE_VARSLES |
@@ -24,17 +23,6 @@ Her er en oversikt over attributtene som finnes i KRR sitt REST API og hvilken r
 | mobiltelefonnummer | Mobilnummer som person har registrert i KRR | Mobilnummer |
 | mobiltelefonnummer_oppdatert | Sist gang mobiltelefonnummer ble oppdatert av person.  Nytt eller endret mobilnummer. Dato kan være mer enn 18 måneder tilbake i tid. | Eks. 2016-08-05T10:45:15.768Z |
 | mobiltelefonnummer_sist_verifisert | Sist gang mobiltelefonnummer ble verifisert av person.  Bekreftes av person minst to ganger i året.| Eks. 2022-08-05T10:45:15.768Z |
-=======
-| reservasjon | Reservasjon avgitt av Innbygger, brukt i henhold til eForvaltningsforskriften § 15 a. | JA, NEI |
-| status | Angir status for brukeren | AKTIV, SLETTET, IKKE_REGISTRERT |
-| varslingsstatus | Tekstlig beskrivelse om bruker kan varsles eller ikke, ihht. eForvaltningsforskriften §32 annet ledd | KAN_VARSLES, KAN_IKKE_VARSLES |
-| epostadresse | Epostadressen som innbygger har registrert i KRR | Eks. 01012295312_test@minid.difi.no |
-| epostadresse_oppdatert | Sist gang epostadressen ble oppdatert | Angis som dato og klokkeslett |
-| epostadresse_sist_verifisert | Sist gang epostadressen ble verifisert | Angis som dato og klokkeslett |
-| mobiltelefonnummer | Mobilnummer som innbygger har registrert i KRR | Mobilnummer |
-| mobiltelefonnummer_oppdatert | Sist gang mobilnummer ble oppdatert | Angis som dato og klokkeslett |
-| mobiltelefonnummer_sist_verifisert | Sist gang mobilnummer ble verifisert | Angis som dato og klokkeslett |
->>>>>>> Stashed changes
 | postkasseadresse | Unik adresse for en person sin postkasseadresse hos en postkasseleverandør. | Eks. ola.nordmann#9YDT |
 | postkasseleverandoeradresse | Org.nummer til postkasseleverandør | 984661185, 922020175 |
 | sertifikat | personsertifikat for Digital Post | X509Certificate |
