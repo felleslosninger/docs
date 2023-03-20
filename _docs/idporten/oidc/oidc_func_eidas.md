@@ -1,16 +1,21 @@
 ---
 title: eIDAS
-description: eIDAS-søtte over OIDC
-summary: "Klienter kan også motta europeiske brukere ihht eIDAS-reguleringen fra ID-portens OIDC-provider. "
+description: eIDAS-støtte over OIDC
+summary: "OIDC-integrerte tjenester i ID-porten kan få pålogging fra europeiske brukere ihht eIDAS-forordningen."
 
 sidebar: oidc
 product: ID-porten
 redirect_from: /oidc_func_eidas
 ---
 
+
+
+{% include note.html content="eIDAS-støtte er p.t. kun tilgjengelig på gammel OIDC-løsning" %}
+
+
 ## Om eIDAS
 
-ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser. Det betyr at europeiske brukere med "EU-godkjent" eID kan logge seg på norske offentlige tjenester.  Per februar 2020 er følgende land koblet på i produksjonsmiljøet:
+ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser. Det betyr at europeiske brukere med "EU-godkjent" eID kan logge seg på norske offentlige tjenester.  Per februar 2023 er følgende land koblet på i produksjonsmiljøet:
 - Belgia
 - Kroatia
 - Estland
@@ -25,7 +30,44 @@ For å bli integerte i produksjon, må et land bli formelt *notifisert* og fagfe
 
 For mer informasjon om eIDAS, se  [https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030](https://ec.europa.eu/cefdigital/wiki/pages/viewpage.action?pageId=82773030).  
 
+## Hvilken informasjon får jeg om eidas-brukere ?
+
+Ved en eIDAS-pålogging følger det med følgende kjerne-attributter:
+
+* Fornavn
+* Etternavn
+* Fødselsdato
+* eIDAS-identifikator, unik og "as persistent as possible"
+
+Det er ikke gitt føringer om hvilken identifikator som skal brukes som eIDAS-indentifikator. Hvert medlemsland bestemmer selv.   
+
+Dette har ført til at noen land har fokusert på interoperabilitet (som Estland) og sender en identifikator som også finnes på fysiske ID-bevis eller i registre, typisk nasjonal personnummer eller pass-nummer.
+
+Andre land har fokusert på personvern (som Tyskland), og sender avledede identifikatorer.
+
+I noen av landene er det slik at eidas-identifikatoren er koblet til eID'en. Dette kan medføre at for noen land med eID på nasjonalt id-kort så vil brukeren få ny eIDAS-identifikator derom vedkommende fornyer sitt nasjonalt id-kort i hjemlandet.
+
+## Kan jeg få fødsels- eller D-nummer ?
+
+{% include note.html content="P.t. mangler Digitaliseringsdirektoratet hjemmel for søke i Folkeregisteret, for å se om mottatt eIDAS-identifikator er registrert på en eksisterende person. Gjenkjenning-funksjonaliteten er derfor deaktivert." %}
+
+
+ID-porten vil normalt forsøke å finne norsk fødsels/d-nummer på den europeiske brukeren, ved å søke i Folkeregisteret etter eIDAS-identifikatoren.
+
+En vellykka gjenkjenning er avhengig av at:
+1. Personen finnes i Folkeregisteret fra før
+2. Utenlandsk identifikator finnes i Folkregisteret fra før (typisk registrert ved søknad om d-nummer, kilde er passet/id-bevis som ble vist ved identitetskontroll)
+3. Landet sender samme identifikator i eidas-pålogging som er registrert i pkt. 2
+
+Dersom gjenkjenning ikke var vellykka, vil ID-porten vise en feilside.  
+
+
+
+
 ## Hvordan aktivere eIDAS-pålogging?
+
+{% include note.html content="På Nye ID-porten vil det bli tekniske endringer i grensesnittet. Grensesnitts-informasjonen nedenfor er derfor utdatert." %}
+
 
 ID-porten tilbyr to typer eidas-støtte over OIDC:
 

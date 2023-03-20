@@ -15,13 +15,6 @@ redirect_from: /idporten_faq
 
 ## Generelle spørsmål
 
-#### Jeg skjønner meg ikke helt på dette med klienttypene?
-
-Klienten må være enten  **PUBLIC**  eller  **CONFIDENTIAL**. (Blir satt i klient-registreringen).  Om klienten ønsker å bruke  **implisitt flyt** (implicit flow) altså respose_type  **idtoken token**  eller kombinasjoner av disse, må den være  **PUBLIC**.
-Om klienten ønsker å bruke  **code flow**, altså response_type  **code**, må den være  **CONFIDENTIAL**.
-
-
-
 ## Sertifikat
 
 Må vi anskaffe virksomhetssertifikat for å få etablert tilgang til ID-porten via OIDC?
@@ -30,6 +23,9 @@ Nei, men vi anbefaler Klientautentisering basert på JWT’er signert med virkso
 -   **client_secret_basic**  /  **client_secret_post**  - Klientautentisering basert på client_secret
 -   **private_key_jwt**  - Klientautentisering basert på JWT’er signert med virksomhetssertifikater
 https://difi.github.io/idporten-oidc-dokumentasjon/oidc_auth_codeflow.html#utstedelse-av-token-fra-token-endepunktet
+
+
+
 
 ***
 

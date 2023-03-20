@@ -138,18 +138,12 @@ Kunden sitt konkrete behov for logging opp mot personvernbetraktninger må vurde
 
 Det er viktig at Kunden beskytter integrasjonen sin og etablerer rutiner slik at kun bemyndiget personell har tilgang til den. Se f.eks [anbefalinger for sertifikatbehandling, logging og sporing fra Veileder for virksomhetsautentisering](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
 
-
-Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992)
-
-
-#### Bruk av virksomhetssertifikat
-
-Vi anbefaler at kunder bruker virksomhetssertifikat til oppkobling mot ID-porten. For kunder som har mange integrasjoner, bør man heller vurdere å bruke virksomhetssertifikatet til å  automatisere integrasjonsvedlikeholdet slik at hver enkelt-integrasjon istedet bruker en assymetrisk nøkkel til oppkobling og denne blir rotert hyppig.
-
-Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
+Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [avsnittet om valg av sikkerhetsnivå fra Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992#veiledning_for_valg_av_sikkerhetsniv_for_identifikasjon)
 
 
-### Håndtering av nøkler
+
+
+#### Sørg for sikker håndtering av nøkler
 
 Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetsssertifikat.  
 
@@ -166,6 +160,11 @@ Følgende punkter er det viktig at man tenker gjennom i forbindelse med nøkkelh
 En kunde bør analysere disse problemstillingene nøye, og utarbeide passende driftsprosedyrer som implementerer organisasjonens IT sikkerhetspolitikk.
 
 
+#### Bruk av virksomhetssertifikat
+
+Vi anbefaler at kunder bruker virksomhetssertifikat til oppkobling mot ID-porten. For kunder som har mange integrasjoner, bør man heller vurdere å bruke virksomhetssertifikatet til å  automatisere integrasjonsvedlikeholdet slik at hver enkelt-integrasjon istedet bruker en assymetrisk nøkkel til oppkobling og denne blir rotert hyppig.
+
+Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tjenesteleverandører oppfordres til å bestille sertifikat i god tid.
 
 
 ## Problemer ?
