@@ -168,7 +168,7 @@ POST /clients/{client_id}/jwks
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
-< NB! En nøkkel har MAKS 1 års levetid fra tidspunktet den blir postet på. 
+> NB! En nøkkel har MAKS 1 års levetid fra tidspunktet den blir postet på. 
 
 Ved bruk av selvbetjenings-API, må kunden passe på å sende konfigurasjoner som er kompatible med tabellen over, ellers risikerer man å ende opp med en ubrukelig klient.
 
