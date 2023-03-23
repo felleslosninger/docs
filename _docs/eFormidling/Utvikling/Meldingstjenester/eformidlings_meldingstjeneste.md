@@ -13,6 +13,7 @@ Mottakere støtter en eller flere av følgende prosesser:
 | **Prosess**                                              | **Dokumenttype**                              | **Eksempel**                           |
 |----------------------------------------------------------|-----------------------------------------------|----------------------------------------|
 | [Saksbehandling](../../Funksjonalitet/saksbehandling)    | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling) |
+| [Taushetsbelagt saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling) | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/taushetsbelagt_saksbehandling) |
 | [Avtalt meldingsutveksling](../../Funksjonalitet/avtalt) | [Avtalt](../Dokumenttyper/avtalt)             | [Eksempel](../Eksempel/avtalt)         |
 
 Avsendere støtter en eller flere av følgende prosesser:
