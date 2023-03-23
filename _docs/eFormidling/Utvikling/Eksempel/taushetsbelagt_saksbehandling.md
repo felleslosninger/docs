@@ -163,6 +163,66 @@ curl http://localhost:9093/api/messages/in/peek?process=urn:no:difi:profile:arki
 curl -XDELETE 'http://localhost:9093/api/messages/in/9e1ad87d-256d-46f6-ae5f-5dfabb0246af
 ```
 
+## Motta meldinger
+
+### Sjekk innkommende meldinger
+
+```
+curl http://localhost:9093/api/messages/in/peek?process=urn:no:difi:profile:arkivmelding:taushetsbelagt:ver1.0
+```
+
+### Last ned melding
+
+```
+curl http://localhost:9093/api/messages/in/pop/9e1ad87d-256d-46f6-ae5f-5dfabb0246af
+```
+
+### Slett melding
+
+```
+curl -XDELETE 'http://localhost:9093/api/messages/in/9e1ad87d-256d-46f6-ae5f-5dfabb0246af
+```
+
+### Send kvittering
+
+```
+curl -XPOST http://localhost:9093/api/messages/out
+-H 'Content-Type: application/json' -d \
+'{
+    "standardBusinessDocumentHeader": {
+        "headerVersion": "1.0",
+        "receiver": [{
+                "identifier": {
+                    "authority": "iso6523-actorid-upis",
+                    "value": "0192:986252932"
+                }
+            }
+        ],
+        "documentIdentification": {
+            "standard": "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering",
+            "type": "arkivmelding_kvittering",
+            "typeVersion": "2.0"
+        },
+        "businessScope": {
+            "scope": [{
+                    "identifier": "urn:no:difi:profile:arkivmelding:response:ver1.0",
+                    "type": "ConversationId"
+                }
+            ]
+        }
+    },
+    "arkivmelding_kvittering": {
+        "receiptType": "OK",
+        "relatedToMessageId": "9e1ad87d-256d-46f6-ae5f-5dfabb0246af",
+        "messages": [{
+                "code": "Recno",
+                "text": "315890"
+            }
+        ]
+    }
+}'
+```
+
 ## Neste steg
 
 - Funksjonell beskrivelse av [Taushetsbelagt Saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling)
