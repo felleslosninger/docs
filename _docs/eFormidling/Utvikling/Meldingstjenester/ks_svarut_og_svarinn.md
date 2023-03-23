@@ -11,6 +11,7 @@ eFormidling støtter følgende prosesser og dokumenttyper med meldingstjenesten 
 | **Prosess**                                           | **Dokumenttype**                              | **Eksempel**                           |
 |-------------------------------------------------------|-----------------------------------------------|----------------------------------------|
 | [Saksbehandling](../../Funksjonalitet/saksbehandling) | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/saksbehandling) |
+| [Taushetsbelagt saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling) | [Arkivmelding](../Dokumenttyper/arkivmelding) | [Eksempel](../Eksempel/taushetsbelagt_saksbehandling) |
 
 Om KS SvarUt og SvarInn er en del av en mottakers kapabiliteter eller ikke avhenger av flere faktorer slik som beskrevet
 for den enkelte prosess.
