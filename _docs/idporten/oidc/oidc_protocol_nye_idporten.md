@@ -166,3 +166,7 @@ På sikt vil SAML blir faset helt ut.
 [Pseudonymisering](oidc_func_nopid.html) vil bli påvirket av byttet av `sub`, se ovenfor.  
 
 Selve `no_pid`-scopet videreføres ikke, så kunder må bruke enten opaque tokens eller pseudonymiserende scopes.
+
+### sid kun for frontchannel-klienter
+
+`sid` blir inkludert i id_token berre viss klienten er registrert for å motta frontchannel-logout kall.

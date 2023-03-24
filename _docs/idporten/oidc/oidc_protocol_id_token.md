@@ -75,7 +75,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | jti | jwt id - unique identifer for a given token  |
 | locale | The language selected by the user during the authentication in ID-porten |
-| sid | session id - an unique identifier for end user session at ID-porten. May be needed when performing logout |
+| sid | session id - an unique identifier for end user session at ID-porten.  `sid` will only be included if the client is registered for frontchannel-logout.  |
 |at_hash| A hash of the access_token issued together with this id_token. The client may use this value to protect against access_token injections when using by-reference access tokens. |
 
 
