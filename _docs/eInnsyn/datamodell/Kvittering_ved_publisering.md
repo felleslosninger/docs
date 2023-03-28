@@ -17,7 +17,7 @@ Virksomheter som ønsker å motta kvitteringer må registrere dette i virksomhet
 
 **Ved direkteintegrasjon**:
 
-Systemet må tilrettelegges for å motta prosessen “response” og dokumenttype “einnsyn_kvittering”, i henhold til [eformidlingsdokumentasjonen]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/message#einnsyn).
+Systemet må tilrettelegges for å motta prosessen “response” og dokumenttype “einnsyn_kvittering”, i henhold til [eformidlingsdokumentasjonen](https://docs.digdir.no/docs/eFormidling/Utvikling/Meldingstjenester/einnsyns_meldingstjeneste).
 Sannsynligvis er integrasjonen allerede satt opp for å hente innsynskrav, og kvitteringer hentes ned på samme måte, men med annen prosessidentifikator.
 Hva som skjer videre med kvitteringen blir opp til systemeier.
 
@@ -49,6 +49,8 @@ Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i 
     "referanseType" : "publisering"
   }
 ```  
+
+**Oppdatert funksjonalitet 23.03.2023**
 
 Det vil nå bli sendt tilsvarende kvitteringsmelding som over når en publisering ikke kunne utføres pga valideringsfeil. Feltet "publisert" vil da være "false".
 
