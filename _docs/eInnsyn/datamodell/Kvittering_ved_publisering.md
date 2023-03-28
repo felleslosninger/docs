@@ -50,7 +50,7 @@ Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i 
   }
 ```  
 
-## Ikke-publisert og Valideringsmeldinger (fra 23.03.2023)
+## Ikke-publisert og valideringsmelding (fra 23.03.2023)
 
 Det vil nå bli sendt tilsvarende kvitteringsmelding som over når en publisering ikke kunne utføres pga valideringsfeil. Feltet "publisert" vil da være "false".
 
