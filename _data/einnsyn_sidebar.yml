@@ -8,7 +8,7 @@ folders:
     jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
     
   - title: Validering
-    jurl: /docs/eInnsyn/Kvittering_ved_publisering
+    jurl: /docs/eInnsyn/datamodell/Kvittering_ved_publisering
 
   - title: Generelt om datamodell
     jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
