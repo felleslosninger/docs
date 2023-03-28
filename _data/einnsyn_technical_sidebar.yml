@@ -1,6 +1,27 @@
-sidebarTitle: eInnsyn-datamodell
+sidebarTitle: eInnsyn-klient
 
 folders:
+- title: Publisering til eInnsyn
+  folderitems:
+
+  - title: Publisering til einnsyn
+    jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
+    
+  - title: Validering
+    jurl: /docs/eInnsyn/datamodell/Kvittering_ved_publisering
+
+  - title: Generelt om datamodell
+    jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
+
+  - title: Validering
+    jurl: /docs/eInnsyn/datamodell/SHACL_validering
+
+  - title: Kodelister
+    jurl: /docs/eInnsyn/datamodell/einnsyn_publisering_kodelister
+
+  - title: Eksempel
+    jurl: /docs/eInnsyn/datamodell/eksempler
+
 - title: eInnsyn-klient
   folderitems:
 
@@ -24,26 +45,7 @@ folders:
 
   - title: Innsynskrav og e-postoppsett
     jurl: /docs/eInnsyn/einnsyn_innsynskrav
-
-- title: eInnsyn
-  folderitems:
-
-  - title: Publisering til einnsyn
-    jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
-
-  - title: Generelt om datamodell
-    jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
-
-  - title: Validering
-    jurl: /docs/eInnsyn/datamodell/SHACL_validering
-
-  - title: Kodelister
-    jurl: /docs/eInnsyn/datamodell/einnsyn_publisering_kodelister
-
-  - title: Eksempel
-    jurl: /docs/eInnsyn/datamodell/eksempler
-
-
+    
 - title: Publisering av møter
   folderitems:
 

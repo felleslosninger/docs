@@ -3,8 +3,8 @@ title: Kvittering ved publisering
 description:
 summary:
 
-sidebar: einnsyn_sidebar
-redirect_from: /einnsyn_publisering_til_einnsyn
+sidebar: einnsyn_technical_sidebar
+redirect_from: /einnsyn_kvittering_ved_publisering
 ---
 
 ## Kvittering på publisert data
