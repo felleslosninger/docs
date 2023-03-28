@@ -7,7 +7,7 @@ sidebar: einnsyn_technical_sidebar
 redirect_from: /einnsyn_kvittering_ved_publisering
 ---
 
-## Kvittering på publisert data
+## Publiseringsmelding
 Alle som bruker integrasjonspunkt og kan motta innsynskrav, kan også hente ned kvitteringsmeldinger for publiseringer.
 Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInnsyn.
 Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/docs/eFormidling/Utvikling/Meldingstjenester/einnsyns_meldingstjeneste), uten payload på meldingen.
