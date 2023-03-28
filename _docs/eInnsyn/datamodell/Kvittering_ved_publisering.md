@@ -10,7 +10,7 @@ redirect_from: /einnsyn_kvittering_ved_publisering
 ## Kvittering på publisert data
 Alle som bruker integrasjonspunkt og kan motta innsynskrav, kan også hente ned kvitteringsmeldinger for publiseringer.
 Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInnsyn.
-Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/eformidling_nm_message.html), uten payload på meldingen.
+Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/docs/eFormidling/Utvikling/Meldingstjenester/einnsyns_meldingstjeneste), uten payload på meldingen.
 Virksomheter som ønsker å motta kvitteringer må registrere dette i virksomhetsadministrasjonen på einnsyn.no.
 
 ![Admin GUI avansert]({{site.baseurl}}/images/einnsyn/einnsyn_admin_gui_avansert.png)

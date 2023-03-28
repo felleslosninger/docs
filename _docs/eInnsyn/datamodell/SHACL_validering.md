@@ -16,6 +16,6 @@ Som valideringsverktøy kan ein bruke
 * [RDF4j sin implementasjon](https://rdf4j.org/documentation/programming/shacl/)
 * [eInnsyn impementasjon](https://github.com/difi/einnsyn-klient/tree/master/datamodell/shacl-engine)
 * [Online validering](https://shacl.org/playground/)
-* [Validering ved direkteintegrasjon] ({{site.baseurl}}/docs/eInnsyn/Kvittering_ved_publisering)
+* [Validering ved direkteintegrasjon](https://docs.digdir.no/docs/eInnsyn/datamodell/Kvittering_ved_publisering)
 
 eInnsyn implementasjonen vart utvikla tidleg i eInnsyn-utviklinga sidan SHACL-er relativt nytt og på dåverande tidspunkt ikkje eksisterte høveleg valideringsmotorar
