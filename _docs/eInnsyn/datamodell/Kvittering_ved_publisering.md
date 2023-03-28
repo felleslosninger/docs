@@ -50,13 +50,13 @@ Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i 
   }
 ```  
 
-**Oppdatert funksjonalitet 23.03.2023**
+## Ikke-publisert og Valideringsmeldinger (fra 23.03.2023)
 
 Det vil nå bli sendt tilsvarende kvitteringsmelding som over når en publisering ikke kunne utføres pga valideringsfeil. Feltet "publisert" vil da være "false".
 
 Det er også lagt til en kvitteringsmelding som gir "ADVARSEL" hvis en publiseringsmelding ikke validerer. Denne sier ikke noe om publiseringen faktisk er vellykket. Det er fordi vi har en del tilpasninger som gjør at noen filer som ikke validerer allikevel blir publisert. Vi ønsker å fjerne disse tilpasningene senere, så "ADVARSEL"-feil må rettes for at disse skal publiseres i fremtiden også.
 
-eksempel på en "ADVARSEL"-kvittering:
+eksempel på en "ADVARSEL"-kvittering (Valideringsmelding):
 ``` 
   "einnsyn_kvittering" : {
     "sikkerhetsnivaa" : null,
