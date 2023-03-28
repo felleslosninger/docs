@@ -1,11 +1,14 @@
 sidebarTitle: eInnsyn-klient
 
 folders:
-- title: eInnsyn
+- title: Publisering til eInnsyn
   folderitems:
 
   - title: Publisering til einnsyn
     jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
+    
+  - title: Validering
+    jurl: /docs/eInnsyn/Kvittering_ved_publisering
 
   - title: Generelt om datamodell
     jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
