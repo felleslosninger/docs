@@ -303,7 +303,7 @@ Eksempel:
 ```
 difi.security.enable=true
 difi.security.user.name=myusername
-difi.security.user.name=mypassword
+difi.security.user.password=mypassword
 ```
 
 #### Levetid for meldinger
