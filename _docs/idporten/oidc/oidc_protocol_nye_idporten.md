@@ -81,7 +81,7 @@ SAML blir videreført kun for eksisterende tjenster, men med begrenset funksjona
 
 ### Ny issuer
 
-Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi, og vil bruke et annet signeringssertifkat enn dagens.  Verdien er p.t. ikke bestemt, trolig `iss=https://idporten.no/`.  Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
+Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi: `iss=https://idporten.no/`. Signeringssertifkatet blir også nytt. Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
 
 Samtidig gjør dette det mer komplekst for API-tilbydere som bruker [brukerstyrt datadeling](oidc_auth_oauth2.html), som da må stole på access_token fra to issuere dersom de ikke er i stand til å kreve/koordinere at sine konsumenter koordinert migrerer til Nye ID-porten samtidig med at APIet truster den nye issueren.
 
