@@ -27,7 +27,7 @@ For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende
 
 1. Bytt til ID-portens nye issuer-URL: `https://idporten.no`   
       * Noen IAM-produkter vil da automatisk laste ned oppdaterte metadata og etablere trust til det nye sertifikatet vårt.
-      *  Dersom dette steget ikke går automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust.
+      *  Dersom dette steget ikke går automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust. De nødvendige metadataene finnes her: (https://idporten.no/.well-known/openid-configuration)
 3. Konfigurere din integrasjon til å bruke PKCE
 4. Endre egen kode til å validere de nye verdiene for sikkerhetsnivå (`idporten-loa-*`)
 
