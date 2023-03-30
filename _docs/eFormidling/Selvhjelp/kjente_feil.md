@@ -17,13 +17,16 @@ Det finnes noen kjente feilsituasjoner som kan oppstå når en skal installere i
 
 ### Låst fil-database
 
-Dersom Integrasjonspunktet blir drept under oppstart, og liquibase ikke får fjernet låsen i databasen, må en manuelt inn i databasen og fjerne innholdet fra tabellen DATABASECHANGELOGLOCK
+Dersom Integrasjonspunktet blir drept under oppstart, og liquibase ikke får fjernet låsen i databasen, må en manuelt inn i databasen og oppdatere innholdet fra tabellen DATABASECHANGELOGLOCK
 
-1. last ned https://repo1.maven.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.jar
-2. legg jar'en i samme katalog som databasen ligger dvs. working directory, der dere kjører integrasjonspunktet
-3. kjør "java -jar .\h2-1.4.200.jar"
-4. jdbcurl: jdbc:h2:./integrasjonspunkt, user: sa, blankt passord
-5. slett tabellen DATABASECHANGELOGLOCK
+1. Last ned https://repo1.maven.org/maven2/com/h2database/h2/1.4.200/h2-1.4.200.jar
+2. Legg jar'en i samme katalog som databasen ligger dvs. working directory, der dere kjører integrasjonspunktet
+3. Stopp integrasjonspunktet
+4. Kjør "java -jar .\h2-1.4.200.jar"
+5. jdbcurl: jdbc:h2:./integrasjonspunkt, user: sa, blankt passord
+6. Sjekk at locken er der: SELECT * FROM DATABASECHANGELOGLOCK;
+7. Kjør denne kommandoen: update DATABASECHANGELOGLOCK set locked=0 WHERE ID=1;
+8. Verifiser at locken nå er false.
 
 URLen skal være slik som denne: jdbc:h2:C:/Users/katalog/IdeaProjects/efm-integrasjonspunkt/integrasjonspunkt/integrasjonspunkt
 Bytt ut med riktig path
