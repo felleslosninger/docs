@@ -66,7 +66,7 @@ The new ID-porten is aiming to follow the Oauth2.1 specifications, unlike 2.0 wh
 
 ### New issuer
 
-The new ID-porten will run on a new domain with a new issuer value. Our signing certficate will also be changed. The issuer is not yet decided but will most likely be `iss=https://idporten.no/`.  By providing a new issuer, we will make it possible for our customers to gradually migrate to our new solution at a suitable time.
+The new ID-porten will run on a new domain with a new issuer value: `iss=https://idporten.no/`. Our signing certficate will also be changed. By providing a new issuer, we will make it possible for our customers to gradually migrate to our new solution at a suitable time.
 
 However, this will make it a bit more complicated for API-owners that are using [brukerstyrt datadeling](oidc_auth_oauth2.html). These API-owners will need to trust access_tokens from two issuers unless they coordinate the migration with their customers.
 
