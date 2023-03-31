@@ -317,14 +317,14 @@ at dette skal medføre at levering av meldinger feiler.
 
 En kan også sette levetid per meldingstype dersom det er ønskelig:
 
-´´´
+```
 difi.move.dpo.default-ttl-hours  # For meldingstypen DPO
 difi.move.dpv.default-ttl-hours  # For meldingstypen DPV
 difi.move.dpi.default-ttl-hours  # For meldingstypen DPI
 difi.move.fiks.ut.default-ttl-hours  # For meldingstypen DPF
 difi.move.fiks.io.default-ttl-hours  # For meldingstypen DPFIO
 difi.move.nextmove.serviceBus.default-ttl-hours  # For meldingstypen DPE (einnsyn)
-´´´
+```
 
 #### Kapasitet
 *Valgfritt*
