@@ -311,6 +311,7 @@ difi.security.user.password=mypassword
 
 Integrasjonspunktet er designet for å tåle at meldingstjenestene som brukes kan ha nedetid og andre driftsproblemer uten
 at dette skal medføre at levering av meldinger feiler.
+
 | Egenskap                              | Beskrivelse                                                                                                                                                           | Standardverdi |
 |---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | difi.move.nextmove.default-ttl-hours  | Tid i timer integrasjonspunktet prøver å levere en utgående melding før denne får status LEVETID_UTLOPT og må sendes på nytt eller håndteres på annet vis av avsender | 24            |
