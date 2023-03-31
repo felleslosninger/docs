@@ -18,6 +18,21 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.15.0
+
+31.05.2023
+
+**Funksjonalitet**
+
+- Muligheit for å sette egen levetid per meldingstype:
+
+
+**Feilrettinger**
+
+- 
+
+---
+
 ## 2.14.0
 
 07.02.2023
