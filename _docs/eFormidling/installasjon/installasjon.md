@@ -310,12 +310,20 @@ difi.security.user.password=mypassword
 *Valgfritt*
 
 Integrasjonspunktet er designet for å tåle at meldingstjenestene som brukes kan ha nedetid og andre driftsproblemer uten
-at dette skal medføre at levering av meldinger feiler. 
-
+at dette skal medføre at levering av meldinger feiler.
 | Egenskap                              | Beskrivelse                                                                                                                                                           | Standardverdi |
 |---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | difi.move.nextmove.default-ttl-hours  | Tid i timer integrasjonspunktet prøver å levere en utgående melding før denne får status LEVETID_UTLOPT og må sendes på nytt eller håndteres på annet vis av avsender | 24            |
 
+En kan også sette levetid per meldingstype dersom det er ønskelig:
+| Egenskap                              | Beskrivelse                                                                                                                                                           | Standardverdi |
+|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.dpo.default-ttl-hours  | For meldingstypen DPO | 24            |
+| difi.move.dpv.default-ttl-hours  | For meldingstypen DPV | 24            |
+| difi.move.dpi.default-ttl-hours  | For meldingstypen DPI | 24            |
+| difi.move.fiks.ut.default-ttl-hours  | For meldingstypen DPF | 24            |
+| difi.move.fiks.io.default-ttl-hours  | For meldingstypen DPFIO | 24            |
+| difi.move.nextmove.serviceBus.default-ttl-hours  | For meldingstypen DPE (einnsyn) | 24            |
 
 #### Kapasitet
 *Valgfritt*
