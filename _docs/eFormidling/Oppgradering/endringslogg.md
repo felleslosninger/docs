@@ -34,6 +34,7 @@ redirect_from:
 - DPI kvitteringer følger nå konfigurert intervall
 - Arkivmelding-kvittering med receiptType ERROR får ikke lenger status LEST
 - Integrasjonspunktet slår opp på json-schema.org (og sikkert andre ved behov) ved oppstart
+- Sletting av tempfiler utføres nå som forventet
 
 ---
 
