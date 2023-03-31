@@ -337,7 +337,7 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 - slå av oppslag i det sentrale folkeregister (DSF) dersom dette ikke trengs
 - øke tilgjengelige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og nettverk
 
-| Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
+| Egenskap                                | Beskrivelse    |                                                                                                           | Standardverdi |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
 | difi.move.feature.statusQueueIncludes   | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
 | difi.move.nextmove.statusPollingCron    | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 * * * * *   |
