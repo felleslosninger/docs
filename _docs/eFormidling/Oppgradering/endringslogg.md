@@ -24,12 +24,16 @@ redirect_from:
 
 **Funksjonalitet**
 
-- Muligheit for å sette egen levetid per meldingstype:
+- Muligheit for å sette egen levetid per meldingstype: https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#levetid-for-meldinger
 
 
 **Feilrettinger**
 
-- 
+- Hindre at status MOTTATT kommer etter LEVERT for DPI meldinger
+- Ved bruk av proxyklient for DPI fortsetter ikke polling av meldingsstatus etter at melding er levert
+- DPI kvitteringer følger nå konfigurert intervall
+- Arkivmelding-kvittering med receiptType ERROR får ikke lenger status LEST
+- Integrasjonspunktet slår opp på json-schema.org (og sikkert andre ved behov) ved oppstart
 
 ---
 
