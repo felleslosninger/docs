@@ -54,18 +54,18 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 ## MinID
 
-### Opprette testbruker selv i testmiljøet VER2
+### Opprette testbruker selv i testmiljøet TEST
 
-Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetiske personidentifikator (en må legge til +80 på måned-sifrene). En kan også hente fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
+Det er mulig å opprette testbruker i MinID på egenhånd i TEST-miljøet. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetiske personidentifikator (en må legge til +80 på måned-sifrene). En kan også hente fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
 
 
 
 **Framgangsmåte**
 
-- trykk i innloggingsbildet i VER2 i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.digdir.no/order](https://aktiveringsbrev.test.minid.digdir.no/order)
+- trykk i innloggingsbildet i TEST i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.no/order](https://aktiveringsbrev.test.minid.no/order)
 - fyll inn syntestisk personidentifikator
-- bestill aktiveringsbrev. En får så en aktiveringskode i "Ditt aktiveringsbrev er bestilt". 
-- legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
+- bestill aktiveringsbrev. En får så en aktiveringskode. 
+- legg inn aktiveringskoden i "Registrer aktiveringsbrev"  
 
 ### Pinkoder er faset ut i testmiljøet VER2 fra 01.02.2023
 01.02.2023 ble statiske pinkoder faset ut i VER2. 
