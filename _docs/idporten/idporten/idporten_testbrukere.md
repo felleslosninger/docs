@@ -10,7 +10,7 @@ product: ID-porten
 redirect_from: /idporten_testbrukere
 ---
 
-Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2.
+Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2/Test.
 
 ## TestID
 
