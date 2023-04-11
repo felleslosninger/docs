@@ -20,7 +20,7 @@ redirect_from:
 
 ## 2.15.0
 
-31.05.2023
+31.03.2023
 
 **Funksjonalitet**
 
