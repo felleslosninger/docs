@@ -90,4 +90,4 @@ The client must then use the request_uri and its client_id when redirecting the 
 ```
 GET /authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&client_id=s6BhdRkqt3
 ```
-Request parameters  (apart from client_id) should not be repeated in the authorize-request, but if they are inclued, they must be excactly matching the values that was pushed in the PAR.
+Request parameters  (apart from client_id) must not be repeated in the authorize-request.
