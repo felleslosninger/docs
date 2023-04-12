@@ -23,6 +23,7 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  ID-portens signeri
 
 Disse metadata skal caches i din egen løsning, typisk er 24 timer en passende levetid.
 
+Du finner [IP-adresse til disse miljøene her]({{site.baseurl}}/docs/general/IP)
 ## Gammel OIDC-løsning
 
 {% include note.html content="Den nye ID-porten ble lansert 14. mars 2023. Gammel løsning lever i parallell ut 2023. Se [prosjektsida for mer informasjon om hvordan migrere fra gammel til ny løsning](oidc_protocol_nye_idporten.html)." %}

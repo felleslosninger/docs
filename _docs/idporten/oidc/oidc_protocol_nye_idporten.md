@@ -18,7 +18,7 @@ Det er to tilfeller:
 
 For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende steg:
 
-1. Åpne evt. egen utgående brannmur til ny IP-adresse
+1. Åpne evt. egen utgående brannmur til ny [IP-adresse]({{site.baseurl}}/docs/general/IP)
 
 2. Beslutte om du vil gjenbruke eksisterende integrasjon, eller lage en ny
     * Du kan gjenbruke samme `client_id` som du bruker idag
@@ -34,7 +34,7 @@ For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende
 
 #### B: Kunde har SAML-integrasjon idag
 
-Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mars-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
+Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mai-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
 
 Vi anbefaler dog at alle migrerer til OIDC, i praksis må kunden da [etablere ny OIDC-integrasjon fra scratch ihht. integrasjonsguiden vår](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
 
@@ -89,7 +89,7 @@ Ved utløp av migreringsperioden vil gammel issuer bli faset ut fullstendig.  De
 
 ### Ny IP
 
-Nye ID-porten vil også køyre på ein annan IP-addresse enn dagens, slik at kundar som har utgåande brannmur mot oss, må opne opp.
+Nye ID-porten vil også køyre på [ein annan IP-addresse]({{site.baseurl}}/docs/general/IP) enn dagens, slik at kundar som har utgåande brannmur mot oss, må opne opp.
 
 ### SSO
 

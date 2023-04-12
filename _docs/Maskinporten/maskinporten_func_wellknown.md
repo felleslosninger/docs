@@ -23,5 +23,7 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  Maskinportens sign
 
 Du må ta kontakt med den som leverer APIet for å finne ut hvilket test-miljø du skal koble deg mot.
 
+Du finner [IP-adresse til miljøene her]({{site.baseurl}}/docs/general/IP).
+
 ## ID-porten
 Merk at ID-porten OIDC provider har sine egne metadata, som er [publisert her]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)
