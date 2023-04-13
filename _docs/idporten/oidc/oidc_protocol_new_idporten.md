@@ -107,7 +107,11 @@ In the `access_token`, the  `sub` will also get new values.
 
 ### Changes to Single logout and revoking
 
-Due to changes in the OIDC specifications regarding logout, we are considering to change todays behavior and align it to the spec.
+Due to changes in the OIDC specifications regarding logout, some changes have been implemented:
+
+- if a client is registered with front channel logout uri it will receieve calls to this uri when it is the initiator of the logout request
+
+We are considering to change todays behavior and align it to the spec.
 
 - In todays solution, revoking the access_token/refresh_token will terminate the SSO session. Is this appropriate behavior?
 - Is it appropriate that logging out of a SSO-sessjon, also invalidates all tokens belonging to the clients within the session?
