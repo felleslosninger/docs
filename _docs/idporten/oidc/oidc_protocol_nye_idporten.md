@@ -123,12 +123,17 @@ I `access_token` vil `sub` også få nye verdier.
 
 ### Endringer i Single Logout og revokering
 
-Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
+Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  
+
+- dersom en klient er registrert for front channel logout vil klienten få kall til registrert uri også når klienten selv initierer utlogging
+
+Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
 
 - er det hensiktsmessig at revokasjon av access_token/refresh_token også fører til at SSO-sesjonen blir terminert, slik som idag?
 - er det hensiktsmessig at utlogging fra SSO-sesjon også invaliderer alle tokens til alle klienter tilhørende sesjonen?
 - bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten som del av utloggingen ?
 - hvor strenge krav skal vi engentlig stille for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
+
 
 
 ### Hyppigere redirect tilbake til klient med feil
