@@ -10,7 +10,7 @@ redirect_from: /einnsyn_forutsetninger
 
 ## Dette må du ha på plass før du installerer
 
-* Minimum Java Runtime Environment 1.11 installert
+* Minimum Java Runtime Environment 11 installert
 * Et virksomhetssertifikat utstedt til virksomheten
 * Verktøy for xml-redigering. feks Notepad, Notepad++ eller Sublime Text.
 * Integrasjonspunkt installert på samme server. [Sjå veiledning her]({{site.baseurl}}/docs/eFormidling/Introduksjon/last_ned)
