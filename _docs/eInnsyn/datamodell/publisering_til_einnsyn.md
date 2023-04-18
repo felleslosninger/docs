@@ -60,16 +60,18 @@ Klienten konverterer til jsonld og ID blir generert utfra orgnr, sakssekvensnumm
 ## ID-Converter
 Det finnes en funksjon i admin-GUI som kan benyttes ved overgang fra noark4 til noark5 eller jsonld uten "skarpt skille". Når denne funksjonen er påslått vil eInnsyn sjekke nye id'er opp mot eksisterende id i databasen og ved treff vil den konvertere meldingen til gammelt format på vei inn. Dette for å unngå at det opprettes ny saksmappe og journalpost basert på ny id.
 Logikk i ID-konverter er som følger:
+
 Hvis innkommende saksmappe-id(iri) starter med “http://data.einnsyn.no/noark4/” sendes den videre uten endring.
 Hvis den starter med noe annet, letes den opp basert på:
 “http://data.einnsyn.no/noark4/Saksmappe--<orgnummer>--<sakssekvensnummer>--<saksaar>” for å se om vi har den lagret med gammel id.
 Hvis den fins i databasen, sjekkes saksmappe_iri i meldingen opp mot lagret id/iri. Hvis disse ikke er like, endres meldingen til å bruke id/iri vi har lagret i databasen.
 Hvis den ikke fins, sendes meldingen videre.
+
 Samme for journalpost, den sendes videre hvis id/iri starter med “http://data.einnsyn.no/noark4/”
-Hvis den starter med noe annet, letes den opp basert på virksomhet, journalaar og journalsekvensnummer (ikke oppslag på oppbygd id/iri som for saksmappe).
-Hvis den fins i databasen, sjekkes journalpost_iri i meldingen opp mot lagret journalpost-id/iri. Hvis disse ikke er like, endres meldingen til å bruke id/iri vi har lagret i databasen.
+Hvis den starter med noe annet, letes den opp basert på virksomhet, journalaar og journalsekvensnummer (ikke oppslag på oppbygd id/iri som for saksmappe). Hvis den fins i databasen, sjekkes journalpost_iri i meldingen opp mot lagret journalpost-id/iri. Hvis disse ikke er like, endres meldingen til å bruke id/iri vi har lagret i databasen.
 Parent til journalposten i meldingen oppdateres til å være id/iri på parent fra databasen.
 Hvis den fins, men har samme id/iri som i databasen, korrigeres eventuelt parent i meldingen til å være parent-iri fra databasen.
+
 Hvis journalpost ikke fins i databasen basert på virksomhet, journalaar og journalsekvensnummer, forsøker man å finne en eventuelt tidligere lagret saksmappe ut fra innkommende journalposts oppgitte parent (oppslag mot saksmappe sin ekstern_id og virksomhet).
 Hvis mappen fins med den oppgitte ekstern_id, endres meldingen til å bruke vår saksmappe-id/iri som parent på journalpost.
 
