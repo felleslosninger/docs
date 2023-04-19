@@ -77,9 +77,9 @@ Hvis mappen fins med den oppgitte ekstern_id, endres meldingen til å bruke vår
 
 ## Strukturering av publiseringen
 eInnsyn forsøker i så stor grad som mogleg å legge til rette for løpande overføring. Og strukturen legg opp til dette sjølv i tilfeller der dette ikkje er tilfelle.
-Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. Der det t.d er fleire journalpostar i samme saksmappe, eller dokument som tilhøyrer fleire journalpostar. Så vil dette dupliserast for kvar journalpost.
-På samme måte så vil møteregistreringar og møtedokument i samme møte sendast som separate meldingar. Dersom 2 registreringar referear til kvarandre skal dei like vel sendast som separate meldingar 
-[Eksempel på splitta forsendelse]({{site.baseurl}}/docs/eInnsyn/datamodell/eksempler#oppsplitting-av-noark-uttrekk)
+Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. For journalposter vil en forsendelse inneholde registreringen (journalposten), saksmappa (kan utelates hvis er sikker på at vi allerede har mottatt denne), korrespondansepart(er), skjermingshjemmel, dokumentbeskrivelse og dokumentobjekt (hvis det skal vises at er flere vedlegg, og ved fulltekspublisering). Hvis en journalpost oppdateres må all data sendes sammen igjen, hvis f.eks. utelater korrespondansepartene ved oppdatering, så vil vi slette de "gamle" korrespondansepartene.
+
+Ved publisering av en møtesak-(sregistrering) må både møtemappe og saksframlegg (registreringen, med tilhørende objekter) sendes i samme omgang. Hvis et møte har mange saker med mange vedlegg til saksframleggene kan en publiseringsfil med hele møte bli for stort, det er derfor anbefalt å legge opp til å sende en og en møtesak til et møte. Det er en størrelsesbegrensning på 3MB gjennom eFormidling. Det kan nevnes at compact versjon av jsonld er omtrent halvparten så stor som "extended" versjon (se eksempler).
  
 
 ## Fulltekstpublisering
