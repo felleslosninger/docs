@@ -18,6 +18,20 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.16.0
+
+25.04.2023
+
+**Funksjonalitet**
+
+- Overgang til nytt Maskinporten-test-miljø i eFormidling sitt staging-/QA-miljø
+- Støtte for test-verksemdssertifikat SEIDv2 frå Buypass og Commfides
+
+**Vedlikehald**
+- Oppgradering av avhengigheitar i Docker-biletet
+
+---
+
 ## 2.15.0
 
 31.03.2023
