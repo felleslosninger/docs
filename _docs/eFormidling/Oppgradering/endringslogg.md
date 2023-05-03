@@ -18,6 +18,16 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.16.1
+
+03.05.2023
+
+**Feilrettingar**
+
+- Dobbel mottatt vert ikkje registrert ved sending av digital post til innbyggarar.
+
+---
+
 ## 2.16.0
 
 25.04.2023
