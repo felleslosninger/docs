@@ -11,13 +11,13 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ## Integrasjonspunktet
 
-> [**Integrasjonspunktet 2.16.1 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.16.1/integrasjonspunkt-2.16.1.jar)
+> [**Integrasjonspunktet 2.16.2 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.16.2/integrasjonspunkt-2.16.2.jar)
 
-> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.16.1/integrasjonspunkt-2.16.1.jar.asc)
+> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.16.2/integrasjonspunkt-2.16.2.jar.asc)
 
-> [**Integrasjonspunktet 2.16.1 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.16.1/images/sha256-bbbcc862698c9365d394ecbdd0730a8e3486d952d336813d6830ba36c5e0ff84?context=explore)
+> [**Integrasjonspunktet 2.16.2 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.16.2/images/sha256-f74f8a45b3b86963b1d187eb974b1d6883b346fdbe563d260a14937f97545cb2?context=explore)
 
-`docker pull digdir/integrasjonspunkt:2.16.1`
+`docker pull digdir/integrasjonspunkt:2.16.2`
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../installasjon/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
 

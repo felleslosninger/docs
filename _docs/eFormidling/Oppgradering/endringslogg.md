@@ -18,6 +18,17 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+
+## 2.16.2
+
+05.05.2023
+
+**Feilrettingar**
+
+- Ved sending av DPI blir det registrert dobbel MOTTATT når MOTTATT kjem etter LEVERT: Proxy-klienten vil ikkje motta MOTTATT-statusar, kun LEVERT.
+
+---
+
 ## 2.16.1
 
 03.05.2023
