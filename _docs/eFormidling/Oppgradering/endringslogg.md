@@ -670,6 +670,14 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 ## Sentrale komponenter
 
+## ServiceRegistry 2.12.0
+
+09.05.2023
+
+**Endringar**
+
+- Innføring av utskriftsteneste frå Skatteetaten som standard-val i eFormidling
+
 ## ServiceRegistry 2.10.0
 
 27.03.2023
