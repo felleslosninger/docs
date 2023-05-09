@@ -18,6 +18,13 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.17.0
+
+09.05.2023
+
+**Funksjonalitet**
+
+- Innføring av utskriftsteneste frå Skatteetaten som standard-val i eFormidling
 
 ## 2.16.2
 
