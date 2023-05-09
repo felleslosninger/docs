@@ -26,7 +26,7 @@ For å få et system til å sende digital post til innbyggere via Digdirs aksess
 ### eFormidling
 [Fellesløsningen eFormidling](https://docs.digdir.no/eformidling_index.html) støtter å sende digital post til innbyggere. En forutsetning for å ta i bruk eFormidling er at avsender setter opp et [integrasjonspunkt](https://docs.digdir.no/eformidling_download_ip.html) lokalt. Integrasjonspunktet er en komponent som kan konfigureres til å sende DPI-meldinger via Digdirs aksesspunkt-avtale. 
 
-Digdir har også laget et sett med [ferdige REST-kall](https://docs.digdir.no/eformidling_nm_restdocs.html#_example_2_creating_a_dpi_digital_message) som brukere av eFormidling kan ta i bruk for å sende digital post til innbyggere
+[Her beskrives Integrasjonspunktets API og bruksmønstre](https://docs.digdir.no/eformidling_nm_restdocs.html#_example_2_creating_a_dpi_digital_message)
 
 ### Gå direkte mot API'et til aksesspunktet
 Avsendere trenger ikke å ta i bruk eFormidling for å sende digital post til innbyggere. Aksesspunktet som digdir har avtale med tilbyr et API som avsendere kan bruke direkte om ønskelig. Dette alternativet innebærer at avsendere må [bygge DPI-meldinger i henhold til spec](https://docs.digdir.no/dpi_nyinfrastruktur.html#2---avsender-sender-post-melding) og formidle disse til API'et på egenhånd. I tillegg må en selv håndtere kvitteringer som kommer i retur til API'et pr forsendelse.
