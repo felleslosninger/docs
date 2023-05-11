@@ -18,6 +18,15 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.17.1
+
+11.05.2023
+
+**Funksjonalitet**
+
+- Støtte for Seid 2.0-sertifikat i DPI-klienten til Integrasjonpunktet
+
+
 ## 2.17.0
 
 09.05.2023
