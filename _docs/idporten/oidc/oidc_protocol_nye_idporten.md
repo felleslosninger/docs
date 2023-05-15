@@ -115,9 +115,9 @@ Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene
 
 Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
 
-### state encoding
+### Håndtering av state
 
-Parameteret `state` vil url-encodes før retur til tjeneste ved authrization response og post logout redirect.
+Parameteret `state` vil URL-encodes før retur til tjeneste ved authrization response og post logout redirect.  Dette har størst effekt der HTML/JSON/datastrukturer brukes av tjeneste ved generering av state.  Disse bør da gjøre en URL decode bed mottak av `state`.  
 
 ### `sub` endres
 
