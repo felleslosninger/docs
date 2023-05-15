@@ -115,6 +115,10 @@ Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene
 
 Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
 
+### state encoding
+
+Parameteret `state` vil url-encodes før retur til tjeneste ved authrization response og post logout redirect.
+
 ### `sub` endres
 
 Med ny løsning vil `sub`-verdien som en klient mottar i `id_token` for et gitt fødselsnummer bli endret. Selv om de aller fleste bruker av ID-portens kunde-integrasjoner forholder seg primært til fødselsnummer i `pid`-feltet, kan det være at deres IAM-programvare internt benytter seg av sub-verdien, og i de tilfellene der IAM-programvaren automatisk også oppretter lokale brukerbaser (Keycloak, blant annet) risikerer kundene at det vil bli generert duplikater.
