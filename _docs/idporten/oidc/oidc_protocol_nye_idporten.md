@@ -117,7 +117,7 @@ Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.htm
 
 ### Håndtering av state
 
-Parameteret `state` vil URL-encodes før retur til tjeneste ved authrization response og post logout redirect.  Dette har størst effekt der HTML/JSON/datastrukturer brukes av tjeneste ved generering av state.  Disse bør da gjøre en URL decode bed mottak av `state`.  
+Parameteret `state` vil URL-encodes før retur til tjeneste ved authrization response og post logout redirect.  Dette har størst effekt der HTML/JSON/datastrukturer brukes av tjeneste ved generering av `state`.  Disse bør da gjøre en URL decode ved mottak av `state`.  
 
 ### `sub` endres
 
