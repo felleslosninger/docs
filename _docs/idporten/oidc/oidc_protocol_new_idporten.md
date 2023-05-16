@@ -126,6 +126,10 @@ In the current OIDC solution, all error situations generates an error page in ID
 
 In the latest recommendations from IETF, implicit flow is not recommended. In ID-porten, implicit is not allowed on new integrations, but is still available on existing clients. I new ID-porten, implicit will not be available for any clients. Clients using implicit today, must change their solution to using code flow with PKCE. On a longer term, we are also considering implementing support for DPop.
 
+### Claim at_hash revomed from the id_token
+
+The claim `at_hash` will be removed from the id_token. `at_hash` is required in implicit flow.  It is not needed in the authorization code flow.
+
 ### Tightening in client authentication with private_key_jwt
 
 JWT for the `client_assertion`-parameter must contain both `sub` and `iss` claims.  The parameter `client_id` must be stated to the token-endpoint along with `client_assertion`. This is documentet in the current solution, but the validation will be more strict in the new solution.
