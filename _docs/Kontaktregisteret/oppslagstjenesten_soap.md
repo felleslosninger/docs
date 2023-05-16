@@ -1,6 +1,6 @@
 ---
 title: Oppslagstjenesten SOAP
-description: SOAP-grensesnittet går ut og brukes ikke for nye integrasjoner! Bruk REST-grensesnittet for å sette opp nye integrasjoner mot KRR
+description: SOAP-grensesnittet ble tatt ut av bruk i mai 2023. Bruk REST-grensesnittet for å sette opp nye integrasjoner mot KRR
 summary:
 
 sidebar: main_sidebar
