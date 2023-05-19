@@ -50,6 +50,10 @@ Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...
 
 **Merk:** Man vil oppnå vesentlig bedre ytelse (målt i personer/sekund) ved å slå opp 1000 personer 1 gang kontra 1000 enkelt-oppslag.
 
+
+
+### header-parametere
+
 Følgende header-parametere må brukes på request:
 
 | Parameter  | Verdi |
@@ -90,6 +94,27 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
    ]
 }
 ```
+
+
+## IP-adresser og eventuell brannmurkonfigurasjon
+
+### Produksjon
+
+| DNS-navn                            | IPv4-adresse                                        | Port | Tjeneste | Beskrivelse                                                                              | Inn-/utgående trafikk |
+|-------------------------------------|-----------------------------------------------------|------|----------|------------------------------------------------------------------------------------------|-----------------------|
+| kontaktregisteret.no                |  139.105.36.169                                     | 443  | Oppslagstjenesten KRR     | f.o.m juni 2023 | utgående| 
+| krr.digdir.no                       |  146.192.252.54                                     | 443  | Oppslagstjenesten KRR     | dersom i bruk   | utgående |
+
+
+### Test
+
+| DNS-navn                            | IPv4-adresse                                        | Port | Tjeneste | Beskrivelse                                                                              | Inn-/utgående trafikk |
+|-------------------------------------|-----------------------------------------------------|------|----------|------------------------------------------------------------------------------------------|-----------------------|
+| test.kontaktregisteret.no           | 139.105.36.137    | 443 | Oppslagstjenesten KRR | f.o.m 26.05.2023             | utgående | 
+| krr-ver2.digdir                     | 146.192.252.152   | 443 | Oppslagstjenesten KRR | dersom i bruk. Utgår q3 2023 | utgående |
+| krr-ver1.digdir.no                  | 146.192.252.121]  | 443 | Oppslagstjenesten KRR | dersom i bruk. Utgår q3 2023 | utgående |
+
+
 ## Swagger
 OpenAPI-dokumentasjon for endepunkter. 
 
