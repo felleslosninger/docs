@@ -144,6 +144,10 @@ I gammel OIDC-løsning så vil feilsituasjoner ofte føre til at brukeren får f
 
 Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingene fra IETF.  Allerede idag tilbys ikke implicit for nye integrasjoner, kun for eksisterende.  I Nye ID-porten fjernes støtten for implicit helt, slik at de som bruker det idag, må skrive om sin løsning til å bruke code flow med pkce. Vi vurderer om vi skal innførere støtte for DPop på sikt.
 
+### Claim at_hash fjernes fra id_token
+
+Claim `at_hash` fjernes fra id_token. `at_hash` er påkrevd i implicit flow.  I authorization code flow er `at_hash` overflødig.
+
 ### Innstramming klientautentisering med private_key_jwt
 
 JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim `iss`.  Parameteret `client_id` må angis mot token-endepunktet, i tillegg til `client_assertion`.  Dette er slik det er dokumentert på gammel løsning, men nye løsning håndhever dette strengere.
