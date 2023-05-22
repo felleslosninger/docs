@@ -161,10 +161,10 @@ Følgende attributter legges ved i assertion:
 | Culture | Språk | |
 | AuthMethod | Autentiseringsmetode | Gyldige verdier i AuthMethod er [beskrevet i tabellen for `amr` her]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_id_token) |
 | OnBehalfOf | EntityID for tjenesteeier | Om verdi er mottatt i forespørsel fra tjenesteleverandør |
-| epostadresse | [epostadresse](http://begrep.difi.no/Felles/epostadresse) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
-| mobiltelefonnummer | [mobiltelefonnummer](http://begrep.difi.no/Felles/mobiltelefonnummer) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
-| reservasjon | [reservasjon](http://begrep.difi.no/Felles/reservasjon) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
-| status | [status](http://begrep.difi.no/Felles/status) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret. Gyldige verdier i status er [dokumentert her](http://begrep.difi.no/ID-porten/SAMLAssertionV3)
+| epostadresse | [epostadresse](https://docs.digdir.no/resources/begrep/oppslagstjenesten/Epostadresse) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
+| mobiltelefonnummer | [mobiltelefonnummer](https://docs.digdir.no/resources/begrep/felles/mobiltelefonnummer) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
+| reservasjon | [reservasjon](https://docs.digdir.no/resources/begrep/sikkerDigitalPost/begrep/reservasjon) | Kun tilgjengeleg for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret |
+| status | [status](https://docs.digdir.no/resources/begrep/felles/status) | Kun tilgjengelig for tjenesteleverandører som har tatt i bruk kontakt- og reservasjonsregisteret. Gyldige verdier i status er [dokumentert her](https://docs.digdir.no/resources/begrep/sikkerDigitalPost/ID-porten/SAMLAssertionV3.html)
 | | | |
 
 #### **AuthnContextClassRef som informasjonsbærer om sikkerhetsnivå**

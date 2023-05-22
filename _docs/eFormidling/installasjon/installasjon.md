@@ -303,19 +303,29 @@ Eksempel:
 ```
 difi.security.enable=true
 difi.security.user.name=myusername
-difi.security.user.name=mypassword
+difi.security.user.password=mypassword
 ```
 
 #### Levetid for meldinger
 *Valgfritt*
 
 Integrasjonspunktet er designet for å tåle at meldingstjenestene som brukes kan ha nedetid og andre driftsproblemer uten
-at dette skal medføre at levering av meldinger feiler. 
+at dette skal medføre at levering av meldinger feiler.
 
 | Egenskap                              | Beskrivelse                                                                                                                                                           | Standardverdi |
 |---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | difi.move.nextmove.default-ttl-hours  | Tid i timer integrasjonspunktet prøver å levere en utgående melding før denne får status LEVETID_UTLOPT og må sendes på nytt eller håndteres på annet vis av avsender | 24            |
 
+En kan også sette levetid per meldingstype dersom det er ønskelig:
+
+```
+difi.move.dpo.default-ttl-hours  # For meldingstypen DPO
+difi.move.dpv.default-ttl-hours  # For meldingstypen DPV
+difi.move.dpi.default-ttl-hours  # For meldingstypen DPI
+difi.move.fiks.ut.default-ttl-hours  # For meldingstypen DPF
+difi.move.fiks.io.default-ttl-hours  # For meldingstypen DPFIO
+difi.move.nextmove.serviceBus.default-ttl-hours  # For meldingstypen DPE (einnsyn)
+```
 
 #### Kapasitet
 *Valgfritt*
@@ -328,7 +338,7 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 - slå av oppslag i det sentrale folkeregister (DSF) dersom dette ikke trengs
 - øke tilgjengelige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og nettverk
 
-| Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
+| Egenskap                                | Beskrivelse    |                                                                                                           | Standardverdi |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
 | difi.move.feature.statusQueueIncludes   | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
 | difi.move.nextmove.statusPollingCron    | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 * * * * *   |
@@ -593,7 +603,7 @@ difi.move.dpv.enableDueDate=false
 | difi.move.dpi.pollWithoutAvsenderidentifikator | Om det skal polles etter kvitteringer uten bruk av avsenderindikator                                                                                                                                      | true                                            |
 | difi.move.dpi.client-type                      | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI) og json+xmlsoap (Ny DPI som også poller etter kvitteringer i gammel løsning).                                                                      | xmlsoap                                         |
 | difi.move.dpi.receipt-type                     | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI). Denne brukes kun i ny DPI, men den må settes til xmlsoap for de som bruker proxy-klienten mot IP, da denne krever kvitteringer på gammelt format. | json                                            |
-| difi.move.dpi.krr-print-url                    | URL til metadata for utskriftstjeneste. Mulige verdier er Postens utskriftstjeneste (under utfasing) `https://krr.digdir.no/rest/v1/printSertifikat` og Skatteetatens utskriftstjeneste (under innfasing og bare tilgjengelig på ny infrastruktur) `https://krr.digdir.no/rest/v2/printSertifikat`. For testmiljø bruk: `https://krr-ver1.digdir.no/rest/v2/printSertifikat` | https://krr.digdir.no/rest/v1/printSertifikat |
+| difi.move.dpi.krr-print-url                    | URL til metadata for utskriftstjeneste. Mulige verdier er Postens utskriftstjeneste (under utfasing) `https://krr.digdir.no/rest/v1/printSertifikat` og Skatteetatens utskriftstjeneste (under innfasing og bare tilgjengelig på ny infrastruktur) `https://krr.digdir.no/rest/v2/printSertifikat`. For testmiljø bruk (frem til 25.04.2023): `https://krr-ver1.digdir.no/rest/v2/printSertifikat` (etter 25.04.2023) `https://test.kontaktregisteret.no/rest/v2/printSertifikat` | https://krr.digdir.no/rest/v2/printSertifikat |
 
 Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
 

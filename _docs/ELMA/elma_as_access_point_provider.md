@@ -1,31 +1,14 @@
 ---
-title: Elma
+title: Access Point Provider Manual
 description: Elma user manual for access point providers
-summary: "Elma user manual access point providers"
+summary: "Elma user manual for access point providers"
 
 product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_access_point_provider_user_manual
 ---
 
-*Updated: 06.11.2020*
-
-### Terminology
-Here are some terms which will be used throughout this page.
-
-- Service provider = A service provider is associated with one or more domains, and participants registered by the provider will only be approved for message exchange within the provider's domain(s).
-- Access point provider = An access point provider operates access points that the server providers can use by making an agreement.
-- Agreement = An agreement between a service provider and an access point provider for usage of a specific access point.
-- Processes = Standardized, maintained collections of document types used in e-procurement.
-- Participants = Are organizations that are connected to a specific endpoint. You can think of this as a "contract" between an organization and a Service provider.
-- Access point = Represents a physical access point service endpoint, accessible through one or several URLs.
-- Endpoint = An access point has one or more endpoints represented by a URL and transport profile.
-- Certificates = Your PEPPOL access point certificate.
-- Domains = Collections of processes used in e-procurement. 
-- Document types = Standardized message types belonging to processes, used in communication between access points.
-- Transport profile = The transport method to be used. AS4 is an example of a transport profile.
-- Identifier = Consists of a set prefix and a organizational number. e.g. 9908:991825827
-- SML (Service Metadata Locator) = A DNS that returns the address to the SMP that holds the metadata of a PEPPOL receiver. The SML is the only centrally operated component in the PEPPOL transport infrastructure. It is managed by OpenPEPPOL and operates out of Brussels by DG/DIGIT.
+*Updated: 03.04.2023*
 
 ## Access Points
 

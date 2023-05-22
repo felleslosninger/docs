@@ -66,7 +66,7 @@ The new ID-porten is aiming to follow the Oauth2.1 specifications, unlike 2.0 wh
 
 ### New issuer
 
-The new ID-porten will run on a new domain with a new issuer value. Our signing certficate will also be changed. The issuer is not yet decided but will most likely be `iss=https://idporten.no/`.  By providing a new issuer, we will make it possible for our customers to gradually migrate to our new solution at a suitable time.
+The new ID-porten will run on a new domain with a new issuer value: `iss=https://idporten.no/`. Our signing certficate will also be changed. By providing a new issuer, we will make it possible for our customers to gradually migrate to our new solution at a suitable time.
 
 However, this will make it a bit more complicated for API-owners that are using [brukerstyrt datadeling](oidc_auth_oauth2.html). These API-owners will need to trust access_tokens from two issuers unless they coordinate the migration with their customers.
 
@@ -99,6 +99,11 @@ There are new values for authentication levels.  The new values are `idporten-lo
 
 All clients **must** use [PKCE](oidc_func_pkce.html) in addition to instance-uniquie state and nonce values. On todays solution, this is only required by public clients, and voluntarely yet higly recommended for confidential clients.
 
+### state encoding
+
+The `state` parameter will be URL encoded before it is returned to the client on authrization response and post logout redirect.  This affects clients using HTML/JSON/som ekind of data structure as `state` value.  The value should be URL decoded when recieved on these callbacks.
+
+
 ### `sub` will be changed
 
 The `sub`-value from the `id_token` will be changed. Even tough most of our customers primarily use the social security number in the `pid`-claim , there are some IAM-products that uses the sub-value. In some cases, the IAM-product creates lokal user-databases (e.g. Keycloak), and there is a risk of duplicates.
@@ -107,7 +112,11 @@ In the `access_token`, the  `sub` will also get new values.
 
 ### Changes to Single logout and revoking
 
-Due to changes in the OIDC specifications regarding logout, we are considering to change todays behavior and align it to the spec.
+Due to changes in the OIDC specifications regarding logout, some changes have been implemented:
+
+- if a client is registered with front channel logout uri it will receieve calls to this uri when it is the initiator of the logout request
+
+We are considering to change todays behavior and align it to the spec.
 
 - In todays solution, revoking the access_token/refresh_token will terminate the SSO session. Is this appropriate behavior?
 - Is it appropriate that logging out of a SSO-sessjon, also invalidates all tokens belonging to the clients within the session?
@@ -121,6 +130,10 @@ In the current OIDC solution, all error situations generates an error page in ID
 ### Removal of implicit flow support
 
 In the latest recommendations from IETF, implicit flow is not recommended. In ID-porten, implicit is not allowed on new integrations, but is still available on existing clients. I new ID-porten, implicit will not be available for any clients. Clients using implicit today, must change their solution to using code flow with PKCE. On a longer term, we are also considering implementing support for DPop.
+
+### Claim at_hash revomed from the id_token
+
+The claim `at_hash` will be removed from the id_token. `at_hash` is required in implicit flow.  It is not needed in the authorization code flow.
 
 ### Tightening in client authentication with private_key_jwt
 

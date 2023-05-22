@@ -4,10 +4,13 @@ folders:
 - title: ELMA user manual
   folderitems:
 
-  - title: For Service Provider
+  - title: Terminology
+    jurl: /docs/ELMA/elma_terminology
+
+  - title: Service Provider Manual
     jurl: /docs/ELMA/elma_as_service_provider
 
-  - title: For Access Point Provider
+  - title: Access Point Provider Manual
     jurl: /docs/ELMA/elma_as_access_point_provider
 
 - title: ELMA documentation

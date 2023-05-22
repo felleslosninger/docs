@@ -100,7 +100,7 @@ client_id=min_tjeneste
 
 When the user has performend a successful login, and optionally consented to any scopes requiring such consent, the browser will be redirected back to client.  The redirect will contain the authorization `code` parameter which is then used when fetching tokens. The code is base64-encoded and URL-safe.
 
-The `state` parameter is also included, and MUST be validated by the client to detect CSRF attacks if PKCE is not used.
+The `state` parameter is also included, and MUST be validated by the client to detect CSRF attacks if PKCE is not used.  Clients may need to explicitly url-decode the `state` value
 
 
 ### Sample response: {#authresponse}

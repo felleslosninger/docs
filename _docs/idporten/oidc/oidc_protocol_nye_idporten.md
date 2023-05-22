@@ -27,14 +27,14 @@ For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende
 
 1. Bytt til ID-portens nye issuer-URL: `https://idporten.no`   
       * Noen IAM-produkter vil da automatisk laste ned oppdaterte metadata og etablere trust til det nye sertifikatet vårt.
-      *  Dersom dette steget ikke går automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust.
+      *  Dersom dette steget ikke går automatisk, må du manuelt konfigurere opp de nye endepunktene som du finner i metadataene våre, samt legge inn trust. De nødvendige metadataene finnes her: [https://idporten.no/.well-known/openid-configuration](https://idporten.no/.well-known/openid-configuration)
 3. Konfigurere din integrasjon til å bruke PKCE
 4. Endre egen kode til å validere de nye verdiene for sikkerhetsnivå (`idporten-loa-*`)
 
 
 #### B: Kunde har SAML-integrasjon idag
 
-Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mai-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
+Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden august-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
 
 Vi anbefaler dog at alle migrerer til OIDC, i praksis må kunden da [etablere ny OIDC-integrasjon fra scratch ihht. integrasjonsguiden vår](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
 
@@ -81,7 +81,7 @@ SAML blir videreført kun for eksisterende tjenster, men med begrenset funksjona
 
 ### Ny issuer
 
-Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi, og vil bruke et annet signeringssertifkat enn dagens.  Verdien er p.t. ikke bestemt, trolig `iss=https://idporten.no/`.  Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
+Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi: `iss=https://idporten.no/`. Signeringssertifkatet blir også nytt. Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
 
 Samtidig gjør dette det mer komplekst for API-tilbydere som bruker [brukerstyrt datadeling](oidc_auth_oauth2.html), som da må stole på access_token fra to issuere dersom de ikke er i stand til å kreve/koordinere at sine konsumenter koordinert migrerer til Nye ID-porten samtidig med at APIet truster den nye issueren.
 
@@ -115,6 +115,10 @@ Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene
 
 Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
 
+### Håndtering av state
+
+Parameteret `state` vil URL-encodes før retur til tjeneste ved authrization response og post logout redirect.  Dette har størst effekt der HTML/JSON/datastrukturer brukes av tjeneste ved generering av `state`.  Disse bør da gjøre en URL decode ved mottak av `state`.  
+
 ### `sub` endres
 
 Med ny løsning vil `sub`-verdien som en klient mottar i `id_token` for et gitt fødselsnummer bli endret. Selv om de aller fleste bruker av ID-portens kunde-integrasjoner forholder seg primært til fødselsnummer i `pid`-feltet, kan det være at deres IAM-programvare internt benytter seg av sub-verdien, og i de tilfellene der IAM-programvaren automatisk også oppretter lokale brukerbaser (Keycloak, blant annet) risikerer kundene at det vil bli generert duplikater.
@@ -123,12 +127,17 @@ I `access_token` vil `sub` også få nye verdier.
 
 ### Endringer i Single Logout og revokering
 
-Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
+Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  
+
+- dersom en klient er registrert for front channel logout vil klienten få kall til registrert uri også når klienten selv initierer utlogging
+
+Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
 
 - er det hensiktsmessig at revokasjon av access_token/refresh_token også fører til at SSO-sesjonen blir terminert, slik som idag?
 - er det hensiktsmessig at utlogging fra SSO-sesjon også invaliderer alle tokens til alle klienter tilhørende sesjonen?
 - bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten som del av utloggingen ?
 - hvor strenge krav skal vi engentlig stille for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
+
 
 
 ### Hyppigere redirect tilbake til klient med feil
@@ -138,6 +147,10 @@ I gammel OIDC-løsning så vil feilsituasjoner ofte føre til at brukeren får f
 ### Støtte for implicit flow blir fjernet
 
 Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingene fra IETF.  Allerede idag tilbys ikke implicit for nye integrasjoner, kun for eksisterende.  I Nye ID-porten fjernes støtten for implicit helt, slik at de som bruker det idag, må skrive om sin løsning til å bruke code flow med pkce. Vi vurderer om vi skal innførere støtte for DPop på sikt.
+
+### Claim at_hash fjernes fra id_token
+
+Claim `at_hash` fjernes fra id_token. `at_hash` er påkrevd i implicit flow.  I authorization code flow er `at_hash` overflødig.
 
 ### Innstramming klientautentisering med private_key_jwt
 

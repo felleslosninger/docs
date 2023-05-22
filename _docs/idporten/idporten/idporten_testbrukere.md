@@ -10,10 +10,7 @@ product: ID-porten
 redirect_from: /idporten_testbrukere
 ---
 
-> Fra kl 10.00, ons **01.02.2023 kan ikke PIN-koder lenger brukes til innlogging med MinID i testmiljøet VER2**. Det er lagt ut informasjon på [https://testmiljo.status.digdir.no](https://testmiljo.status.digdir.no/incidents/vk524f3ybsp2)
-
-
-Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2.
+Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2/Test.
 
 ## TestID
 
@@ -54,34 +51,36 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 ## MinID
 
-### Opprette testbruker selv i testmiljøet VER2
+### Opprette testbruker selv i testmiljøet TEST
 
-Det er mulig å opprette testbruker i MinID på egenhånd i VER2-miljøet. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetiske personidentifikator (en må legge til +80 på måned-sifrene). En kan også hente fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
-
+Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetiske personidentifikator (en må legge til +80 på måned-sifrene). En kan også hente fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
 
 
 **Framgangsmåte**
 
-- trykk i innloggingsbildet i VER2 i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.digdir.no/order](https://aktiveringsbrev.test.minid.digdir.no/order)
+- trykk i innloggingsbildet i TEST i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.no/order](https://aktiveringsbrev.test.minid.no/order)
 - fyll inn syntestisk personidentifikator
-- bestill aktiveringsbrev. En får så en aktiveringskode i "Ditt aktiveringsbrev er bestilt". 
-- legg inn aktiveringskoden i "Bestill aktiveringsbrev"  
+- bestill aktiveringsbrev. En får så en aktiveringskode. 
+- legg inn aktiveringskoden i "Registrer aktiveringsbrev"  
 
-### Pinkoder er faset ut i testmiljøet VER2 fra 01.02.2023
-01.02.2023 ble statiske pinkoder faset ut i VER2. 
 
-#### Om MinID i testmiljøet VER1 
-Endringen i VER2 01.02.2023 for PIN-koder i MinID omfatter ikke testmiljøet VER1 på dette tidspunktet. VER1-miljøet blir faset ut i løpet av våren 2023 og det er kun VER2 som lever videre etter våren 2023. En bør derfor gjennomføre testing mot ID-porten i VER2-miljøet og flytte seg fra VER1.
+### Statisk OTC - VER2/TEST
 
-### Statisk OTC - VER2
+Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
 
-Det er funksjonalitet for statisk OTC i testmiljøet VER2. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator (+80). Støtte for pid med +65 kommer i ver2 i januar/februar 2023. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
 
 **OTC**
 
 - innlogging: otc12
 - glemt passord: otc123
 
+
+### Pinkoder er faset ut i testmiljøet VER2 fra 01.02.2023
+01.02.2023 ble statiske pinkoder faset ut i VER2. 
+
+
+#### Om MinID i testmiljøet VER1 
+Endringen i VER2 01.02.2023 for PIN-koder i MinID omfatter ikke testmiljøet VER1 på dette tidspunktet. VER1-miljøet blir faset ut i løpet av våren 2023 og det er kun VER2 som lever videre etter våren 2023. En bør derfor gjennomføre testing mot ID-porten i VER2-miljøet og flytte seg fra VER1.
 
 
 ## Manuell behandling

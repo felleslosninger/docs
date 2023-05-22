@@ -18,6 +18,77 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.17.1
+
+11.05.2023
+
+**Funksjonalitet**
+
+- Støtte for Seid 2.0-sertifikat i DPI-klienten til Integrasjonpunktet
+
+
+## 2.17.0
+
+09.05.2023
+
+**Funksjonalitet**
+
+- Innføring av utskriftsteneste frå Skatteetaten som standard-val i eFormidling
+
+## 2.16.2
+
+05.05.2023
+
+**Feilrettingar**
+
+- Ved sending av DPI blir det registrert dobbel MOTTATT når MOTTATT kjem etter LEVERT: Proxy-klienten vil ikkje motta MOTTATT-statusar, kun LEVERT.
+
+---
+
+## 2.16.1
+
+03.05.2023
+
+**Feilrettingar**
+
+- Dobbel mottatt vert ikkje registrert ved sending av digital post til innbyggarar.
+
+---
+
+## 2.16.0
+
+25.04.2023
+
+**Funksjonalitet**
+
+- Overgang til nytt Maskinporten-test-miljø i eFormidling sitt staging-/QA-miljø
+- Støtte for test-verksemdssertifikat SEIDv2 frå Buypass og Commfides
+
+**Vedlikehald**
+- Oppgradering av avhengigheitar i Docker-biletet
+
+---
+
+## 2.15.0
+
+31.03.2023
+
+**Funksjonalitet**
+
+- Muligheit for å sette egen levetid per meldingstype: https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#levetid-for-meldinger
+
+
+**Feilrettinger**
+
+- Hindre at status MOTTATT kommer etter LEVERT for DPI meldinger
+- Ved bruk av proxyklient for DPI fortsetter ikke polling av meldingsstatus etter at melding er levert
+- DPI kvitteringer følger nå konfigurert intervall
+- Arkivmelding-kvittering med receiptType ERROR får ikke lenger status LEST
+- Integrasjonspunktet slår opp på json-schema.org (og sikkert andre ved behov) ved oppstart
+- Sletting av tempfiler utføres nå som forventet
+
+---
+
 ## 2.14.0
 
 07.02.2023
@@ -608,11 +679,31 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 ## Sentrale komponenter
 
+## ServiceRegistry 2.12.0
+
+09.05.2023
+
+**Endringar**
+
+- Innføring av utskriftsteneste frå Skatteetaten som standard-val i eFormidling
+
+## ServiceRegistry 2.10.0
+
+27.03.2023
+
+**Endringar**
+
+- MOVE-2851 Ny implementasjon mot moderne folkeregister
+
 ## ServiceRegistry 2.9.0
+
+**Endringar**
 
 - MOVE-3059   La tausheitsbelagte meldingar verta sende til FIKS
 
 ## ServiceRegistry 2.8.0
+
+**Endringar**
 
 - MOVE-3067   Oppgradering av efm-common (delt bibliotek i portefølja)
 

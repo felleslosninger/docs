@@ -57,11 +57,29 @@ Klienten vil konvertere til Jsonld og ID vil bli generert utfra SystemID der det
 **Ved bruk av klient og Noark 4 xml**
 Klienten konverterer til jsonld og ID blir generert utfra orgnr, sakssekvensnummer/saksaar og journalnummer/journalaar. Uuid blir generert på dokumentbeskrivelser/dokumentobjekter.  Namespace settes likt på alle typer/klasser (http://data.einnsyn.no/noark4/)
 
+## ID-Converter
+Det finnes en funksjon i admin-GUI som kan benyttes ved overgang fra noark4 til noark5 eller jsonld uten "skarpt skille". Når denne funksjonen er påslått vil eInnsyn sjekke nye id'er opp mot eksisterende id i databasen og ved treff vil den konvertere meldingen til gammelt format på vei inn. Dette for å unngå at det opprettes ny saksmappe og journalpost basert på ny id.
+Logikk i ID-konverter er som følger:
+
+Hvis innkommende saksmappe-id(iri) starter med “http://data.einnsyn.no/noark4/” sendes den videre uten endring.
+Hvis den starter med noe annet, letes den opp basert på:
+“http://data.einnsyn.no/noark4/Saksmappe--<orgnummer>--<sakssekvensnummer>--<saksaar>” for å se om vi har den lagret med gammel id.
+Hvis den fins i databasen, sjekkes saksmappe_iri i meldingen opp mot lagret id/iri. Hvis disse ikke er like, endres meldingen til å bruke id/iri vi har lagret i databasen.
+Hvis den ikke fins, sendes meldingen videre.
+
+Samme for journalpost, den sendes videre hvis id/iri starter med “http://data.einnsyn.no/noark4/”
+Hvis den starter med noe annet, letes den opp basert på virksomhet, journalaar og journalsekvensnummer (ikke oppslag på oppbygd id/iri som for saksmappe). Hvis den fins i databasen, sjekkes journalpost_iri i meldingen opp mot lagret journalpost-id/iri. Hvis disse ikke er like, endres meldingen til å bruke id/iri vi har lagret i databasen.
+Parent til journalposten i meldingen oppdateres til å være id/iri på parent fra databasen.
+Hvis den fins, men har samme id/iri som i databasen, korrigeres eventuelt parent i meldingen til å være parent-iri fra databasen.
+
+Hvis journalpost ikke fins i databasen basert på virksomhet, journalaar og journalsekvensnummer, forsøker man å finne en eventuelt tidligere lagret saksmappe ut fra innkommende journalposts oppgitte parent (oppslag mot saksmappe sin ekstern_id og virksomhet).
+Hvis mappen fins med den oppgitte ekstern_id, endres meldingen til å bruke vår saksmappe-id/iri som parent på journalpost.
+
 ## Strukturering av publiseringen
 eInnsyn forsøker i så stor grad som mogleg å legge til rette for løpande overføring. Og strukturen legg opp til dette sjølv i tilfeller der dette ikkje er tilfelle.
-Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. Der det t.d er fleire journalpostar i samme saksmappe, eller dokument som tilhøyrer fleire journalpostar. Så vil dette dupliserast for kvar journalpost.
-På samme måte så vil møteregistreringar og møtedokument i samme møte sendast som separate meldingar. Dersom 2 registreringar referear til kvarandre skal dei like vel sendast som separate meldingar 
-[Eksempel på splitta forsendelse]({{site.baseurl}}/docs/eInnsyn/datamodell/eksempler#oppsplitting-av-noark-uttrekk)
+Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. For journalposter vil en forsendelse inneholde registreringen (journalposten), saksmappa (kan utelates hvis er sikker på at vi allerede har mottatt denne), korrespondansepart(er), skjermingshjemmel, dokumentbeskrivelse og dokumentobjekt (hvis det skal vises at er flere vedlegg, og ved fulltekspublisering). Hvis en journalpost oppdateres må all data sendes sammen igjen, hvis f.eks. utelater korrespondansepartene ved oppdatering, så vil vi slette de "gamle" korrespondansepartene.
+
+Ved publisering av en møtesak-(sregistrering) må både møtemappe og saksframlegg (registreringen, med tilhørende objekter) sendes i samme omgang. Hvis et møte har mange saker med mange vedlegg til saksframleggene kan en publiseringsfil med hele møte bli for stort, det er derfor anbefalt å legge opp til å sende en og en møtesak til et møte. Det er en størrelsesbegrensning på 3MB gjennom eFormidling. Det kan nevnes at compact versjon av jsonld er omtrent halvparten så stor som "extended" versjon (se eksempler).
  
 
 ## Fulltekstpublisering
@@ -77,78 +95,7 @@ For å få til dette så kan ein avlevere *dokumentbeskrivelsen* på alle dokume
 ![Struktur fulltekspublisering]({{site.baseurl}}/images/einnsyn/struktur_fulltekstpublisering.png)
 
 ## Kvittering på publisert data
-Alle som bruker integrasjonspunkt og kan motta innsynskrav, kan også hente ned kvitteringsmeldinger for publiseringer.
-Kvitteringen sier om et dokument har blitt ferdig prosessert og publisert i eInnsyn.
-Meldingene kommer som kvittering per dokument i standardkonvolutten for [SBD](https://docs.digdir.no/eformidling_nm_message.html), uten payload på meldingen.
-Virksomheter som ønsker å motta kvitteringer må registrere dette i virksomhetsadministrasjonen på einnsyn.no.
-
-![Admin GUI avansert]({{site.baseurl}}/images/einnsyn/einnsyn_admin_gui_avansert.png)
-
-**Ved direkteintegrasjon**:
-
-Systemet må tilrettelegges for å motta prosessen “response” og dokumenttype “einnsyn_kvittering”, i henhold til [eformidlingsdokumentasjonen]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/message#einnsyn).
-Sannsynligvis er integrasjonen allerede satt opp for å hente innsynskrav, og kvitteringer hentes ned på samme måte, men med annen prosessidentifikator.
-Hva som skjer videre med kvitteringen blir opp til systemeier.
-
-**Ved bruk av klient**:
-
-Klienten (v.2.1.0 og nyere) kommer med funksjonalitet for å hente ned kvitteringsmeldinger, men den krever at miljøvariabelen “skalMottaKvitteringer” er satt til true (standard innstilling).
-Status for publisering logges i applikasjonsloggen, samt egen loggfil for kvitteringer med daglig rullering. Dagens loggfil heter kvitteringer.log, og får datostempel når det rulles over til neste dag.
-Plassering for kvitteringslogger settes i einnsyn-klient.xml (parameter “kvitteringer.loggmappe").
-
-**Lesing av kvittering**:
-
-Informasjonen ligger i forretningsmeldingen (dokumenttype einnsyn_kvittering) i SBDH, i “status”, og er på json-format.
-
-```
-  "einnsyn_kvittering" : {
-    "sikkerhetsnivaa" : null,
-    "hoveddokument" : null,
-    "dokumentId" : "http://data.einnsyn.no/ff530c93-5ea7-48d4-abbb-c62b284192f3",
-    "status" : "{
-        "publisert" : true,
-        "publisertDatotid" : "2021-10-29T11:57:43.773",
-        "enhetskode" : "HSK",
-        "enhetsnavn" : "Helse- og sosialkomite",
-        "arkivskaperOrgnummer" : "964968241",
-        "arkivskapernavn" : "Luster",
-        "publisertAvOrgnummer" : "<org.nr som ble brukt til å sende inn data>",
-        "dokumentId" : "http://data.einnsyn.no/f2345b26-ad94-4460-9399-39badeda762e"
-      }",
-    "referanseType" : "publisering"
-  }
-```  
-**Tillegg fra februar 2023:**
-Det vil nå bli sendt tilsvarende kvitteringsmelding som over når en publisering ikke kunne utføres pga valideringsfeil. Feltet "publisert" vil da være "false".
-
-Det er også lagt til en kvitteringsmelding som gir "ADVARSEL" hvis en publiseringsmelding ikke validerer. Denne sier ikke noe om publiseringen faktisk er vellykket. Det er fordi vi har en del tilpasninger som gjør at noen filer som ikke validerer allikevel blir publisert. Vi ønsker å fjerne disse tilpasningene senere, så "ADVARSEL"-feil må rettes for at disse skal publiseres i fremtiden også.
-
-eksempel på en "ADVARSEL"-kvittering:
-``` 
-  "einnsyn_kvittering" : {
-    "sikkerhetsnivaa" : null,
-    "hoveddokument" : null,
-    "dokumentId" : "http://data.einnsyn.no/ff530c93-5ea7-48d4-abbb-c62b284192f3",
-    "status" : "{
-  "publisertAvOrgnummer": "123456789",
-  "arkivskaper": "http://data.einnsyn.no/virksomhet/3f551702-7580-43e4-aaf7-8cad95b4d07a",
-  "dokumentId": null,
-  "transactionId": "31029542-d619-4f90-b06f-118f360997c6",
-  "conversationId": "baddc276-41df-4ee0-affb-73b4802c58c6",
-  "alvorlighetsgrad": "ADVARSEL",
-  "valideringsfeil": [
-    {
-      "elementId": "http://journalpost.123456789.no/6a5bb1fd-6dac-4495-8c4a-2df8d1de4994",
-      "elementType": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/Journalpost",
-      "attributt": "http://www.arkivverket.no/standarder/noark5/arkivstruktur/parent",
-      "attributtVerdi": "http://saksmappe.922017433.no/1cb3665a-e9c5-4790-bc67-8bae9a67d3b3",
-      "feilmelding": "Feil/ukjent type, eller mangler verdi."
-    }
-  ]
-  }",
-    "referanseType" : "publisering"
-}
-``` 
+[Flyttet hit](https://docs.digdir.no/docs/eInnsyn/datamodell/Kvittering_ved_publisering)
 
 ## Slettemeldinger
 Sletting fra eInnsyn kan automatiseres ved å sende slettemelding. Dette sendes på samme måte som en journalpost (samme meldingstype i eFormidling) med en slettemelding som payload. Eksempel på slettemelding:
