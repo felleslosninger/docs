@@ -74,7 +74,7 @@ folders:
         jurl: /docs/idporten/oidc/oidc_func_wellknown.html
 
       - title: IP-adresser
-        jurl: /docs/general/IP.html)
+        jurl: /docs/general/IP.html
 
       - title: Klientregistrering
         jurl: /docs/idporten/oidc/oidc_func_clientreg.html
