@@ -27,11 +27,6 @@ When the end-user wants to logout, the client redirects the browser to the /ends
 
 Note that if one of the SAML serviceproviders don't redirect the end-user back to ID-porten, the logout-chain is broken.  
 
-
-
-
-
-
 Note that ID-porten currently has an "aggressive"
 When clients participating
 When the client calls the revoke endpoint with valid token (either an access_token or a refresh token),  all tokens linked to the grant are invalidated in ID-porten.  Additionally the end-user session is invalidated.
