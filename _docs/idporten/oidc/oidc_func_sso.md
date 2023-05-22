@@ -18,13 +18,13 @@ Like viktig som single singon er single logout.  Det er vesentlig for sikkerhete
 
 ## Single Signon (SSO)
 
-SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er styrt av ident. men også mellom OIDC og SAML2-baserte tjenester. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er fra sept. 2023 styrt av OIDC. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
 Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2)
 
 Det er også mulig å konfigurere en integrasjon til å bruke [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
 
-Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på utstedte tokens.
+Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på utstedte access-token og evt. refresh-tokens.
 
 ## Single Logout (SLO)
 
