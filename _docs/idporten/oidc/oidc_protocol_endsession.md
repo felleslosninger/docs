@@ -22,9 +22,13 @@ When the end-user wants to logout, the client redirects the browser to the /ends
 1. invalidating all tokens 
 1. terminating the SSO-session in ID-porten
 1. redirecting the browser to each SAML serviceprovider, in turn, with a SAMLLogoutRequest
-1. redirect the browser back to the `post_logout_redirect_uri` supplied by the initiating client (if an id_token_hint was provided)
+1. redirect the browser back to the `post_logout_redirect_uri` supplied by the initiating client (if an id_token_hint was provided). Clients may need to explicitly url-decode the `state` value if it was provided 
+
 
 Note that if one of the SAML serviceproviders don't redirect the end-user back to ID-porten, the logout-chain is broken.  
+
+
+
 
 
 
