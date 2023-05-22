@@ -99,7 +99,7 @@ There are new values for authentication levels.  The new values are `idporten-lo
 
 All clients **must** use [PKCE](oidc_func_pkce.html) in addition to instance-uniquie state and nonce values. On todays solution, this is only required by public clients, and voluntarely yet higly recommended for confidential clients.
 
-### Håndtering av state
+### state encoding
 
 The `state` parameter will be URL encoded before it is returned to the client on authrization response and post logout redirect.  This affects clients using HTML/JSON/som ekind of data structure as `state` value.  The value should be URL decoded when recieved on these callbacks.
 
