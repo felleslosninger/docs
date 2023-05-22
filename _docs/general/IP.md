@@ -11,7 +11,8 @@ Denne siden lister IP-adresser som blir brukt av fellesløsningene, i ulike milj
 
 | Løsning | PROD | TEST |
 | - | - |-|
-| ID-porten | 139.105.36.167 | 139.105.36.135|
-| ID-porten SAML | | 
-| Ansattporten | 139.105.36.165 | 139.105.36.133|
+| Nye ID-porten (idporten.no) | 139.105.36.167 | 139.105.36.135|
+| Nye ID-porten SAML | | 
+| Ansattporten (ansattporten.no) | 139.105.36.165 | 139.105.36.133|
 | Maskinporten | 139.105.36.164 | 139.105.36.132 |
+| Kontaktregisteret (kontaktregisteret.no)|   139.105.36.169 | 139.105.36.137 |
