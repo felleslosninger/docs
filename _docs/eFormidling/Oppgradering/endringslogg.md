@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.18.0
+
+23.05.2023
+
+**Funksjonalitet**
+
+- Lagt til støtte for SEID 2.0-test-verksemdssertifikat i test og QA
+
 ## 2.17.1
 
 11.05.2023
@@ -25,7 +33,6 @@ redirect_from:
 **Funksjonalitet**
 
 - Støtte for Seid 2.0-sertifikat i DPI-klienten til Integrasjonpunktet
-
 
 ## 2.17.0
 
@@ -65,6 +72,7 @@ redirect_from:
 - Støtte for test-verksemdssertifikat SEIDv2 frå Buypass og Commfides
 
 **Vedlikehald**
+
 - Oppgradering av avhengigheitar i Docker-biletet
 
 ---
@@ -76,7 +84,6 @@ redirect_from:
 **Funksjonalitet**
 
 - Muligheit for å sette egen levetid per meldingstype: https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#levetid-for-meldinger
-
 
 **Feilrettinger**
 
@@ -100,7 +107,7 @@ redirect_from:
 06.02.2023
 
 - Retta ein ny og sjelden feilsituasjon for DPI-meldingar som førte til at integrasjonspunktet kom i ein tilstand der ein ikkje fekk henta inn kvitteringar
-- Retta problem med at sletting av filer feila ved mottak med BEST/EDU 
+- Retta problem med at sletting av filer feila ved mottak med BEST/EDU
 
 ## 2.12.0
 
@@ -116,26 +123,26 @@ redirect_from:
 
 - Tilgjengeliggjere rawReceipt for meldingsstatuser på DPIs gamle XML-format også ved FEIL fra H2
 - Sjelden feilsituasjon i DPI fører til at integrasjonspunktet kjem i ei tilstand der ein ikkje klarer å hente inn kvitteringar
-- Feil ved pop av melding ved bruk av Postgres 
+- Feil ved pop av melding ved bruk av Postgres
 - Opplasting av arkivmelding.xml til integrasjonspunktet feiler ved bruk av MySQL
 - Sporadisk NullPointerException ved innhenting av status for sendt melding fra KS SvarUt
-- Setja spring.datasource.hikari.autoCommit=false som standard 
-- Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet 
-- Oppdatere Azure Service Bus biblioteket 
-- På vegne av DPF:  
+- Setja spring.datasource.hikari.autoCommit=false som standard
+- Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet
+- Oppdatere Azure Service Bus biblioteket
+- På vegne av DPF:
 
-  NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i bruk):  
-  
-  difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.username=username  
-  
+  NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i bruk):
+
+  difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.username=username
+
   difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.password=password
-  
-- IOException frå blob-parsing vert fanga i NextMoveMessageInService 
-- Feil DPI property i prod mot hj2 
-- efm-mocks oppdatert iht nyeste integrasjonspunkt 
-- Innhenting av meldingsstatuser stopper ikke opp ved meir enn 2100 uteståande meldingsstatuser ved bruk av MSSQL 
+
+- IOException frå blob-parsing vert fanga i NextMoveMessageInService
+- Feil DPI property i prod mot hj2
+- efm-mocks oppdatert iht nyeste integrasjonspunkt
+- Innhenting av meldingsstatuser stopper ikke opp ved meir enn 2100 uteståande meldingsstatuser ved bruk av MSSQL
 - IP-pop av avtaltmelding uten ASIC gir ikkje feil lenger
-- Skru av OSIV i integrasjonspunktet 
+- Skru av OSIV i integrasjonspunktet
 
 ## 2.8.4
 
@@ -699,13 +706,13 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringar**
 
-- MOVE-3059   La tausheitsbelagte meldingar verta sende til FIKS
+- MOVE-3059 La tausheitsbelagte meldingar verta sende til FIKS
 
 ## ServiceRegistry 2.8.0
 
 **Endringar**
 
-- MOVE-3067   Oppgradering av efm-common (delt bibliotek i portefølja)
+- MOVE-3067 Oppgradering av efm-common (delt bibliotek i portefølja)
 
 ## ServiceRegistry 2.7.0
 
@@ -713,8 +720,8 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringer**
 
-- MOVE-2946 	Retting av av service registry tolker TCP timeout mot ELMA som "participant not found" 
-- MOVE-3003   Oppgradere peppol-biblioteker i SR
+- MOVE-2946 Retting av av service registry tolker TCP timeout mot ELMA som "participant not found"
+- MOVE-3003 Oppgradere peppol-biblioteker i SR
 
 ## ServiceRegistry 2.6.1
 
@@ -722,7 +729,7 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringer**
 
-- MOVE-2993 	Integrasjonspunkt startar ikkje opp med Seid 2.0-sertifikat
+- MOVE-2993 Integrasjonspunkt startar ikkje opp med Seid 2.0-sertifikat
 
 ## ServiceRegistry 2.6.0
 
@@ -730,8 +737,8 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringer**
 
-- MOVE-2916 	Taushetsbelagte meldinger må ikkje sendes til FIKS 
-- MOVE-2914 	Legge inn retry mot KRR/MF 
+- MOVE-2916 Taushetsbelagte meldinger må ikkje sendes til FIKS
+- MOVE-2914 Legge inn retry mot KRR/MF
 
 ## ServiceRegistry 2.5.0
 
@@ -892,8 +899,8 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 **Endringer**
 
-- MOVE-2991 	Commfides-test-sertifikat (Seid 2.0) vert ikkje aksepterte i test-profilen til VirkSert 
-- MOVE-3002   Oppgradere peppol-biblioteker i virksert
+- MOVE-2991 Commfides-test-sertifikat (Seid 2.0) vert ikkje aksepterte i test-profilen til VirkSert
+- MOVE-3002 Oppgradere peppol-biblioteker i virksert
 
 ### Virksert 1.7.1
 
@@ -901,7 +908,7 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 **Endringer**
 
-- MOVE-2987 	Seid 2.0-sertifikat vert ikkje godteke av VirkSert
+- MOVE-2987 Seid 2.0-sertifikat vert ikkje godteke av VirkSert
 
 ### Virksert 1.7.0
 
@@ -909,7 +916,7 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 **Endringer**
 
-- MOVE-2967 	Opplasting av verksemdssertifikat feilar 
+- MOVE-2967 Opplasting av verksemdssertifikat feilar
 
 ### Virksert 1.6.0
 
