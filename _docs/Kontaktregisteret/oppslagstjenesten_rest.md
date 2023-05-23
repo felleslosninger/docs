@@ -102,17 +102,17 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 
 | DNS-navn                      | IPv4-adresse                   | Port | Tjeneste | Beskrivelse                                                                       | Inn-/utgående trafikk |
 |-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
-| kontaktregisteret.no                |  139.105.36.169                                     | 443  | Oppslagstjenesten KRR     | f.o.m juni 2023 | utgående| 
-| krr.digdir.no                       |  146.192.252.54                                     | 443  | Oppslagstjenesten KRR     | dersom i bruk   | utgående |
+| kontaktregisteret.no                |  139.105.36.169          | 443  | Oppslagstjenesten KRR     | I bruk f.o.m 22.08.2023 | utgående| 
+| krr.digdir.no                       |  146.192.252.54          | 443  | Oppslagstjenesten KRR     | Dersom i bruk. Utgår 01.09.2023   | utgående |
 
 
 ### Test
 
 | DNS-navn                      | IPv4-adresse                   | Port | Tjeneste | Beskrivelse                                                                       | Inn-/utgående trafikk |
 |-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
-| test.kontaktregisteret.no           | 139.105.36.137    | 443 | Oppslagstjenesten KRR | f.o.m 26.05.2023             | utgående | 
-| krr-ver2.digdir                     | 146.192.252.152   | 443 | Oppslagstjenesten KRR | dersom i bruk. Utgår q3 2023 | utgående |
-| krr-ver1.digdir.no                  | 146.192.252.121  | 443 | Oppslagstjenesten KRR | dersom i bruk. Utgår q3 2023 | utgående |
+| test.kontaktregisteret.no           | 139.105.36.137    | 443 | Oppslagstjenesten KRR | I bruk f.o.m 02.06.2023             | utgående | 
+| krr-ver2.digdir                     | 146.192.252.152   | 443 | Oppslagstjenesten KRR | Dersom i bruk. Utgår august 2023 | utgående |
+| krr-ver1.digdir.no                  | 146.192.252.121  | 443 | Oppslagstjenesten KRR | Dersom i bruk. Utgår 31.05.2023 | utgående |
 
 
 ## Swagger
