@@ -96,7 +96,8 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 ```
 
 
-## IP-adresser og eventuell brannmurkonfigurasjon
+## IP-adresser og brannmurkonfigurasjon
+Utgående brannmur må være åpen mot disse adressene:
 
 ### Produksjon
 
