@@ -15,4 +15,4 @@ Denne siden lister IP-adresser som blir brukt av fellesløsningene, i ulike milj
 | Nye ID-porten SAML | | 
 | Ansattporten (ansattporten.no) | 139.105.36.165 | 139.105.36.133|
 | Maskinporten | 139.105.36.164 | 139.105.36.132 |
-| Kontaktregisteret (kontaktregisteret.no)|   139.105.36.169 | 139.105.36.137 |
+| [Kontaktregisteret (kontaktregisteret.no)](https://docs.digdir.no/docs/Kontaktregisteret/oppslagstjenesten_rest.html#ip-adresser-og-brannmurkonfigurasjon)|   139.105.36.169 | 139.105.36.137 |
