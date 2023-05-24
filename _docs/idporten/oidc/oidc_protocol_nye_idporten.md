@@ -113,7 +113,7 @@ Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene
 
 ### Tvungen bruk av PKCE og state og nonce
 
-Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
+Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter. Det er mulig for kunde å aktivt nedgradere integrasjonen sin til å ikke bruke PKCE gjennom selvbetjening.
 
 ### Håndtering av state
 
@@ -127,17 +127,14 @@ I `access_token` vil `sub` også få nye verdier.
 
 ### Endringer i Single Logout og revokering
 
-Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  
+Det har skjedd presiseringer i OIDC-spesifikasjonen mhp logout.
 
-- dersom en klient er registrert for front channel logout vil klienten få kall til registrert uri også når klienten selv initierer utlogging
+- Dersom en klient er registrert for front channel logout, vil klienten få kall til registrert uri også når klienten selv initierer utlogging.  På gammel platform mottok initierende klient ikke frontkanalskallet, men denne oppførselen var ikke ihht. spec.
 
-Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
 
-- er det hensiktsmessig at revokasjon av access_token/refresh_token også fører til at SSO-sesjonen blir terminert, slik som idag?
-- er det hensiktsmessig at utlogging fra SSO-sesjon også invaliderer alle tokens til alle klienter tilhørende sesjonen?
-- bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten som del av utloggingen ?
-- hvor strenge krav skal vi engentlig stille for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
+### sid kun for frontchannel-klienter
 
+`sid` blir inkludert i id_token berre viss klienten er registrert for å motta frontchannel-logout kall.
 
 
 ### Hyppigere redirect tilbake til klient med feil
@@ -179,7 +176,3 @@ På sikt vil SAML blir faset helt ut.
 [Pseudonymisering](oidc_func_nopid.html) vil bli påvirket av byttet av `sub`, se ovenfor.  
 
 Selve `no_pid`-scopet videreføres ikke, så kunder må bruke enten opaque tokens eller pseudonymiserende scopes.
-
-### sid kun for frontchannel-klienter
-
-`sid` blir inkludert i id_token berre viss klienten er registrert for å motta frontchannel-logout kall.
