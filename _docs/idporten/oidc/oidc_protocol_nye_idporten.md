@@ -170,8 +170,6 @@ Denne vil støtte SAML Web Browser SSO 2.0 med Artifact Resolution-binding.  Det
 
 Det vil ikke lenger utleveres kontaktopplysninger fra KRR som del av Assertion.
 
-Vi vil ikke støtte oppdatering av SAML-metadata, slik at når en kunde sine metadata går ut (typisk ved utløp av virksomhetssertifiktat), forventer vi at integrasjonen i stedet blir skrevet om til å bruke OIDC.
-
 På sikt vil SAML blir faset helt ut.
 
 ### Pseudonymisering
