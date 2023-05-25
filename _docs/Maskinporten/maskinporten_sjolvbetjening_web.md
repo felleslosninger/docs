@@ -166,25 +166,25 @@ For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør 
 3. Trykk på "Administrasjon av tjenester" i venstremenyen.
 4. Velg "Integrasjoner" i det miljøet du vil opprette selvbetjene i.
 
-### Delegere rettighet til leverandør
+### Delegere rettighet til annen virksomhet (f.eks leverandør)
 
-Om det skal benyttes en systemleverandør til å gjøre oppslaget mot Maskinporten, så kan man delegere rettigheten videre via Altinn. (NB! Dette gjelder bare scopes som bruker Altinn som delegeringskilde. Hør med API-tilbyder om de tilbyr dette).
+Om det skal benyttes en annen virksomhet til å gjøre oppslaget mot Maskinporten, så kan man delegere rettigheten videre via Altinn. (NB! Dette gjelder bare scopes som bruker Altinn som delegeringskilde. Hør med API-tilbyder om de tilbyr dette).
 
 Samme fremgangsmåte gjelder også om man skal delegere rettighet fra en underenhet og til hovedenheten.
 
 1. Logg inn på Altinn.no
 2. Velg å representere virksomheten
 3. Trykk på "Profil"
-4. Trykk på "Andre med rettigheter til virksomheten"
-5. Trykk pÅ "Ekstern virksomhet"
-6. Legg inn organisasjonsnummer og de første 4 tegnene på virksomheten du skal delegere tilgang til
-7. Trykk på "Neste"
-8. Søk opp rettigheten du skal delegere tilgang til, og trykk på den.
-9. Trykk på "Gi rettigheter"
-10. Om du blir spurt om det, så må du legge inn e-postadresse til en person i virksomheten som du delegerer tilgang til
-11. Trykk "Fullfør" og da er rettigheten delegert videre.
+4. Trykk på "Tilgang til Programmeringsgrensesnitt - API"
+5. Trykk pÅ "Gi og fjerne tilganger"
+6. Trykk på "Deleger nytt API"
+7. Legg inn organisasjonsnummer på virksomheten du skal delegere tilgang til og velg fra listen. 
+8. Trykk på "Neste"
+9. Søk opp rettigheten du skal delegere tilgang til, og trykk på "+".
+10. Trykk på "neste" når du har lagt til rettighetene som skal delegeres
+11. Trykk på "Bekreft".
 
-Videotutorial: [https://vimeo.com/533856189](https://vimeo.com/533856189)
+Videotutorial: På grunn av endringer i det grafiske grensesnittet må vi spille inn en ny video. Vi håper å ha dette på plass ganske snart.
 
 [![Delegere rettigheter]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/533856189 "Delegere rettigheter")
 
