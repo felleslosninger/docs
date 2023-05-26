@@ -4,7 +4,6 @@ permalink: dpi_meldingsflyt.html
 sidebar: dpi_new_sidebar
 ---
 
-## Meldingsflyt
 
 **(dersom du ikke ser et sekvensdiagram under her, må du åpne dokumentet i noe som kan vise mermaid inline grafikk)**
 
