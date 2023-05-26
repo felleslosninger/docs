@@ -18,3 +18,10 @@ Sjekklist
 5. Etablere integrasjon mot Folkeregisteret
 6. 
 7. Etc. 
+
+
+
+| DNS-navn                                                         | IPv4-adresse | Port   | Tjeneste       | Beskrivelse                                                      | Inn-/utgående trafikk
+| ---------------------------------------------------------------- | ------------ | ------ | -------------- | ---------------------------------------------------------------- | --------------------- |
+| [standardBusinessDocumentHeader](dpi_sbdh.html) | 1..1         | sh:StandardBusinessDocument | Informasjon for å formidle postforsendelsen                                        |
+| [melding](dpi_forretiningsmelding_index.html)      | 1..1         | [Melding](dpi_forretiningsmelding_index.html) | Forretningsmelding identifisert i [documentIdentification](dpi_documentidentification.html) |
