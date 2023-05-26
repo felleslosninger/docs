@@ -1,6 +1,6 @@
 ---
 title: Meldingsflyt  
-permalink: meldingsflyt.html
+permalink: dpi_meldingsflyt.html
 sidebar: dpi_new_sidebar
 ---
 
