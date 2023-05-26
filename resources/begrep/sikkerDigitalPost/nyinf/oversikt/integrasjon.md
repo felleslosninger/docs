@@ -4,7 +4,8 @@ permalink: integrasjon.html
 sidebar: dpi_timo_sidebar
 ---
 
-<!-- ![](/images/dpi/underarbeide.png) -->
+1. TOC
+{:toc}
 
 Hvordan koble seg til og ta i bruk transportinfrastruktur for å sende digital post til innbyggere (DPI-meldinger). 
 
