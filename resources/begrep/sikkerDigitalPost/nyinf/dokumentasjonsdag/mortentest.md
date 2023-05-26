@@ -24,4 +24,4 @@ Sjekklist
 | DNS-navn                                                         | IPv4-adresse | Port   | Tjeneste       | Beskrivelse                                                      | Inn-/utgående trafikk
 | ---------------------------------------------------------------- | ------------ | ------ | -------------- | ---------------------------------------------------------------- | --------------------- |
 | srest.qa.dataplatfor.ms | 51.120.52.137 og 51.120.49.231 | 443 | DPI | rest-endepunktet til avsenders aksesspunkt (hjørne 2) | utgående |
-| [melding](dpi_forretiningsmelding_index.html)      | 1..1         | [Melding](dpi_forretiningsmelding_index.html) | Forretningsmelding identifisert i [documentIdentification](dpi_documentidentification.html) |
+| [melding](dpi_forretiningsmelding_index.html)      | 1..1         | [Melding](dpi_forretiningsmelding_index.html) | DPI |
