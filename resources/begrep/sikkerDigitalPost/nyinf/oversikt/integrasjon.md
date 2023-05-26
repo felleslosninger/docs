@@ -22,18 +22,14 @@ Det er likevel fullt mulig å gjøre egen avtale med andre Service Providere om 
 
 Steg2:
 ## Velge integrasjonsmetode - For avsendere som tar i bruk digdirs aksesspunkt-avtale
-For å få et system til å sende digital post til innbyggere via Digdirs aksesspunkt-avtale, må en velge hvordan avsendersystemet skal kommunisere med aksesspunktet. Under skisseres ulike alternativer.
+For å få et system til å sende digital post til innbyggere via Digdirs aksesspunkt-avtale, må en velge hvordan avsendersystemet skal kommunisere med aksesspunktet. Under skisseres to ulike alternativer.
 
-### eFormidling
-[Fellesløsningen eFormidling](https://docs.digdir.no/eformidling_index.html) støtter å sende digital post til innbyggere. En forutsetning for å ta i bruk eFormidling er at avsender setter opp et [integrasjonspunkt](https://docs.digdir.no/eformidling_download_ip.html) lokalt. Integrasjonspunktet er en komponent som kan konfigureres til å sende DPI-meldinger via Digdirs aksesspunkt-avtale. 
+Alternativ 1: eFormidling
+Avsendere kan ta i bruk [fellesløsningen eFormidling](https://docs.digdir.no/eformidling_index.html) 
 
-[Her beskrives Integrasjonspunktets API og bruksmønstre](https://docs.digdir.no/eformidling_nm_restdocs.html#_example_2_creating_a_dpi_digital_message)
+Alternativ 2: Gå direkte mot API'et til aksesspunktet:
+Aksesspunktet som Digdir har avtale med tilbyr et API som avsendere kan bruke direkte om ønskelig. Dette alternativet innebærer at avsendere må [bygge DPI-meldinger i henhold til spec](https://docs.digdir.no/dpi_nyinfrastruktur.html#2---avsender-sender-post-melding) og formidle disse til API'et på egenhånd. I tillegg må en selv håndtere kvitteringer som kommer i retur til API'et pr forsendelse.
 
-### Gå direkte mot API'et til aksesspunktet
-Avsendere trenger ikke å ta i bruk eFormidling for å sende digital post til innbyggere. Aksesspunktet som digdir har avtale med tilbyr et API som avsendere kan bruke direkte om ønskelig. Dette alternativet innebærer at avsendere må [bygge DPI-meldinger i henhold til spec](https://docs.digdir.no/dpi_nyinfrastruktur.html#2---avsender-sender-post-melding) og formidle disse til API'et på egenhånd. I tillegg må en selv håndtere kvitteringer som kommer i retur til API'et pr forsendelse.
-
-Miljø:
-
+Aksesspunkt-API-miljø:
 Produksjon: [https://srest.dataplatfor.ms/swagger-ui/#/DPI](https://srest.dataplatfor.ms/swagger-ui/#/DPI)
-
-QA/test: [https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI](https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI)
+QA: [https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI](https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI)
