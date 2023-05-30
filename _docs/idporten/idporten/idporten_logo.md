@@ -15,7 +15,7 @@ I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider
 ### ID-porten hovedlogo
 
 Symbolet er spesialdesignet og tilpasset slik at
-det også fungerer godt i et lite format...
+det også fungerer godt i et lite format.
 
 ![ID-porten hovedlogo]({{site.baseurl}}/assets/Merket_hovedlogoRGB.png)
 
