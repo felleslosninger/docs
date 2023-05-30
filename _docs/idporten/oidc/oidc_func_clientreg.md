@@ -115,7 +115,11 @@ Klient-type (`application_type`) forteller hvilke type kjøretidsmiljø klienten
 
 ### Scopes
 
-Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for scopes]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope) for fullstendige detaljer.
+Kunden registerer forskjellige oauth2 scopes på sine klienter. 
+
+{% include note.html content="Listen i selvbetjeningen viser scopes som virksomheten din har fått tilgang til. Trykk på "Scopes tilgjengelig for alle" dersom du er leverandør eller vil legge til scopes som er satt tilgjengelig for alle." %}
+
+Se [regler for scopes]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope) for fullstendige detaljer.
 
 
 ## Oversikt over kombinasjonar
