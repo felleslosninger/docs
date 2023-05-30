@@ -9,7 +9,7 @@ product: ID-porten
 
 redirect_from: /idporten_logo
 ---
-I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider og portaler der ID-porten skal brukes som innlogging..
+I dette dokumentet ligger logofiler for ID-porten som kan benyttes på nettsider og portaler der ID-porten skal brukes som innlogging.
 
 
 ### ID-porten hovedlogo
