@@ -212,6 +212,27 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 
 [![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
+### Registrere nøkkel eller sertifikat på klient
+
+1. Offentilg nøkkel i PEM-format må konverteres til JWK ved hjelp av JWK Creator eller lignende, før den kan bli lagt på klienten. 
+2. Trykk på 'Egne public nøkler', eventuelt 'Virksomhetssertifikat', nederst på klient-registreringsssiden i selvbetjening web.
+3. Lim inn JWK og trykk på 'legg til'. NB! Husk å plassere den mellom to klammer []. 
+4. Sjekk at JWK blir lagret i riktig format på klienten:
+
+```
+[
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "min_egen_nokkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
+```
+
+
 ### Vedlikehald av merkantile data
 
 Vedlikehold av fakturainformasjon og varslingspunkter er viktig for at vi hele tiden skal ha oppdatert informasjon om dette. Varslingspunkt(er) får eposter ved kritiske hendelser i løsningen og om det ikke er registrert noe her, så kan man gå glipp av viktig informasjon.
