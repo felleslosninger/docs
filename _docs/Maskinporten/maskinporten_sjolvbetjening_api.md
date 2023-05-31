@@ -162,7 +162,7 @@ POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
 'kid'-verdier må være unike innenfor klientens nøkkel-sett. 
 
 Merk! Det fins ulik programvare for nøkkeloppretting og eksportering av offentleg nøkkel. Dette vil ikke være omtalt i Digdir sin tekniske dokumentasjon.
-Offentleg nøkkel i PEM-format må konverteres til JWK ved hjelp av for eksempel [JWK Creator](url) før den kan bli lagt på klienten. 
+Offentleg nøkkel i PEM-format må konverteres til JWK ved hjelp av for eksempel JWK Creator før den kan bli lagt på klienten. 
 
 ### Vedlikehald av merkantile data
 
