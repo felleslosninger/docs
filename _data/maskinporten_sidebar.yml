@@ -12,8 +12,8 @@ folders:
       - title: English summary
         jurl: /docs/Maskinporten/maskinporten_summary
 
-      - title: Virksomhetssertifikat
-        jurl: /docs/Maskinporten/maskinporten_virksomhetssertifikat
+      - title: Autentisering
+        jurl: /docs/Maskinporten/maskinporten_autentisering
 
 
 - title: Bruksområde og guide
