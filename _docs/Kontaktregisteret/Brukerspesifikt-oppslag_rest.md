@@ -30,9 +30,9 @@ Man må forespørre ett eller flere av følgende scopes:
 |-|-|
 | krr:user/kontaktinformasjon.read | Returnerer epostadresse og mobilnummer + tidspunkt for sist oppdatering |
 |  | Returnerer status for om kontaktinfomasjonen kan brukast for varsling iht. eForvaltningsforskrifta sin §32 |
+| | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |  
 | krr:user/digitalpost.read | Returnerer adresse for digital post til innbygger |
 | | Returnerer brukerens krypteringssertifikat ved sending av digital post |
-| | Returnerer brukerens foretrukne språk for kommunikasjon med det offentlige.  |   
 | krr:user/spraak.write | Endrer brukerens foretrukne språk for kommunikasjon med det offentlige. |
 
 ## API-endepunkt
