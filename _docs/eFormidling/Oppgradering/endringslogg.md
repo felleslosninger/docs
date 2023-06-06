@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.19.0
+
+06.06.2023
+
+**Feilrettingar**
+
+- setTidspunkt i SvarInnconverter returnerer no data på rett format.
+
 ## 2.18.0
 
 23.05.2023
