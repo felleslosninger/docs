@@ -17,7 +17,7 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 > [**Integrasjonspunktet 2.19.0 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.19.0/images/sha256-fa308444df28d15cb230bd088c9980a4d16af8b6146732b38b1d2e3cf5534226?context=explore)
 
-`docker pull digdir/integrasjonspunkt:2.18.0`
+`docker pull digdir/integrasjonspunkt:2.19.0`
 
 [OBS. F.o.m versjon 2.2.1 kreves det ny brannmuråpning.](../installasjon/forberede_installasjon#brannmur%C3%A5pninger-i-produksjon)
 
