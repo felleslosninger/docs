@@ -25,7 +25,7 @@ Vi støtter bare `code_challenge_method=S256`
 
 **Merk at code_verifier må vere minst 43 karakterer lang, og ikkje lengre enn 128.**
 
-Dersom `code_verifier` er `xyo94uhy3zKvgB0NJwLms86SwcjtWviEOpkBnGgaLlo` så blir utrekna `code_challenge` lik `b7elB7ZyxIXgFyvBznKvxl7wOB-H17Pz0a3B62NIMFI=`.
+Dersom `code_verifier` er `xyo94uhy3zKvgB0NJwLms86SwcjtWviEOpkBnGgaLlo` så blir utrekna `code_challenge` lik `b7elB7ZyxIXgFyvBznKvxl7wOB-H17Pz0a3B62NIMFI`.  Code challenge skal ikke bruke padding.
 
 [Her er et verktøy for å rekne ut challenges:](https://gist.github.com/tonyxu-io/21eb57ab2a4aeb2a3ee10f77542abe64)
 
