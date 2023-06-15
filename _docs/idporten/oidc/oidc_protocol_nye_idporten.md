@@ -9,6 +9,18 @@ redirect_from: /oidc_protocol_nye_idporten
 
 This page is also available in English. [Changes in the new ID-porten in 2022-2023](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_new_idporten).
 
+# Status Nye ID-porten
+
+Per 15.juni 2023:
+- Nye ID-porten har robust og stabil drift på ny platform.  
+- Omfattende ytelsestesting viser resultater som er høyere enn dagens løsning.
+- Det er ca 20 tjenester fra 15 virksomheter som er flytta til Nye ID-porten.
+
+Noe funksjonalitet fra dagens løsning er ennå ikke tilgjengelig i Nye ID-porten. Dette vil bli klart før flytting av SAML 26/9, og gjelder :
+- Brukerstyrt datadeling
+- Pseudonyme tokens
+- Authorizations-APIet
+
 
 # Hvordan migrere i praksis ?
 
@@ -58,9 +70,9 @@ Overgangen til ny løsning vil skje i 4 steg:
 
 | Steg | Dato | Beskrivelse |
 |-|-|-|
-|1: Prøvedrift | Mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
-|2: Ordinær drift |Mai 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
-|3: SAML flyttes | September 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstundes SSO mellom gamal og ny platform. |
+|1: Prøvedrift | Oppnådd mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
+|2: Ordinær drift |Oppnådd juni 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
+|3: SAML flyttes | September 2023 (26/9) | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstundes SSO mellom gamal og ny platform. |
 |4: Sanering |Desember 2023 |  Den gamle OIDC-issueren skrus av.
 
 ### Når bør jeg migrere ?

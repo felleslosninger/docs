@@ -42,7 +42,7 @@ folders:
 - title: Grensesnittsdefinisjon
   folderitems:
 
-      - title: "Endringer i 2022"
+      - title: "Endringer i 2023"
         jurl: /docs/idporten/oidc/oidc_protocol_nye_idporten.html
       - title: "/authorize"
         jurl: /docs/idporten/oidc/oidc_protocol_authorize.html
