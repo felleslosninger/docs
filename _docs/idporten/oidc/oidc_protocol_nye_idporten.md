@@ -9,6 +9,18 @@ redirect_from: /oidc_protocol_nye_idporten
 
 This page is also available in English. [Changes in the new ID-porten in 2022-2023](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_new_idporten).
 
+# Status Nye ID-porten
+
+Per 15.juni 2023:
+- Nye ID-porten har robust og stabil drift på ny platform.  
+- Omfattende ytelsestesting viser resultater som er høyere enn dagens løsning.
+- Det er ca 20 tjenester fra 15 virksomheter som er flytta til Nye ID-porten.
+
+Noe funksjonalitet fra dagens løsning er ennå ikke tilgjengelig i Nye ID-porten. Dette vil bli klart før flytting av SAML 26/9, og gjelder :
+- Brukerstyrt datadeling
+- Pseudonyme tokens
+- Authorizations-APIet
+
 
 # Hvordan migrere i praksis ?
 
