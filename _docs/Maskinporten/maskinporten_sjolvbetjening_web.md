@@ -212,10 +212,10 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 
 [![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
 
-### Registrere nøkkel eller sertifikat på klient
+### Registrere nøkkel på klient
 
-1. Offentilg nøkkel i PEM-format må konverteres til JWK ved hjelp av JWK Creator eller lignende, før den kan bli lagt på klienten. 
-2. Trykk på 'Egne public nøkler', eventuelt 'Virksomhetssertifikat', nederst på klient-registreringsssiden i selvbetjening web.
+1. Offentlig nøkkel, i PEM-format, må konverteres til JWK ved hjelp av JWK Creator eller lignende, før den kan bli lagt på klienten. 
+2. Trykk på 'Egne public nøkler', nederst på klient-registreringsssiden i selvbetjening web.
 3. Lim inn JWK og trykk på 'legg til'. NB! Husk å plassere den mellom to klammer []. 
 4. Sjekk at JWK blir lagret i riktig format på klienten:
 
@@ -232,6 +232,11 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
   ]
 ```
 
+### Registrere sertifikat på klient
+
+1. Eksporter offentlig nøkkel fra virksomhetssertifikat i PEM-format. Husk at det er signeringsnøkkel som må eksporteres. 
+2. Trykk på 'Virksomhetssertifikat', nederst på klientregistreringsssiden i selvbetjening web.
+3. Lim inn nøkkel i riktig format. 
 
 ### Vedlikehald av merkantile data
 
