@@ -190,3 +190,7 @@ På sikt vil SAML blir faset helt ut.
 [Pseudonymisering](oidc_func_nopid.html) vil bli påvirket av byttet av `sub`, se ovenfor.  
 
 Selve `no_pid`-scopet videreføres ikke, så kunder må bruke enten opaque tokens eller pseudonymiserende scopes.
+
+### Alternativ innloggings-lenke
+
+Funsksjonaliteten blir ikke videreført.
