@@ -16,7 +16,7 @@ Her har vi samlet litt informasjon om autentisering i Maskinporten.
 
 ## Autentiseringsmetoder i Maskinporten
 
-Virksomheter kan autentisere seg i Maskinporten med virksomhetssertifikat eller assymetriske nøkler, som er virksomheten sin digitale ID.
+Virksomheter kan autentisere seg i Maskinporten med virksomhetssertifikat eller asymmetriske nøkler, som er virksomheten sin digitale ID.
 
 ## Hva er hensikten med virksomhetssertifikat/nøkler?
 
@@ -44,9 +44,9 @@ Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl](https://
 
 Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/)
 
-## Hvordan opprettes assymetriske nøkler?
+## Hvordan opprettes asymmetriske nøkler?
 
-Det er ulik programvare for oppretting av assymetriske nøkler. Dette vil ikke bli omtalt i Digitaliseringsdirektoratet sin tekniske dokumentasjon.
+Det er ulik programvare for oppretting av asymmetriske nøkler. Dette vil ikke bli omtalt i Digitaliseringsdirektoratet sin tekniske dokumentasjon.
 
 ## Bruker man samme sertifikat til testing som i produksjon?
 
