@@ -28,7 +28,7 @@ Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunn
 | altinn.no                           | 89.250.123.0                                        | 443  | DPO/DPV  | Altinn formidlingstjeneste                                                               | utgående              |
 | meldingsformidler.digipost.no       | 51.124.140.176/28                                   | 443  | DPI      | Meldingsformidler for DPI-meldinger (16 adresser)                                        | utgående              |
 | crl.buypass.no       | 185.62.160.145                                   | 80  | DPI      | Buypass CRL-liste                                        | utgående              |
-| crl.buypassca.com       | 185.62.162.185                                   | 80  | DPI      | Buypass CRL-liste SEID2.0                              | utgående              |
+| crl.buypassca.com       | 185.62.160.185                                   | 80  | DPI      | Buypass CRL-liste SEID2.0                              | utgående              |
 | krr.digdir.no      | 146.192.252.54                                 | 443  | DPI      | Kontakt-og reservasjonsregisteret                                       | utgående              |
 | srest.dataplatfor.ms                | 51.120.55.214 og 51.107.214.212                                        | 443  | DPI      | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2 | utgående              |
 | svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler                                                                 | utgående              |
