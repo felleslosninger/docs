@@ -27,7 +27,7 @@ Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunn
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 | 5671 | DPE      | Azure Service Bus, AMQP med TLS                                                          | utgående              |
 | altinn.no                           | 89.250.123.0                                        | 443  | DPO/DPV  | Altinn formidlingstjeneste                                                               | utgående              |
 | meldingsformidler.digipost.no       | 51.124.140.176/28                                   | 443  | DPI      | Meldingsformidler for DPI-meldinger (16 adresser)                                        | utgående              |
-| crl.buypass.no       | 185.62.160.145                                   | 80  | DPI      | Buypass CRL-liste                                        | utgående              |
+| crl.buypass.no       | 185.62.162.145 og 185.62.160.145                                 | 80  | DPI      | Buypass CRL-liste                                        | utgående              |
 | crl.buypassca.com       | 185.62.162.185 og 185.62.160.185                               | 80  | DPI      | Buypass CRL-liste SEID2.0                              | utgående              |
 | krr.digdir.no      | 146.192.252.54                                 | 443  | DPI      | Kontakt-og reservasjonsregisteret                                       | utgående              |
 | srest.dataplatfor.ms                | 51.120.55.214 og 51.107.214.212                                        | 443  | DPI      | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2 | utgående              |
