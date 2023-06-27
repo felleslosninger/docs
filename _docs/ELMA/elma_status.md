@@ -8,6 +8,14 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 27.06.2023 (3.20.0)
+
+### Tasks
+
+```
+Forbedret monitorering, logging og intern statistikk for bruk til debugging
+```
+
 ## ELMA update 06.06.2023 (3.19.0)
 
 ### Tasks
