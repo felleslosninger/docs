@@ -8,7 +8,7 @@ sidebar: elma_sidebar
 redirect_from: /elma_open_data
 ---
 
-*Updated: 06.06.2020*
+*Updated: 27.06.2023*
 
 ### Important note on use
 NB! These datasets must not be used to check if a given norwegian organization is registered in PEPPOL or what documents an organization can receive. This should be done via a lookup via the SML (Service Metadata Locator).
@@ -16,7 +16,7 @@ NB! These datasets must not be used to check if a given norwegian organization i
 See section below on how to do a proper lookup.
 
 ### Datasets
-There are currently three datasets which are updated every hour.
+There are currently three datasets which are updated every day at approximately 06:00 CET.
 
 #### Participants
 Shows all participants and what processes they support.
