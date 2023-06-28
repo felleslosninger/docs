@@ -25,7 +25,8 @@ redirect_from:
 **Feilrettingar**
 
 - Integrasjonspunktet slår ikkje opp json-schema.org og annet ved oppstart
-- Mottakers løsning krasjer ikkje dersom for store filer blir sendt til mottaker som har har BEST/EDU 
+- Mottakers løsning krasjer ikkje dersom for store filer blir sendt til mottaker som har har BEST/EDU
+- Hovuddokumentet kjem først i lista over vedlegg ved mottak av SvarInn-meldingar
 
 ## 2.19.0
 
