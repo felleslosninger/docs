@@ -18,6 +18,15 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.20.0
+
+28.06.2023
+
+**Feilrettingar**
+
+- Integrasjonspunktet slår ikkje opp json-schema.org og annet ved oppstart
+- Mottakers løsning krasjer ikkje dersom for store filer blir sendt til mottaker som har har BEST/EDU 
+
 ## 2.19.0
 
 06.06.2023
