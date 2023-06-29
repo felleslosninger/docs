@@ -22,7 +22,7 @@ JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
 
 | Claim  | Cardinality | Description  |
 | --- | --- | --- |
-| alg | required | Must be `RS256` - RS256, RS384 and RS512 are supported by Maskinporten. |   
+| alg | required | `RS256`, `RS384` and `RS512` are supported by Maskinporten. |   
 | x5c | optional | The business certificate/eseal (virksomhetssertifikat) of the organization. Full certificate chain, see [RFC7517 chapter 4.7](https://tools.ietf.org/html/rfc7517#section-4.7). |
 | kid |  optional | Key identifier to a previously registered certificate / asymmetric key   bound to the client.     |
 
