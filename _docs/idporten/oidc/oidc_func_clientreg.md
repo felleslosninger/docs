@@ -144,7 +144,7 @@ Er modellert som egen ressurs under klient `/clients/{client_id}/jwks`
 
 Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
 
-Kun RS256 støttes som algoritme.
+RS256, RS384 og RS512 støttes som algoritme.
 
 Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
 
