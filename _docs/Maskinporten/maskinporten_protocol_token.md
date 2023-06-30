@@ -78,7 +78,7 @@ The token is a JWT with the following structure:
 | claim | verdi |
 | --- | --- |
 | kid | "Key identifier" - unique identifier for the key and certificate used by Maskinporten. The public key and the certificate must be fetched from our .well-known endpoint. |
-| alg | "algorithm" - algorithm used for signing the token. Maskinporten only supports `RS256` (RSA-SHA256) |
+| alg | "algorithm" - algorithm used for signing the token. Maskinporten supports `RS256`, `RS384` and `RS512` |
 
 
 
