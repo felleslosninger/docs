@@ -139,7 +139,7 @@ Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "inneby
 - Forenklet URL til APIet
 
 
-### URLer:
+### Utgåtte URLer:
 
  |miljø|url|
  |-|-|
@@ -149,7 +149,7 @@ Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "inneby
  |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
 
 
-### Swagger 
+### Utgått Swagger 
 OpenAPI-dokumentasjon for endepunkter. 
 
 |miljø|url|
