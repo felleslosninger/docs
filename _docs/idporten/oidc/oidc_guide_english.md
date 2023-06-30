@@ -142,7 +142,7 @@ The following header claims in the JWT should be noted:
 | Claim | Comment |
 | --- | --- |
 | x5c | The certificate used for signing the JWT.  |
-| alg | Only `RS256` is supported.  |
+| alg | `RS256`, `RS384` or `RS512`.  |
 
 Example:
 
@@ -170,7 +170,7 @@ Header:
 | claim | Comment |
 | --- | --- |
 | kid | "Key identifier" - unique identifier for the signature. Key and cerificate must be fetched from the well-known endpoint.  |
-| alg | "algorithm" - signing algorithem, only RS256 (RSA-SHA256) supported |
+| alg | "algorithm" - signing algorithem, RS256, RS384, RS512 are supported |
 
 
 Body:
