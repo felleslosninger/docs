@@ -9,13 +9,15 @@ redirect_from: /oppslagstjenesten_rest
 
 ## Introduksjon
 
-Kontaktregisteret sin oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API, sikret med Maskinporten. Dette gjør det enkelt å implementere integrasjoner mot registeret.
+Kontaktregisterets oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API, sikret med Maskinporten. Dette gjør det enkelt å implementere integrasjoner mot registeret.
 
 ## Bruk av Oauth2
 
 Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon]({{site.baseurl}}/docs/Maskinporten/maskinporten_auth_server-to-server-oauth2)
 
 Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke Maskinporten.
+
+> I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) (ikke ver2.maskinporten.no) 
 
 ### Lokal kopi (endringsmeldinger)
 Funksjonalitet for lokal kopi (endringsmeldinger) er fra november 2022 støttet over Oauth2-grensenittet. SOAP-grensesnittet blir faset ut 01.04.2023. Informasjon og dokumentasjon fås ved å kontakte servicedesk@digdir.no
