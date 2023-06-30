@@ -170,7 +170,7 @@ Header:
 | claim | Comment |
 | --- | --- |
 | kid | "Key identifier" - unique identifier for the signature. Key and cerificate must be fetched from the well-known endpoint.  |
-| alg | "algorithm" - signing algorithem, RS256, RS384, RS512 are supported |
+| alg | "algorithm" - signing algorithm, RS256, RS384, RS512 are supported |
 
 
 Body:
