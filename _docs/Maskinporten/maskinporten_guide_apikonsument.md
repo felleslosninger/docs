@@ -202,18 +202,10 @@ Når tokenet er utløpt, vil klient typisk få 401-respons fra APIet, og steg 5 
 
 ### Bruke delegering som konsument
 
-Bemyndiget person må logge inn i Altinn og delegere tilgangen videre til en leverandør:
+Bemyndiget ansatt hos API-konsument logger inn i Altinn, velger å representere foretaket, søker opp og delegerer API-tilgangen videre til leverandøren i portal-løsningen.  [Dette er nærmere dokumentert hos Altinn](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/).
 
-1. Etter innlogging, velg å representere foretaket
-2. Klikk så "profil" i toppmenyen, og klikk panelet "Andre med rettigheter".
-1. Klikk "Legge til ny person eller virksomhet", og velg "Ekstern virksomhet"
-1. Søk opp leverandøren din, ved å oppgi orgnr + første 4 tegn av navnet:
-![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_leggtil.png)
-1. I feltet "Gi nye rettigheter", søk opp navnet på delegation-schemaet, og klikk dette
-![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_soek_delegeringsoppsett.png)
+Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  API-tilbyder ennå ikke har gitt konsument tilgang til scopet i Maskinporten.
 
-1. Bekreft med å klikk "Gi rettigheter"
-![delgering-gi tilgang]({{site.baseurl}}/images/maskinporten/altinn_delegering_bekreftelse.png)
 
 ### Bruke delegering som leverandør
 
@@ -230,7 +222,7 @@ Når integrasjonen din så skal forespørre tokens på vegne av konsumenter, må
 JWT Grant i request:
 ```
 {
-  "aud" : "https://ver2.maskinporten.no/",
+  "aud" : "https://test.maskinporten.no/",
   "scope" : "difitest:test2",
   "iss" : "oidc_difi_delegering_altinn",
   "exp" : 1584693183,
@@ -242,7 +234,7 @@ JWT Grant i request:
 som gir respons:
 ```
 {
-  "iss" : "https://ver2.maskinporten.no/",
+  "iss" : "https://test.maskinporten.no/",
   "client_amr" : "virksomhetssertifikat",
   "token_type" : "Bearer",
   "client_id" : "oidc_difi_delegering_altinn",
