@@ -72,7 +72,7 @@ Overgangen til ny løsning vil skje i 4 steg:
 |-|-|-|
 |1: Prøvedrift | Oppnådd mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
 |2: Ordinær drift |Oppnådd juni 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
-|3: SAML flyttes | Flyttinga som var planlagt 26.09.23 er forsinket. Ny dato kommer i månedsskiftet august/september.) | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstidig SSO mellom gammel og ny platform. |
+|3: SAML flyttes | Flyttinga som var planlagt 26.09.23 er forsinket. Ny dato kommer i månedsskiftet august/september. | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstidig SSO mellom gammel og ny platform. |
 |4: Avvikling |Desember 2023 |  Den gamle OIDC-issueren skrus av.
 
 ### Når bør jeg migrere ?
