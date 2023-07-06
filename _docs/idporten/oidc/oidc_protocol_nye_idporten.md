@@ -9,7 +9,7 @@ redirect_from: /oidc_protocol_nye_idporten
 
 This page is also available in English. [Changes in the new ID-porten in 2022-2023](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_new_idporten).
 
-# Status Nye ID-porten
+# Status nye ID-porten
 
 Per 15.juni 2023:
 - Nye ID-porten har robust og stabil drift på ny platform.  
@@ -64,7 +64,7 @@ Dagens driftsavtale med TietoEvry om drift av ID-porten utløper høsten 2023.  
 
 ### Tidsplan
 
-Se [status-sida for ny ID-porten på Samarbeidsporten](https://samarbeid.digdir.no/id-porten/id-porten/1313) for utfyllende tidsplan. Når det nærmer seg, vil det også blir [publisert varsel på statuspage](https://status.digdir.no/)
+Se [status-sida for nye ID-porten på Samarbeidsporten](https://samarbeid.digdir.no/id-porten/id-porten/1313) for utfyllende tidsplan. Når det nærmer seg, vil det også blir [publisert varsel på Digdir Status](https://status.digdir.no/)
 
 Overgangen til ny løsning vil skje i 4 steg:
 
@@ -72,8 +72,8 @@ Overgangen til ny løsning vil skje i 4 steg:
 |-|-|-|
 |1: Prøvedrift | Oppnådd mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
 |2: Ordinær drift |Oppnådd juni 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
-|3: SAML flyttes | September 2023 (26/9) | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstundes SSO mellom gamal og ny platform. |
-|4: Sanering |Desember 2023 |  Den gamle OIDC-issueren skrus av.
+|3: SAML flyttes | Flyttinga som var planlagt September 26.09.23 er forsinka. Ny dato kommer i månedsskiftet august/september.) | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstundes SSO mellom gamal og ny platform. |
+|4: Avvikling |Desember 2023 |  Den gamle OIDC-issueren skrus av.
 
 ### Når bør jeg migrere ?
 
@@ -84,7 +84,7 @@ Dersom ikke, så anbefaler vi at du migrerer så tidlig som mulig ifra mars.  Na
 
 
 
-## Detaljerte endringer i protokollen:
+## Detaljerte endringer i protokollen
 
 Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen, ulikt dagens løsning som er basert på 2.0. Grunnen til denne endringen er at vi ønsker å følge de oppdaterte sikkerhetskravene som er i 2.1.  Standard-flyt for alle integrasjoner blir OIDC og code-flow med tvungen bruk av PKCE og state og nonce.
 
@@ -99,7 +99,7 @@ Samtidig gjør dette det mer komplekst for API-tilbydere som bruker [brukerstyrt
 
 Ved utløp av migreringsperioden vil gammel issuer bli faset ut fullstendig.  De som da ennå ikke har flyttet OIDC-integrasjonen sin, vil slutte å fungere.
 
-### Ny IP
+### Ny IP-adresse
 
 Nye ID-porten vil også køyre på [ein annan IP-addresse]({{site.baseurl}}/docs/general/IP) enn dagens, slik at kundar som har utgåande brannmur mot oss, må opne opp.
 
