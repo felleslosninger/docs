@@ -176,7 +176,7 @@ Responser fra autorisasjons-endepunktet vil inneholde parameteret `iss` med verd
 Ved bruk av pushed authorization request må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet.
 
 ### Token introspection krever eget scope og klientautentisering
-Ved bruk av token introspection-endeounktet må det oppgis klientautentisering.  Samme metode som mot token-endepunktet skal benyttes.  Klienten må også være registrert med scope `idporten:token.introspection`.
+Ved bruk av token introspection-endeounktet må det oppgis klientautentisering.  Samme metode som mot token-endepunktet skal benyttes.  Klienten må også være registrert med scope `idporten:token.introspection`.  Kontakt oss for hjelp med scopet.
 
 ### SAML
 
