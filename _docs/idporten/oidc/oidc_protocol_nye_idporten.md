@@ -173,7 +173,10 @@ JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim 
 Responser fra autorisasjons-endepunktet vil inneholde parameteret `iss` med verdien fra ID-portens issuer i det aktuelle miljøet.  Dette kan brukes til å unngå "mix-up-attacks" og er spesifisert i RFC 9207.
 
 ### Parameter client_id påkrevd ved bruk av request_uri mot autorisasjons-endepunktet
-Ved bruk av pushed authorization request, må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet.
+Ved bruk av pushed authorization request må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet.
+
+### Token introspection krever eget scope og klientautentisering
+Ved bruk av token introspection-endeounktet må det oppgis klientautentisering.  Samme metode som mot token-endepunktet skal benyttes.  Klienten må også være registrert med scope `idporten:token.introspection`.
 
 ### SAML
 
