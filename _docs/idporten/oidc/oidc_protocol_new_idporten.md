@@ -151,6 +151,9 @@ Response from the authorization endpoint will include `iss` which contains the v
 
 When using PAR (pushed auhtorization request), both `client_id`and `request_uri` must be included when calling the authorization endpoint
 
+### Token introspection requires a special scope and client authentication
+When using token introspection, the client must authenticate itself.  Use the same client authentication method with the token endpoint and the token introspection endpoint.  The client must be registered with the scope `idporten:token.introspection`.  Ask the service desk for help.
+
 ### SAML
 
 The new ID-porten will only offer a very basic SAML-support, only to existing services. We will develop a simple SAML-to-OIDC-proxy which will be placed in front of the new OIDC-iusser.
