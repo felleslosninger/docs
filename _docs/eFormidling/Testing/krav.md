@@ -49,7 +49,7 @@ Verifiser at følgende kategorier feil håndteres:
 4. Verifiser at en følger med på status for sendte meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
 5. Verifiser at en mottar meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
 6. Verifiser at en har lagt til rette for feilsøking ved å oppgi navn og versjon for eget system ved oppretting av melding
-7. Verifiser at en ikke bruker ettstegs strategi for sending av små meldinger dersom en skal sende meldinger over 5mb
+7. Verifiser at en ikke bruker ettstegs strategi for sending av små meldinger dersom en skal sende meldinger over 5 MB
 8. Verifiser at polling brukes ved mottak av innkommende statuser (webhook-abonnement er bare et supplement)
 9. Verifiser at polling brukes ved mottak av innkommende meldinger (webhook-abonnement er bare et supplement)
 10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
