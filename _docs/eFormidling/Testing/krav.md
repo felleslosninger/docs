@@ -8,7 +8,7 @@ sidebar: eformidling_sidebar
 
 Formålet med denne siden er å gi en oversikt over krav til integrasjoner mot eFormidling, med tilhørende testbeskrivelser.
 
-Informasjon om nødvendig testoppsett finnes på [Kom i gang med testing](https://docs.digdir.no/docs/eFormidling/Testing/).
+Informasjon om nødvendig testoppsett finnes på [Kom i gang med testing](./).
 
 1. TOC
 {:toc}
@@ -47,28 +47,28 @@ Verifiser at systemet følger med på asynkrone statuser (inkludert feil-statuse
 
 1. Verifiser at integrasjonspunktets API (eFormidling 2) brukes
 2. Verifiser at integrasjonspunktets gamle API (BEST/EDU) ikke brukes
-3. Verifiser at en sender meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
+3. Verifiser at en sender meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
 4. Verifiser at en følger med på status for sendte meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
-5. Verifiser at en mottar meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
+5. Verifiser at en mottar meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
 6. Verifiser at en har lagt til rette for feilsøking ved å oppgi navn og versjon for eget system ved oppretting av melding
 7. Verifiser at en ikke bruker ettstegs strategi for sending av små meldinger dersom en skal sende meldinger over 5 MB
 8. Verifiser at polling brukes ved mottak av innkommende statuser (webhook-abonnement er bare et supplement)
 9. Verifiser at polling brukes ved mottak av innkommende meldinger (webhook-abonnement er bare et supplement)
 10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
 11. Verifiser at en ikke behandler vellykket bekreftelse på at melding er sendt som at meldingen er levert vellykket
-12. Verifiser at en kan motta så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](https://docs.digdir.no/docs/eFormidling/Egenskaper/)
-13. Verifiser at en kan sende så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](https://docs.digdir.no/docs/eFormidling/Egenskaper/)
-14. Verifiser at det ikke er mulig å sende meldinger som overskrider terskelverdiene som er beskrevet under [eFormidlings egenskaper](https://docs.digdir.no/docs/eFormidling/Egenskaper/)
+12. Verifiser at en kan motta så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
+13. Verifiser at en kan sende så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
+14. Verifiser at det ikke er mulig å sende meldinger som overskrider terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
 
 ### Dersom på-vegne-av brukes, så er dette oppsettet testet (MÅ)
 
-Se gjerne [på vegne av](https://docs.digdir.no/docs/eFormidling/Utvikling/pa_vegne_av).
+Se gjerne [på vegne av](../Utvikling/pa_vegne_av).
 
 1. Verifiser at aktuelle tester er gjennomført med på-vegne-av-oppsett
 
 ### Dersom kanal brukes, så er dette oppsettet testet (MÅ)
 
-Se gjerne [kanal](https://docs.digdir.no/docs/eFormidling/Utvikling/kanal).
+Se gjerne [kanal](../Utvikling/kanal).
 
 1. Verifiser at aktuelle tester er gjennomført med kanal-oppsett
 
@@ -77,8 +77,8 @@ Se gjerne [kanal](https://docs.digdir.no/docs/eFormidling/Utvikling/kanal).
 1. Verifiser at kommunikasjon fungerer også med andre system enn ens egen
 2. Verifiser at spesialtegn fungerer som forventet i titler, filnavn, osv
 3. Verifiser at begrensninger som lengder på tekstfelt fungerer som forventet
-   - Se begrensninger for [dokumenttypene](https://docs.digdir.no/docs/eFormidling/Utvikling/Dokumenttyper/standard_arkivmelding)
-   - Se begrensninger for [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
+   - Se begrensninger for [dokumenttypene](../Utvikling/Dokumenttyper/standard_arkivmelding)
+   - Se begrensninger for [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
 5. Verifiser at sending og mottak fungerer når bare påkrevd informasjon er oppgitt
 6. Verifiser at sending og mottak fungerer når all mulig informasjon er oppgitt
 7. Verifiser at kommunikasjon fungerer med ønskede filstørrelser
@@ -189,7 +189,7 @@ Disse kravene gjelder dersom [taushetsbelagt saksbehandling](../Funksjonalitet/t
 
 Taushetsbelagt saksbehandling følger tilsvarende flyt som saksbehandling, med noen tilleggskrav.
 
-1. [Krav og testbeskrivelser for Saksbehandling](https://docs.digdir.no/docs/eFormidling/Testing/krav#saksbehandling)
+1. [Krav og testbeskrivelser for Saksbehandling](#saksbehandling)
 2. Tillegskrav for taushetsbelagt saksbehandling
    - Verifiser at det er mulig å markere melding som taushetsbelagt
    - Verifiser at det er mulig å oppgi DPV varslingstekst for taushetsbelagt melding
