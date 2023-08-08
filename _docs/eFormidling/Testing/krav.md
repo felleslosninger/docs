@@ -54,6 +54,9 @@ Verifiser at følgende kategorier feil håndteres:
 9. Verifiser at polling brukes ved mottak av innkommende meldinger (webhook-abonnement er bare et supplement)
 10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
 11. Verifiser at en ikke behandler vellykket bekreftelse på at melding er sendt som at meldingen er levert vellykket
+12. Verifiser at en kan motta så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](https://docs.digdir.no/docs/eFormidling/Egenskaper/)
+13. Verifiser at en kan sende så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](https://docs.digdir.no/docs/eFormidling/Egenskaper/)
+14. Verifiser at det ikke er mulig å sende meldinger som overskrider terskelverdiene som er beskrevet under [eFormidlings egenskaper](https://docs.digdir.no/docs/eFormidling/Egenskaper/)
 
 ### Dersom på-vegne-av brukes, så er dette oppsettet testet (MÅ)
 
