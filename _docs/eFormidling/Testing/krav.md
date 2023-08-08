@@ -72,13 +72,15 @@ Se gjerne [kanal](https://docs.digdir.no/docs/eFormidling/Utvikling/kanal).
 1. Verifiser at kommunikasjon fungerer også med andre system enn ens egen
 2. Verifiser at spesialtegn fungerer som forventet i titler, filnavn, osv
 3. Verifiser at begrensninger som lengder på tekstfelt fungerer som forventet
-4. Verifiser at sending og mottak fungerer når bare påkrevd informasjon er oppgitt
-5. Verifiser at sending og mottak fungerer når all mulig informasjon er oppgitt
-6. Verifiser at kommunikasjon fungerer med ønskede filstørrelser
-7. Verifiser at kommunikasjon fungerer med ønskede filformat
-8. Verifiser at gyldige meldinger produseres både når all informasjon er oppgitt og når bare påkrevd informasjon er oppgitt
-9. Verifiser at innkommende meldinger ikke valideres strengt og at en kan ta imot innkommende meldinger med mangler
-10. Verifiser at en ikke sender filer med navn som inneholder tegn som ikke fungerer bra i filnavn, for eksempel kolon
+   - Se begrensninger for [dokumenttypene](https://docs.digdir.no/docs/eFormidling/Utvikling/Dokumenttyper/standard_arkivmelding)
+   - Se begrensninger for [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
+5. Verifiser at sending og mottak fungerer når bare påkrevd informasjon er oppgitt
+6. Verifiser at sending og mottak fungerer når all mulig informasjon er oppgitt
+7. Verifiser at kommunikasjon fungerer med ønskede filstørrelser
+8. Verifiser at kommunikasjon fungerer med ønskede filformat
+9. Verifiser at gyldige meldinger produseres både når all informasjon er oppgitt og når bare påkrevd informasjon er oppgitt
+10. Verifiser at innkommende meldinger ikke valideres strengt og at en kan ta imot innkommende meldinger med mangler
+11. Verifiser at en ikke sender filer med navn som inneholder tegn som ikke fungerer bra i filnavn, for eksempel kolon
 
 ## Krav til eventuell drift av integrasjonspunkt
 
