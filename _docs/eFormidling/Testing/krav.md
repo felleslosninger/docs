@@ -8,6 +8,8 @@ sidebar: eformidling_sidebar
 
 Formålet med denne siden er å gi en oversikt over krav til integrasjoner mot eFormidling, med tilhørende testbeskrivelser.
 
+Informasjon om nødvendig testoppsett finnes på [Kom i gang med testing](https://docs.digdir.no/docs/eFormidling/Testing/).
+
 1. TOC
 {:toc}
 
