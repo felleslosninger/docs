@@ -30,8 +30,8 @@ Disse kravene gjelder uavhengig av hvilke prosess(er) som støttes.
 
 Verifiser at følgende kategorier feil håndteres:
 
-- synkron feil, for eksempel dersom adresseoppslag feiler
-- asynkron feil, for eksempel dersom autentisering feiler mot aktuell meldingstjeneste
+- synkron feil, for eksempel dersom adresseoppslag feiler, send f.eks. til adresse som ikke finnes
+- asynkron feil, for eksempel dersom autentisering feiler mot aktuell meldingstjeneste, legg f.eks. inn feil brukernavn for meldingstjenesten i konfigurasjonen før en sender melding
 - levetid utløpt, for eksempel dersom mottaker lar være/klarer ikkje behandle melding, send f.eks. til qa-integrasjonspunkt og vent til levetid utløper
 
 ### Støtter visning av sendte meldinger og status for disse (MÅ)
