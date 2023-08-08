@@ -57,9 +57,13 @@ Verifiser at følgende kategorier feil håndteres:
 
 ### Dersom på-vegne-av brukes, så er dette oppsettet testet (MÅ)
 
+Se gjerne [på vegne av](https://docs.digdir.no/docs/eFormidling/Utvikling/pa_vegne_av).
+
 1. Verifiser at aktuelle tester er gjennomført med på-vegne-av-oppsett
 
 ### Dersom kanal brukes, så er dette oppsettet testet (MÅ)
+
+Se gjerne [kanal](https://docs.digdir.no/docs/eFormidling/Utvikling/kanal).
 
 1. Verifiser at aktuelle tester er gjennomført med kanal-oppsett
 
