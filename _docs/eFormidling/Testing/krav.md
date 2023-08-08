@@ -13,7 +13,7 @@ Informasjon om nødvendig testoppsett finnes på [Kom i gang med testing](./).
 1. TOC
 {:toc}
 
-## Felleskrav
+## Felles krav
 
 Disse kravene gjelder uavhengig av hvilke prosess(er) som støttes.
 
@@ -32,7 +32,7 @@ Verifiser at følgende kategorier feil håndteres:
 
 - synkron feil, for eksempel dersom adresseoppslag feiler, send f.eks. til adresse som ikke finnes
 - asynkron feil, for eksempel dersom autentisering feiler mot aktuell meldingstjeneste, legg f.eks. inn feil brukernavn for meldingstjenesten i konfigurasjonen før en sender melding
-- levetid utløpt, for eksempel dersom mottaker lar være/klarer ikkje behandle melding, send f.eks. til qa-integrasjonspunkt og vent til levetid utløper
+- levetid utløpt, for eksempel dersom mottaker lar være/ikke klarer å behandle melding, send f.eks. til qa-integrasjonspunkt og vent til levetid utløper
 
 Verifiser at systemet følger med på asynkrone statuser (inkludert feil-statuser) knyttet til en melding helt til den har fått en av følgende statuser: `levert`, `feil` eller `levetid utløpt`.
 
@@ -93,7 +93,7 @@ Disse kravene gjelder eventuell drift av integrasjonspunkt.
 
 ### Har tilfredsstillende tilgangskontroll og sikring av grensesnitt, meldinger og hemmeligheter (MÅ)
 
-1. Verifiser at installsjon og konfigurasjon er gjort i henhold til beskrivelser
+1. Verifiser at installasjon og konfigurasjon er gjort i henhold til beskrivelser
 2. Verifiser at transport er tilstrekkelig sikret, f.eks. med hjelp av transportsikring
 3. Verifiser at tilgang til grensesnittet er tilstrekkelig sikret, f.eks. med hjelp av HTTP basic auth
 4. Verifiser at hemmeligheter beskyttes tilfredsstillende, f.eks. med hjelp av Hashicorp Vault
@@ -119,7 +119,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til mottaker
 5. Verifiser at innholdet hos mottaker er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 7. Marker melding som lest hos mottaker (varierer fra system til system hvordan - f.eks. først ved tilordning av saksnummer)
 8. Verifiser at meldingen blir markert som lest
 
@@ -130,7 +130,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til mottaker
 5. Verifiser at innholdet hos mottaker er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 7. Marker melding som lest hos mottaker (varierer fra system til system hvordan - f.eks. først ved tilordning av saksnummer)
 8. Verifiser at meldingen blir markert som lest
 
@@ -141,7 +141,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til mottaker
 5. Verifiser at innholdet hos mottaker er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 7. Marker melding som lest hos mottaker (varierer fra system til system hvordan - f.eks. først ved tilordning av saksnummer)
 8. Verifiser at meldingen blir markert som lest
 
@@ -152,7 +152,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 3. Verifiser at meldingen blir markert som sendt hos avsender
 4. Verifiser at meldingen kommer frem til mottaker
 5. Verifiser at innholdet hos mottaker er som forventet (husk 1.7)
-6. Verifisert at meldingen blir markert som mottat og etterhvert levert hos avsender
+6. Verifisert at meldingen blir markert som mottatt og etter hvert levert hos avsender
 7. Marker melding som lest hos mottaker
 8. Verifiser at meldingen blir markert som lest hos avsender
 
@@ -163,7 +163,7 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 3. Verifiser at meldingen blir markert som sendt i KS SvarUt
 4. Verifiser at meldingen kommer frem til mottaker
 5. Verifiser at innholdet hos mottaker er som forventet (husk 1.7)
-6. Verifisert at meldingen blir markert som mottat og etterhvert levert i KS SvarUt
+6. Verifisert at meldingen blir markert som mottatt og etter hvert levert i KS SvarUt
 7. Marker melding som lest hos mottaker
 8. Verifiser at meldingen blir markert som lest i KS SvarUt
 
@@ -190,7 +190,8 @@ Disse kravene gjelder dersom [taushetsbelagt saksbehandling](../Funksjonalitet/t
 Taushetsbelagt saksbehandling følger tilsvarende flyt som saksbehandling, med noen tilleggskrav.
 
 1. [Krav og testbeskrivelser for Saksbehandling](#saksbehandling)
-2. Tillegskrav for taushetsbelagt saksbehandling
+2. Tillegg![image](https://github.com/felleslosninger/docs/assets/785457/6c36eae0-8663-4019-afd3-b2e1801548a7)
+skrav for taushetsbelagt saksbehandling
    - Verifiser at det er mulig å markere melding som taushetsbelagt
    - Verifiser at det er mulig å oppgi DPV varslingstekst for taushetsbelagt melding
 
@@ -206,7 +207,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 4. Verifiser at meldingen blir markert som sendt
 5. Verifiser at meldingen kommer frem til DPI
 6. Verifiser at innholdet i DPI er som forventet (husk 1.7)
-7. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+7. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 
 ### Støtter sending til mottakere med Altinn Digital Post (DPV) (BØR)
 
@@ -216,7 +217,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 4. Verifiser at meldingen blir markert som sendt
 5. Verifiser at meldingen kommer frem til DPV
 6. Verifiser at innholdet i DPV er som forventet (husk 1.7)
-7. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+7. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 
 ### Støtter sending til mottakere med postadresse (print) (BØR)
 
@@ -225,7 +226,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til print
 5. Verifiser at innholdet i print er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 
 ### Støtter sending til mottaker med postadresse (print) og ukjent fødselsnummer (BØR)
 
@@ -234,15 +235,17 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til print
 5. Verifiser at innholdet i print er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 
 ### Støtter DPI-utvidelsen "lenke utenfor brev" (KAN)
 
 1. Fyll inn ønsket metadata for melding (husk 1.7)
 2. Send melding til annen mottaker som bruker DPI
-3. Verfiser at meldingen blir markert som sendt
+3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til DPI
-5. Verifiser at innholdet i meldingen er som forventet (husk 1.7)
+5. Verifiser at innholdet i meldingen er som forventet (husk 1.7)![image](https://github.com/felleslosninger/docs/assets/785457/6dc0c936-6f20-45a6-accf-97f044fae70d)
+![image](https://github.com/felleslosninger/docs/assets/785457/19ab6db0-49b5-45c4-9c38-78714ed18d56)
+
 6. Verifiser at lenke utenfor brev fungerer som forventet
 
 ### Støtter DPI-utvidelsen "bevis" (KAN)
@@ -278,7 +281,7 @@ Disse kravene gjelder dersom [publisering av møte til eInnsyn](../Funksjonalite
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til eInnsyn
 5. Verifiser at innholdet i eInnsyn er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 
 ## Publisering av journalpost til eInnsyn
 
@@ -291,7 +294,7 @@ Disse kravene gjelder dersom [publisering av journalpost til eInnsyn](../Funksjo
 3. Verifiser at meldingen blir markert som sendt
 4. Verifiser at meldingen kommer frem til eInnsyn
 5. Verifiser at innholdet i eInnsyn er som forventet (husk 1.7)
-6. Verifiser at meldingen blir markert som mottatt og etterhvert levert
+6. Verifiser at meldingen blir markert som mottatt og etter hvert levert
 
 ## Mottak av innsynskrav fra eInnsyn
 
