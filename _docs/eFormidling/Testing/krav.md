@@ -182,14 +182,12 @@ Disse kravene gjelder dersom [saksbehandling](../Funksjonalitet/saksbehandling) 
 
 Disse kravene gjelder dersom [taushetsbelagt saksbehandling](../Funksjonalitet/taushetsbelagt_saksbehandling) støttes.
 
-### Støtter sending av taushetsbelagt melding (MÅ)
+Taushetsbelagt saksbehandling følger tilsvarende flyt som saksbehandling, med noen tilleggskrav.
 
-1. Verifiser at sending av melding fungerer på samme måte som ved saksbehandling
-2. Verifiser at det er mulig å oppgi varslingstekst for taushetsbelagt melding
-
-### Støtter mottak av taushetsbelagt melding (MÅ)
-
-1. Verifiser at mottak av melding fungerer på samme måte som ved saksbehandling
+1. [Krav og testbeskrivelser for Saksbehandling](https://docs.digdir.no/docs/eFormidling/Testing/krav#saksbehandling)
+2. Tillegskrav for taushetsbelagt saksbehandling
+   - Verifiser at det er mulig å markere melding som taushetsbelagt
+   - Verifiser at det er mulig å oppgi DPV varslingstekst for taushetsbelagt melding
 
 ## Vedtak til innbyggere
 
