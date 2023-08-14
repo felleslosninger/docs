@@ -333,6 +333,9 @@ java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.addi
 
 Når denne kommandoen er køyrt, vert PID-en til processen returnert. Denne kan nyttast dersom du treng å stoppa prosessen. (Kan også finnast vha. htop eller top.) Integrasjonspunktet startar som ein eigen Java-prosess.
 
+## Kjeldekode
+KOSMOS' kjeldekode er tilgjengeleg på [GitHub](https://github.com/felleslosninger/efm-kosmos).
+
 ## Neste steg
 
 - [Sikkerhetskopi](sikkerhetskopi) (anbefalt)
