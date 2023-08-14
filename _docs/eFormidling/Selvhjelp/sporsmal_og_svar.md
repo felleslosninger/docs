@@ -199,11 +199,18 @@ difi.move.feature.statusQueueIncludes=DPI
 
 ### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?
 
-Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
+En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG:
+
+1. Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
 
 - [Last ned](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
-En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG-kommandoen under:
+2. eFormidlings offentlige kodesigneringsnøkkel må legges inn i nøkkelringen på maskina hvor signaturen skal verifiseres:
+```
+gpg --import <sti-til-nedlastet-signeringsnøkkel>
+```
+
+3. Deretter kan signaturen verifiseres vha. kommandoen under:
 
 ```
 gpg --verify "integrasjonspunkt-X.Y.Z.jar.asc" "integrasjonspunkt-X.Y.Z.jar"
