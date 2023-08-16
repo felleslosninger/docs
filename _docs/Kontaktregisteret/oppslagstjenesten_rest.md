@@ -109,7 +109,7 @@ Utgående brannmur må være åpen mot disse adressene:
 
 | DNS-navn                      | IPv4-adresse                   | Port | Tjeneste | Beskrivelse                                                                       | Inn-/utgående trafikk |
 |-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
-| kontaktregisteret.no                |  139.105.36.169          | 443  | Oppslagstjenesten KRR     | I bruk f.o.m 22.08.2023 | utgående| 
+| kontaktregisteret.no                |  139.105.36.169          | 443  | Oppslagstjenesten KRR     | I bruk f.o.m 30.08.2023 | utgående| 
 | krr.digdir.no                       |  146.192.252.54          | 443  | Oppslagstjenesten KRR     | Dersom i bruk. Utgår 18.09.2023   | utgående |
 
 
