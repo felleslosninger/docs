@@ -84,7 +84,7 @@ Se gjerne [kanal](../Utvikling/kanal).
 7. Verifiser at kommunikasjon fungerer med ønskede filstørrelser
 8. Verifiser at kommunikasjon fungerer med ønskede filformat
 9. Verifiser at gyldige meldinger produseres både når all informasjon er oppgitt og når bare påkrevd informasjon er oppgitt
-10. Verifiser at innkommende meldinger ikke valideres strengt og at en kan ta imot innkommende meldinger med mangler
+10. Verifiser at innkommende meldinger som mangler påkrevd informasjon likevel ikke avvises
 11. Verifiser at en ikke sender filer med navn som inneholder tegn som ikke fungerer bra i filnavn, for eksempel kolon
 
 ## Krav til eventuell drift av integrasjonspunkt
