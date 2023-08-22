@@ -8,14 +8,12 @@ sidebar: elma_sidebar
 redirect_from: /elma_icd0192andnewprofiles
 ---
 
-*Updated: 06.03.2019*
+*Updated: 22.08.2023*
 
 See also [separate page on how to upgrade existing participants to support the new Profiles](upgradeTo0192Profiles.html).
 
-## Norway is migrating from ICD 9908 to 0192
-The PEPPOL network is in the process of migrating the ICD for Norwegian organizations from 9908 to 0192. Some years in the future, the 9908-ICD will no longer be used in the PEPPOL network.
-
-As part of the migration process, Norwegian organizations will be identified through two ICDs. Organizations from other countries have been identified as before - no changes.
+## Norway has migrated from ICD 9908 to 0192
+After 23.05.2023, the ICD 9908 is no longer used in the PEPPOL network.
 
 ## New Profiles are only available under the 0192-ICD
 Existing Profiles are available using the 9908-ICD as before, but new Profiles will only be available under the 0192-ICD.
