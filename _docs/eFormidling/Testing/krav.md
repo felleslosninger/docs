@@ -34,7 +34,7 @@ Verifiser at følgende kategorier feil håndteres:
 - asynkron feil, for eksempel dersom autentisering feiler mot aktuell meldingstjeneste, legg f.eks. inn feil brukernavn for meldingstjenesten i konfigurasjonen før en sender melding
 - levetid utløpt, for eksempel dersom mottaker lar være/ikke klarer å behandle melding, send f.eks. til qa-integrasjonspunkt og vent til levetid utløper
 
-Verifiser at systemet følger med på asynkrone statuser (inkludert feil-statuser) knyttet til en melding helt til den har fått en av følgende statuser: `levert`, `feil` eller `levetid utløpt`.
+Verifiser at systemet følger med på asynkrone statuser (inkludert feil-statuser) knyttet til en melding helt til den har fått en av følgende statuser: `levert`, `feil` eller `levetid utløpt`. Merk at statusen `lest` vil kunne komme flere dager og uker etter at meldingen er sendt og at en derfor må polle over et udefinert tidsrom dersom denne ønskes.
 
 ### Støtter visning av sendte meldinger og status for disse (MÅ)
 
