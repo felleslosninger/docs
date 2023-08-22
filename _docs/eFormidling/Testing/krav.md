@@ -266,7 +266,7 @@ Disse kravene gjelder dersom [vedtak til innbyggere](../Funksjonalitet/vedtak_ti
 5. Verifiser at innholdet i meldingen er som forventet (husk 1.7)
 6. Verifiser at arrangement fungerer som forventet
 
-### Støtter konfigurasjon av avsenderidentifikator for DPI (MÅ)
+### Støtter konfigurasjon av avsenderidentifikator for DPI (BØR)
 
 1. Verifiser at det er mulig å konfigurere avsenderidentifikator for DPI
 
