@@ -9,7 +9,7 @@ redirect_from: /oidc_guide_idporten
 
 ID-porten tilbyr funksjonalitet for autentisering av sluttbrukere basert på autorisasjonskode-flyten, slik den er spesifisert i OpenID Connect Core 1.0 spesifikasjonen.
 
-**Dette er den foretrukne flyten for de aller fleste tjenester** som skal bruke ID-porten som autentiseringstjeneste. Det kan finnes unntak, som for eksempel [mobilapp'er](oidc/oidc_auth_app.html) eller [javascript-applikasjoner](oidc/oidc_guide_spa.html), som vil ha en litt annen måte å bruke denne flyten på.
+**Dette er den foretrukne flyten for de aller fleste tjenester** som skal bruke ID-porten som autentiseringstjeneste. Det kan finnes unntak, som for eksempel [mobilapp'er](oidc_auth_app.html) eller [javascript-applikasjoner](oidc_guide_spa.html), som vil ha en litt annen måte å bruke denne flyten på.
 
 ## Overordna beskrivelse av bruksområdet
 
