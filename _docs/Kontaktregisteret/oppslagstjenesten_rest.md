@@ -20,7 +20,7 @@ Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten"
 > I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) (ikke ver2.maskinporten.no) 
 
 ### Lokal kopi (endringsmeldinger)
-Funksjonalitet for lokal kopi (endringsmeldinger) er fra november 2022 støttet over Oauth2-grensenittet. SOAP-grensesnittet blir faset ut 01.04.2023. Informasjon og dokumentasjon fås ved å kontakte servicedesk@digdir.no
+Funksjonalitet for lokal kopi (endringsmeldinger) er fra november 2022 støttet over Oauth2-grensenittet. Informasjon og dokumentasjon fås ved å kontakte servicedesk@digdir.no
 
 > Merk! F.o.m. 30.08.2023 vil det være ulik endrings-ID for nye (kontaktregisteret.no) og gamle (krr.digdir.no) Oppslagstjenesten. Ved bruk av nye Oppslagstjenesten - Lokal Kopi (endringsmeldinger) vil endrings-ID være større enn 200 000 000.
 
