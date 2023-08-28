@@ -28,6 +28,6 @@ Logg på: [https://brukerprofil-ver1.difi.no/postkasse/](https://brukerprofil-ve
 ## Bytte postkasse for en testbruker:
 Det er fullt mulig for brukere ha å flere digitale postkasser for private tjenester, men en kan bare ha en postkasse for brev fra det offentlige. Det offentlige har inngått avtale med e-Boks og Digipost om å levere digital postkasse til innbyggere for brev fra det offentlige. Innbygger kan fritt velge mellom disse, og kan når som helst bytte mellom postkasseleverandørene. For å kunne bytte må bruker ha opprettet konto/postkasse hos begge leverandørene på forhånd. Bytte av offentlig postkasse i testmiljøet gjøres igjennom brukerprofilen i kontakt og reservasjonsregisteret.
 (Merk at alle forutsetninger beskrevet i kapitlene over må være på plass)
-- Gå til brukerprofil i kontakt og reservasjonsregisteret: [https://brukerprofil-ver1.difi.no/minprofil/](https://brukerprofil-ver1.difi.no/minprofil/). Logg på og Velg/bytt postkasse.
+- Gå til brukerprofil i kontakt og reservasjonsregisteret: [https://brukerprofil-ver1.difi.no/minprofil/](https://brukerprofil-ver2.difi.no/minprofil/). Logg på og Velg/bytt postkasse.
 
 Merk: Dersom det står: "Velg på norge.no" så har du ikke husket å opprette en postkasse først og da vil du måtte gjøre det først.
