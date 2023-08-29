@@ -29,8 +29,9 @@ The migration will be divided into 4 main stages.
 |-|-|-|
 |1: Pilot | March 2023 | The production enviroment for the new Nye ID-porten is ready for selected services. No SSO to the old platform  |
 |2: Normal operation |May 2023 | The new OIDC solution is ready with full functionality and performance. |
-|3: Moving of SAML | September 2023 | All SAML integrations will be seemlessly moved from the old ID-porten to the new SAML proxy. SSO between old and new platform is ready. |
-|4: Shutdown | December 2023 | The old OIDC-issuer is turned off. |  
+|3: Moving of OIDC | 21. nov 2023 | The old OIDC-provider will be routed to the new ID-porten instance. 90% of traffic will the go through the new solution.  Existing SAML-integrations will loose SSO temporarily |
+|4: Moving of SAML | Jan 2024 | All SAML integrations will be seemlessly moved from the old ID-porten to the new SAML proxy. SAML-integrations will regain SSO towards OIDC-based integrations. between old and new platform is ready. |
+|4: Shutdown | March 2024 | The old OIDC-issuer is turned off. |  
 
 ### When should i migrate ?
 
@@ -47,7 +48,7 @@ This depends on your current integration.
 In most cases, these are the steps to follow:
 
 1. Open the outbound firewall to the new IP-adress.
-2. Change the issuer-URL to point to the new URL: `https://idporten.no` (tbd).  
+2. Change the issuer-URL to point to the new URL: `https://idporten.no` .  
     * Some IAM-products will download the updated metadata and trust our new certificate automatically.
 3. If step 2 did not happen automatically, you need to manually configure the new endpoints from our metadata and trust our new signing certificate.
 4. Configure your integration to use [PKCE](https://docs.digdir.no/docs/idporten/oidc/oidc_func_pkce)
