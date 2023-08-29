@@ -18,6 +18,19 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.21.0
+
+29.08.2023
+
+**Funksjonalitet**
+
+- Innføring av ny URL og IP-adresse hjå Kontakt- og Reservasjonsregisteret
+- Utskriving av sky-konfigurasjon
+
+**Feilrettingar**
+
+- Vedlegg på avtalt-meldingar vert mottekne
+
 ## 2.20.0
 
 28.06.2023
