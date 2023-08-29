@@ -72,8 +72,9 @@ Overgangen til ny løsning vil skje i 4 steg:
 |-|-|-|
 |1: Prøvedrift | Oppnådd mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
 |2: Ordinær drift |Oppnådd juni 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
-|3: SAML flyttes | Flyttinga som var planlagt 26.09.23 er forsinket. Ny dato kommer i månedsskiftet august/september. | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstidig SSO mellom gammel og ny platform. |
-|4: Avvikling |Desember 2023 |  Den gamle OIDC-issueren skrus av.
+|3: OIDC flyttes | 21. nov 2023 | Gammel OIDC-provider rutes om til å bruke Nye ID-porten.  Det blir SSO mellom både nye og gamle OIDC-integrasjoner.  SAML-integrasjoner mister SSO til OIDC-tjenester midlertidig |
+|4: SAML flyttes | Januar 2024 | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstidig re-etablert SSO til OIDC-tjenester.  |
+|5: Avvikling |Mars 2024 |  Den gamle OIDC-issueren skrus av.
 
 ### Når bør jeg migrere ?
 
@@ -93,7 +94,7 @@ SAML blir videreført kun for eksisterende tjenster, men med begrenset funksjona
 
 ### Ny issuer
 
-Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi: `iss=https://idporten.no/`. Signeringssertifkatet blir også nytt. Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
+Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi: `iss=https://idporten.no`. Signeringssertifkatet blir også nytt. Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner. Merk at issuer-verdi ikkje har trailing slash.
 
 Samtidig gjør dette det mer komplekst for API-tilbydere som bruker [brukerstyrt datadeling](oidc_auth_oauth2.html), som da må stole på access_token fra to issuere dersom de ikke er i stand til å kreve/koordinere at sine konsumenter koordinert migrerer til Nye ID-porten samtidig med at APIet truster den nye issueren.
 
