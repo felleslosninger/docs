@@ -132,7 +132,7 @@ OpenAPI-dokumentasjon.
 |miljø|url|
 |-|-|
 |TEST|[https://test.kontaktregisteret.no/swagger-ui/index.html](https://test.kontaktregisteret.no/swagger-ui/index.html)|
-|PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html)|
+|PROD|[https://kontaktregisteret.no/swagger-ui/index.html](https://kontaktregisteret.no/swagger-ui/index.html)|
 
 
 
