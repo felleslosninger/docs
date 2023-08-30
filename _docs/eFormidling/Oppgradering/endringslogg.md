@@ -24,7 +24,7 @@ redirect_from:
 
 **Funksjonalitet**
 
-- Innføring av ny URL og IP-adresse hjå Kontakt- og Reservasjonsregisteret
+- Innføring av ny URL og IP-adresse hjå Kontakt- og Reservasjonsregisteret ([krever brannmuråpning hos DPI-avsendarar som sender til utskrifttenesta](https://status.digdir.no/incidents/7x95zny40r8c))
 - Utskriving av sky-konfigurasjon
 
 **Feilrettingar**
