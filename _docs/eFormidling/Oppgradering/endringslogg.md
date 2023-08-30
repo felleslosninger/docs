@@ -18,6 +18,21 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.21.0
+
+29.08.2023
+
+**Endring**
+
+IP 2.21.0 tar i bruk ny url for kontaktregisteret (overgang fra krr.digdir.no til kontaktregisteret.no). Endringen påvirker de som sender DPI-meldinger til utskrift/print. **DPI-avsendere som bruker utskriftstjenesten, og som skal oppgradere til integrasjonspunkt 2.21.0, må åpne for nye ip-adresser i brannmur**. Oppdaterte ip-adresser er dokumentert [her](https://docs.digdir.no/docs/eFormidling/Miljo/produksjon) 
+
+Det er mulig å fortsette å bruke eldre versjoner av integrasjonspunktet (uten brannmurendringer) frem til 18.september. Da vil ikke lenger gammel url mot kontaktregisteret fungere. Kontakregisterendringene er varslet [her](https://status.digdir.no/incidents/hxmk3szv0lw7)
+
+De som av ulike årsaker fortsatt trenger å kjøre på eldre versjoner av integrasjonspunktet etter 18. september må manuelt endre kontaktregister-URL i den kjørende versjonen, samt åpne for nye ip-adresser i brannmur.
+
+**Feilrettingar**
+- Vedlegg forsvinner ved mottak av avtalt-meldinger
+
 ## 2.20.0
 
 28.06.2023
