@@ -717,6 +717,14 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 ## Sentrale komponenter
 
+## ServiceRegistry 2.15.0
+
+31.08.2023
+
+**Feilrettingar**
+
+- Ustabilitet i sending av digital post til innbyggar fom. 30.08.2023 grunna endra respons frå andre interne tenester
+
 ## ServiceRegistry 2.12.0
 
 09.05.2023
