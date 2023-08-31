@@ -100,9 +100,9 @@ Det kan være flere grunner til denne feilmeldingen. Men det betyr at denne klie
 
 #### JWT is expired
 
-Tokenet er utløpt. Enten er det allerede brukt, eller det er brukt for sent.
+Tokenet er utløpt. Enten er det allerede brukt, eller det er brukt for sent. Det kan også være at det er for stor forskjell på serverklokke og Maskinporten.
 
-**Løsning:** Generer nytt token.
+**Løsning:** Generer nytt token. Synkroniser serverklokke dersom forskjellen er for stor mellom server og Maskinporten.
 
 #### Client orgno <org.nr> does not match certificate orgno <org.nr>
 
