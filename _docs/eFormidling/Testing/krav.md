@@ -1,5 +1,5 @@
 ---
-title: Krav og testbeskrivelser - UTKAST
+title: Krav og testbeskrivelser
 description: ""
 summary: ""
 product: eFormidling
