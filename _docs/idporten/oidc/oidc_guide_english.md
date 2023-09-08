@@ -1,7 +1,7 @@
 ---
 title: Summary in english
 description: Summary in english
-summary: "ID-porten offer authentication services from Norwegian citizens towards service providers in the Norwegin public sector.  Most services should use the authorization code flow as standardized by OpenID Connect for integration towards ID-porten. "
+summary: "ID-porten offer authentication services from Norwegian citizens towards service providers in the Norwegian public sector.  Most services should use the authorization code flow as standardized by OpenID Connect for integration towards ID-porten. "
 
 sidebar: oidc
 product: ID-porten
@@ -135,7 +135,7 @@ The following claims in the JWT is of interest:
 |iss| issuer - your client ID |
 |iat| issued at - timestamp when this jwt was generated. **NOTE:** UTC-time.|
 |exp| expiration time - timestamp when this jwt expire. **NOTE:** UTC-tid.  Max allowable lifespan is 120 seconds (exp - iat <= 120) |
-|jti| Optional - JWT ID - unik id for this JWT. A JWT can not be reused|
+|jti| Optional - JWT ID - unique id for this JWT. A JWT can not be reused|
 
 The following header claims in the JWT should be noted:
 
@@ -183,16 +183,16 @@ Body:
 | amr | "Authentication Methods References" - Possible values  *Minid-PIN*, *Minid-OTC*, *Commfides*, *Buypass*, *eIDAS*, *BankID* or  *BankID-mobil*, this may change over time. |
 | iss | The identifier of ID-porten |
 | pid | Personidentifikator - Proprietary claim, for the Norwegian national identifier ("F-number" or "D-number") |
-| exp | Expire -  A client must mot accept the id-token after this timestamp.  |
+| exp | Expire -  A client must not accept the id-token after this timestamp.  |
 | locale |  The language used by the end user during the authentication process. |
 | iat | Timestamp when this token is issued |
-| jti | jwt id - unik identifier for this token  |
-| sid | sesjonsid - an unique identifier the session for this end user. Should be kept by the client to aid single logout |
+| jti | jwt id - unique identifier for this token  |
+| sid | sesjonsid - a unique identifier the session for this end user. Should be kept by the client to aid single logout |
 
 
 
 ## Userinfo-endpoint
 
-By requesting the *profile* scope in the authentication request, an access_toekn for the userinfo-endpoint will be included in the response.  
+By requesting the *profile* scope in the authentication request, an access_token for the userinfo-endpoint will be included in the response.  
 
-Please note that our userinfo endpoint does not contain any claims of value, and is solely offered in orde to be complient to the OIDC specification.  ID-porten does not know the name or other profile details for the end users.
+Please note that our userinfo endpoint does not contain any claims of value, and is solely offered in order to be compliant to the OIDC specification.  ID-porten does not know the name or other profile details for the end users.
