@@ -20,7 +20,7 @@ Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten"
 > I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) (ikke ver2.maskinporten.no) 
 
 ### Lokal kopi (endringsmeldinger)
-Funksjonalitet for lokal kopi (endringsmeldinger) fases ut. Det vil ikke lenger være mulig å opprette ny tilgang til dette apiet. 
+Det vil ikke lenger være mulig å opprette ny tilgang til dette apiet. 
 
 > Merk! F.o.m. 30.08.2023 vil det være ulik endrings-ID for nye (kontaktregisteret.no) og gamle (krr.digdir.no) Oppslagstjenesten.
 >
