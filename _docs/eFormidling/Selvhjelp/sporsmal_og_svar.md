@@ -186,23 +186,9 @@ Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer 
 
 For å manuelt laste ned en innkommende melding fra integrasjonspunktet trenger du en HTTP-klient med GUI (for eksempel Postman) eller en kommandolinje/terminal som støtter kommandoen `curl`.
 
-1. Lås meldingen:
-
-```
-curl 'http://localhost:9093/api/messages/in/peek/?messageID=2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET
-```
-
-2. Last ned meldingen:
-
-```
-curl 'http://localhost:9093/api/messages/in/pop/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET > asic.zip
-```
-
-3. EVENTUELT - marker meldingen som ferdig behandla:
-
-```
-curl 'http://localhost:9093/api/messages/in/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X DELETE
-```
+1. Lås meldingen: `curl 'http://localhost:9093/api/messages/in/peek/?messageID=2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET`
+2. Last ned meldingen: `curl 'http://localhost:9093/api/messages/in/pop/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET > asic.zip`
+3. EVENTUELT - marker meldingen som ferdig behandla: `curl 'http://localhost:9093/api/messages/in/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X DELETE`
 
 ## Digital Post til Innbyggere
 
