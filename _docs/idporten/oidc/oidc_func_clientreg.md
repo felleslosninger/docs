@@ -205,7 +205,7 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 | redirect_uris | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. |
 | post_logout_redirect_uris | Ja |Liste over url'er som provideren redirecter til etter fullført egen-initiert utlogging. |
 | frontchannel_logout_uri | Nei|  URL som provideren sender request til ved utlogging trigget av annen klient i samme sesjon |
-| frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri |
+| frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri. Dersom ikke satt, så vil ikke 'sid' bli inkludert i id_token. |
 | logo | Nei |Logo som vises i innloggingsbildete utveksles p.t. manuelt |
 
 
