@@ -18,7 +18,7 @@ Like viktig som single singon er single logout.  Det er vesentlig for sikkerhete
 
 ## Single Signon (SSO)
 
-SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er fra sept. 2023 styrt av OIDC. Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er da 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er fra nov. 2023 styrt av Nye ID-porten (OIDC). Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
 Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2).  Det er i ny løsning også mulig å konfigurere en integrasjon til å bruke [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
 
@@ -53,10 +53,12 @@ Følgende attributer kan være del av requesten:
 
 Eksempel:
 ```
-https://idporten.no/logout
-	?id_token_hint=eyJraWQiOiJpZ2I1Q3lGT...
-	&post_logout_redirect_uri=<min registrerte post-logout uri >
-	&state=<tilstand_jeg_kan_bruke_i_redirectedn_pluss_csrf_beskyttelse>
+POST https://idporten.no/logout
+
+id_token_hint=eyJraWQiOiJpZ2I1Q3lGT...
+post_logout_redirect_uri=<min registrerte post-logout uri >
+state=<tilstand_jeg_kan_bruke_i_redirect_tilbake_til_meg_pluss_csrf_beskyttelse>
+
 ```
 
 Ved mottak av endsession-redirect, vil ID-porten logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon, både OIDC og SAML. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
