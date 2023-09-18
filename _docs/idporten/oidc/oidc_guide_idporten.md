@@ -90,7 +90,7 @@ Det må bemerkes at lokal timeout hos en kunde ikke nødvendigvis medfører at b
 
 Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at brukeren blir tvunget til aktiv pålogging i ID-porten, kan man sette parameteren prompt=login i autentiseringsforespørselen til ID-porten.  
 
-Det er også mulig å konfigurere tjenesten sin slik at den ikke deltar i felles SSO-sesjon (se [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso.html)).
+Det er også mulig å konfigurere tjenesten sin slik at den ikke deltar i felles SSO-sesjon (se [Isolert SSO-sesjon]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso.html)).
 
 
 ### Krav til utlogging
