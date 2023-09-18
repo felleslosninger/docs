@@ -111,9 +111,9 @@ Nye ID-porten vil som idag tilby SSO mellom alle integrasjoner både over OIDC o
 Merk at i prøvedriftsperioden og i starten av migreringsfasen så vil ikke klienter som er flyttet til ny løsning få SSO til integrasjoner på gammel løsning.
 
 
-#### SSO-fri innlogging
+#### Isolert SSO-sesjon 
 
-Nye ID-porten vil tilby ny funksjonalitet for SSO-fri innlogging.  Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i SSO-sesjonen eller ikke.
+Nye ID-porten vil tilby ny funksjonalitet for isolert SSO-sesjon.  Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i ID-porten felles Circle-of-trust eller ikke.
 
 
 ### onbehalfof

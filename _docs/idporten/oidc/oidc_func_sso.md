@@ -20,7 +20,7 @@ Like viktig som single singon er single logout.  Det er vesentlig for sikkerhete
 
 SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er fra nov. 2023 styrt av Nye ID-porten (OIDC). Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
-Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2).  Det er i ny løsning også mulig å konfigurere en integrasjon til å bruke [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
+Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2).  Det er i ny løsning også mulig å konfigurere en integrasjon til å bruke [isolert SSO-sesjon]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
 
 Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på utstedte access-token og evt. refresh-tokens.
 
@@ -40,7 +40,7 @@ For SAML-baserte tjenester må også begge utloggingsscenarioene støttes, men o
 
 ### 1: Utlogging fra egen tjeneste (/logout)
 
-Når brukeren vil logge ut fra din tjeneste, må du sende en redirect til ID-portens endsession-endepunkt `end_session_endpoint`.  Adressen til endepunktet er definert i [well-known-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown).  
+Når brukeren vil logge ut fra din tjeneste, må du sende en redirect (fortrinnsvis POSTe den) til ID-portens endsession-endepunkt `end_session_endpoint`.  Adressen til endepunktet er definert i [well-known-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown).  
 
 Følgende attributer kan være del av requesten:
 

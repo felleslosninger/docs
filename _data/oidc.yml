@@ -82,7 +82,7 @@ folders:
       - title: Single sign-on og -logout
         jurl: /docs/idporten/oidc/oidc_func_sso.html
 
-      - title: SSO-fri innlogging
+      - title: Isolert SSO-sesjon
         jurl: /docs/idporten/oidc/oidc_func_nosso.html
 
       - title: Audience-begrensning
