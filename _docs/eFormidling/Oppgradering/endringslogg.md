@@ -18,6 +18,18 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.22.0
+
+18.09.2023
+
+**Funksjonalitet**
+
+- Ny DPI-infrastruktur innført som standard-innstilling i eFormidling
+
+**Feilrettingar**
+- Korrelasjons-ID vert kun tilordna på relevante logginnslag
+- Meir forståelege feilmeldingar ved feilresponar frå FIKS/SvarUt
+
 ## 2.21.0
 
 29.08.2023
