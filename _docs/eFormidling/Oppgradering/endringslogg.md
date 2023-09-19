@@ -18,9 +18,16 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.22.1
+
+19.09.2023
+
+**Funksjonalitet**
+- Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
+
 ## 2.22.0
 
-18.09.2023
+19.09.2023
 
 **Funksjonalitet**
 
