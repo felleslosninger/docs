@@ -15,6 +15,8 @@ Her er en oversikt over attributtene som finnes i KRR sitt REST API og hvilken r
 | - | - | - |
 | personidentifikator | Gyldig fødselsnummer eller D-nummer | 01048800153 |
 | reservasjon | Reservasjon avgitt av person, brukt i henhold til eForvaltningsforskriften § 15 a. | JA, NEI |
+| reservasjonstidspunkt | Tidspunktet for når en person reserverte seg. Vises kun dersom brukeren er reservert. | Eks. "2023-06-13T13:42:34+02" |
+| reservasjon_oppdatert | Tidspunkt for når reservasjonsstatusen ble oppdatert. | Eks. "2023-06-13T13:42:34+02" |
 | status | Angir status for personen | AKTIV, SLETTET, IKKE_REGISTRERT |
 | varslingsstatus | Tekstlig beskrivelse om person kan varsles eller ikke | KAN_VARSLES, KAN_IKKE_VARSLES |
 | epostadresse | Epostadressen som person har registrert i KRR | Eks. 01012295312_test@minid.difi.no |
