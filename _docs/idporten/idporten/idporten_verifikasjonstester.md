@@ -59,7 +59,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **1.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **1.3** - Vel MinID som innloggingsalternativ og fullfør innlogging.  
 **1.4** - Verifiser at du kjem tilbake til eiga teneste.  
-**1.5** - Endre URL i nettleser til Difi [test-tenesteeigar](https://idporten-sptest2.difi.no/testsp). Vel konfigurasjon «*idporten-ver2*», eller «*idporten-ver1*», alt etter kva verifikasjonsmiljø tenesta er integrert mot.  
+**1.5** - Endre URL i nettleser til [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/). 
 **1.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
 **1.7** - Verifiser i feltet «Dekryptert Assertion fra mottatt ArtifactResponse», at sikkerheitsnivået er 3 og at autentiseringsmetoden er MinID (PIN eller SMS).  
 
