@@ -15,11 +15,10 @@ Dette dokumentet viser kva testar som skal gjennomførast i samband med ein inte
 Dei fleste testane må gjennomførast. Nokre er valfrie, avhengig av om ein har støtte for funksjonaliteten eller ikkje.
 Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonstestar for integrasjon med ID-porten»*.
 
-> URL til test-tenesteeigar <br>
-> <https://idporten-sptest2.difi.no/testsp> <br><br>
+> URL til ID-porten testklient <br>
+> <https://demo-client.test.idporten.no> <br><br>
 > URL til "Dine kontaktopplysninger" ("brukerprofilen") <br>
-> ver1: <https://brukerprofil-ver1.difi.no/minprofil/> <br>
-> ver2: <https://brukerprofil-ver2.difi.no/minprofil/>
+<https://minprofil.test.kontaktregisteret.no/>
 
 ### Testar som må gjennomførast
 
@@ -53,55 +52,55 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 
 ## Testsett - Verifikasjonstestar for integrasjon med ID-porten
 
-### 1.	Single sign-on (SSO) frå eiga teneste med sikkerheitsnivå 3
+### 1.	Single sign-on (SSO) frå eiga teneste med sikkerheitsnivå 'substantial'
 
 **1.1** - Start ein ny nettlasersesjon og gå til eiga teneste.  
 **1.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
-**1.3** - Vel MinID som innloggingsalternativ og fullfør innlogging.  
+**1.3** - Vel MinID eller TestID som innloggingsalternativ og fullfør innlogging.  
 **1.4** - Verifiser at du kjem tilbake til eiga teneste.  
-**1.5** - Endre URL i nettleser til [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/). 
+**1.5** - Endre URL i nettleser til [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/). 
 **1.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
-**1.7** - Verifiser i feltet «Dekryptert Assertion fra mottatt ArtifactResponse», at sikkerheitsnivået er 3 og at autentiseringsmetoden er MinID (PIN eller SMS).  
+**1.7** - Verifiser i feltet «Validated id_token», at sikkerheitsnivået (amr) er idporten-loa-substantial og at autentiseringsmetoden er den aktuelle eID. 
 
 
-### 2.	SSO frå eiga teneste med sikkerheitsnivå 4
+### 2.	SSO frå eiga teneste med sikkerheitsnivå 'high'
 
 **2.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
-**2.3** - Vel ein eID på nivå 4 som innloggingsalternativ og fullfør innlogging.  
+**2.3** - Vel ein eID på nivå 'high' som innloggingsalternativ og fullfør innlogging.  
 **2.4** - Verifiser at du kjem tilbake til eiga teneste.  
-**2.5** - Endre URL i nettleser til Difi [test-tenesteeigar](https://idporten-sptest2.difi.no/testsp). Vel konfigurasjon «*idporten-ver2*», eller «*idporten-ver1*», alt etter kva verifikasjonsmiljø tenesta er integrert mot.    
+**2.5** - Endre URL i nettleser til [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/). 
 **2.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
-**2.7** - Verifiser i feltet «Dekryptert Assertion fra mottatt ArtifactResponse» at sikkerheitsnivået er 4 og at autentiseringsmetoden er den aktuelle eID.  
+**2.7** - Verifiser i feltet «Validated id_token», at sikkerheitsnivået (amr) er idporten-loa-high og at autentiseringsmetoden er den aktuelle eID. 
 
-### 3.	SSO til eiga teneste med sikkerheitsnivå 3
+### 3.	SSO til eiga teneste med sikkerheitsnivå 'substantial'
 
 **3.1** - Start ein ny nettlesarsesjon og gå til "Dine kontaktopplysninger".<br>
 **3.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
-**3.3** - Vel MinID som innloggingsalternativ og fullfør innlogging.  
+**3.3** - Vel MinID eller TestID som innloggingsalternativ og fullfør innlogging.  
 **3.4** - Verifiser at du er innlogga.  
 **3.5** -	Endre URL i nettleser til eiga teneste.  
 **3.6** -	Verifiser at du kjem til eiga teneste utan ny pålogging.  
-**3.7** -	Verifiser at du er innlogga med sikkerheitsnivå 3.  
+**3.7** -	Verifiser at du er innlogga med sikkerheitsnivå 'substantial'.  
 
-### 4.	SSO til eiga teneste med sikkerheitsnivå 4
+### 4.	SSO til eiga teneste med sikkerheitsnivå 'high'
 
 **4.1** - 	Start ein ny nettlesarsesjon og gå til "Dine kontaktopplysninger". <br>
 **4.2** - 	Verifiser at du blir omdirigert til ID-porten for autentisering.  
-**4.3** - 	Vel ein eID på nivå 4 som innloggingsalternativ og fullfør innlogging.  
+**4.3** - 	Vel ein eID på nivå 'high' som innloggingsalternativ og fullfør innlogging.  
 **4.4** - 	Verifiser at du er innlogga.   
 **4.5** - 	Endre URL i nettleser til eiga teneste.  
 **4.6** - 	Verifiser at du kjem til eiga teneste utan ny pålogging.  
-**4.7** - 	Verifiser at du er innlogga med sikkerheitsnivå 4.  
+**4.7** - 	Verifiser at du er innlogga med sikkerheitsnivå 'high'.  
 
 ### 5.	Oppgradering av sikkerheitsnivå
 
 **5.1** - 	Start ein ny nettlesarsesjon og gå til eiga teneste.  
 **5.2** - 	Verifiser at du blir omdirigert til ID-porten for autentisering.  
-**5.3** - 	Vel MinID som innloggingsalternativ og fullfør innlogging.  
-**5.4** - 	Endre URL i nettleser til Difi sin test-tenesteeigar.  
-**5.5** - 	Vel eID på nivå 4 i konfig.  
+**5.3** - 	Vel MinID eller TestID som innloggingsalternativ og fullfør innlogging.  
+**5.4** - 	Endre URL i nettleser til ID-porten sin testklient.  
+**5.5** - 	Vel eID på nivå 'high' i konfig.  
 **5.6** - 	Verifiser at du blir omdirigert til ID-porten.  
-**5.7** - 	Logg inn med nivå 4 eID.  
+**5.7** - 	Logg inn med nivå 'high' eID.  
 **5.8** - 	Verifiser at innloggingen var vellykka.  
 
 ### 6.	Single log-out (SLO) frå eiga teneste
@@ -114,7 +113,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **6.6** - 	Verifiser at du kjem til eiga teneste utan ny pålogging.  
 **6.7** - 	Logg ut.  
 **6.8** - Verifiser at du er logga ut hjå eiga teneste.  
-**6.9** - Endre URL til ID-porten sin test-tenesteeigar og verifiser at du også er logga ut her.  
+**6.9** - Endre URL til ID-porten sin testklient og verifiser at du også er logga ut her.  
 
 *PS: Verifiser i tillegg at det er mogleg med aktiv utlogging for ALLE brukarar som prøver å logge inn til tenesta sjølv om dei ikkje har tilgang til tjenesten.*  
 
@@ -144,7 +143,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 
 ### 9. Autentiseringsforespørsel – (tvinga reautentisering)
 
-**9.1** - 	Start ein ny nettlesarsesjon og gå til Difi sin test-tenesteeigar.  
+**9.1** - 	Start ein ny nettlesarsesjon og gå til ID-porten testklient.  
 **9.2** - 	Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **9.3** - 	Logg inn med ein vilkårleg eID.  
 **9.4** - 	Verifiser at du er innlogga.  
