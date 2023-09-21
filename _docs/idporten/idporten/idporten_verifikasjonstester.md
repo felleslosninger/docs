@@ -10,7 +10,7 @@ redirect_from: /idporten_verifikasjonstester
 
 ### Om testane
 
-Dette dokumentet viser kva testar som skal gjennomførast i samband med ein integrasjon med ID-porten for tenesteleverandørar med krav om sikkerheitsnivå 3 og 4.
+Dette dokumentet viser kva testar som skal gjennomførast i samband med ein integrasjon med ID-porten for tenesteleverandørar med krav om sikkerheitsnivå 'substantial' og 'high'.
 
 Dei fleste testane må gjennomførast. Nokre er valfrie, avhengig av om ein har støtte for funksjonaliteten eller ikkje.
 Detaljert beskriving av kvar enkelt test er gitt i *«Testsett - Verifikasjonstestar for integrasjon med ID-porten»*.
