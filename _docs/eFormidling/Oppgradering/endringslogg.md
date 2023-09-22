@@ -18,6 +18,13 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.23.0
+
+22.09.2023
+
+**Funksjonalitet**
+- Støtte i DPI-klienten for fleire nye policyar i verksemdssertifkat frå Commfides 
+
 ## 2.22.1
 
 19.09.2023
@@ -735,6 +742,20 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 ---
 
 ## Sentrale komponenter
+
+## ServiceRegistry 2.17.0
+
+22.09.2023
+
+**Funksjonalitet**
+- Støtte for fleire nye policyar i verksemdssertifkat frå Commfides
+
+## ServiceRegistry 2.16.0
+
+19.09.2023
+
+**Funksjonalitet**
+- Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
 
 ## ServiceRegistry 2.15.0
 
