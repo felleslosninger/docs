@@ -1,5 +1,5 @@
 ---
-title: Sende sluttbruker til MinProfil (kontaktinfo) og gotoURL
+title: Sende sluttbruker til MinProfil og gotoURL
 description: 
 
 sidebar: krr_sidebar
