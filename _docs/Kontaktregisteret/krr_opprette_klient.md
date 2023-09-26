@@ -16,20 +16,19 @@ For å gjøre en forespørsel mot et eller flere av KRR sine endepunkt, må virk
 
 2. Velg "Ny integrasjon"
 
+
+
 For forespørsel mot Oppslagstjenesten REST: 
 
 2a. Velg "KRR" som "Difi-tjeneste". Du vil da få tildelt de riktige scopene.
-
 2b. Fullfør registreringen og trykk på "Opprett".
-
 2c. Ved opprettelse får du en klientID som må brukes i forespørselen mot Maskinporten.
+
 
 
 For forespørsel mot Oppslag ved brukerinnlogging (brukerstyrt datadeling):
 
 3a. Velg "Api-klient" som "Difi-tjeneste". Du må manuelt sette de riktige scopene:
 krr:user/kontaktinformasjon.read, openid, profile
-
 3b. Fullfør registreringen og trykk på "Opprett".
-
 3c. Ved opprettelse får du en klientID som må brukes i forespørselen mot ID-porten.
