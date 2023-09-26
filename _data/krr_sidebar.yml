@@ -13,7 +13,7 @@ folders:
   folderitems:
  
       - title: Opprette klient
-        jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
+        jurl: /docs/Kontaktregisteret/krr_opprette_klient
 
       - title: Sette opp token-forespørsel
         jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
