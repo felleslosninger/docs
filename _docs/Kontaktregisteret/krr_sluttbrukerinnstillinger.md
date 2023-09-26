@@ -23,10 +23,12 @@ Tidligere kunne sluttbruker oppdatere sin kontaktinformasjon i tjenesten Brukerp
 
 
 ## "gotoURL"
+
 Etter at sluttbrukeren har oppdatert kontaktinformasjon på MinProfil kan kunde sende sluttbrukeren tilbake til sin tjeneste. For å ta i bruk denne såkalte "gotoUrl"-tjenesten, må kunde melde inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
 
 
 ### Input data
+
 Tjenesten har følgende http request parameter som kan benyttes:
 
 | request parameter | beskrivelse |
