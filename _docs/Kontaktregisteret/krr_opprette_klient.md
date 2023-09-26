@@ -3,7 +3,7 @@ title: Opprette klient
 description:
 summary:
 
-sidebar: krr_opprette_klient
+sidebar: krr_sidebar
 product: KRR
 redirect_from: /krr_opprette_klient
 ---
