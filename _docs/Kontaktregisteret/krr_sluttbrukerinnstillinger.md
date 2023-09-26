@@ -48,5 +48,4 @@ Eksempelverdi: http://www.tjenesteeier.no/tjeneste-for-innsending-som-sluttbruke
 
 Valideringsregler:
 - Gyldig URL med protokoll.
-- All input skal være lower case.
-  
+- All input skal være lower case. 
