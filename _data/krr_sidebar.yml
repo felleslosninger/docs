@@ -20,6 +20,8 @@ folders:
       - title: Overgang fra SOAP til REST
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
+      - title: Sluttbrukerinnstillinger
+        jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
 
 ###########################
 
