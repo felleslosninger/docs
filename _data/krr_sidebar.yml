@@ -18,9 +18,6 @@ folders:
       - title: Sette opp token-forespørsel
         jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
 
-      - title: Sette opp forespørsel mot Oppslagstjenesten REST
-        jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
-
         
 - title: Tilgjengelige tjenester
   folderitems:
