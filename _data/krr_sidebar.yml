@@ -3,15 +3,24 @@ sidebarTitle: KRR
 
 folders:
 
-- title: Om Kontakt- og reservasjonsregisteret
+- title: Overordnet
   folderitems:
 
-      - title: Overordnet
+      - title: Om Kontakt- og reservasjonsregisteret
         jurl: /docs/Kontaktregisteret/krr_overordnet
 
 - title: Kom i gang
   folderitems:
-  
+ 
+      - title: Opprette klient
+        jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
+
+      - title: Sette opp token-forespørsel
+        jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
+
+      - title: Sette opp forespørsel mot Oppslagstjenesten REST
+        jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
+        
 - title: Tilgjengelige tjenester
   folderitems:
 
@@ -33,10 +42,17 @@ folders:
       - title: Testbrukere
         jurl: /docs/Kontaktregisteret/krr_testbrukere
 
-      - title: Overgang fra SOAP til REST
+        - title: Ny systemarkitektur
+        jurl: /docs/Kontaktregisteret/krr_testbrukere
+
+- title: Utfasede tjenester
+  folderitems:
+      - title: Oppslagstjenesten SOAP
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
-     
+     - title: Fra OIDC- til Maskinporten-beskyttet endepunkt
+        jurl: /docs/Kontaktregisteret/krr_testbrukere
+
 
 ###########################
 
