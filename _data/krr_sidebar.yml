@@ -25,7 +25,7 @@ folders:
       - title: Oppslagstjenesten REST
         jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
 
-      - title: Brukerspesifikt oppslag REST
+      - title: Oppslag ved brukerinnlogging (brukerstyrt datadeling)
         jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
 
       - title: MinProfil og gotoURL
