@@ -5,6 +5,9 @@ folders:
 - title: KRR
   folderitems:
 
+      - title: Overordnet
+        jurl: /docs/Kontaktregisteret/krr_overordnet
+      
       - title: Oppslagstjenesten REST
         jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
 
@@ -20,7 +23,7 @@ folders:
       - title: Overgang fra SOAP til REST
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
-      - title: Sende sluttbruker til MinProfil og gotoURL
+      - title: MinProfil og gotoURL
         jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
 
 ###########################
