@@ -50,7 +50,7 @@ folders:
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
       - title: Fra OIDC- til Maskinporten-beskyttet endepunkt
-        jurl: /docs/Kontaktregisteret/krr_testbrukere
+        jurl: /docs/Kontaktregisteret/krr_oidc_til_mp
 
 ###########################
 
