@@ -161,14 +161,3 @@ OpenAPI-dokumentasjon for endepunkter.
 |miljø|url|
 |-|-|
 |VER2|[https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html)|
-
-
-### Migrering
-
-Dersom du skal migrere fra gammelt OIDC-beskytta endepunkt til nytt Maskinporten-sikra endepunkt, må følgende gjøres:
-
-1. Oppdater klient-registrering til å bruke nye scopes med `krr:`-prefix
-2. Klienten må endres til å hente tokens fra Maskinporten isteden for ID-porten OIDC
-  - typisk ved å oppdatere url for autorisasjonsserverens oauth2 metadata-endepunkt til `https://maskinporten.no/.well-known/oauth-authorization-server`
-  - evt. ved å konfigurere nytt token-endepunkt direkte (`https://maskinporten.no/token`) og oppdatere trust mot Maskinporten sitt signeringssertifikat.
-3. Endre API-kall til å gå mot nytt endepunkt
