@@ -1,5 +1,5 @@
 ---
-title: Sende sluttbruker til MinProfil og gotoURL
+title: MinProfil og gotoURL
 description: 
 
 sidebar: krr_sidebar
@@ -8,23 +8,24 @@ redirect_from: /krr_sluttbrukerinnstillinger
 ---
 
 
-## Bruksområde
+## Oppdatering av kontaktinfo i MinProfil
 
-I tjenesten MinProfil kan sluttbruker oppdatere sin kontaktinformasjon:
+I MinProfil kan sluttbrukeren oppdatere sine kontaktopplysninger (mobilnummer, e-post, digital postkasse, reservasjon mot kommunikasjon på nett, språk/målform). Du som kunde (virksomhet) kan lenke til MinProfil i din tjeneste, for få oppdatert kontaktinfo til dine brukere:
+
 1)	testmiljøet:          [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/)
 2)	produksjonsmiljøet:	  [https://minprofil.kontaktregisteret.no/](https://minprofil.kontaktregisteret.no/)
 
-Kunde (virksomhet) kan lenke sluttbruker til MinProfil og sende sluttbruker tilbake til sin tjeneste. Hvordan kunde kan sende sluttbruker tilbake til tjenesten blir omtalt i avsnittet "gotoUrl" under.
+Hvordan du som kunde kan sende sluttbrukeren tilbake til din tjenesten blir omtalt i avsnittet "gotoUrl" under.
 
 
-## Ny URL for MinProfil
+## Oppgradert tjeneste og ny URL for MinProfil
 
-Tidligere kunne sluttbruker oppdatere sin kontaktinformasjon i tjenesten Brukerprofil på URLen brukerprofil.difi.no/minprofil. Denne tjenesten er nå erstattet med MinProfil (se URLer i avsnittet over). 
+Tidligere kunne sluttbrukeren oppdatere sin kontaktinformasjon i tjenesten Brukerprofil (brukerprofil.difi.no/minprofil). Denne tjenesten er nå oppgradert og erstattet med MinProfil (se URLer i avsnittet over). 
 
 
 ## "gotoURL"
 
-Etter at sluttbrukeren har oppdatert kontaktinformasjon på MinProfil kan kunde sende sluttbrukeren tilbake til sin tjeneste. For å ta i bruk "gotoUrl", må kunde sende inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
+Etter at sluttbrukeren har oppdatert sine kontaktopplysninger i MinProfil, kan du som kunde (virksomhet) sende sluttbrukeren tilbake til din tjeneste. Dette skjer ved å ta i bruk tjenesten "gotoUrl". For å kunne benytte tjenesten må virksomheten sende inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
 
 
 ### Input data
