@@ -16,7 +16,7 @@ folders:
         jurl: /docs/Kontaktregisteret/krr_opprette_klient
 
       - title: Sette opp token-forespørsel
-        jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
+        jurl: /docs/Kontaktregisteret/krr_token_request
 
         
 - title: Tilgjengelige tjenester
