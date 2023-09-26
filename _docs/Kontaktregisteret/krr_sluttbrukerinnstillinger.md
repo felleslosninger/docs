@@ -1,5 +1,5 @@
 ---
-title: Lenke til MinProfil (sluttbrukerinnstillinger) og "gotoURL"-funksjonalitet
+title: Sende sluttbruker til MinProfil (kontaktinfo) og "gotoURL"
 description: 
 
 sidebar: krr_sidebar
