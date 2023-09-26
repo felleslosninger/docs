@@ -12,8 +12,10 @@ redirect_from: /krr_sluttbrukerinnstillinger
 
 I MinProfil kan sluttbrukeren oppdatere sine kontaktopplysninger (mobilnummer, e-post, digital postkasse, reservasjon mot kommunikasjon på nett, språk/målform). Du som kunde (virksomhet) kan lenke til MinProfil i din tjeneste, for få oppdatert kontaktinfo til dine brukere:
 
-1)	testmiljøet:          [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/)
-2)	produksjonsmiljøet:	  [https://minprofil.kontaktregisteret.no/](https://minprofil.kontaktregisteret.no/)
+| Miljø | Lenke (URL) |
+|-|-|
+| Test | [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) |
+| Prod | [https://minprofil.kontaktregisteret.no/](https://minprofil.kontaktregisteret.no/) |
 
 Hvordan du som kunde kan sende sluttbrukeren tilbake til din tjenesten blir omtalt i avsnittet "gotoUrl" under.
 
