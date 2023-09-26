@@ -20,6 +20,7 @@ folders:
 
       - title: Sette opp forespørsel mot Oppslagstjenesten REST
         jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
+
         
 - title: Tilgjengelige tjenester
   folderitems:
@@ -42,17 +43,17 @@ folders:
       - title: Testbrukere
         jurl: /docs/Kontaktregisteret/krr_testbrukere
 
-        - title: Ny systemarkitektur
+      - title: Ny systemarkitektur
         jurl: /docs/Kontaktregisteret/krr_testbrukere
+
 
 - title: Utfasede tjenester
   folderitems:
       - title: Oppslagstjenesten SOAP
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
-     - title: Fra OIDC- til Maskinporten-beskyttet endepunkt
+      - title: Fra OIDC- til Maskinporten-beskyttet endepunkt
         jurl: /docs/Kontaktregisteret/krr_testbrukere
-
 
 ###########################
 
