@@ -161,3 +161,4 @@ OpenAPI-dokumentasjon for endepunkter.
 |miljø|url|
 |-|-|
 |VER2|[https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html)|
+
