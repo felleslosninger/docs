@@ -14,6 +14,11 @@ Kunde (virksomhet) kan lenke til tjenesten MinProfil, der sluttbruker kan oppdat
 2)	produksjonsmiljøet:	  [https://minprofil.kontaktregisteret.no/](https://minprofil.kontaktregisteret.no/)
 
 
+## Ny URL for MinProfil
+
+Tidligere kunne sluttbruker oppdatere sin kontaktinformasjon i tjenesten Brukerprofil på URLen brukerprofil.difi.no/minprofil. Denne tjenesten er erstattet med MinProfil og URLene i avsnittet over. 
+
+
 ## Ta i bruk
 
 For å ta i bruk tjenesten må kunde melde inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl».
