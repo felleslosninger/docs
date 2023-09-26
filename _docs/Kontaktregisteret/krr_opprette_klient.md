@@ -8,7 +8,6 @@ product: KRR
 redirect_from: /krr_opprette_klient
 ---
 
-### Opprette klient
 For å gjøre en forespørsel mot et eller flere av KRR sine endepunkt, må virksomheten sette opp en klient. For å bruke selvbetjening så forutsetter det at din virksomhet har tilgang til Samarbeidsportalen. Opprett bruker med din jobb-epostadresse og gå til "Min profil" på
 [https://samarbeid.digdir.no.](https://samarbeid.digdir.no)
 
