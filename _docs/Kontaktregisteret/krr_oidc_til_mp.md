@@ -15,3 +15,4 @@ For å migrere fra gammelt OIDC-beskyttet endepunkt til nytt Maskinporten-beskyt
 typisk ved å oppdatere url for autorisasjonsserverens oauth2 metadata-endepunkt til https://maskinporten.no/.well-known/oauth-authorization-server
 - evt. ved å konfigurere nytt token-endepunkt direkte (https://maskinporten.no/token) og oppdatere trust mot Maskinporten sitt signeringssertifikat.
 - Endre API-kall til å gå mot nytt endepunkt
+  
