@@ -3,7 +3,7 @@ sidebarTitle: KRR
 
 folders:
 
-- title: KRR
+- title: Om Kontakt- og reservasjonsregisteret
   folderitems:
 
       - title: Overordnet
@@ -12,12 +12,21 @@ folders:
 - title: Kom i gang
   folderitems:
   
+- title: Tilgjengelige tjenester
+  folderitems:
+
       - title: Oppslagstjenesten REST
         jurl: /docs/Kontaktregisteret/oppslagstjenesten_rest
 
       - title: Brukerspesifikt oppslag REST
         jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
 
+      - title: MinProfil og gotoURL
+        jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
+
+
+- title: Annen viktig info
+  folderitems:
       - title: Attributter i KRR
         jurl: /docs/Kontaktregisteret/krr_attributter
 
@@ -27,8 +36,7 @@ folders:
       - title: Overgang fra SOAP til REST
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
-      - title: MinProfil og gotoURL
-        jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
+     
 
 ###########################
 
