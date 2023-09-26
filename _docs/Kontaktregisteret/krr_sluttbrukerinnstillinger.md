@@ -17,17 +17,17 @@ I MinProfil kan sluttbrukeren oppdatere sine kontaktopplysninger (mobilnummer, e
 | Test | [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) |
 | Prod | [https://minprofil.kontaktregisteret.no/](https://minprofil.kontaktregisteret.no/) |
 
-Hvordan du som kunde kan sende sluttbrukeren tilbake til din tjenesten blir omtalt i avsnittet "gotoUrl" under.
+Hvordan du som kunde kan sende sluttbrukeren tilbake til din tjeneste etter oppdatering av kontaktinfo i MinProfil, blir omtalt i avsnittet "gotoUrl" under.
 
 
 ## Oppgradert tjeneste og ny URL for MinProfil
 
-Tidligere kunne sluttbrukeren oppdatere sin kontaktinformasjon i tjenesten Brukerprofil (brukerprofil.difi.no/minprofil). Denne tjenesten er nå oppgradert og erstattet med MinProfil (se URLer i avsnittet over). 
+Tidligere kunne sluttbrukeren oppdatere sin kontaktinformasjon i tjenesten Brukerprofil (brukerprofil.difi.no/minprofil). Denne tjenesten er nå erstattet med MinProfil (se URLer i avsnittet over). 
 
 
 ## "gotoURL"
 
-Etter at sluttbrukeren har oppdatert sine kontaktopplysninger i MinProfil, kan du som kunde (virksomhet) sende sluttbrukeren tilbake til din tjeneste. Dette skjer ved å ta i bruk tjenesten "gotoUrl". For å kunne benytte tjenesten må virksomheten sende inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
+Etter at sluttbrukeren har oppdatert sine kontaktopplysninger i MinProfil, kan du som kunde (virksomhet) sende sluttbrukeren tilbake til din tjeneste. Dette skjer ved å ta i bruk tjenesten "gotoUrl". For å kunne benytte denne tjenesten må din virksomhet sende inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
 
 
 ### Input data
