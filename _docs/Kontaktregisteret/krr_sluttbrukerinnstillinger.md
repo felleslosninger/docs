@@ -14,7 +14,7 @@ I tjenesten MinProfil kan sluttbruker oppdatere sin kontaktinformasjon:
 1)	testmiljøet:          [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/)
 2)	produksjonsmiljøet:	  [https://minprofil.kontaktregisteret.no/](https://minprofil.kontaktregisteret.no/)
 
-Kunde (virksomhet) kan lenke sluttbruker til MinProfil og sende sluttbruker tilbake til sin tjeneste. Hvordan kunde kan sender sluttbruker tilbake til tjenesten blir omtalt i avsnittet "gotoUrl" under.
+Kunde (virksomhet) kan lenke sluttbruker til MinProfil og sende sluttbruker tilbake til sin tjeneste. Hvordan kunde kan sende sluttbruker tilbake til tjenesten blir omtalt i avsnittet "gotoUrl" under.
 
 
 ## Ny URL for MinProfil
@@ -24,12 +24,12 @@ Tidligere kunne sluttbruker oppdatere sin kontaktinformasjon i tjenesten Brukerp
 
 ## "gotoURL"
 
-Etter at sluttbrukeren har oppdatert kontaktinformasjon på MinProfil kan kunde sende sluttbrukeren tilbake til sin tjeneste. For å ta i bruk denne såkalte "gotoUrl"-tjenesten, må kunde melde inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
+Etter at sluttbrukeren har oppdatert kontaktinformasjon på MinProfil kan kunde sende sluttbrukeren tilbake til sin tjeneste. For å ta i bruk "gotoUrl", må kunde sende inn gyldig URL til servicedesk@digdir.no. Merk innsendingen med «KRR – gotoUrl». 
 
 
 ### Input data
 
-Tjenesten har følgende http request parameter som kan benyttes:
+Tjenesten "gotoURL" har følgende http request parameter som kan benyttes:
 
 | request parameter | beskrivelse |
 |-|-|
