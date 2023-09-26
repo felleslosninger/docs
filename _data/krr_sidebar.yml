@@ -20,7 +20,7 @@ folders:
       - title: Overgang fra SOAP til REST
         jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
 
-      - title: Sende sluttbruker til MinProfil (kontaktinfo) og gotoURL
+      - title: Sende sluttbruker til MinProfil og gotoURL
         jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
 
 ###########################
