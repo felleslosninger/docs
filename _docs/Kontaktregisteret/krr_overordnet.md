@@ -1,5 +1,5 @@
 ---
-title: Overordnet
+title: Om Kontakt- og reservasjonsregisteret
 description:
 summary:
 
