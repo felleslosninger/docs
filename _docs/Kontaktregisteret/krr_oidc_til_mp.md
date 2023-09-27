@@ -8,6 +8,8 @@ product: KRR
 redirect_from: /krr_oidc_til_mp
 ---
 
+F.o.m. 04.10.2023 er det ikke lenger mulig å kalle Oppslagstjenesten med access-token fra [gammelt OIDC-beskyttet endepunkt](https://oidc.difi.no/idporten-oidc-provider/). Slike oppslag vil bli avvist.  
+
 For å migrere fra gammelt OIDC-beskyttet endepunkt til nytt Maskinporten-beskyttet endepunkt, må følgende gjøres:
 
 - Oppdater klient-registrering til å bruke nye scopes med krr:-prefix
