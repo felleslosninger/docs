@@ -119,6 +119,7 @@ In the `access_token`, the  `sub` will also get new values.
 
 Due to changes in the OIDC specifications regarding logout, some changes have been implemented:
 
+- The logout endpoint supports both GET and POST
 - if a client is registered with front channel logout uri it will receieve calls to this uri when it is the initiator of the logout request
 
 We are considering to change todays behavior and align it to the spec.
