@@ -133,6 +133,7 @@ The following claims in the JWT is of interest:
 | --- | --- |
 |aud| Audience - the identifier for ID-porten.  See the `issuer` claim at the *well-known*-endpoint for correct value.  |
 |iss| issuer - your client ID |
+|sub| subject - your client ID |
 |iat| issued at - timestamp when this jwt was generated. **NOTE:** UTC-time.|
 |exp| expiration time - timestamp when this jwt expire. **NOTE:** UTC-tid.  Max allowable lifespan is 120 seconds (exp - iat <= 120) |
 |jti| Optional - JWT ID - unique id for this JWT. A JWT can not be reused|
