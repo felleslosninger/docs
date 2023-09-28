@@ -107,7 +107,8 @@ kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
 ```
 **NB!**
 Dersom en ønsker å bruke integrasjonspunktet med transportsikring må en endre til
-*kosmos.integrasjonspunkt.baseURL=https://servernavn.no:portnummer*
+*kosmos.integrasjonspunkt.baseURL=https://servernavn.no:portnummer*.
+Se mer her: [Transportsikring](..installasjon/installasjon#transportsikring)
 
 ## Valgfri konfigurasjon
 
