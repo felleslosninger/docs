@@ -283,6 +283,9 @@ difi.ssl.key-store=file:c:/integrasjonspunkt/https.p12
 difi.ssl.key-store-password=mypassword
 difi.ssl.key-alias=myalias
 ```
+**NB!:**
+Dersom en bruker et selvsignert SSL sertifikat må dette legges inn i Java Trust Store (cacerts).
+I hostfilen til server må en registrere IP-adressen til det som blir hostname til integrasjonspunktet.
 
 #### HTTP Basic Auth
 *Valgfritt*
