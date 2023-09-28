@@ -145,7 +145,7 @@ Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "inneby
 - Forenklet URL til APIet
 
 
-### Utgåtte URLer:
+### Utgåtte endepunkt:
 
  |miljø|url|
  |-|-|
