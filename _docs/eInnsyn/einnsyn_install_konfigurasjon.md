@@ -56,7 +56,7 @@ Dette er innstillinger som kan endres, men ikke nødvendigvis må endres for å 
 * ```<id>einnsyn-klient</id>``` og ```<name>einnsyn-klient</name>``` er for å velge id og navn på tjenesten i listen over Windows tjenester. 
 
 **Transportsikring**  
-En kan også slå på støtte for transportsikring integrasjonspunktet. Se hvordan [her.](eFormidling/installasjon/installasjon#transportsikring).  
+En kan også slå på støtte for transportsikring integrasjonspunktet. Se hvordan [her](eFormidling/installasjon/installasjon#transportsikring).  
 I klienten må en da endre til -Dapplication.moveUrl=https://servernavn.no:portnummer.
 
 #### Loggrotering
