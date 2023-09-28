@@ -63,7 +63,7 @@ state=<tilstand_jeg_kan_bruke_i_redirect_tilbake_til_meg_pluss_csrf_beskyttelse>
 
 Ved mottak av endsession-redirect, vil ID-porten logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon, både OIDC og SAML. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
 
-Utlogging fra egen tjeneste er basert på OIDC Session Management](http://openid.net/specs/openid-connect-session-1_0.html)-spesifikasjonen.
+Utlogging fra egen tjeneste er basert på [OIDC Session Management](http://openid.net/specs/openid-connect-session-1_0.html)-spesifikasjonen.
 
 #### Samspill mellom sesjoner og tokens ved utlogging
 
