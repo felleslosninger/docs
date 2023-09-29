@@ -121,6 +121,7 @@ Due to changes in the OIDC specifications regarding logout, some changes have be
 
 - The logout endpoint supports both GET and POST
 - if a client is registered with front channel logout uri it will receieve calls to this uri when it is the initiator of the logout request
+- it is important to add login.idporten.no / login.test.idporten.no as a legal frame-ancestors in the Content Security Policy
 
 We are considering to change todays behavior and align it to the spec.
 
