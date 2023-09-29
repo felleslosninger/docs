@@ -147,6 +147,7 @@ I `access_token` vil `sub` også få nye verdier.
 Det har skjedd presiseringer i OIDC-spesifikasjonen mhp logout.
 
 - Dersom en klient er registrert for front channel logout, vil klienten få kall til registrert uri også når klienten selv initierer utlogging.  På gammel platform mottok initierende klient ikke frontkanalskallet, men denne oppførselen var ikke ihht. spec.
+- Det er viktig å legge login.idporten.no / login.test.idporten.no som lovlig frame-ancestors i Content Security Policy
 
 Endepunktet for utlogging støtter både GET og POST. 
 
