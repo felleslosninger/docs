@@ -165,6 +165,8 @@ The SAML proxy will support SAML Web Browser SSO 2.0 with Artifact Resolution bi
 
 Contact details (email/mobile) will no longer be included as part of the Assertion.
 
+NameID values will change when we migrate. The actual value will be persistent, even if the SP asks for a transient value in the AuthnRequest.
+
 Updating the SAML-metadata will not be available. When the metadata expires (e.g. when the certificate expires), we expect that our customers starts using OIDC instead of SAML.
 
 SAML will be phased out completely.
