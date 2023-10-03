@@ -24,3 +24,5 @@ typisk ved å oppdatere url for autorisasjonsserverens oauth2 metadata-endepunkt
 - evt. ved å konfigurere nytt token-endepunkt direkte (https://maskinporten.no/token) og oppdatere trust mot Maskinporten sitt signeringssertifikat.
 - Endre API-kall til å gå mot nytt endepunkt
   
+## Hva med testmiljøet (ver2)?
+Tilsvarende avvikling skjer for ver2-endepunktet 03. oktober. 
