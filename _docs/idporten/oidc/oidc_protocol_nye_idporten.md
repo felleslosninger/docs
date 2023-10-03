@@ -185,6 +185,8 @@ I ny løsning vil det bli tilbudt en rudimentær SAML-støtte, hvis formål kun 
 
 Denne vil støtte SAML Web Browser SSO 2.0 med Artifact Resolution-binding.  Det vil bare være støtte for 1 AssertionConsumerURL, og ett kombinert signerings- og krypteringssertifikat.
 
+NameID-verdier vil endre seg ved overgangen.  Den faktiske verdien vil være persistent (lik for samme bruker hver gang), selv om SP skulle be om en transient verdi. 
+
 Det vil ikke lenger utleveres kontaktopplysninger fra KRR som del av Assertion.
 
 På sikt vil SAML blir faset helt ut.
