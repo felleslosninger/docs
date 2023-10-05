@@ -136,15 +136,6 @@ OpenAPI-dokumentasjon.
 
 
 
-
-
-## Gammel dokumentasjon
-
-Tidligere var REST-APIet sikret med Maskinporten-funksjonaliteten som er "innebygd" i ID-porten OIDC. Som en følge av at Maskinporten ble skilt ut som egen, selvstendig tjeneste (egen Oauth2 issuer) høsten 2019, ble også Oppslagstjensten endret til å være sikret av Maskinporten. Samtidig ble det gjort noen forenklinger:
-- Konsolidert antall scopes fra 5 til 2 basert på analyse av faktisk bruk
-- Forenklet URL til APIet
-
-
 ### Utgåtte endepunkt:
 
  |miljø|url|
