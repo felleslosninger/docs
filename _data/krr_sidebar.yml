@@ -9,6 +9,9 @@ folders:
       - title: Om Kontakt- og reservasjonsregisteret
         jurl: /docs/Kontaktregisteret/krr_overordnet
 
+      - title: Overordnet arkitekturbeskrivelse
+        jurl: /docs/Kontaktregisteret/krr_arkitektur
+
 - title: Kom i gang
   folderitems:
  
