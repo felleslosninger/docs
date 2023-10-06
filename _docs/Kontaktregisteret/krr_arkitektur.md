@@ -8,14 +8,14 @@ product: Kontakt- og reservasjonsregisteret
 redirect_from: /krr_arkitektur
 ---
 
-## Overordnet arkitekturbeskrivelse for Oppslagstjenesten REST
+## Oppslagstjenesten REST
 
 Når klientene er registrert kan disse brukes for å få tildelt token og gjennomføre api-kallene.
 
 <div class="mermaid">
 graph LR
-  subgraph API-tilbyder
-    API
+  subgraph Digdir
+    Oppslagstjenesten
   end
   subgraph Digdir
     Maskinporten[Maskinporten]
@@ -30,7 +30,7 @@ graph LR
 
 API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klienter vil scopene være forhåndsdefinert. 
 
-## Overordnet arkitekturbeskrivelse for Oppslag ved innlogget bruker (brukerstyrt datadelling)
+## Oppslag ved innlogget bruker (brukerstyrt datadelling)
 
 Når klientene er registrert kan disse brukes for å få tildelt token og gjennomføre api-kallene.
 
