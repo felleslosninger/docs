@@ -25,7 +25,7 @@ graph LR
   end
   Maskinporten -->|2.utsteder token med tildelt scope|ny
   ny -->|1. forspør tilgang til scope|Maskinporten
-  ny -->|3.bruker token mot|API
+  ny -->|3.bruker token mot|Oppslagstjenesten
 </div>
 
 API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klienter vil scopene være forhåndsdefinert. 
@@ -34,8 +34,8 @@ API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klie
 
  <div class="mermaid">
  graph LR
-   subgraph 3djepart
-     API
+   subgraph Digdir
+     Oppslagstjenesten[Oppslagstjenesten]
    end
    subgraph Digdir
      OIDC[ID-porten]
@@ -50,4 +50,4 @@ API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klie
  </div>
 
 
-Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope).
+Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope). Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.
