@@ -46,7 +46,7 @@ API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klie
    Sluttbruker ---|1. Vil bruke|ny
    OIDC -->|3.utsteder token|ny
    Sluttbruker ---|2. logger inn i  |OIDC
-   ny -->|4.bruker token mot|API
+   ny -->|4.bruker token mot|Oppslagstjenesten
  </div>
 
 
