@@ -1,5 +1,5 @@
 ---
-title: Overordnet arkitekturbeskrivelse (under arbeid)
+title: Overordnet arkitekturbeskrivelse for tjenestene
 description:
 summary:
 
@@ -69,7 +69,7 @@ Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_]({{site.baseurl}}
    Sluttbruker ---|1. Vil bruke|ny
    OIDC -->|3.utsteder token|ny
    Sluttbruker ---|2. logger inn i  |OIDC
-   ny -->|4. lenker sluttbruker til MinProfil|MinProfil
-   MinProfil -->|5. gotoURL sender sluttbruker tilbake til tjeneste |ny
+   ny -->|4. lenker til MinProfil|MinProfil
+   MinProfil -->|5. gotoURL sender tilbake til tjeneste |ny
  </div>
 
