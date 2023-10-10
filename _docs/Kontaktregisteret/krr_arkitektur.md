@@ -8,7 +8,7 @@ product: Kontakt- og reservasjonsregisteret
 redirect_from: /krr_arkitektur
 ---
 
-## Oppslagstjenesten REST
+## 1. Oppslagstjenesten REST
 
 Når klientene er registrert kan disse brukes for å få tildelt token og gjennomføre api-kallene.
 
@@ -30,7 +30,7 @@ graph LR
 
 API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klienter vil scopene være forhåndsdefinert. 
 
-## Oppslag ved innlogget bruker (brukerstyrt datadelling)
+## 2. Oppslag ved innlogget bruker (brukerstyrt datadelling)
 
  <div class="mermaid">
  graph LR
@@ -51,3 +51,25 @@ API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klie
 
 
 Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope). Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.
+
+
+## 3. MinProfil og gotoURL
+
+ <div class="mermaid">
+ graph LR
+   subgraph Digdir
+     MinProfil[MinProfil]
+   end
+   subgraph Digdir
+     OIDC[ID-porten]
+   end
+   subgraph Kunde
+      ny[Tjeneste]
+   end
+   Sluttbruker ---|1. Vil bruke|ny
+   OIDC -->|3.utsteder token|ny
+   Sluttbruker ---|2. logger inn i  |OIDC
+   ny -->|4. lenke til MinProfil for oppdatering av kontaktinfo |MinProfil
+   MinProfil -->|5. Sender sluttbruker til kundetjeneste med request parameter gotoURL |ny
+ </div>
+
