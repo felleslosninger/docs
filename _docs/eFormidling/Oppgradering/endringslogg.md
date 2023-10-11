@@ -18,6 +18,13 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.23.1
+
+11.10.2023
+
+**Vedlikehald**
+- Helsesjekken i Docker-biletet til Integrasjonspunktet brukar no Wget i staden for cURL
+
 ## 2.23.0
 
 22.09.2023
