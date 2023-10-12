@@ -9,7 +9,9 @@ product: KRR
 
 redirect_from: /krr_testbrukere
 ---
-Her kan du finne testbrukere for KRR som innehar følgende variabler:
+
+NB! Testbrukerene i tabellen under er pt ikke gjenopprettet med krr-attributter. Dette er under arbeid. 
+Da kan du finne testbrukere for KRR som innehar følgende variabler:
 
 - Med mobil, e-post og digital postkasse
 - Med mobil og e-post
