@@ -14,7 +14,7 @@ For å gjøre en forespørsel mot et eller flere av KRR sine endepunkt, må virk
 
 - Logg inn på Min side og gå til "Integrasjoner" i høyremenyen. Velg det miljøet du vil opprette klienten i.
 
-{% include note.html content="For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn. Prosessen er beskrevet på [Tilgang til produksjonsmiljø]({{site.baseurl}}/docs/Maskinporten/maskinporten_sjolvbetjening_web#tilgang-i-produksjonsmilj%C3%B8)" %}
+{% include note.html content="For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn. Prosessen er beskrevet på [Tilgang til produksjonsmiljø](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web#tilgang-i-produksjonsmilj%C3%B8)" %}
 
 - Velg "Ny integrasjon".
 - For forespørsel mot Oppslagstjenesten REST: 
