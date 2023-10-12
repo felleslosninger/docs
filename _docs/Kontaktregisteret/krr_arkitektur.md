@@ -10,7 +10,7 @@ redirect_from: /krr_arkitektur
 
 ## 1. Oppslagstjenesten REST
 
-Når klientene er registrert kan disse brukes for å få tildelt token og gjennomføre api-kallene.
+Når du som kunde har opprettet og satt opp klienten riktig, kan den brukes til å få tildelt token og gjennomføre api-kallene.
 
 <div class="mermaid">
 graph LR
