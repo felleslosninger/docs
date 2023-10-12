@@ -23,13 +23,14 @@ Bruk av selvbetjening forutsetter at din virksomhet har fått tilgang til Samarb
 
 - Velg "Ny integrasjon".
 
-Oppslagstjenesten REST: 
+Ved Oppslagstjenesten REST: 
 - Velg "KRR" som "Difi-tjeneste". Du vil da få automatisk tildelt de riktige scopene.
 
-\n Oppslag ved brukerinnlogging (brukerstyrt datadeling):
+
+Ved Oppslag ved brukerinnlogging (brukerstyrt datadeling):
 - Velg "Api-klient" som "Difi-tjeneste". Du må manuelt sette de riktige scopene
   krr:user, kontaktinformasjon.read, openid, profile
   
 - Fullfør registreringen og trykk på "Opprett".
 
-{% include note.html content="Ved opprettelse får du en klientID som må brukes i forespørselen mot ID-porten." %}
+{% include note.html content="Ved opprettelse får du en integrasjonsID (klientID) som må brukes i forespørselen mot ID-porten." %}
