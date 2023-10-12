@@ -14,16 +14,13 @@ Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert gl
 
 Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammenhenger være mer hensiktsmessig.
 
-## Hvordan få tilgang ?
-
-Kunde må godkjenne bruksvilkår for Kontakt- og Reservasjonsregisteret for å kunne motta kontaktopplysningene.
 
 ## Bruk av Oauth2
 
 Tjenesten baserer seg på [brukerstyrt datadeling]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2).
 
 
-Man må forespørre ett eller flere av følgende scopes:
+I tillegg til idporten-scopene openid og profile, må det forespørres ett eller flere av følgende scopes:
 
 
 | scope | beskrivelse |
