@@ -9,8 +9,8 @@ redirect_from: /krr_opprette_tilgang
 ---
 
 For å kunne ta i bruk Kontakt- og reservasjonsregisteret (KRR) må du som kunde:
-1) grunngi at bruken er i tråd med gjeldende "Retningslinjer for bruk av Kontakt- og reservasjonsregisteret". 
-2) godkjenne bruksvilkår 
+- grunngi at bruken er i tråd med gjeldende "Retningslinjer for bruk av Kontakt- og reservasjonsregisteret".
+- godkjenne bruksvilkår 
 
 Dersom kravene over er oppfylt vil du som kunde få tilgang til KRR.
 
