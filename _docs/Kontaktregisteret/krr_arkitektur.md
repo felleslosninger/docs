@@ -32,6 +32,10 @@ API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klie
 
 ## 2. Oppslag ved innlogget bruker (brukerstyrt datadelling)
 
+I dette scenariet logger en sluttbruker inn til en tjeneste, og tjenesten har behov for å hente data om innloggede sluttbrukeren via Oppslagstjenesten (brukerstyrt datadeling). Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke Oppslagstjenesten på vegne av seg selv.
+
+
+
  <div class="mermaid">
  graph LR
    subgraph Digdir
@@ -50,7 +54,30 @@ API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klie
  </div>
 
 
-Hvilket API/ressurs som skal aksesseres, er styrt av [_scopes_]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope). Klienten må vite hvilke(t) scope som hører til den aktuelle API-operasjonen, og må forespørre dette scopet i autorisasjonsforespørselen.
+### Beskrivelse av Oauth2-flyten
+
+<div class="mermaid">
+sequenceDiagram
+  Sluttbruker ->> Klient: Klikker login-knapp
+  Klient ->> Sluttbruker: Redirect med autentiseringsforespørsel
+  Sluttbruker ->> OpenID Provider: følg redirect...
+  note over Sluttbruker,OpenID Provider: Sluttbruker autentiserer seg (og evt. samtykker til førespurte scopes)
+  OpenID Provider ->> Sluttbruker: Redirect med autorisasjonscode
+  Sluttbruker ->> Klient: følg redirect...
+  Klient ->> OpenID Provider: forespørre token (/token)
+  OpenID Provider ->> Klient: id_token + access_token (evt. refresh_token)
+  note over Sluttbruker,Klient: Innlogget i tjenesten
+  Klient ->> Oppslagstjenesten: bruke Oppslagstjenesten med access_token
+  Oppslagstjenesten ->> OpenID Provider: validere token
+  OpenID Provider ->> Oppslagstjenesten: token informasjon
+  Oppslagstjenesten->>Klient: Resultat av API-operasjon
+</div>
+
+Starten av flyten er identisk med [autorisasjonskode-flyten for autentisering]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_codeflow) (se denne for detaljer), med følgende tillegg:
+
+* I **autentiseringsresponsen** fra OpenID Provider får klient også utlevert et *access_token* (og eventuelt et *refresh_token*) som gir tilgang til forespurte scopes.  
+* Etter innlogging kan da klienten bruke access_tokenet opp mot Oppslagstjenesten.  
+  * Access_token har vanligvis kort levetid (30 sekunder). Dersom tokenet er utløpt, kan klienten forespørre nytt acess_token ved å bruke *refresh_tokenet* mot token-endepunktet til OpenID Provideren.  Det gjennomføres da en klient-autentisering, for å sikre at tokens ikke blir utlevert til feil part.
 
 
 ## 3. MinProfil og gotoURL
