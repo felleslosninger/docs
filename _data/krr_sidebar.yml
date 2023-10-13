@@ -1,15 +1,14 @@
-sidebarTitle: KRR
-
+sidebarTitle: Kontakt- og reservasjonsregisteret
 
 folders:
 
 - title: Overordnet
   folderitems:
 
-      - title: Om Kontakt- og reservasjonsregisteret
+      - title: Om KRR
         jurl: /docs/Kontaktregisteret/krr_overordnet
 
-      - title: Overordnet arkitekturbeskrivelse
+      - title: Arkitekturbeskrivelse
         jurl: /docs/Kontaktregisteret/krr_arkitektur
 
 - title: Kom i gang
