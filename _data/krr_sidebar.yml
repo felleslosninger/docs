@@ -21,6 +21,9 @@ folders:
       - title: Opprette og sette opp klient
         jurl: /docs/Kontaktregisteret/krr_opprette_klient
 
+      - title: Integrasjonstype og scopes
+        jurl: /docs/Kontaktregisteret/krr_scopes
+      
       - title: Sette opp token-forespørsel
         jurl: /docs/Kontaktregisteret/krr_token_request
 
