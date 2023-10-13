@@ -34,7 +34,7 @@ folders:
       - title: KRR testbrukere
         jurl: /docs/Kontaktregisteret/krr_testbrukere
 
-      - title: Testing som krever innlogging gjennom ID-porten
+      - title: Testing med ID-porten innlogging
         jurl: /docs/Kontaktregisteret/krr_idporten_testbrukarar
 
 
