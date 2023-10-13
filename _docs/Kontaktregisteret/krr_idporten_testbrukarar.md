@@ -1,5 +1,5 @@
 ---
-title: Testing som krever innlogging gjennom ID-porten
+title: Testing med ID-porten innlogging
 description: Innlogging ID-porten
 summary:
 
@@ -10,7 +10,7 @@ product: KRR
 redirect_from: /krr_idporten_testbrukarar
 ---
 
-For å teste KRR-integrasjoner i verifikasjonsmiljøene Ver2/Test som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av ID-porten testbrukere.
+For å teste KRR-integrasjoner i verifikasjonsmiljøene (Ver2/Test) som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av ID-porten testbrukere.
 
 
 ## TestID
