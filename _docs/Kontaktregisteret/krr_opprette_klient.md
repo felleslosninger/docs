@@ -24,7 +24,7 @@ Bruk av selvbetjening forutsetter at din virksomhet har fått tilgang til Samarb
 - Velg "Ny integrasjon".
 
 
-### Klientoppsett
+### Sette opp klient
 a. Ved Oppslagstjenesten REST: 
 - Velg "KRR" som "Difi-tjeneste". Du vil da få automatisk tildelt de riktige scopene.
 
