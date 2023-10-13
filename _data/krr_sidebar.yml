@@ -18,7 +18,7 @@ folders:
       - title: Hvordan få tilgang?
         jurl: /docs/Kontaktregisteret/krr_opprette_tilgang
       
-      - title: Opprette klient
+      - title: Opprette og sette opp klient
         jurl: /docs/Kontaktregisteret/krr_opprette_klient
 
       - title: Sette opp token-forespørsel
