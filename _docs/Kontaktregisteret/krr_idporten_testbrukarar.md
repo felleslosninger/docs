@@ -7,7 +7,7 @@ toc: false
 sidebar: krr_sidebar
 product: KRR
 
-redirect_from: /krr_idporten_testbrukar
+redirect_from: /krr_idporten_testbrukarar
 ---
 
 For å teste KRR-integrasjoner i verifikasjonsmiljøene Ver2/Test som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av ID-porten testbrukere.
@@ -15,7 +15,7 @@ For å teste KRR-integrasjoner i verifikasjonsmiljøene Ver2/Test som krever ID-
 
 ## TestID
 
-Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten. TestID tilbyr å velge [sikkerhetsnivå](https://eid.difi.no/nb/sikkerhet-og-personvern/ulike-sikkerhetsniva). 
+Vi anbefaler at alle kunder bruker **TestID** når de skal teste ved innlogging gjennom ID-porten. TestID tilbyr å velge [sikkerhetsnivå](https://eid.difi.no/nb/sikkerhet-og-personvern/ulike-sikkerhetsniva). 
 
 ![TestID logo]({{site.baseurl}}/assets/testid.svg)
 
