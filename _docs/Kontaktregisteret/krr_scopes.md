@@ -34,6 +34,8 @@ Deretter må du manuelt sette de riktige scopene: krr:user/kontaktinformasjon.re
 |krr:global/*    | Scopes for global tilgang til krr|  krr,maskinporten |
 |krr:user/*      | Scopes som gir krr data for innlogget bruker| api_klient|
 
+{% include note.html content="De ulike scopene som er tilgjengelige for KRR er beskrevet under avsnittene for de ulike tjenestene." %}
+
 Generelt må api-konsumenter spørre api-tilbyder (eier av scopet) om tilgang til å bruke deres scope. Les mer her om [hvordan du som kunde kan få tilgang](https://docs.digdir.no/docs/Kontaktregisteret/krr_opprette_tilgang) til scopene over. 
 
 Lenke til [mer om scopes](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_scope.html).
