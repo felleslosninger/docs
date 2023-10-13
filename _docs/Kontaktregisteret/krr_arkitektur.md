@@ -101,4 +101,3 @@ I MinProfil kan sluttbrukeren oppdatere sine kontaktopplysninger. Du som kunde (
    ny -->|4. lenker til MinProfil|MinProfil
    MinProfil -->|5. gotoURL sender tilbake til tjeneste |ny
  </div>
-
