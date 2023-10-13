@@ -31,8 +31,11 @@ folders:
       - title: Attributter i KRR
         jurl: /docs/Kontaktregisteret/krr_attributter
 
-      - title: Testbrukere
-        jurl: /docs/Kontaktregisteret/krr_testbrukere    
+      - title: KRR testbrukere
+        jurl: /docs/Kontaktregisteret/krr_testbrukere
+
+      - title: Testing som krever innlogging gjennom ID-porten
+        jurl: /docs/Kontaktregisteret/krr_idporten_testbrukarar
 
 
 - title: Tilgjengelige tjenester
