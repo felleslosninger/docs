@@ -82,6 +82,8 @@ Starten av flyten er identisk med [autorisasjonskode-flyten for autentisering]({
 
 ## 3. MinProfil og gotoURL
 
+I MinProfil kan sluttbrukeren oppdatere sine kontaktopplysninger. Du som kunde (virksomhet) kan lenke til MinProfil i din tjeneste, for få oppdatert kontaktinfo til dine brukere. Ved å bruke request parameter "gotoURL" blir sluttbrukeren sendt tilbake til din tjeneste. 
+
  <div class="mermaid">
  graph LR
    subgraph Digdir
