@@ -8,7 +8,7 @@ product: Kontakt- og reservasjonsregisteret
 redirect_from: /krr_arkitektur
 ---
 
-## 1. Oppslagstjenesten REST
+## Oppslagstjenesten REST
 
 Når du som kunde har opprettet og satt opp klienten riktig, kan den brukes til å få tildelt token og gjennomføre api-kallene.
 
@@ -30,7 +30,7 @@ graph LR
 
 API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klienter vil scopene være forhåndsdefinert. 
 
-## 2. Oppslag ved innlogget bruker (brukerstyrt datadelling)
+## Oppslag ved innlogget bruker (brukerstyrt datadelling)
 
 I dette scenariet logger en sluttbruker inn til en tjeneste, og tjenesten har behov for å hente data om innloggede sluttbrukeren via Oppslagstjenesten (brukerstyrt datadeling). Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke Oppslagstjenesten på vegne av seg selv.
 
@@ -80,7 +80,7 @@ Starten av flyten er identisk med [autorisasjonskode-flyten for autentisering]({
   * Access_token har vanligvis kort levetid (30 sekunder). Dersom tokenet er utløpt, kan klienten forespørre nytt acess_token ved å bruke *refresh_tokenet* mot token-endepunktet til OpenID Provideren.  Det gjennomføres da en klient-autentisering, for å sikre at tokens ikke blir utlevert til feil part.
 
 
-## 3. MinProfil og gotoURL
+## MinProfil og gotoURL
 
 I MinProfil kan sluttbrukeren oppdatere sine kontaktopplysninger. Du som kunde (virksomhet) kan lenke til MinProfil i din tjeneste, for få oppdatert kontaktinfo til dine brukere. Ved å bruke request parameter "gotoURL" blir sluttbrukeren sendt tilbake til din tjeneste. 
 
