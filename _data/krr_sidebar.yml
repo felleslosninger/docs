@@ -11,6 +11,7 @@ folders:
       - title: Arkitekturbeskrivelse
         jurl: /docs/Kontaktregisteret/krr_arkitektur
 
+
 - title: Kom i gang
   folderitems:
  
@@ -23,7 +24,17 @@ folders:
       - title: Sette opp token-forespørsel
         jurl: /docs/Kontaktregisteret/krr_token_request
 
-        
+
+- title: Attributter og testing
+  folderitems:
+ 
+      - title: Attributter i KRR
+        jurl: /docs/Kontaktregisteret/krr_attributter
+
+      - title: Testbrukere
+        jurl: /docs/Kontaktregisteret/krr_testbrukere    
+
+
 - title: Tilgjengelige tjenester
   folderitems:
 
@@ -46,14 +57,8 @@ folders:
         jurl: /docs/Kontaktregisteret/krr_oidc_til_mp
 
 
-- title: Annen viktig info
+- title: Hva skjer fremover?
   folderitems:
-      - title: Attributter i KRR
-        jurl: /docs/Kontaktregisteret/krr_attributter
-
-      - title: Testbrukere
-        jurl: /docs/Kontaktregisteret/krr_testbrukere
-
       - title: Ny systemarkitektur
         jurl: /docs/Kontaktregisteret/krr_sysark
 
