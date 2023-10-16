@@ -8,9 +8,10 @@ product: KRR
 redirect_from: /krr_token_request
 ---
 
-Ved spørring om access token til bruk av Oppslagstjenesten REST: 
-
 For å få et access_token til Oppslagstjenesten REST, må det sendes et JWT-grant til Maskinporten. Vi har en egen side som beskriver JWT grant mot Maskinporten ([JWT grant.]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant)).
+
+{% include note.html content="I testmiljøet støtter oppslagstjenesten token fra test.maskinporten.no og ikke ver2.maskinporten.no" %}
+
 
 Well-known endepunkter for [Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_wellknown)
 
