@@ -11,7 +11,7 @@ redirect_from: /krr_token_request
 
 ### Forspørsel om access-token til bruk mot Oppslagstjenesten REST
 
-For å få et access_token for bruke til autorisasjon mot Oppslagstjenesten REST, må det sendes en JWT-forespørsel (JWT grant) til Maskinporten. Dersom din virksomhet har fått de riktige tilgangene og oppsettet på både klienten og jwt-forespørselen er riktig, vil /token-endepunktet i Maskinporten svare med et access-token. 
+For å få et access_token for bruke til autorisasjon mot Oppslagstjenesten REST, må det sendes et JWT grant til Maskinporten. Dersom din virksomhet har fått de riktige tilgangene og oppsettet på både klienten og jwt-grantet er riktig, vil /token-endepunktet i Maskinporten kunne svare på forespørsel med et access-token. 
 
 Vi har en egen side som beskriver JWT grant mot Maskinporten ([JWT grant.]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant)).
 
