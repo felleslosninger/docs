@@ -28,11 +28,11 @@ graph LR
   ny -->|3.bruker token mot|Oppslagstjenesten
 </div>
 
-API-konsumenter kan selv administrere sine klientkonfigurasjoner og for krr-klienter vil scopene være forhåndsdefinert. 
+API-konsumenter kan selv administrere sine klientkonfigurasjoner gjennom [Selvbetjening web](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web) eller [Selvbetjening api](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_api) . Krr-klienter vil scopene være forhåndsdefinert. 
 
 ## Oppslag ved innlogget bruker (brukerstyrt datadelling)
 
-I dette scenariet logger en sluttbruker inn til en tjeneste, og tjenesten har behov for å hente data om innloggede sluttbrukeren via Oppslagstjenesten (brukerstyrt datadeling). Slike scenario realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke Oppslagstjenesten på vegne av seg selv.
+I dette scenariet logger en sluttbruker inn til en tjeneste, og tjenesten har behov for å hente data om den innloggede sluttbrukeren via Oppslagstjenesten (brukerstyrt datadeling). Slike tilfeller realiseres i ID-porten ved den klassiske Oauth2-flyten, der innbyggeren godkjenner - enten eksplisitt eller implisitt - til at tjenesten kan bruke Oppslagstjenesten på vegne av seg selv.
 
 
 
