@@ -28,7 +28,7 @@ graph LR
   ny -->|3.bruker token mot|Oppslagstjenesten
 </div>
 
-API-konsumenter kan selv administrere sine klientkonfigurasjoner gjennom [Selvbetjening web](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web) eller [Selvbetjening api](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_api) . Krr-klienter vil scopene være forhåndsdefinert. 
+API-konsumenter kan selv administrere sine klientkonfigurasjoner gjennom [Selvbetjening web](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web) eller [Selvbetjening api](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_api) . For krr-klienter vil scopene være forhåndsdefinert. 
 
 ## Oppslag ved innlogget bruker (brukerstyrt datadelling)
 
