@@ -61,6 +61,9 @@ folders:
 
       - title: Fra OIDC- til Maskinporten-beskyttet endepunkt
         jurl: /docs/Kontaktregisteret/krr_oidc_til_mp
+       
+      - title: Utfasede endepunkt og IP-adresser
+        jurl: /docs/Kontaktregisteret/krr_utfasa_endepunkt
 
 
 - title: Hva skjer fremover?
