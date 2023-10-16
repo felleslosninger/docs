@@ -51,7 +51,6 @@ Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...
 
 |miljø|url|dato gyldig|
 |-|-|-|
-|VER2| [https://ver2-krr.digdir.no/rest/v1/personer](https://ver2-krr.digdir.no/rest/v1/personer)| stenges ned 18.08.23|
 |TEST|[https://test.kontaktregisteret.no/rest/v1/personer](https://test.kontaktregisteret.no/rest/v1/personer)|
 |TEST|[https://test.kontaktregisteret.no/rest/v2/personer](https://test.kontaktregisteret.no/rest/v2/personer)| |
 |PROD|[https://kontaktregisteret.no/rest/v1/personer](https://kontaktregisteret.no/rest/v1/personer)|
@@ -114,7 +113,6 @@ Utgående brannmur må være åpen mot disse adressene:
 | DNS-navn                      | IPv4-adresse                   | Port | Tjeneste | Beskrivelse                                                                       | Inn-/utgående trafikk |
 |-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
 | kontaktregisteret.no                |  139.105.36.169          | 443  | Oppslagstjenesten KRR     | I bruk f.o.m 30.08.2023 | utgående| 
-| krr.digdir.no                       |  146.192.252.54          | 443  | Oppslagstjenesten KRR     | Dersom i bruk. Utgår 18.09.2023   | utgående |
 
 
 ### Test
@@ -122,8 +120,6 @@ Utgående brannmur må være åpen mot disse adressene:
 | DNS-navn                      | IPv4-adresse                   | Port | Tjeneste | Beskrivelse                                                                       | Inn-/utgående trafikk |
 |-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
 | test.kontaktregisteret.no           | 139.105.36.137    | 443 | Oppslagstjenesten KRR | I bruk f.o.m 27.06.2023             | utgående | 
-| krr-ver2.digdir                     | 146.192.252.152   | 443 | Oppslagstjenesten KRR | Dersom i bruk. Utgår 18. august 2023 | utgående |
-| krr-ver1.digdir.no                  | 146.192.252.121  | 443 | Oppslagstjenesten KRR | Utgikk 31.05.2023 | utgående |
 
 
 ## Swagger
@@ -133,23 +129,3 @@ OpenAPI-dokumentasjon.
 |-|-|
 |TEST|[https://test.kontaktregisteret.no/swagger-ui/index.html](https://test.kontaktregisteret.no/swagger-ui/index.html)|
 |PROD|[https://kontaktregisteret.no/swagger-ui/index.html](https://kontaktregisteret.no/swagger-ui/index.html)|
-
-
-
-### Utgåtte endepunkt:
-
- |miljø|url|
- |-|-|
- |VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
- |VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
- |YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer)|
- |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
-
-
-### Utgått Swagger 
-OpenAPI-dokumentasjon for endepunkter. 
-
-|miljø|url|
-|-|-|
-|VER2|[https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html)|
-
