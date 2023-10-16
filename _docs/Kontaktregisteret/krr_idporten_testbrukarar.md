@@ -10,7 +10,7 @@ product: KRR
 redirect_from: /krr_idporten_testbrukarar
 ---
 
-For å teste KRR-integrasjoner i verifikasjonsmiljøene (Ver2/Test) som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av ID-porten testbrukere.
+For å teste KRR-integrasjoner i verifikasjonsmiljøene (Ver2/Test) som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av [ID-porten testbrukere](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html).
 
 
 ## TestID
@@ -29,6 +29,3 @@ Bruk [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å 
 ## BankID og MinID
 
 For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret. Det er også mulig å opprette og logge inn med MinID for tjenester med betydelig sikkerhetsnivå (nivå 3).
-
-
-Les mer om [ID-porten testbrukere](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html).
