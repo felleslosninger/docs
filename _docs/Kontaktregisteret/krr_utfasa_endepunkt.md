@@ -7,7 +7,17 @@ product: KRR
 redirect_from: /krr_utfasa_endepunkt
 ---
 
-## Utfasede IP-adresser 
+## Utfasede endepunkt:
+
+ |miljø|url|
+ |-|-|
+ |VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+ |VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+ |YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+ |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
+
+
+## Utfasede IP-adresser
 
 ### Produksjon
 
@@ -24,18 +34,7 @@ redirect_from: /krr_utfasa_endepunkt
 | krr-ver1.digdir.no                  | 146.192.252.121  | 443 | Oppslagstjenesten KRR | Utfaset 31.05.2023 | utgående |
 
 
-
-## Utgåtte endepunkt:
-
- |miljø|url|
- |-|-|
- |VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
- |VER2|[https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-ver2.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
- |YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/personer)|
- |PROD|[https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer](https://oidc.difi.no/kontaktinfo-oauth2-server/rest/v1/personer)|
-
-
-## Utgått Swagger 
+## Utfaset Swagger 
 OpenAPI-dokumentasjon for endepunkter. 
 
 |miljø|url|
