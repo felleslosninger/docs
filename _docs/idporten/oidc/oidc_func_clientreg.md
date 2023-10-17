@@ -208,7 +208,7 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 | frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri. Dersom ikke satt, så vil ikke 'sid' bli inkludert i id_token. |
 | logo | Nei |Logo som vises i innloggingsbildete utveksles p.t. manuelt |
 
-* NB! Bruk av localhost er ikke tillatt i produksjonsmiljøet. Skal du registrere en localhost uri i testmiljøet, må denne være http:// og ikke https://.
+*NB! Bruk av localhost er ikke tillatt i produksjonsmiljøet. Skal du registrere en localhost uri i testmiljøet, må denne være http:// og ikke https://.
 
 ** Frontchannel logout uri må ha samme domene som en registrert redirect uri.
 
