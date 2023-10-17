@@ -17,7 +17,7 @@ Framgangsmåte:
 <br>
 - Logg inn og hent fødselsnummer på aktuell Tenor testbruker i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/). 
 - Registrer testbruker i KRR ved å følge oppskriften [Opprette testbruker (syntetisk PID) selv i testmiljøet TEST](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html#opprette-testbruker-syntetisk-pid-selv-i-testmilj%C3%B8et-test).
-- sjekke om testbruker er registrert i KRR gjennom tjenesten [MinProfil](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger) i testmiljøet. 
+- sjekke om testbruker er registrert i KRR gjennom tjenesten [MinProfil](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger) i testmiljøet. Du kan logge inn med både TestID og MinID.  
 
 
 ## KRR testbrukere med ulike attributter
