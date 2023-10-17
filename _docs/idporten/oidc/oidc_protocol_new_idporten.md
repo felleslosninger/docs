@@ -96,6 +96,12 @@ The new ID-porten will offer a SSO-free login. Customers will be able to configu
 
 There are new values for authentication levels.  The new values are `idporten-loa-substantial` and `idporten-loa-high`.  They can be used by a client to request user authentication on a minimum level with the `acr_values` parameter.  ID-porten will include the authentication level in the `acr` claim in the `id_token`.
 
+| "Old" ID-porten | "New" ID-porten | Description |
+|-|-|-|
+| | idporten-loa-low | As of now, there are no electronic IDs on the security level |
+| Level3 | idporten-loa-substantial | Equivalent of security level "substantial" in eIDAS. In ID-porten, MinID is currently the only eID on this security level |
+| Level4 | idporten-loa-high | Equivalent of security level "high" in eIDAS. ID-porten offers BankID, Buypass and Commfides on this security level |
+
 ### Forced use of PKCE, state and nonce.
 
 All clients **must** use [PKCE](oidc_func_pkce.html) in addition to instance-uniquie state and nonce values. On todays solution, this is only required by public clients, and voluntarely yet higly recommended for confidential clients.
