@@ -58,6 +58,8 @@ folders:
         jurl: /docs/idporten/oidc/oidc_protocol_tokenintrospect.html
       - title: "/userinfo"
         jurl: /docs/idporten/oidc/oidc_protocol_userinfo.html
+      - title: "/logout"
+        jurl: /docs/idporten/oidc/oidc_protocol_logout.html
       - title: "/revoke"
         jurl: /docs/idporten/oidc/oidc_protocol_revoke.html
       - title: "JWT grants"
