@@ -53,7 +53,6 @@ The token is a JWT with the following structure:
 | delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://sts.altinn.no`
 | scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
 | pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   Not included if `no_pid` scope was requested or pre-registered on the client.  Also not included for machine-type tokens.|
-| token_type | Type of token. Only `Bearer` supported. |
 | iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)| `https://oidc.idporten.no/idporten-oidc-provider`
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
