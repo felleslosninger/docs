@@ -10,11 +10,36 @@ redirect_from: /oidc_protocol_logout
 
 ## About
 
-The `/logout` endpoint is thoroughly documented in [OpenID Connect RP-Initiated Logout 1.0 specification](https://openid.net/specs/openid-connect-rpinitiated-1_0.html)
 
 When the user wants to log out of a client,  the client redirects the browser to the logout endpoint in ID-porten.  ID-porten will then invalidate the central SSO session, and try to log the user out of all other clients, before optionally redirecting the browser back to the originating client.
 
-All clients shall implement logout support.
+Most clients in ID-porten should implement logout support, but there are special cases, fe.x mobile apps, where logout support may not be desirable.  A risk assessment must be performed by customers chosing not to implement logout support. 
+
+
+## Endpoints
+
+The logout endpoint can be found from the [ID-porten metadata](oidc_func_wellknown) as parameter `end_session_endpoint`. 
+
+The `/logout` endpoint is thoroughly documented in [OpenID Connect RP-Initiated Logout 1.0 specification](https://openid.net/specs/openid-connect-rpinitiated-1_0.html). 
+
+## Behaviour
+
+When the end-user wants to logout, the client must redirect the browser to the /logout-endpoint.  Upon receiving the request, ID-porten will try to log the end-user out from all other active clients in the SSO-session as follows:
+
+1. terminate the current SSO-session in ID-porten
+1. invalidate all tokens for pure authentication clients (ie tokens having only `openid` and/or `profile` scopes)
+1. construct a dynamic page where each OIDC-client in parallell are sent a front-channel logout request (one iframe per client)
+1. redirect the browser to each SAML serviceprovider in the session, in turn, with a SAMLLogoutRequest
+1. finally redirect the browser back to the `post_logout_redirect_uri` supplied by the initiating client (if provided). Clients may need to explicitly url-decode the `state` value if it was provided 
+
+We call this prosess "to perform single logout (SLO)"
+
+Please note the following:
+*  if one of the SAML serviceproviders don't redirect the end-user back to ID-porten, the logout-chain is broken, and the end user will stop at that serviceprovider.
+*  the client initiating the /logout will also receive a frontchannel notification in step 3. 
+*  any tokens issues to 3rd-party scopes (beyond `openid`/`profile`) will still be active after a logout. For most scenarios in ID-porten, this is the desired behaviour, and thus the default behaviour.  But a side effect of this design is that ex. [Single-page applications (SPA)/javascript](oidc_auth_spa.html) which have chosen to use ID-porten access_tokens with their own scope directly as their session mechanism, must use the [revoke-endpoint](oidc_protocol_revoke.html) instead (or in addition to) the /logout-endpoint to "log out of the spa".
+
+
 
 ## Request
 
@@ -22,137 +47,32 @@ The client requests a logout by redirecting the browser to the /logout endpoint.
 
 There are different parameters options supported. available for the request, depending on grant type and client authentication method.   The following always apply:
 
-| Parameter  | Value |
-| --- | --- |
-| Http method | POST (GET also supported) |
+| Parameter  | Value | Comment |
+| --- | --- | - |
+| HTTP method | POST | RECOMMENDED |
+| HTTP method | GET | Supported |
 
+We recommend to use POST, as the id_token will then not be included in the web browser log or serverside access logs.
 
-### Request parameters when using `authorization_code` grant
+The following additional attributes should be part of the request: 
 
-The following request parameters are available when using the authorization code grant
-
-| Parameter  | Requirement | Description |
-| --- | --- | --- |
-| client_id | required | The identifier of the client  |
-| grant_type | required | Type of grant the client is sending, ie. `authorization_code` |
-| code | required  | The authorization code received in the authorization response.  |
-| redirect_uri | required | The desired redirect uri.  Must be the same value as was used in the corresponding authentication request. |
-| code_verifier | required | The PKCE code verifier. Mandatory for public clients. Between 43 and 128 characters (ASCII). |
-
-The following request parameters are available when using the authorization code grant
-
-| Parameter  | Requirement | Description |
-| --- | --- | --- |
-| client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
-| client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
-
-
-### Request parameters when using `refresh_token ` grant
-
-The following request parameters are available when using the refresh_token grant
-
-| Parameter  | Requirement | Description |
-| --- | --- | --- |
-| grant_type | required | Type of grant the client is sending, ie. `refresh_token`  |
-| refresh_token | required   | The refresh token  |
-
-Client authentication must be used with this grant.  Client authentication methods client_secret_post or private_key_jwt adds parameters to the request.  Client authentication method client_secret_basic uses the Authorization header.  Client authentication method none cannot be used for the refresh_token grant.
-
-
-### Client authentication
-
-ID-porten supports four client authentication methods:
-
-* client_secret_basic
-* client_secret_post
-* private_key_jwt
-* none
-
-
-#### Client authentication using client secret basic
-
-A previously exchanged out-of-band static secret is used for standard HTTP bacic authentication header comprised of base64 encoded concatenation of client_id + colon + secret.
-
-```
-POST /token
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dGVzdF9ycF95dDI6cGFzc3dvcmQ=
-
-grant_type=authorization_code&
-  redirect_uri=https%3A%2F%2Feid-exttest.difi.no%2Fidporten-oidc-client%2Fauthorize%2Fresponse&
-  code=1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0%3D
-```
-
-
-#### Client authentication using client secret post
-
-A previously exchanged out-of-band static secret is used for authentication.  The secret is added as a claim `client_secret` in the JSON payload of the POST request.
+| Attribute | Cardinality | Description|
+|---|---|---|
+|```id_token_hint```           | recommended | The id_token corresponding to the end user that wants to logout. |
+|```post_logout_redirect_uri```| recommended | Must match one of the pre-registered logout uris on the client.   Must be combined with `id_token_hint`. |
+|```state```                   | recommended | Used by the client, both to detect legitimate calls on the post_logout_uri, as well as  |
 
 
 
+#### About state
 
-#### Client authentication using JWT token
-
-The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
-
-The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see above.
-
-The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grants]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_jwtgrant).
-
-#### Example:
-
-```
-POST /token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=authorization_code&
-   code=n0esc3NRze7LTCu7iYzS6a5acc3f0ogp4&
-   client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&
-   client_assertion=< jwt >
-```
-
-#### No client authentication
-
-Mobile apps and single-page applications are clients which cannot protect a secret/certificate and thus should be pre-registered to use no client authentication.
-
-Use of PKCE and the `state` parameter will be required when using no client authentication.
-
-## Response
-
-The response is a set of tokens and associated metadata, and will depend upon what was requested.
-
-| Claim | Description|
-| - |-|
-|access_token   | An Oauth2 access token, either by reference or as a JWT depending on which scopes was requested and/or client registration properties. |
-|expires_in  | Number of seconds until this access_token is no longer valid   |
-| id_token   | An OpenID Connect id_token. Only returned if 'openid' scope was requested.  |
-| refresh_token  | Issued to confidential clients  |
-| scope   | The list of scopes issued in the access token. Included for convenience only, and should not be trusted for access control decisions.  |
-
-Example:
-```
-{
-  "access_token" : "IxC0B76vlWl3fiQhAwZUmD0hr_PPwC9hSIXRdoUslPU=",
-  "id_token" : "eyJraWQiOiJtcVQ1QTNMT1NJSGJwS3JzY2IzRUhHcnItV0lGUmZMZGFxWl81SjlHUjlzIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiItdi1sY2FlNXJHRy1qbHZ6dXY5WTlIN1I4Tm1BZU0yLWtoMHFXYi12UElFPSIsImF1ZCI6InRlc3RfcnBfeXQyIiwiYWNyIjoiTGV2ZWw0IiwiYXV0aF90aW1lIjoxNDk3NjA1MjE4LCJhbXIiOiJCYW5rSUQiLCJpc3MiOiJodHRwczpcL1wvb2lkYy15dDIuZGlmaS5lb24ubm9cL2lkcG9ydGVuLW9pZGMtcHJvdmlkZXJcLyIsInBpZCI6IjIzMDc5NDEwOTE4IiwiZXhwIjoxNDk3NjA1MzgyLCJsb2NhbGUiOiJuYiIsImlhdCI6MTQ5NzYwNTI2Miwibm9uY2UiOiJtaW5fZmluZV9ub25jZV92ZXJkaSIsImp0aSI6IkhnYjN6d085ZzBiam1TYkNDdFFDeE1vd3NaRXUwMGxDSjJFeGc0Wmh2M2c9In0.Pl9APC3_GGJBLYR3AqZRC8-fjOWdIW3eQAn2zbqstGEyv8AJ6yPLiH0EA4e1RgHxK-dPwtydJF0fV-1aiPjDGYM8d-saN26WBlRyvBRH1j8A9smQv5XxJoXssfxMr-t1ZB5wDM37MOkwMF4zTNPVmyeQ0qM0PAudG7ZpT0gWPksQIWOoSk4A--MoOHPBy41xXWSpOvUh3jBqrnWEcZpqS785Ufofc6cDfXk_wM_-EMAlS-UExMq-hH60nPwXmR0cBNW3GV2xm_frYyqBYnxXoELmzREijpeSyiELTqn2k4nwCjeiGDXXs_Nw12D2KpWLDctqqsUtTTRUhsnCPSoDng",
-  "token_type" : "Bearer",
-  "expires_in" : 599,
-  "refresh_token" : "yBtapz3ThC3uVWufWhxsLtbEidPnEsL7atvfHSBANDs=",
-  "scope" : "openid"
-}
-```
+* Valid regex: ^[\x20-\x7E]+$
+* Ie. accepts valid ascii-characters having hex-value between 20 og 7E, ref. ex. http://www.asciitable.com/
 
 
 
-### The id_token
+#### error cases
 
-The id_token asserts the identity of the authenticated user.  It tells you "who the user is", but not "what the user can access".
+If the ID-porten cookie is not included by the browser when redirecting to the /logout endpoint, ID-porten will not accept the logout and show an error page.
 
-The [id_token is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_id_token).
-
-
-
-### The access token
-
-The access_token enables the client to access APIs on behalf of the authenticated user.  
-
-The [access_token is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).
+If no `id_token_hint` was provided, ID-porten will perform SLO of all other clients in the session, but will not redirect the browser back to the client.  This behaviour is defined in the OIDC specification.
