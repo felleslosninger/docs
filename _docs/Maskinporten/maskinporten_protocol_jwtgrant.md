@@ -67,7 +67,7 @@ The final JWT may look like this:
 }
 .
 {
-  "aud": "https://ver2.maskinporten.no",
+  "aud": "https://test.maskinporten.no",
   "scope": "difitest:test2",
   "iss": "my_client_id",
   "exp": 1520589928,

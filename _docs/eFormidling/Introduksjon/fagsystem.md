@@ -19,6 +19,24 @@ Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen 
 1. TOC
 {:toc}
 
+## Acos WebSak
+
+| **Fagystem**                                                        | Acos WebSak                                                           |
+|---------------------------------------------------------------------|-----------------------------------------------------------------------|
+| **Leverandør**                                                      | Acos AS                                                               |
+| **Prosesser**                                                       |                                                                       |
+| - Innsynskrav fra eInnsyn                                           | Støttes fra versjon 8.14                                              |
+| - Journalpost til eInnsyn                                           | Støttes fra versjon 8.14                                              |
+| - Møte til eInnsyn                                                  | Støttes fra versjon 8.14                                              |
+| - Saksbehandling                                                    | Støttes fra versjon 8.14                                              |
+| - Taushetsbelagt saksbehandling                                     | Støttes fra versjon 8.14                                              |        
+| - Vedtak til innbygger                                              | Støttes fra versjon 8.14                                              |
+| **Leveransemodell**                                                 |                                                                       |
+| - Integrasjonspunkt driftes av kunde                                | Støttes                                                               |
+| - Integrasjonspunkt driftes av leverandør                           | Støttes                                                               |
+| - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes ikke                                                          |
+| **Lenker**                                                          | [Acos WebSak](https://www.acos.no/produkter-og-tjenester/sak-og-arkivsystem/websak/) (ekstern lenke) |
+
 ## Bedre Sak Enn Arkiv (eksempel)
 
 | **Fagystem**                                                        | Bedre Sak Enn Arkiv (eksempel)                                        |

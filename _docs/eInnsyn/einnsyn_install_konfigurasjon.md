@@ -55,6 +55,10 @@ Dette er innstillinger som kan endres, men ikke nødvendigvis må endres for å 
 * ```<logpath>%BASE%/Loggkatalog</logpath> ``` er for å velge loggkatalog. %BASE% variabelen peker på installasjonsmappen.
 * ```<id>einnsyn-klient</id>``` og ```<name>einnsyn-klient</name>``` er for å velge id og navn på tjenesten i listen over Windows tjenester. 
 
+**Transportsikring**  
+En kan også slå på støtte for transportsikring integrasjonspunktet. Se hvordan [her](eFormidling/installasjon/installasjon#transportsikring).  
+I klienten må en da endre til -Dapplication.moveUrl=https://servernavn.no:portnummer.
+
 #### Loggrotering
 I tillegg kan du legge inn loggrotering om det er ønskelig. Dermed kan du rotere logger på størrelse og velge hvor mange en ønsker å ta vare på. standardstørrelsen her er 10MB, denne kan du endre til ønsket størrelse. Antall filer som blir tatt vare på er 8. Dette kan også endres. Sørg for at dette er innenfor ``` <service> </service> ``` taggen slik som resten av konfigurasjonen.
 
