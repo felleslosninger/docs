@@ -10,6 +10,16 @@ redirect_from: /oidc_protocol_tokenintrospect
 
 ## About
 
+A resource server can introspect an access token to determine the active state of the token and/or to determine meta-information about this token.
+
+To avoid information leakage, three conditions must be fulfilled for introspection to work:
+  
+  * The scope(s) in the token must be configured with the client_id of the resource server that should be allowed to introspect (`enforced_aud_for_introspection`)
+  * This client_id must in addition be registered with the `idporten:token.introspection` scope
+  * The client must perform client authentication on the introspection endpoint
+  
+**Breaking change:** Note that the behaviour above is a breaking change from the the old ID-porten.
+
 The `/tokenintrospect` endpoint is thoroughly documented in [RFC 7662 OAuth 2.0 Token Introspection ](https://tools.ietf.org/html/rfc7662)
 
 
@@ -70,3 +80,5 @@ Sample response:
 ```
 
 ### Introspection of pseudonymous tokens
+
+If the scope in the access token was configured to trigger issuance of pseudonymous tokens, then the norwegian person identifier (`pid`-claim) will be included in the introspection response.
