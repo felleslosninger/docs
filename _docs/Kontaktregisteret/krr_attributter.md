@@ -43,3 +43,9 @@ Du kan finne et utvalg testbrukere på siden [Testbrukere i KRR]({{site.baseurl}
 |IKKE_REGISTRERT|	Person finnes ikke i registeret|
 
 ## Kodeverk for `varslingsstatus`
+Varslingsstatus kan ha følgende verdi:
+
+| ---- | ---- |
+| **Kodeverdi** | **Beskrivelse** | 
+| KAN_VARSLES | Person har ikke utgått kontaktinformasjon |
+| KAN_IKKE_VARSLES | Person har utgått kontaktinformasjon, er reservert, er slettet eller finnes ikke i registeret |
