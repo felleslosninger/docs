@@ -14,7 +14,7 @@ redirect_from: /maskinporten_skyporten
 
 ## For deg som skal tilby via Azure
 
-## Oppsett
+### Oppsett
 
 Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
 [Her er informasjon om hvordan du kommer i gang med Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#tilgang-til-maskinporten).
@@ -74,22 +74,6 @@ export SUBSCRIPTION_ID="77777777-7777-7777-7777-777777777777"
 
 ### Add federated credentials
 
-#### Create credential.json
-
-credential.json should contain something like this:
-
-``````json
-{
-    "name": "oidcpilotcreds",
-    "issuer": "https://sky.maskinporten.dev/",
-    "subject": "0192:999999999",
-    "description": "Testing skyporten",
-    "audiences": [
-        "https://sky.organisasjonsnavn.no"
-    ]
-}
-``````
-
 ### Create a resource group, storage account and storage share
 
 ``````bash
@@ -144,13 +128,13 @@ export IDENTITY_CLIENT_ID="44444444-cf66-4934-b34c-444444444444"
 ``````bash
 export CREDENTIAL_NAME="SkyvesenetFedCreds"
 
-az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-name "$IDENTITY" --resource-group "$STORAGE_RG" --issuer "https://sky.maskinporten.dev/" --subject "0192:917422575" --audiences "https://sky.organisasjonsnavn.no"
+az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-name "$IDENTITY" --resource-group "$STORAGE_RG" --issuer "https://sky.maskinporten.dev" --subject "0192:917422575" --audiences "https://sky.organisasjonsnavn.no"
 {
   "audiences": [
     "https://sky.menneskemaskin.no"
   ],
   "id": "/subscriptions/11111111-a899-447c-b453-111111111111/resourcegroups/filestorage-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/SkyvesenetIdentity/federatedIdentityCredentials/SkyvesenetFedCreds",
-  "issuer": "https://sky.maskinporten.dev/",
+  "issuer": "https://sky.maskinporten.dev",
   "name": "SkyvesenetFedCreds",
   "resourceGroup": "filestorage-rg",
   "subject": "0192:917422575",
@@ -244,7 +228,7 @@ The unpacked token will look something like this:
   "aud": "https://entur.org",
   "sub": "0192:917422575",
   "scope": "entur:foo.1",
-  "iss": "https://sky.maskinporten.dev/",
+  "iss": "https://sky.maskinporten.dev",
   "client_amr": "private_key_jwt",
   "token_type": "Bearer",
   "exp": 1694222211,
@@ -274,11 +258,11 @@ az storage file download --account-name $STORAGE_ACC --share-name $STORAGE_SHARE
 
 ### Feilsøking
 
-#### Missing trailing slash (`/`) in issue argument when calling `az identity federated-credential create`
+#### Trailing slash (`/`) in issuer argument when calling `az identity federated-credential create`
 
 ``````bash
 az login --service-principal -u $IDENTITY_CLIENT_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
-AADSTS70021: No matching federated identity record found for presented assertion. Assertion Issuer: 'https://sky.maskinporten.dev/'. Assertion Subject: '0192:917422575'. Assertion Audience: 'https://sky.foo.com'.
+AADSTS70021: No matching federated identity record found for presented assertion. Assertion Issuer: 'https://sky.maskinporten.dev'. Assertion Subject: '0192:917422575'. Assertion Audience: 'https://sky.foo.com'.
 ``````
 
 The issuer must exactly match the issuer in the credential. Update or recreate the credential with trailing slash in the issuer.
