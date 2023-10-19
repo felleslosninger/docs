@@ -12,6 +12,8 @@ redirect_from: /maskinporten_skyporten
 * TOC
 {:toc}
 
+## For deg som skal tilby via Azure
+
 ## Oppsett
 
 Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
@@ -214,9 +216,18 @@ Logout to be able to test the login credentials.
 az logout
 ``````
 
-## Autentisering med Maskinporten
+## For deg som skal konsumere fra Azure
 
-### Definer token som miljøvariabel
+### Oppsett
+
+Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
+[Her er informasjon om hvordan du kommer i gang med Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#tilgang-til-maskinporten).
+
+[Her er et node.js eksempel på token-generering for skyporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#eksempel-kode-for-token-generering).
+
+### Autentisering med Maskinporten
+
+#### Definer token som miljøvariabel
 
 Her foventes det å finne maskinporten-token i full json i `tmp_maskinporten_access_token.json`. Dette er kan opprettes med et av
 [disse kode-eksemplene]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#kode-eksempler-for-maskinporten).
@@ -248,7 +259,7 @@ The unpacked token will look something like this:
 ``````
 
 
-### Login with the federated credentials and download a file, to test access
+#### Login with the federated credentials and download a file, to test access
 
 ``````bash
 # Login with skyporten token
@@ -261,9 +272,9 @@ az storage file list --account-name $STORAGE_ACC --share-name $STORAGE_SHARE | j
 az storage file download --account-name $STORAGE_ACC --share-name $STORAGE_SHARE --auth-mode login --enable-file-backup-request-intent --path remotebar.txt
 ``````
 
-## Troubleshooting
+### Feilsøking
 
-### Missing trailing slash (`/`) in issue argument when calling `az identity federated-credential create`
+#### Missing trailing slash (`/`) in issue argument when calling `az identity federated-credential create`
 
 ``````bash
 az login --service-principal -u $IDENTITY_CLIENT_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
@@ -273,14 +284,14 @@ AADSTS70021: No matching federated identity record found for presented assertion
 The issuer must exactly match the issuer in the credential. Update or recreate the credential with trailing slash in the issuer.
 
 
-### Token timeout error (as expected since token has timed out)
+#### Token timeout error (as expected since token has timed out)
 
 ``````bash
 az login --service-principal -u $IDENTITY_CLIENT_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
 AADSTS700024: Client assertion is not within its valid time range. Current time: 2023-08-01T11:08:01.5274809Z, assertion valid from 2023-08-01T09:28:26.0000000Z, expiry time of assertion 2023-08-01T10:28:26.0000000Z. Review the documentation at https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials .
 ``````
 
-### Wrongly using service principal id instead of client id
+#### Wrongly using service principal id instead of client id
 
 ``````bash
 az login --service-principal -u $SERVICE_PRINCIPAL_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
