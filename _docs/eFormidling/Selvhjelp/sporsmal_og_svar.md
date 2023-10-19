@@ -182,6 +182,14 @@ Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer 
 3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
 4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
 
+### Hvordan kan jeg manuelt laste ned en innkommende melding fra integrasjonspunktet?
+
+For å manuelt laste ned en innkommende melding fra integrasjonspunktet trenger du en HTTP-klient med GUI (for eksempel Postman) eller en kommandolinje/terminal som støtter kommandoen `curl`.
+
+1. Lås meldingen: `curl 'http://localhost:9093/api/messages/in/peek/?messageID=2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET`
+2. Last ned meldingen: `curl 'http://localhost:9093/api/messages/in/pop/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET > asic.zip`
+3. EVENTUELT - marker meldingen som ferdig behandla: `curl 'http://localhost:9093/api/messages/in/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X DELETE`
+
 ## Digital Post til Innbyggere
 
 ### Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?
@@ -199,11 +207,18 @@ difi.move.feature.statusQueueIncludes=DPI
 
 ### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?
 
-Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
+En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG:
+
+1. Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
 
 - [Last ned](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
-En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG-kommandoen under:
+2. eFormidlings offentlige kodesigneringsnøkkel må legges inn i nøkkelringen på maskina hvor signaturen skal verifiseres:
+```
+gpg --import <sti-til-nedlastet-signeringsnøkkel>
+```
+
+3. Deretter kan signaturen verifiseres vha. kommandoen under:
 
 ```
 gpg --verify "integrasjonspunkt-X.Y.Z.jar.asc" "integrasjonspunkt-X.Y.Z.jar"

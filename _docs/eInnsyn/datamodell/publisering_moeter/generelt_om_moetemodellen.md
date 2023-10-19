@@ -19,7 +19,9 @@ typisk forekomstar av innkallingar, protokollar osv. Medan møteasaksregistrerin
 ## Bruk av modellen
 ![Overornda datamodell møter]({{site.baseurl}}/images/einnsyn/einnsyn_bruk_av_moetedatamodell.png)
 
-## Prioritering av møter ved sending
+## Prioritering av møter ved sending 
+*(OBS! Egen inn-kø for møter vil opphøre 1.januar 2024)*
+
 I mottak på eInnsyn er det oppretta ein eigen inn-kø for møter. Dette er for å øke gjennomstrømning av for møteavlevering.
 
 For å ta i bruk denne så må ein ved sending over integrasjonspunktet endre prosesstype til *meeting*, der det i dag er *journalpost*.

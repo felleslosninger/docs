@@ -66,7 +66,6 @@ folders:
       - title: Innbygger-bundne tokens
         jurl: /docs/Maskinporten/maskinporten_func_pid_restricted_tokens
 
-
 - title: Spørsmål og svar
   folderitems:
 
@@ -78,6 +77,19 @@ folders:
 
   - title: Feilsøking i Maskinporten
     jurl: /docs/Maskinporten/maskinporten_feilsoking
+
+
+- title: Skyporten
+  folderitems:
+
+  - title: Hva er Skyporten?
+    jurl: /docs/Maskinporten/maskinporten_skyporten
+  - title: Skyporten med GCP
+    jurl: /docs/Maskinporten/maskinporten_skyporten_gcp
+  - title: Skyporten med Azure
+    jurl: /docs/Maskinporten/maskinporten_skyporten_azure
+  - title: Skyporten med AWS
+    jurl: /docs/Maskinporten/maskinporten_skyporten_aws
 
 ###########################
 

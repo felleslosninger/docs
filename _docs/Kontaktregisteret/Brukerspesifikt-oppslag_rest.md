@@ -1,5 +1,5 @@
 ---
-title: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsregisteret
+title: Oppslag ved innlogget bruker (brukerstyrt datadeling)
 description: OAuth2-beskytta bruker-spesifikt REST-API for Kontakt- og Reservasjonsregisteret
 summary: "Kontaktinformasjon fra Kontakt- og Reservasjonsregisteret tilhørende  innlogget bruker er tilgjengelig på et eget Oauth2-beskyttet REST-API."
 
@@ -10,20 +10,12 @@ redirect_from: /brukerspesifikt_oppslag_krr_rest
 
 ## Introduksjon
 
-Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest).
+Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest). Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og det er i noen sammenhenger mer hensiktsmessig og bruke denne tjenesten. 
 
-Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og dette kan i noen sammenhenger være mer hensiktsmessig.
-
-## Hvordan få tilgang ?
-
-Kunde må godkjenne bruksvilkår for Kontakt- og Reservasjonsregisteret for å kunne motta kontaktopplysningene.
 
 ## Bruk av Oauth2
 
-Tjenesten baserer seg på [autentiseringsnær autorisasjon]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2).
-
-
-Man må forespørre ett eller flere av følgende scopes:
+Oppslag ved innlogget bruker baserer seg på [brukerstyrt datadeling]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2). I tillegg til idporten-scopene openid og profile, må det forespørres ett eller flere av følgende scopes:
 
 
 | scope | beskrivelse |
@@ -37,13 +29,9 @@ Man må forespørre ett eller flere av følgende scopes:
 
 ## API-endepunkt
 
-OpenAPI-dokumentasjon ligg her: [https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html#/Person](https://oidc-ver2.difi.no//kontaktinfo-oauth2-server/swagger-ui/index.html#/Person)
-
 |miljø|url|
 |-|-|
-|VER1|[https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc-ver1.difi.no/kontaktinfo-oauth2-server/rest/v1/person)|
-|TEST/VER2|[https://test.kontaktregisteret.no/rest/v1/person](https://test.kontaktregisteret.no/rest/v1/person)|
-|YT2|[https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/person](https://oidc-yt2.difi.eon.no/kontaktinfo-oauth2-server/rest/v1/person)|
+|TEST|[https://test.kontaktregisteret.no/rest/v1/person](https://test.kontaktregisteret.no/rest/v1/person)|
 |PROD|[https://kontaktregisteret.no/rest/v1/person](https://kontaktregisteret.no/rest/v1/person)|
 
 

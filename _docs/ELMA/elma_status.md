@@ -8,6 +8,22 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 18.09.2023 (3.22.3)
+
+### Tasks
+
+```
+Vedlikehald: Oppdatering av rammeverk og bibliotek
+```
+
+## ELMA update 22.08.2023 (3.21.1)
+
+### Tasks
+
+```
+Fjerna moglegheit for å registrera nye AS2-endepunkt
+```
+
 ## ELMA update 27.06.2023 (3.20.0)
 
 ### Tasks
