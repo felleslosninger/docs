@@ -44,4 +44,4 @@ A dependency can also be fulfilled across endpoints and service providers. If a 
 
 *Screenshot 2: You can see what dependencies a Profile has under [“Processes” in ELMA-web](https://smp.difi.no/process).*
 
-For a guide on how to upgrade existing participants to support new Profiles, see [this page](upgradeTo0192Profiles.html).
+For a guide on how to upgrade existing participants to support new Profiles, see [this page](https://docs.digdir.no/docs/ELMA/elma_upgradingto0192profiles).
