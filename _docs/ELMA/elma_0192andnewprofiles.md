@@ -40,7 +40,7 @@ For example, the new profile “PEPPOLBIS_3_0_BILLING_01_CII” has “BIS05 V2�
 
 A dependency can also be fulfilled across endpoints and service providers. If a Profile which is a required dependency already exists on another endpoint, even an endpoint from another service provider
 
-![]({{site.baseurl}}/images/elma/elma/view_process.png)
+![]({{site.baseurl}}/images/elma/view_process.png)
 
 *Screenshot 2: You can see what dependencies a Profile has under [“Processes” in ELMA-web](https://smp.difi.no/process).*
 
