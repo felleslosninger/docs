@@ -10,7 +10,7 @@ redirect_from: /elma_icd0192andnewprofiles
 
 *Updated: 22.08.2023*
 
-See also [separate page on how to upgrade existing participants to support the new Profiles](upgradeTo0192Profiles.html).
+See also [separate page on how to upgrade existing participants to support the new Profiles](https://docs.digdir.no/docs/ELMA/elma_upgradingto0192profiles).
 
 ## Norway has migrated from ICD 9908 to 0192
 After 23.05.2023, the ICD 9908 is no longer used in the PEPPOL network.
