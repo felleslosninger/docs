@@ -47,8 +47,8 @@ Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i 
 
 **OTC**
 
-- innlogging: otc12
-- glemt passord: otc123
+- innlogging: 12345  (Ny kode f.o.m. 24.10.2023)
+- glemt passord: 12345  (Ny kode f.o.m. 24.10.2023)
 
 
 ## BankID
