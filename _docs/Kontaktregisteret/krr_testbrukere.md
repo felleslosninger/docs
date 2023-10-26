@@ -43,8 +43,8 @@ Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse
 
 
 ### Syntetiske testbrukere
-| - | - | - | - | - | - | - | - | - |
 | Fnr | Reservert | Status | Varslingsstatus | Mobil | Epost | Postkasse | Spraak | Merknad |
+|-----|-----------|--------|-----------------|-------|-------|-----------|--------|---------|
 | 11887197158 | NEI | AKTIV | KAN_IKKE_VARSLES | JA |  JA | - | - | Utgaatt kontaktinformasjon 18mnd regelen |
 | 30850649509 | NEI | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Utgaatt kontaktinformasjon 18mnd regelen |
 | 17894199350 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
@@ -67,8 +67,8 @@ Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse
       
       
 ### Ikke-syntetiske testbrukere (=vanlig fødselsnummer) 
-| - | - | - | - | - | - | - | - | - |
 | Fnr | Reservert | Status | Varslingsstatus | Mobil | Epost | Postkasse | Spraak | Merknad |
+|-----|-----------|--------|-----------------|-------|-------|-----------|--------|---------|
 | 01048800153 | NEI | AKTIV | KAN_IKKE_VARSLES | JA |  JA | - | - | Utgaatt kontaktinformasjon 18mnd regelen |
 | 01066100746 | NEI | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Utgaatt kontaktinformasjon 18mnd regelen |
 | 27129323960 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
