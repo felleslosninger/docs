@@ -21,13 +21,13 @@ Framgangsmåte:
 
 
 ## Endre kontaktinformasjon på syntetisk testbruker i KRR
-Det er mulig å endre kontaktinformasjon på syntetiske testbrukere ved å logge inn på [MinProfil](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger).
+Det er mulig å endre kontaktinformasjon på syntetiske testbrukere ved å logge inn på MinProfil.
 For å endre kontaktinformasjon på syntetiske brukere, velg TestID som innloggingsmetode. 
 
 Kontaktinformasjon (e-post, mobil) tilbakestilles på alle syntetiske testbrukere hver lørdag.
-
+<br>
 {% include note.html content=" Dersom du legger inn egen kontaktinformasjon på en testbruker, kan du risikere å motta varslinger fra virksomheter som benytter KRR i testmiljøet." %}
-
+<br>
 
 ## KRR testbrukere med ulike attributter
 Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse tilbakestilt hver lørdag. Det ene settet er testbrukere med vanlige fødselsnummer, og det andre settet er med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR:
@@ -42,7 +42,9 @@ Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse
 - Reservert uten digital postkasse
 
 
-### Syntetiske testbrukere
+### Syntetiske testbrukere (fra Tenor testbase)
+
+<br>
 
 |Fnr|Reservert|Status|Varslingsstatus|Mobil|Epost|Postkasse|Språk|Merknad|
 | - | - | - | - | - | - | - | - | - |
@@ -68,6 +70,8 @@ Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse
       
       
 ### Ikke-syntetiske testbrukere (=vanlig fødselsnummer) 
+
+<br>
 
 | Fnr | Reservert | Status | Varslingsstatus | Mobil | Epost | Postkasse | Spraak | Merknad |
 |-----|-----------|--------|-----------------|-------|-------|-----------|--------|---------|
