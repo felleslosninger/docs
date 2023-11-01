@@ -67,16 +67,16 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)|
 | aud | "audience" - The client_id of the client receiving this id_token  |
 | sub | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.  |
-| pid | OPTIONAL: "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user. |
-| acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values documented below.  The level must be validated by the client. |
+| pid |  "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user. Note that some eID providers (ie: foreign users) in ID-porten may not supply a pid. |
+| acr | "Authentication Context Class Reference" - The security level of assurance for the authentication. Possible values documented below.  The level MUST be validated by the client. |
 | amr | "Authentication Method References" - Method of authentication. Possible values can be seen below.  The available values may change over time, so the client should not validate this value. |
 | auth_time | Timestamp indicating when the authentication was performed.  |
 | iat | Timestamp when this token was issued. If different from `auth_time`, this indicates a federated/sso login. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | jti | jwt id - unique identifer for a given token  |
 | locale | The language selected by the user during the authentication in ID-porten |
-| sid | session id - an unique identifier for end user session at ID-porten.  `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required` |
-|at_hash| A hash of the access_token issued together with this id_token. The client may use this value to protect against access_token injections when flows where tokens are delivered from the authorization endpoint. (ID-porten will not include the `at_hash` claim when tokens are delivered from the token endpoint. |
+| sid | session id - an unique identifier for end user session at ID-porten. Clients should store the value to be able to handle frontchannel logout notifications. Note that `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required`.  |
+
 
 
 
