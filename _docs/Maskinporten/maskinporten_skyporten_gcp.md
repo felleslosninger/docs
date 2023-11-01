@@ -181,7 +181,10 @@ gcloud storage buckets add-iam-policy-binding gs://$BUCKET --member=serviceAccou
 Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
 [Her er informasjon om hvordan du kommer i gang med Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#tilgang-til-maskinporten).
 
+[Her er et node.js eksempel på token-generering for skyporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#eksempel-kode-for-token-generering).
+
 ### Autentisering med Maskinporten-token med gcloud
+
 Enten kan du få en `credentials.json`-fil som er output fra `glcloud iam workload-identity-pools create-cred-config` fra tilbyder,
 eller du kan lage en selv gitt informasjon om følgende variable fra tilbyder
 
@@ -199,7 +202,7 @@ gcloud iam workload-identity-pools create-cred-config $PROVIDER_FULL_IDENTIFIER 
 
 Nå vil credentials json se ut som eksempelt her
 
-```json 
+```json
 {
   "type": "external_account",
   "audience": "//iam.googleapis.com/projects/<project number>/locations/global/workloadIdentityPools/<pool id>/providers/<provider id>",
@@ -236,10 +239,10 @@ Copying gs://[bucket name]/foo_remote.txt to file://foo_local.txt
 
 ### Eksempel for konsument
 
-Dersom du ønsker å teste ut å konsumere fra en filbøtte, finnes det et åpent scope i Maskinporten sitt test-miljø som du 
-kan benytte. 
+Dersom du ønsker å teste ut å konsumere fra en filbøtte, finnes det et åpent scope i Maskinporten sitt test-miljø som du
+kan benytte.
 
-Scopet heter `entur:skyporten:demo` og er et offentlig scope som ikke trenger noen form for tildeling.  
+Scopet heter `entur:skyporten:demo` og er et offentlig scope som ikke trenger noen form for tildeling.
 
 Required audience i Maskinporten-tokenet er `https://skyporten.entur.org`. `credentials.json` ligger på [Slack](https://offentlig-paas-no.slack.com/archives/C050R0TRU2Z/p1696852093603749)
 og forventer at fila token.json finnes og inneholder Maskinporten-token i atributtet `access_token`.
@@ -249,6 +252,24 @@ Kjør deretter og velkommen!
 ```bash
 export BUCKET="skyporten-public-demo"
 gcloud auth login --cred-file=credentials.json
-gcloud storage ls gs://$BUCKET 
-gcloud storage cp gs://$BUCKET/velkommen.txt velkommen_local.txt 
+gcloud storage ls gs://$BUCKET
+gcloud storage cp gs://$BUCKET/velkommen.txt velkommen_local.txt
 ```
+
+## Feilsøking
+
+### Invalid JWT claim
+
+Dette kan skyldes avsluttende skråstrek i `audience`.
+
+Når JWT-token genereres med audience `https://sky.maskinporten.dev`, så må det gjøres uten avsluttende skråstrek (trailing slash).
+
+Hvis spørringen mot Maskinporten har trailing slash i Token for `aud` verdien vil man få feilen:
+
+``````json
+{
+    "message": "Http response code: 400, url: 'https://sky.maskinporten.dev/token', message: '{\"error\": \"invalid grant\",\"error description\":\"Invalid assertion. Client authentication failed.
+Invalid JWT claim aud. (trace_id: 5d5d5d5d5d5d5d5d5d5d5d5d5d5d5d)\"}'",
+``````
+
+Løsningen er altså å fjerne avsluttende skråstrek i audience når man genererer JWT-token.

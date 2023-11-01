@@ -12,7 +12,9 @@ redirect_from: /maskinporten_skyporten
 * TOC
 {:toc}
 
-## Oppsett
+## For deg som skal tilby via Azure
+
+### Oppsett
 
 Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
 [Her er informasjon om hvordan du kommer i gang med Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#tilgang-til-maskinporten).
@@ -72,22 +74,6 @@ export SUBSCRIPTION_ID="77777777-7777-7777-7777-777777777777"
 
 ### Add federated credentials
 
-#### Create credential.json
-
-credential.json should contain something like this:
-
-``````json
-{
-    "name": "oidcpilotcreds",
-    "issuer": "https://sky.maskinporten.dev/",
-    "subject": "0192:999999999",
-    "description": "Testing skyporten",
-    "audiences": [
-        "https://sky.organisasjonsnavn.no"
-    ]
-}
-``````
-
 ### Create a resource group, storage account and storage share
 
 ``````bash
@@ -142,13 +128,13 @@ export IDENTITY_CLIENT_ID="44444444-cf66-4934-b34c-444444444444"
 ``````bash
 export CREDENTIAL_NAME="SkyvesenetFedCreds"
 
-az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-name "$IDENTITY" --resource-group "$STORAGE_RG" --issuer "https://sky.maskinporten.dev/" --subject "0192:917422575" --audiences "https://sky.organisasjonsnavn.no"
+az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-name "$IDENTITY" --resource-group "$STORAGE_RG" --issuer "https://sky.maskinporten.dev" --subject "0192:917422575" --audiences "https://sky.organisasjonsnavn.no"
 {
   "audiences": [
     "https://sky.menneskemaskin.no"
   ],
   "id": "/subscriptions/11111111-a899-447c-b453-111111111111/resourcegroups/filestorage-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/SkyvesenetIdentity/federatedIdentityCredentials/SkyvesenetFedCreds",
-  "issuer": "https://sky.maskinporten.dev/",
+  "issuer": "https://sky.maskinporten.dev",
   "name": "SkyvesenetFedCreds",
   "resourceGroup": "filestorage-rg",
   "subject": "0192:917422575",
@@ -214,9 +200,18 @@ Logout to be able to test the login credentials.
 az logout
 ``````
 
-## Autentisering med Maskinporten
+## For deg som skal konsumere fra Azure
 
-### Definer token som miljøvariabel
+### Oppsett
+
+Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
+[Her er informasjon om hvordan du kommer i gang med Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#tilgang-til-maskinporten).
+
+[Her er et node.js eksempel på token-generering for skyporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#eksempel-kode-for-token-generering).
+
+### Autentisering med Maskinporten
+
+#### Definer token som miljøvariabel
 
 Her foventes det å finne maskinporten-token i full json i `tmp_maskinporten_access_token.json`. Dette er kan opprettes med et av
 [disse kode-eksemplene]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#kode-eksempler-for-maskinporten).
@@ -233,7 +228,7 @@ The unpacked token will look something like this:
   "aud": "https://entur.org",
   "sub": "0192:917422575",
   "scope": "entur:foo.1",
-  "iss": "https://sky.maskinporten.dev/",
+  "iss": "https://sky.maskinporten.dev",
   "client_amr": "private_key_jwt",
   "token_type": "Bearer",
   "exp": 1694222211,
@@ -248,7 +243,7 @@ The unpacked token will look something like this:
 ``````
 
 
-### Login with the federated credentials and download a file, to test access
+#### Login with the federated credentials and download a file, to test access
 
 ``````bash
 # Login with skyporten token
@@ -261,26 +256,26 @@ az storage file list --account-name $STORAGE_ACC --share-name $STORAGE_SHARE | j
 az storage file download --account-name $STORAGE_ACC --share-name $STORAGE_SHARE --auth-mode login --enable-file-backup-request-intent --path remotebar.txt
 ``````
 
-## Troubleshooting
+### Feilsøking
 
-### Missing trailing slash (`/`) in issue argument when calling `az identity federated-credential create`
+#### Trailing slash (`/`) in issuer argument when calling `az identity federated-credential create`
 
 ``````bash
 az login --service-principal -u $IDENTITY_CLIENT_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
-AADSTS70021: No matching federated identity record found for presented assertion. Assertion Issuer: 'https://sky.maskinporten.dev/'. Assertion Subject: '0192:917422575'. Assertion Audience: 'https://sky.foo.com'.
+AADSTS70021: No matching federated identity record found for presented assertion. Assertion Issuer: 'https://sky.maskinporten.dev'. Assertion Subject: '0192:917422575'. Assertion Audience: 'https://sky.foo.com'.
 ``````
 
 The issuer must exactly match the issuer in the credential. Update or recreate the credential with trailing slash in the issuer.
 
 
-### Token timeout error (as expected since token has timed out)
+#### Token timeout error (as expected since token has timed out)
 
 ``````bash
 az login --service-principal -u $IDENTITY_CLIENT_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
 AADSTS700024: Client assertion is not within its valid time range. Current time: 2023-08-01T11:08:01.5274809Z, assertion valid from 2023-08-01T09:28:26.0000000Z, expiry time of assertion 2023-08-01T10:28:26.0000000Z. Review the documentation at https://docs.microsoft.com/azure/active-directory/develop/active-directory-certificate-credentials .
 ``````
 
-### Wrongly using service principal id instead of client id
+#### Wrongly using service principal id instead of client id
 
 ``````bash
 az login --service-principal -u $SERVICE_PRINCIPAL_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN

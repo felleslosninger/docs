@@ -115,6 +115,10 @@ Sentrale aspekter av arkitekturen:
 
 ![Skyporten autoriseringsflyt]({{site.baseurl}}/images/maskinporten/skyporten_autorization_flow.png)
 
+### Eksempel-kode for Token generering
+
+Du kan se [eksempel-kode for token-generering i node.js her](https://github.com/entur/exploratory-maskinporten-token/).
+
 ## Kontakt
 
 Vi oppfordrer alle som er interesserte til snakke med oss på [Slack](https://offentlig-paas-no.slack.com/archives/C050R0TRU2Z) eller mail kontakt@samferdselsdata.no dersom du er interessert eller har spørsmål.
