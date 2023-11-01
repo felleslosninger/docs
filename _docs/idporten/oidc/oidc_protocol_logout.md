@@ -43,24 +43,25 @@ Please note the following:
 
 ## Request
 
-The client requests a logout by redirecting the browser to the /logout endpoint.
-
-There are different parameters options supported. available for the request, depending on grant type and client authentication method.   The following always apply:
+The client requests a logout by redirecting the browser to the /logout endpoint. This can happen in two ways:
 
 | Parameter  | Value | Comment |
 | --- | --- | - |
 | HTTP method | POST | RECOMMENDED |
 | HTTP method | GET | Supported |
 
-We recommend to use POST, as the id_token will then not be included in the web browser log or serverside access logs.
+We recommend to use POST, as the id_token_hint will then not be included in the web browser history or serverside access logs.
 
-The following additional attributes should be part of the request: 
+These query parameters should be part of the request: 
 
 | Attribute | Cardinality | Description|
 |---|---|---|
-|```id_token_hint```           | recommended | The id_token corresponding to the end user that wants to logout. |
-|```post_logout_redirect_uri```| recommended | Must match one of the pre-registered logout uris on the client.   Must be combined with `id_token_hint`. |
-|```state```                   | recommended | Used by the client, both to detect legitimate calls on the post_logout_uri, as well as  |
+|```state```                   | recommended | Can be used by the client to detect legitimate calls on the post_logout_uri, and also transfer relevant user-state information if needed when handling the logout response.  |
+
+If the client wants ID-porten to redirect the end user back to the client, the following query parameters must be present:
+
+|```id_token_hint```           | optional | The id_token corresponding to the end user that wants to logout. |
+|```post_logout_redirect_uri```| optional | Must match one of the pre-registered logout uris on the client.   Must be combined with `id_token_hint`. |
 
 
 
