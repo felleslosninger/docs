@@ -28,7 +28,7 @@ redirect_from:
 
 **Vedlikehald**
 
-- Patchar av ulike rammeverk
+- Patchar av ulike rammeverk. Bl.a er ActiveMQ bumpet til versjon 5.16.7 for å unngå mulig sårbarheit i eldre versjonar.
 
 ## 2.23.1
 
