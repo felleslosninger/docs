@@ -18,11 +18,24 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.24.0
+
+02.11.2023
+
+**Funksjonalitet**
+
+- Ny funksjonalitet for uthenting av statusar mellom to tidspunkt. ([**Api-dokumentasjon**](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api_restdocs#_example_5_time_range_5))
+
+**Vedlikehald**
+
+- Patchar av ulike rammeverk
+
 ## 2.23.1
 
 11.10.2023
 
 **Vedlikehald**
+
 - Helsesjekken i Docker-biletet til Integrasjonspunktet brukar no Wget i staden for cURL
 
 ## 2.23.0
@@ -30,13 +43,15 @@ redirect_from:
 22.09.2023
 
 **Funksjonalitet**
-- Støtte i DPI-klienten for fleire nye policyar i verksemdssertifkat frå Commfides 
+
+- Støtte i DPI-klienten for fleire nye policyar i verksemdssertifkat frå Commfides
 
 ## 2.22.1
 
 19.09.2023
 
 **Funksjonalitet**
+
 - Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
 
 ## 2.22.0
@@ -48,6 +63,7 @@ redirect_from:
 - Ny DPI-infrastruktur innført som standard-innstilling i eFormidling
 
 **Feilrettingar**
+
 - Korrelasjons-ID vert kun tilordna på relevante logginnslag
 - Meir forståelege feilmeldingar ved feilresponar frå FIKS/SvarUt
 
@@ -755,6 +771,7 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 22.09.2023
 
 **Funksjonalitet**
+
 - Støtte for fleire nye policyar i verksemdssertifkat frå Commfides
 
 ## ServiceRegistry 2.16.0
@@ -762,6 +779,7 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 19.09.2023
 
 **Funksjonalitet**
+
 - Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
 
 ## ServiceRegistry 2.15.0
