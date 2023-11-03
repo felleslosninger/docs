@@ -41,9 +41,7 @@ Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen 
 | - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes ikke                                                          |
 | **Lenker**                                                          | [Acos WebSak](https://www.acos.no/produkter-og-tjenester/sak-og-arkivsystem/websak/) (ekstern lenke) |
 
-## Mal for Selvdeklarering
-
-### Navn på løsningen
+## Mal for selvdeklarering
 
 | **Fagystem**                                                        | Navn på løsningen                                                     |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------|
