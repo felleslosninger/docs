@@ -35,7 +35,17 @@ graph LR
 
 For innlogging så mapper OIDC-protokollen sin *authorization code*-flyt svært bra mot SAML *Web Browser SSO med Artifact Resolution*-profil.
 
-For utlogging er situasjonen dessverre mer ikke like enkel, og endeling løsing er p.t. uavklart.
+
+### Miljøer for SAML2-proxy
+
+SAML2-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP'er fra produksjon og VER2 videreføres i nye løsningen.  De kan brukes så lenge IDP'ens sertifikat er gyldig.  Nye IDP'er på nye domener settes også opp.  
+
+|Miljø |IDP|Domene| 
+|-|-|-|
+|PROD|saml2.idporten.no-v6|saml2.idporten.no|
+|PROD|idporten.difi.no-v5|idporten.difi.no|
+|TEST|saml2.test.idporten.no-v5|saml2.test.idporten.no|
+|TEST|idporten-ver2.difi.no-v4|idporten-ver2.difi.no|
 
 ### ID-porten sine metadata
 
