@@ -18,7 +18,7 @@ Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten. Test
 
 ![TestID logo]({{site.baseurl}}/assets/testid.svg)
 
-TestID støtter innlogging med **syntetisk personidentifikator**  (en må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
+TestID støtter innlogging med **syntetisk personidentifikator**  (+80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
 
 TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å tildelt, opprettet eller nullstilt brukere.
 
@@ -29,27 +29,28 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 ### Opprette testbruker (syntetisk PID) selv i testmiljøet TEST
 
-Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator +80 (lagt til +80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
+Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator (+80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
 
 
 **Framgangsmåte**
 
 - trykk i innloggingsbildet i TEST i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.no/order](https://aktiveringsbrev.test.minid.no/order)
 - fyll inn syntestisk personidentifikator
-- bestill aktiveringsbrev. En får så en aktiveringskode. 
+- bestill aktiveringsbrev. Man får så en aktiveringskode. 
 - legg inn aktiveringskoden i "Registrer aktiveringsbrev"  
 
 
 ### Statisk OTC - TEST
 
-Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
+Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. 
 
 
 **OTC**
 
-- innlogging: 12345  (Ny kode f.o.m. 24.10.2023)
-- glemt passord: 12345  (Ny kode f.o.m. 24.10.2023)
-
+(Ny kode f.o.m. 24.10.2023)
+- innlogging: 12345  
+- glemt passord: 12345
+  
 <!---
 ## BankID
 
