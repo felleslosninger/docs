@@ -34,7 +34,16 @@ There is no need to perform client authentication when using this grant, as the 
 
 See [JWT grant]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant) for requirements for constructing the JWT grant.
 
+Example request:
 
+```
+POST /token HTTP/1.1
+Host: test.maskinporten.no
+Content-Type: application/x-www-form-urlencoded
+
+assertion=<the grant>
+&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
+```
 
 ## Response
 
@@ -48,7 +57,7 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 
 Please note that the access token is opaque for the client, and the format may be changed. Thus the client should not inspect/validate the token contents.
 
-Example:
+Example response:
 ```
 {
   "access_token" : "IxC0B76vlWl3fiQhAwZUmD0hr_PPwC9hSIXRdoUslPU=",
@@ -67,7 +76,7 @@ Maskinporten issues only self-contained tokens:
 
 |Token type|Description|
 |-|-|
-|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens are non-revokable and should have a short lifetime |
+|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (client, organization, scope, timestamp etc.).  Such tokens are non-revokable and should have a short lifetime |
 
 
 

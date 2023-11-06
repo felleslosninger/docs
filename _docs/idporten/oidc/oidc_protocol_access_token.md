@@ -8,13 +8,18 @@ product: ID-porten
 redirect_from: /oidc_protocol_access_token
 ---
 
-## Request
-
-To request an *access_token*, use the [/token endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token).
-
-
 
 ## The access token
+
+The access_token enables the client to access APIs on behalf of the authenticated user. 
+
+For normal webservices (90% of the integrations towards ID-porten) it should  NOT be used as a session mechanism between the browser and the webservice, use the id_token instead to build a local session mechanism.
+
+Please see [Auth0's guide to id and access tokens](https://auth0.com/blog/id-token-access-token-what-is-the-difference/) to learn more of the difference between these tokens.
+
+## Structure
+
+To request an *access_token*, use the [/token endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token).
 
 
 ID-porten issues two different types of access_tokens:
@@ -22,8 +27,8 @@ ID-porten issues two different types of access_tokens:
 
 |Token type|Description|
 |-|-|
-|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [token introspection endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transport. |
-|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens  should have a short lifetime |
+|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [token introspection endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokenintrospect).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transport. |
+|by value | The token is a self-contained JWT, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens  should have a short lifetime |
 
 
 #### "By value" / self-contained access token

@@ -16,14 +16,17 @@ Det er kundens ansvar å sørge for at det faktiske bruksmønsteret er i samsvar
 
 ## ID-portens integrasjoner {#integrasjoner}
 
-Selvbetjeningsløsningen håndterer 4 ulike typer av integrasjoner:
+Selvbetjeningsløsningen lar kunden opprette  5 ulike typer av integrasjoner:
 
-* ID-porten
-* Kontaktregisteret
+* ID-porten (kun innlogging)
+* ID-porten (API-klient, for [brukerstyrt-datadeling](oidc_auth_oauth2))
+* Ansattporten
 * Maskinporten
-* API-klient innlogget bruker
+* Kontaktregisteret
 
-Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, men med ulike egenskaper.  Se detaljer lenger ned.
+I tilegg finnes det en integrasjonstype for eFormidling, som administreres internt av Digdir. 
+
+Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, som må registreres med ulike egenskaper.  Se detaljer lenger ned.
 
 Vi har 3 måter du kan få registrert din integrasjon:
 
@@ -33,7 +36,7 @@ Vi har 3 måter du kan få registrert din integrasjon:
 
 ## Integrasjonstyper
 
-Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
+Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype, og integrasjonstype kan ikke endres i ettertid.
 
 Det som støttes foreløpig er:
 
@@ -41,9 +44,10 @@ Det som støttes foreløpig er:
 |-|-|
 |idporten   | Ordinær innlogging gjennom ID-porten  |
 |api_klient    | ID-porten integrasjoner som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
+|ansattporten | Innlogging og datadeling i [Ansattporten](ansattporten_guide) |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
 |krr   | Kontaktregisteret   |
-|eformidling    | for eFormidling  |
+|eformidling    | Integrasjonspunktet for eFormidling. Administrert av Digdir  |
 
 Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 

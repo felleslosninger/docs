@@ -9,14 +9,18 @@ redirect_from: /oidc_protocol_id_token
 ---
 
 
-## Request
+## The id_token
+
+The id_token is the assertion of the authenticated user identity.  It tells you "who the user is", but not "what the user can access".  
+
+The id_token is meant to be consumed and validated by the client in order to build a local session at the client.  It is not intended to be passed around to enable API access towards other parties/systems.
+
+Please see [Auth0's guide to id and access tokens](https://auth0.com/blog/id-token-access-token-what-is-the-difference/) to learn more of the difference between these tokens.
+
+## Structure of an id_token
 
 To request an *id_token*, use the [/token endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token).
 
-
-## The id_token
-
-The id_token is the assertion of the authenticated user identity.  It tells you "who the user is", but not "what the user can access".  The id_token is meant to be consumed and validated by the client, to build a local session at the client.  It is not intended to be passed around to enable API access towards other parties/systems.
 
 The id_token is a JWT structure, as documented in [OIDC Core, 3.1.6](https://openid.net/specs/openid-connect-core-1_0.html#CodeIDToken).  The client MUST validate the id_token according to [OIDC Core, 3.1.7](https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation).  
 
