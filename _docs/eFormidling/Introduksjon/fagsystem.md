@@ -10,7 +10,7 @@ Denne siden gir oversikt over hvilke fagsystemer som støtter eFormidling i henh
 - [Krav og testbeskrivelser](../Testing/krav)
 
 Les mer om hvordan selvdeklarering av støtte for eFormidling fungerer på
-- TODO lenke til samarbeidsportalen
+- [Selvdeklarering av støtte for eFormidling](https://samarbeid.digdir.no/eformidling/dette-er-eformidling/46#selvdeklarering_av_sttte_for_eformidling) (eksterne lenke)
 
 Siden presenterer informasjon som oppgitt fra leverandørene og blir ikke kvalitetssikret av eFormidling.
 
