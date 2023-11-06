@@ -50,7 +50,7 @@ Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i 
 - innlogging: 12345  (Ny kode f.o.m. 24.10.2023)
 - glemt passord: 12345  (Ny kode f.o.m. 24.10.2023)
 
-
+<!---
 ## BankID
 
 For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret.
@@ -74,6 +74,7 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
 
+--->
 
 ## Manuell behandling
 
