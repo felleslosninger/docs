@@ -82,7 +82,7 @@ Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og 
 
 #### Europeiske brukere
 
-ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
+ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/idporten/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
 
 ## Brukerstyrt datadeling
 
