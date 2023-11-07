@@ -10,7 +10,7 @@ redirect_from: /brukerspesifikt_oppslag_krr_rest
 
 ## Introduksjon
 
-Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest). Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og det er i noen sammenhenger mer hensiktsmessig og bruke denne tjenesten. 
+Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret er oftest utlevert globalt gjennom [Oppslagstjenesten]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest). Men kunder kan også motta kontaktopplysninger kun tilhørende innlogget bruker, og det er i noen sammenhenger mer hensiktsmessig og bruke denne tjenesten.
 
 
 ## Bruk av Oauth2
@@ -82,4 +82,10 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 
 Det er viktig at kunder som bruker skrive-API informerer brukeren om at endringer skjer i et nasjonalt register, og ikke kun for denne tjenesten.
 
-Se også [OpenAPI-dokumentasjonen](https://oidc.difi.no/kontaktinfo-oauth2-server/swagger-ui/index.html#/Person/patchUser).
+## Swagger
+OpenAPI-dokumentasjon.
+
+|miljø|url|
+|-|-|
+|TEST|[https://test.kontaktregisteret.no/swagger-ui/index.html](https://test.kontaktregisteret.no/swagger-ui/index.html)|
+|PROD|[https://kontaktregisteret.no/swagger-ui/index.html](https://kontaktregisteret.no/swagger-ui/index.html)|
