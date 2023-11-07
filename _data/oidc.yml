@@ -117,6 +117,12 @@ folders:
   - title: Verifikasjonstester
     jurl: /docs/idporten/idporten/idporten_verifikasjonstester.html
 
+- title: Feilsøking
+  folderitems:
+
+  - title: Feilsøking i ID-porten
+    jurl: /docs/idporten/idporten/idporten_feilsoking.html
+
 - title: Administrasjon
   folderitems:
 
