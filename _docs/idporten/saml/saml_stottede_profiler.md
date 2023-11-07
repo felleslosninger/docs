@@ -149,7 +149,7 @@ Følgende underordnede koder kan benyttes til ytterligere spesifisering av feils
 ```
 ### Single Logout
 
-SAML2 støtter konseptet Single Logout og beskriver både en Single Logout protokoll i [SAMLCore](www.oasis-open.org/committees/security/) og en Single Logout profile i [SAMLProf](www.oasis-open.org/committees/security/). Disse gir IDP og SP mulighet til å terminere multiple sesjoner ved å sende *LogoutRequest* og *LogoutResponse* meldinger. På denne måten kan brukeren logge ut fra alle sesjoner som springer ut fra en IDP i noe som for brukeren kan virke som én operasjon.  Brukeren kan initiere prosessen både hos en ønsket SP eller direkte i IdP’en.
+SAML2 støtter konseptet Single Logout og beskriver både en Single Logout protokoll i [SAMLCore](https://www.oasis-open.org/committees/security/) og en Single Logout profile i [SAMLProf](https://www.oasis-open.org/committees/security/). Disse gir IDP og SP mulighet til å terminere multiple sesjoner ved å sende *LogoutRequest* og *LogoutResponse* meldinger. På denne måten kan brukeren logge ut fra alle sesjoner som springer ut fra en IDP i noe som for brukeren kan virke som én operasjon.  Brukeren kan initiere prosessen både hos en ønsket SP eller direkte i IdP’en.
 OASIS skiller klart på denne første meldingen og de etterfølgende meldingene. Den første er ønskelig foretatt over en frontkanal, og ID-porten krever at dette er et HTTP redirect kall. Grunnen til dette er at det gir ID-porten mulighet til å samle inn data knyttet til brukerens sesjon, slik som nettleser cookies.
 
 Med andre ord gjelder følgende krav for Single Logout i ID-porten:

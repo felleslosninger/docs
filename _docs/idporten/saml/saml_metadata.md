@@ -114,7 +114,6 @@ Sluttbruker må ha Java installert for å gjennomføre innlogging på nivå 4 me
 
 Offentlige virksomheter kan lenke til brukerprofilen slik at innbyggerne kan oppdatere egen kontaktinformasjon.
 
-> Verifikasjon1: <https://brukerprofil-ver1.difi.no/minprofil>  
 > Verifikasjon2: <https://brukerprofil-ver2.difi.no/minprofil>  
 > Produksjon: <https://brukerprofil.difi.no/minprofil>
 

@@ -98,7 +98,7 @@ Kan brukes i verifikasjonstesten som «annen tjenesteier» ifbm single sign-on
 
 ### ID-porten single sign-on
 
-![](/idporten-integrasjonsguide/assets/images/hurtigguide/sso.bmp "ID-porten single sign-on")
+![](/images/idporten/saml/hurtigguide/sso.bmp "ID-porten single sign-on")
 
 1. Sluttbruker ønsker tilgang til en tjeneste hos tjenesteeier som krever at bruker er autentisert
 2. Tjenesteeier verifiserer om sluttbruker har en autentiseringssesjon lokalt,

@@ -11,7 +11,7 @@ redirect_from: /saml_tilgang
 ```
 OBS!  SAML vil på sikt fases ut i ID-porten. Ved nye integrasjoner ber vi om at OpenID Connect benyttes.
 ```
-[OpenID Connect (OIDC)]({{site.baseurl}}/docs/idporten/idporten/idporten_overordnet/)
+[OpenID Connect (OIDC)]({{site.baseurl}}/docs/idporten/idporten/idporten_overordnet)
 
 
 
@@ -54,7 +54,7 @@ Under er et eksempel på hvilken informasjon som trengs i tillegg til informasjo
 | ENTITY_ID | eksempel_101 | Dette feltet **må** være lik entityID i metadatafilen. Entity_ID kan bestemmes selv, men må være unik. |
 | NAME | Norsk data og eksempelforening | Dette blir brukt av ID-porten under innlogging og beskriver tjenesteeier til innbyggeren i ulike sammenhenger. |
 | URL | https://www.eksempel.no | Dette er URL til tjenesteleverandør som benyttes for å rute innbyggeren tilbake til tjenesteleverandør ved avbryting av innlogging eller feilsituasjoner. |
-| REFERRING_SP | Eksempel_202 | Denne parameteren blir kun brukt ved [bruk av onBehalfOf]({{site.baseurl}}/docs/idporten/saml/saml_teknisk_innlogging#overføring-av-informasjon-om-tjenesteeier-for-leverandører) |
+| REFERRING_SP | Eksempel_202 | Denne parameteren blir kun brukt ved [bruk av onBehalfOf](/docs/idporten/saml/saml_teknisk_innlogging#overføring-av-informasjon-om-tjenesteeier-for-leverandører) |
 | DIGITALCONTACTINFO_NAME | NorskDataForeningProd | Denne parameteren blir kun brukt for tjenesteeiere som har tatt i bruk kontakt- og reservasjonsregisteret.  Navnet er det unike navnet som tjenesteeier bruker for oppslag mot kontakt- og reservasjonsregisteret sin webservice. |
 | | | |
 
