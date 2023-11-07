@@ -173,7 +173,7 @@ folders:
   folderitems:
 
       - title: Gammelt OIDC-grensesnitt (fases ut!)
-        jurl: /docs/idporten/oidc_old/oidc_func_wellknown.md
+        jurl: /docs/idporten/oidc_old/oidc_func_wellknown.html
 
 - title: Gammelt SAML-grensesnitt
   folderitems:
