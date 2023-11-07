@@ -49,7 +49,7 @@ Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Con
 
 [SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokollen.
 
-Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web)
+Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web)
  til å registrere og vedlikeholde kundens integrasjoner.
 
 Følgende aktører inngår i løsningen:
