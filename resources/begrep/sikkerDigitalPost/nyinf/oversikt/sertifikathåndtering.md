@@ -79,7 +79,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
   - Fra Buypass:
     [Buypass\_Class\_3\_Test4\_Root\_CA]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater/test/Buypass_Class_3_Test4_Root_CA.cer)
   - Fra Commfides: [root - cpn root sha256 ca - test.crt (2.03
-    KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/155/22538)
+    KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/144/18301)
 
 Følgende mellomliggende CA sertifikater må offentlig virksomhet ha for å
 kunne verifisere sertifikatbanen til rot sertifikatet.  
@@ -89,7 +89,7 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
     [Buypass\_Class\_3\_Test4\_CA\_3]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater/test/Buypass_Class_3_Test4_CA_3.cer)
   - Fra Commfides: [intermediate - commfides cpn enterprise-norwegian
     sha256 ca - test2.crt (2.23
-    KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/155/22537)
+    KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/144/49433)
 
 #### For produksjon
 
