@@ -14,7 +14,7 @@ redirect_from: /oidc_api_admin_maskinporten
 
 På denne siden dokumenterer vi hvordan  API-tilbydere gir mulighet til selvbetjening av egen API-sikring.
 
-Les gjerne [integrasjonsguide for API-tilbydere]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder) først.  API-konsumenter bør se på [integrsasjonsguide for API-konsumenter]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apikonsument) og [selvbejenings-API for integrasjoner](oidc_admin.html)
+Les gjerne [integrasjonsguide for API-tilbydere]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder) først.  API-konsumenter bør se på [integrsasjonsguide for API-konsumenter]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apikonsument) og [selvbejenings-API for integrasjoner](oidc_api_admin)
 
 
 ## Om selvbetjenings-APIet

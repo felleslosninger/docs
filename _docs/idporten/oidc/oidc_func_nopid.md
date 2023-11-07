@@ -30,7 +30,7 @@ Klienten må passe på å *ikke* etterspørre `openid`-scopet (for da vil den f�
 
 I dette tilfellet så må API-tilbyder lage et scope, og sette det opp med  satt opp med flagget `requires_pseudonymous_tokens` til true. Nå vil hverken id_token eller access_token utlevert til klienter inneholde f/d-nr (`pid`).  
 
-Når klientene bruker tokenet mot API-tilbyders endepunkt, kan API-tilbyder i sin tur da kalle /tokeninfo-endepunktet for å hente ut f/d-nr som hører til tokenet.  API-tilbyder må lage en egen klient (må være registrert på samme organisasjonsnummer som eier scopet), og bruke denne opp mot [tokeninfo-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).
+Når klientene bruker tokenet mot API-tilbyders endepunkt, kan API-tilbyder i sin tur da kalle /tokeninfo-endepunktet for å hente ut f/d-nr som hører til tokenet.  API-tilbyder må lage en egen klient (må være registrert på samme organisasjonsnummer som eier scopet), og bruke denne opp mot [tokeninfo-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokenintrospect).
 
 Bruk av pseudonymiserende scopes kan gjerne kombineres med at `token_type` settes til `OPAQUE` for ytterligere beskyttelse.
 

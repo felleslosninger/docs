@@ -11,7 +11,7 @@ redirect_from: /saml_tilgang
 ```
 OBS!  SAML vil på sikt fases ut i ID-porten. Ved nye integrasjoner ber vi om at OpenID Connect benyttes.
 ```
-[OpenID Connect (OIDC)]({{site.baseurl}}/docs/idporten/oidc/)
+[OpenID Connect (OIDC)]({{site.baseurl}}/docs/idporten/idporten_overordnet/)
 
 
 

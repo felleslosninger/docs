@@ -49,7 +49,7 @@ Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Con
 
 [SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokollen.
 
-Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web)
+Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web.html)
  til å registrere og vedlikeholde kundens integrasjoner.
 
 Følgende aktører inngår i løsningen:
@@ -82,7 +82,7 @@ Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og 
 
 #### Europeiske brukere
 
-ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
+ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/oidc/oidc_func_eidas.html) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
 
 ## Brukerstyrt datadeling
 

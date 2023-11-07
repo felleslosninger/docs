@@ -73,8 +73,7 @@ Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
 |Miljø|URL|
 |-|-|
-|VER1|[https://integrasjon-ver1.difi.no/clients/](https://integrasjon-ver1.difi.no/clients/)|
-|VER2|[https://integrasjon-ver2.difi.no/clients/](https://integrasjon-ver2.difi.no/clients/)|
+|VER2/TEST|[https://integrasjon-ver2.difi.no/clients/](https://integrasjon-ver2.difi.no/clients/)|
 |YT2|[https://integrasjon-yt2.difi.eon.no/clients/](https://integrasjon-yt2.difi.eon.no/clients/)|
 |PROD|[https://integrasjon.difi.no/clients/](https://integrasjon.difi.no/clients/)|
 

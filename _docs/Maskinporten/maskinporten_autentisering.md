@@ -24,7 +24,7 @@ Virsomhetssertifikat/nøkler brukes til å signere forespørselen mot Maskinport
 
 ## Levetid og gyldighet for virksomhetssertifikat/nøkler?
 
-En nøkkel har maks ett års levetid fra tidspunktet den blir postet på. Virksomhetssertifikat har tre års levetid. 
+En nøkkel har maks ett års levetid fra tidspunktet den blir postet på. Virksomhetssertifikat har tre års levetid.
 
 Dersom man benytter virksomhetssertifikat for autentisering til våre tjenester må det være et gyldig norsk [x.509 sertifikat.](https://www.ssl.com/no/Vanlige-sp%C3%B8rsm%C3%A5l/hva-er-et-x-509-sertifikat/)
 
@@ -54,7 +54,7 @@ Nei, i testmiljøene må man ha et test-virksomhetssertifikat. Dette bestilles o
 
 Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl](https://www.buypass.no/produkter/virksomhetssertifikat-esegl)
 
-Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/)
+Commfides: [https://www.commfides.com/bestilling-av-testsertifikatseid20/](https://www.commfides.com/bestilling-av-testsertifikatseid20/)
 
 ## Kan man gjenbruke virksomhetssertifikat/nøkler på flere klienter i Maskinporten?
 
