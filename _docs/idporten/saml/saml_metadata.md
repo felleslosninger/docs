@@ -212,7 +212,7 @@ Ved autentisering med europeisk eID, er det frivillig for personer som har fått
 For utenlandske innbyggere, blir Kontakt- og reservasjonsregisteret kun sjekket dersom det er oppnådd en entydig kobling mot norsk D-nummer/fødselsnummer. Dette kan skje ved manglende kobling eller ved feilsituasjoner mot DSF. Informasjon fra Kontakt-og reservasjonsregisteret vil da mangle.
 
 I tillegg kommer eventuelle attributter fra europeisk eID-intrastruktur, eIDAS / STORK (se nærmere definisjoner i rapport ‘D5.7.3 Functional Design for PEPS, MW models and interoperability’) fra
-[STORK-prosjektet](https://www.eid-stork.eu/index.php?option=com_processes&act=list_documents&id=312%20&s=1&Itemid=60)
+[STORK-prosjektet](https://ec.europa.eu/digital-building-blocks/wikis/display/EIDCOMMUNITY/STORK+Project)
 
 | Field | Type | Values and comment | Kardinalitet |
 | --- | --- | --- | --- |

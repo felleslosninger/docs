@@ -45,7 +45,7 @@ The supported request attributes are identical to attributes available on the [/
 | response_mode | Optional | Used if you want alternative way of returning the authentication response. We support `query`,`form_post` and `fragment`. <p/>Note that some of these option may have security implications, and some other conditions may apply.   |
 | ui\_locales | Optional | Requested language in the user interface, we support *nb*, *nn*, *en* or *se* |
 | prompt | Optional | Used to govern end user involvement.  Only `login` is supported by ID-porten  |
-| code_challenge   | Required*  | The [PKCE]({{site.baseurl}}docs/idporten/oidc/oicd_func_pkce.html) `code_challenge` is a calculated value based on `code_verifier`.  Mandatory to use for public clients |
+| code_challenge   | Required*  | The [PKCE]({{site.baseurl}}oicd_func_pkce.html) `code_challenge` is a calculated value based on `code_verifier`.  Mandatory to use for public clients |
 | code_challenge_method   | Required   | Algorithm for PKCE. Only `S256` supported.  |
 
 
