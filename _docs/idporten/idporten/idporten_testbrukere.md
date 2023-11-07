@@ -10,20 +10,48 @@ product: ID-porten
 redirect_from: /idporten_testbrukere
 ---
 
-Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver1 og Ver2/Test.
+Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver2/Test.
 
 ## TestID
 
-Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten.  
+Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten. TestID tilbyr å velge sikkerhetsnivå. 
 
 ![TestID logo]({{site.baseurl}}/assets/testid.svg)
 
-TestID støtter innlogging med **syntetisk personidentifikator**  (en må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
+TestID støtter innlogging med **syntetisk personidentifikator**  (+80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
 
 TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å tildelt, opprettet eller nullstilt brukere.
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere fra Test-Folkeregisteret.
 
+
+## MinID
+
+### Opprette testbruker (syntetisk PID) selv i testmiljøet TEST
+
+Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator (+80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
+
+
+**Framgangsmåte**
+
+- trykk i innloggingsbildet i TEST i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.no/order](https://aktiveringsbrev.test.minid.no/order)
+- fyll inn syntestisk personidentifikator
+- bestill aktiveringsbrev. Man får så en aktiveringskode. 
+- legg inn aktiveringskoden i "Registrer aktiveringsbrev"  
+
+
+### Statisk OTC - TEST
+
+Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. 
+
+
+**OTC**
+
+(Ny kode f.o.m. 24.10.2023)
+- innlogging: 12345  
+- glemt passord: 12345
+  
+<!---
 ## BankID
 
 For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret.
@@ -47,41 +75,7 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
 
-
-
-## MinID
-
-### Opprette testbruker (syntetisk PID) selv i testmiljøet TEST
-
-Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator +80 (lagt til +80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
-
-
-**Framgangsmåte**
-
-- trykk i innloggingsbildet i TEST i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.no/order](https://aktiveringsbrev.test.minid.no/order)
-- fyll inn syntestisk personidentifikator
-- bestill aktiveringsbrev. En får så en aktiveringskode. 
-- legg inn aktiveringskoden i "Registrer aktiveringsbrev"  
-
-
-### Statisk OTC - VER2/TEST
-
-Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
-
-
-**OTC**
-
-- innlogging: otc12
-- glemt passord: otc123
-
-
-### Pinkoder er faset ut i testmiljøet VER2 fra 01.02.2023
-01.02.2023 ble statiske pinkoder faset ut i VER2. 
-
-
-#### Om MinID i testmiljøet VER1 
-Endringen i VER2 01.02.2023 for PIN-koder i MinID omfatter ikke testmiljøet VER1 på dette tidspunktet. VER1-miljøet blir faset ut i løpet av våren 2023 og det er kun VER2 som lever videre etter våren 2023. En bør derfor gjennomføre testing mot ID-porten i VER2-miljøet og flytte seg fra VER1.
-
+--->
 
 ## Manuell behandling
 

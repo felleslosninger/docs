@@ -10,7 +10,7 @@ redirect_from: /einnsyn_publisering_til_einnsyn
 eInnsyn nyttar eFormidling til transport av data mellom innhaldsleverandørar og eInnsyn.
 Meldingane til eInnsyn er basert på Noark, men konvertert til json-ld som er ei RDF-serialisering. Datafelta, klassar og koplingane mellom dei er i stor grad det same, men formatet er ulikt
 
-eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/message#einnsyn).
+eInnsyn har fleire ulike meldingstypar ein sender gjennom eFormidling. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen]({{site.baseurl}}/docs/eFormidling/Utvikling/Dokumenttyper/publisering).
 
 Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsonld.
 

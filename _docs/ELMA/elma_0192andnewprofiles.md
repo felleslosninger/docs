@@ -8,14 +8,12 @@ sidebar: elma_sidebar
 redirect_from: /elma_icd0192andnewprofiles
 ---
 
-*Updated: 06.03.2019*
+*Updated: 22.08.2023*
 
-See also [separate page on how to upgrade existing participants to support the new Profiles](upgradeTo0192Profiles.html).
+See also [separate page on how to upgrade existing participants to support the new Profiles](https://docs.digdir.no/docs/ELMA/elma_upgradingto0192profiles).
 
-## Norway is migrating from ICD 9908 to 0192
-The PEPPOL network is in the process of migrating the ICD for Norwegian organizations from 9908 to 0192. Some years in the future, the 9908-ICD will no longer be used in the PEPPOL network.
-
-As part of the migration process, Norwegian organizations will be identified through two ICDs. Organizations from other countries have been identified as before - no changes.
+## Norway has migrated from ICD 9908 to 0192
+After 23.05.2023, the ICD 9908 is no longer used in the PEPPOL network.
 
 ## New Profiles are only available under the 0192-ICD
 Existing Profiles are available using the 9908-ICD as before, but new Profiles will only be available under the 0192-ICD.
@@ -42,8 +40,8 @@ For example, the new profile “PEPPOLBIS_3_0_BILLING_01_CII” has “BIS05 V2�
 
 A dependency can also be fulfilled across endpoints and service providers. If a Profile which is a required dependency already exists on another endpoint, even an endpoint from another service provider
 
-![]({{site.baseurl}}/images/elma/elma/view_process.png)
+![]({{site.baseurl}}/images/elma/view_process.png)
 
 *Screenshot 2: You can see what dependencies a Profile has under [“Processes” in ELMA-web](https://smp.difi.no/process).*
 
-For a guide on how to upgrade existing participants to support new Profiles, see [this page](upgradeTo0192Profiles.html).
+For a guide on how to upgrade existing participants to support new Profiles, see [this page](https://docs.digdir.no/docs/ELMA/elma_upgradingto0192profiles).

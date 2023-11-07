@@ -16,10 +16,10 @@ Metadata om ID-porten er tilgjengelig på vårt .well-known-endepunkt ihht. [Ope
 På endepunktet finner du lenke til vårt JWK-endepunkt, der  ID-portens signeringssertifikat publiseres.  Vi anbefaler kunder sterkt om å bruke endepunktet til dynamisk egen-konfigurasjon for å sikre kontinuerlig tjeneste-leveranse når ID-porten bytter signeringssertifikat.
 
 
-|Miljø|URL|
-|-|-|
-|TEST|[https://test.idporten.no/.well-known/openid-configuration](https://test.idporten.no/.well-known/openid-configuration)|
-|PROD|[https://idporten.no/.well-known/openid-configuration](https://idporten.no/.well-known/openid-configuration)|
+|Miljø|Issuer|URL|
+|-|-|-|
+|TEST| `https://test.idporten.no` | [https://test.idporten.no/.well-known/openid-configuration](https://test.idporten.no/.well-known/openid-configuration)|
+|PROD| `https://idporten.no` | [https://idporten.no/.well-known/openid-configuration](https://idporten.no/.well-known/openid-configuration)|
 
 Disse metadata skal caches i din egen løsning, typisk er 24 timer en passende levetid.
 

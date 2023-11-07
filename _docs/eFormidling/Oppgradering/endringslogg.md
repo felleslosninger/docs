@@ -18,6 +18,68 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.24.0
+
+02.11.2023
+
+**Funksjonalitet**
+
+- Ny funksjonalitet for uthenting av statusar mellom to tidspunkt. ([**Api-dokumentasjon**](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api_restdocs#_example_5_time_range_5))
+
+**Vedlikehald**
+
+- Patchar av ulike rammeverk. Bl.a er ActiveMQ bumpet til versjon 5.16.7 for å unngå mulig sårbarheit i eldre versjonar.
+
+## 2.23.1
+
+11.10.2023
+
+**Vedlikehald**
+
+- Helsesjekken i Docker-biletet til Integrasjonspunktet brukar no Wget i staden for cURL
+
+## 2.23.0
+
+22.09.2023
+
+**Funksjonalitet**
+
+- Støtte i DPI-klienten for fleire nye policyar i verksemdssertifkat frå Commfides
+
+## 2.22.1
+
+19.09.2023
+
+**Funksjonalitet**
+
+- Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
+
+## 2.22.0
+
+19.09.2023
+
+**Funksjonalitet**
+
+- Ny DPI-infrastruktur innført som standard-innstilling i eFormidling
+
+**Feilrettingar**
+
+- Korrelasjons-ID vert kun tilordna på relevante logginnslag
+- Meir forståelege feilmeldingar ved feilresponar frå FIKS/SvarUt
+
+## 2.21.0
+
+29.08.2023
+
+**Funksjonalitet**
+
+- Innføring av ny URL og IP-adresse hjå Kontakt- og Reservasjonsregisteret ([krever brannmuråpning hos DPI-avsendarar som sender til utskrifttenesta](https://status.digdir.no/incidents/7x95zny40r8c))
+- Utskriving av sky-konfigurasjon
+
+**Feilrettingar**
+
+- Vedlegg på avtalt-meldingar vert mottekne
+
 ## 2.20.0
 
 28.06.2023
@@ -703,6 +765,30 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 ---
 
 ## Sentrale komponenter
+
+## ServiceRegistry 2.17.0
+
+22.09.2023
+
+**Funksjonalitet**
+
+- Støtte for fleire nye policyar i verksemdssertifkat frå Commfides
+
+## ServiceRegistry 2.16.0
+
+19.09.2023
+
+**Funksjonalitet**
+
+- Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
+
+## ServiceRegistry 2.15.0
+
+31.08.2023
+
+**Feilrettingar**
+
+- Ustabilitet i sending av digital post til innbyggar fom. 30.08.2023 grunna endra respons frå andre interne tenester
 
 ## ServiceRegistry 2.12.0
 

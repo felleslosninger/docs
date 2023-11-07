@@ -35,5 +35,6 @@ Følgende tjenester brukes av integrasjonspunktets QA-miljø og må kunne nås:
 | crl.test4.buypass.no | 185.62.163.56                                    | 80   | DPI      | Buypass CRL-liste                                                      | utgående              |
 | crl.test4.buypassca.com | 185.62.163.191                                    | 80   | DPI      | Buypass CRL-liste SEID 2.0                                                     | utgående              |
 | krr-ver1.digdir.no | 146.192.252.121                                    | 443   | DPI      | Kontakt-og reservasjonsregisteret                                                     | utgående              |
+| test.kontaktregisteret.no | 139.105.36.137 | 443  | DPI | Kontakt-og reservasjonsregisteret | utgående |
 | srest.qa.dataplatfor.ms                   | 51.120.52.137 og 51.120.49.231                                       | 443   | DPI      | For ny transportinfrastruktur i Digital postkasse, rest-endepunkt aksesspunkt i hjørne 2 | utgående              |
 | test.svarut.ks.no                         | 137.221.25.65 <br/> 137.221.28.65                   | 443   | DPF      | KS SvarUt og SvarInn                                                                     | utgående              |

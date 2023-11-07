@@ -16,14 +16,17 @@ Det er kundens ansvar å sørge for at det faktiske bruksmønsteret er i samsvar
 
 ## ID-portens integrasjoner {#integrasjoner}
 
-Selvbetjeningsløsningen håndterer 4 ulike typer av integrasjoner:
+Selvbetjeningsløsningen lar kunden opprette  5 ulike typer av integrasjoner:
 
-* ID-porten
-* Kontaktregisteret
+* ID-porten (kun innlogging)
+* ID-porten (API-klient, for [brukerstyrt-datadeling](oidc_auth_oauth2))
+* Ansattporten
 * Maskinporten
-* API-klient innlogget bruker
+* Kontaktregisteret
 
-Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, men med ulike egenskaper.  Se detaljer lenger ned.
+I tilegg finnes det en integrasjonstype for eFormidling, som administreres internt av Digdir. 
+
+Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, som må registreres med ulike egenskaper.  Se detaljer lenger ned.
 
 Vi har 3 måter du kan få registrert din integrasjon:
 
@@ -33,7 +36,7 @@ Vi har 3 måter du kan få registrert din integrasjon:
 
 ## Integrasjonstyper
 
-Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
+Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype, og integrasjonstype kan ikke endres i ettertid.
 
 Det som støttes foreløpig er:
 
@@ -41,9 +44,10 @@ Det som støttes foreløpig er:
 |-|-|
 |idporten   | Ordinær innlogging gjennom ID-porten  |
 |api_klient    | ID-porten integrasjoner som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
+|ansattporten | Innlogging og datadeling i [Ansattporten](ansattporten_guide) |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
 |krr   | Kontaktregisteret   |
-|eformidling    | for eFormidling  |
+|eformidling    | Integrasjonspunktet for eFormidling. Administrert av Digdir  |
 
 Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 
@@ -202,12 +206,15 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 |attributt|Påkrevd?|beskrivelse|
 |-|-|-|
 | display_name | Ja |Klientens organisasjonsnavn som benyttes ved visning på web |
-| redirect_uris | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. |
-| post_logout_redirect_uris | Ja |Liste over url'er som provideren redirecter til etter fullført egen-initiert utlogging. |
-| frontchannel_logout_uri | Nei|  URL som provideren sender request til ved utlogging trigget av annen klient i samme sesjon |
-| frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri |
+| redirect_uris* | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. |
+| post_logout_redirect_uris* | Ja |Liste over url'er som provideren redirecter til etter fullført egen-initiert utlogging. |
+| frontchannel_logout_uri** | Nei|  URL som provideren sender request til ved utlogging trigget av annen klient i samme sesjon. Må tilhøre samme domene som en av de registrerte redirect_uri'ene. |
+| frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri. Dersom ikke satt, så vil ikke 'sid' bli inkludert i id_token. |
 | logo | Nei |Logo som vises i innloggingsbildete utveksles p.t. manuelt |
 
+*NB! Bruk av localhost er ikke tillatt i produksjonsmiljøet. Skal du registrere en localhost uri i testmiljøet, må denne være http:// og ikke https://.
+
+** Frontchannel logout uri må ha samme domene som en registrert redirect uri.
 
 ### Metadata for klienter som konsumerer APIer
 

@@ -8,13 +8,18 @@ product: ID-porten
 redirect_from: /oidc_protocol_access_token
 ---
 
-## Request
-
-To request an *access_token*, use the [/token endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token).
-
-
 
 ## The access token
+
+The access_token enables the client to access APIs on behalf of the authenticated user. 
+
+For normal webservices (90% of the integrations towards ID-porten) it should  NOT be used as a session mechanism between the browser and the webservice, use the id_token instead to build a local session mechanism.
+
+Please see [Auth0's guide to id and access tokens](https://auth0.com/blog/id-token-access-token-what-is-the-difference/) to learn more of the difference between these tokens.
+
+## Structure
+
+To request an *access_token*, use the [/token endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token).
 
 
 ID-porten issues two different types of access_tokens:
@@ -22,8 +27,8 @@ ID-porten issues two different types of access_tokens:
 
 |Token type|Description|
 |-|-|
-|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [token introspection endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokeninfo).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transport. |
-|by value | The token is self-contained, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens  should have a short lifetime |
+|by reference| The token is just a string referencing the authorization inside ID-porten.  Such tokens must be validated towards the [token introspection endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_tokenintrospect).  By-reference tokens are good for privacy, as no personal data can be harvested by the client or in transport. |
+|by value | The token is a self-contained JWT, meaning it contains all the relevant information about the authorization (end user, scope, timestamp etc.).  Such tokens  should have a short lifetime |
 
 
 #### "By value" / self-contained access token
@@ -53,7 +58,6 @@ The token is a JWT with the following structure:
 | delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://sts.altinn.no`
 | scope | A list of scopes the access_token is bound to.  Note that the End User may not grant access to all scopes requested.  |
 | pid | "Personidentifikator" - the Norwegian national ID number (fødselsnummer/d-nummer) of the autenticated end user.   Not included if `no_pid` scope was requested or pre-registered on the client.  Also not included for machine-type tokens.|
-| token_type | Type of token. Only `Bearer` supported. |
 | iss | The identifier of ID-porten as can be verified on the [.well-known endpoint]({{site.baseurl}}/docs/idporten/oidc/oidc_func_wellknown)| `https://oidc.idporten.no/idporten-oidc-provider`
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |

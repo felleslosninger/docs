@@ -9,7 +9,7 @@ redirect_from: /oidc_guide_idporten
 
 ID-porten tilbyr funksjonalitet for autentisering av sluttbrukere basert på autorisasjonskode-flyten, slik den er spesifisert i OpenID Connect Core 1.0 spesifikasjonen.
 
-**Dette er den foretrukne flyten for de aller fleste tjenester** som skal bruke ID-porten som autentiseringstjeneste. Det kan finnes unntak, som for eksempel [mobilapp'er](oidc/oidc_auth_app.html) eller [javascript-applikasjoner](oidc/oidc_guide_spa.html), som vil ha en litt annen måte å bruke denne flyten på.
+**Dette er den foretrukne flyten for de aller fleste tjenester** som skal bruke ID-porten som autentiseringstjeneste. Det kan finnes unntak, som for eksempel [mobilapp'er](oidc_auth_app.html) eller [javascript-applikasjoner](oidc_guide_spa.html), som vil ha en litt annen måte å bruke denne flyten på.
 
 ## Overordna beskrivelse av bruksområdet
 
@@ -90,7 +90,7 @@ Det må bemerkes at lokal timeout hos en kunde ikke nødvendigvis medfører at b
 
 Hvis en tjenesteleverandør av sikkerhetsmessige grunner vil sikre seg at brukeren blir tvunget til aktiv pålogging i ID-porten, kan man sette parameteren prompt=login i autentiseringsforespørselen til ID-porten.  
 
-Det er også mulig å konfigurere tjenesten sin slik at den ikke deltar i felles SSO-sesjon (se [SSO-fri innlogging]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso.html)).
+Det er også mulig å konfigurere tjenesten sin slik at den ikke deltar i felles SSO-sesjon (se [Isolert SSO-sesjon]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso.html)).
 
 
 ### Krav til utlogging
