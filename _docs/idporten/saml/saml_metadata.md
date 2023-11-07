@@ -161,8 +161,6 @@ Det vil si at innbygger vil bli presentert en knapp/lenke med verdien av goto-pa
 
 ### SAML assertion for utenlandske brukere
 
-Dette avsnittet er informativt, den normative og mest oppdaterte informasjonen finnes på [begrep difi](http://begrep.difi.no/ID-porten/SAMLAssertionV4)
-
 Siden profilen støtter både norske og europeiske eID, vil tilgjengelige attributter kunne variere alt etter om det er norsk eller europeisk eID som ble benyttet til innlogging. For europeiske eID kan attributtane i tillegg variere mellom land. Viss attributten AuthMethod har verdi eIDAS, tyder dette at autentisering er foretatt med en europeisk eID, og attributten eIdentifier er da unik identifikator.
 
 Følgende 3 grunnkombinasjoner er mulige:
