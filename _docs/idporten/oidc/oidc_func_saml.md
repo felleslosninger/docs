@@ -40,7 +40,7 @@ For innlogging så mapper OIDC-protokollen sin *authorization code*-flyt svært 
 
 ## Miljøer for SAML-proxy
 
-SAML-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP'er fra produksjon og VER2 videreføres i nye løsningen.  De kan brukes så lenge IDP'ens sertifikat er gyldig.  Nye IDP'er på nye domener settes også opp.  
+SAML-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP'er fra produksjon og VER2 videreføres i nye løsningen.  De kan brukes så lenge IDP'ens sertifikat er gyldig.  IDP'ene vil få nye IP-adresser.  Nye IDP'er på nye domener settes også opp.  Se oversikt over [IP-adresser]({{site.baseurl}}/docs/general/IP).
 
 |Miljø |IDP|Domene| 
 |-|-|
