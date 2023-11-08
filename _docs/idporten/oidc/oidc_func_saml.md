@@ -56,9 +56,9 @@ I en overgang kan eksisterende metadata for produksjon (v5) og VER (v4) benyttes
 |Miljø |IDP|Metadata| 
 |-|-|
 |PROD|https://saml2.idporten.no/idp6|[https://saml2.idporten.no/idp6](https://saml2.idporten.no/idp6)|
-|PROD|idporten.difi.no-v5|idporten.difi.no||
+|PROD|idporten.difi.no-v5|idporten.difi.no|
 |TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5)|
-|TEST|idporten-ver2.difi.no-v4|idporten-ver2.difi.no||
+|TEST|idporten-ver2.difi.no-v4|idporten-ver2.difi.no|
 
 ### Kunden sine metadata
 
