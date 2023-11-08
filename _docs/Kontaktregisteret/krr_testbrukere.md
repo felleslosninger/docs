@@ -36,7 +36,9 @@ Framgangsmåte:
 - sjekke om testbruker er registrert i KRR gjennom tjenesten [MinProfil](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger) i testmiljøet. Du kan logge inn med både TestID og MinID.  
 
 ### Testbrukar utanfor Tenor testdatabase
-Ønsker du en testbruker som ikke finnes i Tenor, kan du f.eks bruke tjenesten til [Norske testdata (Ekstern tjeneste)](https://norske-testdata.no/fiktivt-fnr/).
+Ønsker du en testbruker som ikke finnes i Tenor, kan du f.eks bruke tjenesten til [Norske testdata (Ekstern tjeneste)](https://norske-testdata.no/fiktivt-fnr/). 
+
+Merk! For at disse skal kunne benyttes i ID-porten og KRR, må disse opprettes med +80 i månedsfeltet i fødselsnummeret. 
 
 
 ## Endre kontaktinformasjon på syntetisk testbruker i KRR
