@@ -44,14 +44,14 @@ SAML-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP
 
 |Miljø |IDP|Domene| 
 |-|-|
-|PROD|[saml2.idporten.no-v6](https://saml2.idporten.no/idp6)|saml2.idporten.no|
+|PROD|https://saml2.idporten.no/idp6|saml2.idporten.no|
 |PROD|idporten.difi.no-v5|idporten.difi.no|
 |TEST|https://saml2.test.idporten.no/idp5|saml2.test.idporten.no|
 |TEST|idporten-ver2.difi.no-v4|idporten-ver2.difi.no|
 
 ### ID-porten sine metadata
 
-I en overgang kan eksisterende metadata for produksjon (v5) og VER (v4) benyttesfor gamle IDP'er.  Metadata kan lastes ned for nye IDP'er. 
+I en overgang kan eksisterende metadata for produksjon (v5) og VER (v4) benyttesfor gamle IDP'er.  Metadata kan lastes ned for nye IDP'er. (Produksjon er ennå ikke satt opp)
 
 |Miljø |IDP|Metadata| 
 |-|-|
