@@ -1,5 +1,5 @@
 ---
-title: Person 
+title: Person
 
 sidebar: begrep_sidebar
 redirect_from: /sdp_person
@@ -25,9 +25,9 @@ av Person i forhold til behovene i den enkelte felleskomponentene.
 
 #### Xml eksempel
 
-``` 
+```
 <sdp:Person>
-    <sdp:personidentifikator>01012295312</sdp:personidentifikator>
+    <sdp:personidentifikator>010122*****</sdp:personidentifikator>
     <sdp:postkasseadresse>1</sdp:postkasseadresse>
 </sdp:Person>
 

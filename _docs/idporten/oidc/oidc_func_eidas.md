@@ -276,11 +276,11 @@ Merk av ved bruk av tilleggsgjenkjenningsalgoritmer, vil fravær av verdi i felt
 
 Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
 
-Den først i lista, Mohamed Al Samed, er hardkoda i den norske eIDAS Noden til å bli  entydig gjenkjent med norsk D-nummer 59125502061.  ID-token for en autentisering på eidas-nivå 'substantial' vil se slik ut:
+Den først i lista, Mohamed Al Samed, er hardkoda i den norske eIDAS Noden til å bli  entydig gjenkjent med norsk D-nummer 591255*****.  ID-token for en autentisering på eidas-nivå 'substantial' vil se slik ut:
 
 ```
  "amr" : [ "eIDAS" ],
- "pid" : "59125502061",
+ "pid" : "591255*****",
  "eidas-identitymatch" : "UNAMBIGUOUS",
  "eidas-personidentifier" : "SE/NO/199008199391",
  "eidas-firstname" : "Mohamed",
