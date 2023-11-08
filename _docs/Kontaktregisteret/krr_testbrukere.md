@@ -10,19 +10,33 @@ product: KRR
 redirect_from: /krr_testbrukere
 ---
 
+## Utfasing av "vanlig" fødselsnummer
+
+Som et ledd i å bedre informasjonssikkerhet og personvern, så vil Digdir fase ut bruk av fødselsnummer som følger vanlig syntaks. Vi kommer tilbake med mer informasjon om dette, men vi ber alle om å gå over til syntetiske fødselsnummer i testing.
+
+## Hva mener vi med syntetisk testbruker?
+
+Syntetiske testbrukere har en personidentifikator der man har plusset på 80 på fødselsmåneden og kontrollsifferene er regnet ut i fra det.
+
+For å finne brukere med slike fødselsnummer kan du se på listen vår litt lenger nede på denne siden. Der finner du testbrukere som har gitt egenskaper i Kontakt- og reservasjonsregisteret.
+
+Om du ønsker testbrukere som også finnes i test-folkeregisteret, så kan du finne dette i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/).
+
+Ønsker du en testbruker som ikke finnes i Tenor, kan du f.eks bruke tjenesten til [Norske testdata (Ekstern tjeneste)](https://norske-testdata.no/fiktivt-fnr/).
+
 ## Registrer/opprett testbruker i KRR
-Ved å opprette MinID bruker,vil brukeren samtidig bli registrert i Kontakt- og reservasjonsregisteret (KRR). 
+Ved å opprette MinID bruker,vil brukeren samtidig bli registrert i Kontakt- og reservasjonsregisteret (KRR).
 
 Framgangsmåte:
 <br>
-- Logg inn og hent fødselsnummer på aktuell Tenor testbruker i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/). 
+- Logg inn og hent fødselsnummer på aktuell Tenor testbruker i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/).
 - Registrer testbruker i KRR ved å følge oppskriften [Opprette testbruker (syntetisk PID) selv i testmiljøet TEST](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html#opprette-testbruker-syntetisk-pid-selv-i-testmilj%C3%B8et-test).
 - sjekke om testbruker er registrert i KRR gjennom tjenesten [MinProfil](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger) i testmiljøet. Du kan logge inn med både TestID og MinID.  
 
 
 ## Endre kontaktinformasjon på syntetisk testbruker i KRR
 Det er mulig å endre kontaktinformasjon på syntetiske testbrukere ved å logge inn på MinProfil.
-For å endre kontaktinformasjon på syntetiske brukere, velg TestID som innloggingsmetode. 
+For å endre kontaktinformasjon på syntetiske brukere, velg TestID som innloggingsmetode.
 
 Kontaktinformasjon (e-post, mobil) tilbakestilles på alle syntetiske testbrukere hver lørdag.
 <br>
@@ -66,35 +80,8 @@ Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse
 | 18886799280 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nn | Språkvalg Nynorsk |
 | 16867096934 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nb | Språkvalg Bokmål |
 | 01814797763 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | en | Språkvalg Engelsk |
-| 29129318781 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | se | Språkvalg Samisk | 
-      
-      
-### Ikke-syntetiske testbrukere (=vanlig fødselsnummer) 
-
-<br>
-
-| Fnr | Reservert | Status | Varslingsstatus | Mobil | Epost | Postkasse | Spraak | Merknad |
-|-----|-----------|--------|-----------------|-------|-------|-----------|--------|---------|
-| 01048800153 | NEI | AKTIV | KAN_IKKE_VARSLES | JA |  JA | - | - | Utgaatt kontaktinformasjon 18mnd regelen |
-| 01066100746 | NEI | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Utgaatt kontaktinformasjon 18mnd regelen |
-| 27129323960 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
-| 27129323618 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
-| 27129324592 | JA | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Mobil og e-post registrert med reservasjon |
-| 27129324401 | JA | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Mobil og e-post registrert med reservasjon |
-| 27129324169 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | - | Mobil og e-post registrert |
-| 27129324088 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | - | Mobil og e-post registrert |
-| 27129323537 | NEI | AKTIV | KAN_VARSLES | JA | - | - | - | Kun mobil registrert |
-| 27129323456 | NEI | AKTIV | KAN_VARSLES | JA | - | - | - | Kun mobil registrert |
-| 27129323375 | NEI | AKTIV | KAN_VARSLES | - | JA | - | - | Kun e-post registrert |
-| 27129323294 | NEI | AKTIV | KAN_VARSLES | - | JA | - | - | Kun e-post registrert |
-| 24079412372 | NEI | AKTIV | KAN_VARSLES | JA | JA | Digipost | - | Digipost |
-| 11089499889 | NEI | AKTIV | KAN_VARSLES | JA | JA | eBOKS | - | eBoks |
-| 24079412291 | JA | AKTIV | KAN_IKKE_VARSLES | - | JA | - | - | Digipost med reservasjon ola.nordmann#40NU |
-| 29129319060 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nn | Språkvalg Nynorsk |
-| 29129318943 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nb | Språkvalg Bokmål |
-| 29129318862 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | en | Språkvalg Engelsk |
 | 29129318781 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | se | Språkvalg Samisk |
 
-<br>
-For full oversikt over responsene kan du laste ned et excell-ark her:
-[oppslagstjenesten_testdata_med_forventet_respons_0.xlsx]({{site.baseurl}}/assets/oppslagstjenesten_testdata_med_forventet_respons_0.xlsx)
+### Ikke-syntetiske testbrukere (=vanlig fødselsnummer)
+
+Denne listen er fjernet. Vennligst bruk syntetiske fødselsnummer.
