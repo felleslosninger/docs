@@ -22,9 +22,11 @@ For å finne brukere med slike fødselsnummer kan du se på listen vår litt len
 
 Om du ønsker testbrukere som også finnes i test-folkeregisteret, så kan du finne dette i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/).
 
-Ønsker du en testbruker som ikke finnes i Tenor, kan du f.eks bruke tjenesten til [Norske testdata (Ekstern tjeneste)](https://norske-testdata.no/fiktivt-fnr/).
 
 ## Registrer/opprett testbruker i KRR
+
+### MinID testbrukar
+
 Ved å opprette MinID bruker,vil brukeren samtidig bli registrert i Kontakt- og reservasjonsregisteret (KRR).
 
 Framgangsmåte:
@@ -32,6 +34,9 @@ Framgangsmåte:
 - Logg inn og hent fødselsnummer på aktuell Tenor testbruker i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/).
 - Registrer testbruker i KRR ved å følge oppskriften [Opprette testbruker (syntetisk PID) selv i testmiljøet TEST](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html#opprette-testbruker-syntetisk-pid-selv-i-testmilj%C3%B8et-test).
 - sjekke om testbruker er registrert i KRR gjennom tjenesten [MinProfil](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger) i testmiljøet. Du kan logge inn med både TestID og MinID.  
+
+### Testbrukar utanfor Tenor testdatabase
+Ønsker du en testbruker som ikke finnes i Tenor, kan du f.eks bruke tjenesten til [Norske testdata (Ekstern tjeneste)](https://norske-testdata.no/fiktivt-fnr/).
 
 
 ## Endre kontaktinformasjon på syntetisk testbruker i KRR
