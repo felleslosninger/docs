@@ -13,7 +13,7 @@ ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innfø
 
 Overgangen til ny SAML-løsning skjer ved DNS-oppdatering. Det blir mulig å teste tjenesten på nytt domene på forhånd.
 
-På et senere tidspunkt vil SAML bli faset ut fullstendig.
+På et senere tidspunkt vil SAML bli faset ut fullstendig..
 
 
 ## SAML-arkitektur
