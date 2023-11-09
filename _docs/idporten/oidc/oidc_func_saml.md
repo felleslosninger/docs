@@ -73,7 +73,7 @@ Vi støtter ikke opplastning av kunden sine metadata.  Du må manuelt sende oss
 - logout-url
 - public-nøkkel av virksomhetssertifikatet du bruker (samme sertifikat til både signering og kryptering)
 
- ### Begrensninger i SAML-proxy 
+### Begrensninger i SAML-proxy
 
 Går frå fullverdig IAM-produkt til “dum” proxy foran OIDC-løysinga
 
