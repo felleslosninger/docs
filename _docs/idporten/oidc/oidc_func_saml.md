@@ -75,7 +75,7 @@ Vi støtter ikke opplastning av kunden sine metadata.  Du må manuelt sende oss
 
 ### Begrensninger i SAML-proxy
 
-Går frå fullverdig IAM-produkt til “dum” proxy foran OIDC-løysinga
+Går frå fullverdig IAM-produkt til enkel proxy foran OIDC-løysinga
 
 - Støttar berre ArtifactResolution (ikkje HTTP-POST binding)​
 - Kontaktinfo vert ikkje lenger utlevert i Assertion
