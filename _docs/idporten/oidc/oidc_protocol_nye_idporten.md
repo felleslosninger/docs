@@ -11,15 +11,16 @@ This page is also available in English. [Changes in the new ID-porten in 2022-20
 
 # Status nye ID-porten
 
-Per 15.juni 2023:
-- Nye ID-porten har robust og stabil drift på ny platform.  
-- Omfattende ytelsestesting viser resultater som er høyere enn dagens løsning.
-- Det er ca 20 tjenester fra 15 virksomheter som er flytta til Nye ID-porten.
+Per 10.november 2023:
+- Det er nå 1831 tjenester fra 906 virksomheter som har migrert over til den nye plattformen.
+- Nesten 35% av alle innlogginger i ID-porten skjer nå på den nye plattformen.
+- Brukerstyrt datadeling (API-klienter) kan også migrere.
+- 21. November ruter vi all trafikk fra oidc.difi.no over til login.idporten.no. I perioden frem til SAML proxy er klar (tentativt i Januar) er det ikke Single-Sign-On mellom SAML og OIDC.
 
-Noe funksjonalitet fra dagens løsning er ennå ikke tilgjengelig i Nye ID-porten. Dette vil bli klart før flytting av SAML 26/9, og gjelder :
-- Brukerstyrt datadeling
-- Pseudonyme tokens
+
+Noe funksjonalitet fra dagens løsning er ennå ikke tilgjengelig i Nye ID-porten:
 - Authorizations-APIet
+- SAML
 
 
 # Hvordan migrere i praksis ?
@@ -111,7 +112,7 @@ Nye ID-porten vil som idag tilby SSO mellom alle integrasjoner både over OIDC o
 Merk at i prøvedriftsperioden og i starten av migreringsfasen så vil ikke klienter som er flyttet til ny løsning få SSO til integrasjoner på gammel løsning.
 
 
-#### Isolert SSO-sesjon 
+#### Isolert SSO-sesjon
 
 Nye ID-porten vil tilby ny funksjonalitet for isolert SSO-sesjon.  Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i ID-porten felles Circle-of-trust eller ikke.
 
@@ -149,7 +150,7 @@ Det har skjedd presiseringer i OIDC-spesifikasjonen mhp logout.
 - Dersom en klient er registrert for front channel logout, vil klienten få kall til registrert uri også når klienten selv initierer utlogging.  På gammel platform mottok initierende klient ikke frontkanalskallet, men denne oppførselen var ikke ihht. spec.
 - Det er viktig å legge login.idporten.no / login.test.idporten.no som lovlig frame-ancestors i Content Security Policy
 
-Endepunktet for utlogging støtter både GET og POST. 
+Endepunktet for utlogging støtter både GET og POST.
 
 ### sid kun for frontchannel-klienter
 
@@ -187,7 +188,7 @@ I ny løsning vil det bli tilbudt en rudimentær SAML-støtte, hvis formål kun 
 
 Denne vil støtte SAML Web Browser SSO 2.0 med Artifact Resolution-binding.  Det vil bare være støtte for 1 AssertionConsumerURL, og ett kombinert signerings- og krypteringssertifikat.
 
-NameID-verdier vil endre seg ved overgangen.  Den faktiske verdien vil være persistent (lik for samme bruker hver gang), selv om SP skulle be om en transient verdi. 
+NameID-verdier vil endre seg ved overgangen.  Den faktiske verdien vil være persistent (lik for samme bruker hver gang), selv om SP skulle be om en transient verdi.
 
 Det vil ikke lenger utleveres kontaktopplysninger fra KRR som del av Assertion.
 
