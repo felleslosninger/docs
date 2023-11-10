@@ -79,4 +79,5 @@ Går frå fullverdig IAM-produkt til “dum” proxy foran OIDC-løysinga
 
 - Støttar berre ArtifactResolution (ikkje HTTP-POST binding)​
 - Kontaktinfo vert ikkje lenger utlevert i Assertion
-
+- Persistent NameID blir generert på nytt i ny løsning (nye verdier for brukerne)
+- Persistent og transient NameID vil få like verdier
