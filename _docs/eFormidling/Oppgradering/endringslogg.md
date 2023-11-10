@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.24.1
+
+10.11.2023
+
+**Feilrettingar**
+
+- Fiksar ein feil på grensesnittet som vart introdusert i versjon 2.24.0
+
 ## 2.24.0
 
 02.11.2023
@@ -29,7 +37,6 @@ redirect_from:
 **Vedlikehald**
 
 - Patchar av ulike rammeverk. Bl.a er ActiveMQ bumpet til versjon 5.16.7 og den medfølgende H2 databasen til versjon 2.2.224 for å unngå mulig sårbarheit i eldre versjonar.
-  
 - **NB!** Dette krever at ein fjerner ActiveMQ-mappa og begge databasefilene (.db) fra integrasjonspunktmappa. Dersom ein vil unngå tap av historikk må den eksisterende H2-databasen migreres før oppgradering. Sjå korleis her: https://h2database.com/html/tutorial.html#upgrade_backup_restore
 
 ## 2.23.1
