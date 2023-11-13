@@ -80,7 +80,7 @@ Content-type: application/json
 Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 
 {
- "personidentifikatorer" : [ "23079422568" ]
+ "personidentifikatorer" : [ "20914695016" ]
 }
 ```
 
@@ -91,13 +91,13 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
   "personer":
     [
       {
-         "personidentifikator": "23079421936",
+         "personidentifikator": "20914695016",
          "reservasjon": "NEI",
          "status": "AKTIV",
          "kontaktinformasjon":
          {
-            "epostadresse": "23079421936-test@minid.norge.no",
-            "epostadresse_oppdatert": "2018-06-29T10:14:52+02",
+            "epostadresse": "NULLstillt@default.digdir.no",
+            "epostadresse_oppdatert": "2023-06-29T10:14:52+02",
          }
       }
    ]
