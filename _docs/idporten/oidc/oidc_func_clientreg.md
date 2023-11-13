@@ -226,4 +226,9 @@ For klienter (både innlogging og maskin) som mottar *access_token* til API-sikr
 | access_token_lifetime | Levetid for utstedt access_token | 120 sekunder* |
 | refresh_token_lifetime |Levetid for utstedt refresh_token | 600 sekunder |
 
+Levetiden på authorization definerer maks levetid, mens refresh_token definerer inaktivitet. Som hovedregel bør klienten være registrert slik:
+access_token_lifetime < refresh_token_lifetime <= authorization_lifetime.
+
 *Merk at de fleste av egenskapene til access_token blir bestemt av API-tilbyder, og ikke som en del av klient-registreringen.  En klient kan for eksempel ikke få token som har lengre levetid enn det API-tilbyder har satt som maks-grense.
+
+
