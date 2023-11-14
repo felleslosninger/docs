@@ -1,7 +1,7 @@
 ---
 title: Integrasjonstype og scopes
-description: 
-summary: 
+description:
+summary:
 
 sidebar: krr_sidebar
 product: KRR
@@ -20,12 +20,12 @@ I KRR-sammenheng er følgende integrasjonstyper aktuelle:
 |krr   | Kontaktregisteret (server-til-server)   |
 
 
-Ved Oppslagstjenesten REST må du velge “KRR” som “Difi-tjeneste”. Du vil da få automatisk tildelt de riktige scopene. Ved Oppslag ved brukerinnlogging må du velge “Api-klient” som “Difi-tjeneste”. 
+Ved Oppslagstjenesten REST må du velge “KRR” som “Difi-tjeneste”. Du vil da få automatisk tildelt de riktige scopene. Ved Oppslag ved brukerinnlogging må du velge “Api-klient” som “Difi-tjeneste”.
 Deretter må du manuelt sette de riktige scopene: krr:user/kontaktinformasjon.read, openid, profile
 
 {% include note.html content="Det er ikke mulig å endre  integrasjonstype etter opprettelse." %}
 
-## Liste over aktuelle scopes for KRR 
+## Liste over aktuelle scopes for KRR
 
 |Scope|Beskrivelse| Tillatte integrasjonstyper|
 |-|-|-|
@@ -36,6 +36,8 @@ Deretter må du manuelt sette de riktige scopene: krr:user/kontaktinformasjon.re
 
 {% include note.html content="De ulike scopene som er tilgjengelige for KRR er beskrevet under avsnittene for de ulike tjenestene." %}
 
-Generelt må api-konsumenter spørre api-tilbyder (eier av scopet) om tilgang til å bruke deres scope. Les mer her om [hvordan du som kunde kan få tilgang](https://docs.digdir.no/docs/Kontaktregisteret/krr_opprette_tilgang) til scopene over. 
+Generelt må api-konsumenter spørre api-tilbyder (eier av scopet) om tilgang til å bruke deres scope. Les mer her om [hvordan du som kunde kan få tilgang](https://docs.digdir.no/docs/Kontaktregisteret/krr_opprette_tilgang) til scopene over.
 
 Lenke til [mer om scopes](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_scope.html).
+
+test
