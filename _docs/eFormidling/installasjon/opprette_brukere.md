@@ -55,21 +55,21 @@ KS vil sende påloggingsadresse til administrator etter at virksomheten er oppre
  
 > Alt av oppsett og skjermbilder under er eksempler. Det gjelder tilsvarende for din virksomhet – bare med deres eget navn og organisasjonsnummer. Det er bare opplysninger som nevnes heretter må utfylles i konfigureringen. 
 
-1. Gå til [Fiks forvaltning](https://forvaltning.fiks.ks.no) og logg inn.
+- Gå til [Fiks forvaltning](https://forvaltning.fiks.ks.no) og logg inn.
 
 Klikk på «Konfigurasjon» og deretter velger du din organisasjon.
 
 ![bilde1]({{site.baseurl}}/images/eformidling/FIKS_konfig.png)
  
-2. Klikk så på «Fiks SvarUt».
+- Klikk så på «Fiks SvarUt».
 
 ![bilde2]({{site.baseurl}}/images/eformidling/FIKS_tjenester.png)
 
-3. Du finner navnet på kontoen din under. Trykk på den.
+- Du finner navnet på kontoen din under. Trykk på den.
 
 ![bilde3]({{site.baseurl}}/images/eformidling/FIKS_konto.png)
 
-4. Disse punktene må en fylle ut:
+- Disse punktene må en fylle ut:
 
 #### ReturAdresse/forside
 
@@ -94,7 +94,7 @@ Resten av innstilligene kan en se bort fra.
 
 ### Konfigurering av SvarInn (mottakersystem)
 
-Klikk på «mottakersystem» i menyen på toppen og så på organisasjonen din i menyen på venstre side
+Gå til [svarut.ks.no](https://svarut.ks.no) og logg inn. Klikk på «mottakersystem» i menyen på toppen og så på organisasjonen din i menyen på venstre side
 
  
 ![bilde8]({{site.baseurl}}/images/eformidling/08_FIKS.png) 
