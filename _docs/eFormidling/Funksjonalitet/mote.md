@@ -35,9 +35,9 @@ Les mer om eInnsyn på:
 
 Publisering av møter representeres med følgende prosess for mottaker:
 
-| **Prosessnavn** | **Prosessidentifikator**                   |
-|-----------------|--------------------------------------------|
-| Meeting         | urn:no:difi:profile:einnsyn:meeting:ver1.0 |
+| **Prosessnavn** | **Prosessidentifikator**                       |
+|-----------------|------------------------------------------------|
+| Journalpost     | urn:no:difi:profile:einnsyn:journalpost:ver1.0 |
 
 Publisering av møter representeres med følgende prosess for avsender:
 
