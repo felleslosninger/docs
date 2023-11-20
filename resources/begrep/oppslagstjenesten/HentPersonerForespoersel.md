@@ -36,7 +36,7 @@ Content-type: application/json
 Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 
 {
- "personidentifikatorer" : [ "23079422568" ]
+ "personidentifikatorer" : [ "20914695016" ]
  
 }
 ```
