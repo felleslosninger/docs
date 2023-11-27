@@ -70,8 +70,8 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
  <ns:informasjonsbehov>SikkerDigitalPost</ns:informasjonsbehov>
  <ns:informasjonsbehov>VarslingsStatus</ns:informasjonsbehov>
  
- <ns:personidentifikator>01013355300</ns:personidentifikator>
- <ns:personidentifikator>01013355491</ns:personidentifikator>
- <ns:personidentifikator>01013356366</ns:personidentifikator>
+ <ns:personidentifikator>20914695016</ns:personidentifikator>
+ <ns:personidentifikator>20914695016</ns:personidentifikator>
+ <ns:personidentifikator>20914695016</ns:personidentifikator>
 </ns:HentPersonerForespoersel>
 ```
