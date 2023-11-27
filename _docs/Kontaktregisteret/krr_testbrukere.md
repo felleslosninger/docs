@@ -87,7 +87,6 @@ Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse
 | 18886799280 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nn | Språkvalg Nynorsk |
 | 16867096934 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nb | Språkvalg Bokmål |
 | 01814797763 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | en | Språkvalg Engelsk |
-| 29129318781 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | se | Språkvalg Samisk |
 
 ### Ikke-syntetiske testbrukere (=vanlig fødselsnummer)
 
