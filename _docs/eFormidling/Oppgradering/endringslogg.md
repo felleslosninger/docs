@@ -775,6 +775,14 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 ## Sentrale komponenter
 
+## ServiceRegistry 2.18.1
+
+28.11.2023
+
+**Feilretting**
+
+- Fiksar glipp i logg-oppsettet til applikasjonen
+
 ## ServiceRegistry 2.18.0
 
 17.11.2023
