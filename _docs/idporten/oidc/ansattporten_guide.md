@@ -23,9 +23,9 @@ Ansattporten er p.t. i en pilot-status med redusert SLA, og det er foreløpig ik
 
 Ansattporten tilbyr per nå to brukerreiser:
 
-### Brukerreise 1:  Innlogging uten SSO
+### Brukerreise 1:  Innlogging med isolert SSO
 
-Dette er den enkleste brukerreisen.  I dette scenariet utfører brukeren en engangs punktautentisering til en tjeneste.
+Dette er den enkleste brukerreisen.  I dette scenariet utfører brukeren en innlogging til en tjeneste, og får etablert en isolert SSO-sesjon kun til denne tjenesten:
 
 1. Bruker klikker login-knapp hos tjeneste.  
 2. Bruker autentiserer seg med eID gjennom Ansattporten. Det opprettes ikke en SSO-sesjon.
@@ -49,23 +49,26 @@ note over B,C: innlogget i tjenesten
 
 </div>
 
-Ulikt ID-porten så vil ikke brukeren få opprettet en SSO-sesjon i Ansattporten.  Dersom brukeren forsøker å logge på samme eller en annen tjeneste rett etterpå, med samme browser, så må brukeren autentisere seg på nytt.
+Ulikt ID-porten så vil ikke brukeren få opprettet en felles SSO-sesjon i Ansattporten.  Dersom brukeren forsøker å logge på en annen tjeneste rett etterpå, med samme browser, så må brukeren autentisere seg på nytt.  Men dersom brukeren forsøker å logge på samme tjeneste på nytt, så vil vil hen bli logga inn automatisk.  Dette kan utnyttes til f.eks å la sluttbruker enkelt bytte organisasjon hen vil representere uten å måtte re-autentisere hver gang. 
 
+Denne SSO-oppførselen er realisert vha funksjonaliteten [isolert SSO-sesjon](oidc_func_nosso.html), der Ansattporten overstyrer flagget `sso_disabled` til true uavhengig av hva kunden selv har satt i selvbetjening.   Merk at dette også  betyr at Ansattporten ikke tilbyr individuelle sesjonslevetider per tjeneste, men isteden så deler alle tjenestene en felles underliggende http-sesjonscookie der max-levetid på 120 min starter ved innlogging til første tjeneste, og inaktivitetstimer på 30 min gjelder for unionen av de innloggede tjenestene. 
+
+Dette betyr også at kunder må støtte utlogging både fra egen tjeneste, men også håndtere utloggingsforespørsler (front_channel_logout) fra Ansattporten initiert av en annen tjeneste.
 
 
 ### Brukerreise 2: Innlogging på vegne av andre
 
 Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autorativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autorativ kilde.
 
-En tjeneste aktiverer støtte for beriket autentisering ved å inkludere informasjon om påkrevd representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
+En tjeneste aktiverer støtte for beriket autentisering ved å inkludere informasjon om ønsket representasjonsforhold (="avgiver") i autentiseringforespørselen.  Ansattporten vil da vise en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
 
 ![organsisasjonsvelger](/images/idporten/oidc/ansattporten_orgvelger2.png)
 
 Brukerreise blir da som følger:
 
 1. Bruker klikker login-knapp hos tjeneste.  Kallet til ansattporten inneholder informasjon om hvilket representasjonsforhold som tjenesten trenger
-2. Bruker autentiserer seg med sterk eID.  Det opprettes ikke SSO-sesjon i Ansattporten.
-3. Bruker vises en organisasjonsvelger, der hen kan velge hvilken avgiver (organisasjon) som denne innloggingen skal være på vegne av
+2. Bruker autentiserer seg med sterk eID.  Det opprettes en isolert SSO-sesjon i Ansattporten.
+3. Dersom bruker har en eller flere representasjonsforhold av den forespurte typen, vil Ansattporten vise en organisasjonsvelger, der hen kan velge hvilken avgiver (organisasjon) som denne innloggingen skal være på vegne av
 4. Bruker blir sendt tilbake til tjenesten, med informasjon om valgt avgiver
 
 Dette er detaljert i sekvensdiagrammet under:
@@ -92,6 +95,7 @@ note over B,C: innlogget i tjenesten
 </div>
 
 
+**endring Q1-2024:** Dersom brukeren mangler det forespurte representasjonsforholdet, så vil brukeren likevel bli logga inn, men det vil ikke inkluderes noen representasjons-informasjon.
 
 
 ## Metadata
@@ -355,4 +359,4 @@ Ansattporten sine access_token er svært like [ID-porten sine access token](oidc
 ### 4: userinfo og utlogging
 Ansattporten tilbyr ikke et /userinfo-endepunkt.
 
-Siden Ansattporten ikke tilbyr SSO, er det heller ikke behov for å logge brukeren ut, eller måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i circle-of-trust.
+Siden Ansattporten er basert på [isolerte SSO-sesjoner](oidc_func_nosso.html), så må tjenesten kunne håndtere utlogging på samme måten som ID-porten.  Dvs. både tilby brukeren å kunne logge  ut, samt å måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i Ansattporten.

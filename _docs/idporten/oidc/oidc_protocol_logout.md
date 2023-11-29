@@ -35,6 +35,7 @@ When the end-user wants to logout, the client must redirect the browser to the /
 We call this prosess "to perform single logout (SLO)"
 
 Please note the following:
+*  clients can NOT expect to get its own cookie included in the frontchannel-notification in step 3, as browsers increasingly implement limitations on the support of 3rd-party cookies due to privacy reasons.  Clients should store the `sid` value from the id_token 
 *  if one of the SAML serviceproviders don't redirect the end-user back to ID-porten, the logout-chain is broken, and the end user will stop at that serviceprovider.
 *  the client initiating the /logout will also receive a frontchannel notification in step 3. 
 *  any tokens issues to 3rd-party scopes (beyond `openid`/`profile`) will still be active after a logout. For most scenarios in ID-porten, this is the desired behaviour, and thus the default behaviour.  But a side effect of this design is that ex. [Single-page applications (SPA)/javascript](oidc_auth_spa.html) which have chosen to use ID-porten access_tokens with their own scope directly as their session mechanism, must use the [revoke-endpoint](oidc_protocol_revoke.html) instead (or in addition to) the /logout-endpoint to "log out of the spa".
