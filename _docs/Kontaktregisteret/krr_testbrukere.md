@@ -51,7 +51,7 @@ Kontaktinformasjon (e-post, mobil) tilbakestilles på alle syntetiske testbruker
 <br>
 
 ## KRR testbrukere med ulike attributter
-Vi har to sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse tilbakestilt hver lørdag. Det ene settet er testbrukere med vanlige fødselsnummer, og det andre settet er med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR:
+Vi har ett sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse tilbakestilt hver lørdag. Dette er med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR:
 
 - Med mobil, e-post og digital postkasse
 - Med mobil og e-post
