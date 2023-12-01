@@ -84,7 +84,6 @@ export IDENTITY="SkyvesenetIdentity"
 
 az group create --name $STORAGE_RG --location northeurope
 
-export STORAGE_ACC="skyportenstoragepilot"
 az storage account create --name $STORAGE_ACC --resource-group $STORAGE_RG --location northeurope  --sku Standard_RAGRS --kind StorageV2
 {
 ...
