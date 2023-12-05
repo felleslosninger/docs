@@ -30,7 +30,7 @@ Supported request attributes for normal, redirected authorization requests:
 | --- | --- | --- |
 | response_type | Required | Only `code` is supported by ID-porten |
 | client\_id | Required | ID-porten will provide you with a client-id out-of-band|
-| redirect\_uri | Required |The end user will be redirected here after a successful authentication.  Only pre-registered URIs can be used.  |
+| redirect\_uri | Required |The end user will be redirected here after a successful authentication.  Only pre-registered URIs can be used.  Localhost is allowed only in test environment.|
 | scope |  Required |Whitespace-separated list of requested scopes.  Normally just `openid`.  |
 | state | Recommended | Value set by the client and returned in the callback. Often used to g Normally used to If PKCE is not used, then state must be used to achieve CSRF-protection. Mandatory to use for public clients|
 | nonce | Recommended |Value set by the client and returned in the id-token. Recommended to use to protect from replay attacks. |

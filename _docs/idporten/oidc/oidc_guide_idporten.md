@@ -155,7 +155,7 @@ Etter at brukeren har logget inn vil det sendes en redirect tilbake til klienten
 ```
 GET https://min.tjeneste.no/login_callback?code=1JzjKYcPh4MIPP9YWxRfL-IivWblfKdiRLJkZtJFMT0&state=min_egendefinerte_state_verdi
 ```
-
+I testmiljø tillater vi redirect tilbake til localhost.
 
 ## 3: Utstedelse av token fra token-endepunktet
 
