@@ -42,7 +42,7 @@ Det som støttes foreløpig er:
 
 | Integrasjonstype |Beskrivelse|
 |-|-|
-|idporten   | Ordinær innlogging gjennom ID-porten  |
+|idporten      | Ordinær innlogging gjennom ID-porten. Hardkodet til `openid profile`-scope.  |
 |api_klient    | ID-porten integrasjoner som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
 |ansattporten | Innlogging og datadeling i [Ansattporten](ansattporten_guide) |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
@@ -206,7 +206,7 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 |attributt|Påkrevd?|beskrivelse|
 |-|-|-|
 | display_name | Ja |Klientens organisasjonsnavn som benyttes ved visning på web |
-| redirect_uris* | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. |
+| redirect_uris* | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. I testmiljø er rein http samt localhost tillatt.|
 | post_logout_redirect_uris* | Ja |Liste over url'er som provideren redirecter til etter fullført egen-initiert utlogging. |
 | frontchannel_logout_uri** | Nei|  URL som provideren sender request til ved utlogging trigget av annen klient i samme sesjon. Må tilhøre samme domene som en av de registrerte redirect_uri'ene. |
 | frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri. Dersom ikke satt, så vil ikke 'sid' bli inkludert i id_token. |
