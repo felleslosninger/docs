@@ -144,7 +144,15 @@ Alle tjenester må bruke [PKCE]({{site.baseurl}}/docs/idporten/oidc/oidc_func_pk
 
 For tjenester med høye krav til sikkerhet bør en i tillegg vurdere å bruke [PAR]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_par) til å første POSTe autentiseringsparametrene direkte til ID-porten før en redirecter, slik at disse parametrene ikke blir eksponert for manipulasjon av brukers browser.
 
-## 2: Redirect tilbake til tjenesten
+## 2: Bruker autentiserer seg
+
+Bruker vil så autentisere seg mot ID-porten.  ID-portens språk prioriteres slik:
+
+- Bokmål er standardspråk dersom ingenting er oppgitt
+- Dersom klient har oppgitt `ui_locales`, så vil dette språket bli brukt
+- Dersom cookien IDPORTEN_SELECTED_LANGUAGE-cookien er satt, vil dette overstyre andre valg. Cookien blir satt kun for brukere som aktiv endrer språk i ID-portens GUI.
+
+## 3: Redirect tilbake til tjenesten
 
 Etter at brukeren har logget inn vil det sendes en redirect tilbake til klienten til den forhåndsregistrerte `redirect_uri`.  Redirecten vil vil inneholde et autorisasjonskode-parameter `code` som  brukes til oppslag for å hente tokens.  Koden er base64-enkoda og URL-safe.
 
@@ -157,7 +165,7 @@ GET https://min.tjeneste.no/login_callback?code=1JzjKYcPh4MIPP9YWxRfL-IivWblfKdi
 ```
 I testmiljø tillater vi redirect tilbake til localhost.
 
-## 3: Utstedelse av token fra token-endepunktet
+## 4: Utstedelse av token fra token-endepunktet
 
 Token-endepunktet brukes for utstedelse av tokens.
 
@@ -253,7 +261,7 @@ Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt e
 
 
 
-## 4: Userinfo-endepunkt
+## 5: Userinfo-endepunkt
 
 Ved å forespørre scopet *profile* vil klienttjenesten sammen med id tokenet også få utstedt et access_token (og evnt. refresh_token) som kan benyttes mot providerens userinfo-endepunkt.
 
@@ -274,7 +282,7 @@ Respons:
 ```
 
 
-## 5: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
+## 6: Kontaktopplysninger fra Kontakt- og Reservasjonsregisteret
 
 Kontakt-opplysninger knyttet til innlogget bruker, er [tilgjengelig på et eget endepunkt]({{site.baseurl}}/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest) dersom access_token inneholder `krr:user/kontaktinformasjon.read`-scopet.
 
