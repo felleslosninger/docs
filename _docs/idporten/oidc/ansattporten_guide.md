@@ -359,4 +359,4 @@ Ansattporten sine access_token er svært like [ID-porten sine access token](oidc
 ### 4: userinfo og utlogging
 Ansattporten tilbyr ikke et /userinfo-endepunkt.
 
-Siden Ansattporten er basert på [isolerte SSO-sesjoner](oidc_func_nosso.html), så må tjenesten kunne håndtere utlogging på samme måten som ID-porten.  Dvs. både tilby brukeren å kunne logge  ut, samt å måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i Ansattporten.
+Siden Ansattporten er basert på [isolerte SSO-sesjoner](oidc_func_nosso.html), så må tjenesten kunne håndtere [utlogging på samme måten som ID-porten](oidc_func_sso.html#single-logout-slo).  Dvs. både tilby brukeren å kunne logge  ut, samt å måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i Ansattporten.
