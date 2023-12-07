@@ -19,9 +19,6 @@ folders:
   - title: ICD 0192 and new profiles
     jurl: /docs/ELMA/elma_0192andnewprofiles
 
-  - title: Upgrade to new 3.0 profiles
-    jurl: /docs/ELMA/elma_upgradingto0192profiles
-
   - title: Status & releasenotes
     jurl: /docs/ELMA/elma_status
 
