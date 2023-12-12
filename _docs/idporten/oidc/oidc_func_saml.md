@@ -85,7 +85,7 @@ SAML-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP
 
 I en overgang kan eksisterende metadata for produksjon (v5) og VER (v4) benyttesfor gamle IDP'er.  Se [metadata for gamle ID-porten]({{site.baseurl}}/docs/idporten/saml/saml_metadata).  
 
-Metadata kan lastes ned for nye IDP'er. (Produksjon er ennå ikke satt opp)
+Metadata kan lastes ned for nye IDP'er. 
 
 |Miljø |IDP|Metadata| 
 |-|-|
