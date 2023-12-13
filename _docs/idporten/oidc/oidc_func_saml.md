@@ -109,7 +109,7 @@ Går frå fullverdig IAM-produkt til enkel proxy foran OIDC-løysinga
 ### TEST TEST
 
 <div class="mermaid">
-graph LR
+graph LR2
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
     SAML[SAML-proxy]
