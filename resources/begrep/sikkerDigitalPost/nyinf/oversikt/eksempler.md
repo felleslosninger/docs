@@ -26,6 +26,11 @@ Utskrift fra Digdir `991825827` til utskriftsleverandør (Skatteetaten) `9747610
 - [Payload (JSON) fra `utskrift` forretningsmelding](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-forretningsmelding.json)
 - [Payload (JSON) fra autorisasjonsbevis i `utskrift.maskinportentoken`](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-forretningsmelding-autorisasjonsbevis.json)
 
+Utskrift fra Digdir `991825827` til utskriftsleverandør (Skatteetaten) `974761076` for innbygger uten kjent fødselsnummer (for eksempel utenlandsk person) eller virksomhet (for
+eksempel utenlandsk virksomhet) som ikke kan nås digitalt:
+
+- Følg eksempelet over, men utelat fødselsnummer fra meldingen
+
 Digital fra Digdir `991825827` til eBoks `922020175` for testbruker `07126700169`:
 
 - [Kryptert dokumentpakke (CMS)](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/digital-dokumentpakke.cms)
