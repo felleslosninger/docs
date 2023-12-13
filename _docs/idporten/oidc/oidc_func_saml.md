@@ -39,35 +39,25 @@ For innlogging så mapper OIDC-protokollen sin *authorization code*-flyt svært 
 
 <div class="mermaid">
 sequenceDiagram
-autonumber
-    participant Browser
-    participant SAML2 SP App
-    participant SAML2 Proxy
-    participant ID-porten
     Browser ->> SAML2 SP App: GET /startlogin
     SAML2 SP App ->> SAML2 SP App: Create and sign AuthnRequest
-    SAML2 SP App ->> Browser: 30x redirect /login/idp1?SAMLRequest=...
-    Browser ->> SAML2 Proxy: GET /login/idp1?SAMLRequest=...
+    SAML2 SP App ->> Browser: 30x redirect /login/idp1?SAMLRequest=sr
+    Browser ->> SAML2 Proxy: GET /login/idp1?SAMLRequest=sr
     SAML2 Proxy ->> ID-porten: POST /par pushedAuthorizationRequest
     ID-porten -->> SAML2 Proxy: 200 OK par response w/request_uri
-    SAML2 Proxy ->> Browser: 30x redirect /authorize?request_uri=...
-    Browser ->> ID-porten: GET /authorize?request_uri=...
-
-    rect rgb(191, 223, 255)
-    Note over Browser: User authenticates in ID-porten
+    SAML2 Proxy ->> Browser: 30x redirect /authorize?request_uri=uri
+    Browser ->> ID-porten: GET /authorize?request_uri=uri
     ID-porten ->> Browser: Start authenticate user
     Browser ->> ID-porten: Finish authenticate user
-    end
-
-    ID-porten ->> Browser: 30x redirect /callback?code=...
-    Browser ->> SAML2 Proxy: GET /callback?code=...
-    SAML2 Proxy ->> Browser: 30x redirect /assertionconsumer?SAMLArt=...
-    Browser ->> SAML2 SP App: GET /assertionconsumer?SAMLArt=...
-    SAML2 SP App ->> SAML2 Proxy: POST /artifactresolve SAMLArt=...
-    SAML2 Proxy ->> ID-porten: POST /token code=...
+    ID-porten ->> Browser: 30x redirect /callback?code=c
+    Browser ->> SAML2 Proxy: GET /callback?code=c
+    SAML2 Proxy ->> Browser: 30x redirect /assertionconsumer?SAMLArt=sa
+    Browser ->> SAML2 SP App: GET /assertionconsumer?SAMLArt=sa
+    SAML2 SP App ->> SAML2 Proxy: POST /artifactresolve SAMLArt=sa
+    SAML2 Proxy ->> ID-porten: POST /token code=c
     ID-porten -->> SAML2 Proxy: id_token
     SAML2 Proxy -->> SAML2 SP App: Assertion
-    SAML2 SP App ->> Browser: Welcome to our homepage, user nnn!
+    SAML2 SP App ->> Browser: You are logged in
 </div>
 
 ## Miljøer for SAML-proxy
