@@ -106,26 +106,3 @@ Går frå fullverdig IAM-produkt til enkel proxy foran OIDC-løysinga
 - 
 
 
-### TEST TEST
-
-<div class="mermaid">
-graph LR2
-  subgraph Digitaliseringsdirektoratet
-    IDP[ID-porten]
-    SAML[SAML-proxy]
-    SADM[Selvbetjening <br/>klientregistrering]
-  end
-  subgraph Kunde
-     SP[SAML-tjeneste <br/>Service Provider]
-     RP[OIDC-tjeneste <br/>Relying Party]
-     ADM[Administrator]
-  end
-  RP---|OIDC|IDP
-  SP-- SAML2 ---SAML
-  SAML-- OIDC ---IDP
-  ADM-- utfører ---SADM
-  SADM-- synkronisering 5 min -->IDP
-
-  Innbygger-- bruker ---SP
-  Innbygger-- bruker ---RP
-</div>
