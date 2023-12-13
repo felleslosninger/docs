@@ -97,7 +97,7 @@ Noen innbyggere kan ikke nås med disse meldingstjenestene. Dette gjelder for ek
 tilfeller kan en likevel sende fysisk post til innbyggerene med hjelp av utskriftstjenesten i digital post til innbyggere (DPI).
 Les mer om hvordan dette fungerer under:
 
-- [Dokumenttype print](../../Utvikling/Dokumenttyper/print)
+- [Dokumenttype print](../Utvikling/Dokumenttyper/print)
 
 ## Sende meldinger
 Først gjøres et kapabilitetsoppslag for å se hvilke dokumenttyper mottakeren støtter. Dersom mer enn en dokumenttype kan
