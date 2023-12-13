@@ -18,7 +18,7 @@ Forretningsmeldingene i eksemplene er inkludert som JWT. For enkelhets skyld ink
 JSON payload for forretningsmeldingen og ferdig dekodet JSON payload for autorisasjonsbevis (`maskinportentoken`)
 i forretningsmeldingen.
 
-Utskrift fra Digdir `991825827` til Skatteetaten `974761076` for testbruker `04817197073`:
+Utskrift fra Digdir `991825827` til utskriftsleverandør (Skatteetaten) `974761076` for testbruker `04817197073`:
 
 - [Kryptert dokumentpakke (CMS)](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-dokumentpakke.cms)
 - [Dekryptert dokumentpakke (ASiC-E ZIP)](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-dokumentpakke.zip)
