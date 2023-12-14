@@ -69,7 +69,7 @@ gcloud iam workload-identity-pools providers create-oidc $PROVIDER_ID \
     --location="global" \
     --workload-identity-pool=$WORKLOAD_POOL_ID \
     --attribute-mapping="attribute.maskinportenscope"="assertion.scope","google.subject"="assertion.consumer.ID","attribute.clientaccess"="\"client::\" + assertion.consumer.ID + \"::\" + assertion.scope" \
-    --issuer-uri="https://sky.maskinporten.dev/" \
+    --issuer-uri="https://test.sky.maskinporten.no" \
     --allowed-audiences=$REQUIRED_AUDIENCE \
     --description="OIDC identity pool provider for Maskinporten"
 ```
@@ -262,14 +262,17 @@ gcloud storage cp gs://$BUCKET/velkommen.txt velkommen_local.txt
 
 Dette kan skyldes avsluttende skråstrek i `audience`.
 
-Når JWT-token genereres med audience `https://sky.maskinporten.dev`, så må det gjøres uten avsluttende skråstrek (trailing slash).
+Når JWT-token genereres med audience `https://test.sky.maskinporten.no`, så må det gjøres uten avsluttende skråstrek (trailing slash).
 
 Hvis spørringen mot Maskinporten har trailing slash i Token for `aud` verdien vil man få feilen:
 
 ``````json
 {
-    "message": "Http response code: 400, url: 'https://sky.maskinporten.dev/token', message: '{\"error\": \"invalid grant\",\"error description\":\"Invalid assertion. Client authentication failed.
+    "message": "Http response code: 400, url: 'https://test.sky.maskinporten.no/token', message: '{\"error\": \"invalid grant\",\"error description\":\"Invalid assertion. Client authentication failed.
 Invalid JWT claim aud. (trace_id: 5d5d5d5d5d5d5d5d5d5d5d5d5d5d5d)\"}'",
 ``````
 
 Løsningen er altså å fjerne avsluttende skråstrek i audience når man genererer JWT-token.
+
+
+https://test.sky.maskinporten.no/.well-known/openid-configuration
