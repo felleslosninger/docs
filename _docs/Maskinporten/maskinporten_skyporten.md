@@ -58,6 +58,17 @@ Ja. Skyporten som konsept testes ut av Digitaliseringdirektoratet og [Tverrsekto
 
 ## Hvordan kan jeg ta det i bruk?
 
+## Well-known
+
+Metadata om Skyporten er tilgjengelig på følgende .well-known-endepunkt.
+
+|Miljø| Issuer                             |URL|
+|-|------------------------------------|-|
+|TEST| `https://test.sky.maskinporten.no` | [https://test.sky.maskinporten.no/.well-known/openid-configuration](https://test.sky.maskinporten.no/.well-known/openid-configuration)|
+|PROD| `https://sky.maskinporten.no`              | [https://sky.maskinporten.no/.well-known/openid-configuration](https://sky.maskinporten.no/.well-known/openid-configuration)|
+
+Merk: om du bruker Maskinporten i dag, har Maskinporten trailing slash i issuer, men dette er pt ikke tilfelle i Skyporten pga forskjellige leverandørimplementasjoner. 
+
 ### Tilgang til Skyporten for tilbydere
 
 Skyporten bruker Maskinporten, og du må derfor først [komme i gang med Maskinporten som API-tilbyder]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder).
@@ -77,7 +88,6 @@ Det finnes flere kode-eksempler som kan hjelpe deg i gang med å generere access
 * [Nav sin Maskinporten-client](https://github.com/navikt/maskinporten-client)
 
 [Ta kontakt med oss]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#kontakt) om du vil ha hjelp til å sette i gang.
-
 
 ## Hvilke skyleverandør må jeg ha som tilbyder?
 
