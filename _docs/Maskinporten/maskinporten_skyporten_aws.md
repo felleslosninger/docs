@@ -179,7 +179,7 @@ Definisjon av rollen i filen `web-identity-trust-policy.json`:
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
         "StringEquals": {
-          "test.sky.maskinporten.no": "entur:skyss.1"
+          "test.sky.maskinporten.no:scope": "entur:skyss.1"
         }
       }
     }
