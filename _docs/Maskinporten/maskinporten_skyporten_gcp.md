@@ -273,6 +273,3 @@ Invalid JWT claim aud. (trace_id: 5d5d5d5d5d5d5d5d5d5d5d5d5d5d5d)\"}'",
 ``````
 
 Løsningen er altså å fjerne avsluttende skråstrek i audience når man genererer JWT-token.
-
-
-https://test.sky.maskinporten.no/.well-known/openid-configuration
