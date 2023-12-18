@@ -24,6 +24,24 @@ Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er f
 
 I error_description er det ofte inkludert en unik id som kan brukes til feilsøking.
 
+### Connection
+
+#### Connection Timeout.
+
+Vi vet at enkelte kunder som kjører tjenester i Azure noen ganger sliter med å koble seg til maskinporten.no
+
+En typisk feilmelding kan se slik ut
+
+"A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."
+
+Vi er i dialog med Microsoft angående dette, men det er ikke så mye vi kan gjøre på vår side per nå.
+
+Det som har fungert for andre kunder:
+
+* Bytte host for den applikasjonen/tjenesten som ikke klarer å nå maskinporten.no
+
+* Noen har også klart å komme gjennom ved å avslutte hosten og starte opp på nytt. 
+
 ### Invalid grant
 
 #### Invalid assertion. Client authentication failed.
