@@ -8,22 +8,22 @@ sidebar: dpi_timo_sidebar
 Denne og flere av de sidene under "Ny infrastruktur" er under arbeide og det vil derfor kunne komme hyppige oppdateringer både på sider og i spesifikasjon. Sidene det gjelder vil ha under "Under construction" bildet. 
 Dette bildet vil fjernes etter hvert som gjeldende side/spesifikasjon blir ferdigstilt -->
 
-Denne dokumentasjonen beskriver transportinfrastruktur for digital post til innbyggere, samt hvordan en kan ta denne i bruk og integrere egne avsendersystemer. Trenger du tilgang til [tidligere/utgått DPI-dokumentasjon finnes denne her](/resources/begrep/sikkerDigitalPost/innledning/)
+Denne dokumentasjonen beskriver transportinfrastruktur for digital post til innbyggere, samt hvordan en kan ta denne i bruk og integrere egne avsendersystemer. 
 
 ## Bakgrunn
 
-Den proprietære transportinfrastrukturen for Digital Postkasse til innbyggere skal erstattes med en standard-infrastruktur for meldingsutvekling i det offentlige, dvs 4-hjørnes-modell med CEF eDelivery/PEPPOL. Følgende aktører inngår:
+Den proprietære transportinfrastrukturen for Digital Postkasse til innbyggere er erstattet med en standard-infrastruktur for meldingsutvekling i det offentlige, dvs 4-hjørnes-modell med CEF eDelivery/PEPPOL. Følgende aktører inngår:
 - Hjørne 1: Avsender (og evt. avsender sin leverandør/databehandler)
 - Hjørne 2: Avsenders aksesspunkt-leverandør
 - Hjørne 3: Postkasse- og utskriftsleverandørs aksesspunktleverandør
 - Hjørne 4: Postkasse- og utskriftsleverandør
 
-Vi ser altså at den sentraliserte Meldingsformidleren blir erstattet av et distribuert nettverk av aksesspunkt-leverandører.
+Vi ser altså at den sentraliserte Meldingsformidleren er erstattet av et distribuert nettverk av aksesspunkt-leverandører.
 
-Av sikkerhetsgrunner må derfor:
-- meldingsformatet i DPI endres noe
+Av sikkerhetsgrunner er derfor:
+- meldingsformatet i DPI endret noe
 
-samt noen av Meldingsformidlers oppgaver flyttes til tjenesteleverandører i hjørne 4:
+samt noen av Meldingsformidlers oppgaver flyttet til tjenesteleverandører i hjørne 4:
 - validere ende-til-ende integritet på sendte meldinger
 - validere at avsender har tillatelse til å sende digital post
 - dersom en melding er sendt av en databehandler, validere at databehandler har lov til å opptre på vegne av avsender
