@@ -30,10 +30,10 @@ samt noen av Meldingsformidlers oppgaver flyttet til tjenesteleverandører i hj�
 - sørge for at kvitteringer blir sendt tilbake til rett system uavhengig av om avsender bruker databehandler eller ikke
 
 
-Det må etableres en ny transport-protokoll mellom hjørne 1 og hjørne 2.  I tradisjonell PEPPOL-tenking er dette noe som markedsaktørene selv skal ta fram - dvs i prinsippet er dette opp til aksesspunktleverandørene selv å bestemme. Siden Digdir ønsker å gjøre en anskaffelse av aksesspunktleverandørtjenester for formidling av digital post, som de fleste avsendere kommer til å benytte, er det hensiktismessig at Digdir kravstiller en protokoll som skal brukes av denne leverandøren.  Det hindrer ikke andre aktører å implementere andre, egne protokoller.
+Det er etableret en ny transport-protokoll mellom hjørne 1 og hjørne 2.  I tradisjonell PEPPOL-tenking er dette noe som markedsaktørene selv skal ta fram - dvs i prinsippet er dette opp til aksesspunktleverandørene selv å bestemme. Siden Digdir ønsket å gjøre en anskaffelse av aksesspunktleverandørtjenester for formidling av digital post, som de fleste avsendere kommer til å benytte, ble det mest hensiktismessig at Digdir kravstilte en protokoll som skal brukes av denne leverandøren.  Det hindrer ikke andre aktører å implementere andre, egne protokoller.
 
 Protokoll mellom hjørne 2 og 3 er bestemt av PEPPOL, og heter AS4.
-Protokoll mellom hjørne 3 og tjenesteleverandører i hjørne 4 bør avtales bilateralt mellom disse aktørene i samarbeid med Digdir.
+Protokoll mellom hjørne 3 og tjenesteleverandører i hjørne 4 avtales bilateralt mellom disse aktørene i samarbeid med Digdir.
 
 
 
@@ -41,13 +41,13 @@ Protokoll mellom hjørne 3 og tjenesteleverandører i hjørne 4 bør avtales bil
 
 Motivasjon bak revidert meldings- og transportformat i DPI:
 
-* Minst mulig endringer på eksisterende format, da både avsender-systemer og postkasse-leverandører støtter dette.
-* Må ta høyde for at en aksesspunktleverandør i PEPPOL kan bli kompromittert av en angriper som vil forsøke å injisere falske meldinger
+* Minst mulig endringer på format, da både avsender-systemer og postkasse-leverandører støttet dette.
+* Måtte ta høyde for at en aksesspunktleverandør i PEPPOL kan bli kompromittert av en angriper som vil forsøke å injisere falske meldinger
 * Fjerne ebMS 3.0 som transportformat mellom Databehandler og Meldingsformidler, da erfaring viser at denne er relativt komplisert å ta i bruk, og vil være lite attraktiv for potensielle aksesspunktleverandører å måtte implementere,  og heller innføre en moderne og sikker lettvektsprotokoll som REST.
 * Gjenbrukbart format også for andre meldinger i eMeldingsinfrastrukturen
 * Utviklervenlig format med høyt rammeverk- og produktstøtte, for å gjøre det så lett som mulig å sende meldinger fra hjørne 1.
 
-Revidert meldings- og transportformat i DPI innebærer derfor:
+Revidert meldings- og transportformat i DPI innebar derfor:
 1. [*Dokumentpakken*, dvs ASiC-pakken](https://docs.digdir.no/dokumentpakke_index.html) beholdes uendret
 2. [*Forretningsmeldingene*](https://docs.digdir.no/sdp_index.html) beholdes også stort sett uendret, men:
   * Formatet skal endres fra XML til JSON for å bli mer tilpasset vanlig REST-bruk
@@ -55,7 +55,7 @@ Revidert meldings- og transportformat i DPI innebærer derfor:
   * Strukturen er fremdeles en SBD, dvs. består av  
     * Først en [*SBDH*](https://docs.digdir.no/standardbusinessdocument_index.html), nå JSON-ifisert.
     * Så selve forretningsmeldinga (eks. digitalpostmelding), også JSON-ifisert
- * Maskinporten-token må inkluderes i forretningsmeldinga slik at PK-leverandør kan motta dette som bevis på tillatelse til å sende post
+ * Maskinporten-token må inkluderes i forretningsmeldingen slik at PK-leverandør kan motta dette som bevis på tillatelse til å sende post
  * Hele SBD'en må signeres på meldingsnivå for å sikre ende-til-ende integritet, og den må defor da bli en JWT.
 
 
