@@ -75,6 +75,8 @@ Hvis den fins, men har samme id/iri som i databasen, korrigeres eventuelt parent
 Hvis journalpost ikke fins i databasen basert på virksomhet, journalaar og journalsekvensnummer, forsøker man å finne en eventuelt tidligere lagret saksmappe ut fra innkommende journalposts oppgitte parent (oppslag mot saksmappe sin ekstern_id og virksomhet).
 Hvis mappen fins med den oppgitte ekstern_id, endres meldingen til å bruke vår saksmappe-id/iri som parent på journalpost.
 
+ID-converter støtter ikke møtedata. Det fordi møtedata ikke støttes i Noark4 datamodellen vår, og det skulle derfor ikke være behov for å konvertere ID på denne type data.
+
 ## Strukturering av publiseringen
 eInnsyn forsøker i så stor grad som mogleg å legge til rette for løpande overføring. Og strukturen legg opp til dette sjølv i tilfeller der dette ikkje er tilfelle.
 Json-ld filene med data skal derfor vere sentrert rundt ***ein*** instans av ***registrering***. For journalposter vil en forsendelse inneholde registreringen (journalposten), saksmappa (kan utelates hvis er sikker på at vi allerede har mottatt denne), korrespondansepart(er), skjermingshjemmel, dokumentbeskrivelse og dokumentobjekt (hvis det skal vises at er flere vedlegg, og ved fulltekspublisering). Hvis en journalpost oppdateres må all data sendes sammen igjen, hvis f.eks. utelater korrespondansepartene ved oppdatering, så vil vi slette de "gamle" korrespondansepartene.
