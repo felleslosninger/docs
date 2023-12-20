@@ -125,6 +125,12 @@ Nye ID-porten vil tilby ny funksjonalitet for isolert SSO-sesjon.  Dette vil skj
 
 Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene er `idporten-loa-substantial` og `idporten-loa-high`.  Disse verdiene kan brukes av klient for å forespørre autentisering på minimum nivå v.hj.a. parameteret `acr_values`.  ID-token vil inkludere nivå i `id_token` i claim `acr`.
 
+| "Gamle" ID-porten | "Nye" ID-porten | Beskrivelse |
+|-|-|-|
+| | idporten-loa-low | Per nå har vi ingen eID på dette nivået |
+| Level3 | idporten-loa-substantial | Tilsvarer sikkerhetsnivå "substantial" i eIDAS forordningen. I ID-porten kan vi tilby MinID på dette sikkerhetsnivået. |
+| Level4 | idporten-loa-high | Tilsvarer sikkerhetsnivår "high" i eIDAS forordningen. I ID-porten kan du logge inn med BankID, Buypass og Commfides på dette sikkerhetsnivået.|
+
 ### Tvungen bruk av PKCE og state og nonce
 
 Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter. Det er mulig for kunde å aktivt nedgradere integrasjonen sin til å ikke bruke PKCE gjennom selvbetjening.
