@@ -8,6 +8,14 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 04.01.2024 (3.23.0)
+
+### Tasks
+
+```
+Vedlikehald: Oppdatering av rammeverk og bibliotek
+```
+
 ## ELMA update 18.09.2023 (3.22.3)
 
 ### Tasks
