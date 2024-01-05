@@ -29,8 +29,7 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 ### Opprette testbruker selv i testmiljøet TEST
 
-Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator (+80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
-
+Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator (+80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). 
 
 **Framgangsmåte**
 
@@ -44,6 +43,7 @@ Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet
 
 Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. 
 
+Kontaktinformasjonen (epost, tlf)  som blir opprettet på en MinID testbruker blir registrert i Kontakt- og reservasjonsregisteret (KRR). Les mer om hvordan du endrer kontaktinformasjon på en testbruker på [våre sider om KRR](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger#oppdatering-av-kontaktinfo-i-minprofil).
 
 **OTC**
 
