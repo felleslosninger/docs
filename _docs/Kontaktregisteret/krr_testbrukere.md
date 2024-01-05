@@ -45,13 +45,12 @@ Merk! For at disse skal kunne benyttes i ID-porten og KRR, må disse opprettes m
 Det er mulig å endre kontaktinformasjon på syntetiske testbrukere ved å logge inn på MinProfil.
 For å endre kontaktinformasjon på syntetiske brukere, velg TestID som innloggingsmetode.
 
-Kontaktinformasjon (e-post, mobil) tilbakestilles på alle syntetiske testbrukere hver lørdag.
 <br>
 {% include note.html content=" Dersom du legger inn egen kontaktinformasjon på en testbruker, kan du risikere å motta varslinger fra virksomheter som benytter KRR i testmiljøet." %}
 <br>
 
 ## KRR testbrukere med ulike attributter
-Vi har ett sett med "statiske" brukere, og som nevnt i forrige avsnitt blir disse tilbakestilt hver lørdag. Dette er med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR:
+Vi har et sett med "statiske" brukere. Disse testbrukerene finner du i tabellen i neste avsnitt og er testbrukere med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR som tilbakestilles hver lørdag:
 
 - Med mobil, e-post og digital postkasse
 - Med mobil og e-post
