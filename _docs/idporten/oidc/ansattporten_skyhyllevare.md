@@ -14,14 +14,19 @@ roller i Altinn.
 
 ## Overordna beskrivelse
 
-Se under for status og oppsett i hos den aktuelle skyleverandøren. 
+Se under for status og oppsett hos den aktuelle skyleverandøren. 
 
-PT er ikke valg av organisasjon inne i flyten hos noen av skyleverandørene, men dette ønsker vi å få på plass så snart som mulig.
+PT er ikke valg av organisasjon du ønsker å representer med i flyten hos noen av skyleverandørene, men dette ønsker vi 
+å få på plass så snart som mulig. Dette forutsetter endringer i Ansattporten for å at leverandører som ikke støtter
+[Rich Authorization Requests (RAR) Proposed Standard](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) skal kunne være 
+fremoverkompatible.
 
 ### I Google Cloud Platform
 
 Produktet i bruk heter *workforce indentity federation* og er [kostnadsfritt](https://cloud.google.com/workforce-identity-federation#pricing) i seg selv.
-Tilgang blir gitt både til en federert versjon av google cloud console og programmatisk tilgang via api eller cli. 
+Tilgang blir gitt både til en [federert versjon av google cloud console](https://cloud.google.com/iam/docs/workforce-console-sso) 
+og [programmatisk tilgang via api eller cli](https://cloud.google.com/iam/docs/workforce-obtaining-short-lived-credentials). 
+Begge disse krever informasjon om `workforce_pool_provider_id`, for eksempel `locations/global/workforcePools/myorg-ansattportenpool/providers/myorg-ansattportenprovider` 
 
 #### Oppsett av workforce indentity federation
 
@@ -71,7 +76,7 @@ export ANSATTPORTEN_SECRET=<verdi fra nyopprettet client secret>
 Se [integrasjonsguide](ansattporten_guide.html) for issuer i andre miljøer.
 
 ```
-# Create provider
+# Create OIDC provider to let Ansattporten be part of the Workforce Pool
 
 gcloud iam workforce-pools providers create-oidc $WORKFORCE_PROVIDER_ID \
 	--workforce-pool=$WORKFORCE_POOL_ID \

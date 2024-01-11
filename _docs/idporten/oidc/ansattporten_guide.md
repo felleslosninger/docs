@@ -18,8 +18,12 @@ Nøkkelfunksjonalitet er:
 
 Ansattporten er p.t. i en pilot-status med redusert SLA, og det er foreløpig ikke besluttes om den skal bli en varig nasjonal fellesløsning.  Det er fritt fram for alle å teste løsningen i test-miljø, men ta kontakt med oss først for å delta med produksjonstjenester i piloten!
 
-Ansattporten testes også ut som pålogging til hyllevare-skytjenester for å kunne dele data ut av egen organisasjon, se [mer om dette her](ansattporten_skyhyllevare.html)
+Ansattporten testes også ut som pålogging til hyllevare-skytjenester. Eksempler på bruk:
 
+- Dele tilgang til GCP (Google Cloud) BigQuery console for å kunne se et datasett
+- Dele tilgang til en Azure Power Page, for å dele Embedded Power BI dashboards
+
+Du kan lese [mer om dette her](ansattporten_skyhyllevare.html).
 
 ## Overordna beskrivelse av støtta brukerreiser
 
