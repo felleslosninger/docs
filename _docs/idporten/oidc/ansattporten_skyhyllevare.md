@@ -9,11 +9,14 @@ redirect_from: /ansattporten_skyhyllevare
 
 Sammen med tverrsektorielt datasamarbeid foregår det en pilot med uttesting av Ansattporten 
 som innlogging til skyplatformer. Målet er å kunne dele data ut av egen virksomhet ved å benytte de 
-nasjonale tillittsløsningene til å bekrefte identitet og ansettelsesforhold. Ansettelsesfor
+nasjonale tillittsløsningene til å bekrefte identitet og ansettelsesforhold. Ansettelsesforholdet bestemmes av 
+roller i Altinn. 
 
 ## Overordna beskrivelse
 
 Se under for status og oppsett i hos den aktuelle skyleverandøren. 
+
+PT er ikke valg av organisasjon inne i flyten hos noen av skyleverandørene, men dette ønsker vi å få på plass så snart som mulig.
 
 ### I Google Cloud Platform
 
@@ -83,9 +86,10 @@ gcloud iam workforce-pools providers create-oidc $WORKFORCE_PROVIDER_ID \
 	--location=global
 ```
 
+
 #### Gi tilgang til brukere innlogget via Ansattporten
 
-*missing*
+Man kan spesifisere rettigheter til federerte brukere ved å referere til `principalSet` i IAM policies. [Se dokumentasjon](https://cloud.google.com/iam/docs/configuring-workforce-identity-federation). 
 
 
 ### I Azure
