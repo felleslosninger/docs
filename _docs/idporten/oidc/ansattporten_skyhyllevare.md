@@ -68,6 +68,8 @@ export ANSATTPORTEN_URI=https://test.ansattporten.no
 Sett opp en klient i samarbeidsportalen i rett miljø: https://selvbetjening-samarbeid-ver2.difi.no/integrations
 og bruk redirect url som printes over. Type er `client_secret_basic`.
 
+![opprettet klient](/images/idporten/oidc/ansattporten-skyhyllevare-oppsett.png)
+
 ```
 export ANSATTPORTEN_CLIENT_ID=<verdi fra nyopprettet client>
 export ANSATTPORTEN_SECRET=<verdi fra nyopprettet client secret>
