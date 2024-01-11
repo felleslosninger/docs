@@ -1,0 +1,96 @@
+---
+title: Ansattporten som innlogging til skyen
+description: Ansattporten er en kopi av ID-porten men der funksjonaliteten er tilpasset innlogging i ansatt/representasjonskontekst.
+
+sidebar: oidc
+product: ID-porten
+redirect_from: /ansattporten_skyhyllevare
+---
+
+Sammen med tverrsektorielt datasamarbeid foregår det en pilot med uttesting av Ansattporten 
+som innlogging til skyplatformer. Målet er å kunne dele data ut av egen virksomhet ved å benytte de 
+nasjonale tillittsløsningene til å bekrefte identitet og ansettelsesforhold. Ansettelsesfor
+
+## Overordna beskrivelse
+
+Se under for status og oppsett i hos den aktuelle skyleverandøren. 
+
+### I Google Cloud Platform
+
+Produktet i bruk heter *workforce indentity federation* og er [kostnadsfritt](https://cloud.google.com/workforce-identity-federation#pricing) i seg selv.
+Tilgang blir gitt både til en federert versjon av google cloud console og programmatisk tilgang via api eller cli. 
+
+#### Oppsett av workforce indentity federation
+
+Oppsett av provider pool og provider skjer på følgende måte
+
+```
+# gcp org
+export ORG_ID=123456789012
+
+gcloud iam workforce-pools list --location=global --organization=$ORG_ID
+
+# Create workforce pool
+
+export WORKFORCE_POOL_ID=ansattportenpoc
+
+# Let session last two hours
+export SESSION_DURATION="7200s"
+
+gcloud iam workforce-pools create $WORKFORCE_POOL_ID \
+	--organization=$ORG_ID \
+	--description="Ansattporten workforce pool poc" \
+	--session-duration=$SESSION_DURATION \
+	--location=global
+
+export WORKFORCE_PROVIDER_ID=ansattportenpocprovider
+
+export WORKFORCE_PROVIDER_NAME=locations/global/workforcePools/$WORKFORCE_POOL_ID/providers/$WORKFORCE_PROVIDER_ID
+
+echo "$WORKFORCE_PROVIDER_NAME"
+
+echo "Redirect url will be:"
+echo "https://auth.cloud.google/signin-callback/$WORKFORCE_PROVIDER_NAME"
+
+export ANSATTPORTEN_URI=https://test.ansattporten.no
+
+
+```
+
+Sett opp en klient i samarbeidsportalen i rett miljø: https://selvbetjening-samarbeid-ver2.difi.no/integrations
+og bruk redirect url som printes over. Type er `client_secret_basic`.
+
+```
+export ANSATTPORTEN_CLIENT_ID=<verdi fra nyopprettet client>
+export ANSATTPORTEN_SECRET=<verdi fra nyopprettet client secret>
+
+```
+Se [integrasjonsguide](ansattporten_guide.html) for issuer i andre miljøer.
+
+```
+# Create provider
+
+gcloud iam workforce-pools providers create-oidc $WORKFORCE_PROVIDER_ID \
+	--workforce-pool=$WORKFORCE_POOL_ID \
+	--display-name="GCP Ansattporten OIDC provider" \
+	--description="GCP Ansattporten OIDC provider" \
+	--issuer-uri="$ANSATTPORTEN_URI" \
+	--client-id="$ANSATTPORTEN_CLIENT_ID" \
+	--client-secret-value="$ANSATTPORTEN_SECRET" \
+	--web-sso-response-type="code" \
+	--web-sso-assertion-claims-behavior="only-id-token-claims" \
+	--attribute-mapping="attribute.ansattportenscope"="assertion.scope","google.subject"="assertion.sub" \
+	--location=global
+```
+
+#### Gi tilgang til brukere innlogget via Ansattporten
+
+*missing*
+
+
+### I Azure
+Testet ut med PowerPages og PowerBI-embedded.
+
+### I AWS
+
+Ikke påbegynt
