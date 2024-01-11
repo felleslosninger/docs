@@ -72,8 +72,6 @@ az account subscription list
 export SUBSCRIPTION_ID="77777777-7777-7777-7777-777777777777"
 ``````
 
-### Add federated credentials
-
 ### Create a resource group, storage account and storage share
 
 ``````bash
@@ -84,6 +82,7 @@ export IDENTITY="SkyvesenetIdentity"
 
 az group create --name $STORAGE_RG --location northeurope
 
+export STORAGE_ACC="skyportenstoragepilot"
 az storage account create --name $STORAGE_ACC --resource-group $STORAGE_RG --location northeurope  --sku Standard_RAGRS --kind StorageV2
 {
 ...
@@ -127,7 +126,7 @@ export IDENTITY_CLIENT_ID="44444444-cf66-4934-b34c-444444444444"
 ``````bash
 export CREDENTIAL_NAME="SkyvesenetFedCreds"
 
-az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-name "$IDENTITY" --resource-group "$STORAGE_RG" --issuer "https://sky.maskinporten.dev" --subject "0192:917422575" --audiences "https://sky.organisasjonsnavn.no"
+az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-name "$IDENTITY" --resource-group "$STORAGE_RG" --issuer "test.sky.maskinporten.no" --subject "0192:917422575;entur:skyporten.demo" --audiences "https://sky.organisasjonsnavn.no"
 {
   "audiences": [
     "https://sky.menneskemaskin.no"
@@ -136,7 +135,7 @@ az identity federated-credential create --name "$CREDENTIAL_NAME" --identity-nam
   "issuer": "https://test.sky.maskinporten.no",
   "name": "SkyvesenetFedCreds",
   "resourceGroup": "filestorage-rg",
-  "subject": "0192:917422575",
+  "subject": "0192:917422575;entur:skyporten.demo",
   "systemData": null,
   "type": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials"
 }
@@ -197,7 +196,9 @@ Logout to be able to test the login credentials.
 ``````bash
 # Logout from regular azure developer session, if active
 az logout
+
 ``````
+
 
 ## For deg som skal konsumere fra Azure
 
@@ -225,8 +226,8 @@ The unpacked token will look something like this:
 ``````json
 {
   "aud": "https://entur.org",
-  "sub": "0192:917422575",
-  "scope": "entur:foo.1",
+  "sub": "0192:917422575;entur:skyporten.demo",
+  "scope": "entur:skyporten.demo",
   "iss": "https://test.sky.maskinporten.no",
   "client_amr": "private_key_jwt",
   "token_type": "Bearer",
@@ -240,6 +241,9 @@ The unpacked token will look something like this:
   }
 }
 ``````
+
+For Azure, test.sky.maskinporten.no, will respond with a custom format where subject includes scope as a postfix,
+because Azure does not support attribute mapping to the subject field.
 
 
 #### Login with the federated credentials and download a file, to test access
@@ -257,11 +261,11 @@ az storage file download --account-name $STORAGE_ACC --share-name $STORAGE_SHARE
 
 ### Feilsøking
 
-#### Trailing slash (`/`) in issuer argument when calling `az identity federated-credential create`
+### Missing trailing slash (`/`) in issue argument when calling `az identity federated-credential create`
 
 ``````bash
 az login --service-principal -u $IDENTITY_CLIENT_ID -t $AZURE_TENANT_ID --federated-token $MASKINPORTEN_TOKEN
-AADSTS70021: No matching federated identity record found for presented assertion. Assertion Issuer: 'https://test.sky.maskinporten.no'. Assertion Subject: '0192:917422575'. Assertion Audience: 'https://sky.foo.com'.
+AADSTS70021: No matching federated identity record found for presented assertion. Assertion Issuer: 'https://test.sky.maskinporten.no'. Assertion Subject: '0192:917422575;entur:skyporten.demo'. Assertion Audience: 'https://sky.foo.com'.
 ``````
 
 The issuer must exactly match the issuer in the credential. Update or recreate the credential with trailing slash in the issuer.
