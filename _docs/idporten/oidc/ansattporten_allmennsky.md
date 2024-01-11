@@ -98,6 +98,15 @@ gcloud iam workforce-pools providers create-oidc $WORKFORCE_PROVIDER_ID \
 
 Man kan spesifisere rettigheter til federerte brukere ved å referere til `principalSet` i IAM policies. [Se dokumentasjon](https://cloud.google.com/iam/docs/configuring-workforce-identity-federation). 
 
+Dette kan f.eks. gjøres med gcloud, eller direkte i BigQuery-grensesnittet.
+
+Med gcloud kan prosjekt-tilgang f.eks. gjøres slik:
+
+``````bash
+gcloud projects add-iam-policy-binding my-project \
+    --role="roles/storage.objectViewer" \
+    --member="principalSet://iam.googleapis.com/locations/global/workforcePools/$WORKFORCE_POOL_ID/*"
+``````
 
 ### I Azure
 Testet ut med PowerPages og PowerBI-embedded.
