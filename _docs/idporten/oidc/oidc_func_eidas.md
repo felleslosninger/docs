@@ -10,7 +10,7 @@ redirect_from: /oidc_func_eidas
 
 
 
-{% include note.html content="eIDAS-støtte er p.t. kun tilgjengelig på gammel OIDC-løsning" %}
+{% include note.html content="Ved sanering av gammel OIDC-løsning 23.2.2024, forsvinner eIDAS-støtte. Det vil da bli en periode uten denne funksjonaliteten frem til ny eIDAS-støtte er på plass (foreløpig planlagt i Q2) " %}
 
 
 ## Om eIDAS
