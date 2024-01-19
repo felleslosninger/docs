@@ -37,7 +37,7 @@ Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet
 - fyll inn syntestisk personidentifikator
 - bestill aktiveringsbrev. Man får så en aktiveringskode.
 {% include note.html content="I produksjonsmiljøet vil sluttbruker få tilsendt aktiveringskode per post. I testmiljøet kommer aktiveringskode umiddelbart. Bruker må i begge tilfellene trykke på lenka under for å starte prosessen med å registrere aktiveringsbrev og ny bruker i MinID" %}
-- legg inn aktiveringskoden i ["Registrer aktiveringsbrev"](https://aktiveringsbrev.test.minid.no/order)  
+- legg inn aktiveringskoden i ["Registrer aktiveringsbrev"](https://aktiveringsbrev.test.minid.no)  
 
 
 ### Statisk OTC - TEST
