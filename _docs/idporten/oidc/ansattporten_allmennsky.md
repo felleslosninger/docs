@@ -172,7 +172,7 @@ gcloud projects add-iam-policy-binding my-project \
 
 Her er et screenshot som viser bruker ferdig innlogget i google cloud (`https://console.cloud.google`):
 
-![Ansattporten innlogget i GCP]({{site.baseurl}}/images/ansattporten/ansattporten_gcp_logged_in.png)
+![Ansattporten innlogget i GCP](/images/ansattporten/ansattporten_gcp_logged_in.png)
 
 ### I Azure
 Testet ut med PowerPages og PowerBI-embedded.
