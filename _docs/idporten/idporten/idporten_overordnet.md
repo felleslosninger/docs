@@ -145,7 +145,7 @@ Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [
 
 #### Sørg for sikker håndtering av nøkler
 
-Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetsssertifikat.  
+Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetssertifikat.  
 
 Hvis en nøkkel kompromitteres, kan en angriper utgi seg for å være kunde i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til kunden, men kan også tenkes å svekke tilliten til hele føderasjonen.
 
