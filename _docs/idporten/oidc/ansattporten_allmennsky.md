@@ -57,12 +57,17 @@ export WORKFORCE_PROVIDER_NAME=locations/global/workforcePools/$WORKFORCE_POOL_I
 
 echo "$WORKFORCE_PROVIDER_NAME"
 
+
 echo "Redirect url will be:"
 echo "https://auth.cloud.google/signin-callback/$WORKFORCE_PROVIDER_NAME"
 
-export ANSATTPORTEN_URI=https://test.ansattporten.no
+export CLOUD_SIGNIN_URL="https://auth.cloud.google/signin/locations/global/workforcePools/$WORKFORCE_POOL_ID/providers/$WORKFORCE_PROVIDER_NAME?continueUrl=https://console.cloud.google/"
 
+echo "Cloud sign in url will be:"
+echo "$CLOUD_SIGNIN_URL"
 
+# Inntil ansattporten-integrasjon er produksjonssatt hos DigDir kan man benytt testmiljøet ansattporten.dev:
+export ANSATTPORTEN_URI=https://ansattporten.dev
 ```
 
 Sett opp en klient i samarbeidsportalen i rett miljø: https://selvbetjening-samarbeid-ver2.difi.no/integrations
@@ -77,8 +82,23 @@ export ANSATTPORTEN_SECRET=<verdi fra nyopprettet client secret>
 ```
 Se [integrasjonsguide](ansattporten_guide.html) for issuer i andre miljøer.
 
+#### Begrens til login fra kun en spesifikk organisasjon
+
+Tilgang til innlogging kan begrensens med ```attribute-condition```.
+Dette er valgfritt, men kan være fornuftig å begrense tilgangen.
+Alternativt kan man benytte attributten orgno definert (`attribute.orgno`) under i IAM rolle-styring.
+
 ```
-# Create OIDC provider to let Ansattporten be part of the Workforce Pool
+export CLIENTORGNO="0192:311046349"
+```
+
+#### Lag OIDC provider for å Ansattporten være en del av Workforce Pool (`ansattportenpoc`)
+
+Scope "ansattporten:sjef", benyttet i web-sso-additional-scopes under, trigger orgvalg hos ansattporten.
+Kun organisasjoner hvor du er Altinn hovedadminstrator vil vises i organisajonsvelger. DigDir vil kunne
+raffinere denne funksjonaliteten etterhvert, men er slik i den nåværende testfasen.
+
+```
 
 gcloud iam workforce-pools providers create-oidc $WORKFORCE_PROVIDER_ID \
 	--workforce-pool=$WORKFORCE_POOL_ID \
@@ -89,14 +109,54 @@ gcloud iam workforce-pools providers create-oidc $WORKFORCE_PROVIDER_ID \
 	--client-secret-value="$ANSATTPORTEN_SECRET" \
 	--web-sso-response-type="code" \
 	--web-sso-assertion-claims-behavior="only-id-token-claims" \
-	--attribute-mapping="attribute.ansattportenscope"="assertion.scope","google.subject"="assertion.sub" \
+	--web-sso-additional-scopes="ansattporten:sjef" \ # trigger organisasjonsvelger
+	--attribute-mapping=google.display_name="assertion.name","google.subject"="assertion.sub",attribute.orgno="assertion.authorization_details[0].reportees[0].ID" \
+	--attribute-condition="attribute.orgno=='$CLIENTORGNO'" \ # begrenser tilgang til et spesifikt organisasjonsnummer
 	--location=global
 ```
 
 
+#### Eksempel på innhold i en id-token fra ansattporten
+
+Feltene i tokenet kan benyttes til attribute-mapping og attribute-condition.
+
+``````json
+{
+  "sub" : "A_-1aaa....",
+  "amr" : [ "TestID" ],
+  "iss" : "https://ansattporten.dev",
+  "pid" : "10850199405",
+  "locale" : "nb",
+  "nonce" : "A_Bcd1.....",
+  "aud" : "testclient_ansattporten_openshift_azure",
+  "acr" : "substantial",
+  "authorization_details" : [ {
+    "resource" : "urn:altinn:resource:2480:40",
+    "type" : "ansattporten:altinn:service",
+    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
+    "reportees" : [ {
+      "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
+      "Authority" : "iso6523-actorid-upis",
+      "ID" : "0192:311046349",
+      "Name" : "EKTE TOPP TIGER AS"
+    } ]
+  } ],
+  "auth_time" : 1706617032,
+  "name" : "NEPE SKRAVLETE",
+  "exp" : 1706617159,
+  "iat" : 1706617039,
+  "jti" : "61pDTNwdOy0"
+}
+
+``````
+
+`pid` er personnummer. Om det er ansvarlig å benytte dette i google.subject må vurderes av tilbyderen.
+Vi har valgt å benytte `sub` for å unngå at personnummer flyter rundt i GCP.
+
+
 #### Gi tilgang til brukere innlogget via Ansattporten
 
-Man kan spesifisere rettigheter til federerte brukere ved å referere til `principalSet` i IAM policies. [Se dokumentasjon](https://cloud.google.com/iam/docs/configuring-workforce-identity-federation). 
+Man kan spesifisere rettigheter til federerte brukere ved å referere til `principalSet` i IAM policies. [Se dokumentasjon](https://cloud.google.com/iam/docs/configuring-workforce-identity-federation).
 
 Dette kan f.eks. gjøres med gcloud, eller direkte i BigQuery-grensesnittet.
 
@@ -107,6 +167,12 @@ gcloud projects add-iam-policy-binding my-project \
     --role="roles/storage.objectViewer" \
     --member="principalSet://iam.googleapis.com/locations/global/workforcePools/$WORKFORCE_POOL_ID/*"
 ``````
+
+#### Ferdig innlogget bruker med synlig navn
+
+Her er et screenshot som viser bruker ferdig innlogget i google cloud (`https://console.cloud.google`):
+
+![Ansattporten innlogget i GCP](/images/ansattporten/ansattporten_gcp_logged_in.png)
 
 ### I Azure
 Testet ut med PowerPages og PowerBI-embedded.
