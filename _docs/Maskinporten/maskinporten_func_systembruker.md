@@ -26,7 +26,7 @@ Maskinporten i sin enkleste form tilbyr grovkornet tilgangstyring mellom to virk
 
 *Systembruker for virksomhet* er annen type utvidelse, som passer bedre i scenarioer der standard API-delegering ville ført til at leverandøren ville fått altfor vide rettigheter.  
 
-Her gis leverandørens kunder mulighet til å delegere et mer spisset / avgrenset sett med rettigheter.  Rettighetene blir delegert til kun ett spesifikt system hos leverandøren, istedet til leverandørens organisasjonnummer.  Rettighetene omfatter ressurser i Altinn Autorisasjon, og er ikke knyttet til en tildelt API-tilgang som API-tilbyder må forvalte. 
+Her gis leverandørens kunder mulighet til å delegere et mer spisset / avgrenset sett med rettigheter.  Rettighetene blir delegert til kun ett spesifikt system hos leverandøren, istedet til leverandørens organisasjonnummer.  Rettighetene omfatter ressurser i Altinn Autorisasjon, og er ikke knyttet til en tildelt API-tilgang i Maskinporten som API-tilbyder må forvalte. 
 
 Typisk oppstår delegeringen som et naturlig steg ved etablering av kundeforholdet når kunden velger å ta i bruk leverandøren sitt system.
 
