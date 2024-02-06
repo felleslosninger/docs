@@ -41,8 +41,7 @@ Mens API-delegering normalt forutsetter at API-tilbyder aktivt gir kunden tilgan
 
 ## Grensesnittsdefinisjon
 
-Funksjonaliteten er basert på Oauth2-utvidelesen for [fin-granulert autorisasjon (Rich Authorization Requests, RAR)]
-(https://datatracker.ietf.org/doc/rfc9396/), der vi har definert en ny type `urn:altinn:systemuser` for systembruker-mønsteret.
+Funksjonaliteten er basert på Oauth2-utvidelesen for [fin-granulert autorisasjon (Rich Authorization Requests, RAR)](https://datatracker.ietf.org/doc/rfc9396/), der vi har definert en ny type `urn:altinn:systemuser` for systembruker-mønsteret.
 
 Leverandøren ber om å få et token for en påstått kunde ved å oppgi kundens organisasjonsnummer, og dersom en systembruker-delegering foreligger i Altinn, vil det returneres et Maskinporten-token med systembruker-identifikator som API-tilbyder i sin tur kan benytte til å konstruere spørringer mot Altinn Autorisasjon PDP for å finne detaljert ut hva leverandørens system er autorisert til å utføre. 
 
