@@ -51,10 +51,10 @@ sequenceDiagram
     Maskinporten->>Altinn Autorisasjon: GetSystemUser(client_id, orgNoCustomer)
     Altinn Autorisasjon-->>Maskinporten: SystemUserID (systemUserId)
     Maskinporten-->>Fagsystem: Token (SystemUserId, consumerId, supplier)
-    Fagsystem->>API: AllAPIOpperations(part, resoureId)
+    Fagsystem->>API: AllAPIOpperations(part, resoureId, token)
     API->>Altinn Autorisasjon: Authorize(SystemUserId, res, action, part)
     Altinn Autorisasjon-->API: AuthorizationResponse
-    API-->Fagsystem:API Result 
+    API->>Fagsystem:API Result 
 </div>
 
 ### Forespørsel
