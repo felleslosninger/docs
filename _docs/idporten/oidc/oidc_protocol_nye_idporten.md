@@ -175,6 +175,10 @@ Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingene fra 
 
 Claim `at_hash` fjernes fra id_token. `at_hash` er påkrevd i implicit flow.  I authorization code flow er `at_hash` overflødig.
 
+### Innstramming klientautentiseringsmetode
+
+Klientautentiseringsmetoden som er registrert på klient, må benyttes mot autentiswerte endepunktet (f.eks. token-endepunktet).
+
 ### Innstramming klientautentisering med private_key_jwt
 
 JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim `iss`.  Parameteret `client_id` må angis mot token-endepunktet, i tillegg til `client_assertion`.  Dette er slik det er dokumentert på gammel løsning, men nye løsning håndhever dette strengere.
