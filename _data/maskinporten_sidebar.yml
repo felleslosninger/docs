@@ -57,8 +57,11 @@ folders:
       - title: Klientregistrering
         jurl: /docs/idporten/oidc/oidc_func_clientreg
 
-      - title: Delegering
+      - title: API-Delegering
         jurl: /docs/Maskinporten/maskinporten_func_delegering
+
+      - title: Systembruker-delegering
+        jurl: /docs/Maskinporten/maskinporten_func_systembruker
 
       - title: Audience-begrensning
         jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens
