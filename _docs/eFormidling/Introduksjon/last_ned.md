@@ -17,7 +17,7 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 > [**Integrasjonspunktet 2.25.0 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.25.0/images/sha256-46718376e53320e022ea4f90dabda6661cc65710d0cfffdc0c5527b0f3c729d)
 
-`docker pull digdir/integrasjonspunkt:2.24.1`
+`docker pull digdir/integrasjonspunkt:2.25.0`
 
 Endringslogg finner du [her.](../Oppgradering/endringslogg)
 
