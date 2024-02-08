@@ -26,15 +26,6 @@ redirect_from: /elma_status
 ```
 
 ---
-## ELMA update 30.01.2024 (3.23.1)
-
-### Bug fix
-
-```
-[MOVE-3924] Nedgradering av internt bibliotek som skapte utfordringar med sertifikat
-```
-
----
 
 ## ELMA update 04.01.2024 (3.23.0)
 
