@@ -18,6 +18,19 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.25.0
+
+08.02.2024
+
+**Ny funksjonalitet**
+
+- Lagt til adressevalidering for DPI sending uten fødselsnummer (kan ikkje vera tom)
+
+**Vedlikehald**
+
+- Oppdatering av diverse rammeverk
+
+
 ## 2.24.1
 
 10.11.2023
