@@ -70,7 +70,7 @@ echo "$CLOUD_SIGNIN_URL"
 export ANSATTPORTEN_URI=https://ansattporten.dev
 ```
 
-Sett opp en klient i samarbeidsportalen i rett miljø: https://selvbetjening-samarbeid-ver2.difi.no/integrations
+Sett opp en klient i samarbeidsportalen i rett miljø: https://sjolvbetjening.test.samarbeid.digdir.no
 og bruk redirect url som printes over. Type er `client_secret_basic`.
 
 ![opprettet klient](/images/idporten/oidc/ansattporten-allmennsky-oppsett.png)

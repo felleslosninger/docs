@@ -50,7 +50,7 @@ Scope i Maskinporten [opprettes ved bruk av selvbetjening]({{site.baseurl}}/docs
 
 ```
 POST /scopes HTTP/1.1
-Host: integrasjon-ver2.difi.no
+Host: api.test.samarbeid.digdir.no
 Content-Type: application/json
 Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
 {
@@ -176,5 +176,5 @@ Endepunkt som lister opp støttede delegeringsoppsett:
 
 |Miljø| Endepunkt|
 |-|-|
-| VER2 | https://integrasjon-ver2.difi.no/delegationsources |
+| TEST | https://api.test.samarbeid.digdir.no/delegationsources |
 | PROD | https://integrasjon.difi.no/delegationsources |
