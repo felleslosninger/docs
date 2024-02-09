@@ -73,9 +73,10 @@ Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
 |Miljø|URL|
 |-|-|
-|VER2/TEST|[https://integrasjon-ver2.difi.no/clients/](https://integrasjon-ver2.difi.no/clients/)|
-|YT2|[https://integrasjon-yt2.difi.eon.no/clients/](https://integrasjon-yt2.difi.eon.no/clients/)|
+|TEST|[https://api.test.samarbeid.digdir.no/clients/](https://api.test.samarbeid.digdir.no/)|
 |PROD|[https://integrasjon.difi.no/clients/](https://integrasjon.difi.no/clients/)|
+
+
 
 Se Open-API dokumentasjon her: [https://integrasjon.difi.no/swagger-ui/?urls.primaryName=External%20OIDC](https://integrasjon.difi.no/swagger-ui/?urls.primaryName=External%20OIDC)
 
@@ -87,7 +88,7 @@ Her er et minimums-eksempel på hvordan opprette en klient:
 
 ```
 POST /clients HTTP/1.1
-Host: integrasjon-ver2.difi.no
+Host: api.test.samarbeid.digdir.no
 Content-Type: application/json
 Authorization: Bearer eyJraWQiOiJjWmswME1rbTVIQzRnN3Z0NmNwUDVGSFpMS0pzdzhmQkFJdUZiUzRSVEQ0IiwiYWxnIjoiUlMyNTYifQ.eyJzY29wZSI6ImlkcG9ydGVuOmRjci53cml0ZSBpZHBvcnRlbjpkY3IucmVhZCIsImlzcyI6Imh0dHBzOlwvXC9vaWRjLXZlcjIuZGlmaS5ub1wvaWRwb3J0ZW4tb2lkYy1wcm92aWRlclwvIiwiY2xpZW50X2FtciI6InZpcmtzb21oZXRzc2VydGlmaWthdCIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJleHAiOjE2MzE2NTI4OTEsImlhdCI6MTYzMTY0NTY5MSwiY2xpZW50X2lkIjoiaWYyMDE4X3NlbGZzZXJ2aWNlX2NsaWVudCIsImNsaWVudF9vcmdubyI6Ijk5MTgyNTgyNyIsImp0aSI6IlpCOGRnbXJyWmRZVl9xejZSdUxUV2gxNUl2czNEMnFLX0llTjAtaWEzdnciLCJjb25zdW1lciI6eyJhdXRob3JpdHkiOiJpc282NTIzLWFjdG9yaWQtdXBpcyIsIklEIjoiMDE5Mjo5OTE4MjU4MjcifX0.VEaeccnoBNG88U3IwiOxO0u09CKBa-SIq31oEAzMk7_SsksIgNC1NDqqyejHoo5HHgzzgnCVDL2PBFvoSAO0C0my2cZr-FlE6rN9g2abawTIX2cYsk3yBWGBNrZTheQs-QTuwmg4iVQbO6TuAo7nCEnMTY13IYngK829-rtZiz32F-AEoFy0T1Fk7ZVafBtm9Ij1N4rDn25AqHrLYqkWKz9E8GnEk7QEK820oevH3BEE-5iKPNkdoEnJCfMV65dbsQ6OeRHTfmHU2RQ6gj8DjUbOlXnJlxnjyPK52bTnE7kyPBKIBaKtlgC0ePBbj6AMUSSrJjxbria05HJuLreQZQ
 
@@ -131,7 +132,7 @@ Klient-hemmelighet (client_secret) blir ikke resatt ved endringer, men dersom ma
 
 ### Rotering av client_secret
 
-For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://integrasjon-ver2.difi.no/swagger-ui/?urls.primaryName=External%20OIDC#/oidc-client-controller/updateSecretUsingPOST)
+For integrasjoner som bruker symmetrisk nøkkel (client_secret) som klientautentiseringsmetode, kan man generere ny secret ved å kalle [/clients/{client_id}/secret](https://api.test.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC#/oidc-client-controller/updateSecret)
 
 Merk: Digitaliseringsdirektoratet vil på sikt innføre maks-levetid på client_secret.
 

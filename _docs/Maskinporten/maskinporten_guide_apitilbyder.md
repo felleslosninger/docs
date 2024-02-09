@@ -120,7 +120,7 @@ Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API 
 
 ```
 POST /scopes HTTP/1.1
-Host: integrasjon-ver2.difi.no
+Host: api.test.samarbeid.digdir.no
 Content-Type: application/json
 Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
 cache-control: no-cache
