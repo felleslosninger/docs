@@ -385,5 +385,5 @@ C2 mottar kvitteringa, og legger den i kø.  Venter på at Avsenders system poll
 
 # 2-vegs svar
 
-TODO - Beskrivelse av 2-vegs-svar vil komme dersom funskjonaliteten vedtas og utvikles.
+Beskrivelse av 2-vegs-svar vil komme dersom funskjonaliteten vedtas og utvikles.
 
