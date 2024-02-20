@@ -29,7 +29,7 @@ a. Ved Oppslagstjenesten REST:
 -- Integrasjons identifikator: Genereres automatisk. Verdien skal brukes i jwt_claims.
 - Navn på integrasjon: Egendefinert, unikt navn på integrasjonen.
 - Beskrivelse: Egendefinert beskrivelse av hva integrasjonen skal brukes til.
-- Tillatte grant types: :jwt-bearer.
+- Tillatte grant types: jwt-bearer.
 - Klientautentiseringsmetode: private_key_jwt.
 - Applikasjonstyper: web.
 
@@ -47,7 +47,7 @@ b. Oppslag ved brukerinnlogging (brukerstyrt datadeling):
 Hvis man er leverandør for kunde (databehandler og behandlingsansvarlig), skal kundens organisasjonsnummer legges til ved oppsett av klient. 
 Det må i tillegg opprettes en såkalt OnBehalfof-klient (nederst på selvbetjeningssida ved oppretting av klient), der leverandør må legge inn en ønsket OnBehalfOf-verdi (entity-ID), navn og org.nr. 
 
-"iss_onbehalfof" : "<OnBehalfOf-verdi>" må inkluderes i claims ved forespørsel av access-token fra Maskinporten. 
+"iss_onbehalfof" : "OnBehalfOf-verdi" må inkluderes i claims ved forespørsel av access-token fra Maskinporten. 
 
 
 ### Legge til nøkkel i klient
