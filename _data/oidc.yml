@@ -35,7 +35,7 @@ folders:
       - title: Ansattporten
         jurl: /docs/idporten/oidc/ansattporten_guide.html
 
-      - title: Ansattporten - innlogging til sky
+      - title: Ansattporten - skyinnlogging
         jurl: /docs/idporten/oidc/ansattporten_allmennsky.html
 
       - title: ID-porten utland
