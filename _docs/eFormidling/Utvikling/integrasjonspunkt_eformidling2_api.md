@@ -207,9 +207,9 @@ skal ha (og ikke meldingene de andre klientene skal ha).
 Når en skal laste ned meldinger fra integrasjonspunktet må dette initieres med en peek, som låser førte meldingen i
 køen. Dersom en er ute etter meldinger av en bestemt type kan dette gjøres ved å sende med filter for denne.
 
-Etter man har låst meldingen kan denne deretter lastes ned via endepunktet `/api/messages/in/{messageId}`.
+Etter man har låst meldingen kan denne deretter lastes ned via endepunktet `/api/messages/in/pop/{messageId}`.
 
-Etter meldingen er lastet ned kan denne slettes via å kalle DELETE mot `/api/messages/in/pop/{messageId}` eller den kan
+Etter meldingen er lastet ned kan denne slettes via å kalle DELETE mot `/api/messages/in/{messageId}` eller den kan
 låses opp igjen.
 
 <div class="mermaid">
