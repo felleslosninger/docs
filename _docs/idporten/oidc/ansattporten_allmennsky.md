@@ -1,5 +1,5 @@
 ---
-title: Ansattporten som innlogging til skyen
+title: Pilot: Ansattporten som innlogging til skyen
 description: Ansattporten er en kopi av ID-porten men der funksjonaliteten er tilpasset innlogging i ansatt/representasjonskontekst.
 
 sidebar: oidc
@@ -61,7 +61,7 @@ echo "$WORKFORCE_PROVIDER_NAME"
 echo "Redirect url will be:"
 echo "https://auth.cloud.google/signin-callback/$WORKFORCE_PROVIDER_NAME"
 
-export CLOUD_SIGNIN_URL="https://auth.cloud.google/signin/locations/global/workforcePools/$WORKFORCE_POOL_ID/providers/$WORKFORCE_PROVIDER_NAME?continueUrl=https://console.cloud.google/"
+export CLOUD_SIGNIN_URL="https://auth.cloud.google/signin/$WORKFORCE_PROVIDER_NAME?continueUrl=https://console.cloud.google/"
 
 echo "Cloud sign in url will be:"
 echo "$CLOUD_SIGNIN_URL"
@@ -81,6 +81,23 @@ export ANSATTPORTEN_SECRET=<verdi fra nyopprettet client secret>
 
 ```
 Se [integrasjonsguide](ansattporten_guide.html) for issuer i andre miljøer.
+
+
+#### Gi prosjekttilgang
+
+Det er nødvendig å gi brukeren prosjekttilgang.
+
+Vi oppnådde det ved å gi rollen `storage.objectViewer`. Det bør være mulig å stramme dette mer inn, og det jobber vi med å få til. Vi foreslår å forsøke med rollen `roles/browser`, som skal gi mindre tilgang.
+
+For å utføre tilgangsendringen benyttes følgende kommando:
+
+``````bash
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+   --role="roles/browser" \
+   --member="principalSet://iam.googleapis.com/locations/global/workforcePools/ansattportenpoc/attribute.orgno/0192:311046349"
+``````
+
+Hvis det ikke fungerer, så forsøk med `storage.objectViewer`. Hvis du har et bedre forslag, så si ifra til oss.
 
 #### Begrens til login fra kun en spesifikk organisasjon
 
@@ -154,21 +171,115 @@ Feltene i tokenet kan benyttes til attribute-mapping og attribute-condition.
 Vi har valgt å benytte `sub` for å unngå at personnummer flyter rundt i GCP.
 
 
-#### Gi tilgang til brukere innlogget via Ansattporten
+#### Gi BigQuery tilgang til brukere innlogget via Ansattporten
 
 Man kan spesifisere rettigheter til federerte brukere ved å referere til `principalSet` i IAM policies. [Se dokumentasjon](https://cloud.google.com/iam/docs/configuring-workforce-identity-federation).
 
-Dette kan f.eks. gjøres med gcloud, eller direkte i BigQuery-grensesnittet.
+Dette kan f.eks. gjøres med kommandolinje-verktøyet bq, eller direkte i BigQuery-grensesnittet.
 
-Med gcloud kan prosjekt-tilgang f.eks. gjøres slik:
+Dette må gjøres med en json-definisjon. Først bør man hente ned eksisterende rettigheter i json for prosjektet og datasettet.
+
+Vi forutsetter at et datasett som heter navn_2022 finnes i GCP prosjektet ditt.
 
 ``````bash
-gcloud projects add-iam-policy-binding my-project \
-    --role="roles/storage.objectViewer" \
-    --member="principalSet://iam.googleapis.com/locations/global/workforcePools/$WORKFORCE_POOL_ID/*"
+# PROJECT_ID er GCP prosjektnavn
+export PROJECT_ID=skyportendemo
+# DATASET er bigquery dataset
+export DATASET=navn_2022
 ``````
 
+Se eksisterende json:
+
+```
+bq show --format=prettyjson "$PROJECT_ID:$DATASET"
+{
+  "access": [
+    {
+      "role": "WRITER",
+      "specialGroup": "projectWriters"
+    },
+    {
+      "role": "OWNER",
+      "specialGroup": "projectOwners"
+    },
+    {
+      "role": "OWNER",
+      "userByEmail": "foo@foo.com"
+    },
+    {
+      "role": "READER",
+      "specialGroup": "projectReaders"
+    }
+  ],
+  "datasetReference": {
+    "datasetId": "navn_2022",
+    "projectId": "skyportendemo"
+  },
+  ...
+}
+```
+
+Til denne json-strukturen må det legges til noen rader under access.
+
+#### Gi tilgang kun til ansatte fra organisasjon med orgnr. 311046349
+
+Man kan gi tilgang til alle fra en workforce pool, eller avgrense med orgnr.
+Her er eksemplet for å gi tilgang begrenset til orgnr. Andre attributter kan også benyttes.
+[Se dokumentasjon](https://cloud.google.com/iam/docs/configuring-workforce-identity-federation).
+
+Husk at vi over allerede har begrenset workforce deltakelse på organisasjonsnummer.
+
+``````json
+  ...
+  "access": [
+  ...
+    {
+      "iamMember": "principalSet://iam.googleapis.com/locations/global/workforcePools/ansattportenpoc/attribute.orgno/0192:311046349",
+      "role": "READER"
+    },
+    {
+      "iamMember": "principalSet://iam.googleapis.com/locations/global/workforcePools/ansattportenpoc/attribute.orgno/0192:311046349",
+      "role": "roles/bigquery.user"
+    }
+  }
+  ...
+``````
+
+Her er eksemplet for å gi tilgang til alle fra en workforce pool:
+
+
+``````json
+  ...
+  "access": [
+  ...
+    {
+      "iamMember": "principalSet://iam.googleapis.com/locations/global/workforcePools/$WORKFORCE_POOL_ID/*",
+      "role": "READER"
+    },
+    {
+      "iamMember": "principalSet://iam.googleapis.com/locations/global/workforcePools/$WORKFORCE_POOL_ID/*",
+      "role": "roles/bigquery.user"
+    }
+  }
+  ...
+``````
+
+Lagre den nye json-strukturen i `dataset_access.json`.
+
+For å utføre tilgangsendringen benyttes følgende kommando:
+
+``````bash
+bq update --source dataset_access.json "$PROJECT_ID:$DATASET"
+``````
+
+
 #### Ferdig innlogget bruker med synlig navn
+
+Innlogging kan testes på følgende URL:
+
+``````bash
+echo "$CLOUD_SIGNIN_URL"
+``````
 
 Her er et screenshot som viser bruker ferdig innlogget i google cloud (`https://console.cloud.google`):
 
