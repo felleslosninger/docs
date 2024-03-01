@@ -177,4 +177,4 @@ Endepunkt som lister opp støttede delegeringsoppsett:
 |Miljø| Endepunkt|
 |-|-|
 | TEST | https://api.test.samarbeid.digdir.no/delegationsources |
-| PROD | https://integrasjon.difi.no/delegationsources |
+| PROD | https://api.samarbeid.digdir.no/delegationsources |

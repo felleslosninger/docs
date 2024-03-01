@@ -73,8 +73,8 @@ Selvbetjeningsklienten må få tildelt scopes for å få tilgang til APIet:
 
 |Miljø|URL|Open-API/Swagger
 |-|-|-|
-|TEST|[https://api.test.samarbeid.digdir.no/clients/](https://api.test.samarbeid.digdir.no/)|[https://api.test.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC](https://api.test.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC)|
-|PROD|[https://api.samarbeid.digdir.no/clients/](https://integrasjon.difi.no/clients/)|[https://api.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC](https://api.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC)|
+|TEST|[https://api.test.samarbeid.digdir.no/clients/](https://api.test.samarbeid.digdir.no/clients)|[https://api.test.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC](https://api.test.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC)|
+|PROD|[https://api.samarbeid.digdir.no/clients/](https://api.samarbeid.digdir.no/clients/)|[https://api.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC](https://api.samarbeid.digdir.no/swagger-ui/index.html?urls.primaryName=External%20OIDC)|
 
 
 
