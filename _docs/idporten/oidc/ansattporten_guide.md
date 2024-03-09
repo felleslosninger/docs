@@ -141,10 +141,10 @@ Teknisk sett benytter tjenesten (oauth2-klienten) Ansattporten sine access_token
 
 Følgende miljøer er tilgjengelige for kunder:
 
-|Miljø|Metadata | Kommentar|
-|-|-|-|
-|TEST|[https://test.ansattporten.no/.well-known/openid-configuration](https://test.ansattporten.no/.well-known/openid-configuration)| Testmiljø (samme som VER2) |
-|PROD|[https://ansattporten.no/.well-known/openid-configuration](https://ansattporten.no/.well-known/openid-configuration) | |
+|Miljø|Metadata |
+|-|-|
+|TEST|[https://test.ansattporten.no/.well-known/openid-configuration](https://test.ansattporten.no/.well-known/openid-configuration)| 
+|PROD|[https://ansattporten.no/.well-known/openid-configuration](https://ansattporten.no/.well-known/openid-configuration) | 
 
 
 
