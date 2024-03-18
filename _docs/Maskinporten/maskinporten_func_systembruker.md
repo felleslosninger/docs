@@ -7,14 +7,7 @@ product: Maskinporten
 redirect_from: /maskinporten_func_systembruker
 ---
 
-**Alt 1:**
-Funksjonaliteten lar en virksomhet delegere avgrensede rettigheter til et fagsystem som de benytter fra en systemleverandør.
-
-**Alt 2:**
 Funksjonaliteten lar leverandører definere sine Maskinporten-integrasjoner som fagsystemer i Altinn, som leverandørens kunder i sin tur kan tildele bare de rettighetene som fagsystemet trenger for å kunne opptre på vegne av kunden for bestemte formål.
-
-**Alt 3:**
-Funksjonaliteten er en spesiell type Maskinporten-integrasjon som fremstår som et fagsystem i Altinn. Virksomheter kan så delegere avgrensede, "spissede" rettigheter direkte til fagsystemet.
 
 ## Status
 
@@ -22,22 +15,39 @@ Funksjonaliteten blir lansert i en pilotfase tidlig Q2 2024.
 
 ## Bakgrunn
 
-Maskinporten i sin enkleste form tilbyr grovkornet tilgangstyring mellom to virksomheter; en API-konsument og en API-tilbyder.  Utvidelsen med [delegering av API-tilgang (scope-delegering)](maskinporten_func_delegering), gir API-konsumenten mulighet til å delegere en tildelt API-tilgang videre til en leverandør.
+Maskinporten i sin enkleste form tilbyr grovkornet tilgangstyring mellom to virksomheter; en API-konsument og en API-tilbyder. 
 
-*Systembruker for virksomhet* er annen type utvidelse, som passer bedre i scenarioer der standard API-delegering ville ført til at leverandøren ville fått altfor vide rettigheter.  
+Videre tilbyr Maskinporten to ulike delegerings-utvidelser for bruk i kunde-leverandør-forhold på konsument-sida:
 
-Her gis leverandørens kunder mulighet til å delegere et mer spisset / avgrenset sett med rettigheter.  Rettighetene blir delegert til kun ett spesifikt system hos leverandøren, istedet til leverandørens organisasjonnummer.  Rettighetene omfatter ressurser i Altinn Autorisasjon, og er ikke knyttet til en tildelt API-tilgang i Maskinporten som API-tilbyder må forvalte. 
+* [Delegering av API-tilgang til en annen organisasjon](maskinporten_func_delegering)
+* Delegering av rettigheter i Altinn til et Maskinporten-system (dokumentert på denne sida)
 
-Typisk oppstår delegeringen som et naturlig steg ved etablering av kundeforholdet når kunden velger å ta i bruk leverandøren sitt system.
+For begge utvidelsene så utfører kunden selve delegeringshandlingen gjennom brukervennlige dialoger i Altinn, og trenger ikke måtte inngå et kundeforhold til Digdir eller bruke Samarbeidsportalen.  Tilganger i Altinn bestemmer hvem som får lov til å utføre delegeringshandlinga på vegne av kundens virksomhet. Typisk oppstår delegeringen som et naturlig steg ved etablering av kundeforholdet når kunden velger å ta i bruk leverandøren sitt system.
 
+*Systembruker for virksomhet* passer bedre i scenarioer der standard API-delegering ville ført til at leverandøren ville fått altfor vide rettigheter.  
 
 #### Hva er forskjellen på systembruker-delegering og API-delegering?
 
-Systembruker-funksjonaliteten er uavhengig av standard API-delegering, men det er flere fellestrekk.
+API-delegering gjelder en hel API-tilgang (dvs. et Oauth2 scope) og delegeres til et organisasjonsnummer (leverandør).
 
-For begge løsningen så utfører kunden delegeringen gjennom brukervennlige dialoger i Altinn, og trenger ikke måtte etablere et kundeforhold til Digdir.  Tilgangsgrupper i Altinn bestemmer hvem som får lov til å utfører delegeringshandlinga.
+Ved systembruker-delegering får kunder mulighet til å delegere et mer spisset / avgrenset sett med "Altinn-rettigheter", og rettighetene kan bare delegeres til ett spesifikt system hos leverandøren, istedet til leverandørens organisasjonnummer. 
+Systemet må være forhåndsregistrert i Systemregisteret i Altinn.  
 
-Mens API-delegering normalt forutsetter at API-tilbyder aktivt gir kunden tilgang til APIet, så er systembruker-delegering uavhengig av API-tilbyder.
+De to delegeringsmekanismene er uavhengig av hverandre, og det er ingen sentral validering av at systemet i systemregisteret har bestemte scope registert på seg, som skulle "passe" med de rettighetene som blir delegert.  Normalt vil dog APIet validere både hvilke scopes som systemet må ha, samt hvilke type delegerte rettigheter som trengs for å kunne bruke APIet. 
+
+
+#### Hva inneholder et systembruker-token ?
+
+Rent teknisk i Autorisasjon så blir ikke de delegerte rettighetene gitt direkte til systemet, men er delegert til en såkalt **systembruker** knyttet til kunden. Systembrukeren peker i sin tur på leverandøren sitt system i Systemregisteret, og system-registreringa er kobla mot en og bare en client_id i Maskinporten.
+
+Et systembruker-token skiller seg fra et vanlig Maskinporten-token ved at det inneholder en referanse til systembrukeren hos kunden, og kundens organisasjonsnummer.  Leverandøren sitt organisasjonummer framkommer i `consumer`-claimet på vanlig måte.
+
+
+#### For API-tilbyder
+
+For å kunne bruke et systembruker-token til tilgangstyring må API-tilbyder konstruere et kall mot Altinn Autorisasjon 3.0 sitt PDP-endepunkt for å hente ut hvilke detaljerte rettigheter som er delegert fra kunde til leverandør.
+
+API-tilbyder bør også validere scope på sitt API.
 
 ## Grensesnittsdefinisjon
 
@@ -113,5 +123,5 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
 
-På sikt vil det opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert oppsett av slike gjennom Altinn direkte.
+På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert oppsett av slike gjennom Altinn direkte.
 
