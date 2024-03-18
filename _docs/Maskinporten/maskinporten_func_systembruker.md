@@ -82,7 +82,7 @@ Et fagsystem ber om å få systembruker-token på vegne av en part ved å inklud
 
   "authorization_details": [ {
     "type": "urn:altinn:systemuser",
-    "systemuserorg": {
+    "systemuser_org": {
        "authority" : "iso6523-actorid-upis",  
        "ID": "0192:999888777"  
     }
@@ -108,8 +108,8 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
   
   "authorization_details": [ {
     "type": "urn:altinn:systemuser",
-    "systemuserid": "a_unique_identifier_for_the_system",
-    "systemuserorg": {
+    "systemuser_id": "a_unique_identifier_for_the_system",
+    "systemuser_org": {
        "authority" : "iso6523-actorid-upis",  
        "ID": "0192:999888777"  
     }
