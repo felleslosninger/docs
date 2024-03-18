@@ -32,7 +32,7 @@ Oversikt over de forskjellige dokumenttypene som vil bli brukt i DPI, og prosess
 
 | --- | --- |
 | Title | INNBYGGERPOST_UTSKRIFT_1_0 |
-| Description | Fysisk brev til innbyggere |
+| Description | Fysisk brev til mottaker |
 | Domain | e-Government |
 | Identifier | urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:utskrift:ver1.0 |
 | Schema | cenbii-procid-ubl |

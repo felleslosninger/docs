@@ -85,5 +85,5 @@ GET https://client.example.com/myapp/logout
 Front-channel logout i ID-porten er basert på  [OIDC Front Channel Logout](http://openid.net/specs/openid-connect-frontchannel-1_0.html)-spesifikasjonen.
 
 
-Dersom en klient ikke er konfigurert med Front Channel Logout, vil klienten ikke motta utloggingsforespørsel fra ID-porten dersom brukeren logger ut fra en annen tjeneste i circle-of-trust.  
+Dersom en klient ikke er konfigurert med Front Channel Logout, vil klienten ikke motta utloggingsforespørsel fra ID-porten dersom brukeren logger ut fra en annen tjeneste i circle-of-trust og id-tokenet vil heller ikke inneholde `sid`.  
 

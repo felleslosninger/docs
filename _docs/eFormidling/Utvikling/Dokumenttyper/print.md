@@ -21,7 +21,9 @@ og en forretningsmelding som brukes for dokumenttype-spesifikk adresseringsinfor
 eFormidlings bruk av standarden `SBD` er beskrevet på [Standard business document](standard_sbd).
 
 Dokumenttypen `print` adresseres fra avsenders organisasjonsnummer til mottakers fødselsnummer. Dersom mottakers
-fødselsnummer er ukjent kan dette utelates.
+fødselsnummer er ukjent kan dette utelates. I slike tilfeller er det påkrevd å eksplisitt oppgi mottakers postadresse, fordi
+eFormidling ellers ikke har nok opplysninger til å gjøre adresseoppslag. En kan dermed bruke `print` til å sende fysisk post
+til utenlandske innbyggere og virksomheter.
 
 ### Forretningsmeldingen
 

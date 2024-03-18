@@ -1,5 +1,5 @@
 ---
-title: Fagsystem som støtter integrasjon med eFormidling - UTKAST
+title: Fagsystem som støtter integrasjon med eFormidling
 description: ""
 summary: ""
 product: eFormidling
@@ -10,7 +10,7 @@ Denne siden gir oversikt over hvilke fagsystemer som støtter eFormidling i henh
 - [Krav og testbeskrivelser](../Testing/krav)
 
 Les mer om hvordan selvdeklarering av støtte for eFormidling fungerer på
-- TODO lenke til samarbeidsportalen
+- [Selvdeklarering av støtte for eFormidling](https://samarbeid.digdir.no/eformidling/dette-er-eformidling/46#selvdeklarering_av_sttte_for_eformidling) (eksterne lenke)
 
 Siden presenterer informasjon som oppgitt fra leverandørene og blir ikke kvalitetssikret av eFormidling.
 
@@ -19,7 +19,11 @@ Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen 
 1. TOC
 {:toc}
 
-## Acos WebSak
+## Løsninger med selvdeklarert støtte for eFormidling
+
+> Merk at regimet for selvdeklarert støtte for eFormidling ble etablert november 2023. Ikke alle leverandører med støtte for eFormidling har sendt inn selvdeklareringsskjemaet ennå.
+
+### Acos WebSak
 
 | **Fagystem**                                                        | Acos WebSak                                                           |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -37,11 +41,11 @@ Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen 
 | - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes ikke                                                          |
 | **Lenker**                                                          | [Acos WebSak](https://www.acos.no/produkter-og-tjenester/sak-og-arkivsystem/websak/) (ekstern lenke) |
 
-## Bedre Sak Enn Arkiv (eksempel)
+## Mal for selvdeklarering
 
-| **Fagystem**                                                        | Bedre Sak Enn Arkiv (eksempel)                                        |
+| **Fagystem**                                                        | Navn på løsningen                                                     |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------|
-| **Leverandør**                                                      | John Doe AS                                                           |
+| **Leverandør**                                                      | Navn på leverandøren                                                  |
 | **Prosesser**                                                       |                                                                       |
 | - Innsynskrav fra eInnsyn                                           | Støttes fra versjon 1.2                                               |
 | - Journalpost til eInnsyn                                           | Støttes fra versjon 1.2                                               |
@@ -53,4 +57,4 @@ Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen 
 | - Integrasjonspunkt driftes av kunde                                | Støttes                                                               |
 | - Integrasjonspunkt driftes av leverandør                           | Støttes ikke                                                          |
 | - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes ikke                                                          |
-| **Lenker**                                                          | [Bedre Sak Enn Arkiv](https://bedre-sak-enn-arkiv.no) (ekstern lenke) |
+| **Lenker**                                                          | [Navn på løsningen](https://www.løsningen.no) (ekstern lenke)         |

@@ -8,6 +8,35 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 08.02.2024 (3.24.0)
+
+### Tasks
+
+```
+[MOVE-3923] Oppgradering av rammeverk
+```
+
+---
+## ELMA update 30.01.2024 (3.23.1)
+
+### Bug fix
+
+```
+[MOVE-3924] Nedgradering av internt bibliotek som skapte utfordringar med sertifikat
+```
+
+---
+
+## ELMA update 04.01.2024 (3.23.0)
+
+### Tasks
+
+```
+Vedlikehald: Oppdatering av rammeverk og bibliotek
+```
+
+---
+
 ## ELMA update 18.09.2023 (3.22.3)
 
 ### Tasks
@@ -15,6 +44,8 @@ redirect_from: /elma_status
 ```
 Vedlikehald: Oppdatering av rammeverk og bibliotek
 ```
+
+---
 
 ## ELMA update 22.08.2023 (3.21.1)
 
@@ -24,6 +55,8 @@ Vedlikehald: Oppdatering av rammeverk og bibliotek
 Fjerna moglegheit for å registrera nye AS2-endepunkt
 ```
 
+---
+
 ## ELMA update 27.06.2023 (3.20.0)
 
 ### Tasks
@@ -31,6 +64,8 @@ Fjerna moglegheit for å registrera nye AS2-endepunkt
 ```
 Forbedret monitorering, logging og intern statistikk for bruk til debugging
 ```
+
+---
 
 ## ELMA update 06.06.2023 (3.19.0)
 

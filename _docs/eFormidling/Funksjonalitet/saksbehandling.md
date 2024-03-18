@@ -96,6 +96,12 @@ B -->|Ja| V
 B -->|Nei| W
 </div>
 
+Noen virksomheter kan ikke nås med disse meldingstjenestene. Dette gjelder for eksempel utenlandske virksomheter. I slike
+tilfeller kan en sende fysisk post til virksomhetene med hjelp av utskriftstjenesten i digital post til innbyggere (DPI).
+Les mer om hvordan dette fungerer på:
+
+- [Vedtak til innbyggere](vedtak_til_innbygger)
+
 ## Sende meldinger
 
 Først gjøres et kapabilitetsoppslag for å se hvilke dokumenttyper mottakeren støtter for saksbehandling. Virksomhetens

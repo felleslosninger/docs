@@ -42,7 +42,7 @@ Example:
   "auth_time" : 1497605218,
   "amr" : "BankID",
   "iss" : "https://oidc-yt2.difi.eon.no/idporten-oidc-provider/",
-  "pid" : "23079410918",
+  "pid" : "20914695016",
   "exp" : 1497605382,
   "locale" : "nb",
   "iat" : 1497605262,

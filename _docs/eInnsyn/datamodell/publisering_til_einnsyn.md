@@ -10,7 +10,7 @@ redirect_from: /einnsyn_publisering_til_einnsyn
 eInnsyn nyttar eFormidling til transport av data mellom innhaldsleverandørar og eInnsyn.
 Meldingane til eInnsyn er basert på Noark, men konvertert til json-ld som er ei RDF-serialisering. Datafelta, klassar og koplingane mellom dei er i stor grad det same, men formatet er ulikt
 
-eInnsyn har fleire ulike meldingstypar ein sender gjennom eInnsyn. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen]({{site.baseurl}}/docs/eFormidling/Teknisk_informasjon/message#einnsyn).
+eInnsyn har fleire ulike meldingstypar ein sender gjennom eFormidling. At meldinga er ei eInnsyn melding og kva type det er, spesifiserast ihh til [denne spesifikasjonen]({{site.baseurl}}/docs/eFormidling/Utvikling/Dokumenttyper/publisering).
 
 Sjølve meldingsinnhaldet, og data som skal sendast til eInnsyn, angir man i fila payload.jsonld.
 
@@ -74,6 +74,8 @@ Hvis den fins, men har samme id/iri som i databasen, korrigeres eventuelt parent
 
 Hvis journalpost ikke fins i databasen basert på virksomhet, journalaar og journalsekvensnummer, forsøker man å finne en eventuelt tidligere lagret saksmappe ut fra innkommende journalposts oppgitte parent (oppslag mot saksmappe sin ekstern_id og virksomhet).
 Hvis mappen fins med den oppgitte ekstern_id, endres meldingen til å bruke vår saksmappe-id/iri som parent på journalpost.
+
+ID-converter støtter ikke møtedata. Det fordi møtedata ikke støttes i Noark4 datamodellen vår, og det skulle derfor ikke være behov for å konvertere ID på denne type data.
 
 ## Strukturering av publiseringen
 eInnsyn forsøker i så stor grad som mogleg å legge til rette for løpande overføring. Og strukturen legg opp til dette sjølv i tilfeller der dette ikkje er tilfelle.

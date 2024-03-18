@@ -18,7 +18,7 @@ redirect_from: /saml_hurtigguide
 
 ### ID-porten støtter ikke alt i SAML2-standarden
 
-Metadata definerer hva som er tillatt 
+Metadata definerer hva som er tillatt
 
 ![](/images/idporten/saml/hurtigguide/nystotte.PNG "ID-porten støtter ikke salt i SAML2-standarden")
 
@@ -72,45 +72,43 @@ Kan brukes i verifikasjonstesten som «annen tjenesteier» ifbm single sign-on
 
 ![](/images/idporten/saml/hurtigguide/testsp.bmp "ID-porten test-klient")
 
-Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
-
 
 ### Ulike miljø
 
-| Miljø | Beskrivelse | Sertifikat | 
+| Miljø | Beskrivelse | Sertifikat |
 | --- | --- | --- |
-| PROD | Produksjonsmiljø | Virksomhetssertifikat kreves | 
-| VER1 | Test-miljø. Samme versjon som PROD | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
-| VER2 | Test-miljø. Kjører pre-releaser av kommende versjon | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
-| YT2 | Ytelsetest. Kjører pre-release av kommende versjon. Tilgang bestilles separat | Selvgenerert og (test)virksomhetssertifikat kan brukes | 
+| PROD | Produksjonsmiljø | Virksomhetssertifikat kreves |
+| VER1 | Test-miljø. Samme versjon som PROD | Selvgenerert og (test)virksomhetssertifikat kan brukes |
+| VER2 | Test-miljø. Kjører pre-releaser av kommende versjon | Selvgenerert og (test)virksomhetssertifikat kan brukes |
+| YT2 | Ytelsetest. Kjører pre-release av kommende versjon. Tilgang bestilles separat | Selvgenerert og (test)virksomhetssertifikat kan brukes |
 | | | |  
 
-### Testbrukere 
+### Testbrukere
 
 > NB! Kun for VER1 og VER2  
 > NB! Testbrukere tillates ikke i PROD
 
-| eID | Rutine | 
-| --- | --- | 
-| MinID | Digitaliseringsdirektoratet oppretter | 
-| BankID | Digitaliseringsdirektoratet kan bestille for tjenesteeier ( ikke bankID for mobil ) | 
-| Buypass | Tjenesteeier må direkte kontakt | 
-| Commfides | Tjenesteeier må ta direkte kontakt | 
-| | | 
+| eID | Rutine |
+| --- | --- |
+| MinID | Digitaliseringsdirektoratet oppretter |
+| BankID | Digitaliseringsdirektoratet kan bestille for tjenesteeier ( ikke bankID for mobil ) |
+| Buypass | Tjenesteeier må direkte kontakt |
+| Commfides | Tjenesteeier må ta direkte kontakt |
+| | |
 
-### ID-porten single sign-on 
+### ID-porten single sign-on
 
-![](/idporten-integrasjonsguide/assets/images/hurtigguide/sso.bmp "ID-porten single sign-on")
+![](/images/idporten/saml/hurtigguide/sso.bmp "ID-porten single sign-on")
 
 1. Sluttbruker ønsker tilgang til en tjeneste hos tjenesteeier som krever at bruker er autentisert
-2. Tjenesteeier verifiserer om sluttbruker har en autentiseringssesjon lokalt, 
+2. Tjenesteeier verifiserer om sluttbruker har en autentiseringssesjon lokalt,
 3. Tjenesteeier oppretter en autentiseringsforespørsel (AuthnRequest) som sendes til ID-porten
 	- Hvis bruker er innlogget hos annen tjeneste, gå til pkt. 6.
 4. ID-porten gjennomfører innlogging med sluttbruker med valgt eID på tilfredstillende sikkerhetsnivå
 5. Som over
 6. ID-porten svarer på autentiseringsforespørselen til tjenesteeier
 	- AuthnRespons inneholdende Artifact
-7. Tjenesteeier sender en personopplysningsforespørsel til ID-porten 
+7. Tjenesteeier sender en personopplysningsforespørsel til ID-porten
 	- ArtifactResolve inneholdend Artifact
 8. ID-porten leverer ut personopplysninger om sluttbruker,
 	- ArtifactResponse inneholdende Assertion
@@ -122,21 +120,20 @@ Kildekode kan [lastes ned her](../resources/testsp_javacode.zip)
 ![](/images/idporten/saml/hurtigguide/idp_slo.bmp "ID-porten single logout")
 
 1. Bruker ber om utlogging
-2. Tjenesteeier sender LogoutRequest til ID-porten via frontkanal 
+2. Tjenesteeier sender LogoutRequest til ID-porten via frontkanal
 3. ID-porten sender LogoutRequest til annen tjenesteeier som denne bruker er pålogget.
 4. Annen tjenesteeier svarer med en LogoutResponse.
 	- Viss flere: gjenta 3 og 4
 5. ID-porten svarer på initiell LogoutRequest, med en LogoutResponse
 
-Hvis én tjenesteeier bryter kjeden, vil brukeren fremdeles være innlogget i ID-porten 
+Hvis én tjenesteeier bryter kjeden, vil brukeren fremdeles være innlogget i ID-porten
 
 
-### Tjenesteeier logo 
+### Tjenesteeier logo
 
-* Logofilen må kunne vises direkte i en nettleser. 
-	 - Dette innebærer at formatet skal være .png, .jpg eller .gif. 
+* Logofilen må kunne vises direkte i en nettleser.
+	 - Dette innebærer at formatet skal være .png, .jpg eller .gif.
 * Maks høgde på logo er 90px. og bredde bør ikkje være meir enn 135px.
-* Bakgrunnsfargen på idporten sidene er #f3f4f4, så tjenesteeigarane bør enten ha denne fargen som bakgrunn på sin logo eller ha bakgrunnen transparent. 
+* Bakgrunnsfargen på idporten sidene er #f3f4f4, så tjenesteeigarane bør enten ha denne fargen som bakgrunn på sin logo eller ha bakgrunnen transparent.
 
 ![](/images/idporten/saml/hurtigguide/eid_selektor.bmp "eid selektor")
-

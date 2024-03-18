@@ -203,6 +203,62 @@ difi.move.dpi.receipt-type=xmlsoap
 difi.move.feature.statusQueueIncludes=DPI
 ```
 
+### Sending uten fødselsnummer
+
+Dersom av en eller annen grunn mangler fødselsnummer eller vil tvinge sending til print. Eksempel SBD:
+```
+curl -XPOST http://localhost:9093/api/messages/out \
+-H 'Content-Type: application/json' -d \
+'{
+    "standardBusinessDocumentHeader": {
+        "headerVersion": "1.0",
+        "sender": [
+      {
+        "identifier": {
+          "value": "0192:991825827",
+          "authority": "iso6523-actorid-upis"
+        }
+      }
+    ],
+        "documentIdentification": {
+            "standard": "urn:no:difi:digitalpost:xsd:fysisk::print",
+            "typeVersion": "1.0",
+            "type": "print"
+        },
+        "businessScope": {
+            "scope": [{
+                    "type": "ConversationId",
+                    "identifier": "urn:no:difi:profile:digitalpost:vedtak:ver1.0"
+                }
+            ]
+        }
+    },
+    "print": {
+        "hoveddokument": "my.pdf",
+        "mottaker": {
+            "navn": "Ola Nordmann",
+            "adresselinje1": "Testvegen 2",
+            "postnummer": "6853",
+            "poststed": "Leikanger",
+            "land": "NO"
+        },
+        "utskriftsfarge": "SORT_HVIT",
+        "posttype": "B_OEKONOMI",
+        "retur": {
+            "mottaker": {
+                "navn": "Digitaliseringsdirektoratet avd. Leikanger",
+                "adresselinje1": "Skrivarvegen 2",
+                "postnummer": "6853",
+                "poststed": "Leikanger",
+                "land": "NO"
+            },
+            "returhaandtering": "DIREKTE_RETUR"
+        }
+    }
+}'
+```
+**NB!** Verdier for mottaker og returpostmottaker må fylles inn slik som i SBDen over ellers vil sendingen feile!
+
 ## Diverse
 
 ### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?

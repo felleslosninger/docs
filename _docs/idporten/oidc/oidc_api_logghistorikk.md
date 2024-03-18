@@ -26,7 +26,7 @@ Innbyggere kan gå til [https://brukerprofil.idporten.no/](https://brukerprofil.
 
 ## REST-grensesnittet
 
-REST-grensesnittet er beskyttet med Oauth2 og er basert på at innkommende access token tilhører innlogget bruker,  såkalt  [autentiseringsnær autorisasjon](https://difi.github.io/idporten-oidc-dokumentasjon/oidc_auth_oauth2.html), kunden skal derfor ikke oppgi fødselsnummer selv.
+REST-grensesnittet er beskyttet med Oauth2 og er basert på at innkommende access token tilhører innlogget bruker,  såkalt  [autentiseringsnær autorisasjon]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2), kunden skal derfor ikke oppgi fødselsnummer selv.
 
 Følgende Oauth2 scopes aksepteres av grensesnittet:
 
@@ -44,7 +44,6 @@ URL til tjenesten:
 | Miljø | URL |
 |-|-|
 |PROD  | https://api.idporten.difi.no/innlogginger/logg/idporten  |
-|VER1  | https://api.idporten-ver1.difi.no/innlogginger/logg/idporten |
 |VER2  | https://api.idporten-ver2.difi.no/innlogginger/logg/idporten  |
 |YT2   | https://api.idporten-yt2.difi.eon.no/innlogginger/logg/idporten |
 

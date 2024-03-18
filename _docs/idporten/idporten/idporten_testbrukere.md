@@ -18,7 +18,7 @@ Vi anbefaler at alle kunder bruker **TestID** når de skal teste ID-porten. Test
 
 ![TestID logo]({{site.baseurl}}/assets/testid.svg)
 
-TestID støtter innlogging med **syntetisk personidentifikator**  (en må legge til +80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
+TestID støtter innlogging med **syntetisk personidentifikator**  (+80 på måned-sifrene), og man slipper da risiko for å blande sammen test- og produksjonsdata.
 
 TestID har ikke noe passord, så man slipper å ta kontakt med Digdir for å tildelt, opprettet eller nullstilt brukere.
 
@@ -27,30 +27,32 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 ## MinID
 
-### Opprette testbruker (syntetisk PID) selv i testmiljøet TEST
+### Opprette testbruker selv i testmiljøet TEST
 
-Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator +80 (lagt til +80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). Merk at kontaktinformasjonen som blir knyttet til brukeren blir vasket bort ukentlig.
-
+Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet TEST. En må da følge vanlig flyt for bestilling av MinID. Dette forutsetter at en benytter syntetisk personidentifikator (+80 på måned-sifrene). PID må hentes fra [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/). 
 
 **Framgangsmåte**
 
 - trykk i innloggingsbildet i TEST i MinID "Bestill ny MinID". Eller bruk direktelenke: [https://aktiveringsbrev.test.minid.no/order](https://aktiveringsbrev.test.minid.no/order)
 - fyll inn syntestisk personidentifikator
-- bestill aktiveringsbrev. En får så en aktiveringskode. 
-- legg inn aktiveringskoden i "Registrer aktiveringsbrev"  
+- bestill aktiveringsbrev. Man får så en aktiveringskode.
+{% include note.html content="I produksjonsmiljøet vil sluttbruker få tilsendt aktiveringskode per post. I testmiljøet kommer aktiveringskode umiddelbart. Bruker må i begge tilfellene gå inn på sida for aktiveringsbrev på nytt for å registrere kode og få fullført oppretting av ny bruker i MinID" %}
+- legg inn aktiveringskoden i ["Registrer aktiveringsbrev"](https://aktiveringsbrev.test.minid.no)  
 
 
 ### Statisk OTC - TEST
 
-Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. For testbrukere som ikke har syntetisk personidenfikator er otc ikke statisk.
+Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. 
 
+Kontaktinformasjonen (epost, tlf)  som blir opprettet på en MinID testbruker blir registrert i Kontakt- og reservasjonsregisteret (KRR). Les mer om hvordan du endrer kontaktinformasjon på en testbruker på [våre sider om KRR](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger#oppdatering-av-kontaktinfo-i-minprofil).
 
 **OTC**
 
-- innlogging: otc12
-- glemt passord: otc123
-
-
+(Ny kode f.o.m. 24.10.2023)
+- innlogging: 12345  
+- glemt passord: 12345
+  
+<!---
 ## BankID
 
 For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med standard testbrukere med BankID med personnumre som ikke finnes i Folkeregisteret.
@@ -74,6 +76,7 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 **Merk: Disse testbrukerene er allment tilgjengelige og vil bli resatt med jevne mellomrom.**
 
+--->
 
 ## Manuell behandling
 

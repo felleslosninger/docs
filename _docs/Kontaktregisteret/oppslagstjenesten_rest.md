@@ -19,13 +19,6 @@ Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten"
 
 > I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) (ikke ver2.maskinporten.no) 
 
-### Lokal kopi (endringsmeldinger)
-Det vil ikke lenger være mulig å opprette ny tilgang til dette apiet. 
-
-> Merk! F.o.m. 30.08.2023 vil det være ulik endrings-ID for nye (kontaktregisteret.no) og gamle (krr.digdir.no) Oppslagstjenesten.
->
-> Nye Oppslagstjenesten - Lokal Kopi (endringsmeldinger) vil ha endrings-ID som er større enn 200 000 000.
-
 
 ### Tilgjenglige scopes
 
@@ -42,6 +35,24 @@ API-responsen er avhengig av hvilke scope som er forespurt i tokenet.   Tilgjeng
 Det vil alltid returneres reservasjonsstatus for brukeren.
 
 Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
+
+### 18-månedersregel
+
+eForvaltningsforskriftens §32 setter krav til at innbyggerens kontaktinformasjon må være «ferskere» enn 18 måneder for at enkeltvedtak og andre viktige brev skal kunne sendes digitalt:
+
+* Dersom opplysninger om den enkelte i register over digital kontaktinformasjon og reservasjon ikke har blitt oppdatert eller bekreftet at er korrekte de siste 18 månedene, skal opplysningene ikke brukes til å varsle vedkommende etter § 8 tredje ledd. * 
+
+Dette betyr at brudd på § 32 andre ledd vil utgjøre saksbehandlingsfeil i den sak varselet ble sendt. Feilen vil medføre risiko for at innbyggeren lider rettstap, for eksempel ved at varsel om enkeltvedtak blir sendt til en e-postadresse som ikke lenger er i bruk.
+
+Det er den enkelte virksomhet sitt ansvar å overholde §32, og **Digitaliseringsdirektoratet sin klare anbefaling er at virksomhetene sjekker datofeltene som følger med kontaktinformasjonen. ** Så lenge ett av datofeltene sistOppdatert eller sistVerifisert er nyere enn 18 mnd, kan kontaktinformasjonen brukes til varsling etter §8. Merk at datoene kan være forskjellig mellom mobil og epost, slik at for eksempel epost kan være utløpt, mens mobil fremdeles er aktivt. Varsling kan da ikke sendes til epost. 
+Vi tror det beste er at fagsystemet/integrasjonen gjør denne kontrollen automatisk for saksbehandler, slik at man sikrer at vedtak ikke blir sendt feil.
+
+Samtidig kan kontaktinformasjon som er utløpt, fremdeles brukes til å sende servicemeldinger både av alvorlig og mindre alvorlig karakter, som for eksempel om snøbrøyting i gata, eller krav om koking av vann pga akutt forurensing. Digitaliseringsdirektoratet kan derfor ikke la være å utlevere utløpt kontaktinformasjon gjennom Oppslagstjenesten.
+
+### Informasjon "Varslingsstatus"
+
+VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert.
+
 
 ## Endepunkt
 
@@ -80,7 +91,7 @@ Content-type: application/json
 Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
 
 {
- "personidentifikatorer" : [ "23079422568" ]
+ "personidentifikatorer" : [ "20914695016" ]
 }
 ```
 
@@ -91,13 +102,13 @@ Authorization: Bearer SWDQ_pVct3HIzsIaC3zHDuMmIqffr4ORr508N3p0Mtg=
   "personer":
     [
       {
-         "personidentifikator": "23079421936",
+         "personidentifikator": "20914695016",
          "reservasjon": "NEI",
          "status": "AKTIV",
          "kontaktinformasjon":
          {
-            "epostadresse": "23079421936-test@minid.norge.no",
-            "epostadresse_oppdatert": "2018-06-29T10:14:52+02",
+            "epostadresse": "NULLstillt@default.digdir.no",
+            "epostadresse_oppdatert": "2023-06-29T10:14:52+02",
          }
       }
    ]

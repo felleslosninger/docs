@@ -49,7 +49,7 @@ Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Con
 
 [SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokollen.
 
-Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API]({{site.baseurl}}/docs/maskinporten/maskinporten_sjolvbetjening_web)
+Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web)
  til å registrere og vedlikeholde kundens integrasjoner.
 
 Følgende aktører inngår i løsningen:
@@ -82,7 +82,7 @@ Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og 
 
 #### Europeiske brukere
 
-ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
+ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/idporten/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
 
 ## Brukerstyrt datadeling
 
@@ -145,7 +145,7 @@ Kunden skal også gjøre en risikovurdering av egen løsning, her anbefaler vi [
 
 #### Sørg for sikker håndtering av nøkler
 
-Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetsssertifikat.  
+Det er sentralt for sikkerheten i løsningen at tjenesteleverandør planlegger og designer prosedyrer for god nøkkelhåndtering (Key management, uansett om dette er statiske hemmeligheter (client_secret), egne-generete asymmetriske nøkler eller virksomhetssertifikat.  
 
 Hvis en nøkkel kompromitteres, kan en angriper utgi seg for å være kunde i dialogen med ID-porten og dekryptere persondata sendt fra ID-porten. Slike sikkerhetsbrudd vil formodentlig i særlig grad ramme tilliten til kunden, men kan også tenkes å svekke tilliten til hele føderasjonen.
 
@@ -170,3 +170,7 @@ Merk at sertifikatutstedere av virksomhetssertifikat har noe bestillingstid. Tje
 ## Problemer ?
 
 Om du opplever problemer med integrasjonen din: Kontakt servicedesk@digdir.no oppgi client_id og miljø og forklar problemet.
+
+
+
+

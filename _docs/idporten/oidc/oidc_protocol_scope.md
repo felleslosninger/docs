@@ -116,8 +116,8 @@ ID-porten and Maskinporten protect a number of APIs from other organizations. Se
 
 | URL to list of scopes|Description|
 |-|-|
-| [https://integrasjon.difi.no/scopes/all](https://integrasjon.difi.no/scopes/all)  | A list of scopes protected by ID-porten in Production |
-| [https://integrasjon-ver2.difi.no/scopes/all](https://integrasjon-ver2.difi.no/scopes/all)     |  A list of scopes protected by ID-porten in VER2 environment.  |
+| [https://api.samarbeid.digdir.no/scopes/all](https://api.samarbeid.digdir.no/scopes/all)  | A list of scopes protected by ID-porten in Production |
+| [https://api.test.samarbeid.digdir.no/all](https://api.test.samarbeid.digdir.no/scopes/all)     |  A list of scopes protected by ID-porten in TEST environment.  |
 
 See the allowed_integration_type claim on each entry to see if any scope limitation applies.
 

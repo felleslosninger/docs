@@ -11,4 +11,4 @@ redirect_from: /oidc_protocol_jwtgrant
 
 ## Request
 
-ID-porten does not support JWT grants. Please use [Maskinporten](maskinporten_func_wellknown).
+ID-porten does not support JWT grants. Please use [Maskinporten](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown).

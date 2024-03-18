@@ -130,7 +130,7 @@ Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 
 testmiljø:
 
 - [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
-- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/) (ekstern lenke)
+- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/conversations) (ekstern lenke)
 
 ### Tilrettelegging for test av Altinn Digital Post
 

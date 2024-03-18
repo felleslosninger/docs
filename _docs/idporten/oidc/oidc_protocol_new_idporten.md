@@ -31,7 +31,7 @@ The migration will be divided into 4 main stages.
 |2: Normal operation |May 2023 | The new OIDC solution is ready with full functionality and performance. |
 |3: Moving of OIDC | 21. nov 2023 | The old OIDC-provider will be routed to the new ID-porten instance. 90% of traffic will the go through the new solution.  Existing SAML-integrations will loose SSO temporarily |
 |4: Moving of SAML | Jan 2024 | All SAML integrations will be seemlessly moved from the old ID-porten to the new SAML proxy. SAML-integrations will regain SSO towards OIDC-based integrations. between old and new platform is ready. |
-|4: Shutdown | March 2024 | The old OIDC-issuer is turned off. |  
+|4: Shutdown | 23. feb 2024 | The old OIDC-issuer is turned off. |  
 
 ### When should i migrate ?
 

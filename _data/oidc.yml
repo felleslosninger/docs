@@ -35,6 +35,9 @@ folders:
       - title: Ansattporten
         jurl: /docs/idporten/oidc/ansattporten_guide.html
 
+      - title: Ansattporten - skyinnlogging
+        jurl: /docs/idporten/oidc/ansattporten_allmennsky.html
+
       - title: ID-porten utland
         jurl: /docs/idporten/oidc/oidc_func_idporten-utland.html
 
@@ -119,6 +122,12 @@ folders:
   - title: Verifikasjonstester
     jurl: /docs/idporten/idporten/idporten_verifikasjonstester.html
 
+- title: Feilsøking
+  folderitems:
+
+  - title: Feilsøking i ID-porten
+    jurl: /docs/idporten/idporten/idporten_feilsoking.html
+
 - title: Administrasjon
   folderitems:
 
@@ -167,7 +176,7 @@ folders:
   folderitems:
 
       - title: Gammelt OIDC-grensesnitt (fases ut!)
-        jurl: /docs/idporten/oidc_old/index.html
+        jurl: /docs/idporten/oidc_old/oidc_func_wellknown.html
 
 - title: Gammelt SAML-grensesnitt
   folderitems:

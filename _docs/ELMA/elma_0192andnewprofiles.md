@@ -1,47 +1,26 @@
 ---
-title: About the new ICD (0192) and new Profiles
-description: Explanation of the new ICD (0192) and how it relates to ned Profiles.
-summary: "In this guide, we explain the new International Code Designator (ICD), 0192, for Norway, how the new Profiles relates to this ICD, and an overview of how this works in ELMA."
+title: ICD 0192
+description: ""
+summary: ""
 
 product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_icd0192andnewprofiles
 ---
 
-*Updated: 22.08.2023*
+All Peppol addresses in Elma under the ICD 9908 will be deleted from Elma by thursday 14. december 2024.
 
-See also [separate page on how to upgrade existing participants to support the new Profiles](upgradeTo0192Profiles.html).
+This step concludes the migration of Norwegian Peppol addresses from ICD 9908 to ICD 0192.
 
-## Norway has migrated from ICD 9908 to 0192
-After 23.05.2023, the ICD 9908 is no longer used in the PEPPOL network.
+The migration started ~5 years ago when Elma first published information on the migration strategy on behalf of the
+Norwegian Peppol Authority.
 
-## New Profiles are only available under the 0192-ICD
-Existing Profiles are available using the 9908-ICD as before, but new Profiles will only be available under the 0192-ICD.
+New profiles were made available only under ICD 0192.
 
-Pr. 06.03.2019, the new Profiles available under 0192, and not 9908, are:
-- PEPPOLBIS_3_0_BILLING_01_CII
-- PEPPOLBIS_3_0_BILLING_01_UBL
+ICD 9908 was officially marked as deprecated in v8.3 of the Peppol code lists, released 19. january 2023. Shortly
+after, in v8.4, it was marked for removal at 24. may 2023. 
 
-## How this works in ELMA
-As an access point, you register participants in ELMA by connecting organizations to Profiles. The profiles contain a selection of Document Types and Processes that explain what kind of documents you handle on behalf of the organization and in what context. 
+Any questions may be directed to:
 
-In order to drive the migration forward, new Profiles and Document Types will only be available on 0192-identifiers. In this way, we will eventually migrate to the 0192-identifiers without making any drastic intervention on existing profiles and management routines associated with the 9908-identifiers.
-
-![]({{site.baseurl}}/images/elma/participant_search_example_of_org_with_two_participants.png)
-
-*Screenshot 1: Example of an organization with two Participants, one for each ICD.*
-
-As a consequence, as an access point you will have to relate to which profiles are new and will be linked to the 0192-identifier, and which ones are old and will be linked to the 9908-identifier. 
-
-## Profile dependencies and automatic creation of participants
-In the migration period, Profiles will contain both new and old Document Types. This is done by a new Profile having old Profile(s) as a dependency. If you add a Profile that has a dependency to another Profile, ELMA will make sure that the Dependency is fulfilled.
-
-For example, the new profile “PEPPOLBIS_3_0_BILLING_01_CII” has “BIS05 V2” as a dependency. The former Profile is only available under 0192 and the latter only under 9908. If you create a 0192-participant with the profile “PEPPOLBIS_3_0_BILLING_01_CII”, and if there is not an existing a 9908-participant with the profile “BIS05 V2”, then the 9908-participant will be created and the Profile “BIS05 V2” will be added.
-
-A dependency can also be fulfilled across endpoints and service providers. If a Profile which is a required dependency already exists on another endpoint, even an endpoint from another service provider
-
-![]({{site.baseurl}}/images/elma/elma/view_process.png)
-
-*Screenshot 2: You can see what dependencies a Profile has under [“Processes” in ELMA-web](https://smp.difi.no/process).*
-
-For a guide on how to upgrade existing participants to support new Profiles, see [this page](upgradeTo0192Profiles.html).
+- Your Peppol service provider (for end users)
+- The Norwegian Peppol Authority at peppolmyndighet@dfo.no (for Peppol service providers)
