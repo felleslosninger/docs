@@ -7,7 +7,7 @@ product: ID-porten
 redirect_from: /ansattporten_guide
 ---
 
-Ansattporten er en egen innloggingtjeneste med funksjonalitet som skiller seg noe fra ID-porten, slik at den skal være mer hensiktmessig å bruke i ansattkontekst eller i andre situasjoner der det er ønskelig å opptre i et representasjonsforhold på vegne av andre virksomheter eller personer.
+Ansattporten er en egen innloggingtjeneste med funksjonalitet som skiller seg noe fra ID-porten, slik at den skal være mer hensiktmessig å bruke i ansattkontekst eller i andre situasjoner der det er ønskelig å opptre i et representasjonsforhold på vegne av andre virksomheter eller personer.  s
 
 Nøkkelfunksjonalitet er:
 - Er egen Oauth2 issuer
