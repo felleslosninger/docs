@@ -114,7 +114,6 @@ Sluttbruker må ha Java installert for å gjennomføre innlogging på nivå 4 me
 
 Offentlige virksomheter kan lenke til brukerprofilen slik at innbyggerne kan oppdatere egen kontaktinformasjon.
 
-> Verifikasjon1: <https://brukerprofil-ver1.difi.no/minprofil>  
 > Verifikasjon2: <https://brukerprofil-ver2.difi.no/minprofil>  
 > Produksjon: <https://brukerprofil.difi.no/minprofil>
 
@@ -160,8 +159,6 @@ Standardverdi: false
 Det vil si at innbygger vil bli presentert en knapp/lenke med verdien av goto-parameteret.
 
 ### SAML assertion for utenlandske brukere
-
-Dette avsnittet er informativt, den normative og mest oppdaterte informasjonen finnes på [begrep difi](http://begrep.difi.no/ID-porten/SAMLAssertionV4)
 
 Siden profilen støtter både norske og europeiske eID, vil tilgjengelige attributter kunne variere alt etter om det er norsk eller europeisk eID som ble benyttet til innlogging. For europeiske eID kan attributtane i tillegg variere mellom land. Viss attributten AuthMethod har verdi eIDAS, tyder dette at autentisering er foretatt med en europeisk eID, og attributten eIdentifier er da unik identifikator.
 
@@ -215,7 +212,7 @@ Ved autentisering med europeisk eID, er det frivillig for personer som har fått
 For utenlandske innbyggere, blir Kontakt- og reservasjonsregisteret kun sjekket dersom det er oppnådd en entydig kobling mot norsk D-nummer/fødselsnummer. Dette kan skje ved manglende kobling eller ved feilsituasjoner mot DSF. Informasjon fra Kontakt-og reservasjonsregisteret vil da mangle.
 
 I tillegg kommer eventuelle attributter fra europeisk eID-intrastruktur, eIDAS / STORK (se nærmere definisjoner i rapport ‘D5.7.3 Functional Design for PEPS, MW models and interoperability’) fra
-[STORK-prosjektet](https://www.eid-stork.eu/index.php?option=com_processes&act=list_documents&id=312%20&s=1&Itemid=60)
+[STORK-prosjektet](https://ec.europa.eu/digital-building-blocks/wikis/display/EIDCOMMUNITY/STORK+Project)
 
 | Field | Type | Values and comment | Kardinalitet |
 | --- | --- | --- | --- |

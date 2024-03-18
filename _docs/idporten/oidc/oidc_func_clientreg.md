@@ -212,7 +212,7 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 | frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri. Dersom ikke satt, så vil ikke 'sid' bli inkludert i id_token. |
 | logo | Nei |Logo som vises i innloggingsbildete utveksles p.t. manuelt |
 
-*NB! Bruk av localhost er ikke tillatt i produksjonsmiljøet. Skal du registrere en localhost uri i testmiljøet, må denne være http:// og ikke https://.
+*NB! Bruk av localhost er ikke tillatt i produksjonsmiljøet for andre enn native klienter. Skal du registrere en localhost uri i testmiljøet, må denne være http:// og ikke https://.
 
 ** Frontchannel logout uri må ha samme domene som en registrert redirect uri.
 
@@ -226,4 +226,9 @@ For klienter (både innlogging og maskin) som mottar *access_token* til API-sikr
 | access_token_lifetime | Levetid for utstedt access_token | 120 sekunder* |
 | refresh_token_lifetime |Levetid for utstedt refresh_token | 600 sekunder |
 
+Levetiden på authorization definerer maks levetid, mens refresh_token definerer inaktivitet. Som hovedregel bør klienten være registrert slik:
+access_token_lifetime < refresh_token_lifetime <= authorization_lifetime.
+
 *Merk at de fleste av egenskapene til access_token blir bestemt av API-tilbyder, og ikke som en del av klient-registreringen.  En klient kan for eksempel ikke få token som har lengre levetid enn det API-tilbyder har satt som maks-grense.
+
+

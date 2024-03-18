@@ -13,7 +13,7 @@
       "receiver": [
         {
           "identifier": {
-            "value": "0192:984661185",
+            "value": "0192:974761076",
             "authority": "iso6523-actorid-upis"
           }
         }
@@ -21,19 +21,19 @@
       "documentIdentification": {
         "standard": "urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:utskrift::1.0",
         "typeVersion": "1.0",
-        "instanceIdentifier": "a501fed4-8b07-4f22-a179-dc632cec1525",
+        "instanceIdentifier": "5738440c-d802-47fe-b274-b4b673b9e493",
         "type": "utskrift",
-        "creationDateAndTime": "2022-03-16T14:29:22.168+01:00"
+        "creationDateAndTime": "2023-11-14T21:16:04.265+01:00"
       },
       "businessScope": {
         "scope": [
           {
             "type": "ConversationId",
-            "instanceIdentifier": "96c64686-57b5-4d7e-8c4e-11ba98a1ce54",
+            "instanceIdentifier": "c2e01afe-e883-47c7-9cb9-a9b649b7b1d1",
             "identifier": "urn:fdc:digdir.no:2020:profile:egovernment:innbyggerpost:utskrift:ver1.0",
             "scopeInformation": [
               {
-                "expectedResponseDateTime": "2022-03-17T14:29:22.041+01:00"
+                "expectedResponseDateTime": "2023-11-15T21:02:32.581+01:00"
               }
             ]
           }
@@ -49,26 +49,26 @@
       },
       "mottaker": {
         "navn": "Ola Nordmann",
-        "adresselinje1": "Langtoppilia 1",
-        "adresselinje2": "9999 FJELL",
-        "land": "NO"
+        "adresselinje1": "Liksomveien 22",
+        "postnummer": "1234",
+        "poststed": "Nordby"
       },
       "dokumentpakkefingeravtrykk": {
         "digestMethod": "http://www.w3.org/2001/04/xmlenc#sha256",
-        "digestValue": "eWySx+B37A0je5mII7NKrYFHuWACubaAHcop1ylLKBI="
+        "digestValue": "2IDn+1OdB0BYiqrAsBHxXfGRLLUys0Rc07D0UaSY+nw="
       },
-      "maskinportentoken": "eyJraWQiOiJ2UHBaZW9HOGRkTHpmdHMxLWxnc3VnOHNyYVd3bW04dHhJaGJ3Y1h3R01JIiwiYWxnIjoiUlMyNTYifQ.eyJzY29wZSI6ImRpZ2l0YWxwb3N0aW5uYnlnZ2VyOnNlbmQiLCJpc3MiOiJodHRwczpcL1wvdmVyMS5tYXNraW5wb3J0ZW4ubm9cLyIsImNsaWVudF9hbXIiOiJ2aXJrc29taGV0c3NlcnRpZmlrYXQiLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiZXhwIjoxNjQ3NDM3NDgyLCJpYXQiOjE2NDc0MzczNjIsImNsaWVudF9pZCI6Ik1PVkVfSVBfOTkxODI1ODI3IiwianRpIjoiOEZsQ3hqTmNQUE8tbWFXd1JIdTZ2WENVV01rZVRONFRKY081TUlPV2QyNCIsImNvbnN1bWVyIjp7ImF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjk5MTgyNTgyNyJ9fQ.Tut7vNTqFwpRjKJI79iUPxLOUk2OjTrnsuR8buuE3wXJ-Nuzq7JQ668NQlLFd-lZ7TW68a6d2sv58h__kl-z4gemcGXcnZYFnzTng-lQwzeBIBYUKlWyt4cysytAMhoNyASF1AYngJ0O1FiXwsmP7ToDEaX3xldW2Aer-FDSRWmjleFpd4PArMWsQuUInLnpRZkiCWLJfaLmWoM05nkMKYGYIgt5c2e20eLbjgUJoKU0_1KQcUqmlnlRkQOT5ho_lrI7KJBslz9OjxZ01p0xK3hzaVg5CnkQmCKF9VBZ-ak5hSAD_iTfN-GDBCJu4cb-wEMDFGoAA72_e0unPcwZGw",
-      "utskriftstype": "FARGE",
+      "maskinportentoken": "eyJraWQiOiJiZFhMRVduRGpMSGpwRThPZnl5TUp4UlJLbVo3MUxCOHUxeUREbVBpdVQwIiwiYWxnIjoiUlMyNTYifQ.eyJzY29wZSI6ImRpZ2l0YWxwb3N0aW5uYnlnZ2VyOnNlbmQiLCJpc3MiOiJodHRwczovL3Rlc3QubWFza2lucG9ydGVuLm5vLyIsImNsaWVudF9hbXIiOiJ2aXJrc29taGV0c3NlcnRpZmlrYXQiLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiZXhwIjoxNjk5OTkzMDg0LCJpYXQiOjE2OTk5OTI5NjQsImNsaWVudF9pZCI6Ik1PVkVfSVBfOTkxODI1ODI3IiwianRpIjoiSTR0WHdETEMxNTcyLXp4WHNheEVGUjdiSEk2OENtMzFRQ2NORHJ4VUVYTSIsImNvbnN1bWVyIjp7ImF1dGhvcml0eSI6ImlzbzY1MjMtYWN0b3JpZC11cGlzIiwiSUQiOiIwMTkyOjk5MTgyNTgyNyJ9fQ.nFxM2CbgGj9js-DZ7YslsFso1hzeCHDzafu62kC-xdQvEEItL5MmztVqu5Zy0pKbRBxTv-AXyK_rogEW3ZV62GJo8txz7cFfZNjxh0g7RfH-tw3lkCWbiOa9MK5tmtPeigX7CUmjMf50tVU2njlU_utCc5lPi8xaa3t2D75I6zxoyTX5xnbfi6NBlmSLRvuGrdsFwpfmOEtVczR-7Rf5JlB0YeiIppw9uQ5Lq8SwOttRWOAFl4hvGBBZHQtUsrkagGK-h77EMmvOlfhYi31XnjvN4qASYcbVpfjVb3qOyIuGhrVjBGuZC-BD6Q9ah6Y2XCYKWH94_8tPgTPJ0MJtA6jfrnQ9nB8C1ZIih4HVCZw8RX6WARgKXT6AWYQQhG4DWYznbZyL8-EUUJUAINCcr-kiwTLdwmb7KG8VfpnVVMOGXSiCJFzg9m5sk7HD_IIqXPFuRpeH2zV0A-qNza1lxWEOxRwJhM8W0sye8HRhq1Tc09x-Nm-PEArOl8HTSjSn",
+      "utskriftstype": "SORT_HVIT",
       "retur": {
         "mottaker": {
-          "navn": "Fjellheimen kommune",
-          "adresselinje1": "Luftigveien 1",
-          "adresselinje2": "9999 FJELL",
-          "land": "NO"
+          "navn": "Helse Foretak HF",
+          "adresselinje1": "Lungehaugen 1",
+          "postnummer": "4321",
+          "poststed": "Leikanger"
         },
         "returposthaandtering": "DIREKTE_RETUR"
       },
-      "posttype": "A"
+      "posttype": "B"
     }
   }
 }

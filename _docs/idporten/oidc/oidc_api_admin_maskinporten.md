@@ -14,7 +14,7 @@ redirect_from: /oidc_api_admin_maskinporten
 
 På denne siden dokumenterer vi hvordan  API-tilbydere gir mulighet til selvbetjening av egen API-sikring.
 
-Les gjerne [integrasjonsguide for API-tilbydere]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder) først.  API-konsumenter bør se på [integrsasjonsguide for API-konsumenter]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apikonsument) og [selvbejenings-API for integrasjoner](oidc_admin.html)
+Les gjerne [integrasjonsguide for API-tilbydere]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder) først.  API-konsumenter bør se på [integrsasjonsguide for API-konsumenter]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apikonsument) og [selvbejenings-API for integrasjoner](oidc_api_admin)
 
 
 ## Om selvbetjenings-APIet
@@ -38,7 +38,7 @@ Vi krever at virksomhetene oppretter en egen administrasjons-klient som kun får
 
 ### OpenAPI-dokumentasjon
 
-REST-grensesnittet er [dokumentert her](https://integrasjon-ver2.difi.no/swagger-ui/).
+REST-grensesnittet er [dokumentert her](https://api.test.samarbeid.digdir.no/swagger-ui/index.html).
 
 Merk at du må manuelt velge riktig spec' oppe i høyre hjørne.  For Maskinporten er det "Scopes" du skal se på.
 
@@ -114,7 +114,7 @@ Vi har valgt å legge scope som query-parameter, da det innen noen sektorer finn
 
 ```
 POST /scopes HTTP/1.1
-Host: integrasjon-ver2.difi.no
+Host: api.test.samarbeid.digdir.no
 Content-Type: application/json
 Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
 cache-control: no-cache

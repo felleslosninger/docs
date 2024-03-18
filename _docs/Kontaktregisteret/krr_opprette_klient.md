@@ -25,15 +25,34 @@ Bruk av selvbetjening forutsetter at din virksomhet har fått tilgang til Samarb
 
 ### Sette opp klient
 a. Ved Oppslagstjenesten REST: 
-- Velg "KRR" som "Difi-tjeneste". Du vil da få automatisk tildelt de riktige scopene.
+- Velg "KRR" som "Difi-tjeneste". Du vil da få automatisk tildelt de riktige scopene. For oppslag i KRR er det krr:global/kontaktinformasjon.read som er relevant.
+-- Integrasjons identifikator: Genereres automatisk. Verdien skal brukes i jwt_claims.
+- Navn på integrasjon: Egendefinert, unikt navn på integrasjonen.
+- Beskrivelse: Egendefinert beskrivelse av hva integrasjonen skal brukes til.
+- Tillatte grant types: jwt-bearer.
+- Klientautentiseringsmetode: private_key_jwt.
+- Applikasjonstyper: web.
 
-
-b. Ved Oppslag ved brukerinnlogging (brukerstyrt datadeling):
+b. Oppslag ved brukerinnlogging (brukerstyrt datadeling):
 - Velg "Api-klient" som "Difi-tjeneste". Du må manuelt sette de riktige scopene:
   krr:user/kontaktinformasjon.read, openid, profile
 
-  [Lenke til mer detaljert beskrivelse av scopene](https://docs.digdir.no/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest#bruk-av-oauth2).
+[Lenke til mer detaljert beskrivelse av scopene](https://docs.digdir.no/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest#bruk-av-oauth2).
   
 - Fullfør registreringen ved å trykke på "Opprett".
 
 {% include note.html content="Ved opprettelse får du en integrasjonsID (klientID) som må brukes i forespørselen mot ID-porten." %}
+
+### For leverandører
+Hvis man er leverandør for kunde (databehandler og behandlingsansvarlig), skal kundens organisasjonsnummer legges til ved oppsett av klient. 
+Det må i tillegg opprettes en såkalt OnBehalfof-klient (nederst på selvbetjeningssida ved oppretting av klient), der leverandør må legge inn en ønsket OnBehalfOf-verdi (entity-ID), navn og org.nr. 
+
+"iss_onbehalfof" : "OnBehalfOf-verdi" må inkluderes i claims ved forespørsel av access-token fra Maskinporten. 
+
+
+### Legge til nøkkel i klient
+Public-nøkkelen skal legges til i klienten, struktuert som JWK. Mer beskrivelse om hvordan nøkkelen skal registreres [her](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web#registrere-n%C3%B8kkel-p%C3%A5-klient).
+
+### Kom i gang med koden
+[Dette repoet](https://github.com/entur/exploratory-maskinporten-token/tree/main) kan være til hjelp for å komme i gang med koden. 
+

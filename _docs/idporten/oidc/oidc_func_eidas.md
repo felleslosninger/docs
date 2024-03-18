@@ -10,7 +10,7 @@ redirect_from: /oidc_func_eidas
 
 
 
-{% include note.html content="eIDAS-støtte er p.t. kun tilgjengelig på gammel OIDC-løsning" %}
+{% include note.html content="Ved sanering av gammel OIDC-løsning 23.2.2024, forsvinner eIDAS-støtte. Det vil da bli en periode uten denne funksjonaliteten frem til ny eIDAS-støtte er på plass (foreløpig planlagt i Q2). Det vil heller ikkje vere mogleg å sette opp nye klientar med slik støtte før ny løsning er på plass. " %}
 
 
 ## Om eIDAS
@@ -276,11 +276,11 @@ Merk av ved bruk av tilleggsgjenkjenningsalgoritmer, vil fravær av verdi i felt
 
 Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
 
-Den først i lista, Mohamed Al Samed, er hardkoda i den norske eIDAS Noden til å bli  entydig gjenkjent med norsk D-nummer 59125502061.  ID-token for en autentisering på eidas-nivå 'substantial' vil se slik ut:
+Den først i lista, Mohamed Al Samed, er hardkoda i den norske eIDAS Noden til å bli  entydig gjenkjent med norsk D-nummer 591255*****.  ID-token for en autentisering på eidas-nivå 'substantial' vil se slik ut:
 
 ```
  "amr" : [ "eIDAS" ],
- "pid" : "59125502061",
+ "pid" : "591255*****",
  "eidas-identitymatch" : "UNAMBIGUOUS",
  "eidas-personidentifier" : "SE/NO/199008199391",
  "eidas-firstname" : "Mohamed",

@@ -13,7 +13,7 @@ SAML2-profilene som her presenteres er med utgangspunkt i [eGov versjon 1.5.](ht
 ### SAML2-profiler
 
 Følgende profiler støttes:
-* Web Browser SSO Profile med HTTP Redirect (request) og artifact resolution over SOAP binding (respons) 
+* Web Browser SSO Profile med HTTP Redirect (request) og artifact resolution over SOAP binding (respons)
 * Web Browser SSO Profile med HTTP Redirect (request) og POST Binding (respons)
 * Single Logout Profile med HTTP Redirect
 
@@ -49,7 +49,7 @@ Og ID-porten vil selv signere:
 ### Web Browser SSO
 
 Følgende regelsett gjelder for SSO profilen i ID-porten:
-* SSO-profil i [SAMLProf](www.oasis-open.org/committees/security/) må være støttet av både tjenesteleverandør og ID-porten. Både IdP- og SP-initiert metode er støttet i denne versjon av ID-porten.
+* SSO-profil i [SAMLProf](https://www.oasis-open.org/committees/security/) må være støttet av både tjenesteleverandør og ID-porten. Både IdP- og SP-initiert metode er støttet i denne versjon av ID-porten.
 
 #### **Authentication Request**
 
@@ -59,7 +59,7 @@ Følgende regelsett gjelder for SSO profilen i ID-porten:
 * *NameIDPolicy* støttes av ID-porten, både formatene *persistent* og *transient*.
 * *RequestedAuthnContext* _må_ støttes. ID-porten gjenkjenner sammenligningsfelter og evaluerer de forespurte kontekstklassene.
 * *RequestedAuthnContext* _bør_ inneholde attributtet *Comparison*, og *Comparison* _skal_ være satt til *minimum*. ID-porten vil tolke alle forespørsler til *minimum* og at *AuthnContextClassRef* er urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified om elementet ikke er inkludert i forespørselen.
-* *AuthnRequest* kan inneholde *samlp:Extensions*. 
+* *AuthnRequest* kan inneholde *samlp:Extensions*.
 
 Følgende *samlp:Extensions* støttes av ID-porten:
 * *idpe:OnBehalfOf* Unik identifikator av tjenesteeier. _Må_ kun inneholde følgende tegn: A-Z a-z 0-9  [se XSD-skjema.](https://difi.github.io/idporten-integrasjonsguide//91_metadata_og_mer_saml.html#saml-extension) ID og navnekonvensjon blir satt i samråd med Difi.
@@ -84,7 +84,7 @@ Tjenesteleverandør kan styre format på NameID ved bruk av NameIDPolicy i Authn
 
 * _må_ kommuniseres over POST eller SOAP beskyttet av SSL/TLS.
 * *ArtifactResolve* _må_ signeres.
-* *ArtifactResolve* _må_ inneholde en *Artifact* verdi. 
+* *ArtifactResolve* _må_ inneholde en *Artifact* verdi.
 * *ArtifactResponse* _må_ inneholde en *Assertion* som oppfyller kravene til *Assertion* over.
 * *Assertion* i *ArtifactResponse* _må_ signeres og krypteres.
 * InResponseTo verdi i *Assertion* _må_ være lik verdi i ID-felt i *ArtifactResolve* forespørselen.
@@ -98,10 +98,10 @@ I assertion som sendes tilbake til tjenesteleverandør legger ID-porten med info
 
 Om forespørselen er behandlet vellykket, vil responsen oppfylle følgende:
 * Issuer elementet kan utelates, men om det inkluderes vil det inneholde en unik angivelse av ID-porten som IdP. Format-attributtet må enten utelates eller ha verdien urn:oasis:names:tc:SAML:2.0:nameid-format:entity.
-* En vellykket *Response* vil inneholde nøyaktig en *Assertion* med nøyaktig ett *AuthnStatement* element. Hvert assertions *Issuer* element vil inneholde en unik identifikator som angir ID-porten. Format attributtet vil enten utelates eller ha verdien urn:oasis:names:tc:SAML:2.0:nameid-format:entity. 
-* ID-porten signerer og krypterer Assertion. 
+* En vellykket *Response* vil inneholde nøyaktig en *Assertion* med nøyaktig ett *AuthnStatement* element. Hvert assertions *Issuer* element vil inneholde en unik identifikator som angir ID-porten. Format attributtet vil enten utelates eller ha verdien urn:oasis:names:tc:SAML:2.0:nameid-format:entity.
+* ID-porten signerer og krypterer Assertion.
 * Ved feilmeldinger fra ID-porten vil den ikke returnere en assertion.
-* Om ID-porten mottar en forespørsel fra en tjenesteleverandør som den ikke har inngått avtale med, vil forespørselen avvises med en beskrivende responskode. 
+* Om ID-porten mottar en forespørsel fra en tjenesteleverandør som den ikke har inngått avtale med, vil forespørselen avvises med en beskrivende responskode.
 
 Metadata benyttes til å identifisere hvilke tjenesteleverandør avtaler er inngått med.
 
@@ -109,7 +109,7 @@ Metadata benyttes til å identifisere hvilke tjenesteleverandør avtaler er inng
 
 ArtifactResponse kan inneholde en *Status* -angivelse og vil inneholde status i de tilfeller håndteringen av forespørselen feiler på ID-porten.  *Status* vil inneholde inntil to *StatusCode* som angir en overordnet og en underordnet feilkode iht. eksempelet under:
 ```xml
-<samlp:Status> 
+<samlp:Status>
     <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Responder">
       <samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:AuthnFailed" />
     </samlp:StatusCode>
@@ -120,7 +120,7 @@ ArtifactResponse kan inneholde en *Status* -angivelse og vil inneholde status i 
 Som det vises av eksempelet, kan ID-porten angi en *StatusMessage* som er en tekstmessig indikasjon av feilsituasjonen. Dette er ikke er krav.
 
 ```
-Følgende overordnede statuskoder kan benyttes i fra ID-porten: 
+Følgende overordnede statuskoder kan benyttes i fra ID-porten:
 * urn:oasis:names:tc:SAML:2.0:status:Success – Forespørselen var vellykket.
 * urn:oasis:names:tc:SAML:2.0:status:Requester – Forespørselen ble ikke behandlet grunnet en feil hos forespørrende part (SP).
 * urn:oasis:names:tc:SAML:2.0:status:Responder – Forespørselen ble ikke behandlet grunnet en feil i ID-porten.
@@ -130,14 +130,14 @@ Følgende underordnede koder kan benyttes til ytterligere spesifisering av feils
 * urn:oasis:names:tc:SAML:2.0:status:AuthnFailed – ID-porten var ikke i stand til å gjennomføre en vellykket autentisering av brukeren.
 * urn:oasis:names:tc:SAML:2.0:status:InvalidAttrNameOrValue – Ugyldig innhold ble oppdaget i *saml:Attribute* eller *saml:AttributeValue* elementet.
 * urn:oasis:names:tc:SAML:2.0:status:InvalidNameIDPolicy – Ønsket policy er ikke støttet i ID-porten.
-* urn:oasis:names:tc:SAML:2.0:status:NoAuthnContext – Angitt autentiseringskontekst kan ikke oppfylles i ID-porten. Kan benyttes til å indikere ulovlig forespurt sikkerhetsnivå. 
+* urn:oasis:names:tc:SAML:2.0:status:NoAuthnContext – Angitt autentiseringskontekst kan ikke oppfylles i ID-porten. Kan benyttes til å indikere ulovlig forespurt sikkerhetsnivå.
 * urn:oasis:names:tc:SAML:2.0:status:NoAvailableIDP – Skal ikke være i bruk i ID-porten, som er eneste idp i ID-porten COT.
 * urn:oasis:names:tc:SAML:2.0:status:NoPassive – ID-porten tillater ikke passiv pålogging. Denne verdien returneres alltid om dette forespørres.
 * urn:oasis:names:tc:SAML:2.0:status:NoSupportedIDP - Kan benyttes til å indikere at en ikke finner en e-ID-leverandør som oppfyller ønsket sikkerhetsnivå, men skal i utgangspunktet ikke være aktuell for bruk i ID-porten.
 * urn:oasis:names:tc:SAML:2.0:status:PartialLogout – Benyttes til å indikere at single logout ikke var vellykket (alle sesjoner ble ikke terminert).
 * urn:oasis:names:tc:SAML:2.0:status:ProxyCountExceeded – Ikke støttet i ID-porten.
 * urn:oasis:names:tc:SAML:2.0:status:RequestDenied – Benyttes i de tilfeller der ID-porten av en eller annen grunn velger å la være å behandle forespørselen. Kan f.eks benyttes ved antatt DOS-angrep.
-* urn:oasis:names:tc:SAML:2.0:status:RequestUnsupported – ID-porten støtter ikke/forstår ikke ønsket forespørsel. 
+* urn:oasis:names:tc:SAML:2.0:status:RequestUnsupported – ID-porten støtter ikke/forstår ikke ønsket forespørsel.
 * urn:oasis:names:tc:SAML:2.0:status:RequestVersionDeprecated – ID-porten kan ikke håndtere forespørsler med angitt protokoll-versjon.
 * urn:oasis:names:tc:SAML:2.0:status:RequestVersionTooHigh - ID-porten kan ikke håndtere forespørsler med angitt protokoll-versjon..
 * urn:oasis:names:tc:SAML:2.0:status:RequestVersionTooLow - ID-porten kan ikke håndtere forespørsler med angitt protokoll-versjon.
@@ -149,7 +149,7 @@ Følgende underordnede koder kan benyttes til ytterligere spesifisering av feils
 ```
 ### Single Logout
 
-SAML2 støtter konseptet Single Logout og beskriver både en Single Logout protokoll i [SAMLCore](www.oasis-open.org/committees/security/) og en Single Logout profile i [SAMLProf](www.oasis-open.org/committees/security/). Disse gir IDP og SP mulighet til å terminere multiple sesjoner ved å sende *LogoutRequest* og *LogoutResponse* meldinger. På denne måten kan brukeren logge ut fra alle sesjoner som springer ut fra en IDP i noe som for brukeren kan virke som én operasjon.  Brukeren kan initiere prosessen både hos en ønsket SP eller direkte i IdP’en. 
+SAML2 støtter konseptet Single Logout og beskriver både en Single Logout protokoll i [SAMLCore](https://www.oasis-open.org/committees/security/) og en Single Logout profile i [SAMLProf](https://www.oasis-open.org/committees/security/). Disse gir IDP og SP mulighet til å terminere multiple sesjoner ved å sende *LogoutRequest* og *LogoutResponse* meldinger. På denne måten kan brukeren logge ut fra alle sesjoner som springer ut fra en IDP i noe som for brukeren kan virke som én operasjon.  Brukeren kan initiere prosessen både hos en ønsket SP eller direkte i IdP’en.
 OASIS skiller klart på denne første meldingen og de etterfølgende meldingene. Den første er ønskelig foretatt over en frontkanal, og ID-porten krever at dette er et HTTP redirect kall. Grunnen til dette er at det gir ID-porten mulighet til å samle inn data knyttet til brukerens sesjon, slik som nettleser cookies.
 
 Med andre ord gjelder følgende krav for Single Logout i ID-porten:
@@ -157,19 +157,19 @@ Med andre ord gjelder følgende krav for Single Logout i ID-porten:
 * HTTP redirect binding *må* benyttes for etterfølgende forespørsler/svar.
 * Alle forespørsler og svar skal være signert.
 
-SP må håndtere *LogoutRequest* fra ID-porten for brukere som ikke lenger er innlogget, for eksempel fordi brukeren har logget ut fra denne ene tjenesten tidligere eller fordi levetiden på brukerens sesjon er utløpt. 
+SP må håndtere *LogoutRequest* fra ID-porten for brukere som ikke lenger er innlogget, for eksempel fordi brukeren har logget ut fra denne ene tjenesten tidligere eller fordi levetiden på brukerens sesjon er utløpt.
 * SP-initiert ”Single Logout” og IdP-initiert ”Single Logout” *må* støttes.
 * ”Single Logout” binding er HTTP Redirect.
 * *LogoutRequest* _må_ signeres.
 * *LogoutResponse* _må_ signeres.
 * SP _må_ tilby full SLO.
 
-### Metadata 
+### Metadata
 
 Valget av metadata-informasjon er i stor grad et implementasjonsvalg. Men alle støttede
 SP- og IdP-implementasjoner må støtte korrekt bruk av metadata-elementer, attributter og spesifikasjoner listet i denne seksjonen.
 
-* SP og IdP bør autentisere metadata. 
+* SP og IdP bør autentisere metadata.
 * _Må_ støtte root-elementene *EntityDescriptor* eller *EntitiesDescriptor*.
 * Attributt “validUntil” og “cacheDuration” _må_ støttes.
 * Sertifikater i metadata _må_ støttes.
@@ -184,7 +184,7 @@ SP- og IdP-implementasjoner må støtte korrekt bruk av metadata-elementer, attr
 
 #### **SP godkjenner eller avviser forespørsel**
 
-SP skal utføre de sjekker som er påkrevet iht. SAML2-profilen som benyttes. I tillegg må SP sjekke at autentiseringsnivå som returneres fra ID-porten er på et nivå som tjenesten krever. Ved godkjent validering av sesjonsinfo fra ID-porten, opprettes en sesjon for brukeren mot tjenesten. 
+SP skal utføre de sjekker som er påkrevet iht. SAML2-profilen som benyttes. I tillegg må SP sjekke at autentiseringsnivå som returneres fra ID-porten er på et nivå som tjenesten krever. Ved godkjent validering av sesjonsinfo fra ID-porten, opprettes en sesjon for brukeren mot tjenesten.
 
 Forutsatt at SPs tilgangskontroll aksepterer tilgang fra denne autentiserte brukeren, gis det så tilgang til ønsket tjeneste.
 

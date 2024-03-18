@@ -11,7 +11,7 @@ Sikker digital posttjeneste kan i utgangspunktet frakte en hver filtype
 fra avsender til mottaker.
 
 Det er derimot begrenset hva postkasseløsningene håndterer, se [oversikt
-over støttede MIME types](https://difi.github.io/felleslosninger/sdp_mimetypes.html).  
+over støttede MIME types](/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/mimetypes).  
 Eksekverbare filer kan ikke sendes i Sikker digital posttjeneste.
 
 Det utføres ingen endringer i innholdet i mottatte dokumenter.  

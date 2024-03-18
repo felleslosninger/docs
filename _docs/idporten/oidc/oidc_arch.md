@@ -58,5 +58,5 @@ graph LR
 
  Digitaliseringsdirektoratet tilbyr to Oauth2-beskytta APIer:
 
-* [KRR-Oauth2](oidc_api_krr.html) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
+* [KRR]({{site.baseurl}}/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest) tilbyr Kontakt- og Reservasjonsregisteret over et REST-grensesnitt.
 * [authlevel]({{site.baseurl}}/docs/idporten/oidc/oidc_api_authlevel) er et nytt API for utlevering av innbyggers høyeste brukte sikkertsnivå i ID-porten.  

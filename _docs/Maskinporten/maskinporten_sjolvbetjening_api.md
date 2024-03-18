@@ -34,7 +34,7 @@ Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API 
 
 ```
 POST /scopes HTTP/1.1
-Host: integrasjon-ver2.difi.no
+Host: api.test.samarbeid.digdir.no
 Content-Type: application/json
 Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
 cache-control: no-cache
@@ -122,7 +122,7 @@ For å kunne registrere en klient via vår selvbetjenings-APi, må du først opp
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
 ```
-POST https://integrasjon.difi.no/clients/
+POST https://api.samarbeid.digdir.no/clients/
 {
    "integration_type": "maskinporten",
     "client_name": "oidc_difi_jb_test",

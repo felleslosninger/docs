@@ -23,7 +23,7 @@ Siden innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 - [Manifest](/resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd)
 
 ### Delte skjema
-- [Commons](schemas/common/commons.schema.json)
+- [Commons](schemas/dpi/commons.schema.json)
 - [Problem](schemas/common/problem.schema.json)
 - [SBDH](schemas/common/sbdh.schema.json)
 

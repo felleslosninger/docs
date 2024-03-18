@@ -18,13 +18,18 @@ Forretningsmeldingene i eksemplene er inkludert som JWT. For enkelhets skyld ink
 JSON payload for forretningsmeldingen og ferdig dekodet JSON payload for autorisasjonsbevis (`maskinportentoken`)
 i forretningsmeldingen.
 
-Utskrift fra Digdir `991825827` til Posten `984661185` for testbruker `04817197073`:
+Utskrift fra Digdir `991825827` til utskriftsleverandør (Skatteetaten) `974761076` for testbruker `04817197073`:
 
 - [Kryptert dokumentpakke (CMS)](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-dokumentpakke.cms)
 - [Dekryptert dokumentpakke (ASiC-E ZIP)](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-dokumentpakke.zip)
 - [`utskrift` forretningsmelding (JWT)](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-forretningsmelding.jwt)
 - [Payload (JSON) fra `utskrift` forretningsmelding](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-forretningsmelding.json)
 - [Payload (JSON) fra autorisasjonsbevis i `utskrift.maskinportentoken`](resources/begrep/sikkerDigitalPost/nyinf/eksempler/komplette/utskrift-forretningsmelding-autorisasjonsbevis.json)
+
+Utskrift fra Digdir `991825827` til utskriftsleverandør (Skatteetaten) `974761076` for innbygger uten kjent fødselsnummer (for eksempel utenlandsk person) eller virksomhet (for
+eksempel utenlandsk virksomhet) som ikke kan nås digitalt:
+
+- Følg eksempelet over, men utelat fødselsnummer fra meldingen
 
 Digital fra Digdir `991825827` til eBoks `922020175` for testbruker `07126700169`:
 

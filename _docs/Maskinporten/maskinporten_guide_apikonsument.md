@@ -77,7 +77,7 @@ For å kunne registrere en klient via vår selvbetjenings-API, må du først opp
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
 ```
-POST https://integrasjon.difi.no/clients/
+POST https://api.samarbeid.digdir.no/clients/
 {
    "integration_type": "maskinporten",
     "client_name": "oidc_difi_jb_test",

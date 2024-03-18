@@ -58,6 +58,17 @@ Ja. Skyporten som konsept testes ut av Digitaliseringdirektoratet og [Tverrsekto
 
 ## Hvordan kan jeg ta det i bruk?
 
+### Well-known meta-data
+
+Metadata om Skyporten er tilgjengelig på følgende .well-known-endepunkt.
+
+|Miljø| Issuer                             |URL|
+|-|------------------------------------|-|
+|TEST| `https://test.sky.maskinporten.no` | [https://test.sky.maskinporten.no/.well-known/openid-configuration](https://test.sky.maskinporten.no/.well-known/openid-configuration)|
+|PROD| `https://sky.maskinporten.no`              | [https://sky.maskinporten.no/.well-known/openid-configuration](https://sky.maskinporten.no/.well-known/openid-configuration)|
+
+Merk: om du bruker Maskinporten i dag, har Maskinporten trailing slash i issuer, men dette er pt ikke tilfelle i Skyporten pga forskjellige leverandørimplementasjoner.
+
 ### Tilgang til Skyporten for tilbydere
 
 Skyporten bruker Maskinporten, og du må derfor først [komme i gang med Maskinporten som API-tilbyder]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apitilbyder).
@@ -87,7 +98,7 @@ Alt ok! Tilgang med differensiert på orgnummer og/eller scope støttes. Se [gui
 
 ### Azure
 
-Tilgang med orgnr støttes pt. Vi undersøker muligheter for å benytte scope til tilgangsbegrensning også. Se [guide her]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten_azure).
+Alt ok! Tilgang med orgnr og scopes støttes, ved at skyporten legger på scope på slutten av sub-feltet i tokenet. Se [guide her]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten_azure).
 
 ### AWS
 
@@ -114,6 +125,10 @@ Sentrale aspekter av arkitekturen:
 ### Autoriseringsflyt for konsument
 
 ![Skyporten autoriseringsflyt]({{site.baseurl}}/images/maskinporten/skyporten_autorization_flow.png)
+
+### Eksempel-kode for Token generering
+
+Du kan se [eksempel-kode for token-generering i node.js her](https://github.com/entur/exploratory-maskinporten-token/).
 
 ## Kontakt
 
