@@ -225,6 +225,10 @@ Integrasjonspunktet transformerer og beriker meldinger som sendes med Digital Po
 
 - [Transformasjon fra print til Digital Post til Innbyggere](../Transformasjoner/print_til_digital_post_til_innbyggere)
 
+## Anbefalinger ved adressering
+
+For å redusere risikoen for at brevpost ikke skal nå mottaker, har Posten kommet med gode anbefalinger på hvordan man skal adressere riktig, både til mottakere i Norge og i utlandet. Det anbefales at alle avsendervirksomheter følger disse. Les mer på [Posten adressering](https://www.posten.no/sende/adressering) (ekstern lenke)
+
 ## Neste steg
 
 - [Dokumenttype `print` under Eksempel på vedtak til innbygger](../Eksempel/vedtak_til_innbygger#dersom-dokumenttype-print-st%C3%B8ttes)
