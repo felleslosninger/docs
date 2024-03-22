@@ -21,6 +21,7 @@ Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er f
 
 * error - en OAuth2 error-kode som indikerer hva slags type problem dette er.
 * error_description - detaljert informasjon om den spesifikke feilsituasjonen.
+* error_uri - for enkelte feilsituasjoner, inneholder URL til side med feilsøkingshjelp 
 
 I error_description er det ofte inkludert en unik id som kan brukes til feilsøking.
 
