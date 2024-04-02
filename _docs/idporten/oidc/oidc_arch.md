@@ -14,7 +14,7 @@ redirect_from: /oidc_arch
 
 ID-porten tilbyr **autentisering** av sluttbrukere opp mot nett-tjenester.  
 
-Kunden kan velge mellom SAML2-protokollen og OIDC-protokollen når de skal koble seg mot ID-porten.  Alle tjenester deltar i en felles Circle-of-trust med single signon (SSO) seg imellom.
+Kunden kan velge OIDC-protokollen når de skal koble seg mot ID-porten.  Alle tjenester deltar i en felles Circle-of-trust med single signon (SSO) seg imellom.
 
 ## Sikring av API-er
 
