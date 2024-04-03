@@ -7,13 +7,11 @@ product: ID-porten
 redirect_from: /oidc_func_saml
 ---
 
-## Om SAML i ID-porten
+## SAML i ID-porten
 
-ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. Digdir ønsker at alle nye integrasjoner skal bruke OIDC, men vi har ved overgangen til ny platform og systemarkitektur 2023 valgt å tilby et forenklet SAML-grensesnitt for kunder som av en eller grunn ikke kan bytte fra SAML til OIDC i migreringsfasen.
+ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. ID-porten støtter kun OIDC, men vi tilbyr et forenklet SAML-grensesnitt for kunder som av en eller grunn ikke har kunnet gå over fra SAML til OIDC.
 
-Overgangen til ny SAML-løsning skjer ved DNS-oppdatering. Det blir mulig å teste tjenesten på nytt domene på forhånd.
 
-På et senere tidspunkt vil SAML bli faset ut fullstendig.
 
 
 ## SAML-arkitektur
@@ -42,7 +40,7 @@ For innlogging så mapper OIDC-protokollen sin *authorization code*-flyt svært 
 
 ## Miljøer for SAML-proxy
 
-SAML-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP'er fra produksjon og VER2 videreføres i nye løsningen.  De kan brukes så lenge IDP'ens sertifikat er gyldig.  IDP'ene vil få nye IP-adresser.  Nye IDP'er på nye domener settes også opp.  Se oversikt over [IP-adresser]({{site.baseurl}}/docs/general/IP).
+SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet.  Oversikt over [IP-adresser]({{site.baseurl}}/docs/general/IP).
 
 |Miljø |IDP|Domene| 
 |-|-|
@@ -53,9 +51,9 @@ SAML-proxy settes opp i produksjonsmiljø og testmiljø.  Eksisterende SAML2 IDP
 
 ### ID-porten sine metadata
 
-I en overgang kan eksisterende metadata for produksjon (v5) og VER (v4) benyttesfor gamle IDP'er.  Se [metadata for gamle ID-porten]({{site.baseurl}}/docs/idporten/saml/saml_metadata).  
+I en overgangsperiode kan metadata for produksjon (v5) og VER (v4) benyttes
 
-Metadata kan lastes ned for nye IDP'er. 
+### Metadata
 
 |Miljø |IDP|Metadata| 
 |-|-|
@@ -66,23 +64,16 @@ Metadata kan lastes ned for nye IDP'er.
 
 ### Kunden sine metadata
 
-Metadata for aktive SAML-integrasjoner flyttes til ny SAML-løsning før DNS-bytte.
-
-Vi støtter ikke opplastning av kunden sine metadata.  Du må manuelt sende oss
+Oppdatering av kundes metadata er en manuel prosess hos Digdir. Vi trenger metadata med
 
 - entityid
 - assertionconsumerURL
 - logout-url
-- public-nøkkel av virksomhetssertifikatet du bruker (samme sertifikat til både signering og kryptering)
+- public-nøkkel av virksomhetssertifikatet (samme sertifikat til både signering og kryptering)
 
 ### Begrensninger i SAML-proxy
 
-Går frå fullverdig IAM-produkt til enkel proxy foran OIDC-løysinga
+Ikke fullverdig IAM-produkt, men enkel proxy foran OIDC-løsningen.
 
-- Støttar berre ArtifactResolution (ikkje HTTP-POST binding)​
-- Kontaktinfo vert ikkje lenger utlevert i Assertion
-- Persistent NameID blir generert på nytt i ny løsning (nye verdier for brukerne)
-- Persistent og transient NameID vil få like verdier
-- 
-
-
+- Støtter bare ArtifactResolution (ikke HTTP-POST binding)​
+- Kontaktinfo fra Kontakt- og reservasjonsregisteret kan ikke utleveres i Assertion
