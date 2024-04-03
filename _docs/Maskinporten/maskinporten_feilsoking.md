@@ -21,9 +21,9 @@ Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er f
 
 * error - en OAuth2 error-kode som indikerer hva slags type problem dette er.
 * error_description - detaljert informasjon om den spesifikke feilsituasjonen.
-* error_uri - for enkelte feilsituasjoner, inneholder URL til side med feilsøkingshjelp 
+* error_uri - for enkelte feilsituasjoner, inneholder URL til side med feilsøkingshjelp (denne siden). Enkelte feilkoder har mer detaljer på denne siden. 
 
-I error_description er det ofte inkludert en unik id som kan brukes til feilsøking.
+I error_description er det ofte inkludert en unik id som kan brukes til feilsøking. Noen av disse er beskrevet på denne siden.
 
 ### Connection
 
@@ -45,25 +45,27 @@ Det som har fungert for andre kunder:
 
 ### Invalid grant
 
-#### Invalid assertion. Client authentication failed.
+Feilmelding invalid_grant betyr at Maskinporten ikke kan behandle token-forespørselen.  Noen av de vanligste feilsituasjonene er beskrevet her.
+
+#### MP-100: Invalid assertion. Client authentication failed.
 
 Kan være skrivefeil på clientID.
 
 **Løsning:** Sjekk at ClientID er korrekt.
 
-#### "Invalid assertion. Client authentication failed. Invalid JWT claim aud"
+#### MP-110: "Invalid assertion. Client authentication failed. Invalid JWT claim aud"
 
 Feil med audience i JWT-grant.
 
 **Løsning:** Sjekk at audience går mot rett milø, og uten skrivefeil.
 
-#### "Invalid assertion. Client authentication failed. The JWT is signed with an invalid certificate."
+#### MP-120: "Invalid assertion. Client authentication failed. The JWT is signed with an invalid certificate."
 
 Noe er feil med sertifikatet som benyttes.
 
 **Løsning** Sjekk at det benyttes et gyldig virksomhetssertifikat. Sjekk at det ikke benyttes produksjonssertifikat i test eller testsertifikat i PROD.
 
-#### "Invalid assertion. Client authentication failed. Expired key"
+#### MP-121: "Invalid assertion. Client authentication failed. Expired key"
 
 Nøkkelen som er postet på klienten er utgått. Nøkler har 1 års levetid fra det tidspunktet de blir postet på klienten.
 
@@ -71,7 +73,7 @@ Nøkkelen som er postet på klienten er utgått. Nøkler har 1 års levetid fra 
 
 ### Invalid request
 
-#### Invalid assertion. Invalid parameter value
+#### MP-011: Invalid assertion. Invalid parameter value
 
 Kan være skrivefeil i JWT grant.
 
@@ -85,13 +87,13 @@ Det er samme organisasjosnummer både på klient og i "consumer_org" claimet.
 
 ### Bad request
 
-#### Invalid scope -"Token request contains invalid scopes for client"
+#### MP-200: Invalid scope -"Token request contains invalid scopes for client"
 
 Scopet er ikke forhåndsregistrert på klienten som benyttes.
 
 **Løsning:** Sjekk at scopet du prøver å få tilgang til er registrert på klienten. Sjekk forespørselen for skrivefeil på scopet.
 
-#### Invalid scope - "Token request contains scopes with integration types only allowed for user login"
+#### MP-201: Invalid scope - "Token request contains scopes not allowed for maskinporten"
 
 Klienten er satt opp med en integrasjonstype som scopet ikke godtar.
 
@@ -99,7 +101,7 @@ Klienten er satt opp med en integrasjonstype som scopet ikke godtar.
 
 ###  Validation of JWT Bearer grant failed
 
-#### Grant is used before
+#### MP-012: Grant is used before
 
 Grantet er allerede brukt.
 
@@ -107,7 +109,7 @@ Grantet er allerede brukt.
 
 ### Authentication of client by JWT failed
 
-#### Client not found
+#### MP-100: Client not found
 
 Det kan være flere grunner til denne feilmeldingen. Men det betyr at denne klienten ikke finnes hos den audience som benyttes. Det kan være forskjellige grunner til det:
 
@@ -117,13 +119,13 @@ Det kan være flere grunner til denne feilmeldingen. Men det betyr at denne klie
 
 **Løsning:** Sjekk at det benyttes korrekt clientID og at den benyttes i samme miljø som den er opprettet i.
 
-#### JWT is expired
+#### MP-130: JWT is expired
 
 Tokenet er utløpt. Enten er det allerede brukt, eller det er brukt for sent. Det kan også være at det er for stor forskjell på serverklokke og Maskinporten.
 
 **Løsning:** Generer nytt token. Synkroniser serverklokke dersom forskjellen er for stor mellom server og Maskinporten.
 
-#### Client orgno <org.nr> does not match certificate orgno <org.nr>
+#### MP-122: Invalid JWT. Invalid organization number for client. Does not match certificate orgno
 
 Virksomhetssertifikatet er utstedt til et annet organisasjonsnummer enn det som eier klienten.
 
@@ -131,17 +133,17 @@ Virksomhetssertifikatet er utstedt til et annet organisasjonsnummer enn det som 
 
 ### Validation of JWT failed
 
-#### Failed to extract certificate from jwt
+#### MP-123: Invalid JWT header x5c
 
 Muligens feil med x5c element i header.
 
 **Løsning:** Sjekk at sertifikatet ligger med som et array av string, og ikke string.
 
-#### Could not validate JWT Signature
+#### MP-124: Invalid JWT signature
 
 Feil på sertifikat. Sjekk at sertifikatet ikke er utløpt og at det benyttes prod.sertifikat i produksjonsmiljøet, og test-virksomhetssertifikat i testmiljøene.
 
-#### Grant is used before
+#### MP-012: Grant is used before
 
 Dette kan bety at det gjenbrukes en JTI, slik at jwt-grantet ikke har en unik id.
 
@@ -155,13 +157,13 @@ Det er for stor tidsforskjell mellom serverklokken vår og deres.
 
 ### Forbidden
 
-#### Consumer has not been granted access to the scope <scope>
+#### MP-300: Consumer has not been granted access to the scope <scope>
 
 Konsumenten har ikke tilgang til det scopet som det blir spurt om tilgang til.
 
 **Løsning:** Konsumenten må kontakte API-tilbyder for å få tilgang til scope. Eventuelt bytt til et scope som konsumenten har tilgang til.
 
-#### Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
+#### MP-301: Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
 
 Konsumenten har ikke delegert rettigheten videre til leverandør i Altinn. Eventuelt er det delegert feil rettighet.
 
