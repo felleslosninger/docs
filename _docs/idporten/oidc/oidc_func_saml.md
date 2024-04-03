@@ -9,7 +9,7 @@ redirect_from: /oidc_func_saml
 
 ## SAML i ID-porten
 
-ID-porten ~begynte~ som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. ID-porten støtter kun OIDC, men vi tilbyr et forenklet SAML-grensesnitt for kunder som av en eller grunn ikke har kunnet gå over fra SAML til OIDC.
+ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. ID-porten støtter kun OIDC, men vi tilbyr et forenklet SAML-grensesnitt for kunder som av en eller grunn ikke har kunnet gå over fra SAML til OIDC.
 
 
 
@@ -45,9 +45,9 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |Miljø |IDP|Domene| 
 |-|-|
 |PROD|https://saml2.idporten.no/idp6|saml2.idporten.no|
-|~PROD~|idporten.difi.no-v5~|~idporten.difi.no~|
+|~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~|
 |TEST|https://saml2.test.idporten.no/idp5~|saml2.test.idporten.no|
-|~TEST~|~idporten-ver2.difi.no-v4~|~idporten-ver2.difi.no~|
+|~~TEST~~|~~idporten-ver2.difi.no-v4~~|~~idporten-ver2.difi.no~~|
 
 ### ID-porten sine metadata
 
@@ -58,9 +58,9 @@ I en overgangsperiode kan "gammel" metadata for produksjon (v5) og VER (v4) beny
 |Miljø |IDP|Metadata| 
 |-|-|
 |PROD|https://saml2.idporten.no/idp6|[https://saml2.idporten.no/idp6](https://saml2.idporten.no/idp6)|
-|~PROD~|idporten.difi.no-v5~||
+|~~PROD~~|~~idporten.difi.no-v5~~||
 |TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5)|
-|~TEST~|~idporten-ver2.difi.no-v4~||
+|~~TEST~~|~~idporten-ver2.difi.no-v4~~||
 
 ### Kundens metadata (SP)
 
