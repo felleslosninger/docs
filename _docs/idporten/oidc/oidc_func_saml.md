@@ -33,38 +33,38 @@ graph LR
   SAML -- OIDC ---IDP
 </div>
 
-For innlogging så mapper OIDC-protokollen sin *authorization code*-flyt svært bra mot SAML *Web Browser SSO med Artifact Resolution*-profil.
+For innlogging mapper OIDC-protokollen sin *authorization code*-flyt svært bra mot SAML *Web Browser SSO med Artifact Resolution*-profil.
 
 ![Flyt SAML2-proxy](/images/idporten/saml/proxy-flow.svg)
 
 
 ## Miljøer for SAML-proxy
 
-SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet.  Oversikt over [IP-adresser]({{site.baseurl}}/docs/general/IP).
+SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over IP-adresser]({{site.baseurl}}/docs/general/IP)
 
 |Miljø |IDP|Domene| 
 |-|-|
 |PROD|https://saml2.idporten.no/idp6|saml2.idporten.no|
-|PROD|idporten.difi.no-v5|idporten.difi.no|
-|TEST|https://saml2.test.idporten.no/idp5|saml2.test.idporten.no|
-|TEST|idporten-ver2.difi.no-v4|idporten-ver2.difi.no|
+|~PROD~|idporten.difi.no-v5~|~idporten.difi.no~|
+|TEST|https://saml2.test.idporten.no/idp5~|saml2.test.idporten.no|
+|~TEST~|~idporten-ver2.difi.no-v4~|~idporten-ver2.difi.no~|
 
 ### ID-porten sine metadata
 
-I en overgangsperiode kan metadata for produksjon (v5) og VER (v4) benyttes
+I en overgangsperiode kan "gammel" metadata for produksjon (v5) og VER (v4) benyttes
 
 ### Metadata
 
 |Miljø |IDP|Metadata| 
 |-|-|
 |PROD|https://saml2.idporten.no/idp6|[https://saml2.idporten.no/idp6](https://saml2.idporten.no/idp6)|
-|PROD|idporten.difi.no-v5||
+|~PROD~|idporten.difi.no-v5~||
 |TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5)|
-|TEST|idporten-ver2.difi.no-v4||
+|~TEST~|~idporten-ver2.difi.no-v4~||
 
-### Kunden sine metadata
+### Kundens metadata (SP)
 
-Oppdatering av kundes metadata er en manuel prosess hos Digdir. Vi trenger metadata med
+Oppdatering av kundes metadata er en manuel prosess hos Digdir. Metadata må sendes til servicdesk@digdir.no for endring. Vi trenger metadata med følgende innhold:
 
 - entityid
 - assertionconsumerURL
@@ -73,7 +73,7 @@ Oppdatering av kundes metadata er en manuel prosess hos Digdir. Vi trenger metad
 
 ### Begrensninger i SAML-proxy
 
-Ikke fullverdig IAM-produkt, men enkel proxy foran OIDC-løsningen.
+SAML-proxy er ikke et fullverdig IAM-produkt, men enkel proxy foran OIDC-løsningen. SAML-proxyen har blant annet følgende begrensninger:
 
 - Støtter bare ArtifactResolution (ikke HTTP-POST binding)​
 - Kontaktinfo fra Kontakt- og reservasjonsregisteret kan ikke utleveres i Assertion
