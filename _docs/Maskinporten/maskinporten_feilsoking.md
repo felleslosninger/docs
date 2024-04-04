@@ -17,7 +17,7 @@ redirect_from: /maskinporten_feilsoking
 
 ### Format
 
-Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er feil.  Denne bør logges.  Responsen er på JSON-format og inneholder attributtene:
+Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er feil.  Denne bør logges av klienten.  Responsen er på JSON-format og inneholder attributtene:
 
 * error - en OAuth2 error-kode som indikerer hva slags type problem dette er.
 * error_description - detaljert informasjon om den spesifikke feilsituasjonen.
