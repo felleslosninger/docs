@@ -29,13 +29,11 @@ I error_description er det ofte inkludert en unik id som kan brukes til feilsøk
 
 #### Connection Timeout.
 
-Vi vet at enkelte kunder som kjører tjenester i Azure noen ganger sliter med å koble seg til maskinporten.no
+Vi vet at enkelte kunder som kjører tjenester i Azure noen ganger sliter med å koble seg til maskinporten.no. Dette skal nå være løst.
 
 En typisk feilmelding kan se slik ut
 
 "A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."
-
-Vi er i dialog med Microsoft angående dette, men det er ikke så mye vi kan gjøre på vår side per nå.
 
 Det som har fungert for andre kunder:
 
