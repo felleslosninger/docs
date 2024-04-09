@@ -19,6 +19,7 @@ En kan opprette postkasse på testbrukere på to ulike måter. Enten ved å beny
 ##### Alternativ 1: Forenklet postkasseregistrering via Kontaktregisteret
 Logg på [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) med TestID, velg postkasse og følg instruksene.
 
+
 ##### Alternativ 2: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
 - E-boks: [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat?logontype=idporten)
 - Digipost: [https://difitest.digipost.no](https://difitest.digipost.no)
