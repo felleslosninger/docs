@@ -18,6 +18,8 @@ Informasjon til innbygger er alt utenom vedtak og andre viktige henvendelser til
 eFormidlings støtte for å sende informasjon til innbygger gjør det enkelt å sende informasjon til innbygger uten
 tilleggskravene vedtak og andre viktige henvendelser medfører.
 
+Infoprosessen tar IKKE hensyn til innbyggers reservasjon, og bør derfor kun brukes til kvitteringsformål og andre brukstilfeller som ikke innebærer oversending av viktig informasjon.
+
 Informasjon til innbygger representeres med følgende prosess for mottaker:
 
 | **Prosessnavn**  | **Prosessidentifikator**                    |
