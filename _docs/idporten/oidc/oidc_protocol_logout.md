@@ -51,18 +51,19 @@ The client requests a logout by redirecting the browser to the /logout endpoint.
 | HTTP method | POST | RECOMMENDED |
 | HTTP method | GET | Supported |
 
-We recommend to use POST, as the id_token_hint will then not be included in the web browser history or serverside access logs.
+We recommend to use POST, as the `id_token_hint` will then not be included in the web browser history or serverside access logs.
 
 These query parameters should be part of the request: 
 
 | Attribute | Cardinality | Description|
 |---|---|---|
-|```state```                   | recommended | Can be used by the client to detect legitimate calls on the post_logout_uri, and also transfer relevant user-state information if needed when handling the logout response.  |
+|```state```                   | recommended | Can be used by the client to detect legitimate calls on the `post_logout_redirect_uri`, and also transfer relevant user-state information if needed when handling the logout response.  |
 
 If the client wants ID-porten to redirect the end user back to the client, the following query parameters must be present:
 
+|```client_id```           | optional | The client initiating logout request |
 |```id_token_hint```           | optional | The id_token corresponding to the end user that wants to logout. |
-|```post_logout_redirect_uri```| optional | Must match one of the pre-registered logout uris on the client.   Must be combined with `id_token_hint`. |
+|```post_logout_redirect_uri```| optional | Must match one of the pre-registered post logout redirect uris on the client.   Must be combined with `id_token_hint` and/or `client_id`. |
 
 
 
@@ -77,4 +78,4 @@ If the client wants ID-porten to redirect the end user back to the client, the f
 
 If the ID-porten cookie is not included by the browser when redirecting to the /logout endpoint, ID-porten will not accept the logout and show an error page.
 
-If no `id_token_hint` was provided, ID-porten will perform SLO of all other clients in the session, but will not redirect the browser back to the client.  This behaviour is defined in the OIDC specification.
+If no `id_token_hint` or `client_id` was provided, ID-porten will perform SLO of all other clients in the session, but will not redirect the browser back to the client.  This behaviour is defined in the OIDC specification.
