@@ -391,7 +391,7 @@ API-tilbydere bør merke seg at sluttbruker kan velge en annen organisasjon enn 
 ### 4: userinfo og utlogging
 Ansattporten tilbyr ikke et /userinfo-endepunkt.
 
-Siden Ansattporten er basert på [isolerte SSO-sesjoner](oidc_func_nosso.html), så må tjenesten kunne håndtere utlogging på samme måten som ID-porten.  Dvs. både tilby brukeren å kunne logge  ut, samt å måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i Ansattporten.
+Siden Ansattporten er basert på [isolerte SSO-sesjoner](oidc_func_nosso.html), så må tjenesten kunne håndtere [utlogging på samme måten som ID-porten](oidc_protocol_logout.html).  Dvs. både tilby brukeren å kunne logge ut, samt å måtte håndtere utloggingsforsepørsler initiert fra andre tjenester i Ansattporten.
 
 
 
