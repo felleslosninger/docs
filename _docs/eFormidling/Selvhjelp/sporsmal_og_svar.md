@@ -193,6 +193,11 @@ For å manuelt laste ned en innkommende melding fra integrasjonspunktet trenger 
 2. Last ned meldingen: `curl 'http://localhost:9093/api/messages/in/pop/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET > asic.zip`
 3. EVENTUELT - marker meldingen som ferdig behandla: `curl 'http://localhost:9093/api/messages/in/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X DELETE`
 
+### Hvordan migrerer jeg data fra den medfølgene H2-fildatabasen?
+
+Det er dessverre ingen rett frem måte å gjøre dette på, men det finnes ett communitydrevet migreringsverktøy en kan prøve:
+[H2 Migration Tool](https://github.com/manticore-projects/H2MigrationTool)
+
 ## Digital Post til Innbyggere
 
 ### Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?
