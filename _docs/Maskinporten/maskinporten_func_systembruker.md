@@ -108,11 +108,9 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
   
   "authorization_details": [ {
     "type": "urn:altinn:systemuser",
-    "systemuserid": "a_unique_identifier_for_the_system",
-    "systemuserorg": {
-       "authority" : "iso6523-actorid-upis",  
-       "ID": "0192:999888777"  
-    }
+    "systemuser_id": [ "a_unique_identifier_for_the_systemuser" ], 
+    "systemuser_org": {"authority" : "iso6523-actorid-upis",  "ID": "0192:999888777" },
+    "system_id": "a_unique_identifier_for_the_system",
   }]
 }
 ```
@@ -121,7 +119,7 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 ## Oppsett
 
-Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
+Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
 
-På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert oppsett av slike gjennom Altinn direkte.
+På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert opprettelse av slike gjennom Altinn direkte.
 
