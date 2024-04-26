@@ -62,6 +62,9 @@ Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved 
 - [Tilgjengeliggjøre virksomhetssertifikatet i eFormidlings sertifikatkatalog](../installasjon/installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-i-eformidlings-sertifikatkatalog)
 - [Tilgjengeliggjøre virksomhetssertifikatet for virksomhetens integrasjonspunkt](../installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-for-virksomhetens-integrasjonspunkt)
 
+> **NB!** Dersom dere bruker meldingstypen DPF må public del av sertifikatet lastet opp hos svarut.ks.no under ["Mottakersystem"](../installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)!
+
+
 ## Integrasjonspunktet
 
 ### Hvordan kan jeg beskytte sertifikat, passord og annet som integrasjonspunktet trenger?
@@ -189,6 +192,11 @@ For å manuelt laste ned en innkommende melding fra integrasjonspunktet trenger 
 1. Lås meldingen: `curl 'http://localhost:9093/api/messages/in/peek/?messageID=2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET`
 2. Last ned meldingen: `curl 'http://localhost:9093/api/messages/in/pop/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET > asic.zip`
 3. EVENTUELT - marker meldingen som ferdig behandla: `curl 'http://localhost:9093/api/messages/in/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X DELETE`
+
+### Hvordan migrerer jeg data fra den medfølgene H2-fildatabasen?
+
+Det er dessverre ingen rett frem måte å gjøre dette på, men det finnes ett communitydrevet migreringsverktøy en kan prøve:
+[H2 Migration Tool](https://github.com/manticore-projects/H2MigrationTool)
 
 ## Digital Post til Innbyggere
 

@@ -70,7 +70,7 @@ ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 
 #### Støttede protokoller
 * OpenID Connect
-* SAML2 (fases ut!)
+* SAML2 er kun tilgjengelig for de som ikke kan benytte OpenID Connect
 
 #### Føderering / SSO
 

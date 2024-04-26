@@ -109,3 +109,7 @@ related_resources_list:
 
 - title: Release-logg (release.digdir.no)
   jurl: https://release.digdir.no
+
+- title: Grafana-dashbord
+  jurl: https://digdir.grafana.net/public-dashboards/ca886cb1879d422bb876ca6a2e9aca17?orgId=1&refresh=1m
+

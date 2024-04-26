@@ -172,17 +172,7 @@ folders:
 
 #==rel_notes_stop==
 
-- title: Gammelt OIDC-grensesnitt
-  folderitems:
 
-      - title: Gammelt OIDC-grensesnitt (fases ut!)
-        jurl: /docs/idporten/oidc_old/oidc_func_wellknown.html
-
-- title: Gammelt SAML-grensesnitt
-  folderitems:
-
-      - title: SAML Integrasjon (fases ut!)
-        jurl: /docs/idporten/saml/saml_tilgang.html
 
 ###########################
 
@@ -191,7 +181,7 @@ related_resources_title: Andre nyttige lenker
 related_resources_list:
 
 - title: Github
-  jurl: https://github.com/difi/felleslosninger
+  jurl: https://github.com/digdir
 
 - title: Samarbeidsportalen
   jurl: https://samarbeid.digdir.no

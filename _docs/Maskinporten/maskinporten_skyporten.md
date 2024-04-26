@@ -78,7 +78,7 @@ Se også guidene under for oppsett knyttet til hver enkelt skyleverandør.
 ### Tilgang til Skyporten  for konsumenter
 
 Skyporten bruker Maskinporten, så for å hente noe delt via Skyporten, trenger du også en integrasjon (oauth2-client). 
-Et godt alternativ er å benyttet [forenklet onboarding til Maskinporten med nøkler](https://simplified-onboarding.fellesdatakatalog.digdir.no/guide). 
+Et godt alternativ er å benyttet [forenklet onboarding til Maskinporten med nøkler](https://onboarding.maskinporten.no/guide). 
 Mer utfyllende [dokumentasjon finnes her]({{site.baseurl}}/docs/Maskinporten/maskinporten_guide_apikonsument).
 
 Det finnes flere kode-eksempler som kan hjelpe deg i gang med å generere accesstokens til Maskinporten:
