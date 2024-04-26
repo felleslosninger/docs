@@ -22,7 +22,7 @@ Videre tilbyr Maskinporten to ulike delegerings-utvidelser for bruk i kunde-leve
 * [Delegering av API-tilgang til en annen organisasjon](maskinporten_func_delegering)
 * Delegering av rettigheter i Altinn til et Maskinporten-system (dokumentert på denne sida)
 
-For begge utvidelsene så utfører kunden selve delegeringshandlingen gjennom brukervennlige dialoger i Altinn, og trenger ikke måtte inngå et kundeforhold til Digdir eller bruke Samarbeidsportalen.  Tilganger i Altinn bestemmer hvem som får lov til å utføre delegeringshandlinga på vegne av kundens virksomhet. Typisk oppstår delegeringen som et naturlig steg ved etablering av kundeforholdet når kunden velger å ta i bruk leverandøren sitt system.
+For begge utvidelsene så utfører kunden selve delegeringshandlingen gjennom brukervennlige dialoger i Altinn, og trenger ikke måtte inngå et kundeforhold til Digdir eller bruke Samarbeidsportalen.  Tilganger i Altinn bestemmer hvem som får lov til å utføre delegeringshandlinga på vegne av kundens virksomhet. Typisk oppstår delegeringen som et naturlig steg ved etablering av kundeforholdet når kunden velger å ta i bruk et produkt fra leverandøren.
 
 *Systembruker for virksomhet* passer bedre i scenarioer der standard API-delegering ville ført til at leverandøren ville fått altfor vide rettigheter.  
 
@@ -38,10 +38,9 @@ De to delegeringsmekanismene er uavhengig av hverandre, og det er ingen sentral 
 
 #### Hva inneholder et systembruker-token ?
 
-Rent teknisk i Autorisasjon så blir ikke de delegerte rettighetene gitt direkte til systemet, men er delegert til en såkalt **systembruker** knyttet til kunden. Systembrukeren peker i sin tur på leverandøren sitt system i Systemregisteret, og system-registreringa er kobla mot en og bare en client_id i Maskinporten.
+Rent teknisk i Autorisasjon så blir ikke de delegerte rettighetene gitt direkte til systemet, men er delegert til en såkalt **systembruker** knyttet til kunden. Systembrukeren peker i sin tur på leverandøren sitt system i Systemregisteret, som igjen er kobla mot en og bare en client_id i Maskinporten.
 
-Et systembruker-token skiller seg fra et vanlig Maskinporten-token ved at det inneholder en referanse til systembrukeren hos kunden, og kundens organisasjonsnummer.  Leverandøren sitt organisasjonummer framkommer i `consumer`-claimet på vanlig måte.
-
+Et systembruker-token skiller seg fra et vanlig Maskinporten-token ved at det inneholder en informasjon om både systembrukeren hos kunden og systemet til leverandøren.  API-tilbydere kan stole på at systemet som fikk utstedt tokenet er gitt nødvendige delegeringer i Altinn. 
 
 #### For API-tilbyder
 
@@ -57,13 +56,14 @@ Leverandøren ber om å få et token for en påstått kunde ved å oppgi kundens
 
 <div class="mermaid">
 sequenceDiagram
-    Fagsystem->>+Maskinporten: JWTGrant(orgNoCustomer)
-    Maskinporten->>Altinn Autorisasjon: GetSystemUser(client_id, orgNoCustomer)
-    Altinn Autorisasjon-->>Maskinporten: SystemUserID (systemUserId)
-    Maskinporten-->>Fagsystem: Token (SystemUserId, consumerId, supplier)
-    Fagsystem->>API: AllAPIOpperations(part, resoureId, token)
-    API->>Altinn Autorisasjon: Authorize(SystemUserId, res, action, part)
-    Altinn Autorisasjon-->API: AuthorizationResponse
+    Fagsystem->>+Maskinporten: forespørre token (kundes orgno)
+    Maskinporten->>Altinn Autorisasjon: Hent systembrukerinformasjon 
+    Altinn Autorisasjon-->>Maskinporten: systembrukerinformasjon
+    Maskinporten-->>Fagsystem: systembruker-token
+    Fagsystem->>API: API-kall m/systembrukertoken
+    note over API: validerer scope, konstruerer PDP-spørring
+    API->>Altinn Autorisasjon: PDP-kall med systembruker, part, ressurs, action
+    Altinn Autorisasjon-->API: Ja/nei
     API->>Fagsystem:API Result 
 </div>
 
@@ -108,11 +108,9 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
   
   "authorization_details": [ {
     "type": "urn:altinn:systemuser",
-    "systemuser_id": "a_unique_identifier_for_the_system",
-    "systemuser_org": {
-       "authority" : "iso6523-actorid-upis",  
-       "ID": "0192:999888777"  
-    }
+    "systemuser_id": [ "a_unique_identifier_for_the_systemuser" ], 
+    "systemuser_org": {"authority" : "iso6523-actorid-upis",  "ID": "0192:999888777" },
+    "system_id": "a_unique_identifier_for_the_system",
   }]
 }
 ```
@@ -121,7 +119,7 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 ## Oppsett
 
-Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
+Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
 
-På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert oppsett av slike gjennom Altinn direkte.
+På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert opprettelse av slike gjennom Altinn direkte.
 
