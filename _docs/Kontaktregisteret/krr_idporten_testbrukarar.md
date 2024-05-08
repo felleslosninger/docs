@@ -10,7 +10,7 @@ product: KRR
 redirect_from: /krr_idporten_testbrukarar
 ---
 
-For å teste KRR-integrasjoner i verifikasjonsmiljøene (Ver2/Test) som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av [ID-porten testbrukere](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html).
+For å teste KRR-integrasjoner i verifikasjonsmiljøet (Test) som krever ID-porten-innlogging (eks. MinProfil, Oppslag ved innlogget bruker), kan man benytte seg av [ID-porten testbrukere](https://docs.digdir.no/docs/idporten/idporten/idporten_testbrukere.html).
 
 
 ## TestID
