@@ -132,6 +132,9 @@ Utgående brannmur må være åpen mot disse adressene:
 |-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
 | test.kontaktregisteret.no           | 139.105.36.137    | 443 | Oppslagstjenesten KRR | I bruk f.o.m 27.06.2023             | utgående | 
 
+| DNS-navn                      | IPv6-adresse                   | Port | Tjeneste | Beskrivelse                                                                       | Inn-/utgående trafikk |
+|-------------------------------|--------------------------------|------|----------|-----------------------------------------------------------------------------------|-----------------------|
+| test.kontaktregisteret.no           | 2a02:9cc::306    | 443 | Oppslagstjenesten KRR | I bruk f.o.m 13.05.2024             | utgående | 
 
 ## Swagger
 OpenAPI-dokumentasjon. 
