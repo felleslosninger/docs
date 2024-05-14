@@ -61,7 +61,7 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 - **Last status:** nåværende status på forsendelsen.
 
-- **Process og DocumentType:** skal en slippe å forholde seg til, men er greit å merke seg at `urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering` er [kvittering](../Utvikling/Dokumenttyper/arkivmeldingkvittering/) på en forsendelse og blir derfor ikke varslet på.
+- **Process og DocumentType:** skal en slippe å forholde seg til, men er greit å merke seg at `urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering` er [kvittering](../Utvikling/Dokumenttyper/arkivmeldingkvittering.html) på en forsendelse og blir derfor ikke varslet på.
 
 ### Fargekoder og statuser
 
@@ -72,14 +72,14 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 - <span style="color:green">*GRØNN*</span> = denne forsendelsen er levert og fullført.
 
 En kan sjekke alle statuser på en melding ved å trykke på ConversationIDen i grensesnittet:
-![]({{site.baseurl}}/images/eformidling/GUI-melding.png)
+![]({{site.baseurl}}/images/eformidling/GUI_melding.png)
 
 
 ### Søkefunksjonen
 
 I søkefeltet kan en frisøke etter data som ligg under verdiane nevnt over. I tillegg kan en skille mellom inngående og utgående traffikk, samt søke etter dato.
 
-![]({{site.baseurl}}/images/eformidling/GUI-søk-tittel.png)
+![]({{site.baseurl}}/images/eformidling/GUI_søk_tittel.png)
 
 En kan også søke på flere verdier ved hjelp av logiske operatorer. 
 
@@ -88,7 +88,7 @@ Denne returnerer alle forsendelser der begge verdier stemmer.
 - **||** betyr 'eller'.
 Denne returner alle forsendelser der en av verdiene stemmer.
 
-![]({{site.baseurl}}/images/eformidling/GUI-søk.png)
+![]({{site.baseurl}}/images/eformidling/GUI_søk.png)
 
 > Skulle det være ting som er uklart når det kommer til bruk av det grafiske brukergrensesnittet, send gjerne en epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
