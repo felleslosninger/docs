@@ -39,13 +39,13 @@ Om en forsendelse timer ut eller feiler vil avsender bli varslet i løpet av 24 
   
 Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunktet. Kopier inn **Conversation-ID** fra emailen og sjekk **Reference** for å se referansen fra sak/arkivsystemet.
 
-![]({{site.baseurl}}/images/eformidling/api_gui_example.png)
+![]({{site.baseurl}}/images/eformidling/GUI.png)
 
 > NB! En må kunne nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
 
 ### Forklaring til grensesnittet
 
-- **Id:** dette er messageID - se mer info [her](../Utvikling/Dokumenttyper/standard_sbd)
+- **ConversationId:** dette er unik ID for meldingen - se mer info [her](../Utvikling/Dokumenttyper/standard_sbd)
 
 - **Title:** tittelen på dokumentet som er sendt.
 
@@ -57,25 +57,29 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 
 - **Reference:** messageReference hentet fra sak/arkiv.
 
-- **Type:** hvilken type forsendelse det er. Se [terminologi](sporsmal_og_svar#begrep)
+- **Service:** hvilken type forsendelse det er. Se [terminologi](sporsmal_og_svar#begrep)
 
 - **Last status:** nåværende status på forsendelsen.
 
-> NB! Det blir logget forskjellige statuser avhengig av om en er mottaker eller avsender av en forsendelse. Disse finner du under [den aktuelle meldingstjenesten](../Utvikling/Meldingstjenester/).
+- **Process og DocumentType:** skal en slippe å forholde seg til, men er greit å merke seg at `urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering` er [kvittering](../Utvikling/Dokumenttyper/arkivmeldingkvittering/) på en forsendelse og blir derfor ikke varslet på.
 
-### Fargekoder
+### Fargekoder og statuser
+
+> NB! Det blir logget forskjellige statuser avhengig av om en er mottaker eller avsender av en forsendelse. Disse finner du under [den aktuelle meldingstjenesten](../Utvikling/Meldingstjenester/).
 
 - <span style="color:red">*RØD*</span> = denne forsendelsen har feilet
 - <span style="color:#DAA520">*GUL*</span> = denne forsendelsen er ikke fullført enda.
 - <span style="color:green">*GRØNN*</span> = denne forsendelsen er levert og fullført.
 
-> NB! En liten bug gjør at DPV forsendelser ikke får GRØNN farge selv om forsendelsen har status LEVERT. Dette vil bli rette så snart som mulig (versjon 2.0.8) og har kun estetisk betydning. Om DPV forsendelser har status LEVERT er de kommet frem.
+En kan sjekke alle statuser på en melding ved å trykke på ConversationIDen i grensesnittet:
+![]({{site.baseurl}}/images/eformidling/GUI-melding.png)
+
 
 ### Søkefunksjonen
 
 I søkefeltet kan en frisøke etter data som ligg under verdiane nevnt over. I tillegg kan en skille mellom inngående og utgående traffikk, samt søke etter dato.
 
-BildeEks på søk inn her
+![]({{site.baseurl}}/images/eformidling/GUI-søk-tittel.png)
 
 En kan også søke på flere verdier ved hjelp av logiske operatorer. 
 
@@ -84,7 +88,7 @@ Denne returnerer alle forsendelser der begge verdier stemmer.
 - **||** betyr 'eller'.
 Denne returner alle forsendelser der en av verdiene stemmer.
 
-BildeEks på søk med operatorer inn her
+![]({{site.baseurl}}/images/eformidling/GUI-søk.png)
 
 > Skulle det være ting som er uklart når det kommer til bruk av det grafiske brukergrensesnittet, send gjerne en epost til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.
 
