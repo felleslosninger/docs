@@ -39,7 +39,7 @@ Om en forsendelse timer ut eller feiler vil avsender bli varslet i løpet av 24 
   
 Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunktet. Kopier inn **Conversation-ID** fra emailen og sjekk **Reference** for å se referansen fra sak/arkivsystemet.
 
-![]({{site.baseurl}}/images/eformidling/GUI.png)
+![]({{site.baseurl}}/images/eformidling/GUI_ex.png)
 
 > NB! En må kunne nå integrasjonspunktet enten direkte på server eller via URL fra den datamaskinen eller server du benytter. 
 
