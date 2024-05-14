@@ -72,7 +72,7 @@ Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunk
 - <span style="color:green">*GRØNN*</span> = denne forsendelsen er levert og fullført.
 
 En kan sjekke alle statuser på en melding ved å trykke på ConversationIDen i grensesnittet:
-![]({{site.baseurl}}/images/eformidling/GUI.png)
+![]({{site.baseurl}}/images/eformidling/GUI_melding.png)
 
 
 ### Søkefunksjonen
