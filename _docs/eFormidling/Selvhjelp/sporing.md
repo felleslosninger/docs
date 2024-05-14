@@ -36,7 +36,6 @@ Om en forsendelse timer ut eller feiler vil avsender bli varslet i løpet av 24 
  > Receiver: Mottakers orgnr  
 
 Åpne browser, gå til ``http://localhost:serverport/conversations``. Port 9093 er satt som default, men sjekk med tekniker hvilken serverport som blir brukt. Dette kan eventuelt sjekkes i .properties filen som ligger i integrasjonspunktmappen.
-
 ![]({{site.baseurl}}/images/eformidling/GUI_ex.png)
   
 Her vil en få opp alle forsendelser som er sendt til eller fra integrasjonspunktet. Kopier inn **Conversation-ID** fra emailen og sjekk **Reference** for å se referansen fra sak/arkivsystemet.
