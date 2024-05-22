@@ -62,6 +62,8 @@ I en overgangsperiode kan "gammel" metadata for produksjon (v5) og VER (v4) beny
 |TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5)|
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~||
 
+Oversikt metadata: [https://saml2.idporten.no](https://saml2.idporten.no)
+
 ### Kundens metadata (SP)
 
 Oppdatering av kundes metadata er en manuel prosess hos Digdir. Metadata må sendes til servicdesk@digdir.no for endring. Vi trenger metadata med følgende innhold:
