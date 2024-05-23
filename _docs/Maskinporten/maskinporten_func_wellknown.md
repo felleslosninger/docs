@@ -17,7 +17,7 @@ På endepunktet finner du lenke til vårt JWK-endepunkt, der  Maskinportens sign
 
 |Miljø|URL|Kommentar|
 |-|-|-|
-|TEST|[https://test.maskinporten.no/.well-known/oauth-authorization-server](https://test.maskinporten.no/.well-known/oauth-authorization-server)| Ny platform
+|TEST|[https://test.maskinporten.no/.well-known/oauth-authorization-server](https://test.maskinporten.no/.well-known/oauth-authorization-server)| (ver2.maskinporten.no/ er fasa ut 10.06.2024)
 |PROD|[https://maskinporten.no/.well-known/oauth-authorization-server](https://maskinporten.no/.well-known/oauth-authorization-server)|
 
 Du må ta kontakt med den som leverer APIet for å finne ut hvilket test-miljø du skal koble deg mot.
