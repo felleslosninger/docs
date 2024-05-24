@@ -8,6 +8,16 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 24.05.2024 (3.25.0)
+
+### Tasks
+
+```
+[MOVE-3827] Oppdatere Elma ihht. SMP 1.3 spesifikasjonen
+```
+
+---
+
 ## ELMA update 08.02.2024 (3.24.0)
 
 ### Tasks
