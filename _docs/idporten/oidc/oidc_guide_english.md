@@ -181,7 +181,7 @@ Body:
 | sub | "subject identifier" - unique identifier for the end user. A *pairwise* value, meaning that a client will always get the same value for the same user,   but different clients get different values.  |
 | aud | "audience" - your client_id  |
 | acr | "Authentication Context Class Reference" -  The security level used.  Possible values are  "idporten-loa-substantial" (ie. MinID) or  "idporten-loa-high". This must be verified by the relying party.  |
-| amr | "Authentication Methods References" - Possible values  *Minid-PIN*, *Minid-OTC*, *Commfides*, *Buypass*, *eIDAS*, *BankID* or  *BankID-mobil*, this may change over time. |
+| amr | "Authentication Methods References" - Possible values  *Minid-OTC*, *Minid-APP*, *Minid-TOTP*, *Minid-WEBAUTHN*, *Commfides*, *Buypass*, *eIDAS*, *BankID* or  *BankID-mobil*, this may change over time. |
 | iss | The identifier of ID-porten |
 | pid | Personidentifikator - Proprietary claim, for the Norwegian national identifier ("F-number" or "D-number") |
 | exp | Expire -  A client must not accept the id-token after this timestamp.  |
