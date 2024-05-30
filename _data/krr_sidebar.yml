@@ -66,6 +66,11 @@ folders:
         jurl: /docs/Kontaktregisteret/krr_utfasa_endepunkt
 
 
+- title: Feilsøking
+  folderitems:
+      - title: Feilsøking i KRR
+        jurl: /docs/Kontaktregisteret/krr_feilsoking
+
 - title: Hva skjer fremover?
   folderitems:
       - title: Ny systemarkitektur
