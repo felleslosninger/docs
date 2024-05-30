@@ -90,9 +90,11 @@ Authentication method can have the following values:
 
 |`amr` value| Description|
 |-|-|
-|`Minid-PIN` | MinID using PIN-codes from letter|
+|`Minid-PIN` | MinID using PIN-codes from letter (deprecated)|
 |`Minid-OTC` | MinID using one-time-code received via SMS|
 |`Minid-APP` | MinID using notification in the MinID-app on android/iOS |
+|`Minid-TOTP` | MinID using timebased one-time passwords |
+|`Minid-WEBAUTHN` | MinID using security keys |
 |`BankID`    | BankID using code generator or app|
 |`BankID Mobil` | BankID on mobile |
 |`Buypass`      | Buypass |
