@@ -50,7 +50,7 @@ folders:
       - title: Oppslag ved brukerinnlogging (brukerstyrt datadeling)
         jurl: /docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest
 
-      - title: MinProfil og gotoURL
+      - title: Lenketjenester
         jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
 
 
