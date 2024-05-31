@@ -9,6 +9,8 @@ redirect_from: /oppslagstjenesten_rest
 
 ## Introduksjon
 
+**Oppslagstjenesten** gir offentlig forvaltning tilgang til innbyggers registrerte kontaktinformasjon. Tjenesten kan benyttes av offentlige virksomheter og virksomheter som utfører tjenester på vegne av det offentlige. 
+
 Kontaktregisterets oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API, sikret med Maskinporten. Dette gjør det enkelt å implementere integrasjoner mot registeret.
 
 ## Bruk av Oauth2
