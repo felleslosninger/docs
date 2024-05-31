@@ -27,7 +27,7 @@ folders:
       - title: Sette opp token-forespørsel
         jurl: /docs/Kontaktregisteret/krr_token_request
 
-      - title: 18-månedersregel - Krav til fersk kontaktinfo
+      - title: Krav til fersk kontaktinfo
         jurl: /docs/Kontaktregisteret/krr_18mnd
 
 
