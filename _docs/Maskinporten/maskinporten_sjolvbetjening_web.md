@@ -266,7 +266,7 @@ Mest sannsynlig har ikke API-tilbyder delt tilgang med virksomheten du represent
 
 ### "Ny integrasjon" er grået ut i produksjonsmiljøet.
 
-For å administrere i produksjonsmiljøet, så må man logge inn med ID-porten. Dette forutsetter at vi har lagt inn personnummeret ditt på forhånd. Om "Ny integrasjon" fortsatt er grået ut etter innlogging med ID-porten. Kontakt servicedesk@digdir.no
+- For å administrere i produksjonsmiljøet, så må man logge inn med Ansattporten. Dette forutsetter at du har fått de nødvendige rettighetene i Altinn. Se [Tilgang i produksjonsmiljø](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web#tilgang-i-produksjonsmilj%C3%B8)
 
 ### Jeg ser integrasjonene til en annen virksomhet enn det jeg forventer.
 
