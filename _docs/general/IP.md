@@ -1,5 +1,5 @@
 ---
-title: "IP-addresser"
+title: "IP-adresser"
 
 sidebar: main_sidebar
 product: general
