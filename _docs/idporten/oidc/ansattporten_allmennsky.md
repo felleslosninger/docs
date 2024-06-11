@@ -362,18 +362,19 @@ For deling uavhengig av brukertildelte lisenser er det mulig å anskaffe kapasit
 Selve Power BI portalen (https://app.powerbi.com) med tilhørende "workspaces" er dermed ikke tilgjengelig for innlogging via Ansattporten pr i dag. Dette gjelder også den nyere innpakningen via Fabric-portalen.
 ### Power Pages
 
-TODO: bilde og tabell
 Microsoft tilbyr en low-code/no-code mulighet for eksponering av Power BI gjennom produktet Power Pages. Det krever også korrekt lisensiering for embedded, men det er mulig å lage en enkel webside samt via konfigurasjon benytte andre innloggingstjenester. I konfigurasjon for websiden (https://make.powerpages.microsoft.com) kan man opprette andre "identitetsleverandører":
-PP_IdP_01.png
+![Lowcode powerpages](/images/ansattporten/azure/PP_IdP_01.png)
 
 Her er det naturlig å velge OpenID direkte som tilkoblingsmetode og peke rett mot Ansattporten. Men dette vil ikke fungere da Power Pages vil trigge en innlogging basert på Implicit Flow. Denne flyten er ikke støttet av Ansattporten. (Implicit flow var tidligere mye brukt i SPA, men er nå frarådet å benytte. Power Pages benytter denne ettersom funksjonaliteten har vært der i flere år og den ikke har blitt oppdatert på dette punktet i ettertid.)
 
 Hvis man har en annen løsning for innlogging (Auth0, Okta, etc.) så kan disse integreres via OIDC, men det er utenfor scope i denne artikkelen.
 
 Det innebygde alternativet vil være å benytte Azure Active Directory B2C. (Konfigurasjon av dette er et eget punkt.) Dette er testet fungerende. Konfigurasjonen i Power Pages vil da være som dette:
-PP_IdP_02.png
+![powerpages konfigurasjon](/images/ansattporten/azure/PP_IdP_02.png)
+
 
 Eksempel-verdier
+
 | Felt           | Verdi                                                       |
 |----------------|-------------------------------------------------------------|
 | Tillatelse       | https://contoso.b2clogin.com/66274fff-e123-4c61-a246-f16926b3ffa7/B2C_1_AnsattSuSi/v2.0/ |
@@ -387,7 +388,7 @@ Eksempel-verdier
 * ID for standardpolicy:  navnet på user flow/custom policy i Azure AD B2C.
 * 
 Standardverdiene som hentes ut er epost, fornavn og etternavn, men det er også mulig å hente ut ekstra verdier fra token (fra B2C):
-PP_IdP_03.png
+![Ekstra verdier fra token](/images/ansattporten/azure/PP_IdP_03.png)
 
 Attributtene er på kontakt-objektet i Power Pages og verdien er `claim` i JWT. (Power Pages tillater også å lage egendefinerte attributter hvis man har de behovene.) Ansattporten returnerer ikke epost så hvis man ikke implementerer logikk i Azure AD B2C for dette betyr det at bruker blir spurt om epost-addresse i Power Pages etter innlogging.
 
