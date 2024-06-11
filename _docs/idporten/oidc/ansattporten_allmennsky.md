@@ -234,7 +234,7 @@ Her er eksemplet for å gi tilgang begrenset til orgnr. Andre attributter kan og
 
 Husk at vi over allerede har begrenset workforce deltakelse på organisasjonsnummer.
 
-``````json
+``````
   ...
   "access": [
   ...
