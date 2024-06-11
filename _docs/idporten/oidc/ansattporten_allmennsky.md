@@ -374,25 +374,26 @@ Det innebygde alternativet vil være å benytte Azure Active Directory B2C. (Kon
 PP_IdP_02.png
 
 Eksempel-verdier
-Tillatelse: https://contoso.b2clogin.com/66274fff-e123-4c61-a246-f16926b3ffa7/B2C_1_AnsattSuSi/v2.0/
-Klient-ID: b36a4c29-50bb-4986-b9fe-642a3e4f322d
-URL-adresse for omdirigering: https://site-a8b8c.powerappsportals.com/signin-aad-b2c_1
-ID for standardpolicy: B2C_1_AnsattSuSi
+| Felt           | Verdi                                                       |
+|----------------|-------------------------------------------------------------|
+| Tillatelse       | https://contoso.b2clogin.com/66274fff-e123-4c61-a246-f16926b3ffa7/B2C_1_AnsattSuSi/v2.0/ |
+| Klient ID       | b36a4c29-50bb-4986-b9fe-642a3e4f322d |
+| URL-adresse for omdirigering       | https://site-a8b8c.powerappsportals.com/signin-aad-b2c_1 | 
+| ID for standardpolicy | B2C_1_AnsattSuSi| 
 
-_Tillatelse_ er url for metadata i formatet https://{b2c-tenant-name}.b2clogin.com/{b2c-tenant-id}/{b2c-policy-name} og hentes fra Azure AD B2C.
-
-Klient-ID er app registration fra Azure AD B2C.
-
-URL-adresse for omdirigering vil genereres av Power Pages og må registreres i Azure AD B2C.
-
-ID for standardpolicy:  navnet på user flow/custom policy i Azure AD B2C.
-
+* _Tillatelse_ er url for metadata i formatet https://{b2c-tenant-name}.b2clogin.com/{b2c-tenant-id}/{b2c-policy-name} og hentes fra Azure AD B2C.
+* Klient-ID er app registration fra Azure AD B2C.
+* URL-adresse for omdirigering vil genereres av Power Pages og må registreres i Azure AD B2C.
+* ID for standardpolicy:  navnet på user flow/custom policy i Azure AD B2C.
+* 
 Standardverdiene som hentes ut er epost, fornavn og etternavn, men det er også mulig å hente ut ekstra verdier fra token (fra B2C):
 PP_IdP_03.png
 
-Attributtene er på kontakt-objektet i Power Pages og verdien er "claim" i JWT. (Power Pages tillater også å lage egendefinerte attributter hvis man har de behovene.) Ansattporten returnerer ikke epost så hvis man ikke implementerer logikk i Azure AD B2C for dette betyr det at bruker blir spurt om epost-addresse i Power Pages etter innlogging.
+Attributtene er på kontakt-objektet i Power Pages og verdien er `claim` i JWT. (Power Pages tillater også å lage egendefinerte attributter hvis man har de behovene.) Ansattporten returnerer ikke epost så hvis man ikke implementerer logikk i Azure AD B2C for dette betyr det at bruker blir spurt om epost-addresse i Power Pages etter innlogging.
 
-Merk at Ansattporten og Azure AD B2C gjør bare innloggingsdelen her og tilgangsstyringen vil ligge i Power Pages. Konfigurasjon av dette er utenfor scope her, men vær oppmerksom på at avhengig av hvilke data man ønsker å dele er det mulig dette ikke er finkornet nok. (Eksempelvis kan enkelte attributter enkelt redigeres av brukeren og selv om claims kan innhentes på nytt ved ny login er det ikke en faktisk synkronisering eller sanntidsevaluering.)
+Merk at Ansattporten og Azure AD B2C gjør bare innloggingsdelen her og tilgangsstyringen vil ligge i Power Pages. 
+Konfigurasjon av dette er utenfor scope her, men vær oppmerksom på at avhengig av hvilke data man ønsker å dele er det mulig dette ikke er finkornet nok.
+Eksempelvis kan enkelte attributter enkelt redigeres av brukeren og selv om claims kan innhentes på nytt ved ny login er det ikke en faktisk synkronisering eller sanntidsevaluering.
 
 ### Entra-tjenester relevante for deling av data/ressurser
 #### Workload Identity Federation
