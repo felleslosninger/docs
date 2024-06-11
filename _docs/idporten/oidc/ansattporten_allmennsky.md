@@ -428,33 +428,31 @@ Denne artikkelen beskriver [hvordan legge til en generisk OpenId Connect tilbyde
 
 Følgende verdier vil fungere (for Ansattportens testmiljø):
 
-| Felt           | Verdi                                                         |
-|----------------|---------------------------------------------------------------|
+| Felt           | Verdi                                                       |
+|----------------|-------------------------------------------------------------|
 | Metadata       | https://test.ansattporten.no/.well-known/openid-configuration |
-| Client ID      | Hentes fra https://sjolvbetjening.test.samarbeid.digdir.no/   |
-| Client secret  | Hentes fra https://sjolvbetjening.test.samarbeid.digdir.no/   |
-| Scope          | openid profile ansattporten:sjef                              |
-| Response type  | code                                                          |
-| Response mode  | form_post                                                     |
-| Claims mapping |                                                               |
-| User ID        | sub                                                           |
-| Display name        | name                                                          |
+| Client ID      | Hentes fra https://sjolvbetjening.test.samarbeid.digdir.no/ |
+| Client secret  | Hentes fra https://sjolvbetjening.test.samarbeid.digdir.no/ |
+| Scope          | openid profile ansattporten:sjef                            |
+| Response type  | code                                                        |
+| Response mode  | form_post                                                   |
+| Claims mapping |                                                             |
+| User ID        | sub                                                         |
+| Display name        | name                                                        |
 
-Hvis du logger inn basert på denne vil du få et token utsted fra Azure AD B2C med claims tilhørende B2C. Selve tokenet fra Ansattporten vil være i et claim kalt "idp_access_token" med unntak av de claims en har mulighet til å mappe i grensesnittet. Det er her ikke mulig å gjøre mer avanserte ting direkte basert på claims (i integrasjoner som er forhåndsdefinert som eksempelvis Power Pages), men hvis du har kontroll på koden kan du hente ut token og prosessere på "vanlig" måte.
+Hvis du logger inn basert på denne vil du få et token utsted fra Azure AD B2C med claims tilhørende B2C. Selve tokenet fra Ansattporten vil være i et claim kalt `idp_access_token` med unntak av de claims en har mulighet til å mappe i grensesnittet. Det er her ikke mulig å gjøre mer avanserte ting direkte basert på claims (i integrasjoner som er forhåndsdefinert som eksempelvis Power Pages), men hvis du har kontroll på koden kan du hente ut token og prosessere på "vanlig" måte.
 
 Den andre måten å konfigure Ansattporten som tilbyder i Azure AD B2C er ved å benytte nevnte "Custom policies". Dette er en litt mer omstendelig prosedyre basert på at man produserer XML-filer som man laster opp til B2C-instansen sin. (Kan også gjøres fra Azure DevOps/GitHub for integrasjon med CI/CD-prosessene en har.)
 
-Beskrivelse av custom policies:
-https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview
-
-Hvordan konfigurere OpenID Connect tilbydere via custom policies (samme verdier som user flows):
-https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-generic-openid-connect?pivots=b2c-custom-policy
+Mer om custom policies:
+* [Beskrivelse](https://learn.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview)
+* [Hvordan konfigurere OpenID Connect tilbydere via custom policies, samme verdier som user flows](https://learn.microsoft.com/en-us/azure/active-directory-b2c/identity-provider-generic-openid-connect?pivots=b2c-custom-policy)
 
 Den generelle fordelen med å produsere disse XML-filene er at det gir muligheten for svært finkornet kontroll av innloggingsprosessen, men med ulempen at det er en viss innsats som kreves for å gjøre et fullverdig oppsett. I konteksten av Ansattporten gir dette muligheten for å tilpasse claims tilsvarende finkornet:
-- Det er mulig å mappe flere claims enn tilbudt i grensesnitt. Eksempelvis hvis vi ønsker å hente ut "pid" og legge det inn som "person_id" kan dette gjøres via en output claim:
-  OutputClaim ClaimTypeReferenceId="person_id" PartnerClaimType="pid"
-- Det er mulig å legge inn logikk i flyten og legge inn ekstra API-kall underveis. Eksempelvis gir Ansattporten et claim som sier hvilken organisasjon du representerer - hvis din applikasjon benytter interne identifikatorer som &firmaId=x i url kan det gjøres en oversettelse fra navn/generisk id til korrekt intern id.
-- Ansattporten returnerer roller som en JSON-struktur og dette krever tilpasninger for å parse. Et eksempel er beskrevet her: https://medium.com/the-new-control-plane/using-nested-json-in-a-rest-api-call-with-azure-ad-b2c-886872e7776
+- Det er mulig å mappe flere claims enn tilbudt i grensesnitt. Eksempelvis hvis vi ønsker å hente ut `pid` og legge det inn som `person_id` kan dette gjøres via en output claim:
+  `OutputClaim ClaimTypeReferenceId="person_id" PartnerClaimType="pid"`
+- Det er mulig å legge inn logikk i flyten og legge inn ekstra API-kall underveis. Eksempelvis gir Ansattporten et claim som sier hvilken organisasjon du representerer - hvis din applikasjon benytter interne identifikatorer som `&firmaId=x` i url kan det gjøres en oversettelse fra navn/generisk id til korrekt intern id.
+- Ansattporten returnerer roller som en JSON-struktur og dette krever tilpasninger for å parse. [Her er et eksempel](https://medium.com/the-new-control-plane/using-nested-json-in-a-rest-api-call-with-azure-ad-b2c-886872e7776)
 
 ### Entra External ID
 Azure AD B2C som produkt videreutvikles ikke lenger og skal på sikt fases ut til fordel for Entra External ID. Dette er et produkt som håndterer eksterne identiteter uavhengig av om det er B2C, B2B eller B2E. Det er ikke støtte for egne identity providers her ennå (må velge fra en predefinert liste) og derfor er det ikke mulig å benytte Ansattporten med dette produktet pr i dag. Hvis dette blir støttet på et senere tidspunkt ser dette ut som en mulig løsning for å logge inn i egne web-apper via Digdir.
