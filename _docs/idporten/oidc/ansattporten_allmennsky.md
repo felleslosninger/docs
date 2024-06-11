@@ -253,7 +253,7 @@ Husk at vi over allerede har begrenset workforce deltakelse på organisasjonsnum
 Her er eksemplet for å gi tilgang til alle fra en workforce pool:
 
 
-``````json
+``````
   ...
   "access": [
   ...
