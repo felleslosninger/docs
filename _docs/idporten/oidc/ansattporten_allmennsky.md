@@ -375,19 +375,16 @@ Det innebygde alternativet vil være å benytte Azure Active Directory B2C. (Kon
 
 Eksempel-verdier
 
-| Felt           | Verdi                                                       |
-|----------------|-------------------------------------------------------------|
-| Tillatelse       | https://contoso.b2clogin.com/66274fff-e123-4c61-a246-f16926b3ffa7/B2C_1_AnsattSuSi/v2.0/ |
-| Klient ID       | b36a4c29-50bb-4986-b9fe-642a3e4f322d |
-| URL-adresse for omdirigering       | https://site-a8b8c.powerappsportals.com/signin-aad-b2c_1 | 
-| ID for standardpolicy | B2C_1_AnsattSuSi| 
+| Felt                         | Verdi                                                                                     | Beskrivelse                                                                                                                       |
+|------------------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Tillatelse                   | `https://contoso.b2clogin.com/66274fff-e123-4c61-a246-f16926b3ffa7/B2C_1_AnsattSuSi/v2.0/`| Url for metadata i formatet `https://{b2c-tenant-name}.b2clogin.com/{b2c-tenant-id}/{b2c-policy-name}` og hentes fra Azure AD B2C |
+| Klient ID                    | `b36a4c29-50bb-4986-b9fe-642a3e4f322d`                                                    | App registration fra Azure AD B2C                                                                                                 |
+| URL-adresse for omdirigering | `https://site-a8b8c.powerappsportals.com/signin-aad-b2c_1`                                | Denne vil genereres av Power Pages og må registreres i Azure AD B2C                                                               | 
+| ID for standardpolicy        | `B2C_1_AnsattSuSi`                                                                        | Navnet på user flow/custom policy i Azure AD B2C                                                                                  |
 
-* _Tillatelse_ er url for metadata i formatet https://{b2c-tenant-name}.b2clogin.com/{b2c-tenant-id}/{b2c-policy-name} og hentes fra Azure AD B2C.
-* Klient-ID er app registration fra Azure AD B2C.
-* URL-adresse for omdirigering vil genereres av Power Pages og må registreres i Azure AD B2C.
-* ID for standardpolicy:  navnet på user flow/custom policy i Azure AD B2C.
-* 
-Standardverdiene som hentes ut er epost, fornavn og etternavn, men det er også mulig å hente ut ekstra verdier fra token (fra B2C):
+
+Standardverdiene som hentes ut er epost, fornavn og etternavn, men det er også mulig å hente ut ekstra verdier fra token (fra B2C)
+
 ![Ekstra verdier fra token](/images/ansattporten/azure/PP_IdP_03.png)
 
 Attributtene er på kontakt-objektet i Power Pages og verdien er `claim` i JWT. (Power Pages tillater også å lage egendefinerte attributter hvis man har de behovene.) Ansattporten returnerer ikke epost så hvis man ikke implementerer logikk i Azure AD B2C for dette betyr det at bruker blir spurt om epost-addresse i Power Pages etter innlogging.
