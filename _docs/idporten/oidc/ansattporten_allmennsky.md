@@ -14,12 +14,12 @@ roller i Altinn.
 
 Se under for status og oppsett hos den aktuelle skyleverandøren. 
 
-| Platform                                                                                                     | Status     |
-|--------------------------------------------------------------------------------------------------------------|------------|
-| [Google Cloud Platform]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-google-cloud-platform) | Ok         |
-| [Azure]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-azure)                                 | Ikke ok    |
-| [Databricks/Azure]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#databricks)                   | Ikke ok    |
-| [AWS]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-aws)                                     | Ikke testet |
+| Platform                                                                                                     | Status juni20204                                                                                                    |
+|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
+| [Google Cloud Platform]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-google-cloud-platform) | Støttet med [enkelte produktbegrensninger](https://cloud.google.com/iam/docs/federated-identity-supported-services) |
+| [Azure]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-azure)                                 | Ikke støttet                                                                                                        |
+| [Databricks/Azure]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#databricks)                   | Ikke støttet                                                                                                        |
+| [AWS]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-aws)                                     | Ikke testet                                                                                                         |
 
 PT er ikke valg av organisasjon du ønsker å representer med i flyten hos noen av skyleverandørene, men dette ønsker vi 
 å få på plass så snart som mulig. Dette forutsetter endringer i Ansattporten for å at leverandører som ikke støtter
