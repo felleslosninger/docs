@@ -147,6 +147,24 @@ Dette kan bety at det gjenbrukes en JTI, slik at jwt-grantet ikke har en unik id
 
 **Løsning:** Generer ny JWT med ny ID. Sjekk at det genereres ny JTI for hver kjøring.
 
+#### MP-301: Unknown authorization details type
+
+Dette betyr at det gjøres en RAR request der det etterspørres en authorization details type som ikke er støttet.
+
+**Løsning:** Sjekk at det etterspørres en støttet authorization details type - sjekk oauth metadata for støttede typer.
+
+#### MP-302: Unknown fields in the authorization details
+
+Dette betyr at det gjøres en RAR request der det er inkludert ukjente felter i authorization details.
+
+**Løsning:** Sjekk at det ikke er med ukjente felt i authorization details.
+
+#### MP-303: Invalid authorization details values
+
+Dette betyr at en eller flere av veriene i authorization details i requesten ikke validerer.
+
+**Løsning:** Sjekk at alle feltene i request har gyldige verdier. Det vil vanligvis stå i feilmeldingen hvilken verdi som er ugyldig
+
 #### Issue time is after now
 
 Det er for stor tidsforskjell mellom serverklokken vår og deres.
@@ -155,13 +173,13 @@ Det er for stor tidsforskjell mellom serverklokken vår og deres.
 
 ### Forbidden
 
-#### MP-300: Consumer has not been granted access to the scope <scope>
+#### MP-250: Consumer has not been granted access to the scope <scope>
 
 Konsumenten har ikke tilgang til det scopet som det blir spurt om tilgang til.
 
 **Løsning:** Konsumenten må kontakte API-tilbyder for å få tilgang til scope. Eventuelt bytt til et scope som konsumenten har tilgang til.
 
-#### MP-301: Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
+#### MP-251: Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
 
 Konsumenten har ikke delegert rettigheten videre til leverandør i Altinn. Eventuelt er det delegert feil rettighet.
 
