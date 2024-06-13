@@ -31,4 +31,3 @@ postkasseleverandørene som støtter de ulike.
 | --- | --- | --- | --- |
 | [Lenke utenfor brev](sdp_lenke.html) | `application/vnd.difi.dpi.lenke+xml`       | Ja       | Ja     |
 | [Bevis](sdp_bevis.html) | `application/vnd.difi.dpi.bevis+xml`       | Ja       | Ja     |
-| [Arrangement](sdp_arrangement.html)  | `application/vnd.difi.dpi.arrangement+xml` | Ja       | Ja     |
