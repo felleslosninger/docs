@@ -46,12 +46,12 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |-|-|
 |PROD|https://saml2.idporten.no/idp6|saml2.idporten.no|
 |~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~|
-|TEST|https://saml2.test.idporten.no/idp5~|saml2.test.idporten.no|
+|TEST|https://saml2.test.idporten.no/idp5|saml2.test.idporten.no|
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~|~~idporten-ver2.difi.no~~|
 
 ### ID-porten sine metadata
 
-I en overgangsperiode kan "gammel" metadata for produksjon (v5) og VER (v4) benyttes
+
 
 ### Metadata
 
