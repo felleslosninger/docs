@@ -236,3 +236,28 @@ java.io.IOException: Invalid location size: 11:4218153, size: 91
         at org.apache.activemq.store.kahadb.disk.journal.DataFileAccessor.readRecord(DataFileAccessor.java:88)
         at org.apache.activemq.store.kahadb.disk.journal.Journal.read(Journal.java:936)
 ```
+
+## DPI
+
+DPI meldingar blir sendt gjennom fire hjørners modellen:
+
+Avsendar (HJørne 1): Dette er den offentlege myndigheita eller private verksemda som ønskjer å sende ei digital melding til ein innbyggjar.
+Avsendaren brukar ein avsendarapplikasjon eller ei integrert løysning for å generere og sende meldinga til DPI. 
+
+Meldingsformidlar (HJørne 2): Meldingsformidlaren er ein tenestetilbydar som handterer sjølve formidlinga av meldingar mellom avsendar og mottakar. Infrastrukturleverandør som handterer trygg og standardisert transport av meldingar. Meldingsformidlaren sørgjer for at meldinga vert sendt på ein trygg måte og at den vert ruted til riktig digital postkasse.
+
+Digital Postkasseleverandør (Hjørne 3): Dette er leverandørane som tilbyr dei digitale postkassene der innbyggjarane kan motta og lese meldingar. Døme på digitale postkasseleverandørar er Digipost og e-boks. Desse leverandørane mottar meldingar frå meldingsformidlaren og lagrar dei i innbyggjaren sin postkasse. Dei sender òg ut varsel til innbyggjarane når ny post er mottatt.
+
+Mottakar (Hjørne 4): Mottakaren er innbyggjaren som har oppretta ei digital postkasse og valt ein postkasseleverandør. Innbyggjaren mottar varsel om ny post via e-post eller SMS, loggar inn i den digitale postkassa med elektronisk ID, og kan lese og administrere meldingar der.
+
+
+### Unwrapping message failed: java.lang.illegalStateException: Verifying JWT failed!
+
+Denne feilen kan forekomme når ein ikkje har satt propertien:
+difi.move.dpi.receipt-type=xmlsoap
+og eller ein manglar brannmur åpning mot buypass:  
+[Prod miljøet](https://docs.digdir.no/docs/eFormidling/Miljo/produksjon)  
+[QA miljøet](https://docs.digdir.no/docs/eFormidling/Miljo/qa) 
+
+ 
+
