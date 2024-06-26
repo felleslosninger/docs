@@ -174,6 +174,14 @@ gcloud storage buckets add-iam-policy-binding gs://$BUCKET --member=serviceAccou
 
 ```
 
+### Enable IAM Service Account Credentials API
+
+For at konsumenter skal kunne bruke impersonation, må IAM Service Account Credentials API enables for prosjektet
+
+```
+echo "https://console.developers.google.com/apis/api/iamcredentials.googleapis.com/overview?project=${PROJNUM}"
+```
+
 ## For deg som skal konsumere fra GCP
 
 ### Oppsett
@@ -194,29 +202,35 @@ export SAEMAIL="<service account email>"
 export WORKLOAD_POOL_ID="<pool id>"
 export PROVIDER_ID="<provider id>"
 
-export PROVIDER_FULL_IDENTIFIER=projects/${PROJNUM}/locations/global/workloadIdentityPools/$WORKLOAD_POOL_ID/providers/${PROVIDER_ID}
+export PROVIDER_FULL_IDENTIFIER=projects/${PROJNUM}/locations/global/workloadIdentityPools/${WORKLOAD_POOL_ID}/providers/${PROVIDER_ID}
 
-export MASKINPORTEN_TOKEN_FILE=tmp_maskinporten_token.txt
-gcloud iam workload-identity-pools create-cred-config $PROVIDER_FULL_IDENTIFIER --service-account=$SAEMAIL --credential-source-file=$MASKINPORTEN_TOKEN_FILE --output-file=credentials.json
+export MASKINPORTEN_TOKEN_FILE=token.json
+gcloud iam workload-identity-pools create-cred-config $PROVIDER_FULL_IDENTIFIER --service-account=$SAEMAIL --credential-source-type=json --credential-source-field-name=access_token --credential-source-file=$MASKINPORTEN_TOKEN_FILE --output-file=credentials.json
 ```
 
-Nå vil credentials json se ut som eksempelt her
+Nå vil credentials json se ut som eksempelet her
 
 ```json
 {
   "type": "external_account",
-  "audience": "//iam.googleapis.com/projects/<project number>/locations/global/workloadIdentityPools/<pool id>/providers/<provider id>",
+  "audience": "//iam.googleapis.com/projects/***/locations/global/workloadIdentityPools/***/providers/***",
   "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
   "token_url": "https://sts.googleapis.com/v1/token",
   "credential_source": {
-    "file": "tmp_maskinporten_token.txt"
+    "file": "token.json",
+    "format": {
+      "type": "json",
+      "subject_token_field_name": "access_token"
+    }
   },
-  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/<service account email>:generateAccessToken"
+  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/***@***.iam.gserviceaccount.com:generateAccessToken"
 }
 ```
 
-Nå må fila `MASKINPORTEN_TOKEN_FILE` inneholde kun et gyldig Maskinporten-token. Dette kan du se eksempler på i
+Nå må fila `MASKINPORTEN_TOKEN_FILE` inneholde kun json-responsen fra Maskinporten med selve tokenet i `access_token`. Dette kan du se eksempler på i
 [disse kode-eksemplene]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#kode-eksempler-for-maskinporten).
+
+Dersom du har en annen tekstfil med kun accesstoken i kan du [endre parameterne](https://cloud.google.com/sdk/gcloud/reference/iam/workload-identity-pools/create-cred-config) til `create-cred-config`
 
 Pålogging med gcloud vil da se ut som følger
 
@@ -250,7 +264,7 @@ og forventer at fila token.json finnes og inneholder Maskinporten-token i atribu
 Kjør deretter og velkommen!
 🎉
 ```bash
-export BUCKET="skyporten-public-demo"
+export BUCKET="ent-skyporten-demo"
 gcloud auth login --cred-file=credentials.json
 gcloud storage ls gs://$BUCKET
 gcloud storage cp gs://$BUCKET/velkommen.txt velkommen_local.txt
