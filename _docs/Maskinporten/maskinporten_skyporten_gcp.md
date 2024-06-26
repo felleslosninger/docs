@@ -208,7 +208,7 @@ export MASKINPORTEN_TOKEN_FILE=token.json
 gcloud iam workload-identity-pools create-cred-config $PROVIDER_FULL_IDENTIFIER --service-account=$SAEMAIL --credential-source-type=json --credential-source-field-name=access_token --credential-source-file=$MASKINPORTEN_TOKEN_FILE --output-file=credentials.json
 ```
 
-Nå vil credentials json se ut som eksempelt her
+Nå vil credentials json se ut som eksempelet her
 
 ```json
 {
@@ -264,7 +264,7 @@ og forventer at fila token.json finnes og inneholder Maskinporten-token i atribu
 Kjør deretter og velkommen!
 🎉
 ```bash
-export BUCKET="skyporten-public-demo"
+export BUCKET="ent-skyporten-demo"
 gcloud auth login --cred-file=credentials.json
 gcloud storage ls gs://$BUCKET
 gcloud storage cp gs://$BUCKET/velkommen.txt velkommen_local.txt
