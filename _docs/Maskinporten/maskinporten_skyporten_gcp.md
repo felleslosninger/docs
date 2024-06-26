@@ -194,7 +194,7 @@ export SAEMAIL="<service account email>"
 export WORKLOAD_POOL_ID="<pool id>"
 export PROVIDER_ID="<provider id>"
 
-export PROVIDER_FULL_IDENTIFIER=projects/${PROJNUM}/locations/global/workloadIdentityPools/$WORKLOAD_POOL_ID/providers/${PROVIDER_ID}
+export PROVIDER_FULL_IDENTIFIER=projects/${PROJNUM}/locations/global/workloadIdentityPools/${WORKLOAD_POOL_ID}/providers/${PROVIDER_ID}
 
 export MASKINPORTEN_TOKEN_FILE=tmp_maskinporten_token.txt
 gcloud iam workload-identity-pools create-cred-config $PROVIDER_FULL_IDENTIFIER --service-account=$SAEMAIL --credential-source-file=$MASKINPORTEN_TOKEN_FILE --output-file=credentials.json
