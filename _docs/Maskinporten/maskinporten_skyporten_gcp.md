@@ -174,6 +174,14 @@ gcloud storage buckets add-iam-policy-binding gs://$BUCKET --member=serviceAccou
 
 ```
 
+### Enable IAM Service Account Credentials API
+
+For at konsumenter skal kunne bruke impersonation, må IAM Service Account Credentials API enables for prosjektet
+
+```
+echo "https://console.developers.google.com/apis/api/iamcredentials.googleapis.com/overview?project=${PROJNUM}"
+```
+
 ## For deg som skal konsumere fra GCP
 
 ### Oppsett
