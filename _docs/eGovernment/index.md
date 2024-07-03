@@ -15,5 +15,5 @@ offentlige virksomheter og deres leverandører i innføring og bruk av eGovernme
 
 Se gjerne Samarbeidsportalen for en helt overordnet ikke-teknisk introduksjon til eGovernment:
 
-- [Dette er eFormidling]() (ekstern lenke)  //TODO fikse lenke
-- [Ta i bruk eFormidling]() (ekstern lenke) //TODO fikse lenke
+- [Dette er eGovernment]() (ekstern lenke)  //TODO fikse lenke
+- [Ta i bruk eGovernment]() (ekstern lenke) //TODO fikse lenke
