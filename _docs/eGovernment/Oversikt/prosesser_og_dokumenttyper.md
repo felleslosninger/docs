@@ -20,6 +20,15 @@ Oversikt over dei forskjellige prosessane og tilhøyrande dokumenttypane som er 
 | Schema | cenbii-procid-ubl |
 
 ### Documents
+
+| --- | --- |
+| Document type| Identifier |
+| INNBYGGERPOST_DPI_DIGITAL_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:digital::1.0 |
+| INNBYGGERPOST_DPI_FEILKVITTERING_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:feil::1.0 |
+| INNBYGGERPOST_DPI_LEVERINGSKVITTERING_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:leveringskvittering::1.0 |
+| INNBYGGERPOST_DPI_AAPNINGSKVITTERING_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:aapningskvittering::1.0 |
+| INNBYGGERPOST_DPI_VARSLINGFEILETKVITTERING_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:xsd::innbyggerpost##urn:fdc:digdir.no:2020:innbyggerpost:schema:varslingfeiletkvittering::1.0 |
+
 - INNBYGGERPOST_DPI_DIGITAL_1_0
 - INNBYGGERPOST_DPI_FEILKVITTERING_1_0
 - INNBYGGERPOST_DPI_LEVERINGSKVITTERING_1_0
