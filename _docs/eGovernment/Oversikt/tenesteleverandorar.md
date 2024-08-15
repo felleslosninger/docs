@@ -6,4 +6,7 @@ product: eGovernment
 sidebar: eGovernment_sidebar
 ---
 
-Oversikt over tenesteleverandørar som leverer tenester over eGovernmentdomenet, samt kva prossesar og dokumenttyoar dei tilbyr.
+Oversikt over dei ulike tenesteleverandørane, samt kva prossesar og dokumenttypar dei tilbyr.
+
+
+//TODO legge inn TietoEvry og KS?
