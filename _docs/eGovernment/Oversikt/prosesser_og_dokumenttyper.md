@@ -62,6 +62,13 @@ Oversikt over dei forskjellige prosessane og tilhøyrande dokumenttypane som er 
 
 
 ### Documents
+
+| --- | --- |
+| Document type| Identifier |
+| INNBYGGERPOST_DPI_FLYTTET_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:schema:flyttet::1.0 |
+| INNBYGGERPOST_DPI_FEILKVITTERING_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:schema:feil::1.0 |
+| INNBYGGERPOST_DPI_MOTTAKSKVITTERING_1_0 | urn:fdc:digdir.no:2020:innbyggerpost:schema:mottakskvittering::1.0 |
+
 - INNBYGGERPOST_DPI_FLYTTET_1_0
 - INNBYGGERPOST_DPI_FEILKVITTERING_1_0
 - INNBYGGERPOST_DPI_LEVERINGSKVITTERING_1_0
