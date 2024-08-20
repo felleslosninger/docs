@@ -8,6 +8,16 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 20.08.2024 (3.26.0)
+
+### Tasks
+
+```
+[MOVE-4151] Ta i bruk versjon 2 av aktuelle endepunkt i Enhetsregisteret sitt REST-API
+```
+
+---
+
 ## ELMA update 24.05.2024 (3.25.0)
 
 ### Tasks
