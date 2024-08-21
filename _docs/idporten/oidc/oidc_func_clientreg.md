@@ -75,7 +75,7 @@ Alt etter bruksområde, så tilbyr vi forskjellige metoder for autentisering av 
 |-|-|-|
 | Statisk hemmelighet | client_secret_basic client_secret_post | En statisk hemmelighet (*client_secret*) som Digitaliseringsdirektoratet genererer og blir utvekslet manuelt, eller tilgjengeliggjort via selvbetjening.  Maks tillatt levetid er satt til 360 dager. Det er kundens ansvar å få rotert hemmeligheten før utløp for å sikre kontinuerlig tjenesteleveranse. |
 | Virksomhetssertifikat   | private_key_jwt | Klienten bruker et gyldig virksomhetssertifikat fra Buypass eller Commfides. Organisasjonsnummeret i sertifikatet må stemme med klient-registreringa. Kunden kan valgfritt velge å "låse" klienten til bare et spesifikt virksomhetssertifikat. |
-| Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg. Maks tillatt levetid er satt til 1 år.  For å få lov til å registere slike klienter, må kunden etablere en [egen  selvbetjeningsapplikasjon]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin) (som selv må bruke virksomhetssertifikat) |
+| Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg. Maks tillatt levetid er satt til 1 år.   |
 | Ingen   | none  | Klienten er en såkalt *public*-klient som ikke kan beskytte en hemmelighet på en tilfredstillende måte.  Gjelder single-page-applikasjon og i noen tilfeller mobil-apper  |
 
  Digitaliseringsdirektoratet anbefaler bruk av asymetriske nøkler `private_key_jwt` til klientautentisering over statiske hemmeligheter. Enten å bruke virksomhetssertifikat, da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.  Dersom organisasjonen har høy modenhet, kan også egen-genererte asymmetriske nøkler anbefales.
@@ -150,9 +150,9 @@ Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST
 
 RS256, RS384 og RS512 støttes som algoritme.
 
-Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
+Man må alltid sende inn hele nøkkeldefinisjonen (kty,alg,use,e,n).  
 
-Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
+Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetssertifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
 
 Eksempel på å legge inn en nøkkel:
 ```
@@ -164,7 +164,7 @@ POST /clients/{client_id}/jwks
       "kty": "RSA",
       "e": "AQAB",
       "use": "sig",
-      "kid": "jbi_min_noekkel",
+      "kid": "digdir_min_noekkel",
       "alg": "RS256",
       "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
     }
@@ -172,7 +172,7 @@ POST /clients/{client_id}/jwks
 }
 ```
 
-`kid` velges av kunde selv, og må være unik innenfor alle ID-porten/Maskinportens kunder.
+`kid` velges av kunde selv, og må være unik innenfor client_id. Ut over enkle alfanumeriske tegn, er spesialtegnene `._-` tillatt.
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
