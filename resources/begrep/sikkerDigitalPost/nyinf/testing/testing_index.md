@@ -17,7 +17,7 @@ Testbrukere plukker man selv gjennom Skatteetatens Tenor-base: [https://www.skat
 En kan opprette postkasse på testbrukere på to ulike måter. Enten ved å benytte forenklet postkasseregistrering via Kontaktregisteret eller ved å registrere postkasse direkte hos hver enkelt postkasseleverandør. Begge deler er fort gjort og består kun av noen få klikk pr bruker.
 
 ##### Alternativ 1: Forenklet postkasseregistrering via Kontaktregisteret
-Logg på [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) med TestID, velg postkasse og følg instruksene.
+Logg på [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) med TestID på høyt nivå, velg postkasse og følg instruksene.
 
 
 ##### Alternativ 2: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
