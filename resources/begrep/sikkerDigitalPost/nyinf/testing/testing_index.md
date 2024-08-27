@@ -18,7 +18,8 @@ En kan opprette postkasse på testbrukere på to ulike måter. Enten ved å beny
 
 ##### Alternativ 1: Forenklet postkasseregistrering via Kontaktregisteret
 Logg på [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) med TestID på høyt nivå, velg postkasse og følg instruksene.
-PS. TestID krever ikke passord eller engangskoder. Man skriver inn personidentifikator og klikker "Autentiser" for å logge inn
+
+PS. TestID krever ikke passord eller engangskoder. Man skriver inn personidentifikator og klikker "Autentiser" for å logge inn.
 
 
 ##### Alternativ 2: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
