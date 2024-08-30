@@ -14,7 +14,7 @@ Using JWT grants towards the `/token` endpoint is documented in [RFC 7523, secti
 
 ## Request
 
-The client requests a token by passing the JWT-bearer authorization grant to the /token endpoint.
+The client requests a token by passing a [JWT grant]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant) to the /token endpoint.
 
 
 | Header parameters  | Value |
