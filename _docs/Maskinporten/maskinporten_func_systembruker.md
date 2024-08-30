@@ -99,19 +99,22 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 ```
 {
-  "iss": "https://maskinporten.no",
+  "iss":         "https://maskinporten.no",
   "scope":       "some_scope",
-  "client_id":   "my_client_id",
-  "exp": 1520589928,
-  "iat": 1520589808,
-  "jti": "asdjkl5434jlkfds"
+  "client_id":   "leverandøren sin client_id",
+  "consumer":    {"authority" : "iso6523-actorid-upis",  "ID": "0192:leverandøren sitt orgno" },
   
   "authorization_details": [ {
     "type": "urn:altinn:systemuser",
-    "systemuser_id": [ "a_unique_identifier_for_the_systemuser" ], 
-    "systemuser_org": {"authority" : "iso6523-actorid-upis",  "ID": "0192:999888777" },
-    "system_id": "a_unique_identifier_for_the_system",
-  }]
+    "systemuser_id": [ "id for systembrukeren hos kunden" ], 
+    "systemuser_org": {"authority" : "iso6523-actorid-upis",  "ID": "0192:systembrukeren sitt orgno" },
+    "system_id": "id for systemet i systemregisteret",
+  }],
+
+  "exp": 1520589928,
+  "iat": 1520589808,
+  "jti": "asdjkl5434jlkfds"
+
 }
 ```
 
