@@ -23,7 +23,7 @@ PS. TestID krever ikke passord eller engangskoder. Man skriver inn personidentif
 
 
 ##### Alternativ 2: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
-- E-boks: [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat?logontype=idporten)
+- E-boks: [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat)
 - Digipost: [https://difitest.digipost.no](https://difitest.digipost.no)
 
 NB! For å opprette postkasse direkte i testmiljøet til e-Boks, krever det at testbrukeren har BankID. Ta kontakt med servicedesk@digdir.no for å få ordnet det på din testbruker.
