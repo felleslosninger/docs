@@ -17,11 +17,13 @@ Testbrukere plukker man selv gjennom Skatteetatens Tenor-base: [https://www.skat
 En kan opprette postkasse på testbrukere på to ulike måter. Enten ved å benytte forenklet postkasseregistrering via Kontaktregisteret eller ved å registrere postkasse direkte hos hver enkelt postkasseleverandør. Begge deler er fort gjort og består kun av noen få klikk pr bruker.
 
 ##### Alternativ 1: Forenklet postkasseregistrering via Kontaktregisteret
-Logg på [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) med TestID, velg postkasse og følg instruksene.
+Logg på [https://minprofil.test.kontaktregisteret.no/](https://minprofil.test.kontaktregisteret.no/) med TestID på høyt nivå, velg postkasse og følg instruksene.
+
+PS. TestID krever ikke passord eller engangskoder. Man skriver inn personidentifikator og klikker "Autentiser" for å logge inn.
 
 
 ##### Alternativ 2: Registrer testbrukeren direkte i testmiljøet til postkasseleverandørene:
-- E-boks: [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat?logontype=idporten)
+- E-boks: [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat)
 - Digipost: [https://difitest.digipost.no](https://difitest.digipost.no)
 
 NB! For å opprette postkasse direkte i testmiljøet til e-Boks, krever det at testbrukeren har BankID. Ta kontakt med servicedesk@digdir.no for å få ordnet det på din testbruker.
