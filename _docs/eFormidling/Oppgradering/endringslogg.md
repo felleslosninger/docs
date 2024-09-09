@@ -18,6 +18,26 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.27.0
+
+09.09.2024
+
+**Vedlikehald**
+
+- Støtte for nye Commfides-policyar
+
+## 2.26.0
+
+22.08.2024
+
+**Vedlikehald**
+
+- Tilpassingar i meldingsformatet for sending til Skatteetaten si utskriftsteneste 
+
+**Feilretting**
+
+- Nullverdiar i SvarInn-metadata fører til nullPointerException 
+
 ## 2.25.0
 
 08.02.2024

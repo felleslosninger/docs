@@ -11,11 +11,11 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ## Integrasjonspunktet
 
-> [**Integrasjonspunktet 2.25.0 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.25.0/integrasjonspunkt-2.25.0.jar)
+> [**Integrasjonspunktet 2.27.0 (JAR)**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.27.0/integrasjonspunkt-2.27.0.jar)
 
-> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.25.0/integrasjonspunkt-2.25.0.jar.asc)
+> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/2.27.0/integrasjonspunkt-2.27.0.jar.asc)
 
-> [**Integrasjonspunktet 2.25.0 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.25.0/images/sha256-46718376e53320e022ea4f90dabda6661cc65710d0cfffdc0c5527b0f3c729d)
+> [**Integrasjonspunktet 2.27.0 (Docker container image)** ](https://hub.docker.com/layers/digdir/integrasjonspunkt/2.27.0/images/sha256-ccb6a1fa372071615663e9c30f3b58dedd95f00a1ae257b00becaf45abfc9db0)
 
 `docker pull digdir/integrasjonspunkt:2.25.0`
 
