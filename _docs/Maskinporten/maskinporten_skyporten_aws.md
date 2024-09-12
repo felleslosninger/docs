@@ -12,10 +12,6 @@ redirect_from: /maskinporten_skyporten
 * TOC
 {:toc}
 
-## NB: DENNE INTEGRASJONEN FUNGERER IKKE
-
-Vi jobber med DigDir for å løse de utestående problemene.
-
 ## For deg som skal tilby via AWS (Amazon Web Services)
 
 ### Oppsett
@@ -34,47 +30,47 @@ Nå følger en oppskrift på hvordan du kan gjøre det. [Ta kontakt med oss]({{s
 
 #### Sett opp AWS på kommandolinjen
 
-(Sett opp AWS CLI)[https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html].
+[Sett opp AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 Du må også definere et AWS profilnavn, f.eks. 'skyportenprofil'.
 
-#### Definer konto-variabler
+#### Definer AWS og Maskinporten variabler
 
 ``````bash
+# Definer din default AWS region
+export AWS_DEFAULT_REGION=eu-west-1
+# Velg profil, må være definert i ~/.aws/config eller lignende
 export AWSPROFILENAME=skyportenprofil
 # Finn id for AWS-kontoen din og eksporter den
 export AWS_ACCOUNT=1234567890123
+# Velg s3 bøttenavn
+export BUCKET_NAME=skyporten-test-bucket
+# Maskinporten sitt test miljø
+export MASKINPORTEN_URL=test.sky.maskinporten.no
+# Må matche audience i token som genereres av maskinporten
+export AUDIENCE=https://skyporten.<mydomain>
+# Org id for organisasjonen som skal få tilgang til data
+export CONSUMER_ORGID="0192:123456789"
+# Maskinporten scopet som gir tilgang
+export MASKINPORTEN_SCOPE="entur:skyporten.demo"
+# Navn på AWS rolle som skal opprettes
+export AWS_ROLENAME="skyporten-role"
+# Navn på AWS policy som skal opprettes
+export AWS_POLICYNAME="skyporten-s3-policy"
+
 ``````
 
 #### Lag OIDC provider json
 
-``````bash
-aws iam --profile $AWSPROFILENAME create-open-id-connect-provider --cli-input-json file://create-open-id-connect-provider.json
-``````
+Slett provider hvis den allerede finnes:
 
-Den får et tomt innhold, som du kan kan fylle ut.
-
-``````json
-{
-    "Url": "",
-    "ClientIDList": [
-        ""
-    ],
-    "ThumbprintList": [
-        ""
-    ],
-    "Tags": [
-        {
-            "Key": "",
-            "Value": ""
-        }
-    ]
-}
-``````
+```
+aws iam --profile $AWSPROFILENAME delete-open-id-connect-provider --open-id-connect-provider-arn "arn:aws:iam::$AWS_ACCOUNT:oidc-provider/$MASKINPORTENURL"
+```
 
 
 #### Obtain the thumbprint of the openid-configuration
 
-We follow this guide: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc_verify-thumbprint.html
+We follow this [guide from AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc_verify-thumbprint.html)
 
 Open https://test.sky.maskinporten.no/.well-known/openid-configuration in a browser.
 
@@ -87,14 +83,14 @@ Open https://test.sky.maskinporten.no/.well-known/openid-configuration in a brow
   "grant_types_supported":["urn:ietf:params:oauth:grant-type:jwt-bearer"],
   "token_endpoint_auth_signing_alg_values_supported":["RS256","RS384","RS512"]
 }
-```
+``````
 
-Copy the jwks_uri.
+Copy the _jwks_uri_.
 
-Use the OpenSSL command line tool to run the following command. Replace keys.example.com with the domain name you obtained in Step 3.
+Use the OpenSSL command line tool to run the following command:
 
 ``````bash
-openssl s_client -servername test.sky.maskinporten.no -showcerts -connect sky.maskinporten.dev:443
+openssl s_client -servername test.sky.maskinporten.no -showcerts -connect test.sky.maskinporten.no:443
 ``````
 
 ##### Save the last certificate
@@ -120,26 +116,37 @@ Then remove the colons:
 990F4193972F2BECF12DDEDA5237F9C952F20D9E
 ```
 
+Lag en variabel:
 
-Adjust the create-open-id-connect-provider.json file like this:
+```
+export THUMBPRINT=990F4193972F2BECF12DDEDA5237F9C952F20D9E
+```
 
-``````json
-{
-    "Url": "https://test.sky.maskinporten.no",
-    "ClientIDList": [
-        "skyportenpoc"
+
+
+
+Lag json definisjon for OpenID provider:
+
+```
+echo "{
+    \"Url\": \"https://$MASKINPORTEN_URL\",
+    \"ClientIDList\": [
+        \"$AUDIENCE\"
     ],
-    "ThumbprintList": [
-        "990F4193972F2BECF12DDEDA5237F9C952F20D9E"
+    \"ThumbprintList\": [
+        \"$THUMBPRINT\"
     ],
-    "Tags": [
+    \"Tags\": [
         {
-            "Key": "skyportenpoc",
-            "Value": "created from cli"
+            \"Key\": \"skyportenpoc\",
+            \"Value\": \"created from cli\"
         }
     ]
 }
-``````
+" > ./create-open-id-connect-provider.json
+```
+
+
 
 
 #### Opprett provider
@@ -167,25 +174,35 @@ Output:
 
 Definisjon av rollen i filen `web-identity-trust-policy.json`:
 
-``````json
-{
-  "Version": "2012-10-17",
-  "Statement": [
+```
+echo "{
+  \"Version\": \"2012-10-17\",
+  \"Statement\": [
     {
-      "Effect": "Allow",
-      "Principal":{
-        "Federated": "arn:aws:iam::123456789012:oidc-provider/test.sky.maskinporten.no/"
+      \"Effect\": \"Allow\",
+      \"Principal\":{
+        \"Federated\": \"arn:aws:iam::$AWS_ACCOUNT:oidc-provider/$MASKINPORTEN_URL\"
       },
-      "Action": "sts:AssumeRoleWithWebIdentity",
-      "Condition": {
-        "StringEquals": {
-          "test.sky.maskinporten.no:scope": "entur:skyss.1"
+      \"Action\": \"sts:AssumeRoleWithWebIdentity\",
+      \"Condition\": {
+        \"StringEquals\": {
+            \"$MASKINPORTEN_URL:sub\": \"$CONSUMER_ORGID;$MASKINPORTEN_SCOPE\"
         }
       }
-    }
+  }
   ]
-}
-``````
+}" > web-identity-trust-policy.json
+```
+
+Slett gammel attachment, role og policy, om nødvendig:
+
+```
+export POLICY_ARN="arn:aws:iam::$AWS_ACCOUNT:policy/$AWS_POLICYNAME"
+
+aws --profile $AWSPROFILENAME iam detach-role-policy --policy-arn "$POLICY_ARN" --role-name $AWS_ROLENAME
+aws --profile $AWSPROFILENAME iam delete-policy --policy-arn $POLICY_ARN
+aws iam --profile $AWSPROFILENAME delete-role --role-name $AWS_ROLENAME
+```
 
 Rollen opprettes slik:
 
@@ -193,15 +210,105 @@ Rollen opprettes slik:
 aws iam --profile $AWSPROFILENAME create-role --role-name skyporten-role --assume-role-policy-document file://web-identity-trust-policy.json
 ``````
 
-Så eksporterer vi rollen:
+Expected output:
 
-``````bash
-export SKYPORTEN_ROLE_ARN="arn:aws:iam::123456789012:role/skyporten-role"
-``````
+```
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "AWS_ROLENAME",
+        "RoleId": "....",
+        "Arn": "arn:aws:iam::AWS_ACCOUNT:role/AWS_ROLENAME",
+        "CreateDate": "2024-09-10T11:54:11+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Federated": "arn:aws:iam::AWS_ACCOUNT:oidc-provider/MASKINPORTEN_URL"
+                    },
+                    "Action": "sts:AssumeRoleWithWebIdentity",
+                    "Condition": {
+                        "StringEquals": {
+                            "MASKINPORTEN_URL:sub": "CONSUMER_ORGID;MASKINPORTEN_SCOPE"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+```
 
-#### TODO Opprett en s3-bøtte med en test fil
+#### Opprett en s3-bøtte med en test fil
 
-#### TODO Gi skyporten-rollen lesetilgang til s3-bøtta
+
+```
+aws  --profile $AWSPROFILENAME s3api create-bucket --bucket $BUCKET_NAME --region $AWS_DEFAULT_REGION --create-bucket-configuration LocationConstraint=$AWS_DEFAULT_REGION
+```
+
+Push file to s3:
+
+```
+echo "foo" > foo.txt
+aws  --profile $AWSPROFILENAME s3 cp foo.txt s3://$BUCKET_NAME/foo.txt
+```
+
+#### Gi skyporten-rollen lesetilgang til s3-bøtta
+
+Define policy:
+
+```
+echo "{
+    \"Version\": \"2012-10-17\",
+    \"Statement\": [
+        {
+            \"Effect\": \"Allow\",
+            \"Action\": [
+                \"s3:GetObject\",
+                \"s3:List*\"
+            ],
+            \"Resource\": [
+                \"arn:aws:s3:::$BUCKET_NAME\", \"arn:aws:s3:::$BUCKET_NAME/*\"
+            ]
+        }
+    ]
+}" > s3-policy.json
+```
+
+Create policy:
+
+```
+aws --profile $AWSPROFILENAME iam create-policy --policy-name $AWS_POLICYNAME --policy-document file://s3-policy.json
+```
+
+Expected output:
+
+```
+{
+    "Policy": {
+        "PolicyName": "AWS_POLICYNAME",
+        "PolicyId": "....",
+        "Arn": "arn:aws:iam::AWS_ACCOUNT:policy/skyporten-s3-policy",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 0,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2024-09-11T10:45:52+00:00",
+        "UpdateDate": "2024-09-11T10:45:52+00:00"
+    }
+}
+```
+
+Attach policy to role:
+
+```
+aws --profile $AWSPROFILENAME iam attach-role-policy \
+    --policy-arn "$POLICY_ARN" \
+    --role-name $AWS_ROLENAME
+```
 
 
 ## For deg som skal konsumere fra AWS
@@ -221,7 +328,6 @@ Her foventes det å finne maskinporten-token i full json i `tmp_maskinporten_acc
 [disse kode-eksemplene]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#kode-eksempler-for-maskinporten).
 
 ``````bash
-export MASKINPORTEN_TOKEN_FILE=tmp_maskinporten_token.txt
 export MASKINPORTEN_TOKEN=`cat tmp_maskinporten_access_token.json | jq -r .access_token`
 ``````
 
@@ -229,8 +335,8 @@ The unpacked token will look something like this:
 
 ``````json
 {
-  "aud": "https://entur.org",
-  "sub": "0192:917422575",
+  "aud": "https://skyporten.<mydomain>",
+  "sub": "0192:123456789",
   "scope": "entur:foo.1",
   "iss": "test.sky.maskinporten.no",
   "client_amr": "private_key_jwt",
@@ -241,22 +347,33 @@ The unpacked token will look something like this:
   "jti": "lwlwlwlw4lwlwlwlwl4lwlw4-lw-lwl4lwl4lwl4lwl4",
   "consumer": {
     "authority": "iso6523-actorid-upis",
-    "ID": "0192:917422575"
+    "ID": "0192:123456789"
   }
 }
 ``````
 
 
-#### Login with the federated credentials and download a file, to test access
+### Authenticate with Maskinporten and copy s3 file
 
-``````bash
-aws sts --profile fem-admin assume-role-with-web-identity --duration-seconds 900 --role-session-name skyporten-role-session --role-arn "arn:aws:iam::$AWS_ACCOUNT:role/skyporten-role" --web-identity-token "$MASKINPORTEN_TOKEN"
-``````
+```
+aws sts assume-role-with-web-identity --duration-seconds 900 --role-session-name $AWS_ROLENAME-session --role-arn "arn:aws:iam::$AWS_ACCOUNT:role/$AWS_ROLENAME" --web-identity-token "$MASKINPORTEN_TOKEN" --output text > sts-token.txt
 
-Vi får fortsatt følgende feil:
+read STS_ACCESS_KEY_ID STS_SECRET_ACCESS_KEY STS_SESSION_TOKEN <<< \
+   $(more sts-token.txt | awk '/^CREDENTIALS/ { print $2, $4, $5 }')
+AWS_ACCESS_KEY_ID=$STS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$STS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN=$STS_SESSION_TOKEN aws s3 cp s3://$BUCKET_NAME/foo.txt foo-remote.txt
+```
 
-``````bash
-An error occurred (InvalidIdentityToken) when calling the AssumeRoleWithWebIdentity operation: Couldn't retrieve verification key from your identity provider, please reference AssumeRoleWithWebIdentity documentation for requirements
-``````
 
-Vi jobber med DigDir for å fikse problemet.
+### Troubleshooting / kjente problemer
+
+Her er noen kjente problemer man kan støte på:
+
+#### Incorrect token audience
+
+```
+aws sts assume-role-with-web-identity --duration-seconds 900 --role-session-name $AWS_ROLENAME-session --role-arn "arn:aws:iam::$AWS_ACCOUNT:role/$AWS_ROLENAME" --web-identity-token "$MASKINPORTEN_TOKEN"
+
+An error occurred (InvalidIdentityToken) when calling the AssumeRoleWithWebIdentity operation: Incorrect token audience
+```
+
+Dette skjer fordi audience i maskinporten token ikke stemmer med verdien i ClientIDList i open id provider json-definisjon.
