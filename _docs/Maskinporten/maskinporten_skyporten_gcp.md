@@ -191,6 +191,27 @@ Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
 
 [Her er et node.js eksempel på token-generering for skyporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#eksempel-kode-for-token-generering).
 
+Det utpakkede tokenet ser slik ut:
+
+``````json
+{
+  "aud": "https://skyporten.<mydomain>",
+  "sub": "0192:123456789;entur:skyporten.demo",
+  "scope": "entur:skyporten.demo",
+  "iss": "test.sky.maskinporten.no",
+  "client_amr": "private_key_jwt",
+  "token_type": "Bearer",
+  "exp": 1694222211,
+  "iat": 1694333311,
+  "client_id": "abcd1234-1234-abcd-abcd-12341234abcd",
+  "jti": "lwlwlwlw4lwlwlwlwl4lwlw4-lw-lwl4lwl4lwl4lwl4",
+  "consumer": {
+    "authority": "iso6523-actorid-upis",
+    "ID": "0192:123456789"
+  }
+}
+``````
+
 ### Autentisering med Maskinporten-token med gcloud
 
 Enten kan du få en `credentials.json`-fil som er output fra `glcloud iam workload-identity-pools create-cred-config` fra tilbyder,
