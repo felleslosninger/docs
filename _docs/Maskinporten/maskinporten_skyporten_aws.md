@@ -46,8 +46,8 @@ export AWS_ACCOUNT=1234567890123
 export BUCKET_NAME=skyporten-test-bucket
 # Maskinporten sitt test miljø
 export MASKINPORTEN_URL=test.sky.maskinporten.no
-# Må matche audience i token som genereres av maskinporten.no
-export AUDIENCE=https://entur.org
+# Må matche audience i token som genereres av maskinporten
+export AUDIENCE=https://skyporten.<mydomain>
 # Org id for organisasjonen som skal få tilgang til data
 export CONSUMER_ORGID="0192:123456789"
 # Maskinporten scopet som gir tilgang
@@ -335,8 +335,8 @@ The unpacked token will look something like this:
 
 ``````json
 {
-  "aud": "https://entur.org",
-  "sub": "0192:917422575",
+  "aud": "https://skyporten.<mydomain>",
+  "sub": "0192:123456789",
   "scope": "entur:foo.1",
   "iss": "test.sky.maskinporten.no",
   "client_amr": "private_key_jwt",
@@ -347,7 +347,7 @@ The unpacked token will look something like this:
   "jti": "lwlwlwlw4lwlwlwlwl4lwlw4-lw-lwl4lwl4lwl4lwl4",
   "consumer": {
     "authority": "iso6523-actorid-upis",
-    "ID": "0192:917422575"
+    "ID": "0192:123456789"
   }
 }
 ``````
