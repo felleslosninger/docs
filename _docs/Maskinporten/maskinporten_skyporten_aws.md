@@ -30,7 +30,7 @@ Nå følger en oppskrift på hvordan du kan gjøre det. [Ta kontakt med oss]({{s
 
 #### Sett opp AWS på kommandolinjen
 
-(Sett opp AWS CLI)[https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html].
+[Sett opp AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 Du må også definere et AWS profilnavn, f.eks. 'skyportenprofil'.
 
 #### Definer AWS og Maskinporten variabler
@@ -70,7 +70,7 @@ aws iam --profile $AWSPROFILENAME delete-open-id-connect-provider --open-id-conn
 
 #### Obtain the thumbprint of the openid-configuration
 
-We follow this guide: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc_verify-thumbprint.html
+We follow this [guide from AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc_verify-thumbprint.html)
 
 Open https://test.sky.maskinporten.no/.well-known/openid-configuration in a browser.
 
@@ -83,9 +83,9 @@ Open https://test.sky.maskinporten.no/.well-known/openid-configuration in a brow
   "grant_types_supported":["urn:ietf:params:oauth:grant-type:jwt-bearer"],
   "token_endpoint_auth_signing_alg_values_supported":["RS256","RS384","RS512"]
 }
-```
+``````
 
-Copy the jwks_uri.
+Copy the _jwks_uri_.
 
 Use the OpenSSL command line tool to run the following command. Replace keys.example.com with the domain name you obtained in Step 3.
 
