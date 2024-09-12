@@ -102,7 +102,7 @@ Alt ok! Tilgang med orgnr og scopes støttes, ved at skyporten legger på scope 
 
 ### AWS
 
-Under utvikling. Vi er i kontakt med AWS for å tilpasse Skyporten til å kunne integreres med AWS sine [hyllevaremekanismer](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html). Se hva vi har gjort så langt [her]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten_aws).
+Alt ok! Tilgang med orgnr og scopes støttes, ved at skyporten legger på scope på slutten av sub-feltet i tokenet. Se guide for konsument og tilbyder [her]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten_aws).
 
 ### Annet
 
