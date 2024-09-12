@@ -87,10 +87,10 @@ Open https://test.sky.maskinporten.no/.well-known/openid-configuration in a brow
 
 Copy the _jwks_uri_.
 
-Use the OpenSSL command line tool to run the following command. Replace keys.example.com with the domain name you obtained in Step 3.
+Use the OpenSSL command line tool to run the following command:
 
 ``````bash
-openssl s_client -servername test.sky.maskinporten.no -showcerts -connect sky.maskinporten.dev:443
+openssl s_client -servername test.sky.maskinporten.no -showcerts -connect test.sky.maskinporten.no:443
 ``````
 
 ##### Save the last certificate
