@@ -336,8 +336,8 @@ The unpacked token will look something like this:
 ``````json
 {
   "aud": "https://skyporten.<mydomain>",
-  "sub": "0192:123456789",
-  "scope": "entur:foo.1",
+  "sub": "0192:123456789;entur:skyporten.demo",
+  "scope": "entur:skyporten.demo",
   "iss": "test.sky.maskinporten.no",
   "client_amr": "private_key_jwt",
   "token_type": "Bearer",
