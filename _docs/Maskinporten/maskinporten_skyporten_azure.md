@@ -1,5 +1,5 @@
 ---
-title: Skyporten med Azure - Maskinporten med for deling av skyressurser
+title: Skyporten med Azure - Maskinporten for deling av skyressurser
 description:  Skyporten med Azure - Maskinporten for deling av skyressurser
 summary: 'Oppskrift for å benytte Skyporten med Azure'
 
