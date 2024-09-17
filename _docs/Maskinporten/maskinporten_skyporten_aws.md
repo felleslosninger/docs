@@ -1,5 +1,5 @@
 ---
-title: Skyporten med AWS - Maskinporten med for deling av skyressurser
+title: Skyporten med AWS - Maskinporten for deling av skyressurser
 description:  Skyporten med AWS - Maskinporten for deling av skyressurser
 summary: 'Oppskrift for å benytte Skyporten med AWS'
 

@@ -1,5 +1,5 @@
 ---
-title: Skyporten med GCP - Maskinporten med for deling av skyressurser
+title: Skyporten med GCP - Maskinporten for deling av skyressurser
 description:  Skyporten med GCP - Maskinporten for deling av skyressurser
 summary: 'Oppskrift for å benytte Skyporten med GCP'
 
