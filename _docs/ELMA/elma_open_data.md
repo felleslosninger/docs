@@ -8,7 +8,7 @@ sidebar: elma_sidebar
 redirect_from: /elma_open_data
 ---
 
-*Updated: 27.06.2023*
+*Updated: 19.09.2024*
 
 ### Important note on use
 NB! These datasets must not be used to check if a given norwegian organization is registered in PEPPOL or what documents an organization can receive. This should be done via a lookup via the SML (Service Metadata Locator).
@@ -16,24 +16,18 @@ NB! These datasets must not be used to check if a given norwegian organization i
 See section below on how to do a proper lookup.
 
 ### Datasets
-There are currently three datasets which are updated every day at approximately 06:00 CET.
 
-#### Participants
-Shows all participants and what processes they support.
+We have previously published data sets of recipients in Elma at Datahotellet (hotell.difi.no). Datahotellet will be discontinued on 1 October 2024. Elma will stop updating the datasets at 23 September 2024.
 
-#### Capabilities
-Show all participants in ELMA and their capabilities.
-Capabilities is an ELMA-specific grouping of processes, where a participant must have all of a given set of processes to be listed as having a specific capability.
-The capability-grouping in ELMA is currently not updated, and this dataset may be removed.
+We encourage everyone who uses the data set at Datahotellet to use the data set at Peppol Directory. The dataset on Peppol Directory is available as a website, API and files for download. There are some differences between the data sets at Datahotellet and the Peppol Directory:
 
-#### Document types
-Show all document types in ELMA and what processes they are connected to.
+- The data sets have different technical formats and interfaces
+- The data set on the Peppol Directory contains other recipients in addition to those registered in ELMA.
+- ELMA continuously publishes the Peppol Directory, so it is more up-to-date than the Datahotellet
 
-#### Links and documentation
-See [links to data and more information at data.norge.no](https://data.norge.no/datasets/5a5374c3-c6a7-49f8-b9cc-0a9e48c1acd7)
-
-[Documentation for the API can be found at hotell.difi.no (in norwegian)](https://hotell.difi.no/api)
-
+Read more about the [discontinuation of Datahotellet](https://hotell.difi.no/avvikling)
+ 
+Read more about [Peppol Directory](https://directory.peppol.eu/public)
 
 ### How to lookup participants in PEPPOL
 
