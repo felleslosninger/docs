@@ -50,7 +50,7 @@ For å endre kontaktinformasjon på syntetiske brukere, velg TestID som innloggi
 <br>
 
 ## KRR testbrukere med ulike attributter
-Vi har et sett med "statiske" brukere. Disse testbrukerene finner du i tabellen i neste avsnitt og er testbrukere med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR som tilbakestilles hver lørdag:
+Vi har et sett med "statiske" brukere. Disse testbrukerene finner du nå i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/) og er testbrukere med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR som tilbakestilles hver dag:
 
 - Med mobil, e-post og digital postkasse
 - Med mobil og e-post
@@ -58,35 +58,7 @@ Vi har et sett med "statiske" brukere. Disse testbrukerene finner du i tabellen 
 - Kun e-post
 - Slettet fra KRR
 - Utgått på 18mnd regel
-- Reservert med digital postkasse
-- Reservert uten digital postkasse
+
+  Merk! Postkasse må testes ved andre tester/testbrukere.
 
 
-### Syntetiske testbrukere (fra Tenor testbase)
-
-<br>
-
-|Fnr|Reservert|Status|Varslingsstatus|Mobil|Epost|Postkasse|Språk|Merknad|
-| - | - | - | - | - | - | - | - | - |
-| 11887197158 | NEI | AKTIV | KAN_IKKE_VARSLES | JA |  JA | - | - | Utgått kontaktinformasjon 18mnd regelen |
-| 30850649509 | NEI | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Utgått kontaktinformasjon 18mnd regelen |
-| 17894199350 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
-| 31855699330 | - | SLETTET | KAN_IKKE_VARSLES | - | - | - | - | Slettet fra kontakt- og reservasjonsregister |
-| 04846697271 | JA | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Mobil og e-post registrert med reservasjon |
-| 29890749036 | JA | AKTIV | KAN_IKKE_VARSLES | JA | JA | - | - | Mobil og e-post registrert med reservasjon |
-| 11822648950 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | - | Mobil og e-post registrert |
-| 06828498159 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | - | Mobil og e-post registrert |
-| 23837998492 | NEI | AKTIV | KAN_VARSLES | JA | - | - | - | Kun mobil registrert |
-| 25887098029 | NEI | AKTIV | KAN_VARSLES | JA | - | - | - | Kun mobil registrert |
-| 12869699835 | NEI | AKTIV | KAN_VARSLES | - | JA | - | - | Kun e-post registrert |
-| 18868299939 | NEI | AKTIV | KAN_VARSLES | - | JA | - | - | Kun e-post registrert |
-| 22859197810 | NEI | AKTIV | KAN_VARSLES | JA | JA | Digipost | - | Digipost |
-| 26826499361 | NEI | AKTIV | KAN_VARSLES | JA | JA | eBOKS | - | eBoks |
-| 26866595592 | JA | AKTIV | KAN_IKKE_VARSLES | - | JA | - | - | Digipost med reservasjon ola.nordmann#40NU |
-| 18886799280 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nn | Språkvalg Nynorsk |
-| 16867096934 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | nb | Språkvalg Bokmål |
-| 01814797763 | NEI | AKTIV | KAN_VARSLES | JA | JA | - | en | Språkvalg Engelsk |
-
-### Ikke-syntetiske testbrukere (=vanlig fødselsnummer)
-
-Denne listen er fjernet. Vennligst bruk syntetiske fødselsnummer.
