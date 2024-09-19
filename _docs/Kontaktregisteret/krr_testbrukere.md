@@ -12,15 +12,11 @@ redirect_from: /krr_testbrukere
 
 ## Utfasing av "vanlig" fødselsnummer
 
-Som et ledd i å bedre informasjonssikkerhet og personvern, så vil Digdir fase ut bruk av fødselsnummer som følger vanlig syntaks. Vi kommer tilbake med mer informasjon om dette, men vi ber alle om å gå over til syntetiske fødselsnummer i testing.
+Som et ledd i å bedre informasjonssikkerhet og personvern, så faser Digdir ut bruk av fødselsnummer som følger vanlig syntaks. Vi oppfordrer alle om å gå over til syntetiske fødselsnummer i testing.
 
 ## Hva mener vi med syntetisk testbruker?
 
-Syntetiske testbrukere har en personidentifikator der man har plusset på 80 på fødselsmåneden og kontrollsifferene er regnet ut i fra det.
-
-For å finne brukere med slike fødselsnummer kan du se på listen vår litt lenger nede på denne siden. Der finner du testbrukere som har gitt egenskaper i Kontakt- og reservasjonsregisteret.
-
-Om du ønsker testbrukere som også finnes i test-folkeregisteret, så kan du finne dette i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/).
+Syntetiske testbrukere har en personidentifikator der man som hovedregel har plusset på 80 på fødselsmåneden og kontrollsifferene er regnet ut i fra det.
 
 
 ## Registrer/opprett testbruker i KRR
@@ -49,7 +45,7 @@ For å endre kontaktinformasjon på syntetiske brukere, velg TestID som innloggi
 {% include note.html content=" Dersom du legger inn egen kontaktinformasjon på en testbruker, kan du risikere å motta varslinger fra virksomheter som benytter KRR i testmiljøet." %}
 <br>
 
-## KRR testbrukere med ulike attributter
+## KRR testbrukere med ulike attributter i test-Folkeregisteret.
 Vi har et sett med "statiske" brukere. Disse testbrukerene finner du nå i [Tenor testdatasøk](https://www.skatteetaten.no/skjema/testdata/) og er testbrukere med syntetiske fødselsnummer (+80 i mnd). Testbrukerene innehar følgende attributter fra KRR som tilbakestilles hver dag:
 
 - Med mobil, e-post og digital postkasse
