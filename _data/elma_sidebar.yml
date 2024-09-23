@@ -26,10 +26,10 @@ folders:
   folderitems:
 
   - title: Produksjon (smp.difi.no)
-    jurl: https://smp.difi.no/rest/resources/docs/index.html
+    jurl: https://elma-smp.no/rest/resources/docs/index.html
 
   - title: QA (test-smp.difi.no)
-    jurl: https://test-smp.difi.no/rest/resources/docs/index.html
+    jurl: https://test.elma-smp.no/rest/resources/docs/index.html
 
 - title: FAQ
   jurl: /docs/ELMA/elma_faq
