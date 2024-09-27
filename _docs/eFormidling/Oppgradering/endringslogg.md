@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.0
+
+27.09.2024
+
+**Feilretting**
+
+- For streng validering innført mot Skatteetaten si utskriftsteneste 
+
 ## 2.27.0
 
 09.09.2024
