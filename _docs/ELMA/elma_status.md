@@ -8,6 +8,26 @@ sidebar: elma_sidebar
 redirect_from: /elma_status
 ---
 
+## ELMA update 30.09.2024 (3.28.0)
+
+### Tasks
+
+```
+[MOVE-4149] Fjerning av koblingar frå ELMA til Datahotellet 
+```
+
+---
+
+## ELMA update 23.09.2024 (3.27.0)
+
+### Tasks
+
+```
+[MOVE-4177] Feilretting i Peppol Directory-synkroniseringa
+```
+
+---
+
 ## ELMA update 20.08.2024 (3.26.0)
 
 ### Tasks
