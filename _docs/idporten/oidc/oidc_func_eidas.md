@@ -29,9 +29,7 @@ Ved en eIDAS-pålogging følger det med følgende kjerne-attributter:
 * eIDAS-identifikator, unik og "as persistent as possible"
 
 Det er ikke gitt føringer om hvilken identifikator som skal brukes som eIDAS-indentifikator. Hvert medlemsland bestemmer selv.   
-
 Dette har ført til at noen land har fokusert på interoperabilitet (som Estland) og sender en identifikator som også finnes på fysiske ID-bevis eller i registre, typisk nasjonal personnummer eller pass-nummer.
-
 Andre land har fokusert på personvern (som Tyskland), og sender avledede identifikatorer.
 
 I noen av landene er det slik at eidas-identifikatoren er koblet til eID'en. Dette kan medføre at for noen land så vil brukeren få ny eIDAS-identifikator dersom vedkommende fornyer sin eID.
@@ -45,14 +43,16 @@ En vellykka gjenkjenning er avhengig av at:
 2. Utenlandsk identifikator finnes i Folkregisteret fra før (typisk registrert ved søknad om d-nummer, kilde er passet/id-bevis som ble vist ved identitetskontroll)
 3. Landet sender samme identifikator i eidas-pålogging som er registrert i pkt. 2
 
-Dersom gjenkjenning ikke var vellykka, så vil ID-porten likevel logge inn brukeren, men id_tokenet vil mangle `pid`-claimet.
+Dersom gjenkjenning ikke var vellykka, så vil ID-porten likevel logge inn brukeren, men pålogginga vil mangle norsk personidentifikator.
 
 
 
 
 ## Hvordan aktivere eIDAS-pålogging?
 
-En tjeneste aktiverer eIDAS-knappen i ID-porten sitt påloggingsvindu ved å inkludere verdien `eidas-loa-high` eller `eidas-loa-substantial` i `acr`-attributtet i påloggingsforespørselen. 
+En tjeneste aktiverer eIDAS-knappen i ID-porten sitt påloggingsvindu ved å inkludere verdien `eidas-loa-high` eller `eidas-loa-substantial` i `acr`-attributtet i påloggingsforespørselen.  
+
+Dersom kun eidas-verdien er oppgitt i acr, vil ID-porten hoppe direkte til landvelgeren. På denne måten kan tjenesten lage egen login-knapp for eidas-brukere om dette skulle være ønskelig.
 
 Per idag er ikke eIDAS-pålogging aktivert som standard, slik at dette må aktiveres per tjeneste.
 
@@ -74,10 +74,10 @@ code_challenge=TE9ih9je36hXuvSyr3hRt8srV6ttER4dyT9e9tWY8zQ
 ```
 
 
-Ved en eIDAS-pålogging vil utlevert tokens være litt ulikt ordinære tokens:
+Ved en eIDAS-pålogging vil utleverte tokens være litt ulike ordinære tokens:
 
 - `acr` blir satt til `eIDAS`
-- De 4 kjerneattributtene i eIDAS vil inkluderes, prefiket med "eidas"
+- De 4 kjerneattributtene i eIDAS vil inkluderes, prefikset med "eidas"
 - Norsk personidentifikator `pid` kun vil bli inkludert dersom gjenkjenning mot Folkeregisteret var vellykket
 
 #### Eksempel på respons:
@@ -126,7 +126,7 @@ Kjerneattributtene prefixes av ID-porten med "eidas_".  Det er 4 obligatoriske a
 
 Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 -  `xx` er 2-bokstavkode for landet der brukeren har sin elektroniske ID (Merk at dette ikke er garantert å også være brukeren sitt hjemland/statsborgerskap) 
-- `yyyyy` er en variable-lengde identifikator i det aktuelle landet.
+- `yyyyy` er en variabel-lengde identifikator i det aktuelle landet.
 
 
 ## Utenlandske testbrukere
