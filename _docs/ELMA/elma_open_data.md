@@ -40,6 +40,6 @@ It is also possible to lookup organizations via PEPPOL Directory. It is currentl
 [Recipe for creating the URL to lookup an organization can be found at helger.com](https://peppol.helger.com/public/menuitem-docs-smp-sml-interplay)  
 Under the section “Create participant in SMP and SML” at the bullet point “A new DNS entry in the form of …”
 
-See [official PEPPOL Documentation on SML and SMP for more details](https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/)
+See [official PEPPOL Documentation on SML and SMP for more details](https://peppol.org/documentation/technical-documentation/edelivery-documentation/)
 
 See the [vefa-peppol lookup library](https://github.com/OxalisCommunity/vefa-peppol/tree/master/peppol-lookup) for a Java implementation.
