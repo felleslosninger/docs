@@ -67,6 +67,10 @@ folders:
       jurl: /docs/eFormidling/Utvikling/Meldingstjenester/
     - title: Dokumenttyper
       jurl: /docs/eFormidling/Utvikling/Dokumenttyper/
+    - title: På vegne av
+      jurl: /docs/eFormidling/Utvikling/pa_vegne_av
+    - title: Kanal
+      jurl: /docs/eFormidling/Utvikling/kanal
     - title: Integrasjonspunktets API (eFormidling 2)
       jurl: /docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api
     - title: Integrasjonspunktets API (BEST/EDU) (fases ut)
