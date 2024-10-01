@@ -110,6 +110,9 @@ related_resources_list:
 - title: Release-logg (release.digdir.no)
   jurl: https://release.digdir.no
 
-- title: Live-trafikk
-  jurl: https://digdir.grafana.net/public-dashboards/ca886cb1879d422bb876ca6a2e9aca17?orgId=1&refresh=1m
+- title: Live-trafikk (prod)
+  jurl: https://digdir.grafana.net/public-dashboards/ca886cb1879d422bb876ca6a2e9aca17?orgId=1&refresh=1m&from=now-1h&to=now
+
+- title: Live-trafikk (test)
+https://digdir.grafana.net/public-dashboards/97290eb356824146aaed52df73e67695?from=now-1h&to=now&refresh=1m
 
