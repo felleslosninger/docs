@@ -40,7 +40,7 @@ ID-porten vil normalt forsøke å finne norsk fødsels/d-nummer på den europeis
 
 En vellykka gjenkjenning er avhengig av at:
 1. Personen finnes i Folkeregisteret fra før
-2. Utenlandsk identifikator finnes i Folkregisteret fra før (typisk registrert ved søknad om d-nummer, kilde er passet/id-bevis som ble vist ved identitetskontroll)
+2. Utenlandsk identifikator finnes i Folkeregisteret fra før (typisk registrert ved søknad om d-nummer, kilde er passet/id-bevis som ble vist ved identitetskontroll)
 3. Landet sender samme identifikator i eidas-pålogging som er registrert i pkt. 2
 
 Dersom gjenkjenning ikke var vellykka, så vil ID-porten likevel logge inn brukeren, men pålogginga vil mangle norsk personidentifikator.
