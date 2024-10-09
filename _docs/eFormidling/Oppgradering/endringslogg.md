@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.1
+
+09.10.2024
+
+**Feilretting**
+
+- Ikkje mogleg å senda utskriftsmelding utan land-informasjon
+
 ## 2.28.0
 
 27.09.2024
