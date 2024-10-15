@@ -99,8 +99,8 @@ folders:
   folderitems:
     - title: Produksjon
       jurl: /docs/eFormidling/Miljo/produksjon
-    - title: QA
-      jurl: /docs/eFormidling/Miljo/qa
+    - title: Test
+      jurl: /docs/eFormidling/Miljo/test
 
 ###########################
 
