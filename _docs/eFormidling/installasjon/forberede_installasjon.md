@@ -136,7 +136,7 @@ bruker.
 Se beskrivelser inkludert IP-adresser for tjenestene integrasjonspunktet bruker:
 
 - [eFormidling Produksjon](../Miljo/produksjon)
-- [eFormidling QA](../Miljo/qa)
+- [eFormidling Test](../Miljo/test)
 
 En må også tillate inngående trafikk til integrasjonspunktet fra tjenesten(e) som skal benytte integrasjonspunktet.
 Integrasjonspunktets grensesnitt er som standard tilgjengelig på port `9093`, men kan settes til noe annet dersom

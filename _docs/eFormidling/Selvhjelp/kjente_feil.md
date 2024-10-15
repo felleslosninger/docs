@@ -257,7 +257,7 @@ Denne feilen kan forekomme når ein ikkje har satt propertien:
 difi.move.dpi.receipt-type=xmlsoap
 og eller ein manglar brannmur åpning mot buypass:  
 [Prod miljøet](https://docs.digdir.no/docs/eFormidling/Miljo/produksjon)  
-[QA miljøet](https://docs.digdir.no/docs/eFormidling/Miljo/qa) 
+[Test miljøet](https://docs.digdir.no/docs/eFormidling/Miljo/test) 
 
  
 

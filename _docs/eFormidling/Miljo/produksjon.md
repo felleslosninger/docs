@@ -12,16 +12,16 @@ For å bruke eFormidlings produksjonsmiljø kreves et virksomhetssertifikat.
 
 Integrasjonspunktet benytter produksjonsmiljøet som standard:
 
-- [Konfigurasjon av miljø (produksjon eller QA)](../installasjon/installasjon#miljø-produksjon-eller-qa)
+- [Konfigurasjon av miljø (produksjon eller test)](../installasjon/installasjon#miljø-produksjon-eller-test)
 
 Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunne nås:
 
 | DNS-navn                            | IPv4-adresse                                        | Port | Tjeneste | Beskrivelse                                                                              | Inn-/utgående trafikk |
 |-------------------------------------|-----------------------------------------------------|------|----------|------------------------------------------------------------------------------------------|-----------------------|
-| meldingsutveksling.difi.no          | 51.144.60.163                                       | 443  | Alle     | eFormidling, diverse tjenester, adresseoppslag m.m.                                      | utgående              |
-| eformidling.no (ny plattform)                      | 139.105.36.173                                      | 443  | Alle     | eFormidling, diverse tjenester, adresseoppslag m.m.                                      | utgående              |
-| logs.eformidling.no (ny plattform)                      | 139.105.36.177                                     | 443  | Alle     | eFormidling, logging                                     | utgående              |
-| stream-meldingsutveksling.difi.no   | 40.74.39.254                                        | 443  | Alle     | eFormidling, logging                                                                     | utgående              |
+| meldingsutveksling.difi.no (fases ut)         | 139.105.36.173                                       | 443  | Alle     | eFormidling, diverse tjenester, adresseoppslag m.m.                                      | utgående              |
+| eformidling.no                      | 139.105.36.173                                      | 443  | Alle     | eFormidling, diverse tjenester, adresseoppslag m.m.                                      | utgående              |
+| logs.eformidling.no                       | 139.105.36.177                                     | 443  | Alle     | eFormidling, logging                                     | utgående              |
+| stream-meldingsutveksling.difi.no (fases ut)  | 139.105.36.177                                        | 443  | Alle     | eFormidling, logging                                                                     | utgående              |
 | maskinporten.no                     | 139.105.36.164                                      | 443  | Alle     | Maskinporten                                                                             | utgående              |
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 <br/> 20.82.244.139 | 443  | DPE      | Azure Service Bus, HTTP/REST API                                                         | utgående              |
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 <br/> 20.82.244.139 | 5671 | DPE      | Azure Service Bus, AMQP med TLS                                                          | utgående              |

@@ -130,17 +130,17 @@ difi.move.feature.enableDPE=false
 
 ### Valgfri konfigurasjon
 
-#### Miljø (produksjon eller QA)
+#### Miljø (produksjon eller test)
 *Valgfritt*
 
 Tilgjengelige miljø:
 
 - [eForidling Produksjon](../Miljo/produksjon)
-- [eFormidling QA](../Miljo/qa)
+- [eFormidling Test](../Miljo/test)
 
 | Egenskap               | Beskrivelse                                                                                                                                                  | Standardverdi |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| spring.profiles.active | Produksjon (`production`) eller QA (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
+| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
 
 Eksempel:
 

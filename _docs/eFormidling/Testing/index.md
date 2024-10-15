@@ -29,7 +29,7 @@ av hvordan en kan ta i bruk mock-miljøet:
 
 - [efm-mocks](https://github.com/felleslosninger/efm-mocks) (ekstern lenke)
 
-### Teste i eFormidlings testmiljø (QA)
+### Teste i eFormidlings testmiljø
 
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
 
