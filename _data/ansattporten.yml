@@ -1,0 +1,63 @@
+sidebarTitle: Ansattporten
+
+
+folders:
+- title: Om Ansattporten
+  folderitems:
+
+      - title: Hva er Ansattporten ?
+        jurl: /docs/ansattporten/ansattporten_om.html
+
+- title: Bruksområder
+  folderitems:
+
+      - title: Vanlig innlogging 
+        jurl: /docs/ansattporten/ansattporten_guide.html
+
+      - title: Innlogging på vegne av virksomhet
+        jurl: /docs/ansattporten/ansattporten_representasjon.html
+
+      - title: Datadeling på vegne av virksomhet
+        jurl: /docs/ansattporten/ansattporten_datadeling.html
+
+      - title: Ansattporten - skyinnlogging
+        jurl: /docs/ansattporten/ansattporten_allmennsky.html
+
+
+- title: Grensesnitt og funksjonalitet
+  folderitems:
+
+      - title: "Generelt om protokollen"
+        jurl: /docs/ansattporten/ansattporten_protocol.html
+
+      - title: "RAR og autorative kilder"
+        jurl: /docs/ansattporten/ansattporten_rar.html
+
+      - title: Metadata
+        jurl: /docs/ansattporten/ansattporten_wellknown.html
+
+      - title: IP-adresser
+        jurl: /docs/general/IP.html
+
+- title: Administrasjon
+  folderitems:
+
+      - title: Administrasjon av Ansattporten
+        jurl: /docs/ansattporten/ansattporten_admin.html
+
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Github
+  jurl: https://github.com/digdir
+
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+
