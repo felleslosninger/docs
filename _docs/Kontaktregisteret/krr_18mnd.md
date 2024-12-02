@@ -1,5 +1,5 @@
 ---
-title: 18-månedersregel - Krav til fersk kontaktinfo
+title: Krav til fersk kontaktinfo
 description: 
 
 sidebar: krr_sidebar
