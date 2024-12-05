@@ -32,21 +32,13 @@ folders:
       - title: Brukerstyrt datadeling
         jurl: /docs/idporten/oidc/oidc_auth_oauth2.html
 
-      - title: Ansattporten
-        jurl: /docs/idporten/oidc/ansattporten_guide.html
-
-      - title: Ansattporten - skyinnlogging
-        jurl: /docs/idporten/oidc/ansattporten_allmennsky.html
-
-      - title: ID-porten utland
-        jurl: /docs/idporten/oidc/oidc_func_idporten-utland.html
+      - title: Fullmaktspålogging
+        jurl: /docs/idporten/oidc/oidc_auth_fullmakt.html
 
 
 - title: Grensesnittsdefinisjon
   folderitems:
 
-      - title: "Endringer i 2023"
-        jurl: /docs/idporten/oidc/oidc_protocol_nye_idporten.html
       - title: "/authorize"
         jurl: /docs/idporten/oidc/oidc_protocol_authorize.html
       - title: "/par"
@@ -69,6 +61,8 @@ folders:
         jurl: /docs/idporten/oidc/oidc_protocol_jwtgrant.html
       - title: "API scopes"
         jurl: /docs/idporten/oidc/oidc_protocol_scope.html
+      - title: "RAR"
+        jurl: /docs/idporten/oidc/oidc_protocol_rar.html
       - title: Systemarkitektur
         jurl: /docs/idporten/oidc/oidc_arch.html
 
