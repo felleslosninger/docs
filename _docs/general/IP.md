@@ -20,4 +20,4 @@ Denne siden lister IP-adresser som blir brukt av fellesløsningene, i ulike milj
 | ELMA (elma-smp.no) | 139.105.36.174 | 139.105.36.142 |
 | eFormidling (eformidling.no) | [Produksjon](https://docs.digdir.no/docs/eFormidling/Miljo/produksjon) | [Test](https://docs.digdir.no/docs/eFormidling/Miljo/qa) |
 
-< IPV6-adresser for Ansattporten, ID-porten og Maskinporten er gyldige f.o.m 16.12.2024, kl 08.30
+> IPV6-adresser for Ansattporten, ID-porten og Maskinporten er gyldige f.o.m 16.12.2024, kl 08.30
