@@ -21,4 +21,4 @@ Denne siden lister IP-adresser som blir brukt av fellesløsningene, i ulike milj
 | eFormidling (eformidling.no) | [Produksjon](https://docs.digdir.no/docs/eFormidling/Miljo/produksjon) | [Test](https://docs.digdir.no/docs/eFormidling/Miljo/qa) |
 | eIDAS (eidasnode.no - test.eidasnode.no) |IPv4: 139.105.36.176 <br> IPv6: 2a02:9cc::20a |IPv4: 139.105.36.144 <br> IPv6: 2a02:9cc::30b |
 
-> IPV6-adresser for Ansattporten, ID-porten og Maskinporten er gyldige f.o.m 16.12.2024, kl 08.30
+> IPV6-adresser for Ansattporten, ID-porten og Maskinporten produksjon er gyldige f.o.m 16.12.2024, kl 08.30
