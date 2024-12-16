@@ -35,9 +35,9 @@ For eksplisitte samtykker som skal vare "lenge" ("jeg samtykker til at Banken mi
    subgraph Kunde
       ny[Tjeneste]
    end
-   Sluttbruker ---|1. Vil bruke|ny
+   Sluttbruker ---|1.Vil bruke|ny
    OIDC -->|3.utsteder token|ny
-   Sluttbruker ---|2. logger inn i  |OIDC
+   Sluttbruker ---|2.logger inn i  |OIDC
    ny -->|4.bruker token mot|API
  </div>
 
