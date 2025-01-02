@@ -74,10 +74,7 @@ folders:
       - title: Feilsøking i KRR
         jurl: /docs/Kontaktregisteret/krr_feilsoking
 
-- title: Hva skjer fremover?
-  folderitems:
-      - title: Ny systemarkitektur
-        jurl: /docs/Kontaktregisteret/krr_sysark
+
 
 
 ###########################
