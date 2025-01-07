@@ -50,10 +50,10 @@ folders:
   folderitems:
 
   - title: Generelt om møtemodellen
-    jurl: /docs/eInnsyn/datamodell/publisering_moeter/generelt_om_moetemodellen
+    jurl: /docs/eInnsyn/generelt_om_moetemodellen
 
   - title: Utviding møteavlevering
-    jurl: /docs/eInnsyn/datamodell/publisering_moeter/utviding_moetavlevering
+    jurl: /docs/eInnsyn/utviding_moetavlevering
 
 ###########################
 
