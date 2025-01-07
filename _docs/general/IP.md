@@ -1,5 +1,5 @@
 ---
-title: "IP-addresser"
+title: "IP-adresser"
 
 sidebar: main_sidebar
 product: general
@@ -11,7 +11,14 @@ Denne siden lister IP-adresser som blir brukt av fellesløsningene, i ulike milj
 
 | Løsning | PROD | TEST |
 | - | - |-|
-| ID-porten | 139.105.36.167 | 139.105.36.135|
-| ID-porten SAML | | 
-| Ansattporten | 139.105.36.165 | 139.105.36.133|
-| Maskinporten | 139.105.36.164 | 139.105.36.132 |
+| ID-porten (idporten.no - test.idporten.no) |IPv4: 139.105.36.167 <br> IPv6: 2a02:9cc::205 |IPv4: 139.105.36.135 <br> IPv6: 2a02:9cc::305 |
+| Ansattporten (ansattporten.no - test.ansattporten.no) |IPv4: 139.105.36.165 <br> IPv6: 2a02:9cc::204 |IPv4: 139.105.36.133 <br> IPv6: 2a02:9cc::304|
+| Maskinporten (maskinporten.no - test.maskinporten.no) |IPv4: 139.105.36.164 <br> IPv6: 2a02:9cc::201 |IPv4: 139.105.36.132 <br> IPv6: 2a02:9cc::301|
+| [Kontaktregisteret - oppslagstjenesten](https://docs.digdir.no/docs/Kontaktregisteret/oppslagstjenesten_rest.html#ip-adresser-og-brannmurkonfigurasjon)|IPv4: 139.105.36.169 <br> IPv6: 2a02:9cc::206 |IPv4: 139.105.36.137 <br> IPv6: 2a02:9cc::306|
+| MinID (minid.no)|IPv4: 139.105.36.166 <br> IPv6: 2a02:9cc::202 |IPv4: 139.105.36.134 <br> IPv6: 2a02:9cc::302|
+| eInnsyn (einnsyn.no) |139.105.34.205 | 139.105.32.205 |
+| ELMA (elma-smp.no) |139.105.36.174 | 139.105.36.142 |
+| eFormidling (eformidling.no) | [Produksjon](https://docs.digdir.no/docs/eFormidling/Miljo/produksjon) | [Test](https://docs.digdir.no/docs/eFormidling/Miljo/qa) |
+| eIDAS (eidasnode.no - test.eidasnode.no) |IPv4: 139.105.36.176 <br> IPv6: 2a02:9cc::20a |IPv4: 139.105.36.144 <br> IPv6: 2a02:9cc::30b |
+
+> IPV6-adresser for Ansattporten, ID-porten og Maskinporten produksjon er gyldige f.o.m 16.12.2024, kl 08.30

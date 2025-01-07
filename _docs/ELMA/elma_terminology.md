@@ -38,7 +38,7 @@ Participants
 : Organizations that are connected to the Peppol network. (An organization might act as its own SP.) You can think of this as a "contract" between an organization and an SP, that connects the SP's customer organizations to the Peppol network by means of the SP's associated APP's AP.
 
 Certificates
-: Your PEPPOL AP certificate.
+: Your PEPPOL SP certificate.
 
 Domains
 : Collections of processes used in e-procurement.

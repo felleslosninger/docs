@@ -18,6 +18,203 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.1
+
+09.10.2024
+
+**Feilretting**
+
+- Ikkje mogleg å senda utskriftsmelding utan land-informasjon
+
+## 2.28.0
+
+27.09.2024
+
+**Feilretting**
+
+- For streng validering innført mot Skatteetaten si utskriftsteneste 
+
+## 2.27.0
+
+09.09.2024
+
+**Vedlikehald**
+
+- Støtte for nye Commfides-policyar
+
+## 2.26.0
+
+22.08.2024
+
+**Vedlikehald**
+
+- Tilpassingar i meldingsformatet for sending til Skatteetaten si utskriftsteneste 
+
+**Feilretting**
+
+- Nullverdiar i SvarInn-metadata fører til nullPointerException 
+
+## 2.25.0
+
+08.02.2024
+
+**Ny funksjonalitet**
+
+- Lagt til adressevalidering for DPI sending uten fødselsnummer (kan ikkje vera tom)
+
+**Vedlikehald**
+
+- Oppdatering av diverse rammeverk
+
+
+## 2.24.1
+
+10.11.2023
+
+**Feilrettingar**
+
+- Fiksar ein feil på grensesnittet som vart introdusert i versjon 2.24.0
+
+## 2.24.0
+
+02.11.2023
+
+**Funksjonalitet**
+
+- Ny funksjonalitet for uthenting av statusar mellom to tidspunkt. ([**Api-dokumentasjon**](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api_restdocs#_example_5_time_range_5))
+
+**Vedlikehald**
+
+- Patchar av ulike rammeverk. Bl.a er ActiveMQ bumpet til versjon 5.16.7 og den medfølgende H2 databasen til versjon 2.2.224 for å unngå mulig sårbarheit i eldre versjonar.
+- **NB!** Dette krever at ein fjerner ActiveMQ-mappa og begge databasefilene (.db) fra integrasjonspunktmappa. Dersom ein vil unngå tap av historikk må den eksisterende H2-databasen migreres før oppgradering. Sjå korleis her: https://h2database.com/html/tutorial.html#upgrade_backup_restore
+
+## 2.23.1
+
+11.10.2023
+
+**Vedlikehald**
+
+- Helsesjekken i Docker-biletet til Integrasjonspunktet brukar no Wget i staden for cURL
+
+## 2.23.0
+
+22.09.2023
+
+**Funksjonalitet**
+
+- Støtte i DPI-klienten for fleire nye policyar i verksemdssertifkat frå Commfides
+
+## 2.22.1
+
+19.09.2023
+
+**Funksjonalitet**
+
+- Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
+
+## 2.22.0
+
+19.09.2023
+
+**Funksjonalitet**
+
+- Ny DPI-infrastruktur innført som standard-innstilling i eFormidling
+
+**Feilrettingar**
+
+- Korrelasjons-ID vert kun tilordna på relevante logginnslag
+- Meir forståelege feilmeldingar ved feilresponar frå FIKS/SvarUt
+
+## 2.21.0
+
+29.08.2023
+
+**Funksjonalitet**
+
+- Innføring av ny URL og IP-adresse hjå Kontakt- og Reservasjonsregisteret ([krever brannmuråpning hos DPI-avsendarar som sender til utskrifttenesta](https://status.digdir.no/incidents/7x95zny40r8c))
+- Utskriving av sky-konfigurasjon
+
+**Feilrettingar**
+
+- Vedlegg på avtalt-meldingar vert mottekne
+
+## 2.20.0
+
+28.06.2023
+
+**Feilrettingar**
+
+- Integrasjonspunktet slår ikkje opp json-schema.org og annet ved oppstart
+- Mottakers løsning krasjer ikkje dersom for store filer blir sendt til mottaker som har har BEST/EDU
+- Hovuddokumentet kjem først i lista over vedlegg ved mottak av SvarInn-meldingar
+
+## 2.19.0
+
+06.06.2023
+
+**Feilrettingar**
+
+- setTidspunkt i SvarInnconverter returnerer no data på rett format.
+
+## 2.18.0
+
+23.05.2023
+
+**Funksjonalitet**
+
+- Lagt til støtte for SEID 2.0-test-verksemdssertifikat i test og QA
+
+## 2.17.1
+
+11.05.2023
+
+**Funksjonalitet**
+
+- Støtte for Seid 2.0-sertifikat i DPI-klienten til Integrasjonpunktet
+
+## 2.17.0
+
+09.05.2023
+
+**Funksjonalitet**
+
+- Innføring av utskriftsteneste frå Skatteetaten som standard-val i eFormidling
+
+## 2.16.2
+
+05.05.2023
+
+**Feilrettingar**
+
+- Ved sending av DPI blir det registrert dobbel MOTTATT når MOTTATT kjem etter LEVERT: Proxy-klienten vil ikkje motta MOTTATT-statusar, kun LEVERT.
+
+---
+
+## 2.16.1
+
+03.05.2023
+
+**Feilrettingar**
+
+- Dobbel mottatt vert ikkje registrert ved sending av digital post til innbyggarar.
+
+---
+
+## 2.16.0
+
+25.04.2023
+
+**Funksjonalitet**
+
+- Overgang til nytt Maskinporten-test-miljø i eFormidling sitt staging-/QA-miljø
+- Støtte for test-verksemdssertifikat SEIDv2 frå Buypass og Commfides
+
+**Vedlikehald**
+
+- Oppgradering av avhengigheitar i Docker-biletet
+
+---
+
 ## 2.15.0
 
 31.03.2023
@@ -25,7 +222,6 @@ redirect_from:
 **Funksjonalitet**
 
 - Muligheit for å sette egen levetid per meldingstype: https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#levetid-for-meldinger
-
 
 **Feilrettinger**
 
@@ -49,7 +245,7 @@ redirect_from:
 06.02.2023
 
 - Retta ein ny og sjelden feilsituasjon for DPI-meldingar som førte til at integrasjonspunktet kom i ein tilstand der ein ikkje fekk henta inn kvitteringar
-- Retta problem med at sletting av filer feila ved mottak med BEST/EDU 
+- Retta problem med at sletting av filer feila ved mottak med BEST/EDU
 
 ## 2.12.0
 
@@ -65,26 +261,26 @@ redirect_from:
 
 - Tilgjengeliggjere rawReceipt for meldingsstatuser på DPIs gamle XML-format også ved FEIL fra H2
 - Sjelden feilsituasjon i DPI fører til at integrasjonspunktet kjem i ei tilstand der ein ikkje klarer å hente inn kvitteringar
-- Feil ved pop av melding ved bruk av Postgres 
+- Feil ved pop av melding ved bruk av Postgres
 - Opplasting av arkivmelding.xml til integrasjonspunktet feiler ved bruk av MySQL
 - Sporadisk NullPointerException ved innhenting av status for sendt melding fra KS SvarUt
-- Setja spring.datasource.hikari.autoCommit=false som standard 
-- Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet 
-- Oppdatere Azure Service Bus biblioteket 
-- På vegne av DPF:  
+- Setja spring.datasource.hikari.autoCommit=false som standard
+- Skille mellom arkivmelding og arkivmelding_kvittering i brukargrensesnittet for integrasjonspunktet
+- Oppdatere Azure Service Bus biblioteket
+- På vegne av DPF:
 
-  NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i bruk):  
-  
-  difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.username=username  
-  
+  NB! Dersom du har underorgnr registret på mottakersystemet ditt må dei leggast inn slik i propertiesfila (samme username/password som allerede er i bruk):
+
+  difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.username=username
+
   difi.move.fiks.inn.paa-vegne-av.orgnr-til-undervirksomhet.password=password
-  
-- IOException frå blob-parsing vert fanga i NextMoveMessageInService 
-- Feil DPI property i prod mot hj2 
-- efm-mocks oppdatert iht nyeste integrasjonspunkt 
-- Innhenting av meldingsstatuser stopper ikke opp ved meir enn 2100 uteståande meldingsstatuser ved bruk av MSSQL 
+
+- IOException frå blob-parsing vert fanga i NextMoveMessageInService
+- Feil DPI property i prod mot hj2
+- efm-mocks oppdatert iht nyeste integrasjonspunkt
+- Innhenting av meldingsstatuser stopper ikke opp ved meir enn 2100 uteståande meldingsstatuser ved bruk av MSSQL
 - IP-pop av avtaltmelding uten ASIC gir ikkje feil lenger
-- Skru av OSIV i integrasjonspunktet 
+- Skru av OSIV i integrasjonspunktet
 
 ## 2.8.4
 
@@ -628,6 +824,54 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 ## Sentrale komponenter
 
+## ServiceRegistry 2.18.1
+
+28.11.2023
+
+**Feilretting**
+
+- Fiksar glipp i logg-oppsettet til applikasjonen
+
+## ServiceRegistry 2.18.0
+
+17.11.2023
+
+**Funksjonalitet**
+
+- Oppgraderingar av ymse avhengigheiter i applikasjonen
+
+## ServiceRegistry 2.17.0
+
+22.09.2023
+
+**Funksjonalitet**
+
+- Støtte for fleire nye policyar i verksemdssertifkat frå Commfides
+
+## ServiceRegistry 2.16.0
+
+19.09.2023
+
+**Funksjonalitet**
+
+- Støtte i DPI-klienten for ny policy i verksemdssertifikat frå Commfides
+
+## ServiceRegistry 2.15.0
+
+31.08.2023
+
+**Feilrettingar**
+
+- Ustabilitet i sending av digital post til innbyggar fom. 30.08.2023 grunna endra respons frå andre interne tenester
+
+## ServiceRegistry 2.12.0
+
+09.05.2023
+
+**Endringar**
+
+- Innføring av utskriftsteneste frå Skatteetaten som standard-val i eFormidling
+
 ## ServiceRegistry 2.10.0
 
 27.03.2023
@@ -640,13 +884,13 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringar**
 
-- MOVE-3059   La tausheitsbelagte meldingar verta sende til FIKS
+- MOVE-3059 La tausheitsbelagte meldingar verta sende til FIKS
 
 ## ServiceRegistry 2.8.0
 
 **Endringar**
 
-- MOVE-3067   Oppgradering av efm-common (delt bibliotek i portefølja)
+- MOVE-3067 Oppgradering av efm-common (delt bibliotek i portefølja)
 
 ## ServiceRegistry 2.7.0
 
@@ -654,8 +898,8 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringer**
 
-- MOVE-2946 	Retting av av service registry tolker TCP timeout mot ELMA som "participant not found" 
-- MOVE-3003   Oppgradere peppol-biblioteker i SR
+- MOVE-2946 Retting av av service registry tolker TCP timeout mot ELMA som "participant not found"
+- MOVE-3003 Oppgradere peppol-biblioteker i SR
 
 ## ServiceRegistry 2.6.1
 
@@ -663,7 +907,7 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringer**
 
-- MOVE-2993 	Integrasjonspunkt startar ikkje opp med Seid 2.0-sertifikat
+- MOVE-2993 Integrasjonspunkt startar ikkje opp med Seid 2.0-sertifikat
 
 ## ServiceRegistry 2.6.0
 
@@ -671,8 +915,8 @@ MOVE-837 - feil i mapping av svarSendesTil mot FIKS
 
 **Endringer**
 
-- MOVE-2916 	Taushetsbelagte meldinger må ikkje sendes til FIKS 
-- MOVE-2914 	Legge inn retry mot KRR/MF 
+- MOVE-2916 Taushetsbelagte meldinger må ikkje sendes til FIKS
+- MOVE-2914 Legge inn retry mot KRR/MF
 
 ## ServiceRegistry 2.5.0
 
@@ -833,8 +1077,8 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 **Endringer**
 
-- MOVE-2991 	Commfides-test-sertifikat (Seid 2.0) vert ikkje aksepterte i test-profilen til VirkSert 
-- MOVE-3002   Oppgradere peppol-biblioteker i virksert
+- MOVE-2991 Commfides-test-sertifikat (Seid 2.0) vert ikkje aksepterte i test-profilen til VirkSert
+- MOVE-3002 Oppgradere peppol-biblioteker i virksert
 
 ### Virksert 1.7.1
 
@@ -842,7 +1086,7 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 **Endringer**
 
-- MOVE-2987 	Seid 2.0-sertifikat vert ikkje godteke av VirkSert
+- MOVE-2987 Seid 2.0-sertifikat vert ikkje godteke av VirkSert
 
 ### Virksert 1.7.0
 
@@ -850,7 +1094,7 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 **Endringer**
 
-- MOVE-2967 	Opplasting av verksemdssertifikat feilar 
+- MOVE-2967 Opplasting av verksemdssertifikat feilar
 
 ### Virksert 1.6.0
 

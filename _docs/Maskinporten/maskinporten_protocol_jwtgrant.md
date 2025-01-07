@@ -22,12 +22,12 @@ JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
 
 | Claim  | Cardinality | Description  |
 | --- | --- | --- |
-| alg | required | Must be `RS256` - Only RSA-SHA256 is supported by Maskinporten. |   
+| alg | required | `RS256`, `RS384` and `RS512` are supported by Maskinporten. |   
 | x5c | optional | The business certificate/eseal (virksomhetssertifikat) of the organization. Full certificate chain, see [RFC7517 chapter 4.7](https://tools.ietf.org/html/rfc7517#section-4.7). |
 | kid |  optional | Key identifier to a previously registered certificate / asymmetric key   bound to the client.     |
 
 
-Either 'kid' or 'x5c' must be present. 'kid' can and must be used by clients having a pre-registered asymmetric key.
+Either 'kid' or 'x5c' must be present. 'kid' can and must be used by clients having a pre-registered certificate / asymmetric key.
 
 Note that production certificates are not supported in test environments.
 
@@ -67,7 +67,7 @@ The final JWT may look like this:
 }
 .
 {
-  "aud": "https://ver2.maskinporten.no",
+  "aud": "https://test.maskinporten.no/",
   "scope": "difitest:test2",
   "iss": "my_client_id",
   "exp": 1520589928,

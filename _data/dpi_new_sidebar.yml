@@ -1,7 +1,7 @@
 sidebarTitle: Digital post til innbygger
 folders:
 
-    - title: Introduksjon
+    - title: Oversikt
       folderitems:
 
       - title: Innledning
@@ -11,7 +11,9 @@ folders:
       - title: Transportinfrastruktur
         jurl: /dpi_nyinfrastruktur.html
       - title: Arkitektur
-        jurl: /dpi_arkitektur.html   
+        jurl: /dpi_arkitektur.html
+      - title: Meldingsflyt
+        jurl: /dpi_meldingsflyt.html
       - title: Sikkerhet
         jurl: /dpi_sikkerhet_index.html 
       - title: Sertifikathåndtering
@@ -40,8 +42,8 @@ folders:
         jurl: /dpi_lenke.html
       - title: Bevis
         jurl: /dpi_bevis.html
-      - title: Arrangement
-        jurl: /dpi_arrangement.html
+      - title: 
+        jurl: 
       - title: Utskriftstjenesten
         jurl: /dpi_utskrift_index.html
       

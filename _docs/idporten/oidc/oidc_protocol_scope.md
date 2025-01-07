@@ -88,8 +88,6 @@ The following scopes triggers special behaviour in ID-porten OIDC provider.  The
 |-|-|-|
 |openid   | Triggers an OpenID Connect-compliant authentication  | idporten, api_klient |
 |profile  | Gives access to the /userinfo endpoint   |  idporten, api_klient|
-|no_pid   | Triggers a [pseudonymous authentication]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nopid)   |  idporten, api_klient|
-|eidas    | Include the eIDAS attributes in the id_token. See [eidas login]({{site.baseurl}}/docs/idporten/oidc/oidc_func_eidas)   |  idporten, api_klient|
 
 ## List of scopes for APIs from Digitaliseringsdirektoratet
 
@@ -101,7 +99,6 @@ Any customer can self-service their clients with the following scopes:
 |krr:user/*      | Scopes giving Contact Registry details for the authenticated user  | api_klient|
 |idporten:authorizations.*  | [API for authorizations]({{site.baseurl}}/docs/idporten/oidc/oidc_api_autorisasjoner) | api_klient |
 |idporten:user.log.read |[API for authentication history]({{site.baseurl}}/docs/idporten/oidc/oidc_api_logghistorikk) | api_klient |
-|global/idporten.authlevel.read| [API for authentication level of assurance]({{site.baseurl}}/docs/idporten/oidc/oidc_api_authlevel) | maskinporten|
 
 For the following scopes, you need to ask us to add them to your client manually:
 
@@ -119,8 +116,8 @@ ID-porten and Maskinporten protect a number of APIs from other organizations. Se
 
 | URL to list of scopes|Description|
 |-|-|
-| [https://integrasjon.difi.no/scopes/all](https://integrasjon.difi.no/scopes/all)  | A list of scopes protected by ID-porten in Production |
-| [https://integrasjon-ver2.difi.no/scopes/all](https://integrasjon-ver2.difi.no/scopes/all)     |  A list of scopes protected by ID-porten in VER2 environment.  |
+| [https://api.samarbeid.digdir.no/scopes/all](https://api.samarbeid.digdir.no/scopes/all)  | A list of scopes protected by ID-porten in Production |
+| [https://api.test.samarbeid.digdir.no/all](https://api.test.samarbeid.digdir.no/scopes/all)     |  A list of scopes protected by ID-porten in TEST environment.  |
 
 See the allowed_integration_type claim on each entry to see if any scope limitation applies.
 

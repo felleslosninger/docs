@@ -236,9 +236,13 @@ spec:
         app: ip-staging
     spec:
       containers:
-      - image: digdir/integrasjonspunkt:2.2.6
+      - image: digdir/integrasjonspunkt:2.24.1
         name: integrasjonspunkt
-        resources: {}
+        resources: 
+          limits:
+            memory: 3072Mi
+          requests:
+            memory: 2048Mi
         volumeMounts:
         - name: keystore
           mountPath: "/etc/keystore"
@@ -262,7 +266,7 @@ spec:
           value: "brukernavn"
         - name: DIFI_MOVE_DPO_PASSWORD
           value: "passord"
-        - name: DIFI_MOVE_NEXTMOVE_USE_DB_PERSISTENCE
+        - name: DIFI_MOVE_NEXTMOVE_USEDBPERSISTENCE
           value: "true"
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:postgresql://postgresql.default.svc.cluster.local:5432/postgres"

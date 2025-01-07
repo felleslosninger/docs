@@ -29,7 +29,7 @@ av hvordan en kan ta i bruk mock-miljøet:
 
 - [efm-mocks](https://github.com/felleslosninger/efm-mocks) (ekstern lenke)
 
-### Teste i eFormidlings testmiljø (QA)
+### Teste i eFormidlings testmiljø
 
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
 
@@ -130,7 +130,7 @@ Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 
 testmiljø:
 
 - [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
-- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/) (ekstern lenke)
+- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/conversations) (ekstern lenke)
 
 ### Tilrettelegging for test av Altinn Digital Post
 

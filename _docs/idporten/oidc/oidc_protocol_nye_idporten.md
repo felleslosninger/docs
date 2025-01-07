@@ -9,6 +9,19 @@ redirect_from: /oidc_protocol_nye_idporten
 
 This page is also available in English. [Changes in the new ID-porten in 2022-2023](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_new_idporten).
 
+# Status nye ID-porten
+
+Per 10.november 2023:
+- Det er nå 1831 tjenester fra 906 virksomheter som har migrert over til den nye plattformen.
+- Nesten 35% av alle innlogginger i ID-porten skjer nå på den nye plattformen.
+- Brukerstyrt datadeling (API-klienter) kan også migrere.
+- 21. November ruter vi all trafikk fra oidc.difi.no over til login.idporten.no. I perioden frem til SAML proxy er klar (tentativt i Januar) er det ikke Single-Sign-On mellom SAML og OIDC.
+
+
+Noe funksjonalitet fra dagens løsning er ennå ikke tilgjengelig i Nye ID-porten:
+- Authorizations-APIet
+- SAML
+
 
 # Hvordan migrere i praksis ?
 
@@ -34,7 +47,7 @@ For de aller, aller fleste vil det være tilstrekkelig å gjennomføre følgende
 
 #### B: Kunde har SAML-integrasjon idag
 
-Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden mai-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
+Dersom du ønsker å forbli på SAML må du åpne for ny IP-adresse samt verifisere at SAML integrasjonen din er kompatibel i testmiljøet i perioden august-september. Dette er spesielt viktig siden SAML proxy har redusert funksjonalitet i forhold til dagens versjon.
 
 Vi anbefaler dog at alle migrerer til OIDC, i praksis må kunden da [etablere ny OIDC-integrasjon fra scratch ihht. integrasjonsguiden vår](https://docs.digdir.no/docs/idporten/oidc/oidc_guide_idporten).
 
@@ -52,16 +65,17 @@ Dagens driftsavtale med TietoEvry om drift av ID-porten utløper høsten 2023.  
 
 ### Tidsplan
 
-Se [status-sida for ny ID-porten på Samarbeidsporten](https://samarbeid.digdir.no/id-porten/id-porten/1313) for utfyllende tidsplan. Når det nærmer seg, vil det også blir [publisert varsel på statuspage](https://status.digdir.no/)
+Se [status-sida for nye ID-porten på Samarbeidsporten](https://samarbeid.digdir.no/id-porten/id-porten/1313) for utfyllende tidsplan. Når det nærmer seg, vil det også blir [publisert varsel på Digdir Status](https://status.digdir.no/)
 
 Overgangen til ny løsning vil skje i 4 steg:
 
 | Steg | Dato | Beskrivelse |
 |-|-|-|
-|1: Prøvedrift | Mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
-|2: Ordinær drift |Mai 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
-|3: SAML flyttes | September 2023 | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstundes SSO mellom gamal og ny platform. |
-|4: Sanering |Desember 2023 |  Den gamle OIDC-issueren skrus av.
+|1: Prøvedrift | Oppnådd mars 2023 | Nye ID-porten settes i produksjon, klar for reelle tjenester. Det er ikke SSO til gammel platform  |
+|2: Ordinær drift |Oppnådd juni 2023 | Den nye OIDC løsningen skal nå ha full funksjonalitet og ytelse.  
+|3: OIDC flyttes | 21. nov 2023 | Gammel OIDC-provider rutes om til å bruke Nye ID-porten.  Det blir SSO mellom både nye og gamle OIDC-integrasjoner.  SAML-integrasjoner mister SSO til OIDC-tjenester midlertidig |
+|4: SAML flyttes | Januar 2024 | Alle SAML-integrasjoner flyttes sømløst fra gamle ID-porten til ny proxy-løsning. Det blir samstidig re-etablert SSO til OIDC-tjenester.  |
+|5: Avvikling |23. feb. 2024 |  Den gamle OIDC-issueren skrus av.
 
 ### Når bør jeg migrere ?
 
@@ -72,7 +86,7 @@ Dersom ikke, så anbefaler vi at du migrerer så tidlig som mulig ifra mars.  Na
 
 
 
-## Detaljerte endringer i protokollen:
+## Detaljerte endringer i protokollen
 
 Nye ID-porten tar sikte på å følge Oauth2.1-spesifikasjonen, ulikt dagens løsning som er basert på 2.0. Grunnen til denne endringen er at vi ønsker å følge de oppdaterte sikkerhetskravene som er i 2.1.  Standard-flyt for alle integrasjoner blir OIDC og code-flow med tvungen bruk av PKCE og state og nonce.
 
@@ -81,13 +95,13 @@ SAML blir videreført kun for eksisterende tjenster, men med begrenset funksjona
 
 ### Ny issuer
 
-Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi: `iss=https://idporten.no/`. Signeringssertifkatet blir også nytt. Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner.
+Nye ID-porten vil komme på et nytt domene, og får da en ny issuer-verdi: `iss=https://idporten.no`. Signeringssertifkatet blir også nytt. Det å inføre ny issuer muliggjør at kunden kan gradvis migrere til den nye løsningen tilpasset egne tidsplaner. Merk at issuer-verdi ikkje har trailing slash.
 
 Samtidig gjør dette det mer komplekst for API-tilbydere som bruker [brukerstyrt datadeling](oidc_auth_oauth2.html), som da må stole på access_token fra to issuere dersom de ikke er i stand til å kreve/koordinere at sine konsumenter koordinert migrerer til Nye ID-porten samtidig med at APIet truster den nye issueren.
 
 Ved utløp av migreringsperioden vil gammel issuer bli faset ut fullstendig.  De som da ennå ikke har flyttet OIDC-integrasjonen sin, vil slutte å fungere.
 
-### Ny IP
+### Ny IP-adresse
 
 Nye ID-porten vil også køyre på [ein annan IP-addresse]({{site.baseurl}}/docs/general/IP) enn dagens, slik at kundar som har utgåande brannmur mot oss, må opne opp.
 
@@ -98,9 +112,9 @@ Nye ID-porten vil som idag tilby SSO mellom alle integrasjoner både over OIDC o
 Merk at i prøvedriftsperioden og i starten av migreringsfasen så vil ikke klienter som er flyttet til ny løsning få SSO til integrasjoner på gammel løsning.
 
 
-#### SSO-fri innlogging
+#### Isolert SSO-sesjon
 
-Nye ID-porten vil tilby ny funksjonalitet for SSO-fri innlogging.  Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i SSO-sesjonen eller ikke.
+Nye ID-porten vil tilby ny funksjonalitet for isolert SSO-sesjon.  Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i ID-porten felles Circle-of-trust eller ikke.
 
 
 ### onbehalfof
@@ -111,9 +125,23 @@ Nye ID-porten vil tilby ny funksjonalitet for SSO-fri innlogging.  Dette vil skj
 
 Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene er `idporten-loa-substantial` og `idporten-loa-high`.  Disse verdiene kan brukes av klient for å forespørre autentisering på minimum nivå v.hj.a. parameteret `acr_values`.  ID-token vil inkludere nivå i `id_token` i claim `acr`.
 
+| "Gamle" ID-porten | "Nye" ID-porten | Beskrivelse |
+|-|-|-|
+| | idporten-loa-low | Per nå har vi ingen eID på dette nivået |
+| Level3 | idporten-loa-substantial | Tilsvarer sikkerhetsnivå "substantial" i eIDAS forordningen. I ID-porten kan vi tilby MinID på dette sikkerhetsnivået. |
+| Level4 | idporten-loa-high | Tilsvarer sikkerhetsnivår "high" i eIDAS forordningen. I ID-porten kan du logge inn med BankID, Buypass og Commfides på dette sikkerhetsnivået.|
+
 ### Tvungen bruk av PKCE og state og nonce
 
-Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter.
+Alle klient-integrasjoner **må** bruke [PKCE-funksjonaliten](oidc_func_pkce.html) og i tillegg sende med instans-unike state og nonce-verdier.  I dag er dette påkrevd bare for public-klienter, men frivillig, men sterkt anbefalt, for confidential-klienter. Det er mulig for kunde å aktivt nedgradere integrasjonen sin til å ikke bruke PKCE gjennom selvbetjening.
+
+### PKCE code challenge
+
+PKCE `code_challenge` skal ikke bruke padding.
+
+### Håndtering av state
+
+Parameteret `state` vil URL-encodes før retur til tjeneste ved authrization response og post logout redirect.  Dette har størst effekt der HTML/JSON/datastrukturer brukes av tjeneste ved generering av `state`.  Disse bør da gjøre en URL decode ved mottak av `state`.  
 
 ### `sub` endres
 
@@ -123,17 +151,16 @@ I `access_token` vil `sub` også få nye verdier.
 
 ### Endringer i Single Logout og revokering
 
-Det har skjedd endringer i OIDC-spesifikasjonen mhp logout.  
+Det har skjedd presiseringer i OIDC-spesifikasjonen mhp logout.
 
-- dersom en klient er registrert for front channel logout vil klienten få kall til registrert uri også når klienten selv initierer utlogging
+- Dersom en klient er registrert for front channel logout, vil klienten få kall til registrert uri også når klienten selv initierer utlogging.  På gammel platform mottok initierende klient ikke frontkanalskallet, men denne oppførselen var ikke ihht. spec.
+- Det er viktig å legge login.idporten.no / login.test.idporten.no som lovlig frame-ancestors i Content Security Policy
 
-Vi vurderer p.t. om vi skal endre dagens oppførsel til å være mer på linje her:
+Endepunktet for utlogging støtter både GET og POST.
 
-- er det hensiktsmessig at revokasjon av access_token/refresh_token også fører til at SSO-sesjonen blir terminert, slik som idag?
-- er det hensiktsmessig at utlogging fra SSO-sesjon også invaliderer alle tokens til alle klienter tilhørende sesjonen?
-- bør vi, som spec'en krever, innføre en "ønsker du virkelig å logge ut"-skjermbilde i ID-porten som del av utloggingen ?
-- hvor strenge krav skal vi engentlig stille for å kunne sende brukes browser tilbake til oppgitt post_logout_redirect_uri ?
+### sid kun for frontchannel-klienter
 
+`sid` blir inkludert i id_token berre viss klienten er registrert for å motta frontchannel-logout kall.
 
 
 ### Hyppigere redirect tilbake til klient med feil
@@ -144,6 +171,14 @@ I gammel OIDC-løsning så vil feilsituasjoner ofte føre til at brukeren får f
 
 Implicit-flow er ikke anbefalt av sikkerhetshensyn i de siste anbefalingene fra IETF.  Allerede idag tilbys ikke implicit for nye integrasjoner, kun for eksisterende.  I Nye ID-porten fjernes støtten for implicit helt, slik at de som bruker det idag, må skrive om sin løsning til å bruke code flow med pkce. Vi vurderer om vi skal innførere støtte for DPop på sikt.
 
+### Claim at_hash fjernes fra id_token
+
+Claim `at_hash` fjernes fra id_token. `at_hash` er påkrevd i implicit flow.  I authorization code flow er `at_hash` overflødig.
+
+### Innstramming klientautentiseringsmetode
+
+Klientautentiseringsmetoden som er registrert på klient, må benyttes mot autentiswerte endepunktet (f.eks. token-endepunktet).
+
 ### Innstramming klientautentisering med private_key_jwt
 
 JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim `iss`.  Parameteret `client_id` må angis mot token-endepunktet, i tillegg til `client_assertion`.  Dette er slik det er dokumentert på gammel løsning, men nye løsning håndhever dette strengere.
@@ -152,7 +187,10 @@ JWT for `client_assertion`-parameteret må inneholde både claim `sub` og claim 
 Responser fra autorisasjons-endepunktet vil inneholde parameteret `iss` med verdien fra ID-portens issuer i det aktuelle miljøet.  Dette kan brukes til å unngå "mix-up-attacks" og er spesifisert i RFC 9207.
 
 ### Parameter client_id påkrevd ved bruk av request_uri mot autorisasjons-endepunktet
-Ved bruk av pushed authorization request, må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet.
+Ved bruk av pushed authorization request må `client_id` angis i tilegg til `request_uri` mot autorisasjonsendepunktet.
+
+### Token introspection krever eget scope og klientautentisering
+Ved bruk av token introspection-endeounktet må det oppgis klientautentisering.  Samme metode som mot token-endepunktet skal benyttes.  Klienten må også være registrert med scope `idporten:token.introspection`.  Kontakt oss for hjelp med scopet.
 
 ### SAML
 
@@ -160,9 +198,9 @@ I ny løsning vil det bli tilbudt en rudimentær SAML-støtte, hvis formål kun 
 
 Denne vil støtte SAML Web Browser SSO 2.0 med Artifact Resolution-binding.  Det vil bare være støtte for 1 AssertionConsumerURL, og ett kombinert signerings- og krypteringssertifikat.
 
-Det vil ikke lenger utleveres kontaktopplysninger fra KRR som del av Assertion.
+NameID-verdier vil endre seg ved overgangen.  Den faktiske verdien vil være persistent (lik for samme bruker hver gang), selv om SP skulle be om en transient verdi.
 
-Vi vil ikke støtte oppdatering av SAML-metadata, slik at når en kunde sine metadata går ut (typisk ved utløp av virksomhetssertifiktat), forventer vi at integrasjonen i stedet blir skrevet om til å bruke OIDC.
+Det vil ikke lenger utleveres kontaktopplysninger fra KRR som del av Assertion.
 
 På sikt vil SAML blir faset helt ut.
 
@@ -172,6 +210,6 @@ På sikt vil SAML blir faset helt ut.
 
 Selve `no_pid`-scopet videreføres ikke, så kunder må bruke enten opaque tokens eller pseudonymiserende scopes.
 
-### sid kun for frontchannel-klienter
+### Alternativ innloggings-lenke
 
-`sid` blir inkludert i id_token berre viss klienten er registrert for å motta frontchannel-logout kall.
+Funsksjonaliteten blir ikke videreført.

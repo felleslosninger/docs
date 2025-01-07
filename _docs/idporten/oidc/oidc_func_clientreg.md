@@ -16,14 +16,17 @@ Det er kundens ansvar å sørge for at det faktiske bruksmønsteret er i samsvar
 
 ## ID-portens integrasjoner {#integrasjoner}
 
-Selvbetjeningsløsningen håndterer 4 ulike typer av integrasjoner:
+Selvbetjeningsløsningen lar kunden opprette  5 ulike typer av integrasjoner:
 
-* ID-porten
-* Kontaktregisteret
+* ID-porten (kun innlogging)
+* ID-porten (API-klient, for [brukerstyrt-datadeling](oidc_auth_oauth2))
+* Ansattporten
 * Maskinporten
-* API-klient innlogget bruker
+* Kontaktregisteret
 
-Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, men med ulike egenskaper.  Se detaljer lenger ned.
+I tilegg finnes det en integrasjonstype for eFormidling, som administreres internt av Digdir. 
+
+Det er viktig å være klar over at disse integrasjonstypene rent teknisk alle er standard Oauth2 klienter, som må registreres med ulike egenskaper.  Se detaljer lenger ned.
 
 Vi har 3 måter du kan få registrert din integrasjon:
 
@@ -33,17 +36,18 @@ Vi har 3 måter du kan få registrert din integrasjon:
 
 ## Integrasjonstyper
 
-Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype.
+Du må registrere en integrasjonstype for å få fornuftige valg til klienten din i selvbetjeningsløsningen. Hvilken integrasjonstype du velger, vil legge føringer på hvilke scopes du kan bruke med klienten. En klient kan kun ha en integrasjonstype, og integrasjonstype kan ikke endres i ettertid.
 
 Det som støttes foreløpig er:
 
 | Integrasjonstype |Beskrivelse|
 |-|-|
-|idporten   | Ordinær innlogging gjennom ID-porten  |
+|idporten      | Ordinær innlogging gjennom ID-porten. Hardkodet til `openid profile`-scope.  |
 |api_klient    | ID-porten integrasjoner som skal hente data fra et tredjparts-API på vegne av innlogget bruker. |
+|ansattporten | Innlogging og datadeling i [Ansattporten](ansattporten_guide) |
 |maskinporten  | kun for server til server integrasjoner (B2B)  |
 |krr   | Kontaktregisteret   |
-|eformidling    | for eFormidling  |
+|eformidling    | Integrasjonspunktet for eFormidling. Administrert av Digdir  |
 
 Det er ikke mulig å endre  integrasjonstype etter opprettelse.
 
@@ -71,7 +75,7 @@ Alt etter bruksområde, så tilbyr vi forskjellige metoder for autentisering av 
 |-|-|-|
 | Statisk hemmelighet | client_secret_basic client_secret_post | En statisk hemmelighet (*client_secret*) som Digitaliseringsdirektoratet genererer og blir utvekslet manuelt, eller tilgjengeliggjort via selvbetjening.  Maks tillatt levetid er satt til 360 dager. Det er kundens ansvar å få rotert hemmeligheten før utløp for å sikre kontinuerlig tjenesteleveranse. |
 | Virksomhetssertifikat   | private_key_jwt | Klienten bruker et gyldig virksomhetssertifikat fra Buypass eller Commfides. Organisasjonsnummeret i sertifikatet må stemme med klient-registreringa. Kunden kan valgfritt velge å "låse" klienten til bare et spesifikt virksomhetssertifikat. |
-| Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg. Maks tillatt levetid er satt til 1 år.  For å få lov til å registere slike klienter, må kunden etablere en [egen  selvbetjeningsapplikasjon]({{site.baseurl}}/docs/idporten/oidc/oidc_api_admin) (som selv må bruke virksomhetssertifikat) |
+| Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg. Maks tillatt levetid er satt til 1 år.   |
 | Ingen   | none  | Klienten er en såkalt *public*-klient som ikke kan beskytte en hemmelighet på en tilfredstillende måte.  Gjelder single-page-applikasjon og i noen tilfeller mobil-apper  |
 
  Digitaliseringsdirektoratet anbefaler bruk av asymetriske nøkler `private_key_jwt` til klientautentisering over statiske hemmeligheter. Enten å bruke virksomhetssertifikat, da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.  Dersom organisasjonen har høy modenhet, kan også egen-genererte asymmetriske nøkler anbefales.
@@ -115,7 +119,11 @@ Klient-type (`application_type`) forteller hvilke type kjøretidsmiljø klienten
 
 ### Scopes
 
-Kunden registere forskjellige oauth2 scopes på sine klienter. Se [regler for scopes]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope) for fullstendige detaljer.
+Kunden registerer forskjellige oauth2 scopes på sine klienter. Listen i selvbetjeningen viser scopes som virksomheten din har fått tilgang til. 
+
+{% include note.html content="Trykk på 'Scopes tilgjengelig for alle' dersom du er leverandør eller vil legge til scopes som er satt tilgjengelig for alle." %}
+
+Se [regler for scopes]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope) for fullstendige detaljer.
 
 
 ## Oversikt over kombinasjonar
@@ -140,11 +148,11 @@ Er modellert som egen ressurs under klient `/clients/{client_id}/jwks`
 
 Kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
 
-Kun RS256 støttes som algoritme.
+RS256, RS384 og RS512 støttes som algoritme.
 
-Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
+Man må alltid sende inn hele nøkkeldefinisjonen (kty,alg,use,e,n).  
 
-Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
+Dersom man ønsker å "låse" integrasjonen til et spesifikt virksomhetssertifikat, må i tillegg inkludere sertifikatet (x5c). Da vil vi runtime validere revokasjon mot Buypass/commfides.
 
 Eksempel på å legge inn en nøkkel:
 ```
@@ -156,7 +164,7 @@ POST /clients/{client_id}/jwks
       "kty": "RSA",
       "e": "AQAB",
       "use": "sig",
-      "kid": "jbi_min_noekkel",
+      "kid": "digdir_min_noekkel",
       "alg": "RS256",
       "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
     }
@@ -164,11 +172,11 @@ POST /clients/{client_id}/jwks
 }
 ```
 
-`kid` velges av kunde selv, og må være unik innenfor alle ID-porten/Maskinportens kunder.
+`kid` velges av kunde selv, og må være unik innenfor client_id. Ut over enkle alfanumeriske tegn, er spesialtegnene `._-` tillatt.
 
 Ved klient-autentisering mot /token-endepunktet, og ved bruk av JWT bearer grants, **må** klienter som har registrert en nøkkel bruke `kid`-parameteren i jwt-headeren istedenfor x5c.
 
-> NB! En nøkkel har MAKS 1 års levetid fra tidspunktet den blir postet på. 
+> NB! En nøkkel har MAKS 1 års levetid fra tidspunktet den blir postet på.
 
 Ved bruk av selvbetjenings-API, må kunden passe på å sende konfigurasjoner som er kompatible med tabellen over, ellers risikerer man å ende opp med en ubrukelig klient.
 
@@ -198,12 +206,15 @@ Klienter som skal innvolvere brukeren (altså brukerens browser) må ha følgend
 |attributt|Påkrevd?|beskrivelse|
 |-|-|-|
 | display_name | Ja |Klientens organisasjonsnavn som benyttes ved visning på web |
-| redirect_uris | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. |
-| post_logout_redirect_uris | Ja |Liste over url'er som provideren redirecter til etter fullført egen-initiert utlogging. |
-| frontchannel_logout_uri | Nei|  URL som provideren sender request til ved utlogging trigget av annen klient i samme sesjon |
-| frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri |
+| redirect_uris* | Ja| Liste over gyldige url'er som provideren kan redirecte tilbake til etter vellykket autorisasjonsforespørsel. I testmiljø er rein http samt localhost tillatt.|
+| post_logout_redirect_uris* | Ja |Liste over url'er som provideren redirecter til etter fullført egen-initiert utlogging. |
+| frontchannel_logout_uri** | Nei|  URL som provideren sender request til ved utlogging trigget av annen klient i samme sesjon. Må tilhøre samme domene som en av de registrerte redirect_uri'ene. |
+| frontchannel_logout_session_required | Nei |Flagg som bestemmer om parameterne for issuer og sesjons-id skal sendes med frontchannel_logout_uri. Dersom ikke satt, så vil ikke 'sid' bli inkludert i id_token. |
 | logo | Nei |Logo som vises i innloggingsbildete utveksles p.t. manuelt |
 
+*NB! Bruk av localhost er ikke tillatt i produksjonsmiljøet for andre enn native klienter. Skal du registrere en localhost uri i testmiljøet, må denne være http:// og ikke https://.
+
+** Frontchannel logout uri må ha samme domene som en registrert redirect uri.
 
 ### Metadata for klienter som konsumerer APIer
 
@@ -215,4 +226,9 @@ For klienter (både innlogging og maskin) som mottar *access_token* til API-sikr
 | access_token_lifetime | Levetid for utstedt access_token | 120 sekunder* |
 | refresh_token_lifetime |Levetid for utstedt refresh_token | 600 sekunder |
 
+Levetiden på authorization definerer maks levetid, mens refresh_token definerer inaktivitet. Som hovedregel bør klienten være registrert slik:
+access_token_lifetime < refresh_token_lifetime <= authorization_lifetime.
+
 *Merk at de fleste av egenskapene til access_token blir bestemt av API-tilbyder, og ikke som en del av klient-registreringen.  En klient kan for eksempel ikke få token som har lengre levetid enn det API-tilbyder har satt som maks-grense.
+
+

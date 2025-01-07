@@ -42,7 +42,7 @@ Oppsettet krever ingen ekstra konfigurasjon av integrasjonspunktet.
 
 Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altinn:
 
-- `Meldingsutveksling i offentlig sektor`
+- `Delegere rettighet til å sende DPI-meldinger på vegne av virksomheten`
 
 ## På vegne av for KS SvarUt og SvarInn
 
@@ -69,7 +69,7 @@ Se `difi.move.dpo.reportees` under:
 
 Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altinn:
 
-- `Delegere rettighet til å sende DPI-meldinger på vegne av virksomheten`
+- `Meldingsutveksling i offentlig sektor`
 
 ## På vegne av for eInnsyns meldingstjeneste
 

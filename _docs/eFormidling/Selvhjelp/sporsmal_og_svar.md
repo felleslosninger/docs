@@ -59,8 +59,11 @@ Endre sertifikat passord:
 
 Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved første gangs installasjon:
 
-- [Tilgjengeliggjøre virksomhetssertifikatet i eFormidlings sertifikatkatalog](../installasjon/installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-i-eformidlings-sertifikatkatalog)
+- [Tilgjengeliggjøre virksomhetssertifikatet i eFormidlings sertifikatkatalog](../installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-i-eformidlings-sertifikatkatalog)
 - [Tilgjengeliggjøre virksomhetssertifikatet for virksomhetens integrasjonspunkt](../installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-for-virksomhetens-integrasjonspunkt)
+
+> **NB!** Dersom dere bruker meldingstypen DPF må public del av sertifikatet lastet opp hos svarut.ks.no under ["Mottakersystem"](../installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)!
+
 
 ## Integrasjonspunktet
 
@@ -182,6 +185,19 @@ Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer 
 3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
 4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
 
+### Hvordan kan jeg manuelt laste ned en innkommende melding fra integrasjonspunktet?
+
+For å manuelt laste ned en innkommende melding fra integrasjonspunktet trenger du en HTTP-klient med GUI (for eksempel Postman) eller en kommandolinje/terminal som støtter kommandoen `curl`.
+
+1. Lås meldingen: `curl 'http://localhost:9093/api/messages/in/peek/?messageID=2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET`
+2. Last ned meldingen: `curl 'http://localhost:9093/api/messages/in/pop/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X GET > asic.zip`
+3. EVENTUELT - marker meldingen som ferdig behandla: `curl 'http://localhost:9093/api/messages/in/2f553592-1ebc-4b56-b5bd-73479300fe8c' -i -X DELETE`
+
+### Hvordan migrerer jeg data fra den medfølgene H2-fildatabasen?
+
+Det er dessverre ingen rett frem måte å gjøre dette på, men det finnes ett communitydrevet migreringsverktøy en kan prøve:
+[H2 Migration Tool](https://github.com/manticore-projects/H2MigrationTool)
+
 ## Digital Post til Innbyggere
 
 ### Hva skal til for at proxy-klientbiblioteket for Digital Post til Innbyggere skal fungere?
@@ -195,15 +211,78 @@ difi.move.dpi.receipt-type=xmlsoap
 difi.move.feature.statusQueueIncludes=DPI
 ```
 
+### Sending uten fødselsnummer
+
+Dersom av en eller annen grunn mangler fødselsnummer eller vil tvinge sending til print. Eksempel SBD:
+```
+curl -XPOST http://localhost:9093/api/messages/out \
+-H 'Content-Type: application/json' -d \
+'{
+    "standardBusinessDocumentHeader": {
+        "headerVersion": "1.0",
+        "sender": [
+      {
+        "identifier": {
+          "value": "0192:991825827",
+          "authority": "iso6523-actorid-upis"
+        }
+      }
+    ],
+        "documentIdentification": {
+            "standard": "urn:no:difi:digitalpost:xsd:fysisk::print",
+            "typeVersion": "1.0",
+            "type": "print"
+        },
+        "businessScope": {
+            "scope": [{
+                    "type": "ConversationId",
+                    "identifier": "urn:no:difi:profile:digitalpost:vedtak:ver1.0"
+                }
+            ]
+        }
+    },
+    "print": {
+        "hoveddokument": "my.pdf",
+        "mottaker": {
+            "navn": "Ola Nordmann",
+            "adresselinje1": "Testvegen 2",
+            "postnummer": "6853",
+            "poststed": "Leikanger",
+            "land": "NO"
+        },
+        "utskriftsfarge": "SORT_HVIT",
+        "posttype": "B_OEKONOMI",
+        "retur": {
+            "mottaker": {
+                "navn": "Digitaliseringsdirektoratet avd. Leikanger",
+                "adresselinje1": "Skrivarvegen 2",
+                "postnummer": "6853",
+                "poststed": "Leikanger",
+                "land": "NO"
+            },
+            "returhaandtering": "DIREKTE_RETUR"
+        }
+    }
+}'
+```
+**NB!** Verdier for mottaker og returpostmottaker må fylles inn slik som i SBDen over ellers vil sendingen feile!
+
 ## Diverse
 
 ### Hvordan verifiserer jeg at jar-filen er fra Digitaliseringsdirektoratet?
 
-Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
+En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG:
+
+1. Last ned ønsket jar-fil med tilhørende signatur og eFormidlings offentlige kodesigneringsnøkkel:
 
 - [Last ned](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
-En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av GnuPG-kommandoen under:
+2. eFormidlings offentlige kodesigneringsnøkkel må legges inn i nøkkelringen på maskina hvor signaturen skal verifiseres:
+```
+gpg --import <sti-til-nedlastet-signeringsnøkkel>
+```
+
+3. Deretter kan signaturen verifiseres vha. kommandoen under:
 
 ```
 gpg --verify "integrasjonspunkt-X.Y.Z.jar.asc" "integrasjonspunkt-X.Y.Z.jar"

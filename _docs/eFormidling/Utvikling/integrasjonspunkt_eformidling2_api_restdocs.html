@@ -321,6 +321,7 @@ $(addBlockSwitches);
 <li><a href="#_example_2_search_for_message_statuses">Example 2 - Search for message statuses</a></li>
 <li><a href="#_example_3_sorting_4">Example 3 - Sorting</a></li>
 <li><a href="#_example_4_paging_4">Example 4 - Paging</a></li>
+<li><a href="#_example_5_time_range_5">Example 5 - Time range</a></li>
 <li><a href="#_about_the_service_16">About the service</a></li>
 </ul>
 </li>
@@ -10598,6 +10599,78 @@ Content-Length: 775
 </div>
 </div>
 <div class="sect3">
+<h4 id="_example_5_time_range_5">Example 5 - Time range</h4>
+<div class="listingblock primary">
+<div class="title">Curl</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses?fromDateTime=2019-10-16T10:01:52.625-02:00&toDateTime=2019-10-30T16:46:49.610-02:00' -i -X GET \
+    -H 'Accept: application/json'</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Request</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET api/statuses?fromDateTime=2019-10-16T10:01:52.625-02:00&toDateTime=2019-10-30T16:46:49.610-02:00 HTTP/1.1
+Accept: application/json
+Host: localhost:8080</code></pre>
+</div>
+</div>
+<div class="listingblock secondary">
+<div class="title">Response</div>
+<div class="content">
+  <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+    Vary: Origin
+    Vary: Access-Control-Request-Method
+    Vary: Access-Control-Request-Headers
+    Content-Type: application/json
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+    Pragma: no-cache
+    Expires: 0
+    X-Frame-Options: DENY
+    Content-Length: 775
+    
+    {
+      "content" : [ {
+        "id" : 7,
+        "lastUpdate" : "2019-10-23T15:43:12+02:00",
+        "status" : "LEVERT",
+        "description" : "Levert",
+        "convId" : 4,
+        "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
+        "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
+      } ],
+      "pageable" : {
+        "sort" : {
+          "sorted" : true,
+          "unsorted" : false,
+          "empty" : false
+        },
+        "pageNumber" : 3,
+        "pageSize" : 10,
+        "offset" : 30,
+        "paged" : true,
+        "unpaged" : false
+      },
+      "totalElements" : 31,
+      "last" : true,
+      "totalPages" : 4,
+      "sort" : {
+        "sorted" : true,
+        "unsorted" : false,
+        "empty" : false
+      },
+      "numberOfElements" : 1,
+      "first" : false,
+      "size" : 10,
+      "number" : 3,
+      "empty" : false
+    }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_about_the_service_16">About the service</h4>
 <div class="openblock primary request-parameters">
 <div class="title">Request parameters</div>
@@ -10641,6 +10714,10 @@ Content-Length: 775
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Properties that should be sorted by in the format property,property(,ASC|DESC). Default sort direction is ascending. Use multiple sort parameters if you want to switch directions, e.g. ?sort=firstname&amp;sort=lastname,asc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fromDateTime and toDateTime</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on lastUpdate in the range of fromDateTime to toDateTime. Both fromDateTime and toDateTime must be used to filter on date and time. </p></td>
 </tr>
 </tbody>
 </table>

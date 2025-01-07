@@ -33,7 +33,7 @@ Denne siden benytter følgende tredjeparts-komponenter, og i mappen /assets/lice
 
 * TOC generator: <https://github.com/ghiculescu/jekyll-table-of-contents> (MIT lisens)
 
-* FontAwesome: <http://fontawesome.io/lisens/> (GPL)
+* FontAwesome: <http://fontawesome.io/license/> (GPL)
 
 * jQuery Cookie: <https://github.com/carhartl/jquery-cookie> (MIT lisens)
 

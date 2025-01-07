@@ -122,7 +122,7 @@ Authorization: Bearer <maskinporten med idporten:authorizatons-scope>
 Content-Type: application/json
 
 {
-    "pid": "23079417653"
+    "pid": "20914695016"
 }
 
 ```

@@ -1,5 +1,5 @@
 ---
-title: personidentifikator 
+title: personidentifikator
 
 sidebar: begrep_sidebar
 redirect_from: /personidentifikator
@@ -10,10 +10,10 @@ redirect_from: /personidentifikator
 | Definisjon | Identifikasjon av en person |
 | Datatype | string |
 | Kilde | DIFI |
-| Kommentar | personidentifikator er enten et fødselsnummer eller et gyldig D-nummer. | 
+| Kommentar | personidentifikator er enten et fødselsnummer eller et gyldig D-nummer. |
 
 ### Xml eksempel
 
 ```
-<ns2:personidentifikator>01012295312</ns2:personidentifikator>
+<ns2:personidentifikator>010122*****</ns2:personidentifikator>
 ```

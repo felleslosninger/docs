@@ -166,25 +166,25 @@ For å komme til administrasjonsgrensesnittet for integrasjoner/klienter, gjør 
 3. Trykk på "Administrasjon av tjenester" i venstremenyen.
 4. Velg "Integrasjoner" i det miljøet du vil opprette selvbetjene i.
 
-### Delegere rettighet til leverandør
+### Delegere rettighet til annen virksomhet (f.eks leverandør)
 
-Om det skal benyttes en systemleverandør til å gjøre oppslaget mot Maskinporten, så kan man delegere rettigheten videre via Altinn. (NB! Dette gjelder bare scopes som bruker Altinn som delegeringskilde. Hør med API-tilbyder om de tilbyr dette).
+Om det skal benyttes en annen virksomhet til å gjøre oppslaget mot Maskinporten, så kan man delegere rettigheten videre via Altinn. (NB! Dette gjelder bare scopes som bruker Altinn som delegeringskilde. Hør med API-tilbyder om de tilbyr dette).
 
 Samme fremgangsmåte gjelder også om man skal delegere rettighet fra en underenhet og til hovedenheten.
 
 1. Logg inn på Altinn.no
 2. Velg å representere virksomheten
 3. Trykk på "Profil"
-4. Trykk på "Andre med rettigheter til virksomheten"
-5. Trykk pÅ "Ekstern virksomhet"
-6. Legg inn organisasjonsnummer og de første 4 tegnene på virksomheten du skal delegere tilgang til
-7. Trykk på "Neste"
-8. Søk opp rettigheten du skal delegere tilgang til, og trykk på den.
-9. Trykk på "Gi rettigheter"
-10. Om du blir spurt om det, så må du legge inn e-postadresse til en person i virksomheten som du delegerer tilgang til
-11. Trykk "Fullfør" og da er rettigheten delegert videre.
+4. Trykk på "Tilgang til Programmeringsgrensesnitt - API"
+5. Trykk pÅ "Gi og fjerne tilganger"
+6. Trykk på "Deleger nytt API"
+7. Legg inn organisasjonsnummer på virksomheten du skal delegere tilgang til og velg fra listen. 
+8. Trykk på "Neste"
+9. Søk opp rettigheten du skal delegere tilgang til, og trykk på "+".
+10. Trykk på "neste" når du har lagt til rettighetene som skal delegeres
+11. Trykk på "Bekreft".
 
-Videotutorial: [https://vimeo.com/533856189](https://vimeo.com/533856189)
+Videotutorial: På grunn av endringer i det grafiske grensesnittet må vi spille inn en ny video. Vi håper å ha dette på plass ganske snart.
 
 [![Delegere rettigheter]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/533856189 "Delegere rettigheter")
 
@@ -211,6 +211,32 @@ Videotutorial: [https://vimeo.com/427689834](https://vimeo.com/427689834)
 Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 
 [![Deaktivere klient]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/427689782 "Deaktivere klient")
+
+### Registrere nøkkel på klient
+
+1. Offentlig nøkkel, i PEM-format, må konverteres til JWK ved hjelp av JWK Creator eller lignende, før den kan bli lagt på klienten. 
+2. Trykk på 'Egne public nøkler', nederst på klient-registreringsssiden i selvbetjening web.
+3. Lim inn JWK og trykk på 'legg til'. NB! Husk å plassere den mellom to klammer []. 
+4. Sjekk at JWK blir lagret i riktig format på klienten:
+
+```
+[
+    {
+      "kty": "RSA",
+      "e": "AQAB",
+      "use": "sig",
+      "kid": "min_egen_nokkel",
+      "alg": "RS256",
+      "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
+    }
+  ]
+```
+
+### Registrere sertifikat på klient
+
+1. Eksporter offentlig nøkkel fra virksomhetssertifikat i PEM-format. Husk at det er signeringsnøkkel som må eksporteres. 
+2. Trykk på 'Virksomhetssertifikat', nederst på klientregistreringsssiden i selvbetjening web.
+3. Lim inn nøkkel i riktig format. 
 
 ### Vedlikehald av merkantile data
 
@@ -240,7 +266,7 @@ Mest sannsynlig har ikke API-tilbyder delt tilgang med virksomheten du represent
 
 ### "Ny integrasjon" er grået ut i produksjonsmiljøet.
 
-For å administrere i produksjonsmiljøet, så må man logge inn med ID-porten. Dette forutsetter at vi har lagt inn personnummeret ditt på forhånd. Om "Ny integrasjon" fortsatt er grået ut etter innlogging med ID-porten. Kontakt servicedesk@digdir.no
+For å administrere i produksjonsmiljøet, så må man logge inn med Ansattporten. Dette forutsetter at du har fått de nødvendige rettighetene i Altinn. Se [Tilgang i produksjonsmiljø](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web#tilgang-i-produksjonsmilj%C3%B8)
 
 ### Jeg ser integrasjonene til en annen virksomhet enn det jeg forventer.
 

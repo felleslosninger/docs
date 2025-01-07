@@ -9,7 +9,7 @@ sidebar: dpi_timo_sidebar
 |---|---|
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](dpi_kvitteringer.html) til Avsender om at varsling til Mottaker har feilet og dermed ikke har blitt utført som forutsatt. |
-| Kilde         | DIFI |
+| Kilde         | Digdir |
 | Kommentar     | Dersom Postkasse opplever problemer med å utføre varslingen som spesifisert i meldingen, skal Postkasse informere Avsender om dette ved å sende VarslingfeiletKvittering. Det skal sendes en kvittering for hver forekomst av en feilsituasjon i en spesifisert kanal. Meldinger som angir bruk av flere varslingskanaler kan dermed medføre flere VarslingfeiletKvitteringer. Varslingfeilet kvittering skal sendes seinest dagen etter at varslingen var bestilt. 
 
 Se [Varsel](sdp_varsler.html) for mer informasjon om bruken av varsel.
@@ -44,7 +44,7 @@ dette skal følges opp mot forskriften. Posten vil være tilgjengelig i
 postkassen uavhengig av om varselet feilet eller ikke.  
 Denne vurderingen bør baseres på samme vurdering som de har gjort i
 forhold til fysisk post, og oppfølgingen av returpost.  
-Vi i Difi antar at Avsendere/behandlingsansvarlige har svært forskjellig
+Digdir antar at Avsendere/behandlingsansvarlige har svært forskjellig
 oppfølging av returpost.
 
   - Her er noen eksempler:

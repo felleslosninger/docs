@@ -29,8 +29,9 @@ The migration will be divided into 4 main stages.
 |-|-|-|
 |1: Pilot | March 2023 | The production enviroment for the new Nye ID-porten is ready for selected services. No SSO to the old platform  |
 |2: Normal operation |May 2023 | The new OIDC solution is ready with full functionality and performance. |
-|3: Moving of SAML | September 2023 | All SAML integrations will be seemlessly moved from the old ID-porten to the new SAML proxy. SSO between old and new platform is ready. |
-|4: Shutdown | December 2023 | The old OIDC-issuer is turned off. |  
+|3: Moving of OIDC | 21. nov 2023 | The old OIDC-provider will be routed to the new ID-porten instance. 90% of traffic will the go through the new solution.  Existing SAML-integrations will loose SSO temporarily |
+|4: Moving of SAML | Jan 2024 | All SAML integrations will be seemlessly moved from the old ID-porten to the new SAML proxy. SAML-integrations will regain SSO towards OIDC-based integrations. between old and new platform is ready. |
+|4: Shutdown | 23. feb 2024 | The old OIDC-issuer is turned off. |  
 
 ### When should i migrate ?
 
@@ -47,7 +48,7 @@ This depends on your current integration.
 In most cases, these are the steps to follow:
 
 1. Open the outbound firewall to the new IP-adress.
-2. Change the issuer-URL to point to the new URL: `https://idporten.no` (tbd).  
+2. Change the issuer-URL to point to the new URL: `https://idporten.no` .  
     * Some IAM-products will download the updated metadata and trust our new certificate automatically.
 3. If step 2 did not happen automatically, you need to manually configure the new endpoints from our metadata and trust our new signing certificate.
 4. Configure your integration to use [PKCE](https://docs.digdir.no/docs/idporten/oidc/oidc_func_pkce)
@@ -95,9 +96,24 @@ The new ID-porten will offer a SSO-free login. Customers will be able to configu
 
 There are new values for authentication levels.  The new values are `idporten-loa-substantial` and `idporten-loa-high`.  They can be used by a client to request user authentication on a minimum level with the `acr_values` parameter.  ID-porten will include the authentication level in the `acr` claim in the `id_token`.
 
+| "Old" ID-porten | "New" ID-porten | Description |
+|-|-|-|
+| | idporten-loa-low | As of now, there are no electronic IDs on the security level |
+| Level3 | idporten-loa-substantial | Equivalent of security level "substantial" in eIDAS. In ID-porten, MinID is currently the only eID on this security level |
+| Level4 | idporten-loa-high | Equivalent of security level "high" in eIDAS. ID-porten offers BankID, Buypass and Commfides on this security level |
+
 ### Forced use of PKCE, state and nonce.
 
 All clients **must** use [PKCE](oidc_func_pkce.html) in addition to instance-uniquie state and nonce values. On todays solution, this is only required by public clients, and voluntarely yet higly recommended for confidential clients.
+
+### PKCE code challenge
+
+PKCE `code_challenge` must not use padding.
+
+### state encoding
+
+The `state` parameter will be URL encoded before it is returned to the client on authrization response and post logout redirect.  This affects clients using HTML/JSON/som ekind of data structure as `state` value.  The value should be URL decoded when recieved on these callbacks.
+
 
 ### `sub` will be changed
 
@@ -109,7 +125,9 @@ In the `access_token`, the  `sub` will also get new values.
 
 Due to changes in the OIDC specifications regarding logout, some changes have been implemented:
 
+- The logout endpoint supports both GET and POST
 - if a client is registered with front channel logout uri it will receieve calls to this uri when it is the initiator of the logout request
+- it is important to add login.idporten.no / login.test.idporten.no as a legal frame-ancestors in the Content Security Policy
 
 We are considering to change todays behavior and align it to the spec.
 
@@ -126,6 +144,10 @@ In the current OIDC solution, all error situations generates an error page in ID
 
 In the latest recommendations from IETF, implicit flow is not recommended. In ID-porten, implicit is not allowed on new integrations, but is still available on existing clients. I new ID-porten, implicit will not be available for any clients. Clients using implicit today, must change their solution to using code flow with PKCE. On a longer term, we are also considering implementing support for DPop.
 
+### Claim at_hash revomed from the id_token
+
+The claim `at_hash` will be removed from the id_token. `at_hash` is required in implicit flow.  It is not needed in the authorization code flow.
+
 ### Tightening in client authentication with private_key_jwt
 
 JWT for the `client_assertion`-parameter must contain both `sub` and `iss` claims.  The parameter `client_id` must be stated to the token-endpoint along with `client_assertion`. This is documentet in the current solution, but the validation will be more strict in the new solution.
@@ -138,6 +160,9 @@ Response from the authorization endpoint will include `iss` which contains the v
 
 When using PAR (pushed auhtorization request), both `client_id`and `request_uri` must be included when calling the authorization endpoint
 
+### Token introspection requires a special scope and client authentication
+When using token introspection, the client must authenticate itself.  Use the same client authentication method with the token endpoint and the token introspection endpoint.  The client must be registered with the scope `idporten:token.introspection`.  Ask the service desk for help.
+
 ### SAML
 
 The new ID-porten will only offer a very basic SAML-support, only to existing services. We will develop a simple SAML-to-OIDC-proxy which will be placed in front of the new OIDC-iusser.
@@ -145,6 +170,8 @@ The new ID-porten will only offer a very basic SAML-support, only to existing se
 The SAML proxy will support SAML Web Browser SSO 2.0 with Artifact Resolution binding. It will support only 1 AssertionConsumerURL and 1 combined signing- og encryption certificate.
 
 Contact details (email/mobile) will no longer be included as part of the Assertion.
+
+NameID values will change when we migrate. The actual value will be persistent, even if the SP asks for a transient value in the AuthnRequest.
 
 Updating the SAML-metadata will not be available. When the metadata expires (e.g. when the certificate expires), we expect that our customers starts using OIDC instead of SAML.
 

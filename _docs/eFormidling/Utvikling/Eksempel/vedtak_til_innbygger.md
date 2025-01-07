@@ -135,7 +135,7 @@ curl -XPOST http://localhost:9093/api/messages/out \
         "documentIdentification": {
             "standard": "urn:no:difi:digitalpost:xsd:fysisk::print",
             "typeVersion": "1.0",
-            "type": "digital_dpv"
+            "type": "print"
         },
         "businessScope": {
             "scope": [{

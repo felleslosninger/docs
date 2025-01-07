@@ -6,19 +6,161 @@ summary: "Elma status"
 product: elma
 sidebar: elma_sidebar
 redirect_from: /elma_status
+---
+
+## ELMA update 30.09.2024 (3.28.0)
+
+### Tasks
+
+```
+[MOVE-4149] Fjerning av koblingar frå ELMA til Datahotellet 
+```
 
 ---
+
+## ELMA update 23.09.2024 (3.27.0)
+
+### Tasks
+
+```
+[MOVE-4177] Feilretting i Peppol Directory-synkroniseringa
+```
+
+---
+
+## ELMA update 20.08.2024 (3.26.0)
+
+### Tasks
+
+```
+[MOVE-4151] Ta i bruk versjon 2 av aktuelle endepunkt i Enhetsregisteret sitt REST-API
+```
+
+---
+
+## ELMA update 24.05.2024 (3.25.0)
+
+### Tasks
+
+```
+[MOVE-3827] Oppdatere Elma ihht. SMP 1.3 spesifikasjonen
+```
+
+---
+
+## ELMA update 08.02.2024 (3.24.0)
+
+### Tasks
+
+```
+[MOVE-3923] Oppgradering av rammeverk
+```
+
+---
+## ELMA update 30.01.2024 (3.23.1)
+
+### Bug fix
+
+```
+[MOVE-3924] Nedgradering av internt bibliotek som skapte utfordringar med sertifikat
+```
+
+---
+
+## ELMA update 04.01.2024 (3.23.0)
+
+### Tasks
+
+```
+Vedlikehald: Oppdatering av rammeverk og bibliotek
+```
+
+---
+
+## ELMA update 18.09.2023 (3.22.3)
+
+### Tasks
+
+```
+Vedlikehald: Oppdatering av rammeverk og bibliotek
+```
+
+---
+
+## ELMA update 22.08.2023 (3.21.1)
+
+### Tasks
+
+```
+Fjerna moglegheit for å registrera nye AS2-endepunkt
+```
+
+---
+
+## ELMA update 27.06.2023 (3.20.0)
+
+### Tasks
+
+```
+Forbedret monitorering, logging og intern statistikk for bruk til debugging
+```
+
+---
+
+## ELMA update 06.06.2023 (3.19.0)
+
+### Tasks
+
+```
+[MOVE-3297] Fjerne funksjonalitet for å opprette nye deltakarar med ICD 9908
+```
+
+---
+
+## ELMA update 10.05.2023 (3.17.1)
+
+### Bug fix
+
+```
+[MOVE-3318] Fjerna database-spørring som genererer mykje trafikk.
+```
+
+---
+
+## ELMA update 05.12.2022 (3.17.0)
+
+### Tasks
+
+```
+[MOVE-2904] Oppgradere til Peppol 2.4.0
+```
+
+---
+
+## ELMA update 04.10.2022 (3.16.2)
+
+### Bug fix
+
+```
+[MOVE-2952] Feilmelding ved henting av endringar vha. klient-bibliotek i organization-registry
+```
+
+---
+
 ## ELMA update 13.09.2022 (3.16.1)
 
 ### Bug fix
+
 ```
 [MOVE-2930] Oppslag mot document-types-endepunktet i REST-API-et feilar
 ```
 
 ---
+
 ## ELMA update 22.08.2022 (3.16.0)
 
 ### Bug fix
+
 ```
 [MOVE-2906] Feil lenke til ELMA-dokumentasjon
 [MOVE-2905] ELMA - Feil ved visning av CertificateType
@@ -27,16 +169,19 @@ redirect_from: /elma_status
 ```
 
 ---
+
 ## ELMA update 21.06.2022 (3.15.2)
 
 ### Bug fix
+
 ```
-[MOVE-2879] Kan ikke legge til endpoint 
+[MOVE-2879] Kan ikke legge til endpoint
 ```
 
 ## ELMA update 16.06.2022 (3.15.1)
 
 ### Bug fix
+
 ```
 [MOVE-2878] Feil ved forsøk på å legge inn nytt sertifikat
 ```
@@ -47,26 +192,28 @@ redirect_from: /elma_status
 [MOVE-2646]	Eksponera meir data for Peppol Directory
 ```
 
-+ Generelle ytelsesforbedringer
+- Generelle ytelsesforbedringer
 
 ## ELMA update 03.05.2022 (3.14.5)
 
 ### Bug fix
-```
-[MOVE-2818] Bug - SMPen viser metadata for skjulte prosesser. 
-```
 
+```
+[MOVE-2818] Bug - SMPen viser metadata for skjulte prosesser.
+```
 
 ## ELMA update 11.03.2022 (3.14.1)
 
 ### Tasks
+
 ```
-[MOVE-2767] 	Forbetringar ifht. connection-timeout mot databasen 
+[MOVE-2767] 	Forbetringar ifht. connection-timeout mot databasen
 ```
 
 ## ELMA update 05.01.2022 (3.12.0)
 
 ### Tasks
+
 ```
 [MOVE-2624] - Som bruker ønsker jeg å kunne filtrere prosesslisten i elma-web
 [MOVE-2621] - Som bruker av elma-web ønsker jeg at søket etter participant skal tåle at jeg har whitespace før eller etter det jeg søker
@@ -78,22 +225,24 @@ redirect_from: /elma_status
 ## ELMA update 01.12.2021 (3.11.1)
 
 ### Tasks
+
 ```
-[MOVE-2617] - ELMA - Opprettelse av participant kan medføre Organization med null som title 
-[MOVE-2498] - ELMA - Støtte for utvidet adressering 
+[MOVE-2617] - ELMA - Opprettelse av participant kan medføre Organization med null som title
+[MOVE-2498] - ELMA - Støtte for utvidet adressering
 ```
 
 ## Elma update 16.09.2021 (3.10.0)
 
 ### Tasks
+
 ```
 [MOVE-2331] - SMP Redirection i ELMA
 ```
 
-
 ## Elma update 21.06.2021 (3.9.0)
 
 ### Tasks
+
 ```
 [MOVE-2428] - ELMA - REST delete participant by uuid-identifier
 [MOVE-2195]	- Avslutte støtte for nye svenske virksomheter i ELMA
@@ -101,6 +250,7 @@ redirect_from: /elma_status
 ```
 
 ### Bugs
+
 ```
 [MOVE-2463] - ELMA - NullPointerException i Base.hashcode()
 [MOVE-2442] - ELMA - Feil i OpenAPI-spesifikasjonen
@@ -109,6 +259,7 @@ redirect_from: /elma_status
 ## Elma update 19.05.2021 (3.8.2)
 
 ### Tasks
+
 ```
 [MOVE-2385] - Som bruker av REST-APIet ønsker jeg OpenAPI spesifikasjoner
 [MOVE-2384] - Som Admin vil jeg kunne vedlikeholde for fiktive BrReg organisasjoner i elma-web
@@ -117,6 +268,7 @@ redirect_from: /elma_status
 ```
 
 ### Bugs
+
 ```
 [MOVE-2392] - XML feil i SMPen dersom kontaktopplysninger mangler på AccessPointProvider
 ```
@@ -124,9 +276,9 @@ redirect_from: /elma_status
 ## Elma update 08.03.2021 (3.7.0)
 
 ### Tasks
+
 ```
 [MOVE-2297] - Improving Peppol Directory Synchronizer
 [MOVE-2327] - Status PENDING in SML Queue and Peppol Directory Queue
 [MOVE-2334] - Optional deletes for Peppol Directory Synchronizer
 ```
-

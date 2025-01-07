@@ -1,4 +1,4 @@
-sidebarTitle: DPI - Ny Infrastruktur
+sidebarTitle: Digital postkasse
 folders:
 
     - title: Oversikt
@@ -6,7 +6,7 @@ folders:
 
       - title: Innledning
         jurl: /dpi_oversikt_index.html
-      - title: Ny transportinfrastruktur
+      - title: Transportinfrastruktur
         jurl: /dpi_nyinfrastruktur.html
       - title: Arkitektur
         jurl: /dpi_arkitektur.html   
@@ -70,8 +70,8 @@ folders:
         jurl: /dpi_lenke.html
       - title: Bevis
         jurl: /dpi_bevis.html
-      - title: Arrangement
-        jurl: /dpi_arrangement.html
+      - title: 
+        jurl: 
         
     - title: Utskrift og forsendelse
       folderitems:

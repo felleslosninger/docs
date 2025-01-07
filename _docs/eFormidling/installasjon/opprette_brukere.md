@@ -19,7 +19,7 @@ og passord.
 (Gjelder bare for digital post til offentlige virksomheter)
 Integrasjonspunktet kjører som datasystem mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
 
-Når du oppretter datasystemet er det viktig at det gjøres av person som kan representere virksomheten. Hvordan man representerer virksomheten kan du lese [her](https://www.altinn.no/hjelp/skjema/faq/).
+Når du oppretter datasystemet er det viktig at det gjøres av person som kan representere virksomheten. Hvordan man representerer virksomheten kan du lese [her](https://info.altinn.no/hjelp/innlogging/diverse-om-innlogging/hvordan-kan-jeg-logge-inn-som-en-bedrift-eller-et-selskap/).
 
 Under opprettelse av datasystem velger du passord og får tildelt brukerid (ID), disse skal senere brukes i properties filen som beskrives lenger nede. Dette er propertyene ```difi.move.dpo.username=``` og ```difi.move.dpo.password=```.
 
@@ -43,31 +43,33 @@ Informasjon om hvordan du logger på Altinn portal finner du <a href="https://ww
 
 ## Opprette brukere for KS SvarUt og SvarInn
 
-Når beskrivelsen under er utført må brukernavn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"](installasjon#konfigurere-altinn-digital-post-dpv).
+Når beskrivelsen under er utført må brukernavn/passord for både SvarUt og SvarInn legges inn i integrasjonspunkt-local.properties. I tillegg til alt som er beskrevet i [tabellen her under "Spesifikk for Digital post til kommuner (DPF)"](https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf).
 
-Se [Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/eformidling/20) for alt om avtaler, begrunnelser, sammenhenger og lignende ikke teknisk. Avtaler må være på plass før en begynner å konfigurere
+Se [Samarbeidsportalen](http://samarbeid.digdir.no/eformidling/eformidling/20) for alt om avtaler, begrunnelser, sammenhenger og lignende ikke teknisk. Avtaler må være på plass før en begynner å konfigurere. 
 
 ### Konfigurering av KS SvarUt-forvaltning (avsender)
 
 Forvaltningsgrensesnittet som administrator får tilgang til (informeres om av KS) er laget for kommuner og andre som tar i bruk alle funksjonene i SvarUt og SvarInn.  
 
-KS vil sende påloggingsadresse til administrator etter at virksomheten er opprettet som bruker. Etter pålogging har administrator forskjellige valg: 
+KS vil sende påloggingsadresse til administrator etter at virksomheten er opprettet som bruker.
  
-![bilde1]({{site.baseurl}}/images/eformidling/01_FIKS.png)
+> Alt av oppsett og skjermbilder under er eksempler. Det gjelder tilsvarende for din virksomhet – bare med deres eget navn og organisasjonsnummer. Det er bare opplysninger som nevnes heretter må utfylles i konfigureringen. 
+
+- Gå til [Fiks forvaltning](https://forvaltning.fiks.ks.no) og logg inn.
+
+Klikk på «Konfigurasjon» og deretter velger du din organisasjon.
+
+![bilde1]({{site.baseurl}}/images/eformidling/FIKS_konfig.png)
  
-> Alle eksemplene og skjermbildene er hentet fra oppsettet til FM Nordland. Det gjelder tilsvarende for din virksomhet – bare med deres eget navn og organisasjonsnummer. Det er bare opplysninger som nevnes heretter må utfylles i konfigureringen. 
+- Klikk så på «Fiks SvarUt».
 
-1. Start med «konfigurasjon» (konfigurerer SvarUt-funksjonene) 
+![bilde2]({{site.baseurl}}/images/eformidling/FIKS_tjenester.png)
 
-Klikk på «overordnet organisasjon» og legg inn fakturaopplysninger:
+- Du finner navnet på kontoen din under. Trykk på den.
 
-![bilde2]({{site.baseurl}}/images/eformidling/02_FIKS.png)
- 
-Klikk så på «underordnet» organisasjonsnivå
+![bilde3]({{site.baseurl}}/images/eformidling/FIKS_konto.png)
 
-Menypunktene du ser markert med grønn hake skal du klikke deg gjennom og fylle ut. I dette tilfellet er brukernavnet for svarut brukeren vist venstre side av skjermbildet, altså "fm_nordland". Feks: ```difi.move.fiks.ut.username=fm_nordland```.
- 
-![bilde3]({{site.baseurl}}/images/eformidling/03_FIKS.png) 
+- Disse punktene må en fylle ut:
 
 #### ReturAdresse/forside
 
@@ -76,39 +78,30 @@ Legg inn organisasjonsnummer og adresse. Forsidetekst må ikke fylles ut.
 #### Altinn
 
 Velg «ingen varsling» 
- 
-![bilde4]({{site.baseurl}}/images/eformidling/04_FIKS.png)
 
 #### Print
 
 Velg «manuell print» 
 
-![bilde5]({{site.baseurl}}/images/eformidling/05_FIKS.png)
+#### Brukernavn og servicepassord
 
-#### Servicepassord
-
-Dette er passord nr. 1 dere må notere dere. Passord generes ved å klikke på «generer nytt servicepassord». Pass på at du ikke endrer dette senere ved å klikke på «generer» på nytt!
+Under «Autentisering for SOAP/REST-service» finn du brukernavnet ditt og genererer passord.
+==Viktig at en noterer seg begge disse==!
  
-![bilde6]({{site.baseurl}}/images/eformidling/06_FIKS.png) 
-
-#### Tilganger
-
-Her kan administrator legge til flere brukere som skal ha administratorrettigheter i SvarUt-forvaltning. Sett i så fall hake i alle tilganger. 
-
-![bilde7]({{site.baseurl}}/images/eformidling/07_FIKS.png)
+![bilde4]({{site.baseurl}}/images/eformidling/FIKS_brukernavn.png)
  
-Dere ser bort fra punktene SDP, Edialog og Admin. 
+Resten av innstilligene kan en se bort fra.
 
 ### Konfigurering av SvarInn (mottakersystem)
 
-Klikk på «mottakersystem» i menyen på toppen og så på organisasjonen din i menyen på venstre side
+Gå til [svarut.ks.no](https://svarut.ks.no) og logg inn. Klikk på «mottakersystem» i menyen på toppen og så på organisasjonen din i menyen på venstre side
 
  
 ![bilde8]({{site.baseurl}}/images/eformidling/08_FIKS.png) 
 
 #### Service
 
-Dette er passord nr. 2 dere må notere dere. Passord generes ved å klikke på «generer nytt servicepassord». Pass på at du ikke endrer dette senere ved å klikke på «generer» på nytt!  
+Her finner du brukernavn for SvarInn og kan generere passord. Dette er passord nr. 2 dere må notere dere. Pass på at du ikke endrer dette senere ved å klikke på «generer» på nytt!  
 
 Offentlig nøkkel / virksomhetssertifikat:
 

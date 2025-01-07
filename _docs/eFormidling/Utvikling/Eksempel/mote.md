@@ -36,7 +36,7 @@ curl -XPOST http://localhost:9093/api/messages/out \
         "businessScope": {
             "scope": [{
                     "type": "ConversationId",
-                    "identifier": "urn:no:difi:profile:einnsyn:meeting:ver1.0"
+                    "identifier": "urn:no:difi:profile:einnsyn:journalpost:ver1.0"
                 }
             ]
         }

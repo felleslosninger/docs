@@ -130,17 +130,17 @@ difi.move.feature.enableDPE=false
 
 ### Valgfri konfigurasjon
 
-#### Miljø (produksjon eller QA)
+#### Miljø (produksjon eller test)
 *Valgfritt*
 
 Tilgjengelige miljø:
 
 - [eForidling Produksjon](../Miljo/produksjon)
-- [eFormidling QA](../Miljo/qa)
+- [eFormidling Test](../Miljo/test)
 
 | Egenskap               | Beskrivelse                                                                                                                                                  | Standardverdi |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| spring.profiles.active | Produksjon (`production`) eller QA (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
+| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
 
 Eksempel:
 
@@ -283,6 +283,9 @@ difi.ssl.key-store=file:c:/integrasjonspunkt/https.p12
 difi.ssl.key-store-password=mypassword
 difi.ssl.key-alias=myalias
 ```
+**NB!:**
+Dersom en bruker et selvsignert SSL sertifikat må dette legges inn i Java Trust Store (cacerts).
+I hostfilen til server må en registrere IP-adressen til det som blir hostname til integrasjonspunktet.
 
 #### HTTP Basic Auth
 *Valgfritt*
@@ -601,9 +604,8 @@ difi.move.dpv.enableDueDate=false
 | difi.move.dpi.mpcIdListe                       | Denne overstyrer kombinasjonen av mpcId + mpcConcurrency dersom den er satt. De kanalene som listes opp her vil bli brukt ved polling av DPI-kvitteringer                                                 | difi.move.dpi.mpcIdListe[0]=id1                 |
 | difi.move.dpi.avsenderidentifikatorListe       | Ved polling av DPI-kvitteringer brukes denne for å indikere at man kun ønsker kvitteringer med gitt avsenderindikator                                                                                     | difi.move.dpi.avsenderidentifikatorListe[0]=ai1 |
 | difi.move.dpi.pollWithoutAvsenderidentifikator | Om det skal polles etter kvitteringer uten bruk av avsenderindikator                                                                                                                                      | true                                            |
-| difi.move.dpi.client-type                      | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI) og json+xmlsoap (Ny DPI som også poller etter kvitteringer i gammel løsning).                                                                      | xmlsoap                                         |
-| difi.move.dpi.receipt-type                     | Mulige verdier er: json (Ny DPI), xmlsoap (Gammel DPI). Denne brukes kun i ny DPI, men den må settes til xmlsoap for de som bruker proxy-klienten mot IP, da denne krever kvitteringer på gammelt format. | json                                            |
-| difi.move.dpi.krr-print-url                    | URL til metadata for utskriftstjeneste. Mulige verdier er Postens utskriftstjeneste (under utfasing) `https://krr.digdir.no/rest/v1/printSertifikat` og Skatteetatens utskriftstjeneste (under innfasing og bare tilgjengelig på ny infrastruktur) `https://krr.digdir.no/rest/v2/printSertifikat`. For testmiljø bruk (frem til 25.04.2023): `https://krr-ver1.digdir.no/rest/v2/printSertifikat` (etter 25.04.2023) `https://test.kontaktregisteret.no/rest/v1/printSertifikat` | https://krr.digdir.no/rest/v1/printSertifikat |
+| difi.move.dpi.receipt-type                     | Mulige verdier er: json                                                                                                                                                                                   | json                                            |
+| difi.move.dpi.krr-print-url                    | URL til metadata for utskriftstjenesten levert av Skatteetaten. `https://kontaktregisteret.no/rest/v2/printSertifikat`. For testmiljø bruk `https://test.kontaktregisteret.no/rest/v2/printSertifikat` | https://kontaktregisteret.no/rest/v2/printSertifikat |
 
 Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
 
@@ -613,6 +615,7 @@ Eksempel:
 
 ```
 difi.move.feature.enableDPI=true
+
 difi.move.dpi.mpcId=DigdirSinKø
 ```
 

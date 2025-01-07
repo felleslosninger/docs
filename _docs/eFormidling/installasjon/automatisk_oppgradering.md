@@ -105,6 +105,10 @@ spring.mail.port=25
 # Digitaliseringsdirektoratet public key paths. i.e: file:keyname.asc
 kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc
 ```
+**NB!**
+Dersom en ønsker å bruke integrasjonspunktet med transportsikring må en endre til
+*kosmos.integrasjonspunkt.baseURL=https://servernavn.no:portnummer*.
+Se mer her: [Transportsikring](..installasjon/installasjon#transportsikring)
 
 ## Valgfri konfigurasjon
 
@@ -249,6 +253,92 @@ Integrasjonspunktet loggar mykje under oppstart, noko som kan vera nyttig medan 
 #### Allowlisting av versjon som har vore starta før
 
 Som eit tiltak for å sikre at applikasjonen vil starte opp integrasjonspunktet etter at applikasjonen har vore skrudd av så vart allowlisting innført og denne lagar .allowlisted filer. Til dømes om applikasjonen og integrasjonspunktet begge er av så vil den ikkje forsøker å oppdatere integrasjonspunktet om det allereie eksisterer ei .allowlisted fil. Dette var også eit behov i ein spesiell case der ```kosmos.integrasjonspunkt.supported-major-version``` var satt lik køyrande versjon og det har vore releasa ein “latest-version” som har høgare major enn det som er konfigurert til å være støtta.  Etter at integrasjonspunktet har starta så vil applikasjonen lage denne .allowlisted fila, denne vert automatisk fjerna ved oppgradering og ny fil for gjeldande versjon vert oppretta. Innhaldet er tidspunktet den vart oppretta. 
+
+## Køyra KOSMOS
+
+### Køyra som Windows-teneste
+Me brukar [WinSW](https://github.com/kohsuke/winsw) som Windows-service-wrappar. Følg standard-installasjonsinstruksane med denne konfigurasjonsfila:
+
+```
+<configuration>
+  
+  <!-- Identifikator for tenesta. Bør vera unik innanfor Windows-systemet. -->
+  <id>kosmossvc</id>
+  <!-- Namn på tenesta -->
+  <name>Kosmos Service</name>
+  <!-- Beskriving av tenesta -->
+  <description>Keeps the integrasjonspunkt application up-to-date.</description>
+  
+  <!-- Sti til det køyrbare programmet som skal startast. -->
+  <executable>java</executable>
+    <arguments>-jar %BASE%\kosmos-X.Y.Z.jar --spring.profiles.active=production</arguments>
+    <!-- For å køyra med staging-profil: Erstatt 'production' med 'staging' i linja ovanfor. -->
+  <logpath>%BASE%\kosmos-logs</logpath>
+  
+  <log mode="roll-by-size">
+    <sizeThreshold>10240</sizeThreshold>
+    <keepFiles>8</keepFiles>
+  </log>
+</configuration>
+```
+
+**Legg merke til at ein treng å vera lokal administrator-brukar når ein installerar tenesta.**
+
+#### Lokal property-fil for KOSMOS
+Det trengs ei fil med namn kosmos-local.properties i samme mappe som WinSW. Her er eit døme på ei slik fil. Erstatt verdiane i innstillingane med tilsvarande for din organisasjon.
+```
+difi.move.org.number=<organisasjonsnummer-med-ni-siffer>
+
+# Erstatt vert og port i URL-en med plasseringa til Integrasjonspunktet ditt:
+kosmos.integrasjonspunkt.baseURL=http://localhost:9093
+
+# E-post-varse er frivillig. Spesifiser desse innstillingane for å motta e-postar når KOSMOS oppdaterar Integrasjonspunktet ditt:
+kosmos.mail.recipient=nokon@domenet-ditt.no
+kosmos.mail.from=ikkjesvar@domenet-ditt.no
+
+spring.mail.host=<adressa-til-smtp-servaren-din>
+spring.mail.port=<porten-på-servaren-din>
+```
+#### Andre antakingar i oppsettet i denne seksjonen
+* KOSMOS og Integrasjonspunktet sine JAR-filer er plasserte i samme mappe
+* Den offentlege nøkkelen til GPG-signeringssertifikat ligg i samme mappe
+
+#### Køyra KOSMOS og Integrasjonspunktet frå forskjellige mapper
+Det anbefalte oppsettet (treng mindre konfigurasjon) er å ha både KOSMOS- og Integrasjonspunkt-JAR-filene i samme mappe. Dersom ein skulle føretrekka å køyra applikasjonane frå forskjellige mapper, må følgande innstillingar leggast til:
+
+1. I kosmos-local.properties:
+```
+kosmos.integrasjonspunkt.home={sti-til-mappa-der-integrasjonspunktet-køyrer}
+```
+2. I XML-konfigurasjonsfila for WinSW:
+```
+<arguments>-jar %BASE%\kosmos-X.Y.Z.jar --spring.profiles.active=production --spring.config.additional-location=file:{sti-til-mappa-der-integrasjonspunktet-køyrer}\integrasjonspunkt-local.properties</arguments>
+```
+
+### Køyra KOSMOS på Linux
+Ein kan nytta den samme konfigurasjonsfila som i førre seksjon. Følgande filer bør vera på plass i installasjonsmappa:
+
+* kosmos-local.properties
+* kosmos.jar
+* integrasjonspunkt-local.properties
+* integrasjonspunkt-keystore.jks (di eiga JKS som Integrasjonspunktet nyttar)
+* eformidling-key.asc (kan finnast [HER](https://docs.digdir.no/eformidling_auto_update.html#verifisere-sertifikatet))
+
+Ein kan velja mellom å køyra i noverande skal eller som oppgåve vha. desse kommandoane:
+1. Køyra i noverande skal med staging-profil:
+```
+java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties
+```
+2. Køyra som oppgåve med staging-profil:
+```
+java -jar kosmos-x.y.z.jar -Dspring.profiles.active=staging -Dspring.config.additional-location=file:%BASE%\integrasjonspunkt-local.properties &
+```
+* For å køyra med produksjonsprofil: Erstatt 'staging' med 'production' i linjene ovanfor.
+
+Når denne kommandoen er køyrt, vert PID-en til processen returnert. Denne kan nyttast dersom du treng å stoppa prosessen. (Kan også finnast vha. htop eller top.) Integrasjonspunktet startar som ein eigen Java-prosess.
+
+## Kjeldekode
+KOSMOS' kjeldekode er tilgjengeleg på [GitHub](https://github.com/felleslosninger/efm-kosmos).
 
 ## Neste steg
 

@@ -1,29 +1,32 @@
 ---
-title: Virksomhetssertifikat
+title: Autentisering
 description:
 summary:
 
 sidebar: maskinporten_sidebar
 product: Maskinporten
-redirect_from: /maskinporten_virksomhetssertifikat
+redirect_from: /maskinporten_autentisering
 ---
 
-Virksomhetssertifikat er en viktig del av Maskinporten. Her har vi samlet litt informasjon om virksomhetssertifikat.
+Her har vi samlet litt informasjon om autentisering i Maskinporten.
+
 
 * TOC
 {:toc}
 
-## Hva er et virksomhetssertifikat
+## Autentiseringsmetoder i Maskinporten
 
-Virksomhetssertifikat er virksomheten sin digitale ID. For våre tjenester må det være et gyldig norsk [x.509 sertifikat.](https://www.ssl.com/no/Vanlige-sp%C3%B8rsm%C3%A5l/hva-er-et-x-509-sertifikat/)
+Virksomheter kan autentisere seg i Maskinporten med virksomhetssertifikat eller assymetriske nøkler, som er virksomheten sin digitale ID.
 
-## Hva bruker man virksomhetssertifikatet til i Maskinporten?
+## Hva er hensikten med virksomhetssertifikat/nøkler?
 
-Virksomhetssertifikatet brukes for å autentisere virksomheten som gjør et kall mot Maskinporten.
+Virsomhetssertifikat/nøkler brukes til å signere forespørselen mot Maskinporten. Maskinporten sjekker deretter sertifikatets/nøkkelens gyldighet. Dette er nærmere beskrevet på [JWT grant](https://docs.digdir.no/maskinporten_protocol_jwtgrant.html) siden.
 
-Sertifikatet brukes til å signere forespørselen mot Maskinporten. Maskinporten sjekker sertifikatets gyldighet opp mot sertifikatutstederene. (Buypass og Commfides).
+## Levetid og gyldighet for virksomhetssertifikat/nøkler?
 
-Dette er nærmere beskrevet på [JWT grant](https://docs.digdir.no/maskinporten_protocol_jwtgrant.html) siden.
+En nøkkel har maks ett års levetid fra tidspunktet den blir postet på. Virksomhetssertifikat har tre års levetid.
+
+Dersom man benytter virksomhetssertifikat for autentisering til våre tjenester må det være et gyldig norsk [x.509 sertifikat.](https://www.ssl.com/no/Vanlige-sp%C3%B8rsm%C3%A5l/hva-er-et-x-509-sertifikat/)
 
 ## Kan utenlandske virksomheter bestille virksomhetssertifikat?
 
@@ -41,6 +44,10 @@ Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl](https://
 
 Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/)
 
+## Hvordan opprettes assymetriske nøkler?
+
+Det er ulik programvare for oppretting av assymetriske nøkler. Dette vil ikke bli omtalt i Digitaliseringsdirektoratet sin tekniske dokumentasjon.
+
 ## Bruker man samme sertifikat til testing som i produksjon?
 
 Nei, i testmiljøene må man ha et test-virksomhetssertifikat. Dette bestilles også fra Buypass og Commfides.
@@ -49,10 +56,13 @@ Buypass: [https://www.buypass.no/produkter/virksomhetssertifikat-esegl](https://
 
 Commfides: [https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/](https://www.commfides.com/commfides-virksomhetssertifikat/testsertifikat/)
 
-## Kan man gjenbruke et virksomhetssertifikat på flere klienter i Maskinporten?
+## Kan man gjenbruke virksomhetssertifikat/nøkler på flere klienter i Maskinporten?
 
-Ja, man kan bruke samme sertifikat på flere klienter i Maskinporten.
+Ja, man kan bruke samme sertifikat/nøkkel på flere klienter i Maskinporten.
 
 ## Støtter Maskinporten de nye SEID 2.0 sertifikatene?
 
-Ja, Maskinporten støtter SEID 2.0 sertifikater fra både Buypass og Commfides. 
+Ja, Maskinporten støtter SEID 2.0 sertifikater fra både Buypass og Commfides.
+
+## Forvaltning av sertifikat/nøkler
+Vi fraråder sterkt å dele klientregistreringer (med secrets/nøkler) på tvers av flere installasjoner. For leverandører og verksemder med mange integrasjonar, anbefaler videre å bruke asymmetriske nøkler istedet for virksomhetssertifkater. Av sikkerhetshensyn bør ikke leverandører forvalte kundene sine virksomhetssertifikat/nøkler.

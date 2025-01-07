@@ -89,9 +89,9 @@ Nye ID-porten vil som idag tilby SSO mellom alle integrasjoner både over OIDC o
 Merk at i prøvedriftsperioden og i starten av migreringsfasen så vil ikke klienter som er flyttet til ny løsning få SSO til integrasjoner på gammel løsning.
 
 
-#### SSO-fri innlogging
+#### Isolert SSO-sesjon
 
-Nye ID-porten vil tilby ny funksjonalitet for SSO-fri innlogging.  Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i SSO-sesjonen eller ikke.
+Nye ID-porten vil tilby ny funksjonalitet for isolert SSO-sesjon. Dette vil skje ved at kunden gjennom selvbetjening velger om klienten skal delta i SSO-sesjonen eller ikke.
 
 
 ### onbehalfof
@@ -101,6 +101,14 @@ Nye ID-porten vil tilby ny funksjonalitet for SSO-fri innlogging.  Dette vil skj
 ### Nye acr-verdier
 
 Det innføres nye verdier for sikkerhetsnivå på innlogginger.  De nye verdiene er `idporten-loa-substantial` og `idporten-loa-high`.  Disse verdiene kan brukes av klient for å forespørre autentisering på minimum nivå v.hj.a. parameteret `acr_values`.  ID-token vil inkludere nivå i `id_token` i claim `acr`.
+
+Denne tabellen viser forskjellen mellom ny og "gammel" acr-verdi.
+
+| Gammel ID-porten | Nye ID-porten | Beskrivelse |
+|-|-|-|
+| | idporten-loa-low | ID-porten har ikke noe eID som utleverer så lavt sikkerhetsnivå per nå. Dette må vurderes opp mot "Lov om tillitstjenester"  |
+| Level3 | idporten-loa-substantial | Tilsvarer sikkerhetsnivå "substantial" etter eIDAS forordnigen. I ID-porten har vi MinID på dette sikkerhetsnivået |
+| Level4 | idporten-loa-high | Tilsvarer sikkerhetsnivå "high" etter eIDAS forordnigen. I ID-porten tilbys BankID, Buypass og Commfides på dette sikkerhetsnivået |
 
 ### Tvungen bruk av PKCE og state og nonce
 

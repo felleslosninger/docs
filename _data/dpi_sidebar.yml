@@ -70,8 +70,8 @@ folders:
         jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Lenke
       - title: Bevis
         jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Bevis
-      - title: Arrangement
-        jurl: /resources/begrep/sikkerDigitalPost/forretningslag/Utvidelser/Arrangement
+      - title: 
+        jurl: 
         
     - title: Utskrift og forsendelse
       folderitems:

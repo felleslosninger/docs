@@ -33,7 +33,7 @@ Forretningsmeldingen `fiksio` har ikke innhold.
 Hvilke typer dokument som støttes for en gitt FIKS IO-dokumenttype tilsvarer det som støttes av den aktuelle 
 FIKS IO-protokollen. 
 
-- [KS FIKS IO](https://ks-no.github.io/fiks-plattform/tjenester/fiksio/) (ekstern lenke)
+- [KS FIKS IO](https://developers.fiks.ks.no/tjenester/fiksprotokoll/) (ekstern lenke)
 
 ## Neste steg
 

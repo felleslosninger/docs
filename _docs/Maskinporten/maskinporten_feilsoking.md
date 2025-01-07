@@ -17,34 +17,53 @@ redirect_from: /maskinporten_feilsoking
 
 ### Format
 
-Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er feil.  Denne bør logges.  Responsen er på JSON-format og inneholder attributtene:
+Maskinporten returnerer ofte en respons med detaljerte meldinger om hva som er feil.  Denne bør logges av klienten.  Responsen er på JSON-format og inneholder attributtene:
 
 * error - en OAuth2 error-kode som indikerer hva slags type problem dette er.
 * error_description - detaljert informasjon om den spesifikke feilsituasjonen.
+* error_uri - for enkelte feilsituasjoner, inneholder URL til side med feilsøkingshjelp (denne siden). Enkelte feilkoder har mer detaljer på denne siden. 
 
-I error_description er det ofte inkludert en unik id som kan brukes til feilsøking.
+I error_description er det ofte inkludert en unik id som kan brukes til feilsøking. Noen av disse er beskrevet på denne siden.
+
+### Connection
+
+#### Connection Timeout.
+
+Vi vet at enkelte kunder som kjører tjenester i Azure noen ganger sliter med å koble seg til maskinporten.no. Dette skal nå være løst.
+
+En typisk feilmelding kan se slik ut
+
+"A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."
+
+Det som har fungert for andre kunder:
+
+* Bytte host for den applikasjonen/tjenesten som ikke klarer å nå maskinporten.no
+
+* Noen har også klart å komme gjennom ved å avslutte hosten og starte opp på nytt. 
 
 ### Invalid grant
 
-#### Invalid assertion. Client authentication failed.
+Feilmelding invalid_grant betyr at Maskinporten ikke kan behandle token-forespørselen.  Noen av de vanligste feilsituasjonene er beskrevet her.
+
+#### MP-100: Invalid assertion. Client authentication failed.
 
 Kan være skrivefeil på clientID.
 
 **Løsning:** Sjekk at ClientID er korrekt.
 
-#### "Invalid assertion. Client authentication failed. Invalid JWT claim aud"
+#### MP-110: "Invalid assertion. Client authentication failed. Invalid JWT claim aud"
 
 Feil med audience i JWT-grant.
 
 **Løsning:** Sjekk at audience går mot rett milø, og uten skrivefeil.
 
-#### "Invalid assertion. Client authentication failed. The JWT is signed with an invalid certificate."
+#### MP-120: "Invalid assertion. Client authentication failed. The JWT is signed with an invalid certificate."
 
 Noe er feil med sertifikatet som benyttes.
 
 **Løsning** Sjekk at det benyttes et gyldig virksomhetssertifikat. Sjekk at det ikke benyttes produksjonssertifikat i test eller testsertifikat i PROD.
 
-#### "Invalid assertion. Client authentication failed. Expired key"
+#### MP-121: "Invalid assertion. Client authentication failed. Expired key"
 
 Nøkkelen som er postet på klienten er utgått. Nøkler har 1 års levetid fra det tidspunktet de blir postet på klienten.
 
@@ -52,7 +71,7 @@ Nøkkelen som er postet på klienten er utgått. Nøkler har 1 års levetid fra 
 
 ### Invalid request
 
-#### Invalid assertion. Invalid parameter value
+#### MP-011: Invalid assertion. Invalid parameter value
 
 Kan være skrivefeil i JWT grant.
 
@@ -66,13 +85,13 @@ Det er samme organisasjosnummer både på klient og i "consumer_org" claimet.
 
 ### Bad request
 
-#### Invalid scope -"Token request contains invalid scopes for client"
+#### MP-200: Invalid scope -"Token request contains invalid scopes for client"
 
 Scopet er ikke forhåndsregistrert på klienten som benyttes.
 
 **Løsning:** Sjekk at scopet du prøver å få tilgang til er registrert på klienten. Sjekk forespørselen for skrivefeil på scopet.
 
-#### Invalid scope - "Token request contains scopes with integration types only allowed for user login"
+#### MP-201: Invalid scope - "Token request contains scopes not allowed for maskinporten"
 
 Klienten er satt opp med en integrasjonstype som scopet ikke godtar.
 
@@ -80,7 +99,7 @@ Klienten er satt opp med en integrasjonstype som scopet ikke godtar.
 
 ###  Validation of JWT Bearer grant failed
 
-#### Grant is used before
+#### MP-012: Grant is used before
 
 Grantet er allerede brukt.
 
@@ -88,7 +107,7 @@ Grantet er allerede brukt.
 
 ### Authentication of client by JWT failed
 
-#### Client not found
+#### MP-100: Client not found
 
 Det kan være flere grunner til denne feilmeldingen. Men det betyr at denne klienten ikke finnes hos den audience som benyttes. Det kan være forskjellige grunner til det:
 
@@ -98,13 +117,13 @@ Det kan være flere grunner til denne feilmeldingen. Men det betyr at denne klie
 
 **Løsning:** Sjekk at det benyttes korrekt clientID og at den benyttes i samme miljø som den er opprettet i.
 
-#### JWT is expired
+#### MP-130: JWT is expired
 
-Tokenet er utløpt. Enten er det allerede brukt, eller det er brukt for sent.
+Tokenet er utløpt. Enten er det allerede brukt, eller det er brukt for sent. Det kan også være at det er for stor forskjell på serverklokke og Maskinporten.
 
-**Løsning:** Generer nytt token.
+**Løsning:** Generer nytt token. Synkroniser serverklokke dersom forskjellen er for stor mellom server og Maskinporten.
 
-#### Client orgno <org.nr> does not match certificate orgno <org.nr>
+#### MP-122: Invalid JWT. Invalid organization number for client. Does not match certificate orgno
 
 Virksomhetssertifikatet er utstedt til et annet organisasjonsnummer enn det som eier klienten.
 
@@ -112,21 +131,39 @@ Virksomhetssertifikatet er utstedt til et annet organisasjonsnummer enn det som 
 
 ### Validation of JWT failed
 
-#### Failed to extract certificate from jwt
+#### MP-123: Invalid JWT header x5c
 
 Muligens feil med x5c element i header.
 
 **Løsning:** Sjekk at sertifikatet ligger med som et array av string, og ikke string.
 
-#### Could not validate JWT Signature
+#### MP-124: Invalid JWT signature
 
 Feil på sertifikat. Sjekk at sertifikatet ikke er utløpt og at det benyttes prod.sertifikat i produksjonsmiljøet, og test-virksomhetssertifikat i testmiljøene.
 
-#### Grant is used before
+#### MP-012: Grant is used before
 
 Dette kan bety at det gjenbrukes en JTI, slik at jwt-grantet ikke har en unik id.
 
 **Løsning:** Generer ny JWT med ny ID. Sjekk at det genereres ny JTI for hver kjøring.
+
+#### MP-301: Unknown authorization details type
+
+Dette betyr at det gjøres en RAR request der det etterspørres en authorization details type som ikke er støttet.
+
+**Løsning:** Sjekk at det etterspørres en støttet authorization details type - sjekk oauth metadata for støttede typer.
+
+#### MP-302: Unknown fields in the authorization details
+
+Dette betyr at det gjøres en RAR request der det er inkludert ukjente felter i authorization details.
+
+**Løsning:** Sjekk at det ikke er med ukjente felt i authorization details.
+
+#### MP-303: Invalid authorization details values
+
+Dette betyr at en eller flere av veriene i authorization details i requesten ikke validerer.
+
+**Løsning:** Sjekk at alle feltene i request har gyldige verdier. Det vil vanligvis stå i feilmeldingen hvilken verdi som er ugyldig
 
 #### Issue time is after now
 
@@ -136,13 +173,13 @@ Det er for stor tidsforskjell mellom serverklokken vår og deres.
 
 ### Forbidden
 
-#### Consumer has not been granted access to the scope <scope>
+#### MP-250: Consumer has not been granted access to the scope <scope>
 
 Konsumenten har ikke tilgang til det scopet som det blir spurt om tilgang til.
 
 **Løsning:** Konsumenten må kontakte API-tilbyder for å få tilgang til scope. Eventuelt bytt til et scope som konsumenten har tilgang til.
 
-#### Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
+#### MP-251: Consumer <consumer org.nr> has not delegated access to the scope <scope> to supplier <supplier org.nr>
 
 Konsumenten har ikke delegert rettigheten videre til leverandør i Altinn. Eventuelt er det delegert feil rettighet.
 

@@ -75,16 +75,16 @@ informasjonsbehov “VarslingsStatus”.
 
 #### Xml eksempler
 
-``` 
+```
 brush: xml; toolbar: false
 <ns2:Person>
-    <ns2:personidentifikator>01012295312</ns2:personidentifikator>
+    <ns2:personidentifikator>010122*****</ns2:personidentifikator>
     <ns2:reservasjon>JA</ns2:reservasjon>
     <ns2:status>AKTIV</ns2:status>
     <ns2:varslingsstatus>KAN_VARSLES</ns2:varslingsstatus>
     <ns2:Kontaktinformasjon>
        <ns2:Mobiltelefonnummer sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">12121212</ns2:Mobiltelefonnummer>
-       <ns2:Epostadresse sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">01012295312_test@minid.difi.no</ns2:Epostadresse>
+       <ns2:Epostadresse sistOppdatert="2014-02-25T13:08:00.000+01:00" sistVerifisert="2013-10-21T10:09:28.000+02:00">010122*****_test@minid.difi.no</ns2:Epostadresse>
     </ns2:Kontaktinformasjon>
     <ns2:SikkerDigitalPostAdresse>
        <ns2:postkasseadresse>1</ns2:postkasseadresse>
@@ -96,10 +96,10 @@ brush: xml; toolbar: false
 
 Person med utgått kontaktinformasjon:
 
-``` 
+```
 brush: xml; toolbar: false
 <ns2:Person>
-    <ns2:personidentifikator>01012295312</ns2:personidentifikator>
+    <ns2:personidentifikator>010122*****</ns2:personidentifikator>
     <ns2:reservasjon>NEI</ns2:reservasjon>
     <ns2:status>AKTIV</ns2:status>
     <ns2:varslingsstatus>KAN_IKKE_VARSLES</ns2:varslingsstatus>

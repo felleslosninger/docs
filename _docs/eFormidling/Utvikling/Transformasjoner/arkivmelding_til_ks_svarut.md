@@ -54,4 +54,4 @@ tredjeparter.
 
 Nærmere beskrivelse av funksjonaliteten i KS SvarUt finnes på:
 
-- [Teknisk dokumentasjon for KS SvarUt](https://ks-no.github.io/svarut/integrasjon/forsendelseservicev9/) (ekstern lenke)
+- [Teknisk dokumentasjon for KS SvarUt](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV9?wsdl) (ekstern lenke)

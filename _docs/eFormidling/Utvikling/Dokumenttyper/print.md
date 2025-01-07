@@ -21,7 +21,9 @@ og en forretningsmelding som brukes for dokumenttype-spesifikk adresseringsinfor
 eFormidlings bruk av standarden `SBD` er beskrevet på [Standard business document](standard_sbd).
 
 Dokumenttypen `print` adresseres fra avsenders organisasjonsnummer til mottakers fødselsnummer. Dersom mottakers
-fødselsnummer er ukjent kan dette utelates.
+fødselsnummer er ukjent kan dette utelates. I slike tilfeller er det påkrevd å eksplisitt oppgi mottakers postadresse, fordi
+eFormidling ellers ikke har nok opplysninger til å gjøre adresseoppslag. En kan dermed bruke `print` til å sende fysisk post
+til utenlandske innbyggere og virksomheter.
 
 ### Forretningsmeldingen
 
@@ -215,13 +217,17 @@ sende dokumenter som ikke støttes av mottakeren feiler først ved mottak.
 
 Filformat som støttes er PDF. Nærmere beskrivelse finnes på:
 
-- [Utskrifts- og forsendelsestjenesten](https://samarbeid.digdir.no/digital-postkasse/utskrifts-og-forsendelsestjenesten/644) (ekstern lenke)
+- [Utskrifts- og forsendelsestjenesten](https://samarbeid.digdir.no/digital-postkasse/utskrifts-og-forsendelsestenesta/1463) (ekstern lenke)
 
 ## Beriking og transformasjon
 
 Integrasjonspunktet transformerer og beriker meldinger som sendes med Digital Post til Innbyggere.
 
 - [Transformasjon fra print til Digital Post til Innbyggere](../Transformasjoner/print_til_digital_post_til_innbyggere)
+
+## Anbefalinger ved adressering
+
+For å redusere risikoen for at brevpost ikke skal nå mottaker, har Posten kommet med gode anbefalinger på hvordan man skal adressere riktig, både til mottakere i Norge og i utlandet. Det anbefales at alle avsendervirksomheter følger disse. Les mer på [Posten adressering](https://www.posten.no/sende/adressering) (ekstern lenke)
 
 ## Neste steg
 

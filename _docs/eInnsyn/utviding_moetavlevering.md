@@ -3,7 +3,7 @@ title: Utvida møteavlevering med fleire eigenskapar
 description:
 summary:
 
-sidebar: einnsyn_technical_sidebar
+sidebar: einnsyn_sidebar
 redirect_from: /einnsyn_utvida_moeteavlevering
 ---
 ## Utvida møteavlevering med fleire eigenskapar

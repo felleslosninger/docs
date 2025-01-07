@@ -49,9 +49,9 @@ Leverandøren må forhåndsregistere såkalte "onbehalfof"-verdier som blir knyt
 
 I selvbetjening opprettes slike integrasjoner med valget "på vegne av flere kunder" (via selvbetjenings-api brukes `idporten:dcr/onbehalfof:write`)
 
-Dersom integrasjonen skal kunne bruke [brukerstyrt datadeling]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2) på vegne av kunden, eller integrasjonen har behov for å motta access_tokens med scopes eid av 3dje-part, må API-tilbyder gi leverandøren (altså ikke kunden) tilgang til scopet, for at leverandøren skal kunne registrer scopet på sin klient. Både API-tilbyder og leverandør bør merke seg at `consumer`-claimet i access_token da blir satt lik orgnummeret som tilhører onbehalfof-verdien.
+Dersom leverandøren treng å bruke [brukerstyrt datadeling]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2) på vegne av kunden, eller integrasjonen av andre grunner har behov for å motta access_tokens med scopes eid av 3dje-part, må API-tilbyder gi leverandøren (altså ikke kunden) tilgang til scopet, for at leverandøren skal kunne registrer scopet på sin klient.  API-tilbyder må da være klar over at leverandøren på selvstendig grunnlag kan onboarde nye kunder uten at API-tilbyderen kan hindre dette gjennom tilgangstyring. Av den grunn anbefaler ikke Digdir bruk av onbehalfof-mekanismen generelt for brukerstyrt datadeling. 
 
-Det gir ingen mening å bruke onbehalfof for Maskinporten-integrasjoner.
+Onbehalfof-mekanismen virker ikke for Maskinporten-integrasjoner.
 
 
 ## 2. Selvstendige kunde-integrasjoner i ID-porten
@@ -67,7 +67,7 @@ I selvbetjening opprettes slike integrasjoner med valget "på vegne av en kunde"
 * Leverandørens eget organisasjonnummer blir *automatisk* satt som `supplier_orgno` (basert på virksomhetssertifikatet som blir brukt mot admin-APIet)
 
 
-Dersom integrasjonen skal bruke [brukerstyrt datadeling]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2), må - på samme måte som for onbehalfof'er - API-tilbyder gi leverandøren sitt orgno tilgang til scopet, for at scopet skal kunne registreres på klient. Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene.
+Dersom integrasjonen skal bruke [brukerstyrt datadeling]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2), må - på samme måte som for onbehalfof'er - API-tilbyder gi leverandøren sitt orgno tilgang til scopet, for at scopet skal kunne registreres på klient. Utstedte access_tokens  vil innholde både leverandørens og kundens organisasjonsnummer i hhv. `supplier` og `consumer` claimene. 
 
 ## 3. Kun bruke redirect-uri
 Noen leverandører velger å ikke bruke en av de 2 foregående mekanismene, og bruker i stedet én integrasjon, med ulike forhåndsregistrerte `redirect_uri` til å skille mellom kunder. Alternativt sendes en kunde-spesifikk `state`-verdi runtime (da må også [PKCE]({{site.baseurl}}/docs/idporten/oidc/oidc_func_pkce) brukes for å hindre csrf eller replay attack).
@@ -80,7 +80,9 @@ For datadeling mellom virksomheter gjennom Maskinporten er det mulig for en Kund
 
 Kunde-Leverandør-forholdet blir for slike integrasjoner ikke forhåndsregistert på klient-registreringa via selvbetjening (som for de ovenstående alternativene), men sjekkes istedet runtime ved bruk.
 
-Funksjonaliteten er kun tilgjengelig for 3-djeparts scopes som har `delegation_source`-feltet satt.
+Funksjonaliteten er kun tilgjengelig for 3-djeparts scopes som har `delegation_source`-feltet satt, dvs. det er API-tilbyder som bestemmer om Altinn-delegering skal være mulig.
+
+Delegering av API-tilgang gjennom Altinn fungerer ikke i ID-porten.
 
 
 

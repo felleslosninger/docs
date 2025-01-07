@@ -90,13 +90,15 @@ A previously exchanged out-of-band static secret is used for authentication.  Th
 
 
 
-#### Client authentication using JWT token
+#### Client authentication using JWT token (private_key_jwt)
 
 The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
 
-The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see above.
+The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see example below.
 
-The 'sub' field of the JWT must be set equal to your client_id, otherwise the JWT itself is similar to [those used for JWT grants]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_jwtgrant).
+The 'sub' field of the JWT must be set equal to your client_id
+
+The 'aud' field of th JWT must be set equal to the issuer identifier of ID-porten, or the token-endpoint url
 
 #### Example:
 
@@ -109,6 +111,28 @@ grant_type=authorization_code&
    client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer&
    client_assertion=< jwt >
 ```
+#### Example JWT client_assertion
+
+The final JWT client_assertion may look like this:
+
+```
+{
+  "x5c": [ "MIIFETCCA/mgAwIB``````EefETzAxjqBHM=" ],
+  "alg": "RS256"
+}
+.
+{
+  "iss": "my_client_id",
+  "aud": "https://idporten.no", 
+  "sub": "my_client_id",
+  "exp": 1520589928,
+  "iat": 1520589808,
+  "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
+}
+.
+<<signature-value>>
+```
+
 
 #### No client authentication
 

@@ -33,8 +33,6 @@ Når en instans av den tykke klienten starter opp, må det forespørre eierskap 
 
 Samme portnummer må også oppgis på token-kallet.
 
-Både ipv6 og ipv4 er støtta.
-
 ## Beskrivelse av innloggingsflyten for tykke klienter
 
 Flyten er identisk som for [autorisasjonskode-flyten]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_codeflow), men med bruk av [PKCE]({{site.baseurl}}/docs/idporten/oidc/oidc_func_pkce):

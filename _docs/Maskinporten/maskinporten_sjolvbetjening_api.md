@@ -34,7 +34,7 @@ Dersom du vil automatisere administrasjonen av scopes og tilganger fra egen API 
 
 ```
 POST /scopes HTTP/1.1
-Host: integrasjon-ver2.difi.no
+Host: api.test.samarbeid.digdir.no
 Content-Type: application/json
 Authorization: Bearer 0pLY6hwU6tkzBPoGTVlObex-QfIBw_yU9tXy7SKrgOU=
 cache-control: no-cache
@@ -122,7 +122,7 @@ For å kunne registrere en klient via vår selvbetjenings-APi, må du først opp
 Deretter kan du opprette Maskinporten-integrasjonen slik:
 
 ```
-POST https://integrasjon.difi.no/clients/
+POST https://api.samarbeid.digdir.no/clients/
 {
    "integration_type": "maskinporten",
     "client_name": "oidc_difi_jb_test",
@@ -161,6 +161,8 @@ POST /clients/238259d7-f0ab-4bd5-b253-0f0159375096/jwks
 ```
 'kid'-verdier må være unike innenfor klientens nøkkel-sett. 
 
+Merk! Det fins ulik programvare for nøkkeloppretting og eksportering av offentleg nøkkel. Dette vil ikke være omtalt i Digdir sin tekniske dokumentasjon.
+Offentleg nøkkel i PEM-format må konverteres til JWK ved hjelp av for eksempel JWK Creator før den kan bli lagt på klienten. 
 
 ### Vedlikehald av merkantile data
 
