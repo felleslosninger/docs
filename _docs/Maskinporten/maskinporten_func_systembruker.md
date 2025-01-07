@@ -11,7 +11,7 @@ Funksjonaliteten lar leverandører definere sine Maskinporten-integrasjoner som 
 
 ## Status
 
-Funksjonaliteten blir lansert i en pilotfase tidlig Q2 2024.  
+Funksjonaliteten er lansert i en pilotfase tidlig Q1 2025.  
 
 ## Bakgrunn
 
@@ -30,7 +30,7 @@ For begge utvidelsene så utfører kunden selve delegeringshandlingen gjennom br
 
 API-delegering gjelder en hel API-tilgang (dvs. et Oauth2 scope) og delegeres til et organisasjonsnummer (leverandør).
 
-Ved systembruker-delegering får kunder mulighet til å delegere et mer spisset / avgrenset sett med "Altinn-rettigheter", og rettighetene kan bare delegeres til ett spesifikt system hos leverandøren, istedet til leverandørens organisasjonnummer. 
+Ved systembruker-delegering får kunder mulighet til å delegere et mer spisset / avgrenset sett med "Altinn-rettigheter", og rettighetene kan bare delegeres til ett spesifikt system hos leverandøren, istedet for til leverandørens organisasjonnummer. 
 Systemet må være forhåndsregistrert i Systemregisteret i Altinn.  
 
 De to delegeringsmekanismene er uavhengig av hverandre, og det er ingen sentral validering av at systemet i systemregisteret har bestemte scope registert på seg, som skulle "passe" med de rettighetene som blir delegert.  Normalt vil dog APIet validere både hvilke scopes som systemet må ha, samt hvilke type delegerte rettigheter som trengs for å kunne bruke APIet. 
@@ -40,7 +40,7 @@ De to delegeringsmekanismene er uavhengig av hverandre, og det er ingen sentral 
 
 Rent teknisk i Autorisasjon så blir ikke de delegerte rettighetene gitt direkte til systemet, men er delegert til en såkalt **systembruker** knyttet til kunden. Systembrukeren peker i sin tur på leverandøren sitt system i Systemregisteret, som igjen er kobla mot en og bare en client_id i Maskinporten.
 
-Et systembruker-token skiller seg fra et vanlig Maskinporten-token ved at det inneholder en informasjon om både systembrukeren hos kunden og systemet til leverandøren.  API-tilbydere kan stole på at systemet som fikk utstedt tokenet er gitt nødvendige delegeringer i Altinn. 
+Et systembruker-token skiller seg fra et vanlig Maskinporten-token ved at det inneholder informasjon om både systembrukeren hos kunden og systemet til leverandøren.  API-tilbydere kan stole på at systemet som fikk utstedt tokenet er gitt nødvendige delegeringer i Altinn. 
 
 #### For API-tilbyder
 
