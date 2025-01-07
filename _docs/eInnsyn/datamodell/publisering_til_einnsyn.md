@@ -3,7 +3,7 @@ title: Publisering til eInnsyn
 description:
 summary:
 
-sidebar: einnsyn_technical_sidebar
+sidebar: einnsyn_sidebar
 redirect_from: /einnsyn_publisering_til_einnsyn
 ---
 
