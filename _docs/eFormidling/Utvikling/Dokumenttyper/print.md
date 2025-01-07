@@ -217,7 +217,7 @@ sende dokumenter som ikke støttes av mottakeren feiler først ved mottak.
 
 Filformat som støttes er PDF. Nærmere beskrivelse finnes på:
 
-- [Utskrifts- og forsendelsestjenesten](https://samarbeid.digdir.no/digital-postkasse/utskrifts-og-forsendelsestjenesten/644) (ekstern lenke)
+- [Utskrifts- og forsendelsestjenesten](https://samarbeid.digdir.no/digital-postkasse/utskrifts-og-forsendelsestenesta/1463) (ekstern lenke)
 
 ## Beriking og transformasjon
 
