@@ -4,6 +4,7 @@ description:
 summary:
 
 sidebar: einnsyn_sidebar
+product: einnsyn
 redirect_from: /einnsyn_publisering_kodelister
 ---
 
