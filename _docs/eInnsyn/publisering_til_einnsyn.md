@@ -4,7 +4,7 @@ description:
 summary:
 
 sidebar: einnsyn_sidebar
-redirect_from: /einnsyn_publisering_til_einnsyn
+redirect_from: /publisering_til_einnsyn
 ---
 
 eInnsyn nyttar eFormidling til transport av data mellom innhaldsleverandørar og eInnsyn.
