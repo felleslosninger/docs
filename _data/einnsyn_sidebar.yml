@@ -5,55 +5,55 @@ folders:
   folderitems:
 
   - title: Publisering til einnsyn
-    jurl: /docs/eInnsyn/publisering_til_einnsyn
+    jurl: /docs/eInnsyn/publisering_til_einnsyn.html
     
   - title: Kvittering ved publisering
-    jurl: /docs/eInnsyn/Kvittering_ved_publisering
+    jurl: /docs/eInnsyn/Kvittering_ved_publisering.html
 
   - title: Generelt om datamodell
-    jurl: /docs/eInnsyn/generelt_om_modellen
+    jurl: /docs/eInnsyn/generelt_om_modellen.html
 
   - title: Validering
-    jurl: /docs/eInnsyn/SHACL_validering
+    jurl: /docs/eInnsyn/SHACL_validering.html
 
   - title: Kodelister
-    jurl: /docs/eInnsyn/einnsyn_publisering_kodelister
+    jurl: /docs/eInnsyn/einnsyn_publisering_kodelister.html
 
   - title: Eksempel
-    jurl: /docs/eInnsyn/eksempler
+    jurl: /docs/eInnsyn/eksempler.html
 
 - title: eInnsyn-klient
   folderitems:
 
   - title: Forutsetning for installasjon og verktøy
-    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
+    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy.html
 
   - title: Konfigurasjon av einnsyn-klient.xml
-    jurl: /docs/eInnsyn/einnsyn_install_konfigurasjon
+    jurl: /docs/eInnsyn/einnsyn_install_konfigurasjon.html
 
   - title: Installere einnsyn-klient som Windows service
-    jurl: /docs/eInnsyn/einnsyn_install_tjeneste
+    jurl: /docs/eInnsyn/einnsyn_install_tjeneste.html
 
   - title: Teste og verifisere installasjon
-    jurl: /docs/eInnsyn/einnsyn_test_verifikasjon
+    jurl: /docs/eInnsyn/einnsyn_test_verifikasjon.html
 
   - title: Oppdatere einnsyn-klient
-    jurl: /docs/eInnsyn/einnsyn_oppdatere_tjeneste
+    jurl: /docs/eInnsyn/einnsyn_oppdatere_tjeneste.html
 
   - title: Flere einnsyn-klienter på samme server
-    jurl: /docs/eInnsyn/einnsyn_flere_klienter
+    jurl: /docs/eInnsyn/einnsyn_flere_klienter.html
 
   - title: Innsynskrav og e-postoppsett
-    jurl: /docs/eInnsyn/einnsyn_innsynskrav
+    jurl: /docs/eInnsyn/einnsyn_innsynskrav.html
     
 - title: Publisering av møter
   folderitems:
 
   - title: Generelt om møtemodellen
-    jurl: /docs/eInnsyn/generelt_om_moetemodellen
+    jurl: /docs/eInnsyn/generelt_om_moetemodellen.html
 
   - title: Utviding møteavlevering
-    jurl: /docs/eInnsyn/utviding_moetavlevering
+    jurl: /docs/eInnsyn/utviding_moetavlevering.html
 
 ###########################
 
