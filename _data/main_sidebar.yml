@@ -67,8 +67,8 @@ folders:
   - title: Om eInnsyn
     jurl: /docs/eInnsyn/
 
-  - title: eInnsyn-klient
-    jurl: /docs/eInnsyn/einnsyn_install_forutsetninger_verktoy
+  - title: Teknisk dokumentasjon
+    jurl: /docs/eInnsyn/publisering_til_einnsyn
 
 - title: ELMA
   folderitems:
