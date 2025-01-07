@@ -5,22 +5,22 @@ folders:
   folderitems:
 
   - title: Publisering til einnsyn
-    jurl: /docs/eInnsyn/datamodell/publisering_til_einnsyn
+    jurl: /docs/eInnsyn/publisering_til_einnsyn
     
   - title: Kvittering ved publisering
-    jurl: /docs/eInnsyn/datamodell/Kvittering_ved_publisering
+    jurl: /docs/eInnsyn/Kvittering_ved_publisering
 
   - title: Generelt om datamodell
-    jurl: /docs/eInnsyn/datamodell/generelt_om_modellen
+    jurl: /docs/eInnsyn/generelt_om_modellen
 
   - title: Validering
-    jurl: /docs/eInnsyn/datamodell/SHACL_validering
+    jurl: /docs/eInnsyn/SHACL_validering
 
   - title: Kodelister
-    jurl: /docs/eInnsyn/datamodell/einnsyn_publisering_kodelister
+    jurl: /docs/eInnsyn/einnsyn_publisering_kodelister
 
   - title: Eksempel
-    jurl: /docs/eInnsyn/datamodell/eksempler
+    jurl: /docs/eInnsyn/eksempler
 
 - title: eInnsyn-klient
   folderitems:
