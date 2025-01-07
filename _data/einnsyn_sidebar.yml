@@ -2,6 +2,7 @@ sidebarTitle: eInnsyn
 
 folders:
 - title: Publisering til eInnsyn
+  expanded: true  # Keeps this folder expanded
   folderitems:
 
   - title: Publisering til einnsyn
