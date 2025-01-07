@@ -3,7 +3,7 @@ title: Kodelister
 description:
 summary:
 
-sidebar: einnsyn_technical_sidebar
+sidebar: einnsyn_sidebar
 redirect_from: /einnsyn_publisering_kodelister
 ---
 
