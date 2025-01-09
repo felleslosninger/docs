@@ -2,32 +2,32 @@ sidebarTitle: eInnsyn
 
 folders:
 - title: Publisering til eInnsyn
-  jurl: /docs/generelt_om_publisering
+  jurl: /docs/eInnsyn/publisering_til_einnsyn.html
   folderitems:
 
   - title: Publisering med eFormidling einnsyn
     jurl: /docs/eInnsyn/publisering_til_einnsyn.html
     folderitems:
 
-        - title: Publisering til einnsyn
+    - title: Publisering til einnsyn
         jurl: /docs/eInnsyn/publisering_til_einnsyn.html
     
-        - title: Kvittering ved publisering
+    - title: Kvittering ved publisering
         jurl: /docs/eInnsyn/Kvittering_ved_publisering.html
 
-        - title: Generelt om datamodell
+    - title: Generelt om datamodell
         jurl: /docs/eInnsyn/generelt_om_modellen.html
 
-        - title: Validering
+    - title: Validering
         jurl: /docs/eInnsyn/SHACL_validering.html
 
-        - title: Kodelister
+    - title: Kodelister
         jurl: /docs/eInnsyn/einnsyn_publisering_kodelister.html
 
-        - title: Eksempel
+    - title: Eksempel
         jurl: /docs/eInnsyn/eksempler.html
     
-   - title: Publisering med API
+  - title: Publisering med API
     jurl: /docs/eInnsyn/publisering_til_einnsyn.html
     
 - title: eInnsyn-klient
