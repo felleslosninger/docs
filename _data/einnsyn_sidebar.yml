@@ -4,13 +4,13 @@ folders:
 - title: Publisering med API (kommer..)
   folderitems:
 
-  - title: Publisering til einnsyn
+  - title: Publisering til einnsyn - API
     jurl: /docs/eInnsyn/publisering_med_api.html
     
 - title: Publisering med eFormidling
   folderitems:
 
-  - title: Publisering til einnsyn
+  - title: Publisering til einnsyn - eFormidling
     jurl: /docs/eInnsyn/publisering_til_einnsyn.html
     
   - title: Kvittering ved publisering
