@@ -1,7 +1,13 @@
 sidebarTitle: eInnsyn
 
 folders:
-- title: Publisering til eInnsyn
+- title: Publisering med API (kommer..)
+  folderitems:
+
+  - title: Publisering til einnsyn
+    jurl: /docs/eInnsyn/publisering_til_einnsyn.html
+    
+- title: Publisering med eFormidling
   folderitems:
 
   - title: Publisering til einnsyn
@@ -19,8 +25,14 @@ folders:
   - title: Kodelister
     jurl: /docs/eInnsyn/einnsyn_publisering_kodelister.html
 
-  - title: Eksempel
+  - title: Eksempler
     jurl: /docs/eInnsyn/eksempler.html
+  
+  - title: Generelt om møtemodellen
+    jurl: /docs/eInnsyn/generelt_om_moetemodellen.html
+
+  - title: Utviding møteavlevering
+    jurl: /docs/eInnsyn/utviding_moetavlevering.html
 
 - title: eInnsyn-klient
   folderitems:
@@ -46,14 +58,6 @@ folders:
   - title: Innsynskrav og e-postoppsett
     jurl: /docs/eInnsyn/einnsyn_innsynskrav.html
     
-- title: Publisering av møter
-  folderitems:
-
-  - title: Generelt om møtemodellen
-    jurl: /docs/eInnsyn/generelt_om_moetemodellen.html
-
-  - title: Utviding møteavlevering
-    jurl: /docs/eInnsyn/utviding_moetavlevering.html
 
 ###########################
 
