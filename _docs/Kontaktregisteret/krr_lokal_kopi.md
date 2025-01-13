@@ -7,11 +7,11 @@ product: KRR
 redirect_from: /krr_lokal_kopi
 ---
 
-Som hovedregel sier [Veiledning for bruk av Kontakt- og reservasjonsregisteret](https://samarbeid.digdir.no/media/218/download) at det IKKE er lov til å bruke kontaktregisteret til å kvalitetssikre e-postadresser i andre registre. Likevel oppfyller noen svært få virksomheter kravet til å ha en lokal kopi av Kontakt- og Reservasjonsregisteret, som er et unntak av dette og ordinær bruk av Oppslagstjenesten.
+Som hovedregel sier [Veiledning for bruk av Kontakt- og reservasjonsregisteret](https://samarbeid.digdir.no/media/218/download) at det IKKE er lov til å bruke kontaktregisteret til å kvalitetssikre e-postadresser i andre registre. Likevel oppfyller noen svært få virksomheter kravet til å ha en lokal kopi av Kontakt- og Reservasjonsregisteret (KRR), som er et unntak av dette og ordinær bruk av Oppslagstjenesten.
 
 
 ### Hente endringer
-Virksomheter som oppfyller kravet til å ha en lokal kopi av Kontakt- og reservasjonsregisteret (KRR) må daglig hente endringsmeldinger for endringer som skjer i KRR. For dette trenger virksomheten særskilt tilgang (se avsnittet om Scope under).
+Virksomheter som oppfyller kravet til å ha en lokal kopi av KRR må daglig hente endringsmeldinger for endringer som skjer i KRR. For dette trenger virksomheten særskilt tilgang (se avsnittet om Scope under).
 
 ### Krav om oppdatert kontaktinfo
 For å sikre at kontaktinfoen i lokal kopi er oppdatert, må slike virksomheter hente endringsmeldinger minimum en gang i døgnet.
@@ -26,4 +26,6 @@ Dersom sertifikatet, navnet eller organisasjonsnummeret til en postkasseleverand
 {% include note.html content="I dag finnes det kun to sertifikater. Ett for Digipost og ett for e-Boks." %}
 <br>
 
-Selv om hentEndringer for personer returnerer et sertifikat, så er dette alltid koblet til postkasseleverandøren. Det innebærer at det ikke er noe poeng å lagre sertifikatet for hver bruker.
+<br>
+{% include note.html content="Selv om hentEndringer for personer returnerer et sertifikat, så er dette alltid koblet til postkasseleverandøren. Det innebærer at det ikke er noe poeng å lagre sertifikatet for hver bruker." %}
+<br>
