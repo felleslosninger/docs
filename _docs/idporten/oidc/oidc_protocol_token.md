@@ -150,7 +150,7 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 |expires_in  | Number of seconds until this access_token is no longer valid   |
 | id_token   | An OpenID Connect id_token. Only returned if 'openid' scope was requested.  |
 | refresh_token  | Issued to confidential clients  |
-| refresh_token_expires_in  | non-standard claim. Shows how many seconds until refresh_token expires. Will be reset if refreshed within the refresh token expiration time and overall authorization lifetime  |
+| refresh_token_expires_in  | Non-standard claim. Shows how many seconds until refresh_token expires. Will be reset if refreshed within the refresh token expiration time and overall authorization lifetime  |
 | scope   | The list of scopes issued in the access token. Included for convenience only, and should not be trusted for access control decisions.  |
 
 Example:
