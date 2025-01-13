@@ -30,6 +30,8 @@ folders:
       - title: Krav til fersk kontaktinfo
         jurl: /docs/Kontaktregisteret/krr_18mnd
 
+      - title: Lokal kopi
+        jurl: /docs/Kontaktregisteret/krr_lokal_kopi
 
 - title: Attributter og testing
   folderitems:
