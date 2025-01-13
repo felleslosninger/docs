@@ -18,11 +18,13 @@ Virksomheter som oppfyller kravet til å ha en lokal kopi må daglig hente endri
 For å sikre at kontaktinfoen i lokal kopi er oppdatert, må slike virksomheter hente endringsmeldinger minimum en gang i døgnet.
 
 ## Scope
-For å hente endringer benyttes Oppslagstjenesten REST og virksomheten må ha fått tildelt scopet krr:global/hentendring.read. Mer dokumentasjon om bruk av scopet finnes i Swagger UI.
+For å hente endringer benyttes Oppslagstjenesten REST og virksomheten må ha fått tildelt scopet krr:global/hentendring.read. Mer dokumentasjon om bruk av scopet finnes i [Swagger UI](https://test.kontaktregisteret.no/swagger-ui/index.html#/Personer/getPostboxOperatorChangesV1).
 
 ## Ny tjeneste for postkasseleverandørendringer
 Dersom sertifikatet, navnet eller organisasjonsnummeret til en postkasseleverandør endrer seg, så vil det ikke lenger trigge en endring av alle brukere. I stedet er det opprettet en tilleggstjeneste for å kunne hente endringer for postkasseleverandør. Slike endringer er det svært få av.
 
-Merk! I dag finnes det kun to sertifikater. Ett for Digipost og ett for e-Boks.
+<br>
+{% include note.html content="I dag finnes det kun to sertifikater. Ett for Digipost og ett for e-Boks." %}
+<br>
 
 Selv om hentEndringer for personer returnerer et sertifikat, så er dette alltid koblet til postkasseleverandøren. Det innebærer at det ikke er noe poeng å lagre sertifikatet for hver bruker.
