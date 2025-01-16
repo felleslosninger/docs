@@ -73,17 +73,18 @@ Alt etter bruksområde, så tilbyr vi forskjellige metoder for autentisering av 
 
 |Metode|token_endpoint_auth_method|Beskrivelse|
 |-|-|-|
-| Statisk hemmelighet | client_secret_basic client_secret_post | En statisk hemmelighet (*client_secret*) som Digitaliseringsdirektoratet genererer og blir utvekslet manuelt, eller tilgjengeliggjort via selvbetjening.  Maks tillatt levetid er satt til 360 dager. Det er kundens ansvar å få rotert hemmeligheten før utløp for å sikre kontinuerlig tjenesteleveranse. |
+| Statisk hemmelighet | client_secret_basic client_secret_post | En statisk hemmelighet (*client_secret*) som Digitaliseringsdirektoratet genererer og blir utvekslet manuelt, eller tilgjengeliggjort via selvbetjening.  Maks tillatt levetid er satt til 360 dager. Det er kundens ansvar å få rotert hemmeligheten før utløp for å sikre kontinuerlig tjenesteleveranse.  Gammel og ny hemmelighet vil begge virke i et vindu på 30 minutter. |
 | Virksomhetssertifikat   | private_key_jwt | Klienten bruker et gyldig virksomhetssertifikat fra Buypass eller Commfides. Organisasjonsnummeret i sertifikatet må stemme med klient-registreringa. Kunden kan valgfritt velge å "låse" klienten til bare et spesifikt virksomhetssertifikat. |
 | Asymmetrisk nøkkel  | private_key_jwt | Den offentlige nøkkelen fra et egen-generert asymmetrisk nøkkelpar blir registrert på klient, og klienten bruker privatnøkkelen til å autentisere seg. Maks tillatt levetid er satt til 1 år.   |
 | Ingen   | none  | Klienten er en såkalt *public*-klient som ikke kan beskytte en hemmelighet på en tilfredstillende måte.  Gjelder single-page-applikasjon og i noen tilfeller mobil-apper  |
 
- Digitaliseringsdirektoratet anbefaler bruk av asymetriske nøkler `private_key_jwt` til klientautentisering over statiske hemmeligheter. Enten å bruke virksomhetssertifikat, da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.  Dersom organisasjonen har høy modenhet, kan også egen-genererte asymmetriske nøkler anbefales.
- `client_secret_basic` bør unngås til fordel for `client_secret_post` eller helst `client_secret_jwt`.
+Digitaliseringsdirektoratet anbefaler bruk av asymetriske nøkler `private_key_jwt` til klientautentisering over statiske hemmeligheter. Enten å bruke virksomhetssertifikat, da prosedyren for utstedelsen av slike er grundig regulert i lovverk og gir derfor både Digitaliseringsdirektoratet og API-tilbydere en god og sikker identifisering av klienten.  Dersom organisasjonen har høy modenhet, kan også egen-genererte asymmetriske nøkler anbefales.
 
- Digitaliseringsdirektoratet forutsetter at API-tilbyder og API-konsument håndterer sertifikat og nøkler på en måte som sikrer at ikke uvedkommende kan misbruke disse.
+Digitaliseringsdirektoratet forutsetter at API-tilbyder og API-konsument håndterer sertifikat og nøkler på en måte som sikrer at ikke uvedkommende kan misbruke disse.
 
-**Merk at eksisterende secret slettes dersom man endrer metoden til noe annet enn client_secret_***
+`client_secret_basic` bør unngås til fordel for `client_secret_post`.  Ved rotering av `client_secret` vil gammel og ny hemmelighet virke i 30 minutter.  Kun én gammel client_secret støttes ved rotering.  Ved kompromittert hemmelighet bør det lages 2 nye hemmeligheter.  Slik vil det gamle slutte å virke med det samme.  Den første nye hemmeldigheten skal aldri benyttes.
+
+**Merk at eksisterende secret slettes med det samme dersom man endrer metoden til noe annet enn client_secret_***
 
 ### Grant-typer
 
