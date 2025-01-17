@@ -7,11 +7,10 @@ product: KRR
 redirect_from: /krr_lokal_kopi
 ---
 
-Som hovedregel sier [Veiledning for bruk av Kontakt- og reservasjonsregisteret](https://samarbeid.digdir.no/media/218/download) at det IKKE er lov til å bruke kontaktregisteret til å kvalitetssikre e-postadresser i andre registre. Likevel oppfyller noen svært få virksomheter kravet til å ha en lokal kopi av Kontakt- og Reservasjonsregisteret (KRR), som er et unntak av dette og ordinær bruk av Oppslagstjenesten.
-
+Som hovedregel sier [Veiledning for bruk av Kontakt- og reservasjonsregisteret](https://samarbeid.digdir.no/media/218/download) at det IKKE er lov til å bruke kontaktregisteret til å kvalitetssikre e-postadresser i andre registre. I [bruksvilkårene for Kontakt- og reservasjonsregisteret](https://samarbeid.digdir.no/digital-postkasse/bruksvilkar-offentlige-kunder/70#4_kontakt_og_reservasjonsregisteret) står det også at offentlige virksomheter ikke skal ha egne registre med samme informasjon. Det finnes likevel noen få unntak. Et fåtall virksomheter er nødt til å inneha en egen lokal kopi av Kontakt- og Reservasjonsregisteret (KRR) av særskilte årsaker. 
 
 ### Hente endringer
-Virksomheter som oppfyller kravet til å ha en lokal kopi av KRR må daglig hente endringsmeldinger for endringer som skjer i KRR. For dette trenger virksomheten særskilt tilgang (se avsnittet om Scope under).
+Virksomhetene som er unntatt regelen, og innehar en lokal kopi av KRR, må daglig hente endringsmeldinger for endringer som skjer i KRR. For dette trenger virksomheten særskilt tilgang (se avsnittet om Scope under).
 
 ### Krav om oppdatert kontaktinfo
 For å sikre at kontaktinfoen i lokal kopi er oppdatert, må slike virksomheter hente endringsmeldinger minimum en gang i døgnet.
@@ -19,8 +18,8 @@ For å sikre at kontaktinfoen i lokal kopi er oppdatert, må slike virksomheter 
 ### Scope
 For å hente endringer benyttes Oppslagstjenesten REST og virksomheten må ha fått tildelt scopet krr:global/hentendring.read. Mer dokumentasjon om bruk av scopet finnes i [Swagger UI](https://test.kontaktregisteret.no/swagger-ui/index.html#/Personer/getPostboxOperatorChangesV1).
 
-### Ny tjeneste for postkasseleverandørendringer
-Dersom sertifikatet, navnet eller organisasjonsnummeret til en postkasseleverandør endrer seg, så vil det ikke lenger trigge en endring av alle brukere. I stedet er det opprettet en tilleggstjeneste for å kunne hente endringer for postkasseleverandør. Slike endringer er det svært få av.
+### Egen tjeneste for postkasseleverandørendringer
+Dersom sertifikatet, navnet eller organisasjonsnummeret til en postkasseleverandør endrer seg, så vil det ikke lenger trigge en endring av alle brukere. Slike endringer er få og opptrer sjelden. For å hente endringer knyttet til postkasseleverandørene skal en derfor benytte egen tjeneste for dette.
 
 <br>
 {% include note.html content="I dag finnes det kun to sertifikater. Ett for Digipost og ett for e-Boks." %}
