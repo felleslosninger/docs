@@ -229,6 +229,17 @@ Integrasjonspunktet transformerer og beriker meldinger som sendes med Digital Po
 
 For å redusere risikoen for at brevpost ikke skal nå mottaker, har Posten kommet med gode anbefalinger på hvordan man skal adressere riktig, både til mottakere i Norge og i utlandet. Det anbefales at alle avsendervirksomheter følger disse. Les mer på [Posten adressering](https://www.posten.no/sende/adressering) (ekstern lenke)
 
+##Viktige merknader om FEIL-status på utskriftsmeldinger:
+
+Selv om en utskriftsmelding har fått status LEVERT kan den allikevel feile på et senere tidspunkt. Det kan skje i følgende tilfeller:
+
+Meldingen feiler under selve utskriftsjobben. Det vil kunne skje innen 24 timer etter at meldingen har fått status LEVERT. 
+
+Meldingen feiler som følge av returpost, dvs. at den ikke kan leveres til innbyggers fysiske postadresse. En FEIL-status grunnet returpost vil i de aller fleste tilfeller returneres innen en periode på to uker. I sjeldnere tilfeller kan det ta opp mot fire uker for et brev å gå i retur. Merk at det kun er meldinger med print.retur.returhaandtering satt til MAKULERING_MED_MELDING som vil motta FEIL-status på returpost.
+
+Avsendere må kunne håndtere at en melding kan feile i etterkant av status LEVERT, og det anbefales derfor å sjekke status en periode etter at den er markert som LEVERT.![image](https://github.com/user-attachments/assets/2c42974f-9d84-4f48-a7db-eb258a5c387d)
+
+
 ## Neste steg
 
 - [Dokumenttype `print` under Eksempel på vedtak til innbygger](../Eksempel/vedtak_til_innbygger#dersom-dokumenttype-print-st%C3%B8ttes)
