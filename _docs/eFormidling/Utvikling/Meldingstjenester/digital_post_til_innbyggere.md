@@ -48,7 +48,7 @@ D --> C
 
 ## Meldingsstatuser
 
-Meldingsstatuser for meldinger sendt med Digital Post til Innbyggere:
+Meldingsstatuser for meldinger sendt med Digital Post til Innbygger:
 
 | Status    | Kommentar                                                                     |
 |-----------|-------------------------------------------------------------------------------|
@@ -57,6 +57,14 @@ Meldingsstatuser for meldinger sendt med Digital Post til Innbyggere:
 | MOTTATT   | Forsendelse er mottatt av mottakers aksesspunkt                               |
 | LEVERT    | Forsendelse levert til innbyggers prefererte kanal                            |
 | LEST      | Innbygger har åpnet forsendelse i sin postkasse innboks                       |
+| FEIL      | Noe ved forsendelsen har feilet                                               |
+
+## Merknader om FEIL-status
+
+I hovedsak feiler en melding fordi den ikke kan leveres til innbygger. I et slikt tilfelle må avsender ta stilling til om meldingen skal sendes på nytt. En melding kan også få FEIL-status uten av selve forsendelsen feiler. Da er det noe rundt meldingen som feiler, eksempelvis SMS- og/eller epost-varslingen om at posten er tilgjengeliggjort for innbygger. 
+
+Utskriftsmeldinger har noen egne særegenheter når det kommer til status FEIL. Les mer om dette på [Dokumenttype: Print](https://docs.digdir.no/docs/eFormidling/Utvikling/Dokumenttyper/print)
+
 
 ## Neste steg
 
