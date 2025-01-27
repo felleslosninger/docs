@@ -98,7 +98,7 @@ The request is extended with the attributes 'client_assertion_type' and 'client_
 
 The 'sub' field of the JWT must be set equal to your client_id
 
-The 'aud' field of th JWT must be set equal to the issuer identifier of ID-porten, or the token-endpoint url
+The 'aud' field of th JWT must be set equal to the issuer identifier of ID-porten and must only contain a single value.  Using the token-endpoint url as audience is deprecated and will be removed.
 
 #### Example:
 
