@@ -233,7 +233,7 @@ For å redusere risikoen for at brevpost ikke skal nå mottaker, har Posten komm
 
 Selv om en utskriftsmelding har fått status LEVERT kan den allikevel feile på et senere tidspunkt. Det kan skje i følgende tilfeller:
 
-Meldingen feiler under selve utskriftsjobben. Det vil kunne skje innen 24 timer etter at meldingen har fått status LEVERT. 
+Meldingen feiler under selve utskriftsjobben. Dette vil normalt sett skje innen 24 timer etter at meldingen har fått status LEVERT. Vær oppmerksom på at utskriftstjenesten ikke kjører på helgedager og helligdager! Det kan derfor ta mer enn 24 timer for en melding å feile i dette scenariet. 
 
 Meldingen feiler som følge av returpost, dvs. at den ikke kan leveres til innbyggers fysiske postadresse. En FEIL-status grunnet returpost vil i de aller fleste tilfeller returneres innen en periode på to uker. I sjeldnere tilfeller kan det ta opp mot fire uker for et brev å gå i retur. Merk at det kun er meldinger med print.retur.returhaandtering satt til MAKULERING_MED_MELDING som vil motta FEIL-status på returpost.
 
