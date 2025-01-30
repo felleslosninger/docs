@@ -10,7 +10,7 @@ redirect_from: /oidc_func_eidas
 
 ## Om eIDAS
 
-ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser. Det betyr at europeiske brukere med "EU-godkjent" eID kan logge seg på norske offentlige tjenester.  Tjenestene må aktivt aktivere støtte for internasjonale brukere.
+ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser. Det betyr at europeiske brukere med "EU-godkjent" eID kan logge seg på norske offentlige tjenester.  Tjenestene må aktivt selv aktivere støtte for internasjonale brukere.
 
 For å bli integert i produksjon, må et land bli formelt *notifisert* og fagfellevurdert av EU-kommisjonen. 
 
