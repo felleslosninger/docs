@@ -8,16 +8,13 @@ product: ID-porten
 redirect_from: /oidc_func_eidas
 ---
 
-
-
-{% include note.html content="Ny eIDAS-løsning blir lansert oktober 2024. Denne er teknisk og funksjonelt ulik den gamle løsningen. Vi vil fortløpende koble på nye land.  Kunder kan se oppdatert tilkoblingsstatus på [EU sitt eIDAS Dashboard](https://eidas.ec.europa.eu/efda/browse/notification/eid-chapter-contacts/NO) " %}
-
-
 ## Om eIDAS
 
 ID-porten er knyttet til EUs infrastruktur for autentisering på tvers av landegrenser. Det betyr at europeiske brukere med "EU-godkjent" eID kan logge seg på norske offentlige tjenester.  
 
 For å bli integert i produksjon, må et land bli formelt *notifisert* og fagfellevurdert av EU-kommisjonen. 
+
+Kunder kan se oppdatert status på hvilke land som er tilkoblet på [EU sitt eIDAS Dashboard](https://eidas.ec.europa.eu/efda/browse/notification/eid-chapter-contacts/NO)
 
 ## Hvilken informasjon får jeg om eidas-brukere ?
 
