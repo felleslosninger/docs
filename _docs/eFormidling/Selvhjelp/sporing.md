@@ -189,6 +189,15 @@ Legg merke til at dette oppslaget på en gitt messageId har statusene ```OPPRETT
 
 Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via dette integrasjonspunktet. Her er ikke nødvendigvis alle statuser i samme forsendelse i rekkefølge, det kan være andre som har blitt registrert før neste status kommer. Bildet viser tre statuser med  ```convId``` = ```2``` før to statuser fra en annen forsendelse med ```convId``` = ```9``` før forsendelsen med ```convId``` = ```2``` får status ```LEVERT```. 
 
+### Hente raw receipt
+
+Gjennom API-kallet (/api/statuses) kan man hente ut raw receipt på en statusmelding. Raw receipten (JWT) kan dekodes for å gi ytterligere detaljer på statusmeldingen. Dette er spesielt nyttig ved status FEIL der beskrivelsen er "Generell melding om at det har skjedd en feil". Ved å hente ut og dekode raw receipten vil man få en mer nøyaktig beskrivelse av hvas som har feilet. Virksomheten er selv ansvarslig for dekoding av raw receipts.
+
+Eksempel på API-kall: localhost:9093/api/statuses/402835d6-2e09-6b02-651b-de470baa59b1
+
+
+
+
 ## Innkommende meldinger
 > /api/messages/in
 
