@@ -237,7 +237,9 @@ Meldingen feiler under selve utskriftsjobben. Dette vil normalt sett skje innen 
 
 Meldingen feiler som følge av returpost, dvs. at den ikke kan leveres til innbyggers fysiske postadresse. En FEIL-status grunnet returpost vil i de aller fleste tilfeller returneres innen en periode på to uker. I sjeldnere tilfeller kan det ta opp mot fire uker for et brev å gå i retur. Merk at det kun er meldinger med print.retur.returhaandtering satt til MAKULERING_MED_MELDING som vil motta FEIL-status på returpost.
 
-Avsendere må kunne håndtere at en melding kan feile i etterkant av status LEVERT, og det anbefales derfor å sjekke status en periode etter at den er markert som LEVERT.![image]
+Avsendere må kunne håndtere at en melding kan feile i etterkant av status LEVERT, og det anbefales derfor å sjekke status en periode etter at den er markert som LEVERT.
+
+Tips: for å hente ut mer detaljer om hvorfor en melding har feilet, kan man dekode raw receipten som følger med statusmeldingen. Se [Hente raw receipt](https://docs.digdir.no/docs/eFormidling/Selvhjelp/sporing#hente-raw-receipt)
 
 ## Neste steg
 
