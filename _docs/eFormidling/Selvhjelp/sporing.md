@@ -191,13 +191,17 @@ Dette oppslaget lister ut alle registrerte statuser på alle forsendelser via de
 
 ### Hente raw receipt
 
-Gjennom API-kallet (/api/statuses) kan man hente ut raw receipt på en statusmelding. Raw receipten (JWT) kan dekodes for å gi ytterligere detaljer på statusmeldingen. Dette er spesielt nyttig ved status FEIL der beskrivelsen er "Generell melding om at det har skjedd en feil". Ved å hente ut og dekode raw receipten vil man få en mer nøyaktig beskrivelse av hvas som har feilet. Virksomheten er selv ansvarslig for dekoding av raw receipts.
+Gjennom API-kallet (/api/statuses) kan man hente ut raw receipt på en statusmelding. Raw receipten (JWT) kan dekodes for å gi ytterligere detaljer på statusmeldingen. Dette er spesielt nyttig ved status FEIL der beskrivelsen er "Generell melding om at det har skjedd en feil". Ved å hente ut og dekode raw receipten vil man få en mer nøyaktig beskrivelse på hva som har feilet. Virksomheten er selv ansvarslig for dekoding av raw receipts.
 
 Eksempel på API-kall: localhost:9093/api/statuses/402835d6-2e09-6b02-651b-de470baa59b1
+
+Eksempel på respons på API-kall:
 
 ![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt.PNG)
 
 Eksempel på dekodet raw receipt:
+
+![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt_dekodet.PNG)
 
 ## Innkommende meldinger
 > /api/messages/in
