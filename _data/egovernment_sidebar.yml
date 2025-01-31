@@ -4,15 +4,15 @@ folders:
 - title: Introduksjon
   folderitems:
     - title: Dette er Peppol eGovernment
-      jurl: /docs/egovernment/introduksjon
+      jurl: /docs/eGovernment/introduksjon
     - title: Ta i bruk Peppol eGovernment
-      jurl: /docs/egovernment/kom_i_gang
+      jurl: /docs/eGovernment/kom_i_gang
 - title: Prosesser
   folderitems:
     - title: Prosesser og dokumenttyper
-      jurl: /docs/egovernment/oversikt/prosesser_og_dokumenttyper
+      jurl: /docs/eGovernment/Oversikt/prosesser_og_dokumenttyper
     - title: Tenesteleverandørar
-      jurl: /docs/egovernment/oversikt/tenesteleverandorar
+      jurl: /docs/eGovernment/Oversikt/tenesteleverandorar
 
 ###########################
 
