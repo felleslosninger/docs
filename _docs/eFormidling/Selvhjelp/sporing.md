@@ -197,11 +197,11 @@ Eksempel på API-kall: localhost:9093/api/statuses/402835d6-2e09-6b02-651b-de470
 
 Eksempel på respons på API-kall:
 
-![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt.PNG)
+![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt.png)
 
 Eksempel på dekodet raw receipt:
 
-![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt_dekodet.PNG)
+![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt_dekodet.png)
 
 ## Innkommende meldinger
 > /api/messages/in
