@@ -65,6 +65,7 @@ I hovedsak feiler en melding fordi den ikke kan leveres til innbygger. I et slik
 
 Utskriftsmeldinger har noen egne særegenheter når det kommer til status FEIL. Les mer om dette på [Dokumenttype: Print](https://docs.digdir.no/docs/eFormidling/Utvikling/Dokumenttyper/print.html#viktige-merknader-om-feil-status-p%C3%A5-utskriftsmeldinger)
 
+Tips: for å hente ut mer detaljer om hvorfor en melding har feilet, kan man dekode raw receipten som følger med statusmeldingen. Se [Hente raw receipt](https://docs.digdir.no/docs/eFormidling/Selvhjelp/sporing#hente-raw-receipt)
 
 ## Neste steg
 
