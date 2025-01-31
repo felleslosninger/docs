@@ -3,7 +3,7 @@ title: Tenesteleverandørar
 description: "Oversikt over tenesteleverandørar"
 summary: ""
 product: eGovernment
-sidebar: eGovernment_sidebar
+sidebar: egovernment_sidebar
 ---
 
 Oversikt over dei ulike tenesteleverandørane, samt kva prossesar og dokumenttypar dei tilbyr.

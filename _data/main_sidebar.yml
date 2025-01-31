@@ -79,6 +79,15 @@ folders:
   - title: Documentation
     jurl: /docs/ELMA/elma_elma
 
+- title: Peppol eGovernment
+  folderitems:
+
+    - title: Om Peppol eGovernment
+      jurl: /docs/eGovernment/
+
+    - title: Teknisk dokumentasjon
+      jurl: /docs/eGovernment/introduksjon
+
 
 ###########################
 

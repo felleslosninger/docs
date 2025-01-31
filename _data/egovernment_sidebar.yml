@@ -1,0 +1,29 @@
+sidebarTitle: Peppol eGovernment
+
+folders:
+- title: Introduksjon
+  folderitems:
+    - title: Dette er Peppol eGovernment
+      jurl: /docs/egovernment/introduksjon
+    - title: Ta i bruk Peppol eGovernment
+      jurl: /docs/egovernment/kom_i_gang
+- title: Prosesser
+  folderitems:
+    - title: Prosesser og dokumenttyper
+      jurl: /docs/egovernment/oversikt/prosesser_og_dokumenttyper
+    - title: Tenesteleverandørar
+      jurl: /docs/egovernment/oversikt/tenesteleverandorar
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+- title: Github
+  jurl: https://github.com/difi/felleslosninger
+- title: Samarbeidsportalen
+  jurl: https://samarbeid.digdir.no
+- title: Status og driftsmeldinger
+  jurl: https://status.digdir.no/
+- title: Digitaliseringsdirektoratet
+  jurl: https://www.digdir.no

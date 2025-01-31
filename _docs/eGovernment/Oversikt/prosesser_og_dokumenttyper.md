@@ -3,7 +3,7 @@ title: Prosesser og dokumenttyper
 description: "Oversikt over prosesser og dokumentyper"
 summary: ""
 product: eGovernment
-sidebar: eGovernment_sidebar
+sidebar: egovernment_sidebar
 ---
 
 Oversikt over dei forskjellige prosessane og tilhøyrande dokumenttypane som er tilgjengelig over eGovernmentdomenet.
