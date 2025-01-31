@@ -195,8 +195,9 @@ Gjennom API-kallet (/api/statuses) kan man hente ut raw receipt på en statusmel
 
 Eksempel på API-kall: localhost:9093/api/statuses/402835d6-2e09-6b02-651b-de470baa59b1
 
+![]({{site.baseurl}}/images/eformidling/api_status_rawreceipt.PNG)
 
-
+Eksempel på dekodet raw receipt:
 
 ## Innkommende meldinger
 > /api/messages/in
