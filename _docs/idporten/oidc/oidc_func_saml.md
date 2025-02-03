@@ -48,7 +48,7 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |PROD|https://saml2.idporten.no/idp6|saml2.idporten.no||
 |~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~||
 |TEST|https://saml2.test.idporten.no/idp6|saml2.test.idporten.no||
-|TEST|https://saml2.test.idporten.no/idp5|saml2.test.idporten.no||
+|~~TEST~~|~~https://saml2.test.idporten.no/idp5~~|~~saml2.test.idporten.no~~||
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~|~~idporten-ver2.difi.no~~||
 
 ### ID-porten sine metadata
@@ -63,7 +63,7 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |PROD|https://saml2.idporten.no/idp6|[https://saml2.idporten.no/idp6](https://saml2.idporten.no/idp6) <br> Signert: [https://saml2.idporten.no/idp6?sign=true](https://saml2.idporten.no/idp6?sign=true)|20.03.2025|
 |~~PROD~~|~~idporten.difi.no-v5~~||
 |TEST|https://saml2.test.idporten.no/idp6|[https://saml2.test.idporten.no/idp6](https://saml2.test.idporten.no/idp6) <br> Signert: [https://saml2.test.idporten.no/idp6?sign=true](https://saml2.test.idporten.no/idp6)|01.01.2026|
-|TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5) <br> Signert: [https://saml2.test.idporten.no/idp5?sign=true](https://saml2.test.idporten.no/idp5)|12.02.2025|
+|TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5) <br> Signert: [~~https://saml2.test.idporten.no/idp5?sign=true](https://saml2.test.idporten.no/idp5)|~~11.02.2025~~|
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~||
 
 
