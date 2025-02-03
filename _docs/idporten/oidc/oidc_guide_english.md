@@ -12,7 +12,7 @@ This english summary is intentionally kept very brief.  We advice english speaki
 
 The authorization code flow is recommended from almost all services which integrates towards ID-porten.  
 
-The integration activity is started by sending an email to "idporten (at) Digitaliseringsdirektoratet (dot) no".
+The integration activities is [described in this list of activities at Samarbeidsportalen](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94)
 
 
 ## Overall description
