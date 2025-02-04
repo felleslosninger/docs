@@ -85,10 +85,7 @@ grant_type=authorization_code&
 
 #### Client authentication using client secret post
 
-A previously exchanged out-of-band static secret is used for authentication.  The secret is added as a claim `client_secret` in the JSON payload of the POST request.
-
-
-
+A previously exchanged out-of-band static secret is used for authentication.  The secret is added as a parameter `client_secret` to the payload of the POST request.
 
 #### Client authentication using JWT token (private_key_jwt)
 
