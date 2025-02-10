@@ -10,7 +10,7 @@ product: ID-porten
 redirect_from: /idporten_testbrukere
 ---
 
-Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljøene Ver2/Test.
+Her finner du informasjon om testbrukere som kan benyttes for testing av ID-porten integrasjoner i verifikasjonsmiljet Test.
 
 ## TestID
 
@@ -44,7 +44,7 @@ Det er mulig å opprette testbruker i MinID på egenhånd i det nye testmiljøet
 
 ### Statisk OTC - TEST
 
-Det er funksjonalitet for statisk OTC i testmiljøet VER2/TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. 
+Det er funksjonalitet for statisk OTC i testmiljøet TEST. Dette gjelder i innloggingsflyt og glemt-passordflyt. Det er kun mulig for testbrukere med syntetisk personidenfikator. OTC blir i tillegg sendt på sms til oppført mobiltelefonnummer på brukeren en logger inn med. Evt e-post i glemt-passordflyt. 
 
 Kontaktinformasjonen (epost, tlf)  som blir opprettet på en MinID testbruker blir registrert i Kontakt- og reservasjonsregisteret (KRR). Les mer om hvordan du endrer kontaktinformasjon på en testbruker på [våre sider om KRR](https://docs.digdir.no/docs/Kontaktregisteret/krr_sluttbrukerinnstillinger#oppdatering-av-kontaktinfo-i-minprofil).
 
