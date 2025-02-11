@@ -42,12 +42,12 @@ For innlogging mapper OIDC-protokollen sin *authorization code*-flyt svært bra 
 
 SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over IP-adresser]({{site.baseurl}}/docs/general/IP)
 
-|Miljø |IDP|Domene| |
+|Miljø |IDP|Domene| Gyldig til |
 |-|-|-|
-|PROD|https://saml2.idporten.no/idp7|saml2.idporten.no||
-|PROD|https://saml2.idporten.no/idp6|saml2.idporten.no||
-|~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~||
-|TEST|https://saml2.test.idporten.no/idp6|saml2.test.idporten.no||
+|PROD|https://saml2.idporten.no/idp7|saml2.idporten.no|01.01.2026|
+|PROD|https://saml2.idporten.no/idp6|saml2.idporten.no|[03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
+|~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~|[03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
+|TEST|https://saml2.test.idporten.no/idp6|saml2.test.idporten.no|01.01.2026|
 |~~TEST~~|~~https://saml2.test.idporten.no/idp5~~|~~saml2.test.idporten.no~~|[Stengt ned 11.02.25](https://testmiljo.status.digdir.no/incidents/qmzlgqph5n4b)|
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~|~~idporten-ver2.difi.no~~|[Stengt ned 11.02.25](https://testmiljo.status.digdir.no/incidents/qmzlgqph5n4b)|
 
@@ -60,11 +60,9 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |Miljø |IDP|Metadata|Gyldig til|
 |-|-|-|
 |PROD|https://saml2.idporten.no/idp7|[https://saml2.idporten.no/idp7](https://saml2.idporten.no/idp7) <br> Signert: [https://saml2.idporten.no/idp7?sign=true](https://saml2.idporten.no/idp7?sign=true)|01.01.2026 (SAML-tjenesten legges ned)|
-|PROD|https://saml2.idporten.no/idp6|[https://saml2.idporten.no/idp6](https://saml2.idporten.no/idp6) <br> Signert: [https://saml2.idporten.no/idp6?sign=true](https://saml2.idporten.no/idp6?sign=true)|20.03.2025|
+|PROD|https://saml2.idporten.no/idp6|[https://saml2.idporten.no/idp6](https://saml2.idporten.no/idp6) <br> Signert: [https://saml2.idporten.no/idp6?sign=true](https://saml2.idporten.no/idp6?sign=true)|03.03.2025|
 |~~PROD~~|~~idporten.difi.no-v5~~||
 |TEST|https://saml2.test.idporten.no/idp6|[https://saml2.test.idporten.no/idp6](https://saml2.test.idporten.no/idp6) <br> Signert: [https://saml2.test.idporten.no/idp6?sign=true](https://saml2.test.idporten.no/idp6)|01.01.2026|
-|TEST|https://saml2.test.idporten.no/idp5|[https://saml2.test.idporten.no/idp5](https://saml2.test.idporten.no/idp5) <br> Signert: [~~https://saml2.test.idporten.no/idp5?sign=true](https://saml2.test.idporten.no/idp5)|~~11.02.2025~~|
-|~~TEST~~|~~idporten-ver2.difi.no-v4~~||
 
 
 ### Oversikt metadata
