@@ -141,8 +141,7 @@ Digdir anbefaler at integrasjonspunktet sikres i tråd med god sikkerhetspraksis
 - Bruk ekstern ActiveMQ istedenfor innebygd ActiveMQ
 - Begrens tilgang til integrasjonspunktets API til system(ene) som integrerer og bruker(ene) som må ha tilgang til å administrere integrasjonspunktet
 - Begrens tilgang til integrasjonspunktets filer til bruker(ene) som må ha tilgang til å administrere integrasjonspunktet
-- Begrens integrasjonspunktet tilgang til bare nødvendige eskterne og interne tjenester
-- Ekstra presisering rundt behandling av virksomhetssertifikat fordi dei i mange tilfeller kan gi tilgang til fleire tenester enn eFormidling
+- Begrens integrasjonspunktet tilgang til bare nødvendige eksterne og interne tjenester
 - Ikke eksponer integrasjonspunktets API på Internett
 - Kjør integrasjonspunktet i et profesjonelt driftsmiljø
 
