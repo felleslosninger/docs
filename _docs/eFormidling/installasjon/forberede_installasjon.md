@@ -124,10 +124,29 @@ Følgende ressurser kreves av integrasjonspunktet:
 - ekstra ressurser kreves ved eventuell bruk av ekstern meldingskø
 - ekstra ressurser kan kreves ved høy-volum bruk
 
-## Konfigurer brannmur dersom nødvendig
+## Planlegg sikring av integrasjonspunktet
+
+Integrasjonspunktet behandler mange informasjonselementer som har behov for sikring:
+
+- [Oversikt over informasjonselementer] https://docs.digdir.no/docs/eFormidling/Egenskaper/#sikkerhet
 
 Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
-grensesnittene som tilbys av integrasjonspunktet.
+grensesnittene som tilbys av integrasjonspunktet. Virksomhetene må selv vurdere hvilke sikringstiltak som er nødvendige.
+Digdir anbefaler at integrasjonspunktet sikres i tråd med god sikkerhetspraksis:
+
+- Konfigurer integrasjonspunktets API med brukernavn og passord (NB: krever at system(ene) som skal integrere med integrasjonspunktet støtter dette)
+- Konfigurer integrasjonspunktets API med TLS (NB: krever at system(ene) som skal integrere med integrasjonspunktet støtte dette)
+- Bruk funksjonalitet for å holde brukernavn og passord i miljøvariable eller Hashicorp Vault, slik at hemmeligheter i klartekst unngås
+- Bruk ekstern database istedenfor H2
+- Bruk ekstern ActiveMQ istedenfor innebygd ActiveMQ
+- Begrens tilgang til integrasjonspunktets API til system(ene) som integrerer og bruker(ene) som må ha tilgang til å administrere integrasjonspunktet
+- Begrens tilgang til integrasjonspunktets filer til bruker(ene) som må ha tilgang til å administrere integrasjonspunktet
+- Begrens integrasjonspunktet tilgang til bare nødvendige eskterne og interne tjenester
+- Ekstra presisering rundt behandling av virksomhetssertifikat fordi dei i mange tilfeller kan gi tilgang til fleire tenester enn eFormidling
+- Ikke eksponer integrasjonspunktets API på Internett
+- Kjør integrasjonspunktet i et profesjonelt driftsmiljø
+
+## Konfigurer brannmur dersom nødvendig
 
 Dersom integrasjonspunktet skal kjøres i et driftsmiljø der utgående trafikk blir filtrert av en brannmur er det nødvendig
 å konfigurere denne for å tillate utgående trafikk fra eFormidlings integrasjonspunkt til tjenestene integrasjonspunktet
