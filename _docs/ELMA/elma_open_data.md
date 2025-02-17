@@ -17,13 +17,7 @@ See section below on how to do a proper lookup.
 
 ### Datasets
 
-We have previously published data sets of recipients in Elma at Datahotellet (hotell.difi.no). Datahotellet will be discontinued on 1 October 2024. Elma will stop updating the datasets at 23 September 2024.
-
-We encourage everyone who uses the data set at Datahotellet to use the data set at Peppol Directory. The dataset on Peppol Directory is available as a website, API and files for download. There are some differences between the data sets at Datahotellet and the Peppol Directory:
-
-- The data sets have different technical formats and interfaces
-- The data set on the Peppol Directory contains other recipients in addition to those registered in ELMA.
-- ELMA continuously publishes the Peppol Directory, so it is more up-to-date than the Datahotellet
+We have previously published data sets of recipients in Elma at Datahotellet (hotell.difi.no). Datahotellet was discontinued on 11 February 2025. Elma will stop updating the datasets at 23 September 2024.
 
 Read more about the [discontinuation of Datahotellet](https://hotell.difi.no/avvikling)
  
