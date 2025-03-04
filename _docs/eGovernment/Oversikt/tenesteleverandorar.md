@@ -6,7 +6,16 @@ product: eGovernment
 sidebar: egovernment_sidebar
 ---
 
-Oversikt over dei ulike tenesteleverandørane, samt kva prossesar og dokumenttypar dei tilbyr.
+## Eksisterande tenesteleverandørar
 
+På Peppol eGovernment har vi i dag følgjande tenesteleverandørar innanfor meldingstenesta for digital post til innbyggjar (DPI):
 
-//TODO legge inn TietoEvry og KS?
+- Avsendar sitt aksesspunkt for DPI: Tietoevry og KS - Digitale Fellestenester AS 
+- Mottakar sitt aksesspunkt for digitale meldingar DPI: Posten Norge AS
+- Mottakar sitt aksesspunkt for utskriftsmeldingar DPI: Tietoevry
+
+Tenesteleverandørane tilbyr prosessane og dokumenttypane beskrive på [Digital postkasse - prosesser og dokumenttyper](https://docs.digdir.no/identifiers.html)
+
+## Sertifiserte tenesteleverandørar
+
+[Peppol service providers](https://peppol.org/members/peppol-certified-service-providers/) (ekstern lenke) gir ei komplett oversikt over sertifiserte tenesteleverandørar (service providers) innanfor alle Peppol-domena.
