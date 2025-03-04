@@ -111,7 +111,7 @@ sequenceDiagram
 
 Under er et eksempel med bruk av Curl.  Det kuttes litt i output for å tydeliggjøre relevant informasjon.
 
-Redirected authorization request simuleres med GET og authorization response finnes i response header location.  Innsending request - bruk egen `client_id` og `scope` og `redirect_uri` som er registrert på klient, genererer egen `state`, `nonce`, `code_verifier` osc:
+Redirected authorization request simuleres med GET og authorization response finnes i response header location.  Innsending request - bruk egen `client_id` og `scope` og `redirect_uri` som er registrert på klient, genererer egen `state`, `nonce`, `code_verifier` osv:
 
 ```
  curl -v https://login.test.idporten.no/authorize\?scope\=openid%20profile%20apiscope\&client_id\=oidc_idporten_test_client\&redirect_uri\=https://oidc-test-client.test.tools.idporten.no/authorize/response\&response_type\=code\&state\=LzFinVZzwoTWWJNQyxCSspoBnVTh9Hk1ugJLmvKVPdU\&nonce\=iDyWdWH18O_lJxkdyPF28heGSBTz2Zwld9cO_GCI6f0\&acr_values\=idporten-loa-substantial\&ui_locales\=nb\&code_challenge_method\=S256\&code_challenge\=s2Zoo2UrS7PcGTZO7P9rPLaR0d-R-8OhbS4lSJxJDgw\&login_hint\=testid:28876895937_idporten-loa-substantial
