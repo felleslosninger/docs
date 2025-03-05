@@ -20,18 +20,18 @@ RAR er en ny Oauth2-utvidelse for transaksjonsspesifikke autorisasjoner. Der “
     * til ein gitt `type` vil det vere definert og dokumentert ein tilhøyrande gyldig datamodell.  Ansattporten sine datamodeller er definert på denne siden.  
 
 
-# Forhold mellom RAR og scope
+## Forhold mellom RAR og scope
 
 Det er ingen teknisk sammenheng mellom et Oauth2 scope og RAR, de to mekanismene er disjunkte.  
 
 En kan derfor ikke legge til grunn at en klient som ikke har fått et gitt scope, heller ikke kan motta en rar-struktur i token.
 
-# Tilgangstyring av RAR-typer
+## Tilgangstyring av RAR-typer
 
 Det er p.t. ingen tilgangstyring av RAR-typer.  Alle klienter fra alle kunder kan sende inn en RAR-struktur i autorisasjonsforspørselen, og den vil trigge organisasjonsvelger.
 
 
-# RAR-typer støttet i Ansattporten
+## RAR-typer støttet i Ansattporten
 
 Følgende authorization_type er støttet i Ansattporten:
 
@@ -46,7 +46,7 @@ Det er p.t. ikke mulig å be om ulike RAR-type i samme påloggingsforespørsel. 
 
 
 
-# Datamodell for Altinn 2 Lenketjenester (`ansattporten:altinn:service`)
+## Datamodell for Altinn 2 Lenketjenester (`ansattporten:altinn:service`)
 
 Bare kunder som er tjenesteeier i Altinn kan benytte Altinn Autorisasjon som autorativ kilde.
 
@@ -111,11 +111,11 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 > **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i TT02 en gang.
 
 
-# Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
+## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
 
 TBD
 
-# Datamodell for Entra ID  (`ansattporten:entra`)
+## Datamodell for Entra ID  (`ansattporten:entra`)
 
 TBD
 
