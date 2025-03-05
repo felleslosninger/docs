@@ -38,7 +38,7 @@ nødvendig å konfigurere:
 
 ## Java-spesifikk konfigurasjon
 
-Ved bruk av Java direkte kan integrasjonspunktet konfigureres ved hjelp av en konfigurasjonsfil (anbefalt),
+Ved bruk av Java direkte kan integrasjonspunktet konfigureres ved hjelp av en konfigurasjonsfil,
 Java-parametere eller miljøvariable.
 
 1. Start med å opprette en mappe, for eksempel `c:\integrasjonspunkt`
