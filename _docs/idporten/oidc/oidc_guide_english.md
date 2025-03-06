@@ -131,7 +131,7 @@ The following claims in the JWT is of interest:
 
 | Claim  | Comment |
 | --- | --- |
-|aud| Audience - the identifier for ID-porten.  See the `issuer` claim at the *well-known*-endpoint for correct value.  |
+|aud| Audience - the identifier for ID-porten.  See the `issuer` claim at the *well-known*-endpoint for correct value. Only a single value, not a list |
 |iss| issuer - your client ID |
 |sub| subject - your client ID |
 |iat| issued at - timestamp when this jwt was generated. **NOTE:** UTC-time.|
