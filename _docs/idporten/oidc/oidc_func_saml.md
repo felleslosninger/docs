@@ -9,9 +9,10 @@ redirect_from: /oidc_func_saml
 
 ## SAML i ID-porten
 
-ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. ID-porten støtter kun OIDC, men vi tilbyr et forenklet SAML-grensesnitt for kunder som ikke kan benytte OIDC-grensesnittet.
+ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. ID-porten støtter kun OIDC, men vi tilbyr et forenklet SAML-grensesnitt for kunder som ikke kan benytte OIDC-grensesnittet. SAML-grensesnittet legges ned 01.01.2026
 
 
+>SAML-grensesnittet legges ned 01.01.2026
 
 
 ## SAML-arkitektur
@@ -44,14 +45,14 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 
 |Miljø |IDP|Domene| Gyldig til |
 |-|-|-|
-|PROD|https://saml2.idporten.no/idp7|saml2.idporten.no|01.01.2026|
-|PROD|https://saml2.idporten.no/idp6|saml2.idporten.no|[03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
-|~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~|[03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
+|PROD|https://saml2.idporten.no/idp7|saml2.idporten.no|01.01.2026 (SAML-tjenesten legges ned)|
+|~~PROD~~|~~https://saml2.idporten.no/idp6|saml2.idporten.no~~|[Stengt ned 03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
+|~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~|[Stengt ned 03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
 |TEST|https://saml2.test.idporten.no/idp6|saml2.test.idporten.no|01.01.2026|
 |~~TEST~~|~~https://saml2.test.idporten.no/idp5~~|~~saml2.test.idporten.no~~|[Stengt ned 11.02.25](https://testmiljo.status.digdir.no/incidents/qmzlgqph5n4b)|
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~|~~idporten-ver2.difi.no~~|[Stengt ned 11.02.25](https://testmiljo.status.digdir.no/incidents/qmzlgqph5n4b)|
 
-### ID-porten sine metadata
+### ID-porten metadata
 
 
 
@@ -60,8 +61,6 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |Miljø |IDP|Metadata|Gyldig til|
 |-|-|-|
 |PROD|https://saml2.idporten.no/idp7|[https://saml2.idporten.no/idp7](https://saml2.idporten.no/idp7) <br> Signert: [https://saml2.idporten.no/idp7?sign=true](https://saml2.idporten.no/idp7?sign=true)|01.01.2026 (SAML-tjenesten legges ned)|
-|~~PROD~~|~~https://saml2.idporten.no/idp6~~|~~[https://saml2.idporten.no/idp6]~~(https://saml2.idporten.no/idp6) <br> ~~Signert:~~ ~~[https://saml2.idporten.no/idp6?sign=true]~~(https://saml2.idporten.no/idp6?sign=true)|03.03.2025|
-|~~PROD~~|~~idporten.difi.no-v5~~|-|03.03.2025|
 |TEST|https://saml2.test.idporten.no/idp6|[https://saml2.test.idporten.no/idp6](https://saml2.test.idporten.no/idp6) <br> Signert: [https://saml2.test.idporten.no/idp6?sign=true](https://saml2.test.idporten.no/idp6)|01.01.2026|
 
 
