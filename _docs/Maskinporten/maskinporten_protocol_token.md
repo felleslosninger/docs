@@ -11,6 +11,7 @@ redirect_from: /maskinporten_protocol_token
 ## About
 
 Using JWT grants towards the `/token` endpoint is documented in [RFC 7523, section 2.1 ](https://tools.ietf.org/html/rfc7523#section-2.1).
+The ‘aud’ field of the JWT must be set equal to the issuer identifier of maskinporten and must only contain a single value. Using the token-endpoint url as audience is no longer valid.
 
 ## Request
 
