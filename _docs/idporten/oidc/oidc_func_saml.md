@@ -78,7 +78,7 @@ Oppdatering av kundes metadata er en manuel prosess hos Digdir. Metadata må sen
 - entityid
 - assertionconsumerURL
 - logout-url
-- public-nøkkel av virksomhetssertifikatet (samme sertifikat til både signering og kryptering)
+- offentlig nøkkel av virksomhetssertifikatet (samme sertifikat til både signering og kryptering)
 
 ### Begrensninger i SAML-proxy
 
