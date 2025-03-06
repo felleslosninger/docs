@@ -48,7 +48,7 @@ SAML-proxy er tilgjengelig produksjonsmiljøet og testmiljøet. [Oversikt over I
 |PROD|https://saml2.idporten.no/idp7|saml2.idporten.no|01.01.2026 (SAML-tjenesten legges ned)|
 |~~PROD~~|~~https://saml2.idporten.no/idp6~~|~~saml2.idporten.no~~|[Stengt ned 03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
 |~~PROD~~|~~idporten.difi.no-v5~~|~~idporten.difi.no~~|[Stengt ned 03.03.2025](https://status.digdir.no/incidents/fq3r39c1j0rp)|
-|TEST|https://saml2.test.idporten.no/idp6|saml2.test.idporten.no|01.01.2026|
+|TEST|https://saml2.test.idporten.no/idp6|saml2.test.idporten.no|01.01.2026 (SAML-tjenesten legges ned)|
 |~~TEST~~|~~https://saml2.test.idporten.no/idp5~~|~~saml2.test.idporten.no~~|[Stengt ned 11.02.25](https://testmiljo.status.digdir.no/incidents/qmzlgqph5n4b)|
 |~~TEST~~|~~idporten-ver2.difi.no-v4~~|~~idporten-ver2.difi.no~~|[Stengt ned 11.02.25](https://testmiljo.status.digdir.no/incidents/qmzlgqph5n4b)|
 
