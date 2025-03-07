@@ -61,31 +61,31 @@ Dersom tjenesten krever representasjon, vil Ansattporten vise en organisasjonsve
 I dag er det kun Altinn Autorisasjon som er støttet som autorativ kilde. 
 
 
-### Hvem kan bruke Ansattporten ?
+# Hvem kan bruke Ansattporten ?
 
 Alle kunder som har inngått Digdir sine bruksvilkår for fellesløsninger kan bruke Ansattporten til ordinær punkt-autentisering på samme måte som de gjør i ID-porten idag.
 
 Men bare kunder som også er tjenesteeier i Altinn, kan bruke funksjonaliteten med organisasjonsvelger og tilgangstyring basert på representasjonsforhold i Altinn Autorisasjon.
 
 
-### Hva koster Ansattporten ?
+# Hva koster Ansattporten ?
 
 P.t. har Ansattporten samme finansieringsmodell som ID-porten.  200.000-innnloggingskvoten er felles for de to portene.
 
 Merk at finansieringsmodell trolig vil endres i fremtiden.
 
 
-### Hvordan administrerer jeg Ansattporten ?
+# Hvordan administrerer jeg Ansattporten ?
 
 På akkurat samme måte som for ID-porten, men du må passe på at integrasjonene du opprette i selvbetjening har `integration_type` satt til `ansattporten`.
 
 
-### Er Ansattporten fremdeles i pilot-status? 
+# Er Ansattporten fremdeles i pilot-status? 
 
 Fra 2025 går Ansattporten over i mer ordinær drift.  SLA i form av oppetid vil være den samme som for ID-porten, og feilrettinger vil bli prioritert ihht de ordinære rutinene rundt fellesløsningene.
 
 
-### Hvilken bruk-scenario støttes ? 
+# Hvilken bruk-scenario støttes ? 
 
 Ansattporten tilbyr per nå tre brukerreiser:
 
