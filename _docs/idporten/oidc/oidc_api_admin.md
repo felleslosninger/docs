@@ -144,7 +144,7 @@ Vi har valgt å modellere disse som egen ressurs under klient `/clients/{client_
 
 Man kan ikke gjøre operasjoner på enkelt-nøkler, kun hele settet, dvs. både POST og PUT erstatter evt. eksisterende JWKS.
 
-Kun RS256 med nøkkellenge 2048 støttes som algoritme.
+Kun RS256, RS384 eller RS512 med nøkkellenge 2048 støttes som algoritme.
 
 Man må alltid sende inn nøkkeldefinisjonen (kty,alg,use,e,n).  
 
