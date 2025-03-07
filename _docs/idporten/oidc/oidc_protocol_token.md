@@ -12,7 +12,6 @@ redirect_from: /oidc_protocol_token
 
 The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
-
 ## Request
 
 The client requests a token by passing the authorization grant (normally a 'code' value) to the /token endpoint.
@@ -95,7 +94,7 @@ The request is extended with the attributes 'client_assertion_type' and 'client_
 
 The 'sub' field of the JWT must be set equal to your client_id
 
-The 'aud' field of th JWT must be set equal to the issuer identifier of ID-porten and must only contain a single value.  Using the token-endpoint url as audience is deprecated and will be removed.
+The 'aud' field of th JWT must be set equal to the issuer identifier of ID-porten and must only contain a single value.  Using the token-endpoint url as audience is no longer valid.
 
 #### Example:
 
