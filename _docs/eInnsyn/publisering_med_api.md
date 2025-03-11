@@ -7,10 +7,11 @@ sidebar: einnsyn_sidebar
 redirect_from: /publisering_med_api
 ---
 
-eInnsyn vil snart tilby publisering med api. Dokumentasjon vil da bli tilgjengelig her...
+Publisering til eInnsyn med API er tilgjengelig for testing i KundeTest miljøet.
+API nøkkelutstedelse er ikke klart ennå, så nøkler må utstedes manuelt ved henvendelse til ServiceDesk.
 
 ## API Spec
-**lenke kommer her** snart
+[einnsyn-api-spec](https://github.com/felleslosninger/einnsyn-api-spec)
 
 ## API Key utstedelse
 **lenke kommer her** snart
