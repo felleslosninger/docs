@@ -23,7 +23,7 @@ graph LR
   subgraph API-konsument
      ny[Klient]
   end
-  Maskinporten -->|2.utsteder token med tildelt scope|ny
+  Maskinporten -->|2.utsteder token med tildelt scope|
   ny -->|1.forspør tilgang til scope|Maskinporten
   ny -->|3.bruker token mot|Oppslagstjenesten
 </div>
