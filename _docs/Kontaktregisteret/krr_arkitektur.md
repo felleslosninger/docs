@@ -15,7 +15,7 @@ Når du som kunde har opprettet og satt opp klienten riktig, kan den brukes til 
 <div class="mermaid">
 graph LR
   subgraph Digdir
-    Oppslagstjenesten[Oppslagstjenesten]
+    Oppslagstjenesten
   end
   subgraph Digdir
     Maskinporten[Maskinporten]
@@ -23,8 +23,8 @@ graph LR
   subgraph API-konsument
      ny[Klient]
   end
-  Maskinporten -->|2.utsteder token med tildelt scope|
-  ny -->|1.forspør tilgang til scope|Maskinporten
+  Maskinporten -->|2.utsteder token med tildelt scope|ny
+  ny -->|1. forespør tilgang til scope|Maskinporten
   ny -->|3.bruker token mot|Oppslagstjenesten
 </div>
 
