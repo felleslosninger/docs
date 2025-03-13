@@ -110,7 +110,7 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
 }
 ```
 
-*Eksempel på id_token med representasjons-informasjon: *
+*Eksempel på id_token med representasjons-informasjon*: 
 ```
 {
   "sub" : "z9RuQiLefXmJOBnywa_c75YQMH05nDsHjw0RFzuJC8M",
