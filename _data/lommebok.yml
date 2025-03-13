@@ -8,6 +8,9 @@ folders:
       - title: Hva er sandkassen ?
         jurl: /docs/lommebok/lommebok_om.html
 
+      - title: Tjenester 
+        jurl: /docs/lommebok/lommebok_tjenester.html
+
 ###########################
 
 related_resources_title: Andre nyttige lenker
