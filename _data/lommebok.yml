@@ -1,0 +1,18 @@
+sidebarTitle: Digital lommebok
+
+
+folders:
+- title: Overordnet
+  folderitems:
+
+      - title: Hva er sandkassen ?
+        jurl: /docs/lommebok/lommebok_om.html
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Prosjektside (TBD)
+  jurl: https://samarbeid.digdir.no
