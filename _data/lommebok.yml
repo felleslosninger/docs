@@ -11,6 +11,12 @@ folders:
       - title: Tjenester 
         jurl: /docs/lommebok/lommebok_tjenester.html
 
+- title: Digdir-tjenester
+  folderitems:
+
+      - title: Demo-utsteder
+        jurl: /docs/lommebok/lommebok_demo_utsteder.html
+
 ###########################
 
 related_resources_title: Andre nyttige lenker
