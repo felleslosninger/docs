@@ -215,6 +215,16 @@ Det betyr at funksjonaliteten med fullmaktspålogging også kan brukes for å ti
 
 Merk at det ikke er noen tilgangstyring av RAR-typer.  Alle klienter hos alle kunder kan forespørre RAR og få informasjonen i access_token dersom sluttbruker velger dette.  API-tilbyder må derfor bruke scopes dersom de trenger  implementere tilgangstyring. 
 
+# Testing
+
+
+Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/).  Her kan man også studere protokoll-flyten i detalj.  Dersom man ønsker å teste fullmaktsveler, så kan man bruke `[{"type":"idporten:fullmakt","permission_roles": "arbeid"}]` i authorization_details-feltet.
+
+Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Tenor har mulighet til å filtrere slik at man får bare **vergehavere** fra test-Folkeregisteret. Se på json-modellen til vergehaveren for å finne fødselsnummeret til vergen samt hvilke vergetjensteoppgaver som vergen har fått fullmakt for.  
+
+For "arbeid"-fullmakten ovenfor, så kan en per desember 2024 benytte 05895894984 som verge og 28816196088 ("Billettluke") som vergehaver.
+
+
 # Om scopes, rar og sesjoner
 
 Den sentrale SSO-sesjonen i ID-porten er upåvirket av fullmaktspålogging.  RAR-elementet som blir lagt ved fullmaktspålogginga gjelder kun for denne ene autorisasjonsforespørselen.  Sentral SSO-sesjon blir altså ikke endret til å være en "på-vegne-av-sesjon".  Dersom innlogget bruker forsøker å sende en ny fullmaktspålogging, enten det er til en ny tjeneste, eller til samme tjeneste, vil hen bli vist fullmaktsvelger på ny.
