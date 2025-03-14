@@ -40,9 +40,8 @@ Teknisk:
 Juss og personvern
 * Prod: Behandlar skarpe data, men for avgensa mengd innbyggjarar = “preprod”
 * Aktørane treng ikkje tilfredstille alle regulatoriske krav i eIDAS 2
-* Data vert delt med samtykke gjennom lommeboka
-* aktører må ha behandlingsgrunnlag “som vanlig”, samtykke må vere reelt.
-
+* Data vert delt med samtykke gjennom lommeboka, samtykke må vere reellt
+* Aktører må ha behandlingsgrunnlag for data i bevisa “som vanlig”
 
 ## Kva tilbyr Digdir i sandkassen ?
 
@@ -56,7 +55,7 @@ Juss og personvern
 ## Kva kan EG tilby i sandkassen?
 
 * Det du måtte ynskje !
-* Du kan publisere dine bevis, anten ved å vere din eigen utsteder, eller ved å interegrere dataene dine mot Digdir sin utstedar eller andre utstedere i sandkassen
+* Du kan publisere dine bevis, anten ved å vere din eigen utsteder, eller ved å integrere dataene dine mot Digdir sin utstedar eller andre utstedere i sandkassen
 * Du kan tilby ei lommebok
 * Du kan vere ein brukarstad som treng bevis 
 
