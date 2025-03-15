@@ -9,8 +9,6 @@ redirect_from: /lommebok_tjenester
 
 På denne sida finn du linkar til dei mest nytta tenesten som inngår i sandkassen.   
 
-Digdir jobbar med å laga ei web-basert innsynsteneste som gjere det mogeleg å sjå kva tenester som er registrert i tillitslista.
-
 
 ## Utstedere
 
