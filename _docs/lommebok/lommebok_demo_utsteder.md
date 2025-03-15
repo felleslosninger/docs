@@ -17,5 +17,5 @@ Me jobbar med å generalisere denne, slik at den lettare kan hekte seg på andre
 ## Metadata
 
 Du bør finne alt som trengs for å kunne samhandle med utstederen via credential metadata-endepunktet:
-[https://demo-vc-issuer.test.idporten.no/.well-known/openid-credential-issuer](https://demo-vc-issuer.test.idporten.no/.well-known/openid-credential-issuer])
+[https://demo-vc-issuer.test.idporten.no/.well-known/openid-credential-issuer](https://demo-vc-issuer.test.idporten.no/.well-known/openid-credential-issuer)
 
