@@ -9,7 +9,10 @@ redirect_from: /lommebok_om
 
 Lommebok er kult !
 
-Sjå [lommebok_tjenester.html](oversikt over tenester) som finst i sandkassen per no.
+Sjå [oversikt over tenester](lommebok_tjenester.html) som finst i sandkassen per no.
+
+Les meir om [arkitekturen til sandkassen](lommebok_arkitektur.html)
+
 
 ## Formål med sandkassen
 
@@ -33,7 +36,7 @@ Sjå [lommebok_tjenester.html](oversikt over tenester) som finst i sandkassen pe
 
 Teknisk:  
 * Basert på test og prod-miljøet til ID-porten
-* Laus kobling: ID-porten tilbyr tillitsrammeverket ihht arkitekturen, som koblar saman dei ulike deltakarane sine applikasjonar 
+* Laus kobling: ID-porten tilbyr tillitsrammeverket ihht [arkitekturen](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/), som koblar saman dei ulike deltakarane sine applikasjonar 
 * Deltakarane må ha sitt eige køyretidsmiljø
 * Kan velge å delta berre i test
 
