@@ -84,7 +84,7 @@ For at dette økosystemet skal fungere, er komponentane avhengig av eit felles t
 
 <div class="mermaid">
 
-graph LR
+graph
   TLI[(Register over utstedere)]
   TLW[(Register over lommbøker)]
   TLRP[(Register over brukerstads-registrarer)]
