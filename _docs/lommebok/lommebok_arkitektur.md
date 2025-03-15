@@ -9,6 +9,12 @@ redirect_from: /lommebok_arkitektur
 
 På denne sida forsøker me å gje ei overordna forklaring av arkitekturen til lommeboka og sandkassen.
 
+Gjennom revisjon av eIDAS-forordninga så vil medlemslanda i EU bli pålagde å:
+- tilby ein digital identitetslommebok til alle innbyggere innan november 2026
+- lommeboka skal vere gratis å få og bruke
+- lommeboka skal kunne brukast til innlogging
+- lommbeoka skal kunne brukast til å utveksle bevis (som førarkort, vaksinasjonskort, etc.)
+
 Lommebok-økosystemet til EU er i stor grad inspirert frå av teknologi for desentralisert identitet og eigen-kontroll over data gjennom bruk av sokalla [Verifiable Credentials](https://en.wikipedia.org/wiki/Verifiable_credentials), som vist i figuren under:
 
 <div class="mermaid">
