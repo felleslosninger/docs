@@ -23,7 +23,7 @@ Dette er ein enkel demo-teneste som kan utstede PID-dokument, eit fullmakts-bevi
 
 **EU-kommisjonen**
 
-Ein svært teknisk utstedar av PID og mobilt førarkort. 
+EU-kommisjonen tilbyr ein relativt teknisk orientert utstedar av PID og mobilt førarkort. 
 
 [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/)
 
@@ -40,7 +40,7 @@ Her kan du teste aldersverifisering basert på PID,  og fullmaktsinnlogging base
 
 **EU-kommisjonen verifikasjonsteneste**
 
-Ein teknisk fokusert 
+Ein teknisk fokusert demo-brukastad:
 
 [https://verifier.eudiw.dev/home](https://verifier.eudiw.dev/home)
 
