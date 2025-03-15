@@ -1,9 +1,9 @@
 ---
 title: Nasjonal sandkasse for digital lommebok
-description: Ansattporten er en kopi av ID-porten men der funksjonaliteten er tilpasset innlogging i ansatt/representasjonskontekst.
+description: Nasjonal sandkasse for digital lommebok
 
 sidebar: lommebok
-product: Ansattportlommeboken
+product: lommebok
 redirect_from: /lommebok_om
 ---
 
