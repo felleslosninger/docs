@@ -90,7 +90,7 @@ graph LR
   TLRP[(Register over brukerstads-registrarer)]
   DRPR[(Digdir brukerstad-register)]
   RPR[(Andre brukerstad-registre)]
-end
+
 
 TLRP --> DRPR
 TLRP --> RPR
