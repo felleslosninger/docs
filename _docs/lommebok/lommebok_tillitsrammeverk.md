@@ -11,7 +11,7 @@ Her vil det kome informasjon om tillistrammeverket i sandkassen.
 
 
 <div class="mermaid">
-graph LR
+graph
   TLI[(Register over utstedere)]
   TLW[(Register over lommbøker)]
   TLRP[(Register over brukerstads-registrarer)]
