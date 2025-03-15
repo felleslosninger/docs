@@ -37,10 +37,6 @@ Slik ser Digdir for oss at sandkassen ser ut i Noreg:
 
 <div class="mermaid">
 graph LR
-  direction LR
-  subgraph A [Aktørar]
-
-  direction LR
   subgraph AK [Autorative kjelder]
   F(Folkeregisteret)
   E(Enhentsregisteret)
@@ -67,7 +63,6 @@ lommebøker"]
 brukerstad"]
   RP["Andre
 brukarstader"]
-  end
   end
 
 
