@@ -16,7 +16,7 @@ graph LR
   direction LR
   I["Utstedar 
 (issuer)"]
-  H["Lomebok 
+  H["Lommebok 
 (holder)"]
   V["Brukarstad 
 (verifier / relying party)"]
@@ -89,7 +89,7 @@ For at dette økosystemet skal fungere, er komponentane avhengig av eit felles t
 
 <div class="mermaid">
 
-subgraph T [Tillistrammeverk Digdir]
+graph LR
   TLI[(Register over utstedere)]
   TLW[(Register over lommbøker)]
   TLRP[(Register over brukerstads-registrarer)]
