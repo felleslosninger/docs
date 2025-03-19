@@ -20,7 +20,7 @@ redirect_from:
 
 ## 2.28.2
 
-09.10.2024
+19.03.2025
 
 **Vedlikehald**
 
