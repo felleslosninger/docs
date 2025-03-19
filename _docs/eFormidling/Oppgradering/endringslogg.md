@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.2
+
+09.10.2024
+
+**Vedlikehald**
+
+- Patch av kritisk sårbarheit i Tomcat sjå: https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.99
+
 ## 2.28.1
 
 09.10.2024
