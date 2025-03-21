@@ -4,12 +4,12 @@ description: "A grant is sent by the client to Maskinporten in order to get an a
 summary: "A grant is sent by the client to Maskinporten in order to get an access token""
 
 sidebar: maskinporten
-product: Maskinporten
-redirect_from: /maskinporten_protocol_jwtgrant
+product: maskinporten
+redirect_from: maskinporten_protocol_jwtgrant
 ---
 
 ## About
-
+XX
 The JWT grant is a request sent by the client towards Maskinporten, in order to obtain an access_token.  Both the grant and the access_token looks similar and share some of the same claims, as they as JWT structures, however they must not be mixed up.
 
 JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
