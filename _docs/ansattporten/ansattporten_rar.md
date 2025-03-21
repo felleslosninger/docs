@@ -56,11 +56,11 @@ Følgende claims kan sendes inn i request:
 
 | claim | kardinalitet|beskrivelse |
 |-|-|-|
-|resource | påkrevd|Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
-|organizationform | Valgfri| Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
-|allow_multiple_organizations| Valgfri| Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|
-|allow_deleted_organizations | Valgfri| Dersom `true` så vil organisasjonsvelger vise sletta verksemder. Default er false.|
-|representation_is_required | Valgfri| Krev at bruker må representere en virksomhet . Default så er begge mulig å velge å representere seg selv. |
+|resource | påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|
+|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise sletta verksemder. Default er false.|
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default så er begge mulig å velge å representere seg selv. |
 
 [Her finner en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
 
@@ -79,9 +79,10 @@ Følgende claims kan sendes inn i request:
 
 Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
 
-| claim | beskrivelse |
-|-|-|
+| claim | beskrivelse            |
+| ----- | ---------------------- |
 | resource | Samme som i request |
+| resource-name | Namn på etterspurt representasjonsforhold |
 | reportees | Array med valgte virksomheter. |
 | Rights | For hver virksomhet, et array med rettigheter som innlogget bruker har for aktuell tjenestekode.  |
 | Name | For hver virksomhet, navnet på valgt virksomhet|
