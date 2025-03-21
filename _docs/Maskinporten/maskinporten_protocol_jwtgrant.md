@@ -3,7 +3,7 @@ title: "JWT grant"
 description: "A grant is sent by the client to Maskinporten in order to get an access token"
 
 sidebar: maskinporten_sidebar
-product: Maskinporten
+product: maskinporten_sidebar
 redirect_from: /maskinporten_protocol_jwtgrant
 ---
 
@@ -14,9 +14,7 @@ The JWT grant is a request sent by the client towards Maskinporten, in order to 
 JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523). Both the grant request and the returned access_token are JWT structures looking almost identical, so take care not to mixed them up.
 
 
-## Request
-
-
+## Grant structure
 
 **Header:**
 
