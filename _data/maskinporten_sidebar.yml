@@ -43,7 +43,7 @@ folders:
   folderitems:
 
       - title: JWT grants
-        jurl: /docs/Maskinporten/maskinporten_protocol_jwtgrant
+        jurl: /docs/Maskinporten/maskinporten_protocol_jwtgrant.html
 
       - title: /token-endepunkt
         jurl: /docs/Maskinporten/maskinporten_protocol_token
