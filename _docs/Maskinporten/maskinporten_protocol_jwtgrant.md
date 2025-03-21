@@ -3,15 +3,16 @@ title: "JWT grant"
 description: "A grant is sent by the client to Maskinporten in order to get an access token"
 
 sidebar: maskinporten_sidebar
-product: maskinporten
+product: Maskinporten
 redirect_from: /maskinporten_protocol_jwtgrant
 ---
 
 ## About
-XX
-The JWT grant is a request sent by the client towards Maskinporten, in order to obtain an access_token.  Both the grant and the access_token looks similar and share some of the same claims, as they as JWT structures, however they must not be mixed up.
 
-JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523).
+The JWT grant is a request sent by the client towards Maskinporten, in order to obtain an access_token.  
+
+JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523). Both the grant request and the returned access_token are JWT structures looking almost identical, so take care not to mixed them up.
+
 
 ## Request
 
@@ -43,15 +44,27 @@ Note that production certificates are not supported in test environments.
 |jti|Recommended | JWT ID - unique id for this jwt. **NOTE:** A JWT cannot be reused. |
 |scope| Required| Whitepace-separated liste over scopes requested.  When using JWT grants, the client must have pre-registered with rights to all the scopes (unless using delegation in Altinn, see below.) |
 | resource   | optional  | The target API that the client intends to use the token. Only used by some APIs, and the actual value to use must be obtained from the API owner. Please see [audience-restriction]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_audience_restricted_tokens) for details. *Currently only array supported.*  |   
-| pid | optional | The target end-user that the client intends to do subsequent API-calls on. This claim might be required by some APIs. Please see [enduser-restriced tokens]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html)) |
 
+If the client (or the intended API) wants to utilize [enduser-restriced tokens]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html), the following claim may be included in the body:
 
-If the client belongs to a supplier requesting a token on behalf of another organization (legal consumer), there are two mutually exclusive claims available:
+| Claim  |  Cardinality | Description  |
+| --- | --- |--- |
+| pid | optional | The target end-user "fødselsnummer" that the access token should be bound to. This claim might be required by some APIs. |
+
+If the client belongs to a supplier requesting a token on behalf of another organization (legal consumer), the client should use [scope delegation](maskinporten_func_delegering) by including this claim: 
 
 | Claim  |  Cardinality | Description  |
 | --- | --- |--- |
 |consumer_org| Optional |  String value carrying the Norwegian organization number of the legal consumer the client wants to get a token for. Maskinporten will validate against Altinn that the consumer-supplier delegation exists.  |
-|iss_onbehalfof| Optional | Maskinporten proprietary claim.  The onbehalfof-value for the sub-client the client is acting onbehalf of.   (See  [onbehalfof]({{site.baseurl}}/docs/idporten/oidc/oidc_func_onbehalfof))|
+
+(note: previously, a simpler `iss_onbehalfof` internal delegation mechanism could be used. This is now deprecated, and will be removed in future.)
+
+Maskinporten also supports a couple of fine-grained authorization extensions.  These are: 
+
+| RAR-type |  Cardinality | Description  |
+| --- | --- |--- |
+| `urn:altinn:systemuser` | Optional | [System user token](maskinporten_func_systembruker) |
+| `urn:altinn:consent`    | Optional | [Consent token](maskinporten_func_samtykke) |
 
 
 
