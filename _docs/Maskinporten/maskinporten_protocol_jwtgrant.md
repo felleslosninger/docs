@@ -2,7 +2,7 @@
 title: "JWT grant"
 description: "A grant is sent by the client to Maskinporten in order to get an access token"
 
-sidebar: maskinporten
+sidebar: maskinporten_sidebar
 product: maskinporten
 redirect_from: /maskinporten_protocol_jwtgrant
 ---
