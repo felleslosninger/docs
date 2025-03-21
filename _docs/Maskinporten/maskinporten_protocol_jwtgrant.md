@@ -1,9 +1,9 @@
 ---
-title: "JWT grant "
-description: "This page summarizes the protocol options availalbe for on JWT grants on the /token endpoint for Maskinporten"
-summary: "This page summarizes the protocol options availalbe for on JWT grants on the /token endpoint for Maskinporten"
+title: "JWT grant"
+description: "A grant is sent by the client to Maskinporten in order to get an access token"
+summary: "A grant is sent by the client to Maskinporten in order to get an access token""
 
-sidebar: maskinporten_sidebar
+sidebar: maskinporten
 product: Maskinporten
 redirect_from: /maskinporten_protocol_jwtgrant
 ---
