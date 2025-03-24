@@ -33,6 +33,9 @@ folders:
       - title: Demo-utsteder
         jurl: /docs/lommebok/lommebok_demo_utsteder.html
 
+      - title: Demo-brukarstad
+        jurl: /docs/lommebok/lommebok_demo_brukarstad.html
+
 ###########################
 
 related_resources_title: Andre nyttige lenker

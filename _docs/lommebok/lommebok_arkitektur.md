@@ -1,6 +1,6 @@
 ---
-title: Arkitektur
-description: Arkitektur
+title: Arkitektur for digital lommebok
+description: Arkitektur for digital lommebok
 
 sidebar: lommebok
 product: lommebok
@@ -45,7 +45,7 @@ Slik ser Digdir for oss at sandkassen ser ut i Noreg:
 graph LR
   subgraph AK [Autorative kjelder]
   F(Folkeregisteret)
-  E(Enhentsregisteret)
+  E(Enhetsregisteret)
   D(Datakjelder)
   end
 
@@ -86,7 +86,7 @@ brukarstader"]
 
 </div>
 
-For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale fellestjenester.  Fram til desse registra er tilgjengelege, so vil Digdir tilby ein norsk variant som må nyttast:
+For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale fellestjenester.  Sidan norsk sandkasse skal fungere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS, og dessutan tidlegare enn dei sentrale registra frå EU,  so vil Digdir tilby [eit norsk sandskasse-spesifikt tillitsrammeverk](lommebok_tillitsrammeverk) som må nyttast:
 
 <div class="mermaid">
 

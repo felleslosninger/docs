@@ -7,59 +7,12 @@ product: lommebok
 redirect_from: /lommebok_om
 ---
 
-Lommebok er kult !
+Digdir tilbyr en nasjonal «sandkasse» for digital lommebok der alle som ønsker kan utforske muligheter og eksperimentere i et isolert og trygt testmiljø. 
 
-Sjå [oversikt over tenester](lommebok_tjenester.html) som finst i sandkassen per no.
+Du kan lese meir om det overordna rammene og vilkår for å delta i sandkassen, samt andre relaterte prosjekt i Digdir, på [prosjektsida for digital lommebok](LENKE_TIL_DIGDIR.NO).
 
-Les meir om [arkitekturen til sandkassen](lommebok_arkitektur.html)
+På desse sidene finn du teknisk dokumentasjon om sandkassen. 
 
+Me anbefalar at du startar med å lese meir om [arkitekturen til sandkassen](lommebok_arkitektur.html), før du tek ein kikk på [oversikt over tenester](lommebok_tjenester.html) som finst i sandkassen per no.
 
-## Formål med sandkassen
-
-* Bygge erfaring med teknologien og infrastrukturen
-* Stimulere til utprøving 
-* Dele kunnskap 
-* Identifisere mogelegheiter og hindre i Noreg
-* Bidra med kunnskapsgrunnlag til KVU’en
-* Førebu til nasjonal innføring
-
-## Kven får vere med ?
-
-* Alle som vil  !
-* ...og inngår sandkassen-avtalen
-* Må stille eigne utviklingsressursar
-* Må bidra med eigne pilot-brukarar
-* Må bidra med tilbakemeldingar til erfaringsrapporter og anbefalingar
-* Ingen forplikting til å tilby tenesta di etter sandkassetida er over (men stort ønske...) 
-
-## Kva ER denne sandkassen ?
-
-Teknisk:  
-* Basert på test og prod-miljøet til ID-porten
-* Laus kobling: ID-porten tilbyr tillitsrammeverket ihht [arkitekturen](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/), som koblar saman dei ulike deltakarane sine applikasjonar 
-* Deltakarane må ha sitt eige køyretidsmiljø
-* Kan velge å delta berre i test
-
-Juss og personvern
-* Prod: Behandlar skarpe data, men for avgensa mengd innbyggjarar = “preprod”
-* Aktørane treng ikkje tilfredstille alle regulatoriske krav i eIDAS 2
-* Data vert delt med samtykke gjennom lommeboka, samtykke må vere reellt
-* Aktører må ha behandlingsgrunnlag for data i bevisa “som vanlig”
-
-## Kva tilbyr Digdir i sandkassen ?
-
-* Grunnleggande tillitsrammerverk og tillitslister som får økosystemet til "å virke"
-* Ei enkel demo-lommebok, basert på EU-kommisjonen sin demo-software
-* Ein PID-utsteder
-* Ein generisk utsteder for attesterte atttributt (EAA)
-* Ei enkelt brukarsted-teneste for aldersverifisering og fullmakts-presentasjon
-* Mogelegheit til å logge inn med lommebok gjennom ID-porten 
-
-## Kva kan EG tilby i sandkassen?
-
-* Det du måtte ynskje !
-* Du kan publisere dine bevis, anten ved å vere din eigen utsteder, eller ved å integrere dataene dine mot Digdir sin utstedar eller andre utstedere i sandkassen
-* Du kan tilby ei lommebok
-* Du kan vere ein brukarstad som treng bevis 
-
-
+Når du er klar til delta, og laga dine eigne tenester i sandkassen, må du setje deg inn i korleis du [lagar eit bevis](lommebok_protokoll_vci.html) eller [brukar bevis](lommebok_protokoll_vp.html). 

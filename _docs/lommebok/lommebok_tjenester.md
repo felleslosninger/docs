@@ -1,6 +1,5 @@
 ---
-title: Tjenester
-description: asdf
+title: Tenesteri sandkassen
 
 sidebar: lommebok
 product: lommebok
@@ -36,6 +35,9 @@ Her kan du teste aldersverifisering basert på PID,  og fullmaktsinnlogging base
 
 [https://demo-vc-verifier.test.idporten.no/](https://demo-vc-verifier.test.idporten.no/)
 
+**ID-porten**
+
+I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av demo-utstedaren vår. 
 
 
 **EU-kommisjonen verifikasjonsteneste**
