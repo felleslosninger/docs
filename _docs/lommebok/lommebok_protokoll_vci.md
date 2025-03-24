@@ -21,12 +21,16 @@ Lommeboka må på ein eller annan måte få kunnskap om KVAR den kan få tak i e
 1. For "populære" bevis, som t.d. førarkort eller digital pass, so forventer me at lommebøkene vil kome med **førehandskonfigurerte lenker**, slik at brukaren t.d. klikkar på "Hent førarkortet mitt" inni appen for å starte protokoll-flyten. 
 2. For andre bevis so må brukaren logge inn til ei nett-teneste tilhøyrande bevis-utstedar.   Lommeboka vil bli trigga til å starte protokoll-flyten anten ved at brukaren scanner ein QR-kode, eller ved direkte-kommunisjon vha. [Digital Credentials](https://wicg.github.io/digital-credentials/) browser-APIet, eventuelt via nærleiksdeteksjon via NFC eller bluetooth-LE. 
 
+TODO: flytskjema
 
-FORSØK Å GJE EI GOD FORKLARING AV CREDENTIAL OFFER.  BØR DEI BRUKE DET, ELLER IKKJE ?
+TODO: døme
 
-FORKLARE KEY BINDING OG KORLEIS EIN (KANKSJE) TRENG FUNKSJONELL STØTTE I AS (les ID-porten) FOR Å KUNNE UTSTEDE DETTE. 
-KAN EIN OPPNÅ KEY BINDING BASERT PÅ PID-PRESENTASJON ? (KORLEIS HANDTERE  KEYBINDING AV t.d. 1 FØRARKORT MOT MASSE-UTSTEDTE PID )
+[//]: # (FORSØK Å GJE EI GOD FORKLARING AV CREDENTIAL OFFER.  BØR DEI BRUKE DET, ELLER IKKJE ?)
 
+[//]: # (FORKLARE KEY BINDING OG KORLEIS EIN (KANKSJE) TRENG FUNKSJONELL STØTTE I AS (les ID-porten) FOR Å KUNNE UTSTEDE DETTE.)
+
+ [//]: # (tranction data, kombinert VP+VCI)
+ 
 
 LEGG FLYTSKJEMA
 
