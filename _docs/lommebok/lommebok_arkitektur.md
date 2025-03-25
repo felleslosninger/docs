@@ -88,7 +88,7 @@ brukarstader"]
 
 For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale europeiske fellestjenester.  Sidan norsk sandkasse skal fungere allereie no i 2025, som er både tidlegare enn dei sentrale registra frå EU er ferdige, men også rettsleg vere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS-prosessen, so vil Digdir tilby [eit norsk sandskasse-spesifikt tillitsrammeverk](lommebok_tillitsrammeverk) som må nyttast:
 
-| <div class="mermaid">
+<table><td> <div class="mermaid">
 
 graph
   TLI[(Register over utstedere)]
@@ -100,8 +100,11 @@ graph
 
 TLRP --> DRPR
 TLRP --> RPR
-</div> |
-|:-:|
-| *Digdir leverer tillitsrammeverk i sandskassen*|
+</div> 
+</td>
+<td>
+ *Digdir leverer tillitsrammeverk i sandskassen*
+ </td>
+ </table>
 
 Sjølve kommunikasjonen mellom aktørane er dokumentert på eigne sider [for utstedelse](lommebok_protokoll_vci.html) eller [for bruk](lommebok_protokoll_vp.html). 
