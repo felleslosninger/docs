@@ -13,9 +13,9 @@ Gjennom revisjon av eIDAS-forordninga så vil medlemslanda i EU bli pålagde å:
 - tilby ein digital identitetslommebok til alle innbyggere innan november 2026
 - lommeboka skal vere gratis å få og bruke
 - lommeboka skal kunne brukast til innlogging
-- lommbeoka skal kunne brukast til å utveksle bevis (som førarkort, vaksinasjonskort, etc.)
+- lommrboka skal kunne brukast til å utveksle bevis (som førarkort, vaksinasjonskort, etc.) til tjenester
 
-Lommebok-økosystemet til EU er i stor grad inspirert frå av teknologi for desentralisert identitet og eigen-kontroll over data gjennom bruk av sokalla [Verifiable Credentials](https://en.wikipedia.org/wiki/Verifiable_credentials), som vist i figuren under:
+Lommebok-økosystemet til EU er i stor grad inspirert frå teknologi for desentralisert identitet og eigen-kontroll over data gjennom bruk av sokalla [Verifiable Credentials](https://en.wikipedia.org/wiki/Verifiable_credentials), som vist i figuren under:
 
 <div class="mermaid">
 graph LR
@@ -86,9 +86,9 @@ brukarstader"]
 
 </div>
 
-For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale fellestjenester.  Sidan norsk sandkasse skal fungere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS, og dessutan tidlegare enn dei sentrale registra frå EU,  so vil Digdir tilby [eit norsk sandskasse-spesifikt tillitsrammeverk](lommebok_tillitsrammeverk) som må nyttast:
+For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale europeiske fellestjenester.  Sidan norsk sandkasse skal fungere allereie no i 2025, som er både tidlegare enn dei sentrale registra frå EU er ferdige, men også rettsleg vere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS-prosessen, so vil Digdir tilby [eit norsk sandskasse-spesifikt tillitsrammeverk](lommebok_tillitsrammeverk) som må nyttast:
 
-<div class="mermaid">
+| <div class="mermaid">
 
 graph
   TLI[(Register over utstedere)]
@@ -100,6 +100,8 @@ graph
 
 TLRP --> DRPR
 TLRP --> RPR
-</div>
+</div> |
+|:-:|
+| *Digdir leverer tillitsrammeverk i sandskassen*|
 
 Sjølve kommunikasjonen mellom aktørane er dokumentert på eigne sider [for utstedelse](lommebok_protokoll_vci.html) eller [for bruk](lommebok_protokoll_vp.html). 
