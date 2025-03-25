@@ -102,7 +102,7 @@ TLRP --> DRPR
 TLRP --> RPR
 </div></td></tr>
 <tr><td>
- *Digdir leverer tillitsrammeverk i sandskassen*
+ <em>Digdir leverer tillitsrammeverk i sandskassen</em>
  </td>
 </tr>
 </table>
