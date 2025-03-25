@@ -110,8 +110,5 @@ TLRP --> RPR
 </tr>
 </table>
 
-For brukerstader so ser me at tillitslista er to-delt:  den sentrale tillistlista peikar berre på ein PKI tilhøyrande godkjente **bregistrarer**. Eit brukarstad må ta kontakt med ein registrar for å skaffe eit brukarstadssertifikat (Relying Party Access Certificate).
+Som følgje av registrering på tillitslista, får aktøren eit sertifikat som skal nyttast til autentisering ved samhandling. Sjølve samhandlinga er basert på to nært beslekta protokollar frå OpenID Foundation, nemleg OpenID4VCI for å [laga eit bevis](lommebok_protokoll_vci.html) eller OpenID4VP for å [bruka eit bevis](lommebok_protokoll_vp.html). 
 
-Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  Tillitslistene ovanfor er i prakis berre enkle oppslagstenester som lister opp signeringssertifikatet som vert nytta av den godkjente aktøren.  Dersom sertifikatet ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist.  I sandkassen vil det vere Digdir som, basert på tilstendt ei CSR-fil, deler ut desse sertifikata til utstedere, lommebok-leverandørar eller brukarstads-registrarer. 
-
- I den endelege produksjonsøkosystemet hjå EU er det berre medlemslanda som har tilgang til og ansvaret for å publisere desse sertifikata på EU si tillitsliste. 
