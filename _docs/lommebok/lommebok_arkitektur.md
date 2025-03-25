@@ -91,20 +91,27 @@ For at dette økosystemet skal fungere, er komponentane avhengig av eit felles t
 <table><tr><td><div class="mermaid">
 
 graph
+
+subgraph AK [Tillitsrammeverk frå Digdir]
   TLI[(Register over utstedere)]
   TLW[(Register over lommbøker)]
   TLRP[(Register over brukerstads-registrarer)]
   DRPR[(Digdir brukerstad-register)]
-  RPR[(Andre brukerstad-registre)]
+end
 
+  RPR[(Andre brukerstad-registre)]
 
 TLRP --> DRPR
 TLRP --> RPR
 </div></td></tr>
 <tr><td>
- <em>Digdir leverer tillitsrammeverk i sandskassen</em>
+ <em>Tillitsrammeverket i sandskassen</em>
  </td>
 </tr>
 </table>
 
-Sjølve kommunikasjonen mellom aktørane er dokumentert på eigne sider [for utstedelse](lommebok_protokoll_vci.html) eller [for bruk](lommebok_protokoll_vp.html). 
+For brukerstader so ser me at tillitslista er to-delt:  den sentrale tillistlista peikar berre på ein PKI tilhøyrande godkjente **bregistrarer**. Eit brukarstad må ta kontakt med ein registrar for å skaffe eit brukarstadssertifikat (Relying Party Access Certificate).
+
+Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  Tillitslistene ovanfor er i prakis berre enkle oppslagstenester som lister opp signeringssertifikatet som vert nytta av den godkjente aktøren.  Dersom sertifikatet ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist.  I sandkassen vil det vere Digdir som, basert på tilstendt ei CSR-fil, deler ut desse sertifikata til utstedere, lommebok-leverandørar eller brukarstads-registrarer. 
+
+ I den endelege produksjonsøkosystemet hjå EU er det berre medlemslanda som har tilgang til og ansvaret for å publisere desse sertifikata på EU si tillitsliste. 
