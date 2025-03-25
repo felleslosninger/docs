@@ -7,92 +7,92 @@ folders:
   folderitems:
 
       - title: Overordnet
-        jurl: /docs/Maskinporten/maskinporten_overordnet
+        jurl: /docs/Maskinporten/maskinporten_overordnet.html
 
       - title: English summary
-        jurl: /docs/Maskinporten/maskinporten_summary
+        jurl: /docs/Maskinporten/maskinporten_summary.html
 
       - title: Autentisering
-        jurl: /docs/Maskinporten/maskinporten_autentisering
+        jurl: /docs/Maskinporten/maskinporten_autentisering.html
 
 
 - title: Bruksområde og guide
   folderitems:
 
       - title: Hvordan virker Maskinporten?
-        jurl: /docs/Maskinporten/maskinporten_auth_server-to-server-oauth2
+        jurl: /docs/Maskinporten/maskinporten_auth_server-to-server-oauth2.html
 
       - title: Guide for API-tilbyder
-        jurl: /docs/Maskinporten/maskinporten_guide_apitilbyder
+        jurl: /docs/Maskinporten/maskinporten_guide_apitilbyder.html
 
       - title: Guide for API-konsument
-        jurl: /docs/Maskinporten/maskinporten_guide_apikonsument
+        jurl: /docs/Maskinporten/maskinporten_guide_apikonsument.html
 
 
 - title: Selvbetjening
   folderitems:
 
       - title: Selvbetjening via Web
-        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_web
+        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_web.html
 
       - title: Selvbetjening via API
-        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_api
+        jurl: /docs/Maskinporten/maskinporten_sjolvbetjening_api.html
 
 
 - title: Grensesnittspesifikasjon
   folderitems:
 
       - title: JWT grants
-        jurl: /docs/Maskinporten/maskinporten_protocol_jwtgrant
+        jurl: /docs/Maskinporten/maskinporten_protocol_jwtgrant.html
 
       - title: /token-endepunkt
-        jurl: /docs/Maskinporten/maskinporten_protocol_token
+        jurl: /docs/Maskinporten/maskinporten_protocol_token.html
 
 - title: Funksjonalitet
   folderitems:
 
       - title: Metadata
-        jurl: /docs/Maskinporten/maskinporten_func_wellknown
+        jurl: /docs/Maskinporten/maskinporten_func_wellknown.html
 
       - title: Klientregistrering
-        jurl: /docs/idporten/oidc/oidc_func_clientreg
+        jurl: /docs/idporten/oidc/oidc_func_clientreg.html
 
       - title: API-Delegering
-        jurl: /docs/Maskinporten/maskinporten_func_delegering
+        jurl: /docs/Maskinporten/maskinporten_func_delegering.html
 
       - title: Systembruker-delegering
-        jurl: /docs/Maskinporten/maskinporten_func_systembruker
+        jurl: /docs/Maskinporten/maskinporten_func_systembruker.html
 
       - title: Audience-begrensning
-        jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens
+        jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens.html
 
       - title: Innbygger-bundne tokens
-        jurl: /docs/Maskinporten/maskinporten_func_pid_restricted_tokens
+        jurl: /docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html
 
 - title: Spørsmål og svar
   folderitems:
 
      - title: Using Postman towards Maskinporten
-       jurl: /docs/idporten/oidc/oidc_sample_jwtgrant_postman
+       jurl: /docs/idporten/oidc/oidc_sample_jwtgrant_postman.html
 
 - title: Feilsøking
   folderitems:
 
   - title: Feilsøking i Maskinporten
-    jurl: /docs/Maskinporten/maskinporten_feilsoking
+    jurl: /docs/Maskinporten/maskinporten_feilsoking.html
 
 
 - title: Skyporten
   folderitems:
 
   - title: Hva er Skyporten?
-    jurl: /docs/Maskinporten/maskinporten_skyporten
+    jurl: /docs/Maskinporten/maskinporten_skyporten.html
   - title: Skyporten med GCP
-    jurl: /docs/Maskinporten/maskinporten_skyporten_gcp
+    jurl: /docs/Maskinporten/maskinporten_skyporten_gcp.html
   - title: Skyporten med Azure
-    jurl: /docs/Maskinporten/maskinporten_skyporten_azure
+    jurl: /docs/Maskinporten/maskinporten_skyporten_azure.html
   - title: Skyporten med AWS
-    jurl: /docs/Maskinporten/maskinporten_skyporten_aws
+    jurl: /docs/Maskinporten/maskinporten_skyporten_aws.html
 
 ###########################
 

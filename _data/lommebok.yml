@@ -1,0 +1,56 @@
+sidebarTitle: Digital lommebok
+
+
+folders:
+- title: Overordna
+  folderitems:
+
+      - title: Kva er sandkassen ?
+        jurl: /docs/lommebok/lommebok_om.html
+
+      - title: Tenester i sandkassen
+        jurl: /docs/lommebok/lommebok_tjenester.html
+
+- title: Grensesnittspesifikasjon
+  folderitems:
+
+      - title: Arkitektur
+        jurl: /docs/lommebok/lommebok_arkitektur.html
+
+      - title: Lage bevis
+        jurl: /docs/lommebok/lommebok_protokoll_vci.html
+
+      - title: Motta bevis
+        jurl: /docs/lommebok/lommebok_protokoll_vp.html
+
+
+- title: Digdir-tenester
+  folderitems:
+
+      - title: Tillitsrammeverk
+        jurl: /docs/lommebok/lommebok_tillitsrammeverk.html
+
+      - title: Demo-utsteder
+        jurl: /docs/lommebok/lommebok_demo_utsteder.html
+
+      - title: Demo-brukarstad
+        jurl: /docs/lommebok/lommebok_demo_brukarstad.html
+
+###########################
+
+related_resources_title: Andre nyttige lenker
+
+related_resources_list:
+
+- title: Prosjekt for innføring
+  jurl: https://samarbeid.digdir.no
+
+- title: Referansearkitektur frå EU
+  jurl: https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#2-eudi-wallet-functionalities
+  
+- title: SD-JWT debugger
+  jurl: https://www.sdjwt.co/
+
+
+
+
