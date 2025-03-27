@@ -11,10 +11,9 @@ redirect_from: /oidc_func_dpop
 
 DPoP - Demonstration of Proof of Possession - er en mekanisme som beskytter mot misbruk av tokens ved å binde dem kryptografisk til klienten som hentet dem.
 
-Metoden gjør det vanskeligere for en angriper å bruke tokens som er blitt stjålet, for eksempel via man-in-the-middle-angrep.
+Metoden gjør det vanskeligere for en angriper å bruke tokens som er blitt stjålet, for eksempel via man-in-the-middle-angrep. Et vanlig token kan brukes av hvem som helst som får tak i det via lekkasje eller lignende, før det går ut på tid.
 
 DPoP er definert i [RFC9449](https://datatracker.ietf.org/doc/html/rfc9449), og vi henviser til denne for detaljert dokumentasjon.
-Vi anbefaler å bruke et bibliotek. Se eksempler i java [her](https://connect2id.com/products/nimbus-oauth-openid-connect-sdk/examples/oauth/dpop)
 
 DPoP brukes slik:
 
@@ -70,15 +69,115 @@ API-leverandører må derfor sørge for:
 - Mulighet til å hente `cnf`-feltet fra token
 - Robust validering og feilhåndtering
 
-### DPoP er valgfritt, men anbefales
+### Eksempel 
+Et DPoP-bevis skl inkluderes i http headeren med navn DPoP i alle kall til token-endepunktet og i alle kall til API-er som krever DPoP.
+DPoP headeren heter DPoP og innholdet er DPoP-beviset i base64-format.
+```
+DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik\
+ VDIiwieCI6Imw4dEZyaHgtMzR0VjNoUklDUkRZOXpDa0RscEJoRjQyVVFVZldWQVdCR\
+ nMiLCJ5IjoiOVZFNGpmX09rX282NHpiVFRsY3VOSmFqSG10NnY5VERWclUwQ2R2R1JE\
+ QSIsImNydiI6IlAtMjU2In19.eyJqdGkiOiItQndDM0VTYzZhY2MybFRjIiwiaHRtIj\
+ oiUE9TVCIsImh0dSI6Imh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL3Rva2VuIiwia\
+ WF0IjoxNTYyMjYyNjE2fQ.2-GxA6T8lP4vfrg8v-FdWP0A0zdrj8igiMLvqRMUvwnQg\
+ 4PtFLbdLXiOSsX0x7NVY-FNyJK70nfbV37xRZT3Lg
+```
+Når man dekoder DPoP-beviset ser det slik ut:
+```
+{
+  "typ": "dpop+jwt",
+  "alg": "ES256",
+  "jwk": {
+    "kty": "EC",
+    "x": "l8tFrhx-34tV3hRICRDY9zCkDlpBhF42UQUfWVAWBFs",
+    "y": "9VE4jf_Ok_o64zbTTlcuNJajHmt6v9TDVrU0CdvGRDA",
+    "crv": "P-256"
+  }
+}.
+{
+  "jti": "-BwC3ESc6acc2lTc",
+  "htm": "POST",
+  "htu": "https://server.example.com/token",
+  "iat": 1562262616
+}.
+{
+[Signatur]
+}
 
-Bruk av DPoP gir et ekstra lag med sikkerhet og er anbefalt for klienter som håndterer tokens på klientside (for eksempel JavaScript-applikasjoner).
+```
+* `typ`: skal alltid være `dpop+jwt`
+* `alg`: viser hvilken signerings algoritme som ble brukt
+* `jwk`: inneholder den offentlige nøkkelen på Json Web Key format
+* `htm`: er http-metoden, f.eks POST
+* `htu`: er url'en som må matche den ressursen man ønsker å bruke
+* `iat`: er en Unix timestamp som forteller når JWT-en ble opprettet
 
-Ingen konfigurering er nødvendig hos ID-Porten for å ta det i bruk foreløpig.
+JWT'en signeres med privat-nøkkelen som hører til den offentlige nøkkelen. Man må ta vare på den private nøkkelen på en trygg måte.
 
-Dersom DPoP benyttes, må det brukes konsekvent – både ved innhenting av tokens og ved bruk av tokens mot API-er.
+Responsen vil se slik ut:
+```
+{
+ "access_token": "Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU",
+ "token_type": "DPoP",
+ "expires_in": 2677,
+ "refresh_token": "Q..Zkm29lexi8VnWg2zPW1x-tgGad0Ibc3s3EwM_Ni4-g"
+}
+```
+Og i access tokenet vil det være en thumbprint av den offentlige nøkkelen:
+```
+{
+  "sub":"xxx",
+  "iss":"https://idporten.no",
+  "nbf":1562262611,
+  "exp":1562266216,
+  "cnf":
+  {
+    "jkt":"0ZcOCORZNYy-DWpqq30jZyJGHTN0d2HglBV3uiguA4I"
+  }
+```
+Etter token response:
+* `ath`: Når man så skal bruke det dpop-bundne tokenet, må man inkludere en hash av tilgangstokenet i claimet 
+* `nonce`: Dersom det kommer en nonce-verdi i token responsen, må DPoP-beviset også inneholde det.
 
+Eksempel på API-forespørsel:
+```
+GET /protectedresource HTTP/1.1
+Host: resource.example.org
+Authorization: DPoP Kz~8mXK1EalYznwH-LC-1fBAo.4Ljp~zsPE_NeO.gxU
+DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik\
+ VDIiwieCI6Imw4dEZyaHgtMzR0VjNoUklDUkRZOXpDa0RscEJoRjQyVVFVZldWQVdCR\
+ nMiLCJ5IjoiOVZFNGpmX09rX282NHpiVFRsY3VOSmFqSG10NnY5VERWclUwQ2R2R1JE\
+ QSIsImNydiI6IlAtMjU2In19.eyJqdGkiOiJlMWozVl9iS2ljOC1MQUVCIiwiaHRtIj\
+ oiR0VUIiwiaHR1IjoiaHR0cHM6Ly9yZXNvdXJjZS5leGFtcGxlLm9yZy9wcm90ZWN0Z\
+ WRyZXNvdXJjZSIsImlhdCI6MTU2MjI2MjYxOCwiYXRoIjoiZlVIeU8ycjJaM0RaNTNF\
+ c05yV0JiMHhXWG9hTnk1OUlpS0NBcWtzbVFFbyJ9.2oW9RP35yRqzhrtNP86L-Ey71E\
+ OptxRimPPToA1plemAgR6pxHF8y6-yqyVnmcw6Fy1dqd-jfxSYoMxhAJpLjA
+```
+der DPoP-beviset ser slik ut når man dekoder det:
+```
+{
+  "typ":"dpop+jwt",
+  "alg":"ES256",
+  "jwk": {
+    "kty":"EC",
+    "x":"l8tFrhx-34tV3hRICRDY9zCkDlpBhF42UQUfWVAWBFs",
+    "y":"9VE4jf_Ok_o64zbTTlcuNJajHmt6v9TDVrU0CdvGRDA",
+    "crv":"P-256"
+  }
+}
+.
+{
+  "jti":"e1j3V_bKic8-LAEB",
+  "htm":"GET",
+  "htu":"https://resource.example.org/protectedresource",
+  "iat":1562262618,
+  "ath":"fUHyO2r2Z3DZ53EsNrWBb0xWXoaNy59IiKCAqksmQEo"
+}
+```
+
+
+
+Vi anbefaler å bruke et bibliotek. Se eksempler i java [her](https://connect2id.com/products/nimbus-oauth-openid-connect-sdk/examples/oauth/dpop)
 
 ---
 
-For utviklingshjelp eller spørsmål, ta kontakt via Digdirs supportkanaler. 
+For hjelp eller spørsmål, ta kontakt via Digdirs supportkanaler. 
