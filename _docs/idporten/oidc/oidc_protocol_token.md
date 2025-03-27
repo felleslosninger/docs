@@ -177,3 +177,8 @@ The [id_token is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_proto
 The access_token enables the client to access APIs on behalf of the authenticated user.  
 
 The [access_token is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).
+
+### DPoP-bound tokens
+
+DPoP adds an extra layer of security and 
+[DPoP is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_func_dpop).

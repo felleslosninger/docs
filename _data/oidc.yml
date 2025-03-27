@@ -108,6 +108,9 @@ folders:
       - title: Innbyggers autorisasjoner
         jurl: /docs/idporten/oidc/oidc_api_autorisasjoner.html
 
+      - title: DPoP
+        jurl: /docs/idporten/oidc/oidc_func_dpop.html
+
 - title: Testing
   folderitems:
 
