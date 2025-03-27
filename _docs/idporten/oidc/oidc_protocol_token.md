@@ -180,5 +180,4 @@ The [access_token is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_p
 
 ### DPoP-bound tokens
 
-DPoP adds an extra layer of security and 
-[DPoP is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_func_dpop).
+DPoP adds an extra layer of security. [DPoP in ID-Porten is documented here]({{site.baseurl}}/docs/idporten/oidc/oidc_func_dpop).

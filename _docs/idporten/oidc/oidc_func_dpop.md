@@ -14,17 +14,18 @@ DPoP - Demonstration of Proof of Possession - er en mekanisme som beskytter mot 
 Metoden gjør det vanskeligere for en angriper å bruke tokens som er blitt stjålet, for eksempel via man-in-the-middle-angrep.
 
 DPoP er definert i [RFC9449](https://datatracker.ietf.org/doc/html/rfc9449), og vi henviser til denne for detaljert dokumentasjon.
+Vi anbefaler å bruke et bibliotek. Se eksempler i java [her](https://connect2id.com/products/nimbus-oauth-openid-connect-sdk/examples/oauth/dpop)
 
 DPoP brukes slik:
 
 1. Klienten genererer et DPoP JWT med kort levetid (f.eks 1 minutt) som er bundet til metode og url, og klienten signerer det med en privat nøkkel.
-2. JWT-en sendes i `DPoP` header sammen med kall mot /token.
+2. JWT-en sendes i `DPoP` http header sammen med kall mot /token.
 3. ID-porten validerer at DPoP-headeren er korrekt signert og samsvarer med forespørselen.
 4. Tilgangstokenet som returneres blir bundet til klientens offentlige nøkkel, og kan bare brukes sammen med gyldig DPoP-header.
 
 DPoP krever at klienten har støtte for:
 
-- Generering og håndtering av nøkkelpar (public/private). Nøkkelen kan autogeneres eller ligge på et trygt område avh av klienttype
+- Generering og håndtering av nøkkelpar (public/private). Nøkkelen kan autogeneres eller ligge på et trygt område avhengig av klienttype
 - Signering av JWT-er
 - Inkludering av `jwk`-felt i `DPoP` header
 
@@ -46,32 +47,6 @@ Dersom DPoP ikke brukes korrekt ved fornyelse av tokens, vil forespørselen bli 
 
 *NB: For klienter som bruker klientautenisering, kan man selv velge å bruke refresh tokenet til å få tilbake et tilgangstoken som er bundet til DPoP eller ikke.*
 
-## Om funksjonaliteten
-
-DPoP - Demonstration of Proof of Possession - er en mekanisme som beskytter mot misbruk av tokens ved å binde dem kryptografisk til klienten som hentet dem.
-
-Metoden gjør det vanskeligere for en angriper å bruke tokens som er blitt stjålet, for eksempel via man-in-the-middle-angrep.
-
-DPoP er definert i [RFC9449](https://datatracker.ietf.org/doc/html/rfc9449), og vi henviser til denne for detaljert dokumentasjon.
-
-DPoP brukes slik:
-
-1. Klienten genererer et DPoP JWT med kort levetid (typisk 5 minutter) og signerer det med en privat nøkkel.
-2. JWT-en sendes i `DPoP` header sammen med kall mot /token og eventuelt mot API-er.
-3. ID-porten validerer at DPoP-headeren er korrekt signert og samsvarer med forespørselen.
-4. Tilgangstokenet som returneres blir bundet til klientens offentlige nøkkel, og kan bare brukes sammen med gyldig DPoP-header.
-
-### Refresh tokens med DPoP
-
-Når DPoP benyttes, vil også refresh tokens være bundet til klientens offentlige nøkkel.
-
-Det innebærer:
-
-- Refresh tokens kan kun brukes sammen med en gyldig DPoP-header som samsvarer med den opprinnelige nøkkelen.
-- Ved rotering av nøkkelpar må nytt refresh token hentes med den nye nøkkelen.
-- Klienter må derfor sørge for sikker og stabil nøkkelhåndtering over tid.
-
-Dersom DPoP ikke brukes korrekt ved fornyelse av tokens, vil forespørselen bli avvist.
 
 ### API-støtte for DPoP
 
@@ -107,4 +82,3 @@ Dersom DPoP benyttes, må det brukes konsekvent – både ved innhenting av toke
 ---
 
 For utviklingshjelp eller spørsmål, ta kontakt via Digdirs supportkanaler. 
-Vi anbefaler å bruke et bibliotek. Se eksempler i java [her](https://connect2id.com/products/nimbus-oauth-openid-connect-sdk/examples/oauth/dpop)
