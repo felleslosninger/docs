@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.3
+
+27.03.2025
+
+**Feilretting**
+
+- Støtte for standard java proxy server konfigurasjon
+
 ## 2.28.2
 
 19.03.2025
