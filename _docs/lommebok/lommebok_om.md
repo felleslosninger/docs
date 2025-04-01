@@ -9,7 +9,7 @@ redirect_from: /lommebok_om
 
 Digdir tilbyr en nasjonal «sandkasse» for digital lommebok der alle som ønsker kan utforske muligheter og eksperimentere i et isolert og trygt testmiljø. 
 
-Du kan lese meir om det overordna rammene og vilkår for å delta i sandkassen, samt andre relaterte prosjekt i Digdir, på [prosjektsida for digital lommebok](LENKE_TIL_DIGDIR.NO).
+Du kan lese meir om det overordna rammene og vilkår for å delta i sandkassen, samt andre relaterte prosjekt i Digdir, på [prosjektsida for digital lommebok](https://samarbeid.digdir.no/digital-lommebok/digital-identitetslommebok/2897).
 
 På desse sidene finn du teknisk dokumentasjon om sandkassen. 
 
