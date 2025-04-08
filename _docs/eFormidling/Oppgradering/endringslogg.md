@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.4
+
+08.04.2025
+
+**Feilretting**
+
+- Nye standard-verdiar for URL-ar mot interne tenester
+
 ## 2.28.3
 
 27.03.2025
