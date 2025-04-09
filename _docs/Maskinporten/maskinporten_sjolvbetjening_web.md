@@ -30,14 +30,9 @@ For å opprette bruker på Samarbeidsportalen. Gjør følgende:
 4. Registrer bruker med din jobbadresse
 5. Bekreft brukeren ved å trykke på lenken som kommer på epost. (NB! Sjekk søppelpost om ikke eposten kommer frem).
 
-### Tilgang i testmiljø
+### Tilgang i test- og produksjonsmiljø
 
-I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til selvbetjening i testmiljøene ver1 og ver2. Noen virksomheter har innført restriksjoner og har strengere tilgangsstyring.
-
-
-### Tilgang i produksjonsmiljø
-
-Tilgang i produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
+Tilgang i test og produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
 
 Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
