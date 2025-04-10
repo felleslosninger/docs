@@ -79,7 +79,7 @@ Det er også mulig å starte og stoppe integrasjonspunktet manuelt:
 Før integrasjonspunktet kan startes må det konfigureres.
 
 Det brukes ulike konvensjoner for navngiving av konfigurasjonsegenskaper avhengig av hvilke mekanisme som brukes for
-konfigurasjon. Følgende varianter tilsvarer samme konfigurasjonsegenskap: 
+konfigurasjon. Følgende varianter tilsvarer samme konfigurasjonsegenskap:
 
 - `person.firstName`, `person.first-name` eller `person.first_name` (for konfigurasjonsfil og Java-parametere)
 - `PERSON_FIRST_NAME` (for miljøvariable)
@@ -89,7 +89,7 @@ Hashicorp Vault eller mekanismer som injiserer verdier til miljøvariable.
 
 - [HashiCorp Vault](#hashicorp-vault)
 - [Eksempel på installasjon av integrasjonspunktet på Azure](Eksempel/installasjon_aks) inneholder et eksempel på en
-mekanisme som injiserer verdier til miljøvariable
+  mekanisme som injiserer verdier til miljøvariable
 
 Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
 
@@ -105,17 +105,13 @@ Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
 
 Integrasjonspunktet krever at virksomhetens virksomhetssertifikat er konfigurert.
 
-I tillegg anbefales det å skru av støtte for eInnsyn, som er den eneste meldingstjenesten som er på som standard. Dersom
-en skal bruke eInnsyn kan en heller slå på igjen støtten etter at en har verifisert at minimumskonfigurasjonen er ok.
-
 | Egenskap                        | Beskrivelse                                                        | Standardverdi |
-|---------------------------------|--------------------------------------------------------------------|---------------|
+| ------------------------------- | ------------------------------------------------------------------ | ------------- |
 | difi.move.org.number            | Organisasjonsnummer til din organisasjon (9 siffer)                | (ingen)       |
 | difi.move.org.keystore.alias    | Alias (navn) for virksomhetssertifikat i keystore (case sensitivt) | (ingen)       |
 | difi.move.org.keystore.password | Passord for virksomhetssertifikat og keystore                      | (ingen)       |
 | difi.move.org.keystore.path     | Sti til keystore                                                   | (ingen)       |
-| difi.move.org.keystore.type     | Format for keystore (`PKCS12` eller `JKS`)                         | JKS           |
-| difi.move.feature.enableDPE     | Skrur på/av støtte for eInnsyn                                     | true          |
+| difi.move.org.keystore.type     | Format for keystore (`PKCS12` eller `JKS`)                         | PKCS12        |
 
 Eksempel:
 
@@ -125,37 +121,38 @@ difi.move.org.keystore.alias=myalias
 difi.move.org.keystore.password=mypassword
 difi.move.org.keystore.path=file:c:/integrasjonspunkt/keystore.p12
 difi.move.org.keystore.type=PKCS12
-difi.move.feature.enableDPE=false
 ```
 
 ### Valgfri konfigurasjon
 
 #### Miljø (produksjon eller test)
-*Valgfritt*
+
+_Valgfritt_
 
 Tilgjengelige miljø:
 
 - [eForidling Produksjon](../Miljo/produksjon)
 - [eFormidling Test](../Miljo/test)
 
-| Egenskap               | Beskrivelse                                                                                                                                                  | Standardverdi |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
+| Egenskap               | Beskrivelse                                                                                                                                                   | Standardverdi |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil. | production    |
 
 Eksempel:
 
 ```
-java -jar -Dspring.profiles.active=staging integrasjonspunkt-2.8.3.jar  
+java -jar -Dspring.profiles.active=staging integrasjonspunkt-2.8.3.jar
 ```
 
 #### Hashicorp Vault
-*Valgfritt*
+
+_Valgfritt_
 
 Hashicorp Vault gjør det mulig å beskytte virksomhetssertifikat, passord og andre hemmeligheter. Dokumentasjon for
 HashiCorp Vault finnes på [https://www.vaultproject.io/](https://www.vaultproject.io/).
 
 | Egenskap            | Beskrivelse                                                                                                                         | Standardverdi |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | vault.uri           | Sti HashiCorp Vaults grensesnitt                                                                                                    | (ingen)       |
 | vault.token         | Token for autentisering mot HashiCorp Vaults grensesnitt (integrasjonspunktet støtter bare token-autentisering mot HashiCorp Vault) | (ingen)       |
 | vault.path          | Vault-sti til tekstlige hemmeligheter (f.eks. passord)                                                                              | (ingen)       |
@@ -165,7 +162,7 @@ Eksempel:
 
 ```
 vault.uri=http://localhost:8200
-vault.token=s.7NP3IvIjdpHqaInbNQD4NpIY	
+vault.token=s.7NP3IvIjdpHqaInbNQD4NpIY
 vault.path=secret/move
 vault.resource-path=secret/resourceleve
 ```
@@ -185,17 +182,19 @@ difi.move.org.keystore.path=vault:keystore
 ```
 
 #### Ekstern database
-*Valgfritt*
 
-Integrasjonspunktet bruker en intern fildatabase (`H2`) som standard. Denne er mulig å bytte ut med en ekstern database.
-MySQL, Postgres og MSSQL støttes. Ved bruk av Docker må en slå på ekstern database for å unngå risiko for datatap ved
-f.eks. omstarter.
+_Påkrevd_
 
-| Egenskap                                       | Beskrivelse                                                                                                   | Standardverdi                    |
-|------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------|
-| difi.datasource.url                            | Sti til databasen                                                                                             | jdbc:h2:file:./integrasjonspunkt |
-| difi.datasource.username                       | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)         | sa                               |
-| difi.datasource.password                       | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)            | (ingen)                          |
+Integrasjonspunktet støtter tilkobling til følgende databaser: MySQL, PostgreSQL, Microsoft SQL Server og H2 (filbasert).
+Det er ikke lenger innebygd støtte for H2 som standard – du må nå eksplisitt konfigurere databasen du ønsker å bruke.
+
+> Anbefaling: Det anbefales å bruke en ekstern database (MySQL, PostgreSQL eller MSSQL), spesielt i produksjon og ved bruk av Docker, for å unngå risiko for datatap ved omstart eller oppdatering av container.
+
+| Egenskap                 | Beskrivelse                                                                                           | Standardverdi |
+| ------------------------ | ----------------------------------------------------------------------------------------------------- | ------------- |
+| difi.datasource.url      | Sti til databasen                                                                                     | (ingen)       |
+| difi.datasource.username | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360) | sa            |
+| difi.datasource.password | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)    | (ingen)       |
 
 Eksempel (MySQL):
 
@@ -221,15 +220,24 @@ difi.datasource.username=myuser
 difi.datasource.password=mypassword
 ```
 
+Eksempel (H2):
+
+```
+difi.datasource.url=jdbc:h2:file:/opt/data/integrasjonspunkt
+difi.datasource.username=sa
+difi.datasource.password=
+```
+
 #### Mellomlagring av meldinger til ekstern database
-*Valgfritt*
+
+_Valgfritt_
 
 Integrasjonspunktet mellomlagrer meldinger til fil som standard. Dette er mulig å bytte ut med mellomlagring til
 database. Ved bruk av Docker må en slå på mellomlagring til database for å unngå risiko for datatap ved f.eks.
 omstarter.
 
 | Egenskap                            | Beskrivelse                                                                                                             | Standardverdi |
-|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
 | difi.move.nextmove.useDbPersistence | Slår på/av mellomlagring av meldinger til database. Meldinger mellomlagres til fil istedenfor dersom denne er slått av. | false         |
 
 Eksempel:
@@ -239,19 +247,21 @@ difi.move.nextmove.useDbPersistence=true
 ```
 
 #### Ekstern meldingskø
-*Valgfritt*
 
-Integrasjonspunktet bruker en intern meldingskø (`ActiveMQ`) som standard. Denne er mulig å bytte ut med en ekstern
-meldingskø. Bare ActiveMQ støttes. Ved bruk av Docker må en slå på ekstern meldingskø for å unngå risiko for datatap ved
-f.eks. omstarter.
+_Påkrevd_
 
-| Egenskap                 | Beskrivelse             | Standardverdi  |
-|--------------------------|-------------------------|----------------|
-| difi.activemq.broker-url | Sti til ActiveMQ        | vm://localhost |
-| difi.activemq.user       | Brukernavn for ActiveMQ | (ingen)        |
-| difi.activemq.password   | Passord for ActiveMQ    | (ingen)        |
+Integrasjonspunktet bruker ikke lenger en intern meldingskø som standard. Du må nå eksplisitt konfigurere en meldingskø.  
+Kun ActiveMQ støttes.
 
-Eksempel:
+> Anbefaling: Det anbefales å bruke en ekstern ActiveMQ-instans, spesielt ved bruk av Docker, for å unngå risiko for datatap ved omstart eller containeroppdatering.
+
+| Egenskap                 | Beskrivelse             | Standardverdi |
+| ------------------------ | ----------------------- | ------------- |
+| difi.activemq.broker-url | Sti til ActiveMQ        | (ingen)       |
+| difi.activemq.user       | Brukernavn for ActiveMQ | (ingen)       |
+| difi.activemq.password   | Passord for ActiveMQ    | (ingen)       |
+
+Eksempel ekstern ActiveMQ:
 
 ```
 difi.activemq.broker-url=tcp://localhost:61616
@@ -259,16 +269,25 @@ difi.activemq.user=myuser
 difi.activemq.password=mypassword
 ```
 
-#### Transportsikring
-*Valgfritt*
+Eksempel intern ActiveMQ:
 
-Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
-grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet av
-transportsikring. Det er mulig å slå på støtte for transportsikring.
+> Merk: vm://localhost starter en lokal ActiveMQ-instans i samme JVM-prosess, og egner seg kun for utvikling eller enkel testing.
+
+```
+difi.activemq.broker-url=vm://localhost
+difi.activemq.user=myuser
+difi.activemq.password=mypassword
+```
+
+#### Transportsikring
+
+_Valgfritt_
+
+Integrasjonspunktet er designet for å kjøre i et lukket miljø som kun gir tilgang til autoriserte systemer og brukere. Likevel er det anbefalt å sikre kommunikasjonen med HTTPS. Som standard er transportsikring (HTTPS) aktivert. Det er mulig å deaktivere dette ved behov.
 
 | Egenskap                    | Beskrivelse                                                               | Standardverdi |
-|-----------------------------|---------------------------------------------------------------------------|---------------|
-| difi.ssl.enabled            | Skrur på/av `HTTPS` transportsikring for integrasjonspunktets grensesnitt | false         |
+| --------------------------- | ------------------------------------------------------------------------- | ------------- |
+| difi.ssl.enabled            | Skrur på/av `HTTPS` transportsikring for integrasjonspunktets grensesnitt | true          |
 | difi.ssl.key-store-type     | Format for keystore (`PKCS12` eller `JKS`)                                | (ingen)       |
 | difi.ssl.key-store          | Sti til keystore                                                          | (ingen)       |
 | difi.ssl.key-store-password | Passord for keystore                                                      | (ingen)       |
@@ -283,21 +302,22 @@ difi.ssl.key-store=file:c:/integrasjonspunkt/https.p12
 difi.ssl.key-store-password=mypassword
 difi.ssl.key-alias=myalias
 ```
+
 **NB!:**
 Dersom en bruker et selvsignert SSL sertifikat må dette legges inn i Java Trust Store (cacerts).
 I hostfilen til server må en registrere IP-adressen til det som blir hostname til integrasjonspunktet.
 
 #### HTTP Basic Auth
-*Valgfritt*
+
+_Valgfritt_
 
 Integrasjonspunktet er designet for å kjøre i et lukket miljø som bare gir autoriserte system og brukere tilgang til
-grensesnittene som tilbys av integrasjonspunktet. Integrasjonspunktets grensesnitt er som standard ikke beskyttet av
-autentisering. Det er mulig å slå på støtte for autentisering. Det er bare autentiseringsmekanismen `HTTP basic auth`
-som støttes.
+grensesnittene som tilbys av integrasjonspunktet. Som standard er grensesnittet beskyttet av autentisering. Dette kan deaktiveres dersom det er nødvendig.
+Det er bare autentiseringsmekanismen `HTTP basic auth` som støttes.
 
 | Egenskap                    | Beskrivelse                                                        | Standardverdi |
-|-----------------------------|--------------------------------------------------------------------|---------------|
-| difi.security.enable        | Skrur på/av `HTTP basic auth` for integrasjonspunktets grensesnitt | false         |
+| --------------------------- | ------------------------------------------------------------------ | ------------- |
+| difi.security.enable        | Skrur på/av `HTTP basic auth` for integrasjonspunktets grensesnitt | true          |
 | difi.security.user.name     | Brukernavn for `HTTP basic auth`                                   | (ingen)       |
 | difi.security.user.password | Passord for `HTTP basic auth`                                      | (ingen)       |
 
@@ -310,14 +330,15 @@ difi.security.user.password=mypassword
 ```
 
 #### Levetid for meldinger
-*Valgfritt*
+
+_Valgfritt_
 
 Integrasjonspunktet er designet for å tåle at meldingstjenestene som brukes kan ha nedetid og andre driftsproblemer uten
 at dette skal medføre at levering av meldinger feiler.
 
-| Egenskap                              | Beskrivelse                                                                                                                                                           | Standardverdi |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.nextmove.default-ttl-hours  | Tid i timer integrasjonspunktet prøver å levere en utgående melding før denne får status LEVETID_UTLOPT og må sendes på nytt eller håndteres på annet vis av avsender | 24            |
+| Egenskap                             | Beskrivelse                                                                                                                                                           | Standardverdi |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| difi.move.nextmove.default-ttl-hours | Tid i timer integrasjonspunktet prøver å levere en utgående melding før denne får status LEVETID_UTLOPT og må sendes på nytt eller håndteres på annet vis av avsender | 24            |
 
 En kan også sette levetid per meldingstype dersom det er ønskelig:
 
@@ -331,7 +352,8 @@ difi.move.nextmove.serviceBus.default-ttl-hours  # For meldingstypen DPE (einnsy
 ```
 
 #### Kapasitet
-*Valgfritt*
+
+_Valgfritt_
 
 Standardoppsettet for integrasjonspunktet har vanligvis god kapasitet. Ved utsending av store volum (fra ~ 50 000 daglige
 meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke kapasiteten:
@@ -341,12 +363,12 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 - slå av oppslag i det sentrale folkeregister (DSF) dersom dette ikke trengs
 - øke tilgjengelige ressurser for integrasjonspunktet: minne, disk (IO og kapasitet), CPU og nettverk
 
-| Egenskap                                | Beskrivelse    |                                                                                                           | Standardverdi |
-|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.feature.statusQueueIncludes   | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
-| difi.move.nextmove.statusPollingCron    | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 * * * * *   |
-| difi.move.feature.enableDsfPrintLookup  | Slår på/av oppslag av postadresse i DSF. Kan slås av dersom en ikke trenger postadresse                                   | true          |
-| difi.move.queue.concurrency             | Samtidighet ved behandling av utgående meldinger                                                                          | 10            |
+| Egenskap                               | Beskrivelse                                                                                                               |                  | Standardverdi |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------- |
+| difi.move.feature.statusQueueIncludes  | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)          |
+| difi.move.nextmove.statusPollingCron   | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 \* \* \* \* \* |
+| difi.move.feature.enableDsfPrintLookup | Slår på/av oppslag av postadresse i DSF. Kan slås av dersom en ikke trenger postadresse                                   | true             |
+| difi.move.queue.concurrency            | Samtidighet ved behandling av utgående meldinger                                                                          | 10               |
 
 Eksempel:
 
@@ -360,9 +382,9 @@ difi.move.queue.concurrency=20
 
 Som standard blir ingen meldinger videreformidlet til webhook-abonnement. Dette må konfigureres.
 
-| Egenskap                                | Beskrivelse                                                                                                               | Standardverdi |
-|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.feature.statusQueueIncludes   | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
+| Egenskap                              | Beskrivelse                                                                                                               | Standardverdi |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| difi.move.feature.statusQueueIncludes | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
 
 Eksempel:
 
@@ -371,11 +393,12 @@ difi.move.feature.statusQueueIncludes=DPI,DPV
 ```
 
 #### Port
-*Valgfritt*
 
-| Egenskap      | Beskrivelse                                | Standardverdi |
-|---------------|--------------------------------------------|---------------|
-| server.port   | Port for integrasjonspunktets grensesnitt  | 9093          |
+_Valgfritt_
+
+| Egenskap    | Beskrivelse                               | Standardverdi |
+| ----------- | ----------------------------------------- | ------------- |
+| server.port | Port for integrasjonspunktets grensesnitt | 9093          |
 
 Eksempel:
 
@@ -384,7 +407,8 @@ server.port=80
 ```
 
 #### Støttetjenester
-*Valgfritt*
+
+_Valgfritt_
 
 Integrasjonspunktet tilbyr en del støttetjenester som eksponerer helsestatus, konfigurasjon og annet som standard. Disse
 kan begrenses eller slås helt av dersom en ønsker dette.
@@ -392,8 +416,8 @@ kan begrenses eller slås helt av dersom en ønsker dette.
 - [Støttetjenester](../Selvhjelp/feilsoking#støttetjenester)
 
 | Egenskap                                  | Beskrivelse                                                                                       | Standardverdi |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------|---------------|
-| management.endpoints.web.exposure.include | Angir hvilke støttetjenester som skal være tilgjengelige (`*` for alle eller kommaseparert liste) | *             |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------- |
+| management.endpoints.web.exposure.include | Angir hvilke støttetjenester som skal være tilgjengelige (`*` for alle eller kommaseparert liste) | \*            |
 | management.endpoint.health.show-details   | Angir om helseendepunktet skal vise detaljer utover enkel status (`always` eller `never`)         | always        |
 
 Dersom en skal bruke automatisk oppgradering av integrasjonspunktet krever dette at støttetjenestene `info`, `health` og
@@ -407,13 +431,14 @@ management.endpoint.health.show-details=never
 ```
 
 #### BEST/EDU-grensesnittet (under utfasing)
-*Valgfritt*
+
+_Valgfritt_
 
 Dersom en skal ta i bruk integrasjonspunktet vha. BEST/EDU-grensesnittet (under utfasing) så må dette konfigureres.
 Dette er bare aktuelt for eldre sak- og arkivsystemer.
 
 | Egenskap                          | Beskrivelse                                                            | Standardverdi |
-|-----------------------------------|------------------------------------------------------------------------|---------------|
+| --------------------------------- | ---------------------------------------------------------------------- | ------------- |
 | difi.move.noarkSystem.endpointURL | Sti til sak- og arkivsystemets BEST/EDU-grensesnitt                    | (ingen)       |
 | difi.move.noarkSystem.type        | Type sak- og arkivsystem: ePhorte, P360, WebSak eller mail             | (ingen)       |
 | difi.move.noarkSystem.username    | Brukernavn for autentisering mot sak-/arkivsystem (benyttes av P360)   | (ingen)       |
@@ -435,7 +460,8 @@ difi.move.noarkSystem.domain=MYUSERDOMAIN
 ```
 
 #### E-post
-*Valgfritt*
+
+_Valgfritt_
 
 Ved bruk av KS SvarInn så kan integrasjonspunktet håndtere feil ved behandling av innkommende meldinger ved å sende en
 e-post. Dette fordi det kan oppstå uforutsette problem med konvertering av meldinger mellom KS FIKS og
@@ -447,7 +473,7 @@ integrasjon. Dette kan slås på ved å sette `difi.move.noarkSystem.type=mail`.
 I disse tilfellene er det nødvendig å konfigurere e-post.
 
 | Egenskap                       | Beskrivelse                                       | Standardverdi |
-|--------------------------------|---------------------------------------------------|---------------|
+| ------------------------------ | ------------------------------------------------- | ------------- |
 | difi.move.mail.smtpHost        | Host navn                                         | (ingen)       |
 | difi.move.mail.smtpPort        | Portnummer                                        | (ingen)       |
 | difi.move.mail.receiverAddress | E-postadresse til postmottaket                    | (ingen)       |
@@ -480,7 +506,7 @@ eFormidlings meldingstjeneste er realisert ved hjelp av Altinn Formidling, og kr
 > Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 | Egenskap                      | Beskrivelse                                                     | Standardverdi |
-|-------------------------------|-----------------------------------------------------------------|---------------|
+| ----------------------------- | --------------------------------------------------------------- | ------------- |
 | difi.move.feature.enableDPO   | Slår på/av støtte for eFormidlings meldingstjeneste             | false         |
 | difi.move.dpo.username        | Brukernavn for en Altinn Formidling datasystembruker            | (ingen)       |
 | difi.move.dpo.password        | Passord for en Altinn Formidling datasystembruker               | (ingen)       |
@@ -501,10 +527,10 @@ difi.move.dpo.password=mypassword
 >
 > Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
-| Egenskap                                | Beskrivelse                                               | Standardverdi |
-|-----------------------------------------|-----------------------------------------------------------|---------------|
-| difi.move.feature.enableDPE             | Slår på/av støtte for eFormidlings meldingstjeneste       | true          |
-| difi.move.nextmove.serviceBus.batchRead | Slår på/av ytelsesforbedring (batch read med AMQP)        | false         |
+| Egenskap                                | Beskrivelse                                         | Standardverdi |
+| --------------------------------------- | --------------------------------------------------- | ------------- |
+| difi.move.feature.enableDPE             | Slår på/av støtte for eFormidlings meldingstjeneste | false         |
+| difi.move.nextmove.serviceBus.batchRead | Slår på/av ytelsesforbedring (batch read med AMQP)  | false         |
 
 Eksempel:
 
@@ -518,25 +544,24 @@ KS SvarUt og SvarInn krever hver sin bruker:
 
 - [Opprette brukere i KS SvarUt og SvarInn](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
 
-
-| Egenskap                                         | Beskrivelse                                                                                                             | Standardverdi |
-|--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.feature.enableDPF                      | Slår på/av støtte for KS SvarUt og SvarInn                                                                              | false         |
-| difi.move.fiks.ut.username                       | Brukernavn for KS SvarUt (avsender)                                                                                     | (ingen)       |
-| difi.move.fiks.ut.password                       | Passord for KS SvarUt (avsender)                                                                                        | (ingen)       |
-| difi.move.fiks.ut.konteringsKode                 | Kode som beskriver faktureringskonto for forsendelsen                                                                   | (ingen)       |
-| difi.move.fiks.ut.ekskluderesFraPrint            | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering. Ved å oppgi `*` ekskluderes alle filer bortsett fra PDF fra print. | (ingen)       |
-| difi.move.fiks.ut.kunDigitalLevering             | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert. | (ingen)       |
-| difi.move.fiks.ut.paa-vegne-av.&lt;orgnr&gt;.username  | Brukernavn for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)             | (ingen)       |
-| difi.move.fiks.ut.paa-vegne-av.&lt;orgnr&gt;.password  | Passord for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                | (ingen)       |
-| difi.move.fiks.inn.username                      | Brukernavn for KS SvarInn (mottakersystem)                                                                              | (ingen)       |
-| difi.move.fiks.inn.password                      | Passord for KS SvarInn (mottakersystem)                                                                                 | (ingen)       |
-| difi.move.fiks.inn.mailOnError                   | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                    | true          |
-| difi.move.fiks.inn.fallbackSenderOrgNr           | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)          | (ingen)       |
-| difi.move.fiks.inn.enable                        | Slår på/av støtte for KS SvarInn                                                                                        | true          |
-| difi.move.fiks.inn.mailSubject                   | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                         | (ingen)       |
-| difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
-| difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
+| Egenskap                                               | Beskrivelse                                                                                                                                                                                 | Standardverdi |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| difi.move.feature.enableDPF                            | Slår på/av støtte for KS SvarUt og SvarInn                                                                                                                                                  | false         |
+| difi.move.fiks.ut.username                             | Brukernavn for KS SvarUt (avsender)                                                                                                                                                         | (ingen)       |
+| difi.move.fiks.ut.password                             | Passord for KS SvarUt (avsender)                                                                                                                                                            | (ingen)       |
+| difi.move.fiks.ut.konteringsKode                       | Kode som beskriver faktureringskonto for forsendelsen                                                                                                                                       | (ingen)       |
+| difi.move.fiks.ut.ekskluderesFraPrint                  | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering. Ved å oppgi `*` ekskluderes alle filer bortsett fra PDF fra print. | (ingen)       |
+| difi.move.fiks.ut.kunDigitalLevering                   | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert.                                                                     | (ingen)       |
+| difi.move.fiks.ut.paa-vegne-av.&lt;orgnr&gt;.username  | Brukernavn for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                                                                                 | (ingen)       |
+| difi.move.fiks.ut.paa-vegne-av.&lt;orgnr&gt;.password  | Passord for KS SvarUt (avsender) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                                                                                    | (ingen)       |
+| difi.move.fiks.inn.username                            | Brukernavn for KS SvarInn (mottakersystem)                                                                                                                                                  | (ingen)       |
+| difi.move.fiks.inn.password                            | Passord for KS SvarInn (mottakersystem)                                                                                                                                                     | (ingen)       |
+| difi.move.fiks.inn.mailOnError                         | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                                                                                        | true          |
+| difi.move.fiks.inn.fallbackSenderOrgNr                 | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)                                                                              | (ingen)       |
+| difi.move.fiks.inn.enable                              | Slår på/av støtte for KS SvarInn                                                                                                                                                            | true          |
+| difi.move.fiks.inn.mailSubject                         | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                                                                                             | (ingen)       |
+| difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                                                                             | (ingen)       |
+| difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.password | Passord for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)                                                                                | (ingen)       |
 
 Eksempel:
 
@@ -550,6 +575,7 @@ difi.move.fiks.inn.mailOnError=false
 ```
 
 Eksempel på oppsett for å sende og motta på vegne av to virksomheter:
+
 ```
 difi.move.feature.enableDPF=true
 difi.move.fiks.ut.paa-vegne-av.991825827.username=myusername
@@ -568,18 +594,18 @@ Altinn Digital Post krever bruker:
 
 - [Opprette bruker i Altinn Digital Post](opprette_brukere#opprette-bruker-for-altinn-digital-post)
 
-| Egenskap                                | Beskrivelse                                                                                               | Standardverdi                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|-----------------------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| difi.move.feature.enableDPV             | Slår på/av støtte for Altinn Digital Post                                                                 | false                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| difi.move.dpv.username                  | Brukernavn for Altinn tjenesteeier (Mottas på epost til oppgitt kontaktperson)                            | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| difi.move.dpv.password                  | Passord for overnevnte bruker (Mottas på SMS til oppgitt kontaktperson - TIPS. Kopier og lim)             | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| difi.move.dpv.notificationText          | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost)                         | $reporteeName$: Du har mottatt en melding fra $reporterName$.                                                                                                                                                                                                                                                                                                                                                                                                  |
-| difi.move.dpv.sensitiveNotificationText | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost) for sensitive meldinger | $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For \u00E5 f\u00E5 tilgang til meldingen, er det n\u00F8dvendig at noen i $reporteeName$ har f\u00E5tt tildelt rollen \u00ABTaushetsbelagt post fra det offentlige\u00BB i Altinn. Dersom dere er usikre p\u00E5 om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om \u00E5 gi tilgang til rollen \u00ABTaushetsbelagt post\u00BB p\u00E5 Altinns nettsider.  |
-| difi.move.dpv.notifyEmail               | Slår på/av varsling til e-post som standard                                                               | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| difi.move.dpv.notifySms                 | Slår på/av varsling til SMS som standard                                                                  | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| difi.move.dpv.allowForwarding           | Slår på/av støtte for at mottaker kan videresende fra Altinn Digital Post                                 | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| difi.move.dpv.enableDueDate             | Slår på/av visuell svarfrist i Altinn Digital Post for sendte meldinger som standard                      | true                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| difi.move.dpv.daysToReply               | Standard antall dager til svarfrist i Altinn Digital Post                                                 | 7                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Egenskap                                | Beskrivelse                                                                                               | Standardverdi                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| difi.move.feature.enableDPV             | Slår på/av støtte for Altinn Digital Post                                                                 | false                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| difi.move.dpv.username                  | Brukernavn for Altinn tjenesteeier (Mottas på epost til oppgitt kontaktperson)                            | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| difi.move.dpv.password                  | Passord for overnevnte bruker (Mottas på SMS til oppgitt kontaktperson - TIPS. Kopier og lim)             | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| difi.move.dpv.notificationText          | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost)                         | $reporteeName$: Du har mottatt en melding fra $reporterName$.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| difi.move.dpv.sensitiveNotificationText | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost) for sensitive meldinger | $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For \u00E5 f\u00E5 tilgang til meldingen, er det n\u00F8dvendig at noen i $reporteeName$ har f\u00E5tt tildelt rollen \u00ABTaushetsbelagt post fra det offentlige\u00BB i Altinn. Dersom dere er usikre p\u00E5 om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om \u00E5 gi tilgang til rollen \u00ABTaushetsbelagt post\u00BB p\u00E5 Altinns nettsider. |
+| difi.move.dpv.notifyEmail               | Slår på/av varsling til e-post som standard                                                               | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| difi.move.dpv.notifySms                 | Slår på/av varsling til SMS som standard                                                                  | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| difi.move.dpv.allowForwarding           | Slår på/av støtte for at mottaker kan videresende fra Altinn Digital Post                                 | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| difi.move.dpv.enableDueDate             | Slår på/av visuell svarfrist i Altinn Digital Post for sendte meldinger som standard                      | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| difi.move.dpv.daysToReply               | Standard antall dager til svarfrist i Altinn Digital Post                                                 | 7                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 Eksempel:
 
@@ -596,15 +622,15 @@ difi.move.dpv.enableDueDate=false
 >
 > Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
-| Egenskap                                       | Beskrivelse                                                                                                                                                                                               | Standardverdi                                   |
-|------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| difi.move.feature.enableDPI                    | Slår på/av støtte for Digital Post til Innbyggere                                                                                                                                                         | false                                           |
-| difi.move.dpi.mpcId                            | Kanal for å lese DPI-kvitteringer, bør brukes dersom flere instanser av integrasjonspunktet                                                                                                                                                                         | no.difi.move.integrasjonspunkt                  |
-| difi.move.dpi.mpcConcurrency                   | Antall kanaler for å lese DPI-kvitteringer                                                                                                                                                                | 1                                               |
-| difi.move.dpi.mpcIdListe                       | Denne overstyrer kombinasjonen av mpcId + mpcConcurrency dersom den er satt. De kanalene som listes opp her vil bli brukt ved polling av DPI-kvitteringer                                                 | difi.move.dpi.mpcIdListe[0]=id1                 |
-| difi.move.dpi.avsenderidentifikatorListe       | Ved polling av DPI-kvitteringer brukes denne for å indikere at man kun ønsker kvitteringer med gitt avsenderindikator                                                                                     | difi.move.dpi.avsenderidentifikatorListe[0]=ai1 |
-| difi.move.dpi.pollWithoutAvsenderidentifikator | Om det skal polles etter kvitteringer uten bruk av avsenderindikator                                                                                                                                      | true                                            |
-| difi.move.dpi.receipt-type                     | Mulige verdier er: json                                                                                                                                                                                   | json                                            |
+| Egenskap                                       | Beskrivelse                                                                                                                                                                                            | Standardverdi                                        |
+| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- |
+| difi.move.feature.enableDPI                    | Slår på/av støtte for Digital Post til Innbyggere                                                                                                                                                      | false                                                |
+| difi.move.dpi.mpcId                            | Kanal for å lese DPI-kvitteringer, bør brukes dersom flere instanser av integrasjonspunktet                                                                                                            | no.difi.move.integrasjonspunkt                       |
+| difi.move.dpi.mpcConcurrency                   | Antall kanaler for å lese DPI-kvitteringer                                                                                                                                                             | 1                                                    |
+| difi.move.dpi.mpcIdListe                       | Denne overstyrer kombinasjonen av mpcId + mpcConcurrency dersom den er satt. De kanalene som listes opp her vil bli brukt ved polling av DPI-kvitteringer                                              | difi.move.dpi.mpcIdListe[0]=id1                      |
+| difi.move.dpi.avsenderidentifikatorListe       | Ved polling av DPI-kvitteringer brukes denne for å indikere at man kun ønsker kvitteringer med gitt avsenderindikator                                                                                  | difi.move.dpi.avsenderidentifikatorListe[0]=ai1      |
+| difi.move.dpi.pollWithoutAvsenderidentifikator | Om det skal polles etter kvitteringer uten bruk av avsenderindikator                                                                                                                                   | true                                                 |
+| difi.move.dpi.receipt-type                     | Mulige verdier er: json                                                                                                                                                                                | json                                                 |
 | difi.move.dpi.krr-print-url                    | URL til metadata for utskriftstjenesten levert av Skatteetaten. `https://kontaktregisteret.no/rest/v2/printSertifikat`. For testmiljø bruk `https://test.kontaktregisteret.no/rest/v2/printSertifikat` | https://kontaktregisteret.no/rest/v2/printSertifikat |
 
 Dersom en skal bruke DPI`s proxy-klientbiblioteket, se gjerne:
@@ -625,13 +651,13 @@ KS FIKS IO krever bruker:
 
 - [Hvordan tar man i bruk FIKS IO](https://ks-no.github.io/fiks-plattform/tjenester/fiksprotokoll/fiksio/#hvordan-tar-man-i-bruk-fiks-io) (ekstern lenke)
 
-| Egenskap                               | Beskrivelse                                                                                                    | Standardverdi |
-|----------------------------------------|----------------------------------------------------------------------------------------------------------------|---------------|
-| difi.move.feature.enableDPFIO          | Slår på/av støtte for KS FIKS IO                                                                               | false         |
-| difi.move.fiks.io.konto-id             | FIKS IO kontoId                                                                                                | (ingen)       |
-| difi.move.fiks.io.integrasjons-id      | Id til valgt integrasjon                                                                                       | (ingen)       |
-| difi.move.fiks.io.integrasjons-passord | Passord til valgt integrasjon                                                                                  | (ingen)       |
-| difi.move.fiks.io.sender-orgnr         | Statisk avsender-orgnr for mottatte meldinger                                                                  | (ingen)       |
+| Egenskap                               | Beskrivelse                                   | Standardverdi |
+| -------------------------------------- | --------------------------------------------- | ------------- |
+| difi.move.feature.enableDPFIO          | Slår på/av støtte for KS FIKS IO              | false         |
+| difi.move.fiks.io.konto-id             | FIKS IO kontoId                               | (ingen)       |
+| difi.move.fiks.io.integrasjons-id      | Id til valgt integrasjon                      | (ingen)       |
+| difi.move.fiks.io.integrasjons-passord | Passord til valgt integrasjon                 | (ingen)       |
+| difi.move.fiks.io.sender-orgnr         | Statisk avsender-orgnr for mottatte meldinger | (ingen)       |
 
 Eksempel:
 
