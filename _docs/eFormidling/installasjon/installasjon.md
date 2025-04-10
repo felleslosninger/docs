@@ -123,6 +123,86 @@ difi.move.org.keystore.path=file:c:/integrasjonspunkt/keystore.p12
 difi.move.org.keystore.type=PKCS12
 ```
 
+#### Ekstern database
+
+_Påkrevd_
+
+Integrasjonspunktet støtter tilkobling til følgende databaser: MySQL, PostgreSQL, Microsoft SQL Server og H2 (filbasert).
+Det er ikke lenger innebygd støtte for H2 som standard – du må nå eksplisitt konfigurere databasen du ønsker å bruke.
+
+> Anbefaling: Det anbefales å bruke en ekstern database (MySQL, PostgreSQL eller MSSQL), spesielt i produksjon og ved bruk av Docker, for å unngå risiko for datatap ved omstart eller oppdatering av container.
+
+| Egenskap                 | Beskrivelse                                                                                           | Standardverdi |
+| ------------------------ | ----------------------------------------------------------------------------------------------------- | ------------- |
+| difi.datasource.url      | Sti til databasen                                                                                     | (ingen)       |
+| difi.datasource.username | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360) | sa            |
+| difi.datasource.password | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)    | (ingen)       |
+
+Eksempel (MySQL):
+
+```
+difi.datasource.url=jdbc:mysql://mydatabaseserver/mydatabase?serverTimezone=UTC
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
+```
+
+Eksempel (Postgres):
+
+```
+difi.datasource.url=jdbc:postgresql://mydatabaseserver:5432/mydatabase
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
+```
+
+Eksempel (MSSQL):
+
+```
+difi.datasource.url=jdbc:sqlserver://mydatabaseserver:1433;databaseName=mydatabase
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
+```
+
+Eksempel (H2):
+
+```
+difi.datasource.url=jdbc:h2:file:/opt/data/integrasjonspunkt
+difi.datasource.username=sa
+difi.datasource.password=
+```
+
+#### Meldingskø
+
+_Påkrevd_
+
+Integrasjonspunktet bruker ikke lenger en intern meldingskø som standard. Du må nå eksplisitt konfigurere en meldingskø.  
+Kun ActiveMQ støttes.
+
+> Anbefaling: Det anbefales å bruke en ekstern ActiveMQ-instans, spesielt ved bruk av Docker, for å unngå risiko for datatap ved omstart eller containeroppdatering.
+
+| Egenskap                 | Beskrivelse             | Standardverdi |
+| ------------------------ | ----------------------- | ------------- |
+| difi.activemq.broker-url | Sti til ActiveMQ        | (ingen)       |
+| difi.activemq.user       | Brukernavn for ActiveMQ | (ingen)       |
+| difi.activemq.password   | Passord for ActiveMQ    | (ingen)       |
+
+Eksempel ekstern ActiveMQ:
+
+```
+difi.activemq.broker-url=tcp://localhost:61616
+difi.activemq.user=myuser
+difi.activemq.password=mypassword
+```
+
+Eksempel intern ActiveMQ:
+
+> Merk: vm://localhost starter en lokal ActiveMQ-instans i samme JVM-prosess, og egner seg kun for utvikling eller enkel testing.
+
+```
+difi.activemq.broker-url=vm://localhost
+difi.activemq.user=myuser
+difi.activemq.password=mypassword
+```
+
 ### Valgfri konfigurasjon
 
 #### Miljø (produksjon eller test)
@@ -181,53 +261,6 @@ bruk av binære hemmeligheter må disse refereres i konfigurasjon som i eksempel
 difi.move.org.keystore.path=vault:keystore
 ```
 
-#### Ekstern database
-
-_Påkrevd_
-
-Integrasjonspunktet støtter tilkobling til følgende databaser: MySQL, PostgreSQL, Microsoft SQL Server og H2 (filbasert).
-Det er ikke lenger innebygd støtte for H2 som standard – du må nå eksplisitt konfigurere databasen du ønsker å bruke.
-
-> Anbefaling: Det anbefales å bruke en ekstern database (MySQL, PostgreSQL eller MSSQL), spesielt i produksjon og ved bruk av Docker, for å unngå risiko for datatap ved omstart eller oppdatering av container.
-
-| Egenskap                 | Beskrivelse                                                                                           | Standardverdi |
-| ------------------------ | ----------------------------------------------------------------------------------------------------- | ------------- |
-| difi.datasource.url      | Sti til databasen                                                                                     | (ingen)       |
-| difi.datasource.username | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360) | sa            |
-| difi.datasource.password | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)    | (ingen)       |
-
-Eksempel (MySQL):
-
-```
-difi.datasource.url=jdbc:mysql://mydatabaseserver/mydatabase?serverTimezone=UTC
-difi.datasource.username=myuser
-difi.datasource.password=mypassword
-```
-
-Eksempel (Postgres):
-
-```
-difi.datasource.url=jdbc:postgresql://mydatabaseserver:5432/mydatabase
-difi.datasource.username=myuser
-difi.datasource.password=mypassword
-```
-
-Eksempel (MSSQL):
-
-```
-difi.datasource.url=jdbc:sqlserver://mydatabaseserver:1433;databaseName=mydatabase
-difi.datasource.username=myuser
-difi.datasource.password=mypassword
-```
-
-Eksempel (H2):
-
-```
-difi.datasource.url=jdbc:h2:file:/opt/data/integrasjonspunkt
-difi.datasource.username=sa
-difi.datasource.password=
-```
-
 #### Mellomlagring av meldinger til ekstern database
 
 _Valgfritt_
@@ -244,39 +277,6 @@ Eksempel:
 
 ```
 difi.move.nextmove.useDbPersistence=true
-```
-
-#### Ekstern meldingskø
-
-_Påkrevd_
-
-Integrasjonspunktet bruker ikke lenger en intern meldingskø som standard. Du må nå eksplisitt konfigurere en meldingskø.  
-Kun ActiveMQ støttes.
-
-> Anbefaling: Det anbefales å bruke en ekstern ActiveMQ-instans, spesielt ved bruk av Docker, for å unngå risiko for datatap ved omstart eller containeroppdatering.
-
-| Egenskap                 | Beskrivelse             | Standardverdi |
-| ------------------------ | ----------------------- | ------------- |
-| difi.activemq.broker-url | Sti til ActiveMQ        | (ingen)       |
-| difi.activemq.user       | Brukernavn for ActiveMQ | (ingen)       |
-| difi.activemq.password   | Passord for ActiveMQ    | (ingen)       |
-
-Eksempel ekstern ActiveMQ:
-
-```
-difi.activemq.broker-url=tcp://localhost:61616
-difi.activemq.user=myuser
-difi.activemq.password=mypassword
-```
-
-Eksempel intern ActiveMQ:
-
-> Merk: vm://localhost starter en lokal ActiveMQ-instans i samme JVM-prosess, og egner seg kun for utvikling eller enkel testing.
-
-```
-difi.activemq.broker-url=vm://localhost
-difi.activemq.user=myuser
-difi.activemq.password=mypassword
 ```
 
 #### Transportsikring
