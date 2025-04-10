@@ -41,11 +41,13 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 3. Velg virksomheten du skal representere
 4. Trykk på "Profil"
 5. Trykk på "Andre med rettigheter til virksomheten"
-6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
-7. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
-8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten" (Se tabell under for forklaring av rettighetene)
-9. Trykk på alle rettighetene
-10. Trykk på "Gi rettigheter"
+6. Trykk på "+ Leggje til ny person eller verksemd"
+7. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
+8. Trykk på "Gi tilgang til enkelttjenester"
+9. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
+10. Trykk på "Gå videre"
+12. Trykk på "Fullfør delegering"
+13. Trykk på "Bekreft"
 
 Tabell for tilgjengelige rettigheter:
 
