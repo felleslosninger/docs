@@ -58,8 +58,8 @@ Følgende claims kan sendes inn i request:
 |-|-|-|
 |resource | påkrevd|Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
 |organizationform | Valgfri| Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
-|allow_multiple_organizations| Valgfri| Dersom `true` så kan sluttbruker velge flere organisasjoner i organisasjonsvelgeren. Default er false.|
-|allow_deleted_organizations | Valgfri| Dersom `true` så vil organisasjonsvelger vise sletta verksemder. Default er false.|
+|allow_multiple_organizations| Valgfri| Dersom `"true"` så kan sluttbruker velge flere organisasjoner i organisasjonsvelgeren. Default er "false".|
+|allow_deleted_organizations | Valgfri| Dersom `"true"` så vil organisasjonsvelger vise sletta verksemder. Default er "false".|
 
 [Her finner en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
 
