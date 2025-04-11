@@ -152,10 +152,10 @@ Brukernavn og passord for testbrukere til virksomhetene over fåes ved å kontak
 
 ### Lenker til testmiljø
 
-- Altinn <a href="https://tt02.altinn.no">https://tt02.altinn.no</a>
-- eBoks (Digital Post til Innbyggere) <a href="http://demo2-www.e-boks.no/">http://demo2-www.e-boks.no/</a>
-- Digipost (Digital Post til Innbyggere) <a href="http://www.difitest.digipost.no/">http://www.difitest.digipost.no/</a>
-- KS SvarUt og SvarInn <a href="https://test.svarut.ks.no/tjenester/">https://test.svarut.ks.no/tjenester/</a>
+- Altinn <https://tt02.altinn.no>
+- eBoks (Digital Post til Innbyggere) <http://demo2-www.e-boks.no/>
+- Digipost (Digital Post til Innbyggere) <http://www.difitest.digipost.no/>
+- KS SvarUt og SvarInn <https://test.svarut.ks.no/>
 
 ## Neste steg
 

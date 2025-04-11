@@ -25,9 +25,11 @@ Ved representasjon er brukerreisen følgende:
 3. Bruker velger hvilken virksomhet hen vil representere.
 4. Bruker blir sendt tilbake til tjenesten.
 
-I steg 3. viser Ansattporten en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere:
+I steg 3. viser Ansattporten en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere. Hen kan også velge å representere seg selv:
 
 ![organsisasjonsvelger](/images/ansattporten/ansattporten_orgvelger2.png)
+
+Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sent tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)
 
 # Protokoll-flyt
 
@@ -136,6 +138,27 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
 Merk at bruken av `authorization_details` inne i et id_token ikke er beskrevet i RAR-spesifikasjonen. Klienten skal fortrinnsvis bruke token-responsen til å utlede hvilke rettigheter sluttbruker gav til klienten. Vi har valgt å inkludere det for enkelhets skyld.
 
 
+*Eksempel på token-response dersom bruker har valgt å representere seg selv:*
+```
+200 OK
+
+{
+  "id_token"      : "eyJraWQiO...",
+
+  "access_token"  : "eyJraWQiO..."
+  "token_type" : "Bearer",
+  "expires_in" : 600
+
+  "scope" : "openid profile",
+
+  "authorization_details" : [ {
+    "type" : "ansattporten:altinn:service"
+  } ],
+
+  "refresh_token" : "eyJlbmMiO...",
+  "refresh_token_expires_in" : 7200,
+}
+```
 
 ## Test
 
@@ -145,4 +168,4 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 > Ved å bruke **TestID** som innloggingsmetode slipper man å kontakte Digdir for å få opprettet og resatt testbrukere.  TestID har også integrasjon mot Tenor, så du kan hente tilfeldige test-personer derifra.
 
-**MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i TT02 en gang.
+**MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.

@@ -15,10 +15,10 @@ Metadata om Ansattporten er tilgjengelig på vårt .well-known-endepunkt ihht. [
 På endepunktet finner du lenke til vårt JWK-endepunkt, der Ansattporten sitt  signeringssertifikat publiseres.  Vi anbefaler kunder sterkt om å bruke endepunktet til dynamisk egen-konfigurasjon for å sikre kontinuerlig tjeneste-leveranse når Ansattporten bytter signeringssertifikat.
 
 
-|Miljø| IssuerMetadata |
-|-|-|-|
-|TEST|`https://test.ansattporten.no`| [https://test.ansattporten.no/.well-known/openid-configuration](https://test.ansattporten.no/.well-known/openid-configuration)| 
-|PROD|`https://ansattporten.no`|[https://ansattporten.no/.well-known/openid-configuration](https://ansattporten.no/.well-known/openid-configuration) | 
+| Miljø | Issuer | IssuerMetadata |
+| ----- | ------ | -------------- |
+| TEST  |`https://test.ansattporten.no` | [https://test.ansattporten.no/.well-known/openid-configuration](https://test.ansattporten.no/.well-known/openid-configuration) | 
+| PROD  |`https://ansattporten.no` | [https://ansattporten.no/.well-known/openid-configuration](https://ansattporten.no/.well-known/openid-configuration) | 
 
 
 Disse metadata skal caches i din egen løsning, typisk er 24 timer en passende levetid.

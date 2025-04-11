@@ -39,7 +39,7 @@ Følgende authorization_type er støttet i Ansattporten:
 |-|-|
 | `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
 | `ansattporten:altinn:resource` |IKKE I BRUK ENNÅ.  Skal støtte bruk av Altinn3-ressurser som autorativ kilde for representasjon. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
-| `ansattporten:entra` |IKKE I BRUK ENNÅ.  Skal støtte innlogging med Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| `ansattporten:entra` |IKKE I BRUK ENNÅ.  Skal støtte organisasjonnummer kobling for bruker logget inn med Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-type i samme påloggingsforespørsel. Klienten må istedet implementere flere login-knapper i sin egen løsning.
@@ -56,10 +56,11 @@ Følgende claims kan sendes inn i request:
 
 | claim | kardinalitet|beskrivelse |
 |-|-|-|
-|resource | påkrevd|Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
-|organizationform | Valgfri| Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
-|allow_multiple_organizations| Valgfri| Dersom `"true"` så kan sluttbruker velge flere organisasjoner i organisasjonsvelgeren. Default er "false".|
-|allow_deleted_organizations | Valgfri| Dersom `"true"` så vil organisasjonsvelger vise sletta verksemder. Default er "false".|
+|resource | påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|
+|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise sletta verksemder. Default er false.|
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default så er begge mulig å velge å representere seg selv. |
 
 [Her finner en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
 
@@ -73,12 +74,15 @@ Følgende claims kan sendes inn i request:
       "type": "ansattporten:altinn:service",
       "resource": "urn:altinn:resource:2480:40"
     }
+  ]
 ```
 
-Datamodellen for respons inneholder de samme claimene som i request, men i tillegg vil det utleveres:
+Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
 
-| claim | beskrivelse |
-|-|-|-|
+| claim | beskrivelse            |
+| ----- | ---------------------- |
+| resource | Samme som i request |
+| resource-name | Namn på etterspurt representasjonsforhold |
 | reportees | Array med valgte virksomheter. |
 | Rights | For hver virksomhet, et array med rettigheter som innlogget bruker har for aktuell tjenestekode.  |
 | Name | For hver virksomhet, navnet på valgt virksomhet|
@@ -108,7 +112,7 @@ Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjen
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Tenor har mulighet til å filtrere slik at man får bare **daglig leder** fra test-Enhetsregisteret. En annen fordel med Tenor er at det kun er syntetiske testdata her, så man slipper å risikere å blande produksjons- og test-data.
 
-> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i TT02 en gang.
+> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.
 
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)

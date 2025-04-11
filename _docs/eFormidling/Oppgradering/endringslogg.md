@@ -18,6 +18,30 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.4
+
+08.04.2025
+
+**Feilretting**
+
+- Nye standard-verdiar for URL-ar mot interne tenester
+
+## 2.28.3
+
+27.03.2025
+
+**Feilretting**
+
+- Støtte for standard java proxy server konfigurasjon
+
+## 2.28.2
+
+19.03.2025
+
+**Vedlikehald**
+
+- Patch av kritisk sårbarheit i Tomcat sjå: https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.99
+
 ## 2.28.1
 
 09.10.2024

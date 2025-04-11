@@ -30,14 +30,9 @@ For å opprette bruker på Samarbeidsportalen. Gjør følgende:
 4. Registrer bruker med din jobbadresse
 5. Bekreft brukeren ved å trykke på lenken som kommer på epost. (NB! Sjekk søppelpost om ikke eposten kommer frem).
 
-### Tilgang i testmiljø
+### Tilgang i test- og produksjonsmiljø
 
-I utgangspunktet har alle brukere som er koblet til en virksomhet, tilgang til selvbetjening i testmiljøene ver1 og ver2. Noen virksomheter har innført restriksjoner og har strengere tilgangsstyring.
-
-
-### Tilgang i produksjonsmiljø
-
-Tilgang i produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
+Tilgang i test og produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
 
 Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
@@ -46,11 +41,13 @@ Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere ti
 3. Velg virksomheten du skal representere
 4. Trykk på "Profil"
 5. Trykk på "Andre med rettigheter til virksomheten"
-6. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
-7. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
-8. Velg "Selvbetjening av integrasjoner i ID-porten/Maskinporten" (Se tabell under for forklaring av rettighetene)
-9. Trykk på alle rettighetene
-10. Trykk på "Gi rettigheter"
+6. Trykk på "+ Leggje til ny person eller verksemd"
+7. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
+8. Trykk på "Gi tilgang til enkelttjenester"
+9. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
+10. Trykk på "Gå videre"
+12. Trykk på "Fullfør delegering"
+13. Trykk på "Bekreft"
 
 Tabell for tilgjengelige rettigheter:
 
