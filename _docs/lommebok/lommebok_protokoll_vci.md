@@ -80,8 +80,8 @@ Eit credential offer ser typisk slik ut:
 
 Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis som er tilbode.  Verdien peiker på ein førehandsdefinert bevis-type `no.digdir.eudiw.pid_mso_mdoc` (i dette tilfellet norsk variant av ID-dokument i mdoc-format) som saman med `pre_authorized_code` unikt lenkar til akkurat denne brukaren sitt bevis. 
 
-<details><summary>Credential id metadata</summary>
-```
+<details><summary>Detaljert definisjon av credential id metadata</summary>
+<code>
     "no.digdir.eudiw.pid_mso_mdoc": {
       "doctype": "eu.europa.ec.eudi.pid.1",
       "scope": "no.digdir.eudiw.pid_mso_mdoc",
@@ -138,7 +138,7 @@ Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis
       }
     }
   },
-```
+</code>
 </details>
 
 
