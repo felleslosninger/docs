@@ -57,4 +57,21 @@ Vi har et sett med "statiske" brukere. Disse testbrukerene finner du nå i [Teno
 
   Merk! Postkasse må testes ved andre tester/testbrukere.
 
+## Massebestilling av testbrukere i KRR
 
+Det er mulig å massebestille registrering av Tenor-testbrukere (+80) i KRR for bruk i testmiljø. 
+
+For å bestille, send en e-post til [servicedesk@digdir.no](mailto:servicedesk@digdir.no) med en CSV-fil som inneholder informasjon om brukerne.
+
+### Format og krav til innhold
+
+- Det må være én linje per testbruker.
+- Alle feltene må fylles ut.
+- Hvis du ikke har behov for reell e-postadresse eller mobilnummer, kan du bruke eksemplene under.
+
+```csv
+personIdentifier,notifiable,email,emailValidated,mobile,mobileValidated,preferredLanguage,reserved,deleted
+23884229367,true,test@test.no,false,+4799999999,false,nb,false,false
+```
+
+<br>
