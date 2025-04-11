@@ -54,25 +54,30 @@ Dersom kunden ønsker å bruke Altinn 2 lenketjenester (ServiceCode) som autorat
 
 Følgende claims kan sendes inn i request: 
 
-| claim | kardinalitet|beskrivelse |
-|-|-|-|
-|resource | påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
-|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
-|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|
-|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise sletta verksemder. Default er false.|
-|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default så er begge mulig å velge å representere seg selv. |
+| Claim | Kardinalitet | Beskrivelse | Gyldighet |
+|-|-|-|-|
+|resource | Påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `| Spesifiseres pr autorisasjonsobjekt |
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
+|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise slettede virksomheter. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom  spesifisert i flere autorisasjonsobjekter |
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
 
 [Her finner en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
 
 > **Mange av dagens standard Altinn-roller gir veldig breie tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipp, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor tilbyr vi ikke innlogging på vegne av Altinn-roller i Ansattporten, tjenesten må spesifisere en lenketjeneste. 
 
 
-*Eksempel på request*: 
+*Eksempel på request med 2 autorisasjonobjekter*: 
 ```
   authorization_details= [
     {
       "type": "ansattporten:altinn:service",
       "resource": "urn:altinn:resource:2480:40"
+    },
+    {
+      "type": "ansattporten:altinn:service",
+      "resource": "urn:altinn:resource:5900:1",
+      "allow_multiple_organizations": true
     }
   ]
 ```
