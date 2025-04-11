@@ -81,6 +81,43 @@ Eit credential offer ser typisk slik ut:
 Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis som er tilbode.  Verdien peiker på ein førehandsdefinert bevis-type `no.digdir.eudiw.pid_mso_mdoc` (i dette tilfellet norsk variant av ID-dokument i mdoc-format) som saman med `pre_authorized_code` unikt lenkar til akkurat denne brukaren sitt bevis. 
 
 <details><summary>Detaljert definisjon av credential id metadata</summary>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "grants" : {
+    "urn:ietf:params:oauth:grant-type:pre-authorized_code" : {
+      "pre-authorized_code" : "51f7434f-3652-416d-bd7f-daa08d9e401e",
+      "tx_code" : {
+        "length" : 4,
+        "description" : "Please provide the one-time code given to you",
+        "input_mode" : "numeric"
+      }
+    }
+  },
+  "credential_configuration_ids" : [ "no.digdir.eudiw.pid_mso_mdoc" ],
+  "credential_issuer" : "https://demo-vc-issuer.idporten.dev"
+}
+</code></pre></div></div>
+
+
+</details>
+
+
+TODO: døme
+
+[//]: # (FORSØK Å GJE EI GOD FORKLARING AV CREDENTIAL OFFER.  BØR DEI BRUKE DET, ELLER IKKJE ?)
+
+[//]: # (FORKLARE KEY BINDING OG KORLEIS EIN (KANKSJE) TRENG FUNKSJONELL STØTTE I AS (les ID-porten) FOR Å KUNNE UTSTEDE DETTE.)
+
+ [//]: # (tranction data, kombinert VP+VCI)
+ 
+
+LEGG FLYTSKJEMA
+
+LAGE EKSEMPLER
+
+
+
+
+
 <code>
     "no.digdir.eudiw.pid_mso_mdoc": {
       "doctype": "eu.europa.ec.eudi.pid.1",
@@ -139,24 +176,4 @@ Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis
     }
   },
 </code>
-</details>
-
-
-TODO: døme
-
-[//]: # (FORSØK Å GJE EI GOD FORKLARING AV CREDENTIAL OFFER.  BØR DEI BRUKE DET, ELLER IKKJE ?)
-
-[//]: # (FORKLARE KEY BINDING OG KORLEIS EIN (KANKSJE) TRENG FUNKSJONELL STØTTE I AS (les ID-porten) FOR Å KUNNE UTSTEDE DETTE.)
-
- [//]: # (tranction data, kombinert VP+VCI)
- 
-
-LEGG FLYTSKJEMA
-
-LAGE EKSEMPLER
-
-
-
-
-
 
