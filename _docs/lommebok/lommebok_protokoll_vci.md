@@ -28,9 +28,10 @@ Lommeboka må på ein eller annan måte få kunnskap om KVAR den kan få tak i e
 ## Pre-authorized flow
 
 Me trur at alternativ #2 ovanfor vil verte den mest vanlege måten å utstede bevisa på.  Denne flyten skiljer seg sopass mykje frå vanleg OIDC at den har fått eit eige namn: **pre-authorized code flow**.   Skilnadane er følgjande: 
-1) Autentisering med eID skjer normalt før OIDC-flyten startar
-2) OIDC-flyten startar ved at utstedaren lagar eit sokalla *Credential Offer* 
-3) Lommeboka går direkte på /token-endepunktet til autorisasjonsserveren, det er mao. ingen browser-redirects via /authorize-endepunktet involvert.
+
+1. Autentisering med eID skjer normalt før OIDC-flyten startar
+2. OIDC-flyten startar ved at utstedaren lagar eit sokalla *Credential Offer* 
+3. Lommeboka går direkte på /token-endepunktet til autorisasjonsserveren, det er mao. ingen browser-redirects via /authorize-endepunktet involvert.
 
 Flyten kan illustrerast slik:
 
@@ -83,7 +84,7 @@ Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis
 <details><summary>Detaljert definisjon av credential id metadata</summary>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-    "no.digdir.eudiw.pid_mso_mdoc": {
+"no.digdir.eudiw.pid_mso_mdoc": {
       "doctype": "eu.europa.ec.eudi.pid.1",
       "scope": "no.digdir.eudiw.pid_mso_mdoc",
       "cryptographic_binding_methods_supported": [
