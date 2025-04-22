@@ -45,6 +45,7 @@ I pilotperioden 2025 så er det Vergemålsregisteret til Statens Sivilrettsforva
 ID-porten har ikke - og vil aldri få - en egen database over fullmakter.  Dette betyr at administrasjon av fullmakter (å gi, endre, eller trekke tilbake en fullmakt) skal og må skje i hos den autorative kilden.
 
 ![screenshot av fullmaktsvelger](idporten_fullmaktsvelger.png)
+
 Figuren viser fullmaktsvelgeren i ID-porten.  På sikt vil feltet for fødselsnummer bli erstattet av en liste over innlogget bruker sine fullmaktsgivere.
 
 # Virksomhetens plikter ved fullmaktspålogging
