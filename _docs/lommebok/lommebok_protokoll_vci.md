@@ -30,7 +30,7 @@ Lommeboka må på ein eller annan måte få kunnskap om KVAR den kan få tak i e
 Me trur at alternativ #2 ovanfor vil verte den mest vanlege måten å utstede bevisa på.  Denne flyten skiljer seg sopass mykje frå vanleg OIDC at den har fått eit eige namn: **pre-authorized code flow**.   Skilnadane er følgjande: 
 
 1. Autentisering med eID skjer normalt før OIDC-flyten startar
-2. OIDC-flyten startar ved at utstedaren lagar eit sokalla *Credential Offer* 
+2. OIDC-flyten startar ved at utstedaren lagar eit sokalla *Credential Offer* (bevistilbod)
 3. Lommeboka går direkte på /token-endepunktet til autorisasjonsserveren, det er mao. ingen browser-redirects via /authorize-endepunktet involvert.
 
 Flyten kan illustrerast slik:
@@ -81,7 +81,22 @@ Eit credential offer ser typisk slik ut:
 
 Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis som er tilbode.  Verdien peiker på ein førehandsdefinert bevis-type `no.digdir.eudiw.pid_mso_mdoc` (i dette tilfellet norsk variant av ID-dokument i mdoc-format) som saman med `pre_authorized_code` unikt lenkar til akkurat denne brukaren sitt bevis. 
 
-<details><summary>Detaljert definisjon av credential id metadata</summary>
+Sidan bevis-tilbodet skal konsumerast av ein anna applikasjon enn browsere, er det risiko for at ein angripar kan forsøke å bruke det istadenfor den legitime brukaren, til dømes ved at qr-koden blir scanna "over skuldra".  Difor har brukaren på førehand laga ein PIN-kode eller liknande som berre er kjent for hen, og `tx_code`-claimet inneheld instruksjonar til lommeboka om korleis den skal tilby brukergrensesnitt der PIN-koden skal tastast inn.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<details><summary>Detaljert definisjon av credential id metadata for "norsk id-dokument"</summary>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
 "no.digdir.eudiw.pid_mso_mdoc": {
