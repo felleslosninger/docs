@@ -17,7 +17,7 @@ En tjensteeier i Ansattporten kan aktivere støtte for at en bruker kan logge in
 
 Klienten må legge til verdien `entraid` som del av parameteret `acr_values` i autentiseringsforespørselen.  Da vil Entra ID dukke opp i Ansattportens eID-selector slik: 
 
-![skjermbilde av hvordan valgmuligheten for microsoft entra-id ser ut i Ansattporten](entraid_i_eidselector.png.png)
+![skjermbilde av hvordan valgmuligheten for microsoft entra-id ser ut i Ansattporten](entraid_i_eidselector.png)
 
 
 *Eksempel på request (forenklet)*: 
