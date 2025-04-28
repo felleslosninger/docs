@@ -53,6 +53,16 @@ Denne flyten er grundig dokumentert på denne siden  [innlogging med ID-porten](
 * Du må selvsagt bruke Ansattporten sine endepunkter, som du finner [her]( [ansattporten_wellknown.html]).  
 * Klienten du bruker, må være registrert i Selvbetjening til å bruke Ansattporten og ikke ID-porten.
 
+# eIDer støttet
+
+Ansattporten støtter flere eIDer enn ID-porten.  Klienten velger selv hvilke eIDer den ønsker å støtte, ved å bruke feltet `acr_values` i autentiseringsforespørselen:
+
+
+| acr_value | beskrivelse            |
+| ----- | ---------------------- |
+| `idporten-loa-high`    | eID på nivå høgt, som i ID-porten, dvs. BankID, Buypass eller Commfides |
+| `idporten-loa-substantial`    | eID på både nivå høgt og betydeleg, dvs. inkluderer MinID i tillegg til dei på nivå høgt.  |
+| `entraid` | Microsoft Entra ID |
 
 # Isolert SSO
 
