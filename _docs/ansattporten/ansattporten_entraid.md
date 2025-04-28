@@ -39,6 +39,26 @@ Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utlever
 | groups | en array med de 20 første AD-gruppene som autentisert bruker inngår i. |  
 
 
+
+*Eksempel på id_token i repons*: 
+
+```
+{
+  "kid" : "bdXLEWnDjLHjpE8OfyyMJxRRKmZ71LB8u1yDDmPiuT0",
+  "alg" : "RS256"
+}
+.
+{
+  "sub" : "_xxxxxx",
+  "iss" : "https://test.ansattporten.no",
+
+  "acr" : "entraid",
+  "amr" : [ "entraid-mfa" ],
+  "groups" : [ "83aa7a53-ff60-47e4-8940-0c73573b0130", "b699bbbe-df5b-434a-97cc-246c9a992614", .... ],
+  "email" : "xxxxx@digdir.no"
+}
+```
+
 ## Berike token med organisasjonsnummer
 
 Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å inkludere informasjon om sluttbruker sin organisasjonstilhørighet.
@@ -63,7 +83,6 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-
 | orgno | Norsk organisasjonsnummer  |
 
 *Eksempel på respons*:
