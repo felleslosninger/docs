@@ -63,7 +63,7 @@ Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utlever
 
 Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å inkludere informasjon om sluttbruker sin organisasjonstilhørighet.
 
-RAR-typen `ansattporten:organisasjonsnummer` vil trigge slik berikelse:
+RAR-typen `ansattporten:orgno` vil trigge slik berikelse:
 
 
 *Eksempel på request (forenklet)*: 
@@ -73,7 +73,7 @@ https://login.test.ansattporten.no/authorize?
  ...
   authorization_details= [
     {
-      "type": "ansattporten:organisasjonsnummer"
+      "type": "ansattporten:orgno"
     }
   ]
 ```
@@ -88,7 +88,7 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 *Eksempel på respons*:
 ```
   "authorization_details" : [ {
-    "type" : "ansattporten:organisasjonsnummer",
+    "type" : "ansattporten:orgno",
     "orgno:" : {
         "Authority" : "iso6523-actorid-upis",
         "ID" : "0192:987464291"
