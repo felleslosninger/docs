@@ -41,13 +41,6 @@ Supported request attributes for normal, redirected authorization requests:
 | code_challenge   | Required*  | The [PKCE](https://docs.digdir.no/docs/idporten/oidc/oidc_func_pkce) `code_challenge` is a calculated value based on `code_verifier`.  |
 | code_challenge_method   | Required   | Algorithm for PKCE. Only `S256` supported.  |
 
-When using PAR, only the following attributes are supported:
-
-| Attribute  | Optionality | Description |
-| --- | --- | --- |
-| client\_id | Required | ID-porten will provide you with a client-id out-of-band|
-|request_uri| Required | The identifier returned by ID-porten from a previously pushed [PAR request]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_par). |
-
 
 Clients are strongly recommended to use state, nonce in addition to the mandatory [PKCE]({{site.baseurl}}/docs/idporten/oidc/oidc_func_pkce).
 
@@ -71,6 +64,15 @@ GET https://login.idporten.no/authorize?
   code_challenge_method=S256&
 
 ```
+
+
+When using PAR, only the following attributes are supported:
+
+| Attribute  | Optionality | Description |
+| --- | --- | --- |
+| client\_id | Required | ID-porten will provide you with a client-id out-of-band|
+|request_uri| Required | The identifier returned by ID-porten from a previously pushed [PAR request]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_par). |
+
 
 ### Sample request when using pushed authorization requests (PAR)
 
