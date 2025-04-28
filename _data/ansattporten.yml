@@ -33,6 +33,9 @@ folders:
       - title: "RAR og autorative kilder"
         jurl: /docs/ansattporten/ansattporten_rar.html
 
+      - title: Entra ID
+        jurl: /docs/ansattporten/ansattporten_entraid.html
+
       - title: Metadata
         jurl: /docs/ansattporten/ansattporten_wellknown.html
 
