@@ -119,7 +119,43 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 TBD
 
-## Datamodell for Entra ID  (`ansattporten:entra`)
+## Datamodell for arbeidsgivers pålogging (`ansattporten:orgno`)
 
-TBD
+Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet.  Datakilden er p.t. Digdir sin kundedatabase, dvs. alle virksomhetere som har inngått Digdirs bruksvilkår vil bli beriket med organisasjonsnummer.
+
+Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
+
+Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres en tom RAR-element. 
+
+P.t. er det ingen attributter som kan angis i forespørslen, utover `type`:
+
+*Eksempel på request (forenklet)*: 
+```
+https://login.test.ansattporten.no/authorize?
+  acr_values=entraid ...&
+ ...
+  authorization_details= [
+    {
+      "type": "ansattporten:orgno"
+    }
+  ]
+```
+
+
+Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+
+| claim | beskrivelse            |
+| ----- | ---------------------- |
+| orgno | Norsk organisasjonsnummer  |
+
+*Eksempel på respons*:
+```
+  "authorization_details" : [ {
+    "type" : "ansattporten:orgno",
+    "orgno:" : {
+        "Authority" : "iso6523-actorid-upis",
+        "ID" : "0192:987464291"
+      } 
+  } ]
+```
 
