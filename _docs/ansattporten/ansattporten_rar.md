@@ -39,7 +39,7 @@ Følgende authorization_type er støttet i Ansattporten:
 |-|-|
 | `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
 | `ansattporten:altinn:resource` |IKKE I BRUK ENNÅ.  Skal støtte bruk av Altinn3-ressurser som autorativ kilde for representasjon. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
-| `ansattporten:entra` |IKKE I BRUK ENNÅ.  Skal støtte organisasjonnummer kobling for bruker logget inn med Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-type i samme påloggingsforespørsel. Klienten må istedet implementere flere login-knapper i sin egen løsning.

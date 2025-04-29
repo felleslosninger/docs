@@ -1,7 +1,6 @@
 ---
 title: Ansattporten protokoll
 description: Ansattporten er protokoll-lik med ID-porten
-summary: "Metadata om Ansattporten er tilgjengelig på vårt .well-known-endepunkt"
 
 sidebar: ansattporten
 product: Ansattporten
@@ -13,7 +12,7 @@ Ansattporten sin protokoll-støtte er nær identisk med ID-porten sin, og vi hen
 
 Merk spesielt følgende:
 
-* Ansattporten støtter RAR.  Dette er dokumentert [her](ansattporten_rar.html)
+* Ansattporten bruker RAR for koding av representasjonsforhold. Dette er dokumentert [her](ansattporten_rar.html)
 * Ansattporten har egne endepunkt.  Se [metadata](ansattporten_wellknown.html)
 
 ### acr
