@@ -16,5 +16,5 @@ Merk at til dømes EU tilbyr ein meir feature-komplett demo-teneste HER:
 ## Grensesnitt
 
 Her kan du prøve demo-brukarstaden vår: 
-[https://demo-vc-verifier.test.idporten.no/](https://demo-vc-verifier.test.idporten.no/)
+[https://demo-brukersted.test.eidas2sandkasse.net/](https://demo-brukersted.test.eidas2sandkasse.net/)
 

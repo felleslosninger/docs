@@ -15,10 +15,10 @@ Me jobbar med å generalisere denne, slik at den lettare kan hekte seg på andre
 
 ## Brukargrensesnitt:
 
-Du kan gå til [https://demo-vc-issuer.test.idporten.no/](https://demo-vc-issuer.test.idporten.no/)  for å teste utstedelse.
+Du kan gå til [https://demo-utsteder.test.eidas2sandkasse.net/](https://demo-utsteder.test.eidas2sandkasse.net/)  for å teste utstedelse.
 
 ## Metadata
 
 Du bør finne alt som trengs for å kunne samhandle med utstederen via credential metadata-endepunktet:
-[https://demo-vc-issuer.test.idporten.no/.well-known/openid-credential-issuer](https://demo-vc-issuer.test.idporten.no/.well-known/openid-credential-issuer)
+[https://demo-utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer](https://demo-utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer)
 
