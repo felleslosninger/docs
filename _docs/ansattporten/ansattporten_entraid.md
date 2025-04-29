@@ -34,7 +34,7 @@ Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utlever
 | claim | beskrivelse            |
 | ----- | ---------------------- |
 | acr    | Alltid `entraid` |
-| amr    | Enten `entraid_pwd`  dersom bruker bare har autentisert seg med 1-faktor, som passord, eller `entraid_mfa`  dersom brukeren har autentisert seg med 2-faktor. |
+| amr    | Hvilke autentiseringfaktorer som sluttbruker benyttet. Ansattporten returnerer [acr-verdiene den får fra Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#amr-claim),  prefix'et med `entraid`. Eksempel på 2-faktor-autentisering: `["entraid_pwd", "entraid_mfa"]`|
 | email  | Epost-adressen til autentisert bruker |
 | groups | en array med de 20 første AD-gruppene som autentisert bruker inngår i. |  
 
@@ -53,7 +53,7 @@ Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utlever
   "iss" : "https://test.ansattporten.no",
 
   "acr" : "entraid",
-  "amr" : [ "entraid-mfa" ],
+  "amr" : [ "entraid_pwd", "entraid-mfa" ],
   "groups" : [ "83aa7a53-ff60-47e4-8940-0c73573b0130", "b699bbbe-df5b-434a-97cc-246c9a992614", .... ],
   "email" : "xxxxx@digdir.no"
 }
