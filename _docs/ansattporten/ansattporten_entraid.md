@@ -11,7 +11,7 @@ redirect_from: /ansattporten_entraid
 
 {% include note.html content="Entra ID er beta-funksjonalitet .  Vi ønsker virksomheter velkommen til å hjelpe oss med å teste og forbedre funksjonaliteten gjennom en pilotfase i 2025/2026. De som deltar, må være forberedt på at det kan bli løpende endringer i funksjonalitet og tekniske grensesnitt." %}
 
-En tjensteeier i Ansattporten kan aktivere støtte for at en bruker kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan også berike innlogging med organisasjonsnummeret til konto-eier (som oftest arbeidsgiver).
+En tjensteeier i Ansattporten kan aktivere støtte for at en bruker kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan også berike innlogging med organisasjonsnummeret til konto-eier (som oftest bruker sin arbeidsgiver).
 
 ## Aktivere EntraID for innlogging
 
@@ -84,7 +84,7 @@ https://login.test.ansattporten.no/authorize?
 ```
 
 
-Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+Datamodellen for respons inneholder alltid claiment "type" som i request, men om dersom bruker kommer fra en organisasjon som er registrert som kunde av Ansattporten, vil det i tillegg utleveres:
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
@@ -104,7 +104,7 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 ## Oppsett for arbeidsgivere
 
-Ansattporten er implementert som en [publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/publisher-verification-overview) app i Ansattporten sin Entra ID tentant.  Appen er en såkalla [multi-tentant app](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps).
+Ansattporten er implementert som en [publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/publisher-verification-overview) app i Ansattporten sin Entra ID tentant.  Appen er en såkalla [multi-tentant app](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps).  Det betyr i praksis at innlogging skal fungere "ut av boksen", og Entra-administrator hos arbeidsgiver skal normalt ikke behøve å konfigurere noe i egen Entra tentant.  Dette er dog avhengig av eksisterende sikkerhetspolicy.
 
 Dine ansatte må samtykke til bruk av Ansattporten første gang, se [Understand user and admin consent ](https://learn.microsoft.com/en-us/entra/identity-platform/howto-convert-app-to-be-multi-tenant#understand-user-and-admin-consent-and-make-appropriate-code-changes).Du som Entra-administrator kan deaktivere samtykke, sånn at innloggingen oppleves mer sømløs.  
 
