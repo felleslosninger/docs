@@ -11,7 +11,7 @@ redirect_from: /ansattporten_entraid
 
 {% include note.html content="Entra ID er beta-funksjonalitet .  Vi ønsker virksomheter velkommen til å hjelpe oss med å teste og forbedre funksjonaliteten gjennom en pilotfase i 2025/2026. De som deltar, må være forberedt på at det kan bli løpende endringer i funksjonalitet og tekniske grensesnitt." %}
 
-En tjensteeier i Ansattporten kan aktivere støtte for at en bruker kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan også berike innlogging med organisasjonsnummeret til konto-eier (som oftest bruker sin arbeidsgiver).
+En tjensteeier i Ansattporten kan aktivere støtte for at en bruker kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan også berike innlogging med organisasjonsnummeret til konto-eier (som oftest bruker sin arbeidsgiver). Piloten skal også utforske om og evt. hvordan Ansattporten kan hjelpe med tilgangstyring til tjenester.
 
 ## Aktivere EntraID for innlogging
 
@@ -66,10 +66,11 @@ Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utlever
 
 ## Berike token med organisasjonsnummer
 
-Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å inkludere informasjon om sluttbruker sin organisasjonstilhørighet.
+Basert på epost-domenet til innlogget bruker, kan Ansattporten også utlevere organisasjonsnummeret til eier av domenet.  Den autorative kilden for organisasjonsnummer er Digdir sin kundedatabase: alle virksomheter som har inngått Digdirs bruksvilkår registrerte samtidig et epost-domene, og det er denne mappingen som blir gjenbrukt av Ansattporten. 
 
-RAR-typen `ansattporten:orgno` vil trigge slik berikelse:
+Vi vurderer funksjonalitet for å kunne koble brukere til under-enheter basert på AD-grupper, ta kontakt dersom du har synspunkter her.
 
+Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å inkludere informasjon om sluttbruker sin organisasjonstilhørighet. RAR-typen `ansattporten:orgno` vil trigge slik berikelse:
 
 *Eksempel på request (forenklet)*: 
 ```
@@ -84,11 +85,11 @@ https://login.test.ansattporten.no/authorize?
 ```
 
 
-Datamodellen for respons inneholder alltid claiment "type" som i request, men om dersom bruker kommer fra en organisasjon som er registrert som kunde av Ansattporten, vil det i tillegg utleveres:
+Datamodellen for respons inneholder alltid samme "type" som i request, men om dersom bruker kommer fra en organisasjon som er registrert som kunde av Digdir, vil det i tillegg utleveres:
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-| orgno | Norsk organisasjonsnummer  |
+| orgno | Organisasjonsidentifikator  |
 
 *Eksempel på respons*:
 ```
@@ -101,19 +102,41 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
   } ]
 ```
 
+Organisasjonsidentifikatoren følger ISO6523-standarden, der verdien 0192 angir norske organisasjonsnummer.
 
-## Oppsett for arbeidsgivere
+## Tilgangstyring
 
-Ansattporten er implementert som en [publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/publisher-verification-overview) app i Ansattporten sin Entra ID tentant.  Appen er en såkalla [multi-tentant app](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps).  Det betyr i praksis at innlogging skal fungere "ut av boksen", og Entra-administrator hos arbeidsgiver skal normalt ikke behøve å konfigurere noe i egen Entra tentant.  Dette er dog avhengig av eksisterende sikkerhetspolicy.
+I første versjon utfører ikke Ansattporten noe sentral tilgangstyring. Alle brukere får logge inn, og vil bli beriken med organisasjosnummeret.
+Det er et mål for piloten å utforske hvordan tilgangstyring kan implementeres mest effektivt, og vi ønsker dialog med virksomheter om dette.
+
+Dersom klienten, eller arbeidsgiverne som skal logge inn, ønsker å begrense hvem hos arbeidsgiver som skal kunne logge inn til en klient, må de p.t. sette opp lokal tilgangstyring basert på AD-grupper. Man må be alle arbeidsgiverne om å opprette en dedikert AD-gruppe for sin tjeneste og så utveksle guid'en som identifiserer gruppa.  Ansattporten vil videreformidle brukers AD-grupper ved innlogging. Tjenesteeier kan da  allow-liste alle guid'er fra alle arbeidsgivere. 
+
+
+
+## Konfigurasjon 
+
+Entra er p.t. støttet i TEST-miljø.  Vi jobber med å sette opp en dedikert Entra-tentant for produksjonsmiljø.
+
+### Oppsett for tjenesteeiere
+
+Tjenesteeier trenger ikke gjøre noe i egen Entra-tenant for å aktivere Entra i Ansattporten.
+
+Du må selvsagt aktivere entra i tjenesten din, og evt. orgno-berikelse, som forklart ovenfor.
+
+Dersom du ønsker tilgangstyring, må du implementere dette selv, basert på utleverte AD-grupper som du utveklser bilateralt med de arbeidsgiverene som skal logge inn til deg.
+
+### Oppsett for arbeidsgivere
+
+Ansattporten er implementert som en [publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/publisher-verification-overview) app. App-registreringen ligger i en egen tentant, skilt vekk fra Digdir sin ordinære tentant. Appen er en såkalla [multi-tentant app](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps).  Det betyr i praksis at innlogging skal fungere "ut av boksen", og Entra-administrator hos arbeidsgiver skal normalt ikke behøve å konfigurere noe i egen Entra tentant.  Dette er dog avhengig av eksisterende sikkerhetspolicy.
 
 Dine ansatte må samtykke til bruk av Ansattporten første gang, se [Understand user and admin consent ](https://learn.microsoft.com/en-us/entra/identity-platform/howto-convert-app-to-be-multi-tenant#understand-user-and-admin-consent-and-make-appropriate-code-changes).Du som Entra-administrator kan deaktivere samtykke, sånn at innloggingen oppleves mer sømløs.  
 
 Du som Entra-administrator kan også blokkere Anstattporten dersom en virksomhet vil forhindre sine ansatte fra å kunne bruke tjenester gjennom Ansattporten. 
 
-Organisasjonsnummeret som dine ansatte blir beriket med, er basert på epost-domenet som du har registrert hos Digdir da du inngikk Digdir sine bruksvilkår.
+Organisasjonsnummeret som dine ansatte blir beriket med, er basert på epost-domenet som du har registrert hos Digdir da du inngikk Digdir sine bruksvilkår, se ovenfor.
 
 
-#### Testbrukere
+## Testing 
 
 Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Legg til rett acr-verdi i forespørsel, og logg inn med din egen AD-bruker.
 
