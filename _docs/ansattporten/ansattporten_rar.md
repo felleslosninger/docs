@@ -39,7 +39,7 @@ Følgende authorization_type er støttet i Ansattporten:
 |-|-|
 | `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
 | `ansattporten:altinn:resource` |IKKE I BRUK ENNÅ.  Skal støtte bruk av Altinn3-ressurser som autorativ kilde for representasjon. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
-| `ansattporten:entra` |IKKE I BRUK ENNÅ.  Skal støtte organisasjonnummer kobling for bruker logget inn med Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-type i samme påloggingsforespørsel. Klienten må istedet implementere flere login-knapper i sin egen løsning.
@@ -124,7 +124,43 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 TBD
 
-## Datamodell for Entra ID  (`ansattporten:entra`)
+## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
-TBD
+Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet.  Datakilden er p.t. Digdir sin kundedatabase, dvs. alle virksomhetere som har inngått Digdirs bruksvilkår vil bli beriket med organisasjonsnummer.
+
+Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
+
+Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres en tom RAR-element. 
+
+P.t. er det ingen attributter som kan angis i forespørslen, utover `type`:
+
+*Eksempel på request (forenklet)*: 
+```
+https://login.test.ansattporten.no/authorize?
+  acr_values=entraid ...&
+ ...
+  authorization_details= [
+    {
+      "type": "ansattporten:orgno"
+    }
+  ]
+```
+
+
+Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+
+| claim | beskrivelse            |
+| ----- | ---------------------- |
+| orgno | Norsk organisasjonsnummer  |
+
+*Eksempel på respons*:
+```
+  "authorization_details" : [ {
+    "type" : "ansattporten:orgno",
+    "orgno:" : {
+        "Authority" : "iso6523-actorid-upis",
+        "ID" : "0192:987464291"
+      } 
+  } ]
+```
 

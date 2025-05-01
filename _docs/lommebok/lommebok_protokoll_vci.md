@@ -7,7 +7,13 @@ product: lommebok
 redirect_from: /lommebok_protokoll_vci
 ---
 
-På denne sida forsøker me å forklara protokoll-flyten du må følgje som utstedar når du skal laga eit bevis som skal inn i lommeboka.   Dersom du er data-eigar 
+På denne sida forsøker me å forklara protokoll-flyten du må følgje som utstedar når du skal laga eit bevis som skal inn i lommeboka.  
+
+
+
+{% include note.html content="Merk at dersom du er data-eigar, so treng du ikkje nødvendigvis å implementere dette sjølv. Istaden kan du velge å ta kontakt med ein utsteder som gjer denne jobben for deg.  Ta kontakt med Digdir for å bruke vår utstederteneste." %}
+
+Dersom du er data-eigar, kan du velge å 
 
 Protokollen er basert på [OpenID4VCI-standarden](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html). Standarden er framleis under utvikling, men er planlagd å nå Final innan sumaren 2025.  Firmaet Authlete har publisert ein veldig god og detaljert [tutorial for bruk av VCI-standarden](https://www.authlete.com/developers/oid4vci/).
 

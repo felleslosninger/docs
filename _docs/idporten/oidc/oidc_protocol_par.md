@@ -10,11 +10,13 @@ redirect_from: /oidc_protocol_par
 
 ## About
 
+
+PAR lets the client send the authorization request (see [/authorize]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_authorize) ) directly to ID-porten, ahead of end-user (browser) involvement.
+
+Using PAR is recommended for clients with stronger security requirements.
+
+
 Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly documented in the draft IETF-specification [draft-ietf-oauth-par-06](https://tools.ietf.org/html/draft-ietf-oauth-par-06)
-
-PAR lets the client push the authorization request (see [/authorize]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_authorize) ) to ID-porten ahead of end-user involvement.
-
-{% include note.html content="I 2022 kommer det [ikke-bakoverkompatible endringer i ID-porten](oidc_protocol_nye_idporten.html)." %}
 
 
 ## Request
