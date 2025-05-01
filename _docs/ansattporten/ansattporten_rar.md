@@ -119,7 +119,7 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 TBD
 
-## Datamodell for arbeidsgivers pålogging (`ansattporten:orgno`)
+## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
 Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet.  Datakilden er p.t. Digdir sin kundedatabase, dvs. alle virksomhetere som har inngått Digdirs bruksvilkår vil bli beriket med organisasjonsnummer.
 
