@@ -24,7 +24,7 @@ Bruk av selvbetjening forutsetter at din virksomhet har fått tilgang til Samarb
 ### Sette opp klient
 
 a. Ved oppslagstjenesten REST
-- Velg "Maskinporten & KRR" som klienttype.
+- Velg "Maskinporten & KRR".
 - Under "Scope", velg scope-pakken "KRR". Da vil du automatisk få tildelt de riktige scopene.  
   For oppslag i KRR er krr:global/kontaktinformasjon.read relevant.
 - Integrasjonsidentifikator: Genereres automatisk og skal brukes i jwt_claims.
@@ -32,7 +32,7 @@ a. Ved oppslagstjenesten REST
 - Beskrivelse: Egendefinert beskrivelse av hva integrasjonen skal brukes til.
 
 b. Oppslag ved brukerinnlogging (brukerstyrt datadeling)
-- Velg "ID-porten & API-klient" som klienttype.
+- Velg "ID-porten & API-klient".
 - Under "Skal klienten benytte eksterne scope?", velg "Ja".
 - Du må manuelt legge til scopet: krr:user/kontaktinformasjon.read.
 
