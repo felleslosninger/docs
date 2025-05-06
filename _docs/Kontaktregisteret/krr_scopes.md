@@ -20,8 +20,8 @@ I KRR-sammenheng er følgende integrasjonstyper aktuelle:
 |krr   | Kontaktregisteret (server-til-server)   |
 
 
-Ved Oppslagstjenesten REST må du velge “KRR” som “Difi-tjeneste”. Du vil da få automatisk tildelt de riktige scopene. Ved Oppslag ved brukerinnlogging må du velge “Api-klient” som “Difi-tjeneste”.
-Deretter må du manuelt sette de riktige scopene: krr:user/kontaktinformasjon.read, openid, profile
+Ved bruk av oppslagstjenesten REST må du velge klienttype "Maskinporten & KRR-klient". Under "Scope" velger du scope-pakken "KRR". Da vil du automatisk få tildelt de riktige scopene.
+Ved oppslag ved brukerinnlogging må du velge klienttype "ID-porten & API-klient". Under "Skal klienten benytte eksterne scope?" velger du "Ja". Du må deretter manuelt sette scopet: krr:user/kontaktinformasjon.read.
 
 {% include note.html content="Det er ikke mulig å endre  integrasjonstype etter opprettelse." %}
 
