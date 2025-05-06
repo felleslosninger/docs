@@ -20,8 +20,8 @@ I KRR-sammenheng er følgende integrasjonstyper aktuelle:
 |krr   | Kontaktregisteret (server-til-server)   |
 
 
-Ved bruk av oppslagstjenesten REST må du velge klienttype "Maskinporten & KRR-klient". Under "Scope" velger du scope-pakken "KRR". Da vil du automatisk få tildelt de riktige scopene.
-Ved oppslag ved brukerinnlogging må du velge klienttype "ID-porten & API-klient". Under "Skal klienten benytte eksterne scope?" velger du "Ja". Du må deretter manuelt sette scopet: krr:user/kontaktinformasjon.read.
+Ved bruk av oppslagstjenesten REST må du velge integrasjonstype "Maskinporten & KRR-klient". Under "Scope" velger du scope-pakken "KRR". Da vil du automatisk få tildelt de riktige scopene.
+Ved oppslag ved brukerinnlogging må du velge integrasjonstype "ID-porten & API-klient". Under "Skal klienten benytte eksterne scope?" velger du "Ja". Du må deretter manuelt sette scopet: krr:user/kontaktinformasjon.read.
 
 {% include note.html content="Det er ikke mulig å endre  integrasjonstype etter opprettelse." %}
 
