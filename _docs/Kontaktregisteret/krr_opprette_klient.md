@@ -16,26 +16,25 @@ Bruk av selvbetjening forutsetter at din virksomhet har fått tilgang til Samarb
 {% include note.html content=" For å kunne registrere ny bruker må du bruke epost-domenet til din virksomhet!" %}
 
 ### Opprette klient
-- Logg inn på Min side og gå til "Integrasjoner" i høyremenyen.
-- Velg det miljøet du vil opprette klienten i.
 
-> For å opprette klient i produksjonsmiljøet, så må du få delegert rettigheter til dette i Altinn. Prosessen er beskrevet på [Tilgang til produksjonsmiljø](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web#tilgang-i-produksjonsmilj%C3%B8).
-
-- Velg "Ny integrasjon".
+- Logg inn på Min side og gå til "Integrasjoner" i menyen til venstre.
+- Trykk på "Selvbetjening" og velg miljøet du vil opprette klienten i.
+- Velg "Legg til ny".
 
 ### Sette opp klient
-a. Ved Oppslagstjenesten REST: 
-- Velg "KRR" som "Difi-tjeneste". Du vil da få automatisk tildelt de riktige scopene. For oppslag i KRR er det krr:global/kontaktinformasjon.read som er relevant.
--- Integrasjons identifikator: Genereres automatisk. Verdien skal brukes i jwt_claims.
+
+a. Ved oppslagstjenesten REST
+- Velg "Maskinporten & KRR" som klienttype.
+- Under "Scope", velg scope-pakken "KRR". Da vil du automatisk få tildelt de riktige scopene.  
+  For oppslag i KRR er krr:global/kontaktinformasjon.read relevant.
+- Integrasjonsidentifikator: Genereres automatisk og skal brukes i jwt_claims.
 - Navn på integrasjon: Egendefinert, unikt navn på integrasjonen.
 - Beskrivelse: Egendefinert beskrivelse av hva integrasjonen skal brukes til.
-- Tillatte grant types: jwt-bearer.
-- Klientautentiseringsmetode: private_key_jwt.
-- Applikasjonstyper: web.
 
-b. Oppslag ved brukerinnlogging (brukerstyrt datadeling):
-- Velg "Api-klient" som "Difi-tjeneste". Du må manuelt sette de riktige scopene:
-  krr:user/kontaktinformasjon.read, openid, profile
+b. Oppslag ved brukerinnlogging (brukerstyrt datadeling)
+- Velg "ID-porten & API-klient" som klienttype.
+- Under "Skal klienten benytte eksterne scope?", velg "Ja".
+- Du må manuelt legge til scopet: krr:user/kontaktinformasjon.read.
 
 [Lenke til mer detaljert beskrivelse av scopene](https://docs.digdir.no/docs/Kontaktregisteret/Brukerspesifikt-oppslag_rest#bruk-av-oauth2).
   
