@@ -13,14 +13,12 @@ På denne sida forsøker me å forklara protokoll-flyten du må følgje som utst
 
 {% include note.html content="Merk at dersom du er data-eigar, so treng du ikkje nødvendigvis å implementere dette sjølv. Istaden kan du velge å ta kontakt med ein utsteder som gjer denne jobben for deg.  Ta kontakt med Digdir for å bruke vår utstederteneste." %}
 
-Dersom du er data-eigar, kan du velge å 
-
 Protokollen er basert på [OpenID4VCI-standarden](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html). Standarden er framleis under utvikling, men er planlagd å nå Final innan sumaren 2025.  Firmaet Authlete har publisert ein veldig god og detaljert [tutorial for bruk av VCI-standarden](https://www.authlete.com/developers/oid4vci/).
 
 
 Ein VCI-flyt er i praksis ein vanleg OpenID Connect-flyt som er utvida med eit ekstra steg der lommeboka hentar sjølve beviset frå ein **Credential Issuer**.   Lommeboka opptrer altså som OIDC-klient.
 
-Standarden opnar for at Credential Issuer anten kan vere ein sjølvstendig komponent, eller den kan vere innbygd funksjonalitet i ein eksisterande autorasasjons-server (som ID-porten).
+Standarden opnar for at Credential Issuer anten kan vere ein sjølvstendig komponent, eller den kan vere innbygd funksjonalitet i ein eksisterande Oauth2/OIDC autorisasjons-server (som ID-porten).
 
 
 ## I praktisk bruk
