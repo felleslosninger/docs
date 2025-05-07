@@ -119,6 +119,9 @@ folders:
   - title: Verifikasjonstester
     jurl: /docs/idporten/idporten/idporten_verifikasjonstester.html
 
+  - title: Automatisert testing
+    jurl: /docs/idporten/oidc/oidc_func_apitesting.html
+    
 - title: Feilsøking
   folderitems:
 
