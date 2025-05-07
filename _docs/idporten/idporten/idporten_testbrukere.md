@@ -83,4 +83,4 @@ For de som ikke kan bruke syntetiske fødselsnummer, tilbyr vi et sett med stand
 
 ## Automatisert testing av API'er beskyttet med access_token fra ID-porten
 
-ID-porten i testmiljøer tilbyr "headless login" der tokens kan utstedes uten brukerinteraksjon til syntetiske testbrukere.  [Sjå meir her](oidc_func_apitesting.html)
+ID-porten i testmiljøer tilbyr "headless login" der tokens kan utstedes uten brukerinteraksjon til syntetiske testbrukere.  [Sjå meir her]({{site.baseurl}}/docs/idporten/oidc/oidc_func_apitesting) 

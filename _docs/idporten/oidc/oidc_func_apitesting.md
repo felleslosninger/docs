@@ -1,6 +1,6 @@
 ---
-title: Automatisk test av ID-porten
-description: Automatisk test av ID-porten
+title: Automatisert testing med ID-porten
+description: Automatisert testing med ID-porten
 
 toc: false
 sidebar: oidc
@@ -10,34 +10,43 @@ redirect_from: /oidc_func_apitesting
 ---
 
 
+ID-porten i testmiljøer tilbyr "headless login"/automatisk innlogging der tokens kan utstedes uten brukerinteraksjon til syntetiske testbrukere.  Denne funksjonaliteten skal kun brukes til å forenkle testing av API'er beskyttet av access_token fra ID-porten.
 
-## Automatisert testing av API'er beskyttet med access_token fra ID-porten
+Dette er "fullverdige" tokens som da kan introspectes, refreshes eller revokeres.
 
-ID-porten i testmiljøer tilbyr "headless login" der tokens kan utstedes uten brukerinteraksjon til syntetiske testbrukere.  Denne funksjonaliteten skal kun brukes til å forenkle testing av API'er beskyttet av access_token fra ID-porten.
+Flyt:
+
+<div class="mermaid">
+sequenceDiagram
+  Klient ->> ID-porten: HTTP GET autentiseringsforespørsel (/authorize)
+  note over ID-porten: Automatisk autentisering basert på login_hint og implisitt samtykke til scopes
+  ID-porten ->> Klient: HTTP response med location header med autorisasjonscode
+  Klient ->> ID-porten: HTTP token-forespørsel (/token)
+  ID-porten ->> Klient: id_token + access_token (evt. refresh_token)
+  Klient ->> API: bruke API med access_token
+  API ->> ID-porten: validere token
+  ID-porten ->> API: token informasjon
+  API->>Klient: Resultat av API-operasjon
+</div>
+
+
+## 1: Modifisert /authorize-request
 
 I denne forenklede flyten kan en syntetisk testbruker logges inn automatisk ved å sende inn et `login_hint` og liste over `scope` samt øvrige vanlige parametre i en [authorization request]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_authorize) til ID-porten.
 
  Parameter | Beskrivelse | Eksempel
  -|-|-|
  `login_hint` | Angir hvilken syntetisk personidentifikator som skal brukes samt sikkerhetsnivå som ønskes | `login_hint=testid:12345678901_idporten-loa-high`
- `scope`      | Angir hvilke scope som skal implisitt samtykkes til | `scope=openid profile mitt:api_scope`
+ `scope`      | Angir hvilke scope som skal automatisk samtykkes til | `scope=openid profile mitt:api_scope`
 
 `id_token` som utstedes vil ha `amr=TestID`.
 
+## 2: Håndtering av /authorize-respons
+
 Klienten leser authorization response fra location header og plukker ut code (og verifiserer state).  Klienten kaller deretter [token-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token) på vanlig måte.
 
-<div class="mermaid">
-sequenceDiagram
-  Klient ->> OpenID Provider: HTTP GET autentiseringsforespørsel (/authorize)
-  note over OpenID Provider: Automatisk autentisering basert på login_hint og implisitt samtykke til scopes
-  OpenID Provider ->> Klient: HTTP response med location header med autorisasjonscode
-  Klient ->> OpenID Provider: HTTP token-forespørsel (/token)
-  OpenID Provider ->> Klient: id_token + access_token (evt. refresh_token)
-  Klient ->> API: bruke API med access_token
-  API ->> OpenID Provider: validere token
-  OpenID Provider ->> API: token informasjon
-  API->>Klient: Resultat av API-operasjon
-</div>
+
+## Eksempel
 
 Under er et eksempel med bruk av Curl.  Det kuttes litt i output for å tydeliggjøre relevant informasjon.
 
