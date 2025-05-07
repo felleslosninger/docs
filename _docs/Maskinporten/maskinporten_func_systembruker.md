@@ -120,9 +120,8 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 
 
-## OppsettJ
+## Oppsett
 
-Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
+Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen.
 
-På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert opprettelse av slike gjennom Altinn direkte.
-
+Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.  Dette er dokumentert nærmere på [Autorisasjon sin dokumentasjon av systembruker](https://docs.altinn.studio/nb/authentication/getting-started/systembruker/).
