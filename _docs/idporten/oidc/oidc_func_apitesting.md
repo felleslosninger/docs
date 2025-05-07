@@ -39,11 +39,11 @@ I denne forenklede flyten kan en syntetisk testbruker logges inn automatisk ved 
  `login_hint` | Angir hvilken syntetisk personidentifikator som skal brukes samt sikkerhetsnivå som ønskes | `login_hint=testid:12345678901_idporten-loa-high`
  `scope`      | Angir hvilke scope som skal automatisk samtykkes til | `scope=openid profile mitt:api_scope`
 
-`id_token` som utstedes vil ha `amr=TestID`.
-
 ## 2: Håndtering av /authorize-respons
 
 Klienten leser authorization response fra location header og plukker ut code (og verifiserer state).  Klienten kaller deretter [token-endepunktet]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_token) på vanlig måte.
+
+`id_token` som utstedes vil ha `amr=TestID`.
 
 
 ## Eksempel
