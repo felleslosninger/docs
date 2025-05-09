@@ -255,7 +255,11 @@ Access_tokenet (tilgangstoken) gir klienten [tilgang til APIer hos tredjepart]({
 
 Levetiden på aksess_tokenet er som oftest relativt kort (typisk 120 sekunder). Dersom tokenet er utløpt, kan klienten forespørre nytt acess_token ved å bruke refresh_tokenet. Det gjennomføres da en klient-autentisering, for å sikre at tokens ikke blir utlevert til feil part.
 
-Levetider kan også tilpasses per klient. Men merk at dette kan overstyres alt etter [hvilke oauth2 scopes]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope) som er i tokenet. Merk til slutt at levetidene på autorisasjon og tilhørende access/refresh_token har ingen sammenheng med Single-Signon(SSO)-sesjonen i ID-porten.
+Levetider kan også tilpasses per klient. Men merk at dette kan overstyres av API-tilbyder alt etter [hvilke oauth2 scopes]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_scope) som er i tokenet. 
+
+Det er viktig å være klar over at access_token+refresh_token er **uavhengig** av innlogginga og tilhørende SSO-sesjon i ID-porten.  Selv om brukeren gjennomfører en utlogging, eller sso-sesjonen timer ut, så vil normalt autorisasjonen med tilhørende access_token og refresh_token være gyldige fram til deres levetider utløper.   
+
+Merk tilslutt at en enkelt bruker bare kan ha en autorisasjon mot samme klient i gangen.  Dersom klienten har en gyldig autorisasjon med gitt scopes, og så utfører en ny autorisasjon med andre scopes, så vil nye access_token bare innehold scopene fra den nyeste autorisasjonen.  ID-porten "husker" altså ikke samtykkede scopes over flere autorisasjoner. 
 
 [Klikk her for full dokumentasjon av access_token-formatet til ID-porten]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).
 
