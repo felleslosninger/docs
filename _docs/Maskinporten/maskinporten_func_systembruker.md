@@ -63,7 +63,7 @@ sequenceDiagram
     Fagsystem->>+API: API-kall m/systembrukertoken
     note over API: validerer scope, konstruerer PDP-spørring
     API->>Altinn Autorisasjon: PDP-kall med systembruker, part, ressurs, action
-    Altinn Autorisasjon-->API: Ja/nei
+    Altinn Autorisasjon-->>API: Ja/nei
     API->>-Fagsystem:API Result 
 </div>
 
