@@ -105,6 +105,19 @@ Merk 2: grantet må også alltid forespørre et eller flere Oauth2 scopes.
 
 Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasjonnummer, og er knyttet mot leverandørens fagsystem gjennom det autentiserte fagsystemet (client_id):
 
+Datamodellen for respons ser slik ut:
+
+| claim | beskrivelse |
+| ----- |  ----------- |
+| `type`|  Alltid `urn:altinn:systemuser` |
+| `systemuser_org` | Organisasjonsidentifikator i ISO6523-format på eier av systembrukeren (leverandørens kunde) |
+| `systemuser_id` | Identifikatoren til systembrukeren |
+| `system_id` | Identifikatoren til leverandøren sitt system i systemregisteret |
+
+Merk at `externalRef` ikke er returnert, det brukes kun for å identifisere rett systembruker i de tilfeller der det er flere kandidater.
+Leverandøren sitt organisasjonsnummer finner du i claimet `consumer` som vanlig.
+
+*Forenklet eksempel på access token:*
 ```
 {
   "iss":         "https://maskinporten.no",
@@ -128,9 +141,8 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 
 
-## OppsettJ
+## Oppsett
 
 Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
 
-På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert opprettelse av slike gjennom Altinn direkte.
-
+Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.  Dette er dokumentert nærmere på [Autorisasjon sin dokumentasjon av systembruker for systemleverandører](https://docs.altinn.studio/nb/authentication/guides/systemvendor/).
