@@ -15,11 +15,11 @@ eForvaltningsforskriftens §32 setter krav til at innbyggerens kontaktinformasjo
 
 Dette betyr at brudd på § 32 andre ledd vil utgjøre saksbehandlingsfeil i den sak varselet ble sendt. Feilen vil medføre risiko for at innbyggeren lider rettstap, for eksempel ved at varsel om enkeltvedtak blir sendt til en e-postadresse som ikke lenger er i bruk.
 
-Det er den enkelte virksomhet sitt ansvar å overholde §32, og **Digitaliseringsdirektoratet sin klare anbefaling er at virksomhetene sjekker datofeltene som følger med kontaktinformasjonen. ** Så lenge ett av datofeltene sistOppdatert eller sistVerifisert er nyere enn 18 mnd, kan kontaktinformasjonen brukes til varsling etter §8. Merk at datoene kan være forskjellig mellom mobil og epost, slik at for eksempel epost kan være utløpt, mens mobil fremdeles er aktivt. Varsling kan da ikke sendes til epost. 
+Det er den enkelte virksomhet sitt ansvar å overholde §32, og **Digitaliseringsdirektoratet sin klare anbefaling er at virksomhetene sjekker datofeltene som følger med kontaktinformasjonen. ** Så lenge ett av datofeltene EMAIL_VERIFIED_DATE eller MOBILE_VERIFIED_DATE er nyere enn 18 mnd, kan kontaktinformasjonen brukes til varsling etter §8. Merk at datoene kan være forskjellig mellom mobil og epost, slik at for eksempel epost kan være utløpt, mens mobil fremdeles er aktivt. Varsling kan da ikke sendes til epost. Et varsel sendes automatisk ut to måneder før en bruker settes til statusen "KAN_IKKE_VARSLES", dersom mobilnummer eller e-postadresse fortsatt ikke er bekreftet.
 Vi tror det beste er at fagsystemet/integrasjonen gjør denne kontrollen automatisk for saksbehandler, slik at man sikrer at vedtak ikke blir sendt feil.
 
 Samtidig kan kontaktinformasjon som er utløpt, fremdeles brukes til å sende servicemeldinger både av alvorlig og mindre alvorlig karakter, som for eksempel om snøbrøyting i gata, eller krav om koking av vann pga akutt forurensing. Digitaliseringsdirektoratet kan derfor ikke la være å utlevere utløpt kontaktinformasjon gjennom Oppslagstjenesten.
 
 ## Informasjon "Varslingsstatus"
 
-VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert..
+VarslingsStatus angir om Person kan varsles ihht eForvaltningsforskriften §32. Dette informasjonsbehovet trigger filtrering i Oppslagstjenesten, dvs. Kontaktinformasjon, Sertifikat og SikkerDigitalPost på personer med utgått kontaktinformasjon vil ikke bli utlevert.
