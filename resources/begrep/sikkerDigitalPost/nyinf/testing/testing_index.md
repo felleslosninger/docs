@@ -26,7 +26,6 @@ PS. TestID krever ikke passord eller engangskoder. Man skriver inn personidentif
 - E-boks: [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat)
 - Digipost: [https://difitest.digipost.no](https://difitest.digipost.no)
 
-NB! For å opprette postkasse direkte i testmiljøet til e-Boks, krever det at testbrukeren har BankID. Ta kontakt med servicedesk@digdir.no for å få ordnet det på din testbruker.
  
 ## Bytte postkasse for en testbruker:
 Det er fullt mulig for brukere ha å flere digitale postkasser for private tjenester, men en kan bare ha en postkasse for brev fra det offentlige. Det offentlige har inngått avtale med e-Boks og Digipost om å levere digital postkasse til innbyggere for brev fra det offentlige. Innbygger kan fritt velge mellom disse, og kan når som helst bytte mellom postkasseleverandørene. For å kunne bytte må bruker ha opprettet konto/postkasse hos begge leverandørene på forhånd. Bytte av offentlig postkasse i testmiljøet gjøres igjennom brukerprofilen i kontakt og reservasjonsregisteret.
