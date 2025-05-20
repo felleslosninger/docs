@@ -74,4 +74,17 @@ personIdentifier,notifiable,email,emailValidated,mobile,mobileValidated,preferre
 23884229367,true,test@test.no,false,+4799999999,false,nb,false,false
 ```
 
+## Rutine for SMS utsending i testmiljøet
+
+### Bruk av fiktive mobilnummer
+
+Ein må bruke følgjande fiktive nummerserie: 68050000 - 68059999. Nummer frå denne serien sikrar ein at ingen reelle personar mottek SMS-ar under testing. 
+
+### Bruk av reelle mobilnummer
+
+For å unngå uønska SMS-ar frå testmiljøet, er det oppretta ei kviteliste. Nummer som skal motta test-SMS må meldast inn til servicedesk@digdir.no for å bli lagt til.
+
 <br>
+{% include note.html content=" Om ein brukar SMS til å logge seg inn på testbrukarar vil ikkje dette vere mogleg med mindre ein blir lagt til i kvitelista." %}
+<br>
+
