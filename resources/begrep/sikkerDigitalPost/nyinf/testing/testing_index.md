@@ -36,5 +36,3 @@ Merk: Dersom det står: "Velg på norge.no" så har du ikke husket å opprette e
 
 ## Sjekke post
 For å sjekke tilsendt post, logg inn i postkassen på [https://difitest.digipost.no](https://difitest.digipost.no) eller [https://demo2-www.e-boks.no/privat?logontype=idporten](https://demo2-www.e-boks.no/privat?logontype=idporten)
-
-NB! Innlogging på e-Boks krever BankID. Ta kontakt med servicedesk@digdir.no for å få ordnet det på din testbruker.
