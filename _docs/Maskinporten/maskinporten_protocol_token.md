@@ -106,6 +106,12 @@ The token is a JWT with the following structure:
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
 
+If the token is issued from [Skyporten](maskinporten_skyporten.html), the following claim is included:
+
+| claim | value | example |
+| --- | --- | --- |
+| sub | Token subject minted for use towards SaaS-services in Azure. Sub is formatted as '<org-identifier>;<scope>' and conditional access control in Azure must be tailord accordingly. | |
+
 If the token was issued to a supplier acting on behalf of another organization, the token will also include the following two claims:
 
 | claim | value | example |
@@ -126,6 +132,10 @@ If the token is enduser-restricted, the following claim will also be included:
 | claim | value | example |
 | --- | --- | --- |
 | pid   |  The enduser subject for this token. Some Resource Servers require enduser-restricted tokens. a See [enduser-restriction]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_pid_restricted_tokens) for details. |  `01010199999`|
+
+
+If the token 
+
 
 
 ###  Identifying organizations
