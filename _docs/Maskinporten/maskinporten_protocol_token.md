@@ -110,7 +110,7 @@ If the token is issued from [Skyporten](maskinporten_skyporten.html), the follow
 
 | claim | value | example |
 | --- | --- | --- |
-| sub | Token subject minted for use towards SaaS-services in Azure. Sub is formatted as '<org-identifier>;<scope>' and conditional access control in Azure must be tailord accordingly. | |
+| sub | Token subject minted for use towards SaaS-services in Azure. Sub is formatted as 'org-identifier;scope' and conditional access control in Azure must be tailord accordingly. | |
 
 If the token was issued to a supplier acting on behalf of another organization, the token will also include the following two claims:
 
