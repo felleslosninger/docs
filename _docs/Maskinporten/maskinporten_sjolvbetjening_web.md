@@ -218,7 +218,6 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 4. Sjekk at JWK blir lagret i riktig format på klienten:
 
 ```
-[
     {
       "kty": "RSA",
       "e": "AQAB",
@@ -227,7 +226,7 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
       "alg": "RS256",
       "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
     }
-  ]
+  
 ```
 
 ### Registrere sertifikat på klient
