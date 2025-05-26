@@ -259,7 +259,7 @@ Levetider kan også tilpasses per klient. Men merk at dette kan overstyres av AP
 
 Det er viktig å være klar over at access_token+refresh_token er **uavhengig** av innlogginga og tilhørende SSO-sesjon i ID-porten.  Selv om brukeren gjennomfører en utlogging, eller sso-sesjonen timer ut, så vil normalt autorisasjonen med tilhørende access_token og refresh_token være gyldige fram til deres levetider utløper.   
 
-Merk tilslutt at en enkelt bruker bare kan ha en autorisasjon mot samme klient i gangen.  Dersom klienten har en gyldig autorisasjon med gitt scopes, og så utfører en ny autorisasjon med andre scopes, så vil nye access_token bare innehold scopene fra den nyeste autorisasjonen.  ID-porten "husker" altså ikke samtykkede scopes over flere autorisasjoner. 
+Merk til slutt at en enkelt bruker bare kan ha en autorisasjon mot samme klient om gangen. Dersom klienten har en gyldig autorisasjon med gitte scopes, og så utfører en ny autorisasjon med andre scopes, så vil ny access_token kun inneholde scopene fra den nyeste autorisasjonen. ID-porten "husker" altså ikke samtykkede scopes over flere autorisasjoner. 
 
 [Klikk her for full dokumentasjon av access_token-formatet til ID-porten]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).
 
