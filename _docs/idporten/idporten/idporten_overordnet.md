@@ -84,6 +84,9 @@ Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og 
 
 ID-porten har støtte for at [europeiske brukere]({{site.baseurl}}/docs/idporten/oidc/oidc_func_eidas) kan logge seg på norske tjenester.  eIDAS-forordningen i EU åpner for at autentisering skal kunne skje på tvers av landegrenser
 
+ID-porten har også støtte for at [utenlandske brukere]({{site.baseurl}}/docs/idporten/oidc/oidc_func_emaillogin) kan logge seg på norske tjenester med en selvegistrert epost-adresse.
+
+
 ## Brukerstyrt datadeling
 
 ID-porten kan også [styre tilgang til APIer hos 3dje.part]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2)
