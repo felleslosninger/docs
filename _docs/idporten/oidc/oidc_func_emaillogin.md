@@ -1,6 +1,6 @@
 ---
-title: Email login
-description: Email login-støtte over OIDC
+title: epost-innlogging
+description: epost-innlogging-støtte over OIDC
 summary: "OIDC-integrerte tjenester i ID-porten kan få pålogging fra brukere med selvregistrert e-post."
 
 sidebar: oidc
@@ -8,31 +8,31 @@ product: ID-porten
 redirect_from: /oidc_func_emaillogin
 ---
 
-## Om Email login
+## Om epost-innlogging
 
 //todo
 
-## Hvilken informasjon får jeg om Email login-brukere ?
+## Hvilken informasjon får jeg om epost-innloggingsbrukere ?
 
-Ved en Email login-pålogging følger det med følgende kjerne-attributter:
+Ved en epost-innlogging følger det med følgende kjerne-attributter:
 
-* Email login-identifikator
+* epost-innlogging-identifikator
 
-Det er ikke gitt føringer om hvilken identifikator som skal brukes som Email login-indentifikator. Hvert bruker bestemmer selv.   
+Det er ikke gitt føringer om hvilken identifikator som skal brukes som epost-innloggingsindentifikator så lenge det er en gyldig epost. Hver bruker bestemmer selv hvilken epost-adresse de bruker.   
 //todo
 
 
 ## Kan jeg få norsk fødsels- eller D-nummer ?
 
-Nei, ID-porten vil ikke forsøke å finne norsk fødsels- eller D-nummer på Email login-brukere. Email login-brukere er selvregistrerte brukere som ikke nødvendigvis har noen tilknytning til Folkeregisteret.
+Nei, ID-porten vil ikke forsøke å finne norsk fødsels- eller D-nummer på epost-innloggingsbrukere. epost-innloggingsbrukere er selvregistrerte brukere som ikke nødvendigvis har noen tilknytning til Folkeregisteret.
 
-## Hvordan aktivere Email login-pålogging?
+## Hvordan aktivere epost-innlogging-pålogging?
 
-En tjeneste aktiverer Email login-knappen i ID-porten sitt påloggingsvindu ved å inkludere verdien `selfregistered-email` eller `selfregistered-email idporten-loa-substantial` i `acr`-attributtet i påloggingsforespørselen.  
+En tjeneste aktiverer epost-innloggings-knappen i ID-porten sitt påloggingsvindu ved å inkludere verdien `selfregistered-email` eller `selfregistered-email idporten-loa-substantial` i `acr`-attributtet i påloggingsforespørselen.  
 
-Dersom kun Email login-verdien er oppgitt i acr, vil ID-porten hoppe direkte til email login. På denne måten kan tjenesten lage egen login-knapp for Email login-brukere om dette skulle være ønskelig.
+Dersom kun epost-innloggingsverdien er oppgitt i acr, vil ID-porten hoppe direkte til epost-innlogging. På denne måten kan tjenesten lage egen login-knapp for epost-innlogging-brukere om dette skulle være ønskelig.
 
-Per idag er ikke Email login-pålogging aktivert som standard, slik at dette må aktiveres per tjeneste.
+Per idag er ikke epost-innlogging aktivert som standard, slik at dette må aktiveres per tjeneste.
 
 
 #### Eksempel på request:
@@ -52,7 +52,7 @@ code_challenge=TE9ih9je36hXuvSyr3hRt8srV6ttER4dyT9e9tWY8zQ
 ```
 
 
-Ved en Email login-pålogging vil utleverte tokens være litt ulike ordinære tokens:
+Ved en epost-innlogging-pålogging vil utleverte tokens være litt ulike ordinære tokens:
 
 - `acr` blir satt til `selfregistered-email`
 - `amr` blir satt til `Selfregistered-email`
