@@ -12,8 +12,11 @@ API nøkkelutstedelse er ikke klart ennå, så nøkler må utstedes manuelt ved 
 
 ## API Spec
 [einnsyn-api-spec](https://github.com/felleslosninger/einnsyn-api-spec)
+
 Klientbibliotek:
+
 [Java](https://github.com/felleslosninger/einnsyn-sdk-java)
+
 [Typescript](https://github.com/felleslosninger/einnsyn-sdk-typescript)
 
 ## API Key utstedelse
