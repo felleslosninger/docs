@@ -75,7 +75,9 @@ For døme på ei ekte produksjons-tillistliste kan du sjå på [den norske tilli
 
 Det er myndigheiter i medlemslanda som har tilgang til, og ansvaret for, å publisere desse TSPane på EU si tillitsliste. 
 
-Dersom ei tillitsteneste med tilhøyrande signeringsertifikat ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist. Det er krav til gjensidig autentisering, slik at ingen kan "hoppe over" denne valideringa. 
+Dersom ei tillitsteneste med tilhøyrande signeringsertifikat ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist. Det er krav til gjensidig autentisering, slik at ingen kan "hoppe over" denne valideringa.
+
+//todo: forklare WUA, og skilnad i trust mellom signert vp_token og wua
 
 ### Praksis
 
