@@ -24,8 +24,9 @@ subgraph AK [Tillitsliste]
   TLPID@{ shape: docs, label: "PID-utstedere"}
   TLEAA@{ shape: docs, label: "Utstedere (QEAA, PubEAA, EAA)"}
   
-  TLW@{ shape: docs, label: "Lommebok-operatører"}
   TLRP@{ shape: docs, label: "Tilgangssertifikat-leverandørar"}
+  TLW@{ shape: docs, label: "Lommebok-operatører"}
+
 end
 
   DRPR[(Digdir brukerstad-register)]
