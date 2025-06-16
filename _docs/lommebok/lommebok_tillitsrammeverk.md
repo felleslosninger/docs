@@ -22,9 +22,7 @@ graph
 
 subgraph AK [Tillitsliste]
   TLPID@{ shape: docs, label: "PID-utstedere"}
-  TLQEAA@{ shape: docs, label: "Kvalifiserte utstedere"}
-  TLPUBEAA@{ shape: docs, label: "Offentlige utstedere"}
-  TLIEAA@{ shape: docs, label: "Ikkje-kvalifiserte utstedere"}
+  TLEAA@{ shape: docs, label: "Utstedere (QEAA, PubEAA, EAA)"}
   
   TLW@{ shape: docs, label: "Lommebok-operatører"}
   TLRP@{ shape: docs, label: "Tilgangssertifikat-leverandørar"}
