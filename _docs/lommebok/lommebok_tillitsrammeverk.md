@@ -14,6 +14,7 @@ I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde k
 - Lommebok-operatørar
 - Kvalifiserte utstedarar (QEAA)
 - Offentlige utstedarar (Pub-EAA)
+- Ordinære (ikkje-kvalifiserte) utstedarar (EAA)
 - Brukerstadsertifikat-utstedarar
 
 
@@ -37,7 +38,7 @@ TLRP --> DRPR
 TLRP --> RPR
 </div></td></tr>
 <tr><td>
- <em>Tillitsrammeverket i sandskassen</em>
+ <em>Tillitsrammeverket i sandkassen</em>
  </td>
 </tr>
 </table>
