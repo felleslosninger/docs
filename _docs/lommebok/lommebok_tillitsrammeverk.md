@@ -27,7 +27,7 @@ subgraph AK [Tillitsliste]
   TLIEAA@{ shape: docs, label: "Ikkje-kvalifiserte utstedere"}
   
   TLW@{ shape: docs, label: "Lommebok-operatører"}
-  TLRP@{ shape: docs, label: "Brukerstad-registrarer"}
+  TLRP@{ shape: docs, label: "Tilgangssertifikat-leverandørar"}
 end
 
   DRPR[(Digdir brukerstad-register)]
