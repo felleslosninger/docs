@@ -21,10 +21,9 @@ I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde k
 graph
 
 subgraph AK [Tillitsliste]
-  C@{ shape: docs, label: "Multiple Documents"}
-  TLI[(Register over utstedere)]
-  TLW[(Register over lommbøker)]
-  TLRP[(Register over brukerstads-registrarer)]
+  TLI@{ shape: docs, label: "Utstedere"}
+  TLW@{ shape: docs, label: "Lommebok-operatører"}
+  TLRP@{ shape: docs, label: "Brukerstad-registrarer"}
 end
 
   DRPR[(Digdir brukerstad-register)]
