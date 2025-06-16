@@ -8,12 +8,13 @@ redirect_from: /lommebok_tillitsrammeverk
 ---
 
 
-I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde kva aktørar som er godkjent som:
-- PID-utstedere
+I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde kva hovudaktørar som er godkjent som:
+
+- PID-utstedarar
 - Lommebok-operatørar
-- Kvalifiserte utstedere (QEAA)
-- Offentlige utstedere (Pub-EAA)
-- Brukerstadsertifikat-utstedere
+- Kvalifiserte utstedarar (QEAA)
+- Offentlige utstedarar (Pub-EAA)
+- Brukerstadsertifikat-utstedarar
 
 
 <table><tr><td><div class="mermaid">
@@ -46,6 +47,11 @@ Det er verd å merke seg at sjølve brukarstadene (relying parties) ikkje havnar
 
 I sandkassen vil Digdir tilby ein slik brukarstadsertifikat-utsteder. 
 
+ARFen skildrar dette økosystemet slik:
+
+![Økosystem ihht. arkitektur-rammeverket (ARF)](lommebok_arf_ecosystem.png)
+
+(Henta frå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).)
 
 
 
@@ -53,11 +59,17 @@ I sandkassen vil Digdir tilby ein slik brukarstadsertifikat-utsteder.
 
 Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på PKI, dvs. X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  
 
+Økosystemet skildrar ARFen slik:
+
+![Økosystem ihht. arkitektur-rammeverket (ARF)](lommebok_arf_ecosystem.png)
+
+(Henta frå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).)
+
+
 Hovedaktørane må ha sine signeringssertifikat publisert på ei tillitsliste, 
 
 ![Tillitsmodell ihht. arkitektur-rammeverket (ARF)](lommebok_arf_trustmodel.png)
 
-sjå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).
 
 Tillitslista er basert på [ETSI-standarden 319 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf) og er i praksis ei XML-fil som lister opp aktørane og deira signeringssertifikat:
 
@@ -65,9 +77,9 @@ Tillitslista er basert på [ETSI-standarden 319 612](https://www.etsi.org/delive
   * Tillitstjeneste A.1 (TSPService)
     * Status (ServiceStatus)
     * Teneste-type (ServiceTypeIdentifier)
-    * Meir info (AdditionalServiceInformation.URI)
+    * Ytterlegare avgrensningar (AdditionalServiceInformation.URI)
   * Tillitsliste A.2 
-  *etc...
+  * etc...
 
 For døme på ei ekte produksjons-tillistliste kan du sjå på [den norske tillistlista for tilbydarar av kvalifiserte tillitstenester](https://nkom.no/internett/elektronisk-id-og-tillitstjenester/tillitsliste-trusted-list#norges_tillitsliste).
 
