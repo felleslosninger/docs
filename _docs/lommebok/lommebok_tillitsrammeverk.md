@@ -21,7 +21,11 @@ I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde k
 graph
 
 subgraph AK [Tillitsliste]
-  TLI@{ shape: docs, label: "Utstedere"}
+  TLPID@{ shape: docs, label: "PID-utstedere"}
+  TLQEAA@{ shape: docs, label: "Kvalifiserte utstedere"}
+  TLPUBEAA@{ shape: docs, label: "Offentlige utstedere"}
+  TLIEAA@{ shape: docs, label: "Ikkje-kvalifiserte utstedere"}
+  
   TLW@{ shape: docs, label: "Lommebok-operatører"}
   TLRP@{ shape: docs, label: "Brukerstad-registrarer"}
 end
