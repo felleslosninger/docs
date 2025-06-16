@@ -23,15 +23,16 @@ Standarden opnar for at Credential Issuer anten kan vere ein sjølvstendig kompo
 
 ## I praktisk bruk
 
-Lommeboka må på ein eller annan måte få kunnskap om KVAR den kan få tak i eit bevis av ein gitt type. Dette kan i hovsak skje på to måtar:
+Lommeboka må på ein eller annan måte få kunnskap om KVAR den kan få tak i eit bevis av ein gitt type. Dette kan i hovsak skje på tre måtar:
 
 1. For "populære" bevis, som t.d. førarkort eller digital pass, so forventer me at lommebøkene vil kome med **førehandskonfigurerte lenker**, slik at brukaren t.d. klikkar på "Hent førarkortet mitt" inni appen for å starte protokoll-flyten. 
-2. For andre bevis so må brukaren logge inn til ei nett-teneste tilhøyrande bevis-utstedar.   Lommeboka vil bli trigga til å starte protokoll-flyten anten ved at brukaren scanner ein QR-kode, eller ved direkte-kommunisjon vha. [Digital Credentials](https://wicg.github.io/digital-credentials/) browser-APIet, eventuelt via nærleiksdeteksjon via NFC eller bluetooth-LE. 
+2. For andre bevis so må brukaren logge inn til ei nett-teneste hjå ein godkjent utstedar.   Lommeboka vil bli trigga til å starte protokoll-flyten anten ved at brukaren scanner ein QR-kode, eller ved direkte-kommunisjon vha. [Digital Credentials](https://wicg.github.io/digital-credentials/) browser-APIet, eventuelt via nærleiksdeteksjon via NFC eller bluetooth-LE.  Utstedaren hentar bevis-data frå ei datakjelde og orkestrer protokoll-flyten mot lommeboka.
+3. Brukaren loggar inn hjå ei autorativ kjelde og hentar ei bevis. Døme: hente førarkortet direkte frå "Mine Sider" hjå Statens Vegvesen.  Teknisk er dette alternativet identisk med #2, men her er det datakjelda, dvs. Statens Vegvesen, som orkestrerer flyten mot utstedar og lommebok.
 
 
-## Pre-authorized flow
+## Flyt #2: Pre-authorized flow
 
-Me trur at alternativ #2 ovanfor vil verte den mest vanlege måten å utstede bevisa på.  Denne flyten skiljer seg sopass mykje frå vanleg OIDC at den har fått eit eige namn: **pre-authorized code flow**.   Skilnadane er følgjande: 
+Me trur at alternativ #2 ovanfor vil verte den mest vanlege måten å utstede bevisa på i starten.  Denne flyten skiljer seg sopass mykje frå vanleg OIDC at den har fått eit eige namn: **pre-authorized code flow**.   Skilnadane er følgjande: 
 
 1. Autentisering med eID skjer normalt før OIDC-flyten startar
 2. OIDC-flyten startar ved at utstedaren lagar eit sokalla *Credential Offer* (bevistilbod)
