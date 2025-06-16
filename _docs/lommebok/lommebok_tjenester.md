@@ -26,4 +26,4 @@ Digdir jobbar med å laga ei web-basert innsynsteneste som gjere det mogeleg å 
 
 ## Testing
 
-OpenID Foundation tilgjengeleggjer conformance test suites som kan nyttast i din eigen utvikling av tenester. 
+OpenID Foundation tilgjengeleggjer conformance test suites som kan nyttast i din eigen utvikling av tenester, sjå: [How to Run Conformance Tests for OpenID for Verifiable Presentations](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-presentations/).
