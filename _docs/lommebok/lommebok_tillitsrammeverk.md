@@ -42,7 +42,7 @@ TLRP --> RPR
 </table>
 
 
-Det er verd å merke seg at sjølve brukarstadene (relying parties) ikkje havnar på den sentrale tillitslista, men at det istaden er ein to-nivå struktur: den sentrale tillistlista peikar berre på ein PKI forvalta av godkjente **brukerstadsertifikatutstedere**. Det kan gjerne vere fleire slike sertifikat-utstedere i eit land. Eit brukarstad må ta kontakt med ein **Registrar** for å skaffe eit brukarstadssertifikat (Relying Party Access Certificate). Normalt vil Registrar og sertifikat-utsteder vere same organisasjon. 
+Det er verd å merke seg at sjølve brukarstadene (relying parties) ikkje havnar på den sentrale tillitslista, men at det istaden er ein to-nivå struktur: den sentrale tillitslista peikar berre på PKIer forvalta av godkjente **tilgangssertifikat-utstedere**. Det kan gjerne vere fleire slike sertifikat-utstedere i eit land. Eit brukarstad må ta kontakt med ein **Registrar** for å skaffe eit brukerstad-sertifikat (også kjent som "tilgangssertifikat": Relying Party Access Certificate). Normalt vil Registrar og sertifikat-utsteder vere same organisasjon. 
 
 I sandkassen vil Digdir tilby ein slik brukarstadsertifikat-utsteder. 
 
@@ -53,9 +53,21 @@ I sandkassen vil Digdir tilby ein slik brukarstadsertifikat-utsteder.
 
 Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på PKI, dvs. X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  
 
-Hovedaktørane må ha sine signeringssertifikat publisert på ei tillitsliste, sjå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).
+Hovedaktørane må ha sine signeringssertifikat publisert på ei tillitsliste, 
 
-Tillitslista er basert på [ETSI-standarden 102 231](https://www.etsi.org/deliver/etsi_ts/102200_102299/102231/03.01.02_60/ts_102231v030102p.pdf) og er i praksis ei XML-fil som lister opp aktørane og deira signeringssertifikat. 
+![Tillitsmodell ihht. arkitektur-rammeverket (ARF)](lommebok_arf_trustmodel.png)
+
+sjå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).
+
+Tillitslista er basert på [ETSI-standarden 319 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf) og er i praksis ei XML-fil som lister opp aktørane og deira signeringssertifikat:
+
+* Tillitstjeneste-leverandør A (TrustServiceProvider)
+  * Tillitstjeneste A.1 (TSPService)
+    * Status (ServiceStatus)
+    * Teneste-type (ServiceTypeIdentifier)
+    * Meir info (AdditionalServiceInformation.URI)
+  * Tillitsliste A.2 
+  *etc...
 
 For døme på ei ekte produksjons-tillistliste kan du sjå på [den norske tillistlista for tilbydarar av kvalifiserte tillitstenester](https://nkom.no/internett/elektronisk-id-og-tillitstjenester/tillitsliste-trusted-list#norges_tillitsliste).
 
