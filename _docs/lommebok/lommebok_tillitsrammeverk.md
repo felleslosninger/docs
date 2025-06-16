@@ -21,6 +21,7 @@ I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde k
 graph
 
 subgraph AK [Tillitsliste]
+  C@{ shape: docs, label: "Multiple Documents"}
   TLI[(Register over utstedere)]
   TLW[(Register over lommbøker)]
   TLRP[(Register over brukerstads-registrarer)]
