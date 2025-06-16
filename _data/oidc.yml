@@ -99,6 +99,9 @@ folders:
       - title: eIDAS
         jurl: /docs/idporten/oidc/oidc_func_eidas.html
 
+      - title: email login
+        jurl: /docs/idporten/oidc/oidc_func_emaillogin.html
+
       - title: SAML
         jurl: /docs/idporten/oidc/oidc_func_saml.html
 

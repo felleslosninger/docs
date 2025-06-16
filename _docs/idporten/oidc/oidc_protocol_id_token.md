@@ -89,30 +89,33 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 
 Authentication method can have the following values:
 
-|`amr` value| Description|
-|-|-|
-|`Minid-PIN` | MinID using PIN-codes from letter (deprecated)|
-|`Minid-OTC` | MinID using one-time-code received via SMS|
-|`Minid-APP` | MinID using notification in the MinID-app on android/iOS |
-|`Minid-TOTP` | MinID using timebased one-time passwords |
-|`Minid-WEBAUTHN` | MinID using security keys |
-|`BankID`    | BankID using code generator or app|
-|`BankID Mobil` | BankID on mobile |
-|`Buypass`      | Buypass |
-|`Commfides` | Commfides using smartcard |
-|`eIDAS`  | A European approved eID through the eIDAS network|
-|`TestID` |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
+| `amr` value            | Description|
+|------------------------|-|
+| `Minid-PIN`            | MinID using PIN-codes from letter (deprecated)|
+| `Minid-OTC`            | MinID using one-time-code received via SMS|
+| `Minid-APP`            | MinID using notification in the MinID-app on android/iOS |
+| `Minid-TOTP`           | MinID using timebased one-time passwords |
+| `Minid-WEBAUTHN`       | MinID using security keys |
+| `BankID`               | BankID using code generator or app|
+| `BankID Mobil`         | BankID on mobile |
+| `Buypass`              | Buypass |
+| `Commfides`            | Commfides using smartcard |
+| `eIDAS`                | A European approved eID through the eIDAS network|
+| `Selfregistered-email` | A European approved eID through the eIDAS network|
+| `TestID`               |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
 
 
 ## ACR values
 
 The security level of assurance can have the following values:
 
-|`amr` value| Description|
-|-|-|
-|`idporten-loa-low` | A "low" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). Login can be without multi-factor authentication. For example with only password  |
-|`idporten-loa-substantial` | A "substantial" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). Multi-factor login with an ID that has beed issued according to the 'substantial' demands. For example MinID App or MinID with one-time-code from SMS.  |
-|`idporten-loa-high` | A "high" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). Multi-factor login with an ID that has beed issued according to the 'high' demands. For example BankID, Buypass or Commfides. |
+| `acr` value               | Description                                                                                                                                                                                                                                                       |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `idporten-loa-low`        | A "low" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). Login can be without multi-factor authentication. For example with only password                                                                               |
+| `idporten-loa-substantial` | A "substantial" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). Multi-factor login with an ID that has beed issued according to the 'substantial' demands. For example MinID App or MinID with one-time-code from SMS. |
+| `idporten-loa-high`       | A "high" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). Multi-factor login with an ID that has beed issued according to the 'high' demands. For example BankID, Buypass or Commfides.                                 |
+| `eidas-loa-substantial`   | A "substantial" level of assurance according to the European eIDAS regulation. Multi-factor login with an eID that has been notified in the eIDAS network. For example BankID, Buypass or Commfides.                                                              |
+| `selfregistered-email`    | A self-registered email-user with no standardized level of assurance.                                                                                                                                                                                             |
 
 These values was changed i 2023 to comply with the updated Norwegian legal framework introduced in 2018, see [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992).
 
