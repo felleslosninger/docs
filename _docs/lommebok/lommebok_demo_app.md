@@ -7,7 +7,7 @@ product: lommebok
 redirect_from: /lommebok_demo_app
 ---
 
-Digdir sine demo-lommebøker er basert på EUs referanseimplementasjoner.  Disse kan til å utstede og verifisere bevis i sandkassen.
+Digdir sine demo-lommebøker er basert på EUs referanseimplementasjoner.  Disse kan brukes til å utstede og verifisere bevis i sandkassen.
 
 ## Nedlasting
 
