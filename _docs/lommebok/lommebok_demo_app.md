@@ -12,7 +12,7 @@ Digdir sine demo-lommebøker er basert på EUs referanseimplementasjoner.  Disse
 ## Nedlasting
 
 ### Android
-En demolommebok er tilgjengelig i Firebase App Distribution: [Installer](https://appdistribution.firebase.dev/i/c0ac0bc29d620452))
+En demolommebok er tilgjengelig i Firebase App Distribution: [Installer](https://appdistribution.firebase.dev/i/c0ac0bc29d620452)
 
 ### iOS
 En demolommebok er tilgjengelig i TestFlight: [Installer](https://testflight.apple.com/join/2FKCUj1J)
