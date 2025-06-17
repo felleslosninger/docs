@@ -11,7 +11,7 @@ Digdir sine demo-lommebøker er basert på EUs referanseimplementasjoner.  Form�
 
 ## Nedlasting
 
-Lommebøkene må p.t. lastes ned direkte gjennom test-platformer, og er ikke generelt tilgjeneglig på App Store eller Google Play. Bruke lenkene nedenfor:
+Lommebøkene må p.t. lastes ned direkte gjennom test-platformer, og er ikke generelt tilgjengelig på App Store eller Google Play. Bruke lenkene nedenfor:
 
 ### Android
 En demolommebok er tilgjengelig i Firebase App Distribution: [Installer](https://appdistribution.firebase.dev/i/c0ac0bc29d620452))
