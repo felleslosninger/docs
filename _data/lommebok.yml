@@ -36,6 +36,10 @@ folders:
       - title: Demo-brukarstad
         jurl: /docs/lommebok/lommebok_demo_brukarstad.html
 
+      - title: Demo-lommebok
+        jurl: /docs/lommebok/lommebok_demo_app.html
+
+
 ###########################
 
 related_resources_title: Andre nyttige lenker
