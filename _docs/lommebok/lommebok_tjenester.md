@@ -23,6 +23,8 @@ Digdir jobbar med å laga ei web-basert innsynsteneste som gjere det mogeleg å 
 * [ID-porten](https://demo-client.test.idporten.no/)  I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av demo-utstedaren vår. 
 * [EU-kommisjonen demo-brukerstad](https://verifier.eudiw.dev/home) Ein teknisk fokusert demo-brukastad frå EU-kommisjonen. 
 
+## Lommebøker
+* [Digdir demo lommebok](lommebok_demo_app)  Her kan du teste utstedelse og bruk av bevis i sandkassen.
 
 ## Testing
 
