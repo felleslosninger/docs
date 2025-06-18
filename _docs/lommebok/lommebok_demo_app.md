@@ -19,3 +19,8 @@ En demolommebok er tilgjengelig i Firebase App Distribution: [Installer](https:/
 ### iOS
 En demolommebok er tilgjengelig i TestFlight: [Installer](https://testflight.apple.com/join/2FKCUj1J)
 
+
+## Funksjonalitet
+
+Sjå [EU sin roadmap for referanseimplementasjonen](https://github.com/orgs/eu-digital-identity-wallet/projects/24/views/2) for å finne ut kva som kjem når.  Digdir-lommeboka ligg 2-4 veker bakom EU sine releaser.  Merk at sjølv om EU-lommeboka kjem med støtte for mykje ulik funksjonalitet, så er det ikkje sikkert at sandkassen tilbyr naudsynt støtte for at ein gitt funksjonalitet faktisk vil virke.
+
