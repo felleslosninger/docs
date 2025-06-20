@@ -154,7 +154,7 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 | orgno | For hver virksomhet, objekt med orgno representert ihht iso6523 standard.  |
 | resource | ressurs-id, skal matche id i etterspurt ressurs |
 | resource-name | For hver virksomhet, navnet på ressursen |
-| type | For hver virksomhet, angir organisasjonsform | 
+| type | For hver virksomhet, angir objekt-type, person/organization/Selfidentified | 
 | unit-type | For hver virksomhet, angir organisasjonstypen ihht https://www.brreg.no/bedrift/organisasjonsformer/ |
 
 
