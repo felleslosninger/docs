@@ -11,7 +11,7 @@ redirect_from: /ansattporten_entraid
 
 {% include note.html content="Entra ID er beta-funksjonalitet .  Vi ønsker virksomheter velkommen til å hjelpe oss med å teste og forbedre funksjonaliteten gjennom en pilotfase i 2025/2026. De som deltar, må være forberedt på at det kan bli løpende endringer i funksjonalitet og tekniske grensesnitt." %}
 
-En tjenesteeier i Ansattporten kan aktivere støtte for at brukere hos andre virksomheter kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan berike innlogginga med organisasjonsnummeret til konto-eier (som oftest brukeren sin arbeidsgiver). 
+En tjenesteeier i Ansattporten kan aktivere støtte for at eksterne brukere hos andre virksomheter kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan berike innlogginga med organisasjonsnummeret til konto-eier (som oftest brukeren sin arbeidsgiver). 
 
 Piloten skal også utforske om og evt. hvordan Ansattporten kan hjelpe med tilgangstyring til tjenester.
 

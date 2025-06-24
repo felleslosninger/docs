@@ -119,6 +119,8 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
 
+{% include note.html content="Altinn3-organisasjonvelger fungerer p.t. bare for brukere som har fått tilgang til ressursen via enkelttjeneste-delegering, dvs. direkte til sitt f/d-nummer.  Støtte for brukere som har tilgang gjennom en tilgangspakke/rolle kommer mot slutten av 2025. " %}
+
 Dersom kunden ønsker å bruke Altinn 3 ressurser som autorativ kilde for representasjonsforhold, må klienten oppgi  `ansattporten:altinn:resource` som RAR-type. 
 
 Følgende claims kan sendes inn i request: 
