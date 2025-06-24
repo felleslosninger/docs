@@ -175,10 +175,10 @@ Integrasjonspunktet kan kjøres som en prosess på Windows eller Linux, med inte
 
 <div class="mermaid">
 graph TD
-subgraph Windows, Linux, el. annet
-  subgraph Integrasjonspunkt
-    M("Database (H2 fildatabase)")
-    A("Meldingskø (ActiveMQ)")
+subgraph "Windows, Linux, el. annet"
+  subgraph "Integrasjonspunkt"
+    M["Database (H2 fildatabase)"]
+    A["Meldingskø (ActiveMQ)"]
   end
 end
 </div>
