@@ -152,9 +152,8 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 | resource-name | Namn på etterspurt representasjonsforhold |
 | authorized_parties | Array med valgte virksomheter. |
 | orgno | For hver virksomhet, objekt med orgno representert ihht iso6523 standard.  |
-| resource | ressurs-id, skal matche id i etterspurt ressurs |
-| resource-name | For hver virksomhet, navnet på ressursen |
-| type | For hver virksomhet, angir objekt-type, person/organization/Selfidentified | 
+| resource | For hver virksomhet, ressurs-id, skal matche id i etterspurt ressurs |
+| resource-name | For hver virksomhet, navnet på ressursen | 
 | unit-type | For hver virksomhet, angir organisasjonstypen ihht https://www.brreg.no/bedrift/organisasjonsformer/ |
 
 
@@ -168,7 +167,6 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
       },
       "resource" : "resource_enkeltrettighet",
       "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
-      "type" : "Organization",
       "unit_type" : "BEDR"
     }, {
       "orgno" : {
@@ -177,7 +175,6 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
       },
       "resource" : "resource_enkeltrettighet",
       "name" : "UKJENT ETTERPÅKLOK STRUTS LTD",
-      "type" : "Organization",
       "unit_type" : "NUF"
     } ],
     "resource" : "urn:altinn:resource:resource_enkeltrettighet",
