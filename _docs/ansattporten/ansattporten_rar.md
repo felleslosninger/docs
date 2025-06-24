@@ -38,7 +38,7 @@ Følgende authorization_type er støttet i Ansattporten:
 | `authorization_type` | 	 Skildring |
 |-|-|
 | `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
-| `ansattporten:altinn:resource` |Støtter bruk av Altinn3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn. Støtte for tilgang gjennom roller er ikke mulig i altinn 3. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
+| `ansattporten:altinn:resource` |Støtter bruk av Altinn3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn. Støtte for tilgang gjennom roller er p.t. ikke mulig i altinn 3. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
 | `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
 
 
@@ -143,7 +143,7 @@ Følgende claims kan sendes inn i request:
   ]
 ```
 
-Dersom det er forespurt flere ressurser, så vil `authorization_details` inneholde ett json-objekt per ressurs som brukeren har fått tildelt tilgang til. 
+Dersom det er forespurt flere ressurser, så vil `authorization_details` inneholde et json-objekt per ressurs som brukeren har fått tildelt tilgang til. 
 Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
 
 | claim | beskrivelse            |
@@ -183,7 +183,7 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
   } ],
 ```
 
-Dersom det er forespurt flere representasjonsforhold, så vil authorization_details inneholde ett json-objekt per lenketjeneste som brukeren har rettighet til.
+Dersom det er forespurt flere representasjonsforhold, så vil authorization_details inneholde et json-objekt per lenketjeneste som brukeren har rettighet til.
 
 ## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
