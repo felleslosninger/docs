@@ -187,13 +187,13 @@ Integrasjonspunktet kan kjøres som en prosess på Windows eller Linux, med ekst
 
 <div class="mermaid">
 graph TD
-M("Database (MySQL)")
-A("Meldingskø (ActiveMQ)")
-subgraph Windows, Linux, el. annet
-  I(Integrasjonspunkt)
-end
-I --> M
-I --> A
+    M["Database (MySQL)"]
+    A["Meldingskø (ActiveMQ)"]
+    subgraph "Windows, Linux, el. annet"
+        I["Integrasjonspunkt"]
+    end
+    I --> M
+    I --> A
 </div>
 
 Integrasjonspunktet kan kjøres som en kontainer på en Docker-plattform:
