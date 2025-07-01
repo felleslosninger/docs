@@ -1,7 +1,7 @@
 ---
 title: "/authorize endpoint"
-description: "This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten"
-summary: 'This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten'
+description: "This page summarizes the protocol options available for on the /authorize endpoint for ID-porten"
+summary: 'This page summarizes the protocol options available for on the /authorize endpoint for ID-porten'
 
 sidebar: oidc
 product: ID-porten
