@@ -16,7 +16,7 @@ Det er mogeleg å motta pålogging gjennom ID-porten også for brukarar som ikkj
 | - | - |
 | [eIDAS 1](oidc_func_eidas) | Høgt eller betydeleg | Europeiske brukarar som nyttar ein anerkjend elektronisk ID frå sitt heimland |
 | [Epost-brukarar](oidc_func_emaillogin) | Udefinert (ca. lavt) | Ein sjølvregistrert brukar, identifisert vha epost-adresse. |
-| "passport" | Ca. betydeleg | Brukarar som har registrert seg vha. pass/nasjonalt ID-kontro |
+| "passport" | Ca. betydeleg | Brukarar som har registrert seg vha. pass/nasjonalt ID-kort. Sterk 2-faktor-autentisering. Kjem i 2026. |
 | eIDAS 2 | Høgt | Europeiske brukarar som har ei europeisk digital identitetslommebok. Kjem i EU frå nov. 2026, men uklart når norsk lov blir implementert. |
 
 ## Korleis aktivere funksjonaliteten ?
