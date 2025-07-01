@@ -10,16 +10,17 @@ redirect_from: /oidc_func_emaillogin
 
 ## Om epost-innlogging
 
-//todo
+Epost-innlogging er en "lettvekts-innlogging", tiltenkt bruksområder med begrensa krav til sikkerhet.  
+
+Epost-innlogging har ikke noe formelt sikkerhetsnivå ihht [selvdeklarasjonsforskriften](https://lovdata.no/dokument/SF/forskrift/2019-11-21-1578).  Identifikasjon av brukeren skjer kun ved selvregistrert epost-adresse som brukeren må kontrollere.  Autentisering skjer ved at det blir sendt en kort kode til den aktuelle epost-adressa hver gang brukeren forsøker å logge på.
 
 ## Hvilken informasjon får jeg om epost-innloggingsbrukere ?
 
 Ved en epost-innlogging følger det med følgende kjerne-attributter:
 
-* epost-innlogging-identifikator
+* epost-adresse
 
-Det er ikke gitt føringer om hvilken identifikator som skal brukes som epost-innloggingsindentifikator så lenge det er en gyldig epost. Hver bruker bestemmer selv hvilken epost-adresse de bruker.   
-//todo
+Hver bruker bestemmer selv hvilken epost-adresse de bruker. 
 
 
 ## Kan jeg få norsk fødsels- eller D-nummer ?
