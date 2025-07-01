@@ -16,7 +16,7 @@ PAR lets the client send the authorization request (see [/authorize]({{site.base
 Using PAR is recommended for clients with stronger security requirements.
 
 
-Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly documented in the draft IETF-specification [draft-ietf-oauth-par-06](https://tools.ietf.org/html/draft-ietf-oauth-par-06)
+Pushed Authorization Requestes (PAR) and the `/par` endpoint is thoroughly documented in the draft IETF-specification [RFC 9126](https://www.rfc-editor.org/rfc/rfc9126.html)
 
 
 ## Request
@@ -90,6 +90,8 @@ The response is a `request_uri` identifier, and an associated expiry time in sec
 
 The client must then use the request_uri and its client_id when redirecting the end user to the /authorize endpoint before the request_uri expires.
 ```
-GET /authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&client_id=s6BhdRkqt3
+GET /authorize?
+  request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&
+  client_id=s6BhdRkqt3
 ```
 Request parameters  (apart from client_id) must not be repeated in the authorize-request.
