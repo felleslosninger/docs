@@ -21,4 +21,8 @@ Det er mogeleg å motta pålogging gjennom ID-porten også for brukarar som ikkj
 
 ## Korleis aktivere funksjonaliteten ?
 
-Klienten bestemmer kva typar eID som skal visast i ID-porten ved å sende ulike `acr_values`-verdiar i [autentiseringsførespurnaden](oidc_protocol_authorize).  Følg lenkene ovanfor for ytterlegare dokumentasjon kring dei ulike kategoriane brukarar.
+Klienten bestemmer kva typar eID som skal visast i ID-porten ved å sende ulike `acr_values`-verdiar i [autentiseringsførespurnaden](oidc_protocol_authorize).  Følg lenkene ovanfor for ytterlegare dokumentasjon kring dei ulike kategoriane brukarar.  Sjå spesifikt avsnittet om acr-verdiar mot slutten av dokumentasjonen.
+
+For eIDAS-brukarar (og truleg den kommande passport) vil ID-porten forsøke å koble brukaren mot norsk personidentifikator gjennom oppslag mot Folkeregisteret. 
+
+Utanlandske brukarar havnar ikkje i Kontakt- og Reservasjonsregisteret.
