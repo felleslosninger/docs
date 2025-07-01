@@ -90,6 +90,8 @@ The response is a `request_uri` identifier, and an associated expiry time in sec
 
 The client must then use the request_uri and its client_id when redirecting the end user to the /authorize endpoint before the request_uri expires.
 ```
-GET /authorize?request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&client_id=s6BhdRkqt3
+GET /authorize?
+  request_uri=urn:idporten:JF38qJvAge0yvmYC4Hw3P0NXCahVkqlpeVCm_4K0paw&
+  client_id=s6BhdRkqt3
 ```
 Request parameters  (apart from client_id) must not be repeated in the authorize-request.
