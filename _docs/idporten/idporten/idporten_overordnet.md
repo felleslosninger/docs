@@ -18,7 +18,7 @@ ID-porten tilbyr følgende bruksområder til kundene:
 
 - [**API-sikring** i kontekst av en innlogget bruker]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_oauth2), populært kalt brukerstyrt datadeling.
 
-- [Innlogging **på vegne av andre**](oidc_auth_fullmakt)
+- [Innlogging **på vegne av andre**]({{site.baseurl}}/docs/idporten/oidc/oidc_auth_fullmakt)
 
 
 ## Arkitektur
@@ -85,7 +85,7 @@ Det er mulig for en sluttbruker å gjennomføre en autentisering på nivå 3 og 
 
 #### Utenlandske brukere
 
-ID-porten har støtte for at ulike kategorier av [utenlandske brukere](oidc_func_utanlandske_brukarar) kan logge seg på norske tjenester. 
+ID-porten har støtte for at ulike kategorier av [utenlandske brukere]({{site.baseurl}}/docs/idporten/oidc/oidc_func_utanlandske_brukarar) kan logge seg på norske tjenester. 
 
 
 ## Brukerstyrt datadeling
