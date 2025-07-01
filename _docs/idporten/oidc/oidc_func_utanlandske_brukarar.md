@@ -12,7 +12,7 @@ Det er mogeleg å motta pålogging gjennom ID-porten også for brukarar som ikkj
 
 ## Ulike typarar brukarar
 
-| Kategori | Sikkerheitsnivå | Skildring |
+| Kategori | [Sikkerheitsnivå](https://lovdata.no/dokument/SF/forskrift/2019-11-21-1578) | Skildring |
 | - | - |
 | [eIDAS 1](oidc_func_eidas) |Høgt eller betydeleg |Europeiske brukarar som nyttar ein anerkjend elektronisk ID frå sitt heimland |
 | [Epost-brukarar](oidc_func_emaillogin) |Udefinert (ca. lavt) |Ein sjølvregistrert brukar, identifisert via epost-adresse. 1-faktor autentisering. |
