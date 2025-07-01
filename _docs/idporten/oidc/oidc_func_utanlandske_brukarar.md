@@ -10,7 +10,7 @@ redirect_from: /oidc_func_idporten_utanlanske_brukarar
 Det er mogeleg å motta pålogging gjennom ID-porten også for brukarar som ikkje brukar norske eID, dvs. brukarar som normalt ikkje har norsk personidentifikator.
 
 
-## Ulike typarar brukarar
+## Ulike typar brukarar
 
 | Kategori | [Sikkerheitsnivå](https://lovdata.no/dokument/SF/forskrift/2019-11-21-1578) | Skildring |
 | - | - |
