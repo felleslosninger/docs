@@ -11,8 +11,6 @@ Digdir sin demo-brukastad er laga for å kunne demonstrere nokre av dei bevisa s
 
 Den kan p.t. utføre aldersverifisering og fullmaktspålogging.
 
-Merk at til dømes EU tilbyr ein meir feature-komplett demo-teneste HER:
-
 ## Grensesnitt
 
 Her kan du prøve demo-brukarstaden vår: 

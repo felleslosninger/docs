@@ -10,6 +10,11 @@ redirect_from: /oidc_protocol_authorize
 
 ## About
 
+The client starts the authentication prosess by sending an authorization request.
+
+{% include note.html content="For better security, we recommend you to send these authorization parameters in a [oidc_func_par](PAR-request) prior to end-user (browser) involvement." %}
+
+
 The `/authorize` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.2](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
 ## Request
