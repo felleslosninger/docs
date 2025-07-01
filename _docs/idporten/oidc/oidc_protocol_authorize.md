@@ -39,7 +39,7 @@ Supported request attributes for normal, redirected authorization requests:
 | scope |  Required |Whitespace-separated list of requested scopes.  Normally just `openid`.  |
 | state | Recommended | Value set by the client and returned in the callback. Often used to g Normally used to If PKCE is not used, then state must be used to achieve CSRF-protection. Mandatory to use for public clients|
 | nonce | Recommended |Value set by the client and returned in the id-token. Recommended to use to protect from replay attacks. |
-| acr\_values | Optional | Requested security level of assurance(s) (`idporten-loa-substantial`)|
+| acr\_values | Optional | Requested security level of assurance(s). See [id_token docs](oidc_protocol_id_token#acr-values). (`idporten-loa-substantial`)|
 | response_mode | Optional | Used if you want alternative way of returning the authentication response. The supported values are published on the .well-known endpoint.   |
 | ui\_locales | Optional | Requested language in the user interface, we support *nb*, *nn*, *en* or *se*.  Note that if the user manually changes language in ID-porten GUI, a cookie IDPORTEN_SELECTED_LANGUAGE will be set, overriding the requested ui_locales. |
 | prompt | Optional | Used to govern end user involvement. The supported values are published on the .well-known endpoint.   |
