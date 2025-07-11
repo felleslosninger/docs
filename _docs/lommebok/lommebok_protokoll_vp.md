@@ -21,6 +21,22 @@ Sjølve flyten er enkel, og består av fylgjande steg:
 2. Brukaren opnar lommeboka og godkjenner presentasjon av beviset.
 3. Lommeboka sender bevis-presentasjonen (VP-response) attende til brukerstaden.
 
+
+
+<div class="mermaid">
+sequenceDiagram
+  actor U as Sluttbruker
+  participant W as Lommebok
+  participant V as Brukersted
+
+  U-->>V: interaksjon
+  V->>W: VP-request med DCQL-query
+  U-->>W: samtykker
+  W->>V: vp_token
+</div>
+
+
+
 ## Oppsett og registrering
 
 Alle brukerstader skal vere registrert på førehand. Krava rundt registrering finn me i [rettsakt for RP-registerering, C/2025/2621](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R0848&qid=1749119392688), og der informasjonen som skal registrerast finn du i Annex I.  I praksis er dette organisasjonsnamn, organisasjonsnummer, og eit par andre felt. 
@@ -68,7 +84,7 @@ For "høgverdige" bevis som [digital grunnidentitet (den sokalla "PID'en")](http
 
 Ofte vil du vite kva verksemd som er utstedar av beviset, eller du kan finne det frå [innsynstjenesten til sandkassa](lommebok_tjenester). Du kan då sjekke [metadata-endepunktet til Credential Issueren](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html#name-credential-issuer-metadata) for å finne kva `credential_configuration_id`'ar som er støtta. 
 
-Eit bevis kan vere utsted på 3 ulike kvalitetsnivå.  Det høgaste nivået er sokalla **kvalifiserte** bevis (QEAA), so er det ein mellomnivå for offentleg sektor som heiter **Pub-EAA**, medan resten av bevisa er **ikkje-kvalifiserte**.   Det er valfritt for utstedar å publisere ikkje-kvalifiserte bevis i bevis-katalogen, so slike kan du måtte skaffe deg kjennskap om på anna vis.
+Eit bevis kan vere utsted på 3 ulike kvalitetsnivå.  Det høgaste nivået er sokalla **kvalifiserte** bevis (QEAA), so er det ein mellomnivå for offentleg sektor som heiter **Pub-EAA**, medan resten av bevisa er **ikkje-kvalifiserte**.  Det er valfritt for utstedar å publisere ikkje-kvalifiserte bevis i bevis-katalogen, so slike kan du måtte skaffe deg kjennskap om på anna vis.
 
 
 Iallefall, når du kjenner type-identifaktoren på beviset, kan du konstruere den tilhøyrande DQCL-spørringa.  Merk at du brukar bevistypen som ein referanse i `meta` delen av DCQL-spørringa, og ikkje i `id`-claimet.
@@ -99,8 +115,6 @@ Iallefall, når du kjenner type-identifaktoren på beviset, kan du konstruere de
   ] }
 ```
 
-
-
 Sjå [døme i spec'en](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#more_dcql_query_examples) for meir inspirasjon.
 
 <!-- TODO: kva med scope istadenfor dcql_query, vil det bli brukt i EUDIW-økosystemet ? -->
@@ -108,13 +122,17 @@ Sjå [døme i spec'en](https://openid.github.io/OpenID4VP/openid-4-verifiable-pr
 #### Tema 1.b:  Sikkerheitskrav / rammeverk
 
 TBD.
-(treng eg sjekke WUA, treng eg sjekke bevis-katalogen, er det X.509 eller openid-federation tillit eller anna?)
+
+(treng eg be om key-binding ?)
+(er beviset eg vil ha ikkje-kvalifisert, og tilhøyrer det eit økosystemet som brukar ein annan mekanisme for tillitsrammeverk enn X.509-basert tillit nytta av QEAA og PubEAA)
 
 #### Tema 1.c: Transaksjonsspesifikke data
 
-Spec'en opnar for at brukaren skal kunne ta samtykke til transaksjonsspesifikke data som ikkje er del av eit bevis.   Til dømes kan brukerstaden forespørje eit "betalingsbevis" frå ein bank-utstedar kombinert med eit beløp knytta til ein transaksjon.  Transaksjonsdataene blir då signert av lommeboka, medan beviset som vanleg er signert av utstedaren.  Dette lyt inkluerast i førespurnaden i claimet [`transaction_data`](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#section-5.1-2.8.1).
+Spec'en opnar for at brukaren skal kunne ta samtykke til transaksjonsspesifikke data som ikkje er del av eit bevis.   Til dømes kan brukerstaden forespørje eit "betalingsbevis" frå ein bank-utstedar kombinert med eit beløp knytta til ein transaksjon.  Transaksjonsdataene blir då signert av lommeboka, medan beviset som vanleg er signert av utstedaren.  
 
-Tenkt tilfelle der norsk banksektor har blitt samde om ein `type` for betaling av mindre beløp i kiosk: 
+ Dei transaksjonsspesifikke detaljane lyt inkluerast i førespurnaden i claimet [`transaction_data`](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#section-5.1-2.8.1), og det vil vere ein `type` som definerer ein tilhøyrande datamodell.  
+
+Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` og tilhøyrande bevistype som mogeleggjer betaling av mindre beløp i kiosk: 
 ```
 "transaction_data": {
   "type": "kiosksalg",
@@ -126,7 +144,9 @@ Tenkt tilfelle der norsk banksektor har blitt samde om ein `type` for betaling a
 
 #### Tema 1.d: Skildre brukerstaden din
 
-VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men vert derimot 
+VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men vert derimot verte overført runtime som del av VP-requesten.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til klient-metadata er rette.
+
+
 
 
 
@@ -173,6 +193,24 @@ Sidan VP-spec'en bygger på Oauth2, har du også fleire valg for korleis du ynsk
 Det er også mogeleg å få responsen kryptert, då brukar du ein variant som heiter [`direct_post.jwt](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-response-mode-direct_postjw).
 
 
+
+
+## Steg 2: Validere respons
+
+Når brukaren har samtykka til deling av bevis, og evt. transaksjonsdata, og send tilbake responsen slik som du spesifiserte i VP-requesten, so vil du til slutt ende opp med eit vp_token.
+
+Du må validere at vp_tokenet er korrekt.
+
+Aktuelle valideringspunkt:
+
+- validere WUA slik at du veit responsen kjem frå ei anerkjend lommebok
+- validere signeringssertifikat på beviset (for kvart bevis)
+- validere signatur på bevist
+- validere 
+- sjekke bevis-katalog om utstedaren har lov til å utstede bevis av denne type
+- 
+
+(treng eg sjekke WUA, treng eg sjekke bevis-katalogen, er det X.509 eller openid-federation tillit eller anna?)
 
 
 
