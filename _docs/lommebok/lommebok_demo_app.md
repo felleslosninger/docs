@@ -19,6 +19,9 @@ En demolommebok er tilgjengelig i Firebase App Distribution: [Installer](https:/
 ### iOS
 En demolommebok er tilgjengelig i TestFlight: [Installer](https://testflight.apple.com/join/2FKCUj1J)
 
+### Mac OS
+
+Det er mogeleg å køyre iOS-versjonen av lommeboka direkte på ein Mac.  Følg lenka ovanfor, velg "Step 1: Get Testflight" og installer Testflight på mac'en din. Akseptér vilkår og du kjem so til "ready to test".  Då kan du på ny klikke lenka ovanfor, og so velge "Step 2: View Demo lommebok (dev)", då vil Testflight opne seg og du kan få installert appen.
 
 ## Funksjonalitet
 

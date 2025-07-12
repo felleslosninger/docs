@@ -13,8 +13,9 @@ Digdir jobbar med å laga ei web-basert innsynsteneste som gjere det mogeleg å 
 
 ## Utstedere
 
-* [Digdir demo utsteder](lommebok_demo_utsteder).  Dette er ein enkel demo-teneste som kan utstede PID-dokument, eit fullmakts-bevis og eit dagleg-leiar-bevis.  Du kan også sjå på protokoll-flyten.
+* [Digdir utsteder](lommebok_digdir_utsteder).  
 *  [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/).  EU-kommisjonen tilbyr ein relativt teknisk orientert utstedar av PID og mobilt førarkort. Den er ikkje integrert med sandkassen si tillitsliste, men er nyttig å bruka i eigen utvikling.
+* [Digdir demo utsteder](lommebok_demo_utsteder).  Dette er ein tidleg poc-teneste som kan utstede PID-dokument, eit fullmakts-bevis og eit dagleg-leiar-bevis.  Du kan også sjå på protokoll-flyten.
 
 
 ## Brukarstader
@@ -28,4 +29,4 @@ Digdir jobbar med å laga ei web-basert innsynsteneste som gjere det mogeleg å 
 
 ## Testing
 
-OpenID Foundation tilgjengeleggjer conformance test suites som kan nyttast i din eigen utvikling av tenester, sjå: [How to Run Conformance Tests for OpenID for Verifiable Presentations](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-presentations/).
+OpenID Foundation tilgjengeleggjer conformance test suites som kan nyttast i din eigen utvikling av tenester.  Du kan velge om du skal teste utsteder, lommebok, eller brukerstad.  Sjå meir info på [How to Run Conformance Tests for OpenID for Verifiable Presentations](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-presentations/).
