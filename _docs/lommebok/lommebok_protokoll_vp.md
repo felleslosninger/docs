@@ -176,7 +176,7 @@ Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` 
   "type": "kiosksalg",
   "credential_ids": [ "urn:no:smaa_betaling_bevis"],
   "vare":  "1 pølse i brød",
-  "beløp": "45"
+  "beløp": 45
 }
 ```
 
