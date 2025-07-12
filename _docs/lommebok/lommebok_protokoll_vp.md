@@ -162,8 +162,9 @@ Sjå [døme i spec'en](https://openid.github.io/OpenID4VP/openid-4-verifiable-pr
 
 TBD.
 
-(treng eg be om key-binding ?)
+<!--(treng eg be om key-binding ?)
 (er beviset eg vil ha ikkje-kvalifisert, og tilhøyrer det eit økosystemet som brukar ein annan mekanisme for tillitsrammeverk enn X.509-basert tillit nytta av QEAA og PubEAA)
+-->
 
 #### Tema 1.c: Transaksjonsspesifikke data
 
@@ -175,7 +176,7 @@ Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` 
   "type": "kiosksalg",
   "credential_ids": [ "urn:no:smaa_betaling_bevis"],
   "vare":  "1 pølse i brød",
-  "belop": "45"
+  "beløp": "45"
 }
 ```
 
@@ -183,9 +184,18 @@ Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` 
 
 VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men kan derimot verte overført runtime som del av VP-requesten i claimet `client_metadata`.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til klient-metadata er rette.
 
- Klient-metadata som blir gjenbrukt
+`vp_formats_supported` er eit viktig metadata som er lurt å sende for hjelpe lommeboka til å velge rett format på bevisa.
 
-Ein annan viktig skilnad til Oauth2, er at `client_id`  er bygd opp på ein spesiell måte med bruk av prefixar:
+Ein annan viktig skilnad til Oauth2, er at `client_id`  er bygd opp på ein spesiell måte med bruk av prefixar foran eit kolon (:)
+
+- redirect_uri
+- openid-federation
+- decentralized_identifier
+- verifier_attestation
+- x509_san_dns
+
+Me trur det er den siste, x509_san_dns,  som blir mest aktuell for EU sitt lommebok-økosystem, sidan tilgangssertifikata (RPAC) skal vere utstedt av ein Access Certificate Authority som skal plasserast på ein Trust List. Ref. [ARF 3.18](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#318-access-certificate-authorities). 
+Me har dog lyst å sjå på bruk av openid-federation nasjonalt.
 
 
 
@@ -198,7 +208,7 @@ Ein annan viktig skilnad til Oauth2, er at `client_id`  er bygd opp på ein spes
 
 
 
-#### Tema 1.c: Bestemme deg for korleis du vil sende VP-requesten
+#### Tema 1.e: Transport: korleis du vil sende VP-requesten ?
 
 
 Ein [VP-førespurnad](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-authorization-request) er ein modifisert OpenID-connect autorisasjonsførespurnad.  Brukarstaden er vanlegvis ei browserbasert web-teneste, og den vil normalt rendre VP-requesten som ein QR-kode, som brukaren so anten scanner med lommeboka (cross-device) eller lommeboka vert opna direkte (same-device).
@@ -209,7 +219,7 @@ Sidan VP-requestar fort kan bli store risikerer du også at QR-kodane kan bli va
 1. **Redirect**: Her lagar du ein komplett VP-request basert på query-parametre, som du så redirecter direkte til lommeboka. 
 2. **Request Object via redirect**: Som over, men du pakkar requesten inn i ein JWT slik at den blir eit [Request Object ihht RFC9101](https://www.rfc-editor.org/rfc/rfc9101.html)
 3. **Referert Request Object via GET**: Du lagar VP-requesten som ein JWT og tilgjengleggjer på ein unik url, og ber lommeboka om å laste den ned derifrå.
-4. **Referert Request Object via POST**: Som #3, men her kan lommeboka POSTe inn sine tekniske kapabiliteter, som mogeleggjer at du synkront kan laga ein tilpassa VP-request.
+4. **Referert Request Object via POST**: Som #3, men her kan lommeboka samstundes POSTe inn sine tekniske kapabiliteter, som mogeleggjer at du synkront kan laga ein tilpassa VP-request.
 
 Alternativ #1 er det enklaste å realisere, medan alternativ #4 nok er det mest robuste.  Merk at ikkje alle lommebøker er påkrevd å støtte POST, så om du går for #4, må du vurdere å implementere #3 som fallback.
 
@@ -223,107 +233,67 @@ Det er også mogeleg å sende requesten over det nye [W3C Digital Credentials AP
 |#4: Referert Request Object via POST|`request_uri_method=POST&request_uri=https://verifier.example.com/request_objects/1234-1234-1234-1234`|
 
 
-#### Steg 1.b: Bestemme kor du vil ha responsen tilbake frå lommeboka
+#### Steg 1.f: Transport: kvar vil du ha responsen tilbake  frå lommeboka ?
 
-Reponsen frå lommeboka er ein ny type token, det sokalla `vp_token`-et.
+Reponsen frå lommeboka er ein ny type token, det sokalla `vp_token`-et. Sjå meir om dette nedanfor.
 
-Sidan VP-spec'en bygger på Oauth2, har du også fleire valg for korleis du ynskje å motta VP-responsen frå lommeboka.  
+Sidan VP-spec'en bygger på Oauth2, har du også fleire valg for korleis du ynskje å motta VP-responsen frå lommeboka:
 
 1. **Redirect**: Lommeboka redirecter vp_tokenet attende til deg gjennom nettlesar som eit fragment på oppgitt `redirect_uri`.
 2. **direct_post**: Lommeboka POSTer vp_tokenet til oppgitt `response_uri`.  Deretter må du instruere lommeboka kvar den skal redirekte brukaren vidare frå lommebok til brukarstaden i nettlesaren.
-
 
 |Alternativ|Kva parametre styrer oppførsel? |
 |-|-|
 |#1: Redirect|`reponse_type=vp_token&response_mode=fragment`|
 |#2: direct_post|`reponse_type=vp_token&response_mode=direct_post`|
 
+**Døme på bruk av direct.post**:
+```
+#1: lommeboka postar responsen
+POST https://verifier.example.com/post HTTP/1.1
+
+  vp_token=...&
+  state=eyJhb...6-sVA
+
+#2: verifier svarar med redirect-uri:
+HTTP/1.1 200 OK
+
+{
+  "redirect_uri": "https://verifier.example.org/cb#response_code=091535f699ea575c7937fa5f0f454aee"
+}
+
+#3: lommeboka hoppar over til nettlesar og sender brukaren til oppgjeve redirect_uri
+```
+
 Det er også mogeleg å få responsen kryptert, då brukar du ein variant som heiter [`direct_post.jwt](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-response-mode-direct_postjw).
 
+Sidan VP-specen er basert på Oauth2 er det teoretisk mogeleg for ein brukastad å førespørje ein kombinasjon av vp_tokenet med å motta id_token og access_token, men dette virkar lite hensiktsmessig.
 
 
 
-## Steg 2: Validere respons
+## Steg 2: Validere vp_token
 
 Når brukaren har samtykka til deling av bevis, og evt. transaksjonsdata, og send tilbake responsen slik som du spesifiserte i VP-requesten, so vil du til slutt ende opp med eit vp_token.
 
-Du må validere at vp_tokenet er korrekt.
+vp_tokenet inneheld dei bevisa du ba om, til dømes slik:
+```
+{
+  "førarkort": ["eyJhbGci...QMA"]
+}
+```
 
-Aktuelle valideringspunkt:
+Du må validere at vp_tokenet er korrekt.  Aktuelle valideringspunkt:
 
 - validere WUA slik at du veit responsen kjem frå ei anerkjend lommebok
 - validere signeringssertifikat på beviset (for kvart bevis)
-- validere signatur på bevist
-- validere 
+- validere signatur på beviset (for kvart bevis)
 - sjekke bevis-katalog om utstedaren har lov til å utstede bevis av denne type
-- 
-
-(treng eg sjekke WUA, treng eg sjekke bevis-katalogen, er det X.509 eller openid-federation tillit eller anna?)
+- validere holder binding ?
 
 
 
+Sjå også [kap 8.6 i VP-specen](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-vp-token-validation) for valideringskrav.
 
 
-
-
-Her er eit døme på å etterspørre kun "er over 18 år"-attributtet frå ID-beviset til innbyggaren:
-
-```
-  // Kva attributter og bevis du vil ha ?
-  "presentation_definition" : {
-    "input_descriptors" : [ {
-      "purpose" : "We need to verify your identity",
-      "name" : "EUDI PID",
-      "format" : {
-        "mso_mdoc" : {
-          "alg" : [ "RS256", "ES256", "ES384" ]
-        }
-      },
-      "id" : "eu.europa.ec.eudi.pid.1",
-      "constraints" : {
-        "fields" : [ {
-          "intent_to_retain" : false,
-          "path" : [ "$['eu.europa.ec.eudi.pid.1']['age_over_18']" ]
-        } ]
-      }
-    } ],
-    "id" : "3787345f-9460-4d14-acff-28e3b2217e1a"
-  },
-
-  // metadata for ditt brukersted:
-  "client_metadata" : {
-    "authorization_encrypted_response_alg" : "ECDH-ES",
-    "authorization_encrypted_response_enc" : "A128CBC-HS256",
-    "jwks_uri" : "https://demo-brukersted.test.eidas2sandkasse.net/jwks",
-    "vp_formats" : {
-      "mso_mdoc" : {
-        "alg" : [ "RS256", "ES256", "ES384" ]
-      }
-    },
-    "id_token_signed_response_alg" : "RS256"
-  },
-
-  //oauth-spesifikke claims for 
-
-  "client_id" : "x509_san_dns:demo-brukersted.test.eidas2sandkasse.net",
-  "response_uri" : "https://demo-brukersted.test.eidas2sandkasse.net/response",
-  "client_id_scheme" : "x509_san_dns",
-  "aud" : "https://self-issued.me/v2",
-
-  "iss" : "issuer",
-  "response_type" : "vp_token",
-  "nonce" : "nonceval",
-  "response_mode" : "direct_post.jwt",
-
-  // oauth2-spesifikke claims for akkurat denne forespørselen:
-  "state" : "2c7e983b-ebde-49ff-974e-7aea1dbd0189",
-  "exp" : 1749120685,
-  "iat" : 1749120565,
-  "jti" : "f376e4a1-2c2e-4976-b322-f9c1a115f66d"
-
-
-
-}
-```
 
 
