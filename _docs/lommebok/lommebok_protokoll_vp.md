@@ -194,8 +194,7 @@ Ein annan viktig skilnad til Oauth2, er at `client_id`  er bygd opp på ein spes
 - verifier_attestation
 - x509_san_dns
 
-Me trur det er den siste, x509_san_dns,  som blir mest aktuell for EU sitt lommebok-økosystem, sidan tilgangssertifikata (RPAC) skal vere utstedt av ein Access Certificate Authority som skal plasserast på ein Trust List. Ref. [ARF 3.18](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#318-access-certificate-authorities). 
-Me har dog lyst å sjå på bruk av openid-federation nasjonalt.
+Prefixa fortel kva type tillitsprotokollar som vert nytta av ulike økosystem.  For EU-lommeboka, iallefall for grensekryssande bruk, trur med at det vil verte den siste, x509_san_dns, som blir mest aktuell å bruka. Dette sidan tilgangssertifikata (RPAC) skal vere utstedt av ein Access Certificate Authority som skal plasserast på ein Trust List. Ref. [ARF 3.18](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#318-access-certificate-authorities), og det ser ut som tradisjonelle PKIar basert på x.509 og ETSI-baserte trustlister er det som EU-kommisjonen legg opp til.  Digdir har dog lyst å sjå på bruk av openid-federation nasjonalt, ta gjerne kontakt med oss for å vere med på utprøving av dette.
 
 
 
