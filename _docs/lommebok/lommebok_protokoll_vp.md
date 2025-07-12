@@ -9,7 +9,7 @@ redirect_from: /lommebok_protokoll_vp
 
 På denne sida forsøker me å forklara flyten du må følgje som brukastad når du ynskjer at innbyggeren skal presentere eit bevis til deg.
 
-Protokollen som vert nytta heiter [OpenID for Verifiable Presentations (OpenID4VP)](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html).
+Protokollen som vert nytta heiter [OpenID for Verifiable Presentations (OpenID4VP)](https://openid.net/specs/openid-4-verifiable-presentations-1_0-final.html).  (https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html).
 
 Før du kan starte flyten må du har utført dette:
 
@@ -75,6 +75,33 @@ Du må ta stilling til fleire tema når du bygger opp VP-requesten din:
 - teknisk skildring av brukarstaden din.
 - korleis ynskjer du å transportere request og respons?
 
+Me skal sjå nærare på kvart av desse temane, men fyrst vil me berre gje eit døme på ein VP-request med dei claima som me meiner er viktigast:
+
+```
+{
+  "typ": "oauth-authz-req+jwt",
+  "alg": "ES256",
+  "x5c": "MIIDVDCC...."
+}.{
+  "aud": "https://self-issued.me/v2", 
+  "iss":       "x509_san_dns:client.example.org",
+  "client_id": "x509_san_dns:client.example.org",
+
+  "response_uri": "https://client.example.org/post",
+  "response_type": "vp_token",
+  "response_mode": "direct_post",
+
+  "dcql_query": {...},
+
+  "transaction_data": {...},
+
+  "client_metadata": {...},
+
+  "nonce": "n-0S6_WzA2Mj",
+  "state": "eyJhb...6-sVA"
+  "jti": "0123..."
+```
+
 
 #### Tema 1.a: Kva data treng eg ?
 
@@ -84,13 +111,25 @@ For "høgverdige" bevis som [digital grunnidentitet (den sokalla "PID'en")](http
 
 Ofte vil du vite kva verksemd som er utstedar av beviset, eller du kan finne det frå [innsynstjenesten til sandkassa](lommebok_tjenester). Du kan då sjekke [metadata-endepunktet til Credential Issueren](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html#name-credential-issuer-metadata) for å finne kva `credential_configuration_id`'ar som er støtta. 
 
-Eit bevis kan vere utsted på 3 ulike kvalitetsnivå.  Det høgaste nivået er sokalla **kvalifiserte** bevis (QEAA), so er det ein mellomnivå for offentleg sektor som heiter **Pub-EAA**, medan resten av bevisa er **ikkje-kvalifiserte**.  Det er valfritt for utstedar å publisere ikkje-kvalifiserte bevis i bevis-katalogen, so slike kan du måtte skaffe deg kjennskap om på anna vis.
+Eit bevis kan vere utsted på 3 ulike kvalitetsnivå.  Det høgaste nivået er sokalla **kvalifiserte** bevis (QEAA), so er det ein mellomnivå for offentleg sektor som heiter **Pub-EAA**, medan resten av bevisa er **ikkje-kvalifiserte**.    På ikkje-kvalifisert nivå er det valfritt å verte registrert i dei sentrale katalogane, som betyr at du kan måtte skaffe deg kjennskap om eksistensen av slike bevis på anna måtar (til dømes via dokumentasjon).
 
 
-Iallefall, når du kjenner type-identifaktoren på beviset, kan du konstruere den tilhøyrande DQCL-spørringa.  Merk at du brukar bevistypen som ein referanse i `meta` delen av DCQL-spørringa, og ikkje i `id`-claimet.
+Iallefall, når du kjenner type-identifikatoren på beviset, kan du konstruere den tilhøyrande [DQCL-spørringa](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-digital-credentials-query-l).  Merk at du brukar bevistypen-identifikatoren som ein referanse i `meta` delen av DCQL-spørringa, og ikkje i `id`-claimet.
+
+**Enkel døme på DCQL-query som ber om mobilt førarkort i mdoc-format**: 
+```
+"dcql_query" = {
+  "credentials": [
+    {
+      "id": "førarkort",
+      "format": "mso_mdoc",
+      "meta": { "doctype_value": "org.iso.18013.5.1.mDL" }
+    }]}
+```
 
 
-** Døme på aldersverifiseringsspørring, der anten mobilt førarkort eller PID kan nyttast som bevis-kjelde**:
+
+**Døme på aldersverifisering, der anten mobilt førarkort eller PID kan nyttast som datagrunnlag**:
 ```
 "dcql_query" = {
   "credentials": [
@@ -128,15 +167,13 @@ TBD.
 
 #### Tema 1.c: Transaksjonsspesifikke data
 
-Spec'en opnar for at brukaren skal kunne ta samtykke til transaksjonsspesifikke data som ikkje er del av eit bevis.   Til dømes kan brukerstaden forespørje eit "betalingsbevis" frå ein bank-utstedar kombinert med eit beløp knytta til ein transaksjon.  Transaksjonsdataene blir då signert av lommeboka, medan beviset som vanleg er signert av utstedaren.  
-
- Dei transaksjonsspesifikke detaljane lyt inkluerast i førespurnaden i claimet [`transaction_data`](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#section-5.1-2.8.1), og det vil vere ein `type` som definerer ein tilhøyrande datamodell.  
+Spec'en opnar for at brukaren skal kunne ta samtykke til transaksjonsspesifikke data som ikkje er del av eit bevis. Transaksjonsdataene blir då signert av lommeboka, medan beviset som vanleg er signert av utstedaren.  Dei transaksjonsspesifikke detaljane lyt inkluderast i førespurnaden i claimet [`transaction_data`](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#section-5.1-2.8.1), og det vil vere ein `type` som definerer ein tilhøyrande datamodell.  
 
 Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` og tilhøyrande bevistype som mogeleggjer betaling av mindre beløp i kiosk: 
 ```
 "transaction_data": {
   "type": "kiosksalg",
-  "credential_ids": [ "urn:no:smaa_betalings_bevis"],
+  "credential_ids": [ "urn:no:smaa_betaling_bevis"],
   "vare":  "1 pølse i brød",
   "belop": "45"
 }
@@ -144,7 +181,18 @@ Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` 
 
 #### Tema 1.d: Skildre brukerstaden din
 
-VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men vert derimot verte overført runtime som del av VP-requesten.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til klient-metadata er rette.
+VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men kan derimot verte overført runtime som del av VP-requesten i claimet `client_metadata`.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til klient-metadata er rette.
+
+ Klient-metadata som blir gjenbrukt
+
+Ein annan viktig skilnad til Oauth2, er at `client_id`  er bygd opp på ein spesiell måte med bruk av prefixar:
+
+
+
+`nonce` blir normalt brukt til å linke request og respons. Men dersom brukarsteden ikkje ynkjer holder binding, må `state`  nyttast til dette istaden.
+
+
+
 
 
 
