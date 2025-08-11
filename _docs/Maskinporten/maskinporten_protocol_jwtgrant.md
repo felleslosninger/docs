@@ -16,16 +16,18 @@ JWT grants are documented in [RFC7523](https://tools.ietf.org/html/rfc7523). Bot
 
 ## Grant structure
 
+Adding claims not present in the following documentation will result in a response of `400 Bad request` with error description containing `Invalid assertion`.
+
 **Header:**
 
 | Claim  | Cardinality | Description  |
 | --- | --- | --- |
 | alg | required | `RS256`, `RS384` and `RS512` are supported by Maskinporten. |   
-| x5c | optional | The business certificate/eseal (virksomhetssertifikat) of the organization. Full certificate chain, see [RFC7517 chapter 4.7](https://tools.ietf.org/html/rfc7517#section-4.7). |
-| kid |  optional | Key identifier to a previously registered certificate / asymmetric key   bound to the client.     |
+| x5c | optional* | The business certificate/eseal (virksomhetssertifikat) of the organization. Full certificate chain, see [RFC7517 chapter 4.7](https://tools.ietf.org/html/rfc7517#section-4.7). |
+| kid |  optional* | Key identifier to a previously registered certificate / asymmetric key   bound to the client.     |
 
 
-Either 'kid' or 'x5c' must be present. 'kid' can and must be used by clients having a pre-registered certificate / asymmetric key.
+*Either 'kid' or 'x5c' must be present. 'kid' can and must be used by clients having a pre-registered certificate / asymmetric key.
 
 Note that production certificates are not supported in test environments.
 
