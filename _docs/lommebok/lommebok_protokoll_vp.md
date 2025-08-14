@@ -55,7 +55,7 @@ Merk at lommebok-økosystemet føretrekk EC-baserte nøkler (ikkje RSA) og at CS
 **Døme på å lage CSR med keytool:**
 ```
 #1. opprett ein keystore og lag eit nøkkelpar i den:
-keytool -genkeypair -alias rp-access -keyalg EC -groupname secp256r1 -sigalg SHA256withECDSA  -validity 365 -storetype pkcs12 -keystore rp-access.p12 -dname "CN=eudiw-verifier-demo.idporten.dev,OU=eudiw-verifier-demo.idporten.dev,C=no"
+keytool -genkeypair -alias rp-access -keyalg EC -groupname secp256r1 -sigalg SHA256withECDSA  -validity 365 -storetype pkcs12 -keystore rp-access.p12 -dname "CN=dummy"
 
 #2. lag CSR med SAN-extension (bruk egne domener):
 keytool -certreq -keyalg EC -alias rp-access -ext san=dns:eudiw-verifier-demo.idporten.dev -file rp-access.csr -keystore rp-access.p12
@@ -292,6 +292,7 @@ Du må validere at vp_tokenet er korrekt.  Aktuelle valideringspunkt:
 
 
 Sjå også [kap 8.6 i VP-specen](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-vp-token-validation) for valideringskrav.
+
 
 
 
