@@ -7,7 +7,7 @@ product: lommebok
 redirect_from: /lommebok_tillitsrammeverk
 ---
 
-Tillit i sandkassen er basert tillitslister forvalta av Digdri. Du finn tillitslista her:
+Tillit i sandkassen er basert tillitslister forvalta av Digdir. Du finn tillitslista her:
 
 - [Tillitsliste for sandkassen](https://tillitsliste.test.eidas2sandkasse.net/access_tsl)
 
@@ -86,6 +86,7 @@ Dersom ei tillitsteneste med tilhøyrande signeringsertifikat ikkje er lagt inn 
 Ta kontakt med Digdir for å få eit brukarstad-sertifikat.  
 
 Bruk gjerne innsynstjenesten for å studere kven so er aktørar i sandkassen.
+
 
 
 
