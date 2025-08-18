@@ -7,8 +7,11 @@ product: lommebok
 redirect_from: /lommebok_tillitsrammeverk
 ---
 
+Tillit i sandkassen er basert tillitslister forvalta av Digdri. Du finn tillitslista her:
 
-I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde kva hovudaktørar som er godkjent som:
+- [Tillitsliste for sandkassen](https://tillitsliste.test.eidas2sandkasse.net/access_tsl)
+
+Tillitslista fortel kven som er hovudaktørar i sandkassen, dvs. som godkjent som:
 
 - PID-utstedarar
 - Lommebok-operatørar
@@ -16,7 +19,6 @@ I sandkassen vil Digdir forvalte den nasjonale tillitslista, som vil innehalde k
 - Offentlige utstedarar (Pub-EAA)
 - Ordinære (ikkje-kvalifiserte) utstedarar (EAA)
 - Brukerstadsertifikat-utstedarar
-
 
 <table><tr><td><div class="mermaid">
 
@@ -48,7 +50,7 @@ Det er verd å merke seg at sjølve brukarstadene (relying parties) ikkje havnar
 
 I sandkassen vil Digdir tilby ein Regigstrar-funksjon med tilhøyrande brukarstadsertifikat-utstedar.  Det er opent for at fleire aktørar også kan vere Registrar i sandkassen.
 
-
+Ein bør merke seg at ARF snakkar om tillitslister, altså det kan potensielt vere fleire, ulike tillitslister som ein må sjekke.   I den endelege lommebokarkitekturen er det EU-kommisjonen som tilbyr tillistlistene, og so skal medlemslanda melde inn aktørane. 
 
 ### Teknisk skildring
 
@@ -84,6 +86,7 @@ Dersom ei tillitsteneste med tilhøyrande signeringsertifikat ikkje er lagt inn 
 Ta kontakt med Digdir for å få eit brukarstad-sertifikat.  
 
 Bruk gjerne innsynstjenesten for å studere kven so er aktørar i sandkassen.
+
 
 
 
