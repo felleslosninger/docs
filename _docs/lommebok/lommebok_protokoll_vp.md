@@ -182,7 +182,7 @@ Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` 
 
 #### Tema 1.d: Skildre brukerstaden din
 
-VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men kan derimot verte overført runtime som del av VP-requesten i claimet `client_metadata`.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til klient-metadata er rette.
+VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men kan derimot verte overført runtime som del av VP-requesten i claimet `client_metadata`.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til at klient-metadata er rette.
 
 `vp_formats_supported` er eit viktig metadata som er lurt å sende for hjelpe lommeboka til å velge rett format på bevisa.
 
