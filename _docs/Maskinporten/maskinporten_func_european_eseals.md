@@ -13,7 +13,7 @@ redirect_from: /maskinporten_func_european_eseals
 
 ## Information to European organizations
 
-Maskinporten is an Oauth2 Authorization Server used by Norwegian Public Sector agencies to perform access control for machine-to-machine communication towards their APIs.
+Maskinporten is an Oauth2 Authorization Server used by Norwegian Public Sector agencies to perform access control for machine-to-machine communication towards their APIs. See [more about Maskinporten here](maskinporten_summary).
 
 A European organization is termed a **consumer** of those APIs. In technical terms, the software system operated by the consumer is an [Oauth2 **client**](https://datatracker.ietf.org/doc/html/rfc6749#section-1.1).
 
