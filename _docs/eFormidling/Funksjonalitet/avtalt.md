@@ -98,7 +98,6 @@ og sendes periodisk.
 
 ## Forutsetninger
 
-- Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
 - Bruk av eFormidlings meldingstjeneste krever avtale
 
 ## Konfigurasjon

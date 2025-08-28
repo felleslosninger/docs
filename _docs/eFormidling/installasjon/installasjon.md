@@ -94,7 +94,7 @@ mekanisme som injiserer verdier til miljøvariable
 Vi anbefaler å konfigurere integrasjonspunktet i følgende rekkefølge:
 
 1. Minimumskonfigurasjon for å få starte integrasjonspunktet
-2. Frivillig konfigurasjon (f.eks. ekstern database, BEST/EDU-integrasjon, osv.)
+2. Frivillig konfigurasjon (f.eks. ekstern database)
 3. En og en meldingstjeneste
 
 > Vi anbefaler å konfigurere eFormidlings meldingstjeneste (DPO) før Altinn Digital Post (DPV) og KS SvarUt og SvarInn
@@ -406,43 +406,12 @@ management.endpoints.web.exposure.include=info,health,shutdown
 management.endpoint.health.show-details=never
 ```
 
-#### BEST/EDU-grensesnittet (under utfasing)
-*Valgfritt*
-
-Dersom en skal ta i bruk integrasjonspunktet vha. BEST/EDU-grensesnittet (under utfasing) så må dette konfigureres.
-Dette er bare aktuelt for eldre sak- og arkivsystemer.
-
-| Egenskap                          | Beskrivelse                                                            | Standardverdi |
-|-----------------------------------|------------------------------------------------------------------------|---------------|
-| difi.move.noarkSystem.endpointURL | Sti til sak- og arkivsystemets BEST/EDU-grensesnitt                    | (ingen)       |
-| difi.move.noarkSystem.type        | Type sak- og arkivsystem: ePhorte, P360, WebSak eller mail             | (ingen)       |
-| difi.move.noarkSystem.username    | Brukernavn for autentisering mot sak-/arkivsystem (benyttes av P360)   | (ingen)       |
-| difi.move.noarkSystem.password    | Passord for autentisering mot sak-/arkivsystem (benyttes av P360)      | (ingen)       |
-| difi.move.noarkSystem.domain      | Brukerdomene for autentisering mot sak-/arkivsystem (benyttes av P360) | (ingen)       |
-
-For å benytte BEST/EDU kreves det at eFormidlings meldingstjeneste er slått på:
-
-- [Konfigurasjon av eFormidlings meldingstjeneste](#konfigurere-eformidlings-meldingstjeneste-dpo)
-
-Eksempel:
-
-```
-difi.move.noarkSystem.endpointURL=http://localhost:8088/testExchangeBinding
-difi.move.noarkSystem.type=P360
-difi.move.noarkSystem.username=myuser
-difi.move.noarkSystem.password=mypassword
-difi.move.noarkSystem.domain=MYUSERDOMAIN
-```
-
 #### E-post
 *Valgfritt*
 
 Ved bruk av KS SvarInn så kan integrasjonspunktet håndtere feil ved behandling av innkommende meldinger ved å sende en
 e-post. Dette fordi det kan oppstå uforutsette problem med konvertering av meldinger mellom KS FIKS og
 eFormidling.
-
-Ved bruk av BEST/EDU-grensesnittet er det støttet å levere innkommende meldinger på e-post istedenfor en BEST/EDU-
-integrasjon. Dette kan slås på ved å sette `difi.move.noarkSystem.type=mail`.
 
 I disse tilfellene er det nødvendig å konfigurere e-post.
 
@@ -534,7 +503,7 @@ KS SvarUt og SvarInn krever hver sin bruker:
 | difi.move.fiks.inn.mailOnError                   | Slår på/av utsending av e-post ved feil (krever at [e-post](#e-post) er konfigurert)                                    | true          |
 | difi.move.fiks.inn.fallbackSenderOrgNr           | Organisasjonsnummer som blir brukt når meldinger fra SvarInn mangler organisasjonsnummer (ved bruk av eDialog)          | (ingen)       |
 | difi.move.fiks.inn.enable                        | Slår på/av støtte for KS SvarInn                                                                                        | true          |
-| difi.move.fiks.inn.mailSubject                   | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu                                         | (ingen)       |
+| difi.move.fiks.inn.mailSubject                   | Melding hentet fra SvarInn med utilstrekkelig metadata for levering via BestEdu( integrasjon som ble fjernet høsten 2025)                                         | (ingen)       |
 | difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
 | difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
 

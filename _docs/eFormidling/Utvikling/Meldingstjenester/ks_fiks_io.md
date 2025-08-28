@@ -53,7 +53,7 @@ Meldingsstatuser for meldinger sendt med KS FIKS IO:
 
 | Status              | Kommentar                                                                                                           |
 |---------------------|---------------------------------------------------------------------------------------------------------------------|
-| OPPRETTET           | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPE-melding. |
+| OPPRETTET           | Integrasjonspunktet mottar eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPE-melding. |
 | SENDT               | Integrasjonspunkt har sendt forsendelsen til meldingsformidler.                                                     |
 | MOTTATT             | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt meldingen.                               |
 | LEVERT              | Forsendelsen (innsynskrav) er sendt på e-post til mottakers postmottak.                                             |

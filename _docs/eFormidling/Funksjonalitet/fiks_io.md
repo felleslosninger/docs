@@ -83,7 +83,6 @@ Nærmere beskrivelse av de aktuelle meldingstjenestene finnes på:
 
 ## Forutsetninger
 
-- Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
 - Bruk av FIKS IO krever avtale
 
 ## Varsling

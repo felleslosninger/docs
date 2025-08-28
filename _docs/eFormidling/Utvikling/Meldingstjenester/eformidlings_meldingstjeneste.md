@@ -39,9 +39,6 @@ sendes:
 - sbd.json ([Standard Business Document](../Dokumenttyper/standard_sbd))
 - asic.zip ([Dokumentpakke](../Dokumenttyper/standard_dokumentpakke))
 
-Ved bruk av grensesnittet BEST/EDU omformer integrasjonspunktet først fra BEST/EDU til arkivmelding, før meldingen
-sendes som beskrevet over.
-
 Saksbehandlingsprosessene krever at mottaker sender tilbake en arkivmelding-kvittering.
 
 I tillegg sender mottakers integrasjonspunkt meldingsstatuser (mottatt og levert) tilbake til avsender. Disse brukes
@@ -97,7 +94,7 @@ Meldingsstatuser for meldinger sendt med eFormidlings meldingstjeneste:
 
 | Status              | Kommentar                                                                                                                                                        |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OPPRETTET           | Integrasjonspunktet mottar BEST/EDU- eller eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPO-melding                                               |
+| OPPRETTET           | Integrasjonspunktet mottar eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPO-melding                                               |
 | SENDT               | Integrasjonspunkt har sendt forsendelsen til meldingsformidler                                                                                                   |
 | MOTTATT             | Avsender mottar bekreftelse på at mottakende integrasjonspunkt har mottatt.                                                                                      | 
 | LEVERT              | Leveransen er videresendt til sak-arkivsystemet og bekreftet fullført.                                                                                           |

@@ -32,10 +32,14 @@ eFormidling, og integrasjonspunktet må konfigureres med nødvendige tilganger t
 I noen sjeldne tilfeller ønsker en virksomhet å kommunisere med virksomheter på eFormidling uten selv å kjøre et
 integrasjonspunkt. Dette er mulig, men ikke anbefalt. Se gjerne:
 
+- [Kom i gang med utvikling](#kom-i-gang-med-utvikling)
+- [Utvikling for tjenesteleverandører](#utvikling-for-tjenesteleverandører)
 - [Kom i gang med eFormidling uten integrasjonspunkt](#kom-i-gang-med-eformidling-uten-integrasjonspunkt)
+- [Støtte ved utvikling](#støtte-ved-utvikling)
+- [Utvikling av eFormidling](#utvikling-av-eformidling)
+- [Åpen kildekode](#åpen-kildekode)
 
-Integrasjonspunktet tilbyr to programmeringsgrensesnitt. Grensesnittet `eFormidling 2` anbefales for all nyutvikling.
-Det andre grensesnittet, `BEST/EDU`, fases ut og omtales derfor ikke mer på denne siden. Grensesnittene er i
+Integrasjonspunktet tilbyr fom. versjon 3.0.0 ett programmeringsgrensesnitt, `eFormidling 2`. Grensesnittet er i
 utgangspunktet ikke beskyttet, men kan konfigureres med HTTP basic auth og HTTPS.
 
 `eFormidling 2` er JSON-basert og støtter helt overordnet følgende funksjonalitet:
