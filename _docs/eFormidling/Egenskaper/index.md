@@ -106,7 +106,7 @@ Likevel er det enkelte utfordringer knyttet til kompatibilitet i eFormidling
 
 - Noen ganger krever ny funksjonalitet som utvikles at alle virksomheter er på en minimumsversjon før den nye
   funksjonaliteten kan tas i bruk
-- Ikke alle metadata kan transformeres fra eFormidling til KS SvarUt, og så videre
+- Ikke alle metadata kan transformeres fra eFormidling til KS SvarUt.
 
 ## Brukervennlighet
 
