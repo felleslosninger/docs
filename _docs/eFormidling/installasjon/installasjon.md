@@ -128,10 +128,9 @@ difi.move.org.keystore.type=PKCS12
 difi.move.feature.enableDPE=false
 ```
 
-### Valgfri konfigurasjon
-
 #### Miljø (produksjon eller test)
-*Valgfritt*
+
+Det må spesifiseres om integrasjonspunktet skal kjøre med produksjonsmiljø eller test(staging)miljø.
 
 Tilgjengelige miljø:
 
@@ -140,13 +139,16 @@ Tilgjengelige miljø:
 
 | Egenskap               | Beskrivelse                                                                                                                                                  | Standardverdi |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | production    |
+| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | (ingen)       |
 
 Eksempel:
 
 ```
 java -jar -Dspring.profiles.active=staging integrasjonspunkt-2.8.3.jar  
 ```
+
+
+### Valgfri konfigurasjon
 
 #### Hashicorp Vault
 *Valgfritt*
