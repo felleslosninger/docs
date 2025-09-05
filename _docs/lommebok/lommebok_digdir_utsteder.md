@@ -18,7 +18,7 @@ Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn 
 Inntil dette er klart, so har me ein [teknisk retta demo-klient](https://demo-ui-utsteder.test.eidas2sandkasse.net/) der du kan pushe inn json og få eit bevis tilbake.
 
 ## Funksjonalitet
-Me ynskjer at utstedaren skal følge Fina-versjonen av OpenID4VCI.  Dog testar me primært mot  EU sin demolommebok, og denne ligg litt "bakpå", so det kan vere at noko av vår protokoll-støtte enno er for gamal.
+Me ynskjer at utstedaren skal følge Final-versjonen av OpenID4VCI.  Dog testar me primært mot  EU sin demolommebok, og denne ligg litt "bakpå", so det kan vere at noko av vår protokoll-støtte enno er for gamal.
 
 Features som er støtta no:
 - ISO mdoc bevis-format
