@@ -36,13 +36,13 @@ Framtidig funksjonalitet:
 
 ## Bruksmønster 1: pre-authorization code flow med push 
 
-I dette bruksmønsteret so er det datakjelda so styrer prosessen:
-- sluttbrukar er innlogga på ei nett-teneste hjå datakjelda og ynskjer få eit bevis. 
-- Datakjelda klargjer bevis-innhalde og sender til utstedar
-- Responsen er eit Credential Offer som datakjelda rendrar som ein QR-kode
-- Brukaren scanner QR-koden med lommeboka si og får beviset utlevert
+I dette bruksmønsteret so er det datakjelda so styrer flyten:
+1. Sluttbrukar er innlogga på ei nett-teneste hjå datakjelda og ynskjer få eit bevis. 
+1. Datakjelda klargjer bevis-innhaldet og sender til utstedar
+1. Responsen er eit Credential Offer som datakjelda rendrar som ein QR-kode
+1. Brukaren scanner QR-koden med lommeboka si og får beviset utlevert
 
-Flyten ser slik ut:
+Flyten vist som eit sekvensdiagram:
 
 <div class="mermaid">
 sequenceDiagram
@@ -72,6 +72,8 @@ I praksis treng du som data-kjelde berre sende eitt enkelt backend-kall til utst
 Dette endepunktet er sikra med access-token frå anten Maskinporten eller ID-porten alt etter bevis-type. Det er også ulike scopes for ulike bevis-typar, desse finn du i [credential metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer). 
 
 Sidan utstedaren i dette bruksmønsteret ikkje har noko browser-interaksjon med sluttbrukar, betyr det at utstedar stoler fullt og heilt på at datakjelda tek ansvar for at sluttbrukaren er innlogga hjå dei, og at sluttbrukar er informert om og har til hensikt å utstede bevis av aktuell type. 
+
+For å hindre scanne-over-skuldra-misbruk, kan bevis-utstedelsen valfritt verte sikra med ein [Transaction Code `tx_code`](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html#name-credential-offer-parameters).  Data-kjelde indikerer dette ved å velge mellom `none`(ingen bruk av tx_code), `self`(datakjelde kommuniserer tx_code til brukar sjølv), `sms` eller `email`.  I dei to siste tilfella so vil utstedar sende tx_code til adresse som innbyggar har i Kontaktregisteret, og fødselsnummer må også sendast med.
 
 Ta kontakt med oss for å avtale at me legger til støtte for nye bevis-typar.
 
