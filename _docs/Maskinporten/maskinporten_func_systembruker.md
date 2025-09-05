@@ -145,4 +145,4 @@ Leverandøren sitt organisasjonsnummer finner du i claimet `consumer` som vanlig
 
 Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
 
-Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.  Dette er dokumentert nærmere på [Autorisasjon sin dokumentasjon av systembruker for systemleverandører](https://docs.altinn.studio/nb/authentication/guides/systemvendor/).
+Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.  Dette er dokumentert nærmere på [Autorisasjon sin dokumentasjon av systembruker for systemleverandører](https://docs.altinn.studio/nb/authorization/guides/system-vendor/system-user/⁩).

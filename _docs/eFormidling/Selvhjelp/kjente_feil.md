@@ -36,7 +36,9 @@ Shellet en kjører h2-klienten fra må  ha administratorrettigheter. Og pass på
 ### Postgres database vokser urimelig mye
 
 'large object'-opprydding ved bruk av egen database for integrasjonspunktet
-En bør vurdere  opprydding av store objekt dersom en bruker PostgreSQL som egen database for integrasjonspunktet. Dette skyldes at PostgreSQL som standard lagrer BLOB som “large object” (i egen tabell), og at JDBC ikke rydder opp ved sletting. Konsekvensene hvis dette ikke gjøres, vil kunne være at sikkerhetskopi først tar lang tid, og deretter begynner å terminere grunnet høy minnebruk. Verktøyet [vacuumlo](https://www.postgresql.org/docs/13/vacuumlo.html) fjerner foreldreløse store objekter.
+En bør vurdere  opprydding av store objekt dersom en bruker PostgreSQL som egen database for integrasjonspunktet. Dette skyldes at PostgreSQL som standard lagrer BLOB som “large object” (i egen tabell), og at JDBC ikke rydder opp ved sletting. Konsekvensene hvis dette ikke gjøres, vil kunne være at sikkerhetskopi først tar lang tid, og deretter begynner å terminere grunnet høy minnebruk. Verktøyet [vacuumlo](https://www.postgresql.org/docs/current/vacuumlo.html) fjerner foreldreløse store objekter.
+
+Kan gjøres manuelt eller ved å sette opp [triggers](https://www.postgresql.org/docs/current/lo.html)
 
 
 ### 400 bad request

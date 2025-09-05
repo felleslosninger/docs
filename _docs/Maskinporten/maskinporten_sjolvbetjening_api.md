@@ -20,7 +20,7 @@ Dette dokumentet viser hvordan du kan selvbetjene i Maskinporten som API-tilbyde
 
 For å kunne bruke selvbetjening via API, så må virksomheten få utdelt en administrasjons-klient fra Digdir. API'et er sikret med oAuth2 med bruk av virksomhetssertifikat. Merk at i testmiljøene må det benyttes gyldig test-virksomhetssertifikat.
 
-For å administrere API'er må administrasjons-klienten ha tilgang til scopet idporten:scopes.write.
+For å administrere API'er må administrasjons-klienten ha tilgang til scopet idporten:dcr.write.
 
 Ta kontakt med servicedesk@digdir.no for å få tilgang.
 

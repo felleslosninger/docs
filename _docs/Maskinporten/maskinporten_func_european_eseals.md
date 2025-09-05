@@ -51,7 +51,26 @@ The client creates a [JWT grant](maskinporten_protocol_jwtgrant), signs it with 
 
 - The `iss` claim must be present, but the value is ignored. We recommend to put the name of the organization and/or system here
 - Note that `x5c` must be an array containing the full certificate chain, not just the eseal alone.  See [Maskinporten's own signing key x5c-claim](https://maskinporten.no/jwk) for an example.
+- For the PoC, only scopes prefixed with `toll:` or the scope `digdir:verksemd.eu` is supported. And only in the test environments.
 
+Example JWT grant:
+```
+{
+  "x5c": [
+    "pem_encoded_eseal_certificate_public_key_base64",
+  ],
+  "alg": "RS256"
+},
+{
+  "aud": "https://maskinporten,dev/",
+  "scope": "digdir:verksemd.eu",
+  "iss": "mycompany_test_client_that_isnt_registered_in_maskinporten",
+  "exp": 1756282474,
+  "iat": 1756282354,
+  "jti": "5e9a72a3-4342-44b2-8ae8-221b3e0ba10b"
+},
+{signature with private key of the eSeal certificate}
+```
 ## Response
 
 An access token for a European organization is similar to a regular Maskinporten token, with the following exceptions:
@@ -63,7 +82,24 @@ The formatting of the `consumer` identity is different:
 
 The `client_amr` is set to `CForeSeals`  or `QRForeSeals`
 
-Example:
+Example response:
 ```
-TODO
+{
+  "scope" : "digdir:verksemd.eu",
+  "iss" : "https://maskinporten:dev/",
+  "client_amr" : "CForESeal",
+  "token_type" : "Bearer",
+  "exp" : 1756282475,
+  "iat" : 1756282355,
+  "client_id" : "eidas-serialnumberofcertificateused",
+  "jti" : "QushYW3BqEqeFFC0Vl1I5kTK5wKpQxqEFDrjX83tfH4",
+  "consumer" : {
+    "commonName" : "Your company AS",
+    "organizationName" : "Your company AS",
+    "organizationalUnitName" : "Your company's unit",
+    "authority" : "etsi-en-319-412",
+    "ID" : "NTRNO-555555555",
+    "countryName" : "NO"
+  }
+}
 ```
