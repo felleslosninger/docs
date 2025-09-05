@@ -27,9 +27,10 @@ Features som er støtta no:
 Framtidig funksjonalitet:
 - SD-JWT bevis-format
 - code flow
-- rammeverk for pull-basert henting av bevis-data
-- rammeverk for generering av bevis-data basert på token-innhold
+- bruksmønster for pull-basert henting av bevis-data
+- bruksmønster for generering av bevis-data basert på token-innhold
 - Web-grensesnitt for sluttbrukar
+- Bevis-type-spesifikke signeringssertifikat
 - Autentisering og autorisasjon av lommebøker basert på WUA
 - verifisering mot [OpenID conformance test suites](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-credential-issuance/)
 
