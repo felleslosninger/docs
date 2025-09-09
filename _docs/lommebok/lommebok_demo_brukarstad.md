@@ -16,3 +16,6 @@ Den kan p.t. utføre aldersverifisering og fullmaktspålogging.
 Her kan du prøve demo-brukarstaden vår: 
 [https://demo-brukersted.test.eidas2sandkasse.net/](https://demo-brukersted.test.eidas2sandkasse.net/)
 
+Her kan du søke opp brukersteder og se hva slags bevistyper brukerstedet har søkt om å forespørre:
+[https://innsyn.test.eidas2sandkasse.net/](https://innsyn.test.eidas2sandkasse.net/) 
+
