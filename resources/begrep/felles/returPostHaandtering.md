@@ -21,7 +21,6 @@ redirect_from: /2returposthaandtering
 | ---- | ---- |
 | **Verdi** | **Beskrivelse** | 
 | DIREKTE_RETUR | Returpost blir sendt direkte til adressen angitt som returpostadressen, ingen videre oppfølging. |
-| MAKULERING_MED_MELDING | All post får lagt på et EA merke og en strekkode. Returpost blir sendt til Utskriftsleverandøren sin EA tjeneste der strekkoden blir scannet, melding om returpost blir sendt til Avsender og brevet blir makulert.
-Viktig merknad! Innimellom er det tilfeller der innbygger misforstår utskriftsleverandøren sin returpost-adresse og tror dette er adressen et svar på mottatt brev kan sendes til. Det er derfor viktig at avsendervirksomheter definerer en eventuell svar-adresse i brevmalen sin |
+| MAKULERING_MED_MELDING | All post får lagt på et EA merke og en strekkode. Returpost blir sendt til Utskriftsleverandøren sin EA tjeneste der strekkoden blir scannet, melding om returpost blir sendt til Avsender og brevet blir makulert. Viktig merknad! Innimellom er det tilfeller der innbygger misforstår utskriftsleverandøren sin returpost-adresse og tror dette er adressen et svar på mottatt brev kan sendes til. Det er derfor viktig at avsendervirksomheter definerer en eventuell svar-adresse i brevmalen sin |
 
 
