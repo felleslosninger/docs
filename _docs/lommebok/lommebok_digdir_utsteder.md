@@ -181,6 +181,36 @@ I dette bruksmønsteret so startar flyten i lommeboka:
 1. Utstedaren si nett-teneste sender brukaren attende til lommeboka
 1. Lommeboka hentar beviset frå utstedaren
 
+
+
+<div class="mermaid">
+sequenceDiagram
+
+  actor b as Brukar
+  participant l as Lommebok
+  participant n as Nettleser
+  participant u as Utstedar
+  participant a as API
+
+  b-->>l: åpner lommebok, velger bevis
+  l->>u: /authorize-kall med bevistype
+  u-->>n: redirect som åpner nettleser
+  note over b,n: logger inn
+
+  u->>a: hent bevis-innhald
+
+  u->>n: redirect tilbake
+
+  l->>+u: /token (pre-auth.code)
+  u-->>-l: access_token
+
+  l->>+u: Credential Request (access_token)
+  u-->>-l: utstedt bevis
+
+</div>
+
+
+
 Merk at steg 2-5 kan føregå automatisk, til dømes ved at lommeboka gjer ein PID-presentasjon. 
 
 
