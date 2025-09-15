@@ -151,7 +151,7 @@ sequenceDiagram
   participant u as Utstedar
   participant a as API
 
-  note over b,u: loggar inn i Ustedar og startar bevis-utstedelse
+  note over b,u: loggar inn i Utstedar og startar bevis-utstedelse
 
   u->>a: hent bevis-innhald
   u-->>u: rendre QR 
@@ -165,7 +165,7 @@ sequenceDiagram
 
 </div>
 
-Også her er det pre-authroization code flow som blir brukt.
+Også her er det pre-authroization code flow som blir brukt mot lommeboka.
 
 
 
