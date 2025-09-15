@@ -141,6 +141,35 @@ I dette bruksmønsteret treng du som datakjelde berre tilby eit API der utstedar
 1. Utstedaren rendrer ein brukerspesifikk QR-kode
 1. Brukaren scanner QR-koden med lommeboka si og får beviset utlevert
 
+
+
+<div class="mermaid">
+sequenceDiagram
+
+  actor b as Brukar
+  participant l as Lommebok
+  participant u as Utstedar
+  participant a as API
+
+  note over b,u: loggar inn i Ustedar og startar bevis-utstedelse
+
+  u->>a: hent bevis-innhald
+  u-->>u: rendre QR 
+
+  note over b,u: scann QR med lommebok
+  l->>+u: /token (pre-auth.code)
+  u-->>-l: access_token
+
+  l->>+u: Credential Request (access_token)
+  u-->>-l: utstedt bevis
+
+</div>
+
+Også her er det pre-authroization code flow som blir brukt.
+
+
+
+
 ## Bruksmønster 4: Lommeboka styrer flyten
 
 I dette bruksmønsteret so startar flyten i lommeboka:
