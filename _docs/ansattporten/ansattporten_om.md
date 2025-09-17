@@ -54,7 +54,7 @@ Men til forskjell fra ID-porten så tilbyr ikke Ansattporten SSO mellom de ulike
 
 ### Autorative kilder for representasjon
 
-Ansattporten kan brukes enten til ordinær punktinnlogging, eller til å kreve at innlogga bruker må ha et bestemt representasjonsforhold for en virksomhet.   Ansattporten har ikke - og vil aldri frå - sin egen database/register over roller/rettigheter, men baserer seg på eksterne, autorative kilder for representasjonsforhold.
+Ansattporten kan brukes enten til ordinær punktinnlogging, eller til å kreve at innlogga bruker må ha et bestemt representasjonsforhold for en virksomhet.   Ansattporten har ikke - og vil aldri få - sin egen database/register over roller/rettigheter, men baserer seg på eksterne, autorative kilder for representasjonsforhold.
 
 Dersom tjenesten krever representasjon, vil Ansattporten vise en organisasjonsvelger til brukeren, som er forhåndspopulert basert den autorative kilden.
 

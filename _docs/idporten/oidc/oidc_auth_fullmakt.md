@@ -44,6 +44,10 @@ I pilotperioden 2025 så er det Vergemålsregisteret til Statens Sivilrettsforva
 
 ID-porten har ikke - og vil aldri få - en egen database over fullmakter.  Dette betyr at administrasjon av fullmakter (å gi, endre, eller trekke tilbake en fullmakt) skal og må skje i hos den autorative kilden.
 
+![screenshot av fullmaktsvelger](idporten_fullmaktsvelger.png)
+
+Figuren viser fullmaktsvelgeren i ID-porten.  På sikt vil feltet for fødselsnummer bli erstattet av en liste over innlogget bruker sine fullmaktsgivere.
+
 # Virksomhetens plikter ved fullmaktspålogging
 
 TBD - vil bli avklart gjennom pilot-perioden.
@@ -116,7 +120,7 @@ Du finner en oversikt over tilgjengelige fullmaktstyper [hos Statens Sivilrettsf
 
 ### Steg 2: fullmaktsvelger
 
-I normale tilfeller så har brukeren allerede en aktiv SSO-sesjon i ID-porten som følge av den første pålogginga som seg selv.  Derfor vil bruken nå slippe å autentisere seg en gang til og heller hoppe direkte til fullmaktsvelgeren.  Her må brukeren velge hvem en vil representere. 
+I normale tilfeller så har brukeren allerede en aktiv SSO-sesjon i ID-porten som følge av den første pålogginga som seg selv.  Derfor vil bruken nå slippe å autentisere seg en gang til og heller hoppe direkte til fullmaktsvelgeren.  Her må brukeren velge hvem hen vil representere. 
 
 ID-porten vil kontrollere, ved kall mot autorativ kilde, at fullmaktsforholdet eksisterer og er gjeldende, slik at innlogget bruker ikke får valgt eller injisert ikke-eksisterende fullmaktsforhold.
 
@@ -131,7 +135,7 @@ Når bruker har gjort sitt valgt, vil browser bli redirecta tilbake til tjeneste
 
 Når brukeren blir redirecta tilbakt til klient, [henter klienten tokens på vanlig måte](../../idporten/oidc/oidc_protocol_token.html), og bruker responsen til å oppdatere / endre eksisterende lokale brukersesjon i egen tjeneste.
 
-Klienten finner opplysninger om valgt fullmaktsforhold i claimet `authorization_details` som er del av token-responsen direkte.
+Klienten finner opplysninger om valgt fullmaktsforhold i attributtet `authorization_details`:
 
 
 *Eksempel på token-response:*
@@ -172,11 +176,12 @@ Klienten finner opplysninger om valgt fullmaktsforhold i claimet `authorization_
 Dersom brukeren velger å representere seg sjølv, vil `authorization_details` inneholde en tom array: `[]`.
 
 
+MERK:  fullmakts-informasjone er returnert **direkte** i reponsen, dvs. på "utsida" av utstedte tokens.  Dette er standard oppførsel ihht RAR-spesifikasjonen, og blir analogt til måten en klient får vite hvilke Oauth2 scopes som sluttbruker har samtykket til å gi til klienten.  Men i ID-porten har vi valgt å OGSÅ inkludere fullmaktsinformasjonen i id_tokenet, slik at vi returnerer et "fullmakts-id_token".   Denne demo-tjenesten er også [tilgjengelig i produksjonsmiljøet](https://demo-fullmakt-client.idporten.no/).
 
-Vi har valgt å OGSÅ inkludere fullmaktsinformasjonen i id_tokenet, ved å la `authorization_details`-claimet være inkludert også her.  Men merk følgende:
-
-* Den "vanlige" delen av id_tokenet vil inneholde fødselsnummer på innlogga bruker (altså er `pid` og `sub` uendret mellom vanlig id_token og fullmaktsid_token).
 * Bruken av `authorization_details` inne i et id_token ikke er beskrevet i RAR-spesifikasjonen, da RAR er en oauth2-mekanisme og ikke en OIDC-mekanisme. Klienten skal fortrinnsvis bruke token-responsen direkte (som vist ovenfor) til å utlede hvilke rettigheter sluttbruker gav til klienten.  Vi har dog valgt å inkludere fullmaktsinformasjonen også i id_token fordi vi tror det for noen kunder er lettere å hente informasjonen derifra, og det kanskje også er enklere konseptuelt å forholde seg til to ulike typer token for å skille på hvilken kontekst pålogginga gjelder, kontra å hente noe i respons, og noe annet i token.
+* Den "vanlige" delen av id_tokenet vil alltid inneholde fødselsnummer på innlogga bruker (altså peker `pid` og `sub` alltid på samme fysiske person uansett om det er et vanlig id_token eller et fullmakts-id_token).
+
+
 
 
 *Eksempel på fullmakts-id_token*: 
@@ -213,16 +218,17 @@ Vi har valgt å OGSÅ inkludere fullmaktsinformasjonen i id_tokenet, ved å la `
 
 Det betyr at funksjonaliteten med fullmaktspålogging også kan brukes for å tilby et API som krever at innlogget bruker hos konsumenten er fullmektig.  APIet må bare validere at klientene hos konsumentene sender access_token med RAR, og validere at RAR-elementet inneholer påkrevd fullmaktstype.
 
-Merk at det ikke er noen tilgangstyring av RAR-typer.  Alle klienter hos alle kunder kan forespørre RAR og få informasjonen i access_token dersom sluttbruker velger dette.  API-tilbyder må derfor bruke scopes dersom de trenger  implementere tilgangstyring. 
+Merk at det ikke er noen tilgangstyring av RAR-typer.  Alle klienter hos alle kunder kan forespørre RAR og få informasjonen i access_token dersom sluttbruker velger dette.  API-tilbyder må derfor bruke scopes som ytterligere mekanisme dersom kunden trenger å implementere tilgangstyring. 
 
 # Testing
 
 
-Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/).  Her kan man også studere protokoll-flyten i detalj.  Dersom man ønsker å teste fullmaktsveler, så kan man bruke `[{"type":"idporten:fullmakt","permission_roles": "arbeid"}]` i authorization_details-feltet.
+Man kan teste løsningen uten å lage en integrasjon ved å bruke vår [demo-tjeneste for fullmakt](https://demo-fullmakt-client.test.idporten.no/).   Du kan per desember 2024 logge inn med Tenor-bruke 05895894984 som fullmektig, for så så velge 28816196088 som fullmaktsgiver. 
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Tenor har mulighet til å filtrere slik at man får bare **vergehavere** fra test-Folkeregisteret. Se på json-modellen til vergehaveren for å finne fødselsnummeret til vergen samt hvilke vergetjensteoppgaver som vergen har fått fullmakt for.  
 
-For "arbeid"-fullmakten ovenfor, så kan en per desember 2024 benytte 05895894984 som verge og 28816196088 ("Billettluke") som vergehaver.
+
+Dersom du ønsker å teste protokoll-flyten i detalj, er det bedre å teste med [vår ordinære demo-klient](https://demo-fullmakt-client.test.idporten.no/).  For å trigge fullmaktsvelger herifra må du utvide "authorization request"-feltet og skriv inn f.eks. `[{"type":"idporten:fullmakt","permission_roles": "arbeid"}]` i authorization_details-feltet.
 
 
 # Om scopes, rar og sesjoner

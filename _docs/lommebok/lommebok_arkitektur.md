@@ -13,7 +13,7 @@ Gjennom revisjon av eIDAS-forordninga så vil medlemslanda i EU bli pålagde å:
 - tilby ein digital identitetslommebok til alle innbyggere og verksemder innan november 2026
 - lommeboka skal vere gratis å få og bruke for innbyggere
 - lommeboka skal kunne brukast til innlogging
-- lommrboka skal kunne brukast til å utveksle bevis (som førarkort, vaksinasjonskort, firmaattest etc.) til tenester
+- lommeboka skal kunne brukast til å utveksle bevis (som førarkort, vaksinasjonskort, firmaattest etc.) til tenester
 
 Lommebok-økosystemet til EU er i stor grad inspirert frå teknologi for desentralisert identitet og eigen-kontroll over data gjennom bruk av sokalla [Verifiable Credentials](https://en.wikipedia.org/wiki/Verifiable_credentials), som vist i figuren under:
 
@@ -33,7 +33,7 @@ graph LR
 
 Omgrepa "Issuer, Holder, Verifier" kjem frå [W3C sin datamodell](https://www.w3.org/TR/vc-data-model/#roles).  Me har forsøkt å finne nokre passande norske omsetjingar som du kan sjå i figuren ovanfor.
 
-EU-kommisjonen publiserer ein [ein referansearkitektur](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem), den sokalla "ARF'en", som skildrar økosystemet og roller og prosessar som inngår. Me anbefalar at dei som har interesse av å setje seg djupare inn i arkitekturen les denne.
+EU-kommisjonen publiserer [ein referansearkitektur](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem), den sokalla "ARF'en", som skildrar økosystemet og roller og prosessar som inngår. Me anbefalar at dei som har interesse av å setje seg djupare inn i arkitekturen les denne.
 
 Ein kan merke seg at ARFen formelt sett ikkje er eit juridisk bindande dokument, det er lova og rettsaktene (implementing acts) som er, og desse peiker i sin tur på vedtekne standardar frå ETSI, ISO og OpenID Foundation.  Men i praksis er det ARFen som gjev det beste biletet av korleis ting heng saman.
 
@@ -51,6 +51,7 @@ graph LR
 
   subgraph U [Utstedere]
   PID(PID-utsteder, Digdir)
+  LPID(LPID-utsteder, Brreg)
   DI(Digdir-utsteder)
   I(Andre utstedere)
   end
@@ -74,7 +75,7 @@ brukarstader"]
 
 
   F -. kjelde til personidentitet  .-> PID
-  E -. kjelde til verksemdsidentitet .-> PID
+  E -. kjelde til verksemdsidentitet .-> LPID
 
   D -. kjelde til bevis .-> DI
   D -. kjelde til bevis .-> I
@@ -86,29 +87,16 @@ brukarstader"]
 
 </div>
 
-For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale europeiske fellestjenester.  Sidan norsk sandkasse skal fungere allereie no i 2025, som er både tidlegare enn dei sentrale registra frå EU er ferdige, men også rettsleg vere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS-prosessen, so vil Digdir tilby [eit norsk sandskasse-spesifikt tillitsrammeverk](lommebok_tillitsrammeverk) som må nyttast:
 
-<table><tr><td><div class="mermaid">
+ARFen skildrar dette økosystemet slik:
 
-graph
+![Økosystem ihht. arkitektur-rammeverket (ARF)](lommebok_arf_ecosystem.png)
 
-subgraph AK [Tillitsrammeverk frå Digdir]
-  TLI[(Register over utstedere)]
-  TLW[(Register over lommbøker)]
-  TLRP[(Register over brukerstads-registrarer)]
-  DRPR[(Digdir brukerstad-register)]
-end
+(Henta frå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).)
 
-  RPR[(Andre brukerstad-registre)]
 
-TLRP --> DRPR
-TLRP --> RPR
-</div></td></tr>
-<tr><td>
- <em>Tillitsrammeverket i sandskassen</em>
- </td>
-</tr>
-</table>
+For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale europeiske fellestjenester.  Sidan norsk sandkasse skal fungere allereie no i 2025, som er både tidlegare enn dei sentrale registra frå EU er ferdige, men også rettsleg vere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS-prosessen, so vil sandkassen bruke ei eiga tillistrammeverk som Digdir driftar. Du kan lese meir om [sandskassa sitt tillitsrammeverk](lommebok_tillitsrammeverk).
+
 
 Som følgje av registrering på tillitslista, får aktøren eit sertifikat som skal nyttast til autentisering ved samhandling. Sjølve samhandlinga er basert på to nært beslekta protokollar frå OpenID Foundation, nemleg OpenID4VCI for å [laga eit bevis](lommebok_protokoll_vci.html) eller OpenID4VP for å [bruka eit bevis](lommebok_protokoll_vp.html). 
 

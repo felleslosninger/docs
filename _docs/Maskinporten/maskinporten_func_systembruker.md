@@ -59,37 +59,45 @@ sequenceDiagram
     Fagsystem->>+Maskinporten: forespørre token (kundes orgno)
     Maskinporten->>Altinn Autorisasjon: Hent systembrukerinformasjon 
     Altinn Autorisasjon-->>Maskinporten: systembrukerinformasjon
-    Maskinporten-->>Fagsystem: systembruker-token
-    Fagsystem->>API: API-kall m/systembrukertoken
+    Maskinporten-->>-Fagsystem: systembruker-token
+    Fagsystem->>+API: API-kall m/systembrukertoken
     note over API: validerer scope, konstruerer PDP-spørring
     API->>Altinn Autorisasjon: PDP-kall med systembruker, part, ressurs, action
-    Altinn Autorisasjon-->API: Ja/nei
-    API->>Fagsystem:API Result 
+    Altinn Autorisasjon-->>API: Ja/nei
+    API->>-Fagsystem:API Result 
 </div>
 
 ### Forespørsel
 
 Et fagsystem ber om å få systembruker-token på vegne av en part ved å inkludere en RAR-forespørsel av type `urn:altinn:systemuser` med partens organisasjonsidentifikator, i [JWT-grantet](maskinporten_protocol_jwtgrant):
 
+Datamodellen for request ser slik ut:
+
+| claim | kardinalitet | beskrivelse |
+| ----- | ------------ | ----------- |
+| `type`| Påkrevd | Alltid `urn:altinn:systemuser` |
+| `systemuser_org` | Påkrevd | Organisasjonsidentifikator i ISO6523-format på eier av systembrukeren (leverandørens kunde) |
+| `externalRef` | Valgfri | Nødvendig dersom leverandørens kunde har flere systembrukere som peker på samme system, eller dersom den ene systembrukeren er opprettet med en externalRef |
+
+
+*Forenklet eksempel på JWT-grant i token-request*
 ```
 {
   "aud": "https://maskinporten.no",
-  "scope": "some_scope",
+  "scope": "api-tilbyders scope",
   "iss":   "my_client_id",
-  "exp": 1520589928,
-  "iat": 1520589808,
-  "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
 
   "authorization_details": [ {
     "type": "urn:altinn:systemuser",
     "systemuser_org": {
        "authority" : "iso6523-actorid-upis",  
        "ID": "0192:999888777"  
-    }
+    },
+    "externalRef": "systembruker #1"
 }]
 ```
 
-Merk 1: man kan kun spørre på en part i gangen. 
+Merk 1: man kan kun spørre på en kunde/part i gangen. 
 
 Merk 2: grantet må også alltid forespørre et eller flere Oauth2 scopes.
 
@@ -97,10 +105,23 @@ Merk 2: grantet må også alltid forespørre et eller flere Oauth2 scopes.
 
 Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasjonnummer, og er knyttet mot leverandørens fagsystem gjennom det autentiserte fagsystemet (client_id):
 
+Datamodellen for respons ser slik ut:
+
+| claim | beskrivelse |
+| ----- |  ----------- |
+| `type`|  Alltid `urn:altinn:systemuser` |
+| `systemuser_org` | Organisasjonsidentifikator i ISO6523-format på eier av systembrukeren (leverandørens kunde) |
+| `systemuser_id` | Identifikatoren til systembrukeren |
+| `system_id` | Identifikatoren til leverandøren sitt system i systemregisteret |
+
+Merk at `externalRef` ikke er returnert, det brukes kun for å identifisere rett systembruker i de tilfeller der det er flere kandidater.
+Leverandøren sitt organisasjonsnummer finner du i claimet `consumer` som vanlig.
+
+*Forenklet eksempel på access token:*
 ```
 {
   "iss":         "https://maskinporten.no",
-  "scope":       "some_scope",
+  "scope":       "api-tilbyders scope",
   "client_id":   "leverandøren sin client_id",
   "consumer":    {"authority" : "iso6523-actorid-upis",  "ID": "0192:leverandøren sitt orgno" },
   
@@ -120,9 +141,8 @@ Tokenet vil innehold en liste med systembrukere som tilhører kundens organisasj
 
 
 
-## OppsettJ
+## Oppsett
 
 Leverandøren må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på Samarbeidsportalen. Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.
 
-På sikt vurderer vi å opprettes en egen integrasjonstype (`integration_type`) i Maskinporten selvbetjening for slike systemer, og det vil bli muligheter for automatisert opprettelse av slike gjennom Altinn direkte.
-
+Deretter må leverandøren opprette et fagsystem i systemregisteret i Altinn, og knytte det mot Maskinporten-integrasjonen sin `client_id`.  Dette er dokumentert nærmere på [Autorisasjon sin dokumentasjon av systembruker for systemleverandører](https://docs.altinn.studio/nb/authorization/guides/system-vendor/system-user/⁩).

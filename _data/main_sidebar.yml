@@ -12,6 +12,15 @@ folders:
   - title: Teknisk dokumentasjon
     jurl: /docs/idporten/idporten/idporten_overordnet
 
+- title: Ansattporten
+  folderitems:
+
+  - title: Om Ansattporten
+    jurl: /docs/ansattporten/ansattporten_om.html
+
+  - title: Teknisk dokumentasjon
+    jurl: /docs/ansattporten/ansattporten_representasjon.html
+
 
 - title: Maskinporten
   folderitems:
@@ -87,6 +96,15 @@ folders:
 
     - title: Teknisk dokumentasjon
       jurl: /docs/eGovernment/introduksjon
+
+- title: Digital lommebok
+  folderitems:
+
+  - title: Om Digital lommebok
+    jurl: /docs/lommebok/lommebok_om.html
+
+  - title: Teknisk dokumentasjon
+    jurl: /docs/lommebok/lommebok_protokoll_vp.html
 
 
 ###########################

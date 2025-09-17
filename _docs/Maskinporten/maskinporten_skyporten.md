@@ -14,7 +14,9 @@ redirect_from: /maskinporten_skyporten
 
 ## Hva er Skyporten?
   
-Skyporten lar deg bruke Maskinporten for å dele tilgang til skyressurser.
+Skyporten lar deg bruke Maskinporten for å dele tilgang til skyressurser. 
+
+I Skyporten er det gjort tilpassinger slik at den skal virke mot hyllevare-skytjenester. Den er derfor bedre egnet for deg som ikke vil lage et API selv.
 
 ![Skyporten komponenter]({{site.baseurl}}/images/maskinporten/skyporten_komponenter.png)
 

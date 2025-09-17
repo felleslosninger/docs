@@ -20,20 +20,14 @@ folders:
       - title: Innlogging til webtjeneste
         jurl: /docs/idporten/oidc/oidc_guide_idporten.html
 
-      - title: Innlogging til SPA
-        jurl: /docs/idporten/oidc/oidc_auth_spa.html
-
-      - title: Innlogging til mobilapp
-        jurl: /docs/idporten/oidc/oidc_auth_app.html
-
-      - title: Innlogging til tykke klienter
-        jurl: /docs/idporten/oidc/oidc_auth_sbs.html
-
       - title: Brukerstyrt datadeling
         jurl: /docs/idporten/oidc/oidc_auth_oauth2.html
 
       - title: Fullmaktspålogging
         jurl: /docs/idporten/oidc/oidc_auth_fullmakt.html
+
+      - title: Utenlandske brukere
+        jurl: /docs/idporten/oidc/oidc_func_utanlandske_brukarar.html
 
 
 - title: Grensesnittsdefinisjon
@@ -63,6 +57,18 @@ folders:
         jurl: /docs/idporten/oidc/oidc_protocol_scope.html
       - title: "RAR"
         jurl: /docs/idporten/oidc/oidc_protocol_rar.html
+
+
+      - title: Innlogging til SPA
+        jurl: /docs/idporten/oidc/oidc_auth_spa.html
+
+      - title: Innlogging til mobilapp
+        jurl: /docs/idporten/oidc/oidc_auth_app.html
+
+      - title: Innlogging til tykke klienter
+        jurl: /docs/idporten/oidc/oidc_auth_sbs.html
+
+
       - title: Systemarkitektur
         jurl: /docs/idporten/oidc/oidc_arch.html
 
@@ -99,6 +105,9 @@ folders:
       - title: eIDAS
         jurl: /docs/idporten/oidc/oidc_func_eidas.html
 
+      - title: email login
+        jurl: /docs/idporten/oidc/oidc_func_emaillogin.html
+
       - title: SAML
         jurl: /docs/idporten/oidc/oidc_func_saml.html
 
@@ -119,6 +128,9 @@ folders:
   - title: Verifikasjonstester
     jurl: /docs/idporten/idporten/idporten_verifikasjonstester.html
 
+  - title: Automatisert testing
+    jurl: /docs/idporten/oidc/oidc_func_apitesting.html
+    
 - title: Feilsøking
   folderitems:
 

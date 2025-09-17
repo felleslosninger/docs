@@ -1,7 +1,7 @@
 ---
 title: "/authorize endpoint"
-description: "This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten"
-summary: 'This page summarizes the protocol options availalbe for on the /authorize endpoint for ID-porten'
+description: "This page summarizes the protocol options available for on the /authorize endpoint for ID-porten"
+summary: 'This page summarizes the protocol options available for on the /authorize endpoint for ID-porten'
 
 sidebar: oidc
 product: ID-porten
@@ -9,6 +9,11 @@ redirect_from: /oidc_protocol_authorize
 ---
 
 ## About
+
+The client starts the authentication prosess by sending an authorization request.
+
+{% include note.html content="For better security, we recommend you to send these authorization parameters in a [PAR-request](oidc_protocol_par) prior to end-user (browser) involvement." %}
+
 
 The `/authorize` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.2](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
 
@@ -34,19 +39,12 @@ Supported request attributes for normal, redirected authorization requests:
 | scope |  Required |Whitespace-separated list of requested scopes.  Normally just `openid`.  |
 | state | Recommended | Value set by the client and returned in the callback. Often used to g Normally used to If PKCE is not used, then state must be used to achieve CSRF-protection. Mandatory to use for public clients|
 | nonce | Recommended |Value set by the client and returned in the id-token. Recommended to use to protect from replay attacks. |
-| acr\_values | Optional | Requested security level of assurance(s) (`idporten-loa-substantial`)|
+| acr\_values | Optional | Requested security level of assurance(s). See [id_token docs](oidc_protocol_id_token#acr-values). (`idporten-loa-substantial`)|
 | response_mode | Optional | Used if you want alternative way of returning the authentication response. The supported values are published on the .well-known endpoint.   |
 | ui\_locales | Optional | Requested language in the user interface, we support *nb*, *nn*, *en* or *se*.  Note that if the user manually changes language in ID-porten GUI, a cookie IDPORTEN_SELECTED_LANGUAGE will be set, overriding the requested ui_locales. |
 | prompt | Optional | Used to govern end user involvement. The supported values are published on the .well-known endpoint.   |
 | code_challenge   | Required*  | The [PKCE](https://docs.digdir.no/docs/idporten/oidc/oidc_func_pkce) `code_challenge` is a calculated value based on `code_verifier`.  |
 | code_challenge_method   | Required   | Algorithm for PKCE. Only `S256` supported.  |
-
-When using PAR, only the following attributes are supported:
-
-| Attribute  | Optionality | Description |
-| --- | --- | --- |
-| client\_id | Required | ID-porten will provide you with a client-id out-of-band|
-|request_uri| Required | The identifier returned by ID-porten from a previously pushed [PAR request]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_par). |
 
 
 Clients are strongly recommended to use state, nonce in addition to the mandatory [PKCE]({{site.baseurl}}/docs/idporten/oidc/oidc_func_pkce).
@@ -71,6 +69,15 @@ GET https://login.idporten.no/authorize?
   code_challenge_method=S256&
 
 ```
+
+
+When using PAR, only the following attributes are supported:
+
+| Attribute  | Optionality | Description |
+| --- | --- | --- |
+| client\_id | Required | ID-porten will provide you with a client-id out-of-band|
+|request_uri| Required | The identifier returned by ID-porten from a previously pushed [PAR request]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_par). |
+
 
 ### Sample request when using pushed authorization requests (PAR)
 

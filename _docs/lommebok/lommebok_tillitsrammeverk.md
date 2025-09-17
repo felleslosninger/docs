@@ -7,35 +7,93 @@ product: lommebok
 redirect_from: /lommebok_tillitsrammeverk
 ---
 
-Her vil det kome informasjon om tillistrammeverket i sandkassen.
+Tillit i sandkassen er basert tillitslister forvalta av Digdir. Du finn tillitslista her:
 
+- [Tillitsliste for sandkassen](https://tillitsliste.test.eidas2sandkasse.net/access_tsl)
 
+Tillitslista fortel kven som er hovudaktørar i sandkassen, dvs. som godkjent som:
+
+- PID-utstedarar
+- Lommebok-operatørar
+- Kvalifiserte utstedarar (QEAA)
+- Offentlige utstedarar (Pub-EAA)
+- Ordinære (ikkje-kvalifiserte) utstedarar (EAA)
+- Brukerstadsertifikat-utstedarar
 
 <table><tr><td><div class="mermaid">
 
 graph
 
-subgraph AK [Tillitsrammeverk frå Digdir]
-  TLI[(Register over utstedere)]
-  TLW[(Register over lommbøker)]
-  TLRP[(Register over brukerstads-registrarer)]
-  DRPR[(Digdir brukerstad-register)]
+subgraph AK [Tillitsliste]
+  TLPID@{ shape: docs, label: "PID-utstedere"}
+  TLEAA@{ shape: docs, label: "Utstedere (QEAA, PubEAA, EAA)"}
+  
+  TLRP@{ shape: docs, label: "Tilgangssertifikat-leverandørar"}
+  TLW@{ shape: docs, label: "Lommebok-operatører"}
+
 end
 
+  DRPR[(Digdir brukerstad-register)]
   RPR[(Andre brukerstad-registre)]
 
 TLRP --> DRPR
 TLRP --> RPR
 </div></td></tr>
 <tr><td>
- <em>Tillitsrammeverket i sandskassen</em>
+ <em>Tillitsrammeverket i sandkassen</em>
  </td>
 </tr>
 </table>
 
-For brukerstader so ser me at tillitslista er to-delt:  den sentrale tillistlista peikar berre på ein PKI tilhøyrande godkjente **bregistrarer**. Eit brukarstad må ta kontakt med ein registrar for å skaffe eit brukarstadssertifikat (Relying Party Access Certificate).
 
-Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  Tillitslistene ovanfor er i prakis berre enkle oppslagstenester som lister opp signeringssertifikatet som vert nytta av den godkjente aktøren.  Dersom sertifikatet ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist.  I sandkassen vil det vere Digdir som, basert på tilstendt ei CSR-fil, deler ut desse sertifikata til utstedere, lommebok-leverandørar eller brukarstads-registrarer. 
+Det er verd å merke seg at sjølve brukarstadene (relying parties) ikkje havnar på den sentrale tillitslista, men at det istaden er ein to-nivå struktur: den sentrale tillitslista peikar berre på PKIer forvalta av godkjente **tilgangssertifikat-utstedere**. Det kan gjerne vere fleire slike sertifikat-utstedere i eit land. Eit brukarstad må ta kontakt med ein **Registrar** for å skaffe eit brukerstad-sertifikat (også kjent som "tilgangssertifikat": Relying Party Access Certificate). Normalt vil Registrar og sertifikat-utsteder vere same organisasjon. 
 
- I den endelege produksjonsøkosystemet hjå EU er det berre medlemslanda som har tilgang til og ansvaret for å publisere desse sertifikata på EU si tillitsliste. 
+I sandkassen vil Digdir tilby ein Regigstrar-funksjon med tilhøyrande brukarstadsertifikat-utstedar.  Det er opent for at fleire aktørar også kan vere Registrar i sandkassen.
+
+Ein bør merke seg at ARF snakkar om tillitslister, altså det kan potensielt vere fleire, ulike tillitslister som ein må sjekke.   I den endelege lommebokarkitekturen er det EU-kommisjonen som tilbyr tillistlistene, og so skal medlemslanda melde inn aktørane. 
+
+### Teknisk skildring
+
+Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på PKI, dvs. X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  
+
+
+Hovedaktørane må ha sine signeringssertifikat publisert på ei tillitsliste, 
+
+![Tillitsmodell ihht. arkitektur-rammeverket (ARF)](lommebok_arf_trustmodel.png)
+
+
+Tillitslista er basert på [ETSI-standarden 319 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf) og er i praksis ei XML-fil som lister opp aktørane og tillitstenestene dei leverer:
+
+* Tillitsteneste-leverandør A (TrustServiceProvider)
+  * Tillitsteneste A.1 (TSPService)
+    * Status (ServiceStatus)
+    * Teneste-type (ServiceTypeIdentifier)
+    * Signeringssertifikat (DigitalId)
+    * Ytterlegare avgrensningar (AdditionalServiceInformation.URI)
+  * Tillitsteneste A.2 
+* etc...
+
+For døme på ei ekte produksjons-tillistliste kan du sjå på [den norske tillistlista for tilbydarar av kvalifiserte tillitstenester](https://nkom.no/internett/elektronisk-id-og-tillitstjenester/tillitsliste-trusted-list#norges_tillitsliste).  Alle dei 28 tillitslistene i EU/EØS blir lenka opp i "List of Trusted List" (LOTL) som blir drifta av EU-kommisjonen.
+
+Det er myndigheiter i medlemslanda som har tilgang til, og ansvaret for, å publisere desse TSPane på EU si tillitsliste. 
+
+Dersom ei tillitsteneste med tilhøyrande signeringsertifikat ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist. Det er krav til gjensidig autentisering, slik at ingen kan "hoppe over" denne valideringa.
+
+//todo: forklare WUA, og skilnad i trust mellom signert vp_token og wua
+
+### Praksis
+
+Ta kontakt med Digdir for å få eit brukarstad-sertifikat.  
+
+Bruk gjerne innsynstjenesten for å studere kven so er aktørar i sandkassen.
+
+
+
+
+
+
+
+
+
+
 

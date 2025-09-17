@@ -11,10 +11,10 @@ Digdir sin demo-brukastad er laga for å kunne demonstrere nokre av dei bevisa s
 
 Den kan p.t. utføre aldersverifisering og fullmaktspålogging.
 
-Merk at til dømes EU tilbyr ein meir feature-komplett demo-teneste HER:
-
 ## Grensesnitt
 
 Her kan du prøve demo-brukarstaden vår: 
-[https://demo-vc-verifier.test.idporten.no/](https://demo-vc-verifier.test.idporten.no/)
+[https://demo-brukersted.test.eidas2sandkasse.net/](https://demo-brukersted.test.eidas2sandkasse.net/)
 
+Her kan du søke opp brukarstader og sjå kva bevistypar ein brukarstad etterspør:
+[https://innsyn.test.eidas2sandkasse.net/](https://innsyn.test.eidas2sandkasse.net/) 

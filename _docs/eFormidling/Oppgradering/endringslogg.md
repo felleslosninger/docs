@@ -18,6 +18,14 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 2.28.5
+
+24.04.2025
+
+**Ny funksjonalitet**
+
+- Støtte for lesing av base-64-koda sertifikatfiler
+
 ## 2.28.4
 
 08.04.2025

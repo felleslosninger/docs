@@ -36,18 +36,19 @@ Example:
 
 ```
 {
-  "sub" : "-v-lcae5rGG-jlvzuv9Y9H7R8NmAeM2-kh0qWb-vPIE=",
-  "aud" : "test_rp_yt2",
-  "acr" : "Level4",
-  "auth_time" : 1497605218,
-  "amr" : "BankID",
-  "iss" : "https://oidc-yt2.difi.eon.no/idporten-oidc-provider/",
-  "pid" : "20914695016",
-  "exp" : 1497605382,
+  "sub" : "qD-kwgr3FcGA9zy4M7O_4Dco95Uobipd0RJeHSWypG5BL0VrsSND4Pppa2ZInbDyTGfo0AncdvAbU74gfdQmVe7Uz_D0el0",
+  "amr" : [ "TestID" ],
+  "iss" : "https://test.idporten.no",
+  "pid" : "47906701517",
   "locale" : "nb",
-  "iat" : 1497605262,
-  "nonce" : "min_fine_nonce_verdi",
-  "jti" : "Hgb3zwO9g0bjmSbCCtQCxMowsZEu00lCJ2Exg4Zhv3g="
+  "nonce" : "<min_fine_nonce_verdi>",
+  "sid" : "dskgZMtxu8DRSyIBTljf9XgqVggBS865o6Rmf74rskQ",
+  "aud" : "democlient_idporten_test",
+  "acr" : "idporten-loa-substantial",
+  "auth_time" : 1746173220,
+  "exp" : 1746173341,
+  "iat" : 1746173221,
+  "jti" : "K8kMQM_1zc0"
 }
 ```
 
@@ -78,7 +79,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | iat | Timestamp when this token was issued. If different from `auth_time`, this indicates a federated/sso login. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | jti | jwt id - unique identifer for a given token  |
-| locale | The language selected by the user during the authentication in ID-porten |
+| locale | The language selected by the user during the authentication in ID-porten. ISO 639-1 values are: nb (Norwegian Bokmål), nn (Norwegian Nynorsk), en (English), se (Northern Sami)|
 | sid | session id - an unique identifier for end user session at ID-porten. Clients should store the value to be able to handle frontchannel logout notifications. Note that `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required`.  |
 
 
@@ -88,30 +89,33 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 
 Authentication method can have the following values:
 
-|`amr` value| Description|
-|-|-|
-|`Minid-PIN` | MinID using PIN-codes from letter (deprecated)|
-|`Minid-OTC` | MinID using one-time-code received via SMS|
-|`Minid-APP` | MinID using notification in the MinID-app on android/iOS |
-|`Minid-TOTP` | MinID using timebased one-time passwords |
-|`Minid-WEBAUTHN` | MinID using security keys |
-|`BankID`    | BankID using code generator or app|
-|`BankID Mobil` | BankID on mobile |
-|`Buypass`      | Buypass |
-|`Commfides` | Commfides using smartcard |
-|`eIDAS`  | A European approved eID through the eIDAS network|
-|`TestID` |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
+| `amr` value            | Description|
+|------------------------|-|
+| `Minid-PIN`            | MinID using PIN-codes from letter (deprecated)|
+| `Minid-OTC`            | MinID using one-time-code received via SMS|
+| `Minid-APP`            | MinID using notification in the MinID-app on android/iOS |
+| `Minid-TOTP`           | MinID using timebased one-time passwords |
+| `Minid-WEBAUTHN`       | MinID using security keys |
+| `BankID`               | BankID using code generator or app|
+| `BankID Mobil`         | BankID on mobile |
+| `Buypass`              | Buypass |
+| `Commfides`            | Commfides using smartcard |
+| `eIDAS`                | A European approved eID through the eIDAS network|
+| `Selfregistered-email` | A European approved eID through the eIDAS network|
+| `TestID`               |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
 
 
 ## ACR values
 
 The security level of assurance can have the following values:
 
-|`amr` value| Description|
-|-|-|
-|`idporten-loa-low` | A "low" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
-|`idporten-loa-substantial` | A "substantial" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
-|`idporten-loa-high` | A "high" level of assurance according to Norwegian legal framework ("selvdeklarasjonsforskriften"). |
+| `acr` value               | Description                                                                                                                                                                                                                                                       |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `idporten-loa-substantial` | A []"substantial" level of assurance according to Norwegian legal framework](https://lovdata.no/forskrift/2019-11-21-1578/§20)). Multi-factor login with an ID that has been issued according to the 'substantial' demands. For example MinID App or MinID with one-time-code from SMS. |
+| `idporten-loa-high`       | A ["high" level of assurance according to Norwegian legal framework](https://lovdata.no/forskrift/2019-11-21-1578/§19) (["selvdeklarasjonsforskriften"). Multi-factor login with an ID that has beed issued according to the 'high' demands. For example BankID, Buypass or Commfides.                                 |
+| `eidas-loa-substantial`   | A "substantial" level of assurance according to the European eIDAS regulation. Multi-factor login with an eID that has been notified in the eIDAS network. |                                                              |
+| `eidas-loa-high`   | A "high" level of assurance according to the European eIDAS regulation. Multi-factor login with an eID that has been notified in the eIDAS  network. |                                                              |
+| `selfregistered-email`    | A self-registered email-user with no standardized level of assurance.                                                                                                                                                                                             |
 
 These values was changed i 2023 to comply with the updated Norwegian legal framework introduced in 2018, see [Veileder for identifikasjon og sporbarhet i elektronisk kommunikasjon med og i offentlig sektor](https://www.digdir.no/digital-samhandling/veileder-identifikasjon-og-sporbarhet-i-elektronisk-kommunikasjon-med-og-i-offentlig-sektor/2992).
 

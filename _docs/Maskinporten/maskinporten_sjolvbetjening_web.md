@@ -32,7 +32,7 @@ For å opprette bruker på Samarbeidsportalen. Gjør følgende:
 
 ### Tilgang i test- og produksjonsmiljø
 
-Tilgang i test og produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn).
+Tilgang i test og produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn). 
 
 Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
@@ -53,9 +53,10 @@ Tabell for tilgjengelige rettigheter:
 
 |**Rettighet**|**Funksjon**|
 | - | - |
-| Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere |
-| Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten |
-| Selvbetjening for leverandører i ID-porten/Maskinporten*| Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer |
+| Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere i både test- og produksjonsmiljø |
+| Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten i både test- og produksjonsmiljø |
+| Selvbetjening for leverandører i ID-porten/Maskinporten*| Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer i både test- og produksjonsmiljø |
+| Selvbetjening for testing i ID-porten/Maskinporten | Gir tilgang til administrasjon av klienter og scopes kun i testmiljøet |
 
 *NB! Selvbetjening for leverandører krever "Selvbetjening av integrasjoner..." i tillegg.
 
@@ -217,7 +218,6 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 4. Sjekk at JWK blir lagret i riktig format på klienten:
 
 ```
-[
     {
       "kty": "RSA",
       "e": "AQAB",
@@ -226,7 +226,7 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
       "alg": "RS256",
       "n": "lGc-dGnl9l9pCSb6eW5Mf23Aiss09q7Mxre9q9dazSiN9IjQJmkWDySpoYW3g_rSX2a74cg_q3iTSM0Co9iJ0LQp8gjoIi9I8syi6anBKK6fISr1adZbsGGrM1-zMRRNVsJ811snTdkbgx8ZxVRJM4F6D2KwL3TEnv0CRRVtphO0sRmimKBVVBdawPYQC64SQDvARy6xIlPhD-Da2n2Cl6vRQbVns7dYD8-C2TeYGgB_tAsrVSorx9GF5cZ-hlNHfIgg2qQYZzaljyfOWPPG5rybp9bAWg9vFllUFd_Y6vvZ0tqVfAyj67nFz_w4Rxy-MdRgERKHJcq81GkmVzq5fQ"
     }
-  ]
+  
 ```
 
 ### Registrere sertifikat på klient

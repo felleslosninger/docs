@@ -24,7 +24,7 @@ Her er en oversikt over attributtene som finnes i KRR sitt REST API og hvilken r
 | epostadresse_sist_verifisert | Sist gang epostadresse ble verifisert av person. Bekreftes av person minst to ganger i året. | Eks. 2023-08-05T10:45:15.768Z |
 | epostadresse_sist_validert | Sist gang epostadresse ble validert vha engangskode sendt til epostadressen. | Eks. 2023-08-05T10:45:15.768Z |
 | epostadresse_duplisert | Epostadresse er registrert på en eller flere andre personar i KRR. | JA, NEI |
-| mobiltelefonnummer | Mobilnummer som person har registrert i KRR | Mobilnummer |
+| mobiltelefonnummer | Mobilnummer som person har registrert i KRR | '+4712345678' |
 | mobiltelefonnummer_oppdatert | Sist gang mobiltelefonnummer ble oppdatert av person.  Nytt eller endret mobilnummer. Dato kan være mer enn 18 måneder tilbake i tid. | Eks. 2023-08-05T10:45:15.768Z |
 | mobiltelefonnummer_sist_verifisert | Sist gang mobiltelefonnummer ble verifisert av person.  Bekreftes av person minst to ganger i året.| Eks. 2023-08-05T10:45:15.768Z |
 | mobiltelefonnummer_sist_validert | Sist gang mobiltelefonnummer ble validert vha engangskode sendt til registrert mobiltelefonnummer. | Eks. 2023-08-05T10:45:15.768Z |

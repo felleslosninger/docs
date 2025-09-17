@@ -38,8 +38,8 @@ Følgende authorization_type er støttet i Ansattporten:
 | `authorization_type` | 	 Skildring |
 |-|-|
 | `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
-| `ansattporten:altinn:resource` |IKKE I BRUK ENNÅ.  Skal støtte bruk av Altinn3-ressurser som autorativ kilde for representasjon. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
-| `ansattporten:entra` |IKKE I BRUK ENNÅ.  Skal støtte organisasjonnummer kobling for bruker logget inn med Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| `ansattporten:altinn:resource` |Støtter bruk av Altinn3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn. Støtte for tilgang gjennom roller er p.t. ikke mulig i altinn 3. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
+| `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-type i samme påloggingsforespørsel. Klienten må istedet implementere flere login-knapper i sin egen løsning.
@@ -54,25 +54,30 @@ Dersom kunden ønsker å bruke Altinn 2 lenketjenester (ServiceCode) som autorat
 
 Følgende claims kan sendes inn i request: 
 
-| claim | kardinalitet|beskrivelse |
-|-|-|-|
-|resource | påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `|
-|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. |
-|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|
-|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise sletta verksemder. Default er false.|
-|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default så er begge mulig å velge å representere seg selv. |
+| Claim | Kardinalitet | Beskrivelse | Gyldighet |
+|-|-|-|-|
+|resource | Påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteugave} `| Spesifiseres pr autorisasjonsobjekt |
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
+|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise slettede virksomheter. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom  spesifisert i flere autorisasjonsobjekter |
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
 
 [Her finner en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
 
 > **Mange av dagens standard Altinn-roller gir veldig breie tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipp, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor tilbyr vi ikke innlogging på vegne av Altinn-roller i Ansattporten, tjenesten må spesifisere en lenketjeneste. 
 
 
-*Eksempel på request*: 
+*Eksempel på request med 2 autorisasjonobjekter*: 
 ```
   authorization_details= [
     {
       "type": "ansattporten:altinn:service",
       "resource": "urn:altinn:resource:2480:40"
+    },
+    {
+      "type": "ansattporten:altinn:service",
+      "resource": "urn:altinn:resource:5900:1",
+      "allow_multiple_organizations": true
     }
   ]
 ```
@@ -103,9 +108,6 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
   } ]
 ```
 
-Dersom det er forespurt flere representasjonsforhold, så vil `authorization_details` inneholde ett json-objekt per lenketjeneste som brukeren har rettighet til. 
-
-
 #### Testbrukere
 
 Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.   Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:service","resource": "urn:altinn:resource:2480:40"}]` i authorization_details-feltet (denne tjenestekoden gir ut nøkkelroller).
@@ -117,9 +119,111 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
 
-TBD
+{% include note.html content="Altinn3-organisasjonvelger fungerer p.t. bare for brukere som har fått tilgang til ressursen via enkelttjeneste-delegering, dvs. direkte til sitt f/d-nummer.  Støtte for brukere som har tilgang gjennom en tilgangspakke/rolle kommer mot slutten av 2025. " %}
 
-## Datamodell for Entra ID  (`ansattporten:entra`)
+Dersom kunden ønsker å bruke Altinn 3 ressurser som autorativ kilde for representasjonsforhold, må klienten oppgi  `ansattporten:altinn:resource` som RAR-type. 
 
-TBD
+Følgende claims kan sendes inn i request: 
+
+| Claim | Kardinalitet | Beskrivelse | Gyldighet |
+|-|-|-|-|
+|resource | Påkrevd |Hvilken ressurs i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{resource_id} `| Spesifiseres pr autorisasjonsobjekt |
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
+|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise slettede virksomheter. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom  spesifisert i flere autorisasjonsobjekter |
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
+
+*Eksempel på request som krever representasjon, og tillater å velge flere virksomheter*: 
+```
+  authorization_details= [
+    {
+      "type": "ansattporten:altinn:resource",
+      "resource": "urn:altinn:resource:resource_enkeltrettighet",
+      "allow_multiple_organizations": true,
+      "representation_is_requierd": true
+    }
+  ]
+```
+
+Dersom det er forespurt flere ressurser, så vil `authorization_details` inneholde et json-objekt per ressurs som brukeren har fått tildelt tilgang til. 
+Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+
+| claim | beskrivelse            |
+| ----- | ---------------------- |
+| resource | Samme som i request (full urn) |
+| resource-name | Namn på etterspurt representasjonsforhold |
+| authorized_parties | Array med valgte virksomheter. |
+| orgno | For hver virksomhet, objekt med orgno representert ihht iso6523 standard.  |
+| resource | For hver virksomhet, ressurs-id, skal matche id i etterspurt ressurs |
+| resource-name | For hver virksomhet, navnet på ressursen | 
+| unit-type | For hver virksomhet, angir organisasjonstypen ihht https://www.brreg.no/bedrift/organisasjonsformer/ |
+
+
+*Eksempel på respons*:
+```
+  "authorization_details" : [ {
+    "authorized_parties" : [ {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:314758625"
+      },
+      "resource" : "resource_enkeltrettighet",
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
+      "unit_type" : "BEDR"
+    }, {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:311094688"
+      },
+      "resource" : "resource_enkeltrettighet",
+      "name" : "UKJENT ETTERPÅKLOK STRUTS LTD",
+      "unit_type" : "NUF"
+    } ],
+    "resource" : "urn:altinn:resource:resource_enkeltrettighet",
+    "type" : "ansattporten:altinn:resource",
+    "resource_name" : "Ressurs for enkeltrettigheter testing"
+  } ],
+```
+
+Dersom det er forespurt flere representasjonsforhold, så vil authorization_details inneholde et json-objekt per lenketjeneste som brukeren har rettighet til.
+
+## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
+
+Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet.  Datakilden er p.t. Digdir sin kundedatabase, dvs. alle virksomhetere som har inngått Digdirs bruksvilkår vil bli beriket med organisasjonsnummer.
+
+Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
+
+Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres en tom RAR-element. 
+
+P.t. er det ingen attributter som kan angis i forespørslen, utover `type`:
+
+*Eksempel på request (forenklet)*: 
+```
+https://login.test.ansattporten.no/authorize?
+  acr_values=entraid ...&
+ ...
+  authorization_details= [
+    {
+      "type": "ansattporten:orgno"
+    }
+  ]
+```
+
+
+Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+
+| claim | beskrivelse            |
+| ----- | ---------------------- |
+| orgno | Norsk organisasjonsnummer  |
+
+*Eksempel på respons*:
+```
+  "authorization_details" : [ {
+    "type" : "ansattporten:orgno",
+    "orgno:" : {
+        "Authority" : "iso6523-actorid-upis",
+        "ID" : "0192:987464291"
+      } 
+  } ]
+```
 

@@ -30,11 +30,17 @@ folders:
       - title: Tillitsrammeverk
         jurl: /docs/lommebok/lommebok_tillitsrammeverk.html
 
+      - title: Utsteder
+        jurl: /docs/lommebok/lommebok_digdir_utsteder.html
       - title: Demo-utsteder
         jurl: /docs/lommebok/lommebok_demo_utsteder.html
 
       - title: Demo-brukarstad
         jurl: /docs/lommebok/lommebok_demo_brukarstad.html
+
+      - title: Demo-lommebok
+        jurl: /docs/lommebok/lommebok_demo_app.html
+
 
 ###########################
 
@@ -42,12 +48,18 @@ related_resources_title: Andre nyttige lenker
 
 related_resources_list:
 
-- title: Prosjekt for innføring
-  jurl: https://samarbeid.digdir.no/digital-lommebok/digital-identitetslommebok/2897
+- title: Nyhetsside for digital lommebok
+  jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2897
+
+- title: Prosjektside for sandkassa
+  jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2908
 
 - title: Referansearkitektur frå EU
   jurl: https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#2-eudi-wallet-functionalities
   
+- title: Sertfikat-inspeksjon
+  jurl: https://redkestrel.co.uk/tools/decoder
+
 - title: SD-JWT debugger
   jurl: https://www.sdjwt.co/
 
