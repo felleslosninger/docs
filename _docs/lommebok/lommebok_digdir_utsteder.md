@@ -11,33 +11,39 @@ Digdir tilbyr ein enkel utsteder i sandkassen.
 
 Den er laga både for å utstede PID-dokumentet, men har ein modulær arktiktur slik at den skal vere lett å integere mot andre datakjelder for å utstede bevis på deira vegne.
 
-## Bruksmønster og brukargrensesnitt
+## Brukargrensesnitt
+
+Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess. 
+
+Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
+
+## Bruksmønster
 
 Utstedaren vår er laga for kunne dekke fylgjande 4 bruksmønster:
 
-- Datakjelde styrer flyten, push av bevis-innhald
-- Datakjelde styrer flyten, pull av bevis-innhald over API
-- Utstedar styrer flyten
-- Lommeboka styrer flyten
+1. Datakjelde styrer flyten, push av bevis-innhald
+2. Datakjelde styrer flyten, pull av bevis-innhald over API
+3. Utstedar styrer flyten
+4. Lommeboka styrer flyten
 
-Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
 
 ## Funksjonalitet
 Me ynskjer at utstedaren skal følge Final-versjonen av OpenID4VCI.  Dog testar me primært mot  EU sin demolommebok, og denne ligg litt "bakpå", so det kan vere at noko av vår protokoll-støtte enno er for gamal.
 
 Features som er støtta no:
 - ISO mdoc bevis-format
-- pre-authorization code flow med push av bevis-data
+- Pre-authorization code 
+- Authorization-code flow 
+- Bruksmønster 1,2,3,4
 
 Framtidig funksjonalitet:
-- bruksmønster for pull-basert henting av bevis-data
 - tx_code
 - SD-JWT bevis-format
 - Web-grensesnitt for sluttbrukar
+- key binding
 - Bevis-type-spesifikke signeringssertifikat
 - Autentisering og autorisasjon av lommebøker basert på WUA
 - verifisering mot [OpenID conformance test suites](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-credential-issuance/)
-- bruksmønster for generering av bevis-data basert på token-innhold
 
 
 ## Bruksmønster 1: Datakjelde styrer flyten, push-basert bevis-innhald
@@ -181,6 +187,8 @@ I dette bruksmønsteret so startar flyten i lommeboka:
 1. Utstedaren si nett-teneste sender brukaren attende til lommeboka
 1. Lommeboka hentar beviset frå utstedaren
 
+Merk at steg 2-5 kan opplevast automatisk, til dømes ved at lommeboka gjer ein PID-presentasjon eller at browser har ein aktiv SSO-sesjon hjå utstedaren.
+
 
 
 <div class="mermaid">
@@ -195,13 +203,14 @@ sequenceDiagram
   b-->>l: åpner lommebok, velger bevis
   l->>u: /authorize-kall med bevistype
   u-->>n: redirect som åpner nettleser
-  note over b,n: logger inn
+  note over b,u: logger inn
 
-  u->>a: hent bevis-innhald
+  u->>+a: hent bevis-innhald
+  a-->>-u: data
 
-  u->>n: redirect tilbake
+  u-->>l: redirect tilbake
 
-  l->>+u: /token (pre-auth.code)
+  l->>+u: /token (auth.code)
   u-->>-l: access_token
 
   l->>+u: Credential Request (access_token)
@@ -210,8 +219,6 @@ sequenceDiagram
 </div>
 
 
-
-Merk at steg 2-5 kan føregå automatisk, til dømes ved at lommeboka gjer ein PID-presentasjon. 
 
 
 ## Generelt
