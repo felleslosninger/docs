@@ -122,8 +122,6 @@ en prosess
 
 1. eFormidling på Digdir Docs
 2. Generell støtte til eFormidling tilbys av servicedesk@digdir.no
-3. eFormidling ønsker ved behov å tilby utvidet støtte til de som implementerer integrasjoner mot eFormidling. Ta
-   kontakt med servicedesk@digdir.no og spør om mulighet for å få en Slack-kanal inn mot eFormidlings team.
 
 ## Utvikling av eFormidling
 
