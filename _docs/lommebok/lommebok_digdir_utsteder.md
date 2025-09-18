@@ -9,13 +9,14 @@ redirect_from: /lommebok_digdir_utsteder
 
 Digdir tilbyr ein enkel utsteder i sandkassen.  
 
-Den er laga både for å utstede PID-dokumentet, men har ein modulær arktiktur slik at den skal vere lett å integere mot andre datakjelder for å utstede bevis på deira vegne.
+Den er laga både for å utstede PID-dokumentet, men har ein modulær arktiktur slik at den skal vere lett å integere mot andre datakjelder for å utstede bevis på deira vegne.  Ta kontakt med oss for å starte dialog dersom du ynskjer me skal produsere bevis for deg.
 
 ## Brukargrensesnitt
 
 Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess. 
 
 Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
+
 
 ## Bruksmønster
 
