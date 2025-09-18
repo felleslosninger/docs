@@ -24,9 +24,9 @@ Fleire av Digdir sine produkt har opne communities på Slack.
 
 ## Korleis få tilgang ?
 
-Tilsette i offentleg sektor bør i hovudsak lage seg ein brukar på [Offentlig PaaS](https://offentlig-paas.no/) sin slack.  Du finn kanalane våre speglaa her under **#digdir-<produkt>**.
+Tilsette i offentleg sektor bør i hovudsak lage seg ein brukar på [Offentlig PaaS](https://offentlig-paas.no/) sin slack.  Du finn kanalane våre spegla her under syntaksen `#digdir-<produkt>`.
 
-Tilsette i privat sektor må ha betal-slack, og koble seg mot https://digdir-samarbeid.slack.com .
+Tilsette i privat sektor må ha betal-slack, og bruke Slack Connect-funksjonaliteten til å koble seg mot [https://digdir-samarbeid.slack.com](https://digdir-samarbeid.slack.com).
 
 Per september 2025 har vi følgjande kanalar:
 
