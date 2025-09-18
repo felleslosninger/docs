@@ -35,7 +35,7 @@ Per september 2025 har vi følgjande kanalar:
 - #produkt-digital-lommebok
 - #produkt-idporten
 - #produkt-maskinporten
-- #produkt
+- #produkt-...
 
 ## Andre køyrereglar
 3. Før du har funksjonelle og merkantile spørsmål: Finn du informasjon på Digdir Docs eller Samarbeidportalen, Release-loggen, eller i Roadmap?
