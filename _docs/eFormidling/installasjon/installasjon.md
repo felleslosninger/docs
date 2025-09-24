@@ -203,26 +203,27 @@ difi.activemq.user=myuser
 difi.activemq.password=mypassword
 ```
 
-### Valgfri konfigurasjon
-
 #### Miljø (produksjon eller test)
-
-_Valgfritt_
+Det må spesifiseres om integrasjonspunktet skal kjøre med produksjonsmiljø eller test(staging)miljø.
 
 Tilgjengelige miljø:
 
 - [eForidling Produksjon](../Miljo/produksjon)
 - [eFormidling Test](../Miljo/test)
 
-| Egenskap               | Beskrivelse                                                                                                                                                   | Standardverdi |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil. | production    |
+
+| Egenskap               | Beskrivelse                                                                                                                                                  | Standardverdi |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| spring.profiles.active | Produksjon (`production`) eller test (`staging`). Må spesifiseres som miljøvariabel eller Java-parameter. Kan ikke spesifiseres som del av konfigurasjonsfil.  | (ingen)       |
 
 Eksempel:
 
 ```
 java -jar -Dspring.profiles.active=staging integrasjonspunkt-2.8.3.jar
 ```
+
+
+### Valgfri konfigurasjon
 
 #### Hashicorp Vault
 

@@ -10,7 +10,7 @@ Ved å bruke eFormidlings produksjonsmiljø når, og nås, integrasjonspunktet a
 
 For å bruke eFormidlings produksjonsmiljø kreves et virksomhetssertifikat.
 
-Integrasjonspunktet benytter produksjonsmiljøet som standard:
+Integrasjonspunktet må konfigureres til å bruke produksjonsmiljøet:
 
 - [Konfigurasjon av miljø (produksjon eller test)](../installasjon/installasjon#miljø-produksjon-eller-test)
 
