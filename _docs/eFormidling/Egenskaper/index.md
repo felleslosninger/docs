@@ -72,7 +72,7 @@ Integrasjonspunktet har relativt beskjeden ressursbruk:
 | Ressurs | Anbefaling                                                                                                                                                                                                                                                                                                                                     |
 |---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CPU     | Ved vanlig bruk kan integrasjonspunktet fint dele en standard CPU med andre applikasjoner. Ved store meldingsvolum over kort tid (masseutsendelser) medfører kryptooperasjonene samlet at integrasjonspunktet bruker mer CPU. For slike tilfeller anbefales det å gjøre en praktisk test for å utelukke at tilgjengelig CPU er en begrensning. |
-| Minne   | 2GB anbefales til integrasjonspunktets JVM. Ved bruk av grensesnittet BEST/EDU er det en klar sammenheng mellom avsatt minne og hvor store meldinger som kan sendes og mottas av integrasjonspunktet og en kan oppleve at integrasjonspunktet krasjer dersom en har for lite avsatt minne.                                                     |
+| Minne   | 2GB anbefales til integrasjonspunktets JVM.  |
 | Disk    | 2 GB dekker omtrent 1 million meldinger ved bruk av intern database og meldingskø                                                                                                                                                                                                                                                              |
 
 Kapasiteten i eFormidling er nær knyttet mot kapasiteten for meldingstjenestene som brukes av eFormidling. I noen få
@@ -98,8 +98,6 @@ nettverksporter, filstier og annet ved eventuelle konflikter.
 
 eFormidling utvikles med tanke på kompatibilitet:
 
-- Kompatibilitet mellom grensesnittene BEST/EDU og eFormidling 2 slik at brukere med det ene grensesnittet kan samhandle
-  med brukere av det andre
 - Kompatibilitet mellom ulike versjoner av integrasjonspunktet slik at brukere med en versjon kan samhandle med brukere
   av en annen versjon
 - Kompatibilitet med andre meldingstjenester slik som KS SvarUt og SvarInn
@@ -108,7 +106,7 @@ Likevel er det enkelte utfordringer knyttet til kompatibilitet i eFormidling
 
 - Noen ganger krever ny funksjonalitet som utvikles at alle virksomheter er på en minimumsversjon før den nye
   funksjonaliteten kan tas i bruk
-- Ikke alle metadata kan transformeres fra BEST/EDU til eFormidling 2, fra eFormidling til KS SvarUt, og så videre
+- Ikke alle metadata kan transformeres fra eFormidling til KS SvarUt.
 
 ## Brukervennlighet
 

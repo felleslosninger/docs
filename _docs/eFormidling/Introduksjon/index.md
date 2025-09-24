@@ -82,10 +82,7 @@ innhold inkluderer:
 eFormidling er ikke i seg selv en meldingstjeneste, men leverer derimot en mellomvare (integrasjonspunktet) som gir
 fagsystem ett enkelt grensesnitt for meldingsutveksling uavhengig av prosess, dokumenttype og meldingstjeneste.
 Integrasjonspunktet installeres hos virksomhetene (eller deres leverandører) og integreres mot et eller flere fagsystem.
-Fagsystem kan benytte integrasjonspunktet over følgende grensesnitt:
-
-- [eFormidling 2](../Utvikling/integrasjonspunkt_eformidling2_api)
-- [BEST/EDU](../Utvikling/integrasjonspunkt_bestedu_api) (fases ut)
+Fagsystem kan benytte integrasjonspunktet over følgende grensesnitt: [eFormidling 2](../Utvikling/integrasjonspunkt_eformidling2_api)
 
 I tillegg leverer eFormidling:
 

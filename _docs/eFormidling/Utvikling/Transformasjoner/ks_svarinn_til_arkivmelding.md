@@ -8,9 +8,7 @@ sidebar: eformidling_sidebar
 
 Tabellen under viser hvordan integrasjonspunktet transformerer responser fra APIet for KS SvarInn til innkommende
 meldinger. Integrasjonspunktet supplerer innkommende meldinger med opplysninger fra konfigurasjon, standardverdier og
-oppslag hos tredjeparter. Merk at innkommende meldinger fra KS SvarInn behandles ulikt avhengig av om
-integrasjonspunktet er konfigurert med grensesnittet BEST/EDU eller ikke. Tabellen under viser hvordan innkommende
-meldinger fra KS SvarInn behandles dersom integrasjonspunktet ikke er konfigurert med grensesnittet BEST/EDU.
+oppslag hos tredjeparter.
 
 | Til eFormidling `arkivmelding` melding                                        | Fra KS SvarInn                                                                        | Fra konfigurasjon                 | Fra standardverdi                                        |
 |-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------|----------------------------------------------------------|

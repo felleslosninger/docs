@@ -73,8 +73,6 @@ folders:
       jurl: /docs/eFormidling/Utvikling/kanal
     - title: Integrasjonspunktets API (eFormidling 2)
       jurl: /docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api
-    - title: Integrasjonspunktets API (BEST/EDU) (fases ut)
-      jurl: /docs/eFormidling/Utvikling/integrasjonspunkt_bestedu_api
     - title: Adressetjenestens API
       jurl: /docs/eFormidling/Utvikling/serviceregistry_api
     - title: Meldingsstatus API

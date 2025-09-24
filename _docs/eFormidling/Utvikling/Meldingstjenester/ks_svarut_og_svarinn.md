@@ -27,9 +27,6 @@ KS SvarUt har ikke støtte for prosesser. Meldinger blir derfor videreformidlet 
 tilknyttet prosess. KS SvarInn har ikke støtte for prosesser. Alle meldinger mottatt fra KS SvarInn får derfor tildelt
 prosess som konfigurert i integrasjonspunktet.
 
-Ved bruk av grensesnittet BEST/EDU omformer integrasjonspunktet først fra BEST/EDU til arkivmelding, før meldingen
-sendes som beskrevet over.
-
 Integrasjonspunktet omformer meldingsstatusene fra KS SvarUt og SvarInn til eFormidlings meldingsstatuser og
 arkivmelding-kvittering.
 
@@ -68,7 +65,7 @@ Meldingsstatuser for meldinger sendt med KS SvarUt:
 
 | Status    | Kommentar                                                                                  |
 |-----------|--------------------------------------------------------------------------------------------|
-| OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPF-melding |
+| OPPRETTET | Integrasjonspunktet mottar eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPF-melding |
 | SENDT     | Integrasjonspunkt har sendt forsendelsen til meldingsformidler                             |
 | LEVERT    | Forsendelsen er klar for mottak og kan hentes ned fra SvarInn                              |
 | LEST      | En forsendelse er lest når hele forsendelsesfilen er lastet ned av mottaker                | 

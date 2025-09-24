@@ -26,9 +26,6 @@ Se dokumenttypene for detaljer. For saksbehandlingsprosessene (inkludert taushet
 aktuelle prosessen til tilsvarende tjeneste i Altinn Digital Post (servicecode & serviceditoncode) slik at mottakende
 virksomheter kan ha ulik tilgangsstyring avhengig av prosess.
 
-Ved bruk av grensesnittet BEST/EDU omformer integrasjonspunktet først fra BEST/EDU til arkivmelding, før meldingen
-sendes som beskrevet over.
-
 Integrasjonspunktet omformer meldingsstatusene fra Altinn Digital Post til eFormidlings meldingsstatuser og
 arkivmelding-kvittering.
 
@@ -61,7 +58,7 @@ Meldingsstatuser for meldinger sendt med Altinn Digital Post:
 
 | Status    | Kommentar                                                                                                          | 
 |-----------|--------------------------------------------------------------------------------------------------------------------|
-| OPPRETTET | Integrasjonspunktet mottar bestEdu-melding fra sak-arkivsystem og oppretter en DPV-melding                         |
+| OPPRETTET | Integrasjonspunktet mottar eFormidling 2.0-melding fra sak-arkivsystem og oppretter en DPV-melding                         |
 | SENDT     | Integrasjonspunkt har sendt forsendelsen til Altinn's DPV tjeneste og appreceipt blir levert tilbake til sak/arkiv |
 | LEVERT    | Når DPV-melding er levert til Altinn sin DPV tjeneste og status blit oppdatert                                     | 
 | LEST      | Når mottaker har åpnet og lest meldingen i Altinn, blir status oppdatert til LEST                                  | 

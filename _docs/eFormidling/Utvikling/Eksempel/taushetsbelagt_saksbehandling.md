@@ -228,5 +228,4 @@ curl -XPOST http://localhost:9093/api/messages/out
 - Funksjonell beskrivelse av [Taushetsbelagt Saksbehandling](../../Funksjonalitet/taushetsbelagt_saksbehandling)
 - Dokumenttypen [Arkivmelding](../Dokumenttyper/arkivmelding)
 - Grensesnittet [eFormidling 2](../integrasjonspunkt_eformidling2_api)
-- Grensesnittet [BEST/EDU](../integrasjonspunkt_bestedu_api)
 - Flere [Eksempler](./)

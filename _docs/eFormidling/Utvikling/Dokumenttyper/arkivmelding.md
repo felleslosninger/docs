@@ -143,21 +143,6 @@ integrasjonspunktet berike og transformere innkommende meldinger:
 
 - [Transformasjon fra KS SvarInn til arkivmelding](../Transformasjoner/ks_svarinn_til_arkivmelding)
 
-Ved bruk av integrasjonspunktets grensesnitt `BEST/EDU` transformerer integrasjonspunktet utgående meldinger til
-arkivmelding. Dersom mottaker bruker KS SvarUt eller Altinn Digital Post transformeres i tillegg arkivmeldingen til den
-aktuelle meldingstjenesten:
-
-- [Transformasjon fra BEST/EDU til arkivmelding](../Transformasjoner/bestedu_til_arkivmelding)
-
-Ved bruk av integrasjonspunktets grensesnitt `BEST/EDU` transformerer integrasjonspunktet innkommende meldinger direkte
-til BEST/EDU:
-
-- [Transformasjon fra arkivmelding til BEST/EDU](../Transformasjoner/arkivmelding_til_bestedu)
-- [Transformasjon fra KS SvarInn til BEST/EDU](../Transformasjoner/ks_svarinn_til_bestedu)
-
-Forskjeller i datastrukturene i BEST/EDU, arkivmeldingen, KS SvarUt og Altinn Digital Post medfører i noen tilfeller at
-ikke alle metadata fra avsender kan leveres til mottaker.
-
 ## Neste steg
 
 - [Eksempel på saksbehandling](../Eksempel/saksbehandling)

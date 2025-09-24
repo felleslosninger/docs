@@ -139,7 +139,6 @@ registrerte kontaktinformasjon i kontakt- og reservasjonsregisteret.
 
 ## Forutsetninger
 
-- Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
 - Bruk av Digital Post til Innbyggere krever avtale
 - Bruk av Altinn Digital Post krever avtale (begrenset tilgjengelighet inntil videre)
 

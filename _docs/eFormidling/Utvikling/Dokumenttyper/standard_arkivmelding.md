@@ -32,7 +32,7 @@ eFormidlings krav til utforming av arkivmeldinger som sendes med grensesnittet `
 - saksmappen skal inneholde en journalpost
 - det tas bare hensyn til dokumentobjekt under tilhørende dokumentbeskrivelse
 
-Ved mottak av arkivmeldingen kan en ikke basere seg på å validere mot arkivmelding.xsd fordi det i enkelte tilfeller vil mangle tilstrekkelig informasjon til å produsere en gyldig arkivmelding. Dette gjelder meldinger sendt fra eFormidlings grensesnitt `BEST/EDU` og meldinger mottatt fra KS SvarInn.
+Ved mottak av arkivmeldingen kan en ikke basere seg på å validere mot arkivmelding.xsd fordi det i enkelte tilfeller vil mangle tilstrekkelig informasjon til å produsere en gyldig arkivmelding. Dette gjelder meldinger mottatt fra KS SvarInn.
 
 ## Eksempel
 
