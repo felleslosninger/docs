@@ -5,13 +5,13 @@ summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
 redirect_from:
-- /eform_terms
-- /eformidling_veiledning_sakark
-- /eformidling_selfhelp
+  - /eform_terms
+  - /eformidling_veiledning_sakark
+  - /eformidling_selfhelp
 ---
 
 1. TOC
-{:toc}
+   {:toc}
 
 ## Virksomhetssertifikat
 
@@ -21,8 +21,8 @@ Eksportere public key fra Keystore Explorer:
 
 1. Åpne opp keystoren i keystore explorer.
 2. Høgreklikk på valgt sertifikat og velg "export->Certificate" eller "certificate chain" i menyen.
-    - Om du velger Certificate Chain så må du markere for "head only" i det neste vinduet.
-    - Marker også av for export format "X.509"
+   - Om du velger Certificate Chain så må du markere for "head only" i det neste vinduet.
+   - Marker også av for export format "X.509"
 3. Marker for PEM format.
 4. Naviger til valgt mappe og lagre som .cer fil.
 
@@ -33,6 +33,7 @@ keytool -export -keystore [MY_KEYSTORE.jks] -alias [ALIAS] -file [FILENAME.cer]
 ```
 
 Eksportere public key fra p12-keystore med keytool:
+
 ```
 keytool -export -keystore [MY_KEYSTORE.p12] -alias [ALIAS] -file [FILENAME.cer] -storetype PKCS12
 ```
@@ -45,9 +46,9 @@ Endre keystore passord:
 
 1. Åpne opp keystoren i JKS.
 2. På arbeidslinjen på toppen av vinduet:
-    - Tools
-    - Set KeyStore password
-    - skriv inn nytt passord
+   - Tools
+   - Set KeyStore password
+   - skriv inn nytt passord
 
 Endre sertifikat passord:
 
@@ -64,7 +65,6 @@ Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved 
 
 > **NB!** Dersom dere bruker meldingstypen DPF må public del av sertifikatet lastet opp hos svarut.ks.no under ["Mottakersystem"](../installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)!
 
-
 ## Integrasjonspunktet
 
 ### Hvordan kan jeg beskytte sertifikat, passord og annet som integrasjonspunktet trenger?
@@ -75,7 +75,7 @@ En kan bruke HashiCorp Vault eller injisering av miljøvariable. Se beskrivelse 
 
 ### Hvordan installerer jeg Java-versjonen integrasjonspunktet krever?
 
-Integrasjonspunktet krever minimum Java 21
+Integrasjonspunktet fra og med versjon 3 krever minimum Java 21
 
 Integrasjonspunktet er en Java applikasjon og krever derfor at man har Java(JDK) kjøremiljø installert på serveren den skal kjøre.
 For å verifisere om java er installert og hvilken versjon kan du i et kommandolinjevindu bruke kommandoen
@@ -107,6 +107,7 @@ Ingen meldinger blir videreformidlet til webhook-abonnement som standard. Dette 
 ### Hvilke meldingsmetadata lagres av integrasjonspunktet?
 
 Et eksempel av hvilke meldingsmetadata som lagres av integrasjonspunktet kan sees under:
+
 ```
 {
     "id": 30,
@@ -164,7 +165,7 @@ Started IntegrasjonspunktApplication ...
 Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer i integrasjonspunktet. Dette kan føre til warnings og i nokre tilfeller errors. For å få en fersk installasjon av integrasjonspunktet bør du gjere følgande:
 
 1. Stopp integrasjonspunktet.
-2. Ta backup av ```activemq-data``` mappa og ```receipts.mv.db``` fila.
+2. Ta backup av `activemq-data` mappa og `receipts.mv.db` fila.
 3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
 4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
 
@@ -197,6 +198,7 @@ difi.move.feature.statusQueueIncludes=DPI
 ### Sending uten fødselsnummer
 
 Dersom av en eller annen grunn mangler fødselsnummer eller vil tvinge sending til print. Eksempel SBD:
+
 ```
 curl -XPOST http://localhost:9093/api/messages/out \
 -H 'Content-Type: application/json' -d \
@@ -248,6 +250,7 @@ curl -XPOST http://localhost:9093/api/messages/out \
     }
 }'
 ```
+
 **NB!** Verdier for mottaker og returpostmottaker må fylles inn slik som i SBDen over ellers vil sendingen feile!
 
 ## Diverse
@@ -261,6 +264,7 @@ En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av G
 - [Last ned](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
 2. eFormidlings offentlige kodesigneringsnøkkel må legges inn i nøkkelringen på maskina hvor signaturen skal verifiseres:
+
 ```
 gpg --import <sti-til-nedlastet-signeringsnøkkel>
 ```
@@ -337,7 +341,7 @@ meldingstjeneste.
 
 DPI er en teknisk kode for Digital Post til Innbyggere. At også andre meldingstjenester kan brukes til å sende digital
 post til innbyggere har medført en del misforståelser. Bruken av begrepet blir tonet ned til fordel for Digital Post til
-Innbyggere. 
+Innbyggere.
 
 ### Hva betyr DPFIO?
 
