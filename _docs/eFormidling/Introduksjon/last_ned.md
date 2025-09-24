@@ -19,9 +19,7 @@ Endringslogg finner du [her.](../Oppgradering/endringslogg)
 
 ## KOSMOS
 
-> [**KOSMOS 1.2.0 (JAR)**](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar)
-
-> [**Signaturen finn du her**](https://repo1.maven.org/maven2/no/difi/move/kosmos/1.2.0/kosmos-1.2.0.jar.asc)
+> [**KOSMOS 2.0.0 (JAR)**](https://github.com/felleslosninger/efm-kosmos/packages/2676735)
 
 ## eFormidlings offentlige kodesigneringsnøkkel
 
