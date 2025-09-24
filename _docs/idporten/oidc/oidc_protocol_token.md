@@ -88,7 +88,9 @@ A previously exchanged out-of-band static secret is used for authentication.  Th
 
 #### Client authentication using JWT token (private_key_jwt)
 
-The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
+The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate (recommended) conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
+
+Alternatively, one can register an [asymmetrical key](https://docs.digdir.no/docs/idporten/oidc/oidc_func_clientreg.html#bruk-av-asymmetrisk-n%C3%B8kkel) (an option for test environments).
 
 The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see example below.
 
@@ -129,6 +131,27 @@ The final JWT client_assertion may look like this:
 <<signature-value>>
 ```
 
+#### Example JWT client_assertion with pre-registered key
+
+If the client is configured with a pre-registered key (business certificate or asymmentrical key), the final JWT client_assertion may look like this:
+
+```
+{
+  "kid": "< my_kid_registered_on_the_client >",
+  "alg": "RS256"
+}
+.
+{
+  "iss": "my_client_id",
+  "aud": "https://idporten.no", 
+  "sub": "my_client_id",
+  "exp": 1520589928,
+  "iat": 1520589808,
+  "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
+}
+.
+<<signature-value>>
+```
 
 #### No client authentication
 
