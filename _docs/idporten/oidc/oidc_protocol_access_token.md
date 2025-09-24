@@ -35,9 +35,9 @@ ID-porten issues two different types of access_tokens:
 
 The token is a JWT with the following structure:
 
-**Access tokenets header:**
+**Access token header:**
 
-| claim | verdi |
+| claim | value |
 | --- | --- |
 | kid | "Key identifier" - unique identifier for the key and certificate used by ID-porten. The corresponding public key and the certificate must be fetched from our .well-known endpoint. |
 | alg | "algorithm" - algorithm used for signing the token. The supported values are published on the .well-known endpoint. |
@@ -52,7 +52,7 @@ The token is a JWT with the following structure:
 | aud   |  The indended audience for token.  Normally the Oauth2 'issuer' URL of the Resource Server / API. Some Resource Servers require audience-restricted tokens, and the actual values to used must be exchanged out-of-band.  ID-porten will set the string value `unspecified` if no audience-restricted token was requested by the client.   See [Oauth2 Resource Indicators](https://tools.ietf.org/html/draft-ietf-oauth-resource-indicators-05) |  `https://api.examples.com/users`|
 | acr | sikkerhetsnivå |
 | client_id | The client_id of the client who received this token. Note that client_ids should in general not be used for access control. |
-| client_amr  | How the client authenticated itselft towards the AS.  | `virksomhetssertifikat`|
+| client_amr  | How the client authenticated itself towards the AS.  | `virksomhetssertifikat`|
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | <code>"consumer": {<br/>&nbsp;&nbsp;"authority": "iso6523-actorid-upis",<br/>&nbsp;&nbsp;"ID": "9908:910075918"<br/>}</code> |
 | supplier | The organization number, in ISO6523 notation, of the optional organization which the `consumer` has delegated to act on its behalf regarding the API consumption.  In most cases, this is a Data Processor.|
 | delegation_source   |  The Oauth2 *issuer* value of the legal authority where the `consumer` organization performed delegation of a given API access (ie: scope)  to the `supplier` organization | `https://sts.altinn.no`
@@ -97,7 +97,7 @@ The following values may be returned for the `client_amr`-claim.  The values are
 | none | No client authentication was performed |
 | client_secret_basic   |   |
 | client_secret_post   |   |
-| private_key_jwt   | A pre-registeret asymmetric keypair was used. During the registration, a "virksomhetssertifikat" was used to bind the keypair to the organization. |
+| private_key_jwt   | A pre-registered asymmetric keypair was used. During the registration, a "virksomhetssertifikat" was used to bind the keypair to the organization. |
 | virksomhetssertifikat   | A Business Certificate according to soon-to-be-abandoned Norwegian Regulation ("Kravspek PKI") was used to authenticate the client.  |
 | QCForESeal | A qualified electronic seal according to the eIDAS regulation (see also https://uri.etsi.org/TrstSvc/TrustedList/schemerules/EUcommon/)|
 | CForESeal  | A non-qualified electronic seal according to the eIDAS regulation   |   |

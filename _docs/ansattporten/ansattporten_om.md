@@ -84,6 +84,7 @@ På akkurat samme måte som for ID-porten, men du må passe på at integrasjonen
 
 Fra 2025 går Ansattporten over i mer ordinær drift.  SLA i form av oppetid vil være den samme som for ID-porten, og feilrettinger vil bli prioritert ihht de ordinære rutinene rundt fellesløsningene.
 
+Se [artikkel på Samarbeidsportalen](https://samarbeid.digdir.no/ansattporten/ansattporten-er-no-i-produksjon-som-ei-fullverdig-fellesloysing/2969).
 
 # Hvilken bruk-scenario støttes ? 
 

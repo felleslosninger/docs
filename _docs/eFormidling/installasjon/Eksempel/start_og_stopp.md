@@ -102,8 +102,8 @@ java -Xmx2048m -jar -Dspring.profiles.active=staging integrasjonspunkt-[versjon]
 ```
 
 #### PROD
-```powershell
-java -Xmx2048m -jar integrasjonspunkt-[versjon].jar 
+```powershell 
+java -Xmx2048m -jar -Dspring.profiles.active=production integrasjonspunkt-[versjon].jar  
 ```
 
 Sjekk i nettleser når Integrasjonspunktet har startet, som gir response i form av en wsdl.
@@ -162,7 +162,7 @@ user: %servernavn%\integrasjonspunkt
    * Edit action
    * Program/script: JAVA
    * add argument (optional):
-        * -jar integrasjonspunkt-%versjonsnr%.jar 
+        * -jar -Dspring.profiles.active=production integrasjonspunkt-%versjonsnr%.jar
    * Start in (optional):
         * "disk:\mappenavn» til integrasjonspunktet"
 

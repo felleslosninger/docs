@@ -10,10 +10,12 @@ redirect_from: /integrasjonspunkt_aks
 Integrasjonspunktet kan kjøres i AKS eller andre skyplattformer som støter Kubernetes. Azure Key Vault er alternativ for oppbevaring av kryptografiske nøkler.
 
 1. TOC
-{:toc}
+   {:toc}
 
 ## Forutsetninger
+
 ---
+
 - Kubectl - <https://kubernetes.io/docs/tasks/tools/install-kubectl/>
 - Azure CLI - <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>
 - Helm - <https://helm.sh/>
@@ -22,10 +24,9 @@ Integrasjonspunktet kan kjøres i AKS eller andre skyplattformer som støter Kub
 Det forutsettes også at det er satt opp en ressursgruppe, et Azure Kubernetes-cluster, og Azure Key Vault. Dette kan gjøres enten via Azure web
 portal, eller via Azure CLI som forklart her: <https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough>
 
-Videre i dokumentasjonen vil ressursgruppen, AKS-clusteret, og Key Vault  bli referert til ved navn `ip-rg`, `ip-akscluster`, og `ip-kv` respektivt.
+Videre i dokumentasjonen vil ressursgruppen, AKS-clusteret, og Key Vault bli referert til ved navn `ip-rg`, `ip-akscluster`, og `ip-kv` respektivt.
 
-Steg-for-steg
----
+## Steg-for-steg
 
 ### 1. Logg inn i Azure
 
@@ -38,6 +39,7 @@ $ az login
 ```console
 $ az aks get-credentials --resource-group ip-rg --name ip-akscluster
 ```
+
 Verifiser at oppsett for kubectl er riktig:
 
 ```console
@@ -57,11 +59,13 @@ bitnami/postgresql                      8.10.5          11.8.0          Chart fo
 ...
 $ helm install postgresql bitnami/postgresql
 ```
+
 Postgresql-instansen kan så nåes fra clusteret på `postgresql.default.svc.cluster.local`.
 
 Installasjonen oppretter en standard database ved navn `postgres`, denne vil bli benyttet videre i guiden.
 
 #### 3.1
+
 Alternativt kan man opprette egen database. Eksporter passord til miljøvariabel, og koble til:
 
 ```console
@@ -74,7 +78,8 @@ pod "postgresql-client" deleted
 ```
 
 ### 4. Sett opp ActiveMQ
-*NB - bør settes opp som persistent volume, ikke dekket av guide*
+
+_NB - bør settes opp som persistent volume, ikke dekket av guide_
 
 Eksempel på `deployment.yaml`:
 
@@ -100,9 +105,9 @@ spec:
         app: activemq
     spec:
       containers:
-      - image: rmohr/activemq:5.15.9
-        name: activemq
-        resources: {}
+        - image: rmohr/activemq:5.15.9
+          name: activemq
+          resources: {}
 status: {}
 ---
 apiVersion: v1
@@ -114,10 +119,10 @@ metadata:
   name: activemq
 spec:
   ports:
-  - name: 61616-61616
-    port: 61616
-    protocol: TCP
-    targetPort: 61616
+    - name: 61616-61616
+      port: 61616
+      protocol: TCP
+      targetPort: 61616
   selector:
     app: activemq
   type: ClusterIP
@@ -132,6 +137,7 @@ $ kubectl apply -f deployment.yaml
 ```
 
 ### 5. Azure Key Vault og Azure Key Vault Env Injector
+
 Azure Key Vault kan brukes til å lagre secrets. Her vil vi lagre passordet til keystoren integrasjonspunktet benytter.
 
 Steget forutsetter at Azure Key Vault er satt opp i Azure portalen. Alternativt kan den opprettes via følgende kommando:
@@ -147,7 +153,7 @@ az keyvault secret set --vault-name "ip-kv" --name "kspass" --value "hemmelig pa
 ```
 
 For å tilgjengeliggjøre denne secret'en som en miljøvariabel, slik at den kan suppleres til integrasjonspunktet, benytter
-vi *akv2k8s (Azure Key Vault to Kubernetes)* (<https://akv2k8s.io/>)
+vi _akv2k8s (Azure Key Vault to Kubernetes)_ (<https://akv2k8s.io/>)
 
 ```console
 $ kubectl create ns akv2k8s
@@ -169,7 +175,6 @@ Alternativt med service principal:
 ```console
 $ az keyvault set-policy --name ip-kv --spn <spn> --secret-permissions get
 ```
-
 
 Skru på env-injection for default namespace
 
@@ -201,6 +206,7 @@ spec:
 ```
 
 ### 6. Java KeyStore
+
 Selve keystoren lagres som en kubernetes secret.
 
 ```console
@@ -236,56 +242,54 @@ spec:
         app: ip-staging
     spec:
       containers:
-      - image: digdir/integrasjonspunkt:2.24.1
-        name: integrasjonspunkt
-        resources: 
-          limits:
-            memory: 3072Mi
-          requests:
-            memory: 2048Mi
-        volumeMounts:
-        - name: keystore
-          mountPath: "/etc/keystore"
-          readOnly: true
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: "staging"
-        - name: DIFI_MOVE_ORG_NUMBER
-          value: "123123123"
-        - name: DIFI_MOVE_ORG_KEYSTORE_ALIAS
-          value: "123123123"
-        - name: DIFI_MOVE_ORG_KEYSTORE_PATH
-          value: "file:/etc/keystore/keystore.jks"
-        - name: DIFI_MOVE_ORG_KEYSTORE_PASSWORD
-          value: "kv-kspass@azurekeyvault"
-        - name: DIFI_MOVE_FEATURE_ENABLEDPO
-          value: "true"
-        - name: DIFI_MOVE_FEATURE_ENABLEDPE
-          value: "false"
-        - name: DIFI_MOVE_DPO_USERNAME
-          value: "brukernavn"
-        - name: DIFI_MOVE_DPO_PASSWORD
-          value: "passord"
-        - name: DIFI_MOVE_NEXTMOVE_USEDBPERSISTENCE
-          value: "true"
-        - name: SPRING_DATASOURCE_URL
-          value: "jdbc:postgresql://postgresql.default.svc.cluster.local:5432/postgres"
-        - name: SPRING_DATASOURCE_USERNAME
-          value: "postgres"
-        - name: SPRING_DATASOURCE_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgresql
-              key: postgresql-password
-        - name: SPRING_ACTIVEMQ_BROKERURL
-          value: "tcp://activemq.default.svc.cluster.local:61616"
+        - image: digdir/integrasjonspunkt:2.24.1
+          name: integrasjonspunkt
+          resources:
+            limits:
+              memory: 3072Mi
+            requests:
+              memory: 2048Mi
+          volumeMounts:
+            - name: keystore
+              mountPath: "/etc/keystore"
+              readOnly: true
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "staging"
+            - name: DIFI_MOVE_ORG_NUMBER
+              value: "123123123"
+            - name: DIFI_MOVE_ORG_KEYSTORE_ALIAS
+              value: "123123123"
+            - name: DIFI_MOVE_ORG_KEYSTORE_PATH
+              value: "file:/etc/keystore/keystore.jks"
+            - name: DIFI_MOVE_ORG_KEYSTORE_PASSWORD
+              value: "kv-kspass@azurekeyvault"
+            - name: DIFI_MOVE_FEATURE_ENABLEDPO
+              value: "true"
+            - name: DIFI_MOVE_DPO_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_DPO_PASSWORD
+              value: "passord"
+            - name: DIFI_MOVE_NEXTMOVE_USEDBPERSISTENCE
+              value: "true"
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgresql.default.svc.cluster.local:5432/postgres"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "postgres"
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql
+                  key: postgresql-password
+            - name: SPRING_ACTIVEMQ_BROKERURL
+              value: "tcp://activemq.default.svc.cluster.local:61616"
       volumes:
-      - name: keystore
-        secret:
-          secretName: keystore.jks
-          items:
-          - key: keystore.jks
-            path: keystore.jks
+        - name: keystore
+          secret:
+            secretName: keystore.jks
+            items:
+              - key: keystore.jks
+                path: keystore.jks
 status: {}
 ---
 apiVersion: v1
@@ -297,10 +301,10 @@ metadata:
   name: ip-staging
 spec:
   ports:
-  - name: 9093-9093
-    port: 9093
-    protocol: TCP
-    targetPort: 9093
+    - name: 9093-9093
+      port: 9093
+      protocol: TCP
+      targetPort: 9093
   selector:
     app: ip-staging
   type: ClusterIP

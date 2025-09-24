@@ -46,19 +46,18 @@ Verifiser at systemet følger med på asynkrone statuser (inkludert feil-statuse
 ### Bruker grensesnittet eFormidling 2 som beskrevet i dokumentasjonen (MÅ)
 
 1. Verifiser at integrasjonspunktets API (eFormidling 2) brukes
-2. Verifiser at integrasjonspunktets gamle API (BEST/EDU) ikke brukes
-3. Verifiser at en sender meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
-4. Verifiser at en følger med på status for sendte meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
-5. Verifiser at en mottar meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
-6. Verifiser at en har lagt til rette for feilsøking ved å oppgi navn og versjon for eget system ved oppretting av melding
-7. Verifiser at en ikke bruker ettstegs strategi for sending av små meldinger dersom en skal sende meldinger over 5 MB
-8. Verifiser at polling brukes ved mottak av innkommende statuser (webhook-abonnement er bare et supplement)
-9. Verifiser at polling brukes ved mottak av innkommende meldinger (webhook-abonnement er bare et supplement)
-10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
-11. Verifiser at en ikke behandler vellykket bekreftelse på at melding er sendt som at meldingen er levert vellykket
-12. Verifiser at en kan motta så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
-13. Verifiser at en kan sende så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
-14. Verifiser at det ikke er mulig å sende meldinger som overskrider terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
+2. Verifiser at en sender meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
+3. Verifiser at en følger med på status for sendte meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](https://docs.digdir.no/docs/eFormidling/Utvikling/integrasjonspunkt_eformidling2_api)
+4. Verifiser at en mottar meldinger med en av strategiene som er beskrevet på [Integrasjonspunktets API (eFormidling 2)](../Utvikling/integrasjonspunkt_eformidling2_api)
+5. Verifiser at en har lagt til rette for feilsøking ved å oppgi navn og versjon for eget system ved oppretting av melding
+6. Verifiser at en ikke bruker ettstegs strategi for sending av små meldinger dersom en skal sende meldinger over 5 MB
+7. Verifiser at polling brukes ved mottak av innkommende statuser (webhook-abonnement er bare et supplement)
+8. Verifiser at polling brukes ved mottak av innkommende meldinger (webhook-abonnement er bare et supplement)
+9.  Verifiser at en ikke behandler vellykket bekreftelse på at melding er lagt på kø for sending som at meldingen er sendt eller levert vellykket
+10. Verifiser at en ikke behandler vellykket bekreftelse på at melding er sendt som at meldingen er levert vellykket
+11. Verifiser at en kan motta så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
+12. Verifiser at en kan sende så store meldinger som beskrevet i terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
+13. Verifiser at det ikke er mulig å sende meldinger som overskrider terskelverdiene som er beskrevet under [eFormidlings egenskaper](../Egenskaper/)
 
 ### Dersom på-vegne-av brukes, så er dette oppsettet testet (MÅ)
 

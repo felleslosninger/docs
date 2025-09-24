@@ -6,7 +6,7 @@
 	
     <argument>-jar</argument>
     <argument>-Dspring.profiles.active=staging</argument>
-    <argument>%BASE%/integrasjonspunkt-2.1.0.jar</argument>
+    <argument>%BASE%/integrasjonspunkt-3.0.0.jar</argument>
     <argument>-Xmx2048m</argument>
     
     <logpath>%BASE%/integrasjonspunkt-logs</logpath>
@@ -17,3 +17,4 @@
     
     <executable>java</executable>
 </service>
+

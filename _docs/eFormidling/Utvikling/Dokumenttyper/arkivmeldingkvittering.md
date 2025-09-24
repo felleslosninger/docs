@@ -73,12 +73,6 @@ Når en mottar en arkivmelding skal en sende en arkivmelding-kvittering tilbake.
 KS SvarUt vil arkivmelding-kvittering i dette tilfellet ikke bli videreformidlet til mottaker. Dette gjør at
 mottakersystemet kan ha konsistent oppførsel uavhengig av hvilke meldingstjeneste avsender benyttet.
 
-Ved bruk av integrasjonspunktets grensesnitt `BEST/EDU` transformerer integrasjonspunktet utgående BEST/EDU AppReceipt
-til arkivmelding-kvittering. 
-
-Ved bruk av integrasjonspunktets grensesnitt `BEST/EDU` transformerer integrasjonspunktet innkommende
-arkivmelding-kvittering til BEST/EDU AppReceipt.
-
 ## Neste steg
 
 - [Eksempel på saksbehandling](../Eksempel/saksbehandling)

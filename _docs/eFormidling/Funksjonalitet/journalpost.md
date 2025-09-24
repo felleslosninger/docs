@@ -90,7 +90,6 @@ avsenderen om både vellykkede sendinger og avvik.
 
 ## Forutsetninger
 
-- Grensesnittet eFormidling 2 må brukes (BEST/EDU støttes ikke)
 - Bruk av eInnsyn krever avtale
 
 ## Konfigurasjon

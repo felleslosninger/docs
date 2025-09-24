@@ -135,7 +135,7 @@ The following claims in the JWT is of interest:
 |iss| issuer - your client ID |
 |sub| subject - your client ID |
 |iat| issued at - timestamp when this jwt was generated. **NOTE:** UTC-time.|
-|exp| expiration time - timestamp when this jwt expire. **NOTE:** UTC-tid.  Max allowable lifespan is 120 seconds (exp - iat <= 120) |
+|exp| expiration time - timestamp when this jwt expire. **NOTE:** UTC-time. Max allowable lifespan is 120 seconds (exp - iat <= 120) |
 |jti| Optional - JWT ID - unique id for this JWT. A JWT can not be reused|
 
 The following header claims in the JWT should be noted:
@@ -183,12 +183,12 @@ Body:
 | acr | "Authentication Context Class Reference" -  The security level used.  Possible values are  "idporten-loa-substantial" (ie. MinID) or  "idporten-loa-high". This must be verified by the relying party.  |
 | amr | "Authentication Methods References" - Possible values  *Minid-OTC*, *Minid-APP*, *Minid-TOTP*, *Minid-WEBAUTHN*, *Commfides*, *Buypass*, *eIDAS*, *BankID* or  *BankID-mobil*, this may change over time. |
 | iss | The identifier of ID-porten |
-| pid | Personidentifikator - Proprietary claim, for the Norwegian national identifier ("F-number" or "D-number") |
+| pid | "personidentifikator" - Proprietary claim, for the Norwegian national identifier ("F-number" or "D-number") |
 | exp | Expire -  A client must not accept the id-token after this timestamp.  |
 | locale |  The language used by the end user during the authentication process. |
 | iat | Timestamp when this token is issued |
 | jti | jwt id - unique identifier for this token  |
-| sid | sesjonsid - a unique identifier the session for this end user. Should be kept by the client to aid single logout |
+| sid | sesson id - a unique identifier the session for this end user. Should be kept by the client to aid single logout |
 
 
 
