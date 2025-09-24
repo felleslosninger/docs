@@ -111,7 +111,9 @@ For å administrere integrajoner/klienter må administrasjons-klienten ha tilgan
 |idporten:dcr/onbehalfof:write|Gir tilgang til å vise, opprette, endre og slette onbehalfofregistreringer tilhørende en gitt klient. Gir ikke mulighet til å endre andre parametere på selve klienten.|
 |idporten:dcr.supplier|Gir leverandører tilgang til å vise, opprette, endre og slette selvstendige OIDC-integrasjoner for andre organisasjoner. Eget org.no blir koblet til disse integrasjonene.  |
 
-Ta kontakt med servicedesk@digdir.no for å få tilgang.
+Scopene kan ikke kombineres med andre scope i Maskinporten, og må derfor ligge på egen klient.
+
+Ta kontakt med servicedesk@digdir.no for å få tilgang.  
 
 ### Registrere klient
 

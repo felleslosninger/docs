@@ -1,7 +1,7 @@
 ---
 title: "/userinfo endpoint"
-description: "This page summarizes the protocol options availalbe for on the /usering endpoint for ID-porten OIDC Provider"
-summary: 'This page summarizes the protocol options availalbe for on the /userinfo endpoint for ID-porten OIDC Provider'
+description: "This page summarizes the protocol options available for on the /userinfo endpoint for ID-porten OIDC Provider"
+summary: 'This page summarizes the protocol options available for on the /userinfo endpoint for ID-porten OIDC Provider'
 
 sidebar: oidc
 product: ID-porten
@@ -22,7 +22,7 @@ The following header parameters apply:
 
 | Parameter  | Calue |
 | --- | --- |
-| Http method: | GET |
+| HTTP method: | GET |
 | Authorization: | Bearer \< access_token \> |
 
 ## Response

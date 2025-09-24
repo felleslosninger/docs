@@ -23,7 +23,7 @@ Metoden er basert på  følgende steg:
 
 Vi støtter bare `code_challenge_method=S256`
 
-**Merk at code_verifier må vere minst 43 karakterer lang, og ikkje lengre enn 128.**
+**Merk at code_verifier må være minst 43 karakterer lang, og ikke lengre enn 128.**
 
 Dersom `code_verifier` er `xyo94uhy3zKvgB0NJwLms86SwcjtWviEOpkBnGgaLlo` så blir utrekna `code_challenge` lik `b7elB7ZyxIXgFyvBznKvxl7wOB-H17Pz0a3B62NIMFI`.  Code challenge skal ikke bruke padding.
 
