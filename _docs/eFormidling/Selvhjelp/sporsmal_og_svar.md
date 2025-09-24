@@ -5,13 +5,13 @@ summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
 redirect_from:
-- /eform_terms
-- /eformidling_veiledning_sakark
-- /eformidling_selfhelp
+  - /eform_terms
+  - /eformidling_veiledning_sakark
+  - /eformidling_selfhelp
 ---
 
 1. TOC
-{:toc}
+   {:toc}
 
 ## Virksomhetssertifikat
 
@@ -21,8 +21,8 @@ Eksportere public key fra Keystore Explorer:
 
 1. Åpne opp keystoren i keystore explorer.
 2. Høgreklikk på valgt sertifikat og velg "export->Certificate" eller "certificate chain" i menyen.
-    - Om du velger Certificate Chain så må du markere for "head only" i det neste vinduet.
-    - Marker også av for export format "X.509"
+   - Om du velger Certificate Chain så må du markere for "head only" i det neste vinduet.
+   - Marker også av for export format "X.509"
 3. Marker for PEM format.
 4. Naviger til valgt mappe og lagre som .cer fil.
 
@@ -33,6 +33,7 @@ keytool -export -keystore [MY_KEYSTORE.jks] -alias [ALIAS] -file [FILENAME.cer]
 ```
 
 Eksportere public key fra p12-keystore med keytool:
+
 ```
 keytool -export -keystore [MY_KEYSTORE.p12] -alias [ALIAS] -file [FILENAME.cer] -storetype PKCS12
 ```
@@ -45,9 +46,9 @@ Endre keystore passord:
 
 1. Åpne opp keystoren i JKS.
 2. På arbeidslinjen på toppen av vinduet:
-    - Tools
-    - Set KeyStore password
-    - skriv inn nytt passord
+   - Tools
+   - Set KeyStore password
+   - skriv inn nytt passord
 
 Endre sertifikat passord:
 
@@ -64,7 +65,6 @@ Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved 
 
 > **NB!** Dersom dere bruker meldingstypen DPF må public del av sertifikatet lastet opp hos svarut.ks.no under ["Mottakersystem"](../installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)!
 
-
 ## Integrasjonspunktet
 
 ### Hvordan kan jeg beskytte sertifikat, passord og annet som integrasjonspunktet trenger?
@@ -75,7 +75,7 @@ En kan bruke HashiCorp Vault eller injisering av miljøvariable. Se beskrivelse 
 
 ### Hvordan installerer jeg Java-versjonen integrasjonspunktet krever?
 
-> Fra 01.01.19 vil Oracle Java være lisensbasert. Denne kan brukes, eller en kan bruke gratisalternativ som OpenJDK. [Les mer](https://www.oracle.com/corporate/pressrelease/java-se-subscription-offering-062118.html)
+Integrasjonspunktet fra og med versjon 3 krever minimum Java 21
 
 Integrasjonspunktet er en Java applikasjon og krever derfor at man har Java(JDK) kjøremiljø installert på serveren den skal kjøre.
 For å verifisere om java er installert og hvilken versjon kan du i et kommandolinjevindu bruke kommandoen
@@ -84,26 +84,9 @@ For å verifisere om java er installert og hvilken versjon kan du i et kommandol
 java -version
 ```
 
-Integrasjonspunktet krever minimum versjon 1.8.0
-
-**OpenJDK Java 8 (gratis)**
-Digitaliseringsdirektoratet har valgt å bruke JDK 8 fra [https://adoptopenjdk.net/](https://adoptopenjdk.net/) med HotSpot som JVM. Denne vil integrasjonspunktet støtte. Det finnes mange ulike tilbydere av OpenJDK for å laste ned en gratisversjon av Java. Her kan en velge den tilbyderen en selv ønsker, men versjon må være Java 8.
-
-Installasjonsveiledning for OpenJDK finner du her [https://adoptopenjdk.net/installation.html#x64_win-jdk](https://adoptopenjdk.net/installation.html#x64_win-jdk) . Om du bruker et annet OS enn Windows x64 bit kan du velge din plattform inne på lenken.
-
 > **NB!** 32-bits Java kan skape utfordringer for minnebruken til integrasjonspunktet, så 64-bits er å foretrekke!
 
-**Oracle Java 8 (lisensbasert)**
-Dersom Java ikke er installert eller versjonen er for gammel, kan ny versjon lastes ned [her](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) og installeres. Denne vil integrasjonspunktet støtte.
-
-> **NB!** Husk å installere 64-bit Java om du har 64-bit operativsystem!
-
-**Installere Java Cryptography Extension (JCE)**
-
-Bruker du ny versjon av Java, må ny JCE installeres. Last ned JCE fra [Oracles sider](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
-
-Det er ikke noen enkel måte å sjekke om Java Cryptography Extension er installert. Ofte kan det enkleste være å bare laste ned og installere JCE, men en du ønsker å sjekke, kan du gå til mappen ```$JAVA_HOME/jre/lib/security``` og sjekke om filene ```US_export_policy.jar``` og ```local_policy.jar``` har nyere dato enn øvrige filer. Hvis datoen er lik, må du installere JCE.
-Dersom JCE mangler vil integrasjonspunket stoppe under oppstart og skrive loggmelding om manglende JCE. På nyere Java versjoner må en legge JCE-filene inn i både ```$JAVA_HOME/jre/lib/security/unlimited ``` og ```$JAVA_HOME/jre/lib/security/limited```.
+> Fra 01.01.19 vil Oracle Java være lisensbasert. Denne kan brukes, eller en kan bruke gratisalternativ som OpenJDK. [Les mer](https://www.oracle.com/corporate/pressrelease/java-se-subscription-offering-062118.html)
 
 ### Hvor mye diskplass trenger integrasjonspunktet?
 
@@ -124,6 +107,7 @@ Ingen meldinger blir videreformidlet til webhook-abonnement som standard. Dette 
 ### Hvilke meldingsmetadata lagres av integrasjonspunktet?
 
 Et eksempel av hvilke meldingsmetadata som lagres av integrasjonspunktet kan sees under:
+
 ```
 {
     "id": 30,
@@ -181,7 +165,7 @@ Started IntegrasjonspunktApplication ...
 Etter oppgraderinger kan det skje at det blir liggande igjen gamle kvitteringer i integrasjonspunktet. Dette kan føre til warnings og i nokre tilfeller errors. For å få en fersk installasjon av integrasjonspunktet bør du gjere følgande:
 
 1. Stopp integrasjonspunktet.
-2. Ta backup av ```activemq-data``` mappa og ```receipts.mv.db``` fila.
+2. Ta backup av `activemq-data` mappa og `receipts.mv.db` fila.
 3. Flytt så desse utav mappa. Sørg for at dei er fjerna frå integrasjonspunktmappa før du går vidare.
 4. Start integrasjonspunktet igjen. Nå vil desse filene bli lasta ned på nytt.
 
@@ -214,6 +198,7 @@ difi.move.feature.statusQueueIncludes=DPI
 ### Sending uten fødselsnummer
 
 Dersom av en eller annen grunn mangler fødselsnummer eller vil tvinge sending til print. Eksempel SBD:
+
 ```
 curl -XPOST http://localhost:9093/api/messages/out \
 -H 'Content-Type: application/json' -d \
@@ -265,6 +250,7 @@ curl -XPOST http://localhost:9093/api/messages/out \
     }
 }'
 ```
+
 **NB!** Verdier for mottaker og returpostmottaker må fylles inn slik som i SBDen over ellers vil sendingen feile!
 
 ## Diverse
@@ -278,6 +264,7 @@ En kan verifisere at jar-filen er fra Digitaliseringsdirektoratet ved hjelp av G
 - [Last ned](../Introduksjon/last_ned#eformidlings-offentlige-kodesigneringsnøkkel)
 
 2. eFormidlings offentlige kodesigneringsnøkkel må legges inn i nøkkelringen på maskina hvor signaturen skal verifiseres:
+
 ```
 gpg --import <sti-til-nedlastet-signeringsnøkkel>
 ```
@@ -354,7 +341,7 @@ meldingstjeneste.
 
 DPI er en teknisk kode for Digital Post til Innbyggere. At også andre meldingstjenester kan brukes til å sende digital
 post til innbyggere har medført en del misforståelser. Bruken av begrepet blir tonet ned til fordel for Digital Post til
-Innbyggere. 
+Innbyggere.
 
 ### Hva betyr DPFIO?
 
