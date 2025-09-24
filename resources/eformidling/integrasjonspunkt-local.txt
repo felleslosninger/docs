@@ -1,33 +1,51 @@
 #Fyll inn lokale verdier der de mangler
 
-## NB! Beskrivelse om alle properties finner en her: https://docs.digdir.no/eformidling_properties_config.html
+## NB! Beskrivelse om alle properties finner en her: https://docs.digdir.no/docs/eFormidling/installasjon/installasjon.html
 
 server.port=Portnummer integrasjonspunktet skal kjøre på (default 9093)
 difi.move.org.number=Organisasjonsnummer til din organisasjon (9 siffer)
 
-difi.move.org.keystore.alias=Navnet på virksomhetssertifikatet som ligger i JKS(case sensitivt)
-difi.move.org.keystore.password=Passord til java keystore
-difi.move.org.keystore.path=file:Path til .jks fil
+difi.move.org.keystore.path=file:Sti til .jks eller .p12 fil
+difi.move.org.keystore.alias=Navnet på virksomhetssertifikatet som ligger i JKS/.p12(case sensitivt)
+difi.move.org.keystore.password=Passord til JKS/.p12
 
 ## for einnsyn så trenger du kun de 5 innstillingene fra linje 4-9
+
+
+## TSL og transportsikring oppsett - default satt til true -> https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#transportsikring
+
+difi.ssl.enabled=true
+difi.ssl.key-store=file:Sti til .jks eller .p12 fil
+difi.ssl.key-alias=Navnet på TSL sertifikatet som ligger i JKS/.p12(case sensitivt)
+difi.ssl.key-store-password=Passord til JKS/.p12
+
+## Basic auth - default satt til true -> https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#http-basic-auth
+
+difi.move.feature.enable-auth=true
+spring.security.user.name=changeit
+spring.security.user.password=changeit
+
+
+## Virksomheten må ta et aktivt valg om bruk av database og meldingskø før en kan bruke integrasjonspunktet. Digdir anbefaler egen database og kø
+## Se mer på: https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#ekstern-database
+
+## Database - innebygd database kan aktiveres under bare fjern #
+
+#difi.datasource.url=jdbc:h2:file:./integrasjonspunkt
+
+## Meldingskø - innebygd meldingskø kan aktiveres under bare fjern #
+
+#difi.activemq.broker-url=vm://localhost
+
 
 ## Digital post mellom offentlige virksomehter (Settes kun dersom man bruker DPO. Fjern utkommentering (#))
 ##--------------------------------------------
 #difi.move.feature.enableDPO=true
-#difi.move.noarkSystem.type=
-#difi.move.noarkSystem.endpointURL=
-#difi.move.noarkSystem.username=
-#difi.move.noarkSystem.password=
-#difi.move.noarkSystem.domain=
-
 #difi.move.dpo.username=
 #difi.move.dpo.password=
 
-##MSH (settes kun dersom du har MSH, Integrasjonspunktet blir proxy mot gammel installasjon. Fjern utkommentering (#) )
-#difi.move.msh.endpointURL=
 
-
-## Digital post innbygger (Settes kun dersom man bruker DPI via integrasjonspunktet og annet sertifikat enn anngitt i difi.move.org.keystore.xxx . Fjern utkommentering (#))
+## Digital post innbygger (DPI)
 ##-----------------------
 #difi.move.feature.enableDPI=true
 #difi.move.dpi.email.varslingstekst=Du har fått et nytt brev fra x i din digitale postkasse
@@ -44,7 +62,7 @@ difi.move.org.keystore.path=file:Path til .jks fil
 #difi.move.dpv.password=
 
 
-## FIKS - SvarUt/SvarInn (Settes kun ved bruk av SvarUt/SvarInn)
+## FIKS - SvarUt/SvarInn (Settes kun ved bruk av DPF)
 ##----------------------
 #difi.move.feature.enableDPF=true
 
@@ -55,12 +73,3 @@ difi.move.org.keystore.path=file:Path til .jks fil
 ## SvarUt (avsender)
 #difi.move.fiks.ut.username=
 #difi.move.fiks.ut.password=
-
-## innstillinger for fiks mailsending
-#difi.move.mail.smtpHost=
-#difi.move.mail.smtpPort=
-#difi.move.mail.receiverAddress=
-#difi.move.mail.senderAddress=
-#difi.move.fiks.inn.mailOnError=false
-#difi.move.mail.enableAuth=false
-#difi.move.mail.trust=${difi.move.mail.smtpHost}

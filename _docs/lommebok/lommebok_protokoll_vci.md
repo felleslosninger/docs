@@ -86,7 +86,8 @@ Eit credential offer ser typisk slik ut:
 
 Her kan me merke oss claimet `credential_configuration_ids` som fortel kva bevis som er tilbode.  Verdien peiker på ein førehandsdefinert bevis-type `no.digdir.eudiw.pid_mso_mdoc` (i dette tilfellet norsk variant av ID-dokument i mdoc-format) som saman med `pre_authorized_code` unikt lenkar til akkurat denne brukaren sitt bevis. 
 
-Sidan bevis-tilbodet skal konsumerast av ein anna applikasjon enn browsere, er det risiko for at ein angripar kan forsøke å bruke det istadenfor den legitime brukaren, til dømes ved at qr-koden blir scanna "over skuldra".  Difor har brukaren på førehand laga ein PIN-kode eller liknande som berre er kjent for hen, og `tx_code`-claimet inneheld instruksjonar til lommeboka om korleis den skal tilby brukergrensesnitt der PIN-koden skal tastast inn.
+Sidan bevis-tilbodet skal konsumerast av ein anna applikasjon enn browsere, er det risiko for at ein angripar kan forsøke å bruke det istadenfor den legitime brukaren, til dømes ved at qr-koden blir scanna "over skuldra".  Difor har brukaren på førehand laga ein PIN-kode eller liknande som berre er kjent for hen, og `tx_code`-claimet i offeret inneheld instruksjonar til lommeboka om korleis den skal tilby brukergrensesnitt der PIN-koden skal tastast inn.   Les meir om [Transaction Code (`tx_code`) i speccen](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html#name-credential-offer-parameters).
+
 
 
 

@@ -71,6 +71,8 @@ Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altin
 
 - `Meldingsutveksling i offentlig sektor`
 
+Se guide [her.](https://info.altinn.no/hjelp/profil/enkelttjenester-og-roller/hvordan-gi-en-enkelttjeneste-og-rolle-til-andre/)
+
 ## På vegne av for eInnsyns meldingstjeneste
 
 I motsetning til de andre meldingstjenestene, så må leverandøren oppgis som avsender i SBDH ved bruk av eInnsyns

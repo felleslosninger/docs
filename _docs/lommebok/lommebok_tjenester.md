@@ -8,15 +8,15 @@ redirect_from: /lommebok_tjenester
 
 På denne sida finn du linkar til dei mest nytta tenesten som inngår i sandkassen.   
 
-Digdir jobbar med å laga ei web-basert innsynsteneste som gjere det mogeleg å sjå kva tenester som er registrert i tillitslista.
+Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas2sandkasse.net/). På sikt vil denne informasjonen også bli tilgjengeleg over [eit standardisert API](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md#32-api-methods-for-registrar-queries-open-api).
+
 
 
 ## Utstedere
 
-* [Digdir utsteder](lommebok_digdir_utsteder).  
+* [Digdir utsteder](lommebok_digdir_utsteder).  Dette er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autorative kjelder, og signere med ulike typar sertifikat.
 *  [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/).  EU-kommisjonen tilbyr ein relativt teknisk orientert utstedar av PID og mobilt førarkort. Den er ikkje integrert med sandkassen si tillitsliste, men er nyttig å bruka i eigen utvikling.
-* [Digdir demo utsteder](lommebok_demo_utsteder).  Dette er ein tidleg poc-teneste som kan utstede PID-dokument, eit fullmakts-bevis og eit dagleg-leiar-bevis.  Du kan også sjå på protokoll-flyten.
-
+* [PoC på utsteder](lommebok_demo_utsteder).  Dette var ein tidleg poc-teneste som Digdir laga for NOBID-storskala-piloten i EU i 2024 og 2025.  Den kan utstede PID-dokument, eit fullmakts-bevis og eit dagleg-leiar-bevis.  Den vert ikkje vidareutvikla.
 
 ## Brukarstader
 
