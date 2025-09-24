@@ -1,7 +1,7 @@
 ---
 title: "/token endpoint"
-description: "This page summarizes the protocol options available for on the /token endpoint for ID-porten OIDC Provider"
-summary: 'This page summarizes the protocol options available for on the /token endpoint for ID-porten OIDC Provider'
+description: "This page summarizes the protocol options available on the /token endpoint for ID-porten OIDC Provider"
+summary: 'This page summarizes the protocol options available on the /token endpoint for ID-porten OIDC Provider'
 
 sidebar: oidc
 product: ID-porten
@@ -10,7 +10,7 @@ redirect_from: /oidc_protocol_token
 
 ## About
 
-The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
+The `/token` endpoint is thoroughly documented in [OpenID Connect Core, chapter 3.1.3](https://openid.net/specs/openid-connect-core-1_0.html#TokenEndpoint)
 
 ## Request
 
@@ -20,8 +20,8 @@ There are different parameters available for the request, depending on grant typ
 
 | Parameter  | Value |
 | --- | --- |
-| Http method | POST |
-| Content-type | application/x-www-form-urlencoded |
+| HTTP method | POST |
+| Content-Type | application/x-www-form-urlencoded |
 
 
 
@@ -32,9 +32,9 @@ The following request parameters are available when using the authorization code
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | client_id | required | The identifier of the client  |
-| grant_type | required | Type of grant the client is sending, ie. `authorization_code` |
+| grant_type | required | Type of grant the client is sending, i.e. `authorization_code` |
 | code | required  | The authorization code received in the authorization response.  |
-| redirect_uri | required | The desired redirect uri.  Must be the same value as was used in the corresponding authentication request. |
+| redirect_uri | required | The desired redirect URI.  Must be the same value as was used in the corresponding authentication request. |
 | code_verifier | required | The PKCE code verifier. Mandatory for public clients. Between 43 and 128 characters (ASCII). |
 
 The following request parameters are available when using the authorization code grant
@@ -42,16 +42,16 @@ The following request parameters are available when using the authorization code
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
 | client_assertion_type | optional | If using certificate / asymmetric key for client authentication (recommended), this parameter must be set to `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`  |
-| client_assertion   | optional   | A JWT identifing the client, mandatory if client_assertion_type is set  |
+| client_assertion   | optional   | A JWT identifying the client, mandatory if client_assertion_type is set  |
 
 
-### Request parameters when using `refresh_token ` grant
+### Request parameters when using `refresh_token` grant
 
 The following request parameters are available when using the refresh_token grant
 
 | Parameter  | Requirement | Description |
 | --- | --- | --- |
-| grant_type | required | Type of grant the client is sending, ie. `refresh_token`  |
+| grant_type | required | Type of grant the client is sending, i.e. `refresh_token`  |
 | refresh_token | required   | The refresh token  |
 
 Client authentication must be used with this grant.  Client authentication methods client_secret_post or private_key_jwt adds parameters to the request.  Client authentication method client_secret_basic uses the Authorization header.  Client authentication method none cannot be used for the refresh_token grant.
@@ -69,7 +69,7 @@ ID-porten supports four client authentication methods:
 
 #### Client authentication using client secret basic
 
-A previously exchanged out-of-band static secret is used for standard HTTP bacic authentication header comprised of base64 encoded concatenation of client_id + colon + secret.
+A previously exchanged out-of-band static secret is used for the standard HTTP Basic authentication header comprised of the base64-encoded concatenation of client_id + colon + secret.
 
 ```
 POST /token
@@ -88,13 +88,15 @@ A previously exchanged out-of-band static secret is used for authentication.  Th
 
 #### Client authentication using JWT token (private_key_jwt)
 
-The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
+The client generates a JWT as specified in [RFC7523 chapter 2.2](https://tools.ietf.org/html/rfc7523#section-2.2), and signs this using a valid business certificate (recommended) conforming to [Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor](https://www.regjeringen.no/no/dokumenter/rammeverk-for-autentisering-og-uavviseli/id505958/).
+
+Alternatively, one can register an [asymmetric key](https://docs.digdir.no/docs/idporten/oidc/oidc_func_clientreg.html#bruk-av-asymmetrisk-n%C3%B8kkel) (an option for test environments).
 
 The request is extended with the attributes 'client_assertion_type' and 'client_assertion', see example below.
 
-The 'sub' field of the JWT must be set equal to your client_id
+The 'sub' field of the JWT must be set equal to your client_id.
 
-The 'aud' field of th JWT must be set equal to the issuer identifier of ID-porten and must only contain a single value.  Using the token-endpoint url as audience is no longer valid.
+The 'aud' field of the JWT must be set equal to the issuer identifier of ID-porten and must only contain a single value.  Using the token endpoint URL as audience is no longer valid.
 
 #### Example:
 
@@ -129,6 +131,27 @@ The final JWT client_assertion may look like this:
 <<signature-value>>
 ```
 
+#### Example JWT client_assertion with pre-registered key
+
+If the client is configured with a pre-registered key (business certificate or asymmetric key), the final JWT client_assertion may look like this:
+
+```
+{
+  "kid": "< your_kid_registered_on_the_client >",
+  "alg": "RS256"
+}
+.
+{
+  "iss": "my_client_id",
+  "aud": "https://idporten.no", 
+  "sub": "my_client_id",
+  "exp": 1520589928,
+  "iat": 1520589808,
+  "jti": "415ec7ac-33eb-4ce3-bc86-6ad40e29768f"
+}
+.
+<<signature-value>>
+```
 
 #### No client authentication
 
@@ -142,7 +165,7 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 
 | Claim | Description|
 | - |-|
-|access_token   | An Oauth2 access token, either by reference or as a JWT depending on which scopes was requested and/or client registration properties. |
+|access_token   | An OAuth 2.0 access token, either by reference or as a JWT depending on which scopes were requested and/or client registration properties. |
 |expires_in  | Number of seconds until this access_token is no longer valid   |
 | id_token   | An OpenID Connect id_token. Only returned if 'openid' scope was requested.  |
 | refresh_token  | Issued to confidential clients  |
