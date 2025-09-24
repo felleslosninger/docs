@@ -18,6 +18,13 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 3.0.0
+
+17.09.2025
+
+**Varsla endringar og oppgraderingar**
+- Sjå [Samarbeidsportalen](https://samarbeid.digdir.no/eformidling/viktige-endringar-i-integrasjonspunktet-til-eformidling-eit-stort-sikkerhetsloft/3218)
+
 ## 2.28.5
 
 24.04.2025
