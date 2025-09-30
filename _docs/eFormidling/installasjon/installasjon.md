@@ -284,7 +284,7 @@ difi.move.nextmove.useDbPersistence=true
 
 _Valgfritt_
 
-Integrasjonspunktet er designet for å kjøre i et lukket miljø som kun gir tilgang til autoriserte systemer og brukere. Likevel er det anbefalt å sikre kommunikasjonen med HTTPS. Som standard er transportsikring (HTTPS) aktivert. Det er mulig å deaktivere dette ved behov.
+Integrasjonspunktet er designet for å kjøre i et lukket miljø som kun gir tilgang til autoriserte systemer og brukere. Likevel er det anbefalt å sikre kommunikasjonen med HTTPS. Som standard er transportsikring (HTTPS) aktivert. Det er mulig å deaktivere dette ved behov. Krever TSL/SSL sertifikat - kan være selvsignert.
 
 | Egenskap                    | Beskrivelse                                                               | Standardverdi |
 | --------------------------- | ------------------------------------------------------------------------- | ------------- |
