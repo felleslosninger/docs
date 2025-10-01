@@ -102,7 +102,7 @@ The token is a JWT with the following structure:
 | consumer | The organization number, in ISO6523 notation, of the organization who is the legal consumer  of the token/API.  This value is always present.  In most cases, this organization will also be the Data Controller according to the GDPR. | see below |
 | scope | A list of scopes the access_token is bound to.   |
 | token_type | Type of token. Only bearer supported. | `Bearer`|
-| exp | Expire - Timestamp when this token should not be trusted any more.  |
+| exp | Expire - Timestamp when this token should not be trusted any more. **Note: This is not respected by the auth server. The configured expiration time on the client decides the expiration of the token.** |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
 
