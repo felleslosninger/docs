@@ -19,10 +19,10 @@ Merk spesielt følgende:
 
 Ansattporten støtter flere eID enn ID-porten.  Klienten angir hvilke eIDer den vil motta ved å angi en array av  `acr_values` i [autentiseringsforespørselen](../../docs/idporten/oidc/oidc_protocol_authorize.html):
 
-| acr_values | beskrivelse            |
-| ----- | ---------------------- |
-| `idporten-loa-high`    | eID på nivå høgt, som i ID-porten, dvs. BankID, Buypass eller Commfides |
-| `idporten-loa-substantial`    | eID på både nivå høgt og betydeleg, dvs. inkluderer MinID i tillegg til dei på nivå høgt.  |
-| `entraid` | Microsoft Entra ID. Se mer informasjon [her](ansattporten_entraid.html)|
+| acr_values    | beskrivelse                                                                                         |
+|---------------|-----------------------------------------------------------------------------------------------------|
+| `high`        | eID på nivå høgt, som i ID-porten, dvs. BankID, Buypass eller Commfides                             |
+| `substantial` | eID på både nivå høgt og betydeleg, dvs. inkluderer MinID i tillegg til dei på nivå høgt.           |
+| `entraid`     | Microsoft Entra ID. Se mer informasjon [her](ansattporten_entraid.html)                             |
 
 Av historiske årsaker støtter ansattporten også forkortede `acr`-verdier for sikkerhetsnivå (substantial, high). Disse vil bli faset ut, og bør ikke brukes lenger.
