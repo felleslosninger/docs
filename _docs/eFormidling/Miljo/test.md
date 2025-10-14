@@ -35,4 +35,4 @@ Følgende tjenester brukes av integrasjonspunktets test-miljø og må kunne nås
 | crl.test4.buypassca.com | 185.62.163.191                                    | 80   | DPI      | Buypass CRL-liste SEID 2.0                                                     | utgående              |
 | test.kontaktregisteret.no | 139.105.36.137 | 443  | DPI | Kontakt-og reservasjonsregisteret | utgående |
 | srest.qa.dataplatfor.ms                   | 51.120.52.137 og 51.120.49.231                                       | 443   | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt | utgående              |
-| test.svarut.ks.no                         | 137.221.25.65 <br/> 137.221.28.65                   | 443   | DPF      | KS SvarUt og SvarInn                                                                     | utgående              |
+| Legal: https://crl.test.commfides.com/G3/CommfidesLegalPersonCA-G3-TEST.crl                         | 91.232.83.136                  | 80   | Commfides-CRL      | Commfides-CRL                                                                      | utgående              |
