@@ -202,8 +202,8 @@ Her skal følgende begrensninger gjelde:
 <!-- end list -->
 
     RSAES-OAEP-params  ::=  SEQUENCE  {
-      hashFunc    [0] AlgorithmIdentifier DEFAULT sha1Identifier,
-      maskGenFunc [1] AlgorithmIdentifier DEFAULT mgf1SHA1Identifier,
+      hashFunc    [0] AlgorithmIdentifier DEFAULT sha256Identifier,
+      maskGenFunc [1] AlgorithmIdentifier DEFAULT mgf1SHA256Identifier,
       pSourceFunc [2] AlgorithmIdentifier DEFAULT pSpecifiedEmptyIdentifier  }
 
 Her skal følgende begrensninger gjelde
