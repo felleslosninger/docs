@@ -8,7 +8,7 @@ sidebar: begrep_sidebar
 |Term|Avsender|
 |Definisjon|Juridisk organisasjon/entitet som er Behandlingsansvarlig for innholdet i den digitale posten|
 |Datatype|complexType|
-|Kilde|DIFI|
+|Kilde|Digdir|
 |Kommentar|Avsender er den som er ansvarlig for innholdet i forsendelsen. Kan være forskjellige frå Databehandler (for eksempel kan SvarUT være databehandler på vegne av en kommune)|
 
 #### Egenskaper
