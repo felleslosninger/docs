@@ -208,8 +208,8 @@ Her skal følgende begrensninger gjelde:
 
 Her skal følgende begrensninger gjelde
 
-  - hashFunc = sha1Identifier 
-  - maskGenFunc = mgf1SHA1Identifier
+  - hashFunc = sha256Identifier 
+  - maskGenFunc = mgf1SHA256Identifier
   - pSourceFunc = pSpecifiedEmptyIdentifier
 
 <!-- end list -->
