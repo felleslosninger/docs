@@ -1,15 +1,15 @@
 ---
-title: ikkeSensitivTittel
+title: IkkeSensitivTittel
 
 sidebar: begrep_sidebar
 redirect_from: /ikkesensitivtittel
 ---
 
 | ---- | ---- |
-| Term | ikkeSensitivTittel |
+| Term | IkkeSensitivTittel |
 | Definisjon | En tittel som ikke inneholder sensitiv informasjon |
-| Datatype | string |
-| Kilde | DIFI |
+| Datatype | String |
+| Kilde | Digdir |
 | Kommentar | Vil vises til Innbygger og brukes i varslinger/påminnelser på e-post og sms til Innbygger. Skal ikke inneholde sensitiv informasjon. Kan brukes på lavere sikkerhetsnivå enn det selve dokumentet er klassifisert på. | 
 
 Dersom en forsendelse har sikkerhetsnivaa satt til 4 og Innbygger er innlogget på nivå 2 eller 3 vil ikkeSensitivTittel vises.
