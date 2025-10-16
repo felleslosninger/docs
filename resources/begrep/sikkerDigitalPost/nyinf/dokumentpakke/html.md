@@ -21,7 +21,7 @@ posttmottaker uten bruk av nettlesertillegg.
 1.  Av sikkerhetsmessige hensyn, og for å sikre korrekt visning i hele
     dokumentets levetid, kan dokumentet ikke inneholde referanser til
     eksternt innhold eller javascript. 
-2.  Links til egne sider er unntatt og kan benyttes.  
+2.  Lenker til egne sider er unntatt og kan benyttes.  
     \#\* Lenker må ha: target=“\_blank” for å kunne være klikkbare
 3.  Bilder som ønskes brukt i HTML-brev skal derfor legges inn i HTML
     encodet etter “”data url scheme“” (RFC 2397).  
