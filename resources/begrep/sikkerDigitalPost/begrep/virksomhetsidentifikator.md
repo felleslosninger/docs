@@ -9,7 +9,7 @@ redirect_from: /virksomhetsidentifikator
 | Term | virksomhetsidentifikator |
 | Definisjon | Identifikasjon av en virksomhet |
 | Datatype | string |
-| Kilde | DIFI |
+| Kilde | Digdir |
 | Kommentar | virksomhetsidentifikator er et organisasjonsnummer i henhold til ISO 6523. Det vil si at organisasjonsnummeret er prefixet med et Global Location Number utstedt av GS1. I tillegg bør scope angis ihht Oasis PartyIdType. Dersom det ikke er angitt scope så skal dette alltid tolkes som ISO 6523 kode 9908 som angir organisasjonsnummer for norske virksomheter forvaltet av Brønnøysundregistrene. | 
 
 #### Xml eksempel
