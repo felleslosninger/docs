@@ -9,7 +9,7 @@ redirect_from: /sdp_dokumentdata
 |Term|{{page.title}}|
 |Definisjon|Strukturert data for beriket visning i innbyggers postkasse|
 |Datatype|complexType|
-|Kjelde|DIFI|
+|Kjelde|Digdir|
 
 #### Eigenskapar
 
