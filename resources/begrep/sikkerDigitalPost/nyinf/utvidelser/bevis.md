@@ -8,10 +8,10 @@ sidebar: dpi_timo_sidebar
 
 
 |---|---|
-| Definisjon | Bevis |
+| Definisjon | Bevis. |
 | Mime-Type | application/vnd.difi.dpi.bevis+xml |
 | Datatype | complexType |
-| Kommentar | Definerer et bevis som presenteres for innbygger i postkassen |
+| Kommentar | Definerer et bevis som presenteres for innbygger i postkassen. |
 | XSD | [resources/begrep/sikkerDigitalPost/xsd/utvidelser/bevis.xsd](resources/begrep/sikkerDigitalPost/xsd/utvidelser/bevis.xsd) |
     
 
