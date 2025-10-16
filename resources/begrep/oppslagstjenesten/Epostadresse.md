@@ -9,7 +9,7 @@ redirect_from: /ot_epostadresse
 |Term | Epostadresse |
 | Definisjon  | Informasjon om Epostadresse tilhørende en person som er registrert i kontakt og reservasjonsregisteret |
 | Datatype  | complexType |
-| Kilde | DIFI |
+| Kilde | Digdir |
 | Kommentar | Informasjon om Epostadresse tilhørende en person som er registrert i kontakt og reservasjonsregisteret. Epost-addressen blir validert vha. biblioteket [ApacheCommons](http://commons.apache.org/proper/commons-validator/) |
 
 #### Attributer
