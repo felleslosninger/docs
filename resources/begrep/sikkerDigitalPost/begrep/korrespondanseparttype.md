@@ -6,9 +6,9 @@ redirect_from: /korrespondanseparttype
 ---
 
 | ---- | ---- |
-| Term | korrespondanseparttype |
+| Term | Korrespondanseparttype |
 | Definisjon | Registreres automatisk knyttet til funksjonalitet i forbindelse med opprettelse av journalpost, kan også registreres manuelt |
-| Datatype | string |
+| Datatype | String |
 | Kilde | NOARK 5 |
 | Kommentar | Korrespondansetype forekommer en gang innenfor objektet korrespondansepart, men denne kan forekomme flere ganger innenfor en journalpost. Identifikasjon i NOARK 5: M087. | 
 
