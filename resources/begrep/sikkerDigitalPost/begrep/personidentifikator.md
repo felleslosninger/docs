@@ -1,16 +1,16 @@
 ---
-title: personidentifikator
+title: Personidentifikator
 
 sidebar: begrep_sidebar
 redirect_from: /personidentifikator
 ---
 
 | ---- | ---- |
-| Term | personidentifikator |
+| Term | Personidentifikator |
 | Definisjon | Identifikasjon av en person |
-| Datatype | string |
-| Kilde | DIFI |
-| Kommentar | personidentifikator er enten et fødselsnummer eller et gyldig D-nummer. |
+| Datatype | String |
+| Kilde | Digdir |
+| Kommentar | Personidentifikator er enten et fødselsnummer eller et gyldig D-nummer. |
 
 ### Xml eksempel
 
