@@ -1,5 +1,5 @@
 ---
-title: Digdir sin utsteder
+title: Bevisporten: utstedelse styrt av datakjelde
 description: 
 
 sidebar: lommebok
@@ -12,9 +12,7 @@ Denne sidan dokumenterer bruksmønsteret for **datakjeld-styrt utstedelse** ved 
 Denne flyten er hensiktmessig for verksemder som ynskjer mest mogeleg kontroll sjølve over brukeropplevinga.  Nokre typiske karakteristika ved ein slik flyt kan vere: 
 
 - Sluttbrukaren må på førehand vere innlogga hjå datakjelda.
-
 - Datakjelda ynskjer ikkje å la sluttbrukar starte ei lommeboksprosess før dei er sikre på at brukaren faktisk oppfyller vilkår for å få eit bevis (til dømes unngå at innbyggarar som ikkje har førarrett forsøker å be om førarkort).
-
 - Datakjelda tek sjølv på seg mykje av ansvaret for å sikre at ein sluttbrukar sitt bevis ikkje hamnar i ein annan brukar si lommebok.
 
 
@@ -35,7 +33,7 @@ sequenceDiagram
   participant l as Lommebok
   participant t as Teneste
   participant u as Utstedar
-  participant d as API
+  participant a as API
 
   note over b,t: loggar inn på teneste og startar bevis-utstedelse
 
@@ -45,7 +43,7 @@ sequenceDiagram
   t-->>t: rendre QR 
   
   opt Pull-basert henting av data
-    a<<-->>a: hent bevis-innhald
+    u<<-->>a: hent bevis-innhald
   end
 
   note over b,t: scann QR med lommebok
