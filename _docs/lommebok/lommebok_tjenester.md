@@ -21,7 +21,7 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 ## Brukarstader
 
 * [Digdir demo brukarstad](lommebok_demo_brukarstad)  Her kan du teste aldersverifisering basert på PID,  og fullmaktsinnlogging basert på fullmaktsbevis.  Du får kan også studere protokoll-flyten.
-* [ID-porten](https://demo-client.test.idporten.no/)  I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av demo-utstedaren vår. 
+* [ID-porten](https://demo-client.test.idporten.no/)  I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av utstedaren vår. 
 * [EU-kommisjonen demo-brukerstad](https://verifier.eudiw.dev/home) Ein teknisk fokusert demo-brukastad frå EU-kommisjonen. 
 
 ## Lommebøker
