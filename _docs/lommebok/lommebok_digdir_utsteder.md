@@ -22,11 +22,12 @@ Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn 
 
 Utstedaren vår er laga for kunne dekke fylgjande 4 bruksmønster:
 
-1. Datakjelde styrer flyten, push av bevis-innhald
-2. Datakjelde styrer flyten, pull av bevis-innhald over API
+1. [Datakjelde styrer flyten, push av bevis-innhald](lommebok_digdir_utsteder_kjeldstyrt)
+2. [Datakjelde styrer flyten, pull av bevis-innhald over API](lommebok_digdir_utsteder_kjeldstyrt)
 3. Utstedar styrer flyten
 4. Lommeboka styrer flyten
 
+Klikk på lenke ovanfor for å få ytterlegare dokumentasjon av desse bruksmønstra.
 
 ## Funksjonalitet
 Me ynskjer at utstedaren skal følge Final-versjonen av OpenID4VCI.  Dog testar me primært mot  EU sin demolommebok, og denne ligg litt "bakpå", so det kan vere at noko av vår protokoll-støtte enno er for gamal.
