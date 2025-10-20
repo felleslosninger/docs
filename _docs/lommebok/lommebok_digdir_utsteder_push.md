@@ -11,9 +11,9 @@ Denne sidan dokumenterer bruksmønsteret for **datakjeld-styrt utstedelse** ved 
 
 Denne flyten er hensiktmessig for verksemder som ynskjer mest mogeleg kontroll sjølve over brukeropplevinga.  Nokre typiske karakteristika ved ein slik flyt kan vere: 
 
-- Sluttbrukaren må på førehand vere innlogga hjå datakjelda
+- Sluttbrukaren må på førehand vere innlogga hjå datakjelda.
 
-- Datakjelda ynskjer ikkje å la sluttbrukar starte ei lommeboksprosess før dei er sikre på at brukaren faktisk oppfyller vilkår for å få eit bevis (til dømes unngå at innbyggarar som ikkje har førarrett forsøker å be om førarkort)
+- Datakjelda ynskjer ikkje å la sluttbrukar starte ei lommeboksprosess før dei er sikre på at brukaren faktisk oppfyller vilkår for å få eit bevis (til dømes unngå at innbyggarar som ikkje har førarrett forsøker å be om førarkort).
 
 - Datakjelda tek sjølv på seg mykje av ansvaret for å sikre at ein sluttbrukar sitt bevis ikkje hamnar i ein annan brukar si lommebok.
 
@@ -65,7 +65,30 @@ Uansett om du ynskjer push- eller pull-basert overføring av sjølve bevis-innha
 
 Du må kjenne `credential_configuration_id`  på ditt bevis.  Denne identifikatoren har du og Digdir vorte samde om som del av utviklingsløpet.
 
-Her er eit døme på eit kall:
+Her er eit døme på eit kall som baserer seg på pull av bevis-innhaldet:
+```
+POST https://utsteder.test.eidas2sandkasse.net/api/v1/credential/issuance-transaction
+Authorization: Bearer [Maskinporten-token]
+Content-Type: application/json
+
+{
+  "credential_configuration_id": "no.skatteetaten.nnid_mso_mdoc",
+  "subject": {
+    "identifier": "50917500484"
+  }
+}
+```
+
+Dette endepunktet er sikra med access-token frå anten Maskinporten eller ID-porten alt etter bevis-type. Det er også ulike scopes for ulike bevis-typar, desse finn du i [credential metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer). 
+
+
+Ved push av data så må du sende med dei person-avhengige data-attributta som skal inn i beviset.  Dette gjer du i `claims`-claimet.  Datamodellen vil vere bevistype-avhengig, og denne har me avtalt i lag som del av utviklingsløpet.
+
+Dersom du istaden ynskjer ein pull-basert dataoverføring, so 
+
+
+
+Her er eit døme på eit kall som bruker pull:
 ```
 POST https://utsteder.test.eidas2sandkasse.net/api/v1/credential/issuance-transaction
 Authorization: Bearer [Maskinporten-token]
@@ -90,10 +113,13 @@ Content-Type: application/json
 ```
 
 
+## Test
+
+
+Før du kan teste, må 
 
 
 
-Dette endepunktet er sikra med access-token frå anten Maskinporten eller ID-porten alt etter bevis-type. Det er også ulike scopes for ulike bevis-typar, desse finn du i [credential metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer). 
 
 Sidan utstedaren i dette bruksmønsteret ikkje har noko browser-interaksjon med sluttbrukar, betyr det at utstedar stoler fullt og heilt på at datakjelda tek ansvar for at sluttbrukaren er nyleg innlogga hjå dei, og at sluttbrukar er informert om og har til hensikt å utstede bevis av aktuell type.  Tilliten kan aukast, ved at bevis-typen blir konfigurert til å vere sikra med [ID-porten-scope med samtykke](oidc_auth_oauth2) istadenfor Maskinporten.
 
