@@ -1,14 +1,14 @@
 ---
-title: varslingskanal
+title: Varslingskanal
 
 sidebar: begrep_sidebar
 redirect_from: /varslingskanal
 ---
 
 | ---- | ---- |
-| Term | varslingskanal |
+| Term | Varslingskanal |
 | Definisjon | Kommunikasjonskanal for utsending av varsel og påminnelse |
-| Datatype | string |
+| Datatype | String |
 | Kilde | Digdir |
 | Kommentar | Varsling og påminnelsesmeldinger skal sendes på den kanal som blir spesifisert. Kanalen SMS er priset. | 
 | Gyldige verdier | epost ; sms |

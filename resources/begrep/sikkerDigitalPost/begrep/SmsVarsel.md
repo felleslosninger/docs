@@ -8,8 +8,8 @@ redirect_from: /sdp_smsvarsel
 |---|---|
 | Term | {{page.title}} |
 | Definisjon | Informasjon om hvordan man skal varsle sluttbruker på sms |
-| Datatype | complexType |
-| Kjelde | DIFI |
+| Datatype | ComplexType |
+| Kjelde | Digdir |
 | Kommentar | Beskriver når det skal sendes sms varsel fra postkassen etter at posten er tilgjengeliggjort. Denne tjenesten vil medføre kostnader for Avsender |
 
 #### Eigenskapar

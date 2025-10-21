@@ -1,5 +1,5 @@
 ---
-title: tittel
+title: Tittel
 
 sidebar:
 redirect_from: /2tittel
@@ -7,9 +7,9 @@ redirect_from: /2tittel
 
 | ---- | ---- |
 | Identifikator | |
-| Term | tittel |
+| Term | Tittel |
 | Definisjon | Tittel eller navn på arkivenheten |
-| Datatype | string |
+| Datatype | String |
 | Kilde | NOARK 5 |
 | Kommentar | Vil vises til Innbygger. Registreres manuelt eller hentes automatisk fra innholdet i arkivdokumentet. | 
 

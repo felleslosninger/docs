@@ -1,15 +1,15 @@
 ---
-title: tekst
+title: Tekst
 
 sidebar: begrep_sidebar
 redirect_from: /tekst
 ---
 
 | ---- | ---- |
-| Term | tekst |
+| Term | Tekst |
 | Definisjon | Språksensitiv tekst-streng |
 | Datatype | string |
-| Kilde | DIFI |
+| Kilde | Digdir |
 | Kommentar | Språksensitiv tekst-streng. Bør vurdere hvordan man skal håndtere “default” språk | 
 
 ### Egenskaper

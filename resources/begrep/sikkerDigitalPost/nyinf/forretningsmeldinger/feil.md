@@ -21,16 +21,16 @@ Feil kategorisert som klientfeil vil komme dersom Avsender har sendt en
 digital postmelding som ikke kan behandles av Postkasseleverandør.  
 Dette kan være feil som f.eks:
 
-  - Adresseringen til Mottaker er feil
-  - Postkasseleverandør kan ikke dekryptere dokumentpakken
-  - Varslingreglene bryter med forretningsregler
-  - Virkningsdato er satt for langt frem i tid
+  - Adresseringen til Mottaker er feil.
+  - Postkasseleverandør kan ikke dekryptere dokumentpakken.
+  - Varslingreglene bryter med forretningsregler.
+  - Virkningsdato er satt for langt frem i tid.
 
 Generelt vil dette være alle feil med
 [Digital](dpi_digital.html.md) meldignen [Utskrift](dpi_utskrift.html) meldingen og
 [Dokumentpakken](dpi_dokumentpakke_index.html).
 
-Feilen må utbedres og ny meldin må sendes.
+Feilen må utbedres og ny melding må sendes.
 
 #### Håndtering av server feil
 

@@ -100,7 +100,7 @@ Se [DPI skjema](dpi_skjema.html)
 ## PEPPOL (hjørne 2-> 3)
 Se [DPI skjema](dpi_skjema.html)
 
-Se [Peppol eDelivery network specifications](https://peppol.eu/downloads/the-peppol-edelivery-network-specifications/)
+Se [OpenPeppol eDEC Specifications](https://docs.peppol.eu/edelivery/) og [Peppol AS4 Profile](https://docs.peppol.eu/edelivery/as4/specification/). 
 
 ## Hjørne 3 -> Tjenesteleverandører i hjørne 4 (postkasse- og utskriftsleverandører)
 
