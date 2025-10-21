@@ -21,7 +21,7 @@ Dokumentpakken så lenge innbygger ønsker.
 Det betyr at følgende langtidsoppbevares i forbindelse med en sending av
 digital post:
 
-  - hoveddokument
-  - vedlegg
-  - [Manifest](../../eksempler/sdpManifest.xml)
+  - Hoveddokument.
+  - Vedlegg.
+  - [Manifest.](../../eksempler/sdpManifest.xml)
   - [META-INF/signatures.xml](http://www.etsi.org/deliver/etsi_ts%5C101900_101999%5C101903%5C01.04.02_60%5Cts_101903v010402p.pdf)

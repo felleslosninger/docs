@@ -1,16 +1,16 @@
 ---
-title: paaVegneAv
+title: PaaVegneAv
 
 sidebar: begrep_sidebar
 redirect_from: /paavegneav
 ---
 
 | ---- | ---- |
-| Term | paaVegneAv |
+| Term | PaaVegneAv |
 | Definisjon | Identifikasjon av en organisasjon |
-| Datatype | string |
-| Kilde | DIFI |
-| Kommentar | paaVegneAv er et gyldig organisasjonsnummer | 
+| Datatype | String |
+| Kilde | Digdir |
+| Kommentar | PaaVegneAv er et gyldig organisasjonsnummer | 
 
 ### Xml eksempel
 

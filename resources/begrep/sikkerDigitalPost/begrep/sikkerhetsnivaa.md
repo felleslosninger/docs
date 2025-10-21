@@ -1,12 +1,12 @@
 ---
-title: sikkerhetsnivaa
+title: Sikkerhetsnivaa
 
 sidebar: begrep_sidebar
 redirect_from: /sikkerhetsnivaa
 ---
 
 | ---- | ---- |
-| Term | sikkerhetsnivaa |
+| Term | Sikkerhetsnivaa |
 | Definisjon | Definerer hvilket autentiseringsnivå som kreves for at dokumentet skal åpnes |
 | Datatype | int |
 | Kilde | Rammeverk for autentisering og uavviselighet i elektronisk kommunikasjon med og i offentlig sektor |

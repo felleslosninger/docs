@@ -1,15 +1,15 @@
 ---
-title: returPostHaandtering
+title: ReturPostHaandtering
 
 sidebar: begrep_sidebar
 redirect_from: /returposthaandtering
 ---
 
 | ---- | ---- |
-| Term | returPostHaandtering |
+| Term | ReturPostHaandtering |
 | Definisjon | Definerer hvordan fysisk post som ikke blir levert til mottaker skal håndteres. |
-| Datatype | string |
-| Kilde | DIFI |
+| Datatype | String |
+| Kilde | Digdir |
 | Kommentar | Valg av håndteringmetode for retur post. Dette blir valgt når post sendes til utskrift og avgjør hvordan returadresse og EA logo m.m. behandles. | 
 | Gyldige verdier | DIREKTE_RETUR ; MAKULERING_MED_MELDING |
 
