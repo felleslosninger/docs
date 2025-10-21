@@ -10,7 +10,7 @@ sidebar: dpi_timo_sidebar
 | Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](dpi_kvitteringer.html) fra Utskriftstjenesten til Avsender om at post ikke kunne leveres til Mottaker. |
-| Kilde         | DIFI |
+| Kilde         | Digdir |
 | Kommentar     | Dette er Kvittering på at posten har kommet i retur og har blitt makulert. |
 
 Kvitteringen leveres når brevene er mottatt i retur av utskrift og
@@ -19,7 +19,7 @@ avsender har valgt å benytte denne tjenesten i feltet
 (Link til /felles/returPostStrategi.md) i opprinnelig melding.  
 Kvitteringen vil komme flere dager etter at en forsendelse er sendt til
 utskrift og forsendelsetjenesten, dette er overordne de steg som skal
-gjennomføres før Avsender får ReturpostKvittering
+gjennomføres før Avsender får ReturpostKvittering.
 
 | Steg | Beskrivelse | Antatt tidsbruk |
 | --- | --- | --- |

@@ -30,20 +30,20 @@ JSON schema for [Standard Business Document Header](schemas/common/sbdh.schema.j
 Sender/Receiver indikerer retning på meldingsprosessen. For eksempel i [FormidleDigitalPostForsendelse](sdp_formidledigitalpostforsendelse.html)
 prosessen så vil Sender være [Databehandler](dpi_aktorer.html#roller) og Receiver være [Postkasse](dpi_aktorer.html#roller).
 
-Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den offisielle standarden (BusinessScope er obligatorisk i Sikker Digital Post). Konsekvesen er at man kan få en [forretningsrelatert feilmelding](sdp_forretningsfeil.html) selv om XML’en validerer mot xsd.
+Merk også at Sikker Digital Post sin bruk av SBDH er strengere enn den offisielle standarden (BusinessScope er obligatorisk i Sikker Digital Post). Konsekvensen er at man kan få en [forretningsrelatert feilmelding](sdp_forretningsfeil.html) selv om XML’en validerer mot xsd.
 
 ### Eksempel: Digital melding fra Databehandler til Postkasseleverandør
 
 **** En melding fra [Databehandler](sdp_aktorer.html#rollerl) med orgnummer: 123456789
-til [Postkasseleverandør](sdp_aktorer.html) med orgnummer: 987654321
+til [Postkasseleverandør](sdp_aktorer.html) med orgnummer: 987654321.
 
 **** [Databehandler](sdp_aktorer.html#roller) har generert en unik
 DocumentIdentification.InstanceIdentifier for denne meldingen:
-“35e21e33-22b3-4554-9707-5fa829ee8bc0”
+“35e21e33-22b3-4554-9707-5fa829ee8bc0”.
 
 **** [Databehandler](hsdp_aktorer.html#roller) har generert en unik
 BusinessScope.InstanceIdentifier for hele konversasjonen:
-“37efbd4c-413d-4e2c-bbc5-257ef4a65a45”
+“37efbd4c-413d-4e2c-bbc5-257ef4a65a45”.
 
 ****\* Dette vil brukes for å knytte seinere meldinger i samme
 konversasjon sammen.

@@ -9,16 +9,16 @@ sidebar: dpi_timo_sidebar
 |---|---|
 | Identifikator | |
 | Term          | {{page.title}} |
-| Definisjon    | inneholder identifikasjon om dokumentet |
+| Definisjon    | Inneholder identifikasjon om dokumentet. |
 | Kilde         | [GS1](http://www.gs1.org/docs/gsmp/xml/sbdh/CEFACT_SBDH_TS_version1.3.pdf) |
 
 ### Properties
 
 | Identifikator      | Kardinalitet | Datatype  | Verdi                                                                                                                                                                   |
 | ------------------ | ------------ | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type               | 1..1         | string | “ConversationId”                                                                                                                                                        |
-| instanceIdentifier | 1..1         | string - uuid | Unik identifikator for konversasjonen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Identifikator som binder meldinger og tilhørende kvitteringer/feilmeldinger sammen. Opprettet av Databehandler. Se format under. |
-| identifier         | 1..1         | string | Prosess meldingen tilhører i hennold til [meldingstypene](dpi_forretningsmelding_index.html)|
+| type               | 1..1         | String | “ConversationId”                                                                                                                                                        |
+| instanceIdentifier | 1..1         | String - uuid | Unik identifikator for konversasjonen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Identifikator som binder meldinger og tilhørende kvitteringer/feilmeldinger sammen. Opprettet av Databehandler. Se format under. |
+| identifier         | 1..1         | String | Prosess meldingen tilhører i hennold til [meldingstypene](dpi_forretningsmelding_index.html)|
 
 
 

@@ -10,7 +10,7 @@ sidebar: dpi_timo_sidebar
 | Identifikator |  |
 | Term          | {{page.title}} |
 | Definisjon    | En [Kvitteringsmelding](dpi_kvitteringer.html) til Avsender om at utskrift og forsendelsestjenesten har mottatt forsendelsen og har lagt den klar for utskrift. |
-| Kilde         | DIFI |
+| Kilde         | Digdir |
 | Kommentar     | Denne Kvitteringen leveres tilbake så fort utskrift og forsendelsestjenesten har mottatt forsendelsen og validert at den kan skrives ut. Forsendelsen vil så legges i kø og tas med i neste utskriftsjobb for denne type post. |
 
 ### Schema

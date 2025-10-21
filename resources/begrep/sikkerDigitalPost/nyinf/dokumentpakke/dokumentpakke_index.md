@@ -22,7 +22,7 @@ Dette medfører at man kan verifisere at filene kommer fra rett
 virksomhet, og om filene har blitt endret.
 
 Les mer om [hvordan dokumenter som sendes i Sikker digital post er
-beskyttet](sikkerhet_index.html)
+beskyttet.](sikkerhet_index.html)
 
 Sikker Digital Post har definert et eget begrep [Manifest](resources/begrep/sikkerDigitalPost/xsd/sdp-manifest.xsd) som
 inneholder metadata relatert til hver fil.
@@ -38,19 +38,19 @@ inneholder metadata relatert til hver fil.
 
 ### Begrensninger
 
-  - Dokumentpakken kan ikke overstige 50Mb
-  - Dokumentpakken kan inneholde et hoveddokument
-  - Dokumentpakken kan ha inntil 200 vedlegg
-  - Avsender kan ikke definere rekkefølgende på vedleggene, sorteringen
+  - Dokumentpakken kan ikke overstige 50Mb.
+  - Dokumentpakken kan inneholde et hoveddokument.
+  - Dokumentpakken kan ha inntil 200 vedlegg.
+  - Avsender kan ikke definere rekkefølgende på vedleggene, sorteringen.
     av disse håndteres av postkassen.
 
 ### Eksempel
 
-  - [Manifest](../../eksempler/sdpManifest.xml)
-  - [Full dokumentpakke](../../eksempler/post.asice.zip)
+  - [Manifest.](../../eksempler/sdpManifest.xml)
+  - [Full dokumentpakke.](../../eksempler/post.asice.zip)
 
 ### Refererte standarder
 
   - [Associated Signature Container
-    (ASiC)](http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf)
-  - [XAdES](http://www.etsi.org/deliver/etsi_ts%5C101900_101999%5C101903%5C01.04.02_60%5Cts_101903v010402p.pdf)
+    (ASiC).](http://www.etsi.org/deliver/etsi_ts/102900_102999/102918/01.03.01_60/ts_102918v010301p.pdf)
+  - [XAdES.](http://www.etsi.org/deliver/etsi_ts%5C101900_101999%5C101903%5C01.04.02_60%5Cts_101903v010402p.pdf)
