@@ -1,15 +1,15 @@
 ---
-title: varslingsTekst
+title: VarslingsTekst
 
 sidebar: begrep_sidebar
 redirect_from: /varslingstekst
 ---
 
 | ---- | ---- |
-| Term | varslingsTekst |
+| Term | VarslingsTekst |
 | Definisjon | Tekst til Innbygger. Brukt til å sende påminnelser/varslinger for å sikre at Innbygger skaffer seg tilgang til et tilknyttet dokument. |
-| Datatype | string |
-| Kilde | DIFI |
+| Datatype | String |
+| Kilde | Digdir |
 | Kommentar | En tekst knyttet til en digital postforsendelse. Teksten legges med i varslinger/påminnelser til Innbygger. Teksten skal ikke inneholde personopplysninger eller sensitive opplysninger da varslene sendes ukryptert pr epost eller sms.|
 
 * For epost varsel er maks tillatt med 500 tegn.

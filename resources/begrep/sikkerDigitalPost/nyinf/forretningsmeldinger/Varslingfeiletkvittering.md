@@ -18,9 +18,9 @@ Se [Varsel](sdp_varsler.html) for mer informasjon om bruken av varsel.
 kan være en av følgende:
 
   - Kontaktinformasjonen som er oppgitt er ikke på riktig format.
-  - e-post serveren, sms-gateway eller mobiloperatør er ikke
+  - E-post serveren, sms-gateway eller mobiloperatør er ikke
     tilgjengelig ved sendingstidspunktet slik at varslet ikke ble sendt
-    vellykket
+    vellykket.
       - Her vil postkasseleverandør gjøre forsøk på resending, men
         dersom feilen ikke er utbedret innenfor avtalt tidsfrist vil en
         Varslingfeiletkvittering sendes.
@@ -54,7 +54,7 @@ oppfølging av returpost.
       - Avsendere som i dag følger opp all returpost, og gjør tiltak
         ovenfor den personen som ikke har mottatt dokumentet bør gjøre
         samme tiltak ovenfor denne personen når det kommer
-        VarslingfeiletKvittering
+        VarslingfeiletKvittering.
       - Avsendere som i dag mottar og logger returpost, men ikke gjør
         noe aktiv oppfølging, bør logge VarslingfeiletKvittering.
 
@@ -70,5 +70,5 @@ basert på en gjennomført vurdering.
 
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
-| [beskrivelse](beskrivelse.html) | 0..1 | string |
-| [varslingskanal](varslingskanal.html) | 1..1 | string epost/sms |
+| [beskrivelse](beskrivelse.html) | 0..1 | String |
+| [varslingskanal](varslingskanal.html) | 1..1 | String epost/sms |

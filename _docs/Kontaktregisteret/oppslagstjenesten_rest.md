@@ -17,8 +17,6 @@ Kontaktregisterets oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API,
 
 Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon]({{site.baseurl}}/docs/Maskinporten/maskinporten_auth_server-to-server-oauth2)
 
-Merk at REST-grensesnittet tidligere var sikret med den "innebygde maskinporten" i ID-porten OIDC, men det nå er anbefalt å bruke Maskinporten.
-
 > I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) (ikke ver2.maskinporten.no) 
 
 
@@ -38,7 +36,7 @@ Det vil alltid returneres reservasjonsstatus for brukeren.
 
 Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
-
+    
 ## Endepunkt
 
 Oppslagstjenesten sin REST-tjeneste tilbyr følgende endepunkt for søk på 1...1000 personer:

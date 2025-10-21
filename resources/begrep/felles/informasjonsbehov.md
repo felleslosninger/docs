@@ -6,11 +6,11 @@ redirect_from: /informasjonsbehov
 ---
 
 | ---- | ---- |
-| Term | informasjonsbehov |
+| Term | Informasjonsbehov |
 | Definisjon | Beskriver det opplysningskrav som en Virksomhet har definert |
-| Datatype | string |
-| Kilde | DIFI |
-| Kommentar | informasjonsbehov brukes i forespørsler til Kontakt- og reservasjonsregisteret for å definere hvilke opplysninger som skal utleveres til virksomheten. Forespørselen vil være en [HentPersonerForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonerForespoersel) eller en [HentPersonForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonForespoersel) som sendes til kontakt-og reservasjonsregisteret. Det er 1-1 mapping mellom [OAuth2 scopes]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest#tilgjenglige-scopes) og informasjonsbehov-elementet brukt i SOAP-API’et. | 
+| Datatype | String |
+| Kilde | Digdir |
+| Kommentar | Informasjonsbehov brukes i forespørsler til Kontakt- og reservasjonsregisteret for å definere hvilke opplysninger som skal utleveres til virksomheten. Forespørselen vil være en [HentPersonerForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonerForespoersel) eller en [HentPersonForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/HentPersonForespoersel) som sendes til kontakt-og reservasjonsregisteret. Det er 1-1 mapping mellom [OAuth2 scopes]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest#tilgjenglige-scopes) og informasjonsbehov-elementet brukt i SOAP-API’et. | 
 
 #### Kodeverk for informasjonsbehov
 

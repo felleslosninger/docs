@@ -58,22 +58,22 @@ følger:
     kontaktinformasjon hentes ved bruk av Oppslagstjenesten.
     Forsendelsen adresseres og kontaktinformasjon legges til på bakgrunn
     av:  
-    \#\* reservasjonsstatus  
-    \#\* digital postkasseadresse  
-    \#\* varslingsadresse (epost og mobilnummer)  
-    \#\* sertifikatinformasjon (enten postkasseleverandørens eller
-    postmottakerens sertifikat)  
-    \#\* postadresse brukes dersom mottaker har reservert seg eller ikke
+    \#\* Reservasjonsstatus.  
+    \#\* Digital postkasseadresse.  
+    \#\* Varslingsadresse (epost og mobilnummer).  
+    \#\* Sertifikatinformasjon (enten postkasseleverandørens eller
+    postmottakerens sertifikat).  
+    \#\* Postadresse brukes dersom mottaker har reservert seg eller ikke
     har en digital postkasse (postadresse leveres ikke av
-    Oppslagstjenesten)
+    Oppslagstjenesten).
 3.  Posten klargjøres gjennom at Avsender:  
-    \#\* tilpasser postforsendelsen til Sikker digital posttjenestens
-    meldingsspesifikasjoner  
-    \#\* signerer postforsendelsen med Avsenders private nøkkel.  
-    \#\* sikrer postforsendelsen mot uautorisert innsyn ved å kryptere
-    posten med sertifikatinformasjon fra Oppslagstjenesten.
-4.  Postforsendelsen sendes til Meldingsformidleren
-5.  Ekspedering av post avsluttes ved at utgående post loggføres
+    \#\* Tilpasser postforsendelsen til Sikker digital posttjenestens
+    meldingsspesifikasjoner.  
+    \#\* Signerer postforsendelsen med Avsenders private nøkkel.  
+    \#\* Sikrer postforsendelsen mot uautorisert innsyn ved å kryptere
+    posten med sertifikatinformasjon fra oppslagstjenesten.
+4.  Postforsendelsen sendes til Meldingsformidleren.
+5.  Ekspedering av post avsluttes ved at utgående post loggføres.
 
 Prosessene for ekspedering og formidling av post er ytterligere
 detaljert i [Arkitekturbeskrivelsen for Sikker Digital

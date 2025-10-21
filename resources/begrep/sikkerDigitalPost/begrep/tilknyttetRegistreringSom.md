@@ -1,14 +1,14 @@
 ---
-title: tilknyttetRegistreringSom
+title: TilknyttetRegistreringSom
 
 sidebar: begrep_sidebar
 redirect_from: /tilknyttetregistreringsom
 ---
 
 | ---- | ---- |
-| Term | tilknyttetRegistreringSom |
+| Term | TilknyttetRegistreringSom |
 | Definisjon | Angivelse av hvilken “rolle” dokumentet har i forhold til registreringen |
-| Datatype | string |
+| Datatype | String |
 | Kilde | NOARK 5 |
 | Kommentar | Obligatoriske verdier:	“Hoveddokument”, “Vedlegg” | 
 

@@ -6,7 +6,7 @@ redirect_from: /sdp_skjema
 ---
 
 Dokumentasjon av kilder og ev. endringer i XSD-skjemaer for [Sikker
-digital post](https://difi.github.io/felleslosninger/sdp_innledning_index.html)
+digital post](https://difi.github.io/felleslosninger/sdp_innledning_index.html).
 
 Grunnen til at vi lagrer disse lokalt er for å sikre at verktøy ikke
 trenger å være online for å kunne jobbe med XSD-ene.  
