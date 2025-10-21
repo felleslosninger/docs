@@ -8,7 +8,7 @@ redirect_from: /sdp_fysiskpostretur
 |---|---|
 |Term|{{page.title}}|
 |Definisjon|Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.|
-|Kilde|DIFI|
+|Kilde|Digdir|
 |Kommentar|Informasjon som brukes ved retur av post som av en eller annen grunn ikke kan levers til mottaker.|
 
 ### Attributer
