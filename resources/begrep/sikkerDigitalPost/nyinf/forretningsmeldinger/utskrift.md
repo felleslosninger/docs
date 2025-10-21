@@ -9,8 +9,8 @@ dpi_common_schema_location: https://docs.digdir.no/schemas/dpi/commons.schema.js
 
 | --- | --- |
 | Term  | {{page.title}} |
-| Definisjon | Utskrift melding med tilhørende [Dokumentpakke](dpi_dokumentpakke_index.html) |
-| Kilde | DIFI |
+| Definisjon | Utskrift melding med tilhørende [Dokumentpakke.](dpi_dokumentpakke_index.html) |
+| Kilde | Digdir |
 | Kommentar  | Utskrift melding med tilhørende Dokumentpakke er postforsendelsen [Avsender](sdp_avsender.html) sender til [Mottaker](2sdp_mottaker.html). Denne inneholder informasjon om hvilken Avsender som er [Behandlingsansvarlig](dpi_aktorer.html), en knytning til dokumentpakken igjennom [Dokumentpakkefingeravtrykk](sdp_dokumentpakkefingeravtrykk.html)  og informasjon om behandlingsregler som [Postkasseleverandør](dpi_aktorer.html) skal bruke for utskrift og forsendelse. |
 
 Postkassen kvitterer for meldingen gjennom å sende [Leveringskvittering](dpi_leveringskvittering.html) til avsender. Leveringskvittering for at postkassen har tatt ansvar for å tilgjengeliggjøre meldingen.

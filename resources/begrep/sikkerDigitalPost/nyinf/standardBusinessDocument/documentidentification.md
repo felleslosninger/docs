@@ -9,19 +9,19 @@ sidebar: dpi_timo_sidebar
 |---|---|
 | Identifikator | |
 | Term          | {{page.title}} |
-| Definisjon    | inneholder identifikasjon om dokumentet |
+| Definisjon    | Inneholder identifikasjon om dokumentet. |
 | Kilde         | [GS1](http://www.gs1.org/docs/gsmp/xml/sbdh/CEFACT_SBDH_TS_version1.3.pdf) |
 
 ### Attributer
 
 | Identifikator       | Kardinalitet | Datatype    | Verdi                                                                                                                      |
 | ------------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Standard            | 1..1         | string   | Id til en av de gyldige [meldingstypene](dpi_forretiningsmelding_index.html)                                                |
-| TypeVersion         | 1..1         | string   | “1.0”                                                                                                                      |
-| InstanceIdentifier  | 1..1         | string - uuid   | Unik identifikator for meldingen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Opprettet av Databehandler|
-| Type                | 1..1         | string   | Type forretningsmelding. Skal alltid være “local-name” melding objektet Melding. Se kodeverk under |
-| MultipleType        | 0..0         | boolean  | brukes ikke                                                                                                                |
-| CreationDateAndTime | 1..1         | string - dateTime | Tidspunkt for oppretting av [Standard Business Document](dpi_sbd.md)                                                       |
+| Standard            | 1..1         | String   | Id til en av de gyldige [meldingstypene](dpi_forretiningsmelding_index.html)                                                |
+| TypeVersion         | 1..1         | String   | “1.0”                                                                                                                      |
+| InstanceIdentifier  | 1..1         | String - uuid   | Unik identifikator for meldingen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Opprettet av Databehandler|
+| Type                | 1..1         | String   | Type forretningsmelding. Skal alltid være “local-name” melding objektet Melding. Se kodeverk under |
+| MultipleType        | 0..0         | Boolean  | Brukes ikke                                                                                                                |
+| CreationDateAndTime | 1..1         | String - dateTime | Tidspunkt for oppretting av [Standard Business Document](dpi_sbd.md)                                                       |
 
 
 ### Kodeverk: Type
@@ -38,7 +38,7 @@ I Sikker Digital Post vil type være en av følgende:
   - mottakskvitteirng
   - returpostkvittering
 
-### Eeksempel
+### Eksempel
 
 ```json 
 {

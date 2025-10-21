@@ -6,4 +6,4 @@ sidebar: dpi_sidebar
 redirect_from: /sdp_eldre_releaser
 ---
 
-Tidligere releaser av dokumentasjonen finnes på [https://begrep.difi.no/SikkerDigitalPost/](https://begrep.difi.no/SikkerDigitalPost/)
+Tidligere releaser av dokumentasjonen finnes på [https://begrep.digdir.no/SikkerDigitalPost/](https://begrep.difi.no/SikkerDigitalPost/).
