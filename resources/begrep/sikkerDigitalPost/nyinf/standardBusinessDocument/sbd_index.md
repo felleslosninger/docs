@@ -21,7 +21,7 @@ Document](http://www.gs1.org/ecom/standards/guidelines#s2) er en
 dokumenter i en B2B kontekst.  
 
 
-For å senke risiko ved overngang har vi valt å beholde denne strukturen på forretningsmeldingen, men "oversatt" den om til JSON.
+For å senke risiko ved overgang har vi valgt å beholde denne strukturen på forretningsmeldingen, men "oversatt" den om til JSON.
 
 Standardkonvolutten inneholder informasjon for identifisering,
 adressering og ruting av forretningsmeldingen. SBD er obligatorisk i
@@ -29,11 +29,11 @@ neste versjon av PEPPOL infrastrukturen for fakturaformidling.
 
 I sikker digital post blir Standard Business Document brukt til å sende:
 
-* informasjonen som meldingsformidler trenger for å formidle
-meldingen
-* identifisering og knytningen mellom forretningsmeldingen
-* informasjon som postboksen trenger for å presentere og håndtere
-dokumentpakken
+* Informasjonen som meldingsformidler trenger for å formidle
+meldingen.
+* Identifisering og knytningen mellom forretningsmeldingen.
+* Informasjon som postboksen trenger for å presentere og håndtere
+dokumentpakken.
 
 ### Klassediagram
 
