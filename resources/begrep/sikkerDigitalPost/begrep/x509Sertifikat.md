@@ -9,7 +9,7 @@ redirect_from: /x509sertifikat
 | Term | x509Sertifikat |
 | Definisjon | Et X509 Sertifikat |
 | Datatype | string |
-| Kilde | DIFI |
+| Kilde | Digdir |
 | Kommentar | En datatype for base64 encoded X509 sertifikat. | 
 
 
