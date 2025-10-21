@@ -9,7 +9,7 @@ redirect_from: /sdp_fysiskpostadresse
 |Term|{{page.title}}|
 |Definisjon|FysiskPostadresse definert for Sikker digital post|
 |Datatype|complexType|
-|Kilde|DIFI|
+|Kilde|Digdir|
 |Kommentar|FysiskPostadresse er adressen til [mottakeren]({{site.baseurl}}/resources/begrep/felles/Mottaker) som Post skal sendes til.|
 
 #### Attributer
