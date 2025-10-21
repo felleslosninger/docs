@@ -1,5 +1,5 @@
 ---
-title: posttype
+title: Posttype
 
 sidebar:
 redirect_from: /posttype
@@ -7,11 +7,11 @@ redirect_from: /posttype
 
 | ---- | ---- |
 | Identifikator |  |
-| Term | posttype |
+| Term | Posttype |
 | Definisjon | Betegnelse for postsending. |
-| Datatype | string |
-| Kilde | DIFI |
-| Kommentar | posttype avgjør fremsendingstiden for brevet. Hver posttype har forskjellig pris. |
+| Datatype | String |
+| Kilde | Digdir |
+| Kommentar | Posttype avgjør fremsendingstiden for brevet. Hver posttype har forskjellig pris. |
 | Gyldige verdier | A ; B |
 
 ### informasjon om fremsendingstid:
