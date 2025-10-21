@@ -22,8 +22,8 @@ Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn 
 
 Utstedaren vår er laga for kunne dekke fylgjande 4 bruksmønster:
 
-1. [Datakjelde styrer flyten, push av bevis-innhald](lommebok_digdir_utsteder_kjeldstyrt)
-2. [Datakjelde styrer flyten, pull av bevis-innhald over API](lommebok_digdir_utsteder_kjeldstyrt)
+1. [Datakjelde styrer flyten, push av bevis-innhald](lommebok_digdir_utsteder_kjeldestyrt)
+2. [Datakjelde styrer flyten, pull av bevis-innhald over API](lommebok_digdir_utsteder_kjeldestyrt)
 3. Utstedar styrer flyten
 4. Lommeboka styrer flyten
 
