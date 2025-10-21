@@ -9,7 +9,7 @@ redirect_from: /sdp_dokumentpakkefingeravtrykk
 |Term|{{page.title}}|
 |Definisjon|Hash av den krypterte [dokumentpakken](https://difi.github.io/felleslosninger/dokumentpakke_index.html)|
 |Datatype|complexType|
-|Kjelde|DIFI|
+|Kjelde|Digdir|
 
 #### Eigenskapar
 
