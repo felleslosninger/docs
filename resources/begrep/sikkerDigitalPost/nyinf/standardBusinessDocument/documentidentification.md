@@ -21,7 +21,7 @@ sidebar: dpi_timo_sidebar
 | InstanceIdentifier  | 1..1         | String - uuid   | Unik identifikator for meldingen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Opprettet av Databehandler|
 | Type                | 1..1         | String   | Type forretningsmelding. Skal alltid være “local-name” melding objektet Melding. Se kodeverk under |
 | MultipleType        | 0..0         | Boolean  | Brukes ikke                                                                                                                |
-| CreationDateAndTime | 1..1         | String - dateTime | Tidspunkt for oppretting av [Standard Business Document](dpi_sbd.md)                                                       |
+| CreationDateAndTime | 1..1         | String - dateTime | Tidspunkt for oppretting av [Standard Business Document](dpi_sbd_index.html)                                                       |
 
 
 ### Kodeverk: Type
