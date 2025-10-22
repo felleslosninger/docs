@@ -41,7 +41,6 @@ for hver datatype. Følgende datatyper er definert:
 - [PrioritetType]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/prioritetType)
 - [Repetisjoner]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Repetisjoner)
 - [ReturpostHaandtering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/returPostHaandtering)
-- [SikkerDigitalPostAdresse](ot_sikkerdigitalpostadresse.html)
 - [SikkerhetsNivaa]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/sikkerhetsnivaa)
 - [Skjerming]({{site.baseurl}}/resources/begrep/felles/skjerming)
 - [SmsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel)
