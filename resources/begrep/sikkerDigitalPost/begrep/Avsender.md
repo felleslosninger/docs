@@ -1,6 +1,6 @@
 ---
 title: Avsender  
-
+permalink: dpi_avsender.html
 sidebar: begrep_sidebar
 ---  
 
