@@ -27,7 +27,7 @@ Dette kan være feil som f.eks:
   - Virkningsdato er satt for langt frem i tid.
 
 Generelt vil dette være alle feil med
-[Digital](dpi_digital.html.md) meldignen [Utskrift](dpi_utskrift.html) meldingen og
+[Digital](dpi_digital.html) meldingen [Utskrift](dpi_utskrift.html) meldingen og
 [Dokumentpakken](dpi_dokumentpakke_index.html).
 
 Feilen må utbedres og ny melding må sendes.
@@ -43,7 +43,7 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 ### Properties
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
-| [avsender](sdp_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
+| [avsender](Avsender.md) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
 |  [mottaker]({{ page.dpi_common_schema_location }}#/definitions/virksomhetmottaker) |
 | [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [maksinportentoken]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
 | [tidspunkt](dpi_maskinportentoken.html) | 1..1 | [tidspunkt]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) string - date-time iht [RFC 3339, section 5.6](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) |
