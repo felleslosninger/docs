@@ -1,6 +1,6 @@
 --- 
 title: Varsler  
-
+permalink: dpi_varsler.html
 sidebar: begrep_sidebar
 ---
 
