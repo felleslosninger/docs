@@ -33,15 +33,6 @@ folders:
       - title: Utsteder
         jurl: /docs/lommebok/lommebok_digdir_utsteder.html
 
-      - title: Utsteder, kjeldestyrt
-        jurl: /docs/lommebok/lommebok_digdir_utsteder_kjeldestyrt.html
-
-      - title: Utsteder, utstedarstyrt
-        jurl: /docs/lommebok/lommebok_digdir_utsteder_utstederstyrt.html
-
-      - title: Utsteder, lommebokstyrt
-        jurl: /docs/lommebok/lommebok_digdir_utsteder_lommebokstyrt.html
-
       - title: Demo-brukarstad
         jurl: /docs/lommebok/lommebok_demo_brukarstad.html
 
