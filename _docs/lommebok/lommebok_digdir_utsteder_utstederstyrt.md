@@ -1,5 +1,5 @@
 ---
-title: Bevisporten: utstedelse styrt av utstedar
+title: Bevisporten, utstedelse styrt av utstedar
 description: 
 
 sidebar: lommebok

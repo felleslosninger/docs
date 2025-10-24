@@ -1,5 +1,5 @@
 ---
-title: Bevisporten: utstedelse styrt av lommeboka
+title: Bevisporten, utstedelse styrt av lommeboka
 description: 
 
 sidebar: lommebok
@@ -53,7 +53,7 @@ sequenceDiagram
 
 </div>
 
-
+Sjølv om datakjelda ikkje utviklar noko eigen funksjonalitet, so kan du "guide" sluttbrukar i riktig retning ved å tilby statiske QR-koder eller lenker som startar den aktuelle flyten. 
 
 
 
