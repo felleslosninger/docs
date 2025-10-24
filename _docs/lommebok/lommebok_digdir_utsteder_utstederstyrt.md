@@ -49,10 +49,6 @@ sequenceDiagram
 
 </div>
 
-Også her er det pre-authroization code flow som blir brukt mot lommeboka.
-
-
-
 
 
 
@@ -64,6 +60,9 @@ Du som datakjelde må stille eit API tilgjengeleg som utstedaren kan hente data 
 Mange datakjelder har allereie eit slik API frå før, då treng du i praksis ikkje gjere noko anna enn å ta kontakt med oss for å drøfte korleis me kan kome igang saman. 
 
 ## Protokoll og testing
-Ved bruk av denne brukerreisa so vert det nytta [authorization code flow](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-authorization-code-flow)
-  
+
+Ved bruk av denne brukerreisa so vert det nytta [pre-authorization code flow](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-pre-authorized-code-flow).
+
+
+
 Demo-lommeboka til Digdir er integrert mot utstedaren, slik at du kan teste dette ved å trykke plus-symbolet i lommeboka, og so velge ditt bevis.
