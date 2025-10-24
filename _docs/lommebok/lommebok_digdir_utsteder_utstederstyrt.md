@@ -9,8 +9,7 @@ redirect_from: /lommebok_digdir_utsteder_utstedarstyrt
 
 Denne sidan dokumenterer bruksmønsteret for **utstedare-styrt utstedelse** ved bruk av Digdir sin bevis-utstedar, Bevisporten.
 
-Denne flyten er hensiktmessig for verksemder som ynskjer å overlate det meste av jobben med bevisutstedelse til ein leverandør.  
-Du ynskjer ikkje å gjere endringar i eigne tenester for å lage ein utstedelseskapabilitet.  Det kan også vere hensiktsmessig å starte utprøving av bevisutstedelse med denne flyten, og so migrere til ein av dei andre brukermønstra seinare. 
+Denne flyten er hensiktmessig for verksemder som ynskjer å overlate det meste av jobben med bevisutstedelse til ein leverandør. Du ynskjer ikkje å gjere endringar i eigne tenester for å lage ein utstedelseskapabilitet.  Det kan også vere hensiktsmessig å starte utprøving av bevisutstedelse med denne flyten, og so migrere til ein av dei andre brukermønstra seinare. 
 
 Den funksjonelle skilnaden på denne flyten og [lommebok-styrt utstedelse](lommebok_utsteder_lommebokstyrt) er berre kvar brukaren startar.
 
