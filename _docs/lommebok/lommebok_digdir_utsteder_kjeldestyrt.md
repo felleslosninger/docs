@@ -1,5 +1,5 @@
 ---
-title: Bevisporten: utstedelse styrt av datakjelde
+title: Bevisporten, utstedelse styrt av datakjelde
 description: 
 
 sidebar: lommebok
