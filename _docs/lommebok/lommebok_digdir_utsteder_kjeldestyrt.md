@@ -11,8 +11,8 @@ Denne sidan dokumenterer bruksmønsteret for **datakjelde-styrt utstedelse** ved
 
 Denne flyten er hensiktmessig for verksemder som ynskjer mest mogeleg kontroll sjølve over brukeropplevinga.  Nokre typiske karakteristika ved ein slik flyt kan vere: 
 
-- Sluttbrukaren må på førehand vere innlogga hjå datakjelda.
 - Datakjelda ynskjer ikkje å la sluttbrukar starte ei lommeboksprosess før dei er sikre på at brukaren faktisk oppfyller vilkår for å få eit bevis (til dømes unngå at innbyggarar som ikkje har førarrett forsøker å be om førarkort).
+- Sluttbrukaren må på førehand vere innlogga hjå datakjelda.
 - Datakjelda tek sjølv på seg mykje av ansvaret for å sikre at ein sluttbrukar sitt bevis ikkje hamnar i ein annan brukar si lommebok.
 
 
