@@ -15,7 +15,7 @@ Du ynskjer ikkje å gjere endringar i eigne tenester for å lage ein utstedelses
 Den funksjonelle skilnaden på denne flyten og [lommebok-styrt utstedelse](lommebok_utsteder_lommebokstyrt) er berre kvar brukaren startar.
 
 
-## Bruksmønster 3: Utstedar styrer flyten
+## Bruksmønster 2: Utstedar styrer flyten
 
 I dette bruksmønsteret treng du som datakjelde berre tilby eit API der utstedaren kan hente bevis-data.  All interaksjon med sluttbrukar skjer gjennom utstadaren si innlogga web-grensesnitt.
 

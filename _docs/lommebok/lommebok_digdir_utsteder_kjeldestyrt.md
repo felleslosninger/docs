@@ -16,7 +16,7 @@ Denne flyten er hensiktmessig for verksemder som ynskjer mest mogeleg kontroll s
 - Datakjelda tek sjølv på seg mykje av ansvaret for å sikre at ein sluttbrukar sitt bevis ikkje hamnar i ein annan brukar si lommebok.
 
 
-## Brukerreise
+## Brukersmønster #1: Datakjelde styrer flyten
 
 I dette bruksmønsteret so er det datakjelda som styrer flyten:
 1. Sluttbrukar er innlogga på ei nett-teneste hjå datakjelda og ynskjer få eit bevis. 

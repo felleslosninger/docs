@@ -12,7 +12,7 @@ Denne sidan dokumenterer bruksmønsteret for **lommebok-styrt utstedelse** ved b
 Denne flyten er hensiktmessig for verksemder som ynskjer å overlate det meste av jobben med bevisutstedelse til ein leverandør.  
 Du ynskjer ikkje å gjere endringar i eigne tenester for å lage ein utstedelseskapabilitet.  Det kan også vere hensiktsmessig å starte utprøving av bevisutstedelse med denne flyten, og so migrere til ein av dei andre brukermønstra seinare. 
 
-## Bruksmønster 4: Lommeboka styrer flyten
+## Bruksmønster 3: Lommeboka styrer flyten
 
 I dette bruksmønsteret so startar flyten i lommeboka:
 
