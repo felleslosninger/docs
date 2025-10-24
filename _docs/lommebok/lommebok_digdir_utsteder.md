@@ -11,12 +11,6 @@ Digdir tilbyr ein enkel utsteder i sandkassen.
 
 Den er laga både for å utstede PID-dokumentet, men har ein modulær arktiktur slik at den skal vere lett å integere mot andre datakjelder for å utstede bevis på deira vegne.  Ta kontakt med oss for å starte dialog dersom du ynskjer me skal produsere bevis for deg.
 
-## Brukargrensesnitt
-
-Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess. 
-
-Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
-
 
 ## Bruksmønster
 
@@ -28,6 +22,14 @@ Utstedaren vår er laga for kunne dekke fylgjande 3 bruksmønster:
 
 
 Me trur desse 3 variantane dekkjer dei fleste behova som offentleg sektor har for å kunne utstede bevis.  Klikk på lenkene ovanfor for å få ytterlegare dokumentasjon om kvart einskild bruksmønster.
+
+
+## Brukargrensesnitt
+
+Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess.   For bevistypar som er basert på pre-authorization-code flyt, må du istaden bruke [den tekniske test-tenesta](https://demo-ui-utsteder.test.eidas2sandkasse.net/).
+
+Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
+
 
 
 ## Funksjonalitet

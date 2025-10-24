@@ -91,7 +91,7 @@ Du må kjenne `credential_configuration_id`  på ditt bevis.  Denne identifikato
 
 Av sikkerheitsomsyn krev me dobbel-validering av brukar-identitet:  du må både inkludere brukerid i payloaden, men også i tokenet som sikrar kallet mot Bevisporten.  Ved bruk av ID-porten-token så kjem dette automatisk, ved bruk av Maskinporten so må du hugse å be om [innbygger-bundne tokens](maskinporten_func_pid_restricted_tokens).  Dette er også eit valg som me har blitt samde om som del av utviklingsløpet.
 
-## Grensesnittdefinisjon ved pull
+## Grensesnittdefinisjon ved push
 
 Push av data nyttar same endepunkt som ved pull, men du inkluderer sjølve dataene som skal inn i beviset direkte.  Dette gjer du i `claims`-claimet. 
 
