@@ -20,16 +20,15 @@ Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn 
 
 ## Bruksmønster
 
-Utstedaren vår er laga for kunne dekke fylgjande 4 bruksmønster:
+Utstedaren vår er laga for kunne dekke fylgjande 3 bruksmønster:
 
-1. [Datakjelde styrer flyten, push av bevis-innhald](lommebok_digdir_utsteder_kjeldestyrt)
-2. [Datakjelde styrer flyten, pull av bevis-innhald over API](lommebok_digdir_utsteder_kjeldestyrt)
+1. [Datakjelde styrer flyten](lommebok_digdir_utsteder_kjeldestyrt)
 3. [Utstedar styrer flyten](lommebok_digdir_utsteder_utstederstyrt)
 4. [Lommeboka styrer flyten](lommebok_digdir_utsteder_lommebokstyrt)
 
-Klikk på lenkene ovanfor for å få ytterlegare dokumentasjon om kvart einskild bruksmønster.
 
-Me trur desse 4 varianten dekkjer dei fleste behova som offentleg sektor har for å kunne utstede bevis.
+Me trur desse 3 variantane dekkjer dei fleste behova som offentleg sektor har for å kunne utstede bevis.  Klikk på lenkene ovanfor for å få ytterlegare dokumentasjon om kvart einskild bruksmønster.
+
 
 ## Funksjonalitet
 Me ynskjer at utstedaren skal følge Final-versjonen av OpenID4VCI.  Dog testar me primært mot  EU sin demolommebok, og denne ligg litt "bakpå", so det kan vere at noko av vår protokoll-støtte enno er for gamal.
@@ -38,7 +37,7 @@ Features som er støtta no:
 - ISO mdoc bevis-format
 - Pre-authorization code 
 - Authorization-code flow 
-- Bruksmønster 1,2,3,4
+- Bruksmønster 1,2,3
 
 Framtidig funksjonalitet:
 - tx_code
