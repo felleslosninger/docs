@@ -22,9 +22,9 @@ Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn 
 
 Utstedaren vår er laga for kunne dekke fylgjande 3 bruksmønster:
 
-1. [Datakjelde styrer flyten](lommebok_digdir_utsteder_kjeldestyrt)
-3. [Utstedar styrer flyten](lommebok_digdir_utsteder_utstederstyrt)
-4. [Lommeboka styrer flyten](lommebok_digdir_utsteder_lommebokstyrt)
+1. [Datakjelde styrer flyten](lommebok_digdir_utsteder_kjeldestyrt.html)
+3. [Utstedar styrer flyten](lommebok_digdir_utsteder_utstederstyrt.html)
+4. [Lommeboka styrer flyten](lommebok_digdir_utsteder_lommebokstyrt.html)
 
 
 Me trur desse 3 variantane dekkjer dei fleste behova som offentleg sektor har for å kunne utstede bevis.  Klikk på lenkene ovanfor for å få ytterlegare dokumentasjon om kvart einskild bruksmønster.
