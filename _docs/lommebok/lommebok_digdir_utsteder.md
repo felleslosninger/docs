@@ -1,5 +1,5 @@
 ---
-title: Digdir sin utsteder
+title: Digdir sin utsteder, Bevisporten
 description: 
 
 sidebar: lommebok
@@ -177,52 +177,6 @@ Også her er det pre-authroization code flow som blir brukt mot lommeboka.
 
 
 
-
-## Bruksmønster 4: Lommeboka styrer flyten
-
-I dette bruksmønsteret so startar flyten i lommeboka:
-
-1. Sluttbrukar opnar lommeboka og velgjer aktuelt bevis frå ei liste
-1. Lommeboka opnar nettlesaren og sender den til utstedaren
-1. Sluttbrukar autentiserer seg mot utstedaren
-1. Utstedaren hentar bevis-innhaldet frå eit API hjå datakjelda
-1. Utstedaren si nett-teneste sender brukaren attende til lommeboka
-1. Lommeboka hentar beviset frå utstedaren
-
-Merk at steg 2-5 kan opplevast automatisk, til dømes ved at lommeboka gjer ein PID-presentasjon eller at browser har ein aktiv SSO-sesjon hjå utstedaren.
-
-
-
-<div class="mermaid">
-sequenceDiagram
-
-  actor b as Brukar
-  participant l as Lommebok
-  participant n as Nettleser
-  participant u as Utstedar
-  participant a as API
-
-  b-->>l: åpner lommebok, velger bevis
-  l->>u: /authorize-kall med bevistype
-  u-->>n: redirect som åpner nettleser
-  note over b,u: logger inn
-
-  u->>+a: hent bevis-innhald
-  a-->>-u: data
-
-  u-->>l: redirect tilbake
-
-  l->>+u: /token (auth.code)
-  u-->>-l: access_token
-
-  l->>+u: Credential Request (access_token)
-  u-->>-l: utstedt bevis
-
-</div>
-
-
-
-
 ## Generelt
 
 I både bruksmønster 3 og 4 so kan datakjelde "guide" sluttbrukar i riktig retning ved å tilby statiske QR-koder eller lenker som startar den aktuelle flyten. 
@@ -232,3 +186,11 @@ I både bruksmønster 3 og 4 so kan datakjelde "guide" sluttbrukar i riktig retn
 Du bør finne alt som trengs for å kunne samhandle med utstederen via credential metadata-endepunktet:
 [https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer)
 
+## Kjeldekode og arkitektur
+
+Kjeldekode for utstedaren finn du på [sandkassen sitt Github-område](https://github.com/eudi-wallet-no).   Utstedaren består av fleire mikrotenester:
+
+- *eudiw-issuer-server*: backend som er hovudmotoren i utstedaren
+- *eudiw-auth-server* Ein Oauth2 autorisasjonsserver spesialtdesigna for utstedaren
+- *eudiw-issuer-ui*: brukargrensesnitt for innbyggar
+  

@@ -1,29 +1,30 @@
 ---
-title: Bevisporten: utstedelse styrt av lommeboka
+title: Bevisporten: utstedelse styrt av utstedar
 description: 
 
 sidebar: lommebok
 product: lommebok
-redirect_from: /lommebok_digdir_utsteder_lommebokstyrt
+redirect_from: /lommebok_digdir_utsteder_utstedarstyrt
 ---
 
-Denne sidan dokumenterer bruksmønsteret for **lommebok-styrt utstedelse** ved bruk av Digdir sin bevis-utstedar, Bevisporten.
+Denne sidan dokumenterer bruksmønsteret for **utstedare-styrt utstedelse** ved bruk av Digdir sin bevis-utstedar, Bevisporten.
 
 Denne flyten er hensiktmessig for verksemder som ynskjer å overlate det meste av jobben med bevisutstedelse til ein leverandør.  
 Du ynskjer ikkje å gjere endringar i eigne tenester for å lage ein utstedelseskapabilitet.  Det kan også vere hensiktsmessig å starte utprøving av bevisutstedelse med denne flyten, og so migrere til ein av dei andre brukermønstra seinare. 
 
-## Bruksmønster 4: Lommeboka styrer flyten
+Den funksjonelle skilnaden på denne flyten og [lommebok-styrt utstedelse](lommebok_utsteder_lommebokstyrt) er berre kvar brukaren startar.
 
-I dette bruksmønsteret so startar flyten i lommeboka:
 
-1. Sluttbrukar opnar lommeboka og velgjer aktuelt bevis frå ei liste 
-1. Lommeboka opnar nettlesaren og sender den til utstedaren
-1. Sluttbrukar autentiserer seg mot utstedaren
+## Bruksmønster 3: Utstedar styrer flyten
+
+I dette bruksmønsteret treng du som datakjelde berre tilby eit API der utstedaren kan hente bevis-data.  All interaksjon med sluttbrukar skjer gjennom utstadaren si innlogga web-grensesnitt.
+
+1. Sluttbrukar loggar inn til utstedaren
+1. Sluttbruker velger eit bevis hen vil ha,
 1. Utstedaren hentar bevis-innhaldet frå eit API hjå datakjelda
-1. Utstedaren si nett-teneste sender brukaren attende til lommeboka
-1. Lommeboka hentar beviset frå utstedaren
+1. Utstedaren rendrer ein brukerspesifikk QR-kode
+1. Brukaren scanner QR-koden med lommeboka si og får beviset utlevert
 
-Merk at steg 2-5 i nokre tilfelle kan opplevast automatisk dersom brukaren har ein aktiv SSO-sesjon hjå utstedaren. 
 
 
 <div class="mermaid">
@@ -31,27 +32,26 @@ sequenceDiagram
 
   actor b as Brukar
   participant l as Lommebok
-  participant n as Nettleser
   participant u as Utstedar
   participant a as API
 
-  b-->>l: åpner lommebok, velger bevis
-  l->>u: /authorize-kall med bevistype
-  u-->>n: redirect som åpner nettleser
-  note over b,u: logger inn
+  note over b,u: loggar inn i Utstedar og startar bevis-utstedelse
 
-  u->>+a: hent bevis-innhald
-  a-->>-u: data
+  u->>a: hent bevis-innhald
+  u-->>u: rendre QR 
 
-  u-->>l: redirect tilbake
-
-  l->>+u: /token (auth.code)
+  note over b,u: scann QR med lommebok
+  l->>+u: /token (pre-auth.code)
   u-->>-l: access_token
 
   l->>+u: Credential Request (access_token)
   u-->>-l: utstedt bevis
 
 </div>
+
+Også her er det pre-authroization code flow som blir brukt mot lommeboka.
+
+
 
 
 

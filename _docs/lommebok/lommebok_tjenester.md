@@ -14,9 +14,9 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 
 ## Utstedere
 
-* [Digdir utsteder](lommebok_digdir_utsteder).  Dette er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autorative kjelder, og signere med ulike typar sertifikat.
+* [Bevisporten til Digdir](lommebok_digdir_utsteder).  Bevisporten er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autorative kjelder, og signere med ulike typar sertifikat.
 *  [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/).  EU-kommisjonen tilbyr ein relativt teknisk orientert utstedar av PID og mobilt førarkort. Den er ikkje integrert med sandkassen si tillitsliste, men er nyttig å bruka i eigen utvikling.
-* [PoC på utsteder](lommebok_demo_utsteder).  Dette var ein tidleg poc-teneste som Digdir laga for NOBID-storskala-piloten i EU i 2024 og 2025.  Den kan utstede PID-dokument, eit fullmakts-bevis og eit dagleg-leiar-bevis.  Den vert ikkje vidareutvikla.
+* [Utstedelse av virksomhetsidentifikator](https://brreg.eudiw.no/) - Brønnøyundregistra sin teneste for utstedelse av virksomhetsidentifikatorar for organisasjonar registrert foretaksregisteret.
 
 ## Brukarstader
 
