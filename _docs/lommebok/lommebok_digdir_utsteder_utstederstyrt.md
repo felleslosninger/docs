@@ -61,10 +61,7 @@ Også her er det pre-authroization code flow som blir brukt mot lommeboka.
 
 Du som datakjelde må stille eit API tilgjengeleg som utstedaren kan hente data om brukaren frå.   Digdir må lage ein plugin i utstedaren som integrerer mot dette APIet.
 
-Mange datakjelder har allereie eit slik API frå før, då treng du i praksis ikkje gjere noko anna enn å signere Samarbeidsavtalen for å kunne kome i gang med bevisutstedelse.
-
-Ta kontakt med oss for å drøfte mogelegheiter for å kome igong.
-
+Mange datakjelder har allereie eit slik API frå før, då treng du i praksis ikkje gjere noko anna enn å ta kontakt med oss for å drøfte korleis me kan kome igang saman. 
 
 ## Protokoll og testing
 Ved bruk av denne brukerreisa so vert det nytta [authorization code flow](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-authorization-code-flow)
