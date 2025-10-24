@@ -17,16 +17,16 @@ sidebar: dpi_timo_sidebar
 [Sender](sdp_sender.html)
 
   - [Behandlingsansvarlig](dpi_aktorer.html) eller en
-    [databehandler](hdpi_aktorer.html) på veien av
-    [behandlingsansvarlig](dpi_aktorer.html)
+    [databehandler](dpi_aktorer.html) på veien av
+    [behandlingsansvarlig](dpi_aktorer.html).
   - Den som vil motta alle
-    [kvitteringer](dpi_kvittering.html) tilbake fra
-    [Receiver](dpi_receiver.html)
+    [kvitteringer](dpi_forretiningsmelding_index.html) tilbake fra
+    [Receiver](dpi_receiver.html).
 
-\*For [digital post kvitteringer](dpi_kvittering.html) er
+\*For [digital post kvitteringer](dpi_forretiningsmelding_index.html) er
 [Sender](dpi_sender.html)
 
-  - [Postkasseleverandør](dpi_aktorer.html)
+  - [Postkasseleverandør](dpi_aktorer.html).
 
 ### Propperteis
 

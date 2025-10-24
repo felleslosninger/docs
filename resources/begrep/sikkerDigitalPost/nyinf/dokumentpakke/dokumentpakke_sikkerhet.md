@@ -14,7 +14,7 @@ sidebar: dpi_timo_sidebar
     fra ETSI. Dette formatet ivaretar integriteten over tid.
   - Konfidensialitet fra avsender til mottaker ivaretas ved bruk av
     [Cryptographic Message Syntax
-    (CMS)](http://tools.ietf.org/html/rfc5652) fra IETF
+    (CMS)](http://tools.ietf.org/html/rfc5652) fra IETF.
   - Integritetsbeskyttet [Standard Business Document
     (SBD)](http://www.gs1.org/ecom/standards/guidelines#s2) fra
     UN/CEFACT knytter sammen den krypterte pakken med adressering,
@@ -64,8 +64,8 @@ videre begrenset i henhold til profilen definert i [Baseline Profile
 
 | Krav                   | Felt                                                                                                                                | Kommentar                                                                                                                                                                                                 |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [krav 6.1](etsi2_9)    | “ASiC conformance”                                                                                                                  | Skal være “ASiC-E XAdES”                                                                                                                                                                                  |
-| [krav 8.1](etsi2_11)   | “ASiC-E Media type identification”                                                                                                  | Skal være “ASiC file extension is ”.asice“”                                                                                                                                                               |
+| [krav 6.1](etsi2_9)    | “ASiC conformance”                                                                                                                  | Skal være “ASiC-E XAdES”.                                                                                                                                                                                 |
+| [krav 8.1](etsi2_11)   | “ASiC-E Media type identification”                                                                                                  | Skal være “ASiC file extension is ”.asice“”.                                                                                                                                                               |
 | [krav 8.2](etsi2_11)   | “ASiC-E Signed data object”                                                                                                         | Alle filer utenfor META-INF katalogen skal være signert.                                                                                                                                                  |
 | [krav 8.3.1](etsi2_12) | “ASiC-E XAdES signature”                                                                                                            | Det skal kun være en signatur i META-INF katalogen, med navn signatures.xml. Denne signaturen skal dekke alle andre filer i beholderen, og avsenderens virksomhetssertifikat skal benyttes for signering. |
 | [krav 8.3.2](etsi2_12) | “Requirements for the contents of Container” refererer til “6.2.2 punkt 4b) "META-INF/manifest.xml" if present \[…\] i ”ASiC":etsi1 | Denne filen skal ikke være tilstede.                                                                                                                                                                      |
@@ -140,7 +140,7 @@ oppslagstjenesten. Krypteringen skal gjøres i henhold til [CMS
 (Cryptographic Message Syntax)](ietf5) med begrensninger angitt
 nedenfor.
 
-CMS er BER og DER kodet ASN.1 og starter med en sekvens av ContentInfo
+CMS er BER og DER kodet ASN.1 og starter med en sekvens av ContentInfo.
 
     ContentInfo ::= SEQUENCE {
       contentType ContentType,
@@ -163,12 +163,12 @@ Her skal følgende begrensninger gjelde:
 
 Her skal følgende begrensninger gjelde:
 
-  - version = 0
-  - originatorInfo skal ikke være med
+  - version = 0.
+  - originatorInfo skal ikke være med.
   - recipientInfos skal være en mengde av nøyaktig en
-    KeyTransRecipientInfo som beskrevet nedenfor
-  - encryptedContentInfo er EncryptedContentInfo som beskrevet nedenfor
-  - unprotectedAttrs skal ikke være med
+    KeyTransRecipientInfo som beskrevet nedenfor.
+  - encryptedContentInfo er EncryptedContentInfo som beskrevet nedenfor.
+  - unprotectedAttrs skal ikke være med.
 
 <!-- end list -->
 
@@ -181,11 +181,11 @@ Her skal følgende begrensninger gjelde:
 
 Her skal følgende begrensninger gjelde:
 
-  - version = 0
-  - rid = issuerAndSerialNumber
+  - version = 0.
+  - rid = issuerAndSerialNumber.
   - keyEncryptionAlgorithm er en AlgorithmIdentifier som beskrevet
-    nedenfor
-  - encryptedKey den krypterte nøkkelen
+    nedenfor.
+  - encryptedKey den krypterte nøkkelen.
 
 <!-- end list -->
 
@@ -196,20 +196,20 @@ Her skal følgende begrensninger gjelde:
 Her skal følgende begrensninger gjelde:
 
   - algorithm = 1.2.840.113549.1.1.7 (id-RSAES-OAEP) som spesifisert i
-    [RSAES-OAEP Key Transport Algorithm](ietf6)
-  - parameteres = RSAES-OAEP-params som definert nedenfor
+    [RSAES-OAEP Key Transport Algorithm](ietf6).
+  - parameteres = RSAES-OAEP-params som definert nedenfor.
 
 <!-- end list -->
 
     RSAES-OAEP-params  ::=  SEQUENCE  {
-      hashFunc    [0] AlgorithmIdentifier DEFAULT sha1Identifier,
-      maskGenFunc [1] AlgorithmIdentifier DEFAULT mgf1SHA1Identifier,
+      hashFunc    [0] AlgorithmIdentifier DEFAULT sha256Identifier,
+      maskGenFunc [1] AlgorithmIdentifier DEFAULT mgf1SHA256Identifier,
       pSourceFunc [2] AlgorithmIdentifier DEFAULT pSpecifiedEmptyIdentifier  }
 
-Her skal følgende begrensninger gjelde
+Her skal følgende begrensninger gjelde:
 
-  - hashFunc = sha1Identifier 
-  - maskGenFunc = mgf1SHA1Identifier
+  - hashFunc = sha256Identifier 
+  - maskGenFunc = mgf1SHA256Identifier
   - pSourceFunc = pSpecifiedEmptyIdentifier
 
 <!-- end list -->
@@ -224,7 +224,7 @@ Her skal følgende begrensninger gjelde:
 
   - contentType = 1.2.840.113549.1.7.1 (data)
   - contentEncryptionAlgorithm er en AlgorithmIdentifier som beskrevet
-    nedenfor
+    nedenfor.
   - encryptedContent = AES-CBC kryptert innhold med PKCS \#5 padding
 
 <!-- end list -->
@@ -241,7 +241,7 @@ Standard (AES) Encryption Algorithm in Cryptographic Message Syntax
   - parameters = 16 byte IV
 
 Ved bruk av aes256-CBC skal padding gjøres i henhold til [kapittel 6.3 i
-CMS spesifikasjonen](ietf5_6_3)
+CMS spesifikasjonen](ietf5_6_3).
 
 Integriteten til den krypterte dokumentpakken ivaretas av
 [Dokumentpakkefingeravtrykk](../../begrep/Dokumentpakkefingeravtrykk.md)
@@ -267,7 +267,7 @@ ContentInfo vil være:
   - content AuthEnvelopedData
 
 AuthEnvelopedData er definert i [Cryptographic Message Syntax (CMS)
-Authenticated-Enveloped-Data Content Type](ietf9)
+Authenticated-Enveloped-Data Content Type](ietf9).
 
     AuthEnvelopedData ::= SEQUENCE {
       version CMSVersion,
@@ -281,15 +281,15 @@ Authenticated-Enveloped-Data Content Type](ietf9)
 Her skal følgende begrensninger gjelde:
 
   - version = 0
-  - originatorInfo skal ikke være med
+  - originatorInfo skal ikke være med.
   - recipientInfos skal være en mengde av nøyaktig en
-    KeyTransRecipientInfo som beskrevet nedenfor
+    KeyTransRecipientInfo som beskrevet nedenfor.
   - authEncryptedContentInfo er EncryptedContentInfo som beskrevet
-    nedenfor
-  - authAttrs skal ikke være med
+    nedenfor.
+  - authAttrs skal ikke være med.
   - mac skal være 12 byte “authentication tag” som output av AES-GCM
     definert i NIST Special Publication 800-38D.
-  - unauthAttrs skal ikke være med
+  - unauthAttrs skal ikke være med.
 
 For AuthEnvelopedData (AES-GCM) skal verdiene av EncryptedContentInfo
 være i henhold til [Using AES-CCM and AES-GCM Authenticated

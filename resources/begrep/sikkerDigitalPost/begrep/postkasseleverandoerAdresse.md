@@ -1,15 +1,15 @@
 ---
-title: postkasseleverandoerAdresse
+title: PostkasseleverandoerAdresse
 
 sidebar: begrep_sidebar
 redirect_from: /postkasseleverandoeradresse
 ---
 
 | ---- | ---- |
-| Term | postkasseleverandoerAdresse |
+| Term | PostkasseleverandoerAdresse |
 | Definisjon | Adresse til en leverandør av Postkassetjeneste |
-| Datatype | string |
-| Kilde | DIFI |
+| Datatype | String |
+| Kilde | Digdir |
 | Kommentar | Dette er en unik adresse for en leverandør, enten en Postkasseleverandør eller Utskrifts- og forsendelsestjenesteleverandør. Adressen brukt for adressering er Organisasjonsnummeret for leverandører. | 
 
 ### Xml eksempel

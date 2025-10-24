@@ -9,7 +9,7 @@ redirect_from: /dageretter
 | Term | dagerEtter |
 | Definisjon | Et nummer som identifiserer en bestemt dag etter en allerede angitt dag. |
 | Datatype | nonNegativeInteger |
-| Kilde | DIFI |
+| Kilde | Digdir |
 | Kommentar | Et tall som angir antall dager etter en bestemt virkningsdato eller opprettingsdato. | 
 
 

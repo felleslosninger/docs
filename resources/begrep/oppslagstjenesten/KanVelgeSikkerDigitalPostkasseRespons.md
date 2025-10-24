@@ -8,7 +8,7 @@ sidebar: begrep_sidebar
 | Term          | {{page.title}} |
 | Definisjon    | Respons sendt tilbake til Postkasseleverandør når kontaktregisteretet er oppdatert. |
 | Datatype      | {{ page.datatype }} |
-| Kilde         | DIFI |
+| Kilde         | Digdir |
 | Kommentar     | Webservice response som Postkasseleverandør mottar fra Kontaktregisteret som svar på [KanVelgeSikkerDigitalPostkasseForespoersel]({{site.baseurl}}/resources/begrep/oppslagstjenesten/KanVelgeSikkerDigitalPostkasseForespoersel) |
 
 #### Attributer
@@ -20,7 +20,7 @@ sidebar: begrep_sidebar
 
 #### Kodeverk for status
 
-feiltype kan ha følgende verdi:
+Feiltype kan ha følgende verdi:
 
 | Kodeverdi | Beskrivelse                                                                                         |
 | --------- | --------------------------------------------------------------------------------------------------- |
@@ -29,11 +29,11 @@ feiltype kan ha følgende verdi:
 
 #### Kodeverk for beskrivelse
 
-feiltype kan ha følgende verdi:
+Feiltype kan ha følgende verdi:
 
 | Kodeverdi             | Beskrivelse                                                                         |
 | --------------------- | ----------------------------------------------------------------------------------- |
-| RESERVERT             | brukeren er reservert                                                               |
+| RESERVERT             | Brukeren er reservert                                                               |
 | ALLEREDE\_AKTIV       | Brukeren er allerede aktiv                                                          |
 | BRUKER\_IKKE\_FUNNET  | Innbyggeren ble ikke funnet                                                         |
 | UGYLDIG\_SERTIFIKAT   | Sertifikatet i forespørselen er ikke på godkjent format                             |

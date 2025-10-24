@@ -1,6 +1,6 @@
 --- 
 title: Varsler  
-
+permalink: dpi_varsler.html
 sidebar: begrep_sidebar
 ---
 
@@ -8,7 +8,7 @@ sidebar: begrep_sidebar
 | Term | {{page.title}} |
 | Definisjon | Informasjon om hvordan postkasseleverandør skal varsle Mottaker om den nye posten. Overstyrer Mottaker sine egne varslingspreferanser |
 | Datatype | complexType |
-| Kjelde | DIFI |
+| Kjelde | Digdir |
 | Kommentar | Varslingsinformasjonen angitt her vil overstyre Mottaker sine egne varslingspreferanser hvis Mottaker har konto hos e-Boks. For Mottakere med Digipost-konto vil varslingsinformasjonen komme i tillegg til Mottaker sine varslingvalg. Avsender kan med instillingene her styre både [EpostVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/EpostVarsel) og smsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel) helt uavhengig av hverandre. Det vil si at Avsender kan velge å varsle i begge eller en av kanalene.     Avsender kan velge selv hvilken kanal som velges, dette kan de gjøre med bakgrunn i sin egen kanalstrategi, erfaringer i forhold til åpningsgrad og kostnader. Bruk av [SmsVarsel]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/SmsVarsel) vil medføre egne kostnader for Avsender |
 
 #### Eigenskapar

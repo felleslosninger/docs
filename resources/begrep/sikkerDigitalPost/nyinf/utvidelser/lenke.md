@@ -8,7 +8,7 @@ sidebar: dpi_timo_sidebar
 
 
 |---|---|
-| Definisjon | Lenke utenfor brev |
+| Definisjon | Lenke utenfor brev. |
 | Mime-Type | application/vnd.difi.dpi.lenke+xml |
 | Datatype   | complexType |
 | Kommentar  | Definerer en lenke som presenteres for innbygger i postkassen. Postkasseleverandøren kan vise en standard beskrivelse og tekst på knappen dersom de ikke er definert. |

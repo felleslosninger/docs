@@ -13,38 +13,38 @@ relevante eksempler.
 ### Eksempler på java integrasjonsprosjekt
 
   - [En testklient utviklet av Difi for funksjonell
-    testing](https://github.com/difi/sdp-klient-eksempel-java-webclient)
+    testing](https://github.com/difi/sdp-klient-eksempel-java-webclient).
       - Testklienten viser hvordan integrasjon mot oppslagstjenesten og
         meldingsformidler kan gjøres.
   - [En testklient utviklet av Posten for å vise hvordan offentlige
     virksomheter kan integrere seg mot
-    SDP](https://github.com/difi/sdp-klient-eksempel-java-jetty)
+    SDP](https://github.com/difi/sdp-klient-eksempel-java-jetty).
       - Prosjektet viser hvordan avsendere kan håndtere tråder og
         vdelikehold av status for sendte brev.
   - [Referanseimplementasjon for bruk av
-    oppslagstjenesten](oppslagstjenesten_rest.html)
+    oppslagstjenesten](oppslagstjenesten_rest.html).
       - Eksempel kode for hvordan en avsender kan integrere seg mot
         oppslagstjenesten
 
 ### Eksempler på .Net integrasjonsprosjekt
 
   - [Referanseimplementasjon for bruk av
-    oppslagstjenesten](oppslagstjenesten_rest.html)
+    oppslagstjenesten](oppslagstjenesten_rest.html).
       - Eksempel kode for hvordan en avsender kan integrere seg mot
-        oppslagstjenesten
+        oppslagstjenesten.
 
 ### Eksempler på forretningsmeldinger
 
-  - [Ferdig pakket dokumentpakke]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/post.asice.zip)
-  - [Standard buisness document header]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sbdh.xml)
-  - [Feil-melding sendt som forretningsmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpFeil.xml)
-  - [Post åpnet kvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpKvittering-aapnetAvMottaker.xml)
-  - [Leveringskvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpKvittering-levertTilPostkasse.xml)
-  - [Varsel feilet melding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpKvittering-mottakerVarselFeilet.xml)
-  - [Melding om tilbaketrekking av post](sdpKvittering-tilbaketrekking.xml)
-  - [Mainfest i Dokumentpakke]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpManifest.xml)
-  - [Melding for digital postkasse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpMelding-digital.xml)
-  - [Melding for print/fysisk brev]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpMelding-print.xml)
+  - [Ferdig pakket dokumentpakke]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/post.asice.zip).
+  - [Standard buisness document header]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sbdh.xml).
+  - [Feil-melding sendt som forretningsmelding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpFeil.xml).
+  - [Post åpnet kvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpKvittering-aapnetAvMottaker.xml).
+  - [Leveringskvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpKvittering-levertTilPostkasse.xml).
+  - [Varsel feilet melding]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpKvittering-mottakerVarselFeilet.xml).
+  - [Melding om tilbaketrekking av post](sdpKvittering-tilbaketrekking.xml).
+  - [Mainfest i Dokumentpakke]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpManifest.xml).
+  - [Melding for digital postkasse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpMelding-digital.xml).
+  - [Melding for print/fysisk brev]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/eksempler/sdpMelding-print.xml).
 
 ### Eksempler på transportmeldinger (transport + forretningsmelding)
 

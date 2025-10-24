@@ -10,7 +10,7 @@ sidebar: dpi_timo_sidebar
 | Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | En [KvitteringsMelding](dpi_kvitteringer.html) til Avsender om at Mottaker har åpnet forsendelsen i sin postkasse. |
-| Kilde         | DIFI |
+| Kilde         | Digdir |
 | Kommentar     | Åpningskvitteringer blir bare sendt dersom dette er bestilt av [Avsender](sdp_aktorer.html) i [digital](dpi_digital.html) meldingen ved å spesifisere dette med propertien aapningskvittering. [Mottaker](sdp_aktorer.html) må aksepteres at det sendes en til [Avsender](sdp_aktorer.html) for å få lest den digital posten. Mangel på ÅpningsKvittering betyr at [Mottaker](sdp_aktorer.html) ikke har lest dokumentet. |
 
 Bruk av ÅpningsKvittering er priset for [Avsender](sdp_aktorer.html).

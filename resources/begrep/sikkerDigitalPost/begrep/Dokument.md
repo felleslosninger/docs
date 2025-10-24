@@ -9,7 +9,7 @@ redirect_from: /sdp_dokument
 |Term|{{page.title}}|
 |Definisjon|Informasjon om et enkelt dokument.|
 |Datatype|complexType|
-|Kilde|DIFI|
+|Kilde|Digdir|
 |Kommentar|Dette gir en henvisning til dokumentet i [Dokumentpakken]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentpakke/) sammen med en tittel. Denne tittelen vil vises til Innbygger når Dokumentpakken er dekryptert og Innbygger er autentisert på tilstrekkelig sikkerhetsnivå.|
 
 #### Egenskaper

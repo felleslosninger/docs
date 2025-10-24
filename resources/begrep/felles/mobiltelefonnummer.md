@@ -6,10 +6,10 @@ redirect_from: /mobiltelefonnummer
 ---
 
 | ---- | ---- |
-| Term | mobiltelefonnummer |
+| Term | Mobiltelefonnummer |
 | Definisjon | Et internasjonalt mobiltelefonnummer |
-| Datatype | string |
-| Kilde | DIFI |
+| Datatype | String |
+| Kilde | Digdir |
 | Kommentar | Et mobiltelefonnummer lagret i Digital kontaktregister har følgende format: | 
 
 * En tekststreng på formatet:
@@ -24,10 +24,10 @@ redirect_from: /mobiltelefonnummer
 
 I tillegg er det en ekstra validering av norske mobilnummer. Norske mobilnummer er definert som:
 
-* nummeret starter på 0047,+47 eller er på 8 tegn
+* Nummeret starter på 0047,+47 eller er på 8 tegn
 
 For disse mobiltelefonnummer er det følgende validering:
-* første siffer (etter evt. landkode) er 9 eller 4
+* Første siffer (etter evt. landkode) er 9 eller 4
 
 Dette er i henhold til Nummerplan E.164
 

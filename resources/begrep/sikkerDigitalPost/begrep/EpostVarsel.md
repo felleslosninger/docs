@@ -9,7 +9,7 @@ redirect_from: /sdp_epostvarsel
 | Term | {{page.title}} |
 | Definisjon | Informasjon om hvordan man skal varsle sluttbruker på epost |
 | Datatype | complexType |
-| Kjelde | DIFI |
+| Kjelde | Digdir |
 | Kommentar | Beskriver når det skal sendes epostvarsel fra postkassen etter at posten er tilgjengeliggjort |
 
 #### Eigenskapar

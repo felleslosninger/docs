@@ -11,14 +11,14 @@ redirect_from: /sdp_sertifikathandtering
 Offentlig virksomhet må forholde seg til og validere sertifikater i
 følgende tilfeller:
 
-  - Validering av innbyggers sertifikat levert fra oppslagstjenesten
+  - Validering av innbyggers sertifikat levert fra oppslagstjenesten.
   - Sertifikater og signatur på forretningskvitteringene fra
-    postkasseleverandør
+    postkasseleverandør.
   - Sertifikater og signatur på transportkvitteringene fra
-    meldingsformidler
+    meldingsformidler.
   - Sertifikater brukt for TLS kommunikasjonene mot oppslagstjenesten og
-    meldingsformidler
-  - Eget sertifikat og signatur på posten de sender
+    meldingsformidler.
+  - Eget sertifikat og signatur på posten de sender.
 
 Under er en gjennomgang av de enkelte tilfellene og hvordan offentlig
 virksomhet skal validere sertifikater og signaturer.
@@ -67,13 +67,13 @@ Se under for generell informasjon om kvalifisertesertifikater.
 
 Kvalifisertesertifikater som er utstedt iht. [Kravspesifikasjon for PKI i offentlig sektor](http://www.regjeringen.no/nb/dep/fad/dok/lover-og-regler/retningslinjer/2010/kravspesifikasjon-for-pki-i-offentlig-se.html?id=611085) leveres fra to leverandører ([Buypass](http://www.buypass.no/produkter-og-tjenester/virksomhetssertifikat)
 ,
-[Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html)
+[Commfides](https://www.commfides.com/e-ID/Bestill-Commfides-Virksomhetssertifikat.html).
 )  
 Her er en oversikt over de CA sertifikater som offentlig virksomhet må forholde seg til for å kunne validere signaturene i sikker digital post.
 
 #### For testing
 
-Følgende rot sertifikater må offentlige virksomhet stole på.  
+Følgende rot sertifikater må offentlige virksomhet stole på:  
 (Disse sertifikatene må legges inn i truststore)
 
   - Fra Buypass:
@@ -82,7 +82,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
     KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/155/22538)
 
 Følgende mellomliggende CA sertifikater må offentlig virksomhet ha for å
-kunne verifisere sertifikatbanen til rot sertifikatet.  
+kunne verifisere sertifikatbanen til rot sertifikatet:  
 (Disse må ligge i CertStore)
 
   - Fra Buypass:
@@ -93,7 +93,7 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
 
 #### For produksjon
 
-Følgende rot sertifikater må offentlige virksomhet stole på.  
+Følgende rot sertifikater må offentlige virksomhet stole på:  
 (Disse sertifikatene må legges inn i truststore)
 
   - Fra Buypass: [Rot - Buypass Class 3 Rot
@@ -102,7 +102,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
     class 3.crt](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/142/17413)
 
 Følgende mellomliggende CA sertifikater må offentlig virksomhet ha for å
-kunne verifisere sertifikatbanen til rot sertifikatet.  
+kunne verifisere sertifikatbanen til rot sertifikatet:  
 (Disse må ligge i CertStore)
 
   - Fra Buypass: [Utstedende - Buypass Class 3
@@ -111,4 +111,4 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
     class 3.crt](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/142/17412)
 
 CA sertfikatene ligger også tilgjengelige her:
-[sertifikater](https://github.com/difi/felleslosninger/tree/gh-pages/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater)
+[Sertifikater](https://github.com/difi/felleslosninger/tree/gh-pages/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater)

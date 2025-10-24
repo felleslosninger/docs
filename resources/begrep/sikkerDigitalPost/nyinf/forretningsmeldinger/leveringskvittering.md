@@ -9,7 +9,7 @@ sidebar: dpi_timo_sidebar
 |---|---|
 | Term          | {{page.title}} |
 | Definisjon    | Kvittering på at postkassen eller utskriftstjenesten har tatt ansvar for å tilgjengeliggjøre melding til mottaker. Sendes til Avsender via meldingsformideler. |
-| Kilde         | DIFI |
+| Kilde         | Digdir |
 | Kommentar     | Denne kvitteringen kan [Behandlingsansvarlig](dpi_aktorer.html) oppbevare som en garanti på at posten vil bli levert til [Mottaker](2sdp_mottaker.html). |
 
 #### For Digital meldinger

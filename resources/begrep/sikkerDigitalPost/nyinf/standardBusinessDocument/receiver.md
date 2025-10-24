@@ -14,15 +14,15 @@ sidebar: dpi_timo_sidebar
 | Kommentar     | Regler for hvem som opptrer som [Receiver](dpi_receiver.html) er beskrevet under. |
 
 
-\*For [digtal](dpi_digital.html) meldinger er
-[Receiver](dpi_receiver.html)
+\*For [digitale](dpi_digital.html) meldinger er
+[receiver](dpi_receiver.html)
 
   - [Postkasseleverandør](dpi_aktorer.html)
 
-\*For [kvitteringer](dpi_kvitteringer.md) er
-[Receiver](dpi_receiver.html)
+\*For [kvitteringer](dpi_forretiningsmelding_index.html) er
+[receiver](dpi_receiver.html)
 
-  - Den [Aktør](dpi_aktorer.html) som sto som [Sender](dpi_sender.html) for [digital](dpi_digital.html) meldingen.
+  - Den [aktør](dpi_aktorer.html) som sto som [sender](dpi_sender.html) for den [digitale](dpi_digital.html) meldingen.
 
 ### Properties
 
