@@ -43,7 +43,7 @@ har interne feil som stopper behandlingen av den digitale postmeldingen.
 ### Properties
 | Identifikator | Kardinalitet | Datatype |
 | --- | --- | --- |
-| [avsender](Avsender.md) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
+| [avsender](dpi_avsender.html) | 1..1 | [avsender]({{ page.dpi_common_schema_location }}#/definitions/avsender) |
 |  [mottaker]({{ page.dpi_common_schema_location }}#/definitions/virksomhetmottaker) |
 | [maksinportentoken](dpi_maskinportentoken.html) | 1..1 | [maksinportentoken]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) |
 | [tidspunkt](dpi_maskinportentoken.html) | 1..1 | [tidspunkt]({{ page.dpi_common_schema_location }}#/definitions/maskinportentoken) string - date-time iht [RFC 3339, section 5.6](https://datatracker.ietf.org/doc/html/rfc3339#section-5.6) |
