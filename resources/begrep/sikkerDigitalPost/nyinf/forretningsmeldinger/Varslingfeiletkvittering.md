@@ -12,7 +12,7 @@ sidebar: dpi_timo_sidebar
 | Kilde         | Digdir |
 | Kommentar     | Dersom Postkasse opplever problemer med å utføre varslingen som spesifisert i meldingen, skal Postkasse informere Avsender om dette ved å sende VarslingfeiletKvittering. Det skal sendes en kvittering for hver forekomst av en feilsituasjon i en spesifisert kanal. Meldinger som angir bruk av flere varslingskanaler kan dermed medføre flere VarslingfeiletKvitteringer. Varslingfeilet kvittering skal sendes seinest dagen etter at varslingen var bestilt. 
 
-Se [Varsel](sdp_varsler.html) for mer informasjon om bruken av varsel.
+Se [Varsel](dpi_varsler.html) for mer informasjon om bruken av varsel.
 
 Årsaken til at postkasseleverandør ikke klarer å sende en slik melding
 kan være en av følgende:
