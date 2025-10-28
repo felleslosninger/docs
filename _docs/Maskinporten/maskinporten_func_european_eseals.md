@@ -27,7 +27,9 @@ Please also note the following:
 - Support for authentication of European eSeals is disabled by default, and must be activated by the owner of the API on a per-API (oauth2 scope) basis.
 - Please consult the documentation from the API owner to find scope values and terms for using this funtionality.
 - You do NOT need to log in to "Samarbeidsportalen" and register a client.
-- You must use a production certificate even for testing (as there are no EU-wide test trust-list) 
+- You must use a production certificate even for testing (as there are no EU-wide test trust-list)
+
+If you have any questions, please reach out to digitoll@toll.no
 
 ## Informasjon til norske API-tilbydere
 
@@ -44,6 +46,8 @@ Det er heller ingen sentral tilgangstyring i Maskinporten for dei utanlandske ve
 Maskinporten gjer ikkje noko omsetjing eller tilpassing av organisasjonsidentifikatoren, og vidareformidler berre denne "rått" slik den er registrert i sertifikatet.  Me inkluderer også eventuelle namn på verksemda og evt. undereining som me finn i `Subject`-feltet.
 
 Europeiske verksemdsertifikat kan - som i Norge - utstedast på ulike sikkerheitsnivå.  P.t. er me usikre på kor lett det er å skilje desse i valideringa.
+
+Hvis du har spørsmål kan du ta kontakt på digitoll@toll.no
 
 ## Request
 
