@@ -293,7 +293,7 @@ Her skal følgende begrensninger gjelde:
 
 For AuthEnvelopedData (AES-GCM) skal verdiene av EncryptedContentInfo
 være i henhold til [Using AES-CCM and AES-GCM Authenticated
-Encryption](ietf8).
+Encryption][ietf8]
 
   - algorithm = 2.16.840.1.101.3.4.1.46 (aes256-GCM) 
   - parameters = GCMParameters som beskrevet nedenfor
@@ -325,5 +325,5 @@ Her skal følgende begrensninger gjelde:
 \[ietf5\_6\_3\]http://tools.ietf.org/html/rfc5652\#section-6.3  
 \[ietf6\]http://tools.ietf.org/html/rfc3560  
 \[ietf7\]http://tools.ietf.org/html/rfc3565  
-[ietf8]: http://tools.ietf.org/html/rfc5084  
+[ietf8]http://tools.ietf.org/html/rfc5084  
 \[ietf9\]http://tools.ietf.org/html/rfc5083
