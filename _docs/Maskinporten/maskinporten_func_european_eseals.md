@@ -21,6 +21,7 @@ The client asks Maskinporten for an access token, and that token is then used in
 
 The client must hold a valid certicate for electronic seal issued by an [approved Trust Service Provider listed on the EU Trust List](https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/search/type?step=3&searchCriteria=eyJzZXJ2aWNlU2NvcGUiOiJBTEwiLCJjb3VudHJ5Q29kZXMiOlsiQVQiLCJCRSIsIkJHIiwiSFIiLCJDWSIsIkNaIiwiREsiLCJFRSIsIkZJIiwiRlIiLCJERSIsIkVMIiwiSFUiLCJJUyIsIklFIiwiSVQiLCJMViIsIkxJIiwiTFQiLCJMVSIsIk1UIiwiTkwiLCJOTyIsIlBMIiwiUFQiLCJSTyIsIlNLIiwiU0kiLCJFUyIsIlNFIiwiVUsiXSwic2VydmljZUxlZ2FsVHlwZXMiOlsiUV9DRVJUX0VTRUFMIiwiQ0VSVF9FU0VBTCJdfQ%3D%3D). Some APIs may requied this certificate to be **qualified** (highest security requirements).
 
+**Note that a listed Provider normally offers multiple certificate services, normally coming from different certificate chains / roots, and only some of these services/roots are listed on the EU Trust List.**
 
 Please also note the following:
 
