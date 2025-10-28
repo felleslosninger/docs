@@ -325,5 +325,5 @@ Her skal følgende begrensninger gjelde:
 \[ietf5\_6\_3\]http://tools.ietf.org/html/rfc5652\#section-6.3  
 \[ietf6\]http://tools.ietf.org/html/rfc3560  
 \[ietf7\]http://tools.ietf.org/html/rfc3565  
-\[ietf8\]http://tools.ietf.org/html/rfc5084  
+[ietf8]: http://tools.ietf.org/html/rfc5084  
 \[ietf9\]http://tools.ietf.org/html/rfc5083
