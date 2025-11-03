@@ -106,6 +106,10 @@ Alt ok! Tilgang med orgnr og scopes støttes, ved at skyporten legger på scope 
 
 Alt ok! Tilgang med orgnr og scopes støttes, ved at skyporten legger på scope på slutten av sub-feltet i tokenet. Se guide for konsument og tilbyder [her]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten_aws).
 
+### Databricks
+
+Alt ok! Tilgang med orgnr og scopes støttes, ved at skyporten legger på scope på slutten av sub-feltet i tokenet. Se guide for konsument og tilbyder [her]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten_databricks).
+
 ### Annet
 
 Dersom du har en leverandør som støtter workload identity federation, kan det være nok til at du også kan dele gjennom Skyporten. Ta gjerne [kontakt med oss](#kontakt) for å komme i gang.
