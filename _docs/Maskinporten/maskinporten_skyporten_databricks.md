@@ -14,8 +14,19 @@ redirect_from: /maskinporten_skyporten
 
 ## For deg som skal tilby via Databricks
 
-### Oppsett
+### OIDC Oppsett
 
+For å sette opp Databricks til å bruke Maskinporten, kan man bruke deres oppsett for M2M OIDC delta sharing, se oppsett [her](https://docs.databricks.com/aws/en/delta-sharing/create-recipient-oidc-fed#create-a-recipient-that-uses-an-oidc-federation-policy).
+
+`OIDC Federation Policy` må være satt opp på følgende måte:
+
+* Policy name: Valgfritt
+* Issuer URL: Skyporten issuer url, se .well-known [her](https://docs.digdir.no/docs/Maskinporten/maskinporten_skyporten.html#well-known-meta-data)
+* Subject claim: `sub`
+* Subject: sub på skyportens format `0192:[RECIPIENT ORGNO];[SKYPORTEN SCOPE]` feks: `0192:310175838;difitest:test2`
+* Audiences: Valgfritt
+
+Tildel tabeller til den nyopprettede recipienten som ved vanlig delta sharing
 
 ## For deg som skal konsumere fra Databricks
 
@@ -24,21 +35,28 @@ redirect_from: /maskinporten_skyporten
 Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
 [Her er informasjon om hvordan du kommer i gang med Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#tilgang-til-maskinporten).  [Her er et node.js eksempel på token-generering for skyporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_skyporten#eksempel-kode-for-token-generering).
 
-Ettersom databricks har integrert pålogging og uthenting av data, krever denne pt signering med nøkler, og ikke virksomhetssertifikat. Konsumentbiten er opensource og pull requests er ønsket!
+Ettersom databricks har integrert pålogging og uthenting av data, krever denne pt signering med nøkler, og ikke virksomhetssertifikat. Konsumentbiblioteket er opensource og pull requests er ønsket!
 
 ### Create a Databricks profile
 
+Følgende må oppgis fra tilbyder basert på oppsett hos dem: 
+* endpoint
+* audience
+* scope
+
+
+Lagre som oauth_config.share
 ``````json
 {
     "shareCredentialsVersion": 2,
     "type": "oauth_jwt_bearer_private_key_jwt",
-    "endpoint": "[PROVIDED FROM CLIENT]",
+    "endpoint": "[FROM PROVIDER]",
     "auth": {
         "tokenEndpoint": "[SKYPORTEN TOKEN ENDPOINT]",
         "clientId": "[SKYPORTEN CLIENT ID]",
         "issuer": "[SKYPORTEN ISSUER]",
-        "audience": "[AUDIENCE SET IN DATABRICKS]",
-        "scope": "[SKYPORTEN  SCOPE]",
+        "audience": "[AUDIENCE SET IN PROVIDERS DATABRICKS OIDC Federation Policy]",
+        "scope": "[SKYPORTEN SCOPE]",
         "privateKey": {
             "privateKeyFile": "[PATH TO PRIVATE KEY FILE]",
             "keyId": "[SKYPORTEN KEY ID]",
@@ -49,3 +67,18 @@ Ettersom databricks har integrert pålogging og uthenting av data, krever denne 
 ``````
 
 ### Run 
+
+``````python
+import delta_sharing
+
+# Point to the profile file. It can be a file on the local file system or a file on a remote storage.
+ profile_file = "oauth_config.share"
+
+ # Create a SharingClient.
+ client = delta_sharing.SharingClient(profile_file)
+ #
+ # List all shared tables.
+ tables = client.list_all_tables()
+
+ print(tables)
+``````
