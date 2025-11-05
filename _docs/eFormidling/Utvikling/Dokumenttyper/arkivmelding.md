@@ -46,7 +46,7 @@ meldingstjenestene.
 > Instruksjonen bestemmer om mottaker skal varsles om innkommende post ved mottak eller både ved mottak og en uke etter
 mottak. Les mer på:
 > 
-> - [Varsel og eventuelt revarsel for Altinn Digital Post](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/#varsel-og-evt-revarsel) (ekstern lenke)
+> - [Varsel og eventuelt revarsel for Altinn Digital Post](https://docs.altinn.studio/nb/correspondence/getting-started/developer-guides/notifications/) (ekstern lenke)
 >
 > | Lovlige verdier                 | `VarselDPVMedRevarsel` eller `VarselDPVUtenRevarsel` |
 > | Standard verdi                  | `VarselDPVMedRevarsel`                               |
@@ -72,7 +72,7 @@ meldingstjenestene.
 > Instruksjonen bestemmer hvilken tekst som skal brukes ved varsel til mottaker om innkommende post. 
 >
 > | Lovlige verdier                 | `valgfri tekst`                                                 |
-> | Standard verdi                  | `$reporteeName$: Du har mottatt en melding fra $reporterName$.` |                      |
+> | Standard verdi                  | `$correspondenceRecipientName$: Du har mottatt en melding fra $reporterName$.` |                      |
 > | Konfigurasjon av standard verdi | `difi.move.dpv.notificationText`                                |
 
 > `arkivmelding.dpv.taushetsbelagtVarselTekst` (frivillig)
@@ -83,7 +83,7 @@ meldingstjenestene.
 > Instruksjonen bestemmer hvilken tekst som skal brukes ved varsel til mottaker om innkommende taushetsbelagt post.
 >
 > | Lovlige verdier                 | `valgfri tekst`                                                                                                                                                                                                                                                                                                                                                                                          |
-> | Standard verdi                  | `$reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For å få tilgang til meldingen, er det nødvendig at noen i $reporteeName$ har fått tildelt rollen "Taushetsbelagt post fra det offentlige" i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen "Taushetsbelagt post" på Altinns nettsider.` |
+> | Standard verdi                  | `$correspondenceRecipientName$, har mottatt en taushetsbelagt melding fra $reporterName$. For å få tilgang til meldingen, er det nødvendig at noen i $correspondenceRecipientName$ har fått tildelt rollen "Taushetsbelagt post fra det offentlige" i Altinn. Dersom dere er usikre på om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om å gi tilgang til rollen "Taushetsbelagt post" på Altinns nettsider.` |
 > | Konfigurasjon av standard verdi | `difi.move.dpv.sensitiveNotificationText`                                                                                                                                                                                                                                                                                                                                                                |
 
 > `arkivmelding.dpv.dagerTilSvarfrist` (frivillig)
@@ -135,7 +135,8 @@ filformat på bekostning av leveransegaranti
 For å støtte mottakere som bruker andre meldingstjenester enn eFormidlings meldingstjeneste må integrasjonspunktet
 berike og transformere utgående meldinger:
 
-- [Transformasjon fra arkivmelding til Altinn Digital Post](../Transformasjoner/arkivmelding_til_altinn_digital_post)
+- [Transformasjon fra arkivmelding til Altinn Digital Post](../Transformasjoner/arkivmelding_til_altinn_digital_post) (Utgår i Ipv4)
+- [Transformasjon fra arkivmelding til Altinn Digital Post Altinn 3](../Transformasjoner/arkivmelding_til_altinn_digital_post_altinn3)
 - [Transformasjon fra arkivmelding til KS SvarUt](../Transformasjoner/arkivmelding_til_ks_svarut)
 
 For å støtte mottak fra avsendere som bruker andre meldingstjenester enn eFormidlings meldingstjeneste må

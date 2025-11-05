@@ -16,6 +16,14 @@ og passord.
 
 ## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste)
 
+For integrasjonspunkt eldre enn versjon 4 sjå [Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste-utgår-i-ipv4)
+
+Virksomheten må opprette eit system i Altinn. Systemet må ha tilgangspakken "informasjon-og-kommunikasjon". 
+Deretter må virksomheten opprette en systembruker på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
+Virksomheiten må godkjenne opprettelsen av systembruker i Altinn. Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
+
+## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)
+
 (Gjelder bare for digital post til offentlige virksomheter)
 Integrasjonspunktet kjører som datasystem mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
 
@@ -133,7 +141,7 @@ Man må vente med å legge inn organisasjonsnumrene til konfigurasjon av integra
 
 Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV6). Her blir du bedt om brukernavn og passord. Tast inn brukernavn og det passordet dere mener å ha fått. Dersom det resulterer i at servicen igjen ber om brukernavn og passord, er passordet galt. Om dere har oppgitt riktig brukernavn og passord får dere en respons som kan variere litt fra nettleser til nettleser.
 
-## Opprette bruker for Altinn Digital Post
+## Opprette bruker for Altinn Digital Post (utgår i IPv4)
 
 Dette gjøres av Altinn etter at Digitaliseringsdirektoratet sender bestilling. For at Digitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
 

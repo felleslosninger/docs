@@ -41,8 +41,10 @@ spring.security.user.password=changeit
 ## Digital post mellom offentlige virksomehter (Settes kun dersom man bruker DPO. Fjern utkommentering (#))
 ##--------------------------------------------
 #difi.move.feature.enableDPO=true
-#difi.move.dpo.username=
-#difi.move.dpo.password=
+#difi.move.dpo.username= (utgår i IPv4)
+#difi.move.dpo.password= (utgår i IPv4)
+#difi.move.dpo.systemUser.orgId= (introdusert i IPv4)
+#difi.move.dpo.systemUser.name= (introdusert i IPv4)
 
 
 ## Digital post innbygger (DPI)
@@ -58,8 +60,8 @@ spring.security.user.password=changeit
 ## Digital post private virksomheter (Settes kun dersom man bruker DPV via integrasjonspunktet. Fjern utkommentering (#))
 ##----------------------------------
 #difi.move.feature.enableDPV=true
-#difi.move.dpv.username=
-#difi.move.dpv.password=
+#difi.move.dpv.username= (utgår i IPv4)
+#difi.move.dpv.password= (utgår i IPv4)
 
 
 ## FIKS - SvarUt/SvarInn (Settes kun ved bruk av DPF)
