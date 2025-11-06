@@ -28,7 +28,8 @@ Please also note the following:
 - Support for authentication of European eSeals is disabled by default, and must be activated by the owner of the API on a per-API (oauth2 scope) basis.
 - Please consult the documentation from the API owner to find scope values and terms for using this funtionality.
 - You do NOT need to log in to "Samarbeidsportalen" and register a client.
-- You must use a production certificate even for testing (as there are no EU-wide test trust-list) 
+- You can use a test certificate in test, but it won't be validated against a trust-list (as there are no EU-wide test trust-list)
+- You must use a production certificate in prod. 
 
 ## Informasjon til norske API-tilbydere
 
@@ -52,7 +53,7 @@ The client creates a [JWT grant](maskinporten_protocol_jwtgrant), signs it with 
 
 - The `iss` claim must be present, but the value is ignored. We recommend to put the name of the organization and/or system here
 - Note that `x5c` must be an array containing the full certificate chain, not just the eseal alone.  See [Maskinporten's own signing key x5c-claim](https://maskinporten.no/jwk) for an example.
-- For the PoC, only scopes prefixed with `toll:` or the scope `digdir:verksemd.eu` is supported. And only in the test environments.
+- Only scopes that have been enabled for European Businesses will be possible to use. You can test with `digdir:verksemd.eu` in all environments, but it doesn't give access to anything.
 
 Example JWT grant:
 ```
@@ -63,9 +64,9 @@ Example JWT grant:
   "alg": "RS256"
 },
 {
-  "aud": "https://maskinporten,dev/",
+  "aud": "https://maskinporten.no/", (or https://test.maskinporten.no/ for test)
   "scope": "digdir:verksemd.eu",
-  "iss": "mycompany_test_client_that_isnt_registered_in_maskinporten",
+  "iss": "mycompany_client_that_isnt_registered_in_maskinporten",
   "exp": 1756282474,
   "iat": 1756282354,
   "jti": "5e9a72a3-4342-44b2-8ae8-221b3e0ba10b"
@@ -87,7 +88,7 @@ Example response:
 ```
 {
   "scope" : "digdir:verksemd.eu",
-  "iss" : "https://maskinporten:dev/",
+  "iss" : "https://maskinporten.no/",
   "client_amr" : "CForESeal",
   "token_type" : "Bearer",
   "exp" : 1756282475,
