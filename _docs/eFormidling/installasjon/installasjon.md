@@ -27,7 +27,6 @@ Hvordan en spesifiserer konfigurasjonen avhenger av hvilke verktøy som brukes: 
 eller andre. Et par eksempler:
 
 - [Eksempel på konfigurasjon med Kubernetes](Eksempel/installasjon_aks#7-integrasjonspunktet)
-- [Eksempel på konfigurasjon med docker-compose](https://github.com/felleslosninger/efm-mocks/blob/main/docker-compose.yml) (ekstern lenke)
 
 Integrasjonspunktets Docker-image er uten persistent volum. For å unngå tap av data ved f.eks. omstarter er det derfor
 nødvendig å konfigurere:

@@ -20,15 +20,6 @@ skal.
 Det er flere mulige strategier for å teste eFormidling og de passer gjerne i ulike faser av arbeidet med å ta i bruk
 eFormidling.
 
-### Teste i et lokalt mock-miljø
-
-eFormidling tilbyr oppsett for et lokalt mock-miljø som lar en teste integrasjonspunktet. Alle eksterne tjenester er
-mocket bort. Mock-miljøet anbefales som en støtte for utvikling og tidlig brøytetesting. Det er viktig å merke seg at
-testing i Mock-miljøet ikke er tilstrekkelig for å verifisere at en integrasjon mot eFormidling fungerer. Se beskrivelse
-av hvordan en kan ta i bruk mock-miljøet:
-
-- [efm-mocks](https://github.com/felleslosninger/efm-mocks) (ekstern lenke)
-
 ### Teste i eFormidlings testmiljø
 
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
