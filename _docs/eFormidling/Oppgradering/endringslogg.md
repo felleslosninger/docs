@@ -18,6 +18,13 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.0
+
+// TODO dato
+
+- Migrert fra å nytta Altinn 2 til Altinn 3 for Altinn formidling og Altinn Digital Post
+// TODO lenke til samarbeidsportalen?
+
 ## 3.0.0
 
 17.09.2025

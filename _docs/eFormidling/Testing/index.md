@@ -38,7 +38,7 @@ Vanlig installasjonveiledning kan følges, men før en går i gang må en sørge
 må først velge om en ønsker å bruke ekte eller syntetisk organisasjonsnummer. Dersom en ikke har et behov for å benytte
 ekte organisasjonsnummer i sitt testmiljø anbefales bruk av syntetisk organisasjonsnummer.
 
-#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer
+#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer (Utgår i IPv4)
 
 Testmiljøet for eFormidlings meldingstjeneste er realisert ved hjelp av en egen meldingstjeneste i Altinn Formidlings
 produksjonsmiljø. Altinn Formidlings produksjonsmiljø støtter bare ekte organisasjonsnummer.
@@ -48,7 +48,15 @@ kan dermed ikke benytte ekte organisasjonsnummer mot alle meldingstjenestene som
 benytte alle meldingstjenestene ved å legge inn brukernavn og passord for testvirksomhet hos Altinn Digital Post med
 et annet organisasjonsnummer enn det integrasjonspunktet kjører. Det samme gjelder KS SvarUt og SvarInn.
 
-#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer
+#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer (IPv4)
+
+For KS SvarUt og SvarInn benyttes testmiljø som bare støtter syntetiske organisasjonsnummer. En kan benytte brukernavn og passord for testvirksomhet hos KS SvarUt og SvarInn med
+et annet organisasjonsnummer enn det integrasjonspunktet kjører.
+
+// TODO burde vert meir utdypende? Skal det ligge ein anna plass?
+Ved eFormidlings meldingstjeneste så kan man benytte ekte org, men da må man opprette system og systembruker med tenor testorg. Da setter man ``partyOrgNo`` i requesten til tenor organisasjonen.
+
+#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer (Utgår i IPv4)
 
 For å bruke syntetisk organisasjonsnummer må en bytte testmiljøet for eFormidlings meldingstjeneste til et alternativt
 testmiljø. En må i så fall overstyre konfigurasjon av eFormidlings meldingstjeneste fra test-meldingstjenesten i
@@ -89,7 +97,7 @@ Ved testing før første gangs bruk av en ny meldingstjeneste kan det være grei
 
 Merk at ved behov for flere installasjoner av integrasjonspunktet (f.eks. to utviklere med hver sin installasjon) i
 samme miljø så vil en oppleve at installasjonene "stjeler" meldinger fra hverandre dersom de deler testvirksomhet. En
-kan løse dette ved å bruke kanaler eller ved å å benytte en testvirksomhet per installasjon.
+kan løse dette ved å bruke [kanaler](../Utvikling/kanal) eller ved å å benytte en testvirksomhet per installasjon.
 
 Avhengig av hvilke meldingstjenester som brukes vil det være behov for testbrukere og testvirksomheter å sende til og
 motta fra:
@@ -117,22 +125,10 @@ For å teste på vegne av må en ha to testvirksomheter i Altinn.
 
 Ønskede tilganger bestilles fra:
 
-- eFormidling, eInnsyn og Digital Post til Innbyggere: <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
-- Altinn Formidling og Altinn Digital Post: <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>
+- eFormidling, eInnsyn, Altinn Formidling, Altinn Digital Post,  og Digital Post til Innbyggere: <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 - FIKS IO og KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
 
-### Tilrettelegging for test av eFormidlings meldingstjeneste
-
-Alternativt til selv å sette opp to integrasjonspunkt for å teste eFormidlings meldingstjeneste er det også tilrettelagt
-for et enklere test-oppsett.
-
-Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 er tilgjengelig i eFormidlings
-testmiljø:
-
-- [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
-- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/conversations) (ekstern lenke)
-
-### Tilrettelegging for test av Altinn Digital Post
+### Tilrettelegging for test av Altinn Digital Post (Utgår i IPv4)
 
 Alternativt til selv å sette opp testvirksomhet for å teste Altinn Digital Post integrasjonspunkt er det også
 tilrettelagt for et enklere test-oppsett.

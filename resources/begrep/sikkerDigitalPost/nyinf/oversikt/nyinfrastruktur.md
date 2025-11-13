@@ -304,7 +304,7 @@ Aksesspunktleverandør må videre validere at:
 * `consumer`-claimet i token stemmer med Avsender i forretningsmelding.
 * [`aud`-claimet i token](https://docs.digdir.no/maskinporten_func_audience_restricted_tokens.html) stemmer med eget API-endepunkt
 * `maskinporten_token` i forretningsmelding er identisk med det som ble brukt som Bearer token det aktuelle API-kallet
-* `meldingsid` ikke er forsøkt brukt tidligere.
+* `meldingsid` ikke er forsøkt brukt tidligere. Med Meldingsid menes instanceIdentifier under documentIdentification i standardBusinessDocumentHeader.
 
 
 Aksesspunktleverandør lagrer meldingsid, konversasjonsid og tilhørende avsender/databehandler og avsenderidentifikator, slik at kvitteringsmeldinger og feilmeldinger relatert til meldingen kan håndteres, og fagsystemet kan etterspørre status.

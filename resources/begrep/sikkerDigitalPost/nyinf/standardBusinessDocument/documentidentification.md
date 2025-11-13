@@ -10,7 +10,7 @@ sidebar: dpi_timo_sidebar
 | Identifikator | |
 | Term          | {{page.title}} |
 | Definisjon    | Inneholder identifikasjon om dokumentet. |
-| Kilde         | [GS1](http://www.gs1.org/docs/gsmp/xml/sbdh/CEFACT_SBDH_TS_version1.3.pdf) |
+| Kilde         | [GS1](https://www.gs1.org/standards/edi-xml-gdsn-gs1-un-cefact-xml-profiles/sbdh-technical-specifications/1-3) |
 
 ### Attributer
 
@@ -21,7 +21,7 @@ sidebar: dpi_timo_sidebar
 | InstanceIdentifier  | 1..1         | String - uuid   | Unik identifikator for meldingen ([UUID](https://datatracker.ietf.org/doc/html/rfc4122)). Opprettet av Databehandler|
 | Type                | 1..1         | String   | Type forretningsmelding. Skal alltid være “local-name” melding objektet Melding. Se kodeverk under |
 | MultipleType        | 0..0         | Boolean  | Brukes ikke                                                                                                                |
-| CreationDateAndTime | 1..1         | String - dateTime | Tidspunkt for oppretting av [Standard Business Document](dpi_sbd.md)                                                       |
+| CreationDateAndTime | 1..1         | String - dateTime | Tidspunkt for oppretting av [Standard Business Document](dpi_sbd_index.html)                                                       |
 
 
 ### Kodeverk: Type

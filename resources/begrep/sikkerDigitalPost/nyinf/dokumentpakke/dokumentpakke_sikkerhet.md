@@ -44,7 +44,7 @@ sertifikat som hentes fra oppslagstjenesten for kontaktinformasjon.
 | IETF, RFC 5652        | [Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf5)                                                                       | IETF, 2009-09. |
 | IETF, RFC 3560        | [Use of the RSAES-OAEP Key Transport Algorithm in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf6)                  | IETF, 2003-07. |
 | IETF, RFC 3565        | [Use of the Advanced Encryption Standard (AES) Encryption Algorithm in Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf7) | IETF, 2003-07. |
-| IETF, RFC 5084        | [Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf8)             | IETF, 2007-11. |
+| IETF, RFC 5084        | [Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax (CMS)](http://tools.ietf.org/html/rfc5084)         | IETF, 2007-11. |
 | IETF, RFC 5083        | [Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type](ietf9)                                                      | IETF, 2007-11  |
 
 ### Integritet
@@ -293,7 +293,7 @@ Her skal følgende begrensninger gjelde:
 
 For AuthEnvelopedData (AES-GCM) skal verdiene av EncryptedContentInfo
 være i henhold til [Using AES-CCM and AES-GCM Authenticated
-Encryption](ietf8).
+Encryption](http://tools.ietf.org/html/rfc5084)
 
   - algorithm = 2.16.840.1.101.3.4.1.46 (aes256-GCM) 
   - parameters = GCMParameters som beskrevet nedenfor

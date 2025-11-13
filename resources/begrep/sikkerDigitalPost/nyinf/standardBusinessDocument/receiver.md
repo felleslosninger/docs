@@ -19,7 +19,7 @@ sidebar: dpi_timo_sidebar
 
   - [Postkasseleverandør](dpi_aktorer.html)
 
-\*For [kvitteringer](dpi_kvitteringer.md) er
+\*For [kvitteringer](dpi_forretiningsmelding_index.html) er
 [receiver](dpi_receiver.html)
 
   - Den [aktør](dpi_aktorer.html) som sto som [sender](dpi_sender.html) for den [digitale](dpi_digital.html) meldingen.

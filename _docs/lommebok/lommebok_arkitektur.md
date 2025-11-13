@@ -37,6 +37,14 @@ EU-kommisjonen publiserer [ein referansearkitektur](https://eu-digital-identity-
 
 Ein kan merke seg at ARFen formelt sett ikkje er eit juridisk bindande dokument, det er lova og rettsaktene (implementing acts) som er, og desse peiker i sin tur på vedtekne standardar frå ETSI, ISO og OpenID Foundation.  Men i praksis er det ARFen som gjev det beste biletet av korleis ting heng saman.
 
+Du kan gjerne sjå [presentasjonen vår frå Javazone](https://samarbeid.digdir.no/digitalisering/laer-korleis-eu-si-digitale-identitetslommebok-virkar/3187) der me har ein gjennomgang av arkitekturen.
+
+
+## Utveksling av bevis
+
+Den daglege samhandlinga i lommebok-økosystemet skjer ved å [bruka bevis](lommebok_protokoll_vp.html). Dei som har utsteder-relaterte rollar, vil også relativt hyppig måtte [laga bevis](lommebok_protokoll_vci.html).  Desse to bruksmønstra er basert på protokollar frå OpenID Foundation.
+
+
 ## Norsk sandkasse:
 
 Slik ser Digdir for oss at sandkassen ser ut i Noreg:
@@ -95,8 +103,4 @@ ARFen skildrar dette økosystemet slik:
 (Henta frå [figuren øverst i ARF 3.1](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#3-eudi-wallet-ecosystem) samt nærare skildring i [ARF kap 3.5](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#35-trusted-list-provider).)
 
 
-For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale europeiske fellestjenester.  Sidan norsk sandkasse skal fungere allereie no i 2025, som er både tidlegare enn dei sentrale registra frå EU er ferdige, men også rettsleg vere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS-prosessen, so vil sandkassen bruke ei eiga tillistrammeverk som Digdir driftar. Du kan lese meir om [sandskassa sitt tillitsrammeverk](lommebok_tillitsrammeverk).
-
-
-Som følgje av registrering på tillitslista, får aktøren eit sertifikat som skal nyttast til autentisering ved samhandling. Sjølve samhandlinga er basert på to nært beslekta protokollar frå OpenID Foundation, nemleg OpenID4VCI for å [laga eit bevis](lommebok_protokoll_vci.html) eller OpenID4VP for å [bruka eit bevis](lommebok_protokoll_vp.html). 
-
+For at dette økosystemet skal fungere, er komponentane avhengig av eit felles tillitsrammeverk som bestemmer kven som er godkjente aktørar.  Desse tillitslistene er i ferd med å verte etablert av EU-kommisjonen som sentrale europeiske fellestjenester.  Sidan norsk sandkasse skal fungere allereie no i 2025, som er både tidlegare enn dei sentrale registra frå EU er ferdige, men også rettsleg vere uavhengig av innføring av eIDAS-lovverket i Norge gjennom EØS-prosessen, so vil sandkassen setje opp eit separat tillistrammeverk som Digdir driftar. Du kan lese meir her om [sandkassa sitt tillitsrammeverk](lommebok_tillitsrammeverk).
