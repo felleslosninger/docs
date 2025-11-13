@@ -121,16 +121,6 @@ For å teste på vegne av må en ha to testvirksomheter i Altinn.
 - Altinn Formidling og Altinn Digital Post: <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>
 - FIKS IO og KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
 
-### Tilrettelegging for test av eFormidlings meldingstjeneste
-
-Alternativt til selv å sette opp to integrasjonspunkt for å teste eFormidlings meldingstjeneste er det også tilrettelagt
-for et enklere test-oppsett.
-
-Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 er tilgjengelig i eFormidlings
-testmiljø:
-
-- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/conversations) (ekstern lenke)
-
 ### Tilrettelegging for test av Altinn Digital Post
 
 Alternativt til selv å sette opp testvirksomhet for å teste Altinn Digital Post integrasjonspunkt er det også

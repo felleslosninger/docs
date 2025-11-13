@@ -55,9 +55,6 @@ Eksempel på statusmelding:
 
 Statusmeldinger leveres over HTTP eller RSocket med OAuth JWT fra Maskinporten.
 
-- HTTP: `POST https://qa-meldingsutveksling.difi.no/logging/api/status`
-- RSocket: `qa-meldingsutveksling.difi.no:7070`
-
 Meldingsstatus API bruker OAuth2 for autorisasjon og forventer selvforsynte JWT fra Maskinporten. JWT-forespørsler til
 Maskinporten er forventet å inneholde x5c for det norske virksomhetssertifikatet (SEIDv1 or SEIDv2) JWT-forespørselen
 ble signert med.
