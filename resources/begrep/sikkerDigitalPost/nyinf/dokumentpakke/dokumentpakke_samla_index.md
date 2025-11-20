@@ -143,7 +143,7 @@ Generelle regler for alle filer:
 Spesielle regler knyttet til de enkelte dokument formatene:
 
   - [HTML dokumenter](dpi_html.html)
-  - [EHF dokumenter](dpi_ehf.html)
+  
 
 ## MIME type
 
@@ -162,7 +162,7 @@ formatet.
 | ------- | ------------------------------------------------------------------------- |
 | pdf     | application/pdf                                                           |
 | html    | text/html                                                                 |
-| xml     | application/ehf+xml                                                       |
+| xml     | application/xml                                                       |
 | txt     | text/plain                                                                |
 | odf     | application/vnd.oasis.opendocument.formula                                |
 | odt     | application/vnd.oasis.opendocument.text                                   |
