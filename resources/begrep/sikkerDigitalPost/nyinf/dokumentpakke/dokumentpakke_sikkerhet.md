@@ -45,7 +45,7 @@ sertifikat som hentes fra oppslagstjenesten for kontaktinformasjon.
 | IETF, RFC 3560        | [Use of the RSAES-OAEP Key Transport Algorithm in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf6)                  | IETF, 2003-07. |
 | IETF, RFC 3565        | [Use of the Advanced Encryption Standard (AES) Encryption Algorithm in Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf7) | IETF, 2003-07. |
 | IETF, RFC 5084        | [Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax (CMS)](http://tools.ietf.org/html/rfc5084)         | IETF, 2007-11. |
-| IETF, RFC 5083        | [Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type](ietf9)                                                      | IETF, 2007-11  |
+| IETF, RFC 5083        | [Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type](https://datatracker.ietf.org/doc/html/rfc5083)              | IETF, 2007-11  |
 
 ### Integritet
 
@@ -267,7 +267,7 @@ ContentInfo vil være:
   - content AuthEnvelopedData
 
 AuthEnvelopedData er definert i [Cryptographic Message Syntax (CMS)
-Authenticated-Enveloped-Data Content Type](ietf9).
+Authenticated-Enveloped-Data Content Type](https://datatracker.ietf.org/doc/html/rfc5083).
 
     AuthEnvelopedData ::= SEQUENCE {
       version CMSVersion,
