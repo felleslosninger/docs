@@ -42,8 +42,7 @@ sertifikat som hentes fra oppslagstjenesten for kontaktinformasjon.
 | ETSI, ETSI TS 101 903 | [Electronic Signatures and Infrastructures (ESI); XML Advanced Electronic Signatures (XAdES)](etsi3)                                       | ETSI, 2010-12. |
 | ETSI, ETSI TS 103 171 | [Electronic Signatures and Infrastructures (ESI); XAdES Baseline Profile](etsi4)                                                           | ETSI, 2012-03. |
 | IETF, RFC 5652        | [Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf5)                                                                       | IETF, 2009-09. |
-| IETF, RFC 3560        | [Use of the RSAES-OAEP Key Transport Algorithm in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>]
-                          (http://tools.ietf.org/html/rfc3560)                                                                                                       | IETF, 2003-07. |
+| IETF, RFC 3560        | [Use of the RSAES-OAEP Key Transport Algorithm in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](http://tools.ietf.org/html/rfc3560)| IETF, 2003-07. |
 | IETF, RFC 3565        | [Use of the Advanced Encryption Standard (AES) Encryption Algorithm in Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf7) | IETF, 2003-07. |
 | IETF, RFC 5084        | [Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax (CMS)](http://tools.ietf.org/html/rfc5084)         | IETF, 2007-11. |
 | IETF, RFC 5083        | [Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type](https://datatracker.ietf.org/doc/html/rfc5083)              | IETF, 2007-11  |
