@@ -72,8 +72,8 @@ videre begrenset i henhold til profilen definert i [Baseline Profile
 
 #### Signatur i dokumentpakken for sikker digital post
 
-Dokumentpakken bør være signert av [Behandlingsansvarlig](../Aktorer.md),
-men kan signeres av [Databehandler](../Aktorer.md).
+Dokumentpakken bør være signert av [Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer),
+men kan signeres av [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).
 
 Signaturen skal være i henhold til [XAdES (ETSI TS 101 903)](etsi3) med
 basisprofilen definert i [XAdES Baseline Profile (ETSI TS 103
