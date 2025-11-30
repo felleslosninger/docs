@@ -30,7 +30,7 @@ Digdir also operate a **EAA Issuer** called ["Bevisporten"](https://utsteder.tes
 
 We also offer a [demo verifier / Relying Party ](https://demo-brukersted.test.eidas2sandkasse.net/). 
 
-Currently, the only wallet in the sandbox is the demo reference implementation apps developed by the Commission, modified with a Digdir logo and trust to our access certificates. This app is available for download [here](lommebok_demo_app). Work is ongoing in order to be able to offer other, real wallets in the sandbox. 
+Currently, the only wallet in the sandbox is the demo reference implementation apps developed by the Commission, modified with a Digdir logo and trust to our access certificates. This app is available for [download here](lommebok_demo_app). Work is ongoing in order to be able to offer other, real wallets in the sandbox. 
 
 
 ## Environments
