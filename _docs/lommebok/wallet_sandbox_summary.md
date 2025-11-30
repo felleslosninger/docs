@@ -28,6 +28,8 @@ Digdir operate a central **Relying Party register** for all sandbox participants
 
 Digdir also operate a **EAA Issuer** called ["Bevisporten"](https://utsteder.test.eidas2sandkasse.net/).  It issues PID and a couple of other credentials.  The purpose of the Issuer is to help public sector bodies and other sandbox participants to create credentials with as little effort as possible, in order to showcase the potential value of sharing person data using verifiable credentials, and "fill" the sandbox quickly.    Bevisporten comes with some rudimentary tools for testing [auth code issuance](https://bevisporten.test.eidas2sandkasse.net/) or [pre-authorization code flow issuance](https://demo-ui-utsteder.test.eidas2sandkasse.net/).
 
+We also offer a [demo verifier / Relying Party ](https://demo-brukersted.test.eidas2sandkasse.net/). 
+
 Currently, the only wallet in the sandbox is the demo reference implementation apps developed by the Commission, modified with a Digdir logo and trust to our access certificates. This app is available for download [here](lommebok_demo_app). Work is ongoing in order to be able to offer other, real wallets in the sandbox. 
 
 
