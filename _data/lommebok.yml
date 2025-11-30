@@ -11,6 +11,9 @@ folders:
       - title: Tenester i sandkassen
         jurl: /docs/lommebok/lommebok_tjenester.html
 
+      - title: English summary
+        jurl: /docs/lommebok/wallet_sandbox_summary.html
+
 - title: Grensesnittspesifikasjon
   folderitems:
 
