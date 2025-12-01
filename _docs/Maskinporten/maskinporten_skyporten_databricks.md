@@ -24,7 +24,7 @@ For å sette opp Databricks til å bruke Maskinporten, kan man bruke deres oppse
 * Issuer URL: Skyporten issuer url, se .well-known [her](https://docs.digdir.no/docs/Maskinporten/maskinporten_skyporten.html#well-known-meta-data)
 * Subject claim: `sub`
 * Subject: sub på skyportens format `0192:[RECIPIENT ORGNO];[SKYPORTEN SCOPE]` feks: `0192:310175838;difitest:test2`
-* Audiences: Valgfritt
+* Audiences: Valgfritt, feks https://difitest.no
 
 Tildel tabeller til den nyopprettede recipienten som ved vanlig delta sharing
 
@@ -37,15 +37,21 @@ Prosjektet krever at man har et ekte Maskinporten-token mot det rette miljøet.
 
 Ettersom databricks har integrert pålogging og uthenting av data, krever denne pt signering med nøkler, og ikke virksomhetssertifikat. Konsumentbiblioteket er opensource og pull requests er ønsket!
 
+Pakken for automatisert uthenting gjennom python er releaset [her](https://github.com/delta-io/delta-sharing/releases/tag/py-v1.4.0)
+
+```
+pip3 install delta-sharing
+```
+
 ### Create a Databricks profile
 
-Følgende må oppgis fra tilbyder basert på oppsett hos dem: 
+Følgende må oppgis fra tilbyder basert på oppsett i pakken : 
 * endpoint
 * audience
 * scope
 
 
-Lagre som oauth_config.share
+Lagre som `oauth_config.share`
 ``````json
 {
     "shareCredentialsVersion": 2,
@@ -56,7 +62,7 @@ Lagre som oauth_config.share
         "clientId": "[SKYPORTEN CLIENT ID]",
         "issuer": "[SKYPORTEN ISSUER]",
         "audience": "[AUDIENCE SET IN PROVIDERS DATABRICKS OIDC Federation Policy]",
-        "scope": "[SKYPORTEN SCOPE]",
+        "scope": "[PROVIDER SCOPE]",
         "privateKey": {
             "privateKeyFile": "[PATH TO PRIVATE KEY FILE]",
             "keyId": "[SKYPORTEN KEY ID]",
@@ -67,6 +73,8 @@ Lagre som oauth_config.share
 ``````
 
 ### Run 
+
+Kjør pakken med følgende kommandoer i et python-miljø eller som en del av en notebook
 
 ``````python
 import delta_sharing
