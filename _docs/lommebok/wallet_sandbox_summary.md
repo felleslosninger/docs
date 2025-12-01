@@ -37,9 +37,9 @@ Currently, the only wallet in the sandbox is the demo reference implementation a
 
 The sandbox comes in two flavors:
 
-- The **TEST** environment only allows credentials using synthic data about Holders (test users). Relying Parties can however be identified using either their real business identifier or syntethic business identifiers.  The central ecosystem services
+- The **TEST** environment only allows credentials using synthic data about Holders (test users). Relying Parties can however be identified using either their real business identifier or syntethic business identifiers.  
 
-- The **PROD** production enviroment will only allow for real data about real persons.  Similarily, only real business identifiers are allowed, and participant must have legal basis for processing person data as well as following information security requirements following existing Norwegian law.  This environment is per december 2025 not operational yet.
+- The **PROD** production enviroment will only allow for real data about real persons.  Similarily, only real business identifiers are allowed, and participant must have legal basis for processing person data as well as follow information security requirements according to existing Norwegian law.  This environment is per december 2025 not operational yet.
 
 
 ## Contact
