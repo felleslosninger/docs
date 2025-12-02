@@ -28,8 +28,6 @@ Digdir operate a central **Relying Party register** for all sandbox participants
 
 Digdir also operate a **EAA Issuer** called ["Bevisporten"](https://utsteder.test.eidas2sandkasse.net/).  It issues PID and a couple of other credentials.  The purpose of the Issuer is to help public sector bodies and other sandbox participants to create credentials with as little effort as possible, in order to showcase the potential value of sharing person data using verifiable credentials, and "fill" the sandbox quickly.    Bevisporten comes with some rudimentary tools for testing [auth code issuance](https://bevisporten.test.eidas2sandkasse.net/) or [pre-authorization code flow issuance](https://demo-ui-utsteder.test.eidas2sandkasse.net/).
 
-Brønnøysundregistrene operates an [LPID issuer](https://brreg.eudiw.no/) for Norwegian companies.
-
 We also offer a [demo verifier / Relying Party ](https://demo-brukersted.test.eidas2sandkasse.net/). 
 
 Currently, the only wallet in the sandbox is the demo reference implementation apps developed by the Commission, modified with a Digdir logo and trust to our access certificates. This app is available for [download here](lommebok_demo_app). Work is ongoing in order to be able to offer other, real wallets in the sandbox. 
@@ -39,9 +37,9 @@ Currently, the only wallet in the sandbox is the demo reference implementation a
 
 The sandbox comes in two flavors:
 
-- The **TEST** environment only allows credentials using synthic data about Holders (test users). Relying Parties can however be identified using either their real business identifier or syntethic business identifiers.  
+- The **TEST** environment only allows credentials using synthic data about Holders (test users). Relying Parties can however be identified using either their real business identifier or syntethic business identifiers.  The central ecosystem services
 
-- The **PROD** production enviroment will only allow for real data about real persons.  Similarily, only real business identifiers are allowed, and participant must have legal basis for processing person data as well as follow information security requirements according to existing Norwegian law.  This environment is per december 2025 not operational yet.
+- The **PROD** production enviroment will only allow for real data about real persons.  Similarily, only real business identifiers are allowed, and participant must have legal basis for processing person data as well as following information security requirements following existing Norwegian law.  This environment is per december 2025 not operational yet.
 
 
 ## Contact

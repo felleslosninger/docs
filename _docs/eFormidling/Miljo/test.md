@@ -22,7 +22,6 @@ Følgende tjenester brukes av integrasjonspunktets test-miljø og må kunne nås
 
 | DNS-navn                                  | IPv4-adresse                                        | Port  | Tjeneste | Beskrivelse                                                                              | Inn-/utgående trafikk |
 |-------------------------------------------|-----------------------------------------------------|-------|----------|------------------------------------------------------------------------------------------|-----------------------|
-| qa-meldingsutveksling.difi.no (fases ut)            | 139.105.36.141                   | 443   | Alle     | eFormidling, diverse tjenester, adresseoppslag m.m.                                      | utgående              |
 | test.eformidling.no                       | 139.105.36.141                                      | 443  | Alle     | eFormidling, diverse tjenester, adresseoppslag m.m.                                      | utgående              |
 | test-logs.eformidling.no                       | 139.105.36.147                                     | 80/443  | Alle     | eFormidling, logging.                                      | utgående              |
 | qa-stream-meldingsutveksling.difi.no (fases ut)      | 139.105.36.145                                        | 443   | Alle     | eFormidling, logging                                                                     | utgående              |

@@ -119,7 +119,7 @@ eFormidlings bruk av standarden arkivmelding er beskrevet på [Arkivmelding](sta
 
 ## Et eller flere dokument
 
-Arkivmeldingen inneholder dokumentreferanser med filnavn for et eller flere dokument. Hvert enkelt av disse refererte
+Arkivmeldingen inneholder dokumentreferanser med filnavn for et eller flere dokument. **Det er viktig at filnavnene er unike.** Hvert enkelt av disse refererte
 dokumentene må inkluderes. Hvilke typer dokument som støttes avhenger av mottakeren og er ikke kjent på forhånd. Dette
 medfører at forsøk på å sende dokumenter som ikke støttes av mottakeren feiler først ved mottak.
 

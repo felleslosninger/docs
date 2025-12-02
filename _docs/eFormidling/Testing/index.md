@@ -20,15 +20,6 @@ skal.
 Det er flere mulige strategier for å teste eFormidling og de passer gjerne i ulike faser av arbeidet med å ta i bruk
 eFormidling.
 
-### Teste i et lokalt mock-miljø
-
-eFormidling tilbyr oppsett for et lokalt mock-miljø som lar en teste integrasjonspunktet. Alle eksterne tjenester er
-mocket bort. Mock-miljøet anbefales som en støtte for utvikling og tidlig brøytetesting. Det er viktig å merke seg at
-testing i Mock-miljøet ikke er tilstrekkelig for å verifisere at en integrasjon mot eFormidling fungerer. Se beskrivelse
-av hvordan en kan ta i bruk mock-miljøet:
-
-- [efm-mocks](https://github.com/felleslosninger/efm-mocks) (ekstern lenke)
-
 ### Teste i eFormidlings testmiljø
 
 For å verifisere at en integrasjon mot eFormidling fungerer er det nødvendig å teste i eFormidlings testmiljø. 
@@ -120,17 +111,6 @@ For å teste på vegne av må en ha to testvirksomheter i Altinn.
 - eFormidling, eInnsyn og Digital Post til Innbyggere: <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 - Altinn Formidling og Altinn Digital Post: <a href="mailto:tjenesteeier@altinn.no">tjenesteeier@altinn.no</a>
 - FIKS IO og KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
-
-### Tilrettelegging for test av eFormidlings meldingstjeneste
-
-Alternativt til selv å sette opp to integrasjonspunkt for å teste eFormidlings meldingstjeneste er det også tilrettelagt
-for et enklere test-oppsett.
-
-Et integrasjonspunkt som kan sende og motta med organisasjonsnummeret 987464291 er tilgjengelig i eFormidlings
-testmiljø:
-
-- [Enkelt brukergrensesnitt for test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/sa-mock/) (ekstern lenke)
-- [Test-integrasjonspunktet](https://qa-meldingsutveksling.difi.no/integrasjonspunkt/digdir-leikanger/conversations) (ekstern lenke)
 
 ### Tilrettelegging for test av Altinn Digital Post
 

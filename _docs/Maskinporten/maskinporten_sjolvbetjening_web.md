@@ -214,7 +214,7 @@ Videotutorial: [https://vimeo.com/427689782](https://vimeo.com/427689782)
 
 1. Offentlig nøkkel, i PEM-format, må konverteres til JWK ved hjelp av JWK Creator eller lignende, før den kan bli lagt på klienten. 
 2. Trykk på 'Egne public nøkler', nederst på klient-registreringsssiden i selvbetjening web.
-3. Lim inn JWK og trykk på 'legg til'. NB! Husk å plassere den mellom to klammer []. 
+3. Lim inn JWK og trykk på 'legg til'.
 4. Sjekk at JWK blir lagret i riktig format på klienten:
 
 ```
