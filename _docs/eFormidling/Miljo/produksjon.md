@@ -30,5 +30,5 @@ Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunn
 | crl.buypassca.com       | 185.62.162.185 og 185.62.160.185                               | 80  | DPI      | Buypass CRL-liste SEID2.0                              | utgående              |
 | kontaktregisteret.no | 139.105.36.169 | 443  | DPI | Kontakt-og reservasjonsregisteret (fom. 18.09.2023) | utgående |
 | srest.dataplatfor.ms                | 51.120.55.214                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt | utgående              |
-| svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler
+| svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler |  utgående
 | Legal: https://crl.commfides.com/G3/CommfidesLegalPersonCA-G3.crl | 91.232.83.47 <br/> | 80 | Commfides CRL-liste  |   Commfides CRL-liste   |  utgående

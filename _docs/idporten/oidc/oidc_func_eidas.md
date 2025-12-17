@@ -73,7 +73,7 @@ code_challenge=TE9ih9je36hXuvSyr3hRt8srV6ttER4dyT9e9tWY8zQ
 
 Ved en eIDAS-pålogging vil utleverte tokens være litt ulike ordinære tokens:
 
-- `acr` blir satt til `eIDAS`
+- `amr` blir satt til `eIDAS`
 - De 4 kjerneattributtene i eIDAS vil inkluderes, prefikset med "eidas"
 - Norsk personidentifikator `pid` kun vil bli inkludert dersom gjenkjenning mot Folkeregisteret var vellykket
 

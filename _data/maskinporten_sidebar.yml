@@ -96,6 +96,9 @@ folders:
     jurl: /docs/Maskinporten/maskinporten_skyporten_azure.html
   - title: Skyporten med AWS
     jurl: /docs/Maskinporten/maskinporten_skyporten_aws.html
+  - title: Skyporten med Databricks
+    jurl: /docs/Maskinporten/maskinporten_skyporten_databricks.html
+
 
 ###########################
 

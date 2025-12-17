@@ -9,7 +9,7 @@ Beskrivelsene av datatypene gir detaljer om validering og formatregler
 for hver datatype. Følgende datatyper er definert:
 
 - [Aapningskvittering]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/aapningskvittering)
-- [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/Avsender)
+- [Avsender]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/avsender)
 - [Avsenderidentifikator]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/avsenderidentifikator)
 - [Beskrivelse]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/beskrivelse)
 - [DagerEtter]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/begrep/dagerEtter)

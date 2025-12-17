@@ -11,6 +11,9 @@ folders:
       - title: Tenester i sandkassen
         jurl: /docs/lommebok/lommebok_tjenester.html
 
+      - title: English summary
+        jurl: /docs/lommebok/wallet_sandbox_summary.html
+
 - title: Grensesnittspesifikasjon
   folderitems:
 
@@ -57,6 +60,12 @@ folders:
 related_resources_title: Andre nyttige lenker
 
 related_resources_list:
+
+- title: Bevis- og brukerstadskatalog
+  jurl: https://innsyn.test.eidas2sandkasse.net/
+
+- title: Utviklerportal
+  jurl: https://sjolvbetening.test.eidas2sandkasse.net/login
 
 - title: Nyhetsside for digital lommebok
   jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2897
