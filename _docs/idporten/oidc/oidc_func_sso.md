@@ -33,7 +33,7 @@ Alle OIDC-integrasjoner mot ID-porten må implementere støtte for følgende to 
 
 Merk at klienter som utfører endsession OGSÅ vil selv motta et frontkanal-utloggingskall dersom klienten har registrert en `frontchannel_logout_uri`.
 
-Merk også at ID-porten ikke støtter back-channel logout.
+Merk at ID-porten nå støtter [back-channel logout]({{site.baseurl}}/docs/idporten/oidc/oidc_func_backchannel_logout).
 
 
 For SAML-baserte tjenester må også begge utloggingsscenarioene støttes, men oppførselen er ulik - der OIDC sender frontkanalskallene fra iframer på en idporten-styrt side, så vil SAML foreta en kjede av redirects fra tjeneste til tjeneste. SAML-varianten er defor mer sårbar.
