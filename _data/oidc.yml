@@ -90,7 +90,7 @@ folders:
       - title: Isolert SSO-sesjon
         jurl: /docs/idporten/oidc/oidc_func_nosso.html
 
-      - title: Bak-kanal logout
+      - title: Utlogging bak-kanal
         jurl: /docs/idporten/oidc/oidc_func_backchannel_logout.html
 
       - title: Audience-begrensning

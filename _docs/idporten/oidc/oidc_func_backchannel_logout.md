@@ -1,7 +1,7 @@
 ---
 title: Back-channel logout
 description: ID-portens funksjonalitet for back-channel logout
-summary: "Backchannel logout muliggjør å kalle logout bakkanal dersom det er utfordrende å gjøre det framkanal eller for å være ekstra sikker på at klienten har logget ut."
+summary: "Backchannel logout muliggjør å kalle logout bak-kanal dersom det er utfordrende å gjøre det framkanal eller for å være ekstra sikker på at klienten har logget ut."
 sidebar: oidc
 product: ID-porten
 redirect_from: /oidc_func_backchannel_logout
