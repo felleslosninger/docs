@@ -1,13 +1,13 @@
 ---
-title: Systembruker for virksomheter
-description: Systembruker for virksomheter
+title: Samtykketoken i Maskinporten
+description: Samtykketoken i Maskinporten
 
 sidebar: maskinporten_sidebar
 product: Maskinporten
-redirect_from: /maskinporten_func_systembruker
+redirect_from: /maskinporten_func_samtykke
 ---
 
-Funksjonaliteten lar leverandører definere sine Maskinporten-integrasjoner som fagsystemer i Altinn, som leverandørens kunder i sin tur kan tildele bare de rettighetene som fagsystemet trenger for å kunne opptre på vegne av kunden for bestemte formål.
+Funksjonaliteten lar en datakonsument hente ut og inkludere et samtykke i et Maskinporten accesstoken. Tjenesteeier må definere samtykket, og samtykke må gis av sluttbruker, eller det kan gis på vegne av en organisasjon av en bruker med nødvendige rettigheter.
 
 ## Status
 
@@ -15,38 +15,18 @@ Funksjonaliteten er lansert i 2025.
 
 ## Bakgrunn
 
-Maskinporten i sin enkleste form tilbyr grovkornet tilgangstyring mellom to virksomheter; en API-konsument og en API-tilbyder. 
-
-Videre tilbyr Maskinporten to ulike delegerings-utvidelser for bruk i kunde-leverandør-forhold på konsument-sida:
-
-* [Delegering av API-tilgang til en annen organisasjon](maskinporten_func_delegering)
-* Delegering av rettigheter i Altinn til et Maskinporten-system (dokumentert på denne sida)
-
-For begge utvidelsene så utfører kunden selve delegeringshandlingen gjennom brukervennlige dialoger i Altinn, og trenger ikke måtte inngå et kundeforhold til Digdir eller bruke Samarbeidsportalen.  Tilganger i Altinn bestemmer hvem som får lov til å utføre delegeringshandlinga på vegne av kundens virksomhet. Typisk oppstår delegeringen som et naturlig steg ved etablering av kundeforholdet når kunden velger å ta i bruk et produkt fra leverandøren.
-
-*Systembruker for virksomhet* passer bedre i scenarioer der standard API-delegering ville ført til at leverandøren ville fått altfor vide rettigheter.  
-
-#### Hva er forskjellen på systembruker-delegering og API-delegering?
-
-API-delegering gjelder en hel API-tilgang (dvs. et Oauth2 scope) og delegeres til et organisasjonsnummer (leverandør).
-
-Ved systembruker-delegering får kunder mulighet til å delegere et mer spisset / avgrenset sett med "Altinn-rettigheter", og rettighetene kan bare delegeres til ett spesifikt system hos leverandøren, istedet for til leverandørens organisasjonnummer. 
-Systemet må være forhåndsregistrert i Systemregisteret i Altinn.  
-
-De to delegeringsmekanismene er uavhengig av hverandre, og det er ingen sentral validering av at systemet i systemregisteret har bestemte scope registert på seg, som skulle "passe" med de rettighetene som blir delegert.  Normalt vil dog APIet validere både hvilke scopes som systemet må ha, samt hvilke type delegerte rettigheter som trengs for å kunne bruke APIet. 
+Samtykkeløsningen er utformet med hensikt om å oppfylle [datatilsynets krav til samtykke for å behandle personopplysninger.](https://www.datatilsynet.no/rettigheter-og-plikter/virksomhetenes-plikter/behandlingsgrunnlag/veileder-om-behandlingsgrunnlag/?id=176)
 
 
-#### Hva inneholder et systembruker-token ?
+#### Hva inneholder et samtykke-token ?
 
-Rent teknisk i Autorisasjon så blir ikke de delegerte rettighetene gitt direkte til systemet, men er delegert til en såkalt **systembruker** knyttet til kunden. Systembrukeren peker i sin tur på leverandøren sitt system i Systemregisteret, som igjen er kobla mot en og bare en client_id i Maskinporten.
+Rent teknisk vil maskinporten spørre Altinn 3 om et gitt samtykke eksisterer. Samtykker definert av Tjenesteeier kan identifiseres med en uuid, det må også oppgis hvem som har gitt samtykket. (En org/person) Samtykket må være gitt til den organisasjonen som eier maskinporten klienten. 
+Ved bruk av delegerte scopes, må samtykket være gitt til den som har delegert scopet til gitt maskinporten klient.
 
-Et systembruker-token skiller seg fra et vanlig Maskinporten-token ved at det inneholder informasjon om både systembrukeren hos kunden og systemet til leverandøren.  API-tilbydere kan stole på at systemet som fikk utstedt tokenet er gitt nødvendige delegeringer i Altinn. 
+#### For API-tilbyder/Tjenesteeier
 
-#### For API-tilbyder
-
-For å kunne bruke et systembruker-token til tilgangstyring må API-tilbyder konstruere et kall mot Altinn Autorisasjon 3.0 sitt PDP-endepunkt for å hente ut hvilke detaljerte rettigheter som er delegert fra kunde til leverandør.
-
-API-tilbyder bør også validere scope på sitt API.
+For å kunne bruke et samtykke-token til tilgangstyring må API-tilbyder opprette et samtykke i Altinn 3, og dette må sluttbruker så akseptere. Mer informasjon i Altinn sin dokumentasjon av [samtykke for tjenesteier.](https://docs.altinn.studio/nb/authorization/guides/resource-owner/consent/)
+Det er viktig at tjenesteeier validerer id og from/to felta for samtykket i tokenet.
 
 ## Grensesnittsdefinisjon
 
