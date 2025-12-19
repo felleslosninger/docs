@@ -21,7 +21,7 @@ Samtykkeløsningen er utformet med hensikt om å oppfylle [datatilsynets krav ti
 
 #### Hva inneholder et samtykke-token ?
 
-Rent teknisk vil maskinporten spørre Altinn 3 om et gitt samtykke eksisterer. Samtykket er definert av Tjenesteeier og er identifisert med en uuid, det må også oppgis hvem som har gitt samtykket. (En org/person) Samtykket må være gitt til den organisasjonen som eier maskinporten klienten. 
+Rent teknisk vil maskinporten spørre Altinn 3 om et gitt samtykke eksisterer. Samtykkeressurs er definert av Tjenesteeier og er identifisert med en uuid, det må også oppgis hvem som har gitt samtykket. (En org/person) Samtykket må være gitt til den organisasjonen som eier maskinporten klienten. 
 Ved bruk av delegerte scopes i maskinporten, må samtykket være gitt til den som har delegert scopet til gitt maskinporten klient.
 
 #### For API-tilbyder/Tjenesteeier
@@ -54,7 +54,7 @@ Datamodellen for request ser slik ut:
 | claim | kardinalitet | beskrivelse |
 | ----- | ------------ | ----------- |
 | `type`| Påkrevd | Alltid `urn:altinn:consent` |
-| `id` | Påkrevd | Organisasjonsidentifikator i ISO6523-format på eier av systembrukeren (leverandørens kunde) |
+| `id` | Påkrevd | Etterspurt samtykkeressurs sin uuid |
 | `from` | Påkrevd | Orgno eller pid på den som har gitt samtykket. Gis på format `urn:altinn:person:identifier-no:12345678910` for pid eller `urn:altinn:organization:identifier-no:123456789` for org |
 
 
@@ -86,17 +86,14 @@ Datamodellen for respons ser slik ut:
 | claim | beskrivelse |
 | ----- |  ----------- |
 | `type`|  Alltid `urn:altinn:consent` |
-| `id` | Organisasjonsidentifikator i ISO6523-format på eier av systembrukeren (leverandørens kunde) |
+| `id` | Etterspurt samtykkeressurs sin uuid |
 | `from` | Orgno eller pid på den som har gitt samtykket. Gis på format `urn:altinn:person:identifier-no:12345678910` for pid eller `urn:altinn:organization:identifier-no:123456789` for org |
 | `to` | Organisasjonsidentifikator i ISO6523-format på organisasjonen samtykket er gitt til |
 | `consented` | Tidsstempel på ISO 8601 format for da samtykket vart gitt |
 | `validTo` | Tidsstempel på ISO 8601 format for tidspunktet samtykket er gyldig til  |
 | `consentRights` | Liste over rettigheter gitt i samtykket, inneholder alltid `action`, `resource`. Inneholder `metadata` dersom samtykket inneholder det |
 
-
-
-Merk at `externalRef` ikke er returnert, det brukes kun for å identifisere rett systembruker i de tilfeller der det er flere kandidater.
-Leverandøren sitt organisasjonsnummer finner du i claimet `consumer` som vanlig.
+Leverandør sitt organisasjonsnummer finner du i claimet `consumer` som vanlig, og det må matche verdien i `to` for å få et samtykketoken.
 
 *Forenklet eksempel på access token:*
 ```
@@ -141,7 +138,7 @@ Leverandøren sitt organisasjonsnummer finner du i claimet `consumer` som vanlig
 
 ## Oppsett
 
-Datakonsument/tjenesteleverandør må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på [Samarbeidsportalen](https://samarbeid.digdir.no).  Klienten må ha tilgang til å knytte Api-tilbyder/tjenesteeier sitt scope til klienten. Se gjerne nærmere på [delegering](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_delegering.html) om tilgang ikke skal gies direkte til eier av klient. 
+Datakonsument/tjenesteleverandør må først opprette en vanlig Maskinporten-integrasjon gjennom selvbetjening på [Samarbeidsportalen](https://samarbeid.digdir.no).  Klienten må ha tilgang til å knytte Api-tilbyder/tjenesteeier sitt scope til klienten. Se gjerne nærmere på [delegering](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_delegering.html) om tilgang til scope ikke er gitt direkte til tjenesteleverandør. 
 
 Tjenesteeier må [opprette en samtykkeressurs i altinn](https://docs.altinn.studio/nb/authorization/guides/resource-owner/consent/) som sluttbruker (org/pid) må logge inn og akseptere. Ved oppretting får Tjenesteeier en uuid som identifiserer samtykket. Dette er den uuid som er henvist til ovenfor, og som må brukes for at sluttbruker skal kunne gi samtykke, og for å etterspørre samtykketoken i maskinporten.
 
