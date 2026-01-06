@@ -76,6 +76,8 @@ folders:
            
       - title: Utskriftstjenesten
         jurl: /dpi_utskrift_index.html
+      - title: Krav og anbefalinger ved adressering
+        jurl: /dpi_adressering_index.html
         
     - title: Forretningsmeldinger
       folderitems:
