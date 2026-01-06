@@ -11,7 +11,7 @@ redirect_from: /ansattporten_entraid
 
 {% include note.html content="Entra ID er beta-funksjonalitet .  Vi ønsker virksomheter velkommen til å hjelpe oss med å teste og forbedre funksjonaliteten gjennom en pilotfase i 2025/2026. De som deltar, må være forberedt på at det kan bli løpende endringer i funksjonalitet og tekniske grensesnitt." %}
 
-En tjenesteeier i Ansattporten kan aktivere støtte for at eksterne brukere hos andre virksomheter kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan berike innlogginga med organisasjonsnummeret til konto-eier (som oftest brukeren sin arbeidsgiver). 
+En kunde i Ansattporten kan aktivere støtte for at eksterne brukere hos andre virksomheter kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Ansattporten kan berike innlogginga med organisasjonsnummeret til konto-eier (som oftest brukeren sin arbeidsgiver). 
 
 Piloten skal også utforske om og evt. hvordan Ansattporten kan hjelpe med tilgangstyring til tjenester.
 
@@ -144,3 +144,4 @@ Organisasjonsnummeret som dine ansatte blir beriket med, er basert på epost-dom
 Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Legg til rett acr-verdi i forespørsel, og logg inn med din egen AD-bruker.
 
 Microsoft tilbyr ikke noe eget testmiljø, så her må du bruke din ekte Entra-bruker, alternativt få din virksomhet til å sette opp en dedikert Entra-tentant for test-formål.
+
