@@ -19,7 +19,7 @@ A European organization is termed a **consumer** of those APIs. In technical ter
 
 The client asks Maskinporten for an access token, and that token is then used in subsequent calls to the API.  See details below.
 
-The client must hold a valid certicate for electronic seal issued by an [approved Trust Service Provider listed on the EU Trust List](https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/search/type?step=3&searchCriteria=eyJzZXJ2aWNlU2NvcGUiOiJBTEwiLCJjb3VudHJ5Q29kZXMiOlsiQVQiLCJCRSIsIkJHIiwiSFIiLCJDWSIsIkNaIiwiREsiLCJFRSIsIkZJIiwiRlIiLCJERSIsIkVMIiwiSFUiLCJJUyIsIklFIiwiSVQiLCJMViIsIkxJIiwiTFQiLCJMVSIsIk1UIiwiTkwiLCJOTyIsIlBMIiwiUFQiLCJSTyIsIlNLIiwiU0kiLCJFUyIsIlNFIiwiVUsiXSwic2VydmljZUxlZ2FsVHlwZXMiOlsiUV9DRVJUX0VTRUFMIiwiQ0VSVF9FU0VBTCJdfQ%3D%3D). Some APIs may requied this certificate to be **qualified** (highest security requirements).
+The client must hold a valid certicate for electronic seal issued by an [approved Trust Service Provider listed on the EU Trust List](https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/search/type?step=3&searchCriteria=eyJzZXJ2aWNlU2NvcGUiOiJBTEwiLCJjb3VudHJ5Q29kZXMiOlsiQVQiLCJCRSIsIkJHIiwiSFIiLCJDWSIsIkNaIiwiREsiLCJFRSIsIkZJIiwiRlIiLCJERSIsIkVMIiwiSFUiLCJJUyIsIklFIiwiSVQiLCJMViIsIkxJIiwiTFQiLCJMVSIsIk1UIiwiTkwiLCJOTyIsIlBMIiwiUFQiLCJSTyIsIlNLIiwiU0kiLCJFUyIsIlNFIiwiVUsiXSwic2VydmljZUxlZ2FsVHlwZXMiOlsiUV9DRVJUX0VTRUFMIiwiQ0VSVF9FU0VBTCJdfQ%3D%3D). Some APIs may requied this certificate to be **qualified** (highest security requirements). If the certificate is qualified and from a service provider on the list, you are guaranteed that the certificate meets the requirements. If it is not, you need to make sure that the root certificate is listed as a trust service in the Trust Service Provider list. [The European Commission offers a validation service](https://ec.europa.eu/digital-building-blocks/DSS/webapp-demo/certificate-validation) if you are unsure and want to test if your certificate meets the requirements.
 
 **Note that a listed Provider normally offers multiple certificate services, normally coming from different certificate chains / roots, and only some of these services/roots are listed on the EU Trust List.**
 
@@ -30,6 +30,9 @@ Please also note the following:
 - You do NOT need to log in to "Samarbeidsportalen" and register a client.
 - You can use a test certificate in test, but it won't be validated against a trust-list (as there are no EU-wide test trust-list)
 - You must use a production certificate in prod. 
+
+If you have any questions, please reach out to digitoll@toll.no
+
 
 ## Informasjon til norske API-tilbydere
 
@@ -46,6 +49,8 @@ Det er heller ingen sentral tilgangstyring i Maskinporten for dei utanlandske ve
 Maskinporten gjer ikkje noko omsetjing eller tilpassing av organisasjonsidentifikatoren, og vidareformidler berre denne "rått" slik den er registrert i sertifikatet.  Me inkluderer også eventuelle namn på verksemda og evt. undereining som me finn i `Subject`-feltet.
 
 Europeiske verksemdsertifikat kan - som i Norge - utstedast på ulike sikkerheitsnivå.  P.t. er me usikre på kor lett det er å skilje desse i valideringa.
+
+Hvis du har spørsmål kan du ta kontakt på digitoll@toll.no
 
 ## Request
 
