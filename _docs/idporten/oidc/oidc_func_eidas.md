@@ -16,6 +16,9 @@ For å bli integert i produksjon, må et land bli formelt *notifisert* og fagfel
 
 Kunder kan se oppdatert status på hvilke land som er tilkoblet på [EU sitt eIDAS Dashboard](https://eidas.ec.europa.eu/efda/browse/notification/eid-chapter-contacts/NO)
 
+Fra [denne demo-tjenesten](https://demo-client.eidasnode.no/)  kan du verifisere - i produksjon - om et annet land er koblet til Norge.  Trykk "Login"-knappen, velg så land, og dersom du havner på en tilsynelatenede fungerende side i det aktuelle landet, kan du anta at landets borgere vil kunne logge inn til deg.
+
+
 ## Hvilken informasjon får jeg om eidas-brukere ?
 
 Ved en eIDAS-pålogging følger det med følgende kjerne-attributter:
