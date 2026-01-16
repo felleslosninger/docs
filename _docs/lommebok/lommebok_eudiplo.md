@@ -49,7 +49,7 @@ jwker access.key.jwk > access.key.pem
 4. Bruk openssl til å lage ein CSR basert på denne privatnøkkelen
 
 ```
-openssl req -new -key access.key.pem -subj /CN="brukersted" -out test.csr 
+openssl req -new -key access.key.pem -subj /CN="brukersted" -out access.csr 
 ```
 
 5. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen 
