@@ -1,5 +1,5 @@
 ---
-title: Bruke EUDIPLO som brukerstad mot sandkassa
+title: EUDIPLO som brukerstad mot sandkassa
 description: 
 
 sidebar: lommebok
@@ -20,9 +20,9 @@ Her følger ein beskrivelse av korleis du kan konfigurerere EUDIPLO som brukerst
 
 ### 1. Installer EUDIPLO backend og webklient for administrasjon 
 
-Følg [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrende og helseendepunktet viser "up"
+Følg [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrande og helseendepunktet viser "up"
 
-Du skal no ha to tjenester køyrande: ein backend-tjeneste og ein webklient.
+Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
 ### 2. Opprett ny tenant for din brukarstad
 
