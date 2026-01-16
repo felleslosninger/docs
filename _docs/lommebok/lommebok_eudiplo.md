@@ -46,28 +46,15 @@ brew install jphastings/tools/jwker
 jwker access.key.jwk > access.key.pem
 ```
 
-4. Bruk openssl til å lage eit (midlertidig) sjølvsignert sertifikat for det aktuelle nøkkelparet 
-
-
-```
-openssl req -new -x509 -key access.key.pem -out access.selfsigned.crt -days 365 -subj "/CN=Access" 
-```
-
-5. Lag ny keystore for å holde nøkler og sertifikat
+4. Bruk openssl til å lage ein CSR basert på denne privatnøkkelen
 
 ```
-openssl pkcs12 -export -out access.p12 -inkey access.key.pem -in access.selfsigned.crt -name access
+openssl req -new -key access.key.pem -subj /CN="brukersted" -out test.csr 
 ```
 
-6. Lag CSR basert på privatnøkkelen 
+5. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen 
 
-```
-keytool -certreq -keyalg EC -alias access -file access.csr -keystore access.p12
-```
-
-7. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen 
-
-8. Installer aksessertifikatet i EUDIPLO . Sertifikatet må registrerast frå detaljvisningsida for nøkkelen du oppretta. Velg "access" som usage og lim inn det PEM-enkoda sertifikatet som du lasta ned frå sjølvbetjeningsløysinga til sandkassen.
+6. Installer aksessertifikatet i EUDIPLO . Sertifikatet må registrerast frå detaljvisningsida for nøkkelen du oppretta. Velg "access" som usage og lim inn det PEM-enkoda sertifikatet som du lasta ned frå sjølvbetjeningsløysinga til sandkassen.
 
 ### 4. Opprette presentasjonskonfigurasjon.
 
