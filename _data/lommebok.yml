@@ -14,6 +14,19 @@ folders:
       - title: English summary
         jurl: /docs/lommebok/wallet_sandbox_summary.html
 
+- title: Ta i bruk
+  folderitems:
+
+      - title: Registrering
+        jurl: /docs/lommebok/lommebok_taibruk_registrering.html
+
+      - title: Brukarstad
+        jurl: /docs/lommebok/lommebok_taibruk_brukarstad.html
+
+      - title: Utstedar
+        jurl: /docs/lommebok/lommebok_taidbruk_utstedar.html
+
+
 - title: Grensesnittspesifikasjon
   folderitems:
 
@@ -66,6 +79,9 @@ related_resources_list:
 
 - title: Utviklerportal
   jurl: https://sjolvbetening.test.eidas2sandkasse.net/login
+
+- title: Bevisgenerator
+  jurl: https://bevisgenerator.test.eidas2sandkasse.net/
 
 - title: Nyhetsside for digital lommebok
   jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2897
