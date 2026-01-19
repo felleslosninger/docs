@@ -16,7 +16,7 @@ Lommebøkene må p.t. lastes ned direkte gjennom test-platformer, og er ikke gen
 ### Android
 En demolommebok er tilgjengelig i Firebase App Distribution: [Installer](https://appdistribution.firebase.dev/i/e6a0e9288d78ffbd)
 
-Demolommebok er tilgjengelig i Google Play.  Testbruker må registeres på forhånd.  Google Play: [Installer fra mobil](https://play.google.com/store/apps/details?id=net.eidas2sandkasse.demolommebok.test), [INstaller fra web](https://play.google.com/apps/testing/net.eidas2sandkasse.demolommebok.test)
+Dersom du har innrullet din telefon i en organisasjon som ikke tillater installasjon fra usikre kilder (Firebase), så kan du ta kontakt for å bli registrert som testbruker. Då kan du installere fra Google Play som vanlig: [Installer fra mobil](https://play.google.com/store/apps/details?id=net.eidas2sandkasse.demolommebok.test), [INstaller fra web](https://play.google.com/apps/testing/net.eidas2sandkasse.demolommebok.test)
 
 ### iOS
 En demolommebok er tilgjengelig i TestFlight: [Installer](https://testflight.apple.com/join/2FKCUj1J)
