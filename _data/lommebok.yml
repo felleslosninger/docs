@@ -66,6 +66,9 @@ related_resources_list:
 - title: Bevis- og brukerstadskatalog
   jurl: https://innsyn.test.eidas2sandkasse.net/
 
+- title: Bevisgenerator
+  jurl: https://bevisgenerator.test.eidas2sandkasse.net/
+
 - title: Utviklerportal
   jurl: https://sjolvbetening.test.eidas2sandkasse.net/login
 
