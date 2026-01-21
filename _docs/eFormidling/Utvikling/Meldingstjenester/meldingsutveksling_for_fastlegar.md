@@ -6,6 +6,11 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+> ⚠️ **Beta – berre tilgjengeleg i testmiljø**
+>
+> Denne funksjonaliteten er førebels i **beta** og er per no berre tilgjengeleg i **testmiljø**.  
+> Grensesnitt, funksjonalitet og oppførsel kan endre seg før endeleg produksjonssetting.
+
 ## Innleiing
 
 eFormidling støttar sending av meldingar til fastlegar via Norsk Helsenett (NHN) sin meldingsinfrastruktur. Meldingane vert sende direkte til fastlegen sitt EPJ-system (Elektronisk pasientjournal).
@@ -14,7 +19,7 @@ eFormidling støttar sending av meldingar til fastlegar via Norsk Helsenett (NHN
 
 | Prosess                                | Dokumenttype                                      | Eksempel                                                       |
 | -------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------- |
-| Innsending til fastlege                | `urn:no:difi:profile:digitalpost:fastlege:ver1.0` | https://www.helsedirektoratet.no/standarder/dialogmelding-v1.1 |
+| Innsending til fastlege                | `urn:no:difi:profile:digitalpost:fastlege:ver1.0` |                                                                |
 | Innsending til NHN-registrert mottakar | `urn:no:difi:profile:digitalpost:helse:ver1.0`    | https://www.helsedirektoratet.no/standarder/dialogmelding-v1.1 |
 
 ## Føresetnader
