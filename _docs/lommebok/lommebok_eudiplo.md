@@ -35,7 +35,7 @@ Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
 1. Logg inn i webklienten med klienten til den nye tenanten du har oppretta 
 
-2. Opprett ny nøkkel ved å trykke "+ Create key" under "Getting started". Eksporter privatnøkkelen og lagre denne i fila access.key.jwt
+2. Opprett ny nøkkel ved å trykke "+ Create key" under "Getting started". Eksporter privatnøkkelen og lagre denne i fila access.key.jwk
 
 
 3. Konvertere privatnøkkelen frå JWK til PEM. Til dette kan du bruke verktøyet jwker som kan installeres via homebrew
