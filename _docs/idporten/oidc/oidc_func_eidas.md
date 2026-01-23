@@ -117,12 +117,12 @@ Se [eIDAS eID Profile ]( https://ec.europa.eu/digital-building-blocks/wikis/disp
 
 Kjerneattributtene prefixes av ID-porten med "eidas_".  Det er 4 obligatoriske attributter som alltid vil være tilstede:
 
-| claim | eIDAS attributt | beskrivelse |
-| --- |  --- | --- |
-| eidas-personidentifier | PersonIdentifier | eidas-identifikator ("as persistent as possible") |
-| eidas-dateofbirth |DateOfBirth| Fødselsdato|
-| eidas-firstname |FirstName|Fornavn|
-| eidas-familityname |FamilyName|Etternavn|
+| claim               | eIDAS attributt   | beskrivelse                                       |
+|---------------------|-------------------|---------------------------------------------------|
+| eidas_identifier    | PersonIdentifier  | eidas-identifikator ("as persistent as possible") |
+| eidas_date_of_birth | DateOfBirth       | Fødselsdato                                       |
+| eidas_firstname     | CurrentGivenName  | Fornavn                                           |
+| eidas_lastname      | CurrentFamilyName | Etternavn                                         |
 
 Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 -  `xx` er 2-bokstavkode for landet der brukeren har sin elektroniske ID (Merk at dette ikke er garantert å også være brukeren sitt hjemland/statsborgerskap) 
