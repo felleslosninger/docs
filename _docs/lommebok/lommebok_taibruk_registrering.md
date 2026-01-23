@@ -19,7 +19,7 @@ Verksemder som skal vere brukarstad kan bruke [sjølvbetjent registrering](https
 
 For å kunne registrere på eit ekte organisasjonsnummer må du kunne representere verksemda di i Altinn.  Alternativt kan du logge inn som deg sjølv og verte tildelt eit syntetisk organisasjonsnummer. 
 
-Dersom ikkje ikkje får til å bruke sjølvbetjening registrering, kan du sende epost til Digdir (servicedesk@...) som skal me hjelpe deg.
+Dersom ikkje ikkje får til å bruke sjølvbetjening registrering, kan du sende epost til Digdir (servicedesk@...) so skal me hjelpe deg.
 
 
 **Andre roller**
@@ -27,7 +27,36 @@ Dersom ikkje ikkje får til å bruke sjølvbetjening registrering, kan du sende 
 Verksemder som skal vere utstedar, eller ha andre roller i økosystemet, må registrerast manuelt av Digdir. Ta kontakt på epost (servicedesk@...).
 
 
+
 ## Kva skal registrerast ?
+
+I sandkassen må du registrere følgjande:
+
+- **Namnet** på tenesta di  (som vert synleg for sluttbrukar)
+- Kva **data** (bevistypar) brukerstaden din kjem til å be om 
+- **Føremålet** med å behandle dese desse dataene
+
+Dei andre felta knytt til verksemda di er førehandsutfylte basert på organisasjonsnummer.   På sikt kan det kome fleire opplysningar som må registrerast.
+
+## Lage sertifikat
+
+Når registreringa er komplett, får du høve til å lage eit **access-sertifikat**.  Dette sertifikatet m ådu bruka til å autentisere brukarstaden din mot lommeboka.   Å lage eit slikt sertifikat er ein prosess i 4 steg
+
+1. Lag eit nøkkelpar med elliptisk kurve EC256-kurve.
+2. Lag ein CSR (certificate signing request) basert på den genererte public-nøkkelen.
+3. Last opp CSRen på registreringa di. Det vil då verte laga eit access-sertifikat.
+4. Last ned access-sertifikatet og bruk det saman med privatnøkkelen i tenesta di.
+
+Du må aldri sende privatnøkkelen 
+
+
+
+
+
+
+
+## 
+
 
 Krava rundt registrering finn me i [rettsakt for RP-registerering, C/2025/2621](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R0848&qid=1749119392688), og der informasjonen som skal registrerast finn du i Annex I.  I praksis er dette namn, organisasjonsnummer, og eit par andre felt. 
 
@@ -35,27 +64,17 @@ Ein kan spesielt merke seg at det skal registrerast kva **persondata** (bevistyp
 
 For spesielt interessert kan de sjå på den komplette datamodellen i [TS5-spesifikasjonen](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md#2-data-model).
 
+Du treng
 
-## Om sertifikater
+### Access-sertifikat
 
-Som del av registreringa må du lage ulike sertifikat som skal nyttast til identifikasjon og autentisering inn i økosystemet.
+**Tilgangssertifikatet** (Relying Party Access Certificate, RPAC) vert nytta til å autentisere deg opp mot lommeboka.
 
+Du må 
 
+### Registreringssertifikat
 
-
-
-
-
-
-
-
-
-
-
- men på sikt vil det kome ei sjølvbetjeningsløysing.  Som del av registreringsprosessen vil du motta to sertifikater som må brukast når du etterspør bevis frå lommebøkene til innbyggarane:  
-
- - Eitt **tilgangssertifikat** (Relying Party Access Certificate, RPAC) som vert nytta til å autentisere deg opp mot lommeboka
- - Eitt **registreringssertikat** (Relying Party Registration Certificate, RPRC)  som fortel kva data du har registrert at du vil førespørje.
+Eitt **registreringssertikat** (Relying Party Registration Certificate, RPRC) fortel kva data du har registrert at du vil førespørje.
 
 Du må sjølv lage privatnøkkel til desse sertifikata før du gjennomfører registreringa, og basert på denne lage ei [CSR-fil](https://en.wikipedia.org/wiki/Certificate_signing_request) som du inkluderer med søknaden.
 
