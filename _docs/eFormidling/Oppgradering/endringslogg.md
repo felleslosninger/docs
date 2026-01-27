@@ -20,10 +20,14 @@ redirect_from:
 
 ## 4.0.0
 
-// TODO dato
+// TODO 28.01.2026
 
-- Migrert fra å nytta Altinn 2 til Altinn 3 for Altinn formidling og Altinn Digital Post
-// TODO lenke til samarbeidsportalen?
+- Migrert til Altinn 3 for Altinn formidling (DPO) og Altinn Digital Post (DPV)
+// TODO lenke til samarbeidsportalen
+
+## 3.0.1
+
+17.09.2025
 
 ## 3.0.0
 
@@ -533,7 +537,7 @@ redirect_from:
 
 **Features**
 
-- Støtte for difi.\* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](../installasjon/installasjon#konfigurer-integrasjonspunktet)
+- Støtte for difi.\* prefix for ofte benytta spring/javax/server-properties. Desse [finn du her](../Installasjon/installasjon#konfigurer-integrasjonspunktet)
 
 **Feilrettinger**
 
@@ -592,7 +596,7 @@ I denne versjonen er det gjort flere endringer for å bedre paralellitet ved sen
 - Konfigurerbart hvor regelmessig meldingsstatuser skal hentes i DPV og DPF.
 - Innført paging for å redusere minnebruke ved oppslag av meldingsstatuser i DPV og DPF.
 
-_Alle nye properties finner du [her](../installasjon/forberede_installasjon#brannmuråpninger)_
+_Alle nye properties finner du [her](../Installasjon/forberede_installasjon#brannmuråpninger)_
 
 ---
 
@@ -611,7 +615,7 @@ Denne versjonen markerer overgangen fra OIDC-provider til Maskinporten, da det e
 - Egendefinert DPV varslingstekst støtter nå substitusjonsvariabelen “$reporterName$“ (i tillegg til allerede eksisterende “$reporteeName$“) .
 - Ifm. overgangen til Maskinporten, benyttes nå en nyere versjon av DSF som støtter flere adresselinjer. Integrasjonspunktet vil automatisk tilordne adresselinjene til feltene i forretningsmeldingen “urn:no:difi:digitalpost:xsd:fysisk::print“, men det er ikke gjort endringer i grensesnittet til kapabilitetsoppslag. Her vil adresselinjene ligge separert med semikolon (;) i “street”-feltet.
 - For å støtte en enklere overgangsfase for sakarkiv-leverandører ved implementasjon av eFormidling 2.0-grensesnittet, har vi fjernet kravet om UUID i ReceiverRef i SBDH. Denne valideringen vil bli gjeninnført ved et senere tidspunkt.
-- [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](../installasjon/forberede_installasjon#brannmuråpninger-i-produksjon) 146.192.252.50:443 - maskinporten.no (TCP)
+- [OBS. For å ta i bruk versjonen må en ha ny brannmuråpning](../Installasjon/forberede_installasjon#brannmuråpninger-i-produksjon) 146.192.252.50:443 - maskinporten.no (TCP)
 
 ---
 

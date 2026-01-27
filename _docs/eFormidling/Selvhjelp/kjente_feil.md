@@ -51,7 +51,7 @@ DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter
 
 Typiske feil: manglande tilganger, feil i integrasjonspunkt-local.properties.
 
-Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](../installasjon/opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) (utgår i IPv4)
+Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](../Installasjon/opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) (utgår i IPv4)
 
 Bruker og passord brukt er tilknyttet en datasystem bruker som du oppretter via lenken over. Knytt til dette datasysetmet så finnes det flere forskjellige kjente feilmeldinger du finner på [denne siden](https://www.altinn.no/hjelp/profil/datasystem--liste-over-feilmeldinger/) (ekstern lenke) (utgår i IPv4)
 
@@ -217,9 +217,9 @@ Her er må det djupare feilsøking til for å finne feilen. Kontakt Digitaliseri
 Her kan det også være fleire grunner til dette, blant annet:
 
 
-- Virksomheta har ikkje lasta opp virksomhetssertifikatet til mottakersystem i KS Svarut og dermed ikkje fullført konfigurasjonen. [Sjå veiledning](../installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)
+- Virksomheta har ikkje lasta opp virksomhetssertifikatet til mottakersystem i KS Svarut og dermed ikkje fullført konfigurasjonen. [Sjå veiledning](../Installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)
 - Virksomheta har ikkje registrert eget organisasjonsnummer inne på mottakersystem i KS Svarut
-- Om avsender sitt organisasjonsnumemr ikkje er med i metadata i meldinga så vil ikkje mottaker få meldinga rett til sak-arkivsystemet. Vi har ein workaround på dette som involverer å bruke eit dummy-orgnr. vha propertyen ```difi.move.fiks.inn.fallbackSenderOrgNr=``` [Les meir her](../installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
+- Om avsender sitt organisasjonsnumemr ikkje er med i metadata i meldinga så vil ikkje mottaker få meldinga rett til sak-arkivsystemet. Vi har ein workaround på dette som involverer å bruke eit dummy-orgnr. vha propertyen ```difi.move.fiks.inn.fallbackSenderOrgNr=``` [Les meir her](../Installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
 - SvarUt-brukere(kommuner/fylkeskommuner) med SvarUt versjon 4 eller eldre kan ikkje sende med orgnr i metadata. 
 - Ikkje alle SvarUt-brukere(kommuner/fylkeskommuner) sender med orgnr, sjølv om dei kan sende det teknisk sett. Kan være feks manglande oppsett i KS SvarUt hos avsender.
 

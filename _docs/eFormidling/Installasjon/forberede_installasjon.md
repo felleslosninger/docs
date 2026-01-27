@@ -46,8 +46,7 @@ Før en virksomhet kan ta i bruk eFormidling må den ha fått utstedt et virksom
 eFormidling krever virksomhetssertifikat for å autentisere virksomhetene som bruker tjenesten på en sikker måte. I
 tillegg brukes virksomhetssertifikatet til:
 
-- ende-til-ende kryptering av meldinger mellom virksomhetene i de tilfeller den underliggende meldingstjenesten støtter
-  dette
+- ende-til-ende kryptering av meldinger mellom virksomhetene i de tilfeller den underliggende meldingstjenesten støtter dette
 - signering av utgående meldinger i de tilfeller den underliggende meldingstjenesten støtter dette
 - autentisering av virksomheten mot enkelte tredjepartstjenester
 

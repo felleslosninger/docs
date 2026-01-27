@@ -26,7 +26,7 @@ uavhengig av hvilke typer meldinger som utveksles med hvem. Før en kan komme i 
 et integrasjonspunkt å utvikle mot. eFormidling tilbyr et offentlig testmiljø sammen med meldingstjenestene som brukes i
 eFormidling, og integrasjonspunktet må konfigureres med nødvendige tilganger til disse. Se gjerne:
 
-- [Kom i gang med integrasjonspunktet](../installasjon/)
+- [Kom i gang med integrasjonspunktet](../Installasjon/)
 - [Testing](../Testing/)
 
 I noen sjeldne tilfeller ønsker en virksomhet å kommunisere med virksomheter på eFormidling uten selv å kjøre et
@@ -100,7 +100,7 @@ på flere tjenesteleverandører
 
 Les mer om leveransemodeller i eFormidling:
 
-- [Kom i gang med integrasjonspunktet](../installasjon/)
+- [Kom i gang med integrasjonspunktet](../Installasjon/)
 - [På vegne av andre](pa_vegne_av)
 - [Kanal](kanal)
 

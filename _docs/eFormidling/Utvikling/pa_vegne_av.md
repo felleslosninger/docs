@@ -53,7 +53,7 @@ integrasjonspunktet ved at en kan konfigurere mange brukernavn og passord for KS
 Organisasjonsnummer, brukernavn og passord for virksomhetene som integrasjonspunktet skal sende og motta på vegne av må
 oppgis i konfigurasjon. Se `difi.move.fiks.ut.paa-vegne-av.*` og `difi.move.fiks.inn.paa-vegne-av.*` under:
 
-- [Konfigurere KS SvarUt og SvarInn](../installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
+- [Konfigurere KS SvarUt og SvarInn](../Installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
 
 > NB: På vegne av for KS Svarut og SvarInn kan først tas i bruk ved versjon 2.9.0 av integrasjonspunktet.
 
@@ -65,7 +65,7 @@ meldingstjeneste til leverandøren.
 Organisasjonsnummer for virksomhetene som integrasjonspunktet skal sende og motta på vegne av må oppgis i konfigurasjon.
 Se `difi.move.dpo.reportees` under:
 
-- [Konfigurere eFormidlings meldingstjeneste](../installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
+- [Konfigurere eFormidlings meldingstjeneste](../Installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
 
 Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altinn:
 

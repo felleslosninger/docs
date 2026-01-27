@@ -33,7 +33,7 @@ antall.
 For å unngå at installasjonene vil "stjele" innkommende meldingsstatuser og kvitteringer må en konfigurere kanal, se
 `difi.move.dpi.mpcId` under:
 
-- [Konfigurere Digital Post til Innbyggere](../installasjon/installasjon#konfigurere-digital-post-til-innbyggere-dpi)
+- [Konfigurere Digital Post til Innbyggere](../Installasjon/installasjon#konfigurere-digital-post-til-innbyggere-dpi)
 
 ## Kanaler for KS SvarUt og SvarInn
 
@@ -44,7 +44,7 @@ fra hverandre.
 For å unngå at installasjonene vil "stjele" innkommende meldinger må en slå av KS SvarInn for alle installasjoner
 utenom den som skal motta innkommende meldinger. Se `difi.move.fiks.inn.enable` under:
 
-- [Konfigurere KS SvarUt og SvarInn](../installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
+- [Konfigurere KS SvarUt og SvarInn](../Installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
 
 ## Kanaler for eFormidlings meldingstjeneste
 
@@ -54,7 +54,7 @@ kvitteringer hentes gitt et ønsket antall.
 For å unngå at installasjonene vil "stjele" innkommende meldinger, meldingsstatuser og kvitteringer må en konfigurere
 kanal, se `difi.move.dpo.message-channel` under:
 
-- [Konfigurere eFormidlings meldingstjeneste](../installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
+- [Konfigurere eFormidlings meldingstjeneste](../Installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
 
 ## Kanaler for eInnsyns meldingstjeneste
 
