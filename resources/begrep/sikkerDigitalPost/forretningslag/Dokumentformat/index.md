@@ -25,4 +25,3 @@ Generelle regler for alle filer:
 Spesielle regler knyttet til de enkelte dokument formatene:
 
   - [HTML dokumenter]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/html)
-  - [EHF dokumenter]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Dokumentformat/ehf)

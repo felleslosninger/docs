@@ -225,9 +225,11 @@ Integrasjonspunktet transformerer og beriker meldinger som sendes med Digital Po
 
 - [Transformasjon fra print til Digital Post til Innbyggere](../Transformasjoner/print_til_digital_post_til_innbyggere)
 
-## Anbefalinger ved adressering
+## Anbefalinger og krav ved adressering
 
 For å redusere risikoen for at brevpost ikke skal nå mottaker, har Posten kommet med gode anbefalinger på hvordan man skal adressere riktig, både til mottakere i Norge og i utlandet. Det anbefales at alle avsendervirksomheter følger disse. Les mer på [Posten adressering](https://www.posten.no/sende/adressering) (ekstern lenke)
+
+NB! Merk at utskriftstjenesten ikke støtter Land og Landkode-parameter ved adressering til utlandet. Land eller Landkode må derfor alltid angis som siste linje i adressen.
 
 ## Viktige merknader om FEIL-status på utskriftsmeldinger:
 

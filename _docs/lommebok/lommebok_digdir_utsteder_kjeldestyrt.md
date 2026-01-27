@@ -89,7 +89,7 @@ Dette endepunktet er sikra med access-token frå anten Maskinporten eller ID-por
 
 Du må kjenne `credential_configuration_id`  på ditt bevis.  Denne identifikatoren har du og Digdir vorte samde om som del av utviklingsløpet. Datamodellen for denne bevistypen har me også blitt samde om, og til slutt so har me vorte samde om kva API-endepunkt hjå deg som Bevisporten skal pull'e data frå, og tilhøyrande valideringsreglar.
 
-Av sikkerheitsomsyn krev me dobbel-validering av brukar-identitet:  du må både inkludere brukerid i payloaden, men også i tokenet som sikrar kallet mot Bevisporten.  Ved bruk av ID-porten-token så kjem dette automatisk, ved bruk av Maskinporten so må du hugse å be om [innbygger-bundne tokens](maskinporten_func_pid_restricted_tokens).  Dette er også eit valg som me har blitt samde om som del av utviklingsløpet.
+Av sikkerheitsomsyn krev me dobbel-validering av brukar-identitet:  du må både inkludere brukerid i payloaden, men også i tokenet som sikrar kallet mot Bevisporten.  Ved bruk av ID-porten-token så kjem dette automatisk, ved bruk av Maskinporten so må du hugse å be om [innbygger-bundne tokens](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html).  Dette er også eit valg som me har blitt samde om som del av utviklingsløpet.
 
 ## Grensesnittdefinisjon ved push
 
@@ -126,4 +126,5 @@ Ved bruk av denne brukerreisa so vert det nytta [pre-authorization code flow](ht
 
 
 
-Me har laga ein hendig [teknisk retta demo-klient](https://demo-ui-utsteder.test.eidas2sandkasse.net/) for dette bruksmønsteret.  Du limer inn ein json som passar med den aktuelle bevistypen, og so vil demo-klienten rendre ein QR-kode som du kan scanne med ei lommebok. 
+Me har laga ein hendig [teknisk retta demo-klient](https://bevisgenerator.test.eidas2sandkasse.net/) for dette bruksmønsteret.  Du limer inn ein json som passar med den aktuelle bevistypen, og so vil demo-klienten rendre ein QR-kode som du kan scanne med ei lommebok. 
+

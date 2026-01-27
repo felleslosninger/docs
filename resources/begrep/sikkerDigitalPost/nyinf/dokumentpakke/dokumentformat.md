@@ -19,4 +19,3 @@ Generelle regler for alle filer:
 Spesielle regler knyttet til de enkelte dokument formatene:
 
   - [HTML dokumenter](dpi_html.html)
-  - [EHF dokumenter](dpi_ehf.html)

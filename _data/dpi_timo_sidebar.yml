@@ -56,8 +56,6 @@ folders:
         jurl: /dpi_mimetypes.html  
       - title: HTML
         jurl: /dpi_html.html
-      - title: EHF
-        jurl: /dpi_ehf.html
       - title: Sikkerhet
         jurl: /dpi_dokumentpakke_sikkerhet.html
 
@@ -78,6 +76,8 @@ folders:
            
       - title: Utskriftstjenesten
         jurl: /dpi_utskrift_index.html
+      - title: Krav og anbefalinger ved adressering
+        jurl: /dpi_adressering_index.html
         
     - title: Forretningsmeldinger
       folderitems:

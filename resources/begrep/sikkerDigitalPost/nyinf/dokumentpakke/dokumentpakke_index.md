@@ -47,7 +47,7 @@ inneholder metadata relatert til hver fil.
 ### Eksempel
 
   - [Manifest.](../../eksempler/sdpManifest.xml)
-  - [Full dokumentpakke.](../../eksempler/post.asice.zip)
+  - [Full dokumentpakke.](../../eksempler/post.asice.zip) (Nedlastbar fil)
 
 ### Refererte standarder
 

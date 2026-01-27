@@ -42,10 +42,10 @@ sertifikat som hentes fra oppslagstjenesten for kontaktinformasjon.
 | ETSI, ETSI TS 101 903 | [Electronic Signatures and Infrastructures (ESI); XML Advanced Electronic Signatures (XAdES)](etsi3)                                       | ETSI, 2010-12. |
 | ETSI, ETSI TS 103 171 | [Electronic Signatures and Infrastructures (ESI); XAdES Baseline Profile](etsi4)                                                           | ETSI, 2012-03. |
 | IETF, RFC 5652        | [Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf5)                                                                       | IETF, 2009-09. |
-| IETF, RFC 3560        | [Use of the RSAES-OAEP Key Transport Algorithm in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf6)                  | IETF, 2003-07. |
+| IETF, RFC 3560        | [Use of the RSAES-OAEP Key Transport Algorithm in the Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](http://tools.ietf.org/html/rfc3560)| IETF, 2003-07. |
 | IETF, RFC 3565        | [Use of the Advanced Encryption Standard (AES) Encryption Algorithm in Cryptographic Message Syntax <notexttile>(CMS)</notexttile>](ietf7) | IETF, 2003-07. |
 | IETF, RFC 5084        | [Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax (CMS)](http://tools.ietf.org/html/rfc5084)         | IETF, 2007-11. |
-| IETF, RFC 5083        | [Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type](ietf9)                                                      | IETF, 2007-11  |
+| IETF, RFC 5083        | [Cryptographic Message Syntax (CMS) Authenticated-Enveloped-Data Content Type](https://datatracker.ietf.org/doc/html/rfc5083)              | IETF, 2007-11  |
 
 ### Integritet
 
@@ -72,8 +72,8 @@ videre begrenset i henhold til profilen definert i [Baseline Profile
 
 #### Signatur i dokumentpakken for sikker digital post
 
-Dokumentpakken bør være signert av [Behandlingsansvarlig](../Aktorer.md),
-men kan signeres av [Databehandler](../Aktorer.md).
+Dokumentpakken bør være signert av [Behandlingsansvarlig]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer),
+men kan signeres av [Databehandler]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/forretningslag/Aktorer).
 
 Signaturen skal være i henhold til [XAdES (ETSI TS 101 903)](etsi3) med
 basisprofilen definert i [XAdES Baseline Profile (ETSI TS 103
@@ -137,7 +137,7 @@ Kan være <a href="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">http://www.w
 
 Dokumentpakken krypteres til mottakers sertifikat som leveres fra
 oppslagstjenesten. Krypteringen skal gjøres i henhold til [CMS
-(Cryptographic Message Syntax)](ietf5) med begrensninger angitt
+(Cryptographic Message Syntax)](http://tools.ietf.org/html/rfc5652) med begrensninger angitt
 nedenfor.
 
 CMS er BER og DER kodet ASN.1 og starter med en sekvens av ContentInfo.
@@ -196,7 +196,7 @@ Her skal følgende begrensninger gjelde:
 Her skal følgende begrensninger gjelde:
 
   - algorithm = 1.2.840.113549.1.1.7 (id-RSAES-OAEP) som spesifisert i
-    [RSAES-OAEP Key Transport Algorithm](ietf6).
+    [RSAES-OAEP Key Transport Algorithm](http://tools.ietf.org/html/rfc3560).
   - parameteres = RSAES-OAEP-params som definert nedenfor.
 
 <!-- end list -->
@@ -241,7 +241,7 @@ Standard (AES) Encryption Algorithm in Cryptographic Message Syntax
   - parameters = 16 byte IV
 
 Ved bruk av aes256-CBC skal padding gjøres i henhold til [kapittel 6.3 i
-CMS spesifikasjonen](ietf5_6_3).
+CMS spesifikasjonen](http://tools.ietf.org/html/rfc5652\#section-6.3 ).
 
 Integriteten til den krypterte dokumentpakken ivaretas av
 [Dokumentpakkefingeravtrykk](../../begrep/Dokumentpakkefingeravtrykk.md)
@@ -267,7 +267,7 @@ ContentInfo vil være:
   - content AuthEnvelopedData
 
 AuthEnvelopedData er definert i [Cryptographic Message Syntax (CMS)
-Authenticated-Enveloped-Data Content Type](ietf9).
+Authenticated-Enveloped-Data Content Type](https://datatracker.ietf.org/doc/html/rfc5083).
 
     AuthEnvelopedData ::= SEQUENCE {
       version CMSVersion,

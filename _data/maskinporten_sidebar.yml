@@ -63,6 +63,9 @@ folders:
       - title: Systembruker-delegering
         jurl: /docs/Maskinporten/maskinporten_func_systembruker.html
 
+      - title: Samtykketjenesten
+        jurl: /docs/Maskinporten/maskinporten_func_samtykke.html
+
       - title: Audience-begrensning
         jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens.html
 
@@ -96,6 +99,9 @@ folders:
     jurl: /docs/Maskinporten/maskinporten_skyporten_azure.html
   - title: Skyporten med AWS
     jurl: /docs/Maskinporten/maskinporten_skyporten_aws.html
+  - title: Skyporten med Databricks
+    jurl: /docs/Maskinporten/maskinporten_skyporten_databricks.html
+
 
 ###########################
 
