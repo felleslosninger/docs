@@ -8,11 +8,11 @@ redirect_from: /avsender
 ---  
 
 |---|---|
-|Term|Avsender|
-|Definisjon|Juridisk organisasjon/entitet som er Behandlingsansvarlig for innholdet i den digitale posten|
-|Datatype|complexType|
-|Kilde|Digdir|
-|Kommentar|Avsender er den som er ansvarlig for innholdet i forsendelsen. Kan være forskjellige frå Databehandler (for eksempel kan SvarUT være databehandler på vegne av en kommune)|
+| Term       | | {{page.title}} |
+| Definisjon | Juridisk organisasjon/entitet som er Behandlingsansvarlig for innholdet i den digitale posten |
+| Datatype   | complexType |
+| Kilde      | Digdir |
+| Kommentar  | Avsender er den som er ansvarlig for innholdet i forsendelsen. Kan være forskjellige frå Databehandler (for eksempel kan SvarUT være databehandler på vegne av en kommune) |
 
 #### Egenskaper
 

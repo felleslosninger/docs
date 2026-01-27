@@ -7,7 +7,7 @@ sidebar: dpi_timo_sidebar
 <!-- ![](/images/dpi/underarbeide.png) -->
 
  
-    |---|---|
+|---|---|
 | Identifikator | html |
 | Term          | HTML |
 | Definisjon    | HTML fil |
