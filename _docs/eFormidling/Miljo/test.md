@@ -16,7 +16,7 @@ For å bruke eFormidlings testmiljø kreves et test-virksomhetssertifikat utsted
 
 Integrasjonspunktet må konfigureres til å bruke testmiljøet:
 
-- [Konfigurasjon av miljø (produksjon eller test)](../Installasjon/installasjon#miljø-produksjon-eller-test)
+- [Konfigurasjon av miljø (produksjon eller test)](../installasjon/installasjon#miljø-produksjon-eller-test)
 
 Følgende tjenester brukes av integrasjonspunktets test-miljø og må kunne nås:
 

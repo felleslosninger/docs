@@ -40,6 +40,6 @@ men den kan *ikke* oppgradere Integrasjonspunkt til v3 eller v4 automatisk.
 
 Første gang du installerer integrasjonspunktet? Her finner du informasjon om hvordan installere eller oppgradere eksisterende integrasjonspunkt.
 
-- [Kom i gang med integrasjonspunktet](../Installasjon/)
-- [Installasjon](../Installasjon/installasjon)
+- [Kom i gang med integrasjonspunktet](../installasjon/)
+- [Installasjon](../installasjon/installasjon)
 - [Oppgradering](../Oppgradering/)
