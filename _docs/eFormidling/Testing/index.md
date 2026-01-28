@@ -44,7 +44,7 @@ et annet organisasjonsnummer enn det integrasjonspunktet kjører. Det samme gjel
 For KS SvarUt og SvarInn benyttes testmiljø som bare støtter syntetiske organisasjonsnummer. En kan benytte brukernavn og passord for testvirksomhet hos KS SvarUt og SvarInn med
 et annet organisasjonsnummer enn det integrasjonspunktet kjører.
 
-// TODO burde vert meir utdypende? Skal det ligge ein anna plass?
+<!-- TODO burde vert meir utdypende? Skal det ligge ein anna plass? -->
 Ved eFormidlings meldingstjeneste så kan man benytte ekte org, men da må man opprette system og systembruker med tenor testorg. Da setter man ``partyOrgNo`` i requesten til tenor organisasjonen.
 
 #### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer (Utgår i IPv4)
@@ -64,6 +64,12 @@ difi.move.dpo.serviceEditionCode=270815
 Med et slikt oppsett kan en bruke samme syntetiske organisasjonsnummer på tvers av meldingstjenestene så lenge en passer
 på når en bestiller tilganger og testvirksomhet: alt må bestilles til samme organisasjonsnummer, det er ingen sentral
 koordinering av dette.
+
+
+#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer (IPv4)
+
+<!-- TODO beskrive eller henvise til hvor dette er beskrevet -->
+![](/images/dpi/underarbeide.png)
 
 ### Teste i eFormidlings produksjonsmiljø
 

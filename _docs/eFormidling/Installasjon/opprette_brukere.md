@@ -19,16 +19,16 @@ og passord.
 For integrasjonspunkt eldre enn versjon 4 sjå [Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste-utgår-i-ipv4)
 
 - Virksomheten må klargjøre en maskinporten klient og tildele nødvendige scopes
-- Virksomheten må opprette eit system i Altinn. Systemet må ha tilgangspakken "informasjon-og-kommunikasjon". 
-- - Systemnavn skal inn i properties filen til integrasjonspunktet.
+- Virksomheten må opprette eit system i Altinn. Systemet må ha tilgangspakken "informasjon-og-kommunikasjon".
+- Systemnavn skal inn i properties filen til integrasjonspunktet.
 - Virksomheten mp opprette en systembruker på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
-- - Virksomheiten må godkjenne opprettelsen av systembruker i Altinn
-- - Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
+- Virksomheiten må godkjenne opprettelsen av systembruker i Altinn
+- Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
 
 Dersom man skal sende og motta på vegne av andre virksomheter må man gjøre følgende :
 - Opprett en systembruker for virksomheten på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
-- - Virksomheten må selv godkjenne opprettelsen av systembruker i Altinn.
-- - Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
+- Virksomheten må selv godkjenne opprettelsen av systembruker i Altinn.
+- Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
 
 ## Onboarding sjekkliste
 Opprettelse av system og systembruker(e) er litt omfattende (se sekvensdiagram nedenfor),

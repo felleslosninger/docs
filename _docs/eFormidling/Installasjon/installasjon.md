@@ -495,19 +495,18 @@ difi.move.dpo.password=mypassword
 #### Konfigurere eFormidlings meldingstjeneste (DPO) IPv4
 
 > Før DPO tjenesten kan tas i bruk må du først opprette et system og en systembruker i Altinn.
-> TODO skal vi beskrive onboarding her ?
-> Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
+> Se detaljer om dette i [opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
 
 
-| Egenskap                            | Beskrivelse                                                                                                             | Standardverdi |
-|-------------------------------------|-------------------------------------------------------------------------------------------------------------------------| ------------- |
-| difi.move.feature.enableDPO         | Slår på/av støtte for eFormidlings meldingstjeneste (true/false)                                                        | false         |
-| difi.move.dpo.message-channel       | Identifikator for meldingskanal, maks 25 tegn                                                                           | (ingen)       |
-| difi.move.dpo.systemName            | Navn på systemet du har opprettet i Altinn for ditt Integrasjonspunkt, eks <<orgnr>>_integrasjonspunkt                  | (ingen)| 
-| difi.move.dpo.systemUser.orgId      | Din egen oganisasjons landskode og organisasjonsnummer på formatet: <<landskode>>:<<orgnr>> Landskode for norge er 0192 | (ingen)| 
-| difi.move.dpo.systemUser.name       | Din egen organisasjons systembruker navn                                                                                | (ingen) | 
-| difi.move.dpo.reportees[0..n].orgId | Landskode og organisasjonsnummer til organisasjon en skal sende og motta på vegne av                                    | (ingen)       |
-| difi.move.dpo.reportees[0..n].name  | Navn på systembruker til organisasjon en skal sende og motta på vegne av                                                | (ingen)       |
+| Egenskap                            | Beskrivelse                                                                                                              | Standardverdi |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.enableDPO         | Slår på/av støtte for eFormidlings meldingstjeneste (true/false)                                                         | false         |
+| difi.move.dpo.message-channel       | Identifikator for meldingskanal, maks 25 tegn                                                                            | (ingen)       |
+| difi.move.dpo.systemName            | Navn på systemet du har opprettet i Altinn for ditt Integrasjonspunkt, eks <<orgnr>>_integrasjonspunkt                   | (ingen)       | 
+| difi.move.dpo.systemUser.orgId      | Din egen organisasjons landskode og organisasjonsnummer på formatet: <<landskode>>:<<orgnr>> Landskode for norge er 0192 | (ingen)       | 
+| difi.move.dpo.systemUser.name       | Din egen organisasjons systembruker navn                                                                                 | (ingen)       | 
+| difi.move.dpo.reportees[0..n].orgId | Landskode og organisasjonsnummer til organisasjon en skal sende og motta på vegne av                                     | (ingen)       |
+| difi.move.dpo.reportees[0..n].name  | Navn på systembruker til organisasjon en skal sende og motta på vegne av                                                 | (ingen)       |
 
 
 Eksempel:
@@ -625,9 +624,6 @@ difi.move.dpv.enableDueDate=false
 
 > Før DPV tjenesten kan tas i bruk må du ha en maskinporten client med rett scope og du må
 > rulles inn i tilgangslisten for DPV.  Send forespørsel om dette til servicedesk@digdir.no
-
-<!-- TODO default så benyttes jo move properties for sertifikat, men det er mulig å konfigurere dette spesifikt for DPO, DPO og DPV
-Skal vi beskrives hvordan sertifikat, scopes og oidc kan konfigurerers i et felles "advanced" avsnitt? --> 
 
 | Egenskap                                | Beskrivelse                                                                                               | Standardverdi |
 | --------------------------------------- |-----------------------------------------------------------------------------------------------------------| ----- |
