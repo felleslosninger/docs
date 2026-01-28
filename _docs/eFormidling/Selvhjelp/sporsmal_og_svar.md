@@ -60,10 +60,10 @@ Endre sertifikat passord:
 
 Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved første gangs installasjon:
 
-- [Tilgjengeliggjøre virksomhetssertifikatet i eFormidlings sertifikatkatalog](../Installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-i-eformidlings-sertifikatkatalog)
-- [Tilgjengeliggjøre virksomhetssertifikatet for virksomhetens integrasjonspunkt](../Installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-for-virksomhetens-integrasjonspunkt)
+- [Tilgjengeliggjøre virksomhetssertifikatet i eFormidlings sertifikatkatalog](../installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-i-eformidlings-sertifikatkatalog)
+- [Tilgjengeliggjøre virksomhetssertifikatet for virksomhetens integrasjonspunkt](../installasjon/forberede_installasjon#tilgjengeliggjøre-virksomhetssertifikatet-for-virksomhetens-integrasjonspunkt)
 
-> **NB!** Dersom dere bruker meldingstypen DPF må public del av sertifikatet lastet opp hos svarut.ks.no under ["Mottakersystem"](../Installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)!
+> **NB!** Dersom dere bruker meldingstypen DPF må public del av sertifikatet lastet opp hos svarut.ks.no under ["Mottakersystem"](../installasjon/opprette_brukere#konfigurering-av-svarinn-mottakersystem)!
 
 ## Integrasjonspunktet
 
@@ -71,7 +71,7 @@ Når en bytter virksomhetssertifikat kan en følge samme fremgangsmåte som ved 
 
 En kan bruke HashiCorp Vault eller injisering av miljøvariable. Se beskrivelse på:
 
-- [Konfigurer integrasjonspunktet](../Installasjon/installasjon#konfigurer-integrasjonspunktet)
+- [Konfigurer integrasjonspunktet](../installasjon/installasjon#konfigurer-integrasjonspunktet)
 
 ### Hvordan installerer jeg Java-versjonen integrasjonspunktet krever?
 
@@ -102,7 +102,7 @@ java -version
 
 Ingen meldinger blir videreformidlet til webhook-abonnement som standard. Dette må konfigureres. Se:
 
-- [Webhook-abonnement](../Installasjon/installasjon#webhook-abonnement)
+- [Webhook-abonnement](../installasjon/installasjon#webhook-abonnement)
 
 ### Hvilke meldingsmetadata lagres av integrasjonspunktet?
 
@@ -291,7 +291,7 @@ Primary key fingerprint: AEF2 7AA6 948A 3856 932A  F98E CA56 4339 3753 ECE3
 KOSMOS står for kontinuerlige oppdateringar for sikker meldingsutveksling i offentleg sektor. KOSMOS er en støtte-
 applikasjon som automatisk holder integrasjonspunktet oppgradert.
 
-- [Automatisk oppgradering](../Installasjon/automatisk_oppgradering)
+- [Automatisk oppgradering](../installasjon/automatisk_oppgradering)
 
 ### Hva betyr versjonsnummeret?
 
