@@ -12,6 +12,10 @@ redirect_from:
 Formålet med denne siden er å gjøre det enklest mulig å installere og konfigurere automatisk
 oppgradering av eFormidlings integrasjonspunkt.
 
+> Det er ikke mulig å oppgradere automatisk fra versjon 2 til v3 eller v4 av Integrasjonspunktet.
+> Du må oppgradere til nyere versjoner manuelt da dette involverer installasjon av nyere Java versjon
+> og endringer i lokal konfigurasjon.
+
 1. TOC
 {:toc}
 

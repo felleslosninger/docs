@@ -7,14 +7,11 @@ sidebar: dpi_sidebar
 redirect_from: /sdp_html
 ---
 
-  - Identifikator  
-    <span style="{ pageUrlMinor ;">[}]({{)</span> pageUrlMinor }}
-  - Term  
-    {{page.title}}
-  - Definisjon  
-    HTML fil
-  - Datatype  
-    fil
+|---|---|
+| Identifikator |  |
+| Term          | {{page.title}} |
+| Definisjon    | HTML type |
+| Datatype      | fil |
 
 Dersom en melding er levert som ren HTML vil denne vises til
 posttmottaker uten bruk av nettlesertillegg.

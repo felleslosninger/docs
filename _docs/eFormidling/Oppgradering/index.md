@@ -23,7 +23,7 @@ tag og starte container/pod med denne. Hva som er siste versjon kan du se på:
 
 > For de som bruker Java anbefales det å ta i bruk automatisk oppgradering:
 >
-> - [Automatisk oppgradering](../installasjon/automatisk_oppgradering)
+> - [Automatisk oppgradering](../Installasjon/automatisk_oppgradering)
 
 For å oppdatere integrasjonspunktet må du bytte ut filen `integrasjonspunkt-[versjon].jar` med en nyere versjon.
 
@@ -35,9 +35,9 @@ For å oppdatere integrasjonspunktet må du bytte ut filen `integrasjonspunkt-[v
 
 Eksempel på hvordan oppgradering gjøres:
 
-- [Oppgradere integrasjonspunkt som kjører som en tjeneste](../installasjon/Eksempel/start_og_stopp#oppgradere-integrasjonspunkt-som-kjører-som-en-tjeneste)
-- [Oppgradere integrasjonspunkt som kjører fra kommandovindu](../installasjon/Eksempel/start_og_stopp#oppgradere-integrasjonspunkt-som-kjører-fra-kommandovindu)
-- [Oppgradere integrasjonspunkt som kjører via task scheduler](../installasjon/Eksempel/start_og_stopp#oppgradere-integrasjonspunkt-som-kjører-via-task-scheduler)
+- [Oppgradere integrasjonspunkt som kjører som en tjeneste](../Installasjon/Eksempel/start_og_stopp#oppgradere-integrasjonspunkt-som-kjører-som-en-tjeneste)
+- [Oppgradere integrasjonspunkt som kjører fra kommandovindu](../Installasjon/Eksempel/start_og_stopp#oppgradere-integrasjonspunkt-som-kjører-fra-kommandovindu)
+- [Oppgradere integrasjonspunkt som kjører via task scheduler](../Installasjon/Eksempel/start_og_stopp#oppgradere-integrasjonspunkt-som-kjører-via-task-scheduler)
 
 ## Verifiser vellykket oppgradering
 
