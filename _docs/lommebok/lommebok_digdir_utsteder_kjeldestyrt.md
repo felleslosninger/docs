@@ -119,6 +119,8 @@ Bevisporten vil returnere ein feil dersom dataene du pushar ikkje validerer ihht
 
 Tabellen gir oversikt over datatyper utstederen definerer. Input til API er i JSON og bruker stadard JSON-typer.  Det er faste konverteringer for primtive typer.  Utstederen definerer også egne typer.
 
+Ulike lommebokimplementasjoner kan vise de ulike typene på forskjellig måte.  F.eks. har enkelte app'er ikke støtte for visning av bilder i SD-JWT VC-baserte bevis.
+
 | Type i bevisdefinisjon | Eksempel input JSON API | Representasjon mdoc | Representasjon SD-JWT | Beskrivelse |
 | --- | --- | --- | --- |--- |
 | string | "abc" | CBOR major type 3 | string | Strenger |
@@ -136,5 +138,6 @@ Ved bruk av denne brukerreisa so vert det nytta [pre-authorization code flow](ht
 
 
 Me har laga ein hendig [teknisk retta demo-klient](https://bevisgenerator.test.eidas2sandkasse.net/) for dette bruksmønsteret.  Du limer inn ein json som passar med den aktuelle bevistypen, og so vil demo-klienten rendre ein QR-kode som du kan scanne med ei lommebok. 
+
 
 
