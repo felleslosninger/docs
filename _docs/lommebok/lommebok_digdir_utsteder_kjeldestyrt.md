@@ -106,20 +106,29 @@ Content-Type: application/json
   "subject": {
     "identifier": "50917500484"
   },
-  "claims": [
-    {
-      "name": "norwegian_national_id_number",
-      "value": "50917500484"
-    },
-    {
-      "name": "norwegian_national_id_number_type",
-      "value": "D-nummer"
-    }
-  ]
+  "claims": {
+    "norwegian_national_id_number": "50917500484",
+    "norwegian_national_id_number_type": "D-nummer"
+  }
 }
 ```
 
 Bevisporten vil returnere ein feil dersom dataene du pushar ikkje validerer ihht reglane som me har blitt samde om ila. utviklingsløpet. 
+
+### Datatyper
+
+Tabellen gir oversikt over datatyper utstederen definerer. Input til API er i JSON og bruker stadard JSON-typer.  Det er faste konverteringer for primtive typer.  Utstederen definerer også egne typer.
+
+| Type i bevisdefinisjon | Eksempel input JSON API | Representasjon mdoc | Representasjon SD-JWT | Beskrivelse |
+| --- | --- | --- | --- |--- |
+| string | "abc" | CBOR major type 3 | string | Strenger |
+| number | 123 | CBOR major type 0, 1, 7.* | number | Tall |
+| boolean | true | CBOR major type 7.20, 7.21 | boolean| Boolesk verdi |
+| iso_date | "2025-12-30" | CBOR major type  6.1004 | string| Dato |
+| iso_date_time | "2026-01-01T08:30:00Z" | CBOR major type 6.0 | string| Dato og tid |
+| binary | "/9j/4..." | CBOR major type 2 | string | Input til API er en base64-encoded string.  Type for binærdata defineres med en mime-type.  I SD-JWT brukes [RFC-2397 The data URL scheme](https://www.rfc-editor.org/rfc/rfc2397.html) og et bilde kan representeres som som ```"data:image/png;base64,/9j/4..."```. |
+
+Støtte for lister og map er under planlegging.
 
 ## Protokoll og testing
 Ved bruk av denne brukerreisa so vert det nytta [pre-authorization code flow](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-pre-authorized-code-flow).
@@ -127,4 +136,5 @@ Ved bruk av denne brukerreisa so vert det nytta [pre-authorization code flow](ht
 
 
 Me har laga ein hendig [teknisk retta demo-klient](https://bevisgenerator.test.eidas2sandkasse.net/) for dette bruksmønsteret.  Du limer inn ein json som passar med den aktuelle bevistypen, og so vil demo-klienten rendre ein QR-kode som du kan scanne med ei lommebok. 
+
 
