@@ -37,19 +37,18 @@ Me ynskjer at utstedaren skal følge Final-versjonen av OpenID4VCI.  Dog testar 
 
 Features som er støtta no:
 - ISO mdoc bevis-format
+- SD-JWT VC bevis-format
 - Pre-authorization code 
 - Authorization-code flow 
 - Bruksmønster 1,2,3
 
 Framtidig funksjonalitet:
 - tx_code
-- SD-JWT bevis-format
 - Web-grensesnitt for sluttbrukar
 - key binding
 - Bevis-type-spesifikke signeringssertifikat
 - Autentisering og autorisasjon av lommebøker basert på WUA
 - verifisering mot [OpenID conformance test suites](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-credential-issuance/)
-
 
 
 ## Metadata
@@ -64,4 +63,5 @@ Kjeldekode for utstedaren finn du på [sandkassen sitt Github-område](https://g
 - *eudiw-issuer-server*: backend som er hovudmotoren i utstedaren
 - *eudiw-auth-server* Ein Oauth2 autorisasjonsserver spesialtdesigna for utstedaren
 - *eudiw-issuer-ui*: brukargrensesnitt for innbyggar
+
 
