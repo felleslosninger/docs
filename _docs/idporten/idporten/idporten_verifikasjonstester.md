@@ -58,7 +58,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **1.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **1.3** - Vel MinID eller TestID som innloggingsalternativ og fullfør innlogging.  
 **1.4** - Verifiser at du kjem tilbake til eiga teneste.  
-**1.5** - Endre URL i nettleser til [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/). 
+**1.5** - Endre URL i nettleser til [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/)
 **1.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
 **1.7** - Verifiser i feltet «Validated id_token», at sikkerheitsnivået (amr) er idporten-loa-substantial og at autentiseringsmetoden er den aktuelle eID. 
 
