@@ -7,7 +7,7 @@ sidebar: einnsyn_sidebar
 redirect_from: /einnsyn_docker_spesifikk_installasjon
 ---
 
-## Docker-spesifikk intallasjon
+## Docker-spesifikk installasjon
 
 Ved bruk av Docker må eInnsynsklienten konfigureres ved hjelp av miljøvariabler
 
