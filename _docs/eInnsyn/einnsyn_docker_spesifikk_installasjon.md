@@ -11,7 +11,8 @@ redirect_from: /einnsyn_docker_spesifikk_installasjon
 
 Ved bruk av Docker må eInnsynsklienten konfigureres ved hjelp av miljøvariabler
 
-Hvordan en spesifiserer konfigurasjonen avhenger av hvilke verktøy som brukes: docker-compose, Kubernetes eller andre. Et par eksempler:
+Hvordan en spesifiserer konfigurasjonen avhenger av hvilke verktøy som brukes: docker-compose, Kubernetes eller andre. 
+Et par yaml-eksempler med minimumskonfigurasjon kan en se under:
 
 ### Kubernetes
 
@@ -83,3 +84,28 @@ spec:
       port: 8080
       targetPort: 8080
 ```
+
+### Docker-compose
+
+```yaml
+version: "3.9"
+
+services:
+  einnsyn-klient:
+    image: digdir/einnsyn-klient:4.0.0
+    container_name: einnsyn-klient
+    environment:
+      USE_IP: "true"
+      APPLICATION_MOVE_URL: "http://localhost:9093"
+      APPLICATION_INPUT_DIRECTORY: "/input"
+      APPLICATION_ORGNUMMER: "123456789"
+      APPLICATION_RECEIVER_ID: "991825827"
+      SPRING_MAIL_HOST: ""
+      SPRING_MAIL_PORT: ""
+      SPRING_MAIL_USERNAME: ""
+      SPRING_MAIL_PASSWORD: ""
+    volumes:
+      - ./input:/input
+```
+
+
