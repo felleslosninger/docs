@@ -119,8 +119,6 @@ Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/t
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
 
-{% include note.html content="Altinn3-organisasjonvelger fungerer p.t. bare for brukere som har fått tilgang til ressursen via enkelttjeneste-delegering, dvs. direkte til sitt f/d-nummer.  Støtte for brukere som har tilgang gjennom en tilgangspakke/rolle kommer mot slutten av 2025. " %}
-
 Dersom kunden ønsker å bruke Altinn 3 ressurser som autorativ kilde for representasjonsforhold, må klienten oppgi  `ansattporten:altinn:resource` som RAR-type. 
 
 Følgende claims kan sendes inn i request: 
@@ -130,7 +128,7 @@ Følgende claims kan sendes inn i request:
 |resource | Påkrevd |Hvilken ressurs i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{resource_id} `| Spesifiseres pr autorisasjonsobjekt |
 |organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
 |allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
-|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise slettede virksomheter. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom  spesifisert i flere autorisasjonsobjekter |
+|allow_deleted_organizations | Ikke implementert | Dersom `true` så vil organisasjonsvelger vise slettede virksomheter. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom  spesifisert i flere autorisasjonsobjekter |
 |representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
 
 *Eksempel på request som krever representasjon, og tillater å velge flere virksomheter*: 
@@ -140,7 +138,7 @@ Følgende claims kan sendes inn i request:
       "type": "ansattporten:altinn:resource",
       "resource": "urn:altinn:resource:resource_enkeltrettighet",
       "allow_multiple_organizations": true,
-      "representation_is_requierd": true
+      "representation_is_required": true
     }
   ]
 ```
@@ -155,7 +153,6 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 | authorized_parties | Array med valgte virksomheter. |
 | orgno | For hver virksomhet, objekt med orgno representert ihht iso6523 standard.  |
 | resource | For hver virksomhet, ressurs-id, skal matche id i etterspurt ressurs |
-| resource-name | For hver virksomhet, navnet på ressursen | 
 | unit-type | For hver virksomhet, angir organisasjonstypen ihht https://www.brreg.no/bedrift/organisasjonsformer/ |
 
 
@@ -214,7 +211,7 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-| orgno | Norsk organisasjonsnummer  |
+| orgno | Organisasjonsidentifikator ihht ISO6523  |
 
 *Eksempel på respons*:
 ```

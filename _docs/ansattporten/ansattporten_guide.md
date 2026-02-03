@@ -50,7 +50,7 @@ Denne flyten er grundig dokumentert på denne siden  [innlogging med ID-porten](
 
 
 * Du finner Ansattporten-spesifikk protokoll-definisjon [her](ansattporten_protocol.html).
-* Du må selvsagt bruke Ansattporten sine endepunkter, som du finner [her]( [ansattporten_wellknown.html]).  
+* Du må selvsagt bruke Ansattporten sine endepunkter, som du finner [her](ansattporten_wellknown.html).  
 * Klienten du bruker, må være registrert i Selvbetjening til å bruke Ansattporten og ikke ID-porten.
 
 # Støttede eIDer 
