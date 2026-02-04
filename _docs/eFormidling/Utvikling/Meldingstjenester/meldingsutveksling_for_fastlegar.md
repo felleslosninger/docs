@@ -180,7 +180,7 @@ Eksempel SBD for sending av helsemelding til fastlege via NHN:
 | Felt                                         | Beskrivelse                                                                                                                                                                      |
 | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sender.identifier.value`                    | Organisasjonsnummer til avsendaren, prefiks med `0192:` for norske organisasjonsnummer. Eksempel: `0192:931796003`                                                               |
-| `receiver.identifier.value`                  | Fødselsnummer til mottakaren (pasienten). Utan prefiks. Eksempel: `30878199614`                                                                                                  |
+| `receiver.identifier.value`                  | Fødselsnummer til pasienten. Utan prefiks. Eksempel: `30878199614`                                                                                                               |
 | `businessScope.scope[].type: "SenderHerId2"` | HER-ID til avsendarens MSH (Message Service Handler). Dette er ein unik identifikator i Adresseregisteret (AR) som identifiserer avsendarens meldingstjenar. Eksempel: `8143154` |
 
 > **Merk:** HER-ID må vere registrert i Adresseregisteret (AR) og knytt til organisasjonen sin MSH før meldingar kan sendast.
