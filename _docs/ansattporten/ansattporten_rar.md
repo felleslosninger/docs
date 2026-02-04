@@ -152,16 +152,31 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-| orgno | Organisasjonsidentifikator ihht ISO6523  |
+| type | Alltid samme som i request - ansattporten:orgno |
+| authorized_parties | Et objekt for hver virksomhet bruker har valgt å representere  |
+| orgno | For hver authorized_party - Organisasjonsidentifikator ihht ISO6523  |
+| name | For hver authorized_party - Registrert navn på valgt virksomhet |
+| rights | Hvilke rettigheter bruker har for valgt virksomhet. Bare inkludert om bruker har fått tildelt spesifikke rettigheter. |
 
 *Eksempel på respons*:
 ```
   "authorization_details" : [ {
-    "type" : "ansattporten:orgno",
-    "orgno:" : {
-        "Authority" : "iso6523-actorid-upis",
-        "ID" : "0192:987464291"
-      } 
+    "authorized_parties" : [ {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:314758625"
+      },
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
+      "rights" : ["Read","Write"]
+    },{
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:312206498"
+      },
+      "name" : "NYBAKT IDIOTSIKKER ISBJØRN SA",
+      "rights" : ["Report"]
+    } ],
+    "type" : "ansattporten:orgno"
   } ]
 ```
 
