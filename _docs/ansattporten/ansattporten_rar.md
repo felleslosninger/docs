@@ -134,7 +134,13 @@ Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikato
 
 Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres et tomt RAR-element. 
 
-P.t. er det ingen attributter som kan angis i forespørslen, utover `type`:
+Følgende claims kan sendes inn i request i tillegg til `type`: 
+
+| Claim | Kardinalitet | Beskrivelse | Gyldighet |
+|-|-|-|-|
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
 
 *Eksempel på request (forenklet)*: 
 ```
@@ -143,7 +149,8 @@ https://login.test.ansattporten.no/authorize?
  ...
   authorization_details= [
     {
-      "type": "ansattporten:orgno"
+      "type": "ansattporten:orgno",
+      "representation_is_required": true
     }
   ]
 ```
