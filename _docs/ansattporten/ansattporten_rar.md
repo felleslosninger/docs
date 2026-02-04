@@ -161,7 +161,6 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-| type | Alltid samme som i request - ansattporten:orgno |
 | authorized_parties | Et objekt for hver virksomhet bruker har valgt å representere  |
 | orgno | For hver authorized_party - Organisasjonsidentifikator ihht ISO6523  |
 | name | For hver authorized_party - Registrert navn på valgt virksomhet |
