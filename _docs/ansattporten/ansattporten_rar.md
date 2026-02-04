@@ -203,12 +203,12 @@ Følgende claims kan sendes inn i request:
   ]
 ```
 
-Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+Datamodellen for respons inneholder alltid claimet "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
 | resource | Samme som i request |
-| resource-name | Navn på etterspurt representasjonsforhold |
+| resource_name | Navn på etterspurt representasjonsforhold |
 | reportees | Array med valgte virksomheter. |
 | Rights | For hver virksomhet, et array med rettigheter som innlogget bruker har for aktuell tjenestekode.  |
 | Name | For hver virksomhet, navnet på valgt virksomhet|
