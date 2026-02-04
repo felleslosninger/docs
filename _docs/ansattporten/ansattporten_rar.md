@@ -132,7 +132,7 @@ Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organis
 
 Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
 
-Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres en tom RAR-element. 
+Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres et tomt RAR-element. 
 
 P.t. er det ingen attributter som kan angis i forespørslen, utover `type`:
 
