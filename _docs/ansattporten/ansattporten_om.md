@@ -92,7 +92,7 @@ Ansattporten tilbyr per nå tre brukerreiser:
 
 * [Vanlig innlogging (med isolert SSO)](ansattporten_guide.html)
 * [Innlogging på vegne av virksomhet](ansattporten_representasjon.html)
-* [Datadeling på vegne av virksomhet](ansattporten_oauth2.html)
+* [Datadeling på vegne av virksomhet](ansattporten_datadeling.html)
 
 
 

@@ -57,6 +57,9 @@ folders:
 
   - title: Innsynskrav og e-postoppsett
     jurl: /docs/eInnsyn/einnsyn_innsynskrav.html
+
+  - title: Docker-spesifikk installasjon
+    jurl: /docs/eInnsyn/einnsyn_docker_spesifikk_installasjon.html
     
 
 ###########################

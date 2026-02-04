@@ -81,15 +81,15 @@ Me skal sjå nærare på kvart av desse temane, men fyrst vil me berre gje eit d
 {
   "typ": "oauth-authz-req+jwt",
   "alg": "ES256",
-  "x5c": "MIIDVDCC...."
+  "x5c": ["MIIDVDCC...."]
 }.{
   "aud": "https://self-issued.me/v2", 
-  "iss":       "x509_san_dns:client.example.org",
-  "client_id": "x509_san_dns:client.example.org",
+  "iss":  "https://client.example.org",
+  "client_id": "x509_hash:Xxx...xxx",
 
   "response_uri": "https://client.example.org/post",
   "response_type": "vp_token",
-  "response_mode": "direct_post",
+  "response_mode": "direct_post.jwt",
 
   "dcql_query": {...},
 
@@ -188,13 +188,14 @@ VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeb
 
 Ein annan viktig skilnad til Oauth2, er at `client_id`  er bygd opp på ein spesiell måte med bruk av prefixar foran eit kolon (:)
 
+- x509_hash
+- x509_san_dns
 - redirect_uri
 - openid-federation
 - decentralized_identifier
 - verifier_attestation
-- x509_san_dns
 
-Prefixa fortel kva type tillitsprotokollar som vert nytta av ulike økosystem.  For EU-lommeboka, iallefall for grensekryssande bruk, trur med at det vil verte den siste, x509_san_dns, som blir mest aktuell å bruka. Dette sidan tilgangssertifikata (RPAC) skal vere utstedt av ein Access Certificate Authority som skal plasserast på ein Trust List. Ref. [ARF 3.18](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#318-access-certificate-authorities), og det ser ut som tradisjonelle PKIar basert på x.509 og ETSI-baserte trustlister er det som EU-kommisjonen legg opp til.  Digdir har dog lyst å sjå på bruk av openid-federation nasjonalt, ta gjerne kontakt med oss for å vere med på utprøving av dette.
+Prefixa fortel kva type tillitsprotokollar som vert nytta av ulike økosystem.  For EU-lommeboka, iallefall for grensekryssande bruk, trur med at det vil verte den første, x509_hash, som blir mest aktuell å bruka. Dette sidan tilgangssertifikata (RPAC) skal vere utstedt av ein Access Certificate Authority som skal plasserast på ein Trust List. Ref. [ARF 3.18](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/#318-access-certificate-authorities), og det ser ut som tradisjonelle PKIar basert på x.509 og ETSI-baserte trustlister er det som EU-kommisjonen legg opp til.  Digdir har dog lyst å sjå på bruk av openid-federation nasjonalt, ta gjerne kontakt med oss for å vere med på utprøving av dette.
 
 
 
@@ -292,6 +293,7 @@ Du må validere at vp_tokenet er korrekt.  Aktuelle valideringspunkt:
 
 
 Sjå også [kap 8.6 i VP-specen](https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html#name-vp-token-validation) for valideringskrav.
+
 
 
 

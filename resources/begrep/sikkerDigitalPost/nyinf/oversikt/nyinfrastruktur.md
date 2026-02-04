@@ -319,9 +319,9 @@ APL kan nå konstrurere en PEPPOL-melding. Dvs:
 * Pakke forretningmelding og dokumentpakke om til avtalt payload-format
   *
 * Lage PEPPOL-konvolutt ("ytre" SBDH)
-  * SBDH `Receiever` settes lik pk-leverandør orgno (?)
+  * SBDH `Receiever` settes lik pk-leverandør orgno
   * SBDH `processid` settes lik `processid`
-  * SBDH `Sender` settes lik  (TODO: Avsender eller Databehandler)?
+  * SBDH `Sender` settes lik Databehandler / Teknisk avsender
 
 **Eksempel**: Transport-format i PEPPOL ser ut som her: https://github.com/joergenb/dpi_transport/blob/main/Samples/DIGITALPOST_DPI_1_0_Minimal_Sample.xml
 

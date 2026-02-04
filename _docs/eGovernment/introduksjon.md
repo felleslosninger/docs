@@ -19,7 +19,7 @@ I 2022 vart det oppretta ei nytt domene i Peppol, Peppol eGovernment. Bruksområ
 
 Peppol eGovernment er i fyrste omgang registrert som eit lokalt norsk domene i Peppol. Men sidan den er i henhold til eDelivery referansearkitekturen ligg det til rette for å kunne utvida til å dekke meldingsutveksling med andre land.
 
-Fyrste bruksområde for Peppol eGovernment er som transportinfrastruktur for Digital Post til innbyggere. Pr. 2024 er 900 offentlege verksemder knyta til løysinga gjennom bruk av Digital Post til innbyggere. I 2023 vart det sendt 22,9 millionar meldingar på Peppol eGovernment.
+Fyrste bruksområde for Peppol eGovernment er som transportinfrastruktur for Digital Post til innbyggere. Pr. 2024 er 900 offentlege verksemder knyta til løysinga gjennom bruk av Digital Post til innbyggere. I 2023 vart det sendt 22,9 millionar meldingar på Peppol eGovernment. Tilhøyrande kostnadsmodell er beskriven på [Samarbeidsportalen](https://samarbeid.digdir.no/digital-postkasse/kostnadsmodell-digital-postkasse/106).
 
 Statlege verksemder er knytt til løysinga gjennom aksesspunktavtale levert av TietoEvry. KS har etablert eit aksesspunkt som knyt kommunane til løysinga. Det er og mulig å etablere aksesspunkt sjølv, eller kjøpe denne tenesta frå andre tenesteleverandørar.
 

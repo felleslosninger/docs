@@ -78,7 +78,7 @@ inneholde beskrivelse av hva skal til for å gi tilgang til å lese den taushets
 Ved mottak til Altinn Digital Post varsles virksomheten om mottak av melding. Varsel går til virksomhetens registrerte
 kontaktinformasjon på Altinn. Les mer på:
 
-- [Krav til varsling ved taushetsbelagt post](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/#krav-til-varsling-ved-taushetsbelagt-post) (ekstern lenke)
+- [Krav til varsling ved taushetsbelagt post](https://docs.altinn.studio/nb/correspondence/explanation/taushetsbelagt-post/#krav-til-varsling-ved-taushetsbelagt-post) (ekstern lenke)
 
 ## Forutsetninger
 

@@ -58,7 +58,7 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **1.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **1.3** - Vel MinID eller TestID som innloggingsalternativ og fullfør innlogging.  
 **1.4** - Verifiser at du kjem tilbake til eiga teneste.  
-**1.5** - Endre URL i nettleser til [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/). 
+**1.5** - Endre URL i nettleser til [https://demo-client.test.idporten.no/](https://demo-client.test.idporten.no/)
 **1.6** - Verifiser at du kjem til test-tenesteeigar utan ny pålogging.  
 **1.7** - Verifiser i feltet «Validated id_token», at sikkerheitsnivået (amr) er idporten-loa-substantial og at autentiseringsmetoden er den aktuelle eID. 
 
@@ -147,20 +147,17 @@ Desse testane skal gjennonførast dersom ein har støtte for funksjonaliteten.
 **9.2** - 	Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **9.3** - 	Logg inn med ein vilkårleg eID.  
 **9.4** - 	Verifiser at du er innlogga.  
-**9.5 a)** - For SAML: Endre URL til eiga teneste (må sende med attributt *\<ForceAuth>=true* i autentiseringsforespørsel til ID-porten).  
-**9.5 b)** - For OIDC: Endre URL til eiga teneste (må sende med parameter *prompt=login* i autentiseringsforespørsel til ID-porten).  
+**9.5 b)** - Endre URL til eiga teneste (må sende med parameter *prompt=login* i autentiseringsforespørsel til ID-porten).  
 **9.6** - 	Verifiser at du blir bedt om å logge inn på nytt.  
 
 ### 10. 	Autentiseringsforespørsel – "OnBehalfOf" («på vegne av»)
-**10.1 a)** For SAML: Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med attributt *\<OnBehalfOf=xxx>*, der xxxx er namnet er ID for den som autentiseringsforespørselen er på vegne av.)<br>
-**10.1 b)** For OIDC: Start ein ny nettlesarsesjon og gå til eiga teneste ( må sende med ekstra parameter *onbehalfof=xxxx*, der xxxx er ID for den som autentiseringsforespørselen er på vegne av.)   
+**10.1 b)** - Start ein ny nettlesarsesjon og gå til eiga teneste ( må sende med ekstra parameter *onbehalfof=xxxx*, der xxxx er ID for den som autentiseringsforespørselen er på vegne av.)   
 **10.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **10.3** - Logg inn med ein vilkårleg eID.  
 **10.4** - Verifiser at du blir innlogga.  
 
 ### 11. Autentiseringsforespørsel – (språk)
-**11.1 a)** For SAML: - Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med attributt *\<locale=språk>*). <br>
-**11.1 b)** For OIDC: - Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med parameter *ui_locales=språk*).<br>
+**11.1 b)** - Start ein ny nettlesarsesjon og gå til eiga teneste (må sende med parameter *ui_locales=språk*).<br>
 **11.2** - Verifiser at du blir omdirigert til ID-porten for autentisering.  
 **11.3** - Verifiser at ID-porten er på riktig språk (som du sendte med i autentiseringsforespørselen).  
 **11.4** - Logg inn med ein vilkårleg eID.  

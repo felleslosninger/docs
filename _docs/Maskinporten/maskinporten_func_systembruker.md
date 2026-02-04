@@ -11,7 +11,7 @@ Funksjonaliteten lar leverandører definere sine Maskinporten-integrasjoner som 
 
 ## Status
 
-Funksjonaliteten er lansert i en pilotfase tidlig Q1 2025.  
+Funksjonaliteten er lansert i 2025.  
 
 ## Bakgrunn
 

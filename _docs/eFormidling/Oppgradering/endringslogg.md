@@ -18,6 +18,27 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.0
+
+04.02.2026
+
+**Ny funksjonalitet**
+- Migrert til Altinn 3 for Altinn Formidling (DPO) og Altinn Digital Post (DPV)
+
+## 3.0.2
+
+14.01.2026
+
+**Feilretting**
+- IP taklar no ukjente ServiceIdentifiers fra SR
+
+## 3.0.1
+
+11.12.2025
+
+**Feilretting**
+- IP kan feile ved bruk av ekstern database
+
 ## 3.0.0
 
 17.09.2025
