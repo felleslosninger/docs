@@ -37,9 +37,9 @@ Følgende RAR-typer er støttet i Ansattporten:
 
 | RAR-type | Skildring |
 |-|-|
-| `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn. Støtte for tilgang gjennom roller er p.t. ikke mulig i Altinn 3. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
-| `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
-| `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
+| [`ansattporten:altinn:resource`](#datamodell-for-altinn-3-ressurser-ansattportenaltinnresource) |Støtter bruk av Altinn 3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn. Støtte for tilgang gjennom roller er p.t. ikke mulig i Altinn 3. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
+| [`ansattporten:orgno`](#datamodell-for-arbeidsgivers-organisasjonsnummer-ansattportenorgno) | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| [`ansattporten:altinn:service`](#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel. Klienten må i stedet implementere flere login-knapper i sin egen løsning.
@@ -123,7 +123,8 @@ Det er mulig å finne oversikt over registrerte ressurser i test i [Altinn sitt 
 
 Velg TestID til autentisering, og bruk gjerne "Hent tilfeldig Daglig leder" om du ikke allerede har en syntetisk bruker du vil teste med.
 
-> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.
+> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.  
+  
 
 ## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
