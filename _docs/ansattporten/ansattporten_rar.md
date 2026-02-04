@@ -161,10 +161,10 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-| authorized_parties | Et objekt for hver virksomhet bruker har valgt å representere  |
-| orgno | For hver authorized_party - Organisasjonsidentifikator ihht ISO6523  |
-| name | For hver authorized_party - Registrert navn på valgt virksomhet |
-| rights | Hvilke rettigheter bruker har for valgt virksomhet. Bare inkludert om bruker har fått tildelt spesifikke rettigheter. |
+| authorized_parties | Et authorized_party objekt for hver virksomhet bruker har valgt å representere  |
+| orgno | I hver authorized_party - Organisasjonsidentifikator ihht ISO6523  |
+| name | I hver authorized_party - Registrert navn på valgt virksomhet |
+| rights | I hver authorized_party - Hvilke rettigheter bruker har for valgt virksomhet. Bare inkludert om bruker har fått tildelt spesifikke rettigheter. |
 
 *Eksempel på respons*:
 ```
