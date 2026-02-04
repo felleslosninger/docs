@@ -20,7 +20,7 @@ redirect_from:
 
 ## 4.0.0
 
-xx.xx.2026
+04.02.2026
 
 **Ny funksjonalitet**
 - Migrert til Altinn 3 for Altinn Formidling (DPO) og Altinn Digital Post (DPV)
