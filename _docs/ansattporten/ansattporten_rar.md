@@ -174,15 +174,14 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
         "authority" : "iso6523-actorid-upis",
         "ID" : "0192:314758625"
       },
-      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
-      "rights" : ["Read","Write"]
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE"
     },{
       "orgno" : {
         "authority" : "iso6523-actorid-upis",
         "ID" : "0192:312206498"
       },
       "name" : "NYBAKT IDIOTSIKKER ISBJØRN SA",
-      "rights" : ["Report"]
+      "rights" : ["Report","Write"]
     } ],
     "type" : "ansattporten:orgno"
   } ]
