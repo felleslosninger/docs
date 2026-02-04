@@ -111,7 +111,79 @@ E --> |Status: LEST| D
 
 ## Eksempel på bruk
 
-[Vis konkrete eksempel på korleis ein sender ei melding via API/integrasjonspunktet, kanskje ein eksempel SBD]
+Eksempel SBD for sending av helsemelding til fastlege via NHN:
+
+```json
+{
+  "standardBusinessDocumentHeader": {
+    "headerVersion": "1.0",
+    "sender": [
+      {
+        "identifier": {
+          "authority": "iso6523-actorid-upis",
+          "value": "0192:931796003"
+        }
+      }
+    ],
+    "receiver": [
+      {
+        "identifier": {
+          "authority": "iso6523-actorid-upis",
+          "value": "30878199614"
+        }
+      }
+    ],
+    "documentIdentification": {
+      "standard": "urn:no:difi:digitalpost:json:schema::dialogmelding",
+      "typeVersion": "2.0",
+      "instanceIdentifier": "{{messageId}}",
+      "type": "dialogmelding",
+      "creationDateAndTime": "2019-07-02T15:05:04.7960494+02:00"
+    },
+    "businessScope": {
+      "scope": [
+        {
+          "type": "ConversationId",
+          "instanceIdentifier": "{{conversationId}}",
+          "identifier": "urn:no:difi:profile:digitalpost:fastlege:ver1.0"
+        },
+        {
+          "type": "SenderRef",
+          "instanceIdentifier": "<UUID>",
+          "identifier": "AvsenderSystem"
+        },
+        {
+          "type": "ReceiverRef",
+          "instanceIdentifier": "<UUID>",
+          "identifier": "MottakerSystem"
+        },
+        {
+          "type": "SenderHerId2",
+          "instanceIdentifier": "8143154"
+        }
+      ]
+    }
+  },
+  "dialogmelding": {
+    "notat": {
+      "subject": "subject",
+      "notatinnhold": "notat"
+    },
+    "sikkerhetsnivaa": "4",
+    "vedleggBeskrivelse": "Beskrivelse av vedlegg"
+  }
+}
+```
+
+### Forklaring av viktige felt
+
+| Felt                                         | Beskrivelse                                                                                                                                                                      |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sender.identifier.value`                    | Organisasjonsnummer til avsendaren, prefiks med `0192:` for norske organisasjonsnummer. Eksempel: `0192:931796003`                                                               |
+| `receiver.identifier.value`                  | Fødselsnummer til mottakaren (fastlegen). Utan prefiks. Eksempel: `30878199614`                                                                                                  |
+| `businessScope.scope[].type: "SenderHerId2"` | HER-ID til avsendarens MSH (Message Service Handler). Dette er ein unik identifikator i Adresseregisteret (AR) som identifiserer avsendarens meldingstjenar. Eksempel: `8143154` |
+
+> **Merk:** HER-ID må vere registrert i Adresseregisteret (AR) og knytt til organisasjonen sin MSH før meldingar kan sendast.
 
 ## Sjå òg
 
