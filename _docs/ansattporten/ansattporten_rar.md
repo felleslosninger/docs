@@ -37,9 +37,9 @@ Følgende RAR-typer er støttet i Ansattporten:
 
 | RAR-type | Skildring |
 |-|-|
-| [`ansattporten:altinn:resource`](#datamodell-for-altinn-3-ressurser-ansattportenaltinnresource) |Støtter bruk av Altinn 3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn. Støtte for tilgang gjennom roller er p.t. ikke mulig i Altinn 3. [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=75426143&issue=digdir%7Croadmap%7C400) |
-| [`ansattporten:orgno`](#datamodell-for-arbeidsgivers-organisasjonsnummer-ansattportenorgno) | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
-| [`ansattporten:altinn:service`](#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
+| `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke |
+| `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel. Klienten må i stedet implementere flere login-knapper i sin egen løsning.
@@ -128,7 +128,9 @@ Velg TestID til autentisering, og bruk gjerne "Hent tilfeldig Daglig leder" om d
 
 ## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
-Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med organisasjonsnummer.
+> **ansattporten:orgno er i pilotfase** og er pr. no berre tilgjengeleg i test.
+
+Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden i test er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med registrert organisasjonsnummer. 
 
 Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
 

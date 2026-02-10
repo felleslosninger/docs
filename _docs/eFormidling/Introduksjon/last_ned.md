@@ -7,7 +7,7 @@ sidebar: eformidling_sidebar
 redirect_from: /eformidling_download_ip
 ---
 
-Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS som .jar-fil.
+Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS som .jar-fil. **OBS docker image finner man nå på Github CR og ikkje på Docker Hub.**
 
 ## Integrasjonspunktet
 
