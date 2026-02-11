@@ -123,17 +123,26 @@ Det er mulig å finne oversikt over registrerte ressurser i test i [Altinn sitt 
 
 Velg TestID til autentisering, og bruk gjerne "Hent tilfeldig Daglig leder" om du ikke allerede har en syntetisk bruker du vil teste med.
 
-> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.
+> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.  
+  
 
 ## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
-Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med organisasjonsnummer.
+> **ansattporten:orgno er i pilotfase** og er pr. no berre tilgjengeleg i test.
+
+Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden i test er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med registrert organisasjonsnummer. 
 
 Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
 
-Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres en tom RAR-element. 
+Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres et tomt RAR-element. 
 
-P.t. er det ingen attributter som kan angis i forespørslen, utover `type`:
+Følgende claims kan sendes inn i request i tillegg til `type`: 
+
+| Claim | Kardinalitet | Beskrivelse | Gyldighet |
+|-|-|-|-|
+|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
+|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
+|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
 
 *Eksempel på request (forenklet)*: 
 ```
@@ -142,9 +151,11 @@ https://login.test.ansattporten.no/authorize?
  ...
   authorization_details= [
     {
-      "type": "ansattporten:orgno"
+      "type": "ansattporten:orgno",
+      "representation_is_required": true
     }
   ]
+  ...
 ```
 
 
@@ -152,16 +163,29 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
-| orgno | Organisasjonsidentifikator ihht ISO6523  |
+| authorized_parties | Et authorized_party objekt for hver virksomhet bruker har valgt å representere  |
+| orgno | I hver authorized_party - Organisasjonsidentifikator ihht ISO6523  |
+| name | I hver authorized_party - Registrert navn på valgt virksomhet |
+| rights | I hver authorized_party - Hvilke rettigheter bruker har for valgt virksomhet. Bare inkludert om bruker har fått tildelt spesifikke rettigheter. |
 
 *Eksempel på respons*:
 ```
   "authorization_details" : [ {
-    "type" : "ansattporten:orgno",
-    "orgno:" : {
-        "Authority" : "iso6523-actorid-upis",
-        "ID" : "0192:987464291"
-      } 
+    "authorized_parties" : [ {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:314758625"
+      },
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE"
+    },{
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:312206498"
+      },
+      "name" : "NYBAKT IDIOTSIKKER ISBJØRN SA",
+      "rights" : ["Report","Write"]
+    } ],
+    "type" : "ansattporten:orgno"
   } ]
 ```
 
