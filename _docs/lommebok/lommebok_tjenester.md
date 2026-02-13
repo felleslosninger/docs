@@ -27,11 +27,15 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 * [ID-porten](https://demo-client.test.idporten.no/)  I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av utstedaren vår. 
 * [EU-kommisjonen demo-brukerstad](https://verifier.eudiw.dev/home) Ein teknisk fokusert demo-brukastad frå EU-kommisjonen. 
 
-## Lommebøker
-* [Digdir demo lommebok](lommebok_demo_app)  Her kan du teste utstedelse og bruk av bevis i sandkassen.
+## Person-lommebøker
+* [Digdir demo lommebok](lommebok_demo_app)   Digdir tilbyr en lommebok for iOS og Android som primært er tiltenkt at deltakerne i sandkassen kan få teste sine usecase/brukerhistorier.
+
+## Virksomhetslommebøker
+
 
 ## Testing
 
 OpenID Foundation tilgjengeleggjer conformance test suites som kan nyttast i din eigen utvikling av tenester.  Du kan velge om du skal teste utsteder, lommebok, eller brukerstad.  Sjå meir info på [How to Run Conformance Tests for OpenID for Verifiable Presentations](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-presentations/).
+
 
 
