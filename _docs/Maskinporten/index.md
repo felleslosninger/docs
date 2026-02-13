@@ -9,9 +9,3 @@ Maskinporten er en tjeneste som tilbyr en enkel modell for API-sikring basert p�
 
 Maskinporten lar API-tilbydere definere tilganger til sine API, modellert som scopes, basert på konsumenten sine organisasjonsnummer.
 Dette kan gjøres via Maskinporten sine selvbetjeningsAPI eller webløsning.
-
-<!---
-Usynlig kommentar
---->
-
-Synlig kommentar
