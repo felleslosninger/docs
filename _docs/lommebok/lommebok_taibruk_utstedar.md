@@ -1,15 +1,20 @@
 ---
-title: Ta i bruk som brukerstad
-description: Ta i bruk som brukarstad
+title: Ta i bruk som utstedar
+description: Ta i bruk som utstedar
 
 sidebar: lommebok
 product: lommebok
 redirect_from: /lommebok_taibruk_brukarstad
 ---
 
-Ein [brukarstad](https://samarbeid.digdir.no/digital-lommebok/brukersteder-og-lommeboker/2900) er ei teneste som mottek innloggingar eller bevis frå den digitale lommeboka.
+Ein [utstedar](https://samarbeid.digdir.no/digital-lommebok/produsere-og-dele-bevis/2911) er ei teneste som produserer digitale bevis og legg dei i den digitale lommeboka. 
 
-Den vanlegaste typen brukerstader er web-baserte nett-tjenester for innlogging slik me kjenner dei idag, til dømes Helsenorge eller nettbanken din.  Men lommeboka kan også brukast mot fysiske brukarstader, som til dømes ein automat i ein butikk eller som adgangskontroll til ein bygning.
+Ofte vil ein utstedar vere ein aktør som har spesialisert seg på slik bevis-produksjon, og som utferdar bevis på vegne av ei anna verksemd som er datakjelde (ogso kalla autentisk kjelde).  Ei verksemd kan sjølvsagt vere både datakjelde og utstedar for sine eigne bevis.
+
+Digitale bevis kan utferdast på ulike juridiske "tillitsnivå", eIDAS2 definerer 3
+- **QEAA**,  kvalifiserte bevis, utferda av ein QTSP (kvalifisert tillitstenesteleverandør).  
+- **Pub-EAA**, bevis utferda av offentlege myndigheiter
+- **EAA**, alle andre bevis vert kalla ikkje-kvalifiserte nivå.  På dette nivået er det frivili 
 
 
 ### Brukerreiser

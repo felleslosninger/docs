@@ -8,6 +8,9 @@ folders:
       - title: Kva er sandkassen ?
         jurl: /docs/lommebok/lommebok_om.html
 
+      - title: Arkitektur
+        jurl: /docs/lommebok/lommebok_arkitektur.html
+
       - title: Tenester i sandkassen
         jurl: /docs/lommebok/lommebok_tjenester.html
 
@@ -26,18 +29,23 @@ folders:
       - title: Registrering
         jurl: /docs/lommebok/lommebok_taibruk_registrering.html
 
-
-- title: Grensesnittspesifikasjon
-  folderitems:
-
-      - title: Arkitektur
-        jurl: /docs/lommebok/lommebok_arkitektur.html
-
-      - title: Lage bevis
+      - title: Lage bevis (OpenID4VCI)
         jurl: /docs/lommebok/lommebok_protokoll_vci.html
 
-      - title: Motta bevis
+      - title: Motta bevis (OpenID4VP)
         jurl: /docs/lommebok/lommebok_protokoll_vp.html
+
+
+- title: Bruksområder
+  folderitems:
+
+      - title: Innlogging
+        jurl: /docs/lommebok/lommebok_bruk_innlogging.html
+
+      - title: Aldersverifisering
+        jurl: /docs/lommebok/lommebok_bruk_innlogging.html
+
+
 
 
 - title: Digdir-tenester
