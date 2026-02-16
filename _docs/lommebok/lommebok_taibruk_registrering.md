@@ -24,7 +24,7 @@ Dersom ikkje ikkje får til å bruke sjølvbetjening registrering, kan du sende 
 
 **Andre roller**
 
-Verksemder som skal vere utstedar, eller ha andre roller i økosystemet, må registrerast manuelt av Digdir. Ta kontakt på epost (servicedesk@...).
+Verksemder som skal vere utstedar, eller ha andre roller i økosystemet, må p.t. registrerast manuelt av Digdir. Ta kontakt på epost (servicedesk@...).
 
 
 
@@ -38,56 +38,34 @@ I sandkassen må du registrere følgjande:
 
 Dei andre felta knytt til verksemda di er førehandsutfylte basert på organisasjonsnummer.   På sikt kan det kome fleire opplysningar som må registrerast.
 
-## Lage sertifikat
+## Lage access-sertifikat
 
-Når registreringa er komplett, får du høve til å lage eit **access-sertifikat**.  Dette sertifikatet m ådu bruka til å autentisere brukarstaden din mot lommeboka.   Å lage eit slikt sertifikat er ein prosess i 4 steg
+Når registreringa er komplett, får du høve til å lage eit **access-sertifikat**.  Dette sertifikatet må du bruka til å autentisere brukarstaden din mot lommeboka.   Å lage eit slikt sertifikat er ein prosess i 4 steg:
 
-1. Lag eit nøkkelpar med elliptisk kurve EC256-kurve.
-2. Lag ein CSR (certificate signing request) basert på den genererte public-nøkkelen.
-3. Last opp CSRen på registreringa di. Det vil då verte laga eit access-sertifikat.
+1. Lag eit nøkkelpar med elliptisk kurve EC256.
+2. Lag ein CSR (certificate signing request) ut frå dette nøkkelparet.
+3. Last opp CSRen på registreringa di. Registeret vil då laga eit access-sertifikat tilknytta nøkkelparet ditt.
 4. Last ned access-sertifikatet og bruk det saman med privatnøkkelen i tenesta di.
 
-Du må aldri sende privatnøkkelen 
+Du må aldri sende privatnøkkelen til Digdir eller nokon andre.  
+
+Her er eit døme på å generere nøkkelpar og CSR:
+```
+#1. opprett ein keystore og lag eit nøkkelpar i den:
+keytool -genkeypair -alias rp-access -keyalg EC -groupname secp256r1 -sigalg SHA256withECDSA  -validity 365 -storetype pkcs12 -keystore rp-access.p12 -dname "CN=dummy"
+
+#2. lag CSR-fil:
+keytool -certreq -keyalg EC -alias rp-access -file rp-access.csr -keystore rp-access.p12
+```
 
 
-
-
-
-
-
-## 
-
+##  Meir om registrering
 
 Krava rundt registrering finn me i [rettsakt for RP-registerering, C/2025/2621](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R0848&qid=1749119392688), og der informasjonen som skal registrerast finn du i Annex I.  I praksis er dette namn, organisasjonsnummer, og eit par andre felt. 
 
 Ein kan spesielt merke seg at det skal registrerast kva **persondata** (bevistype, eller enkeltattributter frå bevis) som brukerstaden kjem til å førespørje, og **formålet** ved å etterspørje desse dataene. 
 
 For spesielt interessert kan de sjå på den komplette datamodellen i [TS5-spesifikasjonen](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md#2-data-model).
-
-Du treng
-
-### Access-sertifikat
-
-**Tilgangssertifikatet** (Relying Party Access Certificate, RPAC) vert nytta til å autentisere deg opp mot lommeboka.
-
-Du må 
-
-### Registreringssertifikat
-
-Eitt **registreringssertikat** (Relying Party Registration Certificate, RPRC) fortel kva data du har registrert at du vil førespørje.
-
-Du må sjølv lage privatnøkkel til desse sertifikata før du gjennomfører registreringa, og basert på denne lage ei [CSR-fil](https://en.wikipedia.org/wiki/Certificate_signing_request) som du inkluderer med søknaden.
-
-Merk at lommebok-økosystemet føretrekk EC-baserte nøkler (ikkje RSA) og at CSRen p.t. må angje ein SAN-extension som skal matche client_id.  Denne skal fortrinnsvis skal peike på det domenet som du køyrer applikasjonen/brukerstaden din på, men det er lov å bruke t.d. localhost under utvikling.
-
-**Døme på å lage CSR med keytool:**
-```
-#1. opprett ein keystore og lag eit nøkkelpar i den:
-keytool -genkeypair -alias rp-access -keyalg EC -groupname secp256r1 -sigalg SHA256withECDSA  -validity 365 -storetype pkcs12 -keystore rp-access.p12 -dname "CN=dummy"
-
-#2. lag CSR-fil med SAN-extension (bruk egne domener):
-keytool -certreq -keyalg EC -alias rp-access -ext san=dns:brukerstad.example.com -file rp-access.csr -keystore rp-access.p12
-```
 
 
 
