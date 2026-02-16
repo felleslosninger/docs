@@ -1,6 +1,6 @@
 ---
-title: Bruksområde: aldersverifisering
-description: Bruksområde: aldersverifisering
+title: Bruksområde aldersverifisering
+description: Bruksområde aldersverifisering
 
 sidebar: lommebok
 product: lommebok
