@@ -17,10 +17,10 @@ folders:
 - title: Ta i bruk
   folderitems:
 
-      - title: Brukarstad
+      - title: Som brukarstad
         jurl: /docs/lommebok/lommebok_taibruk_brukarstad.html
 
-      - title: Utstedar
+      - title: Som utstedar
         jurl: /docs/lommebok/lommebok_taidbruk_utstedar.html
 
       - title: Registrering

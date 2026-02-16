@@ -1,6 +1,6 @@
-
 ---
 title: Ta i bruk som brukerstad
+description: hei
 
 sidebar: lommebok
 product: lommebok
@@ -31,7 +31,7 @@ Sjå [oppskrifta på Samarbeidsportalen](https://samarbeid.digdir.no/digital-lom
 
 Oppsummert frå eit utviklar-perspektiv er det følgjande steg som må gjerast:
 
-1. Registere brukarstaden din i registeret over brukarstader
+1. [Registere brukarstaden](lommebok_taibruk_registrering_brukarstad) din i registeret over brukarstader
 2. Lage eit access-sertifkat knytta til brukarstaden
 3. Beslutte deployment-modell som passar for ditt systemlandskap
 4. 
