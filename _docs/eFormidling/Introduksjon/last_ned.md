@@ -36,7 +36,7 @@ men den kan *ikke* oppgradere Integrasjonspunkt til v3 eller v4 automatisk.
 
 > [**Last ned offentlig nøkkel**](/resources/eformidling/public_keys/eformidling-key.asc)
 
-WARNING: Hvis du allerede har lastet ned offentlig nøkkel før 16. februar 2026 har du en nøkkel utløper i april 2026.  Du må derfor laste ned ny nøkkel på linken over.
+{% include tip.html content="Hvis du allerede har lastet ned offentlig nøkkel (før 16. februar 2026) så må du laste ned ny nøkkel på linken over.  Den gamle utløper i april 2026." %}
 
 ## Neste steg
 
