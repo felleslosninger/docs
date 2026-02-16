@@ -1,6 +1,6 @@
 ---
-title: Bruksområde: innlogging
-description: Bruksområde: innlogging
+title: Bruksområde innlogging
+description: Bruksområde innlogging
 
 sidebar: lommebok
 product: lommebok
