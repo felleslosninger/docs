@@ -17,14 +17,14 @@ folders:
 - title: Ta i bruk
   folderitems:
 
-      - title: Registrering
-        jurl: /docs/lommebok/lommebok_taibruk_registrering.html
-
       - title: Brukarstad
         jurl: /docs/lommebok/lommebok_taibruk_brukarstad.html
 
       - title: Utstedar
         jurl: /docs/lommebok/lommebok_taidbruk_utstedar.html
+
+      - title: Registrering
+        jurl: /docs/lommebok/lommebok_taibruk_registrering.html
 
 
 - title: Grensesnittspesifikasjon
