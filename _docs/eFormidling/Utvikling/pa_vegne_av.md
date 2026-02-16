@@ -59,19 +59,14 @@ oppgis i konfigurasjon. Se `difi.move.fiks.ut.paa-vegne-av.*` og `difi.move.fiks
 
 ## På vegne av for eFormidlings meldingstjeneste
 
-eFormidlings meldingstjeneste er realisert med Altinn Formidling. Kunden kan delegere sin tilgang til eFormidlings
-meldingstjeneste til leverandøren.
+For å sende på vegne av en annen virksomhet ved bruk av eFormidlings meldingstjeneste så må leverandøren opprette 
+systembruker på leverandørens system i Altinn for hver av virksomhetene som leverandøren skal opptre på vegne av.
 
-Organisasjonsnummer for virksomhetene som integrasjonspunktet skal sende og motta på vegne av må oppgis i konfigurasjon.
+Organisasjonsnummer og systembruker for virksomhetene som integrasjonspunktet skal sende og motta på vegne av må oppgis i konfigurasjon.
+
 Se `difi.move.dpo.reportees` under:
 
 - [Konfigurere eFormidlings meldingstjeneste](../installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
-
-Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altinn:
-
-- `Meldingsutveksling i offentlig sektor`
-
-Se guide [her.](https://info.altinn.no/hjelp/profil/enkelttjenester-og-roller/hvordan-gi-en-enkelttjeneste-og-rolle-til-andre/)
 
 ## På vegne av for eInnsyns meldingstjeneste
 
