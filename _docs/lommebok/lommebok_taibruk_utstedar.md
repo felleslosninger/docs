@@ -11,32 +11,30 @@ Ein [utstedar](https://samarbeid.digdir.no/digital-lommebok/produsere-og-dele-be
 
 Ofte vil ein utstedar vere ein aktør som har spesialisert seg på slik bevis-produksjon, og som utferdar bevis på vegne av ei anna verksemd som er datakjelde (ogso kalla autentisk kjelde).  Ei verksemd kan sjølvsagt vere både datakjelde og utstedar for sine eigne bevis.
 
-Digitale bevis kan utferdast på ulike juridiske "tillitsnivå", eIDAS2 definerer 3
-- **QEAA**,  kvalifiserte bevis, utferda av ein QTSP (kvalifisert tillitstenesteleverandør).  
-- **Pub-EAA**, bevis utferda av offentlege myndigheiter
-- **EAA**, alle andre bevis vert kalla ikkje-kvalifiserte nivå.  På dette nivået er det frivili 
+{% include note.html content="Dersom du berre ynskjer å prøve ut bevis-produksjon på ein enkel måte, kan du bruke sandkassa sin [Bevisgenerator](https://bevisgenerator.test.eidas2sandkasse.net/)." %}
 
 
-### Brukerreiser
+## Korleis bli ein utstedar ?
 
-Brukarstader vil samhandle med lommeboka for å realisere brukerreiser som:
+Dersom du ynskjer å produsere digitale bevis, må du fyrst bestemme deg for om du ynskjer å :
 
-* [Autentisering / innlogging med elektronisk ID](https://samarbeid.digdir.no/digital-lommebok/autentisering-og-signering/2910)
+1. lage utedaren sin sjølv
+2. installere ein mellomvare som fungerer som utsteder (som til dømes EUDIPLO)
+3. bruke [Digdir sin utstedar Bevisporten](lommebok_digdir_utsteder) (kun for offentlege verksemder)
+4. få hjelp av [ein av leverandørane i sandkassa](lommebok_tjenester) 
 
-* Verifisere alder
+Ved alternativ 1 og 2 må du utføre dei etterfølgjande stega her:
 
-* [Motta digitale bevis](https://samarbeid.digdir.no/digital-lommebok/produsere-og-dele-bevis/2912)
+#### 1. Registrering
+
+[Registere utstedaren](lommebok_taibruk_registrering_utstedar) din i registeret over brukarstader med korrekt rolle.
+
+Som del av registrering må du lage eit access-sertifkat knytta til brukarstaden, som applikasjonen din nyttar for å autentisere seg mot lommeboka.  Du må også registerer eit utstedarsertifikat som du nyttar til å signere bevisa.
+
+Til slutt vert du registert på tillitslista for sandkassen.
+
+#### 2. Lage utstederen
+
+Dette er sopass omfattande at me reknar med at du har kontroll på dette sidan du har tenkt å ta ein utstedar-rolle.
 
 
-
-
-### Korleis bli ein brukarstad ?
-
-Sjå [oppskrifta på Samarbeidsportalen](https://samarbeid.digdir.no/digital-lommebok/ta-i-bruk-eidas-sandkassen/3280).
-
-Oppsummert frå eit utviklar-perspektiv er det følgjande steg som må gjerast:
-
-1. [Registere brukarstaden](lommebok_taibruk_registrering_brukarstad) din i registeret over brukarstader
-2. Lage eit access-sertifkat knytta til brukarstaden
-3. Beslutte deployment-modell som passar for ditt systemlandskap
-4. 
