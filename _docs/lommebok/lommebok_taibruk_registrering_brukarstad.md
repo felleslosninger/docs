@@ -4,7 +4,7 @@ description: Registrering i sandkassen
 
 sidebar: lommebok
 product: lommebok
-redirect_from: /lommebok_taibruk_registrering
+redirect_from: /lommebok_taibruk_registrering_brukarstad
 ---
 
 Alle verksemder som deltek i sandkassen må vere registrert i **brukarstad-registeret** (register of relying parties, rp-registeret).  
