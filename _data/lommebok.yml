@@ -40,14 +40,13 @@ folders:
   folderitems:
 
       - title: Ta i bruk som utstedar
-        jurl: /docs/lommebok/lommebok_taidbruk_utstedar.html
+        jurl: /docs/lommebok/lommebok_taibruk_utstedar.html
 
       - title: Registrering
         jurl: /docs/lommebok/lommebok_taibruk_registrering_utstedar.html
 
       - title: Lage bevis (OpenID4VCI)
         jurl: /docs/lommebok/lommebok_protokoll_vci.html
-
 
 
 
