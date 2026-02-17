@@ -41,8 +41,8 @@ Som del av registrering må du lage eit access-sertifkat knytta til brukarstaden
 Det vil vere store variasjonar mellom ulike verksemder for korleis dei best integrerer mot lommeboka.  Her er nokre alternativ:
 
 1. Implementere støtte direkte i eigen applikasjon.
-2. Bruke ein lommebok-mellomvare foran eigne fagsystemer.  Her forventer me at over tid vil API-gateways og IAM-produkter kome med lommebokstøtte. Sjå t.d. [EUDIPLO](lommebok_eudiplo)
-3. Bruke mellomvare som skytenester
+2. Bruke ein lommebok-mellomvare foran eigne fagsystemer.  Her forventer me at over tid vil API-gateways og IAM-produkter kome med lommebokstøtte. Per no er nok det enklaste å nytte ein standalone mellomvar, sjå t.d. [EUDIPLO](lommebok_eudiplo)
+3. Bruke mellomvare som skyteneste.
 4. Få hjelp av ein leverandør. 
 
 #### 3. Finne ut kva data du treng
