@@ -11,7 +11,7 @@ Innlogging på høgt sikkerheitsnivå, slik me kjenner det frå dagens tradisjon
 
 Innlogging vert realisert ved at innbyggaren deler det digitale identitetsbeviset, den sokalla sokalla **PID'en** (person identification data),  med ein brukarstad.  
 
-Det er særskilte krav i eIDAS2 knytta til PID,  mellom anna skal utførtast ein id-kontroll på høgt sikkerheitsnivå samstundes som brukaren får PIDen, som då også skalø bindast kryptografisk mot det sikre nøkkellagerert (WSCD) til lommebok-instansen.  Det er berre særskilde utstedarar, utpeikt av medlemslandet, som har lov til å utferde PID. 
+Det er særskilte krav i eIDAS2 knytta til utferdig av PID,  mellom anna skal utførtast ein id-kontroll på høgt sikkerheitsnivå samstundes som brukaren får PIDen, og PIDen skal også bindast kryptografisk mot det sikre nøkkellagerert (WSCD) til lommebok-instansen.  Det er berre særskilde utstedarar, utpeikt av medlemslandet, som har lov til å utferde PID. 
 
 
 ### Rulebook
@@ -31,7 +31,7 @@ Den norske PIDen inneheld i tillegg  norsk fødsels- eller D-nummer i attributte
 
 ### Døme
 
-Døme på PID, med alle obligatoriske attributt,  i SD-JWT format:
+Døme på PID, med alle obligatoriske attributt: 
 ```
 {
   "place_of_birth": 
@@ -44,7 +44,7 @@ Døme på PID, med alle obligatoriske attributt,  i SD-JWT format:
  "family_name":  "HEI"
 } 
 ```
-(merk dømet er forenkla.)
+Merk at dømet er sterkt forenkla, attributta er eigentleg sokalla Disclosures på slutten av JWTen. Sjå gjerne [ein hurtiginnføring til SD-JWT](https://curity.io/resources/learn/selective-disclosure-jwt/).
 
 
 

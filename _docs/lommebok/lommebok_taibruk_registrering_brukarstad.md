@@ -13,17 +13,11 @@ Registreringa syner mellom anne kva rolle verksemda har og kva persondata dei br
 
 ## Korleis registre seg ?
 
-**Brukarstader**
 Verksemder som skal vere brukarstad kan bruke [sjølvbetjent registrering](https://sjolvbetening.test.eidas2sandkasse.net/login). 
 
 For å kunne registrere på eit ekte organisasjonsnummer må du kunne representere verksemda di i Altinn.  Alternativt kan du logge inn som deg sjølv og verte tildelt eit syntetisk organisasjonsnummer. 
 
 Dersom ikkje ikkje får til å bruke sjølvbetjening registrering, kan du sende epost til Digdir (servicedesk@...) so skal me hjelpe deg.
-
-
-**Andre roller**
-
-Verksemder som skal vere utstedar, eller ha andre roller i økosystemet, må p.t. registrerast manuelt av Digdir. Ta kontakt på epost (servicedesk@...).
 
 
 
