@@ -11,14 +11,23 @@ Innlogging på høgt sikkerheitsnivå slik me kjenner det frå dagens tradisjone
 
 Innbyggaren deler det digitale identitetsbeviset, den sokalla sokalla **PID'en** (person identification data),  med ein brukarstad for å logge inn.  
 
-Det er særskilte krav i eIDAS2 knytta til PID,  mellom anna skal det vere utført ein id-kontroll ihht nivå høgt før brukaren kan få PIDen.  Det er også berre særskilde utstedarar, utpeikt av medlemslandet, som har lov til å utferde PID. P PIDen skal også bindast kryptografisk mot det sikre nøkkellagerert (WSCD) til lommeboka. 
+Det er særskilte krav i eIDAS2 knytta til PID,  mellom anna skal det vere utført ein id-kontroll ihht nivå høgt samstundes som brukaren får PIDen. PIDen skal då også bindast kryptografisk mot det sikre nøkkellagerert (WSCD) til lommebok-instansen.  Det er berre særskilde utstedarar, utpeikt av medlemslandet, som har lov til å utferde PID. 
 
 
 ### Rulebook
 
 Reglane for korleis ein PID ser ut, finn du [på EU-kommisjon sitt github-repo](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/pid/pid-rulebook.md)
 
-Den norske PIDen inneheld norsk fødsels- eller D-nummer i attributtet `personal_administrative_number`.  Merk at dette er eit valfritt felt ihht regelboka.
+Regelboka har ei lang liste med valfrie felt, men dei følgjande er obligatorisk og kan alltid etterspørsjast av ein brukarstad:
+
+
+- Fornamn
+- Etternamn
+- Fødselsdato
+- Fødestad
+- Nasjonalitet
+
+Den norske PIDen inneheld i tillegg  norsk fødsels- eller D-nummer i attributtet `personal_administrative_number`. 
 
 
 
