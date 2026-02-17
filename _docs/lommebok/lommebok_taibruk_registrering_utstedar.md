@@ -1,6 +1,6 @@
 ---
-title: Registrering i sandkassen
-description: Registrering i sandkassen
+title: Registrering av utstedarar i sandkassen
+description: Registrering av utstedarar i sandkassen
 
 sidebar: lommebok
 product: lommebok
