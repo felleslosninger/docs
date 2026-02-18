@@ -206,7 +206,7 @@ Dersom token er self-contained :
 }
 ```
 Det er `consumer`-claimet som forteller hvilken konsument som har fått tokenet.
-Merk:  Du skal ikke bruke client_id eller client_org til tilgangstyring, disse er gamle claims som vil bli fjernet.
+Merk:  Du bør ikke bruke client_id til tilgangstyring. 
 
 
 Dersom konsumenten bruker leverandør, vil du i tillegg få to ekstra claims, de fleste API-tilbydere trenger ikke ta tilgangsbeslutninger basert på leverandør, men det kan være nyttig å logge informasjon for sporbarhet.
