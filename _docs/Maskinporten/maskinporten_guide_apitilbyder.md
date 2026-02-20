@@ -15,13 +15,13 @@ En full verdikjede for API-sikring med Maskinporten består av følgende steg:
 1. API-tilbyder blir manuelt tildelt et API-prefiks i Maskinporten
 2. API-tilbyder oppretter et API
 3. API-tilbyder gir tilgang til en konsument
-4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrer  scopet til denne.
+4. Konsument oppretter en Maskinporten-integrasjon (oauth2-klient) og registrerer scopet til denne.
 
 Tilgang er nå etablert.  Når API'et så skal brukes run-time, gjennomføres følgende steg:
 
-5. Konsumenten sin Oauth2-klient forespør token fra Maskinporten
-6. Konsumenten inkluderer token i kall til APIet.
-7. API-tilbyder validerer tokenet, utførerer evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
+5. Konsumentens Oauth2-klient forespør token fra Maskinporten
+6. Konsumenten inkluderer token i kall til API-et.
+7. API-tilbyder validerer tokenet, utfører evt. fin-granulert tilgangskontroll og returnerer forespurt ressurs.
 
 ## Prosedyre for API-tilbyder
 
@@ -43,50 +43,50 @@ Følgende syntax brukes:
 scope ::= prefix ':' subscope
 ```
 
-der `prefix` er en tekststreng som blir manuelt tildelt API-tilbyderen. En API-tilbyder kan ha flere prefix.  Eksempel på prefix kan være `nav` eller `skatt`. Å bruke organisasjonnummer som prefix kan i mange sammenhenger være nyttig, siden det kan legge til rette for automatiserte prosesser. I andre sammenhenger vil ikke organisasjonsnummer være tilstrekkelig granulært for store virksomheter.
+der `prefix` er en tekststreng som blir manuelt tildelt API-tilbyderen. En API-tilbyder kan ha flere prefix.  Eksempel på prefix kan være `nav` eller `skatt`. Å bruke organisasjonsnummer som prefix kan i mange sammenhenger være nyttig, siden det kan legge til rette for automatiserte prosesser. I andre sammenhenger vil ikke organisasjonsnummer være tilstrekkelig granulært for store virksomheter.
 
 - Subscope bør beskrive ressursen best mulig (`trygdeopplysninger` eller `adresse`).  
-- Subscope kan gjerne ha ulike postfix for å skille på lese- og skrive-tilgang til ressursen (`nav:trygdeopplysninger.write`)
-     - fravær av postfix bør i utgangspunktet tolkes som kun lese-tilgang
+- Subscope kan gjerne ha ulike postfix for å skille på lese- og skrive-tilgang til ressursen (`nav:trygdeopplysninger.write`).
+  - Fravær av postfix bør i utgangspunktet tolkes som kun lese-tilgang.
 
 
 #### Synlighet
 
-Attributtet `visibilty` brukes for å angi scopets synlighet:
+Attributtet `visibility` brukes for å angi scopets synlighet:
 
 |verdi|beskrivelse|
 |-|-|
-|PUBLIC | Scopet er synlig for alle på /scopes/all endepunkt.    |
-|PRIVATE| Scopet er ikke synlig for andre enn API-tilbyder og de konsuementer som har fått tilgang |Konsument må bli fortalt at scopet finnes    |
-|INTERAL | Inten bruk i Digitaliseringsdirektoratet   |   
+|PUBLIC | Scopet er synlig for alle på /scopes/all-endepunktet.    |
+|PRIVATE| Scopet er ikke synlig for andre enn API-tilbyder og de konsumenter som har fått tilgang. Konsument må bli fortalt at scopet finnes.    |
+|INTERNAL | Intern bruk i Digitaliseringsdirektoratet   |   
 
-Merk at det er ingen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
+Merk at det ikke er noen integrasjon med API-katalogen, slik at API-tilbyder selv må sikre at scopet ikke havner i API-katalogen dersom denne benyttes.
 
 #### Scope-begrensninger
 
-Det anbefales at man setter en begrensning på bruk av scopet. Ved å sette attributtet  `allowed_integration_types`, vil man begrense bruken til de integrasjonstypene som er inkludert i attributtet. F.eks kan man begrense bruken til kun å kunne brukes med maskinporten- (server til server) eller idportenklienter (brukerinnlogging).
+Det anbefales at man setter en begrensning på bruk av scopet. Ved å sette attributtet  `allowed_integration_types`, vil man begrense bruken til de integrasjonstypene som er inkludert i attributtet. F.eks. kan man begrense bruken til kun å kunne brukes med maskinporten- (server til server) eller idporten-klienter (brukerinnlogging).
 
 #### Inaktive entiteter
 
 For å sikre juridisk logging og statistikk, vil Digitaliseringsdirektoratet aldri slette scopes og tilganger (eller integrasjoner), men heller deaktivere disse ved DELETE-kall.
 
-Deaktiverte entiteter vil ikke komme opp i GET utlistinger som default, men kan hentes ved å sette `inactive=TRUE` som query parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict isteden.
+Deaktiverte entiteter vil ikke komme opp i GET-utlistinger som standard, men kan hentes ved å sette `inactive=TRUE` som query-parameter. Deaktiverte entiteter vil ikke reaktiveres ved POST og man får 409 Conflict i stedet.
 
 ## Administrasjon av API
 
-API'ene kan administreres på 2 måter. Enten ved bruk av Oauth2-klient eller ved bruk av web-grensesnitt via Samarbeidsportalen.
+API-ene kan administreres på to måter: Enten ved bruk av Oauth2-klient eller ved bruk av web-grensesnitt via Samarbeidsportalen.
 
 ### 1a: Opprette et API - via Samarbeidsportalen
 
  - Gå til "Min profil" på https://samarbeid.digdir.no/ . Velg "Virksomhetens tjenester" og "Administrasjon av tjenester" på venstresiden i menyen.
 
-- Velg "Mine API" i det miljøet du vil opprette API'et i.
+  - Velg "Mine API" i det miljøet du vil opprette API-et i.
 
 - Trykk på "Nytt scope"
 
-- Velg prefix fra nedtrekksmenyen, om denne er tom, så er det ikke tildelt noe prefix til organiasjonsnummeret du representerer. Ta da kontakt på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. Organisasjonsnummeret for virksomheten din vil være pre-utfyllt i skjemaet.
+- Velg prefix fra nedtrekksmenyen. Om denne er tom, så er det ikke tildelt noe prefix til organisasjonsnummeret du representerer. Ta da kontakt på <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. Organisasjonsnummeret for virksomheten din vil være preutfylt i skjemaet.
 
-- Fyll ut resten av parameterene og trykk "lagre". Subscopet vil nå vise i listen over "Mine API".
+- Fyll ut resten av parameterne og trykk "lagre". Subscopet vil nå vises i listen over "Mine API".
 
 Videotutorial: (https://vimeo.com/427689809)
 
