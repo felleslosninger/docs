@@ -8,23 +8,46 @@ folders:
       - title: Kva er sandkassen ?
         jurl: /docs/lommebok/lommebok_om.html
 
+      - title: Arkitektur
+        jurl: /docs/lommebok/lommebok_arkitektur.html
+
       - title: Tenester i sandkassen
         jurl: /docs/lommebok/lommebok_tjenester.html
 
       - title: English summary
         jurl: /docs/lommebok/wallet_sandbox_summary.html
 
-- title: Grensesnittspesifikasjon
+- title: Ta i bruk som brukarstad
   folderitems:
 
-      - title: Arkitektur
-        jurl: /docs/lommebok/lommebok_arkitektur.html
+      - title: Ta i bruk som brukarstad
+        jurl: /docs/lommebok/lommebok_taibruk_brukarstad.html
 
-      - title: Lage bevis
+      - title: Registrering 
+        jurl: /docs/lommebok/lommebok_taibruk_registrering_brukarstad.html
+
+      - title: Innlogging
+        jurl: /docs/lommebok/lommebok_bruksomrade_innlogging.html
+
+      - title: Aldersverifisering
+        jurl: /docs/lommebok/lommebok_bruksomrade_aldersverifisering.html
+
+      - title: Motta bevis (OpenID4VP)
+        jurl: /docs/lommebok/lommebok_protokoll_vp.html
+
+
+- title: Ta i bruk som utstedar
+  folderitems:
+
+      - title: Ta i bruk som utstedar
+        jurl: /docs/lommebok/lommebok_taibruk_utstedar.html
+
+      - title: Registrering
+        jurl: /docs/lommebok/lommebok_taibruk_registrering_utstedar.html
+
+      - title: Lage bevis (OpenID4VCI)
         jurl: /docs/lommebok/lommebok_protokoll_vci.html
 
-      - title: Motta bevis
-        jurl: /docs/lommebok/lommebok_protokoll_vp.html
 
 
 - title: Digdir-tenester
@@ -71,6 +94,9 @@ related_resources_list:
 
 - title: Utviklerportal
   jurl: https://sjolvbetening.test.eidas2sandkasse.net/login
+
+- title: Bevisgenerator
+  jurl: https://bevisgenerator.test.eidas2sandkasse.net/
 
 - title: Nyhetsside for digital lommebok
   jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2897

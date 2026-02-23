@@ -7,37 +7,48 @@ product: lommebok
 redirect_from: /lommebok_tillitsrammeverk
 ---
 
-Tillit i sandkassen er basert tillitslister forvalta av Digdir. Du finn tillitslista her:
+Tillit i sandkassen er basert tillitslister forvalta av Digdir. Listene fortel ven som er hovudaktørar i sandkassen og kva rolle dei har.  Du finn tillitslistene her:
 
 - [Tillitsliste for sandkassen](https://tillitsliste.test.eidas2sandkasse.net/)
 
-Tillitslista fortel kven som er hovudaktørar i sandkassen, dvs. som godkjent som:
-
-- PID-utstedarar
-- Lommebok-operatørar
-- Kvalifiserte utstedarar (QEAA)
-- Offentlige utstedarar (Pub-EAA)
-- Ordinære (ikkje-kvalifiserte) utstedarar (EAA)
-- Brukerstadsertifikat-utstedarar
+Tillitslistene blir bygd basert på registrering i brukerstad-registeret til Digdir. Det er ein manuell prosess for å verte "overført" frå registeret og inn på tillitslistene.
 
 <table><tr><td><div class="mermaid">
 
 graph
 
-subgraph AK [Tillitsliste]
-  TLPID@{ shape: docs, label: "PID-utstedere"}
-  TLEAA@{ shape: docs, label: "Utstedere (QEAA, PubEAA, EAA)"}
-  
-  TLRP@{ shape: docs, label: "Tilgangssertifikat-leverandørar"}
-  TLW@{ shape: docs, label: "Lommebok-operatører"}
-
+subgraph DigReg [Digdirs Registrar]
+  DRPR[(Digdir brukerstad-register)]
+  CA[Digdir aksesssertifikat-utsteder]
 end
 
-  DRPR[(Digdir brukerstad-register)]
-  RPR[(Andre brukerstad-registre)]
+subgraph AndreReg [Evt. andre virksomheter]
+  RPR[(Evt. andre brukerstad-registre)]
+  APR[Evt. andre aksesssertifikt-utstedere]
+end
 
-TLRP --> DRPR
-TLRP --> RPR
+subgraph AK [Tillitslister]
+
+  subgraph E1 ["eIDAS1 (ETSI 119 612)"]
+
+    TLEAA@{ shape: docs, label: "Utstedere (QEAA, PubEAA, EAA)"}
+    TLandre@{ shape: docs, label: "Andre tillitstjenester (virk.sertifikater, signering, tidsstempling, ...)"}
+     
+  end
+
+  subgraph E2 ["EUDIW-lister (ETSI 119 602)"]
+  TLPID@{ shape: docs, label: "PID-utstedere"}
+  
+  TLRP@{ shape: docs, label: "Aksesssertifikat-leverandørar"}
+  TLW@{ shape: docs, label: "Lommebok-operatører"}
+  end
+end
+
+
+
+TLRP --> CA
+
+
 </div></td></tr>
 <tr><td>
  <em>Tillitsrammeverket i sandkassen</em>
@@ -45,25 +56,33 @@ TLRP --> RPR
 </tr>
 </table>
 
+Det er viktig å vere klar over at tillitslistene er delt opp i to hovudkategoriar:
 
-Det er verd å merke seg at sjølve brukarstadene (relying parties) ikkje havnar på den sentrale tillitslista, men at det istaden er ein to-nivå struktur: den sentrale tillitslista peikar berre på PKIer forvalta av godkjente **tilgangssertifikat-utstedere**. Det kan gjerne vere fleire slike sertifikat-utstedere i eit land. Eit brukarstad må ta kontakt med ein **Registrar** for å skaffe eit brukerstad-sertifikat (også kjent som "tilgangssertifikat": Relying Party Access Certificate). Normalt vil Registrar og sertifikat-utsteder vere same organisasjon. 
+- **"eIDAS1-lista"** er liste over sokalla tillitstjenester ihht til eIDAS, og desse kan brukast uavhengigeg av lommebok-økosystemet.  Døme på slike tenester er virksomheitssertifikat, signeringstenester eller tidstempling.  Det er viktig å vere klar over at utstedelse av bevis (electronic attestation of attributes) faktisk er definert som ei tillitsteneste, noko som betyr at eit digitalt bevis ikkje MÅ overførast med lommeboka.  I produksjon i Norge idag er det NKOM som pulibserer [den ekte norske eiDAS1-lista](https://nkom.no/files/TSL/NO_TSL.xml).
 
-I sandkassen vil Digdir tilby ein Regigstrar-funksjon med tilhøyrande brukarstadsertifikat-utstedar.  Det er opent for at fleire aktørar også kan vere Registrar i sandkassen.
+- **"EUDIW-listene"** gjeld berre for lommebok-økosystemet.   Her vil det vere ei liste per rolle, som lommebok-leverandør, PID-utstedarar, aksesssertifikat-utstedarar, etc.
 
-Ein bør merke seg at ARF snakkar om tillitslister, altså det kan potensielt vere fleire, ulike tillitslister som ein må sjekke.   I den endelege lommebokarkitekturen er det EU-kommisjonen som tilbyr tillistlistene, og so skal medlemslanda melde inn aktørane. 
+Dei som brukar lommebok, må difor forhalde seg til fleire lister for å få eit fullt oversikt over kva aktørar som inngår i ulike roller og utføre tilstrekkeleg validering.
 
-### Teknisk skildring
-
-Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på PKI, dvs. X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  
-
-
-Hovedaktørane må ha sine signeringssertifikat publisert på ei tillitsliste, 
-
-![Tillitsmodell ihht. arkitektur-rammeverket (ARF)](lommebok_arf_trustmodel.png)
+For å verkeleg forstå korleis tillit i lommeboka virkar, anbefalar me å lese avsnitta om "Trust throught a... lifecycle" i [kap 6 i ARFen](https://eudi.dev/latest/architecture-and-reference-framework-main/#6-trust-model).
 
 
-Tillitslista er basert på [ETSI-standarden 319 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf) og er i praksis ei XML-fil som lister opp aktørane og tillitstenestene dei leverer:
 
+## Sandkassen
+
+I sandkassen publiserer Digdir både eIDAS1-liste og EUDIW-lister, som då gjeld berre for sandkassen. Vidare opererer me ein Registrar-funksjon med tilhøyrande aksesssertifikat-utstedar.  Det er opent for at fleire aktørar også kan vere Registrar og/eller aksesssertifikat-utsteder om dei ynskjer - ta berre kontakt med oss. 
+
+I den endelege lommebokarkitekturen er det EU-kommisjonen som skal publisere tillistlistene, og so skal medlemslanda melde inn aktørane. 
+
+Me har eit ynskje om å koble saman andre meldemland sine sandkasser, primært for å understøtte Noreg si deltaking i WeBuild-prosjektet, men p.t. er me usikre på korleis dette faktisk kan realiserast. 
+
+
+## Teknisk skildring
+
+eIDAS1-lista er basert på [ETSI-standarden 119 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf) og er i praksis ei signert XML-fil som lister opp aktørane og tillitstenestene dei leverer.  Denne spec'en støttar liste-av-lister, og i produksjonssmiljøet til slik at EU-kommisjonen har ei sentral tillitsliste som inkluderer alle medlemland.  
+
+*døme på struktur på eidas1-lista*:
+```
 * Tillitsteneste-leverandør A (TrustServiceProvider)
   * Tillitsteneste A.1 (TSPService)
     * Status (ServiceStatus)
@@ -72,20 +91,17 @@ Tillitslista er basert på [ETSI-standarden 319 612](https://www.etsi.org/delive
     * Ytterlegare avgrensningar (AdditionalServiceInformation.URI)
   * Tillitsteneste A.2 
 * etc...
+```
 
-For døme på ei ekte produksjons-tillistliste kan du sjå på [den norske tillistlista for tilbydarar av kvalifiserte tillitstenester](https://nkom.no/internett/elektronisk-id-og-tillitstjenester/tillitsliste-trusted-list#norges_tillitsliste).  Alle dei 28 tillitslistene i EU/EØS blir lenka opp i "List of Trusted List" (LOTL) som blir drifta av EU-kommisjonen.
+EUDIW-listene er basert på ein nyare spec [ETSI 119 602](https://www.etsi.org/deliver/etsi_ts/119600_119699/119602/01.01.01_60/ts_119602v010101p.pdf) og listene her er signerte JWTer.  Ei mogeleg svakheit med 602 er at den ikkje støtter liste-av-lister, som gjer at ein må finne andre måtar å bygge avgrensa økosystem på tvers av land.
 
-Det er myndigheiter i medlemslanda som har tilgang til, og ansvaret for, å publisere desse TSPane på EU si tillitsliste. 
+Teknisk er tilliten mellom aktørane i lommebok-økosystemet primært basert på PKI, dvs. X.509-sertifikat som skal oppfylle visse eigenskapar og kvaliteter.  Det er fleire ETSI-spesifikasjonar som set krav til sertifikat-format, policyer etc.
 
-Dersom ei tillitsteneste med tilhøyrande signeringsertifikat ikkje er lagt inn i tillitslista, skal forsøkt på samhandling verte avvist. Det er krav til gjensidig autentisering, slik at ingen kan "hoppe over" denne valideringa.
 
-//todo: forklare WUA, og skilnad i trust mellom signert vp_token og wua
+![Tillitsmodell ihht. arkitektur-rammeverket (ARF)](lommebok_arf_trustmodel.png)
 
-### Praksis
 
-Ta kontakt med Digdir for å få eit brukarstad-sertifikat.  
 
-Bruk gjerne innsynstjenesten for å studere kven so er aktørar i sandkassen.
 
 
 

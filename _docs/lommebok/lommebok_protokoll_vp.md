@@ -11,9 +11,13 @@ På denne sida forsøker me å forklara flyten du må følgje som brukastad når
 
 Protokollen som vert nytta heiter [OpenID for Verifiable Presentations (OpenID4VP)](https://openid.net/specs/openid-4-verifiable-presentations-1_0-final.html).  (https://openid.github.io/OpenID4VP/openid-4-verifiable-presentations-wg-draft.html).
 
-Før du kan starte flyten må du har utført dette:
+Sidan protokollen vert nytta av ulike økosystem over heile verda, er den ganske generell, den er til dømes heilt agnostisk både ovanfor bevisformat og tillistrammeverk.  For å skape eit interoperabelt økosystem er det difor naudsynt å **profilere** protokollen.  For EU-lommeboka skjer dette i fleire steg:
 
-- Brukerstaden (relying party) må først registrere seg hjå ein Registrar 
+1. **OpenID4VP** 
+2. **[HAIP](https://openid.net/specs/openid4vc-high-assurance-interoperability-profile-1_0.html)** er ein profil utgitt av OpenID Foundation for bruksområde med høge krav til sikkerheit.
+3. **[ETSI 119 472-2](https://www.etsi.org/deliver/etsi_ts/119400_119499/11947202/01.01.01_60/ts_11947202v010101p.pdf)** er den europeiske profilen som igjen bygger på HAIP.
+
+## Flyt
  
 Sjølve flyten er enkel, og består av fylgjande steg:
 
@@ -39,27 +43,7 @@ sequenceDiagram
 
 ## Oppsett og registrering
 
-Alle brukerstader skal vere registrert på førehand. Krava rundt registrering finn me i [rettsakt for RP-registerering, C/2025/2621](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R0848&qid=1749119392688), og der informasjonen som skal registrerast finn du i Annex I.  I praksis er dette organisasjonsnamn, organisasjonsnummer, og eit par andre felt. 
-
-Ein kan spesielt merke seg at det skal registrerast kva **persondata** (bevistype, eller enkeltattributter frå bevis) som brukerstaden kjem til å førespørje, og **formålet** ved å etterspørje desse dataene. 
-
-For sandkassen registrerer du deg førebels ved å sende epost til Digdir (servicedesk@...), men på sikt vil det kome ei sjølvbetjeningsløysing.  Som del av registreringsprosessen vil du motta to sertifikater som må brukast når du etterspør bevis frå lommebøkene til innbyggarane:  
-
- - Eitt **tilgangssertifikat** (Relying Party Access Certificate, RPAC) som vert nytta til å autentisere deg opp mot lommeboka
- - Eitt **registreringssertikat** (Relying Party Registration Certificate, RPRC)  som fortel kva data du har registrert at du vil førespørje.
-
-Du må sjølv lage privatnøkkel til desse sertifikata før du gjennomfører registreringa, og basert på denne lage ei [CSR-fil](https://en.wikipedia.org/wiki/Certificate_signing_request) som du inkluderer med søknaden.
-
-Merk at lommebok-økosystemet føretrekk EC-baserte nøkler (ikkje RSA) og at CSRen p.t. må angje ein SAN-extension som skal matche client_id.  Denne skal fortrinnsvis skal peike på det domenet som du køyrer applikasjonen/brukerstaden din på, men det er lov å bruke t.d. localhost under utvikling.
-
-**Døme på å lage CSR med keytool:**
-```
-#1. opprett ein keystore og lag eit nøkkelpar i den:
-keytool -genkeypair -alias rp-access -keyalg EC -groupname secp256r1 -sigalg SHA256withECDSA  -validity 365 -storetype pkcs12 -keystore rp-access.p12 -dname "CN=dummy"
-
-#2. lag CSR-fil med SAN-extension (bruk egne domener):
-keytool -certreq -keyalg EC -alias rp-access -ext san=dns:brukerstad.example.com -file rp-access.csr -keystore rp-access.p12
-```
+Alle brukerstader skal vere registrert på førehand.  For sandkassen er dette skildra under [registrering av brukarstad](lommebok_taibruk_registrering_brukarstad)
 
 
 
@@ -107,9 +91,11 @@ Me skal sjå nærare på kvart av desse temane, men fyrst vil me berre gje eit d
 
 Du må kjenne identifikatoren på beviset du ynskjer.  
 
-For "høgverdige" bevis som [digital grunnidentitet (den sokalla "PID'en")](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.01-pid-rulebook/) eller [digitalt førarkort (mobile driver licence - mDL)](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.02-mDL-rulebook/) so vil EU publisere sokalla rulebooks der bevis-typane vert definert. EU skal også bygge opp ein sentral katalog over bevis og attributter (sokalla "catalogue of attestations" og "catalogue of schemes", ref [utkast til rettsakt](https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14402-European-digital-identity-framework-verification-of-electronic-attestation-of-attributes_en). 
+For "høgverdige" bevis som [digital grunnidentitet (den sokalla "PID'en")](lommebok_bruksomrade_innlogging) eller [digitalt førarkort (mobile driver licence - mDL)](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.02-mDL-rulebook/) so vil EU publisere sokalla rulebooks der bevis-typane vert definert. EU skal også bygge opp ein sentral katalog over bevis og attributter (sokalla "catalogue of attestations" og "catalogue of schemes", ref [utkast til rettsakt](https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14402-European-digital-identity-framework-verification-of-electronic-attestation-of-attributes_en). 
 
-Ofte vil du vite kva verksemd som er utstedar av beviset, eller du kan finne det frå [innsynstjenesten til sandkassa](lommebok_tjenester). Du kan då sjekke [metadata-endepunktet til Credential Issueren](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html#name-credential-issuer-metadata) for å finne kva `credential_configuration_id`'ar som er støtta. 
+Ofte vil du vite kva verksemd som er utstedar av beviset, eller du kan finne det frå [innsynstjenesten til sandkassa](lommebok_tjenester). Du kan då sjekke [metadata-endepunktet til Credential Issueren](https://openid.github.io/OpenID4VCI/openid-4-verifiable-credential-issuance-wg-draft.html#name-credential-issuer-metadata) for å finne kva bevistypar 'ar som er støtta. 
+
+Merk at det kan vere ganske forvirrande at bevistypar i metadata er identifisert ved ein generisk `credential_configuration_id` , men dette er berre ein intern teknisk identifikator,  den bevistype-definisjonen som du er på jakt etter heiter anten `doctype`  eller `vct`.
 
 Eit bevis kan vere utsted på 3 ulike kvalitetsnivå.  Det høgaste nivået er sokalla **kvalifiserte** bevis (QEAA), so er det ein mellomnivå for offentleg sektor som heiter **Pub-EAA**, medan resten av bevisa er **ikkje-kvalifiserte**.    På ikkje-kvalifisert nivå er det valfritt å verte registrert i dei sentrale katalogane, som betyr at du kan måtte skaffe deg kjennskap om eksistensen av slike bevis på anna måtar (til dømes via dokumentasjon).
 
@@ -129,7 +115,7 @@ Iallefall, når du kjenner type-identifikatoren på beviset, kan du konstruere d
 
 
 
-**Døme på aldersverifisering, der anten mobilt førarkort eller PID kan nyttast som datagrunnlag**:
+**Døme på aldersverifisering med ein samansett spørring,  der anten mobilt førarkort eller PID kan nyttast som datagrunnlag**:
 ```
 "dcql_query" = {
   "credentials": [
@@ -160,7 +146,10 @@ Sjå [døme i spec'en](https://openid.github.io/OpenID4VP/openid-4-verifiable-pr
 
 #### Tema 1.b:  Sikkerheitskrav / rammeverk
 
-TBD.
+Dette vil avhenge av kva økosystem du brukar. For EU-lommebok er det primært bruk av X.509-baserte PKIar som gjeld.
+
+På ikkje-kvalifisert sikkerheitsnivå er det derimot tillatt med alternative tillitsrammeverk, men me kjenner per nå ikkje til korleis dette skal kunne byggast. 
+
 
 <!--(treng eg be om key-binding ?)
 (er beviset eg vil ha ikkje-kvalifisert, og tilhøyrer det eit økosystemet som brukar ein annan mekanisme for tillitsrammeverk enn X.509-basert tillit nytta av QEAA og PubEAA)
@@ -182,7 +171,7 @@ Døme på eit tenkt tilfelle der norsk banksektor har blitt samde om ein `type` 
 
 #### Tema 1.d: Skildre brukerstaden din
 
-VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men kan derimot verte overført runtime som del av VP-requesten i claimet `client_metadata`.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til at klient-metadata er rette.
+VP-spec'en bygger på Oauth2, der brukstaden opptrer som oauth-klient, og lommeboka spelar rolla som autorisasjonsserver. Ulikt Oauth2 so skal dei tekniske eigenskapane til brukarstaden ikkje registrerast på førehand, men må derimot verte overført runtime som del av VP-requesten i claimet `client_metadata`.  Gjennom å signere VP-requesten med tilgangssertifikatet (RPAC) so kan lommeboka ha tiltru til at klient-metadata er rette.
 
 `vp_formats_supported` er eit viktig metadata som er lurt å sende for hjelpe lommeboka til å velge rett format på bevisa.
 
