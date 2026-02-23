@@ -26,12 +26,6 @@ folders:
       - title: Registrering 
         jurl: /docs/lommebok/lommebok_taibruk_registrering_brukarstad.html
 
-      - title: Innlogging
-        jurl: /docs/lommebok/lommebok_bruksomrade_innlogging.html
-
-      - title: Aldersverifisering
-        jurl: /docs/lommebok/lommebok_bruksomrade_aldersverifisering.html
-
       - title: Motta bevis (OpenID4VP)
         jurl: /docs/lommebok/lommebok_protokoll_vp.html
 
@@ -48,6 +42,19 @@ folders:
       - title: Lage bevis (OpenID4VCI)
         jurl: /docs/lommebok/lommebok_protokoll_vci.html
 
+      - title: EUDIPLO som brukarstad
+        jurl: /docs/lommebok/lommebok_eudiplo.html
+
+
+
+- title: Ta i bruk som utstedar
+  folderitems:
+
+      - title: Innlogging
+        jurl: /docs/lommebok/lommebok_bruksomrade_innlogging.html
+
+      - title: Aldersverifisering
+        jurl: /docs/lommebok/lommebok_bruksomrade_aldersverifisering.html
 
 
 - title: Digdir-tenester
@@ -74,9 +81,6 @@ folders:
       - title: Utsteder, lommebokstyrt
         jurl: /docs/lommebok/lommebok_digdir_utsteder_lommebokstyrt.html
       
-      - title: EUDIPLO som brukarstad
-        jurl: /docs/lommebok/lommebok_eudiplo.html
-
 
 
 
