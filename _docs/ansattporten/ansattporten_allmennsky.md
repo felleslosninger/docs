@@ -14,7 +14,7 @@ roller i Altinn.
 
 Se under for status og oppsett hos den aktuelle skyleverandøren. 
 
-| Platform                                                                                                     | Status juni20204                                                                                                    |
+| Platform                                                                                                     | Status juni 2024                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | [Google Cloud Platform]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-google-cloud-platform) | Støttet med [enkelte produktbegrensninger](https://cloud.google.com/iam/docs/federated-identity-supported-services) |
 | [Azure]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-azure)                                 | Ikke støttet                                                                                                        |

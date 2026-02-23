@@ -131,8 +131,11 @@ related_resources_list:
 #- title: Digdir Status
 #  jurl: https://status.digdir.no
 
-- title: Altinn Docs
+- title: Altinn 2 Docs
   jurl: https://altinn.github.io/docs/
+
+- title: Altinn 3 Docs
+  jurl: https://docs.altinn.studio/
 
 - title: Release-logg (release.digdir.no)
   jurl: https://release.digdir.no

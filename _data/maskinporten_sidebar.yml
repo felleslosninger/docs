@@ -63,6 +63,9 @@ folders:
       - title: Systembruker-delegering
         jurl: /docs/Maskinporten/maskinporten_func_systembruker.html
 
+      - title: Samtykketjenesten
+        jurl: /docs/Maskinporten/maskinporten_func_samtykke.html
+
       - title: Audience-begrensning
         jurl: /docs/Maskinporten/maskinporten_func_audience_restricted_tokens.html
 

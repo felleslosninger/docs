@@ -16,6 +16,9 @@ For å bli integert i produksjon, må et land bli formelt *notifisert* og fagfel
 
 Kunder kan se oppdatert status på hvilke land som er tilkoblet på [EU sitt eIDAS Dashboard](https://eidas.ec.europa.eu/efda/browse/notification/eid-chapter-contacts/NO)
 
+Fra [denne demo-tjenesten](https://demo-client.eidasnode.no/)  kan du verifisere - i produksjon - om et annet land er koblet til Norge.  Trykk "Login"-knappen, velg så land, og dersom du havner på en tilsynelatenede fungerende side i det aktuelle landet, kan du anta at landets borgere vil kunne logge inn til deg.
+
+
 ## Hvilken informasjon får jeg om eidas-brukere ?
 
 Ved en eIDAS-pålogging følger det med følgende kjerne-attributter:
@@ -114,12 +117,12 @@ Se [eIDAS eID Profile ]( https://ec.europa.eu/digital-building-blocks/wikis/disp
 
 Kjerneattributtene prefixes av ID-porten med "eidas_".  Det er 4 obligatoriske attributter som alltid vil være tilstede:
 
-| claim | eIDAS attributt | beskrivelse |
-| --- |  --- | --- |
-| eidas-personidentifier | PersonIdentifier | eidas-identifikator ("as persistent as possible") |
-| eidas-dateofbirth |DateOfBirth| Fødselsdato|
-| eidas-firstname |FirstName|Fornavn|
-| eidas-familityname |FamilyName|Etternavn|
+| claim               | eIDAS attributt   | beskrivelse                                       |
+|---------------------|-------------------|---------------------------------------------------|
+| eidas_identifier    | PersonIdentifier  | eidas-identifikator ("as persistent as possible") |
+| eidas_date_of_birth | DateOfBirth       | Fødselsdato                                       |
+| eidas_firstname     | CurrentGivenName  | Fornavn                                           |
+| eidas_lastname      | CurrentFamilyName | Etternavn                                         |
 
 Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 -  `xx` er 2-bokstavkode for landet der brukeren har sin elektroniske ID (Merk at dette ikke er garantert å også være brukeren sitt hjemland/statsborgerskap) 
@@ -129,4 +132,7 @@ Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 ## Utenlandske testbrukere
 
 Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
+
+## Innlogging med norsk e-ID på utenlandsk tjeneste
+Det er (pr 01.01.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering. 
 

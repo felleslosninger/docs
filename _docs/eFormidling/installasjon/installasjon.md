@@ -137,33 +137,36 @@ Det er ikke lenger innebygd støtte for H2 som standard – du må nå eksplisit
 | difi.datasource.username | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360) | sa            |
 | difi.datasource.password | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)    | (ingen)       |
 
-Eksempel (MySQL):
-
+Eksempel (MariaDB)
+```properties
+difi.datasource.url=jdbc:mariadb://mydatabaseserver:3306/mydatabase?serverTimezone=UTC
+difi.datasource.username=myuser
+difi.datasource.password=mypassword
 ```
-difi.datasource.url=jdbc:mysql://mydatabaseserver/mydatabase?serverTimezone=UTC
+
+Eksempel (MySQL):
+```properties
+difi.datasource.url=jdbc:mysql://mydatabaseserver:3306/mydatabase?serverTimezone=UTC
 difi.datasource.username=myuser
 difi.datasource.password=mypassword
 ```
 
 Eksempel (Postgres):
-
-```
+```properties
 difi.datasource.url=jdbc:postgresql://mydatabaseserver:5432/mydatabase
 difi.datasource.username=myuser
 difi.datasource.password=mypassword
 ```
 
 Eksempel (MSSQL):
-
-```
+```properties
 difi.datasource.url=jdbc:sqlserver://mydatabaseserver:1433;databaseName=mydatabase
 difi.datasource.username=myuser
 difi.datasource.password=mypassword
 ```
 
 Eksempel (H2):
-
-```
+```properties
 difi.datasource.url=jdbc:h2:file:/opt/data/integrasjonspunkt
 difi.datasource.username=sa
 difi.datasource.password=
@@ -463,7 +466,7 @@ difi.move.mail.trust=${difi.move.mail.smtpHost}
 
 ### Meldingstjenester
 
-#### Konfigurere eFormidlings meldingstjeneste (DPO)
+#### Konfigurere eFormidlings meldingstjeneste (DPO) (Utgår i IPv4)
 
 eFormidlings meldingstjeneste er realisert ved hjelp av Altinn Formidling, og krever bruker for Altinn Formidling.
 
@@ -487,6 +490,38 @@ Eksempel:
 difi.move.feature.enableDPO=true
 difi.move.dpo.username=1234
 difi.move.dpo.password=mypassword
+```
+
+#### Konfigurere eFormidlings meldingstjeneste (DPO) IPv4
+
+> Før DPO tjenesten kan tas i bruk må du først opprette et system og en systembruker i Altinn.
+> Se detaljer om dette i [opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
+
+
+| Egenskap                            | Beskrivelse                                                                                                              | Standardverdi |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------|---------------|
+| difi.move.feature.enableDPO         | Slår på/av støtte for eFormidlings meldingstjeneste (true/false)                                                         | false         |
+| difi.move.dpo.message-channel       | Identifikator for meldingskanal, maks 25 tegn                                                                            | (ingen)       |
+| difi.move.dpo.systemName            | Navn på systemet du har opprettet i Altinn for ditt Integrasjonspunkt, eks <<orgnr>>_integrasjonspunkt                   | (ingen)       | 
+| difi.move.dpo.systemUser.orgId      | Din egen organisasjons landskode og organisasjonsnummer på formatet: <<landskode>>:<<orgnr>> Landskode for norge er 0192 | (ingen)       | 
+| difi.move.dpo.systemUser.name       | Din egen organisasjons systembruker navn                                                                                 | (ingen)       | 
+| difi.move.dpo.reportees[0..n].orgId | Landskode og organisasjonsnummer til organisasjon en skal sende og motta på vegne av                                     | (ingen)       |
+| difi.move.dpo.reportees[0..n].name  | Navn på systembruker til organisasjon en skal sende og motta på vegne av                                                 | (ingen)       |
+
+
+Eksempel:
+
+```properties
+difi.move.feature.enableDPO=true
+difi.move.dpo.systemName=823456788_integrasjonspunkt
+difi.move.dpo.systemUser.orgId=0192:823456788
+difi.move.dpo.systemUser.name=823456788_integrasjonspunkt_systembruker_823456788
+
+# dersom du skal sende på vegne av flere organisasjoner lister du dem opp som reportees
+difi.move.dpo.reportees[0].orgId=0192:123456789
+difi.move.dpo.reportees[0].name=systembruker_navnet_for_123456789
+difi.move.dpo.reportees[1].orgId=0192:223456789
+difi.move.dpo.reportees[1].name=systembruker_navnet_for_223456789
 ```
 
 #### Konfigurere eInnsyns meldingstjeneste (DPE)
@@ -556,7 +591,7 @@ difi.move.fiks.inn.paa-vegne-av.986252932.username=myusername2
 difi.move.fiks.inn.paa-vegne-av.986252932.password=mypassword2
 ```
 
-#### Konfigurere Altinn Digital Post (DPV)
+#### Konfigurere Altinn Digital Post (DPV) (Utgår i IPv4)
 
 Altinn Digital Post krever bruker:
 
@@ -582,6 +617,31 @@ difi.move.feature.enableDPV=true
 difi.move.dpv.username=myusername
 difi.move.dpv.password=mypassword
 difi.move.dpv.enableDueDate=false
+```
+
+
+#### Konfigurere Altinn Digital Post (DPV) IPv4
+
+> Før DPV tjenesten kan tas i bruk må du ha en maskinporten client med rett scope og du må
+> rulles inn i tilgangslisten for DPV.  Send forespørsel om dette til servicedesk@digdir.no
+
+| Egenskap                                | Beskrivelse                                                                                               | Standardverdi |
+| --------------------------------------- |-----------------------------------------------------------------------------------------------------------| ----- |
+| difi.move.feature.enableDPV             | Slår på/av støtte for Altinn Digital Post (true/false)                                                    | false |
+| difi.move.dpv.notificationText          | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost)                         | $correspondenceRecipientName$: Du har mottatt en melding fra $reporterName$. |
+| difi.move.dpv.sensitiveNotificationText | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost) for sensitive meldinger | $correspondenceRecipientName$, har mottatt en taushetsbelagt melding fra $reporterName$. For \u00E5 f\u00E5 tilgang til meldingen, er det n\u00F8dvendig at noen i $correspondenceRecipientName$ har f\u00E5tt tildelt rollen \u00ABTaushetsbelagt post fra det offentlige\u00BB i Altinn. Dersom dere er usikre p\u00E5 om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om \u00E5 gi tilgang til rollen \u00ABTaushetsbelagt post\u00BB p\u00E5 Altinns nettsider. |
+| difi.move.dpv.email-subject             | Emne på epostvarslet                                                                                      | Melding mottatt i Altinn |
+| difi.move.dpv.notifyEmail               | Slår på/av varsling til e-post som standard                                                               | true|
+| difi.move.dpv.notifySms                 | Slår på/av varsling til SMS som standard                                                                  | true|
+| difi.move.dpv.enableDueDate             | Slår på/av visuell svarfrist i Altinn Digital Post for sendte meldinger som standard                      | true|
+| difi.move.dpv.daysToReply               | Standard antall dager til svarfrist i Altinn Digital Post                                                 | 7|
+
+Eksempel:
+
+```
+difi.move.feature.enableDPV=true
+difi.move.dpv.enableDueDate=false
+difi.move.dpv.email-subject=Melding mottatt i Altinn
 ```
 
 #### Konfigurere Digital Post til Innbyggere (DPI)

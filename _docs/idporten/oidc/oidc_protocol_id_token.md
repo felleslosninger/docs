@@ -15,6 +15,8 @@ The id_token is the assertion of the authenticated user identity.  It tells you 
 
 The id_token is meant to be consumed and validated by the client in order to build a local session at the client.  It is not intended to be passed around to enable API access towards other parties/systems.
 
+id_tokens are retrieved from the eid supplier using the `openid` scope. However, if the client also requests the `profile` scope, additional claims may be added to the id_token. This is currently supported by Buypass and Bankid.
+
 Please see [Auth0's guide to id and access tokens](https://auth0.com/blog/id-token-access-token-what-is-the-difference/) to learn more of the difference between these tokens.
 
 ## Structure of an id_token
@@ -52,6 +54,13 @@ Example:
 }
 ```
 
+If the client has requested the `profile` scope, additional claims may be added:
+```
+{
+  "given_name" : "Ola",
+  "family_name" : "Nordmann"
+}
+
 ```
 OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 ```
@@ -82,7 +91,11 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | locale | The language selected by the user during the authentication in ID-porten. ISO 639-1 values are: nb (Norwegian Bokmål), nn (Norwegian Nynorsk), en (English), se (Northern Sami)|
 | sid | session id - an unique identifier for end user session at ID-porten. Clients should store the value to be able to handle frontchannel logout notifications. Note that `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required`.  |
 
-
+Additional claims that may be added if the eid supplier provides them and the client has requested the `profile` scope:
+| claim | value |
+| --- | --- |
+| given_name | The given name of the authenticated user |
+| family_name | The family name of the authenticated user |
 
 
 ## AMR values

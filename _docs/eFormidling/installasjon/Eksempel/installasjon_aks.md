@@ -270,6 +270,18 @@ spec:
               value: "brukernavn"
             - name: DIFI_MOVE_DPO_PASSWORD
               value: "passord"
+            - name: DIFI_MOVE_FIKS_UT_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_FIKS_UT_PASSWORD
+              value: "passord"
+            - name: DIFI_MOVE_FIKS_INN_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_FIKS_INN_PASSWORD
+              value: "passord"
+            - name: DIFI_MOVE_FIKS_UT_PAA__VEGNE__AV_12345678_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_FIKS_UT_PAA__VEGNE__AV_12345678_PASSWORD
+              value: "passord"
             - name: DIFI_MOVE_NEXTMOVE_USEDBPERSISTENCE
               value: "true"
             - name: SPRING_DATASOURCE_URL

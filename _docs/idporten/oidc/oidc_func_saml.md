@@ -12,7 +12,7 @@ redirect_from: /oidc_func_saml
 ID-porten begynte som en ren SAML-tjeneste i 2010. OIDC-grensesnittet ble innført i 2017, og ble raskt svært populært. ID-porten støtter kun OIDC, men vi tilbyr midlertidig et forenklet SAML-grensesnitt for kunder som ikke kan benytte OIDC-grensesnittet. SAML-grensesnittet legges ned 06.01.2026
 
 
->SAML-grensesnittet legges ned 01.01.2026
+>SAML-grensesnittet legges ned 06.01.2026
 
 
 ## SAML-arkitektur

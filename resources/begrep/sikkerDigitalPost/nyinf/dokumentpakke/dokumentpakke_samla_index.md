@@ -186,7 +186,7 @@ Listen kan eventuelt utvides ved behov.
 
 ## HTML
 
-    |---|---|
+|---|---|
 | Identifikator | html |
 | Term          | HTML |
 | Definisjon    | HTML fil |

@@ -6,7 +6,18 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
-Tabellen under viser hvordan integrasjonspunktet transformerer utgående meldinger til kall mot APIet for KS SvarUt.
+Her finner du informasjon om transformasjoner fra arkivmelding til KS SvarUt,
+for KS SvarInn til arkivmelding sjå her:
+[Transformasjon fra KS SvarInn til arkivmelding]({% link _docs/eFormidling/Utvikling/Transformasjoner/ks_svarinn_til_arkivmelding.md %}).
+
+Nærmere beskrivelse av funksjonaliteten i KS SvarUt finnes på [Teknisk dokumentasjon for KS SvarUt](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV9?wsdl) (ekstern lenke)
+
+1. TOC
+{:toc}
+
+## Tabell over transformasjoner {#tabell}
+
+Tabellen viser hvordan integrasjonspunktet transformerer utgående meldinger til kall mot APIet for KS SvarUt.
 Integrasjonspunktet supplerer utgående meldinger med opplysninger fra konfigurasjon, standardverdier og oppslag hos
 tredjeparter.
 
@@ -53,6 +64,30 @@ tredjeparter.
 | Bestemmer hvilken postutsending som skal brukes (`printKonfigurasjon.brevtype`)       | -                                                                                         | -                                  | B-post                                                  |
 | Bestemmer om meldingen bare skal kunne leveres digitalt (`kunDigitalLevering`)        | -                                                                                         | -                                  | `false`                                                 |
 
-Nærmere beskrivelse av funksjonaliteten i KS SvarUt finnes på:
+## Eigendefinerte metadata i meldingen {#metadata}
 
-- [Teknisk dokumentasjon for KS SvarUt](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV9?wsdl) (ekstern lenke)
+Det er støtte for å legge til eigendefinerte metadata i meldingen som sendes til KS SvarUt.
+Dette gjøres ved å legge til verdier i `virksomhetsspesifikkeMetadata` i arkivmeldingen,
+disse vil bli lagt til i `metadataFraAvleverendeSystem.ekstraMetadata` i meldingen som sendes til KS SvarUt.
+Det er kun verdier med enkel key-value struktur som støttes i dette elementet.
+
+Eksempel på mapping som blir gjort mellom `virksomhetsspesifikkeMetadata` i arkivmeldingen og `metadataFraAvleverendeSystem.ekstraMetadata` i meldingen som sendes til KS SvarUt:
+
+```xml
+<virksomhetsspesifikkeMetadata>
+    <forvaltningsnummer>20050</forvaltningsnummer>
+    <objektnavn>Mitt objekt</objektnavn>
+    <meirKomplisertVerdi>
+      <asdf>Denne ignoreres fordi den ikkje er enkel key-value</asdf>
+    </meirKomplisertVerdi>
+</virksomhetsspesifikkeMetadata>
+```
+
+```json
+{
+  "ekstraMetadata": {
+    "forvaltningsnummer": "20050",
+    "objektnavn": "Mitt objekt"
+  }
+}
+```
