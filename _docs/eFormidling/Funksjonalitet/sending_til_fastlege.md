@@ -195,16 +195,5 @@ For mellombelse feil (nettverksproblem, NHN utilgjengeleg) vil integrasjonspunkt
 
 ## Ytterlegare ressursar
 
-- [Konfigurasjon av integrasjonspunktet](konfigurasjon.md)
-- [Kvitteringar](kvitteringar.md)
-- [Feilsøking](feilsoking.md)
-- [NHN sin dokumentasjon](https://www.nhn.no/tjenester/messaging-service-hub/)
+- [NHN sin dokumentasjon](https://www.nhn.no/tjenester/elektronisk-meldingsutveksling)
 - [HelseID](https://www.nhn.no/tjenester/helseid/)
-
-## Spørsmål og support
-
-For spørsmål om:
-
-- **Integrasjonspunktet**: Kontakt servicedesk@digdir.no
-- **NHN-tenester**: Kontakt NHN servicedesk
-- **HelseID**: Sjå [HelseID support](https://www.nhn.no/tjenester/helseid/helseid-support/)
