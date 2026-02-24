@@ -33,6 +33,8 @@ folders:
       jurl: /docs/eFormidling/Funksjonalitet/avtalt
     - title: FIKS IO-meldingsutveksling
       jurl: /docs/eFormidling/Funksjonalitet/fiks_io
+    - title: Sending til fastlege
+      jurl: /docs/eFormidling/Funksjonalitet/sending_til_fastlege
 - title: Egenskaper
   folderitems:
     - title: Egenskaper
