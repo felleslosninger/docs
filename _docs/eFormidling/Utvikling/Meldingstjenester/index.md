@@ -15,3 +15,4 @@ Meldingstjenester som brukes i eFormidling:
 - [eInnsyns meldingstjeneste](einnsyns_meldingstjeneste)
 - [KS FIKS IO](ks_fiks_io)
 - [KS SvarUt og SvarInn](ks_svarut_og_svarinn)
+- [Meldingsutveksling for fastlegar](meldingsutveksling_for_fastlegar)
