@@ -76,6 +76,30 @@ Filtertyper brukes for fingranulere konfigurasjonen. Per i dag så finnes det 3 
 
 ## Eksempler på konfigurasjon
 
+### Tillate representasjon (e-postadresse)
+
+For å åpne for at enkelte e-postadresser kan representere virksomheten i EntraID, angi e-postadresse og sett filtertype til "Ingen filter".
+
+I dette eksempelet vil brukeren med e-postadresse ansatt.person@digdir.no kunne representere virksomheten med EntraID i Ansattporten.
+
+![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_epost_1.png)
+
+### Tillate representasjon på spesifikk klient (e-postadresse)
+
+Dersom du vil la en enkelt e-postadresse representere virksomheten på spesifikke klienter, angi e-postadresse, sett filtertype til "Tillat" og angi KlientID i en kommaseparert liste.
+
+I dette eksempelet vil brukeren med e-postadresse ansatt.person@digdir.no kunne representere virksomheten på klientID 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID.
+
+![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_epost_2.png)
+
+### Tillate representasjon på alle klienter utenom X (e-postadresse)
+
+Dersom du vil la en enkelt e-postadresse representere virksomheten med noen unntak, angi e-postadresse, sett filtertype til "Nekt" og angi KlientID i en kommaseparert liste.
+
+I dette eksempelet vil brukeren med e-postadresse ansatt.person@digdir.no kunne representere virksomheten på alle klienter utenom 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID.
+
+![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_epost_3.png)
+
 ### Tillate representasjon (domene)
 
 For å åpne for at alle brukere med et gitt domene kan representere virksomheten, angi domene og sett filtertype til "Ingen filter".
@@ -123,30 +147,6 @@ Dersom du vil la brukere i en utvalgt EntraID-gruppe representere virksomheten m
 I dette eksempelet vil alle brukere som ligger i gruppen med ID 1111-1111-1111 kunne representere virksomheten på alle klienter utenom 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID.
 
 ![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_gruppe_3.png)
-
-### Tillate representasjon (e-postadresse)
-
-For å åpne for at enkelte e-postadresser kan representere virksomheten i EntraID, angi e-postadresse og sett filtertype til "Ingen filter".
-
-I dette eksempelet vil brukeren med e-postadresse ansatt.person@digdir.no kunne representere virksomheten med EntraID i Ansattporten.
-
-![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_epost_1.png)
-
-### Tillate representasjon på spesifikk klient (gruppe)
-
-Dersom du vil la en enkelt e-postadresse representere virksomheten på spesifikke klienter, angi e-postadresse, sett filtertype til "Tillat" og angi KlientID i en kommaseparert liste.
-
-I dette eksempelet vil brukeren med e-postadresse ansatt.person@digdir.no kunne representere virksomheten på klientID 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID.
-
-![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_epost_2.png)
-
-### Tillate representasjon på alle klienter utenom X (gruppe)
-
-Dersom du vil la en enkelt e-postadresse representere virksomheten med noen unntak, angi e-postadresse, sett filtertype til "Nekt" og angi KlientID i en kommaseparert liste.
-
-I dette eksempelet vil brukeren med e-postadresse ansatt.person@digdir.no kunne representere virksomheten på alle klienter utenom 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID.
-
-![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_epost_3.png)
 
 ## Relevante spørsmål
 
