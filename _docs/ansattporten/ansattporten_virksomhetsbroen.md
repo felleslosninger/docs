@@ -48,11 +48,11 @@ Har du den korrekte rettigheten for flere virksomheter eller underenheter, så v
 
 Konfigurasjonen kan skje på forskjellige identifikator-typer.
 
+**E-postadresse:** Brukes for å la enkelte e-postadresser representere virksomheten i Ansattporten. F.eks ansatt.person@digdir.no
+
 **Domene:** Brukes for å la brukere kan representere virksomheten på domenenivå. F.eks digdir.no
 
 **Gruppe:** Brukes for å la brukere representere virksomheten ved hjelp av EntraID-grupper. F.eks ea123b45d-9yt1-iu78-0a0a-99aabbcc999a
-
-**E-postadresse:** Brukes for å la enkelte e-postadresser representere virksomheten i Ansattporten. F.eks ansatt.person@digdir.no
 
 Velg hvilken identifikator-type du vil legge til, ved hjelp av fanene.
 
@@ -62,15 +62,15 @@ Velg hvilken identifikator-type du vil legge til, ved hjelp av fanene.
 
 Filtertyper brukes for fingranulere konfigurasjonen. Per i dag så finnes det 3 filtertyper.
 
-### Ingen filter (Tillatt for alle tjenester)
+### Tillat alle (Tillatt for alle tjenester)
 
 "Ingen filter" lar brukerne representere virksomheten på alle tjenester i Ansattporten som godtar EntraID.
 
-### Tillat (Tillatt for bare angitte tjenester)
+### Tillat kun (Tillatt for bare angitte tjenester)
 
 "Tillat"-filteret benyttes for å avgrense hvilke klienter brukeren kan representere virksomheten på i Ansattporten.
 
-### Nekt (Tillat for alle tjenester utenom X)
+### Tillat alle utenom (Tillat for alle tjenester utenom X)
 
 "Nekt"-filteret brukes for å angi spesifikke klienter der brukeren ikke kan representere virksomheten på. Da må det legges inn klientID for at filteret skal ha effekt.
 
