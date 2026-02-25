@@ -64,15 +64,15 @@ Filtertyper brukes for fingranulere konfigurasjonen. Per i dag så finnes det 3 
 
 ### Tillat alle (Tillatt for alle tjenester)
 
-"Ingen filter" lar brukerne representere virksomheten på alle tjenester i Ansattporten som godtar EntraID.
+"Tillat alle" lar brukerne representere virksomheten på alle tjenester i Ansattporten som godtar EntraID.
 
 ### Tillat kun (Tillatt for bare angitte tjenester)
 
-"Tillat"-filteret benyttes for å avgrense hvilke klienter brukeren kan representere virksomheten på i Ansattporten.
+"Tillat kun"-filteret benyttes for å avgrense hvilke klienter brukeren kan representere virksomheten på i Ansattporten.
 
 ### Tillat alle utenom (Tillat for alle tjenester utenom X)
 
-"Nekt"-filteret brukes for å angi spesifikke klienter der brukeren ikke kan representere virksomheten på. Da må det legges inn klientID for at filteret skal ha effekt.
+"Tillat alle utenom"-filteret brukes for å angi spesifikke klienter der brukeren ikke kan representere virksomheten på. NB! Det må legges inn klientID for at filteret skal ha effekt.
 
 ## Eksempler på konfigurasjon
 
