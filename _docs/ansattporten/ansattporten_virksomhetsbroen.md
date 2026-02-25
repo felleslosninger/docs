@@ -158,6 +158,8 @@ Nei, det er eier av Ansattporten-tjenesten som bestemmer om EntraID kan benyttes
 
 Ja, når du logger inn på virksomhetsbroen kan du velge hvilket organisasjonsnummer du vil konfigurere. Vi støtter både hoved- og underenheter.
 
+Per nå må du logge ut og inn igjen dersom du vil bytte organisasjonsnummer.
+
 ### Hvordan vet jeg hvilken klientID jeg skal legge inn i konfigurasjonen?
 
 Ta kontakt med eier av Ansattporten-tjenesten dersom du skal gi tilgang på klientnivå.
