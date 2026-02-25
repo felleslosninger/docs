@@ -70,7 +70,7 @@ Selv om en bruker har benyttet sin Entra jobb-konto til innlogging mot din tjene
 For å kunne avlede faktisk representasjon med Ansattporten og EntraID, må følgende to vilkår være oppfylt:
 
 - Tjenesteeier må både forespørre og evaluere representasjon.  Dette blir gjort ved å bruke [RAR-elementet `ansattporten:orgno`](ansattporten_rar.html#datamodell-for-arbeidsgivers-organisasjonsnummer-ansattportenorgno).
-- Arbeidsgivere må aktivt gi tilganger til sine Entra-brukere ved å konfigurere funksjonaliteten [Virksomhetsbroen](ansattporten_virksomhetsbroen)
+- Arbeidsgivere må aktivt gi tilganger til sine Entra-brukere ved å konfigurere funksjonaliteten [Virksomhetsbroen](virksomhetsbroen.html)
 
 
 *Eksempel på respons som forteller at innlogget bruker representerer en virksomhet*:

@@ -18,6 +18,15 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.1
+
+25.02.2026
+
+**Forbedringer**
+- Sikker logging med inkludert sertifikat som standard
+- Oppdaterte produksjons url'er for Altinn v3 som standard (DPO og DPV)
+- Normale sikkerhetsoppgraderinger av 3rd party bibliotek
+
 ## 4.0.0
 
 04.02.2026
