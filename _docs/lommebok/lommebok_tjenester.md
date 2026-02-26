@@ -13,7 +13,8 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 
 ## Utstedere
 
-* [Bevisporten til Digdir](lommebok_digdir_utsteder).  Bevisporten er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autorative kjelder, og signere med ulike typar sertifikat.
+* [Bevisporten til Digdir](lommebok_digdir_utsteder).  Bevisporten er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autoritative kjelder, og signere med ulike typar sertifikat.
+* [Utstedelse av virksomhetsidentifikator](https://brreg.eudiw.no/) - Brønnøyundregistra sin teneste for utstedelse av virksomhetsidentifikatorar for organisasjonar registrert foretaksregisteret.
 * [Symfoni Virksomhetslommebok (utsteder)](https://symfoni.dev/) — Symfoni si virksomhetslommebok kan utstede digitale bevis til personar og andre organisasjonar. Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
 
 ## Brukarstader

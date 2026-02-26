@@ -37,9 +37,9 @@ Følgende RAR-typer er støttet i Ansattporten:
 
 | RAR-type | Skildring |
 |-|-|
-| `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autorativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke |
+| `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autoritativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke |
 | `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
-| `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autorativ kilde for representasjonsforhold |
+| `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autoritativ kilde for representasjonsforhold |
 
 
 Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel. Klienten må i stedet implementere flere login-knapper i sin egen løsning.
@@ -47,7 +47,7 @@ Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel.
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
 
-Dersom kunden ønsker å bruke Altinn 3 ressurser som autorativ kilde for representasjonsforhold, må klienten oppgi `ansattporten:altinn:resource` som RAR-type. I tillegg må det spesifiseres hvilken Altinn-ressurs som kreves.
+Dersom kunden ønsker å bruke Altinn 3 ressurser som autoritativ kilde for representasjonsforhold, må klienten oppgi `ansattporten:altinn:resource` som RAR-type. I tillegg må det spesifiseres hvilken Altinn-ressurs som kreves.
 
 Detaljer om, og utlisting av, Altinn-ressurser kan finnes ved å bruke Altinn sitt [Ressursregister API](https://docs.altinn.studio/en/api/resourceregistry/spec/#/Resource) - Her kan du f.eks. finne url for å [Liste ut alle ressurser](https://platform.altinn.no/resourceregistry/api/v1/resource/resourcelist?includeAltinn2=false&includeMigratedApps=true)
 
@@ -193,9 +193,9 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
 
 ## Datamodell for Altinn 2 Lenketjenester (`ansattporten:altinn:service`)
 
-Bare kunder som er tjenesteeier i Altinn kan benytte Altinn Autorisasjon som autorativ kilde.
+Bare kunder som er tjenesteeier i Altinn kan benytte Altinn Autorisasjon som autoritativ kilde.
 
-Dersom kunden ønsker å bruke Altinn 2 lenketjenester (ServiceCode) som autorativ kilde for representasjonsforhold, må klienten oppgi  `ansattporten:altinn:service` som RAR-type. 
+Dersom kunden ønsker å bruke Altinn 2 lenketjenester (ServiceCode) som autoritativ kilde for representasjonsforhold, må klienten oppgi  `ansattporten:altinn:service` som RAR-type. 
 
 Følgende claims kan sendes inn i request: 
 

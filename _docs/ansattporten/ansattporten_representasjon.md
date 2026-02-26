@@ -8,7 +8,7 @@ redirect_from: /ansattporten_representasjon
 ---
 
 
-Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autorativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autorativ kilde.
+Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autoritativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autoritativ kilde.
 
 Du finner mer overordnet informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
 
@@ -33,7 +33,7 @@ Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk
 
 # Protokoll-flyt
 
-Representasjonspålogging er en [vanlig autorisasjons-kodeflyt ihht Oauth2/OIDC](ansattporten_guide.html) der tjenesten i autorisasjonsforespørselen inkluderer et tillegg som forespør hvilken type representasjonsforhold som brukeren må inneha hos den autorative kilden.
+Representasjonspålogging er en [vanlig autorisasjons-kodeflyt ihht Oauth2/OIDC](ansattporten_guide.html) der tjenesten i autorisasjonsforespørselen inkluderer et tillegg som forespør hvilken type representasjonsforhold som brukeren må inneha hos den autoritative kilden.
 
 <div class="mermaid">
 sequenceDiagram
@@ -41,7 +41,7 @@ sequenceDiagram
 participant B as Bruker
 participant C as Tjeneste
 participant A as Ansattporten
-participant S as Autorativ kilde
+participant S as Autoritativ kilde
 
 B->>C: Klikker "login" på tjeneste
 C-->>A: /authorize med <br/>representasjonstype (redirect)
@@ -74,7 +74,7 @@ https://login.test.ansattporten.no/authorize?
 ```
 (merk at eksempelet er forenklet)
 
-`authorization_details`-arrayet inneholdet et JSON-objekt der claimet `type` forteller hvilken autorativ kilde som tjenesten ønsker å benytte. Ulike `type` vil ha egne datamodeller for hvilke andre claims som inngår i request og respons.  Datamodellene er beskrevet [her](ansattporten_rar.html).
+`authorization_details`-arrayet inneholdet et JSON-objekt der claimet `type` forteller hvilken autoritativ kilde som tjenesten ønsker å benytte. Ulike `type` vil ha egne datamodeller for hvilke andre claims som inngår i request og respons.  Datamodellene er beskrevet [her](ansattporten_rar.html).
 
 
 Når brukeren blir redirecta tilbakt til klient, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokal brukersesjon i egen tjeneste.
