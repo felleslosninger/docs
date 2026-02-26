@@ -70,7 +70,7 @@ Selv om en bruker har benyttet sin Entra jobb-konto til innlogging mot din tjene
 For å kunne avlede faktisk representasjon med Ansattporten og EntraID, må følgende to vilkår være oppfylt:
 
 - Tjenesteeier må både forespørre og evaluere representasjon.  Dette blir gjort ved å bruke [RAR-elementet `ansattporten:orgno`](ansattporten_rar.html#datamodell-for-arbeidsgivers-organisasjonsnummer-ansattportenorgno).
-- Arbeidsgivere må aktivt gi tilganger til sine Entra-brukere ved å konfigurere funksjonaliteten [Virksomhetsbroen](virksomhetsbroen.html)
+- Arbeidsgivere må aktivt gi tilganger til sine Entra-brukere ved å konfigurere funksjonaliteten [Virksomhetsbroen](ansattporten_virksomhetsbroen)
 
 
 *Eksempel på respons som forteller at innlogget bruker representerer en virksomhet*:
@@ -116,3 +116,4 @@ Du som Entra-administrator kan også blokkere Anstattporten dersom en virksomhet
 Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Legg til rett acr-verdi i forespørsel, og logg inn med din egen AD-bruker.
 
 Microsoft tilbyr ikke noe eget testmiljø, så her må du bruke din ekte Entra-bruker, alternativt få din virksomhet til å sette opp en dedikert Entra-tentant for test-formål.
+

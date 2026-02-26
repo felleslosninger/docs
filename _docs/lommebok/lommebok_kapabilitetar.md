@@ -13,12 +13,12 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 
 | Kapabilitet | Status | Beskrivelse |
 |-------------|--------|-------------|
-| Lommebok-tjeneste | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt | Lommeboka er tjenesten som brukaren nyttar til å oppbevare, administrere og dele sine digitale bevis. Kan potensielt støtte  signering og betaling. |
-| Tillitslister | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt  | Sentralt tillitsanker brukt til å validere gyldigheita til aktørar i sandkassa. |
-| Brukerstadsregister (RP-register) m/innsyn og sjølvbetjening | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt  | Register over brukarstader og aktørar. Aktørar må vere registrert og deklarere formål/behandlingsgrunnlag. Tilbyr sjølvbetjening og opne innsynstenester. |
-| Notifiseringskapabilitet | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt   | Prosessar for registrering og avregistrering av aktørar. Vil inkludere registrering i EU sine sentrale tillitslister. |
-| Aksessertifikat-utstedelse | Basisfunksjonalitet tilgjenglig  | Utstedelse av aksessertifikat til registrerte aktørar som skal samhandle med lommeboka. |
-| Registreringssertifikat-utstedelse | Planlagt innført på eit seinare tidspunkt  | Viser kva bevis ein brukarstad kan konsumere og formålet med dette. Presenterast til lommeboka for verifisering mot deklarert formål. |
+| Lommeboktjeneste | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt | Lommeboka er tjenesten som brukaren nyttar til å oppbevare, administrere og dele sine digitale bevis. Kan potensielt støtte  signering og betaling. |
+| Tillitslister | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt  | Sentrale tillitsanker brukt til å validere gyldigheita til aktørar i sandkassa. |
+| Brukerstadsregister (RP-register) m/innsyn og sjølvbetjening | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt  | Register over brukarstader og aktørar. Aktørar må vere registrert og deklarere formål/behandlingsgrunnlag. Tilbyr sjølvbetjening og opne innsynstenester. |
+| Notifiseringskapabilitet | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt   | Prosessar for registrering og avregistrering av aktørar. Vil inkludere registrering i EU sine sentrale tillitslister. |
+| Utstedar av aksessertifikat | Basisfunksjonalitet tilgjenglig  | Utstedelse av aksessertifikat til registrerte aktørar som skal samhandle med lommeboka. |
+| Utstedar av registreringssertifikat | Planlagt innført på eit seinare tidspunkt  | Viser kva bevis ein brukarstad kan konsumere og formålet med dette. Presenterast til lommeboka for verifisering mot deklarert formål. |
 
 ---
 
@@ -40,10 +40,10 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 
 | Kapabilitet | Status | Beskrivelse |
 |-------------|--------|-------------|
-| Felles utstedertjeneste for det offentlige | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt | Felles infrastruktur for offentleg sektor for utstedelse av verifiserbare digitale bevis. |
-| Register over brukerstaders formål/behandlingsgrunnlag | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt | Register der tenesteleverandørar oppgir formål og behandlingsgrunnlag. |
+| Felles utstedertjeneste for det offentlige | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt | Felles infrastruktur for offentleg sektor for utstedelse av verifiserbare digitale bevis. |
+| Register over brukerstaders formål/behandlingsgrunnlag | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt | Register der tenesteleverandørar oppgir formål og behandlingsgrunnlag. |
 | Innbyggers dashboard/historikk | Basisfunksjonalitet tilgjenglig | Grensesnitt der innbyggjar kan sjå delte bevis, mottakar, tidspunkt og formål. |
-| Beviskatalog | Basisfunksjonalitet tilgjenglig, videreutvikling er planlagt | Katalog over tilgjengelege digitale bevis og definisjonar av desse. |
+| Beviskatalog | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt | Katalog over tilgjengelege digitale bevis og definisjonar av desse. |
 | Misbruksvarsling til datatilsyn | Ikkje relevant i sandkassa | Automatisk varsling ved mistenkt misbruk av bevis eller personopplysningar. |
 | Transaksjons-spesifikk deling | Potensiell kapabilitet på eit seinare tidspunkt | Knyting av transaksjonsspesifikke data til presentasjon av bevis (t.d. betaling). |
 

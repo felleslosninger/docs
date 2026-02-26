@@ -7,7 +7,9 @@ product: Ansattporten
 redirect_from: /ansattporten_virksomhetsbroen
 ---
 
-Virksomhetsbroen er grensesnittet hvor arbeidsgivere kan konfigurere hvilke domener, entra-grupper og e-postadresser som kan representere virksomheten der EntraID benytes til innlogging i Ansattporten.
+Virksomhetsbroen er grensesnittet hvor arbeidsgivere kan konfigurere hvilke brukere som kan representere virksomheten der EntraID benyttes til innlogging i Ansattporten.  Virksomhetsbroen skal legge til rette for beste praksis for rollebasert tilgangstyring (RBAC) på tvers av virksomheter ved at:
+-  tjenesteeiere slipper å opprette og forvalte gjestebrukere i egen IAM-løsning
+-  arbeidsgivere bruker sin lokale IAM til administrere tilganger mot eksterne tjenester 
 
 Virksomhetsbroen er en av flere autoritative kilder for representasjon i Ansattporten, og er tiltenkt scenarioer der det ikke er behov for det høye sikkerhetsnivået som tilbys ved bruk av Altinn Autorisasjon.
 
