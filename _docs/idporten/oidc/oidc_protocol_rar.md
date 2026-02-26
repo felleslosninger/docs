@@ -37,7 +37,7 @@ Følgende authorization_type er støttet i ID-porten:
 
 | `authorization_type` | 	 Skildring |
 |-|-|
-| `idporten:fullmakt`  |Bruker fullmaktsgupper i Altinn 3 som autorativ kilde for representasjonsforhold. Altinn3 inkluderer både vergemål og brukerstyrte fullmakter. |
+| `idporten:fullmakt`  |Bruker fullmaktsgupper i Altinn 3 som autoritativ kilde for representasjonsforhold. Altinn3 inkluderer både vergemål og brukerstyrte fullmakter. |
 
 
 
