@@ -18,6 +18,10 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.2
+
+Integrasjonspunktet tar i bruk nye maskinporten scopes for eformidling.
+
 ## 4.0.1
 
 25.02.2026
