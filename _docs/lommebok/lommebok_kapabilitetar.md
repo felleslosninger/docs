@@ -17,8 +17,8 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 | Tillitslister | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt  | Sentrale tillitsanker brukt til å validere gyldigheita til aktørar i sandkassa. |
 | Brukerstadsregister (RP-register) m/innsyn og sjølvbetjening | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt  | Register over brukarstader og aktørar. Aktørar må vere registrert og deklarere formål/behandlingsgrunnlag. Tilbyr sjølvbetjening og opne innsynstenester. |
 | Notifiseringskapabilitet | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt   | Prosessar for registrering og avregistrering av aktørar. Vil inkludere registrering i EU sine sentrale tillitslister. |
-| Aksessertifikatutstedelse | Basisfunksjonalitet tilgjenglig  | Utstedelse av aksessertifikat til registrerte aktørar som skal samhandle med lommeboka. |
-| Registreringssertifikatutstedelse | Planlagt innført på eit seinare tidspunkt  | Viser kva bevis ein brukarstad kan konsumere og formålet med dette. Presenterast til lommeboka for verifisering mot deklarert formål. |
+| Utstedar av aksessertifikat | Basisfunksjonalitet tilgjenglig  | Utstedelse av aksessertifikat til registrerte aktørar som skal samhandle med lommeboka. |
+| Utstedar av registreringssertifikat | Planlagt innført på eit seinare tidspunkt  | Viser kva bevis ein brukarstad kan konsumere og formålet med dette. Presenterast til lommeboka for verifisering mot deklarert formål. |
 
 ---
 
