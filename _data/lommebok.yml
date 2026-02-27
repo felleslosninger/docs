@@ -29,6 +29,9 @@ folders:
       - title: Motta bevis (OpenID4VP)
         jurl: /docs/lommebok/lommebok_protokoll_vp.html
 
+      - title: EUDIPLO som brukarstad
+        jurl: /docs/lommebok/lommebok_eudiplo.html
+
 
 - title: Ta i bruk som utstedar
   folderitems:
@@ -41,9 +44,6 @@ folders:
 
       - title: Lage bevis (OpenID4VCI)
         jurl: /docs/lommebok/lommebok_protokoll_vci.html
-
-      - title: EUDIPLO som brukarstad
-        jurl: /docs/lommebok/lommebok_eudiplo.html
 
 
 
