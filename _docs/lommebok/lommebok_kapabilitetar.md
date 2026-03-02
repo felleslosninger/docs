@@ -1,4 +1,4 @@
----
+  ---
 title: Kapabiliteter i sandkassa
 description: Kapabiliteter i sandkassa
 
@@ -13,11 +13,11 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 
 | Kapabilitet | Status | Beskrivelse |
 |-------------|--------|-------------|
-| Lommeboktjeneste | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt | Lommeboka er tjenesten som brukaren nyttar til å oppbevare, administrere og dele sine digitale bevis. Kan potensielt støtte  signering og betaling. |
-| Tillitslister | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt  | Sentrale tillitsanker brukt til å validere gyldigheita til aktørar i sandkassa. |
-| Brukerstadsregister (RP-register) m/innsyn og sjølvbetjening | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt  | Register over brukarstader og aktørar. Aktørar må vere registrert og deklarere formål/behandlingsgrunnlag. Tilbyr sjølvbetjening og opne innsynstenester. |
-| Notifiseringskapabilitet | Basisfunksjonalitet tilgjenglig, vidareutvikling er planlagt   | Prosessar for registrering og avregistrering av aktørar. Vil inkludere registrering i EU sine sentrale tillitslister. |
-| Utstedar av aksessertifikat | Basisfunksjonalitet tilgjenglig  | Utstedelse av aksessertifikat til registrerte aktørar som skal samhandle med lommeboka. |
+| Lommeboktjeneste | Basisfunksjonalitet tilgjenglig, vidareutvikling følger referanseimplementasjonen. Mangler WUA og WSCD. | Lommeboka er tjenesten som brukaren nyttar til å oppbevare, administrere og dele sine digitale bevis. Kan potensielt støtte  signering og betaling. Digdir tilbyr demo-lommebok for testformål, andre aktører vil tilby mer fullverdige lommebøker i sandkassen. |
+| Tillitslister | Basisfunksjonalitet tilgjenglig. Utvikler eudiw-lister nå (ETSI 119 602). Planlegg betre administron av aktørene på lista. Ser på integrasjon mot WeBuild | Sentrale tillitsanker brukt til å validere gyldigheita til aktørar i sandkassa. |
+| Brukerstadsregister (RP-register) m/innsyn og sjølvbetjening | Basisfunksjonalitet tilgjenglig. Manglar standardisert API (TS5). Manglar støtte for Intermediaries. | Register over brukarstader og aktørar. Aktørar må vere registrert og deklarere formål/behandlingsgrunnlag. Tilbyr sjølvbetjening og opne innsynstenester. |
+| Notifiseringskapabilitet |    | Prosessar for registrering og avregistrering av aktørar. Vil inkludere registrering i EU sine sentrale tillitslister. |
+| Utstedar av aksessertifikat | Basisfunksjonalitet tilgjenglig  | Utstedelse av aksessertifikat til registrerte aktørar som skal samhandle med lommeboka. Sandkassen er åpen for at andre aktører kan tilby aksess-sertifikat. |
 | Utstedar av registreringssertifikat | Planlagt innført på eit seinare tidspunkt  | Viser kva bevis ein brukarstad kan konsumere og formålet med dette. Presenterast til lommeboka for verifisering mot deklarert formål. |
 
 ---
@@ -26,7 +26,7 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 
 | Kapabilitet | Status | Beskrivelse |
 |-------------|--------|-------------|
-| PID-utstedelse | Basisfunksjonalitet tilgjenglig (utstedelse basert på eksisterande eID) | Utstedelse av PID-dokument for autentisering, på eIDAS nivå høgt. |
+| PID-utstedelse | Basisfunksjonalitet tilgjenglig (utstedelse basert på eksisterande eID/syntetiske persondata) | Utstedelse av PID-dokument for autentisering, på eIDAS nivå høgt. |
 | Pseudonym innlogging (WebAuthn) | Potensiell kapabilitet på eit seinare tidspunkt | Pseudonym innlogging basert på WebAuthn. Konto kan opprettast med PID, seinare innlogging skjer med WebAuthn. |
 | Aldersverifisering | Potensiell kapabilitet på eit seinare tidspunkt | Aldersbevis som dokumenterer alderskrav utan å dele unødvendig personinformasjon. |
 | Proximity-basert kontroll av id/alder | Potensiell kapabilitet på eit seinare tidspunkt   | Lokal trådlaus kontroll (NFC/BLE) av identitet eller alder i fysiske situasjonar. |
