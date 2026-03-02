@@ -4,7 +4,7 @@ description: Kapabiliteter i sandkassa
 
 sidebar: lommebok
 product: lommebok
-redirect_from: /lommebok_arkitektur
+redirect_from: /lommebok_kapabilitetar
 ---
 
 Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sandkassa.
