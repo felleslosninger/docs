@@ -1,4 +1,4 @@
-  ---
+---
 title: Kapabiliteter i sandkassa
 description: Kapabiliteter i sandkassa
 
@@ -27,12 +27,12 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 | Kapabilitet | Status | Beskrivelse |
 |-------------|--------|-------------|
 | PID-utstedelse | Basisfunksjonalitet tilgjenglig (utstedelse basert på eksisterande eID/syntetiske persondata) | Utstedelse av PID-dokument for autentisering, på eIDAS nivå høgt. |
-| Pseudonym innlogging (WebAuthn) | Potensiell kapabilitet på eit seinare tidspunkt | Pseudonym innlogging basert på WebAuthn. Konto kan opprettast med PID, seinare innlogging skjer med WebAuthn. |
-| Aldersverifisering | Potensiell kapabilitet på eit seinare tidspunkt | Aldersbevis som dokumenterer alderskrav utan å dele unødvendig personinformasjon. |
-| Proximity-basert kontroll av id/alder | Potensiell kapabilitet på eit seinare tidspunkt   | Lokal trådlaus kontroll (NFC/BLE) av identitet eller alder i fysiske situasjonar. |
-| Visuell kontroll av id/alder | Potensiell kapabilitet på eit seinare tidspunkt  | Manuell visuell kontroll via verifiserbart skjermbilete eller kortversjon av identitet/alder. |
-| Innlogging av utenlandske brukere | Potensiell kapabilitet på eit seinare tidspunkt  | Autentisering av brukarar med EUDI-lommebøker frå andre land via europeisk tillitsrammeverk. |
-| Identitetsmatching | Potensiell kapabilitet på eit seinare tidspunkt  | Mekanismar for å matche identitet på tvers av system. |
+| Pseudonym innlogging (WebAuthn) |  | Pseudonym innlogging basert på WebAuthn. Konto kan opprettast med PID eller anna bevis, seinare innlogging skjer med WebAuthn. |
+| Aldersverifisering | Basisfunksjonalitet tilgjengeleg, utstedelse basert på eID. | Aldersbevis som dokumenterer alderskrav utan å dele unødvendig personinformasjon. EU har definert eit eige bevis og forenkla tilitsrammeverk for medlemsland som vil ta dette i bruk tidlegare enn eIDAS2 er klar. |
+| Proximity-basert kontroll av id/alder | Utviklingsarbeid pågår. | Lokal trådlaus kontroll (NFC/BLE) av identitet eller alder i fysiske situasjonar. Innebygd eigenskap ved mdoc-basert bevisformat. |
+| Visuell kontroll av id/alder |  | Manuell visuell kontroll via verifiserbart skjermbilete eller kortversjon av identitet/alder. |
+| Innlogging av utenlandske brukere i ID-porten | Ila. 2026 | Autentisering av brukarar med EUDI-lommebøker frå andre land via WeBuild sitt tillitsrammeverk. |
+| Identitetsmatching |  | Mekanismar for å matche utenlandske lommebok-identiteter til norske F/D-nummer i Folkeregisteret. Mulig rudimentær funksjonalitet etableres ifbm. WeBuild. |
 
 ---
 
