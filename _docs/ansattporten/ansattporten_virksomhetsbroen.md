@@ -9,7 +9,7 @@ redirect_from: /ansattporten_virksomhetsbroen
 
 Virksomhetsbroen er grensesnittet hvor arbeidsgivere kan konfigurere hvilke brukere som kan representere virksomheten der EntraID benyttes til innlogging i Ansattporten.  Virksomhetsbroen skal legge til rette for beste praksis for rollebasert tilgangstyring (RBAC) på tvers av virksomheter ved at:
 -  tjenesteeiere slipper å opprette og forvalte gjestebrukere i egen IAM-løsning
--  arbeidsgivere bruker sin lokale IAM til administrere tilganger mot eksterne tjenester 
+-  arbeidsgivere bruker sin lokale IAM til administrere tilganger mot eksterne tjenester
 
 Virksomhetsbroen er en av flere autoritative kilder for representasjon i Ansattporten, og er tiltenkt scenarioer der det ikke er behov for det høye sikkerhetsnivået som tilbys ved bruk av Altinn Autorisasjon.
 
@@ -35,6 +35,8 @@ Den som skal konfigurere dette på vegne av virksomheten må få tildelt rettigh
 - Bestyrende reder
 - Daglig leder
 - Innehaver
+
+Et praktisk tips for å unngå at daglig leder må delegere til alle som skal ha tilgang, er at daglig leder delegerer rettigheten til en person i virksomheten som har rollen "Tilgangsstyrer". Da vil "Tilgangsstyrer" kunne delegere rettigheten videre til andre i virksomheten. 
 
 ## Innlogging
 
