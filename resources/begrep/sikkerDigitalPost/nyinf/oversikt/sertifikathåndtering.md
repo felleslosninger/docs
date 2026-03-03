@@ -99,7 +99,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
   - Fra Buypass: [Rot - Buypass Class 3 Rot
     CA](http://www.buypass.no/cert/BPClass3RootCA.cer)
   - Fra Commfides: [cpn rootca sha256
-    class 3.crt](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/142/17413)
+    class 3.crt](https://crt.commfides.com/G3/CommfidesRootCA-G3.crt)
 
 Følgende mellomliggende CA sertifikater må offentlig virksomhet ha for å
 kunne verifisere sertifikatbanen til rot sertifikatet.  
@@ -108,7 +108,7 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
   - Fra Buypass: [Utstedende - Buypass Class 3
     CA 3](http://crt.buypass.no/crt/BPClass3CA3.cer)
   - Fra Commfides: [cpn enterprise sha256
-    class 3.crt](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/142/17412)
+    class 3.crt](https://crt.commfides.com/G3/CommfidesLegalPersonCA-G3.crt)
 
 CA sertfikatene ligger også tilgjengelige her:
 [sertifikater](https://github.com/difi/felleslosninger/tree/gh-pages/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater)
