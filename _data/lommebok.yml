@@ -102,9 +102,6 @@ related_resources_list:
 - title: Utviklerportal
   jurl: https://sjolvbetening.test.eidas2sandkasse.net/login
 
-- title: Bevisgenerator
-  jurl: https://bevisgenerator.test.eidas2sandkasse.net/
-
 - title: Nyhetsside for digital lommebok
   jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2897
 
