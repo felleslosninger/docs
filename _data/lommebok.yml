@@ -11,6 +11,9 @@ folders:
       - title: Arkitektur
         jurl: /docs/lommebok/lommebok_arkitektur.html
 
+      - title: Kapabilitetar
+        jurl: /docs/lommebok/lommebok_kapabilitetar.html
+
       - title: Tenester i sandkassen
         jurl: /docs/lommebok/lommebok_tjenester.html
 
