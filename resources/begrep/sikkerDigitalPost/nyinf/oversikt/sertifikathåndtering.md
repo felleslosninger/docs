@@ -78,8 +78,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
 
   - Fra Buypass:
     [Buypass\_Class\_3\_Test4\_Root\_CA]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater/test/Buypass_Class_3_Test4_Root_CA.cer)
-  - Fra Commfides: [root - cpn root sha256 ca - test.crt (2.03
-    KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/144/18301)
+  - Fra Commfides: [Root CA – G3 – TEST](https://crt.test.commfides.com/G3/CommfidesRootCA-G3-TEST.crt)
 
 Følgende mellomliggende CA sertifikater må offentlig virksomhet ha for å
 kunne verifisere sertifikatbanen til rot sertifikatet.  
@@ -87,9 +86,7 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
 
   - Fra Buypass:
     [Buypass\_Class\_3\_Test4\_CA\_3]({{site.baseurl}}/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater/test/Buypass_Class_3_Test4_CA_3.cer)
-  - Fra Commfides: [intermediate - commfides cpn enterprise-norwegian
-    sha256 ca - test2.crt (2.23
-    KB)](https://support.commfides.com/index.php?/Knowledgebase/Article/GetAttachment/144/49433)
+  - Fra Commfides: [Legal Person – G3 – TEST](https://crt.test.commfides.com/G3/CommfidesLegalPersonCA-G3-TEST.crt)
 
 #### For produksjon
 
@@ -98,8 +95,7 @@ Følgende rot sertifikater må offentlige virksomhet stole på.
 
   - Fra Buypass: [Rot - Buypass Class 3 Rot
     CA](http://www.buypass.no/cert/BPClass3RootCA.cer)
-  - Fra Commfides: [cpn rootca sha256
-    class 3.crt](https://crt.commfides.com/G3/CommfidesRootCA-G3.crt)
+  - Fra Commfides: [Root CA – G3](https://crt.commfides.com/G3/CommfidesRootCA-G3.crt)
 
 Følgende mellomliggende CA sertifikater må offentlig virksomhet ha for å
 kunne verifisere sertifikatbanen til rot sertifikatet.  
@@ -107,8 +103,5 @@ kunne verifisere sertifikatbanen til rot sertifikatet.
 
   - Fra Buypass: [Utstedende - Buypass Class 3
     CA 3](http://crt.buypass.no/crt/BPClass3CA3.cer)
-  - Fra Commfides: [cpn enterprise sha256
-    class 3.crt](https://crt.commfides.com/G3/CommfidesLegalPersonCA-G3.crt)
+  - Fra Commfides: [Legal Person – G3](https://crt.commfides.com/G3/CommfidesLegalPersonCA-G3.crt)
 
-CA sertfikatene ligger også tilgjengelige her:
-[sertifikater](https://github.com/difi/felleslosninger/tree/gh-pages/resources/begrep/sikkerDigitalPost/sikkerhet/sertifikater)
