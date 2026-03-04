@@ -15,6 +15,10 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 > [**Integrasjonspunktet 4.0.1 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/704678541?tag=v4.0.1)
 
+```console
+$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:4.0.1
+```
+
 Endringslogg finner du [her.](../Oppgradering/endringslogg)
 
 ## KOSMOS
