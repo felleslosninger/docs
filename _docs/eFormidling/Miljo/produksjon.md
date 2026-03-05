@@ -26,9 +26,10 @@ Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunn
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 <br/> 20.82.244.139 | 443  | DPE      | Azure Service Bus, HTTP/REST API                      | utgående              |
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 <br/> 20.82.244.139 | 5671 | DPE      | Azure Service Bus, AMQP med TLS                       | utgående              |
 | altinn.no                           | 89.250.123.0                                        | 443  | DPO/DPV  | Altinn formidlingstjeneste                            | utgående              |
-| crl.buypass.no       | 185.62.162.145 og 185.62.160.145                                 | 80  | DPI      | Buypass CRL-liste                                     | utgående              |
-| crl.buypassca.com       | 185.62.162.185 og 185.62.160.185                               | 80  | DPI      | Buypass CRL-liste SEID2.0                             | utgående              |
+| platform.altinn.no                           | 51.120.88.54                                        | 443  | DPO  | Altinn formidlingstjeneste                            | utgående              |
+| svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler                              |  utgående
 | kontaktregisteret.no | 139.105.36.169 | 443  | DPI | Kontakt-og reservasjonsregisteret (fom. 18.09.2023)   | utgående |
 | srest.dataplatfor.ms                | 51.120.55.214                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt        | utgående              |
-| svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler                              |  utgående
+| crl.buypass.no       | 185.62.162.145 og 185.62.160.145                                 | 80  | DPI      | Buypass CRL-liste                                     | utgående              |
+| crl.buypassca.com       | 185.62.162.185 og 185.62.160.185                               | 80  | DPI      | Buypass CRL-liste SEID2.0                             | utgående              |
 | Legal: https://crl.commfides.com/G3/CommfidesLegalPersonCA-G3.crl | 91.232.83.47 <br/> | 80 | Commfides CRL-liste  | Commfides CRL-liste                                   |  utgående
