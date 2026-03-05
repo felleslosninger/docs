@@ -55,7 +55,7 @@ sequenceDiagram
     participant AS as Altinn SystemRegister
     participant A as Altinn
 
-    K->>S: Opprett maskinporten client (selvbetjent)
+    D->>S: Opprett maskinporten client
     note over S : Tildeler scopes for : altinn:broker.write, altinn:broker.read
 
     D->>S: Tildeler scopes (de som ikke er åpne for kunde) 
