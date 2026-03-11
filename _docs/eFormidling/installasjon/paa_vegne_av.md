@@ -1,1 +1,0 @@
-På vegne av oppsett
