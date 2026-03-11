@@ -23,12 +23,12 @@ For en beskrivelse av hvordan avsender angis, se `sender.identifier.value` under
 
 Hvordan en konfigurere på-vegne-av avhenger av den aktuelle meldingstjenesten.
 
-## På vegne av for Altinn Digital Post
+## På vegne av for Altinn Digital Post (DPV)
 
 Ved bruk av Altinn Digital Post har alle autoriserte avsendere lov å sende på vegne av andre. Altinn Digital Post
 støtter derfor på vegne av uten noen som helst konfigurasjon eller delegering av tilganger.
 
-## På vegne av for Digital Post til Innbyggere
+## På vegne av for Digital Post til Innbyggere (DPI)
 
 Ved bruk av Digital Post til Innbyggere benyttes autorisasjonsbevis fra Maskinporten til å autorisere avsender. Disse
 autorisasjonsbevisene kan Maskinporten utstede til en leverandør på vegne av en kunde. Dette forutsetter at:
@@ -44,7 +44,7 @@ Virksomheten må delegere følgende tilgang til leverandøren ved hjelp av Altin
 
 - `Delegere rettighet til å sende DPI-meldinger på vegne av virksomheten`
 
-## På vegne av for KS SvarUt og SvarInn
+## På vegne av for KS SvarUt og SvarInn (DPF)
 
 KS SvarUt og SvarInn har ikke innebygd støtte for at en leverandør kan opptre på vegne av en kunde. En slik delegering
 løses i praksis ved at kunden gir sitt brukernavn og passord til KS SvarUt og SvarInn til leverandøren. Dette støttes av
@@ -57,7 +57,16 @@ oppgis i konfigurasjon. Se `difi.move.fiks.ut.paa-vegne-av.*` og `difi.move.fiks
 
 > NB: På vegne av for KS Svarut og SvarInn kan først tas i bruk ved versjon 2.9.0 av integrasjonspunktet.
 
-## På vegne av for eFormidlings meldingstjeneste
+## På vegne av for eFormidlings meldingstjeneste (DPO)
+
+Hvordan dette settes opp er avhengig av hvilken versjon av integrasjonspunktet en bruker.
+
+### Oppsett for eFormidling 4.0
+
+Under arbeid
+
+
+### Oppsett for eFormidling 2.0 eller 3.0
 
 For å sende på vegne av en annen virksomhet ved bruk av eFormidlings meldingstjeneste så må leverandøren opprette 
 systembruker på leverandørens system i Altinn for hver av virksomhetene som leverandøren skal opptre på vegne av.
@@ -68,7 +77,7 @@ Se `difi.move.dpo.reportees` under:
 
 - [Konfigurere eFormidlings meldingstjeneste](../installasjon/installasjon#konfigurere-eformidlings-meldingstjeneste-dpo)
 
-## På vegne av for eInnsyns meldingstjeneste
+## På vegne av for eInnsyns meldingstjeneste (DPE)
 
 I motsetning til de andre meldingstjenestene, så må leverandøren oppgis som avsender i SBDH ved bruk av eInnsyns
 meldingstjeneste. På-vegne-av forholdet spesifiseres i forretningsmeldingen for publiseringen. Se:
