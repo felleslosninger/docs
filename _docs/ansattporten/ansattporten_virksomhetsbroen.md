@@ -36,7 +36,7 @@ Den som skal konfigurere dette på vegne av virksomheten må få tildelt rettigh
 - Daglig leder
 - Innehaver
 
-Et praktisk tips for å unngå at daglig leder må delegere til alle som skal ha tilgang, er at daglig leder delegerer rettigheten til en person i virksomheten som har rollen "Tilgangsstyrer". Da vil "Tilgangsstyrer" kunne delegere rettigheten videre til andre i virksomheten. 
+Et praktisk tips for å unngå at daglig leder må delegere til alle som skal ha tilgang, er at daglig leder delegerer rettigheten til en person i virksomheten som har rollen "Tilgangsstyrer". Da vil "Tilgangsstyrer" kunne delegere rettigheten videre til andre i virksomheten.
 
 ## Innlogging
 
@@ -73,6 +73,8 @@ Filtertyper brukes for fingranulere konfigurasjonen. Per i dag så finnes det 3 
 ### Tillat kun (Tillatt for bare angitte tjenester)
 
 "Tillat kun"-filteret benyttes for å avgrense hvilke klienter brukeren kan representere virksomheten på i Ansattporten.
+
+Når denne er valgt, kan man også angi applikasjonsrettigheter. Det er opp til eieren av en Ansattporten tjeneste å velge om de skal ta hensyn til det som ligger i dette feltet. I de aller fleste tilfeller kan dette feltet være tomt. Er du usikker, kontakt eier av Ansattporten-tjenesten som du skal logge inn på.
 
 ### Tillat alle utenom (Tillat for alle tjenester utenom X)
 
@@ -116,7 +118,7 @@ I dette eksempelet vil alle brukere med digdir.no domene kunne representere virk
 
 Dersom du vil la brukere representere virksomheten på spesifikke klienter,angi domene, sette filtertype til "Tillat" og angi KlientID i en kommaseparert liste.
 
-I dette eksempelet vil brukere med digdir.no domene kunne logge på klientID 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID.
+I dette eksempelet vil brukere med digdir.no domene kunne logge på klientID 9a99e96d-b56c-4f74-a689-f936f71c8819 med EntraID, og får i tillegg utlevert "SKRIV" som applikasjonsrettighet.
 
 ![Skjermbilde som illustrerer den nevnte konfigurasjonen]({{site.baseurl}}/assets/ansattporten_virkbro_domene_2.png)
 
