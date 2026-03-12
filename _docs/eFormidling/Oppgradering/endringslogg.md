@@ -20,7 +20,8 @@ redirect_from:
 
 ## 4.0.2
 
-Integrasjonspunktet tar i bruk nye maskinporten scopes for eformidling.
+- Integrasjonspunktet sorterer meldingene som hentes ned fra Altinn for å få riktig rekkefølge på statusene. 
+- Integrasjonspunktet tar i bruk nye maskinporten scopes for eformidling.
 
 ## 4.0.1
 
