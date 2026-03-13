@@ -16,12 +16,16 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 * [Bevisporten til Digdir](lommebok_digdir_utsteder).  Bevisporten er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autoritative kjelder, og signere med ulike typar sertifikat.
 * [Utstedelse av virksomhetsidentifikator](https://brreg.eudiw.no/) - Brønnøyundregistra sin teneste for utstedelse av virksomhetsidentifikatorar for organisasjonar registrert foretaksregisteret.
 * [Symfoni Virksomhetslommebok (utsteder)](https://symfoni.dev/) — Symfoni si virksomhetslommebok kan utstede digitale bevis til personar og andre organisasjonar. Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
+* [Digipost Utstederteneste](https://www.digipost.no/bedrift/digitale-lommeboker) – Gjer det enkelt å utstede digitale bevis til både innbyggjar- og verksemdslommebøker. Tenesta kan nytte varsling i Digipost for å forenkle dataflyten mellom utstedar, mottakar og lommebok. Utstedartenesta er tilgjengeleg gjennom eit enkelt API-grensesnitt, og er i bruk i fleire pilotar. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
+
 
 ## Brukarstader
 
 * [Digdir demo brukarstad](lommebok_demo_brukarstad)  Her kan du teste aldersverifisering basert på PID,  og fullmaktsinnlogging basert på fullmaktsbevis.  Du får kan også studere protokoll-flyten.
 * [ID-porten](https://demo-client.test.idporten.no/)  I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av utstedaren vår.
 * [Symfoni Virksomhetslommebok (brukarstad)](https://symfoni.dev/) — Symfoni si virksomhetslommebok kan ta imot og verifisere bevis frå person- og virksomhetslommebøker.  Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
+* [Digipost Verifiseringsteneste](https://www.digipost.no/bedrift/digitale-lommeboker) – Gjer verksemda di i stand til å etterspørje og ta imot data på tvers av innbyggjar- og verksemdslommebøker. Tenesta kan òg nytte Digipost for å forenkle dataflyten mellom brukarstaden, dataeigar og lommebok. Verifiseringstenesta er tilgjengeleg gjennom eit enkelt API-grensesnitt, og er i bruk i fleire pilotar. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
+
 
 
 ## Person-lommebøker
@@ -30,6 +34,8 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 
 ## Virksomhetslommebøker
 * [Symfoni Virksomhetslommebok](https://symfoni.dev/) — Digital lommebok frå Symfoni AS for organisasjonar (juridiske personar). Handterer verifiserbare virksomheitsbevis som firmaattest, skatteattest og bevillingar. Kan også fungere som brukarstad (motta bevis) og utsteder. Utvikla i partnarskap med Brønnøysundregistrene. Integrert med Digdirs felleskomponenter. Pilotert i Oslo kommune ([«Enkel Servering](https://aktuelt.oslo.kommune.no/naeringsetaten-utforsker-fremtidens-it-losninger-kan-effektivisere-saksbehandling-og-soknadsprosesser)») og av Skatteetaten ([Born Digital](https://www.skatteetaten.no/globalassets/om-skatteetaten/analyse-og-rapporter/rapporter/born-digital-digitale-samhandlingsmonstre.pdf)). Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
+* [Digipost Virksomhetslommebok](https://www.digipost.no/bedrift/digitale-lommeboker) - gjer verksemder i stand til å hente inn, oppbevare og dele data. Blir gjort tilgjengeleg i sandkassa i løpet av Q2, som ein del av pilot for anskaffing saman med Oslo kommune og Artifik. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
+
 
 ## Signeringsleverandører
 
@@ -40,6 +46,7 @@ OpenID Foundation tilgjengeleggjer conformance test suites som kan nyttast i din
 [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/).  EU-kommisjonen tilbyr ein relativt teknisk orientert utstedar av PID og mobilt førarkort. Den er ikkje integrert med sandkassen si tillitsliste, men er nyttig å bruka i eigen utvikling.
 
 [EU-kommisjonen demo-brukerstad](https://verifier.eudiw.dev/home) Ein teknisk fokusert demo-brukastad frå EU-kommisjonen. 
+
 
 
 
