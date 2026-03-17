@@ -12,7 +12,7 @@ redirect_from: /oidc_protocol_userinfo
 
 The `/userinfo` endpoint is thoroughly documented in [OIDC Core specification, chapter 5.3](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo)
 
-Note that ID-porten does not contain any useful additional information about the user beyond the `pid` (national id number) which is already included in the id_token.
+Note that if the access token contains the claim `clm` with the claims `family_name` and `given_name`, the values of these claims will be returned by calling the userinfo endpoint.
 
 ## Request
 
@@ -34,11 +34,15 @@ The response is a JSON structure with claims:
 |sub   | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.   |
 |pid   |Norwegian national id number - always present unless a pseudonymous scope was requested. |
 |locale| The language used during authentication|
+|given_name| The given name of the user. Only returned if the access token contains the claim `clm` with the claim `given_name`.|
+|family_name| The family name of the user. Only returned if the access token contains the claim `clm` with the claim `family_name`.|
 
 ```
 {
   "sub" : "NR8vTTPrM3T7rWf8dXxeWLZpxEMsug4E7pxqJuh9wIM=",
   "pid" : "23079421936",
-  "locale" : "nb"
+  "locale" : "nb",
+  "given_name" : "Ola",
+  "family_name" : "Nordmann"
 }
 ```
