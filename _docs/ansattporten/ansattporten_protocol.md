@@ -13,7 +13,7 @@ Ansattporten sin protokoll-støtte er nær identisk med ID-porten sin, og vi hen
 Merk spesielt følgende:
 
 * Ansattporten bruker RAR for koding av representasjonsforhold. Dette er dokumentert [her](ansattporten_rar.html)
-* Ansattporten har egne endepunkt.  See [metadata](ansattporten_wellknown.html)
+* Ansattporten har egne endepunkt.  Se [metadata](ansattporten_wellknown.html)
 * Aksesstokens kan inneholde claimet `clm` for å styre hvilke data som skal returneres fra `userinfo`-endepunktet. Se [ID-porten sin dokumentasjon for aksesstoken](../../docs/idporten/oidc/oidc_protocol_access_token.html) for detaljer.
 
 #### clm
