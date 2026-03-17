@@ -62,7 +62,18 @@ The token is a JWT with the following structure:
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | iat | Timestamp when this token was issued.  |
 | jti | jwt id - unique identifer for a given token  |
+| clm | An array of additional claims to be included in the userinfo response. | `"clm": ["given_name", "family_name"]` |
 | client_orgno | **deprecated** The organization number of the client. Present for legacy reasons, but note that access control decisions by the Resource Server should be based on the `consumer`/`supplier` claims. |
+
+#### clm
+
+Example of the `clm` claim in the access token:
+```json
+ "clm": [
+    "given_name",
+    "family_name"
+  ]
+```
 
 ## Identifying organizations
 
