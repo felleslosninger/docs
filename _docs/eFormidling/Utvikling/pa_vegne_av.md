@@ -67,7 +67,7 @@ Denne tar utgangspunkt i at en allerede har satt opp [system og systembruker](ht
 Når det er gjort kan du følge denne guiden stegvis.
 
 **JWT generator**<br>
-Last ned Digdir sin [JWT generator][https://github.com/felleslosninger/jwt-grant-generator). Ein treng eit JWT grant for å legge til systembruker.
+Last ned Digdir sin [JWT generator](https://github.com/felleslosninger/jwt-grant-generator). Ein treng eit JWT grant for å legge til systembruker.
 Ein kan gjenbruke JKS/P12 sertifikat som en bruker i integrasjonspunktet.
 <br>
 
@@ -87,10 +87,31 @@ token.endpoint=https://maskinporten.no/token
 Kommando for å bygge å køyre generatoren:
 ```
 mvn package
-java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar myclient.properties
+java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar din-properties-fil.properties
 ```
 
 Du vil då få eit accesstoken som du skal bruke i forespørselen mot Altinn.
+Bilde av accesstoken inn her
+<br>
+**Systembrukerforespørsel**
+For systemID bruker du orgnummeret som systemet er opprettet på. For partyOrgNr bruker du orgnummeret du skal sende på-vegne-av.
+```
+curl -X POST "https://platform.altinn.no/authentication/api/v1/systemuser/request/vendor" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer DITT_ACCESS_TOKEN" \
+  -d '{
+  "externalReference": "",
+  "systemId": "<orgnummer-inn-her>_integrasjonspunkt",
+  "partyOrgNo": "<orgnummer-inn-her>",
+  "rights": [],
+"accesspackages": [
+    {
+        "urn": "urn:altinn:accesspackage:informasjon-og-kommunikasjon"
+    }
+],
+  "redirectUrl": ""
+}'
+```
 
 
 ### Oppsett for eFormidling 2.0 eller 3.0
