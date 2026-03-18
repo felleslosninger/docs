@@ -66,13 +66,13 @@ Hvordan dette settes opp er avhengig av hvilken versjon av integrasjonspunktet e
 Denne tar utgangspunkt i at en allerede har satt opp [system og systembruker](https://docs.digdir.no/docs/eFormidling/installasjon/opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) for orgnummeret som brukes i integrasjonspunktet.
 Når det er gjort kan du følge denne guiden stegvis.
 
-**JWT generator**
+**JWT generator**<br>
 Last ned Digdir sin [JWT generator][https://github.com/felleslosninger/jwt-grant-generator). Ein treng eit JWT grant for å legge til systembruker.
 Ein kan gjenbruke JKS/P12 sertifikat som en bruker i integrasjonspunktet.
-
+<br>
 
 Propertiesfila skal sjå slik ut.
-'''
+```
 issuer=MOVE_IP_<orgnummer-inn-her>
 audience=https://maskinporten.no/
 scope=altinn:authentication/systemuser.request.write altinn:authentication/systemregister.write
@@ -83,12 +83,14 @@ keystore.alias=keystore-alias
 keystore.alias.password=alias-passord
 
 token.endpoint=https://maskinporten.no/token
-'''
+```
 Kommando for å bygge å køyre generatoren:
-'''
+```
 mvn package
 java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar myclient.properties
-'''
+```
+
+Du vil då få eit accesstoken som du skal bruke i forespørselen mot Altinn.
 
 
 ### Oppsett for eFormidling 2.0 eller 3.0
