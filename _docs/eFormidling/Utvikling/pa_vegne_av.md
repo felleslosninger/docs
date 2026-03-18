@@ -67,11 +67,11 @@ Denne tar utgangspunkt i at en allerede har satt opp [system og systembruker](ht
 Når det er gjort kan du følge denne guiden stegvis.
 
 **JWT generator**<br>
-Last ned Digdir sin [JWT generator](https://github.com/felleslosninger/jwt-grant-generator). Ein treng eit JWT grant for å legge til systembruker.
-Ein kan gjenbruke JKS/P12 sertifikat som en bruker i integrasjonspunktet.
+Last ned Digdir sin [JWT generator](https://github.com/felleslosninger/jwt-grant-generator). Denne trengs for å generere access token.
+En kan gjenbruke JKS/P12 sertifikat som en bruker i integrasjonspunktet.
 <br>
 
-Propertiesfila skal sjå slik ut.
+Propertiesfilen skal se slik ut:
 ```
 issuer=MOVE_IP_<orgnummer-inn-her>
 audience=https://maskinporten.no/
@@ -84,13 +84,13 @@ keystore.alias.password=alias-passord
 
 token.endpoint=https://maskinporten.no/token
 ```
-Kommando for å bygge å køyre generatoren:
+Kommando for å bygge å kjøre generatoren:
 ```
 mvn package
 java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar din-properties-fil.properties
 ```
 
-Du vil då få eit accesstoken som du skal bruke i forespørselen mot Altinn.
+Du vil da få et accesstoken som du skal bruke i forespørselen mot Altinn.
 ![]({{site.baseurl}}/images/eformidling/access_token.png)
 <br>
 
@@ -136,9 +136,9 @@ Responsen skal være `201`:
 }
 ```
 <br>
-På-vegne-av virksomheiten må så bruke `confirmUrl`til å godkjenne tilgangene (krever rollen Tilgangsstyring eller Daglig Leder).
+På-vegne-av virksomheiten må så bruke `confirmUrl`til å godkjenne tilgangene (krever rollen Tilgangsstyring eller Daglig Leder). En kan bare sende URLen i klartekst.
 
-Når tilgangane er bekrefta kan ein legge på-vegne-av orgnummeret inn i propertiesfila slik:
+Når tilgangene er bekreftet kan en legge på-vegne-av orgnummeret inn i propertiesfila slik:
 ```
 difi.move.dpo.reportees[0].orgId=0192:311694049
 difi.move.dpo.reportees[0].name=311694049
