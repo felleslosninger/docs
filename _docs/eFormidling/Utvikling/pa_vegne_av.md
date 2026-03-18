@@ -93,6 +93,7 @@ java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar di
 Du vil då få eit accesstoken som du skal bruke i forespørselen mot Altinn.
 ![]({{site.baseurl}}/images/eformidling/access_token.png)
 <br>
+
 **Systembrukerforespørsel**<br>
 For systemID bruker du orgnummeret som systemet er opprettet på. For partyOrgNr bruker du orgnummeret du skal sende på-vegne-av.
 ```
@@ -112,7 +113,39 @@ curl -X POST "https://platform.altinn.no/authentication/api/v1/systemuser/reques
   "redirectUrl": ""
 }'
 ```
+Responsen skal være `201`:
+```
+{
+    "id": "4f8078cf-da52-4455-a809-6951f455fb1e",
+    "integrationTitle": "Integrasjonspunkt",
+    "externalRef": "211056142",
+    "systemId": "910999559_integrasjonspunkt",
+    "partyOrgNo": "211056142",
+    "rights": [],
+    "accessPackages": [
+        {
+            "urn": "urn:altinn:accesspackage:informasjon-og-kommunikasjon"
+        }
+    ],
+    "status": "New",
+    "redirectUrl": "",
+    "confirmUrl": "https://am.ui.tt02.altinn.no/accessmanagement/ui/systemuser/request?id=4f8078cf-da52-4455-a809-6951f455fb1e&DONTCHOOSEREPORTEE=true",
+    "escalated": false,
+    "created": "0001-01-01T00:00:00",
+    "timedOut": false
+}
+```
+<br>
+På-vegne-av virksomheiten må så bruke `confirmUrl`til å godkjenne tilgangene (krever rollen Tilgangsstyring eller Daglig Leder).
 
+Når tilgangane er bekrefta kan ein legge på-vegne-av orgnummeret inn i propertiesfila slik:
+```
+difi.move.dpo.reportees[0].orgId=0192:311694049
+difi.move.dpo.reportees[0].name=311694049
+
+difi.move.dpo.reportees[1].orgId=0192:313711218
+difi.move.dpo.reportees[1].name=313711218
+```
 
 ### Oppsett for eFormidling 2.0 eller 3.0
 
