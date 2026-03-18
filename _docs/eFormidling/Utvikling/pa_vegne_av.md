@@ -91,9 +91,9 @@ java -jar target\jwt-grant-generator-1.1.0-SNAPSHOT-jar-with-dependencies.jar di
 ```
 
 Du vil då få eit accesstoken som du skal bruke i forespørselen mot Altinn.
-Bilde av accesstoken inn her
+![]({{site.baseurl}}/images/eformidling/access_token.png)
 <br>
-**Systembrukerforespørsel**
+**Systembrukerforespørsel**<br>
 For systemID bruker du orgnummeret som systemet er opprettet på. For partyOrgNr bruker du orgnummeret du skal sende på-vegne-av.
 ```
 curl -X POST "https://platform.altinn.no/authentication/api/v1/systemuser/request/vendor" \
