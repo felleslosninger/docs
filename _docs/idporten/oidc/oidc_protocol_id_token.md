@@ -88,7 +88,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | iat | Timestamp when this token was issued. If different from `auth_time`, this indicates a federated/sso login. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | jti | jwt id - unique identifer for a given token  |
-| locale | The language selected by the user during the authentication in ID-porten. ISO 639-1 values are: nb (Norwegian Bokmål), nn (Norwegian Nynorsk), en (English), se (Northern Sami)|
+| locale | The language selected by the user during the authentication in ID-porten. ISO 639-1 values are: nb (Norwegian Bokmål), nn (Norwegian Nynorsk), en (English), se (Northern Sami). Only included if the *profile* scope was requested.|
 | sid | session id - an unique identifier for end user session at ID-porten. Clients should store the value to be able to handle frontchannel logout notifications. Note that `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required`.  |
 
 Additional claims that may be added if the eid supplier provides them and the client has requested the `profile` scope:
