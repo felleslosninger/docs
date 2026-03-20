@@ -33,9 +33,9 @@ The response is a JSON structure with claims:
 |-|-|
 |sub   | "subject identifier" - an unique identifier for the authenticated user.  The value is *pairwise*, meaning a given client will always get the same value, whilst different clients do not get equal values for the same user.   |
 |pid   |Norwegian national id number - always present unless a pseudonymous scope was requested. |
-|locale| The language used during authentication|
-|given_name| The given name of the user. Only returned if the access token contains the claim `clm` with the claim `given_name`.|
-|family_name| The family name of the user. Only returned if the access token contains the claim `clm` with the claim `family_name`.|
+|locale| The language used during authentication. Only returned if the *profile* scope was requested.|
+|given_name| The given name of the user. Only returned if the *profile* scope was requested and the access token contains the claim `clm` with the claim `given_name`.|
+|family_name| The family name of the user. Only returned if the *profile* scope was requested and the access token contains the claim `clm` with the claim `family_name`.|
 
 ```
 {
