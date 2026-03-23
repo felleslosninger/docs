@@ -62,7 +62,7 @@ The token is a JWT with the following structure:
 | exp | Expire - Timestamp when this token should not be trusted any more.                                                                                                                                                                                                                                                                                                                                                                              |
 | iat | Timestamp when this token was issued.                                                                                                                                                                                                                                                                                                                                                                                                           |
 | jti | jwt id - unique identifer for a given token                                                                                                                                                                                                                                                                                                                                                                                                     |
-| clm | **Internal claim.** A compressed array of additional claims to be included in the userinfo response.                                                                                                                                                                                                                                                                                                                                            | `"clm": ["!wds]`                                                                                                             |
+| clm | **Internal claim.** A compressed array of additional claims to be included in the userinfo response.                                                                                                                                                                                                                                                                                                                                            | `"clm": ["!wAAC"]`                                                                                                             |
 | sik | **Internal claim.** Encrypted session id used internally by ID-porten. Not to be used by the client.                                                                                                                                                                                                                                                                                                                                            |                                                                                                                              |
 | client_orgno | **deprecated** The organization number of the client. Present for legacy reasons, but note that access control decisions by the Resource Server should be based on the `consumer`/`supplier` claims.                                                                                                                                                                                                                                            |
 
@@ -70,13 +70,6 @@ The token is a JWT with the following structure:
 
 > **Warning:** `clm` and `sik` are internal claims used by ID-porten. They are not part of the public API and may change without notice. Use at own risk.
 
-Example of the `clm` claim in the access token:
-```json
- "clm": [
-    "given_name",
-    "family_name"
-  ]
-```
 
 ## Identifying organizations
 
