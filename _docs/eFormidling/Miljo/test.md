@@ -33,7 +33,7 @@ Følgende tjenester brukes av integrasjonspunktets test-miljø og må kunne nås
 | platform.tt02.altinn.no                            | 51.13.86.131                                       | 443   | DPO (IPv4)      | Altinn formidlingstjeneste                                        | utgående              |
 | test.svarut.ks.no                         | 137.221.25.65 <br/> 137.221.28.65                   | 443   | DPF      | KS SvarUt og SvarInn                                                                     | utgående              |
 | test.kontaktregisteret.no | 139.105.36.137 | 443  | DPI | Kontakt-og reservasjonsregisteret                                 | utgående |
-| srest.qa.dataplatfor.ms                   | 51.120.52.137 og 51.120.49.231                                       | 443   | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt                    | utgående              |
+| https://sandbox1.ediex.no/                   | 185.47.42.24 og 185.47.43.175                                       | 443   | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt                    | utgående              |
 | crl.test4.buypass.no | 185.62.163.56                                    | 80   | DPI      | Buypass CRL-liste                                                 | utgående              |
 | crl.test4.buypassca.com | 185.62.163.191                                    | 80   | DPI      | Buypass CRL-liste SEID 2.0                                        | utgående              |
 | Legal: https://crl.test.commfides.com/G3/CommfidesLegalPersonCA-G3-TEST.crl                         | 91.232.83.136                  | 80   | DPI   | Commfides-CRL                                                     | utgående              |
