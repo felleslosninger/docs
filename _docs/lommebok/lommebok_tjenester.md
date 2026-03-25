@@ -17,6 +17,7 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 * [Utstedelse av virksomhetsidentifikator](https://brreg.eudiw.no/) - Brønnøyundregistra sin teneste for utstedelse av virksomhetsidentifikatorar for organisasjonar registrert foretaksregisteret.
 * [Symfoni Virksomhetslommebok (utsteder)](https://symfoni.dev/) — Symfoni si virksomhetslommebok kan utstede digitale bevis til personar og andre organisasjonar. Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
 * [Digipost Utstederteneste](https://www.digipost.no/bedrift/digitale-lommeboker) – Gjer det enkelt å utstede digitale bevis til både innbyggjar- og verksemdslommebøker. Tenesta kan nytte varsling i Digipost for å forenkle dataflyten mellom utstedar, mottakar og lommebok. Utstedartenesta er tilgjengeleg gjennom eit enkelt API-grensesnitt, og er i bruk i fleire pilotar. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
+* [Kantega Bevis Studio](https://kantega.id/produkter/studio) – eit designstudio for digitale bevis. Skreddarsy utsjånad og innhald, og utsted signerte bevis direkte mot den nasjonale sandkassa. Registrer deg for tilgang og kom raskt og enkelt i gang.
 
 
 ## Brukarstader
@@ -25,6 +26,7 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 * [ID-porten](https://demo-client.test.idporten.no/)  I testmiljøet til ID-porten er det mogeleg å logge inn med eit PID-dokument som er utstedt av utstedaren vår.
 * [Symfoni Virksomhetslommebok (brukarstad)](https://symfoni.dev/) — Symfoni si virksomhetslommebok kan ta imot og verifisere bevis frå person- og virksomhetslommebøker.  Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
 * [Digipost Verifiseringsteneste](https://www.digipost.no/bedrift/digitale-lommeboker) – Gjer verksemda di i stand til å etterspørje og ta imot data på tvers av innbyggjar- og verksemdslommebøker. Tenesta kan òg nytte Digipost for å forenkle dataflyten mellom brukarstaden, dataeigar og lommebok. Verifiseringstenesta er tilgjengeleg gjennom eit enkelt API-grensesnitt, og er i bruk i fleire pilotar. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
+* [Kantega Verifier](https://kantega.id/produkter/verifier) – ei teneste for sikker verifisering av digitale bevis. Hent bevis frå lommeboka og verifiser gyldigheit og signaturar. [Ta kontakt](https://kantega.id/kontakt) for tilgang eller demo.
 
 
 
