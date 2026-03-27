@@ -24,6 +24,7 @@ xx.yy.2026
 
 - Integrasjonspunktet sorterer meldingene som hentes ned fra Altinn for å få riktig rekkefølge på statusene. 
 - Integrasjonspunktet tar i bruk nye maskinporten scopes for eformidling.
+- Orbyt URL som default DPI leverandør
 - Setter sekvensgenerering i database til "legacy" modus (kompabibelt med IP v2.x)
 - Tatt inn PR fra Runar Kristoffersen i RKMEDIA (mulig å tidsavgrene conversation søk)
 - Løser et par problem for PostgreSQL database (MOVE-4932)
