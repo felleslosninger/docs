@@ -36,6 +36,38 @@ Det vil alltid returneres reservasjonsstatus for brukeren.
 
 Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
+
+## Oppslag på vegne av annen virksomhet
+
+Kontakt- og reservasjonsregisteret støtter oppslag på vegne av en annen virksomhet gjennom delegering av tilgang i Altinn.
+Dette brukes når en leverandør gjør oppslag i KRR på vegne av en kunde.
+
+### Hvordan det fungerer
+
+For å gjøre oppslag på vegne av en kunde må:
+1. Kunden delegerer tilgang i Altinn
+2. Leverandør henter token fra Maskinporten med:
+   1. Gyldige delegeringsscope
+   2. "consumer_org" satt til kundens organisasjonsnummer
+
+> Oppslag uten "consumer_org" blir behandlet som oppslag for egen virksomhet.
+
+### Scope
+
+| Delegeringsscope            |
+|-----------------------------|
+| krr:global/kontaktinfo.read |
+| krr:global/postkasse.read   |
+
+### Delegering i Altinn
+
+Kunden må delegere API-tilgang til leverandør i Altinn.
+
+API-tilgang:
+"KRR - Delegere på-vegne-av-rettighet"
+
+Se:
+[Tilgang til programmeringsgrensesnitt - API](https://info.altinn.no/hjelp/profil/tilgang-til-programmeringsgrensesnitt---api/delegering-av-api-tilgang)
     
 ## Endepunkt
 
