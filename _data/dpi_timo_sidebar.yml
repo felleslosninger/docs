@@ -22,6 +22,8 @@ folders:
         jurl: /dpi_skjema.html 
       - title: Eksempler
         jurl: /dpi_eksempler.html
+      - title: Tjenesteleverandører
+        jurl: /dpi_tjenesteleverandører.html
       
         
     - title: Forretningslag
