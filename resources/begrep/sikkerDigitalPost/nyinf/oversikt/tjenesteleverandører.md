@@ -1,6 +1,6 @@
 ---
 title: Tjenesteleverandører 
-permalink: tjenesteleverandører.html
+permalink: dpi_tjenesteleverandorer.html
 sidebar: dpi_timo_sidebar
 ---
 
