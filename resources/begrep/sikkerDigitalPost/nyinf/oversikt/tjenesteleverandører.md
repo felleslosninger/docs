@@ -9,7 +9,7 @@ Følgende side lister de ulike tjenesteleverandørene innen digital post til inn
 ## Avsenders aksesspunkt (hjørne 2) NB! Gjelder fra 20. april 2026
 Leverandør av avsenders aksesspunkt, inkludert DPI API for avsendere, er Orbyt AS.
 
-Avsendervirksomheter som benytter Orbyts DPI API må sikre at de kan nå tjenestene for produksjon og test/qa:
+Avsendervirksomheter som benytter Orbyts DPI API må sikre at de kan nå tjenestene for Produksjon og Test/QA:
 
 | Miljø                           | DNS                                       | IP-adresse | 
 |-------------------------------------|-----------------------------------------------------|
