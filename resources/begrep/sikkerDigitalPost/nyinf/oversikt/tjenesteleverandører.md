@@ -7,9 +7,9 @@ sidebar: dpi_timo_sidebar
 Følgende side lister de ulike tjenesteleverandørene innen digital post til innbygger (DPI)
 
 ## Avsenders aksesspunkt (hjørne 2) NB! Gjelder fra 20. april 2026
-Leverandør er Orbyt AS
+Leverandør av avsenders aksesspunkt, inkludert DPI API for avsendere, er Orbyt AS.
 
-Miljøoversikt:
+Avsendervirksomheter som benytter Orbyts DPI API må sikre at de kan nå tjenestene for produksjon og test/qa:
 
 | Miljø                           | DNS                                       | IP-adresse | 
 |-------------------------------------|-----------------------------------------------------|
