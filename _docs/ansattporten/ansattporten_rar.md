@@ -49,6 +49,8 @@ Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel.
 
 Dersom kunden ønsker å bruke Altinn 3 ressurser som autoritativ kilde for representasjonsforhold, må klienten oppgi `ansattporten:altinn:resource` som RAR-type. I tillegg må det spesifiseres hvilken Altinn-ressurs som kreves.
 
+> **MERK:** Ansattporten bruker Altinn 3 som autorativ kilde for representasjonsforhold. Den har ikke støtte for [tilgangslister](https://docs.altinn.studio/nb/authorization/guides/resource-owner/accesslist/). Tjenester som baserer seg på tilgangslister for tilgangskontroll må implementere egen sjekk mot Altinn Autorisasjon.  
+
 Detaljer om, og utlisting av, Altinn-ressurser kan finnes ved å bruke Altinn sitt [Ressursregister API](https://docs.altinn.studio/en/api/resourceregistry/spec/#/Resource) - Her kan du f.eks. finne url for å [Liste ut alle ressurser](https://platform.altinn.no/resourceregistry/api/v1/resource/resourcelist?includeAltinn2=false&includeMigratedApps=true)
 
 Følgende claims kan sendes inn i request: 
