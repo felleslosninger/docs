@@ -1,13 +1,13 @@
 ---
-title: Hva er Ansattporten ?
-description: Ansattporten er en kopi av ID-porten men der funksjonaliteten er tilpasset innlogging i ansatt/representasjonskontekst.
+title: Hva er Ansattporten?
+description: Ansattporten er en kopi av ID-porten, men der funksjonaliteten er tilpasset innlogging i ansatt/representasjonskontekst.
 
 sidebar: ansattporten
 product: Ansattporten
 redirect_from: /ansattporten_om
 ---
 
-Ansattporten er en egen innloggingtjeneste med funksjonalitet som er tilpasset bruk som ansatt eller i andre situasjoner der en nett-tjeneste eller et API har behov for at sluttbruker må opptre i et representasjonsforhold på vegne av virksomheter.
+Ansattporten er en egen innloggingstjeneste med funksjonalitet som er tilpasset bruk som ansatt eller i andre situasjoner der en netttjeneste eller et API har behov for at sluttbruker må opptre i et representasjonsforhold på vegne av virksomheter.
 
 
 <div class="mermaid">
@@ -35,15 +35,15 @@ graph LR
 
 </div>
 
-Disse viktigste egenskapene ved Ansattporten er som følger:
+De viktigste egenskapene ved Ansattporten er som følger:
 
 ### Egen "port"
 
 Ansattporten er en selvstendig tjeneste som er uavhengig av ID-porten.  Det betyr at tjenester i ID-porten ikke er mulig å nå fra Ansattporten og vice versa. 
 
-Samtidig så deler ID-porten og Ansattporten samme kildekode-base, så det er i praksis bare litt konfigurasjon og tilpasset funksjonalitet som skiller de to portene teknisk.  Som hovedregel vil oppdateringer, feilrettinger og ny funksjonalitet bli rullet ut mer eller mindre samtidig til begge portene. Ansattporten tilbyr også de samme elektroniske ID'ene som er tilbudt av ID-porten, dvs. MinID, BankID, Buypass og Commfides.
+Samtidig så deler ID-porten og Ansattporten samme kildekodebase, så det er i praksis bare litt konfigurasjon og tilpasset funksjonalitet som skiller de to portene teknisk.  Som hovedregel vil oppdateringer, feilrettinger og ny funksjonalitet bli rullet ut mer eller mindre samtidig til begge portene. Ansattporten tilbyr også de samme elektroniske ID-ene som er tilbudt av ID-porten, dvs. MinID, BankID, Buypass og Commfides.
 
-Protokollmessig sier vi at Ansattporten er en egen Oauth2 autorisasjonsserver / OpenID Provider, identifisert ved sin `issuer`-verdi.
+Protokollmessig sier vi at Ansattporten er en egen OAuth2-autorisasjonsserver / OpenID Provider, identifisert ved sin `issuer`-verdi.
 
 
 ### Ingen SSO-funksjonalitet mellom tjenester
@@ -56,30 +56,30 @@ Men til forskjell fra ID-porten så tilbyr ikke Ansattporten SSO mellom de ulike
 
 Ansattporten kan brukes enten til ordinær punktinnlogging, eller til å kreve at innlogga bruker må ha et bestemt representasjonsforhold for en virksomhet.
 
-Dersom tjenesten krever representasjon, vil Ansattporten vise en organisasjonsvelger til brukeren, som er forhåndspopulert basert den autoritative kilden.
+Dersom tjenesten krever representasjon, vil Ansattporten vise en organisasjonsvelger til brukeren, som er forhåndspopulert basert på den autoritative kilden.
 
 I dag er det kun Altinn Autorisasjon som er støttet som autoritativ kilde. 
 
-Ansattorten angir bare at bruker har rett til å representere gitt organisasjon med forespurt rettighet. Den utfører **ikke** tilgangskontroll for tjenesten/klienten.
+Ansattporten angir bare at bruker har rett til å representere gitt organisasjon med forespurt rettighet. Den utfører **ikke** tilgangskontroll for tjenesten/klienten.
 
 
 # Hvem kan bruke Ansattporten ?
 
-Alle kunder som har inngått Digdir sine bruksvilkår for fellesløsninger kan bruke Ansattporten til ordinær punkt-autentisering på samme måte som de gjør i ID-porten idag.
+Alle kunder som har inngått Digdir sine bruksvilkår for fellesløsninger kan bruke Ansattporten til ordinær punktautentisering på samme måte som de gjør i ID-porten i dag.
 
-Men bare kunder som også er tjenesteeier i Altinn, kan bruke funksjonaliteten med organisasjonsvelger og tilgangstyring basert på representasjonsforhold i Altinn Autorisasjon.
+Men bare kunder som også er tjenesteeier i Altinn, kan bruke funksjonaliteten med organisasjonsvelger og tilgangsstyring basert på representasjonsforhold i Altinn Autorisasjon.
 
 
 # Hva koster Ansattporten ?
 
-P.t. har Ansattporten samme finansieringsmodell som ID-porten.  200.000-innnloggingskvoten er felles for de to portene.
+P.t. har Ansattporten samme finansieringsmodell som ID-porten.  200.000-innloggingskvoten er felles for de to portene.
 
 Merk at finansieringsmodell trolig vil endres i fremtiden.
 
 
 # Hvordan administrerer jeg Ansattporten ?
 
-På akkurat samme måte som for ID-porten, men du må passe på at integrasjonene du opprette i selvbetjening har `integration_type` satt til `ansattporten`.
+På akkurat samme måte som for ID-porten, men du må passe på at integrasjonene du oppretter i selvbetjening har `integration_type` satt til `ansattporten`.
 
 
 # Er Ansattporten fremdeles i pilot-status? 
@@ -88,7 +88,7 @@ Fra 2025 går Ansattporten over i mer ordinær drift.  SLA i form av oppetid vil
 
 Se [artikkel på Samarbeidsportalen](https://samarbeid.digdir.no/ansattporten/ansattporten-er-no-i-produksjon-som-ei-fullverdig-fellesloysing/2969).
 
-# Hvilken bruk-scenario støttes ? 
+# Hvilke bruksscenarioer støttes?
 
 Ansattporten tilbyr per nå tre brukerreiser:
 
