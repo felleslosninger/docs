@@ -1,6 +1,6 @@
 ---
 title: RAR-typer i Ansattporten
-description: Ansattporten bruker RAR til kommunisere representasjonsforhold
+description: Ansattporten bruker RAR til å kommunisere representasjonsforhold
 
 sidebar: ansattporten
 product: Ansattporten
@@ -24,7 +24,7 @@ RAR er en ny OAuth2-utvidelse for transaksjonsspesifikke autorisasjoner. Der "ba
 
 Det er ingen teknisk sammenheng mellom et OAuth2 scope og RAR, de to mekanismene er disjunkte.  
 
-En kan derfor ikke legge til grunn at en klient som ikke har fått et gitt scope, heller ikke kan motta en rar-struktur i token.
+En kan derfor ikke legge til grunn at en klient som ikke har fått et gitt scope, heller ikke kan motta en RAR-struktur i token.
 
 ## Tilgangstyring av RAR-typer
 
@@ -38,7 +38,7 @@ Følgende RAR-typer er støttet i Ansattporten:
 | RAR-type | Skildring |
 |-|-|
 | `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autoritativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke |
-| `ansattporten:orgno` | Gir organisasjonnummer-kobling for bruker logget inn med sin jobb-konto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
+| `ansattporten:orgno` | Gir organisasjonsnummerkobling for bruker logget inn med sin jobbkonto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
 | `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autoritativ kilde for representasjonsforhold |
 
 
@@ -49,9 +49,9 @@ Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel.
 
 Dersom kunden ønsker å bruke Altinn 3 ressurser som autoritativ kilde for representasjonsforhold, må klienten oppgi `ansattporten:altinn:resource` som RAR-type. I tillegg må det spesifiseres hvilken Altinn-ressurs som kreves.
 
-> **MERK:** Ansattporten bruker Altinn 3 som autorativ kilde for representasjonsforhold. Den har ikke støtte for [tilgangslister](https://docs.altinn.studio/nb/authorization/guides/resource-owner/accesslist/). Tjenester som baserer seg på tilgangslister for tilgangskontroll må implementere egen sjekk mot Altinn Autorisasjon.  
+> **MERK:** Ansattporten bruker Altinn 3 som autoritativ kilde for representasjonsforhold. Den har ikke støtte for [tilgangslister](https://docs.altinn.studio/nb/authorization/guides/resource-owner/accesslist/). Tjenester som baserer seg på tilgangslister for tilgangskontroll må implementere egen sjekk mot Altinn Autorisasjon.  
 
-Detaljer om, og utlisting av, Altinn-ressurser kan finnes ved å bruke Altinn sitt [Ressursregister API](https://docs.altinn.studio/en/api/resourceregistry/spec/#/Resource) - Her kan du f.eks. finne url for å [Liste ut alle ressurser](https://platform.altinn.no/resourceregistry/api/v1/resource/resourcelist?includeAltinn2=false&includeMigratedApps=true)
+Detaljer om, og utlisting av, Altinn-ressurser kan finnes ved å bruke Altinn sitt [Ressursregister API](https://docs.altinn.studio/en/api/resourceregistry/spec/#/Resource) - her kan du f.eks. finne URL for å [liste ut alle ressurser](https://platform.altinn.no/resourceregistry/api/v1/resource/resourcelist?includeAltinn2=false&includeMigratedApps=true)
 
 Følgende claims kan sendes inn i request: 
 
@@ -75,18 +75,18 @@ Følgende claims kan sendes inn i request:
   ]
 ```
 
-Dersom det er forespurt flere ressurser, så vil `authorization_details` inneholde et json-objekt per ressurs som brukeren har fått tildelt tilgang til. 
-Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+Dersom det er forespurt flere ressurser, så vil `authorization_details` inneholde et JSON-objekt per ressurs som brukeren har fått tildelt tilgang til. 
+Datamodellen for respons inneholder alltid claimet "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
 | resource | Samme som i request (full urn) |
-| resource-name | Namn på etterspurt representasjonsforhold |
+| resource_name | Navn på etterspurt representasjonsforhold |
 | authorized_parties | Array med valgte virksomheter. |
 | orgno | For hver virksomhet, objekt med orgno representert ihht iso6523 standard.  |
 | resource | For hver virksomhet, ressurs-id, skal matche id i etterspurt ressurs |
 | name | For hver virksomhet, navn på virksomhet |
-| unit-type | For hver virksomhet, angir organisasjonstypen ihht https://www.brreg.no/bedrift/organisasjonsformer/ |
+| unit_type | For hver virksomhet, angir organisasjonstypen ihht https://www.brreg.no/bedrift/organisasjonsformer/ |
 
 
 *Eksempel på respons*:
@@ -115,7 +115,7 @@ Datamodellen for respons inneholder alltid claiment "type" som i request, men om
   } ],
 ```
 
-Dersom det er forespurt flere representasjonsforhold, så vil authorization_details inneholde et json-objekt per lenketjeneste som brukeren har rettighet til.
+Dersom det er forespurt flere representasjonsforhold, så vil authorization_details inneholde et JSON-objekt per lenketjeneste som brukeren har rettighet til.
 
 ### Testbrukere
 
@@ -130,7 +130,7 @@ Velg TestID til autentisering, og bruk gjerne "Hent tilfeldig Daglig leder" om d
 
 ## Datamodell for arbeidsgivers organisasjonsnummer (`ansattporten:orgno`)
 
-> **ansattporten:orgno er i pilotfase** og er pr. no berre tilgjengeleg i test.
+> **ansattporten:orgno er i pilotfase** og er pr. nå bare tilgjengelig i test.
 
 Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden i test er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med registrert organisasjonsnummer. 
 
@@ -161,7 +161,7 @@ https://login.test.ansattporten.no/authorize?
 ```
 
 
-Datamodellen for respons inneholder alltid claiment "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
+Datamodellen for respons inneholder alltid claimet "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
@@ -211,10 +211,10 @@ Følgende claims kan sendes inn i request:
 
 [Her finner du en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
 
-> **Mange av dagens standard Altinn-roller gir veldig breie tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipp, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor tilbyr vi ikke innlogging på vegne av Altinn-roller i Ansattporten, tjenesten må spesifisere en lenketjeneste. 
+> **Mange av dagens standard Altinn-roller gir veldig brede tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipper, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor tilbyr vi ikke innlogging på vegne av Altinn-roller i Ansattporten, tjenesten må spesifisere en lenketjeneste. 
 
 
-*Eksempel på request med 2 autorisasjonobjekter*: 
+*Eksempel på request med 2 autorisasjonsobjekter*: 
 ```
   authorization_details= [
     {
