@@ -8,7 +8,12 @@ redirect_from: /ansattporten_representasjon
 ---
 
 
-Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autoritativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autoritativ kilde.
+Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autoritativ kilde.  
+Ansattporten kan nytte to ulike autorative kilder, avhegig av hvilken autentiseringsmetode som er brukt. 
+For autentisering med:
+- pid, så bruker Ansattporten Altinn Autorisasjon som autoritativ kilde. Her vil token berikes med informasjon om organisasjon som har gitt bruker lov til å representere gitt organisasjon med forespurt rettighet. Det blir ikke gjort noen kontroll mot tilganslister i Altinn Autorisasjon for aktiv klient. Tjenester som bruker tilgangslister må sjekke dette selv mot Altinn autorisasjon.
+- epost, så bruker Ansattporten [virksomhetsbroen](ansattporten_virksomhetsbroen.html)
+
 
 Du finner mer overordnet informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
 
