@@ -42,12 +42,13 @@ Denne sida gir ein oversikt over tilgjengelige og potensielle kapabilitetar i sa
 
 | Kapabilitet | Status | Beskrivelse |
 |-------------|--------|-------------|
-| Felles utstedertjeneste for det offentlige | Basisfunksjonalitet tilgjengeleg. Manglar revokasjon, WUA- og tillitsliste-validering, multi-tenancy.  | Felles infrastruktur for offentleg sektor for utstedelse av verifiserbare digitale bevis. |
-| Register over brukerstaders formål/behandlingsgrunnlag | Basisfunksjonalitet tilgjengeleg. | Eigenskap ved brukerstadregisteret, der tenesteleverandørar oppgir formål og behandlingsgrunnlag. |
-| Innbyggers dashboard/historikk | Basisfunksjonalitet tilgjengeleg i demo-lommeboka | Grensesnitt der innbyggjar kan sjå delte bevis, mottakar, tidspunkt og formål. |
+| Felles utstedertjeneste for det offentlige | Basisfunksjonalitet tilgjengeleg. Manglar revokasjon, WUA- og tillitsliste-validering.  | Felles infrastruktur for offentleg sektor for utstedelse av verifiserbare digitale bevis. |
+| Revokasjon || Ei utstedarteneste skal kunne trekke tilbake eit bevis som ligg i innbyggaren si lommebok. Døme på dette kan vere å verte fråteken førarkortet eller politiattesten.  Utstedaren kan også velge å trekke attende bevis dersom innbyggaren si lommebok vert revokert. |
+| Register over brukerstaders formål/behandlingsgrunnlag | Basisfunksjonalitet tilgjengeleg. | Eigenskap ved brukerstadregisteret, der tenesteleverandørar oppgir formål og behandlingsgrunnlag. Lommebok vil vise advarsel dersom ein brukarstad ber om andre data enn det som er deklarert i registeret. |
+| Innbyggers dashboard/historikk | Basisfunksjonalitet tilgjengeleg i demo-lommeboka | Grensesnitt i lommeboktenesta der innbyggjar kan sjå historikk over bevis som er delt, kven som var mottakar, tidspunkt og formål. |
+| Misbruksvarsling til datatilsyn | Ikkje relevant i sandkassa | Høve til at innbyggar kan varsle frå lommeboka ved mistanke om at eit brukarstad har misbrukt personopplysningar frå eit bevis som innbyggaren har delt. |
 | Beviskatalog | Proprietær katalog tilgjengeleg. Manglar dei formelle katalogane ihht ARF. | Både maskin- og menneske-lesbare katalogar ([TS11](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts11-interfaces-and-formats-for-catalogue-of-attributes-and-catalogue-of-schemes.md)) over tilgjengelege digitale bevis og definisjonar av desse. Oversikt over kven som er autorativ kjelde for ulike attributt. |
-| Misbruksvarsling til datatilsyn | Ikkje relevant i sandkassa | Høve til at innbyggar kan varsle frå lommeboka ved mistanke om misbruk av bevis eller personopplysningar. |
-| Transaksjons-spesifikk deling |  | Knyting av transaksjonsspesifikke data til presentasjon av bevis (t.d. betaling). |
+| Transaksjons-spesifikk deling |  | Knytning av transaksjonsspesifikke data til presentasjon av bevis (t.d. betaling).  Brukarstaden oppgjev desse dataane (til dømes eit beløp) til lommeboka, og so må innbyggaren godkjenne dei. |
 
 ---
 
