@@ -18,10 +18,10 @@ og passord.
 
 For integrasjonspunkt eldre enn versjon 4 sjå [Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste-utgår-i-ipv4)
 
-- Virksomheten må klargjøre en maskinporten klient og tildele nødvendige scopes
+- Virksomheiten har allerede ein Maskinporten klient (oppretta av Digdir) som alltid er på formen MOVE_IP_orgnummer-til-din-virksomhet.
 - Virksomheten må opprette eit system i Altinn. Systemet må ha tilgangspakken "informasjon-og-kommunikasjon".
 - Systemnavn skal inn i properties filen til integrasjonspunktet.
-- Virksomheten mp opprette en systembruker på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
+- Virksomheten må opprette en systembruker på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
 - Virksomheiten må godkjenne opprettelsen av systembruker i Altinn
 - Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
 
@@ -34,7 +34,7 @@ Dersom man skal sende og motta på vegne av andre virksomheter må man gjøre f�
 Opprettelse av system og systembruker(e) er litt omfattende (se sekvensdiagram nedenfor),
 men det er bygget inn en onboarding sjekkliste i IPv4 som kan hjelpe med dette.
 
-Det krever at du har opprettet en maskinporten klient og fått tildelt de rette scopes,
+Det krever at maskinportenklienten har fått tildelt rette scopes (gjerast av Digdir),
 deretter kan du konfigurere ønsket systemnavn og systembruker i properties filen, aktivere
 DPO og starte opp integrasjonspunktet.
 
@@ -55,7 +55,7 @@ sequenceDiagram
     participant AS as Altinn SystemRegister
     participant A as Altinn
 
-    K->>S: Opprett maskinporten client (selvbetjent)
+    D->>S: Opprett maskinporten client
     note over S : Tildeler scopes for : altinn:broker.write, altinn:broker.read
 
     D->>S: Tildeler scopes (de som ikke er åpne for kunde) 

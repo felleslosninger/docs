@@ -11,6 +11,9 @@ folders:
       - title: Arkitektur
         jurl: /docs/lommebok/lommebok_arkitektur.html
 
+      - title: Kapabilitetar
+        jurl: /docs/lommebok/lommebok_kapabilitetar.html
+
       - title: Tenester i sandkassen
         jurl: /docs/lommebok/lommebok_tjenester.html
 
@@ -29,6 +32,9 @@ folders:
       - title: Motta bevis (OpenID4VP)
         jurl: /docs/lommebok/lommebok_protokoll_vp.html
 
+      - title: EUDIPLO som brukarstad
+        jurl: /docs/lommebok/lommebok_eudiplo.html
+
 
 - title: Ta i bruk som utstedar
   folderitems:
@@ -41,9 +47,6 @@ folders:
 
       - title: Lage bevis (OpenID4VCI)
         jurl: /docs/lommebok/lommebok_protokoll_vci.html
-
-      - title: EUDIPLO som brukarstad
-        jurl: /docs/lommebok/lommebok_eudiplo.html
 
 
 
@@ -98,9 +101,6 @@ related_resources_list:
 
 - title: Utviklerportal
   jurl: https://sjolvbetening.test.eidas2sandkasse.net/login
-
-- title: Bevisgenerator
-  jurl: https://bevisgenerator.test.eidas2sandkasse.net/
 
 - title: Nyhetsside for digital lommebok
   jurl: https://samarbeid.digdir.no/digital-lommebok/nasjonal-sandkasse-digital-lommebok/2897

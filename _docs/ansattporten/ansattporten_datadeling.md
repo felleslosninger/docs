@@ -40,7 +40,7 @@ sequenceDiagram
 participant B as Bruker
 participant C as Tjeneste
 participant A as Ansattporten
-participant S as Autorativ kilde
+participant S as Autoritativ kilde
 participant T as API
 
 B->>C: Klikker "login" på tjeneste

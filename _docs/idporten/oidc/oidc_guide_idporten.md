@@ -269,8 +269,7 @@ Merk til slutt at en enkelt bruker bare kan ha en autorisasjon mot samme klient 
 
 Ved å forespørre scopet *profile* vil klienttjenesten sammen med id tokenet også få utstedt et access_token (og evnt. refresh_token) som kan benyttes mot providerens userinfo-endepunkt.
 
-Dette endepunktet kan i henhold til standarden benyttes for å hente ytterligere data om brukeren enn det som blir eksponert via ID tokenet. Da ID-porten generelt har lite data om sluttbrukeren har dette endepunktet begrenset verdi i de fleste tilfeller. Personnummer og valgt språk under innlogging er de
-dataene som vil bli eksponert her.
+Dette endepunktet kan i henhold til standarden benyttes for å hente ytterligere data om brukeren enn det som blir eksponert via ID tokenet. I tilfeller der access token inneholder claimet `clm` med claims `family_name` og `given_name` vil disse verdiene bli returnert. Ellers er personnummer og valgt språk under innlogging de dataene som vil bli eksponert her.
 
 
 ```
@@ -281,7 +280,9 @@ Respons:
 {
   "sub" : "NR8vTTPrM3T7rWf8dXxeWLZpxEMsug4E7pxqJuh9wIM=",
   "pid" : "23079421936",
-  "locale" : "nb"
+  "locale" : "nb",
+  "given_name" : "Ola",
+  "family_name" : "Nordmann"
 }
 ```
 

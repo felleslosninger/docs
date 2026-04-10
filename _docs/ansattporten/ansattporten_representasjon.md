@@ -8,13 +8,18 @@ redirect_from: /ansattporten_representasjon
 ---
 
 
-Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autorativ kilde.  I første versjon av løsningen er det Altinn Autorisasjon som tilbys som autorativ kilde.
+Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autoritativ kilde.  
+Ansattporten kan bruke to ulike autoritative kilder, avhengig av hvilken autentiseringsmetode som er brukt. 
+For autentisering med:
+- pid, så bruker Ansattporten Altinn Autorisasjon som autoritativ kilde. Her vil token berikes med informasjon om organisasjon som har gitt bruker lov til å representere gitt organisasjon med forespurt rettighet. Det blir ikke gjort noen kontroll mot tilgangslister i Altinn Autorisasjon for aktiv klient. Tjenester som bruker tilgangslister må sjekke dette selv mot Altinn Autorisasjon.
+- epost, så bruker Ansattporten [virksomhetsbroen](ansattporten_virksomhetsbroen.html)
+
 
 Du finner mer overordnet informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
 
 # Beskrivelse av bruksscenarioet
 
-På denne siden beskriver vi hvordan en tjeneste kan la brukerene velge hvilken virksomhet de ønsker å representere.  Dette scenariet bygger videre på [vanlig punktautentisering](ansattporten_guide.html). 
+På denne siden beskriver vi hvordan en tjeneste kan la brukerne velge hvilken virksomhet de ønsker å representere.  Dette scenariet bygger videre på [vanlig punktautentisering](ansattporten_guide.html). 
 
 # Brukerreise
 
@@ -27,13 +32,13 @@ Ved representasjon er brukerreisen følgende:
 
 I steg 3. viser Ansattporten en organisasjonsvelger etter autentisering, der sluttbruker må velge hvilke(n) organisasjon hen vil representere. Hen kan også velge å representere seg selv:
 
-![organsisasjonsvelger](/images/ansattporten/ansattporten_orgvelger2.png)
+![organisasjonsvelger](/images/ansattporten/ansattporten_orgvelger2.png)
 
-Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sent tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)
+Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sendt tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)
 
 # Protokoll-flyt
 
-Representasjonspålogging er en [vanlig autorisasjons-kodeflyt ihht Oauth2/OIDC](ansattporten_guide.html) der tjenesten i autorisasjonsforespørselen inkluderer et tillegg som forespør hvilken type representasjonsforhold som brukeren må inneha hos den autorative kilden.
+Representasjonspålogging er en [vanlig autorisasjons-kodeflyt ihht OAuth2/OIDC](ansattporten_guide.html) der tjenesten i autorisasjonsforespørselen inkluderer et tillegg som forespør hvilken type representasjonsforhold som brukeren må inneha hos den autoritative kilden.
 
 <div class="mermaid">
 sequenceDiagram
@@ -41,7 +46,7 @@ sequenceDiagram
 participant B as Bruker
 participant C as Tjeneste
 participant A as Ansattporten
-participant S as Autorativ kilde
+participant S as Autoritativ kilde
 
 B->>C: Klikker "login" på tjeneste
 C-->>A: /authorize med <br/>representasjonstype (redirect)
@@ -58,7 +63,7 @@ note over B,C: innlogget på vegne av valgt virksomhet
 
 Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.  En oversikt over [støtta RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
 
-Klienten må inkludere claimet `authorization_details` i autorisasjonsforespøreselen for å trigge representasjonspålogging.  Et eksempel er vist her:
+Klienten må inkludere claimet `authorization_details` i autorisasjonsforespørselen for å trigge representasjonspålogging.  Et eksempel er vist her:
 
 ```
 https://login.test.ansattporten.no/authorize?
@@ -74,12 +79,12 @@ https://login.test.ansattporten.no/authorize?
 ```
 (merk at eksempelet er forenklet)
 
-`authorization_details`-arrayet inneholdet et JSON-objekt der claimet `type` forteller hvilken autorativ kilde som tjenesten ønsker å benytte. Ulike `type` vil ha egne datamodeller for hvilke andre claims som inngår i request og respons.  Datamodellene er beskrevet [her](ansattporten_rar.html).
+`authorization_details`-arrayet inneholder et JSON-objekt der claimet `type` forteller hvilken autoritativ kilde som tjenesten ønsker å benytte. Ulike `type` vil ha egne datamodeller for hvilke andre claims som inngår i request og respons.  Datamodellene er beskrevet [her](ansattporten_rar.html).
 
 
-Når brukeren blir redirecta tilbakt til klient, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokal brukersesjon i egen tjeneste.
+Når brukeren blir redirectet tilbake til klient, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokale brukersesjon i egen tjeneste.
 
-Klienten finner opplysninger om valgt representasjonsforhold i claimet `authorization_details`. Claimet er både returnert direkte som del av selve token-responsen, men er også inkludert i selve id_tokenet, for fleksibiltet.
+Klienten finner opplysninger om valgt representasjonsforhold i claimet `authorization_details`. Claimet er både returnert direkte som del av selve token-responsen, men er også inkludert i selve id_tokenet, for fleksibilitet.
 
 
 *Eksempel på token-response:*

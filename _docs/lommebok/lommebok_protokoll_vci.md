@@ -27,7 +27,7 @@ Lommeboka må på ein eller annan måte få kunnskap om KVAR den kan få tak i e
 
 1. For "populære" bevis, som t.d. førarkort eller digital pass, so forventer me at lommebøkene vil kome med **førehandskonfigurerte lenker**, slik at brukaren t.d. klikkar på "Hent førarkortet mitt" inni appen for å starte protokoll-flyten. 
 2. For andre bevis so må brukaren logge inn til ei nett-teneste hjå ein godkjent utstedar.   Lommeboka vil bli trigga til å starte protokoll-flyten anten ved at brukaren scanner ein QR-kode, eller ved direkte-kommunisjon vha. [Digital Credentials](https://wicg.github.io/digital-credentials/) browser-APIet, eventuelt via nærleiksdeteksjon via NFC eller bluetooth-LE.  Utstedaren hentar bevis-data frå ei datakjelde og orkestrer protokoll-flyten mot lommeboka.
-3. Brukaren loggar inn hjå ei autorativ kjelde og hentar ei bevis. Døme: hente førarkortet direkte frå "Mine Sider" hjå Statens Vegvesen.  Teknisk er dette alternativet identisk med #2, men her er det datakjelda, dvs. Statens Vegvesen, som orkestrerer flyten mot utstedar og lommebok.
+3. Brukaren loggar inn hjå ei autoritativ kjelde og hentar ei bevis. Døme: hente førarkortet direkte frå "Mine Sider" hjå Statens Vegvesen.  Teknisk er dette alternativet identisk med #2, men her er det datakjelda, dvs. Statens Vegvesen, som orkestrerer flyten mot utstedar og lommebok.
 
 
 ## Flyt #2: Pre-authorized flow
