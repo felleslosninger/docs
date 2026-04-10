@@ -18,6 +18,19 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.2
+
+10.04.2026
+
+- Sorterer meldingene som hentes ned fra Altinn for å få riktig rekkefølge på statuser
+- Tar i bruk nye maskinporten scopes for eformidling
+- Orbyt URL som default DPI leverandør i TEST (Tieto URL fremdles default for PROD)
+- Setter sekvensgenerering i database til "legacy" modus (bakover kompabibelt med IP v2)
+- Tatt inn PR fra Runar Kristoffersen i RKMEDIA (mulig å tidsavgrense conversation søk)
+- Løser et par problem for PostgreSQL database (MOVE-4932)
+- Teknisk konfig endring (default TRANSACTION_READ_COMMITTED for å unngå samtidighets problem kø/base)
+- Normale sikkerhetsoppgraderinger av 3rd party bibliotek
+
 ## 4.0.1
 
 25.02.2026
