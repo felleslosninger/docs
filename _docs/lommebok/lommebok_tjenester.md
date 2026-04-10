@@ -14,7 +14,7 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 ## Utstedere
 
 * [Bevisporten til Digdir](lommebok_digdir_utsteder).  Bevisporten er Digdir sin nye utstedar for sandkassen. Den kan utstede fleire bevis av ulike typar, frå ulike autoritative kjelder, og signere med ulike typar sertifikat.
-* [Utstedelse av virksomhetsidentifikator](https://brreg.eudiw.no/) - Brønnøyundregistra sin teneste for utstedelse av virksomhetsidentifikatorar for organisasjonar registrert foretaksregisteret.
+* [Utstedelse av virksomhetsidentifikator](lommebok_ebwoid_usteder) - Brønnøyundregistra sin teneste for utstedelse av virksomhetsidentifikatorar for organisasjonar registrert foretaksregisteret.
 * [Symfoni Virksomhetslommebok (utsteder)](https://symfoni.dev/) — Symfoni si virksomhetslommebok kan utstede digitale bevis til personar og andre organisasjonar. Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
 * [Digipost Utstederteneste](https://www.digipost.no/bedrift/digitale-lommeboker) – Gjer det enkelt å utstede digitale bevis til både innbyggjar- og verksemdslommebøker. Tenesta kan nytte varsling i Digipost for å forenkle dataflyten mellom utstedar, mottakar og lommebok. Utstedartenesta er tilgjengeleg gjennom eit enkelt API-grensesnitt, og er i bruk i fleire pilotar. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
 * [Kantega Bevis Studio](https://kantega.id/produkter/studio) – eit designstudio for digitale bevis. Skreddarsy utsjånad og innhald, og utsted signerte bevis direkte mot den nasjonale sandkassa. Registrer deg for tilgang og kom raskt og enkelt i gang.
