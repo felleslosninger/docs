@@ -20,7 +20,7 @@ Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspu
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/versions?filters%5Bversion_type%5D=tagged)
 
 ```console
-$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:4.0.
+$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.2
 ```
 
 Endringslogg finner du [her.](../Oppgradering/endringslogg)
