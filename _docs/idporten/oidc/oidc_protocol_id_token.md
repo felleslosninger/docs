@@ -1,7 +1,7 @@
 ---
 title: "id_token from ID-porten"
-description: "This page documents the id_tokens issued by ID-porten ID-porten OIDC Provider"
-summary: 'his page documents the id_tokens issued by ID-porten ID-porten OIDC Provider'
+description: "This page documents the id_tokens issued by ID-porten"
+summary: 'This page documents the id_tokens issued by ID-porten'
 
 sidebar: oidc
 product: ID-porten
