@@ -92,6 +92,7 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | sid | session id - an unique identifier for end user session at ID-porten. Clients should store the value to be able to handle frontchannel logout notifications. Note that `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required`.  |
 
 Additional claims that may be added if the eid supplier provides them and the client has requested the `profile` scope:
+
 | claim | value |
 | --- | --- |
 | given_name | The given name of the authenticated user |
@@ -104,17 +105,15 @@ Authentication method can have the following values:
 
 | `amr` value            | Description|
 |------------------------|-|
-| `Minid-PIN`            | MinID using PIN-codes from letter (deprecated)|
 | `Minid-OTC`            | MinID using one-time-code received via SMS|
 | `Minid-APP`            | MinID using notification in the MinID-app on android/iOS |
 | `Minid-TOTP`           | MinID using timebased one-time passwords |
-| `Minid-WEBAUTHN`       | MinID using security keys |
 | `BankID`               | BankID using code generator or app|
 | `BankID Mobil`         | BankID on mobile |
 | `Buypass`              | Buypass |
 | `Commfides`            | Commfides using smartcard |
 | `eIDAS`                | A European approved eID through the eIDAS network|
-| `Selfregistered-email` | A European approved eID through the eIDAS network|
+| `Selfregistered-email` | A onetime-code sent to a self-registrered email address |
 | `TestID`               |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
 
 
