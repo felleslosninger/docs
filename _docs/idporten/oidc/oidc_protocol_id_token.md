@@ -60,9 +60,6 @@ If the client has requested the `profile` scope, additional claims may be added:
   "given_name" : "Ola",
   "family_name" : "Nordmann"
 }
-
-```
-OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 ```
 
 
