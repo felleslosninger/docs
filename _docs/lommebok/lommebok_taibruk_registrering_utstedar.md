@@ -13,7 +13,9 @@ Registreringa syner mellom anne kva rolle verksemda har og kva persondata dei br
 
 ## Korleis registre seg ?
 
-Verksemder som skal vere utstedar må førebels kontakte Digdir for å verte registert.
+Verksemder som skal vere utstedar må førebels kontakte Digdir på [servicedesk@digdir.no](mailto:servicedesk@digdir.no) for å verte registert.
+
+På sikt ynskjer me å legge til rette for at utstederar skal kunne registrere seg sjølve.
 
 
 ## Kva skal registrerast ?
@@ -52,7 +54,70 @@ Du må også registrere inn det sertifikatet som du planlegg å signere alle bev
 - Dersom du skal vere QEAA eller PubEAA må dette sertifikatet vere kvalifisert, dvs. du må få det frå ein utstedar av slike (Buypass eller Commfides i Norge).
 - Dersom du berre skal vere EAA-utstedar kan du anten lage eit sjølv (følge spec'en), eller få eit frå Digdir (ved å følge same oppskrifta som over, men pass på å lage eit eige nøkkelpar for utstedarsertifikat), eller skaffe frå ein leverandør.
 
-
 ## Registrering på tillitslista
+ 
+For at lommebøker skal stole på bevis frå utstedaren din, må verksemda registrerast i den norske **tillitslista** (Trusted List) som ein Trust Service Provider (TSP). Tillitslista følger [ETSI TS 119 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf).
+ 
+### Kva Digdir treng om verksemda (TSP-informasjon)
+ 
+| Attributt | Skildring |
+|---|---|
+| `TSPName` | Fullt namn på verksemda (norsk og engelsk) |
+| `TSPTradeName` | Organisasjonsnummer på formatet `NTRNO-<orgnr>` |
+| `PostalAddress` | Postadresse: gateadresse, postnummer, by og landkode |
+| `ElectronicAddress/URI` | Kontaktinformasjon: e-postadresse og/eller nettside |
+| `TSPInformationURI/URI` | URL til informasjonsside om tenesta |
+ 
+<details>
+<summary>Eksempel på TSP-oppføring (XML)</summary>
+```xml
+<TrustServiceProvider>
+  <TSPInformation>
+    <TSPName>
+      <Name xml:lang="no">Digitaliseringsdirektoratet</Name>
+      <Name xml:lang="en">Norwegian Digitalisation Agency</Name>
+    </TSPName>
+    <TSPTradeName>
+      <Name xml:lang="no">NTRNO-991825827</Name>
+      <Name xml:lang="en">NTRNO-991825827</Name>
+    </TSPTradeName>
+    <TSPAddress>
+      <PostalAddresses>
+        <PostalAddress xml:lang="no">
+          <StreetAddress>Lørenfaret 1C</StreetAddress>
+          <Locality>Oslo</Locality>
+          <PostalCode>0580</PostalCode>
+          <CountryName>NO</CountryName>
+        </PostalAddress>
+      </PostalAddresses>
+      <ElectronicAddress>
+        <URI xml:lang="no">mailto:servicedesk@digdir.no</URI>
+        <URI xml:lang="en">mailto:servicedesk@digdir.no</URI>
+        <URI xml:lang="no">https://www.digdir.no/</URI>
+        <URI xml:lang="en">https://www.digdir.no/</URI>
+      </ElectronicAddress>
+    </TSPAddress>
+    <TSPInformationURI>
+      <URI xml:lang="no">https://docs.digdir.no/docs/lommebok/lommebok_om.html</URI>
+    </TSPInformationURI>
+  </TSPInformation>
+  <!-- ... -->
+</TrustServiceProvider>
+```
+ 
+</details>
+### Kva Digdir treng om teneste
+ 
+For kvar utstedarteneste trengst i tillegg:
+ 
+| Attributt | Skildring |
+|---|---|
+| `ServiceName` | Namn på utstedartenesta |
+| `ServiceDigitalIdentity` | Utstedar-sertifikatet som identifiserer utstedaren (sjå [Registrere utsteder-sertifikat](#registrere-utsteder-sertifikat)) |
+| `StatusStartingTime` | Tidspunkt teneste er lagt til på tillitslista, Digdir legg inn dette som standard |
+ 
+Nye EAA-utstederar vert registrert med `ServiceTypeIdentifier` sett til `http://uri.etsi.org/TrstSvc/Svctype/EAA`.
 
-Digdir vil registere utstedarsertifikatet på tillitslista.  Dette er p.t. ein manuell prosess.
+Andre utstedartypar følger same struktur, men med tilhøyrande `ServiceTypeIdentifier` i samsvar med [ETSI TS 119 612](https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.03.01_60/ts_119612v020301p.pdf).
+
+Send nødvendig informasjon til [servicedesk@digdir.no](mailto:servicedesk@digdir.no), så legg Digdir inn oppføringa.
