@@ -68,9 +68,9 @@ For at lommebøker skal stole på bevis frå utstedaren din, må verksemda regis
 | `ElectronicAddress/URI` | Kontaktinformasjon: e-postadresse og/eller nettside |
 | `TSPInformationURI/URI` | URL til informasjonsside om tenesta |
  
-<details>
-<summary>Eksempel på TSP-oppføring (XML)</summary>
-```xml
+
+Eksempel på TSP-oppføring (XML)
+```
 <TrustServiceProvider>
   <TSPInformation>
     <TSPName>
@@ -101,11 +101,10 @@ For at lommebøker skal stole på bevis frå utstedaren din, må verksemda regis
       <URI xml:lang="no">https://docs.digdir.no/docs/lommebok/lommebok_om.html</URI>
     </TSPInformationURI>
   </TSPInformation>
-  <!-- ... -->
+  ....
 </TrustServiceProvider>
 ```
- 
-</details>
+
 ### Kva Digdir treng om teneste
  
 For kvar utstedarteneste trengst i tillegg:
