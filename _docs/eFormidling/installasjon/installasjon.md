@@ -35,7 +35,7 @@ nødvendig å konfigurere:
 - [Ekstern database](#ekstern-database)
 - [Mellomlagring av meldinger til ekstern database](#mellomlagring-av-meldinger-til-ekstern-database)
 - [Ekstern meldingskø](#meldingskø)
-- [Valg av logging til fil ved bruk av docker](#logging-til-fil-i-docker)
+- [Valg av logging til fil ved bruk av container (docker / kubernetes)](#logging-til-fil-i-docker)
 
 ## Java-spesifikk konfigurasjon
 
@@ -211,13 +211,13 @@ difi.activemq.password=mypassword
 
 Her må man ta et aktivt valg.
 
-Om man ønsker å logge til fil via docker, så må man mounte opp et volum til mappen loggen havner, eksempelvis kan dette gjøres i docker-compose slik: 
+Om man ønsker å logge til fil når man benytter container image, så må man mounte opp et volum til mappen loggen havner, eksempelvis kan dette gjøres i docker-compose slik: 
 ```
     volumes:
       - /sti/på/din/data/logs:/workspace/integrasjonspunkt-logs/
 ```
 
-om man ikke ønsker å logge til fil i containeren, setter man følgende miljøvariabel tom:
+om man ikke ønsker å logge til fil i containeren, setter man følgende miljøvariabel tom :
 
 ```
 logging.file.path=
