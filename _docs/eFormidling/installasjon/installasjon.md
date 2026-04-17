@@ -27,13 +27,15 @@ Hvordan en spesifiserer konfigurasjonen avhenger av hvilke verktøy som brukes: 
 eller andre. Et par eksempler:
 
 - [Eksempel på konfigurasjon med Kubernetes](Eksempel/installasjon_aks#7-integrasjonspunktet)
+- [Eksempel på konfigurasjon med docker-compose](https://github.com/felleslosninger/efm-integrasjonspunkt/blob/main/docker-compose-TEMPLATE.yaml)
 
 Integrasjonspunktets Docker-image er uten persistent volum. For å unngå tap av data ved f.eks. omstarter er det derfor
 nødvendig å konfigurere:
 
 - [Ekstern database](#ekstern-database)
 - [Mellomlagring av meldinger til ekstern database](#mellomlagring-av-meldinger-til-ekstern-database)
-- [Ekstern meldingskø](#ekstern-meldingskø)
+- [Ekstern meldingskø](#meldingskø)
+- [Valg av logging til fil ved bruk av docker](#logging-til-fil-i-docker)
 
 ## Java-spesifikk konfigurasjon
 
@@ -203,6 +205,22 @@ Eksempel intern ActiveMQ:
 difi.activemq.broker-url=vm://localhost
 difi.activemq.user=myuser
 difi.activemq.password=mypassword
+```
+
+#### Logging til fil i docker
+
+Her må man ta et aktivt valg.
+
+Om man ønsker å logge til fil via docker, så må man mounte opp et volum til mappen loggen havner, eksempelvis kan dette gjøres i docker-compose slik: 
+```
+    volumes:
+      - /sti/på/din/data/logs:/workspace/integrasjonspunkt-logs/
+```
+
+om man ikke ønsker å logge til fil i containeren, setter man følgende miljøvariabel tom:
+
+```
+logging.file.path=
 ```
 
 #### Miljø (produksjon eller test)
