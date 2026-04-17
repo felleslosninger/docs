@@ -18,6 +18,17 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.3
+
+17.04.2026
+
+- Inneholder bugfikser etter 4.0.2
+- Inneholder sikkerhetsoppdateringer etter 4.0.2
+- Inneholder forbedringer etter 4.0.2
+  - Aksepterer trailing slash i URL’er (men det anbefales ikke)
+  - Logger valideringsfeil fra Altinn med “rå JSON” (forslag fra Dag Sommer)
+  - Maskerer sensitive properties fra visning i GUI
+
 ## 4.0.2
 
 10.04.2026
