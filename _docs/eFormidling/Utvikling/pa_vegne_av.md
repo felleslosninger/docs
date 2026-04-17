@@ -102,8 +102,8 @@ curl -X POST "https://platform.altinn.no/authentication/api/v1/systemuser/reques
   -H "Authorization: Bearer DITT_ACCESS_TOKEN" \
   -d '{
   "externalReference": "",
-  "systemId": "<orgnummer-inn-her>_integrasjonspunkt",
-  "partyOrgNo": "<orgnummer-inn-her>",
+  "systemId": "<hovedorgnummer-inn-her>_integrasjonspunkt",
+  "partyOrgNo": "<på-vegne-av-orgnummer-inn-her>",
   "rights": [],
 "accesspackages": [
     {
