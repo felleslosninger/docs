@@ -136,8 +136,8 @@ Det er ikke lenger innebygd støtte for H2 som standard – du må nå eksplisit
 | Egenskap                 | Beskrivelse                                                                                           | Standardverdi |
 | ------------------------ | ----------------------------------------------------------------------------------------------------- | ------------- |
 | difi.datasource.url      | Sti til databasen                                                                                     | (ingen)       |
-| difi.datasource.username | Brukernavn for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360) | sa            |
-| difi.datasource.password | Passord for autentisering mot sak-/arkivsystem (autentisering mot sakarkivsystem benyttes av P360)    | (ingen)       |
+| difi.datasource.username | Brukernavn for databasen | sa            |
+| difi.datasource.password | Passord for databasebrukaren    | (ingen)       |
 
 Eksempel (MariaDB)
 ```properties
