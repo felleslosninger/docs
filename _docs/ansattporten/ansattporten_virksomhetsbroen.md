@@ -42,9 +42,9 @@ Et praktisk tips for å unngå at daglig leder må delegere til alle som skal ha
 
 Konfigurasjonen kan utføres via grafisk grensesnitt, og konfigureres per miljø.
 
-For oppsett i Ansattporten sitt PROD-miljø, benytt [virksomhetsbroen.samarbeid.digdir.no](virksomhetsbroen.samarbeid.digdir.no)
+For oppsett i Ansattporten sitt PROD-miljø, benytt [virksomhetsbroen.samarbeid.digdir.no](https://virksomhetsbroen.samarbeid.digdir.no)
 
-For oppsett i Ansattporten sitt test-miljø, benytt [virksomhetsbroen.test.samarbeid.digdir.no](virksomhetsbroen.test.samarbeid.digdir.no)
+For oppsett i Ansattporten sitt test-miljø, benytt [virksomhetsbroen.test.samarbeid.digdir.no](https://virksomhetsbroen.test.samarbeid.digdir.no)
 
 Har du den korrekte rettigheten for flere virksomheter eller underenheter, så vil du få et valg om hvilken virksomhet eller underenhet du vil representere når du logger inn.
 
