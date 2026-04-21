@@ -115,7 +115,7 @@ Ikke per idag.
 
 Se [eIDAS eID Profile ]( https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/eIDAS+eID+Profile) for beskrivelse av eIDAS kjerneattributter.
 
-Kjerneattributtene prefixes av ID-porten med "eidas_".  Det er 4 obligatoriske attributter som alltid vil være tilstede:
+Kjerneattributtene prefixes av ID-porten med "eidas_". Det er 4 obligatoriske attributter som alltid vil være tilstede:
 
 | claim               | eIDAS attributt   | beskrivelse                                       |
 |---------------------|-------------------|---------------------------------------------------|
@@ -131,8 +131,15 @@ Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 
 ## Utenlandske testbrukere
 
-Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
+Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  
+
+### Sverige
+Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
+
+### Danmark
+For testing med dansk eID på sikkerhetsnivå betydelig (substantial), velg fanen «Test login» når du kommer til dansk IDP, og logg inn med brukernavn: `eidas-testuser1` og passord: `Test1234!`. For testing med LoA high, må en ta kontakt med Digdir.
+
 
 ## Innlogging med norsk e-ID på utenlandsk tjeneste
-Det er (pr 01.01.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering. 
+Det er (pr 01.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering. 
 
