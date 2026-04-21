@@ -31,12 +31,18 @@ De ordinære filter-reglene i Virksomhetsbroen gir *ikke* tilgang til tjenestesp
 
 ## Hvordan administere Virksomhetsbroen ?
 
+### For ekte organisasjonsnummer
+
 Den som skal konfigurere dette på vegne av virksomheten må få tildelt rettigheten "Administrere organisasjonstilknytning i Ansattporten" i Altinn. Rettigheten er forhåndstildelt til følgende roller i Enhetsregisteret, men kan delegeres videre:
 - Bestyrende reder
 - Daglig leder
 - Innehaver
 
 Et praktisk tips for å unngå at daglig leder må delegere til alle som skal ha tilgang, er at daglig leder delegerer rettigheten til en person i virksomheten som har rollen "Tilgangsstyrer". Da vil "Tilgangsstyrer" kunne delegere rettigheten videre til andre i virksomheten.
+
+### Syntetiske virksomheter
+
+I testmiljøet tilbyr vi innlogging med TestID. Da kan du logge inn som en fiktiv daglig leder, og sette opp en virksomhetsbro på vegne av den. 
 
 ## Innlogging
 
