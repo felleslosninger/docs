@@ -514,6 +514,8 @@ difi.move.dpo.password=mypassword
 
 > Før DPO tjenesten kan tas i bruk må du først opprette et system og en systembruker i Altinn.
 > Se detaljer om dette i [opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
+>
+> Sjå video om oppretting av system og systembruker [her](https://samarbeid.digdir.no/eformidling/eformidling-stegvis-guide-overgang-til-integrasjonspunkt-40/3573)
 
 
 | Egenskap                            | Beskrivelse                                                                                                              | Standardverdi |
