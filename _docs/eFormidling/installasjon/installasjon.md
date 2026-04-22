@@ -217,10 +217,11 @@ Om man ønsker å logge til fil når man benytter container image, så må man m
       - /sti/på/din/data/logs:/workspace/integrasjonspunkt-logs/
 ```
 
-om man ikke ønsker å logge til fil i containeren, setter man følgende miljøvariabel tom :
+om man ikke ønsker å logge til fil i containeren, setter man følgende miljøvariabler tomme :
 
 ```
 logging.file.path=
+logging.file.name=
 ```
 
 #### Miljø (produksjon eller test)
