@@ -105,7 +105,7 @@ spec:
         app: activemq
     spec:
       containers:
-        - image: rmohr/activemq:5.15.9
+        - image: apache/activemq-classic:5.19.2
           name: activemq
           resources: {}
 status: {}
@@ -242,7 +242,7 @@ spec:
         app: ip-staging
     spec:
       containers:
-        - image: ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.1
+        - image: ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.3
           name: integrasjonspunkt
           resources:
             limits:
