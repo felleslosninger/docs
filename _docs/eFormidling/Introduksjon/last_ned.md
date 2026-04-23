@@ -33,15 +33,15 @@ Endringslogg finner du [her.](../Oppgradering/endringslogg)
 KOSMOS kan bare oppgradere Integrasjonspunktet innenfor samme versjons-serie.  Skal du oppgrader
 fra Integrasjonspunkt v2/v3 til nyeste v4 må du først oppgradere Integrasjonspunktet manuelt.
 
-Når du har oppgradert Integrassjonpunktet og verifisert at det fungerer, kan du velge å
-installere KOSMOS for samme versjon som Integrasjonspunktet.  Den vil da automatisk
+Når du har oppgradert Integrasjonpunktet og verifisert at det fungerer, kan du velge å
+installere KOSMOS for samme versjon som Integrasjonspunktet.  Kosmos vil da automatisk
 laste ned og oppgradere når det kommer patcher.
 
-![](/images/dpi/underarbeide.png)
+Kosmos v4 (tilpasset Integrasjonspunkt v4) kan lastes ned fra :
+> [**KOSMOS 4.0.0 (JAR)**](https://github.com/felleslosninger/efm-kosmos/releases)
 
-Gammel versjon av Kosmos v2 (tilpasset Integrasjonspunkt v2) kan lastes ned nedenfor,
-men den kan *ikke* oppgradere Integrasjonspunkt til v3 eller v4 automatisk.
-> [**KOSMOS 2.0.0 (JAR)**](https://github.com/felleslosninger/efm-kosmos/packages/2676735)
+Gammel versjon av Kosmos v2 (tilpasset Integrasjonspunkt v2) kan lastes ned fra :
+> [**KOSMOS 2.0.0 (JAR)**](https://github.com/felleslosninger/efm-kosmos/packages/2676735?version=2.0.0)
 
 ## eFormidlings offentlige kodesigneringsnøkkel
 
