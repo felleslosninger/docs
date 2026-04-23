@@ -1202,6 +1202,19 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 
 ## KOSMOS
 
+### KOSMOS 4.0.0
+
+22.04.2026
+
+- Ny versjon tilpasset Integrasjonspunkt v4 serien
+- Krever Java 21 og en fungerende IPv4 installasjon
+
+### KOSMOS 2.0.0
+
+24.09.2025
+
+- Sikkerhetsoppdateringer
+
 ### KOSMOS 1.2.0
 
 07.11.2022

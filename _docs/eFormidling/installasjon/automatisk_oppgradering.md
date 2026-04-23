@@ -13,8 +13,9 @@ Formålet med denne siden er å gjøre det enklest mulig å installere og konfig
 oppgradering av eFormidlings integrasjonspunkt.
 
 > Det er ikke mulig å oppgradere automatisk fra versjon 2 til v3 eller v4 av Integrasjonspunktet.
-> Du må oppgradere til nyere versjoner manuelt da dette involverer installasjon av nyere Java versjon
-> og endringer i lokal konfigurasjon.
+> Du må oppgradere til versjon 4 manuelt da dette involverer installasjon av nyere Java versjon
+> og endringer i lokal konfigurasjon.  Når du har en fungerende IPv4 kan du velge å installere
+> Kosmos som vil automatisk laste ned og oppgradere til nye versjoner.
 
 1. TOC
 {:toc}
@@ -28,7 +29,7 @@ applikasjon som kan kjøre side om side med integrasjonspunktet.
 
 Automatisk oppgradering e i grove trekk slik:
 
-1. Sammenligner gjeldende integrasjonspunkt-versjon mot siste tilgjengelige i Maven-repositoriet til Digdir
+1. Sammenligner gjeldende integrasjonspunkt-versjon mot siste tilgjengelige fra Digdir
 2. Dersom det er en nyere versjon tilgjengelig, vert denne lasta ned til klienten
 3. Gjeldende integrasjonspunkt vert forsøkt oppdatert til den nedlasta versjonen (Dersom den nye versjonen ikke starter, ruller KOSMOS attende)
 
@@ -36,7 +37,7 @@ Automatisk oppgradering e i grove trekk slik:
 
 Konfigurasjon av automatisk oppgradering forutsetter:
 
-- [Installasjon av integrasjonspunktet](installasjon) og bruk av Java
+- [Installasjon av integrasjonspunktet](installasjon) og bruk av Java (vil ikke fungere med Docker/Container)
 - [Støttetjenestene er tilgjengelig i integrasjonspunktet](installasjon#støttetjenester)
 
 ## Konfigurasjon
@@ -173,18 +174,16 @@ Denne er ikkje satt som default og må leggast inn manuelt
 | kosmos.environment.prefixes-removed-from-child-process | [spring, kosmos]                                    | Prefiks for innstillingar som ikkje skal vidareførast til oppdaterte integrasjonspunkt. Gjer at t.d. spring.mail.host ikkje vert vidareført og forårsakar aktivering av uønska bean-ar i integrasjonspunktet.  |
 | kosmos.group-id                                        | no.difi.meldingsutveksling                          | Maven-group-ID-en til artefakten som er handtert av KOSMOS.                                                                                                                                                    |
 | kosmos.integrasjonspunkt.baseURL                       | http://localhost:9093                               | URL-en integrasjonspunktet køyrer på hjå klienten. Fungerar som snarveg for å setja info-, helse- og shutdownURL-innstillingane. Ikkje påkrevd i seg sjølv, aktuator-endepunkta kan konfigurerast individuelt. |
-| kosmos.integrasjonspunkt.early-bird                    | false                                               | Flagg som styrer aktivering av early-bird-funksjonalitet.                                                                                                                                                      |
-| kosmos.integrasjonspunkt.early-bird-version            | -                                                   | Early-bird-versjon: Ein nyare versjon enn siste offisielle.                                                                                                                                                    |
+| kosmos.integrasjonspunkt.earlybird                     | false                                               | Flagg som styrer aktivering av early-bird-funksjonalitet.                                                                                                                                                      |
 | kosmos.integrasjonspunkt.healthURL                     | ${kosmos.integrasjonspunkt.baseURL}/manage/health   | Helse-endepunktet til integrasjonspunktet hjå klienten. Fortel om programmet fungerar.                                                                                                                         |
 | kosmos.integrasjonspunkt.home                          | ${user.dir}                                         | Mappa integrasjonspunktet køyrer frå. Standard-verdien mappar til der KOSMOS køyrer frå. Sjå README for konfigurasjon som trengs dersom dei skal vera i forskjellige mapper.                                   |
 | kosmos.integrasjonspunkt.include-log                   | false                                               | Styrer importering av logg frå oppdaterte integrasjonspunkt.                                                                                                                                                   |
 | kosmos.integrasjonspunkt.infoURL                       | ${kosmos.integrasjonspunkt.baseURL}/manage/info     | Info-endepunktet til integrasjonspunktet hjå klienten. Gir informasjon om bla. køyrande versjon av programmet.                                                                                                 |
-| kosmos.integrasjonspunkt.latest-version                | Avhengig av profil som applikasjonen køyrer med.    | Siste offisielle versjon av integrasjonspunktet. Vert overstyrt av konfigurasjon frå efm-eureka (Spring Cloud Config Server).                                                                                  |
 | kosmos.integrasjonspunkt.profile                       | Avhengig av profil.                                 | Angir profil som det oppdaterte integrasjonspunktet vert starta opp med.                                                                                                                                       |
 | kosmos.integrasjonspunkt.shutdownURL                   | ${kosmos.integrasjonspunkt.baseURL}/manage/shutdown | Shutdown-endepunktet til integrasjonspunktet hjå klienten. Nytta for å stoppa utdaterte versjonar.                                                                                                             |
 | kosmos.launch-poll-interval-in-ms                      | 1000                                                | Kor lenge KOSMOS ventar mellom kvar gong den spør helse-endepunktet om status.                                                                                                                                 |
 | kosmos.launch-timeout-in-ms                            | 100000                                              | Kor lenge KOSMOSventar på informasjon om integrasjonspunktet køyrer eller ikkje.                                                                                                                               |
-| kosmos.mavenCentral                                    | (https://repo1.maven.org/)                          | Maven central repository for nedlasting av artifakter.                                                                                                                                                         |
+| kosmos.mavenCentral                                    | (https://github.com)                          | Repository for nedlasting av artifakter.                                                                                                                                                         |
 | kosmos.nexus-connect-timeout-in-ms                     | 5000                                                | Kor lenge KOSMOS ventar på å få kontakt med artefakt-repositoriet.                                                                                                                                             |
 | kosmos.read-timeout-in-ms                              | 60000                                               | Kor lenge KOSMOS ventar på data frå artefakt-repositoriet.                                                                                                                                                     |
 | kosmos.orgnumber                                       | ${difi.move.org.number}                             | Henta frå integrasjonspunkt-konfigurasjonen.                                                                                                                                                                   |
@@ -204,11 +203,11 @@ Den versjonen av integrasjonspunktet som ev. køyrer, vert henta frå info-endep
 
 ### Finna siste versjon av integrasjonspunktet
 
-Siste versjon av integrasjonspunktet vert bestemt av konfigurasjonar frå efm-eureka, som er Spring Cloud Config Server-applikasjonen vår. Ved kvar periodiske køyring vil KOSMOS henta ned oppdaterte konfigurasjonar frå efm-eureka. Innstillinga ```kosmos.integrasjonspunkt.latest-version``` angir siste offisielle versjon som er lansert av Digdir. Det finst konfigurasjonar for dev-, test- staging- og production-profilar, der sistnemnde er relevant i ein produksjons-omgjevnad.
+Siste versjon av integrasjonspunktet vert publisert i [ein fil](https://github.com/felleslosninger/efm-integrasjonspunkt/blob/main/latest-versions.yml) lasta ned fra Digdir's repository. Det finst konfigurasjonar for dev-, itest- staging- og production-profilar, der sistnemnde er relevant i ein produksjons-omgjevnad.
 
 #### Early-Bird-versjon
 
-For interne test-miljø (som endå ikkje er på føtene) og klientar som ev. ønsker å hjelpa oss med testing, kan siste lanserte versjon overstyrast til den såkalla “early-bird-versjonen”. Dette er versjonar som har vorte testa i mindre grad enn siste offisielle versjon ovanfor. Early-bird-versjon kan aktiverast mha. ```kosmos.integrasjonspunkt.early-bird``` (true/false). Dersom denne er aktivert, vil versjonen i ```kosmos.integrasjonspunkt.early-bird-version``` overstyra ```kosmos.integrasjonspunkt.latest-version```. Early-bird-versjonen skal også konfigurerast mha. efm-eureka (dvs. utan lokal overstyring hjå klienten).
+For interne test-miljø (som endå ikkje er på føtene) og klientar som ev. ønsker å hjelpa oss med testing, kan siste lanserte versjon overstyrast til den såkalla “early-bird-versjonen”. Dette er versjonar som har vorte testa i mindre grad enn siste offisielle versjon ovanfor. Early-bird-versjon kan aktiverast mha. ```kosmos.integrasjonspunkt.earlybird``` (true/false).
 
 ### Sjekk av versjon-kompatibilitet
 
@@ -224,7 +223,7 @@ Artefaktar vert lasta ned frå lokasjonen som er angjeven i innstillinga ```kosm
 
 ### Validering av nedlasta artefakt
 
-MD5- og SHA1-sjekksummar vert samanlikna etter nedlasting av JAR-filer frå Maven-repositoriet. 
+SHA1-sjekksummar vert samanlikna etter nedlasting av JAR-filer frå Maven-repositoriet. 
 
 Kodesignering og validering er innført. Den offentlege delen av eFormidling sitt GPG-signeringssertifikat er gjort tilgjengeleg for kundane på [maven central](https://repo1.maven.org/maven2/no/difi/meldingsutveksling/integrasjonspunkt/)  . Dette vil nyttast til verifikasjon av at JAR-filene som vert lasta ned er signert av Digdir. Brukarar av KOSMOS må lasta ned den offentlege nøkkelen til eFormidling sitt GPG-signeringssertifikat frå ei sikker nettside (dokumentasjonen vår/ HTTPS). Dokumentasjonen vil også innehalda fingeravtrykket til den offentlege nøkkelen. Etter å ha lasta ned offentleg nøkkel, kan brukarar rekna ut fingeravtrykket frå den nedlasta fila og samanlikna med den publiserte verdien frå Digdir. Dersom verdiane er like, kan dei nytta nøkkelen til å verifisera integrasjonspunkt-distribusjonar. Verifiseringa vert gjort av deploymanager, og det einaste brukarane treng å gjera er å legga nøkkelen i same mappe som deploymanager-JAR-fila. 
 
