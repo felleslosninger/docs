@@ -115,14 +115,16 @@ Ikke per idag.
 
 Se [eIDAS eID Profile ]( https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/eIDAS+eID+Profile) for beskrivelse av eIDAS kjerneattributter.
 
-Kjerneattributtene prefixes av ID-porten med "eidas_". Det er 4 obligatoriske attributter som alltid vil være tilstede:
+Kjerneattributtene består av standard oidc-claims, mens den eidas-spesifikke personidenifikatoren prefixes av ID-porten med "eidas_". 
+Dersom det blir match mot folkeregisteret, vil ID-porten inkludere PID-claimet i tokenet.
+Det er 4 obligatoriske attributter som alltid vil være tilstede:
 
-| claim               | eIDAS attributt   | beskrivelse                                       |
-|---------------------|-------------------|---------------------------------------------------|
-| eidas_identifier    | PersonIdentifier  | eidas-identifikator ("as persistent as possible") |
-| eidas_date_of_birth | DateOfBirth       | Fødselsdato                                       |
-| eidas_firstname     | CurrentGivenName  | Fornavn                                           |
-| eidas_lastname      | CurrentFamilyName | Etternavn                                         |
+| claim                   | eIDAS attributt   | beskrivelse                                       |
+|-------------------------|-------------------|---------------------------------------------------|
+| eidas_person_identifier | PersonIdentifier  | eidas-identifikator ("as persistent as possible") |
+| birthdate               | DateOfBirth       | Fødselsdato                                       |
+| given_name              | CurrentGivenName  | Fornavn                                           |
+| familiy_name            | CurrentFamilyName | Etternavn                                         |
 
 Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 -  `xx` er 2-bokstavkode for landet der brukeren har sin elektroniske ID (Merk at dette ikke er garantert å også være brukeren sitt hjemland/statsborgerskap) 
@@ -141,5 +143,5 @@ For testing med dansk eID på sikkerhetsnivå betydelig (substantial), velg fane
 
 
 ## Innlogging med norsk e-ID på utenlandsk tjeneste
-Det er (pr 01.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering. 
+Det er (pr 27.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. 
 
