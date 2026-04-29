@@ -15,7 +15,6 @@ lommebok.  Bevisgeneratoren bruker mønsteret for [kjeldestyrt utstedelse](lomme
 Bevisgenerator har et web-grensesnitt der du kan velge mellom å administrere bevistyper eller utstede bevis for
 testformål.
 
-[!NOTE]
 Tjenesten er åpen og det vil se at alle kan se, utstede og redigere bevisdefinisjoner. Lag dine egne bevisdefinisjoner
 og la de andre være i fred...
 
@@ -117,6 +116,10 @@ endres 2 steder, både inne i JSON og i feltet over.
 Når du starter utstedelsesprosessen, vil data bli sendt til utstederen.  Bevisgeneratoren vil vise en QR-kode som kan skannes med en lommebok og en knapp som kan klikkes på om du er på mobilen, for å utstede bevise til lommeboka.
 
 Interaksjonen mellom bevisgeneratoren og utstederen vises nederst på siden, og du kan følge med på hva som skjer i bakgrunnen. Når beviset er utstedt, vil det dukke opp i lommeboka.
+
+## Presentere og verifisere bevis
+
+Med et bevis i lommeboka, kan beviset presenteres til brukersteder som spør etter beviset.  Se [Ta i bruk som brukerstad](lommebok_taibruk_brukarstad) for mer informasjon om dette.
 
 ## Grensesnitt
 
