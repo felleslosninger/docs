@@ -47,7 +47,7 @@ Gammel versjon av Kosmos v2 (tilpasset Integrasjonspunkt v2) kan lastes ned fra 
 
 > [**Last ned offentlig nøkkel**](/resources/eformidling/public_keys/eformidling-key.asc)
 
-{% include tip.html content="Hvis du allerede har lastet ned offentlig nøkkel (før 16. februar 2026) så må du laste ned ny nøkkel på linken over.  Den gamle utløper i april 2026." %}
+{% include tip.html content="Hvis du allerede har lastet ned offentlig nøkkel (før 20. april 2026) så må du laste ned ny nøkkel på linken over.  Den gamle utløper i april 2026." %}
 
 ## Neste steg
 
