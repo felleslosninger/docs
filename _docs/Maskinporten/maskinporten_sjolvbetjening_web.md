@@ -54,7 +54,7 @@ Tabell for tilgjengelige rettigheter:
 |**Rettighet**|**Funksjon**|
 | - | - |
 | Selvbetjening av APIer i ID-porten/Maskinporten | Gir tilgang til å administrasjon og tilgangsstyring av scopes for API-tilbydere i både test- og produksjonsmiljø |
-| Selvbetjening av integrasjoner i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten i både test- og produksjonsmiljø |
+| Selvbetjening av klienter i ID-porten/Maskinporten | Gir tilgang til å opprette, endre og slette klienter og integrasjoner mot KRR, ID-porten og Maskinporten i både test- og produksjonsmiljø |
 | Selvbetjening for leverandører i ID-porten/Maskinporten*| Åpner opp feltet "For en kunde" slik at leverandører kan opprette klienter kunder sine organisajonsnummer i både test- og produksjonsmiljø |
 | Selvbetjening for testing i ID-porten/Maskinporten | Gir tilgang til administrasjon av klienter og scopes kun i testmiljøet |
 
