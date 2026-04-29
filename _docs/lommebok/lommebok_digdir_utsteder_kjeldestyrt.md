@@ -137,7 +137,7 @@ Ved bruk av denne brukerreisa so vert det nytta [pre-authorization code flow](ht
 
 
 
-Me har laga ein hendig teknisk retta demo-klient [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator.md) for dette bruksmønsteret.  Du limer inn ein json som passar med den aktuelle bevistypen, og so vil demo-klienten rendre ein QR-kode som du kan scanne med ei lommebok. 
+Me har laga ein hendig teknisk retta demo-klient [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator) for dette bruksmønsteret.  Du limer inn ein json som passar med den aktuelle bevistypen, og so vil demo-klienten rendre ein QR-kode som du kan scanne med ei lommebok. 
 
 
 
