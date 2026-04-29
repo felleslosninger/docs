@@ -47,7 +47,7 @@ Det vil vere store variasjonar mellom ulike verksemder for korleis dei best inte
 
 #### 3. Finne ut kva data du treng
 
-Du kan sjå i [beviskatalogen](https://innsyn.test.eidas2sandkasse.net/) for å finne kva typar bevis som allereie er tilbode i sandkassen.  For utprøving er det nyttig å mock'e data med [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator.md).
+Du kan sjå i [beviskatalogen](https://innsyn.test.eidas2sandkasse.net/) for å finne kva typar bevis som allereie er tilbode i sandkassen.  For utprøving er det nyttig å mock'e data med [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator).
 
 #### 4. Lage spørringar
 
