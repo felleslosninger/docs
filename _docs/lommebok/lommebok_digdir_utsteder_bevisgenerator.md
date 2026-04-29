@@ -87,7 +87,7 @@ Utkastet ser slik ut:
 }
 ```
 
-Når beviset er lagt til, vil det etter ca. ett minutt dukke opp i metadata-endepunktet til Bevisgeneratorens utsteder
+Når beviset er lagt til, vil det innen ett minutt dukke opp i metadata-endepunktet til Bevisgeneratorens utsteder
 på [https://utsteder.test.eidas2sandkasse.net/bevisgenerator](https://utsteder.test.eidas2sandkasse.net/bevisgenerator)
 og være tilgjengelig for utstedelse.
 
