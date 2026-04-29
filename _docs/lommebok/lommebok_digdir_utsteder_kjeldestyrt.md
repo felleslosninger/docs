@@ -121,14 +121,14 @@ Tabellen gir oversikt over datatyper utstederen definerer. Input til API er i JS
 
 Ulike lommebokimplementasjoner kan vise de ulike typene på forskjellig måte.  F.eks. har enkelte app'er ikke støtte for visning av bilder i SD-JWT VC-baserte bevis.
 
-| Type i bevisdefinisjon | Eksempel input JSON API | Representasjon mdoc | Representasjon SD-JWT | Beskrivelse |
-| --- | --- | --- | --- |--- |
-| string | "abc" | CBOR major type 3 | string | Strenger |
-| number | 123 | CBOR major type 0, 1, 7.* | number | Tall |
-| boolean | true | CBOR major type 7.20, 7.21 | boolean| Boolesk verdi |
-| iso_date | "2025-12-30" | CBOR major type  6.1004 | string| Dato |
-| iso_date_time | "2026-01-01T08:30:00Z" | CBOR major type 6.0 | string| Dato og tid |
-| binary | "/9j/4..." | CBOR major type 2 | string | Input til API er en base64-encoded string.  Type for binærdata defineres med en mime-type.  I SD-JWT brukes [RFC-2397 The data URL scheme](https://www.rfc-editor.org/rfc/rfc2397.html) og et bilde kan representeres som som ```"data:image/png;base64,/9j/4..."```. |
+| Type i bevisdefinisjon | Eksempel input JSON API | Representasjon mdoc | Representasjon SD-JWT | Beskrivelse                                                                                                                                                                                                                                                                                 |
+| --- | --- | --- | --- |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| string | "abc" | CBOR major type 3 | string | Strenger                                                                                                                                                                                                                                                                                    |
+| number | 123 | CBOR major type 0, 1, 7.* | number | Tall                                                                                                                                                                                                                                                                                        |
+| boolean | true | CBOR major type 7.20, 7.21 | boolean| Boolesk verdi                                                                                                                                                                                                                                                                               |
+| iso_date | "2025-12-30" | CBOR major type  6.1004 | string| Dato                                                                                                                                                                                                                                                                                        |
+| iso_date_time | "2026-01-01T08:30:00Z" | CBOR major type 6.0 | string| Dato og tid                                                                                                                                                                                                                                                                                 |
+| binary | "/9j/4..." | CBOR major type 2 | string | Input til API er en base64-encoded string.  Type for binærdata defineres med et `mime_type`-attributt i tillegg.  I SD-JWT brukes [RFC-2397 The data URL scheme](https://www.rfc-editor.org/rfc/rfc2397.html) og et bilde kan representeres som som ```"data:image/png;base64,/9j/4..."```. |
 
 Støtte for lister og map er under planlegging.
 
