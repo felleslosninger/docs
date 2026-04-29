@@ -41,6 +41,7 @@ Features som er støtta no:
 - Pre-authorization code 
 - Authorization-code flow 
 - Bruksmønster 1,2,3
+- Multitenancy (logiste utstedere)
 
 Framtidig funksjonalitet:
 - tx_code
@@ -53,8 +54,8 @@ Framtidig funksjonalitet:
 
 ## Metadata
 
-Du bør finne alt som trengs for å kunne samhandle med utstederen via credential metadata-endepunktet:
-[https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer)
+Utstederen har flere tenants. Du bør finne alt som trengs for å kunne samhandle med utstederen via startsiden:
+[https://utsteder.test.eidas2sandkasse.net/](https://utsteder.test.eidas2sandkasse.net/)
 
 ## Kjeldekode og arkitektur
 
