@@ -11,7 +11,7 @@ Ein [utstedar](https://samarbeid.digdir.no/digital-lommebok/produsere-og-dele-be
 
 Ofte vil ein utstedar vere ein aktør som har spesialisert seg på slik bevis-produksjon, og som utferdar bevis på vegne av ei anna verksemd som er datakjelde (ogso kalla autentisk kjelde).  Ei verksemd kan sjølvsagt vere både datakjelde og utstedar for sine eigne bevis.
 
-{% include note.html content="Dersom du berre ynskjer å prøve ut bevis-produksjon på ein enkel måte, kan du bruke sandkassa sin [Bevisgenerator](https://bevisgenerator.test.eidas2sandkasse.net/)." %}
+{% include note.html content="Dersom du berre ynskjer å prøve ut bevis-produksjon på ein enkel måte, kan du bruke sandkassa sin [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator.md)." %}
 
 
 ## Korleis bli ein utstedar ?

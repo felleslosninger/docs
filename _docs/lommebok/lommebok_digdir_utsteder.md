@@ -26,7 +26,7 @@ Me trur desse 3 variantane dekkjer dei fleste behova som offentleg sektor har fo
 
 ## Brukargrensesnitt
 
-Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess.   For bevistypar som er basert på pre-authorization-code flyt, må du istaden bruke [den tekniske test-tenesta](https://bevisgenerator.test.eidas2sandkasse.net/).
+Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess.   For bevistypar som er basert på pre-authorization-code flyt, må du istaden bruke den tekniske test-tenesta [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator.md).
 
 Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
 
@@ -41,6 +41,7 @@ Features som er støtta no:
 - Pre-authorization code 
 - Authorization-code flow 
 - Bruksmønster 1,2,3
+- Multitenancy (logiste utstedere)
 
 Framtidig funksjonalitet:
 - tx_code
@@ -53,8 +54,8 @@ Framtidig funksjonalitet:
 
 ## Metadata
 
-Du bør finne alt som trengs for å kunne samhandle med utstederen via credential metadata-endepunktet:
-[https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer)
+Utstederen har flere tenants. Du bør finne alt som trengs for å kunne samhandle med utstederen via startsiden:
+[https://utsteder.test.eidas2sandkasse.net/](https://utsteder.test.eidas2sandkasse.net/)
 
 ## Kjeldekode og arkitektur
 
