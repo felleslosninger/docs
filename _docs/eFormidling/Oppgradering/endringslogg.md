@@ -18,6 +18,13 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.4
+
+29.04.2026
+
+- Sjekk som utføres ved oppstart for å bekrefte at de konfigurerte på-vegne-av-organisasjonene har tilgang og kontakt med Altinn – Gjelder for DPO.
+- Mappe flere verdier til Altinn for DPV
+
 ## 4.0.3
 
 17.04.2026
