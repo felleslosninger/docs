@@ -1,7 +1,7 @@
 ---
 title: SAML
 description: SAML-protokoll i ID-porten
-summary: "ID-porten tilbyr forenklet støtte for SAML-protokollen"
+summary: "ID-porten og forenklet støtte for SAML-protokollen"
 sidebar: oidc
 product: ID-porten
 redirect_from: /oidc_func_saml
