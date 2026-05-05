@@ -35,21 +35,56 @@ Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
 1. Logg inn i webklienten med klienten til den nye tenanten du har oppretta 
 
-2. Generer et nøkkelpar til deg selv lokalt på din datamaskin. Ta vare på dette.
 
-3. Generer en csr (certificate signing request) basert på privatnøkkelen din. 
-
-```
-openssl req -new -key access.key.pem -subj /CN="brukersted" -out access.csr 
-```
+2. Generer nøkkel:
+ ```
+openssl genpkey -algorithm EC -out eckey.pem \
+       -pkeyopt ec_paramgen_curve:P-256 \
+       -pkeyopt ec_param_enc:named_curve
+  ```
+4. lag CSR-fil:
+openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr 
 
 5. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen. Last ned sertifikatet.
 
-6. Installer aksessertifikatet i EUDIPLO . Dette gjør du slik: 
+6. Konverter privatnøkkelen din fra pem til jwk-format. Dette kan gjøre slik, med et verktøy du kan laste ned via homebrew:
+```
+    brew install jphastings/tools/jwker
+    jwker eckey.pem > my-key.jwk
+```
+
+8. Installer aksessertifikatet i EUDIPLO . Dette gjør du slik: 
   1. Gå til swagger-endepunktet til API-et (http://localhost:3000/api)
   2. Logg inn med din tenant sin tenant id og client id
   3. Gå til endepunktet: /api/key-chain/import
-  4. Dytt inn informasjonen de forespør der (din privatnøkkel generert til dette formål og sertifikatet du fikk i sjolvbetjeningen.). Det er viktig at du setter:  "usageType": "access"
+  4. Dytt inn informasjonen de forespør der (din privatnøkkel generert til dette formål på jwk format og sertifikatet du fikk i sjolvbetjeningen.). Det er viktig at du setter:  "usageType": "access".
+
+  Eksempeldata:
+  
+```
+  {
+"key": {
+    "kty": "EC",
+    "d": "innhold",
+    "crv": "P-256",
+    "kid": "innhold",
+    "x": "innhold",
+    "y": "innhold",
+    "alg": "ES256"
+},
+  "description": "aksess-sertifikat",
+  "usageType": "access",
+  "crt": [
+    "-----BEGIN CERTIFICATE-----\nSERTIFIKAT\n-----END CERTIFICATE-----"
+  ],
+  "kmsProvider": "string",
+  "rotationPolicy": {
+    "enabled": false,
+    "intervalDays": 90,
+    "certValidityDays": 365
+  }
+}
+```
      
 ### 4. Opprette presentasjonskonfigurasjon.
 
