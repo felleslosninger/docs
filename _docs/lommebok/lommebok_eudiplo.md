@@ -43,21 +43,24 @@ openssl genpkey -algorithm EC -out eckey.pem \
        -pkeyopt ec_param_enc:named_curve
   ```
 4. lag CSR-fil:
-openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr 
+```
+openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
+```
 
-5. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen. Last ned sertifikatet.
+6. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen. Last ned sertifikatet.
 
-6. Konverter privatnøkkelen din fra pem til jwk-format. Dette kan gjøre slik, med et verktøy du kan laste ned via homebrew:
+7. Konverter privatnøkkelen din fra pem til jwk-format. Dette kan gjøre slik, med et verktøy du kan laste ned via homebrew:
 ```
     brew install jphastings/tools/jwker
     jwker eckey.pem > my-key.jwk
 ```
 
-8. Installer aksessertifikatet i EUDIPLO . Dette gjør du slik: 
-  1. Gå til swagger-endepunktet til API-et (http://localhost:3000/api)
-  2. Logg inn med din tenant sin tenant id og client id
-  3. Gå til endepunktet: /api/key-chain/import
-  4. Dytt inn informasjonen de forespør der (din privatnøkkel generert til dette formål på jwk format og sertifikatet du fikk i sjolvbetjeningen.). Det er viktig at du setter:  "usageType": "access".
+### 4. Installer aksessertifikatet i eudiplo
+
+ 1. Gå til swagger-endepunktet til API-et (http://localhost:3000/api)
+ 2. Logg inn med din tenant sin tenant id og client id
+ 3. Gå til endepunktet: /api/key-chain/import
+ 4. Dytt inn informasjonen de forespør der (din privatnøkkel generert til dette formål på jwk format og sertifikatet du fikk i sjolvbetjeningen.). Det er viktig at du setter:  "usageType": "access".
 
   Eksempeldata:
   
@@ -86,7 +89,7 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 }
 ```
      
-### 4. Opprette presentasjonskonfigurasjon.
+### 5. Opprette presentasjonskonfigurasjon.
 
 For å kunne forespørre eit gitt bevis må det opprettes ein presentasjonskonfigurasjon. Her er framgangsmåten for å opprette ein konfigurasjon for PID-dokumenter i SD-JWT-VC format. Kva bevis ein forespør, bevisformat og forespurte attributter blir angitt gjennom ei DCQL-spørring som blir registrert på presentasjonskonfigurasjonen.
 
