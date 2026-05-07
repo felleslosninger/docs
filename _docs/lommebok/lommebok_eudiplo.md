@@ -26,7 +26,7 @@ Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
 ### 2. Opprett ny tenant for din brukarstad
 
-1. Logg inn til admin webklienten med AUTH_CLIENT_ID og AUTH_CLIENT_SECRET.
+1. Logg inn til admin webklienten med `AUTH_CLIENT_ID` og `AUTH_CLIENT_SECRET`.
 2. Opprett ny tenant. Gi tenanten rollene: clients:manage, presentation:manage og presentation:offer
 3. Husk å ta vare på tenant id og passord, det vises kun når du oppretter det.
 
@@ -58,7 +58,7 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 ### 4. Installer aksessertifikatet i eudiplo
 
  1. Gå til swagger-endepunktet til API-et (http://localhost:3000/api)
- 2. Logg inn med din tenant sin tenant id og client id
+ 2. Authorize med din tenant sin tenant id og client id
  3. Gå til endepunktet: /api/key-chain/import
  4. Dytt inn informasjonen de forespør der (din privatnøkkel generert til dette formål på jwk format og sertifikatet du fikk i sjolvbetjeningen.). Det er viktig at du setter:  "usageType": "access".
 
