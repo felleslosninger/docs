@@ -88,6 +88,8 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
   }
 }
 ```
+
+Dersom forespørselen er i orden, så vil du få returnert 201.
      
 ### 5. Opprette presentasjonskonfigurasjon.
 
@@ -95,7 +97,8 @@ For å kunne forespørre eit gitt bevis må det opprettes ein presentasjonskonfi
 
 1. Under "Verification configs" velg + - ikonet i høyre hjørne
 2. Velg ein passende id og beskrivelse for konfigurasjonen
-3. Bruk følgende DCQL-spørring (Andre valg i konfigurasjonen kan beholde standardverdiene sine.):
+3. Velg den nøkkelen du dyttet inn der du kan velge "access key chain"
+4. Bruk følgende DCQL-spørring (Andre valg i konfigurasjonen kan beholde standardverdiene sine.):
 
 ```
 {
