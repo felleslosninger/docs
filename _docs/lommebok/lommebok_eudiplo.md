@@ -89,7 +89,7 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 }
 ```
 
-Dersom forespørselen er i orden, så vil du få returnert 201.
+Dersom forespørselen er i orden, så vil du få returnert 201. Nøkkelen skal da også dukke opp under "keys" i eudiplo, og dersom man trykker på øyet ved nøkkelen så skal subject og issuer være fylt ut under "Active certificate"
      
 ### 5. Opprette presentasjonskonfigurasjon.
 
