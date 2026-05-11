@@ -32,7 +32,7 @@ Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
 
 ### 3.Konfigurerere aksessertifikat for brukarstaden
-Vi skal nå generere nøkler og få knytta oss til tillitskjeden i sandkassa. Bruk ditt foretrukne terminalverktøyt for å kjøre kommandoer
+Vi skal no generera nøkler og få knytta oss til tillitskjeden i sandkassa. Nytt ditt føretrukne terminalverktøyt for å køyre kommandoar
 
 1. Generer nøkkel:
  ```
