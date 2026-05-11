@@ -20,7 +20,7 @@ Her følger ein beskrivelse av korleis du kan konfigurerere EUDIPLO som brukerst
 
 ### 1. Installer EUDIPLO backend og webklient for administrasjon 
 
-Føl [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrande og helseendepunktet viser "up"
+Føl [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrande og helseendepunktet synar "up"
 
 Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
