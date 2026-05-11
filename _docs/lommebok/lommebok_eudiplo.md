@@ -32,24 +32,22 @@ Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
 
 
 ### 3.Konfigurerere aksessertifikat for brukerstaden
+Vi skal nå generere nøkler og få knytta oss til tillitskjeden i sandkassa. Bruk ditt foretrukne terminalverktøyt for å kjøre kommandoer
 
-1. Logg inn i webklienten med klienten til den nye tenanten du har oppretta 
-
-
-2. Generer nøkkel:
+1. Generer nøkkel:
  ```
 openssl genpkey -algorithm EC -out eckey.pem \
        -pkeyopt ec_paramgen_curve:P-256 \
        -pkeyopt ec_param_enc:named_curve
   ```
-4. lag CSR-fil:
+2. lag CSR-fil:
 ```
 openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 ```
 
-6. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen. Last ned sertifikatet.
+3. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen. Last ned sertifikatet.
 
-7. Konverter privatnøkkelen din fra pem til jwk-format. Dette kan gjøre slik, med et verktøy du kan laste ned via homebrew:
+4. Konverter privatnøkkelen din fra pem til jwk-format. Dette kan gjøre slik, med et verktøy du kan laste ned via homebrew:
 ```
     brew install jphastings/tools/jwker
     jwker eckey.pem > my-key.jwk
@@ -92,6 +90,8 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 Dersom forespørselen er i orden, så vil du få returnert 201. Nøkkelen skal da også dukke opp under "keys" i eudiplo, og dersom man trykker på øyet ved nøkkelen så skal subject og issuer være fylt ut under "Active certificate"
      
 ### 5. Opprette presentasjonskonfigurasjon.
+
+Logg inn i webklienten med innloggingsinformasjonen fra punkt 2.
 
 For å kunne forespørre eit gitt bevis må det opprettes ein presentasjonskonfigurasjon. Her er framgangsmåten for å opprette ein konfigurasjon for PID-dokumenter i SD-JWT-VC format. Kva bevis ein forespør, bevisformat og forespurte attributter blir angitt gjennom ei DCQL-spørring som blir registrert på presentasjonskonfigurasjonen.
 
