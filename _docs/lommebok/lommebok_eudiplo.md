@@ -20,9 +20,9 @@ Her følger ein beskrivelse av korleis du kan konfigurerere EUDIPLO som brukerst
 
 ### 1. Installer EUDIPLO backend og webklient for administrasjon 
 
-Føl [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrande og helseendepunktet synar "up"
+Føl [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrande og helseendepunktet viser "up"
 
-Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
+Du skal no ha to tenester: ein backend-tjeneste og ein webklient.
 
 ### 2. Opprett ny tenant for din brukarstad
 
@@ -47,7 +47,7 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 
 3. Registrer ny brukarstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen. Last ned sertifikatet.
 
-4. Konverter privatnøkkelen din frå pem til jwk-format. Dette kan gjøres slik, med eit verktøy du kan lasta ned via homebrew:
+4. Konverter privatnøkkelen din frå pem til jwk-format. Dette kan gjerast med eit verktøy du kan lasta ned via homebrew:
 ```
     brew install jphastings/tools/jwker
     jwker eckey.pem > my-key.jwk
