@@ -68,8 +68,12 @@ koordinering av dette.
 
 #### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer (IPv4)
 
-<!-- TODO beskrive eller henvise til hvor dette er beskrevet -->
-![](/images/dpi/underarbeide.png)
+1. Logg inn på [TENOR](https://www.skatteetaten.no/testdata/)
+2. Plukk ett orgnummer fra TENOR.
+3. Bestill testvirksomhetssertifikat (SHA-256) på det orgnummeret fra enten [Buypass](https://www.buypass.no/produkter/virksomhetssertifikat-esegl/bestill-testsertifikat-vid) eller [Commfides](https://www.commfides.com/bestilling-av-testsertifikatseid20/)
+4. Send navn, orgnummer og meldingstyper dere ønsker å teste (DPO, DPV osv) til servicedesk@digdir.no. Legg ved public del av virksomhetssertifikatet.
+5. Servicedesk vil gi en lyd når alt er klart.
+
 
 ### Teste i eFormidlings produksjonsmiljø
 
