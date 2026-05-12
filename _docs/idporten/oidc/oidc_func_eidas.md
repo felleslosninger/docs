@@ -93,10 +93,10 @@ Ved en eIDAS-pålogging vil utleverte tokens være litt ulike ordinære tokens:
   "aud" : "democlient_idporten_test",
   "acr" : "eidas-loa-substantial",
  
-  "eidas_identifier" : "CA/NO/11111",
-  "eidas_lastname" : "Phil",
-  "eidas_firstname" : "claude",
-  "eidas_date_of_birth" : "1965-01-01",
+  "eidas_person_identifier" : "CA/NO/11111",
+  "family_name" : "Phil",
+  "given_name" : "claude",
+  "birthdate" : "1965-01-01",
  
   "auth_time" : 1727693610,
   "exp" : 1727693730,
