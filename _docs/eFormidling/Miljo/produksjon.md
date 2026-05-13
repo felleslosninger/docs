@@ -29,8 +29,8 @@ Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunn
 | platform.altinn.no                           | 51.120.88.54                                        | 443  | DPO  | Altinn formidlingstjeneste                            | utgående              |
 | svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler                              |  utgående
 | kontaktregisteret.no | 139.105.36.169 | 443  | DPI | Kontakt-og reservasjonsregisteret (fom. 18.09.2023)   | utgående |
-| srest.dataplatfor.ms (avvikles 20. april 2026)                | 51.120.55.214                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt        | utgående              |
-| https://edi.edigard.com/ (gjeldende fra 20. april 2026)               | 46.250.215.225                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt        | utgående              |
+| srest.dataplatfor.ms (avvikles 19. mai 2026)                | 51.120.55.214                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt        | utgående              |
+| https://edi.edigard.com/ (gjeldende fra 19. mai 2026)               | 46.250.215.225                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt        | utgående              |
 | crl.buypass.no       | 185.62.162.145 og 185.62.160.145                                 | 80  | DPI      | Buypass CRL-liste                                     | utgående              |
 | crl.buypassca.com       | 185.62.162.185 og 185.62.160.185                               | 80  | DPI      | Buypass CRL-liste SEID2.0                             | utgående              |
 | Legal: https://crl.commfides.com/G3/CommfidesLegalPersonCA-G3.crl | 91.232.83.47 <br/> | 80 | Commfides CRL-liste  | Commfides CRL-liste                                   |  utgående
