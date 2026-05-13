@@ -23,7 +23,7 @@ redirect_from:
 13.05.2026
 
 - Setter Orbyt som ny leverandør av DPI i produksjon
-- Se utfyllende informasjon her : https://status.digdir.no/incidents/sn79sj63xv7w
+- Se utfyllende informasjon her : [https://status.digdir.no/incidents/sn79sj63xv7w](https://status.digdir.no/incidents/sn79sj63xv7w)
 
 ## 4.0.4
 
