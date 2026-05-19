@@ -39,11 +39,10 @@ Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 ## Oppslag på vegne av annen virksomhet
 
-
 Kontakt- og reservasjonsregisteret har i dag ein tillitsbasert modell for oppslag på vegne av andre, men innfører oppslag på vegne av en annen virksomhet gjennom delegering av tilgang i Altinn.
 Dette brukes når en leverandør gjør oppslag i KRR på vegne av en kunde.
 
-### Hvordan det fungerer
+### Hvordan det kommer til å fungere
 
 For å gjøre oppslag på vegne av en kunde må:
 1. Kunden delegerer tilgang i Altinn
