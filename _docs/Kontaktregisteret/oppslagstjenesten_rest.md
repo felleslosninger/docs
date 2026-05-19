@@ -39,9 +39,7 @@ Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 ## Oppslag på vegne av annen virksomhet
 
-> MERK: Altinn-delegering for oppslag på vegne av er ikkje tilgjengeleg enda.
-
-Kontakt- og reservasjonsregisteret har i dag ein tillitsbasert modell for oppslag på vegne av andre, men vil snart innføre oppslag på vegne av en annen virksomhet gjennom delegering av tilgang i Altinn.
+Kontakt- og reservasjonsregisteret har i dag ein tillitsbasert modell for oppslag på vegne av andre, men innfører oppslag på vegne av en annen virksomhet gjennom delegering av tilgang i Altinn.
 Dette brukes når en leverandør gjør oppslag i KRR på vegne av en kunde.
 
 ### Hvordan det kommer til å fungere
@@ -63,12 +61,12 @@ For å gjøre oppslag på vegne av en kunde må:
 
 ### Delegering i Altinn
 
-Kunden må delegere API-tilgang til leverandør i Altinn.
+Kunden må delegere API-tilgang til leverandør i Altinn. For å gjøre det må kundens daglig leder (eller andre med rettigheter i Altinn) delegere API-tilgang til leverandør.
 
 API-tilgang:
 "KRR - Delegere på-vegne-av-rettighet"
 
-Se:
+For beskrivelse av delegering, se:
 [Tilgang til programmeringsgrensesnitt - API](https://info.altinn.no/hjelp/profil/tilgang-til-programmeringsgrensesnitt---api/delegering-av-api-tilgang)
     
 ## Endepunkt
