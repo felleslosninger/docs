@@ -28,7 +28,7 @@ redirect_from:
 - Forbedringer og justeringer
   - Maks størrelse for DPI justert til 50MB (ihht spesifikasjon)
   - Rydder bort logging som gikk direkte til console (bruker nå standard logging)
-  - Oppdatert konfugurasjon for logging (fjerner varlser under oppstart)
+  - Oppdatert konfugurasjon for logging (fjerner varsler under oppstart)
 - Ny funksjonalitet
   - Mulighet for å opprette flere "på-vegne-av" DPO systembrukere via web-ui
 
