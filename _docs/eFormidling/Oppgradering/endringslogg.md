@@ -18,11 +18,26 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.6
+
+21.05.2026
+
+- Inneholder bugfikser
+  - Rett rekkefølgen på DPI kvitteringer 
+  - Feil på innkommende DPF vil ikke blokkere nedlasting av resten
+- Forbedringer og justeringer
+  - Maks størrelse for DPI justert til 50MB (ihht spesifikasjon)
+  - Rydder bort logging som gikk direkte til console (bruker nå standard logging)
+  - Oppdatert konfugurasjon for logging (fjerner varlser under oppstart)
+- Ny funksjonalitet
+  - Mulighet for å opprette flere "på-vegne-av" DPO systembrukere via web-ui
+
 ## 4.0.5
 
 13.05.2026
 
 - Setter Orbyt som ny leverandør av DPI i produksjon
+- Fikser nullpointer om sikkerhetsnivå manger i SBD (MOVE-5021)
 - Se utfyllende informasjon her : [https://status.digdir.no/incidents/sn79sj63xv7w](https://status.digdir.no/incidents/sn79sj63xv7w)
 
 ## 4.0.4
