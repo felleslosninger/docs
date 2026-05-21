@@ -133,7 +133,7 @@ Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 
 ## Utenlandske testbrukere
 
-Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  
+Det er dessverre ikke mange land som tilbyr dedikerte testbrukere.  
 
 ### Sverige
 Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
@@ -141,6 +141,8 @@ Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter v
 ### Danmark
 For testing med dansk eID på sikkerhetsnivå betydelig (substantial), velg fanen «Test login» når du kommer til dansk IDP, og logg inn med brukernavn: `eidas-testuser1` og passord: `Test1234!`. For testing med LoA high, må en ta kontakt med Digdir.
 
+### Lituaen
+Bruk i loginbilde e-ID'en "VIISP BANKAS". Her vil en finne en nedtrekksliste med tilgjengelige testbrukere.  
 
 ## Innlogging med norsk e-ID på utenlandsk tjeneste
 Det er (pr 27.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. 
