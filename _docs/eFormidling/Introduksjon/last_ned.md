@@ -11,19 +11,19 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ## Integrasjonspunktet
 
-Her finner du alle [release notes og artifakter](https://github.com/felleslosninger/efm-integrasjonspunkt/releases), link til nyeste versjon [v4.0.5](https://github.com/felleslosninger/efm-integrasjonspunkt/releases/tag/v4.0.5).
+Her finner du alle [release notes og artifakter](https://github.com/felleslosninger/efm-integrasjonspunkt/releases), link til nyeste versjon [v4.0.6](https://github.com/felleslosninger/efm-integrasjonspunkt/releases/tag/v4.0.6).
 <br><br>
 
-[**Integrasjonspunkt 4.0.5 (JAR)**](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133?version=v4.0.5)
+[**Integrasjonspunkt 4.0.6 (JAR)**](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133?version=v4.0.6)
 <br>
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133/versions)
 
-[**Integrasjonspunktet 4.0.5 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/861625796?tag=v4.0.5)
+[**Integrasjonspunktet 4.0.6 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/881703653?tag=v4.0.6)
 <br>
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/versions?filters%5Bversion_type%5D=tagged)
 
 ```console
-$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.5
+$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.6
 ```
 
 Endringslogg finner du [her.](../Oppgradering/endringslogg)
@@ -47,7 +47,7 @@ Gammel versjon av Kosmos v2 (tilpasset Integrasjonspunkt v2) kan lastes ned fra 
 
 > [**Last ned offentlig nøkkel**](/resources/eformidling/public_keys/eformidling-key.asc)
 
-{% include tip.html content="Hvis du allerede har lastet ned offentlig nøkkel (før 20. april 2026) så må du laste ned ny nøkkel på linken over.  Den gamle utløper i april 2026." %}
+{% include tip.html content="Hvis du allerede har lastet ned offentlig nøkkel (før 20. april 2026) så må du laste ned ny nøkkel på linken over.  Den gamle utløp i april 2026." %}
 
 ## Neste steg
 
