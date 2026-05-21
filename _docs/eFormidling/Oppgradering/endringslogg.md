@@ -37,7 +37,7 @@ redirect_from:
 13.05.2026
 
 - Setter Orbyt som ny leverandør av DPI i produksjon
-- Fikser nullpointer om sikkerhetsnivå manger i SBD (MOVE-5021)
+- Fikser nullpointer om sikkerhetsnivå mangler i SBD (MOVE-5021)
 - Se utfyllende informasjon her : [https://status.digdir.no/incidents/sn79sj63xv7w](https://status.digdir.no/incidents/sn79sj63xv7w)
 
 ## 4.0.4
