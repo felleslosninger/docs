@@ -16,7 +16,7 @@ Klientbibliotek:
 
 [Typescript](https://github.com/felleslosninger/einnsyn-sdk-typescript)
 
-# eInnsyn API – Publisering av møter og møtesaker
+# eInnsyn API – Hvordan publisere?
 
 Denne dokumentasjonen beskriver hvordan du publiserer digitaliserte møter med tilhørende møtesaker til eInnsyn via REST-APIet.
 
