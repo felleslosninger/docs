@@ -58,7 +58,7 @@ Ansattporten kan brukes enten til ordinær punktinnlogging, eller til å kreve a
 
 Dersom tjenesten krever representasjon, vil Ansattporten vise en organisasjonsvelger til brukeren, som er forhåndspopulert basert på den autoritative kilden.
 
-I dag er det kun Altinn Autorisasjon som er støttet som autoritativ kilde. 
+Ansattporten støtter flere autoritative kilder for representasjon, avhengig av innloggingsmetode og bruksscenario. For innlogging med fødselsnummer (`pid`) brukes Altinn Autorisasjon. For innlogging med epost/jobbkonto kan Ansattporten bruke Virksomhetsbroen. Støtten for Entra ID og Virksomhetsbroen er i pilot.
 
 Ansattporten angir bare at bruker har rett til å representere gitt organisasjon med forespurt rettighet. Den utfører **ikke** tilgangskontroll for tjenesten/klienten.
 
@@ -67,7 +67,7 @@ Ansattporten angir bare at bruker har rett til å representere gitt organisasjon
 
 Alle kunder som har inngått Digdir sine bruksvilkår for fellesløsninger kan bruke Ansattporten til ordinær punktautentisering på samme måte som de gjør i ID-porten i dag.
 
-Men bare kunder som også er tjenesteeier i Altinn, kan bruke funksjonaliteten med organisasjonsvelger og tilgangsstyring basert på representasjonsforhold i Altinn Autorisasjon.
+For tilgangsstyring basert på Altinn Autorisasjon må kunden også være tjenesteeier i Altinn. For tilgangsstyring basert på Entra ID/Virksomhetsbroen gjelder egne forutsetninger knyttet til pilot og konfigurasjon.
 
 
 # Hva koster Ansattporten ?
