@@ -229,3 +229,6 @@ Gyldige verdier for `moetesakstype`: `moete` · `politisk` · `delegert` · `int
 
 > Arkiv og Arkivdel opprettes kun én gang. Steg 3 og 4 kan kjøres i valgfri rekkefølge seg imellom.
 
+---
+
+Tilbakemelding om dokumentasjonen sendes til servicedesk@digdir.no
