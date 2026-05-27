@@ -1,5 +1,5 @@
 ---
-title: EUDIPLO som brukerstad mot sandkassa
+title: EUDIPLO som brukarstad mot sandkassa
 description: 
 
 sidebar: lommebok
@@ -20,53 +20,88 @@ Her følger ein beskrivelse av korleis du kan konfigurerere EUDIPLO som brukerst
 
 ### 1. Installer EUDIPLO backend og webklient for administrasjon 
 
-Følg [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tjenestene køyrande og helseendepunktet viser "up"
+Følg [quick-start guiden](https://openwallet-foundation-labs.github.io/eudiplo/latest/getting-started/quick-start/) fram til at du har tenestene køyrande og helseendepunktet viser "up"
 
-Du skal no ha to tjenester: ein backend-tjeneste og ein webklient.
+Du skal no ha to tenester: ein backend-tjeneste og ein webklient.
 
 ### 2. Opprett ny tenant for din brukarstad
 
-1. Logg inn til admin webklienten med root og passordet du satte i .env-fila di.
-2. Opprett ny tenant. Gi tenanten rollene: clients:manage, presentation:manage og presentation:offer
-3. Du finner klientID og passord ved å trykke på knappen "Copy login url" i lista over klienter under detaljvisninga for tenanten.
+1. Logg inn i admin webklienten med `AUTH_CLIENT_ID` og `AUTH_CLIENT_SECRET`.
+2. Opprett ein ny tenant. Gje tenanten rollene: clients:manage, presentation:manage og presentation:offer
+3. Hugs å ta vare på tenant id og passord, dei blir berre viste når du opprettar tenanten.
 
 
-### 3.Konfigurerere aksessertifikat for brukerstaden
+### 3.Konfigurere aksessertifikat for brukarstaden
+Vi skal no generera nøkler og få knytta oss til tillitskjeden i sandkassa. Nytt ditt føretrekte terminalverktøyt for å køyre kommandoar
 
-1. Logg inn i webklienten med klienten til den nye tenanten du har oppretta 
-
-2. Opprett ny nøkkel ved å trykke "+ Create key" under "Getting started". Eksporter privatnøkkelen og lagre denne i fila access.key.jwk
-
-
-3. Konvertere privatnøkkelen frå JWK til PEM. Til dette kan du bruke verktøyet jwker som kan installeres via homebrew
-
+1. Generer nøklar:
+ ```
+openssl genpkey -algorithm EC -out eckey.pem \
+       -pkeyopt ec_paramgen_curve:P-256 \
+       -pkeyopt ec_param_enc:named_curve
+  ```
+2. Lag CSR-fil:
 ```
-brew install jphastings/tools/jwker
-
-jwker access.key.jwk > access.key.pem
-```
-
-4. Bruk openssl til å lage ein CSR basert på denne privatnøkkelen
-
-```
-openssl req -new -key access.key.pem -subj /CN="brukersted" -out access.csr 
+openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
 ```
 
-5. Registrer ny brukerstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere inn CSRen 
+3. Registrer ny brukarstad via [sjolvbetening.test.eidas2sandkasse.net](https://sjolvbetening.test.eidas2sandkasse.net) og lag aksessertifikat ved å registrere CSRen. Last ned sertifikatet.
 
-6. Installer aksessertifikatet i EUDIPLO . Sertifikatet må registrerast frå detaljvisningsida for nøkkelen du oppretta. Velg "access" som usage og lim inn det PEM-enkoda sertifikatet som du lasta ned frå sjølvbetjeningsløysinga til sandkassen.
+4. Konverter privatnøkkelen din frå pem til jwk-format. Dette kan gjerast med eit verktøy du kan lasta ned via homebrew:
+```
+    brew install jphastings/tools/jwker
+    jwker eckey.pem > my-key.jwk
+```
 
-### 4. Opprette presentasjonskonfigurasjon.
+### 4. Installer aksessertifikatet i eudiplo
 
-For å kunne forespørre eit gitt bevis må det opprettes ein presentasjonskonfigurasjon. Her er framgangsmåten for å opprette ein konfigurasjon for PID-dokumenter i SD-JWT-VC format. Kva bevis ein forespør, bevisformat og forespurte attributter blir angitt gjennom ei DCQL-spørring som blir registrert på presentasjonskonfigurasjonen.
+ 1. Gå til swagger-endepunktet til API-et (http://localhost:3000/api)
+ 2. Authorize med tenant id og client id til tenanten din
+ 3. Gå til endepunktet: /api/key-chain/import
+ 4. Legg inn informasjonen som blir etterspurd der (din privatnøkkel generert til dette formål på jwk format og sertifikatet du fikk i sjolvbetjeningsløysinga.). Det er viktig at du veljer:  "usageType": "access".
 
-1. Under "Presentation Configuration" velg "+ Add config"
-2. Velg ein passende id og beskrivelse for konfigurasjonen
-3. Bruk følgende DCQL-spørring (Andre valg i konfigurasjonen kan beholde standardverdiene sine.):
+  Eksempeldata:
+  
+```
+  {
+"key": {
+    "kty": "EC",
+    "d": "innhold",
+    "crv": "P-256",
+    "kid": "innhold",
+    "x": "innhold",
+    "y": "innhold",
+    "alg": "ES256"
+},
+  "description": "aksess-sertifikat",
+  "usageType": "access",
+  "crt": [
+    "-----BEGIN CERTIFICATE-----\nSERTIFIKAT\n-----END CERTIFICATE-----"
+  ],
+  "kmsProvider": "string",
+  "rotationPolicy": {
+    "enabled": false,
+    "intervalDays": 90,
+    "certValidityDays": 365
+  }
+}
+```
+
+Dersom førespurnaden er i orden, så vil du få returnert 201. Nøkkelen skal da også dukke opp under "keys" i eudiplo, og dersom ein trykkjer på auge ved nøkkelen så skal subject og issuer være utfylte under "Active certificate"
+     
+### 5. Opprette presentasjonskonfigurasjon.
+
+Logg inn i webklienten med innloggingsinformasjonen frå punkt 2.
+
+For å kunne forespørre eit gitt bevis må det opprettast ein presentasjonskonfigurasjon. Her er framgangsmåten for å opprette ein konfigurasjon for PID-dokument i SD-JWT-VC format. Kva bevis ein forespør, bevisformat og førespurde attributter blir angitt gjennom ei DCQL-spørring som blir registrert på presentasjonskonfigurasjonen.
+
+1. Under "Verification configs", vel + - ikonet i høyre hjørne
+2. Vel ein passende id og beskrivelse for konfigurasjonen
+3. Vel den nøkkelen du dyttet inn der du kan velje "access key chain"
+4. Bruk følgjande DCQL-spørring (Andre valg i konfigurasjonen kan behalde standardverdiene sine.):
 
 ```
 {
-  "$schema": "https://raw.githubusercontent.com/openwallet-foundation-labs/eudiplo/refs/heads/main/schemas/DCQL.schema.json",
   "credentials": [
     {
       "id": "eudi-pid-sd-jwt-vc",
@@ -102,37 +137,29 @@ For å kunne forespørre eit gitt bevis må det opprettes ein presentasjonskonfi
         "vct_values": [
           "urn:eudi:pid:1"
         ]
-      },
-      "trusted_authorities": [
-        {
-          "type": "etsi_tl",
-          "values": [
-            "https://eudiplo-api.eidas2sandkasse.dev/sandkasse-tillitsliste/trust-list/8e059cf5-48da-4a8c-ae50-a9d5044f1e94"
-          ]
-        }
-      ]
+      }
     }
   ]
 }
 ```
-Siste elementet "trusted_authorities" angir tillitslista som EUDIPLO bruker til å finne tillitsankeret som blir brukt til å validere signaturen over det mottatte beviset. Denne verdien vil være lik for alle presentasjonskonfigurasjoner i sandkassa.
 
-## Bruke EUDIPLO for å generere presentasjonsforespørsler og lese responser frå lommeboka
 
-EUDIPLO-Backend tilbyr APIer for å generere nye presentasjonsforespørsler til lommeboka, samt å sjekke status og lese respons på disse forespørslene.
+## Bruke EUDIPLO for å generere presentasjonsforespurnader og lese responser frå lommeboka
+
+EUDIPLO-Backend tilbyr API-ar for å generere nye presentasjonsførespurnader til lommeboka, samt å sjekke status og lese respons på desse førespurnadane.
 
 Følgende api-kall er relevante:
 
 ```
-POST /verifier/offer
+POST /api/verifier/offer
 
-GET /session/{id}
+GET /api/session/{id}
 ```
 
-Sjå OpenAPI-spesifikasjonen tilgjengelig under /api på backend-tjenesten for detaljer om korleis dette APIet skal brukast. 
+Sjå OpenAPI-spesifikasjonen tilgjengeleg under /api på backend-tjenesten for detaljer om korleis dette APIet skal brukast. 
 
-Når ein oppretter eit nytt "presentation offer" så blir det returnert ein request-URI samt ein request-Id. request-URIen blir brukt til å sende sjølve forespørselen til lommmebok-appen. Dette skjer enten ved å trigge URIen direkte dersom brukarstaden blir brukt fra samme enhet som lommeboka er installert på ("same-device"), eller ved å generere ein QR-kode av URIen som så kan skannast frå lommebok-appen dersom denne er på ein anna enhet ("cross-device"). Det er brukarstaden sitt ansvar å presentere denne URIen på ein hensiktsmessig måte for brukaren.
+Når ein opprettar ein ny presentation request så blir det returnert ein request-URI samt ein request-Id. request-URIen blir brukt til å sende sjølve førespurnaden til lommmebok-appen. Dette skjer enten ved å trigge URIen direkte dersom brukarstaden blir brukt frå samma eining som lommeboka er installert på ("same-device"), eller ved å generere ein QR-kode av URIen som så kan skannast frå lommebok-appen dersom denne er på ein anna enhet ("cross-device"). Det er brukarstaden sitt ansvar å presentere denne URIen på ein hensiktsmessig måte for brukaren.
 
-Request-IDen kan brukasr mot /session-endepunktet på backend-tjenesten for å sjekke status på forespørselen, og lese dataene frå det delte beviset.
+Request-IDen kan brukasr mot /session-endepunktet på backend-tjenesten for å sjekke status på førespurnaden, og lese data frå det delte beviset.
 
-Ein kan også teste presentasjonsforespørsler direkte frå webklienten til EUDIPLO. Velg "+ Create Offer" under Preswntation Configuration for å generere ein ny forespørsel.
+Ein kan også teste presentasjonsførespurnader direkte frå webklienten til EUDIPLO. Vel pluss-teiknet under new verification, og vel konfigurasjon som du har oppretta for å generere ein ny førespurnad.
