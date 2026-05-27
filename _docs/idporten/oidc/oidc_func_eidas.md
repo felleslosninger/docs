@@ -131,9 +131,9 @@ Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 - `yyyyy` er en variabel-lengde identifikator i det aktuelle landet.
 
 
-## Utenlandske testbrukere
+## Utenlandske testbrukere - innlogging til norsk test-tjeneste
 
-Det er dessverre ikke mange land som tilbyr dedikerte testbrukere.  
+Det er dessverre ikke mange land som tilbyr dedikerte testbrukere for innlogging til norsk tjeneste med utenlandsk e-ID.
 
 ### Sverige
 Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
@@ -145,5 +145,5 @@ For testing med dansk eID på sikkerhetsnivå betydelig (substantial), velg fane
 Bruk i loginbilde e-ID'en "VIISP BANKAS". Her vil en finne en nedtrekksliste med tilgjengelige testbrukere.  
 
 ## Innlogging med norsk e-ID på utenlandsk tjeneste
-Det er (pr 27.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. 
+Det er (pr 27.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i produksjonsmiljøet i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. (I testmiljøet er dette mulig)
 
