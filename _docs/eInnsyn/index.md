@@ -3,7 +3,7 @@ title: Om einnsyn
 description: Dokumentasjon for einnsyn
 summary: "Dokumentasjon for einnsyn"
 
-sidebar: main_sidebar
+sidebar: einnsyn_sidebar
 
 redirect_from: /einnsyn_index
 ---
