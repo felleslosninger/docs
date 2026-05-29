@@ -11,7 +11,7 @@ redirect_from: /ansattporten_representasjon
 Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget bruker blir beriket med et representasjonsforhold/autorisasjonsinformasjon fra en ekstern autoritativ kilde.  
 Ansattporten kan bruke to ulike autoritative kilder, avhengig av hvilken autentiseringsmetode som er brukt. 
 For autentisering med:
-- pid, så bruker Ansattporten Altinn Autorisasjon som autoritativ kilde. Her vil token berikes med informasjon om organisasjon som har gitt bruker lov til å representere gitt organisasjon med forespurt rettighet. Det blir ikke gjort noen kontroll mot tilgangslister i Altinn Autorisasjon for aktiv klient. Tjenester som bruker tilgangslister må sjekke dette selv mot Altinn Autorisasjon.
+- pid, så bruker Ansattporten Altinn Autorisasjon som autoritativ kilde. Her vil token berikes med informasjon om organisasjon som har gitt bruker lov til å representere gitt organisasjon med forespurt rettighet. 
 - epost, så bruker Ansattporten [virksomhetsbroen](ansattporten_virksomhetsbroen.html)
 
 
@@ -61,7 +61,7 @@ note over B,C: innlogget på vegne av valgt virksomhet
 
 </div>
 
-Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.  En oversikt over [støtta RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
+Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.  En oversikt over [støttede RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
 
 Klienten må inkludere claimet `authorization_details` i autorisasjonsforespørselen for å trigge representasjonspålogging.  Et eksempel er vist her:
 

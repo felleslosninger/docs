@@ -9,7 +9,7 @@ redirect_from: /ansattporten_entraid
 
 
 
-{% include note.html content="Entra ID er i pilotfase .  Vi ønsker virksomheter velkommen til å hjelpe oss med å teste og forbedre funksjonaliteten gjennom en pilotfase i 2025/2026. De som deltar, må være forberedt på at det kan bli løpende endringer i funksjonalitet og tekniske grensesnitt." %}
+{% include note.html content="Entra ID er i pilotfase.  Vi ønsker virksomheter velkommen til å hjelpe oss med å teste og forbedre funksjonaliteten gjennom en pilotfase i 2025/2026. De som deltar, må være forberedt på at det kan bli løpende endringer i funksjonalitet og tekniske grensesnitt." %}
 
 En tjenesteeier i Ansattporten kan aktivere støtte for at en bruker kan logge inn med sin jobb-konto fra Microsoft til en tjeneste.  Tilsvarende kan arbeidsgivere konfigurere hvilke brukere som skal få lov til å representere virksomheten inn mot slike tjenester. Piloten skal også utforske om og evt. hvordan Ansattporten kan hjelpe med tilgangstyring til tjenester.
 
@@ -28,22 +28,22 @@ https://login.test.ansattporten.no/authorize?
  ...
 ```
 
-Det er Entra-innstillingene til brukeren sin organisasjon (Entra tentant) som avgjør om brukeren får lov til å logge inn til din tjeneste i Ansattporten eller ikke.  Per vår 2026 vil alle organisasjoner som følger standardinnstillingene i Entra få lov til logge inn, men brukeren må samtykke første gang.  Entra-administratoren kan deaktivere slikt samtykke, sånn at innloggingen oppleves mer sømløs.   Entra-administratoren kan også blokkere Anstattporten dersom en virksomhet vil forhindre sine ansatte fra å kunne bruke tjenester gjennom Ansattporten.
+Det er Entra-innstillingene til brukerens organisasjon (Entra-tenanten) som avgjør om brukeren får lov til å logge inn til din tjeneste i Ansattporten eller ikke.  Per vår 2026 vil alle organisasjoner som følger standardinnstillingene i Entra få lov til å logge inn, men brukeren må samtykke første gang.  Entra-administratoren kan deaktivere slikt samtykke, sånn at innloggingen oppleves mer sømløs.   Entra-administratoren kan også blokkere Ansattporten dersom en virksomhet vil forhindre sine ansatte fra å kunne bruke tjenester gjennom Ansattporten.
 
 Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utleveres til klienten inneholde:
 
 | claim | beskrivelse            |
 | ----- | ---------------------- |
 | acr    | Alltid `entraid` |
-| amr    | Hvilke autentiseringfaktorer som sluttbruker benyttet. Ansattporten returnerer [acr-verdiene den får fra Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#amr-claim),  prefix'et med `entraid`. Eksempel på 2-faktor-autentisering: `["entraid_pwd", "entraid_mfa"]`|
+| amr    | Hvilke autentiseringsfaktorer som sluttbruker benyttet. Ansattporten returnerer [acr-verdiene den får fra Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#amr-claim), prefixet med `entraid`. Eksempel på 2-faktor-autentisering: `["entraid_pwd", "entraid_mfa"]`|
 | email  | Epost-adressen til autentisert bruker |
-| family_name | Etternavnet til brukeren slik det er registrert i Entra-tentanten. Utleveres bare med "profile" scope.|
-| given_name | Fornavnet til brukeren slik det er registrert i Entra-tentanten. Utleveres bare med "profile" scope. |
+| family_name | Etternavnet til brukeren slik det er registrert i Entra-tenanten. Utleveres bare med "profile" scope.|
+| given_name | Fornavnet til brukeren slik det er registrert i Entra-tenanten. Utleveres bare med "profile" scope. |
 | groups | en array med de 20 første AD-gruppene som autentisert bruker inngår i. |  
 
 
 
-*Eksempel på id_token i repons*:
+*Eksempel på id_token i respons*:
 
 ```
 {
@@ -90,11 +90,11 @@ For å kunne avlede faktisk representasjon med Ansattporten og EntraID, må føl
   } ]
 ```
 
-Per idag er det ingen sentral mekanisme i Ansattporten for å begrense hvilke arbeidsgivere som får lov til å logge inn til din tjeneste.  Alle virksomheter som har konfigurert tilgang gjennom Virksomhetsbroen vil kunne logge in.
+Per i dag er det ingen sentral mekanisme i Ansattporten for å begrense hvilke arbeidsgivere som får lov til å logge inn til din tjeneste.  Alle virksomheter som har konfigurert tilgang gjennom Virksomhetsbroen vil kunne logge inn.
 
 ## Konfigurasjon
 
-Ansattporten er implementert som en [publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/publisher-verification-overview) app. App-registreringen ligger i en egen tentant, skilt vekk fra Digdir sin ordinære tentant. Appen er en såkalla [multi-tentant app](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps).  Det betyr i praksis at innlogging skal fungere "ut av boksen", og Entra-administrator hos tjenesteeiere og arbeidsgivere normalt ikke behøver å konfigurere noe i egen Entra tentant for å ta funksjonaliteten i bruk.
+Ansattporten er implementert som en [publisher verified](https://learn.microsoft.com/en-us/entra/identity-platform/publisher-verification-overview) app. App-registreringen ligger i en egen tenant, skilt vekk fra Digdir sin ordinære tenant. Appen er en såkalt [multi-tenant app](https://learn.microsoft.com/en-us/entra/identity-platform/single-and-multi-tenant-apps).  Det betyr i praksis at innlogging skal fungere "ut av boksen", og Entra-administrator hos tjenesteeiere og arbeidsgivere normalt ikke behøver å konfigurere noe i egen Entra-tenant for å ta funksjonaliteten i bruk.
 
 ### Oppsett for tjenesteeiere
 
@@ -104,17 +104,17 @@ I selve innloggingsrequesten fra din Ansattporten-tjeneste må du aktivere Entra
 
 ### Oppsett for arbeidsgivere
 
-Arbeidgiver må konfigurere [Virksomhetsbroen](ansattporten_virksomhetsbroen) før egne entra-brukere får lov til å representere arbeidsgivers virksomhet.
+Arbeidsgiver må konfigurere [Virksomhetsbroen](ansattporten_virksomhetsbroen) før egne Entra-brukere får lov til å representere arbeidsgivers virksomhet.
 
-Som arbeidsgiver trenger du normalt ikke behøve å konfigurere noe i egen Entra tentant, for at dine entra-brukere skal kunne logge inn gjennom Ansattporten til andre tjenester.  Dette er dog avhengig av eksisterende sikkerhetspolicy.
+Som arbeidsgiver trenger du normalt ikke å konfigurere noe i egen Entra-tenant for at dine Entra-brukere skal kunne logge inn gjennom Ansattporten til andre tjenester.  Dette er dog avhengig av eksisterende sikkerhetspolicy.
 Dine ansatte må samtykke til bruk av Ansattporten første gang, se [Understand user and admin consent ](https://learn.microsoft.com/en-us/entra/identity-platform/howto-convert-app-to-be-multi-tenant#understand-user-and-admin-consent-and-make-appropriate-code-changes). Du som Entra-administrator kan deaktivere samtykke, sånn at innloggingen oppleves mer sømløs.  
 
-Du som Entra-administrator kan også blokkere Anstattporten dersom en virksomhet vil forhindre sine ansatte fra å kunne bruke tjenester gjennom Ansattporten.
+Du som Entra-administrator kan også blokkere Ansattporten dersom en virksomhet vil forhindre sine ansatte fra å kunne bruke tjenester gjennom Ansattporten.
 
 
 ## Testing
 
 Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Legg til rett acr-verdi i forespørsel, og logg inn med din egen AD-bruker.
 
-Microsoft tilbyr ikke noe eget testmiljø, så her må du bruke din ekte Entra-bruker, alternativt få din virksomhet til å sette opp en dedikert Entra-tentant for test-formål.
+Microsoft tilbyr ikke noe eget testmiljø, så her må du bruke din ekte Entra-bruker, alternativt få din virksomhet til å sette opp en dedikert Entra-tenant for testformål.
 
