@@ -1,6 +1,6 @@
 # eInnsyn REST API – FAQ for utviklere
 
-Vanlige feil og misforståelser ved publisering til eInnsyn via REST API.
+Vanlige feil og misforståelser ved overgang fra Noark eller JsonLD til REST API.
 
 ---
 
