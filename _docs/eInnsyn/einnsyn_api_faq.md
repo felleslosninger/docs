@@ -49,7 +49,6 @@ Feltnavnene varierer mellom de tre modellene. Tabellen under viser kjente avvik:
 | *(registreringer i møtemappe)* | `møtesaksregistrering` / `møtedokumentregistrering` | `moetesak` / `moetedokument` | Forkortet navn |
 
 > **Lenker til standarder:**
-> - Noark 5 (versjon 5.0): [petterreinholdtsen.github.io/noark5-standard](https://petterreinholdtsen.github.io/noark5-standard/avledet/spesifikasjon.html)
 > - Noark 5 metadatakatalog (Arkivverket): [arkivverket.no](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark5-standarden)
 > - eInnsyn REST API TypeSpec: [github.com/felleslosninger/einnsyn-api-spec](https://github.com/felleslosninger/einnsyn-api-spec)
 
