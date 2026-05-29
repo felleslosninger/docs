@@ -33,20 +33,20 @@ Disse feltene finnes i eInnsyn JSON-LD-modellen eller Noark 5, men er **ikke en 
 
 Feltnavnene varierer mellom de tre modellene. Tabellen under viser kjente avvik:
 
-| Noark 5                        | eInnsyn JSON-LD                         | eInnsyn REST API                    | Merknad |
-|--------------------------------|-----------------------------------------|-------------------------------------|---------|
-| `systemID`                     | `arkiv:systemID`                        | `systemId`                          | camelCase uten stor I |
-| `offentligTittel`              | `arkiv:offentligTittel`                 | `offentligTittel`                   | |
-| `offentligTittel` (skjermet)   | `arkiv:offentligTittel_SENSITIV`        | `offentligTittelSensitiv`           | Sensitiv som suffiks, ikke `_SENSITIV` |
-| `tittel` (skjermet)            | `arkiv:tittel_SENSITIV`                 | `tittelSensitiv`                    | Kun på `Moetemappe` o.l., **ikke** på `Dokumentbeskrivelse` |
-| `korrespondansepartNavn` (skj.)| `arkiv:korrespondansepartNavn_SENSITIV` | `korrespondansepartNavnSensitiv`    | |
-| `saksbehandler` (skjermet)     | `arkiv:saksbehandler_SENSITIV`          | *finnes ikke — se nedenfor*         | Se avsnitt om personnavn |
-| `møtesakssekvensnummer`        | `arkiv:møtesakssekvensnummer`           | `moetesakssekvensnummer`            | Norske tegn erstattes |
-| `møtesakstype`                 | `arkiv:møtesakstype`                    | `moetesakstype`                     | |
-| `møtesaksår`                   | `arkiv:møtesaksår`                      | `moetesaksaar`                      | |
-| `møtedokumentregistreringstype`| `arkiv:møtedokumentregistreringstype`   | `moetedokumenttype`                 | Forkortet navn |
-| `referanseTilMøtesak`          | `arkiv:referanseTilMøtesak`             | `legacyReferanseTilMoetesak`        | Annet navn, kun string (ikke objekt) |
-| *(registreringer i møtemappe)* | `møtesaksregistrering` / `møtedokumentregistrering` | `moetesak` / `moetedokument` | Forkortet navn |
+| Noark 5                        | eInnsyn JSON-LD                         | eInnsyn REST API                    |
+|--------------------------------|-----------------------------------------|-------------------------------------|
+| `systemID`                     | `arkiv:systemID`                        | `systemId`                          |
+| `offentligTittel`              | `arkiv:offentligTittel`                 | `offentligTittel`                   |
+| `offentligTittel` (skjermet)   | `arkiv:offentligTittel_SENSITIV`        | `offentligTittelSensitiv`           |
+| `tittel` (skjermet)            | `arkiv:tittel_SENSITIV`                 | `tittelSensitiv`                    |
+| `korrespondansepartNavn` (skj.)| `arkiv:korrespondansepartNavn_SENSITIV` | `korrespondansepartNavnSensitiv`    |
+| `saksbehandler` (skjermet)     | `arkiv:saksbehandler_SENSITIV`          | *finnes ikke — se nedenfor*         |
+| `møtesakssekvensnummer`        | `arkiv:møtesakssekvensnummer`           | `moetesakssekvensnummer`            |
+| `møtesakstype`                 | `arkiv:møtesakstype`                    | `moetesakstype`                     |
+| `møtesaksår`                   | `arkiv:møtesaksår`                      | `moetesaksaar`                      |
+| `møtedokumentregistreringstype`| `arkiv:møtedokumentregistreringstype`   | `moetedokumenttype`                 |
+| `referanseTilMøtesak`          | `arkiv:referanseTilMøtesak`             | `legacyReferanseTilMoetesak`        |
+| *(registreringer i møtemappe)* | `møtesaksregistrering` / `møtedokumentregistrering` | `moetesak` / `moetedokument` |
 
 > **Lenker til standarder:**
 > - Noark 5 metadatakatalog (Arkivverket): [arkivverket.no](https://www.arkivverket.no/forvaltning-og-utvikling/noark-standarden/noark5-standarden)
