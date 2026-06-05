@@ -35,14 +35,10 @@ Det er p.t. ingen tilgangstyring av RAR-typer. Alle klienter fra alle kunder kan
 
 Følgende RAR-typer er støttet i Ansattporten:
 
-| RAR-type | Beskrivelse |
-|-|-|
-| `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autoritativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke |
-| `ansattporten:orgno` | Gir organisasjonsnummerkobling for bruker logget inn med sin jobbkonto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) |
-| `ansattporten:altinn:service`  |Bruker lenketjenester (ServiceCode) fra Altinn 2 som autoritativ kilde for representasjonsforhold |
-
-
-Det er p.t. ikke mulig å be om ulike RAR-typer i samme påloggingsforespørsel. Klienten må i stedet implementere flere login-knapper i sin egen løsning.
+| RAR-type | Beskrivelse | ACR |
+|-|-|-|
+| `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autoritativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke | Substantial,High |
+| `ansattporten:orgno` | Gir organisasjonsnummerkobling for bruker logget inn med sin jobbkonto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) | Entraid |
 
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
@@ -196,76 +192,3 @@ Datamodellen for respons inneholder alltid claimet "type" som i request, men om 
     "type" : "ansattporten:orgno"
   } ]
 ```
-
-
-
-## Datamodell for Altinn 2 Lenketjenester (`ansattporten:altinn:service`)
-
-Bare kunder som er tjenesteeier i Altinn kan benytte Altinn Autorisasjon som autoritativ kilde.
-
-Dersom kunden ønsker å bruke Altinn 2 lenketjenester (ServiceCode) som autoritativ kilde for representasjonsforhold, må klienten oppgi  `ansattporten:altinn:service` som RAR-type. 
-
-Følgende claims kan sendes inn i request: 
-
-| Claim | Kardinalitet | Beskrivelse | Gyldighet |
-|-|-|-|-|
-|resource | Påkrevd |Hvilken lenketjeneste i Altinn som etterspørres. Må formatteres slik: `urn:altinn:resource:{tjenestekode}:{tjenesteutgave} `| Spesifiseres pr autorisasjonsobjekt |
-|organizationform | Valgfri | Begrense organisasjonsvelger til at sluttbruker bare kan velge hovedenheter (`enterprise`) eller underenheter (`business`). Default så er begge mulig å velge. | Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom spesifisert i flere autorisasjonsobjekter |
-|allow_multiple_organizations| Valgfri | Dersom `true` så kan sluttbruker velge flere virksomheter i organisasjonsvelgeren. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
-|allow_deleted_organizations | Valgfri | Dersom `true` så vil organisasjonsvelger vise slettede virksomheter. Default er false.|Gjelder på tvers av alle autorisasjonsobjekter - må ha samme verdi dersom  spesifisert i flere autorisasjonsobjekter |
-|representation_is_required | Valgfri | Krev at bruker må representere en virksomhet . Default er false. |Gjelder på tvers av alle autorisasjonsobjekter. Blir `true` om satt true i et autorisasjonsobjekt |
-
-[Her finner du en liste over alle tjenestekoder i Altinn 2](https://www.altinn.no/api/metadata?language=1044) 
-
-> **Mange av dagens standard Altinn-roller gir veldig brede tilganger ("Post/arkiv", "Utfyller/innsender").**  Dette er problematisert med at de ikke følger gode dataminimeringsprinsipper, og vanskeliggjør det å skulle holde oversikt over hva en gitt rolle faktisk gir tilgang til.  Derfor tilbyr vi ikke innlogging på vegne av Altinn-roller i Ansattporten, tjenesten må spesifisere en lenketjeneste. 
-
-
-*Eksempel på request med 2 autorisasjonsobjekter*: 
-```
-  authorization_details= [
-    {
-      "type": "ansattporten:altinn:service",
-      "resource": "urn:altinn:resource:2480:40"
-    },
-    {
-      "type": "ansattporten:altinn:service",
-      "resource": "urn:altinn:resource:5900:1",
-      "allow_multiple_organizations": true
-    }
-  ]
-```
-
-Datamodellen for respons inneholder alltid claimet "type" som i request, men om bruker har valgt å representere en virksomhet, vil det i tillegg utleveres:
-
-| claim | beskrivelse            |
-| ----- | ---------------------- |
-| resource | Samme som i request |
-| resource_name | Navn på etterspurt representasjonsforhold |
-| reportees | Array med valgte virksomheter. |
-| Rights | For hver virksomhet, et array med rettigheter som innlogget bruker har for aktuell tjenestekode.  |
-| Name | For hver virksomhet, navnet på valgt virksomhet|
-
-*Eksempel på respons*:
-```
-  "authorization_details" : [ {
-    "resource" : "urn:altinn:resource:2480:40",
-    "type" : "ansattporten:altinn:service",
-    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
-    "reportees" : [ 
-      {
-        "Authority" : "iso6523-actorid-upis",
-        "ID" : "0192:987464291",
-        "Name" : "DIGITALISERINGSDIREKTORATET AVD LEIKANGER"
-        "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
-      } ]
-  } ]
-```
-
-### Testbrukere
-
-Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/). Her kan man også studere protokoll-flyten i detalj. Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:service","resource": "urn:altinn:resource:2480:40"}]` i authorization_details-feltet (denne tjenestekoden gir ut nøkkelroller).
-
-Velg TestID til autentisering, og bruk gjerne "Hent tilfeldig Daglig leder" om du ikke allerede har en syntetisk bruker du vil teste med.
-
-> **MERK:** Dersom testbrukeren ikke finnes fra før i Altinn sitt testmiljø (typisk for syntetiske fødselsnummer), vil ikke organisasjonsvelger fungere. Dette løses enkelt ved å logge inn i [TT02](https://info.tt02.altinn.no) en gang med det syntetiske fødselsnummeret.
-
