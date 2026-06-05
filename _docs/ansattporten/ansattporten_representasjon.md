@@ -12,7 +12,7 @@ Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget 
 Ansattporten kan bruke to ulike autoritative kilder, avhengig av hvilken autentiseringsmetode som er brukt. 
 For autentisering med:
 - pid, så bruker Ansattporten Altinn Autorisasjon som autoritativ kilde. Her vil token berikes med informasjon om organisasjon som har gitt bruker lov til å representere gitt organisasjon med forespurt rettighet. 
-- epost, så bruker Ansattporten [virksomhetsbroen](ansattporten_virksomhetsbroen.html)
+- e-post/jobbkonto, så bruker Ansattporten [Virksomhetsbroen](ansattporten_virksomhetsbroen.html)
 
 
 Du finner mer overordnet informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
@@ -25,7 +25,7 @@ På denne siden beskriver vi hvordan en tjeneste kan la brukerne velge hvilken v
 
 Ved representasjon er brukerreisen følgende:
 
-1. Bruker klikker login-knapp hos tjeneste. Tjenesten ber om en type representasjon.
+1. Bruker klikker innloggingsknappen hos tjenesten. Tjenesten ber om en type representasjon.
 2. Bruker autentiserer seg med eID gjennom Ansattporten.
 3. Bruker velger hvilken virksomhet hen vil representere.
 4. Bruker blir sendt tilbake til tjenesten.
@@ -34,7 +34,7 @@ I steg 3. viser Ansattporten en organisasjonsvelger etter autentisering, der slu
 
 ![organisasjonsvelger](/images/ansattporten/ansattporten_orgvelger2.png)
 
-Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sendt tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)
+Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sendt tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-3-ressurser-ansattportenaltinnresource)
 
 # Protokoll-flyt
 
@@ -52,8 +52,10 @@ B->>C: Klikker "login" på tjeneste
 C-->>A: /authorize med <br/>representasjonstype (redirect)
 note over A: sluttbruker autentiserer seg
 A->>+S: Har sluttbruker <br/>forespurt representasjonstype(r) ?
+A->>+S: Sjekk PDP <br/>for tilgangslister/Actions når relevant (og begrensa antal representasjoner)?
 S->>-A: Liste med virksomheter
 note over A: sluttbruker velger en virksomhet
+A->>+S: Sjekk PDP <br/>for tilgangslister/Actions for valgt virksomhet <br/> når relevant (og stort antal representasjoner)?
 A-->>C: redirect med code
 C->>+A: /token
 A->>-C: id_token
@@ -61,9 +63,9 @@ note over B,C: innlogget på vegne av valgt virksomhet
 
 </div>
 
-Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.  En oversikt over [støttede RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
+Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens. En oversikt over [støttede RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
 
-Klienten må inkludere claimet `authorization_details` i autorisasjonsforespørselen for å trigge representasjonspålogging.  Et eksempel er vist her:
+Klienten må inkludere claimen `authorization_details` i autorisasjonsforespørselen for å trigge representasjonspålogging. Et eksempel er vist her:
 
 ```
 https://login.test.ansattporten.no/authorize?
@@ -72,52 +74,37 @@ https://login.test.ansattporten.no/authorize?
 ... 
   authorization_details= [
     {
-      "type": "ansattporten:altinn:service",
-      "resource": "urn:altinn:resource:2480:40"
+      "type": "ansattporten:altinn:resource",
+      "resource": "urn:altinn:resource:resource_enkeltrettighet"
     }
   ]
 ```
 (merk at eksempelet er forenklet)
 
-`authorization_details`-arrayet inneholder et JSON-objekt der claimet `type` forteller hvilken autoritativ kilde som tjenesten ønsker å benytte. Ulike `type` vil ha egne datamodeller for hvilke andre claims som inngår i request og respons.  Datamodellene er beskrevet [her](ansattporten_rar.html).
+`authorization_details`-arrayet inneholder et JSON-objekt der claimet `type` forteller hvilken autoritativ kilde tjenesten ønsker å benytte. Ulike `type`-verdier har egne datamodeller for hvilke andre claims som inngår i request og respons. Datamodellene er beskrevet [her](ansattporten_rar.html).
 
 
-Når brukeren blir redirectet tilbake til klient, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokale brukersesjon i egen tjeneste.
+Når brukeren blir sendt tilbake til klienten, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokale brukersesjon i tjenesten.
 
-Klienten finner opplysninger om valgt representasjonsforhold i claimet `authorization_details`. Claimet er både returnert direkte som del av selve token-responsen, men er også inkludert i selve id_tokenet, for fleksibilitet.
+Klienten finner opplysninger om valgt representasjonsforhold i claimet `authorization_details`. Claimen er både returnert direkte som del av selve token-responsen, og inkludert i selve `id_token` for fleksibilitet.
 
 
-*Eksempel på token-response:*
+*Eksempel på token-respons:*
 ```
 200 OK
 
 {
   "id_token"      : "eyJraWQiO...",
-
-  "access_token"  : "eyJraWQiO..."
+  "access_token"  : "eyJraWQiO...",
   "token_type" : "Bearer",
-  "expires_in" : 600
-
+  "expires_in" : 600,
   "scope" : "openid profile",
-
-  "authorization_details" : [ {
-    "resource" : "urn:altinn:resource:2480:40",
-    "type" : "ansattporten:altinn:service",
-    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
-    "reportees" : [ {
-      "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
-      "Authority" : "iso6523-actorid-upis",
-      "ID" : "0192:987464291",
-      "Name" : "DIGITALISERINGSDIREKTORATET AVD LEIKANGER"
-    } ]
-  } ],
-
   "refresh_token" : "eyJlbmMiO...",
   "refresh_token_expires_in" : 7200,
 }
 ```
 
-*Eksempel på id_token med representasjons-informasjon*: 
+*Eksempel på `id_token` med representasjonsinformasjon:* 
 ```
 {
   "sub" : "z9RuQiLefXmJOBnywa_c75YQMH05nDsHjw0RFzuJC8M",
@@ -126,48 +113,55 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
   "pid" : "45840375084",
 ...
   "authorization_details" : [ {
-    "resource" : "urn:altinn:resource:2480:40",
-    "type" : "ansattporten:altinn:service",
-    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
-    "reportees" : [ {
-      "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
-      "Authority" : "iso6523-actorid-upis",
-      "ID" : "0192:987464291",
-      "Name" : "DIGITALISERINGSDIREKTORATET AVD LEIKANGER"
-    } ]
+    "authorized_parties" : [ {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:314758625"
+      },
+      "resource" : "resource_enkeltrettighet",
+      "actions" : [ "read" ],
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
+      "unit_type" : "BEDR"
+    } ],
+    "resource" : "urn:altinn:resource:resource_enkeltrettighet",
+    "type" : "ansattporten:altinn:resource",
+    "resource_name" : "Ressurs for enkeltrettigheter testing"
   } ]
 }
 
 ```
 
-Merk at bruken av `authorization_details` inne i et id_token ikke er beskrevet i RAR-spesifikasjonen. Klienten skal fortrinnsvis bruke token-responsen til å utlede hvilke rettigheter sluttbruker gav til klienten. Vi har valgt å inkludere det for enkelhets skyld.
+Merk at bruken av `authorization_details` inne i et `id_token` ikke er beskrevet i RAR-spesifikasjonen. Klienten skal fortrinnsvis bruke token-responsen til å utlede hvilke rettigheter sluttbruker ga til klienten. Vi har valgt å inkludere det av praktiske hensyn.
 
 
-*Eksempel på token-response dersom bruker har valgt å representere seg selv:*
+*Eksempel på `id_token` dersom bruker har valgt å representere seg selv:*
 ```
-200 OK
-
 {
-  "id_token"      : "eyJraWQiO...",
-
-  "access_token"  : "eyJraWQiO..."
-  "token_type" : "Bearer",
-  "expires_in" : 600
-
-  "scope" : "openid profile",
-
+  "sub" : "JuaqhiPbEGMDDYlFm8mnFwyAS3_BrALb7t8CESnOkkWfJ8FIb6cbqcrpGHGszXLjAOxq1kmPJ7S2ea_emZkwArKXXArirWOCwv7bVMa6mYQbNuI",
+  "amr" : [ "TestID" ],
+  "iss" : "https://test.ansattporten.no",
+  "pid" : "29894996704",
+  "locale" : "nb",
+  "given_name" : "SLITEN",
+  "nonce" : "sGrDliN-XbnyPzcGZpEAp0mT3RT042iTirXKSMDbSRU",
+  "sid" : "3nVkPuV6kFm7xHG_FLIJZB10TxX8_ampdM9au1qTFOY",
+  "aud" : "9a99e96d-b56c-4f74-a689-f936f71c8819",
+  "acr" : "high",
   "authorization_details" : [ {
-    "type" : "ansattporten:altinn:service"
+    "type" : "ansattporten:altinn:resource"
   } ],
-
-  "refresh_token" : "eyJlbmMiO...",
-  "refresh_token_expires_in" : 7200,
+  "auth_time" : 1780652764,
+  "name" : "SLITEN PUSEKATT",
+  "exp" : 1780654119,
+  "iat" : 1780653999,
+  "family_name" : "PUSEKATT",
+  "jti" : "A_Aw1-6fxeI"
 }
 ```
 
 ## Test
 
-Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.   Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:service","resource": "urn:altinn:resource:2480:40"}]` i authorization_details-feltet (denne tjenestekoden gir ut nøkkelroller).
+Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.   Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:resource","resource": "urn:altinn:resource:app_ttd_apps-test"}]` i authorization_details-feltet, og autentisere med syntetisk Daglig leder gjennom TestID.
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Tenor har mulighet til å filtrere slik at man får bare **daglig leder** fra test-Enhetsregisteret. En annen fordel med Tenor er at det kun er syntetiske testdata her, så man slipper å risikere å blande produksjons- og test-data.
 

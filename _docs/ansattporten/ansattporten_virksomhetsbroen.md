@@ -7,7 +7,7 @@ product: Ansattporten
 redirect_from: /ansattporten_virksomhetsbroen
 ---
 
-Virksomhetsbroen er grensesnittet hvor arbeidsgivere kan konfigurere hvilke brukere som kan representere virksomheten der EntraID benyttes til innlogging i Ansattporten.  Virksomhetsbroen skal legge til rette for beste praksis for rollebasert tilgangstyring (RBAC) på tvers av virksomheter ved at:
+Virksomhetsbroen er grensesnittet hvor arbeidsgivere kan konfigurere hvilke brukere som kan representere virksomheten der Entra ID benyttes til innlogging i Ansattporten. Virksomhetsbroen skal legge til rette for beste praksis for rollebasert tilgangsstyring (RBAC) på tvers av virksomheter ved at:
 -  tjenesteeiere slipper å opprette og forvalte gjestebrukere i egen IAM-løsning
 -  arbeidsgivere bruker sin lokale IAM til å administrere tilganger mot eksterne tjenester
 
@@ -18,7 +18,7 @@ Virksomhetsbroen er en av flere autoritative kilder for representasjon i Ansattp
 
 ## Funksjonell modell
 
-Virksomhetsbroen har en "additiv" modell for representasjon.  Arbeidsgiver legger inn en eller flere regler (filter) som gir tilganger for representasjon.  Reglene gir tilgang basert på ulike identifikator-typer som epost-domene, Entra-grupper eller individuelle epost-adresser, og tilgangene kan gis til alle tjenester, eller til utvalgte tjenester.
+Virksomhetsbroen har en "additiv" modell for representasjon. Arbeidsgiver legger inn en eller flere regler (filter) som gir tilganger for representasjon. Reglene gir tilgang basert på ulike identifikatortyper som e-postdomene, Entra-grupper eller individuelle e-postadresser, og tilgangene kan gis til alle tjenester eller til utvalgte tjenester.
 
 Det er viktig å være klar over at dersom en bruker har fått en tilgang gjennom en spesifikk regel, vil ikke andre regler kunne hindre tilgang.
 
