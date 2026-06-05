@@ -12,7 +12,7 @@ Ansattporten tilbyr *beriket* autentisering, altså at informasjon om innlogget 
 Ansattporten kan bruke to ulike autoritative kilder, avhengig av hvilken autentiseringsmetode som er brukt. 
 For autentisering med:
 - pid, så bruker Ansattporten Altinn Autorisasjon som autoritativ kilde. Her vil token berikes med informasjon om organisasjon som har gitt bruker lov til å representere gitt organisasjon med forespurt rettighet. 
-- epost, så bruker Ansattporten [virksomhetsbroen](ansattporten_virksomhetsbroen.html)
+- e-post/jobbkonto, så bruker Ansattporten [Virksomhetsbroen](ansattporten_virksomhetsbroen.html)
 
 
 Du finner mer overordnet informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
@@ -25,7 +25,7 @@ På denne siden beskriver vi hvordan en tjeneste kan la brukerne velge hvilken v
 
 Ved representasjon er brukerreisen følgende:
 
-1. Bruker klikker login-knapp hos tjeneste. Tjenesten ber om en type representasjon.
+1. Bruker klikker innloggingsknappen hos tjenesten. Tjenesten ber om en type representasjon.
 2. Bruker autentiserer seg med eID gjennom Ansattporten.
 3. Bruker velger hvilken virksomhet hen vil representere.
 4. Bruker blir sendt tilbake til tjenesten.
@@ -63,9 +63,9 @@ note over B,C: innlogget på vegne av valgt virksomhet
 
 </div>
 
-Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens.  En oversikt over [støttede RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
+Ansattporten bruker standarden [Rich Authorization Requests (RAR)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar) til å strukturere informasjon om representasjonsforhold, både i forespørsler og tokens. En oversikt over [støttede RAR-typer i Ansattporten finner du her](ansattporten_rar.html)
 
-Klienten må inkludere claimet `authorization_details` i autorisasjonsforespørselen for å trigge representasjonspålogging.  Et eksempel er vist her:
+Klienten må inkludere claimen `authorization_details` i autorisasjonsforespørselen for å trigge representasjonspålogging. Et eksempel er vist her:
 
 ```
 https://login.test.ansattporten.no/authorize?
@@ -81,15 +81,15 @@ https://login.test.ansattporten.no/authorize?
 ```
 (merk at eksempelet er forenklet)
 
-`authorization_details`-arrayet inneholder et JSON-objekt der claimet `type` forteller hvilken autoritativ kilde som tjenesten ønsker å benytte. Ulike `type` vil ha egne datamodeller for hvilke andre claims som inngår i request og respons.  Datamodellene er beskrevet [her](ansattporten_rar.html).
+`authorization_details`-arrayet inneholder et JSON-objekt der claimet `type` forteller hvilken autoritativ kilde tjenesten ønsker å benytte. Ulike `type`-verdier har egne datamodeller for hvilke andre claims som inngår i request og respons. Datamodellene er beskrevet [her](ansattporten_rar.html).
 
 
-Når brukeren blir redirectet tilbake til klient, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokale brukersesjon i egen tjeneste.
+Når brukeren blir sendt tilbake til klienten, [henter klienten tokens på vanlig måte](../../docs/idporten/oidc/oidc_protocol_token.html), og bruker dette til å opprette sin egen, lokale brukersesjon i tjenesten.
 
-Klienten finner opplysninger om valgt representasjonsforhold i claimet `authorization_details`. Claimet er både returnert direkte som del av selve token-responsen, men er også inkludert i selve id_tokenet, for fleksibilitet.
+Klienten finner opplysninger om valgt representasjonsforhold i claimet `authorization_details`. Claimen er både returnert direkte som del av selve token-responsen, og inkludert i selve `id_token` for fleksibilitet.
 
 
-*Eksempel på token-response:*
+*Eksempel på token-respons:*
 ```
 200 OK
 
@@ -104,7 +104,7 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
 }
 ```
 
-*Eksempel på id_token med representasjons-informasjon*: 
+*Eksempel på `id_token` med representasjonsinformasjon:* 
 ```
 {
   "sub" : "z9RuQiLefXmJOBnywa_c75YQMH05nDsHjw0RFzuJC8M",
@@ -131,15 +131,12 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
 
 ```
 
-Merk at bruken av `authorization_details` inne i et id_token ikke er beskrevet i RAR-spesifikasjonen. Klienten skal fortrinnsvis bruke token-responsen til å utlede hvilke rettigheter sluttbruker gav til klienten. Vi har valgt å inkludere det for enkelhets skyld.
+Merk at bruken av `authorization_details` inne i et `id_token` ikke er beskrevet i RAR-spesifikasjonen. Klienten skal fortrinnsvis bruke token-responsen til å utlede hvilke rettigheter sluttbruker ga til klienten. Vi har valgt å inkludere det av praktiske hensyn.
 
 
-*Eksempel på id-token dersom bruker har valgt å representere seg selv:*
+*Eksempel på `id_token` dersom bruker har valgt å representere seg selv:*
 ```
-200 OK
-
 {
-  {
   "sub" : "JuaqhiPbEGMDDYlFm8mnFwyAS3_BrALb7t8CESnOkkWfJ8FIb6cbqcrpGHGszXLjAOxq1kmPJ7S2ea_emZkwArKXXArirWOCwv7bVMa6mYQbNuI",
   "amr" : [ "TestID" ],
   "iss" : "https://test.ansattporten.no",
@@ -159,7 +156,6 @@ Merk at bruken av `authorization_details` inne i et id_token ikke er beskrevet i
   "iat" : 1780653999,
   "family_name" : "PUSEKATT",
   "jti" : "A_Aw1-6fxeI"
-}
 }
 ```
 

@@ -36,7 +36,7 @@ Dersom brukeren gjennomfører en Entra ID-innlogging, vil id_tokenet som utlever
 | ----- | ---------------------- |
 | acr    | Alltid `entraid` |
 | amr    | Hvilke autentiseringsfaktorer som sluttbruker benyttet. Ansattporten returnerer [acr-verdiene den får fra Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference#amr-claim), prefixet med `entraid`. Eksempel på 2-faktor-autentisering: `["entraid_pwd", "entraid_mfa"]`|
-| email  | Epost-adressen til autentisert bruker |
+| email  | E-postadressen til autentisert bruker |
 | family_name | Etternavnet til brukeren slik det er registrert i Entra-tenanten. Utleveres bare med "profile" scope.|
 | given_name | Fornavnet til brukeren slik det er registrert i Entra-tenanten. Utleveres bare med "profile" scope. |
 | groups | en array med de 20 første AD-gruppene som autentisert bruker inngår i. |  

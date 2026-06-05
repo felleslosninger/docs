@@ -9,21 +9,21 @@ redirect_from: /ansattporten_guide
 
 Ansattporten er en egen innloggingtjeneste med funksjonalitet som skiller seg noe fra ID-porten, slik at den skal være mer hensiktmessig å bruke i ansattkontekst eller i andre situasjoner der det er ønskelig å opptre i et representasjonsforhold på vegne av andre virksomheter eller personer.
 
-Du finner mer overordned informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
+Du finner mer overordnet informasjon om Ansattporten ved å klikke [her](ansattporten_om.html)
 
 # Beskrivelse av bruksscenarioet
 
-På denne siden beskriver vi hvordan du setter opp en tjeneste som bruker Ansattporten til punkt-autentisering.   Dersom du heller vil lese om hvordan tjenesten din kan kreve innlogging på vegne av en virksomhet, må du klikke [her](ansattporten_representasjon.html). 
+På denne siden beskriver vi hvordan du setter opp en tjeneste som bruker Ansattporten til punktinnlogging. Dersom du heller vil lese om hvordan tjenesten din kan kreve innlogging på vegne av en virksomhet, må du klikke [her](ansattporten_representasjon.html). 
 
 # Brukerreise
 
-Punkt-autentisering er den enkleste brukerreisen.  I dette scenariet utfører brukeren en innlogging til en tjeneste, og får etablert en isolert SSO-sesjon kun til denne tjenesten:
+Punktinnlogging er den enkleste brukerreisen. I dette scenariet utfører brukeren en innlogging til en tjeneste, og får etablert en isolert SSO-sesjon kun til denne tjenesten:
 
-1. Bruker klikker login-knapp hos tjeneste.  
+1. Bruker klikker innloggingsknappen hos tjenesten.  
 2. Bruker autentiserer seg med eID gjennom Ansattporten.
 3. Bruker blir sendt tilbake til tjenesten.
 
-Ulikt ID-porten så vil ikke brukeren få opprettet en felles SSO-sesjon i Ansattporten.  Dersom brukeren forsøker å logge på en annen tjeneste rett etterpå, med samme browser, så må brukeren autentisere seg på nytt.  Men dersom brukeren forsøker å logge på samme tjeneste på nytt, så vil vil hen bli logga inn automatisk.
+Ulikt ID-porten vil ikke brukeren få opprettet en felles SSO-sesjon i Ansattporten. Dersom brukeren forsøker å logge på en annen tjeneste rett etterpå, med samme nettleser, må brukeren autentisere seg på nytt. Men dersom brukeren forsøker å logge på samme tjeneste på nytt, vil hen bli logget inn automatisk.
 
 # Protokoll-flyt
 
@@ -67,4 +67,4 @@ Dette betyr også at kunder må støtte utlogging både fra egen tjeneste, men o
 
 # Utlogging
 
-Selv om Ansattporten ikke har SSO på tvers av tjenester, bør likevel tjenesten din kunne håndtere [utlogging på samme måten som ID-porten](../../docs/idporten/oidc/oidc_protocol_logout.html).  Dvs. både tilby brukeren å kunne logge ut, samt å måtte håndtere utloggingsforsepørsler  initiert fra andre tjenester i Ansattporten (front_channel_logout).
+Selv om Ansattporten ikke har SSO på tvers av tjenester, bør likevel tjenesten din kunne håndtere [utlogging på samme måten som ID-porten](../../docs/idporten/oidc/oidc_protocol_logout.html). Dvs. både tilby brukeren å kunne logge ut, samt håndtere utloggingsforespørsler initiert fra andre tjenester i Ansattporten (`front_channel_logout`).

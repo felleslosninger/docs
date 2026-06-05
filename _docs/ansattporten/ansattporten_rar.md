@@ -38,7 +38,7 @@ Følgende RAR-typer er støttet i Ansattporten:
 | RAR-type | Beskrivelse | ACR |
 |-|-|-|
 | `ansattporten:altinn:resource` |Støtter bruk av Altinn 3-ressurser som autoritativ kilde for representasjon. Bruker må ha fått tildelt tilgang til enkelttjeneste i Altinn, enten direkte eller gjennom rolle/tilgangspakke | Substantial,High |
-| `ansattporten:orgno` | Gir organisasjonsnummerkobling for bruker logget inn med sin jobbkonto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) | Entraid |
+| `ansattporten:orgno` | Gir organisasjonsnummerkobling for bruker logget inn med sin jobbkonto, typisk en Microsoft-konto (Entra ID). [Se backlog-sak](https://github.com/orgs/digdir/projects/8/views/38?pane=issue&itemId=87373562&issue=digdir%7Croadmap%7C438) | `entraid` |
 
 
 ## Datamodell for Altinn 3 ressurser (`ansattporten:altinn:resource`)
@@ -134,11 +134,11 @@ Velg TestID til autentisering, og bruk gjerne "Hent tilfeldig Daglig leder" om d
 
 > **ansattporten:orgno er i pilotfase** og er pr. nå bare tilgjengelig i test.
 
-Basert på epost-domenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden i test er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med registrert organisasjonsnummer. 
+Basert på e-postdomenet til innlogget bruker, vil Ansattporten utlevere organisasjonsnummeret til eier av domenet. Datakilden i test er p.t. Digdir sin kundedatabase, dvs. alle virksomheter som har inngått Digdirs bruksvilkår vil bli beriket med registrert organisasjonsnummer. 
 
-Arbeidsgivers pålogging er som oftest basert på epost-adresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
+Arbeidsgivers pålogging er som oftest basert på e-postadresse som identifikator, som oftest er dette [Microsoft-konto (Entra ID)](ansattporten_entraid.html).
 
-Dersom sluttbruker har valgt en eID som ikke har epost som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres et tomt RAR-element. 
+Dersom sluttbruker har valgt en eID som ikke har e-post som identifikator, vil ikke denne RAR-typen kunne virke, og det vil utleveres et tomt RAR-element. 
 
 Følgende claims kan sendes inn i request i tillegg til `type`: 
 

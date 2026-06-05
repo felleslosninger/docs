@@ -58,7 +58,7 @@ Ansattporten kan brukes enten til ordinær punktinnlogging, eller til å kreve a
 
 Dersom tjenesten krever representasjon, vil Ansattporten vise en organisasjonsvelger til brukeren, som er forhåndspopulert basert på den autoritative kilden.
 
-Ansattporten støtter flere autoritative kilder for representasjon, avhengig av innloggingsmetode og bruksscenario. For innlogging med fødselsnummer (`pid`) brukes Altinn Autorisasjon. For innlogging med epost/jobbkonto kan Ansattporten bruke Virksomhetsbroen. Støtten for Entra ID og Virksomhetsbroen er i pilot.
+Ansattporten støtter flere autoritative kilder for representasjon, avhengig av innloggingsmetode og bruksscenario. For innlogging med fødselsnummer (`pid`) brukes Altinn Autorisasjon. For innlogging med e-post/jobbkonto kan Ansattporten bruke Virksomhetsbroen. Støtten for Entra ID og Virksomhetsbroen er i pilot.
 
 Ansattporten angir bare at bruker har rett til å representere gitt organisasjon med forespurt rettighet. Den utfører **ikke** tilgangskontroll for tjenesten/klienten.
 
