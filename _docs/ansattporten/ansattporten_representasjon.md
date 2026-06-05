@@ -52,8 +52,10 @@ B->>C: Klikker "login" på tjeneste
 C-->>A: /authorize med <br/>representasjonstype (redirect)
 note over A: sluttbruker autentiserer seg
 A->>+S: Har sluttbruker <br/>forespurt representasjonstype(r) ?
+A->>+S: Sjekk PDP <br/>for tilgangslister/Actions når relevant (og begrensa antal representasjoner)?
 S->>-A: Liste med virksomheter
 note over A: sluttbruker velger en virksomhet
+A->>+S: Sjekk PDP <br/>for tilgangslister/Actions for valgt virksomhet <br/> når relevant (og stort antal representasjoner)?
 A-->>C: redirect med code
 C->>+A: /token
 A->>-C: id_token
