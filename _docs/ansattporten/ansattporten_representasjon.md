@@ -34,7 +34,7 @@ I steg 3. viser Ansattporten en organisasjonsvelger etter autentisering, der slu
 
 ![organisasjonsvelger](/images/ansattporten/ansattporten_orgvelger2.png)
 
-Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sendt tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-2-lenketjenester-ansattportenaltinnservice)
+Dersom bruker ikke har forespurt representasjonstype vil hen i steg 3 automatisk bli sendt tilbake som seg selv. (Med mindre representation_is_required er satt til true - da vil det vises en feilmelding om at bruker ikke har forespurt representasjonstype). Mer detaljer om representation_is_required finner du i [Oversikt over støttede claims](ansattporten_rar.html#datamodell-for-altinn-3-ressurser-ansattportenaltinnresource)
 
 # Protokoll-flyt
 
@@ -72,8 +72,10 @@ https://login.test.ansattporten.no/authorize?
 ... 
   authorization_details= [
     {
-      "type": "ansattporten:altinn:service",
-      "resource": "urn:altinn:resource:2480:40"
+      "type": "ansattporten:altinn:resource",
+      "resource": "urn:altinn:resource:resource_enkeltrettighet",
+      "actions": "read",
+      "representation_is_required": true
     }
   ]
 ```
@@ -101,15 +103,19 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
   "scope" : "openid profile",
 
   "authorization_details" : [ {
-    "resource" : "urn:altinn:resource:2480:40",
-    "type" : "ansattporten:altinn:service",
-    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
-    "reportees" : [ {
-      "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
-      "Authority" : "iso6523-actorid-upis",
-      "ID" : "0192:987464291",
-      "Name" : "DIGITALISERINGSDIREKTORATET AVD LEIKANGER"
-    } ]
+    "authorized_parties" : [ {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:314758625"
+      },
+      "resource" : "resource_enkeltrettighet",
+      "actions" : [ "read" ],
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
+      "unit_type" : "BEDR"
+    } ],
+    "resource" : "urn:altinn:resource:resource_enkeltrettighet",
+    "type" : "ansattporten:altinn:resource",
+    "resource_name" : "Ressurs for enkeltrettigheter testing"
   } ],
 
   "refresh_token" : "eyJlbmMiO...",
@@ -126,15 +132,19 @@ Klienten finner opplysninger om valgt representasjonsforhold i claimet `authoriz
   "pid" : "45840375084",
 ...
   "authorization_details" : [ {
-    "resource" : "urn:altinn:resource:2480:40",
-    "type" : "ansattporten:altinn:service",
-    "resource_name" : "Produkter og tjenester fra Brønnøysundregistrene",
-    "reportees" : [ {
-      "Rights" : [ "Read", "ArchiveDelete", "ArchiveRead" ],
-      "Authority" : "iso6523-actorid-upis",
-      "ID" : "0192:987464291",
-      "Name" : "DIGITALISERINGSDIREKTORATET AVD LEIKANGER"
-    } ]
+    "authorized_parties" : [ {
+      "orgno" : {
+        "authority" : "iso6523-actorid-upis",
+        "ID" : "0192:314758625"
+      },
+      "resource" : "resource_enkeltrettighet",
+      "actions" : [ "read" ],
+      "name" : "UGJENNOMSIKTIG MINIMALISTISK APE",
+      "unit_type" : "BEDR"
+    } ],
+    "resource" : "urn:altinn:resource:resource_enkeltrettighet",
+    "type" : "ansattporten:altinn:resource",
+    "resource_name" : "Ressurs for enkeltrettigheter testing"
   } ]
 }
 
@@ -157,7 +167,7 @@ Merk at bruken av `authorization_details` inne i et id_token ikke er beskrevet i
   "scope" : "openid profile",
 
   "authorization_details" : [ {
-    "type" : "ansattporten:altinn:service"
+    "type" : "ansattporten:altinn:resource"
   } ],
 
   "refresh_token" : "eyJlbmMiO...",
@@ -167,7 +177,7 @@ Merk at bruken av `authorization_details` inne i et id_token ikke er beskrevet i
 
 ## Test
 
-Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.   Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:service","resource": "urn:altinn:resource:2480:40"}]` i authorization_details-feltet (denne tjenestekoden gir ut nøkkelroller).
+Man kan teste løsningen uten å lage en integrasjon ved å bruke vår demo-tjeneste [https://demo-client.test.ansattporten.no/](https://demo-client.test.ansattporten.no/).  Her kan man også studere protokoll-flyten i detalj.   Dersom man ønsker å teste organisasjonsvelger, så kan man bruke `[{"type":"ansattporten:altinn:resource","resource": "urn:altinn:resource:app_ttd_apps-test"}]` i authorization_details-feltet.
 
 Vi anbefaler å bruke [Tenor testdata-søk](https://www.skatteetaten.no/skjema/testdata/) til å finne test-brukere. Tenor har mulighet til å filtrere slik at man får bare **daglig leder** fra test-Enhetsregisteret. En annen fordel med Tenor er at det kun er syntetiske testdata her, så man slipper å risikere å blande produksjons- og test-data.
 
