@@ -18,6 +18,17 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.7
+
+dato
+
+- Fallback verdier
+  - DPV: Fallback til "Tittel" i journalpost når "OffentligTittel" mangler.
+  - Digital DPV: Fallback til "Ingen innhold" i digital dpv meldinger når "Innhold" mangler.
+- Rettet OutOfMemoryError ved store meldinger (use-db-persistence=true) 
+  - Meldingsinnhold strømmes nå via midlertidige filer på disk i stedet for å holdes i minnet.
+  - De midlertidige filene lagres i temp-mappem om ikke annet er konfigurert i `difi.move.nextmove.blob-cache-dir.
+
 ## 4.0.6
 
 21.05.2026
