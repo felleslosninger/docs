@@ -347,7 +347,7 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 }
 ```
 
-> **Merk:** Scopene `ConversationId` og `ParentId` brukes til å refere til eni samtale. ConversationId skal referere til første melding i dialogen. ParentId skal referere til førre melding i dialogen.   
+> **Merk:** Scopene `ConversationId` og `ParentId` brukes til å refere til ein samtale. ConversationId skal referere til første melding i dialogen. ParentId skal referere til førre melding i dialogen.   
 
 ## Sjå òg
 
