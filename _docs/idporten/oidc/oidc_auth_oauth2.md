@@ -103,11 +103,11 @@ Forskjellen på *autentisering* (OpenIDConnect) og *autorisasjon* med "plain" Oa
 
 For nærmere detaljer om innholdet i access_token, se [grensesnittsdefinisjon av access tokens]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_access_token).   Se også [dokumentasjon av scopes](https://docs.digdir.no/docs/idporten/oidc/oidc_protocol_scope).
 
-Merk tilslutt at en enkelt bruker bare kan ha en autorisasjon mot samme klient i gangen.  Dersom klienten har en gyldig autorisasjon med gitte scopes, og så utfører en ny autorisasjon med andre scopes, så vil nye access_token bare innehold scopene fra den nyeste autorisasjonen.  ID-porten "husker" altså ikke samtykkede scopes over flere autorisasjoner.
 
-## Forhold til SSO-sesjon 
+## Levetider og forhold til SSO-sesjon 
 
 Det er viktig å være klar over at access_token+refresh_token er **uavhengig** av innlogginga og tilhørende SSO-sesjon i ID-porten.  Selv om brukeren gjennomfører en utlogging, eller sso-sesjonen timer ut, så vil normalt autorisasjonen med tilhørende access_token og refresh_token være gyldige fram til deres levetider utløper.
 
 Klienten må eksplisitt [revokere en autorisasjon]({{site.baseurl}}/docs/idporten/oidc/oidc_protocol_revoke.html) dersom den vil invalidere disse tokenene.
 
+Merk tilslutt at en enkelt bruker bare kan ha en autorisasjon mot samme klient i gangen.  Dersom klienten har en gyldig autorisasjon med gitte scopes, og så utfører en ny autorisasjon med andre scopes, så vil nye access_token bare innehold scopene fra den nyeste autorisasjonen.  ID-porten "husker" altså ikke samtykkede scopes over flere autorisasjoner,  men dette vil trolig endres i 2026, se [roadmap #264](https://github.com/orgs/digdir/projects/8/views/3?pane=issue&itemId=39922581&issue=digdir%7Croadmap%7C264&reload=1)
