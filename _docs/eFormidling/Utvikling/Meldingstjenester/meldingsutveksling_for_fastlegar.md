@@ -75,7 +75,7 @@ difi.move.feature.enable-beta-features=true
 ### Liste av HER-ider som det skal sendes og motta meldinger for
 
 Integrasjonspunktet kan representere éi eller fleire organisasjonar. 
-Kvar organisasjon må ha delegert rettighet til organisajonsnummeret som IP kjører med på førehand.
+Kvar organisasjon må ha delegert rettighet til organisasjonsnummeret som IP kjører med på førehand.
 Alle HER-ider som skal sende eller motta meldinger i Integrasjonspunktet, må være registrert i Adresseregisteret under en av disse organisasjonene.
 Man må liste opp alle HER-ider som man skal sende eller motta meldinger for. 
 Disse HER-idene må være på det laveste nivået, slik at de ikke har noen under seg i AR. 
@@ -215,7 +215,7 @@ Eksempel:
 | `receiver.identifier.value`                  | **Fødselsnummer til pasienten** (11 siffer), prefiked med `fastlege-for:`. Eksempel: `fastlege-for:30878199614`. Integrasjonspunktet slår opp fastlegen i FLR.                   |
 | `businessScope.scope[].identifier`           | Prosess: `urn:no:difi:profile:helse:helse:ver1.0`                                                                                                                                |
 
-> **Merk:** Scopet `ConversationId` skal referere til første melding i en dialog. Siden dette er den første meldingen, så settes den lik dokumentIden autimatisk.   
+> **Merk:** Scopet `ConversationId` skal referere til første melding i en dialog. Siden dette er den første meldingen, så settes den lik dokumentIden automatisk.   
 
 ### Eksempel 2: Sending til HER-id (direkte til helsepersonell) - Første melding i en dialog
 
@@ -346,7 +346,7 @@ Eksempel SBD for sending av helsemelding direkte til eit HER-id:
 }
 ```
 
-> **Merk:** Scopene `ConversationId` og `ParenId` brukes til å refere til en samtale. ConversationId skal referere til første melding i dialogen. ParentId skal referere til forrige melding i dialogen.   
+> **Merk:** Scopene `ConversationId` og `ParentId` brukes til å refere til en samtale. ConversationId skal referere til første melding i dialogen. ParentId skal referere til forrige melding i dialogen.   
 
 ## Sjå òg
 
