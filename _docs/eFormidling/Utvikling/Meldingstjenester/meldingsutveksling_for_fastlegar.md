@@ -75,7 +75,7 @@ difi.move.feature.enable-beta-features=true
 ### Liste av HER-id-ar som det skal sendast og takast imot meldingar for
 
 Integrasjonspunktet kan representere éi eller fleire organisasjonar. 
-Kvar organisasjon må ha delegert rettighet til organisasjonsnummeret som IP kjører med på førehand.
+Kvar organisasjon må ha delegert rettigheit til organisasjonsnummeret som IP køyrer med på førehand.
 Alle HER-id-ar som skal sende eller ta imot meldingar i integrasjonspunktet, må vere registrerte i Adresseregisteret under ein av desse organisasjonane.
 Ein må liste opp alle HER-id-ar som du skal sende eller ta imot meldingar for. 
 Desse HER-id-ane må vere på det lågaste nivået, slik at dei ikkje har nokon under seg i AR.
@@ -194,7 +194,7 @@ Eksempel SBD for sending av helsemelding til fastlege via pasientens fødselsnum
 }
 ```
 
-Filen dialogmelding.xml skal inneholde ei [Dialogmelding v1.1](https://www.helsedirektoratet.no/standarder/dialogmelding-v1.1).
+Fila dialogmelding.xml skal inneholde ei [Dialogmelding v1.1](https://www.helsedirektoratet.no/standarder/dialogmelding-v1.1).
 
 Eksempel:
 
@@ -213,7 +213,7 @@ Eksempel:
 | Felt                                         | Beskrivelse                                                                                                                                                                      |
 | -------------------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `sender.identifier.value`                    | HER-iden til avsendaren, prefiks med `her-id:`. Eksempel: `her-id:8144717`                                                                        |
-| `receiver.identifier.value`                  | **Fødselsnummer til pasienten** (11 siffer), prefiked med `fastlege-for:`. Eksempel: `fastlege-for:30878199614`. Integrasjonspunktet slår opp fastlegen i FLR.                   |
+| `receiver.identifier.value`                  | **Fødselsnummer til pasienten** (11 siffer), med prefiks `fastlege-for:`. Eksempel: `fastlege-for:30878199614`. Integrasjonspunktet slår opp fastlegen i FLR.                   |
 | `businessScope.scope[].identifier`           | Prosess: `urn:no:difi:profile:helse:helse:ver1.0`                                                                                                                                |
 
 > **Merk:** Scopet `ConversationId` skal vise til første melding i ein dialog. Sidan dette er den første meldinga, vert han sett lik dokument-ID-en automatisk.  
@@ -347,7 +347,7 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 }
 ```
 
-> **Merk:** Scopene `ConversationId` og `ParentId` brukes til å refere til ein samtale. ConversationId skal referere til første melding i dialogen. ParentId skal referere til førre melding i dialogen.   
+> **Merk:** Scopene `ConversationId` og `ParentId` vert brukte til å vise til ein samtale. ConversationId skal referere til første melding i dialogen. ParentId skal referere til førre melding i dialogen.   
 
 ## Sjå òg
 
