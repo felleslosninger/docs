@@ -41,6 +41,7 @@ Testmiljøet bruker **[TENOR](https://www.skatteetaten.no/testdata/)** for å si
 3. **Noter ned** fødselsnummer og organisasjonsnummer til testbrukeren og virksomheten du får opp – dette blir din faste testbruker og testvirksomhet i eInnsyn KT-miljøet fremover
 4. Velg virksomheten og gå til **API-nøkler**
 5. Klikk **Generer ny nøkkel** og kopier nøkkelen – den vises bare én gang
+6. Send organisasjonsnummer og navn på virksomheten til servicedesk@digdir.no og be om virksomheten opprettes på test.einnsyn.no
 
 ---
 
