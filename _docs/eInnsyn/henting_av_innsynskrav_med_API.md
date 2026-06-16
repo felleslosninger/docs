@@ -6,7 +6,7 @@ sidebar: einnsyn_sidebar
 redirect_from: /henting_av_innsynskrav_api
 ---
  
-# Henting av innsynskrav via API
+# eInnsyn API - hvordan hente innsynskrav?
  
 Denne guiden beskriver hvordan offentlige virksomheter kan hente innsynskrav (FOI-forespørsler) som er rettet mot dem, via eInnsyn REST API. Dette er relevant for virksomheter som ønsker å integrere mottaket av innsynskrav direkte i sitt saksbehandlingssystem, fremfor å bruke e-postvarsler.
  
@@ -35,7 +35,7 @@ InnsynskravBestilling (ik_...)
  
 ## Autentisering
  
-Innsynskrav-endepunktene er **ikke offentlig tilgjengelige**. For å hente innsynskrav rettet mot din virksomhet trenger du en **API-nøkkel** knyttet til din Enhet.
+Innsynskrav-endepunktene er **ikke offentlig tilgjengelige**. For å hente innsynskrav rettet mot din virksomhet trenger du en **API-nøkkel** knyttet til din Enhet. API-nøkler opprettes du (slik.)[https://docs.digdir.no/docs/eInnsyn/publisering_med_api.html#steg-1--generer-api-n%C3%B8kkel]
  
 Send nøkkelen i `API-KEY`-headeren på alle kall:
  
@@ -45,8 +45,6 @@ API-KEY: <din-nøkkel>
  
 > **Merk:** Ikke bruk `Bearer`-prefix – send nøkkelverdien direkte.
  
-API-nøkler utstedes av eInnsyn. Ta kontakt med ServiceDesk for å få utstedt nøkkel:
-[servicedesk@digdir.no](mailto:servicedesk@digdir.no)
  
 Bruk `GET /me` for å verifisere at nøkkelen fungerer og hvilken Enhet den er knyttet til:
  
