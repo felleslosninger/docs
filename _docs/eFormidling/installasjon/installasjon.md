@@ -29,13 +29,15 @@ eller andre. Et par eksempler:
 - [Eksempel på konfigurasjon med Kubernetes](Eksempel/installasjon_aks#7-integrasjonspunktet)
 - [Eksempel på konfigurasjon med docker-compose](https://github.com/felleslosninger/efm-integrasjonspunkt/blob/main/docker-compose-TEMPLATE.yaml)
 
-Integrasjonspunktets Docker-image er uten persistent volum. For å unngå tap av data ved f.eks. omstarter er det derfor
+Integrasjonspunktets container-image er uten persistent volum. For å unngå tap av data ved f.eks. omstarter er det derfor
 nødvendig å konfigurere:
 
 - [Ekstern database](#ekstern-database)
 - [Mellomlagring av meldinger til ekstern database](#mellomlagring-av-meldinger-til-ekstern-database)
 - [Ekstern meldingskø](#meldingskø)
 - [Valg av logging til fil ved bruk av container (docker / kubernetes)](#logging-til-fil-i-docker)
+
+> **Note:** Integrasjonspunktets container-image bygges med Paketo Buildpacks som beregner hvor mye minne Java prosessen skal tildeles vha en [memory-calculator](https://paketo.io/docs/reference/java-reference/#memory-calculator) under oppstart.  Har du behov for å styre tildelingen av minne i et kontainerisert miljø som Kubernetes kan du benytte miljøvariabel `JAVA_TOOL_OPTIONS`, f.eks. slik `JAVA_TOOL_OPTIONS=-XX:MaxDirectMemorySize=256M`.
 
 ## Java-spesifikk konfigurasjon
 
