@@ -8,7 +8,7 @@ folders:
     jurl: /docs/eInnsyn/publisering_med_api.html
 
   - title: Henting av innsynskrav - API
-    jurl: /docs/eInnsyn/henting_av_innsynskrav_med_api.html
+    jurl: /henting_av_innsynskrav_api.html
 
   - title: FAQ
     jurl: /docs/eInnsyn/einnsyn_api_faq.html
