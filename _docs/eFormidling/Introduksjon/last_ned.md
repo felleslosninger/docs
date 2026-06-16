@@ -11,19 +11,19 @@ Last ned Integrasjonspunktet som .jar-fil eller Docker image. Last ned KOSMOS so
 
 ## Integrasjonspunktet
 
-Her finner du alle [release notes og artifakter](https://github.com/felleslosninger/efm-integrasjonspunkt/releases), link til nyeste versjon [v4.0.6](https://github.com/felleslosninger/efm-integrasjonspunkt/releases/tag/v4.0.6).
+Her finner du alle [release notes og artifakter](https://github.com/felleslosninger/efm-integrasjonspunkt/releases), link til nyeste versjon [v4.0.7](https://github.com/felleslosninger/efm-integrasjonspunkt/releases/tag/v4.0.7).
 <br><br>
 
-[**Integrasjonspunkt 4.0.6 (JAR)**](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133?version=v4.0.6)
+[**Integrasjonspunkt 4.0.7 (JAR)**](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133?version=v4.0.7)
 <br>
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133/versions)
 
-[**Integrasjonspunktet 4.0.6 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/881703653?tag=v4.0.6)
+[**Integrasjonspunktet 4.0.7 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/948095837?tag=v4.0.7)
 <br>
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/versions?filters%5Bversion_type%5D=tagged)
 
 ```console
-$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.6
+$ docker pull ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.7
 ```
 
 Endringslogg finner du [her.](../Oppgradering/endringslogg)

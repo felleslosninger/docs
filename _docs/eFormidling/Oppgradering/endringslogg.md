@@ -18,6 +18,22 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.7
+
+16.06.2026
+
+- Fallback verdier
+  - DPV: Fallback til "Tittel" i journalpost når "OffentligTittel" mangler.
+  - Digital DPV: Fallback til "Ingen innhold" i digital dpv meldinger når "Innhold" mangler.
+- Rettet OutOfMemoryError ved store meldinger (use-db-persistence=true)
+  - Meldingsinnhold strømmes nå via midlertidige filer på disk i stedet for å holdes i minnet.
+  - De midlertidige filene lagres i temp-mappen om ikke annet er konfigurert i `difi.move.nextmove.blob-cache-dir`.
+  - Endringen løser også et problem for rundt Postgres, blob og transaksjoner
+- DPV status fra Altinn hentes fra ny funksjon
+  - Henter status om levert og lest fra "overview" funksjon i Altinn (tidligere fra details->statusHistory)
+  - Endret etter forespørsel fra Altinn ("details" er en tung operasjon som kan påvirke flere systemer)
+  - https://github.com/Altinn/altinn-correspondence/issues/1989
+
 ## 4.0.6
 
 21.05.2026
