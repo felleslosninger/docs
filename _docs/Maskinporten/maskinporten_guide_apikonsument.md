@@ -201,7 +201,7 @@ Når tokenet er utløpt, vil klient typisk få 401-respons fra APIet, og steg 5 
 
 
 ### Bruke delegering som konsument
-Bemyndiget ansatt hos API-konsument logger inn i Altinn, velger å representere foretaket, søker opp og delegerer API-tilgangen videre til leverandøren i portal-løsningen.  [Dette er nærmere dokumentert hos Altinn](https://docs.altinn.studio/nb/authorization/guides/end-user/system-user/delegate-clients/).
+Bemyndiget ansatt hos API-konsument logger inn i Altinn, velger å representere foretaket, søker opp og delegerer API-tilgangen videre til leverandøren i portal-løsningen.  [Dette er nærmere dokumentert hos Altinn](https://docs.altinn.studio/nb/authorization/what-do-you-get/accessmanagement/#delegering-og-administrasjon-av-delegert-api-tilgang).
 
 Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  API-tilbyder ennå ikke har gitt konsument tilgang til scopet i Maskinporten.
 

@@ -61,35 +61,9 @@ Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
 ```
 Merk at Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering.
 
-Du må så [opprette et delegeringsoppett i Altinn](https://docs.altinn.studio/nb/authorization/guides/resource-owner/api-scheme/create-apischeme-resource-admin/), som inneholder scopet du nettopp registrerte i Maskinporten:
+Du må så [opprette en delegerbar API-ressurs i Altinn](https://docs.altinn.studio/nb/authorization/guides/resource-owner/api-scheme/create-apischeme-resource-admin/) som knyttes til scopet du nettopp registrerte i Maskinporten.
 
-```
-POST /maskinporten-api/delegationSchemes HTTP/1.1
-Host: tt02.altinn.no
-Content-Type: application/json
-Authorization: Bearer  <et maskinporten-token med 'altinn:maskinporten/delegationsSchemes.write'>
-
-{
-    "owner_org": "991825827",
-    "scopes": [
-        "difitest:test2"
-    ],
-    "title": [
-        {
-            "code": "nb_NO",
-            "value": "Difi tester delegering"
-        }
-    ],
-    "description": [
-        {
-            "code": "nb_NO",
-            "value": "Bla bla bla bla bla og enno meir blah"
-        }
-    ],
-    "default_language": "nb_NO"
-}
-```
-Merk at det kan ta noen minutter før delegeringsoppsettet blir synlig i Altinn-portalen.
+Merk at det kan ta noen minutter før ressursen blir synlig i Altinn-portalen.
 
 
 Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at andre potensielle konsumenter kan finne det.
