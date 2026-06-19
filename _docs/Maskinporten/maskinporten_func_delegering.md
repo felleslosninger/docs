@@ -11,7 +11,7 @@ redirect_from: /maskinporten_func_delegering
 ## Bakgrunn
 
 Maskinporten har i samarbeid med Altinn Autorisasjon støtte for at API-konsumenter kan delegere en API-tilgang til en leverandør.
-
+# FIXME altinn2
 Denne funksjonaliteten inngår i nasjonal referansearkitetur for eOppslag. Se [beskrivelse av eOppslag i nasjonalt arkitekturbibliotek](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer_eoppslag/) for ytterligere informasjon.  Se også [Altinn sin dokumentasjon av tjenesten](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/).
 
 <div class="mermaid">
@@ -62,6 +62,7 @@ Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
 ```
 Merk at Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering.
 
+### FIXME altinn2 
 Du må så [opprette et delegeringsoppett i Altinn](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/#registrering-av-delegerbar-ressurs-i-altinn), som inneholder scopet du nettopp registrerte i Maskinporten:
 
 ```
@@ -115,7 +116,7 @@ Leverandør må registrere API-tilbyders scope på sin klient.
 
 
 ### Delegering i Altinn
-
+# FIXME altinn2
 Bemyndiget ansatt hos API-konsument logger inn i Altinn, velger å representere foretaket, søker opp og delegerer API-tilgangen videre til leverandøren i portal-løsningen.  [Dette er nærmere dokumentert hos Altinn](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/).
 
 Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  API-tilbyder ennå ikke har gitt konsument tilgang til scopet i Maskinporten.
