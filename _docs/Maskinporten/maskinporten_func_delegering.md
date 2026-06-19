@@ -66,7 +66,7 @@ Du må så [opprette en delegerbar API-ressurs i Altinn](https://docs.altinn.stu
 Merk at det kan ta noen minutter før ressursen blir synlig i Altinn-portalen.
 
 
-Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at andre potensielle konsumenter kan finne det.
+Til slutt anbefaler vi at du registrerer API'et ditt i [Felles datakatalog](https://data.norge.no/publishing), slik at andre potensielle konsumenter kan finne det.
 
 ### Gi tilgang til konsumenter
 
