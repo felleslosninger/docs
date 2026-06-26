@@ -10,12 +10,14 @@ product: Maskinporten
 
 Kortfattet sjekkliste for bruk av samtykketoken. For detaljer, se [Samtykketoken i Maskinporten](maskinporten_func_samtykke).
 
+> 🔒 = sikkerheitsrelatert punkt. **Krav** = må oppfyllast. **Anbefalt** = bør oppfyllast.
+
 ## For API-tilbyder/Tjenesteeier
 
 - [ ] [Opprette samtykkeressurs](https://docs.altinn.studio/nb/authorization/guides/resource-owner/consent/) i Altinn 3 og oppbevare uuid
 - [ ] Sikre at sluttbruker aksepterer samtykket før bruk
-- [ ] Validere `id`, `from`, `to` og `scope` i samtykke-tokenet
-- [ ] Oppfylle [datatilsynets krav til samtykke](https://www.datatilsynet.no/rettigheter-og-plikter/virksomhetenes-plikter/behandlingsgrunnlag/veileder-om-behandlingsgrunnlag/?id=176)
+- [ ] 🔒 **Krav:** Validere `id`, `from`, `to` og `scope` i samtykke-tokenet — sikrar at tokenet gjeld rett samtykke, rett person/org og rett API
+- [ ] 🔒 **Krav:** Oppfylle [datatilsynets krav til samtykke](https://www.datatilsynet.no/rettigheter-og-plikter/virksomhetenes-plikter/behandlingsgrunnlag/veileder-om-behandlingsgrunnlag/?id=176)
 
 ## For Datakonsument/Tjenesteleverandør
 
@@ -24,13 +26,13 @@ Kortfattet sjekkliste for bruk av samtykketoken. For detaljer, se [Samtykketoken
 - [ ] Bruke [RAR-forespørsel](maskinporten_func_samtykke#grensesnittsdefinisjon) av type `urn:altinn:consent` med påkrevde claims (`type`, `id`, `from`)
 - [ ] Kun forespørre ett samtykke per token-request
 - [ ] Alltid inkludere ett eller flere OAuth2 scopes i JWT-grantet
-- [ ] Sikre at `consumer` matcher `to`-claim i responsen
-- [ ] Ved delegerte scopes: samtykket må være gitt til den som har delegert scopet
+- [ ] 🔒 **Krav:** Sikre at `consumer` matcher `to`-claim i responsen — forhindrar uautorisert tilgang
+- [ ] 🔒 **Krav:** Ved delegerte scopes: samtykket må vere gitt til den som har delegert scopet
 
 ## Generelt
 
 - [ ] Forstå [samtykke-tokenets innhold](maskinporten_func_samtykke#respons): `id`, `from`, `to`, `consented`, `validTo`, `consentRights`
-- [ ] Sjekk `validTo` — samtykket har et utløpstidspunkt
+- [ ] 🔒 Sjekk `validTo` — bruk ikkje samtykke som er utløpt
 
 ## Ressurser
 

@@ -10,6 +10,8 @@ product: ID-porten
 
 Kortfattet sjekkliste for integrasjon mot ID-porten. For detaljer, se [integrasjonsguiden](oidc_guide_idporten) og [overordnet arkitekturbeskrivelse](idporten_overordnet).
 
+> 🔒 = sikkerheitsrelatert punkt. **Krav** = må oppfyllast. **Anbefalt** = bør oppfyllast.
+
 ## Før oppstart
 
 - [ ] Akseptere [bruksvilkår for ID-porten](https://samarbeid.digdir.no/id-porten/ta-i-bruk-id-porten/94)
@@ -18,42 +20,42 @@ Kortfattet sjekkliste for integrasjon mot ID-porten. For detaljer, se [integrasj
 
 ## Autentiseringsforespørsel
 
-- [ ] Bruke [PKCE](oidc_func_pkce) med `code_challenge_method=S256`
+- [ ] 🔒 **Krav:** Bruke [PKCE](oidc_func_pkce) med `code_challenge_method=S256` — beskyttar mot autorisasjonskode-avlytting
 - [ ] Inkludere påkrevde parametere: `client_id`, `redirect_uri`, `scope` (min. `openid`), `response_type=code`
-- [ ] Velge riktig [sikkerhetsnivå](oidc_protocol_authorize) (`idporten-loa-substantial` eller `idporten-loa-high`) basert på risikovurdering
-- [ ] Bruke `state` (CSRF-beskyttelse) og `nonce` (replay-beskyttelse)
-- [ ] Vurdere [PAR](oidc_protocol_par) for tjenester med høye sikkerhetskrav
+- [ ] 🔒 **Krav:** Velge riktig [sikkerhetsnivå](oidc_protocol_authorize) (`idporten-loa-substantial` eller `idporten-loa-high`) basert på risikovurdering
+- [ ] 🔒 **Krav:** Bruke `state` (CSRF-beskyttelse) og `nonce` (replay-beskyttelse)
+- [ ] 🔒 **Anbefalt:** Vurdere [PAR](oidc_protocol_par) for tjenester med høge sikkerheitskrav — beskyttar parametere mot manipulasjon i nettlesar
 
 ## Token-håndtering
 
-- [ ] Implementere [klientautentisering](oidc_protocol_token) (`client_secret_basic`, `client_secret_post`, eller `private_key_jwt`)
-- [ ] Sende `code_verifier` i token-forespørselen
-- [ ] [Validere ID-token](oidc_protocol_id_token): signatur, `iss`, `aud`, `exp`, `iat`, `nonce`, og at `acr` matcher forespurt nivå
+- [ ] 🔒 **Krav:** Implementere [klientautentisering](oidc_protocol_token) (`client_secret_basic`, `client_secret_post`, eller `private_key_jwt`)
+- [ ] 🔒 **Krav:** Sende `code_verifier` i token-forespørselen — fullfører PKCE-flyten
+- [ ] 🔒 **Krav:** [Validere ID-token](oidc_protocol_id_token): signatur, `iss`, `aud`, `exp`, `iat`, `nonce`, og at `acr` matcher forespurt nivå — mangelfull validering er ein vanleg sikkerheitsfeil
 - [ ] Respektere token-levetider og bruke refresh_token for fornyelse
 
 ## Sesjonshåndtering
 
-- [ ] **Implementere [Single Logout (SLO)](oidc_func_sso)** — kritisk for alle som bruker SSO
+- [ ] 🔒 **Krav:** **Implementere [Single Logout (SLO)](oidc_func_sso)** — kritisk for alle som bruker SSO. Feilkonfigurert logout hos éin kunde kan øydelegge for andre.
   - Scenario 1: Bruker logger ut hos deg → redirect til /endsession
   - Scenario 2: Bruker logger ut annet sted → håndter `front_channel_logout` basert på `sid`
-- [ ] Sette lokal sesjon til maks 30 minutter inaktivitet
-- [ ] Sende bruker til ID-porten med ny autentiseringsforespørsel ved lokal timeout
-- [ ] Vurdere `prompt=login` for [tvungen re-autentisering](oidc_guide_idporten#tvungen-re-autentisering) ved sikkerhetskritiske operasjoner
-- [ ] Vurdere [isolert SSO-sesjon](oidc_func_nosso) for tjenester som ikke skal dele sesjon
+- [ ] 🔒 **Krav:** Sette lokal sesjon til maks 30 minutter inaktivitet
+- [ ] 🔒 **Krav:** Sende bruker til ID-porten med ny autentiseringsforespørsel ved lokal timeout
+- [ ] 🔒 **Anbefalt:** Bruk `prompt=login` for [tvungen re-autentisering](oidc_guide_idporten#tvungen-re-autentisering) ved sikkerheitskritiske operasjonar
+- [ ] 🔒 **Anbefalt:** Vurder [isolert SSO-sesjon](oidc_func_nosso) for tenester som ikkje skal dele sesjon
 
 ## Sikkerhet og nøkkelhåndtering
 
-- [ ] Etabler sikker nøkkelhåndtering: oppbevaring, backup, tilgangsstyring, fornyelse, kompromitteringshåndtering
-- [ ] Gjennomfør risikovurdering — bruk til å velge sikkerhetsnivå og autentiseringsmetode
-- [ ] Åpne utgående brannmur for [ID-portens IP-adresser](../../general/IP) (om aktuelt)
-- [ ] Vurder HSM for nøkkeloppbevaring
-- [ ] Vurder [virksomhetssertifikat](idporten_overordnet#bruk-av-virksomhetssertifikat) for klientautentisering og automatisert nøkkelrotasjon
+- [ ] 🔒 **Krav:** Etabler sikker nøkkelhåndtering — beskytt private nøklar (client_secret, asymmetriske nøklar, virksomheitssertifikat). Definer prosedyrar for oppbevaring, backup, tilgangsstyring, fornyelse og kompromitteringshåndtering
+- [ ] 🔒 **Krav:** Gjennomfør risikovurdering — bruk til å velje sikkerheitsnivå og autentiseringsmetode
+- [ ] 🔒 **Krav:** Åpne utgåande brannmur for [ID-portens IP-adresser](../../general/IP) (om aktuelt)
+- [ ] 🔒 **Anbefalt:** Bruk HSM for nøkkeloppbevaring
+- [ ] 🔒 **Anbefalt:** Bruk [virksomhetssertifikat](idporten_overordnet#bruk-av-virksomhetssertifikat) for klientautentisering og automatisert nøkkelrotasjon
 
 ## Logging
 
-- [ ] Logg autentiseringsforsøk: tidspunkt, handling, resultat, IP-adresse, `sid`
-- [ ] Vurder personvern i logging (fødselsnummer vs. behov)
-- [ ] Følg [anbefalinger for sertifikatbehandling, logging og sporing](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
+- [ ] 🔒 **Krav:** Logg autentiseringsforsøk: tidspunkt, handling, resultat, IP-adresse, `sid`
+- [ ] 🔒 **Krav:** Vurder personvern i logging (fødselsnummer vs. behov)
+- [ ] 🔒 **Anbefalt:** Følg [anbefalingar for sertifikatbehandling, logging og sporing](https://www.digdir.no/datadeling/sertifikatbehandling-logging-og-sporing/2438)
 
 ## Testing
 

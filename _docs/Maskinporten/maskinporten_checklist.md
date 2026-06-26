@@ -10,15 +10,17 @@ product: Maskinporten
 
 Kortfattet sjekkliste for integrasjon mot Maskinporten. For detaljer, se [guide for API-tilbydere](maskinporten_guide_apitilbyder) og [guide for API-konsumenter](maskinporten_guide_apikonsument).
 
+> 🔒 = sikkerheitsrelatert punkt. **Krav** = må oppfyllast. **Anbefalt** = bør oppfyllast.
+
 ## For API-tilbyder
 
 - [ ] Akseptere Digdir sine [bruksvilkår](https://samarbeid.digdir.no) for fellesløsninger
 - [ ] [Få tildelt API-prefiks](maskinporten_guide_apitilbyder#1-manuell-tildeling-av-prefix)
 - [ ] [Opprette scopes](maskinporten_guide_apitilbyder#beskrivelse-av-apier) med riktig syntaks, synlighet og begrensninger
 - [ ] [Gi tilgang til konsumenter](maskinporten_guide_apitilbyder#1b-tilgangsstyring---via-samarbeidsportalen) basert på organisasjonsnummer
-- [ ] [Validere token](maskinporten_guide_apitilbyder#4-validere-token): issuer, signatur, scope, utløpstid
-- [ ] Bruke `consumer`-claimet for tilgangskontroll — **ikke** `client_id` eller `client_org`
-- [ ] Ved delegering: [Logg `supplier` og `delegation_source` claims](maskinporten_guide_apitilbyder#4-validere-token)
+- [ ] 🔒 [Validere token](maskinporten_guide_apitilbyder#4-validere-token): issuer, signatur, scope, utløpstid
+- [ ] 🔒 Bruke `consumer`-claimet for tilgangskontroll — **ikke** `client_id` eller `client_org`
+- [ ] 🔒 Ved delegering: [Logg `supplier` og `delegation_source` claims](maskinporten_guide_apitilbyder#4-validere-token)
 
 ### Delegering via Altinn (valgfritt)
 
@@ -29,16 +31,16 @@ Kortfattet sjekkliste for integrasjon mot Maskinporten. For detaljer, se [guide 
 
 - [ ] Få tilgang til ønsket scope fra API-tilbyder
 - [ ] [Opprette integrasjon](maskinporten_guide_apikonsument#4-opprett-en-integrasjon-i-maskinporten) med riktige egenskaper
-- [ ] [Generere og signere JWT-grant](maskinporten_guide_apikonsument#5-be-om-token) med påkrevde claims
-- [ ] Sikre at hver JWT er unik (bruk `jti`)
+- [ ] 🔒 [Generere og signere JWT-grant](maskinporten_guide_apikonsument#5-be-om-token) med påkrevde claims
+- [ ] 🔒 Sikre at hver JWT er unik (bruk `jti`)
 - [ ] [Sende API-kall](maskinporten_guide_apikonsument#6-sende-api-kall-med-token) med `Authorization: Bearer <access_token>`
 - [ ] Håndtere token-utløp (hent nytt ved 401, gjenbruk innen levetiden)
 
 ### Anbefalinger
 
-- [ ] Bruk separate klienter for ulike APIer
-- [ ] Foretrekk [egen asymmetrisk nøkkel](maskinporten_guide_apikonsument#registrere-klient-som-bruker-egen-nøkkel) fremfor virksomhetssertifikat
-- [ ] Be om ett scope per token
+- [ ] 🔒 Bruk separate klienter for ulike APIer — reduserer skadeomfang ved kompromittering
+- [ ] 🔒 Foretrekk [egen asymmetrisk nøkkel](maskinporten_guide_apikonsument#registrere-klient-som-bruker-egen-nøkkel) fremfor virksomhetssertifikat — unngå å spre sertifikatet
+- [ ] 🔒 Be om ett scope per token — begrens tilgangen i kvart token
 
 ### Delegering via Altinn (for leverandører)
 
@@ -50,13 +52,13 @@ Kortfattet sjekkliste for integrasjon mot Maskinporten. For detaljer, se [guide 
 
 ### Sikkerhet og nøkkelhåndtering
 
-- [ ] Etabler sikker nøkkelhåndtering: oppbevaring, backup, tilgangsstyring, og rutiner for fornyelse og kompromittering
-- [ ] Gjennomfør risikovurdering av egen løsning
-- [ ] Åpne utgående brannmur for Maskinporten sine IP-adresser (om aktuelt)
+- [ ] 🔒 **Krav:** Etabler sikker nøkkelhåndtering — beskytt private nøklar, definer prosedyrar for oppbevaring, backup, tilgangsstyring, fornyelse og kompromitteringshåndtering
+- [ ] 🔒 **Krav:** Gjennomfør risikovurdering av eigen løysing — avgjer kva API-ar ein klient skal ha tilgang til
+- [ ] 🔒 **Krav:** Åpne utgåande brannmur for Maskinporten sine IP-adresser (om aktuelt)
 
 ### Logging og testing
 
-- [ ] Logg token-forespørsler, API-kall, feil og sikkerhetshendelser
+- [ ] 🔒 **Krav:** Logg token-forespørslar, API-kall, feil og sikkerheitshendingar
 - [ ] API-tilbydere: Logg consumer-informasjon for sporbarhet
 - [ ] Test i riktig testmiljø før produksjon
 

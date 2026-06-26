@@ -10,6 +10,8 @@ product: Ansattporten
 
 Kortfattet sjekkliste for integrasjon mot Ansattporten. For detaljer, se [Hva er Ansattporten?](ansattporten_om) og [integrasjonsguiden](ansattporten_guide).
 
+> 🔒 = sikkerheitsrelatert punkt. **Krav** = må oppfyllast. **Anbefalt** = bør oppfyllast.
+
 ## Før oppstart
 
 - [ ] Akseptere Digdir sine [bruksvilkår](https://samarbeid.digdir.no) for fellesløsninger
@@ -18,11 +20,11 @@ Kortfattet sjekkliste for integrasjon mot Ansattporten. For detaljer, se [Hva er
 
 ## Autentisering og token
 
-- [ ] Bruke [PKCE](../../idporten/oidc/oidc_func_pkce) med `code_challenge_method=S256`
+- [ ] 🔒 **Krav:** Bruke [PKCE](../../idporten/oidc/oidc_func_pkce) med `code_challenge_method=S256` — beskyttar mot autorisasjonskode-avlytting
 - [ ] Inkludere påkrevde parametere: `client_id`, `redirect_uri`, `scope` (min. `openid`), `response_type=code`
-- [ ] Bruke `state` og `nonce` for CSRF- og replay-beskyttelse
-- [ ] Validere at `iss` i ID-token stemmer med **Ansattporten** (ikke ID-porten)
-- [ ] Bruke [well-known endepunkt](ansattporten_wellknown) for dynamisk konfigurasjon og JWK-henting
+- [ ] 🔒 **Krav:** Bruke `state` og `nonce` for CSRF- og replay-beskyttelse
+- [ ] 🔒 **Krav:** Validere at `iss` i ID-token stemmer med **Ansattporten** (ikke ID-porten) — feil issuer kan bety at tokenet ikkje er til deg
+- [ ] 🔒 **Anbefalt:** Bruke [well-known endepunkt](ansattporten_wellknown) for dynamisk konfigurasjon og JWK-henting — sikrar kontinuerleg drift ved sertifikatbytte
 
 ## Representasjon og organisasjonsvelger (valgfritt)
 
@@ -38,15 +40,15 @@ Kortfattet sjekkliste for integrasjon mot Ansattporten. For detaljer, se [Hva er
 
 ## Sikkerhet og nøkkelhåndtering
 
-- [ ] Etabler sikker nøkkelhåndtering: oppbevaring, backup, tilgangsstyring, fornyelse, kompromitteringshåndtering
-- [ ] Gjennomfør risikovurdering av egen løsning
-- [ ] Åpne utgående brannmur for [Ansattporten sine IP-adresser](../../general/IP) (om aktuelt)
-- [ ] Vurder HSM for nøkkeloppbevaring og automatisert nøkkelrotasjon
+- [ ] 🔒 **Krav:** Etabler sikker nøkkelhåndtering — beskytt private nøklar (client_secret, asymmetriske nøklar, virksomheitssertifikat). Definer prosedyrar for oppbevaring, backup, tilgangsstyring, fornyelse og kompromitteringshåndtering
+- [ ] 🔒 **Krav:** Gjennomfør risikovurdering av eigen løysing
+- [ ] 🔒 **Krav:** Åpne utgåande brannmur for [Ansattporten sine IP-adresser](../../general/IP) (om aktuelt)
+- [ ] 🔒 **Anbefalt:** Bruk HSM for nøkkeloppbevaring og automatisert nøkkelrotasjon
 
 ## Logging og testing
 
-- [ ] Logg autentiseringsforsøk: tidspunkt, handling, resultat, IP-adresse, `sid`, valgt organisasjon
-- [ ] Vurder personvern i logging
+- [ ] 🔒 **Krav:** Logg autentiseringsforsøk: tidspunkt, handling, resultat, IP-adresse, `sid`, valgt organisasjon
+- [ ] 🔒 **Krav:** Vurder personvern i logging
 - [ ] Test i riktig miljø — well-known: [test](https://test.ansattporten.no/.well-known/openid-configuration) / [prod](https://ansattporten.no/.well-known/openid-configuration)
 
 ## Kostnader
