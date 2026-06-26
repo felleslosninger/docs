@@ -43,9 +43,9 @@ Derimot er det i Maskinporten mulig for kunden å eksplisitt delegere API-tilgan
 
 [onbehalfof]({{site.baseurl}}/docs/idporten/oidc/oidc_func_onbehalfof) er en ID-porten-proprietær mekanisme som gir en leverandør mulighet til å gjenbruke en OIDC-integrasjon på vegne av mange kunder.  
 
-Mønsteret passer best der leverandøren har kontroll over installasjonen (dvs. oauth2-klienten), typisk en installasjon på egen server i sikret driftsmiljø. Det er Leverandøren som eier integrasjonen (attributtet `client_org`), og Leverandøren bruker eget virksomhetssertifkat og/eller client_secret for å autentisere seg mot ID-porten.
+Mønsteret passer best der leverandøren har kontroll over installasjonen (dvs. oauth2-klienten), typisk en installasjon på egen server i sikret driftsmiljø. Det er Leverandøren som eier integrasjonen (attributtet `client_org`), og Leverandøren bruker eget virksomhetssertifikat og/eller client_secret for å autentisere seg mot ID-porten.
 
-Leverandøren må forhåndsregistere såkalte "onbehalfof"-verdier som blir knyttet til kundens orgno, normalt 1 verdi per kunde, og må sende riktig onbehalfof-verdi runtime ved innlogging.  Hver obof-verdi har eget tjensteeier-navn og logo som blir vist sluttbruker ved innlogging. Merk at redirect_uri'er må registreres på "mor-integrasjonen" og ikke på onbehalfof'ene.
+Leverandøren må forhåndsregistrere såkalte "onbehalfof"-verdier som blir knyttet til kundens orgno, normalt 1 verdi per kunde, og må sende riktig onbehalfof-verdi runtime ved innlogging.  Hver onbehalfof-verdi har eget tjenesteeier-navn og logo som blir vist sluttbruker ved innlogging. Merk at redirect_uri'er må registreres på "mor-integrasjonen" og ikke på onbehalfof'ene.
 
 I selvbetjening opprettes slike integrasjoner med valget "på vegne av flere kunder" (via selvbetjenings-api brukes `idporten:dcr/onbehalfof:write`)
 
@@ -58,11 +58,11 @@ Onbehalfof-mekanismen virker ikke for Maskinporten-integrasjoner.
 
 Noen leverandører har av historiske årsaker systemer der de låner kunden sitt virksomhetssertifikat for å integrere mot ID-porten, selv om det ikke er anbefalt.
 
-Disse leverandørene oppretter en integrasjon per kunde (dvs. egen client_id og klientautentisering), og for å synliggjøre at slike integrasjoner tilhører et leverandørforhold, blir de "merket" med leverandørens organisasjonsnummer (attributtet `supplier_orgno`).  Dersom integrasjonen bruker virksomhetssertifikat til klient-autentisering, er det kunden sitt sertifikat som skal brukes, så vi anbefaler heller asymmetriske nøkler eller client_secrets på disse.
+Disse leverandørene oppretter en integrasjon per kunde (dvs. egen client_id og klientautentisering), og for å synliggjøre at slike integrasjoner tilhører et leverandørforhold, blir de "merket" med leverandørens organisasjonsnummer (attributtet `supplier_orgno`).  Hvis integrasjonen bruker virksomhetssertifikat til klient-autentisering, er det kundens sertifikat som skal brukes, så vi anbefaler heller asymmetriske nøkler eller client_secrets på disse.
 
 I selvbetjening opprettes slike integrasjoner med valget "på vegne av en kunde" (via selvbetjenings-api brukes `idporten:dcr.supplier`). Digdir er restriktive med å tildele denne selvbetjeningsmuligheten til leverandører.
 
-* Leverandøren må sette client_orgno lik egen kunde sitt organisasjonsnummer.
+* Leverandøren må sette client_orgno lik kundens organisasjonsnummer.
 * Leverandøren kan opprette integrasjoner på vilkårlige client_orgno
 * Leverandørens eget organisasjonnummer blir *automatisk* satt som `supplier_orgno` (basert på virksomhetssertifikatet som blir brukt mot admin-APIet)
 
@@ -93,7 +93,7 @@ Delegering av API-tilgang gjennom Altinn fungerer ikke i ID-porten.
 
 Forespørsel
 ```
-GET /clients/oidc_eksempel_klient/onbehalof/example_onbehalof
+GET /clients/oidc_eksempel_klient/onbehalfof/example_onbehalfof
 Accept: application/json
 Authorization: Bearer <token med idporten:dcr/onbehalfof:write>
 ```
@@ -103,8 +103,8 @@ Respons:
 Status code 200
 {
 	"onbehalfof": "example_onbehalfof",
-	"display_name": "Oslo kommune barnehagesystem"
-	"orgno": "991825828"
+	"display_name": "Oslo kommune barnehagesystem",
+	"orgno": "991825828",
 	"url": "https://oslo.eksempel.no"
 }
 ```
@@ -113,14 +113,14 @@ Status code 200
 
 Forespørsel
 ```
-POST /clients/oidc_eksempel_klient/onbehalof/
+POST /clients/oidc_eksempel_klient/onbehalfof/
 Accept: application/json
-Authorization: Bearer token med idporten:dcr/onbehalfof:write>
+Authorization: <Bearer token med idporten:dcr/onbehalfof:write>
 
 {
-	"onbehalfof": "new_example_onbehalof",
-	"display_name": "Bergen kommune barnehagesystem"
-	"orgno": "999888777"
+	"onbehalfof": "new_example_onbehalfof",
+	"display_name": "Bergen kommune barnehagesystem",
+	"orgno": "999888777",
 	"url": "https://bergen.eksempel.no"
 }
 ```
@@ -130,14 +130,14 @@ Authorization: Bearer token med idporten:dcr/onbehalfof:write>
 
 Forespørsel
 ```
-PUT /clients/oidc_eksempel_klient/onbehalof/example_onbehalof
+PUT /clients/oidc_eksempel_klient/onbehalfof/example_onbehalfof
 Content-type: application/json
 Authorization: Bearer <my_access_token_value>
 
 {
-	"onbehalfof": "example_onbehalof",
-	"display_name": "Modified display_name value"
-	"orgno": "991825828"
+	"onbehalfof": "example_onbehalfof",
+	"display_name": "Modified display_name value",
+	"orgno": "991825828",
 	"url": "https://service.eksempel.no"
 }
 ```
@@ -147,7 +147,7 @@ Authorization: Bearer <my_access_token_value>
 
 Forespørsel
 ```
-DELETE /clients/oidc_eksempel_klient/onbehalof/example_onbehalof
+DELETE /clients/oidc_eksempel_klient/onbehalfof/example_onbehalfof
 Authorization: Bearer <my_access_token_value>
 ```
 

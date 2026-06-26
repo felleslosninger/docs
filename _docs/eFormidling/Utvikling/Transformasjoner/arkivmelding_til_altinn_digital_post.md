@@ -1,10 +1,12 @@
 ---
-title: Transformasjon fra arkivmelding til Altinn Digital Post
+title: Transformasjon fra arkivmelding til Altinn Digital Post (Utgår i IPv4)
 description: ""
 summary: ""
 product: eFormidling
 sidebar: eformidling_sidebar
 ---
+
+Sjå [Transformasjon fra arkivmelding til Altinn Digital Post Altinn 3](../Transformasjoner/arkivmelding_til_altinn_digital_post_altinn3) for IPv4.
 
 Tabellen under viser hvordan integrasjonspunktet transformerer utgående meldinger til kall mot APIet for Altinn Digital
 Post. Integrasjonspunktet supplerer utgående meldinger med opplysninger fra konfigurasjon, standardverdier og oppslag

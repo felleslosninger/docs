@@ -49,18 +49,20 @@ Kontakt Digitaliseringsdirektoratet på <a href="mailto:servicedesk@digdir.no">s
 ## DPO 
 DPO-meldinger blir sendt sak-arkivsystem-sak-arkivsystem. Krever at begge parter har et integrasjonspunkt og DPO aktivert for å motta/sende. DPO-funksjonalitet aktiveres ved innstillingen ```difi.move.feature.enableDPO=true```.
 
-Typiske feil: brukernamn/passord, manglande tilganger, feil i integrasjonspunkt-local.properties. Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](../installasjon/opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
+Typiske feil: manglande tilganger, feil i integrasjonspunkt-local.properties.
 
-Bruker og passord brukt er tilknyttet en datasystem bruker som du oppretter via lenken over. Knytt til dette datasysetmet så finnes det flere forskjellige kjente feilmeldinger du finner på [denne siden](https://www.altinn.no/hjelp/profil/datasystem--liste-over-feilmeldinger/) (ekstern lenke)
+Sørg for at brukernamnet er det som blei autogenerert når du oppretta brukaren. [Les her for meir info](../installasjon/opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) (utgår i IPv4)
 
-### ErrorId 0. UserId 0
+Bruker og passord brukt er tilknyttet en datasystem bruker som du oppretter via lenken over. Knytt til dette datasysetmet så finnes det flere forskjellige kjente feilmeldinger du finner på [denne siden](https://www.altinn.no/hjelp/profil/datasystem--liste-over-feilmeldinger/) (ekstern lenke) (utgår i IPv4)
+
+### ErrorId 0. UserId 0 (utgår i IPv4)
 ```
 Could not get list of available files from Altinn formidlingstjeneste. Reason: reason: null. LocalizedErrorMessage: Errorid 0. UserId 0
 ```
 
 Feil med brukernamn/passord. Antageligvis mangler det innhold i propertyen ```difi.move.dpo.password=``` og ```difi.move.dpo.username=```
 
-### ErrorId 5. UserId 0
+### ErrorId 5. UserId 0 (utgår i IPv4)
 ```
 InvalidSystemName/Id. Must be a number or valid username. Errorid 5. Userid: 0
 ```
@@ -74,7 +76,7 @@ Failed to initate Altinn broker service Reason: The EndUserSystem System with ID
 
 Dette er fordi brukaren er blitt låst pga for mange forsøk med feil passord. Etter 1 time vil brukeren bli automatisk låst opp. Om en ikkje hugser korrekt passord kan ein logge inn i Altinn og oppdatere passordet der.
 
-### Sjekk at brukernamn og passord er korrekt
+### Sjekk at brukernamn og passord er korrekt (utgår i IPv4)
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. (Krever SoapUi installert)
 
 > [SoapUi prosjektet kan lastes ned her]({{site.baseurl}}/resources/eformidling/soapui-project-dpo-brukersjekk.xml)
@@ -88,32 +90,32 @@ Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamne
 6. Et nytt vindu vil åpnes der du må legge inn brukernamn og passord i tillegg til orgnummer for denne virksomheten. orgnummeret skal i <Reportee>her</reportee> feltet, brukernamn i <username>her</username> og passord i <password>her</password>. 
 7. Når du har lagt inn nødvendig informasjon trykker du på den grønne play knappen oppe i venstre hjørne i dette vinduet. 
 
-**Korrekt brukernamn/passord**
+**Korrekt brukernamn/passord** (utgår i IPv4)
 
 ![](/images/eformidling/soap/soapDpoPassordOk.PNG)
 Brukernamn og passord er korrekt.  
 
-**Feil brukernamn/passord**
+**Feil brukernamn/passord** (utgår i IPv4)
 
 ![](/images/eformidling/soap/soapDpoPassordFeil.PNG)
 Feil i brukernamn eller passord. Nytt passord kan opprettes ved å logge inn i Altinn. Må gjøres av en person med myndighet i virksomheten.
 
 
-### ErrorId 6. UserId 0
+### ErrorId 6. UserId 0 (utgår i IPv4)
 ```
 Could not get list of available files from Altinn formidlingstjeneste. Reason: Reason: An exception happened when trying to authenticate the system . LocalizedErrorMessage: An exception happened when trying to authenticate the system . ErrorId: 6. UserId: 0
 ```
 
 Typisk pga brukernamn/passord feil. Muligens white spaces
 
-### ErrorId 40202. UserId 0. Not in SRR with appropriate rights
+### ErrorId 40202. UserId 0. Not in SRR with appropriate rights (utgår i IPv4)
 ```
 Failed to initiate Altinn broker service Reason: There was errors in the list of recipients: The following recipients is not in SRR with appropriate rights: "123456789". ErrorId 40202. UserId 0
 ```
 
 Manglande SRR rettigheter hos Altinn. Kontakt Digitaliseringsdirektoratet og oppgje orgnr og brukernamn til DPO. <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>.Digitaliseringsdirektoratet vil kontakte Altinn på vegne av dykk og få det retta.
 
-### The given reportee is not authorized to send files.
+### The given reportee is not authorized to send files. (utgår i IPv4)
 ```
 no.difi.meldingsutveksling.shipping.ws.AltinnWsException: failed to initiate Altinn broker service Reason: The given reportee is not authorized to send files..
 ```
@@ -148,7 +150,7 @@ IP-adressa på serveren er ikkje lagt inn hos Altinn. Dette blei etterspurt i in
 
 Om IP-adresser skal endrast eller leggast til, kontakt Digitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> så vil vi ta det vidare til Altinn. Oppgje orgnummer, DPV-brukernamn, og ønska IP-adresse eller IP-range. Du kan også sende inn skjema til servicedesk via [denne lenken](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5kZbWwz0nwnRGrfJqFQYggctUMjhUWVMxWk1OUkw0SDZXME9NVk8zOUEwNSQlQCN0PWcu)(ekstern lenke)
 
-### Invalid security token
+### Invalid security token (utgår i IPv4)
 ```
 An error occurred when processing the security tokens in the message
 Invalid security token
@@ -158,7 +160,7 @@ Ofte pga feil brukernamn/passord på ``` difi.move.dpv.password=``` og/eller ```
 
 Om feilen ikkje kan løysast ved å dobbeltsjekke brukernamn/passord. Kontakt Digitaliseringsdirektoratet <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>. 
 
-### Sjekk at brukernamn og passord er korrekt
+### Sjekk at brukernamn og passord er korrekt (utgår i IPv4)
 Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamnet/passordet er korrekt. En vil også kunne sjå om en forsøker å spørre frå feil IP-adresse. (Krever SoapUi installert)
 
 > [SoapUi prosjektet kan lastes ned her]({{site.baseurl}}/resources/eformidling/soapui-project-dpv-brukersjekk.xml)
@@ -173,17 +175,17 @@ Vha SoapUi kan en sende en request og få tilbake bekreftelse på om brukernamne
 7. Når du har lagt inn nødvendig informasjon trykker du på den grønne play knappen oppe i venstre hjørne i dette vinduet. 
 
 	
-**Korrekt brukernamn/passord**
+**Korrekt brukernamn/passord** (utgår i IPv4)
 
 ![](/images/eformidling/soap/soapPassordOk.PNG)
 Brukernamn og passord er korrekt. Det betyr også at IP-adressen er korrekt. 
 
-**Feil brukernamn/passord**
+**Feil brukernamn/passord** (utgår i IPv4)
 
 ![](/images/eformidling/soap/soapFeilpassord2.PNG)
 Feil i brukernamn eller passord. Nytt passord kan mottas på SMS, kontakt <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a> . 
 
-**Feil IP-adresse, korrekt brukernamn/passord** 
+**Feil IP-adresse, korrekt brukernamn/passord** (utgår i IPv4)
 
 ![](/eformidling/soap/soapPassordOkIpFeil.PNG)
 IP-adressen på hosten må hvitelistes hos Altinn.

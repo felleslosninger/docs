@@ -93,10 +93,10 @@ Ved en eIDAS-pålogging vil utleverte tokens være litt ulike ordinære tokens:
   "aud" : "democlient_idporten_test",
   "acr" : "eidas-loa-substantial",
  
-  "eidas_identifier" : "CA/NO/11111",
-  "eidas_lastname" : "Phil",
-  "eidas_firstname" : "claude",
-  "eidas_date_of_birth" : "1965-01-01",
+  "eidas_person_identifier" : "CA/NO/11111",
+  "family_name" : "Phil",
+  "given_name" : "claude",
+  "birthdate" : "1965-01-01",
  
   "auth_time" : 1727693610,
   "exp" : 1727693730,
@@ -115,24 +115,35 @@ Ikke per idag.
 
 Se [eIDAS eID Profile ]( https://ec.europa.eu/digital-building-blocks/wikis/display/DIGITAL/eIDAS+eID+Profile) for beskrivelse av eIDAS kjerneattributter.
 
-Kjerneattributtene prefixes av ID-porten med "eidas_".  Det er 4 obligatoriske attributter som alltid vil være tilstede:
+Kjerneattributtene består av standard oidc-claims, mens den eidas-spesifikke personidenifikatoren prefixes av ID-porten med "eidas_". 
+Dersom det blir match mot folkeregisteret, vil ID-porten inkludere PID-claimet i tokenet.
+Det er 4 obligatoriske attributter som alltid vil være tilstede:
 
-| claim               | eIDAS attributt   | beskrivelse                                       |
-|---------------------|-------------------|---------------------------------------------------|
-| eidas_identifier    | PersonIdentifier  | eidas-identifikator ("as persistent as possible") |
-| eidas_date_of_birth | DateOfBirth       | Fødselsdato                                       |
-| eidas_firstname     | CurrentGivenName  | Fornavn                                           |
-| eidas_lastname      | CurrentFamilyName | Etternavn                                         |
+| claim                   | eIDAS attributt   | beskrivelse                                       |
+|-------------------------|-------------------|---------------------------------------------------|
+| eidas_person_identifier | PersonIdentifier  | eidas-identifikator ("as persistent as possible") |
+| birthdate               | DateOfBirth       | Fødselsdato                                       |
+| given_name              | CurrentGivenName  | Fornavn                                           |
+| familiy_name            | CurrentFamilyName | Etternavn                                         |
 
 Merk at "eIDAS-identifkatoren" har et litt spesielt syntaks `xx/NO/yyyy` der:
 -  `xx` er 2-bokstavkode for landet der brukeren har sin elektroniske ID (Merk at dette ikke er garantert å også være brukeren sitt hjemland/statsborgerskap) 
 - `yyyyy` er en variabel-lengde identifikator i det aktuelle landet.
 
 
-## Utenlandske testbrukere
+## Utenlandske testbrukere - innlogging til norsk test-tjeneste
 
-Det er dessverre ikke mange land som tilbyr dedikerte testbrukere ennå.  Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
+Det er dessverre ikke mange land som tilbyr dedikerte testbrukere for innlogging til norsk tjeneste med utenlandsk e-ID.
+
+### Sverige
+Vi anbefaler tjenesteeiere å velge *Sverige* som innloggingsland, og deretter velge "Test ID-tjänst",  her vil man få en nedtrekksliste med tilgjengelige testbrukere.  
+
+### Danmark
+For testing med dansk eID på sikkerhetsnivå betydelig (substantial), velg fanen «Test login» når du kommer til dansk IDP, og logg inn med brukernavn: `eidas-testuser1` og passord: `Test1234!`. For testing med LoA high, må en ta kontakt med Digdir.
+
+### Lituaen
+Bruk i loginbilde e-ID'en "VIISP BANKAS". Her vil en finne en nedtrekksliste med tilgjengelige testbrukere.  
 
 ## Innlogging med norsk e-ID på utenlandsk tjeneste
-Det er (pr 01.01.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i EUs infrastruktur for autentisering. 
+Det er (pr 27.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i produksjonsmiljøet i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. (I testmiljøet er dette mulig)
 

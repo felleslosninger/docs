@@ -9,8 +9,7 @@ redirect_from: /sdp_usermessage
 ## {{page.title}}
 
   - Identifikator  
-    “http://begrep.difi.no{{ page.url | remove:”.html"
-    }}":{{page.title}}
+    “http://begrep.difi.no{{ page.url | remove: ".html" }}":{{page.title}}
   - Term  
     {{page.title}}
   - Definisjon  

@@ -18,6 +18,105 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.7
+
+16.06.2026
+
+- Fallback verdier
+  - DPV: Fallback til "Tittel" i journalpost når "OffentligTittel" mangler.
+  - Digital DPV: Fallback til "Ingen innhold" i digital dpv meldinger når "Innhold" mangler.
+- Rettet OutOfMemoryError ved store meldinger (use-db-persistence=true)
+  - Meldingsinnhold strømmes nå via midlertidige filer på disk i stedet for å holdes i minnet.
+  - De midlertidige filene lagres i temp-mappen om ikke annet er konfigurert i `difi.move.nextmove.blob-cache-dir`.
+  - Endringen løser også et problem for rundt Postgres, blob og transaksjoner
+- DPV status fra Altinn hentes fra ny funksjon
+  - Henter status om levert og lest fra "overview" funksjon i Altinn (tidligere fra details->statusHistory)
+  - Endret etter forespørsel fra Altinn ("details" er en tung operasjon som kan påvirke flere systemer)
+  - https://github.com/Altinn/altinn-correspondence/issues/1989
+
+## 4.0.6
+
+21.05.2026
+
+- Inneholder bugfikser
+  - Rett rekkefølgen på DPI kvitteringer 
+  - Feil på innkommende DPF vil ikke blokkere nedlasting av resten
+- Forbedringer og justeringer
+  - Maks størrelse for DPI justert til 50MB (ihht spesifikasjon)
+  - Rydder bort logging som gikk direkte til console (bruker nå standard logging)
+  - Oppdatert konfugurasjon for logging (fjerner varsler under oppstart)
+- Ny funksjonalitet
+  - Mulighet for å opprette flere "på-vegne-av" DPO systembrukere via web-ui
+
+## 4.0.5
+
+13.05.2026
+
+- Setter Orbyt som ny leverandør av DPI i produksjon
+- Fikser nullpointer om sikkerhetsnivå mangler i SBD (MOVE-5021)
+- Se utfyllende informasjon her : [https://status.digdir.no/incidents/sn79sj63xv7w](https://status.digdir.no/incidents/sn79sj63xv7w)
+
+## 4.0.4
+
+29.04.2026
+
+- Sjekk som utføres ved oppstart for å bekrefte at de konfigurerte på-vegne-av-organisasjonene har tilgang og kontakt med Altinn – Gjelder for DPO.
+- Mappe flere verdier til Altinn for DPV
+
+## 4.0.3
+
+17.04.2026
+
+- Inneholder bugfikser etter 4.0.2
+- Inneholder sikkerhetsoppdateringer etter 4.0.2
+- Inneholder forbedringer etter 4.0.2
+  - Aksepterer trailing slash i URL’er (men det anbefales ikke)
+  - Logger valideringsfeil fra Altinn med “rå JSON” (forslag fra Dag Sommer)
+  - Maskerer sensitive properties fra visning i GUI
+
+## 4.0.2
+
+10.04.2026
+
+- Sorterer meldingene som hentes ned fra Altinn for å få riktig rekkefølge på statuser
+- Tar i bruk nye maskinporten scopes for eformidling
+- Orbyt URL som default DPI leverandør i TEST (Tieto URL fremdles default for PROD)
+- Setter sekvensgenerering i database til "legacy" modus (bakover kompabibelt med IP v2)
+- Tatt inn PR fra Runar Kristoffersen i RKMEDIA (mulig å tidsavgrense conversation søk)
+- Løser et par problem for PostgreSQL database (MOVE-4932)
+- Teknisk konfig endring (default TRANSACTION_READ_COMMITTED for å unngå samtidighets problem kø/base)
+- Normale sikkerhetsoppgraderinger av 3rd party bibliotek
+
+## 4.0.1
+
+25.02.2026
+
+**Forbedringer**
+- Sikker logging med inkludert sertifikat som standard
+- Oppdaterte produksjons url'er for Altinn v3 som standard (DPO og DPV)
+- Normale sikkerhetsoppgraderinger av 3rd party bibliotek
+
+## 4.0.0
+
+04.02.2026
+
+**Ny funksjonalitet**
+- Migrert til Altinn 3 for Altinn Formidling (DPO) og Altinn Digital Post (DPV)
+
+## 3.0.2
+
+14.01.2026
+
+**Feilretting**
+- IP taklar no ukjente ServiceIdentifiers fra SR
+
+## 3.0.1
+
+11.12.2025
+
+**Feilretting**
+- IP kan feile ved bruk av ekstern database
+
 ## 3.0.0
 
 17.09.2025
@@ -1147,6 +1246,19 @@ Støtte for avtalt-melding i eFormidling. Krever også minimum Integrasjonspunkt
 ## Valgfrie komponenter
 
 ## KOSMOS
+
+### KOSMOS 4.0.0
+
+22.04.2026
+
+- Ny versjon tilpasset Integrasjonspunkt v4 serien
+- Krever Java 21 og en fungerende IPv4 installasjon
+
+### KOSMOS 2.0.0
+
+24.09.2025
+
+- Sikkerhetsoppdateringer
 
 ### KOSMOS 1.2.0
 

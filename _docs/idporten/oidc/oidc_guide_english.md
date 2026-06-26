@@ -196,4 +196,4 @@ Body:
 
 By requesting the *profile* scope in the authentication request, an access_token for the userinfo-endpoint will be included in the response.  
 
-Please note that our userinfo endpoint does not contain any claims of value, and is solely offered in order to be compliant to the OIDC specification.  ID-porten does not know the name or other profile details for the end users.
+Our userinfo endpoint, if the access token contains the claim `clm` with the claims `family_name` and `given_name`, these will be returned by the endpoint.

@@ -4,171 +4,18 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="Version 2.8.2">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <title>NextMove API Specification</title>
 <link rel="stylesheet" href="assets/css/asciidoctor.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-.hidden {
-
-    display: none;
-
-}
-
-
-
-.switch {
-
-    border-width: 1px 1px 0 1px;
-
-    border-style: solid;
-
-    border-color: #7a2518;
-
-    display: inline-block;
-
-}
-
-
-
-.switch--item {
-
-    padding: 10px;
-
-    background-color: #ffffff;
-
-    color: #7a2518;
-
-    display: inline-block;
-
-    cursor: pointer;
-
-}
-
-
-
-.switch--item.selected {
-
-    background-color: #7a2519;
-
-    color: #ffffff;
-
-}
-
-
-
-</style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-
-<script type="text/javascript">
-
-function addBlockSwitches() {
-
-    $('.primary').each(function() {
-
-        primary = $(this);
-
-        createSwitchItem(primary, createBlockSwitch(primary)).item.addClass("selected");
-
-        primary.children('.title').remove();
-
-    });
-
-    $('.secondary').each(function(idx, node) {
-
-        secondary = $(node);
-
-        primary = findPrimary(secondary);
-
-        switchItem = createSwitchItem(secondary, primary.children('.switch'));
-
-        switchItem.content.addClass('hidden');
-
-        findPrimary(secondary).append(switchItem.content);
-
-        secondary.remove();
-
-    });
-
-}
-
-
-
-function createBlockSwitch(primary) {
-
-    blockSwitch = $('<div class="switch"></div>');
-
-    primary.prepend(blockSwitch);
-
-    return blockSwitch;
-
-}
-
-
-
-function findPrimary(secondary) {
-
-    candidate = secondary.prev();
-
-    while (!candidate.is('.primary')) {
-
-        candidate = candidate.prev();
-
-    }
-
-    return candidate;
-
-}
-
-
-
-function createSwitchItem(block, blockSwitch) {
-
-    blockName = block.children('.title').text();
-
-    content = block.children('.content').first().append(block.next('.colist'));
-
-    item = $('<div class="switch--item">' + blockName + '</div>');
-
-    item.on('click', '', content, function(e) {
-
-        $(this).addClass('selected');
-
-        $(this).siblings().removeClass('selected');
-
-        e.data.siblings('.content').addClass('hidden');
-
-        e.data.removeClass('hidden');
-
-    });
-
-    blockSwitch.append(item);
-
-    return {'item': item, 'content': content};
-
-}
-
-
-
-$(addBlockSwitches);
-
-
-
-</script>
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>NextMove API Specification</h1>
-<div class="details">
-<span id="author" class="author">Version 2.8.2</span><br>
-</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_nextmove_api_specification">NextMove API Specification</a>
 <ul class="sectlevel1">
 <li><a href="#_the_services">The services</a></li>
 <li><a href="#_capabilities">Capabilities</a>
@@ -321,7 +168,6 @@ $(addBlockSwitches);
 <li><a href="#_example_2_search_for_message_statuses">Example 2 - Search for message statuses</a></li>
 <li><a href="#_example_3_sorting_4">Example 3 - Sorting</a></li>
 <li><a href="#_example_4_paging_4">Example 4 - Paging</a></li>
-<li><a href="#_example_5_time_range_5">Example 5 - Time range</a></li>
 <li><a href="#_about_the_service_16">About the service</a></li>
 </ul>
 </li>
@@ -342,8 +188,16 @@ $(addBlockSwitches);
 </li>
 <li><a href="#_webhook_events">Webhook events</a>
 <ul class="sectlevel2">
-<li><a href="#event-ping">Ping event</a></li>
-<li><a href="#event-message-status">Message status event</a></li>
+<li><a href="#event-ping">Ping event</a>
+<ul class="sectlevel3">
+<li><a href="#_example_1_ping_event">Example 1 - Ping event</a></li>
+</ul>
+</li>
+<li><a href="#event-message-status">Message status event</a>
+<ul class="sectlevel3">
+<li><a href="#_example_1_message_status_event">Example 1 - Message status event</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_webhook_subscriptions">Webhook subscriptions</a>
@@ -365,6 +219,8 @@ $(addBlockSwitches);
 <li><a href="#subscriptions-create">Create a subscription</a>
 <ul class="sectlevel3">
 <li><a href="#_example_1_create_a_subscription">Example 1 - Create a subscription</a></li>
+<li><a href="#_note_about_event_validation">Note about event validation</a></li>
+<li><a href="#_message_status_filters">Message Status Filters</a></li>
 <li><a href="#_example_2_constraint_violation">Example 2 - Constraint violation</a></li>
 <li><a href="#_about_the_service_21">About the service</a></li>
 </ul>
@@ -388,9 +244,25 @@ $(addBlockSwitches);
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<link rel="stylesheet" href="assets/css/magic-tabs.css">
+<script src="assets/js/magic-tabs.js"></script>
+</div>
+</div>
+<h1 id="_nextmove_api_specification" class="sect0">NextMove API Specification</h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>Version 0.0.0</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_the_services">The services</h2>
 <div class="sectionbody">
@@ -550,33 +422,34 @@ $(addBlockSwitches);
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/capabilities/987654321' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/987654321' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/capabilities/987654321 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/987654321 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 732
+Content-Length: 710
 
 {
   "capabilities" : [ {
@@ -609,33 +482,34 @@ Content-Length: 732
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/capabilities/987654321?securityLevel=4' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/987654321?securityLevel=4' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/capabilities/987654321?securityLevel=4 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/987654321?securityLevel=4 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 732
+Content-Length: 710
 
 {
   "capabilities" : [ {
@@ -668,33 +542,34 @@ Content-Length: 732
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/capabilities/987654321?process=admin-process' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/987654321?process=admin-process' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/capabilities/987654321?process=admin-process HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/987654321?process=admin-process HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 732
+Content-Length: 710
 
 {
   "capabilities" : [ {
@@ -727,33 +602,34 @@ Content-Length: 732
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/capabilities/01017012345' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/capabilities/01017012345 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1269
+Content-Length: 1225
 
 {
   "capabilities" : [ {
@@ -808,33 +684,34 @@ Content-Length: 1269
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/capabilities/01017012345?securityLevel=4' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345?securityLevel=4' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/capabilities/01017012345?securityLevel=4 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345?securityLevel=4 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1269
+Content-Length: 1225
 
 {
   "capabilities" : [ {
@@ -889,33 +766,34 @@ Content-Length: 1269
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/capabilities/01017012345?process=admin-process' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/capabilities/01017012345?process=admin-process' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/capabilities/01017012345?process=admin-process HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/capabilities/01017012345?process=admin-process HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1269
+Content-Length: 1225
 
 {
   "capabilities" : [ {
@@ -1112,7 +990,7 @@ After the message is successfully downloaded, it should be deleted using the <a 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/eformidling/messages-in.png" alt="messages in" width="630" height="345">
+<img src="images/eformidling/messages-in.png" alt="messages in" width="654" height="327">
 </div>
 </div>
 <div class="sect2">
@@ -1126,33 +1004,34 @@ The response is paged with a default page size of 10.</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 2843
+Content-Length: 2744
 
 {
   "content" : [ {
@@ -1173,14 +1052,14 @@ Content-Length: 2843
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1209,14 +1088,14 @@ Content-Length: 2843
       "documentIdentification" : {
         "standard" : "urn:no:difi:einnsyn:xsd::publisering",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+        "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
         "type" : "publisering",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+          "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
           "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1229,29 +1108,29 @@ Content-Length: 2843
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -1262,33 +1141,34 @@ Content-Length: 2843
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in?serviceIdentifier=DPO' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in?serviceIdentifier=DPO' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in?serviceIdentifier=DPO HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in?serviceIdentifier=DPO HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1690
+Content-Length: 1627
 
 {
   "content" : [ {
@@ -1309,14 +1189,14 @@ Content-Length: 1690
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1329,29 +1209,29 @@ Content-Length: 1690
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 1,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -1362,33 +1242,34 @@ Content-Length: 1690
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in?sort=lastUpdated%2Casc' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in?sort=lastUpdated%2Casc' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in?sort=lastUpdated%2Casc HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in?sort=lastUpdated%2Casc HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 2845
+Content-Length: 2746
 
 {
   "content" : [ {
@@ -1409,14 +1290,14 @@ Content-Length: 2845
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1445,14 +1326,14 @@ Content-Length: 2845
       "documentIdentification" : {
         "standard" : "urn:no:difi:einnsyn:xsd::publisering",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+        "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
         "type" : "publisering",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+          "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
           "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1465,29 +1346,29 @@ Content-Length: 2845
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -1498,33 +1379,34 @@ Content-Length: 2845
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in?page=3&amp;size=10' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in?page=3&amp;size=10' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in?page=3&amp;size=10 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in?page=3&amp;size=10 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1693
+Content-Length: 1630
 
 {
   "content" : [ {
@@ -1545,14 +1427,14 @@ Content-Length: 1693
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -1565,29 +1447,29 @@ Content-Length: 1693
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 3,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 30,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 31,
-  "last" : true,
   "totalPages" : 4,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : false,
   "size" : 10,
   "number" : 3,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -1941,33 +1823,34 @@ The message is now ready for download.</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in/peek' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/peek' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in/peek HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/peek HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1079
+Content-Length: 1043
 
 {
   "standardBusinessDocumentHeader" : {
@@ -1987,14 +1870,14 @@ Content-Length: 1079
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2014,33 +1897,34 @@ Content-Length: 1079
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in/peek?serviceIdentifier=DPE' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/peek?serviceIdentifier=DPE' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in/peek?serviceIdentifier=DPE HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/peek?serviceIdentifier=DPE HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1079
+Content-Length: 1043
 
 {
   "standardBusinessDocumentHeader" : {
@@ -2060,14 +1944,14 @@ Content-Length: 1079
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2087,16 +1971,16 @@ Content-Length: 1079
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 204 No Content
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
 Content-Type: application/json
-Content-Length: 238
+Content-Length: 231
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 204,
-  "error" : "No Content",
   "exception" : "no.difi.meldingsutveksling.exceptions.NoContentException",
   "message" : "No content",
+  "status" : 204,
+  "error" : "No Content",
   "path" : "/api/messages/in/peek"
 }</code></pre>
 </div>
@@ -2409,41 +2293,38 @@ Please note, that the message must be deleted from the queue, using <a href="#me
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in/pop/e99e5cd1-74de-4cce-b902-cecdf97dc4f3' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/vnd.etsi.asic-e+zip'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/in/pop/e99e5cd1-74de-4cce-b902-cecdf97dc4f3 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
 Accept: application/vnd.etsi.asic-e+zip
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Disposition: attachment; filename=asic.zip
 Content-Type: application/vnd.etsi.asic-e+zip
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
 Content-Length: 1151
 
-PK��SZ]S���������������test����U�s"�����Z��a���PH[c-�VNƴ� 2������=�U������1A�ʯ�~|#�Ǿs�!i�A[��q@��#���"�M��?|e��qQ��o�����xx��d#L2���/�#��&amp;�r��Zj+M�ku��G�֬6����&amp;�#��Wj]�t���w�{���S�WY3iGr��
-*n���\��p�?&gt;����9�#L�p�!���#,y��?�)�\���$���;Ǎ�&gt;x�&lt;���M}�ܷ΁J�x����9Ľ���:)7&gt;7ǁ�= ���`���6c�������n�=F?$��t-ZJ-��.5M��R���k���uXy^������(`bcs'�q�{���cGe��Cek,���Se�|R��|}&gt;�F&lt;�5|��8&lt;�˟�vD�3K�����&gt;~���`u��5�$�,F
-I/�����T@.W}R'ồj]Ē��'ߢ�ո%gB�5�&gt;����c�.ղ�i'�݅���V���ѳ�ș����+s&gt;�dZ:�)H3�u�M�V.��1]j�,��B7��,)��G���G���/`@@�T�#�ڥ_r�
-�L��&amp;�^�#�W��9�� Yb:�@�'p��q��b�1��I8^,�)oȺs�RBl����Rp1Ns�בgR.�n���T�L��5�u�9m�K�M��w��9����_��4��G����)������!��~rx��`Z��(&gt;JA��u1�$rV�Q�����yܱ���������@m���u,�q扱�����zV1F	r�Z��$�L�y&amp;Ln'�+�S �oC�ߵ%Tc)��"�Nr�(f3 Xl��&amp;h[O2?�e����Z�w�v9�(g�0@��p�vL}�
-�ӈ��?��A?�pv7��K?�}g~.�8H��"�/�����V�і�~I���������*a�hW]7hyF���1*8�09m����jW�2&gt;�ݔ��u�y��
-��1�Y��������8�赫ѷ@�y=��@K�r����c��c�g�PK��7;�����PK���SZ]S��7;����������������������testPK������2���7</code></pre>
+PK  MNC\               test ��b'� ,�I1��(������h6`��L��ɲ�(��Q�$�: k~������0J�|��I�r�yo��0�i�4�%�P�Z�T�i�8{,��ʣ�W��c0F� ���Mr�Z��D�8�A��gk$I�d�z܄^J���1o��\{�:0)k�D���e���c�\�Xە+ƫ�ȝxv���%�s���qd�-i�Ԛ3hҺ��d`��U�X�`=3��t|aS��Q����]�G�ү��ugS&amp;F}�K��JÀ2&lt;���Z �Ol���if�h�B��8:[ W�H_*�w�7��@��R�v���0|GG�h�e�;������M��ސOC��q�f�[Vس�0��,�8w�������@�I�⬐u0��Qw�ѿ�!�荑�,-׶��ʮ��ɝrJ�m�7r5GZ����ߠ;dWu&amp;,j�(P�H6�$�{�h����B�W ���=�n={�a�mG��f�~��C*c�;ЯR����9]�ğ�a�E$�����Fi���H��(�Rt�m���-»��eu�@���*�uS@�OI=�Zf��՛��p��'��R�U�1)y�,���X�:r��m� ���bѶ��^q`�_ T5UN4�K�̞�+����� �}c�*'�}��Z�DRѪy�E{Y��yѰ"��Z"����}ڋ��Oí,�g�𞦌^/�^Q�)�Ba �߃i�'�"��I�'.��Z���&lt;�!x�ٚ9a�J��&amp;���^6�:�Q�?����ʚC�f㦄�/H٤/%?;/���s�y!��@7���nFj#ۥ8L��t�u���6p⢚qu��]I���+�s�d?�����C���� *-}���|��KXQ_�_���M+�a��T,�7����.��D���_S:FN
+'��L^�\�|�˲s�usL���i�BE,J�f���H��iE�#��ٯaB���85z\�w�����1�&lt;US9��1,?�u��F��q���b�I�,�VR�WCY�$����PK�W�d     PK   MNC\�W�d                      testPK      2   7</code></pre>
 </div>
 </div>
 </div>
@@ -2485,33 +2366,34 @@ I/�����T@.W}R'ồj]Ē��'ߢ�ո%gB�5�&gt;����c�.
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/in/e99e5cd1-74de-4cce-b902-cecdf97dc4f3' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/messages/in/e99e5cd1-74de-4cce-b902-cecdf97dc4f3 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1116
+Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
@@ -2531,14 +2413,14 @@ Content-Length: 1116
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2770,7 +2652,7 @@ echoed back in a subsequent response.</p></td>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/eformidling/create-message.png" alt="create message" width="715" height="646">
+<img src="images/eformidling/create-message.png" alt="create message" width="749" height="619">
 </div>
 </div>
 <div class="sect2">
@@ -2783,33 +2665,34 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 3311
+Content-Length: 3200
 
 {
   "content" : [ {
@@ -2830,14 +2713,14 @@ Content-Length: 3311
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2866,14 +2749,14 @@ Content-Length: 3311
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "c6fbe0f1-64ff-4064-8d19-00f3ca66aecd",
+        "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "9c5ce504-13ed-4f18-860b-61f5ae36c427",
+          "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2898,29 +2781,29 @@ Content-Length: 3311
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -2931,33 +2814,34 @@ Content-Length: 3311
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out?serviceIdentifier=DPO' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out?serviceIdentifier=DPO' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/out?serviceIdentifier=DPO HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out?serviceIdentifier=DPO HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1690
+Content-Length: 1627
 
 {
   "content" : [ {
@@ -2978,14 +2862,14 @@ Content-Length: 1690
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -2998,29 +2882,29 @@ Content-Length: 1690
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 1,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -3031,33 +2915,34 @@ Content-Length: 1690
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out?sort=lastUpdated%2Casc' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out?sort=lastUpdated%2Casc' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/out?sort=lastUpdated%2Casc HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out?sort=lastUpdated%2Casc HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 3313
+Content-Length: 3202
 
 {
   "content" : [ {
@@ -3078,14 +2963,14 @@ Content-Length: 3313
       "documentIdentification" : {
         "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
         "type" : "arkivmelding",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3114,14 +2999,14 @@ Content-Length: 3313
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "c6fbe0f1-64ff-4064-8d19-00f3ca66aecd",
+        "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "9c5ce504-13ed-4f18-860b-61f5ae36c427",
+          "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3146,29 +3031,29 @@ Content-Length: 3313
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -3179,33 +3064,34 @@ Content-Length: 3313
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out?page=3&amp;size=10' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out?page=3&amp;size=10' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/out?page=3&amp;size=10 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out?page=3&amp;size=10 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 2125
+Content-Length: 2050
 
 {
   "content" : [ {
@@ -3226,14 +3112,14 @@ Content-Length: 2125
       "documentIdentification" : {
         "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
         "typeVersion" : "1.0",
-        "instanceIdentifier" : "c6fbe0f1-64ff-4064-8d19-00f3ca66aecd",
+        "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
         "type" : "digital",
         "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
       },
       "businessScope" : {
         "scope" : [ {
           "type" : "ConversationId",
-          "instanceIdentifier" : "9c5ce504-13ed-4f18-860b-61f5ae36c427",
+          "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -3258,29 +3144,29 @@ Content-Length: 2125
     }
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 3,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 30,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 41,
-  "last" : false,
   "totalPages" : 5,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : false,
   "numberOfElements" : 1,
   "first" : false,
   "size" : 10,
   "number" : 3,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -3680,33 +3566,34 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1116
+Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
@@ -3726,14 +3613,14 @@ Content-Length: 1116
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4009,7 +3896,7 @@ Business Document.</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -4030,13 +3917,13 @@ Business Document.</p>
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4053,10 +3940,11 @@ Business Document.</p>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 1056
+Content-Length: 1021
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -4077,13 +3965,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4100,18 +3988,18 @@ Host: localhost:8080
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1116
+Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
@@ -4131,14 +4019,14 @@ Content-Length: 1116
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4189,8 +4077,7 @@ organization that has created the standard business document.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
 organization that receives the SBD.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
-Size must be between 1 and 1 inclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
@@ -4284,7 +4171,7 @@ creation. In the SBDH the parser translator or service component assigns
 the SBD a Date and Time stamp. The creation date and time expressed
 here most likely will be different from the date and time stamped in the
 transport envelope.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
@@ -4302,7 +4189,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -4557,7 +4444,7 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -4578,13 +4465,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "c6fbe0f1-64ff-4064-8d19-00f3ca66aecd",
+      "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "9c5ce504-13ed-4f18-860b-61f5ae36c427",
+        "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4613,10 +4500,11 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 1463
+Content-Length: 1416
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -4637,13 +4525,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "c6fbe0f1-64ff-4064-8d19-00f3ca66aecd",
+      "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
       "type" : "digital"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "9c5ce504-13ed-4f18-860b-61f5ae36c427",
+        "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4672,18 +4560,18 @@ Host: localhost:8080
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1523
+Content-Length: 1475
 
 {
   "standardBusinessDocumentHeader" : {
@@ -4703,14 +4591,14 @@ Content-Length: 1523
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "c6fbe0f1-64ff-4064-8d19-00f3ca66aecd",
+      "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
       "type" : "digital",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "9c5ce504-13ed-4f18-860b-61f5ae36c427",
+        "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -4773,8 +4661,7 @@ organization that has created the standard business document.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
 organization that receives the SBD.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
-Size must be between 1 and 1 inclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
@@ -4868,7 +4755,7 @@ creation. In the SBDH the parser translator or service component assigns
 the SBD a Date and Time stamp. The creation date and time expressed
 here most likely will be different from the date and time stamped in the
 transport envelope.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
@@ -4886,7 +4773,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -5251,7 +5138,7 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -5272,13 +5159,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "362c4651-51c5-40cf-b56a-c03dfa930a0b",
+      "instanceIdentifier" : "fbf8f637-f588-43fb-85a3-05b88cf551f0",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "85341db1-da72-4783-8df4-dce2b242d452",
+        "instanceIdentifier" : "4166da2f-bf6b-4645-b400-9a93eb024cd1",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5297,10 +5184,11 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 1519
+Content-Length: 1482
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -5321,13 +5209,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "362c4651-51c5-40cf-b56a-c03dfa930a0b",
+      "instanceIdentifier" : "fbf8f637-f588-43fb-85a3-05b88cf551f0",
       "type" : "digital_dpv"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "85341db1-da72-4783-8df4-dce2b242d452",
+        "instanceIdentifier" : "4166da2f-bf6b-4645-b400-9a93eb024cd1",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5346,18 +5234,18 @@ Host: localhost:8080
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1579
+Content-Length: 1541
 
 {
   "standardBusinessDocumentHeader" : {
@@ -5377,14 +5265,14 @@ Content-Length: 1579
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "362c4651-51c5-40cf-b56a-c03dfa930a0b",
+      "instanceIdentifier" : "fbf8f637-f588-43fb-85a3-05b88cf551f0",
       "type" : "digital_dpv",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "85341db1-da72-4783-8df4-dce2b242d452",
+        "instanceIdentifier" : "4166da2f-bf6b-4645-b400-9a93eb024cd1",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5437,8 +5325,7 @@ organization that has created the standard business document.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
 organization that receives the SBD.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
-Size must be between 1 and 1 inclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
@@ -5532,7 +5419,7 @@ creation. In the SBDH the parser translator or service component assigns
 the SBD a Date and Time stamp. The creation date and time expressed
 here most likely will be different from the date and time stamped in the
 transport envelope.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
@@ -5550,7 +5437,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -5827,7 +5714,7 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -5848,13 +5735,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "73c56dbe-117c-4717-81cf-7b2909675fb0",
+      "instanceIdentifier" : "dcc3c9a4-587c-4853-afcc-2951ed1c3828",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "10624cdc-3277-406d-b508-24b504d4405d",
+        "instanceIdentifier" : "161135ea-d1e3-48f0-9519-24415fa0222a",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5897,10 +5784,11 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 1770
+Content-Length: 1709
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -5921,13 +5809,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "73c56dbe-117c-4717-81cf-7b2909675fb0",
+      "instanceIdentifier" : "dcc3c9a4-587c-4853-afcc-2951ed1c3828",
       "type" : "print"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "10624cdc-3277-406d-b508-24b504d4405d",
+        "instanceIdentifier" : "161135ea-d1e3-48f0-9519-24415fa0222a",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -5970,18 +5858,18 @@ Host: localhost:8080
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1830
+Content-Length: 1768
 
 {
   "standardBusinessDocumentHeader" : {
@@ -6001,14 +5889,14 @@ Content-Length: 1830
     "documentIdentification" : {
       "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "73c56dbe-117c-4717-81cf-7b2909675fb0",
+      "instanceIdentifier" : "dcc3c9a4-587c-4853-afcc-2951ed1c3828",
       "type" : "print",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "10624cdc-3277-406d-b508-24b504d4405d",
+        "instanceIdentifier" : "161135ea-d1e3-48f0-9519-24415fa0222a",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6085,8 +5973,7 @@ organization that has created the standard business document.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
 organization that receives the SBD.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
-Size must be between 1 and 1 inclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
@@ -6180,7 +6067,7 @@ creation. In the SBDH the parser translator or service component assigns
 the SBD a Date and Time stamp. The creation date and time expressed
 here most likely will be different from the date and time stamped in the
 transport envelope.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
@@ -6198,7 +6085,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -6252,7 +6139,7 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.mottaker</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Postal address of the recipient.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.utskriftsfarge</code></p></td>
@@ -6263,14 +6150,14 @@ echoed back in a subsequent response.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.posttype</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mail type. Can be one of: A_PRIORITERT, B_OEKONOMI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mail type. Can be one of: A, B</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Return address to be placed on the back of the envelope.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be null</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.printinstruksjoner</code></p></td>
@@ -6576,7 +6463,7 @@ echoed back in a subsequent response.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.posttype</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mail type. Can be one of: A_PRIORITERT, B_OEKONOMI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mail type. Can be one of: A, B</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>print.retur</code></p></td>
@@ -6688,7 +6575,7 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -6709,13 +6596,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d54334c4-abf8-4f0a-ae61-6ad576c1b997",
+      "instanceIdentifier" : "6ef1d6ee-ea5e-4bf8-86ba-a7e6bdfcff12",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "ca580042-4475-4fbd-84f8-cca80329d826",
+        "instanceIdentifier" : "ded72e9a-5e36-4e22-9724-748a1cc84b97",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6733,10 +6620,11 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 1060
+Content-Length: 1024
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -6757,13 +6645,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d54334c4-abf8-4f0a-ae61-6ad576c1b997",
+      "instanceIdentifier" : "6ef1d6ee-ea5e-4bf8-86ba-a7e6bdfcff12",
       "type" : "innsynskrav"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "ca580042-4475-4fbd-84f8-cca80329d826",
+        "instanceIdentifier" : "ded72e9a-5e36-4e22-9724-748a1cc84b97",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6781,18 +6669,18 @@ Host: localhost:8080
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1120
+Content-Length: 1083
 
 {
   "standardBusinessDocumentHeader" : {
@@ -6812,14 +6700,14 @@ Content-Length: 1120
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "d54334c4-abf8-4f0a-ae61-6ad576c1b997",
+      "instanceIdentifier" : "6ef1d6ee-ea5e-4bf8-86ba-a7e6bdfcff12",
       "type" : "innsynskrav",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "ca580042-4475-4fbd-84f8-cca80329d826",
+        "instanceIdentifier" : "ded72e9a-5e36-4e22-9724-748a1cc84b97",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -6871,8 +6759,7 @@ organization that has created the standard business document.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
 organization that receives the SBD.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
-Size must be between 1 and 1 inclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
@@ -6966,7 +6853,7 @@ creation. In the SBDH the parser translator or service component assigns
 the SBD a Date and Time stamp. The creation date and time expressed
 here most likely will be different from the date and time stamped in the
 transport envelope.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
@@ -6984,7 +6871,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -7250,7 +7137,7 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -7271,13 +7158,13 @@ echoed back in a subsequent response.</p></td>
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7294,10 +7181,11 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 1019
+Content-Length: 984
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -7318,13 +7206,13 @@ Host: localhost:8080
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
       "type" : "publisering"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7341,18 +7229,18 @@ Host: localhost:8080
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1079
+Content-Length: 1043
 
 {
   "standardBusinessDocumentHeader" : {
@@ -7372,14 +7260,14 @@ Content-Length: 1079
     "documentIdentification" : {
       "standard" : "urn:no:difi:einnsyn:xsd::publisering",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "04f00fe6-eded-4fe8-8649-607650466a39",
+      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
       "type" : "publisering",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "e615f7ba-3089-46cb-9263-6c34f3b6769e",
+        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -7430,8 +7318,7 @@ organization that has created the standard business document.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Array</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logical party representing the
 organization that receives the SBD.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must not be empty.
-Size must be between 1 and 1 inclusive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size must be between 0 and 1 inclusive</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification</code></p></td>
@@ -7525,7 +7412,7 @@ creation. In the SBDH the parser translator or service component assigns
 the SBD a Date and Time stamp. The creation date and time expressed
 here most likely will be different from the date and time stamped in the
 transport envelope.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Must be in the past</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.businessScope.scope</code></p></td>
@@ -7543,7 +7430,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: ConversationId, SenderRef, ReceiverRef.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -7780,16 +7667,16 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 400 Bad Request
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 400 Bad Request
 Content-Type: application/json
-Content-Length: 259
+Content-Length: 252
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 400,
-  "error" : "Bad Request",
   "exception" : "no.difi.meldingsutveksling.exceptions.ServiceNotEnabledException",
   "message" : "Service DPI is not enabled",
+  "status" : 400,
+  "error" : "Bad Request",
   "path" : "/api/messages/out"
 }</code></pre>
 </div>
@@ -7856,17 +7743,14 @@ Content-Length: 259
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 400 Bad Request
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 400 Bad Request
 Content-Type: application/json
-Content-Length: 676
+Content-Length: 662
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 400,
-  "error" : "Bad Request",
-  "exception" : "javax.validation.ConstraintViolationException",
+  "exception" : "jakarta.validation.ConstraintViolationException",
   "message" : "standardBusinessDocumentHeader.documentIdentification.type: Must be a NextMove message type",
-  "path" : "/api/messages/out",
   "errors" : [ {
     "codes" : [ "MessageType" ],
     "defaultMessage" : "Must be a NextMove message type",
@@ -7875,7 +7759,10 @@ Content-Length: 676
     "rejectedValue" : "strange",
     "bindingFailure" : false,
     "code" : "MessageType"
-  } ]
+  } ],
+  "status" : 400,
+  "error" : "Bad Request",
+  "path" : "/api/messages/out"
 }</code></pre>
 </div>
 </div>
@@ -7985,7 +7872,7 @@ Content-Length: 676
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X PUT \
     -H 'Content-Type: text/plain;charset=UTF-8' \
     -H 'Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt' \
     -H 'Accept: application/json' \
@@ -7995,11 +7882,12 @@ Content-Length: 676
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">PUT /api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
 Content-Type: text/plain;charset=UTF-8
 Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt
 Accept: application/json
 Content-Length: 120
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 Before the law sits a gatekeeper. To this gatekeeper comes a man from the country who asks to gain entry into the law...</code></pre>
@@ -8008,12 +7896,12 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -8086,27 +7974,29 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X POST \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
 Accept: application/json
-Host: localhost:8080</code></pre>
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
+Host: localhost:8080
+Content-Type: application/x-www-form-urlencoded</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -8182,7 +8072,7 @@ For larger messages, please use the following combination:
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out/multipart' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/multipart' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: multipart/form-data;charset=UTF-8' \
     -H 'Accept: application/json' \
     -F 'sbd={
@@ -8203,13 +8093,13 @@ For larger messages, please use the following combination:
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8227,9 +8117,10 @@ For larger messages, please use the following combination:
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/messages/out/multipart HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/multipart HTTP/1.1
 Content-Type: multipart/form-data;charset=UTF-8; boundary=6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 --6o2knFse3p53ty9dmcQvWAIx1zInP11uCfbm
@@ -8254,13 +8145,13 @@ Content-Type: application/json
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8283,18 +8174,18 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1116
+Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
@@ -8314,14 +8205,14 @@ Content-Length: 1116
     "documentIdentification" : {
       "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
       "typeVersion" : "1.0",
-      "instanceIdentifier" : "e99e5cd1-74de-4cce-b902-cecdf97dc4f3",
+      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
       "type" : "arkivmelding",
       "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
     },
     "businessScope" : {
       "scope" : [ {
         "type" : "ConversationId",
-        "instanceIdentifier" : "b4567a25-672c-4c2e-9a0f-08c52c54254b",
+        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
@@ -8554,27 +8445,28 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/messages/out/e99e5cd1-74de-4cce-b902-cecdf97dc4f3 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -8624,51 +8516,51 @@ The response is paged with a default page size of 10.</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 2181
+Content-Length: 2120
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "46235f4e-1a5e-40ee-a577-47c3a778729c",
-    "messageId" : "bc718283-d88e-4688-a1ec-7339811d9e8f",
+    "conversationId" : "945cbe76-6de4-4157-b5e6-fb7bef65dd49",
+    "messageId" : "a9af4c21-0a5d-4904-97c5-b96c27fb192e",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
     "messageReference" : "system-12463",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPO",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -8677,20 +8569,19 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "f1b791c7-ae5d-4e8a-a5b2-9d947a99d129",
-    "messageId" : "6194d724-a07a-4687-9343-111eb4c5df55",
+    "conversationId" : "1e88e7d9-0df6-4f5b-8879-b29b51271d9d",
+    "messageId" : "17739632-fa2c-4f8d-a8e6-eb02229fd0e6",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
     "messageReference" : "system-98765",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPI",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -8699,29 +8590,29 @@ Content-Length: 2181
     } ]
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -8732,51 +8623,51 @@ Content-Length: 2181
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations?serviceIdentifier=DPO' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations?serviceIdentifier=DPO' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations?serviceIdentifier=DPO HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations?serviceIdentifier=DPO HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1350
+Content-Length: 1306
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "7cbd95ca-47bf-49f1-ada1-1ca1c56fc741",
-    "messageId" : "3ecddf8d-f783-4f0c-bc29-820cbe178f6a",
+    "conversationId" : "1b2b0efc-8a98-4eb4-89ca-bb933a7ef02a",
+    "messageId" : "4d6eae96-0f10-423f-a335-d2b529ef3f4c",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
     "messageReference" : "system-12463",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPO",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -8785,29 +8676,29 @@ Content-Length: 1350
     } ]
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 1,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -8818,51 +8709,51 @@ Content-Length: 1350
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations?sort=lastUpdated%2Casc' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations?sort=lastUpdated%2Casc' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations?sort=lastUpdated%2Casc HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations?sort=lastUpdated%2Casc HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1350
+Content-Length: 1306
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "ab890178-1912-4465-83bf-7f04b54f5198",
-    "messageId" : "b9b714d6-779c-46dd-abc7-b1ba42e2abcf",
+    "conversationId" : "57024695-a194-43bd-bc1c-1615fedd1a95",
+    "messageId" : "0ad46233-c291-41aa-9b1c-81250be4eb8d",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
     "messageReference" : "system-12463",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPO",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -8871,29 +8762,29 @@ Content-Length: 1350
     } ]
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 1,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -8904,51 +8795,51 @@ Content-Length: 1350
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations?page=3&amp;size=10' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations?page=3&amp;size=10' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations?page=3&amp;size=10 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations?page=3&amp;size=10 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1336
+Content-Length: 1292
 
 {
   "content" : [ {
     "id" : 56,
-    "conversationId" : "51311cbe-f069-4886-8cf7-a6e7c20b949f",
-    "messageId" : "c8459a17-09c6-4563-afbc-11289d9408bf",
+    "conversationId" : "6934e499-6c97-47c8-85e1-122dbd56b626",
+    "messageId" : "161ffa62-e723-452c-a765-cf517cb6c4d5",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
     "messageReference" : "system-98765",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPI",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -8957,29 +8848,29 @@ Content-Length: 1336
     } ]
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 3,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 30,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 31,
-  "last" : true,
   "totalPages" : 4,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : false,
   "size" : 10,
   "number" : 3,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -9120,14 +9011,9 @@ Content-Length: 1336
 <td class="tableblock halign-left valign-top"><p class="tableblock">The message title</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].externalSystemReference</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service code</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceEditionCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service edition code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference from an external system. For DPV external reference is correspondenceid</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].lastUpdate</code></p></td>
@@ -9281,50 +9167,50 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations/49' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/49' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations/49 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/49 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 802
+Content-Length: 787
 
 {
   "id" : 49,
-  "conversationId" : "942f9899-18b2-46f9-ac86-b0053f234c38",
-  "messageId" : "75d64e2b-14ca-4aac-82d7-c9a46e885ff4",
+  "conversationId" : "8e985f77-841a-4d1c-a7ec-43429ccebf68",
+  "messageId" : "13fa3e8a-a1a8-4b09-8d8a-821d01e317ec",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
   "messageReference" : "system-12463",
   "messageTitle" : "A message title",
-  "serviceCode" : "4255",
-  "serviceEditionCode" : "10",
   "lastUpdate" : "2019-03-25T12:38:23+01:00",
   "finished" : false,
   "expiry" : "2019-04-25T12:38:23+01:00",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
+  "externalSystemReference" : "reference from external system",
   "messageStatuses" : [ {
     "id" : 76,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -9340,16 +9226,16 @@ Content-Length: 802
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 404 Not Found
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
 Content-Type: application/json
-Content-Length: 277
+Content-Length: 270
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 404,
-  "error" : "Not Found",
   "exception" : "no.difi.meldingsutveksling.exceptions.ConversationNotFoundException",
   "message" : "Conversation with id = 49 was not found",
+  "status" : 404,
+  "error" : "Not Found",
   "path" : "/api/conversations/49"
 }</code></pre>
 </div>
@@ -9495,14 +9381,9 @@ Content-Length: 277
 <td class="tableblock halign-left valign-top"><p class="tableblock">The message title</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>externalSystemReference</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service code</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceEditionCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service edition code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference from an external system. For DPV external reference is correspondenceid</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastUpdate</code></p></td>
@@ -9571,50 +9452,50 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations/messageId/ecfd35a3-3006-4757-b521-8524c56d0702' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/b0ed4c15-5844-4e1a-a2e6-cf0d25c61ca4' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations/messageId/ecfd35a3-3006-4757-b521-8524c56d0702 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/b0ed4c15-5844-4e1a-a2e6-cf0d25c61ca4 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 802
+Content-Length: 787
 
 {
   "id" : 49,
-  "conversationId" : "ea1d7c23-7df9-4ae7-81c5-5c9f73c316b9",
-  "messageId" : "ecfd35a3-3006-4757-b521-8524c56d0702",
+  "conversationId" : "72e01143-df39-4226-ab6d-d6a757f6b663",
+  "messageId" : "b0ed4c15-5844-4e1a-a2e6-cf0d25c61ca4",
   "senderIdentifier" : "0192:910077473",
   "receiverIdentifier" : "0192:910075918",
   "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
   "messageReference" : "system-12463",
   "messageTitle" : "A message title",
-  "serviceCode" : "4255",
-  "serviceEditionCode" : "10",
   "lastUpdate" : "2019-03-25T12:38:23+01:00",
   "finished" : false,
   "expiry" : "2019-04-25T12:38:23+01:00",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
+  "externalSystemReference" : "reference from external system",
   "messageStatuses" : [ {
     "id" : 76,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -9630,16 +9511,16 @@ Content-Length: 802
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 404 Not Found
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
 Content-Type: application/json
-Content-Length: 362
+Content-Length: 355
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 404,
-  "error" : "Not Found",
   "exception" : "no.difi.meldingsutveksling.exceptions.ConversationNotFoundException",
   "message" : "Conversation with messageId = df64afa1-83f4-497c-ae94-db22108801b9 was not found",
+  "status" : 404,
+  "error" : "Not Found",
   "path" : "/api/conversations/messageId/df64afa1-83f4-497c-ae94-db22108801b9"
 }</code></pre>
 </div>
@@ -9785,14 +9666,9 @@ Content-Length: 362
 <td class="tableblock halign-left valign-top"><p class="tableblock">The message title</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>externalSystemReference</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service code</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceEditionCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service edition code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference from an external system. For DPV external reference is correspondenceid</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastUpdate</code></p></td>
@@ -9860,27 +9736,28 @@ Content-Length: 362
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations/42' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/42' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/conversations/42 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/conversations/42 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -9899,27 +9776,28 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations/messageId/b0142ac1-547f-4460-a3db-aa657e6f2681' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/2f9a0a64-35b9-4c99-9dc4-f7645e6b85af' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/conversations/messageId/b0142ac1-547f-4460-a3db-aa657e6f2681 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/conversations/messageId/2f9a0a64-35b9-4c99-9dc4-f7645e6b85af HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -9939,51 +9817,51 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/conversations/queue' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/queue' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/conversations/queue HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/queue HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 2181
+Content-Length: 2120
 
 {
   "content" : [ {
     "id" : 49,
-    "conversationId" : "3d4d410b-88ea-457d-a176-4d6248b46043",
-    "messageId" : "41f387ff-c1e3-4eb4-88dc-a5cf77290950",
+    "conversationId" : "8fa6a976-9737-4481-80f9-3b2703ae7c1d",
+    "messageId" : "6205c813-d3fa-4cb3-aa80-c7656c883e18",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "0192:910075918",
     "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
     "messageReference" : "system-12463",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPO",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -9992,20 +9870,19 @@ Content-Length: 2181
     } ]
   }, {
     "id" : 56,
-    "conversationId" : "9557e379-5e72-436b-bdf6-1ddbafbdf717",
-    "messageId" : "008f1fe5-c091-405c-a57c-2e7634772eb7",
+    "conversationId" : "0f76392f-bd16-40e5-b36f-4aaeadbdded2",
+    "messageId" : "2360afb3-94cf-4fdb-8bc7-e27d8f52a280",
     "senderIdentifier" : "0192:910077473",
     "receiverIdentifier" : "01017012345",
     "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
     "messageReference" : "system-98765",
     "messageTitle" : "A message title",
-    "serviceCode" : "4255",
-    "serviceEditionCode" : "10",
     "lastUpdate" : "2019-03-25T12:38:23+01:00",
     "finished" : false,
     "expiry" : "2019-04-25T12:38:23+01:00",
     "direction" : "INCOMING",
     "serviceIdentifier" : "DPI",
+    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
@@ -10014,29 +9891,29 @@ Content-Length: 2181
     } ]
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -10133,14 +10010,9 @@ Content-Length: 2181
 <td class="tableblock halign-left valign-top"><p class="tableblock">The message title</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceCode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].externalSystemReference</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service code</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceEditionCode</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Altinn service edition code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference from an external system. For DPV external reference is correspondenceid</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].lastUpdate</code></p></td>
@@ -10299,33 +10171,34 @@ The response is paged with a default page size of 10.</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/statuses HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1044
+Content-Length: 1001
 
 {
   "content" : [ {
@@ -10334,41 +10207,41 @@ Content-Length: 1044
     "status" : "MOTTATT",
     "description" : "Mottatt",
     "convId" : 2,
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
   }, {
     "id" : 7,
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
     "status" : "LEVERT",
     "description" : "Levert",
     "convId" : 4,
-    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
+    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
+    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -10379,33 +10252,34 @@ Content-Length: 1044
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses?messageId=1cc3fb67-b776-4730-b017-1028b86a8b8b&amp;status=MOTTATT' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses?messageId=1cc3fb67-b776-4730-b017-1028b86a8b8b&amp;status=MOTTATT' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/statuses?messageId=1cc3fb67-b776-4730-b017-1028b86a8b8b&amp;status=MOTTATT HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses?messageId=1cc3fb67-b776-4730-b017-1028b86a8b8b&amp;status=MOTTATT HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 774
+Content-Length: 739
 
 {
   "content" : [ {
@@ -10414,33 +10288,33 @@ Content-Length: 774
     "status" : "MOTTATT",
     "description" : "Mottatt",
     "convId" : 2,
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 1,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -10451,33 +10325,34 @@ Content-Length: 774
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses?sort=lastUpdated%2Casc' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses?sort=lastUpdated%2Casc' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/statuses?sort=lastUpdated%2Casc HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses?sort=lastUpdated%2Casc HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 1044
+Content-Length: 1001
 
 {
   "content" : [ {
@@ -10486,41 +10361,41 @@ Content-Length: 1044
     "status" : "LEVERT",
     "description" : "Levert",
     "convId" : 4,
-    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
+    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
+    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad"
   }, {
     "id" : 1,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
     "status" : "MOTTATT",
     "description" : "Mottatt",
     "convId" : 2,
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -10531,33 +10406,34 @@ Content-Length: 1044
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses?page=3&amp;size=10' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses?page=3&amp;size=10' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/statuses?page=3&amp;size=10 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses?page=3&amp;size=10 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 775
+Content-Length: 740
 
 {
   "content" : [ {
@@ -10566,107 +10442,35 @@ Content-Length: 775
     "status" : "LEVERT",
     "description" : "Levert",
     "convId" : 4,
-    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
+    "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
+    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 3,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 30,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 31,
-  "last" : true,
   "totalPages" : 4,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : false,
   "size" : 10,
   "number" : 3,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_example_5_time_range_5">Example 5 - Time range</h4>
-<div class="listingblock primary">
-<div class="title">Curl</div>
-<div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses?fromDateTime=2019-10-16T10:01:52.625-02:00&toDateTime=2019-10-30T16:46:49.610-02:00' -i -X GET \
-    -H 'Accept: application/json'</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
-<div class="title">Request</div>
-<div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET api/statuses?fromDateTime=2019-10-16T10:01:52.625-02:00&toDateTime=2019-10-30T16:46:49.610-02:00 HTTP/1.1
-Accept: application/json
-Host: localhost:8080</code></pre>
-</div>
-</div>
-<div class="listingblock secondary">
-<div class="title">Response</div>
-<div class="content">
-  <pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs hljs-number">HTTP/1.1 200 OK
-    Vary: Origin
-    Vary: Access-Control-Request-Method
-    Vary: Access-Control-Request-Headers
-    Content-Type: application/json
-    X-Content-Type-Options: nosniff
-    X-XSS-Protection: 1; mode=block
-    Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-    Pragma: no-cache
-    Expires: 0
-    X-Frame-Options: DENY
-    Content-Length: 775
-    
-    {
-      "content" : [ {
-        "id" : 7,
-        "lastUpdate" : "2019-10-23T15:43:12+02:00",
-        "status" : "LEVERT",
-        "description" : "Levert",
-        "convId" : 4,
-        "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
-        "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36"
-      } ],
-      "pageable" : {
-        "sort" : {
-          "sorted" : true,
-          "unsorted" : false,
-          "empty" : false
-        },
-        "pageNumber" : 3,
-        "pageSize" : 10,
-        "offset" : 30,
-        "paged" : true,
-        "unpaged" : false
-      },
-      "totalElements" : 31,
-      "last" : true,
-      "totalPages" : 4,
-      "sort" : {
-        "sorted" : true,
-        "unsorted" : false,
-        "empty" : false
-      },
-      "numberOfElements" : 1,
-      "first" : false,
-      "size" : 10,
-      "number" : 3,
-      "empty" : false
-    }</code></pre>
 </div>
 </div>
 </div>
@@ -10714,10 +10518,6 @@ Host: localhost:8080</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sort</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Properties that should be sorted by in the format property,property(,ASC|DESC). Default sort direction is ascending. Use multiple sort parameters if you want to switch directions, e.g. ?sort=firstname&amp;sort=lastname,asc.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fromDateTime and toDateTime</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on lastUpdate in the range of fromDateTime to toDateTime. Both fromDateTime and toDateTime must be used to filter on date and time. </p></td>
 </tr>
 </tbody>
 </table>
@@ -10882,33 +10682,34 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses/1cc3fb67-b776-4730-b017-1028b86a8b8b' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses/1cc3fb67-b776-4730-b017-1028b86a8b8b' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/statuses/1cc3fb67-b776-4730-b017-1028b86a8b8b HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses/1cc3fb67-b776-4730-b017-1028b86a8b8b HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 774
+Content-Length: 739
 
 {
   "content" : [ {
@@ -10917,33 +10718,33 @@ Content-Length: 774
     "status" : "MOTTATT",
     "description" : "Mottatt",
     "convId" : 2,
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
+    "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : true,
-      "unsorted" : false,
-      "empty" : false
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : false,
+      "sorted" : true,
+      "empty" : false
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 1,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : true,
-    "unsorted" : false,
-    "empty" : false
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : false,
+    "sorted" : true,
+    "empty" : false
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -11145,33 +10946,34 @@ Content-Length: 774
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/statuses/peek' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/statuses/peek' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/statuses/peek HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/statuses/peek HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 254
+Content-Length: 246
 
 {
   "id" : 1,
@@ -11179,8 +10981,8 @@ Content-Length: 254
   "status" : "MOTTATT",
   "description" : "Mottatt",
   "convId" : 2,
-  "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
-  "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b"
+  "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
+  "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
 }</code></pre>
 </div>
 </div>
@@ -11190,16 +10992,16 @@ Content-Length: 254
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 204 No Content
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 204 No Content
 Content-Type: application/json
-Content-Length: 235
+Content-Length: 228
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 204,
-  "error" : "No Content",
   "exception" : "no.difi.meldingsutveksling.exceptions.NoContentException",
   "message" : "No content",
+  "status" : 204,
+  "error" : "No Content",
   "path" : "/api/statuses/peek"
 }</code></pre>
 </div>
@@ -11389,10 +11191,12 @@ Content-Length: 235
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="event-ping">Ping event</h3>
+<div class="sect3">
+<h4 id="_example_1_ping_event">Example 1 - Ping event</h4>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://your.pushendpoint.com/push' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://your.pushendpoint.com/push' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -11404,10 +11208,11 @@ Content-Length: 235
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /push HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /push HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 70
+Content-Length: 67
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: your.pushendpoint.com
 
 {
@@ -11452,20 +11257,23 @@ Host: your.pushendpoint.com
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
 <h3 id="event-message-status">Message status event</h3>
+<div class="sect3">
+<h4 id="_example_1_message_status_event">Example 1 - Message status event</h4>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://your.pushendpoint.com/push' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://your.pushendpoint.com/push' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "bdb5d59e-6819-483e-a2a5-aafa2cfb09e2",
-  "conversationId" : "9a62cb73-b122-4ad4-aa8e-b73130aff58b",
+  "messageId" : "0ff04180-3436-4d4e-9d3c-ed01fe91c9d2",
+  "conversationId" : "c9ad9971-845c-4b3b-852e-41659f22af5d",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11476,18 +11284,19 @@ Host: your.pushendpoint.com
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /push HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /push HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 390
+Content-Length: 380
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: your.pushendpoint.com
 
 {
   "createdTs" : "2019-03-25T12:38:23+01:00",
   "resource" : "messages",
   "event" : "status",
-  "messageId" : "bdb5d59e-6819-483e-a2a5-aafa2cfb09e2",
-  "conversationId" : "9a62cb73-b122-4ad4-aa8e-b73130aff58b",
+  "messageId" : "0ff04180-3436-4d4e-9d3c-ed01fe91c9d2",
+  "conversationId" : "c9ad9971-845c-4b3b-852e-41659f22af5d",
   "direction" : "INCOMING",
   "serviceIdentifier" : "DPO",
   "status" : "LEVETID_UTLOPT",
@@ -11575,6 +11384,7 @@ Host: your.pushendpoint.com
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="_webhook_subscriptions">Webhook subscriptions</h2>
 <div class="sectionbody">
@@ -11589,33 +11399,34 @@ The response is paged with a default page size of 10.</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/subscriptions HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/subscriptions HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 974
+Content-Length: 933
 
 {
   "content" : [ {
@@ -11624,7 +11435,7 @@ Content-Length: 974
     "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
     "resource" : "messages",
     "event" : "status",
-    "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+    "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
   }, {
     "id" : 32,
     "name" : "Incoming messages",
@@ -11634,29 +11445,29 @@ Content-Length: 974
     "filter" : "status=FEIL,LEVETID_UTLOPT"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 0,
     "pageSize" : 10,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 0,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 1,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 2,
   "first" : true,
   "size" : 10,
   "number" : 0,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -11667,33 +11478,34 @@ Content-Length: 974
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions?page=1&amp;size=1' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions?page=1&amp;size=1' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/subscriptions?page=1&amp;size=1 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/subscriptions?page=1&amp;size=1 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 727
+Content-Length: 693
 
 {
   "content" : [ {
@@ -11705,29 +11517,29 @@ Content-Length: 727
     "filter" : "status=FEIL,LEVETID_UTLOPT"
   } ],
   "pageable" : {
-    "sort" : {
-      "sorted" : false,
-      "unsorted" : true,
-      "empty" : true
-    },
     "pageNumber" : 1,
     "pageSize" : 1,
+    "sort" : {
+      "unsorted" : true,
+      "sorted" : false,
+      "empty" : true
+    },
     "offset" : 1,
     "paged" : true,
     "unpaged" : false
   },
   "totalElements" : 2,
-  "last" : true,
   "totalPages" : 2,
-  "sort" : {
-    "sorted" : false,
-    "unsorted" : true,
-    "empty" : true
-  },
+  "last" : true,
   "numberOfElements" : 1,
   "first" : false,
   "size" : 1,
   "number" : 1,
+  "sort" : {
+    "unsorted" : true,
+    "sorted" : false,
+    "empty" : true
+  },
   "empty" : false
 }</code></pre>
 </div>
@@ -11914,33 +11726,34 @@ Content-Length: 727
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions/84' -i -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions/84' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">GET /api/subscriptions/84 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/subscriptions/84 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 230
+Content-Length: 223
 
 {
   "id" : 84,
@@ -11948,7 +11761,7 @@ Content-Length: 230
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
   "resource" : "messages",
   "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
 }</code></pre>
 </div>
 </div>
@@ -11958,16 +11771,16 @@ Content-Length: 230
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 404 Not Found
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 404 Not Found
 Content-Type: application/json
-Content-Length: 276
+Content-Length: 269
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 404,
-  "error" : "Not Found",
   "exception" : "no.difi.meldingsutveksling.exceptions.SubscriptionNotFoundException",
   "message" : "Subscription with id = 84 was not found",
+  "status" : 404,
+  "error" : "Not Found",
   "path" : "/api/subscription/84"
 }</code></pre>
 </div>
@@ -12090,7 +11903,7 @@ Creating a webhook for each message is considered bad practise, and can lead to 
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions' -i -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions' -i -u 'testuser:testpassword' -X POST \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -12098,17 +11911,18 @@ Creating a webhook for each message is considered bad practise, and can lead to 
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
   "resource" : "messages",
   "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
 }'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /api/subscriptions HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/subscriptions HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 216
+Content-Length: 210
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -12116,25 +11930,25 @@ Host: localhost:8080
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
   "resource" : "messages",
   "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
 }</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Content-Length: 230
+Content-Length: 223
 
 {
   "id" : 84,
@@ -12142,22 +11956,26 @@ Content-Length: 230
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
   "resource" : "messages",
   "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
 }</code></pre>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_note_about_event_validation">Note about event validation</h4>
 <div class="paragraph">
 <p>Please note that during validation of the input, the
 service will attempt to POST a ping message to the URL specified in the "pushEndpoint" attribute. Below is an example
 of such a ping message:</p>
 </div>
 <div class="listingblock primary">
-<div class="title">Ping event</div>
+<div class="title">Ping event example</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">POST /push HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /push HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 70
+Content-Length: 67
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: your.pushendpoint.com
 
 {
@@ -12166,8 +11984,9 @@ Host: your.pushendpoint.com
 }</code></pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_message_status_filters">Message Status Filters</h5>
+</div>
+<div class="sect3">
+<h4 id="_message_status_filters">Message Status Filters</h4>
 <div class="paragraph">
 <p>Currently the following filters are available:</p>
 </div>
@@ -12206,10 +12025,9 @@ Host: your.pushendpoint.com
 <p>All these can be combined using standard HTTP query style.</p>
 </div>
 <div class="listingblock primary">
-<div class="title">Example</div>
+<div class="title">Filter Example</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">status=FEIL,LEVETID_UTLOPT&amp;direction=INCOMING&amp;serviceIdentifier=DPO,DPI</code></pre>
-</div>
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">status=FEIL,LEVETID_UTLOPT&amp;direction=INCOMING&amp;serviceIdentifier=DPO,DPI</code></pre>
 </div>
 </div>
 </div>
@@ -12218,17 +12036,14 @@ Host: your.pushendpoint.com
 <div class="listingblock primary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 400 Bad Request
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 400 Bad Request
 Content-Type: application/json
-Content-Length: 576
+Content-Length: 562
 
 {
   "timestamp" : "2019-03-25T12:38:23+01:00",
-  "status" : 400,
-  "error" : "Bad Request",
-  "exception" : "javax.validation.ConstraintViolationException",
+  "exception" : "jakarta.validation.ConstraintViolationException",
   "message" : "event: 'nonexistent' is not expected. Allowed values are: [all, status]",
-  "path" : "/api/subscriptions",
   "errors" : [ {
     "codes" : [ "OneOf" ],
     "defaultMessage" : "'nonexistent' is not expected. Allowed values are: [all, status]",
@@ -12237,7 +12052,10 @@ Content-Length: 576
     "rejectedValue" : "nonexistent",
     "bindingFailure" : false,
     "code" : "OneOf"
-  } ]
+  } ],
+  "status" : 400,
+  "error" : "Bad Request",
+  "path" : "/api/subscriptions"
 }</code></pre>
 </div>
 </div>
@@ -12363,7 +12181,7 @@ Must not be null</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions/84' -i -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions/84' -i -u 'testuser:testpassword' -X PUT \
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
@@ -12371,17 +12189,18 @@ Must not be null</p></td>
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
   "resource" : "messages",
   "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
 }'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">PUT /api/subscriptions/84 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/subscriptions/84 HTTP/1.1
 Content-Type: application/json;charset=UTF-8
 Accept: application/json
-Content-Length: 216
+Content-Length: 210
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
@@ -12389,19 +12208,19 @@ Host: localhost:8080
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
   "resource" : "messages",
   "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTATT&amp;direction=INCOMING"
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
 }</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -12476,27 +12295,28 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions/84' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions/84' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/subscriptions/84 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/subscriptions/84 HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -12515,27 +12335,28 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="bash" class="language-bash hljs">$ curl 'http://localhost:8080/api/subscriptions' -i -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/subscriptions' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">DELETE /api/subscriptions HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/subscriptions HTTP/1.1
 Accept: application/json
+Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code data-lang="http" class="language-http hljs">HTTP/1.1 200 OK
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
 Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
-X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
@@ -12549,13 +12370,15 @@ X-Frame-Options: DENY</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-23 14:41:38 +0200
+Last updated 2026-01-26 14:49:33 +0100
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>
-
-

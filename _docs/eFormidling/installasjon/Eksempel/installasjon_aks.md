@@ -105,7 +105,7 @@ spec:
         app: activemq
     spec:
       containers:
-        - image: rmohr/activemq:5.15.9
+        - image: apache/activemq-classic:5.19.2
           name: activemq
           resources: {}
 status: {}
@@ -242,7 +242,7 @@ spec:
         app: ip-staging
     spec:
       containers:
-        - image: digdir/integrasjonspunkt:2.24.1
+        - image: ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.0.7
           name: integrasjonspunkt
           resources:
             limits:
@@ -269,6 +269,18 @@ spec:
             - name: DIFI_MOVE_DPO_USERNAME
               value: "brukernavn"
             - name: DIFI_MOVE_DPO_PASSWORD
+              value: "passord"
+            - name: DIFI_MOVE_FIKS_UT_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_FIKS_UT_PASSWORD
+              value: "passord"
+            - name: DIFI_MOVE_FIKS_INN_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_FIKS_INN_PASSWORD
+              value: "passord"
+            - name: DIFI_MOVE_FIKS_UT_PAA__VEGNE__AV_12345678_USERNAME
+              value: "brukernavn"
+            - name: DIFI_MOVE_FIKS_UT_PAA__VEGNE__AV_12345678_PASSWORD
               value: "passord"
             - name: DIFI_MOVE_NEXTMOVE_USEDBPERSISTENCE
               value: "true"

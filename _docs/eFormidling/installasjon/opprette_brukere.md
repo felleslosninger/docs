@@ -16,6 +16,70 @@ og passord.
 
 ## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste)
 
+For integrasjonspunkt eldre enn versjon 4 sjå [Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste-utgår-i-ipv4)
+
+- Virksomheiten har allerede ein Maskinporten klient (oppretta av Digdir) som alltid er på formen MOVE_IP_orgnummer-til-din-virksomhet.
+- Virksomheten må opprette eit system i Altinn. Systemet må ha tilgangspakken "informasjon-og-kommunikasjon".
+- Systemnavn skal inn i properties filen til integrasjonspunktet.
+- Virksomheten må opprette en systembruker på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
+- Virksomheiten må godkjenne opprettelsen av systembruker i Altinn
+- Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
+
+Dersom man skal sende og motta på vegne av andre virksomheter må man gjøre følgende :
+- Opprett en systembruker for virksomheten på systemet, med tilgang til tilgangspakken "informasjon-og-kommunikasjon".
+- Virksomheten må selv godkjenne opprettelsen av systembruker i Altinn.
+- Systembruker informasjonen skal inn i properties filen til integrasjonspunktet.
+
+## Onboarding sjekkliste
+Opprettelse av system og systembruker(e) er litt omfattende (se sekvensdiagram nedenfor),
+men det er bygget inn en onboarding sjekkliste i IPv4 som kan hjelpe med dette.
+
+Det krever at maskinportenklienten har fått tildelt rette scopes (gjerast av Digdir),
+deretter kan du konfigurere ønsket systemnavn og systembruker i properties filen, aktivere
+DPO og starte opp integrasjonspunktet.
+
+Ved å gå til adressen http://127.0.0.1:9093/ kan du finne en fane for DPO med link
+til onboarding sjekklisten. som vist i figuren under.
+
+![]({{site.baseurl}}/images/eformidling/dpo/onboarding.png)
+
+
+## Sekvensdiagram for opprettelse av system og systembruker :
+
+<div class="mermaid">
+sequenceDiagram
+    actor K as Kunde
+    actor D as Digdir
+    participant S as Samarbeidsportalen
+    participant M as Maskinporten
+    participant AS as Altinn SystemRegister
+    participant A as Altinn
+
+    D->>S: Opprett maskinporten client
+    note over S : Tildeler scopes for : altinn:broker.write, altinn:broker.read
+
+    D->>S: Tildeler scopes (de som ikke er åpne for kunde) 
+    note over S : Tildeler scopes for: <br> altinn:authentication/systemregister.write<br> altinn:authentication/systemuser.request.write<br> altinn:authentication/systemuser.request.read
+    K->>M: Hent token for client
+    note over M : scopes : [altinn:authentication/systemregister.write]
+    K->>AS : Opprett system (/systemregister/vendor)
+    note over AS: systemId = &lt;orgno&gt;_integrasjonspunkt
+    K->>AS : Registrer tilgangspakke på system (/systemregister/vendor/{id}/accesspackages)
+    note over AS: tilgangspakke = urn:altinn:accesspackage:informasjon-og-kommunikasjon
+    K->>M: Hent token for client
+    note over M : scopes : [systemuser.request.write,<br>systemuser.request.read]
+
+    K->>AS: Opprett "standard" systemuser forespørsel (/systemuser/request/vendor)
+    note over AS : externalRef = &lt;systemId&gt;_systembruker_&lt;name&gt;
+    note over AS : tilgangspakke = urn:altinn:accesspackage:informasjon-og-kommunikasjon
+    AS-->>K: Retur av URL for å godkjenne opprettelse av systembruker på vegne av virksomheten
+    note over K : URL kan presenteres kunde for rask godkjenning,&lt;br&gt;varsel blir sendt til daglig leder i Altinn
+    
+    K->>A: Bruk url eller logg inn i Altinn for bekrefte opprettelse av systemuser
+</div>
+
+## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)
+
 (Gjelder bare for digital post til offentlige virksomheter)
 Integrasjonspunktet kjører som datasystem mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
 
@@ -133,7 +197,7 @@ Man må vente med å legge inn organisasjonsnumrene til konfigurasjon av integra
 
 Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV6). Her blir du bedt om brukernavn og passord. Tast inn brukernavn og det passordet dere mener å ha fått. Dersom det resulterer i at servicen igjen ber om brukernavn og passord, er passordet galt. Om dere har oppgitt riktig brukernavn og passord får dere en respons som kan variere litt fra nettleser til nettleser.
 
-## Opprette bruker for Altinn Digital Post
+## Opprette bruker for Altinn Digital Post (utgår i IPv4)
 
 Dette gjøres av Altinn etter at Digitaliseringsdirektoratet sender bestilling. For at Digitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
 

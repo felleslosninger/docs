@@ -1,11 +1,17 @@
 sidebarTitle: eInnsyn
 
 folders:
-- title: eInnsyn API (kommer..)
+- title: eInnsyn API
   folderitems:
 
   - title: Publisering til einnsyn - API
     jurl: /docs/eInnsyn/publisering_med_api.html
+
+  - title: Henting av innsynskrav - API
+    jurl: /henting_av_innsynskrav_api.html
+
+  - title: FAQ
+    jurl: /docs/eInnsyn/einnsyn_api_faq.html
     
 - title: Publisering med eFormidling
   folderitems:
@@ -57,6 +63,9 @@ folders:
 
   - title: Innsynskrav og e-postoppsett
     jurl: /docs/eInnsyn/einnsyn_innsynskrav.html
+
+  - title: Docker-spesifikk installasjon
+    jurl: /docs/eInnsyn/einnsyn_docker_spesifikk_installasjon.html
     
 
 ###########################

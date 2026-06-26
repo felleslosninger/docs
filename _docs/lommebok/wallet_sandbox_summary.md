@@ -28,7 +28,6 @@ Digdir operate a central **Relying Party register** for all sandbox participants
 
 Digdir also operate a **EAA Issuer** called ["Bevisporten"](https://utsteder.test.eidas2sandkasse.net/).  It issues PID and a couple of other credentials.  The purpose of the Issuer is to help public sector bodies and other sandbox participants to create credentials with as little effort as possible, in order to showcase the potential value of sharing person data using verifiable credentials, and "fill" the sandbox quickly.    Bevisporten comes with some rudimentary tools for testing [auth code issuance](https://bevisporten.test.eidas2sandkasse.net/) or [pre-authorization code flow issuance](https://bevisgenerator.test.eidas2sandkasse.net/).
 
-Brønnøysundregistrene operates an [LPID issuer](https://brreg.eudiw.no/) for Norwegian companies.
 
 We also offer a [demo verifier / Relying Party ](https://demo-brukersted.test.eidas2sandkasse.net/). 
 

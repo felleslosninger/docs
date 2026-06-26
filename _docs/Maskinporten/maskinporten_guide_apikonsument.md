@@ -166,7 +166,7 @@ Content-type: application/x-www-form-urlencoded
 der payload i JWT kan se slik ut:
 ```
 {
-  "aud" : "https://ver2.maskinporten.no/",
+  "aud" : "https://test.maskinporten.no/",
   "scope" : "difitest:test2",
   "iss" : "min_egen_clientid",
   "exp" : 1584693183,
@@ -177,7 +177,7 @@ der payload i JWT kan se slik ut:
 
 Maskinporten vil først validere gyldigheten av JWT'en. Deretter vil virksomhetssertifikatet (brukt til signering av JWT'en) valideres og dersom klienten har tilgang til de forespurte ressursene returneres et access_token til klienten.
 
-Dersom du er leverandør opp mot et API som krever ekstern delegering, må du inkludere claimet `consumer_orgno` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
+Dersom du er leverandør opp mot et API som krever ekstern delegering, må du inkludere claimet `consumer_org` i grantet. Maskinporten vil da sjekke mot Altinn om du har lov til å opptre på vegne av den aktuelle konsumenten, for det aktuelle scopet.
 
 Generelt er det sikkerhetsmessig problematisk å be om mange scopes i samme token, så vi anbefaler ett scope per token.
 

@@ -23,7 +23,7 @@ Post tilbyr.
 
 Integrasjonspunktet omformer dokumenttypene arkivmelding og digital DPV til kall mot APIet Altinn Digital Post tilbyr.
 Se dokumenttypene for detaljer. For saksbehandlingsprosessene (inkludert taushetsbelagt saksbehandling) omformes den
-aktuelle prosessen til tilsvarende tjeneste i Altinn Digital Post (servicecode & serviceditoncode) slik at mottakende
+aktuelle prosessen til tilsvarende tjeneste i Altinn Digital Post slik at mottakende
 virksomheter kan ha ulik tilgangsstyring avhengig av prosess.
 
 Integrasjonspunktet omformer meldingsstatusene fra Altinn Digital Post til eFormidlings meldingsstatuser og
@@ -66,5 +66,6 @@ Meldingsstatuser for meldinger sendt med Altinn Digital Post:
 ## Neste steg
 
 - [Produktdokumentasjon for Altinn Digital Post](https://www.altinndigital.no/produkter/digital-post/) (ekstern lenke)
-- [Teknisk dokumentasjon for Altinn Digital Post](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/) (ekstern lenke)
+- [Teknisk dokumentasjon for Altinn 2 Digital Post (Utgår i IPv4)](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/) (ekstern lenke)
+- [Teknisk dokumentasjon for Altinn 3 Digital Post](https://docs.altinn.studio/nb/correspondence/) (ekstern lenke)
 - Flere [meldingstjenester](./)

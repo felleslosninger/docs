@@ -32,6 +32,5 @@ Siden innholder JSON schema og XSD for DPI ved bruk av ny transportinfrastruktur
 
 ### API C2
  - [OpenAPI spec for C2](resources/begrep/sikkerDigitalPost/nyinf/api/openapi_spec.html)
- - [DPI API produksjon](https://srest.dataplatfor.ms/swagger-ui/#/DPI)
- - [DPI API qa/test](https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI)
+ - [DPI API produksjon og qa/test](https://sandbox1.ediex.no/digdir-api-documentation/v2/swagger-ui/index.html?urls.primaryName=dpi)
  

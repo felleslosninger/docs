@@ -26,7 +26,7 @@ Me trur desse 3 variantane dekkjer dei fleste behova som offentleg sektor har fo
 
 ## Brukargrensesnitt
 
-Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess.   For bevistypar som er basert på pre-authorization-code flyt, må du istaden bruke [den tekniske test-tenesta](https://bevisgenerator.test.eidas2sandkasse.net/).
+Per idag har utstedaren eit [ope web-grensesnitt](https://bevisporten.test.eidas2sandkasse.net/) der sluttbrukar kan få laga QR-koder som kan scannast for å initiere ein utstedelsesprosess.   For bevistypar som er basert på pre-authorization-code flyt, må du istaden bruke den tekniske test-tenesta [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator).
 
 Utstedaren vil på sikt tilby eit web-grensesnitt der sluttbrukar kan logge inn og få utstedt bevis til seg sjølv.
 
@@ -37,13 +37,14 @@ Me ynskjer at utstedaren skal følge Final-versjonen av OpenID4VCI.  Dog testar 
 
 Features som er støtta no:
 - ISO mdoc bevis-format
+- SD-JWT VC bevis-format
 - Pre-authorization code 
 - Authorization-code flow 
 - Bruksmønster 1,2,3
+- Multitenancy (logiste utstedere)
 
 Framtidig funksjonalitet:
 - tx_code
-- SD-JWT bevis-format
 - Web-grensesnitt for sluttbrukar
 - key binding
 - Bevis-type-spesifikke signeringssertifikat
@@ -51,11 +52,10 @@ Framtidig funksjonalitet:
 - verifisering mot [OpenID conformance test suites](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-credential-issuance/)
 
 
-
 ## Metadata
 
-Du bør finne alt som trengs for å kunne samhandle med utstederen via credential metadata-endepunktet:
-[https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer)
+Utstederen har flere tenants. Du bør finne alt som trengs for å kunne samhandle med utstederen via startsiden:
+[https://utsteder.test.eidas2sandkasse.net/](https://utsteder.test.eidas2sandkasse.net/)
 
 ## Kjeldekode og arkitektur
 
@@ -64,4 +64,5 @@ Kjeldekode for utstedaren finn du på [sandkassen sitt Github-område](https://g
 - *eudiw-issuer-server*: backend som er hovudmotoren i utstedaren
 - *eudiw-auth-server* Ein Oauth2 autorisasjonsserver spesialtdesigna for utstedaren
 - *eudiw-issuer-ui*: brukargrensesnitt for innbyggar
+
 
