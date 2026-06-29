@@ -61,7 +61,7 @@ Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
 ```
 Merk at Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering.
 
-Du må så [opprette en delegerbar API-ressurs i Altinn](https://docs.altinn.studio/nb/authorization/guides/resource-owner/api-scheme/create-apischeme-resource-admin/) som knyttes til scopet du nettopp registrerte i Maskinporten.
+Du må så [opprette en delegerbar API-ressurs i Altinn](https://docs.altinn.studio/nb/authorization/guides/resource-owner/api-scheme/) som knyttes til scopet du nettopp registrerte i Maskinporten.
 
 Merk at det kan ta noen minutter før ressursen blir synlig i Altinn-portalen.
 
