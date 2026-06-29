@@ -28,9 +28,27 @@ Kortfattet sjekkliste for integrasjon mot Ansattporten. For detaljer, se [Hva er
 
 ## Representasjon og organisasjonsvelger (valgfritt)
 
+Ansattporten støttar to [autorative kjelder](ansattporten_om#autorative-kilder-for-representasjon) for representasjon. Vel den som passar ditt bruksscenario:
+
+### Via Altinn Autorisasjon (RAR-type `ansattporten:altinn:resource`)
+
 - [ ] Krever at du er [tjenesteeier i Altinn](ansattporten_om#hvem-kan-bruke-ansattporten-)
+- [ ] Brukar personleg eID (BankID o.l.) — gjev sikkerheitsnivå `substantial` eller `high`
+- [ ] Tilgang styrast per Altinn-ressurs med handlingar (`read`, `write` osv.) via roller, tilgangspakkar eller direkte delegering
+- [ ] Oppgje `resource` (Altinn-ressurs URN) i RAR-forespørselen
+
+### Via Virksomhetsbroen (RAR-type `ansattporten:orgno`)
+
+- [ ] Brukar jobbkonto (Microsoft Entra ID) — gjev sikkerheitsnivå `entraid` (lågare tryggleik enn personleg eID)
+- [ ] Arbeidsgjevar styrer tilgang via filterreglar basert på e-postadresse, domene eller Entra ID-gruppe
+- [ ] Krev at nokon med Altinn-rolla "Administrere organisasjonstilknytning i Ansattporten" set opp reglane
+- [ ] 🔒 **Merk:** Lågare sikkerheitsnivå enn Altinn — eignar seg når høg identitetstryggleik ikkje er påkrevd
+- [ ] **Merk:** Framleis i pilot — kontakt Digdir for status
+
+### Felles for begge
+
 - [ ] Følg [guide for representasjon](ansattporten_representasjon) — bruker RAR (`authorization_details`)
-- [ ] Forstå at Ansattporten kun formidler representasjon fra [autorative kilder](ansattporten_om#autorative-kilder-for-representasjon) — den utfører ikke tilgangskontroll
+- [ ] 🔒 Forstå at Ansattporten kun formidlar representasjon — **den utfører ikkje tilgangskontroll** for tenesta di. Tenesta må sjølv avgjere om brukaren har tilgang
 
 ## Sesjonshåndtering
 
