@@ -60,7 +60,3 @@ kanal, se `difi.move.dpo.message-channel` under:
 
 eInnsyns meldingstjeneste støtter ikke kanaler og én virksomhet kan derfor bare ha én installasjon som benytter eInnsyns
 meldingstjeneste.
-
-## Kanaler for KS FIKS IO
-
-KS FIKS IO adresserer på systemnivå slik at kanal ikke er relevant.

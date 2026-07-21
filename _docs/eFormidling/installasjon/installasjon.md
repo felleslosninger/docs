@@ -371,7 +371,6 @@ difi.move.dpo.default-ttl-hours  # For meldingstypen DPO
 difi.move.dpv.default-ttl-hours  # For meldingstypen DPV
 difi.move.dpi.default-ttl-hours  # For meldingstypen DPI
 difi.move.fiks.ut.default-ttl-hours  # For meldingstypen DPF
-difi.move.fiks.io.default-ttl-hours  # For meldingstypen DPFIO
 difi.move.nextmove.serviceBus.default-ttl-hours  # For meldingstypen DPE (einnsyn)
 ```
 
@@ -389,7 +388,7 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 
 | Egenskap                               | Beskrivelse                                                                                                               |                  | Standardverdi |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------- |
-| difi.move.feature.statusQueueIncludes  | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)          |
+| difi.move.feature.statusQueueIncludes  | Hvilke meldingstjenester (DPI, DPV, DPF, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)          |
 | difi.move.nextmove.statusPollingCron   | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 \* \* \* \* \* |
 | difi.move.feature.enableDsfPrintLookup | Slår på/av oppslag av postadresse i DSF. Kan slås av dersom en ikke trenger postadresse                                   | true             |
 | difi.move.queue.concurrency            | Samtidighet ved behandling av utgående meldinger                                                                          | 10               |
@@ -408,7 +407,7 @@ Som standard blir ingen meldinger videreformidlet til webhook-abonnement. Dette 
 
 | Egenskap                              | Beskrivelse                                                                                                               | Standardverdi |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| difi.move.feature.statusQueueIncludes | Hvilke meldingstjenester (DPI, DPV, DPF, DPFIO, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
+| difi.move.feature.statusQueueIncludes | Hvilke meldingstjenester (DPI, DPV, DPF, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet | (ingen)       |
 
 Eksempel:
 
@@ -639,30 +638,6 @@ Eksempel:
 difi.move.feature.enableDPI=true
 
 difi.move.dpi.mpcId=DigdirSinKø
-```
-
-#### Konfigurere KS FIKS IO
-
-KS FIKS IO krever bruker:
-
-- [Hvordan tar man i bruk FIKS IO](https://ks-no.github.io/fiks-plattform/tjenester/fiksprotokoll/fiksio/#hvordan-tar-man-i-bruk-fiks-io) (ekstern lenke)
-
-| Egenskap                               | Beskrivelse                                   | Standardverdi |
-| -------------------------------------- | --------------------------------------------- | ------------- |
-| difi.move.feature.enableDPFIO          | Slår på/av støtte for KS FIKS IO              | false         |
-| difi.move.fiks.io.konto-id             | FIKS IO kontoId                               | (ingen)       |
-| difi.move.fiks.io.integrasjons-id      | Id til valgt integrasjon                      | (ingen)       |
-| difi.move.fiks.io.integrasjons-passord | Passord til valgt integrasjon                 | (ingen)       |
-| difi.move.fiks.io.sender-orgnr         | Statisk avsender-orgnr for mottatte meldinger | (ingen)       |
-
-Eksempel:
-
-```
-difi.move.feature.enableDPFIO=true
-difi.move.fiks.io.konto-id=47b0c75b-ddb5-447b-88d2-c4030d183fb3
-difi.move.fiks.io.integrasjons-id=54f9d591-5523-447a-b839-eb5a43bb75ca
-difi.move.fiks.io.integrasjons-passord=d9efdc55-a3a3-4b66-8b38-c73202655f2f
-difi.move.fiks.io.sender-orgnr=910077473
 ```
 
 ## Neste steg
