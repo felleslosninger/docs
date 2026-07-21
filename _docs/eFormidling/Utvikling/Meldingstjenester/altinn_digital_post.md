@@ -66,6 +66,5 @@ Meldingsstatuser for meldinger sendt med Altinn Digital Post:
 ## Neste steg
 
 - [Produktdokumentasjon for Altinn Digital Post](https://www.altinndigital.no/produkter/digital-post/) (ekstern lenke)
-- [Teknisk dokumentasjon for Altinn 2 Digital Post (Utgår i IPv4)](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/) (ekstern lenke)
 - [Teknisk dokumentasjon for Altinn 3 Digital Post](https://docs.altinn.studio/nb/correspondence/) (ekstern lenke)
 - Flere [meldingstjenester](./)
