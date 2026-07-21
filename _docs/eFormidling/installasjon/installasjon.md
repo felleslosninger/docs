@@ -487,33 +487,7 @@ difi.move.mail.trust=${difi.move.mail.smtpHost}
 
 ### Meldingstjenester
 
-#### Konfigurere eFormidlings meldingstjeneste (DPO) (Utgår i IPv4)
-
-eFormidlings meldingstjeneste er realisert ved hjelp av Altinn Formidling, og krever bruker for Altinn Formidling.
-
-- [Opprette bruker i Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
-
-> Før eFormidlings meldingstjeneste kan tas i bruk må Digdir aktivere den sentralt.
->
-> Send forespørsel om dette til <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
-
-| Egenskap                      | Beskrivelse                                                     | Standardverdi |
-| ----------------------------- | --------------------------------------------------------------- | ------------- |
-| difi.move.feature.enableDPO   | Slår på/av støtte for eFormidlings meldingstjeneste             | false         |
-| difi.move.dpo.username        | Brukernavn for en Altinn Formidling datasystembruker            | (ingen)       |
-| difi.move.dpo.password        | Passord for en Altinn Formidling datasystembruker               | (ingen)       |
-| difi.move.dpo.message-channel | Identifikator for meldingskanal, maks 25 tegn                   | (ingen)       |
-| difi.move.dpo.reportees       | Liste av organisasjonsnummer en skal sende og motta på vegne av | (ingen)       |
-
-Eksempel:
-
-```
-difi.move.feature.enableDPO=true
-difi.move.dpo.username=1234
-difi.move.dpo.password=mypassword
-```
-
-#### Konfigurere eFormidlings meldingstjeneste (DPO) IPv4
+#### Konfigurere eFormidlings meldingstjeneste (DPO)
 
 > Før DPO tjenesten kan tas i bruk må du først opprette et system og en systembruker i Altinn.
 > Se detaljer om dette i [opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste)
@@ -614,36 +588,7 @@ difi.move.fiks.inn.paa-vegne-av.986252932.username=myusername2
 difi.move.fiks.inn.paa-vegne-av.986252932.password=mypassword2
 ```
 
-#### Konfigurere Altinn Digital Post (DPV) (Utgår i IPv4)
-
-Altinn Digital Post krever bruker:
-
-- [Opprette bruker i Altinn Digital Post](opprette_brukere#opprette-bruker-for-altinn-digital-post)
-
-| Egenskap                                | Beskrivelse                                                                                               | Standardverdi                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| difi.move.feature.enableDPV             | Slår på/av støtte for Altinn Digital Post                                                                 | false                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| difi.move.dpv.username                  | Brukernavn for Altinn tjenesteeier (Mottas på epost til oppgitt kontaktperson)                            | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| difi.move.dpv.password                  | Passord for overnevnte bruker (Mottas på SMS til oppgitt kontaktperson - TIPS. Kopier og lim)             | (ingen)                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| difi.move.dpv.notificationText          | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost)                         | $reporteeName$: Du har mottatt en melding fra $reporterName$.                                                                                                                                                                                                                                                                                                                                                                                                 |
-| difi.move.dpv.sensitiveNotificationText | Standard tekst i epost og mobilvarsel (ikke mulig å skille mellom mobil og epost) for sensitive meldinger | $reporteeName$, har mottatt en taushetsbelagt melding fra $reporterName$. For \u00E5 f\u00E5 tilgang til meldingen, er det n\u00F8dvendig at noen i $reporteeName$ har f\u00E5tt tildelt rollen \u00ABTaushetsbelagt post fra det offentlige\u00BB i Altinn. Dersom dere er usikre p\u00E5 om noen har slik tilgang, anbefaler vi sterkt at dette sjekkes. Les mer om \u00E5 gi tilgang til rollen \u00ABTaushetsbelagt post\u00BB p\u00E5 Altinns nettsider. |
-| difi.move.dpv.notifyEmail               | Slår på/av varsling til e-post som standard                                                               | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| difi.move.dpv.notifySms                 | Slår på/av varsling til SMS som standard                                                                  | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| difi.move.dpv.allowForwarding           | Slår på/av støtte for at mottaker kan videresende fra Altinn Digital Post                                 | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| difi.move.dpv.enableDueDate             | Slår på/av visuell svarfrist i Altinn Digital Post for sendte meldinger som standard                      | true                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| difi.move.dpv.daysToReply               | Standard antall dager til svarfrist i Altinn Digital Post                                                 | 7                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-
-Eksempel:
-
-```
-difi.move.feature.enableDPV=true
-difi.move.dpv.username=myusername
-difi.move.dpv.password=mypassword
-difi.move.dpv.enableDueDate=false
-```
-
-
-#### Konfigurere Altinn Digital Post (DPV) IPv4
+#### Konfigurere Altinn Digital Post (DPV)
 
 > Før DPV tjenesten kan tas i bruk må du ha en maskinporten client med rett scope og du må
 > rulles inn i tilgangslisten for DPV.  Send forespørsel om dette til servicedesk@digdir.no

@@ -29,17 +29,7 @@ Vanlig installasjonveiledning kan følges, men før en går i gang må en sørge
 må først velge om en ønsker å bruke ekte eller syntetisk organisasjonsnummer. Dersom en ikke har et behov for å benytte
 ekte organisasjonsnummer i sitt testmiljø anbefales bruk av syntetisk organisasjonsnummer.
 
-#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer (Utgår i IPv4)
-
-Testmiljøet for eFormidlings meldingstjeneste er realisert ved hjelp av en egen meldingstjeneste i Altinn Formidlings
-produksjonsmiljø. Altinn Formidlings produksjonsmiljø støtter bare ekte organisasjonsnummer.
-
-For Altinn Digital Post og KS SvarUt og SvarInn benyttes testmiljø som bare støtter syntetiske organisasjonsnummer. En
-kan dermed ikke benytte ekte organisasjonsnummer mot alle meldingstjenestene som brukes av eFormidling. En kan likevel
-benytte alle meldingstjenestene ved å legge inn brukernavn og passord for testvirksomhet hos Altinn Digital Post med
-et annet organisasjonsnummer enn det integrasjonspunktet kjører. Det samme gjelder KS SvarUt og SvarInn.
-
-#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer (IPv4)
+#### Teste i eFormidlings testmiljø med ekte organisasjonsnummer
 
 For KS SvarUt og SvarInn benyttes testmiljø som bare støtter syntetiske organisasjonsnummer. En kan benytte brukernavn og passord for testvirksomhet hos KS SvarUt og SvarInn med
 et annet organisasjonsnummer enn det integrasjonspunktet kjører.
@@ -47,26 +37,7 @@ et annet organisasjonsnummer enn det integrasjonspunktet kjører.
 <!-- TODO burde vert meir utdypende? Skal det ligge ein anna plass? -->
 Ved eFormidlings meldingstjeneste så kan man benytte ekte org, men da må man opprette system og systembruker med tenor testorg. Da setter man ``partyOrgNo`` i requesten til tenor organisasjonen.
 
-#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer (Utgår i IPv4)
-
-For å bruke syntetisk organisasjonsnummer må en bytte testmiljøet for eFormidlings meldingstjeneste til et alternativt
-testmiljø. En må i så fall overstyre konfigurasjon av eFormidlings meldingstjeneste fra test-meldingstjenesten i
-Altinn Formidlings produksjonsmiljø til en tilsvarende test-meldingstjeneste i Altinn Formidlings testmiljø. Dette
-oppnår en med å legge følgende konfigurasjon i integrasjonspunktet:
-
-```
-difi.move.dpo.streamingserviceUrl=https://tt02.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasicStreamed.svc?wsdl
-difi.move.dpo.brokerserviceUrl=https://tt02.altinn.no/ServiceEngineExternal/BrokerServiceExternalBasic.svc?wsdl
-difi.move.dpo.serviceCode=4192
-difi.move.dpo.serviceEditionCode=270815
-```
-
-Med et slikt oppsett kan en bruke samme syntetiske organisasjonsnummer på tvers av meldingstjenestene så lenge en passer
-på når en bestiller tilganger og testvirksomhet: alt må bestilles til samme organisasjonsnummer, det er ingen sentral
-koordinering av dette.
-
-
-#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer (IPv4)
+#### Teste i eFormidlings testmiljø med syntetisk organisasjonsnummer
 
 1. Logg inn på [TENOR](https://www.skatteetaten.no/testdata/)
 2. Plukk ett orgnummer fra TENOR.
@@ -128,24 +99,6 @@ For å teste på vegne av må en ha to testvirksomheter i Altinn.
 
 - eFormidling, eInnsyn, Altinn Formidling, Altinn Digital Post,  og Digital Post til Innbyggere: <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 - FIKS IO og KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
-
-### Tilrettelegging for test av Altinn Digital Post (Utgår i IPv4)
-
-Alternativt til selv å sette opp testvirksomhet for å teste Altinn Digital Post integrasjonspunkt er det også
-tilrettelagt for et enklere test-oppsett.
-
-Det er opprettet noen testvirksomheter i Altinn som en kan bruke som mottakere. Her vil en kunne logge inn for å finne
-og se meldinger en har sendt. Disse virksomhetene og brukerne er **felles** for alle virksomheter i testmiljø. Pass på å
-ikke sende sensitiv informasjon under testingen med disse virksomhetene.
-
-| Orgnr     | Navn                     | Enhetstype  |  
-|-----------|--------------------------|-------------|
-| 910624474 | NESFLATEN OG BORRE       | KOMM        |
-| 810624582 | SELJORD OG SØRVIK        | BEDR        | 
-| 810568712 | ALTA OG KARDEMOMME BY    | BEDR        |
-| 910568655 | AUKLANDSHAMN OG ELVEGARD | BEDR        |
-
-Brukernavn og passord for testbrukere til virksomhetene over fåes ved å kontakte <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
 
 ### Lenker til testmiljø
 
