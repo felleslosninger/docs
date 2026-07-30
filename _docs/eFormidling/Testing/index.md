@@ -98,7 +98,7 @@ For å teste på vegne av må en ha to testvirksomheter i Altinn.
 Ønskede tilganger bestilles fra:
 
 - eFormidling, eInnsyn, Altinn Formidling, Altinn Digital Post,  og Digital Post til Innbyggere: <a href="mailto:servicedesk@digdir.no">servicedesk@digdir.no</a>
-- FIKS IO og KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
+- KS SvarUt og SvarInn: <a href="mailto:fiks@ks.no">fiks@ks.no</a>
 
 ### Lenker til testmiljø
 

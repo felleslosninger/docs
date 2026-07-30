@@ -168,7 +168,3 @@ meldingstjeneste. På-vegne-av forholdet spesifiseres i forretningsmeldingen for
 Leverandøren må gi eInnsyn beskjed om delegeringsforholdet mellom leverandøren og kunden.
 
 Oppsettet krever ingen ekstra konfigurasjon av integrasjonspunktet.
-
-## På vegne av for KS FIKS IO
-
-KS FIKS IO adresserer på systemnivå slik at på vegne av ikke er relevant.
