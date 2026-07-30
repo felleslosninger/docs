@@ -388,7 +388,7 @@ meldinger) kan det være aktuelt å finjustere integrasjonspunktet for å øke k
 
 | Egenskap                               | Beskrivelse                                                                                                               | Standardverdi    |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------- |
-| difi.move.feature.statusQueueIncludes  | Hvilke meldingstjenester (DPI, DPV, DPF, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet        | (ingen)          |
+| difi.move.feature.statusQueueIncludes  | Hvilke meldingstjenester (DPI, DPV, DPF, DPO og DPE) som skal eksponere meldinger til eventuelle webhook-abonnementer     | (ingen)          |
 | difi.move.nextmove.statusPollingCron   | Hvor ofte en sjekker etter meldingsstatus i DPF, DPI og DPV                                                               | 0 \* \* \* \* \* |
 | difi.move.feature.enableDsfPrintLookup | Slår på/av oppslag av postadresse i DSF. Kan slås av dersom en ikke trenger postadresse                                   | true             |
 | difi.move.queue.concurrency            | Samtidighet ved behandling av utgående meldinger                                                                          | 10               |
@@ -407,7 +407,7 @@ Som standard blir ingen meldinger videreformidlet til webhook-abonnement. Dette 
 
 | Egenskap                              | Beskrivelse                                                                                                               | Standardverdi |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| difi.move.feature.statusQueueIncludes | Hvilke meldingstjenester (DPI, DPV, DPF, DPO, DPE) som skal eksponere meldinger til eventuelle Webhook-abonnemenet        | (ingen)       |
+| difi.move.feature.statusQueueIncludes | Hvilke meldingstjenester (DPI, DPV, DPF, DPO og DPE) som skal eksponere meldinger til eventuelle webhook-abonnementer     | (ingen)       |
 
 Eksempel:
 
