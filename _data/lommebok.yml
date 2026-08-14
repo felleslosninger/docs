@@ -87,6 +87,9 @@ folders:
       - title: Utsteder, Bevisgenerator
         jurl: /docs/lommebok/lommebok_digdir_utsteder_bevisgenerator.html
 
+      - title: Utsteder, revokering
+        jurl: /docs/lommebok/lommebok_digdir_utsteder_revokering.html
+
 
 - title: Andres tenester
   folderitems:
