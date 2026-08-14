@@ -1,5 +1,8 @@
 ---
 title: Revokering av bevis
+sidebar: lommebok
+product: lommebok
+redirect_from: /lommebok_digdir_utsteder_revokering
 ---
 
 # Revokering av bevis
