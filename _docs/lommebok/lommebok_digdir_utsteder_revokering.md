@@ -36,7 +36,7 @@ Status List Token-en er offentleg tilgjengelig og kan hentast utan autentisering
 
 ## Tilgjengelegheit
 
-Revokering som default aktivert for **alle bevistypar** i Bevisporten, inkludert nye dynamiske bevistypar som vert laga med Bevisgenerator.   Det er mogeleg å deaktivere revokasjon per bevistype ved å ta kontakt med Digdir.
+Revokering er som default aktivert for **alle bevistypar** i Bevisporten, inkludert både PID samt dynamiske bevistypar som vert laga fortløpande med Bevisgenerator.   Det er mogeleg å deaktivere revokasjon per bevistype ved å ta kontakt med Digdir.
 
 
 ## Validere revokasjons-status
