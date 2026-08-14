@@ -5,7 +5,7 @@ product: lommebok
 redirect_from: /lommebok_digdir_utsteder_revokering
 ---
 
-Digdir sin utstedar, Bevisporten, kan no *revokere* bevis som den har utstedt. Revokering vert nytta når eit bevis ikkje lenger skal vere gyldig — til eksempel fordi innbyggjaren ynskjer det, grunnlagsdata har endra seg, brukaren har mista retten til beviset, eller beviset vart utstedt ved ein feil.
+Digdir sin utstedar, Bevisporten, kan no *revokere* bevis som den har utstedt. Revokering vert nytta når eit bevis ikkje lenger skal vere gyldig — til dømes fordi innbyggjaren ynskjer det, grunnlagsdata har endra seg, brukaren har mista retten til beviset, eller beviset vart utstedt ved ein feil.
 
 ## Teknisk mekanisme
 
@@ -13,13 +13,13 @@ Revokering er implementert etter IETF-spesifikasjonen [Token Status List (TSL)](
 
 Kort fortalt:
 
-- Alle bevis frå Bevisporten inneheld ein `status`-objekt som peiker på ei statusliste via `uri`, og gir beviset sin plass i lista via `idx`.
+- Alle bevis frå Bevisporten inneheld eit `status`-objekt som peiker på ei statusliste via `uri`, og gir beviset sin plass i lista via `idx`.
 - Status List Token er ein signert JWT som samlar statusar for mange bevis i éi komprimert bitliste.
 - I dagens implementasjon brukar Bevisporten 2 bit per bevis og har to mogelgheiter: `00` = gyldig, `01` = revokert. 
 
-Status List Token-en er offentleg tilgjengelig og kan hentast utan autentisering — sjå [Som brukarstad: sjekke status](#som-brukarstad-sjekke-status) under.
+Status List Token-en er offentleg tilgjengelig og kan hentast utan autentisering. 
 
-***Døme på revokerbart bevis***:
+***Døme på revokerbart bevis:***
 ```
 {
   "vct": "no:kontaktregisteret:kontaktinformasjon:1",
@@ -32,6 +32,7 @@ Status List Token-en er offentleg tilgjengelig og kan hentast utan autentisering
     }
   },
   ...
+}
 ```
 
 ## Tilgjengelegheit
@@ -50,6 +51,7 @@ Brukarstader som treng vite om eit bevis er revokert, må utvide valideringa som
 5. Dekomprimer bitlista og les verdien på indeksen `idx`.
 6. Om verdien er `01`, er beviset revokert og skal avvisast. Om verdien er `00`, er beviset ikkje revokert (Du må framleis sjekke gyldigheitsperiode, eller andre bevistype-spesifikke valideringar som står i rulebook). 
 
+Brukarstader kan med fordel implementere ein sentral, periodisk revokasjonssjekk-funksjon i eiga verksemd, både av personvern-minimerande omsyn, men også for å unngå høg last på den sentrale statuslista.
 
 ## Trigge revokering som sluttbrukar
 
