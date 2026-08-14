@@ -36,12 +36,12 @@ Status List Token-en er offentleg tilgjengelig og kan hentast utan autentisering
 
 ## Tilgjengelegheit
 
-Revokering er tilgjengelig og som default aktivert for **alle bevistypar** i Bevisporten i dag.   Det er mogeleg å deaktivere per bevistype ved å ta kontakt med Digdir.
+Revokering er som default aktivert for **alle bevistypar** i Bevisporten, inkludert både PID samt dynamiske bevistypar som vert laga fortløpande med Bevisgenerator.   Det er mogeleg å deaktivere revokasjon per bevistype ved å ta kontakt med Digdir.
 
 
 ## Validere revokasjons-status
 
-Brukarstader som treng vite om eit bevis er revokert, må utvide valideringa som er beskrive i [OpenID4VP](./lommebok_protokoll_vp.html) med ei statuskontroll:
+Brukarstader som treng vite om eit bevis er revokert, må utvide valideringa som er beskrive i [OpenID4VP](./lommebok_protokoll_vp.html) med ein statuskontroll:
 
 1. Valider beviset som normalt (signatur, tillitsliste, at utstedar er autorisert for bevistypen, holder-binding).
 2. Les `status.status_list.uri` og `status.status_list.idx` frå beviset.
@@ -65,7 +65,7 @@ Bevisporten sitt API har to endepunkt for å revokere bevis, avhengig av kva uts
 | Pre-authorized code flow | `PUT /api/v1/credential/revoke`<br/>`PUT /{tenant}/api/v1/credential/revoke` | Revokerer eit spesifikt bevis, identifisert med `issuance_transaction_id`. |
 | Authorization code flow | `PUT /api/v1/credential/revoke/by-subject`<br/>`PUT /{tenant}/api/v1/credential/revoke/by-subject` | Revokerer **alle** bevis utstedt for ein gitt `subject.identifier` (normalt fødselsnummer) og `credential_configuration_id`. |
 
-Begge endepunkta finst også i ein tenant-spesifikk variant, `/{tenant}/api/v1/credential/revoke...`, der `{tenant}` er tenant-identifikatoren din (t.d. `pid`) — på samme måte som for dei andre credential-endepunkta i API-et.
+Begge endepunkta finst også i ein tenant-spesifikk variant, `/{tenant}/api/v1/credential/revoke...`, der `{tenant}` er tenant-identifikatoren din (t.d. `bevisgenerator`) — på samme måte som for dei andre credential-endepunkta i API-et.
 
 Full OpenAPI-spesifikasjon finn du i [Swagger UI](https://utsteder.test.eidas2sandkasse.net/swagger-ui/index.html#/).
 
