@@ -62,7 +62,7 @@ Testmiljøet bruker **[TENOR](https://www.skatteetaten.no/testdata/)** for å si
 Alle kall autentiseres med nøkkelen i headeren:
 
 ```
-X-EIN-API-KEY: secret_...
+API-KEY: secret_...
 ```
 
 ---
