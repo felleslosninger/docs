@@ -5,9 +5,7 @@ product: lommebok
 redirect_from: /lommebok_digdir_utsteder_revokering
 ---
 
-# Revokering av bevis
-
-Utstedarar i sandkassa kan no *revokere* bevis dei har utstedt. Revokering brukast når eit bevis ikkje lenger skal vere gyldig — til eksempel fordi grunnlagsdata har endra seg, brukaren har mista retten til beviset, eller beviset vart utstedt ved ein feil.
+Digdir sin utstedar, Bevisporten, kan no *revokere* bevis som den har utstedt. Revokering vert nytta når eit bevis ikkje lenger skal vere gyldig — til eksempel fordi innbyggjaren ynskjer det, grunnlagsdata har endra seg, brukaren har mista retten til beviset, eller beviset vart utstedt ved ein feil.
 
 ## Teknisk mekanisme
 
@@ -21,6 +19,20 @@ Kort fortalt:
 
 Status List Token-en er offentleg tilgjengelig og kan hentast utan autentisering — sjå [Som brukarstad: sjekke status](#som-brukarstad-sjekke-status) under.
 
+***Døme på revokerbart bevis***:
+```
+{
+  "vct": "no:kontaktregisteret:kontaktinformasjon:1",
+  "iss": "https://utsteder.test.eidas2sandkasse.net",
+  ...
+  "status": {
+    "status_list": {
+      "idx": 15031,
+      "uri": "https://status.test.eidas2sandkasse.net/lists/1"
+    }
+  },
+  ...
+```
 
 ## Tilgjengelegheit
 
