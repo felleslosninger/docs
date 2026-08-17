@@ -18,6 +18,32 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.0.8
+
+17.08.2026
+
+- Opprydding
+  - Fjerner DPFIO (som ikke lenger er i bruk)
+  - Reduserer unødvendig "støy" i loggene
+
+- Feilrettinger
+  - INFO-brev fra digital_dpv kan igjen sendes selv om mottaker er reservert
+  - Hindrer potensiell evig heng situasjon ved polling av status
+  - Krever ikke lenger DPH-properties (når DPH ikke er enablet)
+  - Stanser retry-loop ved client errors under sending (vil ikke kunne sendes ved neste forsøk uansett)
+
+- Forbedringer
+  - Fallback verdi for offentlig tittel og innhold for DPV / digital_dpv
+  - Reduserer pollefrekvens for gamle meldinger (ned til hver time etter 30 dager som default)
+  - Skrur av polling for meldinger som rapporteres som er slettet av mottaker
+  - Stopper polling av meldinger som ikke lenger finnes i Altinn
+  - Tar i bruk idempotency unngå duplikate correspondences ved retry på DPV
+  - Legger til mulighet for å konfigurere timeouts for oauth2 tokens
+  - Håndterer parsing exceptions ved nedlasting fra Altinn
+
+- Sikkerhet
+  - Diverse sikkheretsoppdateringer (3rd party bibliotek)
+
 ## 4.0.7
 
 16.06.2026
