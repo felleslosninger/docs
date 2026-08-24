@@ -27,7 +27,7 @@ Du skal no ha to tenester: ein backend-tjeneste og ein webklient.
 ### 2. Opprett ny tenant for din brukarstad
 
 1. Logg inn i admin webklienten med `AUTH_CLIENT_ID` og `AUTH_CLIENT_SECRET`.
-2. Opprett ein ny tenant. Gje tenanten rollene: clients:manage, presentation:manage og presentation:offer
+2. Opprett ein ny tenant. Gje tenanten rollene: clients:manage, presentation:manage og presentation:request
 3. Hugs å ta vare på tenant id og passord, dei blir berre viste når du opprettar tenanten.
 
 
