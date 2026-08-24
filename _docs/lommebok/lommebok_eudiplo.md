@@ -78,7 +78,6 @@ openssl req -new -key eckey.pem -subj /CN="brukersted" -out access.csr
   "crt": [
     "-----BEGIN CERTIFICATE-----\nSERTIFIKAT\n-----END CERTIFICATE-----"
   ],
-  "kmsProvider": "string",
   "rotationPolicy": {
     "enabled": false,
     "intervalDays": 90,
