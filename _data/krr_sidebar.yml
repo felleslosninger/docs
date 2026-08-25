@@ -58,19 +58,6 @@ folders:
       - title: Lenketjenester
         jurl: /docs/Kontaktregisteret/krr_sluttbrukerinnstillinger
 
-
-- title: Utfasede tjenester
-  folderitems:
-      - title: Oppslagstjenesten SOAP
-        jurl: /docs/Kontaktregisteret/krr_overgang_soap_rest
-
-      - title: Fra OIDC- til Maskinporten-beskyttet endepunkt
-        jurl: /docs/Kontaktregisteret/krr_oidc_til_mp
-       
-      - title: Endepunkt og IP-adresser
-        jurl: /docs/Kontaktregisteret/krr_utfasa_endepunkt
-
-
 - title: Feilsøking
   folderitems:
       - title: Feilsøking i KRR
