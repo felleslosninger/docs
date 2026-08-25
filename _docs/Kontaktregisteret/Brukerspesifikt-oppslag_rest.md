@@ -48,10 +48,6 @@ Følgende header-parametere må brukes på request:
 
 ### Eksempel på respons:
 
-
-Se https://begrep.difi.no/Oppslagstjenesten/Person for definisjon av kodeverket.
-
-
 ```
       {
          "personidentifikator": "23079421936",

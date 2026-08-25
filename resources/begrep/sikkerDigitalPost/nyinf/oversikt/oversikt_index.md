@@ -22,5 +22,3 @@ Digital Postkasse til Inbyggere er en felles løsning for offentlige virksomhete
 | [Testing](dpi_testing_index.html) | Hvordan teste. |
 | [Feilhåndtering](dpi_feilhandtering_index.html) | Generelt om feilhåndtering. |
 
-(Eldre releaser av dokumentasjonen finnes på: [https://begrep.digdir.no/SikkerDigitalPost/](https://begrep.difi.no/SikkerDigitalPost/) )
-

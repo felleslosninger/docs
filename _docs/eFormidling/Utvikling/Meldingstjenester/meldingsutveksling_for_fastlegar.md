@@ -321,12 +321,12 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
       "scope": [
         {
           "type": "ConversationId",
-          "instanceIdentifier": "{{Referanse til første melding i en dialog}}",  
+          "instanceIdentifier": "{{Referanse_til_foerste_melding_i_en_dialog}}",  
           "identifier": "urn:no:difi:profile:helse:helse:ver1.0"
         },
         {
           "type": "ParentId",
-          "instanceIdentifier": "{{Referanse til forrige melding i en dialog}}"
+          "instanceIdentifier": "{{Referanse_til_forrige_melding_i_en_dialog}}"
         }
       ]
     }
