@@ -89,7 +89,7 @@ Dette endepunktet er sikra med access-token frå anten Maskinporten eller ID-por
 
 Du må kjenne `credential_configuration_id`  på ditt bevis.  Denne identifikatoren har du og Digdir vorte samde om som del av utviklingsløpet. Datamodellen for denne bevistypen har me også blitt samde om, og til slutt so har me vorte samde om kva API-endepunkt hjå deg som Bevisporten skal pull'e data frå, og tilhøyrande valideringsreglar.
 
-Av sikkerheitsomsyn krev me dobbel-validering av brukar-identitet:  du må både inkludere brukerid i payloaden, men også i tokenet som sikrar kallet mot Bevisporten.  Ved bruk av ID-porten-token så kjem dette automatisk, ved bruk av Maskinporten so må du hugse å be om [innbygger-bundne tokens](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html).  Dette er også eit valg som me har blitt samde om som del av utviklingsløpet.
+Av sikkerheitsomsyn krev me dobbel-validering av brukar-identitet:  du må både inkludere brukerid i payloaden, men også i tokenet som sikrar kallet mot Bevisporten.  Ved bruk av ID-porten-token så kjem dette automatisk, ved bruk av Maskinporten so må du hugse å be om [innbygger-bundne tokens](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_pid_restricted_tokens.html) og [audience-begrensede tokens](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_audience_restricted_tokens.html).  Dette er også eit valg som me har blitt samde om som del av utviklingsløpet.
 
 ## Grensesnittdefinisjon ved push
 
