@@ -8,15 +8,11 @@ product: elma
 redirect_from: /elma_index
 ---
 
-**ELMA - Elektronisk mottakaradresseregister er eit norsk register over foretak som kan ta i mot dokument i EHF-format.**
-
-
-Alle foretak som vil ta i mot EHF-dokument må vere registrert i ELMA. ELMA inneheld informasjon om foretaket si internettadresse
+ELMA er eit elektronisk mottakaradresseregister i Peppol nettverket. ELMA inneheld informasjon om foretak si internettadresse
 (aksesspunktadresse) og kva type dokument mottakaren kan ta i mot, som faktura, ordre, katalogar, tilbod m.fl. Sjølve sendinga skjer
-via EHF-infrastruktur/CEF eDelivery (PEPPOL) som er ein standardisert måte å sende til dømes fakturaer på til det offentleg sektor.
+via EHF-infrastruktur/CEF eDelivery (Peppol) som er ein standardisert måte å sende til dømes fakturaer på til det offentleg sektor.
 
 Les meir om ELMA på [Samarbeidsportalen](https://samarbeid.digdir.no/elma/elma/24)
-
 
 Mottakarar som er registrert i ELMA må ta imot dokument frå alle avsendarar. Avsendar forpliktar seg til å sende i standardformat og
 versjonen som er ført opp i ELMA. Det er aksesspunktleverandøren som registrerer mottakarane i ELMA.
