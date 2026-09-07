@@ -18,6 +18,21 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.1.0
+
+07.09.2026
+
+- Ny funksjonalitet
+  - Migrere SvarUt-integrasjon fra SOAP til REST i IP (støtter både SOAP og REST)
+
+- Feilrettinger
+  - DPF ekstra metadata (erstatte whitespace med underscore)
+  - Slå av DPH som standard i "staging"-profilen
+  - Bruk av både DPI og DPH samtidig feilet
+
+- Genrell oppgradering
+  - Oppgradering til Spring Boot 4.1 og Jackson 3.x
+
 ## 4.0.8
 
 17.08.2026
