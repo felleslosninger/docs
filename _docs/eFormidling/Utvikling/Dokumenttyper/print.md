@@ -200,7 +200,7 @@ Forretningsmeldingen `print` er beskrevet under.
 > | Standard verdi                  | Hentes fra Folkeregisteret  |
 > | Konfigurasjon av standard verdi | Ikke støttet                |
 
-
+#TABELLEN MANGLE HEADER
 | <nobr>print.mottaker.navn</nobr>                | Nei     | Navn for mottaker.                                                                | String                                         | Hentes fra Folkeregisteret  | Ikke støttet |
 | <nobr>print.mottaker.adresselinje1</nobr>       | Nei     | Adresselinje 1 for mottaker.                                                      | String                                         | Hentes fra Folkeregisteret  | Ikke støttet |
 | <nobr>print.mottaker.adresselinje2</nobr>       | Nei     | Adresselinje 2 for mottaker.                                                      | String                                         | Hentes fra Folkeregisteret  | Ikke støttet |
