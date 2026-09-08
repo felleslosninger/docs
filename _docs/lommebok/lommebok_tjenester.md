@@ -32,7 +32,6 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 
 ## Person-lommebøker
 * [Digdir demo lommebok](lommebok_demo_app)   Digdir tilbyr en lommebok for iOS og Android som primært er tiltenkt at deltakerne i sandkassen kan få teste sine usecase/brukerhistorier.
-* Symfoni ID — Personleg digital lommebok frå [Symfoni AS](https://www.symfoni.dev/) for å ta imot, lagre og presentere digitale bevis. Brukes i skarp pilot, med ekte tilflyttere, av UDI og UIO i [Kompetansespor](https://lnkd.in/dgEUnctn), vinner av [Fyrlyktprisen 2025](https://www.nokios.no/#:~:text=Symfoni). Tilgjengeleggjerast Q2, 2026.
 
 ## Virksomhetslommebøker
 * [Symfoni Virksomhetslommebok](https://symfoni.dev/) — Digital lommebok frå Symfoni AS for organisasjonar (juridiske personar). Handterer verifiserbare virksomheitsbevis som firmaattest, skatteattest og bevillingar. Kan også fungere som brukarstad (motta bevis) og utsteder. Utvikla i partnarskap med Brønnøysundregistrene. Integrert med Digdirs felleskomponenter. Pilotert i Oslo kommune ([«Enkel Servering](https://aktuelt.oslo.kommune.no/naeringsetaten-utforsker-fremtidens-it-losninger-kan-effektivisere-saksbehandling-og-soknadsprosesser)») og av Skatteetaten ([Born Digital](https://www.skatteetaten.no/globalassets/om-skatteetaten/analyse-og-rapporter/rapporter/born-digital-digitale-samhandlingsmonstre.pdf)). Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
