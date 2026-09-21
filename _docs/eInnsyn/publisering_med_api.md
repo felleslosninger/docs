@@ -53,7 +53,7 @@ Testmiljøet bruker **[TENOR](https://www.skatteetaten.no/testdata/)** for å si
 4. Klikk **Generer ny nøkkel** og kopier nøkkelen – den vises bare én gang
 
 > **Har du ikke tilgang til virksomheten din?**  
-> Du må ha fått delegert tilgang til enkelttjenesten **«Virksomhetsadministrering i eInnsyn»** i Altinn. Ta kontakt med tilgangsansvarlig eller daglig leder i din virksomhet for å få denne rettigheten delegert til deg, før du går videre.
+> Du må ha fått delegert tilgang til enkelttjenesten **«Virksomhetsadministrering i eInnsyn»** i Altinn. Ta kontakt med tilgangsansvarlig eller daglig leder i din virksomhet for å få denne rettigheten delegert til deg, før du går videre. Lenke til hvordan en delegerer tilgang finner du [her!](https://samarbeid.digdir.no/einnsyn/nytt-api-einnsyn-er-klart-til-tas-i-bruk/3853)
 
 ---
 
