@@ -45,6 +45,20 @@ Step 4: Click "Hent tilfeldig daglig leder" (Find random CEO). Click "Autentiser
 
 Step 5: The authentication process should redirect you back to the wallet.
 
+
+## How to revoke a PID
+
+- you need to remember the user-id (national ID) of the test user.
+
+- go to the "revoke" section of [our test tool](https://bevisgenerator.test.eidas2sandkasse.net/revoke),
+  - select "Personidentifikator"
+  - select the credential type you want to revoke (normallay "Norsk ID-bevis Webuild SD-JWT")
+  - enter the user-id into the "Personidentifaktor" field
+  - press "Revoker bevis".
+
+<img width="894" height="582" alt="image" src="https://github.com/user-attachments/assets/062f7e42-df11-45c3-8cc2-b808e329cd9d" />
+
+
 ## About test users
 
 The PID issuer is connected to the Test Population Registry and the Test Business Registry in Norway, containing a lot of synthentic persons and companies. 
