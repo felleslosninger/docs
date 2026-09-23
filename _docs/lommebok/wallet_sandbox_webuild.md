@@ -15,10 +15,7 @@ Please read [the generic introduction on the Norwegian sandbox](wallet_sandbox_s
 
 ## About Norwegian PID for Webuild.
 
-The PID issuer URL is:
-```
-https://utsteder.test.eidas2sandkasse.net/webuild
-```
+The PID issuer URL is: `https://utsteder.test.eidas2sandkasse.net/webuild`.
 
 The PID is only available using authorization code flow.
 
@@ -31,7 +28,7 @@ openid-credential-offer://?credential_offer=%7B%22credential_issuer%22%3A%22http
 
 ## How to get a Norwegain PID ?
 
-Step 1: open the offer on your wallet
+Step 1: open the offer on your wallet.  You can go here: [https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc](https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc).
 
 Step 2: an end-user authentication session is started in the browser. 
 
