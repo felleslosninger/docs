@@ -51,7 +51,7 @@ The PID issuer is connected to the Test Population Registry and the Test Busines
 
 So when you click "Hent tilfeld person" a random test user is fetched runtime from the Test Population Registry.  But you can also write a user-id directly if you prefer.  
 
-The button "Hent tilfeldig daglig leder" fetches a person who is also a CEO for a company in the Test Business Registry. 
+The button "Hent tilfeldig daglig leder" fetches a person who is also a CEO for a company in the Test Business Registry, so you can use them to get an EBWOID for that company later.  Norwegian EBWOIDs can be issued from [https://brg.apps.tt02.altinn.no/brg/lommebok-v1/](https://brg.apps.tt02.altinn.no/brg/lommebok-v1/). 
 
 Here is 10 static users which could be used, if your use case can not deal with being assigned a random user.
 
