@@ -54,9 +54,9 @@ Step 5: The authentication process should redirect you back to the wallet.
   - select "Personidentifikator"
   - select the credential type you want to revoke (normallay "Norsk ID-bevis Webuild SD-JWT")
   - enter the user-id into the "Personidentifaktor" field
-  - press "Revoker bevis".
-
-<img width="894" height="582" alt="image" src="https://github.com/user-attachments/assets/062f7e42-df11-45c3-8cc2-b808e329cd9d" />
+  - press "Revoker bevis" button.
+ 
+<img width="894" height="652" alt="image" src="https://github.com/user-attachments/assets/f02c319b-583f-4039-8d29-7b11d18c9c8a" />
 
 
 ## About test users
