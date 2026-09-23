@@ -33,7 +33,11 @@ Step 1: open the offer on your wallet.  You can go here: [https://bevisporten.te
 Step 2: an end-user authentication session is started in the browser. 
 
 Step 3: Choose "TestID" as eID-provider
+<img width="589" height="99" alt="image" src="https://github.com/user-attachments/assets/24893fdf-a661-488b-ac0b-a6c5579c7e1a" />
+
 
 Step 4: Click "Hent tilfeldig person" (Find random user). Click "Autentiser".
+<img width="486" height="206" alt="image" src="https://github.com/user-attachments/assets/740621c6-f614-4a03-962f-0498cd1fa54c" />
+
 
 Step 5: The authentication process should redirect you back to the wallet.
