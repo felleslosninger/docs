@@ -20,6 +20,9 @@ folders:
       - title: English summary
         jurl: /docs/lommebok/wallet_sandbox_summary.html
 
+      - title: Webuild
+        jurl: /docs/lommebok/wallet_sandbox_webuild.html
+
 - title: Ta i bruk som brukarstad
   folderitems:
 

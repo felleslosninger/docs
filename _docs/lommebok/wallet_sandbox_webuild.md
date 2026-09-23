@@ -15,9 +15,14 @@ Please read [the generic introduction on the Norwegian sandbox](wallet_sandbox_s
 
 ## About Norwegian PID for Webuild.
 
-The PID issuer URL is `https://utsteder.test.eidas2sandkasse.net/webuild`.
+The PID issuer URL is:
+```
+https://utsteder.test.eidas2sandkasse.net/webuild
+```
 
-The PID is only available using authorization code flow.  (ETSI 119 472-3 requirement ?)
+The PID is only available using authorization code flow.
+
+The issuer signs metadata with a webuild WRPAC.
 
 Static credential offer for a Norwegian PID
 ```
