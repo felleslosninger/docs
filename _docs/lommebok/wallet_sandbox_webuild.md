@@ -15,11 +15,11 @@ Please read [the generic introduction on the Norwegian sandbox](wallet_sandbox_s
 
 ## About Norwegian PID for Webuild.
 
-Here you can find the [Norwegain PID issuer metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer/webuild).
+We have setup a dedicated issuer for WeBuild to issue Norwegian PIDs.  Here is [issuer metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer/webuild).
 
-To test issuance, please go to: [https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc](https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc).
+To start issuance, please go to: [https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc](https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc) to get a QR code.
 
-The PID is only available using authorization code flow.  The issuer signs metadata with a webuild WRPAC.  We are p.t. waiting for approval to be registrered on hte trust list.   
+The PID is only available using authorization code flow.  The issuer signs metadata with a webuild WRPAC, and the credential is signed by a webuild certificate present on the webuild pid-provider trust lists.
 
 Static credential offer for a Norwegian PID:
 ```
