@@ -8,18 +8,17 @@ redirect_from: /wallet_sandbox_webuild
 
 These pages contain brief documentation on how WeBuild-partners can use the Norwegian PID Issuer. 
 
+[GO HERE TO START ISSUANCE AND GET A QR-CODE](https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc) !
 
 ## About the Norwegian Sandbox
 
-Please read [the generic introduction on the Norwegian sandbox](wallet_sandbox_summary).
+You may read [the generic introduction on the Norwegian sandbox](wallet_sandbox_summary) if you're interested.
 
 ## About Norwegian PID for Webuild.
 
-We have setup a dedicated issuer for WeBuild to issue Norwegian PIDs.  Here is [issuer metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer/webuild).
+We have setup a dedicated issuer to issue Norwegian PIDs for WeBuild.  Here is the [issuer metadata](https://utsteder.test.eidas2sandkasse.net/.well-known/openid-credential-issuer/webuild).  The issuer offer both signed and unsigned metadata using a Webuild WRPAC, and the credential signing certificate is also from Webuild and is listed in the webuild pid-provider trust lists.
 
-To start issuance, please go to: [https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc](https://bevisporten.test.eidas2sandkasse.net/start-issuance?credential_configuration_id=no.digdir.eudiw.webuild.pid_sd_jwt_vc) to get a QR code.
-
-The PID is only available using authorization code flow.  The issuer signs metadata with a webuild WRPAC, and the credential is signed by a webuild certificate present on the webuild pid-provider trust lists.
+The PID is only available using authorization code flow, to align with the ARF.  
 
 Static credential offer for a Norwegian PID:
 ```
