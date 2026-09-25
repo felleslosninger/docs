@@ -31,5 +31,4 @@ Alternativ 2: Gå direkte mot API'et til aksesspunktet:
 Aksesspunktet som Digdir har avtale med tilbyr et API som avsendere kan bruke direkte om ønskelig. Dette alternativet innebærer at avsendere må [bygge DPI-meldinger i henhold til spec](https://docs.digdir.no/dpi_nyinfrastruktur.html#2---avsender-sender-post-melding) og formidle disse til API'et på egenhånd. I tillegg må en selv håndtere kvitteringer som kommer i retur til API'et pr forsendelse.
 
 Aksesspunkt-API-miljø:
-Produksjon: [https://srest.dataplatfor.ms/swagger-ui/#/DPI](https://srest.dataplatfor.ms/swagger-ui/#/DPI)
-QA: [https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI](https://srest.qa.dataplatfor.ms/swagger-ui/#/DPI)
+Produksjon og QA/Test: [DPI API Swagger](https://sandbox1.ediex.no/digdir-api-documentation/v2/swagger-ui/index.html?urls.primaryName=dpi)

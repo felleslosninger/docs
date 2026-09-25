@@ -62,9 +62,14 @@ tilleggskrav.
 
 Ved mottak til fagsystem må mottakende system sikre nødvendig begresning av hvem som kan lese meldingen.
 
-Ved mottak til Altinn Digital Post sikres nødvendig begresning av hvem som kan lese meldingen. Les mer
-på:
+Ved mottak til Altinn Digital Post sikres nødvendig begresning av hvem som kan lese meldingen. Tilgang kan gis på to måter:
 
+- Gi fullmakt til tilgangspakken "Post til virksomheten med taushetsbelagt innhold". Dette gir tilgang til alle taushetsbelagte tjenester som ligger under tilgangspakken.
+- Eksplisitt tjenestedelegering til "Taushetsbelagt post via eFormidling". Da får en kun tilgang til taushetsbelagte meldinger sendt gjennom eFormidling.
+
+Les mer her:
+
+-[Tilgangspakker](https://info.altinn.no/hjelp/ny-tilgangsstyring/tilgangspakker/) (ekstern lenke)
 - [Tilgang til taushetsbelagt post](https://www.altinn.no/nyheter/tilgang-til-taushetsbelagt-post/) (ekstern lenke)
 
 ## Varsling
@@ -78,7 +83,7 @@ inneholde beskrivelse av hva skal til for å gi tilgang til å lese den taushets
 Ved mottak til Altinn Digital Post varsles virksomheten om mottak av melding. Varsel går til virksomhetens registrerte
 kontaktinformasjon på Altinn. Les mer på:
 
-- [Krav til varsling ved taushetsbelagt post](https://altinn.github.io/docs/utviklingsguider/digital-post-til-virksomheter/overorndet-funksjonalitet/#krav-til-varsling-ved-taushetsbelagt-post) (ekstern lenke)
+- [Krav til varsling ved taushetsbelagt post](https://docs.altinn.studio/nb/correspondence/explanation/taushetsbelagt-post/#krav-til-varsling-ved-taushetsbelagt-post) (ekstern lenke)
 
 ## Forutsetninger
 

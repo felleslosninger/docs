@@ -38,11 +38,11 @@ ID-porten har bevisst valgt å *ikke* realisere fullmaktspålogging ved imperson
 
 # Hvem kan innbygger representere ?
 
-Innlogget bruker kan ikke velge fritt, men må velge et eksisterende fullmaktsforhold.  Dette fullmaktsforholdet må være registrert i en ekstern, autorativ kilde.
+Innlogget bruker kan ikke velge fritt, men må velge et eksisterende fullmaktsforhold.  Dette fullmaktsforholdet må være registrert i en ekstern, autoritativ kilde.
 
-I pilotperioden 2025 så er det Vergemålsregisteret til Statens Sivilrettsforvaltning, distribuert via Folkeregisteret, som er den tilgjengelige autorative kilden.  Så snart brukerstyrte fullmakter for innbygger blir tilgjengelig i Altinn 3, så vil disse inkluderes i løsningen.
+I pilotperioden 2025 så er det Vergemålsregisteret til Statens Sivilrettsforvaltning, distribuert via Folkeregisteret, som er den tilgjengelige autoritative kilden.  Så snart brukerstyrte fullmakter for innbygger blir tilgjengelig i Altinn 3, så vil disse inkluderes i løsningen.
 
-ID-porten har ikke - og vil aldri få - en egen database over fullmakter.  Dette betyr at administrasjon av fullmakter (å gi, endre, eller trekke tilbake en fullmakt) skal og må skje i hos den autorative kilden.
+ID-porten har ikke - og vil aldri få - en egen database over fullmakter.  Dette betyr at administrasjon av fullmakter (å gi, endre, eller trekke tilbake en fullmakt) skal og må skje i hos den autoritative kilden.
 
 ![screenshot av fullmaktsvelger](idporten_fullmaktsvelger.png)
 
@@ -122,7 +122,7 @@ Du finner en oversikt over tilgjengelige fullmaktstyper [hos Statens Sivilrettsf
 
 I normale tilfeller så har brukeren allerede en aktiv SSO-sesjon i ID-porten som følge av den første pålogginga som seg selv.  Derfor vil bruken nå slippe å autentisere seg en gang til og heller hoppe direkte til fullmaktsvelgeren.  Her må brukeren velge hvem hen vil representere. 
 
-ID-porten vil kontrollere, ved kall mot autorativ kilde, at fullmaktsforholdet eksisterer og er gjeldende, slik at innlogget bruker ikke får valgt eller injisert ikke-eksisterende fullmaktsforhold.
+ID-porten vil kontrollere, ved kall mot autoritativ kilde, at fullmaktsforholdet eksisterer og er gjeldende, slik at innlogget bruker ikke får valgt eller injisert ikke-eksisterende fullmaktsforhold.
 
 Dersom innlogget bruker ikke har noen fullmaktsforhold vil ID-porten vise en feilmelding, og bruker må trykke "back" i browser for å komme tilbake til tjenesten.
 

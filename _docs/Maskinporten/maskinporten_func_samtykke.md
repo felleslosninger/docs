@@ -35,7 +35,8 @@ Funksjonaliteten er basert på Oauth2-utvidelesen for [fin-granulert autorisasjo
 
 Konsument ber om å få et token for en påstått kunde ved å oppgi en uuid for et samtykke, samt kundens personnummer eller organisasjonsnummer, og dersom et samtykke foreligger i Altinn, vil det returneres et Maskinporten-token med samtykke-identifikatorer som konsument kan bruke mot API-tilbyder. 
 
-```mermaid
+
+<div class="mermaid">
 sequenceDiagram
     Datakonsument->>+Maskinporten: forespørre token (samtykkegivers pid/orgno, sammtykke uuid)
     Maskinporten->>Altinn Autorisasjon: Hent samtykke 
@@ -43,7 +44,7 @@ sequenceDiagram
     Maskinporten-->>-Datakonsument: samtykke-token
     Datakonsument->>+API: API-kall m/samtykketoken
     note over API: validerere scope, gyldig samtykke-uuid og pid/orgno
-```
+</div>
 
 ### Forespørsel
 

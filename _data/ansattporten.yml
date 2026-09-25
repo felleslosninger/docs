@@ -11,7 +11,7 @@ folders:
 - title: Bruksområder
   folderitems:
 
-      - title: Vanlig innlogging 
+      - title: Vanlig innlogging
         jurl: /docs/ansattporten/ansattporten_guide.html
 
       - title: Innlogging på vegne av virksomhet
@@ -35,6 +35,9 @@ folders:
 
       - title: Entra ID
         jurl: /docs/ansattporten/ansattporten_entraid.html
+
+      - title: Virksomhetsbroen
+        jurl: /docs/ansattporten/ansattporten_virksomhetsbroen.html
 
       - title: Metadata
         jurl: /docs/ansattporten/ansattporten_wellknown.html
@@ -63,4 +66,3 @@ related_resources_list:
 
 - title: Status og driftsmeldinger
   jurl: https://status.digdir.no/
-

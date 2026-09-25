@@ -7,6 +7,8 @@ product: Ansattporten
 redirect_from: /ansattporten_allmennsky
 ---
 
+{% include note.html content="Informasjonen her byrjar å bli litt gamal, og me er ikkje sikker på om den er korrekt lenger. Ansattporten brukar no Altinn3 istadenfor ALtinn2, og den tilbyr også gruppebasert tilgangstyring med Entra ID, som truleg kan gje fleire mogelegheiter også for slik bruk av almenn sky som er skildra her. " %}
+
 Sammen med tverrsektorielt datasamarbeid foregår det en pilot med uttesting av Ansattporten 
 som innlogging til skyplatformer. Målet er å kunne dele data ut av egen virksomhet ved å benytte de 
 nasjonale tillittsløsningene til å bekrefte identitet og ansettelsesforhold. Ansettelsesforholdet bestemmes av 
@@ -14,7 +16,7 @@ roller i Altinn.
 
 Se under for status og oppsett hos den aktuelle skyleverandøren. 
 
-| Platform                                                                                                     | Status juni20204                                                                                                    |
+| Platform                                                                                                     | Status juni 2024                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
 | [Google Cloud Platform]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-google-cloud-platform) | Støttet med [enkelte produktbegrensninger](https://cloud.google.com/iam/docs/federated-identity-supported-services) |
 | [Azure]({{site.baseurl}}/docs/idporten/oidc/ansattporten_allmennsky#i-azure)                                 | Ikke støttet                                                                                                        |

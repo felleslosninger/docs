@@ -343,11 +343,6 @@ DPI er en teknisk kode for Digital Post til Innbyggere. At også andre meldingst
 post til innbyggere har medført en del misforståelser. Bruken av begrepet blir tonet ned til fordel for Digital Post til
 Innbyggere.
 
-### Hva betyr DPFIO?
-
-DPFIO er en teknisk kode for Digital Post til FIKS IO. FIKS IO er en meldingstjeneste tilbydd av KS. Bruken av begrepet
-blir tonet ned til fordel for FIKS IO.
-
 ## Sak- og arkivsystem
 
 ### Hvordan konfigurerer jeg sak- og arkvisystem X til å bruke eFormidling?

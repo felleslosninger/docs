@@ -1,7 +1,7 @@
 ---
 title: "id_token from ID-porten"
-description: "This page documents the id_tokens issued by ID-porten ID-porten OIDC Provider"
-summary: 'his page documents the id_tokens issued by ID-porten ID-porten OIDC Provider'
+description: "This page documents the id_tokens issued by ID-porten"
+summary: 'This page documents the id_tokens issued by ID-porten'
 
 sidebar: oidc
 product: ID-porten
@@ -14,6 +14,8 @@ redirect_from: /oidc_protocol_id_token
 The id_token is the assertion of the authenticated user identity.  It tells you "who the user is", but not "what the user can access".  
 
 The id_token is meant to be consumed and validated by the client in order to build a local session at the client.  It is not intended to be passed around to enable API access towards other parties/systems.
+
+id_tokens are retrieved from the eid supplier using the `openid` scope. However, if the client also requests the `profile` scope, additional claims may be added to the id_token. This is currently supported by Buypass and Bankid.
 
 Please see [Auth0's guide to id and access tokens](https://auth0.com/blog/id-token-access-token-what-is-the-difference/) to learn more of the difference between these tokens.
 
@@ -52,8 +54,12 @@ Example:
 }
 ```
 
+If the client has requested the `profile` scope, additional claims may be added:
 ```
-OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
+{
+  "given_name" : "Ola",
+  "family_name" : "Nordmann"
+}
 ```
 
 
@@ -79,10 +85,15 @@ OuFJaVWQvLY9... <signaturverdi> ...isvpDMfHM3mkI
 | iat | Timestamp when this token was issued. If different from `auth_time`, this indicates a federated/sso login. |
 | exp | Expire - Timestamp when this token should not be trusted any more.  |
 | jti | jwt id - unique identifer for a given token  |
-| locale | The language selected by the user during the authentication in ID-porten. ISO 639-1 values are: nb (Norwegian Bokmål), nn (Norwegian Nynorsk), en (English), se (Northern Sami)|
+| locale | The language selected by the user during the authentication in ID-porten. ISO 639-1 values are: nb (Norwegian Bokmål), nn (Norwegian Nynorsk), en (English), se (Northern Sami). Only included if the *profile* scope was requested.|
 | sid | session id - an unique identifier for end user session at ID-porten. Clients should store the value to be able to handle frontchannel logout notifications. Note that `sid` will only be included if the client is [registered](oidc_func_clientreg.html) with `frontchannel_logout_session_required`.  |
 
+Additional claims that may be added if the eid supplier provides them and the client has requested the `profile` scope:
 
+| claim | value |
+| --- | --- |
+| given_name | The given name of the authenticated user |
+| family_name | The family name of the authenticated user |
 
 
 ## AMR values
@@ -91,17 +102,15 @@ Authentication method can have the following values:
 
 | `amr` value            | Description|
 |------------------------|-|
-| `Minid-PIN`            | MinID using PIN-codes from letter (deprecated)|
 | `Minid-OTC`            | MinID using one-time-code received via SMS|
 | `Minid-APP`            | MinID using notification in the MinID-app on android/iOS |
 | `Minid-TOTP`           | MinID using timebased one-time passwords |
-| `Minid-WEBAUTHN`       | MinID using security keys |
 | `BankID`               | BankID using code generator or app|
 | `BankID Mobil`         | BankID on mobile |
 | `Buypass`              | Buypass |
 | `Commfides`            | Commfides using smartcard |
 | `eIDAS`                | A European approved eID through the eIDAS network|
-| `Selfregistered-email` | A European approved eID through the eIDAS network|
+| `Selfregistered-email` | A onetime-code sent to a self-registrered email address |
 | `TestID`               |  An eID for testing purposes. NOT USED IN PRODUCTION.  |
 
 
@@ -111,7 +120,7 @@ The security level of assurance can have the following values:
 
 | `acr` value               | Description                                                                                                                                                                                                                                                       |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `idporten-loa-substantial` | A []"substantial" level of assurance according to Norwegian legal framework](https://lovdata.no/forskrift/2019-11-21-1578/§20)). Multi-factor login with an ID that has been issued according to the 'substantial' demands. For example MinID App or MinID with one-time-code from SMS. |
+| `idporten-loa-substantial` | A ["substantial" level of assurance according to Norwegian legal framework](https://lovdata.no/forskrift/2019-11-21-1578/§20). Multi-factor login with an ID that has been issued according to the 'substantial' demands. For example MinID App or MinID with one-time-code from SMS. |
 | `idporten-loa-high`       | A ["high" level of assurance according to Norwegian legal framework](https://lovdata.no/forskrift/2019-11-21-1578/§19) (["selvdeklarasjonsforskriften"). Multi-factor login with an ID that has beed issued according to the 'high' demands. For example BankID, Buypass or Commfides.                                 |
 | `eidas-loa-substantial`   | A "substantial" level of assurance according to the European eIDAS regulation. Multi-factor login with an eID that has been notified in the eIDAS network. |                                                              |
 | `eidas-loa-high`   | A "high" level of assurance according to the European eIDAS regulation. Multi-factor login with an eID that has been notified in the eIDAS  network. |                                                              |

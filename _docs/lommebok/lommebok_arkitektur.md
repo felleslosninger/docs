@@ -51,7 +51,7 @@ Slik ser Digdir for oss at sandkassen ser ut i Noreg:
 
 <div class="mermaid">
 graph LR
-  subgraph AK [Autorative kjelder]
+  subgraph AK [Autoritative kjelder]
   F(Folkeregisteret)
   E(Enhetsregisteret)
   D(Datakjelder)

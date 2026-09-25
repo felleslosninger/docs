@@ -19,17 +19,14 @@ folders:
   - title: ICD 0192 and new profiles
     jurl: /docs/ELMA/elma_0192andnewprofiles
 
-  - title: Status & releasenotes
-    jurl: /docs/ELMA/elma_status
-
 - title: REST API
   folderitems:
 
   - title: Produksjon (smp.difi.no)
-    jurl: https://elma-smp.no/rest/resources/docs/index.html
+    jurl: https://elma-smp.no/rest/swagger-ui/index.html
 
   - title: QA (test-smp.difi.no)
-    jurl: https://test.elma-smp.no/rest/resources/docs/index.html
+    jurl: https://test.elma-smp.no/rest/swagger-ui/index.html
 
 - title: FAQ
   jurl: /docs/ELMA/elma_faq

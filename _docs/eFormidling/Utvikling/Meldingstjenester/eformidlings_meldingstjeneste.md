@@ -47,7 +47,7 @@ feilet. Dette er interne kontrollmeldinger som håndteres av integrasjonspunktet
 
 Dersom en velger å integrere mot eFormidling uten integrasjonspunkt må integrasjonen:
 
-- benytte eFormidlings meldingstjeneste hos Altinn Formidling (`service code` og `service edition code`)
+- benytte eFormidlings meldingstjeneste hos Altinn Formidling
 - sende tilbake statuser (mottatt og levert) etter mottak av melding
 - dersom mottatt melding inneholder Altinn Formidling `senders reference` så må kvitteringer og statuser merkes med
 samme `senders reference` når de sendes tilbake

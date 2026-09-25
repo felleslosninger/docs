@@ -52,7 +52,7 @@ The response is a set of tokens and associated metadata, and will depend upon wh
 
 | Claim | Description|
 | - |-|
-|access_token   | An Oauth2 access token, either by reference or as a JWT depending on which scopes was requested and/or client registration properties. |
+|access_token   | An Oauth2 access token as a JWT. |
 |expires_in  | Number of seconds until this access_token is no longer valid   |
 | scope   | The list of scopes issued in the access token. Included for convenience for the client, and should not be trusted for access control decisions.  |
 
@@ -61,7 +61,7 @@ Please note that the access token is opaque for the client, and the format may b
 Example response:
 ```
 {
-  "access_token" : "IxC0B76vlWl3fiQhAwZUmD0hr_PPwC9hSIXRdoUslPU=",
+  "access_token" : "eyJraWQiOiJhdC1rZXktaWQiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL21hc2tpbnBvcnRlbi5uby8iLCJzY29wZSI6ImRpZml0ZXN0OnRlc3QxIiwiZXhwIjoxNzAwMDAwMDAwLCJpYXQiOjE2OTk5OTk0MDB9.signature",
   "token_type" : "Bearer",
   "expires_in" : 599,
   "scope" : "difitest:test1"

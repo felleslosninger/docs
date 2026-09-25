@@ -3,6 +3,7 @@ title: HentPrintSertifikatForespoersel
 
 sidebar: begrep_sidebar
 ---
+
 |---|---|
 | Term          | {{page.title}} |
 | Definisjon    | Forespørsel sendt fra Virksomhet for å hente Sertifikater fra Printleverandør i Sikker Digital Post. |

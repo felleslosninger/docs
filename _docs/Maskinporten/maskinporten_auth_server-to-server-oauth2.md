@@ -71,7 +71,7 @@ Selve grantet kan se slik ut:
 }
 .
 {
-  "aud": "https://ver2.maskinporten.no/",
+  "aud": "https://test.maskinporten.no/",
   "scope": "global/kontaktinformasjon.read global/varslingsstatus.read global/navn.read global/postadresse.read global/sertifikat.read",
   "iss": "test_rp",
   "exp": 1520589928,
@@ -103,7 +103,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=<jwt>
 Dersom Maskinporten godtok forespørselen, får klienten et access_token tilbake, tokenet er bundet til organisasjonsnummeret til klienten.   Tokenet er alltid en self-contained JWT, og body vil typisk vil se slik ut etter dekoding:
 ```
 {
-  "iss" : "https://ver2.maskinporten.no/",
+  "iss" : "https://test.maskinporten.no/",
   "client_amr" : "virksomhetssertifikat",
   "token_type" : "Bearer",
   "aud" : "unspecified",

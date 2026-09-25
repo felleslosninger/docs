@@ -31,8 +31,6 @@ folders:
       jurl: /docs/eFormidling/Funksjonalitet/mote
     - title: Avtalt meldingsutveksling
       jurl: /docs/eFormidling/Funksjonalitet/avtalt
-    - title: FIKS IO-meldingsutveksling
-      jurl: /docs/eFormidling/Funksjonalitet/fiks_io
 - title: Egenskaper
   folderitems:
     - title: Egenskaper

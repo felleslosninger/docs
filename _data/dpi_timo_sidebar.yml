@@ -22,6 +22,8 @@ folders:
         jurl: /dpi_skjema.html 
       - title: Eksempler
         jurl: /dpi_eksempler.html
+      - title: Tjenesteleverandører
+        jurl: /dpi_tjenesteleverandorer.html
       
         
     - title: Forretningslag
@@ -76,6 +78,8 @@ folders:
            
       - title: Utskriftstjenesten
         jurl: /dpi_utskrift_index.html
+      - title: Krav og anbefalinger ved adressering
+        jurl: /dpi_adressering_index.html
         
     - title: Forretningsmeldinger
       folderitems:
@@ -145,9 +149,3 @@ folders:
       
       - title: Begrepskatalog
         jurl: /resources/begrep/sikkerDigitalPost/begrep/
-
-    - title: DPI GAMMEL DOKUMENTASJON
-      folderitems:
-
-      - title: Veiledning og klienter
-        jurl: /resources/begrep/sikkerDigitalPost/innledning/

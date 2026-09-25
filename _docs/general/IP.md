@@ -10,7 +10,7 @@ Denne siden lister IP-adresser som blir brukt av fellesløsningene, i ulike milj
 
 
 | Løsning | PROD | TEST |
-| - | - |-|
+| - | - |-| - |
 | ID-porten (idporten.no - test.idporten.no) |IPv4: 139.105.36.167 <br> IPv6: 2a02:9cc::205 |IPv4: 139.105.36.135 <br> IPv6: 2a02:9cc::305 |
 | Ansattporten (ansattporten.no - test.ansattporten.no) |IPv4: 139.105.36.165 <br> IPv6: 2a02:9cc::204 |IPv4: 139.105.36.133 <br> IPv6: 2a02:9cc::304|
 | Maskinporten (maskinporten.no - test.maskinporten.no) |IPv4: 139.105.36.164 <br> IPv6: 2a02:9cc::201 |IPv4: 139.105.36.132 <br> IPv6: 2a02:9cc::301|

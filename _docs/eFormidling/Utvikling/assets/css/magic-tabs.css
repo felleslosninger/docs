@@ -1,0 +1,16 @@
+.tab-header.active {
+    background: #ccc;
+}
+
+/* hide all listingblocks and openblocks until selected by the javascript */
+.listingblock, .openblock {
+    display: none;
+}
+
+.listingblock.active {
+    display: block;
+}
+
+.openblock.active {
+    display: block;
+}

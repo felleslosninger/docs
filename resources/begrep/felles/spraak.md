@@ -10,11 +10,11 @@ redirect_from: /spraak
 | Definisjon | Språkkode |
 | Datatype | string |
 | Kilde | DIFI |
-| Kommentar | Språkkode angitt etter ISO 639-1 | 
+| Kommentar | Språkkode angitt etter ISO 639, Set 1 | 
 
 ### Eksempel
 
-| **ISO 639-1 kode** | **Språk** |
+| **ISO 639, Set 1 kode** | **Språk** |
 | nb | Bokmål |
 | nn | Nynorsk |
 | se | Samisk |

@@ -6,6 +6,20 @@ product: eFormidling
 sidebar: eformidling_sidebar
 ---
 
+
+Her finner du informasjon om transformasjoner fra KS SvarInn til arkivmelding, 
+for arkivmelding til KS SvarUt sjå her:
+[Transformasjon fra arkivmelding til KS SvarUt]({% link _docs/eFormidling/Utvikling/Transformasjoner/arkivmelding_til_ks_svarut.md %}).
+
+
+Nærmere beskrivelse av funksjonaliteten i KS SvarInn finnes på [Teknisk dokumentasjon for KS SvarInn](https://ks-no.github.io/svarut/integrasjon/mottaksservice-rest/) (ekstern lenke)
+
+
+1. TOC 
+{:toc}
+
+## Tabell over transformasjoner {#tabell}
+
 Tabellen under viser hvordan integrasjonspunktet transformerer responser fra APIet for KS SvarInn til innkommende
 meldinger. Integrasjonspunktet supplerer innkommende meldinger med opplysninger fra konfigurasjon, standardverdier og
 oppslag hos tredjeparter.
@@ -40,6 +54,28 @@ oppslag hos tredjeparter.
 | Mime-type for fil nedlastet til integrasjonspunktet                           | Mime-type for vedlegget (`filMetadata.mimetype`)                                      | -                                 | -                                                        |
 | Filnavn for fil nedlastet til integrasjonspunktet                             | Filnavn for vedlegget (`filMetadata.filnavn`)                                         | -                                 | -                                                        |
 
-Nærmere beskrivelse av funksjonaliteten i KS SvarInn finnes på:
 
-- [Teknisk dokumentasjon for KS SvarInn](https://ks-no.github.io/svarut/integrasjon/mottaksservice-rest/) (ekstern lenke)
+## Eigendefinerte metadata i meldingen {#metadata}
+
+Det er støtte for å legge til eigendefinerte metadata i meldingen.
+Dette gjøres ved å legge til verdier i feltet `metadataFraAvleverendeSystem.ekstraMetadata`. Verdiene fra 
+`metadataFraAvleverendeSystem.ekstraMetadata` blir overført til `virksomhetsspesifikkeMetadata` i arkivmeldingen.
+Dataen blir gjort om til enkle key-value elementer i XML-en.
+
+Eksempel på mapping som blir gjort fra `metadataFraAvleverendeSystem.ekstraMetadata` til `virksomhetsspesifikkeMetadata` i arkivmeldingen.
+
+```json
+{
+  "ekstraMetadata": {
+    "forvaltningsnummer": "20050",
+    "objektnavn": "Mitt objekt"
+  }
+}
+```
+
+```xml
+<virksomhetsspesifikkeMetadata>
+    <forvaltningsnummer>20050</forvaltningsnummer>
+    <objektnavn>Mitt objekt</objektnavn>
+</virksomhetsspesifikkeMetadata>
+```

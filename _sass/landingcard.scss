@@ -25,34 +25,43 @@
     }
 
     &--1 .cards__text:before {
-      background: url('/assets/img/icons/id-porten.svg') no-repeat;
+      background: url('/assets/img/icons/idporten_ny.svg') no-repeat;
     }
     &--2 .cards__text:before {
-      background: url('/assets/img/icons/eformidling.svg') no-repeat;
+      background: url('/assets/img/icons/eformidling_ny.svg') no-repeat;
     }
     &--3 .cards__text:before {
-      background: url('/assets/img/icons/maskinporten.svg') no-repeat;
+      background: url('/assets/img/icons/maskinporten_ny.svg') no-repeat;
     }
     &--4 .cards__text:before {
-      background: url('/assets/img/icons/esignering.svg') no-repeat;
+      background: url('/assets/img/icons/esignering_ny.svg') no-repeat;
     }
     &--5 .cards__text:before {
-      background: url('/assets/img/icons/kontakt.svg') no-repeat;
+      background: url('/assets/img/icons/krr_ny.svg') no-repeat;
     }
     &--6 .cards__text:before {
-      background: url('/assets/img/icons/einnsyn.svg') no-repeat;
+      background: url('/assets/img/icons/eInnsyn.svg') no-repeat;
     }
     &--7 .cards__text:before {
-      background: url('/assets/img/icons/postkasse.svg') no-repeat;
+      background: url('/assets/img/icons/dpi_ny.svg') no-repeat;
     }
     &--8 .cards__text:before {
-      background: url('/assets/img/icons/elma.svg') no-repeat;
+      background: url('/assets/img/icons/felleslosning_ny.svg') no-repeat;
     }
     &--9 .cards__text:before {
-      background: url('/assets/img/icons/elma.svg') no-repeat;
+      background: url('/assets/img/icons/ansattporten_ny.svg') no-repeat;
     }
     &--10 .cards__text:before {
-      background: url('/assets/img/icons/elma.svg') no-repeat;
+      background: url('/assets/img/icons/felleslosning_ny.svg') no-repeat;
+
+    }
+    &--11 .cards__text:before {
+      background: url('/assets/img/icons/felleslosning_ny.svg') no-repeat;
+
+    }
+    &--12 .cards__text:before {
+      background: url('/assets/img/icons/felleslosning_ny.svg') no-repeat;
+
     }
 
   }
@@ -65,6 +74,7 @@
 
     &:before {
       content: "";
+      background-size: contain;
       margin-right: 12px;
       height: 30px;
       width: 30px;
