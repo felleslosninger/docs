@@ -67,6 +67,9 @@ Det er viktig å vere klar over at tillitslistene er delt opp i to hovudkategori
 Dei som brukar lommebok, må difor forhalde seg til fleire lister for å få eit fullt oversikt over kva aktørar som inngår i ulike roller og utføre tilstrekkeleg validering.
 
 
+<table><tr><td><div class="mermaid">
+
+
 graph
 
 subgraph DigReg [Digdirs Registrar]
