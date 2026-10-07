@@ -39,35 +39,35 @@ Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 ## Oppslag på vegne av annen virksomhet
 
-Kontakt- og reservasjonsregisteret har i dag ein tillitsbasert modell for oppslag på vegne av andre, men innfører oppslag på vegne av en annen virksomhet gjennom delegering av tilgang i Altinn.
-Dette brukes når en leverandør gjør oppslag i KRR på vegne av en kunde.
+En leverandør kan gjøre oppslag i KRR på vegne av en kunde gjennom delegering av tilgang i Altinn. Med kunde menes virksomheten som har tilgang til KRR, og som leverandøren gjør oppslag for. Kunden gir selv leverandøren fullmakt, og kan når som helst trekke den tilbake.
 
-### Hvordan det fungerer
+Den tillitsbaserte modellen for oppslag på vegne av andre fases ut. Leverandører som bruker den i dag, må gå over til delegering i Altinn.
 
-For å gjøre oppslag på vegne av en kunde må:
-1. Kunden delegerer tilgang i Altinn
-2. Leverandør henter token fra Maskinporten med:
-   1. Gyldige delegeringsscope
-   2. "consumer_org" satt til kundens organisasjonsnummer
+### Slik fungerer det
 
-> Oppslag uten "consumer_org" blir behandlet som oppslag for egen virksomhet.
+1. Kunden får tilgang til delegeringsscopene i Maskinporten ved at kunde eller leverandør tar kontakt med servicedesk@digdir.no.
+2. Kunden gir leverandøren fullmakt i Altinn (se [delegering i Altinn](#delegering-i-altinn)).
+3. Leverandøren registrerer delegeringsscopene på sin egen Maskinporten-klient. 
+4. Leverandøren henter token fra Maskinporten med delegeringsscopene og `consumer_org` satt til kundens organisasjonsnummer.
+5. Leverandøren gjør oppslag i KRR med tokenet.
 
-### Scope for altinn-delegering
+### Scope for Altinn-delegering
 
-| Delegeringsscope            |
-|-----------------------------|
-| krr:global/kontaktinfo.read |
-| krr:global/postkasse.read   |
+| Delegeringsscope            | Gir samme data som |
+|-----------------------------|-|
+| krr:global/kontaktinfo.read | krr:global/kontaktinformasjon.read |
+| krr:global/postkasse.read   | krr:global/digitalpost.read |
 
 ### Delegering i Altinn
 
-Kunden må delegere API-tilgang til leverandør i Altinn. For å gjøre det må kundens daglig leder (eller andre med rettigheter i Altinn) delegere API-tilgang til leverandør.
+Kunden må gi leverandøren fullmakt til API-et i Altinn.
 
-API-tilgang:
-"KRR - Delegere på-vegne-av-rettighet"
+1. Logg inn i Altinn og velg virksomheten.
+2. Gå til **Tilgangsstyring** og velg **Maskinportenadministrasjon**.
+3. Klikk **Legg til leverandør** og skriv inn leverandørens organisasjonsnummer.
+4. Velg API-et "KRR - Delegere på-vegne-av-rettighet" og klikk **Gi fullmakt**.
 
-For beskrivelse av delegering, se:
-[Tilgang til programmeringsgrensesnitt - API](https://info.altinn.no/hjelp/profil/tilgang-til-programmeringsgrensesnitt---api/delegering-av-api-tilgang)
+Se også veiledning: [Maskinportenadministrasjon](https://info.altinn.no/hjelp/ny-tilgangsstyring/maskinportenadministrasjon/)
     
 ## Endepunkt
 
