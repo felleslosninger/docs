@@ -18,11 +18,83 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.1.0
+
+07.09.2026
+
+- Ny funksjonalitet
+  - Migrere SvarUt-integrasjon fra SOAP til REST i IP (støtter både SOAP og REST)
+
+- Feilrettinger
+  - DPF ekstra metadata (erstatte whitespace med underscore)
+  - Slå av DPH som standard i "staging"-profilen
+  - Bruk av både DPI og DPH samtidig feilet
+
+- Genrell oppgradering
+  - Oppgradering til Spring Boot 4.1 og Jackson 3.x
+
+## 4.0.8
+
+17.08.2026
+
+- Opprydding
+  - Fjerner DPFIO (som ikke lenger er i bruk)
+  - Reduserer unødvendig "støy" i loggene
+
+- Feilrettinger
+  - INFO-brev fra digital_dpv kan igjen sendes selv om mottaker er reservert
+  - Hindrer potensiell evig heng situasjon ved polling av status
+  - Krever ikke lenger DPH-properties (når DPH ikke er enablet)
+  - Stanser retry-loop ved client errors under sending (vil ikke kunne sendes ved neste forsøk uansett)
+
+- Forbedringer
+  - Fallback verdi for offentlig tittel og innhold for DPV / digital_dpv
+  - Reduserer pollefrekvens for gamle meldinger (ned til hver time etter 30 dager som default)
+  - Skrur av polling for meldinger som rapporteres som er slettet av mottaker
+  - Stopper polling av meldinger som ikke lenger finnes i Altinn
+  - Tar i bruk idempotency unngå duplikate correspondences ved retry på DPV
+  - Legger til mulighet for å konfigurere timeouts for oauth2 tokens
+  - Håndterer parsing exceptions ved nedlasting fra Altinn
+
+- Sikkerhet
+  - Diverse sikkheretsoppdateringer (3rd party bibliotek)
+
+## 4.0.7
+
+16.06.2026
+
+- Fallback verdier
+  - DPV: Fallback til "Tittel" i journalpost når "OffentligTittel" mangler.
+  - Digital DPV: Fallback til "Ingen innhold" i digital dpv meldinger når "Innhold" mangler.
+- Rettet OutOfMemoryError ved store meldinger (use-db-persistence=true)
+  - Meldingsinnhold strømmes nå via midlertidige filer på disk i stedet for å holdes i minnet.
+  - De midlertidige filene lagres i temp-mappen om ikke annet er konfigurert i `difi.move.nextmove.blob-cache-dir`.
+  - Endringen løser også et problem for rundt Postgres, blob og transaksjoner
+- DPV status fra Altinn hentes fra ny funksjon
+  - Henter status om levert og lest fra "overview" funksjon i Altinn (tidligere fra details->statusHistory)
+  - Endret etter forespørsel fra Altinn ("details" er en tung operasjon som kan påvirke flere systemer)
+  - https://github.com/Altinn/altinn-correspondence/issues/1989
+
+## 4.0.6
+
+21.05.2026
+
+- Inneholder bugfikser
+  - Rett rekkefølgen på DPI kvitteringer 
+  - Feil på innkommende DPF vil ikke blokkere nedlasting av resten
+- Forbedringer og justeringer
+  - Maks størrelse for DPI justert til 50MB (ihht spesifikasjon)
+  - Rydder bort logging som gikk direkte til console (bruker nå standard logging)
+  - Oppdatert konfugurasjon for logging (fjerner varsler under oppstart)
+- Ny funksjonalitet
+  - Mulighet for å opprette flere "på-vegne-av" DPO systembrukere via web-ui
+
 ## 4.0.5
 
 13.05.2026
 
 - Setter Orbyt som ny leverandør av DPI i produksjon
+- Fikser nullpointer om sikkerhetsnivå mangler i SBD (MOVE-5021)
 - Se utfyllende informasjon her : [https://status.digdir.no/incidents/sn79sj63xv7w](https://status.digdir.no/incidents/sn79sj63xv7w)
 
 ## 4.0.4

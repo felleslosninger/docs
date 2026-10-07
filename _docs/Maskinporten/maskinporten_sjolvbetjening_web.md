@@ -32,22 +32,25 @@ For å opprette bruker på Samarbeidsportalen. Gjør følgende:
 
 ### Tilgang i test- og produksjonsmiljø
 
-Tilgang i test og produksjon er sikret med ID-porten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Direktør/Leder/Annen person med rolle "Hovedadministrator" i Altinn). 
+Tilgang i test og produksjon er sikret med Ansattporten, og tilgangen må delegeres av en bemyndiget person i virksomheten. (Person med rolle som Daglig leder/Bestyrende reder/Innehaver/Styrets leder i Altinn). 
 
-Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+#### Fremgangsmåte for tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+
+Det kommer snart skjermbilder, men følg desse skrittene:
 
 1. Gå til Altinn.no
 2. Trykk på "Logg inn"
-3. Velg virksomheten du skal representere
-4. Trykk på "Profil"
-5. Trykk på "Andre med rettigheter til virksomheten"
-6. Trykk på "+ Leggje til ny person eller verksemd"
-7. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
-8. Trykk på "Gi tilgang til enkelttjenester"
-9. Søk på "Maskinporten" i søkefeltet på "Gi nye rettigheter"
-10. Trykk på "Gå videre"
-12. Trykk på "Fullfør delegering"
-13. Trykk på "Bekreft"
+3. Oppe i høyre hjørne, trykk på navnet ditt og velg virksomheten du skal representere
+4. Trykk på "Meny"
+5. Trykk på "Tilgangsstyring"
+6. Trykk på "Brukere"
+7. Trykk på "+ Ny bruker"
+8. Legg inn fødselsnummer og etternavn på den som skal få tilgang.
+9. Trykk på "Legg til person"
+10. Trykk på fanen "Enkelttjenester"
+11. Trykk på "+ Gi fullmakt"
+12. Søk etter rettigheten du vil gi, se tabellen under for hva de forskjellige rettighetene gir tilgang til
+13. Trykk på "Gi fullmakt" på høyre side av de rettighetene du vil gi fullmakt til.
 
 Tabell for tilgjengelige rettigheter:
 
@@ -60,26 +63,19 @@ Tabell for tilgjengelige rettigheter:
 
 *NB! Selvbetjening for leverandører krever "Selvbetjening av integrasjoner..." i tillegg.
 
-Videotutorial: [https://vimeo.com/433540385](https://vimeo.com/433540385)
 
-[![Delegere rettigheter]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/433540385 "Delegere rettigheter")
-
-Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
+#### Fremgangsmåte for å slette tilgang gjennom Altinn autorisasjon. Den som skal delegere tilgang må ha rolle som hovedadministrator.
 
 1. Gå til Altinn.no
 2. Trykk på "Logg inn"
-3. Velg virksomheten du skal representere
-4. Trykk på "Profil"
-5. Trykk på "Andre med rettigheter til virksomheten"
-6. Finn personen du skal frata rettigheter fra
-7. Trykk på "Gi eller fjerne tilgang"
-8. Trykk på "Fjern en eller flere rettigheter"
-9. Trykk på "Fjern" på rettigheten som skal fjernes.
-10. Trykk på "Ferdig for å bekrefte"
-
-Videotutorial: [https://vimeo.com/433540358](https://vimeo.com/433540358)
-
-[![Fjerne tilgang]({{site.baseurl}}/assets/videotutorial_300px.png)](https://vimeo.com/433540358 "Fjerne tilgang")
+3. Oppe i høyre hjørne, trykk på navnet ditt og velg virksomheten du skal representere
+4. Trykk på "Meny"
+5. Trykk på "Tilgangsstyring"
+6. Trykk på "Brukere"
+7. Søk opp brukeren ved hjelp av navn
+8. Trykk på brukeren
+10. Trykk på fanen "Enkelttjenester"
+11. Trykk på "- slett fullmakt"
 
 ## Selvbetjening som API-tilbyder
 

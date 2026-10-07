@@ -16,8 +16,6 @@ og passord.
 
 ## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste)
 
-For integrasjonspunkt eldre enn versjon 4 sjå [Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste-utgår-i-ipv4)
-
 - Virksomheiten har allerede ein Maskinporten klient (oppretta av Digdir) som alltid er på formen MOVE_IP_orgnummer-til-din-virksomhet.
 - Virksomheten må opprette eit system i Altinn. Systemet må ha tilgangspakken "informasjon-og-kommunikasjon".
 - Systemnavn skal inn i properties filen til integrasjonspunktet.
@@ -77,33 +75,6 @@ sequenceDiagram
     
     K->>A: Bruk url eller logg inn i Altinn for bekrefte opprettelse av systemuser
 </div>
-
-## Opprette bruker for Altinn Formidling (kreves av eFormidlings meldingstjeneste) (utgår i IPv4)
-
-(Gjelder bare for digital post til offentlige virksomheter)
-Integrasjonspunktet kjører som datasystem mot Altinn's meldingsformidler. Integrasjonspunktet må registreres som et datasystem Altinn's portal. Informasjon om hvordan dette gjøres finnes [her](https://www.altinn.no/hjelp/profil/avanserte-innstillinger/). En person som representerer virksomheten må logge inn på Altinn for å gjøre dette.
-
-Når du oppretter datasystemet er det viktig at det gjøres av person som kan representere virksomheten. Hvordan man representerer virksomheten kan du lese [her](https://info.altinn.no/hjelp/innlogging/diverse-om-innlogging/hvordan-kan-jeg-logge-inn-som-en-bedrift-eller-et-selskap/).
-
-Under opprettelse av datasystem velger du passord og får tildelt brukerid (ID), disse skal senere brukes i properties filen som beskrives lenger nede. Dette er propertyene ```difi.move.dpo.username=``` og ```difi.move.dpo.password=```.
-
-### Eksempel
-
-> Du kan gi datasystemet akkurat det navnet du ønsker. Vi har valgt å kalle den "move". Kall den gjerne eformidling_dittOrganisasjonsnummer eller annet valgfritt navn.
-
-> I nedtrekksmenyen velger du "Formidling"
-
-> Id'en du får er brukernavnet som skal inn i integrasjonspunkt-local.properties. Passordet du velger skal også inn i denne filen. Dette gjelder DPO. 
-
-Registrere datasystem:
-
-![]({{site.baseurl}}/images/eformidling/altinnDatasystemRegistrer.PNG)
-
-Datasystem registrert:
-
-![]({{site.baseurl}}/images/eformidling/altinnDatasystemRegistrert.PNG)
-
-Informasjon om hvordan du logger på Altinn portal finner du <a href="https://www.altinn.no/hjelp/innlogging/">https://www.altinn.no/hjelp/innlogging/</a>.
 
 ## Opprette brukere for KS SvarUt og SvarInn
 
@@ -196,11 +167,3 @@ Man må vente med å legge inn organisasjonsnumrene til konfigurasjon av integra
 #### Sjekke om DPF passord er riktig
 
 Naviger til [KS forsendelseservice](https://svarut.ks.no/tjenester/forsendelseservice/ForsendelsesServiceV6). Her blir du bedt om brukernavn og passord. Tast inn brukernavn og det passordet dere mener å ha fått. Dersom det resulterer i at servicen igjen ber om brukernavn og passord, er passordet galt. Om dere har oppgitt riktig brukernavn og passord får dere en respons som kan variere litt fra nettleser til nettleser.
-
-## Opprette bruker for Altinn Digital Post (utgår i IPv4)
-
-Dette gjøres av Altinn etter at Digitaliseringsdirektoratet sender bestilling. For at Digitaliseringsdirektoratet skal sende bestillingen må kunden fylle ut et informasjonsskjema. Passord mottas på SMS.
-
-[Informasjonsskjema](https://forms.office.com/Pages/ResponsePage.aspx?id=D1aOAK8I7EygVrNUR1A5ka_Oknk2ND5DhEKnqlTuZMlUMjhUWVMxWk1OUkw0SDZXME9NVk8zOUEwNS4u)
-
-[Mer info](http://samarbeid.digdir.no/eformidling/ta-i-bruk-eformidling/98)

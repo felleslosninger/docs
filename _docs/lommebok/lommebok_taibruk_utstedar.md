@@ -18,7 +18,7 @@ Ofte vil ein utstedar vere ein aktør som har spesialisert seg på slik bevis-pr
 
 Dersom du ynskjer å produsere digitale bevis, må du fyrst bestemme deg for om du ynskjer å :
 
-1. lage utedaren sin sjølv
+1. lage utstedaren sin sjølv
 2. installere ein mellomvare som fungerer som utsteder (som til dømes EUDIPLO)
 3. bruke [Digdir sin utstedar Bevisporten](lommebok_digdir_utsteder) (kun for offentlege verksemder)
 4. få hjelp av [ein av leverandørane i sandkassa](lommebok_tjenester) 

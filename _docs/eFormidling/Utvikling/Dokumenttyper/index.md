@@ -12,7 +12,6 @@ Dokumenttyper som brukes i eFormidling:
 - [Avtalt](avtalt)
 - [Digital](digital)
 - [Digital DPV](digital_dpv)
-- [FIKS IO](fiks_io)
 - [Innsynskrav](innsynskrav)
 - [Print](print)
 - [Publisering](publisering)

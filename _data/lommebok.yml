@@ -20,6 +20,9 @@ folders:
       - title: English summary
         jurl: /docs/lommebok/wallet_sandbox_summary.html
 
+      - title: Webuild
+        jurl: /docs/lommebok/wallet_sandbox_webuild.html
+
 - title: Ta i bruk som brukarstad
   folderitems:
 
@@ -86,6 +89,9 @@ folders:
 
       - title: Utsteder, Bevisgenerator
         jurl: /docs/lommebok/lommebok_digdir_utsteder_bevisgenerator.html
+
+      - title: Utsteder, revokering
+        jurl: /docs/lommebok/lommebok_digdir_utsteder_revokering.html
 
 
 - title: Andres tenester

@@ -65,7 +65,7 @@ For at lommebøker skal stole på bevis frå utstedaren din, må verksemda regis
 | `TSPName` | Fullt namn på verksemda (norsk og engelsk) |
 | `TSPTradeName` | Organisasjonsnummer på formatet `NTRNO-<orgnr>` |
 | `PostalAddress` | Postadresse: gateadresse, postnummer, by og landkode |
-| `ElectronicAddress/URI` | Kontaktinformasjon: e-postadresse og/eller nettside |
+| `ElectronicAddress/URI` | Kontaktinformasjon: e-postadresse og nettside |
 | `TSPInformationURI/URI` | URL til informasjonsside om tenesta |
  
 

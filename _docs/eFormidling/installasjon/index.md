@@ -26,7 +26,6 @@ integrasjonspunkt. Ett integrasjonspunkt kan konfigureres til å støtte en elle
 - eInnsyn
 - Saksbehandling og avtalt meldingsutveksling
 - Informasjon og vedtak til innbygger
-- FIKS IO-meldingsutveksling
 
 En virksomhet kan ha ett hoved-integrasjonspunkt som kan både sende og motta per funksjonalitet. I tillegg kan
 virksomheten ha flere integrasjonspunkt som er konfigurert til bare å støtte sending.

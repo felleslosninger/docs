@@ -64,7 +64,6 @@ Reell responsivitet målt en vanlig uke (fra og med 2022-05-17 til og med 2022-0
 | Digital Post til Innbyggere   | ~ 1 s           | ~ 52 s           | 26 335        |
 | eInnsyns meldingstjeneste     | ~ 1 s           | ~ 1 t 12 m 3 s   | 156 662       |
 | eFormidlings meldingstjeneste | ~ 1 s           | ~ 1 m 44 s       | 2 800         |
-| FIKS IO                       | -               | -                | -             |
 | KS SvarUt og SvarInn          | ~ 3 s           | ~ 31 s           | 2 767         |
 
 Integrasjonspunktet har relativt beskjeden ressursbruk:
@@ -84,7 +83,6 @@ brukstilfeller er meldingsstørrelse en utfordring. En liten oversikt over tersk
 | Digital Post til Innbyggere   | 50 MB                                                                    |
 | eInnsyns meldingstjeneste     | 1 MB                                                                     |
 | eFormidlings meldingstjeneste | 1 GB dersom både avsender og mottaker bruker eFormidling 2, ellers 75 MB |
-| FIKS IO                       | 2 GB                                                                     |
 | KS SvarUt og SvarInn          | 1 GB                                                                     |
 
 Throughput er begrenset til throughput for meldingstjenestene som brukes, men dette har ikke vært en utfordring per dags

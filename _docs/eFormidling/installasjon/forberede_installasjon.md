@@ -32,7 +32,6 @@ Enkelte av meldingstjenestene krever at virksomheten oppretter en bruker med bru
 
 - [Opprette bruker for Altinn Formidling](opprette_brukere#opprette-bruker-for-altinn-formidling-kreves-av-eformidlings-meldingstjeneste) (nødvendig for å bruke eFormidlings meldingstjeneste)
 - [Opprette bruker for KS SvarUt og SvarInn](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
-- [Opprette bruker for Altinn Digital Post](opprette_brukere#opprette-bruker-for-altinn-digital-post-utgår-i-ipv4) (utgår i IPv4)
 
 
 Ta kontakt med vår servicedesk ved behov:

@@ -273,11 +273,10 @@ vp_tokenet inneheld dei bevisa du ba om, til dømes slik:
 
 Du må validere at vp_tokenet er korrekt.  Aktuelle valideringspunkt:
 
-- validere WUA slik at du veit responsen kjem frå ei anerkjend lommebok
-- validere signeringssertifikat på beviset (for kvart bevis)
+- validere signeringssertifikat på beviset (for kvart bevis) – sjekk sertifikatkjeda mot Trust List
 - validere signatur på beviset (for kvart bevis)
 - sjekke bevis-katalog om utstedaren har lov til å utstede bevis av denne type
-- validere holder binding ?
+- validere holder binding
 
 
 

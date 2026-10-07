@@ -53,9 +53,7 @@ Innholdet i SBDH er beskrevet under.
 >
 > For innbyggere brukes fødselsnummer.
 > 
-> For FIKS IO-mottaker brukes FIKS IO-kontonummer.
->
-> | Lovlige verdier                 | ISO6523, fødselsnummer eller FIKS IO-kontonummer |
+> | Lovlige verdier                 | ISO6523, fødselsnummer                           |
 > | Standard verdi                  | Ingen                                            |
 > | Konfigurasjon av standard verdi | Ikke støttet                                     |
 
