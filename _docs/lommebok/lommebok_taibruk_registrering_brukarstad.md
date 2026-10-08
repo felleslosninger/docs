@@ -36,7 +36,7 @@ Dei andre felta knytt til verksemda di er førehandsutfylte basert på organisas
 Når registreringa er komplett, får du høve til å lage eit **access-sertifikat**.  Dette sertifikatet må du bruka til å autentisere brukarstaden din mot lommeboka.   Å lage eit slikt sertifikat er ein prosess i 4 steg:
 
 1. Lag eit nøkkelpar med elliptisk kurve EC256.
-2. Lag ein CSR (certificate signing request) ut frå dette nøkkelparet.
+2. Lag ein CSR (certificate signing request) ut frå dette nøkkelparet. CSR extensions er ikkje støtta.
 3. Last opp CSRen på registreringa di. Registeret vil då laga eit access-sertifikat tilknytta nøkkelparet ditt.
 4. Last ned access-sertifikatet og bruk det saman med privatnøkkelen i tenesta di.
 
