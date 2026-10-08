@@ -18,6 +18,20 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.2.0
+
+07.10.2026
+
+- Endringer, feilrettinger, forbedringer
+  - Actuator-endepunktene var ikke åpne hvis konfigurasjonen avvek fra standard
+  - DPH arvet ikke keystore-oppsettet
+  - IP brukte feil ServiceIdentifier
+  - Arkivmelding kvittering markeres nå som statusmelding i Altinn
+  - Lengden på filnavn sjekkes ved PUT for DPI
+
+- Andre ting
+  - Diverse forbedringer i bygg-kjeden internt
+
 ## 4.1.0
 
 07.09.2026
