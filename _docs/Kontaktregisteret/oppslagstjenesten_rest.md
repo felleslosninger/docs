@@ -41,8 +41,6 @@ Merk at scopene med `krr:`-prefix er noe konsolidert i forhold til tidligere.
 
 En leverandør kan gjøre oppslag i KRR på vegne av en kunde gjennom delegering av tilgang i Altinn. Med kunde menes virksomheten som har tilgang til KRR, og som leverandøren gjør oppslag for. Kunden gir selv leverandøren fullmakt, og kan når som helst trekke den tilbake.
 
-Den tillitsbaserte modellen for oppslag på vegne av andre fases ut. Leverandører som bruker den i dag, må gå over til delegering i Altinn.
-
 ### Slik fungerer det
 
 1. Kunden får tilgang til delegeringsscopene i Maskinporten ved at kunde eller leverandør tar kontakt med servicedesk@digdir.no.
