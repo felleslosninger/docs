@@ -26,7 +26,7 @@ Fleire av Digdir sine produkt har opne communities på Slack.
 
 Tilsette i offentleg sektor bør i hovudsak lage seg ein brukar på [Offentlig PaaS](https://offentlig-paas.no/) sin slack.  Du finn kanalane våre spegla her under syntaksen `#digdir-<produkt>`.
 
-Tilsette i privat sektor må ha betal-slack, og bruke Slack Connect-funksjonaliteten til å koble seg mot [https://digdir-samarbeid.slack.com](https://digdir-samarbeid.slack.com).  Ta kontakt med Servicedesk (at) digdir.no for at me skal laga ein invite til deg. 
+Tilsette i privat sektor bør ha eigen betal-slack, og bruke Slack Connect-funksjonaliteten til å koble seg mot [https://digdir-samarbeid.slack.com](https://digdir-samarbeid.slack.com).  Ta kontakt med Servicedesk (at) digdir.no for at me skal laga ein invite til deg. 
 
 Per september 2025 har vi kanalar for dei fleste fellesløyingsar, til dømes:
 
