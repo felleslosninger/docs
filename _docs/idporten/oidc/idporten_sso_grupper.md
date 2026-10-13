@@ -96,9 +96,9 @@ graph TD
     C -- Begrenset --> E{Står Klient A på Klient B sin tillatte liste?}
     E -- Ja --> D
     E -- Nei --> X
-    B -- Nei --> G{Er SSO-modus begrenset?}
-    G -- Nei --> X
-    G -- Ja --> E{Står Klient A på Klient B sin tillatte liste?}
+    B -- Nei --> F{Er SSO-modus begrenset?}
+    F -- Nei --> X
+    F -- Ja --> E{Står Klient A på Klient B sin tillatte liste?}
 </div>
 
 *Figur: Foreslått evalueringslogikk - tillitsgruppekontrollen beholdes uendret, men suppleres med et tredje, mer finkornet valg per klient. Dersom tillitsgruppen ikke tillater SSO, ignoreres global og isolert modus, men begrenset modus kan fortsatt gi SSO via unntakslisten.*
