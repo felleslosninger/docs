@@ -16,8 +16,8 @@ folders:
 - title: ELMA documentation
   folderitems:
 
-  - title: ICD 0192 and new profiles
-    jurl: /docs/ELMA/elma_0192andnewprofiles
+  - title: Mandatory two factor authentication from October 2026
+    jurl: /docs/ELMA/elma_mandatory_two_factor_authentication
 
 - title: REST API
   folderitems:
