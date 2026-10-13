@@ -1,40 +1,27 @@
 ---
-title: SSO-grupper i ID-porten - løsningsforslag
+title: SSO-grupper i ID-porten (pilot)
 description: Løsningsforslag til beslutning
 summary:
 
-sidebar: idporten_sidebar
+sidebar: oidc
 product: ID-porten
 redirect_from: /idporten_sso_grupper
 ---
 
-## Dokumentinformasjon
-
-| Felt | Verdi |
-|---|---|
-| Tittel | SSO-grupper i ID-porten |
-| Målgruppe | Virksomhets-/løsningsarkitekter |
-| Status | Diskusjonsgrunnlag / målarkitektur |
-| Eier | *Navn / rolle* |
-| Forfatter(e) | *Navn* |
-| Dato | *dd.mm.åååå* |
-| Beslutningstaker | *Navn / forum (f.eks. arkitekturråd, styringsgruppe)* |
-| Beslutningsdato | *dd.mm.åååå* |
-
 ## 1. Bakgrunn og formål
 
-ID-portens SSO-modell lar en bruker som allerede har autentisert seg for én klient, gjenbruke den økten når vedkommende kommer til en annen klient, i stedet for å måtte autentisere seg på nytt.
+ID-portens SSO-modell lar en bruker som allerede har autentisert seg for én klient, gjenbruke sesjonen når vedkommende kommer til en annen klient, i stedet for å måtte autentisere seg på nytt.
 
-Om slikt gjenbruk er *tillatt* mellom to gitte klienter, er i realiteten en tillitsbeslutning — å dele en økt betyr at én klients autentiseringshendelse nå også dekker en annen klients brukere. I dag er denne tillitsbeslutningen grovkornet og binær (på/av), og det finnes ingen måte å kontrollere SSO-deling mellom et avgrenset, eksplisitt sett med klienter.
+Om slikt gjenbruk er *tillatt* mellom to gitte klienter, er i realiteten en tillitsbeslutning — å dele en sesjon betyr at én klients autentiseringshendelse nå også dekker en annen klients brukere. I dag er denne tillitsbeslutningen grovkornet og binær (på/av), og det finnes ingen måte å kontrollere SSO-deling mellom et avgrenset, eksplisitt sett med klienter.
 
 Dette notatet presenterer tre overordnede SSO-modeller og tre alternativer for hvordan den mest restriktive av dem («SSO-gruppe») kan realiseres, sammen med en eksempel-migreringsplan.
 
 ## 2. Problemstilling og behov
 
-I dag styres tillitsbeslutningen om øktgjenbruk av to uavhengige, grovkornede mekanismer:
+I dag styres tillitsbeslutningen om SSO av to uavhengige, grovkornede mekanismer:
 
-- **Klientnivå, binært:** en av-/på-innstilling på klienten. Av betyr at klienten kun støtter klientbundne økter; SSO deles aldri, i noen retning.
-- **Tillitsgruppenivå:** en av-/på-innstilling per autentiseringsnivå/tillitsgruppe (f.eks. «idporten», «eidas»). Svarer på om dette autentiseringsnivået i det hele tatt tillater øktgjenbruk, uavhengig av hvilke spesifikke klienter det gjelder.
+- **Klientnivå, binært:** en av-/på-innstilling på klienten. Av betyr at klienten kun støtter klientbundne sesjoner; SSO deles aldri, i noen retning.
+- **Tillitsgruppenivå:** en av-/på-innstilling per autentiseringsnivå/tillitsgruppe (f.eks. «idporten», "ansattporten", «eidas»). Svarer på om dette autentiseringsnivået i det hele tatt tillater SSO, uavhengig av hvilke spesifikke klienter det gjelder. **Dersom tillitsgruppen ikke tillater SSO, overstyrer dette klientinnstillingen fullstendig — det vil si at klienten ikke kan oppnå SSO uansett hva den er satt til.**
 
 I tillegg finnes en pilotmekanisme (ID-6864, «Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper») som lar navngitte klientkombinasjoner beholde SSO selv når gruppen ellers har SSO avskrudd. Piloten er uttrykkelig dokumentert som midlertidig: unntakslisten er statisk konfigurert, så enhver endring krever en utrulling. Den er en relativt risikofri pilot for å høste erfaring, siden det er få eidas- eller Ansattporten-tjenester sammenlignet med ID-porten-tjenester.
 
@@ -73,11 +60,22 @@ Det finnes ingen selvbetjent administrasjonsflate for klientkonfigurasjon av SSO
 I dag styres SSO-deling av to uavhengige, grovkornede mekanismer (se kapittel 2):
 
 1. En binær klientinnstilling som enten slår av all SSO-deling for klienten, eller lar klienten delta i SSO uten videre begrensning.
-2. En binær innstilling per tillitsgruppe/autentiseringsnivå som avgjør om øktgjenbruk er tillatt i det hele tatt for det nivået.
+2. En binær innstilling per tillitsgruppe/autentiseringsnivå som avgjør om SSO er tillatt i det hele tatt for det nivået. Dersom tillitsgruppen ikke tillater SSO, overstyrer dette klientinnstillingen fullstendig — klienten kan ikke oppnå SSO uansett hva den er satt til.
 
 I tillegg finnes en midlertidig pilotordning som gir et begrenset sett navngitte klientkombinasjoner unntak fra en avskrudd tillitsgruppe, konfigurert i en statisk liste uten selvbetjening.
 
 Det finnes ingen selvbetjent administrasjonsflate for klientkonfigurasjon av SSO noe sted i dag, og ingen måte å dele SSO med et kontrollert, avgrenset sett av andre tjenester.
+
+<div class="mermaid">
+graph TD
+    A[Bruker med sesjon fra Klient A kommer til Klient B] --> B{Tillater tillitsgruppen SSO?}
+    B -- Ja --> C{Hvilken SSO-modus har Klient B?}
+    C -- Isolert --> X[Ingen SSO - må logge inn på nytt]
+    C -- Global --> D[SSO tillatt]
+    B -- Nei --> X
+</div>
+
+*Figur: Dagens evalueringslogikk for SSO - to uavhengige av/på-sjekker, ingen mulighet for kontrollert deling med et avgrenset sett tjenester.*
 
 ## 7. Beskrivelse av løsningsforslaget
 
@@ -87,7 +85,23 @@ Forslaget er å gå fra dagens binære modell (ja/nei) til tre tydelige SSO-modi
 |---|---|
 | **Isolert SSO** | Tjenesten har egen, isolert SSO-sesjon. Brukeren må logge inn på nytt når hen går til andre tjenester. Ingen SSO-deling i noen retning. Foreslås som ny standard for nye klienter. |
 | **Global SSO** | Tjenesten deltar i vanlig, delt SSO med enhver annen klient, betinget av tillitsgruppekontrollen. Dette er dagens standardoppførsel, men foreslås å ikke lenger være standard for nye klienter. |
-| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om klienten kan deles ut til andre. |
+| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om klienten kan deles ut til andre. Merk: dersom tillitsgruppen ikke tillater SSO, **ignoreres klientens SSO-modus fullstendig** — det spiller ingen rolle om klienten er satt til global eller isolert, resultatet blir uansett ingen SSO. Eneste unntak er begrenset modus: dersom klientkombinasjonen er oppført på unntakslisten (pilotmekanismen ID-6864), kan SSO likevel tillates selv om tillitsgruppen sier nei. |
+
+<div class="mermaid">
+graph TD
+    A[Bruker med sesjon fra Klient A kommer til Klient B] --> B{Tillater tillitsgruppen SSO?}
+    B -- Ja --> C{Hvilken SSO-modus har Klient B?}
+    C -- Isolert --> X[Ingen SSO]
+    C -- Global --> D[SSO tillatt]
+    C -- Begrenset --> E{Står Klient A på Klient B sin tillatte liste?}
+    E -- Ja --> D
+    E -- Nei --> X
+    B -- Nei --> G{Er SSO-modus begrenset?}
+    G -- Nei --> X
+    G -- Ja --> E{Står Klient A på Klient B sin tillatte liste?}
+</div>
+
+*Figur: Foreslått evalueringslogikk - tillitsgruppekontrollen beholdes uendret, men suppleres med et tredje, mer finkornet valg per klient. Dersom tillitsgruppen ikke tillater SSO, ignoreres global og isolert modus, men begrenset modus kan fortsatt gi SSO via unntakslisten.*
 
 ### 7.1 Vurdering av de tre modiene
 
@@ -118,6 +132,17 @@ En SSO-gruppe blir et eget administrasjonsobjekt («SSO-øy»), eid og administr
 - Ulemper: Krever et nytt administrasjonsobjekt og en rollemodell for hvem som kan opprette og endre grupper. Krever regler for eierskap, delegering og godkjenning, og gir mer kompleks plattformlogikk. Kan bli byråkratisk dersom flere organisasjoner skal inn i samme gruppe, og er vesentlig dyrere å realisere (forutsetter bl.a. støtte i autorisasjonsløsning og samtykkeprosesser). Det må også avklares hva som skjer når en klient er med i flere grupper, og modellen støtter ikke ensidig tillit (at A stoler på B uten at B stoler på A).
 - Passer kanskje best når: SSO-gruppene kan bli større enn ca. 5 klienter, man trenger god oversikt, kunder skal kunne selvbetjene SSO-oppsettet selv, samme modell skal brukes i både ID-porten og Ansattporten, og man ønsker langsiktig styring (governance).
 
+<div class="mermaid">
+graph LR
+    subgraph SSO-gruppe
+        K1[Klient A]
+        K2[Klient B]
+        K3[Klient C]
+    end
+</div>
+
+*Figur: Alternativ 1 - klienter er medlemmer av en felles, administrert gruppe. Medlemskap gir SSO med alle andre medlemmer.*
+
 **Alternativ 2 – Konfigurert på klient**
 
 Hver organisasjons administrator styrer selv sine klienter ved å angi hvilke klient-id-er og/eller organisasjonsnumre som har lov til å dele SSO inn til klienten. Dette kan forankres i et mønster som allerede finnes: klienten har fra før en tilsvarende liste over relasjoner til andre parter. En slik liste vil være rettet: at en klient tillater en motpart, gir ikke automatisk motparten tilsvarende tillit tilbake.
@@ -125,6 +150,15 @@ Hver organisasjons administrator styrer selv sine klienter ved å angi hvilke kl
 - Fordeler: Enklere å innføre teknisk, ligner mer på vanlig klientkonfigurasjon, gir høy kontroll per klient, passer godt for små oppsett, krever mindre nytt administrasjonsregime, kan fungere som en rimelig og rask MVP.
 - Ulemper: Kan bli uoversiktlig ved mange klienter — enkelt å forstå per klient, men komplisert å få oversikt over alle «øyer» samlet. Vanskeligere å se hva som faktisk utgjør en SSO-gruppe, risiko for inkonsistent eller asymmetrisk konfigurasjon, vanskeligere å auditere, vanskeligere for kunder å administrere selv over tid, og dårligere egnet for store eller tverrorganisatoriske oppsett. Relasjonene kan over tid bli en skjult graf fremfor tydelige grupper, og lister per klient kan bli lange og skalere dårlig.
 - Passer kanskje best når: SSO-behovet er lite og enkelt, det typisk er 2–3 klienter som skal kobles sammen, man ønsker rask teknisk innføring, og man ikke trenger avansert selvbetjening eller styring i en første versjon.
+
+<div class="mermaid">
+graph LR
+    K1[Klient A] -- tillater SSO fra --> K2[Klient B]
+    K2 -- tillater SSO fra --> K1
+    K2 -- tillater SSO fra --> K3[Klient C]
+</div>
+
+*Figur: Alternativ 2 - hver klient har sin egen, rettede tillatelsesliste. Klient B tillater både A og C, men C tillater ikke B tilbake.*
 
 **Alternativ 3 – Beholde dagens to modi, gjøre SSO opt-in**
 
@@ -167,7 +201,9 @@ Innfører ikke en egen begrenset modus. I stedet beholdes kun isolert og global 
 
 ## 10. Anbefaling
 
-*Fylles ut basert på beslutningstakers vurdering av alternativene i kapittel 7 og 8. Kildenotatet peker på at alternativ 2 (konfigurert på klient) kan fungere som en rimelig og rask MVP, mens alternativ 1 (sentralisert modell) passer bedre på lengre sikt dersom behovet for oversikt, selvbetjening og tverrorganisatorisk bruk (bl.a. Ansattporten) blir stort. Migreringsplanen i kapittel 12 er lagt opp slik at man kan starte med en enklere modell og eventuelt abstrahere til en sentralisert modell senere, dersom det blir behov for det.*
+Vi anbefaler å gå for **alternativ 2 (konfigurert på klient)** i første omgang. Alternativet er enklest å implementere teknisk, da det bygger på eksisterende klientkonfigurasjon uten behov for nye administrasjonsobjekter eller rollemodeller. Det er også enkelt å forstå: hver klient har sin egen liste over hvilke andre klienter den tillater SSO fra. Alternativet kan fungere som en god MVP som gir rask gevinst og lar oss høste erfaring med begrenset SSO i praksis.
+
+Vi er åpne for at **alternativ 1 (sentralisert modell)** kan implementeres på et senere tidspunkt, dersom behovet for bedre oversikt, selvbetjening og tverrorganisatorisk bruk (bl.a. Ansattporten) vokser. Migreringsplanen i kapittel 12 er lagt opp slik at man kan starte med alternativ 2 og eventuelt abstrahere til en sentralisert gruppemodell i fase 6, dersom allow-listene blir store og uoversiktlige.
 
 ## 11. Beslutning som ønskes
 
@@ -181,11 +217,20 @@ Det bes om beslutning på:
 
 Eksempel på migreringsplan fra dagens situasjon til målbildet:
 
-- **Fase 0** – Velge alternativ for SSO-gruppe.
+- **Fase 0 (nå)** – Begrenset SSO som MVP: vi har allerede erfaring med begrenset SSO i praksis gjennom Skatt i ID-porten (eidas-innlogging) og interne selvbetjeningsløsninger i Ansattporten. Denne erfaringen legges til grunn for beslutningen om videre retning.
 - **Fase 1** – Innføre eksplisitt SSO-policy med tre valg: isolert, global, begrenset. Eksisterende klienter settes til henholdsvis isolert eller global, avhengig av dagens konfigurasjon.
 - **Fase 2** – Gjøre isolert til standard for nye klienter. Global SSO blir noe man aktivt må velge inn i.
-- **Fase 3** – Innføre begrenset SSO som MVP: mulighet for å sette klienten i begrenset modus og legge til klient-id-er direkte på klienten (peer-to-peer-modellen, jf. alternativ 2).
-- **Fase 4** – Selvbetjening innenfor egen organisasjon (avhengig av valgt modell).
-- **Fase 5** – Ved behov: mulighet for å legge til egen organisasjon i en allow-liste.
-- **Fase 6** – Eventuell abstraksjon til SSO-grupper dersom allow-listene blir store og uoversiktlige; kan da provisjoneres ned til samme allow-liste-nivå som i MVP-en.
-- **Fase 7** – Selvbetjening på tvers av organisasjoner: innføre en samtykkeløsning for å legge til klienter fra andre organisasjoner, eventuelt etablere roller i autorisasjonsløsningen avhengig av valgt alternativ. På sikt kan det vurderes å fase ut global SSO helt.
+- **Fase 3** – Selvbetjening innenfor egen organisasjon (avhengig av valgt modell).
+- **Fase 4** – Ved behov: mulighet for å legge til egen organisasjon i en allow-liste.
+- **Opsjon A** – Eventuell abstraksjon til SSO-grupper dersom allow-listene blir store og uoversiktlige; kan da provisjoneres ned til samme allow-liste-nivå som i MVP-en.
+- **Opsjon B** – Selvbetjening på tvers av organisasjoner: innføre en samtykkeløsning for å legge til klienter fra andre organisasjoner, eventuelt etablere roller i autorisasjonsløsningen avhengig av valgt alternativ. På sikt kan det vurderes å fase ut global SSO helt.
+
+<div class="mermaid">
+graph LR
+    F0[Fase 0: Begrenset SSO som MVP] --> F1[Fase 1: Eksplisitt SSO-policy]
+    F1 --> F2[Fase 2: Isolert som standard]
+    F2 --> F3[Fase 3: Selvbetjening i egen org]
+    F3 --> F4[Fase 4: Egen org i allow-liste]
+    F4 -. opsjon .-> OA[Opsjon A: Abstraksjon til SSO-grupper]
+    F4 -. opsjon .-> OB[Opsjon B: Selvbetjening på tvers av org]
+</div>
