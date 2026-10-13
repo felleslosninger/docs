@@ -19,5 +19,6 @@ På desse sidene finn du teknisk dokumentasjon om sandkassen.
 
 Me anbefalar at du startar med å lese meir om [arkitekturen til sandkassen](lommebok_arkitektur.html), før du tek ein kikk på [oversikt over tenester](lommebok_tjenester.html) som finst i sandkassen per no.
 
+Deretter kan du laste ned [ei lommebok](lommebok_demo_app.html) på telefonen din og bruke [Bevisgenerator](lommebok_digdir_utsteder_bevisgenerator.html) for å teste bruk korleis det faktisk virkar.  
 
-Når du er klar til delta, og laga dine eigne tenester i sandkassen, må du setje deg inn i korleis du [lagar eit bevis](lommebok_protokoll_vci.html) eller [brukar bevis](lommebok_protokoll_vp.html). 
+Når du er klar til å laga dine eigne tenester i sandkassen, må du setje deg inn i korleis du [lagar eit bevis](lommebok_protokoll_vci.html) eller [brukar bevis](lommebok_protokoll_vp.html). 

@@ -43,10 +43,14 @@ b. Oppslag ved brukerinnlogging (brukerstyrt datadeling)
 {% include note.html content="Ved opprettelse får du en integrasjonsID (klientID) som må brukes i forespørselen mot ID-porten." %}
 
 ### For leverandører
-Hvis man er leverandør for kunde (databehandler og behandlingsansvarlig), skal kundens organisasjonsnummer legges til ved oppsett av klient. 
-Det må i tillegg opprettes en såkalt OnBehalfof-klient (nederst på selvbetjeningssida ved oppretting av klient), der leverandør må legge inn en ønsket OnBehalfOf-verdi (entity-ID), navn og org.nr. 
+Leverandører som gjør oppslag på vegne av en kunde, bruker delegering i Altinn.
 
-"iss_onbehalfof" : "OnBehalfOf-verdi" må inkluderes i claims ved forespørsel av access-token fra Maskinporten. 
+- Opprett klienten på leverandørens eget organisasjonsnummer.
+- Legg til delegeringsscopene på klienten.
+- Kunden gir leverandøren fullmakt i Altinn.
+- Ved forespørsel av access-token fra Maskinporten settes `consumer_org` til kundens organisasjonsnummer.
+
+Se [Oppslag på vegne av annen virksomhet](https://docs.digdir.no/docs/Kontaktregisteret/oppslagstjenesten_rest#oppslag-på-vegne-av-annen-virksomhet) for delegeringsscopene og fremgangsmåten.
 
 
 ### Legge til nøkkel i klient
