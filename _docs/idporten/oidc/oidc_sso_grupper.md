@@ -23,7 +23,7 @@ I dag styres tillitsbeslutningen om SSO av to uavhengige, grovkornede mekanismer
 - **Klientnivå, binært:** en av-/på-innstilling på klienten. Av betyr at klienten kun støtter klientbundne sesjoner; SSO deles aldri, i noen retning.
 - **Tillitsgruppenivå:** en av-/på-innstilling per autentiseringsnivå/tillitsgruppe (f.eks. «idporten», "ansattporten", «eidas»). Svarer på om dette autentiseringsnivået i det hele tatt tillater SSO, uavhengig av hvilke spesifikke klienter det gjelder. **Dersom tillitsgruppen ikke tillater SSO, overstyrer dette klientinnstillingen fullstendig — det vil si at klienten ikke kan oppnå SSO uansett hva den er satt til.**
 
-I tillegg finnes en pilotmekanisme (ID-6864, «Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper») som lar navngitte klientkombinasjoner beholde SSO selv når gruppen ellers har SSO avskrudd. Piloten er uttrykkelig dokumentert som midlertidig: unntakslisten er statisk konfigurert, så enhver endring krever en utrulling. Den er en relativt risikofri pilot for å høste erfaring, siden det er få eidas- eller Ansattporten-tjenester sammenlignet med ID-porten-tjenester.
+I tillegg finnes en pilotmekanisme (ID-6864, «Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper»), som gjelder ID-porten med eidas-innlogging og Ansattporten. Den lar navngitte klientkombinasjoner beholde SSO selv når gruppen ellers har SSO avskrudd. Piloten er uttrykkelig dokumentert som midlertidig: unntakslisten er statisk konfigurert, så enhver endring krever en utrulling. Den er en relativt risikofri pilot for å høste erfaring, siden det er få eidas- eller Ansattporten-tjenester sammenlignet med ID-porten-tjenester.
 
 Det finnes ingen selvbetjent administrasjonsflate for klientkonfigurasjon av SSO i dag. Behovet er en modell der tjenesteeiere kan dele SSO med et kontrollert, eksplisitt sett med andre tjenester — uten å måtte velge mellom «ingen deling» og «deling med alle».
 
@@ -62,7 +62,7 @@ I dag styres SSO-deling av to uavhengige, grovkornede mekanismer (se kapittel 2)
 1. En binær klientinnstilling som enten slår av all SSO-deling for klienten, eller lar klienten delta i SSO uten videre begrensning.
 2. En binær innstilling per tillitsgruppe/autentiseringsnivå som avgjør om SSO er tillatt i det hele tatt for det nivået. Dersom tillitsgruppen ikke tillater SSO, overstyrer dette klientinnstillingen fullstendig — klienten kan ikke oppnå SSO uansett hva den er satt til.
 
-I tillegg finnes en midlertidig pilotordning som gir et begrenset sett navngitte klientkombinasjoner unntak fra en avskrudd tillitsgruppe, konfigurert i en statisk liste uten selvbetjening.
+I tillegg finnes en midlertidig pilotordning, som gjelder ID-porten med eidas-innlogging og Ansattporten, og som gir et begrenset sett navngitte klientkombinasjoner unntak fra en avskrudd tillitsgruppe, konfigurert i en statisk liste uten selvbetjening.
 
 Det finnes ingen selvbetjent administrasjonsflate for klientkonfigurasjon av SSO noe sted i dag, og ingen måte å dele SSO med et kontrollert, avgrenset sett av andre tjenester.
 
@@ -85,7 +85,7 @@ Forslaget er å gå fra dagens binære modell (ja/nei) til tre tydelige SSO-modi
 |---|---|
 | **Isolert SSO** | Tjenesten har egen, isolert SSO-sesjon. Brukeren må logge inn på nytt når hen går til andre tjenester. Ingen SSO-deling i noen retning. Foreslås som ny standard for nye klienter. |
 | **Global SSO** | Tjenesten deltar i vanlig, delt SSO med enhver annen klient, betinget av tillitsgruppekontrollen. Dette er dagens standardoppførsel, men foreslås å ikke lenger være standard for nye klienter. |
-| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om klienten kan deles ut til andre. Merk: dersom tillitsgruppen ikke tillater SSO, **ignoreres klientens SSO-modus fullstendig** — det spiller ingen rolle om klienten er satt til global eller isolert, resultatet blir uansett ingen SSO. Eneste unntak er begrenset modus: dersom klientkombinasjonen er oppført på unntakslisten (pilotmekanismen ID-6864), kan SSO likevel tillates selv om tillitsgruppen sier nei. |
+| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om klienten kan deles ut til andre. Merk: dersom tillitsgruppen ikke tillater SSO, **ignoreres klientens SSO-modus fullstendig** — det spiller ingen rolle om klienten er satt til global eller isolert, resultatet blir uansett ingen SSO. Eneste unntak er begrenset modus: dersom klientkombinasjonen er oppført på unntakslisten (pilotmekanismen ID-6864, som gjelder ID-porten med eidas-innlogging og Ansattporten), kan SSO likevel tillates selv om tillitsgruppen sier nei. |
 
 <div class="mermaid">
 graph TD
