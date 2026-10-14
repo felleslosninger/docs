@@ -49,6 +49,8 @@ En leverandør kan gjøre oppslag i KRR på vegne av en kunde gjennom delegering
 4. Leverandøren henter token fra Maskinporten med delegeringsscopene og `consumer_org` satt til kundens organisasjonsnummer.
 5. Leverandøren gjør oppslag i KRR med tokenet.
 
+Leverandøren trenger ett token per kunde. Se [eksempel på JWT-grant ved bruk av delegering]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant#example-jwt-grant-when-using-delegation).
+
 ### Scope for Altinn-delegering
 
 | Delegeringsscope            | Gir samme data som |
