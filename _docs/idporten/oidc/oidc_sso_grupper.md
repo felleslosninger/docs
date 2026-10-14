@@ -85,7 +85,7 @@ Forslaget er å gå fra dagens binære modell (ja/nei) til tre tydelige SSO-modi
 |---|---|
 | **Isolert SSO** | Tjenesten har egen, isolert SSO-sesjon. Brukeren må logge inn på nytt når hen går til andre tjenester. Ingen SSO-deling i noen retning. Foreslås som ny standard for nye klienter. |
 | **Global SSO** | Tjenesten deltar i vanlig, delt SSO med enhver annen klient, betinget av tillitsgruppekontrollen. Dette er dagens standardoppførsel, men foreslås å ikke lenger være standard for nye klienter. |
-| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om klienten kan deles ut til andre. Merk: dersom tillitsgruppen ikke tillater SSO, **ignoreres klientens SSO-modus fullstendig** — det spiller ingen rolle om klienten er satt til global eller isolert, resultatet blir uansett ingen SSO. Eneste unntak er begrenset modus: dersom klientkombinasjonen er oppført på unntakslisten (pilotmekanismen ID-6864, som gjelder ID-porten med eidas-innlogging og Ansattporten), kan SSO likevel tillates selv om tillitsgruppen sier nei. |
+| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om sesjonen som er opprettet mot klienten kan gjenbrukes hos andre klienter. Merk: dersom tillitsgruppen ikke tillater SSO, **ignoreres klientens SSO-modus fullstendig** — det spiller ingen rolle om klienten er satt til global eller isolert, resultatet blir uansett ingen SSO. Eneste unntak er begrenset modus: dersom klientkombinasjonen er oppført på unntakslisten (pilotmekanismen ID-6864, som gjelder ID-porten med eidas-innlogging og Ansattporten), kan SSO likevel tillates selv om tillitsgruppen sier nei. |
 
 <div class="mermaid">
 graph TD
@@ -167,6 +167,39 @@ Innfører ikke en egen begrenset modus. I stedet beholdes kun isolert og global 
 - Fordeler: Svært enkelt å innføre, kjent modell, enklere for tjenesteeier å forholde seg til.
 - Ulemper: Samme risiko som i dag dersom noen glemmer eller gjør feil ved utlogging, og gir fortsatt ikke mulighet for kontrollert deling med et avgrenset sett tjenester — kun alt-eller-ingenting. Dårligere brukerreise for tjenester som faktisk har behov for å dele innlogging.
 
+### 7.3 Blanding av klienter innenfor og utenfor listen
+
+Tillatelseslisten (alternativ 2) og gruppemedlemskap (alternativ 1) er enkle å resonnere om når to klienter vurderes isolert. Det blir mer uklart når én brukersesjon har vært innom flere klienter. Sesjonen holder da en liste over alle klientene (RP-ene) den har vært brukt mot, og en klient som skal gi SSO må ta stilling til hele denne listen, ikke bare til klienten brukeren kom fra.
+
+**Scenario 1 – kjede A → B → C**
+
+A har SSO mot B (B tillater A), og B har SSO mot C (C tillater B), men C tillater ikke A. Brukeren logger inn i A, går videre til B (SSO) og så til C. Sesjonen inneholder nå både A og B. Fordi A står i sesjonen og C ikke tillater A, får brukeren ikke SSO mot C, selv om C tillater B.
+
+**Scenario 2 – A deler med både B og C, men C tillater ikke A**
+
+Brukeren logger inn i A og går via B til C. Sesjonen inneholder A og B, og C avviser den fordi A ikke er tillatt. Utfallet er det samme som i scenario 1, og det kan virke overraskende for tjenesteeier på B og C, siden de hver for seg ser ut til å være konfigurert riktig.
+
+I begge tilfellene avhenger utfallet av hvilke klienter brukeren har vært innom og i hvilken rekkefølge. Det gir en brukeropplevelse som er vanskelig å forutsi og å feilsøke.
+
+**Mulige tilnærminger**
+
+| Tilnærming | Beskrivelse | Fordeler | Ulemper |
+|---|---|---|---|
+| **a) Streng evaluering (dagens pilot)** | Alle klienter i sesjonen må være tillatt av klienten som evaluerer. Ellers ingen SSO, og brukeren må autentisere seg på nytt. | Tillit er ikke transitiv: C har aldri takket ja til at en sesjon fra A deles med C. Enklest og sikrest. | Resultatet avhenger av rekkefølge og er vanskelig å forstå. Uventet innlogging for brukeren. |
+| **b) Kun nærmeste ledd** | C vurderer bare klienten brukeren kommer fra (B), ikke resten av sesjonen. | Kjeder fungerer, og resultatet er lettere å forutsi. | Gir transitiv tillit: C får i praksis SSO fra A uten å ha godkjent A. Svekker kontrollen som den begrensede modusen skal gi. |
+| **c) Konsistensvalidering ved konfigurasjon** | Selve evalueringen er streng (a), men konfigurasjonen varsler eller avviser kombinasjoner som gir kjeder som ikke fungerer, f.eks. «B tillater A, men C tillater B og ikke A». | Feilen oppdages ved oppsett i stedet for hos sluttbruker. Krever ingen endring av tillitsmodellen. | Krever verktøy/selvbetjening for å se hele grafen, noe som er vanskelig med tillatelseslister per klient. |
+| **d) Lukkede grupper (alternativ 1)** | Alle medlemmer i en gruppe tillater hverandre. Klienter som ikke er i gruppen, kan ikke koble seg inn på en sesjon som inneholder gruppemedlemmer. | Problemet oppstår ikke innenfor gruppen, og gruppen er en tydelig avgrensning. | Dyrere å realisere. Klient som er medlem i flere grupper, må avklares. |
+
+**Forslag**
+
+Vi foreslår å beholde **streng evaluering (a)**: tillit mellom klienter skal ikke være transitiv, og en klient skal bare kunne få SSO fra en sesjon der alle deltakerne er godkjent. Dette er også dagens pilotatferd. For å redusere forvirringen foreslår vi i tillegg at:
+
+- atferden dokumenteres tydelig for tjenesteeiere, med eksempler som scenarioene over,
+- tillatelseslistene i en SSO-gruppe holdes konsistente, slik at alle klienter som kan inngå i samme sesjon, tillater hverandre,
+- det vurderes konsistensvalidering (c) i selvbetjeningen, og at dette brukes som et argument for å gå videre til alternativ 1 (lukkede grupper) dersom gruppene blir store.
+
+Dette er et forslag som bør bekreftes, og det er et åpent spørsmål om det finnes tilfeller der nærmeste ledd (b) er akseptabelt, for eksempel når A og C eies av samme organisasjon.
+
 ## 8. Alternativer som er vurdert
 
 | Alternativ | Beskrivelse | Fordeler (hovedpunkt) | Ulemper (hovedpunkt) |
@@ -212,6 +245,7 @@ Det bes om beslutning på:
 1. At SSO-modellen i ID-porten endres fra en binær modell til tre eksplisitte SSO-modi: isolert, global og begrenset («SSO-gruppe»), som beskrevet i kapittel 7.
 2. At isolert SSO settes som ny standard for nyopprettede klienter.
 3. Hvilket av de tre alternativene (kapittel 7.2/8) som skal legges til grunn for realisering av den begrensede modusen, eventuelt som en trinnvis tilnærming i tråd med migreringsplanen i kapittel 12.
+4. Hvordan sesjoner som inneholder både klienter som er på tillatelseslisten og klienter som ikke er det, skal evalueres (kapittel 7.3). Forslaget er streng evaluering, der alle klienter i sesjonen må være tillatt, kombinert med dokumentasjon og konsistensvalidering av konfigurasjonen.
 
 ## 12. Videre arbeid
 
