@@ -1,6 +1,7 @@
 #!/bin/bash
 # Starter (eller restarter) Jekyll-serveren for lokal forhåndsvisning.
 # Bruk: bash .agent/restart-jekyll.sh
+# På Windows: bruk .agent/restart-jekyll.ps1 i stedet.
 #
 # Forutsetninger (installer én gang hvis ikke allerede gjort):
 #   1. Installer Homebrew: https://brew.sh
