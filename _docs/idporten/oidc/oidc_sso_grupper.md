@@ -212,6 +212,34 @@ Vi foreslår å beholde **streng evaluering (a)**: tillit mellom klienter skal i
 
 Dette er et forslag som bør bekreftes, og det er et åpent spørsmål om det finnes tilfeller der nærmeste ledd (b) er akseptabelt, for eksempel når A og C eies av samme organisasjon.
 
+### 7.5 Mulig selvbetjening for SSO-relasjoner
+
+Dersom alternativ 2 velges, kan selvbetjening starte enkelt. Dette er en skisse til fase 3 i migreringsplanen, ikke en ferdig spesifikasjon.
+
+**Grunnfunksjon: legge til SSO-relasjon**
+
+- Eier av klient A legger til en SSO-relasjon ved å skrive inn klient-id til klient B i et fritekstfelt. Relasjonen er rettet (se 7.3), og gjelder umiddelbart for SSO inn til A.
+- Det er ikke noe godkjenningssteg hos B, siden relasjonen bare påvirker hvem som slipper inn til A.
+
+**Synlighet for den andre parten**
+
+- Eier av klient B ser en oversikt over hvilke klienter som har lagt til B som SSO-relasjon («innkommende relasjoner»), ved siden av egne utgående relasjoner.
+- Eier av B kan velge å:
+  - **gjengjelde** ved å legge A til som SSO-relasjon på B, slik at SSO blir toveis. Dette kan gjøres med ett valg fra oversikten, uten å skrive inn klient-id på nytt,
+  - **la være**, slik at relasjonen forblir ensidig, eller
+  - **legge til A på egen hånd** med fritekst, basert på avtale eller kommunikasjon utenfor selvbetjeningen. Selvbetjeningen skal ikke kreve at relasjonen først er synlig som innkommende.
+- Eier av B kan ikke fjerne eller endre relasjonen A har lagt til. Den kan bare fjernes av eier av A.
+- Alle endringer i SSO-relasjoner (legge til, fjerne) logges i en changelog som viser hvem som gjorde endringen og når. Det gjør det mulig å se hvem som la til en relasjon, og å etterprøve endringer i ettertid.
+
+**Forhold som bør avklares**
+
+- **Validering av fritekst:** skal systemet avvise klient-id-er som ikke finnes, eller godta alt? Å avvise gir færre feil (skrivefeil), men kan avsløre om en gitt klient-id finnes hos en annen organisasjon.
+- **Hva B får se om A:** minimum klient-id. Klientnavn og organisasjon gjør det lettere å vurdere om man vil gjengjelde, men må veies mot hva som er greit å eksponere på tvers av organisasjoner.
+- **Varsling:** skal eier av B varsles (e-post eller i løsningen) når en ny innkommende relasjon dukker opp, eller er det nok at den er synlig i oversikten?
+- **Konsistens:** oversikten over innkommende og utgående relasjoner gjør det lettere å oppdage asymmetri og kjeder som ikke fungerer (se 7.4), og er et første steg mot konsistensvalidering.
+
+Fordelen med denne tilnærmingen er at den gir eksplisitt samtykke (7.3) uten et eget godkjenningsregime, og kan bygges på eksisterende klientkonfigurasjon. Ulempen er at oversikten fortsatt er per klient, og at det ikke finnes noen samlet visning av hvem som faktisk deler SSO med hvem før man eventuelt går videre til SSO-grupper (alternativ 1).
+
 ## 8. Alternativer som er vurdert
 
 | Alternativ | Beskrivelse | Fordeler (hovedpunkt) | Ulemper (hovedpunkt) |
