@@ -13,4 +13,5 @@ Meldingstjenester som brukes i eFormidling:
 - [Digital Post til Innbyggere](digital_post_til_innbyggere)
 - [eFormidlings meldingstjeneste](eformidlings_meldingstjeneste)
 - [eInnsyns meldingstjeneste](einnsyns_meldingstjeneste)
+- [Helsemeldingar via NHN](meldingsutveksling_for_fastlegar)
 - [KS SvarUt og SvarInn](ks_svarut_og_svarinn)

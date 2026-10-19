@@ -31,6 +31,8 @@ folders:
       jurl: /docs/eFormidling/Funksjonalitet/mote
     - title: Avtalt meldingsutveksling
       jurl: /docs/eFormidling/Funksjonalitet/avtalt
+    - title: Sending til fastlege
+      jurl: /docs/eFormidling/Funksjonalitet/sending_til_fastlege
 - title: Egenskaper
   folderitems:
     - title: Egenskaper
