@@ -28,6 +28,8 @@ Please also note the following:
 - You can use a test certificate in test, but it won't be validated against a trust-list (as there are no EU-wide test trust-list)
 - You must use a production certificate in prod. 
 
+If you have any questions, please reach out to servicedesk@digdir.no
+
 
 ## Informasjon til norske API-tilbydere
 
@@ -59,6 +61,8 @@ Det er heller ingen sentral tilgangstyring i Maskinporten for dei utanlandske ve
 Maskinporten gjer ikkje noko omsetjing eller tilpassing av organisasjonsidentifikatoren, og vidareformidler berre denne "rått" slik den er registrert i sertifikatet.  Me inkluderer også eventuelle namn på verksemda og evt. undereining som me finn i `Subject`-feltet.
 
 Europeiske verksemdsertifikat kan - som i Norge - utstedast på ulike sikkerheitsnivå.  P.t. er me usikre på kor lett det er å skilje desse i valideringa.
+
+Hvis du har spørsmål kan du ta kontakt på servicedesk@digdir.no
 
 ## Request
 
