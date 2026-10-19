@@ -132,26 +132,14 @@ Vel organisasjonsnummer med omhu. Verksemda må òg kunne delegere i Altinn TT02
 oppdikta nummer blokkerer delegeringssteget. Det enklaste for ein leverandør er å bruke sitt
 eige organisasjonsnummer.
 
-### Testmottakarar hos Digdir
+### Testmottakar
 
-Desse kommunikasjonspartane er registrerte av Digdir i Adresseregisteret i test, og kan brukast
-som mottakarar for å stadfeste at sending og adressering verkar:
+Ein mottakar må kunne ta imot og kvittere for meldinga. Det er ikkje nok at HER-id-en finst i
+Adresseregisteret: er det ingen som hentar meldingane for den parten, blir dei liggande ulesne,
+og avsendaren får aldri status `LEVERT`.
 
-| HER-id | Kommunikasjonspart | Under verksemd |
-| --- | --- | --- |
-| 8143548 | Peter Peterson, tittel Fastlege, yrke Lege | Digdir test fastlegekontor (8143541) |
-| 8143144 | Testtjeneste / Service 1 | Digitaliseringsdirektoratet (8143143) |
-| 8143145 | Testtjeneste / Statlig helse tjeneste | Digitaliseringsdirektoratet (8143143) |
-
-> **Merk kva dette testar, og kva det ikkje testar.**
->
-> Meldingar til desse HER-id-ane blir henta av Digdir sitt eige integrasjonspunkt i test. Du får
-> stadfesta at adressering, pakking, transport og kvitteringsflyt verkar heile vegen gjennom NHN.
-> Du får **ikkje** stadfesta at meldinga kan opnast og lesast i eit EPJ-system, sidan det ikkje er
-> eit EPJ i andre enden.
->
-> Skal de teste mot eit reelt EPJ, må det avtalast med EPJ-leverandøren direkte. Ta kontakt med
-> oss, så hjelper vi til med å finne rett motpart.
+Digdir tilbyr i dag ingen open testmottakar som de kan sende til. Ta kontakt med oss når de er
+klare til å teste, så finn vi ein motpart saman.
 
 ### Ein felle ved sending direkte til HER-id
 
