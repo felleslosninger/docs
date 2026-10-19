@@ -46,9 +46,10 @@ Slik aktiverer du støtte for europeiske verksemder:
 
 Steg 2 og 3 må utførast før feltet blir vist.
 
-Dersom du brukar Sjølvbetening via API, set du feltet:
+Dersom du brukar Sjølvbetening via API, set du felta:
 
 ```
+"accessible_for_all": true,
 "supports_european_businesses": true
 ```
 
