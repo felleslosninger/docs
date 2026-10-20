@@ -26,7 +26,7 @@ Følgende tjenester brukes av integrasjonspunktets produksjonsmiljø og må kunn
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 <br/> 20.82.244.139 | 443  | DPE      | Azure Service Bus, HTTP/REST API                      | utgående              |
 | efm-dpe-prod.servicebus.windows.net | 13.74.107.66 <br/> 13.69.227.68 <br/> 52.138.226.67 <br/> 20.82.244.139 | 5671 | DPE      | Azure Service Bus, AMQP med TLS                       | utgående              |
 | altinn.no                           | 89.250.123.0                                        | 443  | DPO/DPV  | Altinn formidlingstjeneste                            | utgående              |
-| platform.altinn.no                           | 51.120.88.54                                        | 443  | DPO  | Altinn formidlingstjeneste                            | utgående              |
+| platform.altinn.no                           | 4.235.35.218 (gammel: 51.120.88.54)                                        | 443  | DPO  | Altinn formidlingstjeneste                            | utgående              |
 | svarut.ks.no                        | 137.221.25.66 <br/> 137.221.28.66                   | 443  | DPF      | KS FIKS meldingformidler                              |  utgående
 | kontaktregisteret.no | 139.105.36.169 | 443  | DPI | Kontakt-og reservasjonsregisteret (fom. 18.09.2023)   | utgående |
 | srest.dataplatfor.ms (avvikles 19. mai 2026)                | 51.120.55.214                                       | 443  | DPI      | Digital postkasse, rest-endepunkt, aksesspunkt        | utgående              |
