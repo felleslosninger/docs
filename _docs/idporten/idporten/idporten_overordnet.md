@@ -30,27 +30,20 @@ Arkitekturen for ID-porten ser slik ut:
 graph LR
   subgraph Digitaliseringsdirektoratet
     IDP[ID-porten]
-    SAML[SAML-proxy]
     SADM[Selvbetjening <br/>klientregistrering]
   end
   subgraph Kunde
-     SP[SAML-tjeneste <br/>Service Provider]
      RP[OIDC-tjeneste <br/>Relying Party]
      ADM[Administrator]
   end
   RP---|OIDC|IDP
-  SP-- SAML2 ---SAML
-  SAML-- OIDC ---IDP
   ADM-- utfører ---SADM
   SADM-- synkronisering 5 min -->IDP
 
-  Innbygger-- bruker ---SP
   Innbygger-- bruker ---RP
 </div>
 
 Selve ID-porten er basert på en moderne Oauth2/OIDC autorisasjonsserver fra Connect2ID.
-
-[SAML-grensesnittet]({{site.baseurl}}/docs/idporten/oidc/oidc_func_saml) er basert på en enkel proxy som oversetter kundens SAML-meldinger til OIDC-protokollen.
 
 Bemyndigede ansatte eller systemer bruker [Digdirs felles selvbetjeningsløsning på web eller over API](https://docs.digdir.no/docs/Maskinporten/maskinporten_sjolvbetjening_web)
  til å registrere og vedlikeholde kundens integrasjoner.
