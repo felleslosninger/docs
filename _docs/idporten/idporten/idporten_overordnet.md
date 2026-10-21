@@ -71,9 +71,9 @@ Følgende aktører inngår i løsningen:
 ## Autentisering av sluttbruker
 ID-portens tjenestetilbud for autentisering kan funksjonelt oppsummeres slik:
 
-#### Støttede protokoller
+#### Støttet protokoll
 * OpenID Connect
-* SAML2 er kun tilgjengelig for de som ikke kan benytte OpenID Connect
+
 
 #### Føderering / SSO
 
