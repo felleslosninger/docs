@@ -14,7 +14,7 @@ ID-porten har siden oppstarten tilbudt single-signon (SSO), ved at alle tjeneste
 
 Samtidig så har SSO i ID-porten på mange måter blitt sin egen fiende fra et sikkerhetsperspektiv, gitt det store antallet tjenester som nå er integrert. Det er ikke alle innbyggere som forstår at når de logger inn gjennom ID-porten, så er de samtidig potensielt innlogget i over 3000 ulike offfentlige digitale tjenester, og vi ser også at relavtivt få innbyggere (10-15%) faktisk foretar en aktiv utlogging fra tjenestene.  
 
-Selv om noen tjenester bruker tvungen re-autentisering (SAML forceAuth eller OIDC prompt=login), så blir det fremdeles opprettet en aktiv SSO-sesjon i ID-porten. Dette medfører en risiko for at en angriper som kan kontrollere brukers device (enten fysisk, eller fjerntilgang av komprommitert device), kan utnytte en aktiv SSO-sesjon til å komme seg inn på tjenester.
+Selv om noen tjenester bruker tvungen re-autentisering (OIDC prompt=login), så blir det fremdeles opprettet en aktiv SSO-sesjon i ID-porten. Dette medfører en risiko for at en angriper som kan kontrollere brukers device (enten fysisk, eller fjerntilgang av komprommitert device), kan utnytte en aktiv SSO-sesjon til å komme seg inn på tjenester.
 
 
 
@@ -36,5 +36,3 @@ Vi har valgt å gjøre utlogging global.   Dette er både for å unngå til dels
 ## Konfigurasjon
 
 Kunde setter flagget `sso_disabled` i selvbetjening på OIDC-klienten for å aktivere funksjonaliteten.
-
-Isolert SSO-sesjon innlogging er ikke støttet for SAML-klienter.
