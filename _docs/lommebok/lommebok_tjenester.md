@@ -8,7 +8,7 @@ redirect_from: /lommebok_tjenester
 
 På denne sida finn du linkar til dei mest nytta tenesten som inngår i sandkassen. 
 
-På Samarbeidsportalen kan finne ei oversikt over [verksemder og leverandørar som er deltakarar i sandkassen](https://samarbeid.digdir.no/digital-lommebok/deltakere-i-sandkassen/3647) og kva dei jobbar med eller tilbyr.
+På Samarbeidsportalen kan finne ei [oversikt over verksemder og leverandørar som er deltakarar i sandkassen](https://samarbeid.digdir.no/digital-lommebok/deltakere-i-sandkassen/3647) og kva dei jobbar med eller tilbyr.
 
 Du kan sjå alle brukarstader og bevistypar som er registert via [innsynstenesta](https://innsyn.test.eidas2sandkasse.net/). På sikt vil denne informasjonen også bli tilgjengeleg over [eit standardisert API](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md#32-api-methods-for-registrar-queries-open-api).
 
