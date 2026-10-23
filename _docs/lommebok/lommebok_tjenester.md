@@ -6,9 +6,11 @@ product: lommebok
 redirect_from: /lommebok_tjenester
 ---
 
-På denne sida finn du linkar til dei mest nytta tenesten som inngår i sandkassen.   
+På denne sida finn du linkar til dei mest nytta tenesten som inngår i sandkassen. 
 
-Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas2sandkasse.net/). På sikt vil denne informasjonen også bli tilgjengeleg over [eit standardisert API](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md#32-api-methods-for-registrar-queries-open-api).
+På Samarbeidsportalen kan finne ei [oversikt over verksemder og leverandørar som er deltakarar i sandkassen](https://samarbeid.digdir.no/digital-lommebok/deltakere-i-sandkassen/3647) og kva dei jobbar med eller tilbyr.
+
+Du kan sjå alle brukarstader og bevistypar som er registert via [innsynstenesta](https://innsyn.test.eidas2sandkasse.net/). På sikt vil denne informasjonen også bli tilgjengeleg over [eit standardisert API](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts5-common-formats-and-api-for-rp-registration-information.md#32-api-methods-for-registrar-queries-open-api).
 
 
 ## Utstedere
@@ -35,7 +37,7 @@ Du kan sjå alle som er registert via [innsynstenesta](https://innsyn.test.eidas
 
 ## Virksomhetslommebøker
 * [Symfoni Virksomhetslommebok](https://symfoni.dev/) — Digital lommebok frå Symfoni AS for organisasjonar (juridiske personar). Handterer verifiserbare virksomheitsbevis som firmaattest, skatteattest og bevillingar. Kan også fungere som brukarstad (motta bevis) og utsteder. Utvikla i partnarskap med Brønnøysundregistrene. Integrert med Digdirs felleskomponenter. Pilotert i Oslo kommune ([«Enkel Servering](https://aktuelt.oslo.kommune.no/naeringsetaten-utforsker-fremtidens-it-losninger-kan-effektivisere-saksbehandling-og-soknadsprosesser)») og av Skatteetaten ([Born Digital](https://www.skatteetaten.no/globalassets/om-skatteetaten/analyse-og-rapporter/rapporter/born-digital-digitale-samhandlingsmonstre.pdf)). Er du med i sandkassen, tek du kontakt med Digdir eller Symfoni for å få tilgang.
-* [Digipost Virksomhetslommebok](https://www.digipost.no/bedrift/digitale-lommeboker) - gjer verksemder i stand til å hente inn, oppbevare og dele data. Blir gjort tilgjengeleg i sandkassa i løpet av Q2, som ein del av pilot for anskaffing saman med Oslo kommune og Artifik. [Ta kontakt med oss](mailto:kontakt@digipost.no) for å få tilgang, eller for spørsmål.
+* [Digipost Virksomhetslommebok](https://www.digipost.no/bedrift/lommebok-og-digitale-bevis) - digital lommebok for virksomheter og organisasjoner lar deg teste dine use case i sandkassen. Du setter enkelt opp en test-konto på 1-2-3, helt på egenhånd. Last ned virksomhetens ID-bevis fra Brønnøysund, lagre digitale bevis trygt, og del de videre med hvem du skulle ønske. [Ta kontakt med oss](mailto:kontakt@digipost.no) hvis du har spørsmål, eller hvis du vil diskutere samarbeid om pilotering og produksjons-case.
 
 
 ## Signeringsleverandører

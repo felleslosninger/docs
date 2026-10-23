@@ -17,7 +17,7 @@ Kontaktregisterets oppslagstjeneste tilbys gjennom et OAuth2 beskyttet REST-API,
 
 Tilgangskontrollen til api'et benytter seg av  [Maskinporten sin funksjonalitet for maskin-til-maskin API-autorisasjon]({{site.baseurl}}/docs/Maskinporten/maskinporten_auth_server-to-server-oauth2)
 
-> I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) (ikke ver2.maskinporten.no) 
+> I testmiljøet støtter oppslagstjenesten token fra [test.maskinporten.no](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_wellknown) 
 
 
 ### Tilgjenglige scopes
@@ -48,6 +48,8 @@ En leverandør kan gjøre oppslag i KRR på vegne av en kunde gjennom delegering
 3. Leverandøren registrerer delegeringsscopene på sin egen Maskinporten-klient. 
 4. Leverandøren henter token fra Maskinporten med delegeringsscopene og `consumer_org` satt til kundens organisasjonsnummer.
 5. Leverandøren gjør oppslag i KRR med tokenet.
+
+Leverandøren trenger ett token per kunde. Se [eksempel på JWT-grant ved bruk av delegering]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant#example-jwt-grant-when-using-delegation).
 
 ### Scope for Altinn-delegering
 

@@ -8,9 +8,6 @@ redirect_from: /maskinporten_func_european_eseals
 ---
 
 
-{% include note.html content="Maskinporten is currently piloting support for authentication of European businesses holding a certificate for electronic seal. There may be introduced breaking changes during the testing period." %}
-
-
 ## Information to European organizations
 
 Maskinporten is an Oauth2 Authorization Server operated by The Norwegian Digitalisation Agency and used by other Norwegian Public Sector agencies to perform access control for machine-to-machine communication towards their APIs. See [more about Maskinporten here](maskinporten_summary).
@@ -31,14 +28,30 @@ Please also note the following:
 - You can use a test certificate in test, but it won't be validated against a trust-list (as there are no EU-wide test trust-list)
 - You must use a production certificate in prod. 
 
-If you have any questions, please reach out to digitoll@toll.no
+If you have any questions, please reach out to servicedesk@digdir.no
 
 
 ## Informasjon til norske API-tilbydere
 
 Funksjonaliteten gjer det mogeleg for europeiske verksemder å få token frå Maskinporten basert på utanlandske verksemdsertifikat, basert på ein forenkla tillitsmodell.
 
-API-tilbydar må sjølv aktivere støtte for europeiske verksemder for sitt API-scope via Sjølvbetening (kjem ila hauset, ta kontakt med oss inntil vidare.) Ved å aktivere funksjonaliteten aksepterer du også den forenkla tillitsmodellen.
+API-tilbydar må sjølv aktivere støtte for europeiske verksemder for sitt API-scope via Sjølvbetening ([test](https://sjolvbetjening.test.samarbeid.digdir.no/login) eller [prod](https://sjolvbetjening.samarbeid.digdir.no)). Ved å aktivere funksjonaliteten aksepterer du også den forenkla tillitsmodellen.
+
+Slik aktiverer du støtte for europeiske verksemder:
+
+1. Gå til scopet du skal endre, eller opprett eit nytt.
+2. Hak av «Maskinporten» som godkjend klienttype.
+3. Set scopet som «Tilgjengeleg for alle».
+4. Hak av «Støttar Europeiske virksomheter».
+
+Steg 2 og 3 må utførast før feltet blir vist.
+
+Dersom du brukar Sjølvbetening via API, set du felta:
+
+```
+"accessible_for_all": true,
+"supports_european_businesses": true
+```
 
 Den forenkla tillitsmodellen er basert på at Maskinporten full-automatisk ut frå EU sin Trust List kan stole på [godkjende utstedarar (TSP) av europeiske verksemdsertifikat (segl) ihht eIDAS](https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/search/type?step=3&searchCriteria=eyJzZXJ2aWNlU2NvcGUiOiJBTEwiLCJjb3VudHJ5Q29kZXMiOlsiQVQiLCJCRSIsIkJHIiwiSFIiLCJDWSIsIkNaIiwiREsiLCJFRSIsIkZJIiwiRlIiLCJERSIsIkVMIiwiSFUiLCJJUyIsIklFIiwiSVQiLCJMViIsIkxJIiwiTFQiLCJMVSIsIk1UIiwiTkwiLCJOTyIsIlBMIiwiUFQiLCJSTyIsIlNLIiwiU0kiLCJFUyIsIlNFIiwiVUsiXSwic2VydmljZUxlZ2FsVHlwZXMiOlsiUV9DRVJUX0VTRUFMIiwiQ0VSVF9FU0VBTCJdfQ%3D%3D).  Vidare føreset me at sjølve sertifikata føl dei definerte sertifikatprofilane ihht ETSI, dvs. me føreset at alle sertifikat er like, uavhengig av kven som har utstedt dei. Det er pt. 156 godkjende TSPar i EU, og me har ikkje mogelegheit til å lage custom-tilpassingar for kvar einskild av dei.
 
@@ -50,7 +63,7 @@ Maskinporten gjer ikkje noko omsetjing eller tilpassing av organisasjonsidentifi
 
 Europeiske verksemdsertifikat kan - som i Norge - utstedast på ulike sikkerheitsnivå.  P.t. er me usikre på kor lett det er å skilje desse i valideringa.
 
-Hvis du har spørsmål kan du ta kontakt på digitoll@toll.no
+Hvis du har spørsmål kan du ta kontakt på servicedesk@digdir.no
 
 ## Request
 

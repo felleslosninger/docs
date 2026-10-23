@@ -15,7 +15,7 @@ For å få et access_token for bruke til autorisasjon mot Oppslagstjenesten REST
 
 Vi har en egen side som beskriver JWT grant mot Maskinporten ([JWT grant.]({{site.baseurl}}/docs/Maskinporten/maskinporten_protocol_jwtgrant)).
 
-{% include note.html content="I testmiljøet støtter oppslagstjenesten token fra test.maskinporten.no og ikke ver2.maskinporten.no" %}
+{% include note.html content="I testmiljøet støtter oppslagstjenesten token fra test.maskinporten.no " %}
 
 Well-known endepunkter for [Maskinporten]({{site.baseurl}}/docs/Maskinporten/maskinporten_func_wellknown)
 

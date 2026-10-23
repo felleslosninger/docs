@@ -10,7 +10,7 @@ redirect_from: /idporten_bruksomrade_webtjenester
 
 ## Overordna beskrivelse av bruksområdet
 
-ID-porten tilbyr funksjonalitet for autentisering av sluttbrukere. OpenID Connect er tilgjenglig grensesnitt i ID-porten for dette formålet. OpenID Connect er den anbefalte protokollen for alle nye integrasjoner. SAML2 er tilgjenglig for de som ikke kan bruke OpenID Connect-grensesnittet. Dokumentasjonen på denne siden vil i hovedsak ta utgangspunkt i OpenID Connect protokollen. 
+ID-porten tilbyr funksjonalitet for autentisering av sluttbrukere. OpenID Connect er tilgjenglig grensesnitt i ID-porten for dette formålet. 
 
 
 Måten du integrerer mot ID-porten på vil variere alt etter hvilket bruksområde eller type tjeneste du som tjenesteleverandør ønsker å tilby.

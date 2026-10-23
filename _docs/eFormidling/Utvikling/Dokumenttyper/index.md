@@ -10,6 +10,7 @@ Dokumenttyper som brukes i eFormidling:
 
 - [Arkivmelding](arkivmelding)
 - [Avtalt](avtalt)
+- [Dialogmelding](../Meldingstjenester/meldingsutveksling_for_fastlegar)
 - [Digital](digital)
 - [Digital DPV](digital_dpv)
 - [Innsynskrav](innsynskrav)
@@ -19,6 +20,7 @@ Dokumenttyper som brukes i eFormidling:
 Kvitteringer:
 
 - [Arkivmelding-kvittering](arkivmeldingkvittering)
+- [Dialogmelding-kvittering](../Meldingstjenester/meldingsutveksling_for_fastlegar#applikasjonskvitteringar)
 - [eInnsyn-kvittering](einnsynkvittering)
 
 Interne kvitteringer:

@@ -34,7 +34,7 @@ Pasientinformasjon vert fylt ut automatisk ved oppslag i FREG.
 Ved sending direkte til eit HER-id brukar du **HER-id til mottakaren** som adresse. Dette gjer at du kan sende meldingar direkte til ein spesifikk helsepersonell eller helseinstans som er registrert i Adresseregisteret (AR), utan å gå via fastlegeoppslag.
 
 - **Prosess**: `urn:no:difi:profile:helse:helse:ver1.0`
-- **Mottakaradresse**: `HER-id:<HER-id (tal)>`. Eksempel: `HER-id:8144796` - Authority må setjast til `nhn-actorid`
+- **Mottakaradresse**: `her-id:<HER-id>`, med prefikset i små bokstavar. Authority må setjast til `nhn-actorid`
 - **Oppslag**: Adresseregisteret (AR)
 - **Eksempel**: [Dialogmelding v1.1](https://www.helsedirektoratet.no/standarder/dialogmelding-v1.1)
 
@@ -47,10 +47,32 @@ Ved bruk av Helsemeldingar via NHN opptrer ei organisasjon vanlegvis både som a
 For at ei organisasjon kan ta i bruk Helsemeldingar via NHN må følgjande føresetnader vere på plass:
 
 - Organisasjonen må vere [medlem av Helsenettet](https://www.nhn.no/medlemskap-i-helsenettet)
-- Det må [delegerast rettar til Digitaliseringsdirektoratet](https://www.nhn.no/tjenester/helseid/ta-i-bruk/delegering-av-rettigheter-i-helseid-til-databehandler) for Helsemeldingar via NHN
-- Dersom integrasjonspunktet skal sende/ta imot på vegne av andre organisasjonar, må det delegerast rettar i Altinn til å sende DPH-meldingar
-- Maskinporten-klienten som integrasjonspunktet nyttar, må ha scopet  `eformidling:dph` 
-- Organisasjonen og helserelaterte tenester den tilbyr må vere registrert i Adresseregisteret (AR)
+- Organisasjonen må vere registrert som **virksomhet** i Adresseregisteret (AR), og HER-id-ane som
+  skal brukast må vere registrerte som kommunikasjonspartar under den virksomheten
+- Kvar kommunikasjonspart som skal brukast må ha **EDI 2.0-adresse** registrert i AR,
+  `meldingstjener-api@testedi.nhn.no` i test og `meldingstjener-api@edi.nhn.no` i produksjon.
+  Utan denne kan ikkje NHN rute meldingar til parten
+- Digdir må ha fullmakt i HelseID til å opptre på vegne av organisasjonen som eig HER-id-en.
+  **I testmiljøet gjer Digdir dette sjølv**, ved å registrere organisasjonen som tenant på
+  HelseID-klienten. Ta kontakt med oss når AR-oppføringa er på plass. I produksjon gir
+  organisasjonen sjølv fullmakta, sjå
+  [NHN si rettleiing](https://www.nhn.no/tjenester/helseid/ta-i-bruk/delegering-av-rettigheter-i-helseid-til-databehandler)
+- Organisasjonen som eig HER-id-en må delegere scopet `eformidling:dph` i Altinn til
+  organisasjonsnummeret integrasjonspunktet køyrer med. I testmiljøet gjerast dette i TT02
+- Maskinporten-klienten som integrasjonspunktet nyttar må ha scopet `eformidling:dph`
+- Integrasjonspunktet må vere versjon **4.2.0** eller nyare. Tidlegare versjonar har kjende feil
+  som rammar DPH: før v4.1.0 vert det bedt om feil scope frå Maskinporten, v4.0.8 kan ikkje køyre
+  DPI og DPH samtidig, og i v4.1.0 arvar ikkje DPH nøkkellageroppsettet
+
+> **Merk: kven som må delegere avgjerast av Adresseregisteret, ikkje av konfigurasjonen.**
+>
+> Integrasjonspunktet slår opp kvar HER-id i AR og hentar organisasjonsnummeret til den overordna
+> virksomheten. Det nummeret vert sendt som `consumer_org` til Maskinporten. Delegeringa må difor
+> gjerast av nettopp den organisasjonen som eig HER-id-en i AR, sjølv om integrasjonspunktet
+> køyrer med eit anna organisasjonsnummer.
+>
+> Får du `invalid_scope` (MP-251) frå Maskinporten, står organisasjonsnummeret i feilmeldinga.
+> Oppstartsloggen viser same nummeret, saman med namnet på organisasjonen HER-id-en tilhøyrer.
 
 ## Teknisk implementering
 
@@ -70,24 +92,76 @@ Først må NHN-meldingar aktiverast i integrasjonspunktet:
 difi.move.feature.enableDPH=true
 # Denne er mellombels nødvendig inntil løysinga er klar for produksjon
 difi.move.feature.enable-beta-features=true
+
 ```
 
 ### Liste av HER-id-ar som det skal sendast og takast imot meldingar for
 
-Integrasjonspunktet kan representere éi eller fleire organisasjonar. 
-Kvar organisasjon må ha delegert rettigheit til organisasjonsnummeret som IP køyrer med på førehand.
-Alle HER-id-ar som skal sende eller ta imot meldingar i integrasjonspunktet, må vere registrerte i Adresseregisteret under ein av desse organisasjonane.
-Ein må liste opp alle HER-id-ar som du skal sende eller ta imot meldingar for. 
-Desse HER-id-ane må vere på det lågaste nivået, slik at dei ikkje har nokon under seg i AR.
-Ein HER-id til ein organisasjon kan ikkje nyttast, sidan han typisk har ei liste med HER-id-ar under seg.
+Integrasjonspunktet kan representere éi eller fleire organisasjonar. Alle HER-id-ar som skal sende
+eller ta imot meldingar må listast opp.
 
+Krav til kvar HER-id:
 
-Døme med fleire HER-id-ar.
+- han må vere registrert som kommunikasjonspart **under ei overordna virksomhet** i AR.
+  Organisasjonsnummeret vert henta frå den overordna, så ein HER-id utan overordna virksomhet kan
+  ikkje brukast. Ein HER-id som representerer sjølve organisasjonen ligg typisk øvst og har inga
+  overordna eining
+- den overordna virksomheten må ha delegert `eformidling:dph`, sjå Føresetnader
+- han må ha EDI 2.0-adresse registrert i AR
+- han må vere eksklusiv for dette integrasjonspunktet. Ein HER-id kan bare hentast av éin
+  konsument, sidan meldingar vert markerte som lesne per HER-id. To integrasjonspunkt på same
+  HER-id vil ta meldingar frå kvarandre
+
+Erstatt verdiane under med dykkar eigne HER-id-ar. Ikkje bruk eksempelverdiar: dei tilhøyrer andre
+organisasjonar, og gir feil `consumer_org`.
 
 ```properties
-difi.move.dph.her-ids[0]=8143548
-difi.move.dph.her-ids[1]=8144717
+difi.move.dph.her-ids[0]=<HER-id>
+difi.move.dph.her-ids[1]=<HER-id>
 ```
+
+## Testing
+
+### Skaffe eigne HER-id-ar i test
+
+I testmiljøet er dette sjølvbetening. Lag ein brukar i
+<https://register-web.test.nhn.no/ar/>, be om eigarskap til eit organisasjonsnummer, og opprett
+deretter kommunikasjonspartane sjølv.
+
+Vel organisasjonsnummer med omhu. Verksemda må òg kunne delegere i Altinn TT02, så eit heilt
+oppdikta nummer blokkerer delegeringssteget. Det enklaste for ein leverandør er å bruke sitt
+eige organisasjonsnummer.
+
+### Testmottakar
+
+Ein mottakar må kunne ta imot og kvittere for meldinga. Det er ikkje nok at HER-id-en finst i
+Adresseregisteret: er det ingen som hentar meldingane for den parten, blir dei liggande ulesne,
+og avsendaren får aldri status `LEVERT`.
+
+Digdir tilbyr i dag ingen open testmottakar som de kan sende til. Ta kontakt med oss når de er
+klare til å teste, så finn vi ein motpart saman.
+
+### Ein felle ved sending direkte til HER-id
+
+Ved `fastlege-for:` hentar integrasjonspunktet rolla til mottakaren frå registeroppslaget, og
+den blir rett. Ved `her-id:` er det ikkje gitt at parten faktisk er lege.
+
+Eit konkret døme frå vårt eige testoppsett: HER-id 8144717 er registrert med yrke **Sykepleier**.
+Sender du til den som om det var ein fastlege, får meldinga feil rolle i MsgHead. Kontroller
+yrke og tittel i Adresseregisteret før de brukar ein HER-id direkte.
+
+### Testpasient
+
+For å teste `fastlege-for:` treng de ein syntetisk person som faktisk har ein fastlegekontrakt i
+Fastlegeregisteret i test. Eit vilkårleg syntetisk fødselsnummer held ikkje; oppslaget feilar med
+«Personen er ikke tilknyttet fastlegekontrakt». Be `kundesenter@nhn.no` om ein testperson med
+fastlegetilknyting.
+
+### Ein HER-id kan berre hentast av éin konsument
+
+To integrasjonspunkt som pollar same HER-id vil ta meldingar frå kvarandre, sidan meldingar blir
+markerte som lesne per HER-id. Bruk eigne HER-id-ar i testoppsettet dykkar.
+
 ## Applikasjonskvitteringar
 
 Til vanleg ønskjer Norsk Helsenett at mottakande system les og lagar applikasjonskvitteringar, slik at ein kan fortelje avsendaren om meldinga har kome heilt fram til mottakaren.
@@ -96,9 +170,13 @@ Integrasjonspunktet har likevel høve til å ta seg av dette automatisk sjølv, 
 ```properties
 difi.move.feature.enable-receipts=false
 ```
-I dette tilfellet vert ikkje kvitteringane henta ut av integrasjonspunktet som eigne meldingar.
-Ulempa er at avsendarar då får beskjed om at ei melding er lesen, så snart ho er motteken av IP.
-Ideelt sett bør difor det mottakande systemet ta seg av denne biten sjølv.
+Då gjer integrasjonspunktet to ting: det sender sjølv ei applikasjonskvittering med status OK
+tilbake til avsendaren, og det leverer ikkje innkomne applikasjonskvitteringar vidare til
+fagsystemet som eigne meldingar.
+
+Ulempa er at kvitteringa vert sendt så snart integrasjonspunktet har henta meldinga, altså før
+fagsystemet har behandla henne. Avsendaren får difor status `LEVERT` for tidleg. Ideelt sett bør
+det mottakande systemet ta seg av denne biten sjølv.
 
 ## Meldingsflyt
 
@@ -106,38 +184,43 @@ Diagrammet under viser flyten av meldingar og statusar ved sending av helsemeldi
 
 Statusmeldingar vert returnert på fleire nivå for å informere avsendar om meldingsutvekslinga:
 
-- **OPPRETTET**: Bekreftelse på at meldinga er oppretta i integrasjonspunktet
-- **SENDT**: Bekreftelse på at meldinga er sendt vidare i kjeda
-- **MOTTATT**: Bekreftelse på at meldinga er mottatt av msh-systemet hos mottakaren
-- **LEST**: Bekreftelse på at meldinga er lest/behandla i mottakarens EPJ-system
-- **FEIL**: Feilmelding dersom noko går gale, anten på applikasjonsnivå eller transportnivå
+- **OPPRETTET**: meldinga er oppretta i integrasjonspunktet
+- **SENDT**: meldinga er levert vidare og har fått ein referanse frå NHN
+- **MOTTATT**: transportkvittering frå mottakarens meldingstenar
+- **LEVERT**: applikasjonskvittering med status OK frå mottakarens system. Dette er sluttstatus
+  ved suksess
+- **FEIL**: avvist på transportnivå, eller applikasjonskvittering med `Rejected` eller
+  `OkErrorInMessagePart`
+- **LEVETID_UTLOPT**: levetida på meldinga er passert utan at ho vart ferdig
+
+Merk at DPH **ikkje** set statusen `LEST`. NHN har heller ingen "lest"-status, berre
+transportkvittering og applikasjonskvittering.
+
+Det er alltid integrasjonspunktet som set statusane og rapporterer dei til fagsystemet. Kvitteringane
+frå NHN går tilbake same veg som meldinga, og integrasjonspunktet hentar dei ved polling.
+`OPPRETTET` og `LEVETID_UTLOPT` set integrasjonspunktet sjølv, utan at det ligg ei kvittering bak.
 
 <div class="mermaid">
 graph LR
 A("fa:fa-desktop Fagsystem")
 B("fa:fa-server Integrasjonspunkt")
-C("fa:fa-server EDI 2.0")
-D("fa:fa-hospital-o Mottaker<br>MSH")
-E("fa:fa-hospital-o Mottaker<br>EPJ")
+C("fa:fa-server NHN<br>EDI 2.0")
+D("fa:fa-hospital-o Mottakar<br>MSH")
+E("fa:fa-hospital-o Mottakar<br>EPJ")
 
-A --> |Melding til fastlege| B
-B --> |Melding til fastlege| C
-C --> |Melding til fastlege| D
-D --> |Melding til fastlege| E
-B --> |Status: OPPRETTET| A
-B --> |Status: SENDT| C
-B --> |Status: FEIL| A
-C --> |Status: FEIL| B
-C --> |Status: FEIL - applikasjonsnivå| B
-C --> |Status: FEIL - transportnivå| B
-D --> |Status: FEIL - applikasjonsnivå| C
-B --> |Status: MOTTATT| A
-C --> |Status: MOTTATT| B
-D --> |Status: MOTTATT| C
-B --> |Status: LEST| A
-C --> |Status: LEST| B
-D --> |Status: LEST| C
-E --> |Status: LEST| D
+A --> |Melding| B
+B --> |Melding| C
+C --> |Melding| D
+D --> |Melding| E
+
+B -.-> |OPPRETTET og SENDT| A
+D -.-> |Transportkvittering| C
+C -.-> |Transportkvittering| B
+B -.-> |MOTTATT| A
+E -.-> |Applikasjonskvittering| D
+D -.-> |Applikasjonskvittering| C
+C -.-> |Applikasjonskvittering| B
+B -.-> |LEVERT eller FEIL| A
 
 </div>
 
@@ -155,7 +238,7 @@ Eksempel SBD for sending av helsemelding til fastlege via pasientens fødselsnum
       {
         "identifier": {
           "authority": "nhn-actorid",
-          "value": "her-id:8144717"
+          "value": "her-id:<eigen HER-id>"
         }
       }
     ],
@@ -212,13 +295,13 @@ Eksempel:
 
 | Felt                                         | Beskrivelse                                                                                                                                                                      |
 | -------------------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `sender.identifier.value`                    | HER-iden til avsendaren, prefiks med `her-id:`. Eksempel: `her-id:8144717`                                                                        |
+| `sender.identifier.value`                    | HER-iden til avsendaren, prefiks med `her-id:` i små bokstavar. Må vere ein av HER-id-ane i `difi.move.dph.her-ids`                                                                        |
 | `receiver.identifier.value`                  | **Fødselsnummer til pasienten** (11 siffer), med prefiks `fastlege-for:`. Eksempel: `fastlege-for:30878199614`. Integrasjonspunktet slår opp fastlegen i FLR.                   |
 | `businessScope.scope[].identifier`           | Prosess: `urn:no:difi:profile:helse:helse:ver1.0`                                                                                                                                |
 
 > **Merk:** Scopet `ConversationId` skal vise til første melding i ein dialog. Sidan dette er den første meldinga, vert han sett lik dokument-ID-en automatisk.  
 
-### Eksempel 2: Sending til HER-id (direkte til helsepersonell) - Første melding i ein dialog
+### Eksempel 2: Sending til HER-id, første melding i ein dialog
 
 Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 
@@ -230,7 +313,7 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
       {
         "identifier": {
           "authority": "nhn-actorid",
-          "value": "her-id:8144717"
+          "value": "her-id:<eigen HER-id>"
         }
       }
     ],
@@ -278,7 +361,7 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 
 | Felt                                         | Beskrivelse                                                                                                                                                                      |
 | -------------------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `sender.identifier.value`                    | HER-iden til avsendaren, prefiks med `her-id:`. Eksempel: `her-id:8144717`                                                                        |
+| `sender.identifier.value`                    | HER-iden til avsendaren, prefiks med `her-id:` i små bokstavar. Må vere ein av HER-id-ane i `difi.move.dph.her-ids`                                                                        |
 | `receiver.identifier.value`                  | **HER-id til mottakaren** (tal), med prefiks `her-id:`. Eksempel: `her-id:12345`. Integrasjonspunktet slår opp adressa i AR (Adresseregisteret).                            |
 | `businessScope.scope[].identifier`           | Prosess: `urn:no:difi:profile:helse:helse:ver1.0`                                                                                                                                |
 
@@ -286,7 +369,7 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 
 > **Merk:** Scopet `ConversationId` skal referere til første melding i ein dialog. Sidan dette er den første meldinga, vert han sett lik dokument-ID-en automatisk.
 
-### Eksempel 2: Sending til HER-id (direkte til helsepersonell) - Svar på ein dialog
+### Eksempel 3: Svar i ein dialog
 
 Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 
@@ -298,7 +381,7 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
       {
         "identifier": {
           "authority": "nhn-actorid",
-          "value": "her-id:8144717"
+          "value": "her-id:<eigen HER-id>"
         }
       }
     ],
@@ -351,4 +434,8 @@ Eksempel SBD for sending av helsemelding direkte til ein HER-id:
 
 ## Sjå òg
 
-- [Relaterte dokumentasjonssider]
+- [Dialogmelding v1.1](https://www.helsedirektoratet.no/standarder/dialogmelding-v1.1)
+- [Medlemskap i Helsenettet](https://www.nhn.no/medlemskap-i-helsenettet)
+- [Adresseregisteret](https://www.nhn.no/tjenester/adresseregisteret)
+- [Integrasjonspunktets API](../integrasjonspunkt_eformidling2_api)
+- [Adressetjenestens API](../serviceregistry_api)
