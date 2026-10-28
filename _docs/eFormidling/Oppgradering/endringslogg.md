@@ -18,6 +18,21 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.2.1
+
+28.10.2026
+- Endringer, feilrettinger, forbedringer
+  - Meldinger kunne bli stående med status OPPRETTET for alltid
+  - Status-id på statuskøen som ikke finnes i DB blokkerer ikke lenger /api/statuses/peek
+  - Bedre feilhåndtering ved utpakking av tom ASiC
+  - Ny property som styrer hva som skjer ved feil i DPH-oppstartsjekken
+  - Feil ved DPH-mottak stopper ikke lenger pollingen
+
+
+- Andre ting
+  - Oppgradert Spring Boot 4.1.2 og diverse felles bibliotek
+  - Forbedret diverse tester
+
 ## 4.2.0
 
 07.10.2026
