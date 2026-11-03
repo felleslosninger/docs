@@ -51,7 +51,7 @@ Om gjenbruk av sesjon er *tillatt* mellom to klienter, er i realiteten en tillit
 - **Klientnivå, binært:** av betyr at klienten kun støtter klientbundne sesjoner, og SSO deles aldri. På betyr at klienten deltar i SSO uten begrensning.
 - **Tillitsgruppenivå:** en av/på-innstilling per tillitsgruppe. **Dersom tillitsgruppen ikke tillater SSO, overstyrer det klientinnstillingen fullstendig.** Klienten kan ikke oppnå SSO uansett hva den er satt til.
 
-I tillegg finnes en midlertidig pilotordning (ID-6864, «Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper») for ID-porten med eidas-innlogging og Ansattporten. Navngitte klientkombinasjoner beholder SSO selv når tillitsgruppen ellers har SSO avskrudd. Unntakslisten er statisk konfigurert, så enhver endring krever utrulling. Det er få eidas- og Ansattporten-tjenester sammenlignet med ID-porten-tjenester, så piloten er en relativt risikofri måte å høste erfaring på.
+I tillegg finnes en midlertidig pilotordning («Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper») for ID-porten med eidas-innlogging og Ansattporten. Navngitte klientkombinasjoner beholder SSO selv når tillitsgruppen ellers har SSO avskrudd. Unntakslisten er statisk konfigurert, så enhver endring krever utrulling. Det er få eidas- og Ansattporten-tjenester sammenlignet med ID-porten-tjenester, så piloten er en relativt risikofri måte å høste erfaring på.
 
 Det finnes ingen selvbetjent administrasjonsflate for SSO-konfigurasjon, og ingen måte å dele SSO med et kontrollert sett av andre tjenester. Behovet er en modell der tjenesteeiere kan velge noe midt imellom «ingen deling» og «deling med alle».
 
@@ -103,7 +103,7 @@ graph TD
 
 Tre forhold gjelder for alle modiene:
 
-- **Tillitsgruppen overstyrer.** Dersom tillitsgruppen ikke tillater SSO, ignoreres klientens modus. Resultatet er ingen SSO, uansett om klienten er global eller isolert. Eneste unntak er begrenset modus: er klientkombinasjonen oppført på unntakslisten (ID-6864), kan SSO tillates likevel.
+- **Tillitsgruppen overstyrer.** Dersom tillitsgruppen ikke tillater SSO, ignoreres klientens modus. Resultatet er ingen SSO, uansett om klienten er global eller isolert. Eneste unntak er begrenset modus: er klientkombinasjonen oppført på unntakslisten, kan SSO tillates likevel.
 - **Begrenset SSO styrer bare hvem som slipper inn.** Den hindrer ikke at en klient med global SSO gjenbruker en sesjon som er opprettet mot den begrensede klienten.
 - **Isolerte klienter deltar aldri** i en delt sesjon.
 
@@ -116,7 +116,7 @@ graph TD
     C -- Begrenset --> E{Er sesjonen godkjent etter Klient Bs evalueringstype, strict eller lax?}
     E -- Ja --> D
     E -- Nei --> X
-    B -- Nei --> F{Begrenset modus og oppført på unntaksliste, ID-6864?}
+    B -- Nei --> F{Begrenset modus og oppført på unntaksliste?}
     F -- Ja --> E
     F -- Nei --> X
 </div>
@@ -178,7 +178,7 @@ Strict og lax er en innstilling på klienten som evaluerer sesjonen (C i scenari
 | 4 | **Blandede modi.** A har begrenset SSO og tillater ikke C. C har global SSO. | A → C | SSO | SSO | Begrenset SSO styrer bare hvem som slipper inn til A. C har global SSO og sjekker ikke sesjonens innhold. |
 | | B har begrenset SSO og tillater ikke A. A har global SSO. | A → B | Ingen SSO | Ingen SSO | B har ikke godkjent A. |
 | 5 | **Isolert klient.** A er isolert, B har begrenset SSO og tillater A. | A → B | Ingen SSO | Ingen SSO | Isolerte klienter har ikke en delt sesjon å gjenbruke, uansett hva B tillater. |
-| 6 | **Tillitsgruppe uten SSO.** Tillitsgruppen tillater ikke SSO. B har begrenset SSO og er på unntakslisten (ID-6864). | A → B | SSO, hvis alle klienter i sesjonen er SSO-relasjoner på B | SSO, hvis startklienten er SSO-relasjon på B | Unntakslisten åpner for SSO, men SSO-relasjonene gjelder fortsatt. |
+| 6 | **Tillitsgruppe uten SSO.** Tillitsgruppen tillater ikke SSO. B har begrenset SSO og er på unntakslisten. | A → B | SSO, hvis alle klienter i sesjonen er SSO-relasjoner på B | SSO, hvis startklienten er SSO-relasjon på B | Unntakslisten åpner for SSO, men SSO-relasjonene gjelder fortsatt. |
 | 7 | **Relasjon fjernes underveis.** B fjerner A som SSO-relasjon mens brukeren har en sesjon som inneholder A. | A → B (etter fjerning) | Ingen SSO (forslag, åpent spørsmål) | Ingen SSO (forslag, åpent spørsmål) | Relasjonene evalueres ved hver SSO-forespørsel. Se spørsmål nedenfor. |
 
 Med strict gir scenario 1–3 et resultat som kan virke overraskende for tjenesteeierne på B og C, siden de hver for seg ser ut til å være riktig konfigurert. Utfallet avhenger av hvilke klienter brukeren har vært innom, og i hvilken rekkefølge. Det er vanskelig å forutsi og å feilsøke. Lax gir mer forutsigbare utfall, men til prisen av transitiv tillit.
@@ -266,7 +266,7 @@ SSO handover er en mulig senere utvidelse der man kan sende med kontekst når en
 **Forvaltning**
 
 - Forvaltningen av ID-porten må støtte de nye modiene i klientregistrering.
-- Pilotordningen (ID-6864) er midlertidig og bør ses i sammenheng med valgt løsning.
+- Pilotordningen er midlertidig og bør ses i sammenheng med valgt løsning.
 
 ## 10. Videre arbeid
 
