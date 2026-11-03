@@ -153,7 +153,7 @@ En SSO-relasjon bestemmer hvem som slipper inn til *egen* klient, og sier ingent
 - Skal SSO fungere begge veier, må eieren av A også legge til B på A.
 - Dette gjelder uavhengig av om klientene tilhører samme organisasjon eller ulike organisasjoner.
 
-Samtykket er dermed eksplisitt: en klient får aldri SSO fra en annen klient med mindre eieren av den mottakende klienten har lagt avsenderen til. Derfor trenger ikke en annen organisasjon å godkjenne at klienten din legger dem til. Relasjonen gir bare din klient mulighet til å slippe dem inn.
+For en klient med begrenset SSO er samtykket eksplisitt: eieren konfigurerer SSO-relasjonene og velger evalueringstype. Med strict må alle klientene i sesjonen være godkjent; med lax må bare startklienten være godkjent (se 6.3). Derfor trenger ikke en annen organisasjon å godkjenne at klienten din legger dem til. Relasjonen gir bare din klient mulighet til å slippe dem inn.
 
 Toveis SSO krever to separate konfigurasjoner, som lett kommer ut av synk. En skisse av selvbetjening som gjør dette enklere finnes i vedlegg A.
 
