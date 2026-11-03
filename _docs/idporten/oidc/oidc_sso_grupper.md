@@ -1,70 +1,59 @@
 ---
-title: SSO-grupper i ID-porten (pilot)
+title: SSO-grupper i ID-porten
 description: Løsningsforslag til beslutning
-summary:
+summary: Forslag om å gå fra av/på-SSO til tre SSO-modi, med begrenset SSO konfigurert per klient som første steg, og innspill ønskes på hvordan sesjoner på tvers av klienter skal evalueres.
 
 sidebar: oidc
 product: ID-porten
 redirect_from: /idporten_sso_grupper
 ---
 
-## 1. Bakgrunn og formål
+## 1. Sammendrag
 
-ID-portens SSO-modell lar en bruker som allerede har autentisert seg for én klient, gjenbruke sesjonen når vedkommende kommer til en annen klient, i stedet for å måtte autentisere seg på nytt.
+ID-porten lar en bruker gjenbruke en eksisterende sesjon mot en annen klient (SSO). I dag er dette en grovkornet av/på-innstilling. Det finnes ingen måte å dele SSO med et avgrenset og eksplisitt sett med tjenester.
 
-Om slikt gjenbruk er *tillatt* mellom to gitte klienter, er i realiteten en tillitsbeslutning — å dele en sesjon betyr at én klients autentiseringshendelse nå også dekker en annen klients brukere. I dag er denne tillitsbeslutningen grovkornet og binær (på/av), og det finnes ingen måte å kontrollere SSO-deling mellom et avgrenset, eksplisitt sett med klienter.
+Vi foreslår:
 
-Dette notatet presenterer tre overordnede SSO-modeller og tre alternativer for hvordan den mest restriktive av dem («SSO-gruppe») kan realiseres, sammen med en eksempel-migreringsplan.
+- tre SSO-modi per klient: **isolert**, **global** og **begrenset**,
+- at **isolert** blir standard for nye klienter,
+- at begrenset SSO realiseres ved at **hver klient angir hvilke andre klienter den tar imot SSO fra** («konfigurert på klient»). Det er en rask MVP som bygger på eksisterende klientkonfigurasjon,
+- at en klient med begrenset SSO kan velge **evalueringstype**, **strict** eller **lax**, som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6),
+- at en sentralisert gruppemodell er vurdert, men **ikke tas videre nå** (kapittel 7).
 
-## 2. Problemstilling og behov
+Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (kapittel 6).
 
-I dag styres tillitsbeslutningen om SSO av to uavhengige, grovkornede mekanismer:
+### Beslutning som ønskes
 
-- **Klientnivå, binært:** en av-/på-innstilling på klienten. Av betyr at klienten kun støtter klientbundne sesjoner; SSO deles aldri, i noen retning.
-- **Tillitsgruppenivå:** en av-/på-innstilling per autentiseringsnivå/tillitsgruppe (f.eks. «idporten», "ansattporten", «eidas»). Svarer på om dette autentiseringsnivået i det hele tatt tillater SSO, uavhengig av hvilke spesifikke klienter det gjelder. **Dersom tillitsgruppen ikke tillater SSO, overstyrer dette klientinnstillingen fullstendig — det vil si at klienten ikke kan oppnå SSO uansett hva den er satt til.**
+1. At SSO-modellen i ID-porten endres fra av/på til tre eksplisitte modi: isolert, global og begrenset (kapittel 4).
+2. At isolert SSO blir standard for nyopprettede klienter.
+3. At begrenset SSO realiseres ved å konfigurere SSO-relasjoner på klient, og at sentralisert gruppemodell ikke tas videre nå (kapittel 5 og 7).
+4. Hvordan sesjoner som inneholder flere klienter skal evalueres. Forslaget er at klienten med begrenset SSO velger mellom strict (standard) og lax (kapittel 6).
 
-I tillegg finnes en pilotmekanisme (ID-6864, «Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper»), som gjelder ID-porten med eidas-innlogging og Ansattporten. Den lar navngitte klientkombinasjoner beholde SSO selv når gruppen ellers har SSO avskrudd. Piloten er uttrykkelig dokumentert som midlertidig: unntakslisten er statisk konfigurert, så enhver endring krever en utrulling. Den er en relativt risikofri pilot for å høste erfaring, siden det er få eidas- eller Ansattporten-tjenester sammenlignet med ID-porten-tjenester.
+### Begreper
 
-Det finnes ingen selvbetjent administrasjonsflate for klientkonfigurasjon av SSO i dag. Behovet er en modell der tjenesteeiere kan dele SSO med et kontrollert, eksplisitt sett med andre tjenester — uten å måtte velge mellom «ingen deling» og «deling med alle».
+| Begrep | Betydning |
+|---|---|
+| **Tillitsgruppe** | Autentiseringsnivå i ID-porten, f.eks. «idporten», «ansattporten» eller «eidas». Har en av/på-innstilling for om SSO er tillatt. |
+| **Isolert SSO** | Klienten har egen SSO-sesjon og deler ikke SSO i noen retning. |
+| **Global SSO** | Klienten deltar i vanlig, delt SSO med enhver annen klient. |
+| **Begrenset SSO** | Klienten tar bare imot SSO fra klienter den eksplisitt har godkjent. |
+| **SSO-relasjon** | En godkjent klient (og senere eventuelt organisasjon) på en klient med begrenset SSO. Relasjonen er rettet. |
+| **Evalueringstype** | Innstilling på en klient med begrenset SSO som avgjør hvordan en sesjon med flere klienter vurderes: strict eller lax. |
+| **Strict** | Alle klienter i sesjonen må være SSO-relasjoner på klienten. |
+| **Lax** | Bare klienten som startet sesjonen må være SSO-relasjon på klienten. Mellomledd vurderes ikke. |
+| **SSO-gruppe** | Et eget, sentralt administrert objekt som samler klienter. Vurdert, men ikke valgt nå (kapittel 7). |
+| **SSO handover** | Mulig fremtidig utvidelse der kontekst kan sendes med ved SSO (kapittel 8). |
 
-## 3. Mål og prinsipper
+## 2. Bakgrunn og dagens situasjon
 
-- Gå fra en binær SSO-modell (ja/nei) til en modell med tre tydelige og forutsigbare valg.
-- Gjøre isolert SSO til standard for nye klienter (Zero Trust-default), fremfor dagens globale standard.
-- Gi tjenesteeiere mulighet til kontrollert, gjensidig avtalt deling av SSO med et avgrenset sett tjenester, uten å måtte åpne for SSO med alle.
-- Legge et grunnlag som er egnet både for ID-porten og Ansattporten.
+Om gjenbruk av sesjon er *tillatt* mellom to klienter, er i realiteten en tillitsbeslutning: å dele en sesjon betyr at én klients autentiseringshendelse også dekker en annen klients brukere. I dag styres denne beslutningen av to uavhengige og grovkornede mekanismer:
 
-## 4. Omfang og avgrensning
+- **Klientnivå, binært:** av betyr at klienten kun støtter klientbundne sesjoner, og SSO deles aldri. På betyr at klienten deltar i SSO uten begrensning.
+- **Tillitsgruppenivå:** en av/på-innstilling per tillitsgruppe. **Dersom tillitsgruppen ikke tillater SSO, overstyrer det klientinnstillingen fullstendig.** Klienten kan ikke oppnå SSO uansett hva den er satt til.
 
-**Inkludert:**
-- Tre overordnede SSO-modeller: isolert, global og begrenset («SSO-gruppe»).
-- Tre alternative modeller for hvordan den begrensede modusen kan realiseres.
-- En eksempel-migreringsplan fra dagens situasjon til målbildet.
+I tillegg finnes en midlertidig pilotordning (ID-6864, «Konfigurerbare SSO-unntak for klientkombinasjoner i tillitsgrupper») for ID-porten med eidas-innlogging og Ansattporten. Navngitte klientkombinasjoner beholder SSO selv når tillitsgruppen ellers har SSO avskrudd. Unntakslisten er statisk konfigurert, så enhver endring krever utrulling. Det er få eidas- og Ansattporten-tjenester sammenlignet med ID-porten-tjenester, så piloten er en relativt risikofri måte å høste erfaring på.
 
-**Ikke inkludert / avgrenset bort:**
-- Konkret teknisk implementasjon (datamodell, API-endringer, kodeendringer). Klientregistrerings-API-et støtter i dag ikke noen av de nye modusene.
-- Valg av løsning for samtykke/delegering på tvers av organisasjoner (relevant for gjensidige SSO-grupper, skissert som mulig fremtidig behov i migreringsplanen, men ikke besluttet her).
-- Endringer i Altinn-autorisasjon (nevnt som en mulig fremtidig byggekloss for ett av alternativene, ikke en forutsetning for beslutningen).
-
-## 5. Interessenter
-
-| Interessent | Rolle / interesse | Berørt av forslaget |
-|---|---|---|
-| Virksomhets-/løsningsarkitekter | Målgruppe for notatet, skal ta stilling til modell | Beslutter retning |
-| Tjenesteeiere (ID-porten-klienter) | Eier egen SSO-konfigurasjon | Får nye valgmuligheter og ev. endret standardoppførsel for nye klienter |
-| Ansattporten | Tverrorganisatorisk tjenesteøkosystem, pekes på som godt egnet for begrenset SSO | Mulig fremtidig bruker av samme modell |
-| Forvaltning av ID-porten | Drifter og videreutvikler klientregistrering og SSO-evaluering | Må implementere og forvalte ny modell |
-
-## 6. Dagens situasjon
-
-I dag styres SSO-deling av to uavhengige, grovkornede mekanismer (se kapittel 2):
-
-1. En binær klientinnstilling som enten slår av all SSO-deling for klienten, eller lar klienten delta i SSO uten videre begrensning.
-2. En binær innstilling per tillitsgruppe/autentiseringsnivå som avgjør om SSO er tillatt i det hele tatt for det nivået. Dersom tillitsgruppen ikke tillater SSO, overstyrer dette klientinnstillingen fullstendig — klienten kan ikke oppnå SSO uansett hva den er satt til.
-
-I tillegg finnes en midlertidig pilotordning, som gjelder ID-porten med eidas-innlogging og Ansattporten, og som gir et begrenset sett navngitte klientkombinasjoner unntak fra en avskrudd tillitsgruppe, konfigurert i en statisk liste uten selvbetjening.
-
-Det finnes ingen selvbetjent administrasjonsflate for klientkonfigurasjon av SSO noe sted i dag, og ingen måte å dele SSO med et kontrollert, avgrenset sett av andre tjenester.
+Det finnes ingen selvbetjent administrasjonsflate for SSO-konfigurasjon, og ingen måte å dele SSO med et kontrollert sett av andre tjenester. Behovet er en modell der tjenesteeiere kan velge noe midt imellom «ingen deling» og «deling med alle».
 
 <div class="mermaid">
 graph TD
@@ -75,17 +64,48 @@ graph TD
     B -- Nei --> X
 </div>
 
-*Figur: Dagens evalueringslogikk for SSO - to uavhengige av/på-sjekker, ingen mulighet for kontrollert deling med et avgrenset sett tjenester.*
+*Figur: Dagens evalueringslogikk. To uavhengige av/på-sjekker, ingen mulighet for kontrollert deling.*
 
-## 7. Beskrivelse av løsningsforslaget
+## 3. Mål, prinsipper og avgrensning
 
-Forslaget er å gå fra dagens binære modell (ja/nei) til tre tydelige SSO-modi som kan velges per klient:
+**Mål**
+
+- Gå fra en binær SSO-modell til tre tydelige og forutsigbare valg.
+- Gjøre isolert SSO til standard for nye klienter (Zero Trust-default).
+- Gi tjenesteeiere mulighet til kontrollert deling av SSO med et avgrenset sett tjenester, uten å åpne for SSO med alle.
+- Legge et grunnlag som passer for både ID-porten og Ansattporten.
+
+**Inkludert:** de tre SSO-modiene, hvordan begrenset SSO kan realiseres, evaluering av sesjoner på tvers av klienter og en eksempel-migreringsplan.
+
+**Ikke inkludert:**
+
+- Konkret teknisk implementasjon (datamodell, API-endringer, kode). Klientregistrerings-API-et støtter ikke de nye modiene i dag.
+- Samtykke og delegering på tvers av organisasjoner.
+- Endringer i Altinn-autorisasjon.
+- SSO handover (kapittel 8).
+
+**Interessenter**
+
+| Interessent | Interesse |
+|---|---|
+| Virksomhets- og løsningsarkitekter | Målgruppe for notatet, tar stilling til modell |
+| Tjenesteeiere (ID-porten-klienter) | Eier egen SSO-konfigurasjon, får nye valg og ny standard for nye klienter |
+| Ansattporten | Tverrorganisatorisk tjenesteøkosystem, godt egnet for begrenset SSO |
+| Forvaltning av ID-porten | Implementerer og forvalter klientregistrering og SSO-evaluering |
+
+## 4. De tre SSO-modiene
 
 | Modus | Forklaring |
 |---|---|
-| **Isolert SSO** | Tjenesten har egen, isolert SSO-sesjon. Brukeren må logge inn på nytt når hen går til andre tjenester. Ingen SSO-deling i noen retning. Foreslås som ny standard for nye klienter. |
-| **Global SSO** | Tjenesten deltar i vanlig, delt SSO med enhver annen klient, betinget av tillitsgruppekontrollen. Dette er dagens standardoppførsel, men foreslås å ikke lenger være standard for nye klienter. |
-| **Begrenset SSO / SSO-gruppe** (ny) | Klienten kan bruke SSO, men bare med eksplisitt godkjente tjenester. Gir kontrollert deling fremfor alt-eller-ingenting. Det er ingen begrensning på at andre kan dele SSO mot en tjeneste utenfor gruppen — begrensningen gjelder kun hvem som slipper inn, ikke om sesjonen som er opprettet mot klienten kan gjenbrukes hos andre klienter. Merk: dersom tillitsgruppen ikke tillater SSO, **ignoreres klientens SSO-modus fullstendig** — det spiller ingen rolle om klienten er satt til global eller isolert, resultatet blir uansett ingen SSO. Eneste unntak er begrenset modus: dersom klientkombinasjonen er oppført på unntakslisten (pilotmekanismen ID-6864, som gjelder ID-porten med eidas-innlogging og Ansattporten), kan SSO likevel tillates selv om tillitsgruppen sier nei. |
+| **Isolert SSO** | Egen, isolert sesjon. Brukeren må logge inn på nytt hos andre tjenester. Foreslås som ny standard for nye klienter. |
+| **Global SSO** | Vanlig, delt SSO med enhver annen klient. Dagens standardoppførsel, men foreslås ikke lenger som standard for nye klienter. |
+| **Begrenset SSO** (ny) | Klienten kan bruke SSO, men tar bare imot SSO fra eksplisitt godkjente klienter (SSO-relasjoner). |
+
+Tre forhold gjelder for alle modiene:
+
+- **Tillitsgruppen overstyrer.** Dersom tillitsgruppen ikke tillater SSO, ignoreres klientens modus. Resultatet er ingen SSO, uansett om klienten er global eller isolert. Eneste unntak er begrenset modus: er klientkombinasjonen oppført på unntakslisten (ID-6864), kan SSO tillates likevel.
+- **Begrenset SSO styrer bare hvem som slipper inn.** Den hindrer ikke at en klient med global SSO gjenbruker en sesjon som er opprettet mot den begrensede klienten.
+- **Isolerte klienter deltar aldri** i en delt sesjon.
 
 <div class="mermaid">
 graph TD
@@ -93,211 +113,173 @@ graph TD
     B -- Ja --> C{Hvilken SSO-modus har Klient B?}
     C -- Isolert --> X[Ingen SSO]
     C -- Global --> D[SSO tillatt]
-    C -- Begrenset --> E{Er Klient A en SSO-relasjon på Klient B?}
+    C -- Begrenset --> E{Er sesjonen godkjent etter Klient Bs evalueringstype, strict eller lax?}
     E -- Ja --> D
     E -- Nei --> X
-    B -- Nei --> F{Er SSO-modus begrenset?}
+    B -- Nei --> F{Begrenset modus og oppført på unntaksliste, ID-6864?}
+    F -- Ja --> E
     F -- Nei --> X
-    F -- Ja --> E{Er Klient A en SSO-relasjon på Klient B?}
 </div>
 
-*Figur: Foreslått evalueringslogikk - tillitsgruppekontrollen beholdes uendret, men suppleres med et tredje, mer finkornet valg per klient. Dersom tillitsgruppen ikke tillater SSO, ignoreres global og isolert modus, men begrenset modus kan fortsatt gi SSO via unntakslisten.*
+*Figur: Foreslått evalueringslogikk. Tillitsgruppekontrollen beholdes, men suppleres med et tredje, mer finkornet valg per klient.*
 
-### 7.1 Vurdering av de tre modiene
+| Modus | Fordeler | Ulemper |
+|---|---|---|
+| Isolert | Høyest isolasjon, enklest å forstå, lavest risiko, god Zero Trust-standard | Dårligere brukeropplevelse, vanskeligere å knytte tjenester sammen i en brukerflyt senere |
+| Global | Mest sømløs opplevelse, minst friksjon | Lavere isolasjon, større konsekvensområde ved kompromittert sesjon, lite kontroll over hvem som deler SSO |
+| Begrenset | Balanse mellom sikkerhet og brukeropplevelse, kontrollert tillit | Krever konfigurasjon, noe mer kompleks å forstå |
 
-**Isolert SSO (fremtidig standard for nye klienter)**
+## 5. Begrenset SSO: konfigurert på klient
 
-- Fordeler: høyest isolasjon, enklest å forstå, lavest risiko, god Zero Trust-standard.
-- Ulemper: kan gi dårligere brukeropplevelse, og gjør det vanskeligere å senere knytte flere tjenester sammen i en brukerflyt.
+Hver organisasjons administrator angir hvilke klient-id-er (og eventuelt senere organisasjonsnumre) som har lov til å dele SSO inn til klienten. Hver slik tillatelse er en SSO-relasjon. Modellen kan forankres i et mønster som allerede finnes, der klienten har en liste over relasjoner til andre parter.
 
-**Global SSO (dagens standard)**
+**Egenskaper**
 
-- Fordeler: mest sømløs brukeropplevelse, minst friksjon, enkel modell.
-- Ulemper: lavere isolasjon, større konsekvensområde dersom en sesjon kompromitteres, og mindre kontroll over hvem som faktisk deler SSO.
+- Enklest å innføre teknisk. Ligner vanlig klientkonfigurasjon og krever ikke nytt administrasjonsobjekt eller ny rollemodell.
+- Høy kontroll per klient, og godt egnet når det typisk er 2–3 klienter som skal kobles sammen.
+- Kan fungere som en rask MVP som lar oss høste erfaring med begrenset SSO.
 
-**Begrenset SSO / SSO-gruppe (ny)**
+**Svakheter**
 
-- Fordeler: balanse mellom sikkerhet og brukeropplevelse, kontrollert tillit, passer godt for tjenesteøkosystemer og er egnet for Ansattporten.
-- Ulemper: krever mer administrasjon og policy-konfigurasjon, og er en noe mer kompleks modell å forstå enn de to andre.
+- Enkelt å forstå per klient, men vanskelig å få oversikt over alle relasjonene samlet. Relasjonene kan over tid bli en skjult graf fremfor tydelige grupper.
+- Risiko for inkonsistent eller asymmetrisk konfigurasjon, og vanskeligere å auditere.
+- Lister per klient kan bli lange og skalere dårlig, og modellen passer dårligere for store eller tverrorganisatoriske oppsett.
 
-### 7.2 Alternative måter å realisere SSO-gruppe på
+### 5.1 SSO-relasjoner er rettede og krever eksplisitt samtykke fra mottakeren
 
-Det er vurdert tre alternative måter å realisere den nye, begrensede modusen på.
-
-**Alternativ 1 – Sentralisert modell**
-
-En SSO-gruppe blir et eget administrasjonsobjekt («SSO-gruppe»), eid og administrert av en organisasjon eller en delegert administrator. Gruppen inneholder et sett med klienter og/eller organisasjoner som kan dele SSO seg imellom. Tilganger til å administrere gruppen kan tenkes forankret i eksisterende autorisasjonsløsning (f.eks. Altinn), slik at en virksomhet selv kan legge til egne klienter, eller eventuelt andre organisasjoner, i sin gruppe.
-
-- Fordeler: Tydelig modell («dette er SSO-gruppa»), enkel å forstå for større oppsett, gir bedre oversikt i selvbetjening, lettere å auditere og forklare, passer godt med målet om å erstatte dagens store, felles SSO-gruppe, mindre risiko for asymmetrisk konfigurasjon, bedre egnet for Ansattporten og tverrorganisatoriske behov, og skalerer bedre.
-- Ulemper: Krever et nytt administrasjonsobjekt og en rollemodell for hvem som kan opprette og endre grupper. Krever regler for eierskap, delegering og godkjenning, og gir mer kompleks plattformlogikk. Gruppene må forvaltes løpende: den som har rollen som gruppeadministrator, må holde medlemslisten oppdatert, legge til og fjerne klienter, følge opp når klienter eller organisasjoner endres eller legges ned, og håndtere forespørsler fra andre om å bli med. Det gir en ekstra driftsbyrde for den som sitter med rollen, og risiko for at grupper blir foreldet eller får medlemmer som ikke lenger skal være der. Kan bli byråkratisk dersom flere organisasjoner skal inn i samme gruppe, og er vesentlig dyrere å realisere (forutsetter bl.a. støtte i autorisasjonsløsning og samtykkeprosesser). Det må også avklares hva som skjer når en klient er med i flere grupper, og modellen støtter ikke ensidig tillit (at A stoler på B uten at B stoler på A).
-- Passer kanskje best når: SSO-gruppene kan bli større enn ca. 5 klienter, man trenger god oversikt, kunder skal kunne selvbetjene SSO-oppsettet selv, samme modell skal brukes i både ID-porten og Ansattporten, og man ønsker langsiktig styring (governance).
-
-<div class="mermaid">
-graph LR
-    subgraph SSO-gruppe
-        K1[Klient A]
-        K2[Klient B]
-        K3[Klient C]
-    end
-</div>
-
-*Figur: Alternativ 1 - klienter er medlemmer av en felles, administrert gruppe. Medlemskap gir SSO med alle andre medlemmer.*
-
-**Alternativ 2 – Konfigurert på klient**
-
-Hver organisasjons administrator styrer selv sine klienter ved å angi hvilke klient-id-er og/eller organisasjonsnumre som har lov til å dele SSO inn til klienten. Hver slik tillatelse kalles en SSO-relasjon. Dette kan forankres i et mønster som allerede finnes: klienten har fra før en tilsvarende liste over relasjoner til andre parter. En slik liste vil være rettet: at en klient tillater en motpart, gir ikke automatisk motparten tilsvarende tillit tilbake.
-
-- Fordeler: Enklere å innføre teknisk, ligner mer på vanlig klientkonfigurasjon, gir høy kontroll per klient, passer godt for små oppsett, krever mindre nytt administrasjonsregime, kan fungere som en rimelig og rask MVP.
-- Ulemper: Kan bli uoversiktlig ved mange klienter — enkelt å forstå per klient, men komplisert å få oversikt over alle SSO-relasjonene samlet. Vanskeligere å se hvilke klienter som faktisk deler SSO med hverandre, risiko for inkonsistent eller asymmetrisk konfigurasjon, vanskeligere å auditere, vanskeligere for kunder å administrere selv over tid, og dårligere egnet for store eller tverrorganisatoriske oppsett. Relasjonene kan over tid bli en skjult graf fremfor tydelige grupper, og lister per klient kan bli lange og skalere dårlig.
-- Passer kanskje best når: SSO-behovet er lite og enkelt, det typisk er 2–3 klienter som skal kobles sammen, man ønsker rask teknisk innføring, og man ikke trenger avansert selvbetjening eller styring i en første versjon.
-
-<div class="mermaid">
-graph LR
-    K1[Klient A] -- tillater SSO fra --> K2[Klient B]
-    K2 -- tillater SSO fra --> K1
-    K2 -- tillater SSO fra --> K3[Klient C]
-</div>
-
-*Figur: Alternativ 2 - hver klient har sin egen, rettede liste med SSO-relasjoner. Klient B tillater både A og C, men C tillater ikke B tilbake.*
-
-**Alternativ 3 – Beholde dagens to modi, gjøre SSO opt-in**
-
-Innfører ikke en egen begrenset modus. I stedet beholdes kun isolert og global SSO, men global SSO blir noe tjenesteeier aktivt må velge inn i (opt-in), med isolert som standard.
-
-- Fordeler: Svært enkelt å innføre, kjent modell, enklere for tjenesteeier å forholde seg til.
-- Ulemper: Samme risiko som i dag dersom noen glemmer eller gjør feil ved utlogging, og gir fortsatt ikke mulighet for kontrollert deling med et avgrenset sett tjenester — kun alt-eller-ingenting. Dårligere brukerreise for tjenester som faktisk har behov for å dele innlogging.
-
-### 7.3 SSO-relasjoner er ensidige og krever eksplisitt samtykke fra begge parter
-
-Når en klienteier legger en annen klient til som SSO-relasjon (alternativ 2), gjelder relasjonen bare i én retning. Den bestemmer hvem som slipper inn til *egen* klient, og sier ingenting om hvorvidt den andre klienten stoler på den første.
+En SSO-relasjon bestemmer hvem som slipper inn til *egen* klient, og sier ingenting om hvorvidt den andre klienten stoler på den første.
 
 - Legger klient B til klient A som SSO-relasjon, kan en bruker med sesjon fra A få SSO inn til B. Det gir ikke SSO fra B til A.
-- Skal SSO fungere begge veier, må eieren av A også legge til B som SSO-relasjon på A.
+- Skal SSO fungere begge veier, må eieren av A også legge til B på A.
 - Dette gjelder uavhengig av om klientene tilhører samme organisasjon eller ulike organisasjoner.
 
-Dermed er samtykket eksplisitt: en klient får aldri SSO fra en annen klient med mindre eieren av den mottakende klienten uttrykkelig har lagt avsenderen til. Eieren av A kan ikke tvinge SSO inn mot B, og eieren av B kan ikke gi A SSO mot seg selv. Det er også derfor en annen organisasjon ikke trenger å godkjenne at klienten din legger dem til: relasjonen gir kun din klient mulighet til å slippe dem inn, ikke omvendt.
+Samtykket er dermed eksplisitt: en klient får aldri SSO fra en annen klient med mindre eieren av den mottakende klienten har lagt avsenderen til. Derfor trenger ikke en annen organisasjon å godkjenne at klienten din legger dem til. Relasjonen gir bare din klient mulighet til å slippe dem inn.
 
-Konsekvensen er at toveis SSO krever to separate konfigurasjoner, én hos hver klienteier, som lett kan komme ut av synk (se 7.4). Tilsvarende modell med gjensidig medlemskap får man først med SSO-grupper (alternativ 1).
+Toveis SSO krever to separate konfigurasjoner, som lett kommer ut av synk. En skisse av selvbetjening som gjør dette enklere finnes i vedlegg A.
 
-### 7.4 Blanding av klienter innenfor og utenfor listen
+## 6. Sesjoner på tvers av klienter: hva skal skje?
 
-SSO-relasjoner på klienten (alternativ 2) og gruppemedlemskap (alternativ 1) er enkle å resonnere om når to klienter vurderes isolert. Det blir mer uklart når én brukersesjon har vært innom flere klienter. Sesjonen holder da en liste over alle klientene (RP-ene) den har vært brukt mot, og en klient som skal gi SSO må ta stilling til hele denne listen, ikke bare til klienten brukeren kom fra.
+Dette er punktet vi særlig ønsker innspill på.
 
-**Scenario 1 – kjede A → B → C**
+SSO-relasjoner er enkle å resonnere om når to klienter vurderes isolert. Det blir uklart når én brukersesjon har vært innom flere klienter. Sesjonen holder da en liste over alle klientene (RP-ene) den har vært brukt mot, og en klient som skal gi SSO må ta stilling til hele denne listen, ikke bare til klienten brukeren kom fra.
 
-A har SSO mot B (B tillater A), og B har SSO mot C (C tillater B), men C tillater ikke A. Brukeren logger inn i A, går videre til B (SSO) og så til C. Sesjonen inneholder nå både A og B. Fordi A står i sesjonen og C ikke tillater A, får brukeren ikke SSO mot C, selv om C tillater B.
+### 6.1 Scenarioer og foreslått utfall
 
-**Scenario 2 – A deler med både B og C, men C tillater ikke A**
+Strict og lax er en innstilling på klienten som evaluerer sesjonen (C i scenario 1–3, B i scenario 4–7). Se 6.3 for hva de to typene betyr. Kolonnene viser utfallet for hver type.
 
-Brukeren logger inn i A og går via B til C. Sesjonen inneholder A og B, og C avviser den fordi A ikke er tillatt. Utfallet er det samme som i scenario 1, og det kan virke overraskende for tjenesteeier på B og C, siden de hver for seg ser ut til å være konfigurert riktig.
+| # | Konfigurasjon | Brukerreise | Strict | Lax | Hvorfor |
+|---|---|---|---|---|---|
+| 1 | **Start i godkjent klient, mellomledd ikke godkjent.** C tillater A, men ikke B. | A → B → C | Ingen SSO | SSO | Strict: B står i sesjonen og er ikke godkjent av C. Lax: reisen startet i A, som C har godkjent. |
+| | C tillater A, men ikke B. | B → A → C | Ingen SSO | Ingen SSO | Reisen startet i B, som C ikke har godkjent. At brukeren kommer direkte fra A hjelper ikke. |
+| | C tillater A, men ikke B. | A → C | SSO | SSO | Sesjonen inneholder bare A. |
+| 2 | **Kjede.** B tillater A. C tillater B, men ikke A. | A → B → C | Ingen SSO | Ingen SSO | Sesjonen startet i A, som C ikke har godkjent. Tillit er ikke transitiv for strict, og lax ser bare på startklienten. |
+| 3 | **Rekkefølge.** A og B tillater hverandre. C tillater B, men ikke A. | B → C | SSO | SSO | Sesjonen inneholder bare B. |
+| | | B → A → C | Ingen SSO | SSO | Strict: sesjonen inneholder nå A, som C ikke har godkjent. Lax: reisen startet i B, som C har godkjent. |
+| 4 | **Blandede modi.** A har begrenset SSO og tillater ikke C. C har global SSO. | A → C | SSO | SSO | Begrenset SSO styrer bare hvem som slipper inn til A. C har global SSO og sjekker ikke sesjonens innhold. |
+| | B har begrenset SSO og tillater ikke A. A har global SSO. | A → B | Ingen SSO | Ingen SSO | B har ikke godkjent A. |
+| 5 | **Isolert klient.** A er isolert, B har begrenset SSO og tillater A. | A → B | Ingen SSO | Ingen SSO | Isolerte klienter har ikke en delt sesjon å gjenbruke, uansett hva B tillater. |
+| 6 | **Tillitsgruppe uten SSO.** Tillitsgruppen tillater ikke SSO. B har begrenset SSO og er på unntakslisten (ID-6864). | A → B | SSO, hvis alle klienter i sesjonen er SSO-relasjoner på B | SSO, hvis startklienten er SSO-relasjon på B | Unntakslisten åpner for SSO, men SSO-relasjonene gjelder fortsatt. |
+| 7 | **Relasjon fjernes underveis.** B fjerner A som SSO-relasjon mens brukeren har en sesjon som inneholder A. | A → B (etter fjerning) | Ingen SSO (forslag, åpent spørsmål) | Ingen SSO (forslag, åpent spørsmål) | Relasjonene evalueres ved hver SSO-forespørsel. Se spørsmål nedenfor. |
 
-I begge tilfellene avhenger utfallet av hvilke klienter brukeren har vært innom og i hvilken rekkefølge. Det gir en brukeropplevelse som er vanskelig å forutsi og å feilsøke.
+Med strict gir scenario 1–3 et resultat som kan virke overraskende for tjenesteeierne på B og C, siden de hver for seg ser ut til å være riktig konfigurert. Utfallet avhenger av hvilke klienter brukeren har vært innom, og i hvilken rekkefølge. Det er vanskelig å forutsi og å feilsøke. Lax gir mer forutsigbare utfall, men til prisen av transitiv tillit.
 
-**Mulige tilnærminger**
+### 6.2 Mulige tilnærminger
 
 | Tilnærming | Beskrivelse | Fordeler | Ulemper |
 |---|---|---|---|
-| **a) Streng evaluering (dagens pilot)** | Alle klienter i sesjonen må være tillatt av klienten som evaluerer. Ellers ingen SSO, og brukeren må autentisere seg på nytt. | Tillit er ikke transitiv: C har aldri takket ja til at en sesjon fra A deles med C. Enklest og sikrest. | Resultatet avhenger av rekkefølge og er vanskelig å forstå. Uventet innlogging for brukeren. |
-| **b) Kun nærmeste ledd** | C vurderer bare klienten brukeren kommer fra (B), ikke resten av sesjonen. | Kjeder fungerer, og resultatet er lettere å forutsi. | Gir transitiv tillit: C får i praksis SSO fra A uten å ha godkjent A. Svekker kontrollen som den begrensede modusen skal gi. |
-| **c) Konsistensvalidering ved konfigurasjon** | Selve evalueringen er streng (a), men konfigurasjonen varsler eller avviser kombinasjoner som gir kjeder som ikke fungerer, f.eks. «B tillater A, men C tillater B og ikke A». | Feilen oppdages ved oppsett i stedet for hos sluttbruker. Krever ingen endring av tillitsmodellen. | Krever verktøy/selvbetjening for å se hele grafen, noe som er vanskelig med tillatelseslister per klient. |
-| **d) Lukkede grupper (alternativ 1)** | Alle medlemmer i en gruppe tillater hverandre. Klienter som ikke er i gruppen, kan ikke koble seg inn på en sesjon som inneholder gruppemedlemmer. | Problemet oppstår ikke innenfor gruppen, og gruppen er en tydelig avgrensning. | Dyrere å realisere. Klient som er medlem i flere grupper, må avklares. |
+| **a) Streng evaluering** (strict, dagens pilot) | Alle klienter i sesjonen må være tillatt av klienten som evaluerer. Ellers ingen SSO. | Tillit er ikke transitiv, C har aldri takket ja til at en sesjon fra A deles med C. Enklest og sikrest. | Resultatet avhenger av rekkefølge og er vanskelig å forstå. Uventet innlogging for brukeren. |
+| **b) Kun nærmeste ledd** | C vurderer bare klienten brukeren kommer fra (B). | Kjeder fungerer, og resultatet er lettere å forutsi. | Gir transitiv tillit: C får i praksis SSO fra A uten å ha godkjent A. Svekker kontrollen som begrenset modus skal gi. |
+| **c) Konsistensvalidering ved konfigurasjon** | Evalueringen er streng (a), men konfigurasjonen varsler eller avviser kombinasjoner som gir kjeder som ikke fungerer, f.eks. «B tillater A, men C tillater B og ikke A». | Feilen oppdages ved oppsett i stedet for hos sluttbruker. Krever ingen endring av tillitsmodellen. | Krever verktøy for å se hele grafen, noe som er vanskelig med lister per klient. |
+| **d) Kun startklient** (lax) | C vurderer bare klienten som startet sesjonen (A), ikke mellomleddene. | Følger hvem brukeren opprinnelig autentiserte seg mot. Kjeder fungerer uten at C må godkjenne alle mellomledd. Resultatet avhenger ikke av hvilke mellomledd brukeren har vært innom. | Gir transitiv tillit: C godtar en sesjon som har vært innom B uten å ha godkjent B. Krever at sesjonen lagrer hvilken klient den startet i. |
 
-**Forslag**
+### 6.3 Forslag: evalueringstype som konfigurasjon
 
-Vi foreslår å beholde **streng evaluering (a)**: tillit mellom klienter skal ikke være transitiv, og en klient skal bare kunne få SSO fra en sesjon der alle deltakerne er godkjent. Dette er også dagens pilotatferd. For å redusere forvirringen foreslår vi i tillegg at:
+I stedet for å velge én evalueringsregel for alle foreslår vi at klienter med begrenset SSO får en innstilling, **evalueringstype**, med to verdier:
 
-- atferden dokumenteres tydelig for tjenesteeiere, med eksempler som scenarioene over,
-- SSO-relasjonene mellom klientene holdes konsistente, slik at alle klienter som kan inngå i samme sesjon, tillater hverandre,
-- det vurderes konsistensvalidering (c) i selvbetjeningen, og at dette brukes som et argument for å gå videre til alternativ 1 (lukkede grupper) dersom gruppene blir store.
+| Type | Regel | Passer når |
+|---|---|---|
+| **Strict** (standard) | Alle klienter i sesjonen må være SSO-relasjoner på klienten. Tilsvarer tilnærming a. | Klienten skal ha full kontroll over hvem som kan ha vært innom sesjonen. |
+| **Lax** | Bare klienten som startet sesjonen må være SSO-relasjon. Mellomledd vurderes ikke. Tilsvarer tilnærming d. | Klienten stoler på den som startet sesjonen, og vil unngå uforutsigbare avvisninger i kjeder. |
 
-Dette er et forslag som bør bekreftes, og det er et åpent spørsmål om det finnes tilfeller der nærmeste ledd (b) er akseptabelt, for eksempel når A og C eies av samme organisasjon.
+- **Strict er standard**, siden det er dagens pilotatferd og gir minst transitiv tillit.
+- Valget gjøres av eieren av den **mottakende** klienten. Det er dermed fortsatt eksplisitt samtykke (se 5.1): lax åpner bare for transitiv tillit hos den som selv har valgt det.
+- Lax må dokumenteres tydelig, med tydelig advarsel om at klienten godtar sesjoner som har vært innom klienter den ikke har godkjent.
 
-### 7.5 Mulig selvbetjening for SSO-relasjoner
+I tillegg foreslår vi at:
 
-Dersom alternativ 2 velges, kan selvbetjening starte enkelt. Dette er en skisse til fase 3 i migreringsplanen, ikke en ferdig spesifikasjon.
+- atferden dokumenteres for tjenesteeiere, med eksempler som scenarioene over,
+- SSO-relasjonene holdes konsistente, slik at alle klienter som kan inngå i samme sesjon tillater hverandre,
+- konsistensvalidering (c) vurderes i selvbetjeningen, særlig for strict.
 
-**Grunnfunksjon: legge til SSO-relasjon**
+Nærmeste ledd (b) tas ikke med som valg, fordi det gir transitiv tillit uten å ta stilling til hvem som startet sesjonen.
 
-- Eier av klient A legger til en SSO-relasjon ved å skrive inn klient-id til klient B i et fritekstfelt. Relasjonen er rettet (se 7.3), og gjelder umiddelbart for SSO inn til A.
-- Det er ikke noe godkjenningssteg hos B, siden relasjonen bare påvirker hvem som slipper inn til A.
+### 6.4 Spørsmål vi ønsker innspill på
 
-**Synlighet for den andre parten**
+1. Er strict og lax riktige evalueringstyper? Gir de utfallet dere ville forventet i alle scenarioene i 6.1?
+2. Er strict riktig standard?
+3. Skal evalueringstypen kunne settes av tjenesteeier selv, eller bør lax kreve en godkjenning eller være forbeholdt visse tillitsgrupper?
+4. Finnes det tilfeller der nærmeste ledd (b) er akseptabelt, for eksempel når A og C eies av samme organisasjon?
+5. Scenario 4: er det greit at begrenset SSO bare styrer hvem som slipper inn, og ikke hvem som kan gjenbruke sesjonen etterpå? Eller bør en begrenset klient også kunne hindre at sesjonen den har vært med på brukes mot klienter utenfor listen?
+6. Scenario 7: skal en fjernet relasjon gjelde umiddelbart, eller først når brukeren logger inn på nytt?
+7. Hvordan bør tjenesteeier få vite hvorfor SSO ble avvist? Skal avvisningen forklares for sluttbruker, eller bare synes i logg og selvbetjening?
+8. Hvilke andre kombinasjoner av klienter og modi finnes i praksis, som ikke dekkes av scenarioene?
 
-- Eier av klient B ser en oversikt over hvilke klienter som har lagt til B som SSO-relasjon («innkommende relasjoner»), ved siden av egne utgående relasjoner.
-- Eier av B kan velge å:
-  - **gjengjelde** ved å legge A til som SSO-relasjon på B, slik at SSO blir toveis. Dette kan gjøres med ett valg fra oversikten, uten å skrive inn klient-id på nytt,
-  - **la være**, slik at relasjonen forblir ensidig, eller
-  - **legge til A på egen hånd** med fritekst, basert på avtale eller kommunikasjon utenfor selvbetjeningen. Selvbetjeningen skal ikke kreve at relasjonen først er synlig som innkommende.
-- Eier av B kan ikke fjerne eller endre relasjonen A har lagt til. Den kan bare fjernes av eier av A.
-- Alle endringer i SSO-relasjoner (legge til, fjerne) logges i en changelog som viser hvem som gjorde endringen og når. Det gjør det mulig å se hvem som la til en relasjon, og å etterprøve endringer i ettertid.
+## 7. Alternativer som er vurdert
 
-**Forhold som bør avklares**
+| Alternativ | Vurdering |
+|---|---|
+| **Konfigurert på klient** | Anbefalt. Se kapittel 5. |
+| **Sentralisert modell (SSO-gruppe)** | Vurdert, ikke tatt videre nå. |
+| **Behold dagens to modi, gjør global SSO opt-in** | Ikke valgt. Løser ikke behovet for kontrollert deling, siden valget fortsatt er alt eller ingenting. |
 
-- **Validering av fritekst:** skal systemet avvise klient-id-er som ikke finnes, eller godta alt? Å avvise gir færre feil (skrivefeil), men kan avsløre om en gitt klient-id finnes hos en annen organisasjon.
-- **Hva B får se om A:** minimum klient-id. Klientnavn og organisasjon gjør det lettere å vurdere om man vil gjengjelde, men må veies mot hva som er greit å eksponere på tvers av organisasjoner.
-- **Varsling:** skal eier av B varsles (e-post eller i løsningen) når en ny innkommende relasjon dukker opp, eller er det nok at den er synlig i oversikten?
-- **Konsistens:** oversikten over innkommende og utgående relasjoner gjør det lettere å oppdage asymmetri og kjeder som ikke fungerer (se 7.4), og er et første steg mot konsistensvalidering.
+**Sentralisert modell.** En SSO-gruppe ville blitt et eget administrasjonsobjekt, eid av en organisasjon eller delegert administrator, der medlemmer deler SSO seg imellom. Vi velger å ikke gå videre med dette nå fordi:
 
-Fordelen med denne tilnærmingen er at den gir eksplisitt samtykke (7.3) uten et eget godkjenningsregime, og kan bygges på eksisterende klientkonfigurasjon. Ulempen er at oversikten fortsatt er per klient, og at det ikke finnes noen samlet visning av hvem som faktisk deler SSO med hvem før man eventuelt går videre til SSO-grupper (alternativ 1).
+- det krever et nytt administrasjonsobjekt og en rollemodell, med regler for eierskap, delegering og godkjenning,
+- det er vesentlig dyrere å realisere, blant annet fordi det forutsetter støtte i autorisasjonsløsning og samtykkeprosesser,
+- grupper må forvaltes løpende, og kan bli foreldet eller få medlemmer som ikke lenger skal være der,
+- det må avklares hva som skjer når en klient er med i flere grupper, og modellen støtter ikke ensidig tillit.
 
-## 8. Alternativer som er vurdert
+Den er best egnet for store grupper (over ca. 5 klienter) og tverrorganisatoriske behov, og kan revurderes dersom SSO-relasjonene blir store og uoversiktlige (se kapittel 9).
 
-| Alternativ | Beskrivelse | Fordeler (hovedpunkt) | Ulemper (hovedpunkt) |
-|---|---|---|---|
-| 1 – Sentralisert modell | Egen administrasjonsobjekt («SSO-gruppe») med egen rollemodell og selvbetjening | Tydelig, godt egnet for store/tverrorganisatoriske oppsett, god oversikt og auditerbarhet | Nytt administrasjonsobjekt, ny rollemodell, løpende forvaltning av gruppene, vesentlig dyrere å realisere |
-| 2 – Konfigurert på klient | SSO-relasjoner (tillatte klienter/organisasjoner) lagret direkte på hver klient | Raskt og billig å innføre, kan fungere som MVP | Uoversiktlig i stort omfang, risiko for asymmetrisk konfigurasjon, vanskelig å auditere |
-| 3 – Behold dagens modi, opt-in global SSO | Kun isolert og global SSO, global blir opt-in i stedet for standard | Enklest å innføre, kjent modell | Løser ikke behovet for kontrollert, avgrenset deling |
+## 8. Fremtidig utvidelse: SSO handover
+
+SSO handover er en mulig senere utvidelse der man kan sende med kontekst når en bruker går fra én tjeneste til en annen via SSO. Dette er ikke en del av forslaget, og er ikke beskrevet nærmere her. SSO-relasjonene kan bli et naturlig grunnlag for å avgjøre mellom hvilke klienter slik kontekst kan sendes.
 
 ## 9. Konsekvenser
 
-### 9.1 Gevinster
+**Gevinster**
 
-- Tydeligere og mer forutsigbar SSO-modell for tjenesteeiere, med tre klart definerte valg i stedet for en binær av/på-innstilling.
-- Bedre sikkerhetsstandard for nye klienter (isolert som standard, Zero Trust-tilnærming).
-- Mulighet for kontrollert deling av SSO mellom et avgrenset sett tjenester, uten å måtte velge full åpenhet.
-- Et mulig fremtidig grunnlag som dekker behovene til både ID-porten og Ansattporten.
+- Tydeligere og mer forutsigbar SSO-modell, med tre klart definerte valg.
+- Bedre sikkerhetsstandard for nye klienter (isolert som standard).
+- Kontrollert deling av SSO mellom et avgrenset sett tjenester, uten full åpenhet.
+- Et mulig grunnlag som dekker behovene til både ID-porten og Ansattporten.
 
-### 9.2 Risiko
+**Risiko**
 
 | Risiko | Kommentar |
 |---|---|
-| Alternativ 1 (sentralisert) kan bli dyrt og ta lang tid å realisere | Forutsetter nytt administrasjonsobjekt, rollemodell og ev. støtte i autorisasjonsløsning |
-| Alternativ 2 (konfigurert på klient) kan bli uoversiktlig over tid | Risiko for asymmetrisk/inkonsistent konfigurasjon og vanskelig auditering ved mange klienter |
-| Migrering av eksisterende klienter til ny modell | Eksisterende klienter må mappes til riktig modus basert på dagens konfigurasjon |
-| Endret standard for nye klienter kan påvirke brukeropplevelse | Isolert som ny standard kan oppleves som et skritt tilbake for tjenesteeiere som i dag forventer global SSO |
+| Konfigurasjon per klient kan bli uoversiktlig over tid | Risiko for asymmetrisk eller inkonsistent konfigurasjon og vanskelig auditering ved mange klienter. Reduseres med konsistensvalidering og oversikt i selvbetjening. |
+| Sesjoner på tvers av klienter gir uventede utfall | Strict kan gi avvisninger som virker overraskende, og lax gir transitiv tillit. Reduseres med dokumentasjon, validering og at strict er standard (kapittel 6). |
+| Migrering av eksisterende klienter | Eksisterende klienter må mappes til riktig modus basert på dagens konfigurasjon. |
+| Endret standard for nye klienter påvirker brukeropplevelse | Isolert som standard kan oppleves som et skritt tilbake for tjenesteeiere som forventer global SSO. |
 
-### 9.3 Organisatoriske og forvaltningsmessige konsekvenser
+**Forvaltning**
 
-- Forvaltningen av ID-porten må implementere støtte for de nye modiene i klientregistrering, som i dag ikke støtter dette.
-- Alternativ 1 forutsetter en rollemodell for hvem som kan opprette/endre SSO-grupper, samt regler for eierskap, delegering og godkjenning.
-- Dagens pilotordning (ID-6864) er midlertidig og bør ses i sammenheng med valgt løsning videre.
+- Forvaltningen av ID-porten må støtte de nye modiene i klientregistrering.
+- Pilotordningen (ID-6864) er midlertidig og bør ses i sammenheng med valgt løsning.
 
-## 10. Anbefaling
+## 10. Videre arbeid
 
-Vi anbefaler å gå for **alternativ 2 (konfigurert på klient)** i første omgang. Alternativet er enklest å implementere teknisk, da det bygger på eksisterende klientkonfigurasjon uten behov for nye administrasjonsobjekter eller rollemodeller. Det er også enkelt å forstå: hver klient har sin egen liste over hvilke andre klienter den tillater SSO fra. Alternativet kan fungere som en god MVP som gir rask gevinst og lar oss høste erfaring med begrenset SSO i praksis.
+Eksempel på migreringsplan:
 
-Vi er åpne for at **alternativ 1 (sentralisert modell)** kan implementeres på et senere tidspunkt, dersom behovet for bedre oversikt, selvbetjening og tverrorganisatorisk bruk (bl.a. Ansattporten) vokser. Migreringsplanen i kapittel 12 er lagt opp slik at man kan starte med alternativ 2 og eventuelt abstrahere til en sentralisert gruppemodell i fase 6, dersom SSO-relasjonene blir store og uoversiktlige.
-
-## 11. Beslutning som ønskes
-
-Det bes om beslutning på:
-
-1. At SSO-modellen i ID-porten endres fra en binær modell til tre eksplisitte SSO-modi: isolert, global og begrenset («SSO-gruppe»), som beskrevet i kapittel 7.
-2. At isolert SSO settes som ny standard for nyopprettede klienter.
-3. Hvilket av de tre alternativene (kapittel 7.2/8) som skal legges til grunn for realisering av den begrensede modusen, eventuelt som en trinnvis tilnærming i tråd med migreringsplanen i kapittel 12.
-4. Hvordan sesjoner som inneholder både klienter som er definert som SSO-relasjoner og klienter som ikke er det, skal evalueres (kapittel 7.4). Forslaget er streng evaluering, der alle klienter i sesjonen må være tillatt, kombinert med dokumentasjon og konsistensvalidering av konfigurasjonen.
-
-## 12. Videre arbeid
-
-Eksempel på migreringsplan fra dagens situasjon til målbildet:
-
-- **Fase 0 (nå)** – Begrenset SSO som MVP: vi har allerede erfaring med begrenset SSO i praksis gjennom Skatt i ID-porten (eidas-innlogging) og interne selvbetjeningsløsninger i Ansattporten. Denne erfaringen legges til grunn for beslutningen om videre retning.
-- **Fase 1** – Innføre eksplisitt SSO-policy med tre valg: isolert, global, begrenset. Eksisterende klienter settes til henholdsvis isolert eller global, avhengig av dagens konfigurasjon.
-- **Fase 2** – Gjøre isolert til standard for nye klienter. Global SSO blir noe man aktivt må velge inn i. Eksisterende klienter beholder allerede konfigurert SSO, slik at endringen av standard kun gjelder nyopprettede klienter.
-- **Fase 3** – Selvbetjening for klienteier: eier av en klient kan selv legge til SSO-relasjoner til klienter, både i og utenfor egen organisasjon. Relasjonen er rettet og styrer bare hvem som slipper inn til egen klient, så den trenger ikke samtykke fra eier av den andre klienten (avhengig av valgt modell).
-- **Fase 4** – Ved behov: mulighet for å legge til hele organisasjoner (organisasjonsnummer) som SSO-relasjon, og ikke bare enkeltklienter.
-- **Opsjon A** – Eventuell abstraksjon til SSO-grupper dersom SSO-relasjonene blir store og uoversiktlige; kan da provisjoneres ned til samme nivå som SSO-relasjonene i MVP-en.
-- **Opsjon B** – Gjensidig deling på tvers av organisasjoner: dersom SSO-grupper (alternativ 1) skal ha medlemmer fra flere organisasjoner, innføre en samtykkeløsning, eventuelt etablere roller i autorisasjonsløsningen. På sikt kan det vurderes å fase ut global SSO helt.
+- **Fase 0 (nå):** Begrenset SSO som MVP. Vi har erfaring fra Skatt i ID-porten (eidas-innlogging) og interne selvbetjeningsløsninger i Ansattporten.
+- **Fase 1:** Innføre eksplisitt SSO-policy med tre valg. Eksisterende klienter settes til isolert eller global ut fra dagens konfigurasjon.
+- **Fase 2:** Gjøre isolert til standard for nye klienter. Eksisterende klienter beholder dagens konfigurasjon.
+- **Fase 3:** Selvbetjening for klienteier: eier kan selv legge til SSO-relasjoner, både i og utenfor egen organisasjon.
+- **Fase 4:** Ved behov, legge til hele organisasjoner (organisasjonsnummer) som SSO-relasjon.
+- **Opsjon A:** Sentralisert SSO-gruppe, dersom SSO-relasjonene blir store og uoversiktlige.
+- **Opsjon B:** Gjensidig deling på tvers av organisasjoner, med samtykkeløsning og eventuelt roller i autorisasjonsløsningen. På sikt kan global SSO fases ut.
+- **Opsjon C:** SSO handover (kapittel 8).
 
 <div class="mermaid">
 graph LR
@@ -305,6 +287,32 @@ graph LR
     F1 --> F2[Fase 2: Isolert som standard]
     F2 --> F3[Fase 3: Selvbetjening for klienteier]
     F3 --> F4[Fase 4: Hele organisasjoner som SSO-relasjon]
-    F4 -. opsjon .-> OA[Opsjon A: Abstraksjon til SSO-grupper]
-    F4 -. opsjon .-> OB[Opsjon B: Samtykke for gjensidige grupper på tvers av org]
+    F4 -. opsjon .-> OA[Opsjon A: Sentralisert SSO-gruppe]
+    F4 -. opsjon .-> OB[Opsjon B: Samtykke på tvers av org]
+    F4 -. opsjon .-> OC[Opsjon C: SSO handover]
 </div>
+
+## Vedlegg A: Skisse av selvbetjening for SSO-relasjoner
+
+Dette er en skisse til fase 3, ikke en ferdig spesifikasjon.
+
+**Legge til SSO-relasjon**
+
+- Eier av klient A legger til en relasjon ved å skrive inn klient-id til klient B. Relasjonen er rettet (se 5.1) og gjelder umiddelbart for SSO inn til A.
+- Det er ikke noe godkjenningssteg hos B, siden relasjonen bare påvirker hvem som slipper inn til A.
+
+**Synlighet for den andre parten**
+
+- Eier av B ser en oversikt over hvilke klienter som har lagt til B («innkommende relasjoner»), ved siden av egne utgående.
+- Eier av B kan gjengjelde med ett valg fra oversikten, la relasjonen være ensidig, eller legge til A på egen hånd med fritekst. Selvbetjeningen skal ikke kreve at relasjonen først er synlig som innkommende.
+- Eier av B kan ikke fjerne eller endre relasjonen A har lagt til. Den kan bare fjernes av eier av A.
+- Alle endringer logges i en changelog som viser hvem som gjorde endringen og når.
+
+**Forhold som bør avklares**
+
+- **Validering av fritekst:** avvise ukjente klient-id-er (færre skrivefeil), eller godta alt (avslører ikke om en klient-id finnes hos en annen organisasjon)?
+- **Hva B får se om A:** minimum klient-id. Klientnavn og organisasjon gjør det lettere å vurdere gjengjeldelse, men må veies mot hva som er greit å eksponere på tvers av organisasjoner.
+- **Varsling:** skal eier av B varsles om nye innkommende relasjoner, eller er synlighet i oversikten nok?
+- **Konsistens:** oversikten gjør det lettere å oppdage asymmetri og kjeder som ikke fungerer (kapittel 6), og er et første steg mot konsistensvalidering.
+
+Ulempen er at oversikten fortsatt er per klient, og at det ikke finnes noen samlet visning av hvem som deler SSO med hvem.
