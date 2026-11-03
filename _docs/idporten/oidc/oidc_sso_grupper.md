@@ -208,7 +208,7 @@ I stedet for å velge én evalueringsregel for alle foreslår vi at klienter med
 I tillegg foreslår vi at:
 
 - atferden dokumenteres for tjenesteeiere, med eksempler som scenarioene over,
-- SSO-relasjonene holdes konsistente, slik at alle klienter som kan inngå i samme sesjon tillater hverandre,
+- for ønskede brukerreiser med strict holdes SSO-relasjonene konsistente, slik at alle klienter i sesjonen er godkjent av den mottakende klienten,
 - konsistensvalidering (c) vurderes i selvbetjeningen, særlig for strict.
 
 Nærmeste ledd (b) tas ikke med som valg, fordi det gir transitiv tillit uten å ta stilling til hvem som startet sesjonen.
