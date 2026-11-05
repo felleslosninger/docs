@@ -131,7 +131,7 @@ graph TD
 
 ## 5. Begrenset SSO: konfigurert på klient
 
-Hver organisasjons administrator angir hvilke klient-id-er (og eventuelt senere organisasjonsnumre) som har lov til å dele SSO inn til klienten. Hver slik tillatelse er en SSO-relasjon. Modellen kan forankres i et mønster som allerede finnes, der klienten har en liste over relasjoner til andre parter.
+Hver organisasjons administrator angir hvilke klient-id-er (og eventuelt senere organisasjonsnumre, se 5.2) som har lov til å dele SSO inn til klienten. Hver slik tillatelse er en SSO-relasjon. Modellen kan forankres i et mønster som allerede finnes, der klienten har en liste over relasjoner til andre parter.
 
 **Egenskaper**
 
@@ -156,6 +156,18 @@ En SSO-relasjon bestemmer hvem som slipper inn til *egen* klient, og sier ingent
 For en klient med begrenset SSO er samtykket eksplisitt: eieren konfigurerer SSO-relasjonene og velger evalueringstype. Med strict må alle klientene i sesjonen være godkjent; med lax må bare startklienten være godkjent (se 6.3). Derfor trenger ikke en annen organisasjon å godkjenne at klienten din legger dem til. Relasjonen gir bare din klient mulighet til å slippe dem inn.
 
 Toveis SSO krever to separate konfigurasjoner, som lett kommer ut av synk. En skisse av selvbetjening som gjør dette enklere finnes i vedlegg A.
+
+### 5.2 Vurderer: hvitelisting av organisasjonsnummer
+
+Vi vurderer å la klienteier i tillegg legge til **organisasjonsnumre** som SSO-relasjon, i stedet for å liste hver enkelt klient-id. Alle klienter som tilhører en godkjent organisasjon regnes da som SSO-relasjoner på klienten.
+
+Eksempel: virksomhet A konfigurerer klientene sine til å stole på alt fra virksomhet A og virksomhet B. Da slipper nye klienter hos A og B inn uten at listen må oppdateres.
+
+- Fjerner behovet for å vedlikeholde lange lister med klient-id-er, og passer godt for virksomheter som har mange klienter.
+- Relasjonen er fortsatt rettet (se 5.1) og eies av mottakeren: A godkjenner B, og det gir ikke SSO fra A til B.
+- Gir bredere tillit enn en enkeltklient, siden også fremtidige klienter hos den godkjente organisasjonen slipper inn. Det må veies mot behovet for kontroll, og påvirker hvordan strict og lax evalueres (kapittel 6).
+
+Dette er ikke bestemt, men er tenkt som fase 4 i kapittel 10.
 
 ## 6. Sesjoner på tvers av klienter: hva skal skje?
 
@@ -276,7 +288,7 @@ Eksempel på migreringsplan:
 - **Fase 1:** Innføre eksplisitt SSO-policy med tre valg. Eksisterende klienter settes til isolert eller global ut fra dagens konfigurasjon.
 - **Fase 2:** Gjøre isolert til standard for nye klienter. Eksisterende klienter beholder dagens konfigurasjon.
 - **Fase 3:** Selvbetjening for klienteier: eier kan selv legge til SSO-relasjoner, både i og utenfor egen organisasjon.
-- **Fase 4:** Ved behov, legge til hele organisasjoner (organisasjonsnummer) som SSO-relasjon.
+- **Fase 4:** Ved behov, la klienteier hviteliste hele organisasjoner (organisasjonsnummer) som SSO-relasjon, slik at f.eks. virksomhet A stoler på alle klienter fra A og B (se 5.2).
 - **Opsjon A:** Sentralisert SSO-gruppe, dersom SSO-relasjonene blir store og uoversiktlige.
 - **Opsjon B:** Gjensidig deling på tvers av organisasjoner, med samtykkeløsning og eventuelt roller i autorisasjonsløsningen. På sikt kan global SSO fases ut.
 - **Opsjon C:** SSO handover (kapittel 8).
@@ -286,7 +298,7 @@ graph LR
     F0[Fase 0: Begrenset SSO som MVP] --> F1[Fase 1: Eksplisitt SSO-policy]
     F1 --> F2[Fase 2: Isolert som standard]
     F2 --> F3[Fase 3: Selvbetjening for klienteier]
-    F3 --> F4[Fase 4: Hele organisasjoner som SSO-relasjon]
+    F3 --> F4[Fase 4: Hvitelisting av organisasjonsnummer]
     F4 -. opsjon .-> OA[Opsjon A: Sentralisert SSO-gruppe]
     F4 -. opsjon .-> OB[Opsjon B: Samtykke på tvers av org]
     F4 -. opsjon .-> OC[Opsjon C: SSO handover]
