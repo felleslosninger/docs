@@ -20,7 +20,7 @@ Vi foreslår:
 - at en klient med begrenset SSO kan velge **evalueringstype**, **strict** eller **lax**, som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6),
 - at en sentralisert gruppemodell er vurdert, men **ikke tas videre nå** (kapittel 7).
 
-Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (kapittel 6).
+Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (kapittel 6). Vi ønsker også tilbakemelding på om det er behov for å kunne hviteliste hele organisasjoner via organisasjonsnummer (kapittel 5.2).
 
 ### Beslutning som ønskes
 
@@ -167,7 +167,11 @@ Eksempel: virksomhet A konfigurerer klientene sine til å stole på alt fra virk
 - Relasjonen er fortsatt rettet (se 5.1) og eies av mottakeren: A godkjenner B, og det gir ikke SSO fra A til B.
 - Gir bredere tillit enn en enkeltklient, siden også fremtidige klienter hos den godkjente organisasjonen slipper inn. Det må veies mot behovet for kontroll, og påvirker hvordan strict og lax evalueres (kapittel 6).
 
-Dette er ikke bestemt, men er tenkt som fase 4 i kapittel 10.
+Dette er ikke bestemt, men er tenkt som fase 4 i kapittel 10. **Vi ønsker tilbakemelding på om dette er noe dere har behov for**, og på:
+
+- om det er ønskelig å kunne godkjenne en hel organisasjon, eller om dere heller vil liste enkeltklienter,
+- om det bør være mulig å kombinere organisasjoner og enkeltklienter i samme liste,
+- om bredere tillit til fremtidige klienter hos en godkjent organisasjon er akseptabelt.
 
 ## 6. Sesjoner på tvers av klienter: hva skal skje?
 
