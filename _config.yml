@@ -75,6 +75,7 @@ github_editme_path: https://github.com/felleslosninger/docs/blob/gh-pages
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 ############# Glossary info #############
 
