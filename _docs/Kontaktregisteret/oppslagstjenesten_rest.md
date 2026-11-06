@@ -67,7 +67,7 @@ Kunden må gi leverandøren fullmakt til API-et i Altinn.
 3. Klikk **Legg til leverandør** og skriv inn leverandørens organisasjonsnummer.
 4. Velg API-et "KRR - Delegere på-vegne-av-rettighet" og klikk **Gi fullmakt**.
 
-Se også veiledning: [Maskinportenadministrasjon](https://info.altinn.no/hjelp/ny-tilgangsstyring/maskinportenadministrasjon/)
+Se også veiledning: [Maskinportenadministrasjon](https://info.altinn.no/hjelp/tilgang-og-fullmakt/#maskinportenadministrasjon)
     
 ## Endepunkt
 
