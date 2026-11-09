@@ -1,12 +1,8 @@
 ---
-title: FAQ – Innsynskrav til flere systemer (integrasjonspunkt og API)
-description: Beste praksis for virksomheter som både henter innsynskrav via integrasjonspunktet (eFormidling) og fra eInnsyn API til fagsystemer.
-summary: Hvordan hvert system siler ut sine egne innsynskrav, når man skal (og ikke skal) slette meldinger på integrasjonspunktet, og hvordan man henter bare nye innsynskrav fra API-et.
+title: FAQ – Innsynskrav til flere systemer
 sidebar: einnsyn_sidebar
 redirect_from: /innsynskrav_flere_mottakssystemer_faq
 ---
-
-# FAQ: Innsynskrav til flere systemer
 
 Denne siden er for virksomheter som har **flere systemer som tar imot innsynskrav**, typisk:
 
