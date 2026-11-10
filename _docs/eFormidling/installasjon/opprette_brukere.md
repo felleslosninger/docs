@@ -118,14 +118,26 @@ Velg «ingen varsling»
 
 Velg «manuell print» 
 
-#### Brukernavn og servicepassord
+Når dette er gjort går du videre til punktet nedenfor.
 
-Under «Autentisering for SOAP/REST-service» finn du brukernavnet ditt og genererer passord.
-==Viktig at en noterer seg begge disse==!
- 
-![bilde4]({{site.baseurl}}/images/eformidling/FIKS_brukernavn.png)
- 
-Resten av innstilligene kan en se bort fra.
+#### Konto-ID og REST-integrasjon
+
+SvarUt brukes nå via REST API (v2 eller nyere). Det krever at en oppretter en integrasjon i Fiks Forvaltning:
+![bilde4]({{site.baseurl}}/images/eformidling/FIKS_integrasjon.png)
+
+1. Åpne kontoen din og velg fanen **Autentisering og integrasjoner**.
+2. Noter **Konto-ID**. Den står øverst på siden.
+3. Under «Integrasjon (API-versjon REST v2 eller høyere)» klikker du **Opprett integrasjon**.
+4. Som navn bruker du som standard «\<orgnavn\> eformidling», for eksempel «Digdir eformidling».
+5. Du får en **integrasjons-ID** (brukernavn) og et **passord**. Integrasjonen vises deretter i listen «Tilknyttede integrasjoner».
+![bilde5]({{site.baseurl}}/images/eformidling/FIKS_integrasjon2.png)
+
+==Viktig at en noterer seg Konto-ID, integrasjons-ID og passord! Passordet vises bare én gang, så det må kopieres og lagres med en gang.==
+
+> Merk: Det kan ta opp til fem minutter før endringer av kontoen vises i SvarUt.
+
+Ikke bruk «Basic Auth»-valget nederst på siden. Det gjelder bare for SOAP og REST v1.
+
 
 ### Konfigurering av SvarInn (mottakersystem)
 
