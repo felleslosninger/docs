@@ -543,11 +543,15 @@ KS SvarUt og SvarInn krever hver sin bruker:
 
 - [Opprette brukere i KS SvarUt og SvarInn](opprette_brukere#opprette-brukere-for-ks-svarut-og-svarinn)
 
+> NB! Innen 1. januar 2027 må alle kundar ha tatt i bruk [REST v2/v3](https://developers.fiks.ks.no/tjenester/svarut/avvikling-api/index.html) for SvarUt. Guiden over er oppdatert med fremgangsmåte. 
+
 | Egenskap                                         | Beskrivelse                                                                                                             | Standardverdi |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|---------------|
 | difi.move.feature.enableDPF                      | Slår på/av støtte for KS SvarUt og SvarInn                                                                              | false         |
-| difi.move.fiks.ut.username                       | Brukernavn for KS SvarUt (avsender)                                                                                     | (ingen)       |
-| difi.move.fiks.ut.password                       | Passord for KS SvarUt (avsender)                                                                                        | (ingen)       |
+| difi.move.fiks.ut.type                     | Slår på/av støtte for KS SvarUt og SvarInn                                                                              | ws         |
+| difi.move.fiks.ut.rest.kontoid                      | Konto-ID i FIKS Forvaltning                                                                             | (ingen)         |
+| difi.move.fiks.ut.rest.integrasjon-id                       | REST Brukernavn for KS SvarUt (avsender)                                                                                     | (ingen)       |
+| difi.move.fiks.ut.rest.integrasjon-passord                       | REST Passord for KS SvarUt (avsender)                                                                                        | (ingen)       |
 | difi.move.fiks.ut.konteringsKode                 | Kode som beskriver faktureringskonto for forsendelsen                                                                   | (ingen)       |
 | difi.move.fiks.ut.ekskluderesFraPrint            | Dette dokumentet blir ikke med i utskrift av forsendelsen. Brukes til filer som kun er interessant for digital levering. Ved å oppgi `*` ekskluderes alle filer bortsett fra PDF fra print. | (ingen)       |
 | difi.move.fiks.ut.kunDigitalLevering             | SvarUt leverer kun digitalt, ingen print og postlegging. Hvis dokumentet ikke kan leveres digital blir det ikke levert. | (ingen)       |
@@ -562,14 +566,16 @@ KS SvarUt og SvarInn krever hver sin bruker:
 | difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
 | difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
 
-Eksempel:
+Eksempel (oppdatert med REST v2/v3 10.11.2026):
 
 ```
 difi.move.feature.enableDPF=true
 difi.move.fiks.inn.username=myusername
 difi.move.fiks.inn.password=mypassword
-difi.move.fiks.ut.username=myusername2
-difi.move.fiks.ut.password=mypassword2
+difi.move.fiks.ut.type=rest
+difi.move.fiks.ut.rest.kontoid=mykontoid   
+difi.move.fiks.ut.rest.integrasjon-id=myintegrasjonid
+difi.move.fiks.ut.rest.integrasjon-passord=myintegrasjonpassword
 difi.move.fiks.inn.mailOnError=false
 ```
 
