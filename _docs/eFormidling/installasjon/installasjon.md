@@ -566,7 +566,7 @@ KS SvarUt og SvarInn krever hver sin bruker:
 | difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.username | Brukernavn for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)         | (ingen)       |
 | difi.move.fiks.inn.paa-vegne-av.&lt;orgnr&gt;.password | Passord  for SvarInn (mottakersystem) for virksomhet gitt organisasjonsnummer (flere virksomheter kan oppgis)           | (ingen)       |
 
-Eksempel (oppdatert med REST v2/v3 10.11.2026):
+Eksempel (oppdatert med REST v2/v3 - 10.11.2026):
 
 ```
 difi.move.feature.enableDPF=true
