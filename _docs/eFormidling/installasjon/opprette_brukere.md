@@ -133,7 +133,7 @@ SvarUt brukes nå via REST API (v2 eller nyere). Det krever at en oppretter en i
 
 ![bilde5]({{site.baseurl}}/images/eformidling/FIKS_integrasjon2.png)
 
-==Viktig at en noterer seg Konto-ID, integrasjons-ID og passord! Passordet vises bare én gang, så det må kopieres og lagres med en gang.==
+> Viktig at en noterer seg Konto-ID, integrasjons-ID og passord! Passordet vises bare én gang, så det må kopieres og lagres med en gang.
 
 > Merk: Det kan ta opp til fem minutter før endringer av kontoen vises i SvarUt.
 
