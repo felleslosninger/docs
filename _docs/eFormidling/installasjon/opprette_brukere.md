@@ -139,6 +139,8 @@ SvarUt brukes nå via REST API (v2 eller nyere). Det krever at en oppretter en i
 
 Ikke bruk «Basic Auth»-valget nederst på siden. Det gjelder bare for SOAP og REST v1.
 
+Hvordan disse legges inn i properties finner dere eksempel på [her](https://docs.digdir.no/docs/eFormidling/installasjon/installasjon#konfigurere-ks-svarut-og-svarinn-dpf)
+
 
 ### Konfigurering av SvarInn (mottakersystem)
 
