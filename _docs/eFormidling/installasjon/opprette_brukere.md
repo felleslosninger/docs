@@ -130,6 +130,7 @@ SvarUt brukes nå via REST API (v2 eller nyere). Det krever at en oppretter en i
 3. Under «Integrasjon (API-versjon REST v2 eller høyere)» klikker du **Opprett integrasjon**.
 4. Som navn bruker du som standard «\<orgnavn\> eformidling», for eksempel «Digdir eformidling».
 5. Du får en **integrasjons-ID** (brukernavn) og et **passord**. Integrasjonen vises deretter i listen «Tilknyttede integrasjoner».
+
 ![bilde5]({{site.baseurl}}/images/eformidling/FIKS_integrasjon2.png)
 
 ==Viktig at en noterer seg Konto-ID, integrasjons-ID og passord! Passordet vises bare én gang, så det må kopieres og lagres med en gang.==
