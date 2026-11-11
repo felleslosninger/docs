@@ -8,3 +8,5 @@ _pdf
 /.jekyll-cache/
 ehf.md
 ehf.md
+
+jekyll-serve.log
