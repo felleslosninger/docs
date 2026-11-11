@@ -23,4 +23,4 @@ No, you'll then have use two different Service Providers for that domain.
 3. Send the associated `client_id` to Digdir' service desk.
 4. The ELMA support team will then register the `client_id` on your user account.
 
-Foreign consumers have to use the EU flow (https://docs.digdir.no/docs/Maskinporten/maskinporten_func_european_eseals.html) in Maskinporten in which `client_id=<eidas-serial-number>`. This will rotate on certificate renewal, and has to be handled in the onboarding process.
+Foreign consumers have to use the [EU flow](https://docs.digdir.no/docs/Maskinporten/maskinporten_func_european_eseals.html) in Maskinporten in which `client_id=<eidas-serial-number>`. This will rotate on certificate renewal, and has to be handled in the onboarding process.
