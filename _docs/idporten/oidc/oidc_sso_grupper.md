@@ -1,7 +1,6 @@
 ---
 title: SSO-grupper i ID-porten
 description: Løsningsforslag til beslutning
-summary: Forslag om å gå fra av/på-SSO til tre SSO-modi, med begrenset SSO konfigurert per klient som første steg, og innspill ønskes på hvordan sesjoner på tvers av klienter skal evalueres.
 
 sidebar: oidc
 product: ID-porten
@@ -10,6 +9,24 @@ redirect_from: /idporten_sso_grupper
 
 ## 1. Sammendrag
 
+Digdir har besluttet å endre håndteringen av SSO i ID-porten.   Idag er default-oppførselen at alle tjenester deltar i felles SSO, men at enkelt-tjenester kan melde seg ut.   Denne standardoppførselen blir nå "snudd om", slik at ingen tjenester har SSO med andre, og at kunder må eksplisitt aktivere SSO for sin tjeneste (opt-in).  
+
+Endringen vil ha tilbakevirkende kraft for alle eksisterende tjenester,  etter en passende overgangsperiode.
+
+Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker å være med i en mindre SSO-gruppe.   Mekanismen for SSO-grupper er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning for sso-grupper.
+
+
+## 2. Hvorfor gjør vi dette ?
+
+Risikovurderinger viser at innbyggere i liten grad forstår at de logger inn til tusenvis av offenlige tjenester når de bruker ID-porten.  Det er en risiko for misbruk av "hengende sesjoner" på delte devicer (for eksempel publikums-PCer på bibliotek eller offentlige kontorer), eller målrettede phishing-angrep som utnytter SSO-mekanismen.  I nyere tid har løpske KI-agenter også blitt identifisert som en risiko for innbygger. 
+
+Dataanalyse viser at SSO i svært liten grad skjer idag.   Unntaket er kjente tjeneste-reiser mellom bestemte tjenester, eller kunder der tjenesten er realisert med mange mikrotjenester (for eksempel nav.no)
+
+
+## 2. Foreslått løsning for SSO-grupper
+
+
+En tjeneste kan enten delta i en stor felles-SSO, eller kan melde seg inn i mindre SSO-grupper.     enten til en stor felles-SSOtil at ingen tjenester har SSO til andre endres til å 
 ID-porten lar en bruker gjenbruke en eksisterende sesjon mot en annen klient (SSO). I dag er dette en grovkornet av/på-innstilling. Det finnes ingen måte å dele SSO med et avgrenset og eksplisitt sett med tjenester.
 
 Vi foreslår:
