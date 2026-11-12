@@ -25,16 +25,16 @@ Dataanalyse viser at SSO i svært liten grad skjer idag.   Unntaket er kjente tj
 
 ## 2. Foreslått løsning for SSO-grupper
 
+Vi foreslår overordnet:
 
-En tjeneste kan enten delta i en stor felles-SSO, eller kan melde seg inn i mindre SSO-grupper.     enten til en stor felles-SSOtil at ingen tjenester har SSO til andre endres til å 
-ID-porten lar en bruker gjenbruke en eksisterende sesjon mot en annen klient (SSO). I dag er dette en grovkornet av/på-innstilling. Det finnes ingen måte å dele SSO med et avgrenset og eksplisitt sett med tjenester.
+- et nytt felt for SSO-modi per klient, med 3 mulige verdier: `isolert`, `global` og `begrenset`,
+- `isolert` blir standard for nye klienter,
+- etter en overgangsperiode, vil alle eksisterende klienter som ikke har valgt sso-modi, bli satt til `isolert`
 
-Vi foreslår:
+Klienter som har `begrenset`,  deltar i gruppe(r).  Slike klienter må i tillegg konfigurere vha. selvbejetning:
 
-- tre SSO-modi per klient: **isolert**, **global** og **begrenset**,
-- at **isolert** blir standard for nye klienter,
-- at begrenset SSO realiseres ved at **hver klient angir hvilke andre klienter den tar imot SSO fra** («konfigurert på klient»). Det er en rask MVP som bygger på eksisterende klientkonfigurasjon,
-- at en klient med begrenset SSO kan velge **evalueringstype**, **strict** eller **lax**, som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6),
+- angi **hvilke andre klienter den tar imot SSO fra**.  
+- **evalueringstype** (`strict` eller `lax`) som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6),
 - at en sentralisert gruppemodell er vurdert, men **ikke tas videre nå** (kapittel 7).
 
 Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (kapittel 6). Vi ønsker også tilbakemelding på om det er behov for å kunne hviteliste hele organisasjoner via organisasjonsnummer (kapittel 5.2).
