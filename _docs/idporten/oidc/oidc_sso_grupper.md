@@ -13,53 +13,61 @@ Digdir har besluttet å endre håndteringen av SSO i ID-porten.   Idag er defaul
 
 Endringen vil ha tilbakevirkende kraft for alle eksisterende tjenester,  etter en passende overgangsperiode.
 
-Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker å være med i en mindre SSO-gruppe.   Mekanismen for SSO-grupper er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning for sso-grupper.
+Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker å være med i en mindre SSO-gruppe. Et slik behov har vært signallisert av flere kunder.  Mekanismen for SSO-grupper er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning.  
 
 
 ## 2. Hvorfor gjør vi dette ?
 
 Risikovurderinger viser at innbyggere i liten grad forstår at de logger inn til tusenvis av offenlige tjenester når de bruker ID-porten.  Det er en risiko for misbruk av "hengende sesjoner" på delte devicer (for eksempel publikums-PCer på bibliotek eller offentlige kontorer), eller målrettede phishing-angrep som utnytter SSO-mekanismen.  I nyere tid har løpske KI-agenter også blitt identifisert som en risiko for innbygger. 
 
-Dataanalyse viser at SSO i svært liten grad skjer idag.   Unntaket er kjente tjeneste-reiser mellom bestemte tjenester, eller kunder der tjenesten er realisert med mange mikrotjenester (for eksempel nav.no)
+Dataanalyse viser at SSO i svært liten grad skjer idag.   Unntaket er kjente tjeneste-reiser mellom bestemte tjenester, eller kunder der tjenesten er realisert med mange mikrotjenester (for eksempel nav.no).  Vår vurdering er at det er disse tjenestene som behøver SSO, som også må ta byrden ved gjøre tilpassinger for å beholde sin SSO-funksjonalitet. 
 
 
-## 2. Foreslått løsning for SSO-grupper
+## 3. Ny løsning for SSO
 
-Vi foreslår overordnet:
+Følgende overordnede punkter er besluttet:
 
-- et nytt felt for SSO-modi per klient, med 3 mulige verdier: `isolert`, `global` og `begrenset`,
-- `isolert` blir standard for nye klienter,
-- etter en overgangsperiode, vil alle eksisterende klienter som ikke har valgt sso-modi, bli satt til `isolert`
+1. et nytt felt for SSO-modi per klient, med 3 mulige verdier: `isolert`, `global` og `begrenset`
+2. `isolert` blir standard for nye klienter
+3. etter en overgangsperiode, vil alle eksisterende klienter som ikke har valgt sso-modi, bli satt til `isolert`
 
-Klienter som har `begrenset`,  deltar i gruppe(r).  Slike klienter må i tillegg konfigurere vha. selvbejetning:
+Det er flere måter å realisere gruppefunksjonalitet på.  Vi har evaluert flere alternativer, og foreslår varianten **"begrenset"**. For klienter med verdien `begrenset` må kunden i tillegg konfigurere gruppeoppførsel slik:
 
-- angi **hvilke andre klienter den tar imot SSO fra**.  
-- **evalueringstype** (`strict` eller `lax`) som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6),
-- at en sentralisert gruppemodell er vurdert, men **ikke tas videre nå** (kapittel 7).
+4. angi **hvilke andre klienter den tar imot SSO fra**.
+5. angi **evalueringstype** (`strict` eller `lax`) som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6)
+
+Følgende alternativ har vært vurdert:
+
+- begrenset SSO
+- Sentralisert gruppemodell
+- SSO-handover
+- bruk av OIDC `sector_id`
+
+Alternativene er nøyere beskrevet [i vedlegg]().
+
 
 Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (kapittel 6). Vi ønsker også tilbakemelding på om det er behov for å kunne hviteliste hele organisasjoner via organisasjonsnummer (kapittel 5.2).
 
-### Beslutning som ønskes
 
-1. At SSO-modellen i ID-porten endres fra av/på til tre eksplisitte modi: isolert, global og begrenset (kapittel 4).
-2. At isolert SSO blir standard for nyopprettede klienter.
-3. At begrenset SSO realiseres ved å konfigurere SSO-relasjoner på klient, og at sentralisert gruppemodell ikke tas videre nå (kapittel 5 og 7).
-4. Hvordan sesjoner som inneholder flere klienter skal evalueres. Forslaget er at klienten med begrenset SSO velger mellom strict (standard) og lax (kapittel 6).
 
-### Begreper
+Vi ber om innspill på:
 
-| Begrep | Betydning |
-|---|---|
-| **Tillitsgruppe** | Autentiseringsnivå i ID-porten, f.eks. «idporten», «ansattporten» eller «eidas». Har en av/på-innstilling for om SSO er tillatt. |
-| **Isolert SSO** | Klienten har egen SSO-sesjon og deler ikke SSO i noen retning. |
-| **Global SSO** | Klienten deltar i vanlig, delt SSO med enhver annen klient. |
-| **Begrenset SSO** | Klienten tar bare imot SSO fra klienter den eksplisitt har godkjent. |
-| **SSO-relasjon** | En godkjent klient (og senere eventuelt organisasjon) på en klient med begrenset SSO. Relasjonen er rettet. |
-| **Evalueringstype** | Innstilling på en klient med begrenset SSO som avgjør hvordan en sesjon med flere klienter vurderes: strict eller lax. |
-| **Strict** | Alle klienter i sesjonen må være SSO-relasjoner på klienten. |
-| **Lax** | Bare klienten som startet sesjonen må være SSO-relasjon på klienten. Mellomledd vurderes ikke. |
-| **SSO-gruppe** | Et eget, sentralt administrert objekt som samler klienter. Vurdert, men ikke valgt nå (kapittel 7). |
-| **SSO handover** | Mulig fremtidig utvidelse der kontekst kan sendes med ved SSO (kapittel 8). |
+
+
+## 4. Har Digdir vurdert andre løsninger ?
+
+Ja. 
+
+Vi har vurdert å fortsette som idag, men har besluttet at risikoen ikke er akseptabel.   Samtidig anerkjenner vi at dette er en stor endring, og at mange tjenester har et legitimt behov for SSO, som vi ønsker å tilfredstille.  Det er også tydelig at risikobildet og behovet er forskjellig mellom innbygger-tjenester (ID-porten) og ansatt-tjenester (Ansattporten) og med felles kildekodebase for de to portene må teknisk løsning klare å dekke begge behov.
+
+Det er mellomløsningen med grupper som er ...  Her har vi vurdert flere alternativ:
+
+- begrenset SSO.  foreslått løsning
+- sentralisert gruppemodell vært vurdert, men er ikke anbefalt per nå (kapittel 7).   Vi har også laget et forslag til **aktive SSO-overganger**, som vi vurderer å innføre senere dersom det er et sterkt ønske om det (kapittel XXXX).
+
+
+
+
 
 ## 2. Bakgrunn og dagens situasjon
 
@@ -114,13 +122,13 @@ graph TD
 
 | Modus | Forklaring |
 |---|---|
-| **Isolert SSO** | Egen, isolert sesjon. Brukeren må logge inn på nytt hos andre tjenester. Foreslås som ny standard for nye klienter. |
-| **Global SSO** | Vanlig, delt SSO med enhver annen klient. Dagens standardoppførsel, men foreslås ikke lenger som standard for nye klienter. |
-| **Begrenset SSO** (ny) | Klienten kan bruke SSO, men tar bare imot SSO fra eksplisitt godkjente klienter (SSO-relasjoner). |
+| `isolert`   | Egen, isolert sesjon. Brukeren må logge inn på nytt hos andre tjenester.  |
+| `global`    | Vanlig, delt SSO med enhver annen klient med samme modus. Dagens standardoppførsel. |
+| `begrenset` | Klienten kan få SSO fra eksplisitt godkjente klienter |
 
 Tre forhold gjelder for alle modiene:
 
-- **Tillitsgruppen overstyrer.** Dersom tillitsgruppen ikke tillater SSO, ignoreres klientens modus. Resultatet er ingen SSO, uansett om klienten er global eller isolert. Eneste unntak er begrenset modus: er klientkombinasjonen oppført på unntakslisten, kan SSO tillates likevel.
+- **Tillitsgruppen overstyrer.** Dersom tillitsgruppen ikke tillater SSO, ignoreres klientens modus.   For eksempel vil en bruker Resultatet er ingen SSO, uansett om klienten er global eller isolert. Eneste unntak er begrenset modus: er klientkombinasjonen oppført på unntakslisten, kan SSO tillates likevel.
 - **Begrenset SSO styrer bare hvem som slipper inn.** Den hindrer ikke at en klient med global SSO gjenbruker en sesjon som er opprettet mot den begrensede klienten.
 - **Isolerte klienter deltar aldri** i en delt sesjon.
 
@@ -340,3 +348,21 @@ Dette er en skisse til fase 3, ikke en ferdig spesifikasjon.
 - Eier av B kan gjengjelde med ett valg fra oversikten, la relasjonen være ensidig, eller legge til A på egen hånd med fritekst. Selvbetjeningen skal ikke kreve at relasjonen først er synlig som innkommende.
 - Eier av B kan ikke fjerne eller endre relasjonen A har lagt til. Den kan bare fjernes av eier av A.
 - Alle endringer logges i en changelog som viser hvem som gjorde endringen og når.
+
+
+
+### Begreper
+
+| Begrep | Betydning |
+|---|---|
+| **Tillitsgruppe** | Autentiseringsnivå i ID-porten, f.eks. «idporten», «ansattporten» eller «eidas». Har en av/på-innstilling for om SSO er tillatt. eID-løsningen innad i en tillitsgruppe bruker typisk samme identifikator for brukeren |
+| **Isolert SSO** | Klienten har egen SSO-sesjon og deler ikke SSO i noen retning. |
+| **Global SSO** | Klienten deltar i vanlig, delt SSO med enhver annen klient. |
+| **Begrenset SSO** | Klienten tar bare imot SSO fra klienter den eksplisitt har godkjent. |
+| **SSO-relasjon** | En godkjent klient (og senere eventuelt organisasjon) på en klient med begrenset SSO. Relasjonen er rettet. |
+| **Evalueringstype** | Innstilling på en klient med begrenset SSO som avgjør hvordan en sesjon med flere klienter vurderes: strict eller lax. |
+| **Strict** | Alle klienter i sesjonen må være SSO-relasjoner på klienten. |
+| **Lax** | Bare klienten som startet sesjonen må være SSO-relasjon på klienten. Mellomledd vurderes ikke. |
+| **SSO-gruppe** | Et eget, sentralt administrert objekt som samler klienter. Vurdert, men ikke valgt nå (kapittel 7). |
+| **SSO handover** | Mulig fremtidig utvidelse der kontekst kan sendes med ved SSO (kapittel 8). |
+    
