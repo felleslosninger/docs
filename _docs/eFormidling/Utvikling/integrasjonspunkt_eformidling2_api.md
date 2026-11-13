@@ -31,8 +31,9 @@ både små og store meldinger støttes. Det anbefales bare å implementere en av
 Ettstegs strategien medfører færre HTTP-forespørsler og er kanskje litt raskere å implementere. Ettstegs strategien
 er ment for små meldinger, mens flerstegs strategien er ment for store. De to strategiene gir for alle praktiske formål tilnærmet lik ytelse.
 
-Når en melding er sendt må implementasjonen vente på meldingsstatusen `LEVERT` før sending kan regnes som vellykket. Det
-er flere strategier for å følge med på meldingsstatuser. Disse er beskrevet for seg selv.
+Når en melding er sendt, må implementasjonen vente på meldingsstatusen `LEVERT` før sending kan regnes som vellykket. En sending kan imidlertid også feile etter at den har fått denne meldingsstatusen, for eksempel dersom post til utskrift kommer i retur. Da får den status `LEVETID_UTLOPT`.
+
+Det er flere strategier for å følge med på meldingsstatuser. Disse er beskrevet for seg selv.
 
 ### Ettstegs strategi for små meldinger
 
