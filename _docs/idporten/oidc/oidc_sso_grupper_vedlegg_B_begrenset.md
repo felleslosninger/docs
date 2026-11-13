@@ -49,7 +49,7 @@ SSO-relasjoner er enkle å resonnere om når to klienter vurderes isolert. Det b
 
 ### 6.1 Scenarioer og foreslått utfall
 
-Scenariene tar utganspunkt i innlogging i 3 klienter, A,B og C i denne rekkefølge.  Merk at denne analysen baserer seg på brukerinteraksjonen **sett fra ID-porten**. Brukeren selv kan selvsagt logge inn på A og deretter B, for så lokalt i egen browser gå tilbake til A og jobbe der før hen forsøker seg mot C direkte.  ID-porten kan ikke vite dette.
+Scenariene tar utganspunkt i innlogging i 3 klienter, A,B og C.  Merk at denne analysen baserer seg på brukerinteraksjonen **sett fra ID-porten**. Brukeren selv kan selvsagt logge inn på A og deretter B, for så lokalt i egen browser gå tilbake til A og jobbe der før hen forsøker seg mot C direkte.  ID-porten kan ikke vite dette.
 
 
 Strict og lax er en innstilling på klienten som evaluerer sesjonen (C i scenario 1–3, B i scenario 4–7). Se 6.3 for hva de to typene betyr. Kolonnene viser utfallet for hver type.
@@ -119,7 +119,7 @@ Nærmeste ledd (b) tas ikke med som valg, fordi det gir transitiv tillit uten å
 
 **Egenskaper**
 
-- Enklest å innføre teknisk. Ligner vanlig klientkonfigurasjon og krever ikke nytt administrasjonsobjekt eller ny rollemodell.
+- Begrenset SSO er enklest å innføre teknisk. Ligner vanlig klientkonfigurasjon og krever ikke nytt administrasjonsobjekt eller ny rollemodell.
 - Høy kontroll per klient, og godt egnet når det typisk er 2–3 klienter som skal kobles sammen.
 - Kan fungere som en rask MVP som lar oss høste erfaring med begrenset SSO.
 
