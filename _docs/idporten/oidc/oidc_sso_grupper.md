@@ -49,7 +49,7 @@ Følgende alternativ har vært vurdert:
 Alternativene er nøyere beskrevet i vedlegg lenket ovenfor.  Dagens løsning er dokumentert i [vedlegg A - Dagens løsning](oidc_sso_grupper_vedlegg_A_dagens).
 
 
-Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (vedl. B, kapittel 6). Vi ønsker også tilbakemelding på om det er behov for å kunne hviteliste hele organisasjoner via organisasjonsnummer (vedl B. kapittel 5.2).
+Dette dokumentet ber særlig om innspill på om "begrenset" er riktig valg.   Deretter synspunkter på selve "begrenset"-løsningen som **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (vedl. B, kapittel 6). Vi ønsker også tilbakemelding på om det er tilstrekkelig å kunne følge hele organisasjoner via organisasjonsnummer istedet for enkelt-klienter (vedl B. kapittel 5.2).
 
 
 
@@ -109,13 +109,12 @@ graph TD
 **Forvaltning**
 
 - Forvaltningen av ID-porten må støtte de nye modiene i klientregistrering.
-- Pilotordningen er midlertidig og bør ses i sammenheng med valgt løsning.
 
 ## 10. Videre arbeid
 
 Vi antar at vi vil følge en slik detaljert migreringsplan.  Det er p.t. ikke besluttet tidspunkter for de ulike fasene:
 
-- **Fase 0 (pågår nå):** Begrenset SSO som MVP med Vi har erfaring fra Skatt i ID-porten (eidas-innlogging) og interne selvbetjeningsløsninger i Ansattporten.
+- **Fase 0 (pågår nå):** Pilot på Begrenset SSO med Skatteetaten i ID-porten (eidas-innlogging) og interne selvbetjeningsløsninger i Ansattporten.
 - **Fase 1:** Innføre eksplisitt SSO-modus med tre valg. Gjøre isolert til standard for nye klienter. Eksisterende klienter beholder dagens konfigurasjon.
 - **Fase 2:** Selvbetjening for klienteier: eier kan selv legge til SSO-relasjoner
 - **Fase 3:** Eksisterende klienter som ikke har satt SSO-modus, blir satt til isolert.
