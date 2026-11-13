@@ -13,7 +13,7 @@ Digdir har besluttet å endre håndteringen av SSO i ID-porten.   Idag er defaul
 
 Endringen vil ha tilbakevirkende kraft for alle eksisterende tjenester,  etter en passende overgangsperiode.
 
-Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker å være med i en mindre SSO-gruppe. Et slik behov har vært signallisert av flere kunder.  Mekanismen for SSO-grupper er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning.  
+Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker å være med i en mindre SSO-gruppe. Behovet for grupper har vært signallisert av flere kunder.  Mekanismen for SSO-grupper er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning.  
 
 
 ## 2. Hvorfor gjør vi dette ?
@@ -37,25 +37,20 @@ Følgende overordnede punkter er besluttet:
 Det er flere måter å realisere gruppefunksjonalitet på.  Vi har evaluert flere alternativer, og foreslår varianten **"begrenset"**. For klienter med verdien `begrenset` må kunden i tillegg konfigurere gruppeoppførsel slik:
 
 4. angi **hvilke andre klienter den tar imot SSO fra**.
-5. angi **evalueringstype** (`strict` eller `lax`) som avgjør hvordan en sesjon som har vært innom flere klienter vurderes (kapittel 6)
+5. angi **evalueringstype** (`strict` eller `lax`) som avgjør hvordan en sesjon som har vært innom flere klienter vurderes
 
 Følgende alternativ har vært vurdert:
 
 - [begrenset SSO](oidc_sso_grupper_vedlegg_B_begrenset)
 - [Sentralisert gruppemodell](oidc_sso_grupper_vedlegg_C_sentralisert)
 - [SSO-handover](oidc_sso_grupper_vedlegg_D_handover)
-- bruk av OIDC `sector_id` standardfunksjonalitet
+- bruk av OIDC standardfunksjonalitet `sector_id`
 
 Alternativene er nøyere beskrevet i vedlegg lenket ovenfor.  Dagens løsning er dokumentert i [vedlegg A - Dagens løsning](oidc_sso_grupper_vedlegg_A_dagens).
 
 
-Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (kapittel 6). Vi ønsker også tilbakemelding på om det er behov for å kunne hviteliste hele organisasjoner via organisasjonsnummer (kapittel 5.2).
+Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon har vært innom flere klienter, på tvers av klienter med ulik konfigurasjon**, og på om evalueringstypene strict og lax er riktig måte å gjøre det konfigurerbart på (vedl. B, kapittel 6). Vi ønsker også tilbakemelding på om det er behov for å kunne hviteliste hele organisasjoner via organisasjonsnummer (vedl B. kapittel 5.2).
 
-
-
-## Dagens situasjon
-
-Se [vedlegg A](oidc_sso_grupper_vedlegg_A_dagens.html)
 
 
 ## Ny funksonalitet for SSO-modus
@@ -69,24 +64,22 @@ Vi har besluttet å innføre en ny klient-egenskap `sso_mode`, som styrer klient
 | `begrenset` | Klienten kan få SSO fra eksplisitt godkjente klienter |
 
 
-Uavhengig av modus, gjelder at **tillitsgruppen overstyrer.** Det er ikke mulig med SSO på tvers av tillitsgrupper. En eIDAS-bruker uten fødselsnummer kan ikke få SSO til en tjeneste som bare støtter fødselsnummer, selv om klient-kombinasjonen normalt ville tillatt SSO.  Ved slike overganger blir den gamle sso-sesjonen kastet, og det blir startet en ny.
+Uavhengig av modus, gjelder at **brukertypen overstyrer.** Det er ikke mulig med SSO på tvers av brukertyper. En eIDAS-bruker uten fødselsnummer kan ikke få SSO til en tjeneste som bare støtter fødselsnummer, selv om klient-kombinasjonen normalt ville tillatt SSO.  Ved slike overganger blir den gamle sso-sesjonen kastet, og det blir startet en ny.
 
 
 <div class="mermaid">
 graph TD
-    A[Bruker med sesjon fra Klient A kommer til Klient B] --> B{Tillater tillitsgruppen SSO?}
+    A[Bruker med sesjon fra Klient A kommer til Klient B] --> B{Tillater brukertypen SSO?}
     B -- Ja --> C{Hvilken SSO-modus har Klient B?}
     C -- Isolert --> X[Ingen SSO]
     C -- Global --> D[SSO tillatt]
     C -- Begrenset --> E{Er sesjonen godkjent etter Klient Bs evalueringstype, strict eller lax?}
     E -- Ja --> D
     E -- Nei --> X
-    B -- Nei --> F{Begrenset modus og oppført på unntaksliste? TA VEKK DENNE ?????}
-    F -- Ja --> E
     F -- Nei --> X
 </div>
 
-*Figur: Foreslått evalueringslogikk. Tillitsgruppekontrollen beholdes, men suppleres med et tredje, mer finkornet valg per klient.*
+*Figur: Foreslått evalueringslogikk.*
 
 | Modus | Fordeler | Ulemper |
 |---|---|---|
@@ -132,7 +125,7 @@ Vi antar at vi vil følge en slik detaljert migreringsplan.  Det er p.t. ikke be
 
 | Begrep | Betydning |
 |---|---|
-| **Tillitsgruppe** | Autentiseringsnivå i ID-porten, f.eks. «idporten», «ansattporten» eller «eidas». Har en av/på-innstilling for om SSO er tillatt. eID-løsningen innad i en tillitsgruppe bruker typisk samme identifikator for brukeren |
+| **Brukertype** | hvilken type identikator en bruker har.  teknisk hengerAutentiseringsnivå i ID-porten, f.eks. «idporten», «ansattporten» eller «eidas». Har en av/på-innstilling for om SSO er tillatt. eID-løsningen innad i en tillitsgruppe bruker typisk samme identifikator for brukeren |
 | **Isolert SSO** | Klienten har egen SSO-sesjon og deler ikke SSO i noen retning. |
 | **Global SSO** | Klienten deltar i vanlig, delt SSO med enhver annen klient. |
 | **Begrenset SSO** | Klienten tar bare imot SSO fra klienter den eksplisitt har godkjent. |
