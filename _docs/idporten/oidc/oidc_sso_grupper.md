@@ -55,7 +55,7 @@ Dette dokumentet ber særlig om innspill på **hva som skal skje når en sesjon 
 
 ## Dagens situasjon
 
-Se [vedlegg A](oidc_sso_grupper_vedlegg_A_dagens)
+Se [vedlegg A](oidc_sso_grupper_vedlegg_A_dagens.html)
 
 
 ## Ny funksonalitet for SSO-modus
@@ -65,7 +65,7 @@ Vi har besluttet å innføre en ny klient-egenskap `sso_mode`, som styrer klient
 | Modus | Forklaring |
 |---|---|
 | `isolert`   | Egen, isolert sesjon. Brukeren må logge inn på nytt hos andre tjenester.  |
-| `global`    | Vanlig, delt SSO med globale og isolerte klienter. |
+| `global`    | Vanlig, delt SSO med ikke-isolerte klienter |
 | `begrenset` | Klienten kan få SSO fra eksplisitt godkjente klienter |
 
 
@@ -81,7 +81,7 @@ graph TD
     C -- Begrenset --> E{Er sesjonen godkjent etter Klient Bs evalueringstype, strict eller lax?}
     E -- Ja --> D
     E -- Nei --> X
-    B -- Nei --> F{Begrenset modus og oppført på unntaksliste?}
+    B -- Nei --> F{Begrenset modus og oppført på unntaksliste? TA VEKK DENNE ?????}
     F -- Ja --> E
     F -- Nei --> X
 </div>
