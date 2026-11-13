@@ -76,7 +76,7 @@ graph TD
     C -- Begrenset --> E{Er sesjonen godkjent etter Klient Bs evalueringstype, strict eller lax?}
     E -- Ja --> D
     E -- Nei --> X
-    F -- Nei --> X
+    B -- Nei --> X
 </div>
 
 *Figur: Foreslått evalueringslogikk.*
