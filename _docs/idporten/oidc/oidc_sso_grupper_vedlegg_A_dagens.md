@@ -1,11 +1,15 @@
 ---
-title: SSO-grupper i ID-porten
+title: Vedlegg A: Dagnes SSO-funksjonalitet
 description: Løsningsforslag til beslutning
 
 sidebar: oidc
 product: ID-porten
 redirect_from: /idporten_sso_grupper_vedlegg_A_dagens
 ---
+
+Se også:
+- [SSO-håndtering](oidc_func_sso.html)
+- [isolert sso-sesjon](oidc_func_nosso)
 
 
 ## 2. Bakgrunn og dagens situasjon

@@ -1,5 +1,5 @@
 ---
-title: Sentralisert SSO-gruppe
+title: Vedlegg C: Sentralisert SSO-gruppe
 description: Løsningsforslag til beslutning
 
 sidebar: oidc
@@ -7,6 +7,9 @@ product: ID-porten
 redirect_from: /idporten_sso_grupper_vedlegg_C_sentralisert
 ---
 
+Dette er et av alternativene for løsning for [sso-grupper](oidc_sso_grupper).
+
+## Hva er sentralisert sso-gruppe ?
 
 Hver organisasjons administrator angir hvilke klient-id-er (og eventuelt senere organisasjonsnumre, se 5.2) som har lov til å dele SSO inn til klienten. Hver slik tillatelse er en SSO-relasjon. 
 
