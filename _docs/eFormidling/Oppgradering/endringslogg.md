@@ -29,6 +29,14 @@ redirect_from:
 
 06.11.2026
 
+- Endringer
+  - Støttetjenestene på `/manage` er strammet inn. Som standard er bare `health`, `info`, `metrics`, `prometheus`,
+    `caches`, `logfile` og `loggers` tilgjengelige
+  - **Berører deg som bruker KOSMOS (automatisk oppgradering):** `shutdown` er ikke lenger åpen som standard, og KOSMOS
+    klarer da ikke å stoppe integrasjonspunktet ved oppgradering. Legg til `shutdown` i
+    `management.endpoints.web.exposure.include` i `integrasjonspunkt-local.properties`. Se
+    [Åpne shutdown-endepunktet i integrasjonspunktet](../installasjon/automatisk_oppgradering#shutdown-endepunkt)
+
 - Feilretting
   - Oppstart feiler på MS SQL Server med over 2100 pollbare meldinger
 

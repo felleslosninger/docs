@@ -39,7 +39,9 @@ Automatisk oppgradering er i grove trekk slik:
 Konfigurasjon av automatisk oppgradering føreset:
 
 - [Installasjon av integrasjonspunktet](installasjon) og bruk av Java (vil ikkje fungera med Docker/Container)
-- [Støttetenestene er tilgjengelege i integrasjonspunktet](installasjon#støttetjenester)
+- Støttetenestene `info`, `health` og `shutdown` er tilgjengelege i integrasjonspunktet. Frå integrasjonspunkt v4.2.2
+  er ikkje `shutdown` open som standard, og **må opnast i `integrasjonspunkt-local.properties`**. Sjå
+  [Opna shutdown-endepunktet i integrasjonspunktet](#shutdown-endepunkt)
 - Java 21 for Kosmos v4. Kommandoen `java` må vera tilgjengeleg på PATH for brukaren som køyrer Kosmos, sidan Kosmos
   startar integrasjonspunktet med `java -jar`
 - Utgåande HTTPS (port 443) frå serveren til `github.com` og `raw.githubusercontent.com`. Kosmos hentar versjonsliste,
@@ -47,9 +49,34 @@ Konfigurasjon av automatisk oppgradering føreset:
   (`release-assets.githubusercontent.com`), som også må vera ope. Kosmos må nå GitHub kvar gong integrasjonspunktet
   skal startast, ikkje berre ved oppgradering
 
+## Opna shutdown-endepunktet i integrasjonspunktet
+{: #shutdown-endepunkt}
+
+Kosmos stoppar integrasjonspunktet via støttetenesta `/manage/shutdown` når det skal oppgraderast. Frå
+integrasjonspunkt v4.2.2 er berre `health`, `info`, `metrics`, `prometheus`, `caches`, `logfile` og `loggers` opne
+som standard. `shutdown` er ikkje med, og må opnast av deg.
+
+Denne innstillinga skal stå i **`integrasjonspunkt-local.properties`**, ikkje i `kosmos-local.properties`:
+
+```
+management.endpoints.web.exposure.include=health,info,metrics,prometheus,caches,logfile,loggers,shutdown
+```
+
+- Verdien erstattar standardverdien. Støttetenester du ikkje tek med i lista, vert utilgjengelege. Kosmos treng
+  `info`, `health` og `shutdown`.
+- Har du alt sett `management.endpoints.web.exposure.include` til ei eiga liste, legg til `shutdown` i den.
+- Start integrasjonspunktet på nytt etter endringa.
+
+Utan `shutdown` klarer ikkje Kosmos å stoppa integrasjonspunktet som køyrer. Den nye versjonen kan då ikkje starta,
+t.d. fordi porten eller databasen framleis er i bruk, og oppgraderinga feilar.
+
+Sjå også [Støttetenester](installasjon#støttetjenester) i installasjonsrettleiinga.
+
 ## Konfigurasjon
 
-Automatisk oppgradering av integrasjonspunktet vert konfigurert ved hjelp av ei konfigurasjonsfil.
+Automatisk oppgradering av integrasjonspunktet vert konfigurert ved hjelp av to konfigurasjonsfiler:
+`kosmos-local.properties` for Kosmos, og `integrasjonspunkt-local.properties` for
+[shutdown-endepunktet](#shutdown-endepunkt) i integrasjonspunktet.
 
 1. Start med å finna mappa integrasjonspunktet er installert i, til dømes `c:\integrasjonspunkt`
 2. Last så ned [kosmos-local.properties]({{site.baseurl}}/resources/eformidling/kosmos-local.txt) og lagra ho i mappa nemnd ovanfor
@@ -279,7 +306,7 @@ Dersom namnet på nøkkel-fila har vorte endra, eller brukarane ønskjer å legg
 
 ### Stopp av gammalt integrasjonspunkt
 
-Dersom valideringa av den nye versjonen passerer, vert eit ev. køyrande integrasjonspunkt stoppa via ein førespurnad til shutdown-endepunktet. Deretter sjekkar KOSMOS helse-endepunktet inntil status ikkje lenger returnerer “UP” eller operasjonen timar ut. Innstillingane ```kosmos.shutdown-retries``` og ```kosmos.shutdown-poll-interval-in-ms``` har sentrale rollar i denne funksjonaliteten. Dersom integrasjonspunktet ikkje stoppar innan det resulterande vindauget, loggar KOSMOS ei åtvaring om at den ikkje kunne stoppa integrasjonspunktet, og forsøker likevel å starta den nye versjonen. Det kan då henda at den nye versjonen ikkje startar, t.d. fordi porten eller databasen framleis er i bruk.
+Dersom valideringa av den nye versjonen passerer, vert eit ev. køyrande integrasjonspunkt stoppa via ein førespurnad til shutdown-endepunktet. Endepunktet må vera opna i integrasjonspunktet, sjå [Opna shutdown-endepunktet i integrasjonspunktet](#shutdown-endepunkt). Deretter sjekkar KOSMOS helse-endepunktet inntil status ikkje lenger returnerer “UP” eller operasjonen timar ut. Innstillingane ```kosmos.shutdown-retries``` og ```kosmos.shutdown-poll-interval-in-ms``` har sentrale rollar i denne funksjonaliteten. Dersom integrasjonspunktet ikkje stoppar innan det resulterande vindauget, loggar KOSMOS ei åtvaring om at den ikkje kunne stoppa integrasjonspunktet, og forsøker likevel å starta den nye versjonen. Det kan då henda at den nye versjonen ikkje startar, t.d. fordi porten eller databasen framleis er i bruk.
 
 ### Oppstart av ny versjon
 
@@ -360,6 +387,7 @@ spring.mail.port=<porten-på-servaren-din>
 ```
 
 #### Andre antakingar i oppsettet i denne seksjonen
+* `shutdown` er opna i integrasjonspunkt-local.properties, sjå [Opna shutdown-endepunktet i integrasjonspunktet](#shutdown-endepunkt)
 * KOSMOS og Integrasjonspunktet sine JAR-filer er plasserte i same mappe
 * Den offentlege nøkkelen til GPG-signeringssertifikat ligg i same mappe
 
