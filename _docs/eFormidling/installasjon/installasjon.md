@@ -433,25 +433,35 @@ server.port=80
 
 _Valgfritt_
 
-Integrasjonspunktet tilbyr en del støttetjenester som eksponerer helsestatus, konfigurasjon og annet som standard. Disse
-kan begrenses eller slås helt av dersom en ønsker dette.
+Integrasjonspunktet tilbyr en del støttetjenester som eksponerer helsestatus, konfigurasjon og annet. Fra v4.2.2 er
+bare et utvalg av disse tilgjengelige som standard. Listen kan utvides, begrenses eller slås helt av dersom en ønsker
+dette.
 
 - [Støttetjenester](../Selvhjelp/feilsoking#støttetjenester)
 
-| Egenskap                                  | Beskrivelse                                                                                       | Standardverdi |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------- |
-| management.endpoints.web.exposure.include | Angir hvilke støttetjenester som skal være tilgjengelige (`*` for alle eller kommaseparert liste) | \*            |
-| management.endpoint.health.show-details   | Angir om helseendepunktet skal vise detaljer utover enkel status (`always` eller `never`)         | always        |
+| Egenskap                                  | Beskrivelse                                                                                       | Standardverdi                                                                      |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| management.endpoints.web.exposure.include | Angir hvilke støttetjenester som skal være tilgjengelige (`*` for alle eller kommaseparert liste) | health,info,metrics,prometheus,caches,logfile,loggers (`*` til og med v4.2.1)      |
+| management.endpoint.health.show-details   | Angir om helseendepunktet skal vise detaljer utover enkel status (`always` eller `never`)         | always                                                                             |
 
-Dersom en skal bruke automatisk oppgradering av integrasjonspunktet krever dette at støttetjenestene `info`, `health` og
-`shutdown` er tilgjengelig.
+##### Automatisk oppgradering (KOSMOS) krever `shutdown`
+{: #støttetjenester-kosmos}
 
-Eksempel:
+[Automatisk oppgradering](automatisk_oppgradering) krever at støttetjenestene `info`, `health` og `shutdown` er
+tilgjengelige. KOSMOS stopper integrasjonspunktet via `/manage/shutdown` når det skal oppgraderes.
+
+**Fra v4.2.2 er ikke `shutdown` med i standardverdien.** Bruker du KOSMOS, må du derfor selv legge til `shutdown` i
+`integrasjonspunkt-local.properties`. Ellers klarer ikke KOSMOS å stoppe integrasjonspunktet, og oppgraderingen kan
+feile.
+
+Eksempel som beholder standardverdien og legger til `shutdown`:
 
 ```
-management.endpoints.web.exposure.include=info,health,shutdown
-management.endpoint.health.show-details=never
+management.endpoints.web.exposure.include=health,info,metrics,prometheus,caches,logfile,loggers,shutdown
 ```
+
+Verdien erstatter standardverdien. Støttetjenester du utelater fra listen, blir utilgjengelige. Start
+integrasjonspunktet på nytt etter endringen.
 
 #### E-post
 
