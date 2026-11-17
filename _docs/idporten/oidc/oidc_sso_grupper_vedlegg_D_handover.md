@@ -7,7 +7,7 @@ product: ID-porten
 redirect_from: /idporten_sso_grupper_vedlegg_D_handover
 ---
 
-Dette er et av alternativene for løsning for [sso-grupper](oidc_sso_grupper).
+Dette er et av alternativene for løsning for [begrenset SSO](oidc_sso_grupper).
 
 ## SSO handover
 

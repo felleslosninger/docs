@@ -1,5 +1,5 @@
 ---
-title: SSO-grupper i ID-porten
+title: Begrenset SSO
 description: Løsningsforslag til beslutning
 
 sidebar: oidc
@@ -13,7 +13,9 @@ Digdir har besluttet å endre håndteringen av SSO i ID-porten.   Idag er defaul
 
 Endringen vil ha tilbakevirkende kraft for alle eksisterende tjenester,  etter en passende overgangsperiode.
 
-Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker å være med i en mindre SSO-gruppe. Behovet for grupper har vært signallisert av flere kunder.  Mekanismen for SSO-grupper er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning.  
+Ved aktivering av SSO må kunden ta stilling til om tjenesten skal delta i én stor felles-SSO, eller om man heller foretrekker begrenset SSO med et utvalg andre tjenester. Behovet for begrenset SSO har vært signallisert av flere kunder.  Mekanismen for begrenset SSO er p.t. ikke besluttet, og vi ønsker tilbakemeldinger på foreslått løsning.  
+
+Begrenset SSO vil også åpne for SSO der det i dag ikke er mulig, for eksempel i Ansattporten og for brukere innlogget med eIDAS.
 
 
 ## 2. Hvorfor gjør vi dette ?
@@ -34,7 +36,7 @@ Følgende overordnede punkter er besluttet:
 2. `isolert` blir standard for nye klienter
 3. etter en overgangsperiode, vil alle eksisterende klienter som ikke har valgt sso-modi, bli satt til `isolert`
 
-Det er flere måter å realisere gruppefunksjonalitet på.  Vi har evaluert flere alternativer, og foreslår varianten **"begrenset"**. For klienter med verdien `begrenset` må kunden i tillegg konfigurere gruppeoppførsel slik:
+Det er flere måter å realisere dette på.  Vi har evaluert flere alternativer, og foreslår varianten **"begrenset"**. For klienter med verdien `begrenset` må kunden i tillegg konfigurere begrenset SSO slik:
 
 4. angi **hvilke andre klienter den tar imot SSO fra**.
 5. angi **evalueringstype** (`strict` eller `lax`) som avgjør hvordan en sesjon som har vært innom flere klienter vurderes
