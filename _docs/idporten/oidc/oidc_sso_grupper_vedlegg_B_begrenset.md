@@ -1,5 +1,5 @@
 ---
-title: Vedlegg B: Begrenset SSO
+title: "Vedlegg B: Begrenset SSO"
 description: Løsningsforslag til beslutning
 
 sidebar: oidc

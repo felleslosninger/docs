@@ -1,5 +1,5 @@
 ---
-title: Vedlegg D: Begrenset SSO
+title: "Vedlegg D: SSO-handover"
 description: Løsningsforslag til beslutning
 
 sidebar: oidc

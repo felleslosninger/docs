@@ -1,5 +1,5 @@
 ---
-title: Vedlegg C: Sentralisert SSO-gruppe
+title: "Vedlegg C: Sentralisert SSO-gruppe"
 description: Løsningsforslag til beslutning
 
 sidebar: oidc

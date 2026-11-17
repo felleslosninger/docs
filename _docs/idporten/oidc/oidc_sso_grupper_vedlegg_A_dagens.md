@@ -1,5 +1,5 @@
 ---
-title: Vedlegg A: Dagnes SSO-funksjonalitet
+title: "Vedlegg A: Dagens SSO-funksjonalitet"
 description: Løsningsforslag til beslutning
 
 sidebar: oidc
