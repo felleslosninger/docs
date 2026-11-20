@@ -17,14 +17,6 @@ Klienten må være enten  **PUBLIC**  eller  **CONFIDENTIAL**. (Blir satt i klie
 Om klienten ønsker å bruke  **code flow**, altså response_type  **code**, må den være  **CONFIDENTIAL**.
 
 
-## Autorisasjonskodeflyt
-
-### spm
-
-svar
-
-***
-
 ## Sertifikat
 
 Må vi anskaffe virksomhetssertifikat for å få etablert tilgang til ID-porten via OIDC?
