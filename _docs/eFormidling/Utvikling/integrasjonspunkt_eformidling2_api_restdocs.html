@@ -259,7 +259,7 @@
 <div class="openblock partintro">
 <div class="content">
 <div class="paragraph">
-<p>Version 0.0.0</p>
+<p>Version 4.2.3</p>
 </div>
 </div>
 </div>
@@ -439,9 +439,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -453,25 +450,25 @@ Content-Length: 710
 
 {
   "capabilities" : [ {
+    "documentTypes" : [ {
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding"
+    } ],
     "process" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-    "serviceIdentifier" : "DPO",
-    "documentTypes" : [ {
-      "type" : "arkivmelding",
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding"
-    } ]
+    "serviceIdentifier" : "DPO"
   }, {
-    "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
-    "serviceIdentifier" : "DPO",
     "documentTypes" : [ {
-      "type" : "arkivmelding_kvittering",
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering"
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering",
+      "type" : "arkivmelding_kvittering"
     }, {
-      "type" : "status",
-      "standard" : "urn:no:difi:arkivmelding:xsd::status"
+      "standard" : "urn:no:difi:arkivmelding:xsd::status",
+      "type" : "status"
     }, {
-      "type" : "feil",
-      "standard" : "urn:no:difi:arkivmelding:xsd::feil"
-    } ]
+      "standard" : "urn:no:difi:arkivmelding:xsd::feil",
+      "type" : "feil"
+    } ],
+    "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
+    "serviceIdentifier" : "DPO"
   } ]
 }</code></pre>
 </div>
@@ -499,9 +496,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -513,25 +507,25 @@ Content-Length: 710
 
 {
   "capabilities" : [ {
+    "documentTypes" : [ {
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding"
+    } ],
     "process" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-    "serviceIdentifier" : "DPO",
-    "documentTypes" : [ {
-      "type" : "arkivmelding",
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding"
-    } ]
+    "serviceIdentifier" : "DPO"
   }, {
-    "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
-    "serviceIdentifier" : "DPO",
     "documentTypes" : [ {
-      "type" : "arkivmelding_kvittering",
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering"
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering",
+      "type" : "arkivmelding_kvittering"
     }, {
-      "type" : "status",
-      "standard" : "urn:no:difi:arkivmelding:xsd::status"
+      "standard" : "urn:no:difi:arkivmelding:xsd::status",
+      "type" : "status"
     }, {
-      "type" : "feil",
-      "standard" : "urn:no:difi:arkivmelding:xsd::feil"
-    } ]
+      "standard" : "urn:no:difi:arkivmelding:xsd::feil",
+      "type" : "feil"
+    } ],
+    "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
+    "serviceIdentifier" : "DPO"
   } ]
 }</code></pre>
 </div>
@@ -559,9 +553,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -573,25 +564,25 @@ Content-Length: 710
 
 {
   "capabilities" : [ {
+    "documentTypes" : [ {
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding"
+    } ],
     "process" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-    "serviceIdentifier" : "DPO",
-    "documentTypes" : [ {
-      "type" : "arkivmelding",
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding"
-    } ]
+    "serviceIdentifier" : "DPO"
   }, {
-    "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
-    "serviceIdentifier" : "DPO",
     "documentTypes" : [ {
-      "type" : "arkivmelding_kvittering",
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering"
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding_kvittering",
+      "type" : "arkivmelding_kvittering"
     }, {
-      "type" : "status",
-      "standard" : "urn:no:difi:arkivmelding:xsd::status"
+      "standard" : "urn:no:difi:arkivmelding:xsd::status",
+      "type" : "status"
     }, {
-      "type" : "feil",
-      "standard" : "urn:no:difi:arkivmelding:xsd::feil"
-    } ]
+      "standard" : "urn:no:difi:arkivmelding:xsd::feil",
+      "type" : "feil"
+    } ],
+    "process" : "urn:no:difi:profile:arkivmelding:response:ver1.0",
+    "serviceIdentifier" : "DPO"
   } ]
 }</code></pre>
 </div>
@@ -619,9 +610,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -633,47 +621,47 @@ Content-Length: 1225
 
 {
   "capabilities" : [ {
+    "documentTypes" : [ {
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital"
+    } ],
+    "postAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
     "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
-    "serviceIdentifier" : "DPI",
-    "postAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "returnAddress" : {
+      "country" : "Norway",
       "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
       "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
     },
-    "documentTypes" : [ {
-      "type" : "digital",
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
-    } ]
+    "serviceIdentifier" : "DPI"
   }, {
-    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
-    "serviceIdentifier" : "DPI",
-    "postAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
-      "type" : "digital",
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
-    } ]
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital"
+    } ],
+    "postAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
+    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+    "returnAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
+    "serviceIdentifier" : "DPI"
   } ]
 }</code></pre>
 </div>
@@ -701,9 +689,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -715,47 +700,47 @@ Content-Length: 1225
 
 {
   "capabilities" : [ {
+    "documentTypes" : [ {
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital"
+    } ],
+    "postAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
     "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
-    "serviceIdentifier" : "DPI",
-    "postAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "returnAddress" : {
+      "country" : "Norway",
       "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
       "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
     },
-    "documentTypes" : [ {
-      "type" : "digital",
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
-    } ]
+    "serviceIdentifier" : "DPI"
   }, {
-    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
-    "serviceIdentifier" : "DPI",
-    "postAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
-      "type" : "digital",
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
-    } ]
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital"
+    } ],
+    "postAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
+    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+    "returnAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
+    "serviceIdentifier" : "DPI"
   } ]
 }</code></pre>
 </div>
@@ -783,9 +768,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -797,47 +779,47 @@ Content-Length: 1225
 
 {
   "capabilities" : [ {
+    "documentTypes" : [ {
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital"
+    } ],
+    "postAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
     "process" : "urn:no:difi:profile:digitalpost:info:ver1.0",
-    "serviceIdentifier" : "DPI",
-    "postAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "returnAddress" : {
+      "country" : "Norway",
       "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
       "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
     },
-    "documentTypes" : [ {
-      "type" : "digital",
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
-    } ]
+    "serviceIdentifier" : "DPI"
   }, {
-    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
-    "serviceIdentifier" : "DPI",
-    "postAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
-    "returnAddress" : {
-      "name" : "Kari Nordmann",
-      "street" : "Utsikten 1",
-      "postalCode" : "2900",
-      "postalArea" : "FJELLHEIMEN",
-      "country" : "Norway"
-    },
     "documentTypes" : [ {
-      "type" : "digital",
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital"
-    } ]
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital"
+    } ],
+    "postAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
+    "process" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+    "returnAddress" : {
+      "country" : "Norway",
+      "name" : "Kari Nordmann",
+      "postalArea" : "FJELLHEIMEN",
+      "postalCode" : "2900",
+      "street" : "Utsikten 1"
+    },
+    "serviceIdentifier" : "DPI"
   } ]
 }</code></pre>
 </div>
@@ -893,7 +875,7 @@ Content-Length: 1225
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>capabilities[].postAddress</code></p></td>
@@ -990,7 +972,7 @@ After the message is successfully downloaded, it should be deleted using the <a 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/eformidling/messages-in.png" alt="messages in" width="654" height="327">
+<img src="images/eformidling/messages-in.png" alt="messages in" width="679" height="325">
 </div>
 </div>
 <div class="sect2">
@@ -1021,9 +1003,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -1036,102 +1015,102 @@ Content-Length: 2744
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   }, {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-        "type" : "publisering",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
           "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+          "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+        "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+        "type" : "publisering",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "publisering" : {
       "orgnr" : "98765432"
     }
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -1158,9 +1137,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -1173,66 +1149,66 @@ Content-Length: 1627
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 1,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -1259,9 +1235,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -1274,102 +1247,102 @@ Content-Length: 2746
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   }, {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-        "type" : "publisering",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
           "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+          "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+        "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+        "type" : "publisering",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "publisering" : {
       "orgnr" : "98765432"
     }
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -1396,9 +1369,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -1411,66 +1381,66 @@ Content-Length: 1630
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   } ],
+  "empty" : false,
+  "first" : false,
+  "last" : true,
+  "number" : 3,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 30,
     "pageNumber" : 3,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 30,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 31,
-  "totalPages" : 4,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : false,
   "size" : 10,
-  "number" : 3,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 31,
+  "totalPages" : 4
 }</code></pre>
 </div>
 </div>
@@ -1510,7 +1480,7 @@ Content-Length: 1630
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>process</code></p></td>
@@ -1637,7 +1607,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -1711,7 +1681,7 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].publisering.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].publisering</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The publisering DPI business message</p></td>
 </tr>
@@ -1840,9 +1810,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -1854,36 +1821,36 @@ Content-Length: 1043
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-      "type" : "publisering",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "type" : "publisering",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "publisering" : {
     "orgnr" : "98765432"
@@ -1914,9 +1881,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -1928,36 +1892,36 @@ Content-Length: 1043
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-      "type" : "publisering",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "type" : "publisering",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "publisering" : {
     "orgnr" : "98765432"
@@ -2077,7 +2041,7 @@ Content-Length: 231
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on serviceIdentifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>process</code></p></td>
@@ -2192,7 +2156,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -2293,14 +2257,14 @@ Please note, that the message must be deleted from the queue, using <a href="#me
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/pop/9bb99d61-b9a5-4109-a1b3-961214a160f3' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/vnd.etsi.asic-e+zip'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/in/pop/9bb99d61-b9a5-4109-a1b3-961214a160f3 HTTP/1.1
 Accept: application/vnd.etsi.asic-e+zip
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
@@ -2310,9 +2274,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Disposition: attachment; filename=asic.zip
 Content-Type: application/vnd.etsi.asic-e+zip
 X-Content-Type-Options: nosniff
@@ -2323,14 +2284,13 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Length: 1151
 
-PK  MNC\               test ��b'� ,�I1��(������h6`��L��ɲ�(��Q�$�: k~������0J�|�
-�I�r�yo��0�i�4�%�P�Z�T�i�8{,��ʣ�W��c0F� ���Mr�Z��D�8�A��gk$I�d�z܄^J���1o��\{�:0)k�D���e���c�\�Xە+ƫ�ȝxv��
-�%�s���qd�-i�Ԛ3hҺ��d`��U�X�`=3��t|a
-S��Q����]�G�ү��ugS&amp;F}�K��JÀ2&lt;���Z �Ol���if�h�B��8:[ W�H_*�w�7��@��R�v���0|GG�h�e�;������M�
-�ސOC��q�f�[Vس�0��,�8w�������@�I�⬐u0��Qw�ѿ�!�荑�,-׶��ʮ��ɝr
-J�m�7r5GZ����ߠ;dWu&amp;,j�(P�H6�$�{�h����B�W ���=�n={�a�mG��f�~��C*c�;ЯR����9]�ğ�a�E$�����Fi���H��(�Rt�m���-»��eu�@���*�uS@�OI=�Zf��՛��p��'��R�U�1)y�,���X�:r��m� ���bѶ��^q`�_ T5UN4�K�̞�+����� �}c�*'�}��Z�DRѪy�E{Y��yѰ"��Z"����}ڋ��Oí,�g�𞦌^/�^Q�)�Ba �߃i�'�"��I�'.��Z���&lt;�!x�ٚ9a�J��&amp;���^6�:�Q�?����ʚC�f㦄�/H٤/%?;/���s�y!��@7���nFj#ۥ8L��t�u���6p⢚qu��]I���+�s�d?�����C���� *-}���|��KXQ_�_���M+�a��T,�7����.��D���_S:FN
-'��L^�\�|�˲s�usL���i�BE,J�f���H��iE�#��ٯaB���85z\�w�����1�&lt;US9��1,?�u��F��q���b�I�,�VR�WCY
-�$����PK�W�d     PK   MNC\�W�d                      testPK      2   7</code></pre>
+PK  oct]               test ��T�;���_MhJ�R��n�t1tF�S��2�*�s��J��ǵ�m�X�S&gt;��!Q׼w�==�Z���~M��6�ڟ�{	��
+�����%E���1��X�e����_�n3�������4i�������Ѱ�����,f�Lʶ�B!~�l�
+A�`d��uE�c�:m&amp;��cIX*$�;X�e���E�Q!.�:KW��	�ؓ�e;��3=��N�I����r6 �(PRf���'��8�&lt;M9ڒ�a��+��U���3�S���n��%&amp;uH����Pֺۉm�]���L-g�ҵ"S�.���FF�{ײ��g.��[Qq|�����;;Uהt�v�xX�8��yJ�FM��$#��s�Hw����N1��‗���/����Q�ðz�1UT�hJ_�?�w��ַ���rM�1�{'����v��23f&lt;Y���Jt�{HmH�f��I��u��CP�[��U,%���~�s	�,��hդ�]�J�Z�@��OJI��ݱ����&gt;Cʸ����b���b�2�"����E^Zr%ň��3oZ�*V�'�����j2�$7��=K�\W����̟�kyJ���WA�3�9��t��YrK����Y�o\�ҤB�M5����t��V���*���n(]��� ���}�B��x�I�'����)���?����i��&amp;�%U���k(���N�v�����W����E���=�&lt;A�ǴEd��&lt;��U���
+Ye�d��x�:�����i�C݌����c�j�c�~�����~�u6+|��Ɏ��:�]`�u�!�B��?U���Z�M�b*�5���޸�|@6������϶F����O/[������θ$�xV�UK�������EY
+�'�tL-�ջm%�ɔ���vZ�M5~.�m�X��
+e�*��r���@?�ϟ����&amp;B;ۡ�,�œ��|�l+�J�'�'�-�H)���
+��n,j&gt;LXg�d�ٖ�u�NPK��+H     PK   oct]��+H                      testPK      2   7</code></pre>
 </div>
 </div>
 </div>
@@ -2372,14 +2332,14 @@ J�m�7r5GZ����ߠ;dWu&amp;,j�(P�H6�$�{�h����B�
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/in/9bb99d61-b9a5-4109-a1b3-961214a160f3' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/in/9bb99d61-b9a5-4109-a1b3-961214a160f3 HTTP/1.1
 Accept: application/json
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
@@ -2389,9 +2349,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -2403,36 +2360,36 @@ Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -2572,7 +2529,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -2658,7 +2615,7 @@ echoed back in a subsequent response.</p></td>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/eformidling/create-message.png" alt="create message" width="749" height="619">
+<img src="images/eformidling/create-message.png" alt="create message" width="780" height="615">
 </div>
 </div>
 <div class="sect2">
@@ -2688,9 +2645,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -2703,114 +2657,114 @@ Content-Length: 3200
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   }, {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
-        "type" : "digital",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+          "instanceIdentifier" : "2af1470e-4960-47e7-b9f2-6ce26933319d",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "1fb2b0b2-a464-4e63-a72c-c3b5a0f6e7f7",
+        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+        "type" : "digital",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "digital" : {
-      "sikkerhetsnivaa" : 4,
-      "hoveddokument" : "kafka_quotes.txt",
-      "tittel" : "Kafka quotes",
-      "spraak" : "en",
       "digitalPostInfo" : {
-        "virkningsdato" : "2019-04-01",
-        "aapningskvittering" : true
+        "aapningskvittering" : true,
+        "virkningsdato" : "2019-04-01"
       },
+      "hoveddokument" : "kafka_quotes.txt",
+      "metadataFiler" : { },
+      "sikkerhetsnivaa" : 4,
+      "spraak" : "en",
+      "tittel" : "Kafka quotes",
       "varsler" : {
         "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
         "smsTekst" : "A book must be the axe for the frozen sea within us."
-      },
-      "metadataFiler" : { }
+      }
     }
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -2837,9 +2791,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -2852,66 +2803,66 @@ Content-Length: 1627
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 1,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -2938,9 +2889,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -2953,114 +2901,114 @@ Content-Length: 3202
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-        "type" : "arkivmelding",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
           "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+          "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+        "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+        "type" : "arkivmelding",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "arkivmelding" : {
       "hoveddokument" : "before_the_law.txt"
     }
   }, {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
-        "type" : "digital",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+          "instanceIdentifier" : "2af1470e-4960-47e7-b9f2-6ce26933319d",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "1fb2b0b2-a464-4e63-a72c-c3b5a0f6e7f7",
+        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+        "type" : "digital",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "digital" : {
-      "sikkerhetsnivaa" : 4,
-      "hoveddokument" : "kafka_quotes.txt",
-      "tittel" : "Kafka quotes",
-      "spraak" : "en",
       "digitalPostInfo" : {
-        "virkningsdato" : "2019-04-01",
-        "aapningskvittering" : true
+        "aapningskvittering" : true,
+        "virkningsdato" : "2019-04-01"
       },
+      "hoveddokument" : "kafka_quotes.txt",
+      "metadataFiler" : { },
+      "sikkerhetsnivaa" : 4,
+      "spraak" : "en",
+      "tittel" : "Kafka quotes",
       "varsler" : {
         "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
         "smsTekst" : "A book must be the axe for the frozen sea within us."
-      },
-      "metadataFiler" : { }
+      }
     }
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -3087,9 +3035,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -3102,78 +3047,78 @@ Content-Length: 2050
 {
   "content" : [ {
     "standardBusinessDocumentHeader" : {
-      "headerVersion" : "1.0",
-      "sender" : [ {
-        "identifier" : {
-          "value" : "0192:910077473",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "receiver" : [ {
-        "identifier" : {
-          "value" : "0192:910075918",
-          "authority" : "iso6523-actorid-upis"
-        }
-      } ],
-      "documentIdentification" : {
-        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
-        "typeVersion" : "1.0",
-        "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
-        "type" : "digital",
-        "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-      },
       "businessScope" : {
         "scope" : [ {
-          "type" : "ConversationId",
-          "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
           "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+          "instanceIdentifier" : "2af1470e-4960-47e7-b9f2-6ce26933319d",
           "scopeInformation" : [ {
             "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-          } ]
+          } ],
+          "type" : "ConversationId"
         } ]
-      }
+      },
+      "documentIdentification" : {
+        "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+        "instanceIdentifier" : "1fb2b0b2-a464-4e63-a72c-c3b5a0f6e7f7",
+        "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+        "type" : "digital",
+        "typeVersion" : "1.0"
+      },
+      "headerVersion" : "1.0",
+      "receiver" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910075918"
+        }
+      } ],
+      "sender" : [ {
+        "identifier" : {
+          "authority" : "iso6523-actorid-upis",
+          "value" : "0192:910077473"
+        }
+      } ]
     },
     "digital" : {
-      "sikkerhetsnivaa" : 4,
-      "hoveddokument" : "kafka_quotes.txt",
-      "tittel" : "Kafka quotes",
-      "spraak" : "en",
       "digitalPostInfo" : {
-        "virkningsdato" : "2019-04-01",
-        "aapningskvittering" : true
+        "aapningskvittering" : true,
+        "virkningsdato" : "2019-04-01"
       },
+      "hoveddokument" : "kafka_quotes.txt",
+      "metadataFiler" : { },
+      "sikkerhetsnivaa" : 4,
+      "spraak" : "en",
+      "tittel" : "Kafka quotes",
       "varsler" : {
         "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
         "smsTekst" : "A book must be the axe for the frozen sea within us."
-      },
-      "metadataFiler" : { }
+      }
     }
   } ],
+  "empty" : false,
+  "first" : false,
+  "last" : false,
+  "number" : 3,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 30,
     "pageNumber" : 3,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 30,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 41,
-  "totalPages" : 5,
-  "last" : false,
-  "numberOfElements" : 1,
-  "first" : false,
   "size" : 10,
-  "number" : 3,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 41,
+  "totalPages" : 5
 }</code></pre>
 </div>
 </div>
@@ -3217,7 +3162,7 @@ Content-Length: 2050
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
@@ -3340,7 +3285,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -3414,7 +3359,7 @@ echoed back in a subsequent response.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the attachment that is the main document. Especially when there are more than one attachment, there is a need to know which document is the main one. Should only be specified for DPF.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].digital</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Object</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The digital DPI business message</p></td>
 </tr>
@@ -3572,14 +3517,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3 HTTP/1.1
 Accept: application/json
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
@@ -3589,9 +3534,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -3603,36 +3545,36 @@ Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -3770,7 +3712,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -3907,35 +3849,35 @@ Business Document.</p>
     -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -3955,35 +3897,35 @@ Host: localhost:8080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -3995,9 +3937,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -4009,36 +3948,36 @@ Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -4165,7 +4104,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove message type.
 Must not be null</p></td>
 </tr>
@@ -4195,7 +4134,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, ParentId, SenderRef, ReceiverRef, MessageChannel.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -4354,7 +4293,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -4455,50 +4394,50 @@ echoed back in a subsequent response.</p></td>
     -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
-      "type" : "digital"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+        "instanceIdentifier" : "2af1470e-4960-47e7-b9f2-6ce26933319d",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "1fb2b0b2-a464-4e63-a72c-c3b5a0f6e7f7",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "digital" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
-    "tittel" : "Kafka quotes",
-    "spraak" : "en",
     "digitalPostInfo" : {
-      "virkningsdato" : "2019-04-01",
-      "aapningskvittering" : true
+      "aapningskvittering" : true,
+      "virkningsdato" : "2019-04-01"
     },
+    "hoveddokument" : "kafka_quotes.txt",
+    "metadataFiler" : { },
+    "sikkerhetsnivaa" : 4,
+    "spraak" : "en",
+    "tittel" : "Kafka quotes",
     "varsler" : {
       "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
       "smsTekst" : "A book must be the axe for the frozen sea within us."
-    },
-    "metadataFiler" : { }
+    }
   }
 }'</code></pre>
 </div>
@@ -4515,50 +4454,50 @@ Host: localhost:8080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
-      "type" : "digital"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+        "instanceIdentifier" : "2af1470e-4960-47e7-b9f2-6ce26933319d",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "1fb2b0b2-a464-4e63-a72c-c3b5a0f6e7f7",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "digital" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
-    "tittel" : "Kafka quotes",
-    "spraak" : "en",
     "digitalPostInfo" : {
-      "virkningsdato" : "2019-04-01",
-      "aapningskvittering" : true
+      "aapningskvittering" : true,
+      "virkningsdato" : "2019-04-01"
     },
+    "hoveddokument" : "kafka_quotes.txt",
+    "metadataFiler" : { },
+    "sikkerhetsnivaa" : 4,
+    "spraak" : "en",
+    "tittel" : "Kafka quotes",
     "varsler" : {
       "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
       "smsTekst" : "A book must be the axe for the frozen sea within us."
-    },
-    "metadataFiler" : { }
+    }
   }
 }</code></pre>
 </div>
@@ -4567,9 +4506,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -4581,51 +4517,51 @@ Content-Length: 1475
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "4e06f780-cdae-421d-8e53-5fc3cd1333bd",
-      "type" : "digital",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "82d463f7-460d-40ec-ae80-20eacb12219f",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+        "instanceIdentifier" : "2af1470e-4960-47e7-b9f2-6ce26933319d",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "1fb2b0b2-a464-4e63-a72c-c3b5a0f6e7f7",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital",
+      "type" : "digital",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "digital" : {
-    "sikkerhetsnivaa" : 4,
-    "hoveddokument" : "kafka_quotes.txt",
-    "tittel" : "Kafka quotes",
-    "spraak" : "en",
     "digitalPostInfo" : {
-      "virkningsdato" : "2019-04-01",
-      "aapningskvittering" : true
+      "aapningskvittering" : true,
+      "virkningsdato" : "2019-04-01"
     },
+    "hoveddokument" : "kafka_quotes.txt",
+    "metadataFiler" : { },
+    "sikkerhetsnivaa" : 4,
+    "spraak" : "en",
+    "tittel" : "Kafka quotes",
     "varsler" : {
       "epostTekst" : "Many a book is like a key to unknown chambers within the castle of one’s own self.",
       "smsTekst" : "A book must be the axe for the frozen sea within us."
-    },
-    "metadataFiler" : { }
+    }
   }
 }</code></pre>
 </div>
@@ -4749,7 +4685,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove message type.
 Must not be null</p></td>
 </tr>
@@ -4779,7 +4715,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, ParentId, SenderRef, ReceiverRef, MessageChannel.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -4998,7 +4934,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -5149,40 +5085,40 @@ echoed back in a subsequent response.</p></td>
     -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "fbf8f637-f588-43fb-85a3-05b88cf551f0",
-      "type" : "digital_dpv"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "4166da2f-bf6b-4645-b400-9a93eb024cd1",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+        "instanceIdentifier" : "a6520fca-6e41-45e2-af91-f5f6c9524bfe",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "60b66804-4c62-47f4-96f1-99ec88cb93c4",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
+      "type" : "digital_dpv",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "digital_dpv" : {
-    "tittel" : "Our winters",
-    "sammendrag" : "A quote from Franz Kafka's The Castle",
-    "innhold" : "Our winters are very long here, very long and very monotonous. But we don't complain about it downstairs, we're shielded against the winter. Oh, spring does come eventually, and summer, and they last for a while, but now, looking back, spring and summer seem too short, as if they were not much more than a couple of days, and even on those days, no matter how lovely the day, it still snows occasionally."
+    "innhold" : "Our winters are very long here, very long and very monotonous. But we don'\''t complain about it downstairs, we'\''re shielded against the winter. Oh, spring does come eventually, and summer, and they last for a while, but now, looking back, spring and summer seem too short, as if they were not much more than a couple of days, and even on those days, no matter how lovely the day, it still snows occasionally.",
+    "sammendrag" : "A quote from Franz Kafka'\''s The Castle",
+    "tittel" : "Our winters"
   }
 }'</code></pre>
 </div>
@@ -5199,40 +5135,40 @@ Host: localhost:8080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "fbf8f637-f588-43fb-85a3-05b88cf551f0",
-      "type" : "digital_dpv"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "4166da2f-bf6b-4645-b400-9a93eb024cd1",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+        "instanceIdentifier" : "a6520fca-6e41-45e2-af91-f5f6c9524bfe",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "60b66804-4c62-47f4-96f1-99ec88cb93c4",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
+      "type" : "digital_dpv",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "digital_dpv" : {
-    "tittel" : "Our winters",
+    "innhold" : "Our winters are very long here, very long and very monotonous. But we don't complain about it downstairs, we're shielded against the winter. Oh, spring does come eventually, and summer, and they last for a while, but now, looking back, spring and summer seem too short, as if they were not much more than a couple of days, and even on those days, no matter how lovely the day, it still snows occasionally.",
     "sammendrag" : "A quote from Franz Kafka's The Castle",
-    "innhold" : "Our winters are very long here, very long and very monotonous. But we don't complain about it downstairs, we're shielded against the winter. Oh, spring does come eventually, and summer, and they last for a while, but now, looking back, spring and summer seem too short, as if they were not much more than a couple of days, and even on those days, no matter how lovely the day, it still snows occasionally."
+    "tittel" : "Our winters"
   }
 }</code></pre>
 </div>
@@ -5241,9 +5177,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -5255,41 +5188,41 @@ Content-Length: 1541
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "fbf8f637-f588-43fb-85a3-05b88cf551f0",
-      "type" : "digital_dpv",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "4166da2f-bf6b-4645-b400-9a93eb024cd1",
         "identifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+        "instanceIdentifier" : "a6520fca-6e41-45e2-af91-f5f6c9524bfe",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "60b66804-4c62-47f4-96f1-99ec88cb93c4",
+      "standard" : "urn:no:difi:digitalpost:xsd:digital::digital_dpv",
+      "type" : "digital_dpv",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "digital_dpv" : {
-    "tittel" : "Our winters",
+    "innhold" : "Our winters are very long here, very long and very monotonous. But we don't complain about it downstairs, we're shielded against the winter. Oh, spring does come eventually, and summer, and they last for a while, but now, looking back, spring and summer seem too short, as if they were not much more than a couple of days, and even on those days, no matter how lovely the day, it still snows occasionally.",
     "sammendrag" : "A quote from Franz Kafka's The Castle",
-    "innhold" : "Our winters are very long here, very long and very monotonous. But we don't complain about it downstairs, we're shielded against the winter. Oh, spring does come eventually, and summer, and they last for a while, but now, looking back, spring and summer seem too short, as if they were not much more than a couple of days, and even on those days, no matter how lovely the day, it still snows occasionally."
+    "tittel" : "Our winters"
   }
 }</code></pre>
 </div>
@@ -5413,7 +5346,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove message type.
 Must not be null</p></td>
 </tr>
@@ -5443,7 +5376,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, ParentId, SenderRef, ReceiverRef, MessageChannel.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -5614,7 +5547,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -5725,64 +5658,64 @@ echoed back in a subsequent response.</p></td>
     -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "dcc3c9a4-587c-4853-afcc-2951ed1c3828",
-      "type" : "print"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "161135ea-d1e3-48f0-9519-24415fa0222a",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+        "instanceIdentifier" : "75d1e79a-d732-4d72-85a7-8b8781e5e88c",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "37d4a26d-34e5-4dc9-8b93-885837a81c01",
+      "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
+      "type" : "print",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "print" : {
     "hoveddokument" : "kafka_quotes.txt",
     "mottaker" : {
-      "navn" : "Ola Nordmann",
       "adresselinje1" : "Langtoppilia 1",
       "adresselinje2" : "",
       "adresselinje3" : "",
       "adresselinje4" : "",
+      "land" : "Norway",
+      "navn" : "Ola Nordmann",
       "postnummer" : "9999",
-      "poststed" : "FJELL",
-      "land" : "Norway"
+      "poststed" : "FJELL"
     },
-    "utskriftsfarge" : "FARGE",
     "posttype" : "A_PRIORITERT",
+    "printinstruksjoner" : { },
     "retur" : {
       "mottaker" : {
-        "navn" : "Fjellheimen kommune",
         "adresselinje1" : "Luftigveien 1",
         "adresselinje2" : "",
         "adresselinje3" : "",
         "adresselinje4" : "",
+        "land" : "Norway",
+        "navn" : "Fjellheimen kommune",
         "postnummer" : "9999",
-        "poststed" : "FJELL",
-        "land" : "Norway"
+        "poststed" : "FJELL"
       },
       "returhaandtering" : "DIREKTE_RETUR"
     },
-    "printinstruksjoner" : { }
+    "utskriftsfarge" : "FARGE"
   }
 }'</code></pre>
 </div>
@@ -5799,64 +5732,64 @@ Host: localhost:8080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "dcc3c9a4-587c-4853-afcc-2951ed1c3828",
-      "type" : "print"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "161135ea-d1e3-48f0-9519-24415fa0222a",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+        "instanceIdentifier" : "75d1e79a-d732-4d72-85a7-8b8781e5e88c",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "37d4a26d-34e5-4dc9-8b93-885837a81c01",
+      "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
+      "type" : "print",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "print" : {
     "hoveddokument" : "kafka_quotes.txt",
     "mottaker" : {
-      "navn" : "Ola Nordmann",
       "adresselinje1" : "Langtoppilia 1",
       "adresselinje2" : "",
       "adresselinje3" : "",
       "adresselinje4" : "",
+      "land" : "Norway",
+      "navn" : "Ola Nordmann",
       "postnummer" : "9999",
-      "poststed" : "FJELL",
-      "land" : "Norway"
+      "poststed" : "FJELL"
     },
-    "utskriftsfarge" : "FARGE",
     "posttype" : "A_PRIORITERT",
+    "printinstruksjoner" : { },
     "retur" : {
       "mottaker" : {
-        "navn" : "Fjellheimen kommune",
         "adresselinje1" : "Luftigveien 1",
         "adresselinje2" : "",
         "adresselinje3" : "",
         "adresselinje4" : "",
+        "land" : "Norway",
+        "navn" : "Fjellheimen kommune",
         "postnummer" : "9999",
-        "poststed" : "FJELL",
-        "land" : "Norway"
+        "poststed" : "FJELL"
       },
       "returhaandtering" : "DIREKTE_RETUR"
     },
-    "printinstruksjoner" : { }
+    "utskriftsfarge" : "FARGE"
   }
 }</code></pre>
 </div>
@@ -5865,9 +5798,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -5879,65 +5809,65 @@ Content-Length: 1768
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "dcc3c9a4-587c-4853-afcc-2951ed1c3828",
-      "type" : "print",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "161135ea-d1e3-48f0-9519-24415fa0222a",
         "identifier" : "urn:no:difi:profile:digitalpost:vedtak:ver1.0",
+        "instanceIdentifier" : "75d1e79a-d732-4d72-85a7-8b8781e5e88c",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "37d4a26d-34e5-4dc9-8b93-885837a81c01",
+      "standard" : "urn:no:difi:digitalpost:xsd:fysisk::print",
+      "type" : "print",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "print" : {
     "hoveddokument" : "kafka_quotes.txt",
     "mottaker" : {
-      "navn" : "Ola Nordmann",
       "adresselinje1" : "Langtoppilia 1",
       "adresselinje2" : "",
       "adresselinje3" : "",
       "adresselinje4" : "",
+      "land" : "Norway",
+      "navn" : "Ola Nordmann",
       "postnummer" : "9999",
-      "poststed" : "FJELL",
-      "land" : "Norway"
+      "poststed" : "FJELL"
     },
-    "utskriftsfarge" : "FARGE",
     "posttype" : "A_PRIORITERT",
+    "printinstruksjoner" : { },
     "retur" : {
       "mottaker" : {
-        "navn" : "Fjellheimen kommune",
         "adresselinje1" : "Luftigveien 1",
         "adresselinje2" : "",
         "adresselinje3" : "",
         "adresselinje4" : "",
+        "land" : "Norway",
+        "navn" : "Fjellheimen kommune",
         "postnummer" : "9999",
-        "poststed" : "FJELL",
-        "land" : "Norway"
+        "poststed" : "FJELL"
       },
       "returhaandtering" : "DIREKTE_RETUR"
     },
-    "printinstruksjoner" : { }
+    "utskriftsfarge" : "FARGE"
   }
 }</code></pre>
 </div>
@@ -6061,7 +5991,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove message type.
 Must not be null</p></td>
 </tr>
@@ -6091,7 +6021,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, ParentId, SenderRef, ReceiverRef, MessageChannel.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -6388,7 +6318,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -6586,39 +6516,39 @@ echoed back in a subsequent response.</p></td>
     -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "6ef1d6ee-ea5e-4bf8-86ba-a7e6bdfcff12",
-      "type" : "innsynskrav"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "ded72e9a-5e36-4e22-9724-748a1cc84b97",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+        "instanceIdentifier" : "01738c15-d4ad-4d36-9257-4b8c372548f6",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "efac0490-8a0e-46bd-90a5-cb237ea86080",
+      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
+      "type" : "innsynskrav",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "innsynskrav" : {
-    "orgnr" : "98765432",
-    "epost" : "doofenshmirtz@evil.inc"
+    "epost" : "doofenshmirtz@evil.inc",
+    "orgnr" : "98765432"
   }
 }'</code></pre>
 </div>
@@ -6635,39 +6565,39 @@ Host: localhost:8080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "6ef1d6ee-ea5e-4bf8-86ba-a7e6bdfcff12",
-      "type" : "innsynskrav"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "ded72e9a-5e36-4e22-9724-748a1cc84b97",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+        "instanceIdentifier" : "01738c15-d4ad-4d36-9257-4b8c372548f6",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "efac0490-8a0e-46bd-90a5-cb237ea86080",
+      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
+      "type" : "innsynskrav",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "innsynskrav" : {
-    "orgnr" : "98765432",
-    "epost" : "doofenshmirtz@evil.inc"
+    "epost" : "doofenshmirtz@evil.inc",
+    "orgnr" : "98765432"
   }
 }</code></pre>
 </div>
@@ -6676,9 +6606,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -6690,40 +6617,40 @@ Content-Length: 1083
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "6ef1d6ee-ea5e-4bf8-86ba-a7e6bdfcff12",
-      "type" : "innsynskrav",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "ded72e9a-5e36-4e22-9724-748a1cc84b97",
         "identifier" : "urn:no:difi:profile:einnsyn:innsynskrav:ver1.0",
+        "instanceIdentifier" : "01738c15-d4ad-4d36-9257-4b8c372548f6",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "efac0490-8a0e-46bd-90a5-cb237ea86080",
+      "standard" : "urn:no:difi:einnsyn:xsd::innsynskrav",
+      "type" : "innsynskrav",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "innsynskrav" : {
-    "orgnr" : "98765432",
-    "epost" : "doofenshmirtz@evil.inc"
+    "epost" : "doofenshmirtz@evil.inc",
+    "orgnr" : "98765432"
   }
 }</code></pre>
 </div>
@@ -6847,7 +6774,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove message type.
 Must not be null</p></td>
 </tr>
@@ -6877,7 +6804,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, ParentId, SenderRef, ReceiverRef, MessageChannel.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -7042,7 +6969,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -7148,35 +7075,35 @@ echoed back in a subsequent response.</p></td>
     -H 'Accept: application/json' \
     -d '{
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-      "type" : "publisering"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "type" : "publisering",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "publisering" : {
     "orgnr" : "98765432"
@@ -7196,35 +7123,35 @@ Host: localhost:8080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-      "type" : "publisering"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "type" : "publisering",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "publisering" : {
     "orgnr" : "98765432"
@@ -7236,9 +7163,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -7250,36 +7174,36 @@ Content-Length: 1043
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "1bbe9a4d-38fd-4f32-93c5-f6ffcf715ede",
-      "type" : "publisering",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "5e4577fe-00d6-4a38-9726-d9b1ae02ed97",
         "identifier" : "urn:no:difi:profile:einnsyn:journalpost:ver1.0",
+        "instanceIdentifier" : "fd6f228b-b645-4d0d-a5f6-57aa930e36f7",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "fa1d185e-cda2-407e-8c00-325869f8a558",
+      "standard" : "urn:no:difi:einnsyn:xsd::publisering",
+      "type" : "publisering",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "publisering" : {
     "orgnr" : "98765432"
@@ -7406,7 +7330,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be a NextMove message type.
 Must not be null</p></td>
 </tr>
@@ -7436,7 +7360,7 @@ Size must be between 1 and 2147483647 inclusive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Indicates the kind of
 scope; an attribute describing the Scope. Example entries include: ConversationId, SenderRef, ReceiverRef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, SenderRef, ReceiverRef, MessageChannel, SenderHerId1, SenderHerId2, ReceiverHerId1, ReceiverHerId2.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allowed values are: JournalpostId, ConversationId, ParentId, SenderRef, ReceiverRef, MessageChannel.
 Must not be null</p></td>
 </tr>
 <tr>
@@ -7595,7 +7519,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -7758,13 +7682,13 @@ Content-Length: 662
   "exception" : "jakarta.validation.ConstraintViolationException",
   "message" : "standardBusinessDocumentHeader.documentIdentification.type: Must be a NextMove message type",
   "errors" : [ {
+    "bindingFailure" : false,
+    "code" : "MessageType",
     "codes" : [ "MessageType" ],
     "defaultMessage" : "Must be a NextMove message type",
-    "objectName" : "standardBusinessDocumentHeader.documentIdentification.type",
     "field" : "standardBusinessDocumentHeader.documentIdentification.type",
-    "rejectedValue" : "strange",
-    "bindingFailure" : false,
-    "code" : "MessageType"
+    "objectName" : "standardBusinessDocumentHeader.documentIdentification.type",
+    "rejectedValue" : "strange"
   } ],
   "status" : 400,
   "error" : "Bad Request",
@@ -7878,7 +7802,7 @@ Content-Length: 662
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X PUT \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3' -i -u 'testuser:testpassword' -X PUT \
     -H 'Content-Type: text/plain;charset=UTF-8' \
     -H 'Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt' \
     -H 'Accept: application/json' \
@@ -7888,7 +7812,7 @@ Content-Length: 662
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">PUT /api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3 HTTP/1.1
 Content-Type: text/plain;charset=UTF-8
 Content-Disposition: attachment; name=Before The Law; filename=before_the_law.txt
 Accept: application/json
@@ -7903,9 +7827,6 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -7980,27 +7901,23 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X POST \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3' -i -u 'testuser:testpassword' -X POST \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">POST /api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3 HTTP/1.1
 Accept: application/json
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
-Host: localhost:8080
-Content-Type: application/x-www-form-urlencoded</code></pre>
+Host: localhost:8080</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -8083,35 +8000,35 @@ For larger messages, please use the following combination:
     -H 'Accept: application/json' \
     -F 'sbd={
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -8135,35 +8052,35 @@ Content-Type: application/json
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -8181,9 +8098,6 @@ Before the law sits a gatekeeper. To this gatekeeper comes a man from the countr
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -8195,36 +8109,36 @@ Content-Length: 1080
 
 {
   "standardBusinessDocumentHeader" : {
-    "headerVersion" : "1.0",
-    "sender" : [ {
-      "identifier" : {
-        "value" : "0192:910077473",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "receiver" : [ {
-      "identifier" : {
-        "value" : "0192:910075918",
-        "authority" : "iso6523-actorid-upis"
-      }
-    } ],
-    "documentIdentification" : {
-      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
-      "typeVersion" : "1.0",
-      "instanceIdentifier" : "a01cfea0-275a-4497-a108-ba814d93ce57",
-      "type" : "arkivmelding",
-      "creationDateAndTime" : "2019-03-25T11:38:23+02:00"
-    },
     "businessScope" : {
       "scope" : [ {
-        "type" : "ConversationId",
-        "instanceIdentifier" : "3a888519-cfe5-4f32-b205-83d72ea94012",
         "identifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+        "instanceIdentifier" : "71caf6a0-a2ee-4c00-a9f7-f0e9cca8e6e5",
         "scopeInformation" : [ {
           "expectedResponseDateTime" : "2019-04-25T11:38:23+02:00"
-        } ]
+        } ],
+        "type" : "ConversationId"
       } ]
-    }
+    },
+    "documentIdentification" : {
+      "creationDateAndTime" : "2019-03-25T11:38:23+02:00",
+      "instanceIdentifier" : "9bb99d61-b9a5-4109-a1b3-961214a160f3",
+      "standard" : "urn:no:difi:arkivmelding:xsd::arkivmelding",
+      "type" : "arkivmelding",
+      "typeVersion" : "1.0"
+    },
+    "headerVersion" : "1.0",
+    "receiver" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910075918"
+      }
+    } ],
+    "sender" : [ {
+      "identifier" : {
+        "authority" : "iso6523-actorid-upis",
+        "value" : "0192:910077473"
+      }
+    } ]
   },
   "arkivmelding" : {
     "hoveddokument" : "before_the_law.txt"
@@ -8369,7 +8283,7 @@ instance of that document. The instance document or interchange can
 contain one or more business documents of a single document type or
 closely related types. The industry standard body (as referenced in the
 ‘Standard’ element) is responsible for defining the Type value to be used
-in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, fiksio, digital, digital_dpv, print, innsynskrav, publisering, einnsyn_kvittering</p></td>
+in this field. Currently NextMove supports the following types: status, feil, arkivmelding, arkivmelding_kvittering, avtalt, digital, digital_dpv, print, dialogmelding, dialogmelding_kvittering, innsynskrav, publisering, einnsyn_kvittering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>standardBusinessDocumentHeader.documentIdentification.creationDateAndTime</code></p></td>
@@ -8451,14 +8365,14 @@ echoed back in a subsequent response.</p></td>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57' -i -u 'testuser:testpassword' -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/a01cfea0-275a-4497-a108-ba814d93ce57 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/messages/out/9bb99d61-b9a5-4109-a1b3-961214a160f3 HTTP/1.1
 Accept: application/json
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
@@ -8468,9 +8382,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -8539,9 +8450,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -8553,73 +8461,73 @@ Content-Length: 2120
 
 {
   "content" : [ {
+    "conversationId" : "a41e2d3b-99f4-4f0b-a2d7-4beb8b7f1faf",
+    "direction" : "INCOMING",
+    "expiry" : "2019-04-25T12:38:23+01:00",
+    "externalSystemReference" : "reference from external system",
+    "finished" : false,
     "id" : 49,
-    "conversationId" : "945cbe76-6de4-4157-b5e6-fb7bef65dd49",
-    "messageId" : "a9af4c21-0a5d-4904-97c5-b96c27fb192e",
-    "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "0192:910075918",
-    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "3cbd4061-1e88-4dd8-a196-e1954164becb",
     "messageReference" : "system-12463",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
-    "direction" : "INCOMING",
-    "serviceIdentifier" : "DPO",
-    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
-  }, {
-    "id" : 56,
-    "conversationId" : "1e88e7d9-0df6-4f5b-8879-b29b51271d9d",
-    "messageId" : "17739632-fa2c-4f8d-a8e6-eb02229fd0e6",
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+    "receiverIdentifier" : "0192:910075918",
     "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "01017012345",
-    "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
-    "messageReference" : "system-98765",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
+    "serviceIdentifier" : "DPO"
+  }, {
+    "conversationId" : "f1d85c86-b82d-43eb-bbb5-ae07986b453a",
     "direction" : "INCOMING",
-    "serviceIdentifier" : "DPI",
+    "expiry" : "2019-04-25T12:38:23+01:00",
     "externalSystemReference" : "reference from external system",
+    "finished" : false,
+    "id" : 56,
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "70f3c38f-8f6e-4d5b-8416-b71a3f445eb6",
+    "messageReference" : "system-98765",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "receiverIdentifier" : "01017012345",
+    "senderIdentifier" : "0192:910077473",
+    "serviceIdentifier" : "DPI"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -8646,9 +8554,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -8660,52 +8565,52 @@ Content-Length: 1306
 
 {
   "content" : [ {
-    "id" : 49,
-    "conversationId" : "1b2b0efc-8a98-4eb4-89ca-bb933a7ef02a",
-    "messageId" : "4d6eae96-0f10-423f-a335-d2b529ef3f4c",
-    "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "0192:910075918",
-    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-    "messageReference" : "system-12463",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
+    "conversationId" : "1b11d49f-0d18-4b4d-9b39-1d9a8598f528",
     "direction" : "INCOMING",
-    "serviceIdentifier" : "DPO",
+    "expiry" : "2019-04-25T12:38:23+01:00",
     "externalSystemReference" : "reference from external system",
+    "finished" : false,
+    "id" : 49,
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "ac9c44ca-0b56-4d9a-a90b-c6514b1041ba",
+    "messageReference" : "system-12463",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+    "receiverIdentifier" : "0192:910075918",
+    "senderIdentifier" : "0192:910077473",
+    "serviceIdentifier" : "DPO"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 1,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -8732,9 +8637,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -8746,52 +8648,52 @@ Content-Length: 1306
 
 {
   "content" : [ {
-    "id" : 49,
-    "conversationId" : "57024695-a194-43bd-bc1c-1615fedd1a95",
-    "messageId" : "0ad46233-c291-41aa-9b1c-81250be4eb8d",
-    "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "0192:910075918",
-    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-    "messageReference" : "system-12463",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
+    "conversationId" : "9eceac34-2651-42f2-8466-6986002208cd",
     "direction" : "INCOMING",
-    "serviceIdentifier" : "DPO",
+    "expiry" : "2019-04-25T12:38:23+01:00",
     "externalSystemReference" : "reference from external system",
+    "finished" : false,
+    "id" : 49,
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "8f77fa36-51e5-4906-89eb-c72851b853b0",
+    "messageReference" : "system-12463",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+    "receiverIdentifier" : "0192:910075918",
+    "senderIdentifier" : "0192:910077473",
+    "serviceIdentifier" : "DPO"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 1,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -8818,9 +8720,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -8832,52 +8731,52 @@ Content-Length: 1292
 
 {
   "content" : [ {
-    "id" : 56,
-    "conversationId" : "6934e499-6c97-47c8-85e1-122dbd56b626",
-    "messageId" : "161ffa62-e723-452c-a765-cf517cb6c4d5",
-    "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "01017012345",
-    "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
-    "messageReference" : "system-98765",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
+    "conversationId" : "5c955d36-5136-4a73-9f8d-d2f51806a4fb",
     "direction" : "INCOMING",
-    "serviceIdentifier" : "DPI",
+    "expiry" : "2019-04-25T12:38:23+01:00",
     "externalSystemReference" : "reference from external system",
+    "finished" : false,
+    "id" : 56,
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "eb652459-f42b-42cf-82b0-98e421851c9b",
+    "messageReference" : "system-98765",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "receiverIdentifier" : "01017012345",
+    "senderIdentifier" : "0192:910077473",
+    "serviceIdentifier" : "DPI"
   } ],
+  "empty" : false,
+  "first" : false,
+  "last" : true,
+  "number" : 3,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 30,
     "pageNumber" : 3,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 30,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 31,
-  "totalPages" : 4,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : false,
   "size" : 10,
-  "number" : 3,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 31,
+  "totalPages" : 4
 }</code></pre>
 </div>
 </div>
@@ -8942,6 +8841,14 @@ Content-Length: 1292
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>direction</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter on direction. Can be one of: OUTGOING, INCOMING</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastUpdateFrom</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on lastUpdate &gt;= date (inclusive). Format: yyyy-MM-dd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lastUpdateTo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter on lastUpdate &#8656; date (inclusive). Format: yyyy-MM-dd</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>page</code></p></td>
@@ -9044,7 +8951,7 @@ Content-Length: 1292
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses</code></p></td>
@@ -9190,9 +9097,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -9203,26 +9107,26 @@ X-Frame-Options: DENY
 Content-Length: 787
 
 {
-  "id" : 49,
-  "conversationId" : "8e985f77-841a-4d1c-a7ec-43429ccebf68",
-  "messageId" : "13fa3e8a-a1a8-4b09-8d8a-821d01e317ec",
-  "senderIdentifier" : "0192:910077473",
-  "receiverIdentifier" : "0192:910075918",
-  "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-  "messageReference" : "system-12463",
-  "messageTitle" : "A message title",
-  "lastUpdate" : "2019-03-25T12:38:23+01:00",
-  "finished" : false,
-  "expiry" : "2019-04-25T12:38:23+01:00",
+  "conversationId" : "06c9ff30-94ff-4563-bf47-07f1beab4b3a",
   "direction" : "INCOMING",
-  "serviceIdentifier" : "DPO",
+  "expiry" : "2019-04-25T12:38:23+01:00",
   "externalSystemReference" : "reference from external system",
+  "finished" : false,
+  "id" : 49,
+  "lastUpdate" : "2019-03-25T12:38:23+01:00",
+  "messageId" : "6c43a68f-7606-4a2b-a745-0bd318e0924b",
+  "messageReference" : "system-12463",
   "messageStatuses" : [ {
+    "description" : "INNKOMMENDE_MOTTATT",
     "id" : 76,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
-    "status" : "INNKOMMENDE_MOTTATT",
-    "description" : "INNKOMMENDE_MOTTATT"
-  } ]
+    "status" : "INNKOMMENDE_MOTTATT"
+  } ],
+  "messageTitle" : "A message title",
+  "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+  "receiverIdentifier" : "0192:910075918",
+  "senderIdentifier" : "0192:910077473",
+  "serviceIdentifier" : "DPO"
 }</code></pre>
 </div>
 </div>
@@ -9414,7 +9318,7 @@ Content-Length: 270
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses</code></p></td>
@@ -9458,14 +9362,14 @@ The response is paged with a default page size of 10</p>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/b0ed4c15-5844-4e1a-a2e6-cf0d25c61ca4' -i -u 'testuser:testpassword' -X GET \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/20a80d4a-2dfb-45ea-851e-09316998745f' -i -u 'testuser:testpassword' -X GET \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/b0ed4c15-5844-4e1a-a2e6-cf0d25c61ca4 HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">GET /api/conversations/messageId/20a80d4a-2dfb-45ea-851e-09316998745f HTTP/1.1
 Accept: application/json
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
@@ -9475,9 +9379,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -9488,26 +9389,26 @@ X-Frame-Options: DENY
 Content-Length: 787
 
 {
-  "id" : 49,
-  "conversationId" : "72e01143-df39-4226-ab6d-d6a757f6b663",
-  "messageId" : "b0ed4c15-5844-4e1a-a2e6-cf0d25c61ca4",
-  "senderIdentifier" : "0192:910077473",
-  "receiverIdentifier" : "0192:910075918",
-  "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
-  "messageReference" : "system-12463",
-  "messageTitle" : "A message title",
-  "lastUpdate" : "2019-03-25T12:38:23+01:00",
-  "finished" : false,
-  "expiry" : "2019-04-25T12:38:23+01:00",
+  "conversationId" : "2b5bc68d-202f-472f-a102-f002963195e2",
   "direction" : "INCOMING",
-  "serviceIdentifier" : "DPO",
+  "expiry" : "2019-04-25T12:38:23+01:00",
   "externalSystemReference" : "reference from external system",
+  "finished" : false,
+  "id" : 49,
+  "lastUpdate" : "2019-03-25T12:38:23+01:00",
+  "messageId" : "20a80d4a-2dfb-45ea-851e-09316998745f",
+  "messageReference" : "system-12463",
   "messageStatuses" : [ {
+    "description" : "INNKOMMENDE_MOTTATT",
     "id" : 76,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
-    "status" : "INNKOMMENDE_MOTTATT",
-    "description" : "INNKOMMENDE_MOTTATT"
-  } ]
+    "status" : "INNKOMMENDE_MOTTATT"
+  } ],
+  "messageTitle" : "A message title",
+  "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+  "receiverIdentifier" : "0192:910075918",
+  "senderIdentifier" : "0192:910077473",
+  "serviceIdentifier" : "DPO"
 }</code></pre>
 </div>
 </div>
@@ -9699,7 +9600,7 @@ Content-Length: 355
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>messageStatuses</code></p></td>
@@ -9759,9 +9660,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -9782,14 +9680,14 @@ X-Frame-Options: DENY</code></pre>
 <div class="listingblock primary">
 <div class="title">Curl</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/2f9a0a64-35b9-4c99-9dc4-f7645e6b85af' -i -u 'testuser:testpassword' -X DELETE \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl 'http://localhost:8080/api/conversations/messageId/b4b3eb02-d448-403e-9888-8985e6455ba9' -i -u 'testuser:testpassword' -X DELETE \
     -H 'Accept: application/json'</code></pre>
 </div>
 </div>
 <div class="listingblock secondary">
 <div class="title">Request</div>
 <div class="content">
-<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/conversations/messageId/2f9a0a64-35b9-4c99-9dc4-f7645e6b85af HTTP/1.1
+<pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">DELETE /api/conversations/messageId/b4b3eb02-d448-403e-9888-8985e6455ba9 HTTP/1.1
 Accept: application/json
 Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080</code></pre>
@@ -9799,9 +9697,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -9840,9 +9735,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -9854,73 +9746,73 @@ Content-Length: 2120
 
 {
   "content" : [ {
+    "conversationId" : "d112e772-df4b-403a-a6d9-b2952c00f6a0",
+    "direction" : "INCOMING",
+    "expiry" : "2019-04-25T12:38:23+01:00",
+    "externalSystemReference" : "reference from external system",
+    "finished" : false,
     "id" : 49,
-    "conversationId" : "8fa6a976-9737-4481-80f9-3b2703ae7c1d",
-    "messageId" : "6205c813-d3fa-4cb3-aa80-c7656c883e18",
-    "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "0192:910075918",
-    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "83962404-6d3d-49a4-b02a-dca6125f378c",
     "messageReference" : "system-12463",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
-    "direction" : "INCOMING",
-    "serviceIdentifier" : "DPO",
-    "externalSystemReference" : "reference from external system",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
-  }, {
-    "id" : 56,
-    "conversationId" : "0f76392f-bd16-40e5-b36f-4aaeadbdded2",
-    "messageId" : "2360afb3-94cf-4fdb-8bc7-e27d8f52a280",
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:arkivmelding:planByggOgGeodata:ver1.0",
+    "receiverIdentifier" : "0192:910075918",
     "senderIdentifier" : "0192:910077473",
-    "receiverIdentifier" : "01017012345",
-    "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
-    "messageReference" : "system-98765",
-    "messageTitle" : "A message title",
-    "lastUpdate" : "2019-03-25T12:38:23+01:00",
-    "finished" : false,
-    "expiry" : "2019-04-25T12:38:23+01:00",
+    "serviceIdentifier" : "DPO"
+  }, {
+    "conversationId" : "2a944352-2e26-4e05-8626-f5e15b891706",
     "direction" : "INCOMING",
-    "serviceIdentifier" : "DPI",
+    "expiry" : "2019-04-25T12:38:23+01:00",
     "externalSystemReference" : "reference from external system",
+    "finished" : false,
+    "id" : 56,
+    "lastUpdate" : "2019-03-25T12:38:23+01:00",
+    "messageId" : "c9be1244-f3fb-4d38-92f7-7e49b787c623",
+    "messageReference" : "system-98765",
     "messageStatuses" : [ {
+      "description" : "INNKOMMENDE_MOTTATT",
       "id" : 76,
       "lastUpdate" : "2019-11-05T12:04:34+02:00",
-      "status" : "INNKOMMENDE_MOTTATT",
-      "description" : "INNKOMMENDE_MOTTATT"
-    } ]
+      "status" : "INNKOMMENDE_MOTTATT"
+    } ],
+    "messageTitle" : "A message title",
+    "processIdentifier" : "urn:no:difi:profile:digitalpost:info:ver1.0",
+    "receiverIdentifier" : "01017012345",
+    "senderIdentifier" : "0192:910077473",
+    "serviceIdentifier" : "DPI"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -10043,7 +9935,7 @@ Content-Length: 2120
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].serviceIdentifier</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>String</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, UNKNOWN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The service identifier. Can be one of: DPO, DPV, DPI, DPF, DPE, DPH, UNKNOWN</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>content[].messageStatuses</code></p></td>
@@ -10194,9 +10086,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -10208,47 +10097,47 @@ Content-Length: 1001
 
 {
   "content" : [ {
+    "convId" : 2,
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
+    "description" : "Mottatt",
     "id" : 1,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
-    "status" : "MOTTATT",
-    "description" : "Mottatt",
-    "convId" : 2,
     "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
+    "status" : "MOTTATT"
   }, {
+    "convId" : 4,
+    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
+    "description" : "Levert",
     "id" : 7,
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
-    "status" : "LEVERT",
-    "description" : "Levert",
-    "convId" : 4,
     "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
-    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad"
+    "status" : "LEVERT"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -10275,9 +10164,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -10289,39 +10175,39 @@ Content-Length: 739
 
 {
   "content" : [ {
+    "convId" : 2,
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
+    "description" : "Mottatt",
     "id" : 1,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
-    "status" : "MOTTATT",
-    "description" : "Mottatt",
-    "convId" : 2,
     "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
+    "status" : "MOTTATT"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 1,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -10348,9 +10234,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -10362,47 +10245,47 @@ Content-Length: 1001
 
 {
   "content" : [ {
+    "convId" : 4,
+    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
+    "description" : "Levert",
     "id" : 7,
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
-    "status" : "LEVERT",
-    "description" : "Levert",
-    "convId" : 4,
     "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
-    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad"
+    "status" : "LEVERT"
   }, {
+    "convId" : 2,
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
+    "description" : "Mottatt",
     "id" : 1,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
-    "status" : "MOTTATT",
-    "description" : "Mottatt",
-    "convId" : 2,
     "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
+    "status" : "MOTTATT"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -10429,9 +10312,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -10443,39 +10323,39 @@ Content-Length: 740
 
 {
   "content" : [ {
+    "convId" : 4,
+    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad",
+    "description" : "Levert",
     "id" : 7,
     "lastUpdate" : "2019-10-23T15:43:12+02:00",
-    "status" : "LEVERT",
-    "description" : "Levert",
-    "convId" : 4,
     "messageId" : "e424303b-9d8d-4392-b02e-14da4d3dad36",
-    "conversationId" : "4364a1f2-be6a-46f2-832d-c11d9b52abad"
+    "status" : "LEVERT"
   } ],
+  "empty" : false,
+  "first" : false,
+  "last" : true,
+  "number" : 3,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 30,
     "pageNumber" : 3,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 30,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 31,
-  "totalPages" : 4,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : false,
   "size" : 10,
-  "number" : 3,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 31,
+  "totalPages" : 4
 }</code></pre>
 </div>
 </div>
@@ -10705,10 +10585,7 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
-Content-Type: application/json
+Content-Type: application/json;charset=utf-8
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -10719,39 +10596,39 @@ Content-Length: 739
 
 {
   "content" : [ {
+    "convId" : 2,
+    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
+    "description" : "Mottatt",
     "id" : 1,
     "lastUpdate" : "2019-11-05T12:04:34+02:00",
-    "status" : "MOTTATT",
-    "description" : "Mottatt",
-    "convId" : 2,
     "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-    "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
+    "status" : "MOTTATT"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : false,
-      "sorted" : true,
-      "empty" : false
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : false,
+      "sorted" : true,
+      "unsorted" : false
+    },
     "unpaged" : false
   },
-  "totalElements" : 1,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : false,
+    "empty" : false,
     "sorted" : true,
-    "empty" : false
+    "unsorted" : false
   },
-  "empty" : false
+  "totalElements" : 1,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -10969,9 +10846,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -10982,13 +10856,13 @@ X-Frame-Options: DENY
 Content-Length: 246
 
 {
+  "convId" : 2,
+  "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b",
+  "description" : "Mottatt",
   "id" : 1,
   "lastUpdate" : "2019-11-05T12:04:34+02:00",
-  "status" : "MOTTATT",
-  "description" : "Mottatt",
-  "convId" : 2,
   "messageId" : "1cc3fb67-b776-4730-b017-1028b86a8b8b",
-  "conversationId" : "cc3740ec-c6c1-474f-a93d-7e73816ca34b"
+  "status" : "MOTTATT"
 }</code></pre>
 </div>
 </div>
@@ -11275,15 +11149,15 @@ Host: your.pushendpoint.com
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
+  "conversationId" : "870c747a-72a4-4aca-bfdb-62098c85ff7d",
   "createdTs" : "2019-03-25T12:38:23+01:00",
-  "resource" : "messages",
-  "event" : "status",
-  "messageId" : "0ff04180-3436-4d4e-9d3c-ed01fe91c9d2",
-  "conversationId" : "c9ad9971-845c-4b3b-852e-41659f22af5d",
+  "description" : "Levetiden for meldingen er utgått. Må sendes på nytt",
   "direction" : "INCOMING",
+  "event" : "status",
+  "messageId" : "b7ea4516-f2e8-4f23-9ec3-153f95e02c57",
+  "resource" : "messages",
   "serviceIdentifier" : "DPO",
-  "status" : "LEVETID_UTLOPT",
-  "description" : "Levetiden for meldingen er utgått. Må sendes på nytt"
+  "status" : "LEVETID_UTLOPT"
 }'</code></pre>
 </div>
 </div>
@@ -11298,15 +11172,15 @@ Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: your.pushendpoint.com
 
 {
+  "conversationId" : "870c747a-72a4-4aca-bfdb-62098c85ff7d",
   "createdTs" : "2019-03-25T12:38:23+01:00",
-  "resource" : "messages",
-  "event" : "status",
-  "messageId" : "0ff04180-3436-4d4e-9d3c-ed01fe91c9d2",
-  "conversationId" : "c9ad9971-845c-4b3b-852e-41659f22af5d",
+  "description" : "Levetiden for meldingen er utgått. Må sendes på nytt",
   "direction" : "INCOMING",
+  "event" : "status",
+  "messageId" : "b7ea4516-f2e8-4f23-9ec3-153f95e02c57",
+  "resource" : "messages",
   "serviceIdentifier" : "DPO",
-  "status" : "LEVETID_UTLOPT",
-  "description" : "Levetiden for meldingen er utgått. Må sendes på nytt"
+  "status" : "LEVETID_UTLOPT"
 }</code></pre>
 </div>
 </div>
@@ -11422,9 +11296,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -11436,45 +11307,45 @@ Content-Length: 933
 
 {
   "content" : [ {
+    "event" : "status",
+    "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
     "id" : 84,
     "name" : "Incoming messages",
     "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-    "resource" : "messages",
-    "event" : "status",
-    "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+    "resource" : "messages"
   }, {
+    "event" : "status",
+    "filter" : "status=FEIL,LEVETID_UTLOPT",
     "id" : 32,
     "name" : "Incoming messages",
     "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-    "resource" : "messages",
-    "event" : "status",
-    "filter" : "status=FEIL,LEVETID_UTLOPT"
+    "resource" : "messages"
   } ],
+  "empty" : false,
+  "first" : true,
+  "last" : true,
+  "number" : 0,
+  "numberOfElements" : 2,
   "pageable" : {
+    "offset" : 0,
     "pageNumber" : 0,
     "pageSize" : 10,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 0,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 1,
-  "last" : true,
-  "numberOfElements" : 2,
-  "first" : true,
   "size" : 10,
-  "number" : 0,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 1
 }</code></pre>
 </div>
 </div>
@@ -11501,9 +11372,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -11515,38 +11383,38 @@ Content-Length: 693
 
 {
   "content" : [ {
+    "event" : "status",
+    "filter" : "status=FEIL,LEVETID_UTLOPT",
     "id" : 32,
     "name" : "Incoming messages",
     "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-    "resource" : "messages",
-    "event" : "status",
-    "filter" : "status=FEIL,LEVETID_UTLOPT"
+    "resource" : "messages"
   } ],
+  "empty" : false,
+  "first" : false,
+  "last" : true,
+  "number" : 1,
+  "numberOfElements" : 1,
   "pageable" : {
+    "offset" : 1,
     "pageNumber" : 1,
     "pageSize" : 1,
-    "sort" : {
-      "unsorted" : true,
-      "sorted" : false,
-      "empty" : true
-    },
-    "offset" : 1,
     "paged" : true,
+    "sort" : {
+      "empty" : true,
+      "sorted" : false,
+      "unsorted" : true
+    },
     "unpaged" : false
   },
-  "totalElements" : 2,
-  "totalPages" : 2,
-  "last" : true,
-  "numberOfElements" : 1,
-  "first" : false,
   "size" : 1,
-  "number" : 1,
   "sort" : {
-    "unsorted" : true,
+    "empty" : true,
     "sorted" : false,
-    "empty" : true
+    "unsorted" : true
   },
-  "empty" : false
+  "totalElements" : 2,
+  "totalPages" : 2
 }</code></pre>
 </div>
 </div>
@@ -11749,9 +11617,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -11762,12 +11627,12 @@ X-Frame-Options: DENY
 Content-Length: 223
 
 {
+  "event" : "status",
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
   "id" : 84,
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-  "resource" : "messages",
-  "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+  "resource" : "messages"
 }</code></pre>
 </div>
 </div>
@@ -11913,11 +11778,11 @@ Creating a webhook for each message is considered bad practise, and can lead to 
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
+  "event" : "status",
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-  "resource" : "messages",
-  "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+  "resource" : "messages"
 }'</code></pre>
 </div>
 </div>
@@ -11932,11 +11797,11 @@ Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
+  "event" : "status",
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-  "resource" : "messages",
-  "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+  "resource" : "messages"
 }</code></pre>
 </div>
 </div>
@@ -11944,9 +11809,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 Content-Type: application/json
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
@@ -11957,12 +11819,12 @@ X-Frame-Options: DENY
 Content-Length: 223
 
 {
+  "event" : "status",
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
   "id" : 84,
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-  "resource" : "messages",
-  "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+  "resource" : "messages"
 }</code></pre>
 </div>
 </div>
@@ -12051,13 +11913,13 @@ Content-Length: 562
   "exception" : "jakarta.validation.ConstraintViolationException",
   "message" : "event: 'nonexistent' is not expected. Allowed values are: [all, status]",
   "errors" : [ {
+    "bindingFailure" : false,
+    "code" : "OneOf",
     "codes" : [ "OneOf" ],
     "defaultMessage" : "'nonexistent' is not expected. Allowed values are: [all, status]",
-    "objectName" : "event",
     "field" : "event",
-    "rejectedValue" : "nonexistent",
-    "bindingFailure" : false,
-    "code" : "OneOf"
+    "objectName" : "event",
+    "rejectedValue" : "nonexistent"
   } ],
   "status" : 400,
   "error" : "Bad Request",
@@ -12191,11 +12053,11 @@ Must not be null</p></td>
     -H 'Content-Type: application/json;charset=UTF-8' \
     -H 'Accept: application/json' \
     -d '{
+  "event" : "status",
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-  "resource" : "messages",
-  "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+  "resource" : "messages"
 }'</code></pre>
 </div>
 </div>
@@ -12210,11 +12072,11 @@ Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk
 Host: localhost:8080
 
 {
+  "event" : "status",
+  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING",
   "name" : "Incoming messages",
   "pushEndpoint" : "http://my.pushendpoint.no/messages/incoming",
-  "resource" : "messages",
-  "event" : "status",
-  "filter" : "status=INNKOMMENDE_MOTTAT&amp;direction=INCOMING"
+  "resource" : "messages"
 }</code></pre>
 </div>
 </div>
@@ -12222,9 +12084,6 @@ Host: localhost:8080
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -12318,9 +12177,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -12358,9 +12214,6 @@ Host: localhost:8080</code></pre>
 <div class="title">Response</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-http hljs" data-lang="http">HTTP/1.1 200 OK
-Vary: Origin
-Vary: Access-Control-Request-Method
-Vary: Access-Control-Request-Headers
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 0
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -12376,7 +12229,7 @@ X-Frame-Options: DENY</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-26 14:49:33 +0100
+Last updated 2026-11-20 11:25:16 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
