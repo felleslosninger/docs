@@ -18,6 +18,22 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.2.4
+
+23.11.2026
+
+- Sikkerhetsfiks
+  - Lukker kritisk sårbarhet CVE-2026-114938 (aka "Java4Shell")
+
+- Feilretting
+  - Meldinger mottatt fra SvarInn utløper ikke lenger før fagsystemet har hentet dem
+  - Nedlastings-URL for SvarInn bygges fra konfigurert baseUrl
+  - Bedre feilhåndtering om ServiceRegistry er midlertidig utilgjengelig
+  - Logging til logstash følger konfig satt via app.logger.secureLogstash
+
+- Andre ting
+  - Oppgradert diverse felles bibliotek
+  - Opprydding av properties
 
 ## 4.2.3
 

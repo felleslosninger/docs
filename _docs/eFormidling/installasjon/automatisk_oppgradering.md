@@ -264,9 +264,9 @@ For interne test-miljø (som endå ikkje er på føtene) og klientar som ev. øn
 
 ### Sjekk av versjon-kompatibilitet
 
-Semantisk versjonering er nytta i eFormidling. Applikasjonar som nyttar denne versjoneringa vert gjort tilgjengelege  i major-, minor- og patch-versjonar som er reflektert i namnet på distribusjonane i form av `<applikasjon>-v<major>.<minor>.<patch>`, t.d. `integrasjonspunkt-v4.2.3`. Oppgradering av ein større eller mindre versjon inneber alltid ein inkrement i namnet på distribusjonen. 
+Semantisk versjonering er nytta i eFormidling. Applikasjonar som nyttar denne versjoneringa vert gjort tilgjengelege  i major-, minor- og patch-versjonar som er reflektert i namnet på distribusjonane i form av `<applikasjon>-v<major>.<minor>.<patch>`, t.d. `integrasjonspunkt-v4.2.4`. Oppgradering av ein større eller mindre versjon inneber alltid ein inkrement i namnet på distribusjonen. 
 
-Ein oppgradert major-versjon (t.d. frå `integrasjonspunkt-v4.2.3` til `integrasjonspunkt-v5.0.0`) inneheld endringar som bryt med førre versjon. Oppgraderingar av major-versjonar kan føra med seg større eller mindre endringar hjå klientane. Eit døme på dette kan vera oppgradering av Java-versjonen som integrasjonspunktet køyrer på, som medfører at klienten må gjera oppgraderingar før det nye integrasjonspunktet kan takast i bruk. For å sikra at KOSMOS sin automatiske oppgradering ikkje lagar krøll for klientar som ikkje er klare for ein ny major-versjon endå, har me innført eit “setebelte” i form av ```kosmos.integrasjonspunkt.supported-major-version```. Denne verdien kan setjast lokalt hjå klientar, og sikrar at KOSMOS ikkje utfører oppgraderingar til ein nyare major-versjon enn den som er angjeven.
+Ein oppgradert major-versjon (t.d. frå `integrasjonspunkt-v4.2.4` til `integrasjonspunkt-v5.0.0`) inneheld endringar som bryt med førre versjon. Oppgraderingar av major-versjonar kan føra med seg større eller mindre endringar hjå klientane. Eit døme på dette kan vera oppgradering av Java-versjonen som integrasjonspunktet køyrer på, som medfører at klienten må gjera oppgraderingar før det nye integrasjonspunktet kan takast i bruk. For å sikra at KOSMOS sin automatiske oppgradering ikkje lagar krøll for klientar som ikkje er klare for ein ny major-versjon endå, har me innført eit “setebelte” i form av ```kosmos.integrasjonspunkt.supported-major-version```. Denne verdien kan setjast lokalt hjå klientar, og sikrar at KOSMOS ikkje utfører oppgraderingar til ein nyare major-versjon enn den som er angjeven.
 
 ### Nedlasting av siste lanserte versjon
 
@@ -280,7 +280,7 @@ Artefaktar vert lasta ned frå GitHub Releases. Adressa er sett saman av innstil
 https://github.com/felleslosninger/efm-integrasjonspunkt/releases/download/<versjon>/integrasjonspunkt-<versjon>.jar
 ```
 
-Versjonen er lik release-taggen, t.d. `v4.2.3`. Alle versjonar kan [sjåast her](https://github.com/felleslosninger/efm-integrasjonspunkt/releases).
+Versjonen er lik release-taggen, t.d. `v4.2.4`. Alle versjonar kan [sjåast her](https://github.com/felleslosninger/efm-integrasjonspunkt/releases).
 
 ### Validering av nedlasta artefakt
 
