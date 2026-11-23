@@ -2,9 +2,14 @@
     background: #ccc;
 }
 
-/* hide all listingblocks and openblocks until selected by the javascript */
+/* Hide all listingblocks and openblocks until selected by JavaScript */
 .listingblock, .openblock {
     display: none;
+}
+
+/* Always show the partintro block containing the version number */
+.openblock.partintro {
+    display: block;
 }
 
 .listingblock.active {
