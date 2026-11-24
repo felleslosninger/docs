@@ -24,8 +24,8 @@ redirect_from:
 
 - Sikkerhetsfikset container-image ("docker image")
   - Oppdatert base-image som lukker kritisk sårbarhet CVE-2026-114938 (aka "Java4Shell")
-  - Container benytter nå `OpenJDK Runtime Environment (build 21.0.13.1+5-LTS)`
-
+  - Container benytter `OpenJDK Runtime Environment (build 21.0.13.1+5-LTS)`
+  
 - Feilretting
   - Meldinger mottatt fra SvarInn utløper ikke lenger før fagsystemet har hentet dem
   - Nedlastings-URL for SvarInn bygges fra konfigurert baseUrl
@@ -35,6 +35,11 @@ redirect_from:
 - Andre ting
   - Oppgradert diverse felles bibliotek
   - Opprydding av properties
+
+- Tips til sikkerhetsfiks (for dere som **ikke** benytter container-image)
+  - Dersom dere er berørt av [CVE-2026-114938](https://nvd.nist.gov/vuln/detail/cve-2026-114938)
+  - Oppgrader til en Java Runtime som *ikke* har sårbarheten (permanent løsning)
+  - Benytt oppstarts-parameter `-XX:-UseBASE64Intrinsics` som en midlertidig løsning før det
 
 ## 4.2.3
 
