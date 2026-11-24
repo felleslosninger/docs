@@ -22,8 +22,9 @@ redirect_from:
 
 23.11.2026
 
-- Sikkerhetsfiks
-  - Lukker kritisk sårbarhet CVE-2026-114938 (aka "Java4Shell")
+- Sikkerhetsfikset container-image ("docker image")
+  - Oppdatert base-image som lukker kritisk sårbarhet CVE-2026-114938 (aka "Java4Shell")
+  - Container benytter nå `OpenJDK Runtime Environment (build 21.0.13.1+5-LTS)`
 
 - Feilretting
   - Meldinger mottatt fra SvarInn utløper ikke lenger før fagsystemet har hentet dem
