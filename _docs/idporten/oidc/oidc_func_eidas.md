@@ -18,6 +18,7 @@ Kunder kan se oppdatert status på hvilke land som er tilkoblet på [EU sitt eID
 
 Fra [denne demo-tjenesten](https://demo-client.eidasnode.no/)  kan du verifisere - i produksjon - om et annet land er koblet til Norge.  Trykk "Login"-knappen, velg så land, og dersom du havner på en tilsynelatenede fungerende side i det aktuelle landet, kan du anta at landets borgere vil kunne logge inn til deg.
 
+Single-sign-on (SSO) er foreløpig ikke støttet ved eIDAS-pålogging. 
 
 ## Hvilken informasjon får jeg om eidas-brukere ?
 
@@ -145,5 +146,5 @@ For testing med dansk eID på sikkerhetsnivå betydelig (substantial), velg fane
 Bruk i loginbilde e-ID'en "VIISP BANKAS". Her vil en finne en nedtrekksliste med tilgjengelige testbrukere.  
 
 ## Innlogging med norsk e-ID på utenlandsk tjeneste
-Det er (pr 27.04.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i produksjonsmiljøet i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. (I testmiljøet er dette mulig)
+Det er (pr 19.08.2026) ikke mulig å logge på med norsk e-ID på utenlandske tjenester i produksjonsmiljøet i EUs infrastruktur for autentisering pga manglende notifisering av norske eIDer. Prosess pågår. (I testmiljøet er dette mulig)
 

@@ -5,13 +5,13 @@ kosmos.integrasjonspunkt.baseURL=http://localhost:9093
 # Your organisationnumber. Should be the same as in integrasjonspunkt-local.properties
 difi.move.org.number=
 
-# E-mail is optional. Please specify these properties 
+# E-mail is optional. Remove the leading # and specify these properties
 # to receive e-mails when KOSMOS updates the integrasjonspunkt-application.
-kosmos.mail.recipient=someone@yourdomain.no
-kosmos.mail.from=noreply@yourdomain.no
+#kosmos.mail.recipient=someone@yourdomain.no
+#kosmos.mail.from=noreply@yourdomain.no
 
-spring.mail.host=smtp.yourdomain.no
-spring.mail.port=<set-your-port-here>
+#spring.mail.host=smtp.yourdomain.no
+#spring.mail.port=<set-your-port-here>
 
 # Digitaliseringsdirektoratet public key paths. i.e: file:keyname.asc.
 kosmos.verification.publicKeyPaths[0]=file:eformidling-key.asc

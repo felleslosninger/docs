@@ -59,6 +59,23 @@ Forslag til endringer sendes inn ved å klikke "Endre/rediger innhold" i menyen 
 | - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes                                                               |
 | **Lenker**                                                          | [Elements](https://www.sikri.no/produkter/elements) (ekstern lenke)   |
 
+### Tieto AS
+
+| **Fagystem**                                                        | Public360                                                             |
+|---------------------------------------------------------------------|-----------------------------------------------------------------------|
+| **Leverandør**                                                      | Tieto AS                                                              |
+| **Prosesser**                                                       |                                                                       |
+| - Innsynskrav fra eInnsyn                                           | Støttes fra versjon 5.18                                              |
+| - Journalpost til eInnsyn                                           | Støttes fra versjon 5.18                                              |
+| - Møte til eInnsyn                                                  | Støttes fra versjon 5.18                                              |
+| - Saksbehandling                                                    | Støttes fra versjon 6                                                 |
+| - Taushetsbelagt saksbehandling                                     | Støttes fra versjon 6                                                 |        
+| - Vedtak til innbygger                                              | Støttes fra versjon 6                                                 |
+| **Leveransemodell**                                                 |                                                                       |
+| - Integrasjonspunkt driftes av kunde                                | Støttes                                                               |
+| - Integrasjonspunkt driftes av leverandør                           | Støttes ikke                                                          |
+| - Leverandør drifter eget integrasjonspunkt på vegne av sine kunder | Støttes ikke                                                          |
+| **Lenker**                                                          | [Public360](https://www.tieto.com/no/bransjer/offentlig-sektor/public-360/) (ekstern lenke) |
 
 ## Mal for selvdeklarering
 

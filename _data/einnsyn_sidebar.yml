@@ -12,6 +12,9 @@ folders:
 
   - title: FAQ
     jurl: /docs/eInnsyn/einnsyn_api_faq.html
+
+  - title: FAQ - flere mottakssystem
+    jurl: /docs/eInnsyn/einnsyn_api_flere_mottakssystem_faq.html
     
 - title: Publisering med eFormidling
   folderitems:

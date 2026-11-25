@@ -135,7 +135,6 @@ filformat på bekostning av leveransegaranti
 For å støtte mottakere som bruker andre meldingstjenester enn eFormidlings meldingstjeneste må integrasjonspunktet
 berike og transformere utgående meldinger:
 
-- [Transformasjon fra arkivmelding til Altinn Digital Post](../Transformasjoner/arkivmelding_til_altinn_digital_post) (Utgår i Ipv4)
 - [Transformasjon fra arkivmelding til Altinn Digital Post Altinn 3](../Transformasjoner/arkivmelding_til_altinn_digital_post_altinn3)
 - [Transformasjon fra arkivmelding til KS SvarUt](../Transformasjoner/arkivmelding_til_ks_svarut)
 

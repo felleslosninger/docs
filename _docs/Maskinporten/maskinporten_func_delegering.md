@@ -11,8 +11,7 @@ redirect_from: /maskinporten_func_delegering
 ## Bakgrunn
 
 Maskinporten har i samarbeid med Altinn Autorisasjon støtte for at API-konsumenter kan delegere en API-tilgang til en leverandør.
-
-Denne funksjonaliteten inngår i nasjonal referansearkitetur for eOppslag. Se [beskrivelse av eOppslag i nasjonalt arkitekturbibliotek](https://doc.difi.no/nasjonal-arkitektur/nab_referanse_arkitekturer_eoppslag/) for ytterligere informasjon.  Se også [Altinn sin dokumentasjon av tjenesten](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/).
+Denne funksjonaliteten inngår i nasjonal referansearkitetur for eOppslag. Se [beskrivelse av eOppslag i nasjonalt arkitekturbibliotek](https://www.digdir.no/digital-samhandling/referansearkitekturer/2131) for ytterligere informasjon.  Se også [Altinn sin dokumentasjon av tjenesten](https://docs.altinn.studio/nb/api/authentication/delegate-scopes/#delegering-av-api-tilganger-til-leverand%C3%B8r).
 
 <div class="mermaid">
 graph LR
@@ -62,38 +61,12 @@ Authorization: Bearer <et OIDC-token med 'idporten:scopes.write' >
 ```
 Merk at Maskinporten-scopes som mangler delegeringskilde, vil ikke kunne benytte Altinn til delegering.
 
-Du må så [opprette et delegeringsoppett i Altinn](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/api-eier/#registrering-av-delegerbar-ressurs-i-altinn), som inneholder scopet du nettopp registrerte i Maskinporten:
+Du må så [opprette en delegerbar API-ressurs i Altinn](https://docs.altinn.studio/nb/authorization/guides/resource-owner/api-scheme/) som knyttes til scopet du nettopp registrerte i Maskinporten.
 
-```
-POST /maskinporten-api/delegationSchemes HTTP/1.1
-Host: tt02.altinn.no
-Content-Type: application/json
-Authorization: Bearer  <et maskinporten-token med 'altinn:maskinporten/delegationsSchemes.write'>
-
-{
-    "owner_org": "991825827",
-    "scopes": [
-        "difitest:test2"
-    ],
-    "title": [
-        {
-            "code": "nb_NO",
-            "value": "Difi tester delegering"
-        }
-    ],
-    "description": [
-        {
-            "code": "nb_NO",
-            "value": "Bla bla bla bla bla og enno meir blah"
-        }
-    ],
-    "default_language": "nb_NO"
-}
-```
-Merk at det kan ta noen minutter før delegeringsoppsettet blir synlig i Altinn-portalen.
+Merk at det kan ta noen minutter før ressursen blir synlig i Altinn-portalen.
 
 
-Til slutt anbefaler vi at du registrerer API'et ditt i API-katalogen, slik at andre potensielle konsumenter kan finne det.
+Til slutt anbefaler vi at du registrerer API'et ditt i [Felles datakatalog](https://data.norge.no/publishing), slik at andre potensielle konsumenter kan finne det.
 
 ### Gi tilgang til konsumenter
 
@@ -115,8 +88,7 @@ Leverandør må registrere API-tilbyders scope på sin klient.
 
 
 ### Delegering i Altinn
-
-Bemyndiget ansatt hos API-konsument logger inn i Altinn, velger å representere foretaket, søker opp og delegerer API-tilgangen videre til leverandøren i portal-løsningen.  [Dette er nærmere dokumentert hos Altinn](https://altinn.github.io/docs/utviklingsguider/sikkerhet-i-eoppslag/tilgangsstyrer/).
+Bemyndiget ansatt hos API-konsument logger inn i Altinn, velger å representere foretaket, søker opp og delegerer API-tilgangen videre til leverandøren i portal-løsningen.  [Dette er nærmere dokumentert hos Altinn](https://docs.altinn.studio/nb/authorization/what-do-you-get/accessmanagement/#delegering-og-administrasjon-av-delegert-api-tilgang).
 
 Merk at det er mulig for konsument å utføre en delegering i Altinn, selv om  API-tilbyder ennå ikke har gitt konsument tilgang til scopet i Maskinporten.
 

@@ -42,12 +42,12 @@ Features som er støtta no:
 - Authorization-code flow 
 - Bruksmønster 1,2,3
 - Multitenancy (logiste utstedere)
+- [Revokasjon](lommebok_digdir_utsteder_revokering.html)
 
 Framtidig funksjonalitet:
 - tx_code
 - Web-grensesnitt for sluttbrukar
 - key binding
-- Bevis-type-spesifikke signeringssertifikat
 - Autentisering og autorisasjon av lommebøker basert på WUA
 - verifisering mot [OpenID conformance test suites](https://openid.net/certification/conformance-testing-for-openid-for-verifiable-credential-issuance/)
 

@@ -8,7 +8,6 @@ product: ID-porten
 redirect_from: /idporten_grensesnitt
 ---
 
-ID-porten støtter to grensesnittsprotokoller:
+ID-porten støtter en grensesnittsprotokoll:
 
 - [OpenID Connect / Oauth2]({{site.baseurl}}/docs/idporten/oidc/oidc_guide_idporten)
-- SAML2 er kun tilgjengelig for de som ikke kan benytte OpenID Connect / Oauth2 (lagt ned støtte for nye tjenester 01.01.2026)

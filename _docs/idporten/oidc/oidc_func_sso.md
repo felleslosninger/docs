@@ -18,9 +18,9 @@ Like viktig som single signon er single logout.  Det er vesentlig for sikkerhete
 
 ## Single Signon (SSO)
 
-SSO-sesjonen er felles for både OIDC- og SAML-baserte tjenester, og er fra nov. 2023 styrt av Nye ID-porten (OIDC). Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
+Sesjonslevetid er felles for alle tjenester uavhengig av sikkerhetsnivå, og denne er 30 minutter, men kan forlenges uten brukerinteraksjon inntil maksimalt 120 minutter, ved å sende en ny autentiseringsforespørsel.
 
-Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest) (tilsvarende *forceAuth* i SAML2).  Det er i ny løsning også mulig å konfigurere en integrasjon til å bruke [isolert SSO-sesjon]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
+Alle tjenester er i utgangspunktet med i samme circle-of-trust, men tjenester kan tvinge frem re-autentisering ved å sette attributten *prompt* til `login` i [autentiseringsforespørselen](http://openid.net/specs/openid-connect-core-1_0.html#AuthRequest).  Det er også mulig å konfigurere en integrasjon til å bruke [isolert SSO-sesjon]({{site.baseurl}}/docs/idporten/oidc/oidc_func_nosso).
 
 Merk at levetiden på SSO-sesjonen ikke har noen sammenheng med levetiden på utstedte access-token og evt. refresh-tokens.
 
@@ -36,7 +36,6 @@ Merk at klienter som utfører endsession OGSÅ vil selv motta et frontkanal-utlo
 Merk at ID-porten nå støtter [back-channel logout]({{site.baseurl}}/docs/idporten/oidc/oidc_func_backchannel_logout).
 
 
-For SAML-baserte tjenester må også begge utloggingsscenarioene støttes, men oppførselen er ulik - der OIDC sender frontkanalskallene fra iframer på en idporten-styrt side, så vil SAML foreta en kjede av redirects fra tjeneste til tjeneste. SAML-varianten er defor mer sårbar.
 
 ### 1: Utlogging fra egen tjeneste (/logout)
 
@@ -53,7 +52,7 @@ state=<tilstand_jeg_kan_bruke_i_redirect_tilbake_til_meg_pluss_csrf_beskyttelse>
 
 ```
 
-Ved mottak av endsession-redirect, vil ID-porten logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon, både OIDC og SAML. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
+Ved mottak av endsession-redirect, vil ID-porten logge brukeren ut av alle andre tjenester i aktiv SSO-sesjon. Til slutt vil ID-porten redirecte brukeren til *post_logout_redirect_uri* er oppgitt i request dersom denne er angitt og definert for klient, og *id_token_hint* er inkludert.  Dersom disse mangler, vil brukeren ende opp i ID-porten.
 
 Utlogging fra egen tjeneste er basert på [OIDC Session Management](http://openid.net/specs/openid-connect-session-1_0.html)-spesifikasjonen.
 
@@ -65,7 +64,7 @@ ID-porten vil også invalidere alle tokens som tilhører rene innlogginger (dvs.
 
 ### 2: Håndtere utlogging fra ID-porten (front-channel logout)
 
-Dersom brukeren logger ut fra en annen tjeneste, vil ID-porten trigge utlogging fra alle andre tjenester, dvs. både OIDC-tjenester som er konfigurert med støtte for Front Channel Logout, og SAML-tjenester. 
+Dersom brukeren logger ut fra en annen tjeneste, vil ID-porten trigge utlogging fra alle andre tjenester, dvs. både OIDC-tjenester som er konfigurert med støtte for Front Channel Logout. 
 
 ID-porten samler opp informasjon om hvilke tjenester en bruker benytter innenfor en sesjon.  For OIDC-klienter som støtter Front Channel Logout, sender ID-porten en GET-forespørsel til klientens *frontchannel_logout_uri*.  Parameterne *iss* og *sid* inkluderes for klienter som krever *frontchannel_logout_session_required*.  *sid* har samme verdi som claim *sid* i id_token.  ID-porten lager en dynamisk side der hver innlogget OIDC-klient får sin egen iframe og blir sendt et front-channel logout-kall i parallell.
 

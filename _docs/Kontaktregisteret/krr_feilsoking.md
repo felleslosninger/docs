@@ -27,3 +27,11 @@ For å administrere i produksjonsmiljøet, så må man logge inn med ID-porten. 
 
 Tilgang til Samarbeidsportalen og selvbetjeningsløsningen gis på bakgrunn av epost-domenet ditt, som igjen er koblet til en virksomhet på vår side.  For store virksomheter og selskap, så kan det være at det gjenbrukes epost-domene på tvers av flere virksomheter. Ta kontakt med servicedesk@digdir.no.
 
+### Jeg får ikke token fra Maskinporten når jeg setter consumer_org.
+
+Sjekk at kunden har fått tilgang til delegeringsscopene, at kunden har gitt deg fullmakt i Altinn, og at klienten din er registrert på ditt eget organisasjonsnummer. Se [Oppslag på vegne av annen virksomhet]({{site.baseurl}}/docs/Kontaktregisteret/oppslagstjenesten_rest#oppslag-på-vegne-av-annen-virksomhet).
+
+### KRR svarer med 401 når jeg bruker delegeringsscopene.
+
+Sjekk først at tokenet er gyldig og hentet fra riktig miljø. Hvis tokenet ellers er gyldig, kan årsaken være at det ikke er hentet gjennom delegering i Altinn. Hent token med `consumer_org` satt til kundens organisasjonsnummer, med en klient registrert på ditt eget organisasjonsnummer.
+

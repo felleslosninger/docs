@@ -31,10 +31,10 @@ Ved alternativ 1 og 2 må du utføre dei etterfølgjande stega her:
 
 Som del av registrering må du lage eit access-sertifkat knytta til brukarstaden, som applikasjonen din nyttar for å autentisere seg mot lommeboka.  Du må også registerer eit utstedarsertifikat som du nyttar til å signere bevisa.
 
-Til slutt vert du registert på tillitslista for sandkassen.
-
 #### 2. Lage utstederen
 
 Dette er sopass omfattande at me reknar med at du har kontroll på dette sidan du har tenkt å ta ein utstedar-rolle.
 
+##### 3. Registrer deg på tillitslista
 
+Det er ein separat bestilling for å bli ført opp på tillitslista.  Du kan velge sjølv om du gjer dette under eller etter utviklingsløpet ditt. 

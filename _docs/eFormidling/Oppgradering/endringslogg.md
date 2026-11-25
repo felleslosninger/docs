@@ -18,6 +18,120 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.2.4
+
+23.11.2026
+
+- Sikkerhetsfikset container-image ("docker image")
+  - Oppdatert base-image som lukker kritisk sårbarhet CVE-2026-114938 (aka "Java4Shell")
+  - Container benytter `OpenJDK Runtime Environment (build 21.0.13.1+5-LTS)`
+  
+- Feilretting
+  - Meldinger mottatt fra SvarInn utløper ikke lenger før fagsystemet har hentet dem
+  - Nedlastings-URL for SvarInn bygges fra konfigurert baseUrl
+  - Bedre feilhåndtering om ServiceRegistry er midlertidig utilgjengelig
+  - Logging til logstash følger konfig satt via app.logger.secureLogstash
+
+- Andre ting
+  - Oppgradert diverse felles bibliotek
+  - Opprydding av properties
+
+- Tips til sikkerhetsfiks (for dere som **ikke** benytter container-image)
+  - Dersom dere er berørt av [CVE-2026-114938](https://nvd.nist.gov/vuln/detail/cve-2026-114938)
+  - Oppgrader til en Java Runtime som *ikke* har sårbarheten (permanent løsning)
+  - Benytt oppstarts-parameter `-XX:-UseBASE64Intrinsics` som en midlertidig løsning før det
+
+## 4.2.3
+
+09.11.2026
+- Feilretting
+  - DPI-status MOTTATT ble registrert to ganger, og LEVERT kunne forsvinne
+
+## 4.2.2
+
+06.11.2026
+
+- Endringer
+  - Støttetjenestene på `/manage` er strammet inn. Som standard er bare `health`, `info`, `metrics`, `prometheus`,
+    `caches`, `logfile` og `loggers` tilgjengelige
+  - **Berører deg som bruker KOSMOS (automatisk oppgradering):** `shutdown` er ikke lenger åpen som standard, og KOSMOS
+    klarer da ikke å stoppe integrasjonspunktet ved oppgradering. Legg til `shutdown` i
+    `management.endpoints.web.exposure.include` i `integrasjonspunkt-local.properties`. Se
+    [Åpne shutdown-endepunktet i integrasjonspunktet](../installasjon/automatisk_oppgradering#shutdown-endepunkt)
+
+- Feilretting
+  - Oppstart feiler på MS SQL Server med over 2100 pollbare meldinger
+
+## 4.2.1
+
+28.10.2026
+
+- Endringer, feilrettinger, forbedringer
+  - Meldinger kunne bli stående med status OPPRETTET for alltid
+  - Status-id på statuskøen som ikke finnes i DB blokkerer ikke lenger /api/statuses/peek
+  - Bedre feilhåndtering ved utpakking av tom ASiC
+  - Ny property som styrer hva som skjer ved feil i DPH-oppstartsjekken
+  - Feil ved DPH-mottak stopper ikke lenger pollingen
+
+- Andre ting
+  - Oppgradert Spring Boot 4.1.2 og diverse felles bibliotek
+  - Forbedret diverse tester
+
+## 4.2.0
+
+07.10.2026
+
+- Endringer, feilrettinger, forbedringer
+  - Actuator-endepunktene var ikke åpne hvis konfigurasjonen avvek fra standard
+  - DPH arvet ikke keystore-oppsettet
+  - IP brukte feil ServiceIdentifier
+  - Arkivmelding kvittering markeres nå som statusmelding i Altinn
+  - Lengden på filnavn sjekkes ved PUT for DPI
+
+- Andre ting
+  - Diverse forbedringer i bygg-kjeden internt
+
+## 4.1.0
+
+07.09.2026
+
+- Ny funksjonalitet
+  - Migrere SvarUt-integrasjon fra SOAP til REST i IP (støtter både SOAP og REST)
+
+- Feilrettinger
+  - DPF ekstra metadata (erstatte whitespace med underscore)
+  - Slå av DPH som standard i "staging"-profilen
+  - Bruk av både DPI og DPH samtidig feilet
+
+- Genrell oppgradering
+  - Oppgradering til Spring Boot 4.1 og Jackson 3.x
+
+## 4.0.8
+
+17.08.2026
+
+- Opprydding
+  - Fjerner DPFIO (som ikke lenger er i bruk)
+  - Reduserer unødvendig "støy" i loggene
+
+- Feilrettinger
+  - INFO-brev fra digital_dpv kan igjen sendes selv om mottaker er reservert
+  - Hindrer potensiell evig heng situasjon ved polling av status
+  - Krever ikke lenger DPH-properties (når DPH ikke er enablet)
+  - Stanser retry-loop ved client errors under sending (vil ikke kunne sendes ved neste forsøk uansett)
+
+- Forbedringer
+  - Fallback verdi for offentlig tittel og innhold for DPV / digital_dpv
+  - Reduserer pollefrekvens for gamle meldinger (ned til hver time etter 30 dager som default)
+  - Skrur av polling for meldinger som rapporteres som er slettet av mottaker
+  - Stopper polling av meldinger som ikke lenger finnes i Altinn
+  - Tar i bruk idempotency unngå duplikate correspondences ved retry på DPV
+  - Legger til mulighet for å konfigurere timeouts for oauth2 tokens
+  - Håndterer parsing exceptions ved nedlasting fra Altinn
+
+- Sikkerhet
+  - Diverse sikkheretsoppdateringer (3rd party bibliotek)
+
 ## 4.0.7
 
 16.06.2026

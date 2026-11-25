@@ -169,7 +169,7 @@ og mer sammensatte bruksmønstrene støttes ved masseutsending til innbyggere.
 En virksomhets systemer kan ha behov for å kommunisere med en annen virksomhets systemer uten at mennesker er involvert.
 Slik kommunikasjon er vanligvis karakterisert med høyt strukturert innhold. Eksempler kan inkludere formidling av
 hendelser (f.eks. fødsel) og innhenting/publisering av informasjon (f.eks. statistikk). eInnsyn er et eksempel på bruk
-av eFormidling til maskin-til-maskin kommunikasjon og et annet er støtten for protokollene i FIKS IO. eFormidling
+av eFormidling til maskin-til-maskin kommunikasjon. eFormidling
 støtter også "lettvekts" protokoller som avtales direkte mellom de som skal samhandle, og som verken krever koordinering
 med eller tilpassing av eFormidling.
 
@@ -177,4 +177,3 @@ med eller tilpassing av eFormidling.
 - [Journalpost til eInnsyn](journalpost)
 - [Møte til eInnsyn](mote)
 - [Avtalt meldingsutveksling](avtalt)
-- [FIKS IO-meldingsutveksling](fiks_io)

@@ -16,4 +16,3 @@ Eksempler på bruk av eFormidling:
 - [Journalpost til eInnsyn](journalpost)
 - [Møte til eInnsyn](mote)
 - [Avtalt meldingsutveksling](avtalt)
-- [FIKS IO-meldingsutveksling](fiks_io)

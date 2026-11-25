@@ -107,7 +107,6 @@ Filformat som støttes: HTML og vedlegg med vilkårlig format.
 
 Integrasjonspunktet transformerer og beriker meldinger som sendes med Altinn Digital Post:
 
-- [Transformasjon fra Digital DPV til Altinn Digital Post](../Transformasjoner/digital_dpv_til_altinn_digital_post) (Utgår i Ipv4)
 - [Transformasjon fra Digital DPV til Altinn Digital Post Altinn 3](../Transformasjoner/digital_dpv_til_altinn_digital_post_altinn3)
 
 ## Neste steg
