@@ -15,20 +15,20 @@ Kortfattet sjekkliste for integrasjon mot Ansattporten. For detaljer, se [Hva er
 ## Før oppstart
 
 - [ ] Akseptere Digdir sine [bruksvilkår](https://samarbeid.digdir.no) for fellesløsninger
-- [ ] [Registrere integrasjon](ansattporten_om#hvordan-administrerer-jeg-ansattporten-) med `integration_type` satt til **`ansattporten`** (ikke `idporten`)
-- [ ] Velge [bruksscenario](ansattporten_om#hvilken-bruk-scenario-støttes-): vanlig innlogging, på vegne av virksomhet, eller datadeling
+- [ ] [Registrere integrasjon](ansattporten_om#hvordan-administrerer-jeg-ansattporten-) med `integration_type` satt til **`ansattporten`** (ikkje `idporten`)
+- [ ] Velge [bruksscenario](ansattporten_om#hvilke-bruksscenarioer-støttes): vanlig innlogging, på vegne av virksomhet, eller datadeling
 
 ## Autentisering og token
 
-- [ ] 🔒 **Krav:** Bruke [PKCE](../../idporten/oidc/oidc_func_pkce) med `code_challenge_method=S256` — beskyttar mot autorisasjonskode-avlytting
+- [ ] 🔒 **Krav:** Bruke [PKCE]({{site.baseurl}}/docs/idporten/oidc/oidc_func_pkce.html) med `code_challenge_method=S256` — beskyttar mot autorisasjonskode-avlytting
 - [ ] Inkludere påkrevde parametere: `client_id`, `redirect_uri`, `scope` (min. `openid`), `response_type=code`
 - [ ] 🔒 **Krav:** Bruke `state` og `nonce` for CSRF- og replay-beskyttelse
-- [ ] 🔒 **Krav:** Validere at `iss` i ID-token stemmer med **Ansattporten** (ikke ID-porten) — feil issuer kan bety at tokenet ikkje er til deg
+- [ ] 🔒 **Krav:** Validere at `iss` i ID-token stemmer med **Ansattporten** (ikkje ID-porten) — feil issuer kan bety at tokenet ikkje er til deg
 - [ ] 🔒 **Anbefalt:** Bruke [well-known endepunkt](ansattporten_wellknown) for dynamisk konfigurasjon og JWK-henting — sikrar kontinuerleg drift ved sertifikatbytte
 
 ## Representasjon og organisasjonsvelger (valgfritt)
 
-Ansattporten støttar to [autorative kjelder](ansattporten_om#autorative-kilder-for-representasjon) for representasjon. Vel den som passar ditt bruksscenario:
+Ansattporten støttar to [autoritative kjelder](ansattporten_om#autoritative-kilder-for-representasjon) for representasjon. Vel den som passar ditt bruksscenario:
 
 ### Via Altinn Autorisasjon (RAR-type `ansattporten:altinn:resource`)
 
@@ -43,24 +43,24 @@ Ansattporten støttar to [autorative kjelder](ansattporten_om#autorative-kilder-
 - [ ] Arbeidsgjevar styrer tilgang via filterreglar basert på e-postadresse, domene eller Entra ID-gruppe
 - [ ] Krev at nokon med Altinn-rolla "Administrere organisasjonstilknytning i Ansattporten" set opp reglane
 - [ ] 🔒 **Merk:** Lågare sikkerheitsnivå enn Altinn — eignar seg når høg identitetstryggleik ikkje er påkrevd
-- [ ] **Merk:** Framleis i pilot — kontakt Digdir for status
+- [ ] **Merk:** Framleis i pilot og berre tilgjengeleg i test — send `acr_values=entraid`, sjå [Entra ID](ansattporten_entraid) og [Virksomhetsbroen](ansattporten_virksomhetsbroen)
 
 ### Felles for begge
 
 - [ ] Følg [guide for representasjon](ansattporten_representasjon) — bruker RAR (`authorization_details`)
 - [ ] 🔒 Forstå at Ansattporten kun formidlar representasjon — **den utfører ikkje tilgangskontroll** for tenesta di. Tenesta må sjølv avgjere om brukaren har tilgang
 
-## Sesjonshåndtering
+## Sesjonshandtering
 
-- [ ] Forstå at det **ikke er SSO** mellom tjenester i Ansattporten — [isolert sesjon](ansattporten_om#ingen-sso-funksjonalitet-mellom-tjenester) er tvangssatt
+- [ ] Forstå at det **ikkje er SSO** mellom tenester i Ansattporten — [isolert sesjon](ansattporten_om#ingen-sso-funksjonalitet-mellom-tjenester) er tvangssatt
 - [ ] Implementere utlogging via /endsession-endepunktet
 - [ ] Sette lokal sesjon til maks 30 minutter inaktivitet (maks 120 min total)
 
-## Sikkerhet og nøkkelhåndtering
+## Tryggleik og nøkkelhandtering
 
-- [ ] 🔒 **Krav:** Etabler sikker nøkkelhåndtering — beskytt private nøklar (client_secret, asymmetriske nøklar, virksomheitssertifikat). Definer prosedyrar for oppbevaring, backup, tilgangsstyring, fornyelse og kompromitteringshåndtering
+- [ ] 🔒 **Krav:** Etabler sikker nøkkelhandtering — beskytt private nøklar (client_secret, asymmetriske nøklar, virksomheitssertifikat). Definer prosedyrar for oppbevaring, backup, tilgangsstyring, fornyelse og kompromitteringshandtering
 - [ ] 🔒 **Krav:** Gjennomfør risikovurdering av eigen løysing
-- [ ] 🔒 **Krav:** Åpne utgåande brannmur for [Ansattporten sine IP-adresser](../../general/IP) (om aktuelt)
+- [ ] 🔒 **Krav:** Åpne utgåande brannmur for [Ansattporten sine IP-adresser]({{site.baseurl}}/docs/general/IP.html) (om aktuelt)
 - [ ] 🔒 **Anbefalt:** Bruk HSM for nøkkeloppbevaring og automatisert nøkkelrotasjon
 
 ## Logging og testing
@@ -82,5 +82,6 @@ Kontakt servicedesk@digdir.no — oppgi client_id, miljø og beskrivelse.
 - [Hva er Ansattporten?](ansattporten_om)
 - [Integrasjonsguide (vanlig innlogging)](ansattporten_guide)
 - [Representasjon i Ansattporten](ansattporten_representasjon)
+- [RAR-typar](ansattporten_rar)
 - [Well-known endepunkt](ansattporten_wellknown)
 - [Samarbeidsportalen](https://samarbeid.digdir.no/ansattporten/ansattporten-er-no-i-produksjon-som-ei-fullverdig-fellesloysing/2969)
