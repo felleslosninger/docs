@@ -29,6 +29,9 @@ folders:
       - title: Utenlandske brukere
         jurl: /docs/idporten/oidc/oidc_func_utanlandske_brukarar.html
 
+      - title: Sjekkliste for integrasjon
+        jurl: /docs/idporten/idporten/idporten_checklist.html
+
 
 - title: Grensesnittsdefinisjon
   folderitems:

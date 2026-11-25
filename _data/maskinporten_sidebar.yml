@@ -28,6 +28,12 @@ folders:
       - title: Guide for API-konsument
         jurl: /docs/Maskinporten/maskinporten_guide_apikonsument.html
 
+      - title: Sjekkliste for integrasjon
+        jurl: /docs/Maskinporten/maskinporten_checklist.html
+
+      - title: Sjekkliste for samtykketoken
+        jurl: /docs/Maskinporten/maskinporten_samtykke_checklist.html
+
 
 - title: Selvbetjening
   folderitems:
