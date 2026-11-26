@@ -18,6 +18,17 @@ redirect_from:
 
 ## Integrasjonspunktet
 
+## 4.2.5
+
+26.11.2026
+ 
+- Feilretting
+  - Stopp feilsløyfe i kølytteren ved utsending av mange meldinger
+
+- Andre ting
+  - Hash fødselsnummer i avsenderfeltet i loggen
+  - Oppgradert diverse felles bibliotek
+
 ## 4.2.4
 
 23.11.2026

@@ -242,7 +242,7 @@ spec:
         app: ip-staging
     spec:
       containers:
-        - image: ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.2.4
+        - image: ghcr.io/felleslosninger/efm-integrasjonspunkt:v4.2.5
           name: integrasjonspunkt
           resources:
             limits:
