@@ -18,7 +18,7 @@ Her finner du alle [release notes og artifakter](https://github.com/felleslosnin
 <br>
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/packages/2709133/versions)
 
-[**Integrasjonspunktet 4.2.5 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/1619010484?tag=v4.2.5)
+[**Integrasjonspunktet 4.2.5 (Docker container image)**](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/1640321906?tag=v4.2.5)
 <br>
 Lenke til alle [versjonar](https://github.com/felleslosninger/efm-integrasjonspunkt/pkgs/container/efm-integrasjonspunkt/versions?filters%5Bversion_type%5D=tagged)
 
