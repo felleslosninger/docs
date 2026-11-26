@@ -23,6 +23,9 @@ folders:
       - title: Ansattporten - skyinnlogging
         jurl: /docs/ansattporten/ansattporten_allmennsky.html
 
+      - title: Sjekkliste for integrasjon
+        jurl: /docs/ansattporten/ansattporten_checklist.html
+
 
 - title: Grensesnitt og funksjonalitet
   folderitems:
